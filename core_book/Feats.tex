@@ -92,6 +92,7 @@ You cannot gain the same feat twice.
         \featref{Rapid Reaction}     & Dex 1                    & Increase reaction speed             & \tdash             & \featpref{Rapid Reaction}     \\
         \featref{Spellwarped}        & Wil 1                    & Gain limited spellcasting           & Magical            & \featpref{Spellwarped}        \\
         \featref{Swift}              & Dex 1                    & Move more quickly                   & \tdash             & \featpref{Swift}              \\
+        \featref{Telepathy}          & Int 1, Wil 1             & Communicate with creatures mentally & \tdash             & \featpref{Telepathy}          \\
         \featref{Toughness}          & Con 1                    & Increase physical fortitude         & \tdash             & \featpref{Toughness}          \\
 
         \tb{Skill Feats}\label{Skill Feats}        & \tb{Prerequisites}          & \tb{Benefits}                         & \tb{Feat Types} & \tb{Page}                                   \\
@@ -1714,7 +1715,7 @@ You cannot gain the same feat twice.
 
         \ff[3]{Mounted Defense} Your mount gains a \plus3 bonus to all defenses, up to a maximum of your own corresponding defense.
 
-        \ff[6]{Mounted Warrior} The penalty you take when using a ranged weapon while mounted is decreased by 4.
+        \ff[6]{Mounted Warrior} The penalty you take for making ranged \glossterm{strikes} while mounted is decreased by 2.
         In addition, while you are mounted, you gain a \plus1 bonus to \glossterm{accuracy} with Mounted weapons (see \pcref{Mounted Weapon}).
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
@@ -1723,8 +1724,8 @@ You cannot gain the same feat twice.
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
 
-        \ff[18]{Greater Mounted Warrior} The penalty reduction from your \textit{mounted warrior} ability increases to \minus8.
-        In addition, you gain a \plus1 bonus to Armor defense while mounted.
+        \ff[18]{Greater Mounted Warrior} The penalty reduction from your \textit{mounted warrior} ability increases to 4.
+        In addition, the accuracy bonus increases to \plus2.
 
         \ff[21]{Greater Mounted Defense} The defense bonus from your \textit{mounted defense} ability increases to \plus12.
     \end{feat}
@@ -1851,15 +1852,12 @@ You cannot gain the same feat twice.
 
         \ff[3]{Social Intuition} You reduce the penalty for making a social assessment after only a single round of observation, and the penalty for making a social assessment without understanding the language, by 5 each (see \pcref{Social Assessment}).
 
-        \ff[6]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
-        \begin{freeability}{Read Mind}[\abilitytag{Emotion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}]
+        \ff[6]{Read Emotions}[Magical] You can use the \textit{read emotions} ability as a standard action.
+        \begin{freeability}{Read Emotions}[\abilitytag{Emotion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}]
             Make an attack vs. Mental against a creature within \rngshort range.
             Your \glossterm{accuracy} is equal to your Social Insight skill.
             \hit You know the target's current emotions.
-            This grants you a \plus2 bonus to Deception, Persuasion, and Intimidate attacks and checks against the target.
-            \glance As above, except that the effect ends at the end of the next round.
-            \crit You know the target's surface thoughts.
-            This grants you a \plus5 bonus to Deception, Persuasion, and Intimidate attacks and checks against the target.
+            In addition to the obvious effects, this grants you a \plus3 bonus to Deception, Persuasion, Intimidate, and Social Insight attacks and checks against the target.
 
             \rankline
             \featlevel{12} The range increases to \rnglong range.
@@ -2786,7 +2784,6 @@ You cannot gain the same feat twice.
         \featpre Swim as a mastered skill.
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Swim skill.
-        % Maybe add burrow speed? The book needs a description of fighting underwater penalties.
 
         \ff[3]{Swim Speed} You gain a \glossterm{swim speed} equal to the \glossterm{base speed} for your size.
         If you already have a swim speed, you gain a \plus10 foot bonus to your swim speed.
@@ -2806,6 +2803,57 @@ You cannot gain the same feat twice.
 
         \ff[21]{Greater Earth Swimmer} Your swim speed in earth increases to 15 feet.
         In addition, you reduce your penalties for swimming in earth by 2.
+    \end{feat}
+
+    \begin{feat}{Telepath}{General}
+        \featpre Base Inteligence and Willpower of 1.
+
+        \ff[1]{Telepathy} You gain \glossterm{telepathy} with a 30 foot range (see \pcref{Telepathy}).
+
+        \ff[3]{Mind Crush} You can use the \textit{mind crush} ability as a standard action.
+        \begin{instantability}{Mind Crush}[\abilitytag[Emotion]]
+            Make an attack vs. Mental against one creature within the range of your \glossterm{telepathy}.
+            \hit As a \glossterm{condition}, the subject is \dazed if it has any \glossterm{damage resistance} remaining, and \stunned if it does not.
+            \crit The condition must be removed twice before the effect ends.
+
+            \rankline
+            You gain a \plus2 bonus to \glossterm{accuracy} with the attack at 6th level and every 3 levels thereafter.
+            In addition, at 9th level, the effect lasts \glossterm{briefly} on a \glossterm{glancing blow}.
+        \end{instantability}
+
+        \ff[6]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
+        \begin{freeability}{Read Mind}[\abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Subtle}]
+            Make an attack vs. Mental against a creature within the range of your \glossterm{telepathy}.
+            Whether you hit or miss, you cannot target the subject with this ability again until it takes a \glossterm{short rest}.
+            \hit You know the target's current thoughts and emotions.
+            In addition to the obvious effects, this grants you a \plus5 bonus to Deception, Persuasion, Intimidate, and Social Insight attacks and checks against the target.
+            This does not allow you to search their mind for arbitrary thoughts or information, but creatures often think about questions they are asked, and their thoughts may reveal much more than their words.
+
+            \rankline
+            You gain a \plus2 bonus to \glossterm{accuracy} with the attack at 9th level and every 3 levels thereafter.
+            In addition, at 9th level, the effect lasts \glossterm{briefly} on a \glossterm{glancing blow}.
+        \end{freeability}
+
+        \ff[9]{Greater Telepathy} The range of your \glossterm{telepathy} ability increases to 60 feet.
+        In addition, you automatically know the location of any creature with an Intelligence of 0 or higher within the range of your telepathy.
+        Unlike abilities like \glossterm{blindsense}, the Stealth skill does not prevent you from learning the location of creatures in this way.
+
+        \ff[12]{Fragmented Mind} You gain a \plus2 bonus to Mental defense.
+        In addition, you can maintain mental channels with up to 5 creatures at once with your telepathy.
+        You can send separate thoughts to each creature.
+
+        \ff[15]{Greater Read Mind} On a \glossterm{critical hit} with your \textit{read mind} ability, you can delve through the subject's mind to answer a specific question.
+        You can pose a question to it mentally and search its mind to know the exact answer to that question.
+        This takes five rounds of continuous concentration, and you can only get answers to one such question each time you use this ability.
+        The process of searching a creature's mind in this way is no easier to notice than normal for a \abilitytag{Subtle} ability.
+
+        \ff[18]{Supreme Telepathy} The range of your \glossterm{telepathy} ability increases to 120 feet.
+        In addition, you can see any creature with an Intelligence of 0 or higher within the range of your telepathy perfectly.
+        Unlike abilities like \glossterm{blindsight}, the Stealth skill does not prevent you from seeing creatures in this way.
+
+        \ff[21]{Mental Domination} Whenever a creature \stunned by your \textit{mind crush} ability reaches 0 hit points, you can \glossterm{attune} to this ability.
+        When you do, that creature becomes \dominated by you as long as you maintain that attunement.
+        As normal, you can only maintain one instance of this attunement at a time.
     \end{feat}
 
     \begin{feat}{Toughness}{General}
