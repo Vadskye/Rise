@@ -544,11 +544,11 @@ export const thaumaturgy: MysticSphere = {
       focus: false,
       effect: `
         This spell does not have the \\glossterm{Focus} tag.
-        You immediately take the \\textit<total defense> action.
+        You immediately take the \\textit{total defense} action.
         In addition, whenever a creature within \\medrange of you misses you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
 
-        This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you cast this spell.
+        This is a \\glossterm{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
       `,
       rank: 3,
       scaling: {
@@ -565,12 +565,12 @@ export const thaumaturgy: MysticSphere = {
       focus: false,
       effect: `
         This spell does not have the \\glossterm{Focus} tag.
-        You immediately take the \\textit<total defense> action.
-        In addition, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
+        You immediately take the \\textit{total defense} action.
+        In addition, any \\glossterm{targeted} \\glossterm{magical} abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
         It cannot choose to reduce its accuracy or damage against itself.
         Any other targets of the ability are affected normally.
 
-        This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you cast this spell.
+        This is a \\glossterm{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
       `,
       rank: 5,
       scaling: {
