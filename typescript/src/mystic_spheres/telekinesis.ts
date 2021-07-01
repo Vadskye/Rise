@@ -347,7 +347,7 @@ export const telekinesis: MysticSphere = {
       focus: false,
       effect: `
         This spell does not have the \\glossterm{Focus} tag.
-        You immediately take the \\textit<total defense> action.
+        You immediately take the \\textit{total defense} action.
         In addition, whenever a creature within \\longrange of you misses you with a \\glossterm{strike} this round, that creature treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
       `,

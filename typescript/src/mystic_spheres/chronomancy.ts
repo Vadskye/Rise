@@ -595,7 +595,7 @@ export const chronomancy: MysticSphere = {
       focus: false,
       effect: `
         This spell does not have the \\glossterm{Focus} tag.
-        You can immediately use the \\textit<sprint> ability without increasing your \\glossterm{fatigue level}.
+        You can immediately use the \\textit{sprint} ability without increasing your \\glossterm{fatigue level}.
         After you cast this spell, you cannot cast it again until after the end of the next roud.
       `,
       narrative: `
