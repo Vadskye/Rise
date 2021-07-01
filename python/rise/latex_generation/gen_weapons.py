@@ -330,11 +330,10 @@ def generate_weapons():
             level=12,
             material_type="Weapon",
             description="""
-                When you make a \\glossterm<strike> with this weapon, you gain a +1 accuracy bonus against one target of the strike with all future attacks.
+                Once per \\glossterm<phase>, when you make a \\glossterm<strike> with this weapon, you gain a +1 accuracy bonus against one target of the strike with future strikes using this weapon.
                 If the strike had multiple targets, you choose which target you gain the bonus against.
-                This bonus lasts until you make a strike with this weapon that does not include your chosen target.
-                This bonus can stack with itself, up to a maximum of +4.
-                The bonus cannot increase more than once per \\glossterm<phase>.
+                This effect lasts until you make a strike with this weapon that does not include that creature as a target.
+                It stacks with itself, up to a maximum of a +4 bonus.
             """,
             short_description="Grants +1 accuracy bonus against attacked foe",
         ),
