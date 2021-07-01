@@ -658,7 +658,7 @@ impl Class {
         let mut abilities_by_rank_and_archetype: Vec<Vec<String>> = Vec::new();
         for archetype in self.archetypes() {
             let rank_abilities = archetype.rank_abilities();
-            for rank in 0..7 {
+            for rank in 0..8 {
                 let mut abilities_at_rank: Vec<&archetype_rank_abilities::RankAbility> = rank_abilities
                     .iter()
                     .filter(|a| a.rank == rank as i32)
