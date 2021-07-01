@@ -250,13 +250,13 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your \\glossterm{enemies} \\glossterm{briefly} treat all squares within a \\tinyarea radius from you as \\glossterm{difficult terrain}.
+        Your \\glossterm{enemies} \\glossterm{briefly} treat all squares within a \\tinyarea radius \\glossterm{zone} from your location as \\glossterm{difficult terrain}.
       `,
       rank: 1,
       scaling: {
-        3: "The area increases to a \\smallarea radius \\glossterm{emanation} from you.",
-        5: "The area increases to a \\medarea radius \\glossterm{emanation} from you.",
-        7: "The area increases to a \\largearea radius \\glossterm{emanation} from you.",
+        3: "The area increases to a \\smallarea radius.",
+        5: "The area increases to a \\medarea radius.",
+        7: "The area increases to a \\largearea radius.",
       },
       type: "Duration",
     },
