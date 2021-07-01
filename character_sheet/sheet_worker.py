@@ -890,6 +890,9 @@ def debuffs():
             if (dazzled) {{
                 accuracy -= 2;
             }}
+            if (goaded) {{
+                accuracy -= 2;
+            }}
             if (shaken && !frightened && !panicked) {{
                 accuracy -= 2;
                 mental -= 2;

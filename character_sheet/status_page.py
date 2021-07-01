@@ -129,7 +129,7 @@ def debuffs():
                 debuff("decelerated"),
                 debuff("disoriented", False),
                 debuff("frightened"),
-                debuff("goaded", False),
+                debuff("goaded"),
             ]),
             flex_col([
                 debuff("immobilized"),
