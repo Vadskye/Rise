@@ -278,13 +278,7 @@ def attunement_points():
     return js_wrapper(
         ["level", "attunement_points_from_class", *misc],
         f"""
-            var attunement_points_from_level = Math.max(0, Math.min(level, 5) - 1);
-            if (level >= 11) {{
-                attunement_points_from_level += 1;
-            }}
-            if (level >= 17) {{
-                attunement_points_from_level += 1;
-            }}
+            var attunement_points_from_level = Math.floor(Math.max(0, (level + 1) / 3));
             var attunement_points = attunement_points_from_class + attunement_points_from_level + {sum_variables(misc)};
             setAttrs({{
                 attunement_points,
