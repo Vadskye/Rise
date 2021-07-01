@@ -8,6 +8,7 @@ from cgi_simple import (
     flex_row,
     flex_wrapper,
     label,
+    labeled_span,
     labeled_text_input,
     number_input,
     option,
@@ -86,13 +87,11 @@ def vital_wound():
                 number_input({"class": "fake-text", "name": "vital_wound_roll"}),
                 {"class": "vital-wound-roll"},
             ),
-            labeled_text_input(
+            labeled_span(
                 "Effect",
                 {"class": "vital-wound-effect"},
                 {
-                    "disabled": True,
-                    "name": "vital_wound_effect_display",
-                    "value": "@{vital_wound_effect}",
+                    "name": "vital_wound_effect",
                 },
             ),
         ],
