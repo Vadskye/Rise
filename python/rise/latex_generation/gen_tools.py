@@ -41,6 +41,31 @@ def generate_tools():
     tools += [
         MagicItem(
             consumable=True,
+            name="Telepath's Bane",
+            level=5,
+            material_type="Potion",
+            tags=[],
+            description="""
+                When you drink this \\glossterm<potion>, you take a -2 penalty to your Intelligence as a \\glossterm<condition>.
+            """,
+            short_description="Imposes -2 Intelligence penalty",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Telepath's Bane, Greater",
+            level=14,
+            material_type="Potion",
+            tags=[],
+            description="""
+                When you drink this \\glossterm<potion>, you take a -4 penalty to your Intelligence as a \\glossterm<condition>.
+            """,
+            short_description="Imposes -4 Inteligence penalty",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            consumable=True,
             name="Potion of Wound Closure",
             level=1,
             material_type="Potion",
