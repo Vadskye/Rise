@@ -212,7 +212,8 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you use the \ability{desperate exertion} ability to affect a spell you cast, you can change which spell you cast before rerolling.
+                % TODO: clarify that this doesn't work with Eyes of Flame / poison / etc.
+                Whenever you use the \ability{desperate exertion} ability to affect a spell you just cast, you can change which spell you cast before rerolling.
                 If you do, you must take the result of the second roll, even if it is worse.
                 The new spell takes its full effect as if you had cast it originally, and the original spell has no effect of any kind.
                 This is a \glossterm{Swift} ability.
