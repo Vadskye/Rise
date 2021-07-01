@@ -502,7 +502,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         Choose one of the following schools of magic.
         You are a specialist in your chosen school.
         You cannot gain access to any arcane mystic spheres outside of your specialist school.
-        In exchange, you gain an additional \glossterm{insight point}.
+        In exchange, you gain access to an additional arcane \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
         \begin{itemize}
             \item Abjuration: \sphere{barrier}, \sphere{telekinesis}, \sphere{thaumaturgy}
             \item Conjuration: \sphere{astromancy}, \sphere{fabrication}, \sphere{summoning}
