@@ -318,7 +318,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
 
             \parhead{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
             You gain a \plus1 bonus to \glossterm{accuracy} with abilities from that \glossterm{mystic sphere}.
-            In addition, you learn an additional \glossterm{spell} from that \glossterm{mystic sphere}.
             In exchange, you must lose access to another \glossterm{mystic sphere} you have.
             You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
             \par You cannot choose this insight multiple times.
