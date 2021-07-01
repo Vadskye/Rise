@@ -500,7 +500,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
          The arcane mystic spheres can be divided into six traditional schools of magic.
         Choose one of the following schools of magic.
         You are a specialist in your chosen school.
-        You cannot gain access to any arcane mystic spheres outside of your specialist school.
+        You cannot gain access to any arcane mystic spheres outside of your specialist school, and you cannot learn spells or rituals from those spheres by any means.
         In exchange, you gain access to an additional arcane \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
         \begin{itemize}
             \item Abjuration: \sphere{barrier}, \sphere{telekinesis}, \sphere{thaumaturgy}
