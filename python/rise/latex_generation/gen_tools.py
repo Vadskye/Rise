@@ -658,6 +658,96 @@ def generate_tools():
         ),
     ]
 
+    # TRAPS
+    # Trap accuracy: as CR 3 monster, so level + ((level + 1) / 6) + 2
+    # Trap effect: as rank-appropriate spell with power = half level
+    # Trap level: relevant rank - 2 for single-square since it's hard to
+    # activate, rank + 1 for easier triggers
+    # awareness DR = 9 + level
+
+    tools += [
+        MagicItem(
+            name="Bear Trap",
+            level=2,
+            materials="metal",
+            tags=[],
+            description="""
+                As a standard action, you can deploy this trap on a space on the ground adjacent to you.
+                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty rating> 11 Awareness check.
+
+                The first time a creature walks through that space, the trap makes a +4 attack vs. Armor against it.
+                After the trap triggers, it must be manually deployed again.
+                On a hit, the creature takes 1d8 damage.
+                If it loses \\glossterm<hit points> from this damage, it is \\glossterm<briefly> \\immobilized.
+            """,
+            short_description="Damages and briefly immobilizes",
+        ),
+        MagicItem(
+            name="Bear Trap, Greater",
+            level=11,
+            materials="metal",
+            tags=[],
+            description="""
+                As a standard action, you can deploy this trap on a space on the ground adjacent to you.
+                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty rating> 20 Awareness check.
+
+                The first time a creature walks through that space, the trap makes a +16 attack vs. Armor against it.
+                After the trap triggers, it must be manually deployed again.
+                On a hit, the creature takes 2d8 damage.
+                If it loses \\glossterm<hit points> from this damage, it is \\immobilized as a \\glossterm<condition>.
+            """,
+            short_description="Damages and immobilizes",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            name="Fireburst Trap",
+            level=5,
+            materials="metal",
+            tags=[],
+            description="""
+                As a standard action, you can deploy this trap on a space on the ground adjacent to you.
+                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty rating> 14 Awareness check.
+
+                The first time a creature walks through that space, the trap makes a +8 attack vs. Reflex against everything within a \\smallarea radius of it.
+                After the trap triggers, it must be manually deployed again.
+                On a hit, each subject takes 1d10+1 damage.
+            """,
+            short_description="Deals fire damage in a small area",
+        ),
+        MagicItem(
+            name="Fireburst Trap, Greater",
+            level=11,
+            materials="metal",
+            tags=[],
+            description="""
+                As a standard action, you can deploy this trap on a space on the ground adjacent to you.
+                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty rating> 20 Awareness check.
+
+                The first time a creature walks through that space, the trap makes a +15 attack vs. Reflex against everything within a \\largearea radius of it.
+                After the trap triggers, it must be manually deployed again.
+                On a hit, each subject takes 2d8+2 damage.
+            """,
+            short_description="Deals fire damage in a large area",
+        ),
+        MagicItem(
+            name="Fireburst Trap, Supreme",
+            level=17,
+            materials="metal",
+            tags=[],
+            description="""
+                As a standard action, you can deploy this trap on a space on the ground adjacent to you.
+                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty rating> 26 Awareness check.
+
+                The first time a creature walks through that space, the trap makes a +22 attack vs. Reflex against everything within a \\largearea radius of it.
+                After the trap triggers, it must be manually deployed again.
+                On a hit, each subject takes 4d8+4 damage.
+            """,
+            short_description="Deals massive fire damage in a large area",
+        ),
+    ]
+
     return tools
 
 
