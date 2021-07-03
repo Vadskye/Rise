@@ -208,8 +208,8 @@ pub fn animals() -> Vec<MonsterEntry> {
         senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
         size: Size::Small,
         skill_points: Some(vec![
-            (Skill::Agility, 3),
             (Skill::Awareness, 1),
+            (Skill::Balance, 3),
             (Skill::Flexibility, 3),
             (Skill::Stealth, 3),
         ]),

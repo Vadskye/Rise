@@ -295,7 +295,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
-                You gain a \plus4 bonus to the Agility skill this round (see \pcref{Agility}).
+                You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
 
                 \rankline
                 \rank{3} The bonus increases to \plus8.
