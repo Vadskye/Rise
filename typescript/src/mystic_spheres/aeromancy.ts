@@ -625,7 +625,7 @@ export const aeromancy: MysticSphere = {
           It is \\slowed and unable to use any fly speed or glide speed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\closerange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       // narrative: '',
