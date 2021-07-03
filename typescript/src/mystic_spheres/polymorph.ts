@@ -91,37 +91,17 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell does not have the \\abilitytag{Focus} tag.
 
-        Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
+        Make a melee \\glossterm{strike} with a -1d damage penalty using a \\glossterm{natural weapon}.
         The attack is made against the target's Reflex defense instead of its Armor defense.
-        Because this is a \\glossterm{magical} ability, you use your magical \\glossterm{power} to determine your damage instead of your \\glossterm{mundane} power.
+        You may choose to treat this strike as either a \\glossterm{magical} ability or a \\glossterm{mundane} ability.
       `,
       focus: false,
-      rank: 3,
-      // No scaling, just like maneuvers
-      type: 'Instant',
-    },
-
-    {
-      name: "Greater Twisting Claw",
-      functionsLike: {
-        exceptThat: 'you gain a +1 bonus to \\glossterm{accuracy} with the strike.',
-        name: 'twisting claw',
+      rank: 1,
+      scaling: {
+        3: 'You gain a +1 \\glossterm{accuracy} bonus with the strike.',
+        5: 'The accuracy bonus increases to +2.',
+        7: 'The accuracy bonus increases to +3.',
       },
-      focus: false,
-      rank: 5,
-      // No scaling, just like maneuvers
-      type: 'Instant',
-    },
-
-    {
-      name: "Supreme Twisting Claw",
-      functionsLike: {
-        exceptThat: 'you gain a +1 bonus to \\glossterm{accuracy} with the strike.',
-        name: 'mighty claw',
-      },
-      focus: false,
-      rank: 7,
-      // No scaling, just like maneuvers
       type: 'Instant',
     },
 
@@ -130,37 +110,16 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell does not have the \\abilitytag{Focus} tag.
 
-        Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
-        You take a -1 \\glossterm{accuracy} penalty and gain a +1d damage bonus with the strike.
-        Because this is a \\glossterm{magical} ability, you use your magical \\glossterm{power} to determine your damage instead of your \\glossterm{mundane} power.
+        Make a melee \\glossterm{strike} with a -1 accuracy penalty and a +2d damage bonus using a \\glossterm{natural weapon}.
+        You may choose to treat this strike as either a \\glossterm{magical} ability or a \\glossterm{mundane} ability.
       `,
       focus: false,
       rank: 1,
-      // No scaling, just like maneuvers
-      type: 'Instant',
-    },
-
-    {
-      name: "Greater Mighty Claw",
-      functionsLike: {
-        exceptThat: 'the damage bonus increases to +2d.',
-        name: 'mighty claw',
+      scaling: {
+        3: 'The damage bonus increases to +2d.',
+        5: 'The damage bonus increases to +3d.',
+        7: 'The damage bonus increases to +4d.',
       },
-      focus: false,
-      rank: 3,
-      // No scaling, just like maneuvers
-      type: 'Instant',
-    },
-
-    {
-      name: "Supreme Mighty Claw",
-      functionsLike: {
-        exceptThat: 'the damage bonus increases to +3d.',
-        name: 'mighty claw',
-      },
-      focus: false,
-      rank: 5,
-      // No scaling, just like maneuvers
       type: 'Instant',
     },
 
@@ -171,35 +130,14 @@ export const polymorph: MysticSphere = {
 
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         You gain a +5 foot bonus to your \\glossterm{reach} with this strike.
-        Because this is a \\glossterm{magical} ability, you use your magical \\glossterm{power} to determine your damage instead of your \\glossterm{mundane} power.
+        You may choose to treat this strike as either a \\glossterm{magical} ability or a \\glossterm{mundane} ability.
       `,
       focus: false,
       rank: 2,
-      // No scaling, just like maneuvers
-      type: 'Instant',
-    },
-
-    {
-      name: "Greater Distant Claw",
-      functionsLike: {
-        exceptThat: 'the reach bonus increases to +10 feet.',
-        name: 'distant claw',
+      scaling: {
+        4: 'The reach bonus increases to +10 feet.',
+        6: 'The reach bonus increases to +15 feet.',
       },
-      focus: false,
-      rank: 4,
-      // No scaling, just like maneuvers
-      type: 'Instant',
-    },
-
-    {
-      name: "Supreme Distant Claw",
-      functionsLike: {
-        exceptThat: 'the reach bonus increases to +15 feet.',
-        name: 'distant claw',
-      },
-      focus: false,
-      rank: 6,
-      // No scaling, just like maneuvers
       type: 'Instant',
     },
 
