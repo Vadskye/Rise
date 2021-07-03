@@ -208,7 +208,7 @@ export const aquamancy: MysticSphere = {
       type: "Instant",
     },
     {
-      name: "Aquajet Blast",
+      name: "Aquajet Propulsion",
 
       attack: {
         // crit: '',
@@ -218,8 +218,9 @@ export const aquamancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
-          Whether you hit or miss, you may \\glossterm{push} yourself up to 20 feet away from the target as the water propels you backwards.
+          Whether you hit or miss, you may \\glossterm{push} yourself up to 15 feet away from the target as the water propels you backwards.
           Moving yourself upwards costs twice the normal movement cost.
+          This movement is doubled underwater instead of being dramatically slowed like normal for forced movement.
         `,
       },
       rank: 1,
@@ -228,21 +229,25 @@ export const aquamancy: MysticSphere = {
       type: "Instant",
     },
     {
-      name: "Greater Aquajet Blast",
+      name: "Greater Aquajet Propulsion",
 
-      attack: {
-        // crit: '',
-        glance: "Half damage.",
-        hit: `
-          The subject takes 2d6 + \\glossterm{power} bludgeoning damage.
-        `,
-        targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
-          Whether you hit or miss, you may \\glossterm{push} yourself up to 50 feet away from the target as the water propels you backwards.
-          Moving yourself upwards costs twice the normal movement cost.
-        `,
+      functionsLike: {
+        name: 'aquajet propulsion',
+        exceptThat: "the damage increases to 2d6 + \\glossterm{power}, and the push distance increases to 60 feet.",
       },
       rank: 3,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+    {
+      name: "Supreme Aquajet Propulsion",
+
+      functionsLike: {
+        name: 'aquajet propulsion',
+        exceptThat: "the damage increases to 4d8 + \\glossterm{power}, and the push distance increases to 120 feet.",
+      },
+      rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -605,24 +610,6 @@ export const aquamancy: MysticSphere = {
         6: "The bonus to Flexibility increases to +12.",
       },
       type: "Attune (self)",
-    },
-    {
-      name: "Aquatic Propulsion",
-
-      effect: `
-        You release a blast of water away from you, throwing you in the other direction.
-        You \\glossterm{push} yourself up to 50 feet in any direction.
-        You cannot change the direction of the movement partway through.
-        Moving yourself upwards costs twice the normal movement cost.
-        This movement is doubled underwater instead of being dramatically slowed like normal for forced movement.
-      `,
-      rank: 1,
-      scaling: {
-        3: "The distance increases to 100 feet.",
-        5: "The distance increases to 200 feet.",
-        7: "The distance increases to 300 feet: ",
-      },
-      type: "Instant",
     },
     {
       name: "Fog Cloud",
