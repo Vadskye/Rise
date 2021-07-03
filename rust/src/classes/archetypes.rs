@@ -431,7 +431,6 @@ impl ClassArchetype {
                     At level 3, choose \mitem{protective shield}.
                     At level 9, choose \mitem{greater protective shield} and \mitem{covering shield}.
                     At level 15, choose \mitem{supreme protective shield}, \mitem{greater shield of arrow catching}, and \mitem{shield of arrow deflection}.
-                \parhead{Feat Options} Shieldbearer, Regenerator, Toughness.
                 \parhead{Combat Styles} Ebb and Flow, Herald of War, Unbreakable Defense.
                 \parhead{Maneuver Options}
                 \begin{itemize}
@@ -443,6 +442,7 @@ impl ClassArchetype {
                     \item Rank 6: \maneuver{greater directed shout}, \maneuver{greater reckless assault}
                     \item Rank 7: \maneuver{fear-inspiring strike}, \maneuver{revitalizing battlecry}
                 \end{itemize}
+                \parhead{Suggested Feats} Shieldbearer, Regenerator, Toughness.
                 \parhead{Combat Tactics} You are extremely difficult to kill.
                 Take advantage of that by wading into the front lines of combat and drawing attention away from your more vulnerable allies.
                 If you find yourself in danger, use defensive maneuvers like \maneuver{bracing strike} and \maneuver{defensive strike} to keep yourself safe.
@@ -462,7 +462,6 @@ impl ClassArchetype {
                     At level 3, choose \mitem{surestrike}.
                     At level 9, choose \mitem{greater surestrike} and \mitem{blessed}.
                     At level 15, choose \mitem{supreme surestrike}, \mitem{greater shocking}, and \mitem{blessed}.
-                \parhead{Feat Options} Greatweapon Warrior, Rapid Reaction, Swift.
                 \parhead{Combat Styles} Ebb and Flow, Flurry of Blows, Unbreakable Defense.
                 \parhead{Maneuver Options}
                 \begin{itemize}
@@ -474,6 +473,7 @@ impl ClassArchetype {
                     \item Rank 6: \maneuver{followup flurry}, \maneuver{greater reckless assault}
                     \item Rank 7: \maneuver{greater desperate flurry}, \maneuver{whirlwind flurry}
                 \end{itemize}
+                \parhead{Suggested Feats} Greatweapon Warrior, Rapid Reaction, Swift.
                 \parhead{Combat Tactics} You are a furious frenzy of devastating damage and lethal critical hits.
                 When you roll a 10 on an attack roll, whatever you attacked will probably die.
                 Staying close to your allies is generally a good plan, since you don't have the durability to run into the middle of a horde of enemies safely.
@@ -494,7 +494,6 @@ impl ClassArchetype {
                     At level 3, choose \mitem{potency}.
                     At level 9, choose \mitem{greater potency} and \mitem{blessed}.
                     At level 15, choose \mitem{supreme potency}, \mitem{greater freezing}, and \mitem{blessed}.
-                \parhead{Feat Options} Savage, Brawler, Swift.
                 \parhead{Combat Styles} Dirty Fighting, Mobile Assault, Unbreakable Defense.
                 \parhead{Maneuver Options}
                 \begin{itemize}
@@ -506,6 +505,7 @@ impl ClassArchetype {
                     \item Rank 6: \maneuver{greater reaping harvest}, \maneuver{greater revitalizing strike}
                     \item Rank 7: \maneuver{greater steal weapon}, \maneuver{instant pin}
                 \end{itemize}
+                \parhead{Suggested Feats} Savage, Brawler, Swift.
                 \parhead{Combat Tactics} You can move around the battlefield very quickly, and you are incredibly accurate with special combat actions like shoving and grappling enemies.
                 Make the most of that by repositioning enemies, tripping them, or holding them in grapples so your allies can hit them.
                 While you aren't in a grapple, use your flail in two hands to maximize your damage.
@@ -528,10 +528,10 @@ impl ClassArchetype {
                     At level 3, choose \mitem{surestrike}.
                     At level 9, choose \mitem{greater surestrike} and \mitem{blessed}.
                     At level 15, choose \mitem{supreme surestrike}, \mitem{greater shocking}, and \mitem{blessed}.
-                \parhead{Feat Options} Greatweapon Warrior, Weapon Focus, Swift.
                 \parhead{Combat Styles} Dirty Fighting, Herald of War, Unbreakable Defense.
                 \parhead{Maneuver Options} You can learn most of the maneuvers available at each rank from your combat styles, so it's not meaningful to list specific maneuvers here.
                 Choose whatever is most interesting to you.
+                \parhead{Suggested Feats} Greatweapon Warrior, Weapon Focus, Swift.
                 \parhead{Combat Tactics} You have a great breadth of options available to you thanks to the number of maneuvers you know.
                 You have the survivability to stand in close combat, especially if you use maneuvers from Unreakable Defense, but you can also shout at mobile enemies from range with maneuvers from Herald of War.
                 Both Dirty Fighting and Herald of War give you maneuvers that work well against enemies with a high Armor defense, so you can adapt to whatever battle you find yourself in.
@@ -557,7 +557,6 @@ impl ClassArchetype {
                     At level 3, choose \mitem{surestrike}.
                     At level 9, choose \mitem{greater surestrike} and \mitem{longshot}.
                     At level 15, choose \mitem{supreme surestrike}, \mitem{greater freezing}, and \mitem{longshot}.
-                \parhead{Feat Options} Sniper, Weapon Focus, Swift.
                 \parhead{Combat Styles} Flurry of Blows, Mobile Assault, Penetrating Precision.
                 \parhead{Maneuver Options}
                 \begin{itemize}
@@ -569,6 +568,7 @@ impl ClassArchetype {
                     \item Rank 6: \maneuver{greater eye gouge}, \maneuver{greater retreating strike}
                     \item Rank 7: \maneuver{greater desperate flurry}, \maneuver{greater groundspike}
                 \end{itemize}
+                \parhead{Suggested Feats} Sniper, Weapon Focus, Swift.
                 \parhead{Combat Tactics} You have incredible accuracy from very long range.
                 Your defenses are low, but as long as you stay far enough away from your foes, they can't take advantage of that weakness.
                 You have the ability to prioritize any target on the battlefield, so make the most of your maneuvers that impose conditions or deal additional damage on weakened foes.
@@ -589,9 +589,9 @@ impl ClassArchetype {
                     At level 3, choose \mitem{staff of precision}.
                     At level 9, choose \mitem{greater staff of precision} and \mitem{staff of focus}.
                     At level 15, choose \mitem{supreme staff of precision}, \mitem{fearsome staff}, and \mitem{staff of focus}.
-                \parhead{Feat Options} Leadership, Celestial Heritage, Sphere Focus: Channel Divinity
+                \parhead{Domains} Good, Magic
                 \parhead{Mystic Spheres} Bless, Channel Divinity, and Vivimancy
-                \parhead{Spell Options}
+                \parhead{Suggested Spells}
                 \begin{itemize}
                     \item Rank 1: \spell{blessing of endurance}, \spell{boon of precision}, \spell{divine judgment}, \spell{inflict wound}
                     \item Rank 2: \spell{cure wound}, \spell{divine conduit}, \spell{word of faith}
@@ -601,7 +601,7 @@ impl ClassArchetype {
                     \item Rank 6: \spell{boon of invulnerability}, \spell{cleansing benediction}, \spell{greater divine presence}
                     \item Rank 7: \spell{avasculate}, \spell{supreme divine judgment}
                 \end{itemize}
-                \parhead{Domains} Good, Magic
+                \parhead{Suggested Feats} Leadership, Celestial Heritage, Sphere Focus: Channel Divinity
                 \parhead{Combat Tactics} You can protect and heal your allies and invoke divine wrath on your foes.
                 You have a mixture of attacks against both Fortitude and Mental defense, so use the best spells for the situation.
                 If you are facing a foe that not particularly vulnerable to either, you can focus on keeping your allies healed and using "boon" spells to make their actions more effective.
@@ -628,9 +628,9 @@ impl ClassArchetype {
                     At level 3, choose \mitem{protective shield}.
                     At level 9, choose \mitem{greater protective shield} and \mitem{shield of arrow catching}.
                     At level 15, choose \mitem{supreme protective shield}, \mitem{greater shield of arrow deflection}, and \mitem{shield of arrow catching}.
-                \parhead{Feat Options} Weapon Focus, Sphere Focus: Channel Divinity, Shieldbearer
+                \parhead{Domains} Strength, War
                 \parhead{Mystic Spheres} Channel Divinity
-                \parhead{Spell Options}
+                \parhead{Suggested Spells}
                 \begin{itemize}
                     \item Rank 1: \spell{divine power}, \spell{divine favor}, \spell{divine authority}, \spell{stunning judgment}
                     \item Rank 2: \spell{astral refuge}
@@ -640,7 +640,7 @@ impl ClassArchetype {
                     \item Rank 6: \spell{divine offering}, \spell{greater divine presence}
                     % \item Rank 7: TODO
                 \end{itemize}
-                \parhead{Domains} Strength, War
+                \parhead{Suggested Feats} Weapon Focus, Sphere Focus: Channel Divinity, Shieldbearer
                 \parhead{Combat Tactics} You are a frontline fighter first and foremost.
                 Your high defenses and magically enhanced resistances make you durable in combat, though you lack mobility. 
                 When you need to distract foes or face down hordes, you can use your abilities from the Preacher archetype, which do not have the \abilitytag{Focus} tag.
@@ -661,9 +661,9 @@ impl ClassArchetype {
                     At level 3, choose \mitem{staff of potency}.
                     At level 9, choose \mitem{reaching staff} and \mitem{staff of potency}.
                     At level 15, choose \mitem{greater staff of the archmagi}, \mitem{reaching staff}, and \mitem{staff of focus}.
-                \parhead{Feat Options} Sphere Focus: Vivimancy, Boongiver, Iron Will
+                \parhead{Domains} Life, Protection
                 \parhead{Mystic Spheres} Vivimancy
-                \parhead{Spell Options}
+                \parhead{Suggested Spells}
                 \begin{itemize}
                     \item Rank 1: \spell{drain life}, \spell{draining grasp}, \spell{lifegift}, \spell{retributive lifebond}
                     \item Rank 2: \spell{cure wound}, \spell{sickening miasma}, \spell{wellspring of life}
@@ -673,7 +673,7 @@ impl ClassArchetype {
                     % \item Rank 6: TODO
                     \item Rank 7: \spell{avasculate}, \spell{supreme retributive lifebond}
                 \end{itemize}
-                \parhead{Domains} Life, Protection
+                \parhead{Suggested Feats} Sphere Focus: Vivimancy, Boongiver, Iron Will
                 \parhead{Combat Tactics} You have an unmatched mastery of healing and protection.
                 You have high defenses, so you can take to the front lines as necessary to make the most of \ability{restoration} and \ability{divine protection}, but it's generally better to let your allies take hits instead of you.
                 Since \ability{restoration} is much less effective at healing yourself, you can use spells like \spell{cure wounds} or \spell{lifesteal} to heal yourself if you lose hit points.
@@ -695,9 +695,9 @@ impl ClassArchetype {
                     At level 3, choose \mitem{amulet of honeyed words}.
                     At level 9, choose \mitem{greater amulet of honeyed words} and \mitem{ring of blessed protection}.
                     At level 15, choose \mitem{supreme amulet of honeyed words}, \mitem{phasestep boots}, and \mitem{ring of blessed protection}.
-                \parhead{Feat Options} Persuasion Specialization, Sphere Focus: Revelation, Social Insight Specialization
+                \parhead{Domains} Good, Travel
                 \parhead{Mystic Sphere} Revelation
-                \parhead{Spell Options}
+                \parhead{Suggested Spells}
                 \begin{itemize}
                     \item Rank 1: \spell{precognitive defense}, \spell{precognitive offense}, \spell{reveal weakness}, \spell{true strike}
                     \item Rank 2: \spell{blindsight}, \spell{myriad visions}
@@ -707,7 +707,7 @@ impl ClassArchetype {
                     \item Rank 6: \spell{mass true strike}, \spell{stunning truth}
                     \item Rank 7: \spell{blinding visions}
                 \end{itemize}
-                \parhead{Domains} Good, Travel
+                \parhead{Suggested Feats} Persuasion Specialization, Sphere Focus: Revelation, Social Insight Specialization
                 \parhead{Combat Tactics} You can distract and demoralize your enemies with unmatched accuracy.
                 Your social skills should be incredibly high, which you can use to your advantage both in and out of combat.
                 For a more cynical take on this character, consider mastering the Deception skill instead of Knowledge (religion).
@@ -716,8 +716,75 @@ impl ClassArchetype {
             ",
             // Druid
             Self::Elementalist => r"
+                If you want to quickly create a character based on this archetype, make the following choices:
+                \parhead{Species} Human.
+                \parhead{Attributes} 0 Str, 0 Dex, 0 Con, 2 Int, 4 Per, 2 Wil.
+                \parhead{Class} Druid.
+                \parhead{Archetypes} Nature Magic first, Elementalist second, Nature Spell Mastery third.
+                \parhead{Insight Points} 4 points for mystic spheres, 2 points for spells
+                % 18 total skill points, counting the 3 from auto-training
+                \parhead{Skills} Awareness (M), Creature Handling (M), Endurance (T), Jump (M), Knowledge (geography, nature) (M), Spellsense (M), Survival (M), Swim (M)
+                \parhead{Weapon Group} Headed weapons
+                \parhead{Languages} Common, Sylvan
+                \parhead{Equipment} Sickle, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
+                You may want to keep leather armor around in case you need to do a lot of jumping or swimming.
+                \parhead{Legacy Item} 1-handed implement.
+                    At level 3, choose \mitem{staff of potency}.
+                    At level 9, choose \mitem{greater staff of potency} and \mitem{staff of focus}.
+                    At level 15, choose \mitem{supreme staff of potency}, \mitem{reaching staff}, and \mitem{staff of focus}.
+                \parhead{Mystic Spheres} Aeromancy, Aquamancy, Pyromancy, Terramancy
+                \parhead{Suggested Spells}
+                You have access to all four elemental mystic spheres, so you have a massive pool of spells available to you.
+                The list below is just one of the possible paths you could take.
+                \begin{itemize}
+                    \RaggedRight
+                    % at every level: one single-target damage, one AOE damage, one debuff, one self-buff, each from a different sphere
+                    \item Rank 1: \spell{desiccation}, \spell{firebolt}, \spell{shrapnel blast}, \spell{wind screen}
+                    \item Rank 2: \spell{combustion}, \spell{downdraft}, \spell{rocky shell}, \spell{wave of dehydration}
+                    \item Rank 3: \spell{earthbind}, \spell{fireball}, \spell{geyser}, \spell{retributive winds}
+                    \item Rank 4: \spell{constraining bubble}, \spell{flight}, \spell{fissure}, \spell{immolate}
+                    \item Rank 5: \spell{earthglide}, \spell{greater firebolt}, \spell{greater gust of wind}, \spell{greater wave of dehydration}
+                    \item Rank 6: \spell{agile flight}, \spell{earthcage}, \spell{greater flame dash}, \spell{supreme fountain}
+                    \item Rank 7: \spell{blinding dust cloud}, \spell{earthquake}, \spell{soul of the phoenix}, \spell{supreme forceful aquajet}
+                \end{itemize}
+                \parhead{Suggested Feats} Sphere Focus: Aeromancy, Aquamancy, Pyromancy, or Terramancy
+                \parhead{Combat Tactics} You are a master of all four elements, so you have an immense variety of options available to you - if you choose the right spells.
+                You have a very high accuracy thanks to your Perception and a reasonably high magical power, so your primary role in combat will usually be to deploy the perfect damaging spell or debuff for the situation.
+                At low levels, especially if you don't have feats, it may be wise to delay acquiring your least favorite elemental mystic sphere until you get more spells known.
+                There's not much point in having access to four mystic spheres if you don't know enough spells to cast them all.
+                Your Elementalist abilities and skills give you a lot of narrative power, so stay alert for opportunities to overcome challenges without needing to fight at all.
             ",
             Self::NatureMagic => r"
+                If you want to quickly create a character based on this archetype, make the following choices:
+                \parhead{Species} Elf.
+                \parhead{Attributes} 1 Str, 3 Dex, 0 Con, 0 Int, 2 Per, 3 Wil.
+                \parhead{Class} Druid.
+                \parhead{Archetypes} Nature Magic first, Nature Spell Mastery second, Elementalist third.
+                \parhead{Insight Points} 2 points for a mystic sphere, 1 point for a spell
+                % 12 total skill points, counting the 3 from auto-training
+                \parhead{Skills} Awareness (M), Balance (T), Creature Handling (M), Knowledge (geography, nature) (M), Ride (T), Survival (M)
+                \parhead{Weapon Group} Headed weapons
+                \parhead{Languages} Common, Sylvan
+                \parhead{Equipment} Sickle, standard shield, leather armor. As you gain levels, use the best light armor you can afford.
+                \parhead{Legacy Item} 1-handed implement.
+                    At level 3, choose \mitem{staff of precision}.
+                    At level 9, choose \mitem{greater staff of precision} and \mitem{staff of focus}.
+                    At level 15, choose \mitem{supreme staff of precision}, \mitem{extending staff}, and \mitem{staff of focus}.
+                \parhead{Mystic Spheres} Aquamancy, Verdamancy
+                \parhead{Suggested Spells} 
+                \begin{itemize}
+                    \item Rank 1: \spell{aquajet blast}, \spell{barkskin}, \spell{crushing wave}, \spell{poison -- sassone leaf}
+                    \item Rank 2: \spell{entangle}, \spell{forceful aquajet}, \spell{obscuring mist}, \spell{poison -- nitharit}, \spell{wave of dehydration}
+                    \item Rank 3: \spell{desiccating curse}, \spell{fire seeds}, \spell{greater aquajet blast}, \spell{poison -- arsenic}, \spell{wall of thorns}
+                    \item Rank 4: \spell{aqueous form}, \spell{constraining bubble}, \spell{greater vine whip}, \spell{raging river}
+                    \item Rank 5: \spell{fluid motion}, \spell{greater entangle}, \spell{greater wave of dehydration}, \spell{poison -- black lotus}
+                    \item Rank 6: \spell{greater fire seeds}, \spell{greater geyser}, \spell{ring of mist}
+                    \item Rank 7: \spell{strangling vines}, \spell{supreme desiccation}, \spell{supreme vine whip}
+                \end{itemize}
+                \parhead{Suggested Feats} Sphere Focus: Aquamancy, Sphere Focus: Verdamancy, Herbalist
+                \parhead{Combat Tactics} You are a master of plants and nature.
+                Your spells excel at moving foes around the battlefield and constraining their movement while dealing reasonable damage.
+                You also have access to dangerous poisons to weaken your foes while they remain safely kept at bay.
             ",
             Self::NatureSpellMastery => r"
             ",
