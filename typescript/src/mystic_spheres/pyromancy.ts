@@ -184,6 +184,20 @@ export const pyromancy: MysticSphere = {
     },
 
     {
+      name: "Greater Firebolt",
+
+      attack: {
+        hit: `The subject takes 4d10 + \\glossterm{power} fire damage.`,
+        targeting: `
+          Make an attack vs. Armor against anything within \\medrange.
+        `,
+      },
+      rank: 5,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
       name: "Cone of Fire",
 
       attack: {
