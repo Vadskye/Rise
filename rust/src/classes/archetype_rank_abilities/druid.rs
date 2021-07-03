@@ -591,9 +591,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-         The bonus from your \textit{shift body} ability increases to \plus2.
-
-                ",
+                Your \textit<shift body> ability loses the \glossterm{Attune} (self) tag.
+                Instead, it lasts until you use it again.
+            ",
         },
         RankAbility {
             name: "Natural Force",
