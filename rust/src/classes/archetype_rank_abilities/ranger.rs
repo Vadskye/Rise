@@ -36,10 +36,10 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             \begin{itemize}
                 % TODO: figure out why this is a 2
                 \item Its \glossterm{fatigue tolerance} is 2.
-                \item Its \glossterm{hit points} are equal to your Constitution \add the base value for your level (see \tref{Character Advancement}).
-                \item Its \glossterm{damage resistance} the base value for your level \add half your Constitution (see \tref{Character Advancement}).
-                \item Each of its \glossterm{defenses} is normally equal to 5 \add your level.
-                \item Its \glossterm{accuracy} is equal to your level \add half your base Perception \add your \glossterm{magic bonuses} to accuracy.
+                \item Its \glossterm{hit points} are equal to your Constitution \add the base value for your level \add your \glossterm{magic bonus} to hit points (see \tref{Character Advancement}).
+                \item Its \glossterm{damage resistance} is equal to half your Constitution \add the base value for your level \add your \glossterm{magic bonus} to damage resistance (see \pcref{Character Advancement}).
+                \item Each of its \glossterm{defenses} is equal to 5 \add your level \add your \glossterm{magic bonus} to each corresponding defense.
+                \item Its \glossterm{accuracy} is equal to your level \add half your base Perception \add your \glossterm{magic bonus} to accuracy.
                 \item Its \glossterm{power} with its attacks is equal to your \glossterm{magic bonus} to \glossterm{magical power}.
                 \item It has no \glossterm{attunement points}.
                 \item The damage dealt by its natural weapons increases by \plus1d for each rank in this archetype beyond 1.
