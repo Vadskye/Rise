@@ -762,7 +762,7 @@ impl ClassArchetype {
                 \parhead{Archetypes} Nature Magic first, Nature Spell Mastery second, Elementalist third.
                 \parhead{Insight Points} 2 points for a mystic sphere, 1 point for a spell
                 % 12 total skill points, counting the 3 from auto-training
-                \parhead{Skills} Awareness (M), Balance (T), Creature Handling (M), Knowledge (geography, nature) (M), Ride (T), Survival (M)
+                \parhead{Skills} Awareness (M), Balance (T), Creature Handling (M), Knowledge (nature) (M), Ride (T), Stealth (M), Survival (M)
                 \parhead{Weapon Group} Headed weapons
                 \parhead{Languages} Common, Sylvan
                 \parhead{Equipment} Sickle, standard shield, leather armor. As you gain levels, use the best light armor you can afford.
@@ -787,8 +787,45 @@ impl ClassArchetype {
                 You also have access to dangerous poisons to weaken your foes while they remain safely kept at bay.
             ",
             Self::NatureSpellMastery => r"
+                Use the typical character for the Nature Magic druid archetype.
+                Even if you focus on spells through this archetype, you should generally still rank up your spells before improving your rank in this archetype.
             ",
             Self::Shifter => r"
+                If you want to quickly create a character based on this archetype, make the following choices:
+                \parhead{Species} Half-orc.
+                \parhead{Attributes} 3 Str, 3 Dex, 2 Con, 0 Int, 0 Per, 1 Wil.
+                \parhead{Class} Druid.
+                \parhead{Archetypes} Shifter first, Nature Magic second, Nature Spell Mastery third.
+                \parhead{Insight Points} 2 points for wild aspects, 2 points for spells
+                % 15 total skill points, counting the 6 from auto-training
+                \parhead{Skills} Awareness (M), Balance (M), Climb (M), Jump (M), Ride (T), Stealth (M), Survival (M), Swim (M)
+                \parhead{Weapon Group} Bows
+                \parhead{Languages} Common, Sylvan
+                \parhead{Equipment} Natural weapon, standard shield, chain shirt. As you gain levels, use the best light armor you can afford.
+                Use your natural weapons instead of manufactured weapons unless you need to fight at long range.
+                \parhead{Legacy Item} Apparel.
+                    At level 3, choose \mitem{staff of precision}.
+                    At level 9, choose \mitem{greater staff of precision} and \mitem{staff of focus}.
+                    At level 15, choose \mitem{supreme staff of precision}, \mitem{extending staff}, and \mitem{staff of focus}.
+                \parhead{Mystic Sphere} Polymorph
+                \parhead{Suggested Wild Aspects} Your choice of wild aspects determines much of how you feel, and they are less complicated to evaluate than spell, so choose wild aspects that match your goals.
+                The Bear, Viper, and Wolf forms excel at dealing damage in combat.
+                The Bull and Constrictor forms improve your ability to take unusual combat actions.
+                Other forms can be useful in specific circumstances and out of combat.
+                \parhead{Suggested Spells} 
+                \begin{itemize}
+                    \item Rank 1: \spell{camouflage}, \spell{mighty claw}, \spell{organ failure}, \spell{stoneskin}, \spell{twisting claw}
+                    \item Rank 2: \spell{brief regeneration}, \spell{bleed}, \spell{distant claw}, \spell{shrink}
+                    \item Rank 3: \spell{enlarge}, \spell{scent}, \spell{spikeform}
+                    \item Rank 4: \spell{draconic senses}, \spell{eyebite}, \spell{malleable body}
+                    \item Rank 5: \spell{baleful polymorph}, \spell{greater bleed}, \spell{vital regeneration}
+                    \item Rank 6: \spell{extruding spikes}
+                    \item Rank 7: \spell{cripple}, \spell{sludgeform}
+                \end{itemize}
+                \parhead{Suggested Feats} Sphere Focus: Polymorph, Regenerator, Brawler, Savage
+                \parhead{Combat Tactics} You are a lethal blend of claws and teeth.
+                You can shift your form to gain the perfect abilities for your current circumstances, and your high physical attributes make you hard to kill and hard to ignore.
+                Your flexibility between natural weapons, spells, and high physical skills give you a lot of options in and out of combat.
             ",
             Self::Wildspeaker => r"
             ",
