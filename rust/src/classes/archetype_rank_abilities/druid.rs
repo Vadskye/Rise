@@ -737,30 +737,11 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-         Your \textit{natural servant} gains an \glossterm{attunement point}.
-        This attunement point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
-        In addition, you can summon an alternate \textit{natural servant} based on your local environment, as described below.
-        \begin{itemize}
-            \item Aquatic: A shark appears that has a 40 foot \glossterm{swim speed} and no land speed.
-                It has a bite \glossterm{natural weapon}.
-            \item Arctic: An polar bear appears that has a \plus4 bonus to \glossterm{defenses} against attacks that deal cold damage.
-                It has a bite \glossterm{natural weapon} and two claw \glossterm{natural weapons}.
-            \item Desert: A camel appears that has no penalties for being in hot environments.
-                It has a bite \glossterm{natural weapon}.
-            \item Mountain: A goat appears that can move up or down steep slopes without slowing its movement.
-                It has a ram \glossterm{natural weapon}.
-            \item Forest: A bear appears that has a bonus to its \glossterm{hit points} equal to twice your rank in this archetype.
-                It has a bite \glossterm{natural weapon} and two claw \glossterm{natural weapons}.
-            \item Plains: A wolf appears that has the \glossterm{scent} ability.
-                It has a bite \glossterm{natural weapon}.
-            % TODO: define shallow water
-            \item Swamp: A crocodile appears that has a 20 foot \glossterm{land speed} and a 30 foot \glossterm{swim speed}.
-                It has a bite \glossterm{natural weapon}.
-            \item Underground: A dire rat appears that has \glossterm{low-light vision} and \glossterm{darkvision}.
-                It has a bite \glossterm{natural weapon}.
-        \end{itemize}
-
-                ",
+                Your \textit{natural servant} gains an \glossterm{attunement point}.
+                This attunement point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
+                In addition, you can cast \glossterm{Attune} (self) spells on your \textit{natural servant} if it is within \shortrange of you.
+                When you do, the natural servant attunes to the spell intead of you, as if the spell was an \glossterm{Attune} (target) spell.
+            ",
         },
         RankAbility {
             name: "Greater Nature's Ally",
