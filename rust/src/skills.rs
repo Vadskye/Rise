@@ -12,8 +12,8 @@ pub trait HasSkills {
 
 #[derive(Eq, Hash)]
 pub enum Skill {
-    Agility,
     Awareness,
+    Balance,
     Climb,
     Craft,
     CreatureHandling,
@@ -49,8 +49,8 @@ pub enum SkillCategory {
 impl Skill {
     pub fn attribute(&self) -> Option<Attribute> {
         match self {
-            Self::Agility => Some(Attribute::Dexterity),
             Self::Awareness => Some(Attribute::Perception),
+            Self::Balance => Some(Attribute::Dexterity),
             Self::Climb => Some(Attribute::Strength),
             Self::Craft => Some(Attribute::Intelligence),
             Self::CreatureHandling => Some(Attribute::Perception),
@@ -80,8 +80,8 @@ impl Skill {
 
     pub fn name(&self) -> &str {
         match self {
-            Self::Agility => "agility",
             Self::Awareness => "awareness",
+            Self::Balance => "balance",
             Self::Climb => "climb",
             Self::Craft => "craft",
             Self::CreatureHandling => "creature handling",
@@ -111,8 +111,8 @@ impl Skill {
 
     pub fn all() -> Vec<Self> {
         return vec![
-            Self::Agility,
             Self::Awareness,
+            Self::Balance,
             Self::Climb,
             Self::Craft,
             Self::CreatureHandling,
@@ -155,8 +155,8 @@ impl Skill {
 
     pub fn skill_category(&self) -> Option<SkillCategory> {
         match self {
-            Self::Agility => Some(SkillCategory::Movement),
             Self::Awareness => Some(SkillCategory::Senses),
+            Self::Balance => Some(SkillCategory::Movement),
             Self::Climb => Some(SkillCategory::Movement),
             Self::Craft => None,
             Self::CreatureHandling => None,

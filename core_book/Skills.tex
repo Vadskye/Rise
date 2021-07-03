@@ -41,7 +41,7 @@ This chapter describes each skill, including common uses for those skills.
                 Climb             & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
                 Jump              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
                 Swim              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
-                Agility           & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+                Balance           & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
                 Flexibility       & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
                 Ride              & C        & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & Dex          \\
                 Sleight of Hand   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
@@ -129,61 +129,6 @@ This chapter describes each skill, including common uses for those skills.
 
         If you are suspicious of a situation, you can ask the GM to make a relevant check for you.
         This usually should not grant a bonus to the check, but it can ensure that the GM did not forget to make the check!
-
-\newpage
-\skill{Agility}{Dex}
-        The Agility skill represents your ability to balance, tumble, and perform similar feats of agility and poise.
-
-    \subsection{Agile Charge}\label{Agile Charge}
-        You can make a \glossterm{difficulty rating} 15 Agility check while \glossterm{charging} to change directions while charging.
-        Success means you can make a single turn of up to 90 degrees during the movement.
-        Failure means you can't change direction, though you can continue your movement or stop.
-        Critical failure means you stop where you tried to change direction and fall \prone.
-
-    \subsection{Balance}\label{Balance}
-
-        When you are on a slippery or narrow surface, you must make an Agility check to move.
-        Success means you move along the surface at half speed.
-        Critical success means you move along the surface at full speed.
-        Failure means your action is wasted, and you do not move.
-        Critical failure means you fall prone.
-        If you do not have enough room to fall prone, you may fall off of the edge you are balancing on.
-
-        The \glossterm{difficulty rating} of Agility checks to balance varies with the surface, as described in \trefnp{Balancing Difficulty Ratings}.
-        In addition, if you are forcibly moved while on a slippery or narrow surface, you must make an Agility check against the same \glossterm{difficulty rating}.\@
-        Success means you stay standing.
-        Failure means you fall prone.
-
-        \begin{dtable}
-            \lcaption{Balancing Difficulty Ratings}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Narrow Surface}           & \tb{Difficulty Rating} \tableheaderrule
-                At least one foot wide        & 0             \\
-                At least six inches wide      & 5             \\
-                At least two inches wide      & 10            \\
-                At least one inch wide        & 15            \\
-                Less than than one inch wide  & 20            \\
-                \tb{Surface Condition}        & \tb{Difficulty Modifier} \\
-                Water covered                 & \plus2        \\
-                Slightly mobile (rope bridge) & \plus2        \\
-                Ice or oil covered            & \plus5        \\
-                Very mobile (slack rope)      & \plus5        \\
-            \end{dtabularx}
-        \end{dtable}
-
-    \subsection{Mitigate Fall}
-        As you hit the ground after a fall, you can make an Agility check to reduce falling damage.
-        A \glossterm{difficulty rating} 5 check allows you to treat a fall as if it were 10 feet shorter.
-        For every 10 points by which you beat that \glossterm{difficulty rating}, you can reduce the falling damage by 10 additional feet.
-
-    \subsection{Rapid Stand}\label{Rapid Stand}
-        You can use the \textit{rapid stand} ability as a \glossterm{minor action}.
-        \begin{freeability}{Rapid Stand}[Swift]
-            You make a \glossterm{difficulty rating} 15 Agility check to stand up from a prone position quickly.
-            Success means you stand up.
-            Since this is a \abilitytag{Swift} ability, standing up in this way means you do not suffer the penalties for being prone during the current phase.
-            Failure means you fail to stand up.
-        \end{freeability}
 
 \newpage
 \skill{Awareness}{Per}
@@ -331,6 +276,57 @@ This chapter describes each skill, including common uses for those skills.
             \end{dtabularx}
             1 Doubled for scent-based Awareness checks.
         \end{dtable}
+
+\newpage
+\skill{Balance}{Dex}
+        The Balance skill represents your ability to balance, tumble, and perform similar feats of agility and poise.
+
+    \subsection{Agile Charge}\label{Agile Charge}
+        You can make a \glossterm{difficulty rating} 15 Balance check while \glossterm{charging} to change directions while charging.
+        Success means you can make a single turn of up to 90 degrees during the movement.
+        Failure means you can't change direction, though you can continue your movement or stop.
+        Critical failure means you stop where you tried to change direction and fall \prone.
+
+    \subsection{Balance}\label{Balance}
+
+        When you are on a slippery or narrow surface, you must make an Balance check to move.
+        Success means you move along the surface at half speed.
+        Critical success means you move along the surface at full speed.
+        Failure means your action is wasted, and you do not move.
+        Critical failure means you fall prone.
+        If you do not have enough room to fall prone, you may fall off of the edge you are balancing on.
+
+        The \glossterm{difficulty rating} of Balance checks to balance varies with the surface, as described in \trefnp{Balancing Difficulty Ratings}.
+        In addition, if you are forcibly moved while on a slippery or narrow surface, you must make an Balance check against the same \glossterm{difficulty rating}.\@
+        Success means you stay standing.
+        Failure means you fall prone.
+
+        \begin{dtable}
+            \lcaption{Balancing Difficulty Ratings}
+            \begin{dtabularx}{\columnwidth}{l X}
+                \tb{Narrow Surface}           & \tb{Difficulty Rating} \tableheaderrule
+                At least one foot wide        & 0             \\
+                At least six inches wide      & 5             \\
+                At least two inches wide      & 10            \\
+                At least one inch wide        & 15            \\
+                Less than than one inch wide  & 20            \\
+                \tb{Surface Condition}        & \tb{Difficulty Modifier} \\
+                Water covered                 & \plus2        \\
+                Slightly mobile (rope bridge) & \plus2        \\
+                Ice or oil covered            & \plus5        \\
+                Very mobile (slack rope)      & \plus5        \\
+            \end{dtabularx}
+        \end{dtable}
+
+    \subsection{Rapid Stand}\label{Rapid Stand}
+        You can use the \textit{rapid stand} ability as a \glossterm{minor action}.
+        \begin{freeability}{Rapid Stand}[Swift]
+            You make a \glossterm{difficulty rating} 15 Balance check to stand up from a prone position quickly.
+            Success means you stand up.
+            Since this is a \abilitytag{Swift} ability, standing up in this way means you do not suffer the penalties for being prone during the current phase.
+            Failure means you fail to stand up.
+        \end{freeability}
+
 
 \newpage
 \skill{Deception}{---}
@@ -943,8 +939,11 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Hop Up}
         You can make a \glossterm{difficulty rating} 5 Jump check while moving to jump up onto an object as tall as your waist, such as a table or small boulder. Doing so counts as 5 feet of movement. Success means you land on top of the object and can continue your movement. Failure indicates you stop your movement where you are. You do not need to get a running start to hop up.
 
-    \subsection{Jump Down}
-        You can make a \glossterm{difficulty rating} 5 Jump check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage. You do not need to get a running start to hop up.
+    \subsection{Mitigate Fall}
+        As you hit the ground after a fall, you can make an Jump check to reduce falling damage.
+        A \glossterm{difficulty rating} 5 check allows you to treat a fall as if it were 10 feet shorter.
+        For every 10 points by which you beat that \glossterm{difficulty rating}, you can reduce the falling damage by 10 additional feet.
+        You do not need a running start to use this ability.
 
     \subsection{Leap}\label{Leap}
         As part of movement, you can make a Jump check to jump.
@@ -974,7 +973,7 @@ This chapter describes each skill, including common uses for those skills.
         This functions like the \textit{leap} ability, except that you also make an attack vs. Reflex against one creature in a space at the end of your motion, including both your initial jump and your fall afterwards (if any).
         Your \glossterm{accuracy} is equal to your Jump skill.
         On a hit, the target takes half of the \glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
-        This does not reduce the falling damage you take, and you cannot combine this ability with the \textit{jump down} ability to reduce your falling damage.
+        This does not reduce the falling damage you take, and you cannot combine this ability with the \textit{mitigate fall} ability to reduce your falling damage.
 
 \newpage
 \skill{Knowledge}{Int}

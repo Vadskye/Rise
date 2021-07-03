@@ -520,7 +520,7 @@ impl ClassArchetype {
                 \parhead{Class} Barbarian.
                 \parhead{Archetypes} Primal Warrior first, Battleforged Resilience second, Outland Savage third.
                 \parhead{Insight Points} 4 points for additional maneuvers.
-                \parhead{Skills} Agility (M), Awareness (M), Climb (M), Endurance (M), Medicine (T), Jump (M), Swim (M), Survival (M).
+                \parhead{Skills} Awareness (M), Balance (M), Climb (M), Endurance (M), Medicine (T), Jump (M), Swim (M), Survival (M).
                 \parhead{Weapon Groups} Axes, crossbows.
                 \parhead{Languages} Common, Dwarven, Orc.
                 \parhead{Equipment} Greataxe, scale mail. As you gain levels, buy a heavy crossbow and use the best medium armor you can afford.
@@ -549,7 +549,7 @@ impl ClassArchetype {
                 \parhead{Class} Barbarian.
                 \parhead{Archetypes} Totemist (eagle totem) first, Primal Warrior second, Battlerager third.
                 \parhead{Insight Points} 1 point for proficiency with exotic bows, 1 point for additional maneuvers.
-                \parhead{Skills} Agility (M), Awareness (M), Climb (T), Creature Handling (M), Endurance (M), Jump (T), Swim (T), Survival (M).
+                \parhead{Skills} Awareness (M), Balance (M), Climb (T), Creature Handling (M), Endurance (M), Jump (T), Swim (T), Survival (M).
                 \parhead{Weapon Groups} Bows, thrown weapons.
                 \parhead{Languages} Common, Elven, Giant.
                 \parhead{Equipment} Longbow, leather body armor. As you gain levels, buy a flatbow and use the best light armor you can afford.
@@ -585,7 +585,7 @@ impl ClassArchetype {
                 \parhead{Weapon Group} Club-like weapons.
                 \parhead{Languages} Common, Dwarven, Halfling.
                 \parhead{Equipment} Mace, scale mail. As you gain levels, use the best medium armor you can afford.
-                \parhead{Legacy Item} Implement.
+                \parhead{Legacy Item} 1-handed implement.
                     At level 3, choose \mitem{staff of precision}.
                     At level 9, choose \mitem{greater staff of precision} and \mitem{staff of focus}.
                     At level 15, choose \mitem{supreme staff of precision}, \mitem{fearsome staff}, and \mitem{staff of focus}.
@@ -657,7 +657,7 @@ impl ClassArchetype {
                 \parhead{Weapon Group} Club-like weapons.
                 \parhead{Languages} Common, Draconic, Halfling.
                 \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
-                \parhead{Legacy Item} Implement.
+                \parhead{Legacy Item} 1-handed implement.
                     At level 3, choose \mitem{staff of potency}.
                     At level 9, choose \mitem{reaching staff} and \mitem{staff of potency}.
                     At level 15, choose \mitem{greater staff of the archmagi}, \mitem{reaching staff}, and \mitem{staff of focus}.

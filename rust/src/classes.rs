@@ -74,8 +74,8 @@ impl Class {
     pub fn class_skills(&self) -> Vec<Skill> {
         match self {
             Self::Barbarian => vec![
-                Skill::Agility,
                 Skill::Awareness,
+                Skill::Balance,
                 Skill::Climb,
                 Skill::Craft,
                 Skill::CreatureHandling,
@@ -111,8 +111,8 @@ impl Class {
                 Skill::Spellsense,
             ],
             Self::Druid => vec![
-                Skill::Agility,
                 Skill::Awareness,
+                Skill::Balance,
                 Skill::Climb,
                 Skill::Craft,
                 Skill::CreatureHandling,
@@ -133,8 +133,8 @@ impl Class {
                 Skill::Swim,
             ],
             Self::Fighter => vec![
-                Skill::Agility,
                 Skill::Awareness,
+                Skill::Balance,
                 Skill::Climb,
                 Skill::Craft,
                 Skill::Deception,
@@ -148,8 +148,8 @@ impl Class {
                 Skill::Swim,
             ],
             Self::Monk => vec![
-                Skill::Agility,
                 Skill::Awareness,
+                Skill::Balance,
                 Skill::Climb,
                 Skill::Craft,
                 Skill::CreatureHandling,
@@ -185,8 +185,8 @@ impl Class {
                 Skill::SocialInsight,
             ],
             Self::Ranger => vec![
-                Skill::Agility,
                 Skill::Awareness,
+                Skill::Balance,
                 Skill::Climb,
                 Skill::Craft,
                 Skill::CreatureHandling,
@@ -210,8 +210,8 @@ impl Class {
                 Skill::Swim,
             ],
             Self::Rogue => vec![
-                Skill::Agility,
                 Skill::Awareness,
+                Skill::Balance,
                 Skill::Climb,
                 Skill::Craft,
                 Skill::Deception,

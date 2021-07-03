@@ -25,7 +25,7 @@ You cannot gain the same feat twice.
 
         \parhead{Dwarf} Any from the following list: \featref*{Blindfighter}, \featref*{Craft Specialization}, \featref*{Iron Will}, \featref*{Martial Training}, \featref*{Regenerator}, \featref*{Toughness}.
 
-        \parhead{Elf} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Agility Specialization}, \featref*{Awareness Specialization}, \featref*{Sniper}, \featref*{Rapid Reaction}.
+        \parhead{Elf} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Awareness Specialization}, \featref*{Balance Specialization}, \featref*{Sniper}, \featref*{Rapid Reaction}.
 
         \parhead{Gnome} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Blindfighter}, \featref*{Craft Specialization}, \featref*{Stealth Specialization}, \featref*{Toughness}.
 
@@ -33,7 +33,7 @@ You cannot gain the same feat twice.
 
         \parhead{Half-Orc} Any Combat feat (see \pcref{Combat Feats}), or any from the following list: \featref*{Intimidate Specialization}, \featref*{Toughness}.
 
-        \parhead{Halfling} Any from the following list: \featref*{Agility Specialization}, \featref*{Climb Specialization}, \featref*{Iron Will}, \featref*{Jump Specialization}, \featref*{Rapid Reaction}, \featref*{Stealth Specialization}.
+        \parhead{Halfling} Any from the following list: \featref*{Balance Specialization}, \featref*{Climb Specialization}, \featref*{Iron Will}, \featref*{Jump Specialization}, \featref*{Rapid Reaction}, \featref*{Stealth Specialization}.
 
         \subsubsection{Changing Species}
             In extraordinary cases, a creature may change its species.
@@ -96,8 +96,8 @@ You cannot gain the same feat twice.
         \featref{Toughness}          & Con 1                    & Increase physical fortitude         & \tdash             & \featpref{Toughness}          \\
 
         \tb{Skill Feats}\label{Skill Feats}        & \tb{Prerequisites}          & \tb{Benefits}                         & \tb{Feat Types} & \tb{Page}                                   \\
-        \featref{Agility Specialization}           & Mastered Agility            & Improve use of chosen skill           & \tdash          & \featpref{Agility Specialization}           \\
         \featref{Awareness Specialization}         & Mastered Awareness          & Improve use of chosen skill           & \tdash          & \featpref{Awareness Specialization}         \\
+        \featref{Balance Specialization}           & Mastered Balance            & Improve use of chosen skill           & \tdash          & \featpref{Balance Specialization}           \\
         \featref{Climb Specialization}             & Mastered Climb              & Improve use of chosen skill           & \tdash          & \featpref{Climb Specialization}             \\
         \featref{Craft Specialization}             & Mastered Craft              & Improve use of chosen skill           & \tdash          & \featpref{Craft Specialization}             \\
         \featref{Creature Handling Specialization} & Mastered Creature Handling  & Improve use of chosen skill           & \tdash          & \featpref{Creature Handling Specialization} \\
@@ -180,43 +180,6 @@ You cannot gain the same feat twice.
         These are listed under a \textbf{Prerequisites} heading.
         If a character loses the prerequisites for a feat, they lose all benefits of the feat until they meet the prerequisites again.
 
-    \begin{feat}{Agility Specialization}{Skill}
-        \featpre Agility as a mastered skill.
-
-        \ff[1]{Specialization} You gain a \plus3 bonus to the Agility skill.
-
-        \ff[3]{Combat Tumble} During each phase, you may move through one creature's space during movement.
-        You treat its space as \glossterm{difficult terrain}.
-        After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
-        Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
-
-        \ff[6]{Agile Movement} Whenever you use an ability that causes you to move using one of your movement speeds in a straight line, you can make a single turn of up to 90 degrees during the movement. 
-        This only affects voluntary movement, such as the \textit{charge} ability or the \textit{reaping charge} maneuver, and not forced movement imposed on you.
-        This ability replaces the \textit{agile charge} ability, and cannot be combined with it (see \pcref{Agile Charge}).
-
-        \ff[6]{Instant Stand} You can use the \textit{rapid stand} ability as a \glossterm{free action} instead of a \glossterm{minor action} (see \pcref{Rapid Stand}).
-
-        \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
-
-         % modifier at 10th: 12dex + 2mst + 2ft = 16
-        \ff[12]{Air Dancer}[Magical] You can attempt to move on surfaces that cannot support your weight.
-        Surfaces that can support at least a quarter of your weight, such as thin tree branches and dense liquids, are \glossterm{difficulty rating} 20.
-        Surfaces that can support at least a tenth of your weight, such as water, are \glossterm{difficulty rating} 25.
-        Surfaces that can support at least a hundredth of your weight, such as tree leaves, are \glossterm{difficulty rating} 30.
-        Surfaces that cannot support your weight at all, such as air, are \glossterm{difficulty rating} 40.
-
-        Success means you move along the surface at half speed.
-        Failure means you fall through the surface.
-        The \glossterm{difficulty rating} increases by 5 for each consecutive round that you spend moving in this way.
-
-        \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
-
-        \ff[18]{Greater Agile Movement} Whenever you use an ability that causes you to move one of your movement speeds in a straight line, you can move in any path, not just in a straight line.
-
-        \ff[21]{Greater Air Dancer} You can move at full speed while using your \textit{air dancer} ability.
-        In addition, for each round that you spend using your \textit{air dancer} ability, the \glossterm{difficulty rating} increases by 2 instead of by 5.
-    \end{feat}
-
     \begin{feat}{Awareness Specialization}{Skill}
         \featpre Awareness as a mastered skill.
 
@@ -237,6 +200,43 @@ You cannot gain the same feat twice.
 
         \ff[21]{Supreme Extraordinary Senses} You can choose an additional sense from the list given in your \textit{greater extraordinary senses} ability.
         In addition, the range of all senses gained from this feat is doubled.
+    \end{feat}
+
+    \begin{feat}{Balance Specialization}{Skill}
+        \featpre Balance as a mastered skill.
+
+        \ff[1]{Specialization} You gain a \plus3 bonus to the Balance skill.
+
+        \ff[3]{Combat Tumble} During each phase, you may move through one creature's space during movement.
+        You treat its space as \glossterm{difficult terrain}.
+        After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
+        Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
+
+        \ff[6]{Agile Movement} Whenever you use an ability that causes you to move using one of your movement speeds in a straight line, you can make a single turn of up to 90 degrees during the movement. 
+        This only affects voluntary movement, such as the \textit{charge} ability or the \textit{reaping charge} maneuver, and not forced movement imposed on you.
+        This ability replaces the \textit{agile charge} ability, and cannot be combined with it (see \pcref{Agile Charge}).
+
+        \ff[6]{Instant Stand} You can use the \textit{rapid stand} ability as a \glossterm{free action} instead of a \glossterm{minor action} (see \pcref{Rapid Stand}).
+
+        \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
+
+         % modifier at 10th: 12dex + 2mst + 2ft = 16
+        \ff[12]{Balance On Air}[Magical] You can attempt to move on surfaces that cannot support your weight.
+        Surfaces that can support at least a quarter of your weight, such as thin tree branches and dense liquids, are \glossterm{difficulty rating} 20.
+        Surfaces that can support at least a tenth of your weight, such as water, are \glossterm{difficulty rating} 25.
+        Surfaces that can support at least a hundredth of your weight, such as tree leaves, are \glossterm{difficulty rating} 30.
+        Surfaces that cannot support your weight at all, such as air, are \glossterm{difficulty rating} 40.
+
+        Success means you move along the surface at half speed.
+        Failure means you fall through the surface.
+        The \glossterm{difficulty rating} increases by 5 for each consecutive round that you spend moving in this way.
+
+        \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
+
+        \ff[18]{Greater Agile Movement} Whenever you use an ability that causes you to move one of your movement speeds in a straight line, you can move in any path, not just in a straight line.
+
+        \ff[21]{Greater Balance On Air} You can move at full speed while using your \textit{air dancer} ability.
+        In addition, for each round that you spend using your \textit{air dancer} ability, the \glossterm{difficulty rating} increases by 2 instead of by 5.
     \end{feat}
 
     \begin{feat}{Blindfighter}{Combat}
@@ -1501,7 +1501,7 @@ You cannot gain the same feat twice.
         \begin{itemize}
             \item Acting: Deception
             \item Comedy: Deception
-            \item Dance: Agility
+            \item Dance: Balance
             \item Keyboard instruments: Devices
             \item Oratory: Persuasion
             \item Percussion instruments: Creature Handling
