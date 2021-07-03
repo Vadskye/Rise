@@ -499,9 +499,9 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-         You gain a \plus1 bonus to the base value of one physical \glossterm{attribute} of your choice: Strength, Dexterity, or Constitution.
-
-                ",
+                Choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
+                You permanently gain a \plus1 bonus to the base value of that attribute, to a maximum of 4.
+            ",
         },
         RankAbility {
             name: "Greater Fast Movement",
@@ -526,9 +526,8 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-         The bonus from your \textit{perfect body} ability applies to the base value of all physical attributes, not just the one you chose.
-
-                ",
+                The bonus from your \textit{perfect body} ability applies to the base value of all physical attributes, not just the one you chose.
+            ",
         },
         RankAbility {
             name: "Supreme Fast Movement",
