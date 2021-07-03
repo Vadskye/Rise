@@ -681,6 +681,46 @@ export const aquamancy: MysticSphere = {
       },
       type: "Attune (self)",
     },
+    {
+      name: "Forceful Aquajet",
+
+      attack: {
+        crit: "Double damage, and you can knockback the subject 60 feet instead of 30 feet.",
+        // This is +1d over the normal damage to help split the difference since the effect isn't
+        // consistently t2 worthy. It deals an immediate 3d6 if you smash someone against a barrier.
+        hit: `
+          The subject takes 1d10 + half \\glossterm{power} bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
+          Moving the subject upwards costs twice the normal movement cost.
+        `,
+        targeting:
+          "Make an attack vs. Fortitude against anything Large or smaller within \\shortrange.",
+      },
+      // narrative: '',
+      rank: 2,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Greater Forceful Aquajet",
+
+      attack: {
+        crit: "Double damage, and you can knockback the subject 120 feet instead of 60 feet.",
+        // This is +1d over the normal damage to help split the difference since the effect isn't
+        // consistently t2 worthy. It deals an immediate 3d6 if you smash someone against a barrier.
+        hit: `
+          The subject takes 2d10 + half \\glossterm{power} bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 60 feet in any direction (see \\pcref{Knockback Effects}).
+          Moving the subject upwards costs twice the normal movement cost.
+        `,
+        targeting:
+          "Make an attack vs. Fortitude against anything Large or smaller within \\shortrange.",
+      },
+      // narrative: '',
+      rank: 5,
+      scaling: "damage",
+      type: "Instant",
+    },
   ],
   rituals: [
     {
