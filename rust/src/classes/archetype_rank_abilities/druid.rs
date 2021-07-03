@@ -669,7 +669,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 \item Its \glossterm{damage resistance} is equal to the base value for your level (see \pcref{Character Advancement}).
                 \item Each of its \glossterm{defenses} is equal to 5 \add your level.
                 \item Its \glossterm{accuracy} is equal to your level \add half your base Perception \add your \glossterm{magic bonuses} to accuracy.
-                \item Its \glossterm{power} with its attacks is 0.
+                \item Its \glossterm{power} with its attacks is equal to your \glossterm{magic bonus} to \glossterm{magical power}.
                 \item Its \glossterm{base speed} is the normal base speed for its size (see \tref{Size in Combat}).
                 \item It has no \glossterm{attunement points}.
                 \item The damage dealt by its natural weapons increases by \plus1d for each rank in this archetype beyond 1.

@@ -40,7 +40,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 \item Its \glossterm{damage resistance} the base value for your level \add half your Constitution (see \tref{Character Advancement}).
                 \item Each of its \glossterm{defenses} is normally equal to 5 \add your level.
                 \item Its \glossterm{accuracy} is equal to your level \add half your base Perception \add your \glossterm{magic bonuses} to accuracy.
-                \item Its \glossterm{power} with its attacks is 0.
+                \item Its \glossterm{power} with its attacks is equal to your \glossterm{magic bonus} to \glossterm{magical power}.
                 \item It has no \glossterm{attunement points}.
                 \item The damage dealt by its natural weapons increases by \plus1d for each rank in this archetype beyond 1.
             \end{itemize}
