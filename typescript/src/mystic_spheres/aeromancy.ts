@@ -201,10 +201,8 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: "Double damage, and you can knockback the subject 60 feet instead of 30 feet.",
-        // This is +1d over the normal damage to help split the difference since the effect isn't
-        // consistently t2 worthy. It deals an immediate 3d6 if you smash someone against a barrier.
         hit: `
-          The subject takes 1d10 bludgeoning damage.
+          The subject takes 1d6 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
           Moving the subject upwards costs twice the normal movement cost.
         `,
@@ -212,27 +210,33 @@ export const aeromancy: MysticSphere = {
           "Make an attack vs. Fortitude against anything Large or smaller within \\medrange.",
       },
       // narrative: '',
-      rank: 2,
+      rank: 1,
       scaling: "damage",
       type: "Instant",
     },
     {
       name: "Greater Buffet",
 
-      attack: {
-        crit: "Double damage, and you can knockback the subject 120 feet instead of 60 feet.",
-        glance: "Half damage.",
+      functionsLike: {
+        name: 'buffet',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        hit: `
-          The subject takes 2d10 bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 60 feet in any direction (see \\pcref{Knockback Effects}).
-          Moving the subject upwards costs twice the normal movement cost.
-        `,
-        targeting:
-          "Make an attack vs. Fortitude against anything Huge or smaller within \\medrange.",
+        exceptThat: "the damage increases to 2d6. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
       },
       // narrative: '',
-      rank: 5,
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Supreme Buffet",
+
+      functionsLike: {
+        name: 'buffet',
+        // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
+        exceptThat: "the damage increases to 4d6. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
+      },
+      // narrative: '',
+      rank: 7,
       scaling: "damage",
       type: "Instant",
     },
@@ -615,22 +619,18 @@ export const aeromancy: MysticSphere = {
       name: "Downdraft",
 
       attack: {
-        crit: `
-          The effective force of gravity is increased by approximately four times instead.
-          This increases the penalties to -4.
-        `,
-        glance: "The condition is removed at the end of the next round.",
+        crit: `The condition must be removed twice before the effect ends.`,
         hit: `
           As a \\glossterm{condition}, air buffets the subject downward, pushing it towards the ground with great force.
-          This approximately doubles the gravity it experiences, which imposes a -2 penalty to \\glossterm{accuracy}, physical \\glossterm{checks}, and \\glossterm{defenses}.
+          It is \\slowed and unable to use any fly speed or glide speed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\closerange.
         `,
       },
       // narrative: '',
       // +1 level since it's stronger than a typical rank 1 debuff
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
       type: "Duration",
     },
