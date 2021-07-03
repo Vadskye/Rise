@@ -467,7 +467,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                 
                 \rankline
-                \rank{3} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}.
+                \rank{3} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}, to a minimum of Tiny.
                 \rank{5} The skill bonuses increases to \plus4.
                 \rank{7} When you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
             \end{durationability}
@@ -520,7 +520,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
             \begin{durationability}{Photosynthesis}[Duration]
                 \rankline
-                As long as you are in natural sunlight, you gain a \plus5 foot bonus to the \glossterm{base speed} for your size.
+                As long as you are in natural sunlight, you gain a \plus5 foot bonus to your speed with all \glossterm{movement modes}.
                 \rankline
                 \rank{3} As long as you are in natural sunlight, you do not gain hunger or thirst.
                 When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
