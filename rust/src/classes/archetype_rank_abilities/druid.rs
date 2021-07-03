@@ -663,6 +663,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             Your magical connection to the animal improves its resilience and strength in combat.
             The animal's statistics use the values below, except that each animal also gains a special ability based on the environment you are in.
             \begin{itemize}
+                \item Its size category is Medium.
                 \item Its \glossterm{fatigue tolerance} is 0, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
                 \item Its \glossterm{hit points} are equal to the base value for your level (see \tref{Character Advancement}).
                 \item Its \glossterm{damage resistance} is equal to the base value for your level (see \pcref{Character Advancement}).
@@ -683,21 +684,21 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
         For example, your \textit{natural servant} in an aquatic environment may be a fish or seal instead of a shark.
         Unusual environments may have different animals than the standard animals listed below.
         \begin{itemize}
-            \item Aquatic: A Medium shark appears that has a 30 foot \glossterm{swim speed} and no land speed.
+            \item Aquatic: A shark appears that has a 30 foot \glossterm{swim speed} and no land speed.
                 It has a bite \glossterm{natural weapon}.
-            \item Arctic: An Medium arctic fox appears that has no penalties for being in cold environments.
+            \item Arctic: An arctic fox appears that has no penalties for being in cold environments.
                 It has a bite \glossterm{natural weapon}.
-            \item Desert: A Medium hyena appears that has no penalties for being in hot environments.
+            \item Desert: A hyena appears that has no penalties for being in hot environments.
                 It has a bite \glossterm{natural weapon}.
-            \item Mountain: A Medium goat appears that can move up or down steep slopes without slowing its movement.
+            \item Mountain: A goat appears that can move up or down steep slopes without slowing its movement.
                 It has a ram \glossterm{natural weapon}.
-            \item Forest: A Medium wolverine appears that has two additional \glossterm{hit points}.
+            \item Forest: A wolverine appears that has two additional \glossterm{hit points}.
                 It has a bite \glossterm{natural weapon}.
-            \item Plains: A Medium wolf appears that has the \glossterm{scent} ability.
+            \item Plains: A wolf appears that has the \glossterm{scent} ability.
                 It has a bite \glossterm{natural weapon}.
-            \item Swamp: A Medium crocodile appears that has a 15 foot \glossterm{land speed} and a 25 foot \glossterm{swim speed}.
+            \item Swamp: A crocodile appears that has a 15 foot \glossterm{land speed} and a 25 foot \glossterm{swim speed}.
                 It has a bite \glossterm{natural weapon}.
-            \item Underground: A Medium dire rat appears that has \glossterm{low-light vision}.
+            \item Underground: A dire rat appears that has \glossterm{low-light vision}.
                 It has a bite \glossterm{natural weapon}.
         \end{itemize}
 
@@ -740,22 +741,22 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
         This attunement point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
         In addition, you can summon an alternate \textit{natural servant} based on your local environment, as described below.
         \begin{itemize}
-            \item Aquatic: A Medium shark appears that has a 40 foot \glossterm{swim speed} and no land speed.
+            \item Aquatic: A shark appears that has a 40 foot \glossterm{swim speed} and no land speed.
                 It has a bite \glossterm{natural weapon}.
-            \item Arctic: An Medium polar bear appears that has a \plus4 bonus to \glossterm{defenses} against attacks that deal cold damage.
+            \item Arctic: An polar bear appears that has a \plus4 bonus to \glossterm{defenses} against attacks that deal cold damage.
                 It has a bite \glossterm{natural weapon} and two claw \glossterm{natural weapons}.
-            \item Desert: A Medium camel appears that has no penalties for being in hot environments.
+            \item Desert: A camel appears that has no penalties for being in hot environments.
                 It has a bite \glossterm{natural weapon}.
-            \item Mountain: A Medium goat appears that can move up or down steep slopes without slowing its movement.
+            \item Mountain: A goat appears that can move up or down steep slopes without slowing its movement.
                 It has a ram \glossterm{natural weapon}.
-            \item Forest: A Medium bear appears that has a bonus to its \glossterm{hit points} equal to twice your rank in this archetype.
+            \item Forest: A bear appears that has a bonus to its \glossterm{hit points} equal to twice your rank in this archetype.
                 It has a bite \glossterm{natural weapon} and two claw \glossterm{natural weapons}.
-            \item Plains: A Medium wolf appears that has the \glossterm{scent} ability.
+            \item Plains: A wolf appears that has the \glossterm{scent} ability.
                 It has a bite \glossterm{natural weapon}.
             % TODO: define shallow water
-            \item Swamp: A Medium crocodile appears that has a 20 foot \glossterm{land speed} and a 30 foot \glossterm{swim speed}.
+            \item Swamp: A crocodile appears that has a 20 foot \glossterm{land speed} and a 30 foot \glossterm{swim speed}.
                 It has a bite \glossterm{natural weapon}.
-            \item Underground: A Medium dire rat appears that has \glossterm{low-light vision} and \glossterm{darkvision}.
+            \item Underground: A dire rat appears that has \glossterm{low-light vision} and \glossterm{darkvision}.
                 It has a bite \glossterm{natural weapon}.
         \end{itemize}
 
@@ -797,7 +798,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 Your \textit{natural servant} gains two additional \glossterm{attunement points}.
-                In addition, you may choose a natural servant from any environment that is within a 50 mile walking distance from your current location, rather than only gaining a natural servant from your current environment.
+                In addition, you may choose to have a Large natural servant appear instead of a Medium natural servant.
             ",
         },
     ];
