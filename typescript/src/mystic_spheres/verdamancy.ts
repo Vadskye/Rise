@@ -597,9 +597,9 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You also gain a +1 bonus to Armor defense.`,
-        5: `The encumbrance reduction is increased to 3.`,
-        7: `The bonus to Armor defense increases to +2.`,
+        3: `You also gain a +1 \\glossterm{magic bonus} to Armor defense.`,
+        5: `The defense bonus increases to +2.`,
+        7: `The defense bonus increases to +3.`,
       },
       tags: ["Manifestation"],
       type: "Attune (self)",
