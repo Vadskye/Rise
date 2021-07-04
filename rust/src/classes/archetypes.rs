@@ -432,7 +432,7 @@ impl ClassArchetype {
                     At level 9, choose \mitem{greater protective shield} and \mitem{covering shield}.
                     At level 15, choose \mitem{supreme protective shield}, \mitem{greater shield of arrow catching}, and \mitem{shield of arrow deflection}.
                 \parhead{Combat Styles} Ebb and Flow, Herald of War, Unbreakable Defense.
-                \parhead{Maneuver Options}
+                \parhead{Suggested Maneuvers}
                 \begin{itemize}
                     \item Rank 1: \maneuver{fearsome roar}, \maneuver{reckless strike}
                     \item Rank 2: \maneuver{defensive strike}, \maneuver{directed shout}
@@ -463,7 +463,7 @@ impl ClassArchetype {
                     At level 9, choose \mitem{greater surestrike} and \mitem{blessed}.
                     At level 15, choose \mitem{supreme surestrike}, \mitem{greater shocking}, and \mitem{blessed}.
                 \parhead{Combat Styles} Ebb and Flow, Flurry of Blows, Unbreakable Defense.
-                \parhead{Maneuver Options}
+                \parhead{Suggested Maneuvers}
                 \begin{itemize}
                     \item Rank 1: \maneuver{power strike}, \maneuver{reckless strike}, \maneuver{twinstrike}
                     \item Rank 2: \maneuver{followup strike}, \maneuver{whirlwind}
@@ -495,7 +495,7 @@ impl ClassArchetype {
                     At level 9, choose \mitem{greater potency} and \mitem{blessed}.
                     At level 15, choose \mitem{supreme potency}, \mitem{greater freezing}, and \mitem{blessed}.
                 \parhead{Combat Styles} Dirty Fighting, Mobile Assault, Unbreakable Defense.
-                \parhead{Maneuver Options}
+                \parhead{Suggested Maneuvers}
                 \begin{itemize}
                     \item Rank 1: \maneuver{anklesprainer}, \maneuver{wanderer's strike}
                     \item Rank 2: \maneuver{knockback shove}, \maneuver{strangle}
@@ -529,7 +529,7 @@ impl ClassArchetype {
                     At level 9, choose \mitem{greater surestrike} and \mitem{blessed}.
                     At level 15, choose \mitem{supreme surestrike}, \mitem{greater shocking}, and \mitem{blessed}.
                 \parhead{Combat Styles} Dirty Fighting, Herald of War, Unbreakable Defense.
-                \parhead{Maneuver Options} You can learn most of the maneuvers available at each rank from your combat styles, so it's not meaningful to list specific maneuvers here.
+                \parhead{Suggested Maneuvers} You can learn most of the maneuvers available at each rank from your combat styles, so it's not meaningful to list specific maneuvers here.
                 Choose whatever is most interesting to you.
                 \parhead{Suggested Feats} Greatweapon Warrior, Weapon Focus, Swift.
                 \parhead{Combat Tactics} You have a great breadth of options available to you thanks to the number of maneuvers you know.
@@ -558,7 +558,7 @@ impl ClassArchetype {
                     At level 9, choose \mitem{greater surestrike} and \mitem{longshot}.
                     At level 15, choose \mitem{supreme surestrike}, \mitem{greater freezing}, and \mitem{longshot}.
                 \parhead{Combat Styles} Flurry of Blows, Mobile Assault, Penetrating Precision.
-                \parhead{Maneuver Options}
+                \parhead{Suggested Maneuvers}
                 \begin{itemize}
                     \item Rank 1: \maneuver{deathblow}, \maneuver{penetrating strike}, \maneuver{wanderer's strike}
                     \item Rank 2: \maneuver{arrowguide}, \maneuver{quickshot}
@@ -863,6 +863,38 @@ impl ClassArchetype {
             ",
             // Fighter
             Self::CombatDiscipline => r"
+                If you want to quickly create a character based on this archetype, make the following choices:
+                \parhead{Species} Dwarf.
+                \parhead{Attributes} 3 Str, 0 Dex, 4 Con, 0 Int, 0 Per, 1 Wil.
+                \parhead{Class} Fighter.
+                \parhead{Archetypes} Combat Discipline first, Martial Mastery second, Equipment Training third.
+                \parhead{Insight Points} 2 points for maneuvers.
+                % 7 total skill points, counting the 1 from auto-training
+                \parhead{Skills} Climb (T), Endurance (M), Jump (T), Perception (M), Swim (T)
+                \parhead{Weapon Group} Axes, blades
+                \parhead{Languages} Common, Dwarven, Orc
+                \parhead{Equipment} Battleaxe, standard shield, scale mail. As you gain levels, use the best heavy armor you can afford.
+                You can switch between a shepherd's axe for hard to hit enemies, a battleaxe for multi-enemy fights or fights where you need the extra damage from holding it in two hands, and throwing axes when you need a ranged weapon.
+                \parhead{Legacy Item} Shield.
+                    At level 3, choose \mitem{protective shield}.
+                    At level 9, choose \mitem{greater protective shield} and \mitem{shield of arrow catching}.
+                    At level 15, choose \mitem{supreme protective shield}, \mitem{hardblock shield}, and \mitem{shield of arrow catching}.
+                \parhead{Combat Styles} Flurry of Blows, Mobile Assaut, Rip and Tear
+                \parhead{Suggested Maneuvers} 
+                \begin{itemize}
+                    % each level: damage, HP debuff, maybe non-HP debuff, maybe AOE
+                    \item Rank 1: \maneuver{hamstring}, \maneuver{rend the hide}, \maneuver{quickdraw}, \maneuver{wanderer's strike}
+                    \item Rank 2: \maneuver{followup strike}, \maneuver{reckless charge}, \manuever{strip the armor}, \maneuver{sweeping strike}
+                    \item Rank 3: \maneuver{desperate flurry}, \maneuver{spring attack}, \maneuver{strip the flesh}
+                    \item Rank 4: \maneuver{brow gash}, \maneuver{greater wanderer's strike}, \maneuver{spinning slash}
+                    \item Rank 5: \maneuver{bloodletting strike}, \maneuver{greater retreating strike}
+                    \item Rank 6: \maneuver{greater strip the flesh}, \maneuver{greater reaping harvest}
+                    \item Rank 7: \maneuver{greater brow gash}, \maneuver{greater desperate flurry}
+                \end{itemize}
+                \parhead{Suggested Feats} Shieldbearer, Toughness, Iron Will, Regenerator
+                \parhead{Combat Tactics} You are extremely difficult to kill, and your ability to ignore and remove conditions makes it hard for your foes to whittle you down over time.
+                You can charge confidently into the middle of battle, cutting down enemy ranged attackers regardless of their surrounding allies.
+                Alternately, you can hold the line to protect your own allies.
             ",
             Self::EquipmentTraining => r"
             ",
