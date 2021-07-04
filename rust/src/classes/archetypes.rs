@@ -804,11 +804,11 @@ impl ClassArchetype {
                 \parhead{Equipment} Natural weapon, standard shield, chain shirt. As you gain levels, use the best light armor you can afford.
                 Use your natural weapons instead of manufactured weapons unless you need to fight at long range.
                 \parhead{Legacy Item} Apparel.
-                    At level 3, choose \mitem{staff of precision}.
-                    At level 9, choose \mitem{greater staff of precision} and \mitem{staff of focus}.
-                    At level 15, choose \mitem{supreme staff of precision}, \mitem{extending staff}, and \mitem{staff of focus}.
+                    At level 3, choose \mitem{amulet of mighty fists}.
+                    At level 9, choose \mitem{greater amulet of mighty fists} and \mitem{ring of blessed protection}.
+                    At level 15, choose \mitem{supreme amulet of mighty fists}, \mitem{enlarging belt}, and \mitem{ring of blessed protection}.
                 \parhead{Mystic Sphere} Polymorph
-                \parhead{Suggested Wild Aspects} Your choice of wild aspects determines much of how you feel, and they are less complicated to evaluate than spell, so choose wild aspects that match your goals.
+                \parhead{Suggested Wild Aspects} Your choice of wild aspect has a significant effect on your capabilities, and they are less complicated to evaluate than spell, so choose wild aspects that match your goals.
                 The Bear, Viper, and Wolf forms excel at dealing damage in combat.
                 The Bull and Constrictor forms improve your ability to take unusual combat actions.
                 Other forms can be useful in specific circumstances and out of combat.
@@ -828,6 +828,38 @@ impl ClassArchetype {
                 Your flexibility between natural weapons, spells, and high physical skills give you a lot of options in and out of combat.
             ",
             Self::Wildspeaker => r"
+                If you want to quickly create a character based on this archetype, make the following choices:
+                \parhead{Species} Gnome.
+                \parhead{Attributes} -1 Str, 0 Dex, 3 Con, 0 Int, 4 Per, 2 Wil.
+                \parhead{Class} Druid.
+                \parhead{Archetypes} Wildspeaker first, Nature Magic second, Nature Spell Mastery third.
+                \parhead{Insight Points} 3 points for spells.
+                % 12 total skill points, counting the 3 from auto-training
+                \parhead{Skills} Awareness (M), Creature Handling (M), Knowledge (nature) (M), Ride (M), Stealth (M), Survival (M)
+                \parhead{Weapon Group} Headed weapons
+                \parhead{Languages} Common, Gnome, Sylvan
+                \parhead{Equipment} Sickle, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
+                \parhead{Legacy Item} Apparel.
+                    At level 3, choose \mitem{belt of healing}.
+                    At level 9, choose \mitem{shrinking belt} and \mitem{ring of blessed protection}.
+                    At level 15, choose \mitem{supreme belt of healing}, \mitem{shrinking belt}, and \mitem{ring of blessed protection}.
+                \parhead{Mystic Sphere} Electromancy
+                \parhead{Suggested Spells} 
+                \begin{itemize}
+                    \item Rank 1: \spell{electric jolt}, \spell{electroshock}, \spell{energize}, \spell{shocking grasp}
+                    \item Rank 2: \spell{lightning storm}, \spell{stunning discharge}
+                    \item Rank 3: \spell{call lightning}, \spell{lightning bolt}, \spell{thunderdash}
+                    \item Rank 4: \spell{greater electric jolt}, \spell{greater electroshock}, \spell{shock and awe}
+                    \item Rank 5: \spell{chain lightning}, \spell{electrocute}, \spell{electromagnetic bolt}
+                    \item Rank 6: \spell{greater call lightning}, \spell{greater thunderdash}, \spell{supreme lightning storm}
+                    \item Rank 7: \spell{greater lightning breath}, \spell{greater shock and awe}, \spell{supreme electric jolt}
+                \end{itemize}
+                \parhead{Suggested Feats} Leadership, Sphere Focus: Electromancy, Skill Specialization: Creature Handling, Toughness
+                \parhead{Combat Tactics} You lead your faithful natural servant in battle.
+                It distracts your enemies while you blast them with lightning from afar.
+                You can also use your leadership skills to inspire and command your allies in battle.
+                Once you get a \textit{shrinking belt} or some other way to shrink yourself, you can ride your \textit{natural servant} into battle, which compensates for your short gnomish legs.
+                If you are both lucky and persuasive, you be able to use your \textit{speak with animals} ability to convince an animal to aid you on your journey, at least for a short time, in addition to your \textit{natural servant}.
             ",
             // Fighter
             Self::CombatDiscipline => r"
