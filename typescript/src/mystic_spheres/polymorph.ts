@@ -191,7 +191,7 @@ export const polymorph: MysticSphere = {
       name: "Baleful Polymorph",
 
       attack: {
-        glance: "The effect lasts \\glossterm{briefly}.",
+        glance: "Half damage.",
         hit: `The subject takes 2d8 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is balefully polymorphed as a \\glossterm{condition}.
         It shrinks by two \\glossterm{size categories} and is \\confused.`,
