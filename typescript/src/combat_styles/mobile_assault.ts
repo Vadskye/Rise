@@ -183,6 +183,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} against any single creature within a 5 ft.\\ wide line between your starting location and your ending location.
+        If you have any \\glossterm{encumbrance}, you take a -2 \\glossterm{accuracy} penalty with the strike.
       `,
       rank: 5,
       scaling: {
@@ -197,6 +198,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} that targets up to three creatures within a 5 ft.\\ wide line between your starting location and your ending location.
+        If you have any \\glossterm{encumbrance}, you take a -2 \\glossterm{accuracy} penalty with the strike.
       `,
       rank: 7,
       type: "Instant",
@@ -208,6 +210,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} at your destination.
+        If you have any \\glossterm{encumbrance}, you take a -2 \\glossterm{accuracy} penalty with the strike.
       `,
       rank: 4,
       scaling: {
