@@ -138,7 +138,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: `
           The water also the covers the subject's face.
-          This does not meaningfully impede its sight, but it cannot breathing anything other than the water.
+          This does not meaningfully impede its sight, but it cannot breathe anything other than the water.
         `,
         glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
