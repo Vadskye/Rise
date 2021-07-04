@@ -280,8 +280,8 @@ export const polymorph: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: `The bonus increases to +12.`,
-        7: `The bonus increases to +24.`,
+        5: `The bonus increases to +8.`,
+        7: `The bonus increases to +16.`,
       },
       type: "Attune (target)",
     },
