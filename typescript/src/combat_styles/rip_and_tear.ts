@@ -235,18 +235,20 @@ export const ripAndTear: CombatStyle = {
       type: "Instant",
     },
 
+    // is 2x power equal to +2d damage? soemtimes better, sometimes worse, especially with the
+    // delay, so seems fine
     {
       name: "Bloodletting Strike",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature that loses \\glossterm{hit points} from the strike begins bleeding as a \\glossterm{condition}.
-        It loses \\glossterm{hit points} equal to your \\glossterm{power} with that strike at the end of each round until the condition is removed.
-        This condition is automatically removed once the creature suffers a \\glossterm{vital wound}.
+        Each creature damaged by the strike \\glossterm{briefly} bleeds from the wound.
+        It takes physical damage equal to half your \\glossterm{power} with that strike at the end of each round.
+        This damage does not stack if you use this strike on the same creature again before it stops bleeding.
       `,
-      rank: 4,
+      rank: 5,
       scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
+        7: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Duration",
     },
@@ -305,10 +307,10 @@ export const ripAndTear: CombatStyle = {
         Make a \\glossterm{strike} using a slashing weapon.
         If the target does not have any remaining \\glossterm{damage resistance}, your \\glossterm{power} with the strike is doubled.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: "You gain a +1d damage bonus with the strike.",
-        7: "The damage bonus increases to +2d.",
+        4: "You gain a +1d damage bonus with the strike.",
+        6: "The damage bonus increases to +2d.",
       },
       type: "Instant",
     },
