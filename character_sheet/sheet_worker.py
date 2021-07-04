@@ -796,6 +796,7 @@ def debuffs():
             "flying",
             "flying_poorly",
             "focusing",
+            "goaded",
             "grappled",
             "helpless",
             "prone",
