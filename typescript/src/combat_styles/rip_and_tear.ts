@@ -256,14 +256,10 @@ export const ripAndTear: CombatStyle = {
     {
       name: "Bloodletting Sweep",
 
-      effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        The strike gains the \\glossterm{Sweeping} (1) tag, or you gain a +1 bonus to the Sweeping value if it already had that tag (see \\pcref{Weapon Tags}).
-
-        Each creature that loses \\glossterm{hit points} from the strike begins bleeding as a \\glossterm{condition}.
-        It loses \\glossterm{hit points} equal to your \\glossterm{power} with that strike at the end of each round until the condition is removed.
-        This condition is automatically removed once the creature suffers a \\glossterm{vital wound}.
-      `,
+      functionsLike: {
+        name: 'bloodletting strike',
+        exceptThat: 'the strike gains the \\glossterm{Sweeping} (1) tag, or you gain a +1 bonus to the Sweeping value if it already had that tag (see \\pcref{Weapon Tags}).',
+      },
       rank: 7,
       type: "Duration",
     },
