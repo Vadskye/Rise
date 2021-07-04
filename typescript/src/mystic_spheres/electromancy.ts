@@ -476,7 +476,7 @@ export const electromancy: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Duration",
     },
 
     {
