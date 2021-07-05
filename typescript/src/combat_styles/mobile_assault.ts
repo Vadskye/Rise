@@ -100,7 +100,10 @@ export const mobileAssault: CombatStyle = {
 
       functionsLike: {
         abilityType: "ability",
-        exceptThat: "you can move up to twice your speed instead of up to your speed.",
+        exceptThat: `
+          you can move up to twice your speed instead of up to your speed, and the defense penalty is removed.
+          After you use this ability, you increase your \\glossterm{fatigue level} by 1.
+        `,
         name: "charge",
       },
       rank: 1,
@@ -108,26 +111,6 @@ export const mobileAssault: CombatStyle = {
         3: "You gain a +1d damage bonus with the strike at the end of the charge.",
         5: "The damage bonus increases to +2d.",
         7: "The damage bonus increases to +3d.",
-      },
-      type: "Instant",
-    },
-
-    {
-      name: "Reckless Charge",
-
-      functionsLike: {
-        abilityType: "ability",
-        exceptThat: `
-          it does not increase your \\glossterm{fatigue level}.
-          In exchange, you \\glossterm{briefly} take a -2 penalty to Armor and Reflex defenses.
-          This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
-        `,
-        name: "charge",
-      },
-      rank: 2,
-      scaling: {
-        4: "You gain a +1d damage bonus with the strike at the end of the charge.",
-        6: "The damage bonus increases to +2d.",
       },
       type: "Instant",
     },
