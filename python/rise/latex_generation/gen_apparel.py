@@ -1968,36 +1968,37 @@ def generate_apparel():
         ),
     ]
 
+    # +2 levels since no slot is primary in "all defenses"
     apparel += [
         MagicItem(
             name="Ring of Protection",
-            level=7,
+            level=9,
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
+                You gain a +1 \\glossterm<magic bonus> to all defenses.
             """,
-            short_description="Grants +1 non-Armor defenses",
+            short_description="Grants +1 defenses",
         ),
         MagicItem(
             name="Ring of Protection, Greater",
-            level=13,
+            level=15,
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +2 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
+                You gain a +2 \\glossterm<magic bonus> to all defenses.
             """,
-            short_description="Grants +2 non-Armor defenses",
+            short_description="Grants +2 defenses",
         ),
         MagicItem(
             name="Ring of Protection, Supreme",
-            level=19,
+            level=21,
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +3 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
+                You gain a +3 \\glossterm<magic bonus> to all defenses.
             """,
-            short_description="Grants +3 non-Armor defenses",
+            short_description="Grants +3 defenses",
         ),
     ]
 
