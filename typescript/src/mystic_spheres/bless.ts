@@ -320,11 +320,10 @@ export const bless: MysticSphere = {
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{brief} effect or \\glossterm{condition}.
         This cannot remove an effect applied during the current round.
-        `,
-      rank: 3,
+      `,
+      rank: 4,
       scaling: {
-        5: `The subject can remove two effects.`,
-        7: `The subject can remove three effects.`,
+        6: `The subject can remove two effects.`,
       },
       type: "Instant",
     },
@@ -333,7 +332,7 @@ export const bless: MysticSphere = {
       name: "Cleansing Benediction",
 
       effect: `
-        You and each of your \\glossterm{allies} within a \\smallarea radius from you can each remove a \\glossterm{brief} effect or \\glossterm{condition}.
+        You and each \\glossterm{ally} within a \\smallarea radius from you can each remove a \\glossterm{brief} effect or \\glossterm{condition}.
         This cannot remove effects applied during the current round.
       `,
       rank: 6,
@@ -416,11 +415,7 @@ export const bless: MysticSphere = {
         You can only have one casting of this spell active at once.
         When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
       `,
-      rank: 5,
-      scaling: {
-        7: `Casting this spell does not remove previous attunements to this spell.
-                In addition, you can choose to cast this spell with the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (target) tag.`,
-      },
+      rank: 6,
       type: "Attune (target)",
     },
 
