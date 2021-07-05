@@ -69,14 +69,6 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-            ",
-        },
-        RankAbility {
             name: "Spell Rank",
             is_magical: true,
             rank: 5,
@@ -136,8 +128,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 
                 \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                     You cannot choose this ability multiple times.
-                \parhead{Insight Point} You gain an additional \glossterm{insight point}.
-                    You can choose this ability multiple times, gaining an additional insight point each time.
                 \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
                     The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
                     You cannot choose this ability multiple times.
@@ -145,6 +135,8 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                     In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                     You can choose this ability multiple times, choosing a different spell each time.
+                \parhead{Spell Knowledge} You learn an additional spell.
+                    You can choose this ability multiple times, learning an additional spell each time.
                 \parhead{Spell Power} Choose a divine \glossterm{spell} you know.
                     You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
                     You can choose this ability multiple times, choosing a different spell each time.

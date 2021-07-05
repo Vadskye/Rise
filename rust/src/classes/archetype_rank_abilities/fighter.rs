@@ -263,14 +263,6 @@ This is called a \glossterm{glancing blow}.
                 ",
         },
         RankAbility {
-            name: "Martial Maneuver",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
-            ",
-        },
-        RankAbility {
             name: "Combat Style Rank (5)",
             is_magical: false,
             rank: 5,
@@ -448,13 +440,12 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
 pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Tactical Insight",
+            name: "Predictive Tactics",
             is_magical: false,
             rank: 0,
             description: r"
-         You gain an additional \glossterm{insight point}.
-
-                ",
+                You gain a \plus3 bonus to \glossterm{initiative} checks.
+            ",
         },
         RankAbility {
             name: "Battle Tactics",
@@ -463,7 +454,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
         
         You can lead your allies using tactics appropriate for the situation.
-        Choose a single battle tactic from the list below.
+        Choose two battle tactics from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{battle tactic} per \glossterm{insight point}.
 
         You can initiate a \textit{battle tactic} as a \glossterm{minor action}.
@@ -471,7 +462,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         Your \textit{battle tactics} affect yourself and your \glossterm{allies} within a \areahuge radius \glossterm{emanation} from you who can either see or hear your chosen communication style.
 
         All \textit{battle tactics} have the \abilitytag{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
-        You cannot sustain multiple battle tactics simultaneously.
+        You cannot sustain multiple battle tactics simultaneously, and any existing \textit{battle tactics} end as soon as you activate another battle tactic.
 
         {
             \begin{durationability}{Break Through}[\abilitytag{Sustain} (free)]
@@ -564,56 +555,50 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-         You gain a \plus1 bonus to \glossterm{accuracy}.
-
-                ",
+                You gain a \plus1 bonus to \glossterm{accuracy}.
+            ",
         },
         RankAbility {
-            name: "Greater Tactical Insight",
+            name: "Greater Reactive Tactics",
             is_magical: false,
             rank: 3,
             description: r"
-         You gain an additional \glossterm{insight point}.
-        In addition, you learn an additional \textit{battle tactic}.
-
-                ",
+                The bonus from your \textit{reactive tactics} ability increases to \plus6.
+            ",
         },
         RankAbility {
-            name: "Reactive Tactics",
+            name: "Greater Battle Tactics",
             is_magical: false,
             rank: 4,
             description: r"
-         You gain a \plus3 bonus to \glossterm{initiative} checks.
-        In addition, you can initiate a new \textit{battle tactic} as a \glossterm{free action} instead of as a \glossterm{minor action}.
-
-                ",
+                All of your \textit{battle tactics} abilities gain the \abilitytag{Swift} tag, so their bonuses take effect in the phase that you active them.
+            ",
         },
         RankAbility {
             name: "Greater Tactical Precision",
             is_magical: false,
             rank: 5,
             description: r"
-         The bonus from your \textit{tactical precision} ability increases to \plus2.
-
-                ",
+                The bonus from your \textit{tactical precision} ability increases to \plus2.
+            ",
         },
         RankAbility {
-            name: "Supreme Tactical Insight",
+            name: "Supreme Reactive Tactics",
             is_magical: false,
             rank: 6,
             description: r"
-         You gain an additional \glossterm{insight point}.
-        In addition, you learn an additional \textit{battle tactic}.
-
-                ",
+                The bonus from your \textit{reactive tactics} ability increases to \plus9.
+            ",
         },
         RankAbility {
-            name: "Greater Reactive Tactics",
+            name: "Supreme Battle Tactics",
             is_magical: false,
             rank: 7,
             description: r"
-                The bonus from your \textit{reactive tactics} ability increases to \plus10.
-                In addition, all of your \textit{battle tactics} abilities gain the \abilitytag{Swift} tag, so their bonuses and penalties take effect in the phase that you active them.
+                You learn an additional \textit{battle tactic}.
+                In addition, you can activate and sustain two different battle tactics simultaneously as part of the same action.
+                Bonuses from multiple battle tactics, such as the bonus to Armor defense from the \textit{duck and cover} and \textit{group up} abilities, do not stack.
+                However, each creature can benefit from both battle tactics at once.
             ",
         },
     ];
