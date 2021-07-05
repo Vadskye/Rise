@@ -721,7 +721,7 @@ impl ClassArchetype {
                 \parhead{Attributes} 0 Str, 0 Dex, 0 Con, 2 Int, 4 Per, 2 Wil.
                 \parhead{Class} Druid.
                 \parhead{Archetypes} Nature Magic first, Elementalist second, Nature Spell Mastery third.
-                \parhead{Insight Points} 4 points for mystic spheres, 2 points for spells
+                \parhead{Insight Points} 2 points for mystic spheres, 4 points for spells
                 % 18 total skill points, counting the 3 from auto-training
                 \parhead{Skills} Awareness (M), Creature Handling (M), Endurance (T), Jump (M), Knowledge (geography, nature) (M), Spellsense (M), Survival (M), Swim (M)
                 \parhead{Weapon Group} Headed weapons
@@ -732,9 +732,11 @@ impl ClassArchetype {
                     At level 3, choose \mitem{staff of potency}.
                     At level 9, choose \mitem{greater staff of potency} and \mitem{staff of focus}.
                     At level 15, choose \mitem{supreme staff of potency}, \mitem{reaching staff}, and \mitem{staff of focus}.
-                \parhead{Mystic Spheres} Aeromancy, Aquamancy, Pyromancy, Terramancy
+                \parhead{Mystic Spheres} Any three of the four elemental mystic spheres.
+                Your \textit{elemental versatility} ability gives you access to spells from the fourth mystic sphere.
+                That means that the specific three mystic spheres you choose mostly just affect which wands you can use and which feats you can take.
                 \parhead{Suggested Spells}
-                You have access to all four elemental mystic spheres, so you have a massive pool of spells available to you.
+                You have access to spells from all four elemental mystic spheres, so you have a massive pool of spells available to you.
                 The list below is just one of the possible paths you could take.
                 \begin{itemize}
                     \RaggedRight
@@ -750,9 +752,7 @@ impl ClassArchetype {
                 \parhead{Suggested Feats} Sphere Focus: Aeromancy, Aquamancy, Pyromancy, or Terramancy
                 \parhead{Combat Tactics} You are a master of all four elements, so you have an immense variety of options available to you - if you choose the right spells.
                 You have a very high accuracy thanks to your Perception and a reasonably high magical power, so your primary role in combat will usually be to deploy the perfect damaging spell or debuff for the situation.
-                At low levels, especially if you don't have feats, it may be wise to delay acquiring your least favorite elemental mystic sphere until you get more spells known.
-                There's not much point in having access to four mystic spheres if you don't know enough spells to cast them all.
-                Your Elementalist abilities and skills give you a lot of narrative power, so stay alert for opportunities to overcome challenges without needing to fight at all.
+                Your skills and Elementalist abilities give you a lot of narrative power, so stay alert for opportunities to overcome challenges without needing to fight at all.
             ",
             Self::NatureMagic => r"
                 If you want to quickly create a character based on this archetype, make the following choices:
