@@ -1898,13 +1898,23 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Charging Boots",
+            level=4,
+            material_type="Boots",
+            tags=[],
+            description="""
+                You reduce your defense penalties from using the \\ability<charge> action by 1.
+            """,
+            short_description="Reduce penalties for charging by 1",
+        ),
+        MagicItem(
+            name="Greater Charging Boots",
             level=10,
             material_type="Boots",
             tags=[],
             description="""
-                Using the \\textit<charge> action does not cause you to increase your \\glossterm<fatigue level> (see \\pcref<Charge>).
+                You do not take defense penalties from using the \\ability<charge> action.
             """,
-            short_description="Can charge freely",
+            short_description="Remove penalties for charging",
         ),
     ]
 
