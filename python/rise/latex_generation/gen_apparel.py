@@ -1929,9 +1929,9 @@ def generate_apparel():
                 When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
                 This cannot remove an effect applied during the current round.
 
-                After you use this amulet, you increase your \\glossterm<fatigue level> by one.
+                After you use this ability, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Remove a debuff",
+            short_description="Fatigue to remove a debuff",
         ),
         MagicItem(
             name="Greater Cleansing Amulet",
@@ -1943,7 +1943,7 @@ def generate_apparel():
                 When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
                 This cannot remove an effect applied during the current round.
             """,
-            short_description="Freely remove a debuff",
+            short_description="Remove a debuff",
         ),
         MagicItem(
             name="Supreme Cleansing Amulet",

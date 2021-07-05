@@ -639,6 +639,39 @@ def generate_weapons():
         ),
     ]
 
+    apparel += [
+        MagicItem(
+            name="Banechannel",
+            level=10,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                As a standard action, you can activate this weapon.
+                When you do, you remove one \\glossterm<condition> affecting you.
+                This cannot remove an effect applied during the current round.
+                The condition is infused into this weapon.
+                You cannot use this ability while there is a condition infused in the weapon.
+                However, you can release the infusion as a separate standard action.
+
+                While this weapon is infused, if you make a creature lose \\glossterm<hit points> with it, the struck creature becomes affected by the infused effect as a \\glossterm<condition>.
+                This removes the infusion from this weapon, allowing you to activate it again.
+            """,
+            short_description="Remove a condition to inflict it later",
+        ),
+        MagicItem(
+            name="Banechannel, Greater",
+            level=16,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                This weapon functions like a \\textit<banechannel> weapon, except that you can infuse up to two conditions into the weapon.
+                When you make a creature lose \\glossterm<hit points> with the weapon, it gains the oldest condition infused in the weapon.
+                You cannot inflict a condition with this weapon more than once per round.
+            """,
+            short_description="Remove conditions to inflict them later",
+        ),
+    ]
+
     return weapons
 
 
