@@ -156,6 +156,7 @@ You cannot gain the same feat twice.
         \featref{Twinhand Spellcaster}           & Dex 1        & Cast spells with two hands at once        & Magical & \featpref{Twinhand Spellcaster}        \\
 
         \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Battle Armory}        & Str 1, Dex 1     & Switch between different weapons easily       & \tdash & \featpref{Blindfighter}         \\
         \featref{Blindfighter}         & Per 2            & Fight unseen foes better                      & \tdash & \featpref{Blindfighter}         \\
         \featref{Brawler}              & Str 1, Dex 1     & Fight better unarmed and in close quarters    & \tdash & \featpref{Brawler}              \\
         \featref{Combat Style Versatility} & Int 1, combat style & Access combat styles from other classes & \tdash & \featpref{Combat Style Versatility} \\
@@ -179,6 +180,32 @@ You cannot gain the same feat twice.
         Some feats also have specific requirements that a character must meet before taking the feat.
         These are listed under a \textbf{Prerequisites} heading.
         If a character loses the prerequisites for a feat, they lose all benefits of the feat until they meet the prerequisites again.
+
+    \begin{feat}{Battle Armory}{Combat}
+        \featpre Base Strength of 1 and base Dexterity of 1.
+
+        \ff[1]{Rapid Redraw} When you sheathe a weapon as a \glossterm{free action}, you an also draw a different weapon with that same hand as part of that action.
+        In addition, sheathing and drawing weapons becomes a \glossterm{Swift} ability for you, so you can draw a weapon and attack with it in the same phase.
+
+        \ff[3]{Legacy Armory}[Magical] You do not choose an individual item as a \glossterm{legacy item} (see \pcref{Legacy Items}).
+        Instead, if you choose weapons as your legacy item category, you choose magic weapon abilities that apply to all nonmagical weapons you wield.
+        If you wield a magical weapon, it keeps its own magical effects instead of your chosen legacy item properties.
+
+        \ff[6]{Versatile Force} You gain a \plus2 bonus to your \glossterm{mundane power}.
+
+        \ff[9]{Overburdened Quickdraw} You can draw or sheathe \glossterm{heavy weapons} and medium shields as a \glossterm{free action}.
+        You can combine this ability with your \textit{rapid redraw} ability.
+
+        \ff[12]{Greater Versatile Force} The bonus from your \textit{versatile force} ability increases to \plus4.
+
+        \ff[15]{Surprising Quickdraw} When you make a \glossterm{strike} with a weapon against a creature, if you drew that weapon in the same phase that you made the strike and did not wield any weapons at the start of that phase, you can use this ability.
+        If you do, the creature is \partiallyunaware of the attack.
+        After you use this ability, the attacked creature and all creatures that observed the attack are immune to this ability until they take a \glossterm{short rest}.
+
+        \ff[18]{Supreme Versatile Force} The bonus from your \textit{versatile force} ability increases to \plus8.
+
+        \ff[21]{Greater Surprsing Quickdraw} Your \textit{surprising quickdraw} ability makes the creature \unaware instead of \partiallyunaware.
+    \end{feat}
 
     \begin{feat}{Awareness Specialization}{Skill}
         \featpre Awareness as a mastered skill.
