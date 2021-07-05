@@ -124,7 +124,7 @@ You cannot gain the same feat twice.
 
         \tb{Casting Feats}\label{Casting Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Boongiver}                      & Spellcasting ability                    & Improve ability to cast spells on allies  & Magical & \featpref{Boongiver}                      \\
-        \featref{Blood Magic}                    & Spellcasting ability, Con 2                    & Spend hit points to improve magic         & Magical & \featpref{Blood Magic}                    \\
+        \featref{Blood Magic}                    & Spellcasting ability, Con 2             & Spend hit points to improve magic         & Magical & \featpref{Blood Magic}                    \\
         \featref{Mental Magic}                   & Spellcasting ability, Wil 1             & Cast spells without words or gestures     & Magical & \featpref{Mental Magic}                   \\
         \featref{Metacaster}                     & Spellcasting ability                    & Manipulate spell effects in creative ways & Magical & \featpref{Metacaster}                     \\
         \featref{Mystic Archer}                  & Spellcasting ability                    & Imbue projectiles with magic              & Magical & \featpref{Mystic Archer}                  \\
@@ -264,7 +264,7 @@ You cannot gain the same feat twice.
     \end{feat}
 
     \begin{feat}{Blood Magic}{Casting, Magical}
-        \featpre Ability to cast a spell, base Constitution 2.
+        \featpre Access to a \glossterm{mystic sphere}, base Constitution of 2.
 
         \ff[1]{Bloodspell} Whenever you cast a spell, you may use this ability.
         When you do, you lose \glossterm{hit points} equal to the spell's rank (minimum 1).
@@ -290,46 +290,51 @@ You cannot gain the same feat twice.
     \end{feat}
 
     \begin{feat}{Boongiver}{Casting, Magical}
-        \featpre Ability to cast a spell.
+        \featpre Access to a \glossterm{mystic sphere}.
 
         \ff[1]{Boon Lore} You learn an additional \glossterm{spell}.
         The spell must have the \abilitytag{Attune} tag.
-        You can exchange this spell for other spells as you gain access to new spell ranks, but the spell must always have the \abilitytag{Attune} tag.
+        As normal, you can exchange this spell for other spells as you gain access to new spell ranks, but the spell must always have the \abilitytag{Attune} tag.
 
         \ff[3]{Share Boon} When you cast a spell with the \abilitytag{Attune} (self) tag, you can use the \textit{share boon} ability.
-        \begin{freeability}{Share Boon}
+        \begin{durationability}{Share Boon}
             The spell's \abilitytag{Attune} tag changes to \abilitytag{Attune} (target).
             Choose one \glossterm{ally} within \rngmed range.
             That ally is the target of the spell, and the spell affects that creature as if it were you instead of affecting you.
 
             You can only use this ability to affect one spell at a time.
             If you use it again, the original ally's attunement to the old spell is released, as the \textit{release attunement} ability (see \pcref{Attunement}).
-        \end{freeability}
+        \end{durationability}
 
         \ff[6]{Benevolent Transferance} You can use the \textit{benevolent transferance} ability as a \glossterm{standard action}.
-        \begin{freeability}{Benevolent Transferance}
-            Choose a creature currently \glossterm{attuned} to a spell you cast.
-            In addition, choose another creature to transfer the spell to.
+        \begin{instantability}{Benevolent Transferance}
+            Choose an \glossterm{ally} currently \glossterm{attuned} to a spell you cast.
+            In addition, choose another \glossterm{ally} to transfer the spell to.
             Both targets must within that spell's range of you, and must be valid targets for the spell.
             You cannot target yourself with this ability.
+            After you use this ability, you \glossterm{briefly} cannot use it again.
 
-            If both targets are willing, and the new target spends an \glossterm{attunement point} to attune to the spell, the spell's effect is transferred from the first target to the second.
+            If the new target spends an \glossterm{attunement point} to attune to the spell, the spell's effect is transferred from the first target to the second.
             The spell's old target immediately regains the \glossterm{attunement point} it spent to attune to the spell.
+        \end{instantability}
 
-            \rankline
-            \featlevel{12} You can use this ability as a \glossterm{minor action}.
-            \featlevel{18} The targets can transfer any number of attuned spells between each other.
-        \end{freeability}
-
-        \ff[9]{Greater Boon Lore} The number of additional \abilitytag{Attune} spells you gain from your \textit{boon lore} ability increases to two.
+        \ff[9]{Replace Attunement} You can use the \textit{replace attunement} ability as a \glossterm{standard action}.
+        \begin{instantability}{Replace Attunement}
+            Choose a creature other than yourself currently \glossterm{attuned} to a spell you cast.
+            % TODO: specify casting time if there exist any longer casting time spells
+            You may cast another \abilitytag{Attune} (target) spell on that ally as part of this action.
+            If you do, it stops being attuned to the previous spell and becomes attuned to the new spell without spending or regaining any \glossterm{attunement points}.
+            After you use this ability, you \glossterm{briefly} cannot use it again.
+        \end{instantability}
 
         \ff[12]{Greater Share Boon} You can use your \textit{share boon} ability on up to two different spells at once.
         If you use the ability while it already affects another spell, you choose which spells are affected by the ability.
 
         \ff[15]{Personal Boon} You gain an additional \glossterm{attunement point}.
-        You can only use this attunement point to \glossterm{attune} to spells and rituals that you cast on yourself.
+        You can only use this attunement point to \glossterm{attune} to spells and rituals that you use on yourself.
 
-        \ff[18]{Supreme Boon Lore} The number of additional \abilitytag{Attune} spells you gain from your \textit{boon lore} ability increases to three.
+        \ff[18]{Expert Boon Manipulation} You can use your \textit{benevolent transferance} ability as a \glossterm{minor action}.
+        In addition, using your \textit{benevolent transferance} and \textit{replace attunement} abilities does not prevent you from using those abilities again.
 
         \ff[21]{Supreme Share Boon} You can use your \textit{share boon} ability on up to three different spells at once.
     \end{feat}
@@ -1287,23 +1292,23 @@ You cannot gain the same feat twice.
         However, casting spells without components is more challenging.
         You increase your \glossterm{focus penalty} by 1.
 
-        \ff[3]{Potent Mind} You gain a \plus2 bonus to \glossterm{magical} \glossterm{power}.
+        \ff[3]{Hardened Mind} You gain a \plus2 bonus to Mental defense.
 
-        \ff[6]{Innate Creativity} You learn an additional \glossterm{spell}.
+        \ff[6]{Potent Mind} You gain a \plus2 bonus to \glossterm{magical} \glossterm{power}.
 
         \ff[9]{Fractured Mind} Once per round, you can sustain an ability with the \abilitytag{Sustain} (minor) tag as a \glossterm{free action}.
 
         \ff[12]{Greater Potent Mind} The bonus from your \textit{potent mind} ability increases to \plus4.
 
-        \ff[15]{Greater Innate Creativity} You learn an additional \glossterm{spell}.
+        \ff[15]{Greater Hardened Mind} The bonus from your \textit{hardened mind} ability increases to \plus4.
 
-        \ff[18]{Greater Fractured Mind} You can use your \textit{fractured mind} ability on abilities with the \abilitytag{Sustain} (standard) tag in addition to the \abilitytag{Sustain} (minor) tag.
+        \ff[18]{Supreme Potent Mind} The bonus from your \textit{potent mind} ability increases to \plus8.
 
-        \ff[21]{Supreme Potent Mind} The bonus from your \textit{potent mind} ability increases to \plus8.
+        \ff[21]{Greater Fractured Mind} You can use your \textit{fractured mind} ability on abilities with the \abilitytag{Sustain} (standard) tag in addition to the \abilitytag{Sustain} (minor) tag.
     \end{feat}
 
     \begin{feat}{Metacaster}{Casting, Magical}
-        \featpre Ability to cast a spell.
+        \featpre Access to a \glossterm{mystic sphere}.
 
         \ff[1]{Sphere Access} You gain access to an additional \glossterm{mystic sphere}.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
@@ -1389,7 +1394,7 @@ You cannot gain the same feat twice.
     \end{feat}
 
     \begin{feat}{Mystic Archer}{Casting}
-        \featpre Ability to cast a spell.
+        \featpre Access to a \glossterm{mystic sphere}.
 
         \ff[1]{Magical Strikes}[\abilitytag{Magical}] Whenever you make a ranged \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
         This allows you to use your \glossterm{power} with magical abilities to determine your damage.
@@ -1618,7 +1623,7 @@ You cannot gain the same feat twice.
     \end{feat}
 
     \begin{feat}{Prepared Spellcasting}{Magical, Spell}
-        \featpre Ability to cast a spell, base Intelligence of 2.
+        \featpre Access to a \glossterm{mystic sphere}, base Intelligence of 2.
 
         \ff[1]{Spellbook} Choose up to three spells you do not know from among \glossterm{mystic spheres} you have access to.
         The spells in your spellbook can come from any combination of \glossterm{magic sources} you can cast spells with.
@@ -1924,7 +1929,7 @@ You cannot gain the same feat twice.
     \end{feat}
 
     \begin{feat}{Spellsword}{Magical, Spell}
-        \featpre Ability to cast a spell.
+        \featpre Access to a \glossterm{mystic sphere}.
 
         \ff[1]{Magical Strikes} Whenever you make a melee \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
         This allows you to use your \glossterm{power} with magical abilities to determine your damage.
