@@ -513,6 +513,21 @@ export const electromancy: MysticSphere = {
       scaling: "damage",
       type: "Instant",
     },
+
+    {
+      name: "Cleansing Shock",
+
+      effect: `
+        You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{brief} effect or \\glossterm{condition}.
+        This cannot remove an effect applied during the current round.
+        For each effect removed this way, you deal the subject 4 electricity damage.
+      `,
+      rank: 4,
+      scaling: {
+        6: `The subject can remove two effects.`,
+      },
+      type: "Instant",
+    },
   ],
   rituals: [],
 };
