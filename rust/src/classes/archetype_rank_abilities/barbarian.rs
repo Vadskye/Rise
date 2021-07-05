@@ -345,14 +345,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Primal Maneuver",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
-            ",
-        },
-        RankAbility {
             name: "Combat Style Rank (5)",
             is_magical: false,
             rank: 5,

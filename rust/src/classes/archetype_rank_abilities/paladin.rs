@@ -177,14 +177,6 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-            ",
-        },
-        RankAbility {
             name: "Spell Rank",
             is_magical: true,
             rank: 5,
@@ -235,40 +227,38 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Insight Point",
+            name: "Divine Spell Versatility",
             is_magical: false,
             rank: 1,
             description: r"
-         You gain an additional \glossterm{insight point}.
-
-                ",
+                You learn a spell from one of the mystic spheres that are unique to divine spellcasters: \sphere{bless} or \sphere{channel divinity}.
+                You do not have to have access to that mystic sphere.
+                As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
+            ",
         },
         RankAbility {
             name: "Greater Combat Caster",
             is_magical: true,
             rank: 2,
             description: r"
-         The penalty reduction from your \textit{combat caster} ability increases to 4.
-
-                ",
+                The penalty reduction from your \textit{combat caster} ability increases to 4.
+            ",
         },
         RankAbility {
             name: "Wellspring of Power",
             is_magical: true,
             rank: 3,
             description: r"
-        You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
-
-                ",
+                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+            ",
         },
         RankAbility {
-            name: "Insight Point",
+            name: "Divine Spell Versatility",
             is_magical: false,
             rank: 4,
             description: r"
-        You gain an additional \glossterm{insight point}.
-
-                ",
+                You learn an additional spell with your \textit{divine spell versatility} ability.
+            ",
         },
         RankAbility {
             name: "Attunement Point",

@@ -236,12 +236,11 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-        
-        You learn specific hunting styles to defeat particular quarries.
-        Choose one hunting style from the list below.
-        You can also spend \glossterm{insight points} to learn one additional \textit{hunting style} per \glossterm{insight point}.
-        When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
-        Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
+            You learn specific hunting styles to defeat particular quarries.
+            Choose two hunting styles from the list below.
+            You can also spend \glossterm{insight points} to learn one additional \textit{hunting style} per \glossterm{insight point}.
+            When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
+            Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
         {
             \begin{durationability}{Anchoring}[Duration]
                 \abilitytag{Magical}
@@ -361,22 +360,20 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Hunting Style",
+            name: "Flexible Hunting Style",
             is_magical: false,
             rank: 5,
             description: r"
-        You learn an additional \textit{hunting style}.
-
-                ",
+                As a \glossterm{minor action}, you can change which \textit{hunting style} you have active.
+            ",
         },
         RankAbility {
             name: "Greater Hunter's Prowess",
             is_magical: false,
             rank: 6,
             description: r"
-         The bonus from your \textit{hunter's prowess} ability increases to \plus2d.
-
-                ",
+                The bonus from your \textit{hunter's prowess} ability increases to \plus2d.
+            ",
         },
         RankAbility {
             name: "Supreme Quarry",
@@ -550,14 +547,6 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You become a rank 4 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 4.
-            ",
-        },
-        RankAbility {
-            name: "Wild Maneuver",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
             ",
         },
         RankAbility {

@@ -7,11 +7,9 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         You gain a \plus2 bonus to the Jump skill.
-        In addition, using the \textit{desperate exertion} ability to affect a roll using the Jump skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
-
-
-                ",
+                You gain a \plus2 bonus to the Jump skill.
+                In addition, using the \textit{desperate exertion} ability to affect a roll using the Jump skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+            ",
         },
         RankAbility {
             name: "Acrobatic Accuracy",
@@ -159,14 +157,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Esoteric Maneuver",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
-            ",
-        },
-        RankAbility {
             name: "Combat Style Rank (5)",
             is_magical: false,
             rank: 5,
@@ -260,7 +250,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
         
         You can channel your ki to temporarily enhance your abilities.
-        Choose one \textit{ki manifestation} from the list below.
+        Choose two \textit{ki manifestations} from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{ki manifestation} per \glossterm{insight point}.
         You can use any \textit{ki manifestation} ability you know using the type of action indicated in the ability's description.
 
@@ -422,41 +412,38 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Ki Manifestation",
+            name: "Greater Ki Manifestation",
             is_magical: true,
             rank: 4,
             description: r"
-        
-        You learn an additional \textit{ki manifestation}.
-
-                ",
+                After using a \textit{ki manifestation}, you can use a different \textit{ki manifestation} after the end of the current round.
+                You still cannot use the same \textit{ki manifestation} in two consecutive rounds.
+            ",
         },
         RankAbility {
             name: "Supreme Ki Barrier",
             is_magical: true,
             rank: 5,
             description: r"
-        
-        The defense bonus from the body armor created by your \textit{ki barrier} ability increases to \plus4.
-        In addition, its bonus to \glossterm{damage resistance} increases to four times your rank in this archetype.
-
-                ",
+                The defense bonus from the body armor created by your \textit{ki barrier} ability increases to \plus4.
+                In addition, its bonus to \glossterm{damage resistance} increases to four times your rank in this archetype.
+            ",
         },
         RankAbility {
             name: "Greater Ki Power",
             is_magical: true,
             rank: 6,
             description: r"
-         The bonus from your \textit{ki power} ability increases to \plus6.
-
-                ",
+                The bonus from your \textit{ki power} ability increases to \plus6.
+            ",
         },
         RankAbility {
-            name: "Greater Ki Manifestation",
+            name: "Supreme Ki Manifestation",
             is_magical: true,
             rank: 7,
             description: r"
-                After using a \textit{ki manifestation} ability, you can use another one after the end of the current round instead of after the end of the next round.
+                You learn an additional \textit{ki manifestation}.
+                In addition, your \textit{greater ki manifestation} ability also allows you to use the same \textit{ki manifestation} ability in consecutive rounds.
             ",
         },
     ];

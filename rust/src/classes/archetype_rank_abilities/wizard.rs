@@ -215,15 +215,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 4,
-            description: r"
-         You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-
-                ",
-        },
-        RankAbility {
             name: "Spell Rank",
             is_magical: true,
             rank: 5,
@@ -299,6 +290,14 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
+            name: "Trained Mind",
+            is_magical: true,
+            rank: 1,
+            description: r"
+                You reduce your \glossterm{focus penalty} by 1.
+            ",
+        },
+        RankAbility {
             name: "Scholastic Insight",
             is_magical: true,
             rank: 2,
@@ -316,17 +315,16 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             \parhead{Expanded Sphere Access} You gain access to a new \glossterm{mystic sphere}.
             \par You cannot choose this insight multiple times.
 
-            \parhead{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
-            You gain a \plus1 bonus to \glossterm{accuracy} with abilities from that \glossterm{mystic sphere}.
-            In exchange, you must lose access to another \glossterm{mystic sphere} you have.
-            You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
-            \par You cannot choose this insight multiple times.
-
             \parhead{Memorized Sphere} % TODO: clarify you need to be high enough rank?
             Choose a \glossterm{mystic sphere} you have access to.
             You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
-            If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and requires half the normal number of \glossterm{fatigue levels}, to a minimum of zero fatigue levels.
             \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
+
+            \parhead{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
+            You gain a \glossterm{power} bonus equal to your rank in this archetype and a \plus1 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
+            In exchange, you must lose access to another \glossterm{mystic sphere} you have.
+            You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
+            \par You cannot choose this insight multiple times.
         }
 
                 ",
@@ -421,8 +419,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         {
             \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                 You cannot choose this ability multiple times.
-            \parhead{Insight Point} You gain an additional \glossterm{insight point}.
-                You can choose this ability multiple times, gaining an additional insight point each time.
             \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
                 The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
                 You cannot choose this ability multiple times.
@@ -430,6 +426,8 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                 In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
+            \parhead{Spell Knowledge} You learn an additional spell.
+                You can choose this ability multiple times, learning an additional spell each time.
             \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.
                 You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
@@ -501,7 +499,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         Choose one of the following schools of magic.
         You are a specialist in your chosen school.
         You cannot gain access to any arcane mystic spheres outside of your specialist school, and you cannot learn spells or rituals from those spheres by any means.
-        In exchange, you gain access to an additional arcane \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
+        In exchange, you gain an additional \glossterm{insight point}.
         \begin{itemize}
             \item Abjuration: \sphere{barrier}, \sphere{telekinesis}, \sphere{thaumaturgy}
             \item Conjuration: \sphere{astromancy}, \sphere{fabrication}, \sphere{summoning}
@@ -515,7 +513,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Scholastic Discovery",
+            name: "School Expertise",
             is_magical: true,
             rank: 1,
             description: r"
@@ -525,7 +523,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
             \subcf{Conjuration} You double the \glossterm{range} of arcane spells you cast.
 
-            \subcf{Evocation} You gain a \plus2 bonus to \glossterm{power}.
+            \subcf{Evocation} You gain a \plus2 bonus to \glossterm{magical} \glossterm{power}.
 
             \subcf{Illusion} You gain a \plus1 bonus to \glossterm{accuracy}.
 
@@ -543,12 +541,11 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-         You learn an additional arcane spell.
-
-                ",
+                You learn an additional arcane spell.
+            ",
         },
         RankAbility {
-            name: "Scholastic Attunement",
+            name: "School Attunement",
             is_magical: true,
             rank: 3,
             description: r"
@@ -558,7 +555,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Greater Scholastic Discovery",
+            name: "Greater School Expertise",
             is_magical: true,
             rank: 4,
             description: r"
@@ -590,21 +587,20 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-         You learn an additional arcane spell.
-
-                ",
+                You learn an additional arcane spell.
+            ",
         },
         RankAbility {
-            name: "Greater Scholastic Attunement",
+            name: "Greater School Attunement",
             is_magical: true,
             rank: 6,
             description: r"
-         The number of attunement points you gain from your \textit{scholastic attunement} ability increases to two.
+         The number of attunement points you gain from your \textit{school attunement} ability increases to two.
 
                 ",
         },
         RankAbility {
-            name: "Supreme Scholastic Discovery",
+            name: "Supreme School Expertise",
             is_magical: true,
             rank: 7,
             description: r"

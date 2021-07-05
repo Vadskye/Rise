@@ -19,15 +19,14 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Elemental Magic",
+            name: "Elemental Versatility",
             is_magical: true,
             rank: 1,
             description: r"
-         Choose one of the \glossterm{mystic spheres} associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
-        If you already have access to that mystic sphere, you learn two spells from that sphere.
-        Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
-
-                ",
+                You learn a spell from any of the mystic spheres associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
+                You do not have to have access to that mystic sphere.
+                As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
+            ",
         },
         RankAbility {
             name: "Elemental Influence",
@@ -68,24 +67,21 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-         The bonuses from your \textit{elemental balance} ability improve.
-        \begin{itemize}
-            \item Air: You gain a \glossterm{glide speed} equal to half the \glossterm{base speed} for your size.
-            \item Earth: The bonus to Fortitude defense increases to \plus2.
-            \item Fire: The defense bonus increases to \plus4.
-            \item Water: You gain a \glossterm{swim speed} equal to half the \glossterm{base speed} for your size.
-        \end{itemize}
-
-                ",
+                The bonuses from your \textit{elemental balance} ability improve.
+                \begin{itemize}
+                    \item Air: You gain a \glossterm{glide speed} equal to half the \glossterm{base speed} for your size.
+                    \item Earth: The bonus to Fortitude defense increases to \plus2.
+                    \item Fire: The defense bonus increases to \plus4.
+                    \item Water: You gain a \glossterm{swim speed} equal to half the \glossterm{base speed} for your size.
+                \end{itemize}
+            ",
         },
         RankAbility {
             name: "Elemental Versatility",
             is_magical: true,
             rank: 4,
             description: r"
-                You learn a spell from any of the spheres associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
-                You do not have to have access to that mystic sphere.
-                As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
+                You learn an additional spell with your \textit{elemental versatility} ability.
             ",
         },
         RankAbility {
@@ -107,13 +103,12 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Elemental Versatility",
+            name: "Elemental Power",
             is_magical: true,
             rank: 6,
             description: r"
-         You learn an additional spell with your \textit{elemental versatility} ability.
-
-                ",
+                You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
+            ",
         },
         RankAbility {
             name: "Supreme Elemental Balance",
@@ -202,14 +197,6 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional nature \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-            ",
-        },
-        RankAbility {
             name: "Spell Rank",
             is_magical: true,
             rank: 5,
@@ -270,8 +257,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         {
             \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                 You cannot choose this ability multiple times.
-            \parhead{Insight Point} You gain an additional \glossterm{insight point}.
-                You can choose this ability multiple times, gaining an additional insight point each time.
             \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
                 The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
                 You cannot choose this ability multiple times.
@@ -279,6 +264,8 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                 In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
+            \parhead{Spell Knowledge} You learn an additional spell.
+                You can choose this ability multiple times, learning an additional spell each time.
             \parhead{Spell Power} Choose a nature \glossterm{spell} you know.
                 You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
@@ -572,10 +559,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-        
-        The bonus from your \textit{shifting defense} ability increases to \plus3.
-
-                ",
+                The bonus from your \textit{shifting defense} ability increases to \plus3.
+            ",
         },
         RankAbility {
             name: "Greater Wild Aspect",
@@ -583,7 +568,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You can change your \textit{wild aspect} as a \glossterm{minor action} instead of as a standard action.
-                In addition, you learn an additional \textit{wild aspect}.
             ",
         },
         RankAbility {
@@ -600,19 +584,16 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-         You gain a \plus1d bonus to your damage with natural weapons.
-
-                ",
+                You gain a \plus1d bonus to your damage with natural weapons.
+            ",
         },
         RankAbility {
             name: "Supreme Shifting Defense",
             is_magical: true,
             rank: 6,
             description: r"
-        
-        The bonus from your \textit{shifting defense} ability increases to \plus4.
-
-                ",
+                The bonus from your \textit{shifting defense} ability increases to \plus4.
+            ",
         },
         RankAbility {
             name: "Supreme Wild Aspect",

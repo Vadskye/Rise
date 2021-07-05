@@ -111,15 +111,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 4,
-            description: r"
-         You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-
-                ",
-        },
-        RankAbility {
             name: "Spell Rank",
             is_magical: true,
             rank: 5,
@@ -194,12 +185,12 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         {
             \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                 You cannot choose this ability multiple times.
-            \parhead{Insight Point} You gain an additional \glossterm{insight point}.
-                You can choose this ability multiple times, gaining an additional insight point each time.
             \parhead{Signature Spell} Choose an arcane \glossterm{spell} you know.
                 The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                 In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
+            \parhead{Spell Knowledge} You learn an additional spell.
+                You can choose this ability multiple times, learning an additional spell each time.
             \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.
                 You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
@@ -271,7 +262,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
          Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
         You have the blood of that type of dragon in your veins.
-        You gain a \plus4 bonus to \glossterm{defenses} against attacks that deal damage of the type dealt by that dragon's breath weapon.
+        You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon.
 
         \begin{dtable}
             \lcaption{Draconic Bloodline Types}
@@ -322,15 +313,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Greater Draconic Bloodline",
-            is_magical: true,
-            rank: 2,
-            description: r"
-         The defense bonus from your \textit{draconic bloodline} ability increases to \plus6.
-
-                ",
-        },
-        RankAbility {
             name: "Draconic Hide",
             is_magical: true,
             rank: 3,
@@ -349,22 +331,12 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Draconic Spell",
-            is_magical: true,
-            rank: 5,
-            description: r"
-         You learn an additional arcane spell from your dragon's mystic sphere.
-
-                ",
-        },
-        RankAbility {
             name: "Energy Immunity",
             is_magical: true,
             rank: 5,
             description: r"
-         You become immune to your dragon's damage type.
-
-                ",
+                You become immune to your dragon's damage type.
+            ",
         },
         RankAbility {
             name: "Greater Draconic Hide",

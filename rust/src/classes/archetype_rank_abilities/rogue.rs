@@ -124,11 +124,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         You gain two additional skill points.
-        In addition, you gain all Knowledge skills as \glossterm{class skills}.
-
-
-                ",
+                You gain two additional skill points.
+                In addition, you gain all Knowledge skills as \glossterm{class skills}.
+            ",
         },
         RankAbility {
             name: "Bardic Performances",
@@ -445,22 +443,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Bardic Performance",
-            is_magical: true,
-            rank: 3,
-            description: r"
-         You learn an additional bardic performance.
-
-                ",
-        },
-        RankAbility {
             name: "Loremaster",
             is_magical: false,
             rank: 3,
             description: r"
-         You gain a \plus2 bonus to all Knowledge skills.
-
-                ",
+                You gain a \plus2 bonus to all Knowledge skills.
+            ",
         },
         RankAbility {
             name: "Virtuoso",
@@ -480,21 +468,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Bardic Performance",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                You learn an additional bardic performance.
-            ",
-        },
-        RankAbility {
             name: "Greater Loremaster",
             is_magical: false,
             rank: 6,
             description: r"
-         The Knowledge skill bonus from your \textit{loremaster} ability increases to \plus4.
-
-                ",
+                The bonus from your \textit{loremaster} ability increases to \plus4.
+            ",
         },
         RankAbility {
             name: "Greater Virtuoso",
@@ -578,14 +557,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You become a rank 4 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 4.
-            ",
-        },
-        RankAbility {
-            name: "Trick Maneuver",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
             ",
         },
         RankAbility {
