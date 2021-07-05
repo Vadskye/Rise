@@ -1904,7 +1904,7 @@ def generate_apparel():
             description="""
                 You reduce your defense penalties from using the \\ability<charge> action by 1.
             """,
-            short_description="Reduce penalties for charging by 1",
+            short_description="Reduces penalties for charging by 1",
         ),
         MagicItem(
             name="Greater Charging Boots",
@@ -1914,7 +1914,76 @@ def generate_apparel():
             description="""
                 You do not take defense penalties from using the \\ability<charge> action.
             """,
-            short_description="Remove penalties for charging",
+            short_description="Removes penalties for charging",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Cleansing Amulet",
+            level=4,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                As a standard action, you can activate this amulet.
+                When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
+                This cannot remove an effect applied during the current round.
+
+                After you use this amulet, you increase your \\glossterm<fatigue level> by one.
+            """,
+            short_description="Remove a debuff",
+        ),
+        MagicItem(
+            name="Greater Cleansing Amulet",
+            level=10,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                As a standard action, you can activate this amulet.
+                When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
+                This cannot remove an effect applied during the current round.
+            """,
+            short_description="Freely remove a debuff",
+        ),
+        MagicItem(
+            name="Supreme Cleansing Amulet",
+            level=16,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                As a standard action, you can activate this amulet.
+                When you do, you remove up to two \\glossterm<brief> effects or \\glossterm<conditions> affecting you.
+                This cannot remove an effects applied during the current round.
+            """,
+            short_description="Freely remove two debuffs",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Quickcleanse Amulet",
+            level=13,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                As a \\glossterm<minor action>, you can activate this amulet.
+                When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
+                This cannot remove an effect applied during the current round.
+
+                After you use this amulet, you increase your \\glossterm<fatigue level> by two.
+            """,
+            short_description="Quickly remove a debuff",
+        ),
+
+        MagicItem(
+            name="Quickcleanse Amulet, Greater",
+            level=19,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                This item functions like a \\mitem<quickcleanse amulet>, except that you only increase your \\glossterm<fatigue level> by one instead of two.
+            """,
+            short_description="Quickly remove a debuff more easily",
         ),
     ]
 
