@@ -300,11 +300,14 @@ export const thaumaturgy: MysticSphere = {
 
       // original targets: ['Yourself or an \\glossterm{ally} within \\medrange', 'One other creature within that range']
       attack: {
-        crit: `You can transfer any number of magical conditions in this way.`,
+        crit: `The effect becomes a \\glossterm{condition} on the struck creature.`,
         // No glance effect; weird shenanigans if you autoremove the conditions
-        hit: `One magical condition of your choice is removed from yourself or your chosen ally and applied to the struck creature.`,
+        hit: `
+          One magical condition of your choice is removed from yourself or your chosen ally.
+          In addition, the struck creature \\glossterm{briefly} suffers the effect of the removed condition.
+        `,
         targeting: `
-          Choose yourself or one \\glossterm{ally} within \\medrange that is currently affected by a \\glossterm{magical} condition.
+          Choose yourself or one \\glossterm{ally} within \\medrange that is currently affected by a \\glossterm{magical} \\glossterm{condition}.
           In addition, make an attack vs. Mental against one other creature within \\medrange.
         `,
       },

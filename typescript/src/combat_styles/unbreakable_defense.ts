@@ -194,20 +194,37 @@ export const unbreakableDefense: CombatStyle = {
       type: "Duration",
     },
 
-    // TODO: change to rank 5 once campaigns progress far enough
+    {
+      name: "Cleanse",
+
+      effect: `
+        When you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        You remove a \\glossterm{brief} effect or \\glossterm{condition} affecting you.
+        This cannot remove an effect applied during the current round.
+      `,
+      rank: 2,
+      scaling: {
+        4: "Using this ability does not increase your fatigue level.",
+        6: "You may remove an additional effect.",
+      },
+      type: "Duration",
+    },
+
     {
       name: "Cleansing Strike",
 
       effect: `
-        Make a strike.
-        You take a -2d damage penalty with the strike.
+        When you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        Make a \\glossterm{strike}.
         In addition, you may remove a \\glossterm{brief} effect or \\glossterm{condition} affecting you.
         This cannot remove an effect applied during the current round.
         The penalties from the effect still affect you when you make the strike.
       `,
       rank: 4,
       scaling: {
-        6: "The damage penalty is reduced to -1d.",
+        6: "You gain a +1d damage bonus with the strike.",
       },
       type: "Duration",
     },

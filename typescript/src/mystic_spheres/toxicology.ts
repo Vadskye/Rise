@@ -446,6 +446,20 @@ export const toxicology: MysticSphere = {
       tags: ['Healing'],
       type: "Instant",
     },
+
+    {
+      name: "Cleansing Draught",
+
+      effect: `
+        You or one \\glossterm{ally} within your \\glossterm{reach} can remove a \\glossterm{brief} effect or \\glossterm{condition}.
+        This cannot remove an effect applied during the current round.
+      `,
+      rank: 4,
+      scaling: {
+        6: `The subject can remove two effects.`,
+      },
+      type: "Instant",
+    },
   ],
   rituals: [],
 };

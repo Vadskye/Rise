@@ -608,6 +608,25 @@ export const chronomancy: MysticSphere = {
       },
       type: "Instant",
     },
+
+    {
+      name: "Disjointed Expiration",
+
+      effect: `
+        You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{brief} effect or \\glossterm{condition}.
+        This cannot remove an effect applied during the current round.
+        For each effect removed this way, you deal the subject 4 energy damage.
+      `,
+      rank: 4,
+      narrative: `
+        You twist time to let your ally's nausea run its natural course in mere seconds.
+        It is painful to undergo such a selective temporal acceleration, but the consequences of such distraction on the battlefield would be far worse.
+      `,
+      scaling: {
+        6: `The subject can remove two effects.`,
+      },
+      type: "Instant",
+    },
   ],
   rituals: [
     {
