@@ -648,6 +648,50 @@ def generate_implements():
         ),
     ]
 
+    apparel += [
+        MagicItem(
+            name="Baneswallow Staff",
+            level=5,
+            material_type="Staff",
+            tags=[],
+            description="""
+                As a standard action, you can activate this staff.
+                When you do, you remove one \\glossterm<condition> affecting you.
+                This cannot remove an effect applied during the current round.
+                If you remove a condition in this way, you \\glossterm<briefly> gain a +2 bonus to your \\glossterm<power>.
+
+                After you use this ability, you increase your \\glossterm<fatigue level> by one.
+            """,
+            short_description="Fatigue and remove a condition to gain power",
+        ),
+        MagicItem(
+            name="Baneswallow Staff, Greater",
+            level=11,
+            material_type="Staff",
+            tags=[],
+            description="""
+                As a standard action, you can activate this staff.
+                When you do, you remove one \\glossterm<condition> affecting you.
+                This cannot remove an effect applied during the current round.
+                If you remove a condition in this way, you \\glossterm<briefly> gain a +4 bonus to your \\glossterm<power>.
+            """,
+            short_description="Remove a condition to gain power",
+        ),
+        MagicItem(
+            name="Baneswallow Staff, Supreme",
+            level=17,
+            material_type="Staff",
+            tags=[],
+            description="""
+                As a standard action, you can activate this staff.
+                When you do, you remove one or two \\glossterm<conditions> affecting you.
+                This cannot remove effects applied during the current round.
+                If you remove at least one condition in this way, you \\glossterm<briefly> gain a +8 bonus to your \\glossterm<power>.
+            """,
+            short_description="Remove conditions to gain power",
+        ),
+    ]
+
     return implements
 
 
