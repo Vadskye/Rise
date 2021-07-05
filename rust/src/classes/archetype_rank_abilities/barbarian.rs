@@ -204,10 +204,9 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-         You can use your Strength in place of your Perception to determine your \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, and \textit{trip} abilities, as well as with grapple actions (see \pcref{Special Combat Abilities}, and \pcref{Grapple Actions}).
-        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with those abilities and with the \textit{shove} ability.
-
-                ",
+                You can use your Strength in place of your Perception to determine your \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, and \textit{trip} abilities, as well as with grapple actions (see \pcref{Special Combat Abilities}, and \pcref{Grapple Actions}).
+                In addition, you gain a \plus1 bonus to \glossterm{accuracy} with those abilities and with the \textit{shove} ability.
+            ",
         },
         RankAbility {
             name: "Savage Force",
@@ -232,29 +231,26 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-     Your \textit{savage rush} ability no longer causes you to treat spaces occupied by enemies as difficult terrain.
-
-                ",
+                Your \textit{savage rush} ability no longer causes you to treat spaces occupied by enemies as difficult terrain.
+            ",
         },
         RankAbility {
             name: "Greater Savage Precision",
             is_magical: false,
             rank: 5,
             description: r"
-         The accuracy bonus from your \textit{savage precision} ability increases to \plus2.
-        In addition, choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): Disarming, Forceful, Grappling, or Tripping.
-        You may treat all weapons you wield as if they had the chosen weapon tag.
-
-                ",
+                The accuracy bonus from your \textit{savage precision} ability increases to \plus2.
+                In addition, choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): Disarming, Forceful, Grappling, or Tripping.
+                You may treat all weapons you wield as if they had the chosen weapon tag.
+            ",
         },
         RankAbility {
             name: "Greater Savage Force",
             is_magical: false,
             rank: 6,
             description: r"
-         The bonus from your \textit{savage force} ability increases to \plus2d.
-
-                ",
+                The bonus from your \textit{savage force} ability increases to \plus2d.
+            ",
         },
         RankAbility {
             name: "Supreme Fast Movement",
