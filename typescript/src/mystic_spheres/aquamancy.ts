@@ -233,7 +233,7 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: 'aquajet propulsion',
-        exceptThat: "the damage increases to 2d6 + \\glossterm{power}, and the push distance increases to 60 feet.",
+        exceptThat: "the damage increases to 2d6 + \\glossterm{power}, and the push distance increases to 30 feet.",
       },
       rank: 3,
       scaling: "damage",
@@ -245,9 +245,9 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: 'aquajet propulsion',
-        exceptThat: "the damage increases to 4d8 + \\glossterm{power}, and the push distance increases to 120 feet.",
+        exceptThat: "the damage increases to 2d10 + \\glossterm{power}, and the push distance increases to 60 feet.",
       },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
