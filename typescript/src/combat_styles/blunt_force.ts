@@ -340,31 +340,17 @@ export const bluntForce: CombatStyle = {
       rank: 2,
       scaling: {
         4: "You gain a +1d damage bonus with the strike.",
-        6: "The accuracy bonus increases to +2d.",
+        6: "The damage bonus increases to +2d.",
       },
       type: "Duration",
     },
 
     {
-      name: "Stunning Smash",
+      name: "Greater Dazing Smash",
 
       effect: `
-        Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
-      `,
-      rank: 5,
-      scaling: {
-        7: "You gain a +1d damage bonus with the strike.",
-      },
-      type: "Duration",
-    },
-
-    {
-      name: "Tenderizing Smash",
-
-      effect: `
-        Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
-        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 4,
       scaling: {
@@ -374,13 +360,13 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Greater Tenderizing Smash",
+      name: "Tenderizing Smash",
 
       effect: `
-        Make a \\glossterm{strike} with a -1 accuracy penalty using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a -1 \\glossterm{accuracy} penalty using a bludgeoning weapon.
         Each creature damaged by the strike is \\glossterm{briefly} \\nauseated.
       `,
-      rank: 7,
+      rank: 6,
       type: "Duration",
     },
 
