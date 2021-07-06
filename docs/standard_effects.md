@@ -186,12 +186,13 @@ situations.
 
 * Strike-based attacks:
   * High: (weapon damage dice) + (power)
-  * Medium: (weapon damage dice) + (half power)
-    * This uses half power instead of -2d because large weapons feel like they should generally be
+  * Medium: (weapon damage dice) + (half power) OR (weapon damage dice -2d) + (power)
+    * For AOE, use half power instead of -2d because large weapons feel like they should generally be
       better at AOE. If the weapon damage dice were reduced but you still added full power, it would
       be worse for large weapons than for small weapons, which seems odd. Large weapons should
       generally be better for damage, including AOE, since small weapons are generally better for
       applying debuffs and special effects.
+    * For debuffs, use -2d and full power.
   * Low: (weapon damage dice -2d) + (half power)
 * Non-strike-based attacks:
   * High: (1d8 + 1d per rank) + (power)
@@ -311,6 +312,7 @@ Rank 1 maneuver:
     * Make a strike with a highly circumstantial benefit (reroll miss chance)
   * Finisher:
     * low damage, r1 debuff condition if lose HP (note: this is 1 level too weak)
+    * med damage, brief r1 debuff if lose HP
 
 Rank 1 Focus/non-upgrading, Rank 3 maneuver:
 * Strike-based:
@@ -324,15 +326,18 @@ Rank 1 Focus/non-upgrading, Rank 3 maneuver:
     * Med range: high damage
     * t1 area: medium damage
   * Finisher:
+    * Close range: high damage, brief r1 debuff if lose HP
+    * Med range: med damage, brief r2 debuff if lose HP
     * Med range: low damage, r2 debuff condition if lose HP
     * Med range: r2 debuff condition while at less than max HP
-      * This is worse than a damage + debuff in that it doesn't deal damage, but better in that you
-        can pre-cast it and have the full effect become active later
+      * This is worse than a damage + debuff in that it doesn't deal damage, but better in that you can pre-cast it and have the full effect become active later
     * t1 area: r2 debuff condition if no resistances / below max hp + crit effect
 
 ### Higher rank specific examples
 
 Rank 2 Focus/non-upgrading, Rank 4 maneuver:
+  * Finisher:
+    * Med range: high damage, brief r1 debuff if lose HP
 
 Rank 3 Focus/non-upgrading, Rank 5 maneuver:
 * Strike-based:
