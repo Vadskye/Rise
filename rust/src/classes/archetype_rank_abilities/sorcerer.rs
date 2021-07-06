@@ -190,6 +190,9 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         Whenever you increase your rank in this archetype, you may change your choice.
         This can allow you to apply the benefits of insights like \textit{signature spell} to higher rank spells.
         {
+            \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
+                You double your range with that spell.
+                You can choose this ability multiple times, choosing a different spell each time.
             \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                 You cannot choose this ability multiple times.
             \parhead{Signature Spell} Choose an arcane \glossterm{spell} you know.

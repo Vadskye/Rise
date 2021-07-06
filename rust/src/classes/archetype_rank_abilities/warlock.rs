@@ -406,6 +406,9 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         Whenever you increase your rank in this archetype, you may change your choice.
         This can allow you to apply the benefits of insights like \textit{signature spell} to higher rank spells.
         {
+            \parhead{Distant Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
+                You double your range with that spell.
+                You can choose this ability multiple times, choosing a different spell each time.
             \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                 You cannot choose this ability multiple times.
             \parhead{Rituals} You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Rituals}).
