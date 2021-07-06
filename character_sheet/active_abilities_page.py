@@ -34,6 +34,7 @@ def create_page(destination):
             div({"class": "tab-explanation"}, """
                 This tab is used to track the abilities that you can use.
                 Each ability you add here will appear as a button on the Core page.
+                If you add a line with the format "Header=Effect" in an ability description, that line will become a special header for that ability, just like the "Attack" and "Defense" headers that are normally part of attacks.
             """),
             div({"class": "section-header"}, "Magical Attacks"),
             fieldset(
@@ -50,22 +51,16 @@ def create_page(destination):
                 {"class": f"repeating_attacks"},
                 attack("nondamaging"),
             ),
+            flex_wrapper(div({"class": "section-header"}, "Ability Text Modifiers")),
+            flex_row({"class": "prefix-suffix"}, [
+                *attack_text_modifier("Prefix", "prefix"),
+                *attack_text_modifier("Suffix", "suffix"),
+            ]),
             flex_wrapper(div({"class": "section-header"}, "Other Abilities")),
             fieldset(
                 {"class": f"repeating_abilities"},
                 ability(),
             ),
-            flex_wrapper(div({"class": "section-header"}, "Prefix/Suffix")),
-            flex_row({"class": "prefix-suffix"}, [
-                textarea({
-                    "name": "custom_attack_prefix",
-                    "value": "",
-                }),
-                textarea({
-                    "name": "custom_attack_suffix",
-                    "value": "",
-                }),
-            ]),
             flex_wrapper(div({"class": "section-header"}, "Universal Abilities")),
             universal_abilities(),
             div("""
@@ -74,6 +69,20 @@ def create_page(destination):
             """),
         ],
     )
+
+def attack_text_modifier(label, name):
+    return [
+        labeled_text_input(label, input_attributes={
+            "name": f"custom_attack_{name}_raw",
+            "value": "",
+        }),
+        textarea({
+            "class": "hidden",
+            "disabled": True,
+            "name": f"custom_attack_{name}",
+            "value": "",
+        }),
+    ]
 
 def ability():
     # TODO: make this legacy less dumb
@@ -89,8 +98,18 @@ def ability():
             labeled_textarea(
                 "Effect",
                 {"class": "active-ability-effect"},
-                {"name": "active_ability0_effect"},
+                {"name": "active_ability0_effect_raw"},
             ),
+            textarea({
+                "class": "hidden",
+                "name": "active_ability0_key_value_pairs",
+                "value": "",
+            }),
+            textarea({
+                "class": "hidden",
+                "name": "active_ability0_effect",
+                "value": "",
+            }),
             button(
                 {
                     "class": "attack-roll",
@@ -101,6 +120,7 @@ def ability():
                         + " {{title=@{active_ability0_name}}}"
                         + " {{subtitle=@{character_name}}}"
                         + " {{color=@{chat_color}}}"
+                        + " @{active_ability0_key_value_pairs}"
                         + " {{desc=@{active_ability0_effect}}}"
                     ),
                 },
@@ -238,8 +258,18 @@ def attack(source):
             labeled_textarea(
                 "Effect",
                 {"class": "attack-effect"},
-                {"name": "attack0_effect"},
+                {"name": "attack0_effect_raw"},
             ),
+            textarea({
+                "class": "hidden",
+                "name": "attack0_key_value_pairs",
+                "value": "",
+            }),
+            textarea({
+                "class": "hidden",
+                "name": "attack0_effect",
+                "value": "",
+            }),
             button(
                 {
                     "class": "attack-roll",
@@ -266,6 +296,7 @@ def attack_button_text(source):
         + " {{Attack=[[d10!+@{accuracy}+@{attack0_accuracy}]] vs @{attack0_defense}}}"
         + damage_text
         + " {{color=@{chat_color}}}"
+        + " @{attack0_key_value_pairs}"
         + " {{desc=@{debuff_attack_prefix}@{custom_attack_prefix}@{attack0_effect}@{custom_attack_suffix}}}"
     )
 
