@@ -576,7 +576,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Tricky Maneuver",
+            name: "Trick Maneuver",
             is_magical: false,
             rank: 4,
             description: r"
@@ -627,7 +627,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Tricky Maneuver",
+            name: "Trick Maneuver",
             is_magical: false,
             rank: 7,
             description: r"
