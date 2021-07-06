@@ -443,6 +443,14 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
+            name: "Bardic Performance",
+            is_magical: true,
+            rank: 3,
+            description: r"
+                You learn an additional bardic performance.
+            ",
+        },
+        RankAbility {
             name: "Loremaster",
             is_magical: false,
             rank: 3,
@@ -466,6 +474,14 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
          The bonus from your \textit{combat inspiration} ability increases to \plus2.
 
                 ",
+        },
+        RankAbility {
+            name: "Bardic Performance",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You learn an additional bardic performance.
+            ",
         },
         RankAbility {
             name: "Greater Loremaster",
