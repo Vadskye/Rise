@@ -156,22 +156,23 @@ You cannot gain the same feat twice.
         \featref{Twinhand Spellcaster}           & Dex 1        & Cast spells with two hands at once        & Magical & \featpref{Twinhand Spellcaster}        \\
 
         \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Battle Armory}            & Str 1, Dex 1        & Switch between different weapons easily    & \tdash & \featpref{Battle Armory}            \\
-        \featref{Blindfighter}             & Per 2               & Fight unseen foes better                   & \tdash & \featpref{Blindfighter}             \\
-        \featref{Brawler}                  & Str 1, Dex 1        & Fight better unarmed and in close quarters & \tdash & \featpref{Brawler}                  \\
-        \featref{Combat Style Versatility} & Int 1, combat style & Access combat styles from other classes    & \tdash & \featpref{Combat Style Versatility} \\
-        \featref{Duelist}                  & Dex 1, Int 1        & Fight one-on-one better                    & \tdash & \featpref{Duelist}                  \\
-        \featref{Executioner}              & Per 1               & Kill weakened foes more easily             & \tdash & \featpref{Executioner}              \\
-        \featref{Greatweapon Warrior}      & Str 2               & Fight better with two-handed weapons       & \tdash & \featpref{Greatweapon Warrior}      \\
-        \featref{Leadership}               & Int 2 or Wil 2      & Inspire nearby allies                      & \tdash & \featpref{Leadership}               \\
-        \featref{Maneuverist}              & Int 1               & Gain limited maneuver access               & \tdash & \featpref{Maneuverist}              \\
-        \featref{Martial Training}         & \tdash              & Improve combat abilities                   & \tdash & \featpref{Martial Training}         \\
-        \featref{Savage}                   & Str 2               & Shove and overrun foes to deal damage      & \tdash & \featpref{Savage}                   \\
-        \featref{Shieldbearer}             & Str 2               & Defend better with shields                 & \tdash & \featpref{Shieldbearer}             \\
-        \featref{Sniper}                   & Per 2               & Aim precisely at distant foes              & \tdash & \featpref{Sniper}                   \\
-        \featref{Two-Weapon Fighting}      & Dex 2               & Fight better with two weapons at once      & \tdash & \featpref{Two-Weapon Fighting}      \\
-        \featref{Weapon Focus}             & \tdash              & Fight better with a single type of weapon  & \tdash & \featpref{Weapon Focus}             \\
-        \featref{Whirlwind Warrior}        & Dex 1               & Fight hordes with agile ease               & \tdash & \featpref{Whirlwind Warrior}        \\
+        \featref{Battle Armory}            & Str 1, Dex 1        & Switch between different weapons easily    & \tdash  & \featpref{Battle Armory}            \\
+        \featref{Blindfighter}             & Per 2               & Fight unseen foes better                   & \tdash  & \featpref{Blindfighter}             \\
+        \featref{Brawler}                  & Str 1, Dex 1        & Fight better unarmed and in close quarters & \tdash  & \featpref{Brawler}                  \\
+        \featref{Combat Style Versatility} & Int 1, combat style & Access combat styles from other classes    & \tdash  & \featpref{Combat Style Versatility} \\
+        \featref{Duelist}                  & Dex 1, Int 1        & Fight one-on-one better                    & \tdash  & \featpref{Duelist}                  \\
+        \featref{Executioner}              & Per 1               & Kill weakened foes more easily             & \tdash  & \featpref{Executioner}              \\
+        \featref{Greatweapon Warrior}      & Str 2               & Fight better with two-handed weapons       & \tdash  & \featpref{Greatweapon Warrior}      \\
+        \featref{Ghostblade}               & Dex 1, Wil 1        & Tap into ghostly powers in combat          & Magical & \featpref{Ghostblade}               \\
+        \featref{Leadership}               & Int 2 or Wil 2      & Inspire nearby allies                      & \tdash  & \featpref{Leadership}               \\
+        \featref{Maneuverist}              & Int 1               & Gain limited maneuver access               & \tdash  & \featpref{Maneuverist}              \\
+        \featref{Martial Training}         & \tdash              & Improve combat abilities                   & \tdash  & \featpref{Martial Training}         \\
+        \featref{Savage}                   & Str 2               & Shove and overrun foes to deal damage      & \tdash  & \featpref{Savage}                   \\
+        \featref{Shieldbearer}             & Str 2               & Defend better with shields                 & \tdash  & \featpref{Shieldbearer}             \\
+        \featref{Sniper}                   & Per 2               & Aim precisely at distant foes              & \tdash  & \featpref{Sniper}                   \\
+        \featref{Two-Weapon Fighting}      & Dex 2               & Fight better with two weapons at once      & \tdash  & \featpref{Two-Weapon Fighting}      \\
+        \featref{Weapon Focus}             & \tdash              & Fight better with a single type of weapon  & \tdash  & \featpref{Weapon Focus}             \\
+        \featref{Whirlwind Warrior}        & Dex 1               & Fight hordes with agile ease               & \tdash  & \featpref{Whirlwind Warrior}        \\
     \end{longtable}
 \end{longtablewrapper}
 
@@ -961,6 +962,54 @@ You cannot gain the same feat twice.
 
         \ff[21]{Greater Escape Magic} You can use your \textit{escape magic} ability as a \glossterm{minor action}.
         If you do, you \glossterm{briefly} cannot use it as a minor action again.
+    \end{feat}
+
+    \begin{feat}{Ghostblade}{Combat, Magical}
+        \featpre Base Dexterity of 1 and base Willpower of 1.
+
+        \ff[1]{Ghost Step} When you use the \textit{sprint} ability, you can become \glossterm{invisible} for the duration of the movement (see \pcref{Sprint}).
+        This usually makes it impossible for creatures to react to your movement, such as by using the \textit{follow} or \textit{withdraw} abilities (see \pcref{Movement Abilities}).
+        This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
+
+        \ff[3]{Spectral Armament} The equipment you choose as your \glossterm{legacy item} becomes ghostly and translucent (see \pcref{Legacy Items}).
+        If you chose a weapon, all damage dealt with it is cold damage in addition to its other types.
+        If you chose body armor or a shield, you are \glossterm{impervious} to cold damage.
+
+        \ff[6]{Spectral Strike} You can use the \textit{spectral strike} ability as a standard action.
+        \begin{instantability}{Spectral Strike}
+            Make a \glossterm{strike}.
+            The attack is made against each subject's Reflex defense instead of its Armor defense.
+            Each creature that loses \glossterm{hit points} from this strike is \glossterm{briefly} \slowed.
+
+            \rankline
+            \featlevel{12} The effect becomes a \glossterm{condition}.
+            \featlevel{18} Each creature that loses hit points is \decelerated instead of slowed.
+        \end{instantability}
+
+        \ff[9]{Greater Ghost Step} You can use your \textit{ghost step} ability to affect any movement you make during the \glossterm{movement phase}.
+        In addition, when you use the \textit{sprint} ability, you can become \glossterm{incorporeal} for the duration of the movement.
+
+        \ff[12]{Greater Spectral Armament} The effect of your \glossterm{legacy item} improves.
+        If you chose a weapon, whenever you make a \glossterm{strike} against a creature's Armor defense that misses, if the strike hit that creature's Reflex defense, it is considered a \glossterm{glancing blow} and deals half damage.
+        If you chose body armor or a shield, whenever an attack hits your Reflex defense, if the attack missed your Armor defense, you take half damage from that attack.
+        This does not protect you from any non-damaging attack effects.
+
+        \ff[15]{Spectral Reap} You can use the \textit{spectral reap} ability as a \glossterm{standard action}.
+        \begin{instantability}{Spectral Reap}
+            Make a \glossterm{strike}.
+            The attack is made against each subject's Reflex defense instead of its Armor defense.
+            Each creature damaged by the strike is \glossterm{briefly} \slowed.
+
+            \rankline
+            \featlevel{21} Each creature is \decelerated instead of slowed.
+        \end{instantability}
+
+        \ff[18]{Supreme Ghost Step} You can use your \textit{greater ghost step} ability to affect any movement you make during the \glossterm{movement phase}.
+
+        \ff[21]{Supreme Spectral Armament} The effect of your \glossterm{legacy item} improves.
+        If you chose a weapon, whenever you make a \glossterm{strike}, you can make the strike against each subject's Reflex defense in place of its Armor defense.
+        This has no effect on strikes that are not made against Armor defense.
+        If you chose body armor or a shield, you may use your Armor defense in place of your Reflex defense against all attacks.
     \end{feat}
 
     \begin{feat}{Greatweapon Warrior}{Combat}
