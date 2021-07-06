@@ -444,7 +444,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus3 bonus to \glossterm{initiative} checks.
+                You and each \glossterm{ally} who can see or hear you gain a \plus1 bonus to initiative checks.
             ",
         },
         RankAbility {
@@ -563,7 +563,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                The bonus from your \textit{reactive tactics} ability increases to \plus6.
+                The bonus from your \textit{reactive tactics} ability increases to \plus2.
             ",
         },
         RankAbility {
@@ -587,7 +587,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{reactive tactics} ability increases to \plus9.
+                The bonus from your \textit{reactive tactics} ability increases to \plus3.
             ",
         },
         RankAbility {
