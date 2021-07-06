@@ -131,12 +131,14 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
         "
         .to_string();
     } else if weapon_proficiencies.specific_weapons.is_some() {
-        let custom_weapon_groups = generate_labeled_english_number(weapon_proficiencies.custom_weapon_groups, "other weapon group","other weapon groups");
-        let custom_weapon_groups = format!("any {}", custom_weapon_groups);
         let mut components = vec![
             String::from("simple weapons"),
-            custom_weapon_groups,
         ];
+        if weapon_proficiencies.custom_weapon_groups > 0 {
+            let custom_weapon_groups = generate_labeled_english_number(weapon_proficiencies.custom_weapon_groups, "other weapon group","other weapon groups");
+            let custom_weapon_groups = format!("any {}", custom_weapon_groups);
+            components.push(custom_weapon_groups);
+        }
         for w in weapon_proficiencies.specific_weapons.unwrap() {
             components.push(w.plural_name());
         }
