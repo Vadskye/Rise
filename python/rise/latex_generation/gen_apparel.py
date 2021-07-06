@@ -2047,37 +2047,61 @@ def generate_apparel():
         ),
     ]
 
-    # +2 levels since no slot is primary in "all defenses"
     apparel += [
         MagicItem(
             name="Ring of Protection",
-            level=9,
+            level=7,
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to all defenses.
+                You gain a +1 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
             """,
-            short_description="Grants +1 defenses",
+            short_description="Grants +1 non-Armor defenses",
         ),
         MagicItem(
             name="Ring of Protection, Greater",
-            level=15,
+            level=13,
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +2 \\glossterm<magic bonus> to all defenses.
+                You gain a +2 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
             """,
-            short_description="Grants +2 defenses",
+            short_description="Grants +2 non-Armor defenses",
         ),
         MagicItem(
             name="Ring of Protection, Supreme",
-            level=21,
+            level=19,
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +3 \\glossterm<magic bonus> to all defenses.
+                You gain a +3 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
             """,
-            short_description="Grants +3 defenses",
+            short_description="Grants +3 non-Armor defenses",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Ring of Mastery",
+            level=10,
+            material_type="Ring",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and all \\glossterm<defenses>.
+                In addition, you gain a +2 \\glossterm<magic bonus> to \\glossterm<power> and \\glossterm<damage resistance>.
+            """,
+            short_description="Grants many small bonuses",
+        ),
+        MagicItem(
+            name="Ring of Mastery, Greater",
+            level=16,
+            material_type="Ring",
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> and all \\glossterm<defenses>.
+                In addition, you gain a +4 \\glossterm<magic bonus> to \\glossterm<power> and \\glossterm<damage resistance>.
+            """,
+            short_description="Grants many bonuses",
         ),
     ]
 
