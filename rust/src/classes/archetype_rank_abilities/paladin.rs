@@ -177,6 +177,14 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
+            name: "Spell Knowledge",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
+            ",
+        },
+        RankAbility {
             name: "Spell Rank",
             is_magical: true,
             rank: 5,

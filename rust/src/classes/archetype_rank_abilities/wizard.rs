@@ -179,9 +179,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-         You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-
-                ",
+                You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
+            ",
         },
         RankAbility {
             name: "Spell Rank",
@@ -213,6 +212,14 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
                 ",
+        },
+        RankAbility {
+            name: "Spell Knowledge",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
+            ",
         },
         RankAbility {
             name: "Spell Rank",
