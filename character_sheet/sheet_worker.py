@@ -20,6 +20,8 @@ def generate_script():
             custom_modifiers(),
             monster_chat_color(),
             debuffs(),
+            ability_key_values(),
+            attack_prefix_suffix(),
             "</script>",
             "",
         ]
@@ -1061,6 +1063,65 @@ def attuned_effects():
                         active_attunement_count: activeAbilities.length,
                     });
                 });
+            });
+        });
+    """
+
+def ability_key_values():
+    return """
+        on(
+            "change:repeating_magicalattacks:attack0_effect_raw"
+            + " change:repeating_mundaneattacks:attack0_effect_raw"
+            + " change:repeating_attacks:attack0_effect_raw"
+            + " change:repeating_abilities:active_ability0_effect_raw",
+            function(eventInfo) {
+                let lines = (eventInfo.newValue || "").split('\\n');
+                let description_lines = [];
+                let key_value_pairs = [];
+                for (line of lines) {
+                    let equal_split = line.split('=');
+                    if (equal_split.length === 2) {
+                        key_value_pairs.push(`{{${equal_split[0]}=${equal_split[1]}}}`);
+                    } else {
+                        description_lines.push(line);
+                    }
+                }
+                let description = description_lines.filter(Boolean).join('\\n');
+                let key_values = key_value_pairs.join(' ');
+
+                let effect_id = eventInfo.sourceAttribute.replace("effect_raw", "effect");
+                let key_value_pairs_id = eventInfo.sourceAttribute.replace("effect_raw", "key_value_pairs");
+
+                console.log({
+                    [effect_id]: description,
+                    [key_value_pairs_id]: key_values,
+                });
+
+                setAttrs({
+                    [effect_id]: description,
+                    [key_value_pairs_id]: key_values,
+                });
+            }
+        );
+    """
+
+def attack_prefix_suffix():
+    return """
+        on("change:custom_attack_prefix_raw", function(eventInfo) {
+            let formatted = eventInfo.newValue && eventInfo.newValue.trim()
+                ? eventInfo.newValue.trim() + "\\n"
+                : "";
+            setAttrs({
+                custom_attack_prefix: formatted,
+            });
+        });
+
+        on("change:custom_attack_suffix_raw", function(eventInfo) {
+            let formatted = eventInfo.newValue && eventInfo.newValue.trim()
+                ? "\\n" + eventInfo.newValue.trim()
+                : "";
+            setAttrs({
+                custom_attack_suffix: formatted,
             });
         });
     """
