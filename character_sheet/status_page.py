@@ -77,7 +77,7 @@ def create_page(_destination):
             textarea({
                 "class": "hidden",
                 "disabled": True,
-                "name": "debuff_attack_prefix",
+                "name": "debuff_headers",
                 "value": "",
             }),
         ],
@@ -128,7 +128,7 @@ def debuffs():
     return flex_row({'class': 'debuffs'},
         [
             flex_col([
-                debuff("blinded", False),
+                debuff("blinded"),
                 debuff("confused", False),
                 debuff("dazed"),
                 debuff("dazzled"),
