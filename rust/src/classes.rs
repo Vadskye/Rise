@@ -46,7 +46,7 @@ impl Class {
         match self {
             Self::Barbarian => 1,
             Self::Cleric => 2,
-            Self::Druid => 1,
+            Self::Druid => 2,
             Self::Fighter => 1,
             Self::Monk => 1,
             Self::Paladin => 1,
