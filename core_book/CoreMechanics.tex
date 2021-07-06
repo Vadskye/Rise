@@ -450,10 +450,10 @@ It defines how attributes work and explains how to make attacks in combat.
         There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
 
         \subparhead{Light Undergrowth}\label{Light Undergrowth}
-        Light undergrowth is \glossterm{difficult terrain} and provides \glossterm{concealment}.
+        Light undergrowth provides \glossterm{concealment} and is \glossterm{difficult terrain}.
 
         \subparhead{Heavy Undergrowth}\label{Heavy Undergrowth}
-        Heavy undergrowth quadruples the movement cost required to move out of each square and provides \glossterm{concealment}.
+        Heavy undergrowth provides \glossterm{concealment} and is doubly \glossterm{difficult terrain}, which quadruples the movement cost required to move out of each square.
         In addition, using the \textit{charge} and \textit{sprint} actions is impossible in heavy undergrowth (see \pcref{Movement Abilities}, and \pcref{Special Combat Abilities}).
 
     \subsection{Movement Modes}\label{Movement Modes}
@@ -1336,8 +1336,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \subsection{Concealment}\label{Concealment}
         Concealment represents anything which makes it more difficult to see your target, such as \glossterm{shadowy illumination}.
-        A creature or object with concealment from you gains a \plus2 bonus to Armor defense.
-        The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
+        All attacks against a creature or object with concealment from you have a 20\% miss chance.
         Determining concealment works similarly to determining cover.
         You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
 
@@ -1345,7 +1344,7 @@ It defines how attributes work and explains how to make attacks in combat.
         Determining concealment from obstacles that block sight works the same way as determining cover.
 
         Determining concealment from lighting conditions is simpler, since it ignores lighting conditions between you and the target.
-        If your \glossterm{target square} square is in lighting that provides concealment, the target has concealment.
+        If your \glossterm{target square} is in lighting that provides concealment, the target has concealment.
         Otherwise, it does not.
 
     \subsection{Helpless Defenders}
@@ -1384,7 +1383,7 @@ It defines how attributes work and explains how to make attacks in combat.
             If you succeed on an Awareness check to notice an invisible object or creature, you still cannot see it, but you know its location.
 
             If it is impossible to see your target, you can still try to attack a square you think it occupies.
-            An attack into a square occupied by an invisible enemy has a 50\% miss chance, and the creature has \glossterm{concealment} against your attack, just as if you were \blinded.
+            An attack into a square occupied by an invisible enemy has a 50\% miss chance.
             If an adjacent invisible creature attacks you with a \glossterm{strike}, you can automatically identify the space it occupied when it attacked you.
             Even if you know the existence and location of an invisible creature, you are still \partiallyunaware of any attacks it makes.
 
