@@ -884,7 +884,7 @@ impl ClassArchetype {
                 \begin{itemize}
                     % each level: damage, HP debuff, maybe non-HP debuff, maybe AOE
                     \item Rank 1: \maneuver{hamstring}, \maneuver{rend the hide}, \maneuver{quickdraw}, \maneuver{wanderer's strike}
-                    \item Rank 2: \maneuver{followup strike}, \maneuver{reckless charge}, \manuever{strip the armor}, \maneuver{sweeping strike}
+                    \item Rank 2: \maneuver{followup strike}, \maneuver{reckless charge}, \maneuver{strip the armor}, \maneuver{sweeping strike}
                     \item Rank 3: \maneuver{desperate flurry}, \maneuver{spring attack}, \maneuver{strip the flesh}
                     \item Rank 4: \maneuver{brow gash}, \maneuver{greater wanderer's strike}, \maneuver{spinning slash}
                     \item Rank 5: \maneuver{bloodletting strike}, \maneuver{greater retreating strike}
