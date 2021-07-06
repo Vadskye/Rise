@@ -657,13 +657,14 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             \begin{itemize}
                 \item Its size category is Medium, and its \glossterm{base speed} is the normal base speed for its size (see \tref{Size in Combat}).
                 \item Its \glossterm{fatigue tolerance} is 0, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
-                \item Its \glossterm{hit points} are equal to the base value for your level \add your \glossterm{magic bonus} to hit points (see \tref{Character Advancement}).
-                \item Its \glossterm{damage resistance} is equal to the base value for your level \add your \glossterm{magic bonus} to damage resistance (see \pcref{Character Advancement}).
-                \item Each of its \glossterm{defenses} is equal to 5 \add your level \add your \glossterm{magic bonus} to each corresponding defense.
-                \item Its \glossterm{accuracy} is equal to your level \add half your base Perception \add your \glossterm{magic bonus} to accuracy.
-                \item Its \glossterm{power} with its attacks is equal to your \glossterm{magic bonus} to \glossterm{magical power}.
+                \item Its \glossterm{hit points} are equal to the base value for your level (see \tref{Character Advancement}).
+                \item Its \glossterm{damage resistance} is equal to the base value for your level (see \pcref{Character Advancement}).
+                \item Each of its \glossterm{defenses} is equal to 5 \add your level.
+                \item Its \glossterm{accuracy} is equal to your level \add half your base Perception.
+                \item Its \glossterm{power} with its attacks is 0.
                 \item It has no \glossterm{attunement points}.
                 \item The damage dealt by its natural weapons increases by \plus1d for each rank in this archetype beyond 1.
+                \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points, damage resistance, defenses, accuracy, and power.
             \end{itemize}
 
             % Oddly placed? there must be text between an itemize block and the end of a mdframed env
