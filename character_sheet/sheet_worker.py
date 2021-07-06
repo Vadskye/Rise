@@ -832,13 +832,14 @@ def debuffs():
             let fortitude = 0;
             let mental = 0;
             let reflex = 0;
+            let debuff_attack_prefix = "";
 
             // circumstantial effects
             if (grappled) {{
                 armor -= 2;
                 reflex -= 2;
             }}
-            if (partially_unaware && !(unaware || asleep || helpless || paralyzed)) {{
+            if (partially_unaware && !(unaware || asleep || helpless || paralyzed || blinded)) {{
                 armor -= 2;
                 reflex -= 2;
             }}
@@ -882,8 +883,15 @@ def debuffs():
                 mental -= 2;
                 reflex -= 2;
             }}
-            if (dazzled) {{
-                accuracy -= 2;
+            if (dazzled && !blinded) {{
+                debuff_attack_prefix = "<b>Miss on 1: [[d5]]</b>\\n";
+            }}
+            if (blinded) {{
+                debuff_attack_prefix = "<b>Miss on 1: [[d2]]</b>\\n";
+            }}
+            if (blinded && !unaware) {{
+                armor -= 2;
+                reflex -= 2;
             }}
             if (goaded) {{
                 accuracy -= 2;
@@ -945,6 +953,7 @@ def debuffs():
                 fortitude_debuff_modifier: fortitude,
                 mental_debuff_modifier: mental,
                 reflex_debuff_modifier: reflex,
+                debuff_attack_prefix,
             }});
         """,
     )

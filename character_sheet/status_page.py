@@ -74,6 +74,12 @@ def create_page(_destination):
                 {'class': 'repeating_custommodifiers'},
                 custom_modifier(),
             ),
+            textarea({
+                "class": "hidden",
+                "disabled": True,
+                "name": "debuff_attack_prefix",
+                "value": "",
+            }),
         ],
     )
 

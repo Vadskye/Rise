@@ -55,6 +55,17 @@ def create_page(destination):
                 {"class": f"repeating_abilities"},
                 ability(),
             ),
+            flex_wrapper(div({"class": "section-header"}, "Prefix/Suffix")),
+            flex_row({"class": "prefix-suffix"}, [
+                textarea({
+                    "name": "custom_attack_prefix",
+                    "value": "",
+                }),
+                textarea({
+                    "name": "custom_attack_suffix",
+                    "value": "",
+                }),
+            ]),
             flex_wrapper(div({"class": "section-header"}, "Universal Abilities")),
             universal_abilities(),
             div("""
@@ -255,7 +266,7 @@ def attack_button_text(source):
         + " {{Attack=[[d10!+@{accuracy}+@{attack0_accuracy}]] vs @{attack0_defense}}}"
         + damage_text
         + " {{color=@{chat_color}}}"
-        + " {{desc=@{attack0_effect}}}"
+        + " {{desc=@{debuff_attack_prefix}@{custom_attack_prefix}@{attack0_effect}@{custom_attack_suffix}}}"
     )
 
 def universal_ability_button(name, effect, attack=None):
