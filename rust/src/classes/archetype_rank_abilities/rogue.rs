@@ -217,7 +217,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Auditory}, \abilitytag{Emotion}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
-                Choose yourself or one \glossterm{ally} within \medrange.
+                Choose one \glossterm{ally} within \medrange.
                 For the duration of your performance, the subject gains a \plus1 bonus to \glossterm{accuracy}.
 
                 \rankline
