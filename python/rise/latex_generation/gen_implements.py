@@ -648,7 +648,7 @@ def generate_implements():
         ),
     ]
 
-    apparel += [
+    implements += [
         MagicItem(
             name="Baneswallow Staff",
             level=5,

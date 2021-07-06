@@ -639,7 +639,7 @@ def generate_weapons():
         ),
     ]
 
-    apparel += [
+    weapons += [
         MagicItem(
             name="Banechannel",
             level=10,
