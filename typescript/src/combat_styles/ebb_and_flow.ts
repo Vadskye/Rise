@@ -198,7 +198,7 @@ export const ebbAndFlow: CombatStyle = {
       name: "Power Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a -1 penalty to \\glossterm{accuracy}.
+        Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
         You gain a +2d damage bonus with the strike.
       `,
       rank: 1,
