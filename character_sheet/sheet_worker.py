@@ -1070,10 +1070,10 @@ def attuned_effects():
 def ability_key_values():
     return """
         on(
-            "change:repeating_magicalattacks:attack0_effect_raw"
-            + " change:repeating_mundaneattacks:attack0_effect_raw"
-            + " change:repeating_attacks:attack0_effect_raw"
-            + " change:repeating_abilities:active_ability0_effect_raw",
+            "change:repeating_magicalattacks:attack0_effect"
+            + " change:repeating_mundaneattacks:attack0_effect"
+            + " change:repeating_attacks:attack0_effect"
+            + " change:repeating_abilities:active_ability0_effect",
             function(eventInfo) {
                 let lines = (eventInfo.newValue || "").split('\\n');
                 let description_lines = [];
@@ -1089,8 +1089,8 @@ def ability_key_values():
                 let description = description_lines.filter(Boolean).join('\\n');
                 let key_values = key_value_pairs.join(' ');
 
-                let effect_id = eventInfo.sourceAttribute.replace("effect_raw", "effect");
-                let key_value_pairs_id = eventInfo.sourceAttribute.replace("effect_raw", "key_value_pairs");
+                let effect_id = eventInfo.sourceAttribute.replace("effect", "effect_formatted");
+                let key_value_pairs_id = eventInfo.sourceAttribute.replace("effect", "key_value_pairs");
 
                 console.log({
                     [effect_id]: description,

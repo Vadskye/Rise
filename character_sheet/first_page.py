@@ -487,15 +487,15 @@ def active_ability_button(ability_type, source=None):
         + " {{subtitle=@{character_name}}}"
         + " {{color=@{chat_color}}}"
         + " @{active_ability0_key_value_pairs}"
-        + " {{desc=@{active_ability0_effect}}}"
+        + " {{desc=@{active_ability0_effect_formatted}}}"
     ) if ability_type == "ability" else attack_button_text(source)
     return div({"class": "active-ability-button"}, [
         text_input({"class": "hidden", "name": prefix + "_accuracy"}),
         text_input({"class": "hidden", "name": prefix + "_defense"}),
         text_input({"class": "hidden", "name": prefix + "_dice"}),
         text_input({"class": "hidden", "name": prefix + "_power"}),
-        textarea({"class": "hidden", "name": prefix + "_effect_raw"}),
         textarea({"class": "hidden", "name": prefix + "_effect"}),
+        textarea({"class": "hidden", "name": prefix + "_effect_formatted"}),
         textarea({"class": "hidden", "name": prefix + "_key_value_pairs"}),
         button(
             {

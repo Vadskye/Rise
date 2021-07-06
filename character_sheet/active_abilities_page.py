@@ -51,7 +51,7 @@ def create_page(destination):
                 {"class": f"repeating_attacks"},
                 attack("nondamaging"),
             ),
-            flex_wrapper(div({"class": "section-header"}, "Ability Text Modifiers")),
+            flex_wrapper(div({"class": "section-header"}, "Attack Text Modifiers")),
             flex_row({"class": "prefix-suffix"}, [
                 *attack_text_modifier("Prefix", "prefix"),
                 *attack_text_modifier("Suffix", "suffix"),
@@ -73,13 +73,13 @@ def create_page(destination):
 def attack_text_modifier(label, name):
     return [
         labeled_text_input(label, input_attributes={
-            "name": f"custom_attack_{name}_raw",
+            "name": f"custom_attack_{name}",
             "value": "",
         }),
         textarea({
             "class": "hidden",
             "disabled": True,
-            "name": f"custom_attack_{name}",
+            "name": f"custom_attack_{name}_formatted",
             "value": "",
         }),
     ]
@@ -98,7 +98,7 @@ def ability():
             labeled_textarea(
                 "Effect",
                 {"class": "active-ability-effect"},
-                {"name": "active_ability0_effect_raw"},
+                {"name": "active_ability0_effect"},
             ),
             textarea({
                 "class": "hidden",
@@ -107,7 +107,7 @@ def ability():
             }),
             textarea({
                 "class": "hidden",
-                "name": "active_ability0_effect",
+                "name": "active_ability0_effect_formatted",
                 "value": "",
             }),
             button(
@@ -121,7 +121,7 @@ def ability():
                         + " {{subtitle=@{character_name}}}"
                         + " {{color=@{chat_color}}}"
                         + " @{active_ability0_key_value_pairs}"
-                        + " {{desc=@{active_ability0_effect}}}"
+                        + " {{desc=@{active_ability0_effect_formatted}}}"
                     ),
                 },
                 "Use",
@@ -258,7 +258,7 @@ def attack(source):
             labeled_textarea(
                 "Effect",
                 {"class": "attack-effect"},
-                {"name": "attack0_effect_raw"},
+                {"name": "attack0_effect"},
             ),
             textarea({
                 "class": "hidden",
@@ -267,7 +267,7 @@ def attack(source):
             }),
             textarea({
                 "class": "hidden",
-                "name": "attack0_effect",
+                "name": "attack0_effect_formatted",
                 "value": "",
             }),
             button(
@@ -298,7 +298,7 @@ def attack_button_text(source):
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
         + " @{attack0_key_value_pairs}"
-        + " {{desc=@{custom_attack_prefix}@{attack0_effect}@{custom_attack_suffix}}}"
+        + " {{desc=@{custom_attack_prefix}@{attack0_effect_formatted}@{custom_attack_suffix}}}"
     )
 
 def universal_ability_button(name, effect, attack=None):
