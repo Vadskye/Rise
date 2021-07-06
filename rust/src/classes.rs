@@ -355,10 +355,10 @@ impl Class {
     pub fn fatigue_tolerance(&self) -> i32 {
         match self {
             Self::Barbarian => 4,
-            Self::Cleric => 1,
+            Self::Cleric => 2,
             Self::Druid => 2,
             Self::Fighter => 3,
-            Self::Monk => 2,
+            Self::Monk => 3,
             Self::Paladin => 3,
             Self::Ranger => 3,
             Self::Rogue => 2,
@@ -371,16 +371,16 @@ impl Class {
     pub fn insight_points(&self) -> i32 {
         match self {
             Self::Barbarian => 1,
-            Self::Cleric => 3,
-            Self::Druid => 3,
+            Self::Cleric => 2,
+            Self::Druid => 2,
             Self::Fighter => 2,
-            Self::Monk => 3,
+            Self::Monk => 2,
             Self::Paladin => 2,
             Self::Ranger => 2,
             Self::Rogue => 3,
             Self::Sorcerer => 3,
             Self::Warlock => 3,
-            Self::Wizard => 4,
+            Self::Wizard => 3,
         }
     }
 
@@ -437,7 +437,7 @@ impl Class {
             Self::Rogue => 12,
             Self::Sorcerer => 6,
             Self::Warlock => 6,
-            Self::Wizard => 6,
+            Self::Wizard => 9,
         }
     }
 
@@ -445,7 +445,7 @@ impl Class {
         match self {
             Self::Barbarian => vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
             Self::Cleric => vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
-            Self::Druid => vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
+            Self::Druid => vec![ArmorUsageClass::Light],
             Self::Fighter => ArmorUsageClass::all(),
             Self::Monk => vec![armor::ArmorUsageClass::Light],
             Self::Paladin => ArmorUsageClass::all(),
@@ -472,7 +472,7 @@ impl Class {
                 simple_weapons: true,
             },
             Self::Druid => WeaponProficiencies {
-                custom_weapon_groups: 1,
+                custom_weapon_groups: 0,
                 specific_weapon_groups: None,
                 specific_weapons: Some(vec![weapons::Weapon::Scimitar, weapons::Weapon::Sickle]),
                 simple_weapons: true,

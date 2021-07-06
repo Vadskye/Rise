@@ -13,8 +13,8 @@ In addition, each class starts with 24-25 points to spend.
 
 
 Brb: 1 insight, 9 skill, 1 attunement, +4 fatigue
-Clr: 3 insight, 6 skill, 2 attunement, +1 fatigue
-Drd: 3 insight, 9 skill, 1 attunement, +2 fatigue
+Clr: 2 insight, 6 skill, 2 attunement, +2 fatigue
+Drd: 2 insight, 9 skill, 2 attunement, +2 fatigue
 Ftr: 2 insight, 6 skill, 1 attunement, +3 fatigue, +1 AD
 Mnk: 3 insight, 12 skill, 1 attunement, +2 fatigue, +1 AD
 Pal: 2 insight, 6 skill, 1 attunement, +3 fatigue, +1 AD
