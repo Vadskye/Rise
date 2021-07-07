@@ -287,6 +287,7 @@ export const fabrication: MysticSphere = {
         5: `The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +2.`,
         7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +3.`,
       },
+      tags: ['Manifestation'],
       type: "Attune (self)",
     },
 
