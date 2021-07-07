@@ -51,11 +51,6 @@ def create_page(destination):
                 {"class": f"repeating_attacks"},
                 attack("nondamaging"),
             ),
-            flex_wrapper(div({"class": "section-header"}, "Attack Text Modifiers")),
-            flex_row({"class": "prefix-suffix"}, [
-                *attack_text_modifier("Prefix", "prefix"),
-                *attack_text_modifier("Suffix", "suffix"),
-            ]),
             flex_wrapper(div({"class": "section-header"}, "Other Abilities")),
             fieldset(
                 {"class": f"repeating_abilities"},
@@ -298,7 +293,7 @@ def attack_button_text(source):
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
         + " @{attack0_key_value_pairs}"
-        + " {{desc=@{custom_attack_prefix}@{attack0_effect_formatted}@{custom_attack_suffix}}}"
+        + " {{desc=@{attack0_effect_formatted}}}"
     )
 
 def universal_ability_button(name, effect, attack=None):
@@ -320,7 +315,7 @@ def universal_ability_button(name, effect, attack=None):
 def universal_abilities():
     return flex_row({"class": "universal_abilities"}, [
         universal_ability_button("Charge", """
-            After you use this ability, you increase your fatigue level by one.
+            After you use this ability, you \\glossterm<briefly> take a -2 penalty to all defenses.
             Move up to your speed in a single straight line. At the end of your movement, you can make a melee strike from your new location.
         """),
         universal_ability_button("Desperate Exertion", """
