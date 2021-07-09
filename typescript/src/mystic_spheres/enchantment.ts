@@ -198,6 +198,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 2,
       scaling: "accuracy",
+      tags: ['Compulsion'],
       type: "Duration",
     },
 
@@ -213,6 +214,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 5,
       scaling: "accuracy",
+      tags: ['Compulsion'],
       type: "Duration",
     },
 
@@ -228,6 +230,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 7,
+      tags: ['Compulsion'],
       type: "Duration",
     },
 
@@ -593,6 +596,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 3,
       scaling: "accuracy",
+      tags: ['Curse', 'Emotion'],
       type: "Duration",
     },
 
@@ -624,6 +628,7 @@ export const enchantment: MysticSphere = {
         5: `The bonus increases to +4.`,
         7: `The bonus increases to +5.`,
       },
+      tags: ["Emotion"],
       type: "Attune (self)",
     },
 
@@ -641,6 +646,7 @@ export const enchantment: MysticSphere = {
         5: `The bonus increases to +3.`,
         7: `The bonus increases to +4.`,
       },
+      tags: ["Emotion"],
       type: "Attune (target)",
     },
 
@@ -691,7 +697,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 7,
-      tags: ["Subtle"],
+      tags: ['Emotion', "Subtle"],
       type: "Duration",
     },
 
