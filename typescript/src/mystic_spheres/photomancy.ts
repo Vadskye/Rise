@@ -176,6 +176,7 @@ export const photomancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{blinded} as a \\glossterm{condition}.
           Otherwise, it is \\glossterm{dazzled} as a \\glossterm{condition}.
         `,
+        glance: "Half damage.",
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
