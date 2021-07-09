@@ -319,7 +319,7 @@ def universal_abilities():
             Move up to your speed in a single straight line. At the end of your movement, you can make a melee strike from your new location.
         """),
         universal_ability_button("Escape Grapple", """
-            Make an attack against any number of creatures that you are grappled by. Add the highest of: [[@{accuracy}]], [[@{strength}]], or [[@{flexibility_total}]] to your accuracy.
+            Make an attack against any number of creatures that you are grappled by. Add the highest of your accuracy ([[@{accuracy}]]), your Strength ([[@{strength}]]), or your Flexibility ([[@{flexibility_total}]]) to your accuracy.
             The defense of each creature is equal to the result of its maintain grapple ability. If a creature did not use that ability during the current round, its defense against this ability is 0.
             For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
         """, attack={"accuracy":"", "defense":"Special"}),
@@ -336,7 +336,7 @@ def universal_abilities():
             On a hit against both defenses, you and the target are grappled by each other.
         """, attack={"accuracy":"@{accuracy}", "defense":"Fort and Ref"}),
         universal_ability_button("Maintain Grapple", """
-            Make an attack using a free hand. Add the higher of [[@{accuracy}]] or [[@{strength}]] to your accuracy.
+            Make an attack using a free hand. Add the higher of your accuracy ([[@{accuracy}]]) or your Strength ([[@{strength}]]) to your accuracy.
             This attack has no immediate effect. The attack result determines how difficult it is for a creature to escape the grapple during the current round using the escape grapple ability.
         """, attack={"accuracy":"", "defense":"None"}),
         universal_ability_button("Overrun", """
