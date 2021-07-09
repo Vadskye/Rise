@@ -315,16 +315,17 @@ def universal_ability_button(name, effect, attack=None):
 def universal_abilities():
     return flex_row({"class": "universal_abilities"}, [
         universal_ability_button("Charge", """
-            After you use this ability, you \\glossterm<briefly> take a -2 penalty to all defenses.
+            After you use this ability, you briefly take a -2 penalty to all defenses.
             Move up to your speed in a single straight line. At the end of your movement, you can make a melee strike from your new location.
         """),
-        universal_ability_button("Desperate Exertion", """
-            After you use this ability, you increase your fatigue level by two.
-            You reroll any attack or check you just made and gain a +2 bonus.
-        """),
+        universal_ability_button("Escape Grapple", """
+            Make an attack against any number of creatures that you are grappled by. Add the highest of: [[@{accuracy}]], [[@{strength}]], or [[@{flexibility_total}]] to your accuracy.
+            The defense of each creature is equal to the result of its maintain grapple ability. If a creature did not use that ability during the current round, its defense against this ability is 0.
+            For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
+        """, attack={"accuracy":"", "defense":"Special"}),
         universal_ability_button("Dirty Trick", """
             Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the subject suffers a -2 penalty to one of the following statistics: accuracy with mundane abilities, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
-            If the subject is at its maximum hit points, this is a \\glossterm<brief> effect. Otherwise, this effect is a condition.
+            If the subject is at its maximum hit points, this is a brief effect. Otherwise, this effect is a condition.
          """, attack={"accuracy":"@{accuracy}", "defense":"Fort or Ref"}),
         universal_ability_button("Disarm", """
             Make a melee strike against an object's Reflex defense.
@@ -333,7 +334,11 @@ def universal_abilities():
         universal_ability_button("Grapple", """
             Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your reach. For each size category by which the target is larger than you, you take a -4 penalty to accuracy.
             On a hit against both defenses, you and the target are grappled by each other.
-         """, attack={"accuracy":"@{accuracy}", "defense":"Fort and Ref"}),
+        """, attack={"accuracy":"@{accuracy}", "defense":"Fort and Ref"}),
+        universal_ability_button("Maintain Grapple", """
+            Make an attack using a free hand. Add the higher of [[@{accuracy}]] or [[@{strength}]] to your accuracy.
+            This attack has no immediate effect. The attack result determines how difficult it is for a creature to escape the grapple during the current round using the escape grapple ability.
+        """, attack={"accuracy":"", "defense":"None"}),
         universal_ability_button("Overrun", """
             After you use this ability, you increase your fatigue level by one.
             Move up to your movement speed in a straight line, even through creatures. Make an attack vs. Fortitude against each creature that you move through who does not choose to avoid you. For each size category by which you are larger or smaller than the target, you gain a +4 bonus or penalty to accuracy.
@@ -341,7 +346,7 @@ def universal_abilities():
         """),
         universal_ability_button("Recover", """
             After you use this ability, you increase your fatigue level by two, and you cannot use it again until you take a short rest.
-            You regain hit points equal to your maximum hit points. In addition, you remove all \\glossterm<brief> effects and conditions affecting you. This cannot remove effects applied during the current round.
+            You regain hit points equal to your maximum hit points. In addition, you remove all brief effects and conditions affecting you. This cannot remove effects applied during the current round.
         """),
         universal_ability_button("Shove", """
             Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against both the Fortitude defense and total Strength of each target. Your accuracy with this attack is equal to your Strength. If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
@@ -354,9 +359,6 @@ def universal_abilities():
         universal_ability_button("Throw", """
             Make a Strength check to throw an object you hold in at least one hand. The base difficulty rating of this check is 0. For each size category larger or smaller than the target that you are, you gain a +10 bonus or penalty to the check. You cannot throw an object whose weight exceeds your maximum carrying capacity.
             If you succeed, you throw the object five feet. For every 5 points by which you succeed, you double the distance you throw the object: ten feet, twenty feet, and so on. If you throw the object at a creature or object, you can make an attack roll to hit it with the thrown object. That attack roll is rolled separately from the Strength check you make to use this ability.
-        """),
-        universal_ability_button("Total Defense", """
-            You gain a +2 bonus to your defenses until the end of the round. Because this ability has the Swift tag, this improves your defenses against attacks made against you during the current phase.
         """),
         universal_ability_button("Trip", """
             Make a melee attack with a free hand against a creature's Reflex defenses. For each size category by which the target is larger than you, you take a -4 penalty to accuracy.
