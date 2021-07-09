@@ -486,7 +486,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                Your first die you roll for each attack roll \glossterm{explodes} on a 9 in addition to the normal explosion on a 10.
+                Your attacks \glossterm{explode} on a 9 in addition to the normal explosion on a 10.
                 This does not affect additional rolls with exploding dice.
             ",
         },
