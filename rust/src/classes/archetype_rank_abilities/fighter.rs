@@ -394,7 +394,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             Make an attack vs. Mental against all \glossterm{enemies} in a \largearea radius from you.
             \hit Each subject is \goaded by you as a \glossterm{condition}.
             \rankline
-            \rank{6} The area increases to a \hugearea radius.
+            You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
         \end{durationability}
 
                 ",
