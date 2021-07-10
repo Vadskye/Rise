@@ -763,7 +763,6 @@ impl Class {
 
                     Offering your soul to an entity in this way grants it the ability to communicate with you in limited ways.
                     This communication typically manifests as unnatural emotional urges or whispered voices audible only to you.
-                    demon or devil.
 
                     Your pact specifies how much of your soul is granted to your soulkeeper, and the circumstances of the transfer.
                     The most common arrangement is for a soulkeeper to gain possession of your soul immediately after you die.
