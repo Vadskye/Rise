@@ -864,6 +864,7 @@ export const enchantment: MysticSphere = {
         targeting: `
         Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
         In addition, choose one Large or smaller object within \\medrange.
+        If the subject is moved, this effect ends.
 
         Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the chosen object, make an attack vs. Mental against it.
         After you make this attack against a particular creature, you do not make this attack against it again until it takes a \\glossterm{short rest}.
@@ -889,6 +890,7 @@ export const enchantment: MysticSphere = {
         targeting: `
         Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
         In addition, choose one Large or smaller object within \\medrange.
+        If the subject is moved, this effect ends.
 
         Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the subject, make an attack vs. Mental against it.
         After you make this attack against a particular creature, you do not make this attack against it again until it takes a \\glossterm{short rest}.
