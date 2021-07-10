@@ -141,6 +141,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     You cannot choose this ability multiple times.
                 \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
                     The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
+                    In addition, you automatically learn one free divine ritual of each rank you have access to, including new ranks as you gain access to them.
                     You cannot choose this ability multiple times.
                 \parhead{Signature Spell} Choose a divine \glossterm{spell} you know.
                     The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.

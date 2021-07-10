@@ -292,8 +292,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
                 The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
-                If you have the ability to cast rank 1 arcane spells, you may immediately scribe one rank 1 ritual without paying the normal costs.
-                In addition, whenever you gain access to a new spell rank, you can scribe one ritual of that rank or lower without paying the normal costs.
+                In addition, you automatically learn one free arcane ritual of each rank you have access to, including new ranks as you gain access to them.
             ",
         },
         RankAbility {
@@ -431,6 +430,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You cannot choose this ability multiple times.
             \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
                 The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
+                In addition, you automatically learn one free arcane ritual of each rank you have access to, including new ranks as you gain access to them.
                 You cannot choose this ability multiple times.
             \parhead{Signature Spell} Choose an arcane \glossterm{spell} you know.
                 The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
