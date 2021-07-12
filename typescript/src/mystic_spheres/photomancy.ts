@@ -54,14 +54,16 @@ export const photomancy: MysticSphere = {
       name: "Color Spray",
 
       attack: {
-        crit: `The effect is a \\glossterm{condition} that lasts until it is removed.`,
-        hit: `Each subject at its maximum hit points is \\glossterm{briefly} \\dazed.
-        Each subject that is at less than its maximum \\glossterm{hit points} is \\stunned instead of dazed.`,
+        crit: `The effect becomes a \\glossterm{condition}.`,
+        hit: `
+          Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\dazed.
+          Each subject with no remaining damage resistance is \\stunned instead of dazed.
+        `,
         targeting: `
-          Make an attack vs. Mental against each creature within a \\smallarea cone from you.
+          Make an attack vs. Mental against each creature within a \\medarea cone from you.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "accuracy",
       tags: ["Sensation", "Visual"],
       type: "Duration",
@@ -72,11 +74,11 @@ export const photomancy: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the area increases to a \\largearea cone from you.
+          the area increases to a \\hugearea cone from you.
         `,
         name: "color spray",
       },
-      rank: 3,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Sensation", "Visual"],
       type: "Instant",
@@ -86,15 +88,16 @@ export const photomancy: MysticSphere = {
       name: "Prismatic Spray",
 
       attack: {
-        crit: `The effect is a \\glossterm{condition} that lasts until it is removed.`,
-        hit: `Each subject at its maximum hit points is \\glossterm{briefly} \\stunned.
-        Each subject that is at less than its maximum \\glossterm{hit points} is \\confused instead of stunned.`,
+        crit: `The effect becomes a \\glossterm{condition}.`,
+        hit: `
+          Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
+          Each subject with no remaining damage resistance is \\confused instead of stunned.
+        `,
         targeting: `
           Make an attack vs. Mental against each creature within a \\medarea cone from you.
         `,
       },
-
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
       tags: ["Sensation", "Visual"],
       type: "Duration",
@@ -154,35 +157,14 @@ export const photomancy: MysticSphere = {
       name: "Flash",
 
       attack: {
-        crit: `The subject is \\blinded instead of dazzled.`,
+        crit: `The condition must be removed twice before the effect ends.`,
         hit: `The subject is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
         `,
       },
-      rank: 2,
-      scaling: "accuracy",
-      tags: ["Sensation", "Visual"],
-      type: "Duration",
-    },
-
-    {
-      name: "Searing Flash",
-
-      attack: {
-        hit: `
-          The subject takes 2d8 energy damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{blinded} as a \\glossterm{condition}.
-          Otherwise, it is \\glossterm{dazzled} as a \\glossterm{condition}.
-        `,
-        glance: "Half damage.",
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
-        `,
-      },
-      rank: 5,
+      rank: 1,
       scaling: "accuracy",
       tags: ["Sensation", "Visual"],
       type: "Duration",
@@ -193,13 +175,17 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\blinded as a \\glossterm{condition}.`,
+        hit: `
+          The subject is \\dazzled as a \\glossterm{condition}.
+          While it has no remaining \\glossterm{damage resistance}, it is \\blinded instead of dazzled.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 120 foot radius around the subject.
+          Make an attack vs. Fortitude against one creature within \\medrange.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
         `,
       },
-      rank: 7,
+      rank: 6,
+      scaling: "accuracy",
       tags: ["Sensation", "Visual"],
       type: "Duration",
     },
@@ -208,10 +194,32 @@ export const photomancy: MysticSphere = {
       name: "Searing Light",
 
       attack: {
-        // +1 accuracy, low power; photomancy isn't supposed to be a high damage sphere
-        hit: `The subject takes 1d8 + half \\glossterm{power} energy damage.`,
+        hit: `
+          The subject takes 2d6 + half \\glossterm{power} energy damage and is \\glossterm{briefly} \\dazzled.
+        `,
+        glance: "Half damage.",
         targeting: `
-          Make an attack vs. Reflex with a +1 \\glossterm{accuracy} bonus against anything within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
+        `,
+      },
+      rank: 3,
+      scaling: "accuracy",
+      tags: ["Sensation", "Visual"],
+      type: "Duration",
+    },
+
+    {
+      name: "Searing Light",
+
+      attack: {
+        hit: `
+          The subject takes 1d8 + half \\glossterm{power} energy damage.
+          In addition, it is \\glossterm{briefly} \\dazzled.
+          After the creature stops being dazzled, it becomes immune to being dazzled in this way until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against anything within \\medrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius around a 5 ft. wide straight line between you and the subject.
           The illumination lasts \\glossterm{briefly}. 
         `,
@@ -223,18 +231,11 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: "Solar Ray",
+      name: "Greater Searing Light",
 
-      attack: {
-        crit: `Double damage. In addition, the subject suffers consequences as if it had been struck by a beam of true sunlight.`,
-        glance: `Half damage.`,
-        // +1 accuracy, low power; photomancy isn't supposed to be a high damage sphere
-        hit: `The subject takes 2d8 + half \\glossterm{power} energy damage.`,
-        targeting: `
-          Make an attack vs. Reflex with a +2 \\glossterm{accuracy} bonus against anything within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius around a 5 ft. wide straight line between you and the subject.
-          The illumination lasts \\glossterm{briefly}. 
-        `,
+      functionsLike: {
+        name: 'searing light',
+        exceptThat: 'you gain a +3 accuracy bonus with the attack.',
       },
       rank: 4,
       scaling: "damage",
@@ -243,22 +244,23 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: "Greater Solar Ray",
+      name: "Solar Ray",
 
       attack: {
+        crit: `Double damage. In addition, the subject suffers consequences as if it had been struck by a beam of natural sunlight.`,
         glance: `Half damage.`,
-        // +1 accuracy, low power; photomancy isn't supposed to be a high damage sphere
         hit: `
-          The subject takes 4d8 + half \\glossterm{power} energy damage.
-          In addition, the subject suffers consequences as if it had been struck by a beam of true sunlight.
+          The subject takes 2d10 + half \\glossterm{power} energy damage.
+          In addition, it is \\glossterm{briefly} dazzled.
+          If it lost \\glossterm{hit points} from this damage, it is also briefly \\glossterm{dazed}.
         `,
         targeting: `
-          Make an attack vs. Reflex with a +2 \\glossterm{accuracy} bonus against anything within \\medrange.
+          Make an attack vs. Reflex against anything within \\medrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius around a 5 ft. wide straight line between you and the subject.
-          The illumination lasts \\glossterm{briefly}.
+          The illumination lasts \\glossterm{briefly}. 
         `,
       },
-      rank: 7,
+      rank: 5,
       scaling: "damage",
       tags: ["Sensation", "Visual"],
       type: "Duration",
@@ -289,13 +291,15 @@ export const photomancy: MysticSphere = {
           The effect becomes a \\glossterm{condition} on each subject.
           In addition, each subject is affected as if it had entered natural sunlight.
         `,
-        hit: `Each subject is \\glossterm{briefly} \\blinded.`,
+        hit: `
+          Each subject with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
+        `,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 120 foot radius from the center of that area.
         `,
       },
-      rank: 7,
+      rank: 4,
       tags: ["Sensation", "Visual"],
       type: "Duration",
     },
@@ -304,15 +308,17 @@ export const photomancy: MysticSphere = {
       name: "Pillars of Light",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\glossterm{briefly} \\dazzled.`,
+        glance: 'Half damage.',
+        hit: `
+          Each subject takes 2d10 + half \\glossterm{power} energy damage.
+        `,
         targeting: `
           Make an attack vs. Fortitude against all creatures in up to five \\tinyarea radius areas within \\longrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of each area.
         `,
       },
-      rank: 2,
-      scaling: "accuracy",
+      rank: 5,
+      scaling: "damage",
       tags: ["Sensation", "Visual"],
       type: "Duration",
     },
@@ -322,13 +328,16 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\glossterm{briefly} \\stunned.`,
+        hit: `
+          Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\dazed.
+          Each subject with no remaining damage resistance is \\stunned instead of dazed.
+        `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion", "Sensation", "Visual"],
       type: "Duration",
@@ -340,6 +349,26 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'kaleidoscopic pattern',
         exceptThat: 'the area increases to a \\medarea radius, and the range increases to \\longrange.',
+      },
+      rank: 5,
+      scaling: "accuracy",
+      tags: ["Compulsion", "Sensation", "Visual"],
+      type: "Duration",
+    },
+
+    {
+      name: "Variegated Pattern",
+
+      attack: {
+        crit: "The effect becomes a \\glossterm{condition} on each subject.",
+        hit: `
+          Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
+          Each subject with no remaining damage resistance is \\confused instead of stunned.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange of you.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
+        `,
       },
       rank: 6,
       scaling: "accuracy",
@@ -507,13 +536,15 @@ export const photomancy: MysticSphere = {
       name: "Chromatic Orb",
 
       attack: {
-        hit: `The subject takes 1d8 energy damage.
-        If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\nauseated, \\stunned, or knocked \\prone.`,
+        hit: `
+          The subject takes 2d6 + half \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\nauseated, or \\stunned.
+        `,
         targeting: `
-        Make an attack vs. Reflex against anything within \\medrange.
+          Make an attack vs. Reflex against anything within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 3,
       scaling: "damage",
       type: "Duration",
     },
@@ -522,10 +553,10 @@ export const photomancy: MysticSphere = {
       name: "Greater Chromatic Orb",
 
       functionsLike: {
-        exceptThat: "the damage increases to 2d10 + half \\glossterm{power}.",
+        exceptThat: "the damage increases to 4d8 + half \\glossterm{power}, and the effect becomes a \\glossterm{condition}.",
         name: "chromatic orb",
       },
-      rank: 5,
+      rank: 7,
       scaling: "damage",
       type: "Duration",
     },

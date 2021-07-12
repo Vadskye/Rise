@@ -111,12 +111,8 @@ export const pyromancy: MysticSphere = {
         glance: "Half damage from the initial hit.",
         hit: `
           The subject takes 2d10 + \\glossterm{power} fire damage.
-          If it loses \\glossterm{hit points} from this damage, it catches on fire as a \\glossterm{condition}.
-          At the end of each round, it takes 1d10 fire damage.
-
-          If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
-          The condition can also be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
-          Dropping \\prone as part of this action gives a +5 bonus to this check.
+          If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
+          At the end of each round, it takes 2d8 + half \\glossterm{power} fire damage.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -169,6 +165,18 @@ export const pyromancy: MysticSphere = {
     },
 
     {
+      name: "Greater Fireball",
+
+      functionsLike: {
+        name: 'fireball',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power}.',
+      },
+      rank: 7,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
       name: "Firebolt",
 
       attack: {
@@ -198,7 +206,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Cone of Fire",
+      name: "Burning Hands",
 
       attack: {
         hit: `Each subject takes 1d8 + half \\glossterm{power} fire damage.`,
@@ -213,16 +221,13 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Cone of Fire",
+      name: "Greater Burning Hands",
 
-      attack: {
-        glance: `Half damage.`,
-        hit: `Each subject takes 2d6 + half \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\arealarge cone from you.
-        `,
+      functionsLike: {
+        name: 'burning hands',
+        exceptThat: 'the damage increases to 4d6 + \\glossterm{power}.',
       },
-      rank: 3,
+      rank: 5,
       scaling: "damage",
       type: "Instant",
     },
@@ -233,16 +238,15 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `The subject catches on fire as a \\glossterm{condition}.
-        At the end of each round, it takes 1d10 fire damage.
+        At the end of each round, it takes 1d6 fire damage.
 
-        If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
-        The condition can also be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
+        The condition can be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "damage",
       type: "Duration",
     },
@@ -254,9 +258,10 @@ export const pyromancy: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         glance:
           "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
-        hit: `The subject catches on fire as a \\glossterm{condition}.
-        At the end of each round, it takes 2d10 fire damage.
-        If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.`,
+        hit: `
+          The subject catches on fire as a \\glossterm{condition}.
+          At the end of each round, it takes 2d10 + half \\glossterm{power} fire damage.
+        `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
@@ -612,7 +617,7 @@ export const pyromancy: MysticSphere = {
         Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       tags: ["Emotion"],
       type: "Duration",
@@ -639,10 +644,11 @@ export const pyromancy: MysticSphere = {
       name: "Pyrohemia",
 
       attack: {
-        hit: `The subject takes 1d10 + half \\glossterm{power} fire damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\sickened as a \\glossterm{condition}.`,
+        hit: `
+          The subject takes 1d10 + half \\glossterm{power} fire damage and is \\glossterm{briefly} sickened.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\longrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 2,
@@ -653,13 +659,14 @@ export const pyromancy: MysticSphere = {
     {
       name: "Greater Pyrohemia",
 
-      // original targets: Target
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d10 + half \\glossterm{power} fire damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\nauseated as a \\glossterm{condition}.`,
+        hit: `
+          The subject takes 2d10 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\sickened.
+          If it loses \\glossterm{hit points} from this damage, it is \\nauseated instead of sickened.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\longrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 5,
