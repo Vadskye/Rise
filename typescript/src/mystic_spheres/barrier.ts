@@ -269,8 +269,8 @@ export const barrier: MysticSphere = {
           Make an attack vs. Reflex against anything Large or smaller within \\medrange.
         `,
       },
-      rank: 6,
-      scaling: "accuracy",
+      rank: 7,
+      // scaling: "accuracy",
       tags: ["Manifestation"],
       type: "Sustain (standard)",
     },

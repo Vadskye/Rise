@@ -62,6 +62,7 @@ export const aeromancy: MysticSphere = {
     },
   ],
   spells: [
+    // Treat arrow attraction as r1 -1 level
     {
       name: "Curse of Arrow Attraction",
 
@@ -70,7 +71,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           The subject takes a -2 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
         `,
-        targeting: "Make an attack vs. Mental against anything within \\longrange.",
+        targeting: "Make an attack vs. Mental against anything within \\medrange.",
       },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows, ensuring that they strike true.
@@ -80,6 +81,7 @@ export const aeromancy: MysticSphere = {
       tags: ["Curse"],
       type: "Duration",
     },
+    // Treat greater arrow attraction as r2 -1 level
     {
       name: "Greater Curse of Arrow Attraction",
 
@@ -91,12 +93,12 @@ export const aeromancy: MysticSphere = {
         hit: `
           The subject takes a -4 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Medium or smaller until it takes a \\glossterm{short rest}.
         `,
-        targeting: "Make an attack vs. Mental against anything within \\longrange.",
+        targeting: "Make an attack vs. Mental against anything within \\medrange.",
       },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows, ensuring that they strike true.
       `,
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
       tags: ["Curse"],
       type: "Duration",
@@ -232,7 +234,7 @@ export const aeromancy: MysticSphere = {
 
       functionsLike: {
         name: 'buffet',
-        // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
+        // This deals an immediate 12d6 if you smash someone against a barrier, which is a lot of damage.
         exceptThat: "the damage increases to 4d6. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
       },
       // narrative: '',
@@ -318,15 +320,15 @@ export const aeromancy: MysticSphere = {
       },
       type: "Attune (self)",
     },
+    // +2 levels for push, -1 level for no power
     {
       name: "Gust of Wind",
 
       attack: {
         // crit: '',
-        // push instead of adding half power
         hit: `
           Each subject takes 1d10 bludgeoning damage.
-          In addition, each subject is \\glossterm{pushed} 20 feet in the direction the line points away from you.
+          In addition, each subject is \\glossterm{pushed} 15 feet in the direction the line points away from you.
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
@@ -348,7 +350,7 @@ export const aeromancy: MysticSphere = {
         // +1 level for farther push, +2 levels for area
         hit: `
           Each subject takes 2d10 bludgeoning damage.
-          In addition, each subject is \\glossterm{pushed} 50 feet in the direction the line points away from you.
+          In addition, each subject is \\glossterm{pushed} 30 feet in the direction the line points away from you.
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
@@ -459,6 +461,7 @@ export const aeromancy: MysticSphere = {
       scaling: "damage",
       type: "Instant",
     },
+    // 2 levels for push
     {
       name: "Hurricane",
 
@@ -506,7 +509,7 @@ export const aeromancy: MysticSphere = {
       // +1.5 levels for avoidable damage, -0.5 for size limit. or something.
       attack: {
         crit: "Double damage from movement.",
-        glance: "Half damage from movement.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, the subject is \\slowed by incredibly fast winds that inhibit movement.
           At the end of each phase, if it moved voluntarily during that phase, it takes 2d6 bludgeoning damage.
@@ -526,7 +529,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: `
-          Each subject is \\dazzled as a \\glossterm{condition}.
+          The effect becomes a \\glossterm{condition}.
         `,
         // glance: '',
         hit: `
@@ -570,14 +573,14 @@ export const aeromancy: MysticSphere = {
         `,
         // glance: '',
         hit: `
-          Each subject is \\glossterm{briefly} \\blinded.
+          Each subject with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.
         `,
       },
       // narrative: '',
-      rank: 7,
+      rank: 5,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -588,7 +591,8 @@ export const aeromancy: MysticSphere = {
         crit: "The condition is must be removed twice before the effect ends.",
         glance: "The condition lasts \\glossterm{briefly}.",
         hit: `
-          The subject is \\blinded as a \\glossterm{condition}.
+          The subject takes 2d8 physical damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against one creature within \\shortrange.
@@ -596,7 +600,7 @@ export const aeromancy: MysticSphere = {
         `,
       },
       // narrative: '',
-      rank: 7,
+      rank: 5,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -625,7 +629,7 @@ export const aeromancy: MysticSphere = {
           It is \\slowed and unable to use any fly speed or glide speed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       // narrative: '',

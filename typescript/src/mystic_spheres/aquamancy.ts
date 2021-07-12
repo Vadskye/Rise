@@ -105,6 +105,18 @@ export const aquamancy: MysticSphere = {
       type: "Duration",
     },
     {
+      name: "Greater Desiccating Curse",
+
+      functionsLike: {
+        name: "desiccating curse",
+        exceptThat: "the subject is \\nauseated instead of sickened.",
+      },
+      rank: 7,
+      scaling: "accuracy",
+      tags: ["Curse"],
+      type: "Duration",
+    },
+    {
       name: "Sphere of Constraint",
 
       attack: {
@@ -129,9 +141,7 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation"],
       type: "Duration",
     },
-    // fighting underwater is slightly more detrimental than the standard
-    // rank 2 condition, but Large or smaller is a significant restriction
-    // and the crit effect is irrelevant in many fights, so this stays +0
+    // fighting underwater is +2 ranks better than a normal rank 2 condition
     {
       name: "Constraining Bubble",
 
@@ -146,27 +156,11 @@ export const aquamancy: MysticSphere = {
           This does not impede its ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref{Underwater Combat}).
         `,
         targeting: `
-          Make an attack vs. Reflex against a Large or smaller creature within \\medrange.
+          Make an attack vs. Reflex against a Huge or smaller creature within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 6,
       scaling: "accuracy",
-      tags: ["Manifestation"],
-      type: "Duration",
-    },
-
-    {
-      name: "Drowning Bubble",
-
-      functionsLike: {
-        name: 'constraining bubble',
-        exceptThat: `
-          the water also covers the subject's face.
-          This does not meaningfully impede its sight, but it cannot breathe anything other than the water.
-          On a critical hit, the condition must be removed twice before the effect ends.
-        `,
-      },
-      rank: 7,
       tags: ["Manifestation"],
       type: "Duration",
     },
@@ -355,7 +349,7 @@ export const aquamancy: MysticSphere = {
       },
       type: "Attune (target)",
     },
-    // +2 levels for push
+    // +2 levels for push, -1 level for no power
     {
       name: "Raging River",
 
@@ -363,15 +357,36 @@ export const aquamancy: MysticSphere = {
         // crit: '',
         // glance: '',
         hit: `
-          Each subject takes 2d8 bludgeoning damage.
-          In addition, each subject is \\glossterm{pushed} 20 feet in the direction the line points away from you.
+          Each subject takes 1d10 bludgeoning damage.
+          In addition, each subject is \\glossterm{pushed} 15 feet in the direction the line points away from you.
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarealong, 10 ft. wide line from you.
         `,
       },
-      rank: 4,
+      rank: 2,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+    // +3 levels for push, -1 level for no power
+    {
+      name: "Greater Raging River",
+
+      attack: {
+        // crit: '',
+        // glance: '',
+        hit: `
+          Each subject takes 2d10 bludgeoning damage.
+          In addition, each subject is \\glossterm{pushed} 30 feet in the direction the line points away from you.
+          Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against everything in a \\largearealong, 15 ft. wide line from you.
+        `,
+      },
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -510,11 +525,10 @@ export const aquamancy: MysticSphere = {
       name: "Desiccation",
 
       attack: {
-        // crit: '',
+        crit: 'The condition must be removed twice before the effect ends.',
         // glance: '',
         hit: `
-          The subject takes 1d6 physical damage.
-          If it loses hit points from this damage, it is \\nauseated as a \\glossterm{condition}.
+          The subject is \\sickened as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
@@ -528,47 +542,29 @@ export const aquamancy: MysticSphere = {
       name: "Greater Desiccation",
 
       attack: {
-        // crit: '',
-        glance: "Half damage.",
+        crit: 'The condition must be removed twice before the effect ends.',
+        glance: 'The effect lasts \\glossterm{briefly}.',
         hit: `
-          The subject takes 2d8 + half \\glossterm{power} physical damage.
-          If it loses hit points from this damage, it is \\nauseated as a \\glossterm{condition}.
+          The subject is \\nauseated as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: "damage",
       type: "Duration",
     },
     {
-      name: "Supreme Desiccation",
+      name: "Wave of Desiccation",
 
       attack: {
-        // crit: '',
-        glance: "Half damage.",
+        crit: 'The effect becomes a \\glossterm{condition}.',
         hit: `
-          The subject takes 4d10 + \\glossterm{power} physical damage.
-          If it loses hit points from this damage, it is \\nauseated as a \\glossterm{condition}.
+          Each subject that has no remaining \\glossterm{damage resistance} is \\briefly \\nauseated.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\rngmed range.
-        `,
-      },
-      rank: 7,
-      type: "Duration",
-    },
-    {
-      name: "Wave of Dehydration",
-
-      attack: {
-        // crit: '',
-        hit: `
-          Each subject that has no remaining \\glossterm{damage resistance} is \\nauseated as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against all living creatures in a \\medarealong, 10 ft. wide line from you.
+          Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.
         `,
       },
       rank: 2,
@@ -576,16 +572,15 @@ export const aquamancy: MysticSphere = {
       type: "Duration",
     },
     {
-      name: "Greater Wave of Dehydration",
+      name: "Greater Wave of Desiccation",
 
       attack: {
-        // crit: '',
-        glance: "The effect lasts \\glossterm{briefly}.",
+        crit: 'The effect becomes a \\glossterm{condition}.',
         hit: `
-          Each subject that has no remaining \\glossterm{damage resistance} is \\nauseated as a \\glossterm{condition}.
+          Each subject is \\briefly \\nauseated.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\gargarealong, 10 ft. wide line from you.
+          Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.
         `,
       },
       rank: 5,
@@ -704,7 +699,7 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: 'forceful aquajet',
-        // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
+        // This deals an immediate 12d6 if you smash someone against a barrier, which is a lot of damage.
         exceptThat: "the damage increases to 4d6. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
       },
       // narrative: '',

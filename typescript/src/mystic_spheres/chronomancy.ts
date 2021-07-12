@@ -72,6 +72,7 @@ export const chronomancy: MysticSphere = {
       type: "Duration",
     },
 
+    // This is a very unique combination of triggers and effects, so correct rank is hard
     {
       name: "Curse of Temporal Dislocation",
 
@@ -102,7 +103,7 @@ export const chronomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against all creatures within a \\areasmall radius \\glossterm{zone} from your location.
-          In addition, whenever a creature enters the area, you make the same attack against them.
+          In addition, whenever a creature enters the area, you make the same attack against it.
           A creature that leaves the area and re-enters it uses the original attack result against it.
         `,
       },
@@ -119,7 +120,7 @@ export const chronomancy: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       rank: 1,
@@ -135,7 +136,7 @@ export const chronomancy: MysticSphere = {
         glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\longrange.
+          Make an attack vs. Mental against one creature within \\distrange.
         `,
       },
       rank: 3,
@@ -174,6 +175,22 @@ export const chronomancy: MysticSphere = {
     },
 
     {
+      name: "Mass Decelerate",
+
+      attack: {
+        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        hit: `Each target is \\glossterm{briefly} \\decelerated.`,
+        targeting: `
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
+        `,
+      },
+      rank: 5,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    // -2 levels for 50% chance of activation
+    {
       name: "Stutterstop",
 
       attack: {
@@ -186,7 +203,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
 
-      rank: 5,
+      rank: 7,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -443,7 +460,7 @@ export const chronomancy: MysticSphere = {
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
-      rank: 6,
+      rank: 7,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -474,17 +491,20 @@ export const chronomancy: MysticSphere = {
       name: "Disjointed Slow",
 
       attack: {
-        hit: `The subject takes 1d8 + half \\glossterm{power} energy damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.`,
+        hit: `
+          The subject takes 1d10 + half \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
+          After it stops being slowed, it is immune to being slowed in this way until it takes a \\glossterm{short rest}.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
       narrative: `
         This spell was discovered accidentally by an inexperienced chronomancer, but it has since been weaponized to great effect.
         It creates inconsistent pockets of slowed time at random within a foe's body.
       `,
-      rank: 1,
+      rank: 2,
       scaling: "damage",
       type: "Duration",
     },
@@ -494,17 +514,19 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d8 + half \\glossterm{power} energy damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.`,
+        hit: `
+          The subject takes 4d6 + half \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
       narrative: `
         This spell resulted from extensive research by the creator of the \\spell{disjointed slow} spell.
         It functions similarly by creating inconsistent pockets of drastically slowed time within a foe's body.
       `,
-      rank: 4,
+      rank: 6,
       scaling: "damage",
       type: "Duration",
     },
@@ -522,7 +544,7 @@ export const chronomancy: MysticSphere = {
           It becomes completely immune to all damage, attacks, and effects of any kind.
           In addition, it is \\unconscious and cannot act in any way.
           At the end of the next round, it returns to normal, with no awareness of the intervening time.
-          After this effect ends, the subject becomes immune to this spell until it takes a \\glossterm{short rest}.
+          After it returns to normal, it becomes immune to being frozen in time in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
