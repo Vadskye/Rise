@@ -141,7 +141,7 @@ Each debuff rank is +4 spell ranks over its predecessor
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
   * List: decelerated, frightened (-1 level due to proximity), nauseated, generic -2 to all, stunned
-  * Special: end of round low damage (remove if vital)
+  * Special: end of round medium damage
 * Rank 2.5
   * List: fighting underwater, not existing
 * Rank 3
@@ -150,27 +150,6 @@ Each debuff rank is +4 spell ranks over its predecessor
 * Rank 4
   * Generally cause complete action denial
   * List: Asleep, paralyzed
-
-### Effect categories
-
-There are three basic types of effects:
-
-* Softener: These effects are designed to weaken strong targets so they are easier to defeat.
-They tend to have accuracy bonuses and deal small amounts of damage or apply debuffs that work
-through resistances. In general, AOE softener effects are slightly oxymoronic - if you're fighting
-large groups of enemies, a softener isn't generally worth the effort. Therefore, AOE softeners
-shouldn't apply conditions, which are a hassle to track against large groups anyway. Instead, AOE
-softeners should apply debuffs that apply until the end of the next round. AOE softener effects also
-therefore are the one exception to the universal glancing blow rule, since it's hard to make those
-effects weaker than they already are.
-  * Examples: Certain Strike
-* Damage: These effects work at any stage of a fight. They reduce resistances and finish off weak
-  targets, but aren't as efficient at weakening strong targets as softener effects and they aren't
-  as efficient at finishing off weakened targets as finisher effects.
-* Finisher: These effects only work later in a fight, either due to lowered defenses or lowered
-  resistances. They may inflict strong debuffs or unusually high damage values, but with accuracy
-  penalties or, more commonly, requirements to only work on targets without resistances. Finisher
-  effects may deal incidental damage to check that the target has no resistances.
 
 ### Standard damage categories
 
@@ -346,6 +325,8 @@ Tier 7 areas:
   * Med range, curse: r3 debuff while no DR, lasts forever on crit
   * Med range, condition: r2 and r1 debuff, must remove twice on crit
   * Med range, condition: r2 debuff while DR, or r3 debuff while no DR, must remove twice on crit
+* Modifiers
+  * "while no DR" can be replaced with "while below max HP", which is worse against minions but better against blood mages and weird stuff
 
 #### Spells: AOE debuff
 The minimum area size here should be a t2 area to make these feel different from single-target
@@ -370,6 +351,26 @@ The minimum area size here should be a t2 area to make these feel different from
   * t2 area, brief r2 debuff, condition on crit, immune after *attack* (not success)
 
 ### Hybrid damage/debuff
+
+#### Maneuvers: single-target high damage + debuff
+* Rank 3
+  * Strike, brief r1 debuff if lose HP, immune after first success
+* Rank 5
+  * Strike, brief r1 debuff if lose HP
+* Rank 7
+  * Strike, brief r1 debuff, immune after first success
+  * Strike, brief r2 debuff if lose HP, immune after first success
+
+#### Spells: single-target high damage + debuff
+
+* Rank 3
+  * Med range, 2d8 + power damage, brief r1 debuff if lose HP
+* Rank 5
+  * Med range, 4d6 + power damage, brief r1 debuff, immune after first success
+  * Med range, 4d6 + power damage, brief r2 debuff if lose HP, immune after first success
+* Rank 7
+  * Med range, 4d10 + power damage, brief r1 debuff
+  * Med range, 4d10 + power damage, brief r2 debuff if lose HP
 
 #### Maneuvers: single-target medium damage + debuff
 * Rank 1
