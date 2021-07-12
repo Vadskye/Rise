@@ -848,7 +848,7 @@ export const revelation: MysticSphere = {
     {
       name: "Seek Legacy",
 
-      castingTime: "24 hours",
+      castingTime: "one hour",
       effect: `
         One ritual participant learns the precise distance and direction to their \\glossterm{legacy item}, if it is on the same plane.
       `,

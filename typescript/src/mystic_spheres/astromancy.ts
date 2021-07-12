@@ -128,7 +128,7 @@ export const astromancy: MysticSphere = {
 
       functionsLike: {
         name: "banishment",
-        exceptThat: "you gain a +3 accuracy bonus with the attack.",
+        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 4d6 + half \\glossterm{power}.",
       },
       narrative: `
         The balor about to drag your allies into the Abyss disappears with an audible pop.
@@ -138,6 +138,7 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
       type: "Duration",
     },
+    // treat this as r3 -1 level; it's brutal to melee-only types
     {
       name: "Jittering Curse",
 
@@ -149,28 +150,28 @@ export const astromancy: MysticSphere = {
           This effect lasts until it takes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
       narrative: `
         The furious troll rushes up to you again, ready to strike, only to be teleported away from you just before its claws reach you.
         Will it ever learn?
       `,
-      rank: 6,
+      rank: 7,
       tags: ["Curse"],
       type: "Duration",
     },
-    // treat this as r2; it's similar to immobilized, but harder to cheese
+    // treat this as r3 -1 level; it's similar to immobilized, but harder to cheese with Long weapons
     {
-      name: "Curse of Stagnancy",
+      name: "Dimensional Anchor",
 
       attack: {
-        crit: "The effect lasts until the curse is removed.",
+        crit: "The condition must be removed twice before the effect ends.",
         glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
+          The subject is stuck in place as a \\glossterm{condition}.
           At the end of each round, the subject teleports back to the location it was in
           when this spell was cast.
-          This effect lasts until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -181,7 +182,7 @@ export const astromancy: MysticSphere = {
         Nothing prevents your foe from moving, yet it is trapped more perfectly than any net could achieve.
       `,
       rank: 7,
-      tags: ["Curse"],
+      tags: [],
       type: "Duration",
     },
     {
@@ -747,7 +748,7 @@ export const astromancy: MysticSphere = {
         If its \\glossterm{legacy item} is on the same plane and \\glossterm{unattended}, it is teleported into the creature's hand.
       `,
       // narrative: '',
-      rank: 3,
+      rank: 2,
       type: "Instant",
     },
   ],

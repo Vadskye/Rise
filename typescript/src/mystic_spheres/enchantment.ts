@@ -285,15 +285,20 @@ export const enchantment: MysticSphere = {
     {
       name: "Sleep",
 
+      // +1 level over normal med range r2 debuff due to sleep effect
       attack: {
-        crit: `The subject does not wake up until it suffers two \\glossterm{vital wounds}.`,
-        // No glance effect since brief sleep still allows coup de grace`,
-        hit: `The falls asleep as a \\glossterm{condition}.
-        It cannot be awakened while the condition lasts unless it takes a \\glossterm{vital wound}, which causes it to wake up and ends the sleeping part of the condition.
-        After the condition ends, the subject can wake up normally, though it continues to sleep until it would wake up naturally.`,
+        crit: `
+          If the subject has no remaining \\glossterm{damage resistance}, it immediately falls asleep even if it is in combat or otherwise exerting itself.
+        `,
+        glance: 'The effect lasts \\glossterm{briefly}.',
+        hit: `
+          The subject is \\glossterm{decelerated} as a \\glossterm{condition}.
+          During that condition, if it is not in combat or otherwise exerting itself, it falls asleep.
+          It cannot be awakened while this effect lasts unless it loses \\glossterm{hit points}, which causes it to wake up and ends the effect.
+          After the effect ends by other means, the subject can wake up normally, though it continues to sleep until it awakens for any reason.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
-          You take a -5 penalty to \\glossterm{accuracy} with this attack against creatures who are engaged in combat or taking any physical actions during the current phase.
         `,
       },
 

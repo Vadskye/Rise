@@ -96,9 +96,10 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         glance: `The effect on the creature lasts \\glossterm{briefly}, allowing the creature to act normally in the zone after that time.`,
-        hit: `Each subject acts at half speed within the area.
-        It skips every other round, starting with the round after it becomes affected by this affect.
-        In addition, it takes a -2 penalty to \\glossterm{accuracy} and \\glossterm{defenses} against creatures moving at normal speed.`,
+        hit: `
+          Each subject acts at half speed within the area.
+          It skips every other round, starting with the round after it becomes affected by this affect.
+        `,
         targeting: `
           Make an attack vs. Mental against all creatures within a \\areasmall radius \\glossterm{zone} from your location.
           In addition, whenever a creature enters the area, you make the same attack against them.
@@ -150,10 +151,10 @@ export const chronomancy: MysticSphere = {
         glance: `The effect lasts \\glossterm{briefly}.`,
         hit: `The subject is \\decelerated as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 7,
+      rank: 5,
       type: "Duration",
     },
 
@@ -178,7 +179,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: `The subject is immobilized every round.`,
         glance: `The effect lasts \\glossterm{briefly}.`,
-        hit: `As a \\glossterm{condition}, the subject is \\slowed and randomly \\immobilized.
+        hit: `As a \\glossterm{condition}, the subject is \\slowed and randomly immobilized.
         At the start of each round, it has a 50\\% chance to be \\immobilized during that round.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -429,16 +430,17 @@ export const chronomancy: MysticSphere = {
     {
       name: "Accelerate Aging",
 
+      // Like t3 -1 level
       attack: {
-        crit: `The penalties increase to -6, and the subject moves at one quarter speed.`,
+        crit: `The condition must be removed twice before the effect ends.`,
         glance: `The effect lasts \\glossterm{briefly}.`,
-        hit: `As a \\glossterm{condition}, the subject's body temporarily ages to become extremely old.
-          It suffers a -4 penalty to \\glossterm{accuracy}, \\glossterm{checks}, Armor defense, Fortitude defense, and Reflex defense.
-          These penalties are doubled if the subject was already suffering age-related penalties.
-          In addition, the subject moves at half speed.
+        hit: `
+          As a \\glossterm{condition}, the subject's body temporarily ages to become extremely old.
+          It is \\glossterm{decelerated} and \\glossterm{dazzled}.
+          If it was already suffering age-related penalties, it is also \\glossterm{nauseated}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
       rank: 6,
@@ -492,7 +494,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d6 energy damage.
+        hit: `The subject takes 2d8 + half \\glossterm{power} energy damage.
         If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -535,7 +537,7 @@ export const chronomancy: MysticSphere = {
 
       functionsLike: {
         name: "timeseal",
-        exceptThat: "you gain a +3 accuracy bonus with the attack.",
+        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 4d6 + half \\glossterm{power}.",
       },
       rank: 6,
       scaling: "damage",

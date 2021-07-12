@@ -358,15 +358,13 @@ export const dirtyFighting: CombatStyle = {
       name: "Anklesprainer",
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Make a melee \\glossterm{strike} with a -1d damage penalty.
         Each creature damaged by the strike is \\glossterm{briefly} \\slowed.
       `,
-      rank: 1,
+      rank: 3,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
@@ -375,14 +373,10 @@ export const dirtyFighting: CombatStyle = {
       name: "Greater Anklesprainer",
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Make a melee \\glossterm{strike} with a -1d damage penalty.
         Each creature damaged by the strike is \\glossterm{briefly} \\decelerated.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 6,
       type: "Instant",
     },
 
