@@ -12,7 +12,9 @@ It always sees the words and actions of the creature that charmed it in the most
 A charmed creature cannot be controlled like an automaton, but can be persuaded to take particular actions with the Persuasion skill (see \pcref{Persuasion}).
 It treats the creature that charmed it as a friend (a \plus10 relationship modifier) for the purpose of Persuasion checks.
 
-\debuffdef{confused} A confused creature is unable to independently control its actions. \confusionexplanation
+\debuffdef{confused} A confused creature takes a \minus4 penalty to all defenses and is unable to independently control its actions.
+This penalty does not stack with the \dazed or \stunned effects.
+\confusionexplanation
 
 \debuffdef{crouching} A crouching creature is ducking down instead of standing normally.
 It takes a \minus2 accuracy penalty and it moves at half speed.
@@ -20,7 +22,7 @@ Melee \glossterm{strikes} against it gain a \plus2 bonus to \glossterm{accuracy}
 You cannot crouch while flying or gliding.
 
 \debuffdef{dazed} A dazed creature takes a \minus2 penalty to all defenses.
-This does not stack with the \stunned effect.
+This does not stack with the \stunned or \confused effects.
 
 \debuffdef{dazzled} A dazzled creature has difficulty seeing.
 It loses any special vision abilities it has, such as \glossterm{darkvision} or \glossterm{low-light vision}.
@@ -112,7 +114,7 @@ While squeezing, a creature moves at half speed and takes a \minus2 penalty to \
 For details, see \pcref{Squeezing}.
 
 \debuffdef{stunned} A stunned creature takes a \minus4 penalty to all defenses.
-This does not stack with the \dazed effect.
+This does not stack with the \dazed or \confused effects.
 
 \debuffdef{surrounded} An creature is surrounded if every space adjacent to it either contains an \glossterm{enemy} or is both empty and adjacent to an \glossterm{enemy}.
 A surrounded creature suffers a \minus2 penalty to Armor and Reflex defenses.
