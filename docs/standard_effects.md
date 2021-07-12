@@ -162,7 +162,7 @@ Each debuff rank is +4 spell ranks over its predecessor
 * Rank 1
   * Generally give -2 to a category (accuracy/defenses)
   * List: Dazed, dazzled, shaken (-1 level due to proximity), sickened, slowed
-  * Special: end of round low damage (remove if vital, DR 10 check to remove), knockback 30'
+  * Special: end of round low damage (DR 5/10 check to remove), knockback 30'
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
   * List: decelerated, frightened (-1 level due to proximity), nauseated, generic -2 to all, stunned

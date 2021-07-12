@@ -169,7 +169,7 @@ export const polymorph: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d10 + \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -480,8 +480,7 @@ export const polymorph: MysticSphere = {
         glance: `Half damage.`,
         hit: `The subject takes 4d6 physical damage.
         If it loses \\glossterm{hit points} from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
-        It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
-        Its speed with all of its \\glossterm{mundane} movement modes are reduced to one quarter normal.
+        It is \\decelerated, and it and has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
         It is also unable to speak normally or use verbal or somatic \\glossterm{casting components}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -599,13 +598,13 @@ export const polymorph: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d6 physical damage.
+        hit: `The subject takes 2d8 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: "damage",
       type: "Duration",
     },
@@ -631,9 +630,12 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: `The subject is \\paralyzed instead of immobilized.`,
         glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `The subject is \\immobilized as a \\glossterm{condition}.`,
+        hit: `
+          The subject is \\decelerated as a \\glossterm{condition}.
+          While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of decelerated.
+        `,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
       rank: 7,
@@ -645,12 +647,13 @@ export const polymorph: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        hit: `The subject begins bleeding as a \\glossterm{condition}.
-        At the end of each round, it takes 1d8 physical damage.
-        If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
+        hit: `
+          The subject begins bleeding as a \\glossterm{condition}.
+          At the end of each round, it takes 1d8 physical damage.
+          If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
 
-        This condition can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
-        The \\glossterm{difficulty rating} of the check is equal to 10.
+          This condition can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
+          The \\glossterm{difficulty rating} of the check is equal to 10.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -667,13 +670,11 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         glance:
-          "The effect lasts \\glossterm{briefly}. The subject still takes damage during that round.",
-        hit: `The subject begins bleeding as a \\glossterm{condition}.
-        At the end of each round, it takes 2d8 physical damage.
-        If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
-
-        This condition can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
-        The \\glossterm{difficulty rating} of the check is equal to 20.`,
+          "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
+        hit: `
+          The subject begins bleeding as a \\glossterm{condition}.
+          At the end of each round, it takes 2d10 + half \\glossterm{power} physical damage.
+        `,
         targeting: `
           Make an attack vs. Fortitude against the one living creature within \\medrange.
         `,

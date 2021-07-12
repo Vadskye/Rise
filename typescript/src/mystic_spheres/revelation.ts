@@ -298,7 +298,7 @@ export const revelation: MysticSphere = {
         It takes a -2 penalty to the chosen defense.`,
         targeting: `
           Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental with a +2 accuracy bonus against one creature within \\medrange.
         `,
       },
 
@@ -352,7 +352,7 @@ export const revelation: MysticSphere = {
           Damage against it is treated as damage of all types, which can bypass many forms of immunity and special defenses against specific damage types.
         `,
         targeting: `
-          Make an attack vs. Mental with a +3 accuracy bonus against one creature within \\longrange.
+          Make an attack vs. Mental with a +2 accuracy bonus against one creature within \\medrange.
         `,
       },
       rank: 2,
@@ -365,13 +365,15 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject sees visions of possible futures that confuse its ability to determine reality.
-        It is \\dazzled as a \\glossterm{condition}.`,
+        hit: `The subject is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      narrative: `
+        Your foe sees visions of possible futures that confuse its ability to determine reality.
+      `,
+      rank: 1,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -381,17 +383,24 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject sees an overwhelming barrage of visions of possible futures that make it virtually impossible for it to determine reality.
-        It is \\blinded as a \\glossterm{condition}.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
+        hit: `
+          The subject is \\dazed and \\dazzled as a \\glossterm{condition}.
+          While it has no remaining \\glossterm{damage resistance}, it is \\blinded instead of dazzled.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
+      narrative: `
+        Your foe sees an overwhelming barrage of visions of possible futures that make it virtually impossible for it to determine reality.
+      `,
       rank: 7,
       scaling: "accuracy",
       type: "Duration",
     },
 
+    // +1 level for +1 accuracy
     {
       name: "Stunning Truth",
 
