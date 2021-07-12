@@ -365,12 +365,12 @@ export const channelDivinity: MysticSphere = {
       name: "Greater Divine Presence",
 
       functionsLike: {
-        exceptThat: `
-          the area increases to a \\largearea radius \\glossterm{emanation} from you.
-        `,
         name: "divine presence",
+        exceptThat: `
+          each subject is \\frightened by you instead of shaken.
+        `,
       },
-      rank: 5,
+      rank: 7,
       tags: ["Emotion"],
       type: "Attune (self)",
     },

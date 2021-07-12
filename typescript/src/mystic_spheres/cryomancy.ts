@@ -69,8 +69,8 @@ export const cryomancy: MysticSphere = {
       attack: {
         glance: "Half damage.",
         hit: `
-          The subject takes 2d10 + \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+          The subject takes 2d8 + \\glossterm{power} cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -80,7 +80,20 @@ export const cryomancy: MysticSphere = {
         `,
       },
       focus: false,
-      rank: 4,
+      rank: 3,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Freezing Grasp",
+
+      functionsLike: {
+        name: 'greater freezing grasp',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\decelerated instead of slowed.',
+      },
+      focus: false,
+      rank: 7,
       scaling: "damage",
       type: "Duration",
     },
@@ -133,13 +146,13 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d6 cold damage.
+        hit: `The subject takes 2d8 cold damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: "damage",
       type: "Duration",
     },
@@ -148,13 +161,15 @@ export const cryomancy: MysticSphere = {
       name: "Mass Frozen Legs",
 
       attack: {
-        glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `Each subject that has no remaining \\glossterm{damage resistance} is \\immobilized as a \\glossterm{condition}.`,
+        crit: 'The effect becomes a \\glossterm{condition}.',
+        hit: `
+          Each subject that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\immobilized.
+        `,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -239,33 +254,38 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Chilled Mind",
+      name: "Mindchill",
 
       attack: {
-        hit: `The subject takes 1d6 cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
+        hit: `
+          The subject takes 1d10 + half \\glossterm{power} cold damage and is \\glossterm{briefly} \\dazed.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\closerange.
         `,
       },
 
-      rank: 1,
+      rank: 2,
       scaling: "damage",
       type: "Duration",
     },
 
     {
-      name: "Mass Chilled Mind",
+      name: "Greater Mindchill",
 
       attack: {
-        glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `Each subject that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.`,
+        hit: `
+          The subject takes 2d10 + half \\glossterm{power} cold damage.
+          If it loses \\glossterm{hit points} from tihs damage, it is \\glossterm{briefly} \\stunned.
+          Otherwise, it is briefly \\dazed.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\arealarge radius from you.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 4,
-      scaling: "accuracy",
+
+      rank: 5,
+      scaling: "damage",
       type: "Duration",
     },
 
@@ -349,8 +369,10 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 1d8 + half \\glossterm{power} cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.`,
+        hit: `
+          The subject takes 1d6 cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.
+        `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
         `,
@@ -364,15 +386,10 @@ export const cryomancy: MysticSphere = {
     {
       name: "Greater Frostbite",
 
-      attack: {
-        glance: `Half damage.`,
-        hit: `The subject takes 2d8 + half \\glossterm{power} cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
-        `,
+      functionsLike: {
+        name: 'frostbite',
+        exceptThat: 'the damage increases to 2d6, and the attack gains a +3 \\glossterm{accuracy} bonus.',
       },
-
       rank: 4,
       scaling: "damage",
       type: "Duration",
@@ -496,15 +513,17 @@ export const cryomancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         glance:
-          "The effect lasts \\glossterm{briefly}. The subject still takes damage during that round.",
-        hit: `As a \\glossterm{condition}, the subject is seared by painful cold.
-        % TODO: standardize "ignite" damage
-        At the end of each round, it takes 4d10 cold damage.`,
+          "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
+        hit: `
+          As a \\glossterm{condition}, the subject is seared by painful cold.
+          % TODO: standardize "ignite" damage
+          At the end of each round, it takes 2d10 + half \\glossterm{power} cold damage.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 7,
+      rank: 5,
       type: "Duration",
     },
 

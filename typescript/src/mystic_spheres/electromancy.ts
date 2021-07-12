@@ -82,8 +82,8 @@ export const electromancy: MysticSphere = {
       attack: {
         glance: "Half damage.",
         hit: `
-          The subject takes 2d10 + \\glossterm{power} electricity damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\dazed as a \\glossterm{condition}.
+          The subject takes 2d8 + \\glossterm{power} electricity damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -93,7 +93,20 @@ export const electromancy: MysticSphere = {
         `,
       },
       focus: false,
-      rank: 4,
+      rank: 3,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Shocking Grasp",
+
+      functionsLike: {
+        name: 'greater shocking grasp',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
+      },
+      focus: false,
+      rank: 7,
       scaling: "damage",
       type: "Duration",
     },
@@ -101,16 +114,26 @@ export const electromancy: MysticSphere = {
     {
       name: "Stunning Discharge",
 
-      // original targets: \glossterm{Enemies} in a \areamed radius from you
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `Each subject that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.`,
+        crit: `The effect becomes a \\glossterm{condition}.`,
+        hit: `Each subject that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.`,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\areamed radius from you.
+          Make an attack vs. Fortitude against \\glossterm{enemies} in a \\arealarge radius from you.
         `,
       },
       rank: 2,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Stunning Discharge",
+
+      functionsLike: {
+        name: 'stunning discharge',
+        exceptThat: 'each subject is stunned regardless of whether it has damage resistance remaining.',
+      },
+      rank: 6,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -169,22 +192,8 @@ export const electromancy: MysticSphere = {
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: "accuracy",
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Shock and Awe",
-
-      attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{briefly} \\dazed and \\disoriented.`,
-        targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\largearea radius within \\longrange.
-        `,
-      },
-      rank: 7,
       type: "Duration",
     },
 
@@ -303,13 +312,13 @@ export const electromancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d6 electricity damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\disoriented as a \\glossterm{condition}.`,
+        hit: `The subject takes 2d8 electricity damage.
+        If it loses \\glossterm{hit points} from this damage, it is \\confused as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: "damage",
       type: "Duration",
     },
@@ -448,8 +457,10 @@ export const electromancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         // +2d from level, add trivial extra benefit for fun
-        hit: `The subject takes 4d10 + \\glossterm{power} electricity damage.
-        If this damage would inflict a \\glossterm{vital wound}, it inflicts an additional \\glossterm{vital wound}.`,
+        hit: `
+          The subject takes 4d10 + \\glossterm{power} electricity damage.
+          In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
+        `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
         `,
