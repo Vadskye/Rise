@@ -865,7 +865,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: `The creature is \\panicked instead of frightened.`,
         glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `The creature is \\frightened by the chosen object as a \\glossterm{condition}.`,
+        hit: `The creature is \\frightened by the chosen object until it takes a \\glossterm{short rest}.`,
         targeting: `
         Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
         In addition, choose one Large or smaller object within \\medrange.
@@ -886,9 +886,9 @@ export const enchantment: MysticSphere = {
 
       castingTime: "24 hours",
       attack: {
-        crit: `The creature is also compelled to get as close as possible to the primary target to admire it in greater detail.`,
+        crit: `The creature is also compelled to get as close as possible to the chosen object to admire it in greater detail.`,
         glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `The creature is \\fascinated by the primary target as a \\glossterm{condition}.
+        hit: `The creature is \\fascinated by the chosen object until it takes a \\glossterm{short rest}.
         Any act by you or by creatures that appear to be your allies that threatens or harms the creature breaks the effect.
         Harming the creature is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
         An observant creature may interpret overt threats to its allies as a threat to itself.`,
