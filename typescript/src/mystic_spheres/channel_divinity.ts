@@ -163,10 +163,12 @@ export const channelDivinity: MysticSphere = {
     {
       name: "Retributive Judgment",
 
+      // +1 level for situational +2 accuracy
       attack: {
         hit: `
-          The subject takes 1d8 energy damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.
+          The subject takes 1d10 + half \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
+          After it stops being stunned, it becomes immune to being stunned in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -183,9 +185,9 @@ export const channelDivinity: MysticSphere = {
 
       functionsLike: {
         name: 'retributive judgment',
-        exceptThat: 'the damage increases to 2d10 + half \\glossterm{power}.',
+        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
       },
-      rank: 5,
+      rank: 6,
       scaling: "damage",
       type: "Duration",
     },
@@ -194,13 +196,13 @@ export const channelDivinity: MysticSphere = {
       name: "Glimpse of Divinity",
 
       attack: {
-        crit: "The subject is also \\dazed as part of the same condition.",
+        crit: "The condition must be removed twice before the effect ends.",
         glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\longrange.
+          Make an attack vs. Mental against one creature within \\distrange.
         `,
       },
       rank: 3,
@@ -211,15 +213,9 @@ export const channelDivinity: MysticSphere = {
     {
       name: "Greater Glimpse of Divinity",
 
-      attack: {
-        crit: "The condition must be removed twice before the effect ends.",
-        glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `
-          The subject is \\dazzled and \\dazed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\distrange.
-        `,
+      functionsLike: {
+        name: 'glimpse of divinity',
+        exceptThat: 'the subject is also \\glossterm{dazed} as part of the same condition.',
       },
       rank: 7,
       scaling: "accuracy",
@@ -239,7 +235,7 @@ export const channelDivinity: MysticSphere = {
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -356,7 +352,7 @@ export const channelDivinity: MysticSphere = {
         `,
         targeting: `
           At the end of each round, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
-          After you attack a creature this way, it becomes immune to this ability from you until it takes a \\glossterm{short rest}.
+          After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
         `,
       },
       rank: 3,
@@ -374,7 +370,7 @@ export const channelDivinity: MysticSphere = {
         `,
         name: "divine presence",
       },
-      rank: 6,
+      rank: 5,
       tags: ["Emotion"],
       type: "Attune (self)",
     },
@@ -473,7 +469,7 @@ export const channelDivinity: MysticSphere = {
           The subject takes 2d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
-          After this effect ends, it becomes immune to this effect until it takes a \\glossterm{short rest}.
+          After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.

@@ -72,6 +72,7 @@ export const astromancy: MysticSphere = {
       type: "Instant",
     },
 
+    // +1 level over banishment since Reflex is a weird defense for this effect
     {
       name: "Banishing Grasp",
 
@@ -108,7 +109,7 @@ export const astromancy: MysticSphere = {
           The subject takes 2d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
-          After this effect ends, it becomes immune to this effect until it takes a \\glossterm{short rest}.
+          After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -146,18 +147,20 @@ export const astromancy: MysticSphere = {
         crit: "The effect lasts until the curse is removed.",
         glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
-          At the end of each \\glossterm{movement phase}, the subject teleports horizontally 10 feet in a random direction.
-          This effect lasts until it takes a \\glossterm{short rest}.
+          The subject jitters randomly until it takes a \\glossterm{short rest}.
+          At the end of each \\glossterm{movement phase}, if it has no remaining \\glossterm{damage resistance}, it teleports horizontally 10 feet in a random direction.
+          This teleportation only works if it moves the subject into an unoccupied location on a stable surface that can support its weight.
+          If the destination is invalid, the teleportation fails with no effect.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       narrative: `
         The furious troll rushes up to you again, ready to strike, only to be teleported away from you just before its claws reach you.
         Will it ever learn?
       `,
-      rank: 7,
+      rank: 6,
       tags: ["Curse"],
       type: "Duration",
     },
@@ -174,7 +177,7 @@ export const astromancy: MysticSphere = {
           when this spell was cast.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
       narrative: `
@@ -271,11 +274,11 @@ export const astromancy: MysticSphere = {
       attack: {
         glance: "Half damage.",
         hit: `
-          The subject takes 2d6 + \\glossterm{power} bludgeoning damage.
+          The subject takes 2d6 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against anything within \\shortrange.
         `,
       },
       narrative: `
@@ -290,12 +293,12 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d10 bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 50 feet in any direction (see \\pcref{Knockback Effects}).
+          The subject takes 1d8 bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
           Moving the subject upwards costs twice the normal movement cost.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
+          Make an attack vs. Fortitude against anything within \\longrange.
         `,
       },
       narrative: `
@@ -311,14 +314,13 @@ export const astromancy: MysticSphere = {
 
       attack: {
         glance: "Half damage.",
+        crit: `
+          Double damage, and the burning effect becomes a \\glossterm{condition}.
+        `,
         hit: `
           The subject takes 4d8 + half \\glossterm{power} fire damage.
-          If it loses \\glossterm{hit points} from this damage, it catches on fire as a \\glossterm{condition}.
-          At the end of each subsequent round, it takes 4d6 fire damage.
-
-          If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
-          This condition can be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
-          Dropping \\prone as part of this action gives a +5 bonus to this check.
+          If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
+          At the end of each round, it takes 4d6 fire damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -335,17 +337,17 @@ export const astromancy: MysticSphere = {
       },
       type: "Duration",
     },
-    // +2 levels for mixed damage types, +2 levels for +1d
+    // +1 level for all damage types
     {
       name: "Dimensional Jaunt -- Myriad",
 
       attack: {
         glance: "Half damage.",
         hit: `
-          The subject takes 4d8 + \\glossterm{power} damage of all types.
+          The subject takes 4d10 + \\glossterm{power} damage of all types.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against anything within \\shortrange.
         `,
       },
       narrative: `
@@ -363,7 +365,8 @@ export const astromancy: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 4d6 energy damage.
-          In addition, it is \\stunned as a \\glossterm{condition}.
+          If it lost \\glossterm{hit points} from this damage, it is \\confused as a condition.
+          Otherwise, it is \\stunned instead of confused.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -435,7 +438,7 @@ export const astromancy: MysticSphere = {
 
       effect: `
         You randomly flicker between your current plane and the Astral Plane.
-        ALl \\glossterm{strikes} against you have a 20\\% failure chance as you happen to be in the Astral Plane when the attack would hit.
+        All \\glossterm{strikes} against you have a 20\\% failure chance as you happen to be in the Astral Plane when the attack would hit.
         However, all of your abilities that affect creatures or objects other than yourself also have the same failure chance.
         This does not affect abilities you use that only affect yourself.
       `,
@@ -588,9 +591,10 @@ export const astromancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You can move through creatures freely.
+        When you move using one of your movement speeds, you can move through creatures freely.
         This does not allow you to move through inanimate objects.
         If you end your movement in spaces occupied by other creatures, both of you are still \\squeezing.
+        If you are not able to move normally, such as if you are \\grappled, this spell does not help you.
       `,
       narrative: `
         You augment your body with the ability to travel short distances through the Astral Plane to reach your destination.
@@ -598,7 +602,7 @@ export const astromancy: MysticSphere = {
       rank: 3,
       scaling: {
         5: "You also ignore all sources of \\glossterm{difficult terrain}.",
-        7: "You can also move through inanimate objects that block no more than half your body at a time, such as low walls.",
+        7: "You can also move through inanimate objects that are no more than six inches thick.",
       },
       type: "Attune (self)",
     },

@@ -57,7 +57,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             \hit The subject takes 2d6 \add half \glossterm{power} fire damage.
             If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
             At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
-            After this effect ends, it becomes immune to this effect until it takes a \glossterm{short rest}.
+            After it returns, it becomes immune to being teleported in this way until it takes a \glossterm{short rest}.
             \glance Half damage.
 
             \rankline
