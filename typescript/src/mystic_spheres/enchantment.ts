@@ -27,13 +27,16 @@ export const enchantment: MysticSphere = {
       name: "Repeat",
 
       attack: {
-        hit: `During the next round, the subject must repeat all actions that it took this round.
-        It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
-        If it is unable to take the same action, it unable to take any action of that action type.
-        For example, if a creature moved during the round that you cast this spell and was \\immobilized or knocked \\prone, it cannot move at all during the following round.`,
+        hit: `
+          During the next round, the subject must repeat all actions that it took this round.
+          It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
+          If it is unable to take the same action, it unable to take any action of that action type.
+          For example, if a creature moved during the round that you cast this spell and was \\immobilized or knocked \\prone, it cannot move at all during the following round.
+
+          After the subject stops repeating its actions, it becomes immune to this effect until it takes a \\glossterm{short rest}.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
-          If the subject is currently repeating its actions from this effect or a similar effect, this attack automatically fails.
         `,
       },
       focus: false,
@@ -52,19 +55,26 @@ export const enchantment: MysticSphere = {
         `,
         name: "repeat",
       },
-      rank: 2,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Compulsion"],
       type: "Instant",
     },
 
+    // This is a weird effect with no clearly defined rank
     {
       name: "Drop",
 
       attack: {
-        crit: `The subject is also unable to pick up the dropped items as a \\glossterm{condition}.
-        It can still hold other items, but if the dropped items are placed in its hands, it will immediately drop them again.`,
-        hit: `The subject imediately drops anything it is holding in its hands.`,
+        crit: `
+          The inability to hold the item becomes a \\glossterm{condition}.
+        `,
+        hit: `
+          The subject immediately drops one object it is holding in a single hand.
+          It is \\glossterm{briefly} unable to pick up that item.
+          It can still hold other items, but if the dropped item is placed in its hand, it will immediately drop it again.
+          After it stops being unable to pick up the item, it becomes immune to this effect until it takes a \\glossterm{short rest}.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -76,29 +86,10 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: "Greater Drop",
-
-      // original targets: Creatures in a \areasmall radius within \medrange
-      attack: {
-        crit: `Each subject is also unable to pick up the dropped items as a \\glossterm{condition}.
-        It can still hold other items, but if the dropped items are placed in its hands, it will immediately drop them again.`,
-        hit: `Each subject drops anything it is holding in its hands.`,
-        targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
-        `,
-      },
-      rank: 5,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
-      type: "Duration",
-    },
-
-    {
       name: "Monologue",
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject is forced to speak out loud constantly whenever it can.
         This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
         In combat, most creatures with an intelligence of 0 or less will often talk about what they are planning on doing, which can help you predict their actions.`,
@@ -107,7 +98,7 @@ export const enchantment: MysticSphere = {
         `,
       },
 
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion"],
       type: "Duration",
@@ -116,6 +107,7 @@ export const enchantment: MysticSphere = {
     {
       name: "Dance",
 
+      // This is T1 + one level; it is a weird hybrid of immobilized and a minor T1 effect
       attack: {
         crit: `The subject must dance as a \\glossterm{standard action} to reset the penalties, instead of as a move action.`,
         hit: `As a \\glossterm{condition}, the subject is compelled to dance.
@@ -133,6 +125,7 @@ export const enchantment: MysticSphere = {
       type: "Duration",
     },
 
+    // "fall prone" is like a brief t1 effect
     {
       name: "Collapse",
 
@@ -155,14 +148,13 @@ export const enchantment: MysticSphere = {
 
       attack: {
         glance: "The effect lasts \\glossterm{briefly}.",
-        crit: `The condition must be removed twice before the effect ends.`,
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\longrange.
         `,
       },
 
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion"],
       type: "Duration",
@@ -193,7 +185,7 @@ export const enchantment: MysticSphere = {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
         hit: `Each subject is \\glossterm{briefly} \\slowed.`,
         targeting: `
-        Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
         `,
       },
       rank: 2,
@@ -209,27 +201,11 @@ export const enchantment: MysticSphere = {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
         hit: `Each subject is \\glossterm{briefly} \\decelerated.`,
         targeting: `
-        Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
-      tags: ['Compulsion'],
-      type: "Duration",
-    },
-
-    {
-      name: "Stop Moving",
-
-      attack: {
-        crit: `The subject is \\paralyzed instead of immobilized.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `The subject is \\immobilized as a \\glossterm{condition}.`,
-        targeting: `
-        Make an attack vs. Mental against one creature within \\shortrange.
-        `,
-      },
-      rank: 7,
       tags: ['Compulsion'],
       type: "Duration",
     },
@@ -239,12 +215,14 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{briefly} \\confused.`,
+        hit: `
+          Each subject with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\confused.
+        `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 4,
       tags: ["Compulsion"],
       type: "Duration",
     },
@@ -252,9 +230,10 @@ export const enchantment: MysticSphere = {
     {
       name: "Dominate Person",
 
+      // +1 level for super attunement
       attack: {
-        crit: `The subject is also \\confused as part of the same condition.
-        In addition, if the subject is humanoid and was already stunned and confused from a previous casting of this spell, you may \\glossterm{attune} to this ability.
+        crit: `The subject is \\confused instead of stunned.
+        In addition, if the subject is humanoid and was already confused from a previous casting of this spell, you may \\glossterm{attune} to this ability.
         If you do, it becomes \\dominated by you for the duration of that attunement.`,
         glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\stunned as a \\glossterm{condition}.`,
@@ -339,7 +318,7 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Emotion"],
       type: "Duration",
@@ -352,11 +331,15 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: `The subject takes a -4 penalty to its defenses against the strike.`,
         // No glance effect since it's already one round
-        hit: `During the next \\glossterm{action phase}, the subject is compelled to make a \\glossterm{strike} against itself instead of taking any other actions.
-        It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
-        If it has any weapons in hand or natural weapons at that time, it must use one of them.
-        Otherwise, it uses its unarmed attack.
-        This does not use up any of the creature's actions for the round, and it can take any unused actions during the \\glossterm{delayed action phase} of that round.`,
+        hit: `
+          During the next \\glossterm{action phase}, the subject is compelled to make a \\glossterm{strike} against itself instead of taking any other actions.
+          It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
+          If it has any weapons in hand or natural weapons at that time, it must use one of them.
+          Otherwise, it uses its unarmed attack.
+          This does not use up any of the creature's actions for the round, and it can take any unused actions during the \\glossterm{delayed action phase} of that round.
+
+          After it makes this attack against itself, it becomes \\glossterm{immune} to this effect until it takes a \\glossterm{short rest}.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -387,19 +370,6 @@ export const enchantment: MysticSphere = {
       name: "Greater Discordant Song",
 
       functionsLike: {
-        exceptThat: "the area increases to a \\hugearea radius from you.",
-        name: "discordant song",
-      },
-      rank: 4,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
-      type: "Duration",
-    },
-
-    {
-      name: "Supreme Discordant Song",
-
-      functionsLike: {
         exceptThat: "the area increases to a \\gargarea radius from you.",
         name: "discordant song",
       },
@@ -414,7 +384,9 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The subject is \\frightened by you instead of shaken.`,
-        hit: `The subject is \\shaken by you as a \\glossterm{condition}.`,
+        hit: `
+          The subject is \\shaken by either you or an \\glossterm{ally} of your choice within range as a \\glossterm{condition}.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -430,9 +402,9 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{briefly} \\shaken by you.`,
+        hit: `Each subject is \\glossterm{briefly} \\shaken by either you or an \\glossterm{ally} of your choice within range.`,
         targeting: `
-        Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
       rank: 1,
@@ -466,7 +438,7 @@ export const enchantment: MysticSphere = {
         hit: `Each subject is \\glossterm{briefly} \\shaken by you.`,
         targeting: `
           At the end of each round, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
-          After you attack a creature this way, you do not make this attack against it again until it takes a \\glossterm{short rest}.
+          After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
         `,
       },
       rank: 3,
@@ -476,19 +448,16 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: "Cause Redirected Fear",
+      name: "Greater Fearsome Aura",
 
-      attack: {
-        crit: `The subject is \\frightened instead of shaken.`,
-        hit: `The subject is \\shaken by an \\glossterm{ally} of your choice within range as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
+      functionsLike: {
+        name: 'fearsome aura',
+        exceptThat: 'each subject is \\frightened by you instead of shaken.',
       },
-      rank: 2,
+      rank: 7,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
+      type: "Attune (self)",
     },
 
     {
@@ -544,7 +513,7 @@ export const enchantment: MysticSphere = {
         You take a -5 penalty to \\glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
         `,
       },
-      rank: 2,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Emotion"],
       type: "Sustain (standard)",
@@ -564,25 +533,6 @@ export const enchantment: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
-    },
-
-    {
-      name: "Deaden Emotions",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `As a \\glossterm{condition}, the subject is unable to take any \\glossterm{standard actions} that cause it to make an attack.
-        If it is harmed, either by taking damage or by experiencing significant subjective discomfort, this effect immediately ends.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
-          You take a -5 penalty to \\glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
-        `,
-      },
-      rank: 5,
-      scaling: "accuracy",
-      tags: ["Emotion", "Subtle"],
       type: "Duration",
     },
 
@@ -692,10 +642,14 @@ export const enchantment: MysticSphere = {
 
       attack: {
         glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `As a \\glossterm{condition}, the subject believes that it is the only real creature, and the rest of the world is an illusion.
-        It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
-        It still avoids obvious environmental hazards, such as cliff edges or fires.
-        If it takes any damage or is otherwise harmed, including significant subjective discomfort, this effect is automatically broken.`,
+        hit: `
+          As a \\glossterm{condition}, the subject believes that it is the only real creature, and the rest of the world is an illusion.
+          It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
+          It still avoids obvious environmental hazards, such as cliff edges or fires.
+          If it takes any damage or is otherwise harmed, including significant subjective discomfort, this effect is automatically broken.
+
+          After this effect ends, the subject becomes immune to it until it takes a \\glossterm{short rest}.
+        `,
         targeting: `
         Make an attack vs. Mental against one creature within \\shortrange.
         You take a -5 penalty to \\glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
@@ -731,12 +685,12 @@ export const enchantment: MysticSphere = {
         targeting: `
         This spell has no \\glossterm{verbal components}.
 
-        Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against one creature within \\longrange.
+        Make an attack vs. Mental with a +3 bonus to \\glossterm{accuracy} against one creature within \\longrange.
         `,
       },
       rank: 1,
       scaling: "accuracy",
-      tags: ["Subtle"],
+      tags: ["Emotion", "Subtle"],
       type: "Duration",
     },
 
@@ -745,10 +699,12 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `As a \\glossterm{condition}, the subject feels excruciating pain from even minor injuries.
-        As long as it is at less than its maximum \\glossterm{hit points}, it is \\nauseated.`,
+        hit: `
+          As a \\glossterm{condition}, the subject feels excruciating pain from even minor injuries.
+          As long as it is at less than its maximum \\glossterm{hit points}, it is \\nauseated.
+        `,
         targeting: `
-        Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       rank: 1,
@@ -764,9 +720,9 @@ export const enchantment: MysticSphere = {
         crit: `The effect becomes a \\glossterm{condition} that lasts until it is removed.`,
         hit: `The subject \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
         It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
-        After this effect ends, it becomes immune to this spell until it takes a \\glossterm{short rest}.`,
+        After this effect ends, the subject becomes immune to this spell until it takes a \\glossterm{short rest}.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\distrange.
         `,
       },
       rank: 2,

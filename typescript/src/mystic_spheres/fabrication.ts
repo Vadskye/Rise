@@ -81,12 +81,12 @@ export const fabrication: MysticSphere = {
       name: "Mystic Artillery",
 
       attack: {
-        hit: `The subject takes 4d10 + \\glossterm{power} piercing damage.`,
+        hit: `The subject takes 4d8 + \\glossterm{power} piercing damage.`,
         targeting: `
-          Make an attack vs. Armor with a +3 accuracy bonus against anything within \\extrange.
+          Make an attack vs. Armor with a +1 accuracy bonus against anything within \\extrange.
         `,
       },
-      rank: 7,
+      rank: 6,
       tags: ["Manifestation"],
       type: "Instant",
     },
@@ -96,8 +96,10 @@ export const fabrication: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d10 + \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is knocked \\prone.`,
+        hit: `
+          The subject takes 2d10 + \\glossterm{power} piercing damage.
+          If it loses \\glossterm{hit points} from this damage, it is knocked \\prone.
+        `,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
         `,
@@ -121,6 +123,20 @@ export const fabrication: MysticSphere = {
       },
       focus: false,
       rank: 3,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Bladestorm",
+
+      functionsLike: {
+        name: "bladestorm",
+        exceptThat: "the damage increases to 4d10 + \\glossterm{power}.",
+      },
+      focus: false,
+      rank: 7,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -165,10 +181,23 @@ export const fabrication: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
-        Make an attack vs. Armor against everything in a \\smallarea radius within \\medrange.
+          Make an attack vs. Armor against everything in a \\smallarea radius within \\medrange.
         `,
       },
       rank: 3,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Hail of Arrows",
+
+      functionsLike: {
+        name: "hail of arrows",
+        exceptThat: "the damage increases to 4d10 + \\glossterm{power}.",
+      },
+      rank: 7,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -338,13 +367,27 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `The subject takes 1d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
-        You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
-        Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
-        Unlike most attacks, this attack can happen during the \\glossterm{movement phase}.
-        Caltrops may not be effective against creatures with an unusual anatomy.
+          You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
+          Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
+          You cannot make this attack against the same creature more than once per \\glossterm{phase}.
+          Unlike most attacks, this attack can happen during the \\glossterm{movement phase}.
+          Caltrops may not be effective against creatures with an unusual anatomy.
         `,
       },
       rank: 1,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Sustain (minor)",
+    },
+
+    {
+      name: "Greater Caltrops",
+
+      functionsLike: {
+        name: 'caltrops',
+        exceptThat: "the damage increases to 4d6 + \\glossterm{power}.",
+      },
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Sustain (minor)",
