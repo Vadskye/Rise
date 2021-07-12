@@ -127,30 +127,6 @@ invests an insight point or two into healing spells.
 Non-choice effects should generally not have the Focus tag, because the total +4 level difference
 could give access to powerful abilities dangerously early for dedicated characters.
 
-### Debuff ranks
-Note: This is duplicated in the Metacaster feat.
-Each debuff rank is +4 spell ranks over its predecessor
-
-* Rank 0
-  * Generally do relatively little
-  * List: deafened, prone
-* Rank 1
-  * Generally give -2 to a category (accuracy/defenses)
-  * List: Dazed, dazzled, shaken (-1 level due to proximity), sickened, slowed
-  * Special: end of round low damage (remove if vital, DR 10 check to remove), knockback 30'
-* Rank 2
-  * Generally give -4 to a category (accuracy/defenses)
-  * List: decelerated, frightened (-1 level due to proximity), nauseated, generic -2 to all, stunned
-  * Special: end of round medium damage
-* Rank 2.5
-  * List: fighting underwater, not existing
-* Rank 3
-  * Generally cause partial action denial
-  * List: confused, blinded, disoriented, immobilized, panicked (-1 level due to proximity)
-* Rank 4
-  * Generally cause complete action denial
-  * List: Asleep, paralyzed
-
 ### Standard damage categories
 
 There are three standard categories of damage: high, medium, and low.
@@ -175,6 +151,30 @@ situations.
   * Low: (1d4 + 1d per rank)
 
 ## Stock effects
+
+### Debuff ranks
+Note: This is duplicated in the Metacaster feat.
+Each debuff rank is +4 spell ranks over its predecessor
+
+* Rank 0
+  * Generally do relatively little
+  * List: deafened, prone
+* Rank 1
+  * Generally give -2 to a category (accuracy/defenses)
+  * List: Dazed, dazzled, shaken (-1 level due to proximity), sickened, slowed
+  * Special: end of round low damage (remove if vital, DR 10 check to remove), knockback 30'
+* Rank 2
+  * Generally give -4 to a category (accuracy/defenses)
+  * List: decelerated, frightened (-1 level due to proximity), nauseated, generic -2 to all, stunned
+  * Special: end of round medium damage
+* Rank 2.5
+  * List: fighting underwater, not existing
+* Rank 3
+  * Generally cause partial action denial
+  * List: confused, blinded, disoriented, immobilized, panicked (-1 level due to proximity)
+* Rank 4
+  * Generally cause complete action denial
+  * List: Asleep, paralyzed
 
 ### Standard level modifiers
 
