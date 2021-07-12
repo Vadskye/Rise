@@ -608,8 +608,8 @@ def generate_weapons():
             level=20,
             material_type="Weapon",
             description="""
-            Critical hits on \\glossterm<strikes> with this weapon deal maximum damage.
-        """,
+                Critical hits on \\glossterm<strikes> with this weapon deal maximum damage.
+            """,
             short_description="Inflicts lethal critical hits",
         )
     )

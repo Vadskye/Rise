@@ -553,6 +553,7 @@ def generate_apparel():
                 As a \\glossterm<free action>, you can activate these boots.
                 When you do, you increase your \\glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds until the end of the round.
                 This does not allow you to move through inanimate objects.
+                If you end your movement in spaces occupied by other creatures, both of you are still \\squeezing.
                 If you are not able to move normally, such as if you are \\grappled, these boots do not help you.
             """,
             short_description="Can briefly move through creatures",
@@ -563,9 +564,7 @@ def generate_apparel():
             material_type="Boots",
             tags=["Swift"],
             description="""
-                When you move using one of your movement speeds, you can move through creatures freely.
-                This does not allow you to move through inanimate objects.
-                If you are not able to move normally, such as if you are \\grappled, these boots do not help you.
+                These boots function like \\mitem<phasestep boots>, except that their effect is always active.
             """,
             short_description="Can move through creatures",
         ),
@@ -575,10 +574,8 @@ def generate_apparel():
             material_type="Boots",
             tags=["Swift"],
             description="""
-                When you move using one of your movement speeds, you can move through creatures freely.
+                These boots function like \\mitem<phasestep boots>, except that their effect is always active.
                 In addition, you ignore all sources of \\glossterm<difficult terrain>.
-                This does not allow you to move through inanimate objects.
-                If you are not able to move normally, such as if you are \\grappled, these boots do not help you.
             """,
             short_description="Can move through creatures and some terrain",
         ),
