@@ -137,11 +137,13 @@ Each debuff rank is +4 spell ranks over its predecessor
 * Rank 1
   * Generally give -2 to a category (accuracy/defenses)
   * List: Dazed, dazzled, shaken (-1 level due to proximity), sickened, slowed
-  * Special: end of round low damage (remove if vital, DR 10 check to remove)
+  * Special: end of round low damage (remove if vital, DR 10 check to remove), knockback 30'
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
-  * List: decelerated, frightened (-1 level due to proximity), nauseated, generic -2 to all, stunned, fighting underwater
+  * List: decelerated, frightened (-1 level due to proximity), nauseated, generic -2 to all, stunned
   * Special: end of round low damage (remove if vital)
+* Rank 2.5
+  * List: fighting underwater, not existing
 * Rank 3
   * Generally cause partial action denial
   * List: confused, blinded, disoriented, immobilized, panicked (-1 level due to proximity)
@@ -207,30 +209,19 @@ have their own logic which may differ significantly from this.
     * +1 rank debuff that replaces existing debuff
     * +0 rank debuff in addition to existing debuff, removed at the same time
     * condition must be removed twice before it is gone
-  * +1 levels: +1a (non-damaging debuffs)
+  * +1 levels: +1a (any attack other than a high-damage attack)
   * +1 levels: convert condition to poison (including poison crit and +1r debuff on third stage)
-  * +1 level: convert condition to curse (including replacing crit effect)
-    * It's possible that this should be +2 levels, but the curse crit effect is worse than a
-      standard crit effect, so it might also be fine
-  * +2 levels: +1a (damaging attacks, damaging debuffs)
+  * +2 levels: +1a (high-damage attacks)
   * +2 levels: +1d (above standard rank progression, if any)
-  * +3 levels: +1 rank to debuff
-  * +3 levels: Add additional debuff of the same rank removed at the same time as existing debuff
-  * +3 levels: increase one damage tier (low -> medium -> high); only for Finisher attacks
-  * +3 levels: add r1 debuff on losing HP to a high damage attack
-  * +4 levels: convert eonr area debuff to attuned autoattack with repeat immunity (Divine Presence)
+  * +4 levels: +1 rank to debuff
+  * +4 levels: Add additional debuff of the same rank removed at the same time as existing debuff
 * Non-strikes only:
   * +0 levels: add glancing blow mechanic (min rank 3)
     * Mathematically, this should be +2 levels to match +1 accuracy. However, at high levels the game
       plays better if this effect is common, so it's free.
     * This should not be found on spells below rank 3 to make sure the game plays differently at
       different levels, and to solve accuracy-related math.
-  * +1 level: enemies only
-    * This is free for abilities around self, because those abilities would otherwise be
-      virtually useless
-  * +1 level: +1 area size
   * +1 level: +1 range (not applicable to effects that intrinsically scale with range, like teleportation)
-  * +1 level: Increase line width by 5'
   * +1 level: convert ability to attunement, no-focus, no-component standard action
   * +2 level: +1 range (for effects that intrinsically scale with range, like teleportation)
   * +2 level: remove Focus tag (dangerous; only for narratively relevant spells)
@@ -293,11 +284,11 @@ Tier 7 areas:
 * Huge radius in Long range
 * Medium radius in Extreme range
 
-### Standard effects
+## Standard effects
 
-#### Pure damage
+### Pure damage
 
-Maneuvers
+#### Maneuvers
 * Rank 1
   * Strike with -2 acc, +2d
   * Strike with +3 acc, -2d
@@ -313,7 +304,7 @@ Maneuvers
 * Rank 7
   * Strike with +3d or +3 acc
 
-Spells: Single Target
+#### Spells: Single target
 * Rank 1
   * Med range, 1d10 + power
   * t1 area, 1d8 + half power
@@ -327,16 +318,18 @@ Spells: Single Target
 * Rank 5
   * Med range, 4d10 + power
   * t1 area, 4d8 + half power
+* Modifiers
+  * "Med range" can be replaced with "Reach, no focus"
 
-Spells: AOE
+#### Spells: AOE
 * Rank 1
   * t1 area, 1d8 + half power
-* Rank 5
-  * t1 area, 4d6 + power
+* Modifiers
+  * +4 levels gives +5d and full power instead of half power
 
-#### Pure debuff
+### Pure debuff
 
-Spells: Single-target debuff
+#### Spells: Single-target debuff
 * Rank 1
   * Med range, condition: r1 debuff, or r2 on crit
   * Med range, condition: r2 debuff while no DR, must remove twice on crit
@@ -354,7 +347,7 @@ Spells: Single-target debuff
   * Med range, condition: r2 and r1 debuff, must remove twice on crit
   * Med range, condition: r2 debuff while DR, or r3 debuff while no DR, must remove twice on crit
 
-Spells: AOE debuff
+#### Spells: AOE debuff
 The minimum area size here should be a t2 area to make these feel different from single-target
 * Rank 1
   * t3 area, brief r1 debuff, condition on crit
@@ -366,30 +359,50 @@ The minimum area size here should be a t2 area to make these feel different from
   * t2 area, brief r2 debuff, condition on crit
 * Rank 6
   * t2 area, brief r2 debuff if DR or r3 debuff if no DR, condition on crit
+* Modifiers
+  * +3 levels to apply a condition instead of a brief effect, with "remove twice" crit
 
-#### Hybrid damage/debuff
-
-Maneuvers: single-target medium damage + debuff
+#### Spells: Attuned AOE debuff
+The minimum area size here should be a t2 area to make these feel different from single-target
 * Rank 3
-  * Strike with -2d, brief r1 debuff if lose HP
-* Rank 6
-  * Strike with -2d, brief r1 debuff
+  * t2 area, brief r1 debuff, condition on crit, immune after *attack* (not success)
 * Rank 7
-  * Strike with -2d, brief r2 debuff if lose HP
+  * t2 area, brief r2 debuff, condition on crit, immune after *attack* (not success)
 
-Spells: single-target medium damage + debuff
+### Hybrid damage/debuff
+
+#### Maneuvers: single-target medium damage + debuff
 * Rank 1
-  * Med range, 1d8 + half power damage, brief r1 debuff if lose HP
-* Rank 4
-  * Med range, 2d8 + half power damage, brief r1 debuff
+  * Strike with -2d, brief r1 debuff if lose HP
+* Rank 3
+  * Strike with -2d, brief r1 debuff, immune after first success
+  * Strike with -2d, brief r2 debuff if lose HP, immune after first success
 * Rank 5
-  * Med range, 2d10 + half power damage, brief r2 debuff if lose HP
-* Rank 6
-  * Med range, 4d6 + half power damage, brief r2 debuff if lose HP, otherwise r1 debuff
+  * Strike with -2d, brief r1 debuff
+  * Strike with -2d, brief r2 debuff if lose HP
+* Rank 7
+  * Strike with -2d, brief r2 debuff if lose HP, otherwise brief r1 debuff
+  * Strike with -2d, brief r2 debuff, immune after first success
+  * Strike with -2d, brief r3 debuff if lose HP, immune after first success
+
+#### Spells: single-target medium damage + debuff
+* Rank 1
+  * Med range, 1d8 + half power damage, brief r1 debuff, immune after first success
+  * Med range, 1d8 + half power damage, brief r2 debuff if lose HP, immune after first success
+* Rank 3
+  * Med range, 2d6 + half power damage, brief r1 debuff
+  * Med range, 2d6 + half power damage, brief r2 debuff if lose HP
+* Rank 5
+  * Med range, 2d10 + half power damage, brief r2 debuff if lose HP, otherwise brief r1 debuff
+  * Med range, 2d10 + half power damage, brief r2 debuff, immune after first success
+  * Med range, 2d10 + half power damage, brief r3 debuff if lose HP, immune after first success
 * Rank 7
   * Close range, 4d8 + half power damage, brief r2 debuff
+* Modifiers
+  * "Med range" can be replaced with "Reach, no focus"
+  * For +4 levels, you get +5d and full power instead of half power
 
-Maneuvers: single-target low damage + debuff
+#### Maneuvers: single-target low damage + debuff
 * Rank 1
   * Strike with -2d, r1 debuff condition if lose HP
 * Rank 3
@@ -399,7 +412,7 @@ Maneuvers: single-target low damage + debuff
 * Rank 7
   * Strike with -2d and half power, r3 debuff condition if lose HP
 
-Spells: single-target low damage + debuff
+#### Spells: single-target low damage + debuff
 * Rank 1
   * Med range, 1d6 damage, r2 debuff condition if lose HP
 * Rank 3
