@@ -489,7 +489,7 @@ export const channelDivinity: MysticSphere = {
 
       functionsLike: {
         name: "banish anathema",
-        exceptThat: "you gain a +3 accuracy bonus with the attack.",
+        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 4d6 + half \\glossterm{power}.",
       },
       rank: 6,
       scaling: "damage",

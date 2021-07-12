@@ -68,7 +68,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         crit: "The effect lasts until this curse is removed.",
         hit: `
-          The subject takes a -2 penalty to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
+          The subject takes a -2 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
         `,
         targeting: "Make an attack vs. Mental against anything within \\longrange.",
       },
@@ -89,7 +89,7 @@ export const aeromancy: MysticSphere = {
         `,
         glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
-          The subject takes a -4 penalty to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Medium or smaller until it takes a \\glossterm{short rest}.
+          The subject takes a -4 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Medium or smaller until it takes a \\glossterm{short rest}.
         `,
         targeting: "Make an attack vs. Mental against anything within \\longrange.",
       },
@@ -566,7 +566,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: `
-          Each subject is \\blinded as a \\glossterm{condition}.
+          The effect becomes a \\glossterm{condition}.
         `,
         // glance: '',
         hit: `
@@ -586,7 +586,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: "The condition is must be removed twice before the effect ends.",
-        glance: "The condition is removed at the end of the next round.",
+        glance: "The condition lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\blinded as a \\glossterm{condition}.
         `,
@@ -596,7 +596,7 @@ export const aeromancy: MysticSphere = {
         `,
       },
       // narrative: '',
-      rank: 6,
+      rank: 7,
       scaling: "accuracy",
       type: "Duration",
     },
