@@ -56,13 +56,6 @@ higher levels. Therefore, martial classes need to grant more static bonuses to d
 strikes and mundane abilities. That leaves relatively little room for rank upgrades to damaging
 maneuvers.
 
-#### Finisher debuff scaling
-Strike-based abilities that inflict finisher debuffs do not have explicit scaling, so they
-implicitly scale their damage.
-Non-strike-based abilities that inflict finisher abilities don't really have any purpose to
-increasing their damage; that's not really the point of finisher abilities. Instead, they should
-scale their accuracy, area, or other benefits.
-
 #### Rank text references
 
 References to your rank should be isolated to the rank upgrade text where possible. If abilities
@@ -136,6 +129,7 @@ could give access to powerful abilities dangerously early for dedicated characte
 
 ### Debuff ranks
 Note: This is duplicated in the Metacaster feat.
+Each debuff rank is +4 spell ranks over its predecessor
 
 * Rank 0
   * Generally do relatively little
@@ -197,7 +191,7 @@ situations.
 * Non-strike-based attacks:
   * High: (1d8 + 1d per rank) + (power)
   * Medium: (1d6 + 1d per rank) + (half power)
-  * Low: (1d3 + 1d per rank)
+  * Low: (1d4 + 1d per rank)
 
 ## Stock effects
 
@@ -301,81 +295,116 @@ Tier 7 areas:
 
 ### Standard effects
 
-#### Rank 1 Effects
+#### Pure damage
 
-Rank 1 maneuver:
-* Strike-based:
-  * Softener:
-    * Make a strike with +3a, low damage
-  * Damage:
-    * Make a strike against Fort/Ref defense with -1d damage
-    * Make a strike with a highly circumstantial benefit (reroll miss chance)
-  * Finisher:
-    * low damage, r1 debuff condition if lose HP (note: this is 1 level too weak)
-    * med damage, brief r1 debuff if lose HP
+Maneuvers
+* Rank 1
+  * Strike with -2 acc, +2d
+  * Strike with +3 acc, -2d
+  * Strike with -1d, move half speed
+  * Strike with -1d, attack Fort or Ref defense
+* Rank 2
+  * AOE: strike against ~5 targets, half power
+  * Strike with weird random benefit (reroll miss chance)
+* Rank 3
+  * Strike with +1d or +1 acc
+* Rank 5
+  * Strike with +2d or +2 acc
+* Rank 7
+  * Strike with +3d or +3 acc
 
-Rank 1 Focus/non-upgrading, Rank 3 maneuver:
-* Strike-based:
-  * Finisher:
-    * low damage, r2 debuff condition if lose HP
-* Non-strike-based:
-  * Softener:
-    * *Short* range: r1 debuff condition + crit effect
-    * t3 area: r1 debuff eonr, condition on crit
-  * Damage:
-    * Med range: high damage
-    * t1 area: medium damage
-  * Finisher:
-    * Close range: high damage, brief r1 debuff if lose HP
-    * Med range: med damage, brief r2 debuff if lose HP
-    * Med range: low damage, r2 debuff condition if lose HP
-    * Med range: r2 debuff condition while at less than max HP
-      * This is worse than a damage + debuff in that it doesn't deal damage, but better in that you can pre-cast it and have the full effect become active later
-    * t1 area: r2 debuff condition if no resistances / below max hp + crit effect
+Spells: Single Target
+* Rank 1
+  * Med range, 1d10 + power
+  * t1 area, 1d8 + half power
+* Rank 2
+  * Close range, 2d8 + power
+* Rank 3
+  * Med range, 2d10 + power
+  * t1 area, 2d8 + half power
+* Rank 4
+  * Close range, 4d8 + power
+* Rank 5
+  * Med range, 4d10 + power
+  * t1 area, 4d8 + half power
 
-### Higher rank specific examples
+Spells: AOE
+* Rank 1
+  * t1 area, 1d8 + half power
+* Rank 5
+  * t1 area, 4d6 + power
 
-Rank 2 Focus/non-upgrading, Rank 4 maneuver:
-  * Finisher:
-    * Med range: high damage, brief r1 debuff if lose HP
+#### Pure debuff
 
-Rank 3 Focus/non-upgrading, Rank 5 maneuver:
-* Strike-based:
-  * Softener:
-    * low damage, r1 debuff condition
-      * +1 rank relative to spell softeners since it still deals damage
-* Non-strike-based:
-  * Softener:
-    * r1 curse in medium range
-    * t5 area: r1 debuff eonr, condition on crit
-    * t2 area: r2 debuff eonr, condition on crit
-  * Damage:
-    * Dist range: high damage
-    * t3 area: medium damage
-  * Finisher:
-    * t3 area: r2 debuff condition if no resistances + crit effect
+Spells: Single-target debuff
+* Rank 1
+  * Med range, condition: r1 debuff, or r2 on crit
+  * Med range, condition: r2 debuff while no DR, must remove twice on crit
+* Rank 3
+  * Med range, curse: r1 debuff, lasts forever on crit
+  * Med range, condition: r1 debuff while DR, or r2 debuff while no DR, must remove twice on crit
+    * This is worse than a damage + debuff in that it doesn't deal damage, but better in that you can pre-cast it and have the full effect become active later
+* Rank 5
+  * Med range, condition: r2 debuff, or r3 on crit
+  * Med range, condition: r3 debuff while no DR, must remove twice on crit
+  * Med range, curse: r1 debuff while DR, or r2 debuff while no DR, lasts forever on crit
+* Rank 7
+  * Med range, curse: r2 debuff, lasts forever on crit
+  * Med range, curse: r3 debuff while no DR, lasts forever on crit
+  * Med range, condition: r2 and r1 debuff, must remove twice on crit
+  * Med range, condition: r2 debuff while DR, or r3 debuff while no DR, must remove twice on crit
 
-Rank 4 Focus/non-upgrading, Rank 6 maneuver:
-* Softener:
-  * Med range: r2 debuff condition in medium range
-  * t3 area: r2 debuff eonr, condition on crit
-* Finisher:
-  * Med range: high damage, r1 debuff condition if lose HP
-  * Finisher:
-    * low damage, r3 debuff condition if lose HP
+Spells: AOE debuff
+The minimum area size here should be a t2 area to make these feel different from single-target
+* Rank 1
+  * t3 area, brief r1 debuff, condition on crit
+  * t3 area, brief r2 debuff if no DR, condition on crit
+* Rank 2
+  * t2 area, brief r1 debuff if DR or r2 debuff if no DR, condition on crit
+* Rank 4
+  * t2 area, brief r3 debuff if no DR, condition on crit
+  * t2 area, brief r2 debuff, condition on crit
+* Rank 6
+  * t2 area, brief r2 debuff if DR or r3 debuff if no DR, condition on crit
 
-Rank 5 Focus/non-upgrading:
-* Softener:
-  * Med range: r2 curse
-  * t1 area: r3 debuff eonr, condition on crit
-* Finisher:
+#### Hybrid damage/debuff
 
-Rank 6 Focus/non-upgrading:
-* Softener:
-  * Med range: r2 curse
-  * t2 area: r3 debuff eonr, condition on crit
-* Finisher:
+Maneuvers: single-target medium damage + debuff
+* Rank 3
+  * Strike with -2d, brief r1 debuff if lose HP
+* Rank 6
+  * Strike with -2d, brief r1 debuff
+* Rank 7
+  * Strike with -2d, brief r2 debuff if lose HP
 
-Rank 7 Focus/non-upgrading:
-* Finisher:
-  * Med range: high damage, r2 debuff condition if lose HP
+Spells: single-target medium damage + debuff
+* Rank 1
+  * Med range, 1d8 + half power damage, brief r1 debuff if lose HP
+* Rank 4
+  * Med range, 2d8 + half power damage, brief r1 debuff
+* Rank 5
+  * Med range, 2d10 + half power damage, brief r2 debuff if lose HP
+* Rank 6
+  * Med range, 4d6 + half power damage, brief r2 debuff if lose HP, otherwise r1 debuff
+* Rank 7
+  * Close range, 4d8 + half power damage, brief r2 debuff
+
+Maneuvers: single-target low damage + debuff
+* Rank 1
+  * Strike with -2d, r1 debuff condition if lose HP
+* Rank 3
+  * Strike with -2d and half power, r2 debuff condition if lose HP
+* Rank 5
+  * Strike with -2d and half power, r2 debuff condition if lose HP, otherwise r1 debuff condition
+* Rank 7
+  * Strike with -2d and half power, r3 debuff condition if lose HP
+
+Spells: single-target low damage + debuff
+* Rank 1
+  * Med range, 1d6 damage, r2 debuff condition if lose HP
+* Rank 3
+  * Med range, 1d10 damage, r2 debuff condition if lose HP, otherwise r1 debuff condition
+* Rank 5
+  * Med range, 2d8 damage, r3 debuff condition if lose HP
+* Rank 7
+  * Med range, 4d6 damage, r3 debuff condition if lose HP, otherwise r2 debuff condition
