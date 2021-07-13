@@ -73,7 +73,8 @@ export const enchantment: MysticSphere = {
           The subject immediately drops one object it is holding in a single hand.
           It is \\glossterm{briefly} unable to pick up that item.
           It can still hold other items, but if the dropped item is placed in its hand, it will immediately drop it again.
-          After it stops being unable to pick up the item, it becomes immune to this effect until it takes a \\glossterm{short rest}.
+
+          After you successfully make a creature drop an item with this spell, it gains a +5 bonus to defenses against this spell until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.

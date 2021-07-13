@@ -162,11 +162,11 @@ Each debuff rank is +4 spell ranks over its predecessor
 * Rank 1
   * Generally give -2 to a category (accuracy/defenses)
   * List: Dazed, dazzled, shaken (-1 level due to proximity), sickened, slowed
-  * Special: end of round low damage (DR 5/10 check to remove), knockback 30'
+  * Special: end of round low damage (DR 5/10 check to remove), unable to regain HP (-1 level)
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
   * List: decelerated, frightened (-1 level due to proximity), nauseated, generic -2 to all, stunned
-  * Special: end of round medium damage
+  * Special: end of round medium damage, knockback 30'
 * Rank 2.5
   * List: fighting underwater, not existing
 * Rank 3
@@ -312,6 +312,8 @@ Tier 7 areas:
 * Rank 1
   * Med range, condition: r1 debuff, or r2 on crit
   * Med range, condition: r2 debuff while no DR, must remove twice on crit
+* Rank 2
+  * Med range, poison: r1 debuff, escalates to r2 on third stage
 * Rank 3
   * Med range, curse: r1 debuff, lasts forever on crit
   * Med range, condition: r1 debuff while DR, or r2 debuff while no DR, must remove twice on crit
@@ -320,6 +322,8 @@ Tier 7 areas:
   * Med range, condition: r2 debuff, or r3 on crit
   * Med range, condition: r3 debuff while no DR, must remove twice on crit
   * Med range, curse: r1 debuff while DR, or r2 debuff while no DR, lasts forever on crit
+* Rank 6
+  * Med range, poison: r2 debuff, escalates to r3 on third stage
 * Rank 7
   * Med range, curse: r2 debuff, lasts forever on crit
   * Med range, curse: r3 debuff while no DR, lasts forever on crit
@@ -398,10 +402,21 @@ The minimum area size here should be a t2 area to make these feel different from
   * Med range, 2d10 + half power damage, brief r2 debuff, immune after first success
   * Med range, 2d10 + half power damage, brief r3 debuff if lose HP, immune after first success
 * Rank 7
-  * Close range, 4d8 + half power damage, brief r2 debuff
+  * Med range, 4d8 + half power damage, brief r2 debuff
+  * Med range, 4d8 + half power damage, brief r3 debuff if lose HP
 * Modifiers
   * "Med range" can be replaced with "Reach, no focus"
   * For +4 levels, you get +5d and full power instead of half power
+
+#### Spells: AOE medium damage + debuff
+* Rank 3
+  * t2 area, 2d6 + half power damage, brief r1 debuff if lose HP
+* Rank 5
+  * t2 area, 2d10 + half poewr damage, brief r1 debuff, immune after first success
+  * t2 area, 2d10 + half power damage, brief r2 debuff if lose HP, immune after first success
+* Rank 7
+  * t2 area, 4d8 + half power damage, brief r1 debuff
+  * t2 area, 4d8 + half power damage, brief r2 debuff if lose HP
 
 #### Maneuvers: single-target low damage + debuff
 * Rank 1

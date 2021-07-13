@@ -53,8 +53,8 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: `the difficulty rating of the Strength check increases by 10.`,
         hit: `As a \\glossterm{condition}, the subject is unable to move closer to you without effort.
-        This does not impede its movement unless its movement would decrease the distance between you and it.
-        As part of movement, it can make a Strength check with a \\glossterm{difficulty rating} of 10.
+        This does not impede its movement unless its movement would decrease the distance between it and you.
+        As part of movement, it can make a Strength check with a \\glossterm{difficulty rating} of 5.
         If it succeeds, it can move towards you at half speed.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\longrange.
@@ -73,7 +73,7 @@ export const telekinesis: MysticSphere = {
         name: "interposing force",
         exceptThat: "the \\glossterm{difficulty rating} of the Strength check increases to 20.",
       },
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -207,7 +207,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
 
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -255,7 +255,7 @@ export const telekinesis: MysticSphere = {
         If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 + half \\glossterm{power} instead of the normal knockback damage.
         Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.`,
         targeting: `
-        Make an attack vs. Mental against everything in a \\areasmall radius from you.
+          Make an attack vs. Mental against everything in a \\areasmall radius from you.
         `,
       },
       rank: 3,
@@ -279,12 +279,11 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Toss Foe",
+      name: "Distant Shove",
       attack: {
         hit: `
-          You \\glossterm{knockback} the subject up to 30 feet in a straight line away from you.
-          Moving a target upwards costs twice the normal movement cost.
-          If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d8 + \\glossterm{power} instead of the normal knockback damage.
+          You \\glossterm{push} the subject up to 30 feet in a straight line away from you.
+          If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d8 + \\glossterm{power}.
           Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
         `,
         targeting: `
@@ -296,9 +295,9 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Greater Toss Foe",
+      name: "Greater Distant Shove",
       functionsLike: {
-        name: 'toss foe',
+        name: 'distant shove',
         exceptThat: "the damage increases to 4d10, and the maximum size increases to Huge.",
       },
       rank: 6,
@@ -306,20 +305,44 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Telekinetic Throw",
+      name: "Toss Foe",
 
       attack: {
-        hit: `The subject takes 1d10 bludgeoning damage.
-        If it loses \\glossterm{hit points} from this damage, you \\glossterm{push} it up to 50 feet in any direction (see \\pcref{Push Effects}).
+        hit: `The subject takes 1d6 bludgeoning damage.
+        If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
         Moving the subject upwards costs twice the normal movement cost.`,
         targeting: `
-        Make an attack vs. Mental against one Large or smaller creature or object within \\medrange.
-        % This is +1d over the normal damage to help split the difference since the effect isn't consistently t2 worthy.
-        % Making this spell 2nd level also helps with the Dimensional Jaunt -- Plane of Air mirroring.
+          Make an attack vs. Mental against anything Large or smaller within \\medrange.
         `,
       },
 
-      rank: 2,
+      rank: 1,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Greater Toss Foe",
+
+      functionsLike: {
+        name: 'toss foe',
+        // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
+        exceptThat: "the damage increases to 2d6. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
+      },
+      // narrative: '',
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Supreme Toss Foe",
+
+      functionsLike: {
+        name: 'toss foe',
+        // This deals an immediate 12d6 if you smash someone against a barrier, which is a lot of damage.
+        exceptThat: "the damage increases to 4d6. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
+      },
+      // narrative: '',
+      rank: 7,
       scaling: "damage",
       type: "Instant",
     },
