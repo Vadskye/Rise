@@ -191,9 +191,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You \glossterm{briefly} gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each subject.
 
                 \rankline
-                \rank{3} The bonus increases to \plus6.
-                \rank{5} The bonus increases to \plus8.
-                \rank{7} The bonus increases to \plus10.
+                \rank{3} The bonus increases to \plus5.
+                \rank{5} The bonus increases to \plus6.
+                \rank{7} The bonus increases to \plus7.
             \end{durationability}
 
             \begin{instantability}{Cacaphony}[Instant]

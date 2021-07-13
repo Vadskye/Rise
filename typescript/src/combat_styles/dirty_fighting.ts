@@ -8,6 +8,7 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Dazing Fist",
 
+      // no dice penalty due to unarmed limitation
       effect: `
         Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
@@ -26,7 +27,7 @@ export const dirtyFighting: CombatStyle = {
       name: "Stunning Fist",
 
       effect: `
-        Make a strike using an \\glossterm{unarmed attack}.
+        Make a strike with a -1d damage penalty using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
@@ -42,9 +43,9 @@ export const dirtyFighting: CombatStyle = {
       name: "Quivering Palm",
 
       effect: `
-        Make a strike using an \\glossterm{unarmed attack}.
+        Make a strike with a -1d damage penalty using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike loses additional hit points equal to half its maximum hit points.
+        Each creature that loses \\glossterm{hit points} from the strike loses additional hit points equal to a quarter of its maximum hit points.
       `,
       rank: 7,
       type: "Instant",
@@ -67,17 +68,18 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Instant Pin",
+      name: "Pin",
 
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          it requires two \\glossterm{free hands} to use, and the subject is immediately pinned (see \\pcref{Pin}).
+          if the subject has no remaining \\glossterm{damage resistance}, the subject is pinned completely instead of simply grappled.
+          It is \\glossterm{helpless}, and the only physical ability it can use is the \\textit{escape grapple} ability (see \pcref{Escape Grapple}).
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: "grapple",
       },
-      rank: 7,
+      rank: 6,
       type: "Instant",
     },
 
@@ -130,6 +132,8 @@ export const dirtyFighting: CombatStyle = {
           you can also knock loose objects held in a single hand.
           On a critical hit, you can also knock loose an object held in two hands.
           Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
+
+          After you successfully knock an item loose from a creature with this ability, it gains a +5 bonus to defenses against this ability until it takes a \\glossterm{short rest}.
         `,
         name: "disarm",
       },
@@ -235,26 +239,26 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike stops being \\glossterm{attuned} to two effects.
-        It can freely choose which effects it releases its attunement to.
+        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike stops being \\glossterm{attuned} to one effect of its choice that it is currently attuned to.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Instant",
     },
 
     {
-      name: "Spellbreaker Strike",
+      name: "Greater Deattunement Strike",
 
       effect: `
         Make a \\glossterm{strike}.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        If a creature takes damage from the strike, it stops being \\glossterm{attuned} to one effect.
-        It can freely choose which effect it releases its attunement to.
+        Each creature damaged by the strike stops being \\glossterm{attuned} to one effect of its choice that it is currently attuned to.
+        Each creature that loses \\glossterm{hit points} from the strike stops being attuned to an additional effect, and becomes unable to attune to any new effects as a \\glossterm{condition}.
       `,
       rank: 5,
       scaling: {
@@ -298,10 +302,9 @@ export const dirtyFighting: CombatStyle = {
         In addition, you can throw a tanglefoot bag, vial of alchemist's fire, or similar small object at a target of the strike.
         You must still have a free hand that is not being used to make the strike to throw the object.
       `,
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        6: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Instant",
     },
@@ -311,7 +314,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a +1d damage bonus.
-        After making the strike, you fall \\prone, and you cannot stand up until after the next \\glossterm{movement phase}.
+        After making the strike, you fall \\prone and are \\glossterm{briefly} unable to stand up.
       `,
       rank: 1,
       scaling: {
@@ -326,14 +329,13 @@ export const dirtyFighting: CombatStyle = {
       name: "Unbalancing Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d damage penalty.
+        Make a \\glossterm{strike} with a -2d damage penalty.
         Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to Reflex defense.
       `,
-      rank: 1,
+      rank: 3,
       scaling: {
-        3: "The penalty increases to -3.",
-        5: "The penalty increases to -4.",
-        7: "The penalty increases to -5.",
+        5: "The penalty increases to -3.",
+        7: "The penalty increases to -4.",
       },
       type: "Instant",
     },
@@ -343,7 +345,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a -2d damage penalty.
-        Each creature damaged by the strike falls \\prone.
+        Each creature that loses \\glossterm{hit points} from the strike falls \\prone.
       `,
       rank: 1,
       scaling: {
@@ -358,25 +360,13 @@ export const dirtyFighting: CombatStyle = {
       name: "Anklesprainer",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1d damage penalty.
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
         Each creature damaged by the strike is \\glossterm{briefly} \\slowed.
       `,
-      rank: 3,
+      rank: 5,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Anklesprainer",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a -1d damage penalty.
-        Each creature damaged by the strike is \\glossterm{briefly} \\decelerated.
-      `,
-      rank: 6,
       type: "Instant",
     },
 
@@ -384,14 +374,13 @@ export const dirtyFighting: CombatStyle = {
       name: "Switchstrike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1d damage penalty.
+        Make a melee \\glossterm{strike}.
         You may switch places with one creature damaged by the strike that is the same \\glossterm{size category} as you or smaller.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },

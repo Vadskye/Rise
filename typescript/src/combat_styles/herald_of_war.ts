@@ -15,9 +15,9 @@ export const heraldOfWar: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The bonus increases to +6.",
-        5: "The bonus increases to +8.",
-        7: "The bonus increases to +10.",
+        3: "The bonus increases to +5.",
+        5: "The bonus increases to +6.",
+        7: "The bonus increases to +7.",
       },
       type: "Instant",
     },
@@ -27,9 +27,9 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{briefly} \\glossterm{dazed}.`,
+        hit: `Each subject is \\glossterm{briefly} \\dazed.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       scaling: "accuracy",
@@ -38,18 +38,17 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Fearsome Roar",
+      name: "Stunning Roar",
 
       attack: {
-        crit: `Each subject that is below its maximum \\glossterm{hit points} is \\frightened by you as a \\glossterm{condition}.`,
-        hit: `Each subject that is below its maximum \\glossterm{hit points} is \\shaken by you as a \\glossterm{condition}.`,
+        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        hit: `Each subject is \\glossterm{briefly} \\stunned.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       scaling: "accuracy",
-      rank: 1,
-      tags: ["Emotion"],
+      rank: 7,
       type: "Duration",
     },
 
@@ -62,7 +61,7 @@ export const heraldOfWar: CombatStyle = {
           Each subject is \\glossterm{briefly} \\goaded.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
       scaling: "accuracy",
@@ -72,18 +71,46 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Frightening Roar",
+      name: "Greater Goading Roar",
+
+      functionsLike: {
+        name: 'goading roar',
+        exceptThat: "the area increases to a \\largearea radius",
+      },
+      scaling: "accuracy",
+      rank: 5,
+      tags: ["Emotion"],
+      type: "Duration",
+    },
+
+    {
+      name: "Fearsome Roar",
 
       attack: {
-        crit: `Each subject that is below its maximum \\glossterm{hit points} is \\panicked by you as a \\glossterm{condition}.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `Each subject that is below its maximum \\glossterm{hit points} is \\frightened by you as a \\glossterm{condition}.`,
+        crit: `The effect becomes a \\glossterm{condition}.`,
+        hit: `
+          Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\shaken by you.
+          Each subject without remaining damage resistance is \\frightened by you instead of shaken.
+        `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
       scaling: "accuracy",
       rank: 4,
+      tags: ["Emotion"],
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Fearsome Roar",
+
+      functionsLike: {
+        name: "fearsome roar",
+        exceptThat: "the area increases to a \\largearea radius.",
+      },
+      scaling: "accuracy",
+      rank: 6,
       tags: ["Emotion"],
       type: "Duration",
     },
@@ -150,9 +177,8 @@ export const heraldOfWar: CombatStyle = {
         You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from one \\glossterm{condition} they are already affected by.
         Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from that condition during the current phase.
       `,
-      rank: 2,
+      rank: 4,
       scaling: {
-        4: "The area increases to a \\hugearea radius from you.",
         6: "Each ally can ignore two conditions instead of one.",
       },
       tags: ["Swift"],
@@ -163,9 +189,9 @@ export const heraldOfWar: CombatStyle = {
       name: "Challenging Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty.
-        Your \\glossterm{power} is halved.
-        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition}.
+        Make a \\glossterm{strike}.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
       `,
       rank: 3,
       scaling: {
@@ -179,57 +205,46 @@ export const heraldOfWar: CombatStyle = {
       name: "Fearsome Blow",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d damage penalty.
+        Make a \\glossterm{strike}.
+        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       tags: ["Emotion"],
       type: "Duration",
     },
 
     {
-      name: "Frightening Blow",
+      name: "Greater Fearsome Blow",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d damage penalty.
+        Make a \\glossterm{strike}.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 3,
       tags: ["Emotion"],
       type: "Duration",
     },
 
-    // T3 area for briefly shaken would be a rank 2 maneuver alone
-    // This assumes that adding an extra strike is +2 ranks, which seems a bit low?
-    // They can't ever hit the same creature, though
+    // The rank here is pretty ambiguous
     {
       name: "Awe-Inspiring Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1d damage penalty.
-        In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\smallarea radius from you.
         On a hit, each subject is \\glossterm{briefly} \\shaken by you.
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +1 accuracy bonus with both the strike and area attack.",
+        6: "You gain a +1 accuracy bonus with both the strike and area attacks.",
       },
-      type: "Duration",
-    },
-
-    {
-      name: "Fear-Inspiring Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a -1d damage penalty.
-        In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
-        On a hit, each subject is \\glossterm{briefly} \\frightened by you.
-      `,
-      rank: 7,
       type: "Duration",
     },
 
@@ -237,14 +252,14 @@ export const heraldOfWar: CombatStyle = {
       name: "Inspiring Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1d damage penalty.
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
         Your \\glossterm{allies} within a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to Mental defense.
       `,
       rank: 1,
       scaling: {
-        3: "The bonus increases to +3.",
-        5: "The bonus increases to +4.",
-        7: "The bonus increases to +5.",
+        3: "The damage penalty with the strike is reduced to -1d.",
+        5: "The damage penalty with the strike is removed.",
+        7: "You gain a +1d damage bonus with the strike.",
       },
       type: "Duration",
     },
@@ -253,10 +268,11 @@ export const heraldOfWar: CombatStyle = {
       name: "Revitalizing Battlecry",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d10 \\glossterm{hit points}.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d8 \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
-      rank: 7,
+      rank: 6,
+      scaling: { special: "The healing increases by +1d for each rank beyond 6." },
       tags: ['Emotion', 'Healing'],
       type: "Duration",
     },
@@ -281,18 +297,31 @@ export const heraldOfWar: CombatStyle = {
       name: "Enraging Roar",
 
       attack: {
+        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
         hit: `
           Each subject is \\glossterm{briefly} unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
           For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
-      // unclear what the right rank for this should be
       rank: 2,
       scaling: "accuracy",
       tags: ['Emotion'],
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Enraging Roar",
+
+      functionsLike: {
+        name: 'enraging roar',
+        exceptThat: "the area increases to a \\largearea radius",
+      },
+      scaling: "accuracy",
+      rank: 5,
+      tags: ["Emotion"],
       type: "Duration",
     },
   ],
