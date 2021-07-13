@@ -320,9 +320,12 @@ export const thaumaturgy: MysticSphere = {
       name: "Malign Confluence",
 
       attack: {
-        crit: `You can transfer any number of magical conditions in this way.`,
+        crit: `Each transferred effect becomes a separate \\glossterm{condition} on the struck creature.`,
         // No glance effect; weird shenanigans if you autoremove the conditions
-        hit: `One magical condition of your choice is removed from each chosen creature and applied to the struck creature.`,
+        hit: `
+          One magical condition of your choice is removed from each of the five chosen creatures.
+          In addition, the struck creature \\glossterm{briefly} suffers the effects of each removed condition. 
+        `,
         targeting: `
           Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
           Each chosen creature must be currently affected by a \\glossterm{magical} condition.
@@ -405,7 +408,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `The subject is unable to travel extradimensionally.
         This prevents all \\abilitytag{Manifestation} effects and effects that teleport the subject or move it between planes.`,
         targeting: `
-        Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against anything within \\longrange.
+          Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against anything within \\longrange.
         `,
       },
 

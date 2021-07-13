@@ -66,7 +66,7 @@ export const toxicology: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d10 + \\glossterm{power} acid damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\sickened as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\sickened.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -111,7 +111,7 @@ export const toxicology: MysticSphere = {
         For each \\glossterm{poison stage}, including the initial stage, the subject takes 1d10 physical damage.
         A third failed attack ends the poison.`,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\longrange.
         `,
       },
 
@@ -180,7 +180,7 @@ export const toxicology: MysticSphere = {
         crit: `The subject is \\nauseated instead of sickened.`,
         hit: `The subject is \\sickened as a \\glossterm{condition}.`,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\shortrange.
+        Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
 
@@ -322,6 +322,36 @@ export const toxicology: MysticSphere = {
     },
 
     {
+      name: "Greater Acid Spray",
+
+      attack: {
+        hit: `Each subject takes 2d10 + half \\glossterm{power} acid damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against everything in a \\medarea cone from you.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Acid Spray",
+
+      attack: {
+        hit: `Each subject takes 4d10 + \\glossterm{power} acid damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against everything in a \\largearea cone from you.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
       name: "Acid Breath",
 
       castingTime: "minor action",
@@ -415,6 +445,21 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 3,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Acid Orb",
+
+      attack: {
+        glance: `Half damage.`,
+        hit: `Each subject takes 4d8 + half \\glossterm{power} acid damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\areamed radius within \\medrange.
+        `,
+      },
+      rank: 6,
       scaling: "damage",
       type: "Instant",
     },

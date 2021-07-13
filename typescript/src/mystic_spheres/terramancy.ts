@@ -120,14 +120,14 @@ export const terramancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 1d10 piercing damage.
+        hit: `The subject takes 2d6 piercing damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Duration",
@@ -139,13 +139,16 @@ export const terramancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `The subject is is \\immobilized as a \\glossterm{condition}.`,
+        hit: `
+          The subject is is \\decelerated as a \\glossterm{condition}.
+          While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of decelerated.
+        `,
         targeting: `
-          Make an attack vs. Reflex against one Large or smaller creature within \\shortrange.
+          Make an attack vs. Reflex against one Large or smaller creature within \\medrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
         `,
       },
-      rank: 6,
+      rank: 7,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -190,7 +193,7 @@ export const terramancy: MysticSphere = {
       narrative: `
         You create an highly localized tremor that rips through the ground.
       `,
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -220,10 +223,10 @@ export const terramancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 4d8 + \\glossterm{power} bludgeoning damage.
+        hit: `Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.
         Each Huge or smaller subject that takes damage this way is also knocked \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange that is on a stable surface.
+          Make an attack vs. Reflex against everything in a \\largearea radius within \\longrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
         `,
       },
@@ -237,6 +240,7 @@ export const terramancy: MysticSphere = {
     {
       name: "Swallowed by Earth",
 
+      // losing line of effect compensates for recurring extra damage
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 4d6 bludgeoning damage.
@@ -262,7 +266,6 @@ export const terramancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, the subject is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is \\slowed and unable to use any fly speed or glide speed.
@@ -272,7 +275,7 @@ export const terramancy: MysticSphere = {
           This attack gains a +2 \\glossterm{accuracy} bonus if that surface is a Medium or larger body of stone.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -397,17 +400,35 @@ export const terramancy: MysticSphere = {
       name: "Volcano",
 
       attack: {
-        glance: `Half damage.`,
-        hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each subject takes 2d6 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\areamed radius from a point on a stable surface within \\medrange.
+          Make an attack vs. Reflex against everything in a \\areasmall radius from a point on a stable surface within \\closerange.
           This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.
         `,
       },
       narrative: `
         You create a small volcano that bursts forth, showering nearby creatures in burning shrapnel.
       `,
-      rank: 5,
+      rank: 2,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Volcano",
+
+      attack: {
+        hit: `Each subject takes 4d8 + half \\glossterm{power} bludgeoning and fire damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\arealarge radius from a point on a stable surface within \\longrange.
+          This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.
+        `,
+      },
+      narrative: `
+        You create a large volcano that bursts forth, showering nearby creatures in burning shrapnel.
+      `,
+      rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",

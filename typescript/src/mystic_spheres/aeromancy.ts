@@ -496,6 +496,8 @@ export const aeromancy: MysticSphere = {
           Make an attack vs. Reflex against one Small or smaller object within \\medrange.
           If the object is attended by a creature, the attack must also beat the attending creature's Reflex defense.
           If it is held in two hands or well secured, this attack automatically fails.
+
+          After you successfully steal an item from a creature with this spell, it gains a +5 bonus to defenses against this spell until it takes a \\glossterm{short rest}.
         `,
       },
       // narrative: '',

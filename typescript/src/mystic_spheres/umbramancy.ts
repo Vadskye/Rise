@@ -130,6 +130,7 @@ export const umbramancy: MysticSphere = {
       name: "Dark Miasma",
 
       attack: {
+        // -1d to compensate for +2a
         hit: `Each subject takes 1d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
@@ -146,6 +147,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
+        // -1d to compensate for +2a
         hit: `Each subject takes 2d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -183,7 +185,7 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the damage increases to 2d8 + \\glossterm{power}.
-          In addition, if the subject loses \\glossterm{hit points} from this damage, it is \\dazzled as a \\glossterm{condition}.
+          In addition, if the subject loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazzled.
         `,
         name: 'dark grasp',
       },
@@ -275,35 +277,37 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: "Shrouded Vision",
-
-      attack: {
-        crit: `The subject is \\blinded instead.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `As a \\glossterm{condition}, the subject takes a -4 penalty to \\glossterm{accuracy} and visual Awareness checks.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack if the target is not in \\glossterm{bright illumination}.
-        `,
-      },
-      rank: 5,
-      scaling: "accuracy",
-      tags: ["Sensation", "Visual"],
-      type: "Duration",
-    },
-
-    {
       name: "Dark Shroud",
 
+      // +1 level for +2 acc
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
         hit: `Each subject is \\glossterm{briefly} \\glossterm{dazzled}.`,
         targeting: `
-        Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
-        You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
+          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
         `,
       },
       rank: 3,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Blinding Shroud",
+
+      // +1 level for +2 acc
+      attack: {
+        crit: "The effect becomes a \\glossterm{condition} on each subject.",
+        hit: `
+          Each subject is with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\glossterm{blinded}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
+          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
+        `,
+      },
+      rank: 7,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -410,33 +414,41 @@ export const umbramancy: MysticSphere = {
       name: "Bind Shadow",
 
       attack: {
-        hit: `The subject takes 1d8 + half \\glossterm{power} cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.`,
+        hit: `
+          The subject takes 1d8 cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange that is standing on the ground.
-          You attempt to bind the creature's shadow to the ground, slowing its movement.
+          Make an attack vs. Mental against one creature within \\longrange that is standing on the ground.
           If the target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
         `,
       },
-      rank: 1,
+      narrative: `
+        You bind your foe's shadow to the ground, dramatically slowing its movement.
+      `,
+      rank: 2,
       scaling: "damage",
       type: "Duration",
     },
 
     {
-      name: "Pin Shadow",
+      name: "Greater Bind Shadow",
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 1d10 cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
+        hit: `
+          The subject takes 2d10 cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange that is standing on the ground.
-          You attempt to pin the creature's shadow to the ground, preventing it from moving.
+          Make an attack vs. Mental against one creature within \\longrange that is standing on the ground.
           If the target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
         `,
       },
-      rank: 3,
+      rank: 6,
+      narrative: `
+        You pin your foe's shadow to the ground, preventing it from moving.
+      `,
       scaling: "damage",
       type: "Duration",
     },
@@ -467,7 +479,7 @@ export const umbramancy: MysticSphere = {
     {
       name: "Steal Shadow",
 
-      // original targets: One creature within \medrange standing on the ground
+      // basically t3? better control than immobilized, but no defense penalties
       attack: {
         glance: `Half damage.`,
         hit: `
@@ -495,7 +507,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 4d8 + half \\glossterm{power} cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\disoriented as a \\glossterm{condition}.
+        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\disoriented.
         In addition, it must move a distance equal to its maximum movement speed in a straight line during each \\glossterm{movement phase}.
         It must use its movement mode with the highest speed to move this way.
         It is not required to use the \\textit{sprint} ability, or use any other special movement ability, though it may choose to do so.

@@ -56,7 +56,7 @@ export const verdamancy: MysticSphere = {
       narrative: `
         Plants grow from nowhere to trap your foe.
       `,
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       tags: ["Manifestation"],
       type: "Duration",
@@ -132,12 +132,12 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: `the condition must be removed twice before the effect ends.`,
         glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `The subject is \\immobilized by a mass of vines as a \\glossterm{condition}.
-        In addition, it is unable to breathe.
-        This condition can be removed if the subject or a creature that can reach the subject makes a \\glossterm{difficulty rating} 15 Strength check to break the subject free of the vines.
-        The subject can make this check as a \\glossterm{move action}, while other creatures can make the check as a standard action.`,
+        hit: `
+          The subject is \\decelerated by a mass of vines as a \\glossterm{condition}.
+          While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of decelerated, and it is unable to breathe.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one Large or smaller creature within \\shortrange.
+          Make an attack vs. Fortitude against one Huge or smaller creature within \\medrange.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
         `,
       },
@@ -170,8 +170,8 @@ export const verdamancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
-        Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
-        You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
+          Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
         `,
       },
 
@@ -188,8 +188,8 @@ export const verdamancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
-        Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
-        You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
+          Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
         `,
       },
       rank: 7,
@@ -246,11 +246,11 @@ export const verdamancy: MysticSphere = {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         hit: `The subject becomes \\glossterm{poisoned} with sassone leaf.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the subject loses 1d6 \\glossterm{hit points}.
+        For each \\glossterm{poison stage}, including the initial stage, the subject takes 1d6 physical damage.
         Reaching the third \\glossterm{poison stage} ends the poison.
         A third failed attack also ends the poison.`,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\closerange.
         `,
       },
       rank: 1,
@@ -268,11 +268,11 @@ export const verdamancy: MysticSphere = {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         hit: `The subject becomes \\glossterm{poisoned} with arsenic.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the subject loses 1d10 \\glossterm{hit points}.
+        For each \\glossterm{poison stage}, including the initial stage, the subject takes 1d10 physical damage.
         Reaching the third \\glossterm{poison stage} causes the subject to gain a \\glossterm{vital wound} and ends the poison.
         A third failed attack also ends the poison.`,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\medrange.
+        Make an attack vs. Fortitude against one living creature within \\longrange.
         `,
       },
       rank: 3,
@@ -286,16 +286,15 @@ export const verdamancy: MysticSphere = {
     {
       name: "Poison -- Black Lotus",
 
-      // original targets: one living creature within \medrange
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         hit: `The subject becomes \\glossterm{poisoned} with arsenic.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the subject loses 2d8 \\glossterm{hit points}.
+        For each \\glossterm{poison stage}, including the initial stage, the subject loses 2d10 + half \\glossterm{power} \\glossterm{hit points}.
         Reaching the third \\glossterm{poison stage} causes the subject to gain a \\glossterm{vital wound}.
         A third failed attack ends the poison.`,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\medrange.
+        Make an attack vs. Fortitude against one living creature within \\closerange.
         `,
       },
       rank: 5,
@@ -367,7 +366,7 @@ export const verdamancy: MysticSphere = {
         This condition can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
         The \\glossterm{difficulty rating} of the check is equal to 10.`,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       narrative: `
@@ -474,11 +473,10 @@ export const verdamancy: MysticSphere = {
       name: "Blight",
 
       attack: {
-        // TODO: is this the right damage type?
-        hit: `The subject takes 2d6 + \\glossterm{power} acid damage.
+        hit: `The subject takes 2d8 + \\glossterm{power} acid damage.
         This damage is doubled if the subject is a plant, including plant creatures.`,
         targeting: `
-        Make an attack vs. Fortitude against one living creature or plant within \\medrange.
+        Make an attack vs. Fortitude against one living creature or plant within \\closerange.
         `,
       },
       rank: 2,
@@ -490,11 +488,10 @@ export const verdamancy: MysticSphere = {
       name: "Greater Blight",
 
       attack: {
-        // TODO: is this the right damage type?
-        hit: `The subject takes 4d8 + \\glossterm{power} acid damage.
+        hit: `The subject takes 4d10 + \\glossterm{power} acid damage.
         This damage is doubled if the subject is a plant, including plant creatures.`,
         targeting: `
-          Make an attack vs. Fortitude against one living creature or plant within \\longrange.
+          Make an attack vs. Fortitude against one living creature or plant within \\medrange.
         `,
       },
       rank: 5,
