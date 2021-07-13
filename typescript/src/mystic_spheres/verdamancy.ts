@@ -250,7 +250,7 @@ export const verdamancy: MysticSphere = {
         Reaching the third \\glossterm{poison stage} ends the poison.
         A third failed attack also ends the poison.`,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\closerange.
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
       rank: 1,
@@ -294,7 +294,7 @@ export const verdamancy: MysticSphere = {
         Reaching the third \\glossterm{poison stage} causes the subject to gain a \\glossterm{vital wound}.
         A third failed attack ends the poison.`,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\closerange.
+        Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
       rank: 5,
@@ -476,7 +476,7 @@ export const verdamancy: MysticSphere = {
         hit: `The subject takes 2d8 + \\glossterm{power} acid damage.
         This damage is doubled if the subject is a plant, including plant creatures.`,
         targeting: `
-        Make an attack vs. Fortitude against one living creature or plant within \\closerange.
+        Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
         `,
       },
       rank: 2,

@@ -561,7 +561,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: 'The effect becomes a \\glossterm{condition}.',
         hit: `
-          Each subject that has no remaining \\glossterm{damage resistance} is \\briefly \\nauseated.
+          Each subject that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\nauseated.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.
@@ -577,7 +577,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: 'The effect becomes a \\glossterm{condition}.',
         hit: `
-          Each subject is \\briefly \\nauseated.
+          Each subject is \\glossterm{briefly} \\nauseated.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.
