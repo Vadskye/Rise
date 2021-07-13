@@ -402,7 +402,7 @@ export const terramancy: MysticSphere = {
       attack: {
         hit: `Each subject takes 2d6 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\areasmall radius from a point on a stable surface within \\closerange.
+          Make an attack vs. Reflex against everything in a \\areasmall radius from a point on a stable surface within \\shortrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.
         `,
       },

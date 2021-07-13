@@ -104,7 +104,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'lifesteal grasp',
-        exceptThat: "the damage increases to 6d10 + \\glossterm{power}",
+        exceptThat: "the damage increases to 6d10 + \\glossterm{power}.",
       },
       focus: false,
       rank: 7,
