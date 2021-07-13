@@ -203,10 +203,10 @@ export const thaumaturgy: MysticSphere = {
         In addition, as a \\glossterm{condition}, it becomes unable to \\glossterm{attune} to any additional abilities.`,
         hit: `The subject stops being \\glossterm{attuned} to one effect of its choice that it is currently attuned to.`,
         targeting: `
-          Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       type: "Duration",
     },

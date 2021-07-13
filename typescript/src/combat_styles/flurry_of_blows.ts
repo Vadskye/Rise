@@ -9,9 +9,8 @@ export const flurryOfBlows: CombatStyle = {
       name: "Twinstrike",
 
       effect: `
-        Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike.
-        In exchange, you roll to hit twice and take the higher result.
+        Make a \\glossterm{strike} with a -2d damage penalty.
+        You roll to hit twice and take the higher result.
       `,
       rank: 1,
       scaling: {
@@ -140,14 +139,14 @@ export const flurryOfBlows: CombatStyle = {
       name: "Tripping Whirlwind",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty using a light or medium slashing or bludgeoning weapon.
+        Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         The strike targets all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike that is not two or more size categories larger than you falls \\glossterm{prone}.
+        Each creature damaged by the strike that is no more than one size category larger than you larger than you falls \\glossterm{prone}.
       `,
-      rank: 4,
+      rank: 5,
       scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
+        7: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Instant",
     },
@@ -255,64 +254,19 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Dazing Feint",
+      name: "Distracting Flurry",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1d damage penalty.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
-      `,
-      rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
-      type: "Duration",
-    },
-
-    {
-      name: "Stunning Feint",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
+        Make a \\glossterm{strike} with a -2d damage penalty.
+        You roll to hit twice and take the higher result.
+        Each creature that loses \\glossterm{hit points} from the strike \\glossterm{briefly} a -4 penalty to \\glossterm{initiative} checks and Awareness checks.
       `,
       rank: 3,
       scaling: {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
-    },
-
-    {
-      name: "Dizzying Feint",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\disoriented.
-      `,
-      rank: 6,
-      type: "Duration",
-    },
-
-    {
-      name: "Distracting Feint",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike takes a -4 penalty to \\glossterm{initiative} checks and Awareness checks as a \\glossterm{condition}.
-      `,
-      rank: 2,
-      scaling: {
-        4: "The penalty increases to -6.",
-        6: "The penalty increases to -8.",
-      },
-      type: "Duration",
+      type: "Instant",
     },
 
     {
@@ -339,14 +293,15 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: "Harrying Strike",
 
+      // -2 levels relative to a normal r1 debuff
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
         Each creature damaged by the strike \\glossterm{briefly} increases its \\glossterm{focus penalty} by 2.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "The penalty increases to -4.",
-        6: "The penalty increases to -6.",
+        5: "The penalty increases to -3.",
+        7: "The penalty increases to -4.",
       },
       type: "Duration",
     },

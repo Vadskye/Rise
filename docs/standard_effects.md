@@ -158,20 +158,21 @@ Each debuff rank is +4 spell ranks over its predecessor
 
 * Rank 0
   * Generally do relatively little
-  * List: deafened, prone
+  * List: deafened
 * Rank 1
   * Generally give -2 to a category (accuracy/defenses)
-  * List: Dazed, dazzled, shaken (-1 level due to proximity), sickened, slowed
-  * Special: end of round low damage (DR 5/10 check to remove), unable to regain HP (-1 level)
+  * Goaded and shaken have proximity requirements, but also debuffing accuracy is scary, so they are considered the same rank as others in this tier
+  * List: Dazed, dazzled, goaded, shaken, sickened, slowed, prone (brief = instant knockover only)
+  * Special: end of round low damage (DR 5/10 check to remove), unable to regain HP (-1 level), lose one attunement, enraged (cannot take non-attack actions)
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
-  * List: decelerated, frightened (-1 level due to proximity), nauseated, generic -2 to all, stunned
-  * Special: end of round medium damage, knockback 30'
+  * List: decelerated, frightened, nauseated, generic -2 to all, stunned
+  * Special: end of round medium damage, knockback 30', lose two attunements and be unable to attune as a condition
 * Rank 2.5
   * List: fighting underwater, not existing
 * Rank 3
   * Generally cause partial action denial
-  * List: confused, blinded, disoriented, immobilized, panicked (-1 level due to proximity)
+  * List: confused, blinded, disoriented, immobilized, panicked
 * Rank 4
   * Generally cause complete action denial
   * List: Asleep, paralyzed
@@ -272,7 +273,7 @@ Tier 7 areas:
   * Strike with -2 acc, +2d
   * Strike with +3 acc, -2d
   * Strike with -1d, move half speed
-  * Strike with -1d, attack Fort or Ref defense
+  * Strike, attack Fort or Ref defense
 * Rank 2
   * AOE: strike against ~5 targets, half power
   * Strike with weird random benefit (reroll miss chance)
@@ -365,6 +366,33 @@ The minimum area size here should be a t2 area to make these feel different from
   * Strike, brief r1 debuff, immune after first success
   * Strike, brief r2 debuff if lose HP, immune after first success
 
+#### Maneuvers: single-target medium damage + debuff
+* Rank 1
+  * Strike with -2d, brief r1 debuff if lose HP
+* Rank 3
+  * Strike with -2d, brief r0 debuff
+  * Strike with -2d, brief r1 debuff, immune after first success
+  * Strike with -2d, brief r2 debuff if lose HP, immune after first success
+* Rank 5
+  * Strike with -2d, brief r1 debuff
+  * Strike with -2d, brief r2 debuff if lose HP
+* Rank 7
+  * Strike with -2d, brief r2 debuff if lose HP, otherwise brief r1 debuff
+  * Strike with -2d, brief r2 debuff, immune after first success
+  * Strike with -2d, brief r3 debuff if lose HP, immune after first success
+
+#### Maneuvers: single-target low damage + debuff
+* Rank 1
+  * Strike with -1d and half power, r1 debuff condition if lose HP
+* Rank 3
+  * Strike with -2d and half power, r2 debuff condition if lose HP
+  * Strike with -2d and half power, brief r1 debuff
+* Rank 5
+  * Strike with -2d and half power, r2 debuff condition if lose HP, otherwise r1 debuff condition
+* Rank 7
+  * Strike with -2d and half power, r3 debuff condition if lose HP
+  * Strike with -2d and half power, brief r2 debuff
+
 #### Spells: single-target high damage + debuff
 
 * Rank 3
@@ -375,20 +403,6 @@ The minimum area size here should be a t2 area to make these feel different from
 * Rank 7
   * Med range, 4d10 + power damage, brief r1 debuff
   * Med range, 4d10 + power damage, brief r2 debuff if lose HP
-
-#### Maneuvers: single-target medium damage + debuff
-* Rank 1
-  * Strike with -2d, brief r1 debuff if lose HP
-* Rank 3
-  * Strike with -2d, brief r1 debuff, immune after first success
-  * Strike with -2d, brief r2 debuff if lose HP, immune after first success
-* Rank 5
-  * Strike with -2d, brief r1 debuff
-  * Strike with -2d, brief r2 debuff if lose HP
-* Rank 7
-  * Strike with -2d, brief r2 debuff if lose HP, otherwise brief r1 debuff
-  * Strike with -2d, brief r2 debuff, immune after first success
-  * Strike with -2d, brief r3 debuff if lose HP, immune after first success
 
 #### Spells: single-target medium damage + debuff
 * Rank 1
@@ -409,24 +423,11 @@ The minimum area size here should be a t2 area to make these feel different from
   * For +4 levels, you get +5d and full power instead of half power
 
 #### Spells: AOE medium damage + debuff
-* Rank 3
+* Rank 4
   * t2 area, 2d6 + half power damage, brief r1 debuff if lose HP
-* Rank 5
-  * t2 area, 2d10 + half poewr damage, brief r1 debuff, immune after first success
+* Rank 6
+  * t2 area, 2d10 + half power damage, brief r1 debuff, immune after first success
   * t2 area, 2d10 + half power damage, brief r2 debuff if lose HP, immune after first success
-* Rank 7
-  * t2 area, 4d8 + half power damage, brief r1 debuff
-  * t2 area, 4d8 + half power damage, brief r2 debuff if lose HP
-
-#### Maneuvers: single-target low damage + debuff
-* Rank 1
-  * Strike with -2d, r1 debuff condition if lose HP
-* Rank 3
-  * Strike with -2d and half power, r2 debuff condition if lose HP
-* Rank 5
-  * Strike with -2d and half power, r2 debuff condition if lose HP, otherwise r1 debuff condition
-* Rank 7
-  * Strike with -2d and half power, r3 debuff condition if lose HP
 
 #### Spells: single-target low damage + debuff
 * Rank 1

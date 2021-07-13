@@ -87,19 +87,17 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Feint",
+      name: "Dazing Feint",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +2 bonus to \\glossterm{accuracy}.
-        The attack is made against each subject's Reflex defense instead of its Armor defense.
-        You take a -3d damage penalty with the strike, and your \\glossterm{power} is halved.
-        If a creature takes damage from the strike, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
+        Make a melee \\glossterm{strike}.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
-      rank: 1,
+      rank: 3,
       scaling: {
-        3: "The accuracy bonus increases to +3.",
-        5: "The accuracy bonus increases to +4.",
-        7: "The accuracy bonus increases to +5.",
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
@@ -108,15 +106,24 @@ export const ebbAndFlow: CombatStyle = {
       name: "Stunning Feint",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +2 bonus to \\glossterm{accuracy}.
+        Make a melee \\glossterm{strike}.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         The attack is made against each subject's Reflex defense instead of its Armor defense.
-        You take a -3d damage penalty with the strike, and your \\glossterm{power} is halved.
-        If a creature takes damage from the strike, it is \\glossterm{briefly} \\glossterm{stunned}.
+        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
       `,
-      rank: 4,
-      scaling: {
-        6: "The accuracy bonus increases to +3.",
-      },
+      rank: 7,
+      type: "Duration",
+    },
+
+    {
+      name: "Disorienting Feint",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{disoriented} as a \\glossterm{condition}.
+      `,
+      rank: 7,
       type: "Duration",
     },
 
@@ -236,7 +243,7 @@ export const ebbAndFlow: CombatStyle = {
       name: "Hunting Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d damage penalty against a creature.
+        Make a \\glossterm{strike} with a -2d damage penalty against a creature.
         After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike with future strikes.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
@@ -251,7 +258,7 @@ export const ebbAndFlow: CombatStyle = {
       type: "Duration",
     },
 
-    // TODO: nerf once people won't complain
+    // TODO: nerf once people won't complain; probably lower cap?
     {
       name: "Greater Hunting Strike",
 
@@ -288,14 +295,14 @@ export const ebbAndFlow: CombatStyle = {
       name: "Covering Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1d damage penalty.
-        Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to \\glossterm{accuracy} against your \\glossterm{allies}.
+        Make a melee \\glossterm{strike}.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Each creature damaged by the strike is \\glossterm{briefly} \\glossterm{goaded} by you.
       `,
-      rank: 1,
+      rank: 3,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
@@ -333,14 +340,17 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: "Reckless Assault",
 
+      // -1 rank for self-daze
       effect: `
         Make a \\glossterm{strike}.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         You and each creature damaged by the strike are \\glossterm{briefly} \\glossterm{dazed}.
         This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
-      rank: 4,
+      rank: 2,
       scaling: {
-        6: "You gain a +1d damage bonus with the strike.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
@@ -350,10 +360,11 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         You and each creature damaged by the strike are \\glossterm{briefly} \\glossterm{stunned}.
         This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
-      rank: 7,
+      rank: 6,
       type: "Duration",
     },
   ],

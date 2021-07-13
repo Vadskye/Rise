@@ -195,7 +195,6 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a thrown \\glossterm{strike} using a slashing weapon.
         The strike also targets an additional creature or object within 5 feet of the strike's primary target.
-        If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
       rank: 2,
       scaling: {
