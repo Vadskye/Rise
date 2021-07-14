@@ -312,7 +312,7 @@ def generate_tools():
             tags=[],
             description="""
                 You can throw this item as a standard action.
-                When you do, make an attack vs. Armor against everything in a \\smallarea radius within \\rngshort range.
+                When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
                 On a hit, each subject takes 1d10+1 fire damage.
             """,
             short_description="Throw to deal 1d10+1 fire damage in an area",
@@ -325,7 +325,7 @@ def generate_tools():
             tags=[],
             description="""
                 You can throw this item as a standard action.
-                When you do, make an attack vs. Armor against everything in a \\smallarea radius within \\rngshort range.
+                When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
                 On a hit, each subject takes 2d10+2 fire damage.
             """,
             short_description="Throw to deal 2d10+2 fire damage in an area",
@@ -338,7 +338,7 @@ def generate_tools():
             tags=[],
             description="""
                 You can throw this item as a standard action.
-                When you do, make an attack vs. Armor against everything in a \\smallarea radius within \\rngshort range.
+                When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
                 On a hit, each subject takes 4d10+4 fire damage.
             """,
             short_description="Throw to deal 4d10+4 fire damage in an area",
