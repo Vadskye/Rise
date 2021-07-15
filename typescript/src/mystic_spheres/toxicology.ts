@@ -65,7 +65,7 @@ export const toxicology: MysticSphere = {
       attack: {
         glance: "Half damage.",
         hit: `
-          The subject takes 2d10 + \\glossterm{power} acid damage.
+          The subject takes 2d8 + \\glossterm{power} acid damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\sickened.
         `,
         targeting: `
@@ -76,7 +76,20 @@ export const toxicology: MysticSphere = {
         `,
       },
       focus: false,
-      rank: 4,
+      rank: 3,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Corrosive Grasp",
+
+      functionsLike: {
+        name: 'greater corrosive grasp',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\nauseated instead of slowed.',
+      },
+      focus: false,
+      rank: 7,
       scaling: "damage",
       type: "Duration",
     },
