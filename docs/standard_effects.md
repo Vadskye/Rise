@@ -313,12 +313,12 @@ Tier 7 areas:
 * Rank 1
   * Med range, condition: r1 debuff, or r2 on crit
   * Med range, condition: r2 debuff while no DR, must remove twice on crit
+    * This is worse than a damage + debuff in that it doesn't deal damage, but better in that you can pre-cast it and have the full effect become active later
 * Rank 2
   * Med range, poison: r1 debuff, escalates to r2 on third stage
 * Rank 3
   * Med range, curse: r1 debuff, lasts forever on crit
   * Med range, condition: r1 debuff while DR, or r2 debuff while no DR, must remove twice on crit
-    * This is worse than a damage + debuff in that it doesn't deal damage, but better in that you can pre-cast it and have the full effect become active later
 * Rank 5
   * Med range, condition: r2 debuff, or r3 on crit
   * Med range, condition: r3 debuff while no DR, must remove twice on crit
