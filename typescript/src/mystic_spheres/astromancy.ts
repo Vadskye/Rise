@@ -308,7 +308,7 @@ export const astromancy: MysticSphere = {
       scaling: "accuracy",
       type: "Instant",
     },
-    // +2 levels for +1d
+    // +2 levels for +1d; this is applying the r2 version of the ignited debuff
     {
       name: "Dimensional Jaunt -- Plane of Fire",
 
@@ -320,10 +320,10 @@ export const astromancy: MysticSphere = {
         hit: `
           The subject takes 4d8 + half \\glossterm{power} fire damage.
           If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
-          At the end of each round, it takes 4d6 fire damage.
+          At the end of each round, it takes 4d8 + half \\glossterm{power} damage.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against anything within \\longrange.
         `,
       },
       narrative: `
