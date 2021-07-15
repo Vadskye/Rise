@@ -427,7 +427,7 @@ export const umbramancy: MysticSphere = {
         You bind your foe's shadow to the ground, dramatically slowing its movement.
       `,
       rank: 2,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 
@@ -449,7 +449,7 @@ export const umbramancy: MysticSphere = {
       narrative: `
         You pin your foe's shadow to the ground, preventing it from moving.
       `,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 
@@ -496,7 +496,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 

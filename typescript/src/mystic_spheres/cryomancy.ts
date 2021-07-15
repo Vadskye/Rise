@@ -153,7 +153,7 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 
@@ -379,7 +379,7 @@ export const cryomancy: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 
@@ -391,7 +391,7 @@ export const cryomancy: MysticSphere = {
         exceptThat: 'the damage increases to 2d6, and the attack gains a +3 \\glossterm{accuracy} bonus.',
       },
       rank: 4,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 

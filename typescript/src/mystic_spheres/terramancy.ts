@@ -128,7 +128,7 @@ export const terramancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
+      scaling: "accuracy",
       tags: ["Manifestation"],
       type: "Duration",
     },

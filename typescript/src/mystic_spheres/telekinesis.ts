@@ -317,7 +317,7 @@ export const telekinesis: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Instant",
     },
     {
@@ -330,7 +330,7 @@ export const telekinesis: MysticSphere = {
       },
       // narrative: '',
       rank: 4,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Instant",
     },
     {
@@ -343,7 +343,7 @@ export const telekinesis: MysticSphere = {
       },
       // narrative: '',
       rank: 7,
-      scaling: "damage",
+      // scaling: "accuracy",
       type: "Instant",
     },
 
