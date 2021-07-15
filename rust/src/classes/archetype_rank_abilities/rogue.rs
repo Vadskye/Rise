@@ -142,7 +142,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         You must use either an instrumental performance or a vocal performance, and not a visual performance.
         If you use a vocal performance, the bardic performance gains the \abilitytag{Speech} tag, preventing it from affecting creatures that do not speak the language you perform in.
         You must be \glossterm{trained} with a Perform skill capable of making an auditory performance to use a bardic performance ability.
-        If you are \glossterm{mastered} with an appropriate Perform skill, you gain a \plus2 bonus to \glossterm{accuracy} with the ability.
+        If you are \glossterm{mastered} with an appropriate Perform skill, you gain a \plus1 bonus to \glossterm{accuracy} with the ability.
 
         The names of bardic performances do not have to precisely match your actual performance.
         For example, you can use the \textit{palliative poem} ability with a gentle song using Perform (wind instruments) or a distracting joke using Perform (comedy) instead of a poem.
@@ -176,9 +176,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             \begin{durationability}{Ballad of Belligerence}[\abilitytag{Sustain} (minor)]
                 \abilitytag{Auditory}, \abilitytag{Emotion}
                 \rankline
-                Make an attack vs. Mental against all \glossterm{enemies} in a \areamed radius from you.
-                \hit For the duration of your performance, each subject is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
-                For example, a subject could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+                Make an attack vs. Mental against one creature within \medrange.
+                \hit For the duration of your performance, the subject is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
+                For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
 
                 \rankline
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
@@ -230,7 +230,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Auditory}, \abilitytag{Emotion}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
-                Choose yourself or one \glossterm{ally} within \medrange.
+                Choose one \glossterm{ally} within \medrange.
                 For the duration of your performance, the subject gains a \plus1 bonus to Armor and Reflex defenses.
 
                 \rankline
@@ -259,7 +259,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} within a \areamed radius from you.
                 \hit Each subject is \glossterm{briefly} \dazzled.
-                \crit Each subject is dazzled as a \glossterm{condition}.
+                \crit The effect becomes a \glossterm{condition}.
 
                 \rankline
                 \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
@@ -290,7 +290,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             \begin{durationability}{Dizzying Ditty}[\abilitytag{Sustain} (minor)]
                 \abilitytag{Auditory}, \abilitytag{Compulsion}
                 \rankline
-                Make an attack vs. Mental against one creature within \shortrange.
+                Make an attack vs. Mental against one creature within \medrange.
                 \hit For the duration of your performance, the subject is \dazed.
                 \crit For the duration of your performance, the subject is \stunned.
 
@@ -307,14 +307,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 Unlike normal, the subject continues to suffer the penalties of being frightened while it is beyond \rngmed range from you as long as it is still affected by your performance.
 
                 \rankline
-                \rank{2} The damage increases to 1d8.
-                \rank{3} The damage increases to 2d6.
-                    In addition, if you miss by 2 or less, the subject takes half damage.
+                You gain a \plus1 \glossterm{accuracy} bonus and a \plus1d damage bonus with the attack for each rank beyond 1.
+                In addition, at rank 3, the subject takes half damage if you miss by 2 or less.
                     This is called a \glossterm{glancing blow}.
-                \rank{4} The damage increases to 2d8.
-                \rank{5} The damage increases to 4d6.
-                \rank{6} The damage increases to 4d8.
-                \rank{7} The damage increases to 5d10.
             \end{durationability}
 
             \begin{durationability}{Hypnotic Hymn}[\abilitytag{Sustain} (minor)]
@@ -359,12 +354,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
             \end{durationability}
 
-            \begin{instantability}{Palliative Poem}[\abilitytag{Sustain} (minor)]
+            \begin{instantability}{Palliative Poem}[Instant]
                 \abilitytag{Auditory}, \abilitytag{Healing}
                 \rankline
                 Choose one living \glossterm{ally} within \shortrange.
                 The subject regains 1d10 \add \glossterm{power} \glossterm{hit points}.
-                After you use this ability, you \\glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
+                After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
                 \rankline
                 \rank{2} The healing increases to 2d6.
@@ -375,12 +370,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The healing increases to 7d10.
             \end{instantability}
 
-            \begin{durationability}{Partita of Provocation}[\abilitytag{Sustain} (minor)]
+            \begin{durationability}{Partita of Provocation}[Duration]
                 \abilitytag{Auditory}, \abilitytag{Emotion}
                 \rankline
-                Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
-                \hit For the duration of your performance, each subject is \glossterm{goaded} by you.
-                \crit There is no range limit to the accuracy penalty from the goaded effect.
+                Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+                \hit Each subject is \glossterm{briefly} \glossterm{goaded} by you.
+                \crit The effect becomes a \glossterm{condition}.
 
                 \rankline
                 You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
@@ -418,7 +413,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Auditory}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
-                Choose yourself or one \glossterm{ally} within \rngmed range.
+                Choose one \glossterm{ally} within \rngmed range.
                 For the duration of your performance, the subject gains a \plus4 bonus to its maximum \glossterm{hit points}.
                 In addition, it immediately gains that many hit points.
                 When this effect ends, the subject loses hit points equal to the hit points it gained this way.
