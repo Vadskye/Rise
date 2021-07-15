@@ -171,6 +171,25 @@ export const photomancy: MysticSphere = {
     },
 
     {
+      name: "Searing Flash",
+
+      attack: {
+        hit: `
+          The subject takes 2d6 + half \\glossterm{power} energy damage and is \\glossterm{briefly} \\dazzled.
+        `,
+        glance: "Half damage.",
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
+        `,
+      },
+      rank: 3,
+      scaling: "accuracy",
+      tags: ["Sensation", "Visual"],
+      type: "Duration",
+    },
+
+    {
       name: "Blinding Flash",
 
       attack: {
@@ -185,25 +204,6 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "accuracy",
-      tags: ["Sensation", "Visual"],
-      type: "Duration",
-    },
-
-    {
-      name: "Searing Light",
-
-      attack: {
-        hit: `
-          The subject takes 2d6 + half \\glossterm{power} energy damage and is \\glossterm{briefly} \\dazzled.
-        `,
-        glance: "Half damage.",
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
-        `,
-      },
-      rank: 3,
       scaling: "accuracy",
       tags: ["Sensation", "Visual"],
       type: "Duration",
