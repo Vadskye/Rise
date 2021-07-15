@@ -261,7 +261,7 @@ export const cryomancy: MysticSphere = {
           The subject takes 1d10 + half \\glossterm{power} cold damage and is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\closerange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
 

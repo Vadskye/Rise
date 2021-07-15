@@ -64,12 +64,13 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that you missed with a \\glossterm{strike} last round.
+        You gain a +1 bonus to \\glossterm{accuracy} with the strike against each creature that you missed with a \\glossterm{strike} last round.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        3: "The accuracy bonus increases to +2.",
+        5: "The accuracy bonus increases to +3.",
+        7: "The accuracy bonus increases to +4.",
       },
       type: "Instant",
     },
@@ -163,25 +164,13 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +1d damage bonus with the strike.
+        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +1d damage bonus with the strike.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "The damage bonus increases to +2d.",
-        5: "The damage bonus increases to +3d.",
-        7: "The damage bonus increases to +4d.",
+        4: "The damage bonus increases to +2d.",
+        6: "The damage bonus increases to +3d.",
       },
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Momentum Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +2 accuracy bonus and a +2d damage bonus with the strike.
-      `,
-      rank: 7,
       type: "Instant",
     },
 
@@ -243,7 +232,8 @@ export const ebbAndFlow: CombatStyle = {
       name: "Hunting Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty against a creature.
+        Make a \\glossterm{strike}.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike with future strikes.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
@@ -258,7 +248,6 @@ export const ebbAndFlow: CombatStyle = {
       type: "Duration",
     },
 
-    // TODO: nerf once people won't complain; probably lower cap?
     {
       name: "Greater Hunting Strike",
 
@@ -268,7 +257,7 @@ export const ebbAndFlow: CombatStyle = {
       },
       rank: 5,
       scaling: {
-        7: "The damage penalty is removed.",
+        7: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Duration",
     },
@@ -312,12 +301,12 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a -2d damage penalty.
-        You \\glossterm{briefly} gain a +2 accuracy bonus and a +2d damage bonus with your \\textit{offhand strike} ability against each creature that took damage from this strike.
+        You \\glossterm{briefly} gain a +3d damage bonus with your \\textit{offhand strike} ability.
+        This bonus has the \\glossterm{Swift} tag, so it affects the \\textit<offhand strike> ability if you use it during the current phase.
       `,
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2d.",
+        6: "The damage bonus increases to +4d.",
       },
       type: "Duration",
     },
@@ -366,6 +355,35 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 6,
       type: "Duration",
+    },
+
+    {
+      name: "Back Into the Fray",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You gain a +2d damage bonus with the strike if you used the \\textit<recover> ability or a \\abilitytag<Healing> ability last round.
+      `,
+      rank: 4,
+      scaling: {
+        6: "The damage bonus increases to +3d.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Tag-Team Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You gain a +1d damage bonus with the strike if the target is \\glossterm{surrounded}.
+      `,
+      rank: 2,
+      scaling: {
+        4: "The damage bonus increases to +2d.",
+        6: "The damage bonus increases to +3d.",
+      },
+      type: "Instant",
     },
   ],
 };
