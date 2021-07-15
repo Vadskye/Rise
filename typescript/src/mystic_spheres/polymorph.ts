@@ -105,6 +105,7 @@ export const polymorph: MysticSphere = {
       type: 'Instant',
     },
 
+    // Better than power attack, but also requires natural weapons, so this should be fine
     {
       name: "Mighty Claw",
       effect: `
@@ -116,9 +117,9 @@ export const polymorph: MysticSphere = {
       focus: false,
       rank: 1,
       scaling: {
-        3: 'The damage bonus increases to +2d.',
-        5: 'The damage bonus increases to +3d.',
-        7: 'The damage bonus increases to +4d.',
+        3: 'The damage bonus increases to +3d.',
+        5: 'The damage bonus increases to +4d.',
+        7: 'The damage bonus increases to +5d.',
       },
       type: 'Instant',
     },
