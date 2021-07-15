@@ -682,7 +682,7 @@ export const pyromancy: MysticSphere = {
         glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is highly flammable until it takes a \\glossterm{short rest}.
         Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
-        While ignited in this way, it takes 2d8 fire damage at the end of each round.
+        While ignited in this way, it takes 1d10 fire damage at the end of each round.
 
         It can put out the fire by making a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.
@@ -692,7 +692,7 @@ export const pyromancy: MysticSphere = {
         `,
       },
 
-      rank: 5,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Curse"],
       type: "Duration",
