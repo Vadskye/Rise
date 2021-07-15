@@ -71,9 +71,9 @@ export const telekinesis: MysticSphere = {
 
       functionsLike: {
         name: "interposing force",
-        exceptThat: "the \\glossterm{difficulty rating} of the Strength check increases to 20.",
+        exceptThat: "the \\glossterm{difficulty rating} of the Strength check increases to 15.",
       },
-      rank: 6,
+      rank: 7,
       scaling: "accuracy",
       type: "Duration",
     },
