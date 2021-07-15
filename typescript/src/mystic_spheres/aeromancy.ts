@@ -213,7 +213,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 1,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Instant",
     },
     {
@@ -226,7 +226,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 4,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Instant",
     },
     {
@@ -239,7 +239,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 7,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Instant",
     },
     {

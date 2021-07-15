@@ -200,7 +200,7 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 
@@ -605,7 +605,7 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 
@@ -620,7 +620,7 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 

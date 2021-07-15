@@ -285,7 +285,7 @@ export const astromancy: MysticSphere = {
         Your foe disappears for a second into the Plane of Earth, where it is crushed by the weight of stone.
       `,
       rank: 4,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
     {
@@ -305,7 +305,7 @@ export const astromancy: MysticSphere = {
         Your foe disappears for a second into the Plane of Air, where it is knocked flying by powerful winds.
       `,
       rank: 2,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Instant",
     },
     // +2 levels for +1d

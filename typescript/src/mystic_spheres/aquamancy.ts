@@ -678,7 +678,7 @@ export const aquamancy: MysticSphere = {
       },
       // narrative: '',
       rank: 1,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Instant",
     },
     {

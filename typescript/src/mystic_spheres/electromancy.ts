@@ -303,7 +303,7 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 
@@ -319,7 +319,7 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: "accuracy",
       type: "Duration",
     },
 
