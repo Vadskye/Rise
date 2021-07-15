@@ -169,8 +169,8 @@ export const polymorph: MysticSphere = {
       attack: {
         glance: "Half damage.",
         hit: `
-          The subject takes 2d10 + \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
+          The subject takes 2d8 + \\glossterm{power} piercing damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\sickened.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -183,7 +183,20 @@ export const polymorph: MysticSphere = {
       narrative: `
         You twist your hand into a spike that bends past armor to impale your foe.
       `,
-      rank: 4,
+      rank: 3,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Piercing Grasp",
+
+      functionsLike: {
+        name: 'greater piercing grasp',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\nauseated instead of sickened.',
+      },
+      focus: false,
+      rank: 7,
       scaling: "damage",
       type: "Duration",
     },
