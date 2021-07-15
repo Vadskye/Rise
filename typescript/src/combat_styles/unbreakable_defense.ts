@@ -233,8 +233,8 @@ export const unbreakableDefense: CombatStyle = {
       name: "Revitalizing Strike",
 
       effect: `
-        Make a strike with a -1d damage penalty.
-        In addition, you regain 2d6 hit points.
+        Make a strike with a -2d damage penalty.
+        In addition, you regain 2d6 + half \\glossterm{power} hit points.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       scaling: {
@@ -293,22 +293,6 @@ export const unbreakableDefense: CombatStyle = {
         7: "The bonus increases to +5.",
       },
       type: "Duration",
-    },
-
-    {
-      name: "Greater Revitalizing Strike",
-
-      effect: `
-        Make a strike with a -1d damage penalty.
-        In addition, you regain 4d6 + half \\glossterm{power} hit points.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
-      `,
-      scaling: {
-        special: "The healing increases by +1d for each rank beyond 3.",
-      },
-      rank: 6,
-      tags: ['Healing'],
-      type: "Instant",
     },
   ],
 };
