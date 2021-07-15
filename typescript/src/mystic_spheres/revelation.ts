@@ -298,7 +298,7 @@ export const revelation: MysticSphere = {
         It takes a -2 penalty to the chosen defense.`,
         targeting: `
           Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
-          Make an attack vs. Mental with a +2 accuracy bonus against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\longrange.
         `,
       },
 
@@ -314,19 +314,7 @@ export const revelation: MysticSphere = {
         name: 'reveal weakness',
         exceptThat: 'the penalty increases to -4, or -8 on a critical hit.',
       },
-      rank: 4,
-      scaling: "accuracy",
-      type: "Duration",
-    },
-
-    {
-      name: "Supreme Reveal Weakness",
-
-      functionsLike: {
-        name: 'reveal weakness',
-        exceptThat: 'the penalty increases to -8, or -16 on a critical hit.',
-      },
-      rank: 7,
+      rank: 5,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -338,7 +326,7 @@ export const revelation: MysticSphere = {
         mass: true,
         name: "True Strike",
       },
-      rank: 6,
+      rank: 7,
       type: "Duration",
     },
 
