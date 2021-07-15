@@ -723,7 +723,7 @@ def damage_resistance():
                 30:   64,
             }}[level] || 0;
             if (challenge_rating > 0) {{
-                resistance_from_level *= 2;
+                resistance_from_level *= 3;
             }}
             var cr_multiplier = {{
                 0: 1,
