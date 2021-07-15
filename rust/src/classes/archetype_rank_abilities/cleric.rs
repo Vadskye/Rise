@@ -353,7 +353,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     % +1d in exchange for not applying power to self
                     The subject regains 2d6 \glossterm{hit points}.
                     If the subject is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
-                    After you use this ability, you \\glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
+                    After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
                     \rankline
                     \rank{2} The healing increases to 2d8.
