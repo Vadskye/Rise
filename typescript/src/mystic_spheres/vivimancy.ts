@@ -845,8 +845,8 @@ export const vivimancy: MysticSphere = {
 
       castingTime: "one hour",
       effect: `
-        Choose any number of corpses within \\shortrange.
-        The combined levels of all targets cannot exceed your \\glossterm{power}.
+        Choose up to four corpses within \\shortrange.
+        The combined levels of all targets cannot exceed your level.
         The subject becomes an undead creature that obeys your spoken commands.
         You choose whether to create a skeleton or a zombie.
         Creating a zombie require a mostly intact corpse, including most of the flesh.
