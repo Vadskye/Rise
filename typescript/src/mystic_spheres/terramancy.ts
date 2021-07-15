@@ -120,14 +120,14 @@ export const terramancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 2d6 piercing damage.
+        hit: `The subject takes 2d8 piercing damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Manifestation"],
       type: "Duration",
