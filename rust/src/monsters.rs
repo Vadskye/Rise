@@ -248,7 +248,7 @@ impl HasEquipment for Monster {
 impl HasDamageAbsorption for Monster {
     fn calc_damage_resistance(&self) -> i32 {
         return ((self.creature.calc_damage_resistance() as f64)
-            * 2.0
+            * 3.0
             * self.challenge_rating.dr_multiplier()) as i32;
     }
     fn calc_hit_points(&self) -> i32 {
