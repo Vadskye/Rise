@@ -318,7 +318,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
             The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
-            After you use this ability, you \\glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
+            After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
             \rankline
             \rank{2} The healing increases to 2d6.

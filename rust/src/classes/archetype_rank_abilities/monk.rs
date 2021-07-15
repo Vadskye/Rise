@@ -41,7 +41,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 Your landing loation must be no more than 30 feet above above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
                 You cannot walk in the air, but you can continue jumping or remain in place.
                 The air holds you until the end of the current round, at which point you fall normally.
-                After you land on air in this way, you \\glossterm{briefly} cannot do so again.
+                After you land on air in this way, you \glossterm{briefly} cannot do so again.
             ",
         },
         RankAbility {
@@ -262,7 +262,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         You can also spend \glossterm{insight points} to learn one additional \textit{ki manifestation} per \glossterm{insight point}.
         You can use any \textit{ki manifestation} ability you know using the type of action indicated in the ability's description.
 
-        After you use a \textit{ki manifestation}, you \\glossterm{briefly} cannot use a \textit{ki manifestation} again.
+        After you use a \textit{ki manifestation}, you \glossterm{briefly} cannot use a \textit{ki manifestation} again.
         {
             \begin{durationability}{Abandon the Fragile Self}[Duration]
                 \abilitytag{Swift}
@@ -562,7 +562,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             \rank{3} This ability gains the \abilitytag{Swift} tag.
             When you use it, the penalties from the removed effects do not affect you during the current phase.
-            In addition, you \\glossterm{briefly} cannot gain any \glossterm{conditions}.
+            In addition, you \glossterm{briefly} cannot gain any \glossterm{conditions}.
             \rank{5} You can use this ability as a \glossterm{minor action}.
             When you do, you increase your \glossterm{fatigue level} by one.
             \rank{7} You can remove any number of effects.
