@@ -976,36 +976,40 @@ You cannot gain the same feat twice.
         If you chose a weapon, all damage dealt with it is cold damage in addition to its other types.
         If you chose body armor or a shield, you are \glossterm{impervious} to cold damage.
 
+        % as rank 3 strike, but scales to rank 9 strike
         \ff[6]{Spectral Strike} You can use the \textit{spectral strike} ability as a standard action.
-        \begin{instantability}{Spectral Strike}
+        \begin{durationability}{Spectral Strike}
             Make a \glossterm{strike}.
             The attack is made against each subject's Reflex defense instead of its Armor defense.
             Each creature that loses \glossterm{hit points} from this strike is \glossterm{briefly} \slowed.
+            After it stops being slowed, it becomes immune to being slowed in this way until it takes a short rest.
 
             \rankline
-            \featlevel{12} The effect becomes a \glossterm{condition}.
-            \featlevel{18} Each creature that loses hit points is \decelerated instead of slowed.
-        \end{instantability}
+            \featlevel{12} Each subject is no longer immune to being slowed after the first successful slow effect.
+            \featlevel{18} Each subject is \decelerated instead of slowed.
+        \end{durationability}
 
-        \ff[9]{Greater Ghost Step} You can use your \textit{ghost step} ability to affect any movement you make during the \glossterm{movement phase}.
-        In addition, when you use the \textit{sprint} ability, you can become \glossterm{incorporeal} for the duration of the movement.
+        \ff[9]{Greater Ghost Step} When you use your \textit{ghost step} ability, you can also become \glossterm{incorporeal} for the duration of the movement.
 
         \ff[12]{Greater Spectral Armament} The effect of your \glossterm{legacy item} improves.
         If you chose a weapon, whenever you make a \glossterm{strike} against a creature's Armor defense that misses, if the strike hit that creature's Reflex defense, it is considered a \glossterm{glancing blow} and deals half damage.
         If you chose body armor or a shield, whenever an attack hits your Reflex defense, if the attack missed your Armor defense, you take half damage from that attack.
         This does not protect you from any non-damaging attack effects.
 
+        % Like a mostly better version of Greater Reaping Harvest
         \ff[15]{Spectral Reap} You can use the \textit{spectral reap} ability as a \glossterm{standard action}.
-        \begin{instantability}{Spectral Reap}
-            Make a \glossterm{strike}.
-            The attack is made against each subject's Reflex defense instead of its Armor defense.
-            Each creature damaged by the strike is \glossterm{briefly} \slowed.
+        \begin{durationability}{Spectral Reap}
+            Move up to your movement speed in a straight line.
+            For the duration of the movement, you can move through creatures and objects as if you were \glossterm{incorporeal}, but you do not gain the defensive benefits of being incorporeal during this phase.
+            In addition, you can make a melee \glossterm{strike}.
+            Your \glossterm{power} with the strike is halved.
+            The strike targets any number of creatures and objects within your \glossterm{reach} at any point during your movement.
 
             \rankline
-            \featlevel{21} Each creature is \decelerated instead of slowed.
-        \end{instantability}
+            \featlevel{21} You gain a \plus1d bonus to damage with the strike.
+        \end{durationability}
 
-        \ff[18]{Supreme Ghost Step} You can use your \textit{greater ghost step} ability to affect any movement you make during the \glossterm{movement phase}.
+        \ff[18]{Supreme Ghost Step} You can use your \textit{ghost step} ability to affect any movement you make during the \glossterm{movement phase}, even if you do not use the \textit{sprint} ability.
 
         \ff[21]{Supreme Spectral Armament} The effect of your \glossterm{legacy item} improves.
         If you chose a weapon, whenever you make a \glossterm{strike}, you can make the strike against each subject's Reflex defense in place of its Armor defense.
@@ -1621,6 +1625,7 @@ You cannot gain the same feat twice.
         \begin{freeability}{Compel Attention}[\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}]
             Make an attack vs. Mental against a creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
+            You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
             You must talk loud enough for the target to hear to draw its attention.
             \hit The target is \fascinated by you as long as you sustain this ability, which requires maintaining your conversation with it.
             Any act by you or by creatures that appear to be your ally that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
@@ -1668,7 +1673,7 @@ You cannot gain the same feat twice.
 
         \ff[3]{Combat Prediction} You can use the \textit{combat prediction} ability as a standard action.
         \begin{freeability}{Combat Prediction}[\abilitytag{Sustain} (free)]
-            Make an attack vs. Mental with a \plus3 bonus to \glossterm{accuracy} against a creature within \rngmed range of you.
+            Make an attack vs. Mental with a \plus3 \glossterm{accuracy} bonus against a creature within \rngmed range of you.
             \hit That creature's intentions become obvious to you as long as you sustain this ability.
             This gives you a \plus2 bonus to \glossterm{accuracy} and \glossterm{defenses} against that creature.
             At the start of each phase, you can see and hear what actions that creature intends to take.
@@ -1968,7 +1973,8 @@ You cannot gain the same feat twice.
         \ff[3]{Sense Spellcasting}[Magical] You can use the \textit{sense spellcasting} ability as a standard action.
         \begin{freeability}{Sense Spellcasting}[\abilitytag{Subtle}]
             \target{One creature within \rngmed range}
-            Make a Spellsense attack vs. Mental against the target.
+            Make a attack vs. Mental against the target.
+            Your \glossterm{accuracy} is equal to your Spellsense skill.
             \hit You know whether the target is capable of casting spells.
             If the target can cast spells, you know what sources the target can cast spells from.
             \crit As above, except that you also know all \glossterm{mystic spheres} the target is capable of casting.
@@ -2443,7 +2449,7 @@ You cannot gain the same feat twice.
         \ff[12]{Greater Reshaper} When you use the \spell{alter object} cantrip, you can accomplish work that would take up to an hour with a normal Craft check.
         In addition, you can use the \textit{alter poison} ability as a standard action.
         \begin{freeability}{Alter Poison}[\glossterm{Shaping}, \abilitytag{Sustain} (minor)]
-            Make an attack vs. Fortitude with a \plus4 \glossterm{accuracy} bonus against a creature within \rngshort range.
+            Make an attack vs. Fortitude with a \plus4 \glossterm{accuracy} bonus against a creature within \shortrange.
             \hit Any poison in the target's system is neutralized.
             It stops suffering any additional effects from poisons in its system.
             As long as the effect lasts, it is immune to all poisons.
@@ -2895,12 +2901,13 @@ You cannot gain the same feat twice.
 
         \ff[1]{Telepathy} You gain \glossterm{telepathy} with a 60 foot range (see \pcref{Telepathy}).
 
+        % This is a rank 2 spel effect
         \ff[3]{Mind Crush} You can use the \textit{mind crush} ability as a standard action.
         \begin{durationability}{Mind Crush}
             \abilitytag{Emotion}
             \rankline
             Make an attack vs. Mental against one creature within the half the maximum range of your \glossterm{telepathy}.
-            \hit As a \glossterm{condition}, the subject is \dazed if it has any \glossterm{damage resistance} remaining, and \stunned if it does not.
+            \hit As a \glossterm{condition}, the subject is \dazed while it has any \glossterm{damage resistance} remaining, and \stunned while it does not.
             \crit The condition must be removed twice before the effect ends.
 
             \rankline
@@ -2913,7 +2920,7 @@ You cannot gain the same feat twice.
             \abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Subtle}
             \rankline
             Make an attack vs. Mental against a creature within half the maximum range of your \glossterm{telepathy}.
-            Whether you hit or miss, you cannot target the subject with this ability again until it takes a \glossterm{short rest}.
+            Whether you hit or miss, you cannot attack the subject with this ability again until it takes a \glossterm{short rest}.
             \hit You know the target's current thoughts and emotions.
             In addition to the obvious effects, this grants you a \plus5 bonus to Deception, Persuasion, Intimidate, and Social Insight attacks and checks against the target.
             This does not allow you to search their mind for arbitrary thoughts or information, but creatures often think about questions they are asked, and their thoughts may reveal much more than their words.
