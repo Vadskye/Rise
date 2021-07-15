@@ -425,7 +425,7 @@ def generate_armor():
             short_description="Halves damage from a single attack",
         ),
         MagicItem(
-            name="Greater Crumpling Armor",
+            name="Crumpling Armor, Greater",
             level=13,
             tags=[],
             material_type="Body armor",
@@ -435,7 +435,7 @@ def generate_armor():
             short_description="Halves damage from two attacks",
         ),
         MagicItem(
-            name="Greater Crumpling Armor",
+            name="Crumpling Armor, Supreme",
             level=19,
             tags=[],
             material_type="Body armor",
