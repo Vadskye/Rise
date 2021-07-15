@@ -324,7 +324,7 @@ def universal_abilities():
             For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
         """, attack={"accuracy":"", "defense":"Special"}),
         universal_ability_button("Dirty Trick", """
-            Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the subject suffers a -2 penalty to one of the following statistics: accuracy with mundane abilities, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
+            Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the subject suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
             If the subject is at its maximum hit points, this is a brief effect. Otherwise, this effect is a condition.
          """, attack={"accuracy":"@{accuracy}", "defense":"Fort or Ref"}),
         universal_ability_button("Disarm", """
