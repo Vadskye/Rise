@@ -235,7 +235,8 @@ export const channelDivinity: MysticSphere = {
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 5,
+      tags: ['Emotion'],
       scaling: "accuracy",
       type: "Duration",
     },
