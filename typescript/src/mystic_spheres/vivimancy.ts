@@ -602,7 +602,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `Each subject takes 1d10 energy damage.`,
         targeting: `
-          At the end of each round, make an attack vs. Fortitude against each \\glossterm{enemy} adjacent to you that caused you to lose \\glossterm{hit points} that round.
+          At the end of each round, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\smallarea radius from you that caused you to lose \\glossterm{hit points} that round.
         `,
       },
       rank: 1,

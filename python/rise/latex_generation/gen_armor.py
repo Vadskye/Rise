@@ -79,7 +79,7 @@ def generate_armor():
             material_type="Body armor",
             tags=[],
             description="""
-                At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that caused you to lose \\glossterm<hit points> that round.
+                At the end of each round, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> that round.
                 \\hit Each target takes 2d6 energy damage.
             """,
             short_description="Damages adjacent attackers when you lose HP",
@@ -90,7 +90,7 @@ def generate_armor():
             material_type="Body armor",
             tags=[],
             description="""
-                At the end of each round, make an attack vs. Fortitude against each creature within a \\areamed radius of you that caused you to lose \\glossterm<hit points> that round.
+                At the end of each round, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> that round.
                 \\hit Each target takes 4d6 energy damage.
                 \\glance Half damage.
             """,
@@ -102,7 +102,7 @@ def generate_armor():
             material_type="Body armor",
             tags=[],
             description="""
-                At the end of each round, make an attack vs. Fortitude against each creature within a \\areahuge radius of you that caused you to lose \\glossterm<hit points> that round.
+                At the end of each round, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> that round.
                 \\hit Each target takes 5d10 energy damage.
                 \\glance Half damage.
             """,
