@@ -104,6 +104,7 @@ export const pyromancy: MysticSphere = {
       type: "Instant",
     },
 
+    // r1 burning effect
     {
       name: "Greater Burning Grasp",
 
@@ -131,6 +132,7 @@ export const pyromancy: MysticSphere = {
       type: "Duration",
     },
 
+    // r2 burning effect
     {
       name: "Supreme Burning Grasp",
 
