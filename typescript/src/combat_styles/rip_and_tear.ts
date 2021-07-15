@@ -22,18 +22,6 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Greater Strip the Flesh",
-
-      effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        You take a -1d damage penalty with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage as a \\glossterm{condition}.
-      `,
-      rank: 6,
-      type: "Duration",
-    },
-
-    {
       name: "Strip the Armor",
 
       effect: `
@@ -52,41 +40,37 @@ export const ripAndTear: CombatStyle = {
     {
       name: "Rend the Hide",
 
+      // -1 rank for metal armor restriction and only affecting Armor
       effect: `
-        Make a \\glossterm{strike} with a -1d damage penalty using a slashing weapon.
+        Make a \\glossterm{strike} using a slashing weapon.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature damaged by the strike that is not wearing metal armor \\glossterm{briefly} takes a -2 penalty to Armor defense.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "The penalty increases to -3.",
-        5: "The penalty increases to -4.",
-        7: "The penalty increases to -5.",
+        4: "The penalty increases to -3.",
+        6: "The penalty increases to -4.",
       },
       type: "Instant",
     },
 
-    // +1 rank for +1d
     {
       name: "Brow Gash",
 
       effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\blinded.
+        Make a \\glossterm{strike} with a -2d damage penalty using a slashing weapon.
+        Each creature damaged by the strike is \\briefly \\dazzled.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 5,
       type: "Duration",
     },
 
     {
-      name: "Greater Brow Gash",
+      name: "Blinding Brow Gash",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -125,7 +109,7 @@ export const ripAndTear: CombatStyle = {
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
       `,
-      rank: 6,
+      rank: 7,
       type: "Duration",
     },
 
@@ -134,7 +118,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee strike using a slashing weapon.
-        At the end of this phase, each creature that you hit during this phase with both that strike and the \\textit{offhand strike} ability takes slashing damage equal to half your \\glossterm{power} (minimum 1).
+        At the end of this phase, each creature that you hit during this phase with both this strike and the \\textit{offhand strike} ability takes slashing damage equal to half your \\glossterm{power} (minimum 1).
       `,
       rank: 1,
       scaling: {
@@ -150,7 +134,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee strike using a slashing weapon.
-        At the end of this phase, each creature that you hit during this phase with both that strike and the \\textit{offhand strike} ability takes slashing damage equal to your \\glossterm{power}.
+        At the end of this phase, each creature that you hit during this phase with both this strike and the \\textit{offhand strike} ability takes slashing damage equal to your \\glossterm{power}.
       `,
       rank: 4,
       scaling: {
@@ -210,7 +194,6 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a thrown \\glossterm{strike} using a slashing weapon.
         The strike also targets up to two additional creatures or object within 5 feet of the strike's primary target.
-        If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
       rank: 5,
       scaling: {
