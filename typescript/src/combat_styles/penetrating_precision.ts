@@ -22,7 +22,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Desperate Stab",
+      name: "Desperate Pierce",
 
       effect: `
         Make a \\glossterm{strike}.
@@ -263,6 +263,51 @@ export const penetratingPrecision: CombatStyle = {
       `,
       rank: 7,
       type: "Duration",
+    },
+
+    {
+      name: "Chargebreaker",
+
+      effect: `
+        Make a melee \\glossterm{strike} using a piercing weapon.
+        You gain a +1d damage bonus with the strike if the target moved towards you during the movement phase.
+      `,
+      rank: 2,
+      scaling: {
+        4: "The damage bonus increases to +2d.",
+        6: "The damage bonus increases to +3d.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Called Shot",
+
+      // +1 level for choice of debuff
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\shaken by you, \\slowed, or \\sickened.
+      `,
+      rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Called Shot",
+
+      // +1 level for choice of debuff
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\decelerated, \\frightened by you, or \\nauseated.
+      `,
+      rank: 6,
+      type: "Instant",
     },
   ],
 };

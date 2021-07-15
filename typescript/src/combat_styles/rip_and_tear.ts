@@ -48,9 +48,22 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "The penalty increases to -3.",
-        6: "The penalty increases to -4.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Rend the Hide",
+
+      // -1 rank for metal armor restriction and only affecting Armor
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Each creature damaged by the strike that is not wearing metal armor \\glossterm{briefly} takes a -4 penalty to Armor defense.
+      `,
+      rank: 6,
       type: "Instant",
     },
 
@@ -272,8 +285,8 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "The damage penalty is reduced to -1d.",
-        7: "The damage penalty is removed.",
+        5: "The damage penalty with both strikes is reduced to -1d.",
+        7: "The damage penalty with both strikes is removed.",
       },
       type: "Instant",
     },
@@ -290,6 +303,17 @@ export const ripAndTear: CombatStyle = {
         4: "You gain a +1d damage bonus with the strike.",
         6: "The damage bonus increases to +2d.",
       },
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Tear Exposed Flesh",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        If the target does not have any remaining \\glossterm{damage resistance}, your \\glossterm{power} with the strike is tripled.
+      `,
+      rank: 6,
       type: "Instant",
     },
   ],

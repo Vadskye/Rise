@@ -212,6 +212,17 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
+      name: "Greater Cleanse",
+
+      effect: `
+        You remove a \\glossterm{brief} effect or \\glossterm{condition} affecting you.
+        This cannot remove an effect applied during the current round.
+      `,
+      rank: 6,
+      type: "Duration",
+    },
+
+    {
       name: "Cleansing Strike",
 
       effect: `
