@@ -110,9 +110,9 @@ export const pyromancy: MysticSphere = {
       attack: {
         glance: "Half damage from the initial hit.",
         hit: `
-          The subject takes 2d10 + \\glossterm{power} fire damage.
+          The subject takes 2d8 + \\glossterm{power} fire damage.
           If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
-          At the end of each round, it takes 2d8 + half \\glossterm{power} fire damage.
+          At the end of each round, it takes 1d10 fire damage.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -122,12 +122,25 @@ export const pyromancy: MysticSphere = {
         `,
       },
       focus: false,
-      rank: 4,
+      rank: 3,
       scaling: {
         special: `
-          The damage from both the initial hit and the condition increases by +1d for each rank beyond 4.
+          The damage from both the initial hit and the subsequent burning increases by +1d for each rank beyond 3.
         `,
       },
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Burning Grasp",
+
+      functionsLike: {
+        name: 'greater burning grasp',
+        exceptThat: 'the initial damage increases to 4d10 + \\glossterm{power}, and the subsequent damage increases to 4d8 + half \\glossterm{power}.',
+      },
+      focus: false,
+      rank: 7,
+      scaling: "damage",
       type: "Duration",
     },
 
