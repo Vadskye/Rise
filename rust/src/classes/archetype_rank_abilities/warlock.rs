@@ -40,9 +40,16 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Choose one of the following \glossterm{mystic spheres}: \sphere{astromancy}, \sphere{enchantment}, \sphere{pyromancy}, or \sphere{summoning}.
-                If you already have access to that mystic sphere, you learn two spells from that sphere.
-                Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
+                If you have access to pact magic, choose one of the following \glossterm{mystic spheres}: \sphere{astromancy}, \sphere{enchantment}, \sphere{pyromancy}, or \sphere{summoning}.
+                You gain access to that mystic sphere.
+            ",
+        },
+        RankAbility {
+            name: "Resist the Dark Call",
+            is_magical: true,
+            rank: 2,
+            description: r"
+                If you do not have access to pact magic, you gain a +2 bonus to Mental defense and a +1 bonus to your \glossterm{fatigue tolerance}.
             ",
         },
         RankAbility {
