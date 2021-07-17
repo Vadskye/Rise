@@ -313,7 +313,9 @@ export const photomancy: MysticSphere = {
           Each subject takes 2d10 + half \\glossterm{power} energy damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in up to five \\tinyarea radius areas within \\longrange of you.
+          Choose up to five \\tinyarea radius areas within \\longrange of you.
+          Make an attack vs. Fortitude against all creatures in any of those areas.
+          The areas can overlap, but this does not allow you to make multiple attacks against the same creature.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of each area.
         `,
       },
