@@ -1542,12 +1542,15 @@ def generate_apparel():
                 When you or an adjacent ally casts a spell that does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags,
                     you can invest the magic of the spell in the ring.
                 If you do, the spell does not have its normal effect.
+                All decisions about the spell's effect must be made at the time that the spell is invested in this way.
                 Only one spell can be stored this way.
 
                 As a standard action, you can activate this ring.
                 When you do, you cause the effect of the last spell invested in the ring.
                 This does not require \\glossterm<casting components> and does not have the \\abilitytag<Focus> tag, even if casting the spell normally would have those limitations.
+                The spell's effect is determined based on the \\glossterm<power> and other abilities of the original caster who invested the spell into the ring, not yours.
                 You do not have to have the ability to cast the spell to activate a spell in this way.
+                The \\textit<desperate exertion> ability cannot be used to affect the spell, either at the time it is invested or when it is activated.
                 After you use a spell in this way, the energy in the ring is spent, and you must invest a new spell to activate the ring again.
             """,
             short_description="Can invest a spell to gain its effect later",
