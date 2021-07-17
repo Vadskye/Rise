@@ -400,13 +400,29 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `Each subject takes 2d8 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea radius within \\medrange.
         `,
       },
 
-      rank: 5,
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Hailstorm",
+
+      attack: {
+        glance: `Half damage.`,
+        hit: `Each subject takes 4d10 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
+        targeting: `
+          Make an attack vs. Armor against everything in a \\medarea radius within \\longrange.
+        `,
+      },
+
+      rank: 7,
       scaling: "damage",
       type: "Instant",
     },
