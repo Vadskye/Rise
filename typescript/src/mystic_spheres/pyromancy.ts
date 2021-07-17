@@ -151,14 +151,14 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 4d6 + half \\glossterm{power} fire damage.
+        hit: `Each subject takes 2d10 + half \\glossterm{power} fire damage.
         In addition, if the subject is a flammable object, it catches on fire.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea radius within \\longrange.
+          Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange.
         `,
       },
 
-      rank: 6,
+      rank: 5,
       scaling: "damage",
       type: "Instant",
     },
@@ -210,12 +210,26 @@ export const pyromancy: MysticSphere = {
       name: "Greater Firebolt",
 
       attack: {
-        hit: `The subject takes 4d10 + \\glossterm{power} fire damage.`,
+        hit: `The subject takes 4d6 + \\glossterm{power} fire damage.`,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Armor against anything within \\longrange.
         `,
       },
-      rank: 5,
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Firebolt",
+
+      attack: {
+        hit: `The subject takes 6d10 + \\glossterm{power} fire damage.`,
+        targeting: `
+          Make an attack vs. Armor against anything within \\distrange.
+        `,
+      },
+      rank: 7,
       scaling: "damage",
       type: "Instant",
     },
@@ -681,10 +695,27 @@ export const pyromancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it is \\nauseated instead of sickened.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
-      rank: 5,
+      rank: 4,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Pyrohemia",
+
+      attack: {
+        glance: `Half damage.`,
+        hit: `
+          The subject takes 4d8 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\nauseated.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+      rank: 6,
       scaling: "damage",
       type: "Duration",
     },
