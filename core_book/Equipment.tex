@@ -606,36 +606,36 @@
         \begin{dtable!*}
             \lcaption{Armor Special Materials}
 \begin{dtabularx}{\textwidth}{l c c c c >{\lcol}X}
-    \tb{Material}              & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                    & \tb{Material} & \tb{Item Level}              \tableheaderrule
+    \tb{Material}              & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                & \tb{Material} & \tb{Item Level}              \tableheaderrule
     % metal high resistance, encum
-    \tind Adamantine           & \mult4                 & \plus2           & \tdash                                 & Metal         & \plus9  \\
-    \tind Adamantine, pure     & \mult8                 & \plus2           & \tdash                                 & Metal         & \plus15 \\
+    \tind Adamantine           & \mult4                 & \plus2           & \tdash                             & Metal         & \plus9  \\
+    \tind Adamantine, pure     & \mult8                 & \plus2           & \tdash                             & Metal         & \plus15 \\
     % magic defense                                                          
-    \tind Cold iron            & \mult1/2               & \tdash           & \plus1 defense vs magic                & Metal         & \plus6  \\
-    \tind Cold iron, pure      & \mult1/2               & \tdash           & \plus2 defense vs magic                & Metal         & \plus12 \\
+    \tind Cold iron            & \mult1/2               & \tdash           & \plus1 defense vs magic            & Metal         & \plus6  \\
+    \tind Cold iron, pure      & \mult1/2               & \tdash           & \plus2 defense vs magic            & Metal         & \plus12 \\
     % metal resistance                                                       
-    \tind Deepforged           & \mult2                 & \tdash           & \tdash                                 & Metal         & \plus6  \\
-    \tind Deepforged, pure     & \mult4                 & \tdash           & \tdash                                 & Metal         & \plus12 \\
+    \tind Deepforged           & \mult2                 & \tdash           & \tdash                             & Metal         & \plus6  \\
+    \tind Deepforged, pure     & \mult4                 & \tdash           & \tdash                             & Metal         & \plus12 \\
     % metal crit resistance                                                  
-    \tind Diamondsteel         & \tdash                 & \tdash           & \plus4 defense vs strike crits         & Metal         & \plus6  \\
-    \tind Diamondsteel, pure   & \mult2                 & \tdash           & \plus4 defense vs crits                & Metal         & \plus12 \\
+    \tind Diamondsteel         & \tdash                 & \tdash           & \plus4 defense vs strike crits     & Metal         & \plus6  \\
+    \tind Diamondsteel, pure   & \mult2                 & \tdash           & \plus4 defense vs crits            & Metal         & \plus12 \\
     % offset leather resistance, energy defense bonus                        
-    \tind Dragonhide           & \mult3                 & \tdash           & \plus4 defense vs specific energy type & Leather       & \plus9  \\
-    \tind Dragonhide, ancient  & \mult6                 & \tdash           & \plus6 defense vs specific energy type & Leather       & \plus15 \\
+    \tind Dragonhide           & \mult3                 & \tdash           & Impervious to specific energy type & Leather       & \plus9  \\
+    \tind Dragonhide, ancient  & \mult6                 & \tdash           & Immune to specific damage type     & Leather       & \plus15 \\
     % offset metal resistance, energy defense bonus                          
-    \tind Dragonscale          & \mult3                 & \tdash           & \plus4 defense vs specific energy type & Metal         & \plus9  \\
-    \tind Dragonscale, ancient & \mult6                 & \tdash           & \plus6 defense vs specific energy type & Metal         & \plus15 \\
+    \tind Dragonscale          & \mult3                 & \tdash           & Impervious to specific energy type & Metal         & \plus9  \\
+    \tind Dragonscale, ancient & \mult6                 & \tdash           & Immune to specific energy type     & Metal         & \plus15 \\
     % leather resistance                                                     
-    \tind Elvenweave           & \mult2                 & \tdash           & \tdash                                 & Leather       & \plus6  \\
-    \tind Elvenweave, pure     & \mult4                 & \tdash           & \tdash                                 & Leather       & \plus12 \\
+    \tind Elvenweave           & \mult2                 & \tdash           & \tdash                             & Leather       & \plus6  \\
+    \tind Elvenweave, pure     & \mult4                 & \tdash           & \tdash                             & Leather       & \plus12 \\
     % idk                                                                    
-    \tind Ironwood             & \tdash                 & \tdash           & \tdash                                 & Metal         & \plus3  \\
+    \tind Ironwood             & \tdash                 & \tdash           & \tdash                             & Metal         & \plus3  \\
     % metal encumbrance reduction                                            
-    \tind Mithral              & \tdash                 & \minus2          & \tdash                                 & Metal         & \plus6  \\
-    \tind Mithral, pure        & \mult2                 & \minus3          & Reduce usage class                     & Metal         & \plus12 \\
+    \tind Mithral              & \tdash                 & \minus2          & \tdash                             & Metal         & \plus6  \\
+    \tind Mithral, pure        & \mult2                 & \minus3          & Reduce usage class                 & Metal         & \plus12 \\
     % metal resistance, recovery, encumbrance penalty                        
-    \tind Starmetal            & \mult2                 & \plus2           & Recover resistances                    & Metal         & \plus6  \\
-    \tind Starmetal, pure      & \mult4                 & \plus2           & Recover resistances                    & Metal         & \plus12 \\
+    \tind Starmetal            & \mult2                 & \plus2           & Recover resistances                & Metal         & \plus6  \\
+    \tind Starmetal, pure      & \mult4                 & \plus2           & Recover resistances                & Metal         & \plus12 \\
 \end{dtabularx}
         \end{dtable!*}
 
@@ -665,24 +665,24 @@
 
         \parhead{Dragonhide} Dragonhide body armor multiplies the \glossterm{damage resistance} provided by the armor by 3.
         In addition, each dragonhide body armor is made from the hide of a particular type of dragon.
-        It provides a \plus4 bonus to \glossterm{defenses} against attacks that deal damage of the type dealt by that dragon's breath weapon.
+        You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon.
         The armor's item level is increased by 9, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
         \parhead{Dragonhide, Ancient} Ancient dragonhide body armor multiplies the \glossterm{damage resistance} provided by the armor by 6.
         In addition, each ancient dragonhide body armor is made from the hide of a particular type of dragon.
-        It provides a \plus6 bonus to \glossterm{defenses} against attacks that deal damage of the type dealt by that dragon's breath weapon.
+        You are \glossterm{immune} to damage of the type dealt by that dragon's breath weapon.
         The armor's item level is increased by 15, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
         \parhead{Dragonscale} Dragonscale body armor multiplies the \glossterm{damage resistance} provided by the armor by 3.
         It is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
         In addition, each dragonscale body armor is made from the scales of a particular type of dragon.
-        It provides a \plus4 bonus to \glossterm{defenses} against attacks that deal damage of the type dealt by that dragon's breath weapon.
+        You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon.
         The armor's item level is increased by 9, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
         \parhead{Dragonscale, Ancient} Ancient dragonscale body armor multiplies the \glossterm{damage resistance} provided by the armor by 6.
         It is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
         In addition, each ancient dragonscale body armor is made from the scales of a particular type of dragon.
-        It provides a \plus6 bonus to \glossterm{defenses} against attacks that deal damage of the type dealt by that dragon's breath weapon.
+        You are \glossterm{immune} to damage of the type dealt by that dragon's breath weapon.
         The armor's item level is increased by 15, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
         \parhead{Elvenweave} Elvenweave body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
