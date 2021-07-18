@@ -909,7 +909,6 @@ def debuffs():
                 reflex -= 2;
             }}
             if (slowed && !(immobilized || decelerated)) {{
-                armor -= 2;
                 reflex -= 2;
             }}
 
@@ -938,7 +937,6 @@ def debuffs():
 
             // rank 3 debuffs
             if (decelerated || immobilized) {{
-                armor -= 4;
                 reflex -= 4;
             }}
             if (panicked) {{
