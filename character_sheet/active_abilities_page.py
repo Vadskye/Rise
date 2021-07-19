@@ -323,6 +323,10 @@ def universal_abilities():
             The defense of each creature is equal to the result of its maintain grapple ability. If a creature did not use that ability during the current round, its defense against this ability is 0.
             For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
         """, attack={"accuracy":"", "defense":"Special"}),
+        universal_ability_button("Desperate Exertion", """
+            After you use this ability, you increase your fatigue level by two.
+            You reroll any attack or check you just made and gain a +2 bonus.
+        """),
         universal_ability_button("Dirty Trick", """
             Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the subject suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
             If the subject is at its maximum hit points, this is a brief effect. Otherwise, this effect is a condition.
@@ -364,4 +368,7 @@ def universal_abilities():
             Make a melee attack with a free hand against a creature's Reflex defenses. For each size category by which the target is larger than you, you take a -4 penalty to accuracy.
             On a hit, the subject becomes prone.
          """, attack={"accuracy":"@{accuracy}", "defense":"Ref"}),
+        universal_ability_button("Total Defense", """
+            You gain a +2 bonus to your defenses until the end of the round. Because this ability has the Swift tag, this improves your defenses against attacks made against you during the current phase.
+        """),
     ])
