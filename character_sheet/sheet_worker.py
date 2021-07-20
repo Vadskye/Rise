@@ -262,7 +262,7 @@ def accuracy():
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 1) / 6)) : 0;
             setAttrs({{
                 accuracy: (
-                    level
+                    Math.floor(level / 2)
                     + Math.floor(perception_starting / 2)
                     + {sum_variables(misc)}
                     + cr_mod
@@ -329,7 +329,13 @@ def armor_defense():
             }}
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
-            var before_equipment = level + attribute_modifier + cr_mod + level_scaling + armor_defense_class_bonus;
+            var before_equipment = (
+                Math.floor(level / 2)
+                + attribute_modifier
+                + cr_mod
+                + level_scaling
+                + armor_defense_class_bonus
+            );
             var total = (
                 before_equipment
                 + body_armor_defense_value
@@ -366,7 +372,7 @@ def fortitude():
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
                 fortitude: (
-                    level
+                    Math.floor(level / 2)
                     + constitution_starting
                     + fortitude_class
                     + cr_mod
@@ -399,7 +405,7 @@ def reflex():
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
                 reflex: (
-                    level
+                    Math.floor(level / 2)
                     + dexterity_starting
                     + reflex_class
                     + cr_mod
@@ -432,7 +438,7 @@ def mental():
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
             setAttrs({{
                 mental: (
-                    level
+                    Math.floor(level / 2)
                     + willpower_starting
                     + mental_class
                     + cr_mod

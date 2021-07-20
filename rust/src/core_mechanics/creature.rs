@@ -223,7 +223,7 @@ impl HasAttacks for Creature {
 
     fn calc_accuracy(&self) -> i32 {
         // note implicit floor due to integer storage
-        return self.level + self.get_base_attribute(&Attribute::Perception) / 2;
+        return self.level / 2 + self.get_base_attribute(&Attribute::Perception) / 2;
     }
 
     fn calc_damage_increments(&self, _is_strike: bool) -> i32 {
@@ -252,9 +252,9 @@ impl HasEquipment for Creature {
 impl HasDefenses for Creature {
     fn calc_defense(&self, defense: &defenses::Defense) -> i32 {
         if let Some(a) = defense.associated_attribute() {
-            return self.level + self.get_base_attribute(&a);
+            return self.level / 2 + self.get_base_attribute(&a);
         } else {
-            return self.level;
+            return self.level / 2;
         }
     }
 }

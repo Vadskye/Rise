@@ -201,12 +201,12 @@ def calc_accuracy():
             equation(
                 [
                     underlabel(
-                        "Level",
+                        "Lvl/2",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "accuracy_scaling_display",
-                                "value": "@{level}",
+                                "value": "(floor(@{level}/2))",
                             }
                         ),
                     ),
@@ -788,7 +788,7 @@ def calc_armor():
             equation(
                 [
                     underlabel(
-                        "Level",
+                        "Lvl/2",
                         number_input(
                             {
                                 "disabled": True,
@@ -839,12 +839,12 @@ def calc_fort():
             equation(
                 [
                     underlabel(
-                        "Level",
+                        "Lvl/2",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "fortitude_scaling_display",
-                                "value": "@{level}",
+                                "value": "(floor(@{level}/2))",
                             }
                         ),
                     ),
@@ -883,12 +883,12 @@ def calc_ref():
             equation(
                 [
                     underlabel(
-                        "Level",
+                        "Lvl/2",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "reflex_scaling_display",
-                                "value": "@{level}",
+                                "value": "(floor(@{level}/2))",
                             }
                         ),
                     ),
@@ -927,12 +927,12 @@ def calc_mental():
             equation(
                 [
                     underlabel(
-                        "Level",
+                        "Lvl/2",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "mental_scaling_display",
-                                "value": "@{level}",
+                                "value": "(floor(@{level}/2))",
                             }
                         ),
                     ),
