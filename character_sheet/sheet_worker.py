@@ -45,15 +45,15 @@ def js_wrapper(variables, function_body, boolean_variables=[], string_variables=
     set_variables_string = (
         ";\n    ".join(
             [
-                f'var {stringify_variable_name(var)} = Number(v["{var}"] || 0);'
+                f'var {stringify_variable_name(var)} = Number(v["{var}"] || 0)'
                 for var in variables
             ] +
             [
-                f'var {stringify_variable_name(var)} = v["{var}"] === "on" ? true : false;'
+                f'var {stringify_variable_name(var)} = v["{var}"] === "on" ? true : false'
                 for var in boolean_variables
             ] +
             [
-                f'var {stringify_variable_name(var)} = v["{var}"];'
+                f'var {stringify_variable_name(var)} = v["{var}"]'
                 for var in string_variables
             ]
         )
@@ -121,10 +121,12 @@ def attribute_change(a):
                 : {a}_point_buy;
             starting += {sum_variables(misc)};
             var scaling = 0;
-            if (starting === 1) {{
-                scaling = Math.floor(level / 4);
-            }} else if (starting >= 2) {{
-                scaling = Math.floor((starting-1)*0.5*(level - 1));
+            if (starting >= 2 && starting < 5) {{
+                scaling = Math.floor((starting-1)*0.25*level);
+            }} else if (starting >= 5 && starting < 8) {{
+                scaling = Math.floor((starting-1)*0.25*(level - 1));
+            }} else if (starting >= 8) {{
+                scaling = Math.floor((starting-1)*0.25*(level - 2));
             }}
 
             setAttrs({{
@@ -149,30 +151,20 @@ def set_skill(a, s):
     misc = get_misc_variables(s, 3)
     if a == "other":
         return js_wrapper(
-            ["level", f"{s}_points", "fatigue_penalty", *misc],
+            ["level", "fatigue_penalty", *misc],
             boolean_variables=[
-                f"{s}_class_skill",
+                f"{s}_is_trained",
             ],
             function_body=f"""
-                var pointsModifier = 0;
                 var ranks = 0;
-                var training = '';
 
-                if ({s}_points === 1) {{
-                    ranks = Math.floor(level / 2);
-                    pointsModifier = 1;
-                    training = 'Trained';
-                }} else if (({s}_points >= 3) || (({s}_points === 2) && {s}_class_skill)) {{
-                    ranks = level;
-                    pointsModifier = 3;
-                    training = 'Mastered';
+                if ({s}_is_trained) {{
+                    ranks = 3 + Math.floor(level / 2);
                 }}
 
                 setAttrs({{
-                    {s}_attribute: 0,
-                    {s}_ranks: ranks + pointsModifier,
-                    {s}_total: ranks + pointsModifier + {sum_variables(misc)} - fatigue_penalty,
-                    {s}_training: training,
+                    {s}_ranks: ranks,
+                    {s}_total: ranks + {sum_variables(misc)} - fatigue_penalty,
                 }});
             """,
         )
@@ -182,37 +174,26 @@ def set_skill(a, s):
         return js_wrapper(
             [
                 "level",
-                f"{a}_starting",
-                f"{s}_points",
+                a,
                 "fatigue_penalty",
                 *misc,
                 *(["encumbrance"] if include_encumbrance else []),
             ],
             boolean_variables=[
-                f"{s}_class_skill",
+                f"{s}_is_trained",
             ],
             function_body=f"""
-                var pointsModifier = 0;
                 var ranks = 0;
-                var training = '';
 
-                if ({a}_starting >= 3 && {s}_class_skill) {{
-                    {s}_points += 1;
-                }}
-
-                if ({s}_points === 1) {{
-                    ranks = Math.floor(level / 2) + 1;
-                    training = 'Trained';
-                }} else if (({s}_points >= 3) || (({s}_points === 2) && {s}_class_skill)) {{
-                    ranks = level;
-                    pointsModifier = 3;
-                    training = 'Mastered';
+                if ({s}_is_trained) {{
+                    ranks = 3 + Math.max({a}, Math.floor(level / 2));
+                }} else {{
+                    ranks = Math.floor({a} / 2);
                 }}
 
                 setAttrs({{
-                    {s}_ranks: ranks + pointsModifier,
-                    {s}_total: ranks + pointsModifier + {a}_starting + {sum_variables(misc)} - fatigue_penalty {subtract_encumbrance},
-                    {s}_training: training,
+                    {s}_ranks: ranks,
+                    {s}_total: ranks + {sum_variables(misc)} - fatigue_penalty {subtract_encumbrance},
                 }});
             """,
         )
@@ -500,8 +481,10 @@ def skill_points():
     return js_wrapper(
         ["level", "skill_points_base", "intelligence_starting", *misc],
         f"""
+            let from_int = Math.max(0, intelligence_starting);
             setAttrs({{
-                skill_points: skill_points_base + intelligence_starting * 2 + {sum_variables(misc)}
+                skill_points_intelligence: from_int,
+                skill_points: skill_points_base + from_int + {sum_variables(misc)}
             }});
         """,
     )
@@ -759,17 +742,23 @@ def skill_points_spent():
         skill_name for skills in ATTRIBUTE_SKILLS.values() for skill_name in skills
     ]
     skill_names = [skill_name.lower().replace(" ", "_") for skill_name in skill_names]
-    skill_points_names = [f"{skill_name}_points" for skill_name in skill_names]
+    skill_points_names = [f"{skill_name}_is_trained" for skill_name in skill_names]
 
     return js_wrapper(
-        skill_points_names,
+        [],
         f"""
-            var skill_points_spent = {' + '.join(skill_points_names)};
+            let skill_points_spent = 0;
+            for (let trained of [{', '.join(skill_points_names)}]) {{
+                if (trained) {{
+                    skill_points_spent += 1;
+                }}
+            }}
 
             setAttrs({{
                 skill_points_spent,
             }});
         """,
+        boolean_variables=skill_points_names,
     )
 
 

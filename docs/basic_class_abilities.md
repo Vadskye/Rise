@@ -5,8 +5,8 @@ In addition, each class starts with 24-25 points to spend.
 1 point: 1 tier of armor proficiency
 1 point: each weapon group after the first
 1 point: convert 1 non-armor defense to +1 Armor defense
+1 point: +1 trained skill
 2 points: +1 insight point
-2 points: +3 skill points
 2 points: +1 fatigue tolerance
 2 points: first weapon group
 4 points: +1 attunement point

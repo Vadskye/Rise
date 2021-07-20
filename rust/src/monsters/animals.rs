@@ -22,9 +22,9 @@ struct FullAnimalDefinition {
     name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
-    skill_points: Option<Vec<(Skill, i32)>>,
     size: Size,
     special_attacks: Option<Vec<Attack>>,
+    trained_skills: Option<Vec<Skill>>,
     weapons: Vec<Weapon>,
 }
 
@@ -41,8 +41,8 @@ fn animal(def: FullAnimalDefinition) -> Monster {
         passive_abilities: def.passive_abilities,
         senses: def.senses,
         size: def.size,
-        skill_points: def.skill_points,
         special_attacks: def.special_attacks,
+        trained_skills: def.trained_skills,
         weapons: def.weapons,
 
         // Default values
@@ -73,9 +73,9 @@ pub fn animals() -> Vec<MonsterEntry> {
         name: "Camel".to_string(),
         senses: None,
         size: Size::Medium,
-        skill_points: Some(vec![(Skill::Endurance, 3)]),
         // Camels have a high strength, but they shouldn't deal massive damage
         special_attacks: Some(vec![half_power_bite.clone()]),
+        trained_skills: Some(vec![Skill::Endurance]),
         weapons: vec![Weapon::MonsterBite],
     })));
 
@@ -102,10 +102,10 @@ pub fn animals() -> Vec<MonsterEntry> {
         name: "Baboon".to_string(),
         senses: None,
         size: Size::Medium,
-        skill_points: Some(vec![
-            (Skill::Climb, 3),
-        ]),
         special_attacks: None,
+        trained_skills: Some(vec![
+            Skill::Climb,
+        ]),
         weapons: vec![Weapon::MonsterBite],
     })));
 
@@ -135,8 +135,8 @@ pub fn animals() -> Vec<MonsterEntry> {
         name: "Badger".to_string(),
         senses: Some(vec![Sense::Scent]),
         size: Size::Small,
-        skill_points: Some(vec![(Skill::Endurance, 1)]),
         special_attacks: None,
+        trained_skills: Some(vec![Skill::Endurance]),
         weapons: vec![Weapon::MonsterClaws],
     })));
 
@@ -161,12 +161,12 @@ pub fn animals() -> Vec<MonsterEntry> {
                     name: "Black bear".to_string(),
                     senses: Some(vec![Sense::Scent]),
                     size: Size::Medium,
-                    skill_points: Some(vec![
-                        (Skill::Climb, 3),
-                        (Skill::Endurance, 3),
-                        (Skill::Swim, 1),
-                    ]),
                     special_attacks: None,
+                    trained_skills: Some(vec![
+                        Skill::Climb,
+                        Skill::Endurance,
+                        Skill::Swim,
+                    ]),
                     weapons: vec![Weapon::MonsterBite, Weapon::MonsterClaws],
                 }),
                 animal(FullAnimalDefinition {
@@ -184,12 +184,12 @@ pub fn animals() -> Vec<MonsterEntry> {
                     name: "Brown bear".to_string(),
                     senses: Some(vec![Sense::Scent]),
                     size: Size::Large,
-                    skill_points: Some(vec![
-                        (Skill::Climb, 3),
-                        (Skill::Endurance, 3),
-                        (Skill::Swim, 1),
-                    ]),
                     special_attacks: None,
+                    trained_skills: Some(vec![
+                        Skill::Climb,
+                        Skill::Endurance,
+                        Skill::Swim,
+                    ]),
                     weapons: vec![Weapon::MonsterBite, Weapon::MonsterClaws],
                 }),
             ],
@@ -207,13 +207,13 @@ pub fn animals() -> Vec<MonsterEntry> {
         name: "Cat".to_string(),
         senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
         size: Size::Small,
-        skill_points: Some(vec![
-            (Skill::Awareness, 1),
-            (Skill::Balance, 3),
-            (Skill::Flexibility, 3),
-            (Skill::Stealth, 3),
-        ]),
         special_attacks: None,
+        trained_skills: Some(vec![
+            Skill::Awareness,
+            Skill::Balance,
+            Skill::Flexibility,
+            Skill::Stealth,
+        ]),
         weapons: vec![Weapon::MonsterBite],
     })));
 
@@ -232,8 +232,8 @@ pub fn animals() -> Vec<MonsterEntry> {
                 name: "Wild dog".to_string(),
                 senses: Some(vec![Sense::Scent]),
                 size: Size::Medium,
-                skill_points: Some(vec![(Skill::Awareness, 3)]),
                 special_attacks: None,
+                trained_skills: Some(vec![Skill::Awareness]),
                 weapons: vec![Weapon::MonsterBite],
             }),
             animal(FullAnimalDefinition {
@@ -253,8 +253,8 @@ pub fn animals() -> Vec<MonsterEntry> {
                 name: "Riding dog".to_string(),
                 senses: Some(vec![Sense::Scent]),
                 size: Size::Medium,
-                skill_points: Some(vec![(Skill::Awareness, 3), (Skill::Endurance, 3)]),
                 special_attacks: None,
+                trained_skills: Some(vec![Skill::Awareness, Skill::Endurance]),
                 weapons: vec![Weapon::MonsterBite],
             }),
         ],
@@ -281,7 +281,6 @@ pub fn animals() -> Vec<MonsterEntry> {
         passive_abilities: None,
         senses: Some(vec![Sense::Tremorsense(240), Sense::Tremorsight(60)]),
         size: Size::Large,
-        skill_points: None,
         special_attacks: Some(vec![
             frostweb_spider_bite,
             Attack {
@@ -301,6 +300,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 weapon: None,
             },
         ]),
+        trained_skills: None,
         weapons: vec![Weapon::MonsterBite],
     })));
 
@@ -333,10 +333,10 @@ pub fn animals() -> Vec<MonsterEntry> {
         senses: None,
         name: "Giant Wasp".to_string(),
         size: Size::Large,
-        skill_points: Some(vec![
-            (Skill::Awareness, 3),
-        ]),
         special_attacks: Some(vec![poisonous_stinger]),
+        trained_skills: Some(vec![
+            Skill::Awareness,
+        ]),
         weapons: vec![Weapon::MonsterStinger],
     },
     )));
@@ -361,11 +361,11 @@ pub fn animals() -> Vec<MonsterEntry> {
             name: "Dire Rat".to_string(),
             senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
             size: Size::Small,
-            skill_points: Some(vec![
-                (Skill::Climb, 3),
-                (Skill::Swim, 3),
-            ]),
             special_attacks: None,
+            trained_skills: Some(vec![
+                Skill::Climb,
+                Skill::Swim,
+            ]),
             weapons: vec![Weapon::MonsterBite],
         },
     )));
@@ -381,8 +381,8 @@ pub fn animals() -> Vec<MonsterEntry> {
         passive_abilities: None,
         senses: Some(vec![Sense::Scent]),
         size: Size::Medium,
-        skill_points: None,
         special_attacks: None,
+        trained_skills: None,
         weapons: vec![Weapon::MonsterBite],
     })));
 
@@ -400,7 +400,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         movement_modes: None,
         passive_abilities: None,
         senses: None,
-        skill_points: Some(vec![(Skill::Endurance, 2)]),
+        trained_skills: Some(vec![Skill::Endurance]),
     });
     monsters.push(MonsterEntry::Monster(horse));
 
@@ -417,7 +417,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         movement_modes: None,
         passive_abilities: None,
         senses: None,
-        skill_points: Some(vec![(Skill::Endurance, 2)]),
+        trained_skills: Some(vec![Skill::Endurance]),
     });
     monsters.push(MonsterEntry::Monster(pony));
 
@@ -445,7 +445,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         movement_modes: None,
         passive_abilities: None,
         senses: None,
-        skill_points: None,
+        trained_skills: None,
     });
     monsters.push(MonsterEntry::Monster(roc));
 
@@ -468,7 +468,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         movement_modes: Some(vec![MovementMode::Swim(SpeedCategory::Normal)]),
         passive_abilities: None,
         senses: None,
-        skill_points: Some(vec![(Skill::Swim, 2)]),
+        trained_skills: Some(vec![Skill::Swim]),
     });
     monsters.push(MonsterEntry::Monster(vampire_eel));
 
@@ -492,7 +492,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         movement_modes: None,
         passive_abilities: None,
         senses: Some(vec![Sense::Scent]),
-        skill_points: None,
+        trained_skills: None,
     });
     monsters.push(MonsterEntry::Monster(dire_wolf));
 
@@ -512,7 +512,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         )]),
         passive_abilities: None,
         senses: None,
-        skill_points: Some(vec![(Skill::Endurance, 2)]),
+        trained_skills: Some(vec![Skill::Endurance]),
     })));
 
     let mut bombardier_beetle = animal(FullAnimalDefinition {
@@ -537,7 +537,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         movement_modes: None,
         passive_abilities: None,
         senses: None,
-        skill_points: Some(vec![(Skill::Endurance, 2)]),
+        trained_skills: Some(vec![Skill::Endurance]),
     });
     monsters.push(MonsterEntry::Monster(bombardier_beetle));
 

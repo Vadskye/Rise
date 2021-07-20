@@ -465,7 +465,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
          You become \glossterm{proficient} with the unarmed weapons \glossterm{weapon group} (see \pcref{Weapon Groups}).
-        In addition, you gain a \plus2d damage bonus with weapons that have the Unarmed weapon tag (see \pcref{Unarmed}).
+        In addition, you gain a \plus2d damage bonus with weapons that have the Unarmed weapon tag (see \pcref{Weapon Tags}).
         For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
 

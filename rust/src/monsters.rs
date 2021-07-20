@@ -22,7 +22,6 @@ use crate::equipment::{weapons, HasEquipment};
 use crate::latex_formatting;
 use crate::monsters::knowledge::Knowledge;
 use crate::skills::{HasSkills, Skill, SkillCategory};
-use std::collections::HashMap;
 use titlecase::titlecase;
 
 pub struct Monster {
@@ -49,7 +48,7 @@ pub struct FullMonsterDefinition {
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
     size: sizes::Size,
-    skill_points: Option<Vec<(Skill, i32)>>,
+    trained_skills: Option<Vec<Skill>>,
     special_attacks: Option<Vec<attacks::Attack>>,
     weapons: Vec<weapons::Weapon>,
 }
@@ -91,9 +90,9 @@ impl Monster {
                 creature.add_sense(sense);
             }
         }
-        if let Some(skill_points) = def.skill_points {
-            for (skill, points) in skill_points {
-                creature.set_skill_points(skill, points);
+        if let Some(trained_skills) = def.trained_skills {
+            for skill in trained_skills {
+                creature.set_skill_trained(skill, true);
             }
         }
         if let Some(special_attacks) = def.special_attacks {
@@ -283,12 +282,12 @@ impl HasResources for Monster {
 }
 
 impl HasSkills for Monster {
-    fn set_skill_points(&mut self, skill: Skill, value: i32) {
-        return self.creature.set_skill_points(skill, value);
+    fn set_skill_trained(&mut self, skill: Skill, trained: bool) {
+        return self.creature.set_skill_trained(skill, trained);
     }
 
-    fn get_skill_points(&self, skill: &Skill) -> i32 {
-        return self.creature.get_skill_points(skill);
+    fn is_skill_trained(&self, skill: &Skill) -> bool {
+        return self.creature.is_skill_trained(skill);
     }
 
     fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
@@ -425,7 +424,7 @@ impl Monster {
     fn latex_skill_modifiers_from_category(&self, skill_category: &SkillCategory) -> Vec<String> {
         return Skill::all_from_skill_category(skill_category)
             .iter()
-            .filter(|s| self.get_skill_points(s) > 0)
+            .filter(|s| self.is_skill_trained(s))
             .map(|s| {
                 format!(
                     "{}~{}",

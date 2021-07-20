@@ -22,7 +22,7 @@ pub struct Creature {
     pub passive_abilities: Option<Vec<PassiveAbility>>,
     pub senses: Option<Vec<Sense>>,
     pub size: sizes::Size,
-    pub skill_points: Option<HashMap<Skill, i32>>,
+    pub skill_training: Option<HashMap<Skill, bool>>,
     pub special_attacks: Option<Vec<attacks::Attack>>,
     pub special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     pub weapons: Vec<weapons::Weapon>,
@@ -39,7 +39,7 @@ impl Creature {
             passive_abilities: None,
             senses: None,
             size: sizes::Size::Medium,
-            skill_points: None,
+            skill_training: None,
             special_attacks: None,
             special_defense_modifiers: None,
             weapons: vec![],
@@ -277,8 +277,8 @@ impl HasResources for Creature {
                     + self.get_base_attribute(&Attribute::Willpower)
             }
             resources::Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
-            resources::Resource::SkillPoint => {
-                (self.get_base_attribute(&Attribute::Intelligence)) * 2
+            resources::Resource::TrainedSkill => {
+                self.get_base_attribute(&Attribute::Intelligence)
             }
         }
     }
@@ -288,40 +288,37 @@ impl HasResources for Creature {
 impl HasCreatureMechanics for Creature {}
 
 impl HasSkills for Creature {
-    fn set_skill_points(&mut self, skill: Skill, value: i32) {
-        if self.skill_points.is_none() {
-            self.skill_points = Some(HashMap::new());
+    fn set_skill_trained(&mut self, skill: Skill, trained: bool) {
+        if self.skill_training.is_none() {
+            self.skill_training = Some(HashMap::new());
         }
-        let ref mut skill_points = self.skill_points.as_mut().unwrap();
-        skill_points.insert(skill, value);
+        let ref mut skill_training = self.skill_training.as_mut().unwrap();
+        skill_training.insert(skill, trained);
     }
 
-    fn get_skill_points(&self, skill: &Skill) -> i32 {
-        if let Some(ref skill_points) = self.skill_points {
-            if let Some(p) = skill_points.get(skill) {
+    fn is_skill_trained(&self, skill: &Skill) -> bool {
+        if let Some(ref skill_training) = self.skill_training {
+            if let Some(p) = skill_training.get(skill) {
                 return *p;
             } else {
-                return 0;
+                return false;
             }
         } else {
-            return 0;
+            return false;
         }
     }
 
     fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
-        let attribute_modifier = if let Some(ref a) = skill.attribute() {
-            self.get_base_attribute(a)
+        let attribute = if let Some(ref a) = skill.attribute() {
+            self.calc_total_attribute(a)
         } else {
             0
         };
-        let skill_points = self.get_skill_points(skill);
-        let level_modifier = match skill_points {
-            0 => 0,
-            1 => 1 + self.level / 2,
-            2 => 2 + self.level,
-            3 => 2 + self.level,
-            _ => panic!("Invalid number of skill points {}", skill_points),
-        };
-        return level_modifier + attribute_modifier;
+        let trained = self.is_skill_trained(skill);
+        if trained {
+            return 3 + max(self.level / 2, attribute);
+        } else {
+            return attribute / 2;
+        }
     }
 }

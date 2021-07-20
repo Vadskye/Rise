@@ -32,10 +32,10 @@ struct FullAberrationDefinition {
     name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
-    skill_points: Option<Vec<(Skill, i32)>>,
     size: Size,
     special_attacks: Option<Vec<Attack>>,
     special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
+    trained_skills: Option<Vec<Skill>>,
     weapons: Vec<Weapon>,
 }
 
@@ -53,9 +53,9 @@ fn aberration(def: FullAberrationDefinition) -> Monster {
         passive_abilities: def.passive_abilities,
         senses: def.senses,
         size: def.size,
-        skill_points: def.skill_points,
         special_attacks: def.special_attacks,
         special_defense_modifiers: def.special_defense_modifiers,
+        trained_skills: def.trained_skills,
         weapons: def.weapons,
 
         // Default values
@@ -128,11 +128,6 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         ]),
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
         size: Size::Huge,
-        skill_points: Some(vec![
-            (Skill::Endurance, 3),
-            (Skill::Spellsense, 3),
-            (Skill::Swim, 3),
-        ]),
         special_attacks: Some(vec![
             aboleth_slam,
             // Large enemies-only cone is a rank 4 effect
@@ -187,6 +182,11 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             },
         ]),
         special_defense_modifiers: None,
+        trained_skills: Some(vec![
+            Skill::Endurance,
+            Skill::Spellsense,
+            Skill::Swim,
+        ]),
         weapons: vec![Weapon::Slam],
     })));
 
@@ -211,11 +211,6 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         passive_abilities: None,
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
         size: Size::Huge,
-        skill_points: Some(vec![
-            (Skill::Endurance, 3),
-            (Skill::Spellsense, 3),
-            (Skill::Swim, 3),
-        ]),
         special_attacks: Some(vec![
             Attack {
                 accuracy: 0,
@@ -238,6 +233,11 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             },
         ]),
         special_defense_modifiers: Some(vec![SpecialDefenseModifier::immune_debuff(Debuff::Prone)]),
+        trained_skills: Some(vec![
+            Skill::Endurance,
+            Skill::Spellsense,
+            Skill::Swim,
+        ]),
         // TODO: make attacks sweeping
         weapons: vec![Weapon::MonsterBite],
     })));

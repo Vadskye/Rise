@@ -838,8 +838,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{mundane} abilities, such as normal weapon attacks, equal to your Strength (see \pcref{Power}).
                 \item You reduce your total \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your base Strength (see \pcref{Encumbrance}).
                 \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Strength (see \pcref{Fatigue}).
-                \item You apply your base Strength as a bonus or penalty to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
-                \item If your base Strength is at least 3, you are \glossterm{trained} with your Strength-based \glossterm{class skills} (see \pcref{Class Skills}.
+                \item Your Strength affects Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
             \end{itemize}
         }
 
@@ -851,8 +850,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 \item You gain a bonus (or penalty) to your Reflex defense equal to your base Dexterity.
                 \item You gain a bonus (or penalty) to your Armor defense equal to your base Dexterity.
                     This bonus can be reduced if you wear medium or heavy armor (see \tref{Armor and Shields}).
-                \item You apply your base Dexterity as a bonus or penalty to Dexterity-based \glossterm{skills}: Balance, Flexibility, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
-                \item If your base Dexterity is at least 3, you are automatically \glossterm{trained} with your Dexterity-based \glossterm{class skills} (see \pcref{Class Skills}.
+                \item Your Dexterity affects Dexterity-based \glossterm{skills}: Balance, Flexibility, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
             \end{itemize}
         }
 
@@ -865,8 +863,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 \item You gain a bonus (or penalty) to your \glossterm{damage resistance} equal to half your Constitution (see \pcref{Damage Resistance}).
                 \item You gain a bonus (or penalty) to your Fortitude defense equal to your base Constitution.
                 \item You gain a bonus (or penalty) to your Armor defense equal to half your base Constitution.
-                \item You apply your base Constitution as a bonus or penalty to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
-                \item If your base Constitution is at least 3, you are automatically \glossterm{trained} with your Constitution-based \glossterm{class skills} (see \pcref{Class Skills}.
+                \item Your Constitution affects the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
             \end{itemize}
         }
 
@@ -876,10 +873,9 @@ It defines how attributes work and explains how to make attacks in combat.
             It has the following effects:
 
             \begin{itemize}
-                \item You gain a bonus (or penalty) to \glossterm{skill points} equal to twice your base Intelligence (see \pcref{Skill Points}).
+                \item If your base Intelligence is positive, you become \glossterm{trained} in a number of skills equal to your Intelligence (see \pcref{Trained Skills}).
                 \item You gain a bonus (or penalty) to \glossterm{insight points} equal to your base Intelligence (see \pcref{Insight Points}).
-                \item You apply your base Intelligence as a bonus or penalty to Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Knowledge, Linguistics, and Medicine (see \pcref{Skills}).
-                \item If your base Intelligence is at least 3, you are automatically \glossterm{trained} with your Intelligence-based \glossterm{class skills} (see \pcref{Class Skills}.
+                \item Your Intelligence affects Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Knowledge, Linguistics, and Medicine (see \pcref{Skills}).
             \end{itemize}
 
             \par An animal has an Intelligence score of \minus6 or lower.
@@ -891,10 +887,8 @@ It defines how attributes work and explains how to make attacks in combat.
             Perception describes your ability to observe and be aware of your surroundings.
             It has the following effects:
             \begin{itemize}
-                \item You apply your Perception as a bonus or penalty to Perception-based \glossterm{skills}: Awareness, Creature Handling, Social Insight, Spellsense, and Survival (see \pcref{Skills}).
-                \item If your base Perception is at least 3, you are automatically \glossterm{trained} with your Perception-based \glossterm{class skills} (see \pcref{Class Skills}.
-                \item If your base Perception is negative, you take a accuracy penalty with all attacks equal to half your base Perception.
-                \item You apply half your base Perception as a bonus or penalty to \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
+                \item Your Perception affects Perception-based \glossterm{skills}: Awareness, Creature Handling, Social Insight, Spellsense, and Survival (see \pcref{Skills}).
+                \item You gain a bonus (or penalty) to your \glossterm{accuracy} with all attacks equal to half your base Perception (see \pcref{Accuracy}).
             \end{itemize}
         }
 
@@ -970,8 +964,8 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Attribute Penalties}\label{Attribute Penalties}
             Regardless of how you determine your attributes, you can voluntarily take penalties to your attributes.
-            If you reduce an attribute to a total of \minus1, you gain an additional \glossterm{skill point}.
-            If you reduce an attribute to a total of \minus2, you instead gain an additional \glossterm{insight point}.
+            If you reduce an attribute to a total of \minus1, you become \glossterm{trained} in an additional skill (see \pcref{Trained Skills}).
+            If you reduce an attribute to a total of \minus2, you instead gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
             You cannot gain these benefits from reducing more than two attributes below 0 in this way.
 
     \subsection{Extraordinary Attributes}
@@ -984,7 +978,7 @@ It defines how attributes work and explains how to make attacks in combat.
 \section{Resources}\label{Resources}
 
     Characters have many resources that they can expend.
-    Insight points and skill points are spent during the character creation and leveling process, while all other resources are spent throughout the in-game time.
+    Insight points and trained skills are allocated during the character creation and leveling process, while all other resources are spent throughout the in-game time.
     Many resources can be regained by resting (see \pcref{Resting}).
 
     \subsection{Attunement Points}\label{Attunement Points}
@@ -1065,35 +1059,28 @@ It defines how attributes work and explains how to make attacks in combat.
         Any character can spend insight points in any of the following ways.
         \begin{itemize}
             \item You can spend two \glossterm{insight points} to become a \glossterm{multiclass} character (see \pcref{Multiclass Characters}).
-            \item You can spend an \glossterm{insight point} to gain two \glossterm{skill points}.
+            \item You can spend an \glossterm{insight point} to gain an additional \glossterm{trained skill}.
             \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{usage class} of armor (light, medium, or heavy).
                 You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
             \item You can spend an \glossterm{insight point} to gain proficiency in an additional \glossterm{weapon group}.
             \item You can spend two \glossterm{insight points} to gain proficiency with \glossterm{exotic weapons} from a single \glossterm{weapon group} you are already proficient with.
-            \item You can spend an \glossterm{insight point} learn two \glossterm{common languages} or one \glossterm{rare language} (see \pcref{Communication and Languages}).
+            \item You can spend an \glossterm{insight point} to learn two \glossterm{common languages} or one \glossterm{rare language} (see \pcref{Communication and Languages}).
         \end{itemize}
         In addition, every class has at least one way to spend \glossterm{insight points} to learn additional abilities.
 
-    \subsection{Skill Points}\label{Skill Points}
-        You can spend \glossterm{skill points} to gain training in skills (see \pcref{Skills}).
-        Your \glossterm{class} gives you a certain number of skill points, and you gain a bonus (or penalty) to that number of skill points equal to twice your base Intelligence.
-        You can spend \glossterm{insight points} to gain skill points at a rate of two skill points per insight point (see \pcref{Insight Points}).
-        In addition, some abilities can grant additional skill points.
+    \subsection{Trained Skills}\label{Trained Skills}
+        You are \glossterm{trained} in certain skills (see \pcref{Skills}).
+        Your \glossterm{class} gives you a certain number of trained skills from among the \glossterm{class skills} for that class.
+        The class skills for each class are summarized in \tref{Class Skills}.
 
-        \subsubsection{Skill Training}\label{Skill Training}
+        There are other ways to become trained in skills that are not part of your class.
+        If your base Intelligence is positive, you gain additional trained skills equal to your base Intelligence.
+        You can also spend \glossterm{insight points} to gain one trained skill per insight point (see \pcref{Insight Points}).
+        Some abilities can grant additional trained skills.
 
-        There are three levels of training in skills, described below.
-        Acquiring more training in a skill costs more skill points.
-        \begin{itemize}
-            \itemhead{Untrained} Becoming untrained in a skill costs no skill points.
-                You are untrained in all skills by default.
-                Being untrained in a skill grants no bonus to the skill.
-            \itemhead{Trained} Becoming trained in a skill costs one skill point.
-                In addition, if the base value for one of your attributes is at least 3, you become trained in all of your \glossterm{class skills} associated with that attribute.
-                Being trained in a skill gives you a bonus with the skill equal to 2 \add one quarter of your level.
-            \itemhead{Mastered} Mastering a skill costs three skill points, or two skill points if the skill is a \glossterm{class skill} for you.
-                Being mastered in a skill gives you a bonus with the skill equal to 3 \add half your level.
-        \end{itemize}
+        If you are untrained in a skill, your bonus with that skill is equal to half of its associated attribute (if any).
+        If you are trained in a skill, your bonus with that skill is equal to 3 \add the higher of its associated attribute (if any) and half your level.
+        Many abilities can increase or decrease your bonus with particular skills.
 
 \section{Character Statistics}
     This section explains how character statistics, such as how strong you are or how accurate your attacks are, should be calculated.
@@ -2182,9 +2169,9 @@ It defines how attributes work and explains how to make attacks in combat.
         When you gain a level, the following things happen:
         \begin{itemize}
             \item Your \glossterm{hit points} and \glossterm{damage resistance} increase (see \tref{Character Advancement}).
-            \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
-            \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
-            \item Some of your \glossterm{attributes} increase (see \tref{Increasing Attributes With Level})
-            \item Some of your skill modifiers increase 1 (see \pcref{Skill Training})
+            \item Your \glossterm{attributes} may increase (see \tref{Increasing Attributes With Level})
+            \item Your bonus with \glossterm{trained} skills may increase (see \pcref{Trained Skills})
+            \item If the level is even, your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
+            \item If the level is even, all of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
         \end{itemize}

@@ -495,7 +495,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         
         You gain an ability based on the type of whispers you hear with your \textit{whispers of the lost} ability.
         {
-            \subcf{Mentoring Whispers} You gain two additional \glossterm{skill points}.
+            \subcf{Mentoring Whispers} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
 
             \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you \glossterm{briefly} gain a \plus1 bonus to \glossterm{accuracy} against that creature.
             As normal, this bonus does not stack with itself, even if you miss the same creature multiple times.

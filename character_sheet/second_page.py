@@ -704,7 +704,7 @@ def calc_defenses():
 def calc_skill_points():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Skill Points"),
+            div({"class": "calc-header"}, "Trained Skills"),
             equation(
                 [
                     underlabel(
@@ -717,12 +717,12 @@ def calc_skill_points():
                     ),
                     plus(),
                     underlabel(
-                        "2 * (Int)",
+                        "(Int)",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "skill_points_intelligence",
-                                "value": "(@{intelligence_starting} * 2)",
+                                "name": "skill_points_intelligence_display",
+                                "value": "(@{skill_points_intelligence})",
                             }
                         ),
                     ),
