@@ -835,7 +835,7 @@ It defines how attributes work and explains how to make attacks in combat.
             It has the following effects:
             \begin{itemize}
                 \item Strength determines how much you can carry (see \tref{Weight Limits by Strength}).
-                \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{mundane} abilities, such as normal weapon attacks, equal to half your Strength (see \pcref{Power}).
+                \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{mundane} abilities, such as normal weapon attacks, equal to your Strength (see \pcref{Power}).
                 \item You reduce your total \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your base Strength (see \pcref{Encumbrance}).
                 \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Strength (see \pcref{Fatigue}).
                 \item You apply your base Strength as a bonus or penalty to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
@@ -903,7 +903,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Willpower represents your ability to endure mental hardships.
             It has the following effects:
             \begin{itemize}
-                \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{magical} abilities, such as spells, equal to half your Willpower (see \pcref{Power}).
+                \item You gain a bonus (or penalty) to your \glossterm{power} with \glossterm{magical} abilities, such as spells, equal to your Willpower (see \pcref{Power}).
                 \item You gain a bonus (or penalty) to your Mental defense equal to your base Willpower.
                 \item You gain a bonus (or penalty) to your \glossterm{fatigue tolerance} equal to your base Willpower (see \pcref{Fatigue}).
             \end{itemize}
@@ -919,15 +919,14 @@ It defines how attributes work and explains how to make attacks in combat.
         \begin{dtable}
             \lcaption{Increasing Attributes With Level}
             \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Base Attribute} & \tb{Bonus}                                                               \\
-                0 or lower          & 0                                                                        \\
-                1                   & \plus1 at 4th level and every 4 levels thereafter                        \\
-                2                   & \plus1 at every even level                                               \\
-                3                   & \plus1 per level after 1st                                               \\
-                4                   & \plus1 per level after 1st, and an additional \plus1 at every even level \\
-                5                   & \plus2 per level after 1st                                               \\
-                6                   & \plus2 per level after 1st, and an additional \plus1 at every even level \\
-            \end{dtabularx}
+                \tb{Base Attribute} & \tb{Total Attribute}        \\
+                0 or lower          & 0                           \\
+                1                   & 1                           \\
+                2                   & 1 \add one quarter level    \\
+                3                   & 3 \add half level           \\
+                4                   & 4 \add three-quarters level \\
+                5                   & 4 \add level                \\
+            \end{dtabularx} 
         \end{dtable}
 
     \subsection{Determining Attributes}
@@ -959,14 +958,13 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{dtable}
                 \lcaption{Attribute Score Point Costs}
                 \begin{dtabularx}{\columnwidth}{X X l}
-                    \tb{Base Attribute Score} & \tb{Total Attribute Score}        & \tb{Cumulative Point Cost} \tableheaderrule
-                    0                         & 0                                 & 0      \\
-                    1                         & 1 \add one quarter level          & 1      \\
-                    2                         & 1 \add half level                 & 2      \\
-                    3                         & 2 \add level                      & 4      \\
-                    4                         & 3 \add one and a half times level & 6      \\
-                    5                         & 3 \add twice level                & \tdash \\
-                    6                         & 4 \add two and a half times level & \tdash \\
+                    \tb{Cumulative Point Cost} & \tb{Base Attribute} & \tb{Total Attribute}        \tableheaderrule
+                    0                          & 0                         & 0                           \\
+                    1                          & 1                         & 1                           \\
+                    2                          & 2                         & 1 \add one quarter level    \\
+                    4                          & 3                         & 3 \add half level           \\
+                    6                          & 4                         & 4 \add three-quarters level \\
+                    \tdash                     & 5                         & 4 \add level                \\
                 \end{dtabularx}
             \end{dtable}
 
@@ -977,11 +975,11 @@ It defines how attributes work and explains how to make attacks in combat.
             You cannot gain these benefits from reducing more than two attributes below 0 in this way.
 
     \subsection{Extraordinary Attributes}
-        Some abilities can increase your base attributes above 4.
-        For each point of base attribute beyond 4, you increase your current attribute by half your level.
+        Some abilities can increase your base attributes above 5.
+        For each point of base attribute beyond 5, you increase your total attribute by one quarter of your level.
 
-        For example, a 20th level half-orc cleric with the Strength domain who spent 6 points on their base Strength would have a total base Strength of 6.
-        Their total Strength would be equal to 4 \add two and a half times their level, for a total of 54.
+        For example, a 20th level character might have a total base Strength of 6.
+        Their total Strength would be equal to 4 \add one and a half times their level, for a total of 34.
 
 \section{Resources}\label{Resources}
 
@@ -1117,10 +1115,10 @@ It defines how attributes work and explains how to make attacks in combat.
         Some abilities specify an unusual method of determining your power with them in their descriptions.
 
         \parhead{Magical Abilities}
-        Your power with magical abilities is normally equal to half your Willpower.
+        Your power with magical abilities is normally equal to your Willpower.
 
         \parhead{Mundane Abilities}
-        Your power with mundane abilities is normally equal to half your Strength.
+        Your power with mundane abilities is normally equal to your Strength.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
@@ -1672,7 +1670,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Choose either one creature within your \glossterm{reach} or all creatures grappling you (see \pcref{Grappling}).
 
             Make a melee attack with a free hand against both the Fortitude defense and total Strength of each target.
-            Your \glossterm{accuracy} with this attack is equal to half your Strength.
+            Your \glossterm{accuracy} with this attack is equal to your Strength.
             If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
 
             On a hit, you can move up to half your movement speed in a straight line, \glossterm{pushing} each subject as you move.
