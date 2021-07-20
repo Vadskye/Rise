@@ -609,7 +609,6 @@ def magical_power():
     return js_wrapper(
         ["willpower", "level", "challenge_rating", *misc],
         f"""
-            var willpower_power_scaling = Math.floor(willpower / 2);
             var level_scaling = challenge_rating
                 ? {{
                     0: 0,
@@ -625,11 +624,10 @@ def magical_power():
                 : 0;
             setAttrs({{
                 magical_power: (
-                    willpower_power_scaling
+                    willpower
                     + level_scaling
                     + {sum_variables(misc)}
                 ),
-                willpower_power_scaling,
             }});
         """,
     )
@@ -640,7 +638,6 @@ def mundane_power():
     return js_wrapper(
         ["strength", "level", "challenge_rating", *misc],
         f"""
-            var strength_power_scaling = Math.floor(strength / 2);
             var level_scaling = challenge_rating
                 ? {{
                     0: 0,
@@ -656,11 +653,10 @@ def mundane_power():
                 : 0;
             setAttrs({{
                 mundane_power: (
-                    strength_power_scaling
+                    strength
                     + level_scaling
                     + {sum_variables(misc)}
                 ),
-                strength_power_scaling,
             }});
         """,
     )
