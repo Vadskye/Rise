@@ -124,12 +124,12 @@ impl HasResources for Character {
 }
 
 impl HasSkills for Character {
-    fn set_skill_points(&mut self, skill: Skill, value: i32) {
-        return self.creature.set_skill_points(skill, value);
+    fn set_skill_trained(&mut self, skill: Skill, trained: bool) {
+        return self.creature.set_skill_trained(skill, trained);
     }
 
-    fn get_skill_points(&self, skill: &Skill) -> i32 {
-        return self.creature.get_skill_points(skill);
+    fn is_skill_trained(&self, skill: &Skill) -> bool {
+        return self.creature.is_skill_trained(skill);
     }
 
     fn calc_skill_modifier(&self, skill: &Skill) -> i32 {

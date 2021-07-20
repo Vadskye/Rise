@@ -37,7 +37,7 @@ def calc_skills(destination):
             [
                 div({"class": "tab-explanation"}, """
                     This tab is used to track your skills.
-                    On the left side, you can spend skill points and determine your level of training in each skill.
+                    On the left side, you can indicate your level of training in each skill.
                     On the right side, you can add custom bonuses or penalties to each skill to determine your total skill modifier.
                 """),
                 *[
@@ -47,9 +47,9 @@ def calc_skills(destination):
                 flex_row(
                     {"class": "skill-points"},
                     [
-                        div({"class": "skill-points-label"}, "Skill Points"),
+                        div({"class": "skill-points-label"}, "Trained Skills"),
                         underlabel(
-                            "Spent",
+                            "Current",
                             number_input(
                                 {
                                     "disabled": True,
@@ -60,7 +60,7 @@ def calc_skills(destination):
                         ),
                         span({"class": "equation-glue"}, "/"),
                         underlabel(
-                            "Total",
+                            "Max",
                             number_input(
                                 {
                                     "disabled": True,
@@ -107,14 +107,6 @@ def calc_skill(skill_name, attribute=None):
         [
             flex_row({"class": "skill-points-row"}, [
                 underlabel(
-                    "Points",
-                    number_input(
-                        {
-                            "name": skill_parsable + '_points',
-                        }
-                    ),
-                ),
-                underlabel(
                     "Class?",
                     checkbox(
                         {
@@ -124,13 +116,11 @@ def calc_skill(skill_name, attribute=None):
                     ),
                 ),
                 underlabel(
-                    "Training level",
-                    text_input(
+                    "Trained?",
+                    checkbox(
                         {
-                            "class": "skill-training",
-                            "disabled": True,
-                            "name": f"${skill_parsable}_training_display",
-                            "value": "@{" + skill_parsable + "_training}",
+                            "class": "is-class-skill",
+                            "name": skill_parsable + "_is_trained",
                         }
                     ),
                 ),
@@ -158,19 +148,6 @@ def calc_skill(skill_name, attribute=None):
                             }
                         ),
                     ),
-                    *([] if attribute == "other" else [
-                        plus(),
-                        underlabel(
-                            f"({attribute_shorthand})",
-                            number_input(
-                                {
-                                    "disabled": True,
-                                    "name": f"{skill_parsable}_attribute",
-                                    "value": f"@{{{attribute}_starting}}",
-                                }
-                            ),
-                        ),
-                    ]),
                     plus(),
                     equation_misc_repeat(skill_parsable, 3),
                 ],

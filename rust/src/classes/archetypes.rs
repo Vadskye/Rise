@@ -686,7 +686,7 @@ impl ClassArchetype {
                 \parhead{Attributes} 1 Str, 0 Dex, 2 Con, 3 Int, 2 Per, 1 Wil.
                 \parhead{Class} Cleric.
                 \parhead{Archetypes} Preacher first, Divine Magic second, Domain Mastery third.
-                \parhead{Insight Points} 1 point for heavy armor, 2 points for additional skill points, 3 points for additional spells known.
+                \parhead{Insight Points} 1 point for heavy armor, 2 points for additional trained skills, 3 points for additional spells known.
                 \parhead{Skills} Awareness (M), Deduction (T), Intimidate (M), Knowledge (arcana, local, religion, planes) (M), Linguistics (M), Medicine (M), Persuasion (M), Social Insight (M), Spellsense (M)
                 \parhead{Weapon Group} Headed weapons
                 \parhead{Languages} Common, Draconic, Elven, Gnome.

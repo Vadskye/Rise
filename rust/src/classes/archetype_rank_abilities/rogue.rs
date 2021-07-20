@@ -124,7 +124,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain two additional skill points.
+                You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                 In addition, you gain all Knowledge skills as \glossterm{class skills}.
             ",
         },
@@ -651,10 +651,9 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-         You gain two additional skill points.
-        In addition, you gain a \plus1 bonus to all skills.
-
-                ",
+                You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                In addition, you gain a \plus1 bonus to all skills.
+            ",
         },
         RankAbility {
             name: "Greater Dabbler",

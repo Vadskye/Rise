@@ -39,7 +39,7 @@ fn generate_latex_resources(class: &classes::Class) -> String {
             You have the following \\glossterm<resources>:
             \\begin<itemize>
                 \\item {insight_points}, which you can spend to gain additional abilities or proficiencies (see \\pcref<Insight Points>).
-                \\item {skill_points}, which you can spend to learn skills (see \\pcref<Skills>).
+                \\item {trained_skills} from among your \\glossterm<class skills> (see \\pcref<Skills>).
                 \\item {attunement_points}, which you can use to attune to items and abilities that affect you (see \\pcref<Attunement Points>).
                 \\item A \\plus{fatigue_tolerance} bonus to your \\glossterm<fatigue tolerance>, which makes it easier for you to use powerful abilities that fatigue you (see \\pcref<Fatigue>).
             \\end<itemize>
@@ -60,11 +60,11 @@ fn generate_latex_resources(class: &classes::Class) -> String {
             )
         ),
         shorthand_name = class.shorthand_name(),
-        skill_points = latex_formatting::uppercase_first_letter(&
+        trained_skills = latex_formatting::uppercase_first_letter(&
             generate_labeled_english_number(
-                class.skill_points(),
-                "\\glossterm<skill point>",
-                "\\glossterm<skill points>",
+                class.trained_skills(),
+                "\\glossterm<trained skill>",
+                "\\glossterm<trained skills>",
             )
         ),
     );

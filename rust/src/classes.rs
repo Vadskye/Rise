@@ -405,7 +405,7 @@ impl Class {
             Resource::AttunementPoint => self.attunement_points(),
             Resource::FatigueTolerance => self.fatigue_tolerance(),
             Resource::InsightPoint => self.insight_points(),
-            Resource::SkillPoint => self.skill_points(),
+            Resource::TrainedSkill => self.trained_skills(),
         }
     }
 
@@ -425,19 +425,19 @@ impl Class {
         }
     }
 
-    pub fn skill_points(&self) -> i32 {
+    pub fn trained_skills(&self) -> i32 {
         match self {
-            Self::Barbarian => 9,
-            Self::Cleric => 6,
-            Self::Druid => 9,
-            Self::Fighter => 6,
-            Self::Monk => 12,
-            Self::Paladin => 6,
-            Self::Ranger => 9,
-            Self::Rogue => 12,
-            Self::Sorcerer => 6,
-            Self::Warlock => 6,
-            Self::Wizard => 9,
+            Self::Barbarian => 5,
+            Self::Cleric => 3,
+            Self::Druid => 5,
+            Self::Fighter => 3,
+            Self::Monk => 7,
+            Self::Paladin => 3,
+            Self::Ranger => 5,
+            Self::Rogue => 7,
+            Self::Sorcerer => 3,
+            Self::Warlock => 3,
+            Self::Wizard => 5,
         }
     }
 
@@ -560,7 +560,7 @@ pub struct ClassResources {
     pub defenses: ClassDefenseBonuses,
     pub fatigue_tolerance: i32,
     pub insight_points: i32,
-    pub skill_points: i32,
+    pub trained_skills: i32,
 }
 
 // LaTeX class generation
@@ -984,7 +984,7 @@ impl Class {
                     \subsubsection{Knowledge}
                         If you choose this domain, you add all Knowledge skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain two skill points.
+                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to all defenses.
                         \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
                         \begin{instantability}{Share Knowledge}
@@ -1059,7 +1059,7 @@ impl Class {
                     \subsubsection{Strength}
                         If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain two skill points.
+                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus4 bonus to your Strength for the purpose of checks and determining your carrying capacity.
                         \parhead{Essence} You can use the \textit{divine strength} ability as a \glossterm{minor action}.
                         \begin{attuneability}{Divine Strength}
@@ -1073,7 +1073,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Knowledge (geography), Survival, and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain two skill points.
+                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
                         \parhead{Essence} You can use the \textit{dimensional travel} ability as a standard action.
                         \begin{instantability}{Dimensional Travel}
@@ -1095,7 +1095,7 @@ impl Class {
                     \subsubsection{Trickery}
                         If you choose this domain, you add the Deception, Disguise, and Stealth skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain two skill points.
+                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
                         \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
                         \begin{durationability}{Compel Belief}
@@ -1154,7 +1154,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain two skill points.
+                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         % TODO: clarify whether you can have this and the druid ability
                         \parhead{Aspect} This ability functions like the \textit{wild aspect} druid ability from the Shifter archetype (see \pcref{Shifter}), except that you cannot spend \glossterm{insight points} to learn additional wild aspects.
                         \parhead{Essence} You learn an additional \textit{wild aspect}.

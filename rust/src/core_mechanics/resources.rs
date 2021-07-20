@@ -6,13 +6,13 @@ pub enum Resource {
     AttunementPoint,
     FatigueTolerance,
     InsightPoint,
-    SkillPoint,
+    TrainedSkill,
 }
 
 pub static AP: &Resource = &Resource::AttunementPoint;
 pub static FT: &Resource = &Resource::FatigueTolerance;
 pub static IP: &Resource = &Resource::InsightPoint;
-pub static SP: &Resource = &Resource::SkillPoint;
+pub static SP: &Resource = &Resource::TrainedSkill;
 
 impl Resource {
     pub fn name(&self) -> &str {
@@ -20,7 +20,7 @@ impl Resource {
             Self::AttunementPoint => "attunement point",
             Self::FatigueTolerance => "fatigue tolerance",
             Self::InsightPoint => "insight point",
-            Self::SkillPoint => "skill point",
+            Self::TrainedSkill => "trained skill",
         }
     }
 

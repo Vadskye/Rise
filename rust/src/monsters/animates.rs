@@ -14,11 +14,11 @@ use crate::core_mechanics::senses::Sense;
 use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animate;
+use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::sizes::Size;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
-use crate::monsters::knowledge::Knowledge;
 
 struct FullAnimateDefinition {
     alignment: String,
@@ -31,10 +31,10 @@ struct FullAnimateDefinition {
     name: String,
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
-    skill_points: Option<Vec<(Skill, i32)>>,
     size: Size,
     special_attacks: Option<Vec<Attack>>,
     special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
+    trained_skills: Option<Vec<Skill>>,
     weapons: Vec<Weapon>,
 }
 
@@ -52,9 +52,9 @@ fn animate(def: FullAnimateDefinition) -> Monster {
         passive_abilities: def.passive_abilities,
         senses: def.senses,
         size: def.size,
-        skill_points: def.skill_points,
         special_attacks: def.special_attacks,
         special_defense_modifiers: def.special_defense_modifiers,
+        trained_skills: def.trained_skills,
         weapons: def.weapons,
 
         // Default values
@@ -88,10 +88,6 @@ pub fn animates() -> Vec<MonsterEntry> {
         name: "Darkwraith".to_string(),
         senses: None,
         size: Size::Medium,
-        skill_points: Some(vec![
-            (Skill::Awareness, 3),
-            (Skill::Stealth, 3),
-        ]),
         special_attacks: Some(vec![
             Attack {
                 accuracy: 0,
@@ -147,6 +143,10 @@ pub fn animates() -> Vec<MonsterEntry> {
             SpecialDefenseModifier::impervious_damage(DamageType::Cold),
             SpecialDefenseModifier::immune_debuff(Debuff::Prone),
         ]),
+        trained_skills: Some(vec![
+            Skill::Awareness,
+            Skill::Stealth,
+        ]),
         weapons: vec![],
     })));
 
@@ -186,9 +186,9 @@ pub fn animates() -> Vec<MonsterEntry> {
             name: name.to_string(),
             senses: None,
             size,
-            skill_points: Some(vec![ (Skill::Awareness, 1), ]),
             special_attacks: None,
             special_defense_modifiers,
+            trained_skills: Some(vec![Skill::Awareness]),
             weapons: vec![Weapon::Slam],
         });
     }
@@ -304,70 +304,68 @@ pub fn animates() -> Vec<MonsterEntry> {
             name: name.to_string(),
             senses: Some(vec![Sense::Darkvision(60)]),
             size,
-            skill_points: None,
             special_attacks: None,
             special_defense_modifiers: None,
+            trained_skills: None,
             weapons: vec![Weapon::Slam],
         });
     }
 
-    monsters.push(MonsterEntry::MonsterGroup(
-        monster_group::MonsterGroup {
-            knowledge: None,
-            name: "Animated Objects".to_string(),
-            monsters: vec![
-                create_animated_object(
-                    vec![-4, 3, -4, 0, 0, -5],
-                    ChallengeRating::Half,
-                    1,
-                    "Tiny Object",
-                    Size::Tiny,
-                ),
-                create_animated_object(
-                    vec![-2, 2, -2, 0, 0, -5],
-                    ChallengeRating::One,
-                    1,
-                    "Small Object",
-                    Size::Small,
-                ),
-                create_animated_object(
-                    vec![0, 0, 0, 0, 0, -5],
-                    ChallengeRating::Two,
-                    2,
-                    "Medium Object",
-                    Size::Medium,
-                ),
-                create_animated_object(
-                    vec![2, -1, 2, 0, 0, -5],
-                    ChallengeRating::Two,
-                    4,
-                    "Large Object",
-                    Size::Large,
-                ),
-                create_animated_object(
-                    vec![3, -2, 3, 0, 0, -5],
-                    ChallengeRating::Two,
-                    7,
-                    "Huge Object",
-                    Size::Huge,
-                ),
-                create_animated_object(
-                    vec![4, -2, 4, 0, 0, -5],
-                    ChallengeRating::Two,
-                    9,
-                    "Gargantuan Object",
-                    Size::Gargantuan,
-                ),
-                create_animated_object(
-                    vec![5, -3, 5, 0, 0, -5],
-                    ChallengeRating::Two,
-                    11,
-                    "Colossal Object",
-                    Size::Colossal,
-                ),
-            ],
-        },
-    ));
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        knowledge: None,
+        name: "Animated Objects".to_string(),
+        monsters: vec![
+            create_animated_object(
+                vec![-4, 3, -4, 0, 0, -5],
+                ChallengeRating::Half,
+                1,
+                "Tiny Object",
+                Size::Tiny,
+            ),
+            create_animated_object(
+                vec![-2, 2, -2, 0, 0, -5],
+                ChallengeRating::One,
+                1,
+                "Small Object",
+                Size::Small,
+            ),
+            create_animated_object(
+                vec![0, 0, 0, 0, 0, -5],
+                ChallengeRating::Two,
+                2,
+                "Medium Object",
+                Size::Medium,
+            ),
+            create_animated_object(
+                vec![2, -1, 2, 0, 0, -5],
+                ChallengeRating::Two,
+                4,
+                "Large Object",
+                Size::Large,
+            ),
+            create_animated_object(
+                vec![3, -2, 3, 0, 0, -5],
+                ChallengeRating::Two,
+                7,
+                "Huge Object",
+                Size::Huge,
+            ),
+            create_animated_object(
+                vec![4, -2, 4, 0, 0, -5],
+                ChallengeRating::Two,
+                9,
+                "Gargantuan Object",
+                Size::Gargantuan,
+            ),
+            create_animated_object(
+                vec![5, -3, 5, 0, 0, -5],
+                ChallengeRating::Two,
+                11,
+                "Colossal Object",
+                Size::Colossal,
+            ),
+        ],
+    }));
 
     return monsters;
 }

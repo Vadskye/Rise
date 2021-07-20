@@ -523,11 +523,11 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         name: format!("{} {} Dragon", age_category.name(), dragon_type.name()),
         senses: None,
         size: age_category.size(),
-        skill_points: None,
         special_attacks: Some(special_attacks),
         special_defense_modifiers: Some(vec![SpecialDefenseModifier::immune_damage(
             dragon_type.damage_type(),
         )]),
+        trained_skills: None,
         weapons: vec![Weapon::MonsterBite, Weapon::MonsterClaws],
     });
 }
