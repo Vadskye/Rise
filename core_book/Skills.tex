@@ -505,54 +505,38 @@ This chapter describes each skill, including common uses for those skills.
 
         All item creation requires artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty of \minus5 or greater, or it may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus5 penalty, but cutting a diamond without specialized tools is impossible. Note that raw materials for some items, particularly alchemical items, may be hard to come by in some areas. A typical day's work consists of 8 hours of work.
 
-        To determine the time required to craft an item, consult the table below.
-        \begin{dtable}
-            \lcaption{Crafting Time}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Item Price} & \tb{Crafting Time} \tableheaderrule
-                1gp or less     & One hour         \\
-                10gp or less    & Eight hours      \\
-                100gp or less   & One week\fn{1}   \\
-                500gp or less   & One month\fn{1}  \\
-                1000gp or less  & Two months\fn{1} \\
-            \end{dtabularx}
-            1 Assuming 8 hours of work each day.
-        \end{dtable}
+        To determine the time and difficulty of crafting an item, consult \trefnp{Craft Requirements}.
 
         \begin{dtable}
-            \lcaption{Craft Difficulty Ratings}
+            \lcaption{Craft Requirements}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X l l}
-                \tb{Item}                                                          & \tb{Craft Skill} & \tb{Difficulty Rating} \tableheaderrule
-                Alchemical item                                                    & Alchemy          & 5 \add item level \\
-                Armor or shield                                                    & Metal or wood    & 5 \add AD bonus         \\
-                Longbow or shortbow                                                & Wood             & 10                      \\
-                Crossbow                                                           & Wood             & 10                      \\
-                Simple melee or thrown weapon                                      & Metal or wood    & 5                       \\
-                Martial or exotic melee or thrown weapon                           & Metal or wood    & 10                      \\
-                Mechanical trap                                                    & Traps            & Varies\fn{1}            \\
-                Very simple item (wooden spoon)                                    & Varies           & 2                       \\
-                Typical item (iron pot)                                            & Varies           & 5                       \\
-                High-quality item (bell, average lock)                             & Varies           & 10                      \\
-                Complex or superior item (fine china, document with official seal) & Varies           & 15\add                  \\
+                \tb{Item}                   & \tb{Craft Skill} & \tb{Difficulty Rating} & \tb{Crafting Time} \tableheaderrule
+                Alchemical item             & Alchemy          & 5 \add item level      & Eight hours                \\
+                Body armor                  & Varies           & 10 \add item level     & One month per item level   \\
+                Exotic weapon               & Varies           & 10 \add item level     & Eight hours per item level \\
+                Shield or non-exotic weapon & Varies           & 5 \add item level      & Eight hours per item level \\
+                Poison                      & Poison           & 5 \add item level      & Eight hours                \\
+                Other item                  & Varies           & 5 \add item level      & Eight hours per item level \\
             \end{dtabularx}
-            1 Traps have their own rules for construction.
         \end{dtable}
 
     \subsection{Appraise Item}
         You can make a Craft check to estimate the value of an item with 1 minute of careful study. The Craft skill used must be related to the item.
+        The \glossterm{difficulty rating} is equal to 5 \add the item's level.
 
-        The \glossterm{difficulty rating} depends on the rarity of the item. Common items, such as nonmagical equipment and utensils, are \glossterm{difficulty rating} 5. Rare items, such as valuable gems and magic items worth less than 100,000 gp, are \glossterm{difficulty rating} 10. Extraordinarily rare items, such as unique gems and magic items worth at least 100,000 gp, are \glossterm{difficulty rating} 20.
+        Success means you know the item's level, or the approximate value of the item within a level range.
+        Failure means you can only guess the item's level within one of the following bands: 1--5, 6--10, 11--15, or 16\plus.
+        Critical failure means you can't estimate the item's value at all.
 
-        Success means you know the value of the item. Failure means you think the item is worth (d10 \add 5)/10 \x the item's actual value. (The d10 roll is made secretly, so you don't know how close you are.) Critical failure means you can't estimate the item's value at all.
-
-        After you appraise an item, you can't appraise it again with any skill until you gain a level.
+        After you appraise an item, you can't appraise it again until you are presented with significant new information about the item that could clarify your appraisal.
 
     \subsection{Create Forgery}
         You can use the Craft skill to create false or defective versions of objects.
         This requires artisan's tools.
         For example, you may wish to forge official-looking documents with Craft (manuscripts), or you may need to make items in a rush to satisfy an employer. This functions like crafting the item from scratch, except that the Craft \glossterm{difficulty rating} is 5 lower than normal, and you use one-half the item's price to determine the price of raw materials and the crafting time.
 
-        Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for use. A forgery can be detected with the Identify Forgery uses of the Craft and Awareness skills.
+        Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for sustained usage, though they may function once or twice.
+        A forgery can be detected with the Identify Forgery uses of the Craft and Awareness skills.
 
     \subsection{Identify Forgery}
         As a standard action, you can make a Craft check to evaluate whether an item is a forgery. The \glossterm{difficulty rating} to identify a forgery is equal to the Craft check used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Critical failure means you randomly identify the item as genuine or forged. The check is made secretly, so you can't be sure how good the result is.
@@ -659,20 +643,20 @@ This chapter describes each skill, including common uses for those skills.
     \begin{dtable*}
         \lcaption{Deduction Difficulty Modifiers}
         \begin{dtabularx}{\textwidth}{X X l}
-            \tb{Evidence Quality}                                               & \tb{Example}                                                                                                                                                                             & \tb{Difficulty Modifier} \tableheaderrule
-            No irrelevant or misleading evidence                                & Determining a historical truth by reading the relevant passage in a history book                                                                                                         & \minus5                                                                     \\
-            Some evidence is irrelevant or misleading                           & Determining a historical truth by reading contemporary accounts                                                                                                                          & \plus0                                                \\
-            About half of the evidence is irrelevant or misleading              & Determining a historical truth by reading eyewitness accounts                                                                                                                            & \plus5                                             \\
-            Almost all evidence is irrelevant or misleading                     & Determining a historical truth by reading military propaganda                                                                                                                            & \plus10 or more\fn{1}                            \\
-            All evidence is irrelevant or misleading                            & Determining a historical truth by reading a cookbook                                                                                                                                     & \tdash\fn{2}                               \\
+            \tb{Evidence Quality}                                               & \tb{Example}                                                                                                                                                                                  & \tb{Difficulty Modifier} \tableheaderrule
+            No irrelevant or misleading evidence                                & Determining a historical truth by reading the relevant chapter in an accurate history book                                                                                                    & \minus5               \\
+            Some evidence is irrelevant or misleading                           & Determining a historical truth by reading contemporary accounts                                                                                                                               & \plus0                \\
+            About half of the evidence is irrelevant or misleading              & Determining a historical truth by reading eyewitness accounts                                                                                                                                 & \plus5                \\
+            Almost all evidence is irrelevant or misleading                     & Determining a historical truth by reading military propaganda                                                                                                                                 & \plus10 or more\fn{1} \\
+            All evidence is irrelevant or misleading                            & Determining a historical truth by reading a cookbook                                                                                                                                          & \tdash\fn{2}          \\
 
-            \tb{Complexity}                                                     & \tb{Example}                                                                                                                                                                             & \tb{Difficulty Modifier} \tableheaderrule
-            Exceptionally simple logic using no more than one piece of evidence & The sun is out; therefore, it is daytime                                                                                                                                                 & \minus5                          \\
-            Simple logic using one or two pieces of evidence                    & It is raining, and the cleric's clothes and boots are dry; therefore, they were not out in the rain                                                                                         & \plus0                                                                                     \\
-            Moderately complex logic using at least three pieces of evidence    & It is raining, the mage's clothes are wet but their boots are dry, they were observed stepping into the bar, and there are no tracks leading up to the door; therefore, they can probably fly & \plus5                                                                                                                         \\
-            Exceptionally complex logic                                         & A difficult logic puzzle                                                                                                                                                                 & \plus10 or more \\
+            \tb{Complexity}                                                     & \tb{Example}                                                                                                                                                                                  & \tb{Difficulty Modifier} \tableheaderrule
+            Exceptionally simple logic using no more than one piece of evidence & The sky is cloudy; therefore, it might rain                                                                                                                                                  & \minus5               \\
+            Simple logic using one or two pieces of evidence                    & It is raining, and the cleric's clothes and boots are dry; therefore, they were not out in the rain                                                                                           & \plus0                \\
+            Moderately complex logic using at least three pieces of evidence    & It is raining, the mage's clothes are wet but their boots are dry, they were observed stepping into the bar, and there are no tracks leading up to the door; therefore, they can probably fly & \plus5                \\
+            Exceptionally complex logic                                         & A difficult logic puzzle                                                                                                                                                                      & \plus10 or more       \\
         \end{dtabularx}
-        1. If there is an exceptionally large amount of irrelevant or misleading evidence relative to the amount of useful evidence, this penalty may be even larger.
+        1. If there is an exceptionally large amount of irrelevant or misleading evidence relative to the amount of useful evidence, this penalty may be even larger. \\
         2. It is impossible to make a correct deduction if there is no relevant and accurate evidence.
     \end{dtable*}
 
@@ -690,7 +674,7 @@ This chapter describes each skill, including common uses for those skills.
                 Average device (door hinge, complex knot)  & 10                         \\
                 Challenging device (typical lock or trap)  & 15                         \\
                 Difficult device (good lock, complex trap) & 20                         \\
-                Magic trap                                 & 15 \add double spell level \\
+                Magic trap                                 & 15 \add twice \glossterm{rank} \\
                 Extraordinary device (extraordinary lock)  & 25                         \\
             \end{dtabularx}
         \end{dtable}
@@ -854,9 +838,8 @@ This chapter describes each skill, including common uses for those skills.
                 \tb{Restraint}                      & \tb{Difficulty Rating} \tableheaderrule
                 Ropes                               & Binder's Devices check      \\
                 Net                                 & 10                          \\
-                Manacles                            & 20                          \\
-                Masterwork manacles                 & 30                          \\
-                \spell{Entangle} and similar spells & Spellcaster's attack result \\
+                Manacles                            & 15                          \\
+                Extraordinary manacles              & 20                          \\
             \end{dtabularx}
         \end{dtable}
 
@@ -993,16 +976,17 @@ This chapter describes each skill, including common uses for those skills.
         For example, even the most rural commoner has heard of dragons.
 
     \subsection{Answer Question/Recall Information}
-        You can make a Knowledge check reactively to remember information related to your field of study. The \glossterm{difficulty rating} varies depending on the difficulty of the question. Answering a simple or trivial question that most students would be familiar with is \glossterm{difficulty rating} 5. Answering a challenging question which would be beyond the reach of most initiates is R 15. Answering a deeply complex or obscure question which might require information known only by the most learned masters in the field would be \glossterm{difficulty rating} 20 or higher.
+        You can make a Knowledge check reactively to remember information related to your field of study. The \glossterm{difficulty rating} varies depending on the difficulty of the question. Answering a simple or trivial question that most students would be familiar with is \glossterm{difficulty rating} 5. Answering a challenging question which would be beyond the reach of most initiates has a \glossterm{difficulty rating} of 15. Answering a deeply complex or obscure question which might require information known only by the most learned masters in the field would be \glossterm{difficulty rating} 20 or higher.
 
     \subsection{Appraise Item}
         You can make a Knowledge check to estimate the value of an item with 1 minute of careful study. The Knowledge skill used must be related to the item.
+        The \glossterm{difficulty rating} is equal to 5 \add the item's level.
 
-        The \glossterm{difficulty rating} depends on the rarity of the item. Common items, such as nonmagical equipment and utensils, are \glossterm{difficulty rating} 5. Rare items, such as valuable gems and magic items worth less than 100,000 gp, are \glossterm{difficulty rating} 10. Extraordinarily rare items, such as unique gems and magic items worth at least 100,000 gp, are \glossterm{difficulty rating} 20.
+        Success means you know the item's level, or the approximate value of the item within a level range.
+        Failure means you can only guess the item's level within one of the following bands: 1--5, 6--10, 11--15, or 16\plus.
+        Critical failure means you can't estimate the item's value at all.
 
-        Success means you know the value of the item. Failure means you think the item is worth (d10 \add 5)/10 \x the item's actual value. (The d10 roll is made secretly, so you don't know how close you are.) Critical failure means you can't estimate the item's value at all.
-
-        After you appraise an item, you can't appraise it again with any skill until you gain a level.
+        After you appraise an item, you can't appraise it again until you are presented with significant new information about the item that could clarify your appraisal.
 
 \newpage
 \skill{Linguistics}{Int}
@@ -1097,7 +1081,7 @@ This chapter describes each skill, including common uses for those skills.
         It takes a \glossterm{minor action} to initiate and sustain a performance.
 
         While you are performing, you cannot use \abilitytag{Focus} abilities.
-        In addition, you take a \minus10 penalty to the Perform skill for any other performances.
+        In addition, you take a \minus5 penalty to the Perform skill for any other performances.
         This penalty stacks, and applies separately for each simultaneous performance.
         For example, if you were playing a lyre, singing, and juggling balls with your feet, you would take a \minus20 penalty to all three performances.
         These limitations are in addition to any restrictions imposed by your method of performing, such as your hands being occupied playing an instrument.
@@ -1105,8 +1089,8 @@ This chapter describes each skill, including common uses for those skills.
         You can otherwise act normally while performing, including attacking in combat, if doing so is physically possible.
 
         \parhead{Performance Time}
-        In general, you can maintain a performance for a number of minutes equal to 5 \add your Constitution.
-        After that time, you must rest for 5 minutes before performing again.
+        In general, you can maintain a performance for up to an hour.
+        After that time, you must take a \glossterm{short rest} before performing again.
 
     \subsection{Entertain}
         You can make a Perform check to provide entertainment or to show off your skills.
@@ -1120,7 +1104,7 @@ This chapter describes each skill, including common uses for those skills.
 
         Persuasion checks are usually made against a group. For the purposes of a Persuasion check, a ``group'' consists of creatures who consider themselves to be \glossterm{allies} and who share similar information or backgrounds. For example, in a king's court, you cannot simply influence the king alone; his trusted advisors are also part of the same group. It is possible to influence one group without influencing another. For example, the king and his advisors may be unpersuaded, but the prince may find your arguments compelling. Groups can also consist of a single creature. The game master decides what the groups are.
 
-        The base \glossterm{difficulty rating} for a Persuasion check against a group is equal to 5 \add the highest level of any character in the group or the highest Social Insight of any character in the group, whichever is higher.
+        The base \glossterm{difficulty rating} for a Persuasion check against a group is equal to 5 \add the highest Social Insight of any character in the group or half the highest level of any character in the group, whichever is higher.
 
         Not all social interactions require Persuasion checks. Much of the time, being extraordinarily persuasive is unnecessary, and creatures can be convinced with normal, inartful conversation and good reasoning. Persuasion checks should only be used when your personal persuasiveness matters.
 
@@ -1214,14 +1198,16 @@ This chapter describes each skill, including common uses for those skills.
         On the other hand, if you use your experience as a sailor to determine the right angle for sails in the current wind, you can add your base Perception to the Profession check.
 
     \subsection{Appraise Item}
-        You can make a Profession check to estimate the value of an item with 1 minute of careful study. The Profession skill used must be related to the item.
+        You can make a Profession check to estimate the value of an item with 1 minute of careful study.
+        The Profession skill used must be related to the item.
         This check is always Intelligence-based, regardless of your profession.
+        The \glossterm{difficulty rating} is equal to 5 \add the item's level.
 
-        The \glossterm{difficulty rating} depends on the rarity of the item. Common items, such as nonmagical equipment and utensils, are \glossterm{difficulty rating} 5. Rare items, such as valuable gems and magic items worth less than 100,000 gp, are \glossterm{difficulty rating} 10. Extraordinarily rare items, such as unique gems and magic items worth at least 100,000 gp, are \glossterm{difficulty rating} 20.
+        Success means you know the item's level, or the approximate value of the item within a level range.
+        Failure means you can only guess the item's level within one of the following bands: 1--5, 6--10, 11--15, or 16\plus.
+        Critical failure means you can't estimate the item's value at all.
 
-        Success means you know the value of the item. Failure means you think the item is worth (d10 \add 5)/10 \x the item's actual value. (The d10 roll is made secretly, so you don't know how close you are.) Critical failure means you can't estimate the item's value at all.
-
-        After you appraise an item, you can't appraise it again with any skill until you gain a level.
+        After you appraise an item, you can't appraise it again until you are presented with significant new information about the item that could clarify your appraisal.
 
     \subsection{Earn Income}
         You can make a Profession check to practice your trade and make a decent living, earning about half your Profession check result in gold pieces per week of dedicated work. You know how to use the tools of your trade, how to perform the profession's daily tasks, how to supervise helpers, and how to handle common problems.
@@ -1275,26 +1261,26 @@ This chapter describes each skill, including common uses for those skills.
             \lcaption{Sleight of Hand Difficulty Modifiers}
             \begin{dtabularx}{\columnwidth}{X l}
                 \tb{Size}   & {Difficulty Modifier} \tableheaderrule
-                Fine        & \minus8   \\
-                Diminuitive & \minus4   \\
+                Fine        & \minus10   \\
+                Diminuitive & \minus5   \\
                 Tiny        & \plus0   \\
-                Small       & \plus4  \\
-                Medium      & \plus8  \\
-                Large       & \plus12 \\
-                Huge        & \plus16 \\
-                Gargantuan  & \plus20 \\
-                Colossal    & \plus24 \\
+                Small       & \plus5  \\
+                Medium      & \plus10  \\
+                Large       & \plus15 \\
+                Huge        & \plus20 \\
+                Gargantuan  & \plus25 \\
+                Colossal    & \plus30 \\
             \end{dtabularx}
         \end{dtable}
 
     \subsection{Conceal Action}
         You can make a Sleight of Hand check to conceal an action you take, preventing observers from noticing that you took the action. You can conceal any physical action that only requires the use of your hands and arms. Your check is opposed by the Awareness check of any observers. Success means your action is unnoticed. Failure means they are able to notice your action normally.
 
-        The space required to perform the action is the size of the action, and applies a bonus or penalty as noted above. For example, winking only requires moving your eye, so you gain a \plus8 bonus to conceal the action. Firing a longbow requires manipulating an object as large as you are, so you take a \minus8 penalty to conceal the action.
+        The space required to perform the action is the size of the action, and applies a bonus or penalty as noted above. For example, winking only requires moving your eye, so you gain a \plus10 bonus to conceal the action. Firing a longbow requires manipulating an object as large as you are, so you take a \minus10 penalty to conceal the action.
 
         Observers that you touch as part of the action gain a \plus10 bonus to their Awareness check. If you strike them hard, as with an attack, the bonus increases to a \plus20 bonus.
 
-        If you successfully conceal an attack, the attack is treated as if it were an attack from an invisible creature. The target may be \unaware of the attack. If the target is hit, it can tell the direction the attack came from, but not that you made the attack.
+        If you successfully conceal an attack, the attack is treated as if it were an attack from an invisible creature. The target may be \unaware or \partiallyunaware of the attack. If the target is hit, it can tell the direction the attack came from, but not that you made the attack.
 
         Nonhumanoid creatures without hands and arms may conceal actions using different parts of their body. Large movements can never be concealed with this ability; see the Stealth skill.
 
@@ -1371,7 +1357,7 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Identify Magical Effect}
         When you notice a magical effect, you can make a Spellsense check to identify its nature.
         Generally, you use the same Spellsense roll to both notice and identify a magical effect.
-        The \glossterm{difficulty rating} is equal to 5 \add the \glossterm{power} of the effect.
+        The \glossterm{difficulty rating} is equal to 5 \add twice the \glossterm{rank} of the effect.
         Success means you know in general terms what the effect does.
         Critical success means you know exactly what the effect does, and if it is a common effect, what ability caused it.
         Failure means you do not recognize the effect.
@@ -1383,18 +1369,18 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Identify Spellcasting}
         You can identify spells being cast near you.
-        The \glossterm{difficulty rating} is equal to 5 \add the spell level of the spell.
+        The \glossterm{difficulty rating} is equal to 5 \add twice the \glossterm{rank} of the spell.
         Success means you know what spell is being cast.
         Failure means you do not.
 
     \subsection{Identify Potion}
         You can make a \glossterm{difficulty rating} Spellsense check to identify a potion.
         This takes a minute of careful evaluation.
-        For most potions, the \glossterm{difficulty rating} is 15, and success means you identify what spell the potion contains.
+        For most potions, the \glossterm{difficulty rating} is 10, and success means you identify what spell the potion contains.
         Failure means you do not learn anything about the potion's nature.
 
         Potions can be crafted to conceal their true nature.
-        The \glossterm{difficulty rating} to identify such potions is usually 25.
+        The \glossterm{difficulty rating} to identify such potions is usually 20.
         Success means you know what spell the potion contains.
         Failure means you identify the potion as whatever spell the potion is intended to resemble.
         Critical failure means you do not learn anything about the potion's nature.
@@ -1403,7 +1389,7 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Identify Magical Writing}\label{Identify Magical Writing}
         You can make a Spellsense check as a standard action to identify a ritual or similar piece of magical writing.
         The \glossterm{difficulty rating} depends on the complexity of the writing.
-        If the writing describes a spell or ritual, the \glossterm{difficulty rating} equal to 10 \add three times the level of the spell or ritual.
+        If the writing describes a spell or ritual, the \glossterm{difficulty rating} is equal to 10 \add twice the \glossterm{rank} of the spell or ritual.
         Success means you understand the magical writing.
         Once you decipher a particular magical writing, you do not need to decipher it again.
 
@@ -1475,8 +1461,8 @@ This chapter describes each skill, including common uses for those skills.
 
         Larger, more obvious actions are more difficult to hide.
         If you use a movement speed to move, you take a penalty to your Stealth check to conceal that movement.
-        This is a \minus10 penalty if you move at no more than half your speed.
-        If you use the \textit{sprint} ability or move faster than half your speed, this penalty increases to \minus20.
+        This is a \minus5 penalty if you move at no more than half your speed.
+        If you use the \textit{sprint} ability or move faster than half your speed, this penalty increases to \minus10.
 
         Making a \glossterm{strike}, using \glossterm{somatic components}, and taking other similar large-scale actions imposes a \minus10 penalty to the Stealth check.
         If you make a strike with a medium or heavy weapon, this penalty increases to \minus20.
@@ -1519,9 +1505,9 @@ This chapter describes each skill, including common uses for those skills.
             \lcaption{Terrain Difficulty Ratings}
             \begin{dtabularx}{\columnwidth}{l X X}
                 \tb{Terrain} & \tb{Navigation Difficulty Rating} & \tb{Sustenance Difficulty Rating} \tableheaderrule
-                Desert       & 15                                & 20 \\
+                Desert       & 10                                & 20 \\
                 Forest       & 10                                & 15 \\
-                Jungle       & 10                                & 10 \\
+                Jungle       & 15                                & 10 \\
                 Mountains    & 10                                & 15 \\
                 Hills        & 5                                 & 10 \\
                 Plains       & 5                                 & 10 \\
@@ -1563,15 +1549,15 @@ This chapter describes each skill, including common uses for those skills.
                 \tb{Condition}                                      & \tb{Difficulty Modifier} \tableheaderrule
                 Every three creatures in the group being tracked    & \minus1      \\
                 Size of creature or creatures being tracked:\fn{1}  &              \\
-                Fine                                                & \plus16      \\
-                Diminutive                                          & \plus12      \\
-                Tiny                                                & \plus8       \\
-                Small                                               & \plus4       \\
+                Fine                                                & \plus20      \\
+                Diminutive                                          & \plus15      \\
+                Tiny                                                & \plus10       \\
+                Small                                               & \plus5       \\
                 Medium                                              & \plus0       \\
-                Large                                               & \minus4      \\
-                Huge                                                & \minus8      \\
-                Gargantuan                                          & \minus12     \\
-                Colossal                                            & \minus16     \\
+                Large                                               & \minus5      \\
+                Huge                                                & \minus10      \\
+                Gargantuan                                          & \minus15     \\
+                Colossal                                            & \minus20     \\
                 Every 24 hours since the trail was made             & \plus1\fn{3} \\
                 Every hour of rain since the trail was made         & \plus1       \\
                 Fresh snow cover since the trail was made           & \plus10      \\
@@ -1589,9 +1575,7 @@ This chapter describes each skill, including common uses for those skills.
         If you fail a Survival check to track, you can retry after 5 minutes of searching.
 
     \subsection{Use Rope}
-        You can make a Survival check as a standard action to tie knots. Success means you tie the knot successfully. Failure means your action is wasted, but you can try again. Tying a typical knot is \glossterm{difficulty rating} 10. Tying a special knot, such as one that slips, slides slowly, or loosens with a tug is \glossterm{difficulty rating} 15. Knots can also be tied with the Devices skill.
-
-        You can also make a Survival check in place of a ranged attack to set a grappling hook. You take a \minus2 penalty per 10 feet.
+        You can make a Survival check as a standard action to tie knots. Success means you tie the knot successfully. Failure means your action is wasted, but you can try again. Tying a typical knot is \glossterm{difficulty rating} 5. Tying a special knot, such as one that slips, slides slowly, or loosens with a tug is \glossterm{difficulty rating} 10. Knots can also be tied with the Devices skill.
 
 \newpage
 \skill{Swim}{Str}
