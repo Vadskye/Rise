@@ -353,7 +353,7 @@ def universal_abilities():
             You regain hit points equal to your maximum hit points. In addition, you remove all brief effects and conditions affecting you. This cannot remove effects applied during the current round.
         """),
         universal_ability_button("Shove", """
-            Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against both the Fortitude defense and total Strength of each target. Your accuracy with this attack is equal to half your Strength. If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
+            Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against both the Fortitude defense and total Strength of each target. Your accuracy with this attack is equal to your Strength. If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
             On a hit, you can move up to half your movement speed in a straight line, pushing each subject as you move. On a critical hit, you can move up to your full movement speed instead.
          """, attack={"accuracy":"@{strength}", "defense":"Fort and Strength"}),
         universal_ability_button("Sprint", """
