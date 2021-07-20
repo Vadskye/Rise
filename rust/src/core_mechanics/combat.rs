@@ -1,65 +1,153 @@
 use crate::core_mechanics::attacks;
 use crate::core_mechanics::HasCreatureMechanics;
 use std::fmt;
+use std::cmp::max;
 
 pub struct CombatResult {
+    blue_living_count: usize,
+    blue_survival_percent: f64,
     rounds: f64,
+    red_living_count: usize,
+    red_survival_percent: f64,
+}
+
+struct CombatStep<T> {
+    blue: T,
+    red: T,
+}
+
+struct DamageableCreature<'a, T: HasCreatureMechanics> {
+    creature: &'a T,
+    damage_taken: i32,
+}
+
+impl<'a, T: HasCreatureMechanics> DamageableCreature<'a, T> {
+    fn from_creature(creature: &'a T) -> Self {
+        return DamageableCreature {
+            creature,
+            damage_taken: 0,
+        };
+    }
+
+    fn total_damage_absorption(&self) -> i32 {
+        return self.creature.calc_hit_points() + self.creature.calc_damage_resistance();
+    }
+
+    fn remaining_damage_absorption(&self) -> i32 {
+        return self.total_damage_absorption() - self.damage_taken;
+    }
+
+    fn is_alive(&self) -> bool {
+        return self.remaining_damage_absorption() > 0;
+    }
+
+    fn take_damage(&mut self, damage: f64) {
+        self.damage_taken += damage.ceil() as i32;
+    }
 }
 
 impl fmt::Display for CombatResult {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "R{}", self.rounds)
+        write!(
+            f,
+            "Rounds {} Blue {} ({}%) Red {} ({}%)",
+            self.rounds,
+            self.blue_living_count,
+            self.blue_survival_percent,
+            self.red_living_count,
+            self.red_survival_percent,
+        )
     }
 }
 
-pub fn run_combat<T: HasCreatureMechanics>(blue: Vec<&T>, red: Vec<&T>) -> CombatResult {
+pub fn run_combat<T: HasCreatureMechanics>(blue: Vec<T>, red: Vec<T>) -> CombatResult {
+    let mut damageable: CombatStep<Vec<DamageableCreature<T>>> = CombatStep {
+        blue: blue
+            .iter()
+            .map(|c| DamageableCreature::from_creature(c))
+            .collect(),
+        red: red
+            .iter()
+            .map(|c| DamageableCreature::from_creature(c))
+            .collect(),
+    };
     let mut rounds = 0.0;
-    let mut living_blue_index = 0;
-    let mut living_red_index = 0;
     // For now, don't do intelligent target prioritization - just proceed linearly through the
     // array of creatures. In the future, we can intelligently sort the vectors before entering
     // this block, so the code here won't have to change.
     loop {
-        let living = (
-            blue[living_blue_index..].to_vec(),
-            red[living_red_index..].to_vec(),
-        );
-        let defender = (living.0[0], living.1[0]);
-        let rounds_to_live: (f64, f64) = (
-            calc_rounds_to_live(living.0, defender.1),
-            calc_rounds_to_live(living.1, defender.0),
-        );
+        let mut living: CombatStep<Vec<&mut DamageableCreature<T>>> = CombatStep {
+            blue: damageable
+                .blue
+                .iter_mut()
+                .filter(|d| d.is_alive())
+                .collect(),
+            red: damageable.red.iter_mut().filter(|d| d.is_alive()).collect(),
+        };
+        let living_creatures: CombatStep<Vec<&T>> = CombatStep {
+            blue: living.blue.iter().map(|d| d.creature).collect(),
+            red: living.red.iter().map(|d| d.creature).collect(),
+        };
+        if living.blue.len() == 0 || living.red.len() == 0 {
+            return CombatResult {
+                blue_living_count: living.blue.len(),
+                red_living_count: living.red.len(),
+                blue_survival_percent: survival_percent(&damageable.blue),
+                rounds,
+                red_survival_percent: survival_percent(&damageable.red),
+            };
+        }
 
-        if rounds_to_live.0 > rounds_to_live.1 {
-            living_red_index += 1;
-            rounds += rounds_to_live.1;
-        } else if rounds_to_live.0 < rounds_to_live.1 {
-            living_blue_index += 1;
-            rounds += rounds_to_live.0;
+        let defender = CombatStep {
+            blue: &mut living.blue[0],
+            red: &mut living.red[0],
+        };
+        let rounds_to_first_death = CombatStep {
+            blue: calc_rounds_to_live(&living_creatures.blue, defender.red),
+            red: calc_rounds_to_live(&living_creatures.red, defender.blue),
+        };
+        let min_rounds_to_first_death = if rounds_to_first_death.blue <= rounds_to_first_death.red {
+            rounds_to_first_death.blue
         } else {
-            living_blue_index += 1;
-            living_red_index += 1;
-            rounds += rounds_to_live.0;
-        }
-        if living_blue_index == blue.len() || living_red_index == red.len() {
-            break;
-        }
+            rounds_to_first_death.red
+        };
+        defender.blue.take_damage(
+            min_rounds_to_first_death
+                * calc_damage_per_round(&living_creatures.red, defender.blue.creature),
+        );
+        defender.red.take_damage(
+            min_rounds_to_first_death
+                * calc_damage_per_round(&living_creatures.blue, defender.red.creature),
+        );
+        rounds += min_rounds_to_first_death;
     }
-    return CombatResult { rounds };
 }
 
-fn calc_rounds_to_live<T: HasCreatureMechanics>(attackers: Vec<&T>, defender: &T) -> f64 {
-    let damage_per_round: f64 = attackers
+fn survival_percent<T: HasCreatureMechanics>(creatures: &Vec<DamageableCreature<T>>) -> f64 {
+    let total_damage_absorption: i32 = creatures.iter().map(|d| d.total_damage_absorption()).sum();
+    let total_damage_taken: i32 = creatures.iter().map(|d| d.damage_taken).sum();
+    return max(0, total_damage_absorption - total_damage_taken) as f64 / total_damage_absorption as f64;
+}
+
+fn calc_damage_per_round<T: HasCreatureMechanics>(attackers: &Vec<&T>, defender: &T) -> f64 {
+    return attackers
         .iter()
         .map(|a| calc_individual_dpr(*a, defender))
         .sum();
-    let damage_absorption = defender.calc_hit_points() + defender.calc_damage_resistance();
+}
+
+fn calc_rounds_to_live<T: HasCreatureMechanics>(
+    attackers: &Vec<&T>,
+    defender: &DamageableCreature<T>,
+) -> f64 {
+    let damage_per_round: f64 = calc_damage_per_round(attackers, defender.creature);
+    let damage_absorption = defender.remaining_damage_absorption();
     let rounds_to_survive = damage_absorption as f64 / damage_per_round;
     // In a real fight, rounds would be broken up into discrete units, but we'd also have to
     // deal with the variance of high and low rolls. Dropping to quarter-round precision
     // precision still leaves some awareness of the downsides of excess overkill while being
     // more precise than true integer rounds
-    return (rounds_to_survive * 4.0).round() / 4.0;
+    return (rounds_to_survive * 4.0).ceil() / 4.0;
 }
 
 fn calc_individual_dpr<T: HasCreatureMechanics>(attacker: &T, defender: &T) -> f64 {
@@ -70,8 +158,8 @@ fn calc_individual_dpr<T: HasCreatureMechanics>(attacker: &T, defender: &T) -> f
         if let Some(_) = attack.damage_effect() {
             let damage_dice = attack.calc_damage_dice(attacker).unwrap();
             let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
-            let average_damage_per_round = hit_probability
-                * (damage_dice.average_damage() + damage_modifier as f64);
+            let average_damage_per_round =
+                hit_probability * (damage_dice.average_damage() + damage_modifier as f64);
             if average_damage_per_round > best_damage_per_round {
                 best_damage_per_round = average_damage_per_round;
             }
@@ -93,7 +181,8 @@ fn calculate_hit_probability<T: HasCreatureMechanics>(
     let mut crit_count = 0.0;
     let mut explosion_count = 0.0;
     loop {
-        let hit_probability: f64 = ((attack.accuracy + attacker.calc_accuracy()) as f64 + 11.0 - crit_count * 10.0
+        let hit_probability: f64 = ((attack.accuracy + attacker.calc_accuracy()) as f64 + 11.0
+            - crit_count * 10.0
             + explosion_count * 10.0
             - (defender.calc_defense(&attack.defense) as f64))
             / 10.0;
