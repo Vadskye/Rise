@@ -461,7 +461,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         \begin{instantability}{Denounce the Heathens}[Duration]
             \rankline
             Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
-            Your \glossterm{accuracy} is equal to half your Persuasion skill.
+            Your \glossterm{accuracy} is equal to your Persuasion skill.
             \hit Each subject is \glossterm{briefly} \dazed.
 
             \rankline
@@ -520,7 +520,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         \begin{instantability}{Condemn the Fearful}[Duration]
             \rankline
             Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
-            Your \glossterm{accuracy} is equal to half your Persuasion skill.
+            Your \glossterm{accuracy} is equal to your Persuasion skill.
             \hit Each subject is \glossterm{briefly} \frightened by you.
 
             \rankline
@@ -546,7 +546,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 \begin{instantability}{Convert the Irresolute}[Duration]
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
-                    Your \glossterm{accuracy} is equal to half your Persuasion skill.
+                    Your \glossterm{accuracy} is equal to your Persuasion skill.
                     \hit The subject is \glossterm{stunned} until it finishes a \glossterm{long rest}.
                     At the end of that time, if its Willpower is 0 or lower, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
                 \end{instantability}
