@@ -464,12 +464,12 @@ def calc_magical_power():
             equation(
                 [
                     underlabel(
-                        "1/2 Wil",
+                        "Wil",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "magical_power_willpower_display",
-                                "value": "@{willpower_power_scaling}",
+                                "value": "@{willpower}",
                             }
                         ),
                     ),
@@ -493,12 +493,12 @@ def calc_mundane_power():
             equation(
                 [
                     underlabel(
-                        "1/2 Str",
+                        "Str",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "mundane_power_strength_display",
-                                "value": "@{strength_power_scaling}",
+                                "value": "@{strength}",
                             }
                         ),
                     ),
