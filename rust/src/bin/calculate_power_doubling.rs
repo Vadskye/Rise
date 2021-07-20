@@ -10,7 +10,7 @@ fn main() {
             None,
             None,
         )];
-        let level_difference = 2;
+        let level_difference = 3;
         let red = vec![
             monsters::Monster::standard_monster(ChallengeRating::Two, level - level_difference, None, None),
             monsters::Monster::standard_monster(ChallengeRating::Two, level - level_difference, None, None),
