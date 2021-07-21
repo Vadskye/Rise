@@ -72,7 +72,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2d damage penalty using a slashing weapon.
-        Each creature damaged by the strike is \\briefly \\dazzled.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
       `,
       rank: 5,
       type: "Duration",
