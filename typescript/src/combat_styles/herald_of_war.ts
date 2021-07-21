@@ -317,7 +317,7 @@ export const heraldOfWar: CombatStyle = {
 
       functionsLike: {
         name: 'enraging roar',
-        exceptThat: "the area increases to a \\largearea radius",
+        exceptThat: "the area increases to a \\largearea radius.",
       },
       scaling: "accuracy",
       rank: 5,
