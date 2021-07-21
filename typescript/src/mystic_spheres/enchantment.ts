@@ -829,6 +829,8 @@ export const enchantment: MysticSphere = {
         If the subject is moved, this effect ends.
 
         Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the chosen object, make an attack vs. Mental against it.
+        Your accuracy with this attack is equal to half your level \\add half your base Perception \\add any \\glossterm{magic bonuses} you have to accuracy.
+        This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
         After you make this attack against a particular creature, you do not make this attack against it again until it takes a \\glossterm{short rest}.
         `,
       },
@@ -855,6 +857,8 @@ export const enchantment: MysticSphere = {
         If the subject is moved, this effect ends.
 
         Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the subject, make an attack vs. Mental against it.
+        Your accuracy with this attack is equal to half your level \\add half your base Perception \\add any \\glossterm{magic bonuses} you have to accuracy.
+        This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
         After you make this attack against a particular creature, you do not make this attack against it again until it takes a \\glossterm{short rest}.
         `,
       },
