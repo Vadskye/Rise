@@ -247,12 +247,12 @@ export const photomancy: MysticSphere = {
       name: "Solar Ray",
 
       attack: {
-        crit: `Double damage. In addition, the subject suffers consequences as if it had been struck by a beam of natural sunlight.`,
+        crit: `Double damage, and the subject also suffers consequences as if it had been struck by a beam of natural sunlight.`,
         glance: `Half damage.`,
         hit: `
           The subject takes 2d10 + half \\glossterm{power} energy damage.
-          In addition, it is \\glossterm{briefly} dazzled.
-          If it lost \\glossterm{hit points} from this damage, it is also briefly \\glossterm{dazed}.
+          In addition, it is \\glossterm{briefly} \\dazzled.
+          If it lost \\glossterm{hit points} from this damage, it is also briefly \\dazed.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\medrange.
