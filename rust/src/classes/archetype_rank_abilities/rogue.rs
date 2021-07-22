@@ -156,12 +156,13 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Auditory}
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
-                For the duration of your performance, all \glossterm{allies} within a \arealarge radius from you each gain a \plus5 foot bonus to their speed with all of their \glossterm{movement modes}.
+                Choose one \glossterm{ally} within \medrange.
+                For the duration of your performance, the subject gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes}.
 
                 \rankline
-                \rank{3} The speed bonus increases to \plus10 feet.
-                \rank{5} The speed bonus increases to \plus15 feet.
-                \rank{7} The speed bonus increases to \plus20 feet.
+                \rank{3} The subject also gains a \plus2 bonus to Reflex defense.
+                \rank{5} The speed bonus increases to \plus10 feet.
+                \rank{7} The bonus to Reflex defense increases to \plus4.
             \end{durationability}
 
             % Bardic performance power guidelines:
