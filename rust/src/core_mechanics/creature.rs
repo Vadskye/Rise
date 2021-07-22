@@ -146,7 +146,7 @@ impl HasDamageAbsorption for Creature {
             _ => panic!("Invalid level {}", self.level),
         };
 
-        return dr_from_level + (self.get_base_attribute(&Attribute::Constitution) as i32) / 2;
+        return dr_from_level + (self.get_base_attribute(&Attribute::Constitution) as i32);
     }
 
     fn calc_hit_points(&self) -> i32 {
@@ -175,7 +175,7 @@ impl HasDamageAbsorption for Creature {
             _ => panic!("Invalid level {}", self.level),
         };
 
-        return hp_from_level + self.get_base_attribute(&Attribute::Constitution) as i32;
+        return hp_from_level + (self.get_base_attribute(&Attribute::Constitution) as i32) * 2;
     }
 }
 
