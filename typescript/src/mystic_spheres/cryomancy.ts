@@ -276,7 +276,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           The subject takes 2d10 + half \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from tihs damage, it is \\glossterm{briefly} \\stunned.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
           Otherwise, it is briefly \\dazed.
         `,
         targeting: `
