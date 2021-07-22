@@ -561,7 +561,7 @@ def hit_points():
                 hit_points_from_level = Math.floor(hit_points_from_level * 1.5);
             }}
 
-            var hit_points = hit_points_from_level + constitution + {sum_variables(misc)};
+            var hit_points = hit_points_from_level + constitution * 2 + {sum_variables(misc)};
             var cr_multiplier = {{
                 0: 1,
                 0.5: 0.5,
@@ -720,7 +720,7 @@ def damage_resistance():
             }}[challenge_rating || 0];
             const damage_resistance = Math.floor(
                 (
-                    resistance_from_level + Math.floor(constitution / 2) + damage_resistance_bonus_armor + {sum_variables(misc)}
+                    resistance_from_level + constitution + damage_resistance_bonus_armor + {sum_variables(misc)}
                 ) * cr_multiplier * (damage_resistance_bonus_vital_wound_multiplier || 1)
             );
             setAttrs({{
