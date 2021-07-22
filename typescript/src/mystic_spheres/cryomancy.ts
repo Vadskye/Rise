@@ -224,7 +224,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `The subject takes 5d8 + \\glossterm{power} piercing and cold damage.`,
+        hit: `The subject takes 4d10 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
