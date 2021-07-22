@@ -252,10 +252,14 @@ export const pyromancy: MysticSphere = {
     {
       name: "Greater Burning Hands",
 
-      functionsLike: {
-        name: 'burning hands',
-        exceptThat: 'the damage increases to 4d6 + \\glossterm{power}.',
+      attack: {
+        glance: "Half damage.",
+        hit: `Each subject takes 4d6 + \\glossterm{power} fire damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\areasmall cone from you.
+        `,
       },
+
       rank: 5,
       scaling: "damage",
       type: "Instant",
