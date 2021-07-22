@@ -5,7 +5,6 @@ import rise.latex_generation.gen_armor as gen_armor
 import rise.latex_generation.gen_implements as gen_implements
 import rise.latex_generation.gen_tools as gen_tools
 import rise.latex_generation.gen_weapons as gen_weapons
-import rise.latex_generation.monsters as monsters
 
 
 def main():
@@ -14,7 +13,6 @@ def main():
     gen_implements.write_to_file()
     gen_tools.write_to_file()
     gen_weapons.write_to_file()
-    monsters.write_to_file()
 
 
 if __name__ == "__main__":
