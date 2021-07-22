@@ -350,9 +350,8 @@ export const terramancy: MysticSphere = {
       effect: `
         You cover your body with two overlapping layers of rock that crumple when they take damage.
         The rock does not cover your joints, allowing you to move, though the shell increases your \\glossterm{encumbrance} by 2.
-        You are \\glossterm{impervious} to all damage.
-        Whenever an attack hits you or misses you by 5 or less, one layer of rock is destroyed.
-        When the last layer of rock is destroyed, this ability provides no further benefit.
+        Whenever you would take damage, you take only half of that damage, and one layer of rock is destroyed.
+        When the last layer is destroyed, this ability provides no further benefit.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,
