@@ -1383,7 +1383,7 @@ def generate_apparel():
             tags=[],
             description="""
                 As a bonus action, you can activate this belt.
-                When you do, you increase your \\glossterm<fatigue tolerance> by 2 until you take a short rest.
+                When you do, you increase your \\glossterm<fatigue tolerance> by 2 until you take a short or long rest.
                 After you use this ability, you cannot use it again until you take a long rest.
             """,
             short_description="Increases your fatigue tolerance",
