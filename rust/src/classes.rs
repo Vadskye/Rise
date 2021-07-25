@@ -705,7 +705,7 @@ impl Class {
                             Lucied, paladin god of justice        & Lawful good     & Destruction, Good, Protection, War     \\
                             Simor, fighter god of protection      & Lawful good     & Good, Protection, Strength, War        \\
                             Ayala, naiad god of water             & Neutral good    & Life, Magic, Water, Wild               \\
-                            Pabs, dwarf god of drink              & Neutral good    & Good, Life, Strength, Wild             \\
+                            Pabs Beerbeard, dwarf god of drink    & Neutral good    & Good, Life, Strength, Wild             \\
                             Rucks, monk god of pragmatism         & Neutral good    & Good, Law, Protection, Travel          \\
                             Vanya, centaur god of nature          & Neutral good    & Good, Strength, Travel, Wild           \\
                             Brushtwig, pixie god of creativity    & Chaotic good    & Chaos, Good, Trickery, Wild            \\
