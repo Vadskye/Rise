@@ -1,0 +1,1494 @@
+\chapter{Combat}\label{Combat}
+    The world of Rise can be a harsh one, and not all disagreements can be resolved peacefully.
+    At some point, you will be forced to enter combat.
+    This chapter explains how combat works in Rise.
+
+\section{Combat Time}\label{Combat Time}
+    This section explains how time passes in combat.
+
+    \subsection{Rounds}\label{Rounds}
+
+        Combat takes place in a series of \glossterm{rounds}, which represent about six seconds of time.
+        Each round of a combat is divided into three \glossterm{phases} (see \pcref{Phases}).
+        After all phases are complete, the round ends and the next round begins.
+
+    \subsection{Actions}\label{Actions}
+
+        You can take actions in combat to defeat your foes.
+        There are four types of actions: \glossterm{standard actions}, \glossterm{minor actions}, \glossterm{move actions}, and \glossterm{free actions}.
+        % TODO: define conflicting action limits (drawing a sword and sheathing a shield?)
+
+        \subsubsection{Standard Actions}\label{Standard Actions}
+            Most common activities require a \glossterm{standard action}, such as attacking with a weapon, casting a \glossterm{spell}, and using many special abilities.
+            Using a standard action generally takes about three seconds of time within the game, and it requires most of your attention during that time.
+
+            You can take one standard action per round.
+
+        \subsubsection{Minor Actions}\label{Minor Actions}
+            Some special abilities require a \glossterm{minor action}.
+            Using a minor action does not take much time or attention, and it can be done at the same time as any other actions.
+            You cannot use a \glossterm{minor action} during the \glossterm{movement phase}.
+
+            You can normally take one minor action per round.
+            However, you can choose to take an additional minor action in place of a \glossterm{standard action}.
+
+        \subsubsection{Move Actions}\label{Move Actions}
+            Abilities that require a move action typically move you around the battlefield, and are usually used in the \glossterm{movement phase}.
+            Using a move action generally takes about three seconds of time within the game, and it requires most of your attention during that time.
+
+            You can normally take one move action per round.
+            However, you can choose to take an additional move action in place of a \glossterm{standard action}.
+
+        \subsubsection{Free Actions}\label{Free Actions}
+            Many minor activities require a \glossterm{free action}, such as drawing or sheathing a weapon.
+            Using a free action does not take much time or attention, and it can be done at the same time as any other actions.
+
+            You can take any number of free actions per round.
+
+    \subsection{Phases}\label{Phases}
+
+        There are three \glossterm{phases} in each round: a \glossterm{movement phase}, an \glossterm{action phase}, and sometimes a \glossterm{delayed action phase}.
+        Each phase specifies the types of actions that can be taken during that phase.
+        As a special case, \glossterm{free actions} may be taken during any phase.
+
+        \subsubsection{The Movement Phase}\label{The Movement Phase}
+            During the \glossterm{movement phase}, you can take one \glossterm{move action}.
+            The most common move action is the \textit{hustle} ability, which allows you to move a distance equal to your \glossterm{speed}.
+            For details, see \pcref{Movement and Positioning}.
+
+        \subsubsection{The Action Phase}\label{The Action Phase}
+            During the \glossterm{action phase}, you can take one \glossterm{minor action} and one \glossterm{standard action}.
+            Alternately, you can take a \glossterm{move action} or additional \glossterm{minor action} in place of your standard action.
+            Most of the time, you will simply take a single standard action.
+
+        \subsubsection{The Delayed Action Phase}\label{The Delayed Action Phase}
+            During the \glossterm{delayed action phase}, you can take a \glossterm{minor action}, a \glossterm{standard action}, or both if you did not use the corresponding action in the \glossterm{action phase}.
+            Alternately, you can take a \glossterm{move action} or additional \glossterm{minor action} in place of a standard action.
+            In addition, some abilities have effects during the delayed action phase instead of or in addition to their effects in the action phase.
+            For example, the \textit{spring attack} \glossterm{maneuver} allows you to move during the action phase and again during the delayed action phase (see Spring Attack, \pref{maneuver:Spring Attack}).
+
+        \subsubsection{Triggered Ability Timing}\label{Triggered Ability Timing}
+            Some abilities trigger at the start or end of particular phases, or at the start or end of the round.
+            Here is the order in which these abilities trigger each round, and some notable events that occur during the round:
+            \begin{itemize}
+                \item Start of round
+                \item Start of movement phase
+                \item End of movement phase
+                \item Start of action phase
+                \item End of action phase
+                \item Start of delayed action phase
+                \item End of delayed action phase
+                \item End of round
+            \end{itemize}
+
+    \subsection{Resolving Actions}\label{Resolving Actions}
+
+        Within each phase, actions of all creatures are simultaneously resolved in the following order.
+        All \glossterm{allies} with the ability to communicate can freely coordinate their actions with each other, within reasonable limits.
+
+        \begin{enumerate*}
+            \item Choose actions.
+            \item Determine targets affected by actions.
+            \item Apply the results of \abilitytag{Swift} abilities.
+            \item Check action success.
+                Example: Making attack rolls.
+            \item Determine action results.
+                Example: Making damage rolls.
+            \item Apply action results.
+                Examples: Adding \glossterm{vital wounds}, moving creature locations, and applying penalties.
+        \end{enumerate*}
+
+        In the vast majority of cases, there is no need to go through this order explicitly.
+        Combats will run much faster if attack and damage rolls are generally made and announced at the same time as those actions are chosen, even before all characters have explicitly stated their actions.
+        The order of resolution matters when creatures take actions that directly conflict with each other.
+
+        \subsubsection{Swift Abilities}\label{Swift Abilities}
+            Some abilities resolve before other actions in the same phase.
+            These abilities have the \abilitytag{Swift} tag.
+            They resolve after targets are determined, but before attack rolls are made.
+            Swift abilities never require attack rolls, and almost always affect only the creature using the ability.
+
+            For example, the \textit{total defense} ability is a swift ability.
+            It increases your defenses against attacks made during the same phase (see \pcref{Total Defense}).
+
+            Some abilities have only part of their effect resolve early.
+            For example, the \textit{reckless attack} ability immediately reduces your defenses, which affects attacks made against you during the current phase, and makes an attack with the normal timing.
+
+        % This may be too complicated
+        \subsubsection{Conflicting Actions}\label{Conflicting Actions}
+
+            Sometimes, actions that occur in the same phase can conflict with each other.
+            In this case, each creature involved with conflicting actions in that phase rolls an \glossterm{initiative} check (see \pcref{Initiative}).
+            Starting from the highest check result and continuing to the lowest, each creature decides to resolve its chosen action or delay to choose a different action.
+            After the lowest initiative check result has made its choice, each creature that delayed can resolve a different action of its choice, starting from the lowest check result and continuing to the highest.
+            When deciding, each creature knows the resolved effects of the actions chosen by previous creatures that it can observe.
+
+            When determining whether two actions conflict, it is best to be generous and consider the intention of the action.
+            The only downside to treating actions as conflicting is the time required to resolve the initiative checks and consider action changes.
+
+            For example, one of the most common conflicts occurs when a creature tries to move into melee range with a foe that unexpectedly moves away.
+            Although the two movements not mutually impossible, the first creature can easily end up out of melee range from all foes at the end of the phase if it doesn't have enough movement to reach its target.
+            Treating the movements as conflicting allows the first creature to sprint or change its action if it chooses.
+
+    \subsection{Initiative}\label{Initiative}
+        When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
+        For details, see \pcref{Conflicting Actions}.
+        Your initiative is normally equal to the your base Dexterity \add your base Perception.
+        In addition, some abilities grant you bonuses that specifically apply to initiative checks.
+
+        \parhead{Movement-Based Initiative}\label{Movement-Based Initiative}
+        When making \glossterm{initiative} checks to determine the success of movement, having a faster movement speed is helpful (see \pcref{Movement and Positioning}).
+        For every 5 feet of movement you would have available after completing your movement, you gain a \plus2 bonus to any initiative checks necessary to determine whether your movement succeeds.
+        Regardless of whether your initiative check succeeds or fails, you cannot use that ``excess'' movement to move in the same phase after making such an initiative check.
+
+\section{Movement and Positioning}\label{Movement and Positioning}
+    This section describes how creatures move and position themselves on a battlefield.
+
+    \subsection{Measuring Movement}
+
+        For simplicity, all movement in combat is measured in five-foot increments.
+        While it is possible to be more precise than that, it's generally not worth the complexity.
+
+        \parhead{Squares}\label{Squares} Area is commonly measured in 5-ft.\ by 5-ft.\ spaces called \glossterm{squares}.
+        A single square represents the area occupied by a single humanoid creature in combat.
+        Sometimes, movement and distance are represented by the number of squares travelled.
+        A 30-ft.\ movement is the same thing as moving six squares.
+
+        \parhead{Diagonals}\label{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counds as ten feet of movement.
+        The third costs five feet, the fourth costs ten feet, and so on.
+        You can move diagonally past corners and enemies.
+
+    \subsection{Movement Abilities}\label{Movement Abilities}
+
+        Almost all creatures can use these abilities to move around a battlefield.
+        Many movement abilities are reactive, allowing you to move automatically in response to the movement of other creatures.
+        For example, you can try to follow a creature wherever it goes that round.
+        In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
+
+        The most common types of reactive movements are the \textit{block}, \textit{follow}, and \textit{withdraw} abilities, which are described below.
+        However, you can can come up with other reactive movements.
+        The only requirement is that a reactive movement must have a simple criteria for determining how you move.
+
+        \parhead{Hustle} As a \glossterm{move action}, you can use the \textit{hustle} ability to move.
+        This is the most common movement ability.
+
+        \begin{instantability}{Hustle}
+            \label{Hustle}
+            Instant
+            \rankline
+            Choose a path that you want to travel. You travel that path, up to the limit of your movement speed.
+        \end{instantability}
+
+        \parhead{Block} As a \glossterm{move action}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
+
+        \begin{instantability}{Block}
+            \label{Block}
+            Instant
+            \rankline
+            Choose a creature to block, and the area you want to block it from entering.
+            During the current phase, you automatically move to intercept the target as it approaches the blocked area, up to the limit of your movement speed.
+            Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
+            Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
+            Failure means the target moves around you (if there is room) to enter the area.
+
+            Multiple creatures can coordinate to block a single creature.
+            The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
+        \end{instantability}
+
+        \parhead{Follow} As a \glossterm{move action}, you can use the \textit{follow} ability to follow a creature as it moves.
+
+        \begin{instantability}{Follow}
+            \label{Follow}
+            Instant
+            \rankline
+            Choose a creature to follow, and the maximum distance you want to follow at.
+            During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your movement speed.
+            If the target uses an ability that makes it impossible for you to follow its movement, such as teleporting or disappearing from your sight, you stop moving when you become adjacent to the position where it used that ability.
+        \end{instantability}
+
+        \parhead{Withdraw} As a \glossterm{move action}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
+
+        \begin{instantability}{Withdraw}
+            \label{Withdraw}
+            Instant
+            \rankline
+            This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
+            In addition, you can specify multiple targets and try to keep away from all of them.
+        \end{instantability}
+
+    \subsection{Movement Impediments}
+
+        \parhead{Difficult Terrain}\label{Difficult Terrain}
+        Some terrain is hard to move through, like thick bushes or a swamp.
+        If a square is \glossterm{difficult terrain}, it doubles the movement cost required to move out of the square.
+        That generally means it takes ten feet of movement, or fifteen feet if you are moving diagonally.
+
+        If a square is considered difficult terrain for multiple reasons, the cost increases stack.
+        For example, a square in a swamp that also has thick bushes blocking your passage would take twenty feet of movement, or thirty feet to move diagonally.
+
+        \parhead{Obstacles}
+        An obstacle is anything that gets in your way. Enemies and large solid objects like walls completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a \glossterm{check} to bypass, such as an Balance check (see \pcref{Balance}).
+
+        \parhead{Squeezing}\label{Squeezing}
+        In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up.
+        You can squeeze through or into a space that is at least half as wide as your normal space.
+        While \squeezing, you move at half speed, and you take a \minus2 penalty to \glossterm{accuracy}, as well as Armor and Reflex defenses.
+        You can squeeze into tighter spaces with the Flexibility skill.
+
+        Creatures that take up multiple squares take up half their normal number of squares while squeezing. For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
+
+        \parhead{Accidentally Squeezing} Sometimes a character ends its movement while moving through a space where it's not normally allowed to stop. When that happens, the character is squeezing in the space until it can move. If squeezing is impossible, the creature immediately moves to the closest available space. Try not to do this.
+
+        \parhead{Undergrowth}\label{Undergrowth} Vines, roots, bushes, and similar plants that can obstruct movement are common in forested areas.
+        These small plants can impede movement in large quantities.
+        There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
+
+        \subparhead{Light Undergrowth}\label{Light Undergrowth}
+        Light undergrowth provides \glossterm{concealment} and is \glossterm{difficult terrain}.
+
+        \subparhead{Heavy Undergrowth}\label{Heavy Undergrowth}
+        Heavy undergrowth provides \glossterm{concealment} and is doubly \glossterm{difficult terrain}, which quadruples the movement cost required to move out of each square.
+        In addition, using the \textit{charge} and \textit{sprint} actions is impossible in heavy undergrowth (see \pcref{Movement Abilities}, and \pcref{Special Combat Abilities}).
+
+    \subsection{Movement Modes}\label{Movement Modes}
+        A \glossterm{movement mode} is a method of moving from one location to another.
+        % TODO: terminology confusion mode vs. speed
+        The most common movement mode is a land speed, which allows creatures to move across the ground.
+        Unless otherwise noted, all creatures have a land speed equal to the base speed for their size (see \pcref{Movement Modes}).
+        In addition, some abilities grant creatures the ability to move in unusual ways.
+        These forms of movement are described here.
+
+        \parhead{Burrowing}
+        A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically. Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances. It does not leave behind a usable tunnel for other creatures.
+
+        \parhead{Climbing}
+        A creature with a \glossterm{climb speed} can move a distance equal to its climb speed with a successful Climb check (see \pcref{Climb}).
+        In addition, it gains a \plus10 bonus to any Climb checks it makes.
+
+        \parhead{Flying}\label{Flying}
+        A creature with a \glossterm{fly speed} can fly through the air at the indicated speed.
+        Flying is more complicated than some other movement speeds.
+        For details, see \pcref{Flying Mechanics}.
+
+        \parhead{Gliding}\label{Gliding}
+        A creature with a glide speed can glide through the air at the indicated speed
+        It must not be carrying weight in excess of its maximum carrying capacity (see \pcref{Weight Limits}).
+        Whenever a creature glides, it takes a \minus2 penalty to Armor and Reflex defenses until the end of the round.
+
+        While in the air, a creature with a glide speed can control its fall as a \glossterm{move action}. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
+
+        \parhead{Land}
+        A creature with a land speed can move across the ground at the indicated speed.
+        Most creatures have a land speed.
+
+    \subsection{Flying Mechanics}\label{Flying Mechanics}
+        A creature with a fly speed cannot fly while it is carrying weight in excess of its maximum carrying capacity (see \pcref{Weight Limits}).
+        In addition, it cannot fly while it has \glossterm{encumbrance}.
+
+        \parhead{Maximum Height} Some abilities that grant a fly speed also have a height limit for the maximum height you can reach with that fly speed.
+        This height measures your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
+        You can fly above surfaces like water as long as they are thick enough to support your weight.
+
+        \parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls just like any other creature would in midair. As long as it still has the ability to fly, it can regain control of its fall as a standard action, causing it to resume flying normally.
+
+        \subsubsection{Flying Maneuverability}\label{Flying Maneuverability}
+        Each creature with a fly speed also has a maneuverability: good, average, or poor.
+        Unless otherwise specified, a creature with a fly speed has average maneuverability.
+
+            \parhead{Good Maneuverability}
+            \begin{itemize}
+                \item Minimum speed: The creature does not need to move forward to maintain its flight, allowing it to hover.
+                \item Turning: The creature can turn in place without spending movement.
+                \item Vertical movement: The creature can move up or down at the same speed as it moves horizontally.
+            \end{itemize}
+
+            \parhead{Average Maneuverability}
+            \begin{itemize}
+                \item Defense penalties: Whenever the creature flies, it takes a \minus2 penalty to Armor and Reflex defenses until the end of the round.
+                    This is a \abilitytag{Swift} effect, so it affects attacks made against the creature during the phase that it flies.
+                \item Minimum speed: The creature must move forward by at least half its fly speed each round. If it does not, it falls.
+                \item Turning: Turning by 90 degrees costs 5 feet of movement, and the creature can't turn in the same place by more than 90 degrees.
+                \item Vertical movement: The creature can move up by only one square vertically per square traveled horizontally, but it can fly directly down if it chooses.
+                    The creature can fly up at half speed, but can fly down twice as fast.
+            \end{itemize}
+
+            \parhead{Poor Maneuverability}
+            \begin{itemize}
+                \item Defense penalties: Whenever the creature flies, it takes a \minus4 penalty to Armor and Reflex defenses until the end of the round.
+                    This is a \abilitytag{Swift} effect, so it affects attacks made against the creature during the phase that it flies.
+                \item Minimum speed: The creature must move forward by at least half its fly speed each round. If it does not, it falls.
+                \item Turning: Turning by 45 degrees costs 5 feet of movement, and the creature can't turn in the same place by more than 45 degrees.
+                \item Vertical movement: The creature can move up or down by only one square vertically per square traveled horizontally.
+                    The creature can fly up at half speed, but can fly down twice as fast.
+            \end{itemize}
+
+        
+
+    \subsection{Forced Movement}\label{Forced Movement}
+        Some abilities can physically move you against your will.
+        Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can be moved by forced movement effects.
+        There are two kinds of forced movement: \glossterm{push} effects and \glossterm{knockback} effects.
+        Unless otherwise noted, all forced movement effects move the target in a single straight horizontal line.
+
+        \subsubsection{Push Effects}\label{Push Effects}
+            A creature affected by a \glossterm{push} effect is being pushed by a constant force.
+            If it encounters another creature or a solid obstacle during the movement, the forced movement effect ends without causing additional harm to the creature or the obstacle.
+            Similarly, if a creature being pushed stops being supported and would fall, it falls instead of being pushed further.
+            This can allow creatures pushed off the edge of a cliff to grab the edge of the cliff.
+
+        \subsubsection{Knockback Effects}\label{Knockback Effects}
+            A creature affected by a \glossterm{knockback} effect is thrown backwards by a single point of impact.
+            If it encounters another creature or a solid obstacle during the movement, it and the obstacle each take 1d6 damage per 10 feet of movement remaining.
+            A creature moving as a result of a knockback effect does not have to be supported during the movement by solid ground.
+            This can allow you to knockback creatures off of cliffs without allowing them to save themselves.
+
+\section{Universal Abilities}\label{Universal Abilities}
+    All creatures can use the following abilities.
+
+    \subsection{Strikes}\label{Strikes}
+        A \glossterm{strike} is the most common type of attack.
+        There are three kinds of strikes: melee, projectile, and thrown.
+        Many abilities allow you to make one or more strikes.
+        Whenever you make a strike, you can choose which kind of strike to make.
+
+        All strikes are \glossterm{mundane} abilities.
+        Your \glossterm{accuracy} with a strike is the same as your accuracy with most other abilities (see \pcref{Accuracy}).
+        Your \glossterm{damage} with a strike is determined by your mundane \glossterm{power} and the weapon you hit with (see \pcref{Strike Damage}).
+
+        Whenever you make a strike, you must choose one weapon to make the strike with.
+        Wielding two weapons does not change anything about each strike you make.
+        However, wielding two weapons can allow you to make an additional strike each round.
+        For details, see \pcref{Offhand Strike}.
+
+        \begin{instantability}{Melee Strike}
+            \label{Melee Strike}
+            Instant
+            \rankline
+            Choose one \glossterm{melee} weapon you are wielding and are able to attack with.
+            Make an attack vs. Armor with that weapon against anything within that weapon's \glossterm{reach}.
+
+            \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
+            \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
+        \end{instantability}
+
+        \begin{instantability}{Projectile Strike}
+            \label{Projectile Strike}
+            Instant
+            \rankline
+            Choose one \glossterm{projectile weapon} that you are wielding and are able to attack with.
+            Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of sight} and \glossterm{line of effect} to.
+            You suffer a \glossterm{longshot penalty} if the target is at \glossterm{long range} from you with that weapon (see \pcref{Weapon Range Limits}).
+
+            \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
+            \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
+        \end{instantability}
+
+        \begin{instantability}{Thrown Strike}
+            \label{Thrown Strike}
+            Instant
+            \rankline
+            Choose one \glossterm{thrown weapon} that you are wielding and are able to attack with.
+            Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of sight} and \glossterm{line of effect} to.
+            You suffer a \glossterm{longshot penalty} if the target is at \glossterm{long range} from you with that weapon (see \pcref{Weapon Range Limits}).
+
+            \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
+            \crit The target takes double damage from the weapon, as normal for critical hits (see \pcref{Critical Hits}).
+        \end{instantability}
+
+        \subsubsection{Strike Damage}\label{Strike Damage}
+            When you deal damage with a strike, you roll your weapon's damage dice and add your \glossterm{power} with the strike to get the total damage.
+            Almost all strikes are considered \glossterm{mundane} abilities, so you would normally use your \glossterm{power} with mundane abilities to determine their damage.
+
+            Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
+            Some abilities modify your weapon damage dice with \glossterm{dice increments}, such as by granting you a \plus1d bonus to your weapon's damage dice.
+            For details about dice increments, see \pcref{Dice Increments}.
+
+        \subsubsection{Secondary Strike Targets}\label{Secondary Strike Targets}
+            Some abilities allow you to make strikes that affect secondary targets in addition to the primary target or targets.
+            You make the same attack roll and damage roll against all targets of the strike.
+            For example, weapons with the Sweeping weapon tag can make attacks against secondary targets adjacent to the primary target.
+            If a strike has multiple primary targets, you must choose a single creature to be treated as the primary target for the purpose of all abilities that reference secondary targets.
+
+            Multiple abilities that cause a strike to affect secondary targets stack normally unless noted otherwise.
+
+    \subsection{Special Combat Abilities}\label{Special Combat Abilities}
+
+        \begin{dtable}
+            \lcaption{Special Combat Abilities}
+            \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
+                \tb{Ability}             & \tb{Defense} & \tb{Brief Description} \tableheaderrule
+                Charge                   & Armor        & Move and attack                      \\
+                Desperate Exertion\fn{2} & \tdash       & Gain a bonus on a single roll        \\
+                Dirty Trick              & Fort or Ref  & Impose penalty on a foe              \\
+                Disarm                   & Ref          & Attack item, knocking it free        \\
+                Grapple                  & Fort and Ref & Wrestle with a foe                   \\
+                Offhand Strike           & Armor        & Make a strike with an offhand weapon \\
+                Overrun\fn{1}            & Fort         & Move through foe's space             \\
+                Recover\fn{1}            & \tdash       & Regain hit points, remove conditions \\
+                Shove                    & Fort         & Move a foe                           \\
+                Sprint\fn{1}             & \tdash       & Move at double speed                 \\
+                Struggle                 & \tdash       & Move 5 feet regardless of penalties  \\
+                Total Defense            & \tdash       & Gain \plus2 to defenses              \\
+                Throw                    & \tdash       & Throw a held object                  \\
+                Trip                     & Ref          & Trip a foe                           \\
+            \end{dtabularx}
+            1. This ability increases your \glossterm{fatigue level} when used. \\
+        \end{dtable}
+
+        \parhead{Charge} You can use the \textit{charge} ability as a standard action.
+
+        \begin{instantability}{Charge}
+            \label{Charge}
+            Instant
+            \rankline
+            After you use this ability, you \glossterm{briefly} take a \minus2 penalty to all defenses.
+            This ability does not have the \abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+
+            Move up to your speed in a single straight line.
+            At the end of your movement, you can make a melee \glossterm{strike} from your new location.
+        \end{instantability}
+
+        \parhead{Desperate Exertion}\label{desperate exertion} You can use the \textit{desperate exertion} ability to succeed at a critical moment when you would otherwise fail.
+        Using this ability is not an action, and can be done at any time.
+        You can decide to use this ability after you learn whether the original roll succeeded or failed.
+        You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
+        However, you must use it before the phase is over.
+
+        \begin{instantability}{Desperate Exertion}
+            \label{Desperate Exertion}
+            \spelltwocol{Instant}{\abilitytag{Swift}}
+            \rankline
+            After you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
+
+            You reroll any \glossterm{attack} or \glossterm{check} you just made and gain a \plus2 bonus.
+            You must reroll the entire roll, not just one die from the roll (such as if the original roll \glossterm{explodes}).
+            You cannot use this to affect rolls that are not attacks or checks, such as \glossterm{vital rolls}.
+            You cannot use this ability multiple times to affect the same roll.
+        \end{instantability}
+
+        \parhead{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
+
+        \begin{durationability}{Dirty Trick}\label{Dirty Trick}
+            Duration
+            \rankline
+            When you use this ability, you must describe the kind of dirty trick you are performing.
+            For example, you can pull a creature's pants down, throw sand, or otherwise use your environment to attack.
+            The same creature can be affected by multiple dirty tricks, but each must apply a different penalty.
+
+            Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your \glossterm{reach}.
+            The target uses whichever defense is appropriate to the nature of the trick you describe.
+
+            On a hit, the subject suffers a \minus2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
+            You choose the defense, which must be appropriate for the action you described.
+            If the subject is at its maximum hit points, this effect lasts \glossterm{briefly}.
+            Otherwise, this effect is a \glossterm{condition}.
+        \end{durationability}
+
+        \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
+
+        \begin{instantability}{Disarm}\label{Disarm}
+            Instant
+            \rankline
+            Make a melee \glossterm{strike} against an object.
+            Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
+            This attack must beat the target's Reflex defense.
+            If the target is attended by a creature, the attack must also beat the attending creature's Reflex defense.
+
+            \hit You choose whether the target takes damage from the weapon you hit it with.
+            In addition, if the target is \glossterm{attended} and is not held in a hand or well secured, you can choose to knock it loose.
+            Well secured objects include rings worn on fingers, equipped shields, and similarly affixed objects.
+            If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
+
+            \crit As above, except that you can deal double damage and you can also knock loose objects that are held in a single hand, but not objects that are held in two hands or well secured.
+        \end{instantability}
+
+        \parhead{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
+
+        \begin{durationability}{Grapple}\label{Grapple}
+            Duration
+            \rankline
+            Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your \glossterm{reach}.
+            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy}.
+
+            On a hit against both defenses, you and the target are \grappled by each other.
+            For details, see \pcref{Grappling}.
+        \end{durationability}
+
+        \parhead{Offhand Strike}\label{Offhand Strike} As a \glossterm{minor action}, you can use the \textit{offhand strike} ability to quickly attack with an offhand weapon while you attack with a primary weapon.
+        Your Dexterity must be at least 1 to use this ability.
+        \begin{instantability}{Offhand Strike}
+            Instant
+            \rankline
+            Choose one non-heavy weapon you are wielding and are able to attack with.
+            You cannot use this ability unless you also make a \glossterm{strike} with a different weapon as part of a \glossterm{standard action} during the same phase.
+
+            Make a \glossterm{strike} with your chosen weapon.
+            You take a \minus2 penalty to \glossterm{accuracy}, and you do not add your \glossterm{power} to damage with the strike.
+            In addition, you take a \minus1 penalty to \glossterm{accuracy} with the strike for each non-light weapon you attack with this phase, including the weapon used to make this strike.
+        \end{instantability}
+
+        \parhead{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
+
+        \begin{instantability}{Overrun}
+            \label{Overrun}
+            Instant
+            \rankline
+            After you use this ability, you increase your \glossterm{fatigue level} by one.
+
+            Move up to your movement speed in a straight line.
+            You can try to move directly through creatures in your way during this movement.
+            Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
+            If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
+            For each size category by which you are larger or smaller than the target, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
+            If you move into a creature's space with this ability, but you do not move out of it, you and the creature are both \squeezing as long as you continue sharing space.
+
+            On a hit, you can move through each target's space.
+            On a critical hit, each target is also knocked \prone.
+            On a miss, you end your movement immediately.
+        \end{instantability}
+
+        \parhead{Recover} You can use the \textit{recover} ability as a standard action.
+        As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
+        \begin{instantability}{Recover}
+            \label{Recover}
+            Instant
+            \rankline
+            After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you take a short rest.
+
+            You regain hit points equal to your maximum \glossterm{hit points}.
+            In addition, you remove all \glossterm{brief} effects and \glossterm{conditions} affecting you.
+            This cannot remove effect applied during the current round.
+            If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \pcref{Regaining Hit Points and Damage Resistance}).
+        \end{instantability}
+
+        \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
+
+        \begin{instantability}{Shove}\label{Shove}
+            Instant
+            \rankline
+            Choose either one creature within your \glossterm{reach} or all creatures grappling you (see \pcref{Grappling}).
+
+            Make a melee attack with a free hand against both the Fortitude defense and total Strength of each target.
+            Your \glossterm{accuracy} with this attack is equal to your Strength.
+            If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
+
+            On a hit, you can move up to half your movement speed in a straight line, \glossterm{pushing} each subject as you move.
+            On a critical hit, you can move up to your full movement speed instead.
+        \end{instantability}
+
+        % It's important that this is a movement *replacement* instead of a generic speed modifier
+        % to prevent it from being abused with abilities like Shove.
+        \parhead{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
+
+        \begin{instantability}{Sprint}
+            \label{Sprint}
+            Instant
+            \rankline
+            After you use this ability, you increase your \glossterm{fatigue level} by one.
+
+            You move up to double your normal movement speed.
+        \end{instantability}
+
+        \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
+
+        \begin{durationability}{Struggle}
+            \label{Struggle}
+            Duration
+            \rankline
+            Until the end of the current phase, your land speed becomes five feet, regardless of all other effects that would modify your land speed.
+            In addition, you can move a distance up to your land speed.
+            This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
+        \end{durationability}
+
+        \parhead{Throw} You can use the \textit{throw} ability to throw an object.
+        You can use the ability as a standard action.
+        Alternately, you can use it as a \glossterm{move action}.
+        If you do, you take a \minus20 penalty to the check, and you cannot make an attack roll to hit with the thrown object.
+
+        As long as you have a Strength of at least \minus2, you do not have to use this ability to throw weapons that are sized appropriately for you and which are designed to be thrown.
+        Instead, you can simply use the listed \glossterm{range limits} for those weapons.
+
+        \begin{instantability}{Throw}
+            \label{Throw}
+            Instant
+            \rankline
+            Make a Strength check to throw an object you hold in at least one hand.
+            The base \glossterm{difficulty rating} of this check is 0.
+            For each size category larger or smaller than the target that you are, you gain a \plus10 bonus or penalty to the check.
+            You cannot throw an object whose weight exceeds your maximum carrying capacity (see \pcref{Weight Limits}).
+
+            If you succeed, you throw the object five feet.
+            For every 5 points by which you succeed, you double the distance you throw the object: ten feet, twenty feet, and so on.
+            If you throw the object at a creature or object, you can make an attack roll to hit it with the thrown object, as the \textit{thrown strike} ability.
+            That attack roll is rolled separately from the Strength check you make to use this ability.
+        \end{instantability}
+
+        \parhead{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
+
+        \begin{durationability}{Total Defense}
+            \label{Total Defense}
+            \spelltwocol{Duration}{\abilitytag{Swift}}
+            \rankline
+            You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
+            Because this ability has the \abilitytag{Swift} tag, this improves your defenses against attacks made against you during the current phase.
+        \end{durationability}
+
+        \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
+
+        \begin{instantability}{Trip}
+            \label{Trip}
+            Instant
+            \rankline
+            Make a melee attack with a free hand against a creature's Reflex defenses.
+            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy}.
+
+            On a hit, the subject becomes \prone.
+        \end{instantability}
+
+    \subsection{Grappling}\label{Grappling}
+        A grappled creature is physically struggling with at least one other creature.
+        While grappled, you suffer certain penalties and restrictions, as described below.
+
+        \subsubsection{Being In A Grapple}
+            While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
+            \begin{itemize}
+                \item You are unable to use one of your hands for any purposes other than grappling.
+                    This prevents humanoid creatures from taking any actions which would require having two free hands, such as attacking with heavy weapons.
+                \item You take a \minus2 penalty to Armor and Reflex defenses.
+                \item Abilities that have \glossterm{somatic components} have a 50\% chance to fail with no effect when used.
+                \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \textit{shove} ability (see \pcref{Shove}).
+            \end{itemize}
+
+        \subsubsection{Grapple Actions}\label{Grapple Actions}
+            While grappled, you can use two special abilities to try to affect the grapple.
+
+            \parhead{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
+
+            \begin{instantability}{Escape Grapple}
+                \label{Escape Grapple}
+                Instant
+                \rankline
+                Make an attack against any number of creatures that you are grappled by.
+                You may use the Flexibility skill or your total Strength in place of your normal \glossterm{accuracy} with this attack (see \pcref{Flexibility}).
+                The defense of each creature is equal to the result of the attack it made with its \textit{maintain grapple} ability.
+                If a creature did not use that ability during the current round, its defense against this ability is 0.
+                % TODO: awkward wording
+                For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
+            \end{instantability}
+
+            \parhead{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
+            If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
+            \begin{instantability}{Maintain Grapple}
+                \spelltwocol{Instant}{Swift}
+                \rankline
+                Make an attack using a \glossterm{free hand}.
+                You may use your total Strength in place of your normal \glossterm{accuracy} with this attack.
+                This attack has no immediate effect.
+                The attack result determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
+            \end{instantability}
+
+        \subsubsection{Asymmetric Grappling}\label{Asymmetric Grappling}
+            Normally, when you use the \textit{grapple} ability, both you and the target become grappled by each other.
+            Some abilities allow you to grapple other creatures without becoming grappled yourself.
+            You can release a creature that you are not grappled by as a \glossterm{free action}.
+            If you do, the creatures stops being grappled by you.
+
+\section{Circumstances, Bonuses, and Penalties}
+    Many effects can grant bonuses or penalties to actions you take.
+    This section explains a variety of common circumstances that can apply bonuses or penalties in combat.
+
+    \subsection{Size in Combat}\label{Size in Combat}
+        Your size affects your \glossterm{space} and \glossterm{reach} in combat, your speed with any \glossterm{movement modes} that depend on your size category's \glossterm{base speed}, your base attributes, and how noticeable you are (see \pcref{Stealth}).
+        These effects are shown on \trefnp{Size in Combat}.
+
+        \begin{dtable*}
+            \lcaption{Size in Combat}
+            \begin{dtabularx}{\textwidth}{l l l l p{4.5em} p{5em} X}
+                \tb{Size}         & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Strength Modifier}\fn{2} & \tb{Dexterity Modifier}\fn{2} & \tb{Example Creature} \tableheaderrule
+                Fine              & 1/4 ft.    & 0          & 5 ft.  & \minus8 & \plus4  & Fly                      \\
+                Diminuitive       & 1/2 ft.    & 0          & 10 ft. & \minus6 & \plus3  & Mouse                    \\
+                Tiny              & 1 ft.      & 0          & 15 ft. & \minus4 & \plus2  & Rat                      \\
+                Small             & 2-1/2 ft.  & 0          & 20 ft. & \minus2 & \plus1  & Cat                      \\
+                Medium            & 5 ft.      & 5 ft.      & 30 ft. & \tdash  & \tdash  & Human                    \\
+                Large (tall)      & 10 ft.     & 10 ft.     & 40 ft. & \plus1  & \minus1 & Ogre                     \\
+                Large (long)      & 10 ft.     & 5 ft.      & 40 ft. & \plus1  & \minus1 & Horse                    \\
+                Huge (tall)       & 20 ft.     & 15 ft.     & 50 ft. & \plus2  & \minus2 & Cloud giant              \\
+                Huge (long)       & 20 ft.     & 10 ft.     & 50 ft. & \plus2  & \minus2 & Bulette                  \\
+                Gargantuan (tall) & 40 ft.     & 40 ft.     & 60 ft. & \plus3  & \minus3 & 50-ft.\ animated statue  \\
+                Gargantuan (long) & 40 ft.     & 20 ft.     & 60 ft. & \plus3  & \minus3 & Kraken                   \\
+                Colossal (tall)   & 80\add ft. & 80\add ft. & 80 ft. & \plus4  & \minus4 & Colossal animated object \\
+                Colossal (long)   & 80\add ft. & 40\add ft. & 80 ft. & \plus4  & \minus4 & Great wyrm red dragon    \\
+            \end{dtabularx}
+            1 Creatures can vary in space and reach.  These are simply typical values.  \\
+            2. Applies to base attribute value. These modifiers only apply to creature that naturally have the given size, without any temporary modifiers. \\
+        \end{dtable*}
+
+        \subsubsection{Space}\label{Space}
+            A creature's \glossterm{space} is the area its body occupies while fighting.
+            All humanoid species take up a 5-ft.\ by 5-ft.\ space in combat, which is a single \glossterm{square}.
+            Normally, other creatures can't be in the space you occupy.
+            Most creatures have a space significantly larger than the physical space their body occupies because they need room to maneuver in combat.
+
+        \subsubsection{Reach}\label{Reach}
+            A creature's \glossterm{reach} is the distance that its \glossterm{melee} attacks can reach.
+
+        \subsubsection{Base Speed}\label{Base Speed}
+            Each size category has a \glossterm{base speed} that indicates how far creatures of that size category can generally move.
+            Most \glossterm{movement modes} use a speed equal to the base speed for a creature's size category.
+            For details about other speeds, see \pcref{Movement Modes}.
+
+        \subsubsection{Other Effects}
+            % TODO: record all of these and add them here
+            A creature's size affects some additional skills and abilities.
+            For example, larger creatures have a penalty to the Stealth skill (see \pcref{Size and Stealth}).
+            The effects of unusual size are described in those skills and abilities.
+            Unusually large or small creatures also have other special rules apply to them, as described below.
+
+        \subsubsection{Very Small Creatures}
+            \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square.
+            Ignoring flight, you can fit four Small creatures in a square, twenty-five Tiny creatures, 100 Diminuitive creatures, or 400 Fine creatures.
+            If the creatures can fly, the number of creatures that can fit into a space increases drastically.
+
+            \parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. You can attack into your own square if you need to, so you can attack such creatures normally.
+
+            If a creature without a natural reach uses a Long weapon, it gains no benefits or penalties (see \pcref{Long Weapon}).
+
+            \parhead{Movement} Creatures two size categories smaller than you are not considered obstacles and do not hinder your movement.
+
+        \subsubsection{Very Large Creatures}\label{Very Large Creatures}
+            \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
+
+            \parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
+
+            Creatures with a large natural reach using Long weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures (see \pcref{Long Weapon}).
+
+            \parhead{Movement} Creatures two size categories larger than you are not considered obstacles and do not hinder your movement.
+
+            % Should this be two size categories larger, or be more dependent on creature anatomy?
+            \parhead{Immunities} Creatures at least two size categories larger than you are difficult to fight.
+            You cannot get a \glossterm{critical hit} with melee \glossterm{strikes} against such creatures.
+            If you can reach a vulnerable point on the creature, such as by flying, climbing on the creature, or knocking it prone, you can get critical hits normally.
+
+    \subsection{Circumstantial Modifiers}
+
+        Circumstances frequently modify your odds of success when making attacks and checks, or when defending yourself from attacks.
+        There are two kinds of circumstantial modifiers.
+        Circumstances that make you better or worse at your task give you a bonus or penalty to your attack or check.
+        Circumstances that make the task easier or harder increase or decrease the \glossterm{difficulty rating} of the task, or the defense of the attacked creature.
+
+        Most circumstances grant a \plus2 bonus or impose a \minus2 penalty.
+        Extraordinary circumstances can potentially have greater modifiers.
+        All circumstantial modifiers should be used at the discretion of the GM.\@
+
+    \subsection{Being Surrounded}\label{Being Surrounded}
+        When you are being attacked by multiple foes at once, you are less able to defend yourself.
+        If every space adjacent to you either contains an \glossterm{enemy} or is adjacent to an \glossterm{enemy}, you are surrounded.
+        While surrounded, you take a \minus2 penalty to your Armor and Reflex defenses.
+
+    \subsection{Cover}\label{Cover}
+
+        Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
+        A creature or object behind cover gains a \plus2 bonus to Armor defense.
+        If an attack misses the Armor Defense of a creature or object behind cover by no more than the defense bonus provided by the cover,
+        the attack is applied to the obstacle instead of to the intended target.
+        In addition, a creature behind cover can hide (see \pcref{Stealth}).
+
+        \parhead{Partial Obstacles} Many obstacles, such as trees and low walls, can provide cover without normally blocking \glossterm{line of sight} or providing \glossterm{total cover}.
+        Unusually small creatures, or creatures who intentionally take cover behind such obstacles, may be able to gain total cover from them.
+
+        \parhead{Improved Cover}
+        Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
+        However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may gain a greater than normal benefit to defenses from cover.
+
+        \subsubsection{Measuring Cover}
+
+            When you make an attack, choose a single square within your \glossterm{space} and a single \glossterm{target square} within your target's space.
+            If you are making a ranged attack, choose one corner of your space.
+            If you are making a melee attack, choose any two corners of your square.
+            These corners are called the \glossterm{points of origin} for your attack.
+            For the purpose of determining cover, your attack originates from your chosen \glossterm{points of origin} and travels to the \glossterm{target square}.
+
+            % TODO: pull out ``line of sight'' and ``line of effect'' from this text
+            First, check if you can attack the target at all.
+            For each \glossterm{point of origin} of your attack, you must be able to draw two lines to any two corners of your attack's \glossterm{target square}.
+            These two lines must not overlap each other.
+            In addition, each line must not be blocked by solid objects, though they can touch the edges of spaces blocked by solid objects.
+            The lines can pass through obstacles that do not take up the entire area within their space (such as most creatures).
+            Finally, the line must not be blocked by other squares within the target's space, preventing you from targeting the ``inside'' of large creatures.
+            If you cannot draw such a line, the target has \glossterm{total cover} from you.
+            This makes all targeted attacks impossible.
+
+            Second, draw a line from the \glossterm{points of origin} of your attack to the center of your attack's target square.
+            If any such line touches a square with an obstacle that grants cover, even at an edge or corner, the target has cover from you.
+            Otherwise, if the line is uninterrupted, the target does not have cover from you.
+
+    \subsection{Total Cover}\label{Total Cover}
+        If a creature is completely behind an physical object that blocks sight, it has \glossterm{total cover} from attacks.
+        A creature with total cover cannot be targeted by any attacks.
+        Abilities that ignore \glossterm{cover} do not ignore \glossterm{total cover} unless they say otherwise.
+
+    \subsection{Concealment}\label{Concealment}
+        Concealment represents anything which makes it more difficult to see your target, such as \glossterm{shadowy illumination}.
+        All attacks against a creature or object with concealment from you have a 20\% miss chance.
+        Determining concealment works similarly to determining cover.
+        You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
+
+        \parhead{Determining Concealment} There are two things that can cause a creature to be concealed: poor lighting, and intervening obstacles that block sight.
+        Determining concealment from obstacles that block sight works the same way as determining cover.
+
+        Determining concealment from lighting conditions is simpler, since it ignores lighting conditions between you and the target.
+        If your \glossterm{target square} is in lighting that provides concealment, the target has concealment.
+        Otherwise, it does not.
+
+    \subsection{Helpless Defenders}
+        A helpless creature is completely at an opponent's mercy.
+        It takes a \minus10 penalty to its Armor and Reflex defenses.
+        In addition, it is \unaware of all attacks against it, but the penalty for being unaware does not stack with the penalty for being helpless.
+        Paralyzed, bound, and unconscious creatures are helpless.
+        % TODO: make this less awkward
+
+    \subsection{Awareness and Surprise}\label{Awareness and Surprise}
+        In combat, creatures are sometimes not fully aware of danger, which makes them less able to defend against it.
+        A creature can be described as either aware, \unaware, or \partiallyunaware of an attack against it.
+        Normally, creatures are aware of all attacks against them in combat.
+        This causes no special bonuses or penalties.
+
+        Sometimes, creatures are fully \unaware that they are in danger from attack.
+        This typically happens as a result of stealth, but it can also happen as a result of sudden treachery.
+        A creature takes a \minus5 penalty to Armor and Reflex defenses against attacks that it is unaware of.
+        After being attacked, an unaware creature typically stops being fully unaware of future attacks.
+        If it cannot see or identify its attacker, it becomes \partiallyunaware.
+
+        A creature that knows that it is in danger and is attempting to defend itself, but does not know the exact location or nature of its attackers, is \partiallyunaware.
+        For example, a creature that is already in combat that is attacked by a previously unseen foe is partially unaware of the attack.
+        Similarly, a creature that just barely fails to beat an opponent's Stealth check may hear an ominous sound that makes it partially aware of danger without knowing the exact location of any attackers.
+        A creature takes a \minus2 penalty to Armor and Reflex defenses against attacks that it is partially unaware of.
+
+        \subsubsection{Surprise Attacks}\label{Surprise Attacks}
+            Sometimes, creatures are not aware that combat is taking place when the combat starts.
+            This most commonly happens with ambushes.
+            Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat.
+            It is usually \unaware of all until that point, though unusually vigilant or perceptive creatures may be \partiallyunaware.
+
+        \subsubsection{Invisibility}\label{Invisibility}
+            Invisible objects and creatures cannot be seen.
+            By itself, this does not make them impossible to detect, but it poses unique challenges.
+            If you succeed on an Awareness check to notice an invisible object or creature, you still cannot see it, but you know its location.
+
+            If it is impossible to see your target, you can still try to attack a square you think it occupies.
+            An attack into a square occupied by an invisible enemy has a 50\% miss chance.
+            If an adjacent invisible creature attacks you with a \glossterm{strike}, you can automatically identify the space it occupied when it attacked you.
+            Even if you know the existence and location of an invisible creature, you are still \partiallyunaware of any attacks it makes.
+
+\section{Ability Mechanics}\label{Ability Mechanics}
+
+    \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
+
+        There are two types of abilities: magical abilities and mundane abilities.
+
+        \parhead{Magical Abilities}\label{Magical Abilities} A \glossterm{magical} ability is an ability fundamentally composed of or fuelled by magic.
+        Magical abilities often have effects that would be impossible without magical intervention.
+        Examples include \glossterm{spells}, a dragon's breath weapon, and a paladin's ability to smite foes.
+        Abilities that are magical in nature are indicated with a (Magical) indicator.
+        Abilities that are not magical are \glossterm{mundane}.
+
+        \parhead{Mundane Abilities}\label{Mundane Abilities} A \glossterm{mundane} ability has some form of natural explanation and does not fundamentally originate from a magical source.
+        Examples include weapon attacks, a dragon's frightful presence, and a barbarian's rage.
+        Mundane attacks often target Armor defense.
+        Unless otherwise indicated, all abilities are mundane in nature.
+        Abilities that are not mundane are \glossterm{magical}.
+
+    \subsection{Targets}\label{Targets}
+        Almost all abilities affect targets.
+        A target of an ability is a creature directly affected by the ability in some way.
+        Many abilities affect targets within a specific \glossterm{range}.
+
+        \subsubsection{Targeted Abilities}\label{Targeted Abilities}
+            Some abilities allow you to choose specific targets.
+            There can be restrictions on the targets of the ability, such as ``a creature or object'' or ``an \glossterm{ally}''.
+            These abilities are called \glossterm{targeted} abilities.
+
+        \subsubsection{Area Abilities}
+            Some abilities affect all valid targets within a given area.
+            There can be restrictions on the targets of the ability, such as ``all creatures'' or ``all \glossterm{enemies}''.
+            However, you cannot individually choose to include or exclude specific targets.
+            These abilities are not \glossterm{targeted} abilities.
+
+        \subsubsection{Invalid Targets}
+            % clarify timing
+            You can always attempt to use an ability on an invalid target.
+            If the target is still invalid when the ability resolves, the ability automatically fails and has no effect on the target.
+
+    \subsection{Range}\label{Range}
+        Many abilities can only affect targets or areas within a given \glossterm{range} of you.
+        For abilities that affect specific targets, all targets must be within the range.
+        For abilities that affect an area within a range, the area's \glossterm{point of origin} must within the range (see \pcref{Point of Origin}).
+        There are five common ranges: \rngshort, \rngmed, \rnglong, \rngdist, and \rngext.
+        Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
+
+    \subsection{Line of Sight}\label{Line of Sight}
+        Almost all abilities, including \glossterm{strikes}, must have \glossterm{line of sight} to target creatures or objects.
+        Unless otherwise noted in an ability's description, you cannot target a creature, object, or location that you do not have line of effect to.
+
+        A line of sight is a straight, unblocked path between you and a target.
+        To check if you have line of sight, find a path from any corner of one \glossterm{square} within your \glossterm{space} to any two corners of one \glossterm{square} within the \glossterm{space} of your target.
+        If those lines are not blocked by any obstacles that impede sight, you have line of sight to your target.
+
+    \subsection{Line of Effect}\label{Line of Effect}
+
+        Almost all abilities, including \glossterm{strikes}, must have a \glossterm{line of effect} to function.
+        Unless otherwise noted in an ability's description, you cannot target a creature, object, or location that you do not have line of effect to.
+        In addition, abilities that affect an area do not affect targets that the ability does not have line of effect to.
+
+        A line of effect is a straight, unblocked path between you and a target.
+        It is identified in the same way as \glossterm{line of sight}, except that it is blocked by physical obstacles instead of obstacles that block sight.
+        For example, a pane of glass would block line of effect, but not line of sight.
+
+        \subsubsection{Area Line of Effect}\label{Area Line of Effect}
+            Abilities that affect areas normally measure line of effect from the area's \glossterm{point of origin}.
+            This can allow you to affect targets that you do not have line of effect to as long as the point of origin has line of effect to both you and the target.
+
+            Areas originating from creatures do not have a single point of origin.
+            Instead, line of effect is measured from all grid intersections within or touching the creature's space.
+            If any such grid intersection has line of effect to a location, the area as a whole is considered to have line of effect to that location.
+
+        \subsubsection{Destroying Barriers}\label{Destroying Barriers}
+            Some abilities deal damage to both creatures and objects.
+            If a physical barrier is \glossterm{broken} by an ability, that barrier does not affect the ability's line of effect.
+            For example, a thin curtain of silk normally blocks line of effect.
+            However, an ability that destroyed the curtain would have its full effect on everything behind the curtain.
+
+        \subsubsection{Inside Creatures}
+            Creatures block line of effect to the inside of their own bodies.
+            As a result, you cannot use an ability that takes effect inside a creature unless you are also inside the creature.
+            This restriction applies even if there is no physical barrier to the inside of the creature.
+            You cannot place \glossterm{point of origin} for an area inside a creature's mouth, even if the creature has its mouth open at the time.
+
+    \subsection{Area}\label{Area}
+
+        Some abilities affect targets within an area.
+        All areas have a \glossterm{point of origin}, an area shape, a measurement of their size in feet, and an area type.
+
+        \subsubsection{Point of Origin}\label{Point of Origin}
+            When you use an ability that affects an area within a \glossterm{range}, you choose one grid intersection to serve as a starting point for the area.
+            This grid intersection is called the \glossterm{point of origin} for the area.
+            Areas that originate from a creature do not have a single point of origin.
+            % What ambiguity does having multiple points of origin cause?
+            For the purpose of effects that care about the area's point of origin, all grid intersections within or touching the creature's space are used.
+
+        \subsubsection{Area Shapes}\label{Area Shapes}
+
+            \parhead{Cone} A cone extends from the point of origin in a quarter-hemisphere, up to the given length.
+            A square is affected by a cone if it is within the cone's 90 degree arc and all of the square's points of intersection are no more than the cone's length away from the cone's point of origin.
+
+            \parhead{Cylinder} A cylinder extends out from the point of origin in a circle, up to the given radius.
+            Cylinders also have a specific height.
+            Unless otherwise specified, a cylinder's height is the same as its radius.
+            Cylinders ignore obstacles that partially block line of effect, as long as there is a path around the obstacle that lies entirely within the ability's area.
+
+            \parhead{Line} A line extends from the point of origin in a straight line, up to the given length.
+            Lines also have a specific width and height.
+            Unless otherwise specified, a line-shaped ability affects an area 5 feet wide and 5 feet high.
+            The affected squares are chosen such that they stay close to the chosen line as possible.
+            All squares affected by a line must be contiguous, so every square is adjacent to another affected square, disregarding diagonals.
+
+            \parhead{Sphere} A sphere extends from the point of origin in all directions.
+            Any ability which only specifies a radius for its area is sphere-shaped.
+
+            \parhead{Wall} A wall is like a line, except that its width is not defined in squares.
+            In a narrative sense, most walls have a defined width.
+            However, in a mechanical sense, walls are considered to have no width and simply occupy the boundary between squares.
+            Like lines, walls can be shapeable.
+
+            Walls can normally be created within occupied squares, but not within solid objects.
+            Some walls are called solid walls, and cannot be created within occupied squares.
+
+            \parhead{Specific Shapes} Some abilities specify a series of volumes that make up the area of the ability.
+            Most commonly, the volumes are cubes.
+            You may arrange the volumes as you want, with the restriction that each volume in the ability's area must be adjacent to one other volume in the ability's area.
+
+        \subsubsection{Area Size}
+
+            The area affected by many abilities falls into one of six sizes.
+            Each size defines the extent to which the ability extends out from its origin, whether as a radius or as a length.
+            Many abilities have specific sizes, as given in the ability description.
+
+            \parhead{Tiny} Tiny areas extend 5 feet from their point of origin.
+            \parhead{Small} Small areas extend 15 feet from their point of origin.
+            \parhead{Medium} Medium areas extend 30 feet from their point of origin.
+            \parhead{Large} Large areas extend 60 feet from their point of origin.
+            \parhead{Huge} Huge areas extend 120 feet from their point of origin.
+            \parhead{Gargantuan} Gargantuan areas extend 240 feet from their point of origin.
+
+        \subsubsection{Area Types}\label{Area Types}
+
+            \parhead{Burst} A burst ability has an immediate effect on all valid targets within an area.
+
+            \parhead{Emanation} An emanation ability has effects within an area for the duration of the ability.
+            It emanates from a specific creature or object, rather than a location.
+            If that creature or object moves, the emanation moves with it.
+
+            \parhead{Zone} A zone ability has effects within an area for the duration of the ability.
+            Unless otherwise noted, it does not move after being created.
+
+            When casting an area ability, you select the point where the ability originates.
+            The point of origin of a ability is always a grid intersection.
+            When determining whether a given creature is within the area of a ability, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
+            The only difference is that instead of counting from the center of one square to the center of the next, you count from intersection to intersection.
+
+            You can freely decrease a ability's area, provided that you decrease it uniformly across all of the ability's dimensions.
+            For example, you can cast a \spell{fireball} spell that affects a 5 foot radius if you choose to do so, but you can't cast a \spell{fireball} with any shape other than a sphere.
+
+            You can count diagonally across a square, but remember that every second diagonal counts as 2 squares of distance.
+            If the far edge of a square is within the ability's area, anything within that square is within the ability's area.
+            If the ability's area only touches the near edge of a square, however, anything within that square is unaffected by the ability.
+
+    \subsection{Ability Durations}\label{Ability Durations}
+
+        An ability's duration determines how long its effect lasts.
+        Abilities can have one of several different kinds of durations.
+
+        \subsubsection{Conditions}\label{Conditions}
+            Many abilities impose \glossterm{conditions} on their targets.
+            A condition lasts until it is removed.
+            You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
+            There are several other abilities that can also remove conditions.
+
+        \subsubsection{Attunement}\label{Attunement}
+            Many abilities last as long as a creature attunes to them.
+            Attuning to an ability costs an \glossterm{attunement point}.
+            As long as you remain attuned to that ability, you cannot recover that attunement point by any means.
+            After you stop being attuned to that ability, you can recover that attunement point when you take your next \glossterm{short rest}.
+
+            As a \glossterm{free action}, you can use the \textit{release attunement} ability to stop being attuned an ability you have attuned to.
+            \begin{instantability}{Release Attunement}
+                Instant
+                \rankline
+                You stop being attuned to one effect you have attuned to.
+            \end{instantability}
+
+            Attuned abilities continue to work across any distance, but not across planar boundaries.
+            % TODO: wording
+            At the end of each round, your attunement to all abilities created by creatures on a different plane than your current plane ends.
+            Planar travel that does not last a full round, such as teleportation within a plane, does not interrupt your attunement.
+
+            \subsubsection{Attunement Types}\label{Attunement Types}
+                There are three types of attunement abilities: self, target, and ritual.
+
+                \parhead{Attune (self)} A self attunement ability requires the creature using the ability to attune to the effect.
+
+                \parhead{Attune (target)} A target attunement ability requires the target of the ability to attune to the effect.
+                If the ability targets multiple creatures, each creature must attune to the ability independently.
+
+                As a special case, if a target attunement ability targets an inanimate object, the creature using the ability must attune to the effect.
+
+                \parhead{Attune (ritual)} Only \glossterm{rituals} have the \abilitytag{Attune} (ritual) tag.
+                A ritual attunement ability requires any participant in the ritual to attune to the effect.
+                In addition, ritual attunement abilities are not subject to the normal restrictions on multiple attunement.
+                % TODO: wording
+                You can maintain any number of activations of a particular ritual attunement ability at once.
+
+            \subsubsection{Multiple Attunement}
+                You can attune to multiple \abilitytag{Attune} (target) and \abilitytag{Attune} (self) abilities, and multiple creatures can attune to different uses of abilitytag same \glossterm{Attune} (target) ability you have.
+                However, you cannot attune to the same ability more than once, regardless of whether it is \abilitytag{Attune} (self) or \abilitytag{Attune} (target).
+
+        \subsubsection{Sustained Abilities}\label{Sustained Abilities}
+            Some abilities last as long as you take an action to sustain them each round.
+            The type of action required is always specified in the ability's tag, such as "Sustain (standard)" for a standard action, or in the ability's description.
+            At the end of each round, the ability is dismissed unless you initiated the ability that round or took the action to sustain the ability that round.
+            Taking an action to sustain an ability is not a \abilitytag{Focus} ability, even if the ability itself has the \abilitytag{Focus} tag.
+
+            % TODO: a more robust timing system would make stating this explicitly unnecessary
+            If a sustained ability has effects that trigger at the end of the round, it ends before having its effects if you fail to sustain the ability.
+
+            Taking an action to sustain an ability only allows you to sustain a single use of that ability.
+            However, you can sustain multiple separate abilities at once if you have available actions.
+
+            You can normally only sustain an ability for up to 5 minutes.
+            After that time, the ability's effect is \glossterm{dismissed}.
+
+        \subsubsection{Permanent}
+            Some abilities last permanently.
+            Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
+
+        % Is this necessary?
+        % Should this clarify interactions with bursts/zones/emanations?
+        \subsubsection{Targeting and Durations}
+            If an ability targets creatures or objects directly, the effects travel with the targets for the ability's duration.
+            If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
+            Such effects can sometimes be destroyed prior to when their duration ends.
+
+    \subsection{Combining Effects}
+        Abilities do not generally affect the way another abilities function.
+        However, sometimes multiple effects can be in conflict on a creature.
+        If one effect makes another effect irrelevant or impossible, the latter effect is ignored.
+        If two effects both conflict with each other, the most recent effect takes precedence, and the other is ignored.
+        Unless otherwise noted, two different uses of the same ability are always considered to be conflicting with each other.
+
+        All abilities will still have as much of their effect as possible.
+        It is possible for an ability to be partially effective in this way.
+
+    \subsection{Suppressing Abilities}\label{Suppressing Abilities}
+        Abilities can be \glossterm{suppressed} by effects such as the \spell{suppress magic} spell.
+        While an ability is suppressed, it has no effect.
+        However, if it stops being suppressed, its effects continue as if they had not been interrupted.
+
+    \subsection{Ability Tags}
+        Many abilities have tags that describe the nature of the ability.
+        Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
+        For a list of ability tags, see \pcref{Ability Tags}.
+
+\section{Spell and Ritual Mechanics}\label{Spell and Ritual Mechanics}
+
+    Spells and rituals share many common properties, defined here.
+
+    % TODO: description
+    \subsection{Categories of Magic}
+
+    \subsubsection{Magic Sources}
+        There are four \glossterm{magic sources} that characters can use to cast spells and perform rituals: arcane (cast by sorcerers and wizards), divine (cast by clerics and paladins), nature (cast by druids), and pact (cast by warlocks).
+        Each magic source has a set of associated \glossterm{mystic spheres} (see Mystic Spheres, below).
+        % TODO: more description
+
+        \parhead{Characters with Multiple Magic Sources}
+            A character can have access to multiple sources of magic through the use of abilities like the Hybrid Training ability (see \pcref{Half-Elves}).
+            The \glossterm{mystic spheres}, spells, and rituals that character knows are tracked separately for each source of magic that character has access to.
+            If you have access to the same spell or ritual from multiple sources, the two versions of the ability are generally considered to be the same ability.
+            When you cast the spell or perform the ritual, you choose which source you are using for the ability.
+
+        \subsubsection{Mystic Spheres}
+            A \glossterm{mystic sphere} is a collection of thematically related magical effects that includes both \glossterm{spells} and \glossterm{rituals}.
+            Each \glossterm{mystic sphere} can be associated with any number of \glossterm{magic sources}.
+            The mystic spheres are listed at \pcref{Mystic Spheres}.
+
+    \subsection{Ability Tags}
+        All spells have the \abilitytag{Magical} and \abilitytag{Spell} \glossterm{ability tags}, and all rituals have the \abilitytag{Magical} and \abilitytag{Ritual} ability tags.
+        Since spells and rituals are already clearly indicated in the Mystic Spheres chapter, the tags are omitted here for convenience.
+        Elsewhere in this book, such as in monster descriptions, those tags are used to indicate that some abilities are considered spells and rituals.
+
+    \subsection{Casting Components}\label{Casting Components}
+        Unless otherwise noted, all spells and rituals require \glossterm{verbal components} to cast or perform.
+        In addition, spells and rituals from arcane and pact mystic sources require \glossterm{somatic components}.
+        You cannot start casting a spell or performing a ritual without all required components.
+        If you lose those components before the ability resolves, the spell fails with no effect.
+
+        To provide the verbal component for a spell or ritual, you must speak in a strong voice with a volume at least as loud as ordinary conversation.
+        To provide the somatic component for a spell or ritual, you must make a precise series of movements with at least one free hand.
+        These movements involve your whole arm in addition to gestures with your fingers.
+
+        \subsubsection{Somatic Component Failure}\label{Somatic Component Failure}
+            Encumbrance from armor interferes with the \glossterm{somatic components} required to perform arcane spells, pact spells, and all rituals.
+            When you cast a spell or perform a ritual that requires \glossterm{somatic components} while you have an \glossterm{encumbrance}, you must roll 1d10.
+            If your result is less than or equal to your \glossterm{encumbrance}, the spell fails with no effect.
+            When you perform a ritual, this roll must be repeated at the end of each round during the ritual.
+
+    \subsection{Dismissal}
+        As a \glossterm{minor action}, you can dismiss any spells or rituals you used that have lasting effects.
+        This requires the same casting components (verbal and somatic) as casting the spell or performing the ritual normally.
+        Spells and rituals can also be dismissed in other ways, such as after their effects have finished.
+        When a spell or ability is dismissed, all of its lingering effects immediately end.
+        % Should a spell be dismissed for all targets simultaneously, or per target?
+
+    \subsection{Resurrecting the Dead}\label{Resurrecting the Dead}
+        Several rituals have the power to restore dead characters to life.
+
+        When a living creature dies, its soul departs its body, travels through the Astral Plane, and goes to abide on the plane where the creature's deity resides.
+        If the creature did not worship a deity, its soul departs to the plane corresponding to its alignment.
+        Bringing a creature back from the dead means retrieving their soul and returning it to their body.
+
+        \parhead{Death and Old Age} While a creature is dead, it still tracks that time towards its maximum age.
+        A creature's maximum age is largely determined by the strength of its soul, not the condition of its body.
+        No magic can return a creature to life when it has passed its maximum age.
+
+        \parhead{Preventing Resurrection} Enemies can take steps to make it more difficult for a character to be returned from the dead.
+        Except for \spell{true resurrection}, every ritual to raise the dead requires a body, so keeping or destroying the body is an effective deterrent.
+        The \spell{soul bind} ritual prevents any sort of revivification unless the soul is first released.
+
+        \parhead{Involuntary Resurrection} A soul cannot be returned to life if it does not wish to be.
+        A soul infallibly knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
+
+    \subsection{Functioning Like Other Spells}\label{Functioning Like Other Spells}
+        Many spells and rituals say they "function like" some other spell or ritual, often with some noted changes.
+        Except as otherwise noted, they retain all of the original effects and targets of the spell.
+        However, they do not have the same rank upgrades as the original spell or ritual.
+
+    \subsection{Impossible Spells and Rituals}
+        When you try to use a spell or ritual in an impossible way, the ability fails with no effect.
+        This most commonly happens if you attempt to declare an invalid target for a spell.
+
+    \subsection{Spells}\label{Spells}
+        % TODO: better description
+        A \glossterm{spell} is a discrete magical effect with a name, a \glossterm{rank}, and an effect.
+        Each \glossterm{mystic sphere} has a number of spells associated with it.
+        An ability that gives you access to \glossterm{mystic spheres} will define how many spells you know.
+        A spell's \glossterm{rank} is the minimum \glossterm{archetype rank} you must have in the relevant spellcasting archetype to be able to learn and cast the spell.
+
+        \subsubsection{Cantrips}\label{Cantrips}
+            Some \glossterm{mystic spheres} have minor spells called cantrips.
+            Anyone who has access to a mystic sphere knows all cantrips from that sphere.
+
+    \subsection{Rituals}\label{Rituals}
+        Each \glossterm{mystic sphere} has a number of \glossterm{rituals}.
+        Some spellcasting characters can learn and perform rituals.
+        Rituals are ceremonies that create magical effects.
+        Like spells, each ritual has a name, a \glossterm{rank}, and an effect.
+        Although rituals are similar to spells, abilities that affect spells do not affect rituals unless they say they do in their descriptions.
+        % Oddly located
+        A ritual's \glossterm{rank} is the minimum \glossterm{archetype rank} you must have in the relevant spellcasting archetype to be able to learn and perform the ritual.
+
+        You don't memorize a ritual as you would a normal spell.
+        Rituals are too complex for all but the most knowledgeable sages to commit to memory.
+        To perform a ritual, you need to read from a book or a scroll containing it.
+        You must have access to the \glossterm{mystic sphere} a ritual is from in order to perform the ritual.
+
+        \subsubsection{Ritual Descriptions}
+            % TODO: proper chapter references
+            Rituals are described in the body of the \glossterm{mystic sphere} they are associated with, following the description of spells from that mystic sphere.
+
+        \subsubsection{Ritual Books}
+            A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{fatigue level} to perform the ritual.
+            Scribing a ritual in a ritual book costs an amount of precious inks.
+
+        \subsubsection{Ritual Costs}\label{Ritual Costs}
+            The costs to scribe rituals are described on \trefnp{Ritual Costs}.
+            \begin{dtable}
+                \lcaption{Ritual Costs}
+                \begin{dtabularx}{\columnwidth}{X l l}
+                    \tb{Ritual Rank} & \tb{Cost to Scribe} & \tb{Item Level} \tableheaderrule
+                    1 & 50 gp     & 1st  \\
+                    2 & 125 gp     & 2nd  \\
+                    3 & 800 gp     & 5th  \\
+                    4 & 2,750 gp   & 8th  \\
+                    5 & 10,000 gp  & 11th \\
+                    6 & 37,000 gp  & 14th \\
+                    7 & 125,000 gp & 17th \\
+                    8 & 400,000 gp & 20th \\
+                \end{dtabularx}
+            \end{dtable}
+
+        \subsubsection{Performing Rituals}
+            To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual.
+            Some rituals cause the creatures performing them to increase their \glossterm{fatigue level}, as indicated in their descriptions.
+            Other creatures can suffer this fatigue to help you perform rituals; see Ritual Participants, below.
+
+            % The fatigue level cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
+            % Should this be specified explicitly?
+
+        \subsubsection{Ritual Participants}
+            Creatures can assist in the performance of rituals even if they are unable to perform rituals themselves.
+            A creature that helps perform a ritual is called a ritual participant, and the creature performing the ritual is called the ritual leader.
+            A ritual participant may increase their \glossterm{fatigue level} in place of or in addition to the fatigue level gained by the creature performing the ritual.
+            If multiple creatures are willing to increase their fatigue level or attune to effects, the ritual leader decides which creatures increase their fatigue level or attune to the ritual's effects.
+
+            The steps required to participate in rituals can be complex.
+            Ritual participants must be given specific instructions for the actions they must perform during a ritual by a creature who knows how to perform the ritual.
+            This instruction generally takes one tenth of the time required to perform the ritual.
+            A creature cannot participate in rituals unless it has an Intelligence of at least 0, can speak at least one language, and has the fine motor control required to perform the \glossterm{somatic components} of rituals.
+
+            Normally, a ritual participant can only contribute \glossterm{fatigue levels} up to a maximum of their \glossterm{fatigue tolerance}.
+            If the participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of \glossterm{fatigue levels} (until they drop unconscious).
+            Creatures willing to fatigue themselves generally tire at a rate no faster than one fatigue level per ten minutes spent performing the ritual.
+
+            \parhead{Changing Ritual Participation}
+            Rituals are deeply complex magic, and they cannot be abandoned or paused partway through.
+            If the number of ritual participants in a ritual decreases below its initial value, the ritual fails at the end of the next round if the number of participants is not restored.
+            However, ritual participants can transfer their participation to other creatures without disrupting the ritual.
+
+            In order to transfer ritual participation, the new creature must be able to participate in the ritual.
+            Similarly, the ritual leader can transfer their leadership to another creature.
+            In addition to the requirements for transferring ritual participation, the new leader must know the ritual and be able to perform it themselves.
+
+            Changing ritual participation and leadership is usually done when performing extraordinarily long or demanding rituals.
+
+            \parhead{Attunement Rituals}
+                Rituals with the \abilitytag{Attune} (ritual) tag require a single ritual participant to \glossterm{attune} to the ritual's effect.
+                Any ritual participant can attune to the effect, but only one ritual participant can attune to the effect unless otherwise noted in the ritual's description.
+                For details, see \pcref{Attunement}.
+
+        \subsubsection{Magical Writings}
+            To record a spell in written form, a character uses complex notation that describes the magical forces involved in the spell.
+            The notation constitutes a universal language that spellcasters have discovered, not invented.
+            Each writer uses this universal system regardless of their native language or culture.
+            However, each character uses the system in their own way.
+            Another person's magical writing remains incomprehensible to even the most powerful spellcaster until they take the time to study and decipher it.
+
+            You can identify magical writing using the Spellsense skill (see \pcref{Identify Magical Writing}).
+
+% TODO: This is a bad name; organize these better
+\section{Special Rules}
+
+    \subsection{Unusual Combat Situations}
+
+        \subsubsection{Mounted Combat}\label{Mounted Combat}
+            \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat.
+            At the start of each round, you must make a \glossterm{difficulty rating} 10 Ride check to control such a horse.
+            Success means you can act normally that round, directing the horse's movements as if it was trained for combat.
+            Failure means that the horse acts of its own volition that round, usually fleeing in panic.
+
+            \parhead{Space} A horse (not a pony) is a Large creature, and thus takes up a space 10 feet (2 squares) across. While mounted, you share your mount's space completely. Anyone who is close enough to hit your mount can attack either you or your mount. However, your \glossterm{reach} is still that of a creature of your normal size. Thus, a Medium paladin would be able to attack all squares adjacent to their Large horse with a longsword, and all squares 10 feet away from their mount with a lance.
+
+            In the case of abnormally large mounts (two or more size categories larger than you), you may not completely share space. Such situations should be handled on a case-by-case basis, depending on the nature of the mount.
+
+            \parhead{Flying Mounts} Flying mounts are harder to ride and control than terrestrial mounts, especially mounts that can change directions rapidly.
+            The \glossterm{difficulty rating} for all Ride checks on a mount using a fly speed is increased by 10 if the mount has poor or average maneuverablity, or by 15 if it has perfect maneuverability.
+
+            \parhead{Combat while Mounted} With a \glossterm{difficulty rating} 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
+
+            If your mount is moving in the current phase, you take a \minus2 accuracy penalty with ranged strikes.
+            If your mount uses the \textit{sprint} ability, this penalty increases to \minus4 (see \pcref{Sprint}).
+
+            \parhead{If Your Mount Falls in Battle} If your mount falls, you fall to the ground with it.
+
+            \parhead{If You Are Dropped} If you are knocked unconscious, you fall from your mount to the ground, which may cause you to take \glossterm{falling damage}.
+            If you have a military saddle, you stay on your mount instead.
+            In either case, the mount acts according to its nature.
+            Most mounts flee combat without a rider.
+
+        \subsubsection{Unarmed Combat}\label{Unarmed Combat}
+            Every creature can attack with its body using an unarmed attack.
+            An unarmed attack normally deals \glossterm{subdual damage}.
+            If you are \glossterm{proficient} with your unarmed attack, you can choose to deal non-subdual damage with it.
+
+            You may use any appropriate part of your body to make an unarmed attack -- fists, feet, elbows, and so on.
+            However, you only have one unarmed attack.
+            You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once unless you are \glossterm{proficient} with your unarmed attack (see \pcref{Strikes}).
+
+            An unarmed attack is a type of natural weapon.
+            Abilities that affect natural weapons can affect your unarmed attack.
+            Gauntlets can also be worn to attack with your fists, but attacks with gauntlets are not considered unarmed attacks.
+
+        \subsubsection{Underwater Combat}\label{Underwater Combat}
+            Land-based creatures have considerable difficulty when fighting in water.
+            You take a \minus4 penalty to \glossterm{accuracy}, Strength and Dexterity-based \glossterm{checks}, and Armor and Reflex defenses.
+            In addition, all ranged weapons have \glossterm{range limits} of 5/15, regardless of the attack's normal range limits or any other modifiers.
+
+    \subsection{General Calculations}
+
+        \subsubsection{Stacking Rules}\label{Stacking Rules}
+            Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result.
+            However, some modifiers do not stack with each other, as described below.
+            When bonuses don't stack with each other, you only apply the largest bonus.
+            Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
+
+            \parhead{Special Exceptions}
+
+            \begin{itemize}
+                \item Effects from the same source do not stack. Any ability with the same name has the same source.
+                \item Magic bonuses do not stack with each other.
+                \item If a creature gains the same condition multiple times, the effects do not stack, but each instance of the condition is tracked separately.
+                    The creature must remove all instances of the condition before the effects are removed.
+                \item Multiple effects that change a creature's \glossterm{size category} do not stack.
+                    If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
+                \item If you have two separate abilities which let you add the same attribute to a given roll or statistic, the attribute is still only added once.
+            \end{itemize}
+
+        \subsubsection{Maximum Bonuses}\label{Ability Limits}
+            Some bonuses specify that they cannot increase the value beyond a given point.
+            These bonuses must always be applied last, and cannot be combined with other bonuses to exceed the maximum value.
+            If multiple bonuses specify different maximum values, use the lower maximum value.
+            If a bonus with a maximum value is applied to a value that already exceeds the maximum value the bonus can provide, simply ignore the bonus and its maximum value.
+
+        \subsubsection{Doubling}\label{Doubling}
+            If you double any in-game value twice, it becomes three times as large. An additional doubling would make it four times as large, and so on. For example, if you make an attack that deals double damage and you get a critical hit, you deal triple damage.
+
+            \parhead{Real-World Values} Values that are ``real'', such as movement and distance, are an exception.
+            Any real value has a unit that it measures, such as feet.
+            Abstract values, such as bonuses and penalties to attacks and checks, do not have units.
+            If you double a real-world value twice, it becomes four times as large.
+
+        \subsubsection{Changing Statistics}
+
+            Your modifiers and defenses can change for many reasons.
+            In general, all changes take effect immediately, though some side effects of those changes may not happen until you rest or level up.
+
+            \parhead{Numerical Modifiers} Changes to numerical modifiers always take effect immediately.
+            For example, if a barbarian enters a rage, their damage and defenses are all adjusted immediately.
+
+            \parhead{Skill Points} Effects that change a character's skill points take effect immediately.
+            However, the character cannot spend additional skill points on new skills until they level up.
+            If a character's total skill points are decreased below their currently spent skill points, they immediately lose training from skills until their spent skill points are equal to their total skill points.
+
+        \subsubsection{Rounding}
+            In general, if you encounter a fractional number, you round it down.
+
+        \subsubsection{Multipliers}
+            Sometimes a rule makes you multiply a number or a die roll.
+            As long as you're applying a single multiplier, multiply the number normally.
+            When two or more multipliers apply to any abstract value (such as a modifier or a die roll), however, combine them into a single multiple, with each extra multiple adding 1 less than its value to the first multiple.
+            Thus, a double (\mult2) and a double (\mult2) applied to the same number results in a triple (\mult3, because 2 \add1 = 3).
+            Some other effects specifically multiply additively in this way.
+
+            When applying multipliers to real-world values (such as weight or distance), normal rules of math apply instead.
+            A creature whose size doubles (thus multiplying its weight by 8) and then is turned to stone (which would multiply its weight by a factor of roughly 3) now weighs about 24 times normal, not 10 times normal.
+            Similarly, a blinded creature attempting to negotiate \glossterm{difficult terrain} would need to spend 20 feet of movement to move 5 feet (doubling the cost twice, for a total multiplier of \mult4), rather than as 15 feet (adding 100\% twice).
+
+    \subsection{Allies and Enemies}\label{Allies and Enemies}
+        Each creature you interact with in Rise is either an \glossterm{ally}, an \glossterm{enemy}, or a \glossterm{neutral party}.
+        Some beneficial abilities only affect allies, and some offensive abilities only affect enemies.
+
+        You can choose how you consider each creature at the start of each \glossterm{phase}.
+        You cannot consider yourself an \glossterm{ally} or an \glossterm{enemy}.
+        While you are \unconscious, you treat all creatures as \glossterm{allies}.
+
+        \parhead{Allies} An ally is any creature you consider an ally who also considers you an ally.
+        If you consider someone an ally, but they do not consider you an ally, you treat them as a neutral party for the purpose of your abilities.
+        Allies can move through your \glossterm{space}.
+
+        \parhead{Enemies} An enemy is any creature who you consider to be an enemy.
+        Enemies cannot move through your \glossterm{space}.
+
+        \parhead{Neutral Parties} A neutral party is any creature who is neither an ally nor an enemy.
+        You treat all creatures you have not declared an opinion of as neutral parties.
+        Neutral parties can move through your \glossterm{space}.
+
+    \subsection{Sleep and Fatigue}\label{Sleep and Fatigue}
+        A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
+        You can stay awake beyond those limits with the Endurance skill (see \pcref{Stay Awake}).
+
+    \subsection{Teleportation}\label{Teleportation}
+        Some abilities can \glossterm{teleport} creatures or objects.
+        When you are teleported, you move through the Astral Plane and arrive at a new location.
+        You can be teleported between two different locations on the same \glossterm{plane}, or between two different locations on different planes.
+        If for some reason you cannot access the Astral Plane, you cannot be teleported.
+
+        Unless an ability explicitly teleports to other planes or specifies otherwise, anything being teleported must have both \glossterm{line of sight} and \glossterm{line of effect} to its destination.
+        Otherwise, the teleportation fails without effect.
+
+        \subsubsection{Teleportation Noise}\label{Teleportation Noise}
+            Creatures and objects that are teleported make a sound when they depart and arrive.
+            This noise is caused by the displacement of air (or other substances) created by the teleportation.
+            The base \glossterm{difficulty rating} of an Awareness check to hear this sound for a Medium creature or object is 10.
+            This difficulty rating changes based on the size of the teleported creature or object:
+
+            \begin{itemize}
+                \item Fine: 30
+                \item Diminutive: 25
+                \item Tiny: 20
+                \item Small: 15
+                \item Medium: 10
+                \item Large: 5
+                \item Huge: 0
+                \item Gargantuan: \minus5
+                \item Colossal: \minus10
+            \end{itemize}
+
+        \subsubsection{Carrying Objects}
+            When a creature is teleported, it can bring along equipment and held objects as long as two conditions are met.
+            First, the combined weight of the objects cannot exceed the creature's maximum carrying capacity (see \pcref{Weight Limits}).
+            If a creature is teleported while carrying more than its maximum carrying capacity, all excess objects are left behind, starting with the heaviest object and proceeding in order of weight.
+
+            Second, no object can extend more than two feet away from the creature's body.
+            Any objects that extend beyond that distance are left behind.
+            For example, a creature wearing handcuffs will arrive at its teleportation destination still wearing the handcuffs.
+            However, a creature that is tied to a post by a long rope will arrive at its teleportation destination without the rope.
+
+        \subsubsection{Horizontal Teleportation}
+            Some planes have a curved primary surface.
+            On those planes, "horizontal" teleportation isn't objectively horizontal.
+            Instead, it is horizontal relative to the surface of the plane.
+
+    \subsection{Resolving Ambiguity}\label{Resolving Ambiguity}
+        When the rules are ambiguous about how they apply to you and no other creature, you decide how to resolve that ambiguity.
+        For example, if an ability causes you to remove one of your \glossterm{vital wounds}, and you have more than one vital wound, you choose which vital wound is removed.
+        When the rules are ambiguous in any other situation, the GM decides how to resolve that ambiguity.
+        This includes situations where multiple creatures are relevant and situations where no particular creature is relevant.
