@@ -30,19 +30,10 @@ def main(destination):
     cgi.DESTINATION = destination
 
     if destination == 'paper':
-        with open('first_page.html', 'w') as fh:
-            fh.write(''.join([
-                debug_stylesheets('first_page', destination),
-                debug_html_wrapper(
-                    ''.join([
-                        first_page.create_page(destination)
-                    ]),
-                    destination,
-                ),
-            ]) + '\n')
-        call(['lessc', 'first_page.less', 'first_page.css'])
-
-        for (name, module) in [
+        call(['lessc', f'sheet.less', f'paper_sheet/sheet.css'])
+        call(['lessc', f'paper_sheet.less', f'paper_sheet/paper_sheet.css'])
+        for i, (name, module) in enumerate([
+                ['first_page', first_page],
                 ['active_abilities_page', active_abilities_page],
                 ['skills_page', skills_page],
                 ['second_page', second_page],
@@ -50,13 +41,14 @@ def main(destination):
                 ['items_page', items_page],
                 ['status_page', status_page],
                 ['reference_page', reference_page],
-        ]:
-            with open(f'{name}.html', 'w') as fh:
+        ]):
+            page = i + 1
+            with open(f'paper_sheet/page{page}.html', 'w') as fh:
                 fh.write(''.join([
-                    debug_stylesheets(name, destination),
+                    debug_stylesheets(page, destination),
                     debug_html_wrapper(module.create_page(destination), destination),
                 ]) + '\n')
-            call(['lessc', f'{name}.less', f'{name}.css'])
+            call(['lessc', f'{name}.less', f'paper_sheet/page{page}.css'])
     else:
         with open('roll20.html', 'w') as fh:
             fh.write(sheet_worker.generate_script())
@@ -89,7 +81,7 @@ def main(destination):
 
         call(['lessc', 'roll20.less', 'roll20.css'])
 
-def debug_stylesheets(page_name, destination):
+def debug_stylesheets(page_number, destination):
 
     if destination == 'paper':
         return '<!DOCTYPE html>' + cgi.head([
@@ -99,7 +91,7 @@ def debug_stylesheets(page_name, destination):
             }),
             cgi.link({
                 'rel': 'stylesheet',
-                'href': page_name + '.css',
+                'href': f"page{page_number}.css",
             }),
             cgi.link({
                 'rel': 'stylesheet',
@@ -119,7 +111,7 @@ def debug_html_wrapper(html, destination):
             },
             cgi.div(
                 {'id': 'root', 'class': 'charsheet tab-pane'},
-                html
+                cgi.div({'class': 'full-sheet'}, html),
             )
         )
     elif destination == 'roll20':
