@@ -43,50 +43,67 @@ def create_page(destination):
                 {"class": "main-body"},
                 [
                     statistics_header(destination),
-                    div({"class": "section-header"}, "Magical Attacks"),
-                    flex_row(
-                        {"class": "active-ability-group"},
-                        fieldset(
-                            {"class": f"repeating_magicalattacks"},
-                            active_ability_button("attack", "magical"),
-                        ),
-                    ),
-                    div({"class": "section-header"}, "Mundane Attacks"),
-                    flex_row(
-                        {"class": "active-ability-group"},
-                        fieldset(
-                            {"class": f"repeating_mundaneattacks"},
-                            active_ability_button("attack", "mundane"),
-                        ),
-                    ),
-                    div({"class": "section-header"}, "Non-Damaging Attacks"),
-                    flex_row(
-                        {"class": "active-ability-group"},
-                        fieldset(
-                            {"class": f"repeating_attacks"},
-                            active_ability_button("attack", "nondamaging"),
-                        ),
-                    ),
-                    div({"class": "section-header"}, "Other Abilities"),
-                    flex_row(
-                        {"class": "active-ability-group"},
-                        fieldset(
-                            {"class": f"repeating_abilities"},
-                            active_ability_button("ability"),
-                        ),
-                    ),
-                    flex_wrapper(div({"class": "section-header"}, "Custom Modifiers")),
-                    flex_row(
-                        {"class": "active-ability-group"},
-                        fieldset(
-                            {'class': 'repeating_custommodifiers'},
-                            custom_modifier_toggle(),
-                        ),
-                    ),
+                    *(roll20_abilities() if destination == "roll20" else paper_abilities()),
                 ],
             ),
         ]),
     ])
+
+def paper_abilities():
+    return [
+        div({"class": "section-header"}, "Attacks and Abilities"),
+        *[paper_ability() for i in range(10)],
+    ]
+
+def paper_ability():
+    return flex_row({"class": "paper-ability"}, [
+        labeled_text_input("Name"),
+        labeled_textarea("Effect"),
+    ])
+
+def roll20_abilities():
+    return [
+        div({"class": "section-header"}, "Magical Attacks"),
+        flex_row(
+            {"class": "active-ability-group"},
+            fieldset(
+                {"class": f"repeating_magicalattacks"},
+                active_ability_button("attack", "magical"),
+            ),
+        ),
+        div({"class": "section-header"}, "Mundane Attacks"),
+        flex_row(
+            {"class": "active-ability-group"},
+            fieldset(
+                {"class": f"repeating_mundaneattacks"},
+                active_ability_button("attack", "mundane"),
+            ),
+        ),
+        div({"class": "section-header"}, "Non-Damaging Attacks"),
+        flex_row(
+            {"class": "active-ability-group"},
+            fieldset(
+                {"class": f"repeating_attacks"},
+                active_ability_button("attack", "nondamaging"),
+            ),
+        ),
+        div({"class": "section-header"}, "Other Abilities"),
+        flex_row(
+            {"class": "active-ability-group"},
+            fieldset(
+                {"class": f"repeating_abilities"},
+                active_ability_button("ability"),
+            ),
+        ),
+        flex_wrapper(div({"class": "section-header"}, "Custom Modifiers")),
+        flex_row(
+            {"class": "active-ability-group"},
+            fieldset(
+                {'class': 'repeating_custommodifiers'},
+                custom_modifier_toggle(),
+            ),
+        ),
+    ]
 
 
 def attributes_and_skills():
@@ -506,7 +523,7 @@ def active_ability_button(ability_type, source=None):
             },
             text_input({"class": "attack-label", "readonly": True, "name": prefix + "_name"}),
         ),
-    ]),
+    ])
 
 def custom_modifier_toggle():
     return flex_row({"class": "custom-modifier-toggle"}, [
