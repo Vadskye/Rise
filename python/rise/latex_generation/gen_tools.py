@@ -625,7 +625,7 @@ def generate_tools():
         MagicItem(
             name="Bag of Shrinking",
             level=6,
-            materials="textiles",
+            materials=["textiles"],
             tags=[],
             description="""
                 This bag appears to be a common Small cloth sack.
@@ -639,7 +639,7 @@ def generate_tools():
         MagicItem(
             name="Bag of Shrinking, Greater",
             level=12,
-            materials="textiles",
+            materials=["textiles"],
             tags=[],
             description="""
                 This bag functions like a \\mitem<bag of shrinking>, except that it reduces the size of contained objects by three size categories instead of two.
@@ -649,7 +649,7 @@ def generate_tools():
         MagicItem(
             name="Bag of Shrinking, Supreme",
             level=18,
-            materials="textiles",
+            materials=["textiles"],
             tags=[],
             description="""
                 This bag functions like a \\mitem<bag of shrinking>, except that it reduces the size of contained objects by four size categories instead of two.
@@ -669,7 +669,7 @@ def generate_tools():
         MagicItem(
             name="Bear Trap",
             level=2,
-            materials="metal",
+            materials=["metal"],
             tags=[],
             description="""
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
@@ -685,7 +685,7 @@ def generate_tools():
         MagicItem(
             name="Bear Trap, Greater",
             level=11,
-            materials="metal",
+            materials=["metal"],
             tags=[],
             description="""
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
@@ -704,7 +704,7 @@ def generate_tools():
         MagicItem(
             name="Fireburst Trap",
             level=5,
-            materials="metal",
+            materials=["metal"],
             tags=[],
             description="""
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
@@ -719,7 +719,7 @@ def generate_tools():
         MagicItem(
             name="Fireburst Trap, Greater",
             level=11,
-            materials="metal",
+            materials=["metal"],
             tags=[],
             description="""
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
@@ -734,7 +734,7 @@ def generate_tools():
         MagicItem(
             name="Fireburst Trap, Supreme",
             level=17,
-            materials="metal",
+            materials=["metal"],
             tags=[],
             description="""
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
@@ -745,6 +745,452 @@ def generate_tools():
                 On a hit, each subject takes 4d8+4 damage.
             """,
             short_description="Deals massive fire damage in a large area",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            name="Artisan's Tools",
+            level=0.5,
+            materials=["metal"],
+            tags=[],
+            description="""
+                These are Small tools that are appropriate to a particular Craft skill other than Craft (alchemy).
+                It is very difficult to create items with the Craft skill without this item (see \\pcref<Craft>).
+            """,
+            short_description="Required for Craft checks",
+        ),
+        MagicItem(
+            name="Alchemist's Lab",
+            level=4,
+            materials=["Alchemy"],
+            tags=[],
+            description="""
+                This is a Medium workstation that contains a wide variety of compounds and reagents.
+                It is very difficult to create items with the Craft (alchemy) skill without this item (see \\pcref<Craft>).
+            """,
+            short_description="Required for Craft (alchemy) checks",
+        ),
+        MagicItem(
+            name="Disguise Kit",
+            level=1,
+            materials=["Alchemy", "Textiles"],
+            tags=[],
+            description="""
+                This is a Small kit that contains a wide variety of fabrics, makeup, and other useful tools for disguising your appearance.
+                It is very difficult to create disguises with the Disguise skill without this item (see \\pcref<Disguise>).
+            """,
+            short_description="Required for Disguise checks",
+        ),
+        MagicItem(
+            name="Thieves' Tools",
+            level=1,
+            materials=["Metal", "Textiles"],
+            tags=[],
+            description="""
+                This is a Small kit that contains a wide variety of lockpicks and device-manipulation tools.
+                It is very difficult to manipulate devices with the Devices skill without this item (see \\pcref<Devices>).
+            """,
+            short_description="Required for Devices checks",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            name="Chain, 5 ft.",
+            level=0.5,
+            materials=["Metal"],
+            tags=[],
+            # TODO: define specific HP / DR
+            description="""
+                This is a five-foot chain of metal links.
+            """,
+            short_description="Heavy iron chain that is difficult to break",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            name="Carriage",
+            level=2,
+            materials=["Textiles", "Wood"],
+            tags=[],
+            description="""
+                This four-wheeled vehicle can transport as many as four people within an enclosed cab, plus two drivers.
+                In general, two horses (or other beasts of burden) draw it.
+                A carriage comes with the harness needed to pull it.
+            """,
+            short_description="Fancy carriage that carries up to four people",
+        ),
+        MagicItem(
+            name="Rowboat",
+            level=1,
+            materials=["Wood"],
+            tags=[],
+            description="""
+                This 8- to 12 foot long boat holds two or three Medium passengers.
+                It moves about one and a half miles per hour.
+            """,
+            short_description="Simple boat for short journeys",
+        ),
+        MagicItem(
+            name="Ship, Galley",
+            level=14,
+            materials=["Metal", "Textiles", "Wood"],
+            tags=[],
+            description="""
+                This three-masted ship has seventy oars on either side and requires a total crew of 200.
+                A typical galley is 130 feet long and 20 feet wide, and it can carry 150 tons of cargo or 250 soldiers.
+                If you increase its item level by 1, it can be fitted with a ram and castles with firing platforms fore, aft, and amidships.
+                This ship cannot make sea voyages and sticks to the coast. It moves about 4 miles per hour when being rowed or under sail.
+            """,
+            short_description="Massive, fast-moving boat with 200 crew",
+        ),
+        MagicItem(
+            name="Ship, Keelboat",
+            level=8,
+            materials=["Metal", "Textiles", "Wood"],
+            tags=[],
+            description="""
+                This 50 to 75 foot long ship is 15 to 20 feet wide and has a few oars to supplement its single mast with a square sail. It requires a total crew of 15 and can carry 40 to 50 tons of cargo or 100 soldiers. It can make sea voyages, as well as sail down rivers (thanks to its flat bottom). It moves about 1 mile per hour.
+            """,
+            short_description="Slow-moving, seaworthy ship with 15 crew",
+        ),
+        MagicItem(
+            name="Ship, Longship",
+            level=11,
+            materials=["Metal", "Textiles", "Wood"],
+            tags=[],
+            description="""
+                This 75 foot long ship with forty oars requires a total crew of 50. It has a single mast and a square sail, and it can carry 50 tons of cargo or 120 soldiers. A longship can make sea voyages. It moves about 3 miles per hour when being rowed or under sail.
+            """,
+            short_description="Long, seaworthy ship with 50 crew",
+        ),
+        MagicItem(
+            name="Wagon",
+            level=1,
+            materials=["Wood"],
+            tags=[],
+            description="""
+                This is a four-wheeled, open vehicle for transporting heavy loads. In general, two horses (or other beasts of burden) draw it. A wagon comes with the harness needed to pull it.
+            """,
+            short_description="Simple wagon for transporting heavy loads",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            name="Dog, Guard",
+            level=1,
+            materials=["none"],
+            tags=[],
+            description="""
+                This is a Small dog that knows the Guard and Heel tricks (see \\pcref<Creature Handling>).
+                It is not trained to be effective in battle.
+                You can use this price for any Small cat or dog trained for other tricks.
+            """,
+            short_description="Small dog trained to guard areas",
+        ),
+        MagicItem(
+            name="Dog, Riding",
+            level=2,
+            materials=["none"],
+            tags=[],
+            description="""
+                This is a Medium dog that knows the Guard and Heel tricks (see \\pcref<Creature Handling>).
+                It is trained to be effective in battle, and is a suitable mount for creatures with the \\textit<short stature> ability, such as gnomes and halflings.
+            """,
+            short_description="Medium dog trained for battle",
+        ),
+        MagicItem(
+            name="Horse",
+            level=2,
+            materials=["none"],
+            tags=[],
+            description="""
+                This is a Large horse.
+                It is not trained to be effectively ridden in battle.
+            """,
+            short_description="Large horse not trained for battle",
+        ),
+        MagicItem(
+            name="Warhorse",
+            level=4,
+            materials=["none"],
+            tags=[],
+            description="""
+                This is a Large horse.
+                It is trained to be effectively ridden in battle.
+            """,
+            short_description="Large horse trained for battle",
+        ),
+        MagicItem(
+            name="Pony",
+            level=1,
+            materials=["none"],
+            tags=[],
+            description="""
+                This is a Medium horse.
+                It is not trained to be effectively ridden in battle.
+                However, it is an appropriate mount outside of battle for creatures with the \\textit<short stature> ability, such as gnomes and halflings.
+            """,
+            short_description="Medium pony not trained for battle",
+        ),
+        MagicItem(
+            name="Warpony",
+            level=1,
+            materials=["none"],
+            tags=[],
+            description="""
+                This is a Medium horse.
+                It is trained to be effectively ridden in battle, and it is an appropriate mount for creatures with the \\textit<short stature> ability, such as gnomes and halflings.
+            """,
+            short_description="Medium pony trained for battle",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            name="Lock, simple",
+            level=0.5,
+            materials=["Metal"],
+            tags=[],
+            description="""
+                This is a lock.
+                Opening the lock without the appropriate key requires a \\glossterm<difficulty rating> 15 Devices check (see \\pcref<Devices>).
+            """,
+            short_description="Devices \\glossterm<difficulty rating> of 15",
+        ),
+        MagicItem(
+            name="Lock, quality",
+            level=2,
+            materials=["Metal"],
+            tags=[],
+            description="""
+                This is a lock.
+                Opening the lock without the appropriate key requires a \\glossterm<difficulty rating> 20 Devices check (see \\pcref<Devices>).
+            """,
+            short_description="Devices \\glossterm<difficulty rating> of 20",
+        ),
+        MagicItem(
+            name="Lock, masterwork",
+            level=4,
+            materials=["Metal"],
+            tags=[],
+            description="""
+                This is a lock.
+                Opening the lock without the appropriate key requires a \\glossterm<difficulty rating> 25 Devices check (see \\pcref<Devices>).
+            """,
+            short_description="Devices \\glossterm<difficulty rating> of 25",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            name="Manacles, simple",
+            level=0.5,
+            materials=["Metal"],
+            tags=[],
+            description="""
+                This is a set of manacles designed for Medium humanoid creatures.
+                Escaping the manacles while they are being worn requires a \\glossterm<difficulty rating> 15 Flexibility check (see \\pcref<Flexibility>).
+            """,
+            short_description="Flexibility \\glossterm<difficulty rating> of 15",
+        ),
+        MagicItem(
+            name="Manacles, quality",
+            level=2,
+            materials=["Metal"],
+            tags=[],
+            description="""
+                This is a set of manacles designed for Medium humanoid creatures.
+                Escaping the manacles while they are being worn requires a \\glossterm<difficulty rating> 25 Flexibility check (see \\pcref<Flexibility>).
+            """,
+            short_description="Flexibility \\glossterm<difficulty rating> of 20",
+        ),
+        MagicItem(
+            name="Manacles, masterwork",
+            level=4,
+            materials=["Metal"],
+            tags=[],
+            description="""
+                This is a set of manacles designed for Medium humanoid creatures.
+                Escaping the manacles while they are being worn requires a \\glossterm<difficulty rating> 25 Flexibility check (see \\pcref<Flexibility>).
+            """,
+            short_description="Flexibility \\glossterm<difficulty rating> of 25",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            name="Battering Ram, Portable",
+            level=0.5,
+            materials=["Wood"],
+            tags=[],
+            # TODO: define specific HP / DR
+            description="""
+                If you use this portable battering ram with two hands while trying to break down a door or similar object, you gain a \\plus2 bonus to your Strength check.
+            """,
+            short_description="Grants \\plus2 bonus to Strength checks to break objects",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            name="Caltrops",
+            level=0.5,
+            materials=["Wood"],
+            tags=[],
+            description="""
+                A caltrop is a four-pronged iron spike crafted so that one prong faces up no matter how the caltrop comes to rest.
+                You scatter caltrops on the ground in the hope that your enemies step on them or are at least forced to slow down to avoid them.
+                One 2-pound bag of caltrops covers a 5-foot square.
+
+                Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, the caltrops make an attack vs. the creature's Armor defense.
+                Unlike most attacks, this attack can happen during the \\glossterm<movement phase>.
+                The accuracy of the caltrops is \\plus0.
+                On a hit, the caltrops deal 1d6 piercing damage.
+
+                Caltrops may not be effective against creatures with an unusual anatomy.
+                Multiple applications of caltrops in the same area have no additional effect.
+            """,
+            short_description="Deals 1d6 damage when walked on",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            name="Outfit, Courtier's",
+            level=1,
+            materials=["Jewelry", "Textiles"],
+            tags=[],
+            description="""
+                This outfit includes fancy, tailored clothes in whatever fashion happens to be the current style in the courts of the nobles.
+                It also includes appropriate jewelry.
+            """,
+            short_description="Typical attire for courtiers in noble society",
+        ),
+        MagicItem(
+            name="Outfit, Noble's",
+            level=3,
+            materials=["Jewelry", "Textiles"],
+            tags=[],
+            description="""
+                This set of clothes is designed specifically to be expensive and to show it.
+                Precious metals and gems are worked into the clothing.
+            """,
+            short_description="Typical attire for nobility",
+        ),
+        MagicItem(
+            name="Outfit, Royal",
+            level=5,
+            materials=["Jewelry", "Textiles"],
+            tags=[],
+            description="""
+                Royal clothes are ostentatious, with gems, gold, silk, and fur in abundance.
+            """,
+            short_description="Typical attire for royalty",
+        ),
+    ]
+
+    # POISONS
+    # Poison accuracy: as CR 3 monster, so level + ((level + 1) / 6) + 2
+    tools += [
+        MagicItem(
+            consumable=True,
+            name="Poison, Nitharit",
+            level=2,
+            materials=["Poison"],
+            tags=[],
+            description="""
+                This is a contact-based powder poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus4.
+                Its stage 1 effect makes the subject \\sickened while the poison lasts.
+                Its stage 3 effect makes the subject \\nauseated while the poison lasts.
+            """,
+            short_description="Sickens and eventually nauseates",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Poison, Sassone Leaf",
+            level=4,
+            materials=["Poison"],
+            tags=[],
+            description="""
+                This is a contact-based powder poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus6.
+                The subject takes 1d8 physical damage each time the poison's attack succeeds.
+                Its stage 3 effect ends the poison.
+            """,
+            short_description="Deals 1d8 damage per stage",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Poison, Asp Venom",
+            level=5,
+            materials=["Poison"],
+            tags=[],
+            description="""
+                This is a contact-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus8.
+                Its stage 1 effect makes the subject \\sickened while the poison lasts.
+                Its stage 3 effect makes the subject \\nauseated while the poison lasts.
+            """,
+            short_description="Sickens and eventually nauseates",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Poison, Arsenic",
+            level=8,
+            materials=["Poison"],
+            tags=[],
+            description="""
+                This is an ingestion-based powder poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus11.
+                The subject takes 2d6 physical damage each time the poison's attack succeeds.
+                Its stage 3 effect inflicts a \\glossterm<vital wound> on the subject and ends the poison.
+            """,
+            short_description="Deals 2d6 damage per stage, can vitally wound",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Poison, Dragon Bile",
+            level=10,
+            materials=["Poison"],
+            tags=[],
+            description="""
+                This is a contact-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus13.
+                The subject takes 2d8 physical damage each time the poison's attack succeeds.
+            """,
+            short_description="Deals 2d8 damage per stage endlessly",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Poison, Insanity Mist",
+            level=14,
+            materials=["Poison"],
+            tags=[],
+            description="""
+                This is an ingestion-based gas poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus18.
+                Its stage 1 effect makes the subject \\stunned while the poison lasts.
+                Its stage 3 effect makes the subject \\confused while the poison lasts.
+            """,
+            short_description="Stuns and eventually confuses",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Poison, Black Lotus",
+            level=14,
+            materials=["Poison"],
+            tags=[],
+            description="""
+                This is a contact-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus18.
+                The subject takes 2d10+7 physical damage each time the poison's attack succeeds.
+            """,
+            short_description="Deals 2d10+7 damage per stage endlessly",
         ),
     ]
 
@@ -774,7 +1220,7 @@ def generate_tool_table():
     row_text = "\n".join(rows)
     return longtablify(
         f"""
-            \\lcaption<Tool Items> \\\\
+            \\lcaption<Tools, Goods, and Mounts> \\\\
             \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
             {row_text}
         """
