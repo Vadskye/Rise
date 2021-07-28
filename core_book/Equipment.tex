@@ -1,114 +1,247 @@
-\chapter{Equipment}
+\chapter{Items and Equipment}
+
+This chapter defines the items and equipment that exist in the universe of Rise, including both magical and nonmagical items.
+Items are divided into five broad categories, described below.
+\begin{itemize}
+    \item Weapons are typically used to make \glossterm{strikes}.
+        Weapons come in many forms, and can have very different uses in combat.
+    \item Armor is worn or wielded to protect yourself.
+        There are two types of armor: body armor and shields.
+    \item Apparel items are worn on the body, but unlike armor they have no intrinsic defensive properties.
+        Rings, cloaks, and all manner of other worn items are considered apparel.
+        The only mechanically significant apparel items are \glossterm{magical}.
+    \item Implements are typically held while casting spells or using other magical abilities.
+        The only mechanically significant implements are \glossterm{magical}.
+    \item Tools are used to achieve an effect instead of worn on the body.
+        Potions, traps, and magic bags are all tools.
+\end{itemize}
+
+\section{Wealth And Item Levels}\label{Wealth}
+
+    The worth of an item can be measured with money, or with the more abstract concept of an item's level.
+    Both measurements are closely connected.
+    In general, gold pieces are a more useful concept at low levels, and item levels are more useful at high levels.
+    However, both concepts function at any level, so you can use whichever makes more sense in a particular game.
+
+    \subsection{Coins}
+        The most common coin is the gold piece (gp). A gold piece is worth 10 silver pieces. Each silver piece is worth 10 copper pieces (cp). In addition to copper, silver, and gold coins, there are also platinum pieces (pp), which are each worth 10 gp.
+
+        The standard coin weighs about a third of an ounce (fifty to the pound).
+
+        \begin{dtable}
+            \lcaption{Coin Exchange Values}
+            \begin{dtabularx}{\columnwidth}{l c *{4}{>{\ccol}X}}
+                                    &   & \tb{CP} & \tb{SP} & \tb{GP} & \tb{PP} \tableheaderrule
+                Copper piece (cp)   & = & 1       & 1/10    & 1/100   & 1/1,000 \\
+                Silver piece (sp)   & = & 10      & 1       & 1/10    & 1/100   \\
+                Gold piece (gp)     & = & 100     & 10      & 1       & 1/10    \\
+                Platinum piece (pp) & = & 1,000   & 100     & 10      & 1
+            \end{dtabularx}
+        \end{dtable}
+
+    \subsection{Item Levels}\label{Item Levels}
+
+        Each item has a level associated with it.
+        An item's level is generally correlated with the item's effectiveness, rarity, and value.
+        These effects are summarized in \trefnp{Item Levels}.
+        A magic item's \glossterm{power} is equal to its level (see \pcref{Item Power}).
+
+        In general, two items of a given level are worth the same as a single item that is two levels higher.
+        Likewise, one item of a given level are worth two items that are each two levels lower.
+        These exchange rates do not apply to level 1/2 or level 0 items.
+
+        \parhead{Gear and Consumables}
+            Long-term items that are expected to be worn or otherwise used repeatedly are more expensive than items that are destroyed immediately after being used.
+            Although consumable items are cheaper, they still use their full level for the purpose of determining their power, difficulty to craft or buy, and any other purposes.
+            In general, five consumable items of a given level are worth as much as a single non-consumable item of that level.
+
+        \begin{dtable}
+            \lcaption{Item Levels}
+            \begin{dtabularx}{\columnwidth}{c c >{\ccol}X}
+                \tb{Item Level} & \tb{Typical Gear Price} & \tb{Typical Consumable Price} \tableheaderrule
+                0   & 2 gp or less  & 4 sp or less \\
+                1/2 & 10 gp         & 2 gp         \\
+                1   & 50 gp         & 10 gp        \\
+                2   & 125 gp        & 25 gp        \\
+                3   & 250 gp        & 50 gp        \\
+                4   & 500 gp        & 100 gp       \\
+                5   & 800 gp        & 160 gp       \\
+                6   & 1,200 gp      & 240 gp       \\
+                7   & 1,800 gp      & 360 gp       \\
+                8   & 2,750 gp      & 550 gp       \\
+                9   & 4,000 gp      & 800 gp       \\
+                10  & 6,500 gp      & 1,300 gp     \\
+                11  & 10,000 gp     & 2,000 gp     \\
+                12  & 16,000 gp     & 3,200 gp     \\
+                13  & 25,000 gp     & 5,000 gp     \\
+                14  & 37,000 gp     & 7,400 gp     \\
+                15  & 55,000 gp     & 11,000 gp    \\
+                16  & 85,000 gp     & 17,000 gp    \\
+                17  & 125,000 gp    & 25,000 gp    \\
+                18  & 190,000 gp    & 38,000 gp    \\
+                19  & 280,000 gp    & 56,000 gp    \\
+                20  & 400,000 gp    & 80,000 gp    \\
+            \end{dtabularx}
+        \end{dtable}
+
+        Items with an level of 0 or 1 may be found among common folk, though few commoners would have more than one magic item of any value.
+        Items with an level of 2 or higher are usually only owned or used by nobility, wealthy merchants, and adventurers.
+
+    \subsection{Buying and Selling Items}
+        Items of any level can be exchanged for other items based on their level.
+        In general, items with an level of 10 or less can be bought or sold in exchange for gold pieces.
+        Items with an level of 11 or higher are exceptionally rare.
+        The monetary value of such items is so exorbitant that they are almost never purchased or sold with gold pieces.
+        Instead, they are typically exchanged for similarly rare magic items or gems.
+
+        Wandering adventurers typically have a limited time frame to sell their items, so they must accept lower prices than merchants can charge.
+        When selling for gold pieces, you can expect to receive a quarter of the item's average value according to its level.
+        When selling for another item, you can expect to receive an item or trade good of two levels lower in exchange.
+
+        \subsubsection{Trade Goods}
+            Some items are considered trade goods.
+            Trade goods have a widely agreed upon value, but no intrinsic use.
+            Gold pieces and gems are examples of trade goods.
+            Trade goods differ from other items in that even adventurers can typically receive their full value when selling them to established merchants.
+            Some common trade goods are detailed in \tref{Trade Goods}.
+
+            \begin{dtable}
+                \lcaption{Trade Goods}
+                \begin{dtabularx}{\columnwidth}{l >{\lcol}X}
+                    \tb{Cost} & \tb{Item} \tableheaderrule
+                    1 cp & One pound of wheat \\
+                    2 cp & One pound of flour \\
+                    1 sp & One pound of iron, or one chicken \\
+                    5 sp & One pound of tobacco or copper \\
+                    1 gp & One pound of cinnamon, or one goat \\
+                    2 gp & One pound of ginger or pepper, or one sheep \\
+                    3 gp & One pig \\
+                    4 gp & One square yard of linen \\
+                    5 gp & One pound of salt or silver \\
+                    10 gp & One square yard of silk, or one cow \\
+                    15 gp & One pound of saffron or cloves, or one ox \\
+                    50 gp & One pound of gold \\
+                    500 gp & One pound of platinum
+                \end{dtabularx}
+            \end{dtable}
+
+    \subsection{Typical Wealth By Level}
+        A typical character has one item with a level equal to their own level, plus two items of each lower level, to a maximum of five total items.
+        This does not include the character's legacy item, if any (see \pcref{Legacy Items}).
+        For example, a typical 10th level character would have items with levels of 10, 9, 9, 8, and 8.
+
+        This is a drastic simplification of the sometimes messy process of accumulating wealth and magic items over the course of a typical campaign.
+        Characters will often find additional items that they have no immediate use for.
+        Players may go several sessions without acquiring any particular items until they complete their current quest, which may reward them with a large number of items at once.
+        This is all fine, and the GM should not feel compelled to keep item acquisition perfectly on rails.
+        Rise is only loosely balanced around this general pace of item acquisition, and it is not hard to adjust encounters to deal with unusually wealthy or poor characters.
+
+\section{Using Magic Items}
+
+    \subsection{Item Activation}
+
+        Some magic items have to be explicitly activated to have unusual effects.
+        For example, the \mitem{seven league boots} can be activated to teleport you across great distances.
+        Other magic items constantly have magical effects.
+        For example, a \mitem{ring of protection} passively grants you a defense bonus.
+
+        The description of a magic item effect will specify what mechanical actions must be taken, if any, to activate the effects of the item.
+        For example, a belt of healing requires taking a \glossterm{standard action}.
+        However, the item description will not specify the exact nature of the action.
+        Different items, even if they have the same effect, can have different physical actions that are required to activate the item.
+        These activation actions can come in one of the following forms:
+        \begin{itemize}
+           \item Command word: You must speak a specific word that the item will hear and react to.
+                For example, you may need to say the word ``healing'' in Elven to activate an item that heals you.
+            \item Mental command: You must mentally direct the item to activate, such as by visualizing the item or thinking a particular word.
+                % TODO: does this item exist
+                For example, you may need to imagine a warm blanket around you to activate an item that protects you from cold damage or environmental effects.
+            \item Physical motion: You must perform a specific physical motion, usually involving the item in some way.
+                For example, you may need to rapidly stomp one foot on the ground to activate an item that allows you to move faster.
+        \end{itemize}
+
+        % TODO: table of random item activations?
+
+    \subsection{Item Limitations}
+
+        There are three restrictions on your ability to use magic items.
+        First, you cannot equip two apparel items that take up the same physical location on your body.
+        For example, you cannot equip two different gauntlet sets and gain the effects of both, but you could equip several amulets or up to ten rings.
+
+        Second, all magic items require you to attune to them to gain their effect unless they indicate otherwise in their description.
+        You can attune to a magic item with the \textit{item attunement} ability, below.
+
+        Third, you cannot attune to two items with the same name, or if one is simply a Greater or Lesser version of the other.
+
+        \subsubsection{Item Attunement}\label{Item Attunement}
+
+            As a standard action, you can use the \textit{item attunement} ability to attune to items.
+
+            \begin{attuneability}{Item Attunement}
+                \abilitytag{Attune} (self)
+                \rankline
+                Choose a magic item you are touching.
+                Any abilities the target has that require attunement become active, allowing you to use its full potential.
+            \end{attuneability}
+
+            \parhead{Shared Item Attunement} Multiple creatures can attune to the same item simultaneously.
+            Since most items only function while worn or wielded, this does not usually allow multiple creatures to gain the benefits of the item.
+            However, the creatures can swap the item between them without having to reattune to it each time.
+
+    \subsubsection{Item Power}\label{Item Power}
+        The \glossterm{power} of an item depends on its level.
+        If the item is not being attuned to by a creature, its power is equal to its level.
+        If a creature is attuning to the item, its power is equal to its level or the level of the attuning creature, whichever is higher.
+
+        An item's \glossterm{power} also affects its defenses.
+        Its Fortitude and Mental defenses are equal to 5 \add its \glossterm{power}.
+        Its Armor defense and Reflex defense are not affected by its \glossterm{power}, and are solely determined by its size and shape.
+
+    \subsection{Removing Magic Items}
+        Unless otherwise noted, magic items that have effects on the creature using the item must continue to be worn or held as long as the effect lasts.
+        If a magic item has an ability with a duration, removing the item also ends the ability.
+        Items which are consumed when used or which do not affect their user are unaffected by this rule.
 
 \section{Weapons}\label{Weapons}
 
-    Weapons are grouped into several interlocking sets of categories. These categories pertain to what weapon group the weapon belongs to (axes, bows, and so on), the weapon's usefulness either in close combat (melee) or at a distance (ranged, which includes both thrown and projectile weapons), and its relative \glossterm{usage class} (light, medium, or heavy).
+    Each weapon has a \glossterm{weapon group}, a \glossterm{usage class}, and any number of \glossterm{weapon tags}.
+    In addition, each weapon has a particular \glossterm{accuracy} modifier and defines a base \glossterm{dice pool} for attacks using that weapon.
+    This section explains each of those concepts and defines the statistics for weapons in Ries.
 
-    \subsection{Weapon Mechanics}
+    \subsection{Weapon Groups}\label{Weapon Groups}
 
-        \subsubsection{Weapon Groups}\label{Weapon Groups}
+        Weapons are organized into thematically related categories called weapon groups. They are described in \trefnp{Weapon Groups}. For example, all axes belong to the ``axes'' weapon group. Some weapons can be found in multiple weapon groups. For example, a dagger is a simple weapon, a blade, and a thrown weapon.
 
-            Weapons are organized into thematically related categories called weapon groups. They are described in \trefnp{Weapon Groups}. For example, all axes belong to the ``axes'' weapon group. Some weapons can be found in multiple weapon groups. For example, a dagger is a simple weapon, a blade, and a thrown weapon.
+        \parhead{Exotic Weapons}\label{Exotic Weapons} Some weapons are rare and have unusual fighting styles.
+        These weapons are called exotic weapons.
+        Proficiency with a weapon group does not grant you with exotic weapons from that group.
+        Some class abilities grant proficiency with exotic weapons.
 
-            \parhead{Exotic Weapons}\label{Exotic Weapons} Some weapons are rare and have unusual fighting styles.
-            These weapons are called exotic weapons.
-            Proficiency with a weapon group does not grant you with exotic weapons from that group.
-            Some class abilities grant proficiency with exotic weapons.
+        \begin{dtable!*}
+            \lcaption{Weapon Groups}
+            \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
+                \tb{Group}         & \tb{Weapons}                                                                     & \tb{Exotic Weapons} \tableheaderrule
+                Armor weapons      & Armor spikes, Standard shield (and spiked)                                       & Armblade, spiked knee                                 \\
+                Axes               & Battleaxe, broadaxe, greataxe, handaxe, pollaxe, shepherd's axe, throwing axe    & Dwarven throwing axe, dwarven waraxe, orcish greataxe \\
+                Blades             & Broadsword, dagger, estoc, greatsword, rapier, scimitar, smallsword              & Boot dagger, falchion, katana, kukri                  \\
+                Bows               & Longbow, shortbow                                                                & Flatbow, heartseeker arrows, takedown bow             \\
+                Club-like weapons  & Club, greatclub, greatmace, mace, morning star, sap                              & Gnomish trick mace, knobkerrie                        \\
+                Crossbows          & Hand crossbow, heavy crossbow                                                    & Arbalest, repeating crossbow                          \\
+                Flexible Weapons   & Flail, heavy flail, nunchaku, slapjack, whip                                     & Chain whip, meteor hammer, three-section staff        \\
+                Headed weapons     & Light hammer, longhammer, pick, sickle, sledgehammer, warhammer                  & Dwarven longhammer, Heavy pick                        \\
+                Improvised weapons & \tdash                                                                           & \tdash                                                \\
+                Monk weapons       & Jitte, kama, kunai, nunchaku, quarterstaff, sai, shuriken                        & Three-section staff                                   \\
+                Polearms           & Bardiche, glaive, halberd, longhammer, pollaxe, quarterstaff, scythe, swordstaff & Fauchard, war scythe                                  \\
+                Simple weapons     & Club, dagger, heavy crossbow, quarterstaff, unarmed strike                       &                                                       \\
+                Spears             & Greatspear, javelin, lance, longspear, ranseur, partisan, spear                  & Pike                                                  \\
+                Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling, throwing axe      & Bolas, dwarven throwing axe, dwarven waraxe, net      \\
+                Unarmed weapons    & Claw sheath, gauntlet, spiked gauntlet, unarmed strike                           &                                                       \\
+            \end{dtabularx}
+        \end{dtable!*}
 
-            \begin{dtable!*}
-                \lcaption{Weapon Groups}
-                \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
-                    \tb{Group}         & \tb{Weapons}                                                                     & \tb{Exotic Weapons} \tableheaderrule
-                    Armor weapons      & Armor spikes, Standard shield (and spiked)                                       & Armblade, spiked knee                                 \\
-                    Axes               & Battleaxe, broadaxe, greataxe, handaxe, pollaxe, shepherd's axe, throwing axe    & Dwarven throwing axe, dwarven waraxe, orcish greataxe \\
-                    Blades             & Broadsword, dagger, estoc, greatsword, rapier, scimitar, smallsword              & Boot dagger, falchion, katana, kukri                  \\
-                    Bows               & Longbow, shortbow                                                                & Flatbow, heartseeker arrows, takedown bow             \\
-                    Club-like weapons  & Club, greatclub, greatmace, mace, morning star, sap                              & Gnomish trick mace, knobkerrie                        \\
-                    Crossbows          & Hand crossbow, heavy crossbow                                                    & Arbalest, repeating crossbow                          \\
-                    Flexible Weapons   & Flail, heavy flail, nunchaku, slapjack, whip                                     & Chain whip, meteor hammer, three-section staff        \\
-                    Headed weapons     & Light hammer, longhammer, pick, sickle, sledgehammer, warhammer                  & Dwarven longhammer, Heavy pick                        \\
-                    Improvised weapons & \tdash                                                                           & \tdash                                                \\
-                    Monk weapons       & Jitte, kama, kunai, nunchaku, quarterstaff, sai, shuriken                        & Three-section staff                                   \\
-                    Polearms           & Bardiche, glaive, halberd, longhammer, pollaxe, quarterstaff, scythe, swordstaff & Fauchard, war scythe                                  \\
-                    Simple weapons     & Club, dagger, heavy crossbow, quarterstaff, unarmed strike                       &                                                       \\
-                    Spears             & Greatspear, javelin, lance, longspear, ranseur, partisan, spear                  & Pike                                                  \\
-                    Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling, throwing axe      & Bolas, dwarven throwing axe, dwarven waraxe, net      \\
-                    Unarmed weapons    & Claw sheath, gauntlet, spiked gauntlet, unarmed strike                           &                                                       \\
-                \end{dtabularx}
-            \end{dtable!*}
-
-            \subsubsection{Weapon Proficiency}\label{Weapon Proficiency}
-                Each character is proficient with different weapon groups. These indicate the weapons that you can use effectively.
-                You take a \minus2 accuracy penalty with weapons you are not proficient with.
-
-        \subsubsection{Weapon Usage Classes}\label{Weapon Usage Classes}
-            A weapon's \glossterm{usage class} is a measure of how much effort it takes to wield a weapon in combat.
-            It indicates whether a melee weapon, when wielded by a creature the weapon is sized for, is considered a light weapon, a medium weapon, or a heavy weapon.
-
-            % All weapons should have two improvements over a ``baseline'' +0/+0d weapon with no properties.
-            % In addition, light and heavy weapons have additional properties that are not considered improvements.
-            % Being Light grants an automatic +1a/-1d and better dual wielding/grappling, and light weapons cannot be higher than -1d base.
-            % Being Medium has no special properties, but many Medium weapons have the Versatile Grip property.
-            % Being Heavy grants an automatic +1d, but all heavy weapons require two hands.
-            % Extreme weapons are discouraged; although this permits a Heavy weapon with +3d, no such weapon should exist.
-            % Trading +1a for +1d in either direction is not considered an improvement.
-
-            \parhead{Light Weapons}\label{Light Weapons} Light weapons are easier to use while making attacking with two weapons at once (see \pcref{Offhand Strike}) or while grappling.
-            They cannot be held in two hands.
-            Light weapons tend to have higher \glossterm{accuracy} than heavier weapons, but do less damage.
-
-            \parhead{Medium Weapon} A medium weapon can normally be used in one hand.
-            Most medium weapons can also be held in two hands if that is physically plausible.
-            This provides no special benefit unless the weapon has the Versatile Grip tag (see \pcref{Weapon Tags}).
-            Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
-
-            \parhead{Heavy Weapon} Two hands are normally required to wield a heavy weapon.
-            Heavy weapons tend to have higher damage than lighter weapons.
-            If you have a Strength of 5 or higher, you can wield a heavy weapon in one hand, but you take a \minus1 penalty to \glossterm{accuracy} and a \minus1d damage penalty with the weapon while doing so.
-            Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
-
-            \parhead{Physical Size} Like all objects and creatures, weapons have a size category that represents how physically large they are. In general, light and medium weapons are one size category smaller than the wielder, while heavy weapons are the same size category as the wielder.
-            All weapons are \glossterm{lightweight} unless otherwise noted.
-
-            \parhead{Inappropriately Sized Weapons}\label{Inappropriately Sized Weapons} A weapon's \glossterm{usage class} is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed.
-            For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had a medium usage class.
-            The weapon's damage die gains a \plus1d bonus per size category if the weapon is unusually large, or takes a \minus1d penalty per size category if the weapon is unusually small.
-            In addition, the wielder takes a \minus2 accuracy penalty with the weapon per size category of difference.
-            If a weapon's usage class would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
-
-        \subsubsection{Melee Weapons}
-            Melee weapons are used for making melee attacks against foes within your reach (see \pcref{Reach}). Most weapons are melee weapons.
-
-        \subsubsection{Ranged Weapons}
-            Ranged weapons are used to make attacks against distant foes within the range of your weapon. There are two kinds of ranged weapons: projectile weapons and thrown weapons.
-            Ranged weapons always have two defined range limits for \glossterm{close range} and \glossterm{long range} (see \pcref{Weapon Range Limits}).
-
-            \subsubsection{Projectile Weapons} Projectile weapons fire ammunition at a target to deal damage. The ammunition generally breaks when used.
-
-            \subsubsection{Thrown Weapons}\label{Thrown Weapons} Thrown weapons are thrown at a target to deal damage. They generally do not break when thrown.
-
-                \parhead{Throwing Other Weapons} It is possible to throw a weapon that is not designed to be thrown.
-                The range limits are 10 feet for close range and 30 feet for long range.
-                You are treated as being nonproficient with the weapon, so you take a \minus2 accuracy penalty (see \pcref{Weapon Proficiency}).
-                If the attack hits, the weapon deals its normal damage.
-
-                \parhead{Heavy Weapons} Heavy thrown weapons require a standard action to throw, rather being thrown as part of any \glossterm{strike} like normal.
-                They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, so you are not considered to have any \glossterm{free hands} while throwing a heavy thrown weapon.
-
-            \subsubsection{Ranged Weapons in Melee}
-
-                You take a \minus4 accuracy penalty with medium and large ranged weapons against creatures adjacent to you.
-
-        \subsubsection{Weapon Range Limits}\label{Weapon Range Limits}
-            Attack with ranged weapons become less accurate if the target is far away.
-            Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 120/480.
-            The first number indicates the maximum range for a weapon's \glossterm{close range}.
-            The second number indicates the maximum range for a weapon's \glossterm{long range}.
-            You cannot attack a target that is beyond a weapon's long range limit.
-
-            Attacks at close range have no penalty.
-            Attacks at long range have a \minus4 accuracy penalty.
-            This is called a \glossterm{longshot penalty}, and some abilities can reduce this penalty.
+        \subsubsection{Weapon Proficiency}\label{Weapon Proficiency}
+            Each character is proficient with different weapon groups. These indicate the weapons that you can use effectively.
+            You take a \minus2 accuracy penalty with weapons you are not proficient with.
 
         \subsubsection{Improvised Weapons}\label{Improvised Weapons}
             Sometimes objects not crafted to be weapons nonetheless see use in combat.
@@ -124,78 +257,141 @@
             Creatures are automatically proficient with all natural weapons they have other than an unarmed strike.
             Natural weapons can be used to make offhand attacks just like manufactured weapons (see \pcref{Offhand Strike}).
 
-        \subsubsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
-            Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.
-            The time it takes to draw and sheathe a weapon depends on how encumbering the weapon is.
-            You can draw or sheathe a \glossterm{light weapon} as a \glossterm{free action}.
-            You can draw or sheathe a \glossterm{medium weapon}, \glossterm{heavy weapon}, or a concealed weapon as a \glossterm{standard action}.
+    \subsection{Weapon Usage Classes}\label{Weapon Usage Classes}
+        A weapon's \glossterm{usage class} is a measure of how much effort it takes to wield a weapon in combat.
+        It indicates whether a melee weapon, when wielded by a creature the weapon is sized for, is considered a light weapon, a medium weapon, or a heavy weapon.
 
-        \subsubsection{Weapon Tags}\label{Weapon Tags}
-            Some weapons found on \trefnp{Weapons} have tags that indicate that they have special abilities. The list of abilities that weapons can have is given below.
-            \parhead{Ammunition} This weapon is designed to thrown or fired by a projectile weapon in large quantities. It is cheaper to buy and craft, but ammunition is usually \glossterm{broken} after being fired.
-            \parhead{Compact} This weapon is unusually small.
-            It is one size category smaller than normal for a light weapon (that is, two size categories smaller than the creature it is intended for), though it is not \glossterm{lightweight} for that size.
-            This makes it easier to conceal (see \pcref{Sleight of Hand}).
-            In addition, you can draw or sheathe this weapon so quickly that you can also take another action in the same phase with that hand.
-            For example, you can draw this weapon and attack with it in the same phase.
-            \parhead{Disarming} When you use the \textit{disarm} ability with this weapon, you can knock loose objects that are held in a single hand, but not objects that are held in two hands or well secured (see \pcref{Disarm}).
-            \parhead{Forceful} Whenever you deal damage to a target no more than one size category larger than you with a strike using this weapon, you can \glossterm{knockback} the target up to 10 feet.
-            On a critical hit, this knockback distance is doubled.
-            \parhead{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} attacks with this weapon against creatures who are \grappled by you.
-            % 5% of the time, you increase your damage by 50% (2x -> 3x). This only becomes better than Keen if you crit 50% of the time, which seems unlikely.
-            \parhead{Impact} When you get a \glossterm{critical hit} with this weapon, you deal triple damage instead of double damage.
-            % Note: this is pretty simply 20% more damage. +1d is a little over 20% more *weapon* damage,
-            % ignoring power, so 20% more damage is still better than +1d.
-            \parhead{Keen} You gain a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
-            \parhead{Long}\label{Long Weapon} This weapon can be used to attack at double your natural \glossterm{reach} (so 10 feet for a typical Medium creature).
-            However, it cannot attack a creature within your natural reach.
-            In addition, you can inflict \glossterm{critical hits} with melee \glossterm{strikes} using a Long weapon against creatures up to two size categories larger than you (see \pcref{Very Large Creatures}).
+        % All weapons should have two improvements over a ``baseline'' +0/+0d weapon with no properties.
+        % In addition, light and heavy weapons have additional properties that are not considered improvements.
+        % Being Light grants an automatic +1a/-1d and better dual wielding/grappling, and light weapons cannot be higher than -1d base.
+        % Being Medium has no special properties, but many Medium weapons have the Versatile Grip property.
+        % Being Heavy grants an automatic +1d, but all heavy weapons require two hands.
+        % Extreme weapons are discouraged; although this permits a Heavy weapon with +3d, no such weapon should exist.
+        % Trading +1a for +1d in either direction is not considered an improvement.
 
-            Long weapons can held using a different grip to strike nearby foes.
-            This is called ``short hafting''.
-            While short hafting a Long weapon, you ignore the weapon's Long property.
-            You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
-            As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
-            However, you can change your grip during the \glossterm{movement phase} and then attack with your new grip during the \glossterm{action phase}.
-            \parhead{Mounted}\label{Mounted Weapon} If you are mounted, and mount moves in the same phase that you make a \glossterm{strike} with a Mounted weapon, you gain a \plus2 \glossterm{accuracy} bonus with the strike.
-            \parhead{Parrying} If a creature attacks you with a \glossterm{strike} while you wield this weapon, you \glossterm{briefly} gain a \plus2 bonus to \glossterm{accuracy} with strikes using this weapon against that creature.
-            \parhead{Projectile} This weapon fires projectiles at range. Projectile weapons have two \glossterm{range limits} listed in their description (see \pcref{Weapon Range Limits}). Projectile weapons must be reloaded. The time required to reload a projectile weapon is given in the weapon description.
-            \parhead{Stealthy}
-            A stealthy weapon is smaller, quieter, or otherwise less noticeable than most weapons.
-            You only take a \minus5 penalty to Stealth when trying to conceal strikes with a stealthy weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
-            \parhead{Sweeping}\label{Sweeping} When you make a \glossterm{melee} \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects within your \glossterm{reach} with that weapon.
-            Each secondary target must be within 5 feet of a primary target, and must not already be a target of the strike.
-            The strike affects each secondary target in the same way as the primary targets.
-            Sweeping weapons have a number that indicates the number of secondary targets you can affect.
-            \parhead{Subdual} This weapon deals \glossterm{subdual damage} (see \pcref{Subdual Damage}).
-            \parhead{Thrown} This weapon is designed to be thrown (see \pcref{Thrown Weapons}).
-            Thrown weapons have two \glossterm{range limits} listed in their description (see \pcref{Weapon Range Limits}).
-            Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
-            \parhead{Tripping} When you use the \textit{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
-            When you successfully trip a creature with this weapon, the target takes damage as if you hit it with a strike using the weapon with a \minus3d damage penalty.
-            \parhead{Unarmed} This weapon does not prevent you from using the hand it's equipped on as a free hand.
-            \parhead{Versatile Grip} This weapon is designed to be held in either one hand or two hands.
-            While holding this weapon in two hands, you gain a \plus1d damage bonus with the weapon.
+        \parhead{Light Weapons}\label{Light Weapons} Light weapons are easier to use while making attacking with two weapons at once (see \pcref{Offhand Strike}) or while grappling.
+        They cannot be held in two hands.
+        Light weapons tend to have higher \glossterm{accuracy} than heavier weapons, but do less damage.
+
+        \parhead{Medium Weapon} A medium weapon can normally be used in one hand.
+        Most medium weapons can also be held in two hands if that is physically plausible.
+        This provides no special benefit unless the weapon has the Versatile Grip tag (see \pcref{Weapon Tags}).
+        Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
+
+        \parhead{Heavy Weapon} Two hands are normally required to wield a heavy weapon.
+        Heavy weapons tend to have higher damage than lighter weapons.
+        If you have a Strength of 5 or higher, you can wield a heavy weapon in one hand, but you take a \minus1 penalty to \glossterm{accuracy} and a \minus1d damage penalty with the weapon while doing so.
+        Changing grips to hold it in one hand or two hands can be done as a \glossterm{free action} that requires both hands.
+
+        \parhead{Physical Size} Like all objects and creatures, weapons have a size category that represents how physically large they are. In general, light and medium weapons are one size category smaller than the wielder, while heavy weapons are the same size category as the wielder.
+        All weapons are \glossterm{lightweight} unless otherwise noted.
+
+        \parhead{Inappropriately Sized Weapons}\label{Inappropriately Sized Weapons} A weapon's \glossterm{usage class} is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed.
+        For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had a medium usage class.
+        The weapon's damage die gains a \plus1d bonus per size category if the weapon is unusually large, or takes a \minus1d penalty per size category if the weapon is unusually small.
+        In addition, the wielder takes a \minus2 accuracy penalty with the weapon per size category of difference.
+        If a weapon's usage class would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
+
+    \subsection{Melee and Ranged Weapons}
+        Melee weapons are used for making melee attacks against foes within your \glossterm{reach} with that weapon (see \pcref{Reach}).
+        Ranged weapons are used to make attacks against distant foes within the \glossterm{range limits} of your weapon.
+        Any weapon that does not have the Projectile or Thrown \glossterm{weapon tag} is a melee weapon.
+
+            \subsubsection{Throwing Other Weapons} It is possible to throw a weapon that is not designed to be thrown.
+            The range limits are 10 feet for close range and 30 feet for long range.
+            You are treated as being nonproficient with the weapon, so you take a \minus2 accuracy penalty (see \pcref{Weapon Proficiency}).
+            If the attack hits, the weapon deals its normal damage.
+
+        \subsubsection{Weapon Range Limits}\label{Weapon Range Limits}
+            Attack with ranged weapons become less accurate if the target is far away.
+            Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 120/480.
+            The first number indicates the maximum range for a weapon's \glossterm{close range}.
+            The second number indicates the maximum range for a weapon's \glossterm{long range}.
+            You cannot attack a target that is beyond a weapon's long range limit.
+
+            Attacks at close range have no penalty.
+            Attacks at long range have a \minus4 accuracy penalty.
+            This is called a \glossterm{longshot penalty}, and some abilities can reduce this penalty.
+
+    \subsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
+        Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.
+        The time it takes to draw and sheathe a weapon depends on how encumbering the weapon is.
+        You can draw or sheathe a \glossterm{light weapon} as a \glossterm{free action}.
+        You can draw or sheathe a \glossterm{medium weapon}, \glossterm{heavy weapon}, or a concealed weapon as a \glossterm{standard action}.
+
+    \subsection{Weapon Tags}\label{Weapon Tags}
+        Some weapons found on \trefnp{Weapons} have tags that indicate that they have special abilities. The list of abilities that weapons can have is given below.
+        \parhead{Ammunition} This weapon is designed to be fired by a projectile weapon or thrown in large quantities.
+        It is cheaper to buy and craft, but it is usually \glossterm{broken} after being fired or thrown.
+        \parhead{Compact} This weapon is unusually small.
+        It is one size category smaller than normal for a light weapon (that is, two size categories smaller than the creature it is intended for), though it is not \glossterm{lightweight} for that size.
+        This makes it easier to conceal (see \pcref{Sleight of Hand}).
+        In addition, you can draw or sheathe this weapon so quickly that you can also take another action in the same phase with that hand.
+        For example, you can draw this weapon and attack with it in the same phase.
+        \parhead{Disarming} When you use the \textit{disarm} ability with this weapon, you can knock loose objects that are held in a single hand, but not objects that are held in two hands or well secured (see \pcref{Disarm}).
+        \parhead{Forceful} Whenever you deal damage to a target no more than one size category larger than you with a strike using this weapon, you can \glossterm{knockback} the target up to 10 feet.
+        On a critical hit, this knockback distance is doubled.
+        \parhead{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} attacks with this weapon against creatures who are \grappled by you.
+        % 5% of the time, you increase your damage by 50% (2x -> 3x). This only becomes better than Keen if you crit 50% of the time, which seems unlikely.
+        \parhead{Impact} When you get a \glossterm{critical hit} with this weapon, you deal triple damage instead of double damage.
+        % Note: this is pretty simply 20% more damage. +1d is a little over 20% more *weapon* damage,
+        % ignoring power, so 20% more damage is still better than +1d.
+        \parhead{Keen} You gain a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
+        \parhead{Long}\label{Long Weapon} This weapon can be used to attack at double your natural \glossterm{reach} (so 10 feet for a typical Medium creature).
+        However, it cannot attack a creature within your natural reach.
+        In addition, you can inflict \glossterm{critical hits} with melee \glossterm{strikes} using a Long weapon against creatures up to two size categories larger than you (see \pcref{Very Large Creatures}).
+
+        Long weapons can held using a different grip to strike nearby foes.
+        This is called ``short hafting''.
+        While short hafting a Long weapon, you ignore the weapon's Long property.
+        You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
+        As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
+        However, you can change your grip during the \glossterm{movement phase} and then attack with your new grip during the \glossterm{action phase}.
+        \parhead{Mounted}\label{Mounted Weapon} If you are mounted, and mount moves in the same phase that you make a \glossterm{strike} with a Mounted weapon, you gain a \plus2 \glossterm{accuracy} bonus with the strike.
+        \parhead{Parrying} If a creature attacks you with a \glossterm{strike} while you wield this weapon, you \glossterm{briefly} gain a \plus2 bonus to \glossterm{accuracy} with strikes using this weapon against that creature.
+        \parhead{Projectile} This weapon fires ammunition at range to deal damage.
+        The ammunition generally breaks when used.
+        Projectile weapons have two \glossterm{range limits} listed in their description (see \pcref{Weapon Range Limits}).
+        They must be reloaded after being fired.
+        The time required to reload a projectile weapon is given in the weapon description.
+        You take a \minus4 accuracy penalty with Projectile weapons against creatures adjacent to you.
+        \parhead{Stealthy}
+        A stealthy weapon is smaller, quieter, or otherwise less noticeable than most weapons.
+        You only take a \minus5 penalty to Stealth when trying to conceal strikes with a stealthy weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
+        \parhead{Sweeping}\label{Sweeping} When you make a \glossterm{melee} \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects within your \glossterm{reach} with that weapon.
+        Each secondary target must be within 5 feet of a primary target, and must not already be a target of the strike.
+        The strike affects each secondary target in the same way as the primary targets.
+        Sweeping weapons have a number that indicates the number of secondary targets you can affect.
+        \parhead{Subdual} This weapon deals \glossterm{subdual damage} (see \pcref{Subdual Damage}).
+        \parhead{Thrown} This weapon is designed to be thrown to deal damage at range.
+        Thrown weapons have two \glossterm{range limits} listed in their description (see \pcref{Weapon Range Limits}).
+        Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
+        Heavy thrown weapons require a standard action to throw, rather being thrown as part of any \glossterm{strike} like normal.
+        They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, so you are not considered to have any \glossterm{free hands} while throwing a heavy thrown weapon.
+        \parhead{Tripping} When you use the \textit{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
+        When you successfully trip a creature with this weapon, the target takes damage as if you hit it with a strike using the weapon with a \minus3d damage penalty.
+        \parhead{Unarmed} This weapon does not prevent you from using the hand it's equipped on as a free hand.
+        \parhead{Versatile Grip} This weapon is designed to be held in either one hand or two hands.
+        While holding this weapon in two hands, you gain a \plus1d damage bonus with the weapon.
 
     \subsection{Weapon Table}
-        Here is the format for weapon entries (given as column headings on \trefnp{Weapons}, below).
+        Here is the format for weapon entries in the Weapons table, below.
 
         \parhead{Usage Class} Describes whether the weapon's \glossterm{usage class} is light, medium, or heavy (see \pcref{Weapon Usage Classes}).
 
-        \parhead{Damage} The Damage column gives the damage dealt by the weapon on a successful hit.
-        These values are accurate for creatures using weapons sized appropriately for them.
-        For details about using weapons of other sizes, see \pcref{Inappropriately Sized Weapons}.
+        \parhead{Accuracy} This number modifies your \glossterm{accuracy} with \glossterm{strikes} using the weapon.
 
-        \parhead{Range Limts} The \glossterm{range limits} of the weapon (see \pcref{Weapon Range Limits}).
+        \parhead{Damage} This \glossterm{dice pool} indicates the damage dealt by the weapon on a hit.
 
-        \parhead{Type} Weapons are classified according to the type of damage they deal: bludgeoning, piercing, or slashing.
+        \parhead{Damage Type} This indicates the type of the damage dealt by the weapon.
         Some monsters may be \glossterm{impervious} or immune to attacks from certain damage types.
 
         Some weapons deal damage of multiple types. If a weapon is of two types, the damage it deals is not half one type and half another; all of it is both types.
         Therefore, a creature would have to be immune to both types of damage to ignore any of the damage from such a weapon.
         For details, see \pcref{Multiple Damage Types}.
 
-        In other cases, a weapon can deal either of two types of damage. In a situation when the damage type is significant, the wielder can choose which type of damage to deal with such a weapon.
+        In other cases, a weapon can deal either of two types of damage.
+        The wielder chooses which type of damage to deal when they make each \glossterm{strike} with the weapon.
 
         \parhead{Item Level (Cost)} The first value indicates the \glossterm{item level} of the item (see \pcref{Item Levels}).
         The second value in parentheses indicates the average cost to buy the item.
@@ -241,7 +437,7 @@
                 \tind Fire arrows (20)\fn{3}       & \tdash & \minus1 & \tdash & Piercing and fire        & 2nd (25 gp)  & Ammunition                                     \\
 
                 Club-like weapons                  &        &         &        &                          &              &                                                \\
-                \tind Club                         & Medium & \plus0  & 1d8    & Bludgeoning              & \tdash       & Versatile Grip                                 \\
+                \tind Club                         & Medium & \plus0  & 1d8    & Bludgeoning              & 0            & Versatile Grip                                 \\
                 \tind Greatclub                    & Heavy  & \plus0  & 2d6    & Bludgeoning              & 1/2 (10 gp)  & Forceful                                       \\
                 \tind Greatmace                    & Heavy  & \plus0  & 2d6    & Bludgeoning              & 1/2 (10 gp)  & Impact                                         \\
                 \tind Mace                         & Medium & \plus0  & 1d8    & Bludgeoning              & 1/2 (10 gp)  & Impact, Versatile Grip                         \\
@@ -276,7 +472,7 @@
                 \tind Kama                         & Light  & \plus2  & 1d6    & Slashing                 & 1/2 (10 gp)  & Tripping                                       \\
                 \tind Kunai                        & Light  & \plus2  & 1d6    & Piercing                 & 1/2 (10 gp)  & Thrown (30/120)                                \\
                 \tind Nunchaku                     & Light  & \plus0  & 1d6    & Bludgeoning              & 1/2 (10 gp)  & Disarming, Subdual, Tripping                   \\
-                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash       & Long                                           \\
+                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & 0            & Long                                           \\
                 \tind Sai                          & Light  & \plus1  & 1d6    & Piercing or bludgeoning  & 1/2 (10 gp)  & Disarming, Parrying                            \\
                 \tind Shuriken (5)                 & Light  & \plus2  & 1d4    & Piercing and slashing    & 1/2 (10 gp)  & Ammunition, Compact, Thrown (15/60), Stealthy  \\
 
@@ -286,16 +482,16 @@
                 \tind Halberd                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 1/2 (10 gp)  & Long, Tripping                                 \\
                 \tind Longhammer                   & Heavy  & \plus0  & 1d10   & Bludgeoning              & 1/2 (10 gp)  & Impact, Long                                   \\
                 \tind Pollaxe                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 1/2 (10 gp)  & Impact, Tripping                               \\
-                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash       & Long                                           \\
+                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & 0            & Long                                           \\
                 \tind Scythe                       & Heavy  & \plus0  & 1d10   & Slashing                 & 1/2 (10 gp)  & Sweeping (2)                                   \\
                 \tind Swordstaff                   & Heavy  & \plus0  & 1d10   & Slashing                 & 1/2 (10 gp)  & Keen, Long                                     \\
 
                 Simple weapons                     &        &         &        &                          &              &                                                \\
-                \tind Club                         & Medium & \plus0  & 1d8    & Bludgeoning              & \tdash       & Versatile Grip                                 \\
+                \tind Club                         & Medium & \plus0  & 1d8    & Bludgeoning              & 0            & Versatile Grip                                 \\
                 \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 1/2 (10 gp)  & Compact, Stealthy, Thrown (15/60)              \\
                 \tind Heavy crossbow\fn{3}         & Heavy  & \plus0  & 2d6    & \tdash                   & 1st (50 gp)  & Projectile (90/360)                            \\
                 \tind Crossbow bolts (20)          & \tdash & \plus0  & \tdash & Piercing                 & 1/2 (2 gp)   & Ammunition                                     \\
-                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & \tdash       & Long                                           \\
+                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & 0            & Long                                           \\
 
                 Spears                             &        &         &        &                          &              &                                                \\
                 \tind Greatspear                   & Heavy  & \plus0  & 2d6    & Piercing                 & 1/2 (10 gp)  & Long                                           \\
@@ -352,7 +548,7 @@
                 \tind Takedown bow\fn{3}       & Special & \plus0 & 1d8    & \tdash               & 2nd (125 gp) & Projectile (120/480 or 90/360) \\
                 Club-like weapons              &         &        &        &                      &              &                                \\
                 \tind Gnomish trick mace       & Medium  & \plus1 & 1d8    & Bludgeoning          & 1/2 (10 gp)  & Impact, Tripping               \\
-                \tind Knobkerrie               & Medium  & \plus1 & 1d8    & Bludgeoning          & \tdash       & Impact, Throwing (15/60)       \\
+                \tind Knobkerrie               & Medium  & \plus1 & 1d8    & Bludgeoning          & 1/2 (10 gp)  & Impact, Throwing (15/60)       \\
                 Crossbows                      &         &        &        &                      &              &                                \\
                 \tind Arbalest\fn{3}           & Heavy   & \plus2 & 2d6    & \tdash               & 3rd (250 gp) & Impact, Projectile (90/360)    \\
                 \tind Repeating crossbow\fn{3} & Medium  & \plus0 & 1d8    & \tdash               & 4th (500 gp) & Impact, Projectile (90/360)    \\
@@ -465,9 +661,18 @@
         In addition, when it is fully disassembled, it takes up space equivalent to a light usage class weapon, making it easier to transport and conceal.
         \parhead{Unarmed Strike} Anyone can use an unarmed strike to attack.
         However, unless you are proficient with the Unarmed Weapons weapon group, you suffer the normal penalties for attacking with a weapon you are not proficient with (see \pcref{Weapon Proficiency}).
-
         \parhead{Whip} A whip is a light melee weapon with 15 foot reach.
         You can use a whip against foes anywhere within your reach, including adjacent foes.
+
+\section{Magic Weapons}
+    Magic weapons improve a character's combat abilities.
+    They must be wielded to gain their effects.
+
+    \parhead{Ranged Weapons and Ammunition} Any magical properties of a projectile weapon also apply to all ammunition fired from that weapon.
+
+    \input{generated/weapons_table.tex}
+
+    \input{generated/weapons.tex}
 
 \section{Armor}\label{Armor}
 
@@ -509,6 +714,11 @@
                 2 The wearer must have help to don this armor.
             \end{dtable}
 
+        \subsubsection{Weight and Size}
+            The size category of body armor is the same as the size category of the creature it is sized for.
+            Bucklers and standard shields are one size category smaller than the creature they are sized for, while tower shields are the same size category as the creature they are sized for.
+            All armor and shields except for heavy body armor are \glossterm{lightweight} objects.
+
     \subsection{Armor Table}
         \par Here is the format for armor entries (given as column headings on \trefnp{Armor and Shields}, below).
 
@@ -528,13 +738,6 @@
         The second value in parentheses indicates the average cost to buy the item.
         Items crafted for unusually large or small creatures are more expensive.
         For each size category larger or smaller than Medium, the item's \glossterm{item level} increases by one, which increases its price.
-
-        \parhead{Armor/Shield Bonus} Both body armor and shields improve your Armor defense.
-        Wearing multiple suits of armor or wielding multiple shields does not improve your defenses any further.
-
-        \parhead{Weight and Size} The size category of body armor is the same as the size category of the creature it is sized for.
-        Bucklers and standard shields are one size category smaller than the creature they are sized for, while tower shields are the same size category as the creature they are sized for.
-        All armor and shields except for heavy body armor are \glossterm{lightweight} objects.
 
         \begin{dtable!*}
             \lcaption{Armor and Shields}
@@ -556,10 +759,10 @@
                 \tind Half-plate      & \plus4       & \plus11                & \plus7           & \minus10 ft. & \mult0         & Metal             & 4th (500 gp) \\
                 \tind Full plate      & \plus4       & \plus12                & \plus6           & \minus10 ft. & \mult0         & Metal             & 5th (800 gp) \\
                 \tind Tower shield    & \plus3\fn{2} & \tdash                 & \plus2\fn{1}     & \tdash       & \tdash         & Metal or wood     & 1st (50 gp)  \\
-                Extras\fn{3}                &              &                        &                  &              &                &                   &              \\
-                \tind Armor spikes    & \tdash       & \minus1                & \plus1           & \tdash       & \tdash         & Metal             & \tdash       \\
+                Extras\fn{3}          &              &                        &                  &              &                &                   &              \\
+                \tind Armor spikes    & \tdash       & \minus1                & \plus1           & \tdash       & \tdash         & Metal             & 1/2 (10 gp)  \\
                 \tind Locked gauntlet & \tdash       & \tdash                 & Special          & \tdash       & \tdash         & Metal             & 1/2 (10 gp)  \\
-                \tind Shield spikes   & \tdash       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal             & \tdash       \\
+                \tind Shield spikes   & \tdash       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal             & 1/2 (10 gp)  \\
             \end{dtabularx}
             1 The hand holding the shield is not free, which may limit your actions. \\
             2 Tower shields improve your ability to take the \textit{total defense} action. See the description.
@@ -709,11 +912,89 @@
         When you use the \textit{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor, ignoring magical enhancements.
         The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
 
-\section{Goods And Services}
+\section{Magic Armor}
+    Magic body armor must be worn to gain its effects, while magic shields must be wielded.
 
-    \subsubsection{Standard Adventuring Kit}
+    \input{generated/armor_table.tex}
+
+    \input{generated/armor.tex}
+
+\section{Magic Apparel}
+    Magic apparel items must be worn to gain their effects.
+
+    \subsection{Body Slots}
+        The main limiting factor on how many items you can have equipped is your attunement points, not the physical location of your items on your body.
+        However, there are limits to how many items you can wear of the same type, as described below.
+        For item types not listed here, use reasonable judgment about what would be plausible.
+        \begin{itemize}
+            \item Amulet: Up to 2
+            \item Belt: Up to 3
+            \item Boots: Up to 1
+            \item Circlet: Up to 1
+            \item Cloak: Up to 3
+            \item Gauntlets: Up to 1 (separate from gloves)
+            \item Gloves: Up to 1 (separate from gauntlets)
+            \item Rings: Up to 5 per hand
+        \end{itemize}
+
+    \input{generated/apparel_table.tex}
+
+    \input{generated/apparel.tex}
+
+\section{Magic Implements}\label{Implements}
+    Implements can take many forms: staffs, wands, holy symbols, and more.
+    Like magic weapons, magic implements must be wielded to gain their effects.
+    However, while weapons are used to deal damage to enemies, implements are used to cast spells.
+
+    \parhead{Somatic Components} While wielding an implement, you may gesture with it and channel magic through it.
+    These qualify as somatic components for the purpose of casting spells.
+    This does not remove the possibility of \glossterm{somatic component failure}.
+
+    \subsection{Implement Types}
+
+        \subsubsection{Holy Symbols}
+
+            \parhead{Physical Description} A typical holy symbol is a no larger than 4 inches in each dimension and can be easily held in the palm of a hand.
+            Most holy symbols are metal, but they can be made from wood, bone, or even more exotic materials, depending on the deity they symbolize.
+
+            \parhead{Special Rules} All holy symbols are implements for divine spells.
+            Most holy symbols are designed to be worn as an amulet in addition to being held in the hand.
+            A magical holy symbol grants its magical abilities if it is either worn as an amulet or held in the hand.
+
+        \subsubsection{Staffs}
+
+            \parhead{Physical Description} A typical staff is 3 feet to 7 feet long and 2 inches to 3 inches thick, weighing about 5 pounds.
+            Most staffs are wood, but a rare few are bone, metal, or even glass.
+            Staffs often have a gem or some device at their tip or are shod in metal at one or both ends.
+
+            Staffs are often decorated with carvings or runes.
+            Long staffs are quarterstaffs.
+            They must be held in two hands, and can be used to attack like any other quarterstaff.
+            Short staffs resemble thin clubs.
+            They can be held in one hand, but are not suitable for combat and are treated as \glossterm{improvised weapons} if used to attack.
+            A typical staff has 20 \glossterm{hit points} and a sunder \glossterm{difficulty rating} of 10.
+
+        \subsubsection{Wands}
+
+            \parhead{Physical Description} A typical wand is 6 inches to 12 inches long and about 1/4 inch thick, and usually weighs no more than 1 ounce.
+            Most wands are wood, but some are bone.
+            A rare few are metal, glass, or even ceramic, but these are quite exotic.
+            Occasionally, a wand has a gem or some device at its tip, and most are decorated with carvings or runes.
+            A typical wand has 5 \glossterm{hit points} and a sunder \glossterm{difficulty rating} of 5.
+
+    \input{generated/implements_table.tex}
+
+    \input{generated/implements.tex}
+
+\section{Tools, Goods, and Mounts}
+
+    The world of Rise has a wide range of minor items like backpacks, blankets, and ten-foot poles.
+    In general, the cost of those items is so insignificant from the perspective of an adventuring party that it's not worth the effort to track their cost in detail.
+    A subset of particularly expensive items is included in \tref{Tools, Goods, and Mounts}.
+
+    \subsection{Standard Adventuring Kit}
         % Technically 15.2 gp and 50.5 pounds
-        A standard adventuring kit costs 15 gp, weighs 50 pounds, and contains the following items:
+        A standard adventuring kit costs 10 gp, weighs 50 pounds, and contains the following items:
         \begin{itemize}
             \item Backpack
             \item Bedroll
@@ -726,210 +1007,6 @@
             \item Waterskin
         \end{itemize}
 
-    \begin{dtable!*}
-        \lcaption{Goods and Services}
-        \begin{dtabularx}{\textwidth}{>{\lcol}X c >{\lcol}X c >{\lcol}X c}
-            \tb{Item} & \tb{Cost} & \tb{Item} & \tb{Cost} & \tb{Item} & \tb{Cost} \tableheaderrule
-            \multicolumn{2}{>{\columncolor{tbrown}}c}{\tb{Adventuring Gear}} & \tind Average & 40 gp & \multicolumn{2}{>{\columncolor{tbrown}}c}{\tb{Tools and Skill Kits}} \\
-            Backpack (empty)         & 2 gp  & \tind Good               & 80 gp    & Alchemist's lab     & 500 gp \\
-            Barrel (empty)           & 2 gp  & \tind Amazing            & 150 gp   & Artisan's tools     & 5 gp   \\
-            Basket (empty)           & 4 sp  & Manacles                 & 15 gp    & Disguise kit        & 50 gp  \\
-            Bedroll                  & 1 sp  & Manacles, masterwork     & 50 gp    & Holy symbol, wooden & 1 gp   \\
-            Bell                     & 1 gp  & Mirror, small steel      & 10 gp    & Holy symbol, silver & 25 gp  \\
-            Blanket, winter          & 5 sp  & Mug/Tankard, clay        & 2 cp     & Hourglass           & 25 gp  \\
-            Block and tackle         & 5 gp  & Oil (1-pint flask)       & 1 sp     & Magnifying glass    & 100 gp \\
-            Bottle, wine, glass      & 2 gp  & Paper (sheet)            & 4 sp     & Scale, merchant's   & 2 gp   \\
-            Bucket (empty)           & 5 sp  & Parchment (sheet)        & 2 sp     & Thieves' tools      & 30 gp  \\
-            Caltrops                 & 1 gp  & Pick, miner's            & 3 gp     &                     &        \\
-            Candle                   & 1 cp  & Pitcher, clay            & 2 cp     &                     &        \\
-            Canvas (sq.\ yd.)        & 1 sp  & Piton                    & 1 sp     &                     &        \\
-            Case, map or scroll      & 1 gp  & Pole, 10 foot            & 5 cp     &                     &        \\
-            Chain (10 ft.)           & 30 gp & Pot, iron                & 5 sp     &                     &        \\
-            Chalk, 1 piece           & 1 cp  & Pouch, belt (empty)      & 1 gp     &                     &        \\
-            Chest (empty)            & 2 gp  & Ram, portable            & 10 gp    &                     &        \\
-            Crowbar                  & 2 gp  & Rations, trail (per day) & 5 sp     &                     &        \\
-            Firewood (per day)       & 1 cp  & Rope, hempen (60 ft.)    & 1 gp     &                     &        \\
-            Fishhook                 & 1 sp  & Rope, silk (60 ft.)      & 10 gp    &                     &        \\
-            Fishing net, 25 sq.\ ft. & 4 gp  & Sack (empty)             & 1 sp     &                     &        \\
-            Flask (empty)            & 3 cp  & Sealing wax              & 1 gp     &                     &        \\
-            Flint and steel          & 1 gp  & Sewing needle            & 5 sp     &                     &        \\
-            Grappling hook           & 1 gp  & Signal whistle           & 8 sp     &                     &        \\
-            Hammer                   & 5 sp  & Signet ring              & 5 gp     &                     &        \\
-            Ink (1 oz.\ vial)        & 8 gp  & Sledge                   & 1 gp     &                     &        \\
-            Inkpen                   & 1 sp  & Soap (per lb.)           & 5 sp     &                     &        \\
-            Jug, clay                & 3 cp  & Spade or shovel          & 2 gp     &                     &        \\
-            Ladder, 10 foot          & 2 sp  & Spyglass                 & 1,000 gp &                     &        \\
-            Lamp, common             & 1 sp  & Tent                     & 5 gp     &                     &        \\
-            Lantern, bullseye        & 12 gp & Torch                    & 1 cp     &                     &        \\
-            Lantern, hooded          & 7 gp  & Vial, ink or potion      & 1 gp     &                     &        \\
-            Lock                     &       & Waterskin                & 1 gp     &                     &        \\
-            \tind Very simple        & 20 gp & Whetstone                & 2 cp     &                     &        \\
-        \end{dtabularx}
-        1 These items weigh one-quarter this amount when made for Small characters. Containers for Small characters also carry one-quarter the normal amount. \\
-        \tdash No weight, or no weight worth noting.	
-    \end{dtable!*}
+    \input{generated/tools_table.tex}
 
-    \begin{dtable!*}
-        \begin{dtabularx}{\textwidth}{>{\lcol}X c >{\lcol}X c >{\lcol}X c}
-            \tb{Clothing}                 &           & \tb{Mounts and Related Gear} &              & \tb{Transport}      &                                    \tableheaderrule
-            \tb{Item}                     & \tb{Cost} & \tb{Item}             & \tb{Cost}    & \tb{Item}           & \tb{Cost}     \\
-            Artisan's outfit              & 1 gp      & Barding               &              & Carriage            & 100 gp        \\
-            Cleric's vestments            & 5 gp      & \tind Medium creature & \mult2\fn{2} & Cart                & 15 gp         \\
-            Cold weather outfit           & 8 gp      & \tind Large creature  & \mult4\fn{2} & Galley              & 30,000 gp     \\
-            Courtier's outfit             & 30 gp     & Bit and bridle        & 2 gp         & Keelboat            & 3,000 gp      \\
-            Entertainer's outfit          & 3 gp      & Dog, guard            & 25 gp        & Longship            & 10,000 gp     \\
-            Explorer's outfit             & 10 gp     & Dog, riding           & 150 gp       & Rowboat             & 50 gp         \\
-            Monk's outfit                 & 5 gp      & Donkey or mule        & 8 gp         & Oar                 & 2 gp          \\
-            Noble's outfit                & 75 gp     & Feed (per day)        & 5 cp         & Sailing ship        & 10,000 gp     \\
-            Peasant's outfit              & 1 sp      & Horse                 &              & Sled                & 20 gp         \\
-            Royal outfit                  & 200 gp    & \tind Horse, heavy    & 200 gp       & Wagon               & 35 gp         \\
-            Scholar's outfit              & 5 gp      & \tind Horse, light    & 75 gp        & Warship             & 25,000 gp     \\
-            Traveler's outfit             & 1 gp      & \tind Pony            & 30 gp        & \tb{Services}       &               \\
-            \tb{Food, Drink, and Lodging} &           & \tind Warhorse, heavy & 400 gp       & Service             & Cost          \\
-            Item                          & Cost      & \tind Warhorse, light & 150 gp       & Coach cab           & 3 cp per mile \\
-            Ale                           &           & \tind Warpony         & 100 gp       & Hireling, trained   & 3 sp per day  \\
-            \tind Gallon                  & 2 sp      & Saddle                &              & Hireling, untrained & 1 sp per day  \\
-            \tind Mug                     & 4 cp      & \tind Military        & 20 gp        & Messenger           & 2 cp per mile \\
-            Banquet (per person)          & 10 gp     & \tind Pack            & 5 gp         & Road or gate toll   & 1 cp          \\
-            Bread, per loaf               & 2 cp      & \tind Riding          & 10 gp        & Ship's passage      & 1 sp per mile \\
-            Cheese, hunk of               & 1 sp      & \tb{Saddle, Exotic}   &              &                     &               \\
-            Inn stay (per day)            &           & \tind Military        & 60 gp        &                     &               \\
-            \tind Good                    & 2 gp      & \tind Pack            & 15 gp        &                     &               \\
-            \tind Common                  & 5 sp      & \tind Riding          & 30 gp        &                     &               \\
-            \tind Poor                    & 2 sp      & Saddlebags            & 4 gp         &                     &               \\
-            Meals (per day)               &           & Stabling (per day)    & 5 sp         &                     &               \\
-            \tind Good                    & 5 sp      &                       &              &                     &               \\
-            \tind Common                  & 3 sp      &                       &              &                     &               \\
-            \tind Poor                    & 1 sp      &                       &              &                     &               \\
-            Meat, chunk of                & 3 sp      &                       &              &                     &               \\
-            Wine                          &           &                       &              &                     &               \\
-            \tind Common (pitcher)        & 2 sp      &                       &              &                     &               \\
-            \tind Fine (bottle)           & 10 gp     &                       &              &                     &               \\
-        \end{dtabularx}
-        1 See spell description for additional costs. If the additional costs put the spell's total cost above 2,000 gp, that spell is not generally available. \\
-        2 Relative to normal armor of the same type
-    \end{dtable!*}
-
-    \subsection{Adventuring Gear}
-        A few of the pieces of adventuring gear found on \trefnp{Goods and Services} are described below, along with any special benefits they confer on the user (``you'').
-        \parhead{Caltrops} A caltrop is a four-pronged iron spike crafted so that one prong faces up no matter how the caltrop comes to rest. You scatter caltrops on the ground in the hope that your enemies step on them or are at least forced to slow down to avoid them. One 2- pound bag of caltrops covers an area 5 feet square.
-        \par Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, the caltrops make an attack vs. the creature's Armor defense.
-        Unlike most attacks, this attack can happen during the \glossterm{movement phase}.
-        The accuracy of the caltrops is \plus0.
-        On a hit, the caltrops deal 1d6 piercing damage.
-        \par Caltrops may not be effective against creatures with an unusual anatomy.
-        Multiple applications of caltrops in the same area have no additional effect.
-        \parhead{Candle} A candle dimly illuminates a 5 foot radius and burns for 1 hour.
-        % \parhead{Chain} Chain has \glossterm{damage resistance} of 10 and a \glossterm{vital resistance} of 20. It can be burst with a \glossterm{difficulty rating} 18 Strength check.
-        \parhead{Crowbar} A crowbar it grants a \plus2 bonus on Strength checks made for such purposes. If used in combat, treat a crowbar as an improvised weapon equivalent to a club.
-        \parhead{Flint and Steel} Lighting a torch with flint and steel is a standard action.
-        Lighting any other fire may take additional standard actions, depending on the size of the fire.
-        \parhead{Grappling Hook} Throwing a grappling hook successfully requires a ranged attack (\glossterm{difficulty rating} 10, \plus2 per 10 feet of distance thrown).
-        \parhead{Hammer} If a hammer is used in combat, treat it as a medium improvised weapon that deals bludgeoning damage equal to that of a spiked gauntlet of its size.
-        \parhead{Ink} This is black ink. You can buy ink in other colors, but it costs twice as much.
-        \parhead{Jug, Clay} This basic ceramic jug is fitted with a stopper and holds 1 gallon of liquid.
-        \parhead{Lamp, Common} A lamp provides bright illumination in a 15 foot radius, provides shadowy illumination out to a 30 foot radius, and burns for 6 hours on a pint of oil. You can carry a lamp in one hand.
-        \parhead{Lantern, Bullseye} A bullseye lantern provides bright illumination in a 30 foot cone and shadowy illumination in a 60 foot cone. It burns for 6 hours on a pint of oil. You can carry a bullseye lantern in one hand.
-        \parhead{Lantern, Hooded} A hooded lantern clearly illuminates a 15 foot radius and provides shadowy illumination in a 30 foot radius. It burns for 6 hours on a pint of oil. You can carry a hooded lantern in one hand.
-        \parhead{Lock} The \glossterm{difficulty rating} to open a lock with the Open Lock skill depends on the lock's quality: simple (\glossterm{difficulty rating} 20), average (\glossterm{difficulty rating} 25), good (\glossterm{difficulty rating} 30), or superior (\glossterm{difficulty rating} 40).
-        \parhead{Manacles and Manacles, Masterwork} Manacles can bind a Medium creature. A manacled creature can use the Flexibility skill to slip free (\glossterm{difficulty rating} 20, or \glossterm{difficulty rating} 30 for masterwork manacles). Breaking the manacles requires a Strength check against the same difficulty rating.
-        %TODO: manacle hit points / resistances
-        \par Most manacles have locks; add the cost of the lock you want to the cost of the manacles.
-        \par For the same cost, you can buy manacles for a Small creature.
-        \par For a Large creature, manacles cost ten times the indicated amount, and for a Huge creature, one hundred times this amount. Creatures of any other size can be held only by specially made manacles.
-        \parhead{Oil} A pint of oil burns for 6 hours in a lantern. You can use a flask of oil as a splash weapon. Use the rules for alchemist's fire, except that it takes a standard action to prepare a flask with a fuse. Once it is thrown, there is a 50\% chance of the flask igniting successfully.
-        \par You can pour a pint of oil on the ground to cover an area 5 feet square, provided that the surface is smooth. If lit, the oil burns for 2 rounds and deals 1d3 points of fire damage to each creature in the area.
-        \parhead{Ram, Portable} This iron-shod wooden beam gives you a \plus2 bonus on Strength checks made to break open a door and it allows a second person to help you without having to roll, increasing your bonus by 2.
-        \parhead{Rope, Hempen} This rope has 4 \glossterm{hit points} and can be burst with a \glossterm{difficulty rating} 13 Strength check.
-        \parhead{Rope, Silk} This rope has 5 \glossterm{hit points} and can be burst with a \glossterm{difficulty rating} 14 Strength check.
-        \parhead{Spyglass} Objects viewed through a spyglass are magnified to twice their size.
-        \parhead{Torch} A torch burns for 1 hour, clearly illuminating a 15 foot radius and providing shadowy illumination out to a 30 foot radius. If a torch is used in combat, treat it as a light improvised weapon that deals bludgeoning damage equal to that of a gauntlet of its size, plus 1 point of fire damage. Wielding a torch gives a \plus2 bonus to dirty trick attempts made to dazzle an opponent.
-        \parhead{Vial} A vial holds 1 ounce of liquid. The stoppered container usually is no more than 1 inch wide and 3 inches high.
-
-    \subsection{Tools and Skill Kits}
-        \parhead{Alchemist's Lab} An alchemist's lab always has the perfect tool for making alchemical items, so it provides a \plus2 bonus on Craft (alchemy) checks. It has no bearing on the costs related to the Craft (alchemy) skill. Without this lab, a character with the Craft (alchemy) skill is assumed to have enough tools to use the skill but not enough to get the \plus2 bonus that the lab provides.
-        \parhead{Artisan's Tools} These tools allow the creation of items with a particular Craft skill (see \pcref{Craft}).
-        Many types of artisan's tools exist, each for different Craft skills.
-        \parhead{Disguise Kit} This kit allows the use of the Disguise skill to disguise creatures (see \pcref{Disguise}).
-        \parhead{Holy Symbol, Silver or Wooden} Each religion has its own holy symbol. A small number of creatures respond in particular ways to holy symbols.
-        \parhead{Magnifying Glass} This simple lens allows a closer look at small objects. It is also useful as a substitute for flint and steel when starting fires in sunlight. Lighting a fire with a magnifying glass requires light as bright as sunlight to focus, tinder to ignite, and at least a standard action.
-        \parhead{Pitons} You can make your own handholds and footholds by pounding pitons into a wall. Doing so takes 1 minute per piton, and one piton is needed per 3 feet of distance. As with any surface that offers handholds and footholds, a wall with pitons in it has a \glossterm{difficulty rating} of 15.
-        \parhead{Thieves' Tools} These tools allow the use of the Devices skill to manipulate devices (see \pcref{Devices}).
-        \parhead{Water Clock} This large, bulky contrivance gives the time accurate to within half an hour per day since it was last set. It requires a source of water, and it must be kept still because it marks time by the regulated flow of droplets of water.
-
-    \subsection{Clothing}
-        \parhead{Artisan's Outfit} This outfit includes a shirt with buttons, a skirt or pants with a drawstring, shoes, and perhaps a cap or hat. It may also include a belt or a leather or cloth apron for carrying tools.
-        \parhead{Cleric's Vestments} These ecclesiastical clothes are for performing priestly functions, not for adventuring.
-        % What does this actually affect? How does cold weather work?
-        \parhead{Cold Weather Outfit} A cold weather outfit includes a wool coat, linen shirt, wool cap, heavy cloak, thick pants or skirt, and
-        boots. This outfit grants a \plus2 bonus to Fortitude defense against exposure to cold weather.
-        \parhead{Courtier's Outfit} This outfit includes fancy, tailored clothes in whatever fashion happens to be the current style in the courts of the nobles. If you wear this outfit without jewelry (costing an additional 50 gp), you look like an out-of-place commoner.
-        \parhead{Entertainer's Outfit} This set of flashy, perhaps even gaudy, clothes is for entertaining. While the outfit looks whimsical, its practical design lets you tumble, dance, walk a tightrope, or just run (if the audience turns ugly).
-        \parhead{Explorer's Outfit} This is a full set of clothes for someone who never knows what to expect. It includes sturdy boots, leather breeches or a skirt, a belt, a shirt (perhaps with a vest or jacket), gloves, and a cloak. Rather than a leather skirt, a leather overtunic may be worn over a cloth skirt. The clothes have plenty of pockets (especially the cloak). The outfit also includes any extra items you might need, such as a scarf or a wide-brimmed hat.
-        \parhead{Monk's Outfit} This simple outfit includes sandals, loose breeches, and a loose shirt, and is all bound together with sashes. The outfit is designed to give you maximum mobility, and it's made of high-quality fabric. You can hide small weapons in pockets hidden in the folds, and the sashes are strong enough to serve as short ropes.
-        \parhead{Noble's Outfit} This set of clothes is designed specifically to be expensive and to show it. Precious metals and gems are worked into the clothing. To fit into the noble crowd, every would-be noble also needs a signet ring (see Adventuring Gear, above) and jewelry (worth at least 100 gp).
-        \parhead{Peasant's Outfit} This set of clothes consists of a loose shirt and baggy breeches, or a loose shirt and skirt or overdress. Cloth wrappings are used for shoes.
-        \parhead{Royal Outfit} This is just the clothing, not the royal scepter, crown, ring, and other accoutrements. Royal clothes are ostentatious, with gems, gold, silk, and fur in abundance.
-        \parhead{Scholar's Outfit} Perfect for a scholar, this outfit includes a robe, a belt, a cap, soft shoes, and possibly a cloak.
-        \parhead{Traveler's Outfit} This set of clothes consists of boots, a wool skirt or breeches, a sturdy belt, a shirt (perhaps with a vest or jacket), and an ample cloak with a hood.
-
-    \subsection{Food, Drink, and Lodging}
-        \parhead{Inn} Poor accommodations at an inn amount to a place on the floor near the hearth. Common accommodations consist of a place on a raised, heated floor, the use of a blanket and a pillow. Good accommodations consist of a small, private room with one bed, some amenities, and a covered chamber pot in the corner.
-        \parhead{Meals} Poor meals might be composed of bread, baked turnips, onions, and water. Common meals might consist of bread, chicken stew, carrots, and watered-down ale or wine. Good meals might be composed of bread and pastries, beef, peas, and ale or wine.
-
-    \subsection{Mounts and Related Gear}
-        \parhead{Barding, Medium Creature and Large Creature} Barding is a type of armor that covers the head, neck, chest, body, and possibly legs of a horse or other mount. Barding made of medium or heavy armor provides better protection than light barding, but at the expense of speed. Barding can be made of any of the armor types found on \tref{Armor and Shields}.
-        \par Armor for a horse (a Large nonhumanoid creature) costs four times as much as armor for a human (a Medium humanoid creature) and also weighs twice as much as the armor found on \tref{Armor and Shields}. If the barding is for a pony or other Medium mount, the cost is only double, and the weight is the same as for Medium armor worn by a humanoid. Medium or heavy barding slows a mount that wears it, as shown on the table below.
-
-        \par Flying creatures can't fly in barding that gives them any \glossterm{encumbrance} (see \pcref{Flying Mechanics}).
-        \par Removing and fitting barding takes five times as long as the figures given on \tref{Donning Armor}. A barded animal cannot be used to carry any load other than the rider and normal saddlebags.
-        \parhead{Dog, Riding} This Medium dog is specially trained to carry short-statured humanoid riders like halflings and gnomes. It is brave in combat like a warhorse. You take no damage when you fall from a riding dog.
-        \parhead{Donkey or Mule} Donkeys and mules are stolid in the face of danger, hardy, surefooted, and capable of carrying heavy loads over vast distances. Unlike a horse, a donkey or a mule is willing (though not eager) to enter dungeons and other strange or threatening places.
-        \parhead{Feed} Horses, donkeys, mules, and ponies can graze to sustain themselves, but providing feed for them is much better. If you have a riding dog, you have to feed it at least some meat.
-        \parhead{Horse} A horse (other than a pony) is suitable as a mount for a human, dwarf, elf, half-elf, or half-orc. A pony is smaller than a horse and is a suitable mount for a gnome or halfling.
-        \par Warhorses and warponies can be ridden easily into combat. Light horses, ponies, and heavy horses are hard to control in combat.
-        \parhead{Saddle, Exotic} An exotic saddle is like a normal saddle of the same sort except that it is designed for an unusual mount. Exotic saddles come in military, pack, and riding styles.
-        \parhead{Saddle, Military} A military saddle braces the rider, providing a \plus2 bonus on Ride checks related to staying in the saddle. If you're knocked unconscious while in a military saddle, you stay in the saddle instead of falling to the ground.
-        \parhead{Saddle, Pack} A pack saddle holds gear and supplies, but not a rider. It holds as much gear as the mount can carry.
-        \parhead{Saddle, Riding} The standard riding saddle supports a rider.
-
-    \subsection{Transport}
-        \parhead{Carriage} This four-wheeled vehicle can transport as many as four people within an enclosed cab, plus two drivers. In general, two horses (or other beasts of burden) draw it. A carriage comes with the harness needed to pull it.
-        \parhead{Cart} This two-wheeled vehicle can be drawn by a single horse (or other beast of burden). It comes with a harness.
-        \parhead{Galley} This three-masted ship has seventy oars on either side and requires a total crew of 200. A galley is 130 feet long and 20 feet wide, and it can carry 150 tons of cargo or 250 soldiers. For 8,000 gp more, it can be fitted with a ram and castles with firing platforms fore, aft, and amidships. This ship cannot make sea voyages and sticks to the coast. It moves about 4 miles per hour when being rowed or under sail.
-        \parhead{Keelboat} This 50- to 75 foot long ship is 15 to 20 feet wide and has a few oars to supplement its single mast with a square sail. It has a crew of eight to fifteen and can carry 40 to 50 tons of cargo or 100 soldiers. It can make sea voyages, as well as sail down rivers (thanks to its flat bottom). It moves about 1 mile per hour.
-        \parhead{Longship} This 75 foot long ship with forty oars requires a total crew of 50. It has a single mast and a square sail, and it can carry 50 tons of cargo or 120 soldiers. A longship can make sea voyages. It moves about 3 miles per hour when being rowed or under sail.
-        \parhead{Rowboat} This 8- to 12 foot long boat holds two or three Medium passengers. It moves about one and a half miles per hour.
-        \parhead{Sailing Ship} This larger, seaworthy ship is 75 to 90 feet long and 20 feet wide and has a crew of 20. It can carry 150 tons of cargo. It has square sails on its two masts and can make sea voyages. It moves about 2 miles per hour.
-        \parhead{Sled} This is a wagon on runners for moving through snow and over ice. In general, two horses (or other beasts of burden) draw it. A sled comes with the harness needed to pull it.
-        \parhead{Wagon} This is a four-wheeled, open vehicle for transporting heavy loads. In general, two horses (or other beasts of burden) draw it. A wagon comes with the harness needed to pull it.
-        \parhead{Warship} This 100 foot long ship has a single mast, although oars can also propel it. It has a crew of 60 to 80 rowers. This ship can carry 160 soldiers, but not for long distances, since there isn't room for supplies to support that many people. The warship cannot make sea voyages and sticks to the coast. It is not used for cargo. It moves about 2-1/2 miles per hour when being rowed or under sail.
-
-\section{Consumable Items}\label{Consumable Items}
-
-    Many substances exist that can aid adventurers.
-
-    \subsection{Poisons}\label{Poisons}
-        For details about how poisons work, see \pcref{Poison}.
-
-\begin{dtable*}
-    \lcaption{Typical Poisons}\pdfbookmark[3]{Typical Poisons}{}
-    \begin{dtabularx}{\textwidth}{p{6em} l l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-        \tb{Poison}         & \tb{Transmission}                & \tb{Form}                      & \tb{Accuracy}                             & \tb{Type}
-                            & \tb{Per Stage Effect}            & \tb{Stage 1 Effect}            & \tb{Stage 3 Effect}                           \\
-        Nitharit            & Contact                          & Powder                         & 3                                              & Plant
-                            & \tdash                           & Sickened while poison lasts    & Nauseated while poison lasts                  \\
-        Asp venom           & Contact                          & Liquid                         & 5                                              & Venom
-                            & \tdash                           & Sickened while poison lasts    & Nauseated while poison lasts                  \\
-        Sassone leaf        & Contact                          & Powder                         & 6                                              & Plant
-                            & Take 1d6 physical damage  & \tdash                         & Poison ends \\
-        Arsenic             & Ingestion                        & Powder                         & 8                                              & Plant
-                            & Take 1d10 physical damage  & \tdash                         & Gain a \glossterm{vital wound}, poison ends   \\
-        Dragon bile         & Contact                          & Liquid                         & 10                                             & Venom
-                            & Take 1d10 physical damage & \tdash    & \tdash                  \\
-        Insanity mist       & Ingestion                        & Gas                            & 10                                             & Alchemical
-                            & \tdash                           & Disoriented while poison lasts & Confused while poison lasts                   \\
-        Black lotus extract & Contact                          & Liquid                         & 15                                             & Plant
-                            & Take 2d8 physical damage  & \tdash                         & Gain a \glossterm{vital wound}                \\
-    \end{dtabularx}
-\end{dtable*}
+    \input{generated/tools.tex}
