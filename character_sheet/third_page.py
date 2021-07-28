@@ -17,7 +17,7 @@ from cgi_simple import (
 from second_page import equation_misc_repeat
 
 
-def create_page(_destination):
+def create_page(destination):
     return flex_col({"class": "page third-page"}, [
         div({"class": "tab-explanation"}, """
             This tab is used to track fundamental aspects of your character's identity, as well as the things they carry with them.
@@ -42,7 +42,7 @@ def create_page(_destination):
             flex_col(
                 {"class": "main-body"},
                 [
-                    abilities_summary(),
+                    roll20_abilities_summary() if destination == "roll20" else paper_abilities_summary(),
                     div({"class": "section-header"}, "Abilities Known"),
                     calc_maneuvers(),
                     calc_spells(),
@@ -82,33 +82,43 @@ def feats_summary():
     ])
 
 
-def abilities_summary():
+def paper_abilities_summary():
+    return div({"class": "abilities"}, [
+        div({"class": "section-header"}, "Passive Abilities"),
+        *[passive_ability() for i in range(6)],
+    ])
+
+
+def roll20_abilities_summary():
     return div(
         {"class": "abilities"},
         [
             div({"class": "section-header"}, "Passive Abilities"),
             fieldset(
                 {"class": "repeating_passiveabilities"},
-                flex_row(
-                    [
-                        labeled_text_input(
-                            "Name",
-                            {"class": "ability-name"},
-                            input_attributes={
-                                "name": f"ability_name",
-                            },
-                        ),
-                        labeled_text_input(
-                            "Effects",
-                            {"class": "ability-effects"},
-                            input_attributes={
-                                "name": f"ability_effects",
-                            },
-                        ),
-                    ]
-                ),
+                passive_ability(),
             ),
         ],
+    )
+
+def passive_ability():
+    return flex_row(
+        [
+            labeled_text_input(
+                "Name",
+                {"class": "ability-name"},
+                input_attributes={
+                    "name": f"ability_name",
+                },
+            ),
+            labeled_text_input(
+                "Effects",
+                {"class": "ability-effects"},
+                input_attributes={
+                    "name": f"ability_effects",
+                },
+            ),
+        ]
     )
 
 

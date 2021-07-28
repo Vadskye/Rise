@@ -23,7 +23,7 @@ from cgi_simple import (
 )
 
 
-def create_page(_destination):
+def create_page(destination):
     return flex_col(
         {"class": "page items-page"},
         [
@@ -33,17 +33,26 @@ def create_page(_destination):
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(),
             div({"class": "section-header"}, "Body Armor"),
-            body_armor(),
+            body_armor(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
-            attuned_effects_tracker(),
-            fieldset(
-                {"class": "repeating_attunements"},
-                attunement(),
+            *(
+                [
+                    attuned_effects_tracker(),
+                    fieldset(
+                    {"class": "repeating_attunements"},
+                    attunement(),
+                )]
+                if destination == "roll20" else
+                [attunement() for i in range(6)]
             ),
             div({"class": "section-header"}, "Non-Attunement Equipment"),
-            fieldset(
-                {"class": "repeating_equipment"},
-                equipment(),
+            *(
+                [fieldset(
+                    {"class": "repeating_equipment"},
+                    equipment(),
+                )]
+                if destination == "roll20" else
+                [equipment() for i in range(4)]
             ),
             div({"class": "section-header"}, "Inventory"),
             textarea({"name": "inventory"}),
@@ -113,7 +122,7 @@ def equipment():
                 {"name": f"equipment_effects"},
             ),
         ]
-    ),
+    )
 
 def legacy_item():
     return flex_row(
@@ -132,7 +141,7 @@ def legacy_item():
         ],
     )
 
-def body_armor():
+def body_armor(destination):
     return flex_row(
         {"class": "attunement"},
         [
@@ -141,18 +150,22 @@ def body_armor():
                 {"class": "attunement-name"},
                 {"name": "body_armor_name"},
             ),
-            underlabel(
-                "Usage Class",
-                select(
-                    {'name': 'body_armor_usage_class'},
-                    [
-                        option({'value': 'none'}, ''),
-                        option({'value': 'light'}, 'Light'),
-                        option({'value': 'medium'}, 'Medium'),
-                        option({'value': 'heavy'}, 'Heavy'),
-                    ],
-                ),
-                {"class": "usage-class-dropdown"},
+            (
+                underlabel(
+                    "Usage Class",
+                    select(
+                        {'name': 'body_armor_usage_class'},
+                        [
+                            option({'value': 'none'}, ''),
+                            option({'value': 'light'}, 'Light'),
+                            option({'value': 'medium'}, 'Medium'),
+                            option({'value': 'heavy'}, 'Heavy'),
+                        ],
+                    ),
+                    {"class": "usage-class-dropdown"},
+                )
+                if destination == "roll20" else
+                labeled_text_input("Usage Class", {"class": "usage-class"})
             ),
             labeled_text_input(
                 "Effect",

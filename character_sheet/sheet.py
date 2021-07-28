@@ -34,13 +34,10 @@ def main(destination):
         call(['lessc', f'paper_sheet.less', f'paper_sheet/paper_sheet.css'])
         for i, (name, module) in enumerate([
                 ['first_page', first_page],
-                ['active_abilities_page', active_abilities_page],
-                ['skills_page', skills_page],
                 ['second_page', second_page],
                 ['third_page', third_page],
+                ['skills_page', skills_page],
                 ['items_page', items_page],
-                ['status_page', status_page],
-                ['reference_page', reference_page],
         ]):
             page = i + 1
             with open(f'paper_sheet/page{page}.html', 'w') as fh:
@@ -106,11 +103,9 @@ def debug_stylesheets(page_number, destination):
 def debug_html_wrapper(html, destination):
     if destination == 'paper':
         return cgi.div(
-            {
-                'class': 'dialog characterdialog ui-dialog ui-dialog-content ui-widget-content',
-            },
+            {'class': 'dialog characterdialog ui-dialog ui-dialog-content ui-widget-content'},
             cgi.div(
-                {'id': 'root', 'class': 'charsheet tab-pane'},
+                {'id': 'root', 'class': 'charsheet paper tab-pane'},
                 cgi.div({'class': 'full-sheet'}, html),
             )
         )
