@@ -295,7 +295,7 @@ export const umbramancy: MysticSphere = {
       // +1 level for +2 acc
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\glossterm{briefly} \\glossterm{dazzled}.`,
+        hit: `Each subject is \\glossterm{briefly} \\dazzled.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.

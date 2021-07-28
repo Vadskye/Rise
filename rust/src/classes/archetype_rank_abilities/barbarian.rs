@@ -472,7 +472,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 % TODO: The narrative connection here is loose
                 \subcf{Eagle} You gain a \plus3 bonus to the Awareness skill.
-                In addition, you are immune to being \glossterm{dazzled} and \glossterm{blinded}.
+                In addition, you are immune to being \dazzled and \blinded.
 
                 \subcf{Lion} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
 
