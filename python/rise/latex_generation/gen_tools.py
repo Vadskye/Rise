@@ -959,7 +959,7 @@ def generate_tools():
                 This is a lock.
                 Opening the lock without the appropriate key requires a \\glossterm<difficulty rating> 15 Devices check (see \\pcref<Devices>).
             """,
-            short_description="Devices \\glossterm<difficulty rating> of 15",
+            short_description="Devices \\glossterm<difficulty rating> of 15 to unlock",
         ),
         MagicItem(
             name="Lock, quality",
@@ -970,7 +970,7 @@ def generate_tools():
                 This is a lock.
                 Opening the lock without the appropriate key requires a \\glossterm<difficulty rating> 20 Devices check (see \\pcref<Devices>).
             """,
-            short_description="Devices \\glossterm<difficulty rating> of 20",
+            short_description="Devices \\glossterm<difficulty rating> of 20 to unlock",
         ),
         MagicItem(
             name="Lock, masterwork",
@@ -981,7 +981,7 @@ def generate_tools():
                 This is a lock.
                 Opening the lock without the appropriate key requires a \\glossterm<difficulty rating> 25 Devices check (see \\pcref<Devices>).
             """,
-            short_description="Devices \\glossterm<difficulty rating> of 25",
+            short_description="Devices \\glossterm<difficulty rating> of 25 to unlock",
         ),
     ]
 
@@ -995,7 +995,7 @@ def generate_tools():
                 This is a set of manacles designed for Medium humanoid creatures.
                 Escaping the manacles while they are being worn requires a \\glossterm<difficulty rating> 15 Flexibility check (see \\pcref<Flexibility>).
             """,
-            short_description="Flexibility \\glossterm<difficulty rating> of 15",
+            short_description="Flexibility \\glossterm<difficulty rating> of 15 to escape",
         ),
         MagicItem(
             name="Manacles, quality",
@@ -1006,7 +1006,7 @@ def generate_tools():
                 This is a set of manacles designed for Medium humanoid creatures.
                 Escaping the manacles while they are being worn requires a \\glossterm<difficulty rating> 25 Flexibility check (see \\pcref<Flexibility>).
             """,
-            short_description="Flexibility \\glossterm<difficulty rating> of 20",
+            short_description="Flexibility \\glossterm<difficulty rating> of 20 to escape",
         ),
         MagicItem(
             name="Manacles, masterwork",
@@ -1017,7 +1017,7 @@ def generate_tools():
                 This is a set of manacles designed for Medium humanoid creatures.
                 Escaping the manacles while they are being worn requires a \\glossterm<difficulty rating> 25 Flexibility check (see \\pcref<Flexibility>).
             """,
-            short_description="Flexibility \\glossterm<difficulty rating> of 25",
+            short_description="Flexibility \\glossterm<difficulty rating> of 25 to escape",
         ),
     ]
 
