@@ -375,7 +375,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Auditory}, \abilitytag{Emotion}
                 \rankline
                 Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
-                \hit Each subject is \glossterm{briefly} \glossterm{goaded} by you.
+                \hit Each subject is \glossterm{briefly} \goaded by you.
                 \crit The effect becomes a \glossterm{condition}.
 
                 \rankline

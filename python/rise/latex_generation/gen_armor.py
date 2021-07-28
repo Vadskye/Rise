@@ -512,7 +512,7 @@ def generate_armor():
             This shield normally has a cloth covering its face.
             As a standard action, you can pull the cloth back and reveal the horrifying face emblazoned on the shield.
             When you do, make an attack vs. Fortitude against each creature within a \\areasmall cone.
-            On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm{briefly} \\glossterm<nauseated>.
+            On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm{briefly} \\nauseated.
             On a \\glossterm<critical hit>, each target with no remaining \\glossterm<damage resistance> is \\glossterm{briefly} \\glossterm<paralyzed>.
             In either case, each target is immune to this ability until it takes a \\glossterm<short rest>.
 

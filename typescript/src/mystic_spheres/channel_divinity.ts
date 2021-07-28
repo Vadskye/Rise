@@ -215,7 +215,7 @@ export const channelDivinity: MysticSphere = {
 
       functionsLike: {
         name: 'glimpse of divinity',
-        exceptThat: 'the subject is also \\glossterm{dazed} as part of the same condition.',
+        exceptThat: 'the subject is also \\dazed as part of the same condition.',
       },
       rank: 7,
       scaling: "accuracy",

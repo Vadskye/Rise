@@ -98,7 +98,7 @@ def generate_weapons():
                 This weapon subtly crackles with electricity.
                 As a standard action, you can make a \\glossterm<strike> with this weapon that is imbued with electrical energy.
                 Damage dealt by that strike is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\glossterm<dazed>.
+                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\dazed.
             """,
             short_description="Can deal electicity damage and briefly daze",
         ),
@@ -110,7 +110,7 @@ def generate_weapons():
             description="""
                 This weapon continuously crackles with electricity.
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike>, it becomes \\glossterm<briefly> \\glossterm<dazed>.
+                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike>, it becomes \\glossterm<briefly> \\dazed.
                 After this effect ends, that creature becomes immune to this effect until it takes a \\glossterm<short rest>.
             """,
             short_description="Deals electricity damage and briefly dazes",
@@ -239,7 +239,7 @@ def generate_weapons():
             description="""
                 This weapon shimmers with a chaotic pattern of colors.
                 As a standard action, you can make a flashy \\glossterm<strike> with this weapon that accentuates its bewildering effect.
-                Each creature that loses \\glossterm<hit points> from the strike is \\glossterm<dazzled> as a \\glossterm<condition>.
+                Each creature that loses \\glossterm<hit points> from the strike is \\dazzled as a \\glossterm<condition>.
             """,
             short_description="Can dazzle",
         ),
