@@ -109,6 +109,7 @@ class MagicItem(object):
         level_text = f"\\nth<{self.level}>" if self.level >= 1 else "1/2"
         type_text = "" if self.material_type is None else f"\\textbf<Type>: {self.material_type}"
         materials_text = "" if self.materials == "none" else f"\\textbf<Materials>: {', '.join(sorted(self.materials)).capitalize()}"
+        twocol_text = f"\\spelltwocol<{type_text}><{self.tag_text()}>" if type_text or self.tag_text() else ""
         return join(
             f"""
                 \\lowercase<\\hypertarget<item:{self.name}><>>\\label<item:{self.name}>
@@ -118,7 +119,7 @@ class MagicItem(object):
             self.latex_ability(),
             f"""
                 \\vspace<0.25em>
-                \\spelltwocol<{type_text}><{self.tag_text()}>
+                {twocol_text}
                 {materials_text}
             """,
         )
