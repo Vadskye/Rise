@@ -283,7 +283,7 @@ def generate_tools():
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
                 On a hit, the subject takes 1d8+1 acid damage.
-                If a creature loses \\glossterm<hit points> from this damage, it is \\glossterm<sickened> as a \\glossterm<condition>.
+                If a creature loses \\glossterm<hit points> from this damage, it is \\sickened as a \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d8+1 acid damage and sicken",
         ),
@@ -297,7 +297,7 @@ def generate_tools():
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
                 On a hit, the subject takes 2d8+3 acid damage.
-                If a creature loses \\glossterm<hit points> from this damage, it is \\glossterm<nauseated> as a \\glossterm<condition>.
+                If a creature loses \\glossterm<hit points> from this damage, it is \\nauseated as a \\glossterm<condition>.
             """,
             short_description="Throw to deal 2d8+3 acid damage and nauseate",
         ),
@@ -418,7 +418,7 @@ def generate_tools():
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
                 On a hit, each subject takes 1d10+2 sonic damage.
-                Each creature that loses \\glossterm<hit points> from this damage is \\glossterm<deafened> and \\glossterm<dazed> as a single \\glossterm<condition>.
+                Each creature that loses \\glossterm<hit points> from this damage is \\deafened and \\dazed as a single \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d10+2 sonic damage, deafen, and daze",
         ),
@@ -432,7 +432,7 @@ def generate_tools():
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
                 On a hit, each subject takes 2d8+3 sonic damage.
-                Each creature that loses \\glossterm<hit points> from this damage is \\glossterm<deafened> and \\glossterm<stunned> as a single \\glossterm<condition>.
+                Each creature that loses \\glossterm<hit points> from this damage is \\deafened and \\stunned as a single \\glossterm<condition>.
             """,
             short_description="Throw to deal 2d8+3 sonic damage, deafen, and stun",
         )

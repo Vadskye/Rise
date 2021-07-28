@@ -547,7 +547,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit The subject is \glossterm{stunned} until it finishes a \glossterm{long rest}.
+                    \hit The subject is \stunned until it finishes a \glossterm{long rest}.
                     At the end of that time, if its Willpower is 0 or lower, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
                 \end{instantability}
             ",

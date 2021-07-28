@@ -286,7 +286,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature damaged by the strike is \\glossterm{briefly} \\glossterm{goaded} by you.
+        Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
       `,
       rank: 3,
       scaling: {
@@ -333,7 +333,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        You and each creature damaged by the strike are \\glossterm{briefly} \\glossterm{dazed}.
+        You and each creature damaged by the strike are \\glossterm{briefly} \\dazed.
         This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
       rank: 2,
@@ -350,7 +350,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        You and each creature damaged by the strike are \\glossterm{briefly} \\glossterm{stunned}.
+        You and each creature damaged by the strike are \\glossterm{briefly} \\stunned.
         This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
       rank: 6,
