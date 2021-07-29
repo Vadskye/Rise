@@ -52,13 +52,13 @@ def create_page(destination):
 def paper_abilities():
     return [
         div({"class": "section-header"}, "Attacks and Abilities"),
-        *[paper_ability() for i in range(10)],
+        *[paper_ability() for i in range(12)],
     ]
 
 def paper_ability():
     return flex_row({"class": "paper-ability"}, [
-        labeled_text_input("Name"),
-        labeled_textarea("Effect"),
+        labeled_text_input("Name", {"class": "ability-name"}),
+        labeled_textarea("Effect", {"class": "ability-effect"}),
     ])
 
 def roll20_abilities():

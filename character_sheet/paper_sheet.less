@@ -10,6 +10,9 @@ body {
     height: 10.5in;
     width: 8in;
     padding: 0;
+    // Enable or disable this to get an idea of how the pages fit into paper
+    // sheets
+    // margin: 0.1in;
     // box-shadow: 0 0 2px 1px inset;
 }
 
@@ -47,8 +50,9 @@ input[type=number], input[type=text].fake-number {
     padding-top: 0;
 }
 
-input[type=number].fake-text {
-    height: 2.1em;
+div.full-sheet input[type=number].fake-text {
+    border-bottom: 1px solid black;
+    height: 21px;
 }
 
 .attack-roll {
@@ -77,4 +81,8 @@ input[type=number] {
 
 .tab-explanation {
     display: none;
+}
+
+textarea {
+    resize: none;
 }

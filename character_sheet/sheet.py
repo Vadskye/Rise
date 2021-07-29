@@ -105,8 +105,8 @@ def debug_html_wrapper(html, destination):
         return cgi.div(
             {'class': 'dialog characterdialog ui-dialog ui-dialog-content ui-widget-content'},
             cgi.div(
-                {'id': 'root', 'class': 'charsheet paper tab-pane'},
-                cgi.div({'class': 'full-sheet'}, html),
+                {'id': 'root', 'class': 'charsheet tab-pane'},
+                cgi.div({'class': 'paper full-sheet'}, html),
             )
         )
     elif destination == 'roll20':

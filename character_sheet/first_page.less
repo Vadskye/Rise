@@ -17,15 +17,12 @@
     input[type=number] {
         box-shadow: 0 0 2px 1px #999 inset;
         height: 1.5em;
+        margin-left: 0.25em;
     }
 
     .number-label {
         font-size: 1em;
         text-align: right;
-    }
-
-    .subtle-button {
-        margin-right: 0.15em;
     }
 }
 
@@ -59,6 +56,12 @@
     width: 45em;
 }
 
+.paper .main-body {
+    margin-left: 0.5em;
+    width: 25em;
+    margin-right: 0.25em;
+}
+
 .defenses {
     .defenses-row {
         justify-content: space-between;
@@ -69,7 +72,11 @@
             width: 10em;
             height: 110px;
         }
+
     }
+}
+.paper .defenses .defenses-row .special-defenses {
+    width: 8em;
 }
 
 .first-page > div, .all-statistics > div, .boring-row div {
@@ -281,6 +288,30 @@
 
 }
 
-// TODO
 .paper-ability {
+    .ability-name {
+        width: 10em;
+        margin-right: 0.25em;
+    }
+    .ability-effect {
+        flex-grow: 1;
+    }
+    textarea {
+        height: 3em;
+        width: calc(100% - 0.5em);
+    }
+}
+
+.paper .attribute button, .paper .other-skills .attribute .attribute-header {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.paper .attribute {
+    flex-direction: row-reverse;
+    margin-bottom: -1.25em;
+}
+
+.paper .other-skills .attribute {
+    margin-bottom: 0;
 }
