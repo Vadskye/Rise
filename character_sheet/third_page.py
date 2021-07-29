@@ -85,7 +85,7 @@ def feats_summary():
 def paper_abilities_summary():
     return div({"class": "abilities"}, [
         div({"class": "section-header"}, "Passive Abilities"),
-        *[passive_ability() for i in range(6)],
+        *[passive_ability() for i in range(10)],
     ])
 
 

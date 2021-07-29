@@ -16,10 +16,9 @@
             width: 80px;
         }
     }
-
-    .paper .usage-class {
-        width: 120px;
-    }
+}
+.paper .usage-class {
+    width: 10em;
 }
 
 .attune-points {
@@ -33,8 +32,19 @@
 }
 
 .equipment-name {
-    flex-grow: 1;
+    width: 15em;
+    margin-right: 0.5em;
 }
 .equipment-effects {
-    flex-grow: 2;
+    flex-grow: 1;
+}
+
+.paper {
+    textarea {
+        width: calc(100% - 0.5em);
+        height: 12em;
+    }
+    .is-active {
+        font-size: 14pt;
+    }
 }

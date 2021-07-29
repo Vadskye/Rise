@@ -1,5 +1,4 @@
 .skill-row {
-  align-items: baseline;
   margin-bottom: 0.5em;
 }
 
@@ -16,13 +15,14 @@
 }
 .skill-points {
     align-self: flex-start;
-    align-items: baseline;
     .skill-points-label {
+        margin-top: 0.25em;
         margin-right: 0.5em;
     }
 }
 .skill-row {
     .calc-header {
+        margin-top: 0.5em;
         width: 12em;
 
         input[type=text] {
@@ -31,9 +31,9 @@
         }
     }
     .skill-points-row {
-        margin-right: 0.5em;
+        margin-right: 0.25em;
 
-        > div {
+        .underlabeled {
             margin-right: 0.5em;
         }
     }
@@ -46,5 +46,34 @@
     }
     .is-class-skill {
         margin-right: 0.5em;
+    }
+}
+
+.paper {
+    .skill-megarow {
+        justify-content: space-between;
+    }
+    .skill-column {
+        > div:nth-child(1) {
+            margin-top: 0;
+        }
+    }
+    .skill-column.-left {
+        width: 48%;
+    }
+    .skill-column.-right {
+        width: 51.5%;
+    }
+    .skill-row {
+        .calc-header {
+            flex-grow: 1;
+            width: 8em;
+        }
+        .is-class-skill {
+            margin-right: 0.25em;
+        }
+        .skill-points-row .underlabeled {
+            margin-right: 0.25em;
+        }
     }
 }

@@ -27,63 +27,63 @@ def create_page(destination):
     return flex_col(
         {"class": "page skills-page"},
         [
-            calc_skills(destination),
+            div({"class": "tab-explanation"}, """
+                This tab is used to track your skills.
+                On the left side, you can indicate your level of training in each skill.
+                On the right side, you can add custom bonuses or penalties to each skill to determine your total skill modifier.
+            """),
+            *calc_skills(destination),
         ],
     )
 
 def calc_skills(destination):
     if destination == "roll20":
-        return flex_col(
-            [
-                div({"class": "tab-explanation"}, """
-                    This tab is used to track your skills.
-                    On the left side, you can indicate your level of training in each skill.
-                    On the right side, you can add custom bonuses or penalties to each skill to determine your total skill modifier.
-                """),
-                *[
-                    display_skills_for_attribute(attribute, calc_skill)
-                    for attribute in filter(lambda a: a != "Willpower", ATTRIBUTES + ["Other"])
-                ],
-                flex_row(
-                    {"class": "skill-points"},
-                    [
-                        div({"class": "skill-points-label"}, "Trained Skills"),
-                        underlabel(
-                            "Current",
-                            number_input(
-                                {
-                                    "disabled": True,
-                                    "name": "skill_points_spent_display",
-                                    "value": "@{skill_points_spent}",
-                                }
-                            ),
-                        ),
-                        span({"class": "equation-glue"}, "/"),
-                        underlabel(
-                            "Max",
-                            number_input(
-                                {
-                                    "disabled": True,
-                                    "name": "skill_points_total_display",
-                                    "value": "@{skill_points}",
-                                }
-                            ),
-                        ),
-                    ],
-                ),
-            ],
-        )
+        return [
+            display_skills_for_attribute(attribute, calc_skill)
+            for attribute in filter(lambda a: a != "Willpower", ATTRIBUTES + ["Other"])
+        ] + [trained_skills_tracker()]
     else:
-        blank_skill_info = [calc_skill("") for i in range(16)]
+        return [
+            flex_row({"class": "skill-megarow"}, [
+                flex_col({"class": "skill-column -left"}, [
+                    display_skills_for_attribute(attribute, calc_skill)
+                    for attribute in ["Strength", "Dexterity", "Constitution", "Other"]
+                ]),
+                flex_col({"class": "skill-column -right"}, [
+                    display_skills_for_attribute(attribute, calc_skill)
+                    for attribute in ["Intelligence", "Perception"]
+                ] + [trained_skills_tracker()]),
+            ])
+        ]
 
-        return flex_col(
-            {"class": "calc-skills"},
-            [
-                div({"class": "section-header"}, "Skills"),
-                skill_labels(),
-                *blank_skill_info,
-            ],
-        )
+def trained_skills_tracker():
+    return flex_row(
+        {"class": "skill-points"},
+        [
+            div({"class": "skill-points-label"}, "Trained Skills"),
+            underlabel(
+                "Current",
+                number_input(
+                    {
+                        "disabled": True,
+                        "name": "skill_points_spent_display",
+                        "value": "@{skill_points_spent}",
+                    }
+                ),
+            ),
+            span({"class": "equation-glue"}, "/"),
+            underlabel(
+                "Max",
+                number_input(
+                    {
+                        "disabled": True,
+                        "name": "skill_points_total_display",
+                        "value": "@{skill_points}",
+                    }
+                ),
+            ),
+        ],
+    )
 
 
 def skill_labels():
@@ -149,7 +149,7 @@ def calc_skill(skill_name, attribute=None):
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat(skill_parsable, 3),
+                    equation_misc_repeat(skill_parsable, 2),
                 ],
                 result_attributes={
                     "disabled": True,
