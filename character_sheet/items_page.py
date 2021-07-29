@@ -43,7 +43,7 @@ def create_page(destination):
                     attunement(),
                 )]
                 if destination == "roll20" else
-                [attunement() for i in range(6)]
+                [attunement() for i in range(8)]
             ),
             div({"class": "section-header"}, "Non-Attunement Equipment"),
             *(
@@ -52,7 +52,7 @@ def create_page(destination):
                     equipment(),
                 )]
                 if destination == "roll20" else
-                [equipment() for i in range(4)]
+                [equipment() for i in range(6)]
             ),
             div({"class": "section-header"}, "Inventory"),
             textarea({"name": "inventory"}),
