@@ -7,6 +7,7 @@ mod dragons;
 mod knowledge;
 pub mod monster_entry;
 pub mod monster_group;
+pub mod generate_stock_monsters;
 
 use crate::core_mechanics::attacks::HasAttacks;
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
@@ -39,7 +40,6 @@ pub struct FullMonsterDefinition {
     attributes: Vec<i32>,
     challenge_rating: challenge_rating::ChallengeRating,
     creature_type: creature_type::CreatureType,
-    special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     description: Option<&'static str>,
     knowledge: Option<Knowledge>,
     level: i32,
@@ -48,8 +48,9 @@ pub struct FullMonsterDefinition {
     passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
     size: sizes::Size,
-    trained_skills: Option<Vec<Skill>>,
     special_attacks: Option<Vec<attacks::Attack>>,
+    special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
+    trained_skills: Option<Vec<Skill>>,
     weapons: Vec<weapons::Weapon>,
 }
 
