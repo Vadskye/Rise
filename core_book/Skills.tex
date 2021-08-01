@@ -445,24 +445,31 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Create Item}
         You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. If you make enough progress, you complete the item. Failure means you failed to make progress, but can try again without penalty. Critical failure means you botched the item, and negating all progress and ruining half of the material components. You can start again from scratch with your remaining components.
 
-        Each item takes a certain amount of working time to craft, as shown on \tref{Crafting Time}, and the expenditure of one quarter of the item's price in raw materials. In order to craft an item, you must make a Craft check against the item's Craft \glossterm{difficulty rating}, as shown on \trefnp{Craft Requirements}. If you succeed, you make progress on the item based on how long you spend crafting. For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time. Once your total effective working time exceeds the time required to craft the item, you have finished the item.
+        Each item takes a certain amount of working time to craft, as shown on \tref{Crafting Time}.
+        In addition, each item requires the expenditure of raw materials with a value equal to an item two levels lower than the item you are trying to craft.
+        Note that raw materials for some items, particularly alchemical items, may be hard to come by in less civilized areas.
 
-        All item creation requires artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty of \minus5 or greater, or it may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus5 penalty, but cutting a diamond without specialized tools is impossible. Note that raw materials for some items, particularly alchemical items, may be hard to come by in some areas. A typical day's work consists of 8 hours of work.
+        In order to craft an item, you must make a Craft check against the item's Craft \glossterm{difficulty rating}, as shown on \trefnp{Craft Requirements}.
+        If you succeed, you make progress on the item based on how long you spend crafting.
+        For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time.
+        Once your total effective working time exceeds the time required to craft the item, you have finished the item.
+
+        All item creation requires artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty of \minus5 or greater, or it may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus5 penalty, but cutting a diamond without specialized tools is impossible. A typical day's work consists of 8 hours of work.
 
         To determine the time and difficulty of crafting an item, consult \trefnp{Craft Requirements}.
 
-        \begin{dtable}
+        \begin{dtable!*}
             \lcaption{Craft Requirements}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}X l l l}
+            \begin{dtabularx}{\textwidth}{>{\lcol}X l l l}
                 \tb{Item}                   & \tb{Craft Skill} & \tb{Difficulty Rating} & \tb{Crafting Time} \tableheaderrule
-                Alchemical item             & Alchemy          & 5 \add item level      & Eight hours                \\
+                Alchemical item or potion   & Alchemy          & 5 \add item level      & Eight hours                \\
                 Body armor                  & Varies           & 10 \add item level     & One month per item level   \\
                 Exotic weapon               & Varies           & 10 \add item level     & Eight hours per item level \\
                 Shield or non-exotic weapon & Varies           & 5 \add item level      & Eight hours per item level \\
                 Poison                      & Poison           & 5 \add item level      & Eight hours                \\
                 Other item                  & Varies           & 5 \add item level      & Eight hours per item level \\
             \end{dtabularx}
-        \end{dtable}
+        \end{dtable!*}
 
     \subsection{Appraise Item}
         You can make a Craft check to estimate the value of an item with 1 minute of careful study. The Craft skill used must be related to the item.
