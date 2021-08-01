@@ -401,7 +401,7 @@ export const fabrication: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         You create a nonmagical arrow in a bow that you are holding.
-        The ammunition can be blunted, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
+        The ammunition can be blunted, but you cannot create other forms of special ammunition like fire arrows.
         The object persists until the end of the round, at which point it disappears.
         Because this spell has the \\abilitytag{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
         Any attack with this ammunition is considered a \\glossterm{magical} attack, so you use your magical \\glossterm{power} instead of your mundane power.
