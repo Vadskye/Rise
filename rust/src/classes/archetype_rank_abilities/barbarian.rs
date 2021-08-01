@@ -424,7 +424,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 You choose a totem animal that represents you.
                 Each totem animal grants you abilities that are associated with that animal.
 
-                \subcf{Bear} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
+                \subcf{Bear} You gain a bonus equal to twice your rank in this archetype to your maximum \glossterm{hit points}.
                 In addition, you gain a \plus1 bonus to Fortitude defense.
 
                 \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it into any space adjacent to you.
@@ -465,7 +465,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The benefit from your \textit{totem animal} ability improves.
 
-                \subcf{Bear} The hit point bonus increases to five times your rank in this archetype.
+                \subcf{Bear} The hit point bonus increases to three times your rank in this archetype.
                 In addition, the Fortitude bonus increases to \plus2.
 
                 \subcf{Crocodile} Once per round, when you make a creature lose \glossterm{hit points} with a melee \glossterm{strike}, you can choose to either \glossterm{grapple} it or knock it \glossterm{prone}.
@@ -505,7 +505,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The benefit from your \textit{totem animal} ability improves further.
 
-                \subcf{Bear} The hit point bonus increases to seven times your rank in this archetype.
+                \subcf{Bear} The hit point bonus increases to four times your rank in this archetype.
                 In addition, the Fortitude bonus increases to \plus3.
 
                 \subcf{Crocodile} The benefit of your \textit{greater totem animal} ability applies whenever you deal damage with a melee strike instead of whenever you make a creature lose hit points with a melee strike.
