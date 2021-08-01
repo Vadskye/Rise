@@ -172,7 +172,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                You can use your \textit{enraged strike} ability against any creature that attacked you since you last took a \glossterm{short rest}, regardless of whether they dealt damage to you during the previous round.
+                You can use your \textit{enraged strike} ability against any creature that attacked you during the previous round, regardless of whether they dealt damage to you.
             ",
         },
     ];
