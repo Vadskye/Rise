@@ -119,7 +119,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 \begin{instantability}{Enraged Strike}[Instant]
                     \rankline
                     Make a melee \glossterm{strike}.
-                    If the target of the strike dealt damage to you during the previous round, you gain a \plus2 bonus to \glossterm{accuracy} with the strike and a \plus2d damage bonus.
+                    You gain a \plus2 accuracy bonus and a \plus2d damage bonus with the strike against each creature that dealt damage to you during the previous round.
 
                     \rankline
                     \rank{4} The damage bonus increases to \plus3d.
