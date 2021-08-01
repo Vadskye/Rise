@@ -280,7 +280,7 @@ export const fabrication: MysticSphere = {
         You create a normal item of that type in your hand.
         If the item stops touching you, it disappears, and this effect ends.
 
-        If you create a projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
+        If you create a non-crossbow projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
         The projectiles disappear after the attack is complete.
 
         % Strange duration for a spell
@@ -394,20 +394,24 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Instant Ammunition",
+      name: "Instant Arrow",
 
       castingTime: "minor action",
       effect: `
-        You create a nonmagical arrow or crossbow bolt in a bow or crossbow that you are holding.
+        This spell has no \\glossterm{somatic components} and does not have the \\glossterm{Focus} tag.
+
+        You create a nonmagical arrow in a bow that you are holding.
         The ammunition can be blunted, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
         The object persists until the end of the round, at which point it disappears.
         Because this spell has the \\abilitytag{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
-        After you cast this spell, you \\glossterm{briefly} cannot cast it again.
+        Any attack with this ammunition is considered a \\glossterm{magical} attack, so you use your magical \\glossterm{power} instead of your mundane power.
       `,
-      rank: 2,
+      focus: false,
+      rank: 1,
       scaling: {
-        4: `You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with any \\glossterm{strike} using ammunition created with this spell.`,
-        6: `The accuracy bonus increases to +2.`,
+        3: `You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with any \\glossterm{strike} using ammunition created with this spell.`,
+        5: `The accuracy bonus increases to +2.`,
+        7: `The accuracy bonus increases to +3.`,
       },
       tags: ["Manifestation", "Swift"],
       type: "Duration",
@@ -534,7 +538,7 @@ export const fabrication: MysticSphere = {
         This spell does not have the \\abilitytag{Focus} tag.
         You create a nonmagical weapon that you are proficient with.
         You can immediately make a \\glossterm{strike} with that weapon.
-        If you create a projectile weapon, you also create ammunition necessary for you to attack with.
+        If you create a non-crossbow projectile weapon, you also create ammunition necessary for you to attack with.
         After you make the strike, the weapon disappears.
       `,
       focus: false,
