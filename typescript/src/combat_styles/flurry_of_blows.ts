@@ -236,7 +236,7 @@ export const flurryOfBlows: CombatStyle = {
       name: "Quickdraw",
 
       effect: `
-        You draw one or two weapons into your \\glossterm{free hands}.
+        You draw one or two small or medium weapons into your \\glossterm{free hands}.
         Then, you can make a \\glossterm{strike}.
       `,
       rank: 1,
