@@ -410,6 +410,9 @@ export const bluntForce: CombatStyle = {
         Each creature damaged by the strike \\glossterm{briefly} takes half the damage from the strike again at the end of each round.
       `,
       rank: 5,
+      scaling: {
+        7: "You gain a +1d damage bonus with the strike.",
+      },
       type: "Duration",
     },
   ],
