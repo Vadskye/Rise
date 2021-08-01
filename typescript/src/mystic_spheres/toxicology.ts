@@ -27,7 +27,7 @@ export const toxicology: MysticSphere = {
       name: "Neutralize Poison",
 
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
+        Choose yourself or one \\glossterm{ally} within \\closerange.
         The subject gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
       `,
       focus: false,
