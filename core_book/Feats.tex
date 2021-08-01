@@ -247,7 +247,7 @@ You cannot gain the same feat twice.
         \ff[1]{Overburdened Quickdraw} You can draw or sheathe \glossterm{medium weapons} as a \glossterm{free action}.
         You can combine this ability with your \textit{rapid redraw} ability.
 
-        \ff[1]{Rapid Redraw} When you sheathe a weapon as a \glossterm{free action}, you an also draw a different weapon with that same hand as part of that action.
+        \ff[1]{Rapid Redraw} When you sheathe a weapon as a \glossterm{free action}, you can also draw a different weapon with that same hand as part of that action.
         In addition, sheathing and drawing weapons becomes a \glossterm{Swift} ability for you, so you can draw a weapon and attack with it in the same phase.
 
         \ff[3]{Legacy Armory}[Magical] You do not choose an individual item as a \glossterm{legacy item} (see \pcref{Legacy Items}).
@@ -541,16 +541,21 @@ You cannot gain the same feat twice.
         \ff[1]{Specialization} You gain a \plus3 bonus to all Craft skills.
 
         \ff[3]{Craft Magic Item}[Magical] You can imbue items with magic using your crafting skill.
-        Imbuing an item with magic takes material components, as described in \pcref{Magic Item Creation}.
-        You can craft an item with an item level equal to your level or one item level lower than your level with 24 hours of continuous work.
-        You can make weaker items more quickly.
-        For every two item levels lower than your level, the time required to craft an item is halved, to a minimum of 15 minutes.
+        There are two ways to craft magic items: by sacrificing valuable raw materials or by salvaging other magic items.
+        If you sacrifice valuable raw materials, you must destroy trade goods or gold pieces as if you were buying an item with a level two lower than the level of the item  (see \pcref{Item Levels}).
+        If you salvage another magic item, you must destroy a non-consumable magic item with a level at least one level higher than the level of the item you are crafting.
+        As normal, you can treat two items of one level as being equivalent to a single item two levels higher for either of these crafting methods.
 
-        You can also mend a broken magic item if it is one that you could make.
-        Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place.
+        Crafting a magic item in this way normally requires 24 hours of continuous work which may be split between any number of crafting sessions.
+        You can make weaker items more quickly.
+        The time required to craft magic items is halved for every two levels by which your level exceeds the item's level, to a minimum of 15 minutes.
+
+        You can also mend a broken magic item if it is one that you could make, or transfer a magical property from one item to a nonmagical item.
+        If you transfer an item property in this way, the magic item ability must be valid for the new item.
+        If you do so, you treat the item's level as if it were four levels lower than its actual level for the purpose of determining the cost and crafting time, to a minimum item level of 1.
         You cannot mend a \glossterm{destroyed} magic item.
 
-        \ff[6]{Crafting Savant} You gain two additional \glossterm{skill points} which can only be spent on Craft skills.
+        \ff[6]{Crafting Savant} You become \glossterm{trained} in an additional Craft skill.
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
@@ -559,7 +564,7 @@ You cannot gain the same feat twice.
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
 
-        \ff[18]{Greater Crafting Savant} The number of additional skill points from your \textit{crafting savant} ability increases to five.
+        \ff[18]{Greater Crafting Savant} The number of additional trained skills from your \textit{crafting savant} ability increases to three.
 
         \ff[21]{Greater Item Attunement} You gain an additional \glossterm{attunement point}.
         You can only use this \glossterm{attunement point} to \glossterm{attune} to the effects of items (see \pcref{Item Attunement}).
@@ -2452,15 +2457,15 @@ You cannot gain the same feat twice.
 
         \ff[12]{Greater Reshaper} When you use the \spell{alter object} cantrip, you can accomplish work that would take up to an hour with a normal Craft check.
         In addition, you can use the \textit{alter poison} ability as a standard action.
-        \begin{freeability}{Alter Poison}[\glossterm{Shaping}, \abilitytag{Sustain} (minor)]
+        \begin{freeability}{Alter Poison}[\glossterm{Shaping}]
             Make an attack vs. Fortitude with a \plus4 \glossterm{accuracy} bonus against a creature within \shortrange.
-            \hit Any poison in the target's system is neutralized.
-            It stops suffering any additional effects from poisons in its system.
-            As long as the effect lasts, it is immune to all poisons.
-            In addition, the target's \glossterm{mundane} poisons, including natural attacks that inflict poison, have no effect.
+            \hit Any poison in the target's system is partially neutralized.
+            It stops being affected by any poisons currently in its system.
+            In addition, as a \glossterm{condition}, the target's \glossterm{mundane} poisons have no effect.
+            This includes natural attacks that inflict poison.
 
             \rankline
-            You gain a \plus1 bonus to \glossterm{accuracy} with the attack at 15th level and every 3 levels thereafter.
+            You gain a \plus2 bonus to \glossterm{accuracy} with the attack at 15th level and every 3 levels thereafter.
         \end{freeability}
 
         \ff[15]{Spell} You learn a spell from the \sphere{Polymorph} \glossterm{mystic sphere}.
