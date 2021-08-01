@@ -119,9 +119,10 @@ def generate_tools():
             # This seems like it should be Healing-tagged, but it's not really
             # an ability? It's not obvious how the cooldown should interact with
             # it.
-            tags=[],
+            tags=['Healing'],
             description="""
                 When you drink this \\glossterm<potion>, you regain 1d8 \\glossterm<hit points>.
+                After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
             short_description="Restores 1d6 hit points",
         ),
@@ -133,6 +134,7 @@ def generate_tools():
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you regain 2d8+3 \\glossterm<hit points>.
+                After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
             short_description="Restores 2d6+3 hit points",
         ),
@@ -144,6 +146,7 @@ def generate_tools():
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you regain 4d8+6 \\glossterm<hit points>.
+                After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
             short_description="Restores 4d6+6 hit points",
         ),
@@ -155,6 +158,7 @@ def generate_tools():
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you regain 6d10+9 \\glossterm<hit points>.
+                After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
             short_description="Restores 5d10+9 hit points",
         ),
@@ -339,9 +343,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each subject takes 4d10+4 fire damage.
+                On a hit, each subject takes 4d8+8 fire damage.
             """,
-            short_description="Throw to deal 4d10+4 fire damage in an area",
+            short_description="Throw to deal 4d8+8 fire damage in an area",
         ),
     ]
 
@@ -479,7 +483,7 @@ def generate_tools():
             description="""
                 As a standard action, you can drink this elixir.
                 When you do, it imbues your body with a resistance to poisons for 5 minutes.
-                During that time, you may treat your Fortitude defense as if it was equal to 10 \\add this item's power for the purpose of resisting poisons.
+                During that time, you gain a +4 bonus to Fortitude defense against attacks from poisons.
             """,
             short_description="Resists poisons",
         ),
