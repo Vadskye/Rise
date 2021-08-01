@@ -403,8 +403,10 @@ export const bluntForce: CombatStyle = {
     {
       name: "Boneshatter",
 
+      // baseline is +2d at this level, could be +3d due to delay
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty using a bludgeoning weapon.
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike \\glossterm{briefly} takes half the damage from the strike again at the end of each round.
       `,
       rank: 5,
