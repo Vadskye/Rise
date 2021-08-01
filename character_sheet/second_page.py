@@ -252,12 +252,12 @@ def calc_damage_resistance():
                     ),
                     plus(),
                     underlabel(
-                        "1/2 Con",
+                        "Con",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "damage_resistance_constitution",
-                                "value": "(floor(@{constitution}/2))",
+                                "value": "(@{constitution})",
                             }
                         ),
                     ),
@@ -411,7 +411,7 @@ def calc_hit_points():
                             {
                                 "disabled": True,
                                 "name": "hit_points_from_constitution",
-                                "value": "(@{constitution})",
+                                "value": "(@{constitution} * 2)",
                             }
                         ),
                     ),
