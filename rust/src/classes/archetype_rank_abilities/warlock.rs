@@ -192,7 +192,8 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             description: r"
          Your understanding of your chosen secret improves.
         {
-            \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to four times your rank in this archetype.
+            \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to five times your rank in this archetype.
+            In addition, the defense bonus increases to \plus4.
 
             \parhead{Secret of Bloodsharing} The healing increases to be equal to the hit points lost by the creature you deal damage to.
 
@@ -226,8 +227,8 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             description: r"
          Your understanding of your chosen secret improves again.
         {
-            \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to five times your rank in this archetype.
-            In addition, the defense bonus increases to \plus4.
+            \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to seven times your rank in this archetype.
+            In addition, the defense bonus increases to \plus5.
 
             \parhead{Secret of Bloodsharing} You can trigger the healing effect twice per round.
 
