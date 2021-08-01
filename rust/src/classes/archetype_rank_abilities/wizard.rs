@@ -7,9 +7,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-                Whenever you create or use an alchemical item, you may use your \glossterm{magical} \glossterm{power} in place of the item's normal power to determine its effects.
-                % TODO: what if alchemical items deal damage over time?
-                In addition, you may add half your magical power to the damage dealt by any alchemical items you use.
+                You may add half your magical \glossterm{power} to the damage or healing caused by any alchemical items you use.
+                In addition, whenever you use an alchemical item, you gain a \plus1d bonus to any damage or healing caused by the item for every 3 levels by which your level exceeds the item's level.
             ",
         },
         RankAbility {
@@ -26,7 +25,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 You can use this ability to create alchemical items with a item level up to your level (see \pcref{Item Levels}).
                 Creating an item in this way functions in the same way as crafting alchemical items normally, with the following changes.
                 First, you do not require any raw materials.
-                Second, the maximum duration of any item created with this ability is five minutes.
+                Second, you can create up to three items with this ability with 5 minutes of work.
                 Third, you can only maintain the existence of three items with this ability at once.
                 If you try to create a fourth item, you must stop maintaining the existence of another item created.
                 You can do this as a \glossterm{free action} regardless of distance.
@@ -39,33 +38,34 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-         You learn how to create alchemical items more effectively.
-        You gain your choice of one of the following benefits.
-        Each benefit can only be chosen once.
-        {
-            \parhead{Aerodynamic Construction} The range of thrown alchemical items you create increases by 30 feet.
-                This does not affect alchemical items that are not designed to be thrown.
-            \parhead{Complex Construction} You can use your portable workshop ability to create items with an item level up to two levels higher than your level.
-            \parhead{Efficient Crafting} It takes you half the normal time and material components to craft alchemical items without using your \textit{portable workshop} ability.
-            \parhead{Enduring Construction} The duration of any alchemical item you create is doubled.
-                % TODO: wording
-                % In addition, alchemical items that last for a fixed number of uses have their number of uses doubled.
-            \parhead{Explosive Construction} The area affected by any alchemical item you create is doubled.
-            \parhead{Potent Construction} The damage dealt by any alchemical item you create gains a bonus equal to your rank in this archetype.
-            \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
-            This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
-        }
-
-                ",
+                You learn how to create alchemical items more effectively.
+                You gain your choice of one of the following benefits.
+                Each benefit can only be chosen once.
+                {
+                    \parhead{Aerodynamic Construction} You double the range of thrown alchemical items you create.
+                        This does not affect alchemical items that are not designed to be thrown.
+                    \parhead{Complex Construction} You can use your portable workshop ability to create items with a level up to two levels higher than your level.
+                    \parhead{Efficient Crafting} You treat all alchemical items as if they were one level lower than their actual level for the purpose of determining their material requirements and crafting time without using your \textit{portable workshop} ability.
+                    % TODO: wording
+                    % \parhead{Enduring Construction} The duration of any alchemical item you create is doubled.
+                        % In addition, alchemical items that last for a fixed number of uses have their number of uses doubled.
+                    \parhead{Explosive Construction} The area affected by any alchemical item you create is doubled.
+                    \parhead{Potent Construction} Whenever you create an alchemical item that deals damage or regains hit points, you double the item's flat modifier to damage or healing.
+                    For example, a firebomb would deal 1d10+2 damage instead of 1d10+1 damage.
+                    This modifier applies you apply any other damage modifiers, such as the power bonus from your \textit{alchemical infusion} ability.
+                    \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
+                    This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
+                }
+            ",
         },
         RankAbility {
-            name: "Experienced Quaffing",
-            is_magical: false,
+            name: "Alchemical Tolerance",
+            is_magical: true,
             rank: 3,
             description: r"
-         You can drink up to two doses of potions, elixirs, and other drinkable alchemical items as part of the same standard action.
-
-                ",
+                You gain a \plus2 bonus to Fortitude defense.
+                In addition, you are immune to poisons.
+            ",
         },
         RankAbility {
             name: "Alchemical Discovery",
@@ -81,7 +81,15 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                The number of items you can maintain with your \textit{portable workshop} ability increases to 5.
+                The number of items you can simultaneously create and maintain with your \textit{portable workshop} ability increases to 5.
+            ",
+        },
+        RankAbility {
+            name: "Experienced Quaffing",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You can drink up to two doses of potions, elixirs, and other drinkable alchemical items as part of the same standard action.
             ",
         },
         RankAbility {
@@ -89,9 +97,16 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-         You gain an additional \textit{alchemical discovery} ability.
-
-                ",
+                You gain an additional \textit{alchemical discovery} ability.
+            ",
+        },
+        RankAbility {
+            name: "Greater Alchemical Tolerance",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                The bonus from your \textit{alchemical tolerance} ability increases to \plus4.
+            ",
         },
         RankAbility {
             name: "Greater Experienced Quaffing",
