@@ -32,10 +32,10 @@ export const toxicology: MysticSphere = {
       `,
       focus: false,
       scaling: {
-        3: `The number of additional successes increases to two.
+        2: `The number of additional successes increases to two.
             The subject can split these successes among any number of different poisons affecting it.`,
-        5: `The number of additional successes increases to three.`,
-        7: `The number of additional successes increases to four.`,
+        4: `The number of additional successes increases to three.`,
+        6: `The range increases to \\medrange.`,
       },
       type: "Instant",
     },
