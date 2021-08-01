@@ -1060,14 +1060,15 @@ impl Class {
                         If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
-                        \parhead{Aspect} You gain a \plus4 bonus to your Strength for the purpose of checks and determining your carrying capacity.
-                        \parhead{Essence} You can use the \textit{divine strength} ability as a \glossterm{minor action}.
+                        \parhead{Aspect} You can use the \textit{divine strength} ability as a \glossterm{minor action}.
                         \begin{attuneability}{Divine Strength}
                             \abilitytag{Attune} (self)
                             \rankline
                             You gain a \plus1 bonus to your base Strength.
                         \end{attuneability}
-                        \parhead{Mastery} The bonus from your \textit{divine strength} ability increases to \plus2.
+                        \parhead{Essence} You gain a \plus4 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
+                        \parhead{Mastery} Your \textit{divine strength} ability loses the \glossterm{Attune} (self) tag.
+                        Instead, it lasts until you use it again.
 
                     \subsubsection{Travel}
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
