@@ -151,7 +151,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             \parhead{Secret of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace of armor around you.
             This functions like body armor that provides a \plus3 bonus to Armor defense and has no \glossterm{encumbrance}.
             It also provides a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
-            However, the \textit{recover} action heals you for half as many hit points as it normally would.
+            However, the \textit{recover} action causes you to regain half as many hit points as it normally would.
 
             \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to half the the hit points the creature lost this way.
             However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
