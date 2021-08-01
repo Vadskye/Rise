@@ -398,7 +398,7 @@ export const fabrication: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        This spell has no \\glossterm{somatic components} and does not have the \\glossterm{Focus} tag.
+        This spell has no \\glossterm{somatic components}.
 
         You create a nonmagical arrow in a bow that you are holding.
         The ammunition can be blunted, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
@@ -406,7 +406,6 @@ export const fabrication: MysticSphere = {
         Because this spell has the \\abilitytag{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
         Any attack with this ammunition is considered a \\glossterm{magical} attack, so you use your magical \\glossterm{power} instead of your mundane power.
       `,
-      focus: false,
       rank: 1,
       scaling: {
         3: `You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with any \\glossterm{strike} using ammunition created with this spell.`,
