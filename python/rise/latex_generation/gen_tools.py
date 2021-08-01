@@ -483,9 +483,9 @@ def generate_tools():
             description="""
                 As a standard action, you can drink this elixir.
                 When you do, it imbues your body with a resistance to poisons for 5 minutes.
-                During that time, you gain a +4 bonus to Fortitude defense against attacks from poisons.
+                During that time, you gain a +2 bonus to Fortitude defense against attacks from poisons.
             """,
-            short_description="Resists poisons",
+            short_description="Grants +2 defenses against poisons",
         ),
         MagicItem(
             consumable=True,
@@ -494,9 +494,20 @@ def generate_tools():
             material_type="Alchemy",
             tags=[],
             description="""
-                This item functions like an \\mitem<antitoxin elixir>, except that the effect lasts for eight hours.
+                This item functions like an \\mitem<antitoxin elixir>, except that the bonus increases to +4.
             """,
-            short_description="Resists poisons for 8 hours",
+            short_description="Grants +4 defenses against poisons",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Antitoxin Elixir, Supreme",
+            level=15,
+            material_type="Alchemy",
+            tags=[],
+            description="""
+                This item functions like an \\mitem<antitoxin elixir>, except that the bonus increases to +6.
+            """,
+            short_description="Grants +6 defenses against poisons",
         ),
     ]
 
