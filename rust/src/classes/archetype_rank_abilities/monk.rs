@@ -372,7 +372,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rankline
                 You can use this ability as a \glossterm{free action}.
                 You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities this phase.
-                However, you \glossterm{briefly} take a \minus2 penalty to \glossterm{defenses} against \glossterm{magical} attacks.
+                However, after the current phase ends, you \glossterm{briefly} take a \minus2 penalty to \glossterm{defenses} against \glossterm{magical} attacks.
 
                 \rankline
                 \rank{3} The defense bonus is increased to \plus3.
