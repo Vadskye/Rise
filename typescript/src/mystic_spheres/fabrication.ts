@@ -303,6 +303,7 @@ export const fabrication: MysticSphere = {
         Choose a type of body armor, weapon, or shield that you are proficient with.
         You cannot create heavy armor.
         You create a normal item of that type in your hand or in any unoccupied square on solid ground within \\shortrange.
+        This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
 
         The item cannot be constructed of any magical or extraordinary material.
         It is sized appropriately for you, up to a maximum of a Medium size item.
@@ -317,7 +318,7 @@ export const fabrication: MysticSphere = {
         7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +3.`,
       },
       tags: ['Manifestation'],
-      type: "Attune (self)",
+      type: "Duration",
     },
 
     {
