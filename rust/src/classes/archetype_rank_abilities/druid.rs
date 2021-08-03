@@ -249,7 +249,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You reduce your \glossterm{focus penalties} by 2.
+         You reduce your \glossterm{focus penalty} by 2.
 
                 ",
         },
