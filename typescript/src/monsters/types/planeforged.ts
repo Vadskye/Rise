@@ -7,7 +7,7 @@ const baseAngel = {
   alignment: "Always good",
   armorInputs: [{ name: "thick skin" as const }],
   challengeRating: 4 as const,
-  languages: ["Celestial", "Common", "Draconic", "Infernal"],
+  languages: ["Celestial", "Common", "Draconic", "Abyssal"],
 };
 
 planeforgedInput.push({
@@ -148,7 +148,7 @@ planeforgedInput.push({
 const baseDemon = {
   alignment: "Always evil",
   armorInputs: [{ name: "thick skin" as const }],
-  languages: ["Infernal"],
+  languages: ["Abyssal"],
 };
 
 planeforgedInput.push({
