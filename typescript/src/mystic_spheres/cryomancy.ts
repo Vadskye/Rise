@@ -594,6 +594,57 @@ export const cryomancy: MysticSphere = {
       scaling: "damage",
       type: "Instant",
     },
+    {
+      name: "Bonechill",
+
+      attack: {
+        hit: `
+          The subject takes 2d6 + \\glossterm{power} cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+      rank: 2,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Quickchill",
+
+      attack: {
+        hit: `
+          The subject takes 2d10 + \\glossterm{power} cold damage and is \\glossterm{briefly} \\slowed.
+          After it stops being slowed, it is immune to being slowed in this way until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Bonechill",
+
+      attack: {
+        hit: `
+          The subject takes 4d8 + \\glossterm{power} cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\decelerated.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+      rank: 6,
+      scaling: "damage",
+      type: "Duration",
+    },
+
   ],
   rituals: [
     {

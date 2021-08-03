@@ -539,6 +539,38 @@ export const electromancy: MysticSphere = {
       },
       type: "Instant",
     },
+
+    {
+      name: "Dazing Shock",
+      attack: {
+        hit: `
+          The subject takes 2d6 + \\glossterm{power} electricity damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
+        `,
+        targeting: `
+          Make a melee attack vs. Fortitude against anything within \\shortrange.
+        `,
+      },
+      rank: 2,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Stunning Shock",
+      attack: {
+        hit: `
+          The subject takes 4d8 + \\glossterm{power} electricity damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
+        `,
+        targeting: `
+          Make a melee attack vs. Fortitude against anything within \\shortrange.
+        `,
+      },
+      rank: 6,
+      scaling: "damage",
+      type: "Duration",
+    },
   ],
   rituals: [],
 };
