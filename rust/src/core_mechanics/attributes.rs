@@ -37,12 +37,8 @@ impl Attribute {
         let slevel = level as i32;
         if base_value <= 1 {
             return base_value;
-        } else if base_value <= 4 {
-            return base_value + ((slevel * (base_value - 1)) as f64 / 4.0).ceil() as i32;
-        } else if base_value <= 8 {
-            return base_value + (((slevel - 1) * (base_value - 1)) as f64 / 4.0).ceil() as i32;
         } else {
-            return base_value + (((slevel - 2) * (base_value - 1)) as f64 / 4.0).ceil() as i32;
+            return base_value + ((slevel * (base_value - 1)) as f64 / 4.0).ceil() as i32;
         }
     }
 
