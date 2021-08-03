@@ -149,7 +149,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         Each secret grants great power at a cost.
         {
             \parhead{Secret of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace of armor around you.
-            This functions like body armor that provides a \plus3 bonus to Armor defense and has no \glossterm{encumbrance}.
+            This functions like body armor that provides a \plus4 bonus to Armor defense and has no \glossterm{encumbrance}.
             It also provides a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
             However, the \textit{recover} action causes you to regain half as many hit points as it normally would.
 
@@ -193,7 +193,6 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
          Your understanding of your chosen secret improves.
         {
             \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to five times your rank in this archetype.
-            In addition, the defense bonus increases to \plus4.
 
             \parhead{Secret of Bloodsharing} The healing increases to be equal to the hit points lost by the creature you deal damage to.
 
