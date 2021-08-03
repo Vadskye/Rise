@@ -720,6 +720,8 @@ export const aquamancy: MysticSphere = {
           \\item You take penalties for fighting underwater (see \pcref{Underwater Combat}).
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
           \\item You gain a +1 \\glossterm{magic bonus} to all defenses.
+          \\item You gain a +2 bonus to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
+          \\item You gain a +4 bonus to defenses against the \ability{grapple} ability.
         \\end{itemize}
       `,
       // narrative: '',
