@@ -175,7 +175,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You reduce your \glossterm{focus penalties} by 2.
+         You reduce your \glossterm{focus penalty} by 2.
 
 
                 ",
@@ -299,7 +299,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You reduce your \glossterm{focus penalties} by 1.
+         You reduce your \glossterm{focus penalty} by 1.
 
                 ",
         },
@@ -473,7 +473,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
          Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
-        When you do, you reduce your \glossterm{focus penalties} for casting the spell by 2, and you gain a bonus equal to your rank in this archetype to \glossterm{power} with the spell.
+        When you do, you reduce your \glossterm{focus penalty} for casting the spell by 2, and you gain a bonus equal to your rank in this archetype to \glossterm{power} with the spell.
         In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
         Some wild magic effects cannot be meaningfully applied to all spells.
         For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
