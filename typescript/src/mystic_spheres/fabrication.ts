@@ -537,7 +537,8 @@ export const fabrication: MysticSphere = {
 
       effect: `
         This spell does not have the \\abilitytag{Focus} tag.
-        You create a nonmagical weapon that you are proficient with.
+
+        You create a nonmagical weapon that you are proficient with your hand.
         You can immediately make a \\glossterm{strike} with that weapon.
         This strike is considered a \\glossterm{magical} attack, so you use your magical \\glossterm{power} instead of your mundane power.
         If you create a non-crossbow projectile weapon, you also create ammunition necessary for you to attack with.
