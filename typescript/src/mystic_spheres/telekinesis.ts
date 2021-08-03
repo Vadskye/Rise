@@ -213,20 +213,19 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Reload",
+      name: "Rapid Reload",
 
       castingTime: "minor action",
       effect: `
-        This spell does not have \\glossterm{somatic components}.
-        You reload any projectile weapon you wield with ammunition easily accessible on your body.
+        You can reload weapons from the crossbow weapon group as a \\glossterm{minor action} instead of as a standard action, and without requiring any \\glossterm{free hands}.
+        Each time you reload a crossbow in this way, you \\glossterm{briefly} cannot do so again.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: `This spell no longer has the \\abilitytag{Focus} tag.`,
-        6: `You can cast this spell as a \\glossterm{free action}.
-            However, you can only cast it once per round.`,
+        5: `Reloading a crossbow in this way does not prevent you from reloading it again.`,
+        7: `You can reload as a \\glossterm{free action} instead of as a minor action. However, you can only reload with this spell once per round.`,
       },
-      type: "Instant",
+      type: "Attune (self)",
     },
 
     {
