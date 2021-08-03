@@ -755,7 +755,7 @@ impl Class {
 
                     \cf{War}{Soul Pact}
                     To become a warlock, you must make a pact with a creature capable of sharing its power with you.
-                    Generally, such a creature must be at least 20th level, and must be a planeforged from a plane other than your own.
+                    Generally, such a creature must be 21st level, and must be a planeforged from a plane other than your own.
                     You must make a sacrifice, the details of which are subject to negotiation, and offer a part of your immortal soul.
                     In exchange, you gain the powers of a warlock.
                     The creature you make the pact with is called your soulkeeper.
