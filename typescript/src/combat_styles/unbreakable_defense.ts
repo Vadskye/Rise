@@ -13,7 +13,7 @@ export const unbreakableDefense: CombatStyle = {
         exceptThat: `
           you gain an additional +2 bonus to Armor defense if you are not using a shield.
           In addition, choose a creature you can see.
-          Whenever that misses you with a melee \\glossterm{strike} this round, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
+          Whenever that creature misses you with a melee \\glossterm{strike} this round, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
           As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
           The defense bonus from this ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
           However, the penalty imposed on attackers is not Swift.
