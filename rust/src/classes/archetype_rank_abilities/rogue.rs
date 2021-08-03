@@ -514,7 +514,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can confuse and confound your foes in combat.
                 You gain access to one of the following \glossterm{combat styles}: \textit{dirty fighting}, \textit{ebb and flow}, or \textit{mobile assault}.
-                In addition, you gain access to any two combat styles of your choice (see \pcref{Combat Styles}).
+                In addition, you gain access to any combat style of your choice (see \pcref{Combat Styles}).
                 You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
 
                 You learn two rank 1 \glossterm{maneuvers} from combat styles you have access to.
