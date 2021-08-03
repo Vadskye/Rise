@@ -734,7 +734,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         \begin{durationability}{Confound}[Duration]
             \abilitytag{Compulsion}
             \rankline
-            Make a attack vs. Mental against a creature within \shortrange.
+            Make an attack vs. Mental against a creature within \shortrange.
             Your \glossterm{accuracy} is equal to your Deception skill.
             \hit The subject is \dazed as a \glossterm{condition}.
 
