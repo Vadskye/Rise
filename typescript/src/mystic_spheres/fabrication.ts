@@ -301,24 +301,25 @@ export const fabrication: MysticSphere = {
 
       effect: `
         Choose a type of body armor, weapon, or shield that you are proficient with.
-        You cannot create heavy armor.
-        You create a normal item of that type in your hand or in any unoccupied square on solid ground within \\shortrange.
-        This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+        The item's level cannot exceed your level.
+        In addition, it cannot be constructed of any magical or extraordinary material.
 
-        The item cannot be constructed of any magical or extraordinary material.
+        You create a normal item of that type in your hand or in any unoccupied square on solid ground within \\shortrange.
         It is sized appropriately for you, up to a maximum of a Medium size item.
       `,
       rank: 1,
       scaling: {
-        3: `You can also create heavy armor.
-            In addition, the item created is magically enhanced.
-                A weapon grants a +2 \\glossterm{magic bonus} to your \\glossterm{power},
-                    and armor grants a +1 \\glossterm{magic bonus} to Armor defense.`,
+        3: `
+          The item created is magically enhanced.
+          A weapon grants a +2 \\glossterm{magic bonus} to the wielder's \\glossterm{power},
+            and armor grants a +1 \\glossterm{magic bonus} to Armor defense.
+          In addition, body armor can be made from any special material other than dragonhide, dragonscale, cold iron, and the pure versions of those materials.
+        `,
         5: `The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +2.`,
         7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +3.`,
       },
       tags: ['Manifestation'],
-      type: "Duration",
+      type: "Attune (self)",
     },
 
     {
