@@ -707,6 +707,28 @@ export const aquamancy: MysticSphere = {
       scaling: "damage",
       type: "Instant",
     },
+    {
+      name: "Personal Aquarium",
+
+      effect: `
+        You surround yourself in a bubble of water.
+        This has the following effects:
+        \\begin{itemize}
+          \\item Your land speed is halved.
+          \\item You can use your swim speed to move around on land.
+          \\item You take penalties for fighting underwater (see \pcref{Underwater Combat}).
+          \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
+          \\item You gain a +1 \\glossterm{magic bonus} to all defenses.
+        \\end{itemize}
+      `,
+      // narrative: '',
+      rank: 2,
+      scaling: {
+        4: 'The defense bonus increases to +2.',
+        6: 'The defense bonus increases to +3.',
+      },
+      type: "Instant",
+    },
   ],
   rituals: [
     {
