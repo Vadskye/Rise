@@ -678,7 +678,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d10 + half \\glossterm{power} fire damage and is \\glossterm{briefly} sickened.
+          The subject takes 1d10 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\sickened.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
