@@ -474,7 +474,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
          Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
-        When you do, you reduce your \glossterm{focus penalty} for casting the spell by 2, and you gain a bonus equal to your rank in this archetype to \glossterm{power} with the spell.
+        When you do, you reduce your \glossterm{focus penalty} for casting the spell by 2, and you gain a +2 bonus to \glossterm{power} with the spell.
         In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
         Some wild magic effects cannot be meaningfully applied to all spells.
         For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
@@ -516,43 +516,42 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-         Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level}.
-
-                ",
+                Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level}.
+            ",
         },
         RankAbility {
             name: "Greater Wildspell",
             is_magical: true,
             rank: 4,
             description: r"
-         The bonus to \glossterm{power} from your \textit{wildspell} ability increases to twice your rank in this archetype.
-
-                ",
+                The bonus to \glossterm{power} from your \textit{wildspell} ability increases to +4.
+                In addition, if you use the \textit{desperate exertion} ability to affect a spell you cast with the \textit{wildspell} ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
+                You do not gain any bonus to the wild magic reroll.
+            ",
         },
         RankAbility {
             name: "Greater Chaotic Insight",
             is_magical: true,
             rank: 5,
             description: r"
-         You learn an additional spell with your \textit{chaotic insight} ability.
-
-                ",
+                You learn an additional spell with your \textit{chaotic insight} ability.
+            ",
         },
         RankAbility {
             name: "Supreme Chaotic Exertion",
             is_magical: true,
             rank: 6,
             description: r"
-         You can use your \textit{chaotic exertion} ability once per \glossterm{short rest} instead of once per long rest.
-
-                ",
+                You can use your \textit{chaotic exertion} ability once per \glossterm{short rest} instead of once per long rest.
+            ",
         },
         RankAbility {
             name: "Supreme Wildspell",
             is_magical: true,
             rank: 7,
             description: r"
-                You replace your normal wild magic effects from your \textit{wildspell} ability with the effects from the table below.
+                The bonus to \glossterm{power} from your \textit{wildspell} ability increases to +8.
+                In addition, you replace your normal wild magic effects from your \textit{wildspell} ability with the effects from the table below.
                 \begin{dtable}
                     \lcaption{Epic Wild Magic Effects}
                     \begin{dtabularx}{\textwidth}{l X}
