@@ -363,7 +363,7 @@ export const verdamancy: MysticSphere = {
         hit: `As a \\glossterm{condition}, the subject takes 1d6 physical damage at the end of each round.
         If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
 
-        This condition can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
+        This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
         The \\glossterm{difficulty rating} of the check is equal to 10.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -557,7 +557,7 @@ export const verdamancy: MysticSphere = {
         Whenever you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, thorns from the striking weapon enter the subject's body.
         As a \\glossterm{condition}, the subject unable to heal the \\glossterm{hit points} lost to the attack.
 
-        This condition can be removed with the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
+        This effect can be removed with the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
         The \\glossterm{difficulty rating} of the check is equal to 5 \\add your \\glossterm{power}.
       `,
       rank: 3,
