@@ -665,7 +665,7 @@ export const polymorph: MysticSphere = {
           The subject begins bleeding as a \\glossterm{condition}.
           At the end of each round, it takes 1d8 physical damage.
 
-          This condition can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
+          This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
           The \\glossterm{difficulty rating} of the check is equal to 10.
         `,
         targeting: `
