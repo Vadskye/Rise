@@ -588,7 +588,7 @@ export const verdamancy: MysticSphere = {
       name: "Verdant Armor",
 
       effect: `
-        When you cast this spell, you choose a type of armor you are proficient with that is not normally made from metal.
+        When you cast this spell, you choose a type of body armor you are proficient with that is not normally made from metal.
         Plants grow around your body, functioning like your chosen type of armor for you, except that the \\glossterm{encumbrance} of the armor is reduced by 2.
         These plants are considered to be normal plants for the purpose of abilities that require plants to be near targets, such as spells from this mystic sphere.
       `,
