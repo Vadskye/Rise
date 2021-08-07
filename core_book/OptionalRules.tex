@@ -369,6 +369,7 @@
 
             \cf{Dgn}[6]{Greater Draconic Bulk} Your size category increases to Large.
             The speed bonus from your \textit{draconic bulk} ability increases to \plus20 feet, the attribute modifiers to Dexterity and Strength increase to \minus2 and \plus3 respectively, and the power bonus increases to \plus6.
+            You gain a slam natural weapon (see \pcref{Natural Weapons}).
             % TODO: too fast?
             In addition, you gain a \plus30 foot bonus to your fly speed with your \textit{draconic flight} ability, but your maneuverability drops to poor maneuverability (see \pcref{Flying Maneuverability}).
 
@@ -613,11 +614,11 @@
             \abilitytag{Magical}
             \rankline
             Make an attack vs. Fortitude against one creature within \rngshort range.
-            You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target attacked you since the start of the last round.
-            \hit The target takes fire damage equal to 1d10 plus your \glossterm{power}.
+            You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target attacked you during the previous round.
+            \hit The target takes 1d8 plus \glossterm{power} fire damage.
 
             \rankline
-            \featlevel{3} The damage increases to 2d6.
+            \featlevel{3} The damage increases to 1d10.
             \featlevel{6} The damage increases to 2d8.
             \featlevel{9} The damage increases to 2d10.
                 In addition, if you miss by 2 or less, the target takes half damage.
@@ -628,7 +629,15 @@
             \featlevel{21} The damage increases to 7d10.
         \end{freeability}
 
-        \ff[3]{Greater Infernal Presence} The bonuses from your \textit{infernal presence} ability increase to \plus4.
+        \ff[3]{Infernal Ancestry} You deepen your connection to a particular aspect of your demonic ancestry.
+        You gain your choice of one of the following abilities.
+        \begin{itemize}
+            \item Abysswalker: As a standard action, you can \glossterm{teleport} yourself into an unoccupied location within \medrange on a stable surface that can support your weight.
+            If the destination is invalid, this ability fails with no effect.
+            \item Tempting Allure: You gain a \plus2 bonus to the Deception, Disguise, and Persuasion skills.
+            \item Unholy Might: You gain either two claw natural weapons or one bite natural weapon (see \pcref{Natural Weapons}).
+                In addition, you gain a \plus2 bonus to Strength for the purpose of determining your weight limits (see \pcref{Weight Limits}).
+        \end{itemize}
 
         \ff[6]{Greater Infernal Darkness} The maximum radius affected by your \textit{infernal darkness} ability increases to a \arealarge radius.
         In addition, when you use the ability you may choose whether it also blocks \glossterm{darkvision} from seeing into the area.
@@ -637,16 +646,34 @@
         This can help you deal damage to enemies that are highly resistant to fire damage.
         In addition, you treat all fire damage you take as \glossterm{environmental damage}.
 
-        \ff[12]{Supreme Infernal Presence} The bonuses from your \textit{infernal presence} ability increase to \plus6.
+        \ff[12]{Greater Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability improve.
+        \begin{itemize}
+            \item Abysswalker: You can use your \textit{infernal ancestry} ability to teleport as a move action instead of as a standard action.
+                When you do, you \glossterm{briefly} cannot use it as a move action again.
+                In addition, when you use it to teleport as a standard action, the range increases to \distrange.
+            \item Tempting Allure: The bonuses from your \textit{infernal ancestry} ability increase to \plus3.
+                In addition, you gain the ability to cast the \spell{charm} spell.
+                It does not have any \glossterm{somatic components} or \glossterm{verbal components} for you.
+            \item Unholy Might: The bonus to Strength from your \textit{infernal ancestry} ability increases to \plus4.
+                In addition, you gain a \plus3 bonus to your \glossterm{power}.
+        \end{itemize}
 
-        \ff[15]{Supreme Infernal of Darkness} You can use your \textit{infernal darkness} ability as a \glossterm{minor action}.
+        \ff[15]{Supreme Infernal Darkness} You can use your \textit{infernal darkness} ability as a \glossterm{minor action}.
         In addtion, your darkvision functions within your own \textit{infernal darkness} even if you block all other sources of darkvision from working.
 
         \ff[18]{Greater Hellfire Conduit} Whenever you deal fire damage, you may also treat that damage as being physical damage.
         In addition, you are immune to \glossterm{fire damage}.
 
-        \ff[21]{Cloak of Darkness} When you use your \textit{infernal darkness} ability, you can change the area to be an \glossterm{emanation} from you instead of a \glossterm{zone} within range.
-        In addition, you can sustain that ability as a \glossterm{free action} instead of as a minor action.
+        \ff[21]{Supreme Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability improve.
+        \begin{itemize}
+            \item Abysswalker: When you use your \textit{infernal ancestry} ability to teleport as a move action, it no longer briefly prevents you from using it as a move action again.
+                In addition, when you use it to teleport as a standard action, the range increases to 1,000 feet.
+            \item Tempting Allure: The bonuses from your \textit{infernal ancestry} ability increase to \plus4.
+                In addition, you gain the ability to cast the \spell{dominate monster} spell.
+                It does not have any \glossterm{somatic components} or \glossterm{verbal components} for you.
+            \item Unholy Might: The bonus to Strength from your \textit{infernal ancestry} ability increases to \plus6.
+                In addition, the power bonus increases to \plus9.
+        \end{itemize}
     \end{feat}
 
     \begin{feat}{Naiad Heritage}{Bloodline}
