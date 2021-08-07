@@ -114,7 +114,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Healing",
-            level=0.5,
+            level=1,
             material_type="Potion",
             # This seems like it should be Healing-tagged, but it's not really
             # an ability? It's not obvious how the cooldown should interact with
@@ -136,7 +136,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, you regain 2d8+3 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Restores 2d6+3 hit points",
+            short_description="Restores 2d8+3 hit points",
         ),
         MagicItem(
             consumable=True,
@@ -148,7 +148,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, you regain 4d8+6 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Restores 4d6+6 hit points",
+            short_description="Restores 4d8+6 hit points",
         ),
         MagicItem(
             consumable=True,
