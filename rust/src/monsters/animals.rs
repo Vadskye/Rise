@@ -386,6 +386,22 @@ pub fn animals() -> Vec<MonsterEntry> {
         weapons: vec![Weapon::MonsterBite],
     })));
 
+    monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
+        attributes: vec![2, 2, 2, -7, 0, -1],
+        challenge_rating: ChallengeRating::Two,
+        description: None,
+        knowledge: None,
+        level: 1,
+        movement_modes: None,
+        name: "Warg".to_string(),
+        passive_abilities: None,
+        senses: Some(vec![Sense::Scent]),
+        size: Size::Medium,
+        special_attacks: None,
+        trained_skills: None,
+        weapons: vec![Weapon::MonsterBite],
+    })));
+
     // TODO: add carrying capacity to knowledge result
     let horse = animal(FullAnimalDefinition {
         attributes: vec![2, 1, 3, -7, 0, -3],

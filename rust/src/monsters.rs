@@ -4,6 +4,7 @@ mod animates;
 pub mod challenge_rating;
 pub mod creature_type;
 mod dragons;
+mod humanoids;
 mod knowledge;
 pub mod monster_entry;
 pub mod monster_group;
