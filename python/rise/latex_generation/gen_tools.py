@@ -124,7 +124,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, you regain 1d8 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Restores 1d6 hit points",
+            short_description="Restores 1d8 hit points",
         ),
         MagicItem(
             consumable=True,
