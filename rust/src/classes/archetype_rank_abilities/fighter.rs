@@ -189,12 +189,12 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
 pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Defensive Expertise",
+            name: "Martial Expertise",
             is_magical: false,
             rank: 0,
             description: r"
-         You gain a \plus1 bonus to your Armor defense.
-                ",
+                You gain a bonus equal to your rank in this archetype to your \glossterm{hit points} (minimum 1).
+            ",
         },
         RankAbility {
             name: "Combat Styles",
@@ -297,11 +297,11 @@ This is called a \glossterm{glancing blow}.
             ",
         },
         RankAbility {
-            name: "Greater Defensive Expertise",
+            name: "Greater Martial Expertise",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonuses from your \textit{defensive expertise} ability increases to \plus2.
+                The bonus from your \textit{martial expertise} ability increases to twice your rank in this archetype.
             ",
         },
         RankAbility {
