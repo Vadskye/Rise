@@ -4,15 +4,15 @@ use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{self, HasDefenses, SpecialDefenseModifier};
 use crate::core_mechanics::latex;
 use crate::core_mechanics::movement_modes;
+use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
+use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::sizes;
 use crate::core_mechanics::HasCreatureMechanics;
 use crate::equipment::{weapons, HasEquipment};
 use crate::skills::{HasSkills, Skill};
 use std::cmp::{max, min};
 use std::collections::HashMap;
-use crate::core_mechanics::passive_abilities::PassiveAbility;
-use crate::core_mechanics::senses::Sense;
 
 pub struct Creature {
     base_attributes: HashMap<Attribute, i32>,
@@ -46,11 +46,17 @@ impl Creature {
         };
     }
 
-    pub fn add_special_defense_modifier(&mut self, special_defense_modifier: SpecialDefenseModifier) {
+    pub fn add_special_defense_modifier(
+        &mut self,
+        special_defense_modifier: SpecialDefenseModifier,
+    ) {
         if self.special_defense_modifiers.is_none() {
             self.special_defense_modifiers = Some(vec![]);
         }
-        self.special_defense_modifiers.as_mut().unwrap().push(special_defense_modifier);
+        self.special_defense_modifiers
+            .as_mut()
+            .unwrap()
+            .push(special_defense_modifier);
     }
 
     pub fn add_passive_ability(&mut self, ability: PassiveAbility) {
@@ -232,9 +238,11 @@ impl HasAttacks for Creature {
 
     fn calc_power(&self, is_magical: bool) -> i32 {
         if is_magical {
-            return self.calc_total_attribute(&Attribute::Willpower);
+            return self.calc_total_attribute(&Attribute::Willpower)
+                + self.calc_total_attribute(&Attribute::Perception) / 2;
         } else {
-            return self.calc_total_attribute(&Attribute::Strength);
+            return self.calc_total_attribute(&Attribute::Strength)
+                + self.calc_total_attribute(&Attribute::Perception) / 2;
         }
     }
 }
@@ -277,9 +285,7 @@ impl HasResources for Creature {
                     + self.get_base_attribute(&Attribute::Willpower)
             }
             resources::Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
-            resources::Resource::TrainedSkill => {
-                self.get_base_attribute(&Attribute::Intelligence)
-            }
+            resources::Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
         }
     }
 }
