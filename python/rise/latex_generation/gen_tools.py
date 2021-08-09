@@ -171,7 +171,7 @@ def generate_tools():
             consumable=True,
             name="Alchemist's Fire",
             level=1,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -184,7 +184,7 @@ def generate_tools():
             consumable=True,
             name="Alchemist's Fire, Greater",
             level=7,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -197,7 +197,7 @@ def generate_tools():
             consumable=True,
             name="Alchemist's Fire, Supreme",
             level=13,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -210,7 +210,7 @@ def generate_tools():
             consumable=True,
             name="Alchemist's Fire, Epic",
             level=19,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -226,7 +226,7 @@ def generate_tools():
             consumable=True,
             name="Acid Flask",
             level=2,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -239,7 +239,7 @@ def generate_tools():
             consumable=True,
             name="Acid Flask, Greater",
             level=8,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -252,7 +252,7 @@ def generate_tools():
             consumable=True,
             name="Acid Flask, Supreme",
             level=14,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -265,7 +265,7 @@ def generate_tools():
             consumable=True,
             name="Acid Flask, Epic",
             level=20,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -281,7 +281,7 @@ def generate_tools():
             consumable=True,
             name="Corrosive Flask",
             level=5,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -295,7 +295,7 @@ def generate_tools():
             consumable=True,
             name="Corrosive Flask, Greater",
             level=14,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -312,7 +312,7 @@ def generate_tools():
             consumable=True,
             name="Firebomb",
             level=4,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -325,7 +325,7 @@ def generate_tools():
             consumable=True,
             name="Firebomb, Greater",
             level=10,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -338,7 +338,7 @@ def generate_tools():
             consumable=True,
             name="Firebomb, Supreme",
             level=16,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -354,7 +354,7 @@ def generate_tools():
             consumable=True,
             name="Smokestick",
             level=1,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 As a standard action, you can activate this item and optionally throw it anywhere within \\rngshort range.
@@ -371,7 +371,7 @@ def generate_tools():
             consumable=True,
             name="Tindertwig",
             level=0.5,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 As a \\glossterm<minor action>, you can activate this small, wooden stick by striking it against any hard surface.
@@ -386,7 +386,7 @@ def generate_tools():
             consumable=True,
             name="Flash Powder",
             level=0.5,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this powder in the air in your location as a standard action.
@@ -402,7 +402,7 @@ def generate_tools():
             consumable=True,
             name="Thunderstone",
             level=3,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -416,7 +416,7 @@ def generate_tools():
             consumable=True,
             name="Thunderstone, Greater",
             level=9,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -430,7 +430,7 @@ def generate_tools():
             consumable=True,
             name="Thunderstone, Supreme",
             level=15,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -447,7 +447,7 @@ def generate_tools():
             consumable=True,
             name="Snowball",
             level=4,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -461,7 +461,7 @@ def generate_tools():
             consumable=True,
             name="Snowball, Greater",
             level=13,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -478,7 +478,7 @@ def generate_tools():
             consumable=True,
             name="Antitoxin Elixir",
             level=3,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 As a standard action, you can drink this elixir.
@@ -491,7 +491,7 @@ def generate_tools():
             consumable=True,
             name="Antitoxin Elixir, Greater",
             level=9,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 This item functions like an \\mitem<antitoxin elixir>, except that the bonus increases to +4.
@@ -502,7 +502,7 @@ def generate_tools():
             consumable=True,
             name="Antitoxin Elixir, Supreme",
             level=15,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 This item functions like an \\mitem<antitoxin elixir>, except that the bonus increases to +6.
@@ -516,7 +516,7 @@ def generate_tools():
             consumable=True,
             name="Sunrod",
             level=3,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 As a standard action, you can activate this item.
@@ -528,7 +528,7 @@ def generate_tools():
             consumable=True,
             name="Sunrod, Greater",
             level=6,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 This item functions like a \\mitem<sunrod>, except that the effect lasts for 8 hours.
@@ -542,7 +542,7 @@ def generate_tools():
             consumable=True,
             name="Tanglefoot Bag",
             level=1,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -558,7 +558,7 @@ def generate_tools():
             consumable=True,
             name="Tanglefoot Bag, Greater",
             level=4,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -571,7 +571,7 @@ def generate_tools():
             consumable=True,
             name="Tanglefoot Bag, Supreme",
             level=13,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
@@ -587,7 +587,7 @@ def generate_tools():
             consumable=True,
             name="Everburning Torch",
             level=3,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 As a standard action, you can activate this item.
@@ -602,7 +602,7 @@ def generate_tools():
             consumable=True,
             name="Potion of Strength",
             level=3,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you gain a +3 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
@@ -614,7 +614,7 @@ def generate_tools():
             consumable=True,
             name="Potion of Strength, Greater",
             level=9,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you gain a +4 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
@@ -626,7 +626,7 @@ def generate_tools():
             consumable=True,
             name="Potion of Strength, Supreme",
             level=15,
-            material_type="Alchemy",
+            material_type="Alchemical",
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you gain a +5 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
@@ -1115,7 +1115,7 @@ def generate_tools():
             consumable=True,
             name="Poison, Nitharit",
             level=2,
-            materials=["Poison"],
+            material_type="Poison",
             tags=[],
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
@@ -1129,7 +1129,7 @@ def generate_tools():
             consumable=True,
             name="Poison, Sassone Leaf",
             level=4,
-            materials=["Poison"],
+            material_type="Poison",
             tags=[],
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
@@ -1143,7 +1143,7 @@ def generate_tools():
             consumable=True,
             name="Poison, Asp Venom",
             level=5,
-            materials=["Poison"],
+            material_type="Poison",
             tags=[],
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
@@ -1157,7 +1157,7 @@ def generate_tools():
             consumable=True,
             name="Poison, Arsenic",
             level=8,
-            materials=["Poison"],
+            material_type="Poison",
             tags=[],
             description="""
                 This is an ingestion-based powder poison (see \\pcref<Poison>).
@@ -1171,7 +1171,7 @@ def generate_tools():
             consumable=True,
             name="Poison, Dragon Bile",
             level=10,
-            materials=["Poison"],
+            material_type="Poison",
             tags=[],
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
@@ -1184,7 +1184,7 @@ def generate_tools():
             consumable=True,
             name="Poison, Insanity Mist",
             level=14,
-            materials=["Poison"],
+            material_type="Poison",
             tags=[],
             description="""
                 This is an ingestion-based gas poison (see \\pcref<Poison>).
@@ -1198,7 +1198,7 @@ def generate_tools():
             consumable=True,
             name="Poison, Black Lotus",
             level=14,
-            materials=["Poison"],
+            material_type="Poison",
             tags=[],
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
@@ -1231,15 +1231,15 @@ def generate_tool_table():
         sorted(generate_tools(), key=lambda item: item.name),
         key=lambda item: item.level,
     )
-    rows = [item.latex_table_row(include_type=False) for item in tools]
+    rows = [item.latex_table_row() for item in tools]
     row_text = "\n".join(rows)
     return longtablify(
         f"""
             \\lcaption<Tools, Goods, and Mounts> \\\\
-            \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+            \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
             {row_text}
         """
-    , include_type=False)
+    )
 
 
 def write_to_file():

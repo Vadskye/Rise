@@ -10,7 +10,7 @@ class MagicItem(object):
     @classmethod
     def automatic_materials(cls, material_type):
         return {
-            "Alchemy": ["alchemy"],
+            "Alchemical": ["alchemy"],
             "Amulet": ["jewelry"],
             "Belt": ["leather", "textiles"],
             "Body armor": ["bone", "leather", "metal"],
@@ -25,6 +25,7 @@ class MagicItem(object):
             "Fabric": ["textiles"],
             "Mask": ["textiles"],
             "Potion": ["alchemy"],
+            "Poison": ["poison"],
             "Ring": ["bone", "jewelry", "metal", "wood"],
             "Shield": ["bone", "metal", "wood"],
             "Staff": ["bone", "wood"],
@@ -99,7 +100,7 @@ class MagicItem(object):
 
     def latex_table_row(self, include_type=True):
         # \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-        type_text = f" & {self.material_type}" if include_type else ""
+        type_text = f" & {self.material_type or ''}" if include_type else ""
         return f"{self.name} & {self.nth_text()} ({self.price()} gp) {type_text} & {self.short_description} & \\pageref<item:{self.name}> \\\\"
 
     def tag_text(self):
