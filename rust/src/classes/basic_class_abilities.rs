@@ -71,19 +71,23 @@ fn generate_latex_resources(class: &classes::Class) -> String {
 }
 
 fn generate_latex_defenses(class: &classes::Class) -> String {
-    return latex_formatting::latexify(
-        format!(
-            "
-                \\cf<{shorthand_name}><Defenses>
-                You gain the following bonuses to your \\glossterm<defenses>: \\plus{armor} Armor, \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
-            ",
-            armor=class.defense_bonus(&Defense::Armor),
-            fortitude=class.defense_bonus(&Defense::Fortitude),
-            reflex=class.defense_bonus(&Defense::Reflex),
-            mental=class.defense_bonus(&Defense::Mental),
-            shorthand_name=class.shorthand_name(),
-        )
-    );
+    let armor_defense_bonus = class.defense_bonus(&Defense::Armor);
+    let armor_text = if armor_defense_bonus > 0 {
+        format!("\\plus<{}> Armor,", armor_defense_bonus)
+    } else {
+        "".to_string()
+    };
+    return latex_formatting::latexify(format!(
+        "
+            \\cf<{shorthand_name}><Defenses>
+            You gain the following bonuses to your \\glossterm<defenses>: {armor} \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
+        ",
+        armor=armor_text,
+        fortitude=class.defense_bonus(&Defense::Fortitude),
+        reflex=class.defense_bonus(&Defense::Reflex),
+        mental=class.defense_bonus(&Defense::Mental),
+        shorthand_name=class.shorthand_name(),
+    ));
 }
 
 fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> String {
@@ -131,11 +135,13 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
         "
         .to_string();
     } else if weapon_proficiencies.specific_weapons.is_some() {
-        let mut components = vec![
-            String::from("simple weapons"),
-        ];
+        let mut components = vec![String::from("simple weapons")];
         if weapon_proficiencies.custom_weapon_groups > 0 {
-            let custom_weapon_groups = generate_labeled_english_number(weapon_proficiencies.custom_weapon_groups, "other weapon group","other weapon groups");
+            let custom_weapon_groups = generate_labeled_english_number(
+                weapon_proficiencies.custom_weapon_groups,
+                "other weapon group",
+                "other weapon groups",
+            );
             let custom_weapon_groups = format!("any {}", custom_weapon_groups);
             components.push(custom_weapon_groups);
         }

@@ -284,49 +284,49 @@ impl Class {
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match self {
             Self::Barbarian => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 7,
                 Defense::Reflex => 5,
                 Defense::Mental => 3,
             },
             Self::Cleric => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 5,
                 Defense::Reflex => 3,
                 Defense::Mental => 7,
             },
             Self::Druid => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 5,
                 Defense::Reflex => 4,
                 Defense::Mental => 6,
             },
             Self::Fighter => match defense {
-                Defense::Armor => 2,
+                Defense::Armor => 1,
                 Defense::Fortitude => 7,
                 Defense::Reflex => 3,
                 Defense::Mental => 4,
             },
             Self::Monk => match defense {
-                Defense::Armor => 2,
+                Defense::Armor => 1,
                 Defense::Fortitude => 3,
                 Defense::Reflex => 6,
                 Defense::Mental => 5,
             },
             Self::Paladin => match defense {
-                Defense::Armor => 2,
+                Defense::Armor => 1,
                 Defense::Fortitude => 6,
                 Defense::Reflex => 3,
                 Defense::Mental => 5,
             },
             Self::Ranger => match defense {
-                Defense::Armor => 2,
+                Defense::Armor => 1,
                 Defense::Fortitude => 5,
                 Defense::Reflex => 5,
                 Defense::Mental => 4,
             },
             Self::Rogue => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 3,
                 Defense::Reflex => 7,
                 Defense::Mental => 5,
@@ -338,7 +338,7 @@ impl Class {
                 Defense::Mental => 8,
             },
             Self::Warlock => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 5,
                 Defense::Reflex => 3,
                 Defense::Mental => 7,
