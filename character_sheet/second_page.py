@@ -406,7 +406,7 @@ def calc_hit_points():
                     ),
                     plus(),
                     underlabel(
-                        "Con",
+                        "Con * 2",
                         number_input(
                             {
                                 "disabled": True,
@@ -474,6 +474,17 @@ def calc_magical_power():
                         ),
                     ),
                     plus(),
+                    underlabel(
+                        "Per/2",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "magical_power_perception_display",
+                                "value": "floor(@{perception}/2)",
+                            }
+                        ),
+                    ),
+                    plus(),
                     equation_misc_repeat("magical_power", 3),
                 ],
                 result_attributes={
@@ -499,6 +510,17 @@ def calc_mundane_power():
                                 "disabled": True,
                                 "name": "mundane_power_strength_display",
                                 "value": "@{strength}",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Per/2",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "mundane_power_perception_display",
+                                "value": "floor(@{perception}/2)",
                             }
                         ),
                     ),
