@@ -159,7 +159,7 @@ def set_skill(a, s):
                 var ranks = 0;
 
                 if ({s}_is_trained) {{
-                    ranks = 3 + Math.floor(level / 2);
+                    ranks = 4 + Math.floor(level / 2);
                 }}
 
                 setAttrs({{
@@ -186,7 +186,7 @@ def set_skill(a, s):
                 var ranks = 0;
 
                 if ({s}_is_trained) {{
-                    ranks = 3 + Math.max({a}, Math.floor(level / 2));
+                    ranks = 4 + Math.max({a}, Math.floor(level / 2));
                 }} else {{
                     ranks = Math.floor({a} / 2);
                 }}
