@@ -10,8 +10,8 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
          You gain a small benefit from each of the four elements.
         \begin{itemize}
             \item Air: You gain a \plus2 bonus to the Jump skill.
-            \item Earth: You gain a \plus1 bonus to Fortitude defense.
-            \item Fire: You gain a \plus2 bonus to \glossterm{defenses} against attacks that deal fire damage.
+            \item Earth: You gain a \plus1 bonus to your Fortitude defense.
+            \item Fire: You suffer no heat-related penalties for being in environments with temperatures up to 150 degrees Fahrenheit.
             \item Water: You gain a \plus2 bonus to the Swim skill.
         \end{itemize}
 
@@ -70,8 +70,8 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 The bonuses from your \textit{elemental balance} ability improve.
                 \begin{itemize}
                     \item Air: You gain a \glossterm{glide speed} equal to half the \glossterm{base speed} for your size.
-                    \item Earth: The bonus to Fortitude defense increases to \plus2.
-                    \item Fire: The defense bonus increases to \plus4.
+                    \item Earth: The bonus to your Fortitude defense increases to \plus2.
+                    \item Fire: You are \glossterm{impervious} to fire damage.
                     \item Water: You gain a \glossterm{swim speed} equal to half the \glossterm{base speed} for your size.
                 \end{itemize}
             ",
@@ -120,7 +120,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \item Air: You gain a \glossterm{fly speed} equal to half the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
                     At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \item Earth: The bonus to Fortitude defense increases to \plus4.
-                    \item Fire: The defense bonus increases to \plus6.
+                    \item Fire: You treat all fire damage you take as being \glossterm{environmental damage}.
                     \item Water: You suffer no penalties for fighting underwater, and your swim speed increases to be equal to the base speed for your size.
                 \end{itemize}
             ",
