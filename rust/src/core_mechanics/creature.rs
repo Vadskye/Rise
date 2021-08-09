@@ -322,7 +322,7 @@ impl HasSkills for Creature {
         };
         let trained = self.is_skill_trained(skill);
         if trained {
-            return 3 + max(self.level / 2, attribute);
+            return 4 + max(self.level / 2, attribute);
         } else {
             return attribute / 2;
         }
