@@ -44,7 +44,7 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Skill Modifiers}
         If you are \glossterm{untrained} in a skill, your bonus with that skill is equal to half of its associated attribute (if any).
-        If you are \glossterm{trained} in a skill, your bonus with that skill is equal to 4 \add the higher of its associated attribute (if any) and half your level.
+        If you are \glossterm{trained} in a skill, your bonus with that skill is equal to 3 \add the higher of its associated attribute (if any) and half your level.
         Many abilities can increase or decrease your bonus with particular skills.
 
     \subsection{Trying Again}
@@ -906,29 +906,40 @@ This chapter describes each skill, including common uses for those skills.
 \newpage
 \skill{Jump}{Str}
     The Jump skill represents your ability to jump.
-    All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a phase.
+    All Jump checks are made as part of movement, so they take no special action to perform.
 
-        Several modifiers apply to all Jump checks, which are described below.
+    \parhead{Running Start}\label{Running Start} If you move on a surface at least ten feet in a straight line before jumping from that surface, you have a running start.
+    This movement must happen in the same phase as your Jump check or during the immediately preceding phase.
+    You gain a \plus5 bonus to your Jump skill while you have a running start.
 
-        \parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start.
-        Jumping without a running start is difficult.
-        If you make a Jump attack or check without a running start, you roll twice and take the lower result.
+    \parhead{Jumping and Movement}
+    Distance moved with Jump checks is considered to be part of your land speed.
+    The maximum distance that you can cover with a Jump check is equal to your remaining land speed during the current phase.
+    This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
+    For example, if your land speed is thirty feet and you get a ten-foot running start, you can jump no more than twenty feet forward or twenty feet vertically into the air.
 
-    \subsection{Hop Up}
-        You can make a \glossterm{difficulty rating} 5 Jump check while moving to jump up onto an object as tall as your waist, such as a table or small boulder. Doing so counts as 5 feet of movement. Success means you land on top of the object and can continue your movement. Failure indicates you stop your movement where you are. You do not need to get a running start to hop up.
+    \parhead{Falling After Jumping}
+    It is possible to make a Jump check that leaves in you in midair at the end of your movement.
+    At the end of each phase after you jumped into midair, you fall as normal.
+    This can allow you to take actions in midair during the phase immediately after your jump.
+    For example, you can jump into the air during the \glossterm{movement phase} and act in midair during the \glossterm{action phase}.
+    If an insufficiently long jump would cause you to fall into a gap, you can attempt to stop your fall (see \pcref{Stop Fall}) if you can reach the wall.
+
+    \subsection{High Jump}
+        As part of movement, you can make a Jump check to jump vertically.
+        Your maximum height is equal to half of your Jump check result.
+        If you have movement remaining, you can move up to five feet horizontally at the end of your jump, allowing you to jump onto ledges and similar objects.
 
     \subsection{Mitigate Fall}
         As you hit the ground after a fall, you can make an Jump check to reduce falling damage.
         A \glossterm{difficulty rating} 5 check allows you to treat a fall as if it were 10 feet shorter.
-        For every 10 points by which you beat that \glossterm{difficulty rating}, you can reduce the falling damage by 10 additional feet.
+        For every 5 points by which you beat that \glossterm{difficulty rating}, you can reduce the falling damage by 10 additional feet.
         You do not need a running start to use this ability.
 
-    \subsection{Leap}\label{Leap}
-        As part of movement, you can make a Jump check to jump.
-        You move forward any number of feet, up to a maximum equal to one quarter of your land speed \add your Jump check result.
-        Your maximum height must be no greater than half of your Jump check result, and at least equal to a quarter of your forward distance travelled.
-        For example, if you have a land speed of 30 feet and you get a Jump check result of 20, you can move forward a maximum of 25 feet.
-        If you instead jump forward twenty feet, your maximum height must be between 5 and 10 feet.
+    \subsection{Long Jump}\label{Leap}
+        As part of movement, you can make a Jump check to jump forward.
+        You move forward any number of feet, up to a maximum equal to your Jump check result.
+        Your maximum height during the jump must be no greater than half of your Jump check result, and no less than a quarter of your forward distance travelled.
 
         You always reach your maximum height at the midpoint of the jump.
         However, you can interrupt your leap before travelling the full horizontal distance.
@@ -936,19 +947,15 @@ This chapter describes each skill, including common uses for those skills.
         Making such a leap would require a Jump check result of 10.
         When you reach the rope, you can stop your movement there, ignoring the forward motion which would make you travel the full ten feet.
 
-        When leaping, your movement may not be stopped by hitting the ground after travelling the normal distance, such as if you jump off of a ledge.
-        In that case, you move one quarter of your jump distance farther forward as you fall before your fall becomes entirely downward.
-        If an insufficiently long jump would cause you to fall into a gap, you can attempt to stop your fall (see \pcref{Stop Fall}) if you can reach the wall.
-
     \subsection{Rebounding Leap}\label{Rebounding Leap}
-        While in midair, if you make contact with a solid object or \glossterm{ally} that can support your weight, you can jump off of it, as the \textit{leap} ability.
-        You are not considered to have a running start.
-        In addition, you take a \minus5 penalty to the check (in addition to the penalty for not having a running start), because rebounding off of an object in midair is difficult.
-        You must travel at least 5 feet in the air between each rebounding jump.
+        While in midair, if you make contact with a solid object or \glossterm{ally} that can support your weight, you can jump off of it with the \textit{high jump} or \textit{long jump} abilities.
+        You take a \minus5 penalty to the check.
+        If your check result is 5 or less, your jump fails, you become \prone, and you cannot use this ability again until you land on solid ground.
+        You must travel at least 5 feet in the air between each successful rebounding jump.
 
     \subsection{Share Impact}
         As a standard action, you can make a precise leap to land on an enemy, forcing them to share your falling damage.
-        This functions like the \textit{leap} ability, except that you also make an attack vs. Reflex against one creature in a space at the end of your motion, including both your initial jump and your fall afterwards (if any).
+        This functions like the \textit{long jump} ability, except that you also make an attack vs. Reflex against one creature in a space at the end of your motion, including both your initial jump and your fall afterwards (if any).
         Your \glossterm{accuracy} is equal to your Jump skill.
         On a hit, the target takes half of the \glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
         This does not reduce the falling damage you take, and you cannot combine this ability with the \textit{mitigate fall} ability to reduce your falling damage.
