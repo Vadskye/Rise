@@ -336,7 +336,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-         You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance}.
+         You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
 
                 ",
         },
@@ -365,7 +365,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-         The resistance bonus from your \textit{stalwart resilience} ability increases to three times your rank in this archetype.
+         The resistance bonus from your \textit{stalwart resilience} ability increases to four times your rank in this archetype.
 
                 ",
         },
