@@ -63,7 +63,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to Fortitude defense.
+                You gain a \plus2 bonus to your Fortitude defense.
                 In addition, you are immune to poisons.
             ",
         },
@@ -148,11 +148,11 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         \begin{durationability}{Mage Armor}[Duration]
             \rankline
             You create a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
+            This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
             It also provides a bonus to \glossterm{damage resistance} equal to your rank in this archetype.
 
             You can also use a \glossterm{free hand} to wield the barrier as a shield.
-            This functions like a buckler, granting you a \plus1 bonus to Armor defense, except that you do not need to be proficient with light armor.
+            This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
             Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
 
             This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
@@ -552,10 +552,10 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
             \subcf{Illusion} You gain a \plus1 bonus to \glossterm{accuracy}.
 
-            \subcf{Transmutation} You gain a \plus2 bonus to Fortitude, Reflex, or Mental defense.
+            \subcf{Transmutation} You gain a \plus2 bonus to your Fortitude, Reflex, or Mental defense.
             You can change the defense this bonus applies to as a \glossterm{minor action}.
 
-            \subcf{Necromancy} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
+            \subcf{Necromancy} You gain a bonus equal to twice your rank in this archetype to your maximum \glossterm{hit points}.
             In addition, you gain a \plus1 bonus to Fortitude defense.
         }
 
@@ -601,7 +601,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
             \subcf{Transmutation} The defense bonus increases to \plus3.
 
-            \subcf{Necromancy} The hit point bonus increases to five times your rank in this archetype.
+            \subcf{Necromancy} The hit point bonus increases to three times your rank in this archetype.
             In addition, the Fortitude bonus increases to \plus2.
         }
 
@@ -643,7 +643,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             \subcf{Transmutation} The defense bonus increases to \plus4.
             In addition, you can change which defense the bonus applies to as a \glossterm{free action}.
 
-            \subcf{Necromancy} The hit point bonus increases to seven times your rank in this archetype.
+            \subcf{Necromancy} The hit point bonus increases to five times your rank in this archetype.
             In addition, the Fortitude bonus increases to \plus3.
         }
                 ",
