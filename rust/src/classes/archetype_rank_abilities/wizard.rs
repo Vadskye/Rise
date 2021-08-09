@@ -144,22 +144,21 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You can use the \textit{mage armor} ability as a standard action.
-        \begin{durationability}{Mage Armor}[Duration]
-            \rankline
-            You create a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-            It also provides a bonus to \glossterm{damage resistance} equal to your rank in this archetype.
+                You can use the \textit{mage armor} ability as a standard action.
+                \begin{durationability}{Mage Armor}[Duration]
+                    \rankline
+                    You create a translucent suit of magical armor on your body and over your hands.
+                    This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
+                    It also provides a bonus to \glossterm{damage resistance} equal to twice your rank in this archetype (minimum 1).
 
-            You can also use a \glossterm{free hand} to wield the barrier as a shield.
-            This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
-            Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
+                    You can also use a \glossterm{free hand} to wield the barrier as a shield.
+                    This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
+                    Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
 
-            This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
-            In addition, it is automatically dismissed if you wear body armor.
-        \end{durationability}
-
-                ",
+                    This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
+                    In addition, it is automatically dismissed if you wear other body armor of any kind.
+                \end{durationability}
+            ",
         },
         RankAbility {
             name: "Spellcasting",
@@ -212,11 +211,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-        
-        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus3.
-        In addition, its bonus to \glossterm{damage resistance} increases to twice your rank in this archetype.
-
-                ",
+                The damage resistance bonus from your \textit{mage armor} ability increases to three times your rank in this archetype.
+            ",
         },
         RankAbility {
             name: "Spell Rank",
@@ -261,11 +257,9 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-        
-        The defense bonus from the body armor created by your \textit{mage armor} ability increases to \plus4.
-        In addition, its bonus to \glossterm{damage resistance} increases to three times times your rank in this archetype.
-
-                ",
+                The damage resistance bonus from your \textit{mage armor} ability increases to four times your rank in this archetype.
+                In addition, the defense bonus from the body armor increases to \plus4.
+            ",
         },
         RankAbility {
             name: "Spell Rank",
@@ -544,7 +538,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
          You gain an ability based on your chosen school.
         {
-            \subcf{Abjuration} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance}.
+            \subcf{Abjuration} You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
 
             \subcf{Conjuration} You double the \glossterm{range} of arcane spells you cast.
 
@@ -555,7 +549,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             \subcf{Transmutation} You gain a \plus2 bonus to your Fortitude, Reflex, or Mental defense.
             You can change the defense this bonus applies to as a \glossterm{minor action}.
 
-            \subcf{Necromancy} You gain a bonus equal to twice your rank in this archetype to your maximum \glossterm{hit points}.
+            \subcf{Necromancy} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
             In addition, you gain a \plus1 bonus to Fortitude defense.
         }
 
@@ -586,9 +580,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
          Your understanding of your chosen school improves.
         {
-            % it's normally impossible to get 3x rank DR at rank 4 - is this too early?
-            % generally this gives bonuses that wizards can't normally access due to the sphere limitations, so it might be ok
-            \subcf{Abjuration} The bonus to damage resistance increases to three times your rank in this archetype.
+            \subcf{Abjuration} The bonus to damage resistance increases to four times your rank in this archetype.
 
             \subcf{Conjuration} The range improvement increases to triple your range.
 
@@ -601,7 +593,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
             \subcf{Transmutation} The defense bonus increases to \plus3.
 
-            \subcf{Necromancy} The hit point bonus increases to three times your rank in this archetype.
+            \subcf{Necromancy} The hit point bonus increases to four times your rank in this archetype.
             In addition, the Fortitude bonus increases to \plus2.
         }
 
@@ -632,7 +624,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
          Your understanding of your chosen school improves further.
         {
-            \subcf{Abjuration} The bonus to damage resistance increases to four times your rank in this archetype.
+            \subcf{Abjuration} The bonus to damage resistance increases to five times your rank in this archetype.
 
             \subcf{Conjuration} The range improvement increases to quadruple your range.
 
