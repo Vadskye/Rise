@@ -7,7 +7,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-                You gain a bonus equal to your rank in this archetype to your \glossterm{damage resistance} (minimum 1).
+                You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (minimum 1).
             ",
         },
         RankAbility {
@@ -89,7 +89,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                The bonus from your \textit{fiendish resistance} ability increases to twice your rank in this archetype.
+                The bonus from your \textit{fiendish resistance} ability increases to three times your rank in this archetype.
             ",
         },
         RankAbility {
@@ -618,7 +618,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
 
             \subcf{Warning Whispers} You are never \unaware or \partiallyunaware.
 
-            \subcf{Whispers of the Mighty} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance}.
+            \subcf{Whispers of the Mighty} You gain a \plus1 bonus to \glossterm{vital rolls}.
         }
 
                 ",

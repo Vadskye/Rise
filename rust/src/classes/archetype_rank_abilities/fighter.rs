@@ -193,7 +193,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a bonus equal to your rank in this archetype to your \glossterm{hit points} (minimum 1).
+                You gain a bonus equal to twice your rank in this archetype to your \glossterm{hit points} (minimum 1).
             ",
         },
         RankAbility {
@@ -301,7 +301,7 @@ This is called a \glossterm{glancing blow}.
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{martial expertise} ability increases to twice your rank in this archetype.
+                The bonus from your \textit{martial expertise} ability increases to three times your rank in this archetype.
             ",
         },
         RankAbility {

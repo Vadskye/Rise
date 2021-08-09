@@ -225,18 +225,15 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-        
-        While you are not wearing other body armor, you gain a ki barrier around your body.
-        This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-        It also provides a bonus to \glossterm{damage resistance} equal to twice your rank in this archetype.
-        The armor has no \glossterm{encumbrance}.
+                While you are not wearing other body armor, you gain a ki barrier around your body.
+                This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
+                It also provides a bonus to \glossterm{damage resistance} equal to three times your rank in this archetype (minimum 1).
+                The armor has no \glossterm{encumbrance}.
 
-            You can also use a \glossterm{free hand} to wield the barrier as a shield.
-            This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
-            Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
-
-
-                ",
+                You can also use a \glossterm{free hand} to wield the barrier as a shield.
+                This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
+                Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
+            ",
         },
         RankAbility {
             name: "Ki Energy",
@@ -403,11 +400,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-         
-        The defense bonus from the body armor created by your \textit{ki barrier} ability increases to \plus3.
-        In addition, its bonus to \glossterm{damage resistance} increases to three times your rank in this archetype.
-
-                ",
+                The damage resistance bonus from your \textit{ki barrier} ability increases to four times your rank in this archetype.
+                In addition, the defense bonus from the body armor increases to \plus3.
+            ",
         },
         RankAbility {
             name: "Ki Power",
@@ -433,8 +428,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                The defense bonus from the body armor created by your \textit{ki barrier} ability increases to \plus4.
-                In addition, its bonus to \glossterm{damage resistance} increases to four times your rank in this archetype.
+                The damage resistance bonus from your \textit{ki barrier} ability increases to five times your rank in this archetype.
+                In addition, the defense bonus from the body armor increases to \plus4.
             ",
         },
         RankAbility {
