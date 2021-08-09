@@ -7,10 +7,8 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You gain a bonus equal to your rank in this archetype to your \glossterm{damage resistance}.
-
-
-                ",
+                You gain a bonus equal to your rank in this archetype to your \glossterm{damage resistance} (minimum 1).
+            ",
         },
         RankAbility {
             name: "Abyssal Blast",
@@ -49,7 +47,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                If you do not have access to pact magic, you gain a +2 bonus to Mental defense and a +1 bonus to your \glossterm{fatigue tolerance}.
+                If you do not have access to pact magic, you gain a +2 bonus to your Mental defense and a +1 bonus to your \glossterm{fatigue tolerance}.
             ",
         },
         RankAbility {
@@ -149,7 +147,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         Each secret grants great power at a cost.
         {
             \parhead{Secret of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace of armor around you.
-            This functions like body armor that provides a \plus4 bonus to Armor defense and has no \glossterm{encumbrance}.
+            This functions like body armor that provides a \plus4 bonus to your Armor defense and has no \glossterm{encumbrance}.
             It also provides a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
             However, the \textit{recover} action causes you to regain half as many hit points as it normally would.
 
@@ -501,11 +499,11 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you \glossterm{briefly} gain a \plus1 bonus to \glossterm{accuracy} against that creature.
             As normal, this bonus does not stack with itself, even if you miss the same creature multiple times.
 
-            \subcf{Sycophantic Whispers} You gain a \plus2 bonus to Mental defense.
+            \subcf{Sycophantic Whispers} You gain a \plus2 bonus to your Mental defense.
 
             \subcf{Warning Whispers} You gain a \plus2 bonus to \glossterm{initiative} checks and Reflex defense.
 
-            \subcf{Whispers of the Mighty} You gain a \plus2 bonus to Fortitude defense.
+            \subcf{Whispers of the Mighty} You gain a \plus2 bonus to your Fortitude defense.
         }
 
 

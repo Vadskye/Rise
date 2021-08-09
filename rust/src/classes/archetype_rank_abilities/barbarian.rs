@@ -413,7 +413,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
+                You gain a \plus2 bonus to your Reflex defense and \glossterm{initiative} checks.
             ",
         },
         RankAbility {
@@ -425,7 +425,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 Each totem animal grants you abilities that are associated with that animal.
 
                 \subcf{Bear} You gain a bonus equal to twice your rank in this archetype to your maximum \glossterm{hit points}.
-                In addition, you gain a \plus1 bonus to Fortitude defense.
+                In addition, you gain a \plus1 bonus to your Fortitude defense.
 
                 \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it into any space adjacent to you.
 

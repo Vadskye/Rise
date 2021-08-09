@@ -159,7 +159,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 For the duration of your performance, the subject gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes}.
 
                 \rankline
-                \rank{3} The subject also gains a \plus2 bonus to Reflex defense.
+                \rank{3} The subject also gains a \plus2 bonus to its Reflex defense.
                 \rank{5} The speed bonus increases to \plus10 feet.
                 \rank{7} The bonus to Reflex defense increases to \plus4.
             \end{durationability}
@@ -221,7 +221,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 For the duration of your performance, the subject gains a \plus1 bonus to \glossterm{accuracy}.
 
                 \rankline
-                \rank{3} The subject also gains a \plus2 bonus to Mental defense.
+                \rank{3} The subject also gains a \plus2 bonus to its Mental defense.
                 \rank{5} The accuracy bonus increases to \plus2.
                 \rank{7} The bonus to Mental defense increases to \plus4.
             \end{durationability}
@@ -231,7 +231,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \par \noindent Usage time: One \glossterm{minor action}.
                 \rankline
                 Choose one \glossterm{ally} within \medrange.
-                For the duration of your performance, the subject gains a \plus1 bonus to Armor and Reflex defenses.
+                For the duration of your performance, the subject gains a \plus1 bonus to its Armor and Reflex defenses.
 
                 \rankline
                 \rank{3} The bonus applies to all defenses.

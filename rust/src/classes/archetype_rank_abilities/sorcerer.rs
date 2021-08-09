@@ -29,11 +29,11 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         \begin{durationability}{Mage Armor}[Duration]
             \rankline
             You create a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
+            This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
             It also provides a bonus to \glossterm{damage resistance} equal to your rank in this archetype.
 
             You can also use a \glossterm{free hand} to wield the barrier as a shield.
-            This functions like a buckler, granting you a \plus1 bonus to Armor defense, except that you do not need to be proficient with light armor.
+            This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
             Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
 
             This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.

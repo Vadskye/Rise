@@ -119,7 +119,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \begin{itemize}
                     \item Air: You gain a \glossterm{fly speed} equal to half the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
                     At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
-                    \item Earth: The bonus to Fortitude defense increases to \plus4.
+                    \item Earth: The bonus to your Fortitude defense increases to \plus3.
                     \item Fire: You treat all fire damage you take as being \glossterm{environmental damage}.
                     \item Water: You suffer no penalties for fighting underwater, and your swim speed increases to be equal to the base speed for your size.
                 \end{itemize}
@@ -344,7 +344,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You gain a \plus2 bonus to Fortitude, Reflex, or Mental defense.
+         You gain a \plus2 bonus to your Fortitude, Reflex, or Mental defense.
         You can change the defense this bonus applies to as a \glossterm{standard action}.
 
                 ",
@@ -375,7 +375,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         {
             \begin{durationability}{Form of the Bear}[Duration]
                 \rankline
-                You gain a \plus2 bonus to Fortitude defense.
+                You gain a \plus2 bonus to your Fortitude defense.
                 In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
 
                 \rankline
@@ -475,7 +475,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             %     \rankline
             %     As long as you have any remaining resistance to physical damage, you are both \glossterm{immobilized} and \glossterm{impervious} to \glossterm{physical damage}.
             %     \rankline
-            %     \rank{3} You also gain a \plus1 bonus to Armor defense.
+            %     \rank{3} You also gain a \plus1 bonus to your Armor defense.
             %     \rank{5} The resistance bonus increases to be equal to three times your rank in this archetype.
             %     \rank{7} The defense bonuse increases to \plus2.
             % \end{durationability}
@@ -534,9 +534,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 This prevents you from suffering penalties on your attacks, and also prevents creatures from using cover or concealment from plants to hide from you.
 
                 \rankline
-                \rank{3} You gain a \plus1 bonus to Armor and Reflex defenses while standing in \glossterm{undergrowth}.
+                \rank{3} You gain a \plus1 bonus to your Armor and Reflex defenses while standing in \glossterm{undergrowth}.
                 \rank{5} The movement penalties from \glossterm{undergrowth} are doubled for enemies within a \areahuge radius emanation from you.
-                \rank{7} The bonus to Armor and Reflex defenses increases to \plus2.
+                \rank{7} The bonus to your Armor and Reflex defenses increases to \plus2.
             \end{durationability}
         }
 

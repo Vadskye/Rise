@@ -193,7 +193,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         You gain a \plus1 bonus to Armor defense.
+         You gain a \plus1 bonus to your Armor defense.
                 ",
         },
         RankAbility {
@@ -364,7 +364,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             \abilitytag{Swift}
             \rankline
             Choose an \glossterm{ally} adjacent to you.
-            It gains a \plus2 bonus to Armor defense until the end of the round.
+            It gains a \plus2 bonus to its Armor defense until the end of the round.
             Because this ability has the \abilitytag{Swift} tag, this bonus applies against attacks made in the current phase.
 
             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty rating} 5 Awareness check.
@@ -496,7 +496,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
             \begin{durationability}{Duck and Cover}[\abilitytag{Sustain} (free)]
                 \rankline
-                Each target gains a \plus1 bonus to Armor defense against non-\glossterm{melee} attacks.
+                Each target gains a \plus1 bonus to its Armor defense against non-\glossterm{melee} attacks.
 
                 \rankline
                 \rank{3} The bonus increases to \plus2.
@@ -506,10 +506,10 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
             \begin{durationability}{Group Up}[\abilitytag{Sustain} (free)]
                 \rankline
-                Each target that is adjacent to at least one other target gains a \plus1 bonus to Armor defense.
+                Each target that is adjacent to at least one other target gains a \plus1 bonus to its Armor defense.
 
                 \rankline
-                \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to Mental defense.
+                \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to its Mental defense.
                 \rank{5} The Armor defense bonus increases to \plus2.
                 \rank{7} The Mental defense bonus increases to \plus4.
             \end{durationability}
@@ -537,20 +537,20 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             \begin{durationability}{Keep Moving}[\abilitytag{Sustain} (free)]
                 \rankline
                 Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
-                    gains a \plus1 bonus to Armor defense until the end of the round.
+                    gains a \plus1 bonus to its Armor defense until the end of the round.
 
                 \rankline
-                \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to Reflex defense.
+                \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to its Reflex defense.
                 \rank{5} The Armor defense bonus increases to \plus2.
                 \rank{7} The Reflex defense bonus increases to \plus4.
             \end{durationability}
 
             \begin{durationability}{Stand Your Ground}[\abilitytag{Sustain} (free)]
                 \rankline
-                Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to Armor defense until its location changes.
+                Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to its Armor defense until its location changes.
 
                 \rankline
-                \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to Fortitude defense.
+                \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to its Fortitude defense.
                 \rank{5} The Armor defense bonus increases to \plus2.
                 \rank{7} The Fortitude defense bonus increases to \plus4.
             \end{durationability}
