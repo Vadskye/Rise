@@ -335,7 +335,7 @@ impl Class {
                 Defense::Armor => 0,
                 Defense::Fortitude => 3,
                 Defense::Reflex => 5,
-                Defense::Mental => 8,
+                Defense::Mental => 7,
             },
             Self::Warlock => match defense {
                 Defense::Armor => 0,
@@ -347,7 +347,7 @@ impl Class {
                 Defense::Armor => 0,
                 Defense::Fortitude => 3,
                 Defense::Reflex => 5,
-                Defense::Mental => 8,
+                Defense::Mental => 7,
             },
         }
     }
