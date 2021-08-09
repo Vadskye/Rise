@@ -282,6 +282,7 @@ export const fabrication: MysticSphere = {
 
         If you create a non-crossbow projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
         The projectiles disappear after the attack is complete.
+        Any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your magical \\glossterm{power} to determine their damage instead of your \\glossterm{mundane} power.
 
         % Strange duration for a spell
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
@@ -289,8 +290,8 @@ export const fabrication: MysticSphere = {
       rank: 1,
       scaling: {
         3: `You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with \\glossterm{strikes} using the weapon.`,
-        5: `You gain a +4 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using the weapon.`,
-        7: `The accuracy bonus increases to +2, and the bonus to power increases to +8.`,
+        5: `The accuracy bonus increases to +2.`,
+        7: `The accuracy bonus increases to +3.`,
       },
       tags: ["Manifestation"],
       type: "Duration",
