@@ -302,7 +302,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         You gain a \plus1 bonus to Fortitude defense and Mental defense.
+         You gain a \plus1 bonus to your Fortitude defense and Mental defense.
 
 
                 ",

@@ -477,7 +477,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-         Your \glossterm{allies} who can hear you in a fight gain a \plus2 bonus to Mental defense.
+         Your \glossterm{allies} who can hear you in a fight gain a \plus2 bonus to your Mental defense.
         You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
 
                 ",
