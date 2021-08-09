@@ -121,6 +121,25 @@ export const bless: MysticSphere = {
     },
 
     {
+      name: "Shielding Boon",
+
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        If the subject takes the \\textit<total defense> action during the current phase, it gains an additional +2 bonus to all defenses until the end of the round.
+        Because this ability has the \\abilitytag{Swift} tag, it affects attacks against the subject during the current phase.
+        If you cast this spell on yourself, it affects the first time you use the \\textit<total defense> ability before the end of the next round.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The bonus increases to +3.`,
+        5: `The bonus increases to +4.`,
+        7: `The bonus increases to +5.`,
+      },
+      tags: ["Swift"],
+      type: "Duration",
+    },
+    
+    {
       name: "Boon of Precision",
 
       effect: `
