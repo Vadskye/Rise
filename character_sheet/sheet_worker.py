@@ -121,12 +121,8 @@ def attribute_change(a):
                 : {a}_point_buy;
             starting += {sum_variables(misc)};
             var scaling = 0;
-            if (starting >= 2 && starting < 5) {{
+            if (starting >= 2) {{
                 scaling = Math.floor((starting-1)*0.25*level);
-            }} else if (starting >= 5 && starting < 8) {{
-                scaling = Math.floor((starting-1)*0.25*(level - 1));
-            }} else if (starting >= 8) {{
-                scaling = Math.floor((starting-1)*0.25*(level - 2));
             }}
 
             setAttrs({{
