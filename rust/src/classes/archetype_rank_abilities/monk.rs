@@ -227,12 +227,12 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
         
         While you are not wearing other body armor, you gain a ki barrier around your body.
-        This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
+        This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
         It also provides a bonus to \glossterm{damage resistance} equal to twice your rank in this archetype.
         The armor has no \glossterm{encumbrance}.
 
             You can also use a \glossterm{free hand} to wield the barrier as a shield.
-            This functions like a buckler, granting you a \plus1 bonus to Armor defense, except that you do not need to be proficient with light armor.
+            This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
             Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
 
 
