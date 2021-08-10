@@ -417,7 +417,7 @@ impl ClassArchetype {
         let typical = match self {
             // Barbarian
             Self::BattleforgedResilience => r"
-                If you want to quickly create a character based on the eagle totem from this archetype, make the following choices:
+                If you want to quickly create a character based on this archetype, make the following choices:
                 \parhead{Species} Dwarf.
                 \parhead{Attributes} 2 Str, 0 Dex, 4 Con, 0 Int, 2 Per, 1 Wil (after species modifiers).
                 \parhead{Class} Barbarian.
@@ -449,7 +449,7 @@ impl ClassArchetype {
                 On the other hand, if your foes try to ignore you after realizing how durable you are, use aggressive maneuvers like \maneuver{reckless strike} to make the most of their inattention, or force them to engage with you using maneuvers like \maneuver{challenging strike}.
             ",
             Self::Battlerager => r"
-                If you want to quickly create a character based on the eagle totem from this archetype, make the following choices:
+                If you want to quickly create a character based on this archetype, make the following choices:
                 \parhead{Species} Half-orc.
                 \parhead{Attributes} 4 Str, 2 Dex, 2 Con, -1 Int, 2 Per, 0 Wil (after species modifiers).
                 \parhead{Class} Barbarian.
@@ -480,7 +480,7 @@ impl ClassArchetype {
                 Your maneuvers help you deal with high-Armor enemies and enemy swarms, and give you the ability to sacrifice most of your statistics other than damage in exchange for more damage.
             ",
             Self::OutlandSavage => r"
-                If you want to quickly create a character based on the eagle totem from this archetype, make the following choices:
+                If you want to quickly create a character based on this archetype, make the following choices:
                 \parhead{Species} Half-orc.
                 \parhead{Attributes} 5 Str, 2 Dex, 1 Con, -1 Int, 0 Per, 1 Wil (after species modifiers).
                 \parhead{Class} Barbarian.
@@ -514,7 +514,7 @@ impl ClassArchetype {
                 In that case, consider choosing bear totem or shark totem instead of wolf totem.
             ",
             Self::PrimalWarrior => r"
-                If you want to quickly create a character based on the eagle totem from this archetype, make the following choices:
+                If you want to quickly create a character based on this archetype, make the following choices:
                 \parhead{Species} Human.
                 \parhead{Attributes} 2 Str, 2 Dex, 2 Con, 2 Int, 2 Per, 0 Wil.
                 \parhead{Class} Barbarian.
