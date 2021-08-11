@@ -34,19 +34,26 @@ def formatChangeString(varName):
         return 'change:' + varName
 
 
-def js_wrapper(variables, function_body, boolean_variables=[], string_variables=[], include_level=True):
+def js_wrapper(
+        variables,
+        function_body,
+        boolean_variables=[],
+        string_variables=[],
+        no_listen_variables=[],
+        include_level=True
+):
     # not everything actually depends on level, but it's convenient to make
     # everything recalculate when level changes
     if include_level:
         variables = variables + ["level"]
     all_unique_variables = sorted(list(set(variables + boolean_variables + string_variables)))
     change_string = " ".join([formatChangeString(var) for var in all_unique_variables])
-    get_attrs_string = ", ".join([f'"{var}"' for var in all_unique_variables])
+    get_attrs_string = ", ".join([f'"{var}"' for var in all_unique_variables + no_listen_variables])
     set_variables_string = (
         ";\n    ".join(
             [
                 f'var {stringify_variable_name(var)} = Number(v["{var}"] || 0)'
-                for var in variables
+                for var in variables + no_listen_variables
             ] +
             [
                 f'var {stringify_variable_name(var)} = v["{var}"] === "on" ? true : false'
@@ -517,8 +524,15 @@ def focus_penalty():
 def hit_points():
     misc = get_misc_variables("hit_points", 4)
     return js_wrapper(
-        ["level", "constitution", "challenge_rating", "hit_points_vital_wound_multiplier", *misc],
-        f"""
+        [
+            "level",
+            "constitution",
+            "challenge_rating",
+            "hit_points_vital_wound_multiplier",
+            *misc
+        ],
+        no_listen_variables=["hit_points", "hit_points_maximum"],
+        function_body=f"""
             var hit_points_from_level = {{
                 '-1': 9  ,
                 0:    10 ,
@@ -557,7 +571,7 @@ def hit_points():
                 hit_points_from_level = Math.floor(hit_points_from_level * 1.5);
             }}
 
-            var hit_points = hit_points_from_level + constitution * 2 + {sum_variables(misc)};
+            var new_hit_points = hit_points_from_level + constitution * 2 + {sum_variables(misc)};
             var cr_multiplier = {{
                 0: 1,
                 0.5: 0.5,
@@ -566,13 +580,18 @@ def hit_points():
                 3: 2,
                 4: 3,
             }}[challenge_rating || 0];
-            hit_points = Math.floor(hit_points * cr_multiplier * (hit_points_vital_wound_multiplier || 1))
-            setAttrs({{
-                hit_points,
+            new_hit_points = Math.floor(new_hit_points * cr_multiplier * (hit_points_vital_wound_multiplier || 1))
+
+            let attrs = {{
                 hit_points_from_level,
-                hit_points_max: hit_points,
-                hit_points_maximum: hit_points,
-            }});
+                hit_points_max: new_hit_points,
+                hit_points_maximum: new_hit_points,
+            }};
+            let should_set_current_hp = (new_hit_points < hit_points) || (hit_points === hit_points_maximum) || !hit_points_maximum;
+            if (should_set_current_hp) {{
+                attrs.hit_points = new_hit_points;
+            }}
+            setAttrs(attrs);
         """,
     )
 
@@ -673,7 +692,8 @@ def damage_resistance():
             "damage_resistance_bonus_vital_wound_multiplier",
             *misc,
         ],
-        f"""
+        no_listen_variables=["damage_resistance", "damage_resistance_maximum"],
+        function_body=f"""
             var resistance_from_level = {{
                 0:    0 ,
                 1:    2 ,
@@ -718,17 +738,22 @@ def damage_resistance():
                 3: 2,
                 4: 4,
             }}[challenge_rating || 0];
-            const damage_resistance = Math.floor(
+            const new_damage_resistance = Math.floor(
                 (
                     resistance_from_level + constitution + damage_resistance_bonus_armor + {sum_variables(misc)}
                 ) * cr_multiplier * (damage_resistance_bonus_vital_wound_multiplier || 1)
             );
-            setAttrs({{
-                damage_resistance,
+
+            let attrs = {{
                 damage_resistance_from_level: resistance_from_level,
-                damage_resistance_max: damage_resistance,
-                damage_resistance_maximum: damage_resistance,
-            }});
+                damage_resistance_max: new_damage_resistance,
+                damage_resistance_maximum: new_damage_resistance,
+            }};
+            let should_set_current_dr = (new_damage_resistance < damage_resistance) || (damage_resistance === damage_resistance_maximum) || !damage_resistance_maximum;
+            if (should_set_current_dr) {{
+                attrs.damage_resistance = new_damage_resistance;
+            }}
+            setAttrs(attrs);
         """,
     )
 
