@@ -251,9 +251,9 @@ def statistics_header(destination):
             flex_row(
                 {"class": "all-statistics"},
                 [
-                    core_statistics(destination),
+                    core_statistics(),
                     defenses(),
-                    movement(),
+                    movement(destination),
                 ],
             )
         ]
@@ -362,7 +362,7 @@ def resistances():
     )
 
 
-def core_statistics(destination):
+def core_statistics():
     return flex_col(
         {"class": "core-statistics"},
         [
@@ -433,6 +433,37 @@ def core_statistics(destination):
                     ],
                 ),
             ),
+            labeled_number_input(
+                "Accuracy",
+                input_attributes={
+                    "disabled": True,
+                    "name": f"accuracy_display",
+                    "value": "@{accuracy}",
+                },
+            ),
+        ],
+    )
+
+
+def movement(destination):
+    return flex_col(
+        {"class": "movement"},
+        [
+            flex_wrapper(div({"class": "section-header"}, "Movement")),
+            labeled_number_input(
+                "Land",
+                input_attributes={
+                    "disabled": True,
+                    "name": f"land_speed_display",
+                    "value": "@{land_speed}",
+                },
+            ),
+            *[
+                freeform_number_input(
+                    text_input_attributes={"name": f"movement_speed_{i}_name"}, number_input_attributes={"name": f"movement_speed_{i}_value"},
+                )
+                for i in range(2)
+            ],
             (
                 sidelabel(
                     "Initiative",
@@ -469,29 +500,6 @@ def core_statistics(destination):
                     ],
                 )
             ),
-        ],
-    )
-
-
-def movement():
-    return flex_col(
-        {"class": "movement"},
-        [
-            flex_wrapper(div({"class": "section-header"}, "Movement")),
-            labeled_number_input(
-                "Land",
-                input_attributes={
-                    "disabled": True,
-                    "name": f"land_speed_display",
-                    "value": "@{land_speed}",
-                },
-            ),
-            *[
-                freeform_number_input(
-                    text_input_attributes={"name": f"movement_speed_{i}_name"}, number_input_attributes={"name": f"movement_speed_{i}_value"},
-                )
-                for i in range(3)
-            ],
         ],
     )
 
