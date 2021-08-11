@@ -60,9 +60,9 @@ impl CreatureType {
             },
             Self::Humanoid => match defense {
                 Defense::Armor => 5,
-                Defense::Fortitude => 4,
+                Defense::Fortitude => 5,
                 Defense::Reflex => 5,
-                Defense::Mental => 6,
+                Defense::Mental => 5,
             },
             Self::MagicalBeast => match defense {
                 Defense::Armor => 5,
