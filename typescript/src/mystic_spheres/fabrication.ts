@@ -289,9 +289,9 @@ export const fabrication: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with \\glossterm{strikes} using the weapon.`,
-        5: `The accuracy bonus increases to +2.`,
-        7: `The accuracy bonus increases to +3.`,
+        3: `You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using the weapon.`,
+        5: `The power bonus increases to +4.`,
+        7: `The power bonus increases to +8.`,
       },
       tags: ["Manifestation"],
       type: "Duration",
@@ -313,11 +313,11 @@ export const fabrication: MysticSphere = {
         3: `
           The item created is magically enhanced.
           A weapon grants a +2 \\glossterm{magic bonus} to the wielder's \\glossterm{power},
-            and armor grants a +1 \\glossterm{magic bonus} to Armor defense.
+            and armor grants a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
           In addition, body armor can be made from any special material other than dragonhide, dragonscale, cold iron, and the pure versions of those materials.
         `,
-        5: `The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +2.`,
-        7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +3.`,
+        5: `The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +8.`,
+        7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +16.`,
       },
       tags: ['Manifestation'],
       type: "Attune (self)",
@@ -411,9 +411,9 @@ export const fabrication: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with any \\glossterm{strike} using ammunition created with this spell.`,
-        5: `The accuracy bonus increases to +2.`,
-        7: `The accuracy bonus increases to +3.`,
+        3: `You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with any \\glossterm{strike} using ammunition created with this spell.`,
+        5: `The power bonus increases to +4.`,
+        7: `The power bonus increases to +8.`,
       },
       tags: ["Manifestation", "Swift"],
       type: "Duration",

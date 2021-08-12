@@ -59,10 +59,9 @@ def generate_apparel():
             level=7,
             material_type="Bracers",
             description="""
-                You are proficient with bows.
-                In addition, you gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with ranged \\glossterm<strikes>.
+                You are proficient with bows, including exotic bows.
             """,
-            short_description="Grants bow proficiency, +1 ranged accuracy",
+            short_description="Grants exotic bow proficiency",
         ),
     ]
 
@@ -2052,46 +2051,13 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Ring of Protection",
-            level=7,
-            material_type="Ring",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
-            """,
-            short_description="Grants +1 non-Armor defenses",
-        ),
-        MagicItem(
-            name="Ring of Protection, Greater",
-            level=13,
-            material_type="Ring",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
-            """,
-            short_description="Grants +2 non-Armor defenses",
-        ),
-        MagicItem(
-            name="Ring of Protection, Supreme",
-            level=19,
-            material_type="Ring",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to Fortitude, Reflex, and Mental defense.
-            """,
-            short_description="Grants +3 non-Armor defenses",
-        ),
-    ]
-
-    apparel += [
-        MagicItem(
             name="Ring of Mastery",
             level=10,
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and all \\glossterm<defenses>.
-                In addition, you gain a +2 \\glossterm<magic bonus> to \\glossterm<power> and \\glossterm<damage resistance>.
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
+                In addition, you gain a \\plus2 \\glossterm<magic bonus> to \\glossterm<power>.
             """,
             short_description="Grants many small bonuses",
         ),
@@ -2101,8 +2067,8 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> and all \\glossterm<defenses>.
-                In addition, you gain a +4 \\glossterm<magic bonus> to \\glossterm<power> and \\glossterm<damage resistance>.
+                You gain a +8 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
+                In addition, you gain a \\plus4 \\glossterm<magic bonus> to \\glossterm<power>.
             """,
             short_description="Grants many bonuses",
         ),
@@ -2110,7 +2076,7 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Ring of Resistance",
+            name="Ring of Protection",
             # +2 level since ring is secondary for this effect
             level=6,
             tags=[],
@@ -2121,7 +2087,7 @@ def generate_apparel():
             short_description="Grants +4 damage resistance",
         ),
         MagicItem(
-            name="Ring of Resistance, Greater",
+            name="Ring of Protection, Greater",
             level=12,
             tags=[],
             material_type="Ring",
@@ -2131,7 +2097,7 @@ def generate_apparel():
             short_description="Grants +8 damage resistance",
         ),
         MagicItem(
-            name="Ring of Resistance, Supreme",
+            name="Ring of Protection, Supreme",
             level=18,
             tags=[],
             material_type="Ring",
@@ -2173,40 +2139,6 @@ def generate_apparel():
                 This belt functions like an \\mitem<anchoring belt>, except that the immunities apply even against critical hits.
             """,
             short_description="Protects you from all forced movement and teleportation attacks",
-        ),
-    ]
-
-    apparel += [
-        MagicItem(
-            name="Gloves of Precision",
-            # +2 levels since gloves are secondary for accuracy
-            level=6,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to accuracy.
-            """,
-            short_description="Grants +1 accuracy bonus",
-        ),
-        MagicItem(
-            name="Gloves of Precision, Greater",
-            level=12,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to accuracy.
-            """,
-            short_description="Grants +2 accuracy bonus",
-        ),
-        MagicItem(
-            name="Gloves of Precision, Supreme",
-            level=18,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to accuracy.
-            """,
-            short_description="Grants +3 accuracy bonus",
         ),
     ]
 

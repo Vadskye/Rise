@@ -533,13 +533,15 @@ export const thaumaturgy: MysticSphere = {
         This affects inspection of the spell itself by any means, such as with the Spellsense skill (see \\pcref{Spellsense}).
         However, it does not alter the mechanical effects of the spell in any way.
 
-        An observer can make a Spellsense check with a \\glossterm{difficulty rating} of 15 \\add your magical \\glossterm{power} to identify the spell's true nature.
+        An observer can make a Spellsense check with a \\glossterm{difficulty rating} of 15 \\add half your level to identify the spell's true nature.
         If the spell's effects depend on visual components, the spell may fail to work if the subject alters the spell's visuals too much.
       `,
-      rank: 2,
+      rank: 4,
       scaling: {
-        4: `You also gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with spells.`,
-        6: `The accuracy bonus increases to +2.`,
+        6: `
+          You can also alter your \\glossterm{verbal components} when casting spells.
+          You must still make the same amount of noise, but you can make any noise of your choosing instead of the spell's normal verbal components.
+        `,
       },
       type: "Attune (self)",
     },

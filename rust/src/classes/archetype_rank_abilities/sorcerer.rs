@@ -370,48 +370,36 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         None of your arcane spells have \glossterm{somatic components} or \glossterm{verbal components}.
-
-
-                ",
+                None of your arcane spells have \glossterm{somatic components} or \glossterm{verbal components}.
+            ",
         },
         RankAbility {
-            name: "Mystic Tolerance",
+            name: "Spell Absorption",
             is_magical: true,
             rank: 1,
             description: r"
-         You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance}.
+                Whenever another creature uses a spell to attack you, if that spell does not have the \glossterm{Attune} tag, you can choose to absorb its energy.
+                This does not reduce the spell's effect on you, but it grants you the ability to cast the spell.
+                When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
 
-                ",
+                Whenever you are attacked by a new spell, if you already have the ability to cast a spell with this ability, you choose whether to absorb the new spell or retain your currently absorbed spell.
+                When you take a \glossterm{long rest}, you lose the ability to cast any spells you have stored with this ability.
+            ",
         },
         RankAbility {
             name: "Personal Enhancement",
             is_magical: true,
             rank: 2,
             description: r"
-         You gain a \glossterm{magic bonus} equal to half your rank in this archetype to \glossterm{accuracy} and \glossterm{defenses}.
-        Because this is a magic bonus, it does not stack with other magic bonuses (see \pcref{Stacking Rules}).
-
-                ",
-        },
-        RankAbility {
-            name: "Spell Absorption",
-            is_magical: true,
-            rank: 3,
-            description: r"
-         Whenever another creature uses a spell to attack you, if that spell does not have the \glossterm{Attune} tag, you can choose to absorb its energy.
-        This does not reduce the spell's effect on you, but it grants you the ability to cast the spell.
-        When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
-
-        Whenever you are attacked by a new spell, if you already have the ability to cast a spell with this ability, you choose which spell you gain the ability to cast.
-        When you take a \glossterm{long rest}, you lose the ability to cast any spells you have stored with this ability.
-
-                ",
+                You gain a \glossterm{magic bonus} equal to twice your rank in this archetype to your \glossterm{hit points} and \glossterm{damage resistance}.
+                In addition, you gain a \glossterm{magic bonus} equal to your rank in this archetype to your \glossterm{power}.
+                Because this is a magic bonus, it does not stack with other magic bonuses (see \pcref{Stacking Rules}).
+            ",
         },
         RankAbility {
             name: "Implement Freedom",
             is_magical: true,
-            rank: 4,
+            rank: 3,
             description: r"
                 You can gain the benefits of one magical implement, such as a staff or wand, without having to hold it in your hands.
                 You must still have it on your person, such as in a pocket or strapped to your back, and you must still be attuned to it to gain its benefits.
@@ -419,31 +407,39 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Greater Mystic Tolerance",
+            name: "Greater Spell Absorption",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                You can retain up to two spells with your \glossterm{spell absorption} ability.
+                In addition, whenever you absorb a spell with that ability, you gain a +2 \glossterm{accuracy} bonus with that spell during the next round.
+            ",
+        },
+        RankAbility {
+            name: "Greater Personal Enhancement",
             is_magical: true,
             rank: 5,
             description: r"
-         The bonus from your \textit{mystic tolerance} ability increases to three times your rank in this archetype.
-
-                ",
-        },
-        RankAbility {
-            name: "Greater Spell Absorption",
-            is_magical: true,
-            rank: 6,
-            description: r"
-         You can retain up to two spells with your \glossterm{spell absorption} ability.
-
-                ",
+                The bonuses to hit points and damage resistance from your \textit{personal enhancement} ability increase to three times your rank in this archetype.
+            ",
         },
         RankAbility {
             name: "Greater Implement Freedom",
             is_magical: true,
-            rank: 7,
+            rank: 6,
             description: r"
                 You can use your \textit{implement freedom} ability to affect an additional magical implement.
                 In addition, you gain an additional \glossterm{attunement point}.
                 You can only use this attunement point to \glossterm{attune} to magic implements.
+            ",
+        },
+        RankAbility {
+            name: "Magic Absorption",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                You can absorb and retain any \glossterm{magical} attack with your \textit{spell absorption} ability, not just spells.
+                In addition, the accuracy bonus from your \textit{greater spell absorption} ability increases to +4.
             ",
         },
     ];

@@ -47,9 +47,9 @@ export const revelation: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You also gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with the chosen weapon group.`,
-        5: `The accuracy bonus increases to +2.`,
-        7: `The accuracy bonus increases to +3.`,
+        3: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using weapons from the chosen weapon group.`,
+        5: `The power bonus increases to +4.`,
+        7: `The power bonus increases to +8.`,
       },
       type: "Attune (self)",
     },
@@ -112,13 +112,13 @@ export const revelation: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with all attacks.
+        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +2.`,
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +8.`,
+        7: `The bonus increases to +16.`,
       },
       type: "Attune (self)",
     },
@@ -134,8 +134,8 @@ export const revelation: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: `The bonus increases to +2.`,
-        7: `The bonus increases to +3.`,
+        5: `The bonus increases to +4.`,
+        7: `The bonus increases to +8.`,
       },
       type: "Attune (self)",
     },
@@ -144,13 +144,13 @@ export const revelation: MysticSphere = {
       name: "Precognitive Defense",
 
       effect: `
-        You gain a +1 \\glossterm{magic bonus} to Armor defense and Reflex defense.
+        You gain a +2 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +2.`,
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +8.`,
+        7: `The bonus increases to +16.`,
       },
       type: "Attune (target)",
     },
@@ -166,8 +166,8 @@ export const revelation: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: `The bonuses increase to +2.`,
-        7: `The bonuses increase to +3.`,
+        5: `The bonuses increase to +4.`,
+        7: `The bonuses increase to +8.`,
       },
       type: "Attune (target)",
     },

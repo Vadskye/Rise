@@ -510,9 +510,9 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You also gain +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with the weapon.`,
-        5: `The power bonus increases to +4.`,
-        7: `The accuracy bonus increases to +2, and the power bonus increases to +8.`,
+        3: `The power bonus increases to +4.`,
+        5: `The power bonus increases to +8.`,
+        7: `The power bonus increases to +16.`,
       },
       type: "Attune (self)",
     },
