@@ -47,7 +47,7 @@ def generate_armor():
         ),
     ]
 
-    apparel += [
+    armor += [
         MagicItem(
             name="Armor of Health",
             level=4,
