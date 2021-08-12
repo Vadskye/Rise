@@ -230,13 +230,13 @@ export const chronomancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +5 foot \\glossterm{magic bonus} to speed with all of your \\glossterm{movement modes}, and a +1 \\glossterm{magic bonus} to Reflex defense.
+        You gain a +5 foot \\glossterm{magic bonus} to speed with all of your \\glossterm{movement modes}, and a +1 \\glossterm{magic bonus} to \\glossterm{initiative} checks.
       `,
       rank: 1,
       scaling: {
-        3: `The speed bonus increases to +10 feet, and the defense bonus increases to +2.`,
-        5: `The speed bonus increases to +15 feet, and the defense bonus increases to +3.`,
-        7: `The speed bonus increases to +20 feet, and the defense bonus increases to +4.`,
+        3: `The speed bonus increases to +10 feet, and the initiative bonus increases to +2.`,
+        5: `The speed bonus increases to +15 feet, and the initiative bonus increases to +3.`,
+        7: `The speed bonus increases to +20 feet, and the initiative bonus increases to +4.`,
       },
       type: "Attune (self)",
     },
@@ -251,8 +251,8 @@ export const chronomancy: MysticSphere = {
       },
       rank: 3,
       scaling: {
-        5: `The speed bonus increases to +10 feet, and the defense bonus increases to +2.`,
-        7: `The speed bonus increases to +15 feet, and the defense bonus increases to +3.`,
+        5: `The speed bonus increases to +10 feet, and the initiative bonus increases to +2.`,
+        7: `The speed bonus increases to +15 feet, and the initiative bonus increases to +3.`,
       },
       type: "Attune (target)",
     },
@@ -324,13 +324,13 @@ export const chronomancy: MysticSphere = {
       name: "Accelerated Reaction",
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to Reflex defense and \\glossterm{initiative} checks.
+        You gain a +3 \\glossterm{magic bonus} to \\glossterm{initiative} checks.
       `,
       rank: 1,
       scaling: {
-        3: `The bonuses increase to +3.`,
-        5: `The bonuses increase to +4.`,
-        7: `The bonuses increase to +5.`,
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
       },
       type: "Attune (self)",
     },
@@ -346,8 +346,8 @@ export const chronomancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: `The bonuses increase to +3.`,
-        7: `The bonuses increase to +4.`,
+        5: `The bonus increases to +4.`,
+        7: `The bonus increases to +5.`,
       },
       type: "Attune (target)",
     },
@@ -414,22 +414,13 @@ export const chronomancy: MysticSphere = {
       name: "Evasion",
 
       effect: `
-        You take half damage from abilities that affect an area.
+        You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
       rank: 4,
-      scaling: { 6: `You also gain a +3 \\glossterm{magic bonus} to Reflex defense.` },
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Greater Evasion",
-
-      effect: `
-        You can use your Reflex defense in place of any other defense against abilities that affect an area.
-        This does not protect you from abilities that affect multiple specific targets without affecting an area.
-      `,
-      rank: 7,
+      scaling: {
+        6: `This effect also protects you from area attacks against your Fortitude and Mental defenses.`
+      },
       type: "Attune (self)",
     },
 

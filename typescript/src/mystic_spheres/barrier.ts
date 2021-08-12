@@ -455,38 +455,6 @@ export const barrier: MysticSphere = {
     },
 
     {
-      name: "Deflective Shield",
-
-      castingTime: "minor action",
-      effect: `
-        You gain a +1 \\glossterm{magic bonus} to Armor defense and Reflex defense.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The bonus increases to +2.`,
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
-      },
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Deflective Shield",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "deflective shield",
-      },
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +2.`,
-        7: `The bonus increases to +3.`,
-      },
-      type: "Attune (target)",
-    },
-
-    {
       name: "Antilife Shell",
 
       functionsLike: {

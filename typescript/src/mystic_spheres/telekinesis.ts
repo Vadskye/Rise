@@ -517,15 +517,28 @@ export const telekinesis: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +1 \\glossterm{magic bonus} to Armor defense.
-        In addition, you gain a +2 bonus to all defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
+        You gain a +2 bonus to all defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller.
+        Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus to Armor defense increases to +2.`,
-        5: `The bonus to Armor defense increases to +3.`,
-        7: `The bonus to Armor defense increases to +4.`,
+        3: `The bonus increases to +3.`,
+        5: `The bonus increases to +4.`,
+        7: `The bonus increases to +5.`,
       },
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Floating Shield",
+
+      castingTime: "minor action",
+      effect: `
+        You can hold a buckler or standard shield without using a free hand.
+        You still suffer the normal penalties if you are not proficient with it.
+      `,
+      rank: 6,
+      tags: [],
       type: "Attune (self)",
     },
   ],

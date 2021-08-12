@@ -57,15 +57,15 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
-        Each subject gains a +5 foot \\glossterm{magic bonus} to speed with all its \\glossterm{movement modes}, and a +1 \\glossterm{magic bonus} to Reflex defense.
+        Each subject gains a +5 foot \\glossterm{magic bonus} to speed with all its \\glossterm{movement modes}.
 
         You can only have one casting of this spell active at once.
         When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
       `,
       rank: 2,
       scaling: {
-        4: `The speed bonus increases to +10 feet, and the defense bonus increases to +2.`,
-        6: `The speed bonus increases to +15 feet, and the defense bonus increases to +3.`,
+        4: `The speed bonus increases to +10 feet.`,
+        6: `The speed bonus increases to +15 feet.`,
       },
       type: "Attune (target)",
     },
@@ -220,22 +220,6 @@ export const bless: MysticSphere = {
       scaling: {
         5: `The bonus increases to +6.`,
         7: `The bonus increases to +8.`,
-      },
-      type: "Attune (target)",
-    },
-
-    {
-      name: "Blessing of Protection",
-
-      castingTime: "minor action",
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject gains a +1 \\glossterm{magic bonus} to Armor defense and Mental defense.
-      `,
-      rank: 2,
-      scaling: {
-        4: `The bonus increases to +2.`,
-        6: `The bonus increases to +3.`,
       },
       type: "Attune (target)",
     },

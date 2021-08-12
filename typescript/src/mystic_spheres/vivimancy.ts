@@ -186,39 +186,6 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Fortify Life",
-
-      castingTime: "minor action",
-      effect: `
-        You gain a +2 \\glossterm{magic bonus} to Fortitude defense.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The bonus increases to +3.`,
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
-      },
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Fortify Life",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Fortify Life",
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
-      },
-      type: "Attune (target)",
-    },
-
-    {
       name: "Cure Vital Wound",
 
       effect: `
