@@ -114,6 +114,9 @@ export const revelation: MysticSphere = {
       effect: `
         You gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
       `,
+      narrative: `
+        You intuitively perceive your foes' weaknesses.
+      `,
       rank: 1,
       scaling: {
         3: `The bonus increases to +4.`,
