@@ -29,40 +29,6 @@ export const fabrication: MysticSphere = {
   ],
   spells: [
     {
-      name: "Shieldbearer",
-
-      castingTime: "minor action",
-      effect: `
-        You gain a +1 \\glossterm{magic bonus} to Armor defense.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The bonus increases to +2.`,
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
-      },
-      tags: ["Manifestation"],
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Shieldbearer",
-
-      castingTime: 'minor action',
-      functionsLike: {
-        name: 'shieldbearer',
-        mass: true,
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: 'The bonus increases to +2.',
-        7: 'The bonus increases to +3.',
-      },
-      type: 'Attune (target)',
-    },
-
-    {
       name: "Mystic Arrow",
 
       attack: {

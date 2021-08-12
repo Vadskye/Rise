@@ -11,69 +11,6 @@ def generate_armor():
 
     armor += [
         MagicItem(
-            name="Protective Armor",
-            level=4,
-            material_type="Body armor",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +1 Armor defense",
-        ),
-        MagicItem(
-            name="Protective Armor, Greater",
-            level=10,
-            material_type="Body armor",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +2 Armor defense",
-        ),
-        MagicItem(
-            name="Protective Armor, Supreme",
-            level=16,
-            material_type="Body armor",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +3 Armor defense",
-        ),
-        MagicItem(
-            name="Protective Shield",
-            level=4,
-            material_type="Shield",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +1 Armor defense",
-        ),
-        MagicItem(
-            name="Protective Shield, Greater",
-            level=10,
-            material_type="Shield",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +2 Armor defense",
-        ),
-        MagicItem(
-            name="Protective Shield, Supreme",
-            level=16,
-            material_type="Shield",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +3 Armor defense",
-        ),
-    ]
-
-    armor += [
-        MagicItem(
             name="Lifebond Retribution Armor",
             level=4,
             material_type="Body armor",

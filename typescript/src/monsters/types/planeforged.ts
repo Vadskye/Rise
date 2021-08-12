@@ -78,14 +78,6 @@ planeforgedInput.push({
           name: "Divine Intervention",
         },
         {
-          description: `
-              The $name is \\glossterm{attuned} to this ability.
-              It gains a \\plus1 \\glossterm{magic bonus} to accuracy and all defenses, and a \\plus2 magic bonus to power.
-            `,
-          magical: true,
-          name: "Agent of the Divine",
-        },
-        {
           description: (monster) => `
               The $name is \\glossterm{attuned} to this ability.
               It gains a +8 \\glossterm{magic bonus} to \\glossterm{damage resistance}.

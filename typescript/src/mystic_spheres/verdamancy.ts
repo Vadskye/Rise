@@ -591,12 +591,13 @@ export const verdamancy: MysticSphere = {
         When you cast this spell, you choose a type of body armor you are proficient with that is not normally made from metal.
         Plants grow around your body, functioning like your chosen type of armor for you, except that the \\glossterm{encumbrance} of the armor is reduced by 2.
         These plants are considered to be normal plants for the purpose of abilities that require plants to be near targets, such as spells from this mystic sphere.
+        This spell hsa no effect if you are wearing other body armor.
       `,
       rank: 1,
       scaling: {
-        3: `You also gain a +1 \\glossterm{magic bonus} to Armor defense.`,
-        5: `The defense bonus increases to +2.`,
-        7: `The defense bonus increases to +3.`,
+        3: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.`,
+        5: `The damage resistance bonus increases to +8.`,
+        7: `The damage resistance bonus increases to +16.`,
       },
       tags: ["Manifestation"],
       type: "Attune (self)",
