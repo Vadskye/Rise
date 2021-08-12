@@ -47,6 +47,36 @@ def generate_armor():
         ),
     ]
 
+    apparel += [
+        MagicItem(
+            name="Armor of Health",
+            level=4,
+            material_type="Body armor",
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points>.
+            """,
+            short_description="Grants +4 hit points",
+        ),
+        MagicItem(
+            name="Armor of Health, Greater",
+            level=10,
+            material_type="Body armor",
+            description="""
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<hit points>.
+            """,
+            short_description="Grants +8 hit points",
+        ),
+        MagicItem(
+            name="Armor of Health, Supreme",
+            level=16,
+            material_type="Body armor",
+            description="""
+                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<hit points>.
+            """,
+            short_description="Grants +16 hit points",
+        ),
+    ]
+
     armor += [
         MagicItem(
             name="Shield of Arrow Catching",
