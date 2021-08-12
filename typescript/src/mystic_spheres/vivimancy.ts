@@ -26,8 +26,7 @@ export const vivimancy: MysticSphere = {
       name: "Minor Life Infusion",
 
       effect: `
-        Choose yourself or one living \\glossterm{ally} within \\medrange.
-        The subject regains two \\glossterm{hit points}.
+        You regain two \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       focus: false,
