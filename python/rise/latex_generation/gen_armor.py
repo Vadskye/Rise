@@ -379,6 +379,186 @@ def generate_armor():
 
     armor += [
         MagicItem(
+            name="Stonebody Armor",
+            level=5,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
+                However, you take a -5 foot penalty to your \\glossterm<movement speed> with all movement modes.
+            """,
+            short_description="Grants +4 hit points and damage resistance, but -5 speed",
+        ),
+        MagicItem(
+            name="Stonebody Armor, Greater",
+            level=11,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
+                However, you take a -5 foot penalty to your \\glossterm<movement speed> with all movement modes.
+            """,
+            short_description="Grants +8 hit points and damage resistance, but -5 speed",
+        ),
+        MagicItem(
+            name="Stonebody Armor, Supreme",
+            level=17,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
+                However, you take a -5 foot penalty to your \\glossterm<movement speed> with all movement modes.
+            """,
+            short_description="Grants +16 hit points and damage resistance, but -5 speed",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
+            name="Lithe Armor",
+            level=11,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                If your base Dexterity is at least 3, you gain a +1 bonus to Armor defense.
+            """,
+            short_description="Grants +1 Armor if you have 3 base Dex",
+        ),
+        MagicItem(
+            name="Lithe Armor, Greater",
+            level=17,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                If your base Dexterity is at least 1, you gain a +1 bonus to Armor defense.
+            """,
+            short_description="Grants +1 Armor if you have 1 base Dex",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
+            name="Agile Burst Armor",
+            level=5,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                Whenever you use the \\textit<sprint> ability, you gain a +1 bonus to Reflex defense until the end of the round.
+                This effect has the \\abilitytag<Swift> tag, so it affects attacks against you during the current phase.
+            """,
+            short_description="Grants +1 Reflex whenever you sprint",
+        ),
+        MagicItem(
+            name="Agile Burst Armor, Greater",
+            level=14,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                This armor functions like \\mitem<agile burst armor>, except that the bonus also applies to Armor defense.
+            """,
+            short_description="Grants +1 Armor and Reflex whenever you sprint",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
+            name="Lifeweave Armor",
+            level=5,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                However, you take a -4 penalty to your \\glossterm<hit points>.
+            """,
+            short_description="Grants +8 damage resistance, but -4 hit points",
+        ),
+        MagicItem(
+            name="Lifeweave Armor, Greater",
+            level=11,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                However, you take a -8 penalty to your \\glossterm<hit points>.
+            """,
+            short_description="Grants +16 damage resistance, but -8 hit points",
+        ),
+        MagicItem(
+            name="Lifeweave Armor, Supreme",
+            level=17,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                You gain a +32 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                However, you take a -16 penalty to your \\glossterm<hit points>.
+            """,
+            short_description="Grants +32 damage resistance, but -16 hit points",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
+            name="Soulweave Armor",
+            level=5,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                However, you take a -2 penalty to your \\glossterm<power>.
+            """,
+            short_description="Grants +8 damage resistance, but -2 power",
+        ),
+        MagicItem(
+            name="Soulweave Armor, Greater",
+            level=11,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                However, you take a -4 penalty to your \\glossterm<power>.
+            """,
+            short_description="Grants +16 damage resistance, but -4 power",
+        ),
+        MagicItem(
+            name="Soulweave Armor, Supreme",
+            level=17,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                You gain a +32 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                However, you take a -8 penalty to your \\glossterm<power>.
+            """,
+            short_description="Grants +32 damage resistance, but -8 power",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
+            name="Swiftstep Armor",
+            level=8,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                The penalty to your speed from this armor is reduced by 5 feet.
+                If the armor does not reduce your speed, this has no effect.
+            """,
+            short_description="Reduces armor speed penalty by 5 feet",
+        ),
+        MagicItem(
+            name="Greater Swiftstep Armor",
+            level=15,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                The penalty to your speed from this armor is reduced by 10 feet.
+                If the armor does not reduce your speed, this has no effect.
+            """,
+            short_description="Reduces armor speed penalty by 10 feet",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
             name="Crumpling Armor",
             level=7,
             tags=[],
