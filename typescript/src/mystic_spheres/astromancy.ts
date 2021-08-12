@@ -264,7 +264,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: "The range increases to 1,000 feet.",
+        6: "The range increases to 900 feet.",
       },
       type: "Instant",
     },
