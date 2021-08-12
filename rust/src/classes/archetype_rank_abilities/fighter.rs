@@ -20,8 +20,8 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
          You can use the \textit{discipline} ability as a \glossterm{standard action}.
         \begin{instantability}{Discipline}[Instant]
             \rankline
-            Remove up to two \glossterm{brief} effects \glossterm{conditions} affecting you.
-            This cannot remove effect applied during the current round.
+            Remove up to two \glossterm{brief} effects or \glossterm{conditions} affecting you.
+            This cannot remove effects applied during the current round.
 
             \rankline
             \rank{3} This ability gains the \abilitytag{Swift} tag.
