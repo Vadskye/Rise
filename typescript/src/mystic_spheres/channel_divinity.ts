@@ -85,11 +85,20 @@ export const channelDivinity: MysticSphere = {
       name: "Agent of the Divine",
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to \\glossterm{accuracy}.
-        In addition, you gain a +4 \\glossterm{magic bonus} to \\glossterm{power}.
+        You gain a +4 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}
+        In addition, you gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+      `,
+      rank: 3,
+      scaling: {
+        5: `
+          The bonuses to hit points and damage resistance increase to +8.
+          In addition, the bonus to power increases to +4.
         `,
-      rank: 5,
-      scaling: { 7: `The accuracy bonus increases to +3, and the power bonus increases to +8.` },
+        7: `
+          The bonuses to hit points and damage resistance increase to +16.
+          In addition, the bonus to power increases to +8.
+        `,
+      },
       type: "Attune (self)",
     },
 
@@ -397,24 +406,8 @@ export const channelDivinity: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: `You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy}.`,
-        6: `You gain a +4 \\glossterm{magic bonus} to \\glossterm{power}.`,
-      },
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Divine Favor",
-
-      castingTime: "minor action",
-      effect: `
-        You gain a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with all attacks.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The bonus increases to +2.`,
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
+        4: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.`,
+        6: `The power bonus increases to +4.`,
       },
       type: "Attune (self)",
     },
