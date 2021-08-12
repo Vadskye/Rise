@@ -106,11 +106,11 @@ export const terramancy: MysticSphere = {
         3: `
           You can also create heavy armor.
           In addition, the items is magically enhanced.
-          A weapon grants a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with strikes using the weapon,
-            and both shields and body armor grant a +1 \\glossterm{magic bonus} to Armor defense.
+          A weapon grants a +2 \\glossterm{magic bonus} to \\glossterm{power} with strikes using the weapon,
+            and both shields and body armor grant a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
         `,
-        5: `The magic bonus increases to +2.`,
-        7: `The magic bonus increases to +3.`,
+        5: `The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +8.`,
+        7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +16.`,
       },
       type: "Attune (self)",
     },

@@ -466,64 +466,6 @@ def generate_implements():
 
     implements += [
         MagicItem(
-            name="Staff of the Archmagi",
-            level=7,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy>.
-                In addition, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +1 accuracy, +2 power",
-        ),
-        MagicItem(
-            name="Staff of the Archmagi, Greater",
-            level=16,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy>.
-                In addition, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +2 accuracy, +4 power",
-        ),
-    ]
-
-    implements += [
-        MagicItem(
-            name="Staff of Precision",
-            level=4,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy>.
-            """,
-            short_description="Grants +1 accuracy",
-        ),
-        MagicItem(
-            name="Staff of Precision, Greater",
-            level=10,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy>.
-            """,
-            short_description="Grants +2 accuracy",
-        ),
-        MagicItem(
-            name="Staff of Precision, Supreme",
-            level=16,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to \\glossterm<accuracy>.
-            """,
-            short_description="Grants +3 accuracy",
-        ),
-    ]
-
-    implements += [
-        MagicItem(
             name="Blessed Staff",
             level=4,
             material_type="Staff",

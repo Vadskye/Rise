@@ -665,7 +665,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 \item Its \glossterm{power} with its attacks is 0.
                 \item It has no \glossterm{attunement points}.
                 \item The damage dealt by its natural weapons increases by \plus1d for each rank in this archetype beyond 1.
-                \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points, damage resistance, defenses, accuracy, and power.
+                \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points, damage resistance, and power.
             \end{itemize}
 
             % Oddly placed? there must be text between an itemize block and the end of a mdframed env

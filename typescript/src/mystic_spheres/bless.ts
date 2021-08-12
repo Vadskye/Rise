@@ -241,22 +241,6 @@ export const bless: MysticSphere = {
     },
 
     {
-      name: "Blessing of Precision",
-
-      castingTime: "minor action",
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject gains a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} with all attacks.
-      `,
-      rank: 2,
-      scaling: {
-        4: `The bonus increases to +2.`,
-        6: `The bonus increases to +3.`,
-      },
-      type: "Attune (target)",
-    },
-
-    {
       name: "Blessing of Power",
 
       castingTime: "minor action",
@@ -396,17 +380,16 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Mastery",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject gains a +1 \\glossterm{magic bonus} to \\glossterm{accuracy} and all \\glossterm{defenses}.
-        In addition, it gains a +2 \\glossterm{magic bonus} to \\glossterm{power} and \\glossterm{damage resistance}.
+        Each subject gains a +4 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
+        In addition, each subject gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
       `,
       rank: 4,
       scaling: {
         6: `
-          The accuracy and defense bonuses increases to +2.
-          In addition the power and damage resistance bonuses increase to +4.
+          The bonuses to hit points and damage resistance increase to +8.
+          In addition, the bonus to power increases to +4.
         `,
       },
       type: "Attune (target)",

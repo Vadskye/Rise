@@ -455,39 +455,6 @@ def generate_weapons():
 
     weapons += [
         MagicItem(
-            name="Surestrike",
-            level=4,
-            material_type="Weapon",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to accuracy.
-            """,
-            short_description="Grants +1 accuracy bonus",
-        ),
-        MagicItem(
-            name="Surestrike, Greater",
-            level=10,
-            material_type="Weapon",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to accuracy.
-            """,
-            short_description="Grants +2 accuracy bonus",
-        ),
-        MagicItem(
-            name="Surestrike, Supreme",
-            level=16,
-            material_type="Weapon",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to accuracy.
-            """,
-            short_description="Grants +3 accuracy bonus",
-        ),
-    ]
-
-    weapons += [
-        MagicItem(
             name="Blessed",
             level=3,
             material_type="Weapon",
