@@ -198,40 +198,6 @@ def generate_weapons():
 
     weapons += [
         MagicItem(
-            name="Protective",
-            # +2 level since weapon is secondary for this effect
-            level=6,
-            material_type="Weapon",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +1 Armor defense",
-        ),
-        MagicItem(
-            name="Protective, Greater",
-            level=12,
-            material_type="Weapon",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +2 Armor defense",
-        ),
-        MagicItem(
-            name="Protective, Supreme",
-            level=18,
-            material_type="Weapon",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +3 Armor defense",
-        ),
-    ]
-
-    weapons += [
-        MagicItem(
             name="Iridescent",
             level=4,
             material_type="Weapon",

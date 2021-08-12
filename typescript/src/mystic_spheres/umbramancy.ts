@@ -244,34 +244,20 @@ export const umbramancy: MysticSphere = {
       name: "Shadow Mantle",
 
       effect: `
+        All \\glossterm{strikes} against you have a 20\\% \\glossterm{miss chance}.
+        This does not protect you against creatures that can see you without normal vision, such as with the \\glossterm{blindsight} ability.
+      `,
+      narrative: `
         Your physical form becomes blurred and shifts in and out of existence.
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
-        You gain a +1 \\glossterm{magic bonus} to Armor defense and the Stealth skill.
       `,
       rank: 1,
       scaling: {
-        3: `The bonuses increase to +2.`,
-        5: `The bonuses increase to +3.`,
-        7: `The bonuses increase to +4.`,
+        6: `
+          This benefit applies against all attacks against you, not just \\glossterm{strikes}.
+        `,
       },
       type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Shadow Mantle",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Shadow Mantle",
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: `The bonuses increase to +2.`,
-        7: `The bonuses increase to +3.`,
-      },
-      type: "Attune (target)",
     },
 
     {

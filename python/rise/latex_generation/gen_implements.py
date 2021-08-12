@@ -364,40 +364,6 @@ def generate_implements():
 
     implements += [
         MagicItem(
-            name="Protective Staff",
-            # +2 level since staff is secondary for this effect
-            level=6,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +1 Armor defense",
-        ),
-        MagicItem(
-            name="Protective Staff, Greater",
-            level=12,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +2 Armor defense",
-        ),
-        MagicItem(
-            name="Protective Staff, Supreme",
-            level=18,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to Armor defense.
-            """,
-            short_description="Grants +3 Armor defense",
-        ),
-    ]
-
-    implements += [
-        MagicItem(
             name="Widening Staff",
             level=12,
             material_type="Staff",

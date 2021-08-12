@@ -573,40 +573,6 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: "Motivate",
-
-      effect: `
-        You gain a +2 \\glossterm{magic bonus} to Mental defense.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The bonus increases to +3.`,
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
-      },
-      tags: ["Emotion"],
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Motivate",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Motivate",
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
-      },
-      tags: ["Emotion"],
-      type: "Attune (target)",
-    },
-
-    {
       name: "Ominous Presence",
 
       effect: `

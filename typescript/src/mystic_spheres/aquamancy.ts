@@ -717,18 +717,18 @@ export const aquamancy: MysticSphere = {
         \\begin{itemize}
           \\item Your land speed is halved.
           \\item You can use your swim speed to move around on land.
-          \\item You take penalties for fighting underwater (see \pcref{Underwater Combat}).
+          \\item You take penalties for fighting underwater (see \\pcref{Underwater Combat}).
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
-          \\item You gain a +1 \\glossterm{magic bonus} to all defenses.
+          \\item You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
           \\item You gain a +2 bonus to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
-          \\item You gain a +4 bonus to defenses against the \ability{grapple} ability.
+          \\item You gain a +4 bonus to defenses against the \\ability{grapple} ability.
         \\end{itemize}
       `,
       // narrative: '',
       rank: 2,
       scaling: {
-        4: 'The defense bonus increases to +2.',
-        6: 'The defense bonus increases to +3.',
+        4: 'The damage resistance bonus increases to +8.',
+        6: 'The damage resistance bonus increases to +16.',
       },
       type: "Instant",
     },

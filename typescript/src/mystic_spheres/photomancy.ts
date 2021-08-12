@@ -126,9 +126,9 @@ export const photomancy: MysticSphere = {
       effect: `
         If you move at least 15 feet during the \\glossterm{movement phase}, you gain a +1 bonus to Armor defense until the end of that round.
       `,
-      rank: 4,
+      rank: 5,
       scaling: {
-        6: `The bonus increases to +2.`,
+        7: `The bonus increases to +2.`,
       },
       type: "Attune (self)",
     },
@@ -383,34 +383,18 @@ export const photomancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        Your physical outline is distorted so it appears blurred, shifting, and wavering.
-        You gain a +1 \\glossterm{magic bonus} to Armor defense and the Stealth skill.
-        This effect provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
+        All \\glossterm{strikes} against you have a 20\\% \\glossterm{miss chance}.
+        This does not protect you against creatures that can see you without normal vision, such as with the \\glossterm{blindsight} ability.
       `,
-      rank: 1,
+      narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
+      rank: 4,
       scaling: {
-        3: `The bonus increases to +2.`,
-        5: `The bonus increases to +3.`,
+        6: `
+          This benefit applies against all attacks against you, not just \\glossterm{strikes}.
+        `,
       },
       tags: ["Sensation", "Visual"],
       type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Blur",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Blur",
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +2.`,
-        7: `The bonus increases to +3.`,
-      },
-      type: "Attune (target)",
     },
 
     {
@@ -479,19 +463,6 @@ export const photomancy: MysticSphere = {
         5: `The spell creates four duplicates.`,
         7: `The spell creates five duplicates.`,
       },
-      tags: ["Sensation", "Visual"],
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Displacement",
-
-      effect: `
-        Your image appears to be two to three feet from its real location.
-        All \\glossterm{strikes} against you suffer a 20\\% miss chance.
-        This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
-      `,
-      rank: 6,
       tags: ["Sensation", "Visual"],
       type: "Attune (self)",
     },
