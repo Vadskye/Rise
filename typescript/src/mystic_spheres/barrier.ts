@@ -579,5 +579,22 @@ export const barrier: MysticSphere = {
       rank: 5,
       type: "Instant",
     },
+    {
+      name: "Tiny Hut",
+
+      castingTime: "one minute",
+      effect: `
+        You create a permeable barrier around a \\smallarea radius \\glossterm{zone} from your location.
+        The barrier is visible as a shimmering magical membrane that does not block sight.
+        As a standard action, a creature can move five feet from outside the hut to inside the hut, or vice versa.
+        However, the hut blocks \\glossterm{line of effect} for all other purposes.
+        Each 5-ft.\\ square of barrier has 16 \\glossterm{hit points}, and all of its defenses are 0.
+
+        If you leave the zone, this effect ends.
+      `,
+      // narrative: '',
+      rank: 2,
+      type: "Attune (ritual)",
+    },
   ],
 };
