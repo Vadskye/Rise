@@ -67,7 +67,7 @@ export const aquamancy: MysticSphere = {
       name: "Slippery Escape",
 
       effect: `
-        You \\glossterm{briefly} gain a +3 bonus to the Flexibility skill.
+        You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Flexibility skill.
       `,
       focus: false,
       narrative: `
@@ -731,6 +731,21 @@ export const aquamancy: MysticSphere = {
         6: 'The damage resistance bonus increases to +16.',
       },
       type: "Instant",
+    },
+    {
+      name: "Slippery Escapist",
+
+      effect: `
+        If you are \\glossterm{trained} with the Flexibility skill, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
+      },
+      type: "Attune (self)",
     },
   ],
   rituals: [

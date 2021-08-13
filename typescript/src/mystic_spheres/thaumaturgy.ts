@@ -10,7 +10,7 @@ export const thaumaturgy: MysticSphere = {
       name: "Sense Magic",
 
       effect: `
-        You \\glossterm{briefly} gain a +3 bonus to the Spellsense skill.
+        You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Spellsense skill.
       `,
       focus: false,
       scaling: {

@@ -396,20 +396,22 @@ export const barrier: MysticSphere = {
     },
 
     {
-      name: "Ablative Energy Shield",
+      name: "Energy Shield",
 
-      castingTime: "minor action",
       effect: `
-        You surround yourself with two layers of shielding that ablate the power of energy attacks against you.
-        You are \\glossterm{impervious} to \\glossterm{energy damage}.
-        Whenever an attack that deals energy damage hits you or misses you by 5 or less, one layer of shielding is removed.
-        When the last layer of shielding is destroyed, this ability provides no further benefit.
+        You surround yourself with a layer of shielding that reduces the power of energy attacks against you.
+        Whenever you would take energy damage, you take only half of that damage, and one layer of ice is destroyed.
+        When the last layer is destroyed, this ability provides no further benefit.
+
+        If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The spell creates three shield layers.`,
-        6: `The spell creates four shield layers.`,
+        3: `The spell creates two layers of shielding.`,
+        5: `The spell creates three layers of shielding.`,
+        7: `The spell creates four layers of shielding.`,
       },
+      tags: ["Manifestation"],
       type: "Attune (self)",
     },
 

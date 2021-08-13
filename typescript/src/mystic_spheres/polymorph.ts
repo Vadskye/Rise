@@ -474,8 +474,8 @@ export const polymorph: MysticSphere = {
       name: "Camouflage",
 
       effect: `
-        You gain a +3 \\glossterm{magic bonus} to the Stealth skill.
-        In addition, you are treated as being \\glossterm{trained} in that skill if you would otherwise be untrained.
+        If you are \\glossterm{trained} with the Stealth skill, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being \\glossterm{trained} in that skill.
       `,
       rank: 1,
       scaling: {

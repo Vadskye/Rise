@@ -133,25 +133,25 @@ def generate_armor():
             level=11,
             material_type="Shield",
             description="""
-                You gain a +4 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
+                You gain a +3 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
             """,
-            short_description="Grants +4 defenses vs small projectiles",
+            short_description="Grants +3 defenses vs small projectiles",
         ),
         MagicItem(
             name="Shield of Arrow Deflection, Supreme",
             level=17,
             material_type="Shield",
             description="""
-                You gain a +6 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
+                You gain a +4 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
             """,
-            short_description="Grants +6 defenses vs small projectiles",
+            short_description="Grants +4 defenses vs small projectiles",
         ),
         MagicItem(
             name="Shield of Boulder Deflection",
             level=8,
             material_type="Shield",
             description="""
-                This item functions like a \\mitem<shield of arrow deflection>, except that it can affect weapons and projectiles of up to Large size.
+                You gain a +2 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
             """,
             short_description="Grants +2 defenses vs projectiles",
         ),
@@ -160,7 +160,16 @@ def generate_armor():
             level=14,
             material_type="Shield",
             description="""
-                This item functions like a \\mitem<greater shield of arrow deflection>, except that it can affect weapons and projectiles of up to Large size.
+                You gain a +3 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
+            """,
+            short_description="Grants +3 defenses vs projectiles",
+        ),
+        MagicItem(
+            name="Shield of Boulder Deflection, Supreme",
+            level=20,
+            material_type="Shield",
+            description="""
+                You gain a +4 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
             """,
             short_description="Grants +4 defenses vs projectiles",
         ),

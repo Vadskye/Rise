@@ -69,9 +69,9 @@ export const channelDivinity: MysticSphere = {
       name: "Divine Authority",
 
       effect: `
-        You gain a +3 \\glossterm{magic bonus} to the Persuasion skill.
-        In addition, you are treated as being \\glossterm{trained} in that skill if you would otherwise be untrained.
-        `,
+        If you are \\glossterm{trained} with the Persuasion skill, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+      `,
       rank: 1,
       scaling: {
         3: `The bonus increases to +4.`,
