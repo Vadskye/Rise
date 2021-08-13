@@ -633,9 +633,8 @@ def generate_weapons():
             tags=[],
             description="""
             This weapon automatically veers towards its intended target.
-            All \\glossterm<strikes> with this weapon ignore \\glossterm<concealment>.
-            In addition, any miss chance the strike would normally have is reduced.
-            A 50\\% miss chance is reduced to a 20\\% miss chance, and a 20\\% miss chance is removed entirely.
+            Any miss chance the strike would normally have is reduced.
+            A 50\\% miss chance is reduced to a 25\\% miss chance, and a 25\\% miss chance is removed entirely.
         """,
             short_description="Reduces miss chances",
         )
