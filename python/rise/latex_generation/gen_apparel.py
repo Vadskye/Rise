@@ -610,13 +610,22 @@ def generate_apparel():
     apparel.append(
         MagicItem(
             name="Boots of Freedom",
-            level=12,
+            level=16,
             material_type="Boots",
             description="""
-            You are immune to all effects that restrict your mobility, including nonmagical effects such as \\glossterm<difficult terrain>.
-            This removes all penalties you would suffer for acting underwater, except for those relating to using ranged weapons.
-            This does not prevent you from being \\grappled, but you gain a +10 bonus to defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
-        """,
+                You are immune to being \\slowed, \\decelerated, \\immobilized, and \\paralyzed.
+            """,
+            short_description="Grants immunity to common mobility restrictions",
+        )
+        MagicItem(
+            name="Boots of Freedom, Greater",
+            level=16,
+            material_type="Boots",
+            description="""
+                You are immune to all effects that reduce your movement speed or prevent you from moving, including nonmagical effects such as \\glossterm<difficult terrain>.
+                This removes all penalties you would suffer for acting underwater, except for those relating to using ranged weapons.
+                This does not prevent you from being \\grappled, but you gain a +10 bonus to defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
+            """,
             short_description="Grants immunity to almost all mobility restrictions",
         )
     )
@@ -624,14 +633,38 @@ def generate_apparel():
     apparel.append(
         MagicItem(
             name="Boots of Gravitation",
-            level=8,
+            level=7,
             material_type="Boots",
             description="""
-            While these boots are within 5 feet of a solid surface, gravity pulls you towards the solid surface closest to your boots rather than in the normal direction.
-            This can allow you to walk easily on walls or even ceilings.
-        """,
-            short_description="Redirects personal gravity",
+                Once per phase, while you are within 5 feet of an \\glossterm<unattended> object at least one size category larger than you, you can take a \\glossterm<free action> to adjust your personal gravity.
+                When you do, gravity pulls you towards that surface instead of in the normal direction.
+                This allows you to walk normally on walls or even ceilings.
+
+                Whenever you change the direction that gravity pulls you, you must make a \\glossterm<difficulty rating> 10 Balance check to keep your feet.
+                Failure means you fall \\prone and your movement for that phase ends.
+            """,
+            short_description="Redirects personal gravity to adjacent objects",
         )
+        MagicItem(
+            name="Boots of Gravitation, Greater",
+            level=13,
+            material_type="Boots",
+            description="""
+                These boots function like \\mitem<boots of gravitation>, except that the maximum distance increases to 15 feet.
+                This can allow you to pull yourself towards distant objects, though you may take falling damage if you fall too far.
+            """,
+            short_description="Redirects personal gravity to nearby objects",
+        ),
+        MagicItem(
+            name="Boots of Gravitation, Supreme",
+            level=19,
+            material_type="Boots",
+            description="""
+                These boots function like \\mitem<boots of gravitation>, except that the maximum distance increases to 30 feet.
+                This can allow you to pull yourself towards distant objects, though you may take falling damage if you fall too far.
+            """,
+            short_description="Redirects personal gravity to distant objects",
+        ),
     )
 
     apparel += [

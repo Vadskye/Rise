@@ -251,11 +251,9 @@ export const umbramancy: MysticSphere = {
         Your physical form becomes blurred and shifts in and out of existence.
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
       `,
-      rank: 1,
+      rank: 4,
       scaling: {
-        6: `
-          This benefit applies against all attacks against you, not just \\glossterm{strikes}.
-        `,
+        6: "The miss chance increases to 25\\%.",
       },
       type: "Attune (self)",
     },
