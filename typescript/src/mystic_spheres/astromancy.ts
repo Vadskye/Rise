@@ -689,7 +689,10 @@ export const astromancy: MysticSphere = {
 
         Once per phase, when a creature moves into one of the squares, it can choose to pass through the portal in that square.
         If it does, it \\glossterm{teleports} to the portal in the other chosen square, regardless of \\glossterm{line of sight} or \\glossterm{line of effect} between the two portal.
-        Objects can pass through the portals and maintain their speed, but moving objects have an unpredictable trajectory, so firing projectiles through a portal is ineffective.
+        Objects can pass through the portals freely and maintain their speed, but moving objects have an unpredictable trajectory, so firing projectiles through a portal is ineffective.
+
+        If multiple creatures attempt to pass through the portals simultaneously, they roll \\glossterm{initiative} to determine the first person into the portal.
+        A creature that attempts to pass through the portal in a phase where the portal was already activated stops its movement in the square with the portal.
       `,
       narrative: `
         You create a pair of portals that allow instant passage from one to the other.
@@ -813,6 +816,24 @@ export const astromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 2,
+      type: "Instant",
+    },
+    {
+      name: "Astral Chest",
+
+      castingTime: "one hour",
+      effect: `
+        When you cast this spell, you choose whether to send an object to the Astral Plane or retrieve the object you stored there.
+        If you send an object to the Astral Plane, choose a a Medium or smaller \\glossterm{unattended} object within \\medrange of you.
+        That object \\glossterm{teleports} to a random location in the Astral Plane.
+
+        If you retrieve an object, choose an unoccupied space on stable ground within \\medrange of you.
+        The object you previously stored in the Astral Plane with this ritual appears at that location.
+        The object normally returns exactly as it was sent away, since the Astral Plane is vast and mostly uninhabited.
+        There is a 1\\% chance per year that the object spends in the Astral Plane that it has been lost irretrievably.
+      `,
+      // narrative: '',
+      rank: 3,
       type: "Instant",
     },
   ],
