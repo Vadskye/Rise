@@ -651,7 +651,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             An animal native to the local environment appears to help you.
             It follows your directions to the best of its ability as long as you remain in its natural environment.
             If you leave the animal's natural habitat, it remains behind and this effect ends.
-            If the animal gains a \glossterm{vital wound} or has no hit points remaining at the end of the round, this effect ends.
 
             Your magical connection to the animal improves its resilience and strength in combat.
             The animal's statistics use the values below, except that each animal also gains a special ability based on the environment you are in.
@@ -665,6 +664,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 \item Its \glossterm{power} with its attacks is 0.
                 \item It has no \glossterm{attunement points}.
                 \item The damage dealt by its natural weapons increases by \plus1d for each rank in this archetype beyond 1.
+                \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                 \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points, damage resistance, and power.
             \end{itemize}
 

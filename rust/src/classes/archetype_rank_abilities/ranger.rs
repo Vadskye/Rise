@@ -43,6 +43,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 \item Its \glossterm{power} with its attacks is 0.
                 \item It has no \glossterm{attunement points}.
                 \item The damage dealt by its natural weapons increases by \plus1d for each rank in this archetype beyond 1.
+                \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                 \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points, damage resistance, and power.
             \end{itemize}
 
