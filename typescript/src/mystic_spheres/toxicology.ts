@@ -518,6 +518,43 @@ export const toxicology: MysticSphere = {
       },
       type: "Instant",
     },
+    {
+      name: "Acid Soak",
+
+      attack: {
+        crit: `The damage from the condition is doubled.`,
+        hit: `The subject becomes drenched in acid as a \\glossterm{condition}.
+        At the end of each round, it takes 1d6 acid damage.
+
+        The condition can be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
+        Dropping \\prone as part of this action gives a +5 bonus to this check.`,
+        targeting: `
+          Make an attack vs. Reflex against one creature within \\medrange.
+        `,
+      },
+      rank: 1,
+      scaling: "damage",
+      type: "Duration",
+    },
+    {
+      name: "Greater Acid Soak",
+
+      attack: {
+        crit: `The damage from the condition is doubled.`,
+        glance:
+          "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
+        hit: `
+          The subject becomes drenched in acid as a \\glossterm{condition}.
+          At the end of each round, it takes 2d10 + half \\glossterm{power} acid damage.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against one creature within \\medrange.
+        `,
+      },
+      rank: 5,
+      scaling: "damage",
+      type: "Duration",
+    },
   ],
   rituals: [],
 };
