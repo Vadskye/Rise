@@ -667,6 +667,130 @@ def generate_apparel():
         ),
     ]
 
+    apparel += [
+        MagicItem(
+            name="Boots of the Fearful",
+            level=5,
+            material_type="Boots",
+            tags=[],
+            description="""
+                While you are \\shaken, \\frightened, or \\panicked and within \\medrange of the source of your fear, you gain a +10 foot \\glossterm<magic bonus> to your land speed.
+            """,
+            short_description="Increases speed by 10 feet while afraid",
+        ),
+        MagicItem(
+            name="Boots of the Fearful, Greater",
+            level=11,
+            material_type="Boots",
+            tags=[],
+            description="""
+                While you are \\shaken, \\frightened, or \\panicked and within \\medrange of the source of your fear, you gain a +15 foot \\glossterm<magic bonus> to your land speed.
+            """,
+            short_description="Increases speed by 15 feet while afraid",
+        ),
+        MagicItem(
+            name="Boots of the Fearful, Supreme",
+            level=17,
+            material_type="Boots",
+            tags=[],
+            description="""
+                While you are \\shaken, \\frightened, or \\panicked and within \\medrange of the source of your fear, you gain a +20 foot \\glossterm<magic bonus> to your land speed.
+            """,
+            short_description="Increases speed by 20 feet while afraid",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Belt of Scuttling",
+            level=5,
+            material_type="Belt",
+            tags=[],
+            description="""
+                Being \\prone does not reduce your movement speed.
+            """,
+            short_description="Move at full speed while prone",
+        ),
+        MagicItem(
+            name="Belt of Scuttling, Greater",
+            level=11,
+            material_type="Belt",
+            tags=[],
+            description="""
+                Being \\prone does not reduce your movement speed or your defenses.
+            """,
+            short_description="Move at full speed and defend normally while prone",
+        ),
+        MagicItem(
+            name="Belt of Scuttling, Supreme",
+            level=17,
+            material_type="Belt",
+            tags=[],
+            description="""
+                Being \\prone does not reduce your movement speed, defenses, or accuracy.
+            """,
+            short_description="Move at full speed, defend, and attack normally while prone",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Lifesaver Amulet",
+            level=4,
+            material_type="Amulet",
+            tags=['Healing'],
+            description="""
+                At the end of each round, if you are at or below half your maximum \\glossterm<hit points>, you regain 1d6 hit points.
+            """,
+            short_description="Regains 1d6 hit points while at half hit points",
+        ),
+        MagicItem(
+            name="Lifesaver Amulet, Greater",
+            level=10,
+            material_type="Amulet",
+            tags=['Healing'],
+            description="""
+                At the end of each round, if you are at or below half your maximum \\glossterm<hit points>, you regain 2d6 hit points.
+            """,
+            short_description="Regains 2d6 hit points while at half hit points",
+        ),
+        MagicItem(
+            name="Lifesaver Amulet, Supreme",
+            level=16,
+            material_type="Amulet",
+            tags=['Healing'],
+            description="""
+                At the end of each round, if you are at or below half your maximum \\glossterm<hit points>, you regain 4d6 hit points.
+            """,
+            short_description="Regains 4d6 hit points while at half hit points",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Dazeshare Ring",
+            level=6,
+            material_type="Ring",
+            tags=['Healing'],
+            description="""
+                Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
+                On a hit, each subject becomes \\glossterm<briefly> dazed.
+            """,
+            short_description="Dazes enemies when you are dazed or worse",
+        ),
+        MagicItem(
+            name="Stunshare Ring",
+            level=15,
+            material_type="Ring",
+            tags=['Healing'],
+            description="""
+                Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
+                On a hit, each subject becomes \\glossterm<briefly> stunned.
+            """,
+            short_description="Stuns enemies when you are dazed or worse",
+        ),
+    ]
+
     apparel.append(
         MagicItem(
             name="Astral Boots",
@@ -933,7 +1057,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                This item functions like a \\textit<ring of blessed protection>, except that it protects against any \\glossterm<mundane> attack, not just strikes.
+                This item functions like a \\textit<ring of blessed protection>, except that it also protects against any \\glossterm<mundane> attack, not just strikes.
             """,
             short_description="Can protect against critical mundane attacks",
         ),
