@@ -737,6 +737,46 @@ export const enchantment: MysticSphere = {
       tags: ["Emotion", "Subtle"],
       type: "Duration",
     },
+
+    {
+      name: "Mind Crush",
+
+      attack: {
+        hit: `The subject takes 1d10 + \\glossterm{power} energy \\glossterm{subdual damage}.`,
+        targeting: `
+          Make an attack vs. Mental against anything within \\medrange.
+        `,
+      },
+      rank: 1,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Greater Mind Crush",
+
+      attack: {
+        hit: `The subject takes 4d6 + \\glossterm{power} energy \\glossterm{subdual damage}.`,
+        targeting: `
+          Make an attack vs. Mental against anything within \\longrange.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Supreme Mind Crush",
+
+      attack: {
+        hit: `The subject takes 6d10 + \\glossterm{power} energy \\glossterm{subdual damage}.`,
+        targeting: `
+          Make an attack vs. Mental against anything within \\distrange.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
+      type: "Instant",
+    },
   ],
   rituals: [
     {
