@@ -43,6 +43,57 @@ export const verdamancy: MysticSphere = {
   ],
   spells: [
     {
+      name: "Ensnaring Grasp",
+
+      attack: {
+        hit: `The subject takes 1d10 + \\glossterm{power} piercing damage.`,
+        targeting: `
+          This spell does not have the \\abilitytag{Focus} tag.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
+        `,
+      },
+      focus: false,
+      rank: 1,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Greater Ensnaring Grasp",
+
+      attack: {
+        hit: `
+          The subject takes 2d8 + \\glossterm{power} piercing damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
+        `,
+        targeting: `
+          This spell does not have the \\abilitytag{Focus} tag.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
+        `,
+      },
+      focus: false,
+      rank: 1,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Supreme Ensnaring Grasp",
+
+      functionsLike: {
+        name: 'greater ensnaring grasp',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\decelerated instead of slowed.',
+      },
+      focus: false,
+      rank: 7,
+      scaling: "damage",
+      type: "Duration",
+    },
+    {
       name: "Entangle",
 
       attack: {

@@ -614,6 +614,18 @@ export const thaumaturgy: MysticSphere = {
       type: "Attune (ritual)",
     },
     {
+      name: "Permanent Suppress Magic Aura",
+
+      castingTime: "24 hours",
+      effect: `
+        Choose one Large or smaller \\glossterm{unattended} object within \\shortrange.
+        All magical effects on the subject are undetectable with the Spellsense skill and similar abilities that detect magic.
+        This effect is permanent.
+      `,
+      rank: 4,
+      type: "Duration",
+    },
+    {
       name: "Create Magic Aura",
 
       castingTime: "one minute",

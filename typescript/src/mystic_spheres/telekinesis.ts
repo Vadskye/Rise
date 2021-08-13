@@ -553,12 +553,13 @@ export const telekinesis: MysticSphere = {
           Make an attack vs. Fortitude and Reflex against one Large or smaller creature within \\shortrange of you.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: {
-        special: "Your \\glossterm{accuracy} with the attack and with maintaining the grapple increases by +1 for each rank beyond 5.",
+        special: "Your \\glossterm{accuracy} with the attack and with maintaining the grapple increases by +1 for each rank beyond 6.",
       },
       type: "Sustain (minor)",
     },
   ],
-  rituals: [],
+  rituals: [
+  ],
 };

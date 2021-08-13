@@ -529,6 +529,22 @@ export const revelation: MysticSphere = {
     },
 
     {
+      name: "Social Intuition",
+
+      effect: `
+        If you are \\glossterm{trained} with the Social Insight skill, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
+      },
+      type: "Attune (self)",
+    },
+
+    {
       name: "Sensory Chain",
 
       attack: {
@@ -908,6 +924,22 @@ export const revelation: MysticSphere = {
         name: "scry creature",
       },
       rank: 6,
+      tags: ["Scrying"],
+      type: "Instant",
+    },
+    {
+      name: "Prophetic Dream",
+
+      castingTime: "one hour",
+      effect: `
+        The next time you fall asleep, you have a dream that foreshadows some important event or decision in your future.
+        The dream may be vague or even self-contradictory, since the future is never certain, but its contents always provide some hint about what may lie ahead of you.
+        Generally, a prophetic dream concerns events no more than a month before they occur, though staggeringly important events can be prophesied years in advance.
+
+        Once you have performed this ritual, performing it again always yields the same dream until the prophesied event has happened or is no longer a relevant or likely future.
+        This can happen as if your actions prevent the event from coming to pass.
+      `,
+      rank: 4,
       tags: ["Scrying"],
       type: "Instant",
     },
