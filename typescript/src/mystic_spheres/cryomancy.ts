@@ -349,17 +349,18 @@ export const cryomancy: MysticSphere = {
       name: "Icy Shell",
 
       effect: `
-        You cover your body with two overlapping layers of ice that crumple when they take damage.
+        You cover your body with a layer of ice that crumple when they take damage.
         The ice does not cover your joints, allowing you to move freely.
         Whenever you would take physical damage or fire damage, you take only half of that damage, and one layer of ice is destroyed.
         When the last layer of ice is destroyed, this ability provides no further benefit.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The spell creates three layers of ice.`,
-        6: `The spell creates four layers of ice.`,
+        3: `The spell creates two layers of ice.`,
+        5: `The spell creates three layers of ice.`,
+        7: `The spell creates four layers of ice.`,
       },
       tags: ["Manifestation"],
       type: "Attune (self)",
