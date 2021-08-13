@@ -203,30 +203,30 @@ def generate_armor():
             level=4,
             material_type="Shield",
             description="""
-                When you take the \\textit<total defense> action with this shield, you gain a +3 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense>).
+                When you take the \\textit<total defense> action with this shield, you gain a +2 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense>).
                 This property cannot be applied to tower shields.
             """,
-            short_description="Grants +3 Armor defense during total defense",
+            short_description="Grants +2 Armor defense during total defense",
         ),
         MagicItem(
             name="Covering Shield, Greater",
             level=10,
             material_type="Shield",
             description="""
-                This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +4.
+                This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +3.
                 This property cannot be applied to tower shields.
             """,
-            short_description="Grants +4 Armor defense during total defense",
+            short_description="Grants +3 Armor defense during total defense",
         ),
         MagicItem(
             name="Covering Shield, Supreme",
             level=16,
             material_type="Shield",
             description="""
-                This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +5.
+                This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +4.
                 This property cannot be applied to tower shields.
             """,
-            short_description="Grants +5 Armor defense during total defense",
+            short_description="Grants +4 Armor defense during total defense",
         ),
     ]
 
@@ -631,6 +631,20 @@ def generate_armor():
                 This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you take the total defense action.
             """,
             short_description="React to reflect magical attacks",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
+            name="Armor of Emptiness",
+            level=17,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                Your maximum \\glossterm<hit points> are halved.
+                However, you are immune to \\glossterm<conditions>.
+            """,
+            short_description="Immune to conditions, but maximum hit points are halved",
         ),
     ]
 
