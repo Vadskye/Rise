@@ -645,9 +645,22 @@ export const cryomancy: MysticSphere = {
       scaling: "damage",
       type: "Duration",
     },
-
   ],
   rituals: [
+    {
+      name: "Cold Tolerance",
+
+      castingTime: "one minute",
+      effect: `
+        Choose either yourself or an \\glossterm{ally} or unattended object within \\medrange.
+        The subject suffers no harm from being in a cold environment.
+        It can exist comfortably in conditions as low as -50 degrees Fahrenheit.
+        Its equipment, if any, is also protected.
+        This does not protect the subject from cold damage.
+      `,
+      rank: 1,
+      type: "Attune (ritual)",
+    },
     {
       name: "Frostfall",
 

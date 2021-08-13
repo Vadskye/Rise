@@ -641,6 +641,44 @@ export const astromancy: MysticSphere = {
       },
       type: "Duration",
     },
+    {
+      name: "Blink",
+
+      effect: `
+        This spell does not have the \\abilitytag{Focus} tag.
+
+        All attacks against you this round have a 50\\% \\glossterm{failure chance}.
+        This ability has the \\abilitytag{Swift} tag, so it protects you from attacks against you during the current phase.
+      `,
+      focus: false,
+      narrative: `You quickly blink into the Astral Plane, leaving a dangerous battlefield behind.`,
+      rank: 1,
+      scaling: {
+        3: `You also gain a +1 bonus to all defenses.`,
+        5: `The defense bonus increases to +2.`,
+        7: `The defense bonus increases to +3.`,
+      },
+      tags: ['Swift'],
+      type: "Duration",
+    },
+    {
+      name: "Distant Spells",
+
+      effect: `
+        You increase the \\glossterm{range} of all of your ranged spells by 5 feet.
+        This does not affect spells that do not have a range.
+      `,
+      narrative: `
+        By channeling your spells through the Astral Plane, you can reach foes farther away than would normally be possible.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The distance increases to 10 feet.",
+        5: "The distance increases to 15 feet.",
+        7: "The distance increases to 20 feet.",
+      },
+      type: "Attune (self)",
+    },
   ],
   rituals: [
     {

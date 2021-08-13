@@ -10,7 +10,7 @@ export const aeromancy: MysticSphere = {
       name: "Airborne Leap",
 
       effect: `
-        You \\glossterm{briefly} gain a +3 bonus to the Jump skill.
+        You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Jump skill.
       `,
       focus: false,
       narrative: `
@@ -651,6 +651,21 @@ export const aeromancy: MysticSphere = {
       rank: 4,
       scaling: {
         6: "You also ignore all sources of \\glossterm{difficult terrain}.",
+      },
+      type: "Attune (self)",
+    },
+    {
+      name: "Airborne Jumper",
+
+      effect: `
+        If you are \\glossterm{trained} with the Jump skill, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
       },
       type: "Attune (self)",
     },
