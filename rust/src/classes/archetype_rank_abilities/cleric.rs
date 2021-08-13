@@ -375,12 +375,12 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Divine Healing",
+            name: "Vital Restoration",
             is_magical: true,
             rank: 3,
             description: r"
-         You can use the \textit{divine healing} ability as a standard action.
-        \begin{instantability}{Divine Healing}[Instant]
+         You can use the \textit{vital restoration} ability as a standard action.
+        \begin{instantability}{Vital Restoration}[Instant]
             \abilitytag{Magical}
             \rankline
             When you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).

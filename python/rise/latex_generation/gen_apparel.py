@@ -9,6 +9,42 @@ from rise.latex.util import latexify, longtablify
 def generate_apparel():
     apparel = []
 
+    apparel += [
+        MagicItem(
+            name="Blind Seer's Circlet",
+            level=7,
+            material_type="Circlet",
+            tags=[],
+            description="""
+                If you have the \\glossterm<blindsense> ability, you increase its range by 30 feet.
+                If you have the \\glossterm<blindsight> ability, you increase its range by 15 feet.
+            """,
+            short_description="Increases range of blindsense and blindsight",
+        ),
+        MagicItem(
+            name="Blind Seer's Circlet, Greater",
+            level=13,
+            material_type="Circlet",
+            tags=[],
+            description="""
+                If you have the \\glossterm<blindsense> ability, you increase its range by 60 feet.
+                If you have the \\glossterm<blindsight> ability, you increase its range by 30 feet.
+            """,
+            short_description="Greatly increases range of blindsense and blindsight",
+        ),
+        MagicItem(
+            name="Blind Seer's Circlet, Supreme",
+            level=19,
+            material_type="Circlet",
+            tags=[],
+            description="""
+                If you have the \\glossterm<blindsense> ability, you increase its range by 120 feet.
+                If you have the \\glossterm<blindsight> ability, you increase its range by 60 feet.
+            """,
+            short_description="Drastically increases range of blindsense and blindsight",
+        ),
+    ]
+
     # Arm
 
     apparel += [
@@ -319,7 +355,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Circlet of Persuasion",
-            level=1,
+            level=3,
             material_type="Circlet",
             description="""
                 You gain a +2 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
@@ -328,7 +364,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Circlet of Persuasion, Greater",
-            level=7,
+            level=9,
             material_type="Circlet",
             description="""
                 You gain a +3 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
@@ -337,7 +373,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Circlet of Persuasion, Supreme",
-            level=13,
+            level=15,
             material_type="Circlet",
             description="""
                 You gain a +4 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
@@ -413,9 +449,9 @@ def generate_apparel():
 
     apparel.append(
         MagicItem(
-            name="Amulet of Breath",
+            name="Ring of Breath",
             level=1,
-            material_type="Amulet",
+            material_type="Ring",
             tags=[],
             description="""
             As a \\glossterm<minor action>, you can activate this item.
@@ -768,9 +804,9 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Lifesaver Amulet",
+            name="Lifesaver Ring",
             level=4,
-            material_type="Amulet",
+            material_type="Ring",
             tags=['Healing'],
             description="""
                 At the end of each round, if you are at or below half your maximum \\glossterm<hit points>, you regain 1d6 hit points.
@@ -778,9 +814,9 @@ def generate_apparel():
             short_description="Regains 1d6 hit points while at half hit points",
         ),
         MagicItem(
-            name="Lifesaver Amulet, Greater",
+            name="Lifesaver Ring, Greater",
             level=10,
-            material_type="Amulet",
+            material_type="Ring",
             tags=['Healing'],
             description="""
                 At the end of each round, if you are at or below half your maximum \\glossterm<hit points>, you regain 2d6 hit points.
@@ -788,9 +824,9 @@ def generate_apparel():
             short_description="Regains 2d6 hit points while at half hit points",
         ),
         MagicItem(
-            name="Lifesaver Amulet, Supreme",
+            name="Lifesaver Ring, Supreme",
             level=16,
-            material_type="Amulet",
+            material_type="Ring",
             tags=['Healing'],
             description="""
                 At the end of each round, if you are at or below half your maximum \\glossterm<hit points>, you regain 4d6 hit points.
@@ -925,7 +961,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Boots of Elvenkind",
-            level=1,
+            level=3,
             material_type="Boots",
             description="""
                 You gain a +2 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
@@ -934,7 +970,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Boots of Elvenkind, Greater",
-            level=7,
+            level=6,
             material_type="Boots",
             description="""
                 You gain a +3 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
@@ -943,7 +979,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Boots of Elvenkind, Supreme",
-            level=13,
+            level=12,
             material_type="Boots",
             description="""
                 You gain a +4 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
@@ -970,9 +1006,9 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Amulet of the True Form",
+            name="Ring of the True Form",
             level=3,
-            material_type="Amulet",
+            material_type="Ring",
             tags=[],
             description="""
                 You gain a +4 bonus to defenses against attacks from the \\sphere<polymorph> sphere.
@@ -981,9 +1017,9 @@ def generate_apparel():
             short_description="Grants +4 defenses vs form-altering attacks",
         ),
         MagicItem(
-            name="Amulet of the True Form, Greater",
+            name="Ring of the True Form, Greater",
             level=9,
-            material_type="Amulet",
+            material_type="Ring",
             tags=[],
             description="""
                 You gain a +8 bonus to defenses against attacks from the \\textit<polymorph> sphere.
@@ -992,9 +1028,9 @@ def generate_apparel():
             short_description="Grants +8 defenses vs form-altering attacks",
         ),
         MagicItem(
-            name="Amulet of the True Form, Supreme",
+            name="Ring of the True Form, Supreme",
             level=15,
-            material_type="Amulet",
+            material_type="Ring",
             tags=[],
             description="""
                 You are immune to attacks from the \\textit<polymorph> sphere.
@@ -1006,9 +1042,9 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Amulet of Honeyed Words",
-            level=4,
-            material_type="Amulet",
+            name="Ring of Honeyed Words",
+            level=6,
+            material_type="Ring",
             tags=[],
             description="""
                 You gain a +2 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
@@ -1016,9 +1052,9 @@ def generate_apparel():
             short_description="Grants +2 to social skills",
         ),
         MagicItem(
-            name="Amulet of Honeyed Words, Greater",
-            level=10,
-            material_type="Amulet",
+            name="Ring of Honeyed Words, Greater",
+            level=12,
+            material_type="Ring",
             tags=[],
             description="""
                 You gain a +3 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
@@ -1026,9 +1062,9 @@ def generate_apparel():
             short_description="Grants +3 to social skills",
         ),
         MagicItem(
-            name="Amulet of Honeyed Words, Supreme",
-            level=16,
-            material_type="Amulet",
+            name="Ring of Honeyed Words, Supreme",
+            level=18,
+            material_type="Ring",
             tags=[],
             description="""
                 You gain a +4 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
@@ -1039,9 +1075,19 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Periapt of Proof Against Poison",
+            name="Poisonbane Ring",
             level=2,
-            material_type="Amulet",
+            material_type="Ring",
+            tags=[],
+            description="""
+                You gain a +2 bonus to defenses against \\glossterm<poisons>.
+            """,
+            short_description="Grants +2 defenses vs poisons",
+        ),
+        MagicItem(
+            name="Poisonbane Ring, Greater",
+            level=8,
+            material_type="Ring",
             tags=[],
             description="""
                 You gain a +4 bonus to defenses against \\glossterm<poisons>.
@@ -1049,19 +1095,9 @@ def generate_apparel():
             short_description="Grants +4 defenses vs poisons",
         ),
         MagicItem(
-            name="Periapt of Proof Against Poison, Greater",
-            level=8,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                You gain a +8 bonus to defenses against \\glossterm<poisons>.
-            """,
-            short_description="Grants +8 defenses vs poisons",
-        ),
-        MagicItem(
-            name="Periapt of Proof Against Poison, Supreme",
+            name="Poisonbane Ring, Supreme",
             level=14,
-            material_type="Amulet",
+            material_type="Ring",
             tags=[],
             description="""
                 You are immune to \\glossterm<poisons>.
@@ -1148,31 +1184,29 @@ def generate_apparel():
         )
     )
 
-    # Amulets
-
     apparel += [
         MagicItem(
-            name="Amulet of Mighty Fists",
+            name="Bracers of Mighty Fists",
             level=4,
-            material_type="Amulet",
+            material_type="Bracers",
             description="""
                 You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
             """,
             short_description="Grants +2 power with natural and unarmed attacks",
         ),
         MagicItem(
-            name="Amulet of Mighty Fists, Greater",
+            name="Bracers of Mighty Fists, Greater",
             level=10,
-            material_type="Amulet",
+            material_type="Bracers",
             description="""
                 You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
             """,
             short_description="Grants +4 power with natural and unarmed attacks",
         ),
         MagicItem(
-            name="Amulet of Mighty Fists, Supreme",
+            name="Bracers of Mighty Fists, Supreme",
             level=16,
-            material_type="Amulet",
+            material_type="Bracers",
             description="""
                 You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
             """,
@@ -1182,27 +1216,27 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Amulet of Health",
+            name="Belt of Health",
             level=4,
-            material_type="Amulet",
+            material_type="Belt",
             description="""
                 You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points>.
             """,
             short_description="Grants +4 hit points",
         ),
         MagicItem(
-            name="Amulet of Health, Greater",
+            name="Belt of Health, Greater",
             level=10,
-            material_type="Amulet",
+            material_type="Belt",
             description="""
                 You gain a +8 \\glossterm<magic bonus> to your \\glossterm<hit points>.
             """,
             short_description="Grants +8 hit points",
         ),
         MagicItem(
-            name="Amulet of Health, Supreme",
+            name="Belt of Health, Supreme",
             level=16,
-            material_type="Amulet",
+            material_type="Belt",
             description="""
                 You gain a +16 \\glossterm<magic bonus> to your \\glossterm<hit points>.
             """,
@@ -1212,12 +1246,12 @@ def generate_apparel():
 
     apparel.append(
         MagicItem(
-            name="Amulet of the Planes",
+            name="Ring of the Planes",
             level=12,
-            material_type="Amulet",
+            material_type="Ring",
             tags=[],
             description="""
-            When you perform the \\ritual<plane shift> ritual, this amulet provides all \\glossterm<fatigue levels> required.
+            When you perform the \\ritual<plane shift> ritual, this ring provides all \\glossterm<fatigue levels> required.
             This does not grant you the ability to perform the \\ritual<plane shift> ritual if you could not already.
         """,
             short_description="Aids travel with \\ritual<plane shift>",
@@ -1226,9 +1260,9 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Amulet of Nondetection",
+            name="Cloak of Nondetection",
             level=6,
-            material_type="Amulet",
+            material_type="Cloak",
             tags=[],
             description="""
                 You gain a +4 bonus to defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
@@ -1236,14 +1270,37 @@ def generate_apparel():
             short_description="Grants +4 to defenses against detection",
         ),
         MagicItem(
-            name="Amulet of Nondetection, Greater",
+            name="Cloak of Nondetection, Greater",
             level=14,
-            material_type="Amulet",
+            material_type="Cloak",
             tags=[],
             description="""
                 You gain a +8 bonus to defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
             """,
             short_description="Grants +8 to defenses against detection",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Challenger's Cloak",
+            level=13,
+            material_type="Cloak",
+            tags=[],
+            description="""
+                Each creature \\goaded by you takes an additional -1 \\glossterm<accuracy> penalty against creatures other than you while it is within \\medrange of you.
+            """,
+            short_description="Increases accuracy penalty on goaded foes by 1",
+        ),
+        MagicItem(
+            name="Challenger's Cloak",
+            level=19,
+            material_type="Cloak",
+            tags=[],
+            description="""
+                Each creature \\goaded by you takes an additional -2 \\glossterm<accuracy> penalty against creatures other than you while it is within \\medrange of you.
+            """,
+            short_description="Increases accuracy penalty on goaded foes by 2",
         ),
     ]
 
@@ -1371,9 +1428,9 @@ def generate_apparel():
     apparel += [
         MagicItem(
             # Maybe too strong?
-            name="Hexward Amulet",
+            name="Hexward Ring",
             level=7,
-            material_type="Amulet",
+            material_type="Ring",
             tags=[],
             description="""
                 You gain a +1 bonus to defenses against spells that target you directly.
@@ -1382,24 +1439,14 @@ def generate_apparel():
             short_description="Grants +1 defenses against targeted spells",
         ),
         MagicItem(
-            name="Hexproof Amulet, Greater",
-            level=13,
-            material_type="Amulet",
+            name="Hexproof Ring, Greater",
+            level=16,
+            material_type="Ring",
             tags=[],
             description="""
-                This item functions like a \\mitem<hexward amulet>, except that the bonus increases to +2.
+                This item functions like a \\mitem<hexward ring>, except that the bonus increases to +2.
             """,
             short_description="Grants +2 defenses against targeted spells",
-        ),
-        MagicItem(
-            name="Hexproof Amulet, Supreme",
-            level=19,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                This item functions like a \\mitem<hexward amulet>, except that the bonus increases to +3.
-            """,
-            short_description="Grants +3 defenses against targeted spells",
         ),
     ]
 
@@ -1962,12 +2009,12 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Cleansing Amulet",
+            name="Cleansing Belt",
             level=4,
-            material_type="Amulet",
+            material_type="Belt",
             tags=[],
             description="""
-                As a standard action, you can activate this amulet.
+                As a standard action, you can activate this belt.
                 When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
                 This cannot remove an effect applied during the current round.
 
@@ -1976,24 +2023,24 @@ def generate_apparel():
             short_description="Fatigue to remove a debuff",
         ),
         MagicItem(
-            name="Greater Cleansing Amulet",
+            name="Greater Cleansing Belt",
             level=10,
-            material_type="Amulet",
+            material_type="Belt",
             tags=[],
             description="""
-                As a standard action, you can activate this amulet.
+                As a standard action, you can activate this belt.
                 When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
                 This cannot remove an effect applied during the current round.
             """,
             short_description="Remove a debuff",
         ),
         MagicItem(
-            name="Supreme Cleansing Amulet",
+            name="Supreme Cleansing Belt",
             level=16,
-            material_type="Amulet",
+            material_type="Belt",
             tags=[],
             description="""
-                As a standard action, you can activate this amulet.
+                As a standard action, you can activate this belt.
                 When you do, you remove up to two \\glossterm<brief> effects or \\glossterm<conditions> affecting you.
                 This cannot remove an effects applied during the current round.
             """,
@@ -2003,27 +2050,27 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Quickcleanse Amulet",
+            name="Quickcleanse Belt",
             level=13,
-            material_type="Amulet",
+            material_type="Belt",
             tags=[],
             description="""
-                As a \\glossterm<minor action>, you can activate this amulet.
+                As a \\glossterm<minor action>, you can activate this belt.
                 When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
                 This cannot remove an effect applied during the current round.
 
-                After you use this amulet, you increase your \\glossterm<fatigue level> by two.
+                After you use this belt, you increase your \\glossterm<fatigue level> by two.
             """,
             short_description="Quickly remove a debuff",
         ),
 
         MagicItem(
-            name="Quickcleanse Amulet, Greater",
+            name="Quickcleanse Belt, Greater",
             level=19,
-            material_type="Amulet",
+            material_type="Belt",
             tags=[],
             description="""
-                This item functions like a \\mitem<quickcleanse amulet>, except that you only increase your \\glossterm<fatigue level> by one instead of two.
+                This item functions like a \\mitem<quickcleanse belt>, except that you only increase your \\glossterm<fatigue level> by one instead of two.
             """,
             short_description="Quickly remove a debuff more easily",
         ),
@@ -2179,6 +2226,434 @@ def generate_apparel():
                 This belt functions like an \\mitem<anchoring belt>, except that the immunities apply even against critical hits.
             """,
             short_description="Protects you from all forced movement and teleportation attacks",
+        ),
+    ]
+
+    # Class ability buffs - all amulets!
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Undead Turning",
+            level=7,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<turn undead> cleric ability, its area increases to a \\largearea radius.
+            """,
+            short_description="Increases area of \\ability<turn undead>",
+        ),
+        MagicItem(
+            name="Amulet of Undead Turning, Greater",
+            level=13,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<turn undead> cleric ability, its area increases to a \\hugearea radius.
+            """,
+            short_description="Greatly increases area of \\ability<turn undead>",
+        ),
+        MagicItem(
+            name="Amulet of Undead Turning, Supreme",
+            level=19,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<turn undead> cleric ability, its area increases to a \\gargarea radius.
+            """,
+            short_description="Massively increases area of \\ability<turn undead>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Rage",
+            level=5,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<rage> barbarian ability, its penalties to Armor and Reflex defense are reduced by 1.
+            """,
+            short_description="Reduces defense penalties from \\textit<rage>.",
+        ),
+        MagicItem(
+            name="Amulet of Rage, Greater",
+            level=11,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<rage> barbarian ability, its penalties to Armor and Reflex defense are removed.
+            """,
+            short_description="Removes defense penalties from \\textit<rage>.",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Divine Healing",
+            level=4,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<restoration> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
+            """,
+            short_description="Grants +4 power with \\ability<restoration> and \\ability<lay on hands>",
+        ),
+        MagicItem(
+            name="Amulet of Divine Healing, Greater",
+            level=10,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<restoration> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
+            """,
+            short_description="Grants +8 power with \\ability<restoration> and \\ability<lay on hands>",
+        ),
+        MagicItem(
+            name="Amulet of Divine Healing, Supreme",
+            level=16,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<restoration> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<power>.
+            """,
+            short_description="Grants +16 power with \\ability<restoration> and \\ability<lay on hands>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Divine Vitality",
+            level=11,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<divine healing> cleric ability or the \\ability<lay on hands> paladin ability to remove a vital wound, you only increase your \\glossterm<fatigue level> by one instead of by two.
+            """,
+            short_description="Reduces fatigue required to use \\ability<divine healing>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Revivification",
+            level=20,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<revivify> cleric ability, you only increase your \\glossterm<fatigue level> by two instead of by three.
+            """,
+            short_description="Reduces fatigue required to use \\ability<revivify>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Quickshift Amulet",
+            level=16,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                If you have the \\ability<shifting defense> druid ability, you can use it as a \\glossterm<minor action> instead of as a standard action.
+            """,
+            short_description="Allows using \\ability<shifting defense> more quickly",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Shared Discipline",
+            level=11,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                Whenever you use the \\ability<discipline> fighter ability, one \\glossterm<ally> within \\shortrange of you can also remove a \\glossterm<brief> effect or \\glossterm<condition>.
+                This is not a \\abilitytag<Swift> effect, even if your \\ability<discipline> ability is a \\abilitytag<Swift> effect.
+            """,
+            short_description="Using the \\abilitytag<discipline> ability also helps a nearby ally",
+        ),
+        MagicItem(
+            name="Amulet of Shared Discipline, Greater",
+            level=17,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                This item functions like a \\textit<amulet of shared discipline>, except that the range increases to \\longrange.
+            """,
+            short_description="Using the \\abilitytag<discipline> ability also helps an ally",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Shared Clarity",
+            level=11,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                Whenever you use the \\ability<clear the mind> monk ability, one \\glossterm<ally> within \\shortrange of you can also remove a \\glossterm<brief> effect or \\glossterm<condition>.
+                This is not a \\abilitytag<Swift> effect, even if your \\ability<clear the mind> ability is a \\abilitytag<Swift> effect.
+            """,
+            short_description="Using the \\abilitytag<clear the mind> ability also helps a nearby ally",
+        ),
+        MagicItem(
+            name="Amulet of Shared Clarity, Greater",
+            level=17,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                This item functions like a \\textit<amulet of shared clarity>, except that the range increases to \\longrange.
+            """,
+            short_description="Using the \\abilitytag<clear the mind> ability also helps an ally",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Guardian's Amulet",
+            level=4,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<accuracy> bonus with the \\ability<guarding strike> fighter ability.
+            """,
+            short_description="Grants +1 accuracy with \\ability<guarding strike>",
+        ),
+        MagicItem(
+            name="Guardian's Amulet, Greater",
+            level=10,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<accuracy> bonus with the \\ability<guarding strike> fighter ability.
+            """,
+            short_description="Grants +2 accuracy with \\ability<guarding strike>",
+        ),
+        MagicItem(
+            name="Guardian's Amulet, Supreme",
+            level=16,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                You gain a +3 \\glossterm<accuracy> bonus with the \\ability<guarding strike> fighter ability.
+            """,
+            short_description="Grants +3 accuracy with \\ability<guarding strike>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Protector's Amulet",
+            level=5,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<protect> fighter ability, you can target an ally within \\shortrange of you.
+            """,
+            short_description="Increases range of the \\ability<protect> ability",
+        ),
+        MagicItem(
+            name="Protector's Amulet, Greater",
+            level=11,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<protect> fighter ability, you can target an ally within \\medrange of you.
+            """,
+            short_description="Greatly increases range of the \\ability<protect> ability",
+        ),
+        MagicItem(
+            name="Protector's Amulet, Supreme",
+            level=17,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<protect> fighter ability, you can target an ally within \\longrange of you.
+            """,
+            short_description="Drastically increases range of the \\ability<protect> ability",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Sturdy Companionship",
+            level=4,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +8 \\glossterm<magic bonus> to its \\glossterm<damage resistance>.
+            """,
+            short_description="Grants +8 damage resistance to animal allies",
+        ),
+        MagicItem(
+            name="Amulet of Sturdy Companionship, Greater",
+            level=10,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +16 \\glossterm<magic bonus> to its \\glossterm<damage resistance>.
+            """,
+            short_description="Grants +16 damage resistance to animal allies",
+        ),
+        MagicItem(
+            name="Amulet of Sturdy Companionship, Supreme",
+            level=16,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +32 \\glossterm<magic bonus> to its \\glossterm<damage resistance>.
+            """,
+            short_description="Grants +32 damage resistance to animal allies",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Equality and Perfection",
+            level=20,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                If you have the \\ability<perfect body> ability, you gain a +1 bonus to the base value of your lowest physical attribute.
+            """,
+            short_description="Improves \\ability<perfect body> on your lowest attribute",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Equality and Perfection",
+            level=20,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                If you have the \\ability<perfect body> ability, you gain a +1 bonus to the base value of your lowest physical attribute.
+            """,
+            short_description="Improves \\ability<perfect body> on your lowest attribute",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of the Avenger",
+            level=8,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<smite> paladin ability, you gain a +1 \\glossterm<accuracy> bonus against each creature that dealt damage to one of your \\glossterm<allies> during the previous round.
+            """,
+            short_description="Grants +1 accuracy with \\ability<smite> when avenging allies",
+        ),
+        MagicItem(
+            name="Amulet of the Avenger, Greater",
+            level=17,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<smite> paladin ability, you gain a +2 \\glossterm<accuracy> bonus against each creature that dealt damage to one of your \\glossterm<allies> during the previous round.
+            """,
+            short_description="Grants +2 accuracy with \\ability<smite> when avenging allies",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Swarmhunter Amulet",
+            level=11,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<quarry> ranger ability, you may target an additional creature.
+            """,
+            short_description="Adds an additional target with \\ability<quarry>",
+        ),
+        MagicItem(
+            name="Swarmhunter Amulet, Greater",
+            level=11,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<quarry> ranger ability, you may target two additional creatures.
+            """,
+            short_description="Adds two additional targets with \\ability<quarry>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Distant Stealth",
+            level=4,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<sneak attack> rogue ability, you may target a creature within \\medrange instead of \\shortrange.
+            """,
+            short_description="Increases range with \\ability<sneak attack>",
+        ),
+        MagicItem(
+            name="Amulet of Distant Stealth, Greater",
+            level=10,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<sneak attack> rogue ability, you may target a creature within \\longrange instead of \\shortrange.
+            """,
+            short_description="Greatly increases range with \\ability<sneak attack>",
+        ),
+        MagicItem(
+            name="Amulet of Distant Stealth, Supreme",
+            level=16,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<sneak attack> rogue ability, you may target a creature within \\distrange instead of \\shortrange.
+            """,
+            short_description="Drastically increases range with \\ability<sneak attack>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Darkstalker's Amulet",
+            level=10,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<darkstalker> rogue ability, you may choose an additional sense group to hide from.
+            """,
+            short_description="Hide from more senses with \\ability<darkstalker>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Dabbler's Amulet",
+            level=3,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                If you have the \\ability<skill exemplar> ability, you gain a +1 \\glossterm<magic bonus> to all \\glossterm<untrained> skills.
+            """,
+            short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 1",
+        ),
+        MagicItem(
+            name="Dabbler's Amulet, Greater",
+            level=9,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                If you have the \\ability<skill exemplar> ability, you gain a +2 \\glossterm<magic bonus> to all \\glossterm<untrained> skills.
+            """,
+            short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 2",
+        ),
+        MagicItem(
+            name="Dabbler's Amulet, Supreme",
+            level=15,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                If you have the \\ability<skill exemplar> ability, you gain a +3 \\glossterm<magic bonus> to all \\glossterm<untrained> skills.
+            """,
+            short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 3",
         ),
     ]
 
