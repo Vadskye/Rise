@@ -1209,6 +1209,46 @@ def generate_tools():
         ),
     ]
 
+    tools += [
+        MagicItem(
+            consumable=True,
+            name="Universal Artisan's Tools",
+            level=3,
+            materials="metal",
+            tags=[],
+            description="""
+                This item can serve as artisan's tools for any Craft check except for Craft (alchemy).
+            """,
+            short_description="Use to craft almost item",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Universal Artisan's Tools, Greater",
+            level=9,
+            materials="metal",
+            tags=[],
+            description="""
+                This item can serve as artisan's tools for any Craft check.
+                In addition, you gain a +2 \\glossterm<magic bonus> to the Craft skill when using this item to create an item.
+                This provides no benefit when using the Craft skill for other purposes, such as to appraise an item.
+            """,
+            short_description="Use to craft any item with +2 bonus",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Universal Artisan's Tools, Supreme",
+            level=15,
+            materials="metal",
+            tags=[],
+            description="""
+                This item can serve as artisan's tools for any Craft check.
+                In addition, you gain a +3 \\glossterm<magic bonus> to the Craft skill when using this item to create an item.
+                This provides no benefit when using the Craft skill for other purposes, such as to appraise an item.
+            """,
+            short_description="Use to craft any item with +3 bonus",
+        ),
+    ]
+
     return tools
 
 

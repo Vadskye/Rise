@@ -413,7 +413,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             \rankline
             Make a \glossterm{strike} with a \plus1d damage bonus.
             Because this is a \glossterm{magical} ability, you use your magical \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
-            If your target shares your devoted alignment, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a creature that share your alignment.
+            If your target shares your devoted alignment, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a creature that shares your alignment.
 
             \rankline
             \rank{3} The damage bonus increases to \plus2d.

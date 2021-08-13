@@ -25,7 +25,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
 
             \rankline
             \rank{3} This ability gains the \abilitytag{Swift} tag.
-            When you use it, the penalties from the removed conditions do not affect you during the current phase.
+            When you use it, the removed effects do not affect you during the current phase.
             In addition, you \glossterm{briefly} cannot gain any \glossterm{conditions}.
             \rank{5} You can use this ability as a \glossterm{minor action}.
             When you do, you increase your \glossterm{fatigue level} by one.
@@ -435,11 +435,11 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Greater Sentinel's Goad",
+            name: "Demanding Challenger",
             is_magical: false,
             rank: 7,
             description: r"
-                Any creature that is \goaded by you suffers a \minus4 accuracy penalty instead of the normal \minus2.
+                Each creature that is \goaded by you takes an additional -2 \glossterm{accuracy} penalty against creatures other than you while it is within \medrange of you.
             ",
         },
     ];
