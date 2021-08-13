@@ -813,14 +813,20 @@ export const vivimancy: MysticSphere = {
       effect: `
         Choose up to four corpses within \\shortrange.
         The combined levels of all targets cannot exceed your level.
-        The subject becomes an undead creature that obeys your spoken commands.
-        You choose whether to create a skeleton or a zombie.
+        Each subject becomes an undead creature that obeys your mental commands.
+
+        You choose whether to create a skeleton or a zombie from each corpse.
         Creating a zombie require a mostly intact corpse, including most of the flesh.
         Creating a skeleton only requires a mostly intact skeleton.
         If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
+
+        As a \\glossterm{minor action}, you can mentally command your undead.
+        The command must be no more than 10 words, and overly complex commands may cause strange and unintended behavior.
+        It affects any undead you created with this ability that are within \\distrange of you.
+        Undead will obey their most recent command indefinitely.
       `,
       rank: 3,
-      type: "Attune (ritual)",
+      type: "Attune (self)",
     },
   ],
 };

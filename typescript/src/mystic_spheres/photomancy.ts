@@ -389,9 +389,7 @@ export const photomancy: MysticSphere = {
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
       rank: 4,
       scaling: {
-        6: `
-          This benefit applies against all attacks against you, not just \\glossterm{strikes}.
-        `,
+        6: "The miss chance increases to 25\\%.",
       },
       tags: ["Sensation", "Visual"],
       type: "Attune (self)",
@@ -602,14 +600,15 @@ export const photomancy: MysticSphere = {
       castingTime: "24 hours",
       functionsLike: {
         exceptThat: `
-          it loses the \\abilitytag{Attune} (ritual) tag and the effect lasts permanently.
-          In addition, it can only target objects.
+          Choose one Medium or smaller \\glossterm{unattended} object within \\medrange.
+          The subject glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
+          This effect is permanent.
         `,
         name: "continuous light",
       },
-      rank: 3,
+      rank: 2,
       tags: ["Sensation"],
-      type: "Instant",
+      type: "Duration",
     },
   ],
 };

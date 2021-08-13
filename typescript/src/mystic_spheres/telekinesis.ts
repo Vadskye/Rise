@@ -57,7 +57,7 @@ export const telekinesis: MysticSphere = {
         As part of movement, it can make a Strength check with a \\glossterm{difficulty rating} of 5.
         If it succeeds, it can move towards you at half speed.`,
         targeting: `
-        Make an attack vs. Mental against one creature within \\longrange.
+        Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
 
@@ -254,7 +254,7 @@ export const telekinesis: MysticSphere = {
         If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 + half \\glossterm{power} instead of the normal knockback damage.
         Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.`,
         targeting: `
-          Make an attack vs. Mental against everything in a \\areasmall radius from you.
+          Make an attack vs. Fortitude against everything in a \\areasmall radius from you.
         `,
       },
       rank: 3,
@@ -281,12 +281,11 @@ export const telekinesis: MysticSphere = {
       name: "Distant Shove",
       attack: {
         hit: `
-          You \\glossterm{push} the subject up to 30 feet in a straight line away from you.
-          If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d8 + \\glossterm{power}.
-          Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
+          You \\glossterm{push} the subject up to 30 feet in a straight line.
+          If the subject impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d8 + \\glossterm{power}.
         `,
         targeting: `
-          Make an attack vs. Mental against one Large or smaller object within \\medrange of you.
+          Make an attack vs. Fortitude against anything Large or smaller within \\shortrange of you.
         `,
       },
       rank: 3,
@@ -297,7 +296,7 @@ export const telekinesis: MysticSphere = {
       name: "Greater Distant Shove",
       functionsLike: {
         name: 'distant shove',
-        exceptThat: "the damage increases to 4d10, and the maximum size increases to Huge.",
+        exceptThat: "the damage increases to 4d10 + \\glossterm{power}, and the maximum size increases to Huge.",
       },
       rank: 6,
       type: "Instant",
@@ -311,7 +310,7 @@ export const telekinesis: MysticSphere = {
         If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
         Moving the subject upwards costs twice the normal movement cost.`,
         targeting: `
-          Make an attack vs. Mental against anything Large or smaller within \\medrange.
+          Make an attack vs. Fortitude against anything Large or smaller within \\medrange.
         `,
       },
 
@@ -540,6 +539,25 @@ export const telekinesis: MysticSphere = {
       rank: 6,
       tags: [],
       type: "Attune (self)",
+    },
+
+    {
+      name: "Distant Grasp",
+      attack: {
+        hit: `
+          The subject is \\grappled by telekinetic force.
+          You must use the \\textit<maintain grapple> ability each round to maintain the grapple, as normal for grappling.
+          You may not use your Strength to maintain the grapple.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude and Reflex against one Large or smaller creature within \\shortrange of you.
+        `,
+      },
+      rank: 5,
+      scaling: {
+        special: "Your \\glossterm{accuracy} with the attack and with maintaining the grapple increases by +1 for each rank beyond 5.",
+      },
+      type: "Sustain (minor)",
     },
   ],
   rituals: [],

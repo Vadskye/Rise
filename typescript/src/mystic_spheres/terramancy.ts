@@ -348,7 +348,7 @@ export const terramancy: MysticSphere = {
       name: "Rocky Shell",
 
       effect: `
-        You cover your body with a layer of rock that crumple when they take damage.
+        You cover your body with a layer of rock that crumples when it takes damage.
         The rock does not cover your joints, allowing you to move, though the shell increases your \\glossterm{encumbrance} by 2.
         Whenever you would take damage, you take only half of that damage, and one layer of rock is destroyed.
         When the last layer is destroyed, this ability provides no further benefit.
@@ -432,6 +432,28 @@ export const terramancy: MysticSphere = {
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
+    },
+
+    {
+      name: "Personal Gravitation",
+
+      effect: `
+        Once per phase, while you are within 5 feet of an \\glossterm{unattended} object at least one size category larger than you, you can take a \\glossterm{free action} to adjust your personal gravity.
+        When you do, gravity pulls you towards that surface instead of in the normal direction.
+        This allows you to walk normally on walls or even ceilings.
+
+        Whenever you change the direction that gravity pulls you, you must make a \\glossterm{difficulty rating} 10 Balance check to keep your feet.
+        Failure means you fall \\prone and your movement for that phase ends.
+      `,
+      rank: 2,
+      scaling: {
+        4: `
+          The maximum distance increases to 15 feet.
+          This can allow you to pull yourself towards distant objects, though you may take falling damage if you fall too far.
+        `,
+        6: `The maximum distance increases to 30 feet.`,
+      },
+      type: "Attune (self)",
     },
   ],
   rituals: [],

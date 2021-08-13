@@ -679,15 +679,37 @@ export const astromancy: MysticSphere = {
       },
       type: "Attune (self)",
     },
+    {
+      name: "Twinned Portals",
+
+      effect: `
+        Choose two unoccupied squares on stable ground within \\medrange.
+        A shimmering portal appears in each of the two squares.
+        Each portal appears as an opaque colored disc five feet in diameter.
+
+        Once per phase, when a creature moves into one of the squares, it can choose to pass through the portal in that square.
+        If it does, it \\glossterm{teleports} to the portal in the other chosen square, regardless of \\glossterm{line of sight} or \\glossterm{line of effect} between the two portal.
+        Objects can pass through the portals and maintain their speed, but moving objects have an unpredictable trajectory, so firing projectiles through a portal is ineffective.
+      `,
+      narrative: `
+        You create a pair of portals that allow instant passage from one to the other.
+      `,
+      rank: 3,
+      scaling: {
+        5: "The range increases to \\longrange.",
+        7: "The range increases to \\distrange.",
+      },
+      type: "Sustain (minor)",
+    },
   ],
   rituals: [
     {
-      name: "Gate",
+      name: "Interplanar Gate",
       rank: 7,
       effect: `
         Choose a plane that connects to your current plane, and a location within that plane.
         This ritual creates an interdimensional connection between your current plane and the location you choose, allowing travel between those two planes in either direction.
-        The gate takes the form of a \\areatiny radius circular disk, oriented a direction you choose (typically vertical).
+        The gate takes the form of a 15-foot radius circular disk, oriented in a direction you choose (typically vertical).
         It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through it is shunted instantly to the other location.
         The gate cannot be \\glossterm{sustained} for more than 5 rounds, and is automatically dismissed at the end of that time.
 

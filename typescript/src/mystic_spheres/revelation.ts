@@ -533,7 +533,7 @@ export const revelation: MysticSphere = {
 
       attack: {
         hit: `As a \\glossterm{condition}, you can see and hear out of the subject's eyes and ears instead of your own.
-        If the subject stops being within 1 mile from you, regardless of intervening barriers
+        If the subject stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
         Whenever the subject touches another creature, you can make an attack against the new creature.
         On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
         On a miss, the condition remains on the previous creature.`,
@@ -544,6 +544,25 @@ export const revelation: MysticSphere = {
       },
 
       rank: 4,
+      scaling: "accuracy",
+      type: "Sustain (standard)",
+    },
+
+    {
+      name: "Animal's Sight",
+
+      attack: {
+        hit: `
+          As a \\glossterm{condition}, you can see and hear out of the subject's eyes and ears instead of your own.
+          If the subject stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one animal within \\medrange.
+          You cannot make this attack against that same creature again until this spell ends.
+        `,
+      },
+
+      rank: 2,
       scaling: "accuracy",
       type: "Sustain (standard)",
     },
