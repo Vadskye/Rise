@@ -12,7 +12,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{verbal components}.
 
-        You \\glossterm{briefly} gain a +3 bonus to the Stealth skill.
+        You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Stealth skill.
       `,
       focus: false,
       scaling: {
@@ -330,8 +330,8 @@ export const umbramancy: MysticSphere = {
       name: "Conceal",
 
       effect: `
-        You gain a +3 \\glossterm{magic bonus} to the Stealth skill.
-        In addition, you are treated as being \\glossterm{trained} in that skill if you would otherwise be untrained.
+        If you are \\glossterm{trained} with the Stealth skill, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being \\glossterm{trained} in that skill.
       `,
       rank: 1,
       scaling: {

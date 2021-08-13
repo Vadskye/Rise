@@ -842,6 +842,21 @@ export const pyromancy: MysticSphere = {
   ],
   rituals: [
     {
+      name: "Heat Tolerance",
+
+      castingTime: "one minute",
+      effect: `
+        Choose either yourself or an \\glossterm{ally} or unattended object within \\medrange.
+        The subject suffers no harm from being in a hot environment.
+        It can exist comfortably in conditions as high as 140 degrees Fahrenheit.
+        Its equipment, if any, is also protected.
+        This does not protect the subject from fire damage.
+      `,
+      rank: 1,
+      type: "Attune (ritual)",
+    },
+
+    {
       name: "Heat Wave",
 
       castingTime: "one hour",

@@ -10,8 +10,7 @@ export const revelation: MysticSphere = {
       name: "Reveal Sensation",
 
       effect: `
-        Choose a sense, such as vision or hearing.
-        You \\glossterm{briefly} gain a +3 bonus to Awareness checks using that sense.
+        You \\glossterm{briefly} gain a +3 bonus to Awareness checks.
       `,
       focus: false,
       scaling: {
@@ -517,8 +516,8 @@ export const revelation: MysticSphere = {
       name: "Enhanced Senses",
 
       effect: `
-        You gain a +3 \\glossterm{magic bonus} to the Awareness skill.
-        In addition, you are treated as being \\glossterm{trained} in that skill if you would otherwise be untrained.
+        If you are \\glossterm{trained} with the Awareness skill, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being \\glossterm{trained} in that skill.
       `,
       rank: 1,
       scaling: {

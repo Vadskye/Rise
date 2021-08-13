@@ -518,17 +518,17 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: "Natural Camouflage",
+      name: "Survivalist",
 
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to the Stealth skill while you have \\glossterm{cover} or \\glossterm{concealment} from plants.
-        In addition, you are treated as being \\glossterm{trained} in that skill if you would otherwise be untrained.
+        If you are \\glossterm{trained} with the Survival skill, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being \\glossterm{trained} in that skill.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +5.`,
-        5: `The bonus increases to +6.`,
-        7: `The bonus increases to +7.`,
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
       },
       type: "Attune (self)",
     },
