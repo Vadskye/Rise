@@ -16,7 +16,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-         Whenever you make a Jump check that moves you over or adjacent to a creature, if your Jump check result is higher than that creature's Reflex defense, you gain a \plus1 bonus to \glossterm{accuracy} against that creature for the rest of the current round.
+         Whenever you make a Jump check that moves you over or adjacent to a creature, if your Jump check result beats that creature's Reflex defense, you gain a \plus1 bonus to \glossterm{accuracy} against that creature for the rest of the current round.
         This is a \glossterm{Swift} effect, so it helps you if you make a Jump check in the same phase that you make a strike, such as with the \ability{leaping strike} \glossterm{maneuver}.
 
                 ",
@@ -556,7 +556,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
 
             \rankline
             \rank{3} This ability gains the \abilitytag{Swift} tag.
-            When you use it, the penalties from the removed effects do not affect you during the current phase.
+            When you use it, the removed effects do not affect you during the current phase.
             In addition, you \glossterm{briefly} cannot gain any \glossterm{conditions}.
             \rank{5} You can use this ability as a \glossterm{minor action}.
             When you do, you increase your \glossterm{fatigue level} by one.
