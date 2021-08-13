@@ -348,17 +348,18 @@ export const terramancy: MysticSphere = {
       name: "Rocky Shell",
 
       effect: `
-        You cover your body with two overlapping layers of rock that crumple when they take damage.
+        You cover your body with a layer of rock that crumple when they take damage.
         The rock does not cover your joints, allowing you to move, though the shell increases your \\glossterm{encumbrance} by 2.
         Whenever you would take damage, you take only half of that damage, and one layer of rock is destroyed.
         When the last layer is destroyed, this ability provides no further benefit.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The spell creates three layers of rock.`,
-        6: `The spell creates four layers of rock.`,
+        3: `The spell creates two layers of rock.`,
+        5: `The spell creates three layers of rock.`,
+        7: `The spell creates four layers of rock.`,
       },
       tags: ["Manifestation"],
       type: "Attune (self)",
