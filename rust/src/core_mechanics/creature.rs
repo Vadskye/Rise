@@ -270,16 +270,7 @@ impl HasDefenses for Creature {
 impl HasResources for Creature {
     fn calc_resource(&self, resource: &'static resources::Resource) -> i32 {
         match resource {
-            resources::Resource::AttunementPoint => {
-                let mut ap_from_level = max(0, min(self.level, 5) - 1);
-                if self.level >= 11 {
-                    ap_from_level += 1;
-                };
-                if self.level >= 17 {
-                    ap_from_level += 1;
-                };
-                return ap_from_level;
-            }
+            resources::Resource::AttunementPoint => max(0, (self.level + 1) / 6),
             resources::Resource::FatigueTolerance => {
                 self.get_base_attribute(&Attribute::Constitution)
                     + self.get_base_attribute(&Attribute::Willpower)
