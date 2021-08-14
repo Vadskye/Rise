@@ -643,16 +643,16 @@ def generate_apparel():
         ),
     ]
 
-    apparel.append(
+    apparel += [
         MagicItem(
             name="Boots of Freedom",
-            level=16,
+            level=10,
             material_type="Boots",
             description="""
                 You are immune to being \\slowed, \\decelerated, \\immobilized, and \\paralyzed.
             """,
             short_description="Grants immunity to common mobility restrictions",
-        )
+        ),
         MagicItem(
             name="Boots of Freedom, Greater",
             level=16,
@@ -664,9 +664,9 @@ def generate_apparel():
             """,
             short_description="Grants immunity to almost all mobility restrictions",
         )
-    )
+    ]
 
-    apparel.append(
+    apparel += [
         MagicItem(
             name="Boots of Gravitation",
             level=7,
@@ -680,7 +680,7 @@ def generate_apparel():
                 Failure means you fall \\prone and your movement for that phase ends.
             """,
             short_description="Redirects personal gravity to adjacent objects",
-        )
+        ),
         MagicItem(
             name="Boots of Gravitation, Greater",
             level=13,
@@ -701,7 +701,7 @@ def generate_apparel():
             """,
             short_description="Redirects personal gravity to distant objects",
         ),
-    )
+    ]
 
     apparel += [
         MagicItem(

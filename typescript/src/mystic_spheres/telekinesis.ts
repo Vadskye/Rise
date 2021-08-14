@@ -546,7 +546,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           The subject is \\grappled by telekinetic force.
-          You must use the \\textit<maintain grapple> ability each round to maintain the grapple, as normal for grappling.
+          You must use the \\textit{maintain grapple} ability each round to maintain the grapple, as normal for grappling.
           You may not use your Strength to maintain the grapple.
         `,
         targeting: `
