@@ -706,7 +706,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Boots of Speed",
-            level=7,
+            level=4,
             material_type="Boots",
             tags=[],
             description="""
@@ -716,7 +716,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Boots of Speed, Greater",
-            level=13,
+            level=10,
             material_type="Boots",
             tags=[],
             description="""
@@ -726,7 +726,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Boots of Speed, Supreme",
-            level=19,
+            level=16,
             material_type="Boots",
             tags=[],
             description="""
@@ -1491,7 +1491,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Enlarging Belt",
-            level=10,
+            level=13,
             material_type="Belt",
             tags=[],
             description="""
@@ -1506,7 +1506,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Enlarging Belt, Greater",
-            level=16,
+            level=19,
             material_type="Belt",
             tags=[],
             description="""
