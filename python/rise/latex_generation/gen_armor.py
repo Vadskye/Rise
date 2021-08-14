@@ -512,10 +512,10 @@ def generate_armor():
             tags=["Swift"],
             material_type="Body armor",
             description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                You gain a +6 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 However, you take a -2 penalty to your \\glossterm<power>.
             """,
-            short_description="Grants +8 damage resistance, but -2 power",
+            short_description="Grants +6 damage resistance, but -2 power",
         ),
         MagicItem(
             name="Soulweave Armor, Greater",
@@ -523,10 +523,10 @@ def generate_armor():
             tags=["Swift"],
             material_type="Body armor",
             description="""
-                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                You gain a +12 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 However, you take a -4 penalty to your \\glossterm<power>.
             """,
-            short_description="Grants +16 damage resistance, but -4 power",
+            short_description="Grants +12 damage resistance, but -4 power",
         ),
         MagicItem(
             name="Soulweave Armor, Supreme",
@@ -534,10 +534,10 @@ def generate_armor():
             tags=["Swift"],
             material_type="Body armor",
             description="""
-                You gain a +32 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                You gain a +24 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 However, you take a -8 penalty to your \\glossterm<power>.
             """,
-            short_description="Grants +32 damage resistance, but -8 power",
+            short_description="Grants +24 damage resistance, but -8 power",
         ),
     ]
 
