@@ -638,12 +638,10 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         You gain an additional \glossterm{insight point}.
-        In addition, choose any two skills.
-        You treat those skills as \glossterm{class skills} for you.
-
-
-                ",
+                You gain an additional \glossterm{insight point}.
+                In addition, choose any two skills.
+                Those skills are \glossterm{class skills} for you.
+            ",
         },
         RankAbility {
             name: "Skill Exemplar",
