@@ -869,7 +869,7 @@ def generate_apparel():
             description="""
                 When you move using one of your movement speeds, you can teleport the same distance instead.
                 This does not change the total distance you can move, but you can teleport in any direction, even vertically.
-                You must teleport onto a stable surface that can support your weight.
+                You must teleport into an unoccupied location onto a stable surface that can support your weight.
                 You cannot teleport to locations you do not have \\glossterm<line of sight> and \\glossterm<line of effect> to.
             """,
             short_description="Allows teleporting instead of moving",
