@@ -257,7 +257,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
             ",
         },
         RankAbility {
@@ -281,7 +281,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The bonus from your \textit{wellspring of power} ability increases to \plus6.
+                The bonus from your \textit{wellspring of power} ability increases to \plus9.
             ",
         },
         RankAbility {
