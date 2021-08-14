@@ -156,7 +156,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
 
             \parhead{Secret of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
             It is removed when the creature takes a \glossterm{short rest}.
-            However, whenever you would gain a \glossterm{condition}, that effect becomes a \abilitytag{Curse} on you instead of a condition.
+            However, whenever you would gain a \glossterm{condition} that you are not \glossterm{immune} to, that effect becomes a \abilitytag{Curse} on you instead of a condition.
             If you were not already affected by a Curse from this ability, the old Curse becomes a condition instead.
             Whenever you take a \glossterm{short rest}, you remove any Curse affecting you as a result of this ability.
         }
