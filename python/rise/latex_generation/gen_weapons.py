@@ -435,7 +435,7 @@ def generate_weapons():
             level=5,
             material_type="Weapon",
             description="""
-                You gain a +1 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon against creatures that are \\shaken, \\frightened, or \\panicked.
+                You gain a +1 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon against creatures that are suffering penalties for being \\shaken, \\frightened, or \\panicked.
             """,
             short_description="Grants +1 accuracy vs scared foes",
         ),
@@ -444,7 +444,7 @@ def generate_weapons():
             level=14,
             material_type="Weapon",
             description="""
-                You gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon against creatures that are \\shaken, \\frightened, or \\panicked.
+                You gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon against creatures that are suffering penalties for being \\shaken, \\frightened, or \\panicked.
             """,
             short_description="Grants +2 accuracy vs scared foes",
         ),
