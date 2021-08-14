@@ -438,7 +438,7 @@ impl Class {
             Self::Fighter => ArmorUsageClass::all(),
             Self::Monk => vec![armor::ArmorUsageClass::Light],
             Self::Paladin => ArmorUsageClass::all(),
-            Self::Ranger => vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
+            Self::Ranger => vec![ArmorUsageClass::Light],
             Self::Rogue => vec![armor::ArmorUsageClass::Light],
             Self::Sorcerer => vec![],
             Self::Warlock => vec![armor::ArmorUsageClass::Light],
