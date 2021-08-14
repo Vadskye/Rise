@@ -2267,7 +2267,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Amulet of Rage",
-            level=5,
+            level=10,
             material_type="Amulet",
             tags=[],
             description="""
@@ -2277,7 +2277,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Amulet of Rage, Greater",
-            level=11,
+            level=19,
             material_type="Amulet",
             tags=[],
             description="""
@@ -2366,10 +2366,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Whenever you use the \\ability<discipline> fighter ability, one \\glossterm<ally> within \\shortrange of you can also remove a \\glossterm<brief> effect or \\glossterm<condition>.
+                Whenever you use the \\ability<discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<brief> effect or \\glossterm<condition>.
                 This is not a \\abilitytag<Swift> effect, even if your \\ability<discipline> ability is a \\abilitytag<Swift> effect.
             """,
-            short_description="Using the \\abilitytag<discipline> ability also helps a nearby ally",
+            short_description="Using \\abilitytag<discipline> also helps an adjacent ally",
         ),
         MagicItem(
             name="Amulet of Shared Discipline, Greater",
@@ -2377,40 +2377,41 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                This item functions like a \\textit<amulet of shared discipline>, except that the range increases to \\longrange.
+                This item functions like a \\textit<amulet of shared discipline>, except that the range increases to \\medrange.
             """,
-            short_description="Using the \\abilitytag<discipline> ability also helps an ally",
+            short_description="Using the \\abilitytag<discipline> ability also helps a nearby ally",
         ),
     ]
 
     apparel += [
         MagicItem(
             name="Amulet of Shared Clarity",
-            level=11,
+            level=8,
             material_type="Amulet",
             tags=[],
             description="""
-                Whenever you use the \\ability<clear the mind> monk ability, one \\glossterm<ally> within \\shortrange of you can also remove a \\glossterm<brief> effect or \\glossterm<condition>.
+                Whenever you use the \\ability<clear the mind> monk ability, one \\glossterm<ally> within \\medrange of you can also remove a \\glossterm<brief> effect or \\glossterm<condition>.
+                If they do, they increase their \\glossterm<fatigue level> by one.
                 This is not a \\abilitytag<Swift> effect, even if your \\ability<clear the mind> ability is a \\abilitytag<Swift> effect.
             """,
-            short_description="Using the \\abilitytag<clear the mind> ability also helps a nearby ally",
+            short_description="Using \\abilitytag<clear the mind> also helps a nearby ally",
         ),
         MagicItem(
             name="Amulet of Shared Clarity, Greater",
-            level=17,
+            level=14,
             material_type="Amulet",
             tags=[],
             description="""
-                This item functions like a \\textit<amulet of shared clarity>, except that the range increases to \\longrange.
+                This item functions like a \\textit<amulet of shared clarity>, except that you can target an additional \\glossterm<ally> within range.
             """,
-            short_description="Using the \\abilitytag<clear the mind> ability also helps an ally",
+            short_description="Using \\abilitytag<clear the mind> also helps two nearby allies",
         ),
     ]
 
     apparel += [
         MagicItem(
             name="Guardian's Amulet",
-            level=4,
+            level=7,
             material_type="Amulet",
             tags=[],
             description="""
@@ -2420,23 +2421,13 @@ def generate_apparel():
         ),
         MagicItem(
             name="Guardian's Amulet, Greater",
-            level=10,
+            level=16,
             material_type="Amulet",
             tags=[],
             description="""
                 You gain a +2 \\glossterm<accuracy> bonus with the \\ability<guarding strike> fighter ability.
             """,
             short_description="Grants +2 accuracy with \\ability<guarding strike>",
-        ),
-        MagicItem(
-            name="Guardian's Amulet, Supreme",
-            level=16,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<accuracy> bonus with the \\ability<guarding strike> fighter ability.
-            """,
-            short_description="Grants +3 accuracy with \\ability<guarding strike>",
         ),
     ]
 
@@ -2614,7 +2605,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Darkstalker's Amulet",
-            level=10,
+            level=11,
             material_type="Amulet",
             tags=[],
             description="""
@@ -2654,6 +2645,111 @@ def generate_apparel():
                 If you have the \\ability<skill exemplar> ability, you gain a +3 \\glossterm<magic bonus> to all \\glossterm<untrained> skills.
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 3",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Spellfeeding Amulet",
+            level=5,
+            material_type="Amulet",
+            tags=['Healing'],
+            description="""
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 1d10+2 \\glossterm<hit points>.
+                After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
+            """,
+            short_description="Heals 1d8+2 when you use \\ability<spell absorption>",
+        ),
+        MagicItem(
+            name="Spellfeeding Amulet, Greater",
+            level=11,
+            material_type="Amulet",
+            tags=['Healing'],
+            description="""
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d10+5 \\glossterm<hit points>.
+                After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
+            """,
+            short_description="Heals 2d8+5 when you use \\ability<spell absorption>",
+        ),
+        MagicItem(
+            name="Spellfeeding Amulet, Supreme",
+            level=17,
+            material_type="Amulet",
+            tags=['Healing'],
+            description="""
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d10+8 \\glossterm<hit points>.
+                After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
+            """,
+            short_description="Heals 4d8+8 when you use \\ability<spell absorption>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Wild Control",
+            level=5,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<wild magic> sorcerer ability and roll a 1 for its wildspell effect, you can treat the result as a 2 instead.
+            """,
+            short_description="Mitigates total failure with \\ability<wild magic>",
+        ),
+        MagicItem(
+            name="Amulet of Wild Control, Greater",
+            level=14,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<wild magic> sorcerer ability and roll a 1 for its wildspell effect, you can treat the result as a 4 instead.
+            """,
+            short_description="Prevents total failure with \\ability<wild magic>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Abyssal Rebuke",
+            level=8,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<abyssal blast> warlock ability, you gain a +1 \\glossterm<accuracy> bonus against each creature that dealt damage to you during the previous round.
+            """,
+            short_description="Grants +1 accuracy with \\ability<abyssal blast> against attackers",
+        ),
+        MagicItem(
+            name="Amulet of Abyssal Rebuke, Greater",
+            level=17,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<abyssal blast> warlock ability, you gain a +2 \\glossterm<accuracy> bonus against each creature that dealt damage to you during the previous round.
+            """,
+            short_description="Grants +2 accuracy with \\ability<abyssal blast> against attackers",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Possession",
+            level=10,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<possession> warlock ability, its penalties to Fortitude and Mental defense are reduced by 1.
+            """,
+            short_description="Reduces defense penalties from \\textit<possession>.",
+        ),
+        MagicItem(
+            name="Amulet of Possession, Greater",
+            level=19,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<possession> warlock ability, its penalties to Fortitude and Mental defense are removed.
+            """,
+            short_description="Removes defense penalties from \\textit<possession>.",
         ),
     ]
 
