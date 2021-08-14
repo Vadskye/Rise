@@ -378,7 +378,7 @@ impl Class {
             Self::Paladin => 2,
             Self::Ranger => 2,
             Self::Rogue => 3,
-            Self::Sorcerer => 3,
+            Self::Sorcerer => 2,
             Self::Warlock => 3,
             Self::Wizard => 3,
         }
@@ -427,17 +427,17 @@ impl Class {
 
     pub fn trained_skills(&self) -> i32 {
         match self {
-            Self::Barbarian => 5,
-            Self::Cleric => 3,
+            Self::Barbarian => 6,
+            Self::Cleric => 4,
             Self::Druid => 5,
-            Self::Fighter => 3,
+            Self::Fighter => 4,
             Self::Monk => 7,
             Self::Paladin => 3,
-            Self::Ranger => 5,
-            Self::Rogue => 7,
-            Self::Sorcerer => 3,
+            Self::Ranger => 6,
+            Self::Rogue => 8,
+            Self::Sorcerer => 4,
             Self::Warlock => 3,
-            Self::Wizard => 5,
+            Self::Wizard => 4,
         }
     }
 
