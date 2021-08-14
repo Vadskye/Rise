@@ -142,7 +142,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Spell Rank",
+            name: "Spell Rank (2)",
             is_magical: true,
             rank: 2,
             description: r"
@@ -159,7 +159,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Spell Rank",
+            name: "Spell Rank (3)",
             is_magical: true,
             rank: 3,
             description: r"
@@ -168,7 +168,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Spell Rank",
+            name: "Spell Rank (4)",
             is_magical: true,
             rank: 4,
             description: r"
@@ -185,7 +185,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Spell Rank",
+            name: "Spell Rank (5)",
             is_magical: true,
             rank: 5,
             description: r"
@@ -194,7 +194,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Spell Rank",
+            name: "Spell Rank (6)",
             is_magical: true,
             rank: 6,
             description: r"
@@ -203,7 +203,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Spell Rank",
+            name: "Spell Rank (7)",
             is_magical: true,
             rank: 7,
             description: r"
