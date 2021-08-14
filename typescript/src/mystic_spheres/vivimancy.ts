@@ -513,7 +513,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'corpse explosion',
-        exceptThat: 'the damage increases to 4d10 + half \\glossterm{power}.',
+        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
       },
       narrative: `
         You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
