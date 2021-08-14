@@ -55,7 +55,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
         
-        You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+        You gain a \plus3 bonus to your \glossterm{power} with all abilities.
 
                 ",
         },
@@ -89,9 +89,8 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-         The bonus from your \textit{paragon power} ability increases to \plus6.
-
-                ",
+                The bonus from your \textit{paragon power} ability increases to \plus9.
+            ",
         },
         RankAbility {
             name: "Supreme Aligned Aura",
