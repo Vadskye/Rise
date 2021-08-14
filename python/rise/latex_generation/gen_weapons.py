@@ -220,7 +220,7 @@ def generate_weapons():
     weapons += [
         MagicItem(
             name="Honed",
-            level=9,
+            level=10,
             material_type="Weapon",
             description="""
                 This weapon has the Keen weapon tag.
@@ -231,7 +231,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Impactful",
-            level=9,
+            level=10,
             material_type="Weapon",
             description="""
                 This weapon has the Impact weapon tag.
