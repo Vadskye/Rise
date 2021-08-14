@@ -548,8 +548,8 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         \tb{Roll} & \tb{Effect} \tableheaderrule
                         1 & The spell has its normal effect \\
                         2 & All damage dealt by the spell is considered to be all damage types \\
-                        3 & When you attack with the spell this round, you roll twice and take the higher result \\
-                        4 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
+                        3 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
+                        4 & When you attack with the spell this round, you roll twice and take the higher result \\
                         5 & Any \glossterm{conditions} inflicted by the spell this round become a \abilitytag{Curse} instead of a condition, and are removed when the target takes a \glossterm{short rest} \\
                         6 & When the spell would cause a creature to lose hit points this round, that creature loses twice as many hit points \\
                         7 & The spell's area is tripled this round \\
