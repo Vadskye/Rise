@@ -310,10 +310,9 @@ export const polymorph: MysticSphere = {
         It may also increase your \\glossterm{reach} (see \\pcref{Size in Combat}).
         However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
       `,
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: `You also gain a +2 bonus to Strength-based checks, and you gain a +2 bonus to strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).`,
-        7: "You can increase your size category by up to two size categories.",
+        6: "You can increase your size category by up to two size categories.",
       },
       type: "Attune (self)",
     },
@@ -327,10 +326,7 @@ export const polymorph: MysticSphere = {
         name: "Enlarge",
       },
       // narrative: '',
-      rank: 5,
-      scaling: {
-        7: `Each subject also gains a +2 bonus to Strength-based checks, and it gains a +2 bonus to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).`,
-      },
+      rank: 6,
       type: "Attune (target)",
     },
 
