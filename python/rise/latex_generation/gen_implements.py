@@ -433,7 +433,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Blessed Staff",
-            level=4,
+            level=7,
             material_type="Staff",
             tags=[],
             description="""
@@ -444,7 +444,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Blessed Staff, Greater",
-            level=10,
+            level=13,
             material_type="Staff",
             tags=[],
             description="""
@@ -455,7 +455,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Blessed Staff, Supreme",
-            level=16,
+            level=19,
             material_type="Staff",
             tags=[],
             description="""
