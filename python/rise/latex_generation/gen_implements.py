@@ -475,7 +475,7 @@ def generate_implements():
             description="""
                 Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 1d10+2 \\glossterm<energy damage>.
             """,
-            short_description="Deals 1d10+2 damage when creatures remove conditions",
+            short_description="Deals 1d10+2 damage when foes remove conditions",
         ),
         MagicItem(
             name="Hexbite Staff, Greater",
@@ -485,7 +485,7 @@ def generate_implements():
             description="""
                 Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d10+5 \\glossterm<energy damage>.
             """,
-            short_description="Deals 2d10+5 damage when creatures remove conditions",
+            short_description="Deals 2d10+5 damage when foes remove conditions",
         ),
         MagicItem(
             name="Hexbite Staff, Supreme",
@@ -495,7 +495,7 @@ def generate_implements():
             description="""
                 Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d10+8 \\glossterm<energy damage>.
             """,
-            short_description="Deals 4d10+8 damage when creatures remove conditions",
+            short_description="Deals 4d10+8 damage when foes remove conditions",
         ),
     ]
 
@@ -597,6 +597,31 @@ def generate_implements():
                 If you remove at least one condition in this way, you \\glossterm<briefly> gain a +8 bonus to your \\glossterm<power>.
             """,
             short_description="Remove conditions to gain power",
+        ),
+    ]
+
+    # Would be nice to have staff concept for each mystic sphere
+
+    implements += [
+        MagicItem(
+            name="Staff of Radiance",
+            level=11,
+            material_type="Staff",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<accuracy> bonus against creatures that are in \\glossterm<brilliant illumination>.
+            """,
+            short_description="Grants +1 accuracy in brilliant illumination",
+        ),
+        MagicItem(
+            name="Staff of Radiance, Greater",
+            level=20,
+            material_type="Staff",
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<accuracy> bonus against creatures that are in \\glossterm<brilliant illumination>.
+            """,
+            short_description="Grants +2 accuracy in brilliant illumination",
         ),
     ]
 
