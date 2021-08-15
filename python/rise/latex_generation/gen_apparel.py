@@ -908,6 +908,18 @@ def generate_apparel():
 
     apparel.append(
         MagicItem(
+            name="Cloak of the Unseen Hunter",
+            level=17,
+            material_type="Cloak",
+            description="""
+                You gain a +1 \\glossterm<accuracy> bonus against creatures that you have \\glossterm<concealment> from.
+            """,
+            short_description="Grants +1 accuracy while you have concealment",
+        ),
+    )
+
+    apparel.append(
+        MagicItem(
             name="Boots of the Desertlands",
             level=2,
             material_type="Boots",
