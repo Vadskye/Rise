@@ -151,7 +151,7 @@ def attribute_skills(attribute):
 
 
 def set_skill(a, s):
-    misc = get_misc_variables(s, 3)
+    misc = get_misc_variables(s, 4)
     if a == "other":
         return js_wrapper(
             ["level", "fatigue_penalty", *misc],
