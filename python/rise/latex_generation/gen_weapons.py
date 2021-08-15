@@ -202,18 +202,27 @@ def generate_weapons():
             level=4,
             material_type="Weapon",
             description="""
-                You reduce your \\glossterm<fatigue penalty> by 2 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
+                You reduce your \\glossterm<fatigue penalty> by 1 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
             """,
-            short_description="Ignores 2 fatigue with strikes",
+            short_description="Ignores 1 fatigue with strikes",
         ),
         MagicItem(
             name="Tireless, Greater",
             level=10,
             material_type="Weapon",
             description="""
-                You do not apply your \\glossterm<fatigue penalty> as a penalty to your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
+                You reduce your \\glossterm<fatigue penalty> by 2 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
             """,
-            short_description="Ignores fatigue with strikes",
+            short_description="Ignores 2 fatigue with strikes",
+        ),
+        MagicItem(
+            name="Tireless, Supreme",
+            level=16,
+            material_type="Weapon",
+            description="""
+                You reduce your \\glossterm<fatigue penalty> by 3 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
+            """,
+            short_description="Ignores 3 fatigue with strikes",
         ),
     ]
 
