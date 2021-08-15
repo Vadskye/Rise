@@ -1199,7 +1199,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Bracers of Mighty Fists",
-            level=4,
+            level=3,
             material_type="Bracers",
             description="""
                 You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
@@ -1208,7 +1208,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Bracers of Mighty Fists, Greater",
-            level=10,
+            level=9,
             material_type="Bracers",
             description="""
                 You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
@@ -1217,7 +1217,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Bracers of Mighty Fists, Supreme",
-            level=16,
+            level=15,
             material_type="Bracers",
             description="""
                 You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
