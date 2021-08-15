@@ -199,7 +199,7 @@ def generate_weapons():
     weapons += [
         MagicItem(
             name="Tireless",
-            level=4,
+            level=3,
             material_type="Weapon",
             description="""
                 You reduce your \\glossterm<fatigue penalty> by 1 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
@@ -208,7 +208,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Tireless, Greater",
-            level=10,
+            level=9,
             material_type="Weapon",
             description="""
                 You reduce your \\glossterm<fatigue penalty> by 2 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
@@ -217,7 +217,7 @@ def generate_weapons():
         ),
         MagicItem(
             name="Tireless, Supreme",
-            level=16,
+            level=15,
             material_type="Weapon",
             description="""
                 You reduce your \\glossterm<fatigue penalty> by 3 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
