@@ -473,9 +473,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 1d10 + half \\glossterm<power> \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 1d10+2 \\glossterm<energy damage>.
             """,
-            short_description="Deals 1d10 damage when creatures remove conditions",
+            short_description="Deals 1d10+2 damage when creatures remove conditions",
         ),
         MagicItem(
             name="Hexbite Staff, Greater",
@@ -483,9 +483,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d10 + half \\glossterm<power> \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d10+5 \\glossterm<energy damage>.
             """,
-            short_description="Deals 2d10 damage when creatures remove conditions",
+            short_description="Deals 2d10+5 damage when creatures remove conditions",
         ),
         MagicItem(
             name="Hexbite Staff, Supreme",
@@ -493,9 +493,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d10 + half \\glossterm<power> \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d10+8 \\glossterm<energy damage>.
             """,
-            short_description="Deals 4d10 damage when creatures remove conditions",
+            short_description="Deals 4d10+8 damage when creatures remove conditions",
         ),
     ]
 
