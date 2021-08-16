@@ -475,37 +475,6 @@ def generate_apparel():
         )
     )
 
-    apparel += [
-        MagicItem(
-            name="Crown of Flame",
-            level=4,
-            material_type="Crown",
-            tags=[],
-            description="""
-                This crown is continuously on fire.
-                The flame sheds light as a torch.
-
-                You and your \\glossterm<allies> within a \\areamed radius emanation from you
-                    gain a +2 bonus to \\glossterm<defenses> against attacks that deal fire damage.
-            """,
-            short_description="Grants you and allies +2 defenses vs fire",
-        ),
-        MagicItem(
-            name="Crown of Flame, Greater",
-            level=13,
-            material_type="Crown",
-            tags=[],
-            description="""
-                This crown is continuously on fire.
-                The flame sheds light as a torch.
-
-                You and your \\glossterm<allies> within a \\areamed radius emanation from you
-                    gain a +4 bonus to \\glossterm<defenses> against attacks that deal fire damage.
-            """,
-            short_description="Grants you and allies +4 defenses vs fire",
-        ),
-    ]
-
     apparel.append(
         MagicItem(
             name="Crown of Lightning",
@@ -521,41 +490,54 @@ def generate_apparel():
                 On a hit, each target takes 2d6+1 electricity damage.
                 On a \\glossterm<glancing blow>, each target takes half damage.
             """,
-            short_description="Can damage nearby enemies",
-        )
-    )
-
-    apparel.append(
+            short_description="Can deal 2d6+1 damage to nearby foes",
+        ),
         MagicItem(
-            name="Crown of Frost",
+            name="Crown of Lightning, Greater",
             level=13,
             material_type="Crown",
             tags=[],
             description="""
-            This crown continuously emits a chilling aura around you.
-            You gain a +4 bonus to \\glossterm<defenses> against attacks that deal cold damage.
+                This crown continuously crackles with electricity.
+                The constant sparks shed light as a torch.
 
-            As a standard action, you can intensify the crown's energy to freeze nearby enemies.
-            When you do, make an attack vs. Fortitude against all \\glossterm<enemies> within a \\areasmall radius from you.
-            On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm{briefly} \\glossterm<immobilized>.
-            On a critical hit, each target with no remaining \\glossterm<damage resistance> is immobilized as a \\glossterm<condition>.
-        """,
-            short_description="Can freeze nearby enemies",
-        )
+                As a standard action, you can intensify the crown's energy to shock nearby enemies.
+                When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areamed radius from you.
+                On a hit, each target takes 4d6+3 electricity damage.
+                On a \\glossterm<glancing blow>, each target takes half damage.
+            """,
+            short_description="Can deal 4d6+3 damage to nearby foes",
+        ),
+        MagicItem(
+            name="Crown of Lightning, Supreme",
+            level=19,
+            material_type="Crown",
+            tags=[],
+            description="""
+                This crown continuously crackles with electricity.
+                The constant sparks shed light as a torch.
+
+                As a standard action, you can intensify the crown's energy to shock nearby enemies.
+                When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\hugearea radius from you.
+                On a hit, each target takes 4d10+9 electricity damage.
+                On a \\glossterm<glancing blow>, each target takes half damage.
+            """,
+            short_description="Can deal 4d10+9 damage to nearby foes",
+        ),
     )
 
     apparel.append(
         MagicItem(
             name="Crown of Thunder",
-            level=11,
+            level=15,
             material_type="Crown",
             tags=[],
             description="""
-            The crown constantly emits a low-pitched rumbling.
-            To you and your \\glossterm<allies>, the sound is barely perceptible.
-            However, all other creatures within a \\arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
-            The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area.
-        """,
+                The crown constantly emits a low-pitched rumbling.
+                To you and your \\glossterm<allies>, the sound is barely perceptible.
+                However, all other creatures within a \\arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
+                The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area.
+            """,
             short_description="Continously deafens nearby enemies",
         )
     )
