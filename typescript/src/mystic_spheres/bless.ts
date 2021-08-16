@@ -187,7 +187,7 @@ export const bless: MysticSphere = {
         The subject becomes takes half damage from all sources this round.
         Because this ability has the \\abilitytag{Swift} tag, it affects all damage the subject takes during the current phase.
       `,
-      rank: 7,
+      rank: 6,
       tags: ["Swift"],
       type: "Duration",
     },
@@ -423,7 +423,7 @@ export const bless: MysticSphere = {
         Whenever each subject would gain a \\glossterm{vital wound}, it can choose to negate that vital wound.
         After negating a vital wound for a creature in this way, this spell ends for that creature.
       `,
-      rank: 6,
+      rank: 7,
       type: "Attune (target)",
     },
   ],
