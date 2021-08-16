@@ -607,6 +607,53 @@ export const vivimancy: MysticSphere = {
       scaling: "damage",
       type: "Attune (self)",
     },
+
+    {
+      name: "Healer's Intuition",
+
+      effect: `
+        If you are \\glossterm{trained} with the Medicine skill, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
+      },
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Lifesense",
+
+      effect: `
+        You gain the \\glossterm{lifesense} ability with a 30 foot range.
+        This allows you to know the location of all living creatures within that range.
+        You still take normal \glossterm{miss chances} for concealment, invisibility, and so on.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The range increases to 60 feet.`,
+        5: `The range increases to 120 feet.`,
+        7: `The range increases to 240 feet.`,
+      },
+      type: "Attune (self)",
+    },
+    {
+      name: "Lifesight",
+
+      effect: `
+        You gain the \\glossterm{lifesight} ability with a 30 foot range.
+        This allows you to see any living creatures and their equipment perfectly within that range.
+        This ability works regardless of lighting conditions, blindness, invisibility, or any other means of concealment.
+      `,
+      rank: 4,
+      scaling: {
+        6: `The range increases to 60 feet.`,
+      },
+      type: "Attune (self)",
+    },
   ],
   rituals: [
     {
