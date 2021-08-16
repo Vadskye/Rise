@@ -192,11 +192,18 @@ export const channelDivinity: MysticSphere = {
     {
       name: "Greater Retributive Judgment",
 
-      functionsLike: {
-        name: 'retributive judgment',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
+      // +1 level for situational +2 accuracy
+      attack: {
+        hit: `
+          The subject takes 2d10 + half \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
+        `,
+        targeting: `
+          Make an attack vs. Mental against anything within \\longrange.
+          You gain a +2 bonus to accuracy with this attack if the target attacked you or one of your \\glossterm{allies} during the previous round.
+        `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
       type: "Duration",
     },
