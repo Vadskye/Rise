@@ -65,20 +65,6 @@ def create_page(destination):
         ],
     )
 
-def attack_text_modifier(label, name):
-    return [
-        labeled_text_input(label, input_attributes={
-            "name": f"custom_attack_{name}",
-            "value": "",
-        }),
-        textarea({
-            "class": "hidden",
-            "disabled": True,
-            "name": f"custom_attack_{name}_formatted",
-            "value": "",
-        }),
-    ]
-
 def ability():
     # TODO: make this legacy less dumb
     ability_number = 0
@@ -95,16 +81,6 @@ def ability():
                 {"class": "active-ability-effect"},
                 {"name": "active_ability0_effect"},
             ),
-            textarea({
-                "class": "hidden",
-                "name": "active_ability0_key_value_pairs",
-                "value": "",
-            }),
-            textarea({
-                "class": "hidden",
-                "name": "active_ability0_effect_formatted",
-                "value": "",
-            }),
             button(
                 {
                     "class": "attack-roll",
@@ -115,8 +91,7 @@ def ability():
                         + " {{title=@{active_ability0_name}}}"
                         + " {{subtitle=@{character_name}}}"
                         + " {{color=@{chat_color}}}"
-                        + " @{active_ability0_key_value_pairs}"
-                        + " {{desc=@{active_ability0_effect_formatted}}}"
+                        + " {{desc=@{active_ability0_effect}}}"
                     ),
                 },
                 "Use",
@@ -255,16 +230,6 @@ def attack(source):
                 {"class": "attack-effect"},
                 {"name": "attack0_effect"},
             ),
-            textarea({
-                "class": "hidden",
-                "name": "attack0_key_value_pairs",
-                "value": "",
-            }),
-            textarea({
-                "class": "hidden",
-                "name": "attack0_effect_formatted",
-                "value": "",
-            }),
             button(
                 {
                     "class": "attack-roll",
@@ -288,12 +253,11 @@ def attack_button_text(source):
         "&{template:custom}"
         + " {{title=@{attack0_name}}}"
         + " {{subtitle=@{character_name}}}"
-        + " {{Attack=[[d10!+@{accuracy}+@{attack0_accuracy}]] vs @{attack0_defense}}}"
+        + " {{Attack=[[d10!+@{attack0_accuracy}+@{accuracy}]] vs @{attack0_defense}}}"
         + damage_text
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
-        + " @{attack0_key_value_pairs}"
-        + " {{desc=@{attack0_effect_formatted}}}"
+        + " {{desc=@{attack0_effect}}}"
     )
 
 def universal_ability_button(name, effect, attack=None):
