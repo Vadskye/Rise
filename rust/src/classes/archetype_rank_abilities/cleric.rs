@@ -459,7 +459,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{denounce the heathens} ability as a standard action.
                 \begin{instantability}{Denounce the Heathens}[Duration]
                     \rankline
-                    Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
+                    Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
                     \hit Each subject is \glossterm{briefly} \dazed.
 
@@ -496,9 +496,9 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{bless the worthy} ability as a standard action.
                 \begin{instantability}{Bless the Worthy}[Duration]
                     \rankline
-                    You and all \glossterm{allies} within a \largearea radius from you can each remove a \glossterm{brief} effect or \glossterm{condition}.
+                    You and all \glossterm{allies} within a \medarea radius from you can each remove a \glossterm{brief} effect or \glossterm{condition}.
                     This ability cannot remove an effect applied during the current round.
-                    In addition, one of your allies \glossterm{briefly} gains a \plus2 bonus to \glossterm{accuracy}.
+                    In addition, one of your allies in that area \glossterm{briefly} gains a \plus2 bonus to \glossterm{accuracy}.
 
                     \rankline
                     The accuracy bonus increases by 1 for each rank beyond 4.
@@ -513,7 +513,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{condemn the fearful} ability as a standard action.
                 \begin{instantability}{Condemn the Fearful}[Duration]
                     \rankline
-                    Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
+                    Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
                     \hit Each subject is \shaken by you as a \glossterm{condition}.
 
