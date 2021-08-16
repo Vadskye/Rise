@@ -925,7 +925,7 @@ impl Class {
                     \subsubsection{Fire}
                         If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \parhead{Gift} You gain a \plus4 bonus to \glossterm{defenses} against attacks that deal fire damage.
+                        \parhead{Gift} You are \glossterm{impervious} to fire damage.
                         \parhead{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
                         \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
                         \begin{attuneability}{Speak with Fire}
@@ -1016,7 +1016,7 @@ impl Class {
                         \parhead{Mastery} When you roll less than a 6 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
 
                     \subsubsection{Life}
-                        \parhead{Gift} You gain a \plus4 bonus to the Medicine skill (see \pcref{Medicine}).
+                        \parhead{Gift} You gain a \plus3 bonus to the Medicine skill (see \pcref{Medicine}).
                         \parhead{Aspect} You gain a \plus1 bonus to \glossterm{vital rolls} (see \pcref{Vital Rolls}).
                         \parhead{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} that round, you can use one \glossterm{magical} ability you have that modifies \glossterm{vital rolls} or removes \glossterm{vital wounds} on yourself without taking an action.
                         \parhead{Mastery} You gain a \plus1 bonus to your base Constitution.
