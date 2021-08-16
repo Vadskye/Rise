@@ -308,11 +308,19 @@ export const polymorph: MysticSphere = {
         Your size increases by one \\glossterm{size category}, to a maximum of Huge.
         This increases the \\glossterm{base speed} for your size and reduces your Stealth skill.
         It may also increase your \\glossterm{reach} (see \\pcref{Size in Combat}).
-        However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
+
+        However, your physical form is not altered fully to match your new size.
+        Your Strength and Dexterity are unchanged from your original size, and you take a -5 foot penalty to your speed with all of your \\glossterm{movement modes.}
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: "You can increase your size category by up to two size categories.",
+        5: `
+          You also gain a +2 \\glossterm{magic bonus} to Strength-based checks, and you gain a +2 \\glossterm{magic bonus} to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
+        `,
+        7: `
+          You can increase your size category by up to two size categories.
+          However, if you do, the movement speed penalty increases to -10 feet.
+        `,
       },
       type: "Attune (self)",
     },
@@ -326,7 +334,12 @@ export const polymorph: MysticSphere = {
         name: "Enlarge",
       },
       // narrative: '',
-      rank: 6,
+      rank: 5,
+      scaling: {
+        7: `
+          Each subject also gains a +2 \\glossterm{magic bonus} to Strength-based checks, and a +2 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
+        `,
+      },
       type: "Attune (target)",
     },
 

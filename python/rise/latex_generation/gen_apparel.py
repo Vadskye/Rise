@@ -1503,7 +1503,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Enlarging Belt",
-            level=13,
+            level=10,
             material_type="Belt",
             tags=[],
             description="""
@@ -1511,20 +1511,22 @@ def generate_apparel():
                 If you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
                 This increases the \\glossterm<base speed> for your size and reduces your Stealth skill.
                 It may also increase your \\glossterm<reach> (see \\pcref<Size in Combat>).
-                However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
+
+                Your physical form is not altered fully to match your new size.
+                Your Strength and Dexterity are unchanged from your original size, and you take a -5 foot penalty to your speed with all of your \\glossterm{movement modes.}
                 This effect lasts until you activate the belt again, which returns you to your original size.
             """,
             short_description="Increases your size",
         ),
         MagicItem(
             name="Enlarging Belt, Greater",
-            level=19,
+            level=16,
             material_type="Belt",
             tags=[],
             description="""
-                This belt functions like an \\mitem<enlarging belt>, except that your size increases by up to two size categories instead of one.
+                This belt functions like an \\mitem<enlarging belt>, except that you also gain a +2 \\glossterm<magic bonus> to Strength-based checks, and you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
             """,
-            short_description="Greatly increases your size",
+            short_description="Increases your size and strength",
         ),
     ]
 
