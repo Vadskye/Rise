@@ -195,7 +195,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Boon of Mastery",
+      name: "Precognitive Competence",
 
       effect: `
         You gain a +2 \\glossterm{magic bonus} to all skills.
