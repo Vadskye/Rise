@@ -459,7 +459,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{denounce the heathens} ability as a standard action.
                 \begin{instantability}{Denounce the Heathens}[Duration]
                     \rankline
-                    Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+                    Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
                     \hit Each subject is \glossterm{briefly} \dazed.
 
@@ -513,7 +513,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{condemn the fearful} ability as a standard action.
                 \begin{instantability}{Condemn the Fearful}[Duration]
                     \rankline
-                    Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+                    Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
                     \hit Each subject is \shaken by you as a \glossterm{condition}.
 
