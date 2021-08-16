@@ -289,27 +289,6 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: "Run",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `As a \\glossterm{condition}, the subject must move a distance equal to its maximum movement speed in a straight line during each \\glossterm{movement phase}.
-        It must use its movement mode with the highest speed to move this way.
-        It is not required to use the \\textit{sprint} ability, or use any other special movement ability, though it may choose to do so.
-        If it is unable to move its full speed without making a skill check or encountering a solid obstacle, it may choose to stop its movement after moving the maximum possible distance without doing so.`,
-        targeting: `
-          Make an attack vs. Mental with a +4 bonus to \\glossterm{accuracy} against one creature within \\longrange.
-        `,
-      },
-
-      rank: 3,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
-      type: "Duration",
-    },
-
-    {
       name: "Dramatic Reveal",
 
       attack: {
