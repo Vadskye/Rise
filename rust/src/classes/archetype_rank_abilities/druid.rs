@@ -19,13 +19,34 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Elemental Versatility",
+            name: "Elemental Spell",
             is_magical: true,
             rank: 1,
             description: r"
-                You learn a spell from any of the mystic spheres associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
+                If you have access to nature magic, you learn a spell from any of the mystic spheres associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
                 You do not have to have access to that mystic sphere.
                 As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
+            ",
+        },
+        RankAbility {
+            name: "Elemental Strike",
+            is_magical: true,
+            rank: 1,
+            description: r"
+                If you do not have access to nature magic, you gain the ability to make a strike imbued with elemental force.
+                You can use the \textit{elemental strike} ability as a standard action.
+                \begin{instantability}{Elemental Strike}[Instant]
+                    \abilitytag{Magical}
+                    \rankline
+                    Make a \glossterm{strike}.
+                    Damage dealt by the strike is bludgeoning and fire damage in addition to its normal damage types.
+                    You may use the higher of your \glossterm{magical} power and your \glossterm{mundane} power to determine your damage with this ability.
+
+                    \rankline
+                    \rank{3} You gain a +1d damage bonus with the strike.
+                    \rank{5} The damage bonus increases to \plus2d.
+                    \rank{7} The damage bonus increases to \plus3d.
+                \end{instantability}
             ",
         },
         RankAbility {
@@ -77,11 +98,19 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Elemental Versatility",
+            name: "Elemental Spell",
             is_magical: true,
             rank: 4,
             description: r"
-                You learn an additional spell with your \textit{elemental versatility} ability.
+                If you have access to nature magic, you learn an additional spell with your \textit{elemental spell} ability.
+            ",
+        },
+        RankAbility {
+            name: "Greater Elemental Strike",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                If you do not have access to nature magic, you gain a +5 foot bonus to your \glossterm{reach} with your \textit{elemental strike} ability.
             ",
         },
         RankAbility {
@@ -107,7 +136,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus4 bonus to your \glossterm{power}.
             ",
         },
         RankAbility {
