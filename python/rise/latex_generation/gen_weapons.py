@@ -869,6 +869,19 @@ def generate_weapons():
         ),
     ]
 
+    weapons += [
+        MagicItem(
+            name="Vampiric",
+            level=16,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                Once per round, when you cause a living creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain \\glossterm{hit points} equal to half the hit points the struck creature lost this way.
+            """,
+            short_description="Steals hit points from foes",
+        ),
+    ]
+
     return weapons
 
 
