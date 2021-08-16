@@ -218,15 +218,50 @@ export const revelation: MysticSphere = {
     },
 
     {
+      name: "Blindsense",
+
+      effect: `
+        You gain the \\glossterm{blindsense} ability with a 30 foot range.
+        This allows you to sense the location of everything in your surroundings without any light, regardless of concealment or invisiblity.
+        You still take normal \glossterm{miss chances} for concealment, invisibility, and so on.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The range increases to 60 feet.`,
+        5: `The range increases to 120 feet.`,
+        7: `The range increases to 240 feet.`,
+      },
+      type: "Attune (self)",
+    },
+    {
       name: "Blindsight",
 
       effect: `
-        You gain \\glossterm{blindsight} with a 30 foot range.
-        This can allow you to see perfectly without any light, regardless of concealment or invisibility.
+        You gain the \\glossterm{blindsight} ability with a 30 foot range.
+        This allows you to \`\`see'' your surroundings perfectly without any light, regardless of concealment or invisibility.
       `,
-      rank: 2,
-      scaling: { 4: `The range increases to 60 feet.`, 6: `The range increases to 120 feet.` },
+      rank: 4,
+      scaling: {
+        6: `The range increases to 60 feet.`,
+      },
       type: "Attune (self)",
+    },
+
+    {
+      name: "Mass Blindsense",
+
+      castingTime: "minor action",
+      functionsLike: {
+        mass: true,
+        name: "Blindsense",
+      },
+      // narrative: '',
+      rank: 3,
+      scaling: {
+        5: "The range increases to 60 feet.",
+        7: "The range increases to 120 feet.",
+      },
+      type: "Attune (target)",
     },
 
     {
@@ -238,10 +273,7 @@ export const revelation: MysticSphere = {
         name: "Blindsight",
       },
       // narrative: '',
-      rank: 4,
-      scaling: {
-        6: "The range increases to 60 feet.",
-      },
+      rank: 6,
       type: "Attune (target)",
     },
 
