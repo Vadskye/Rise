@@ -654,6 +654,36 @@ export const vivimancy: MysticSphere = {
       },
       type: "Attune (self)",
     },
+
+    {
+      name: "Mass Lifesense",
+
+      castingTime: "minor action",
+      functionsLike: {
+        mass: true,
+        name: "Lifesense",
+      },
+      // narrative: '',
+      rank: 3,
+      scaling: {
+        5: "The range increases to 60 feet.",
+        7: "The range increases to 120 feet.",
+      },
+      type: "Attune (target)",
+    },
+
+    {
+      name: "Mass Lifesight",
+
+      castingTime: "minor action",
+      functionsLike: {
+        mass: true,
+        name: "Lifesight",
+      },
+      // narrative: '',
+      rank: 6,
+      type: "Attune (target)",
+    },
   ],
   rituals: [
     {
