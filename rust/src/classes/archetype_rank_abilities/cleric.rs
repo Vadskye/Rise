@@ -447,87 +447,80 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         You gain a \plus2 bonus to the Persuasion skill.
-        In addition, using the \textit{desperate exertion} ability to affect a roll using the Persuasion skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
-
-                ",
+                You gain a \plus2 bonus to the Persuasion skill.
+                In addition, using the \textit{desperate exertion} ability to affect a roll using the Persuasion skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+            ",
         },
         RankAbility {
             name: "Denounce the Heathens",
             is_magical: false,
             rank: 1,
             description: r"
-         You can use the \textit{denounce the heathens} ability as a standard action.
-        \begin{instantability}{Denounce the Heathens}[Duration]
-            \rankline
-            Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
-            Your \glossterm{accuracy} is equal to your Persuasion skill.
-            \hit Each subject is \glossterm{briefly} \dazed.
+                You can use the \textit{denounce the heathens} ability as a standard action.
+                \begin{instantability}{Denounce the Heathens}[Duration]
+                    \rankline
+                    Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+                    Your \glossterm{accuracy} is equal to your Persuasion skill.
+                    \hit Each subject is \glossterm{briefly} \dazed.
 
-            \rankline
-            \rank{3} The area increases to a \largearea radius.
-            \rank{5} The area increases to a \hugearea radius.
-            \rank{7} The area increases to a \gargarea radius.
-        \end{instantability}
-
-                ",
+                    \rankline
+                    \rank{3} Each subject with no remaining \glossterm{damage resistance} is \\stunned instead of dazed.
+                    \rank{5} Each subject is stunned instead of dazed.
+                    \rank{7} Each subject with no remaining \glossterm{damage resistance} is \\confused instead of stunned.
+                \end{instantability}
+            ",
         },
         RankAbility {
             name: "Inspiring Oration",
             is_magical: false,
             rank: 2,
             description: r"
-         Your \glossterm{allies} who can hear you in a fight gain a \plus2 bonus to your Mental defense.
-        You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
-
-                ",
-        },
-        RankAbility {
-            name: "Bless the Worthy",
-            is_magical: false,
-            rank: 3,
-            description: r"
-         You can use the \textit{bless the worthy} ability as a standard action.
-        \begin{instantability}{Bless the Worthy}[Duration]
-            \rankline
-            You and all \glossterm{allies} within a \hugearea radius from you can remove a \glossterm{brief} effect or \glossterm{condition}.
-            This ability cannot remove an effect applied during the current round.
-            In addition, one of your allies \glossterm{briefly} gains a \plus2 bonus to \glossterm{accuracy}.
-
-            \rankline
-            \rank{5} The accuracy bonus increases to \plus3.
-            \rank{7} The accuracy bonus increases to \plus4.
-        \end{instantability}
-
-                ",
+                Your \glossterm{allies} who can hear you in a fight gain a \plus2 bonus to your Mental defense.
+                You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
+            ",
         },
         RankAbility {
             name: "Greater Practiced Persuasion",
             is_magical: false,
+            rank: 3,
+            description: r"
+                The bonus from your \textit{practiced persuasion} ability increases to \plus4.
+                In addition, you can use the \textit{desperate exertion} ability any number of times to affect the same Persuasion check.
+            ",
+        },
+        RankAbility {
+            name: "Bless the Worthy",
+            is_magical: false,
             rank: 4,
             description: r"
-         The bonus from your \textit{practiced persuasion} ability increases to \plus4.
-        In addition, you can use the \textit{desperate exertion} ability any number of times to affect the same Persuasion check.
+                You can use the \textit{bless the worthy} ability as a standard action.
+                \begin{instantability}{Bless the Worthy}[Duration]
+                    \rankline
+                    You and all \glossterm{allies} within a \largearea radius from you can each remove a \glossterm{brief} effect or \glossterm{condition}.
+                    This ability cannot remove an effect applied during the current round.
+                    In addition, one of your allies \glossterm{briefly} gains a \plus2 bonus to \glossterm{accuracy}.
 
-                ",
+                    \rankline
+                    The accuracy bonus increases by 1 for each rank beyond 4.
+                \end{instantability}
+            ",
         },
         RankAbility {
             name: "Condemn the Fearful",
             is_magical: false,
             rank: 5,
             description: r"
-         You can use the \textit{condemn the fearful} ability as a standard action.
-        \begin{instantability}{Condemn the Fearful}[Duration]
-            \rankline
-            Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
-            Your \glossterm{accuracy} is equal to your Persuasion skill.
-            \hit Each subject is \glossterm{briefly} \frightened by you.
+                You can use the \textit{condemn the fearful} ability as a standard action.
+                \begin{instantability}{Condemn the Fearful}[Duration]
+                    \rankline
+                    Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+                    Your \glossterm{accuracy} is equal to your Persuasion skill.
+                    \hit Each subject is \shaken by you as a \glossterm{condition}.
 
-            \rankline
-            \rank{7} The area increases to a \largearea radius.
-        \end{instantability}
-
-                ",
+                    \rankline
+                    \rank{7} Each subject with no remaining \glossterm{damage resistance} is \\frightened instead of shaken.
+                \end{instantability}
+            ",
         },
         RankAbility {
             name: "Greater Inspiring Oration",
@@ -548,7 +541,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     Make an attack vs. Mental against one creature within \rngmed range.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
                     \hit The subject is \stunned until it finishes a \glossterm{long rest}.
-                    At the end of that time, if its Willpower is 0 or lower, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
+                    At the end of that time, if its Willpower is 0 or lower and it is at least 3 levels lower than you, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
                 \end{instantability}
             ",
         },
