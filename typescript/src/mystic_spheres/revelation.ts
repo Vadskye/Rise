@@ -206,7 +206,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Boon of Knowledge",
+      name: "Gift of Knowledge",
 
       effect: `
         You gain a +4 \\glossterm{magic bonus} to all Knowledge skills (see \\pcref{Knowledge}).
@@ -307,12 +307,12 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Mass Boon of Many Eyes",
+      name: "Mass Gift of Many Eyes",
 
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        name: "Boon of Many Eyes",
+        name: "Gift of Many Eyes",
       },
       // narrative: '',
       rank: 4,
