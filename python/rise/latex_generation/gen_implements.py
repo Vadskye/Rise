@@ -600,7 +600,7 @@ def generate_implements():
         ),
     ]
 
-    # Would be nice to have staff concept for each mystic sphere
+    # Would be nice to have a staff concept for each mystic sphere
 
     implements += [
         MagicItem(
@@ -610,8 +610,9 @@ def generate_implements():
             tags=[],
             description="""
                 You gain a +1 \\glossterm<accuracy> bonus against creatures that are in \\glossterm<brilliant illumination>.
+                In addition, as a standard action, you can \\glossterm<briefly> create \\glossterm<brilliant illumination> in a \\arealarge radius \\glossterm<zone> from you.
             """,
-            short_description="Grants +1 accuracy in brilliant illumination",
+            short_description="Grants +1 accuracy vs foes in brilliant light",
         ),
         MagicItem(
             name="Staff of Radiance, Greater",
@@ -620,8 +621,9 @@ def generate_implements():
             tags=[],
             description="""
                 You gain a +2 \\glossterm<accuracy> bonus against creatures that are in \\glossterm<brilliant illumination>.
+                In addition, as a standard action, you can \\glossterm<briefly> create \\glossterm<brilliant illumination> in a \\areahuge radius \\glossterm<zone> from you.
             """,
-            short_description="Grants +2 accuracy in brilliant illumination",
+            short_description="Grants +2 accuracy vs foes in brilliant light",
         ),
     ]
 
