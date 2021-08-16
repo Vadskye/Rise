@@ -8,30 +8,33 @@ export const bless: MysticSphere = {
   cantrips: [
     {
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject \\glossterm{briefly} a +1 bonus to \\glossterm{accuracy} and \\glossterm{checks}.
+        Choose one \\glossterm{ally} within your \\glossterm{reach}.
+        The subject gains a +1 bonus to \\glossterm{accuracy} this round.
+        Because this ability has the \\abilitytag{Swift} tag, this improves the subject's attacks during the current phase.
       `,
       focus: false,
       name: "Boon of Competence",
       scaling: {
-        2: "The bonus increases to +2.",
-        4: "The bonus increases to +3.",
-        6: "The bonus increases to +4.",
+        2: "The range increases to \\shortrange.",
+        4: "The bonus increases to +2.",
+        6: "The range increases to \\medrange.",
       },
       type: "Duration",
     },
     {
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject \\glossterm{briefly} gains a +1 bonus to all \\glossterm{defenses}.
+        Choose one \\glossterm{ally} within your \\glossterm{reach}.
+        The subject gains a +1 bonus to \\glossterm{defenses} this round.
+        Because this ability has the \\abilitytag{Swift} tag, this improves the subject's defenses against attacks made against it during the current phase.
       `,
       focus: false,
       name: "Boon of Protection",
       scaling: {
-        2: "The bonus increases to +2.",
-        4: "The bonus increases to +3.",
-        6: "The bonus increases to +4.",
+        2: "The range increases to \\shortrange.",
+        4: "The bonus increases to +2.",
+        6: "The range increases to \\medrange.",
       },
+      tags: ['Swift'],
       type: "Duration",
     },
   ],
@@ -121,11 +124,11 @@ export const bless: MysticSphere = {
     },
 
     {
-      name: "Shielding Boon",
+      name: "Boon of Shielding",
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        If the subject takes the \\textit{total defense} action during the current phase, it gains an additional +2 bonus to all defenses until the end of the round.
+        If the subject takes the \\textit{total defense} action during the current phase, it gains an additional +2 bonus to all defenses this round.
         Because this ability has the \\abilitytag{Swift} tag, it affects attacks against the subject during the current phase.
         If you cast this spell on yourself, it affects the first time you use the \\textit{total defense} ability before the end of the next round.
       `,
@@ -160,14 +163,31 @@ export const bless: MysticSphere = {
     },
 
     {
+      name: "Boon of Deadly Fortune",
+
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The subject gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
+        Because this ability has the \\abilitytag{Swift} tag, it affects attacks the subject makes during the current phase.
+      `,
+      rank: 2,
+      scaling: {
+        4: `The accuracy bonus increases to +5.`,
+        6: `The accuracy bonus increases to +6.`,
+      },
+      tags: ["Swift"],
+      type: "Duration",
+    },
+
+    {
       name: "Boon of Invulnerability",
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject becomes takes half damage from all sources until the end of the current round.
+        The subject becomes takes half damage from all sources this round.
         Because this ability has the \\abilitytag{Swift} tag, it affects all damage the subject takes during the current phase.
-        `,
-      rank: 6,
+      `,
+      rank: 7,
       tags: ["Swift"],
       type: "Duration",
     },
@@ -177,14 +197,13 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains a +2 bonus to \\glossterm{defenses} until the end of the round.
+        The subject gains a +2 bonus to Armor and Reflex defenses this round.
         Because this ability has the \\abilitytag{Swift} tag, this improves the subject's defenses against attacks made against it during the current phase.
-        `,
-      rank: 1,
+      `,
+      rank: 3,
       scaling: {
-        3: `The bonus increases to +3.`,
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
+        5: `The bonus increases to +3.`,
+        7: `The bonus increases to +4.`,
       },
       tags: ["Swift"],
       type: "Duration",
@@ -225,7 +244,7 @@ export const bless: MysticSphere = {
     },
 
     {
-      name: "Blessing of Power",
+      name: "Blessing of Potency",
 
       castingTime: "minor action",
       effect: `
