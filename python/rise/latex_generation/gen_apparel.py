@@ -798,7 +798,7 @@ def generate_apparel():
             description="""
                 Being \\prone does not reduce your movement speed, defenses, or accuracy.
             """,
-            short_description="Move at full speed, defend, and attack normally while prone",
+            short_description="Act normally while prone",
         ),
     ]
 
