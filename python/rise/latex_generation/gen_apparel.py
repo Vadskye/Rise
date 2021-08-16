@@ -1456,7 +1456,7 @@ def generate_apparel():
                 As a standard action, you can use this belt to regain 1d10+2 hit points.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
-            short_description="Grants healing",
+            short_description="Heals 1d10+2 hit points",
         ),
         MagicItem(
             name="Belt of Healing, Greater",
@@ -1467,7 +1467,7 @@ def generate_apparel():
                 As a standard action, you can use this belt to regain 2d10+5 hit points.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
-            short_description="Grants more healing",
+            short_description="Heals 2d10+5 hit points",
         ),
         MagicItem(
             name="Belt of Healing, Supreme",
@@ -1478,7 +1478,7 @@ def generate_apparel():
                 As a standard action, you can use this belt to regain 4d10+8 hit points.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
-            short_description="Grants more healing",
+            short_description="Heals 4d10+8 hit points",
         ),
     ]
 
@@ -2555,7 +2555,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Swarmhunter Amulet, Greater",
-            level=11,
+            level=17,
             material_type="Amulet",
             tags=[],
             description="""
@@ -2735,7 +2735,7 @@ def generate_apparel():
             description="""
                 When you use the \\ability<possession> warlock ability, its penalties to Fortitude and Mental defense are reduced by 1.
             """,
-            short_description="Reduces defense penalties from \\textit<possession>.",
+            short_description="Reduces defense penalties from \\ability<possession>.",
         ),
         MagicItem(
             name="Amulet of Possession, Greater",
@@ -2745,7 +2745,40 @@ def generate_apparel():
             description="""
                 When you use the \\ability<possession> warlock ability, its penalties to Fortitude and Mental defense are removed.
             """,
-            short_description="Removes defense penalties from \\textit<possession>.",
+            short_description="Removes defense penalties from \\ability<possession>.",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of Denunciation",
+            level=5,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<denounce the heathens> cleric ability, its area is doubled.
+            """,
+            short_description="Doubles area of \\ability<denounce the heathens>",
+        ),
+        MagicItem(
+            name="Preacher's Amulet",
+            level=11,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<denounce the heathens> or \\ability<bless the worthy> cleric abilities, their area is tripled.
+            """,
+            short_description="Triples area of \\ability<denounce the heathens> and \\ability<bless the worthy>",
+        ),
+        MagicItem(
+            name="Preacher's Amulet, Greater",
+            level=17,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<denounce the heathens>, \\ability<condemn the fearful>, or \\ability<condemn the fearful> cleric abilities, their area is quadrupled.
+            """,
+            short_description="Quadruples area of preacher abilities",
         ),
     ]
 
