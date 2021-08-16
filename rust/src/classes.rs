@@ -974,7 +974,7 @@ impl Class {
                         If you choose this domain, you add all Knowledge skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
-                        \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to all defenses.
+                        \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to Fortitude, Reflex, and Mental defenses.
                         \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
                         \begin{instantability}{Share Knowledge}
                             Instant
@@ -1030,7 +1030,7 @@ impl Class {
                         \parhead{Mastery} The power bonus from this domain's essence increases to \plus6.
 
                     \subsubsection{Protection}
-                        \parhead{Gift} You gain a bonus equal to your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+                        \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{minor action}.
                         \begin{durationability}{Divine Protection}
                             \spelltwocol{Duration}{\abilitytag{Swift}}
@@ -1042,7 +1042,7 @@ impl Class {
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty rating} 5 Awareness check.
                             While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
                         \end{durationability}
-                        \parhead{Essence} The bonus from this domain's gift increases to twice your rank in this archetype.
+                        \parhead{Essence} The bonus from this domain's gift increases to three times your rank in this archetype.
                         \parhead{Mastery} The bonus from your \textit{divine protection} ability increases to \plus3.
 
                     \subsubsection{Strength}
