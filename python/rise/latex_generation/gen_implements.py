@@ -385,17 +385,26 @@ def generate_implements():
         ),
     ]
 
-    implements.append(
+    implements += [
         MagicItem(
             name="Staff of Focus",
             level=5,
             material_type="Staff",
             description="""
-            You reduce your \\glossterm<focus penalty> by 1.
-        """,
+                You reduce your \\glossterm<focus penalty> by 1.
+            """,
             short_description="Reduces \\glossterm<focus penalty> by 1",
-        )
-    )
+        ),
+        MagicItem(
+            name="Staff of Focus, Greater",
+            level=14,
+            material_type="Staff",
+            description="""
+                You reduce your \\glossterm<focus penalty> by 2.
+            """,
+            short_description="Reduces \\glossterm<focus penalty> by 2",
+        ),
+    ]
 
     implements += [
         MagicItem(
@@ -624,6 +633,60 @@ def generate_implements():
                 In addition, as a standard action, you can \\glossterm<briefly> create \\glossterm<brilliant illumination> in a \\areahuge radius \\glossterm<zone> from you.
             """,
             short_description="Grants +2 accuracy vs foes in brilliant light",
+        ),
+    ]
+
+    weapons += [
+        MagicItem(
+            name="Vampiric Staff",
+            level=17,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                Once per round, when you cause a living creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain \\glossterm{hit points} equal to half the hit points the damaged creature lost this way.
+            """,
+            short_description="Steals hit points from foes",
+        ),
+    ]
+
+    weapons += [
+        MagicItem(
+            name="Splitting Staff",
+            level=11,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                Whenever you use a \\glossterm<magical> ability that targets a single creature or object and which does not have the \\abilitytag<Sustain> tag, you may activate this staff.
+                When you do, increase the number of targets that the spell affects by one.
+                In addition, you increase your \\glossterm<fatigue level> by one.
+                If the spell does not have a defined range, this staff has no effect on it.
+            """,
+            short_description="Adds an extra target, but increases fatigue",
+        ),
+        MagicItem(
+            name="Splitting Staff, Greater",
+            level=17,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                This staff functions like a \\mitem<splitting staff>, except that activating it does not increase your \\glossterm<fatigue level>.
+            """,
+            short_description="Adds an extra target",
+        ),
+    ]
+
+    weapons += [
+        MagicItem(
+            name="Echoing Staff",
+            level=21,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
+                When you do, you increase your \\glossterm<fatigue level> by one.
+                In addition, during the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets.
+            """,
+            short_description="Repeats magical effect, but increases fatigue",
         ),
     ]
 
