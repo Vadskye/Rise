@@ -76,6 +76,45 @@ export const terramancy: MysticSphere = {
     },
 
     {
+      name: "Crushing Gravity",
+
+      attack: {
+        hit: `
+          The subject takes 2d6 + half \\glossterm{power} bludgeoning damage.
+          In addition, it is \\glossterm{briefly} \\slowed.
+        `,
+        targeting: `
+          Make an attack vs. Armor against anything within \\medrange.
+          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
+        `,
+      },
+      rank: 3,
+      scaling: "damage",
+      tags: [],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Crushing Gravity",
+
+      attack: {
+        hit: `
+          The subject takes 4d6 + half \\glossterm{power} bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\decelerated.
+          Otherwise, it is briefly \\slowed.
+        `,
+        targeting: `
+          Make an attack vs. Armor against anything within \\longrange.
+          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
+        `,
+      },
+      rank: 6,
+      scaling: "damage",
+      tags: [],
+      type: "Instant",
+    },
+
+    {
       name: "Shrapnel Blast",
 
       attack: {
