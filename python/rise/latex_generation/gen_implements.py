@@ -636,7 +636,7 @@ def generate_implements():
         ),
     ]
 
-    weapons += [
+    implements += [
         MagicItem(
             name="Vampiric Staff",
             level=17,
@@ -649,7 +649,7 @@ def generate_implements():
         ),
     ]
 
-    weapons += [
+    implements += [
         MagicItem(
             name="Splitting Staff",
             level=11,
@@ -675,7 +675,7 @@ def generate_implements():
         ),
     ]
 
-    weapons += [
+    implements += [
         MagicItem(
             name="Echoing Staff",
             level=21,
