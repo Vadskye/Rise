@@ -244,7 +244,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: `You also gain a +2 bonus to Dexterity-based checks.`,
+        4: `You also gain a +2 \\glossterm{magic bonus} to Dexterity-based checks.`,
         6: `You can decrease your size category by up to two size categories.`,
       },
       type: "Attune (self)",
@@ -261,7 +261,7 @@ export const polymorph: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: {
-        6: "Each subject also gains a +2 bonus to Dexterity-based checks.",
+        6: "Each subject also gains a +2 \\glossterm{magic bonus} to Dexterity-based checks.",
       },
       type: "Attune (target)",
     },
