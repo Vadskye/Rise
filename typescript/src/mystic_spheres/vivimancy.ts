@@ -644,13 +644,14 @@ export const vivimancy: MysticSphere = {
       name: "Lifesight",
 
       effect: `
-        You gain the \\glossterm{lifesight} ability with a 30 foot range.
+        You gain the \\glossterm{lifesight} ability with a 15 foot range.
         This allows you to see any living creatures and their equipment perfectly within that range.
         This ability works regardless of lighting conditions, blindness, invisibility, or any other means of concealment.
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: `The range increases to 60 feet.`,
+        5: `The range increases to 30 feet.`,
+        7: `The range increases to 60 feet.`,
       },
       type: "Attune (self)",
     },
@@ -681,7 +682,10 @@ export const vivimancy: MysticSphere = {
         name: "Lifesight",
       },
       // narrative: '',
-      rank: 6,
+      rank: 5,
+      scaling: {
+        7: "The range increases to 30 feet.",
+      },
       type: "Attune (target)",
     },
   ],

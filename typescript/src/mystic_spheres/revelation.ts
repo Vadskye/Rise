@@ -237,12 +237,13 @@ export const revelation: MysticSphere = {
       name: "Blindsight",
 
       effect: `
-        You gain the \\glossterm{blindsight} ability with a 30 foot range.
+        You gain the \\glossterm{blindsight} ability with a 15 foot range.
         This allows you to \`\`see'' your surroundings perfectly without any light, regardless of concealment or invisibility.
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: `The range increases to 60 feet.`,
+        5: `The range increases to 30 feet.`,
+        7: `The range increases to 60 feet.`,
       },
       type: "Attune (self)",
     },
@@ -273,7 +274,10 @@ export const revelation: MysticSphere = {
         name: "Blindsight",
       },
       // narrative: '',
-      rank: 6,
+      rank: 5,
+      scaling: {
+        7: "The range increases to 30 feet.",
+      },
       type: "Attune (target)",
     },
 
