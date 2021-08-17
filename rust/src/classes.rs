@@ -430,19 +430,52 @@ impl Class {
         }
     }
 
-    pub fn armor_proficiencies(&self) -> Vec<ArmorUsageClass> {
+    pub fn armor_proficiencies(&self) -> ArmorProficiencies {
         match self {
-            Self::Barbarian => vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
-            Self::Cleric => vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
-            Self::Druid => vec![ArmorUsageClass::Light],
-            Self::Fighter => ArmorUsageClass::all(),
-            Self::Monk => vec![armor::ArmorUsageClass::Light],
-            Self::Paladin => ArmorUsageClass::all(),
-            Self::Ranger => vec![ArmorUsageClass::Light],
-            Self::Rogue => vec![armor::ArmorUsageClass::Light],
-            Self::Sorcerer => vec![],
-            Self::Warlock => vec![armor::ArmorUsageClass::Light],
-            Self::Wizard => vec![],
+            Self::Barbarian => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
+            },
+            Self::Cleric => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
+            },
+            Self::Druid => ArmorProficiencies {
+                specific_armors: Some(vec![armor::Armor::Hide]),
+                usage_classes: vec![ArmorUsageClass::Light],
+            },
+            Self::Fighter => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: ArmorUsageClass::all(),
+            },
+            Self::Monk => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![armor::ArmorUsageClass::Light],
+            },
+            Self::Paladin => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: ArmorUsageClass::all(),
+            },
+            Self::Ranger => ArmorProficiencies {
+                specific_armors: Some(vec![armor::Armor::Hide]),
+                usage_classes: vec![ArmorUsageClass::Light],
+            },
+            Self::Rogue => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![armor::ArmorUsageClass::Light],
+            },
+            Self::Sorcerer => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![],
+            },
+            Self::Warlock => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![armor::ArmorUsageClass::Light],
+            },
+            Self::Wizard => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![],
+            },
         }
     }
 
@@ -534,6 +567,11 @@ pub struct ClassDefenseBonuses {
     pub fortitude: i32,
     pub mental: i32,
     pub reflex: i32,
+}
+
+pub struct ArmorProficiencies {
+    pub specific_armors: Option<Vec<armor::Armor>>,
+    pub usage_classes: Vec<ArmorUsageClass>,
 }
 
 pub struct WeaponProficiencies {

@@ -100,13 +100,23 @@ fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> St
 fn generate_latex_armor_proficiencies(class: &classes::Class) -> String {
     let armor_proficiencies = class.armor_proficiencies();
     let proficiences_text: String;
-    if armor_proficiencies.len() == 0 {
+    if armor_proficiencies.usage_classes.len() == 0 {
         proficiences_text = "
             You are not proficient with any type of armor.
             Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with \\glossterm{somatic components} to fail (see \\pcref{Somatic Component Failure}).
         ".to_string();
+    } else if let Some(specific_armors) = armor_proficiencies.specific_armors {
+        let usage_classes: Vec<&str> = armor_proficiencies.usage_classes.iter().map(|w| w.name()).collect();
+        let specific_armors: Vec<&str> = specific_armors.iter().map(|a| a.name_plural()).collect();
+        proficiences_text = format!(
+            "
+                You are proficient with {usage_classes} armor and {specific_armors}.
+            ",
+            usage_classes = latex_formatting::join_str_list(&usage_classes).unwrap(),
+            specific_armors = latex_formatting::join_str_list(&specific_armors).unwrap(),
+        );
     } else {
-        let stringified: Vec<&str> = armor_proficiencies.iter().map(|w| w.name()).collect();
+        let stringified: Vec<&str> = armor_proficiencies.usage_classes.iter().map(|w| w.name()).collect();
         proficiences_text = format!(
             "
                 You are proficient with {usage_classes} armor.
@@ -134,7 +144,7 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
             You are still proficient with your natural weapons.
         "
         .to_string();
-    } else if weapon_proficiencies.specific_weapons.is_some() {
+    } else if let Some(specific_weapons) = weapon_proficiencies.specific_weapons {
         let mut components = vec![String::from("simple weapons")];
         if weapon_proficiencies.custom_weapon_groups > 0 {
             let custom_weapon_groups = generate_labeled_english_number(
@@ -145,7 +155,7 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
             let custom_weapon_groups = format!("any {}", custom_weapon_groups);
             components.push(custom_weapon_groups);
         }
-        for w in weapon_proficiencies.specific_weapons.unwrap() {
+        for w in specific_weapons {
             components.push(w.plural_name());
         }
         proficiences_text = format!(
