@@ -514,7 +514,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                The bonus to \glossterm{power} from your \textit{wildspell} ability increases to +6.
+                The bonus to \glossterm{power} from your \textit{wildspell} ability increases to +5.
                 In addition, if you use the \textit{desperate exertion} ability to affect a spell you cast with the \textit{wildspell} ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
                 You do not gain any bonus to the wild magic reroll.
             ",
@@ -540,7 +540,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The bonus to \glossterm{power} from your \textit{wildspell} ability increases to +14.
+                The bonus to \glossterm{power} from your \textit{wildspell} ability increases to +12.
                 In addition, you replace your normal wild magic effects from your \textit{wildspell} ability with the effects from the table below.
                 \begin{dtable}
                     \lcaption{Epic Wild Magic Effects}
