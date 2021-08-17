@@ -194,21 +194,33 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Extending Staff",
-            level=9,
+            level=4,
             material_type="Staff",
             description="""
-                You double the range of your \\glossterm<magical> abilities.
+                You gain a +15 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
+                This does not affect abilities that do not have a range listed in feet.
             """,
-            short_description="Doubles range",
+            short_description="Grants +15 foot range",
         ),
         MagicItem(
             name="Extending Staff, Greater",
-            level=15,
+            level=10,
             material_type="Staff",
             description="""
-                You triple the range of your \\glossterm<magical> abilities.
+                You gain a +30 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
+                This does not affect abilities that do not have a range listed in feet.
             """,
-            short_description="Triples range",
+            short_description="Grants +30 foot range",
+        ),
+        MagicItem(
+            name="Extending Staff, Supreme",
+            level=16,
+            material_type="Staff",
+            description="""
+                You gain a +45 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
+                This does not affect abilities that do not have a range listed in feet.
+            """,
+            short_description="Grants +45 foot range",
         ),
     ]
 
@@ -365,23 +377,25 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Widening Staff",
-            level=12,
+            level=11,
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags, you may double its area.
+                Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags, you may activate this staff.
+                When you do, you double the spell's area.
+                In addition, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Doubles area size",
+            short_description="Can double area size, but increases fatigue",
         ),
         MagicItem(
             name="Widening Staff, Greater",
-            level=18,
+            level=17,
             material_type="Staff",
             tags=[],
             description="""
-                This implement functions like a \\textit<widening staff> implement, except that it triples the area instead of doubling it.
+                This implement functions like a \\textit<widening staff> implement, except that activating it does not increase your \\glossterm<fatigue level>.
             """,
-            short_description="Triples area size",
+            short_description="Can freely double area size",
         ),
     ]
 
