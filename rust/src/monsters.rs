@@ -191,7 +191,7 @@ impl HasAttacks for Monster {
     fn calc_accuracy(&self) -> i32 {
         return self.creature.calc_accuracy()
             + self.challenge_rating.accuracy_bonus()
-            + (self.creature.level + 1) / 6;
+            + self.creature.level / 9;
     }
 
     fn calc_damage_per_round_multiplier(&self) -> f64 {
@@ -264,7 +264,7 @@ impl HasDefenses for Monster {
         let mut value = self.creature.calc_defense(defense)
             + self.creature_type.defense_bonus(defense)
             + self.challenge_rating.defense_bonus()
-            + (self.creature.level + 3) / 6;
+            + (self.creature.level + 6) / 9;
         match defense {
             Defense::Armor => {
                 value = value
