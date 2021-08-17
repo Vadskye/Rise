@@ -191,7 +191,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You cannot choose this ability multiple times.
             \parhead{Signature Spell} Choose an arcane \glossterm{spell} you know.
                 The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
-                In adition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                In addition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                 You can choose this ability multiple times, choosing a different spell each time.
             \parhead{Spell Knowledge} You learn an additional spell.
                 You can choose this ability multiple times, learning an additional spell each time.
