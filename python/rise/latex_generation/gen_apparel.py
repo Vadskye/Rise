@@ -1468,7 +1468,7 @@ def generate_apparel():
             short_description="Grants +1 defenses against targeted spells",
         ),
         MagicItem(
-            name="Hexproof Ring, Greater",
+            name="Hexward Ring, Greater",
             level=19,
             material_type="Ring",
             tags=[],
