@@ -665,17 +665,16 @@ export const astromancy: MysticSphere = {
       name: "Distant Spells",
 
       effect: `
-        You increase the \\glossterm{range} of all of your ranged spells by 5 feet.
-        This does not affect spells that do not have a range.
+        You gain a +15 foot bonus to the \\glossterm{range} of all of your ranged spells.
+        This does not affect spells that do not have a range listed in feet.
       `,
       narrative: `
-        By channeling your spells through the Astral Plane, you can reach foes farther away than would normally be possible.
+        By channeling your spells through the Astral Plane, you can reach foes that are farther away than would normally be possible.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "The distance increases to 10 feet.",
-        5: "The distance increases to 15 feet.",
-        7: "The distance increases to 20 feet.",
+        4: "The distance increases to 30 feet.",
+        6: "The distance increases to 45 feet.",
       },
       type: "Attune (self)",
     },
