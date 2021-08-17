@@ -144,11 +144,12 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Fearless Anger",
+            name: "Fearless Rage",
             is_magical: false,
             rank: 5,
             description: r"
-                You are immune to being \shaken, \frightened, and \panicked.
+                You are immune to being \shaken, \frightened, and \panicked during your \textit{rage} ability.
+                In addition, being panicked does not prevent you from entering a rage.
             ",
         },
         RankAbility {
