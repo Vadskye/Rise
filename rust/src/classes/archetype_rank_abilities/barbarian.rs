@@ -140,15 +140,15 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You cannot be \glossterm{unaware} or \glossterm{partially unaware} during your \textit{rage} ability.
+                You cannot be \unaware or \partiallyunaware during your \textit{rage} ability.
             ",
         },
         RankAbility {
-            name: "Immutable Anger",
+            name: "Fearless Anger",
             is_magical: false,
             rank: 5,
             description: r"
-                You become immune to hostile \abilitytag{Emotion} effects.
+                You are immune to being \shaken, \frightened, and \panicked.
             ",
         },
         RankAbility {
