@@ -1181,30 +1181,30 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Bracers of Mighty Fists",
-            level=3,
+            level=5,
             material_type="Bracers",
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
+                You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
             """,
-            short_description="Grants +2 power with natural and unarmed attacks",
+            short_description="Grants +3 power with natural and unarmed attacks",
         ),
         MagicItem(
             name="Bracers of Mighty Fists, Greater",
-            level=9,
+            level=11,
             material_type="Bracers",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
+                You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
             """,
-            short_description="Grants +4 power with natural and unarmed attacks",
+            short_description="Grants +6 power with natural and unarmed attacks",
         ),
         MagicItem(
             name="Bracers of Mighty Fists, Supreme",
-            level=15,
+            level=17,
             material_type="Bracers",
             description="""
-                You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
+                You gain a +12 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
             """,
-            short_description="Grants +8 power with natural and unarmed attacks",
+            short_description="Grants +12 power with natural and unarmed attacks",
         ),
     ]
 
@@ -1282,7 +1282,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                Each creature \\goaded by you takes an additional -1 \\glossterm<accuracy> penalty against creatures other than you while it is within \\medrange of you.
+                Each creature suffering penalties for being \\goaded by you takes an additional -1 \\glossterm<accuracy> penalty against creatures other than you.
             """,
             short_description="Increases accuracy penalty on goaded foes by 1",
         ),
@@ -1292,7 +1292,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                Each creature \\goaded by you takes an additional -2 \\glossterm<accuracy> penalty against creatures other than you while it is within \\medrange of you.
+                Each creature suffering penalties for being \\goaded by you takes an additional -2 \\glossterm<accuracy> penalty against creatures other than you.
             """,
             short_description="Increases accuracy penalty on goaded foes by 2",
         ),
