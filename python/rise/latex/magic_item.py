@@ -113,8 +113,8 @@ class MagicItem(object):
         twocol_text = f"\\spelltwocol<{type_text}><{self.tag_text()}>" if type_text or self.tag_text() else ""
         return join(
             f"""
-                \\lowercase<\\hypertarget<item:{self.name}><>>\\label<item:{self.name}>
-                \\hypertarget<item:{self.name}><\\subsubsection<{self.name}\\hfill{level_text} ({self.price()} gp)>>
+                \\hypertargetraised<item:{self.name}><\\subsubsection<{self.name}\\hfill{level_text} ({self.price()} gp)>>
+                \\lowercase<\\hypertargetraised<item:{self.name}><>>\\label<item:{self.name}>
                 {self.description}
             """,
             self.latex_ability(),
