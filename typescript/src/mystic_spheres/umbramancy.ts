@@ -244,17 +244,13 @@ export const umbramancy: MysticSphere = {
       name: "Shadow Mantle",
 
       effect: `
-        All \\glossterm{strikes} against you have a 20\\% \\glossterm{miss chance}.
-        This does not protect you against creatures that can see you without normal vision, such as with the \\glossterm{blindsight} ability.
+        All \\glossterm{strikes} against you have a 20\\% \\glossterm{failure chance}.
       `,
       narrative: `
         Your physical form becomes blurred and shifts in and out of existence.
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
       `,
-      rank: 4,
-      scaling: {
-        6: "The miss chance increases to 25\\%.",
-      },
+      rank: 6,
       type: "Attune (self)",
     },
 
