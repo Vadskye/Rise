@@ -730,7 +730,7 @@ export const aquamancy: MysticSphere = {
         4: 'The damage resistance bonus increases to +8.',
         6: 'The damage resistance bonus increases to +16.',
       },
-      type: "Instant",
+      type: "Attune (self)",
     },
     {
       name: "Slippery Escapist",
