@@ -25,3 +25,22 @@ impl fmt::Display for ArmorUsageClass {
         write!(f, "{}", self.name())
     }
 }
+
+#[derive(Copy, Clone)]
+pub enum Armor {
+    Hide,
+}
+
+impl Armor {
+    pub fn name(&self) -> &str {
+        match self {
+            Self::Hide => "hide armor",
+        }
+    }
+
+    pub fn name_plural(&self) -> &str {
+        match self {
+            Self::Hide => "hide armor",
+        }
+    }
+}
