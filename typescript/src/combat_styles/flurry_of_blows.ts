@@ -188,7 +188,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Shrapnel Strike",
+      name: "Shrapnel Burst",
 
       effect: `
         Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea cone from you.
@@ -204,7 +204,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Greater Shrapnel Strike",
+      name: "Greater Shrapnel Burst",
 
       functionsLike: {
         exceptThat: "the area increases to a \\largearea cone from you.",
