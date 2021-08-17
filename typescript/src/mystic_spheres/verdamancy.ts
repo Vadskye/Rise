@@ -77,7 +77,7 @@ export const verdamancy: MysticSphere = {
         `,
       },
       focus: false,
-      rank: 1,
+      rank: 3,
       scaling: "damage",
       type: "Instant",
     },
@@ -501,7 +501,7 @@ export const verdamancy: MysticSphere = {
       name: "Plant Growth",
 
       effect: `
-        Choose a \\smallarea radius \\glossterm{zone} within \\medrange.
+        Choose a \\smallarea radius \\glossterm{zone} within \\longrange.
         In addition, choose whether you want plants within the area to grow or diminish.
 
         If you choose for plants to grow, all earth and unworked stone within the area becomes overrun with \\glossterm{light undergrowth}.
@@ -510,11 +510,10 @@ export const verdamancy: MysticSphere = {
 
         When this spell's duration ends, the plants return to their original size.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: `The area increases to a \\medarea radius.`,
-        5: `The area increases to a \\largearea radius.`,
-        7: `The area increases to a \\hugearea radius.`,
+        4: `The area increases to a \\medarea radius.`,
+        6: `The area increases to a \\largearea radius.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
