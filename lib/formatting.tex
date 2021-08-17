@@ -115,6 +115,10 @@
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername \: \thechapter \: - \: #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 
+\makeatletter
+ \newcommand{\hypertargetraised}[1]{\Hy@raisedlink{\hypertarget{#1}{}}}
+\makeatother
+
 \ExplSyntaxOff
 
 \sisetup{group-minimum-digits = 4,group-separator = {,}}
