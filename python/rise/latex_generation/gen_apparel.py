@@ -178,6 +178,7 @@ def generate_apparel():
         ),
     ]
 
+    # TODO: Figure out correct rank and scaling
     apparel += [
         MagicItem(
             name="Bracers of Repulsion",
@@ -189,18 +190,28 @@ def generate_apparel():
                 Make an attack vs. Fortitude against everything within a \\areasmall radius burst from you.
                 If you use this item during the \\glossterm<delayed action phase>,
                     you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the \\glossterm<action phase>.
-                On a hit, you \\glossterm<knockback> each target up to 20 feet in a straight line directly away from you.
+                On a hit, you \\glossterm<knockback> each target up to 15 feet in a straight line directly away from you.
             """,
             short_description="Can knock nearby creatures back",
         ),
         MagicItem(
             name="Bracers of Repulsion, Greater",
-            level=16,
+            level=13,
             material_type="Bracers",
             description="""
-                These bracers function like \\mitem<bracers of repulsion>, except that it targets your \\glossterm<enemies> within a \\arealarge radius burst.
+                These bracers function like \\mitem<bracers of repulsion>, except that they target your \\glossterm<enemies> within a \\areamed radius burst.
             """,
             short_description="Can knock enemies back",
+        ),
+        MagicItem(
+            name="Bracers of Repulsion, Supreme",
+            level=19,
+            material_type="Bracers",
+            description="""
+                These bracers function like \\mitem<bracers of repulsion>, except that they target your \\glossterm<enemies> within a \\areamed radius burst.
+                In addition, the knockback distance increases to 30 feet.
+            """,
+            short_description="Can knock enemies back a great distance",
         ),
     ]
 
@@ -475,7 +486,7 @@ def generate_apparel():
         )
     )
 
-    apparel.append(
+    apparel += [
         MagicItem(
             name="Crown of Lightning",
             level=7,
@@ -524,7 +535,7 @@ def generate_apparel():
             """,
             short_description="Can deal 4d10+9 damage to nearby foes",
         ),
-    )
+    ]
 
     apparel.append(
         MagicItem(
@@ -887,6 +898,31 @@ def generate_apparel():
             short_description="Eases travel in cold areas",
         )
     )
+
+    apparel += [
+        MagicItem(
+            name="Cloak of the Noble Rider",
+            level=5,
+            material_type="Cloak",
+            description="""
+                Whenever a mount that you are riding would gain a \\glossterm<vital wound>, you may activate this cloak.
+                When you do, the mount does not gain a vital wound.
+                However, it immediately falls unconscious until it finishes a \\glossterm<short rest>, and you increase your \\glossterm<fatigue level> by one.
+            """,
+            short_description="Can save your mount from a vital wound",
+        ),
+        MagicItem(
+            name="Cloak of the Noble Rider, Greater",
+            level=11,
+            material_type="Cloak",
+            description="""
+                Whenever a mount that you are riding would gain a \\glossterm<vital wound>, you may activate this cloak.
+                When you do, the mount does not gain a vital wound.
+                However, it immediately falls unconscious until it finishes a \\glossterm<short rest>.
+            """,
+            short_description="Can freely save your mount from a vital wound",
+        ),
+    ]
 
     apparel.append(
         MagicItem(
@@ -1421,9 +1457,8 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            # Maybe too strong?
             name="Hexward Ring",
-            level=7,
+            level=10,
             material_type="Ring",
             tags=[],
             description="""
@@ -1434,7 +1469,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Hexproof Ring, Greater",
-            level=16,
+            level=19,
             material_type="Ring",
             tags=[],
             description="""
@@ -1533,7 +1568,18 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                This belt functions like a \\mitem<shrinking belt>, except that your size decreases by two size categories instead of one.
+                This belt functions like a \\mitem<shrinking belt>, except that you also gain a +2 \\glossterm<magic bonus> to Dexterity-based checks while your size is reduced.
+            """,
+            short_description="Greatly reduces your size",
+        ),
+        MagicItem(
+            name="Shrinking Belt, Greater",
+            level=19,
+            material_type="Belt",
+            tags=[],
+            description="""
+                This belt functions like a \\mitem<shrinking belt>, except that you also gain a +2 \\glossterm<magic bonus> to Dexterity-based checks while your size is reduced.
+                In addition, you can choose to decrease your size by either one size category or two size categories.
             """,
             short_description="Greatly reduces your size",
         ),
@@ -2751,7 +2797,7 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Amulet of Denunciation",
+            name="Amulet of Blessed Oration",
             level=5,
             material_type="Amulet",
             tags=[],
@@ -2761,7 +2807,7 @@ def generate_apparel():
             short_description="Doubles area of \\ability<denounce the heathens>",
         ),
         MagicItem(
-            name="Preacher's Amulet",
+            name="Amulet of Blessed Oration, Greater",
             level=11,
             material_type="Amulet",
             tags=[],
@@ -2771,7 +2817,7 @@ def generate_apparel():
             short_description="Triples area of \\ability<denounce the heathens> and \\ability<bless the worthy>",
         ),
         MagicItem(
-            name="Preacher's Amulet, Greater",
+            name="Amulet of Blessed Oration, Supreme",
             level=17,
             material_type="Amulet",
             tags=[],
