@@ -538,7 +538,7 @@ def generate_implements():
 
                 As a \\glossterm<minor action>, you can activate this staff.
                 When you do, you choose one of the spells that you personally stored the staff and gain its effects, with yourself as the only target.
-                You do not have to invest an additional attunement point to gain the benefit of a spell in this way, and this does not remove the spell from the staff's storage.
+                As long as you are attuned to this staff, you do not have to invest an additional attunement point to gain the benefit of a spell in this way, and this does not remove the spell from the staff's storage.
                 This effect lasts until you activate the staff again, which can allow you to easily change which benefit you gain.
             """,
             short_description="Change easily between two stored attunements",
@@ -609,33 +609,6 @@ def generate_implements():
         ),
     ]
 
-    # Would be nice to have a staff concept for each mystic sphere
-
-    implements += [
-        MagicItem(
-            name="Staff of Radiance",
-            level=11,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +1 \\glossterm<accuracy> bonus against creatures that are in \\glossterm<brilliant illumination>.
-                In addition, as a standard action, you can \\glossterm<briefly> create \\glossterm<brilliant illumination> in a \\arealarge radius \\glossterm<zone> from you.
-            """,
-            short_description="Grants +1 accuracy vs foes in brilliant light",
-        ),
-        MagicItem(
-            name="Staff of Radiance, Greater",
-            level=20,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<accuracy> bonus against creatures that are in \\glossterm<brilliant illumination>.
-                In addition, as a standard action, you can \\glossterm<briefly> create \\glossterm<brilliant illumination> in a \\areahuge radius \\glossterm<zone> from you.
-            """,
-            short_description="Grants +2 accuracy vs foes in brilliant light",
-        ),
-    ]
-
     implements += [
         MagicItem(
             name="Vampiric Staff",
@@ -687,6 +660,89 @@ def generate_implements():
                 In addition, during the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets.
             """,
             short_description="Repeats magical effect, but increases fatigue",
+        ),
+    ]
+
+    # Would be nice to have a staff concept for each mystic sphere
+
+    implements += [
+        MagicItem(
+            name="Staff of Radiance",
+            level=11,
+            material_type="Staff",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<accuracy> bonus against creatures that are in \\glossterm<brilliant illumination>.
+                In addition, as a standard action, you can \\glossterm<briefly> create \\glossterm<brilliant illumination> in a \\arealarge radius \\glossterm<zone> from you.
+            """,
+            short_description="Grants +1 accuracy vs foes in brilliant light",
+        ),
+        MagicItem(
+            name="Staff of Radiance, Greater",
+            level=20,
+            material_type="Staff",
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<accuracy> bonus against creatures that are in \\glossterm<brilliant illumination>.
+                In addition, as a standard action, you can \\glossterm<briefly> create \\glossterm<brilliant illumination> in a \\areahuge radius \\glossterm<zone> from you.
+            """,
+            short_description="Grants +2 accuracy vs foes in brilliant light",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
+            name="Bushwalker's Staff",
+            level=11,
+            material_type="Staff",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<accuracy> bonus against creatures that are in \\glossterm<undergrowth>.
+                In addition, as a standard action, you can \\glossterm<briefly> create \\glossterm<light undergrowth> in a \\areasmall radius \\glossterm<zone> from you.
+            """,
+            short_description="Grants +1 accuracy vs foes in undergrowth",
+        ),
+        MagicItem(
+            name="Bushwalker's Staff, Greater",
+            level=20,
+            material_type="Staff",
+            tags=[],
+            description="""
+                You gain a +2 \\glossterm<accuracy> bonus against creatures that are in \\glossterm<undergrowth>.
+                In addition, as a standard action, you can \\glossterm<briefly> create \\glossterm<light undergrowth> in a \\areamed radius \\glossterm<zone> from you.
+            """,
+            short_description="Grants +2 accuracy vs foes in undergrowth",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
+            name="Staff of Healing Rhythm",
+            level=11,
+            material_type="Staff",
+            tags=['Healing'],
+            description="""
+                Whenever you use a \\glossterm<Healing> ability, you gain a +1 \\glossterm<accuracy> bonus during the next round.
+
+                In addition, as a standard action, you can regain 2d10+5 hit points.
+                This ability has the \\abilitytag{Healing} tag.
+                After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+            """,
+            short_description="Grants +1 accuracy after healing",
+        ),
+        MagicItem(
+            name="Staff of Healing Rhythm",
+            level=20,
+            material_type="Staff",
+            tags=['Healing'],
+            description="""
+                Whenever you use a \\glossterm<Healing> ability, you gain a +2 \\glossterm<accuracy> bonus during the next round.
+
+                In addition, as a standard action, you can regain 5d10+10 hit points.
+                This ability has the \\abilitytag{Healing} tag.
+                After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+            """,
+            short_description="Grants +2 accuracy after healing",
         ),
     ]
 
