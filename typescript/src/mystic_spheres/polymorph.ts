@@ -57,7 +57,7 @@ export const polymorph: MysticSphere = {
       `,
       focus: false,
       scaling: {
-        2: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with natural weapons.`,
+        2: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using natural weapons.`,
         4: `The power bonus increases to +4.`,
         6: `The power bonus increases to +8.`,
       },
@@ -601,22 +601,6 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: "Mass Scent",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Scent",
-      },
-      // narrative: '',
-      rank: 5,
-      scaling: {
-        7: "The bonus increases to +15.",
-      },
-      type: "Attune (target)",
-    },
-
-    {
       name: "Eyebite",
 
       attack: {
@@ -721,22 +705,6 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: "Mass Eyes of Darksight",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Eyes of Darksight",
-      },
-      // narrative: '',
-      rank: 4,
-      scaling: {
-        6: "The radius increases to 120 feet.",
-      },
-      type: "Attune (target)",
-    },
-
-    {
       name: "Draconic Senses",
 
       effect: `
@@ -752,47 +720,19 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: "Mass Draconic Senses",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Draconic Senses",
-      },
-      // narrative: '',
-      rank: 6,
-      type: "Attune (target)",
-    },
-
-    {
       name: "Swimmer",
 
       castingTime: "minor action",
       effect: `
         You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
+        If you already have a swim speed, you gain a +5 foot \\glossterm{magic bonus} to your swim speed.
       `,
       rank: 2,
       scaling: {
-        4: `You also gain a +2 \\glossterm{magic bonus} to Swim checks.`,
-        6: `The bonus increases to +4.`,
+        4: `You gain a +5 foot \\glossterm{magic bonus} to your climb speed, or a +10 foot bonus if you already have a climb speed.`,
+        6: `You gain a +10 foot \\glossterm{magic bonus} to your climb speed, or a +15 foot bonus if you already have a climb speed.`,
       },
       type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Swimmer",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Swimmer",
-      },
-      // narrative: '',
-      rank: 4,
-      scaling: {
-        6: "Each subject also gains a +2 \\glossterm{magic bonus} to Swim checks.",
-      },
-      type: "Attune (target)",
     },
 
     {
@@ -801,29 +741,14 @@ export const polymorph: MysticSphere = {
       castingTime: "minor action",
       effect: `
         You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size.
+        If you already have a climb speed, you gain a +5 foot \\glossterm{magic bonus} to your climb speed.
       `,
       rank: 2,
       scaling: {
-        4: `You also gain a +2 \\glossterm{magic bonus} to Climb checks.`,
-        6: `The bonus increases to +4.`,
+        4: `You gain a +5 foot \\glossterm{magic bonus} to your climb speed, or a +10 foot bonus if you already have a climb speed.`,
+        6: `You gain a +10 foot \\glossterm{magic bonus} to your climb speed, or a +15 foot bonus if you already have a climb speed.`,
       },
       type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Climber",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Climber",
-      },
-      // narrative: '',
-      rank: 4,
-      scaling: {
-        6: "Each subject also gains a +2 \\glossterm{magic bonus} to Swim checks.",
-      },
-      type: "Attune (target)",
     },
 
     {
@@ -843,17 +768,38 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: "Mass Runner",
+      name: "Mass Mobility Enhancement",
 
       castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Runner",
-      },
-      // narrative: '',
+      effect: `
+        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        For each creature, you choose one of the following effects.
+        \\parhead{Climber} The subject gains a \\glossterm{climb speed} equal to its \\glossterm{base speed}.
+        \\parhead{Runner} The subject gains a +5 foot \\glossterm{magic bonus} to its \\glossterm{land speed}.
+        \\parhead{Swimmer} The subject gains a \\glossterm{swim speed} equal to its \\glossterm{base speed}.
+      `,
       rank: 4,
       scaling: {
-        6: "The bonus increases to +20 feet.",
+        6: 'The subject also gains a +5 foot \\glossterm{magic bonus} to its speed with all movement modes, and a +10 foot \\glossterm{magic bonus} to its land speed.',
+      },
+      type: "Attune (target)",
+    },
+
+    {
+      name: "Mass Sensory Enhancement",
+
+      castingTime: "minor action",
+      effect: `
+        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        For each creature, you choose one of the following effects.
+        \\parhead{Awareness} The subject gains a +3 \\glossterm{magic bonus} to the Awareness skill.
+        \\parhead{Darkvision} The subject gains \\glossterm{darkvision} with a range of 60 feet.
+        \\parhead{Low-Light Vision} The subject gains \\glossterm{low-light vision}.
+        \\parhead{Scent} The subject gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Senses}).
+      `,
+      rank: 5,
+      scaling: {
+        7: "For each subject, you can choose any two of the listed enhancements.",
       },
       type: "Attune (target)",
     },
@@ -890,6 +836,20 @@ export const polymorph: MysticSphere = {
         6: `The subject can remove two effects.`,
       },
       type: "Instant",
+    },
+    {
+      name: "Natural Might",
+
+      effect: `
+        You gain a +3 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using \\glossterm{unarmed attacks} and \\glossterm{natural weapons}.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The power bonus increases to +6.`,
+        5: `The power bonus increases to +12.`,
+        7: `The power bonus increases to +24.`,
+      },
+      type: "Attune (self)",
     },
   ],
   rituals: [

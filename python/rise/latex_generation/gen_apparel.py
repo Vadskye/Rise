@@ -1945,18 +1945,18 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Blindfold of the Third Eye",
-            # Blindsight is a rank 2 self-only spell, so this would be level 7
-            # if it followed that model normally. It gets +2 levels for also
-            # granting blindsense and -1 level for requiring blindness.
+            # Blindsight is a rank 3 self-only spell, so this would be level 10
+            # if it followed that model normally. It gets +3 levels for also
+            # granting blindsense, -5 levels for requiring blindness
             level=8,
             material_type="Fabric",
             tags=[],
             description="""
-                While you wear this blindfold covering your eyes, you gain \\glossterm<blindsight> with a 30 foot range and \\glossterm<blindsense> with a 120 foot range.
+                While you wear this blindfold covering your eyes, you gain \\glossterm<blindsight> with a 15 foot range and \\glossterm<blindsense> with a 60 foot range.
                 You are also blind, as normal for wearing a blindfold.
                 Shifting this blindfold to cover or stop covering your eyes is a \\glossterm<free action> that requires a \\glossterm<free hand>.
             """,
-            short_description="Grants blindsight and blindsense",
+            short_description="Grants blindsight, blindsense, and blindness",
         ),
         MagicItem(
             name="Blindfold of the Third Eye, Greater",
@@ -1964,9 +1964,9 @@ def generate_apparel():
             material_type="Fabric",
             tags=[],
             description="""
-                This blindfold functions like the \\mitem<blindfold of the third eye>, except that the range of the blindsight increases to 60 feet and the range of the blindsense increases to 240 feet.
+                This blindfold functions like the \\mitem<blindfold of the third eye>, except that the range of the blindsight increases to 30 feet and the range of the blindsense increases to 120 feet.
             """,
-            short_description="Grants distant blindsight and blindsense",
+            short_description="Grants distant blindsight, blindsense, and blindness",
         ),
         MagicItem(
             name="Blindfold of the Third Eye, Supreme",
@@ -1974,9 +1974,9 @@ def generate_apparel():
             material_type="Fabric",
             tags=[],
             description="""
-                This blindfold functions like the \\mitem<blindfold of the third eye>, except that the range of the blindsight increases to 120 feet and the range of the blindsense increases to 480 feet.
+                This blindfold functions like the \\mitem<blindfold of the third eye>, except that the range of the blindsight increases to 60 feet and the range of the blindsense increases to 240 feet.
             """,
-            short_description="Grants very distant blindsight and blindsense",
+            short_description="Grants very distant blindsight, blindsense, and blindness",
         ),
     ]
 
