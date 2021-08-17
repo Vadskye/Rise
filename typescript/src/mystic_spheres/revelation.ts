@@ -10,7 +10,7 @@ export const revelation: MysticSphere = {
       name: "Reveal Sensation",
 
       effect: `
-        You \\glossterm{briefly} gain a +3 bonus to Awareness checks.
+        You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to Awareness checks.
       `,
       focus: false,
       scaling: {
@@ -30,9 +30,9 @@ export const revelation: MysticSphere = {
       `,
       focus: false,
       scaling: {
-        2: `You also gain a +2 bonus to the Knowledge check.`,
-        4: `The bonus increases to +4.`,
-        6: `The bonus increases to +6.`,
+        2: `You also gain a +2 \\glossterm{magic bonus} to the Knowledge check.`,
+        4: `The bonus increases to +3.`,
+        6: `The bonus increases to +4.`,
       },
       type: "Instant",
     },
