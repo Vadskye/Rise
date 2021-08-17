@@ -536,11 +536,14 @@ export const thaumaturgy: MysticSphere = {
         An observer can make a Spellsense check with a \\glossterm{difficulty rating} of 15 \\add half your level to identify the spell's true nature.
         If the spell's effects depend on visual components, the spell may fail to work if the subject alters the spell's visuals too much.
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: `
+        5: `
           You can also alter your \\glossterm{verbal components} when casting spells.
           You must still make the same amount of noise, but you can make any noise of your choosing instead of the spell's normal verbal components.
+        `,
+        7: `
+          The difficulty rating to identify the spell's true nature increases to 25 \\add half your level.
         `,
       },
       type: "Attune (self)",
