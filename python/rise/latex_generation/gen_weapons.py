@@ -882,6 +882,72 @@ def generate_weapons():
         ),
     ]
 
+    weapons += [
+        MagicItem(
+            name="Surestrike",
+            level=5,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                As a standard action, you can make a \\glossterm<strike> with a +1 accuracy bonus using this weapon.
+            """,
+            short_description="Can attack with +1 accuracy",
+        ),
+        MagicItem(
+            name="Surestrike, Greater",
+            level=11,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                As a standard action, you can make a \\glossterm<strike> with a +2 accuracy bonus using this weapon.
+            """,
+            short_description="Can attack with +2 accuracy",
+        ),
+        MagicItem(
+            name="Surestrike, Supreme",
+            level=17,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                As a standard action, you can make a \\glossterm<strike> with a +3 accuracy bonus using this weapon.
+            """,
+            short_description="Can attack with +3 accuracy",
+        ),
+    ]
+
+    weapons += [
+        MagicItem(
+            name="Powerstrike",
+            level=5,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                As a standard action, you can make a \\glossterm<strike> with a +1d damage bonus using this weapon.
+            """,
+            short_description="Can attack with +1d damage",
+        ),
+        MagicItem(
+            name="Powerstrike, Greater",
+            level=11,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                As a standard action, you can make a \\glossterm<strike> with a +2d damage bonus using this weapon.
+            """,
+            short_description="Can attack with +2d damage",
+        ),
+        MagicItem(
+            name="Powerstrike, Supreme",
+            level=17,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                As a standard action, you can make a \\glossterm<strike> with a +3d damage bonus using this weapon.
+            """,
+            short_description="Can attack with +3d damage",
+        ),
+    ]
+
     return weapons
 
 
