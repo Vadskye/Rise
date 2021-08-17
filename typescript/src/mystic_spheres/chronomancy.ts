@@ -25,7 +25,7 @@ export const chronomancy: MysticSphere = {
       name: "Accelerated Search",
 
       effect: `
-        Make an Awareness check to notice things in a single 10-ft.\\ squrae within 10 feet of you.
+        Make an Awareness check to notice things in a single 10-ft.\\ square within 10 feet of you.
         You gain a +4 bonus to this check.
       `,
       focus: false,
