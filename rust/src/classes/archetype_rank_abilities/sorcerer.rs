@@ -387,12 +387,11 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Personal Enhancement",
+            name: "Arcane Infusion",
             is_magical: true,
             rank: 2,
             description: r"
                 You gain a \glossterm{magic bonus} equal to twice your rank in this archetype to your \glossterm{hit points} and \glossterm{damage resistance}.
-                In addition, you gain a \glossterm{magic bonus} equal to your rank in this archetype to your \glossterm{power}.
                 Because this is a magic bonus, it does not stack with other magic bonuses (see \pcref{Stacking Rules}).
             ",
         },
@@ -420,7 +419,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                The bonuses to hit points and damage resistance from your \textit{personal enhancement} ability increase to three times your rank in this archetype.
+                The bonus from your \textit{personal enhancement} ability increases to three times your rank in this archetype.
             ",
         },
         RankAbility {
