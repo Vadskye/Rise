@@ -316,5 +316,37 @@ export const ripAndTear: CombatStyle = {
       rank: 6,
       type: "Instant",
     },
+
+    {
+      name: "Flay",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        You take a -2d damage penalty with the strike.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\sickened.
+      `,
+      rank: 1,
+      scaling: {
+        3: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Flay",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        You take a -2d damage penalty with the strike.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\nauseated.
+      `,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
+      },
+      type: "Duration",
+    },
   ],
 };
