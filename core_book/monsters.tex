@@ -45,7 +45,6 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             Monsters cannot normally use the \textit{recover} ability.
             However, monsters with a high challenge rating can remove conditions automatically.
             At the end of each round, monsters with CR of 2 or higher roll 1d10 \add their CR.
-            Monsters gain a \plus1 bonus to this roll at 6th level and every 6 levels thereafter.
             If the result is 10 or higher, the monster removes one condition of its choice.
             This effect cannot remove a condition applied during the current round.
             Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
@@ -69,39 +68,40 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             \item At almost all levels, the base \glossterm{hit points} of a monster are 50\% higher than the base hit points of a player character
             % this compensates for monsters not having complicated armor mechanics
             \item At all levels, the base \glossterm{damage resistance} of a monster is three times the base damage resistance of a player character
-            \item Monsters gain a \plus1 bonus to all defenses at 3rd level and every 6 levels thereafter
+            \item Monsters gain a \plus1 bonus to all defenses at 3rd level and every 9 levels thereafter
             \item Monsters gain a \plus1 bonus to power with all abilities at 3rd level that gradually increases every 3 levels thereafter
             \item Monsters gain a \plus1d damage bonus with strikes at 4th level and every 3 levels thereafter
-            \item Monsters gain a \plus1 accuracy bonus at 5th level and every 6 levels thereafter
+            \item Monsters gain a \plus1 bonus to their roll to automatically remove conditions at 6th level and 15th level
+            \item Monsters gain a \plus1 accuracy bonus at 9th level and 18th level
         \end{itemize}
         These scaling values are designed to keep monsters at a similar power level to player characters without having to repetitively define specific bonuses for each monster.
         In general, monsters that are designed to have unusually high or low values for any particular statistic define that with their attributes, though some monsters have more specific abilities.
 
     \begin{dtable*}
         \lcaption{Monster Advancement}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{HP}   & \tb{DR} & \tb{Defenses} & \tb{Power} & \tb{Strike Damage} & \tb{Accuracy} \tableheaderrule
-            1st        & 1                   & 16        & 6       & \tdash        & \tdash     & \tdash             & \tdash \\
-            2nd        & \tdash              & 18        & 9       & \tdash        & \tdash     & \tdash             & \tdash \\
-            3rd        & \tdash              & 19        & 9       & \plus1        & \plus1     & \tdash             & \tdash \\
-            4th        & 2                   & 22        & 9       & \plus1        & \plus1     & \plus1d            & \tdash \\
-            5th        & \tdash              & 25        & 12      & \plus1        & \plus1     & \plus1d            & \plus1 \\
-            6th        & \tdash              & 28        & 12      & \plus1        & \plus2     & \plus1d            & \plus1 \\
-            7th        & 3                   & 33        & 15      & \plus1        & \plus2     & \plus2d            & \plus1 \\
-            8th        & \tdash              & 37        & 18      & \plus1        & \plus2     & \plus2d            & \plus1 \\
-            9th        & \tdash              & 42        & 21      & \plus2        & \plus3     & \plus2d            & \plus1 \\
-            10th       & 4                   & 46        & 24      & \plus2        & \plus3     & \plus3d            & \plus1 \\
-            11th       & \tdash              & 52        & 27      & \plus2        & \plus3     & \plus3d            & \plus2 \\
-            12th       & \tdash              & 58        & 30      & \plus2        & \plus4     & \plus3d            & \plus2 \\
-            13th       & 5                   & 66        & 33      & \plus2        & \plus4     & \plus4d            & \plus2 \\
-            14th       & \tdash              & 75        & 36      & \plus2        & \plus4     & \plus4d            & \plus2 \\
-            15th       & \tdash              & 84        & 42      & \plus3        & \plus6     & \plus4d            & \plus2 \\
-            16th       & 6                   & 94        & 45      & \plus3        & \plus6     & \plus5d            & \plus2 \\
-            17th       & \tdash              & 105       & 51      & \plus3        & \plus6     & \plus5d            & \plus3 \\
-            18th       & \tdash              & 115       & 57      & \plus3        & \plus8     & \plus5d            & \plus3 \\
-            19th       & 7                   & 132       & 66      & \plus3        & \plus8     & \plus6d            & \plus3 \\
-            20th       & \tdash              & 150       & 75      & \plus3        & \plus8     & \plus6d            & \plus3 \\
-            21st       & \tdash              & 175\fn{5} & 84      & \plus4        & \plus12    & \plus6d            & \plus3 \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{HP}   & \tb{DR} & \tb{Power} & \tb{Strike Damage} & \tb{Extra Scaling} \tableheaderrule
+            1st        & 1                   & 16        & 6       & \tdash     & \tdash             & \tdash \\
+            2nd        & \tdash              & 18        & 9       & \tdash     & \tdash             & \tdash \\
+            3rd        & \tdash              & 19        & 9       & \plus1     & \tdash             & \plus1 defenses \\
+            4th        & 2                   & 22        & 9       & \plus1     & \plus1d            & \tdash \\
+            5th        & \tdash              & 25        & 12      & \plus1     & \plus1d            & \tdash \\
+            6th        & \tdash              & 28        & 12      & \plus2     & \plus1d            & \plus1 condition removal \\
+            7th        & 3                   & 33        & 15      & \plus2     & \plus2d            & \tdash \\
+            8th        & \tdash              & 37        & 18      & \plus2     & \plus2d            & \tdash \\
+            9th        & \tdash              & 42        & 21      & \plus3     & \plus2d            & \plus1 accuracy \\
+            10th       & 4                   & 46        & 24      & \plus3     & \plus3d            & \tdash \\
+            11th       & \tdash              & 52        & 27      & \plus3     & \plus3d            & \tdash \\
+            12th       & \tdash              & 58        & 30      & \plus4     & \plus3d            & \plus1 defenses \\
+            13th       & 5                   & 66        & 33      & \plus4     & \plus4d            & \tdash \\
+            14th       & \tdash              & 75        & 36      & \plus4     & \plus4d            & \tdash \\
+            15th       & \tdash              & 84        & 42      & \plus6     & \plus4d            & \plus1 condition removal \\
+            16th       & 6                   & 94        & 45      & \plus6     & \plus5d            & \tdash \\
+            17th       & \tdash              & 105       & 51      & \plus6     & \plus5d            & \tdash \\
+            18th       & \tdash              & 115       & 57      & \plus8     & \plus5d            & \plus1 accuracy \\
+            19th       & 7                   & 132       & 66      & \plus8     & \plus6d            & \tdash \\
+            20th       & \tdash              & 150       & 75      & \plus8     & \plus6d            & \tdash \\
+            21st       & \tdash              & 175\fn{5} & 84      & \plus12    & \plus6d            & \plus1 defeness \\
         \end{dtabularx}
         1. For each level beyond 21, a monster increases its maximum hit points by 25 and its maximum damage resistance by 12. \\
     \end{dtable*}

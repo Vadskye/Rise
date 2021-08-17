@@ -241,7 +241,7 @@ def accuracy():
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
-            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 1) / 6)) : 0;
+            var level_scaling = challenge_rating ? Math.max(0, Math.floor(level / 9)) : 0;
             setAttrs({{
                 accuracy: (
                     Math.floor(level / 2)
@@ -310,7 +310,7 @@ def armor_defense():
                 attribute_modifier += dexterity_starting;
             }}
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
-            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
+            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
             var before_equipment = (
                 Math.floor(level / 2)
                 + attribute_modifier
@@ -351,7 +351,7 @@ def fortitude():
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
-            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
+            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
             setAttrs({{
                 fortitude: (
                     Math.floor(level / 2)
@@ -384,7 +384,7 @@ def reflex():
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
-            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
+            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
             setAttrs({{
                 reflex: (
                     Math.floor(level / 2)
@@ -417,7 +417,7 @@ def mental():
         ],
         f"""
             var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
-            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 3) / 6)) : 0;
+            var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
             setAttrs({{
                 mental: (
                     Math.floor(level / 2)
