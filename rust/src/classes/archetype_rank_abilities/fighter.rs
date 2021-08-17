@@ -439,7 +439,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                Each creature that is \goaded by you takes an additional -2 \glossterm{accuracy} penalty against creatures other than you while it is within \medrange of you.
+                Each creature that is suffering penalties for being \goaded by you takes an additional -2 \glossterm{accuracy} penalty against creatures other than you.
             ",
         },
     ];
