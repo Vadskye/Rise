@@ -2554,19 +2554,6 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Amulet of Equality and Perfection",
-            level=20,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                If you have the \\ability<perfect body> ability, you gain a +1 bonus to the base value of your lowest physical attribute.
-            """,
-            short_description="Improves \\ability<perfect body> on your lowest attribute",
-        ),
-    ]
-
-    apparel += [
-        MagicItem(
             name="Amulet of the Avenger",
             level=8,
             material_type="Amulet",
