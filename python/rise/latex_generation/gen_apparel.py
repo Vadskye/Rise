@@ -732,33 +732,33 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Boots of the Fearful",
-            level=5,
+            level=3,
             material_type="Boots",
             tags=[],
             description="""
-                While you are \\shaken, \\frightened, or \\panicked and within \\medrange of the source of your fear, you gain a +10 foot \\glossterm<magic bonus> to your land speed.
+                While you are suffering penalties for being \\shaken, \\frightened, or \\panicked, you gain a +10 foot \\glossterm<magic bonus> to your speed with all movement modes.
             """,
-            short_description="Increases speed by 10 feet while afraid",
+            short_description="Grants +10 foot speed while afraid",
         ),
         MagicItem(
             name="Boots of the Fearful, Greater",
-            level=11,
+            level=9,
             material_type="Boots",
             tags=[],
             description="""
-                While you are \\shaken, \\frightened, or \\panicked and within \\medrange of the source of your fear, you gain a +15 foot \\glossterm<magic bonus> to your land speed.
+                While you are suffering penalties for being \\shaken, \\frightened, or \\panicked, you gain a +15 foot \\glossterm<magic bonus> to your speed with all movement modes.
             """,
-            short_description="Increases speed by 15 feet while afraid",
+            short_description="Grants +15 foot speed while afraid",
         ),
         MagicItem(
             name="Boots of the Fearful, Supreme",
-            level=17,
+            level=15,
             material_type="Boots",
             tags=[],
             description="""
-                While you are \\shaken, \\frightened, or \\panicked and within \\medrange of the source of your fear, you gain a +20 foot \\glossterm<magic bonus> to your land speed.
+                While you are suffering penalties for being \\shaken, \\frightened, or \\panicked, you gain a +20 foot \\glossterm<magic bonus> to your speed with all movement modes.
             """,
-            short_description="Increases speed by 20 feet while afraid",
+            short_description="Grants +20 foot speed while afraid",
         ),
     ]
 
