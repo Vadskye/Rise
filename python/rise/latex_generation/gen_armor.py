@@ -178,31 +178,30 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Shield of Bashing",
-            # -1 level relative to a potency weapon due to being more limited
-            level=3,
+            level=5,
             material_type="Shield",
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
+                You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
             """,
-            short_description="Grants +2 power with strikes",
+            short_description="Grants +3 power with strikes",
         ),
         MagicItem(
             name="Shield of Bashing, Greater",
-            level=9,
+            level=11,
             material_type="Shield",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
+                You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
             """,
-            short_description="Grants +4 power with strikes",
+            short_description="Grants +6 power with strikes",
         ),
         MagicItem(
             name="Shield of Bashing, Supreme",
-            level=15,
+            level=17,
             material_type="Shield",
             description="""
-                You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
+                You gain a +12 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
             """,
-            short_description="Grants +8 power with strikes",
+            short_description="Grants +12 power with strikes",
         ),
     ]
 
@@ -435,13 +434,13 @@ def generate_armor():
         ),
         MagicItem(
             name="Lithe Armor, Greater",
-            level=17,
+            level=20,
             tags=[],
             material_type="Body armor",
             description="""
-                If your base Dexterity is at least 1, you gain a +1 bonus to Armor defense.
+                If your base Dexterity is at least 3, you gain a +2 bonus to Armor defense.
             """,
-            short_description="Grants +1 Armor if you have 1 base Dex",
+            short_description="Grants +2 Armor if you have 1 base Dex",
         ),
     ]
 
@@ -607,7 +606,7 @@ def generate_armor():
             name="Hardblock Shield",
             level=10,
             tags=[],
-            material_type="Body armor",
+            material_type="Shield",
             description="""
                 Whenever a creature misses you with a melee \\glossterm<strike>, it \\glossterm<briefly> takes a -1 penalty to Armor defense.
                 As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
@@ -618,7 +617,7 @@ def generate_armor():
             name="Greater Hardblock Shield",
             level=16,
             tags=[],
-            material_type="Body armor",
+            material_type="Shield",
             description="""
                 This shield functions like a \\mitem<hardblock shield>, except that the penalty increases to -2.
             """,
