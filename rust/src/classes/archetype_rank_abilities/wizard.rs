@@ -584,7 +584,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
             \subcf{Conjuration} The range improvement increases to triple your range.
 
-            \subcf{Evocation} The power bonus increases to \plus6.
+            \subcf{Evocation} The power bonus increases to \plus5.
 
             \subcf{Illusion} You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
             If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
@@ -628,7 +628,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
             \subcf{Conjuration} The range improvement increases to quadruple your range.
 
-            \subcf{Evocation} The power bonus increases to \plus14.
+            \subcf{Evocation} The power bonus increases to \plus12.
 
             \subcf{Illusion} The accuracy bonus increases to \plus2.
 
