@@ -467,7 +467,7 @@ def generate_weapons():
             description="""
                 As a standard action, you can make a \\glossterm<strike> with a +1 \\glossterm<accuracy> bonus using this weapon.
                 You can \\glossterm<briefly> apply a dimensional trace on one creature that was dealt damage by that strike.
-                At the start of each \\glossterm<action phase>, if any creature within \\distrange of you has a dimensional trace active from this weapon, you automatically \\glossterm<teleport> into the closest unoccupied square adjacent to that creature.
+                At the start of each \\glossterm<action phase>, if any creature within \\distrange of you has a dimensional trace active from this weapon, you can choose to automatically \\glossterm<teleport> into the closest unoccupied square adjacent to that creature.
             """,
             short_description="Can briefly teleport next to struck creatures",
         ),
