@@ -10,8 +10,8 @@ export function convertCombatStyleToLatex(style: CombatStyle): string {
   assertEndsWithPeriod(style.shortDescription);
   return format.latexify(`
     \\section{{${style.name}}}
-      \\hypertarget{style:${style.name.toLowerCase()}}{}%
-      \\hypertarget{style:${style.name}}{}%
+      \\hypertargetraised{style:${style.name.toLowerCase()}}{}%
+      \\hypertargetraised{style:${style.name}}{}%
       \\label{${style.name}}%
       \\textit{${style.shortDescription}}
 
@@ -31,9 +31,6 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
   ].filter(Boolean);
 
   const latex = `
-    \\hypertarget{maneuver:${maneuver.name}}{}%
-    \\hypertarget{maneuver:${maneuver.name.toLowerCase()}}{}%
-    \\label{${maneuver.name}}%
     \\begin{${abilityType}}{${maneuver.name}}[${maneuver.type}]
       ${format.spellTypePrefix({ ...maneuver, focus: maneuver.focus ?? false }) || ""}
       \\rankline

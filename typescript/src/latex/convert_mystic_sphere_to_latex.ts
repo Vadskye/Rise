@@ -7,8 +7,8 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   assertEndsWithPeriod(sphere.shortDescription);
   return format.latexify(`
     \\section{{${sphere.name}}}
-      \\hypertarget{spell:${sphere.name}}{}%
-      \\hypertarget{spell:${sphere.name.toLowerCase()}}{}%
+      \\hypertargetraised{spell:${sphere.name}}{}%
+      \\hypertargetraised{spell:${sphere.name.toLowerCase()}}{}%
       \\label{${sphere.name}}%
       \\textit{${sphere.shortDescription}}
 
@@ -61,9 +61,6 @@ function convertSpellToLatex(spell: SpellLike): string {
   const tableText = spell.tableText || "";
 
   const latex = `
-    \\hypertarget{spell:${spell.name}}{}%
-    \\hypertarget{spell:${spell.name.toLowerCase()}}{}%
-    \\label{${spell.name}}%
     \\begin{${abilityType}}{${spell.name}}[${spell.type}]
       ${format.spellTypePrefix(spell) || ""}
       \\rankline
