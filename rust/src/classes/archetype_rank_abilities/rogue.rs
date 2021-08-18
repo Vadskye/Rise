@@ -95,15 +95,14 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-         You can use the \textit{assassination} ability as a \glossterm{minor action}.
-        \begin{durationability}{Assassination}[Duration]
-            \abilitytag{Swift}
-            \rankline
-            You study a creature within \rngmed range, finding weak points you can take advantage of.
-            The subject \glossterm{briefly} takes maximum damage from your melee \glossterm{strikes} that it is \unaware of.
-        \end{durationability}
-
-                ",
+                You can use the \textit{assassination} ability as a \glossterm{minor action}.
+                \begin{durationability}{Assassination}[Duration]
+                    \abilitytag{Swift}
+                    \rankline
+                    You study a creature within \rngmed range, finding weak points you can take advantage of.
+                    As a \glossterm{brief} effect, whenever you make a melee \glossterm{strikes} against the subject that it is \\unaware, the strike deals maximum damage and automatically \glossterm{explodes} regardless of what you roll.
+                \end{durationability}
+            ",
         },
         RankAbility {
             name: "Greater Darkstalker",
