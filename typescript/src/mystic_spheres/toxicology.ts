@@ -227,7 +227,7 @@ export const toxicology: MysticSphere = {
         name: 'sickening curse',
         exceptThat: 'the subject is \\nauseated instead of sickened.',
       },
-      rank: 6,
+      rank: 7,
       scaling: "accuracy",
       tags: ["Curse"],
       type: "Duration",
