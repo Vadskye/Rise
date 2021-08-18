@@ -217,10 +217,10 @@ def generate_implements():
             level=16,
             material_type="Staff",
             description="""
-                You gain a +45 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
+                You gain a +60 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
                 This does not affect abilities that do not have a range listed in feet.
             """,
-            short_description="Grants +45 foot range",
+            short_description="Grants +60 foot range",
         ),
     ]
 
@@ -332,7 +332,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Reaching Staff",
-            level=11,
+            level=8,
             material_type="Staff",
             description="""
                 Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
@@ -348,7 +348,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Reaching Staff, Greater",
-            level=17,
+            level=14,
             material_type="Staff",
             description="""
                 This implement functions like a \\textit<reaching staff> implement, except that activating it does not increase your \\glossterm<fatigue level>.

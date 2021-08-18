@@ -674,7 +674,7 @@ export const astromancy: MysticSphere = {
       rank: 2,
       scaling: {
         4: "The distance increases to 30 feet.",
-        6: "The distance increases to 45 feet.",
+        6: "The distance increases to 60 feet.",
       },
       type: "Attune (self)",
     },
