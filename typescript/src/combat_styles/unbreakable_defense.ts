@@ -185,7 +185,8 @@ export const unbreakableDefense: CombatStyle = {
       name: "Defensive Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Make a melee \\glossterm{strike}.
+        You take a -1d damage penalty with the strike.
         In exchange, you gain a +2 bonus to Armor and Reflex defenses until the end of the round.
         The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
       `,
@@ -194,19 +195,6 @@ export const unbreakableDefense: CombatStyle = {
         4: "The defense bonuses increase to +3.",
         6: "The defense bonuses increase to +4.",
       },
-      tags: ["Swift (see text)"],
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Defensive Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a -1d damage penalty.
-        In addition, you gain a +2 bonus to all defenses until the end of the round.
-        The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
-      `,
-      rank: 6,
       tags: ["Swift (see text)"],
       type: "Duration",
     },
@@ -225,6 +213,17 @@ export const unbreakableDefense: CombatStyle = {
         4: "Using this ability does not increase your fatigue level.",
         6: "You may remove an additional effect.",
       },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Cleanse",
+
+      effect: `
+        You remove a \\glossterm{brief} effect or \\glossterm{condition} affecting you.
+        This cannot remove an effect applied during the current round.
+      `,
+      rank: 6,
       type: "Duration",
     },
 

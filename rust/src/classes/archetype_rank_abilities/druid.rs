@@ -328,7 +328,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
             ",
         },
         RankAbility {
@@ -352,7 +352,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The bonus from your \textit{wellspring of power} ability increases to \plus9.
+                The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
         },
         RankAbility {
