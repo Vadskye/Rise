@@ -850,7 +850,7 @@ def generate_weapons():
                 You cannot use this ability while there is a condition infused in the weapon.
                 However, you can release the infusion as a separate standard action.
 
-                While this weapon is infused, if you make a creature lose \\glossterm<hit points> with it, the struck creature becomes affected by the infused effect as a \\glossterm<condition>.
+                While this weapon is infused, if you make a creature lose \\glossterm<hit points> with it, the struck creature becomes \\glossterm<briefly> affected by the infused effect.
                 This removes the infusion from this weapon, allowing you to activate it again.
             """,
             short_description="Remove a condition to inflict it later",
