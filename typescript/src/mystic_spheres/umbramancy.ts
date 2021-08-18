@@ -10,7 +10,7 @@ export const umbramancy: MysticSphere = {
       name: "Shadowcloak",
 
       effect: `
-        This spell has no \\glossterm{verbal components}.
+        This spell has no \\glossterm{verbal components} or \\glossterm{somatic components}.
 
         You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Stealth skill.
       `,
