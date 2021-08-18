@@ -335,8 +335,10 @@ def generate_implements():
             level=11,
             material_type="Staff",
             description="""
-                Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may choose a location within \\rngshort range.
+                Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
+                When you do, choose a location within \\rngshort range.
                 The ability takes effect as if you were in the chosen location.
+                In addition, you increase your \\glossterm<fatigue level> by one.
                 This affects your \\glossterm<line of effect> for the ability, but not your \\glossterm<line of sight> (since you still see from your normal location).
                 % Wording?
                 Since an ability's range is measured from your location, this item can allow you to affect targets outside your normal range.
@@ -349,7 +351,7 @@ def generate_implements():
             level=17,
             material_type="Staff",
             description="""
-                This implement functions like a \\textit<reaching staff> implement, except that the range increases to \\rngmed range.
+                This implement functions like a \\textit<reaching staff> implement, except that activating it does not increase your \\glossterm<fatigue level>.
             """,
             short_description="Allows ability use from a distance away",
         ),
