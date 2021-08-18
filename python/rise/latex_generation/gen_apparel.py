@@ -271,13 +271,23 @@ def generate_apparel():
         ),
         MagicItem(
             name="Gauntlet of the Ram, Greater",
-            level=14,
+            level=12,
             material_type="Gauntlet",
             description="""
                 This item has the Forceful \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
                 In addition, the \\glossterm<knockback> distance from that tag increases to 30 feet.
             """,
-            short_description="Knocks back foe farther when use to strike",
+            short_description="Knocks back foe 30 feet when use to strike",
+        ),
+        MagicItem(
+            name="Gauntlet of the Ram, Supreme",
+            level=18,
+            material_type="Gauntlet",
+            description="""
+                This item has the Forceful \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
+                In addition, the \\glossterm<knockback> distance from that tag increases to 60 feet.
+            """,
+            short_description="Knocks back foe 60 feet when use to strike",
         ),
     ]
 
@@ -962,7 +972,7 @@ def generate_apparel():
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 energy damage.
         """,
-            short_description="Teleport seven leages with a step",
+            short_description="Teleport seven leagues with a step",
         )
     )
 
