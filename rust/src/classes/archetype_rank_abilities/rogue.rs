@@ -666,7 +666,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus3 bonus to your \glossterm{power} with all abilities.
+                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
         },
         RankAbility {
@@ -692,7 +692,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{versatile power} ability increases to \plus9.
+                The bonus from your \textit{versatile power} ability increases to \plus6.
             ",
         },
         RankAbility {
