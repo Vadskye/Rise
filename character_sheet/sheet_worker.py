@@ -902,7 +902,7 @@ def debuffs():
                 reflex -= 2;
             }}
             if (dazzled && !blinded) {{
-                debuff_headers = "{{{{Miss chance=Miss on 1: [[d5]]}}}}";
+                debuff_headers = "{{{{Miss chance=Miss on 1: [[d4]]}}}}";
             }}
             if (blinded) {{
                 debuff_headers = "{{{{Miss chance=Miss on 1: [[d2]]}}}}";

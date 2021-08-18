@@ -25,8 +25,9 @@ You cannot crouch while flying or gliding.
 This does not stack with the \stunned or \confused effects.
 
 \debuffdef{dazzled} A dazzled creature has difficulty seeing.
-It loses any special vision abilities it has, such as \glossterm{darkvision} or \glossterm{low-light vision}.
+It loses the benefits of the \glossterm{darkvision} and \glossterm{low-light vision} abilities if it has them.
 In addition, it treats everything as if it had \glossterm{concealment}.
+Among other effects, this gives its attacks a 25\% \glossterm{miss chance}.
 
 \debuffdef{deafened} A deafened creature cannot hear. It automatically fails at actions which depend on hearing. In addition, it has a 20\% failure chance when casting any spell with verbal components.
 
@@ -134,6 +135,7 @@ For details, see \pcref{Attunement}.
 
 \abilitytagdef{Auditory} Auditory abilities use sound to cause their effects.
 Creatures and objects that cannot hear the effect are immune to it.
+However, they ignore any \glossterm{miss chance} from \glossterm{concealment} or being \glossterm{blinded}.
 
 \abilitytagdef{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
 They have no effect on objects or creatures without minds.
@@ -198,7 +200,7 @@ For details, see \pcref{Spell and Ritual Mechanics}.
 \abilitytagdef{Subtle} Subtle abilities have no visual or otherwise perceivable manifestation.
 Creatures successfully affected by Subtle abilities do not generally know that they are being influenced.
 However, a creature that successfully resists a Subtle ability can generally notice that it resisted a special effect of some kind, just like a non-Subtle ability.
-Subtle magical abilities can still be identified with the Spellsense skill (see \pcref{Spellsense}), but the \glossterm{difficulty rating} is equal to 20 \add the ability's power.
+Subtle magical abilities can still be identified with the Spellsense skill (see \pcref{Spellsense}), but the \glossterm{difficulty rating} is equal to 15 \add the ability's \glossterm{power}.
 
 \abilitytagdef{Sustain} Sustain abilities require an action to maintain. For details, see \pcref{Sustained Abilities}.
 
