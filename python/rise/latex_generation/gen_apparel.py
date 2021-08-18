@@ -1409,13 +1409,25 @@ def generate_apparel():
         ),
         MagicItem(
             name="Assassin's Cloak, Greater",
-            level=17,
+            level=14,
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                At the end of each round, if you took no actions that round, you \\glossterm{briefly} become \\glossterm<invisible>.
+                At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase>, you become \\glossterm<invisible>.
+                This invisibility ends after you take any action.
             """,
-            short_description="Grants longer invisibility while inactive",
+            short_description="Grants invisibility while mostly inactive",
+        ),
+        MagicItem(
+            name="Assassin's Cloak, Supreme",
+            level=20,
+            material_type="Cloak",
+            tags=["Sensation"],
+            description="""
+                At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase> and taking \\glossterm<minor actions>, you become \\glossterm<invisible>.
+                This invisibility ends after you take any action.
+            """,
+            short_description="Grants invisibility while slightly active",
         ),
     ]
 
