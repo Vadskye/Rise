@@ -138,6 +138,21 @@ pub enum WeaponGroup {
     Thrown,
 }
 
+impl WeaponGroup {
+    pub fn name_plural(&self) -> &str {
+        match self {
+            Self::Armor => "armor",
+            Self::Axes => "axes",
+            Self::Blades => "blades",
+            Self::Bows => "bows",
+            Self::Crossbows => "crossbows",
+            Self::Clublike => "clublike weapons",
+            Self::Monk => "monk weapons",
+            Self::Thrown => "thrown weapons",
+        }
+    }
+}
+
 // impl WeaponGroup {
 //     fn weapons(&self) -> Vec<Weapon> {
 //         match self {
