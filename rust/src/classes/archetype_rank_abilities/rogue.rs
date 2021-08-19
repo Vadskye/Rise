@@ -426,13 +426,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Combat Inspiration",
-            is_magical: true,
-            rank: 2,
+            name: "Greater Bardic Lore",
+            is_magical: false,
+            rank: 3,
             description: r"
-                Once per round, when you make a Perform check, you may choose an \glossterm{ally} that can see or hear your performance.
-                That ally gains a \plus1 bonus to \glossterm{accuracy} this round.
-                This ability has the \glossterm{Swift} tag, so it affects attacks made during the current phase.
+                You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                In addition, you gain a bonus equal to your rank in this archetype to Knowledge skills that you are \glossterm{untrained} with.
             ",
         },
         RankAbility {
@@ -441,14 +440,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You learn an additional bardic performance.
-            ",
-        },
-        RankAbility {
-            name: "Loremaster",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus2 bonus to all Knowledge skills.
             ",
         },
         RankAbility {
@@ -460,13 +451,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            name: "Greater Combat Inspiration",
+            name: "Supreme Bardic Lore",
             is_magical: true,
             rank: 5,
             description: r"
-         The bonus from your \textit{combat inspiration} ability increases to \plus2.
-
-                ",
+                You gain a +2 bonus to all Knowledge skills.
+            ",
         },
         RankAbility {
             name: "Bardic Performance",
@@ -474,14 +464,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You learn an additional bardic performance.
-            ",
-        },
-        RankAbility {
-            name: "Greater Loremaster",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{loremaster} ability increases to \plus4.
             ",
         },
         RankAbility {
