@@ -172,9 +172,9 @@ export const electromancy: MysticSphere = {
 
       attack: {
         glance: `Half damage.`,
-        hit: `Each subject takes 2d10 + half \\glossterm{power} electricity damage.`,
+        hit: `Each subject takes 4d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\hugearea radius from you.
+          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\gargarea radius from you.
         `,
       },
       rank: 6,
