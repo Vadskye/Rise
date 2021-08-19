@@ -418,6 +418,16 @@ impl ClassArchetype {
 impl ClassArchetype {
     pub fn latex_description(&self, class_shorthand: &str) -> String {
         let all_magical = self.is_magical();
+        let mut rank_ability_descriptions = self
+            .rank_abilities()
+            .iter()
+            .map(|a| {
+                a.latex_class_feature(class_shorthand, !all_magical)
+                    .trim()
+                    .to_string()
+            })
+            .collect::<Vec<String>>();
+        rank_ability_descriptions.sort();
         return format!(
             "
                 \\newpage
@@ -427,15 +437,7 @@ impl ClassArchetype {
                 {rank_abilities}
             ",
             archetype_name = titlecase(self.name()),
-            rank_abilities = self
-                .rank_abilities()
-                .iter()
-                .map(|a| a
-                    .latex_class_feature(class_shorthand, !all_magical)
-                    .trim()
-                    .to_string())
-                .collect::<Vec<String>>()
-                .join("\n\n"),
+            rank_abilities = rank_ability_descriptions.join("\n\n"),
             short_description = self.short_description(),
         );
     }
