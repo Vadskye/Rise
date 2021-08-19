@@ -139,7 +139,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 The damage resistance bonus from your \textit{mage armor} ability increases to four times your rank in this archetype.
-                In addition, the defense bonus from the body armor increases to \plus4.
+                In addition, the defense bonus from the body armor increases to \plus3.
             ",
         },
         RankAbility {
