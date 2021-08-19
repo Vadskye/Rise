@@ -554,7 +554,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Greater Swiftstep Armor",
-            level=15,
+            level=14,
             tags=["Swift"],
             material_type="Body armor",
             description="""
