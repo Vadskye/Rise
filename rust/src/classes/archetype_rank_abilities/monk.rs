@@ -459,12 +459,10 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         You become \glossterm{proficient} with the unarmed weapons \glossterm{weapon group} (see \pcref{Weapon Groups}).
-        In addition, you gain a \plus2d damage bonus with weapons that have the Unarmed weapon tag (see \pcref{Weapon Tags}).
-        For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
-
-
-                ",
+                You become \glossterm{proficient} with the unarmed weapons \glossterm{weapon group} (see \pcref{Weapon Groups}).
+                In addition, you gain a \plus2d damage bonus with weapons that have the Unarmed weapon tag (see \pcref{Weapon Tags}).
+                For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
+            ",
         },
         RankAbility {
             name: "Fast Movement",
@@ -586,14 +584,12 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Transcendent Power",
+            name: "Transcendent Might",
             is_magical: false,
             rank: 3,
             description: r"
-        
-        You gain a \plus2 bonus to your \glossterm{power} with all abilities.
-
-                ",
+                You gain a \plus1d bonus to your damage with all weapons.
+            ",
         },
         RankAbility {
             name: "Inner Peace",
@@ -617,17 +613,23 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
+            name: "Greater Transcendent Might",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus from your \textit{transcendent might} ability increases to +2d.
+            ",
+        },
+        RankAbility {
             name: "Transcend Mortality",
             is_magical: true,
             rank: 6,
             description: r"
-        
-        You are no longer considered a living creature for the purpose of attacks against you.
-        This means that attacks which only affect living creatures have no effect against you.
-        In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
-        You still die of old age when your time is up.
-
-                ",
+                You are no longer considered a living creature for the purpose of attacks against you.
+                This means that attacks which only affect living creatures have no effect against you.
+                In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
+                You still die of old age when your time is up.
+            ",
         },
         RankAbility {
             name: "Inner Transcendence",
