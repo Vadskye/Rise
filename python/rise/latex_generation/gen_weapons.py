@@ -634,20 +634,31 @@ def generate_weapons():
         ),
     ]
 
-    weapons.append(
+    weapons += [
         MagicItem(
             name="Seeking",
             level=7,
             material_type="Weapon",
             tags=[],
             description="""
-            This weapon automatically veers towards its intended target.
-            Any miss chance the strike would normally have is reduced.
-            A 50\\% miss chance is reduced to a 25\\% miss chance, and a 25\\% miss chance is removed entirely.
-        """,
+                This weapon automatically veers towards its intended target.
+                Any miss chance the strike would normally have is reduced.
+                A 50\\% miss chance is reduced to a 25\\% miss chance, and a 25\\% miss chance is removed entirely.
+            """,
             short_description="Reduces miss chances",
-        )
-    )
+        ),
+        MagicItem(
+            name="Seeking, Greater",
+            level=16,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                This weapon automatically veers towards its intended target.
+                Any miss chance the strike would normally have is removed.
+            """,
+            short_description="Removes miss chances",
+        ),
+    ]
 
     weapons += [
         MagicItem(
