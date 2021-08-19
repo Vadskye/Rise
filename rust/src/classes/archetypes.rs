@@ -431,7 +431,7 @@ impl ClassArchetype {
         return format!(
             "
                 \\newpage
-                \\subsection<{archetype_name}>
+                \\subsection<{archetype_name}>\\label<{archetype_name}>
                 {short_description}
 
                 {rank_abilities}
