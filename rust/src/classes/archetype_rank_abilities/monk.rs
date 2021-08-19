@@ -38,7 +38,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 When you move with a Jump check, you can land in midair as if it was solid ground.
-                Your landing loation must be no more than 30 feet above above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
+                Your landing location must be no more than 30 feet above above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
                 You cannot walk in the air, but you can continue jumping or remain in place.
                 The air holds you until the end of the current round, at which point you fall normally.
                 After you land on air in this way, you \glossterm{briefly} cannot do so again.
@@ -314,7 +314,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rankline
                 You can use this ability as part of movement with your land speed.
                 % TODO: is 'horizontally' the correct word?
-                You teleport horizontally instead of moving normally.
+                You \glossterm{teleport} horizontally instead of moving normally.
                 If your \glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
 
                 Teleporting a given distance costs movement equal to twice that distance.
@@ -326,6 +326,18 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} You can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
                 If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
             \end{instantability}
+
+            \begin{durationability}{Hear the Rustling Wings}[Duration]
+                \abilitytag{Swift}
+                \rankline
+                You can use this ability as a \glossterm{free action}.
+                You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
+
+                \rankline
+                \rank{3} The bonus increases to \plus8.
+                \rank{5} This becomes a \glossterm{brief} effect.
+                \rank{7} The bonus increases to \plus12.
+            \end{durationability}
 
             \begin{durationability}{Leap of the Heavens}[Duration]
                 \abilitytag{Swift}
