@@ -164,7 +164,6 @@ impl Class {
                 Skill::Stealth,
                 Skill::Survival,
                 Skill::Swim,
-                Skill::Swim,
             ],
             Self::Paladin => vec![
                 Skill::Awareness,
