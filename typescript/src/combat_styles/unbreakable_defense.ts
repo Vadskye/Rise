@@ -217,17 +217,6 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Greater Cleanse",
-
-      effect: `
-        You remove a \\glossterm{brief} effect or \\glossterm{condition} affecting you.
-        This cannot remove an effect applied during the current round.
-      `,
-      rank: 6,
-      type: "Duration",
-    },
-
-    {
       name: "Cleansing Strike",
 
       effect: `
@@ -257,6 +246,19 @@ export const unbreakableDefense: CombatStyle = {
         special: "The healing increases by +1d for each rank beyond 3.",
       },
       rank: 3,
+      tags: ['Healing'],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Revitalizing Strike",
+
+      effect: `
+        Make a strike with a -2d damage penalty.
+        In addition, you regain 4d10 + \\glossterm{power} hit points.
+        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+      `,
+      rank: 7,
       tags: ['Healing'],
       type: "Instant",
     },
@@ -308,6 +310,17 @@ export const unbreakableDefense: CombatStyle = {
         5: "The bonus increases to +4.",
         7: "The bonus increases to +5.",
       },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Prepared Defense",
+
+      effect: `
+        Make a strike with a -1d damage penalty.
+        After you make the strike, you \\glossterm{briefly} gain a +2 bonus to all defenses.
+      `,
+      rank: 6,
       type: "Duration",
     },
   ],
