@@ -38,7 +38,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Pulverizing Crush",
+      name: "Crushing Strike",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -46,9 +46,9 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage penalty is removed.",
-        5: "You gain a +1d damage bonus with the strike.",
-        7: "The damage bonus increases to +2d.",
+        3: "You gain a +1d damage bonus with the strike.",
+        5: "The damage bonus increases to +2d.",
+        7: "The damage bonus increases to +3d.",
       },
       type: "Instant",
     },
