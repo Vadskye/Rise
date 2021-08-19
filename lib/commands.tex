@@ -196,11 +196,11 @@
         \IfValueTF{#3}
         {
             \hyperlink{maneuver:#3~#2}{#2,~#3}
-            \hypertarget{maneuverlist:#3~#2}
+            \hypertargetraised{maneuverlist:#3~#2}
         }
         {
             \hyperlink{maneuver:#2}{#2}
-            \hypertarget{maneuverlist:#2}
+            \hypertargetraised{maneuverlist:#2}
         }
     }:
 }
@@ -313,16 +313,16 @@
         % Enable this to test for unnecessary glossary entries
         % \pref{#2}
 
-        \hypertarget{#3:#2}{}
-        \hypertarget{#3:#2s}{}
+        \hypertargetraised{#3:#2}{}
+        \hypertargetraised{#3:#2s}{}
     }
     % Enable this to test for missing glossary definitions
     % \label{#1}\label{#1s}
     % Enable this to test for unnecessary glossary entries
     % \pref{#1}
 
-    \hypertarget{#3:#1}{}
-    \hypertarget{#3:#1s}{}
+    \hypertargetraised{#3:#1}{}
+    \hypertargetraised{#3:#1s}{}
     \parhead{#1}
 }
 
