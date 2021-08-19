@@ -486,7 +486,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             \begin{durationability}{Dogpile}[\abilitytag{Sustain} (free)]
                 \rankline
                 Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and with all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
-                This does not affect any other abilities that may have similar effects, such as the Strangle maneuver (see Strangle, page \pref{maneuver:Strangle}).
 
                 \rankline
                 \rank{3} The bonus increases to \plus3.
