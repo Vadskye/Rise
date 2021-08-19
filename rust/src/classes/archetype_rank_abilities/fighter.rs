@@ -469,7 +469,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         When you initiate a battle tactic, you choose whether to use visual cues like gestures, auditory cues like shouts, or both to communicate your tactic with your allies.
         Your \textit{battle tactics} affect yourself and your \glossterm{allies} within a \areahuge radius \glossterm{emanation} from you who can either see or hear your chosen communication style.
 
-        All \textit{battle tactics} have the \abilitytag{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
+        All \textit{battle tactics} have the \abilitytag{Sustain} (minor) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
         You cannot sustain multiple battle tactics simultaneously, and any existing \textit{battle tactics} end as soon as you activate another battle tactic.
 
         {
