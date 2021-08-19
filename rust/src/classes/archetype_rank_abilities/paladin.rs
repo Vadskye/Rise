@@ -495,8 +495,9 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 \begin{durationability}{Pass Judgment}[Duration]
                     \abilitytag{Magical}
                     \rankline
-                    \target{One creature within \rnglong range}
-                    The target is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
+                    Choose one creature within \longrange.
+                    You gain the benefits of your \textit{zealous fixation} ability against the subject in addition to any other creatures.
+                    In addition, the subject is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
                     This only affects its alignment along the alignment axis your devoted alignment is on.
                     For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
                     This ability lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
