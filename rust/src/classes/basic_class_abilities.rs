@@ -144,8 +144,13 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
             You are still proficient with your natural weapons.
         "
         .to_string();
-    } else if let Some(specific_weapons) = weapon_proficiencies.specific_weapons {
+    } else  {
         let mut components = vec![String::from("simple weapons")];
+        if let Some(specific_weapon_groups) = weapon_proficiencies.specific_weapon_groups {
+            for g in specific_weapon_groups {
+                components.push(g.name_plural().to_string());
+            }
+        }
         if weapon_proficiencies.custom_weapon_groups > 0 {
             let custom_weapon_groups = generate_labeled_english_number(
                 weapon_proficiencies.custom_weapon_groups,
@@ -155,8 +160,10 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
             let custom_weapon_groups = format!("any {}", custom_weapon_groups);
             components.push(custom_weapon_groups);
         }
-        for w in specific_weapons {
-            components.push(w.plural_name());
+        if let Some(specific_weapons) = weapon_proficiencies.specific_weapons {
+            for w in specific_weapons {
+                components.push(w.plural_name());
+            }
         }
         proficiences_text = format!(
             "
@@ -164,19 +171,6 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
             ",
             latex_formatting::join_string_list(&components).unwrap_or(String::from("")),
         );
-    } else if weapon_proficiencies.custom_weapon_groups > 0 {
-        proficiences_text = format!(
-            "
-                You are proficient with simple weapons and any {weapon_group_text}.
-            ",
-            weapon_group_text = generate_labeled_english_number(
-                weapon_proficiencies.custom_weapon_groups,
-                "other weapon group",
-                "other weapon groups"
-            ),
-        );
-    } else {
-        proficiences_text = "You are proficient with simple weapons.".to_string();
     }
     return format!(
         "
