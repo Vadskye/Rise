@@ -164,10 +164,10 @@ You cannot gain the same feat twice.
         \featref{Executioner}              & Per 1               & Kill weakened foes more easily             & \tdash  & \featpref{Executioner}              \\
         \featref{Greatweapon Warrior}      & Str 2               & Fight better with two-handed weapons       & \tdash  & \featpref{Greatweapon Warrior}      \\
         \featref{Ghostblade}               & Dex 1, Wil 1        & Tap into ghostly powers in combat          & Magical & \featpref{Ghostblade}               \\
+        \featref{Juggernaut}               & Str 2               & Shove and overrun foes to deal damage      & \tdash  & \featpref{Juggernaut}               \\
         \featref{Leadership}               & Int 2 or Wil 2      & Inspire nearby allies                      & \tdash  & \featpref{Leadership}               \\
         \featref{Maneuverist}              & Int 1               & Gain limited maneuver access               & \tdash  & \featpref{Maneuverist}              \\
         \featref{Martial Training}         & \tdash              & Improve combat abilities                   & \tdash  & \featpref{Martial Training}         \\
-        \featref{Savage}                   & Str 2               & Shove and overrun foes to deal damage      & \tdash  & \featpref{Savage}                   \\
         \featref{Shieldbearer}             & Str 2               & Defend better with shields                 & \tdash  & \featpref{Shieldbearer}             \\
         \featref{Sniper}                   & Per 2               & Aim precisely at distant foes              & \tdash  & \featpref{Sniper}                   \\
         \featref{Two-Weapon Fighting}      & Dex 2               & Fight better with two weapons at once      & \tdash  & \featpref{Two-Weapon Fighting}      \\
@@ -1156,6 +1156,39 @@ You cannot gain the same feat twice.
         \ff[21]{Supreme Unclouded Mind} You are immune to all \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
     \end{feat}
 
+    \begin{feat}{Juggernaut}{Combat}
+        \featpre Base Strength of 2.
+
+        \ff[1]{Brute Force} You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{shove} and \textit{overrun} abilities (see \pcref{Shove}, and \pcref{Overrun}).
+        In addition, you gain a \plus1 bonus to your \glossterm{mundane} \glossterm{power}.
+
+        \ff[3]{Wall Slam} Whenever you \glossterm{push} a creature with a \glossterm{mundane} ability and the creature's movement is interrupted by a solid object, the object and creature both take bludgeoning damage equal to 1d10 plus half your \glossterm{power}.
+        This damage is not doubled when you get a critical hit with the ability that caused the push.
+        Any individual creature or object cannot take damage in this way more than once per round.
+        This damage increases by \plus1d at 6th level and every 3 levels thereafter.
+
+        \ff[6]{Trample} You can use the \textit{trample} ability as a standard action.
+        This ability functions like the \textit{overrun} ability, except that it does not cause you to increase your \glossterm{fatigue level} and creatures may not choose to avoid you.
+        In addition, if you move through a creature's space, it takes bludgeoning damage equal to 1d10 plus half your \glossterm{power}.
+        This damage is doubled when you get a critical hit on the trample attack.
+        This damage increases by \plus1d at 9th level and every 3 levels thereafter.
+
+        \ff[9]{Greater Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus2.
+        In addition, the power bonus increases to \plus4.
+
+        \ff[12]{Limitless Juggernaut} You can use the \textit{overrun} ability without increasing your \glossterm{fatigue level}.
+        After doing so, you \glossterm{briefly} cannot use the \textit{overrun} ability without increasing your fatigue level again.
+
+        \ff[15]{Greater Trample} Any creature that you deal damage to with your \textit{trample} ability falls \glossterm{prone}.
+
+        \ff[18]{Supreme Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus3.
+        In addition, the power bonus increases to \plus8.
+
+        \ff[21]{Greater Wall Slam} Your \textit{wall slam} ability also deals damage when you \glossterm{knockback} a creature with a mundane ability.
+
+        \ff[21]{Knockback Force} When you use the \textit{shove} ability, you can \glossterm{knockback} the target up to 20 feet instead of pushing it.
+    \end{feat}
+
     \begin{feat}{Jump Specialization}{Skill}
         \featpre Jump as a mastered skill.
 
@@ -1829,38 +1862,6 @@ You cannot gain the same feat twice.
         In addition, the accuracy bonus increases to \plus2.
 
         \ff[21]{Greater Mounted Defense} The defense bonus from your \textit{mounted defense} ability increases to \plus12.
-    \end{feat}
-
-    \begin{feat}{Savage}{Combat}
-        \featpre Base Strength of 2.
-
-        \ff[1]{Brute Force} You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{shove} and \textit{overrun} abilities (see \pcref{Shove}, and \pcref{Overrun}).
-        In addition, you gain a \plus1 bonus to your \glossterm{mundane} \glossterm{power}.
-
-        \ff[3]{Wall Slam} Whenever you \glossterm{push} a creature with a \glossterm{mundane} ability and the creature's movement is interrupted by a solid object, the object and creature both take bludgeoning damage equal to 1d10 plus half your \glossterm{power}.
-        This damage is not doubled when you get a critical hit with the ability that caused the push.
-        Any individual creature or object cannot take damage in this way more than once per round.
-        This damage increases by \plus1d at 6th level and every 3 levels thereafter.
-
-        \ff[6]{Trample} You can use the \textit{trample} ability as a standard action.
-        This ability functions like the \textit{overrun} ability, except that it does not cause you to increase your \glossterm{fatigue level} and creatures may not choose to avoid you.
-        In addition, if you move through a creature's space, it takes bludgeoning damage equal to 1d10 plus half your \glossterm{power}.
-        This damage is doubled when you get a critical hit on the trample attack.
-        This damage increases by \plus1d at 9th level and every 3 levels thereafter.
-
-        \ff[9]{Greater Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus2.
-        In addition, the power bonus increases to \plus4.
-
-        \ff[12]{Limitless Savagery} Using the \textit{overrun} ability does not cause you to increase your \glossterm{fatigue level}.
-
-        \ff[15]{Greater Trample} Any creature that you deal damage to with your \textit{trample} ability falls \glossterm{prone}.
-
-        \ff[18]{Supreme Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus3.
-        In addition, the power bonus increases to \plus8.
-
-        \ff[21]{Greater Wall Slam} Your \textit{wall slam} ability also deals damage when you \glossterm{knockback} a creature with a mundane ability.
-
-        \ff[21]{Knockback Force} When you use the \textit{shove} ability, you can \glossterm{knockback} the target up to 20 feet instead of pushing it.
     \end{feat}
 
     \begin{feat}{Shieldbearer}{Combat}
