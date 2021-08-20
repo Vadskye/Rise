@@ -568,18 +568,24 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-         The speed bonus from your \textit{fast movement} ability increases to \plus10 feet.
-
-                ",
+                The speed bonus from your \textit{fast movement} ability increases to \plus10 feet.
+            ",
+        },
+        RankAbility {
+            name: "Greater Unarmed Warrior",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                The damage bonus from your \textit{unarmed warrior} ability increases to \plus3d.
+            ",
         },
         RankAbility {
             name: "Greater Perfect Precision",
             is_magical: false,
             rank: 5,
             description: r"
-         The bonuses from your \textit{perfect precision} ability increase to \plus2.
-
-                ",
+                The bonuses from your \textit{perfect precision} ability increase to \plus2.
+            ",
         },
         RankAbility {
             name: "Greater Perfect Body",
@@ -595,6 +601,14 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
+            ",
+        },
+        RankAbility {
+            name: "Supreme Unarmed Warrior",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                The damage bonus from your \textit{unarmed warrior} ability increases to \plus4d.
             ",
         },
     ];
