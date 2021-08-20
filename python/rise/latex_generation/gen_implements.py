@@ -283,7 +283,7 @@ def generate_implements():
                 When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<verbal components>.
                 This ability has the \\glossterm<Swift> tag, so it allows you to cast a spell without verbal components in the same phase that you activate this staff.
             """,
-            short_description="Briefly cast spells without verbal components",
+            short_description="Can exert to cast spells without verbal components",
         ),
         MagicItem(
             name="Staff of Stillness",
@@ -295,7 +295,7 @@ def generate_implements():
                 When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<somatic components>.
                 This ability has the \\glossterm<Swift> tag, so it allows you to cast a spell without somatic components in the same phase that you activate this staff.
             """,
-            short_description="Briefly cast spells without somatic components",
+            short_description="Can exert to cast spells without somatic components",
         ),
         MagicItem(
             name="Greater Staff of Silence",
@@ -305,7 +305,7 @@ def generate_implements():
             description="""
                 You can cast spells without using \\glossterm<verbal components>.
             """,
-            short_description="Cast spells without verbal components",
+            short_description="Can cast spells without verbal components",
         ),
         MagicItem(
             name="Greater Staff of Stillness",
@@ -315,7 +315,7 @@ def generate_implements():
             description="""
                 You can cast spells without using \\glossterm<somatic components>.
             """,
-            short_description="Cast spells without somatic components",
+            short_description="Can cast spells without somatic components",
         ),
         MagicItem(
             name="Staff of Tranquility",
@@ -325,7 +325,7 @@ def generate_implements():
             description="""
                 You can cast spells without using \\glossterm<verbal components> or \\glossterm<somatic components>.
             """,
-            short_description="Cast spells without components",
+            short_description="Can cast spells without components",
         ),
     ]
 
@@ -344,7 +344,7 @@ def generate_implements():
                 Since an ability's range is measured from your location, this item can allow you to affect targets outside your normal range.
                 For example, a cone that normally bursts out from you would instead originate from your chosen location, potentially avoiding an obstacle between you and your target.
             """,
-            short_description="Allows ability use from a short distance away",
+            short_description="Can exert to use abilities from a short distance away",
         ),
         MagicItem(
             name="Reaching Staff, Greater",
@@ -353,7 +353,7 @@ def generate_implements():
             description="""
                 This implement functions like a \\textit<reaching staff> implement, except that activating it does not increase your \\glossterm<fatigue level>.
             """,
-            short_description="Allows ability use from a distance away",
+            short_description="Can use abilities from a short distance away",
         ),
     ]
 
@@ -387,7 +387,7 @@ def generate_implements():
                 When you do, you double the spell's area.
                 In addition, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Can double area size, but increases fatigue",
+            short_description="Can exert to double area size",
         ),
         MagicItem(
             name="Widening Staff, Greater",
@@ -397,7 +397,7 @@ def generate_implements():
             description="""
                 This implement functions like a \\textit<widening staff> implement, except that activating it does not increase your \\glossterm<fatigue level>.
             """,
-            short_description="Can freely double area size",
+            short_description="Can double area size",
         ),
     ]
 
@@ -595,7 +595,7 @@ def generate_implements():
 
                 After you use this ability, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Fatigue and remove a condition to gain power",
+            short_description="Can exert and remove a condition to gain power",
         ),
         MagicItem(
             name="Baneswallow Staff, Greater",
@@ -608,7 +608,7 @@ def generate_implements():
                 This cannot remove an effect applied during the current round.
                 If you remove a condition in this way, you \\glossterm<briefly> gain a +4 bonus to your \\glossterm<power>.
             """,
-            short_description="Remove a condition to gain power",
+            short_description="Can remove a condition to gain power",
         ),
         MagicItem(
             name="Baneswallow Staff, Supreme",
@@ -621,7 +621,7 @@ def generate_implements():
                 This cannot remove effects applied during the current round.
                 If you remove at least one condition in this way, you \\glossterm<briefly> gain a +8 bonus to your \\glossterm<power>.
             """,
-            short_description="Remove conditions to gain power",
+            short_description="Can remove conditions to gain power",
         ),
     ]
 
@@ -650,7 +650,7 @@ def generate_implements():
                 In addition, you increase your \\glossterm<fatigue level> by one.
                 If the spell does not have a defined range, this staff has no effect on it.
             """,
-            short_description="Adds an extra target, but increases fatigue",
+            short_description="Can exert to add an extra target",
         ),
         MagicItem(
             name="Splitting Staff, Greater",
@@ -660,7 +660,7 @@ def generate_implements():
             description="""
                 This staff functions like a \\mitem<splitting staff>, except that activating it does not increase your \\glossterm<fatigue level>.
             """,
-            short_description="Adds an extra target",
+            short_description="Can add an extra target",
         ),
     ]
 
@@ -675,7 +675,7 @@ def generate_implements():
                 When you do, you increase your \\glossterm<fatigue level> by one.
                 In addition, during the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets.
             """,
-            short_description="Repeats magical effect, but increases fatigue",
+            short_description="Can exert to repeat effect",
         ),
     ]
 
