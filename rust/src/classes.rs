@@ -505,7 +505,7 @@ impl Class {
                 simple_weapons: true,
             },
             Self::Monk => WeaponProficiencies {
-                custom_weapon_groups: 1,
+                custom_weapon_groups: 0,
                 specific_weapon_groups: Some(vec![weapons::WeaponGroup::Monk]),
                 specific_weapons: None,
                 simple_weapons: true,
