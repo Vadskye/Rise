@@ -503,6 +503,22 @@ export const photomancy: MysticSphere = {
     },
 
     {
+      name: "Invisibility",
+
+      effect: `
+        This spell has no \\glossterm{verbal components}.
+
+        You become \\glossterm{briefly} invisible.
+        This invisibility ends after you take any action.
+      `,
+      rank: 4,
+      scaling: {
+        6: "Taking actions does not end this invisibility.",
+      },
+      type: "Duration",
+    },
+
+    {
       name: "Chromatic Orb",
 
       attack: {
