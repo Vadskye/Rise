@@ -298,18 +298,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
-            \begin{durationability}{Elegant Whirl of Fluid Motion}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
-
-                \rankline
-                \rank{3} The bonus increases to \plus8.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The bonus increases to \plus12.
-            \end{durationability}
-
             \begin{durationability}{Extend the Flow of Ki}[Duration]
                 \abilitytag{Swift}
                 \rankline
@@ -387,6 +375,18 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
+            \begin{durationability}{Rest Atop the Precipice}[Duration]
+                \abilitytag{Swift}
+                \rankline
+                You can use this ability as a \glossterm{free action}.
+                You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
+
+                \rankline
+                \rank{3} The bonus increases to \plus8.
+                \rank{5} This becomes a \glossterm{brief} effect.
+                \rank{7} The bonus increases to \plus12.
+            \end{durationability}
+
             \begin{durationability}{Scale the Highest Tower}[Duration]
                 \abilitytag{Swift}
                 \rankline
@@ -435,6 +435,18 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{3} The failure chance for attacks against you increases to 25\\%.
                 \rank{5} When you use this ability, you can choose whether it becomes a \glossterm{brief} effect.
                 \rank{7} The failure chance for attacks against you increases to 30\\%.
+            \end{durationability}
+
+            \begin{durationability}{Thread the Eye of the Storm}[Duration]
+                \abilitytag{Swift}
+                \rankline
+                You can use this ability as a \glossterm{free action}.
+                You reduce your \glossterm{longshot penalty} with thrown weapons by 1 this round (see \pcref{Weapon Range Limits}).
+
+                \rankline
+                \rank{3} The penalty reduction increases to 2.
+                \rank{5} This becomes a \glossterm{brief} effect.
+                \rank{7} The penalty reduction increases to 3.
             \end{durationability}
 
             % TODO: this is confusing since skills no longer directly reference attributes
