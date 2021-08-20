@@ -1462,18 +1462,19 @@ def generate_apparel():
     apparel.append(
         MagicItem(
             name="Vanishing Cloak",
-            level=13,
+            level=14,
             material_type="Cloak",
             tags=["Sensation"],
             description="""
                 As a standard action, you can activate this cloak.
-                When you do, you teleport to an unoccupied location within \\rngmed range of your original location.
-                In addition, you become \\glossterm{briefly} \\glossterm<invisible>.
+                When you do, you \\glossterm<teleport> to an unoccupied location within \\rngmed range of your original location.
+                Unlike most teleportation, this teleportation does not make any noise.
+                In addition, you \\glossterm{briefly} become \\glossterm<invisible>.
                 This invisibility ends after you take any action.
 
                 If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
             """,
-            short_description="Can teleport a short distance and grant invisibility",
+            short_description="Can teleport a short distance and grant brief invisibility",
         )
     )
 
