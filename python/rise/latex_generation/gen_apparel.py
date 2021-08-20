@@ -154,7 +154,7 @@ def generate_apparel():
                 When you do, you increase your \\glossterm<fatigue level> by one and gain a +2 bonus to Armor defense until the end of the round.
                 This ability has the \\glossterm<Swift> tag, so it protects you against attacks against you during the current phase.
             """,
-            short_description="Can grant brief +2 Armor defense",
+            short_description="Can exert to gain instant +2 Armor defense",
         ),
         MagicItem(
             name="Shieldburst Bracers, Greater",
@@ -164,7 +164,7 @@ def generate_apparel():
             description="""
                 These bracers function like \\textit<shieldburst bracers>, except that the defense bonus increases to +3.
             """,
-            short_description="Can grant brief +3 Armor defense",
+            short_description="Can exert to gain instant +3 Armor defense",
         ),
         MagicItem(
             name="Shieldburst Bracers, Supreme",
@@ -174,7 +174,7 @@ def generate_apparel():
             description="""
                 These bracers function like \\textit<shieldburst bracers>, except that the defense bonus increases to +4.
             """,
-            short_description="Can grant brief +4 Armor defense",
+            short_description="Can exert to gain instant +4 Armor defense",
         ),
     ]
 
@@ -479,7 +479,7 @@ def generate_apparel():
             When you do, you increase your \\glossterm<fatigue level> by one, and you can \\glossterm<briefly> breathe in clean, fresh air regardless of your environment.
             This can be used in emergencies to save yourself from drowning or other perils.
         """,
-            short_description="Allows limited breathing",
+            short_description="Can exert to breathe briefly",
         )
     )
 
@@ -594,7 +594,7 @@ def generate_apparel():
                 If you end your movement in spaces occupied by other creatures, both of you are still \\squeezing.
                 If you are not able to move normally, such as if you are \\grappled, these boots do not help you.
             """,
-            short_description="Can briefly move through creatures",
+            short_description="Can exert to briefly move through creatures",
         ),
         MagicItem(
             name="Phasestep Boots, Greater",
@@ -919,7 +919,7 @@ def generate_apparel():
                 When you do, the mount does not gain a vital wound.
                 However, it immediately falls unconscious until it finishes a \\glossterm<short rest>, and you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Can save your mount from a vital wound",
+            short_description="Can exert to save your mount from a vital wound",
         ),
         MagicItem(
             name="Cloak of the Noble Rider, Greater",
@@ -930,7 +930,7 @@ def generate_apparel():
                 When you do, the mount does not gain a vital wound.
                 However, it immediately falls unconscious until it finishes a \\glossterm<short rest>.
             """,
-            short_description="Can freely save your mount from a vital wound",
+            short_description="Can save your mount from vital wounds",
         ),
     ]
 
@@ -972,7 +972,7 @@ def generate_apparel():
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 energy damage.
         """,
-            short_description="Teleport seven leagues with a step",
+            short_description="Can exert to teleport seven leagues",
         )
     )
 
@@ -1158,7 +1158,7 @@ def generate_apparel():
                 This does not protect any other targets of the attack.
                 You can choose to use this item after you learn the effects that the critical hit would have, but you must do so during the phase that the attack was made.
             """,
-            short_description="Can protect against critical strikes",
+            short_description="Can exert to protect against critical strikes",
         ),
         MagicItem(
             name="Ring of Blessed Protection, Greater",
@@ -1168,7 +1168,7 @@ def generate_apparel():
             description="""
                 This item functions like a \\textit<ring of blessed protection>, except that it also protects against any \\glossterm<mundane> attack, not just strikes.
             """,
-            short_description="Can protect against critical mundane attacks",
+            short_description="Can exert to protect against critical mundane attacks",
         ),
         MagicItem(
             name="Ring of Blessed Protection, Supreme",
@@ -1178,7 +1178,7 @@ def generate_apparel():
             description="""
                 This item functions like a \\textit<ring of blessed protection>, except that it protects against any attack, not just strikes.
             """,
-            short_description="Can protect against critical attacks",
+            short_description="Can exert to protect against critical attacks",
         ),
     ]
 
@@ -1220,7 +1220,7 @@ def generate_apparel():
                 This cannot remove a vital wound you gained during the current round.
                 When you do, you increase your \\glossterm<fatigue level> by two.
             """,
-            short_description="Automatically removes vital wounds",
+            short_description="Automatically exert to remove vital wounds",
         )
     )
 
@@ -1291,9 +1291,9 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-            When you perform the \\ritual<plane shift> ritual, this ring provides all \\glossterm<fatigue levels> required.
-            This does not grant you the ability to perform the \\ritual<plane shift> ritual if you could not already.
-        """,
+                When you perform the \\ritual<plane shift> ritual, this ring provides all \\glossterm<fatigue levels> required.
+                This does not grant you the ability to perform the \\ritual<plane shift> ritual if you could not already.
+            """,
             short_description="Aids travel with \\ritual<plane shift>",
         )
     )
@@ -1709,7 +1709,7 @@ def generate_apparel():
                 When you do, you increase your \\glossterm<fatigue level> by one, and you gain a +1 bonus to the vital roll.
                 You can use this ability after you see the result of the vital roll.
             """,
-            short_description="Can grant +1 to a vital roll",
+            short_description="Can exert for +1 to a vital roll",
         ),
         MagicItem(
             name="Belt of Vital Persistence, Greater",
@@ -1719,7 +1719,7 @@ def generate_apparel():
             description="""
                 This item functions like a \\textit<belt of vital persistence>, except that the bonus it grants increases to +2.
             """,
-            short_description="Can grant +2 to a vital roll",
+            short_description="Can exert for +2 to a vital roll",
         ),
         MagicItem(
             name="Belt of Vital Persistence, Supreme",
@@ -1729,7 +1729,7 @@ def generate_apparel():
             description="""
                 This item functions like a \\textit<belt of vital persistence>, except that the bonus it grants increases to +3.
             """,
-            short_description="Can grant +3 to a vital roll",
+            short_description="Can exert for +3 to a vital roll",
         ),
     ]
 
@@ -2012,6 +2012,44 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
+            name="Boots of Levitation",
+            level=5,
+            material_type="Boots",
+            tags=[],
+            description="""
+                Whenever you make a Jump check, you can activate these boots.
+                When you do, you increase your \\glossterm<fatigue level> by one.
+                In addition, you double your maximum vertical height from the jump, and you can land in midair at any point during your jump.
+                You can \\glossterm<briefly> levitate in that location as if you were standing on solid ground.
+                These boots cannot be activated again until you land on a solid surface capable of supporting your weight.
+            """,
+            short_description="Can exert to briefly levitate in midair",
+        ),
+        MagicItem(
+            name="Boots of Levitation, Greater",
+            level=11,
+            material_type="Boots",
+            tags=[],
+            description="""
+                These boots function like \\mitem<boots of levitation>, except that you do not increase your fatigue level when you activate them.
+            """,
+            short_description="Can briefly levitate in midair",
+        ),
+        MagicItem(
+            name="Boots of Levitation, Supreme",
+            level=17,
+            material_type="Boots",
+            tags=[],
+            description="""
+                These boots function like \\mitem<boots of levitation>, except that you do not increase your fatigue level when you activate them.
+                In addition, you can activate them twice before you land on a solid surface capable of supporting your weight.
+            """,
+            short_description="Can briefly levitate twice in midair",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
             name="Blindfold of the Third Eye",
             # Blindsight is a rank 3 self-only spell, so this would be level 10
             # if it followed that model normally. It gets +3 levels for also
@@ -2084,7 +2122,7 @@ def generate_apparel():
 
                 After you use this ability, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Fatigue to remove a debuff",
+            short_description="Can exert to remove a debuff",
         ),
         MagicItem(
             name="Greater Cleansing Belt",
@@ -2096,7 +2134,7 @@ def generate_apparel():
                 When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
                 This cannot remove an effect applied during the current round.
             """,
-            short_description="Remove a debuff",
+            short_description="Can remove a debuff",
         ),
         MagicItem(
             name="Supreme Cleansing Belt",
@@ -2108,7 +2146,7 @@ def generate_apparel():
                 When you do, you remove up to two \\glossterm<brief> effects or \\glossterm<conditions> affecting you.
                 This cannot remove an effects applied during the current round.
             """,
-            short_description="Freely remove two debuffs",
+            short_description="Can remove two debuffs",
         ),
     ]
 
@@ -2125,7 +2163,7 @@ def generate_apparel():
 
                 After you use this belt, you increase your \\glossterm<fatigue level> by two.
             """,
-            short_description="Quickly remove a debuff",
+            short_description="Can exert to quickly remove a debuff",
         ),
 
         MagicItem(
@@ -2134,9 +2172,9 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                This item functions like a \\mitem<quickcleanse belt>, except that you only increase your \\glossterm<fatigue level> by one instead of two.
+                This belt functions like a \\mitem<quickcleanse belt>, except that you only increase your \\glossterm<fatigue level> by one instead of two.
             """,
-            short_description="Quickly remove a debuff more easily",
+            short_description="Can exert more easily to remove a debuff",
         ),
     ]
 
@@ -2150,7 +2188,7 @@ def generate_apparel():
                 You can use these boots when you take the \\textit<sprint> action to avoid increasing your\\glossterm<fatigue level> (see \\pcref<Sprint>).
                 After you use this boots in this way, you \\glossterm{briefly} cannot use them again.
             """,
-            short_description="Can sprint more easily",
+            short_description="Can sprint without exertion",
         ),
     ]
 
