@@ -263,8 +263,8 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: `Moving during the \\glossterm{movement phase} does not prevent you from becoming invisible at the end of the round.`,
-        6: `Taking \\glossterm{minor actions} does not prevent you from becoming invisible at the end of the round.`,
+        4: `Moving during the \\glossterm{movement phase} does not end your invisibility or prevent you from becoming invisible.`,
+        6: `Taking a \\glossterm{minor action} does not end your invisibility or prevent you from becoming invisible.`,
       },
       type: "Attune (self)",
     },
