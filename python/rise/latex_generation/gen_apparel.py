@@ -629,7 +629,7 @@ def generate_apparel():
                 As a \\glossterm<free action>, you can activate these boots.
                 When you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
                 You may selectively choose when to treat the air as solid ground, allowing you to walk or jump on air freely.
-                After using this ability, you cannot use it again until these boots touch the ground.
+                These boots cannot be activated again until you land on a solid surface capable of supporting your weight.
             """,
             short_description="Can very briefly walk on air",
         ),
@@ -639,8 +639,7 @@ def generate_apparel():
             material_type="Boots",
             tags=["Swift"],
             description="""
-                These boots function like \\magicitem<boots of the skydancer>, except that the ability lasts until the end of the round.
-                In addition, you can use this item twice before the boots touch the ground.
+                These boots function like \\magicitem<boots of the skydancer>, except that the ability lasts \\glossterm<briefly>.
             """,
             short_description="Can briefly walk on air",
         ),
@@ -1467,12 +1466,13 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-            As a standard action, you can activate this cloak.
-            When you do, you teleport to an unoccupied location within \\rngmed range of your original location.
-            In addition, you become \\glossterm{briefly} \\glossterm<invisible>.
+                As a standard action, you can activate this cloak.
+                When you do, you teleport to an unoccupied location within \\rngmed range of your original location.
+                In addition, you become \\glossterm{briefly} \\glossterm<invisible>.
+                This invisibility ends after you take any action.
 
-            If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
-        """,
+                If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
+            """,
             short_description="Can teleport a short distance and grant invisibility",
         )
     )
