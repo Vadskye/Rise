@@ -282,8 +282,20 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                 \rankline
                 \rank{3} You can also ignore \glossterm{difficult terrain} this phase.
-                \rank{5} The speed bonus increases to \plus20 feet.
+                \rank{5} The speed bonus increases to \plus15 feet.
                 \rank{7} You can also move or stand on liquids as if they were solid this phase.
+            \end{durationability}
+
+            \begin{durationability}{Calm the Inner Tempest}[Duration]
+                \abilitytag{Swift}
+                \rankline
+                You can use this ability as a \glossterm{free action}.
+                You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
+
+                \rankline
+                \rank{3} The bonus increases to \plus8.
+                \rank{5} This becomes a \glossterm{brief} effect.
+                \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
             \begin{durationability}{Elegant Whirl of Fluid Motion}[Duration]
@@ -302,12 +314,12 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
-                You gain a \plus5 foot \glossterm{magic bonus} to \glossterm{reach} this phase.
+                You gain a \plus5 foot bonus to your \glossterm{reach} this round.
 
                 \rankline
-                \rank{3} 
-                \rank{5} The bonus to \glossterm{reach} increases to 10 feet.
-                \rank{7} 
+                \rank{3} The bonus increases to \plus10 feet.
+                \rank{5} This becomes a \glossterm{brief} effect.
+                \rank{7} The bonus increases to \plus15 feet.
             \end{durationability}
 
             \begin{instantability}{Flash Step}[Instant]
@@ -327,6 +339,18 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
             \end{instantability}
 
+            \begin{durationability}{Flurry of a Thousand Cuts}[Duration]
+                \abilitytag{Swift}
+                \rankline
+                You can use this ability as a \glossterm{free action}.
+                When you use the \ability{offhand strike} ability this round, you roll the attack roll twice and take the higher result.
+
+                \rankline
+                \rank{3} You also gain a +1 \glossterm{accuracy} bonus with the \ability{offhand strike} ability.
+                \rank{5} This becomes a \glossterm{brief} effect.
+                \rank{7} The accuracy bonus increases to +2.
+            \end{durationability}
+
             \begin{durationability}{Hear the Rustling Wings}[Duration]
                 \abilitytag{Swift}
                 \rankline
@@ -337,6 +361,18 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{3} The bonus increases to \plus8.
                 \rank{5} This becomes a \glossterm{brief} effect.
                 \rank{7} The bonus increases to \plus12.
+            \end{durationability}
+
+            \begin{durationability}{Kindle the Living Flame}[Duration]
+                \abilitytag{Swift}
+                \rankline
+                You can use this ability as a \glossterm{free action}.
+                Your \glossterm{strikes} deal fire damage in addition to their other damage types this round.
+
+                \rankline
+                \rank{3} You also gain a +2 \glossterm{power} bonus with strikes.
+                \rank{5} This becomes a \glossterm{brief} effect.
+                \rank{7} The power bonus increases to +4.
             \end{durationability}
 
             \begin{durationability}{Leap of the Heavens}[Duration]
@@ -376,17 +412,29 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \rank{7} The bonus increases to \plus12.
             \end{durationability}
 
+            \begin{durationability}{Shelter from Falling Rain}[Duration]
+                \abilitytag{Swift}
+                \rankline
+                You can use this ability as a \glossterm{free action}.
+                You gain a +2 bonus to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller this round.
+
+                \rankline
+                \rank{3} The bonus increases to +3.
+                \rank{5} This becomes a \glossterm{brief} effect.
+                \rank{7} The bonus increases to +4.
+            \end{durationability}
+
             \begin{durationability}{Step Between the Mystic Worlds}[Duration]
                 \abilitytag{Swift}
                 \rankline
                 You can use this ability as a \glossterm{free action}.
-                You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities this phase.
-                However, after the current phase ends, you \glossterm{briefly} take a \minus2 penalty to \glossterm{defenses} against \glossterm{magical} attacks.
+                All attacks against you have a 20\\% \glossterm{failure chance} this round.
+                However, your attacks also have a 20\\% failure chance this round.
 
                 \rankline
-                \rank{3} The defense bonus is increased to \plus3.
-                \rank{5} The effect lasts until the end of the current round.
-                \rank{7} The defense bonus is increased to \plus5.
+                \rank{3} The failure chance for attacks against you increases to 25\\%.
+                \rank{5} When you use this ability, you can choose whether it becomes a \glossterm{brief} effect.
+                \rank{7} The failure chance for attacks against you increases to 30\\%.
             \end{durationability}
 
             % TODO: this is confusing since skills no longer directly reference attributes
