@@ -1413,7 +1413,7 @@ def generate_apparel():
             tags=["Sensation"],
             description="""
                 At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase>, you become \\glossterm<invisible>.
-                This invisibility ends after you take any action.
+                This invisibility ends after you take any action other than moving during the \\glossterm<movement phase>.
             """,
             short_description="Grants invisibility while mostly inactive",
         ),
@@ -1424,7 +1424,7 @@ def generate_apparel():
             tags=["Sensation"],
             description="""
                 At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase> and taking \\glossterm<minor actions>, you become \\glossterm<invisible>.
-                This invisibility ends after you take any action.
+                This invisibility ends after you take any action other than moving during the movement phase and taking \\glossterm<minor actions>.
             """,
             short_description="Grants invisibility while slightly active",
         ),
@@ -1462,20 +1462,30 @@ def generate_apparel():
     apparel.append(
         MagicItem(
             name="Vanishing Cloak",
-            level=14,
+            level=13,
             material_type="Cloak",
             tags=["Sensation"],
             description="""
                 As a standard action, you can activate this cloak.
                 When you do, you \\glossterm<teleport> to an unoccupied location within \\rngmed range of your original location.
+                As normal for teleportation, you can immediately hide when you reach your destination (see \\pcref<Hide>).
                 Unlike most teleportation, this teleportation does not make any noise.
-                In addition, you \\glossterm{briefly} become \\glossterm<invisible>.
+            """,
+            short_description="Can teleport silently",
+        ),
+        MagicItem(
+            name="Vanishing Cloak, Greater",
+            level=19,
+            material_type="Cloak",
+            tags=["Sensation"],
+            description="""
+                This cloak functions like a \\mitem<vanishing cloak>, except that you also \\glossterm{briefly} become \\glossterm<invisible>.
                 This invisibility ends after you take any action.
 
                 If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
             """,
-            short_description="Can teleport a short distance and grant brief invisibility",
-        )
+            short_description="Can teleport silently and grant brief invisibility",
+        ),
     )
 
     apparel += [
@@ -1872,7 +1882,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Cloak of Translocation",
-            level=5,
+            level=4,
             material_type="Cloak",
             tags=[],
             description="""
@@ -1883,7 +1893,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Cloak of Translocation, Greater",
-            level=11,
+            level=10,
             material_type="Cloak",
             tags=[],
             description="""
@@ -1893,7 +1903,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Cloak of Translocation, Supreme",
-            level=17,
+            level=16,
             material_type="Cloak",
             tags=[],
             description="""
@@ -2195,7 +2205,7 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Cloak of Transportation",
+            name="Cloak of Astral Ease",
             level=11,
             material_type="Cloak",
             tags=[],
@@ -2205,7 +2215,7 @@ def generate_apparel():
             short_description="Doubles distance you can teleport",
         ),
         MagicItem(
-            name="Cloak of Transportation, Greater",
+            name="Cloak of Astral Ease, Greater",
             level=17,
             material_type="Cloak",
             tags=[],
