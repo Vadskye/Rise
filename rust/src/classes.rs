@@ -415,7 +415,7 @@ impl Class {
 
     pub fn trained_skills(&self) -> i32 {
         match self {
-            Self::Barbarian => 6,
+            Self::Barbarian => 5,
             Self::Cleric => 4,
             Self::Druid => 5,
             Self::Fighter => 4,
@@ -481,7 +481,7 @@ impl Class {
     pub fn weapon_proficiencies(&self) -> WeaponProficiencies {
         match self {
             Self::Barbarian => WeaponProficiencies {
-                custom_weapon_groups: 2,
+                custom_weapon_groups: 3,
                 specific_weapon_groups: None,
                 specific_weapons: None,
                 simple_weapons: true,
