@@ -68,6 +68,24 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
+      name: "Muzzling Grapple",
+
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: `
+          the subject also takes a 25\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components}, or a 50\\% \\glossterm{failure chance} with abilities that have both verbal components and \\glossterm{somatic components}.
+          Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
+        `,
+        name: "grapple",
+      },
+      rank: 4,
+      scaling: {
+        6: "You gain a +1 \\glossterm{accuracy} bonus with the attack.",
+      },
+      type: "Instant",
+    },
+
+    {
       name: "Pin",
 
       functionsLike: {
