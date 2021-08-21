@@ -230,6 +230,27 @@ export const astromancy: MysticSphere = {
       type: "Instant",
     },
     {
+      name: "Mass Translocation",
+
+      effect: `
+        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\shortrange.
+        Each target other than yourself must be Medium size or smaller.
+        Each subject \\glossterm{teleports} into an unoccupied location within range on a stable surface that can support its weight.
+        You choose each subject's destination independently.
+        If a subject's destination is invalid, this spell has no effect on it, but any other subjects still teleport normally.
+      `,
+      rank: 3,
+      narrative: `
+        You teleport your allies across the chasm all at once.
+        The orcs chasing you can only stand on the other side and shout angrily.
+      `,
+      scaling: {
+        5: "The range increases to \\rngmed.",
+        7: "The range increases to \\rnglong.",
+      },
+      type: "Instant",
+    },
+    {
       name: "Silent Translocation",
 
       functionsLike: {

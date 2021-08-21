@@ -240,7 +240,7 @@ def accuracy():
             *misc,
         ],
         f"""
-            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
+            var cr_mod = challenge_rating === 0 ? 0 : Math.max(-1, challenge_rating - 2);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor(level / 9)) : 0;
             setAttrs({{
                 accuracy: (
