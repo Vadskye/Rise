@@ -1459,7 +1459,7 @@ def generate_apparel():
         ),
     ]
 
-    apparel.append(
+    apparel += [
         MagicItem(
             name="Vanishing Cloak",
             level=13,
@@ -1486,7 +1486,7 @@ def generate_apparel():
             """,
             short_description="Can teleport silently and grant brief invisibility",
         ),
-    )
+    ]
 
     apparel += [
         MagicItem(
