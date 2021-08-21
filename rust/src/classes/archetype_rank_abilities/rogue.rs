@@ -82,18 +82,9 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 ",
         },
         RankAbility {
-            name: "Greater Evasion",
-            is_magical: false,
-            rank: 5,
-            description: r"
-         Your \textit{evasion} ability also protects you from area attacks against your Fortitude and Mental defenses.
-
-                ",
-        },
-        RankAbility {
             name: "Assassination",
             is_magical: false,
-            rank: 6,
+            rank: 5,
             description: r"
                 You can use the \textit{assassination} ability as a \glossterm{minor action}.
                 \begin{durationability}{Assassination}[Duration]
@@ -103,6 +94,15 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     As a \glossterm{brief} effect, whenever you make a melee \glossterm{strikes} against the subject that it is \\unaware, the strike deals maximum damage and automatically \glossterm{explodes} regardless of what you roll.
                 \end{durationability}
             ",
+        },
+        RankAbility {
+            name: "Greater Evasion",
+            is_magical: false,
+            rank: 6,
+            description: r"
+         Your \textit{evasion} ability also protects you from area attacks against your Fortitude and Mental defenses.
+
+                ",
         },
         RankAbility {
             name: "Greater Darkstalker",
