@@ -1446,12 +1446,12 @@ def generate_apparel():
         ),
         MagicItem(
             name="Cloak of Mist, Greater",
-            level=16,
+            level=17,
             material_type="Cloak",
             tags=["Manifestation"],
             description="""
                 A thick fog constantly fills a \\areamed radius emanation from you.
-                This fog completely blocks sight beyond 10 feet.
+                This fog completely blocks sight beyond 15 feet.
 
                 If a 5-foot square of fog takes at least 16 fire damage from a single attack, the fog \\glossterm{briefly} disappears from that area.
             """,
