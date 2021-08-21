@@ -185,8 +185,7 @@ export const unbreakableDefense: CombatStyle = {
       name: "Defensive Strike",
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        You take a -1d damage penalty with the strike.
+        Make a melee \\glossterm{strike} with a -2d damage penalty.
         In exchange, you gain a +2 bonus to Armor and Reflex defenses until the end of the round.
         The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
       `,
