@@ -9,11 +9,11 @@ pub enum ChallengeRating {
 impl ChallengeRating {
     pub fn accuracy_bonus(&self) -> i32 {
         match self {
-            Self::Half => 0,
-            Self::One => 0,
-            Self::Two => 1,
-            Self::Three => 2,
-            Self::Four => 3,
+            Self::Half => -2,
+            Self::One => -1,
+            Self::Two => 0,
+            Self::Three => 1,
+            Self::Four => 2,
         }
     }
 
@@ -41,11 +41,11 @@ impl ChallengeRating {
 
     pub fn defense_bonus(&self) -> i32 {
         match self {
-            Self::Half => 0,
-            Self::One => 0,
-            Self::Two => 1,
-            Self::Three => 2,
-            Self::Four => 3,
+            Self::Half => -2,
+            Self::One => -1,
+            Self::Two => 0,
+            Self::Three => 1,
+            Self::Four => 2,
         }
     }
 
