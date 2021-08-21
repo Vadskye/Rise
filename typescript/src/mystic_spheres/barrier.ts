@@ -400,7 +400,7 @@ export const barrier: MysticSphere = {
 
       effect: `
         You surround yourself with a layer of shielding that reduces the power of energy attacks against you.
-        Whenever you would take energy damage, you take only half of that damage, and one layer of ice is destroyed.
+        Whenever you would take energy damage, you take only half of that damage, and one layer of shielding is destroyed.
         When the last layer is destroyed, this ability provides no further benefit.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
