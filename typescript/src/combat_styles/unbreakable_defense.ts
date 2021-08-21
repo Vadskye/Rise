@@ -199,6 +199,17 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
+      name: "Greater Defensive Strike",
+
+      effect: `
+        Make a strike with a -1d damage penalty.
+        After you make the strike, you \\glossterm{briefly} gain a +2 bonus to all defenses.
+      `,
+      rank: 6,
+      type: "Duration",
+    },
+
+    {
       name: "Cleanse",
 
       effect: `
@@ -309,17 +320,6 @@ export const unbreakableDefense: CombatStyle = {
         5: "The bonus increases to +4.",
         7: "The bonus increases to +5.",
       },
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Prepared Defense",
-
-      effect: `
-        Make a strike with a -1d damage penalty.
-        After you make the strike, you \\glossterm{briefly} gain a +2 bonus to all defenses.
-      `,
-      rank: 6,
       type: "Duration",
     },
   ],
