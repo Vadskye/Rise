@@ -73,7 +73,8 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          the subject also takes a 25\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components}, or a 50\\% \\glossterm{failure chance} with abilities that have both verbal components and \\glossterm{somatic components}.
+          the subject also takes a 25\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components} as long as it is \\grappled by you.
+          This failure chance increases to 50\\% with abilities that have both verbal components and \\glossterm{somatic components}.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: "grapple",
