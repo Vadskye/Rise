@@ -48,7 +48,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Darkstalker",
-            is_magical: true,
+            is_magical: false,
             rank: 3,
             description: r"
         You can use the \textit{darkstalker} ability as a standard action.
@@ -106,7 +106,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Greater Darkstalker",
-            is_magical: true,
+            is_magical: false,
             rank: 7,
             description: r"
                 When you use your \textit{darkstalker} ability, you become undetectable by any number of the possible sense groups, not just one.
