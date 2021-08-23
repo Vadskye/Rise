@@ -91,7 +91,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytag{Swift}
                     \rankline
                     You study a creature within \rngmed range, finding weak points you can take advantage of.
-                    As a \glossterm{brief} effect, whenever you make a melee \glossterm{strikes} against the subject that it is \\unaware, the strike deals maximum damage and automatically \glossterm{explodes} regardless of what you roll.
+                    As a \glossterm{brief} effect, whenever you make a melee \glossterm{strikes} against the subject that it is \unaware, the strike deals maximum damage and automatically \glossterm{explodes} regardless of what you roll.
                 \end{durationability}
             ",
         },
