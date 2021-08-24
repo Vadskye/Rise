@@ -3,6 +3,7 @@ mod the_house_of_liberation;
 use crate::latex_formatting::latexify;
 
 pub struct Module {
+    pub description: String,
     pub introduction: String,
     pub name: String,
 }
