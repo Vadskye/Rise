@@ -112,8 +112,9 @@
 }
 
 %Control chapter headers
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername \: \thechapter \: - \: #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{#1}}
+\setcounter{secnumdepth}{0}
+% \renewcommand{\chaptermark}[1]{\markboth{\chaptername \: \thechapter \: - \: #1}{}}
+% \renewcommand{\sectionmark}[1]{\markright{#1}}
 
 \makeatletter
  \newcommand{\hypertargetraised}[1]{\Hy@raisedlink{\hypertarget{#1}{}}}
