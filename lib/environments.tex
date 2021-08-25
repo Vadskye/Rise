@@ -354,4 +354,27 @@
 {\begin{itemize}\RaggedRight}
 {\end{itemize}}
 
+\definecolor{floralwhite}{rgb}{1.0, 0.98, 0.94}
+\newmdenv[
+    backgroundcolor=floralwhite,
+    leftline=false,
+    topline=true,
+    rightline=false,
+    bottomline=true,
+    roundcorner=4pt,
+    skipabove=0.5em,
+    skipbelow=0.5em,
+    innerleftmargin=0.25em,
+    innerrightmargin=0.5em,
+    innertopmargin=0.5em,
+    innerbottommargin=0.25em,
+]{descriptionmdframed}
+\DeclareDocumentEnvironment{description}{}
+{
+    \begin{descriptionmdframed}
+}
+{
+    \end{descriptionmdframed}
+}
+
 \ExplSyntaxOff
