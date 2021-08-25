@@ -18,10 +18,13 @@ impl Module {
     pub fn to_latex(&self) -> String {
         return latexify(format!(
             "
-                \\section<{name}>
+                \\chapter<{name}>
 
                 {introduction}
+
+                {description}
             ",
+            description = self.description,
             introduction=self.introduction,
             name=self.name,
         ));

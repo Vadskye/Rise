@@ -22,6 +22,7 @@ use crate::skills::Skill;
 use crate::monsters::knowledge::Knowledge;
 
 struct FullHumanoidDefinition {
+    alignment: String,
     attributes: Vec<i32>,
     challenge_rating: ChallengeRating,
     description: Option<&'static str>,
@@ -40,6 +41,7 @@ struct FullHumanoidDefinition {
 fn humanoid(def: FullHumanoidDefinition) -> Monster {
     return Monster::fully_defined(FullMonsterDefinition {
         // From def
+        alignment: def.alignment,
         attributes: def.attributes,
         challenge_rating: def.challenge_rating,
         description: def.description,
@@ -54,8 +56,6 @@ fn humanoid(def: FullHumanoidDefinition) -> Monster {
         trained_skills: def.trained_skills,
         weapons: def.weapons,
 
-        // Default values
-        alignment: "Always true neutral".to_string(),
         creature_type: Humanoid,
         special_defense_modifiers: None,
     });
@@ -70,6 +70,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             knowledge: None,
             monsters: vec![
                 humanoid(FullHumanoidDefinition {
+                    alignment: "Usually chaotic evil".to_string(),
                     attributes: vec![0, 3, -1, -2, 1, -2],
                     challenge_rating: ChallengeRating::Half,
                     description: None,
@@ -85,6 +86,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     weapons: vec![Weapon::Spear],
                 }),
                 humanoid(FullHumanoidDefinition {
+                    alignment: "Usually chaotic evil".to_string(),
                     attributes: vec![1, 3, 0, -2, 1, -2],
                     challenge_rating: ChallengeRating::One,
                     description: None,
@@ -100,6 +102,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     weapons: vec![Weapon::Spear],
                 }),
                 humanoid(FullHumanoidDefinition {
+                    alignment: "Usually chaotic evil".to_string(),
                     attributes: vec![1, 3, 1, -2, 1, -2],
                     challenge_rating: ChallengeRating::Two,
                     description: None,
@@ -115,6 +118,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     weapons: vec![Weapon::Spear],
                 }),
                 humanoid(FullHumanoidDefinition {
+                    alignment: "Usually chaotic evil".to_string(),
                     attributes: vec![0, 2, 1, -2, 2, 3],
                     challenge_rating: ChallengeRating::Three,
                     description: None,
@@ -153,6 +157,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     weapons: vec![Weapon::Spear],
                 }),
                 humanoid(FullHumanoidDefinition {
+                    alignment: "Usually chaotic evil".to_string(),
                     attributes: vec![0, 2, 1, -2, 2, 3],
                     challenge_rating: ChallengeRating::Three,
                     description: None,

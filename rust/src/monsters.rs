@@ -6,6 +6,7 @@ pub mod creature_type;
 mod dragons;
 mod humanoids;
 mod knowledge;
+mod undead;
 pub mod monster_entry;
 pub mod monster_group;
 pub mod generate_stock_monsters;
