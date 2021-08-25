@@ -474,7 +474,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
     // TODO: add cooldown
     return Attack {
         accuracy: 0,
-        cooldown: Some(AttackCooldown::Round(None)),
+        cooldown: Some(AttackCooldown::Brief(None)),
         crit: None,
         defense: Defense::Reflex,
         glance: if age_category.glancing_blow() {
