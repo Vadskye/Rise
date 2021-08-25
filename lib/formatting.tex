@@ -8,19 +8,19 @@
 % \titleformat*{\section}{\hspace*{-0.5em}\LARGE\bfseries}
 \titleformat{\section}
     {\LARGE\bfseries}   % The style of the section title
-    {}                             % a label prefix
-    {0pt}                          % How much space exists between the prefix and the title
+    {Part \arabic{section}:}                             % a label prefix
+    {0.75em}                          % How much space exists between the prefix and the title
     {\hspace{-0.5em}}    % A code representing the section
 \titleformat{\subsection}
     {\large\bfseries}   % The style of the section title
-    {}                             % a label prefix
-    {0pt}                          % How much space exists between the prefix and the title
+    {\arabic{subsection}.}                             % a label prefix
+    {0.75em}                          % How much space exists between the prefix and the title
     {\hspace{-0.5em}\vspace{-0.75em}}    % A code representing the section
     [\hspace{-0.5em}\titlerule]
 \titleformat{\subsubsection}
     {\bfseries}
     {}
-    {0pt}
+    {1em}
     {\hspace{-0.5em}}
 
 % Standard spacing definitions
