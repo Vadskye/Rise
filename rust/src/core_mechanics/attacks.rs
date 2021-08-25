@@ -439,7 +439,7 @@ impl UsageTime {
 
 #[derive(Clone)]
 pub enum AttackCooldown {
-    Round(Option<String>),
+    Brief(Option<String>),
     ShortRest(Option<String>),
     LongRest(Option<String>),
 }
@@ -447,37 +447,35 @@ pub enum AttackCooldown {
 impl AttackCooldown {
     pub fn description(&self, use_you: bool) -> String {
         let tag = match self {
-            Self::Round(tag) => tag,
+            Self::Brief(tag) => tag,
             Self::ShortRest(tag) => tag,
             Self::LongRest(tag) => tag,
         };
-        let tag = if let Some(t) = tag {
-            format!("or any other \\abilitytag<{}> ability", t)
+        let it = if let Some(t) = tag {
+            format!("it or any other \\abilitytag<{}> ability", t)
         } else {
-            "".to_string()
+            "it".to_string()
         };
         if use_you {
             let until = match self {
-                Self::Round(_) => "after the end of the next round.",
-                Self::ShortRest(_) => r"you take a \glossterm{short rest}.",
-                Self::LongRest(_) => r"you take a \glossterm{long rest}.",
+                Self::Brief(_) => format!("\\glossterm<briefly> cannot use it {} again", it),
+                Self::ShortRest(_) => format!("cannot use it {} again until you take a \\glossterm<short rest>", it),
+                Self::LongRest(_) => format!("cannot use it {} again until you take a \\glossterm<long rest>", it),
             };
-            return format!(
-                "After you use this ability, you cannot use it {tag} again until {until}",
-                tag = tag,
+            return latex_formatting::latexify(format!(
+                "After you use this ability, you {until}.",
                 until = until,
-            );
+            ));
         } else {
             let until = match self {
-                Self::Round(_) => "after the end of the next round.",
-                Self::ShortRest(_) => r"the creature takes a \glossterm{short rest}.",
-                Self::LongRest(_) => r"the creature takes a \glossterm{long rest}.",
+                Self::Brief(_) => format!("\\glossterm<briefly> cannot use it {} again", it),
+                Self::ShortRest(_) => format!("cannot use it {} again until it takes a \\glossterm<short rest>", it),
+                Self::LongRest(_) => format!("cannot use it {} again until it takes a \\glossterm<long rest>", it),
             };
-            return format!(
-                "After the creature uses this ability, it cannot use it {tag} again until {until}",
-                tag = tag,
+            return latex_formatting::latexify(format!(
+                "After the creature uses this ability, {until}.",
                 until = until,
-            );
+            ));
         }
     }
 }
