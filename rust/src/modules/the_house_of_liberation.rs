@@ -73,7 +73,7 @@ pub fn generate_module() -> Module {
             Success means that they hear something odd and will send two guards to investigate.
 
             Alternately, the door hinges can be disabled with a DV 13 Devices check.
-            If the party had their thieves' tools taken from them, they take a -5 penalty to this check, making it almost certainly impossible.
+            If the party doesn't have any thieves' tools since their gear was taken, they take a -5 penalty to this check, making it almost certainly impossible.
             A particularly well-prepared character may have a lockpick hidden in their boot or some other similar device, which would allow them to make the check without a penalty.
             However, they must make a DV 10 Sleight of Hand check to have successfully hid it from the people who searched the party.
 
