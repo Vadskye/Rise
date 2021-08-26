@@ -506,7 +506,7 @@ export const barrier: MysticSphere = {
         Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
         In addition, choose a Fine object within \\shortrange.
         The primary subject becomes magically locked.
-        It can be unlocked with a Devices check against a \\glossterm{difficulty value} equal to 20 \\add your \\glossterm{power}.
+        It can be unlocked with a Devices check with a \\glossterm{difficulty value} of 25.
         The \\glossterm{difficulty value} to break it open forcibly increases by 10.
 
         When the Fine object touches the sealed object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
@@ -521,7 +521,7 @@ export const barrier: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          the \\glossterm{difficulty value} to unlock the object with a Devices check is instead equal to 30 + your \\glossterm{power}.
+          the \\glossterm{difficulty value} to unlock the object with a Devices check is instead equal to 35.
             In addition, the \\glossterm{difficulty value} to break it open increases by 20 instead of by 10.
         `,
         name: "mystic lock",
