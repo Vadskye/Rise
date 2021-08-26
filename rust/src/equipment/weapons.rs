@@ -22,6 +22,7 @@ pub enum Weapon {
     Slam,
     Sledgehammer,
     Spear,
+    Warhammer,
 }
 
 impl Weapon {
@@ -45,6 +46,7 @@ impl Weapon {
             Self::Slam => 0,
             Self::Sledgehammer => 0,
             Self::Spear => 0,
+            Self::Warhammer => 0,
         }
     }
 
@@ -68,6 +70,7 @@ impl Weapon {
             Self::Slam => D10,
             Self::Sledgehammer => D10 + 1,
             Self::Spear => D8,
+            Self::Warhammer => D8,
         };
         return damage_dice::DamageDice::new(increments);
     }
@@ -92,6 +95,7 @@ impl Weapon {
             Self::Slam => vec![DamageType::Bludgeoning],
             Self::Sledgehammer => vec![DamageType::Bludgeoning],
             Self::Spear => vec![DamageType::Piercing],
+            Self::Warhammer => vec![DamageType::Bludgeoning],
         }
     }
 
@@ -115,6 +119,7 @@ impl Weapon {
             Self::Slam => "slam",
             Self::Sledgehammer => "sledgehammer",
             Self::Spear => "spear",
+            Self::Warhammer => "warhammer",
         }
     }
 

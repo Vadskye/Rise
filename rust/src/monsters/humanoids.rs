@@ -224,5 +224,69 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         }
     ));
 
+    monsters.push(MonsterEntry::MonsterGroup(
+        monster_group::MonsterGroup {
+            name: "Humans".to_string(),
+            knowledge: None,
+            monsters: vec![
+                humanoid(FullHumanoidDefinition {
+                    alignment: "Usually lawful neutral".to_string(),
+                    attributes: vec![2, 0, 2, 0, 0, 0],
+                    challenge_rating: ChallengeRating::One,
+                    description: None,
+                    knowledge: None,
+                    level: 1,
+                    passive_abilities: None,
+                    movement_modes: None,
+                    name: "Human Warrior".to_string(),
+                    senses: None,
+                    size: Size::Medium,
+                    special_attacks: None,
+                    trained_skills: None,
+                    weapons: vec![Weapon::Broadsword],
+                }),
+                humanoid(FullHumanoidDefinition {
+                    alignment: "Usually lawful neutral".to_string(),
+                    attributes: vec![1, 0, 0, 0, 0, 3],
+                    challenge_rating: ChallengeRating::Two,
+                    description: None,
+                    knowledge: None,
+                    level: 1,
+                    passive_abilities: None,
+                    movement_modes: None,
+                    name: "Human Cleric".to_string(),
+                    senses: None,
+                    size: Size::Medium,
+                    special_attacks: Some(vec![
+                        Attack {
+                            accuracy: 0,
+                            cooldown: None,
+                            crit: None,
+                            defense: Defense::Mental,
+                            glance: None,
+                            hit: AttackEffect::Damage(
+                                DamageEffect {
+                                    damage_dice: damage_dice::DamageDice::single_target_damage(1),
+                                    damage_modifier: 0,
+                                    damage_types: vec![DamageType::Energy],
+                                    lose_hp_effects: None,
+                                    power_multiplier: 1.0,
+                                    take_damage_effects: None,
+                                },
+                            ),
+                            is_magical: true,
+                            name: "Divine Judgment".to_string(),
+                            targeting: AttackTargeting::Creature(AttackRange::Medium),
+                            usage_time: UsageTime::Standard,
+                            weapon: None,
+                        },
+                    ]),
+                    trained_skills: None,
+                    weapons: vec![Weapon::Warhammer],
+                }),
+            ],
+        }
+    ));
+
     return monsters;
 }

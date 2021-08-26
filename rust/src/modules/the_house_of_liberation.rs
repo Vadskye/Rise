@@ -63,7 +63,33 @@ pub fn generate_module() -> Module {
                 \\parhead<Guard 3> Well, I wouldn't say \\textit<clean> exactly...
                 \\parhead<Guard 2> Ahaha!
             \\end<description>
+
             No other specific conversations would be interesting before the meal ends in half an hour.
+            At that point, the party could hear the following exchange.
+            \\begin<description>
+                \\parheadindent<Guard 1> Well, guess it's time to head up.
+                \\parhead<Guard 2> Yeah, I'll grab that weasel Melvin.
+                \\parhead<Guard 3> Pretty weird he stays down here, right?
+                \\parhead<Guard 2> What a creep. Don't trust anyone who likes a place like this too much, y'know?
+                \\parhead<Guard 3> Got that right.
+            \\end<description>
+            Afterwards, the meal breaks up, and a group of six guards from Room 4 walks past the party's cell, plus Melvin from Room 5.
+            Five of them are human warriors, and one is a human cleric.
+            Melvin climbs up the ladder and touches his necklace to the trapdoor, then opens it.
+            He climbs back down and four warriors climb upstairs before closing the trapdoor.
+            Once the trapdoor is closed again, the other two guards are ready to head back, but Melvin interrupts them.
+            The party may interrupt this conversation at any time if they think it is a good opportunity to try to take the key.
+            \\begin<description>
+                \\parheadindent<Melvin> Hey, you can't leave yet! We have to wait for the trapdoor to seal again!
+                \\parhead<Guard 2> Oh, Guftas, this again? Nobody cares. 
+                \\parhead<Melvin> We had one of them get all the way upstairs once! You weren't there when I tried to explain it to Libera, but I hope you can imagine how angry she was.
+                \\parhead<Guard 2> Uh-huh.
+                \\parhead<Melvin> Very angry! And she was asking me, why didn't you make sure it was sealed Melvin, you know how important that is.
+                \\parhead<Guard 2> Sure, sure, whatever.
+                \\parhead<Melvin> I'm just saying it's important.
+            \\end<description>
+            After that, they will stand in silence until one minute has passed since Melvin originally opened the trapdoor.
+            At that point, they will all leave Room 2.
 
             The door can be forced open with a DV 15 Strength check.
             If a character has at least 1 Strength, they can use one of the benches as an improvised battering ram to gain a +2 bonus to this check.
@@ -88,7 +114,7 @@ pub fn generate_module() -> Module {
             There is a secret door in the bottom left corner of the room that can be discovered with a DV 15 Awareness check.
             The party is likely to find it if they search the room carefully with the \\ability<search> ability.
             The passage leads to Room 7, which has a matching secret door.
-            Before opening the door into Room 7, the party will be able to hear a deep, gutteral snarling from a Large creature and occasional banging on walls, which may discourage them from venturing too far in that direction.
+            Before opening the door into Room 7, the party will be able to hear a deep, guttural snarling from a Large creature and occasional banging on walls, which may discourage them from venturing too far in that direction.
 
         \\subsection<The North Passage>
             \\begin<description>
@@ -149,12 +175,32 @@ pub fn generate_module() -> Module {
                 \\item One silver ring (worth 2 gp) with the Dwarven runes for ``Ironbeard'' engraved on the inside
             \\end<itemize>
 
-            There is a secret door hidden on the east wall tha leads to Room 5.
+            There is a secret door hidden on the east wall that leads to Room 5.
             The party can notice it with a DV 18 Awareness check.
+
+        \\subsection<The Mess Hall>
+            If the party reaches this room before the meal ends, use this description.
+            \\begin<description>
+                This large hall has four tables haphazardly placed around the room.
+                A total of eight humans are all in the room loudly sharing a meal together.
+                Most of them are armed with broadswords, but one has a warhammer and a holy symbol of Murdoc.
+            \\end<description>
+
+            If the party reaches this room after the meal ends, use this description.
+            \\begin<description>
+                This large hall has four tables haphazardly placed around the room.
+                A total of four humans are all in the room playing cards together.
+                Three of them are armed with broadswords, but one has a warhammer and a holy symbol of Murdoc.
+            \\end<description>
+
+            {human_cleric}
+            {human_warrior}
 
 ",
 skeleton_guard=latex_by_name("Skeleton Guard"),
 orc_chef=latex_by_name("Orc Chef"),
+human_cleric=latex_by_name("Human Cleric"),
+human_warrior=latex_by_name("Human Warrior"),
         ),
     }
 }
