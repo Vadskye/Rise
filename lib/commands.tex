@@ -125,7 +125,8 @@
 
 \DeclareDocumentCommand{\parheadindent}{s m o}
 {
-    \par
+    % Why are two indents required here? so dumb
+    \par\indent\indent
     \IfNoValueTF{#3}
     {\textbf{#2}:}
     {\textbf{#2}~[#3]:}\xspace
