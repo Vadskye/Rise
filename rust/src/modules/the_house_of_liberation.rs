@@ -32,6 +32,10 @@ pub fn generate_module() -> Module {
     They can make their way out of the cell, retrieve their belongings, and explore the strange dungeon they find themselves in.
     This section ends when the party finally escapes the dungeon.
 
+    In general, if the party is defeated in battle in this area, they will be returned to their cell by any surviving guards.
+    The guards have strict instructions to keep the prisoners alive, and will even attempt to save dying party members, though their +0 Medicine check may not let them save the party from especially dangerous vital wounds.
+    They will attempt to fix any obvious explanation for the party's escape, but won't care enough to do a detailed sweep to address the general issues that make their cell escapable.
+
     \\begin<figure*>[htb!]
     \\includegraphics[width=\\textwidth]<the_holding_cells>
     \\end<figure*>
@@ -107,8 +111,7 @@ pub fn generate_module() -> Module {
             If the party lures the skeletons into Room 1 for the fight, the DV for the guards to hear the combat increases to 10.
 
             In the unlikely event that the skeletons defeat the party, they leave their unconscious or dead bodies in the hall and return to patrolling.
-            Eventually, a guard from Room 4 will discover that the prisoners partially escaped and put them back in their cell.
-            The guard will attempt to fix any obvious explanation for their escape, but won't care enough to do a detailed sweep to address the general issues that make their cell escapable.
+            After the meal is over, a guard from Room 4 will discover that the prisoners partially escaped and put them back in their cell.
 
             There is a ladder in the northwest corner of the room.
             It leads to a closed trapdoor.
@@ -126,6 +129,28 @@ pub fn generate_module() -> Module {
             \\end<description>
 
             {orc_chef}
+
+            The orc chef has a -2 Awareness modifier because she is distracted by cooking, making her easy to sneak up on.
+            If she notices the party, she will immediately attack.
+            During battle, she taunts the party by telling them that escaped prisoners make good meat.
+            She prioritizes the weakest targets she can reach until they fall unconscious.
+            If she drops below half her maximum hit points, she seems happy to have died in battle, and makes no attempt to call for backup.
+            Instead, she asks the party to cook and eat her once she is dead.
+            If she defeats the party, she wrestles with her desire to kill and eat them, but eventually goes to find the guards, grumbling about how the guards would figure out what happened if she did what she wanted.
+
+            Most of the storage chests in this room contain food, pots, pans, and various other cooking implements.
+            One of the chests near the north of the room contains all of the party's equipment, as well as the following additional items:
+            \\begin<itemize>
+                \\item Three sets of body armor with signs of battle damage: breastplate, hide, and a chain shirt
+                \\item Five weapons: two smallswords, one longbow (with arrows), one warhammer, and a dagger
+                \\item One standard shield
+                \\item Three standard adventuring kits, with some of the rations eaten
+                \\item One sapphire necklace (worth 10 gp)
+                \\item One silver ring (worth 2 gp) with the Dwarven runes for ``Ironbeard'' engraved on the inside
+            \\end<itemize>
+
+            There is a secret door hidden on the east wall tha leads to Room 5.
+            The party can notice it with a DV 18 Awareness check.
 
 ",
 skeleton_guard=latex_by_name("Skeleton Guard"),
