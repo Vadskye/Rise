@@ -81,7 +81,7 @@ const baseTreant = {
     {
       description: `
         Treants can stand immobile, allowing them to impersonate trees.
-        Distinguishing an immobile treant from a tree requires an Awareness check with a \\glossterm{difficulty rating} of 20.
+        Distinguishing an immobile treant from a tree requires an Awareness check with a \\glossterm{difficulty value} of 20.
       `,
       name: "Tree Body",
     },

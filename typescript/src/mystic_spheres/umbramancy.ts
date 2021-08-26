@@ -587,7 +587,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         Choose up to five creatures within \\medrange from among you and your \\glossterm{allies}.
         At the end of each round, the footprints, scent, and other tracks left by each subject during that round are magically concealed.
-        This increases the \\glossterm{difficulty rating} to follow the trail by 10, but does not prevent creatures from seeing or smelling each subject normally in combat.
+        This increases the \\glossterm{difficulty value} to follow the trail by 10, but does not prevent creatures from seeing or smelling each subject normally in combat.
         At the end of each round, if any target is outside of \\longrange from you, the effect is broken for that target and its trail is revealed.
       `,
       rank: 2,
@@ -600,7 +600,7 @@ export const umbramancy: MysticSphere = {
       castingTime: "one minute",
       functionsLike: {
         exceptThat: `
-          the difficulty rating increase changes to 20.
+          the difficulty value increase changes to 20.
         `,
         name: "conceal trail",
       },
@@ -614,7 +614,7 @@ export const umbramancy: MysticSphere = {
       castingTime: "one minute",
       functionsLike: {
         exceptThat: `
-          the difficulty rating increase changes to 30.
+          the difficulty value increase changes to 30.
         `,
         name: "conceal trail",
       },

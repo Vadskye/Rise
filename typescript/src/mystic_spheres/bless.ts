@@ -436,7 +436,7 @@ export const bless: MysticSphere = {
         Choose one \\glossterm{unattended}, nonmagical object or part of an object of up to Large size.
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
-        % How should this affect Strength break difficulty ratings?
+        % How should this affect Strength break difficulty value?
         The subject gains a +5 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
         If the subject is moved, this effect ends.
         Otherwise, it lasts for one year.

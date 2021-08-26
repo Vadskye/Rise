@@ -31,7 +31,7 @@ export const electromancy: MysticSphere = {
         Choose one Small or smaller unattended metal object within \\medrange.
         It pulls itself toward metal objects within 1 foot of it.
         Smaller objects are typically pulled towards the subject, while it moves itself towards larger objects.
-        Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty rating} 10 Strength check to separate the two objects.
+        Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty value} 10 Strength check to separate the two objects.
       `,
       focus: false,
       scaling: {
