@@ -504,10 +504,12 @@ export const barrier: MysticSphere = {
       castingTime: "one minute",
       effect: `
         Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
-        The subject becomes magically locked.
+        In addition, choose a Fine object within \\shortrange.
+        The primary subject becomes magically locked.
         It can be unlocked with a Devices check against a \\glossterm{difficulty value} equal to 20 \\add your \\glossterm{power}.
         The \\glossterm{difficulty value} to break it open forcibly increases by 10.
-        You can freely open an object sealed by this effect as if it were not locked.
+
+        When the Fine object touches the sealed object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
       `,
       rank: 2,
       type: "Attune (ritual)",
