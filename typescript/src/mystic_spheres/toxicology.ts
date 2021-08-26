@@ -526,7 +526,7 @@ export const toxicology: MysticSphere = {
         hit: `The subject becomes drenched in acid as a \\glossterm{condition}.
         At the end of each round, it takes 1d6 acid damage.
 
-        The condition can be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
+        The condition can be removed if the subject makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
         targeting: `
           Make an attack vs. Reflex against one creature within \\medrange.

@@ -369,7 +369,7 @@ def generate_implements():
                 This affects inspection of the spell itself by any means, such as with the Spellsense skill (see \\pcref<Spellsense>).
                 However, it does not alter the mechanical effects of the spell in any way.
 
-                An observer can make a Spellsense check with a \\glossterm<difficulty rating> of 19 to identify the spell's true nature.
+                An observer can make a Spellsense check with a \\glossterm<difficulty value> of 19 to identify the spell's true nature.
                 If the spell's effects depend on visual components, the spell may fail to work if you alter the spell's visuals too much.
             """,
             short_description="Makes spells hard to identify",

@@ -549,7 +549,7 @@ def generate_tools():
                 When you do, make an attack vs. Reflex against one creature within \\shortrange.
                 On a hit, the subject is \\glossterm<slowed> as a \\glossterm<condition>.
 
-                Whenever the target moves using one of its movement speeds, it can make a \\glossterm<difficulty rating> 5 Strength check as part of the movement.
+                Whenever the target moves using one of its movement speeds, it can make a \\glossterm<difficulty value> 5 Strength check as part of the movement.
                 If it succeeds, the condition is removed after the movement is complete.
             """,
             short_description="Slows a foe, though it is easily removable",
@@ -688,7 +688,7 @@ def generate_tools():
             tags=[],
             description="""
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
-                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty rating> 11 Awareness check.
+                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> 11 Awareness check.
 
                 The first time a creature walks through that space, the trap makes a +4 attack vs. Armor against it.
                 After the trap triggers, it must be manually deployed again.
@@ -704,7 +704,7 @@ def generate_tools():
             tags=[],
             description="""
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
-                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty rating> 20 Awareness check.
+                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> 20 Awareness check.
 
                 The first time a creature walks through that space, the trap makes a +16 attack vs. Armor against it.
                 After the trap triggers, it must be manually deployed again.
@@ -723,7 +723,7 @@ def generate_tools():
             tags=[],
             description="""
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
-                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty rating> 14 Awareness check.
+                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> 14 Awareness check.
 
                 The first time a creature walks through that space, the trap makes a +8 attack vs. Reflex against everything within a \\smallarea radius of it.
                 After the trap triggers, it must be manually deployed again.
@@ -738,7 +738,7 @@ def generate_tools():
             tags=[],
             description="""
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
-                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty rating> 20 Awareness check.
+                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> 20 Awareness check.
 
                 The first time a creature walks through that space, the trap makes a +15 attack vs. Reflex against everything within a \\largearea radius of it.
                 After the trap triggers, it must be manually deployed again.
@@ -753,7 +753,7 @@ def generate_tools():
             tags=[],
             description="""
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
-                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty rating> 26 Awareness check.
+                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> 26 Awareness check.
 
                 The first time a creature walks through that space, the trap makes a +22 attack vs. Reflex against everything within a \\largearea radius of it.
                 After the trap triggers, it must be manually deployed again.
@@ -972,9 +972,9 @@ def generate_tools():
             tags=[],
             description="""
                 This is a lock.
-                Opening the lock without the appropriate key requires a \\glossterm<difficulty rating> 15 Devices check (see \\pcref<Devices>).
+                Opening the lock without the appropriate key requires a \\glossterm<difficulty value> 15 Devices check (see \\pcref<Devices>).
             """,
-            short_description="Devices \\glossterm<difficulty rating> of 15 to unlock",
+            short_description="Devices \\glossterm<difficulty value> of 15 to unlock",
         ),
         MagicItem(
             name="Lock, quality",
@@ -983,9 +983,9 @@ def generate_tools():
             tags=[],
             description="""
                 This is a lock.
-                Opening the lock without the appropriate key requires a \\glossterm<difficulty rating> 20 Devices check (see \\pcref<Devices>).
+                Opening the lock without the appropriate key requires a \\glossterm<difficulty value> 20 Devices check (see \\pcref<Devices>).
             """,
-            short_description="Devices \\glossterm<difficulty rating> of 20 to unlock",
+            short_description="Devices \\glossterm<difficulty value> of 20 to unlock",
         ),
         MagicItem(
             name="Lock, masterwork",
@@ -994,9 +994,9 @@ def generate_tools():
             tags=[],
             description="""
                 This is a lock.
-                Opening the lock without the appropriate key requires a \\glossterm<difficulty rating> 25 Devices check (see \\pcref<Devices>).
+                Opening the lock without the appropriate key requires a \\glossterm<difficulty value> 25 Devices check (see \\pcref<Devices>).
             """,
-            short_description="Devices \\glossterm<difficulty rating> of 25 to unlock",
+            short_description="Devices \\glossterm<difficulty value> of 25 to unlock",
         ),
     ]
 
@@ -1008,9 +1008,9 @@ def generate_tools():
             tags=[],
             description="""
                 This is a set of manacles designed for Medium humanoid creatures.
-                Escaping the manacles while they are being worn requires a \\glossterm<difficulty rating> 15 Flexibility check (see \\pcref<Flexibility>).
+                Escaping the manacles while they are being worn requires a \\glossterm<difficulty value> 15 Flexibility check (see \\pcref<Flexibility>).
             """,
-            short_description="Flexibility \\glossterm<difficulty rating> of 15 to escape",
+            short_description="Flexibility \\glossterm<difficulty value> of 15 to escape",
         ),
         MagicItem(
             name="Manacles, quality",
@@ -1019,9 +1019,9 @@ def generate_tools():
             tags=[],
             description="""
                 This is a set of manacles designed for Medium humanoid creatures.
-                Escaping the manacles while they are being worn requires a \\glossterm<difficulty rating> 25 Flexibility check (see \\pcref<Flexibility>).
+                Escaping the manacles while they are being worn requires a \\glossterm<difficulty value> 25 Flexibility check (see \\pcref<Flexibility>).
             """,
-            short_description="Flexibility \\glossterm<difficulty rating> of 20 to escape",
+            short_description="Flexibility \\glossterm<difficulty value> of 20 to escape",
         ),
         MagicItem(
             name="Manacles, masterwork",
@@ -1030,9 +1030,9 @@ def generate_tools():
             tags=[],
             description="""
                 This is a set of manacles designed for Medium humanoid creatures.
-                Escaping the manacles while they are being worn requires a \\glossterm<difficulty rating> 25 Flexibility check (see \\pcref<Flexibility>).
+                Escaping the manacles while they are being worn requires a \\glossterm<difficulty value> 25 Flexibility check (see \\pcref<Flexibility>).
             """,
-            short_description="Flexibility \\glossterm<difficulty rating> of 25 to escape",
+            short_description="Flexibility \\glossterm<difficulty value> of 25 to escape",
         ),
     ]
 
