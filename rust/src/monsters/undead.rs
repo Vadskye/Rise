@@ -73,7 +73,7 @@ pub fn undeads() -> Vec<MonsterEntry> {
                 undead(FullUndeadDefinition {
                     alignment: "Always true neutral".to_string(),
                     attributes: vec![2, 2, 0, 0, 0, -1],
-                    challenge_rating: ChallengeRating::Two,
+                    challenge_rating: ChallengeRating::One,
                     description: None,
                     knowledge: None,
                     level: 1,

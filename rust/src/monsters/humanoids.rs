@@ -207,7 +207,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 humanoid(FullHumanoidDefinition {
                     alignment: "Usually lawful evil".to_string(),
                     attributes: vec![4, 0, 2, -2, 1, 0],
-                    challenge_rating: ChallengeRating::Three,
+                    challenge_rating: ChallengeRating::Two,
                     description: None,
                     knowledge: None,
                     level: 1,
