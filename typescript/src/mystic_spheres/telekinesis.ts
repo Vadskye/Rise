@@ -51,10 +51,10 @@ export const telekinesis: MysticSphere = {
       name: "Interposing Force",
 
       attack: {
-        crit: `the difficulty rating of the Strength check increases by 10.`,
+        crit: `the difficulty value of the Strength check increases by 10.`,
         hit: `As a \\glossterm{condition}, the subject is unable to move closer to you without effort.
         This does not impede its movement unless its movement would decrease the distance between it and you.
-        As part of movement, it can make a Strength check with a \\glossterm{difficulty rating} of 5.
+        As part of movement, it can make a Strength check with a \\glossterm{difficulty value} of 5.
         If it succeeds, it can move towards you at half speed.`,
         targeting: `
         Make an attack vs. Fortitude against one creature within \\medrange.
@@ -71,7 +71,7 @@ export const telekinesis: MysticSphere = {
 
       functionsLike: {
         name: "interposing force",
-        exceptThat: "the \\glossterm{difficulty rating} of the Strength check increases to 15.",
+        exceptThat: "the \\glossterm{difficulty value} of the Strength check increases to 15.",
       },
       rank: 7,
       scaling: "accuracy",
@@ -422,7 +422,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         You slowly create a 10 ft.\\ cube of telekinetic force within \\medrange.
         The cage appears at the end of the next round after you cast this spell.
-        Before that time, there is no visible indication of where the cage will appear, but its location can be observed with a \\glossterm{difficulty rating} 25 Spellsense check (see \\pcref{Spellsense}).
+        Before that time, there is no visible indication of where the cage will appear, but its location can be observed with a \\glossterm{difficulty value} 25 Spellsense check (see \\pcref{Spellsense}).
         Any physical obstacles in the way of the cage at the time that it forms prevent it from appearing.
         You can create the cube around a sufficiently small creature to trap it inside.
         Each wall is transparent, but blocks physical passage and \\glossterm{line of effect}.

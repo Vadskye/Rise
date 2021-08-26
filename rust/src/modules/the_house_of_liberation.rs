@@ -17,7 +17,7 @@ pub fn generate_module() -> Module {
             Regardless, they'll all end up in a single holding cell together when the adventure properly starts.
 
             Each inn has a sketchy-looking human staying at it who is hanging out in the tavern area starting conversations with people to ask about their past.
-            A \glossterm{difficulty rating} 10 Social Insight check reveals that he is explicitly trying to learn whether people have magical abilities.
+            A \glossterm{difficulty value} 10 Social Insight check reveals that he is explicitly trying to learn whether people have magical abilities.
             While the party is asleep, he will knock them unconscious and kidnap them without their knowledge.
             It's possible to run this as a combat sequence where the expected outcome is defeat.
             However, that is often frustrating, especially as a first encounter with a module, so most groups will probably have more fun if that is skipped.
@@ -49,20 +49,20 @@ pub fn generate_module() -> Module {
             The last thing they would remember is going to sleep at an inn.
             If someone looks out through the barred window, they can see Room 2.
 
-            The door can be forced open with a \\glossterm<difficulty rating> 15 Strength check.
+            The door can be forced open with a \\glossterm<difficulty value> 15 Strength check.
             If a character has at least 1 Strength, they can use one of the benches as an improvised battering ram to gain a +4 bonus to this check.
             Attempting to break open the door is very loud, and is likely to attract attention from the guards in Room 2.
 
-            Alternately, the door hinges can be disabled with a \\glossterm<difficulty rating> 13 Devices check.
+            Alternately, the door hinges can be disabled with a \\glossterm<difficulty value> 13 Devices check.
             If the party had their thieves' tools taken from them, they take a -5 penalty to this check, making it almost certainly impossible.
             A particularly well-prepared character may have a lockpick hidden in their boot or some other similar device, which would allow them to make the check without a penalty.
-            However, they must make a \\glossterm<difficulty rating> 10 Sleight of Hand check to have successfully hid it from the people who searched the party.
+            However, they must make a \\glossterm<difficulty value> 10 Sleight of Hand check to have successfully hid it from the people who searched the party.
 
-            The grate in the room can be opened with a \\glossterm<difficulty rating> 10 Strength check.
+            The grate in the room can be opened with a \\glossterm<difficulty value> 10 Strength check.
             The pipe below the grate is two and a half feet in diameter, so it can be travelled through.
             However, it only opens into an enclosed ten-foot square room that holds waste, making it useless as an escape path.
 
-            There is a secret door in the bottom left corner of the room that can be discovered with a \\glossterm<difficulty rating> 15 Awareness check.
+            There is a secret door in the bottom left corner of the room that can be discovered with a \\glossterm<difficulty value> 15 Awareness check.
             The party is likely to find it if they search the room carefully with the \\ability<search> ability.
             The passage leads to Room 7, which has a matching secret door.
             Before opening the door into Room 7, the party will be able to hear a deep, gutteral snarling from a Large creature and occasional banging on walls, which may discourage them from venturing too far in that direction.
@@ -81,10 +81,10 @@ pub fn generate_module() -> Module {
             If the party moves back into the cell and closes the door to block line of sight, the skeletons lack the intelligence to remember that the party previously left, and will simply resume their patrol.
 
             If the party fights the skeletons in the hall, the human guards in Room 4 are likely to hear them.
-            Hearing the combat through the door has a difficulty rating of 5, and the guards have a +0 bonus to Awareness.
+            Hearing the combat through the door has a difficulty value of 5, and the guards have a +0 bonus to Awareness.
             Roll Awareness once for the guards during each round of combat.
             Success means that they hear something odd and will send two guards to investigate.
-            If the party lures the skeletons into their cell to fight them, the difficulty rating for the guards to hear the combat increases to 10.
+            If the party lures the skeletons into their cell to fight them, the difficulty value for the guards to hear the combat increases to 10.
 ",
 skeleton_guard=latex_by_name("Skeleton Guard"),
         ),

@@ -325,7 +325,7 @@ def universal_abilities():
             You move up to double your normal movement speed.
         """),
         universal_ability_button("Throw", """
-            Make a Strength check to throw an object you hold in at least one hand. The base difficulty rating of this check is 0. For each size category larger or smaller than the target that you are, you gain a +10 bonus or penalty to the check. You cannot throw an object whose weight exceeds your maximum carrying capacity.
+            Make a Strength check to throw an object you hold in at least one hand. The base difficulty value of this check is 0. For each size category larger or smaller than the target that you are, you gain a +10 bonus or penalty to the check. You cannot throw an object whose weight exceeds your maximum carrying capacity.
             If you succeed, you throw the object five feet. For every 5 points by which you succeed, you double the distance you throw the object: ten feet, twenty feet, and so on. If you throw the object at a creature or object, you can make an attack roll to hit it with the thrown object. That attack roll is rolled separately from the Strength check you make to use this ability.
         """),
         universal_ability_button("Trip", """

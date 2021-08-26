@@ -306,7 +306,7 @@
         \begin{dtable}
             \lcaption{Object Statistics By Size}
             \begin{dtabularx}{\textwidth}{l X X}
-                \tb{Size}  & \tb{Hit Points} & \tb{Sunder Difficulty Rating} \tableheaderrule
+                \tb{Size}  & \tb{Hit Points} & \tb{Sunder Difficulty value} \tableheaderrule
                 Fine       & 1               & 1\fn{1} \\
                 Diminutive & 2               & 2       \\
                 Tiny       & 5               & 5       \\
@@ -323,7 +323,7 @@
         \begin{dtable}
             \lcaption{Object Statistics By Material}
             \begin{dtabularx}{\textwidth}{l X X X}
-                \tb{Material}   & \tb{DR}\fn{1} & \tb{Hit Points Multiplier}\fn{2} & \tb{Sunder Difficulty Rating Modifier}  \tableheaderrule
+                \tb{Material}   & \tb{DR}\fn{1} & \tb{Hit Points Multiplier}\fn{2} & \tb{Sunder Difficulty value Modifier}  \tableheaderrule
                 Adamantine      & 30                    & \mult3                & \plus20              \\
                 Glass           & 5                     & \mult1/2              & \tdash               \\
                 Ice             & 1                     & \mult1/2              & \minus5              \\
@@ -342,8 +342,8 @@
     \subsection{Sundering Objects}
         As a standard action, you can attempt to sunder an object you can touch.
         This requires two hands.
-        An object's size and primary material determines the \glossterm{difficulty rating} of the check.
-        The \glossterm{difficulty rating} of this check decreases by 2 if the object is below its maximum \glossterm{hit points}.
+        An object's size and primary material determines the \glossterm{difficulty value} of the check.
+        The \glossterm{difficulty value} of this check decreases by 2 if the object is below its maximum \glossterm{hit points}.
         Success means that the object breaks.
         Failure by 5 or less means the object loses a \glossterm{hit point}, but it does not break.
         Failure by 6 or more means nothing happens.
@@ -439,15 +439,15 @@
     \subsection{Creating Poisons}\label{Creating Poisons}
 
         You can use the Craft (poison) skill to create poisons.
-        To create a poison, you must make a Craft (poison) check against a \glossterm{difficulty rating} equal to 10 \add the poison's base accuracy.
-        For every 2 points by which you beat this \glossterm{difficulty rating}, the created poison's accuracy gains a \plus1 bonus, up to a maximum bonus of \plus10 more than the poison's base accuracy.
+        To create a poison, you must make a Craft (poison) check against a \glossterm{difficulty value} equal to 10 \add the poison's base accuracy.
+        For every 2 points by which you beat this \glossterm{difficulty value}, the created poison's accuracy gains a \plus1 bonus, up to a maximum bonus of \plus10 more than the poison's base accuracy.
 
         Creating a poison requires special materials.
         The type of materials required, and how those materials can be acquired, depend on the type of poison.
 
         \begin{itemize}
             \itemhead{Plant}: Plant-based poisons can typically be harvested by making a Survival check to search in appropriate terrain.
-                The \glossterm{difficulty rating} of this check is usually equal to 10 \add the base accuracy of the poison.
+                The \glossterm{difficulty value} of this check is usually equal to 10 \add the base accuracy of the poison.
             \itemhead{Venom}: Venom requires an appropriate body part from a creature -- often, poison it naturally produces.
             \itemhead{Alchemical}: Alchemical poisons require alchemical materials.
                 These cannot normally be found in nature.
@@ -504,7 +504,7 @@
                     The plane has no gravity for unattended objects and nonsentient creatures.
                     A creature on the plane can make use the \textit{control gravity} ability as a \glossterm{minor action}.
                     \begin{freeability}{Control Gravity}
-                        Make a Willpower check with a \glossterm{difficulty rating} of 10.
+                        Make a Willpower check with a \glossterm{difficulty value} of 10.
                         Success means that you choose the direction of gravity that applies to you on the current plane.
                         Alternately, you can choose for gravity to not apply to you.
 

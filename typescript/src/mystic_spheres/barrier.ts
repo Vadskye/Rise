@@ -108,7 +108,7 @@ export const barrier: MysticSphere = {
             There are three possibilities: fully sound-permeable, fully sound-blocking like a normal \\spell{mystic barrier}, and sound-dampening.
             You can change how much the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
 
-            A sound-dampening barrier increases the \\glossterm{difficulty rating} of sound-based Awareness checks by 20.
+            A sound-dampening barrier increases the \\glossterm{difficulty value} of sound-based Awareness checks by 20.
             Sound-permeable and sound-dampening barriers do not block \\glossterm{line of effect} for effects that deal \\glossterm{sonic damage}, but a sound-dampening barrier makes everything \\glossterm{impervious} to \\glossterm{sonic damage} that originates from the other side of the barrier.
         `,
         name: "mystic barrier",
@@ -505,8 +505,8 @@ export const barrier: MysticSphere = {
       effect: `
         Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
         The subject becomes magically locked.
-        It can be unlocked with a Devices check against a \\glossterm{difficulty rating} equal to 20 \\add your \\glossterm{power}.
-        The \\glossterm{difficulty rating} to break it open forcibly increases by 10.
+        It can be unlocked with a Devices check against a \\glossterm{difficulty value} equal to 20 \\add your \\glossterm{power}.
+        The \\glossterm{difficulty value} to break it open forcibly increases by 10.
         You can freely open an object sealed by this effect as if it were not locked.
       `,
       rank: 2,
@@ -519,8 +519,8 @@ export const barrier: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-          the \\glossterm{difficulty rating} to unlock the object with a Devices check is instead equal to 30 + your \\glossterm{power}.
-            In addition, the \\glossterm{difficulty rating} to break it open increases by 20 instead of by 10.
+          the \\glossterm{difficulty value} to unlock the object with a Devices check is instead equal to 30 + your \\glossterm{power}.
+            In addition, the \\glossterm{difficulty value} to break it open increases by 20 instead of by 10.
         `,
         name: "mystic lock",
       },

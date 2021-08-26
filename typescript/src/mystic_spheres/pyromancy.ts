@@ -273,7 +273,7 @@ export const pyromancy: MysticSphere = {
         hit: `The subject catches on fire as a \\glossterm{condition}.
         At the end of each round, it takes 1d6 fire damage.
 
-        The condition can be removed if the subject makes a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
+        The condition can be removed if the subject makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -734,7 +734,7 @@ export const pyromancy: MysticSphere = {
         Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
         While ignited in this way, it takes 1d10 fire damage at the end of each round.
 
-        It can put out the fire by making a \\glossterm{difficulty rating} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
+        It can put out the fire by making a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.
         Putting out the flames in this way does not remove this effect.`,
         targeting: `

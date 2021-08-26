@@ -415,7 +415,7 @@ export const verdamancy: MysticSphere = {
         If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
 
         This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
-        The \\glossterm{difficulty rating} of the check is equal to 10.`,
+        The \\glossterm{difficulty value} of the check is equal to 10.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
@@ -608,7 +608,7 @@ export const verdamancy: MysticSphere = {
         As a \\glossterm{condition}, the subject unable to heal the \\glossterm{hit points} lost to the attack.
 
         This effect can be removed with the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
-        The \\glossterm{difficulty rating} of the check is equal to 5 \\add your \\glossterm{power}.
+        The \\glossterm{difficulty value} of the check is equal to 5 \\add your \\glossterm{power}.
       `,
       rank: 3,
       scaling: {

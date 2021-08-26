@@ -659,7 +659,7 @@ export const polymorph: MysticSphere = {
           At the end of each round, it takes 1d8 physical damage.
 
           This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
-          The \\glossterm{difficulty rating} of the check is equal to 10.
+          The \\glossterm{difficulty value} of the check is equal to 10.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -860,7 +860,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose one \\glossterm{unattended}, nonmagical wall up to 50 feet high and 10 feet wide within \\medrange.
         You create handholds in the subject, making it easier to climb.
-        This reduces the \\glossterm{difficulty rating} to climb the object by 10.
+        This reduces the \\glossterm{difficulty value} to climb the object by 10.
         When this effect ends, the handholds disappear.
       `,
       rank: 1,
@@ -960,7 +960,7 @@ export const polymorph: MysticSphere = {
         Choose one \\glossterm{unattended}, nonmagical object or part of an object of up to Large size.
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
-        % How should this affect Strength break difficulty ratings?
+        % How should this affect Strength break difficulty value?
         The subject gains a +5 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
         If the subject is moved, this effect ends.
         Otherwise, it lasts for one year.
