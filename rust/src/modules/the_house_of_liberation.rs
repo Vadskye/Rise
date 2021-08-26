@@ -17,7 +17,7 @@ pub fn generate_module() -> Module {
             Regardless, they'll all end up in a single holding cell together when the adventure properly starts.
 
             Each inn has a sketchy-looking human staying at it who is hanging out in the tavern area starting conversations with people to ask about their past.
-            A \glossterm{difficulty value} 10 Social Insight check reveals that he is explicitly trying to learn whether people have magical abilities.
+            A DV 10 Social Insight check reveals that he is explicitly trying to learn whether people have magical abilities.
             While the party is asleep, he will knock them unconscious and kidnap them without their knowledge.
             It's possible to run this as a combat sequence where the expected outcome is defeat.
             However, that is often frustrating, especially as a first encounter with a module, so most groups will probably have more fun if that is skipped.
@@ -42,27 +42,46 @@ pub fn generate_module() -> Module {
                 A pair of benches line one wall, and a drainage grate is on the other.
                 The only exit seems to be through a large wooden double door to the north.
                 Dim, flickering light filters into the room through a small barred window in each door.
-                Somewhere around a corner to the right, you can hear sounds of humanoid voices enjoying a raucous meal.
+                Somewhere around a corner to the right, you can hear sounds of humanoid voices loudly enjoying a raucous meal.
             \\end<description>
             Under normal circumstances, the party simply wakes up in this room with no equipment or specific memory of how they got here.
             They still have the clothes they were wearing, but none of their bags or anything that looked obviously valuable or dangerous.
             The last thing they would remember is going to sleep at an inn.
             If someone looks out through the barred window, they can see Room 2.
 
-            The door can be forced open with a \\glossterm<difficulty value> 15 Strength check.
-            If a character has at least 1 Strength, they can use one of the benches as an improvised battering ram to gain a +4 bonus to this check.
-            Attempting to break open the door is very loud, and is likely to attract attention from the guards in Room 2.
+            The party can attempt to listen to the distant conversation with a DV 10 Awareness check.
+            Most of what they would hear is meaningless mealtime banter from callous mercenaries.
+            A DV 10 Social Insight check reveals that it all seems a bit exaggerated - the guards are nervous and trying not to show it.
+            If the party listens for a few minutes, they would hear the following exchange.
+            \\begin<description>
+                \\parheadindent<Guard 1> Ey, what're we gonna do about all these people we've got? There's no more room!
+                \\parhead<Guard 2> Eh, Libby'll get back and fix that soon enough. We'll have a clean house before you know it.
+                \\parhead<Guard 3> Well, I wouldn't say \\textit<clean> exactly...
+                \\parhead<Guard 2> Ahaha!
+            \\end<description>
+            No other specific conversations would be interesting before the meal ends in half an hour.
 
-            Alternately, the door hinges can be disabled with a \\glossterm<difficulty value> 13 Devices check.
+            The door can be forced open with a DV 15 Strength check.
+            If a character has at least 1 Strength, they can use one of the benches as an improvised battering ram to gain a +2 bonus to this check.
+            A DV 10 Awareness check reveals that the door was recently patched to cover structural damage, and hitting the door in the same point should make it easier to break down.
+            Taking advantage of the weak point grants a +4 bonus to this check.
+
+            Attempting to break open the door is loud, and may attract attention from the guards in Room 2.
+            The guards have a +0 bonus to Awareness, and hearing the attempts at that distance has a DV of 5.
+            The party can accept a -2 penalty to the Strength check to increase the DV of this Awareness check by 2, but the Stealth skill doesn't help.
+            Roll Awareness once for the guards during each round that the party spends attempting to break down the door.
+            Success means that they hear something odd and will send two guards to investigate.
+
+            Alternately, the door hinges can be disabled with a DV 13 Devices check.
             If the party had their thieves' tools taken from them, they take a -5 penalty to this check, making it almost certainly impossible.
             A particularly well-prepared character may have a lockpick hidden in their boot or some other similar device, which would allow them to make the check without a penalty.
-            However, they must make a \\glossterm<difficulty value> 10 Sleight of Hand check to have successfully hid it from the people who searched the party.
+            However, they must make a DV 10 Sleight of Hand check to have successfully hid it from the people who searched the party.
 
-            The grate in the room can be opened with a \\glossterm<difficulty value> 10 Strength check.
+            The grate in the room can be opened with a DV 10 Strength check.
             The pipe below the grate is two and a half feet in diameter, so it can be travelled through.
             However, it only opens into an enclosed ten-foot square room that holds waste, making it useless as an escape path.
 
-            There is a secret door in the bottom left corner of the room that can be discovered with a \\glossterm<difficulty value> 15 Awareness check.
+            There is a secret door in the bottom left corner of the room that can be discovered with a DV 15 Awareness check.
             The party is likely to find it if they search the room carefully with the \\ability<search> ability.
             The passage leads to Room 7, which has a matching secret door.
             Before opening the door into Room 7, the party will be able to hear a deep, gutteral snarling from a Large creature and occasional banging on walls, which may discourage them from venturing too far in that direction.
@@ -77,16 +96,40 @@ pub fn generate_module() -> Module {
             {skeleton_guard}
 
             The skeleton guards respond to any noise or disruption by banging insistently on the door of the large cell with their scimitars before returning to their simple patrol pattern.
-            If the party steps outside of their cell, the skeletons will attack.
+            If the party steps outside of their cell, the skeletons will attack the closest creature.
+            They have no tactical skill, and will continue attacking their current target until it appears to be unconscious before moving on to the next target.
             If the party moves back into the cell and closes the door to block line of sight, the skeletons lack the intelligence to remember that the party previously left, and will simply resume their patrol.
 
             If the party fights the skeletons in the hall, the human guards in Room 4 are likely to hear them.
-            Hearing the combat through the door has a difficulty value of 5, and the guards have a +0 bonus to Awareness.
+            The guards have a +0 bonus to Awareness, and hearing the combat has a DV of 5.
             Roll Awareness once for the guards during each round of combat.
             Success means that they hear something odd and will send two guards to investigate.
-            If the party lures the skeletons into their cell to fight them, the difficulty value for the guards to hear the combat increases to 10.
+            If the party lures the skeletons into Room 1 for the fight, the DV for the guards to hear the combat increases to 10.
+
+            In the unlikely event that the skeletons defeat the party, they leave their unconscious or dead bodies in the hall and return to patrolling.
+            Eventually, a guard from Room 4 will discover that the prisoners partially escaped and put them back in their cell.
+            The guard will attempt to fix any obvious explanation for their escape, but won't care enough to do a detailed sweep to address the general issues that make their cell escapable.
+
+            There is a ladder in the northwest corner of the room.
+            It leads to a closed trapdoor.
+            The closed trapdoor has a keyhole and is tightly sealed.
+            A DV 20 Strength check or a DV 25 Devices check can open it, which is almost certainly impossible for the party.
+            A DV 8 Spellsense check reveals that it is magically sealed.
+            Critical success (DV 18) reveals that it was sealed with the \\ritual<mystic lock> ritual, making it effectively impossible to open without the magic key.
+
+        \\subsection<The Kitchen>
+            \\begin<description>
+                This room is filled with the smell of cooking meat and old vegetables.
+                Storage chests and cooking implements line the walls, illuminated by a warm fire.
+                There's a massive orc in the room cooking with a furious intensity.
+                Her back is turned to the door.
+            \\end<description>
+
+            {orc_chef}
+
 ",
 skeleton_guard=latex_by_name("Skeleton Guard"),
+orc_chef=latex_by_name("Orc Chef"),
         ),
     }
 }
