@@ -20,6 +20,7 @@ pub enum Weapon {
     Scimitar,
     Sickle,
     Slam,
+    Sledgehammer,
     Spear,
 }
 
@@ -42,6 +43,7 @@ impl Weapon {
             Self::Scimitar => 0,
             Self::Sickle => 1,
             Self::Slam => 0,
+            Self::Sledgehammer => 0,
             Self::Spear => 0,
         }
     }
@@ -64,6 +66,7 @@ impl Weapon {
             Self::Scimitar => D8,
             Self::Sickle => D6,
             Self::Slam => D10,
+            Self::Sledgehammer => D10 + 1,
             Self::Spear => D8,
         };
         return damage_dice::DamageDice::new(increments);
@@ -87,6 +90,7 @@ impl Weapon {
             Self::Scimitar => vec![DamageType::Slashing],
             Self::Sickle => vec![DamageType::Slashing],
             Self::Slam => vec![DamageType::Bludgeoning],
+            Self::Sledgehammer => vec![DamageType::Bludgeoning],
             Self::Spear => vec![DamageType::Piercing],
         }
     }
@@ -109,6 +113,7 @@ impl Weapon {
             Self::Scimitar => "scimitar",
             Self::Sickle => "sickle",
             Self::Slam => "slam",
+            Self::Sledgehammer => "sledgehammer",
             Self::Spear => "spear",
         }
     }

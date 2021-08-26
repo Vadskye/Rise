@@ -199,5 +199,30 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         }
     ));
 
+    monsters.push(MonsterEntry::MonsterGroup(
+        monster_group::MonsterGroup {
+            name: "Orcs".to_string(),
+            knowledge: None,
+            monsters: vec![
+                humanoid(FullHumanoidDefinition {
+                    alignment: "Usually lawful evil".to_string(),
+                    attributes: vec![4, 0, 2, -2, 1, 0],
+                    challenge_rating: ChallengeRating::Three,
+                    description: None,
+                    knowledge: None,
+                    level: 1,
+                    passive_abilities: None,
+                    movement_modes: None,
+                    name: "Orc Chef".to_string(),
+                    senses: None,
+                    size: Size::Medium,
+                    special_attacks: None,
+                    trained_skills: None,
+                    weapons: vec![Weapon::Sledgehammer],
+                }),
+            ],
+        }
+    ));
+
     return monsters;
 }
