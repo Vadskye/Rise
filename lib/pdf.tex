@@ -3,6 +3,27 @@
 
 \ExplSyntaxOn
 
+\setcounter{secnumdepth}{0}
+
+%make bigger section headers
+% \titleformat*{\section}{\hspace*{-0.5em}\LARGE\bfseries}
+\titleformat{\section}
+    {\LARGE\bfseries}   % The style of the section title
+    {Part \arabic{section}:}                             % a label prefix
+    {0.75em}                          % How much space exists between the prefix and the title
+    {\hspace{-0.5em}}    % A code representing the section
+\titleformat{\subsection}
+    {\large\bfseries}   % The style of the section title
+    {\arabic{subsection}.}                             % a label prefix
+    {0.75em}                          % How much space exists between the prefix and the title
+    {\hspace{-0.5em}\vspace{-0.75em}}    % A code representing the section
+    [\hspace{-0.5em}\titlerule]
+\titleformat{\subsubsection}
+    {\bfseries}
+    {}
+    {1em}
+    {\hspace{-0.5em}}
+
 % The HTML versions of mdframed environments need dumb hacks to fix parsing issues
 \newmdenv[
     style=spellcontent,

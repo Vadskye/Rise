@@ -3,6 +3,28 @@
 
 \ExplSyntaxOn
 
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername \: \thechapter \: - \: #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+%make bigger section headers
+% \titleformat*{\section}{\hspace*{-0.5em}\LARGE\bfseries}
+\titleformat{\section}
+    {\LARGE\bfseries}   % The style of the section title
+    {}                             % a label prefix
+    {0em}                          % How much space exists between the prefix and the title
+    {\hspace{-0.5em}}    % A code representing the section
+\titleformat{\subsection}
+    {\large\bfseries}   % The style of the section title
+    {}                             % a label prefix
+    {0em}                          % How much space exists between the prefix and the title
+    {\hspace{-0.5em}\vspace{-0.75em}}    % A code representing the section
+    [\hspace{-0.5em}\titlerule]
+\titleformat{\subsubsection}
+    {\bfseries}
+    {}
+    {0em}
+    {\hspace{-0.5em}}
+
 \DeclareDocumentEnvironment{spellcontent}{}{}{}
 
 \DeclareDocumentEnvironment{monsterstatistics}{}{}{}
