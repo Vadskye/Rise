@@ -149,7 +149,7 @@ def calc_skill(skill_name, attribute=None):
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat(skill_parsable, 2),
+                    equation_misc_repeat(skill_parsable, 4),
                 ],
                 result_attributes={
                     "disabled": True,

@@ -20,8 +20,6 @@ def generate_script():
             custom_modifiers(),
             monster_chat_color(),
             debuffs(),
-            ability_key_values(),
-            attack_prefix_suffix(),
             "</script>",
             "",
         ]
@@ -151,7 +149,7 @@ def attribute_skills(attribute):
 
 
 def set_skill(a, s):
-    misc = get_misc_variables(s, 3)
+    misc = get_misc_variables(s, 4)
     if a == "other":
         return js_wrapper(
             ["level", "fatigue_penalty", *misc],
@@ -1080,66 +1078,6 @@ def attuned_effects():
             });
         });
     """
-
-def ability_key_values():
-    return """
-        on(
-            "change:repeating_magicalattacks:attack0_effect"
-            + " change:repeating_mundaneattacks:attack0_effect"
-            + " change:repeating_attacks:attack0_effect"
-            + " change:repeating_abilities:active_ability0_effect",
-            function(eventInfo) {
-                let lines = (eventInfo.newValue || "").split('\\n');
-                let description_lines = [];
-                let key_value_pairs = [];
-                for (line of lines) {
-                    let equal_split = line.split('=');
-                    if (equal_split.length === 2) {
-                        key_value_pairs.push(`{{${equal_split[0]}=${equal_split[1]}}}`);
-                    } else {
-                        description_lines.push(line);
-                    }
-                }
-                let description = description_lines.filter(Boolean).join('\\n');
-                let key_values = key_value_pairs.join(' ');
-
-                let effect_id = eventInfo.sourceAttribute.replace("effect", "effect_formatted");
-                let key_value_pairs_id = eventInfo.sourceAttribute.replace("effect", "key_value_pairs");
-
-                console.log({
-                    [effect_id]: description,
-                    [key_value_pairs_id]: key_values,
-                });
-
-                setAttrs({
-                    [effect_id]: description,
-                    [key_value_pairs_id]: key_values,
-                });
-            }
-        );
-    """
-
-def attack_prefix_suffix():
-    return """
-        on("change:custom_attack_prefix_raw", function(eventInfo) {
-            let formatted = eventInfo.newValue && eventInfo.newValue.trim()
-                ? eventInfo.newValue.trim() + "\\n"
-                : "";
-            setAttrs({
-                custom_attack_prefix: formatted,
-            });
-        });
-
-        on("change:custom_attack_suffix_raw", function(eventInfo) {
-            let formatted = eventInfo.newValue && eventInfo.newValue.trim()
-                ? "\\n" + eventInfo.newValue.trim()
-                : "";
-            setAttrs({
-                custom_attack_suffix: formatted,
-            });
-        });
-    """
-
 
 def custom_modifiers():
     return """

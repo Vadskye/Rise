@@ -815,7 +815,7 @@ def calc_armor():
                             {
                                 "disabled": True,
                                 "name": "armor_defense_scaling_display",
-                                "value": "@{level}",
+                                "value": "floor(@{level}/2)",
                             }
                         ),
                     ),
