@@ -531,7 +531,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         trained_skills: Some(vec![Skill::Endurance]),
     })));
 
-    let mut bombardier_beetle = animal(FullAnimalDefinition {
+    let bombardier_beetle = animal(FullAnimalDefinition {
         attributes: vec![3, -1, 4, -9, 0, 1],
         challenge_rating: ChallengeRating::Two,
         level: 7,
