@@ -298,7 +298,7 @@ def generate_implements():
             short_description="Can exert to cast spells without somatic components",
         ),
         MagicItem(
-            name="Greater Staff of Silence",
+            name="Staff of Silence, Greater",
             level=10,
             material_type="Staff",
             tags=[],
@@ -308,7 +308,7 @@ def generate_implements():
             short_description="Can cast spells without verbal components",
         ),
         MagicItem(
-            name="Greater Staff of Stillness",
+            name="Staff of Stillness, Greater",
             level=10,
             material_type="Staff",
             tags=[],

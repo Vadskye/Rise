@@ -553,7 +553,7 @@ def generate_armor():
             short_description="Reduces armor speed penalty by 5 feet",
         ),
         MagicItem(
-            name="Greater Swiftstep Armor",
+            name="Swiftstep Armor, Greater",
             level=14,
             tags=["Swift"],
             material_type="Body armor",
@@ -614,7 +614,7 @@ def generate_armor():
             short_description="Imposes -1 Armor penalty when creatures miss you",
         ),
         MagicItem(
-            name="Greater Hardblock Shield",
+            name="Hardblock Shield, Greater",
             level=16,
             tags=[],
             material_type="Shield",
