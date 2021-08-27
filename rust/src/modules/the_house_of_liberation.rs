@@ -53,7 +53,7 @@ pub fn generate_module() -> Module {
             The last thing they would remember is going to sleep at an inn.
             If someone looks out through the barred window, they can see Room 2.
 
-            The party can attempt to listen to the distant conversation with a DV 10 Awareness check.
+            The party can attempt to listen to the distant conversation with a DV 7 Awareness check.
             Most of what they would hear is meaningless mealtime banter from callous mercenaries.
             A DV 10 Social Insight check reveals that it all seems a bit exaggerated - the guards are nervous and trying not to show it.
             If the party listens for a few minutes, they would hear the following exchange.
@@ -97,7 +97,8 @@ pub fn generate_module() -> Module {
             Taking advantage of the weak point grants a +4 bonus to this check.
 
             Attempting to break open the door is loud, and may attract attention from the guards in Room 2.
-            The guards have a +0 bonus to Awareness, and hearing the attempts at that distance has a DV of 5.
+            The guards have a -5 penalty to Awareness during their meal, or a +0 bonus after the meal.
+            Hearing the attempts at that distance has a DV of 4.
             The party can accept a -2 penalty to the Strength check to increase the DV of this Awareness check by 2, but the Stealth skill doesn't help.
             Roll Awareness once for the guards during each round that the party spends attempting to break down the door.
             Success means that they hear something odd and will send two guards to investigate.
@@ -130,11 +131,13 @@ pub fn generate_module() -> Module {
             They have no tactical skill, and will continue attacking their current target until it appears to be unconscious before moving on to the next target.
             If the party moves back into the cell and closes the door to block line of sight, the skeletons lack the intelligence to remember that the party previously left, and will simply resume their patrol.
 
-            If the party fights the skeletons in the hall, the human guards in Room 4 are likely to hear them.
-            The guards have a +0 bonus to Awareness, and hearing the combat has a DV of 5.
+            If the party fights the skeletons in the hall, the human guards in Room 4 may hear them.
+            The guards have a -5 penalty to Awareness during their meal, or a +0 bonus after the meal.
+            Hearing the combat at that distance has a DV of 2.
+            If the party lures the skeletons into Room 1 for the fight, the DV for the guards to hear the combat increases to 4.
+            The party can further increase the DV to 6 if they close the doors of their cell.
             Roll Awareness once for the guards during each round of combat.
             Success means that they hear something odd and will send two guards to investigate.
-            If the party lures the skeletons into Room 1 for the fight, the DV for the guards to hear the combat increases to 10.
 
             In the unlikely event that the skeletons defeat the party, they leave their unconscious or dead bodies in the hall and return to patrolling.
             After the meal is over, a guard from Room 4 will discover that the prisoners partially escaped and put them back in their cell.
@@ -195,6 +198,8 @@ pub fn generate_module() -> Module {
 
             {human_cleric}
             {human_warrior}
+
+            
 
 ",
 skeleton_guard=latex_by_name("Skeleton Guard"),
