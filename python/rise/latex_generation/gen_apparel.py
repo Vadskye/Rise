@@ -1358,7 +1358,7 @@ def generate_apparel():
             short_description="Deals damage to creatures that grapple you",
         ),
         MagicItem(
-            name="Greater Quilled Cloak",
+            name="Quilled Cloak, Greater",
             level=12,
             material_type="Cloak",
             tags=[],
@@ -1369,7 +1369,7 @@ def generate_apparel():
             short_description="Deals more damage to creatures that grapple you",
         ),
         MagicItem(
-            name="Supreme Quilled Cloak",
+            name="Quilled Cloak, Supreme",
             level=18,
             material_type="Cloak",
             tags=[],
@@ -2109,7 +2109,7 @@ def generate_apparel():
             short_description="Reduces penalties for charging by 1",
         ),
         MagicItem(
-            name="Greater Charging Boots",
+            name="Charging Boots, Greater",
             level=10,
             material_type="Boots",
             tags=[],
@@ -2136,7 +2136,7 @@ def generate_apparel():
             short_description="Can exert to remove a debuff",
         ),
         MagicItem(
-            name="Greater Cleansing Belt",
+            name="Cleansing Belt, Greater",
             level=10,
             material_type="Belt",
             tags=[],
@@ -2148,7 +2148,7 @@ def generate_apparel():
             short_description="Can remove a debuff",
         ),
         MagicItem(
-            name="Supreme Cleansing Belt",
+            name="Cleansing Belt, Supreme",
             level=16,
             material_type="Belt",
             tags=[],
