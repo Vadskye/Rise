@@ -19,6 +19,7 @@ pub enum SpeedCategory {
     Normal,
     Fast,
     VeryFast,
+    Special(i32),
 }
 
 impl FlightManeuverability {
@@ -46,6 +47,14 @@ impl SpeedCategory {
             SpeedCategory::Normal => 1.0,
             SpeedCategory::Fast => 1.5,
             SpeedCategory::VeryFast => 2.0,
+            SpeedCategory::Special(_) => 1.0,
+        }
+    }
+
+    pub fn speed_modifier(&self) -> i32 {
+        match self {
+            SpeedCategory::Special(m) => *m,
+            _ => 0,
         }
     }
 }
@@ -88,5 +97,5 @@ impl MovementMode {
 
 fn calc_speed(speed_category: &SpeedCategory, size: &Size) -> i32 {
     let speed = speed_category.speed_multiplier() * (size.base_speed() as f64);
-    return ((speed * 5.0).floor() / 5.0) as i32;
+    return ((speed * 5.0).floor() / 5.0) as i32 + speed_category.speed_modifier();
 }

@@ -237,7 +237,8 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     knowledge: None,
                     level: 1,
                     passive_abilities: None,
-                    movement_modes: None,
+                    // Medium armor
+                    movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Special(-5))]),
                     name: "Human Warrior".to_string(),
                     senses: None,
                     size: Size::Medium,
@@ -253,7 +254,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     knowledge: None,
                     level: 1,
                     passive_abilities: None,
-                    movement_modes: None,
+                    movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Special(-5))]),
                     name: "Human Cleric".to_string(),
                     senses: None,
                     size: Size::Medium,
