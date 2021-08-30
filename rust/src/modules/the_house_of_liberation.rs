@@ -149,7 +149,7 @@ pub fn generate_module() -> Module {
                 \\item One silver ring (worth 2 gp) with the Dwarven runes for ``Ironbeard'' engraved on the inside
             \\end<itemize>
 
-            There is a secret door hidden on the east wall tha leads to Room 5.
+            There is a secret door hidden on the east wall that leads to Room 5.
             The party can notice it with a DV 18 Awareness check.
 
 ",
