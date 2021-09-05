@@ -1,6 +1,6 @@
 use std::cmp::PartialEq;
 
-#[derive(Clone, Eq, Hash)]
+#[derive(Clone, Copy, Eq, Hash)]
 pub enum Attribute {
     Strength,
     Dexterity,
