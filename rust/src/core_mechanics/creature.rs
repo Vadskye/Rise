@@ -9,7 +9,7 @@ use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::sizes;
 use crate::core_mechanics::HasCreatureMechanics;
-use crate::equipment::{weapons, HasEquipment};
+use crate::equipment::{weapons, HasWeapons};
 use crate::skills::{HasSkills, Skill};
 use std::cmp::{max, min};
 use std::collections::HashMap;
@@ -247,7 +247,7 @@ impl HasAttacks for Creature {
     }
 }
 
-impl HasEquipment for Creature {
+impl HasWeapons for Creature {
     fn add_weapon(&mut self, weapon: weapons::Weapon) {
         self.weapons.push(weapon);
     }
