@@ -25,6 +25,29 @@ impl Character {
         self.creature.level = level;
     }
 
+    // Currently this creates a Martial Mastery fighter
+    pub fn standard_character(&mut self, level: i32) -> Self {
+        let mut creature = creature::Creature::new(level);
+        creature.add_weapon(weapons::Weapon::Totokia);
+        creature.set_name("Standard Character".to_string());
+
+        for a in Attribute::all() {
+            creature.set_base_attribute(a, 4);
+            creature.set_base_attribute(a, 0);
+            creature.set_base_attribute(a, 2);
+            creature.set_base_attribute(a, 1);
+            creature.set_base_attribute(a, 2);
+            creature.set_base_attribute(a, 0);
+        }
+
+        let character = Self {
+            class: Class::Fighter,
+            creature,
+        };
+
+        return character;
+    }
+
     pub fn to_latex(&self) -> String {
         return format!(
             "
