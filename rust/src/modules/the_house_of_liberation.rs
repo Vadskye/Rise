@@ -101,7 +101,7 @@ pub fn generate_module() -> Module {
             Hearing the attempts at that distance has a DV of 4.
             The party can accept a -2 penalty to the Strength check to increase the DV of this Awareness check by 2, but the Stealth skill doesn't help.
             Roll Awareness once for the guards during each round that the party spends attempting to break down the door.
-            Success means that they hear something odd and will send two guards to investigate if the meal is still happening, or four guards after the meal.
+            Success means that they hear something odd and will send two guards to investigate.
 
             Alternately, the door hinges can be disabled with a DV 13 Devices check.
             If the party doesn't have any thieves' tools since their gear was taken, they take a -5 penalty to this check, making it almost certainly impossible.
@@ -137,7 +137,7 @@ pub fn generate_module() -> Module {
             If the party lures the skeletons into Room 1 for the fight, the DV for the guards to hear the combat increases to 4.
             The party can further increase the DV to 6 if they close the doors of their cell.
             Roll Awareness once for the guards during each round of combat.
-            Success means that they hear something odd and will send two guards to investigate if the meal is still happening, or four guards after the meal.
+            Success means that they hear something odd and will send two guards to investigate.
 
             In the unlikely event that the skeletons defeat the party, they leave their unconscious or dead bodies in the hall and return to patrolling.
             After the meal is over, a guard from Room 4 will discover that the prisoners partially escaped and put them back in their cell.
@@ -187,7 +187,6 @@ pub fn generate_module() -> Module {
                 This large hall has four tables haphazardly placed around the room.
                 A total of eight humans are all in the room loudly sharing a meal together.
                 Most of them are armed with broadswords, but one has a warhammer and a holy symbol of Murdoc.
-                All of them are wearing scale mail.
             \\end<description>
 
             If the party reaches this room after the meal ends, use this description.
@@ -200,13 +199,7 @@ pub fn generate_module() -> Module {
             {human_cleric}
             {human_warrior}
 
-            If the guards hear anything odd outside of their room during the meal, they will send two warriors to investigate.
-            After the meal, they will all investigate any noises as a group.
-            If the guards notice the party enter the room, they will immediately attack, though it will take them all a standard action to draw their weapons.
-            Although they have orders to keep all prisoners alive, they will not fight using \\glossterm<subdual damage> unless they are confident that they are not in danger.
-
-            The cleric has a \\mitem<belt of vital persistence>, two \\mitem<potion of healing> items and 4 gp.
-            Each warrior carries 2 gp.
+            
 
 ",
 skeleton_guard=latex_by_name("Skeleton Guard"),

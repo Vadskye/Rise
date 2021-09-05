@@ -1,4 +1,3 @@
-#[derive(Copy, Clone)]
 pub enum ChallengeRating {
     Half,
     One,
@@ -13,8 +12,8 @@ impl ChallengeRating {
             Self::Half => -2,
             Self::One => -1,
             Self::Two => 0,
-            Self::Three => 0,
-            Self::Four => 1,
+            Self::Three => 1,
+            Self::Four => 2,
         }
     }
 
@@ -45,8 +44,8 @@ impl ChallengeRating {
             Self::Half => -2,
             Self::One => -1,
             Self::Two => 0,
-            Self::Three => 0,
-            Self::Four => 1,
+            Self::Three => 1,
+            Self::Four => 2,
         }
     }
 
