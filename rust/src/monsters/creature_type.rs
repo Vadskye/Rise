@@ -33,61 +33,11 @@ impl CreatureType {
     }
 
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
-        match self {
-            Self::Aberration => match defense {
-                Defense::Armor => 5,
-                Defense::Fortitude => 5,
-                Defense::Reflex => 4,
-                Defense::Mental => 6,
-            },
-            Self::Animal => match defense {
-                Defense::Armor => 5,
-                Defense::Fortitude => 6,
-                Defense::Reflex => 5,
-                Defense::Mental => 4,
-            },
-            Self::Animate => match defense {
-                Defense::Armor => 5,
-                Defense::Fortitude => 6,
-                Defense::Reflex => 4,
-                Defense::Mental => 5,
-            },
-            Self::Dragon => match defense {
-                Defense::Armor => 5,
-                Defense::Fortitude => 6,
-                Defense::Reflex => 3,
-                Defense::Mental => 6,
-            },
-            Self::Humanoid => match defense {
-                Defense::Armor => 5,
-                Defense::Fortitude => 5,
-                Defense::Reflex => 5,
-                Defense::Mental => 5,
-            },
-            Self::MagicalBeast => match defense {
-                Defense::Armor => 5,
-                Defense::Fortitude => 6,
-                Defense::Reflex => 5,
-                Defense::Mental => 4,
-            },
-            Self::MonstrousHumanoid => match defense {
-                Defense::Armor => 5,
-                Defense::Fortitude => 4,
-                Defense::Reflex => 5,
-                Defense::Mental => 6,
-            },
-            Self::Planeforged => match defense {
-                Defense::Armor => 5,
-                Defense::Fortitude => 5,
-                Defense::Reflex => 5,
-                Defense::Mental => 5,
-            },
-            Self::Undead => match defense {
-                Defense::Armor => 5,
-                Defense::Fortitude => 4,
-                Defense::Reflex => 5,
-                Defense::Mental => 6,
-            },
+        match defense {
+            Defense::Armor => 5,
+            Defense::Fortitude => 5,
+            Defense::Reflex => 5,
+            Defense::Mental => 5,
         }
     }
 
