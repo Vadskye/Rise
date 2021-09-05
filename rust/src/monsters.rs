@@ -4,12 +4,12 @@ mod animates;
 pub mod challenge_rating;
 pub mod creature_type;
 mod dragons;
+pub mod generate_stock_monsters;
 mod humanoids;
 mod knowledge;
-mod undead;
 pub mod monster_entry;
 pub mod monster_group;
-pub mod generate_stock_monsters;
+mod undead;
 
 use crate::core_mechanics::attacks::HasAttacks;
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
@@ -140,11 +140,16 @@ impl Monster {
         let mut creature = creature::Creature::new(level);
         creature.add_weapon(weapons::Weapon::Slam);
         creature.set_name("Standard Monster".to_string());
-        if let Some(value) = starting_attribute {
-            for a in Attribute::all() {
-                creature.set_base_attribute(a, value);
-            }
+        let starting_attribute = if let Some(a) = starting_attribute {
+            a
+        } else {
+            2
+        };
+
+        for a in Attribute::all() {
+            creature.set_base_attribute(a, starting_attribute);
         }
+
         let creature_type = if let Some(a) = creature_type {
             a
         } else {
