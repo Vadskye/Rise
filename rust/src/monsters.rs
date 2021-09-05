@@ -21,7 +21,7 @@ use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::{attacks, creature, movement_modes, sizes, HasCreatureMechanics};
-use crate::equipment::{weapons, HasEquipment};
+use crate::equipment::{weapons, HasWeapons};
 use crate::latex_formatting;
 use crate::monsters::knowledge::Knowledge;
 use crate::skills::{HasSkills, Skill, SkillCategory};
@@ -242,7 +242,7 @@ impl HasAttacks for Monster {
     }
 }
 
-impl HasEquipment for Monster {
+impl HasWeapons for Monster {
     fn add_weapon(&mut self, weapon: weapons::Weapon) {
         self.creature.add_weapon(weapon);
     }

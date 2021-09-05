@@ -440,7 +440,7 @@ impl Class {
                 usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
             },
             Self::Druid => ArmorProficiencies {
-                specific_armors: Some(vec![armor::Armor::Hide]),
+                specific_armors: Some(vec![armor::Armor::Hide(None)]),
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Fighter => ArmorProficiencies {
@@ -456,7 +456,7 @@ impl Class {
                 usage_classes: ArmorUsageClass::all(),
             },
             Self::Ranger => ArmorProficiencies {
-                specific_armors: Some(vec![armor::Armor::Hide]),
+                specific_armors: Some(vec![armor::Armor::Hide(None)]),
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Rogue => ArmorProficiencies {

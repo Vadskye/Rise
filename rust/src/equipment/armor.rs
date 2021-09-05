@@ -1,5 +1,69 @@
 use std::fmt;
 
+#[derive(Copy, Clone)]
+pub enum Armor {
+    Breastplate(Option<ArmorMaterial>),
+    ChainShirt(Option<ArmorMaterial>),
+    Hide(Option<ArmorMaterial>),
+}
+
+#[derive(Copy, Clone)]
+pub enum ArmorMaterial {
+    Deepforged,
+    Normal,
+    PureDeepforged,
+}
+
+impl ArmorMaterial {
+    fn dr_multiplier(&self) -> i32 {
+        match self {
+            Self::Deepforged => 2,
+            Self::Normal => 1,
+            Self::PureDeepforged => 4,
+        }
+    }
+}
+
+struct ArmorDefinition {
+    damage_resistance: i32,
+    defense: i32,
+    encumbrance: i32,
+    name: String,
+    speed_modifier: i32,
+}
+
+impl Armor {
+    fn definition(&self) -> ArmorDefinition {
+        match self {
+            Self::Breastplate(m) => ArmorDefinition {
+                damage_resistance: 6 * m.unwrap_or(ArmorMaterial::Normal).dr_multiplier(),
+                defense: 3,
+                encumbrance: 4,
+                name: "breastplate".to_string(),
+                speed_modifier: -5,
+            },
+            Self::ChainShirt(m) => ArmorDefinition {
+                damage_resistance: 3 * m.unwrap_or(ArmorMaterial::Normal).dr_multiplier(),
+                defense: 2,
+                encumbrance: 2,
+                name: "chain shirt".to_string(),
+                speed_modifier: 0,
+            },
+            Self::Hide(m) => ArmorDefinition {
+                damage_resistance: 5 * m.unwrap_or(ArmorMaterial::Normal).dr_multiplier(),
+                defense: 3,
+                encumbrance: 3,
+                name: "hide armor".to_string(),
+                speed_modifier: -5,
+            },
+        }
+    }
+
+    pub fn name(&self) -> String {
+        return self.definition().name;
+    }
+}
+
 pub enum ArmorUsageClass {
     Light,
     Medium,
@@ -8,7 +72,11 @@ pub enum ArmorUsageClass {
 
 impl ArmorUsageClass {
     pub fn all() -> Vec<Self> {
-        return vec![ArmorUsageClass::Light, ArmorUsageClass::Medium, ArmorUsageClass::Heavy];
+        return vec![
+            ArmorUsageClass::Light,
+            ArmorUsageClass::Medium,
+            ArmorUsageClass::Heavy,
+        ];
     }
 
     pub fn name(&self) -> &str {
@@ -23,24 +91,5 @@ impl ArmorUsageClass {
 impl fmt::Display for ArmorUsageClass {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}", self.name())
-    }
-}
-
-#[derive(Copy, Clone)]
-pub enum Armor {
-    Hide,
-}
-
-impl Armor {
-    pub fn name(&self) -> &str {
-        match self {
-            Self::Hide => "hide armor",
-        }
-    }
-
-    pub fn name_plural(&self) -> &str {
-        match self {
-            Self::Hide => "hide armor",
-        }
     }
 }

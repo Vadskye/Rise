@@ -5,7 +5,7 @@ use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::HasDefenses;
 use crate::core_mechanics::resources::HasResources;
 use crate::core_mechanics::{creature, defenses, latex, resources, HasCreatureMechanics};
-use crate::equipment::{weapons, HasEquipment};
+use crate::equipment::{weapons, HasWeapons};
 use crate::skills::{Skill, HasSkills};
 
 pub struct Character {
@@ -81,7 +81,7 @@ impl HasAttacks for Character {
     }
 }
 
-impl HasEquipment for Character {
+impl HasWeapons for Character {
     fn add_weapon(&mut self, weapon: weapons::Weapon) {
         self.creature.add_weapon(weapon);
     }
