@@ -16,17 +16,17 @@ This chapter describes the rules for monsters, and the combat statistics for a v
     \subsection{Challenge Rating}\label{Challenge Rating}
         Each monster has a \glossterm{challenge rating} that indicates its approximate strength within its level, ranging from 1/2 to 4.
         A monster's challenge rating is a guideline to how many of that monster should typically be present in an encounter (see \pcref{Encounter Balancing}).
-        This has several effects on the monster's statistics, as decribed in \trefnp{Challenge Rating Effects}.
+        This has several effects on the monster's statistics, as described in \trefnp{Challenge Rating Effects}.
 
         \begin{dtable}
             \lcaption{Challenge Rating Effects}
-            \begin{dtabularx}{\textwidth}{l l l X l l l}
-                \tb{CR} & \tb{HP}  & \tb{DR} & \tb{AP} & \tb{Accuracy} & \tb{Defenses} & \tb{Damage}\fn{1} \tableheaderrule
-                1/2     & \mult1/2 & \mult0  & 0       & \minus1       & \minus1       & \minus2d \\
-                1       & \mult1   & \mult0  & 1       & \minus1       & \minus1       & \minus1d \\
-                2       & \mult1   & \mult1  & 1       & \plus0        & \plus0        & \tdash   \\
-                3       & \mult2   & \mult2  & 2       & \plus0        & \plus0        & \tdash   \\
-                4       & \mult3   & \mult4  & 3       & \plus1        & \plus1        & \plus1d  \\
+            \begin{dtabularx}{\textwidth}{l l X X l l l}
+                \tb{CR} & \tb{Max Attribute} & \tb{HP}  & \tb{DR} & \tb{Accuracy} & \tb{Defenses} & \tb{Damage}\fn{1} \tableheaderrule
+                1/2     & 3 & \mult1/2 & \mult0  & \minus2       & \minus2       & \minus2d \\
+                1       & 4 & \mult1   & \mult0  & \minus1       & \minus1       & \minus1d \\
+                2       & 5 & \mult1   & \mult1  & \plus0        & \plus0        & \tdash   \\
+                3       & 5 & \mult2   & \mult2  & \plus0        & \plus0        & \tdash   \\
+                4       & 6 & \mult3   & \mult4  & \plus1        & \plus1        & \plus1d  \\
             \end{dtabularx}
             1. This modifier applies to all damage dice rolled by the monster, including both strikes and magical abilities. \\
         \end{dtable}
@@ -56,70 +56,77 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
     \subsection{Attributes}
         Each of a monster's base attributes can range from \minus9 to 3, as appropriate for the type of monster.
-        A monster's attributes scale with level in the same way as character attributes.
+        A monster's attributes scale with level in the same way as player character attributes.
         A monster can also have up to two attributes starting at 4 or 5.
         In general, a monster with higher starting attributes will be stronger, but not all monsters need to start with the same starting attribute total.
 
     \subsection{Level Scaling}
-        Monster level scaling is described in \tref{Monster Advancement}.
-        This summarizes the following effects:
+        Monsters have specific level scaling rules that differ from the rules for player characters.
+        In general, their automatic level scaling is designed to keep them on par with the power that player characters gain at higher levels, but without all of the complexity of high-level PCs.
+        High level monsters should have slightly higher base values for their attributes, though this is not quantified, since monster attributes can be highly varied.
+        They have the following specific benefits.
         \begin{itemize}
             % this compensates for monsters not being able to take the recover action
             \item At almost all levels, the base \glossterm{hit points} of a monster are 50\% higher than the base hit points of a player character
             % this compensates for monsters not having complicated armor mechanics
             \item At all levels, the base \glossterm{damage resistance} of a monster is three times the base damage resistance of a player character
-            \item Monsters gain a \plus1 bonus to all defenses at 3rd level and every 9 levels thereafter
+            \item Monsters gain a \plus1 bonus to all defenses at 3rd level, 12th level, and 21st level
             \item Monsters gain a \plus1 bonus to power with all abilities at 3rd level that gradually increases every 3 levels thereafter
             \item Monsters gain a \plus1d damage bonus with strikes at 4th level and every 3 levels thereafter
             \item Monsters gain a \plus1 bonus to their roll to automatically remove conditions at 6th level and 15th level
+            \item Monsters gain a \plus1 bonus to their maximum base attribute at 
             \item Monsters gain a \plus1 accuracy bonus at 9th level and 18th level
         \end{itemize}
-        These scaling values are designed to keep monsters at a similar power level to player characters without having to repetitively define specific bonuses for each monster.
-        In general, monsters that are designed to have unusually high or low values for any particular statistic define that with their attributes, though some monsters have more specific abilities.
+
+        Monster level scaling is summarized in \tref{Monster Advancement}.
+        The values in that table are accurate for CR 2 monsters, since they are individually the most similar to player characters and have the fewest multipliers and modifiers.
+        The statistics for monsters with a different CR can be extrapolated from those base values.
+
+        Monsters gain the same statistical benefits from their attributes that player characters do.
+        The values listed in the Monster Advancement table do not include bonuses from attributes.
+        When creating a new monster, make sure to decide its attributes appropriately, since they can have a large effect on the monster's overall power level and combat style.
+        In particular, attributes make monster defenses more varied.
+
+        The Monster Advancement table includes a Bite Damage column for convenient reference.
+        The monster bonus damage with strikes applies to all natural weapons, not just strikes.
+        However, bites are one of the most common monster natural weapons, and it's much more convenient to see a die value rather than a large +d value at high levels.
+        The damage value for other natural weapons, such as claws, can be derived from the bite damage listed.
 
     \begin{dtable*}
         \lcaption{Monster Advancement}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{HP}   & \tb{DR} & \tb{Power} & \tb{Strike Damage} & \tb{Extra Scaling} \tableheaderrule
-            1st        & 1                   & 16        & 6       & \tdash     & \tdash             & \tdash \\
-            2nd        & \tdash              & 18        & 9       & \tdash     & \tdash             & \tdash \\
-            3rd        & \tdash              & 19        & 9       & \plus1     & \tdash             & \plus1 defenses \\
-            4th        & 2                   & 22        & 9       & \plus1     & \plus1d            & \tdash \\
-            5th        & \tdash              & 25        & 12      & \plus1     & \plus1d            & \tdash \\
-            6th        & \tdash              & 28        & 12      & \plus2     & \plus1d            & \plus1 condition removal \\
-            7th        & 3                   & 33        & 15      & \plus2     & \plus2d            & \tdash \\
-            8th        & \tdash              & 37        & 18      & \plus2     & \plus2d            & \tdash \\
-            9th        & \tdash              & 42        & 21      & \plus3     & \plus2d            & \plus1 accuracy \\
-            10th       & 4                   & 46        & 24      & \plus3     & \plus3d            & \tdash \\
-            11th       & \tdash              & 52        & 27      & \plus3     & \plus3d            & \tdash \\
-            12th       & \tdash              & 58        & 30      & \plus4     & \plus3d            & \plus1 defenses \\
-            13th       & 5                   & 66        & 33      & \plus4     & \plus4d            & \tdash \\
-            14th       & \tdash              & 75        & 36      & \plus4     & \plus4d            & \tdash \\
-            15th       & \tdash              & 84        & 42      & \plus6     & \plus4d            & \plus1 condition removal \\
-            16th       & 6                   & 94        & 45      & \plus6     & \plus5d            & \tdash \\
-            17th       & \tdash              & 105       & 51      & \plus6     & \plus5d            & \tdash \\
-            18th       & \tdash              & 115       & 57      & \plus8     & \plus5d            & \plus1 accuracy \\
-            19th       & 7                   & 132       & 66      & \plus8     & \plus6d            & \tdash \\
-            20th       & \tdash              & 150       & 75      & \plus8     & \plus6d            & \tdash \\
-            21st       & \tdash              & 175\fn{5} & 84      & \plus12    & \plus6d            & \plus1 defeness \\
+            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{HP} & \tb{DR} & \tb{Accuracy} & \tb{Defenses} & \tb{Bite Damage}\fn{3} \tableheaderrule
+            1st        & 1                   & 16      & 6       & \plus0        & 5             & 1d10        \\
+            2nd        & 1                   & 18      & 9       & \plus1        & 6             & 1d10        \\
+            3rd        & 1                   & 19      & 9       & \plus1        & 7             & 1d10\plus1  \\
+            4th        & 2                   & 22      & 9       & \plus2        & 8             & 2d6\plus1   \\
+            5th        & 2                   & 25      & 12      & \plus2        & 8             & 2d6\plus1   \\
+            6th        & 2                   & 28      & 12      & \plus3        & 9             & 2d6\plus2   \\
+            7th        & 3                   & 33      & 15      & \plus3        & 9             & 2d8\plus2   \\
+            8th        & 3                   & 37      & 18      & \plus4        & 10            & 2d8\plus2   \\
+            9th        & 3                   & 42      & 21      & \plus5        & 10            & 2d8\plus3   \\
+            10th       & 4                   & 46      & 24      & \plus6        & 11            & 2d10\plus3  \\
+            11th       & 4                   & 52      & 27      & \plus6        & 11            & 2d10\plus3  \\
+            12th       & 4                   & 58      & 30      & \plus7        & 13            & 2d10\plus4  \\
+            13th       & 5                   & 66      & 33      & \plus7        & 13            & 4d6\plus4   \\
+            14th       & 5                   & 75      & 36      & \plus8        & 14            & 4d6\plus4   \\
+            15th       & 5                   & 84      & 42      & \plus8        & 14            & 4d6\plus6   \\
+            16th       & 6                   & 94      & 45      & \plus9        & 15            & 4d8\plus6   \\
+            17th       & 6                   & 105     & 51      & \plus9        & 15            & 4d8\plus6   \\
+            18th       & 6                   & 115     & 57      & \plus11       & 16            & 4d8\plus8   \\
+            19th       & 7                   & 132     & 66      & \plus11       & 16            & 4d10\plus8  \\
+            20th       & 7                   & 150     & 75      & \plus12       & 17            & 4d10\plus8  \\
+            21st       & 7                   & 175     & 84      & \plus12       & 18            & 4d10\plus12 \\
         \end{dtabularx}
-        1. For each level beyond 21, a monster increases its maximum hit points by 25 and its maximum damage resistance by 12. \\
+        1. The values given in this table are accurate for CR 2 monsters. \\
+        2. Assuming the monster has no free hands (see \pcref{Monster Natural Weapon Bonuses}). \\
+        % 3. For each level beyond 21, a monster increases its maximum hit points by 25 and its maximum damage resistance by 12. \\
     \end{dtable*}
-
-    \subsection{Monster Armor}
-        In general, monsters gain Armor Defense bonuses ranging from \plus2 to \plus4 in the same way that player characters do.
-        Of course, not all monsters wear physical armor.
-        The narrative justification is that the bonus is caused by their scales, an unusually tough hide, or similar effects.
-
-        Monster damage resistance is generally calculated more simply than player damage resistance.
-        Player characters can have damage resistance bonuses from a variety of sources, especially armor.
-        Since the vast majority of monsters do not wear armor, tracking their resistances explicitly with armor-equivalent mechanics would just be unnecessary bookkeeping.
-        Instead, monsters have twice the normal base value for their damage resistance, and high CR monsters have additional multipliers on top of that.
 
     \subsection{Monster Natural Weapon Bonuses}
         Monsters do not use the \textit{offhand strike} ability in combat.
         In general, rolling offhand strikes for each monster in a combat isn't worth the time and effort.
-        Instead, if a monster has two copies of the same light natural weapon and the free hands to use both, it gains a \plus1 accuracy bonus with that natural weapon.
+        Instead, if a monster has two copies of the same light natural weapon and the physical ability to use both simultaneously, it gains a \plus1 accuracy bonus with that natural weapon.
 
         In addition, monsters that do not use hands for any purpose gain a \plus1d damage bonus with all strikes.
         The base statistics for natural weapons that do not require free hands, like bite and gore, are balanced for player usage.
