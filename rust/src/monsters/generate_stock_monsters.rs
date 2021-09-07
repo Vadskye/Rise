@@ -1,4 +1,4 @@
-use crate::core_mechanics::sizes::Size;
+use crate::core_mechanics::Size;
 use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType;

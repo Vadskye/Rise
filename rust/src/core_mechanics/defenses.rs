@@ -1,7 +1,5 @@
-use crate::core_mechanics::attributes::Attribute;
+use crate::core_mechanics::{Attribute, Debuff, DamageType};
 use std::fmt;
-use crate::core_mechanics::debuffs::Debuff;
-use crate::core_mechanics::damage_types::DamageType;
 
 pub trait HasDefenses {
     fn calc_defense(&self, defense: &Defense) -> i32;
