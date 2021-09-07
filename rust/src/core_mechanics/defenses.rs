@@ -5,7 +5,7 @@ pub trait HasDefenses {
     fn calc_defense(&self, defense: &Defense) -> i32;
 }
 
-#[derive(Clone)]
+#[derive(Clone, Copy, PartialEq)]
 pub enum Defense {
     Armor,
     Fortitude,

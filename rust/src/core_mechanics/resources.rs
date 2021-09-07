@@ -2,6 +2,7 @@ pub trait HasResources {
     fn calc_resource(&self, resource: &Resource) -> i32;
 }
 
+#[derive(Clone, Copy, PartialEq)]
 pub enum Resource {
     AttunementPoint,
     FatigueTolerance,
