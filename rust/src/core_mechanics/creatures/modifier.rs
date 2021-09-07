@@ -7,10 +7,13 @@ pub enum Modifier {
     Defense(Defense, i32),
     Encumbrance(i32),
     HitPoints(i32),
+    Initiative(i32),
     MagicalPower(i32),
     MundanePower(i32),
     Resource(Resource, i32),
     Skill(Skill, i32),
+    StrikeDamageDice(i32),
+    VitalRoll(i32),
 }
 
 #[derive(PartialEq)]
@@ -20,10 +23,13 @@ pub enum ModifierType {
     Defense(Defense),
     Encumbrance,
     HitPoints,
+    Initiative,
     MagicalPower,
     MundanePower,
     Resource(Resource),
     Skill(Skill),
+    StrikeDamageDice,
+    VitalRoll,
 }
 
 impl Modifier {
@@ -34,10 +40,13 @@ impl Modifier {
             Self::Defense(d, _) => ModifierType::Defense(*d),
             Self::Encumbrance(_) => ModifierType::Encumbrance,
             Self::HitPoints(_) => ModifierType::HitPoints,
+            Self::Initiative(_) => ModifierType::Initiative,
             Self::MagicalPower(_) => ModifierType::MagicalPower,
             Self::MundanePower(_) => ModifierType::MundanePower,
             Self::Resource(r, _) => ModifierType::Resource(*r),
             Self::Skill(s, _) => ModifierType::Skill(s.clone()),
+            Self::StrikeDamageDice(_) => ModifierType::StrikeDamageDice,
+            Self::VitalRoll(_) => ModifierType::VitalRoll,
         }
     }
 
@@ -48,10 +57,13 @@ impl Modifier {
             Self::Defense(_, v) => v,
             Self::Encumbrance(v) => v,
             Self::HitPoints(v) => v,
+            Self::Initiative(v) => v,
             Self::MagicalPower(v) => v,
             Self::MundanePower(v) => v,
             Self::Resource(_, v) => v,
             Self::Skill(_, v) => v,
+            Self::StrikeDamageDice(v) => v,
+            Self::VitalRoll(v) => v,
         };
         return *value;
     }

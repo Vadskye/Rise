@@ -1,4 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::creatures::Modifier;
+use crate::core_mechanics::Resource;
 
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -9,6 +11,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::FatigueTolerance, 2)]),
         },
         RankAbility {
             name: "Discipline",
@@ -31,6 +34,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
         \end{instantability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Enduring Discipline",
@@ -42,6 +46,10 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
         In addition, you gain a \plus1 bonus to \glossterm{vital rolls} (see \pcref{Vital Rolls}).
 
                 ",
+            modifiers: Some(vec![
+                Modifier::Resource(Resource::FatigueTolerance, 1),
+                Modifier::VitalRoll(1),
+            ]),
         },
         RankAbility {
             name: "Disciplined Force",
@@ -52,6 +60,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
         You gain a \plus1d bonus to your damage with all weapons.
 
                 ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Disciplined Reaction",
@@ -62,6 +71,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to future \glossterm{vital rolls}.
                 You suffer their normal effects in the following round.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Supreme Enduring Discipline",
@@ -71,6 +81,10 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 The bonus from your \textit{enduring discipline} ability increases to \plus4.
                 In addition, the bonus to vital rolls from your \textit{greater enduring discipline} ability increases to \plus2.
             ",
+            modifiers: Some(vec![
+                Modifier::Resource(Resource::FatigueTolerance, 1),
+                Modifier::VitalRoll(1),
+            ]),
         },
         RankAbility {
             name: "Greater Disciplined Force",
@@ -79,6 +93,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{disciplined force} ability increases to \plus2d.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Greater Disciplined Reaction",
@@ -88,6 +103,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 The delay from your \textit{disciplined reaction} ability increases by an additional round.
                 You suffer their normal effects after that time.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -101,6 +117,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You reduce the \glossterm{encumbrance} of body armor you wear by 1.
             ",
+            modifiers: Some(vec![Modifier::Encumbrance(-1)]),
         },
         RankAbility {
             name: "Weapon Training",
@@ -121,6 +138,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         \end{instantability}
 
                 ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Equipment Efficiency",
@@ -131,17 +149,20 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         You can only use this attunement point to \glossterm{attune} to magic weapons and magic armor.
 
                 ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Greater Armor Expertise",
             is_magical: false,
             rank: 3,
             description: r"
-        
-        The penalty reduction from your \textit{armor expertise} ability increases to 2.
-        In addition, you treat body armor were one usage class lighter than normal when doing so would be beneficial for you (see \pcref{Armor Usage Classes}).
-
-                ",
+                The penalty reduction from your \textit{armor expertise} ability increases to 2.
+                In addition, you reduce the movement speed penalty from body armor you wear by 5 feet.
+                Your base Dexterity also contributes more to your Armor defense than normal for your armor.
+                A multiplier of \mult1/2 becomes \mult1, and a multiplier of \mult0 becomes a \mult1/2.
+            ",
+            // TODO: figure out how to represent dexterity and speed
+            modifiers: Some(vec![Modifier::Encumbrance(-1)]),
         },
         RankAbility {
             name: "Weapon Expertise",
@@ -151,6 +172,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
          You gain a \plus1d bonus to your damage with all weapons.
 
                 ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Greater Equipment Efficiency",
@@ -161,17 +183,18 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         In addition, you can use the attunement points from that ability to attune to any magic item, not just weapons and armor.
 
                 ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Supreme Armor Expertise",
             is_magical: false,
             rank: 6,
             description: r"
-        
-        The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 3.
-        In addition, you treat body armor as if it were an additional usage class lighter than normal when doing so would be beneficial for you.
-
-                ",
+                The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 3.
+                In addition, the movement speed penalty reduction from your \textit{greater armor expertise} ability improves to 10 feet.
+                You also always apply your full base Dexterity to your Armor defense, regardless of the armor you use.
+            ",
+            modifiers: Some(vec![Modifier::Encumbrance(-1)]),
         },
         RankAbility {
             name: "Greater Weapon Expertise",
@@ -180,10 +203,12 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{weapon expertise} ability increases to \plus3d.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(2)]),
         },
     ];
 }
 
+// Every rank within this archetype applies a HP bonus to represent Martial Expertise
 pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
@@ -193,6 +218,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a bonus equal to twice your rank in this archetype to your \glossterm{hit points} (minimum 1).
             ",
+            modifiers: Some(vec![Modifier::HitPoints(1)]),
         },
         RankAbility {
             name: "Combat Styles",
@@ -212,6 +238,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             When you gain access to a new \glossterm{rank} in this archetype,
                 you can exchange any number of maneuvers you know for other maneuvers, including maneuvers of the higher rank.
                         ",
+            modifiers: Some(vec![Modifier::HitPoints(1)]),
         },
         RankAbility {
             name: "Combat Style Rank",
@@ -222,6 +249,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             This gives you access to maneuvers that require a minimum rank of 2.
 
                 ",
+            modifiers: Some(vec![Modifier::HitPoints(2)]),
         },
         RankAbility {
             name: "Martial Force",
@@ -230,6 +258,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
  You gain a \plus1d bonus to your damage with all weapons.
                         ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Combat Style Rank",
@@ -240,6 +269,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
 
                 ",
+            modifiers: Some(vec![Modifier::HitPoints(2)]),
         },
         RankAbility {
             name: "Glancing Strikes",
@@ -249,6 +279,8 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
              Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
 This is called a \glossterm{glancing blow}.
                         ",
+            // TODO: figure out how to represent glancing blows
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank",
@@ -259,6 +291,7 @@ This is called a \glossterm{glancing blow}.
             This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
 
                 ",
+            modifiers: Some(vec![Modifier::HitPoints(2)]),
         },
         RankAbility {
             name: "Martial Maneuver",
@@ -267,6 +300,7 @@ This is called a \glossterm{glancing blow}.
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (5)",
@@ -276,6 +310,7 @@ This is called a \glossterm{glancing blow}.
                 You become a rank 5 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 5.
             ",
+            modifiers: Some(vec![Modifier::HitPoints(2)]),
         },
         RankAbility {
             name: "Greater Martial Force",
@@ -284,6 +319,7 @@ This is called a \glossterm{glancing blow}.
             description: r"
                 The bonus from your \textit{martial force} ability increases to \plus2d.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Combat Style Rank (6)",
@@ -293,6 +329,7 @@ This is called a \glossterm{glancing blow}.
                 You become a rank 6 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 6.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Martial Expertise",
@@ -301,6 +338,8 @@ This is called a \glossterm{glancing blow}.
             description: r"
                 The bonus from your \textit{martial expertise} ability increases to three times your rank in this archetype.
             ",
+            // Rank 5 HP: +10. Rank 6 HP: +18.
+            modifiers: Some(vec![Modifier::HitPoints(8)]),
         },
         RankAbility {
             name: "Combat Style Rank (7)",
@@ -310,6 +349,7 @@ This is called a \glossterm{glancing blow}.
                 You become a rank 7 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 7.
             ",
+            modifiers: Some(vec![Modifier::HitPoints(3)]),
         },
         RankAbility {
             name: "Martial Maneuver",
@@ -318,10 +358,12 @@ This is called a \glossterm{glancing blow}.
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
             ",
+            modifiers: None,
         },
     ];
 }
 
+// TODO: This archetype has several abilities that are hard to represent numerically
 pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
@@ -329,9 +371,9 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
-
-                ",
+                Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Guarding Strike",
@@ -351,6 +393,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         \end{durationability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Protect",
@@ -370,6 +413,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         \end{durationability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Threatening Influence",
@@ -380,6 +424,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         However, it does not affect creatures who are moving in a straight line directly towards you.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Sentinel's Challenge",
@@ -396,6 +441,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         \end{durationability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Sentinel's Force",
@@ -405,6 +451,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
          You gain a \plus1d bonus to your damage with all weapons.
 
                 ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Greater Protect",
@@ -414,6 +461,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
          The bonus from your \textit{protect} ability increases to \plus3.
 
                 ",
+                modifiers: None,
         },
         RankAbility {
             name: "Supreme Threatening Influence",
@@ -423,6 +471,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
          Your \textit{threatening influence} ability applies \glossterm{difficult terrain} twice, causing enemies to move at one quarter speed.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Sentinel's Force",
@@ -431,6 +480,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{sentinel's force} ability increases to \plus2d.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Demanding Challenger",
@@ -439,6 +489,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Each creature that is suffering penalties for being \goaded by you takes an additional -2 \glossterm{accuracy} penalty against creatures other than you.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -452,6 +503,8 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You and each \glossterm{ally} who can see or hear you gain a \plus1 bonus to initiative checks.
             ",
+            // TODO: represent ally bonus?
+            modifiers: Some(vec![Modifier::Initiative(1)]),
         },
         RankAbility {
             name: "Battle Tactics",
@@ -554,6 +607,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Tactical Precision",
@@ -562,6 +616,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to \glossterm{accuracy}.
             ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Greater Reactive Tactics",
@@ -570,6 +625,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{reactive tactics} ability increases to \plus2.
             ",
+            modifiers: Some(vec![Modifier::Initiative(1)]),
         },
         RankAbility {
             name: "Greater Battle Tactics",
@@ -578,6 +634,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 All of your \textit{battle tactics} abilities gain the \abilitytag{Swift} tag, so their bonuses take effect in the phase that you active them.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Tactical Precision",
@@ -586,6 +643,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{tactical precision} ability increases to \plus2.
             ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Supreme Reactive Tactics",
@@ -594,6 +652,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{reactive tactics} ability increases to \plus3.
             ",
+            modifiers: Some(vec![Modifier::Initiative(1)]),
         },
         RankAbility {
             name: "Supreme Battle Tactics",
@@ -605,6 +664,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 Bonuses from multiple battle tactics, such as the bonus to Armor defense from the \textit{duck and cover} and \textit{group up} abilities, do not stack.
                 However, each creature can benefit from both battle tactics at once.
             ",
+            modifiers: None,
         },
     ];
 }
