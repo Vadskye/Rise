@@ -1,4 +1,4 @@
-use crate::core_mechanics::{damage_dice, damage_types, debuffs};
+use crate::core_mechanics::{DamageDice, DamageType, Debuff};
 use crate::core_mechanics::creatures::HasCreatureMechanics;
 use crate::equipment::weapons;
 use crate::latex_formatting;
@@ -14,8 +14,8 @@ pub enum AttackEffect {
 
 #[derive(Clone)]
 pub struct DamageEffect {
-    pub damage_dice: damage_dice::DamageDice,
-    pub damage_types: Vec<damage_types::DamageType>,
+    pub damage_dice: DamageDice,
+    pub damage_types: Vec<DamageType>,
     pub damage_modifier: i32,
     pub lose_hp_effects: Option<Vec<AttackEffect>>,
     pub power_multiplier: f64,
@@ -24,14 +24,14 @@ pub struct DamageEffect {
 
 #[derive(Clone)]
 pub struct DebuffEffect {
-    pub debuffs: Vec<debuffs::Debuff>,
+    pub debuffs: Vec<Debuff>,
     pub duration: AttackEffectDuration,
 }
 
 #[derive(Clone)]
 pub struct PoisonEffect {
-    pub stage1: Vec<debuffs::Debuff>,
-    pub stage3_debuff: Option<Vec<debuffs::Debuff>>,
+    pub stage1: Vec<Debuff>,
+    pub stage3_debuff: Option<Vec<Debuff>>,
     pub stage3_vital: Option<VitalWoundEffect>,
 }
 
@@ -47,9 +47,9 @@ pub enum AttackEffectDuration {
 }
 
 impl AttackEffect {
-    pub fn area_damage(rank: i32, damage_types: Vec<damage_types::DamageType>) -> Self {
+    pub fn area_damage(rank: i32, damage_types: Vec<DamageType>) -> Self {
         return Self::Damage(DamageEffect {
-            damage_dice: damage_dice::DamageDice::new(damage_dice::D8 + rank - 1),
+            damage_dice: DamageDice::new(DamageDice::d8() + rank - 1),
             damage_modifier: 0,
             damage_types,
             lose_hp_effects: None,

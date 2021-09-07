@@ -1,13 +1,11 @@
 use crate::classes::Class;
 use crate::core_mechanics::creatures::attacks::{self, HasAttacks};
-use crate::core_mechanics::creatures::{creature, HasCreatureMechanics, latex};
-use crate::core_mechanics::attributes::{Attribute, HasAttributes};
-use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
-use crate::core_mechanics::defenses::HasDefenses;
-use crate::core_mechanics::resources::HasResources;
-use crate::core_mechanics::{defenses, resources};
+use crate::core_mechanics::creatures::{creature, latex, HasCreatureMechanics};
+use crate::core_mechanics::{
+    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, Resource,
+};
 use crate::equipment::{weapons, HasWeapons};
-use crate::skills::{Skill, HasSkills};
+use crate::skills::{HasSkills, Skill};
 
 pub struct Character {
     class: Class,
@@ -59,10 +57,10 @@ impl Character {
             creature_latex = latex::format_creature(self),
             class_name = self.class.name(),
             level = self.creature.level,
-            ap = self.calc_resource(resources::AP),
-            ft = self.calc_resource(resources::FT),
-            ip = self.calc_resource(resources::IP),
-            sp = self.calc_resource(resources::SP),
+            ap = self.calc_resource(&Resource::AttunementPoint),
+            ft = self.calc_resource(&Resource::FatigueTolerance),
+            ip = self.calc_resource(&Resource::InsightPoint),
+            sp = self.calc_resource(&Resource::TrainedSkill),
         );
     }
 }
@@ -126,23 +124,23 @@ impl HasDamageAbsorption for Character {
 }
 
 impl HasDefenses for Character {
-    fn calc_defense(&self, defense: &defenses::Defense) -> i32 {
+    fn calc_defense(&self, defense: &Defense) -> i32 {
         let mut value = self.creature.calc_defense(defense) + self.class.defense_bonus(defense);
         match defense {
             // TODO: check for light armor
-            defenses::Defense::Armor => {
+            Defense::Armor => {
                 value = value
                     + self.get_base_attribute(&Attribute::Dexterity) / 2
                     + self.get_base_attribute(&Attribute::Constitution) / 2;
             }
-            _ => {},
+            _ => {}
         };
         return value;
     }
 }
 
 impl HasResources for Character {
-    fn calc_resource(&self, resource: &'static resources::Resource) -> i32 {
+    fn calc_resource(&self, resource: &Resource) -> i32 {
         return self.creature.calc_resource(resource) + self.class.resource_bonus(resource);
     }
 }

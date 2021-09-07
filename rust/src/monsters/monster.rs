@@ -1,14 +1,11 @@
 use crate::core_mechanics::creatures::attacks::HasAttacks;
 use crate::core_mechanics::creatures::{attacks, creature, HasCreatureMechanics};
-use crate::core_mechanics::attributes::{Attribute, HasAttributes};
-use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
-use crate::core_mechanics::defenses::{
-    Defense, HasDefenses, SpecialDefenseModifier, SpecialDefenseType,
+use crate::core_mechanics::{
+    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources,
+    MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier,
+    SpecialDefenseType,
+    SpeedCategory,
 };
-use crate::core_mechanics::passive_abilities::PassiveAbility;
-use crate::core_mechanics::resources::{self, HasResources};
-use crate::core_mechanics::senses::Sense;
-use crate::core_mechanics::{movement_modes, sizes};
 use crate::equipment::{weapons, HasWeapons};
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
@@ -22,7 +19,7 @@ pub struct Monster {
     pub creature_type: CreatureType,
     pub description: Option<String>,
     pub knowledge: Option<Knowledge>,
-    pub movement_modes: Vec<movement_modes::MovementMode>,
+    pub movement_modes: Vec<MovementMode>,
 }
 
 pub struct FullMonsterDefinition {
@@ -33,11 +30,11 @@ pub struct FullMonsterDefinition {
     pub description: Option<&'static str>,
     pub knowledge: Option<Knowledge>,
     pub level: i32,
-    pub movement_modes: Option<Vec<movement_modes::MovementMode>>,
+    pub movement_modes: Option<Vec<MovementMode>>,
     pub name: String,
     pub passive_abilities: Option<Vec<PassiveAbility>>,
     pub senses: Option<Vec<Sense>>,
-    pub size: sizes::Size,
+    pub size: Size,
     pub special_attacks: Option<Vec<attacks::Attack>>,
     pub special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     pub trained_skills: Option<Vec<Skill>>,
@@ -111,8 +108,8 @@ impl Monster {
             movement_modes: if let Some(m) = def.movement_modes {
                 m
             } else {
-                vec![movement_modes::MovementMode::Land(
-                    movement_modes::SpeedCategory::Normal,
+                vec![MovementMode::Land(
+                    SpeedCategory::Normal,
                 )]
             },
         };
@@ -150,8 +147,8 @@ impl Monster {
             creature_type,
             description: None,
             knowledge: None,
-            movement_modes: vec![movement_modes::MovementMode::Land(
-                movement_modes::SpeedCategory::Normal,
+            movement_modes: vec![MovementMode::Land(
+                SpeedCategory::Normal,
             )],
         };
     }
@@ -272,7 +269,7 @@ impl HasDefenses for Monster {
 }
 
 impl HasResources for Monster {
-    fn calc_resource(&self, resource: &'static resources::Resource) -> i32 {
+    fn calc_resource(&self, resource: &Resource) -> i32 {
         return self.creature.calc_resource(resource);
     }
 }

@@ -1,5 +1,5 @@
 pub trait HasResources {
-    fn calc_resource(&self, resource: &'static Resource) -> i32;
+    fn calc_resource(&self, resource: &Resource) -> i32;
 }
 
 pub enum Resource {
@@ -8,11 +8,6 @@ pub enum Resource {
     InsightPoint,
     TrainedSkill,
 }
-
-pub static AP: &Resource = &Resource::AttunementPoint;
-pub static FT: &Resource = &Resource::FatigueTolerance;
-pub static IP: &Resource = &Resource::InsightPoint;
-pub static SP: &Resource = &Resource::TrainedSkill;
 
 impl Resource {
     pub fn name(&self) -> &str {

@@ -267,7 +267,7 @@ impl HasDefenses for Creature {
 }
 
 impl HasResources for Creature {
-    fn calc_resource(&self, resource: &'static resources::Resource) -> i32 {
+    fn calc_resource(&self, resource: &resources::Resource) -> i32 {
         match resource {
             resources::Resource::AttunementPoint => max(0, (self.level + 1) / 6),
             resources::Resource::FatigueTolerance => {

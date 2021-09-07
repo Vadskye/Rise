@@ -1,6 +1,5 @@
 use crate::classes::Class;
-use crate::core_mechanics::attributes::Attribute;
-use crate::core_mechanics::defenses::Defense;
+use crate::core_mechanics::{Attribute, Defense};
 use crate::latex_formatting;
 use numerics::Numerics;
 

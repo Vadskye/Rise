@@ -4,19 +4,14 @@ use crate::core_mechanics::creatures::attack_effects::{
 use crate::core_mechanics::creatures::attacks::{
     AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
 };
-use crate::core_mechanics::damage_dice;
-use crate::core_mechanics::damage_types::{DamageType, DamageTypeEffect};
-use crate::core_mechanics::debuffs::Debuff;
-use crate::core_mechanics::defenses::{Defense, SpecialDefenseModifier};
-use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
-use crate::core_mechanics::passive_abilities::PassiveAbility;
-use crate::core_mechanics::senses::Sense;
-use crate::core_mechanics::{damage_types, debuffs, defenses};
+use crate::core_mechanics::{
+    DamageDice, DamageType, DamageTypeEffect, Debuff, Defense, FlightManeuverability, MovementMode,
+    PassiveAbility, Sense, Size, SpecialDefenseModifier, SpeedCategory,
+};
 use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::core_mechanics::sizes::Size;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
 use crate::monsters::knowledge::Knowledge;

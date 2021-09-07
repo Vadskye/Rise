@@ -1,4 +1,4 @@
-use crate::core_mechanics::sizes::Size;
+use crate::core_mechanics::Size;
 
 pub enum MovementMode {
     Climb(SpeedCategory),
