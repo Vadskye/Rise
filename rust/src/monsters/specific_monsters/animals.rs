@@ -1,8 +1,9 @@
-use crate::core_mechanics::attacks::{AreaSize, AreaTargets, Attack, AttackTargeting, UsageTime};
+use crate::core_mechanics::creatures::attack_effects;
+use crate::core_mechanics::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackTargeting, UsageTime};
 use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::senses::Sense;
-use crate::core_mechanics::{attack_effects, damage_types, debuffs, defenses};
+use crate::core_mechanics::{damage_types, debuffs, defenses};
 use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;

@@ -1,4 +1,4 @@
-use rise::core_mechanics::combat::run_combat;
+use rise::simulation::combat::run_combat;
 use rise::monsters;
 use rise::monsters::ChallengeRating;
 

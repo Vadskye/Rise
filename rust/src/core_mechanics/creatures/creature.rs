@@ -1,14 +1,13 @@
-use crate::core_mechanics::attacks::{self, HasAttacks};
+use crate::core_mechanics::creatures::attacks::{self, HasAttacks};
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{self, HasDefenses, SpecialDefenseModifier};
-use crate::core_mechanics::latex;
+use crate::core_mechanics::creatures::{latex, HasCreatureMechanics};
 use crate::core_mechanics::movement_modes;
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::sizes;
-use crate::core_mechanics::HasCreatureMechanics;
 use crate::equipment::{weapons, HasWeapons};
 use crate::skills::{HasSkills, Skill};
 use std::cmp::{max, min};

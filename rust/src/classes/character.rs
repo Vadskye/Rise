@@ -1,10 +1,11 @@
 use crate::classes::Class;
-use crate::core_mechanics::attacks::{self, HasAttacks};
+use crate::core_mechanics::creatures::attacks::{self, HasAttacks};
+use crate::core_mechanics::creatures::{creature, HasCreatureMechanics, latex};
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::HasDefenses;
 use crate::core_mechanics::resources::HasResources;
-use crate::core_mechanics::{creature, defenses, latex, resources, HasCreatureMechanics};
+use crate::core_mechanics::{defenses, resources};
 use crate::equipment::{weapons, HasWeapons};
 use crate::skills::{Skill, HasSkills};
 
