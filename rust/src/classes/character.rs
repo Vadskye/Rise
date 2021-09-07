@@ -1,6 +1,6 @@
 use crate::classes::Class;
 use crate::core_mechanics::creatures::attacks::{self, HasAttacks};
-use crate::core_mechanics::creatures::{creature, latex, HasCreatureMechanics};
+use crate::core_mechanics::creatures::{creature, latex, HasCreatureMechanics, Modifier, HasModifiers, ModifierType};
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, Resource,
 };
@@ -62,6 +62,20 @@ impl Character {
             ip = self.calc_resource(&Resource::InsightPoint),
             sp = self.calc_resource(&Resource::TrainedSkill),
         );
+    }
+}
+
+impl HasModifiers for Character {
+    fn add_modifier(&mut self, modifier: Modifier) {
+        self.creature.add_modifier(modifier);
+    }
+
+    fn get_modifiers(&self) -> Vec<&Modifier> {
+        return self.creature.get_modifiers();
+    }
+
+    fn calc_total_modifier(&self, mt: ModifierType) -> i32 {
+        return self.creature.calc_total_modifier(mt);
     }
 }
 
