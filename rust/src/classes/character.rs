@@ -4,7 +4,7 @@ use crate::core_mechanics::creatures::{creature, latex, HasCreatureMechanics};
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, Resource,
 };
-use crate::equipment::{HasWeapons, Weapon};
+use crate::equipment::{HasWeapons, Weapon, HasArmor, Armor};
 use crate::skills::{HasSkills, Skill};
 
 pub struct Character {
@@ -100,6 +100,20 @@ impl HasAttacks for Character {
 
     fn calc_power(&self, is_magical: bool) -> i32 {
         return self.creature.calc_power(is_magical);
+    }
+}
+
+impl HasArmor for Character {
+    fn add_armor(&mut self, armor: Armor) {
+        self.creature.add_armor(armor);
+    }
+
+    fn get_armor(&self) -> Vec<&Armor> {
+        return self.creature.get_armor();
+    }
+
+    fn calc_encumbrance(&self) -> i32 {
+        return self.creature.calc_encumbrance();
     }
 }
 
