@@ -162,7 +162,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 A multiplier of \mult1/2 becomes \mult1, and a multiplier of \mult0 becomes a \mult1/2.
             ",
             // TODO: figure out how to represent dexterity and speed
-            modifiers: Some(vec![Modifier::Encumbrance(-1)]),
+            modifiers: Some(vec![Modifier::Encumbrance(-1), Modifier::MovementSpeed(5)]),
         },
         RankAbility {
             name: "Weapon Expertise",
