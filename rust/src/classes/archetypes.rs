@@ -1,5 +1,4 @@
-use crate::classes::archetype_rank_abilities;
-use crate::classes::Class;
+use crate::classes::{archetype_rank_abilities, Class};
 use titlecase::titlecase;
 
 pub enum ClassArchetype {
@@ -441,75 +440,75 @@ impl ClassArchetype {
             short_description = self.short_description(),
         );
     }
-}
 
-pub fn all_archetypes() -> Vec<ClassArchetype> {
-    return vec![
-        // Barbarian
-        ClassArchetype::BattleforgedResilience,
-        ClassArchetype::Battlerager,
-        ClassArchetype::OutlandSavage,
-        ClassArchetype::PrimalWarrior,
-        ClassArchetype::Totemist,
-        // Cleric
-        ClassArchetype::ClericDivineMagic,
-        ClassArchetype::DivineSpellMastery,
-        ClassArchetype::DomainInfluence,
-        ClassArchetype::Healer,
-        ClassArchetype::Preacher,
-        // Druid
-        ClassArchetype::Elementalist,
-        ClassArchetype::NatureMagic,
-        ClassArchetype::NatureSpellMastery,
-        ClassArchetype::Shifter,
-        ClassArchetype::Wildspeaker,
-        // Fighter
-        ClassArchetype::CombatDiscipline,
-        ClassArchetype::EquipmentTraining,
-        ClassArchetype::MartialMastery,
-        ClassArchetype::Sentinel,
-        ClassArchetype::Tactician,
-        // Monk
-        ClassArchetype::Airdancer,
-        ClassArchetype::EsotericWarrior,
-        ClassArchetype::Ki,
-        ClassArchetype::PerfectedForm,
-        ClassArchetype::TranscendentSage,
-        // Paladin
-        ClassArchetype::DevotedParagon,
-        ClassArchetype::PaladinDivineMagic,
-        ClassArchetype::DivineSpellExpertise,
-        ClassArchetype::StalwartGuardian,
-        ClassArchetype::ZealousWarrior,
-        // Ranger
-        ClassArchetype::Beastmaster,
-        ClassArchetype::BoundaryWarden,
-        ClassArchetype::Huntmaster,
-        ClassArchetype::Scout,
-        ClassArchetype::WildernessWarrior,
-        // Rogue
-        ClassArchetype::Assassin,
-        ClassArchetype::BardicMusic,
-        ClassArchetype::CombatTrickster,
-        ClassArchetype::JackOfAllTrades,
-        ClassArchetype::SuaveScoundrel,
-        // Sorcerer
-        ClassArchetype::SorcererArcaneMagic,
-        ClassArchetype::SorcererArcaneSpellMastery,
-        ClassArchetype::DraconicMagic,
-        ClassArchetype::InnateArcanist,
-        ClassArchetype::WildMagic,
-        // Warlock
-        ClassArchetype::BlessingsOfTheAbyss,
-        ClassArchetype::KeeperOfForbiddenKnowledge,
-        ClassArchetype::PactMagic,
-        ClassArchetype::PactSpellMastery,
-        ClassArchetype::SoulkeepersChosen,
-        // Wizard
-        ClassArchetype::WizardArcaneMagic,
-        ClassArchetype::WizardArcaneSpellMastery,
-        ClassArchetype::Alchemist,
-        ClassArchetype::ArcaneScholar,
-        ClassArchetype::SchoolSpecialist,
-    ];
+    pub fn all() -> Vec<Self> {
+        return vec![
+            // Barbarian
+            ClassArchetype::BattleforgedResilience,
+            ClassArchetype::Battlerager,
+            ClassArchetype::OutlandSavage,
+            ClassArchetype::PrimalWarrior,
+            ClassArchetype::Totemist,
+            // Cleric
+            ClassArchetype::ClericDivineMagic,
+            ClassArchetype::DivineSpellMastery,
+            ClassArchetype::DomainInfluence,
+            ClassArchetype::Healer,
+            ClassArchetype::Preacher,
+            // Druid
+            ClassArchetype::Elementalist,
+            ClassArchetype::NatureMagic,
+            ClassArchetype::NatureSpellMastery,
+            ClassArchetype::Shifter,
+            ClassArchetype::Wildspeaker,
+            // Fighter
+            ClassArchetype::CombatDiscipline,
+            ClassArchetype::EquipmentTraining,
+            ClassArchetype::MartialMastery,
+            ClassArchetype::Sentinel,
+            ClassArchetype::Tactician,
+            // Monk
+            ClassArchetype::Airdancer,
+            ClassArchetype::EsotericWarrior,
+            ClassArchetype::Ki,
+            ClassArchetype::PerfectedForm,
+            ClassArchetype::TranscendentSage,
+            // Paladin
+            ClassArchetype::DevotedParagon,
+            ClassArchetype::PaladinDivineMagic,
+            ClassArchetype::DivineSpellExpertise,
+            ClassArchetype::StalwartGuardian,
+            ClassArchetype::ZealousWarrior,
+            // Ranger
+            ClassArchetype::Beastmaster,
+            ClassArchetype::BoundaryWarden,
+            ClassArchetype::Huntmaster,
+            ClassArchetype::Scout,
+            ClassArchetype::WildernessWarrior,
+            // Rogue
+            ClassArchetype::Assassin,
+            ClassArchetype::BardicMusic,
+            ClassArchetype::CombatTrickster,
+            ClassArchetype::JackOfAllTrades,
+            ClassArchetype::SuaveScoundrel,
+            // Sorcerer
+            ClassArchetype::SorcererArcaneMagic,
+            ClassArchetype::SorcererArcaneSpellMastery,
+            ClassArchetype::DraconicMagic,
+            ClassArchetype::InnateArcanist,
+            ClassArchetype::WildMagic,
+            // Warlock
+            ClassArchetype::BlessingsOfTheAbyss,
+            ClassArchetype::KeeperOfForbiddenKnowledge,
+            ClassArchetype::PactMagic,
+            ClassArchetype::PactSpellMastery,
+            ClassArchetype::SoulkeepersChosen,
+            // Wizard
+            ClassArchetype::WizardArcaneMagic,
+            ClassArchetype::WizardArcaneSpellMastery,
+            ClassArchetype::Alchemist,
+            ClassArchetype::ArcaneScholar,
+            ClassArchetype::SchoolSpecialist,
+        ];
+    }
 }

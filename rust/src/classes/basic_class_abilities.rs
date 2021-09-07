@@ -1,4 +1,4 @@
-use crate::classes;
+use crate::classes::Class;
 use crate::core_mechanics::attributes::Attribute;
 use crate::core_mechanics::defenses::Defense;
 use crate::latex_formatting;
@@ -6,7 +6,7 @@ use numerics::Numerics;
 
 // Generate the whole "Basic Class Abilities" subsection used to explain a class in the
 // Classes chapter.
-pub fn generate_latex_basic_class_abilities(class: &classes::Class) -> String {
+pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
     return format!(
         "
             \\subsection<Basic Class Abilities>
@@ -32,7 +32,7 @@ pub fn generate_latex_basic_class_abilities(class: &classes::Class) -> String {
 }
 
 // Generate the Resources section of the basic class abilities.
-fn generate_latex_resources(class: &classes::Class) -> String {
+fn generate_latex_resources(class: &Class) -> String {
     return format!(
         "
             \\cf<{shorthand_name}><Resources>
@@ -70,7 +70,7 @@ fn generate_latex_resources(class: &classes::Class) -> String {
     );
 }
 
-fn generate_latex_defenses(class: &classes::Class) -> String {
+fn generate_latex_defenses(class: &Class) -> String {
     let armor_defense_bonus = class.defense_bonus(&Defense::Armor);
     let armor_text = if armor_defense_bonus > 0 {
         format!("\\plus<{}> Armor,", armor_defense_bonus)
@@ -97,7 +97,7 @@ fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> St
     return format!("{} {}", english_number[0], suffix);
 }
 
-fn generate_latex_armor_proficiencies(class: &classes::Class) -> String {
+fn generate_latex_armor_proficiencies(class: &Class) -> String {
     let armor_proficiencies = class.armor_proficiencies();
     let proficiences_text: String;
     if armor_proficiencies.usage_classes.len() == 0 {
@@ -135,7 +135,7 @@ fn generate_latex_armor_proficiencies(class: &classes::Class) -> String {
     );
 }
 
-fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
+fn generate_latex_weapon_proficiencies(class: &Class) -> String {
     let weapon_proficiencies = class.weapon_proficiencies();
     let proficiences_text: String;
     if !weapon_proficiencies.simple_weapons {
@@ -182,7 +182,7 @@ fn generate_latex_weapon_proficiencies(class: &classes::Class) -> String {
     );
 }
 
-fn generate_latex_class_skills(class: &classes::Class) -> String {
+fn generate_latex_class_skills(class: &Class) -> String {
     let class_skills = class.class_skills();
     let mut attribute_texts = Vec::new();
     // For each attribute, find all class skills for the current class that are based on that
