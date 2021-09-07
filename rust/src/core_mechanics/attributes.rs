@@ -38,7 +38,7 @@ impl Attribute {
         if base_value <= 1 {
             return base_value;
         } else {
-            return base_value + ((slevel * (base_value - 1)) as f64 / 4.0).ceil() as i32;
+            return base_value + ((slevel * (base_value - 1)) as f64 / 4.0).floor() as i32;
         }
     }
 
@@ -64,4 +64,54 @@ pub trait HasAttributes {
     fn calc_total_attribute(&self, attribute: &Attribute) -> i32;
     fn get_base_attribute(&self, attribute: &Attribute) -> i32;
     fn set_base_attribute(&mut self, attribute: Attribute, value: i32);
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn calculate_unchanging_bases() {
+        assert_eq!(-5, Attribute::calculate_total(-5, 1));
+        assert_eq!(-5, Attribute::calculate_total(-5, 20));
+        assert_eq!(0, Attribute::calculate_total(0, 1));
+        assert_eq!(0, Attribute::calculate_total(0, 20));
+        assert_eq!(1, Attribute::calculate_total(1, 1));
+        assert_eq!(1, Attribute::calculate_total(1, 20));
+    }
+
+    #[test]
+    fn calculate_base_2() {
+        // Correct progression: +1/4 level
+        assert_eq!(2, Attribute::calculate_total(2, 1), "At level 1, should match base");
+        assert_eq!(2, Attribute::calculate_total(2, 3), "At level 3, should be unchanged");
+        assert_eq!(3, Attribute::calculate_total(2, 4), "At level 4, should increase by 1");
+        assert_eq!(7, Attribute::calculate_total(2, 20), "At level 20, should increase by 5");
+    }
+
+    #[test]
+    fn calculate_base_3() {
+        // Correct progression: +1/2 level
+        assert_eq!(3, Attribute::calculate_total(3, 1), "At level 1, should match base");
+        assert_eq!(4, Attribute::calculate_total(3, 2), "At level 2, should increase by 1");
+        assert_eq!(5, Attribute::calculate_total(3, 5), "At level 5, should increase by 2");
+        assert_eq!(13, Attribute::calculate_total(3, 20), "At level 20, should increase by 10");
+    }
+
+    #[test]
+    fn calculate_base_4() {
+        // Correct progression: +3/4 level
+        assert_eq!(4, Attribute::calculate_total(4, 1), "At level 1, should match base");
+        assert_eq!(7, Attribute::calculate_total(4, 4), "At level 4, should increase by 3");
+        assert_eq!(7, Attribute::calculate_total(4, 5), "At level 5, should increase by 3");
+        assert_eq!(19, Attribute::calculate_total(4, 20), "At level 20, should increase by 15");
+    }
+
+    #[test]
+    fn calculate_base_5() {
+        // Correct progression: +level
+        assert_eq!(6, Attribute::calculate_total(5, 1), "At level 1, should increase by 1");
+        assert_eq!(9, Attribute::calculate_total(5, 4), "At level 4, should increase by 4");
+        assert_eq!(25, Attribute::calculate_total(5, 20), "At level 20, should increase by 20");
+    }
 }
