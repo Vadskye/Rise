@@ -16,7 +16,7 @@ use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Aberration;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::sizes::Size;
+use crate::core_mechanics::sizes::Size;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
 use crate::monsters::knowledge::Knowledge;

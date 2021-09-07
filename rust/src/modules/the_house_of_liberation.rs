@@ -1,5 +1,5 @@
 use crate::modules::Module;
-use crate::monsters::monster_entry::latex_by_name;
+use crate::monsters::latex_by_name;
 
 pub fn generate_module() -> Module {
     return Module {
