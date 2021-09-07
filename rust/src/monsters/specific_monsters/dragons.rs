@@ -17,7 +17,7 @@ use crate::monsters::creature_type::CreatureType::Dragon;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::sizes::Size;
+use crate::core_mechanics::sizes::Size;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
 
