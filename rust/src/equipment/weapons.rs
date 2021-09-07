@@ -1,4 +1,4 @@
-use crate::core_mechanics::{DamageType, DamageDice};
+use crate::core_mechanics::{DamageDice, DamageType};
 use std::fmt;
 
 pub trait HasWeapons {
@@ -144,7 +144,6 @@ impl fmt::Display for Weapon {
         write!(f, "{}", self.name())
     }
 }
-
 
 pub enum WeaponGroup {
     Armor,

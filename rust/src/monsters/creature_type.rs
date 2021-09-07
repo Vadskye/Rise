@@ -1,6 +1,6 @@
 use crate::core_mechanics::Defense;
 use crate::latex_formatting;
-use std::cmp::{PartialEq, max};
+use std::cmp::{max, PartialEq};
 use std::fmt;
 use titlecase::titlecase;
 

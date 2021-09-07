@@ -31,9 +31,7 @@ pub enum Debuff {
 
 impl Debuff {
     pub fn mental_debuffs() -> Vec<Self> {
-        return vec![
-
-        ];
+        return vec![];
     }
 
     pub fn name(&self) -> &str {

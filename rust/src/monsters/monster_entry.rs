@@ -1,5 +1,5 @@
 use crate::monsters::specific_monsters::{
-    aberrations, animals, animates, dragons, humanoids, undeads
+    aberrations, animals, animates, dragons, humanoids, undeads,
 };
 use crate::monsters::{generate_stock_monsters, monster_group, Monster};
 

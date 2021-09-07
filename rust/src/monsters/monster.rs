@@ -3,10 +3,9 @@ use crate::core_mechanics::creatures::{attacks, creature, HasCreatureMechanics};
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources,
     MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier,
-    SpecialDefenseType,
-    SpeedCategory,
+    SpecialDefenseType, SpeedCategory,
 };
-use crate::equipment::{Weapon, HasWeapons};
+use crate::equipment::{HasWeapons, Weapon};
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
 use crate::skills::{HasSkills, Skill, SkillCategory};
@@ -108,9 +107,7 @@ impl Monster {
             movement_modes: if let Some(m) = def.movement_modes {
                 m
             } else {
-                vec![MovementMode::Land(
-                    SpeedCategory::Normal,
-                )]
+                vec![MovementMode::Land(SpeedCategory::Normal)]
             },
         };
         return monster;
@@ -147,9 +144,7 @@ impl Monster {
             creature_type,
             description: None,
             knowledge: None,
-            movement_modes: vec![MovementMode::Land(
-                SpeedCategory::Normal,
-            )],
+            movement_modes: vec![MovementMode::Land(SpeedCategory::Normal)],
         };
     }
 

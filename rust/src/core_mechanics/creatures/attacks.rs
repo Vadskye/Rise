@@ -1,5 +1,5 @@
-use crate::core_mechanics::{damage_dice, defenses};
 use crate::core_mechanics::creatures::{attack_effects, HasCreatureMechanics};
+use crate::core_mechanics::{damage_dice, defenses};
 use crate::equipment::Weapon;
 use crate::latex_formatting;
 use std::fmt;
@@ -460,8 +460,14 @@ impl AttackCooldown {
         if use_you {
             let until = match self {
                 Self::Brief(_) => format!("\\glossterm<briefly> cannot use it {} again", it),
-                Self::ShortRest(_) => format!("cannot use it {} again until you take a \\glossterm<short rest>", it),
-                Self::LongRest(_) => format!("cannot use it {} again until you take a \\glossterm<long rest>", it),
+                Self::ShortRest(_) => format!(
+                    "cannot use it {} again until you take a \\glossterm<short rest>",
+                    it
+                ),
+                Self::LongRest(_) => format!(
+                    "cannot use it {} again until you take a \\glossterm<long rest>",
+                    it
+                ),
             };
             return latex_formatting::latexify(format!(
                 "After you use this ability, you {until}.",
@@ -470,8 +476,14 @@ impl AttackCooldown {
         } else {
             let until = match self {
                 Self::Brief(_) => format!("\\glossterm<briefly> cannot use it {} again", it),
-                Self::ShortRest(_) => format!("cannot use it {} again until it takes a \\glossterm<short rest>", it),
-                Self::LongRest(_) => format!("cannot use it {} again until it takes a \\glossterm<long rest>", it),
+                Self::ShortRest(_) => format!(
+                    "cannot use it {} again until it takes a \\glossterm<short rest>",
+                    it
+                ),
+                Self::LongRest(_) => format!(
+                    "cannot use it {} again until it takes a \\glossterm<long rest>",
+                    it
+                ),
             };
             return latex_formatting::latexify(format!(
                 "After the creature uses this ability, {until}.",

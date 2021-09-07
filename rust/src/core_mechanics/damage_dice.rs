@@ -6,7 +6,6 @@ pub struct DamageDice {
 }
 
 impl DamageDice {
-
     // Commonly used damage dice for weapon and spell definitions
     pub fn d6() -> i32 {
         return 4;
@@ -44,7 +43,11 @@ impl DamageDice {
             6 => 10,
             _ => panic!("Invalid dice increments {}", increments),
         };
-        return DamageDice { count, increments, size };
+        return DamageDice {
+            count,
+            increments,
+            size,
+        };
     }
 
     pub fn add(&self, increments: i32) -> DamageDice {
@@ -60,7 +63,7 @@ impl DamageDice {
     }
 
     pub fn average_damage(&self) -> f64 {
-        return ((self.count * (self.size + 1)) as f64) / 2.0
+        return ((self.count * (self.size + 1)) as f64) / 2.0;
     }
 
     pub fn aoe_damage(rank: i32) -> Self {
