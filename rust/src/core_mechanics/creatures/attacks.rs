@@ -1,6 +1,6 @@
 use crate::core_mechanics::{damage_dice, defenses};
 use crate::core_mechanics::creatures::{attack_effects, HasCreatureMechanics};
-use crate::equipment::weapons;
+use crate::equipment::Weapon;
 use crate::latex_formatting;
 use std::fmt;
 
@@ -16,7 +16,7 @@ pub struct Attack {
     pub name: String,
     pub targeting: AttackTargeting,
     pub usage_time: UsageTime,
-    pub weapon: Option<weapons::Weapon>,
+    pub weapon: Option<Weapon>,
 }
 
 pub trait HasAttacks {
@@ -29,7 +29,7 @@ pub trait HasAttacks {
 }
 
 impl Attack {
-    pub fn from_weapon(weapon: weapons::Weapon) -> Attack {
+    pub fn from_weapon(weapon: Weapon) -> Attack {
         return Attack {
             accuracy: weapon.accuracy(),
             cooldown: None,
@@ -84,7 +84,7 @@ impl Attack {
         return None;
     }
 
-    pub fn calc_strikes(weapons: Vec<&weapons::Weapon>) -> Vec<Attack> {
+    pub fn calc_strikes(weapons: Vec<&Weapon>) -> Vec<Attack> {
         // TODO: combine maneuvers with weapons and handle non-weapon attacks
         return weapons.iter().map(|w| Self::from_weapon(**w)).collect();
     }

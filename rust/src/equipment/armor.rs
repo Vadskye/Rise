@@ -1,5 +1,10 @@
 use std::fmt;
 
+pub trait HasArmor {
+    fn add_armor(&mut self, armor: Armor);
+    fn get_armor(&self) -> Vec<&Armor>;
+}
+
 #[derive(Copy, Clone)]
 pub enum Armor {
     Breastplate(Option<ArmorMaterial>),

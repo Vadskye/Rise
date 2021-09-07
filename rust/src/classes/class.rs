@@ -1,6 +1,5 @@
 use crate::core_mechanics::{Defense, Resource};
-use crate::equipment::armor::ArmorUsageClass;
-use crate::equipment::{armor, weapons};
+use crate::equipment::{Armor, Weapon, WeaponGroup, ArmorUsageClass};
 use crate::latex_formatting;
 use crate::classes::{ClassArchetype, generate_latex_basic_class_abilities};
 use crate::classes::archetype_rank_abilities::RankAbility;
@@ -9,14 +8,14 @@ use std::fmt;
 use titlecase::titlecase;
 
 pub struct ArmorProficiencies {
-    pub specific_armors: Option<Vec<armor::Armor>>,
+    pub specific_armors: Option<Vec<Armor>>,
     pub usage_classes: Vec<ArmorUsageClass>,
 }
 
 pub struct WeaponProficiencies {
     pub custom_weapon_groups: i32,
-    pub specific_weapon_groups: Option<Vec<weapons::WeaponGroup>>,
-    pub specific_weapons: Option<Vec<weapons::Weapon>>,
+    pub specific_weapon_groups: Option<Vec<WeaponGroup>>,
+    pub specific_weapons: Option<Vec<Weapon>>,
     pub simple_weapons: bool,
 }
 
@@ -450,7 +449,7 @@ impl Class {
                 usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
             },
             Self::Druid => ArmorProficiencies {
-                specific_armors: Some(vec![armor::Armor::Hide(None)]),
+                specific_armors: Some(vec![Armor::Hide(None)]),
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Fighter => ArmorProficiencies {
@@ -459,19 +458,19 @@ impl Class {
             },
             Self::Monk => ArmorProficiencies {
                 specific_armors: None,
-                usage_classes: vec![armor::ArmorUsageClass::Light],
+                usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Paladin => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: ArmorUsageClass::all(),
             },
             Self::Ranger => ArmorProficiencies {
-                specific_armors: Some(vec![armor::Armor::Hide(None)]),
+                specific_armors: Some(vec![Armor::Hide(None)]),
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Rogue => ArmorProficiencies {
                 specific_armors: None,
-                usage_classes: vec![armor::ArmorUsageClass::Light],
+                usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Sorcerer => ArmorProficiencies {
                 specific_armors: None,
@@ -479,7 +478,7 @@ impl Class {
             },
             Self::Warlock => ArmorProficiencies {
                 specific_armors: None,
-                usage_classes: vec![armor::ArmorUsageClass::Light],
+                usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Wizard => ArmorProficiencies {
                 specific_armors: None,
@@ -505,7 +504,7 @@ impl Class {
             Self::Druid => WeaponProficiencies {
                 custom_weapon_groups: 0,
                 specific_weapon_groups: None,
-                specific_weapons: Some(vec![weapons::Weapon::Scimitar, weapons::Weapon::Sickle]),
+                specific_weapons: Some(vec![Weapon::Scimitar, Weapon::Sickle]),
                 simple_weapons: true,
             },
             Self::Fighter => WeaponProficiencies {
@@ -516,7 +515,7 @@ impl Class {
             },
             Self::Monk => WeaponProficiencies {
                 custom_weapon_groups: 0,
-                specific_weapon_groups: Some(vec![weapons::WeaponGroup::Monk]),
+                specific_weapon_groups: Some(vec![WeaponGroup::Monk]),
                 specific_weapons: None,
                 simple_weapons: true,
             },
@@ -529,9 +528,9 @@ impl Class {
             Self::Ranger => WeaponProficiencies {
                 custom_weapon_groups: 1,
                 specific_weapon_groups: Some(vec![
-                    weapons::WeaponGroup::Bows,
-                    weapons::WeaponGroup::Crossbows,
-                    weapons::WeaponGroup::Thrown,
+                    WeaponGroup::Bows,
+                    WeaponGroup::Crossbows,
+                    WeaponGroup::Thrown,
                 ]),
                 specific_weapons: None,
                 simple_weapons: true,
@@ -539,7 +538,7 @@ impl Class {
             Self::Rogue => WeaponProficiencies {
                 custom_weapon_groups: 1,
                 specific_weapon_groups: None,
-                specific_weapons: Some(vec![weapons::Weapon::Sap]),
+                specific_weapons: Some(vec![Weapon::Sap]),
                 simple_weapons: true,
             },
             Self::Sorcerer => WeaponProficiencies {
