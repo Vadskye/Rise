@@ -322,6 +322,10 @@ impl Armor {
         }
     }
 
+    pub fn damage_resistance(&self) -> i32 {
+        return self.definition().damage_resistance;
+    }
+
     pub fn defense(&self) -> i32 {
         return self.definition().defense;
     }
@@ -336,7 +340,11 @@ impl Armor {
 }
 
 fn calc_dr(base_dr: i32, material: &Option<ArmorMaterial>) -> i32 {
-    return ((base_dr as f64) * material.as_ref().unwrap_or(&ArmorMaterial::Normal).dr_multiplier()) as i32;
+    return ((base_dr as f64)
+        * material
+            .as_ref()
+            .unwrap_or(&ArmorMaterial::Normal)
+            .dr_multiplier()) as i32;
 }
 
 pub enum ArmorUsageClass {
@@ -366,5 +374,40 @@ impl ArmorUsageClass {
 impl fmt::Display for ArmorUsageClass {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}", self.name())
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn calc_special_material_damage_resistance() {
+        assert_eq!(
+            12,
+            Armor::FullPlate(None).damage_resistance(),
+            "Should be 12 with no material"
+        );
+        assert_eq!(
+            24,
+            Armor::FullPlate(Some(ArmorMaterial::Deepforged)).damage_resistance(),
+            "Should be 2x with deepforged"
+        );
+        assert_eq!(
+            36,
+            Armor::FullPlate(Some(ArmorMaterial::Dragonhide("red".to_string())))
+                .damage_resistance(),
+            "Should be 3x with dragonhide"
+        );
+        assert_eq!(
+            48,
+            Armor::FullPlate(Some(ArmorMaterial::Adamantine)).damage_resistance(),
+            "Should be 4x with adamantine"
+        );
+        assert_eq!(
+            48,
+            Armor::FullPlate(Some(ArmorMaterial::PureDeepforged)).damage_resistance(),
+            "Should be 4x with pure deepforged"
+        );
     }
 }
