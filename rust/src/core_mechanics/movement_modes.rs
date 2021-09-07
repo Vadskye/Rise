@@ -97,5 +97,94 @@ impl MovementMode {
 
 fn calc_speed(speed_category: &SpeedCategory, size: &Size) -> i32 {
     let speed = speed_category.speed_multiplier() * (size.base_speed() as f64);
-    return ((speed * 5.0).floor() / 5.0) as i32 + speed_category.speed_modifier();
+    return ((speed / 5.0).floor() * 5.0) as i32 + speed_category.speed_modifier();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn calculate_large_speeds() {
+        let size = &Size::Large;
+        assert_eq!(
+            20,
+            MovementMode::Swim(SpeedCategory::Slow).calc_speed(size)
+        );
+        assert_eq!(
+            40,
+            MovementMode::Swim(SpeedCategory::Normal).calc_speed(size)
+        );
+        assert_eq!(
+            60,
+            MovementMode::Swim(SpeedCategory::Fast).calc_speed(size)
+        );
+        assert_eq!(
+            80,
+            MovementMode::Swim(SpeedCategory::VeryFast).calc_speed(size)
+        );
+    }
+
+    #[test]
+    fn calculate_medium_speeds() {
+        let size = &Size::Medium;
+        assert_eq!(
+            15,
+            MovementMode::Land(SpeedCategory::Slow).calc_speed(size)
+        );
+        assert_eq!(
+            30,
+            MovementMode::Land(SpeedCategory::Normal).calc_speed(size)
+        );
+        assert_eq!(
+            45,
+            MovementMode::Land(SpeedCategory::Fast).calc_speed(size)
+        );
+        assert_eq!(
+            60,
+            MovementMode::Land(SpeedCategory::VeryFast).calc_speed(size)
+        );
+    }
+
+    #[test]
+    fn calculate_small_speeds() {
+        let size = &Size::Small;
+        assert_eq!(
+            10,
+            MovementMode::Climb(SpeedCategory::Slow).calc_speed(size)
+        );
+        assert_eq!(
+            20,
+            MovementMode::Climb(SpeedCategory::Normal).calc_speed(size)
+        );
+        assert_eq!(
+            30,
+            MovementMode::Climb(SpeedCategory::Fast).calc_speed(size)
+        );
+        assert_eq!(
+            40,
+            MovementMode::Climb(SpeedCategory::VeryFast).calc_speed(size)
+        );
+    }
+
+    #[test]
+    fn calculate_tiny_speeds() {
+        let size = &Size::Tiny;
+        assert_eq!(
+            5,
+            MovementMode::Climb(SpeedCategory::Slow).calc_speed(size)
+        );
+        assert_eq!(
+            15,
+            MovementMode::Climb(SpeedCategory::Normal).calc_speed(size)
+        );
+        assert_eq!(
+            20,
+            MovementMode::Climb(SpeedCategory::Fast).calc_speed(size)
+        );
+        assert_eq!(
+            30,
+            MovementMode::Climb(SpeedCategory::VeryFast).calc_speed(size)
+        );
+    }
 }
