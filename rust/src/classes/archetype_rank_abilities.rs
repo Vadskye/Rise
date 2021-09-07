@@ -1,4 +1,4 @@
-use crate::classes::archetypes::ClassArchetype;
+use crate::classes::ClassArchetype;
 use titlecase::titlecase;
 
 mod barbarian;
