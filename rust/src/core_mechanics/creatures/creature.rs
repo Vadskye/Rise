@@ -176,7 +176,9 @@ impl HasDamageAbsorption for Creature {
             _ => panic!("Invalid level {}", self.level),
         };
 
-        return dr_from_level + (self.get_base_attribute(&Attribute::Constitution) as i32);
+        return dr_from_level
+            + (self.get_base_attribute(&Attribute::Constitution) as i32)
+            + self.calc_total_modifier(ModifierType::DamageResistance);
     }
 
     fn calc_hit_points(&self) -> i32 {
@@ -205,7 +207,9 @@ impl HasDamageAbsorption for Creature {
             _ => panic!("Invalid level {}", self.level),
         };
 
-        return hp_from_level + (self.get_base_attribute(&Attribute::Constitution) as i32) * 2;
+        return hp_from_level
+            + (self.get_base_attribute(&Attribute::Constitution) as i32) * 2
+            + self.calc_total_modifier(ModifierType::HitPoints);
     }
 }
 
@@ -253,7 +257,9 @@ impl HasAttacks for Creature {
 
     fn calc_accuracy(&self) -> i32 {
         // note implicit floor due to integer storage
-        return self.level / 2 + self.get_base_attribute(&Attribute::Perception) / 2;
+        return self.level / 2
+            + self.get_base_attribute(&Attribute::Perception) / 2
+            + self.calc_total_modifier(ModifierType::Accuracy);
     }
 
     fn calc_damage_increments(&self, _is_strike: bool) -> i32 {
@@ -263,10 +269,12 @@ impl HasAttacks for Creature {
     fn calc_power(&self, is_magical: bool) -> i32 {
         if is_magical {
             return self.calc_total_attribute(&Attribute::Willpower)
-                + self.calc_total_attribute(&Attribute::Perception) / 2;
+                + self.calc_total_attribute(&Attribute::Perception) / 2
+                + self.calc_total_modifier(ModifierType::MagicalPower);
         } else {
             return self.calc_total_attribute(&Attribute::Strength)
-                + self.calc_total_attribute(&Attribute::Perception) / 2;
+                + self.calc_total_attribute(&Attribute::Perception) / 2
+                + self.calc_total_modifier(ModifierType::MundanePower);
         }
     }
 }
@@ -284,7 +292,8 @@ impl HasArmor for Creature {
         let armor_encumbrance: i32 = self.get_armor().iter().map(|a| a.encumbrance()).sum();
         return max(
             0,
-            armor_encumbrance - self.get_base_attribute(&Attribute::Strength),
+            armor_encumbrance - self.get_base_attribute(&Attribute::Strength)
+                + self.calc_total_modifier(ModifierType::Encumbrance),
         );
     }
 }
@@ -311,13 +320,16 @@ impl HasDefenses for Creature {
         } else {
             0
         };
-        return self.level / 2 + attribute_bonus + armor_bonus;
+        return self.level / 2
+            + attribute_bonus
+            + armor_bonus
+            + self.calc_total_modifier(ModifierType::Defense(*defense));
     }
 }
 
 impl HasResources for Creature {
     fn calc_resource(&self, resource: &resources::Resource) -> i32 {
-        match resource {
+        let value = match resource {
             resources::Resource::AttunementPoint => max(0, (self.level + 1) / 6),
             resources::Resource::FatigueTolerance => {
                 self.get_base_attribute(&Attribute::Constitution)
@@ -325,7 +337,8 @@ impl HasResources for Creature {
             }
             resources::Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
             resources::Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
-        }
+        };
+        return value + self.calc_total_modifier(ModifierType::Resource(*resource));
     }
 }
 
@@ -370,6 +383,6 @@ impl HasSkills for Creature {
             0
         };
 
-        return training_modifier - encumbrance_modifier;
+        return training_modifier - encumbrance_modifier + self.calc_total_modifier(ModifierType::Skill(skill.clone()));
     }
 }

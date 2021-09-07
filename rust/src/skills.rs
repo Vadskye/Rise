@@ -10,7 +10,7 @@ pub trait HasSkills {
     fn calc_skill_modifier(&self, skill: &Skill) -> i32;
 }
 
-#[derive(Eq, Hash)]
+#[derive(Clone, Eq, Hash)]
 pub enum Skill {
     Awareness,
     Balance,
@@ -234,7 +234,7 @@ impl fmt::Display for Skill {
     }
 }
 
-#[derive(Eq, Hash)]
+#[derive(Clone, Copy, Eq, Hash)]
 pub enum KnowledgeSubskill {
     Arcana,
     Dungeoneering,
