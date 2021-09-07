@@ -1,5 +1,4 @@
-use crate::core_mechanics::defenses::Defense;
-use crate::core_mechanics::resources::Resource;
+use crate::core_mechanics::{Defense, Resource};
 use crate::equipment::armor::ArmorUsageClass;
 use crate::equipment::{armor, weapons};
 use crate::latex_formatting;
@@ -399,7 +398,7 @@ impl Class {
         }
     }
 
-    pub fn resource_bonus(&self, resource: &'static Resource) -> i32 {
+    pub fn resource_bonus(&self, resource: &Resource) -> i32 {
         match resource {
             Resource::AttunementPoint => self.attunement_points(),
             Resource::FatigueTolerance => self.fatigue_tolerance(),

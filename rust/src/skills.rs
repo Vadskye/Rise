@@ -1,4 +1,4 @@
-use crate::core_mechanics::attributes::Attribute;
+use crate::core_mechanics::Attribute;
 use titlecase::titlecase;
 // use itertools::Itertools;
 use std::cmp::PartialEq;

@@ -1,5 +1,4 @@
-use crate::core_mechanics::damage_types::DamageType;
-use crate::core_mechanics::damage_dice::{self, D10, D6, D8};
+use crate::core_mechanics::{DamageType, DamageDice};
 use std::fmt;
 
 #[derive(Copy, Clone)]
@@ -52,30 +51,30 @@ impl Weapon {
         }
     }
 
-    pub fn damage_dice(&self) -> damage_dice::DamageDice {
+    pub fn damage_dice(&self) -> DamageDice {
         let increments = match self {
-            Self::ArmorSpikes => D6,
-            Self::Battleaxe => D8,
-            Self::Bite => D8,
-            Self::Broadsword => D10,
-            Self::Claw => D6,
-            Self::Greataxe => D10 + 1,
-            Self::Greatsword => D10,
-            Self::Longbow => D8,
-            Self::MonsterBite => D10,
-            Self::MonsterClaws => D6,
-            Self::MonsterStinger => D10,
-            Self::MonsterTalons => D6,
-            Self::Sap => D6,
-            Self::Scimitar => D8,
-            Self::Sickle => D6,
-            Self::Slam => D10,
-            Self::Sledgehammer => D10 + 1,
-            Self::Spear => D8,
-            Self::Totokia => D10,
-            Self::Warhammer => D8,
+            Self::ArmorSpikes => DamageDice::d6(),
+            Self::Battleaxe => DamageDice::d8(),
+            Self::Bite => DamageDice::d8(),
+            Self::Broadsword => DamageDice::d10(),
+            Self::Claw => DamageDice::d6(),
+            Self::Greataxe => DamageDice::d10() + 1,
+            Self::Greatsword => DamageDice::d10(),
+            Self::Longbow => DamageDice::d8(),
+            Self::MonsterBite => DamageDice::d10(),
+            Self::MonsterClaws => DamageDice::d6(),
+            Self::MonsterStinger => DamageDice::d10(),
+            Self::MonsterTalons => DamageDice::d6(),
+            Self::Sap => DamageDice::d6(),
+            Self::Scimitar => DamageDice::d8(),
+            Self::Sickle => DamageDice::d6(),
+            Self::Slam => DamageDice::d10(),
+            Self::Sledgehammer => DamageDice::d10() + 1,
+            Self::Spear => DamageDice::d8(),
+            Self::Totokia => DamageDice::d10(),
+            Self::Warhammer => DamageDice::d8(),
         };
-        return damage_dice::DamageDice::new(increments);
+        return DamageDice::new(increments);
     }
 
     pub fn damage_types(&self) -> Vec<DamageType> {

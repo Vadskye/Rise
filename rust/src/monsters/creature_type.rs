@@ -1,4 +1,4 @@
-use crate::core_mechanics::defenses::Defense;
+use crate::core_mechanics::Defense;
 use crate::latex_formatting;
 use std::cmp::{PartialEq, max};
 use std::fmt;

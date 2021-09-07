@@ -1,15 +1,14 @@
 use crate::core_mechanics::creatures::attack_effects;
 use crate::core_mechanics::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackTargeting, UsageTime};
-use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
-use crate::core_mechanics::passive_abilities::PassiveAbility;
-use crate::core_mechanics::senses::Sense;
-use crate::core_mechanics::{damage_types, debuffs, defenses};
+use crate::core_mechanics::{
+    DamageDice, DamageType, DamageTypeEffect, Debuff, Defense, FlightManeuverability, MovementMode,
+    PassiveAbility, Sense, Size, SpecialDefenseModifier, SpeedCategory,
+};
 use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::core_mechanics::sizes::Size;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
 
@@ -265,8 +264,8 @@ pub fn animals() -> Vec<MonsterEntry> {
     if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
         e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
             attack_effects::PoisonEffect {
-                stage1: vec![debuffs::Debuff::Slowed],
-                stage3_debuff: Some(vec![debuffs::Debuff::Decelerated]),
+                stage1: vec![Debuff::Slowed],
+                stage3_debuff: Some(vec![Debuff::Decelerated]),
                 stage3_vital: None,
             },
         )]);
@@ -288,11 +287,11 @@ pub fn animals() -> Vec<MonsterEntry> {
                 accuracy: 0,
                 cooldown: None,
                 crit: None,
-                defense: defenses::Defense::Fortitude,
+                defense: Defense::Fortitude,
                 glance: None,
                 hit: attack_effects::AttackEffect::area_damage(
                     5,
-                    vec![damage_types::DamageType::Cold],
+                    vec![DamageType::Cold],
                 ),
                 is_magical: true,
                 name: "Frost Breath".to_string(),
@@ -309,8 +308,8 @@ pub fn animals() -> Vec<MonsterEntry> {
     if let Some(e) = poisonous_stinger.damage_effect_mut() {
         e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
             attack_effects::PoisonEffect {
-                stage1: vec![debuffs::Debuff::Sickened],
-                stage3_debuff: Some(vec![debuffs::Debuff::Paralyzed]),
+                stage1: vec![Debuff::Sickened],
+                stage3_debuff: Some(vec![Debuff::Paralyzed]),
                 stage3_vital: None,
             },
         )]);

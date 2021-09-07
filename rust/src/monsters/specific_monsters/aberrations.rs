@@ -4,22 +4,17 @@ use crate::core_mechanics::creatures::attack_effects::{
 use crate::core_mechanics::creatures::attacks::{
     AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
 };
-use crate::core_mechanics::damage_dice;
-use crate::core_mechanics::damage_types::{DamageType, DamageTypeEffect};
-use crate::core_mechanics::debuffs::Debuff;
-use crate::core_mechanics::defenses::{Defense, SpecialDefenseModifier};
-use crate::core_mechanics::movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
-use crate::core_mechanics::passive_abilities::PassiveAbility;
-use crate::core_mechanics::senses::Sense;
-use crate::core_mechanics::{damage_types, debuffs, defenses};
+use crate::core_mechanics::{
+    DamageDice, DamageType, DamageTypeEffect, Debuff, Defense, FlightManeuverability, MovementMode,
+    PassiveAbility, Sense, Size, SpecialDefenseModifier, SpeedCategory,
+};
 use crate::equipment::weapons::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Aberration;
+use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::core_mechanics::sizes::Size;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
-use crate::monsters::knowledge::Knowledge;
 
 struct FullAberrationDefinition {
     alignment: String,
@@ -139,7 +134,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 glance: Some(AttackEffect::HalfDamage),
                 hit: AttackEffect::Damage(
                     DamageEffect {
-                        damage_dice: damage_dice::DamageDice::aoe_damage(5),
+                        damage_dice: DamageDice::aoe_damage(5),
                         damage_modifier: 0,
                         damage_types: vec![DamageType::Energy],
                         lose_hp_effects: None,
@@ -161,7 +156,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 glance: Some(AttackEffect::HalfDamage),
                 hit: AttackEffect::Damage(
                     DamageEffect {
-                        damage_dice: damage_dice::DamageDice::single_target_damage(5),
+                        damage_dice: DamageDice::single_target_damage(5),
                         damage_modifier: 0,
                         damage_types: vec![DamageType::Energy],
                         lose_hp_effects: Some(vec![
