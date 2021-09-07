@@ -105,7 +105,11 @@ fn generate_latex_armor_proficiencies(class: &Class) -> String {
             Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with \\glossterm{somatic components} to fail (see \\pcref{Somatic Component Failure}).
         ".to_string();
     } else if let Some(specific_armors) = armor_proficiencies.specific_armors {
-        let usage_classes: Vec<&str> = armor_proficiencies.usage_classes.iter().map(|w| w.name()).collect();
+        let usage_classes: Vec<&str> = armor_proficiencies
+            .usage_classes
+            .iter()
+            .map(|w| w.name())
+            .collect();
         let specific_armors: Vec<String> = specific_armors.iter().map(|a| a.name()).collect();
         proficiences_text = format!(
             "
@@ -115,7 +119,11 @@ fn generate_latex_armor_proficiencies(class: &Class) -> String {
             specific_armors = latex_formatting::join_string_list(&specific_armors).unwrap(),
         );
     } else {
-        let stringified: Vec<&str> = armor_proficiencies.usage_classes.iter().map(|w| w.name()).collect();
+        let stringified: Vec<&str> = armor_proficiencies
+            .usage_classes
+            .iter()
+            .map(|w| w.name())
+            .collect();
         proficiences_text = format!(
             "
                 You are proficient with {usage_classes} armor.
@@ -143,7 +151,7 @@ fn generate_latex_weapon_proficiencies(class: &Class) -> String {
             You are still proficient with your natural weapons.
         "
         .to_string();
-    } else  {
+    } else {
         let mut components = vec![String::from("simple weapons")];
         if let Some(specific_weapon_groups) = weapon_proficiencies.specific_weapon_groups {
             for g in specific_weapon_groups {

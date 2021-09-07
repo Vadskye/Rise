@@ -4,7 +4,7 @@ use crate::core_mechanics::creatures::{creature, latex, HasCreatureMechanics};
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, Resource,
 };
-use crate::equipment::{Weapon, HasWeapons};
+use crate::equipment::{HasWeapons, Weapon};
 use crate::skills::{HasSkills, Skill};
 
 pub struct Character {

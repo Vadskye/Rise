@@ -11,10 +11,10 @@ use crate::core_mechanics::{
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
+use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
 use crate::skills::Skill;
-use crate::monsters::knowledge::Knowledge;
 
 struct FullUndeadDefinition {
     alignment: String,
@@ -60,30 +60,26 @@ fn undead(def: FullUndeadDefinition) -> Monster {
 pub fn undeads() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
-    monsters.push(MonsterEntry::MonsterGroup(
-        monster_group::MonsterGroup {
-            name: "Skeletons".to_string(),
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        name: "Skeletons".to_string(),
+        knowledge: None,
+        monsters: vec![undead(FullUndeadDefinition {
+            alignment: "Always true neutral".to_string(),
+            attributes: vec![2, 2, 0, 0, 0, -1],
+            challenge_rating: ChallengeRating::One,
+            description: None,
             knowledge: None,
-            monsters: vec![
-                undead(FullUndeadDefinition {
-                    alignment: "Always true neutral".to_string(),
-                    attributes: vec![2, 2, 0, 0, 0, -1],
-                    challenge_rating: ChallengeRating::One,
-                    description: None,
-                    knowledge: None,
-                    level: 1,
-                    passive_abilities: None,
-                    movement_modes: None,
-                    name: "Skeleton Guard".to_string(),
-                    senses: None,
-                    size: Size::Medium,
-                    special_attacks: None,
-                    trained_skills: None,
-                    weapons: vec![Weapon::Scimitar],
-                }),
-            ],
-        }
-    ));
+            level: 1,
+            passive_abilities: None,
+            movement_modes: None,
+            name: "Skeleton Guard".to_string(),
+            senses: None,
+            size: Size::Medium,
+            special_attacks: None,
+            trained_skills: None,
+            weapons: vec![Weapon::Scimitar],
+        })],
+    }));
 
     return monsters;
 }

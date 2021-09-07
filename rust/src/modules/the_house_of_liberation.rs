@@ -214,5 +214,5 @@ orc_chef=latex_by_name("Orc Chef"),
 human_cleric=latex_by_name("Human Cleric"),
 human_warrior=latex_by_name("Human Warrior"),
         ),
-    }
+    };
 }

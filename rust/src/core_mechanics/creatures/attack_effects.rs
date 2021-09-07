@@ -1,5 +1,5 @@
-use crate::core_mechanics::{DamageDice, DamageType, Debuff};
 use crate::core_mechanics::creatures::HasCreatureMechanics;
+use crate::core_mechanics::{DamageDice, DamageType, Debuff};
 use crate::equipment::Weapon;
 use crate::latex_formatting;
 
@@ -85,7 +85,12 @@ impl AttackEffect {
                         ",
                         effect = latex_formatting::join_string_list(
                             &t.iter()
-                                .map(|e| e.description(attacker, is_magical, is_strike, the_subject))
+                                .map(|e| e.description(
+                                    attacker,
+                                    is_magical,
+                                    is_strike,
+                                    the_subject
+                                ))
                                 .collect()
                         )
                         .unwrap(),
@@ -137,7 +142,10 @@ impl AttackEffect {
                 );
             }
             Self::HalfDamage => {
-                return format!("{the_subject} takes half damage.", the_subject = the_subject);
+                return format!(
+                    "{the_subject} takes half damage.",
+                    the_subject = the_subject
+                );
             }
             Self::Poison(effect) => {
                 let mut third_stage = if let Some(ref debuffs) = effect.stage3_debuff {

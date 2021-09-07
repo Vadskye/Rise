@@ -57,7 +57,7 @@ pub fn uppercase_first_letter(text: &str) -> String {
 
 pub fn modifier(val: i32) -> String {
     if val >= 0 {
-        return format!("+{}", val)
+        return format!("+{}", val);
     } else {
         return format!("{}", val);
     }

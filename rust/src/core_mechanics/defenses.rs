@@ -1,4 +1,4 @@
-use crate::core_mechanics::{Attribute, Debuff, DamageType};
+use crate::core_mechanics::{Attribute, DamageType, Debuff};
 use std::fmt;
 
 pub trait HasDefenses {

@@ -1,5 +1,7 @@
 use crate::core_mechanics::creatures::attack_effects;
-use crate::core_mechanics::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackTargeting, UsageTime};
+use crate::core_mechanics::creatures::attacks::{
+    AreaSize, AreaTargets, Attack, AttackTargeting, UsageTime,
+};
 use crate::core_mechanics::{
     DamageDice, DamageType, DamageTypeEffect, Debuff, Defense, FlightManeuverability, MovementMode,
     PassiveAbility, Sense, Size, SpecialDefenseModifier, SpeedCategory,
@@ -289,10 +291,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 crit: None,
                 defense: Defense::Fortitude,
                 glance: None,
-                hit: attack_effects::AttackEffect::area_damage(
-                    5,
-                    vec![DamageType::Cold],
-                ),
+                hit: attack_effects::AttackEffect::area_damage(5, vec![DamageType::Cold]),
                 is_magical: true,
                 name: "Frost Breath".to_string(),
                 targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Everything),
