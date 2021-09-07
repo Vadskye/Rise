@@ -1,4 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::creatures::Modifier;
+use crate::core_mechanics::{Defense, Resource};
+use crate::skills::Skill;
 
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -9,6 +12,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You regain a quarter of your maximum \glossterm{damage resistance} when you use the \textit{recover} ability (see \pcref{Recover}).
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Battle-Scarred",
@@ -17,6 +21,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
             name: "Vital Tolerance",
@@ -25,6 +30,11 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a +1 bonus to \glossterm{vital rolls} and \glossterm{fatigue tolerance}.
             ",
+            modifiers: Some(vec![
+                Modifier::DamageResistance(3),
+                Modifier::VitalRoll(1),
+                Modifier::Resource(Resource::FatigueTolerance, 1),
+            ]),
         },
         RankAbility {
             name: "Greater Resilient Recovery",
@@ -33,6 +43,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The damage resistance you regain with your \textit{resilient recovery} ability increases to half your maximum damage resistance.
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
             name: "Limitless Recovery",
@@ -41,6 +52,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{recover} action an additional time before you take a \glossterm{short rest}.
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
             name: "Greater Battle-Scarred",
@@ -49,6 +61,8 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{battle-scarred} ability increases to four times your rank in this archetype.
             ",
+            // Rank 4 bonus: 12. Rank 5 bonus: 20.
+            modifiers: Some(vec![Modifier::DamageResistance(8)]),
         },
         RankAbility {
             name: "Greater Vital Tolerance",
@@ -57,6 +71,11 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonuses from your \textit{vital tolerance} ability increase to +2.
             ",
+            modifiers: Some(vec![
+                Modifier::DamageResistance(4),
+                Modifier::VitalRoll(1),
+                Modifier::Resource(Resource::FatigueTolerance, 1),
+            ]),
         },
         RankAbility {
             name: "Instant Recovery",
@@ -65,6 +84,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Once per \glossterm{short rest}, you can use the \textit{recover} ability as a \glossterm{minor action} instead of as a standard action.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -79,6 +99,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 You reduce your maximum hit points by an amount equal to your rank in this archetype.
                 In exchange, you gain a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype (minimum 1).
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(1)]),
         },
         RankAbility {
             name: "Rage",
@@ -109,6 +130,14 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The power bonus increases to \plus16.
                 \end{durationability}
             ",
+            modifiers: Some(vec![
+                Modifier::DamageResistance(3),
+                Modifier::HitPoints(-1),
+                Modifier::MundanePower(2),
+                Modifier::VitalRoll(2),
+                Modifier::Defense(Defense::Armor, -2),
+                Modifier::Defense(Defense::Reflex, -2),
+            ]),
         },
         RankAbility {
             name: "Enraged Strike",
@@ -126,6 +155,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The damage bonus increases to \plus4d.
                 \end{instantability}
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(3), Modifier::HitPoints(-1)]),
         },
         RankAbility {
             name: "Greater Insensible Anger",
@@ -134,6 +164,12 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                  The damage resistance bonus from your \textit{insensible anger} ability increases to four times your rank in this archetype.
             ",
+            // Rank 2: +6 DR. Rank 3: +12 DR.
+            modifiers: Some(vec![
+                Modifier::DamageResistance(6),
+                Modifier::HitPoints(-1),
+                Modifier::MundanePower(2),
+            ]),
         },
         RankAbility {
             name: "Instinctive Rage",
@@ -142,6 +178,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You cannot be \unaware or \partiallyunaware during your \textit{rage} ability.
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(4), Modifier::HitPoints(-1)]),
         },
         RankAbility {
             name: "Fearless Rage",
@@ -151,6 +188,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 You are immune to being \shaken, \frightened, and \panicked during your \textit{rage} ability.
                 In addition, being panicked does not prevent you from entering a rage.
             ",
+            modifiers: Some(vec![
+                Modifier::DamageResistance(4),
+                Modifier::HitPoints(-1),
+                Modifier::MundanePower(4),
+            ]),
         },
         RankAbility {
             name: "Supreme Insensible Anger",
@@ -159,6 +201,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                  The damage resistance bonus from your \textit{insensible anger} ability increases to five times your rank in this archetype.
             ",
+            // Rank 5: +20 DR. Rank 6: +30 DR.
+            modifiers: Some(vec![
+                Modifier::DamageResistance(10),
+                Modifier::HitPoints(-1),
+            ]),
         },
         RankAbility {
             name: "Titanic Rage",
@@ -167,6 +214,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
             ",
+            modifiers: Some(vec![
+                Modifier::DamageResistance(4),
+                Modifier::HitPoints(-1),
+                Modifier::MundanePower(8),
+            ]),
         },
         RankAbility {
             name: "Greater Enraged Strike",
@@ -175,6 +227,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use your \textit{enraged strike} ability against any creature that attacked you during the previous round, regardless of whether they dealt damage to you.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -190,15 +243,16 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
         You treat those spaces as \glossterm{difficult terrain}, which causes to you to move at half speed.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Fast Movement",
             is_magical: false,
             rank: 1,
             description: r"
-         You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
-
-                ",
+                You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
         RankAbility {
             name: "Savage Precision",
@@ -208,6 +262,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 You can use your Strength in place of your Perception to determine your \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, and \textit{trip} abilities, as well as with grapple actions (see \pcref{Special Combat Abilities}, and \pcref{Grapple Actions}).
                 In addition, you gain a \plus1 bonus to \glossterm{accuracy} with those abilities and with the \textit{shove} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Savage Force",
@@ -217,6 +272,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
          You gain a \plus1d bonus to your damage with all weapons.
 
                 ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Greater Fast Movement",
@@ -226,6 +282,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
          The speed bonus from your \textit{fast movement} ability increases to \plus10 feet.
 
                 ",
+            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
         RankAbility {
             name: "Greater Savage Rush",
@@ -234,6 +291,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your \textit{savage rush} ability no longer causes you to treat spaces occupied by enemies as difficult terrain.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Savage Precision",
@@ -244,6 +302,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 In addition, choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): Disarming, Forceful, Grappling, or Tripping.
                 You may treat all weapons you wield as if they had the chosen weapon tag.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Savage Force",
@@ -252,6 +311,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{savage force} ability increases to \plus2d.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Supreme Fast Movement",
@@ -260,6 +320,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The speed bonus from your \textit{fast movement} ability increases to \plus15 feet.
             ",
+            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
         RankAbility {
             name: "Supreme Savage Rush",
@@ -268,6 +329,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use your \textit{savage rush} ability to move through enemies even without using the \ability{sprint} ability.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -281,6 +343,12 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                  You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
             ",
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Climb, 1),
+                Modifier::Skill(Skill::Jump, 1),
+                Modifier::Skill(Skill::Swim, 1),
+                Modifier::Skill(Skill::Endurance, 1),
+            ]),
         },
         RankAbility {
             name: "Combat Styles",
@@ -300,6 +368,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                     you can exchange any number of maneuvers you know for other maneuvers,
                     including maneuvers of the higher rank.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (2)",
@@ -309,6 +378,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 2 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 2.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Primal Force",
@@ -317,6 +387,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Combat Style Rank (3)",
@@ -326,6 +397,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 3 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 3.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Glancing Strikes",
@@ -335,6 +407,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
                 This is called a \glossterm{glancing blow}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (4)",
@@ -344,6 +417,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 4 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 4.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Primal Maneuver",
@@ -352,6 +426,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (5)",
@@ -361,6 +436,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 5 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 5.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Primal Force",
@@ -369,6 +445,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{primal force} ability increases to \plus2d.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Combat Style Rank (6)",
@@ -386,6 +463,12 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonuses from your \textit{primal might} ability increase to \plus2.
             ",
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Climb, 1),
+                Modifier::Skill(Skill::Jump, 1),
+                Modifier::Skill(Skill::Swim, 1),
+                Modifier::Skill(Skill::Endurance, 1),
+            ]),
         },
         RankAbility {
             name: "Combat Style Rank (7)",
@@ -395,6 +478,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 7 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 7.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Primal Maneuver",
@@ -403,6 +487,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
             ",
+            modifiers: None,
         },
     ];
 }
@@ -416,6 +501,10 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your Reflex defense and \glossterm{initiative} checks.
             ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Reflex, 2),
+                Modifier::Initiative(2),
+            ]),
         },
         RankAbility {
             name: "Totem Animal",
@@ -441,6 +530,8 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Wolf} At the start of each round, you may choose one of your \glossterm{allies}.
                 That creature gains a \plus1 bonus to \glossterm{accuracy} during that round as long as it is adjacent to you.
             ",
+            // For convenience in balancing, assume lion totem instead of representing each totem
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Feral Explosion",
@@ -450,6 +541,8 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you \glossterm{explode} with an attack roll, you gain a \plus2 \glossterm{accuracy} bonus with the attack.
                 This bonus stacks with itself if you explode multiple times with the same attack roll.
             ",
+            // TODO: figure out how to represent this
+            modifiers: None,
         },
         RankAbility {
             name: "Totemic Force",
@@ -458,6 +551,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Greater Totem Animal",
@@ -481,6 +575,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Wolf} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
             ",
+            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
         RankAbility {
             name: "Greater Feral Explosion",
@@ -490,6 +585,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 Your attacks \glossterm{explode} on a 9 in addition to the normal explosion on a 10.
                 This does not affect additional rolls with exploding dice.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Totemic Force",
@@ -498,6 +594,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{totemic force} ability increases to \plus2d.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Supreme Totem Animal",
@@ -520,6 +617,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Wolf} The accuracy bonus increases to \plus2.
             ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ];
 }
