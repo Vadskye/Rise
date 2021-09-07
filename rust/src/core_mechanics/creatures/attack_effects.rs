@@ -1,6 +1,6 @@
 use crate::core_mechanics::{DamageDice, DamageType, Debuff};
 use crate::core_mechanics::creatures::HasCreatureMechanics;
-use crate::equipment::weapons;
+use crate::equipment::Weapon;
 use crate::latex_formatting;
 
 #[derive(Clone)]
@@ -58,7 +58,7 @@ impl AttackEffect {
         });
     }
 
-    pub fn from_weapon(weapon: weapons::Weapon) -> Self {
+    pub fn from_weapon(weapon: Weapon) -> Self {
         return Self::Damage(DamageEffect {
             damage_dice: weapon.damage_dice(),
             damage_modifier: 0,

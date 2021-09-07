@@ -8,7 +8,7 @@ use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::sizes;
-use crate::equipment::{weapons, HasWeapons};
+use crate::equipment::{Weapon, HasWeapons};
 use crate::skills::{HasSkills, Skill};
 use std::cmp::{max, min};
 use std::collections::HashMap;
@@ -24,7 +24,7 @@ pub struct Creature {
     pub skill_training: Option<HashMap<Skill, bool>>,
     pub special_attacks: Option<Vec<attacks::Attack>>,
     pub special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
-    pub weapons: Vec<weapons::Weapon>,
+    pub weapons: Vec<Weapon>,
 }
 
 impl Creature {
@@ -201,8 +201,8 @@ impl HasAttacks for Creature {
                 all_attacks.push(a.clone());
             }
         }
-        let weapons_without_attacks: Vec<&weapons::Weapon> = self
-            .weapons()
+        let weapons_without_attacks: Vec<&Weapon> = self
+            .get_weapons()
             .into_iter()
             .filter(|weapon| {
                 let same_weapon_attack = all_attacks.iter().any(|attack| {
@@ -247,11 +247,11 @@ impl HasAttacks for Creature {
 }
 
 impl HasWeapons for Creature {
-    fn add_weapon(&mut self, weapon: weapons::Weapon) {
+    fn add_weapon(&mut self, weapon: Weapon) {
         self.weapons.push(weapon);
     }
 
-    fn weapons(&self) -> Vec<&weapons::Weapon> {
+    fn get_weapons(&self) -> Vec<&Weapon> {
         return self.weapons.iter().collect();
     }
 }

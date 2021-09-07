@@ -6,7 +6,7 @@ use crate::core_mechanics::{
     SpecialDefenseType,
     SpeedCategory,
 };
-use crate::equipment::{weapons, HasWeapons};
+use crate::equipment::{Weapon, HasWeapons};
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
 use crate::skills::{HasSkills, Skill, SkillCategory};
@@ -38,7 +38,7 @@ pub struct FullMonsterDefinition {
     pub special_attacks: Option<Vec<attacks::Attack>>,
     pub special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     pub trained_skills: Option<Vec<Skill>>,
-    pub weapons: Vec<weapons::Weapon>,
+    pub weapons: Vec<Weapon>,
 }
 
 impl Monster {
@@ -123,7 +123,7 @@ impl Monster {
         creature_type: Option<CreatureType>,
     ) -> Monster {
         let mut creature = creature::Creature::new(level);
-        creature.add_weapon(weapons::Weapon::Slam);
+        creature.add_weapon(Weapon::Slam);
         creature.set_name("Standard Monster".to_string());
         let starting_attribute = if let Some(a) = starting_attribute {
             a
@@ -228,12 +228,12 @@ impl HasAttacks for Monster {
 }
 
 impl HasWeapons for Monster {
-    fn add_weapon(&mut self, weapon: weapons::Weapon) {
+    fn add_weapon(&mut self, weapon: Weapon) {
         self.creature.add_weapon(weapon);
     }
 
-    fn weapons(&self) -> Vec<&weapons::Weapon> {
-        return self.creature.weapons();
+    fn get_weapons(&self) -> Vec<&Weapon> {
+        return self.creature.get_weapons();
     }
 }
 

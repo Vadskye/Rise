@@ -4,7 +4,7 @@ use crate::core_mechanics::creatures::{creature, latex, HasCreatureMechanics};
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, Resource,
 };
-use crate::equipment::{weapons, HasWeapons};
+use crate::equipment::{Weapon, HasWeapons};
 use crate::skills::{HasSkills, Skill};
 
 pub struct Character {
@@ -27,7 +27,7 @@ impl Character {
     // Currently this creates a Martial Mastery fighter
     pub fn standard_character(&mut self, level: i32) -> Self {
         let mut creature = creature::Creature::new(level);
-        creature.add_weapon(weapons::Weapon::Totokia);
+        creature.add_weapon(Weapon::Totokia);
         creature.set_name("Standard Character".to_string());
 
         for a in Attribute::all() {
@@ -104,12 +104,12 @@ impl HasAttacks for Character {
 }
 
 impl HasWeapons for Character {
-    fn add_weapon(&mut self, weapon: weapons::Weapon) {
+    fn add_weapon(&mut self, weapon: Weapon) {
         self.creature.add_weapon(weapon);
     }
 
-    fn weapons(&self) -> Vec<&weapons::Weapon> {
-        return self.creature.weapons();
+    fn get_weapons(&self) -> Vec<&Weapon> {
+        return self.creature.get_weapons();
     }
 }
 
