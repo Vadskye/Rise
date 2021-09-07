@@ -3,6 +3,7 @@ use std::fmt;
 pub trait HasArmor {
     fn add_armor(&mut self, armor: Armor);
     fn get_armor(&self) -> Vec<&Armor>;
+    fn calc_encumbrance(&self) -> i32;
 }
 
 #[derive(Copy, Clone)]
@@ -62,6 +63,14 @@ impl Armor {
                 speed_modifier: -5,
             },
         }
+    }
+
+    pub fn defense(&self) -> i32 {
+        return self.definition().defense;
+    }
+
+    pub fn encumbrance(&self) -> i32 {
+        return self.definition().encumbrance;
     }
 
     pub fn name(&self) -> String {

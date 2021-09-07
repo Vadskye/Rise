@@ -8,12 +8,13 @@ use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::sizes;
-use crate::equipment::{HasWeapons, Weapon};
+use crate::equipment::{Armor, HasArmor, HasWeapons, Weapon};
 use crate::skills::{HasSkills, Skill};
 use std::cmp::{max, min};
 use std::collections::HashMap;
 
 pub struct Creature {
+    pub armor: Vec<Armor>,
     base_attributes: HashMap<Attribute, i32>,
     pub name: Option<String>,
     pub level: i32,
@@ -31,6 +32,7 @@ impl Creature {
     pub fn new(level: i32) -> Creature {
         let base_attributes = HashMap::<Attribute, i32>::new();
         return Creature {
+            armor: vec![],
             base_attributes,
             level,
             movement_modes: vec![],
@@ -246,6 +248,24 @@ impl HasAttacks for Creature {
     }
 }
 
+impl HasArmor for Creature {
+    fn add_armor(&mut self, armor: Armor) {
+        self.armor.push(armor);
+    }
+
+    fn get_armor(&self) -> Vec<&Armor> {
+        return self.armor.iter().collect();
+    }
+
+    fn calc_encumbrance(&self) -> i32 {
+        let armor_encumbrance: i32 = self.get_armor().iter().map(|a| a.encumbrance()).sum();
+        return max(
+            0,
+            armor_encumbrance - self.get_base_attribute(&Attribute::Strength),
+        );
+    }
+}
+
 impl HasWeapons for Creature {
     fn add_weapon(&mut self, weapon: Weapon) {
         self.weapons.push(weapon);
@@ -258,11 +278,17 @@ impl HasWeapons for Creature {
 
 impl HasDefenses for Creature {
     fn calc_defense(&self, defense: &defenses::Defense) -> i32 {
-        if let Some(a) = defense.associated_attribute() {
-            return self.level / 2 + self.get_base_attribute(&a);
+        let attribute_bonus = if let Some(a) = defense.associated_attribute() {
+            self.get_base_attribute(&a)
         } else {
-            return self.level / 2;
-        }
+            0
+        };
+        let armor_bonus = if defense.include_armor_bonus() {
+            self.get_armor().iter().map(|a| a.defense()).sum()
+        } else {
+            0
+        };
+        return self.level / 2 + attribute_bonus + armor_bonus;
     }
 }
 
@@ -310,11 +336,17 @@ impl HasSkills for Creature {
         } else {
             0
         };
-        let trained = self.is_skill_trained(skill);
-        if trained {
-            return 4 + max(self.level / 2, attribute);
+        let training_modifier = if self.is_skill_trained(skill) {
+            4 + max(self.level / 2, attribute)
         } else {
-            return attribute / 2;
-        }
+            attribute / 2
+        };
+        let encumbrance_modifier = if skill.apply_encumbrance() {
+            self.calc_encumbrance()
+        } else {
+            0
+        };
+
+        return training_modifier - encumbrance_modifier;
     }
 }

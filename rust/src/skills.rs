@@ -78,6 +78,14 @@ impl Skill {
         }
     }
 
+    pub fn apply_encumbrance(&self) -> bool {
+        if let Some(attribute) = self.attribute() {
+            return attribute == Attribute::Strength || attribute == Attribute::Dexterity;
+        } else {
+            return false;
+        }
+    }
+
     pub fn name(&self) -> &str {
         match self {
             Self::Awareness => "awareness",
