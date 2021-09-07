@@ -7,13 +7,16 @@ pub enum Modifier {
     Defense(Defense, i32),
     Encumbrance(i32),
     HitPoints(i32),
+    // TODO: add this to creature calculations
     Initiative(i32),
     MagicalPower(i32),
+    // TODO: add this to creature calculations
     MovementSpeed(i32),
     MundanePower(i32),
     Resource(Resource, i32),
     Skill(Skill, i32),
     StrikeDamageDice(i32),
+    // TODO: add this to creature calculations
     VitalRoll(i32),
 }
 
