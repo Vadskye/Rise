@@ -1,5 +1,5 @@
-use std::collections::HashMap;
 use crate::monsters::creature_type::CreatureType;
+use std::collections::HashMap;
 
 pub struct Knowledge {
     knowledge: HashMap<i32, String>,
@@ -13,7 +13,7 @@ impl Knowledge {
         }
         return Self {
             knowledge: knowledge_map,
-        }
+        };
     }
 
     pub fn to_latex(&self, creature_type: &CreatureType, level: i32) -> String {

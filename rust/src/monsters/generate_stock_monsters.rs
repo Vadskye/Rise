@@ -9,10 +9,7 @@ pub fn generate_stock_monsters() -> Vec<MonsterEntry> {
     let mut stock_monsters: Vec<MonsterEntry> = vec![];
     for creature_type in CreatureType::all() {
         for level in vec![1, 2, 3, 4, 5] {
-            for challenge_rating in vec![
-                ChallengeRating::Two,
-                ChallengeRating::Four,
-            ] {
+            for challenge_rating in vec![ChallengeRating::Two, ChallengeRating::Four] {
                 stock_monsters.push(MonsterEntry::Monster(Monster::fully_defined(
                     FullMonsterDefinition {
                         alignment: "always true neutral".to_string(),

@@ -1,10 +1,8 @@
-use crate::core_mechanics::creatures::HasCreatureMechanics;
 use crate::core_mechanics::attributes::{self, HasAttributes};
+use crate::core_mechanics::creatures::HasCreatureMechanics;
 use crate::core_mechanics::defenses::Defense;
 
-pub fn format_creature<T: HasCreatureMechanics>(
-    creature: &T,
-) -> String {
+pub fn format_creature<T: HasCreatureMechanics>(creature: &T) -> String {
     format!(
         "
             HP {hit_points}, DR {damage_resistance}
@@ -12,7 +10,8 @@ pub fn format_creature<T: HasCreatureMechanics>(
             {attacks}
             Attr: {attributes}
         ",
-        attacks = creature.calc_all_attacks()
+        attacks = creature
+            .calc_all_attacks()
             .iter()
             .map(|a| a.shorthand_description(creature))
             .collect::<Vec<String>>()

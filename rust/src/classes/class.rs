@@ -1,8 +1,8 @@
-use crate::core_mechanics::{Defense, Resource};
-use crate::equipment::{Armor, Weapon, WeaponGroup, ArmorUsageClass};
-use crate::latex_formatting;
-use crate::classes::{ClassArchetype, generate_latex_basic_class_abilities};
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
+use crate::core_mechanics::{Defense, Resource};
+use crate::equipment::{Armor, ArmorUsageClass, Weapon, WeaponGroup};
+use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};
 use std::fmt;
 use titlecase::titlecase;
@@ -18,7 +18,6 @@ pub struct WeaponProficiencies {
     pub specific_weapons: Option<Vec<Weapon>>,
     pub simple_weapons: bool,
 }
-
 
 pub enum Class {
     Barbarian,
@@ -604,8 +603,7 @@ impl Class {
                     .to_string())
                 .collect::<Vec<String>>()
                 .join("\n\n"),
-            basic_class_abilities =
-                generate_latex_basic_class_abilities(self).trim(),
+            basic_class_abilities = generate_latex_basic_class_abilities(self).trim(),
             special_class_abilities = self.latex_special_class_abilities().trim(),
             class_name = titlecase(self.name()),
             class_alignment = self.alignment(),
