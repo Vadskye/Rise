@@ -175,3 +175,52 @@ impl HasSkills for Character {
 
 // No need for explicit funtions here - it's handled by the above functions
 impl HasCreatureMechanics for Character {}
+
+struct StandardMagicBonuses {
+    damage_resistance: i32,
+    hit_points: i32,
+    power: i32,
+}
+
+fn calc_standard_magic_bonuses(level: i32) -> StandardMagicBonuses {
+    // Wealth is one item of current level, two items of one level lower, and two items of two
+    // levels lower.
+    // For most characters, power is most important, followed by damage resistance, and finally
+    // hit points.
+    // The level breakpoints for standard power and DR items are 4/10/16.
+    // This ignores legacy items, but assumes that items are acquired as soon as possible. On
+    // average, this should make the levels reasonably accurate.
+    let mut power = 0;
+    let mut dr = 0;
+    let mut hp = 0;
+
+    if level >= 16 {
+        power += 8;
+    } else if level >= 10 {
+        power += 4;
+    } else if level >= 4 {
+        power += 2;
+    }
+
+    if level >= 17 {
+        dr += 16;
+    } else if level >= 11 {
+        dr += 8;
+    } else if level >= 5 {
+        dr += 4;
+    }
+
+    if level >= 18 {
+        hp += 16;
+    } else if level >= 12 {
+        hp += 8;
+    } else if level >= 6 {
+        hp += 4;
+    }
+
+    return StandardMagicBonuses {
+        damage_resistance: dr,
+        hit_points: hp,
+        power,
+    };
+}
