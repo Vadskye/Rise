@@ -1,4 +1,5 @@
-use crate::core_mechanics::{damage_dice, damage_types, debuffs, HasCreatureMechanics};
+use crate::core_mechanics::{damage_dice, damage_types, debuffs};
+use crate::core_mechanics::creatures::HasCreatureMechanics;
 use crate::equipment::weapons;
 use crate::latex_formatting;
 

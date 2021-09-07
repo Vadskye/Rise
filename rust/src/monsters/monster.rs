@@ -1,4 +1,5 @@
-use crate::core_mechanics::attacks::HasAttacks;
+use crate::core_mechanics::creatures::attacks::HasAttacks;
+use crate::core_mechanics::creatures::{attacks, creature, HasCreatureMechanics};
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{
@@ -7,7 +8,7 @@ use crate::core_mechanics::defenses::{
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::senses::Sense;
-use crate::core_mechanics::{attacks, creature, movement_modes, sizes, HasCreatureMechanics};
+use crate::core_mechanics::{movement_modes, sizes};
 use crate::equipment::{weapons, HasWeapons};
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
