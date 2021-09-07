@@ -1,6 +1,8 @@
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
 use crate::core_mechanics::creatures::attacks::{self, HasAttacks};
-use crate::core_mechanics::creatures::{latex, HasCreatureMechanics};
+use crate::core_mechanics::creatures::{
+    latex, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
+};
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{self, HasDefenses, SpecialDefenseModifier};
 use crate::core_mechanics::movement_modes;
@@ -18,6 +20,7 @@ pub struct Creature {
     base_attributes: HashMap<Attribute, i32>,
     pub name: Option<String>,
     pub level: i32,
+    pub modifiers: Vec<Modifier>,
     pub movement_modes: Vec<movement_modes::MovementMode>,
     pub passive_abilities: Option<Vec<PassiveAbility>>,
     pub senses: Option<Vec<Sense>>,
@@ -35,6 +38,7 @@ impl Creature {
             armor: vec![],
             base_attributes,
             level,
+            modifiers: vec![],
             movement_modes: vec![],
             name: None,
             passive_abilities: None,
@@ -100,6 +104,25 @@ impl Creature {
 
     pub fn to_latex(&self) -> String {
         return latex::format_creature(self);
+    }
+}
+
+impl HasModifiers for Creature {
+    fn add_modifier(&mut self, modifier: Modifier) {
+        self.modifiers.push(modifier);
+    }
+
+    fn get_modifiers(&self) -> Vec<&Modifier> {
+        return self.modifiers.iter().collect();
+    }
+
+    fn calc_total_modifier(&self, mt: ModifierType) -> i32 {
+        return self
+            .modifiers
+            .iter()
+            .filter(|m| m.modifier_type() == mt)
+            .map(|m| m.value())
+            .sum();
     }
 }
 

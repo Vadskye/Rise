@@ -7,10 +7,8 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
-
-
-                ",
+                You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
+            ",
         },
         RankAbility {
             name: "Discipline",

@@ -1,5 +1,7 @@
 use crate::core_mechanics::creatures::attacks::HasAttacks;
-use crate::core_mechanics::creatures::{attacks, creature, HasCreatureMechanics};
+use crate::core_mechanics::creatures::{
+    attacks, creature, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
+};
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources,
     MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier,
@@ -150,6 +152,20 @@ impl Monster {
 
     pub fn set_level(&mut self, level: i32) {
         self.creature.level = level;
+    }
+}
+
+impl HasModifiers for Monster {
+    fn add_modifier(&mut self, modifier: Modifier) {
+        self.creature.add_modifier(modifier);
+    }
+
+    fn get_modifiers(&self) -> Vec<&Modifier> {
+        return self.creature.get_modifiers();
+    }
+
+    fn calc_total_modifier(&self, mt: ModifierType) -> i32 {
+        return self.creature.calc_total_modifier(mt);
     }
 }
 
