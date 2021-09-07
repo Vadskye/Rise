@@ -41,6 +41,13 @@ impl Defense {
             Self::Reflex => Some(Attribute::Dexterity),
         }
     }
+
+    pub fn include_armor_bonus(&self) -> bool {
+        match self {
+            Self::Armor => true,
+            _ => false,
+        }
+    }
 }
 
 impl fmt::Display for Defense {
