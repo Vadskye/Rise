@@ -1,7 +1,6 @@
-use crate::core_mechanics::attacks;
-use crate::core_mechanics::HasCreatureMechanics;
-use std::fmt;
+use crate::core_mechanics::creatures::{attacks, HasCreatureMechanics};
 use std::cmp::max;
+use std::fmt;
 
 pub struct CombatResult {
     blue_living_count: usize,
@@ -126,7 +125,8 @@ pub fn run_combat<T: HasCreatureMechanics>(blue: Vec<T>, red: Vec<T>) -> CombatR
 fn survival_percent<T: HasCreatureMechanics>(creatures: &Vec<DamageableCreature<T>>) -> f64 {
     let total_damage_absorption: i32 = creatures.iter().map(|d| d.total_damage_absorption()).sum();
     let total_damage_taken: i32 = creatures.iter().map(|d| d.damage_taken).sum();
-    return max(0, total_damage_absorption - total_damage_taken) as f64 / total_damage_absorption as f64;
+    return max(0, total_damage_absorption - total_damage_taken) as f64
+        / total_damage_absorption as f64;
 }
 
 fn calc_damage_per_round<T: HasCreatureMechanics>(attackers: &Vec<&T>, defender: &T) -> f64 {

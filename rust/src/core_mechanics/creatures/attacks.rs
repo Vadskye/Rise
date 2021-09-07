@@ -1,4 +1,5 @@
-use crate::core_mechanics::{attack_effects, damage_dice, defenses, HasCreatureMechanics};
+use crate::core_mechanics::{damage_dice, defenses};
+use crate::core_mechanics::creatures::{attack_effects, HasCreatureMechanics};
 use crate::equipment::weapons;
 use crate::latex_formatting;
 use std::fmt;

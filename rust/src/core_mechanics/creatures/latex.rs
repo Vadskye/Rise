@@ -1,4 +1,4 @@
-use crate::core_mechanics::HasCreatureMechanics;
+use crate::core_mechanics::creatures::HasCreatureMechanics;
 use crate::core_mechanics::attributes::{self, HasAttributes};
 use crate::core_mechanics::defenses::Defense;
 
