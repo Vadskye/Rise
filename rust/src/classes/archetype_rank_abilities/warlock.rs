@@ -703,7 +703,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 \begin{instantability}{Exchange Vitality}[Instant]
                     \abilitytag{Swift}
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by two.
+                    When you use this ability, you increase your \glossterm{fatigue level} by three.
 
                     Remove one of your \glossterm{vital wounds}.
                     This cannot remove a vital wound applied during the current round.

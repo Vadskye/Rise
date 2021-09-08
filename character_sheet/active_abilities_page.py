@@ -311,7 +311,7 @@ def universal_abilities():
             After you use this ability, you increase your fatigue level by one.
             Move up to your movement speed in a straight line, even through creatures. Make an attack vs. Fortitude against each creature that you move through who does not choose to avoid you. For each size category by which you are larger or smaller than the target, you gain a +4 bonus or penalty to accuracy.
             On a hit, you move through each creature's space. On a critical hit, you also knock each creature prone. On a miss, you end your movement immediately.
-        """),
+         """, attack={"accuracy": "", "defense": "Fort"),
         universal_ability_button("Recover", """
             After you use this ability, you increase your fatigue level by two, and you cannot use it again until you take a short rest.
             You regain hit points equal to your maximum hit points. In addition, you remove all brief effects and conditions affecting you. This cannot remove effects applied during the current round.

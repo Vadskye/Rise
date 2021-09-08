@@ -384,7 +384,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 When you use your \textit{lay on hands} ability, you can choose to remove a \glossterm{brief} effect or \glossterm{condition} of the target's choice from it instead of restoring its hit points.
                 Alternately, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
-                If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by two.
+                If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
             ",
             modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
