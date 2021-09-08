@@ -27,8 +27,10 @@ def create_page(_destination):
         [
             flex_row({'class': 'reference-row'}, [
                 standard_damage(),
-                skill_modifiers(),
-                vital_wound_chart(),
+                flex_col([
+                    skill_modifiers(),
+                    vital_wound_chart(),
+                ]),
                 common_concepts(),
             ]),
             character_creation(),
@@ -225,4 +227,19 @@ def common_concepts():
         ),
         p("""<b>Critical hit</b>: If you hit with an attack by 10 or more, you get a critical hit. Unless otherwise specified, all damaging attacks deal double damage on a critical hit."""),
         p("""<b>Glancing blow</b>: If you miss with an attack by 1 or 2, you get a glancing blow. Some higher level attacks have specific effects on a glancing blow, such as dealing half damage."""),
+        p("""
+            <b>Short rest</b>: Resting for ten minutes is considered a short rest. When you take a short rest, you gain the following benefits.
+            <ul>
+                <li>You regain any missing hit points and damage resistance.</li>
+                <li>You regain any attunement points you released from attuned items and abilities.</li>
+                <li>You remove all conditions affecting you.</li>
+            </ul>
+        """),
+        p("""
+            <b>Long rest</b>: Resting for eight hours is considered a long rest. When you take a long rest, you gain the following benefits.
+            <ul>
+                <li>You remove one of your vital wounds.</li>
+                <li>Your fatigue level becomes 0.</li>
+            </ul>
+        """),
     ])
