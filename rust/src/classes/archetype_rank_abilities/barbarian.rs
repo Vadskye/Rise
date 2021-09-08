@@ -455,6 +455,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 6 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 6.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Primal Might",

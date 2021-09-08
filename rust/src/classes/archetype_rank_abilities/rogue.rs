@@ -1,4 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::creatures::Modifier;
+use crate::core_mechanics::Resource;
+use crate::skills::{KnowledgeSubskill, Skill};
 
 pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -12,6 +15,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: Some(vec![Modifier::Skill(Skill::Stealth, 2)]),
         },
         RankAbility {
             name: "Sneak Attack",
@@ -36,6 +40,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         \end{instantability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Evasion",
@@ -45,6 +50,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
                 This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Darkstalker",
@@ -68,6 +74,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         \end{attuneability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Hide in Plain Sight",
@@ -80,6 +87,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         After you hide in this way, you \glossterm{briefly} cannot do so again.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Assassination",
@@ -94,6 +102,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     As a \glossterm{brief} effect, whenever you make a melee \glossterm{strikes} against the subject that it is \unaware, the strike deals maximum damage and automatically \glossterm{explodes} regardless of what you roll.
                 \end{durationability}
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Evasion",
@@ -103,6 +112,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
          Your \textit{evasion} ability also protects you from area attacks against your Fortitude and Mental defenses.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Darkstalker",
@@ -111,6 +121,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 When you use your \textit{darkstalker} ability, you become undetectable by any number of the possible sense groups, not just one.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -125,6 +136,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                 In addition, you gain all Knowledge skills as \glossterm{class skills}.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::TrainedSkill, 1)]),
         },
         RankAbility {
             name: "Bardic Performances",
@@ -424,6 +436,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Bardic Lore",
@@ -433,6 +446,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                 In addition, you gain a bonus equal to your rank in this archetype to Knowledge skills that you are \glossterm{untrained} with.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::TrainedSkill, 1)]),
         },
         RankAbility {
             name: "Bardic Performance",
@@ -441,6 +455,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional bardic performance.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Virtuoso",
@@ -449,6 +464,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Supreme Bardic Lore",
@@ -457,6 +473,19 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a +2 bonus to all Knowledge skills.
             ",
+            modifiers: Some(vec![Modifier::Skill(
+                Skill::Knowledge(vec![
+                    KnowledgeSubskill::Arcana,
+                    KnowledgeSubskill::Dungeoneering,
+                    KnowledgeSubskill::Engineering,
+                    KnowledgeSubskill::Geography,
+                    KnowledgeSubskill::Local,
+                    KnowledgeSubskill::Nature,
+                    KnowledgeSubskill::Planes,
+                    KnowledgeSubskill::Religion,
+                ]),
+                2,
+            )]),
         },
         RankAbility {
             name: "Bardic Performance",
@@ -465,6 +494,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional bardic performance.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Virtuoso",
@@ -473,6 +503,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The number of bardic performances you can sustain with your \textit{virtuoso} ability increases to three.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -486,6 +517,13 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                  You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
             ",
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Balance, 1),
+                Modifier::Skill(Skill::Flexibility, 1),
+                Modifier::Skill(Skill::Ride, 1),
+                Modifier::Skill(Skill::SleightOfHand, 1),
+                Modifier::Skill(Skill::Stealth, 1),
+            ]),
         },
         RankAbility {
             name: "Combat Styles",
@@ -505,6 +543,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                     you can exchange any number of maneuvers you know for other maneuvers,
                     including maneuvers of the higher rank.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (2)",
@@ -514,6 +553,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 2 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 2.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Tricky Force",
@@ -522,6 +562,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Combat Style Rank (3)",
@@ -531,6 +572,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 3 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 3.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Glancing Strikes",
@@ -540,6 +582,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
                 This is called a \glossterm{glancing blow}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (4)",
@@ -549,6 +592,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 4 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 4.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Trick Maneuver",
@@ -557,6 +601,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (5)",
@@ -566,6 +611,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 5 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 5.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Tricky Force",
@@ -574,6 +620,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{tricky force} ability increases to \plus2d.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Combat Style Rank (6)",
@@ -583,6 +630,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 6 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 6.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Tricky Finesse",
@@ -591,6 +639,13 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{tricky finesse} ability increases to \plus2.
             ",
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Balance, 1),
+                Modifier::Skill(Skill::Flexibility, 1),
+                Modifier::Skill(Skill::Ride, 1),
+                Modifier::Skill(Skill::SleightOfHand, 1),
+                Modifier::Skill(Skill::Stealth, 1),
+            ]),
         },
         RankAbility {
             name: "Combat Style Rank (7)",
@@ -600,6 +655,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 7 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 7.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Trick Maneuver",
@@ -608,6 +664,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
             ",
+            modifiers: None,
         },
     ];
 }
@@ -623,6 +680,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 In addition, choose any two skills.
                 Those skills are \glossterm{class skills} for you.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
         },
         RankAbility {
             name: "Skill Exemplar",
@@ -632,6 +690,47 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                 In addition, you gain a \plus1 bonus to all skills.
             ",
+            modifiers: Some(vec![
+                Modifier::Resource(Resource::TrainedSkill, 1),
+                Modifier::Skill(Skill::Awareness, 1),
+                Modifier::Skill(Skill::Balance, 1),
+                Modifier::Skill(Skill::Climb, 1),
+                Modifier::Skill(Skill::Craft, 1),
+                Modifier::Skill(Skill::CreatureHandling, 1),
+                Modifier::Skill(Skill::Deception, 1),
+                Modifier::Skill(Skill::Deduction, 1),
+                Modifier::Skill(Skill::Devices, 1),
+                Modifier::Skill(Skill::Disguise, 1),
+                Modifier::Skill(Skill::Endurance, 1),
+                Modifier::Skill(Skill::Flexibility, 1),
+                Modifier::Skill(Skill::Intimidate, 1),
+                Modifier::Skill(Skill::Jump, 1),
+                Modifier::Skill(
+                    Skill::Knowledge(vec![
+                        KnowledgeSubskill::Arcana,
+                        KnowledgeSubskill::Dungeoneering,
+                        KnowledgeSubskill::Engineering,
+                        KnowledgeSubskill::Geography,
+                        KnowledgeSubskill::Local,
+                        KnowledgeSubskill::Nature,
+                        KnowledgeSubskill::Planes,
+                        KnowledgeSubskill::Religion,
+                    ]),
+                    1,
+                ),
+                Modifier::Skill(Skill::Linguistics, 1),
+                Modifier::Skill(Skill::Medicine, 1),
+                Modifier::Skill(Skill::Perform, 1),
+                Modifier::Skill(Skill::Persuasion, 1),
+                Modifier::Skill(Skill::Profession, 1),
+                Modifier::Skill(Skill::Ride, 1),
+                Modifier::Skill(Skill::SleightOfHand, 1),
+                Modifier::Skill(Skill::SocialInsight, 1),
+                Modifier::Skill(Skill::Spellsense, 1),
+                Modifier::Skill(Skill::Stealth, 1),
+                Modifier::Skill(Skill::Survival, 1),
+                Modifier::Skill(Skill::Swim, 1),
+            ]),
         },
         RankAbility {
             name: "Greater Dabbler",
@@ -641,6 +740,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
          You gain an additional \glossterm{insight point}.
 
                 ",
+            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
         },
         RankAbility {
             name: "Versatile Power",
@@ -649,6 +749,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::MundanePower(2)]),
         },
         RankAbility {
             name: "Greater Skill Exemplar",
@@ -658,6 +759,47 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
          The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
 
                 ",
+            modifiers: Some(vec![
+                Modifier::Resource(Resource::TrainedSkill, 2),
+                Modifier::Skill(Skill::Awareness, 2),
+                Modifier::Skill(Skill::Balance, 2),
+                Modifier::Skill(Skill::Climb, 2),
+                Modifier::Skill(Skill::Craft, 2),
+                Modifier::Skill(Skill::CreatureHandling, 2),
+                Modifier::Skill(Skill::Deception, 2),
+                Modifier::Skill(Skill::Deduction, 2),
+                Modifier::Skill(Skill::Devices, 2),
+                Modifier::Skill(Skill::Disguise, 2),
+                Modifier::Skill(Skill::Endurance, 2),
+                Modifier::Skill(Skill::Flexibility, 2),
+                Modifier::Skill(Skill::Intimidate, 2),
+                Modifier::Skill(Skill::Jump, 2),
+                Modifier::Skill(
+                    Skill::Knowledge(vec![
+                        KnowledgeSubskill::Arcana,
+                        KnowledgeSubskill::Dungeoneering,
+                        KnowledgeSubskill::Engineering,
+                        KnowledgeSubskill::Geography,
+                        KnowledgeSubskill::Local,
+                        KnowledgeSubskill::Nature,
+                        KnowledgeSubskill::Planes,
+                        KnowledgeSubskill::Religion,
+                    ]),
+                    2,
+                ),
+                Modifier::Skill(Skill::Linguistics, 2),
+                Modifier::Skill(Skill::Medicine, 2),
+                Modifier::Skill(Skill::Perform, 2),
+                Modifier::Skill(Skill::Persuasion, 2),
+                Modifier::Skill(Skill::Profession, 2),
+                Modifier::Skill(Skill::Ride, 2),
+                Modifier::Skill(Skill::SleightOfHand, 2),
+                Modifier::Skill(Skill::SocialInsight, 2),
+                Modifier::Skill(Skill::Spellsense, 2),
+                Modifier::Skill(Skill::Stealth, 2),
+                Modifier::Skill(Skill::Survival, 2),
+                Modifier::Skill(Skill::Swim, 2),
+            ]),
         },
         RankAbility {
             name: "Supreme Dabbler",
@@ -667,6 +809,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
          You gain an additional \glossterm{insight point}.
 
                 ",
+            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
         },
         RankAbility {
             name: "Greater Versatile Power",
@@ -675,6 +818,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{versatile power} ability increases to \plus6.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4)]),
         },
         RankAbility {
             name: "Supreme Skill Exemplar",
@@ -683,6 +827,47 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The skill bonus from your \textit{skill exemplar} ability increases to \plus5.
             ",
+            modifiers: Some(vec![
+                Modifier::Resource(Resource::TrainedSkill, 2),
+                Modifier::Skill(Skill::Awareness, 2),
+                Modifier::Skill(Skill::Balance, 2),
+                Modifier::Skill(Skill::Climb, 2),
+                Modifier::Skill(Skill::Craft, 2),
+                Modifier::Skill(Skill::CreatureHandling, 2),
+                Modifier::Skill(Skill::Deception, 2),
+                Modifier::Skill(Skill::Deduction, 2),
+                Modifier::Skill(Skill::Devices, 2),
+                Modifier::Skill(Skill::Disguise, 2),
+                Modifier::Skill(Skill::Endurance, 2),
+                Modifier::Skill(Skill::Flexibility, 2),
+                Modifier::Skill(Skill::Intimidate, 2),
+                Modifier::Skill(Skill::Jump, 2),
+                Modifier::Skill(
+                    Skill::Knowledge(vec![
+                        KnowledgeSubskill::Arcana,
+                        KnowledgeSubskill::Dungeoneering,
+                        KnowledgeSubskill::Engineering,
+                        KnowledgeSubskill::Geography,
+                        KnowledgeSubskill::Local,
+                        KnowledgeSubskill::Nature,
+                        KnowledgeSubskill::Planes,
+                        KnowledgeSubskill::Religion,
+                    ]),
+                    2,
+                ),
+                Modifier::Skill(Skill::Linguistics, 2),
+                Modifier::Skill(Skill::Medicine, 2),
+                Modifier::Skill(Skill::Perform, 2),
+                Modifier::Skill(Skill::Persuasion, 2),
+                Modifier::Skill(Skill::Profession, 2),
+                Modifier::Skill(Skill::Ride, 2),
+                Modifier::Skill(Skill::SleightOfHand, 2),
+                Modifier::Skill(Skill::SocialInsight, 2),
+                Modifier::Skill(Skill::Spellsense, 2),
+                Modifier::Skill(Skill::Stealth, 2),
+                Modifier::Skill(Skill::Survival, 2),
+                Modifier::Skill(Skill::Swim, 2),
+            ]),
         },
     ];
 }
@@ -699,6 +884,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: Some(vec![Modifier::Skill(Skill::Deception, 2)]),
         },
         RankAbility {
             name: "Confound",
@@ -720,6 +906,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         \end{durationability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Trick Magic Device",
@@ -732,6 +919,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         You can only use this attunement point to \glossterm{attune} to magic wands or apparel items.
 
                 ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Exploit Distraction",
@@ -741,6 +929,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
          You gain a \plus1 \glossterm{accuracy} bonus against creatures affected by any \glossterm{condition}.
 
                 ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "What's That Over There",
@@ -763,6 +952,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         \end{durationability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Trick Magic Device",
@@ -773,6 +963,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
         In addition, you can use the attunement points from that ability to attune to any magic item, not just wands and apparel.
 
                 ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Greater Exploit Distraction",
@@ -782,6 +973,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
          The bonus from your \textit{exploit distraction} ability increases to \plus2.
 
                 ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Nothing Is Real",
@@ -799,6 +991,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     After this effect ends, the subject becomes immune to it until it takes a \glossterm{short rest}.
                 \end{freeability}
             ",
+            modifiers: None,
         },
     ];
 }
