@@ -423,7 +423,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 \begin{instantability}{Vital Restoration}[Instant]
                     \abilitytag{Magical}
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
+                    When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
 
                     Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
                     The subject removes one of its \glossterm{vital wounds}.
@@ -463,7 +463,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{revivify} ability as a standard action.
                 \begin{instantability}{Revivify}[Instant]
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
+                    When you use this ability, you increase your \glossterm{fatigue level} by four (see \pcref{Fatigue}).
 
                     Choose one intact corpse within your \glossterm{reach}.
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is restored to life, as the \ritual{resurrection} ritual.
