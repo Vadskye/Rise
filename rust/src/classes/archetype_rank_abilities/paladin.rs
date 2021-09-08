@@ -9,10 +9,8 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
-
-
-                ",
+                You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
+            ",
             modifiers: Some(vec![Modifier::Resource(Resource::FatigueTolerance, 2)]),
         },
         RankAbility {
@@ -247,10 +245,8 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You reduce your \glossterm{focus penalty} by 2.
-
-
-                ",
+                You reduce your \glossterm{focus penalty} by 2.
+            ",
             modifiers: Some(vec![Modifier::FocusPenalty(-2)]),
         },
         RankAbility {
@@ -328,10 +324,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         You gain a \plus1 bonus to your Fortitude defense and Mental defense.
-
-
-                ",
+                You gain a \plus1 bonus to your Fortitude defense and Mental defense.
+            ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Fortitude, 1),
                 Modifier::Defense(Defense::Mental, 1),
@@ -342,24 +336,23 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-        You can use the \textit{lay on hands} ability as a standard action.
-        \begin{instantability}{Lay on Hands}[Instant]
-            \abilitytag{Healing}, \abilitytag{Magical}
-            \rankline
-            Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
-            The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
-            After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
+            You can use the \textit{lay on hands} ability as a standard action.
+                \begin{instantability}{Lay on Hands}[Instant]
+                    \abilitytag{Healing}, \abilitytag{Magical}
+                    \rankline
+                    Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
+                    The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
+                    After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
-            \rankline
-            \rank{2} The healing increases to 2d6.
-            \rank{3} The healing increases to 2d10.
-            \rank{4} The healing increases to 4d6.
-            \rank{5} The healing increases to 4d10.
-            \rank{6} The healing increases to 5d10.
-            \rank{7} The healing increases to 7d10.
-        \end{instantability}
-
-                ",
+                    \rankline
+                    \rank{2} The healing increases to 2d6.
+                    \rank{3} The healing increases to 2d10.
+                    \rank{4} The healing increases to 4d6.
+                    \rank{5} The healing increases to 4d10.
+                    \rank{6} The healing increases to 5d10.
+                    \rank{7} The healing increases to 7d10.
+                \end{instantability}
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -367,9 +360,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-         You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
-
-                ",
+                You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+            ",
             modifiers: Some(vec![Modifier::DamageResistance(6)]),
         },
         RankAbility {
@@ -377,9 +369,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-         The bonus from your \textit{stalwart defense} ability increases to \plus2.
-
-                ",
+                The bonus from your \textit{stalwart defense} ability increases to \plus2.
+            ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Fortitude, 1),
                 Modifier::Defense(Defense::Mental, 1),
@@ -391,11 +382,10 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-        When you use your \textit{lay on hands} ability, you can choose to remove a \glossterm{brief} effect or \glossterm{condition} of the target's choice from it instead of restoring its hit points.
-        Alternately, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
-        If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by two.
-
-                ",
+                When you use your \textit{lay on hands} ability, you can choose to remove a \glossterm{brief} effect or \glossterm{condition} of the target's choice from it instead of restoring its hit points.
+                Alternately, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
+                If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by two.
+            ",
             modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
@@ -403,9 +393,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-         The resistance bonus from your \textit{stalwart resilience} ability increases to four times your rank in this archetype.
-
-                ",
+                The resistance bonus from your \textit{stalwart resilience} ability increases to four times your rank in this archetype.
+            ",
             // Rank 4: 12. Rank 5: 20.
             modifiers: Some(vec![Modifier::DamageResistance(8)]),
         },
@@ -414,9 +403,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-         The bonus from your \textit{stalwart defense} ability increases to \plus3.
-
-                ",
+                The bonus from your \textit{stalwart defense} ability increases to \plus3.
+            ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Fortitude, 1),
                 Modifier::Defense(Defense::Mental, 1),

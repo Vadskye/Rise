@@ -20,10 +20,9 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-         Whenever you make a Jump check that moves you over or adjacent to a creature, if your Jump check result beats that creature's Reflex defense, you gain a \plus1 bonus to \glossterm{accuracy} against that creature for the rest of the current round.
-        This is a \glossterm{Swift} effect, so it helps you if you make a Jump check in the same phase that you make a strike, such as with the \ability{leaping strike} \glossterm{maneuver}.
-
-                ",
+                Whenever you make a Jump check that moves you over or adjacent to a creature, if your Jump check result beats that creature's Reflex defense, you gain a \plus1 bonus to \glossterm{accuracy} against that creature for the rest of the current round.
+                This is a \glossterm{Swift} effect, so it helps you if you make a Jump check in the same phase that you make a strike, such as with the \ability{leaping strike} \glossterm{maneuver}.
+            ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
@@ -31,11 +30,10 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-         You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
-        This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
-        If you have the \textit{evasion} rogue ability with the same effect as this ability, you reduce the total damage you take to one quarter of the normal value instead.
-
-                ",
+                You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
+                This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
+                If you have the \textit{evasion} rogue ability with the same effect as this ability, you reduce the total damage you take to one quarter of the normal value instead.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -56,9 +54,8 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-         The bonus from your \textit{acrobatic accuracy} ability increases to \plus2.
-
-                ",
+                The bonus from your \textit{acrobatic accuracy} ability increases to \plus2.
+            ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
@@ -66,9 +63,8 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-         Your \textit{evasion} ability also protects you from area attacks against your Fortitude and Mental defenses.
-
-                ",
+                Your \textit{evasion} ability also protects you from area attacks against your Fortitude and Mental defenses.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -282,13 +278,12 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         Whenever you make a \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
-        This allows you to use your \glossterm{power} with magical abilities to determine your damage.
-        In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
-        If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
-        Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
-
-                ",
+                Whenever you make a \glossterm{strike}, you can choose to treat it as a \glossterm{magical} ability.
+                This allows you to use your \glossterm{power} with magical abilities to determine your damage.
+                In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
+                If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
+                Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
+            ",
             // TODO: use higher of magical and mundane power for strikes
             modifiers: None,
         },
@@ -297,219 +292,217 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-        
-        You can channel your ki to temporarily enhance your abilities.
-        Choose two \textit{ki manifestations} from the list below.
-        You can also spend \glossterm{insight points} to learn one additional \textit{ki manifestation} per \glossterm{insight point}.
-        You can use any \textit{ki manifestation} ability you know using the type of action indicated in the ability's description.
+                You can channel your ki to temporarily enhance your abilities.
+                Choose two \textit{ki manifestations} from the list below.
+                You can also spend \glossterm{insight points} to learn one additional \textit{ki manifestation} per \glossterm{insight point}.
+                You can use any \textit{ki manifestation} ability you know using the type of action indicated in the ability's description.
 
-        After you use a \textit{ki manifestation}, you \glossterm{briefly} cannot use a \textit{ki manifestation} again.
-        {
-            \begin{durationability}{Abandon the Fragile Self}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You can negate one \glossterm{condition} that would be applied to you this phase.
-                In exchange, you take a \minus2 penalty to \glossterm{defenses} this phase.
+                After you use a \textit{ki manifestation}, you \glossterm{briefly} cannot use a \textit{ki manifestation} again.
+                {
+                    \begin{durationability}{Abandon the Fragile Self}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You can negate one \glossterm{condition} that would be applied to you this phase.
+                        In exchange, you take a \minus2 penalty to \glossterm{defenses} this phase.
 
-                \rankline
-                \rank{3} You can negate any number of conditions instead of only one condition.
-                \rank{5} The defense penalty is reduced to \minus1.
-                \rank{7} The defense penalty is removed.
-            \end{durationability}
+                        \rankline
+                        \rank{3} You can negate any number of conditions instead of only one condition.
+                        \rank{5} The defense penalty is reduced to \minus1.
+                        \rank{7} The defense penalty is removed.
+                    \end{durationability}
 
-            \begin{durationability}{Burst of Blinding Speed}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You gain a \plus10 foot bonus to your land speed this phase.
+                    \begin{durationability}{Burst of Blinding Speed}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You gain a \plus10 foot bonus to your land speed this phase.
 
-                \rankline
-                \rank{3} You can also ignore \glossterm{difficult terrain} this phase.
-                \rank{5} The speed bonus increases to \plus15 feet.
-                \rank{7} You can also move or stand on liquids as if they were solid this phase.
-            \end{durationability}
+                        \rankline
+                        \rank{3} You can also ignore \glossterm{difficult terrain} this phase.
+                        \rank{5} The speed bonus increases to \plus15 feet.
+                        \rank{7} You can also move or stand on liquids as if they were solid this phase.
+                    \end{durationability}
 
-            \begin{durationability}{Calm the Inner Tempest}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
+                    \begin{durationability}{Calm the Inner Tempest}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
 
-                \rankline
-                \rank{3} The bonus increases to \plus8.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The bonus increases to \plus12.
-            \end{durationability}
+                        \rankline
+                        \rank{3} The bonus increases to \plus8.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The bonus increases to \plus12.
+                    \end{durationability}
 
-            \begin{durationability}{Extend the Flow of Ki}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You gain a \plus5 foot bonus to your \glossterm{reach} this round.
+                    \begin{durationability}{Extend the Flow of Ki}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You gain a \plus5 foot bonus to your \glossterm{reach} this round.
 
-                \rankline
-                \rank{3} The bonus increases to \plus10 feet.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The bonus increases to \plus15 feet.
-            \end{durationability}
+                        \rankline
+                        \rank{3} The bonus increases to \plus10 feet.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The bonus increases to \plus15 feet.
+                    \end{durationability}
 
-            \begin{instantability}{Flash Step}[Instant]
-                \rankline
-                You can use this ability as part of movement with your land speed.
-                % TODO: is 'horizontally' the correct word?
-                You \glossterm{teleport} horizontally instead of moving normally.
-                If your \glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
+                    \begin{instantability}{Flash Step}[Instant]
+                        \rankline
+                        You can use this ability as part of movement with your land speed.
+                        % TODO: is 'horizontally' the correct word?
+                        You \glossterm{teleport} horizontally instead of moving normally.
+                        If your \glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
 
-                Teleporting a given distance costs movement equal to twice that distance.
-                For example, if you have a 30 foot movement speed, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
+                        Teleporting a given distance costs movement equal to twice that distance.
+                        For example, if you have a 30 foot movement speed, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
 
-                \rankline
-                \rank{3} The movement cost to teleport is reduced to be equal to the distance you teleport.
-                \rank{5} You can use this ability to move even if you are \immobilized or \grappled.
-                \rank{7} You can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
-                If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
-            \end{instantability}
+                        \rankline
+                        \rank{3} The movement cost to teleport is reduced to be equal to the distance you teleport.
+                        \rank{5} You can use this ability to move even if you are \immobilized or \grappled.
+                        \rank{7} You can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
+                        If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
+                    \end{instantability}
 
-            \begin{durationability}{Flurry of a Thousand Cuts}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                When you use the \ability{offhand strike} ability this round, you roll the attack roll twice and take the higher result.
+                    \begin{durationability}{Flurry of a Thousand Cuts}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        When you use the \ability{offhand strike} ability this round, you roll the attack roll twice and take the higher result.
 
-                \rankline
-                \rank{3} You also gain a +1 \glossterm{accuracy} bonus with the \ability{offhand strike} ability.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The accuracy bonus increases to +2.
-            \end{durationability}
+                        \rankline
+                        \rank{3} You also gain a +1 \glossterm{accuracy} bonus with the \ability{offhand strike} ability.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The accuracy bonus increases to +2.
+                    \end{durationability}
 
-            \begin{durationability}{Hear the Rustling Wings}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
+                    \begin{durationability}{Hear the Rustling Wings}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
 
-                \rankline
-                \rank{3} The bonus increases to \plus8.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The bonus increases to \plus12.
-            \end{durationability}
+                        \rankline
+                        \rank{3} The bonus increases to \plus8.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The bonus increases to \plus12.
+                    \end{durationability}
 
-            \begin{durationability}{Kindle the Living Flame}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                Your \glossterm{strikes} deal fire damage in addition to their other damage types this round.
+                    \begin{durationability}{Kindle the Living Flame}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        Your \glossterm{strikes} deal fire damage in addition to their other damage types this round.
 
-                \rankline
-                \rank{3} You also gain a +2 \glossterm{power} bonus with strikes.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The power bonus increases to +4.
-            \end{durationability}
+                        \rankline
+                        \rank{3} You also gain a +2 \glossterm{power} bonus with strikes.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The power bonus increases to +4.
+                    \end{durationability}
 
-            \begin{durationability}{Leap of the Heavens}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You gain a \plus4 bonus to the Jump skill this round (see \pcref{Jump}).
+                    \begin{durationability}{Leap of the Heavens}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You gain a \plus4 bonus to the Jump skill this round (see \pcref{Jump}).
 
-                \rankline
-                \rank{3} The bonus increases to \plus8.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The bonus increases to \plus12.
-            \end{durationability}
+                        \rankline
+                        \rank{3} The bonus increases to \plus8.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The bonus increases to \plus12.
+                    \end{durationability}
 
-            \begin{durationability}{Rest Atop the Precipice}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
+                    \begin{durationability}{Rest Atop the Precipice}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
 
-                \rankline
-                \rank{3} The bonus increases to \plus8.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The bonus increases to \plus12.
-            \end{durationability}
+                        \rankline
+                        \rank{3} The bonus increases to \plus8.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The bonus increases to \plus12.
+                    \end{durationability}
 
-            \begin{durationability}{Scale the Highest Tower}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You gain a \plus4 bonus to the Climb skill this round (see \pcref{Climb}).
-                % TODO: is this wording correct?
+                    \begin{durationability}{Scale the Highest Tower}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You gain a \plus4 bonus to the Climb skill this round (see \pcref{Climb}).
+                        % TODO: is this wording correct?
 
-                \rankline
-                \rank{3} The Climb bonus increases to \plus8.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The bonus increases to \plus12.
-            \end{durationability}
+                        \rankline
+                        \rank{3} The Climb bonus increases to \plus8.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The bonus increases to \plus12.
+                    \end{durationability}
 
-            \begin{durationability}{Sense the Mystic Truth}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You gain a \plus4 bonus to the Spellsense skill this round (see \pcref{Spellsense}).
+                    \begin{durationability}{Sense the Mystic Truth}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You gain a \plus4 bonus to the Spellsense skill this round (see \pcref{Spellsense}).
 
-                \rankline
-                \rank{3} The bonus increases to \plus8.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The bonus increases to \plus12.
-            \end{durationability}
+                        \rankline
+                        \rank{3} The bonus increases to \plus8.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The bonus increases to \plus12.
+                    \end{durationability}
 
-            \begin{durationability}{Shelter from Falling Rain}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You gain a +2 bonus to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller this round.
+                    \begin{durationability}{Shelter from Falling Rain}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You gain a +2 bonus to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller this round.
 
-                \rankline
-                \rank{3} The bonus increases to +3.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The bonus increases to +4.
-            \end{durationability}
+                        \rankline
+                        \rank{3} The bonus increases to +3.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The bonus increases to +4.
+                    \end{durationability}
 
-            \begin{durationability}{Step Between the Mystic Worlds}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                All attacks against you have a 20\\% \glossterm{failure chance} this round.
-                However, your attacks also have a 20\\% failure chance this round.
+                    \begin{durationability}{Step Between the Mystic Worlds}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        All attacks against you have a 20\\% \glossterm{failure chance} this round.
+                        However, your attacks also have a 20\\% failure chance this round.
 
-                \rankline
-                \rank{3} The failure chance for attacks against you increases to 25\\%.
-                \rank{5} When you use this ability, you can choose whether it becomes a \glossterm{brief} effect.
-                \rank{7} The failure chance for attacks against you increases to 30\\%.
-            \end{durationability}
+                        \rankline
+                        \rank{3} The failure chance for attacks against you increases to 25\\%.
+                        \rank{5} When you use this ability, you can choose whether it becomes a \glossterm{brief} effect.
+                        \rank{7} The failure chance for attacks against you increases to 30\\%.
+                    \end{durationability}
 
-            \begin{durationability}{Thread the Eye of the Storm}[Duration]
-                \abilitytag{Swift}
-                \rankline
-                You can use this ability as a \glossterm{free action}.
-                You reduce your \glossterm{longshot penalty} with thrown weapons by 1 this round (see \pcref{Weapon Range Limits}).
+                    \begin{durationability}{Thread the Eye of the Storm}[Duration]
+                        \abilitytag{Swift}
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You reduce your \glossterm{longshot penalty} with thrown weapons by 1 this round (see \pcref{Weapon Range Limits}).
 
-                \rankline
-                \rank{3} The penalty reduction increases to 2.
-                \rank{5} This becomes a \glossterm{brief} effect.
-                \rank{7} The penalty reduction increases to 3.
-            \end{durationability}
+                        \rankline
+                        \rank{3} The penalty reduction increases to 2.
+                        \rank{5} This becomes a \glossterm{brief} effect.
+                        \rank{7} The penalty reduction increases to 3.
+                    \end{durationability}
 
-            % TODO: this is confusing since skills no longer directly reference attributes
-            % \begin{durationability}{Surpass the Mortal Limits}
-            %     \spelltwocol{Duration}{\abilitytag{Swift}}
-            %     \rankline
-            %     You can use this ability as a \glossterm{free action}.
-            %     You can use your \glossterm{power} in place of your Strength, Dexterity, and Constitution when making checks this phase.
+                    % TODO: this is confusing since skills no longer directly reference attributes
+                    % \begin{durationability}{Surpass the Mortal Limits}
+                    %     \spelltwocol{Duration}{\abilitytag{Swift}}
+                    %     \rankline
+                    %     You can use this ability as a \glossterm{free action}.
+                    %     You can use your \glossterm{power} in place of your Strength, Dexterity, and Constitution when making checks this phase.
 
-            %     \rankline
-            %     \rank{3} You also gain a \plus2 bonus to checks based on Strength, Dexterity, and Constitution.
-            %     \rank{5} The effect lasts until the end of the current round.
-            %     \rank{7} The bonus increases to \plus4.
-            % \end{durationability}
+                    %     \rankline
+                    %     \rank{3} You also gain a \plus2 bonus to checks based on Strength, Dexterity, and Constitution.
+                    %     \rank{5} The effect lasts until the end of the current round.
+                    %     \rank{7} The bonus increases to \plus4.
+                    % \end{durationability}
 
-            % TODO: add more
-        }
-
-                ",
+                    % TODO: add more
+                }
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -530,10 +523,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-        
-        You gain a \plus2 bonus to your \glossterm{power} with all abilities.
-
-                ",
+                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+            ",
             modifiers: Some(vec![
                 Modifier::MagicalPower(2),
                 Modifier::MundanePower(2),
@@ -607,9 +598,8 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-         You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
-
-                ",
+                You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
+            ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
         RankAbility {
@@ -617,9 +607,8 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-         You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons and unarmed weapons \glossterm{weapon groups}, natural weapons, and to any attack using one or more \glossterm{free hands}.
-
-                ",
+                You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons and unarmed weapons \glossterm{weapon groups}, natural weapons, and to any attack using one or more \glossterm{free hands}.
+            ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
@@ -700,11 +689,8 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-        
-        You are immune to being \sickened and \nauseated.
-
-
-                ",
+                You are immune to being \sickened and \nauseated.
+            ",
             // TODO: represent immunities?
             modifiers: None,
         },
@@ -713,22 +699,21 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-         You can use the \textit{clear the mind} ability as a standard action.
-        \begin{instantability}{Clear the Mind}[Instant]
-            \rankline
-            Remove up to two \glossterm{brief} effects or \glossterm{conditions} affecting you.
-            This cannot remove effects applied during the current round.
+                You can use the \textit{clear the mind} ability as a standard action.
+                \begin{instantability}{Clear the Mind}[Instant]
+                    \rankline
+                    Remove up to two \glossterm{brief} effects or \glossterm{conditions} affecting you.
+                    This cannot remove effects applied during the current round.
 
-            \rankline
-            \rank{3} This ability gains the \abilitytag{Swift} tag.
-            When you use it, the removed effects do not affect you during the current phase.
-            In addition, you \glossterm{briefly} cannot gain any \glossterm{conditions}.
-            \rank{5} You can use this ability as a \glossterm{minor action}.
-            When you do, you increase your \glossterm{fatigue level} by one.
-            \rank{7} You can remove any number of effects.
-        \end{instantability}
-
-                ",
+                    \rankline
+                    \rank{3} This ability gains the \abilitytag{Swift} tag.
+                    When you use it, the removed effects do not affect you during the current phase.
+                    In addition, you \glossterm{briefly} cannot gain any \glossterm{conditions}.
+                    \rank{5} You can use this ability as a \glossterm{minor action}.
+                    When you do, you increase your \glossterm{fatigue level} by one.
+                    \rank{7} You can remove any number of effects.
+                \end{instantability}
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -736,11 +721,10 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-         You become so attuned to the natural energy of life that you can sense it even when sight fails you.
-        You gain the \glossterm{lifesense} ability with a 120 foot range.
-        In addition, you gain the \glossterm{lifesight} ability with a 30 foot range.
-
-                ",
+                You become so attuned to the natural energy of life that you can sense it even when sight fails you.
+                You gain the \glossterm{lifesense} ability with a 120 foot range.
+                In addition, you gain the \glossterm{lifesight} ability with a 30 foot range.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -748,9 +732,8 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-         You are immune to being \slowed and \decelerated.
-
-                ",
+                You are immune to being \slowed and \decelerated.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -767,10 +750,9 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-         You are immune to being \dazed and \stunned.
-        In addition, you are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
-
-                ",
+                You are immune to being \dazed and \stunned.
+                In addition, you are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -778,11 +760,9 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-        
-        The range of your \glossterm{lifesense} ability increases by 360 feet.
-        In addition, the range of your \glossterm{lifesight} ability increases by 90 feet.
-
-                ",
+                The range of your \glossterm{lifesense} ability increases by 360 feet.
+                In addition, the range of your \glossterm{lifesight} ability increases by 90 feet.
+            ",
             modifiers: None,
         },
         RankAbility {

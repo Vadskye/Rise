@@ -239,10 +239,9 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-         When you use the \textit{sprint} ability, you can move through spaces occupied by enemies during that movement.
-        You treat those spaces as \glossterm{difficult terrain}, which causes to you to move at half speed.
-
-                ",
+                When you use the \textit{sprint} ability, you can move through spaces occupied by enemies during that movement.
+                You treat those spaces as \glossterm{difficult terrain}, which causes to you to move at half speed.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -269,9 +268,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-         You gain a \plus1d bonus to your damage with all weapons.
-
-                ",
+                You gain a \plus1d bonus to your damage with all weapons.
+            ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
@@ -279,9 +277,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-         The speed bonus from your \textit{fast movement} ability increases to \plus10 feet.
-
-                ",
+                The speed bonus from your \textit{fast movement} ability increases to \plus10 feet.
+            ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
         RankAbility {
@@ -341,7 +338,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                 You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
+                You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Climb, 1),
