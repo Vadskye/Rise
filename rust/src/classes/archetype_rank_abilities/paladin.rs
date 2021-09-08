@@ -1,4 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::creatures::Modifier;
+use crate::core_mechanics::{Defense, Resource};
 
 pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -11,6 +13,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: Some(vec![Modifier::Resource(Resource::FatigueTolerance, 2)]),
         },
         RankAbility {
             name: "Aligned Aura",
@@ -33,6 +36,9 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Law} When a target rolls a 1 on an attack roll with a \glossterm{strike}, the attack roll is treated as a 6.
                 This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
             ",
+            // Most auras loosely correlate to +0.5 accuracy in an AOE? For power level purposes,
+            // approximate as a personal +1 accuracy.
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Aligned Immunity",
@@ -46,6 +52,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Good} You are immune to the \shaken, \frightened, and \panicked effects.
                 \subparhead{Law} You are immune to the \dazed, \stunned, \disoriented, and \confused effects.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Paragon Power",
@@ -54,6 +61,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::MundanePower(2)]),
         },
         RankAbility {
             name: "Greater Aligned Aura",
@@ -70,6 +78,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
                 \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Aligned Immunity",
@@ -78,6 +87,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The effect of your \textit{aligned immunity} ability is shared with your \glossterm{allies} within the area of your \textit{aligned aura}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Paragon Power",
@@ -86,6 +96,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{paragon power} ability increases to \plus6.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4)]),
         },
         RankAbility {
             name: "Supreme Aligned Aura",
@@ -98,6 +109,8 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Good} The \glossterm{vital roll} bonus increases to \plus5.
                 \subparhead{Law} The effect triggers on rolling either a 1 or a 2.
             ",
+            // Another awkward approximation
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ];
 }
@@ -118,6 +131,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 Divine spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
                 For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spellcasting",
@@ -134,6 +148,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                     including spells of the higher rank.
                 All of those spells must be from divine mystic spheres you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (2)",
@@ -143,6 +158,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 2 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 2.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -151,6 +167,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (3)",
@@ -160,6 +177,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 3 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (4)",
@@ -169,6 +187,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 4 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -177,6 +196,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (5)",
@@ -186,6 +206,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 5 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (6)",
@@ -195,6 +216,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 6 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (7)",
@@ -204,6 +226,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 7 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -212,6 +235,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -227,6 +251,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: Some(vec![Modifier::FocusPenalty(-2)]),
         },
         RankAbility {
             name: "Divine Spell Versatility",
@@ -237,6 +262,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
                 You do not have to have access to that mystic sphere.
                 As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Combat Caster",
@@ -245,6 +271,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The penalty reduction from your \textit{combat caster} ability increases to 4.
             ",
+            modifiers: Some(vec![Modifier::FocusPenalty(-2)]),
         },
         RankAbility {
             name: "Wellspring of Power",
@@ -253,6 +280,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(2)]),
         },
         RankAbility {
             name: "Divine Spell Versatility",
@@ -261,6 +289,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional spell with your \textit{divine spell versatility} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Attunement Point",
@@ -269,6 +298,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Greater Wellspring of Power",
@@ -277,6 +307,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(4)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -285,6 +316,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
     ];
 }
@@ -300,6 +332,10 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::Defense(Defense::Mental, 1),
+            ]),
         },
         RankAbility {
             name: "Lay on Hands",
@@ -324,6 +360,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
         \end{instantability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Stalwart Resilience",
@@ -333,6 +370,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
          You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
 
                 ",
+            modifiers: Some(vec![Modifier::DamageResistance(6)]),
         },
         RankAbility {
             name: "Greater Stalwart Defense",
@@ -342,6 +380,11 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
          The bonus from your \textit{stalwart defense} ability increases to \plus2.
 
                 ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::Defense(Defense::Mental, 1),
+                Modifier::DamageResistance(3),
+            ]),
         },
         RankAbility {
             name: "Greater Lay on Hands",
@@ -353,6 +396,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
         If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by two.
 
                 ",
+            modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
             name: "Greater Stalwart Resilience",
@@ -362,6 +406,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
          The resistance bonus from your \textit{stalwart resilience} ability increases to four times your rank in this archetype.
 
                 ",
+            // Rank 4: 12. Rank 5: 20.
+            modifiers: Some(vec![Modifier::DamageResistance(8)]),
         },
         RankAbility {
             name: "Supreme Stalwart Defense",
@@ -371,6 +417,11 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
          The bonus from your \textit{stalwart defense} ability increases to \plus3.
 
                 ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::Defense(Defense::Mental, 1),
+                Modifier::DamageResistance(4),
+            ]),
         },
         RankAbility {
             name: "Supreme Lay on Hands",
@@ -379,6 +430,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 When you use your \textit{lay on hands} ability on a creature other than yourself, it also affects you.
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(4)]),
         },
     ];
 }
@@ -393,6 +445,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to any roll that you use the \textit{desperate exertion} ability on.
                 This bonus stacks with the normal \plus2 bonus provided by that ability.
             ",
+            // TODO: represent desperate exertion at all?
+            modifiers: None,
         },
         RankAbility {
             name: "Smite",
@@ -413,6 +467,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The damage bonus increases to \plus4d.
                 \end{instantability}
             ",
+            // TODO: represent special attacks
+            modifiers: None,
         },
         RankAbility {
             name: "Zealous Fixation",
@@ -422,6 +478,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you hit a creature with a \glossterm{strike}, you ignore all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
                 If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Glancing Strikes",
@@ -431,6 +488,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
                 This is called a \glossterm{glancing blow}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Forceful Zeal",
@@ -439,6 +497,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Zealous Purge",
@@ -461,6 +520,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The target stops being attuned to two effects instead of one.
                 \end{instantability}
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Zealous Fixation",
@@ -469,6 +529,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your \textit{zealous fixation} ability also grants you a +1 \glossterm{accuracy} bonus against the creature you are fixating on.
             ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Greater Zealous Exertion",
@@ -477,6 +538,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{zealous exertion} ability increases to \plus4.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Forceful Zeal",
@@ -485,6 +547,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{forceful zeal} ability increases to \plus2d.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Pass Judgment",
@@ -506,6 +569,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
                 \end{durationability}
             ",
+            modifiers: None,
         },
     ];
 }

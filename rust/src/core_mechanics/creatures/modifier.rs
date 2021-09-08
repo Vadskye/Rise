@@ -1,11 +1,14 @@
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::skills::Skill;
 
 pub enum Modifier {
     Accuracy(i32),
+    BaseAttribute(Attribute, i32),
     DamageResistance(i32),
     Defense(Defense, i32),
     Encumbrance(i32),
+    // TODO: add this to creature calculations
+    FocusPenalty(i32),
     HitPoints(i32),
     // TODO: add this to creature calculations
     Initiative(i32),
@@ -23,9 +26,11 @@ pub enum Modifier {
 #[derive(PartialEq)]
 pub enum ModifierType {
     Accuracy,
+    BaseAttribute(Attribute),
     DamageResistance,
     Defense(Defense),
     Encumbrance,
+    FocusPenalty,
     HitPoints,
     Initiative,
     MagicalPower,
@@ -41,9 +46,11 @@ impl Modifier {
     pub fn modifier_type(&self) -> ModifierType {
         match self {
             Self::Accuracy(_) => ModifierType::Accuracy,
+            Self::BaseAttribute(a, _) => ModifierType::BaseAttribute(*a),
             Self::DamageResistance(_) => ModifierType::DamageResistance,
             Self::Defense(d, _) => ModifierType::Defense(*d),
             Self::Encumbrance(_) => ModifierType::Encumbrance,
+            Self::FocusPenalty(_) => ModifierType::FocusPenalty,
             Self::HitPoints(_) => ModifierType::HitPoints,
             Self::Initiative(_) => ModifierType::Initiative,
             Self::MagicalPower(_) => ModifierType::MagicalPower,
@@ -59,9 +66,11 @@ impl Modifier {
     pub fn value(&self) -> i32 {
         let value = match self {
             Self::Accuracy(v) => v,
+            Self::BaseAttribute(_, v) => v,
             Self::DamageResistance(v) => v,
             Self::Defense(_, v) => v,
             Self::Encumbrance(v) => v,
+            Self::FocusPenalty(v) => v,
             Self::HitPoints(v) => v,
             Self::Initiative(v) => v,
             Self::MagicalPower(v) => v,
