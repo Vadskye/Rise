@@ -887,7 +887,7 @@ impl Class {
                             Instant
                             \rankline
                             Make an attack vs. Fortitude against all \glossterm{unattended} objects in a \areamed radius.
-                            You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
+                            You may freely exclude any number of 5-ft. cubes from the area, as long as the resulting area is still contiguous.
                             \hit For each target, if its \glossterm{damage resistance} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
 
                             \rankline
@@ -899,7 +899,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
-                        \parhead{Aspect} You gain a \plus4 bonus to your maximum \glossterm{hit points}.
+                        \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{hit points}.
                         \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
                         \begin{attuneability}{Speak with Earth}
                             \abilitytag{Attune} (self)
@@ -912,7 +912,7 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{attuneability}
-                        \parhead{Mastery} The bonus from this domain's gift increases to \plus5, and the number of hit points you gain from its aspect increases to 16.
+                        \parhead{Mastery} The bonus from this domain's gift increases to \plus3, and the number of hit points you gain from its aspect increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Evil}
                         \parhead{Gift} At the start of each phase, you may choose an adjacent \glossterm{ally}.
@@ -1051,14 +1051,14 @@ impl Class {
                             \spelltwocol{Duration}{\abilitytag{Swift}}
                             \rankline
                             Choose an \glossterm{ally} adjacent to you.
-                            It gains a \plus2 bonus to all defenses until the end of the round.
+                            It gains a \plus1 bonus to all defenses until the end of the round.
                             Because this ability has the \abilitytag{Swift} tag, this bonus applies against attacks made in the current phase.
 
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
                         \end{durationability}
                         \parhead{Essence} The bonus from this domain's gift increases to three times your rank in this archetype.
-                        \parhead{Mastery} The bonus from your \textit{divine protection} ability increases to \plus3.
+                        \parhead{Mastery} The bonus from your \textit{divine protection} ability increases to \plus2.
 
                     \subsubsection{Strength}
                         If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
