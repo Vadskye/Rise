@@ -5,13 +5,13 @@ use crate::core_mechanics::{Defense, Resource};
 pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Devoted Endurance",
+            name: "Enduring Devotion",
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
+                You gain a \plus1 bonus to \glossterm{vital rolls}.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::FatigueTolerance, 2)]),
+            modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
             name: "Aligned Aura",

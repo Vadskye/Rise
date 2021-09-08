@@ -1,25 +1,28 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::creatures::Modifier;
-use crate::core_mechanics::Resource;
+use crate::core_mechanics::{Defense, Resource};
 
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Enduring Discipline",
+            name: "Mental Discipline",
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
+                You gain a \plus2 bonus to your Mental defense.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::FatigueTolerance, 2)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::Defense(Defense::Mental, 1),
+            ]),
         },
         RankAbility {
-            name: "Discipline",
+            name: "Cleansing Discipline",
             is_magical: false,
             rank: 1,
             description: r"
-                You can use the \textit{discipline} ability as a \glossterm{standard action}.
-                \begin{instantability}{Discipline}[Instant]
+                You can use the \textit{cleansing discipline} ability as a \glossterm{standard action}.
+                \begin{instantability}{Cleansing Discipline}[Instant]
                     \rankline
                     Remove up to two \glossterm{brief} effects or \glossterm{conditions} affecting you.
                     This cannot remove effects applied during the current round.
@@ -36,15 +39,13 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Enduring Discipline",
+            name: "Enduring Discipline",
             is_magical: false,
             rank: 2,
             description: r"
-                The bonus from your \textit{enduring discipline} ability increases to \plus3.
-                In addition, you gain a \plus1 bonus to \glossterm{vital rolls} (see \pcref{Vital Rolls}).
+                You gain a \plus1 bonus to \glossterm{vital rolls} and your \glossterm{fatigue tolerance} (see \pcref{Vital Rolls}, and \pcref{Fatigue Tolerance}).
             ",
             modifiers: Some(vec![
-                Modifier::Resource(Resource::FatigueTolerance, 1),
                 Modifier::VitalRoll(1),
             ]),
         },
@@ -69,15 +70,13 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme Enduring Discipline",
+            name: "Greater Enduring Discipline",
             is_magical: false,
             rank: 5,
             description: r"
-                The bonus from your \textit{enduring discipline} ability increases to \plus4.
-                In addition, the bonus to vital rolls from your \textit{greater enduring discipline} ability increases to \plus2.
+                The bonuses from your \textit{enduring discipline} ability increase to \plus2.
             ",
             modifiers: Some(vec![
-                Modifier::Resource(Resource::FatigueTolerance, 1),
                 Modifier::VitalRoll(1),
             ]),
         },
