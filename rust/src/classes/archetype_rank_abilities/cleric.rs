@@ -442,7 +442,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                At the end of each phase, if a living \glossterm{ally} within \distrange of you gained a \glossterm{vital wound} during that phase, you can \glossterm{teleport} into the unoccupied square closest to that creature.
+                At the end of each phase, if a living \glossterm{ally} within \longrange of you lost \glossterm{hit points} during that phase, you can \glossterm{teleport} into the unoccupied square closest to that creature.
             ",
             modifiers: None,
         },
@@ -477,8 +477,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You can use your \textit{called to the needy} ability to teleport to allies that lost \glossterm{hit points} in addition to allies that gained vital wounds.
-                In addition, the range limit increases to \extrange, and it no longer requires \glossterm{line of sight} or \glossterm{line of effect}.
+                The range limit of your \ability{called to the needy} ability increases to \extrange, and it no longer requires \glossterm{line of sight} or \glossterm{line of effect}.
             ",
             modifiers: None,
         },
