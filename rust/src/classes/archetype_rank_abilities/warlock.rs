@@ -1,4 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::creatures::Modifier;
+use crate::core_mechanics::{Defense, Resource};
+use crate::skills::{KnowledgeSubskill, Skill};
 
 pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -9,6 +12,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (minimum 1).
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(1)]),
         },
         RankAbility {
             name: "Abyssal Blast",
@@ -32,6 +36,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The damage increases to 7d10.
                 \end{instantability}
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(1)]),
         },
         RankAbility {
             name: "Abyssal Sphere",
@@ -41,6 +46,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 If you have access to pact magic, choose one of the following \glossterm{mystic spheres}: \sphere{astromancy}, \sphere{enchantment}, \sphere{pyromancy}, or \sphere{summoning}.
                 You gain access to that mystic sphere.
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(2)]),
         },
         RankAbility {
             name: "Resist the Dark Call",
@@ -49,6 +55,8 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 If you do not have access to pact magic, you gain a +2 bonus to your Mental defense and a +1 bonus to your \glossterm{fatigue tolerance}.
             ",
+            // Assume that the warlock has pact magic
+            modifiers: None,
         },
         RankAbility {
             name: "Banish to the Abyss",
@@ -72,6 +80,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
         \end{durationability}
 
                 ",
+            modifiers: Some(vec![Modifier::DamageResistance(2)]),
         },
         RankAbility {
             name: "Hellfire",
@@ -83,6 +92,10 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
         Any other aspects of the ability, including damage types other than fire, remain unchanged.
 
                 ",
+            modifiers: Some(vec![
+                Modifier::MagicalPower(2),
+                Modifier::DamageResistance(2),
+            ]),
         },
         RankAbility {
             name: "Greater Fiendish Resistance",
@@ -91,6 +104,8 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{fiendish resistance} ability increases to three times your rank in this archetype.
             ",
+            // Rank 4: 8. Rank 5: 15.
+            modifiers: Some(vec![Modifier::DamageResistance(7)]),
         },
         RankAbility {
             name: "Abyssal Curse",
@@ -111,16 +126,18 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
         \end{durationability}
 
                 ",
+            modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
             name: "Brimstone",
             is_magical: true,
             rank: 7,
             description: r"
-                The power bonus from your \textit{hellfire} ability increases to \plus4.
+                The power bonus from your \textit{hellfire} ability increases to \plus6.
                 In addition, whenever you cause a creature to lose \glossterm{hit points} with fire damage or energy damage, it becomes \glossterm{briefly} \sickened.
                 After the effect ends, that creature then becomes immune to it until it takes a \glossterm{short rest}.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(4)]),
         },
     ];
 }
@@ -137,6 +154,19 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: Some(vec![Modifier::Skill(
+                Skill::Knowledge(vec![
+                    KnowledgeSubskill::Arcana,
+                    KnowledgeSubskill::Dungeoneering,
+                    KnowledgeSubskill::Engineering,
+                    KnowledgeSubskill::Geography,
+                    KnowledgeSubskill::Local,
+                    KnowledgeSubskill::Nature,
+                    KnowledgeSubskill::Planes,
+                    KnowledgeSubskill::Religion,
+                ]),
+                2,
+            )]),
         },
         RankAbility {
             name: "Eldritch Secret",
@@ -157,11 +187,16 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             \parhead{Secret of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
             It is removed when the creature takes a \glossterm{short rest}.
             However, whenever you would gain a \glossterm{condition} that you are not \glossterm{immune} to, that effect becomes a \abilitytag{Curse} on you instead of a condition.
-            If you were not already affected by a Curse from this ability, the old Curse becomes a condition instead.
+            If you were already affected by a Curse from this ability, the old Curse becomes a condition instead.
             Whenever you take a \glossterm{short rest}, you remove any Curse affecting you as a result of this ability.
         }
 
                 ",
+            // Assume secret of bloodforging
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 4),
+                Modifier::DamageResistance(3),
+            ]),
         },
         RankAbility {
             name: "Unnatural Insight",
@@ -173,16 +208,51 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         For each insight point you choose not to gain in this way, you gain a \plus1 bonus to all Knowledge skills.
 
                 ",
+            modifiers: Some(vec![
+                Modifier::DamageResistance(3),
+                Modifier::Resource(Resource::InsightPoint, 2),
+                Modifier::Skill(Skill::Awareness, -2),
+                Modifier::Skill(Skill::Balance, -2),
+                Modifier::Skill(Skill::Climb, -2),
+                Modifier::Skill(Skill::Craft, -2),
+                Modifier::Skill(Skill::CreatureHandling, -2),
+                Modifier::Skill(Skill::Deception, -2),
+                Modifier::Skill(Skill::Deduction, -2),
+                Modifier::Skill(Skill::Devices, -2),
+                Modifier::Skill(Skill::Disguise, -2),
+                Modifier::Skill(Skill::Endurance, -2),
+                Modifier::Skill(Skill::Flexibility, -2),
+                Modifier::Skill(Skill::Intimidate, -2),
+                Modifier::Skill(Skill::Jump, -2),
+                Modifier::Skill(Skill::Linguistics, -2),
+                Modifier::Skill(Skill::Medicine, -2),
+                Modifier::Skill(Skill::Perform, -2),
+                Modifier::Skill(Skill::Persuasion, -2),
+                Modifier::Skill(Skill::Profession, -2),
+                Modifier::Skill(Skill::Ride, -2),
+                Modifier::Skill(Skill::SleightOfHand, -2),
+                Modifier::Skill(Skill::SocialInsight, -2),
+                Modifier::Skill(Skill::Spellsense, -2),
+                Modifier::Skill(Skill::Stealth, -2),
+                Modifier::Skill(Skill::Survival, -2),
+                Modifier::Skill(Skill::Swim, -2),
+            ]),
         },
         RankAbility {
             name: "Lore of Corrupting Power",
             is_magical: true,
             rank: 3,
             description: r"
-         You gain a \plus4 bonus to \glossterm{power}.
+         You gain a \plus3 bonus to \glossterm{power}.
         However, you take a \minus2 penalty to Mental defense.
 
                 ",
+            modifiers: Some(vec![
+                Modifier::DamageResistance(3),
+                Modifier::MagicalPower(4),
+                Modifier::MundanePower(4),
+                Modifier::Defense(Defense::Mental, 2),
+            ]),
         },
         RankAbility {
             name: "Greater Eldritch Secret",
@@ -199,6 +269,8 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            // Rank 3: 9. Rank 4: 20.
+            modifiers: Some(vec![Modifier::DamageResistance(11)]),
         },
         RankAbility {
             name: "Greater Unnatural Insight",
@@ -208,15 +280,49 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
          The maximum number of insight points you can gain with your \textit{unnatural insight} ability increases to four.
 
                 ",
+            modifiers: Some(vec![
+                Modifier::DamageResistance(5),
+                Modifier::Resource(Resource::InsightPoint, 2),
+                Modifier::Skill(Skill::Awareness, -2),
+                Modifier::Skill(Skill::Balance, -2),
+                Modifier::Skill(Skill::Climb, -2),
+                Modifier::Skill(Skill::Craft, -2),
+                Modifier::Skill(Skill::CreatureHandling, -2),
+                Modifier::Skill(Skill::Deception, -2),
+                Modifier::Skill(Skill::Deduction, -2),
+                Modifier::Skill(Skill::Devices, -2),
+                Modifier::Skill(Skill::Disguise, -2),
+                Modifier::Skill(Skill::Endurance, -2),
+                Modifier::Skill(Skill::Flexibility, -2),
+                Modifier::Skill(Skill::Intimidate, -2),
+                Modifier::Skill(Skill::Jump, -2),
+                Modifier::Skill(Skill::Linguistics, -2),
+                Modifier::Skill(Skill::Medicine, -2),
+                Modifier::Skill(Skill::Perform, -2),
+                Modifier::Skill(Skill::Persuasion, -2),
+                Modifier::Skill(Skill::Profession, -2),
+                Modifier::Skill(Skill::Ride, -2),
+                Modifier::Skill(Skill::SleightOfHand, -2),
+                Modifier::Skill(Skill::SocialInsight, -2),
+                Modifier::Skill(Skill::Spellsense, -2),
+                Modifier::Skill(Skill::Stealth, -2),
+                Modifier::Skill(Skill::Survival, -2),
+                Modifier::Skill(Skill::Swim, -2),
+            ]),
         },
         RankAbility {
             name: "Greater Lore of Corrupting Power",
             is_magical: true,
             rank: 6,
             description: r"
-         The bonus from your \textit{lore of corrupting power} ability increases to \plus8.
+         The bonus from your \textit{lore of corrupting power} ability increases to \plus9.
 
                 ",
+            modifiers: Some(vec![
+                Modifier::DamageResistance(5),
+                Modifier::MagicalPower(6),
+                Modifier::MundanePower(6),
+            ]),
         },
         RankAbility {
             name: "Supreme Eldritch Secret",
@@ -233,6 +339,11 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             \parhead{Secret of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the subject.
         }
                 ",
+            // Rank 6: 30. Rank 7: 49.
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::DamageResistance(19),
+            ]),
         },
     ];
 }
@@ -256,6 +367,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Armor Tolerance",
@@ -265,6 +377,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
          You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spellcasting",
@@ -283,6 +396,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         All of those spells must be from pact mystic spheres you have access to.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (2)",
@@ -293,6 +407,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 2.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -301,6 +416,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional pact \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (3)",
@@ -311,6 +427,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Armor Tolerance",
@@ -320,6 +437,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
          The penalty reduction from your \textit{armor tolerance} ability increases to 3.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (4)",
@@ -330,6 +448,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -338,6 +457,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional pact \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (5)",
@@ -348,6 +468,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (6)",
@@ -358,6 +479,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Supreme Armor Tolerance",
@@ -367,6 +489,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
          The penalty reduction from your \textit{armor tolerance} ability increases to 4.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (7)",
@@ -377,6 +500,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -385,6 +509,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
          You learn an additional pact \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
                 ",
+            modifiers: None,
         },
     ];
 }
@@ -400,6 +525,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: Some(vec![Modifier::FocusPenalty(-2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -432,6 +558,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Desperate Power",
@@ -440,6 +567,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you use the \textit{desperate exertion} ability to affect a \glossterm{magical} attack, you double your magical \glossterm{power} with that attack.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Wellspring of Power",
@@ -448,6 +576,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -456,6 +585,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \textit{mystic insight} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Attunement Point",
@@ -464,6 +594,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Greater Wellspring of Power",
@@ -472,6 +603,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(4)]),
         },
         RankAbility {
             name: "Mystic Insights",
@@ -480,6 +612,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain two additional \textit{mystic insight} abilities.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -508,6 +641,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            // Assume whispers of the mighty since it's easy
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
         },
         RankAbility {
             name: "Possession",
@@ -536,6 +671,12 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         \end{durationability}
 
                 ",
+            modifiers: Some(vec![
+                Modifier::MagicalPower(2),
+                Modifier::Defense(Defense::Fortitude, -2),
+                Modifier::Defense(Defense::Mental, -2),
+                Modifier::Resource(Resource::FatigueTolerance, 4),
+            ]),
         },
         RankAbility {
             name: "Exchange Soul Fragment",
@@ -555,6 +696,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         \end{instantability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Empowering Whispers",
@@ -575,6 +717,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::Defense(Defense::Fortitude, 2)]),
         },
         RankAbility {
             name: "Greater Possession",
@@ -583,6 +726,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You are immune to being \dazed, \stunned, \confused, and \disoriented during your \textit{possession} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Exchange Vitality",
@@ -602,6 +746,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         \end{instantability}
 
                 ",
+            modifiers: Some(vec![Modifier::MagicalPower(4)]),
         },
         RankAbility {
             name: "Supreme Empowering Whispers",
@@ -622,6 +767,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
             name: "Supreme Possession",
@@ -630,6 +776,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You double the range of spells you cast during your \textit{possession} ability.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(8)]),
         },
     ];
 }
