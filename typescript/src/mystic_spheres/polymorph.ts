@@ -93,7 +93,7 @@ export const polymorph: MysticSphere = {
 
         Make a melee \\glossterm{strike} with a -1d damage penalty using a \\glossterm{natural weapon}.
         The attack is made against the target's Reflex defense instead of its Armor defense.
-        You may choose to treat this strike as either a \\glossterm{magical} ability or a \\glossterm{mundane} ability.
+        You may use the higher of your \\glossterm{magical} power and your \\glossterm{mundane} power to determine your damage with this ability.
       `,
       focus: false,
       rank: 1,
@@ -112,7 +112,7 @@ export const polymorph: MysticSphere = {
         This spell does not have the \\abilitytag{Focus} tag.
 
         Make a melee \\glossterm{strike} with a -1 accuracy penalty and a +2d damage bonus using a \\glossterm{natural weapon}.
-        You may choose to treat this strike as either a \\glossterm{magical} ability or a \\glossterm{mundane} ability.
+        You may use the higher of your \\glossterm{magical} power and your \\glossterm{mundane} power to determine your damage with this ability.
       `,
       focus: false,
       rank: 1,
@@ -131,7 +131,7 @@ export const polymorph: MysticSphere = {
 
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         You gain a +5 foot bonus to your \\glossterm{reach} with this strike.
-        You may choose to treat this strike as either a \\glossterm{magical} ability or a \\glossterm{mundane} ability.
+        You may use the higher of your \\glossterm{magical} power and your \\glossterm{mundane} power to determine your damage with this ability.
       `,
       focus: false,
       rank: 2,
