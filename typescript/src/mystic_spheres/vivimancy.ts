@@ -254,8 +254,12 @@ export const vivimancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You ignore the vital wound effect of one of your \\glossterm{vital wounds} (see \\pcref{Vital Wounds}).
+        Whenever you gain a \\glossterm{vital wound}, you may choose to ignore its vital wound effect (see \\pcref{Vital Wounds}).
         You are still considered to have the vital wound, and it still provides the normal -1 penalty to future vital rolls.
+
+        You can only ignore the effects of one of your vital wounds in this way.
+        If you gain a new vital wound, you can choose to either ignore the new vital wound effect or continue ignoring the old vital wound effect.
+        You can make this choice after learning the \\glossterm{vital roll} for the new vital wound.
       `,
       rank: 3,
       scaling: {
