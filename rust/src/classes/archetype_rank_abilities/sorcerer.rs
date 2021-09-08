@@ -9,18 +9,15 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-        
-        You have the ability to use arcane magic.
-        You gain access to one arcane \glossterm{mystic sphere} (see \pcref{Arcane Mystic Spheres}).
-        You may spend \glossterm{insight points} to gain access to one additional arcane \glossterm{mystic sphere} per two \glossterm{insight points}.
-        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        You do not yet gain access to any other spells from those mystic spheres.
+                You have the ability to use arcane magic.
+                You gain access to one arcane \glossterm{mystic sphere} (see \pcref{Arcane Mystic Spheres}).
+                You may spend \glossterm{insight points} to gain access to one additional arcane \glossterm{mystic sphere} per two \glossterm{insight points}.
+                You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
+                You do not yet gain access to any other spells from those mystic spheres.
 
-        Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
-        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
-
-
-                ",
+                Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
+                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -51,18 +48,16 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-        
-        You become a rank 1 arcane spellcaster.
-        You learn two rank 1 \glossterm{spells} from arcane \glossterm{mystic spheres} you have access to.
-        You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
-        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+                You become a rank 1 arcane spellcaster.
+                You learn two rank 1 \glossterm{spells} from arcane \glossterm{mystic spheres} you have access to.
+                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
+                Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
 
-        When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-            you can forget any number of spells you know to learn that many new spells in exchange,
-            including spells of the higher rank.
-        All of those spells must be from arcane mystic spheres you have access to.
-
-                ",
+                When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+                    you can forget any number of spells you know to learn that many new spells in exchange,
+                    including spells of the higher rank.
+                All of those spells must be from arcane mystic spheres you have access to.
+            ",
             modifiers: Some(vec![Modifier::DamageResistance(1)]),
         },
         RankAbility {
@@ -70,10 +65,9 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-         You become a rank 2 arcane spellcaster.
-        This gives you access to spells that require a minimum rank of 2.
-
-                ",
+                You become a rank 2 arcane spellcaster.
+                This gives you access to spells that require a minimum rank of 2.
+            ",
             modifiers: Some(vec![Modifier::DamageResistance(2)]),
         },
         RankAbility {
@@ -90,10 +84,9 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-         You become a rank 3 arcane spellcaster.
-        This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
-
-                ",
+                You become a rank 3 arcane spellcaster.
+                This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -111,10 +104,9 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-         You become a rank 4 arcane spellcaster.
-        This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
-
-                ",
+                You become a rank 4 arcane spellcaster.
+                This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
+            ",
             modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
@@ -131,10 +123,9 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-         You become a rank 5 arcane spellcaster.
-        This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
-
-                ",
+                You become a rank 5 arcane spellcaster.
+                This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
+            ",
             modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
@@ -142,10 +133,9 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-         You become a rank 6 arcane spellcaster.
-        This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
-
-                ",
+                You become a rank 6 arcane spellcaster.
+                This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -174,8 +164,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-         You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                ",
+                You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
+            ",
             modifiers: None,
         },
     ];
@@ -188,10 +178,8 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You reduce your \glossterm{focus penalty} by 2.
-
-
-                ",
+                You reduce your \glossterm{focus penalty} by 2.
+            ",
             modifiers: Some(vec![Modifier::FocusPenalty(-2)]),
         },
         RankAbility {
@@ -199,28 +187,26 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-        
-        You gain your choice of one of the following abilities.
-        Whenever you increase your rank in this archetype, you may change your choice.
-        This can allow you to apply the benefits of insights like \textit{signature spell} to higher rank spells.
-        {
-            \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
-                You double your range with that spell.
-                You can choose this ability multiple times, choosing a different spell each time.
-            \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
-                You cannot choose this ability multiple times.
-            \parhead{Signature Spell} Choose an arcane \glossterm{spell} you know.
-                The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
-                In addition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
-                You can choose this ability multiple times, choosing a different spell each time.
-            \parhead{Spell Knowledge} You learn an additional spell.
-                You can choose this ability multiple times, learning an additional spell each time.
-            \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.
-                You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
-                You can choose this ability multiple times, choosing a different spell each time.
-        }
-
-                ",
+                You gain your choice of one of the following abilities.
+                Whenever you increase your rank in this archetype, you may change your choice.
+                This can allow you to apply the benefits of insights like \textit{signature spell} to higher rank spells.
+                {
+                    \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
+                        You double your range with that spell.
+                        You can choose this ability multiple times, choosing a different spell each time.
+                    \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
+                        You cannot choose this ability multiple times.
+                    \parhead{Signature Spell} Choose an arcane \glossterm{spell} you know.
+                        The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
+                        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                        You can choose this ability multiple times, choosing a different spell each time.
+                    \parhead{Spell Knowledge} You learn an additional spell.
+                        You can choose this ability multiple times, learning an additional spell each time.
+                    \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.
+                        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
+                        You can choose this ability multiple times, choosing a different spell each time.
+                }
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -292,29 +278,27 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
-        You have the blood of that type of dragon in your veins.
-        You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon.
+                Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
+                You have the blood of that type of dragon in your veins.
+                You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon.
 
-        \begin{dtable}
-            \lcaption{Draconic Bloodline Types}
-            \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
-                \tb{Dragon} & \tb{Damage Type} & \tb{Mystic Sphere} \tableheaderrule
-                Black       & Acid             & Vivimancy    \\
-                Blue        & Electricity      & Electromancy \\
-                Brass       & Fire             & Enchantment  \\
-                Bronze      & Electricity      & Revelation   \\
-                Copper      & Acid             & Terramancy   \\
-                Gold        & Fire             & Photomancy   \\
-                Green       & Acid             & Compulsion   \\
-                Red         & Fire             & Pyromancy    \\
-                Silver      & Cold             & Telekinesis  \\
-                White       & Cold             & Cryomancy    \\
-            \end{dtabularx}
-        \end{dtable}
-
-
-                ",
+                \begin{dtable}
+                    \lcaption{Draconic Bloodline Types}
+                    \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
+                        \tb{Dragon} & \tb{Damage Type} & \tb{Mystic Sphere} \tableheaderrule
+                        Black       & Acid             & Vivimancy    \\
+                        Blue        & Electricity      & Electromancy \\
+                        Brass       & Fire             & Enchantment  \\
+                        Bronze      & Electricity      & Revelation   \\
+                        Copper      & Acid             & Terramancy   \\
+                        Gold        & Fire             & Photomancy   \\
+                        Green       & Acid             & Compulsion   \\
+                        Red         & Fire             & Pyromancy    \\
+                        Silver      & Cold             & Telekinesis  \\
+                        White       & Cold             & Cryomancy    \\
+                    \end{dtabularx}
+                \end{dtable}
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -322,9 +306,8 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You reduce your \glossterm{focus penalty} by 1.
-
-                ",
+                You reduce your \glossterm{focus penalty} by 1.
+            ",
             modifiers: Some(vec![Modifier::FocusPenalty(-1)]),
         },
         RankAbility {
@@ -332,10 +315,9 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-         If you already have access to your dragon's mystic sphere, you learn two spells from that sphere.
-        Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
-
-                ",
+                If you already have access to your dragon's mystic sphere, you learn two spells from that sphere.
+                Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -343,9 +325,8 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-         The focus penalty reduction from your \textit{draconic focus} ability increases to 2.
-
-                ",
+                The focus penalty reduction from your \textit{draconic focus} ability increases to 2.
+            ",
             modifiers: Some(vec![Modifier::FocusPenalty(-1)]),
         },
         RankAbility {
@@ -353,9 +334,8 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-         You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
-
-                ",
+                You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+            ",
             modifiers: Some(vec![Modifier::DamageResistance(9)]),
         },
         RankAbility {
@@ -363,9 +343,8 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-         You gain a \plus1 bonus to \glossterm{accuracy} with any spell that either deals damage of your dragon's damage type or is from your dragon's \glossterm{mystic sphere}.
-
-                ",
+                You gain a \plus1 bonus to \glossterm{accuracy} with any spell that either deals damage of your dragon's damage type or is from your dragon's \glossterm{mystic sphere}.
+            ",
             modifiers: Some(vec![Modifier::Accuracy(1), Modifier::DamageResistance(3)]),
         },
         RankAbility {
@@ -382,9 +361,8 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-         The bonus from your \textit{draconic hide} ability increases to four times your rank in this archetype.
-
-                ",
+                The bonus from your \textit{draconic hide} ability increases to four times your rank in this archetype.
+            ",
             // Rank 5: 15. Rank 6: 24.
             modifiers: Some(vec![Modifier::DamageResistance(9)]),
         },
@@ -498,11 +476,9 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You gain a \plus2 bonus to the roll when you use the \textit{desperate exertion} ability.
-        This bonus stacks with the normal \plus2 bonus provided by that ability.
-
-
-                ",
+                You gain a \plus2 bonus to the roll when you use the \textit{desperate exertion} ability.
+                This bonus stacks with the normal \plus2 bonus provided by that ability.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -510,32 +486,31 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-         Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
-        When you do, you reduce your \glossterm{focus penalty} for casting the spell by 2, and you gain a +2 bonus to \glossterm{power} with the spell.
-        In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
-        Some wild magic effects cannot be meaningfully applied to all spells.
-        For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
-        Any wildspell effects that do not make sense for a particular spell should be ignored.
-        The rolled wild magic effect always applies to the round that you cast the spell, even if the spell doesn't have its normal effect immediately.
+                Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
+                When you do, you reduce your \glossterm{focus penalty} for casting the spell by 2, and you gain a +2 bonus to \glossterm{power} with the spell.
+                In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
+                Some wild magic effects cannot be meaningfully applied to all spells.
+                For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
+                Any wildspell effects that do not make sense for a particular spell should be ignored.
+                The rolled wild magic effect always applies to the round that you cast the spell, even if the spell doesn't have its normal effect immediately.
 
-        \begin{dtable}
-            \lcaption{Wild Magic Effects}
-            \begin{dtabularx}{\textwidth}{l X}
-                \tb{Roll} & \tb{Effect} \tableheaderrule
-                1 & The spell fails with no effect \\
-                2 & When you attack with the spell this round, you roll twice and take the lower result \\
-                3 & When you attack with the spell this round, you are a target of the attack in addition to any other targets \\
-                4 & The spell's area is halved this round \\
-                5 & The spell's area is doubled this round \\
-                6 & Each target that resists damage from the spell this round is also \glossterm{briefly} \dazed \\
-                7 & Each target that loses hit points from the spell this round is also \glossterm{briefly} \sickened \\
-                8 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
-                9 & When you attack with the spell this round, you roll twice and take the higher result \\
-                10 & During the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
-            \end{dtabularx}
-        \end{dtable}
-
-                ",
+                \begin{dtable}
+                    \lcaption{Wild Magic Effects}
+                    \begin{dtabularx}{\textwidth}{l X}
+                        \tb{Roll} & \tb{Effect} \tableheaderrule
+                        1 & The spell fails with no effect \\
+                        2 & When you attack with the spell this round, you roll twice and take the lower result \\
+                        3 & When you attack with the spell this round, you are a target of the attack in addition to any other targets \\
+                        4 & The spell's area is halved this round \\
+                        5 & The spell's area is doubled this round \\
+                        6 & Each target that resists damage from the spell this round is also \glossterm{briefly} \dazed \\
+                        7 & Each target that loses hit points from the spell this round is also \glossterm{briefly} \sickened \\
+                        8 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
+                        9 & When you attack with the spell this round, you roll twice and take the higher result \\
+                        10 & During the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
+                    \end{dtabularx}
+                \end{dtable}
+            ",
             modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::FocusPenalty(-2)]),
         },
         RankAbility {
@@ -543,11 +518,10 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-         You learn a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags from any \glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
-        The spell does not have to be from a mystic sphere on the arcane mystic sphere list.
-        As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
-
-                ",
+                You learn a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags from any \glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
+                The spell does not have to be from a mystic sphere on the arcane mystic sphere list.
+                As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
+            ",
             modifiers: None,
         },
         RankAbility {
