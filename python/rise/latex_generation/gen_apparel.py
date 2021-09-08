@@ -2440,9 +2440,9 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<divine healing> cleric ability or the \\ability<lay on hands> paladin ability to remove a vital wound, you only increase your \\glossterm<fatigue level> by one instead of by two.
+                When you use the \\ability<divine healing> cleric ability or the \\ability<lay on hands> paladin ability to remove a vital wound, you only increase your \\glossterm<fatigue level> by two instead of by three.
             """,
-            short_description="Reduces fatigue required to use \\ability<divine healing>",
+            short_description="Reduces fatigue required to use \\ability<divine healing> and \\ability<lay on hands>",
         ),
     ]
 
@@ -2453,7 +2453,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<revivify> cleric ability, you only increase your \\glossterm<fatigue level> by two instead of by three.
+                When you use the \\ability<revivify> cleric ability, you only increase your \\glossterm<fatigue level> by three instead of by four.
             """,
             short_description="Reduces fatigue required to use \\ability<revivify>",
         ),
