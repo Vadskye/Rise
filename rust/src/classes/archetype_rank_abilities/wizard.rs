@@ -1,4 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::creatures::Modifier;
+use crate::core_mechanics::{Defense, Resource};
+use crate::skills::{KnowledgeSubskill, Skill};
 
 pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -10,6 +13,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 You may add half your magical \glossterm{power} to the damage or healing caused by any alchemical items you use.
                 In addition, whenever you use an alchemical item, you gain a \plus1d bonus to any damage or healing caused by the item for every 3 levels by which your level exceeds the item's level.
             ",
+            // TODO: add alchemical items as unique attacks
+            modifiers: None,
         },
         RankAbility {
             name: "Portable Workshop",
@@ -32,6 +37,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
 
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Alchemical Discovery",
@@ -57,6 +63,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Alchemical Tolerance",
@@ -66,6 +73,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to your Fortitude defense.
                 In addition, you are immune to poisons.
             ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
         },
         RankAbility {
             name: "Alchemical Discovery",
@@ -75,6 +83,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
          You gain an additional \textit{alchemical discovery} ability.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Portable Workshop",
@@ -83,6 +92,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The number of items you can simultaneously create and maintain with your \textit{portable workshop} ability increases to 5.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Experienced Quaffing",
@@ -91,6 +101,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can drink up to two doses of potions, elixirs, and other drinkable alchemical items as part of the same standard action.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Alchemical Discovery",
@@ -99,6 +110,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \textit{alchemical discovery} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Alchemical Tolerance",
@@ -107,6 +119,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{alchemical tolerance} ability increases to \plus4.
             ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
         },
         RankAbility {
             name: "Greater Experienced Quaffing",
@@ -115,6 +128,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can drink a single dose of a potion, elixir, or other drinkable alchemical item as a \glossterm{minor action}.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -138,6 +152,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Mage Armor",
@@ -159,6 +174,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     In addition, it is automatically dismissed if you wear other body armor of any kind.
                 \end{durationability}
             ",
+            // Assuming no other armor
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 3), Modifier::DamageResistance(1)]),
         },
         RankAbility {
             name: "Spellcasting",
@@ -177,6 +194,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         All of those spells must be from arcane mystic spheres you have access to.
 
                 ",
+            modifiers: Some(vec![Modifier::DamageResistance(1)]),
         },
         RankAbility {
             name: "Spell Rank (2)",
@@ -187,6 +205,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 2.
 
                 ",
+            modifiers: Some(vec![Modifier::DamageResistance(2)]),
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -195,6 +214,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (3)",
@@ -205,6 +225,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Mage Armor",
@@ -213,6 +234,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The damage resistance bonus from your \textit{mage armor} ability increases to three times your rank in this archetype.
             ",
+            // Rank 2: 4. Rank 3: 9.
+            modifiers: Some(vec![Modifier::DamageResistance(5)]),
         },
         RankAbility {
             name: "Spell Rank (4)",
@@ -223,6 +246,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
                 ",
+            modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -231,6 +255,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (5)",
@@ -241,6 +266,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
 
                 ",
+            modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
             name: "Spell Rank (6)",
@@ -251,6 +277,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Supreme Mage Armor",
@@ -260,6 +287,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 The damage resistance bonus from your \textit{mage armor} ability increases to four times your rank in this archetype.
                 In addition, the defense bonus from the body armor increases to \plus3.
             ",
+            // Rank 5: 15. Rank 6: 24.
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1), Modifier::DamageResistance(9)]),
         },
         RankAbility {
             name: "Spell Rank (7)",
@@ -269,6 +298,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 7 arcane spellcaster.
                 This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: Some(vec![Modifier::DamageResistance(4)]),
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -277,6 +307,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -293,6 +324,19 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: Some(vec![Modifier::Skill(
+                Skill::Knowledge(vec![
+                    KnowledgeSubskill::Arcana,
+                    KnowledgeSubskill::Dungeoneering,
+                    KnowledgeSubskill::Engineering,
+                    KnowledgeSubskill::Geography,
+                    KnowledgeSubskill::Local,
+                    KnowledgeSubskill::Nature,
+                    KnowledgeSubskill::Planes,
+                    KnowledgeSubskill::Religion,
+                ]),
+                2,
+            )]),
         },
         RankAbility {
             name: "Ritualist",
@@ -303,6 +347,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                 The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
                 In addition, you automatically learn one free arcane ritual of each rank you have access to, including new ranks as you gain access to them.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Trained Mind",
@@ -311,6 +356,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You reduce your \glossterm{focus penalty} by 1.
             ",
+            modifiers: Some(vec![Modifier::FocusPenalty(-1)]),
         },
         RankAbility {
             name: "Scholastic Insight",
@@ -343,6 +389,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Contingency",
@@ -371,6 +418,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
         If you use this ability again with a different spell, the old contingency is removed.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Scholastic Insight",
@@ -379,6 +427,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional \textit{scholastic insight}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Ritualist",
@@ -387,6 +436,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you lead a ritual, it requires half the normal number of \glossterm{fatigue levels} and half the normal time to complete, to a minimum of zero fatigue levels.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Scholastic Insight",
@@ -395,6 +445,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional \textit{scholastic insight}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Multiple Contingency",
@@ -406,6 +457,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                 Only one contigency can trigger each round.
                 If multiple contingencies would activate simultaneously, choose one to activate randomly.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -421,6 +473,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Mystic Insight",
@@ -453,6 +506,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Intricate Spell",
@@ -463,6 +517,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 If you do, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                 This is a \glossterm{Swift} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Wellspring of Power",
@@ -471,6 +526,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -479,6 +535,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \textit{mystic insight} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Attunement Point",
@@ -487,6 +544,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Greater Wellspring of Power",
@@ -495,6 +553,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(4)]),
         },
         RankAbility {
             name: "Mystic Insights",
@@ -503,6 +562,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain two additional \textit{mystic insight} abilities.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -530,6 +590,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
         },
         RankAbility {
             name: "School Expertise",
@@ -554,6 +615,8 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+                // Assume evocation
+            modifiers: Some(vec![Modifier::MagicalPower(2)]),
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -562,6 +625,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional arcane spell.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "School Attunement",
@@ -572,6 +636,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         You can only use this attunement point to \glossterm{attune} to a spell from your chosen school.
 
                 ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Greater School Expertise",
@@ -598,6 +663,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            modifiers: Some(vec![Modifier::MagicalPower(5)]),
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -606,6 +672,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional arcane spell.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater School Attunement",
@@ -615,6 +682,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
          The number of attunement points you gain from your \textit{school attunement} ability increases to two.
 
                 ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Supreme School Expertise",
@@ -639,6 +707,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             In addition, the Fortitude bonus increases to \plus3.
         }
                 ",
+            modifiers: Some(vec![Modifier::MagicalPower(12)]),
         },
     ];
 }

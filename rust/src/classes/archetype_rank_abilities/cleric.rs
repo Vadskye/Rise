@@ -1,6 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::creatures::Modifier;
-use crate::core_mechanics::Resource;
+use crate::core_mechanics::{Defense, Resource};
+use crate::skills::Skill;
 
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -302,6 +303,8 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 A domain aspect is an active ability that allows you to exert the influence of your domain in the world.
                 You gain the \textit{domain aspect} ability for one of your domains (see \pcref{Cleric Domain Abilities}).
             ",
+            // Domain aspects are also weird. Some give statistical benfits, but many don't
+            modifiers: None,
         },
         RankAbility {
             name: "Domain Aspect",
@@ -310,6 +313,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain the \textit{domain aspect} for another one of your domains.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Domain Essences",
@@ -319,6 +323,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 Each domain has a corresponding \textit{domain essence}.
                 You gain the \textit{domain essence} for both of your domains (see \pcref{Cleric Domain Abilities}).
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Miracle",
@@ -332,6 +337,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
 
                 If you perform an extraordinary service for your deity, you can gain the ability to request an additional miracle that week.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Domain Masteries",
@@ -341,6 +347,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 Each domain has a corresponding \textit{domain mastery}.
                 You gain the \textit{domain mastery} for both of your domains (see \pcref{Cleric Domain Abilities}).
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Miracle",
@@ -349,6 +356,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use your \textit<miracle> ability once per \glossterm{long rest} instead of once per week.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -356,15 +364,14 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
 pub fn healer<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Desperate Healing",
+            name: "Experienced Healing",
             is_magical: true,
             rank: 0,
             description: r"
-        When you use the \textit{desperate exertion} ability to affect a Medicine check, you gain a \plus3 bonus to the check.
-        This stacks with the normal +2 bonus from the \textit{desperate exertion} ability.
-        In addition, using the \textit{desperate exertion} ability to affect a roll using the Medicine skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
-
-                ",
+                You gain a \plus2 bonus to the Medicine skill.
+                In addition, using the \textit{desperate exertion} ability to affect a roll using the Medicine skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+            ",
+            modifiers: Some(vec![Modifier::Skill(Skill::Medicine, 2)]),
         },
         RankAbility {
             name: "Restoration",
@@ -390,6 +397,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The healing increases to 8d10.
                 \end{instantability}
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Healer's Grace",
@@ -399,6 +407,12 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to all defenses.
                 Whenever you attack or deal damage to a living creature, you \glossterm{briefly} lose this bonus.
             ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::Defense(Defense::Reflex, 1),
+                Modifier::Defense(Defense::Mental, 1),
+            ]),
         },
         RankAbility {
             name: "Vital Restoration",
@@ -421,6 +435,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
         \end{instantability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Called to the Needy",
@@ -429,6 +444,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 At the end of each phase, if a living \glossterm{ally} within \distrange of you gained a \glossterm{vital wound} during that phase, you can \glossterm{teleport} into the unoccupied square closest to that creature.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Healer's Grace",
@@ -437,6 +453,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{healer's grace} ability increases to \plus2.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Revivify",
@@ -453,6 +470,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     After using this ability, you cannot use it again until you take a \glossterm{long rest}.
                 \end{instantability}
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Called to the Needy",
@@ -462,6 +480,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 You can use your \textit{called to the needy} ability to teleport to allies that lost \glossterm{hit points} in addition to allies that gained vital wounds.
                 In addition, the range limit increases to \extrange, and it no longer requires \glossterm{line of sight} or \glossterm{line of effect}.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -476,6 +495,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to the Persuasion skill.
                 In addition, using the \textit{desperate exertion} ability to affect a roll using the Persuasion skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
             ",
+            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 1)]),
         },
         RankAbility {
             name: "Denounce the Heathens",
@@ -495,6 +515,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} Each subject with no remaining \glossterm{damage resistance} is \confused instead of stunned.
                 \end{instantability}
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Inspiring Oration",
@@ -504,6 +525,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 Your \glossterm{allies} who can hear you in a fight gain a \plus1 bonus to their Mental defense.
                 You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
             ",
+            // TODO: figure out allies-only buffs
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Practiced Persuasion",
@@ -513,6 +536,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 The bonus from your \textit{practiced persuasion} ability increases to \plus4.
                 In addition, you can use the \textit{desperate exertion} ability any number of times to affect the same Persuasion check.
             ",
+            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 2)]),
         },
         RankAbility {
             name: "Bless the Worthy",
@@ -530,6 +554,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     The accuracy bonus increases by 1 for each rank beyond 4.
                 \end{instantability}
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Condemn the Fearful",
@@ -547,6 +572,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} Each subject with no remaining \glossterm{damage resistance} is \\frightened instead of shaken.
                 \end{instantability}
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Inspiring Oration",
@@ -555,6 +581,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{inspiring oration} ability increases to \plus2.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Convert the Irresolute",
@@ -570,6 +597,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     At the end of that time, if its Willpower is 0 or lower and it is at least 3 levels lower than you, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
                 \end{instantability}
             ",
+            modifiers: None,
         },
     ];
 }
