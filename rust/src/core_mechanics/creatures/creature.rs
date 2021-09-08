@@ -128,11 +128,12 @@ impl HasModifiers for Creature {
 
 impl HasAttributes for Creature {
     fn get_base_attribute(&self, attribute: &Attribute) -> i32 {
-        if let Some(a) = self.base_attributes.get(attribute) {
+        let value = if let Some(a) = self.base_attributes.get(attribute) {
             *a
         } else {
             0
-        }
+        };
+        return value + self.calc_total_modifier(ModifierType::BaseAttribute(*attribute));
     }
 
     fn calc_total_attribute(&self, attribute: &Attribute) -> i32 {

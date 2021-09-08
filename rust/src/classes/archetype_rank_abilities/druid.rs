@@ -1,4 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::creatures::Modifier;
+use crate::core_mechanics::{Attribute, Defense, Resource};
+use crate::skills::Skill;
 
 pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -17,6 +20,11 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
 
 
                 ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::Skill(Skill::Jump, 2),
+                Modifier::Skill(Skill::Swim, 2),
+            ]),
         },
         RankAbility {
             name: "Elemental Spell",
@@ -27,6 +35,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 You do not have to have access to that mystic sphere.
                 As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Elemental Strike",
@@ -48,6 +57,8 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The damage bonus increases to \plus3d.
                 \end{instantability}
             ",
+            // TODO: add special attacks?
+            modifiers: None,
         },
         RankAbility {
             name: "Elemental Influence",
@@ -82,6 +93,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
         \end{durationability}
 
                 ",
+                modifiers: None,
         },
         RankAbility {
             name: "Greater Elemental Balance",
@@ -96,6 +108,8 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \item Water: You gain a \glossterm{swim speed} equal to half the \glossterm{base speed} for your size.
                 \end{itemize}
             ",
+            // TODO: represent movement speeds
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
             name: "Elemental Spell",
@@ -104,6 +118,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 If you have access to nature magic, you learn an additional spell with your \textit{elemental spell} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Elemental Strike",
@@ -112,6 +127,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 If you do not have access to nature magic, you gain a +5 foot bonus to your \glossterm{reach} with your \textit{elemental strike} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Elemental Control",
@@ -130,6 +146,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
         \end{itemize}
 
                 ",
+                modifiers: None,
         },
         RankAbility {
             name: "Elemental Power",
@@ -138,6 +155,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus4 bonus to your \glossterm{power}.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4)]),
         },
         RankAbility {
             name: "Supreme Elemental Balance",
@@ -153,6 +171,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \item Water: You suffer no penalties for fighting underwater, and your swim speed increases to be equal to the base speed for your size.
                 \end{itemize}
             ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
     ];
 }
@@ -173,6 +192,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 Nature spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
                 For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spellcasting",
@@ -189,6 +209,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                     including spells of the higher rank.
                 All of those spells must be from nature mystic spheres you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (2)",
@@ -198,6 +219,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 2 nature spellcaster.
                 This gives you access to spells that require a minimum rank of 2.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -206,6 +228,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional nature \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (3)",
@@ -215,6 +238,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 3 nature spellcaster.
                 This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (4)",
@@ -224,6 +248,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 4 nature spellcaster.
                 This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -232,6 +257,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional nature \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (5)",
@@ -241,6 +267,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 5 nature spellcaster.
                 This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (6)",
@@ -250,6 +277,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 6 nature spellcaster.
                 This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (7)",
@@ -259,6 +287,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 7 nature spellcaster.
                 This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -267,6 +296,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional nature \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -281,6 +311,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
          You reduce your \glossterm{focus penalty} by 2.
 
                 ",
+            modifiers: Some(vec![Modifier::FocusPenalty(-2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -313,6 +344,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Plant Channeling",
@@ -322,6 +354,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you cast a spell, you may treat all effects of the spell as if you were located at any Tiny or larger living plant within \medrange instead of in your current location.
                 This allows you to measure the spell's range from the plant's location, cone-shaped areas originate from the plant's location instead of your own, and so on.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Wellspring of Power",
@@ -330,6 +363,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -338,6 +372,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \textit{mystic insight} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Attunement Point",
@@ -346,6 +381,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Greater Wellspring of Power",
@@ -354,6 +390,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(4)]),
         },
         RankAbility {
             name: "Mystic Insights",
@@ -362,6 +399,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain two additional \textit{mystic insight} abilities.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -377,6 +415,10 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         You can change the defense this bonus applies to as a \glossterm{standard action}.
 
                 ",
+            // Arbitrarily choose Ref defense? Unclear whether this should be a single defense or
+            // all defenses for the purpose of calculations, since there is no way to choose lowest
+            // defense easily
+            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 2)]),
         },
         RankAbility {
             name: "Wild Aspects",
@@ -404,13 +446,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         {
             \begin{durationability}{Form of the Bear}[Duration]
                 \rankline
-                You gain a \plus2 bonus to your Fortitude defense.
+                You gain a \plus1 bonus to your Fortitude defense.
                 In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
 
                 \rankline
-                \rank{3} The Fortitude bonus increases to \plus3.
+                \rank{3} The Fortitude bonus increases to \plus2.
                 \rank{5} You gain a \plus1d bonus to your damage with natural weapons.
-                \rank{7} The Fortitude bonus increases to \plus4.
+                \rank{7} The Fortitude bonus increases to \plus3.
             \end{durationability}
 
             \begin{durationability}{Form of the Bull}[Duration]
@@ -570,6 +612,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         }
 
                 ",
+            // Arbitrarily choose Bear form, since it's easy to represent? Unclear.
+            // TODO: no way to represent natural weapons.
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
             name: "Shift Body",
@@ -584,6 +629,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         \end{attuneability}
 
                 ",
+            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Constitution, 1), Modifier::Resource(Resource::AttunementPoint, -1)]),
         },
         RankAbility {
             name: "Glancing Natural Strikes",
@@ -594,6 +640,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         This is called a \glossterm{glancing blow}.
 
                 ",
+                // TODO: represent glancing blows
+                modifiers: None,
         },
         RankAbility {
             name: "Greater Shifting Defense",
@@ -602,6 +650,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{shifting defense} ability increases to \plus3.
             ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 1)]),
         },
         RankAbility {
             name: "Greater Wild Aspect",
@@ -610,6 +659,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can change your \textit{wild aspect} as a \glossterm{minor action} instead of as a standard action.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Shift Body",
@@ -619,6 +669,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 Your \textit<shift body> ability loses the \glossterm{Attune} (self) tag.
                 Instead, it lasts until you use it again.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Natural Force",
@@ -627,6 +678,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1d bonus to your damage with natural weapons.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Supreme Shifting Defense",
@@ -635,6 +687,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{shifting defense} ability increases to \plus4.
             ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 1)]),
         },
         RankAbility {
             name: "Supreme Wild Aspect",
@@ -644,6 +697,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 You can change your \textit{wild aspect} as a \glossterm{free action} instead of as a minor action, and changing your wild aspect gains the \glossterm{Swift} tag.
                 In addition, you learn an additional \textit{wild aspect}.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -666,6 +720,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
         \end{durationability}
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Natural Servant",
@@ -725,6 +780,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
         \end{itemize}
 
                 ",
+                // TODO: represent a whole extra creature???
+            modifiers: None,
         },
         RankAbility {
             name: "Nature's Ally",
@@ -735,6 +792,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 They can be compelled to attack despite this protection with a Creature Handling check against a \glossterm{difficulty value} equal to 10 \add your level.
                 If any subject attacks a creature that this ability protects you from, this ability is \glossterm{suppressed} until you take a \glossterm{short rest}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Nature's Might",
@@ -743,6 +801,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You and your \textit{natural servant} gain a \plus1d damage bonus with \glossterm{natural weapons}.
             ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Plant Speech",
@@ -753,6 +812,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
         When you do, you can speak to and understand the speech of the target plant, and any other plants of the same species.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Natural Servant",
@@ -764,6 +824,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you can cast \glossterm{Attune} (self) spells on your \textit{natural servant} if it is within \shortrange of you.
                 When you do, the natural servant attunes to the spell intead of you, as if the spell was an \glossterm{Attune} (target) spell.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Nature's Ally",
@@ -775,6 +836,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 Finally, the effect can no longer be bypassed with a Creature Handling check or any other form of control that does not first suppress this effect.
                 Even creatures summoned by enemies to fight you will immediately turn on their summoners or otherwise avoid attacking you.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Universal Speech",
@@ -785,6 +847,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
         When you do, you can speak in and understand that creature's native language.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Nature's Might",
@@ -794,6 +857,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
          The damage bonus from your \textit{nature's might} ability increases to \plus2d.
 
                 ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Supreme Natural Servant",
@@ -803,6 +867,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 Your \textit{natural servant} gains two additional \glossterm{attunement points}.
                 In addition, you may choose to have a Large natural servant appear instead of a Medium natural servant.
             ",
+            modifiers: None,
         },
     ];
 }
