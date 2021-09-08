@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::creatures::Modifier;
-use crate::core_mechanics::{Resource};
+use crate::core_mechanics::Resource;
 
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
