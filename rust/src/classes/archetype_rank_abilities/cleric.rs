@@ -135,9 +135,9 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-         You gain access to an additional divine \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
+                You gain access to an additional divine \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
 
-                ",
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -419,22 +419,22 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-         You can use the \textit{vital restoration} ability as a standard action.
-        \begin{instantability}{Vital Restoration}[Instant]
-            \abilitytag{Magical}
-            \rankline
-            When you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
+                You can use the \textit{vital restoration} ability as a standard action.
+                \begin{instantability}{Vital Restoration}[Instant]
+                    \abilitytag{Magical}
+                    \rankline
+                    When you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
 
-            Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
-            The subject removes one of its \glossterm{vital wounds}.
+                    Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
+                    The subject removes one of its \glossterm{vital wounds}.
 
-            \rankline
-            \rank{5} If the subject's level is at least two levels lower than your level,
-                you do not increase your fatigue level when you use this ability.
-            \rank{7} The subject can remove an additional \glossterm{vital wound}.
-        \end{instantability}
+                    \rankline
+                    \rank{5} If the subject's level is at least two levels lower than your level,
+                        you do not increase your fatigue level when you use this ability.
+                    \rank{7} The subject can remove an additional \glossterm{vital wound}.
+                \end{instantability}
 
-                ",
+            ",
             modifiers: None,
         },
         RankAbility {
