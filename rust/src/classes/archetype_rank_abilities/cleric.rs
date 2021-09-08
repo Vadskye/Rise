@@ -490,9 +490,9 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \hit Each subject is \glossterm{briefly} \dazed.
 
                     \rankline
-                    \rank{3} Each subject with no remaining \glossterm{damage resistance} is \\stunned instead of dazed.
+                    \rank{3} Each subject with no remaining \glossterm{damage resistance} is \stunned instead of dazed.
                     \rank{5} Each subject is stunned instead of dazed.
-                    \rank{7} Each subject with no remaining \glossterm{damage resistance} is \\confused instead of stunned.
+                    \rank{7} Each subject with no remaining \glossterm{damage resistance} is \confused instead of stunned.
                 \end{instantability}
             ",
         },
