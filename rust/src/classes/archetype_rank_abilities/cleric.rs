@@ -1,4 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::creatures::Modifier;
+use crate::core_mechanics::{Resource};
 
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -16,6 +18,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 Divine spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
                 For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spellcasting",
@@ -32,6 +35,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                     including spells of the higher rank.
                 All of those spells must be from divine mystic spheres you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (2)",
@@ -41,6 +45,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 2 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 2.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -49,6 +54,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (3)",
@@ -58,6 +64,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 3 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -66,6 +73,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (4)",
@@ -75,6 +83,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 4 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (5)",
@@ -84,6 +93,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 5 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (6)",
@@ -93,6 +103,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 6 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (7)",
@@ -102,6 +113,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 7 divine spellcaster.
                 This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -110,6 +122,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -124,6 +137,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
          You gain access to an additional divine \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
 
                 ",
+            modifiers: None,
         },
         RankAbility {
             name: "Mystic Insight",
@@ -153,6 +167,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
                     You can choose this ability multiple times, choosing a different spell each time.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Turn Undead",
@@ -171,6 +186,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \rank{3} On a \glossterm{glancing blow}, each subject is \glossterm{briefly} \frightened by you.
                 \end{instantability}
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Wellspring of Power",
@@ -179,6 +195,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -187,6 +204,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \textit{mystic insight} ability.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Attunement Point",
@@ -195,6 +213,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Greater Wellspring of Power",
@@ -203,6 +222,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
+            modifiers: Some(vec![Modifier::MagicalPower(4)]),
         },
         RankAbility {
             name: "Mystic Insights",
@@ -211,6 +231,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain two additional \textit{mystic insight} abilities.
             ",
+            modifiers: None,
         },
     ];
 }
@@ -248,6 +269,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                     \item{Wild}
                 \end{itemize}
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Domain Gift",
@@ -258,6 +280,9 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 A domain gift is a passive ability that reinforces your ability to embody your domain.
                 You gain the \textit{domain gift} for one of your domains (see \pcref{Cleric Domain Abilities}).
             ",
+            // Domain gifts are weird; most don't have direct statistical benefits, so this is
+            // mostly irrelevant.
+            modifiers: None,
         },
         RankAbility {
             name: "Domain Gift",
@@ -266,6 +291,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain the \textit{domain gift} for another one of your domains.
             ",
+            modifiers: None,
         },
         RankAbility {
             name: "Domain Aspect",
@@ -475,7 +501,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Your \glossterm{allies} who can hear you in a fight gain a \plus2 bonus to your Mental defense.
+                Your \glossterm{allies} who can hear you in a fight gain a \plus1 bonus to their Mental defense.
                 You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
             ",
         },
@@ -527,7 +553,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{inspiring oration} ability increases to \plus4.
+                The bonus from your \textit{inspiring oration} ability increases to \plus2.
             ",
         },
         RankAbility {
