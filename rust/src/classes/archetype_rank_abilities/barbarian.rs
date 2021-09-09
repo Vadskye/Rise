@@ -155,6 +155,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The damage bonus increases to \plus4d.
                 \end{instantability}
             ",
+            // This is too inconsistent to add as a generally usable strike
             modifiers: Some(vec![Modifier::DamageResistance(3), Modifier::HitPoints(-1)]),
         },
         RankAbility {
