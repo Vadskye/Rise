@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::creatures::Modifier;
+use crate::core_mechanics::creatures::{Maneuver, Modifier};
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::skills::Skill;
 
@@ -56,7 +56,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \end{instantability}
             ",
             // TODO: add special attacks?
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
         },
         RankAbility {
             name: "Elemental Influence",
@@ -106,7 +106,10 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \end{itemize}
             ",
             // TODO: represent movement speeds
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::Maneuver(Maneuver::ElementalStrike(3)),
+            ]),
         },
         RankAbility {
             name: "Elemental Spell",
@@ -142,7 +145,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                         If you reduce the water's speed to 0 and then increase it again, you can change the direction the water flows.
                 \end{itemize}
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(5))]),
         },
         RankAbility {
             name: "Elemental Power",
@@ -167,7 +170,10 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \item Water: You suffer no penalties for fighting underwater, and your swim speed increases to be equal to the base speed for your size.
                 \end{itemize}
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::Maneuver(Maneuver::ElementalStrike(7)),
+            ]),
         },
     ];
 }

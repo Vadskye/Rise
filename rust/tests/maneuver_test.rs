@@ -1,6 +1,8 @@
+use rise::classes::{Character, Class, ClassArchetype};
 use rise::core_mechanics::creatures::attacks::HasAttacks;
 use rise::core_mechanics::creatures::creature::Creature;
 use rise::core_mechanics::creatures::Maneuver;
+use rise::core_mechanics::{Attribute, HasAttributes};
 
 use rise::equipment::{HasWeapons, Weapon};
 
@@ -25,5 +27,52 @@ fn it_calculates_attack_counts() {
         4,
         creature.calc_all_attacks().len(),
         "Should have 4 attacks, since weapons without maneuvers can still be used to attack"
+    );
+}
+
+#[test]
+fn it_calculates_attack_effects() {
+    let mut creature = Creature::new(1);
+    // It's useful to have a nonzero power to make sure power multipliers are calculated correctly
+    creature.set_base_attribute(Attribute::Strength, 3);
+    creature.add_weapon(Weapon::Broadsword);
+    creature.add_special_attack(Maneuver::CertainStrike(1).attack(Weapon::Broadsword));
+    assert_eq!(
+        vec![
+            "Broadsword +3 (The subject takes 1d6+3 slashing damage.)",
+            "Broadsword +0 (The subject takes 1d10+3 slashing damage.)"
+        ],
+        creature
+            .calc_all_attacks()
+            .iter()
+            .map(|a| a.shorthand_description(&creature))
+            .collect::<Vec<String>>(),
+    );
+}
+
+#[test]
+fn it_derives_elemental_strike_from_archetypes() {
+    let mut druid = Character::new(
+        Class::Druid,
+        10,
+        [
+            ClassArchetype::Elementalist,
+            ClassArchetype::Shifter,
+            ClassArchetype::Wildspeaker,
+        ],
+    );
+    // It's useful to have a nonzero power to make sure power multipliers are calculated correctly
+    druid.set_base_attribute(Attribute::Strength, 3);
+    druid.add_weapon(Weapon::Broadsword);
+    assert_eq!(
+        vec![
+            "Broadsword +5 (The subject takes 2d6+8 bludgeoning, fire, and slashing damage.)",
+            "Broadsword +5 (The subject takes 1d10+8 slashing damage.)"
+        ],
+        druid
+            .calc_all_attacks()
+            .iter()
+            .map(|a| a.shorthand_description(&druid))
+            .collect::<Vec<String>>(),
     );
 }
