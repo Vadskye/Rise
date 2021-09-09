@@ -52,8 +52,8 @@ impl AttackEffect {
         match attack_effect {
             Self::Damage(ref mut d) => {
                 f(d);
-            },
-            _ => {},
+            }
+            _ => {}
         };
         return attack_effect;
     }
@@ -123,7 +123,8 @@ impl AttackEffect {
                 };
                 let damage_modifier = effect.damage_modifier
                     + (attacker.calc_power(is_magical) as f64 * effect.power_multiplier) as i32;
-                // TODO: damage types
+                let mut damage_types = effect.damage_types.clone();
+                damage_types.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
                 return format!(
                     "
                         {the_subject} takes {damage_dice}{damage_modifier} {damage_types} damage. {take_damage_effect} {lose_hp_effect}
@@ -133,7 +134,7 @@ impl AttackEffect {
                         .add(attacker.calc_damage_increments(is_strike))
                         .to_string(),
                     damage_modifier = if damage_modifier == 0 { "".to_string()} else { latex_formatting::modifier(damage_modifier)},
-                    damage_types = latex_formatting::join_formattable_list(&effect.damage_types).unwrap_or(String::from("")),
+                    damage_types = latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from("")),
                     take_damage_effect = take_damage_effect.trim(),
                     lose_hp_effect = lose_hp_effect.trim(),
                     the_subject = the_subject,

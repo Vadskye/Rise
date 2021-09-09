@@ -2,6 +2,8 @@ use crate::core_mechanics::creatures::attacks::Attack;
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::skills::Skill;
 
+use super::Maneuver;
+
 #[derive(Clone)]
 pub enum Modifier {
     Accuracy(i32),
@@ -16,6 +18,7 @@ pub enum Modifier {
     // TODO: add this to creature calculations
     Initiative(i32),
     MagicalPower(i32),
+    Maneuver(Maneuver),
     // TODO: add this to creature calculations
     MovementSpeed(i32),
     MundanePower(i32),
@@ -38,6 +41,7 @@ pub enum ModifierType {
     HitPoints,
     Initiative,
     MagicalPower,
+    Maneuver,
     MundanePower,
     MovementSpeed,
     Resource(Resource),
@@ -52,6 +56,12 @@ impl Modifier {
             Self::Attack(a) => {
                 match other {
                     Self::Attack(b) => a.name == b.name,
+                    _ => false,
+                }
+            },
+            Self::Maneuver(a) => {
+                match other {
+                    Self::Maneuver(b) => a.name() == b.name(),
                     _ => false,
                 }
             },
@@ -71,6 +81,7 @@ impl Modifier {
             Self::HitPoints(v) => format!("HP {}", v),
             Self::Initiative(v) => format!("initiative {}", v),
             Self::MagicalPower(v) => format!("magical power {}", v),
+            Self::Maneuver(v) => format!("maneuver {}", v.name()),
             Self::MovementSpeed(v) => format!("movement {}", v),
             Self::MundanePower(v) => format!("mundane power {}", v),
             Self::Resource(r, v) => format!("resource {} by {}", r.name(), v),
@@ -92,6 +103,7 @@ impl Modifier {
             Self::HitPoints(_) => ModifierType::HitPoints,
             Self::Initiative(_) => ModifierType::Initiative,
             Self::MagicalPower(_) => ModifierType::MagicalPower,
+            Self::Maneuver(_) => ModifierType::Maneuver,
             Self::MovementSpeed(_) => ModifierType::MovementSpeed,
             Self::MundanePower(_) => ModifierType::MundanePower,
             Self::Resource(r, _) => ModifierType::Resource(*r),
@@ -108,6 +120,13 @@ impl Modifier {
         }
     }
 
+    pub fn maneuver_definition(&self) -> Option<&Maneuver> {
+        match self {
+            Self::Maneuver(m) => Some(m),
+            _ => None,
+        }
+    }
+
     pub fn value(&self) -> i32 {
         let value = match self {
             Self::Accuracy(v) => v,
@@ -120,6 +139,7 @@ impl Modifier {
             Self::HitPoints(v) => v,
             Self::Initiative(v) => v,
             Self::MagicalPower(v) => v,
+            Self::Maneuver(_) => &0,
             Self::MovementSpeed(v) => v,
             Self::MundanePower(v) => v,
             Self::Resource(_, v) => v,
