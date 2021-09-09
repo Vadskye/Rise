@@ -3,11 +3,13 @@ pub mod attacks;
 pub mod creature;
 pub mod latex;
 mod modifier;
+mod standard_attacks;
 
 use crate::core_mechanics::{attributes, damage_absorption, defenses, resources};
 use crate::equipment::HasWeapons;
 use crate::skills::HasSkills;
-pub use modifier::{Modifier, HasModifiers, ModifierType};
+pub use modifier::{HasModifiers, Modifier, ModifierType};
+pub use standard_attacks::StandardAttack;
 
 pub trait HasCreatureMechanics:
     attacks::HasAttacks
