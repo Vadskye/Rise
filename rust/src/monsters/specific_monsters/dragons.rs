@@ -2,11 +2,11 @@ use crate::core_mechanics::creatures::attack_effects::{
     AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
 use crate::core_mechanics::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting, UsageTime,
+    AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting, UsageTime,
 };
 use crate::core_mechanics::{
-    DamageDice, DamageType, DamageTypeEffect, Debuff, Defense, FlightManeuverability, MovementMode,
-    PassiveAbility, Sense, Size, SpecialDefenseModifier, SpeedCategory,
+    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode,
+    PassiveAbility, Size, SpecialDefenseModifier, SpeedCategory,
 };
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -14,8 +14,8 @@ use crate::monsters::creature_type::CreatureType::Dragon;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
-use crate::skills::Skill;
+use crate::monsters::{FullMonsterDefinition, Monster};
+
 
 enum AgeCategory {
     Wyrmling,
