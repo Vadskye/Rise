@@ -1,12 +1,7 @@
-use crate::core_mechanics::creatures::attack_effects::{
-    AttackEffect, DamageEffect,
-};
-use crate::core_mechanics::creatures::attacks::{
-    Attack, AttackRange, AttackTargeting, UsageTime,
-};
+use crate::core_mechanics::creatures::attack_effects::{AttackEffect, DamageEffect};
+use crate::core_mechanics::creatures::attacks::{Attack, AttackRange, AttackTargeting, UsageTime};
 use crate::core_mechanics::{
-    DamageDice, DamageType, Defense, MovementMode,
-    PassiveAbility, Sense, Size, SpeedCategory,
+    DamageDice, DamageType, Defense, MovementMode, PassiveAbility, Sense, Size, SpeedCategory,
 };
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -138,10 +133,11 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                         take_damage_effects: None,
                     }),
                     is_magical: true,
+                    is_strike: false,
                     name: "Divine Judgment".to_string(),
+                    replaces_weapon: None,
                     targeting: AttackTargeting::Creature(AttackRange::Medium),
                     usage_time: UsageTime::Standard,
-                    weapon: None,
                 }]),
                 trained_skills: None,
                 weapons: vec![Weapon::Spear],
@@ -173,10 +169,11 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                         take_damage_effects: None,
                     }),
                     is_magical: true,
+                    is_strike: false,
                     name: "Divine Judgment".to_string(),
+                    replaces_weapon: None,
                     targeting: AttackTargeting::Creature(AttackRange::Medium),
                     usage_time: UsageTime::Standard,
-                    weapon: None,
                 }]),
                 trained_skills: None,
                 weapons: vec![Weapon::Spear],
@@ -253,10 +250,11 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                         take_damage_effects: None,
                     }),
                     is_magical: true,
+                    is_strike: false,
                     name: "Divine Judgment".to_string(),
+                    replaces_weapon: None,
                     targeting: AttackTargeting::Creature(AttackRange::Medium),
                     usage_time: UsageTime::Standard,
-                    weapon: None,
                 }]),
                 trained_skills: None,
                 weapons: vec![Weapon::Warhammer],
