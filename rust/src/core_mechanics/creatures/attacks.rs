@@ -45,6 +45,16 @@ impl Attack {
         };
     }
 
+    pub fn generate_modified_name(name: &str, rank: i32, greater_rank: i32, supreme_rank: Option<i32>) -> String {
+        if supreme_rank.is_some() && rank >= supreme_rank.unwrap() {
+            return format!("Supreme {}", name);
+        } else if rank >= greater_rank {
+            return format!("Greater {}", name);
+        } else {
+            return name.to_string();
+        }
+    }
+
     pub fn damage_effect_mut(&mut self) -> Option<&mut attack_effects::DamageEffect> {
         if let attack_effects::AttackEffect::Damage(ref mut e) = self.hit {
             return Some(e);
