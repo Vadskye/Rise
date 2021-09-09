@@ -1,12 +1,8 @@
-use crate::core_mechanics::creatures::attack_effects::{
-    AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
-};
-use crate::core_mechanics::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
-};
+use crate::core_mechanics::creatures::attacks::{Attack, UsageTime};
+use crate::core_mechanics::creatures::StandardAttack;
 use crate::core_mechanics::{
-    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode,
-    PassiveAbility, Sense, Size, SpecialDefenseModifier, SpeedCategory,
+    DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
+    SpecialDefenseModifier, SpeedCategory,
 };
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -78,62 +74,19 @@ pub fn animates() -> Vec<MonsterEntry> {
                 Darkwraiths cannot speak or make noise of any kind.
             "),
         ])),
-        level: 1,
+        level: 4,
         passive_abilities: None,
         movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Normal, FlightManeuverability::Perfect)]),
         name: "Darkwraith".to_string(),
         senses: None,
         size: Size::Medium,
         special_attacks: Some(vec![
-            Attack {
-                accuracy: 0,
-                cooldown: None,
-                crit: None,
-                defense: Defense::Reflex,
-                glance: Some(AttackEffect::HalfDamage),
-                hit: AttackEffect::Damage(
-                    DamageEffect {
-                        damage_dice: DamageDice::single_target_damage(4),
-                        damage_modifier: 0,
-                        damage_types: vec![DamageType::Cold],
-                        lose_hp_effects: Some(vec![
-                            AttackEffect::Debuff(DebuffEffect {
-                                debuffs: vec![Debuff::Slowed],
-                                duration: AttackEffectDuration::Brief,
-                            }),
-                        ]),
-                        power_multiplier: 1.0,
-                        take_damage_effects: None,
-                    },
-                ),
-                is_magical: true,
-                name: "Dark Grasp".to_string(),
-                targeting: AttackTargeting::Creature(AttackRange::Reach),
-                usage_time: UsageTime::Standard,
-                weapon: None,
-            },
-            Attack {
-                accuracy: 0,
-                cooldown: None,
-                crit: None,
-                defense: Defense::Fortitude,
-                glance: None,
-                hit: AttackEffect::Damage(
-                    DamageEffect {
-                        damage_dice: DamageDice::aoe_damage(4),
-                        damage_modifier: 0,
-                        damage_types: vec![DamageType::Cold],
-                        lose_hp_effects: None,
-                        power_multiplier: 0.5,
-                        take_damage_effects: None,
-                    },
-                ),
-                is_magical: true,
-                name: "Chilling Aura".to_string(),
-                targeting: AttackTargeting::Radius(None, AreaSize::Small, AreaTargets::Enemies),
-                usage_time: UsageTime::Minor,
-                weapon: None,
-            },
+            StandardAttack::DarkGrasp(3).attack(),
+            StandardAttack::DarkMiasma(3).attack().except(
+                |a| a.name = "Chilling Aura".to_string()
+            ).except(
+                |a| a.usage_time = UsageTime::Minor,
+            ),
         ]),
         special_defense_modifiers: Some(vec![
             SpecialDefenseModifier::impervious_damage(DamageType::Cold),

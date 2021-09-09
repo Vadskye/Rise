@@ -29,6 +29,14 @@ pub trait HasAttacks {
 }
 
 impl Attack {
+    // This allows passing in closures to modify the attack in small ways, which can save a lot of
+    // space and awkwardness when customizing attacks for creatures
+    pub fn except<F: FnOnce(&mut Attack)>(&self, f: F) -> Attack {
+        let mut attack = self.clone();
+        f(&mut attack);
+        return attack;
+    }
+
     pub fn from_weapon(weapon: Weapon) -> Attack {
         return Attack {
             accuracy: weapon.accuracy(),
