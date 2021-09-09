@@ -661,12 +661,9 @@ impl Class {
     fn generate_ability_names_by_archetype_rank(&self) -> Vec<String> {
         let mut abilities_by_rank_and_archetype: Vec<Vec<String>> = Vec::new();
         for archetype in self.archetypes() {
-            let rank_abilities = archetype.rank_abilities();
             for rank in 0..8 {
-                let mut abilities_at_rank: Vec<&RankAbility> = rank_abilities
-                    .iter()
-                    .filter(|a| a.rank == rank as i32)
-                    .collect();
+                let mut abilities_at_rank: Vec<RankAbility> =
+                    archetype.abilities_at_rank(rank as i32);
                 abilities_at_rank.sort_by(|a, b| a.name.cmp(b.name));
                 if abilities_by_rank_and_archetype.get(rank).is_none() {
                     abilities_by_rank_and_archetype.push(Vec::new());
