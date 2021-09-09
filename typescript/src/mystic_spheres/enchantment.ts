@@ -721,7 +721,11 @@ export const enchantment: MysticSphere = {
       name: "Mind Crush",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} energy \\glossterm{subdual damage}.`,
+        hit: `
+          The subject takes 1d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
+          If it takes damage, it is \\glossterm{briefly} \\dazed.
+          After this effect ends, the subject becomes immune to being dazed in this way until it takes a \\glossterm{short rest}.
+        `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
         `,
@@ -734,12 +738,16 @@ export const enchantment: MysticSphere = {
       name: "Greater Mind Crush",
 
       attack: {
-        hit: `The subject takes 4d6 + \\glossterm{power} energy \\glossterm{subdual damage}.`,
+        glance: 'Half damage.',
+        hit: `
+          The subject takes 2d6 + half \\glossterm{power} energy \\glossterm{subdual damage}.
+          If it takes damage, it is \\glossterm{briefly} \\dazed.
+        `,
         targeting: `
-          Make an attack vs. Mental against anything within \\longrange.
+          Make an attack vs. Mental against anything within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 3,
       scaling: "damage",
       type: "Instant",
     },
@@ -747,9 +755,13 @@ export const enchantment: MysticSphere = {
       name: "Supreme Mind Crush",
 
       attack: {
-        hit: `The subject takes 6d10 + \\glossterm{power} energy \\glossterm{subdual damage}.`,
+        glance: 'Half damage.',
+        hit: `
+          The subject takes 4d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
+          If it takes damage, it is \\glossterm{briefly} \\stunned.
+        `,
         targeting: `
-          Make an attack vs. Mental against anything within \\distrange.
+          Make an attack vs. Mental against anything within \\medrange.
         `,
       },
       rank: 7,
