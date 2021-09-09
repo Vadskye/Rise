@@ -160,7 +160,7 @@ impl HasModifiers for Monster {
         self.creature.add_modifier(modifier);
     }
 
-    fn get_modifiers(&self) -> Vec<&Modifier> {
+    fn get_modifiers(&self) -> Vec<Modifier> {
         return self.creature.get_modifiers();
     }
 

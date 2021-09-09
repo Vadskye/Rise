@@ -1,27 +1,38 @@
-use crate::classes::Class;
+use crate::classes::{Class, ClassArchetype, RankAbility};
 use crate::core_mechanics::creatures::attacks::{self, HasAttacks};
-use crate::core_mechanics::creatures::{creature, latex, HasCreatureMechanics, Modifier, HasModifiers, ModifierType};
+use crate::core_mechanics::creatures::{
+    creature, latex, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
+};
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, Resource,
 };
-use crate::equipment::{HasWeapons, Weapon, HasArmor, Armor};
+use crate::equipment::{Armor, HasArmor, HasWeapons, Weapon};
 use crate::skills::{HasSkills, Skill};
 
 pub struct Character {
+    archetypes: [ClassArchetype; 3],
     class: Class,
     creature: creature::Creature,
 }
 
 impl Character {
-    pub fn new(class: Class, level: i32) -> Character {
-        return Character {
-            class,
-            creature: creature::Creature::new(level),
-        };
-    }
+    // archetypes should be provided in the order that they should be ranked up
+    pub fn new(class: Class, level: i32, archetypes: [ClassArchetype; 3]) -> Character {
+        let mut creature = creature::Creature::new(level);
 
-    pub fn set_level(&mut self, level: i32) {
-        self.creature.level = level;
+        for rank_ability in calc_rank_abilities(level, &archetypes) {
+            if let Some(rank_modifiers) = rank_ability.modifiers {
+                for modifier in rank_modifiers {
+                    creature.add_modifier(modifier);
+                }
+            }
+        }
+
+        return Character {
+            archetypes,
+            class,
+            creature,
+        };
     }
 
     // Currently this creates a Martial Mastery fighter
@@ -40,6 +51,11 @@ impl Character {
         }
 
         let character = Self {
+            archetypes: [
+                ClassArchetype::MartialMastery,
+                ClassArchetype::EquipmentTraining,
+                ClassArchetype::CombatDiscipline,
+            ],
             class: Class::Fighter,
             creature,
         };
@@ -70,7 +86,7 @@ impl HasModifiers for Character {
         self.creature.add_modifier(modifier);
     }
 
-    fn get_modifiers(&self) -> Vec<&Modifier> {
+    fn get_modifiers(&self) -> Vec<Modifier> {
         return self.creature.get_modifiers();
     }
 
@@ -237,4 +253,21 @@ fn calc_standard_magic_bonuses(level: i32) -> StandardMagicBonuses {
         hit_points: hp,
         power,
     };
+}
+
+pub fn calc_rank_abilities<'a>(level: i32, archetypes: &'a[ClassArchetype; 3]) -> Vec<RankAbility<'a>> {
+    let mut rank_abilities: Vec<RankAbility> = vec![];
+    // Add rank 0 abilities
+    for archetype in archetypes.iter() {
+        rank_abilities.append(archetype.abilities_at_rank(0).as_mut());
+    }
+    // Add higher rank abilities
+    for i in 0..level {
+        rank_abilities.append(
+            archetypes[(i % 3) as usize]
+                .abilities_at_rank((i / 3) + 1)
+                .as_mut(),
+        );
+    }
+    return rank_abilities;
 }

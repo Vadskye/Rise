@@ -1,5 +1,5 @@
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
-use crate::core_mechanics::creatures::attacks::{self, HasAttacks};
+use crate::core_mechanics::creatures::attacks::{self, Attack, HasAttacks};
 use crate::core_mechanics::creatures::{
     latex, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
 };
@@ -109,11 +109,23 @@ impl Creature {
 
 impl HasModifiers for Creature {
     fn add_modifier(&mut self, modifier: Modifier) {
-        self.modifiers.push(modifier);
+        // Modifier conflicts are not necessarily bidirectional.
+        // A lower magic bonus conflicts with a higher magic bonus, but not vice versa.
+        self.modifiers
+            .retain(|m| !m.is_conflicting_modifier(&modifier));
+        if self
+            .modifiers
+            .iter()
+            .filter(|m| modifier.is_conflicting_modifier(m))
+            .count()
+            == 0
+        {
+            self.modifiers.push(modifier);
+        }
     }
 
-    fn get_modifiers(&self) -> Vec<&Modifier> {
-        return self.modifiers.iter().collect();
+    fn get_modifiers(&self) -> Vec<Modifier> {
+        return self.modifiers.clone();
     }
 
     fn calc_total_modifier(&self, mt: ModifierType) -> i32 {
@@ -231,6 +243,17 @@ impl HasAttacks for Creature {
                 all_attacks.push(a.clone());
             }
         }
+        for attack in self
+            .get_modifiers()
+            .iter()
+            .map(|m| m.attack_definition())
+            .collect::<Vec<Option<&Attack>>>()
+        {
+            if let Some(a) = attack {
+                all_attacks.push(a.clone());
+            }
+        }
+
         let weapons_without_attacks: Vec<&Weapon> = self
             .get_weapons()
             .into_iter()

@@ -1,4 +1,4 @@
-use crate::classes::{archetype_rank_abilities, Class};
+use crate::classes::{archetype_rank_abilities, Class, RankAbility};
 use titlecase::titlecase;
 
 pub enum ClassArchetype {
@@ -213,12 +213,15 @@ impl ClassArchetype {
         }
     }
 
-    pub fn rank_abilities(&self) -> Vec<archetype_rank_abilities::RankAbility> {
-        return archetype_rank_abilities::archetype_rank_abilities(self);
+    pub fn abilities_at_rank(&self, rank: i32) -> Vec<RankAbility> {
+        return archetype_rank_abilities(self)
+            .into_iter()
+            .filter(|a| a.rank == rank)
+            .collect();
     }
 
     pub fn is_magical(&self) -> bool {
-        return self.rank_abilities().iter().all(|a| a.is_magical);
+        return archetype_rank_abilities(self).iter().all(|a| a.is_magical);
     }
 
     pub fn short_description(&self) -> String {
@@ -417,8 +420,7 @@ impl ClassArchetype {
 impl ClassArchetype {
     pub fn latex_description(&self, class_shorthand: &str) -> String {
         let all_magical = self.is_magical();
-        let mut rank_ability_descriptions = self
-            .rank_abilities()
+        let mut rank_ability_descriptions = archetype_rank_abilities(self)
             .iter()
             .map(|a| {
                 a.latex_class_feature(class_shorthand, !all_magical)

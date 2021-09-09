@@ -10,6 +10,7 @@ use crate::equipment::Weapon;
 pub enum StandardAttack {
     AbolethSlam,
     AbolethPsionicBlast,
+    AbyssalBlast(i32),
     MindCrush(i32),
 }
 
@@ -56,6 +57,31 @@ impl StandardAttack {
                 is_magical: true,
                 name: "Psionic Blast".to_string(),
                 targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Enemies),
+                usage_time: UsageTime::Standard,
+                weapon: None,
+            },
+            Self::AbyssalBlast(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Armor,
+                glance: if *rank >= 3 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    // +1d extra at rank 3/5/7
+                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 2),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Fire],
+                    lose_hp_effects: None,
+                    power_multiplier: 1.0,
+                    take_damage_effects: None,
+                }),
+                is_magical: true,
+                name: "Abyssal Blast".to_string(),
+                targeting: AttackTargeting::Creature(AttackRange::Medium),
                 usage_time: UsageTime::Standard,
                 weapon: None,
             },

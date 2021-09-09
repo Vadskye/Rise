@@ -1,8 +1,11 @@
+use crate::core_mechanics::creatures::attacks::Attack;
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::skills::Skill;
 
+#[derive(Clone)]
 pub enum Modifier {
     Accuracy(i32),
+    Attack(Attack),
     BaseAttribute(Attribute, i32),
     DamageResistance(i32),
     Defense(Defense, i32),
@@ -26,6 +29,7 @@ pub enum Modifier {
 #[derive(PartialEq)]
 pub enum ModifierType {
     Accuracy,
+    Attack,
     BaseAttribute(Attribute),
     DamageResistance,
     Defense(Defense),
@@ -43,9 +47,43 @@ pub enum ModifierType {
 }
 
 impl Modifier {
+    pub fn is_conflicting_modifier(&self, other: &Self) -> bool {
+        match self {
+            Self::Attack(a) => {
+                match other {
+                    Self::Attack(b) => a.name == b.name,
+                    _ => false,
+                }
+            },
+            _ => false,
+        }
+    }
+
+    pub fn description(&self) -> String {
+        match self {
+            Self::Accuracy(v) => format!("accuracy {}", v),
+            Self::Attack(a) => format!("attack {}", a.name),
+            Self::BaseAttribute(a, v) => format!("base attribute {} by {}", a.name(), v),
+            Self::DamageResistance(v) => format!("DR {}", v),
+            Self::Defense(d, v) => format!("defense {} by {}", d.name(), v),
+            Self::Encumbrance(v) => format!("encumbrance {}", v),
+            Self::FocusPenalty(v) => format!("focus {}", v),
+            Self::HitPoints(v) => format!("HP {}", v),
+            Self::Initiative(v) => format!("initiative {}", v),
+            Self::MagicalPower(v) => format!("magical power {}", v),
+            Self::MovementSpeed(v) => format!("movement {}", v),
+            Self::MundanePower(v) => format!("mundane power {}", v),
+            Self::Resource(r, v) => format!("resource {} by {}", r.name(), v),
+            Self::Skill(s, v) => format!("skill {} by {}", s.name(), v),
+            Self::StrikeDamageDice(v) => format!("strike damage dice {}", v),
+            Self::VitalRoll(v) => format!("vital roll {}", v),
+        }
+    }
+
     pub fn modifier_type(&self) -> ModifierType {
         match self {
             Self::Accuracy(_) => ModifierType::Accuracy,
+            Self::Attack(_) => ModifierType::Attack,
             Self::BaseAttribute(a, _) => ModifierType::BaseAttribute(*a),
             Self::DamageResistance(_) => ModifierType::DamageResistance,
             Self::Defense(d, _) => ModifierType::Defense(*d),
@@ -63,9 +101,17 @@ impl Modifier {
         }
     }
 
+    pub fn attack_definition(&self) -> Option<&Attack> {
+        match self {
+            Self::Attack(a) => Some(a),
+            _ => None,
+        }
+    }
+
     pub fn value(&self) -> i32 {
         let value = match self {
             Self::Accuracy(v) => v,
+            Self::Attack(_) => &0,
             Self::BaseAttribute(_, v) => v,
             Self::DamageResistance(v) => v,
             Self::Defense(_, v) => v,
@@ -87,6 +133,6 @@ impl Modifier {
 
 pub trait HasModifiers {
     fn add_modifier(&mut self, modifier: Modifier);
-    fn get_modifiers(&self) -> Vec<&Modifier>;
+    fn get_modifiers(&self) -> Vec<Modifier>;
     fn calc_total_modifier(&self, modifier_type: ModifierType) -> i32;
 }
