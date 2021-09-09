@@ -47,6 +47,17 @@ pub enum AttackEffectDuration {
 }
 
 impl AttackEffect {
+    pub fn except_damage<F: FnOnce(&mut DamageEffect)>(&self, f: F) -> AttackEffect {
+        let mut attack_effect = self.clone();
+        match attack_effect {
+            Self::Damage(ref mut d) => {
+                f(d);
+            },
+            _ => {},
+        };
+        return attack_effect;
+    }
+
     pub fn area_damage(rank: i32, damage_types: Vec<DamageType>) -> Self {
         return Self::Damage(DamageEffect {
             damage_dice: DamageDice::new(DamageDice::d8() + rank - 1),

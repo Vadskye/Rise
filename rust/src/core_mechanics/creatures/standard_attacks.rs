@@ -1,7 +1,9 @@
 use crate::core_mechanics::creatures::attack_effects::{
     self, AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
-use crate::core_mechanics::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting, UsageTime};
+use crate::core_mechanics::creatures::attacks::{
+    AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting, UsageTime,
+};
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
 use crate::equipment::Weapon;
 
@@ -63,10 +65,11 @@ impl StandardAttack {
                     take_damage_effects: None,
                 }),
                 is_magical: true,
+                is_strike: false,
                 name: "Psionic Blast".to_string(),
+                replaces_weapon: None,
                 targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Enemies),
                 usage_time: UsageTime::Standard,
-                weapon: None,
             },
             Self::FrostwebSpiderBite => {
                 let mut frostweb_spider_bite = Attack::from_weapon(Weapon::MonsterBite);
@@ -80,7 +83,7 @@ impl StandardAttack {
                     )]);
                 }
                 return frostweb_spider_bite;
-            },
+            }
             Self::GibberingMoutherGibber => Attack {
                 accuracy: 0,
                 cooldown: None,
@@ -95,10 +98,11 @@ impl StandardAttack {
                     duration: AttackEffectDuration::Brief,
                 }),
                 is_magical: true,
+                is_strike: false,
                 name: "Gibber".to_string(),
+                replaces_weapon: None,
                 targeting: AttackTargeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
                 usage_time: UsageTime::Minor,
-                weapon: None,
             },
 
             // Character/shared abilities
@@ -122,10 +126,11 @@ impl StandardAttack {
                     take_damage_effects: None,
                 }),
                 is_magical: true,
+                is_strike: false,
                 name: "Abyssal Blast".to_string(),
+                replaces_weapon: None,
                 targeting: AttackTargeting::Creature(AttackRange::Medium),
                 usage_time: UsageTime::Standard,
-                weapon: None,
             },
             Self::BreathWeaponCone(rank, damage_type, defense) => Attack {
                 accuracy: 0,
@@ -146,19 +151,23 @@ impl StandardAttack {
                     take_damage_effects: None,
                 }),
                 is_magical: true,
+                is_strike: false,
                 name: "Breath Weapon".to_string(),
-                targeting: AttackTargeting::Cone(match rank {
-                    1 => AreaSize::Small,
-                    2 => AreaSize::Medium,
-                    3 => AreaSize::Large,
-                    4 => AreaSize::Large,
-                    5 => AreaSize::Huge,
-                    6 => AreaSize::Huge,
-                    7 => AreaSize::Gargantuan,
-                    _ => panic!("Invalid rank {}", rank),
-                }, AreaTargets::Everything),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Cone(
+                    match rank {
+                        1 => AreaSize::Small,
+                        2 => AreaSize::Medium,
+                        3 => AreaSize::Large,
+                        4 => AreaSize::Large,
+                        5 => AreaSize::Huge,
+                        6 => AreaSize::Huge,
+                        7 => AreaSize::Gargantuan,
+                        _ => panic!("Invalid rank {}", rank),
+                    },
+                    AreaTargets::Everything,
+                ),
                 usage_time: UsageTime::Standard,
-                weapon: None,
             },
             Self::BreathWeaponLine(rank, damage_type, defense) => Attack {
                 accuracy: 0,
@@ -179,7 +188,9 @@ impl StandardAttack {
                     take_damage_effects: None,
                 }),
                 is_magical: true,
+                is_strike: false,
                 name: "Breath Weapon".to_string(),
+                replaces_weapon: None,
                 targeting: match rank {
                     1 => AttackTargeting::Line(5, AreaSize::Medium, AreaTargets::Everything),
                     2 => AttackTargeting::Line(5, AreaSize::Large, AreaTargets::Everything),
@@ -191,7 +202,6 @@ impl StandardAttack {
                     _ => panic!("Invalid rank {}", rank),
                 },
                 usage_time: UsageTime::Standard,
-                weapon: None,
             },
             // TODO: add descriptive text for +accuracy vs non-bright illumination
             Self::DarkGrasp(rank) => Attack {
@@ -213,10 +223,11 @@ impl StandardAttack {
                     take_damage_effects: None,
                 }),
                 is_magical: true,
+                is_strike: false,
                 name: Attack::generate_modified_name("Dark Grasp", *rank, 3, Some(7)),
+                replaces_weapon: None,
                 targeting: AttackTargeting::Anything(AttackRange::Reach),
                 usage_time: UsageTime::Standard,
-                weapon: None,
             },
             Self::DarkMiasma(rank) => Attack {
                 accuracy: 0,
@@ -237,14 +248,15 @@ impl StandardAttack {
                     take_damage_effects: None,
                 }),
                 is_magical: true,
+                is_strike: false,
                 name: Attack::generate_modified_name("Dark Miasma", *rank, 4, None),
+                replaces_weapon: None,
                 targeting: if *rank >= 4 {
                     AttackTargeting::Radius(None, AreaSize::Large, AreaTargets::Creatures)
                 } else {
                     AttackTargeting::Radius(None, AreaSize::Small, AreaTargets::Enemies)
                 },
                 usage_time: UsageTime::Standard,
-                weapon: None,
             },
             Self::MindCrush(rank) => Attack {
                 accuracy: 0,
@@ -273,10 +285,11 @@ impl StandardAttack {
                     })]),
                 }),
                 is_magical: true,
+                is_strike: false,
                 name: Attack::generate_modified_name("Mind Crush", *rank, 3, Some(7)),
+                replaces_weapon: None,
                 targeting: AttackTargeting::Creature(AttackRange::Medium),
                 usage_time: UsageTime::Standard,
-                weapon: None,
             },
         }
     }

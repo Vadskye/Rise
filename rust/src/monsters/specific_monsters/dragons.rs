@@ -108,10 +108,11 @@ impl AgeCategory {
                 duration: AttackEffectDuration::Condition,
             }),
             is_magical: false,
+            is_strike: false,
             name: "Frightful Presence".to_string(),
+            replaces_weapon: None,
             targeting: AttackTargeting::Radius(None, size, AreaTargets::Enemies),
             usage_time: UsageTime::Minor,
-            weapon: None,
         });
     }
 
@@ -487,10 +488,11 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
             take_damage_effects: None,
         }),
         is_magical: false,
+        is_strike: false,
         name: "Breath Weapon".to_string(),
+        replaces_weapon: None,
         targeting,
         usage_time: UsageTime::Minor,
-        weapon: None,
     };
 }
 

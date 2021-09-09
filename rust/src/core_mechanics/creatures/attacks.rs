@@ -1,3 +1,4 @@
+use crate::core_mechanics::creatures::attack_effects::{AttackEffect, DamageEffect};
 use crate::core_mechanics::creatures::{attack_effects, HasCreatureMechanics};
 use crate::core_mechanics::{damage_dice, defenses};
 use crate::equipment::Weapon;
@@ -8,15 +9,16 @@ use std::fmt;
 pub struct Attack {
     pub accuracy: i32,
     pub cooldown: Option<AttackCooldown>,
-    pub crit: Option<attack_effects::AttackEffect>,
+    pub crit: Option<AttackEffect>,
     pub defense: defenses::Defense,
-    pub glance: Option<attack_effects::AttackEffect>,
-    pub hit: attack_effects::AttackEffect,
+    pub glance: Option<AttackEffect>,
+    pub hit: AttackEffect,
     pub is_magical: bool,
+    pub is_strike: bool,
     pub name: String,
+    pub replaces_weapon: Option<Weapon>,
     pub targeting: AttackTargeting,
     pub usage_time: UsageTime,
-    pub weapon: Option<Weapon>,
 }
 
 pub trait HasAttacks {
@@ -37,6 +39,14 @@ impl Attack {
         return attack;
     }
 
+    // This allows passing in a closure to modify damage dealt on hit, which is harder than it
+    // would seem because of the nesting structure within attacks.
+    pub fn except_hit_damage<F: FnOnce(&mut DamageEffect)>(&self, f: F) -> Attack {
+        let mut attack = self.clone();
+        attack.hit = attack.hit.except_damage(f);
+        return attack;
+    }
+
     pub fn from_weapon(weapon: Weapon) -> Attack {
         return Attack {
             accuracy: weapon.accuracy(),
@@ -44,16 +54,23 @@ impl Attack {
             crit: None,
             defense: defenses::Defense::Armor,
             glance: None,
-            hit: attack_effects::AttackEffect::from_weapon(weapon),
+            hit: AttackEffect::from_weapon(weapon),
             name: weapon.name().to_string(),
             is_magical: false,
+            is_strike: true,
+            // By default, `from_weapon` replaces the base weapon
+            replaces_weapon: Some(weapon),
             targeting: AttackTargeting::Strike,
             usage_time: UsageTime::Standard,
-            weapon: Some(weapon),
         };
     }
 
-    pub fn generate_modified_name(name: &str, rank: i32, greater_rank: i32, supreme_rank: Option<i32>) -> String {
+    pub fn generate_modified_name(
+        name: &str,
+        rank: i32,
+        greater_rank: i32,
+        supreme_rank: Option<i32>,
+    ) -> String {
         if supreme_rank.is_some() && rank >= supreme_rank.unwrap() {
             return format!("Supreme {}", name);
         } else if rank >= greater_rank {
@@ -64,14 +81,14 @@ impl Attack {
     }
 
     pub fn damage_effect_mut(&mut self) -> Option<&mut attack_effects::DamageEffect> {
-        if let attack_effects::AttackEffect::Damage(ref mut e) = self.hit {
+        if let AttackEffect::Damage(ref mut e) = self.hit {
             return Some(e);
         }
         return None;
     }
 
     pub fn damage_effect(&self) -> Option<&attack_effects::DamageEffect> {
-        if let attack_effects::AttackEffect::Damage(ref e) = self.hit {
+        if let AttackEffect::Damage(ref e) = self.hit {
             return Some(e);
         }
         return None;
@@ -85,7 +102,7 @@ impl Attack {
             return Some(
                 damage_effect
                     .damage_dice
-                    .add(creature.calc_damage_increments(self.weapon.is_some())),
+                    .add(creature.calc_damage_increments(self.is_strike)),
             );
         }
         return None;
@@ -117,7 +134,7 @@ impl Attack {
                 .description(
                     creature,
                     self.is_magical,
-                    self.weapon.is_some(),
+                    self.is_strike,
                     self.targeting.subjects()
                 )
                 .trim()
@@ -180,7 +197,7 @@ impl Attack {
                 .description(
                     creature,
                     self.is_magical,
-                    self.weapon.is_some(),
+                    self.is_strike,
                     self.targeting.subjects()
                 )
                 .trim()
@@ -191,7 +208,7 @@ impl Attack {
                     g.description(
                         creature,
                         self.is_magical,
-                        self.weapon.is_some(),
+                        self.is_strike,
                         self.targeting.subjects()
                     )
                 )
@@ -204,7 +221,7 @@ impl Attack {
                     g.description(
                         creature,
                         self.is_magical,
-                        self.weapon.is_some(),
+                        self.is_strike,
                         self.targeting.subjects()
                     )
                 )
