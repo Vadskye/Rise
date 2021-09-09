@@ -5,7 +5,7 @@ use crate::core_mechanics::creatures::attacks::{
     AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
 };
 use crate::core_mechanics::{
-    DamageDice, DamageType, DamageTypeEffect, Debuff, Defense, FlightManeuverability, MovementMode,
+    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode,
     PassiveAbility, Sense, Size, SpecialDefenseModifier, SpeedCategory,
 };
 use crate::equipment::Weapon;

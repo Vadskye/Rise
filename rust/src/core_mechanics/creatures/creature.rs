@@ -12,7 +12,7 @@ use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::sizes;
 use crate::equipment::{Armor, HasArmor, HasWeapons, Weapon};
 use crate::skills::{HasSkills, Skill};
-use std::cmp::{max, min};
+use std::cmp::max;
 use std::collections::HashMap;
 
 pub struct Creature {
@@ -384,6 +384,7 @@ impl HasSkills for Creature {
             0
         };
 
-        return training_modifier - encumbrance_modifier + self.calc_total_modifier(ModifierType::Skill(skill.clone()));
+        return training_modifier - encumbrance_modifier
+            + self.calc_total_modifier(ModifierType::Skill(skill.clone()));
     }
 }
