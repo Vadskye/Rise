@@ -1,13 +1,5 @@
-use crate::core_mechanics::creatures::attack_effects::{
-    AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
-};
-use crate::core_mechanics::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
-};
-use crate::core_mechanics::{
-    DamageDice, DamageType, DamageTypeEffect, Debuff, Defense, FlightManeuverability, MovementMode,
-    PassiveAbility, Sense, Size, SpecialDefenseModifier, SpeedCategory,
-};
+use crate::core_mechanics::creatures::attacks::Attack;
+use crate::core_mechanics::{MovementMode, PassiveAbility, Sense, Size};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;

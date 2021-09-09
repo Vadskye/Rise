@@ -1,8 +1,6 @@
 use crate::latex_formatting;
-use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::Monster;
-use std::collections::HashMap;
 use titlecase::titlecase;
 
 pub struct MonsterGroup {

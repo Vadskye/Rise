@@ -1,20 +1,20 @@
 use crate::core_mechanics::creatures::attack_effects::{
-    self, AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
+    AttackEffect, AttackEffectDuration, DebuffEffect,
 };
 use crate::core_mechanics::creatures::StandardAttack;
 use crate::core_mechanics::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
+    AreaSize, AreaTargets, Attack, AttackTargeting, UsageTime,
 };
 use crate::core_mechanics::{
-    DamageDice, DamageType, DamageTypeEffect, Debuff, Defense, FlightManeuverability, MovementMode,
-    PassiveAbility, Sense, Size, SpecialDefenseModifier, SpeedCategory,
+    Debuff, Defense, MovementMode,
+    PassiveAbility, Sense, Size, SpecialDefenseModifier,
 };
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Aberration;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
+use crate::monsters::{FullMonsterDefinition, Monster};
 use crate::skills::Skill;
 
 struct FullAberrationDefinition {
