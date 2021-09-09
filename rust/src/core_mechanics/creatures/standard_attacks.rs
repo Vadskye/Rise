@@ -1,22 +1,30 @@
 use crate::core_mechanics::creatures::attack_effects::{
     self, AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
-use crate::core_mechanics::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackRange, AttackTargeting, UsageTime,
-};
+use crate::core_mechanics::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting, UsageTime};
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
 use crate::equipment::Weapon;
 
 pub enum StandardAttack {
+    // Monster abilities
     AbolethSlam,
     AbolethPsionicBlast,
+    GibberingMoutherGibber,
+    FrostwebSpiderBite,
+
+    // Character/shared abilities
     AbyssalBlast(i32),
+    BreathWeaponCone(i32, DamageType, Defense),
+    BreathWeaponLine(i32, DamageType, Defense),
+    DarkGrasp(i32),
+    DarkMiasma(i32),
     MindCrush(i32),
 }
 
 impl StandardAttack {
     pub fn attack(&self) -> Attack {
         match self {
+            // Monster abilities
             Self::AbolethSlam => {
                 let mut aboleth_slam = Attack::from_weapon(Weapon::Slam);
                 if let Some(e) = aboleth_slam.damage_effect_mut() {
@@ -60,6 +68,40 @@ impl StandardAttack {
                 usage_time: UsageTime::Standard,
                 weapon: None,
             },
+            Self::FrostwebSpiderBite => {
+                let mut frostweb_spider_bite = Attack::from_weapon(Weapon::MonsterBite);
+                if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
+                    e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
+                        attack_effects::PoisonEffect {
+                            stage1: vec![Debuff::Slowed],
+                            stage3_debuff: Some(vec![Debuff::Decelerated]),
+                            stage3_vital: None,
+                        },
+                    )]);
+                }
+                return frostweb_spider_bite;
+            },
+            Self::GibberingMoutherGibber => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: Some(AttackEffect::Debuff(DebuffEffect {
+                    debuffs: vec![Debuff::Confused],
+                    duration: AttackEffectDuration::Brief,
+                })),
+                defense: Defense::Mental,
+                glance: None,
+                hit: AttackEffect::Debuff(DebuffEffect {
+                    debuffs: vec![Debuff::Dazed],
+                    duration: AttackEffectDuration::Brief,
+                }),
+                is_magical: true,
+                name: "Gibber".to_string(),
+                targeting: AttackTargeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
+                usage_time: UsageTime::Minor,
+                weapon: None,
+            },
+
+            // Character/shared abilities
             Self::AbyssalBlast(rank) => Attack {
                 accuracy: 0,
                 cooldown: None,
@@ -82,6 +124,125 @@ impl StandardAttack {
                 is_magical: true,
                 name: "Abyssal Blast".to_string(),
                 targeting: AttackTargeting::Creature(AttackRange::Medium),
+                usage_time: UsageTime::Standard,
+                weapon: None,
+            },
+            Self::BreathWeaponCone(rank, damage_type, defense) => Attack {
+                accuracy: 0,
+                cooldown: Some(AttackCooldown::Brief(None)),
+                crit: None,
+                defense: *defense,
+                glance: if *rank >= 3 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    damage_dice: DamageDice::aoe_damage(*rank),
+                    damage_modifier: 0,
+                    damage_types: vec![*damage_type],
+                    lose_hp_effects: None,
+                    power_multiplier: 0.5,
+                    take_damage_effects: None,
+                }),
+                is_magical: true,
+                name: "Breath Weapon".to_string(),
+                targeting: AttackTargeting::Cone(match rank {
+                    1 => AreaSize::Small,
+                    2 => AreaSize::Medium,
+                    3 => AreaSize::Large,
+                    4 => AreaSize::Large,
+                    5 => AreaSize::Huge,
+                    6 => AreaSize::Huge,
+                    7 => AreaSize::Gargantuan,
+                    _ => panic!("Invalid rank {}", rank),
+                }, AreaTargets::Everything),
+                usage_time: UsageTime::Standard,
+                weapon: None,
+            },
+            Self::BreathWeaponLine(rank, damage_type, defense) => Attack {
+                accuracy: 0,
+                cooldown: Some(AttackCooldown::Brief(None)),
+                crit: None,
+                defense: *defense,
+                glance: if *rank >= 3 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    damage_dice: DamageDice::aoe_damage(*rank),
+                    damage_modifier: 0,
+                    damage_types: vec![*damage_type],
+                    lose_hp_effects: None,
+                    power_multiplier: 0.5,
+                    take_damage_effects: None,
+                }),
+                is_magical: true,
+                name: "Breath Weapon".to_string(),
+                targeting: match rank {
+                    1 => AttackTargeting::Line(5, AreaSize::Medium, AreaTargets::Everything),
+                    2 => AttackTargeting::Line(5, AreaSize::Large, AreaTargets::Everything),
+                    3 => AttackTargeting::Line(10, AreaSize::Large, AreaTargets::Everything),
+                    4 => AttackTargeting::Line(10, AreaSize::Huge, AreaTargets::Everything),
+                    5 => AttackTargeting::Line(15, AreaSize::Huge, AreaTargets::Everything),
+                    6 => AttackTargeting::Line(15, AreaSize::Gargantuan, AreaTargets::Everything),
+                    7 => AttackTargeting::Line(20, AreaSize::Gargantuan, AreaTargets::Everything),
+                    _ => panic!("Invalid rank {}", rank),
+                },
+                usage_time: UsageTime::Standard,
+                weapon: None,
+            },
+            // TODO: add descriptive text for +accuracy vs non-bright illumination
+            Self::DarkGrasp(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Reflex,
+                glance: if *rank >= 3 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    damage_dice: DamageDice::aoe_damage(*rank).add(if *rank == 7 { 2 } else { 0 }),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Cold],
+                    lose_hp_effects: None,
+                    power_multiplier: 1.0,
+                    take_damage_effects: None,
+                }),
+                is_magical: true,
+                name: Attack::generate_modified_name("Dark Grasp", *rank, 3, Some(7)),
+                targeting: AttackTargeting::Anything(AttackRange::Reach),
+                usage_time: UsageTime::Standard,
+                weapon: None,
+            },
+            Self::DarkMiasma(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Reflex,
+                glance: if *rank >= 4 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    damage_dice: DamageDice::aoe_damage(*rank),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Cold],
+                    lose_hp_effects: None,
+                    power_multiplier: 0.5,
+                    take_damage_effects: None,
+                }),
+                is_magical: true,
+                name: Attack::generate_modified_name("Dark Miasma", *rank, 4, None),
+                targeting: if *rank >= 4 {
+                    AttackTargeting::Radius(None, AreaSize::Large, AreaTargets::Creatures)
+                } else {
+                    AttackTargeting::Radius(None, AreaSize::Small, AreaTargets::Enemies)
+                },
                 usage_time: UsageTime::Standard,
                 weapon: None,
             },

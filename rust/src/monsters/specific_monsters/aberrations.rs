@@ -1,13 +1,7 @@
-use crate::core_mechanics::creatures::attack_effects::{
-    AttackEffect, AttackEffectDuration, DebuffEffect,
-};
+use crate::core_mechanics::creatures::attacks::Attack;
 use crate::core_mechanics::creatures::StandardAttack;
-use crate::core_mechanics::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackTargeting, UsageTime,
-};
 use crate::core_mechanics::{
-    Debuff, Defense, MovementMode,
-    PassiveAbility, Sense, Size, SpecialDefenseModifier,
+    Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier,
 };
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -140,27 +134,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         passive_abilities: None,
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
         size: Size::Huge,
-        special_attacks: Some(vec![
-            Attack {
-                accuracy: 0,
-                cooldown: None,
-                crit: Some(AttackEffect::Debuff(DebuffEffect {
-                    debuffs: vec![Debuff::Confused],
-                    duration: AttackEffectDuration::Brief,
-                })),
-                defense: Defense::Mental,
-                glance: None,
-                hit: AttackEffect::Debuff(DebuffEffect {
-                    debuffs: vec![Debuff::Dazed],
-                    duration: AttackEffectDuration::Brief,
-                }),
-                is_magical: true,
-                name: "Gibber".to_string(),
-                targeting: AttackTargeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
-                usage_time: UsageTime::Minor,
-                weapon: None,
-            },
-        ]),
+        special_attacks: Some(vec![StandardAttack::GibberingMoutherGibber.attack()]),
         special_defense_modifiers: Some(vec![SpecialDefenseModifier::immune_debuff(Debuff::Prone)]),
         trained_skills: Some(vec![
             Skill::Endurance,
