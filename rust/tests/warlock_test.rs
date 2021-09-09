@@ -65,10 +65,10 @@ fn it_calculates_modifiers() {
 }
 
 #[test]
-fn it_calculates_eldritch_blast() {
+fn it_calculates_abyssal_blast() {
     let warlock = Character::new(
         Class::Warlock,
-        1,
+        20,
         [
             ClassArchetype::BlessingsOfTheAbyss,
             ClassArchetype::PactMagic,
@@ -78,4 +78,10 @@ fn it_calculates_eldritch_blast() {
 
     let attacks = warlock.calc_all_attacks();
     assert_eq!(1, attacks.len(), "Should have one attack");
+    let abyssal_blast = &attacks[0];
+    assert_eq!(
+        "Abyssal Blast +10 (The subject takes 7d10+12 fire damage.)",
+        abyssal_blast.shorthand_description(&warlock),
+        "Should have correct description"
+    );
 }
