@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::creatures::Modifier;
+use crate::core_mechanics::creatures::{Modifier, StandardAttack};
 use crate::core_mechanics::{Defense, Resource};
 use crate::skills::{KnowledgeSubskill, Skill};
 
@@ -36,7 +36,10 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The damage increases to 7d10.
                 \end{instantability}
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(1)]),
+            modifiers: Some(vec![
+                Modifier::Attack(StandardAttack::AbyssalBlast(1).attack()),
+                Modifier::DamageResistance(1),
+            ]),
         },
         RankAbility {
             name: "Abyssal Sphere",
@@ -46,7 +49,10 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 If you have access to pact magic, choose one of the following \glossterm{mystic spheres}: \sphere{astromancy}, \sphere{enchantment}, \sphere{pyromancy}, or \sphere{summoning}.
                 You gain access to that mystic sphere.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(2)]),
+            modifiers: Some(vec![
+                Modifier::Attack(StandardAttack::AbyssalBlast(2).attack()),
+                Modifier::DamageResistance(2),
+            ]),
         },
         RankAbility {
             name: "Resist the Dark Call",
@@ -79,7 +85,10 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The accuracy bonus increases to \plus2.
                 \end{durationability}
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(2)]),
+            modifiers: Some(vec![
+                Modifier::Attack(StandardAttack::AbyssalBlast(3).attack()),
+                Modifier::DamageResistance(2),
+            ]),
         },
         RankAbility {
             name: "Hellfire",
@@ -91,6 +100,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 Any other aspects of the ability, including damage types other than fire, remain unchanged.
             ",
             modifiers: Some(vec![
+                Modifier::Attack(StandardAttack::AbyssalBlast(4).attack()),
                 Modifier::MagicalPower(2),
                 Modifier::DamageResistance(2),
             ]),
@@ -102,8 +112,11 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{fiendish resistance} ability increases to three times your rank in this archetype.
             ",
-            // Rank 4: 8. Rank 5: 15.
-            modifiers: Some(vec![Modifier::DamageResistance(7)]),
+            modifiers: Some(vec![
+                Modifier::Attack(StandardAttack::AbyssalBlast(5).attack()),
+                // Rank 4: 8. Rank 5: 15.
+                Modifier::DamageResistance(7),
+            ]),
         },
         RankAbility {
             name: "Abyssal Curse",
@@ -123,7 +136,10 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
                 \end{durationability}
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(3)]),
+            modifiers: Some(vec![
+                Modifier::Attack(StandardAttack::AbyssalBlast(6).attack()),
+                Modifier::DamageResistance(3),
+            ]),
         },
         RankAbility {
             name: "Brimstone",
@@ -134,7 +150,11 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 In addition, whenever you cause a creature to lose \glossterm{hit points} with fire damage or energy damage, it becomes \glossterm{briefly} \sickened.
                 After the effect ends, that creature then becomes immune to it until it takes a \glossterm{short rest}.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![
+                Modifier::Attack(StandardAttack::AbyssalBlast(7).attack()),
+                Modifier::MagicalPower(4),
+                Modifier::DamageResistance(3),
+            ]),
         },
     ];
 }
@@ -682,7 +702,10 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Whispers of the Mighty} The bonus from your \textit{empowering whispers} ability increases to \plus4.
                 }
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::Defense(Defense::Fortitude, 2)]),
+            modifiers: Some(vec![
+                Modifier::MagicalPower(2),
+                Modifier::Defense(Defense::Fortitude, 2),
+            ]),
         },
         RankAbility {
             name: "Greater Possession",

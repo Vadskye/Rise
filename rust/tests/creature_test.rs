@@ -1,6 +1,6 @@
-use rise::core_mechanics::creatures::{Modifier, HasModifiers};
 use rise::core_mechanics::creatures::creature::Creature;
-use rise::core_mechanics::{Defense, HasDefenses};
+use rise::core_mechanics::creatures::{HasModifiers, Modifier};
+use rise::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses};
 use rise::equipment::{Armor, HasArmor};
 use rise::skills::{HasSkills, Skill};
 
@@ -62,6 +62,8 @@ fn it_calculates_modifiers() {
     );
 
     creature.add_modifier(Modifier::Defense(Defense::Armor, 2));
+    creature.add_modifier(Modifier::DamageResistance(1));
+    creature.add_modifier(Modifier::DamageResistance(2));
     assert_eq!(
         2,
         creature.calc_defense(&Defense::Armor),
@@ -72,4 +74,5 @@ fn it_calculates_modifiers() {
         creature.calc_defense(&Defense::Fortitude),
         "Should have 0 Fort"
     );
+    assert_eq!(5, creature.calc_damage_resistance(), "Should have 5 DR");
 }
