@@ -1,7 +1,7 @@
 use crate::core_mechanics::attributes::{Attribute, HasAttributes};
 use crate::core_mechanics::creatures::attacks::{self, Attack, HasAttacks};
 use crate::core_mechanics::creatures::{
-    latex, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
+    latex, HasCreatureMechanics, HasModifiers, Maneuver, Modifier, ModifierType,
 };
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{self, HasDefenses, SpecialDefenseModifier};
@@ -243,6 +243,7 @@ impl HasAttacks for Creature {
                 all_attacks.push(a.clone());
             }
         }
+
         for attack in self
             .get_modifiers()
             .iter()
@@ -251,6 +252,19 @@ impl HasAttacks for Creature {
         {
             if let Some(a) = attack {
                 all_attacks.push(a.clone());
+            }
+        }
+
+        for maneuver in self
+            .get_modifiers()
+            .iter()
+            .map(|m| m.maneuver_definition())
+            .collect::<Vec<Option<&Maneuver>>>()
+        {
+            if let Some(m) = maneuver {
+                for weapon in self.get_weapons() {
+                    all_attacks.push(m.attack(weapon.clone()));
+                }
             }
         }
 
