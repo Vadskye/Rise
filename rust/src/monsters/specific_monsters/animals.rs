@@ -1,10 +1,8 @@
-use crate::core_mechanics::creatures::attack_effects;
-use crate::core_mechanics::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackTargeting, UsageTime,
-};
+use crate::core_mechanics::creatures::attacks::Attack;
+use crate::core_mechanics::creatures::{attack_effects, StandardAttack};
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, FlightManeuverability, MovementMode,
-    PassiveAbility, Sense, Size, SpeedCategory,
+    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
+    SpeedCategory,
 };
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -262,16 +260,6 @@ pub fn animals() -> Vec<MonsterEntry> {
         ],
     }));
 
-    let mut frostweb_spider_bite = Attack::from_weapon(Weapon::MonsterBite);
-    if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
-        e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
-            attack_effects::PoisonEffect {
-                stage1: vec![Debuff::Slowed],
-                stage3_debuff: Some(vec![Debuff::Decelerated]),
-                stage3_vital: None,
-            },
-        )]);
-    }
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
         attributes: vec![3, 3, 1, 1, 2, 2],
         challenge_rating: ChallengeRating::Four,
@@ -284,20 +272,10 @@ pub fn animals() -> Vec<MonsterEntry> {
         senses: Some(vec![Sense::Tremorsense(240), Sense::Tremorsight(60)]),
         size: Size::Large,
         special_attacks: Some(vec![
-            frostweb_spider_bite,
-            Attack {
-                accuracy: 0,
-                cooldown: None,
-                crit: None,
-                defense: Defense::Fortitude,
-                glance: None,
-                hit: attack_effects::AttackEffect::area_damage(5, vec![DamageType::Cold]),
-                is_magical: true,
-                name: "Frost Breath".to_string(),
-                targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Everything),
-                usage_time: UsageTime::Minor,
-                weapon: None,
-            },
+            StandardAttack::FrostwebSpiderBite.attack(),
+            StandardAttack::BreathWeaponCone(5, DamageType::Cold, Defense::Fortitude)
+                .attack()
+                .except(|a| a.name = "Frost Breath".to_string()),
         ]),
         trained_skills: None,
         weapons: vec![Weapon::MonsterBite],
