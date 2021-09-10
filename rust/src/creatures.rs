@@ -1,5 +1,6 @@
 pub mod attack_effects;
 pub mod attacks;
+mod character;
 pub mod creature;
 pub mod latex;
 mod maneuver;
@@ -12,6 +13,7 @@ use crate::core_mechanics::{
 use crate::equipment::HasWeapons;
 use crate::skills::HasSkills;
 use attacks::HasAttacks;
+pub use character::Character;
 pub use maneuver::Maneuver;
 pub use modifier::{HasModifiers, Modifier, ModifierType};
 pub use standard_attacks::StandardAttack;

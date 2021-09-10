@@ -1,5 +1,5 @@
 use rise::calculations::statistical_combat::run_combat;
-use rise::classes::Character;
+use rise::creatures::Character;
 use rise::core_mechanics::{Attribute, HasAttributes};
 
 fn main() {

@@ -1,5 +1,5 @@
 use rise::{
-    classes::Character,
+    creatures::Character,
     monsters::{ChallengeRating, Monster},
 };
 

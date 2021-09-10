@@ -1,11 +1,11 @@
-use crate::classes::{Class, ClassArchetype, RankAbility};
-use crate::creatures::attacks::{self, HasAttacks};
-use crate::creatures::{
-    creature, latex, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
-};
+use crate::classes::{calc_rank_abilities, Class, ClassArchetype};
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources,
     HasVitalWounds, Resource, VitalWound,
+};
+use crate::creatures::attacks::{self, HasAttacks};
+use crate::creatures::{
+    creature, latex, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
 };
 use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, HasWeapons, Weapon};
 use crate::skills::{HasSkills, Skill};
@@ -309,26 +309,6 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     }
 
     return modifiers;
-}
-
-pub fn calc_rank_abilities<'a>(
-    level: i32,
-    archetypes: &'a [ClassArchetype; 3],
-) -> Vec<RankAbility<'a>> {
-    let mut rank_abilities: Vec<RankAbility> = vec![];
-    // Add rank 0 abilities
-    for archetype in archetypes.iter() {
-        rank_abilities.append(archetype.abilities_at_rank(0).as_mut());
-    }
-    // Add higher rank abilities
-    for i in 0..level {
-        rank_abilities.append(
-            archetypes[(i % 3) as usize]
-                .abilities_at_rank((i / 3) + 1)
-                .as_mut(),
-        );
-    }
-    return rank_abilities;
 }
 
 #[cfg(test)]
