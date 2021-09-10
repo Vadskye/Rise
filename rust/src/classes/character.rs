@@ -23,7 +23,7 @@ impl Character {
         for rank_ability in calc_rank_abilities(level, &archetypes) {
             if let Some(rank_modifiers) = rank_ability.modifiers {
                 for modifier in rank_modifiers {
-                    creature.add_modifier(modifier);
+                    creature.add_modifier(modifier.clone());
                 }
             }
         }
@@ -51,15 +51,29 @@ impl Character {
         // TODO: scale armor material with level
         character.creature.add_armor(Armor::Breastplate(None));
         character.creature.add_armor(Armor::StandardShield);
-        character.creature.set_name("Standard Character".to_string());
+        character
+            .creature
+            .set_name("Standard Character".to_string());
 
         if use_point_buy {
-            character.creature.set_base_attribute(Attribute::Strength, 4);
-            character.creature.set_base_attribute(Attribute::Dexterity, 0);
-            character.creature.set_base_attribute(Attribute::Constitution, 2);
-            character.creature.set_base_attribute(Attribute::Intelligence, 1);
-            character.creature.set_base_attribute(Attribute::Perception, 2);
-            character.creature.set_base_attribute(Attribute::Willpower, 0);
+            character
+                .creature
+                .set_base_attribute(Attribute::Strength, 4);
+            character
+                .creature
+                .set_base_attribute(Attribute::Dexterity, 0);
+            character
+                .creature
+                .set_base_attribute(Attribute::Constitution, 2);
+            character
+                .creature
+                .set_base_attribute(Attribute::Intelligence, 1);
+            character
+                .creature
+                .set_base_attribute(Attribute::Perception, 2);
+            character
+                .creature
+                .set_base_attribute(Attribute::Willpower, 0);
         }
 
         for modifier in calc_standard_magic_modifiers(level) {
@@ -293,4 +307,70 @@ pub fn calc_rank_abilities<'a>(
         );
     }
     return rank_abilities;
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_calculates_rank_abilities() {
+        let mut fighter_1_abilities = calc_rank_abilities(
+            1,
+            &[
+                ClassArchetype::MartialMastery,
+                ClassArchetype::EquipmentTraining,
+                ClassArchetype::CombatDiscipline,
+            ],
+        )
+        .iter()
+        .map(|a| a.name)
+        .collect::<Vec<&str>>();
+        fighter_1_abilities.sort();
+        assert_eq!(
+            vec![
+                "Armor Expertise",
+                "Combat Styles",
+                "Martial Expertise",
+                "Mental Discipline",
+            ],
+            fighter_1_abilities,
+            "Should have correct abilities for a level 1 fighter",
+        );
+
+        let mut fighter_10_abilities = calc_rank_abilities(
+            10,
+            &[
+                ClassArchetype::MartialMastery,
+                ClassArchetype::EquipmentTraining,
+                ClassArchetype::CombatDiscipline,
+            ],
+        )
+        .iter()
+        .map(|a| a.name)
+        .collect::<Vec<&str>>();
+        fighter_10_abilities.sort();
+        assert_eq!(
+            vec![
+                "Armor Expertise",
+                "Cleansing Discipline",
+                "Combat Style Rank",
+                "Combat Style Rank",
+                "Combat Style Rank",
+                "Combat Styles",
+                "Disciplined Force",
+                "Enduring Discipline",
+                "Equipment Efficiency",
+                "Glancing Strikes",
+                "Greater Armor Expertise",
+                "Martial Expertise",
+                "Martial Force",
+                "Martial Maneuver",
+                "Mental Discipline",
+                "Weapon Training"
+            ],
+            fighter_10_abilities,
+            "Should have correct abilities for a level 10 fighter",
+        );
+    }
 }

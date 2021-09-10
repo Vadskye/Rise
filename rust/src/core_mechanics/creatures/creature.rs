@@ -300,8 +300,12 @@ impl HasAttacks for Creature {
             + self.calc_total_modifier(ModifierType::Accuracy);
     }
 
-    fn calc_damage_increments(&self, _is_strike: bool) -> i32 {
-        return 0;
+    fn calc_damage_increments(&self, is_strike: bool) -> i32 {
+        if is_strike {
+            return self.calc_total_modifier(ModifierType::StrikeDamageDice);
+        } else {
+            return 0;
+        }
     }
 
     fn calc_power(&self, is_magical: bool) -> i32 {
