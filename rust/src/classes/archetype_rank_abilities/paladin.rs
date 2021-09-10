@@ -9,9 +9,9 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus1 bonus to \glossterm{vital rolls}.
+                You gain a bonus equal to twice your rank in this archetype to your maximum \glossterm{hit points} (minimum 1).
             ",
-            modifiers: Some(vec![Modifier::VitalRoll(1)]),
+            modifiers: Some(vec![Modifier::HitPoints(1)]),
         },
         RankAbility {
             name: "Aligned Aura",
@@ -36,7 +36,10 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             ",
             // Most auras loosely correlate to +0.5 accuracy in an AOE? For power level purposes,
             // approximate as a personal +1 accuracy.
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![
+                Modifier::Accuracy(1),
+                Modifier::HitPoints(1),
+            ]),
         },
         RankAbility {
             name: "Aligned Immunity",
@@ -50,7 +53,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Good} You are immune to the \shaken, \frightened, and \panicked effects.
                 \subparhead{Law} You are immune to the \dazed, \stunned, \disoriented, and \confused effects.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::HitPoints(2)]),
         },
         RankAbility {
             name: "Paragon Power",
@@ -59,7 +62,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::MundanePower(2)]),
+            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::MundanePower(2), Modifier::HitPoints(2)]),
         },
         RankAbility {
             name: "Greater Aligned Aura",
@@ -76,7 +79,17 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
                 \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::HitPoints(2)]),
+        },
+        RankAbility {
+            name: "Greater Enduring Devotion",
+            is_magical: true,
+            rank: 5,
+            description: r"
+                The bonus from your \textit{enduring devotion} ability increases to three times your rank in this archetype.
+            ",
+            // Rank 4: 8. Rank 5: 15.
+            modifiers: Some(vec![Modifier::HitPoints(7)]),
         },
         RankAbility {
             name: "Greater Aligned Immunity",
@@ -94,7 +107,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{paragon power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4)]),
+            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4), Modifier::HitPoints(3)]),
         },
         RankAbility {
             name: "Supreme Aligned Aura",
@@ -108,7 +121,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Law} The effect triggers on rolling either a 1 or a 2.
             ",
             // Another awkward approximation
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![Modifier::Accuracy(1), Modifier::HitPoints(3)]),
         },
     ];
 }
