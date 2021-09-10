@@ -527,6 +527,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             // TODO: figure out allies-only buffs
             modifiers: None,
         },
+        // TODO: this is a little weak
         RankAbility {
             name: "Greater Practiced Persuasion",
             is_magical: false,
