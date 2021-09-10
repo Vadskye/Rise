@@ -113,3 +113,23 @@ pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility> 
         ClassArchetype::SchoolSpecialist => wizard::school_specialist(),
     }
 }
+
+pub fn calc_rank_abilities<'a>(
+    level: i32,
+    archetypes: &'a [ClassArchetype; 3],
+) -> Vec<RankAbility<'a>> {
+    let mut rank_abilities: Vec<RankAbility> = vec![];
+    // Add rank 0 abilities
+    for archetype in archetypes.iter() {
+        rank_abilities.append(archetype.abilities_at_rank(0).as_mut());
+    }
+    // Add higher rank abilities
+    for i in 0..level {
+        rank_abilities.append(
+            archetypes[(i % 3) as usize]
+                .abilities_at_rank((i / 3) + 1)
+                .as_mut(),
+        );
+    }
+    return rank_abilities;
+}
