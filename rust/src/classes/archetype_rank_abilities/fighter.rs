@@ -11,10 +11,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your Mental defense.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Defense(Defense::Mental, 1),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Mental, 2)]),
         },
         RankAbility {
             name: "Cleansing Discipline",
