@@ -11,9 +11,9 @@ pub struct CombatResult {
     red_survival_percent: f64,
 }
 
-struct CombatStep<T> {
+struct CombatStep<T, TT> {
     blue: T,
-    red: T,
+    red: TT,
 }
 
 struct DamageableCreature<'a, T: HasCreatureMechanics> {
@@ -60,8 +60,8 @@ impl fmt::Display for CombatResult {
     }
 }
 
-pub fn run_combat<T: HasCreatureMechanics>(blue: Vec<T>, red: Vec<T>) -> CombatResult {
-    let mut damageable: CombatStep<Vec<DamageableCreature<T>>> = CombatStep {
+pub fn run_combat<T: HasCreatureMechanics, TT: HasCreatureMechanics>(blue: Vec<T>, red: Vec<TT>) -> CombatResult {
+    let mut damageable: CombatStep<Vec<DamageableCreature<T>>, Vec<DamageableCreature<TT>>> = CombatStep {
         blue: blue
             .iter()
             .map(|c| DamageableCreature::from_creature(c))
@@ -76,7 +76,10 @@ pub fn run_combat<T: HasCreatureMechanics>(blue: Vec<T>, red: Vec<T>) -> CombatR
     // array of creatures. In the future, we can intelligently sort the vectors before entering
     // this block, so the code here won't have to change.
     loop {
-        let mut living: CombatStep<Vec<&mut DamageableCreature<T>>> = CombatStep {
+        let mut living: CombatStep<
+            Vec<&mut DamageableCreature<T>>,
+            Vec<&mut DamageableCreature<TT>>,
+            > = CombatStep {
             blue: damageable
                 .blue
                 .iter_mut()
@@ -84,7 +87,7 @@ pub fn run_combat<T: HasCreatureMechanics>(blue: Vec<T>, red: Vec<T>) -> CombatR
                 .collect(),
             red: damageable.red.iter_mut().filter(|d| d.is_alive()).collect(),
         };
-        let living_creatures: CombatStep<Vec<&T>> = CombatStep {
+        let living_creatures: CombatStep<Vec<&T>, Vec<&TT>> = CombatStep {
             blue: living.blue.iter().map(|d| d.creature).collect(),
             red: living.red.iter().map(|d| d.creature).collect(),
         };
@@ -130,16 +133,16 @@ fn survival_percent<T: HasCreatureMechanics>(creatures: &Vec<DamageableCreature<
         / total_damage_absorption as f64;
 }
 
-fn calc_damage_per_round<T: HasCreatureMechanics>(attackers: &Vec<&T>, defender: &T) -> f64 {
+fn calc_damage_per_round<T: HasCreatureMechanics, TT: HasCreatureMechanics>(attackers: &Vec<&T>, defender: &TT) -> f64 {
     return attackers
         .iter()
         .map(|a| calc_individual_dpr(*a, defender))
         .sum();
 }
 
-fn calc_rounds_to_live<T: HasCreatureMechanics>(
+fn calc_rounds_to_live<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
     attackers: &Vec<&T>,
-    defender: &DamageableCreature<T>,
+    defender: &DamageableCreature<TT>,
 ) -> f64 {
     let damage_per_round: f64 = calc_damage_per_round(attackers, defender.creature);
     let damage_absorption = defender.remaining_damage_absorption();
@@ -151,7 +154,7 @@ fn calc_rounds_to_live<T: HasCreatureMechanics>(
     return (rounds_to_survive * 4.0).ceil() / 4.0;
 }
 
-fn calc_individual_dpr<T: HasCreatureMechanics>(attacker: &T, defender: &T) -> f64 {
+fn calc_individual_dpr(attacker: &dyn HasCreatureMechanics, defender: &dyn HasCreatureMechanics) -> f64 {
     let attacks = attacker.calc_all_attacks();
     let mut best_damage_per_round = 0.0;
     let mut best_attack: Option<Attack> = None;
@@ -174,10 +177,10 @@ fn calc_individual_dpr<T: HasCreatureMechanics>(attacker: &T, defender: &T) -> f
     return best_damage_per_round * attacker.calc_damage_per_round_multiplier();
 }
 
-fn calculate_hit_probability<T: HasCreatureMechanics>(
+fn calculate_hit_probability(
     attack: &attacks::Attack,
-    attacker: &T,
-    defender: &T,
+    attacker: &dyn HasCreatureMechanics,
+    defender: &dyn HasCreatureMechanics,
 ) -> f64 {
     // hardcoded
     let max_explosion_depth = 2.0;
