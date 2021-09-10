@@ -45,6 +45,7 @@ fn it_calculates_modifiers() {
     let mut modifier_descriptions: Vec<String> =
         modifiers.iter().map(|a| a.description()).collect();
     modifier_descriptions.sort();
+    // Note that this ignores the DR 1 ability from rank 0 blessings of the abyss
     assert_eq!(
         vec!["DR 2", "attack Abyssal Blast", "focus -2",],
         modifier_descriptions,
