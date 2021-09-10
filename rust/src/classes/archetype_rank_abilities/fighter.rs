@@ -58,9 +58,8 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You do not suffer any effects from \glossterm{conditions} or \glossterm{vital wounds} until the next round after they are applied.
-                While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to future \glossterm{vital rolls}.
-                You suffer their normal effects in the following round.
+                Whenever you gain a \glossterm{condition} or \glossterm{vital wound}, you \glossterm{briefly} ignore its effects.
+                While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to \glossterm{vital rolls}.
             ",
             modifiers: None,
         },
@@ -88,7 +87,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 The delay from your \textit{disciplined reaction} ability increases by an additional round.
-                You suffer their normal effects after that time.
             ",
             modifiers: None,
         },
