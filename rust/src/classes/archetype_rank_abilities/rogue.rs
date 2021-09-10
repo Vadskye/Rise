@@ -26,7 +26,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 % while this has no upgrades and should remain relevant alone.
                 \begin{instantability}{Sneak Attack}[Instant]
                     \rankline
-                    Make a \glossterm{strike} with a \glossterm{light weapon} or a \glossterm{projectile weapon} against a creature within \rngshort range.
+                    Make a \glossterm{strike} with a \glossterm{light weapon} or any weapon with the Stealthy \glossterm{weapon tag} oagainst a creature within \rngshort range.
                     If the target is \unaware or \partiallyunaware of your attack, or if the target is adjacent to one of your \glossterm{allies}, you gain a \plus2d damage bonus with the strike.
                     You do not gain this damage bonus against creatures who that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
 
