@@ -618,7 +618,7 @@ def insight_points():
 
 
 def magical_power():
-    misc = get_misc_variables("magical_power", 3)
+    misc = get_misc_variables("magical_power", 4)
     return js_wrapper(
         ["willpower", "perception", "level", "challenge_rating", *misc],
         f"""
@@ -649,7 +649,7 @@ def magical_power():
 
 
 def mundane_power():
-    misc = get_misc_variables("mundane_power", 3)
+    misc = get_misc_variables("mundane_power", 4)
     return js_wrapper(
         ["strength", "perception", "level", "challenge_rating", *misc],
         f"""
