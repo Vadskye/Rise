@@ -555,9 +555,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 The damage resistance bonus from your \textit{ki barrier} ability increases to four times your rank in this archetype.
                 In addition, the defense bonus from the body armor increases to \plus3.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Ki Power",
@@ -566,10 +564,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
-            modifiers: Some(vec![
-                Modifier::MagicalPower(2),
-                Modifier::MundanePower(2),
-            ]),
+            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::MundanePower(2)]),
         },
         RankAbility {
             name: "Greater Ki Manifestation",
@@ -590,9 +585,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 In addition, the defense bonus from the body armor increases to \plus4.
             ",
             // Rank 4: 16. Rank 5: 25.
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Greater Ki Power",
@@ -601,10 +594,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{ki power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![
-                Modifier::MagicalPower(4),
-                Modifier::MundanePower(4),
-            ]),
+            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4)]),
         },
         RankAbility {
             name: "Supreme Ki Manifestation",

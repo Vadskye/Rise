@@ -1,6 +1,6 @@
+use rise::calculations::statistical_combat::run_combat;
 use rise::classes::Character;
 use rise::core_mechanics::{Attribute, HasAttributes};
-use rise::calculations::statistical_combat::run_combat;
 
 fn main() {
     for level in vec![2, 8, 14, 20] {

@@ -1,4 +1,7 @@
-use rise::{classes::Character, monsters::{ChallengeRating, Monster}};
+use rise::{
+    classes::Character,
+    monsters::{ChallengeRating, Monster},
+};
 
 fn main() {
     let standard_monster = Monster::standard_monster(ChallengeRating::Two, 10, None, None);
