@@ -1,13 +1,13 @@
 use crate::core_mechanics::creatures::HasCreatureMechanics;
 
-pub struct DamageableCreature<'a, T: HasCreatureMechanics> {
+pub struct CombatAgent<'a, T: HasCreatureMechanics> {
     pub creature: &'a T,
     pub damage_taken: i32,
 }
 
-impl<'a, T: HasCreatureMechanics> DamageableCreature<'a, T> {
+impl<'a, T: HasCreatureMechanics> CombatAgent<'a, T> {
     pub fn from_creature(creature: &'a T) -> Self {
-        return DamageableCreature {
+        return CombatAgent {
             creature,
             damage_taken: 0,
         };
