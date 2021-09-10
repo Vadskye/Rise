@@ -164,7 +164,8 @@ fn calc_individual_dpr(attacker: &dyn HasCreatureMechanics, defender: &dyn HasCr
             let damage_dice = attack.calc_damage_dice(attacker).unwrap();
             let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
             let average_damage_per_round =
-                hit_probability * (damage_dice.average_damage() + damage_modifier as f64);
+                hit_probability.single_hit_probability * damage_modifier as f64
+                + hit_probability.including_crit_probability * damage_dice.average_damage() as f64;
             if average_damage_per_round > best_damage_per_round {
                 best_damage_per_round = average_damage_per_round;
                 best_attack = Some(attack);
@@ -177,15 +178,21 @@ fn calc_individual_dpr(attacker: &dyn HasCreatureMechanics, defender: &dyn HasCr
     return best_damage_per_round * attacker.calc_damage_per_round_multiplier();
 }
 
+struct HitProbability {
+    single_hit_probability: f64,
+    including_crit_probability: f64,
+}
+
 fn calculate_hit_probability(
     attack: &attacks::Attack,
     attacker: &dyn HasCreatureMechanics,
     defender: &dyn HasCreatureMechanics,
-) -> f64 {
+) -> HitProbability {
     // hardcoded
     let max_explosion_depth = 2.0;
 
-    let mut total_hit_probability = 0.0;
+    let mut single_hit_probability = 0.0;
+    let mut including_crit_probability = 0.0;
     let mut crit_count = 0.0;
     let mut explosion_count = 0.0;
     loop {
@@ -205,12 +212,18 @@ fn calculate_hit_probability(
             hit_probability
         };
         if hit_probability > 0.0 {
+            if crit_count == 0.0 {
+                single_hit_probability = hit_probability;
+            }
             crit_count += 1.0;
-            total_hit_probability += hit_probability * f64::powf(0.1, explosion_count);
+            including_crit_probability += hit_probability * f64::powf(0.1, explosion_count);
         } else if explosion_count < max_explosion_depth {
             explosion_count += 1.0;
         } else {
-            return total_hit_probability;
+            return HitProbability {
+                single_hit_probability,
+                including_crit_probability,
+            };
         }
     }
 }
