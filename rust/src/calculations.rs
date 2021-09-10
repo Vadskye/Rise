@@ -1,4 +1,4 @@
-mod damageable_creature;
+mod combat_agent;
 pub mod statistical_combat;
 
-pub use damageable_creature::DamageableCreature;
+pub use combat_agent::CombatAgent;
