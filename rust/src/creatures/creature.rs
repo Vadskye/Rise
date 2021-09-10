@@ -1,16 +1,8 @@
-use crate::core_mechanics::attributes::{Attribute, HasAttributes};
-use crate::core_mechanics::creatures::attacks::{self, Attack, HasAttacks};
-use crate::core_mechanics::creatures::{
+use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, HasVitalWounds, MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier, VitalWound};
+use crate::creatures::attacks::{self, Attack, HasAttacks};
+use crate::creatures::{
     latex, HasCreatureMechanics, HasModifiers, Maneuver, Modifier, ModifierType,
 };
-use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
-use crate::core_mechanics::defenses::{self, HasDefenses, SpecialDefenseModifier};
-use crate::core_mechanics::passive_abilities::PassiveAbility;
-use crate::core_mechanics::resources::{self, HasResources};
-use crate::core_mechanics::senses::Sense;
-use crate::core_mechanics::sizes;
-use crate::core_mechanics::vital_wounds::VitalWound;
-use crate::core_mechanics::{movement_modes, HasVitalWounds};
 use crate::equipment::{Armor, HasArmor, HasWeapons, Weapon};
 use crate::skills::{HasSkills, Skill};
 use std::cmp::max;
@@ -22,11 +14,11 @@ pub struct Creature {
     pub armor: Vec<Armor>,
     identified_modifiers: Vec<IdentifiedModifier>,
     pub level: i32,
-    pub movement_modes: Vec<movement_modes::MovementMode>,
+    pub movement_modes: Vec<MovementMode>,
     pub name: Option<String>,
     pub passive_abilities: Option<Vec<PassiveAbility>>,
     pub senses: Option<Vec<Sense>>,
-    pub size: sizes::Size,
+    pub size: Size,
     pub skill_training: Option<HashMap<Skill, bool>>,
     pub special_attacks: Option<Vec<attacks::Attack>>,
     pub special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
@@ -47,7 +39,7 @@ impl Creature {
             name: None,
             passive_abilities: None,
             senses: None,
-            size: sizes::Size::Medium,
+            size: Size::Medium,
             skill_training: None,
             special_attacks: None,
             special_defense_modifiers: None,
@@ -99,11 +91,11 @@ impl Creature {
         }
     }
 
-    pub fn set_movement_modes(&mut self, movement_modes: Vec<movement_modes::MovementMode>) {
+    pub fn set_movement_modes(&mut self, movement_modes: Vec<MovementMode>) {
         self.movement_modes = movement_modes;
     }
 
-    pub fn set_size(&mut self, size: sizes::Size) {
+    pub fn set_size(&mut self, size: Size) {
         self.size = size;
     }
 
@@ -379,7 +371,7 @@ impl HasWeapons for Creature {
 }
 
 impl HasDefenses for Creature {
-    fn calc_defense(&self, defense: &defenses::Defense) -> i32 {
+    fn calc_defense(&self, defense: &Defense) -> i32 {
         let attribute_bonus = if let Some(a) = defense.associated_attribute() {
             self.get_base_attribute(&a)
         } else {
@@ -398,15 +390,15 @@ impl HasDefenses for Creature {
 }
 
 impl HasResources for Creature {
-    fn calc_resource(&self, resource: &resources::Resource) -> i32 {
+    fn calc_resource(&self, resource: &Resource) -> i32 {
         let value = match resource {
-            resources::Resource::AttunementPoint => max(0, (self.level + 1) / 6),
-            resources::Resource::FatigueTolerance => {
+            Resource::AttunementPoint => max(0, (self.level + 1) / 6),
+            Resource::FatigueTolerance => {
                 self.get_base_attribute(&Attribute::Constitution)
                     + self.get_base_attribute(&Attribute::Willpower)
             }
-            resources::Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
-            resources::Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
+            Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
+            Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
         };
         return value + self.calc_total_modifier(ModifierType::Resource(*resource));
     }

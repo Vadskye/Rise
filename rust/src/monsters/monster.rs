@@ -1,5 +1,5 @@
-use crate::core_mechanics::creatures::attacks::HasAttacks;
-use crate::core_mechanics::creatures::{
+use crate::creatures::attacks::HasAttacks;
+use crate::creatures::{
     attacks, creature, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
 };
 use crate::core_mechanics::{

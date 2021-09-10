@@ -1,5 +1,5 @@
-use crate::core_mechanics::creatures::attacks::Attack;
-use crate::core_mechanics::creatures::StandardAttack;
+use crate::creatures::attacks::Attack;
+use crate::creatures::StandardAttack;
 use crate::core_mechanics::{
     Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier,
 };

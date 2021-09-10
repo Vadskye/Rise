@@ -1,4 +1,4 @@
-use crate::core_mechanics::creatures::attacks::Attack;
+use crate::creatures::attacks::Attack;
 use crate::core_mechanics::{MovementMode, PassiveAbility, Sense, Size};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;

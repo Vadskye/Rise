@@ -1,5 +1,5 @@
 use crate::classes::ClassArchetype;
-use crate::core_mechanics::creatures::Modifier;
+use crate::creatures::Modifier;
 use titlecase::titlecase;
 
 mod barbarian;

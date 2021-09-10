@@ -1,4 +1,4 @@
-use crate::core_mechanics::creatures::HasCreatureMechanics;
+use crate::creatures::HasCreatureMechanics;
 
 pub struct CombatAgent<'a, T: HasCreatureMechanics> {
     pub creature: &'a T,

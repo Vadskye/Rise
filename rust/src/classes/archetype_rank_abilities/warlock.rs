@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::creatures::{Modifier, StandardAttack};
+use crate::creatures::{Modifier, StandardAttack};
 use crate::core_mechanics::{Defense, Resource};
 use crate::skills::{KnowledgeSubskill, Skill};
 

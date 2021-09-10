@@ -1,6 +1,6 @@
-use crate::core_mechanics::creatures::attack_effects::{AttackEffect, DamageEffect};
-use crate::core_mechanics::creatures::{attack_effects, HasCreatureMechanics};
-use crate::core_mechanics::{damage_dice, defenses};
+use crate::core_mechanics::{DamageDice, Defense};
+use crate::creatures::attack_effects::{AttackEffect, DamageEffect};
+use crate::creatures::{attack_effects, HasCreatureMechanics};
 use crate::equipment::Weapon;
 use crate::latex_formatting;
 use std::fmt;
@@ -10,7 +10,7 @@ pub struct Attack {
     pub accuracy: i32,
     pub cooldown: Option<AttackCooldown>,
     pub crit: Option<AttackEffect>,
-    pub defense: defenses::Defense,
+    pub defense: Defense,
     pub glance: Option<AttackEffect>,
     pub hit: AttackEffect,
     pub is_magical: bool,
@@ -52,7 +52,7 @@ impl Attack {
             accuracy: weapon.accuracy(),
             cooldown: None,
             crit: None,
-            defense: defenses::Defense::Armor,
+            defense: Defense::Armor,
             glance: None,
             hit: AttackEffect::from_weapon(weapon),
             name: weapon.name().to_string(),
@@ -97,7 +97,7 @@ impl Attack {
     pub fn calc_damage_dice(
         &self,
         creature: &dyn HasCreatureMechanics,
-    ) -> Option<damage_dice::DamageDice> {
+    ) -> Option<DamageDice> {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
                 damage_effect
@@ -297,7 +297,7 @@ impl AttackTargeting {
         }
     }
 
-    pub fn description(&self, defense: &defenses::Defense) -> String {
+    pub fn description(&self, defense: &Defense) -> String {
         let defense = latex_formatting::uppercase_first_letter(defense.to_string().as_str());
         match self {
             Self::Anything(range) => format!(

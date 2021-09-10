@@ -1,5 +1,5 @@
-use crate::core_mechanics::creatures::attack_effects::{AttackEffect, DamageEffect};
-use crate::core_mechanics::creatures::attacks::{Attack, AttackRange, AttackTargeting, UsageTime};
+use crate::creatures::attack_effects::{AttackEffect, DamageEffect};
+use crate::creatures::attacks::{Attack, AttackRange, AttackTargeting, UsageTime};
 use crate::core_mechanics::{
     DamageDice, DamageType, Defense, MovementMode, PassiveAbility, Sense, Size, SpeedCategory,
 };

@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::creatures::{Maneuver, Modifier};
+use crate::creatures::{Maneuver, Modifier};
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::skills::Skill;
 

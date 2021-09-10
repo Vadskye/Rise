@@ -1,6 +1,5 @@
-use crate::core_mechanics::attributes::{self, HasAttributes};
-use crate::core_mechanics::creatures::HasCreatureMechanics;
-use crate::core_mechanics::defenses::Defense;
+use crate::core_mechanics::{Attribute, Defense, HasAttributes};
+use crate::creatures::HasCreatureMechanics;
 
 pub fn format_creature<T: HasCreatureMechanics>(creature: &T) -> String {
     format!(
@@ -27,7 +26,7 @@ pub fn format_creature<T: HasCreatureMechanics>(creature: &T) -> String {
 }
 
 pub fn format_creature_attributes(creature: &impl HasAttributes) -> Vec<String> {
-    return attributes::Attribute::all()
+    return Attribute::all()
         .iter()
         .map(|attribute| {
             let base = creature.get_base_attribute(attribute);
