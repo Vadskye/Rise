@@ -1,14 +1,15 @@
-use crate::creatures::attack_effects::{AttackEffect, DamageEffect};
-use crate::creatures::attacks::{Attack, AttackRange, AttackTargeting, UsageTime};
 use crate::core_mechanics::{
     DamageDice, DamageType, Defense, MovementMode, PassiveAbility, Sense, Size, SpeedCategory,
 };
+use crate::creatures::attack_effects::{AttackEffect, DamageEffect};
+use crate::creatures::attacks::{Attack, AttackRange, AttackTargeting, UsageTime};
+use crate::creatures::Monster;
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Humanoid;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
+use crate::monsters::{monster_group, FullMonsterDefinition};
 use crate::skills::Skill;
 
 struct FullHumanoidDefinition {
@@ -29,7 +30,7 @@ struct FullHumanoidDefinition {
 }
 
 fn humanoid(def: FullHumanoidDefinition) -> Monster {
-    return Monster::fully_defined(FullMonsterDefinition {
+    return FullMonsterDefinition {
         // From def
         alignment: def.alignment,
         attributes: def.attributes,
@@ -48,7 +49,8 @@ fn humanoid(def: FullHumanoidDefinition) -> Monster {
 
         creature_type: Humanoid,
         special_defense_modifiers: None,
-    });
+    }
+    .monster();
 }
 
 pub fn humanoids() -> Vec<MonsterEntry> {

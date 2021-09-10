@@ -1,20 +1,21 @@
+use crate::core_mechanics::{
+    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility,
+    Size, SpecialDefenseModifier, SpeedCategory,
+};
 use crate::creatures::attack_effects::{
     AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
 use crate::creatures::attacks::{
     AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting, UsageTime,
 };
-use crate::core_mechanics::{
-    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility,
-    Size, SpecialDefenseModifier, SpeedCategory,
-};
+use crate::creatures::Monster;
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Dragon;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::{FullMonsterDefinition, Monster};
+use crate::monsters::FullMonsterDefinition;
 
 enum AgeCategory {
     Wyrmling,
@@ -504,7 +505,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
     if let Some(f) = age_category.frightful_presence() {
         special_attacks.push(f);
     }
-    return Monster::fully_defined(FullMonsterDefinition {
+    return FullMonsterDefinition {
         alignment: dragon_type.alignment().to_string(),
         attributes,
         challenge_rating: ChallengeRating::Four,
@@ -526,7 +527,8 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         )]),
         trained_skills: None,
         weapons: vec![Weapon::MonsterBite, Weapon::MonsterClaws],
-    });
+    }
+    .monster();
 }
 
 pub fn dragons() -> Vec<MonsterEntry> {

@@ -1,6 +1,6 @@
+use crate::creatures::Monster;
 use crate::latex_formatting;
 use crate::monsters::knowledge::Knowledge;
-use crate::monsters::Monster;
 use titlecase::titlecase;
 
 pub struct MonsterGroup {

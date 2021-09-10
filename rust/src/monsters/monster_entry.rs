@@ -1,7 +1,8 @@
+use crate::creatures::Monster;
 use crate::monsters::specific_monsters::{
     aberrations, animals, animates, dragons, humanoids, undeads,
 };
-use crate::monsters::{generate_stock_monsters, monster_group, Monster};
+use crate::monsters::{generate_stock_monsters, monster_group};
 
 pub fn generate_monster_entries() -> Vec<MonsterEntry> {
     let mut entries: Vec<MonsterEntry> = vec![];

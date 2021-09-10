@@ -1,5 +1,5 @@
-use crate::creatures::attacks::Attack;
 use crate::core_mechanics::{Attribute, Defense, Resource};
+use crate::creatures::attacks::Attack;
 use crate::skills::Skill;
 
 use super::Maneuver;
