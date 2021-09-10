@@ -9,6 +9,7 @@ pub enum Maneuver {
     CertainStrike(i32),
     CrushingStrike(i32),
     ElementalStrike(i32),
+    GenericScalingStrike(i32),
     PenetratingStrike(i32),
     PowerStrike(i32),
 }
@@ -29,6 +30,8 @@ impl Maneuver {
                         .append(&mut vec![DamageType::Bludgeoning, DamageType::Fire])
                 })
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
+            Self::GenericScalingStrike(rank) => Attack::from_weapon(weapon)
+                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
             Self::PenetratingStrike(rank) => Attack::from_weapon(weapon)
                 .except(|a| a.accuracy += (rank - 1) / 2)
                 .except(|a| a.defense = Defense::Reflex),
@@ -36,6 +39,7 @@ impl Maneuver {
                 .except(|a| a.accuracy -= 2)
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add(1 + (rank - 1) / 2)),
         };
+        attack.name = format!("{} {}", attack.name, self.name());
         attack.replaces_weapon = None;
         return attack;
     }
@@ -45,6 +49,7 @@ impl Maneuver {
             Self::CertainStrike(_) => "Certain Strike",
             Self::CrushingStrike(_) => "Crushing Strike",
             Self::ElementalStrike(_) => "Elemental Strike",
+            Self::GenericScalingStrike(_) => "Generic Scaling Strike",
             Self::PenetratingStrike(_) => "Penetrating Strike",
             Self::PowerStrike(_) => "Power Strike",
         }

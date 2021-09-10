@@ -36,34 +36,42 @@ impl Character {
     }
 
     // Currently this creates a Martial Mastery fighter
-    pub fn standard_character(&mut self, level: i32) -> Self {
-        let mut creature = creature::Creature::new(level);
-        creature.add_weapon(Weapon::Totokia);
-        creature.set_name("Standard Character".to_string());
-
-        for a in Attribute::all() {
-            creature.set_base_attribute(a, 4);
-            creature.set_base_attribute(a, 0);
-            creature.set_base_attribute(a, 2);
-            creature.set_base_attribute(a, 1);
-            creature.set_base_attribute(a, 2);
-            creature.set_base_attribute(a, 0);
-        }
-
-        let character = Self {
-            archetypes: [
+    pub fn standard_character(level: i32, use_point_buy: bool) -> Self {
+        let mut character = Self::new(
+            Class::Fighter,
+            level,
+            [
                 ClassArchetype::MartialMastery,
                 ClassArchetype::EquipmentTraining,
                 ClassArchetype::CombatDiscipline,
             ],
-            class: Class::Fighter,
-            creature,
-        };
+        );
+
+        character.creature.add_weapon(Weapon::Broadsword);
+        // TODO: scale armor material with level
+        character.creature.add_armor(Armor::Breastplate(None));
+        character.creature.add_armor(Armor::StandardShield);
+        character.creature.set_name("Standard Character".to_string());
+
+        if use_point_buy {
+            character.creature.set_base_attribute(Attribute::Strength, 4);
+            character.creature.set_base_attribute(Attribute::Dexterity, 0);
+            character.creature.set_base_attribute(Attribute::Constitution, 2);
+            character.creature.set_base_attribute(Attribute::Intelligence, 1);
+            character.creature.set_base_attribute(Attribute::Perception, 2);
+            character.creature.set_base_attribute(Attribute::Willpower, 0);
+        }
+
+        for modifier in calc_standard_magic_modifiers(level) {
+            character.creature.add_modifier(modifier);
+        }
 
         return character;
     }
 
-    pub fn to_latex(&self) -> String {
+    pub fn description(&self) -> String {
+        // let mut attacks = self.calc_all_attacks();
+        // attacks.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
         return format!(
             "
                 {creature_latex}
@@ -77,6 +85,11 @@ impl Character {
             ft = self.calc_resource(&Resource::FatigueTolerance),
             ip = self.calc_resource(&Resource::InsightPoint),
             sp = self.calc_resource(&Resource::TrainedSkill),
+            // attacks = attacks
+            //     .iter()
+            //     .map(|a| a.shorthand_description(self))
+            //     .collect::<Vec<String>>()
+            //     .join("\n"),
         );
     }
 }
@@ -212,7 +225,8 @@ struct StandardMagicBonuses {
     power: i32,
 }
 
-fn calc_standard_magic_bonuses(level: i32) -> StandardMagicBonuses {
+fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
+    let mut modifiers = vec![];
     // Wealth is one item of current level, two items of one level lower, and two items of two
     // levels lower.
     // For most characters, power is most important, followed by damage resistance, and finally
@@ -220,42 +234,51 @@ fn calc_standard_magic_bonuses(level: i32) -> StandardMagicBonuses {
     // The level breakpoints for standard power and DR items are 4/10/16.
     // This ignores legacy items, but assumes that items are acquired as soon as possible. On
     // average, this should make the levels reasonably accurate.
+
     let mut power = 0;
-    let mut dr = 0;
-    let mut hp = 0;
-
     if level >= 16 {
-        power += 8;
+        power = 8;
     } else if level >= 10 {
-        power += 4;
+        power = 4;
     } else if level >= 4 {
-        power += 2;
+        power = 2;
+    }
+    if power > 0 {
+        modifiers.push(Modifier::MagicalPower(power));
+        modifiers.push(Modifier::MundanePower(power));
     }
 
+    let mut dr = 0;
     if level >= 17 {
-        dr += 16;
+        dr = 16;
     } else if level >= 11 {
-        dr += 8;
+        dr = 8;
     } else if level >= 5 {
-        dr += 4;
+        dr = 4;
+    }
+    if dr > 0 {
+        modifiers.push(Modifier::DamageResistance(dr));
     }
 
+    let mut hp = 0;
     if level >= 18 {
-        hp += 16;
+        hp = 16;
     } else if level >= 12 {
-        hp += 8;
+        hp = 8;
     } else if level >= 6 {
-        hp += 4;
+        hp = 4;
+    }
+    if hp > 0 {
+        modifiers.push(Modifier::HitPoints(hp));
     }
 
-    return StandardMagicBonuses {
-        damage_resistance: dr,
-        hit_points: hp,
-        power,
-    };
+    return modifiers;
 }
 
-pub fn calc_rank_abilities<'a>(level: i32, archetypes: &'a[ClassArchetype; 3]) -> Vec<RankAbility<'a>> {
+pub fn calc_rank_abilities<'a>(
+    level: i32,
+    archetypes: &'a [ClassArchetype; 3],
+) -> Vec<RankAbility<'a>> {
     let mut rank_abilities: Vec<RankAbility> = vec![];
     // Add rank 0 abilities
     for archetype in archetypes.iter() {
