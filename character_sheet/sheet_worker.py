@@ -569,7 +569,7 @@ def hit_points():
                 hit_points_from_level = Math.floor(hit_points_from_level * 1.5);
             }}
 
-            var new_hit_points = hit_points_from_level + constitution * 2 + {sum_variables(misc)};
+            var new_hit_points = hit_points_from_level + constitution + {sum_variables(misc)};
             var cr_multiplier = {{
                 0: 1,
                 0.5: 0.5,
@@ -635,7 +635,7 @@ def magical_power():
                     8: 16,
                 }}[Math.floor(level / 3)]
                 : 0;
-            var magical_power_attribute = willpower + Math.floor(perception / 2);
+            var magical_power_attribute = Math.floor(willpower / 2);
             setAttrs({{
                 magical_power_attribute,
                 magical_power: (
@@ -666,7 +666,7 @@ def mundane_power():
                     8: 16,
                 }}[Math.floor(level / 3)]
                 : 0;
-            var mundane_power_attribute = strength + Math.floor(perception / 2)
+            var mundane_power_attribute = Math.floor(strength / 2)
             setAttrs({{
                 mundane_power_attribute,
                 mundane_power: (

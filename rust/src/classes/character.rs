@@ -59,7 +59,7 @@ impl Character {
         if use_point_buy {
             character
                 .creature
-                .set_base_attribute(Attribute::Strength, 4);
+                .set_base_attribute(Attribute::Strength, 3);
             character
                 .creature
                 .set_base_attribute(Attribute::Dexterity, 0);
@@ -74,7 +74,7 @@ impl Character {
                 .set_base_attribute(Attribute::Perception, 2);
             character
                 .creature
-                .set_base_attribute(Attribute::Willpower, 0);
+                .set_base_attribute(Attribute::Willpower, 2);
         }
 
         for modifier in calc_standard_magic_modifiers(level) {

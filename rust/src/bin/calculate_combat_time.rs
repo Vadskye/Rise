@@ -1,3 +1,4 @@
+use rise::classes::Character;
 use rise::monsters;
 use rise::monsters::ChallengeRating;
 use rise::simulation::combat::run_combat;
@@ -17,10 +18,10 @@ fn main() {
         ] {
             // PCs
             let blue = vec![
-                monsters::Monster::standard_monster(ChallengeRating::Two, level, None, None),
-                monsters::Monster::standard_monster(ChallengeRating::Two, level, None, None),
-                monsters::Monster::standard_monster(ChallengeRating::Two, level, None, None),
-                monsters::Monster::standard_monster(ChallengeRating::Two, level, None, None),
+                Character::standard_character(level, true),
+                Character::standard_character(level, true),
+                Character::standard_character(level, true),
+                Character::standard_character(level, true),
             ];
             let mut red = vec![];
             for cr in &challenge_ratings {
