@@ -617,7 +617,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
-                You permanently gain a \plus1 bonus to the base value of that attribute, to a maximum of 4.
+                You permanently gain a \plus1 bonus to the base value of that attribute.
             ",
             modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Constitution, 1)]),
         },

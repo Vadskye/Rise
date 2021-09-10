@@ -622,7 +622,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \begin{attuneability}{Shift Body}[\abilitytag{Attune} (self)]
                     \rankline
                     When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
-                    You gain a \plus1 bonus to the base value of that attribute, to a maximum of 4.
+                    You gain a \plus1 bonus to the base value of that attribute.
                 \end{attuneability}
             ",
             modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Constitution, 1), Modifier::Resource(Resource::AttunementPoint, -1)]),
