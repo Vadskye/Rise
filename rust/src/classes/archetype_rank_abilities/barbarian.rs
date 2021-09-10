@@ -159,35 +159,50 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(-3), Modifier::DamageResistance(12)]),
+            modifiers: Some(vec![
+                Modifier::HitPoints(-3),
+                Modifier::DamageResistance(12),
+            ]),
         },
         RankAbility {
             name: "Insensible Anger",
             is_magical: false,
             rank: 4,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(-4), Modifier::DamageResistance(16)]),
+            modifiers: Some(vec![
+                Modifier::HitPoints(-4),
+                Modifier::DamageResistance(16),
+            ]),
         },
         RankAbility {
             name: "Insensible Anger",
             is_magical: false,
             rank: 5,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(-5), Modifier::DamageResistance(20)]),
+            modifiers: Some(vec![
+                Modifier::HitPoints(-5),
+                Modifier::DamageResistance(20),
+            ]),
         },
         RankAbility {
             name: "Insensible Anger",
             is_magical: false,
             rank: 6,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(-6), Modifier::DamageResistance(30)]),
+            modifiers: Some(vec![
+                Modifier::HitPoints(-6),
+                Modifier::DamageResistance(30),
+            ]),
         },
         RankAbility {
             name: "Insensible Anger",
             is_magical: false,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(-7), Modifier::DamageResistance(35)]),
+            modifiers: Some(vec![
+                Modifier::HitPoints(-7),
+                Modifier::DamageResistance(35),
+            ]),
         },
         RankAbility {
             name: "Rage",

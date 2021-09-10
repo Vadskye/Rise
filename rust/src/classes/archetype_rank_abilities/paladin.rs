@@ -86,9 +86,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             ",
             // Most auras loosely correlate to +0.5 accuracy in an AOE? For power level purposes,
             // approximate as a personal +1 accuracy.
-            modifiers: Some(vec![
-                Modifier::Accuracy(1),
-            ]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Aligned Immunity",

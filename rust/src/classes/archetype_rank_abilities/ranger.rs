@@ -240,7 +240,10 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \end{attuneability}
             ",
             // TODO: this also affects allies
-            modifiers: Some(vec![Modifier::Accuracy(1), Modifier::Resource(Resource::AttunementPoint, -1)]),
+            modifiers: Some(vec![
+                Modifier::Accuracy(1),
+                Modifier::Resource(Resource::AttunementPoint, -1),
+            ]),
         },
         RankAbility {
             name: "Hunting Style",

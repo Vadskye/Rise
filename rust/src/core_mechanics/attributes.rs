@@ -84,38 +84,98 @@ mod tests {
     fn calculate_base_2() {
         // Correct progression: +1/4 level
         let base = 2;
-        assert_eq!(2, Attribute::calculate_total(base, 1), "At level 1, should match base");
-        assert_eq!(2, Attribute::calculate_total(base, 3), "At level 3, should be unchanged");
-        assert_eq!(3, Attribute::calculate_total(base, 4), "At level 4, should increase by 1");
-        assert_eq!(7, Attribute::calculate_total(base, 20), "At level 20, should increase by 5");
+        assert_eq!(
+            2,
+            Attribute::calculate_total(base, 1),
+            "At level 1, should match base"
+        );
+        assert_eq!(
+            2,
+            Attribute::calculate_total(base, 3),
+            "At level 3, should be unchanged"
+        );
+        assert_eq!(
+            3,
+            Attribute::calculate_total(base, 4),
+            "At level 4, should increase by 1"
+        );
+        assert_eq!(
+            7,
+            Attribute::calculate_total(base, 20),
+            "At level 20, should increase by 5"
+        );
     }
 
     #[test]
     fn calculate_base_3() {
         // Correct progression: +1/2 level
         let base = 3;
-        assert_eq!(3, Attribute::calculate_total(base, 1), "At level 1, should match base");
-        assert_eq!(4, Attribute::calculate_total(base, 2), "At level 2, should increase by 1");
-        assert_eq!(5, Attribute::calculate_total(base, 5), "At level 5, should increase by 2");
-        assert_eq!(13, Attribute::calculate_total(base, 20), "At level 20, should increase by 10");
+        assert_eq!(
+            3,
+            Attribute::calculate_total(base, 1),
+            "At level 1, should match base"
+        );
+        assert_eq!(
+            4,
+            Attribute::calculate_total(base, 2),
+            "At level 2, should increase by 1"
+        );
+        assert_eq!(
+            5,
+            Attribute::calculate_total(base, 5),
+            "At level 5, should increase by 2"
+        );
+        assert_eq!(
+            13,
+            Attribute::calculate_total(base, 20),
+            "At level 20, should increase by 10"
+        );
     }
 
     #[test]
     fn calculate_base_4() {
         // Correct progression: +3/4 level
         let base = 4;
-        assert_eq!(4, Attribute::calculate_total(base, 1), "At level 1, should match base");
-        assert_eq!(7, Attribute::calculate_total(base, 4), "At level 4, should increase by 3");
-        assert_eq!(7, Attribute::calculate_total(base, 5), "At level 5, should increase by 3");
-        assert_eq!(19, Attribute::calculate_total(base, 20), "At level 20, should increase by 15");
+        assert_eq!(
+            4,
+            Attribute::calculate_total(base, 1),
+            "At level 1, should match base"
+        );
+        assert_eq!(
+            7,
+            Attribute::calculate_total(base, 4),
+            "At level 4, should increase by 3"
+        );
+        assert_eq!(
+            7,
+            Attribute::calculate_total(base, 5),
+            "At level 5, should increase by 3"
+        );
+        assert_eq!(
+            19,
+            Attribute::calculate_total(base, 20),
+            "At level 20, should increase by 15"
+        );
     }
 
     #[test]
     fn calculate_base_5() {
         // Correct progression: +level
         let base = 5;
-        assert_eq!(6, Attribute::calculate_total(base, 1), "At level 1, should increase by 1");
-        assert_eq!(9, Attribute::calculate_total(base, 4), "At level 4, should increase by 4");
-        assert_eq!(25, Attribute::calculate_total(base, 20), "At level 20, should increase by 20");
+        assert_eq!(
+            6,
+            Attribute::calculate_total(base, 1),
+            "At level 1, should increase by 1"
+        );
+        assert_eq!(
+            9,
+            Attribute::calculate_total(base, 4),
+            "At level 4, should increase by 4"
+        );
+        assert_eq!(
+            25,
+            Attribute::calculate_total(base, 20),
+            "At level 20, should increase by 20"
+        );
     }
 }

@@ -107,18 +107,12 @@ mod tests {
     #[test]
     fn calculate_large_speeds() {
         let size = &Size::Large;
-        assert_eq!(
-            20,
-            MovementMode::Swim(SpeedCategory::Slow).calc_speed(size)
-        );
+        assert_eq!(20, MovementMode::Swim(SpeedCategory::Slow).calc_speed(size));
         assert_eq!(
             40,
             MovementMode::Swim(SpeedCategory::Normal).calc_speed(size)
         );
-        assert_eq!(
-            60,
-            MovementMode::Swim(SpeedCategory::Fast).calc_speed(size)
-        );
+        assert_eq!(60, MovementMode::Swim(SpeedCategory::Fast).calc_speed(size));
         assert_eq!(
             80,
             MovementMode::Swim(SpeedCategory::VeryFast).calc_speed(size)
@@ -128,18 +122,12 @@ mod tests {
     #[test]
     fn calculate_medium_speeds() {
         let size = &Size::Medium;
-        assert_eq!(
-            15,
-            MovementMode::Land(SpeedCategory::Slow).calc_speed(size)
-        );
+        assert_eq!(15, MovementMode::Land(SpeedCategory::Slow).calc_speed(size));
         assert_eq!(
             30,
             MovementMode::Land(SpeedCategory::Normal).calc_speed(size)
         );
-        assert_eq!(
-            45,
-            MovementMode::Land(SpeedCategory::Fast).calc_speed(size)
-        );
+        assert_eq!(45, MovementMode::Land(SpeedCategory::Fast).calc_speed(size));
         assert_eq!(
             60,
             MovementMode::Land(SpeedCategory::VeryFast).calc_speed(size)
@@ -170,10 +158,7 @@ mod tests {
     #[test]
     fn calculate_tiny_speeds() {
         let size = &Size::Tiny;
-        assert_eq!(
-            5,
-            MovementMode::Climb(SpeedCategory::Slow).calc_speed(size)
-        );
+        assert_eq!(5, MovementMode::Climb(SpeedCategory::Slow).calc_speed(size));
         assert_eq!(
             15,
             MovementMode::Climb(SpeedCategory::Normal).calc_speed(size)

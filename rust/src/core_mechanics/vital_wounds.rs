@@ -1,4 +1,4 @@
-use crate::core_mechanics::{Defense, creatures::Modifier};
+use crate::core_mechanics::{creatures::Modifier, Defense};
 use rand::Rng;
 
 pub enum VitalWound {

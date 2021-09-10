@@ -171,7 +171,10 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 \end{durationability}
             ",
             // Assuming no other armor
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 3), Modifier::DamageResistance(1)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 3),
+                Modifier::DamageResistance(1),
+            ]),
         },
         RankAbility {
             name: "Mage Armor",
@@ -640,7 +643,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     In addition, you gain a \plus1 bonus to Fortitude defense.
                 }
             ",
-                // Assume evocation
+            // Assume evocation
             modifiers: Some(vec![Modifier::MagicalPower(2)]),
         },
         RankAbility {
