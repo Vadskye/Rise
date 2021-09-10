@@ -178,14 +178,14 @@ export const ebbAndFlow: CombatStyle = {
       name: "Certain Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a +2 accuracy bonus.
+        Make a \\glossterm{strike} with a +3 accuracy bonus.
         You take a -2d damage penalty with the strike.
       `,
       rank: 1,
       scaling: {
-        3: "The accuracy bonus increases to +3.",
-        5: "The accuracy bonus increases to +4.",
-        7: "The accuracy bonus increases to +5.",
+        3: "The accuracy bonus increases to +4.",
+        5: "The accuracy bonus increases to +5.",
+        7: "The accuracy bonus increases to +6.",
       },
       type: "Instant",
     },
