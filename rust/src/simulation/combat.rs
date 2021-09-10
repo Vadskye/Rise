@@ -1,3 +1,4 @@
+use crate::core_mechanics::creatures::attacks::Attack;
 use crate::core_mechanics::creatures::{attacks, HasCreatureMechanics};
 use std::cmp::max;
 use std::fmt;
@@ -151,8 +152,9 @@ fn calc_rounds_to_live<T: HasCreatureMechanics>(
 }
 
 fn calc_individual_dpr<T: HasCreatureMechanics>(attacker: &T, defender: &T) -> f64 {
-    let attacks = attacks::Attack::calc_strikes(attacker.get_weapons());
+    let attacks = attacker.calc_all_attacks();
     let mut best_damage_per_round = 0.0;
+    let mut best_attack: Option<Attack> = None;
     for attack in attacks {
         let hit_probability = calculate_hit_probability(&attack, attacker, defender);
         if let Some(_) = attack.damage_effect() {
@@ -162,9 +164,12 @@ fn calc_individual_dpr<T: HasCreatureMechanics>(attacker: &T, defender: &T) -> f
                 hit_probability * (damage_dice.average_damage() + damage_modifier as f64);
             if average_damage_per_round > best_damage_per_round {
                 best_damage_per_round = average_damage_per_round;
+                best_attack = Some(attack);
             }
         }
     }
+
+    // println!("Best attack: {}", best_attack.unwrap().name);
 
     return best_damage_per_round * attacker.calc_damage_per_round_multiplier();
 }

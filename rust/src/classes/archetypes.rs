@@ -514,3 +514,29 @@ impl ClassArchetype {
         ];
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_calculates_abilities_at_rank() {
+        assert_eq!(
+            vec!["Weapon Training"],
+            ClassArchetype::EquipmentTraining.abilities_at_rank(1)
+                .iter()
+                .map(|a| a.name)
+                .collect::<Vec<&str>>(),
+            "Should have expected ability from rank 1 equipment training",
+        );
+
+        assert_eq!(
+            vec!["Combat Style Rank", "Martial Force"],
+            ClassArchetype::MartialMastery.abilities_at_rank(2)
+                .iter()
+                .map(|a| a.name)
+                .collect::<Vec<&str>>(),
+            "Should have expected ability from rank 2 martial mastery",
+        );
+    }
+}
