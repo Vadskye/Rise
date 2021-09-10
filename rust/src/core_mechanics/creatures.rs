@@ -6,21 +6,26 @@ mod maneuver;
 mod modifier;
 mod standard_attacks;
 
-use crate::core_mechanics::{attributes, damage_absorption, defenses, resources};
+use crate::core_mechanics::{
+    HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, HasVitalWounds,
+};
 use crate::equipment::HasWeapons;
 use crate::skills::HasSkills;
+use attacks::HasAttacks;
+pub use maneuver::Maneuver;
 pub use modifier::{HasModifiers, Modifier, ModifierType};
 pub use standard_attacks::StandardAttack;
-pub use maneuver::Maneuver;
 
 pub trait HasCreatureMechanics:
-    attacks::HasAttacks
-    + attributes::HasAttributes
-    + damage_absorption::HasDamageAbsorption
-    + defenses::HasDefenses
-    + resources::HasResources
+    HasAttacks
+    + HasAttributes
+    + HasDamageAbsorption
+    + HasDefenses
+    + HasResources
+    + HasVitalWounds
     + HasWeapons
     + HasSkills
     + HasModifiers
+    + HasVitalWounds
 {
 }

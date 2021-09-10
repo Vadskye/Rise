@@ -3,9 +3,7 @@ use crate::core_mechanics::creatures::attacks::{self, HasAttacks};
 use crate::core_mechanics::creatures::{
     creature, latex, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
 };
-use crate::core_mechanics::{
-    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, Resource,
-};
+use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, HasVitalWounds, Resource, VitalWound};
 use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, HasWeapons, Weapon};
 use crate::skills::{HasSkills, Skill};
 
@@ -228,6 +226,24 @@ impl HasSkills for Character {
 
     fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
         return self.creature.calc_skill_modifier(skill);
+    }
+}
+
+impl HasVitalWounds for Character {
+    fn add_vital_wound(&mut self, vital_wound: VitalWound) {
+        return self.creature.add_vital_wound(vital_wound);
+    }
+
+    fn calc_vital_roll_modifier(&self) -> i32 {
+        return self.creature.calc_vital_roll_modifier();
+    }
+
+    fn generate_vital_wound(&self) -> VitalWound {
+        return self.creature.generate_vital_wound();
+    }
+
+    fn is_vitally_unconscious(&self) -> bool {
+        return self.creature.is_vitally_unconscious();
     }
 }
 
