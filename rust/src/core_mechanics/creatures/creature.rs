@@ -221,7 +221,7 @@ impl HasDamageAbsorption for Creature {
         };
 
         return hp_from_level
-            + (self.get_base_attribute(&Attribute::Constitution) as i32) * 2
+            + (self.get_base_attribute(&Attribute::Constitution) as i32)
             + self.calc_total_modifier(ModifierType::HitPoints);
     }
 }
@@ -310,12 +310,10 @@ impl HasAttacks for Creature {
 
     fn calc_power(&self, is_magical: bool) -> i32 {
         if is_magical {
-            return self.calc_total_attribute(&Attribute::Willpower)
-                + self.calc_total_attribute(&Attribute::Perception) / 2
+            return self.calc_total_attribute(&Attribute::Willpower) / 2
                 + self.calc_total_modifier(ModifierType::MagicalPower);
         } else {
-            return self.calc_total_attribute(&Attribute::Strength)
-                + self.calc_total_attribute(&Attribute::Perception) / 2
+            return self.calc_total_attribute(&Attribute::Strength) / 2
                 + self.calc_total_modifier(ModifierType::MundanePower);
         }
     }
