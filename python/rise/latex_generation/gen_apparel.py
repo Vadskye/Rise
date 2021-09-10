@@ -2462,7 +2462,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Quickshift Amulet",
-            level=16,
+            level=13,
             material_type="Amulet",
             tags=[],
             description="""
@@ -2613,13 +2613,78 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Amulet of Equality and Perfection",
-            level=20,
+            level=17,
             material_type="Amulet",
             tags=[],
             description="""
                 If you have the \\ability<perfect body> ability, you gain a +1 bonus to the base value of your lowest physical attribute.
             """,
             short_description="Improves \\ability<perfect body> on your lowest attribute",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Belt of Epic Constitution",
+            level=21,
+            material_type="Belt",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to the base value of your Constitution.
+            """,
+            short_description="Grants +1 base Constitution",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Cloak of Epic Dexterity",
+            level=21,
+            material_type="Cloak",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to the base value of your Dexterity.
+            """,
+            short_description="Grants +1 base Dexterity",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Bracers of Epic Strength",
+            level=21,
+            material_type="Bracers",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to the base value of your Strength.
+            """,
+            short_description="Grants +1 base Strength",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Glasses of Epic Perception",
+            level=21,
+            material="Glasses",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to the base value of your Perception.
+            """,
+            short_description="Grants +1 base Perception",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Circlet of Epic Willpower",
+            level=21,
+            material_type="Circlet",
+            tags=[],
+            description="""
+                You gain a +1 \\glossterm<magic bonus> to the base value of your Willpower.
+            """,
+            short_description="Grants +1 base Willpower",
         ),
     ]
 

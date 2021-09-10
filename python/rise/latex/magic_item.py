@@ -20,6 +20,7 @@ class MagicItem(object):
             "Cloak": ["textiles"],
             "Crown": ["bone", "metal"],
             "Gauntlet": ["bone", "metal", "wood"],
+            "Glasses": ["ceramics"],
             "Glove": ["leather"],
             "Gloves": ["leather"],
             "Fabric": ["textiles"],
