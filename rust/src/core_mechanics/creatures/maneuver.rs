@@ -18,7 +18,7 @@ impl Maneuver {
     pub fn attack(&self, weapon: Weapon) -> Attack {
         let mut attack = match self {
             Self::CertainStrike(rank) => Attack::from_weapon(weapon)
-                .except(|a| a.accuracy += 2 + (rank - 1) / 2)
+                .except(|a| a.accuracy += 3 + (rank - 1) / 2)
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add(-2)),
             Self::CrushingStrike(rank) => Attack::from_weapon(weapon)
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2))

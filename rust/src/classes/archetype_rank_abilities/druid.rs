@@ -55,8 +55,28 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The damage bonus increases to \plus3d.
                 \end{instantability}
             ",
-            // TODO: add special attacks?
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
+        },
+        RankAbility {
+            name: "Elemental Strike",
+            is_magical: true,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(3))]),
+        },
+        RankAbility {
+            name: "Elemental Strike",
+            is_magical: true,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(5))]),
+        },
+        RankAbility {
+            name: "Elemental Strike",
+            is_magical: true,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(7))]),
         },
         RankAbility {
             name: "Elemental Influence",
@@ -106,10 +126,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \end{itemize}
             ",
             // TODO: represent movement speeds
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Maneuver(Maneuver::ElementalStrike(3)),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
             name: "Elemental Spell",
@@ -145,7 +162,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                         If you reduce the water's speed to 0 and then increase it again, you can change the direction the water flows.
                 \end{itemize}
             ",
-            modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(5))]),
+            modifiers: None,
         },
         RankAbility {
             name: "Elemental Power",
@@ -170,10 +187,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \item Water: You suffer no penalties for fighting underwater, and your swim speed increases to be equal to the base speed for your size.
                 \end{itemize}
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Maneuver(Maneuver::ElementalStrike(7)),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
     ];
 }
@@ -625,7 +639,10 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     You gain a \plus1 bonus to the base value of that attribute.
                 \end{attuneability}
             ",
-            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Constitution, 1), Modifier::Resource(Resource::AttunementPoint, -1)]),
+            modifiers: Some(vec![
+                Modifier::BaseAttribute(Attribute::Constitution, 1),
+                Modifier::Resource(Resource::AttunementPoint, -1),
+            ]),
         },
         RankAbility {
             name: "Glancing Natural Strikes",
@@ -772,7 +789,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         It has a bite \glossterm{natural weapon}.
                 \end{itemize}
             ",
-                // TODO: represent a whole extra creature???
+            // TODO: represent a whole extra creature???
             modifiers: None,
         },
         RankAbility {
@@ -793,6 +810,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You and your \textit{natural servant} gain a \plus1d damage bonus with \glossterm{natural weapons}.
             ",
+            // TODO: make this only work with natural weapons
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
@@ -840,12 +858,13 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Nature's Might",
+            name: "Greater Nature's Might",
             is_magical: true,
             rank: 6,
             description: r"
                 The damage bonus from your \textit{nature's might} ability increases to \plus2d.
             ",
+            // TODO: make this only work with natural weapons
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {

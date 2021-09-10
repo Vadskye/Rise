@@ -14,6 +14,56 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::HitPoints(1)]),
         },
         RankAbility {
+            name: "Enduring Devotion",
+            is_magical: false,
+            rank: 1,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(2)]),
+        },
+        RankAbility {
+            name: "Enduring Devotion",
+            is_magical: false,
+            rank: 2,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(4)]),
+        },
+        RankAbility {
+            name: "Enduring Devotion",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(6)]),
+        },
+        RankAbility {
+            name: "Enduring Devotion",
+            is_magical: false,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(8)]),
+        },
+        RankAbility {
+            name: "Enduring Devotion",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            // This rank is when greater enduring devotion kicks in
+            modifiers: Some(vec![Modifier::HitPoints(15)]),
+        },
+        RankAbility {
+            name: "Enduring Devotion",
+            is_magical: false,
+            rank: 6,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(18)]),
+        },
+        RankAbility {
+            name: "Enduring Devotion",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(21)]),
+        },
+        RankAbility {
             name: "Aligned Aura",
             is_magical: true,
             rank: 1,
@@ -38,7 +88,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             // approximate as a personal +1 accuracy.
             modifiers: Some(vec![
                 Modifier::Accuracy(1),
-                Modifier::HitPoints(1),
             ]),
         },
         RankAbility {
@@ -53,7 +102,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Good} You are immune to the \shaken, \frightened, and \panicked effects.
                 \subparhead{Law} You are immune to the \dazed, \stunned, \disoriented, and \confused effects.
             ",
-            modifiers: Some(vec![Modifier::HitPoints(2)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Paragon Power",
@@ -62,7 +111,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::MundanePower(2), Modifier::HitPoints(2)]),
+            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::MundanePower(2)]),
         },
         RankAbility {
             name: "Greater Aligned Aura",
@@ -79,7 +128,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
                 \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
             ",
-            modifiers: Some(vec![Modifier::HitPoints(2)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Enduring Devotion",
@@ -88,8 +137,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{enduring devotion} ability increases to three times your rank in this archetype.
             ",
-            // Rank 4: 8. Rank 5: 15.
-            modifiers: Some(vec![Modifier::HitPoints(7)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Aligned Immunity",
@@ -107,7 +155,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{paragon power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4), Modifier::HitPoints(3)]),
+            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4)]),
         },
         RankAbility {
             name: "Supreme Aligned Aura",
@@ -121,7 +169,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Law} The effect triggers on rolling either a 1 or a 2.
             ",
             // Another awkward approximation
-            modifiers: Some(vec![Modifier::Accuracy(1), Modifier::HitPoints(3)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ];
 }
@@ -378,6 +426,41 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(6)]),
         },
         RankAbility {
+            name: "Stalward Resilience",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(9)]),
+        },
+        RankAbility {
+            name: "Stalward Resilience",
+            is_magical: false,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(12)]),
+        },
+        RankAbility {
+            name: "Stalward Resilience",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(20)]),
+        },
+        RankAbility {
+            name: "Stalward Resilience",
+            is_magical: false,
+            rank: 6,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(24)]),
+        },
+        RankAbility {
+            name: "Stalward Resilience",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(28)]),
+        },
+        RankAbility {
             name: "Greater Stalwart Defense",
             is_magical: false,
             rank: 3,
@@ -387,7 +470,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Fortitude, 1),
                 Modifier::Defense(Defense::Mental, 1),
-                Modifier::DamageResistance(3),
             ]),
         },
         RankAbility {
@@ -399,7 +481,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 Alternately, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
                 If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(3)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Stalwart Resilience",
@@ -408,8 +490,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The resistance bonus from your \textit{stalwart resilience} ability increases to four times your rank in this archetype.
             ",
-            // Rank 4: 12. Rank 5: 20.
-            modifiers: Some(vec![Modifier::DamageResistance(8)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Supreme Stalwart Defense",
@@ -421,7 +502,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Fortitude, 1),
                 Modifier::Defense(Defense::Mental, 1),
-                Modifier::DamageResistance(4),
             ]),
         },
         RankAbility {
@@ -431,7 +511,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 When you use your \textit{lay on hands} ability on a creature other than yourself, it also affects you.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(4)]),
+            modifiers: None,
         },
     ];
 }
