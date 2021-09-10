@@ -51,43 +51,47 @@ pub enum ModifierType {
 }
 
 impl Modifier {
-    pub fn is_conflicting_modifier(&self, other: &Self) -> bool {
+    pub fn description(&self) -> String {
         match self {
-            Self::Attack(a) => {
-                match other {
-                    Self::Attack(b) => a.name == b.name,
-                    _ => false,
-                }
-            },
-            Self::Maneuver(a) => {
-                match other {
-                    Self::Maneuver(b) => a.name() == b.name(),
-                    _ => false,
-                }
-            },
-            _ => false,
+            Self::Accuracy(v) => format!("{} {}", self.name(), v),
+            Self::Attack(_) => self.name(),
+            Self::BaseAttribute(_, v) => format!("{} by {}", self.name(), v),
+            Self::DamageResistance(v) => format!("{} {}", self.name(), v),
+            Self::Defense(_, v) => format!("{} by {}", self.name(), v),
+            Self::Encumbrance(v) => format!("{} {}", self.name(), v),
+            Self::FocusPenalty(v) => format!("{} {}", self.name(), v),
+            Self::HitPoints(v) => format!("{} {}", self.name(), v),
+            Self::Initiative(v) => format!("{} {}", self.name(), v),
+            Self::MagicalPower(v) => format!("{} {}", self.name(), v),
+            Self::Maneuver(_) => self.name(),
+            Self::MovementSpeed(v) => format!("{} {}", self.name(), v),
+            Self::MundanePower(v) => format!("{} {}", self.name(), v),
+            Self::Resource(_, v) => format!("{} by {}", self.name(), v),
+            Self::Skill(_, v) => format!("{} by {}", self.name(), v),
+            Self::StrikeDamageDice(v) => format!("{} {}", self.name(), v),
+            Self::VitalRoll(v) => format!("{} {}", self.name(), v),
         }
     }
 
-    pub fn description(&self) -> String {
+    pub fn name(&self) -> String {
         match self {
-            Self::Accuracy(v) => format!("accuracy {}", v),
+            Self::Accuracy(_) => format!("accuracy"),
             Self::Attack(a) => format!("attack {}", a.name),
-            Self::BaseAttribute(a, v) => format!("base attribute {} by {}", a.name(), v),
-            Self::DamageResistance(v) => format!("DR {}", v),
-            Self::Defense(d, v) => format!("defense {} by {}", d.name(), v),
-            Self::Encumbrance(v) => format!("encumbrance {}", v),
-            Self::FocusPenalty(v) => format!("focus {}", v),
-            Self::HitPoints(v) => format!("HP {}", v),
-            Self::Initiative(v) => format!("initiative {}", v),
-            Self::MagicalPower(v) => format!("magical power {}", v),
-            Self::Maneuver(v) => format!("maneuver {}", v.name()),
-            Self::MovementSpeed(v) => format!("movement {}", v),
-            Self::MundanePower(v) => format!("mundane power {}", v),
-            Self::Resource(r, v) => format!("resource {} by {}", r.name(), v),
-            Self::Skill(s, v) => format!("skill {} by {}", s.name(), v),
-            Self::StrikeDamageDice(v) => format!("strike damage dice {}", v),
-            Self::VitalRoll(v) => format!("vital roll {}", v),
+            Self::BaseAttribute(a, _) => format!("base attribute {}", a.name()),
+            Self::DamageResistance(_) => format!("DR"),
+            Self::Defense(d, _) => format!("defense {}", d.name()),
+            Self::Encumbrance(_) => format!("encumbrance"),
+            Self::FocusPenalty(_) => format!("focus"),
+            Self::HitPoints(_) => format!("HP"),
+            Self::Initiative(_) => format!("initiative"),
+            Self::MagicalPower(_) => format!("magical power"),
+            Self::Maneuver(m) => format!("maneuver {}", m.name()),
+            Self::MovementSpeed(_) => format!("movement"),
+            Self::MundanePower(_) => format!("mundane power"),
+            Self::Resource(r, _) => format!("resource {}", r.name()),
+            Self::Skill(s, _) => format!("skill {}", s.name()),
+            Self::StrikeDamageDice(_) => format!("strike damage dice"),
+            Self::VitalRoll(_) => format!("vital roll"),
         }
     }
 
@@ -152,7 +156,8 @@ impl Modifier {
 }
 
 pub trait HasModifiers {
-    fn add_modifier(&mut self, modifier: Modifier);
+    fn add_modifier(&mut self, modifier: Modifier, name: Option<&str>, priority: Option<i32>);
+    fn add_magic_modifier(&mut self, modifier: Modifier);
     fn get_modifiers(&self) -> Vec<Modifier>;
     fn calc_total_modifier(&self, modifier_type: ModifierType) -> i32;
 }

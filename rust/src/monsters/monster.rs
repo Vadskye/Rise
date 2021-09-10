@@ -2,7 +2,11 @@ use crate::core_mechanics::creatures::attacks::HasAttacks;
 use crate::core_mechanics::creatures::{
     attacks, creature, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
 };
-use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, HasVitalWounds, MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier, SpecialDefenseType, SpeedCategory, VitalWound};
+use crate::core_mechanics::{
+    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources,
+    HasVitalWounds, MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier,
+    SpecialDefenseType, SpeedCategory, VitalWound,
+};
 use crate::equipment::{HasWeapons, Weapon};
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
@@ -151,8 +155,12 @@ impl Monster {
 }
 
 impl HasModifiers for Monster {
-    fn add_modifier(&mut self, modifier: Modifier) {
-        self.creature.add_modifier(modifier);
+    fn add_modifier(&mut self, modifier: Modifier, name: Option<&str>, priority: Option<i32>) {
+        self.creature.add_modifier(modifier, name, priority);
+    }
+
+    fn add_magic_modifier(&mut self, modifier: Modifier) {
+        self.creature.add_magic_modifier(modifier);
     }
 
     fn get_modifiers(&self) -> Vec<Modifier> {

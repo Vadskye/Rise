@@ -42,7 +42,10 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to \glossterm{vital rolls} and your \glossterm{fatigue tolerance} (see \pcref{Vital Rolls}, and \pcref{Fatigue Tolerance}).
             ",
-            modifiers: Some(vec![Modifier::VitalRoll(1)]),
+            modifiers: Some(vec![
+                Modifier::VitalRoll(1),
+                Modifier::Resource(Resource::FatigueTolerance, 1),
+            ]),
         },
         RankAbility {
             name: "Disciplined Force",
@@ -70,7 +73,10 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonuses from your \textit{enduring discipline} ability increase to \plus2.
             ",
-            modifiers: Some(vec![Modifier::VitalRoll(1)]),
+            modifiers: Some(vec![
+                Modifier::VitalRoll(1),
+                Modifier::Resource(Resource::FatigueTolerance, 1),
+            ]),
         },
         RankAbility {
             name: "Greater Disciplined Force",
@@ -202,6 +208,56 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::HitPoints(1)]),
         },
         RankAbility {
+            name: "Martial Expertise",
+            is_magical: false,
+            rank: 1,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(2)]),
+        },
+        RankAbility {
+            name: "Martial Expertise",
+            is_magical: false,
+            rank: 2,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(4)]),
+        },
+        RankAbility {
+            name: "Martial Expertise",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(6)]),
+        },
+        RankAbility {
+            name: "Martial Expertise",
+            is_magical: false,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(8)]),
+        },
+        RankAbility {
+            name: "Martial Expertise",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(10)]),
+        },
+        RankAbility {
+            name: "Martial Expertise",
+            is_magical: false,
+            rank: 6,
+            description: "",
+            // This rank is when greater expertise kicks in
+            modifiers: Some(vec![Modifier::HitPoints(18)]),
+        },
+        RankAbility {
+            name: "Martial Expertise",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(21)]),
+        },
+        RankAbility {
             name: "Combat Styles",
             is_magical: false,
             rank: 1,
@@ -219,7 +275,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     you can exchange any number of maneuvers you know for other maneuvers, including maneuvers of the higher rank.
             ",
             modifiers: Some(vec![
-                Modifier::HitPoints(1),
                 Modifier::Maneuver(Maneuver::CertainStrike(1)),
                 Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
                 Modifier::Maneuver(Maneuver::PowerStrike(1)),
@@ -233,7 +288,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 2 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 2.
             ",
-            modifiers: Some(vec![Modifier::HitPoints(2)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Martial Force",
@@ -253,7 +308,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                 This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
             ",
             modifiers: Some(vec![
-                Modifier::HitPoints(2),
                 Modifier::Maneuver(Maneuver::CertainStrike(3)),
                 Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
                 Modifier::Maneuver(Maneuver::PowerStrike(3)),
@@ -278,7 +332,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 4 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 4 and can improve the effectiveness of your existing maneuvers.
             ",
-            modifiers: Some(vec![Modifier::HitPoints(2)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Martial Maneuver",
@@ -298,7 +352,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                 This gives you access to maneuvers that require a minimum rank of 5.
             ",
             modifiers: Some(vec![
-                Modifier::HitPoints(2),
                 Modifier::Maneuver(Maneuver::CertainStrike(5)),
                 Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
                 Modifier::Maneuver(Maneuver::PowerStrike(5)),
@@ -330,8 +383,8 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{martial expertise} ability increases to three times your rank in this archetype.
             ",
-            // Rank 5 HP: +10. Rank 6 HP: +18.
-            modifiers: Some(vec![Modifier::HitPoints(8)]),
+            // Handled as part of bulk silent scaling
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (7)",
@@ -342,7 +395,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                 This gives you access to maneuvers that require a minimum rank of 7.
             ",
             modifiers: Some(vec![
-                Modifier::HitPoints(3),
                 Modifier::Maneuver(Maneuver::CertainStrike(7)),
                 Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
                 Modifier::Maneuver(Maneuver::PowerStrike(7)),

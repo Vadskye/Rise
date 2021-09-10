@@ -61,7 +61,7 @@ impl Weapon {
             Self::ArmorSpikes => DamageDice::d6(),
             Self::Battleaxe => DamageDice::d8(),
             Self::Bite => DamageDice::d8(),
-            Self::Broadsword => DamageDice::d10(),
+            Self::Broadsword => DamageDice::d8(),
             Self::Claw => DamageDice::d6(),
             Self::Greataxe => DamageDice::d10() + 1,
             Self::Greatsword => DamageDice::d10(),

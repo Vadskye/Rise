@@ -3,7 +3,10 @@ use crate::core_mechanics::creatures::attacks::{self, HasAttacks};
 use crate::core_mechanics::creatures::{
     creature, latex, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
 };
-use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, HasVitalWounds, Resource, VitalWound};
+use crate::core_mechanics::{
+    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources,
+    HasVitalWounds, Resource, VitalWound,
+};
 use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, HasWeapons, Weapon};
 use crate::skills::{HasSkills, Skill};
 
@@ -21,7 +24,11 @@ impl Character {
         for rank_ability in calc_rank_abilities(level, &archetypes) {
             if let Some(rank_modifiers) = rank_ability.modifiers {
                 for modifier in rank_modifiers {
-                    creature.add_modifier(modifier.clone());
+                    creature.add_modifier(
+                        modifier.clone(),
+                        Some(format!("{} {}", rank_ability.name, modifier.name()).as_str()),
+                        Some(rank_ability.rank),
+                    );
                 }
             }
         }
@@ -76,7 +83,7 @@ impl Character {
         }
 
         for modifier in calc_standard_magic_modifiers(level) {
-            character.creature.add_modifier(modifier);
+            character.creature.add_magic_modifier(modifier);
         }
 
         return character;
@@ -108,8 +115,12 @@ impl Character {
 }
 
 impl HasModifiers for Character {
-    fn add_modifier(&mut self, modifier: Modifier) {
-        self.creature.add_modifier(modifier);
+    fn add_modifier(&mut self, modifier: Modifier, name: Option<&str>, priority: Option<i32>) {
+        self.creature.add_modifier(modifier, name, priority);
+    }
+
+    fn add_magic_modifier(&mut self, modifier: Modifier) {
+        self.creature.add_magic_modifier(modifier);
     }
 
     fn get_modifiers(&self) -> Vec<Modifier> {
@@ -250,12 +261,6 @@ impl HasVitalWounds for Character {
 // No need for explicit funtions here - it's handled by the above functions
 impl HasCreatureMechanics for Character {}
 
-struct StandardMagicBonuses {
-    damage_resistance: i32,
-    hit_points: i32,
-    power: i32,
-}
-
 fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     let mut modifiers = vec![];
     // Wealth is one item of current level, two items of one level lower, and two items of two
@@ -349,6 +354,7 @@ mod tests {
                 "Armor Expertise",
                 "Combat Styles",
                 "Martial Expertise",
+                "Martial Expertise",
                 "Mental Discipline",
             ],
             fighter_1_abilities,
@@ -380,6 +386,11 @@ mod tests {
                 "Equipment Efficiency",
                 "Glancing Strikes",
                 "Greater Armor Expertise",
+                // 5 of these since there are 4 ranks in this archetype plus the rank 0
+                "Martial Expertise",
+                "Martial Expertise",
+                "Martial Expertise",
+                "Martial Expertise",
                 "Martial Expertise",
                 "Martial Force",
                 "Martial Maneuver",
@@ -415,7 +426,7 @@ fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armo
             } else {
                 return Armor::ScaleMail(None);
             }
-        },
+        }
         ArmorUsageClass::Medium => {
             if level >= 18 {
                 return Armor::Breastplate(Some(ArmorMaterial::AncientDragonscale(
@@ -432,7 +443,7 @@ fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armo
             } else {
                 return Armor::ScaleMail(None);
             }
-        },
+        }
         ArmorUsageClass::Light => {
             if level >= 17 {
                 return Armor::ChainShirt(Some(ArmorMaterial::AncientDragonscale(
@@ -447,6 +458,6 @@ fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armo
             } else {
                 return Armor::ChainShirt(None);
             }
-        },
+        }
     }
 }

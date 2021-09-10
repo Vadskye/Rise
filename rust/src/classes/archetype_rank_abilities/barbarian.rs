@@ -24,6 +24,48 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(3)]),
         },
         RankAbility {
+            name: "Battle-Scarred",
+            is_magical: false,
+            rank: 2,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(6)]),
+        },
+        RankAbility {
+            name: "Battle-Scarred",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(9)]),
+        },
+        RankAbility {
+            name: "Battle-Scarred",
+            is_magical: false,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(12)]),
+        },
+        RankAbility {
+            name: "Battle-Scarred",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(20)]),
+        },
+        RankAbility {
+            name: "Battle-Scarred",
+            is_magical: false,
+            rank: 6,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(24)]),
+        },
+        RankAbility {
+            name: "Battle-Scarred",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(28)]),
+        },
+        RankAbility {
             name: "Vital Tolerance",
             is_magical: false,
             rank: 2,
@@ -31,7 +73,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 You gain a +1 bonus to \glossterm{vital rolls} and \glossterm{fatigue tolerance}.
             ",
             modifiers: Some(vec![
-                Modifier::DamageResistance(3),
                 Modifier::VitalRoll(1),
                 Modifier::Resource(Resource::FatigueTolerance, 1),
             ]),
@@ -43,7 +84,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The damage resistance you regain with your \textit{resilient recovery} ability increases to half your maximum damage resistance.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(3)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Limitless Recovery",
@@ -52,7 +93,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{recover} action an additional time before you take a \glossterm{short rest}.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(3)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Battle-Scarred",
@@ -61,8 +102,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{battle-scarred} ability increases to four times your rank in this archetype.
             ",
-            // Rank 4 bonus: 12. Rank 5 bonus: 20.
-            modifiers: Some(vec![Modifier::DamageResistance(8)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Vital Tolerance",
@@ -72,7 +112,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 The bonuses from your \textit{vital tolerance} ability increase to +2.
             ",
             modifiers: Some(vec![
-                Modifier::DamageResistance(4),
                 Modifier::VitalRoll(1),
                 Modifier::Resource(Resource::FatigueTolerance, 1),
             ]),
@@ -100,6 +139,55 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 In exchange, you gain a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype (minimum 1).
             ",
             modifiers: Some(vec![Modifier::DamageResistance(1)]),
+        },
+        RankAbility {
+            name: "Insensible Anger",
+            is_magical: false,
+            rank: 1,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(-1), Modifier::DamageResistance(3)]),
+        },
+        RankAbility {
+            name: "Insensible Anger",
+            is_magical: false,
+            rank: 2,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(-2), Modifier::DamageResistance(6)]),
+        },
+        RankAbility {
+            name: "Insensible Anger",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(-3), Modifier::DamageResistance(12)]),
+        },
+        RankAbility {
+            name: "Insensible Anger",
+            is_magical: false,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(-4), Modifier::DamageResistance(16)]),
+        },
+        RankAbility {
+            name: "Insensible Anger",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(-5), Modifier::DamageResistance(20)]),
+        },
+        RankAbility {
+            name: "Insensible Anger",
+            is_magical: false,
+            rank: 6,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(-6), Modifier::DamageResistance(30)]),
+        },
+        RankAbility {
+            name: "Insensible Anger",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(-7), Modifier::DamageResistance(35)]),
         },
         RankAbility {
             name: "Rage",
@@ -131,13 +219,32 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 \end{durationability}
             ",
             modifiers: Some(vec![
-                Modifier::DamageResistance(3),
-                Modifier::HitPoints(-1),
                 Modifier::MundanePower(2),
                 Modifier::VitalRoll(2),
                 Modifier::Defense(Defense::Armor, -2),
                 Modifier::Defense(Defense::Reflex, -2),
             ]),
+        },
+        RankAbility {
+            name: "Rage",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::MundanePower(4)]),
+        },
+        RankAbility {
+            name: "Rage",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::MundanePower(8)]),
+        },
+        RankAbility {
+            name: "Rage",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::MundanePower(16)]),
         },
         RankAbility {
             name: "Enraged Strike",
@@ -156,7 +263,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 \end{instantability}
             ",
             // This is too inconsistent to add as a generally usable strike
-            modifiers: Some(vec![Modifier::DamageResistance(3), Modifier::HitPoints(-1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Insensible Anger",
@@ -165,12 +272,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                  The damage resistance bonus from your \textit{insensible anger} ability increases to four times your rank in this archetype.
             ",
-            // Rank 2: +6 DR. Rank 3: +12 DR.
-            modifiers: Some(vec![
-                Modifier::DamageResistance(6),
-                Modifier::HitPoints(-1),
-                Modifier::MundanePower(2),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Instinctive Rage",
@@ -179,7 +281,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You cannot be \unaware or \partiallyunaware during your \textit{rage} ability.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(4), Modifier::HitPoints(-1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Fearless Rage",
@@ -189,11 +291,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 You are immune to being \shaken, \frightened, and \panicked during your \textit{rage} ability.
                 In addition, being panicked does not prevent you from entering a rage.
             ",
-            modifiers: Some(vec![
-                Modifier::DamageResistance(4),
-                Modifier::HitPoints(-1),
-                Modifier::MundanePower(4),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Supreme Insensible Anger",
@@ -203,10 +301,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                  The damage resistance bonus from your \textit{insensible anger} ability increases to five times your rank in this archetype.
             ",
             // Rank 5: +20 DR. Rank 6: +30 DR.
-            modifiers: Some(vec![
-                Modifier::DamageResistance(10),
-                Modifier::HitPoints(-1),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Titanic Rage",
@@ -215,11 +310,8 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
             ",
-            modifiers: Some(vec![
-                Modifier::DamageResistance(4),
-                Modifier::HitPoints(-1),
-                Modifier::MundanePower(8),
-            ]),
+            // TODO: fully represent an increased size category
+            modifiers: Some(vec![Modifier::MovementSpeed(10)]),
         },
         RankAbility {
             name: "Greater Enraged Strike",
