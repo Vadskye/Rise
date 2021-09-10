@@ -94,9 +94,9 @@ impl Attack {
         return None;
     }
 
-    pub fn calc_damage_dice<T: HasCreatureMechanics>(
+    pub fn calc_damage_dice(
         &self,
-        creature: &T,
+        creature: &dyn HasCreatureMechanics,
     ) -> Option<damage_dice::DamageDice> {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
@@ -108,7 +108,7 @@ impl Attack {
         return None;
     }
 
-    pub fn calc_damage_modifier<T: HasCreatureMechanics>(&self, creature: &T) -> Option<i32> {
+    pub fn calc_damage_modifier(&self, creature: &dyn HasCreatureMechanics) -> Option<i32> {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
                 damage_effect.damage_modifier
