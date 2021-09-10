@@ -1,6 +1,6 @@
-use rise::core_mechanics::creatures::attacks::HasAttacks;
-use rise::core_mechanics::creatures::creature::Creature;
-use rise::core_mechanics::creatures::{HasModifiers, Modifier};
+use rise::creatures::attacks::HasAttacks;
+use rise::creatures::creature::Creature;
+use rise::creatures::{HasModifiers, Modifier};
 use rise::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses};
 use rise::equipment::{Armor, HasArmor};
 use rise::skills::{HasSkills, Skill};

@@ -1,5 +1,4 @@
 mod attributes;
-pub mod creatures;
 mod damage_absorption;
 mod damage_dice;
 mod damage_types;

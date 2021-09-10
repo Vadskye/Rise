@@ -1,6 +1,6 @@
 use crate::calculations::CombatAgent;
-use crate::core_mechanics::creatures::attacks::Attack;
-use crate::core_mechanics::creatures::{attacks, HasCreatureMechanics};
+use crate::creatures::attacks::Attack;
+use crate::creatures::{attacks, HasCreatureMechanics};
 use std::cmp::max;
 use std::fmt;
 
