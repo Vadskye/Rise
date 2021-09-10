@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::creatures::Modifier;
 use crate::core_mechanics::{Attribute, Defense};
+use crate::creatures::Modifier;
 use crate::skills::Skill;
 
 pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {

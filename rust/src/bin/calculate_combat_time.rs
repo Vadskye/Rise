@@ -1,6 +1,5 @@
 use rise::calculations::statistical_combat::run_combat;
-use rise::creatures::Character;
-use rise::monsters;
+use rise::creatures::{Character, Monster};
 use rise::monsters::ChallengeRating;
 
 fn main() {
@@ -25,7 +24,7 @@ fn main() {
             ];
             let mut red = vec![];
             for cr in &challenge_ratings {
-                red.push(monsters::Monster::standard_monster(*cr, level, None, None));
+                red.push(Monster::standard_monster(*cr, level, None, None));
             }
             let results = run_combat(blue, red);
             println!(

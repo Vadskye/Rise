@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::creatures::Modifier;
 use crate::core_mechanics::Resource;
+use crate::creatures::Modifier;
 use crate::skills::{KnowledgeSubskill, Skill};
 
 pub fn assassin<'a>() -> Vec<RankAbility<'a>> {

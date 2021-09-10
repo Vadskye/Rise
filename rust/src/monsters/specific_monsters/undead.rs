@@ -1,11 +1,12 @@
-use crate::creatures::attacks::Attack;
 use crate::core_mechanics::{MovementMode, PassiveAbility, Sense, Size};
+use crate::creatures::attacks::Attack;
+use crate::creatures::Monster;
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
+use crate::monsters::{monster_group, FullMonsterDefinition};
 use crate::skills::Skill;
 
 struct FullUndeadDefinition {
@@ -26,7 +27,7 @@ struct FullUndeadDefinition {
 }
 
 fn undead(def: FullUndeadDefinition) -> Monster {
-    return Monster::fully_defined(FullMonsterDefinition {
+    return FullMonsterDefinition {
         // From def
         alignment: def.alignment,
         attributes: def.attributes,
@@ -46,7 +47,8 @@ fn undead(def: FullUndeadDefinition) -> Monster {
         // Default values
         creature_type: Undead,
         special_defense_modifiers: None,
-    });
+    }
+    .monster();
 }
 
 pub fn undeads() -> Vec<MonsterEntry> {

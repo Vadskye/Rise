@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::creatures::{Maneuver, Modifier};
 use crate::core_mechanics::{Defense, Resource};
+use crate::creatures::{Maneuver, Modifier};
 
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     return vec![

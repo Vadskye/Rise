@@ -1,6 +1,6 @@
 use rise::{
-    creatures::Character,
-    monsters::{ChallengeRating, Monster},
+    creatures::{Character, Monster},
+    monsters::ChallengeRating,
 };
 
 fn main() {
