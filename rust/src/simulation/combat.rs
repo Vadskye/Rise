@@ -49,7 +49,7 @@ impl fmt::Display for CombatResult {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
             f,
-            "Rounds {} Blue {} ({}%) Red {} ({}%)",
+            "Rounds {:>5.2} Blue {} ({:>5.2}%) Red {} ({:.2}%)",
             self.rounds,
             self.blue_living_count,
             self.blue_survival_percent,
