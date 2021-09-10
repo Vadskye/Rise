@@ -39,9 +39,9 @@ pub enum ArmorMaterial {
     Diamondsteel,
     PureDiamondsteel,
     Dragonhide(String),
-    PureDragonhide(String),
+    AncientDragonhide(String),
     Dragonscale(String),
-    PureDragonscale(String),
+    AncientDragonscale(String),
     Elvenweave,
     PureElvenweave,
     Ironwood,
@@ -121,7 +121,7 @@ impl ArmorMaterial {
                 name: format!("{} dragonhide", t),
                 item_level_modifier: 9,
             },
-            Self::PureDragonhide(t) => ArmorMaterialDefinition {
+            Self::AncientDragonhide(t) => ArmorMaterialDefinition {
                 dr_multiplier: 6.0,
                 encumbrance_modifier: 0,
                 name: format!("pure {} dragonhide", t),
@@ -133,7 +133,7 @@ impl ArmorMaterial {
                 name: format!("{} dragonscale", t),
                 item_level_modifier: 9,
             },
-            Self::PureDragonscale(t) => ArmorMaterialDefinition {
+            Self::AncientDragonscale(t) => ArmorMaterialDefinition {
                 dr_multiplier: 6.0,
                 encumbrance_modifier: 0,
                 name: format!("pure {} dragonscale", t),

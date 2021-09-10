@@ -6,7 +6,7 @@ use crate::core_mechanics::creatures::{
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, Resource,
 };
-use crate::equipment::{Armor, HasArmor, HasWeapons, Weapon};
+use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, HasWeapons, Weapon};
 use crate::skills::{HasSkills, Skill};
 
 pub struct Character {
@@ -48,8 +48,9 @@ impl Character {
         );
 
         character.creature.add_weapon(Weapon::Broadsword);
-        // TODO: scale armor material with level
-        character.creature.add_armor(Armor::Breastplate(None));
+        character
+            .creature
+            .add_armor(standard_armor_by_level(level, ArmorUsageClass::Heavy));
         character.creature.add_armor(Armor::StandardShield);
         character
             .creature
@@ -372,5 +373,64 @@ mod tests {
             fighter_10_abilities,
             "Should have correct abilities for a level 10 fighter",
         );
+    }
+}
+
+// Use a relatively smooth level progression for a (level - 1) item
+fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armor {
+    match max_usage_class {
+        ArmorUsageClass::Heavy => {
+            if level == 21 {
+                return Armor::FullPlate(Some(ArmorMaterial::AncientDragonscale(
+                    "red".to_string(),
+                )));
+            } else if level >= 18 {
+                return Armor::FullPlate(Some(ArmorMaterial::PureDeepforged));
+            } else if level >= 15 {
+                return Armor::FullPlate(Some(ArmorMaterial::Dragonscale("red".to_string())));
+            } else if level >= 12 {
+                return Armor::FullPlate(Some(ArmorMaterial::Deepforged));
+            } else if level >= 9 {
+                return Armor::LayeredHide(Some(ArmorMaterial::Elvenweave));
+            } else if level >= 6 {
+                return Armor::FullPlate(None);
+            } else if level >= 3 {
+                return Armor::LayeredHide(None);
+            } else {
+                return Armor::ScaleMail(None);
+            }
+        },
+        ArmorUsageClass::Medium => {
+            if level >= 18 {
+                return Armor::Breastplate(Some(ArmorMaterial::AncientDragonscale(
+                    "red".to_string(),
+                )));
+            } else if level >= 15 {
+                return Armor::Breastplate(Some(ArmorMaterial::PureDeepforged));
+            } else if level >= 12 {
+                return Armor::Breastplate(Some(ArmorMaterial::Dragonscale("red".to_string())));
+            } else if level >= 9 {
+                return Armor::Breastplate(Some(ArmorMaterial::Deepforged));
+            } else if level >= 3 {
+                return Armor::Breastplate(None);
+            } else {
+                return Armor::ScaleMail(None);
+            }
+        },
+        ArmorUsageClass::Light => {
+            if level >= 17 {
+                return Armor::ChainShirt(Some(ArmorMaterial::AncientDragonscale(
+                    "red".to_string(),
+                )));
+            } else if level >= 14 {
+                return Armor::ChainShirt(Some(ArmorMaterial::PureDeepforged));
+            } else if level >= 11 {
+                return Armor::ChainShirt(Some(ArmorMaterial::Dragonscale("red".to_string())));
+            } else if level >= 8 {
+                return Armor::ChainShirt(Some(ArmorMaterial::Deepforged));
+            } else {
+                return Armor::ChainShirt(None);
+            }
+        },
     }
 }
