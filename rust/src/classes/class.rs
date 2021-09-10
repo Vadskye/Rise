@@ -663,7 +663,7 @@ impl Class {
         for archetype in self.archetypes() {
             for rank in 0..8 {
                 let mut abilities_at_rank: Vec<RankAbility> =
-                    archetype.abilities_at_rank(rank as i32);
+                    archetype.visible_abilities_at_rank(rank as i32);
                 abilities_at_rank.sort_by(|a, b| a.name.cmp(b.name));
                 if abilities_by_rank_and_archetype.get(rank).is_none() {
                     abilities_by_rank_and_archetype.push(Vec::new());

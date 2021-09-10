@@ -220,6 +220,12 @@ impl ClassArchetype {
             .collect();
     }
 
+    // Rank abilities with description == "" should be invisible, and are only used for
+    // calculating modifier values.
+    pub fn visible_abilities_at_rank(&self, rank: i32) -> Vec<RankAbility> {
+        return self.abilities_at_rank(rank).into_iter().filter(|a| a.description != "").collect();
+    }
+
     pub fn is_magical(&self) -> bool {
         return archetype_rank_abilities(self).iter().all(|a| a.is_magical);
     }
@@ -422,6 +428,7 @@ impl ClassArchetype {
         let all_magical = self.is_magical();
         let mut rank_ability_descriptions = archetype_rank_abilities(self)
             .iter()
+            .filter(|a| a.description != "")
             .map(|a| {
                 a.latex_class_feature(class_shorthand, !all_magical)
                     .trim()
@@ -531,12 +538,12 @@ mod tests {
         );
 
         assert_eq!(
-            vec!["Combat Style Rank", "Martial Force"],
+            vec!["Martial Expertise", "Combat Style Rank", "Martial Force"],
             ClassArchetype::MartialMastery.abilities_at_rank(2)
                 .iter()
                 .map(|a| a.name)
                 .collect::<Vec<&str>>(),
-            "Should have expected ability from rank 2 martial mastery",
+            "Should have expected abilities from rank 2 martial mastery",
         );
     }
 }

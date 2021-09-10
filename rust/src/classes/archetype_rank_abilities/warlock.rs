@@ -15,6 +15,56 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(1)]),
         },
         RankAbility {
+            name: "Fiendish Resistance",
+            is_magical: false,
+            rank: 1,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(2)]),
+        },
+        RankAbility {
+            name: "Fiendish Resistance",
+            is_magical: false,
+            rank: 2,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(4)]),
+        },
+        RankAbility {
+            name: "Fiendish Resistance",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(6)]),
+        },
+        RankAbility {
+            name: "Fiendish Resistance",
+            is_magical: false,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(8)]),
+        },
+        RankAbility {
+            name: "Fiendish Resistance",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            // This rank is when greater Fiendish Resistance kicks in
+            modifiers: Some(vec![Modifier::DamageResistance(15)]),
+        },
+        RankAbility {
+            name: "Fiendish Resistance",
+            is_magical: false,
+            rank: 6,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(18)]),
+        },
+        RankAbility {
+            name: "Fiendish Resistance",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(21)]),
+        },
+        RankAbility {
             name: "Abyssal Blast",
             is_magical: true,
             rank: 1,
@@ -36,10 +86,63 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The damage increases to 7d10.
                 \end{instantability}
             ",
-            modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::AbyssalBlast(1).attack()),
-                Modifier::DamageResistance(1),
-            ]),
+            modifiers: Some(vec![Modifier::Attack(
+                StandardAttack::AbyssalBlast(1).attack(),
+            )]),
+        },
+        RankAbility {
+            name: "Abyssal Blast",
+            is_magical: true,
+            rank: 2,
+            description: "",
+            modifiers: Some(vec![Modifier::Attack(
+                StandardAttack::AbyssalBlast(2).attack(),
+            )]),
+        },
+        RankAbility {
+            name: "Abyssal Blast",
+            is_magical: true,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::Attack(
+                StandardAttack::AbyssalBlast(3).attack(),
+            )]),
+        },
+        RankAbility {
+            name: "Abyssal Blast",
+            is_magical: true,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::Attack(
+                StandardAttack::AbyssalBlast(4).attack(),
+            )]),
+        },
+        RankAbility {
+            name: "Abyssal Blast",
+            is_magical: true,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::Attack(
+                StandardAttack::AbyssalBlast(5).attack(),
+            )]),
+        },
+        RankAbility {
+            name: "Abyssal Blast",
+            is_magical: true,
+            rank: 6,
+            description: "",
+            modifiers: Some(vec![Modifier::Attack(
+                StandardAttack::AbyssalBlast(6).attack(),
+            )]),
+        },
+        RankAbility {
+            name: "Abyssal Blast",
+            is_magical: true,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::Attack(
+                StandardAttack::AbyssalBlast(7).attack(),
+            )]),
         },
         RankAbility {
             name: "Abyssal Sphere",
@@ -49,10 +152,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 If you have access to pact magic, choose one of the following \glossterm{mystic spheres}: \sphere{astromancy}, \sphere{enchantment}, \sphere{pyromancy}, or \sphere{summoning}.
                 You gain access to that mystic sphere.
             ",
-            modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::AbyssalBlast(2).attack()),
-                Modifier::DamageResistance(2),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Resist the Dark Call",
@@ -85,10 +185,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The accuracy bonus increases to \plus2.
                 \end{durationability}
             ",
-            modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::AbyssalBlast(3).attack()),
-                Modifier::DamageResistance(2),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Hellfire",
@@ -99,11 +196,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 In addition, whenever you use an ability that deals fire damage, you can change the type of the damage to be energy damage in place of fire damage.
                 Any other aspects of the ability, including damage types other than fire, remain unchanged.
             ",
-            modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::AbyssalBlast(4).attack()),
-                Modifier::MagicalPower(2),
-                Modifier::DamageResistance(2),
-            ]),
+            modifiers: Some(vec![Modifier::MagicalPower(2)]),
         },
         RankAbility {
             name: "Greater Fiendish Resistance",
@@ -112,11 +205,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{fiendish resistance} ability increases to three times your rank in this archetype.
             ",
-            modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::AbyssalBlast(5).attack()),
-                // Rank 4: 8. Rank 5: 15.
-                Modifier::DamageResistance(7),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Abyssal Curse",
@@ -136,10 +225,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
                 \end{durationability}
             ",
-            modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::AbyssalBlast(6).attack()),
-                Modifier::DamageResistance(3),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Brimstone",
@@ -150,11 +236,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 In addition, whenever you cause a creature to lose \glossterm{hit points} with fire damage or energy damage, it becomes \glossterm{briefly} \sickened.
                 After the effect ends, that creature then becomes immune to it until it takes a \glossterm{short rest}.
             ",
-            modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::AbyssalBlast(7).attack()),
-                Modifier::MagicalPower(4),
-                Modifier::DamageResistance(3),
-            ]),
+            modifiers: Some(vec![Modifier::MagicalPower(4)]),
         },
     ];
 }
@@ -213,6 +295,48 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            name: "Eldritch Secret",
+            is_magical: true,
+            rank: 2,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(6)]),
+        },
+        RankAbility {
+            name: "Eldritch Secret",
+            is_magical: true,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(9)]),
+        },
+        RankAbility {
+            name: "Eldritch Secret",
+            is_magical: true,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(20)]),
+        },
+        RankAbility {
+            name: "Eldritch Secret",
+            is_magical: true,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(25)]),
+        },
+        RankAbility {
+            name: "Eldritch Secret",
+            is_magical: true,
+            rank: 6,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(30)]),
+        },
+        RankAbility {
+            name: "Eldritch Secret",
+            is_magical: true,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(49)]),
+        },
+        RankAbility {
             name: "Unnatural Insight",
             is_magical: true,
             rank: 2,
@@ -222,7 +346,6 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 For each insight point you choose not to gain in this way, you gain a \plus1 bonus to all Knowledge skills.
             ",
             modifiers: Some(vec![
-                Modifier::DamageResistance(3),
                 Modifier::Resource(Resource::InsightPoint, 2),
                 Modifier::Skill(Skill::Awareness, -2),
                 Modifier::Skill(Skill::Balance, -2),
@@ -260,9 +383,8 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 However, you take a \minus2 penalty to Mental defense.
             ",
             modifiers: Some(vec![
-                Modifier::DamageResistance(3),
-                Modifier::MagicalPower(4),
-                Modifier::MundanePower(4),
+                Modifier::MagicalPower(3),
+                Modifier::MundanePower(3),
                 Modifier::Defense(Defense::Mental, 2),
             ]),
         },
@@ -280,8 +402,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Secret of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
                 }
             ",
-            // Rank 3: 9. Rank 4: 20.
-            modifiers: Some(vec![Modifier::DamageResistance(11)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Unnatural Insight",
@@ -291,7 +412,6 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 The maximum number of insight points you can gain with your \textit{unnatural insight} ability increases to four.
             ",
             modifiers: Some(vec![
-                Modifier::DamageResistance(5),
                 Modifier::Resource(Resource::InsightPoint, 2),
                 Modifier::Skill(Skill::Awareness, -2),
                 Modifier::Skill(Skill::Balance, -2),
@@ -327,11 +447,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{lore of corrupting power} ability increases to \plus9.
             ",
-            modifiers: Some(vec![
-                Modifier::DamageResistance(5),
-                Modifier::MagicalPower(6),
-                Modifier::MundanePower(6),
-            ]),
+            modifiers: Some(vec![Modifier::MagicalPower(6), Modifier::MundanePower(6)]),
         },
         RankAbility {
             name: "Supreme Eldritch Secret",
@@ -349,10 +465,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 }
             ",
             // Rank 6: 30. Rank 7: 49.
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-                Modifier::DamageResistance(19),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
     ];
 }

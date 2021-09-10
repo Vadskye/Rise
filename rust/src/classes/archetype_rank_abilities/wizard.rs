@@ -174,6 +174,55 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 3), Modifier::DamageResistance(1)]),
         },
         RankAbility {
+            name: "Mage Armor",
+            is_magical: true,
+            rank: 1,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(2)]),
+        },
+        RankAbility {
+            name: "Mage Armor",
+            is_magical: true,
+            rank: 2,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(4)]),
+        },
+        RankAbility {
+            name: "Mage Armor",
+            is_magical: true,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(9)]),
+        },
+        RankAbility {
+            name: "Mage Armor",
+            is_magical: true,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(12)]),
+        },
+        RankAbility {
+            name: "Mage Armor",
+            is_magical: true,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(15)]),
+        },
+        RankAbility {
+            name: "Mage Armor",
+            is_magical: true,
+            rank: 6,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(24)]),
+        },
+        RankAbility {
+            name: "Mage Armor",
+            is_magical: true,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(28)]),
+        },
+        RankAbility {
             name: "Spellcasting",
             is_magical: true,
             rank: 1,
@@ -188,7 +237,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     including spells of the higher rank.
                 All of those spells must be from arcane mystic spheres you have access to.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (2)",
@@ -198,7 +247,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 2 arcane spellcaster.
                 This gives you access to spells that require a minimum rank of 2.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(2)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -226,8 +275,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The damage resistance bonus from your \textit{mage armor} ability increases to three times your rank in this archetype.
             ",
-            // Rank 2: 4. Rank 3: 9.
-            modifiers: Some(vec![Modifier::DamageResistance(5)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (4)",
@@ -237,7 +285,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 4 arcane spellcaster.
                 This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(3)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -256,7 +304,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 5 arcane spellcaster.
                 This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(3)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (6)",
@@ -276,8 +324,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 The damage resistance bonus from your \textit{mage armor} ability increases to four times your rank in this archetype.
                 In addition, the defense bonus from the body armor increases to \plus3.
             ",
-            // Rank 5: 15. Rank 6: 24.
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1), Modifier::DamageResistance(9)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Spell Rank (7)",
@@ -287,7 +334,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 7 arcane spellcaster.
                 This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(4)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Spell Knowledge",

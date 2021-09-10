@@ -18,9 +18,10 @@ use std::collections::HashMap;
 
 pub struct Creature {
     base_attributes: HashMap<Attribute, i32>,
+    anonymous_modifiers: Vec<Modifier>,
     pub armor: Vec<Armor>,
+    identified_modifiers: Vec<IdentifiedModifier>,
     pub level: i32,
-    pub modifiers: Vec<Modifier>,
     pub movement_modes: Vec<movement_modes::MovementMode>,
     pub name: Option<String>,
     pub passive_abilities: Option<Vec<PassiveAbility>>,
@@ -37,10 +38,11 @@ impl Creature {
     pub fn new(level: i32) -> Creature {
         let base_attributes = HashMap::<Attribute, i32>::new();
         return Creature {
+            anonymous_modifiers: vec![],
             armor: vec![],
             base_attributes,
+            identified_modifiers: vec![],
             level,
-            modifiers: vec![],
             movement_modes: vec![],
             name: None,
             passive_abilities: None,
@@ -110,30 +112,55 @@ impl Creature {
     }
 }
 
+struct IdentifiedModifier {
+    modifier: Modifier,
+    name: String,
+    priority: i32,
+}
+
 impl HasModifiers for Creature {
-    fn add_modifier(&mut self, modifier: Modifier) {
-        // Modifier conflicts are not necessarily bidirectional.
-        // A lower magic bonus conflicts with a higher magic bonus, but not vice versa.
-        self.modifiers
-            .retain(|m| !m.is_conflicting_modifier(&modifier));
-        if self
-            .modifiers
-            .iter()
-            .filter(|m| modifier.is_conflicting_modifier(m))
-            .count()
-            == 0
-        {
-            self.modifiers.push(modifier);
+    fn add_modifier(&mut self, modifier: Modifier, name: Option<&str>, priority: Option<i32>) {
+        if let Some(name) = name {
+            let priority = priority.unwrap_or(0);
+            self.identified_modifiers
+                .retain(|im| im.name != name || im.priority > priority);
+            if self
+                .identified_modifiers
+                .iter()
+                .filter(|im| im.name == name && im.priority >= priority)
+                .count()
+                == 0
+            {
+                self.identified_modifiers.push(IdentifiedModifier {
+                    name: name.to_string(),
+                    priority,
+                    modifier,
+                });
+            }
+        } else {
+            self.anonymous_modifiers.push(modifier);
         }
     }
 
+    fn add_magic_modifier(&mut self, modifier: Modifier) {
+        let name = format!("magic {}", modifier.name());
+        let value = modifier.value();
+        self.add_modifier(modifier, Some(name.as_str()), Some(value));
+    }
+
     fn get_modifiers(&self) -> Vec<Modifier> {
-        return self.modifiers.clone();
+        let mut modifiers: Vec<Modifier> = self
+            .identified_modifiers
+            .iter()
+            .map(|im| im.modifier.clone())
+            .collect();
+        modifiers.append(self.anonymous_modifiers.clone().as_mut());
+        return modifiers;
     }
 
     fn calc_total_modifier(&self, mt: ModifierType) -> i32 {
         return self
-            .modifiers
+            .get_modifiers()
             .iter()
             .filter(|m| m.modifier_type() == mt)
             .map(|m| m.value())
@@ -389,7 +416,7 @@ impl HasVitalWounds for Creature {
     fn add_vital_wound(&mut self, vital_wound: VitalWound) {
         if let Some(modifiers) = vital_wound.modifiers() {
             for m in modifiers {
-                self.add_modifier(m);
+                self.add_modifier(m, None, None);
             }
         }
         self.vital_wounds.push(vital_wound);

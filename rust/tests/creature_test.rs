@@ -1,3 +1,4 @@
+use rise::core_mechanics::creatures::attacks::HasAttacks;
 use rise::core_mechanics::creatures::creature::Creature;
 use rise::core_mechanics::creatures::{HasModifiers, Modifier};
 use rise::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses};
@@ -61,9 +62,9 @@ fn it_calculates_modifiers() {
         "Should have 0 Devices"
     );
 
-    creature.add_modifier(Modifier::Defense(Defense::Armor, 2));
-    creature.add_modifier(Modifier::DamageResistance(1));
-    creature.add_modifier(Modifier::DamageResistance(2));
+    creature.add_modifier(Modifier::Defense(Defense::Armor, 2), None, None);
+    creature.add_modifier(Modifier::DamageResistance(1), None, None);
+    creature.add_modifier(Modifier::DamageResistance(2), None, None);
     assert_eq!(
         2,
         creature.calc_defense(&Defense::Armor),
@@ -75,4 +76,55 @@ fn it_calculates_modifiers() {
         "Should have 0 Fort"
     );
     assert_eq!(5, creature.calc_damage_resistance(), "Should have 5 DR");
+}
+
+#[test]
+fn it_replaces_modifiers_by_priority() {
+    let mut creature = Creature::new(1);
+    assert_eq!(
+        0,
+        creature.calc_accuracy(),
+        "Should have 0 accuracy"
+    );
+    creature.add_modifier(Modifier::Accuracy(2), Some("accuracy"), Some(1));
+    assert_eq!(
+        2,
+        creature.calc_accuracy(),
+        "Should have 2 accuracy"
+    );
+    creature.add_modifier(Modifier::Accuracy(1), Some("accuracy"), Some(2));
+    assert_eq!(
+        1,
+        creature.calc_accuracy(),
+        "Should have 1 accuracy, since lower priority modifier was replaced"
+    );
+    creature.add_modifier(Modifier::Accuracy(5), Some("accuracy"), Some(0));
+    assert_eq!(
+        1,
+        creature.calc_accuracy(),
+        "Should have 1 accuracy, since lower priority modifier was ignored"
+    );
+}
+
+#[test]
+fn it_calculates_magic_bonuses() {
+    let mut creature = Creature::new(1);
+    assert_eq!(
+        0,
+        creature.calc_defense(&Defense::Armor),
+        "Should have 0 AD"
+    );
+    creature.add_magic_modifier(Modifier::Defense(Defense::Armor, 2));
+    creature.add_magic_modifier(Modifier::Defense(Defense::Armor, 1));
+    assert_eq!(
+        2,
+        creature.calc_defense(&Defense::Armor),
+        "Should have 2 AD; magic modifier was added first"
+    );
+    creature.add_magic_modifier(Modifier::Defense(Defense::Armor, 3));
+    assert_eq!(
+        3,
+        creature.calc_defense(&Defense::Armor),
+        "Should have 3 AD; magic modifier was added last"
+    );
 }

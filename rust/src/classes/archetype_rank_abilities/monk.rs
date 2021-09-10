@@ -270,8 +270,50 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             // the system won't know not to stack the effects
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 3),
-                Modifier::DamageResistance(1),
+                Modifier::DamageResistance(3),
             ]),
+        },
+        RankAbility {
+            name: "Ki Barrier",
+            is_magical: true,
+            rank: 2,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(8)]),
+        },
+        RankAbility {
+            name: "Ki Barrier",
+            is_magical: true,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(12)]),
+        },
+        RankAbility {
+            name: "Ki Barrier",
+            is_magical: true,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(16)]),
+        },
+        RankAbility {
+            name: "Ki Barrier",
+            is_magical: true,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(25)]),
+        },
+        RankAbility {
+            name: "Ki Barrier",
+            is_magical: true,
+            rank: 6,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(30)]),
+        },
+        RankAbility {
+            name: "Ki Barrier",
+            is_magical: true,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::DamageResistance(35)]),
         },
         RankAbility {
             name: "Ki Energy",
@@ -515,7 +557,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
-                Modifier::DamageResistance(5),
             ]),
         },
         RankAbility {
@@ -528,7 +569,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![
                 Modifier::MagicalPower(2),
                 Modifier::MundanePower(2),
-                Modifier::DamageResistance(4),
             ]),
         },
         RankAbility {
@@ -539,7 +579,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 After using a \textit{ki manifestation}, you can use a different \textit{ki manifestation} after the end of the current round.
                 You still cannot use the same \textit{ki manifestation} in two consecutive rounds.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(4)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Supreme Ki Barrier",
@@ -550,7 +590,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 In addition, the defense bonus from the body armor increases to \plus4.
             ",
             // Rank 4: 16. Rank 5: 25.
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1), Modifier::DamageResistance(9)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+            ]),
         },
         RankAbility {
             name: "Greater Ki Power",
@@ -562,7 +604,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![
                 Modifier::MagicalPower(4),
                 Modifier::MundanePower(4),
-                Modifier::DamageResistance(5),
             ]),
         },
         RankAbility {
@@ -573,7 +614,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 You learn an additional \textit{ki manifestation}.
                 In addition, your \textit{greater ki manifestation} ability also allows you to use the same \textit{ki manifestation} ability in consecutive rounds.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(5)]),
+            modifiers: None,
         },
     ];
 }
