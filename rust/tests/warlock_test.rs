@@ -1,7 +1,7 @@
-use rise::classes::{Class, ClassArchetype, calc_rank_abilities};
+use rise::classes::{calc_rank_abilities, Class, ClassArchetype};
+use rise::core_mechanics::HasDamageAbsorption;
 use rise::creatures::attacks::HasAttacks;
 use rise::creatures::{Character, HasModifiers, ModifierType};
-use rise::core_mechanics::HasDamageAbsorption;
 
 #[test]
 fn it_calculates_rank_abilities() {

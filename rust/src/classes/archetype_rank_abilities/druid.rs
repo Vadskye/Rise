@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::creatures::{Maneuver, Modifier};
 use crate::core_mechanics::{Attribute, Defense, Resource};
+use crate::creatures::{Maneuver, Modifier};
 use crate::skills::Skill;
 
 pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {

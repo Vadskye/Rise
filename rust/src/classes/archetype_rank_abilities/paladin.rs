@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::creatures::Modifier;
 use crate::core_mechanics::{Defense, Resource};
+use crate::creatures::Modifier;
 
 pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
     return vec![

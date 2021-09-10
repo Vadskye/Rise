@@ -1,15 +1,15 @@
-use crate::creatures::attacks::{Attack, UsageTime};
-use crate::creatures::StandardAttack;
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
     SpecialDefenseModifier, SpeedCategory,
 };
+use crate::creatures::attacks::{Attack, UsageTime};
+use crate::creatures::{Monster, StandardAttack};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animate;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition, Monster};
+use crate::monsters::{monster_group, FullMonsterDefinition};
 use crate::skills::Skill;
 
 struct FullAnimateDefinition {
@@ -31,7 +31,7 @@ struct FullAnimateDefinition {
 }
 
 fn animate(def: FullAnimateDefinition) -> Monster {
-    return Monster::fully_defined(FullMonsterDefinition {
+    return FullMonsterDefinition {
         // From def
         alignment: def.alignment,
         attributes: def.attributes,
@@ -51,7 +51,8 @@ fn animate(def: FullAnimateDefinition) -> Monster {
 
         // Default values
         creature_type: Animate,
-    });
+    }
+    .monster();
 }
 
 pub fn animates() -> Vec<MonsterEntry> {

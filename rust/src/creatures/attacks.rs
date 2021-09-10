@@ -94,10 +94,7 @@ impl Attack {
         return None;
     }
 
-    pub fn calc_damage_dice(
-        &self,
-        creature: &dyn HasCreatureMechanics,
-    ) -> Option<DamageDice> {
+    pub fn calc_damage_dice(&self, creature: &dyn HasCreatureMechanics) -> Option<DamageDice> {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
                 damage_effect

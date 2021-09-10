@@ -57,9 +57,7 @@ impl Character {
             .creature
             .add_armor(standard_armor_by_level(level, ArmorUsageClass::Heavy));
         character.creature.add_armor(Armor::StandardShield);
-        character
-            .creature
-            .set_name("Standard Character".to_string());
+        character.creature.set_name("Standard Character");
 
         if use_point_buy {
             character

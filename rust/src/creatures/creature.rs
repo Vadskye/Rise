@@ -1,4 +1,8 @@
-use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, HasVitalWounds, MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier, VitalWound};
+use crate::core_mechanics::{
+    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources,
+    HasVitalWounds, MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier,
+    VitalWound,
+};
 use crate::creatures::attacks::{self, Attack, HasAttacks};
 use crate::creatures::{
     latex, HasCreatureMechanics, HasModifiers, Maneuver, Modifier, ModifierType,
@@ -79,8 +83,8 @@ impl Creature {
         self.level = level;
     }
 
-    pub fn set_name(&mut self, name: String) {
-        self.name = Some(name);
+    pub fn set_name(&mut self, name: &str) {
+        self.name = Some(name.to_string());
     }
 
     pub fn lowercase_name(&self) -> Option<String> {

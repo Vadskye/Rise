@@ -3,14 +3,14 @@ use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{FullMonsterDefinition, Monster};
+use crate::monsters::FullMonsterDefinition;
 
 pub fn generate_stock_monsters() -> Vec<MonsterEntry> {
     let mut stock_monsters: Vec<MonsterEntry> = vec![];
     for creature_type in CreatureType::all() {
         for level in vec![1, 2, 3, 4, 5] {
             for challenge_rating in vec![ChallengeRating::Two, ChallengeRating::Four] {
-                stock_monsters.push(MonsterEntry::Monster(Monster::fully_defined(
+                stock_monsters.push(MonsterEntry::Monster(
                     FullMonsterDefinition {
                         alignment: "always true neutral".to_string(),
                         attributes: creature_type.stock_base_attributes(level),
@@ -33,8 +33,9 @@ pub fn generate_stock_monsters() -> Vec<MonsterEntry> {
                         trained_skills: None,
                         weapons: vec![Weapon::Bite],
                         challenge_rating,
-                    },
-                )));
+                    }
+                    .monster(),
+                ));
             }
         }
     }

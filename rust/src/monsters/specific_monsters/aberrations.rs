@@ -1,14 +1,14 @@
-use crate::creatures::attacks::Attack;
-use crate::creatures::StandardAttack;
 use crate::core_mechanics::{
     Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier,
 };
+use crate::creatures::attacks::Attack;
+use crate::creatures::{Monster, StandardAttack};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Aberration;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{FullMonsterDefinition, Monster};
+use crate::monsters::FullMonsterDefinition;
 use crate::skills::Skill;
 
 struct FullAberrationDefinition {
@@ -30,7 +30,7 @@ struct FullAberrationDefinition {
 }
 
 fn aberration(def: FullAberrationDefinition) -> Monster {
-    return Monster::fully_defined(FullMonsterDefinition {
+    return FullMonsterDefinition {
         // From def
         alignment: def.alignment,
         attributes: def.attributes,
@@ -50,7 +50,8 @@ fn aberration(def: FullAberrationDefinition) -> Monster {
 
         // Default values
         creature_type: Aberration,
-    });
+    }
+    .monster();
 }
 
 pub fn aberrations() -> Vec<MonsterEntry> {
