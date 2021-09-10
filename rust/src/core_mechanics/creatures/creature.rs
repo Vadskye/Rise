@@ -5,29 +5,31 @@ use crate::core_mechanics::creatures::{
 };
 use crate::core_mechanics::damage_absorption::HasDamageAbsorption;
 use crate::core_mechanics::defenses::{self, HasDefenses, SpecialDefenseModifier};
-use crate::core_mechanics::movement_modes;
 use crate::core_mechanics::passive_abilities::PassiveAbility;
 use crate::core_mechanics::resources::{self, HasResources};
 use crate::core_mechanics::senses::Sense;
 use crate::core_mechanics::sizes;
+use crate::core_mechanics::vital_wounds::VitalWound;
+use crate::core_mechanics::{movement_modes, HasVitalWounds};
 use crate::equipment::{Armor, HasArmor, HasWeapons, Weapon};
 use crate::skills::{HasSkills, Skill};
 use std::cmp::max;
 use std::collections::HashMap;
 
 pub struct Creature {
-    pub armor: Vec<Armor>,
     base_attributes: HashMap<Attribute, i32>,
-    pub name: Option<String>,
+    pub armor: Vec<Armor>,
     pub level: i32,
     pub modifiers: Vec<Modifier>,
     pub movement_modes: Vec<movement_modes::MovementMode>,
+    pub name: Option<String>,
     pub passive_abilities: Option<Vec<PassiveAbility>>,
     pub senses: Option<Vec<Sense>>,
     pub size: sizes::Size,
     pub skill_training: Option<HashMap<Skill, bool>>,
     pub special_attacks: Option<Vec<attacks::Attack>>,
     pub special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
+    pub vital_wounds: Vec<VitalWound>,
     pub weapons: Vec<Weapon>,
 }
 
@@ -47,6 +49,7 @@ impl Creature {
             skill_training: None,
             special_attacks: None,
             special_defense_modifiers: None,
+            vital_wounds: vec![],
             weapons: vec![],
         };
     }
@@ -379,6 +382,34 @@ impl HasResources for Creature {
             resources::Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
         };
         return value + self.calc_total_modifier(ModifierType::Resource(*resource));
+    }
+}
+
+impl HasVitalWounds for Creature {
+    fn add_vital_wound(&mut self, vital_wound: VitalWound) {
+        if let Some(modifiers) = vital_wound.modifiers() {
+            for m in modifiers {
+                self.add_modifier(m);
+            }
+        }
+        self.vital_wounds.push(vital_wound);
+    }
+
+    fn calc_vital_roll_modifier(&self) -> i32 {
+        return self.calc_total_modifier(ModifierType::VitalRoll) - self.vital_wounds.len() as i32;
+    }
+
+    fn generate_vital_wound(&self) -> VitalWound {
+        return VitalWound::vital_roll(self.calc_vital_roll_modifier());
+    }
+
+    fn is_vitally_unconscious(&self) -> bool {
+        for vital_wound in &self.vital_wounds {
+            if vital_wound.causes_unconsciousness() {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

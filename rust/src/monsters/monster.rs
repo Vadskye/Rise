@@ -2,11 +2,7 @@ use crate::core_mechanics::creatures::attacks::HasAttacks;
 use crate::core_mechanics::creatures::{
     attacks, creature, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
 };
-use crate::core_mechanics::{
-    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources,
-    MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier,
-    SpecialDefenseType, SpeedCategory,
-};
+use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources, HasVitalWounds, MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier, SpecialDefenseType, SpeedCategory, VitalWound};
 use crate::equipment::{HasWeapons, Weapon};
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
@@ -95,7 +91,7 @@ impl Monster {
             }
         }
 
-        let mut monster = Monster {
+        return Monster {
             alignment: Some(def.alignment),
             challenge_rating: def.challenge_rating,
             creature_type: def.creature_type,
@@ -112,7 +108,6 @@ impl Monster {
                 vec![MovementMode::Land(SpeedCategory::Normal)]
             },
         };
-        return monster;
     }
 
     pub fn standard_monster(
@@ -296,6 +291,24 @@ impl HasSkills for Monster {
 
     fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
         return self.creature.calc_skill_modifier(skill);
+    }
+}
+
+impl HasVitalWounds for Monster {
+    fn add_vital_wound(&mut self, vital_wound: VitalWound) {
+        return self.creature.add_vital_wound(vital_wound);
+    }
+
+    fn calc_vital_roll_modifier(&self) -> i32 {
+        return 0;
+    }
+
+    fn generate_vital_wound(&self) -> VitalWound {
+        return VitalWound::Zero;
+    }
+
+    fn is_vitally_unconscious(&self) -> bool {
+        return self.creature.is_vitally_unconscious();
     }
 }
 
