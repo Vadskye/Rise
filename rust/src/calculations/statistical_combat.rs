@@ -1,3 +1,4 @@
+use crate::calculations::DamageableCreature;
 use crate::core_mechanics::creatures::attacks::Attack;
 use crate::core_mechanics::creatures::{attacks, HasCreatureMechanics};
 use std::cmp::max;
@@ -16,36 +17,6 @@ struct CombatStep<T, TT> {
     red: TT,
 }
 
-struct DamageableCreature<'a, T: HasCreatureMechanics> {
-    creature: &'a T,
-    damage_taken: i32,
-}
-
-impl<'a, T: HasCreatureMechanics> DamageableCreature<'a, T> {
-    fn from_creature(creature: &'a T) -> Self {
-        return DamageableCreature {
-            creature,
-            damage_taken: 0,
-        };
-    }
-
-    fn total_damage_absorption(&self) -> i32 {
-        return self.creature.calc_hit_points() + self.creature.calc_damage_resistance();
-    }
-
-    fn remaining_damage_absorption(&self) -> i32 {
-        return self.total_damage_absorption() - self.damage_taken;
-    }
-
-    fn is_alive(&self) -> bool {
-        return self.remaining_damage_absorption() > 0;
-    }
-
-    fn take_damage(&mut self, damage: f64) {
-        self.damage_taken += damage.ceil() as i32;
-    }
-}
-
 impl fmt::Display for CombatResult {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
@@ -60,17 +31,21 @@ impl fmt::Display for CombatResult {
     }
 }
 
-pub fn run_combat<T: HasCreatureMechanics, TT: HasCreatureMechanics>(blue: Vec<T>, red: Vec<TT>) -> CombatResult {
-    let mut damageable: CombatStep<Vec<DamageableCreature<T>>, Vec<DamageableCreature<TT>>> = CombatStep {
-        blue: blue
-            .iter()
-            .map(|c| DamageableCreature::from_creature(c))
-            .collect(),
-        red: red
-            .iter()
-            .map(|c| DamageableCreature::from_creature(c))
-            .collect(),
-    };
+pub fn run_combat<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
+    blue: Vec<T>,
+    red: Vec<TT>,
+) -> CombatResult {
+    let mut damageable: CombatStep<Vec<DamageableCreature<T>>, Vec<DamageableCreature<TT>>> =
+        CombatStep {
+            blue: blue
+                .iter()
+                .map(|c| DamageableCreature::from_creature(c))
+                .collect(),
+            red: red
+                .iter()
+                .map(|c| DamageableCreature::from_creature(c))
+                .collect(),
+        };
     let mut rounds = 0.0;
     // For now, don't do intelligent target prioritization - just proceed linearly through the
     // array of creatures. In the future, we can intelligently sort the vectors before entering
@@ -79,7 +54,7 @@ pub fn run_combat<T: HasCreatureMechanics, TT: HasCreatureMechanics>(blue: Vec<T
         let mut living: CombatStep<
             Vec<&mut DamageableCreature<T>>,
             Vec<&mut DamageableCreature<TT>>,
-            > = CombatStep {
+        > = CombatStep {
             blue: damageable
                 .blue
                 .iter_mut()
@@ -133,7 +108,10 @@ fn survival_percent<T: HasCreatureMechanics>(creatures: &Vec<DamageableCreature<
         / total_damage_absorption as f64;
 }
 
-fn calc_damage_per_round<T: HasCreatureMechanics, TT: HasCreatureMechanics>(attackers: &Vec<&T>, defender: &TT) -> f64 {
+fn calc_damage_per_round<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
+    attackers: &Vec<&T>,
+    defender: &TT,
+) -> f64 {
     return attackers
         .iter()
         .map(|a| calc_individual_dpr(*a, defender))
@@ -154,7 +132,10 @@ fn calc_rounds_to_live<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
     return (rounds_to_survive * 4.0).ceil() / 4.0;
 }
 
-fn calc_individual_dpr(attacker: &dyn HasCreatureMechanics, defender: &dyn HasCreatureMechanics) -> f64 {
+fn calc_individual_dpr(
+    attacker: &dyn HasCreatureMechanics,
+    defender: &dyn HasCreatureMechanics,
+) -> f64 {
     let attacks = attacker.calc_all_attacks();
     let mut best_damage_per_round = 0.0;
     let mut best_attack: Option<Attack> = None;
@@ -163,8 +144,8 @@ fn calc_individual_dpr(attacker: &dyn HasCreatureMechanics, defender: &dyn HasCr
         if let Some(_) = attack.damage_effect() {
             let damage_dice = attack.calc_damage_dice(attacker).unwrap();
             let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
-            let average_damage_per_round =
-                hit_probability.single_hit_probability * damage_modifier as f64
+            let average_damage_per_round = hit_probability.single_hit_probability
+                * damage_modifier as f64
                 + hit_probability.including_crit_probability * damage_dice.average_damage() as f64;
             if average_damage_per_round > best_damage_per_round {
                 best_damage_per_round = average_damage_per_round;
