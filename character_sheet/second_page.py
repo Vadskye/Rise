@@ -411,7 +411,7 @@ def calc_hit_points():
                             {
                                 "disabled": True,
                                 "name": "hit_points_from_constitution",
-                                "value": "(@{constitution} * 2)",
+                                "value": "(@{constitution})",
                             }
                         ),
                     ),
@@ -464,7 +464,7 @@ def calc_magical_power():
             equation(
                 [
                     underlabel(
-                        "Wil",
+                        "Wil/2",
                         number_input(
                             {
                                 "disabled": True,
@@ -474,18 +474,7 @@ def calc_magical_power():
                         ),
                     ),
                     plus(),
-                    underlabel(
-                        "Per/2",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "magical_power_perception_display",
-                                "value": "floor(@{perception}/2)",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("magical_power", 3),
+                    equation_misc_repeat("magical_power", 4),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -504,7 +493,7 @@ def calc_mundane_power():
             equation(
                 [
                     underlabel(
-                        "Str",
+                        "Str/2",
                         number_input(
                             {
                                 "disabled": True,
@@ -514,18 +503,7 @@ def calc_mundane_power():
                         ),
                     ),
                     plus(),
-                    underlabel(
-                        "Per/2",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "mundane_power_perception_display",
-                                "value": "floor(@{perception}/2)",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("mundane_power", 3),
+                    equation_misc_repeat("mundane_power", 4),
                 ],
                 result_attributes={
                     "disabled": True,
