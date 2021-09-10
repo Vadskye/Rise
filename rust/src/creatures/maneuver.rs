@@ -1,7 +1,5 @@
-use defenses::Defense;
-
-use crate::core_mechanics::creatures::attacks::Attack;
-use crate::core_mechanics::{defenses, DamageType};
+use crate::creatures::attacks::Attack;
+use crate::core_mechanics::{Defense, DamageType};
 use crate::equipment::Weapon;
 
 #[derive(Clone)]

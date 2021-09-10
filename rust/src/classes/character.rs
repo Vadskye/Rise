@@ -1,6 +1,6 @@
 use crate::classes::{Class, ClassArchetype, RankAbility};
-use crate::core_mechanics::creatures::attacks::{self, HasAttacks};
-use crate::core_mechanics::creatures::{
+use crate::creatures::attacks::{self, HasAttacks};
+use crate::creatures::{
     creature, latex, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
 };
 use crate::core_mechanics::{

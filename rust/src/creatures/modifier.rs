@@ -1,4 +1,4 @@
-use crate::core_mechanics::creatures::attacks::Attack;
+use crate::creatures::attacks::Attack;
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::skills::Skill;
 

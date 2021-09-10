@@ -1,7 +1,7 @@
-use crate::core_mechanics::creatures::attack_effects::{
+use crate::creatures::attack_effects::{
     self, AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
-use crate::core_mechanics::creatures::attacks::{
+use crate::creatures::attacks::{
     AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting, UsageTime,
 };
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};

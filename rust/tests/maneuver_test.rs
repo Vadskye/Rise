@@ -1,7 +1,7 @@
 use rise::classes::{Character, Class, ClassArchetype};
-use rise::core_mechanics::creatures::attacks::HasAttacks;
-use rise::core_mechanics::creatures::creature::Creature;
-use rise::core_mechanics::creatures::Maneuver;
+use rise::creatures::attacks::HasAttacks;
+use rise::creatures::creature::Creature;
+use rise::creatures::Maneuver;
 use rise::core_mechanics::{Attribute, HasAttributes};
 
 use rise::equipment::{HasWeapons, Weapon};
