@@ -5,8 +5,8 @@ use crate::core_mechanics::creatures::attacks::{
     AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting, UsageTime,
 };
 use crate::core_mechanics::{
-    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode,
-    PassiveAbility, Size, SpecialDefenseModifier, SpeedCategory,
+    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility,
+    Size, SpecialDefenseModifier, SpeedCategory,
 };
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -15,7 +15,6 @@ use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
 use crate::monsters::{FullMonsterDefinition, Monster};
-
 
 enum AgeCategory {
     Wyrmling,

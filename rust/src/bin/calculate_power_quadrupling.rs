@@ -1,6 +1,6 @@
+use rise::calculations::statistical_combat::run_combat;
 use rise::monsters;
 use rise::monsters::ChallengeRating;
-use rise::calculations::statistical_combat::run_combat;
 
 fn main() {
     for level in vec![8, 11, 14, 17, 20] {

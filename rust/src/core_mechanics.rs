@@ -23,4 +23,4 @@ pub use passive_abilities::PassiveAbility;
 pub use resources::{HasResources, Resource};
 pub use senses::Sense;
 pub use sizes::Size;
-pub use vital_wounds::{VitalWound, HasVitalWounds};
+pub use vital_wounds::{HasVitalWounds, VitalWound};

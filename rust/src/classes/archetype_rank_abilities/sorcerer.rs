@@ -41,7 +41,10 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 \end{durationability}
             ",
             // Assuming no other armor
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 3), Modifier::DamageResistance(1)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 3),
+                Modifier::DamageResistance(1),
+            ]),
         },
         RankAbility {
             name: "Mage Armor",

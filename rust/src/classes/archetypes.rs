@@ -223,7 +223,11 @@ impl ClassArchetype {
     // Rank abilities with description == "" should be invisible, and are only used for
     // calculating modifier values.
     pub fn visible_abilities_at_rank(&self, rank: i32) -> Vec<RankAbility> {
-        return self.abilities_at_rank(rank).into_iter().filter(|a| a.description != "").collect();
+        return self
+            .abilities_at_rank(rank)
+            .into_iter()
+            .filter(|a| a.description != "")
+            .collect();
     }
 
     pub fn is_magical(&self) -> bool {
@@ -530,7 +534,8 @@ mod tests {
     fn it_calculates_abilities_at_rank() {
         assert_eq!(
             vec!["Weapon Training"],
-            ClassArchetype::EquipmentTraining.abilities_at_rank(1)
+            ClassArchetype::EquipmentTraining
+                .abilities_at_rank(1)
                 .iter()
                 .map(|a| a.name)
                 .collect::<Vec<&str>>(),
@@ -539,7 +544,8 @@ mod tests {
 
         assert_eq!(
             vec!["Martial Expertise", "Combat Style Rank", "Martial Force"],
-            ClassArchetype::MartialMastery.abilities_at_rank(2)
+            ClassArchetype::MartialMastery
+                .abilities_at_rank(2)
                 .iter()
                 .map(|a| a.name)
                 .collect::<Vec<&str>>(),
