@@ -2666,7 +2666,7 @@ def generate_apparel():
         MagicItem(
             name="Glasses of Epic Perception",
             level=21,
-            material="Glasses",
+            material_type="Glasses",
             tags=[],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to the base value of your Perception.
