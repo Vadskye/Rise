@@ -1,7 +1,8 @@
-use crate::core_mechanics::{Attribute, Defense, HasAttributes};
-use crate::creatures::HasCreatureMechanics;
+use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses};
+use crate::creatures::Creature;
+use crate::creatures::attacks::HasAttacks;
 
-pub fn format_creature<T: HasCreatureMechanics>(creature: &T) -> String {
+pub fn format_creature(creature: &Creature) -> String {
     format!(
         "
             HP {hit_points}, DR {damage_resistance}

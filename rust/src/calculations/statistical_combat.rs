@@ -1,6 +1,7 @@
 use crate::calculations::CombatAgent;
-use crate::creatures::attacks::Attack;
-use crate::creatures::{attacks, HasCreatureMechanics};
+use crate::core_mechanics::HasDefenses;
+use crate::creatures::attacks::{Attack, HasAttacks};
+use crate::creatures::{attacks, Creature};
 use std::cmp::max;
 use std::fmt;
 
@@ -31,11 +32,11 @@ impl fmt::Display for CombatResult {
     }
 }
 
-pub fn run_combat<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
-    blue: Vec<T>,
-    red: Vec<TT>,
+pub fn run_combat(
+    blue: Vec<Creature>,
+    red: Vec<Creature>,
 ) -> CombatResult {
-    let mut damageable: CombatStep<Vec<CombatAgent<T>>, Vec<CombatAgent<TT>>> = CombatStep {
+    let mut damageable: CombatStep<Vec<CombatAgent>, Vec<CombatAgent>> = CombatStep {
         blue: blue.iter().map(|c| CombatAgent::from_creature(c)).collect(),
         red: red.iter().map(|c| CombatAgent::from_creature(c)).collect(),
     };
@@ -44,7 +45,7 @@ pub fn run_combat<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
     // array of creatures. In the future, we can intelligently sort the vectors before entering
     // this block, so the code here won't have to change.
     loop {
-        let mut living: CombatStep<Vec<&mut CombatAgent<T>>, Vec<&mut CombatAgent<TT>>> =
+        let mut living: CombatStep<Vec<&mut CombatAgent>, Vec<&mut CombatAgent>> =
             CombatStep {
                 blue: damageable
                     .blue
@@ -53,7 +54,7 @@ pub fn run_combat<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
                     .collect(),
                 red: damageable.red.iter_mut().filter(|d| d.is_alive()).collect(),
             };
-        let living_creatures: CombatStep<Vec<&T>, Vec<&TT>> = CombatStep {
+        let living_creatures: CombatStep<Vec<&Creature>, Vec<&Creature>> = CombatStep {
             blue: living.blue.iter().map(|d| d.creature).collect(),
             red: living.red.iter().map(|d| d.creature).collect(),
         };
@@ -92,16 +93,16 @@ pub fn run_combat<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
     }
 }
 
-fn survival_percent<T: HasCreatureMechanics>(creatures: &Vec<CombatAgent<T>>) -> f64 {
+fn survival_percent(creatures: &Vec<CombatAgent>) -> f64 {
     let total_damage_absorption: i32 = creatures.iter().map(|d| d.total_damage_absorption()).sum();
     let total_damage_taken: i32 = creatures.iter().map(|d| d.damage_taken).sum();
     return max(0, total_damage_absorption - total_damage_taken) as f64
         / total_damage_absorption as f64;
 }
 
-fn calc_damage_per_round<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
-    attackers: &Vec<&T>,
-    defender: &TT,
+fn calc_damage_per_round(
+    attackers: &Vec<&Creature>,
+    defender: &Creature,
 ) -> f64 {
     return attackers
         .iter()
@@ -109,9 +110,9 @@ fn calc_damage_per_round<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
         .sum();
 }
 
-fn calc_rounds_to_live<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
-    attackers: &Vec<&T>,
-    defender: &CombatAgent<TT>,
+fn calc_rounds_to_live(
+    attackers: &Vec<&Creature>,
+    defender: &CombatAgent,
 ) -> f64 {
     let damage_per_round: f64 = calc_damage_per_round(attackers, defender.creature);
     let damage_absorption = defender.remaining_damage_absorption();
@@ -124,8 +125,8 @@ fn calc_rounds_to_live<T: HasCreatureMechanics, TT: HasCreatureMechanics>(
 }
 
 fn calc_individual_dpr(
-    attacker: &dyn HasCreatureMechanics,
-    defender: &dyn HasCreatureMechanics,
+    attacker: &Creature,
+    defender: &Creature,
 ) -> f64 {
     let attacks = attacker.calc_all_attacks();
     let mut best_damage_per_round = 0.0;
@@ -157,8 +158,8 @@ struct HitProbability {
 
 fn calculate_hit_probability(
     attack: &attacks::Attack,
-    attacker: &dyn HasCreatureMechanics,
-    defender: &dyn HasCreatureMechanics,
+    attacker: &Creature,
+    defender: &Creature,
 ) -> HitProbability {
     // hardcoded
     let max_explosion_depth = 2.0;
