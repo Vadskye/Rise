@@ -20,6 +20,7 @@ pub enum StandardAttack {
     BreathWeaponLine(i32, DamageType, Defense),
     DarkGrasp(i32),
     DarkMiasma(i32),
+    DivineJudgment(i32),
     MindCrush(i32),
 }
 
@@ -256,6 +257,38 @@ impl StandardAttack {
                 } else {
                     AttackTargeting::Radius(None, AreaSize::Small, AreaTargets::Enemies)
                 },
+                usage_time: UsageTime::Standard,
+            },
+            Self::DivineJudgment(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Mental,
+                glance: if *rank >= 4 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    // +1d extra at ranks 4 and 7
+                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Energy],
+                    lose_hp_effects: None,
+                    power_multiplier: 1.0,
+                    take_damage_effects: None,
+                }),
+                is_magical: true,
+                is_strike: false,
+                name: Attack::generate_modified_name("Divine Judgment", *rank, 4, Some(7)),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Creature(if *rank == 7 {
+                    AttackRange::Distant
+                } else if *rank >= 4 {
+                    AttackRange::Long
+                } else {
+                    AttackRange::Medium
+                }),
                 usage_time: UsageTime::Standard,
             },
             Self::MindCrush(rank) => Attack {

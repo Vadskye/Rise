@@ -194,6 +194,9 @@ fn calculate_hit_probability(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::core_mechanics::Defense;
+    use crate::creatures::attack_effects::AttackEffect;
+    use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, StandardAttack};
     use crate::equipment::Weapon;
 
     #[test]
@@ -206,11 +209,20 @@ mod tests {
                 "{:.3} single, {:.3} crit",
                 hit_probability.single_hit_probability, hit_probability.including_crit_probability
             ),
+            "Should be around 50% with +0 vs 6",
         );
-    }
 
-    #[test]
-    fn it_includes_weapon_accuracy_modifier() {
+        let hit_probability =
+            calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 0);
+        assert_eq!(
+            "1.000 single, 1.111 crit",
+            format!(
+                "{:.3} single, {:.3} crit",
+                hit_probability.single_hit_probability, hit_probability.including_crit_probability
+            ),
+            "Should be around 100% with +0 vs 0",
+        );
+
         let hit_probability = calculate_hit_probability(&Attack::from_weapon(Weapon::Claw), 1, 10);
         assert_eq!(
             "0.400 single, 0.444 crit",
@@ -218,6 +230,90 @@ mod tests {
                 "{:.3} single, {:.3} crit",
                 hit_probability.single_hit_probability, hit_probability.including_crit_probability
             ),
+            "Should include weapon accuracy modifier and non-weapon accuracy modifier",
         );
     }
+
+    // #[test]
+    // fn it_calculates_accuracy_with_glancing_blows() {
+    //     let attack = &Attack::from_weapon(Weapon::Broadsword).except(|a| a.glance = Some(AttackEffect::HalfDamage));
+    //     let hit_probability =
+    //         calculate_hit_probability(attack, 0, 6);
+    //     assert_eq!(
+    //         "0.600 single, 0.655 crit",
+    //         format!(
+    //             "{:.3} single, {:.3} crit",
+    //             hit_probability.single_hit_probability, hit_probability.including_crit_probability
+    //         ),
+    //     );
+    // }
+
+    #[test]
+    fn it_calculates_creature_dpr() {
+        let mut attacker = Creature::new(1, CreatureCategory::Character);
+        let mut defender = Creature::new(1, CreatureCategory::Character);
+        assert_eq!(
+            0.0,
+            calc_individual_dpr(&attacker, &defender),
+            "Should be 0.0 when attacker has no attacks",
+        );
+
+        // Ensure that the starting conditions match our expectations
+        assert_eq!(
+            0,
+            attacker.calc_accuracy(),
+            "Attacker should have 0 accuracy",
+        );
+        assert_eq!(
+            vec![0, 0, 0, 0],
+            Defense::all()
+                .iter()
+                .map(|d| defender.calc_defense(d))
+                .collect::<Vec<i32>>(),
+            "Defender should have all defenses 0",
+        );
+
+        attacker.add_special_attack(Attack::from_weapon(Weapon::Broadsword));
+        assert_eq!(
+            "5.000",
+            format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
+            "Should be 4.5 dph * 1.111 hit % = 5 dpr",
+        );
+
+        defender.add_modifier(Modifier::Defense(Defense::Armor, 6), None, None);
+        assert_eq!(
+            "2.498",
+            format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
+            "Should be 4.5 dph * 0.555 hit % = 2.498 dpr after increasing defender Armor defense",
+        );
+
+        attacker.add_special_attack(StandardAttack::DivineJudgment(1).attack());
+        assert_eq!(
+            "6.111",
+            format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
+            "Should be 5.5 dph * 1.111 hit % = 6.111 dpr after adding Divine Judgment",
+        );
+    }
+
+    // #[test]
+    // fn it_calculates_glancing_blows_dpr() {
+    //     let mut attacker = Creature::new(1, CreatureCategory::Character);
+    //     let mut defender = Creature::new(1, CreatureCategory::Character);
+    //     defender.add_modifier(Modifier::Defense(Defense::Armor, 6), None, None);
+    //     attacker.add_special_attack(Attack::from_weapon(Weapon::Broadsword));
+    //     assert_eq!(
+    //         "2.498",
+    //         format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
+    //         "Should be 4.5 dph * 0.555 hit % = 2.498 dpr without glancing blows",
+    //     );
+    //     attacker.add_special_attack(
+    //         Attack::from_weapon(Weapon::Broadsword)
+    //             .except(|a| a.glance = Some(AttackEffect::HalfDamage)),
+    //     );
+    //     assert_eq!(
+    //         "2.948",
+    //         format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
+    //         "Should be 4.5 dph * 0.655 hit % = 2.948 dpr with glancing blows",
+    //     );
+    // }
 }
