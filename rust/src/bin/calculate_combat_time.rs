@@ -17,14 +17,14 @@ fn main() {
         ] {
             // PCs
             let blue = vec![
-                Character::standard_character(level, true),
-                Character::standard_character(level, true),
-                Character::standard_character(level, true),
-                Character::standard_character(level, true),
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
             ];
             let mut red = vec![];
             for cr in &challenge_ratings {
-                red.push(Monster::standard_monster(*cr, level, None, None));
+                red.push(Monster::standard_monster(*cr, level, None, None).creature);
             }
             let results = run_combat(blue, red);
             println!(

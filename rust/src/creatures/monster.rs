@@ -1,11 +1,10 @@
 use crate::core_mechanics::{
-    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources,
-    HasVitalWounds, MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier,
-    SpecialDefenseType, SpeedCategory, VitalWound,
+    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode,
+    SpecialDefenseModifier, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::attacks::HasAttacks;
 use crate::creatures::{
-    attacks, creature, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
+    Creature, CreatureCategory, HasModifiers, Modifier,
 };
 use crate::equipment::{HasWeapons, Weapon};
 use crate::latex_formatting;
@@ -16,7 +15,7 @@ use titlecase::titlecase;
 pub struct Monster {
     pub alignment: Option<String>,
     pub challenge_rating: ChallengeRating,
-    pub creature: creature::Creature,
+    pub creature: Creature,
     pub creature_type: CreatureType,
     pub description: Option<String>,
     pub knowledge: Option<Knowledge>,
@@ -29,11 +28,58 @@ impl Monster {
         creature_type: CreatureType,
         level: i32,
     ) -> Monster {
+        let mut creature = Creature::new(level, CreatureCategory::Monster(challenge_rating));
+        // Creature type modifiers
+        for defense in Defense::all() {
+            creature.add_modifier(
+                Modifier::Defense(defense, creature_type.defense_bonus(&defense)),
+                None,
+                None,
+            );
+        }
+
+        // CR modifiers
+        creature.add_modifier(
+            Modifier::Accuracy(challenge_rating.accuracy_bonus()),
+            None,
+            None,
+        );
+        for defense in Defense::all() {
+            creature.add_modifier(
+                Modifier::Defense(defense, challenge_rating.defense_bonus()),
+                None,
+                None,
+            );
+        }
+
+        // Level scaling modifiers
+        creature.add_modifier(Modifier::Accuracy(level / 9), None, None);
+        for defense in Defense::all() {
+            creature.add_modifier(Modifier::Defense(defense, (level + 6) / 9), None, None);
+        }
+        creature.add_modifier(Modifier::StrikeDamageDice((level - 1) / 3), None, None);
+        let power_scaling = match level / 3 {
+            0 => 0,
+            1 => 1,
+            2 => 2,
+            3 => 3,
+            4 => 4,
+            5 => 6,
+            6 => 8,
+            7 => 12,
+            8 => 16,
+            _ => panic!("Invalid level '{}'", level),
+        };
+        if power_scaling > 0 {
+            creature.add_modifier(Modifier::MagicalPower(power_scaling), None, None);
+            creature.add_modifier(Modifier::MundanePower(power_scaling), None, None);
+        }
+
         return Monster {
             alignment: None,
             challenge_rating,
             creature_type,
-            creature: creature::Creature::new(level),
+            creature,
             description: None,
             knowledge: None,
             movement_modes: vec![],
@@ -46,7 +92,7 @@ impl Monster {
         starting_attribute: Option<i32>,
         creature_type: Option<CreatureType>,
     ) -> Monster {
-        let mut creature = creature::Creature::new(level);
+        let mut creature = Creature::new(level, CreatureCategory::Monster(challenge_rating));
         creature.add_weapon(Weapon::Slam);
         creature.set_name("Standard Monster");
         let starting_attribute = if let Some(a) = starting_attribute {
@@ -74,180 +120,7 @@ impl Monster {
             movement_modes: vec![MovementMode::Land(SpeedCategory::Normal)],
         };
     }
-
-    pub fn set_level(&mut self, level: i32) {
-        self.creature.level = level;
-    }
 }
-
-impl HasModifiers for Monster {
-    fn add_modifier(&mut self, modifier: Modifier, name: Option<&str>, priority: Option<i32>) {
-        self.creature.add_modifier(modifier, name, priority);
-    }
-
-    fn add_magic_modifier(&mut self, modifier: Modifier) {
-        self.creature.add_magic_modifier(modifier);
-    }
-
-    fn get_modifiers(&self) -> Vec<Modifier> {
-        return self.creature.get_modifiers();
-    }
-
-    fn calc_total_modifier(&self, mt: ModifierType) -> i32 {
-        return self.creature.calc_total_modifier(mt);
-    }
-}
-
-impl HasAttributes for Monster {
-    fn get_base_attribute(&self, attribute: &Attribute) -> i32 {
-        return self.creature.get_base_attribute(attribute);
-    }
-    fn calc_total_attribute(&self, attribute: &Attribute) -> i32 {
-        return self.creature.calc_total_attribute(attribute);
-    }
-    fn set_base_attribute(&mut self, attribute: Attribute, value: i32) {
-        self.creature.set_base_attribute(attribute, value);
-    }
-}
-
-impl HasAttacks for Monster {
-    fn add_special_attack(&mut self, attack: attacks::Attack) {
-        self.creature.add_special_attack(attack);
-    }
-
-    fn calc_all_attacks(&self) -> Vec<attacks::Attack> {
-        return self.creature.calc_all_attacks();
-    }
-
-    fn calc_accuracy(&self) -> i32 {
-        return self.creature.calc_accuracy()
-            + self.challenge_rating.accuracy_bonus()
-            + self.creature.level / 9;
-    }
-
-    fn calc_damage_per_round_multiplier(&self) -> f64 {
-        return self.creature.calc_damage_per_round_multiplier()
-            * self.challenge_rating.damage_per_round_multiplier();
-    }
-
-    fn calc_damage_increments(&self, is_strike: bool) -> i32 {
-        let level_modifier = if is_strike {
-            (self.creature.level - 1) / 3
-        } else {
-            0
-        };
-        // A rank 3 spell can get a +1d damage bonus just from rank upgrades.
-        // This is a little overly specific, but it represents the idea that monsters are using
-        // more powerful spells and maneuvers at higher levels. The numbers are a little spiky for
-        // strikes, but this has to be at the same level as the strike damage upgrades - the whole
-        // point is that the strike upgrades are trying to keep pace with the automatic spell rank
-        // upgrades.
-        let special_attack_modifier = (self.creature.level - 1) / 6;
-
-        return self.creature.calc_damage_increments(is_strike)
-            + self.challenge_rating.damage_increments()
-            + level_modifier
-            + special_attack_modifier;
-    }
-
-    fn calc_power(&self, is_magical: bool) -> i32 {
-        let level_scaling = match self.creature.level / 3 {
-            0 => 0,
-            1 => 1,
-            2 => 2,
-            3 => 3,
-            4 => 4,
-            5 => 6,
-            6 => 8,
-            7 => 12,
-            8 => 16,
-            _ => panic!("Invalid level '{}'", self.creature.level),
-        };
-        return self.creature.calc_power(is_magical) + level_scaling;
-    }
-}
-
-impl HasWeapons for Monster {
-    fn add_weapon(&mut self, weapon: Weapon) {
-        self.creature.add_weapon(weapon);
-    }
-
-    fn get_weapons(&self) -> Vec<&Weapon> {
-        return self.creature.get_weapons();
-    }
-}
-
-impl HasDamageAbsorption for Monster {
-    fn calc_damage_resistance(&self) -> i32 {
-        return ((self.creature.calc_damage_resistance() as f64)
-            * 3.0
-            * self.challenge_rating.dr_multiplier()) as i32;
-    }
-    fn calc_hit_points(&self) -> i32 {
-        return ((self.creature.calc_hit_points() as f64)
-            * 1.5
-            * self.challenge_rating.hp_multiplier()) as i32;
-    }
-}
-
-impl HasDefenses for Monster {
-    fn calc_defense(&self, defense: &Defense) -> i32 {
-        let mut value = self.creature.calc_defense(defense)
-            + self.creature_type.defense_bonus(defense)
-            + self.challenge_rating.defense_bonus()
-            + (self.creature.level + 6) / 9;
-        match defense {
-            Defense::Armor => {
-                value = value
-                    + self.get_base_attribute(&Attribute::Dexterity) / 2
-                    + self.get_base_attribute(&Attribute::Constitution) / 2;
-            }
-            _ => {}
-        };
-        return value;
-    }
-}
-
-impl HasResources for Monster {
-    fn calc_resource(&self, resource: &Resource) -> i32 {
-        return self.creature.calc_resource(resource);
-    }
-}
-
-impl HasSkills for Monster {
-    fn set_skill_trained(&mut self, skill: Skill, trained: bool) {
-        return self.creature.set_skill_trained(skill, trained);
-    }
-
-    fn is_skill_trained(&self, skill: &Skill) -> bool {
-        return self.creature.is_skill_trained(skill);
-    }
-
-    fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
-        return self.creature.calc_skill_modifier(skill);
-    }
-}
-
-impl HasVitalWounds for Monster {
-    fn add_vital_wound(&mut self, vital_wound: VitalWound) {
-        return self.creature.add_vital_wound(vital_wound);
-    }
-
-    fn calc_vital_roll_modifier(&self) -> i32 {
-        return 0;
-    }
-
-    fn generate_vital_wound(&self) -> VitalWound {
-        return VitalWound::Zero;
-    }
-
-    fn is_vitally_unconscious(&self) -> bool {
-        return self.creature.is_vitally_unconscious();
-    }
-}
-
-// No need for explicit functions here - it's handled by the above functions
-impl HasCreatureMechanics for Monster {}
 
 // LaTeX conversion
 impl Monster {
@@ -317,7 +190,7 @@ impl Monster {
             movement = self.latex_movement(),
             senses = self.latex_senses(),
             attributes = self.latex_attributes(),
-            accuracy = latex_formatting::modifier(self.calc_accuracy()),
+            accuracy = latex_formatting::modifier(self.creature.calc_accuracy()),
             power = self.latex_power(),
             alignment = latex_formatting::uppercase_first_letter(
                 self.alignment.as_deref().unwrap_or("")
@@ -375,12 +248,12 @@ impl Monster {
     fn latex_skill_modifiers_from_category(&self, skill_category: &SkillCategory) -> Vec<String> {
         return Skill::all_from_skill_category(skill_category)
             .iter()
-            .filter(|s| self.is_skill_trained(s))
+            .filter(|s| self.creature.is_skill_trained(s))
             .map(|s| {
                 format!(
                     "{}~{}",
                     titlecase(s.name()),
-                    latex_formatting::modifier(self.calc_skill_modifier(s))
+                    latex_formatting::modifier(self.creature.calc_skill_modifier(s))
                 )
             })
             .collect::<Vec<String>>();
@@ -438,19 +311,19 @@ impl Monster {
                     \\monsep Ref {ref}
                     \\monsep Ment {ment}
             ",
-            hp = self.calc_hit_points(),
+            hp = self.creature.calc_hit_points(),
             immunities = "", // TODO
-            dr = self.calc_damage_resistance(),
-            armor = self.calc_defense(&Defense::Armor),
-            fort = self.calc_defense(&Defense::Fortitude),
-            ref = self.calc_defense(&Defense::Reflex),
-            ment = self.calc_defense(&Defense::Mental),
+            dr = self.creature.calc_damage_resistance(),
+            armor = self.creature.calc_defense(&Defense::Armor),
+            fort = self.creature.calc_defense(&Defense::Fortitude),
+            ref = self.creature.calc_defense(&Defense::Reflex),
+            ment = self.creature.calc_defense(&Defense::Mental),
         );
     }
 
     fn latex_power(&self) -> String {
-        let mundane_power = self.calc_power(false);
-        let magical_power = self.calc_power(true);
+        let mundane_power = self.creature.calc_power(false);
+        let magical_power = self.creature.calc_power(true);
         if mundane_power == magical_power {
             return format!("\\textbf<Power> {}", mundane_power);
         } else {
@@ -465,18 +338,24 @@ impl Monster {
     fn latex_attributes(&self) -> String {
         return Attribute::all()
             .iter()
-            .map(|a| format!("{} {}", a.shorthand_name(), self.calc_total_attribute(a)))
+            .map(|a| {
+                format!(
+                    "{} {}",
+                    a.shorthand_name(),
+                    self.creature.calc_total_attribute(a)
+                )
+            })
             .collect::<Vec<String>>()
             .join(", ");
     }
 
     // This could probably be moved to Creature instead of Monster
     fn latex_abilities(&self) -> String {
-        let mut attacks = self.calc_all_attacks();
+        let mut attacks = self.creature.calc_all_attacks();
         attacks.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
         let mut ability_texts = attacks
             .iter()
-            .map(|a| a.latex_ability_block(self))
+            .map(|a| a.latex_ability_block(&self.creature))
             .collect::<Vec<String>>();
         if let Some(ref passive_abilities) = self.creature.passive_abilities {
             let mut passive_ability_texts = passive_abilities
