@@ -1,25 +1,19 @@
+use super::creature::CreatureCategory;
 use crate::classes::{calc_rank_abilities, Class, ClassArchetype};
-use crate::core_mechanics::{
-    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasResources,
-    HasVitalWounds, Resource, VitalWound,
-};
-use crate::creatures::attacks::{self, HasAttacks};
-use crate::creatures::{
-    creature, latex, HasCreatureMechanics, HasModifiers, Modifier, ModifierType,
-};
+use crate::core_mechanics::{Attribute, HasAttributes, HasResources, Resource};
+use crate::creatures::{creature, latex, HasModifiers, Modifier};
 use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, HasWeapons, Weapon};
-use crate::skills::{HasSkills, Skill};
 
 pub struct Character {
     archetypes: [ClassArchetype; 3],
     class: Class,
-    creature: creature::Creature,
+    pub creature: creature::Creature,
 }
 
 impl Character {
     // archetypes should be provided in the order that they should be ranked up
     pub fn new(class: Class, level: i32, archetypes: [ClassArchetype; 3]) -> Character {
-        let mut creature = creature::Creature::new(level);
+        let mut creature = creature::Creature::new(level, CreatureCategory::Character);
 
         for rank_ability in calc_rank_abilities(level, &archetypes) {
             if let Some(rank_modifiers) = rank_ability.modifiers {
@@ -31,6 +25,14 @@ impl Character {
                     );
                 }
             }
+        }
+
+        for resource in Resource::all() {
+            creature.add_modifier(
+                Modifier::Resource(resource, class.resource_bonus(&resource)),
+                None,
+                None,
+            );
         }
 
         return Character {
@@ -96,13 +98,13 @@ impl Character {
                 {class_name} {level}
                 AP {ap}, FT {ft}, IP {ip}, SP {sp}
             ",
-            creature_latex = latex::format_creature(self),
+            creature_latex = latex::format_creature(&self.creature),
             class_name = self.class.name(),
             level = self.creature.level,
-            ap = self.calc_resource(&Resource::AttunementPoint),
-            ft = self.calc_resource(&Resource::FatigueTolerance),
-            ip = self.calc_resource(&Resource::InsightPoint),
-            sp = self.calc_resource(&Resource::TrainedSkill),
+            ap = self.creature.calc_resource(&Resource::AttunementPoint),
+            ft = self.creature.calc_resource(&Resource::FatigueTolerance),
+            ip = self.creature.calc_resource(&Resource::InsightPoint),
+            sp = self.creature.calc_resource(&Resource::TrainedSkill),
             // attacks = attacks
             //     .iter()
             //     .map(|a| a.shorthand_description(self))
@@ -111,153 +113,6 @@ impl Character {
         );
     }
 }
-
-impl HasModifiers for Character {
-    fn add_modifier(&mut self, modifier: Modifier, name: Option<&str>, priority: Option<i32>) {
-        self.creature.add_modifier(modifier, name, priority);
-    }
-
-    fn add_magic_modifier(&mut self, modifier: Modifier) {
-        self.creature.add_magic_modifier(modifier);
-    }
-
-    fn get_modifiers(&self) -> Vec<Modifier> {
-        return self.creature.get_modifiers();
-    }
-
-    fn calc_total_modifier(&self, mt: ModifierType) -> i32 {
-        return self.creature.calc_total_modifier(mt);
-    }
-}
-
-impl HasAttributes for Character {
-    fn get_base_attribute(&self, attribute: &Attribute) -> i32 {
-        return self.creature.get_base_attribute(attribute);
-    }
-    fn calc_total_attribute(&self, attribute: &Attribute) -> i32 {
-        return self.creature.calc_total_attribute(attribute);
-    }
-    fn set_base_attribute(&mut self, attribute: Attribute, value: i32) {
-        self.creature.set_base_attribute(attribute, value);
-    }
-}
-
-impl HasAttacks for Character {
-    fn add_special_attack(&mut self, attack: attacks::Attack) {
-        self.creature.add_special_attack(attack);
-    }
-
-    fn calc_all_attacks(&self) -> Vec<attacks::Attack> {
-        return self.creature.calc_all_attacks();
-    }
-
-    fn calc_accuracy(&self) -> i32 {
-        return self.creature.calc_accuracy();
-    }
-
-    fn calc_damage_per_round_multiplier(&self) -> f64 {
-        return 1.0;
-    }
-
-    fn calc_damage_increments(&self, is_strike: bool) -> i32 {
-        return self.creature.calc_damage_increments(is_strike);
-    }
-
-    fn calc_power(&self, is_magical: bool) -> i32 {
-        return self.creature.calc_power(is_magical);
-    }
-}
-
-impl HasArmor for Character {
-    fn add_armor(&mut self, armor: Armor) {
-        self.creature.add_armor(armor);
-    }
-
-    fn get_armor(&self) -> Vec<&Armor> {
-        return self.creature.get_armor();
-    }
-
-    fn calc_encumbrance(&self) -> i32 {
-        return self.creature.calc_encumbrance();
-    }
-}
-
-impl HasWeapons for Character {
-    fn add_weapon(&mut self, weapon: Weapon) {
-        self.creature.add_weapon(weapon);
-    }
-
-    fn get_weapons(&self) -> Vec<&Weapon> {
-        return self.creature.get_weapons();
-    }
-}
-
-impl HasDamageAbsorption for Character {
-    fn calc_damage_resistance(&self) -> i32 {
-        return self.creature.calc_damage_resistance();
-    }
-
-    fn calc_hit_points(&self) -> i32 {
-        return self.creature.calc_hit_points();
-    }
-}
-
-impl HasDefenses for Character {
-    fn calc_defense(&self, defense: &Defense) -> i32 {
-        let mut value = self.creature.calc_defense(defense) + self.class.defense_bonus(defense);
-        match defense {
-            // TODO: check for light armor
-            Defense::Armor => {
-                value = value
-                    + self.get_base_attribute(&Attribute::Dexterity) / 2
-                    + self.get_base_attribute(&Attribute::Constitution) / 2;
-            }
-            _ => {}
-        };
-        return value;
-    }
-}
-
-impl HasResources for Character {
-    fn calc_resource(&self, resource: &Resource) -> i32 {
-        return self.creature.calc_resource(resource) + self.class.resource_bonus(resource);
-    }
-}
-
-impl HasSkills for Character {
-    fn set_skill_trained(&mut self, skill: Skill, trained: bool) {
-        return self.creature.set_skill_trained(skill, trained);
-    }
-
-    fn is_skill_trained(&self, skill: &Skill) -> bool {
-        return self.creature.is_skill_trained(skill);
-    }
-
-    fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
-        return self.creature.calc_skill_modifier(skill);
-    }
-}
-
-impl HasVitalWounds for Character {
-    fn add_vital_wound(&mut self, vital_wound: VitalWound) {
-        return self.creature.add_vital_wound(vital_wound);
-    }
-
-    fn calc_vital_roll_modifier(&self) -> i32 {
-        return self.creature.calc_vital_roll_modifier();
-    }
-
-    fn generate_vital_wound(&self) -> VitalWound {
-        return self.creature.generate_vital_wound();
-    }
-
-    fn is_vitally_unconscious(&self) -> bool {
-        return self.creature.is_vitally_unconscious();
-    }
-}
-
-// No need for explicit funtions here - it's handled by the above functions
-impl HasCreatureMechanics for Character {}
 
 fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     let mut modifiers = vec![];

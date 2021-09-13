@@ -2,6 +2,7 @@ use crate::core_mechanics::{
     Attribute, HasAttributes, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier,
     SpeedCategory,
 };
+use crate::creatures::CreatureCategory;
 use crate::creatures::{
     attacks::{Attack, HasAttacks},
     creature::Creature,
@@ -32,7 +33,7 @@ pub struct FullMonsterDefinition {
 
 impl FullMonsterDefinition {
     pub fn monster(self) -> Monster {
-        let mut creature = Creature::new(self.level);
+        let mut creature = Creature::new(self.level, CreatureCategory::Monster(self.challenge_rating));
         creature.set_name(&self.name);
         for (i, attribute) in Attribute::all().iter().enumerate() {
             creature.set_base_attribute(attribute.clone(), self.attributes[i]);

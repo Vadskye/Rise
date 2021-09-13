@@ -8,15 +8,17 @@ use crate::creatures::{
     latex, HasCreatureMechanics, HasModifiers, Maneuver, Modifier, ModifierType,
 };
 use crate::equipment::{Armor, HasArmor, HasWeapons, Weapon};
+use crate::monsters::ChallengeRating;
 use crate::skills::{HasSkills, Skill};
 use std::cmp::max;
 use std::collections::HashMap;
 
 pub struct Creature {
-    base_attributes: HashMap<Attribute, i32>,
     anonymous_modifiers: Vec<Modifier>,
-    pub armor: Vec<Armor>,
+    base_attributes: HashMap<Attribute, i32>,
+    category: CreatureCategory,
     identified_modifiers: Vec<IdentifiedModifier>,
+    pub armor: Vec<Armor>,
     pub level: i32,
     pub movement_modes: Vec<MovementMode>,
     pub name: Option<String>,
@@ -30,13 +32,18 @@ pub struct Creature {
     pub weapons: Vec<Weapon>,
 }
 
+pub enum CreatureCategory {
+    Character,
+    Monster(ChallengeRating),
+}
+
 impl Creature {
-    pub fn new(level: i32) -> Creature {
-        let base_attributes = HashMap::<Attribute, i32>::new();
+    pub fn new(level: i32, category: CreatureCategory) -> Creature {
         return Creature {
             anonymous_modifiers: vec![],
             armor: vec![],
-            base_attributes,
+            base_attributes: HashMap::<Attribute, i32>::new(),
+            category,
             identified_modifiers: vec![],
             level,
             movement_modes: vec![],
@@ -215,8 +222,13 @@ impl HasDamageAbsorption for Creature {
             _ => panic!("Invalid level {}", self.level),
         };
 
-        return dr_from_level
-            + (self.get_base_attribute(&Attribute::Constitution) as i32)
+        let dr_multiplier = match self.category {
+            CreatureCategory::Character => 1,
+            CreatureCategory::Monster(_) => 3,
+        };
+
+        return dr_multiplier * dr_from_level
+            + self.get_base_attribute(&Attribute::Constitution)
             + self.calc_total_modifier(ModifierType::DamageResistance);
     }
 
@@ -246,7 +258,12 @@ impl HasDamageAbsorption for Creature {
             _ => panic!("Invalid level {}", self.level),
         };
 
-        return hp_from_level
+        let hp_multiplier = match self.category {
+            CreatureCategory::Character => 1.0,
+            CreatureCategory::Monster(_) => 1.5,
+        };
+
+        return (hp_multiplier * hp_from_level as f64) as i32
             + (self.get_base_attribute(&Attribute::Constitution) as i32)
             + self.calc_total_modifier(ModifierType::HitPoints);
     }
@@ -316,7 +333,10 @@ impl HasAttacks for Creature {
     }
 
     fn calc_damage_per_round_multiplier(&self) -> f64 {
-        return 1.0;
+        match self.category {
+            CreatureCategory::Character => 1.0,
+            CreatureCategory::Monster(cr) => cr.damage_per_round_multiplier(),
+        }
     }
 
     fn calc_accuracy(&self) -> i32 {
@@ -327,11 +347,15 @@ impl HasAttacks for Creature {
     }
 
     fn calc_damage_increments(&self, is_strike: bool) -> i32 {
+        let mut increments: i32 = 0;
         if is_strike {
-            return self.calc_total_modifier(ModifierType::StrikeDamageDice);
-        } else {
-            return 0;
+            increments += self.calc_total_modifier(ModifierType::StrikeDamageDice);
         }
+        increments += match self.category {
+            CreatureCategory::Character => 0,
+            CreatureCategory::Monster(cr) => cr.damage_increments(),
+        };
+        return increments;
     }
 
     fn calc_power(&self, is_magical: bool) -> i32 {
@@ -376,10 +400,15 @@ impl HasWeapons for Creature {
 
 impl HasDefenses for Creature {
     fn calc_defense(&self, defense: &Defense) -> i32 {
-        let attribute_bonus = if let Some(a) = defense.associated_attribute() {
-            self.get_base_attribute(&a)
-        } else {
-            0
+        let attribute_bonus = match defense {
+            // TODO: check for light armor
+            Defense::Armor => {
+                self.get_base_attribute(&Attribute::Dexterity) / 2
+                    + self.get_base_attribute(&Attribute::Constitution) / 2
+            }
+            Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
+            Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
+            Defense::Mental => self.get_base_attribute(&Attribute::Willpower),
         };
         let armor_bonus = if defense.include_armor_bonus() {
             self.get_armor().iter().map(|a| a.defense()).sum()
@@ -419,11 +448,17 @@ impl HasVitalWounds for Creature {
     }
 
     fn calc_vital_roll_modifier(&self) -> i32 {
-        return self.calc_total_modifier(ModifierType::VitalRoll) - self.vital_wounds.len() as i32;
+        match self.category {
+            CreatureCategory::Character => self.calc_total_modifier(ModifierType::VitalRoll) - self.vital_wounds.len() as i32,
+            CreatureCategory::Monster(_) => 0,
+        }
     }
 
     fn generate_vital_wound(&self) -> VitalWound {
-        return VitalWound::vital_roll(self.calc_vital_roll_modifier());
+        match self.category {
+            CreatureCategory::Character => VitalWound::vital_roll(self.calc_vital_roll_modifier()),
+            CreatureCategory::Monster(_) => VitalWound::Zero,
+        }
     }
 
     fn is_vitally_unconscious(&self) -> bool {

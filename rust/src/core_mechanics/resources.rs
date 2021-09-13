@@ -11,6 +11,15 @@ pub enum Resource {
 }
 
 impl Resource {
+    pub fn all() -> Vec<Self> {
+        return vec![
+            Self::AttunementPoint,
+            Self::FatigueTolerance,
+            Self::InsightPoint,
+            Self::TrainedSkill,
+        ];
+    }
+
     pub fn name(&self) -> &str {
         match self {
             Self::AttunementPoint => "attunement point",

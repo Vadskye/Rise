@@ -41,19 +41,31 @@ fn it_calculates_modifiers() {
         ],
     );
 
-    let modifiers = warlock.get_modifiers();
+    let modifiers = warlock.creature.get_modifiers();
     let mut modifier_descriptions: Vec<String> =
         modifiers.iter().map(|a| a.description()).collect();
     modifier_descriptions.sort();
     // Note that this ignores the DR 1 ability from rank 0 blessings of the abyss
     assert_eq!(
-        vec!["DR 2", "attack Abyssal Blast", "focus -2",],
+        vec![
+            "DR 2",
+            "attack Abyssal Blast",
+            "focus -2",
+            "resource attunement point by 3",
+            "resource fatigue tolerance by 3",
+            "resource insight point by 3",
+            "resource trained skill by 3"
+        ],
         modifier_descriptions,
         "Should match expected names"
     );
 
     // Two from intrisic level modifier, two from rank abilities
-    assert_eq!(4, warlock.calc_damage_resistance(), "Should have DR 4");
+    assert_eq!(
+        4,
+        warlock.creature.calc_damage_resistance(),
+        "Should have DR 4"
+    );
 }
 
 #[test]
@@ -68,12 +80,12 @@ fn it_calculates_abyssal_blast() {
         ],
     );
 
-    let attacks = warlock.calc_all_attacks();
+    let attacks = warlock.creature.calc_all_attacks();
     assert_eq!(1, attacks.len(), "Should have one attack");
     let abyssal_blast = &attacks[0];
     assert_eq!(
         "Abyssal Blast +10 (The subject takes 7d10+12 fire damage.)",
-        abyssal_blast.shorthand_description(&warlock),
+        abyssal_blast.shorthand_description(&warlock.creature),
         "Should have correct description"
     );
 }
