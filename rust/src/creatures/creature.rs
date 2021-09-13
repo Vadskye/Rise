@@ -4,20 +4,20 @@ use crate::core_mechanics::{
     VitalWound,
 };
 use crate::creatures::attacks::{self, Attack, HasAttacks};
-use crate::creatures::{
-    latex, HasModifiers, Maneuver, Modifier, ModifierType,
-};
+use crate::creatures::{latex, HasDamageTracking, HasModifiers, Maneuver, Modifier, ModifierType};
 use crate::equipment::{Armor, HasArmor, HasWeapons, Weapon};
 use crate::monsters::ChallengeRating;
 use crate::skills::{HasSkills, Skill};
-use std::cmp::max;
+use std::cmp::{max, min};
 use std::collections::HashMap;
 
 pub struct Creature {
     anonymous_modifiers: Vec<Modifier>,
     base_attributes: HashMap<Attribute, i32>,
     category: CreatureCategory,
+    pub damage_resistance_lost: i32,
     identified_modifiers: Vec<IdentifiedModifier>,
+    pub hit_points_lost: i32,
     pub armor: Vec<Armor>,
     pub level: i32,
     pub movement_modes: Vec<MovementMode>,
@@ -44,6 +44,8 @@ impl Creature {
             armor: vec![],
             base_attributes: HashMap::<Attribute, i32>::new(),
             category,
+            damage_resistance_lost: 0,
+            hit_points_lost: 0,
             identified_modifiers: vec![],
             level,
             movement_modes: vec![],
@@ -534,5 +536,34 @@ impl HasSkills for Creature {
 
         return training_modifier - encumbrance_modifier
             + self.calc_total_modifier(ModifierType::Skill(skill.clone()));
+    }
+}
+
+impl HasDamageTracking for Creature {
+    fn apply_vital_wounds_from_damage(&mut self) {
+        if self.remaining_hit_points() < 0 {
+            let excess_damage = -self.remaining_hit_points();
+            self.hit_points_lost = self.calc_hit_points();
+            // One automatic vital wound, plus one more for every increment of half max HP
+            let vital_wound_threshold = self.calc_hit_points() / 2;
+            let vital_wound_count = 1 + excess_damage / vital_wound_threshold;
+            for _ in 0..vital_wound_count {
+                self.add_vital_wound(self.generate_vital_wound());
+            }
+        }
+    }
+
+    fn remaining_damage_resistance(&self) -> i32 {
+        return self.calc_damage_resistance() - self.damage_resistance_lost;
+    }
+
+    fn remaining_hit_points(&self) -> i32 {
+        return self.calc_hit_points() - self.damage_resistance_lost;
+    }
+
+    fn take_damage(&mut self, damage: i32) {
+        let damage_resisted = min(self.remaining_damage_resistance(), damage);
+        self.damage_resistance_lost += damage_resisted;
+        self.hit_points_lost += damage - damage_resisted;
     }
 }
