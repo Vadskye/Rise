@@ -174,12 +174,13 @@ fn calculate_hit_probability(
         } else {
             hit_probability
         };
+        let hit_probability = hit_probability * f64::powf(0.1, explosion_count);
         if hit_probability > 0.0 {
-            if crit_count == 0.0 {
+            if single_hit_probability == 0.0 {
                 single_hit_probability = hit_probability;
             }
             crit_count += 1.0;
-            including_crit_probability += hit_probability * f64::powf(0.1, explosion_count);
+            including_crit_probability += hit_probability;
         } else if explosion_count < max_explosion_depth {
             explosion_count += 1.0;
         } else {
@@ -231,6 +232,31 @@ mod tests {
                 hit_probability.single_hit_probability, hit_probability.including_crit_probability
             ),
             "Should include weapon accuracy modifier and non-weapon accuracy modifier",
+        );
+    }
+
+    #[test]
+    fn it_calculates_extreme_hit_probability() {
+        let hit_probability =
+            calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 16);
+        assert_eq!(
+            "0.050 single, 0.055 crit",
+            format!(
+                "{:.3} single, {:.3} crit",
+                hit_probability.single_hit_probability, hit_probability.including_crit_probability
+            ),
+            "Should be around 5% with +0 vs 16",
+        );
+
+        let hit_probability =
+            calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 10, 6);
+        assert_eq!(
+            "1.000 single, 1.555 crit",
+            format!(
+                "{:.3} single, {:.3} crit",
+                hit_probability.single_hit_probability, hit_probability.including_crit_probability
+            ),
+            "Should be over 100% with +10 vs 6",
         );
     }
 
