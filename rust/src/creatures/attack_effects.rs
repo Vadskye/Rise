@@ -1,5 +1,6 @@
 use crate::core_mechanics::{DamageDice, DamageType, Debuff};
-use crate::creatures::HasCreatureMechanics;
+use crate::creatures::Creature;
+use crate::creatures::attacks::HasAttacks;
 use crate::equipment::Weapon;
 use crate::latex_formatting;
 
@@ -80,9 +81,9 @@ impl AttackEffect {
         });
     }
 
-    pub fn description<T: HasCreatureMechanics>(
+    pub fn description(
         &self,
-        attacker: &T,
+        attacker: &Creature,
         is_magical: bool,
         is_strike: bool,
         the_subject: &str,

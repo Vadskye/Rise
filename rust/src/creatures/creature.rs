@@ -5,7 +5,7 @@ use crate::core_mechanics::{
 };
 use crate::creatures::attacks::{self, Attack, HasAttacks};
 use crate::creatures::{
-    latex, HasCreatureMechanics, HasModifiers, Maneuver, Modifier, ModifierType,
+    latex, HasModifiers, Maneuver, Modifier, ModifierType,
 };
 use crate::equipment::{Armor, HasArmor, HasWeapons, Weapon};
 use crate::monsters::ChallengeRating;
@@ -493,9 +493,6 @@ impl HasVitalWounds for Creature {
         return false;
     }
 }
-
-// No need for explicit funtions here - it's handled by the above functions
-impl HasCreatureMechanics for Creature {}
 
 impl HasSkills for Creature {
     fn set_skill_trained(&mut self, skill: Skill, trained: bool) {

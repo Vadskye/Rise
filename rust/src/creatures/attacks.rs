@@ -1,6 +1,6 @@
 use crate::core_mechanics::{DamageDice, Defense};
 use crate::creatures::attack_effects::{AttackEffect, DamageEffect};
-use crate::creatures::{attack_effects, HasCreatureMechanics};
+use crate::creatures::{attack_effects, Creature};
 use crate::equipment::Weapon;
 use crate::latex_formatting;
 use std::fmt;
@@ -94,7 +94,7 @@ impl Attack {
         return None;
     }
 
-    pub fn calc_damage_dice(&self, creature: &dyn HasCreatureMechanics) -> Option<DamageDice> {
+    pub fn calc_damage_dice(&self, creature: &Creature) -> Option<DamageDice> {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
                 damage_effect
@@ -105,7 +105,7 @@ impl Attack {
         return None;
     }
 
-    pub fn calc_damage_modifier(&self, creature: &dyn HasCreatureMechanics) -> Option<i32> {
+    pub fn calc_damage_modifier(&self, creature: &Creature) -> Option<i32> {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
                 damage_effect.damage_modifier
@@ -121,7 +121,7 @@ impl Attack {
         return weapons.iter().map(|w| Self::from_weapon(**w)).collect();
     }
 
-    pub fn shorthand_description<T: HasCreatureMechanics>(&self, creature: &T) -> String {
+    pub fn shorthand_description(&self, creature: &Creature) -> String {
         return format!(
             "{name} {accuracy} ({hit})",
             name = latex_formatting::uppercase_first_letter(&self.name),
@@ -142,7 +142,7 @@ impl Attack {
 
 // LaTeX generation functions
 impl Attack {
-    pub fn latex_ability_block<T: HasCreatureMechanics>(&self, creature: &T) -> String {
+    pub fn latex_ability_block(&self, creature: &Creature) -> String {
         let ability_components: Vec<Option<String>> =
             vec![Some(self.latex_tags()), Some(self.latex_effect(creature))];
         let ability_components = ability_components
@@ -174,7 +174,7 @@ impl Attack {
             .to_string();
     }
 
-    fn latex_effect<T: HasCreatureMechanics>(&self, creature: &T) -> String {
+    fn latex_effect(&self, creature: &Creature) -> String {
         return format!(
             "
                 The $name makes a {accuracy} {targeting}.
