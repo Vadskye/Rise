@@ -20,7 +20,7 @@ impl Character {
                 for modifier in rank_modifiers {
                     creature.add_modifier(
                         modifier.clone(),
-                        Some(format!("{} {}", rank_ability.name, modifier.name()).as_str()),
+                        Some(rank_ability.name),
                         Some(rank_ability.rank),
                     );
                 }
@@ -30,7 +30,7 @@ impl Character {
         for resource in Resource::all() {
             creature.add_modifier(
                 Modifier::Resource(resource, class.resource_bonus(&resource)),
-                None,
+                Some(class.name()),
                 None,
             );
         }
