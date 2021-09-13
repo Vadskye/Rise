@@ -129,7 +129,8 @@ fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
             let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
             let average_damage_per_round = hit_probability.single_hit_probability
                 * damage_modifier as f64
-                + hit_probability.including_crit_probability * damage_dice.average_damage() as f64;
+                + (hit_probability.single_hit_probability + hit_probability.crit_probability)
+                    * damage_dice.average_damage() as f64;
             if average_damage_per_round > best_damage_per_round {
                 best_damage_per_round = average_damage_per_round;
                 best_attack = Some(attack);
@@ -144,7 +145,7 @@ fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
 
 struct HitProbability {
     single_hit_probability: f64,
-    including_crit_probability: f64,
+    crit_probability: f64,
 }
 
 fn calculate_hit_probability(
@@ -156,7 +157,7 @@ fn calculate_hit_probability(
     let max_explosion_depth = 2.0;
 
     let mut single_hit_probability = 0.0;
-    let mut including_crit_probability = 0.0;
+    let mut crit_probability = 0.0;
     let mut crit_count = 0.0;
     let mut explosion_count = 0.0;
     loop {
@@ -178,15 +179,16 @@ fn calculate_hit_probability(
         if hit_probability > 0.0 {
             if single_hit_probability == 0.0 {
                 single_hit_probability = hit_probability;
+            } else {
+                crit_probability += hit_probability;
             }
             crit_count += 1.0;
-            including_crit_probability += hit_probability;
         } else if explosion_count < max_explosion_depth {
             explosion_count += 1.0;
         } else {
             return HitProbability {
+                crit_probability,
                 single_hit_probability,
-                including_crit_probability,
             };
         }
     }
@@ -205,10 +207,10 @@ mod tests {
         let hit_probability =
             calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 6);
         assert_eq!(
-            "0.500 single, 0.555 crit",
+            "0.500 single, 0.055 crit",
             format!(
                 "{:.3} single, {:.3} crit",
-                hit_probability.single_hit_probability, hit_probability.including_crit_probability
+                hit_probability.single_hit_probability, hit_probability.crit_probability
             ),
             "Should be around 50% with +0 vs 6",
         );
@@ -216,20 +218,20 @@ mod tests {
         let hit_probability =
             calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 0);
         assert_eq!(
-            "1.000 single, 1.111 crit",
+            "1.000 single, 0.111 crit",
             format!(
                 "{:.3} single, {:.3} crit",
-                hit_probability.single_hit_probability, hit_probability.including_crit_probability
+                hit_probability.single_hit_probability, hit_probability.crit_probability
             ),
             "Should be around 100% with +0 vs 0",
         );
 
         let hit_probability = calculate_hit_probability(&Attack::from_weapon(Weapon::Claw), 1, 10);
         assert_eq!(
-            "0.400 single, 0.444 crit",
+            "0.400 single, 0.044 crit",
             format!(
                 "{:.3} single, {:.3} crit",
-                hit_probability.single_hit_probability, hit_probability.including_crit_probability
+                hit_probability.single_hit_probability, hit_probability.crit_probability
             ),
             "Should include weapon accuracy modifier and non-weapon accuracy modifier",
         );
@@ -240,10 +242,10 @@ mod tests {
         let hit_probability =
             calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 16);
         assert_eq!(
-            "0.050 single, 0.055 crit",
+            "0.050 single, 0.005 crit",
             format!(
                 "{:.3} single, {:.3} crit",
-                hit_probability.single_hit_probability, hit_probability.including_crit_probability
+                hit_probability.single_hit_probability, hit_probability.crit_probability
             ),
             "Should be around 5% with +0 vs 16",
         );
@@ -251,10 +253,10 @@ mod tests {
         let hit_probability =
             calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 10, 6);
         assert_eq!(
-            "1.000 single, 1.555 crit",
+            "1.000 single, 0.555 crit",
             format!(
                 "{:.3} single, {:.3} crit",
-                hit_probability.single_hit_probability, hit_probability.including_crit_probability
+                hit_probability.single_hit_probability, hit_probability.crit_probability
             ),
             "Should be over 100% with +10 vs 6",
         );
@@ -269,7 +271,7 @@ mod tests {
     //         "0.600 single, 0.655 crit",
     //         format!(
     //             "{:.3} single, {:.3} crit",
-    //             hit_probability.single_hit_probability, hit_probability.including_crit_probability
+    //             hit_probability.single_hit_probability, hit_probability.crit_probability
     //         ),
     //     );
     // }
