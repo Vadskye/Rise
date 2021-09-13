@@ -32,10 +32,7 @@ impl fmt::Display for CombatResult {
     }
 }
 
-pub fn run_combat(
-    blue: Vec<Creature>,
-    red: Vec<Creature>,
-) -> CombatResult {
+pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
     let mut damageable: CombatStep<Vec<CombatAgent>, Vec<CombatAgent>> = CombatStep {
         blue: blue.iter().map(|c| CombatAgent::from_creature(c)).collect(),
         red: red.iter().map(|c| CombatAgent::from_creature(c)).collect(),
@@ -45,15 +42,14 @@ pub fn run_combat(
     // array of creatures. In the future, we can intelligently sort the vectors before entering
     // this block, so the code here won't have to change.
     loop {
-        let mut living: CombatStep<Vec<&mut CombatAgent>, Vec<&mut CombatAgent>> =
-            CombatStep {
-                blue: damageable
-                    .blue
-                    .iter_mut()
-                    .filter(|d| d.is_alive())
-                    .collect(),
-                red: damageable.red.iter_mut().filter(|d| d.is_alive()).collect(),
-            };
+        let mut living: CombatStep<Vec<&mut CombatAgent>, Vec<&mut CombatAgent>> = CombatStep {
+            blue: damageable
+                .blue
+                .iter_mut()
+                .filter(|d| d.is_alive())
+                .collect(),
+            red: damageable.red.iter_mut().filter(|d| d.is_alive()).collect(),
+        };
         let living_creatures: CombatStep<Vec<&Creature>, Vec<&Creature>> = CombatStep {
             blue: living.blue.iter().map(|d| d.creature).collect(),
             red: living.red.iter().map(|d| d.creature).collect(),
@@ -100,20 +96,14 @@ fn survival_percent(creatures: &Vec<CombatAgent>) -> f64 {
         / total_damage_absorption as f64;
 }
 
-fn calc_damage_per_round(
-    attackers: &Vec<&Creature>,
-    defender: &Creature,
-) -> f64 {
+fn calc_damage_per_round(attackers: &Vec<&Creature>, defender: &Creature) -> f64 {
     return attackers
         .iter()
         .map(|a| calc_individual_dpr(*a, defender))
         .sum();
 }
 
-fn calc_rounds_to_live(
-    attackers: &Vec<&Creature>,
-    defender: &CombatAgent,
-) -> f64 {
+fn calc_rounds_to_live(attackers: &Vec<&Creature>, defender: &CombatAgent) -> f64 {
     let damage_per_round: f64 = calc_damage_per_round(attackers, defender.creature);
     let damage_absorption = defender.remaining_damage_absorption();
     let rounds_to_survive = damage_absorption as f64 / damage_per_round;
@@ -124,15 +114,16 @@ fn calc_rounds_to_live(
     return (rounds_to_survive * 4.0).ceil() / 4.0;
 }
 
-fn calc_individual_dpr(
-    attacker: &Creature,
-    defender: &Creature,
-) -> f64 {
+fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     let attacks = attacker.calc_all_attacks();
     let mut best_damage_per_round = 0.0;
     let mut best_attack: Option<Attack> = None;
     for attack in attacks {
-        let hit_probability = calculate_hit_probability(&attack, attacker, defender);
+        let hit_probability = calculate_hit_probability(
+            &attack,
+            attacker.calc_accuracy(),
+            defender.calc_defense(&attack.defense),
+        );
         if let Some(_) = attack.damage_effect() {
             let damage_dice = attack.calc_damage_dice(attacker).unwrap();
             let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
@@ -158,8 +149,8 @@ struct HitProbability {
 
 fn calculate_hit_probability(
     attack: &attacks::Attack,
-    attacker: &Creature,
-    defender: &Creature,
+    accuracy: i32,
+    defense: i32,
 ) -> HitProbability {
     // hardcoded
     let max_explosion_depth = 2.0;
@@ -169,10 +160,9 @@ fn calculate_hit_probability(
     let mut crit_count = 0.0;
     let mut explosion_count = 0.0;
     loop {
-        let hit_probability: f64 = ((attack.accuracy + attacker.calc_accuracy()) as f64 + 11.0
-            - crit_count * 10.0
+        let hit_probability: f64 = ((attack.accuracy + accuracy) as f64 + 11.0 - crit_count * 10.0
             + explosion_count * 10.0
-            - (defender.calc_defense(&attack.defense) as f64))
+            - (defense as f64))
             / 10.0;
         let hit_probability = if hit_probability > 1.0 {
             1.0
@@ -198,5 +188,36 @@ fn calculate_hit_probability(
                 including_crit_probability,
             };
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::equipment::Weapon;
+
+    #[test]
+    fn it_calculates_simple_hit_probability() {
+        let hit_probability =
+            calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 6);
+        assert_eq!(
+            "0.500 single, 0.555 crit",
+            format!(
+                "{:.3} single, {:.3} crit",
+                hit_probability.single_hit_probability, hit_probability.including_crit_probability
+            ),
+        );
+    }
+
+    #[test]
+    fn it_includes_weapon_accuracy_modifier() {
+        let hit_probability = calculate_hit_probability(&Attack::from_weapon(Weapon::Claw), 1, 10);
+        assert_eq!(
+            "0.400 single, 0.444 crit",
+            format!(
+                "{:.3} single, {:.3} crit",
+                hit_probability.single_hit_probability, hit_probability.including_crit_probability
+            ),
+        );
     }
 }
