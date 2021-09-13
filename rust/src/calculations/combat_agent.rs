@@ -1,12 +1,12 @@
-use crate::creatures::HasCreatureMechanics;
+use crate::{core_mechanics::HasDamageAbsorption, creatures::Creature};
 
-pub struct CombatAgent<'a, T: HasCreatureMechanics> {
-    pub creature: &'a T,
+pub struct CombatAgent<'a> {
+    pub creature: &'a Creature,
     pub damage_taken: i32,
 }
 
-impl<'a, T: HasCreatureMechanics> CombatAgent<'a, T> {
-    pub fn from_creature(creature: &'a T) -> Self {
+impl<'a> CombatAgent<'a> {
+    pub fn from_creature(creature: &'a Creature) -> Self {
         return CombatAgent {
             creature,
             damage_taken: 0,
