@@ -14,6 +14,15 @@ pub enum Defense {
 }
 
 impl Defense {
+    pub fn all() -> Vec<Self> {
+        return vec![
+            Self::Armor,
+            Self::Fortitude,
+            Self::Mental,
+            Self::Reflex,
+        ];
+    }
+
     pub fn name(&self) -> &str {
         match self {
             Self::Armor => "armor",

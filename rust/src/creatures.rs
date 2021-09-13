@@ -19,6 +19,7 @@ pub use maneuver::Maneuver;
 pub use modifier::{HasModifiers, Modifier, ModifierType};
 pub use monster::Monster;
 pub use standard_attacks::StandardAttack;
+pub use creature::{Creature, CreatureCategory};
 
 pub trait HasCreatureMechanics:
     HasAttacks

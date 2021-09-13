@@ -10,9 +10,9 @@ fn main() {
             Attribute::Constitution,
             Attribute::Perception,
         ] {
-            let mut blue = vec![Character::standard_character(level, false)];
+            let mut blue = vec![Character::standard_character(level, false).creature];
             blue[0].set_base_attribute(attribute, 4);
-            let red = vec![Character::standard_character(level, false)];
+            let red = vec![Character::standard_character(level, false).creature];
             let results = run_combat(blue, red);
             println!(
                 "L{:>2}, A{}, {}",

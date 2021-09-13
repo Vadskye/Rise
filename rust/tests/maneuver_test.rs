@@ -2,13 +2,13 @@ use rise::classes::{Class, ClassArchetype};
 use rise::core_mechanics::{Attribute, HasAttributes};
 use rise::creatures::attacks::HasAttacks;
 use rise::creatures::creature::Creature;
-use rise::creatures::{Character, Maneuver};
+use rise::creatures::{Character, CreatureCategory, Maneuver};
 
 use rise::equipment::{HasWeapons, Weapon};
 
 #[test]
 fn it_calculates_attack_counts() {
-    let mut creature = Creature::new(1);
+    let mut creature = Creature::new(1, CreatureCategory::Character);
     creature.add_weapon(Weapon::Broadsword);
     creature.add_special_attack(Maneuver::CertainStrike(1).attack(Weapon::Broadsword));
     assert_eq!(
@@ -32,7 +32,7 @@ fn it_calculates_attack_counts() {
 
 #[test]
 fn it_calculates_attack_effects() {
-    let mut creature = Creature::new(1);
+    let mut creature = Creature::new(1, CreatureCategory::Character);
     // It's useful to have a nonzero power to make sure power multipliers are calculated correctly
     creature.set_base_attribute(Attribute::Strength, 3);
     creature.add_weapon(Weapon::Broadsword);
@@ -62,17 +62,17 @@ fn it_derives_elemental_strike_from_archetypes() {
         ],
     );
     // It's useful to have a nonzero power to make sure power multipliers are calculated correctly
-    druid.set_base_attribute(Attribute::Strength, 3);
-    druid.add_weapon(Weapon::Broadsword);
+    druid.creature.set_base_attribute(Attribute::Strength, 3);
+    druid.creature.add_weapon(Weapon::Broadsword);
     assert_eq!(
         vec![
             "Broadsword Elemental Strike +5 (The subject takes 2d6+4 bludgeoning, fire, and slashing damage.)",
             "Broadsword +5 (The subject takes 1d10+4 slashing damage.)"
         ],
         druid
-            .calc_all_attacks()
+            .creature.calc_all_attacks()
             .iter()
-            .map(|a| a.shorthand_description(&druid))
+            .map(|a| a.shorthand_description(&druid.creature))
             .collect::<Vec<String>>(),
     );
 }

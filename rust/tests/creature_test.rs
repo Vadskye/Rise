@@ -1,13 +1,13 @@
 use rise::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses};
 use rise::creatures::attacks::HasAttacks;
 use rise::creatures::creature::Creature;
-use rise::creatures::{HasModifiers, Modifier};
+use rise::creatures::{CreatureCategory, HasModifiers, Modifier};
 use rise::equipment::{Armor, HasArmor};
 use rise::skills::{HasSkills, Skill};
 
 #[test]
 fn it_calculates_armor_effects() {
-    let mut creature = Creature::new(1);
+    let mut creature = Creature::new(1, CreatureCategory::Character);
     assert_eq!(
         0,
         creature.calc_defense(&Defense::Armor),
@@ -45,7 +45,7 @@ fn it_calculates_armor_effects() {
 
 #[test]
 fn it_calculates_modifiers() {
-    let mut creature = Creature::new(1);
+    let mut creature = Creature::new(1, CreatureCategory::Character);
     assert_eq!(
         0,
         creature.calc_defense(&Defense::Armor),
@@ -80,7 +80,7 @@ fn it_calculates_modifiers() {
 
 #[test]
 fn it_replaces_modifiers_by_priority() {
-    let mut creature = Creature::new(1);
+    let mut creature = Creature::new(1, CreatureCategory::Character);
     assert_eq!(0, creature.calc_accuracy(), "Should have 0 accuracy");
     creature.add_modifier(Modifier::Accuracy(2), Some("accuracy"), Some(1));
     assert_eq!(2, creature.calc_accuracy(), "Should have 2 accuracy");
@@ -100,7 +100,7 @@ fn it_replaces_modifiers_by_priority() {
 
 #[test]
 fn it_calculates_magic_bonuses() {
-    let mut creature = Creature::new(1);
+    let mut creature = Creature::new(1, CreatureCategory::Character);
     assert_eq!(
         0,
         creature.calc_defense(&Defense::Armor),
