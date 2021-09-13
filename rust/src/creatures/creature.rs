@@ -117,28 +117,39 @@ impl Creature {
 
 struct IdentifiedModifier {
     modifier: Modifier,
-    name: String,
+    source: String,
     priority: i32,
 }
 
+impl IdentifiedModifier {
+    fn key(&self) -> String {
+        return format!("{} {}", self.source, self.modifier.name());
+    }
+
+    fn replaces(&self, other: &Self) -> bool {
+        return self.key() == other.key() && self.priority > other.priority;
+    }
+}
+
 impl HasModifiers for Creature {
-    fn add_modifier(&mut self, modifier: Modifier, name: Option<&str>, priority: Option<i32>) {
-        if let Some(name) = name {
+    fn add_modifier(&mut self, modifier: Modifier, source: Option<&str>, priority: Option<i32>) {
+        if let Some(source) = source {
             let priority = priority.unwrap_or(0);
+            let identified_modifier = IdentifiedModifier {
+                modifier,
+                source: source.to_string(),
+                priority,
+            };
             self.identified_modifiers
-                .retain(|im| im.name != name || im.priority > priority);
+                .retain(|im| !identified_modifier.replaces(im));
             if self
                 .identified_modifiers
                 .iter()
-                .filter(|im| im.name == name && im.priority >= priority)
+                .filter(|im| im.replaces(&identified_modifier))
                 .count()
                 == 0
             {
-                self.identified_modifiers.push(IdentifiedModifier {
-                    name: name.to_string(),
-                    priority,
-                    modifier,
-                });
+                self.identified_modifiers.push(identified_modifier);
             }
         } else {
             self.anonymous_modifiers.push(modifier);
@@ -146,19 +157,29 @@ impl HasModifiers for Creature {
     }
 
     fn add_magic_modifier(&mut self, modifier: Modifier) {
-        let name = format!("magic {}", modifier.name());
         let value = modifier.value();
-        self.add_modifier(modifier, Some(name.as_str()), Some(value));
+        self.add_modifier(modifier, Some("magic"), Some(value));
     }
 
-    fn get_modifiers(&self) -> Vec<Modifier> {
-        let mut modifiers: Vec<Modifier> = self
+    fn get_modifiers(&self) -> Vec<&Modifier> {
+        let mut modifiers: Vec<&Modifier> = self
             .identified_modifiers
             .iter()
-            .map(|im| im.modifier.clone())
+            .map(|im| &im.modifier)
             .collect();
-        modifiers.append(self.anonymous_modifiers.clone().as_mut());
+        for m in &self.anonymous_modifiers {
+            modifiers.push(m);
+        }
         return modifiers;
+    }
+
+    fn get_modifiers_by_source(&self, source: &str) -> Vec<&Modifier> {
+        return self
+            .identified_modifiers
+            .iter()
+            .filter(|im| im.source == source)
+            .map(|im| &im.modifier)
+            .collect();
     }
 
     fn calc_total_modifier(&self, mt: ModifierType) -> i32 {
@@ -449,7 +470,9 @@ impl HasVitalWounds for Creature {
 
     fn calc_vital_roll_modifier(&self) -> i32 {
         match self.category {
-            CreatureCategory::Character => self.calc_total_modifier(ModifierType::VitalRoll) - self.vital_wounds.len() as i32,
+            CreatureCategory::Character => {
+                self.calc_total_modifier(ModifierType::VitalRoll) - self.vital_wounds.len() as i32
+            }
             CreatureCategory::Monster(_) => 0,
         }
     }

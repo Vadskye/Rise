@@ -158,6 +158,7 @@ impl Modifier {
 pub trait HasModifiers {
     fn add_modifier(&mut self, modifier: Modifier, name: Option<&str>, priority: Option<i32>);
     fn add_magic_modifier(&mut self, modifier: Modifier);
-    fn get_modifiers(&self) -> Vec<Modifier>;
+    fn get_modifiers(&self) -> Vec<&Modifier>;
+    fn get_modifiers_by_source(&self, source: &str) -> Vec<&Modifier>;
     fn calc_total_modifier(&self, modifier_type: ModifierType) -> i32;
 }
