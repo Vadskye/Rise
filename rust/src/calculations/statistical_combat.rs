@@ -1,5 +1,6 @@
 use crate::calculations::CombatAgent;
 use crate::core_mechanics::HasDefenses;
+use crate::creatures::attack_effects::AttackEffect;
 use crate::creatures::attacks::{Attack, HasAttacks};
 use crate::creatures::{attacks, Creature};
 use std::cmp::max;
@@ -124,13 +125,33 @@ fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
             attacker.calc_accuracy(),
             defender.calc_defense(&attack.defense),
         );
+        let glance_probability = if attack.glance.is_some() {
+            calculate_glance_probability(
+                &attack,
+                attacker.calc_accuracy(),
+                defender.calc_defense(&attack.defense),
+            )
+        } else {
+            0.0
+        };
         if let Some(_) = attack.damage_effect() {
             let damage_dice = attack.calc_damage_dice(attacker).unwrap();
             let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
-            let average_damage_per_round = hit_probability.single_hit_probability
+            let mut average_damage_per_round = hit_probability.single_hit_probability
                 * damage_modifier as f64
                 + (hit_probability.single_hit_probability + hit_probability.crit_probability)
                     * damage_dice.average_damage() as f64;
+            if let Some(ref g) = attack.glance {
+                match g {
+                    AttackEffect::HalfDamage => {
+                        average_damage_per_round += glance_probability
+                            * (damage_dice.average_damage() + damage_modifier as f64)
+
+                            / 2.0;
+                    }
+                    _ => {}
+                };
+            }
             if average_damage_per_round > best_damage_per_round {
                 best_damage_per_round = average_damage_per_round;
                 best_attack = Some(attack);
@@ -192,6 +213,11 @@ fn calculate_hit_probability(
             };
         }
     }
+}
+
+fn calculate_glance_probability(attack: &attacks::Attack, accuracy: i32, defense: i32) -> f64 {
+    return calculate_hit_probability(attack, accuracy + 2, defense).single_hit_probability
+        - calculate_hit_probability(attack, accuracy, defense).single_hit_probability;
 }
 
 #[cfg(test)]
@@ -262,19 +288,30 @@ mod tests {
         );
     }
 
-    // #[test]
-    // fn it_calculates_accuracy_with_glancing_blows() {
-    //     let attack = &Attack::from_weapon(Weapon::Broadsword).except(|a| a.glance = Some(AttackEffect::HalfDamage));
-    //     let hit_probability =
-    //         calculate_hit_probability(attack, 0, 6);
-    //     assert_eq!(
-    //         "0.600 single, 0.655 crit",
-    //         format!(
-    //             "{:.3} single, {:.3} crit",
-    //             hit_probability.single_hit_probability, hit_probability.crit_probability
-    //         ),
-    //     );
-    // }
+    #[test]
+    fn it_calculates_glance_probability() {
+        let attack = &Attack::from_weapon(Weapon::Broadsword);
+        assert_eq!(
+            "0.200",
+            format!("{:.3}", calculate_glance_probability(attack, 0, 6),),
+            "Should be 20% with +0 vs 6",
+        );
+        assert_eq!(
+            "0.000",
+            format!("{:.3}", calculate_glance_probability(attack, 0, 0),),
+            "Should be 0% with +0 vs 0",
+        );
+        assert_eq!(
+            "0.100",
+            format!("{:.3}", calculate_glance_probability(attack, 0, 11),),
+            "Should be 10% with +0 vs 11",
+        );
+        assert_eq!(
+            "0.010",
+            format!("{:.3}", calculate_glance_probability(attack, 0, 12),),
+            "Should be 1% with +0 vs 12",
+        );
+    }
 
     #[test]
     fn it_calculates_creature_dpr() {
@@ -323,25 +360,25 @@ mod tests {
         );
     }
 
-    // #[test]
-    // fn it_calculates_glancing_blows_dpr() {
-    //     let mut attacker = Creature::new(1, CreatureCategory::Character);
-    //     let mut defender = Creature::new(1, CreatureCategory::Character);
-    //     defender.add_modifier(Modifier::Defense(Defense::Armor, 6), None, None);
-    //     attacker.add_special_attack(Attack::from_weapon(Weapon::Broadsword));
-    //     assert_eq!(
-    //         "2.498",
-    //         format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-    //         "Should be 4.5 dph * 0.555 hit % = 2.498 dpr without glancing blows",
-    //     );
-    //     attacker.add_special_attack(
-    //         Attack::from_weapon(Weapon::Broadsword)
-    //             .except(|a| a.glance = Some(AttackEffect::HalfDamage)),
-    //     );
-    //     assert_eq!(
-    //         "2.948",
-    //         format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-    //         "Should be 4.5 dph * 0.655 hit % = 2.948 dpr with glancing blows",
-    //     );
-    // }
+    #[test]
+    fn it_calculates_glancing_blows_dpr() {
+        let mut attacker = Creature::new(1, CreatureCategory::Character);
+        let mut defender = Creature::new(1, CreatureCategory::Character);
+        defender.add_modifier(Modifier::Defense(Defense::Armor, 6), None, None);
+        attacker.add_special_attack(Attack::from_weapon(Weapon::Broadsword));
+        assert_eq!(
+            "2.498",
+            format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
+            "Should be 4.5 dph * 0.555 hit % = 2.498 dpr without glancing blows",
+        );
+        attacker.add_special_attack(
+            Attack::from_weapon(Weapon::Broadsword)
+                .except(|a| a.glance = Some(AttackEffect::HalfDamage)),
+        );
+        assert_eq!(
+            "2.947",
+            format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
+            "Should be 4.5 dph * 0.655 hit % = 2.9475 dpr with glancing blows",
+        );
+    }
 }
