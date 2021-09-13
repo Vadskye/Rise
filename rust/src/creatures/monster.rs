@@ -3,9 +3,7 @@ use crate::core_mechanics::{
     SpecialDefenseModifier, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::attacks::HasAttacks;
-use crate::creatures::{
-    Creature, CreatureCategory, HasModifiers, Modifier,
-};
+use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::{HasWeapons, Weapon};
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
@@ -33,7 +31,7 @@ impl Monster {
         for defense in Defense::all() {
             creature.add_modifier(
                 Modifier::Defense(defense, creature_type.defense_bonus(&defense)),
-                None,
+                Some(creature_type.name()),
                 None,
             );
         }
@@ -41,23 +39,35 @@ impl Monster {
         // CR modifiers
         creature.add_modifier(
             Modifier::Accuracy(challenge_rating.accuracy_bonus()),
-            None,
+            Some("challenge rating"),
             None,
         );
         for defense in Defense::all() {
             creature.add_modifier(
                 Modifier::Defense(defense, challenge_rating.defense_bonus()),
-                None,
+                Some("challenge rating"),
                 None,
             );
         }
 
         // Level scaling modifiers
-        creature.add_modifier(Modifier::Accuracy(level / 9), None, None);
+        creature.add_modifier(
+            Modifier::Accuracy(level / 9),
+            Some("challenge rating"),
+            None,
+        );
         for defense in Defense::all() {
-            creature.add_modifier(Modifier::Defense(defense, (level + 6) / 9), None, None);
+            creature.add_modifier(
+                Modifier::Defense(defense, (level + 6) / 9),
+                Some("challenge rating"),
+                None,
+            );
         }
-        creature.add_modifier(Modifier::StrikeDamageDice((level - 1) / 3), None, None);
+        creature.add_modifier(
+            Modifier::StrikeDamageDice((level - 1) / 3),
+            Some("challenge rating"),
+            None,
+        );
         let power_scaling = match level / 3 {
             0 => 0,
             1 => 1,
@@ -71,8 +81,16 @@ impl Monster {
             _ => panic!("Invalid level '{}'", level),
         };
         if power_scaling > 0 {
-            creature.add_modifier(Modifier::MagicalPower(power_scaling), None, None);
-            creature.add_modifier(Modifier::MundanePower(power_scaling), None, None);
+            creature.add_modifier(
+                Modifier::MagicalPower(power_scaling),
+                Some("challenge rating"),
+                None,
+            );
+            creature.add_modifier(
+                Modifier::MundanePower(power_scaling),
+                Some("challenge rating"),
+                None,
+            );
         }
 
         return Monster {
