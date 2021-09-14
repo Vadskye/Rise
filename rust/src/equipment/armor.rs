@@ -4,6 +4,15 @@ pub trait HasArmor {
     fn add_armor(&mut self, armor: Armor);
     fn get_armor(&self) -> Vec<&Armor>;
     fn calc_encumbrance(&self) -> i32;
+    fn minimum_dex_modifier(&self) -> Option<f64> {
+        if let Some(lowest_armor) = self.get_armor().iter().min_by(|x, y| {
+            ((x.dex_multiplier() * 2.0) as i32).cmp(&((y.dex_multiplier() * 2.0) as i32))
+        }) {
+            return Some(lowest_armor.dex_multiplier());
+        } else {
+            return None;
+        }
+    }
 }
 
 #[derive(Clone)]
@@ -324,6 +333,10 @@ impl Armor {
 
     pub fn damage_resistance(&self) -> i32 {
         return self.definition().damage_resistance;
+    }
+
+    pub fn dex_multiplier(&self) -> f64 {
+        return self.definition().dex_multiplier;
     }
 
     pub fn defense(&self) -> i32 {
