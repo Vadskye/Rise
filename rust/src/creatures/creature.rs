@@ -116,6 +116,13 @@ impl Creature {
     pub fn to_latex(&self) -> String {
         return latex::format_creature(self);
     }
+
+    pub fn can_recover(&self) -> bool {
+        match self.category {
+            CreatureCategory::Character => true,
+            CreatureCategory::Monster(_) => false,
+        }
+    }
 }
 
 struct IdentifiedModifier {
