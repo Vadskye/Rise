@@ -412,3 +412,95 @@ fn standard_character_statistics_level_10() {
         "Trained skills: 4 fighter + 1 int",
     );
 }
+
+#[test]
+fn standard_character_statistics_level_20() {
+    let creature = Character::standard_character(20, true).creature;
+
+    // HasArmor
+    assert_eq!(
+        0,
+        creature.calc_encumbrance(),
+        "Encumbrance: 6 full plate - 4 str - 2 equip train",
+    );
+
+    // HasAttacks
+    assert_eq!(
+        12,
+        creature.calc_accuracy(),
+        "Accuracy: 10 level + 1 per + 1 equip train",
+    );
+    assert_eq!(
+        8,
+        creature.calc_power(true),
+        "Magical power: 8 magic item",
+    );
+    assert_eq!(
+        17,
+        creature.calc_power(false),
+        "Mundane power: 8 magic item + 9 str",
+    );
+
+    // HasAttributes
+    assert_eq!(
+        vec![19, 0, 7, 1, 7, 0],
+        Attribute::all().iter().map(|a| creature.calc_total_attribute(&a)).collect::<Vec<i32>>(),
+        "Attributes",
+    );
+
+    // HasDefenses
+    assert_eq!(
+        18,
+        creature.calc_defense(&Defense::Armor),
+        "Armor: 10 level + 4 full plate + 2 shield + 1 fighter + 1 con",
+    );
+    assert_eq!(
+        19,
+        creature.calc_defense(&Defense::Fortitude),
+        "Fort: 10 level + 7 fighter + 2 con",
+    );
+    assert_eq!(
+        13,
+        creature.calc_defense(&Defense::Reflex),
+        "Ref: 10 level + 3 fighter",
+    );
+    assert_eq!(
+        16,
+        creature.calc_defense(&Defense::Mental),
+        "Ment: 10 level + 4 fighter + 2 combat discipline",
+    );
+
+    // HasDamageAbsorption
+    assert_eq!(
+        144,
+        creature.calc_hit_points(),
+        "HP: 100 level + 21 martial mastery + 7 con + 16 magic item",
+    );
+    assert_eq!(
+        96,
+        creature.calc_damage_resistance(),
+        "DR: 25 level + 48 pure deepforged full plate + 7 con + 16 magic item",
+    );
+
+    // HasResources
+    assert_eq!(
+        7,
+        creature.calc_resource(&Resource::AttunementPoint),
+        "AP: 2 class + 3 level + 2 equipment training",
+    );
+    assert_eq!(
+        9,
+        creature.calc_resource(&Resource::FatigueTolerance),
+        "FT: 3 fighter + 4 str + 2 combat discipline",
+    );
+    assert_eq!(
+        3,
+        creature.calc_resource(&Resource::InsightPoint),
+        "Insight: 2 fighter + 1 int",
+    );
+    assert_eq!(
+        5,
+        creature.calc_resource(&Resource::TrainedSkill),
+        "Trained skills: 4 fighter + 1 int",
+    );
+}
