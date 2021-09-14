@@ -154,7 +154,7 @@ fn it_calculates_level_21_fighter_attacks() {
     fighter.add_weapon(Weapon::Broadsword);
     assert_eq!(
         vec![
-            "Broadsword Certain Strike +17 (The subject takes 4d6 slashing damage.)",
+            "Broadsword Certain Strike +16 (The subject takes 4d6 slashing damage.)",
             "Broadsword Generic Scaling Strike +11 (The subject takes 7d10 slashing damage.)",
             "Broadsword Power Strike +9 (The subject takes 9d10 slashing damage.)",
             // +2d from discipline, +3d from equip train, +2d from martial mastery
