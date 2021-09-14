@@ -241,17 +241,6 @@ def calc_damage_resistance():
             equation(
                 [
                     underlabel(
-                        "Base",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "damage_resistance_from_level_display",
-                                "value": "(@{damage_resistance_from_level})",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    underlabel(
                         "Con",
                         number_input(
                             {
@@ -271,7 +260,7 @@ def calc_damage_resistance():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("damage_resistance_bonus", 3),
+                    equation_misc_repeat("damage_resistance_bonus", 4),
                 ],
                 result_attributes={
                     "disabled": "true",

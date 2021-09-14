@@ -74,15 +74,15 @@ impl Monster {
             None,
         );
         let power_scaling = match level / 3 {
-            0 => 0,
-            1 => 1,
-            2 => 2,
-            3 => 3,
-            4 => 4,
-            5 => 6,
-            6 => 8,
-            7 => 12,
-            8 => 16,
+            0 => 1,
+            1 => 2,
+            2 => 3,
+            3 => 4,
+            4 => 6,
+            5 => 8,
+            6 => 12,
+            7 => 16,
+            8 => 24,
             _ => panic!("Invalid level '{}'", level),
         };
         if power_scaling > 0 {
@@ -391,3 +391,6 @@ impl Monster {
         return ability_texts.join("\\par ");
     }
 }
+
+#[cfg(test)]
+mod tests;

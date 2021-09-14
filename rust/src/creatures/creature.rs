@@ -228,34 +228,35 @@ impl HasAttributes for Creature {
 // Calculation functions
 impl HasDamageAbsorption for Creature {
     fn calc_damage_resistance(&self) -> i32 {
-        let mut dr_from_level = match self.level {
-            1 => 2,
-            2 => 3,
-            3 => 3,
-            4 => 3,
-            5 => 4,
-            6 => 4,
-            7 => 5,
-            8 => 6,
-            9 => 7,
-            10 => 8,
-            11 => 9,
-            12 => 10,
-            13 => 11,
-            14 => 12,
-            15 => 14,
-            16 => 15,
-            17 => 17,
-            18 => 19,
-            19 => 22,
-            20 => 25,
-            21 => 28,
-            _ => panic!("Invalid level {}", self.level),
-        };
-
         let dr_from_level = match self.category {
-            CreatureCategory::Character => dr_from_level,
-            CreatureCategory::Monster(_) => dr_from_level * 3,
+            CreatureCategory::Character => 0,
+            CreatureCategory::Monster(_) => {
+                // TODO: should this more consistently double every 6 levels at low levels?
+                match self.level {
+                    1 => 3,
+                    2 => 3,
+                    3 => 4,
+                    4 => 4,
+                    5 => 5,
+                    6 => 6,
+                    7 => 7,
+                    8 => 9,
+                    9 => 10,
+                    10 => 12,
+                    11 => 13,
+                    12 => 15,
+                    13 => 16,
+                    14 => 18,
+                    15 => 20,
+                    16 => 22,
+                    17 => 25,
+                    18 => 28,
+                    19 => 32,
+                    20 => 37,
+                    21 => 42,
+                    _ => panic!("Invalid level {}", self.level),
+                }
+            },
         };
 
         let dr_from_armor: i32 = self.get_armor().iter().map(|a| a.damage_resistance()).sum();
@@ -295,11 +296,6 @@ impl HasDamageAbsorption for Creature {
             20 => 100,
             21 => 115,
             _ => panic!("Invalid level {}", self.level),
-        };
-
-        let hp_from_level = match self.category {
-            CreatureCategory::Character => hp_from_level,
-            CreatureCategory::Monster(_) => (hp_from_level as f64 * 1.5) as i32,
         };
 
         let hp = hp_from_level
