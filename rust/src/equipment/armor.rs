@@ -285,7 +285,7 @@ impl Armor {
             // Heavy armor
             Self::LayeredHide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(9, m),
+                damage_resistance: calc_dr(8, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 5,
