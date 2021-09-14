@@ -3,6 +3,7 @@ use crate::core_mechanics::{
     HasVitalWounds, MovementMode, PassiveAbility, Resource, Sense, Size, SpecialDefenseModifier,
     VitalWound,
 };
+use crate::creatures::attack_effects::AttackEffect;
 use crate::creatures::attacks::{self, Attack, HasAttacks};
 use crate::creatures::{latex, HasDamageTracking, HasModifiers, Maneuver, Modifier, ModifierType};
 use crate::equipment::{Armor, HasArmor, HasWeapons, Weapon};
@@ -351,6 +352,14 @@ impl HasAttacks for Creature {
         let strikes = attacks::Attack::calc_strikes(weapons_without_attacks);
         for strike in strikes {
             all_attacks.push(strike);
+        }
+
+        if self.calc_total_modifier(ModifierType::EnableGlancingStrikes) > 0 {
+            for attack in &mut all_attacks {
+                if attack.is_strike && attack.glance.is_none() {
+                    attack.glance = Some(AttackEffect::HalfDamage);
+                }
+            }
         }
         return all_attacks;
     }
