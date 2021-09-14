@@ -652,8 +652,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you miss by 2 or less with a \glossterm{strike} using a \glossterm{natural weapon}, the target takes half damage from the strike.
                 This is called a \glossterm{glancing blow}.
             ",
-            // TODO: represent glancing blows
-            modifiers: None,
+            modifiers: Some(vec![Modifier::EnableGlancingStrikes]),
         },
         RankAbility {
             name: "Greater Shifting Defense",

@@ -166,6 +166,11 @@ fn it_calculates_level_21_fighter_attacks() {
             .collect::<Vec<String>>(),
         "Should have attacks with a weapon"
     );
+    assert_eq!(
+        4,
+        fighter.calc_all_attacks().iter().filter(|a| a.glance.is_some()).count(),
+        "All attacks should have glancing blows",
+    );
 }
 
 #[test]

@@ -573,7 +573,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
                 This is called a \glossterm{glancing blow}.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::EnableGlancingStrikes]),
         },
         RankAbility {
             name: "Combat Style Rank (4)",
