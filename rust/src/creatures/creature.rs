@@ -460,11 +460,22 @@ impl HasWeapons for Creature {
 
 impl HasDefenses for Creature {
     fn calc_defense(&self, defense: &Defense) -> i32 {
+        let dex_multiplier: f64 = match self.category {
+            CreatureCategory::Character => {
+                if let Some(modifier) = self.minimum_dex_modifier() {
+                    modifier
+                } else {
+                    1.0
+                }
+            }
+            CreatureCategory::Monster(_) => 0.5,
+        };
         let attribute_bonus = match defense {
             // TODO: check for light armor
             Defense::Armor => {
-                self.get_base_attribute(&Attribute::Dexterity) / 2
-                    + self.get_base_attribute(&Attribute::Constitution) / 2
+                self.get_base_attribute(&Attribute::Constitution) / 2
+                    + (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier)
+                        as i32
             }
             Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
             Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
