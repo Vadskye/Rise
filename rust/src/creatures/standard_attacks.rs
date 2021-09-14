@@ -21,6 +21,8 @@ pub enum StandardAttack {
     DarkGrasp(i32),
     DarkMiasma(i32),
     DivineJudgment(i32),
+    DrainLife(i32),
+    Firebolt(i32),
     MindCrush(i32),
 }
 
@@ -281,6 +283,70 @@ impl StandardAttack {
                 is_magical: true,
                 is_strike: false,
                 name: Attack::generate_modified_name("Divine Judgment", *rank, 4, Some(7)),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Creature(if *rank == 7 {
+                    AttackRange::Distant
+                } else if *rank >= 4 {
+                    AttackRange::Long
+                } else {
+                    AttackRange::Medium
+                }),
+                usage_time: UsageTime::Standard,
+            },
+            Self::DrainLife(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Fortitude,
+                glance: if *rank >= 4 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    // +1d extra at ranks 4 and 7
+                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Energy],
+                    lose_hp_effects: None,
+                    power_multiplier: 1.0,
+                    take_damage_effects: None,
+                }),
+                is_magical: true,
+                is_strike: false,
+                name: Attack::generate_modified_name("Drain Life", *rank, 4, Some(7)),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Creature(if *rank == 7 {
+                    AttackRange::Distant
+                } else if *rank >= 4 {
+                    AttackRange::Long
+                } else {
+                    AttackRange::Medium
+                }),
+                usage_time: UsageTime::Standard,
+            },
+            Self::Firebolt(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Armor,
+                glance: if *rank >= 4 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    // +1d extra at ranks 4 and 7
+                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Fire],
+                    lose_hp_effects: None,
+                    power_multiplier: 1.0,
+                    take_damage_effects: None,
+                }),
+                is_magical: true,
+                is_strike: false,
+                name: Attack::generate_modified_name("Firebolt", *rank, 4, Some(7)),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(if *rank == 7 {
                     AttackRange::Distant
