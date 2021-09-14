@@ -228,7 +228,7 @@ impl HasAttributes for Creature {
 // Calculation functions
 impl HasDamageAbsorption for Creature {
     fn calc_damage_resistance(&self) -> i32 {
-        let dr_from_level = match self.level {
+        let mut dr_from_level = match self.level {
             1 => 2,
             2 => 3,
             3 => 3,
@@ -253,17 +253,22 @@ impl HasDamageAbsorption for Creature {
             _ => panic!("Invalid level {}", self.level),
         };
 
-        let dr_multiplier = match self.category {
-            CreatureCategory::Character => 1,
-            CreatureCategory::Monster(_) => 3,
+        let dr_from_level = match self.category {
+            CreatureCategory::Character => dr_from_level,
+            CreatureCategory::Monster(_) => dr_from_level * 3,
         };
 
         let dr_from_armor: i32 = self.get_armor().iter().map(|a| a.damage_resistance()).sum();
 
-        return dr_multiplier * dr_from_level
+        let dr = dr_from_level
             + self.calc_total_attribute(&Attribute::Constitution)
             + dr_from_armor
             + self.calc_total_modifier(ModifierType::DamageResistance);
+
+        return match self.category {
+            CreatureCategory::Character => dr,
+            CreatureCategory::Monster(cr) => (dr as f64 * cr.dr_multiplier()) as i32,
+        };
     }
 
     fn calc_hit_points(&self) -> i32 {
@@ -292,14 +297,19 @@ impl HasDamageAbsorption for Creature {
             _ => panic!("Invalid level {}", self.level),
         };
 
-        let hp_multiplier = match self.category {
-            CreatureCategory::Character => 1.0,
-            CreatureCategory::Monster(_) => 1.5,
+        let hp_from_level = match self.category {
+            CreatureCategory::Character => hp_from_level,
+            CreatureCategory::Monster(_) => (hp_from_level as f64 * 1.5) as i32,
         };
 
-        return (hp_multiplier * hp_from_level as f64) as i32
-            + (self.calc_total_attribute(&Attribute::Constitution) as i32)
+        let hp = hp_from_level
+            + self.calc_total_attribute(&Attribute::Constitution)
             + self.calc_total_modifier(ModifierType::HitPoints);
+
+        return match self.category {
+            CreatureCategory::Character => hp,
+            CreatureCategory::Monster(cr) => (hp as f64 * cr.hp_multiplier()) as i32,
+        };
     }
 }
 
@@ -362,6 +372,14 @@ impl HasAttacks for Creature {
         let strikes = attacks::Attack::calc_strikes(weapons_without_attacks);
         for strike in strikes {
             all_attacks.push(strike);
+        }
+
+        if let CreatureCategory::Monster(cr) = self.category {
+            for attack in &mut all_attacks {
+                if let AttackEffect::Damage(ref mut e) = attack.hit {
+                    e.damage_dice = e.damage_dice.add(cr.damage_increments());
+                }
+            }
         }
 
         if self.calc_total_modifier(ModifierType::EnableGlancingStrikes) > 0 {
