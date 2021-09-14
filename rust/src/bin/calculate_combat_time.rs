@@ -6,6 +6,16 @@ fn main() {
     for level in vec![2, 5, 8, 11, 14, 17, 20] {
         for challenge_ratings in vec![
             vec![
+                ChallengeRating::Half,
+                ChallengeRating::Half,
+                ChallengeRating::Half,
+                ChallengeRating::Half,
+                ChallengeRating::Half,
+                ChallengeRating::Half,
+                ChallengeRating::Half,
+                ChallengeRating::Half,
+            ],
+            vec![
                 ChallengeRating::One,
                 ChallengeRating::One,
                 ChallengeRating::One,
@@ -28,7 +38,7 @@ fn main() {
             }
             let results = run_combat(blue, red);
             println!(
-                "CR{}, L{} {}",
+                "CR{:.1}, L{} {}",
                 challenge_ratings[0].to_string(),
                 level,
                 results
