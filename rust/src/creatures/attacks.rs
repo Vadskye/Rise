@@ -4,6 +4,7 @@ use crate::creatures::{attack_effects, Creature};
 use crate::equipment::Weapon;
 use crate::latex_formatting;
 use std::fmt;
+use titlecase::titlecase;
 
 #[derive(Clone)]
 pub struct Attack {
@@ -24,6 +25,9 @@ pub struct Attack {
 pub trait HasAttacks {
     fn add_special_attack(&mut self, attack: Attack);
     fn calc_all_attacks(&self) -> Vec<Attack>;
+    fn get_attack_by_name(&self, name: &str) -> Option<Attack> {
+        return self.calc_all_attacks().into_iter().find(|a| a.name == name);
+    }
     fn calc_accuracy(&self) -> i32;
     fn calc_damage_increments(&self, is_strike: bool) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
@@ -55,7 +59,7 @@ impl Attack {
             defense: Defense::Armor,
             glance: None,
             hit: AttackEffect::from_weapon(weapon),
-            name: weapon.name().to_string(),
+            name: titlecase(weapon.name()),
             is_magical: false,
             is_strike: true,
             // By default, `from_weapon` replaces the base weapon

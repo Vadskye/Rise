@@ -34,22 +34,29 @@ impl fmt::Display for CombatResult {
 
 pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
     let mut damageable: CombatStep<Vec<DamageableCreature>, Vec<DamageableCreature>> = CombatStep {
-        blue: blue.iter().map(|c| DamageableCreature::from_creature(c)).collect(),
-        red: red.iter().map(|c| DamageableCreature::from_creature(c)).collect(),
+        blue: blue
+            .iter()
+            .map(|c| DamageableCreature::from_creature(c))
+            .collect(),
+        red: red
+            .iter()
+            .map(|c| DamageableCreature::from_creature(c))
+            .collect(),
     };
     let mut rounds = 0.0;
     // For now, don't do intelligent target prioritization - just proceed linearly through the
     // array of creatures. In the future, we can intelligently sort the vectors before entering
     // this block, so the code here won't have to change.
     loop {
-        let mut living: CombatStep<Vec<&mut DamageableCreature>, Vec<&mut DamageableCreature>> = CombatStep {
-            blue: damageable
-                .blue
-                .iter_mut()
-                .filter(|d| d.is_alive())
-                .collect(),
-            red: damageable.red.iter_mut().filter(|d| d.is_alive()).collect(),
-        };
+        let mut living: CombatStep<Vec<&mut DamageableCreature>, Vec<&mut DamageableCreature>> =
+            CombatStep {
+                blue: damageable
+                    .blue
+                    .iter_mut()
+                    .filter(|d| d.is_alive())
+                    .collect(),
+                red: damageable.red.iter_mut().filter(|d| d.is_alive()).collect(),
+            };
         let living_creatures: CombatStep<Vec<&Creature>, Vec<&Creature>> = CombatStep {
             blue: living.blue.iter().map(|d| d.creature).collect(),
             red: living.red.iter().map(|d| d.creature).collect(),
@@ -119,48 +126,54 @@ fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     let mut best_damage_per_round = 0.0;
     let mut best_attack: Option<Attack> = None;
     for attack in attacks {
-        let hit_probability = calculate_hit_probability(
-            &attack,
-            attacker.calc_accuracy(),
-            defender.calc_defense(&attack.defense),
-        );
-        let glance_probability = if attack.glance.is_some() {
-            calculate_glance_probability(
-                &attack,
-                attacker.calc_accuracy(),
-                defender.calc_defense(&attack.defense),
-            )
-        } else {
-            0.0
-        };
-        if let Some(_) = attack.damage_effect() {
-            let damage_dice = attack.calc_damage_dice(attacker).unwrap();
-            let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
-            let mut average_damage_per_round = hit_probability.single_hit_probability
-                * damage_modifier as f64
-                + (hit_probability.single_hit_probability + hit_probability.crit_probability)
-                    * damage_dice.average_damage() as f64;
-            if let Some(ref g) = attack.glance {
-                match g {
-                    AttackEffect::HalfDamage => {
-                        average_damage_per_round += glance_probability
-                            * (damage_dice.average_damage() + damage_modifier as f64)
-
-                            / 2.0;
-                    }
-                    _ => {}
-                };
-            }
-            if average_damage_per_round > best_damage_per_round {
-                best_damage_per_round = average_damage_per_round;
-                best_attack = Some(attack);
-            }
+        let average_damage_per_round = calc_attack_damage_per_round(&attack, attacker, defender);
+        if average_damage_per_round > best_damage_per_round {
+            best_damage_per_round = average_damage_per_round;
+            best_attack = Some(attack);
         }
     }
 
     // println!("Best attack: {}", best_attack.unwrap().name);
 
     return best_damage_per_round * attacker.calc_damage_per_round_multiplier();
+}
+
+fn calc_attack_damage_per_round(attack: &Attack, attacker: &Creature, defender: &Creature) -> f64 {
+    let hit_probability = calculate_hit_probability(
+        &attack,
+        attacker.calc_accuracy(),
+        defender.calc_defense(&attack.defense),
+    );
+    let glance_probability = if attack.glance.is_some() {
+        calculate_glance_probability(
+            &attack,
+            attacker.calc_accuracy(),
+            defender.calc_defense(&attack.defense),
+        )
+    } else {
+        0.0
+    };
+    if attack.damage_effect().is_some() {
+        let damage_dice = attack.calc_damage_dice(attacker).unwrap();
+        let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
+        let mut average_damage_per_round = hit_probability.single_hit_probability
+            * damage_modifier as f64
+            + (hit_probability.single_hit_probability + hit_probability.crit_probability)
+                * damage_dice.average_damage() as f64;
+        if let Some(ref g) = attack.glance {
+            match g {
+                AttackEffect::HalfDamage => {
+                    average_damage_per_round += glance_probability
+                        * (damage_dice.average_damage() + damage_modifier as f64)
+                        / 2.0;
+                }
+                _ => {}
+            };
+        }
+        return average_damage_per_round;
+    } else {
+        return 0.0;
+    }
 }
 
 struct HitProbability {

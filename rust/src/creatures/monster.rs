@@ -110,9 +110,14 @@ impl Monster {
         starting_attribute: Option<i32>,
         creature_type: Option<CreatureType>,
     ) -> Monster {
-        let mut creature = Creature::new(level, CreatureCategory::Monster(challenge_rating));
-        creature.add_weapon(Weapon::Slam);
-        creature.set_name("Standard Monster");
+        let creature_type = if let Some(a) = creature_type {
+            a
+        } else {
+            CreatureType::Planeforged
+        };
+        let mut monster = Monster::new(challenge_rating, creature_type, level);
+        monster.creature.add_weapon(Weapon::Slam);
+        monster.creature.set_name("Standard Monster");
         let starting_attribute = if let Some(a) = starting_attribute {
             a
         } else {
@@ -120,23 +125,10 @@ impl Monster {
         };
 
         for a in Attribute::all() {
-            creature.set_base_attribute(a, starting_attribute);
+            monster.creature.set_base_attribute(a, starting_attribute);
         }
 
-        let creature_type = if let Some(a) = creature_type {
-            a
-        } else {
-            CreatureType::Planeforged
-        };
-        return Monster {
-            alignment: None,
-            challenge_rating,
-            creature,
-            creature_type,
-            description: None,
-            knowledge: None,
-            movement_modes: vec![MovementMode::Land(SpeedCategory::Normal)],
-        };
+        return monster;
     }
 }
 

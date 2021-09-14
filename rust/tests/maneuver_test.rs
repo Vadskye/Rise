@@ -39,7 +39,7 @@ fn it_calculates_attack_effects() {
     creature.add_special_attack(Maneuver::CertainStrike(1).attack(Weapon::Broadsword));
     assert_eq!(
         vec![
-            "Broadsword Certain Strike +3 (The subject takes 1d4+1 slashing damage.)",
+            "Broadsword Certain Strike +2 (The subject takes 1d4+1 slashing damage.)",
             "Broadsword +0 (The subject takes 1d8+1 slashing damage.)"
         ],
         creature
