@@ -14,7 +14,11 @@ impl<'a> CombatAgent<'a> {
     }
 
     pub fn total_damage_absorption(&self) -> i32 {
-        return self.creature.calc_hit_points() + self.creature.calc_damage_resistance();
+        let mut effective_hp = self.creature.calc_hit_points();
+        if self.creature.can_recover() {
+            effective_hp = (effective_hp as f64 * 1.5) as i32;
+        }
+        return effective_hp + self.creature.calc_damage_resistance();
     }
 
     pub fn remaining_damage_absorption(&self) -> i32 {
