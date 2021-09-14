@@ -258,6 +258,50 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::HitPoints(21)]),
         },
         RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 1,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(1)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
+                Modifier::Maneuver(Maneuver::PowerStrike(1)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(3)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
+                Modifier::Maneuver(Maneuver::PowerStrike(3)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(5)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
+                Modifier::Maneuver(Maneuver::PowerStrike(5)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(7)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
+                Modifier::Maneuver(Maneuver::PowerStrike(7)),
+            ]),
+        },
+        RankAbility {
             name: "Combat Styles",
             is_magical: false,
             rank: 1,
@@ -274,14 +318,10 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                 When you gain access to a new \glossterm{rank} in this archetype,
                     you can exchange any number of maneuvers you know for other maneuvers, including maneuvers of the higher rank.
             ",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(1)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
-                Modifier::Maneuver(Maneuver::PowerStrike(1)),
-            ]),
+            modifiers: None,
         },
         RankAbility {
-            name: "Combat Style Rank",
+            name: "Combat Style Rank (2)",
             is_magical: false,
             rank: 2,
             description: r"
@@ -300,18 +340,14 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Combat Style Rank",
+            name: "Combat Style Rank (3)",
             is_magical: false,
             rank: 3,
             description: r"
                 You become a rank 3 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
             ",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(3)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
-                Modifier::Maneuver(Maneuver::PowerStrike(3)),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Glancing Strikes",
@@ -325,7 +361,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Combat Style Rank",
+            name: "Combat Style Rank (4)",
             is_magical: false,
             rank: 4,
             description: r"
@@ -351,11 +387,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 5 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 5.
             ",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(5)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
-                Modifier::Maneuver(Maneuver::PowerStrike(5)),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Martial Force",
@@ -394,11 +426,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You become a rank 7 combat style user.
                 This gives you access to maneuvers that require a minimum rank of 7.
             ",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(7)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
-                Modifier::Maneuver(Maneuver::PowerStrike(7)),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Martial Maneuver",
