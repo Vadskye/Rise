@@ -280,9 +280,9 @@ fn standard_character_statistics_level_1() {
         "HP: 11 level + 2 martial mastery + 2 con",
     );
     assert_eq!(
-        10,
+        8,
         creature.calc_damage_resistance(),
-        "DR: 2 level + 6 scale + 2 con",
+        "DR: 6 scale + 2 con",
     );
 
     // HasResources
@@ -385,9 +385,9 @@ fn standard_character_statistics_level_10() {
         "HP: 31 level + 8 martial mastery + 4 con + 4 magic item",
     );
     assert_eq!(
-        32,
+        24,
         creature.calc_damage_resistance(),
-        "DR: 8 level + 16 elvenweave layered hide + 4 con + 4 magic item",
+        "DR: 16 elvenweave layered hide + 4 con + 4 magic item",
     );
 
     // HasResources
@@ -490,9 +490,9 @@ fn standard_character_statistics_level_20() {
         "HP: 100 level + 21 martial mastery + 7 con + 16 magic item",
     );
     assert_eq!(
-        96,
+        71,
         creature.calc_damage_resistance(),
-        "DR: 25 level + 48 pure deepforged full plate + 7 con + 16 magic item",
+        "DR: 48 pure deepforged full plate + 7 con + 16 magic item",
     );
 
     // HasResources
