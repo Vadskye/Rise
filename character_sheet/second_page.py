@@ -801,7 +801,7 @@ def calc_armor():
                     underlabel(
                         "Class",
                         number_input(
-                            {"name": "armor_defense_class_bonus", "value": "1"}
+                            {"name": "armor_defense_class_bonus", "value": "5"}
                         ),
                     ),
                     plus(),
@@ -850,7 +850,7 @@ def calc_fort():
                     ),
                     plus(),
                     underlabel(
-                        "Class", number_input({"name": "fortitude_class", "value": "4"})
+                        "Class", number_input({"name": "fortitude_class", "value": "5"})
                     ),
                     plus(),
                     equation_misc_repeat("fortitude", 3),
@@ -894,7 +894,7 @@ def calc_ref():
                     ),
                     plus(),
                     underlabel(
-                        "Class", number_input({"name": "reflex_class", "value": "4"})
+                        "Class", number_input({"name": "reflex_class", "value": "5"})
                     ),
                     plus(),
                     equation_misc_repeat("reflex", 3),
@@ -938,7 +938,7 @@ def calc_mental():
                     ),
                     plus(),
                     underlabel(
-                        "Class", number_input({"name": "mental_class", "value": "4"})
+                        "Class", number_input({"name": "mental_class", "value": "5"})
                     ),
                     plus(),
                     equation_misc_repeat("mental", 3),
