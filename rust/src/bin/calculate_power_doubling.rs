@@ -1,17 +1,13 @@
 use rise::calculations::statistical_combat::run_combat;
-use rise::creatures::Monster;
-use rise::monsters::ChallengeRating;
+use rise::creatures::Character;
 
 fn main() {
-    for level in vec![5, 8, 11, 14, 17, 20] {
-        let blue =
-            vec![Monster::standard_monster(ChallengeRating::Two, level, None, None).creature];
+    for level in vec![4, 7, 10, 13, 16, 19] {
+        let blue = vec![Character::standard_character(level, true).creature];
         let level_difference = 3;
         let red = vec![
-            Monster::standard_monster(ChallengeRating::Two, level - level_difference, None, None)
-                .creature,
-            Monster::standard_monster(ChallengeRating::Two, level - level_difference, None, None)
-                .creature,
+            Character::standard_character(level - level_difference, true).creature,
+            Character::standard_character(level - level_difference, true).creature,
         ];
         let results = run_combat(blue, red);
         println!("L{}: {}", level, results);
