@@ -196,11 +196,57 @@ fn standard_character_level_1_vs_cr1() {
     );
 
     assert_eq!(
-        "4.197",
+        calc_attack_damage_per_round(&generic, &attacker, &defender),
+        calc_individual_dpr(&attacker, &defender),
+        "Generic should be the best attack",
+    );
+}
+
+#[test]
+fn standard_character_level_1_vs_cr2() {
+    let attacker = Character::standard_character(1, true).creature;
+    let defender = Monster::standard_monster(ChallengeRating::Two, 1, None, None).creature;
+    assert_eq!(7, defender.calc_defense(&Defense::Armor));
+
+    let certain_strike = attacker
+        .get_attack_by_name("Broadsword Certain Strike")
+        .unwrap();
+    assert_eq!(
+        "3.342",
         format!(
             "{:.3}",
-            calc_individual_dpr(&attacker, &defender),
+            calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
         ),
+        "Certain Strike: 4.5 dph * 0.7 hit % + 2.5 dpc * 0.077 crit % = 3.15 + 0.1925 dpr",
+    );
+
+    let generic = attacker
+        .get_attack_by_name("Broadsword Generic Scaling Strike")
+        .unwrap();
+    assert_eq!(
+        "3.498",
+        format!(
+            "{:.3}",
+            calc_attack_damage_per_round(&generic, &attacker, &defender)
+        ),
+        "Generic: 6.5 dph * 0.5 hit % + 4.5 dpc * 0.055 crit % = 3.4975 dpr",
+    );
+
+    let power_strike = attacker
+        .get_attack_by_name("Broadsword Power Strike")
+        .unwrap();
+    assert_eq!(
+        "2.931",
+        format!(
+            "{:.3}",
+            calc_attack_damage_per_round(&power_strike, &attacker, &defender)
+        ),
+        "Power Strike: 9 dph * 0.3 hit % + 7 dpc * 0.033 crit % = 2.7 + .231 dpr",
+    );
+
+    assert_eq!(
+        calc_attack_damage_per_round(&generic, &attacker, &defender),
+        calc_individual_dpr(&attacker, &defender),
         "Generic should be the best attack",
     );
 }
@@ -248,63 +294,155 @@ fn standard_character_level_1_vs_weak_cr1() {
     );
 
     assert_eq!(
-        "5.862",
-        format!(
-            "{:.3}",
-            calc_individual_dpr(&attacker, &defender),
-        ),
+        calc_attack_damage_per_round(&power_strike, &attacker, &defender),
+        calc_individual_dpr(&attacker, &defender),
         "Power Strike should be the best attack",
     );
 }
 
 #[test]
-fn standard_character_level_1_vs_cr2() {
-    let attacker = Character::standard_character(1, true).creature;
-    let defender = Monster::standard_monster(ChallengeRating::Two, 1, None, None).creature;
-    assert_eq!(7, defender.calc_defense(&Defense::Armor));
+fn standard_character_level_10_vs_cr2() {
+    let attacker = Character::standard_character(10, true).creature;
+    let defender = Monster::standard_monster(ChallengeRating::Two, 10, None, None).creature;
+    assert_eq!(13, defender.calc_defense(&Defense::Armor));
 
     let certain_strike = attacker
         .get_attack_by_name("Broadsword Certain Strike")
         .unwrap();
     assert_eq!(
-        "3.342",
+        "12.546",
         format!(
             "{:.3}",
             calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
         ),
-        "Certain Strike: 4.5 dph * 0.7 hit % + 2.5 dpc * 0.077 crit % = 3.15 + 0.1925 dpr",
+        "Certain Strike: 13.5 dph * 0.8 hit % + 4.5 dpc * 0.088 crit % + 6.75 dpg * 0.2 glance % = 10.8 + 0.396 + 1.35 dpr",
     );
 
     let generic = attacker
         .get_attack_by_name("Broadsword Generic Scaling Strike")
         .unwrap();
     assert_eq!(
-        "3.498",
+        "11.295",
         format!(
             "{:.3}",
             calc_attack_damage_per_round(&generic, &attacker, &defender)
         ),
-        "Generic: 6.5 dph * 0.5 hit % + 4.5 dpc * 0.055 crit % = 3.4975 dpr",
+        "Generic: 18 dph * 0.5 hit % + 9 dpc * 0.055 crit % + 9 dpg * 0.2 glance % = 9 + 0.495 + 1.8 dpr",
     );
 
     let power_strike = attacker
         .get_attack_by_name("Broadsword Power Strike")
         .unwrap();
     assert_eq!(
-        "2.931",
+        "9.662",
         format!(
             "{:.3}",
             calc_attack_damage_per_round(&power_strike, &attacker, &defender)
         ),
-        "Power Strike: 9 dph * 0.3 hit % + 7 dpc * 0.033 crit % = 2.7 + .231 dpr",
+        "Power Strike: 23 dph * 0.3 hit % + 14 dpc * 0.033 crit % + 11.5 dpg * 0.2 glance % = 6.9 + 0.462 + 2.3 dpr",
     );
 
     assert_eq!(
-        "3.498",
+        calc_attack_damage_per_round(&certain_strike, &attacker, &defender),
+        calc_individual_dpr(&attacker, &defender),
+        "Certain Strike should be the best attack",
+    );
+}
+
+#[test]
+fn standard_character_level_20_vs_cr2() {
+    let attacker = Character::standard_character(20, true).creature;
+    let defender = Monster::standard_monster(ChallengeRating::Two, 20, None, None).creature;
+    assert_eq!(19, defender.calc_defense(&Defense::Armor));
+
+    let certain_strike = attacker
+        .get_attack_by_name("Broadsword Certain Strike")
+        .unwrap();
+    assert_eq!(
+        "30.836",
         format!(
             "{:.3}",
-            calc_individual_dpr(&attacker, &defender),
+            calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
         ),
+        "Certain Strike",
+    );
+
+    let generic = attacker
+        .get_attack_by_name("Broadsword Generic Scaling Strike")
+        .unwrap();
+    assert_eq!(
+        "29.444",
+        format!(
+            "{:.3}",
+            calc_attack_damage_per_round(&generic, &attacker, &defender)
+        ),
+        "Generic",
+    );
+
+    let power_strike = attacker
+        .get_attack_by_name("Broadsword Power Strike")
+        .unwrap();
+    assert_eq!(
+        "21.039",
+        format!(
+            "{:.3}",
+            calc_attack_damage_per_round(&power_strike, &attacker, &defender)
+        ),
+        "Power Strike",
+    );
+
+    assert_eq!(
+        calc_attack_damage_per_round(&certain_strike, &attacker, &defender),
+        calc_individual_dpr(&attacker, &defender),
+        "Certain Strike should be the best attack",
+    );
+}
+
+#[test]
+fn standard_character_level_20_vs_weak_cr1() {
+    let attacker = Character::standard_character(20, true).creature;
+    let defender = Monster::standard_monster(ChallengeRating::One, 20, Some(0), None).creature;
+    assert_eq!(16, defender.calc_defense(&Defense::Armor));
+
+    let certain_strike = attacker
+        .get_attack_by_name("Broadsword Certain Strike")
+        .unwrap();
+    assert_eq!(
+        "34.108",
+        format!(
+            "{:.3}",
+            calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
+        ),
+        "Certain Strike",
+    );
+
+    let generic = attacker
+        .get_attack_by_name("Broadsword Generic Scaling Strike")
+        .unwrap();
+    assert_eq!(
+        "47.364",
+        format!(
+            "{:.3}",
+            calc_attack_damage_per_round(&generic, &attacker, &defender)
+        ),
+        "Generic",
+    );
+
+    let power_strike = attacker
+        .get_attack_by_name("Broadsword Power Strike")
+        .unwrap();
+    assert_eq!(
+        "42.623",
+        format!(
+            "{:.3}",
+            calc_attack_damage_per_round(&power_strike, &attacker, &defender)
+        ),
+        "Power Strike",
+    );
+
+    assert_eq!(
+        calc_attack_damage_per_round(&generic, &attacker, &defender),
+        calc_individual_dpr(&attacker, &defender),
         "Generic should be the best attack",
     );
 }
