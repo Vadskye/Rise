@@ -259,7 +259,6 @@ impl HasDamageAbsorption for Creature {
         };
 
         let dr_from_armor: i32 = self.get_armor().iter().map(|a| a.damage_resistance()).sum();
-        println!("dr_from_armor {}", dr_from_armor);
 
         return dr_multiplier * dr_from_level
             + self.calc_total_attribute(&Attribute::Constitution)
