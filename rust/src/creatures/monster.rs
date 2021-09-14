@@ -127,6 +127,9 @@ impl Monster {
         for a in Attribute::all() {
             monster.creature.set_base_attribute(a, starting_attribute);
         }
+        monster
+            .creature
+            .set_base_attribute(Attribute::Strength, challenge_rating.max_base_attribute());
 
         return monster;
     }
