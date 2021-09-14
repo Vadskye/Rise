@@ -1,11 +1,11 @@
 use super::*;
 use crate::core_mechanics::Defense;
 use crate::creatures::attack_effects::AttackEffect;
-use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, StandardAttack};
+use crate::creatures::{Character, Creature, CreatureCategory, HasModifiers, Modifier, StandardAttack};
 use crate::equipment::Weapon;
 
 #[test]
-fn it_calculates_simple_hit_probability() {
+fn simple_hit_probability() {
     let hit_probability =
         calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 6);
     assert_eq!(
@@ -40,7 +40,7 @@ fn it_calculates_simple_hit_probability() {
 }
 
 #[test]
-fn it_calculates_extreme_hit_probability() {
+fn extreme_hit_probability() {
     let hit_probability =
         calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 16);
     assert_eq!(
@@ -65,7 +65,7 @@ fn it_calculates_extreme_hit_probability() {
 }
 
 #[test]
-fn it_calculates_glance_probability() {
+fn glance_probability() {
     let attack = &Attack::from_weapon(Weapon::Broadsword);
     assert_eq!(
         "0.200",
@@ -90,7 +90,7 @@ fn it_calculates_glance_probability() {
 }
 
 #[test]
-fn it_calculates_creature_dpr() {
+fn simple_damage_per_round() {
     let mut attacker = Creature::new(1, CreatureCategory::Character);
     let mut defender = Creature::new(1, CreatureCategory::Character);
     assert_eq!(
@@ -136,24 +136,13 @@ fn it_calculates_creature_dpr() {
     );
 }
 
-#[test]
-fn it_calculates_glancing_blows_dpr() {
-    let mut attacker = Creature::new(1, CreatureCategory::Character);
-    let mut defender = Creature::new(1, CreatureCategory::Character);
-    defender.add_modifier(Modifier::Defense(Defense::Armor, 6), None, None);
-    attacker.add_special_attack(Attack::from_weapon(Weapon::Broadsword));
+fn standard_character_damage_per_round() {
+    let attacker = Creature::new(1, CreatureCategory::Character);
+    let defender = Creature::new(1, CreatureCategory::Character);
+
     assert_eq!(
-        "2.498",
+        "5.000",
         format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-        "Should be 4.5 dph * 0.555 hit % = 2.498 dpr without glancing blows",
-    );
-    attacker.add_special_attack(
-        Attack::from_weapon(Weapon::Broadsword)
-            .except(|a| a.glance = Some(AttackEffect::HalfDamage)),
-    );
-    assert_eq!(
-        "2.947",
-        format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-        "Should be 4.5 dph * 0.655 hit % = 2.9475 dpr with glancing blows",
+        "Should be 4.5 dph * 1.111 hit % = 5 dpr",
     );
 }

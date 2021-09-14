@@ -258,8 +258,12 @@ impl HasDamageAbsorption for Creature {
             CreatureCategory::Monster(_) => 3,
         };
 
+        let dr_from_armor: i32 = self.get_armor().iter().map(|a| a.damage_resistance()).sum();
+        println!("dr_from_armor {}", dr_from_armor);
+
         return dr_multiplier * dr_from_level
-            + self.get_base_attribute(&Attribute::Constitution)
+            + self.calc_total_attribute(&Attribute::Constitution)
+            + dr_from_armor
             + self.calc_total_modifier(ModifierType::DamageResistance);
     }
 
@@ -295,7 +299,7 @@ impl HasDamageAbsorption for Creature {
         };
 
         return (hp_multiplier * hp_from_level as f64) as i32
-            + (self.get_base_attribute(&Attribute::Constitution) as i32)
+            + (self.calc_total_attribute(&Attribute::Constitution) as i32)
             + self.calc_total_modifier(ModifierType::HitPoints);
     }
 }
@@ -466,7 +470,7 @@ impl HasResources for Creature {
         let value = match resource {
             Resource::AttunementPoint => max(0, (self.level + 1) / 6),
             Resource::FatigueTolerance => {
-                self.get_base_attribute(&Attribute::Constitution)
+                self.get_base_attribute(&Attribute::Strength)
                     + self.get_base_attribute(&Attribute::Willpower)
             }
             Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
