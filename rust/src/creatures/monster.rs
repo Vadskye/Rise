@@ -53,6 +53,9 @@ impl Monster {
         }
 
         // Level scaling modifiers
+        if level >= 7 {
+            creature.add_modifier(Modifier::EnableGlancingStrikes, None, None);
+        }
         creature.add_modifier(
             Modifier::Accuracy(level / 9),
             Some("challenge rating"),
