@@ -19,6 +19,8 @@ fn main() {
 
     let standard_character = Character::standard_character(20, true);
     println!("standard character {}", standard_character.description());
+    let standard_barbarian = Character::standard_barbarian(20, true);
+    println!("standard barbarian {}", standard_barbarian.description());
     let standard_sorcerer = Character::standard_sorcerer(20, true);
     println!("standard sorcerer {}", standard_sorcerer.description());
 }

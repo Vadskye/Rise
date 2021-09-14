@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Defense, Resource};
-use crate::creatures::Modifier;
+use crate::creatures::{Maneuver, Modifier};
 use crate::skills::Skill;
 
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
@@ -441,6 +441,50 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 1,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(1)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
+                Modifier::Maneuver(Maneuver::PowerStrike(1)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(3)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
+                Modifier::Maneuver(Maneuver::PowerStrike(3)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(5)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
+                Modifier::Maneuver(Maneuver::PowerStrike(5)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(7)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
+                Modifier::Maneuver(Maneuver::PowerStrike(7)),
+            ]),
+        },
         RankAbility {
             name: "Primal Might",
             is_magical: false,
