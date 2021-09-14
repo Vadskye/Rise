@@ -172,56 +172,7 @@ mod attack_comparisons {
     use super::*;
 
     #[test]
-    fn standard_character_level_1_vs_cr1() {
-        let attacker = Character::standard_character(1, true).creature;
-        let defender = Monster::standard_monster(ChallengeRating::One, 1, None, None).creature;
-        assert_eq!(6, defender.calc_defense(&Defense::Armor));
-
-        let certain_strike = attacker
-            .get_attack_by_name("Broadsword Certain Strike")
-            .unwrap();
-        assert_eq!(
-            "3.820",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
-            ),
-            "Certain Strike: 4.5 dph * 0.8 hit % + 2.5 dpc * 0.088 crit % = 3.6 + 0.22 dpr",
-        );
-
-        let generic = attacker
-            .get_attack_by_name("Broadsword Generic Scaling Strike")
-            .unwrap();
-        assert_eq!(
-            "4.197",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&generic, &attacker, &defender)
-            ),
-            "Generic: 6.5 dph * 0.6 hit % + 4.5 dpc * 0.066 crit % = 3.9 + .297 dpr",
-        );
-
-        let power_strike = attacker
-            .get_attack_by_name("Broadsword Power Strike")
-            .unwrap();
-        assert_eq!(
-            "3.908",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&power_strike, &attacker, &defender)
-            ),
-            "Power Strike: 9 dph * 0.4 hit % + 7 dpc * 0.044 crit % = 3.6 + .308 dpr",
-        );
-
-        assert_eq!(
-            calc_attack_damage_per_round(&generic, &attacker, &defender),
-            calc_individual_dpr(&attacker, &defender),
-            "Generic should be the best attack",
-        );
-    }
-
-    #[test]
-    fn standard_character_level_1_vs_cr2() {
+    fn standard_character_level_1_vs_monster() {
         let attacker = Character::standard_character(1, true).creature;
         let defender = Monster::standard_monster(ChallengeRating::Two, 1, None, None).creature;
         assert_eq!(7, defender.calc_defense(&Defense::Armor));
@@ -270,10 +221,10 @@ mod attack_comparisons {
     }
 
     #[test]
-    fn standard_character_level_1_vs_weak_cr1() {
+    fn standard_character_level_1_vs_weak_monster() {
         let attacker = Character::standard_character(1, true).creature;
-        let defender = Monster::standard_monster(ChallengeRating::One, 1, Some(0), None).creature;
-        assert_eq!(4, defender.calc_defense(&Defense::Armor));
+        let defender = Monster::standard_monster(ChallengeRating::Two, 1, Some(0), None).creature;
+        assert_eq!(5, defender.calc_defense(&Defense::Armor));
 
         let certain_strike = attacker
             .get_attack_by_name("Broadsword Certain Strike")

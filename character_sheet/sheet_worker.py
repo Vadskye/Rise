@@ -240,14 +240,12 @@ def accuracy():
             *misc,
         ],
         f"""
-            var cr_mod = challenge_rating === 0 ? 0 : Math.max(-1, Math.floor(challenge_rating - 2));
             var level_scaling = challenge_rating ? Math.max(0, Math.floor(level / 9)) : 0;
             setAttrs({{
                 accuracy: (
                     Math.floor(level / 2)
                     + Math.floor(perception_starting / 2)
                     + {sum_variables(misc)}
-                    + cr_mod
                     + level_scaling
                     - fatigue_penalty
                     + accuracy_debuff_modifier
@@ -309,12 +307,10 @@ def armor_defense():
             }} else if (body_armor_usage_class === "none" || body_armor_usage_class === "light") {{
                 attribute_modifier += dexterity_starting;
             }}
-            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
             var before_equipment = (
                 Math.floor(level / 2)
                 + attribute_modifier
-                + cr_mod
                 + level_scaling
                 + armor_defense_class_bonus
             );
@@ -350,14 +346,12 @@ def fortitude():
             "all_defenses_vital_wound_modifier",
         ],
         f"""
-            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
             setAttrs({{
                 fortitude: (
                     Math.floor(level / 2)
                     + constitution_starting
                     + fortitude_class
-                    + cr_mod
                     + level_scaling
                     + fortitude_debuff_modifier
                     + {sum_variables(misc)}
@@ -383,14 +377,12 @@ def reflex():
             "all_defenses_vital_wound_modifier",
         ],
         f"""
-            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
             setAttrs({{
                 reflex: (
                     Math.floor(level / 2)
                     + dexterity_starting
                     + reflex_class
-                    + cr_mod
                     + level_scaling
                     + reflex_debuff_modifier
                     + {sum_variables(misc)}
@@ -416,14 +408,12 @@ def mental():
             "all_defenses_vital_wound_modifier",
         ],
         f"""
-            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
             setAttrs({{
                 mental: (
                     Math.floor(level / 2)
                     + willpower_starting
                     + mental_class
-                    + cr_mod
                     + level_scaling
                     + mental_debuff_modifier
                     + {sum_variables(misc)}
@@ -565,18 +555,15 @@ def hit_points():
                 29:   245,
                 30:   260,
             }}[level] || 1;
-            if (challenge_rating > 0) {{
-                hit_points_from_level = Math.floor(hit_points_from_level * 1.5);
-            }}
 
             var new_hit_points = hit_points_from_level + constitution + {sum_variables(misc)};
             var cr_multiplier = {{
                 0: 1,
                 0.5: 0.5,
                 1: 1,
-                2: 1,
-                3: 2,
-                4: 3,
+                2: 2,
+                3: 3,
+                4: 4,
             }}[challenge_rating || 0];
             new_hit_points = Math.floor(new_hit_points * cr_multiplier * (hit_points_vital_wound_multiplier || 1))
 
@@ -624,15 +611,15 @@ def magical_power():
         f"""
             var level_scaling = challenge_rating
                 ? {{
-                    0: 0,
-                    1: 1,
-                    2: 2,
-                    3: 3,
-                    4: 4,
-                    5: 6,
-                    6: 8,
-                    7: 12,
-                    8: 16,
+                    0: 1,
+                    1: 2,
+                    2: 3,
+                    3: 4,
+                    4: 6,
+                    5: 8,
+                    6: 12,
+                    7: 16,
+                    8: 24,
                 }}[Math.floor(level / 3)]
                 : 0;
             var magical_power_attribute = Math.floor(willpower / 2);
@@ -655,15 +642,15 @@ def mundane_power():
         f"""
             var level_scaling = challenge_rating
                 ? {{
-                    0: 0,
-                    1: 1,
-                    2: 2,
-                    3: 3,
-                    4: 4,
-                    5: 6,
-                    6: 8,
-                    7: 12,
-                    8: 16,
+                    0: 1,
+                    1: 2,
+                    2: 3,
+                    3: 4,
+                    4: 6,
+                    5: 8,
+                    6: 12,
+                    7: 16,
+                    8: 24,
                 }}[Math.floor(level / 3)]
                 : 0;
             var mundane_power_attribute = Math.floor(strength / 2)
@@ -680,7 +667,7 @@ def mundane_power():
 
 
 def damage_resistance():
-    misc = get_misc_variables("damage_resistance_bonus", 3)
+    misc = get_misc_variables("damage_resistance_bonus", 4)
     return js_wrapper(
         [
             "constitution",
@@ -692,49 +679,39 @@ def damage_resistance():
         ],
         no_listen_variables=["damage_resistance", "damage_resistance_maximum"],
         function_body=f"""
-            var resistance_from_level = {{
-                0:    0 ,
-                1:    2 ,
-                2:    3 ,
-                3:    3 ,
-                4:    3 ,
-                5:    4 ,
-                6:    4 ,
-                7:    5 ,
-                8:    6 ,
-                9:    7 ,
-                10:   8 ,
-                11:   9 ,
-                12:   10,
-                13:   11,
-                14:   12,
-                15:   14,
-                16:   15,
-                17:   17,
-                18:   19,
-                19:   22,
-                20:   25,
-                21:   28,
-                22:   32,
-                23:   36,
-                24:   40,
-                25:   44,
-                26:   48,
-                27:   52,
-                28:   56,
-                29:   60,
-                30:   64,
-            }}[level] || 0;
+            var resistance_from_level = 0;
             if (challenge_rating > 0) {{
-                resistance_from_level *= 3;
+                resistance_from_level = {{
+                    1:    3,
+                    2:    3,
+                    3:    4,
+                    4:    4,
+                    5:    5,
+                    6:    6,
+                    7:    7,
+                    8:    9,
+                    9:    10,
+                    10:    12,
+                    11:    13,
+                    12:    15,
+                    13:    16,
+                    14:    18,
+                    15:    20,
+                    16:    22,
+                    17:    25,
+                    18:    28,
+                    19:    32,
+                    20:    37,
+                    21:    42,
+                }}[level];
             }}
             var cr_multiplier = {{
                 0: 1,
                 0.5: 0,
-                1: 0,
-                2: 1,
-                3: 2,
-                4: 4,
+                1: 1,
+                2: 2,
+                3: 4,
+                4: 6,
             }}[challenge_rating || 0];
             const new_damage_resistance = Math.floor(
                 (

@@ -21,12 +21,12 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         \begin{dtable}
             \lcaption{Challenge Rating Effects}
             \begin{dtabularx}{\textwidth}{l l X X l l l}
-                \tb{CR} & \tb{Max Attribute} & \tb{HP}  & \tb{DR} & \tb{Accuracy} & \tb{Defenses} & \tb{Damage}\fn{1} \tableheaderrule
-                1/2     & 3 & \mult1/2 & \mult0  & \minus2       & \minus2       & \minus2d \\
-                1       & 4 & \mult1   & \mult0  & \minus1       & \minus1       & \minus1d \\
-                2       & 5 & \mult1   & \mult1  & \plus0        & \plus0        & \tdash   \\
-                3       & 5 & \mult2   & \mult2  & \plus0        & \plus0        & \tdash   \\
-                4       & 6 & \mult3   & \mult4  & \plus1        & \plus1        & \plus1d  \\
+                \tb{CR} & \tb{Max Attribute} & \tb{HP}  & \tb{DR} & \tb{Damage}\fn{1} \tableheaderrule
+                1/2     & 3                  & \mult1/2 & \mult0  & \minus1d \\
+                1       & 4                  & \mult1   & \mult1  & \tdash   \\
+                2       & 5                  & \mult2   & \mult2  & \plus1d  \\
+                3       & 5                  & \mult3   & \mult4  & \plus1d  \\
+                4       & 6                  & \mult4   & \mult6  & \plus2d  \\
             \end{dtabularx}
             1. This modifier applies to all damage dice rolled by the monster, including both strikes and magical abilities. \\
         \end{dtable}
@@ -52,12 +52,12 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         \subsubsection{Rank-Based Ability Access}
             Although monsters do not gain archetypes, their special abilities should still be balanced appropriately for their maximum accessible rank.
             Like a player character, a monster's maximum accessible rank is based on its level, as shown in \tref{Monster Advancement}.
-            CR 3 and CR 4 monsters gain a \plus1 bonus to their maximum rank, allowing them to use powerful abilities before players can.
+            CR 3 and CR 4 monsters gain a \plus1 bonus to their maximum rank, allowing them to use powerful abilities before player characters can.
 
     \subsection{Attributes}
         Each of a monster's base attributes can range from \minus9 to 3, as appropriate for the type of monster.
         A monster's attributes scale with level in the same way as player character attributes.
-        A monster can also have up to two attributes starting at 4 or 5.
+        A monster can also have up to two attributes that are higher, up to the maximum base attribute value for that monster's challenge rating.
         In general, a monster with higher starting attributes will be stronger, but not all monsters need to start with the same starting attribute total.
 
     \subsection{Level Scaling}
@@ -66,20 +66,17 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         High level monsters should have slightly higher base values for their attributes, though this is not quantified, since monster attributes can be highly varied.
         They have the following specific benefits.
         \begin{itemize}
-            % this compensates for monsters not being able to take the recover action
-            \item At almost all levels, the base \glossterm{hit points} of a monster are 50\% higher than the base hit points of a player character
-            % this compensates for monsters not having complicated armor mechanics
-            \item At all levels, the base \glossterm{damage resistance} of a monster is three times the base damage resistance of a player character
+            \item Monsters gain an intrinsic bonus to \glossterm{damage resistance} based on their level described in \tref{Monster Advancement}
+            \item Monsters gain a \plus1 bonus to power with all abilities that gradually increases at 3rd level and every 3 levels thereafter
             \item Monsters gain a \plus1 bonus to all defenses at 3rd level, 12th level, and 21st level
-            \item Monsters gain a \plus1 bonus to power with all abilities at 3rd level that gradually increases every 3 levels thereafter
             \item Monsters gain a \plus1d damage bonus with strikes at 4th level and every 3 levels thereafter
             \item Monsters gain a \plus1 bonus to their roll to automatically remove conditions at 6th level and 15th level
-            \item Monsters gain a \plus1 bonus to their maximum base attribute at 
+            % \item Monsters gain a \plus1 bonus to their maximum base attribute at 11th level and 21st level
             \item Monsters gain a \plus1 accuracy bonus at 9th level and 18th level
         \end{itemize}
 
         Monster level scaling is summarized in \tref{Monster Advancement}.
-        The values in that table are accurate for CR 2 monsters, since they are individually the most similar to player characters and have the fewest multipliers and modifiers.
+        The values in that table are accurate for CR 1 monsters, since they are individually the most similar to player characters and have the fewest multipliers and modifiers.
         The statistics for monsters with a different CR can be extrapolated from those base values.
 
         Monsters gain the same statistical benefits from their attributes that player characters do.
@@ -95,30 +92,30 @@ This chapter describes the rules for monsters, and the combat statistics for a v
     \begin{dtable*}
         \lcaption{Monster Advancement}
         \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{HP} & \tb{DR} & \tb{Accuracy} & \tb{Defenses} & \tb{Bite Damage}\fn{3} \tableheaderrule
-            1st        & 1                   & 16      & 6       & \plus0        & 5             & 1d10        \\
-            2nd        & 1                   & 18      & 9       & \plus1        & 6             & 1d10        \\
-            3rd        & 1                   & 19      & 9       & \plus1        & 7             & 1d10\plus1  \\
-            4th        & 2                   & 22      & 9       & \plus2        & 8             & 2d6\plus1   \\
-            5th        & 2                   & 25      & 12      & \plus2        & 8             & 2d6\plus1   \\
-            6th        & 2                   & 28      & 12      & \plus3        & 9             & 2d6\plus2   \\
-            7th        & 3                   & 33      & 15      & \plus3        & 9             & 2d8\plus2   \\
-            8th        & 3                   & 37      & 18      & \plus4        & 10            & 2d8\plus2   \\
-            9th        & 3                   & 42      & 21      & \plus5        & 10            & 2d8\plus3   \\
-            10th       & 4                   & 46      & 24      & \plus6        & 11            & 2d10\plus3  \\
-            11th       & 4                   & 52      & 27      & \plus6        & 11            & 2d10\plus3  \\
-            12th       & 4                   & 58      & 30      & \plus7        & 13            & 2d10\plus4  \\
-            13th       & 5                   & 66      & 33      & \plus7        & 13            & 4d6\plus4   \\
-            14th       & 5                   & 75      & 36      & \plus8        & 14            & 4d6\plus4   \\
-            15th       & 5                   & 84      & 42      & \plus8        & 14            & 4d6\plus6   \\
-            16th       & 6                   & 94      & 45      & \plus9        & 15            & 4d8\plus6   \\
-            17th       & 6                   & 105     & 51      & \plus9        & 15            & 4d8\plus6   \\
-            18th       & 6                   & 115     & 57      & \plus11       & 16            & 4d8\plus8   \\
-            19th       & 7                   & 132     & 66      & \plus11       & 16            & 4d10\plus8  \\
-            20th       & 7                   & 150     & 75      & \plus12       & 17            & 4d10\plus8  \\
-            21st       & 7                   & 175     & 84      & \plus12       & 18            & 4d10\plus12 \\
+            \tb{Level}\fn{1} & \tb{Max Rank} & \tb{HP} & \tb{DR} & \tb{Accuracy} & \tb{Defenses} & \tb{Bite Damage} \tableheaderrule
+            1st              & 1             & 11      & 3       & \plus0        & 5             & 1d10\plus1  \\
+            2nd              & 1             & 12      & 3       & \plus1        & 6             & 1d10\plus1  \\
+            3rd              & 1             & 13      & 4       & \plus1        & 7             & 1d10\plus2  \\
+            4th              & 2             & 15      & 4       & \plus2        & 8             & 2d6\plus2   \\
+            5th              & 2             & 17      & 5       & \plus2        & 8             & 2d6\plus2   \\
+            6th              & 2             & 19      & 6       & \plus3        & 9             & 2d6\plus3   \\
+            7th              & 3             & 22      & 7       & \plus3        & 9             & 2d8\plus3   \\
+            8th              & 3             & 25      & 9       & \plus4        & 10            & 2d8\plus3   \\
+            9th              & 3             & 28      & 10      & \plus5        & 10            & 2d8\plus4   \\
+            10th             & 4             & 31      & 12      & \plus6        & 11            & 2d10\plus4  \\
+            11th             & 4             & 35      & 13      & \plus6        & 11            & 2d10\plus4  \\
+            12th             & 4             & 39      & 15      & \plus7        & 13            & 2d10\plus6  \\
+            13th             & 5             & 44      & 16      & \plus7        & 13            & 4d6\plus6   \\
+            14th             & 5             & 50      & 18      & \plus8        & 14            & 4d6\plus6   \\
+            15th             & 5             & 56      & 20      & \plus8        & 14            & 4d6\plus8   \\
+            16th             & 6             & 63      & 22      & \plus9        & 15            & 4d8\plus8   \\
+            17th             & 6             & 70      & 25      & \plus9        & 15            & 4d8\plus8   \\
+            18th             & 6             & 78      & 28      & \plus11       & 16            & 4d8\plus12  \\
+            19th             & 7             & 88      & 32      & \plus11       & 16            & 4d10\plus12 \\
+            20th             & 7             & 100     & 37      & \plus12       & 17            & 4d10\plus12 \\
+            21st             & 7             & 115     & 42      & \plus12       & 18            & 4d10\plus16 \\
         \end{dtabularx}
-        1. The values given in this table are accurate for CR 2 monsters. \\
+        1. The statistics in this table are accurate for CR 1 monsters. \\
         2. Assuming the monster has no free hands (see \pcref{Monster Natural Weapon Bonuses}). \\
         % 3. For each level beyond 21, a monster increases its maximum hit points by 25 and its maximum damage resistance by 12. \\
     \end{dtable*}
