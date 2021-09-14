@@ -1,4 +1,4 @@
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, PartialEq)]
 pub enum ChallengeRating {
     Half,
     One,
@@ -25,6 +25,16 @@ impl ChallengeRating {
             Self::Two => 0,
             Self::Three => 0,
             Self::Four => 1,
+        }
+    }
+
+    pub fn max_base_attribute(&self) -> i32 {
+        match self {
+            Self::Half => 3,
+            Self::One => 4,
+            Self::Two => 5,
+            Self::Three => 5,
+            Self::Four => 6,
         }
     }
 
