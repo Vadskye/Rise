@@ -241,26 +241,17 @@ fn standard_character_statistics_level_1() {
     );
 
     // HasAttacks
-    assert_eq!(
-        1,
-        creature.calc_accuracy(),
-        "Accuracy: 1 per",
-    );
-    assert_eq!(
-        0,
-        creature.calc_power(true),
-        "Magical power: 0",
-    );
-    assert_eq!(
-        2,
-        creature.calc_power(false),
-        "Mundane power: 2 str",
-    );
+    assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
+    assert_eq!(0, creature.calc_power(true), "Magical power: 0",);
+    assert_eq!(2, creature.calc_power(false), "Mundane power: 2 str",);
 
     // HasAttributes
     assert_eq!(
         vec![4, 0, 2, 1, 2, 0],
-        Attribute::all().iter().map(|a| creature.calc_total_attribute(&a)).collect::<Vec<i32>>(),
+        Attribute::all()
+            .iter()
+            .map(|a| creature.calc_total_attribute(&a))
+            .collect::<Vec<i32>>(),
         "Attributes",
     );
 
@@ -275,11 +266,7 @@ fn standard_character_statistics_level_1() {
         creature.calc_defense(&Defense::Fortitude),
         "Fort: 7 fighter + 2 con",
     );
-    assert_eq!(
-        3,
-        creature.calc_defense(&Defense::Reflex),
-        "Ref: 3 fighter",
-    );
+    assert_eq!(3, creature.calc_defense(&Defense::Reflex), "Ref: 3 fighter",);
     assert_eq!(
         6,
         creature.calc_defense(&Defense::Mental),
@@ -338,21 +325,34 @@ fn standard_character_statistics_level_10() {
         creature.calc_accuracy(),
         "Accuracy: 5 level + 1 per + 1 equip train",
     );
-    assert_eq!(
-        4,
-        creature.calc_power(true),
-        "Magical power: 4 magic item",
-    );
+    assert_eq!(4, creature.calc_power(true), "Magical power: 4 magic item",);
     assert_eq!(
         9,
         creature.calc_power(false),
         "Mundane power: 4 magic item + 5 str",
     );
+    assert_eq!(
+        vec![
+            "Broadsword Certain Strike +10 (The subject takes 1d8+9 slashing damage.)",
+            "Broadsword Generic Scaling Strike +7 (The subject takes 2d8+9 slashing damage.)",
+            "Broadsword Power Strike +5 (The subject takes 4d6+9 slashing damage.)",
+            "Broadsword +7 (The subject takes 2d6+9 slashing damage.)",
+        ],
+        creature
+            .calc_all_attacks()
+            .iter()
+            .map(|a| a.shorthand_description(&creature))
+            .collect::<Vec<String>>(),
+        "Attack descriptions",
+    );
 
     // HasAttributes
     assert_eq!(
         vec![11, 0, 4, 1, 4, 0],
-        Attribute::all().iter().map(|a| creature.calc_total_attribute(&a)).collect::<Vec<i32>>(),
+        Attribute::all()
+            .iter()
+            .map(|a| creature.calc_total_attribute(&a))
+            .collect::<Vec<i32>>(),
         "Attributes",
     );
 
@@ -430,21 +430,34 @@ fn standard_character_statistics_level_20() {
         creature.calc_accuracy(),
         "Accuracy: 10 level + 1 per + 1 equip train",
     );
-    assert_eq!(
-        8,
-        creature.calc_power(true),
-        "Magical power: 8 magic item",
-    );
+    assert_eq!(8, creature.calc_power(true), "Magical power: 8 magic item",);
     assert_eq!(
         17,
         creature.calc_power(false),
         "Mundane power: 8 magic item + 9 str",
     );
+    assert_eq!(
+        vec![
+            "Broadsword Certain Strike +17 (The subject takes 4d6+17 slashing damage.)",
+            "Broadsword Generic Scaling Strike +12 (The subject takes 7d10+17 slashing damage.)",
+            "Broadsword Power Strike +10 (The subject takes 9d10+17 slashing damage.)",
+            "Broadsword +12 (The subject takes 4d10+17 slashing damage.)"
+        ],
+        creature
+            .calc_all_attacks()
+            .iter()
+            .map(|a| a.shorthand_description(&creature))
+            .collect::<Vec<String>>(),
+        "Attack descriptions",
+    );
 
     // HasAttributes
     assert_eq!(
         vec![19, 0, 7, 1, 7, 0],
-        Attribute::all().iter().map(|a| creature.calc_total_attribute(&a)).collect::<Vec<i32>>(),
+        Attribute::all()
+            .iter()
+            .map(|a| creature.calc_total_attribute(&a))
+            .collect::<Vec<i32>>(),
         "Attributes",
     );
 
