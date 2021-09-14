@@ -96,6 +96,47 @@ impl Character {
         return character;
     }
 
+    pub fn standard_sorcerer(level: i32, use_point_buy: bool) -> Self {
+        let mut character = Self::new(
+            Class::Sorcerer,
+            level,
+            [
+                ClassArchetype::SorcererArcaneMagic,
+                ClassArchetype::SorcererArcaneSpellMastery,
+                ClassArchetype::DraconicMagic,
+            ],
+        );
+
+        character.creature.set_name("Standard Sorcerer");
+
+        if use_point_buy {
+            character
+                .creature
+                .set_base_attribute(Attribute::Strength, 0);
+            character
+                .creature
+                .set_base_attribute(Attribute::Dexterity, 1);
+            character
+                .creature
+                .set_base_attribute(Attribute::Constitution, 2);
+            character
+                .creature
+                .set_base_attribute(Attribute::Intelligence, 0);
+            character
+                .creature
+                .set_base_attribute(Attribute::Perception, 2);
+            character
+                .creature
+                .set_base_attribute(Attribute::Willpower, 4);
+        }
+
+        for modifier in calc_standard_magic_modifiers(level) {
+            character.creature.add_magic_modifier(modifier);
+        }
+
+        return character;
+    }
+
     pub fn description(&self) -> String {
         // let mut attacks = self.calc_all_attacks();
         // attacks.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
