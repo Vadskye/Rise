@@ -220,7 +220,9 @@ impl Character {
                 .set_base_attribute(Attribute::Willpower, 4);
         }
 
-        for modifier in calc_standard_magic_modifiers(level) {
+        // This is a hacky way to represent the fact that casters can attune to more powerful
+        // self-buffs
+        for modifier in calc_standard_magic_modifiers(level + 3) {
             character.creature.add_magic_modifier(modifier);
         }
 
@@ -262,39 +264,48 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     // This ignores legacy items, but assumes that items are acquired as soon as possible. On
     // average, this should make the levels reasonably accurate.
 
-    let mut power = 0;
-    if level >= 16 {
-        power = 8;
+    let power = if level >= 22 {
+        16
+    } else if level >= 16 {
+        8
     } else if level >= 10 {
-        power = 4;
+        4
     } else if level >= 4 {
-        power = 2;
-    }
+        2
+    } else {
+        0
+    };
     if power > 0 {
         modifiers.push(Modifier::MagicalPower(power));
         modifiers.push(Modifier::MundanePower(power));
     }
 
-    let mut dr = 0;
-    if level >= 17 {
-        dr = 16;
+    let dr = if level >= 23 {
+        32
+    } else if level >= 17 {
+        16
     } else if level >= 11 {
-        dr = 8;
+        8
     } else if level >= 5 {
-        dr = 4;
-    }
+        4
+    } else {
+        0
+    };
     if dr > 0 {
         modifiers.push(Modifier::DamageResistance(dr));
     }
 
-    let mut hp = 0;
-    if level >= 18 {
-        hp = 16;
+    let hp = if level >= 24 {
+        32
+    } else if level >= 18 {
+        16
     } else if level >= 12 {
-        hp = 8;
+        8
     } else if level >= 6 {
-        hp = 4;
-    }
+        4
+    } else {
+        0
+    };
     if hp > 0 {
         modifiers.push(Modifier::HitPoints(hp));
     }
