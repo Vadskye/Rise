@@ -1,5 +1,6 @@
 use super::*;
-use crate::{core_mechanics::HasDefenses, creatures::attacks::HasAttacks};
+use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
+use crate::creatures::attacks::HasAttacks;
 use creature::Creature;
 
 #[test]
@@ -168,7 +169,11 @@ fn it_calculates_level_21_fighter_attacks() {
     );
     assert_eq!(
         4,
-        fighter.calc_all_attacks().iter().filter(|a| a.glance.is_some()).count(),
+        fighter
+            .calc_all_attacks()
+            .iter()
+            .filter(|a| a.glance.is_some())
+            .count(),
         "All attacks should have glancing blows",
     );
 }
@@ -221,5 +226,189 @@ fn it_calculates_level_21_fighter_resources() {
             fighter.calc_resource(&Resource::TrainedSkill)
         ),
         "4 class",
+    );
+}
+
+#[test]
+fn standard_character_statistics_level_1() {
+    let creature = Character::standard_character(1, true).creature;
+
+    // HasArmor
+    assert_eq!(
+        0,
+        creature.calc_encumbrance(),
+        "Encumbrance: 5 scale mail - 4 str - 1 equipment training",
+    );
+
+    // HasAttacks
+    assert_eq!(
+        1,
+        creature.calc_accuracy(),
+        "Accuracy: 1 per",
+    );
+    assert_eq!(
+        0,
+        creature.calc_power(true),
+        "Magical power: 0",
+    );
+    assert_eq!(
+        2,
+        creature.calc_power(false),
+        "Mundane power: 2 str",
+    );
+
+    // HasAttributes
+    assert_eq!(
+        vec![4, 0, 2, 1, 2, 0],
+        Attribute::all().iter().map(|a| creature.calc_total_attribute(&a)).collect::<Vec<i32>>(),
+        "Attributes",
+    );
+
+    // HasDefenses
+    assert_eq!(
+        7,
+        creature.calc_defense(&Defense::Armor),
+        "Armor: 3 breastplate + 2 shield + 1 fighter + 1 con",
+    );
+    assert_eq!(
+        9,
+        creature.calc_defense(&Defense::Fortitude),
+        "Fort: 7 fighter + 2 con",
+    );
+    assert_eq!(
+        3,
+        creature.calc_defense(&Defense::Reflex),
+        "Ref: 3 fighter",
+    );
+    assert_eq!(
+        6,
+        creature.calc_defense(&Defense::Mental),
+        "Ment: 4 fighter + 2 combat discipline",
+    );
+
+    // HasDamageAbsorption
+    assert_eq!(
+        15,
+        creature.calc_hit_points(),
+        "HP: 11 level + 2 martial mastery + 2 con",
+    );
+    assert_eq!(
+        10,
+        creature.calc_damage_resistance(),
+        "DR: 2 level + 6 scale + 2 con",
+    );
+
+    // HasResources
+    assert_eq!(
+        2,
+        creature.calc_resource(&Resource::AttunementPoint),
+        "AP: 2 class",
+    );
+    assert_eq!(
+        7,
+        creature.calc_resource(&Resource::FatigueTolerance),
+        "FT: 3 fighter + 4 str",
+    );
+    assert_eq!(
+        3,
+        creature.calc_resource(&Resource::InsightPoint),
+        "Insight: 2 fighter + 1 int",
+    );
+    assert_eq!(
+        5,
+        creature.calc_resource(&Resource::TrainedSkill),
+        "Trained skills: 4 fighter + 1 int",
+    );
+}
+
+#[test]
+fn standard_character_statistics_level_10() {
+    let creature = Character::standard_character(10, true).creature;
+
+    // HasArmor
+    assert_eq!(
+        0,
+        creature.calc_encumbrance(),
+        "Encumbrance: 5 layered hide - 4 str - 1 equip train",
+    );
+
+    // HasAttacks
+    assert_eq!(
+        7,
+        creature.calc_accuracy(),
+        "Accuracy: 5 level + 1 per + 1 equip train",
+    );
+    assert_eq!(
+        4,
+        creature.calc_power(true),
+        "Magical power: 4 magic item",
+    );
+    assert_eq!(
+        9,
+        creature.calc_power(false),
+        "Mundane power: 4 magic item + 5 str",
+    );
+
+    // HasAttributes
+    assert_eq!(
+        vec![11, 0, 4, 1, 4, 0],
+        Attribute::all().iter().map(|a| creature.calc_total_attribute(&a)).collect::<Vec<i32>>(),
+        "Attributes",
+    );
+
+    // HasDefenses
+    assert_eq!(
+        13,
+        creature.calc_defense(&Defense::Armor),
+        "Armor: 5 level + 4 layered hide + 2 shield + 1 fighter + 1 con",
+    );
+    assert_eq!(
+        14,
+        creature.calc_defense(&Defense::Fortitude),
+        "Fort: 5 level + 7 fighter + 2 con",
+    );
+    assert_eq!(
+        8,
+        creature.calc_defense(&Defense::Reflex),
+        "Ref: 5 level + 3 fighter",
+    );
+    assert_eq!(
+        11,
+        creature.calc_defense(&Defense::Mental),
+        "Ment: 5 level + 4 fighter + 2 combat discipline",
+    );
+
+    // HasDamageAbsorption
+    assert_eq!(
+        47,
+        creature.calc_hit_points(),
+        "HP: 31 level + 8 martial mastery + 4 con + 4 magic item",
+    );
+    assert_eq!(
+        32,
+        creature.calc_damage_resistance(),
+        "DR: 8 level + 16 elvenweave layered hide + 4 con + 4 magic item",
+    );
+
+    // HasResources
+    assert_eq!(
+        4,
+        creature.calc_resource(&Resource::AttunementPoint),
+        "AP: 2 class + 1 level + 1 equipment training",
+    );
+    assert_eq!(
+        8,
+        creature.calc_resource(&Resource::FatigueTolerance),
+        "FT: 3 fighter + 4 str + 1 combat discipline",
+    );
+    assert_eq!(
+        3,
+        creature.calc_resource(&Resource::InsightPoint),
+        "Insight: 2 fighter + 1 int",
+    );
+    assert_eq!(
+        5,
+        creature.calc_resource(&Resource::TrainedSkill),
+        "Trained skills: 4 fighter + 1 int",
     );
 }
