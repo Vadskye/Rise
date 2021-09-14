@@ -1,6 +1,6 @@
 use super::creature::CreatureCategory;
 use crate::classes::{calc_rank_abilities, Class, ClassArchetype};
-use crate::core_mechanics::{Attribute, HasAttributes, HasResources, Resource};
+use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasResources, Resource};
 use crate::creatures::{creature, latex, HasModifiers, Modifier};
 use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, HasWeapons, Weapon};
 
@@ -27,6 +27,13 @@ impl Character {
             }
         }
 
+        for defense in Defense::all() {
+            creature.add_modifier(
+                Modifier::Defense(defense, class.defense_bonus(&defense)),
+                Some(class.name()),
+                None,
+            );
+        }
         for resource in Resource::all() {
             creature.add_modifier(
                 Modifier::Resource(resource, class.resource_bonus(&resource)),
@@ -164,78 +171,6 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     return modifiers;
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_calculates_rank_abilities() {
-        let mut fighter_1_abilities = calc_rank_abilities(
-            1,
-            &[
-                ClassArchetype::MartialMastery,
-                ClassArchetype::EquipmentTraining,
-                ClassArchetype::CombatDiscipline,
-            ],
-        )
-        .iter()
-        .map(|a| a.name)
-        .collect::<Vec<&str>>();
-        fighter_1_abilities.sort();
-        assert_eq!(
-            vec![
-                "Armor Expertise",
-                "Combat Styles",
-                "Martial Expertise",
-                "Martial Expertise",
-                "Mental Discipline",
-            ],
-            fighter_1_abilities,
-            "Should have correct abilities for a level 1 fighter",
-        );
-
-        let mut fighter_10_abilities = calc_rank_abilities(
-            10,
-            &[
-                ClassArchetype::MartialMastery,
-                ClassArchetype::EquipmentTraining,
-                ClassArchetype::CombatDiscipline,
-            ],
-        )
-        .iter()
-        .map(|a| a.name)
-        .collect::<Vec<&str>>();
-        fighter_10_abilities.sort();
-        assert_eq!(
-            vec![
-                "Armor Expertise",
-                "Cleansing Discipline",
-                "Combat Style Rank",
-                "Combat Style Rank",
-                "Combat Style Rank",
-                "Combat Styles",
-                "Disciplined Force",
-                "Enduring Discipline",
-                "Equipment Efficiency",
-                "Glancing Strikes",
-                "Greater Armor Expertise",
-                // 5 of these since there are 4 ranks in this archetype plus the rank 0
-                "Martial Expertise",
-                "Martial Expertise",
-                "Martial Expertise",
-                "Martial Expertise",
-                "Martial Expertise",
-                "Martial Force",
-                "Martial Maneuver",
-                "Mental Discipline",
-                "Weapon Training"
-            ],
-            fighter_10_abilities,
-            "Should have correct abilities for a level 10 fighter",
-        );
-    }
-}
-
 // Use a relatively smooth level progression for a (level - 1) item
 fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armor {
     match max_usage_class {
@@ -294,3 +229,6 @@ fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armo
         }
     }
 }
+
+#[cfg(test)]
+mod tests;

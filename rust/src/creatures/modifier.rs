@@ -25,7 +25,6 @@ pub enum Modifier {
     Resource(Resource, i32),
     Skill(Skill, i32),
     StrikeDamageDice(i32),
-    // TODO: add this to creature calculations
     VitalRoll(i32),
 }
 

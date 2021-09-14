@@ -1,7 +1,7 @@
 use rise::classes::{calc_rank_abilities, Class, ClassArchetype};
 use rise::core_mechanics::HasDamageAbsorption;
 use rise::creatures::attacks::HasAttacks;
-use rise::creatures::{Character, HasModifiers, ModifierType};
+use rise::creatures::{Character, HasModifiers};
 
 #[test]
 fn it_calculates_rank_abilities() {
@@ -50,6 +50,10 @@ fn it_calculates_modifiers() {
         vec![
             "DR 2",
             "attack Abyssal Blast",
+            "defense armor by 0",
+            "defense fortitude by 5",
+            "defense mental by 7",
+            "defense reflex by 3",
             "focus -2",
             "resource attunement point by 3",
             "resource fatigue tolerance by 3",
