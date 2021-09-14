@@ -96,6 +96,96 @@ impl Character {
         return character;
     }
 
+    pub fn standard_greataxe(level: i32, use_point_buy: bool) -> Self {
+        let mut character = Self::new(
+            Class::Fighter,
+            level,
+            [
+                ClassArchetype::MartialMastery,
+                ClassArchetype::EquipmentTraining,
+                ClassArchetype::CombatDiscipline,
+            ],
+        );
+
+        character.creature.add_weapon(Weapon::Greataxe);
+        character
+            .creature
+            .add_armor(standard_armor_by_level(level, ArmorUsageClass::Heavy));
+        character.creature.set_name("Standard Greataxe");
+
+        if use_point_buy {
+            character
+                .creature
+                .set_base_attribute(Attribute::Strength, 4);
+            character
+                .creature
+                .set_base_attribute(Attribute::Dexterity, 0);
+            character
+                .creature
+                .set_base_attribute(Attribute::Constitution, 2);
+            character
+                .creature
+                .set_base_attribute(Attribute::Intelligence, 1);
+            character
+                .creature
+                .set_base_attribute(Attribute::Perception, 2);
+            character
+                .creature
+                .set_base_attribute(Attribute::Willpower, 0);
+        }
+
+        for modifier in calc_standard_magic_modifiers(level) {
+            character.creature.add_magic_modifier(modifier);
+        }
+
+        return character;
+    }
+
+    pub fn standard_barbarian(level: i32, use_point_buy: bool) -> Self {
+        let mut character = Self::new(
+            Class::Barbarian,
+            level,
+            [
+                ClassArchetype::PrimalWarrior,
+                ClassArchetype::Battlerager,
+                ClassArchetype::Totemist,
+            ],
+        );
+
+        character.creature.add_weapon(Weapon::Greataxe);
+        character
+            .creature
+            .add_armor(standard_armor_by_level(level, ArmorUsageClass::Medium));
+        character.creature.set_name("Standard Barbarian");
+
+        if use_point_buy {
+            character
+                .creature
+                .set_base_attribute(Attribute::Strength, 4);
+            character
+                .creature
+                .set_base_attribute(Attribute::Dexterity, 0);
+            character
+                .creature
+                .set_base_attribute(Attribute::Constitution, 2);
+            character
+                .creature
+                .set_base_attribute(Attribute::Intelligence, 0);
+            character
+                .creature
+                .set_base_attribute(Attribute::Perception, 2);
+            character
+                .creature
+                .set_base_attribute(Attribute::Willpower, 1);
+        }
+
+        for modifier in calc_standard_magic_modifiers(level) {
+            character.creature.add_magic_modifier(modifier);
+        }
+
+        return character;
+    }
+
     pub fn standard_sorcerer(level: i32, use_point_buy: bool) -> Self {
         let mut character = Self::new(
             Class::Sorcerer,
