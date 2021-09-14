@@ -10,6 +10,8 @@ use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
 use crate::skills::{HasSkills, Skill, SkillCategory};
 use titlecase::titlecase;
 
+use super::Maneuver;
+
 pub struct Monster {
     pub alignment: Option<String>,
     pub challenge_rating: ChallengeRating,
@@ -117,6 +119,11 @@ impl Monster {
         };
         let mut monster = Monster::new(challenge_rating, creature_type, level);
         monster.creature.add_weapon(Weapon::Slam);
+        monster.creature.add_modifier(
+            Modifier::Maneuver(Maneuver::GenericScalingStrike((level + 2) / 3)),
+            None,
+            None,
+        );
         monster.creature.set_name("Standard Monster");
         let starting_attribute = if let Some(a) = starting_attribute {
             a
