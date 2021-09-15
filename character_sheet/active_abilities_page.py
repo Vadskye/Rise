@@ -239,6 +239,15 @@ def attack(source):
                 },
                 "Attack",
             ),
+            button(
+                {
+                    "class": "hidden",
+                    "name": f"crit_damage",
+                    "type": "roll",
+                    "value": crit_damage_text(source),
+                },
+                "Attack",
+            ),
         ],
     )
 
@@ -248,7 +257,12 @@ def attack_button_text(source):
         'magical': '[[@{attack0_dice}+floor(@{magical_power}*@{attack0_power})]]',
         'mundane': '[[@{attack0_dice}+floor(@{mundane_power}*@{attack0_power})]]',
     }[source]
-    damage_text = " {{Damage=" + damage + "}}" if damage else ""
+    repeating_section_name = {
+        'nondamaging': 'repeating_attacks',
+        'magical': 'repeating_magicalattacks',
+        'mundane': 'repeating_mundaneattacks',
+    }[source];
+    damage_text = " {{Damage=" + damage + " [Crit](~" + repeating_section_name + "_crit_damage) }}" if damage else ""
     return (
         "&{template:custom}"
         + " {{title=@{attack0_name}}}"
@@ -258,6 +272,20 @@ def attack_button_text(source):
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
         + " {{desc=@{attack0_effect}}}"
+    )
+
+def crit_damage_text(source):
+    damage = {
+        'nondamaging': '',
+        'magical': '[[@{attack0_dice}+floor(@{magical_power}*@{attack0_power})]]',
+        'mundane': '[[@{attack0_dice}+floor(@{mundane_power}*@{attack0_power})]]',
+    }[source]
+    return (
+        "&{template:custom}"
+        + " {{title=@{attack0_name}}}"
+        + " {{subtitle=@{character_name}}}"
+        + " {{Crit Damage=" + damage + "}}"
+        + " {{color=@{chat_color}}}"
     )
 
 def universal_ability_button(name, effect, attack=None):
