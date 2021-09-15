@@ -254,8 +254,8 @@ def attack(source):
 def attack_button_text(source):
     damage = {
         'nondamaging': '',
-        'magical': '[[[[@{attack0_dice}]]+[[floor(@{magical_power}*@{attack0_power})]]]]',
-        'mundane': '[[[[@{attack0_dice}]]+[[floor(@{mundane_power}*@{attack0_power})]]]]',
+        'magical': '[[@{attack0_dice}+floor(@{magical_power}*@{attack0_power})]]',
+        'mundane': '[[@{attack0_dice}+floor(@{mundane_power}*@{attack0_power})]]',
     }[source]
     repeating_section_name = {
         'nondamaging': 'repeating_attacks',
@@ -267,7 +267,7 @@ def attack_button_text(source):
         "&{template:custom}"
         + " {{title=@{attack0_name}}}"
         + " {{subtitle=@{character_name}}}"
-        + " {{Attack=[[[[d10!]]+[[@{attack0_accuracy}]]+[[@{accuracy}]]]] vs @{attack0_defense}}}"
+        + " {{Attack=[[d10!+@{attack0_accuracy}+@{accuracy}]] vs @{attack0_defense}}}"
         + damage_text
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
