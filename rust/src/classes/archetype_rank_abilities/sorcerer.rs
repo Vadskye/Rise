@@ -665,8 +665,8 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         3 & When you attack with the spell this round, you are a target of the attack in addition to any other targets \\
                         4 & The spell's area is halved this round \\
                         5 & The spell's area is doubled this round \\
-                        6 & Each target that resists damage from the spell this round is also \glossterm{briefly} \dazed \\
-                        7 & Each target that loses hit points from the spell this round is also \glossterm{briefly} \sickened \\
+                        6 & Each target that resists damage from the spell this round takes additional energy damage equal to your \glossterm{power} with the spell \\
+                        7 & Each target that loses hit points from the spell this round takes additional energy damage equal to your \glossterm{power} with the spell \\
                         8 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
                         9 & When you attack with the spell this round, you roll twice and take the higher result \\
                         10 & During the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
