@@ -358,13 +358,16 @@ The minimum area size here should be a t2 area to make these feel different from
 ### Hybrid damage/debuff
 
 #### Maneuvers: single-target high damage + debuff
-* Rank 3
+* Rank 1
   * Strike, brief r1 debuff if lose HP, immune after first success
-* Rank 5
+* Rank 3
   * Strike, brief r1 debuff if lose HP
-* Rank 7
+* Rank 5
   * Strike, brief r1 debuff, immune after first success
   * Strike, brief r2 debuff if lose HP, immune after first success
+* Rank 7
+  * Strike, brief r1 debuff
+  * Strike, brief r2 debuff if lose HP
 
 #### Maneuvers: single-target medium damage + debuff
 * Rank 1
