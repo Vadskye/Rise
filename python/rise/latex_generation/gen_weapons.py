@@ -19,7 +19,7 @@ def generate_weapons():
                 This weapon vibrates slightly in the hand.
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with concussive force.
                 Damage dealt by that strike is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\glossterm<deafened>.
+                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\deafened.
             """,
             short_description="Can deal sonic damage and briefly deafen",
         ),
@@ -31,10 +31,12 @@ def generate_weapons():
             description="""
                 This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
                 All damage dealt with it is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, it becomes \\glossterm<briefly> \\glossterm<deafened>.
-                After this effect ends, that creature becomes immune to this effect until it takes a \\glossterm<short rest>.
+
+                As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with concussive force.
+                You gain a +1d damage bonus with the strike.
+                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\deafened.
             """,
-            short_description="Deals sonic damage and briefly deafens",
+            short_description="Deals sonic damage and can briefly deafen",
         ),
         MagicItem(
             name="Concussive, Supreme",
@@ -44,7 +46,7 @@ def generate_weapons():
             description="""
                 This weapon functions like a \\mitem<greater concussive> weapon, except that the deafening effect becomes a \\glossterm<condition>.
             """,
-            short_description="Deals sonic damage and deafens",
+            short_description="Deals sonic damage and can deafen",
         ),
     ]
 
@@ -58,7 +60,7 @@ def generate_weapons():
                 This weapon smolders visibly and sheds light as a torch.
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with fiery energy.
                 Damage dealt by that strike is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                In addition, each creature that loses \\glossterm<hit points> from the strike takes additional fire damage at the end of the next round equal to half the hit points it lost from the strike.
+                In addition, each creature that loses \\glossterm<hit points> from the strike takes additional fire damage at the end of the next round equal to half the damage it took from the strike.
             """,
             short_description="Can deal fire damage and ignite",
         ),
@@ -70,11 +72,12 @@ def generate_weapons():
             description="""
                 This weapon is on fire.
                 It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, it takes additional fire damage at the end of the next round equal to half the damage it took from the strike.
-                If it would take this damage from multiple strikes at once, only the highest damage value is used.
-                After a creature takes damage from this effect, that creature becomes immune to this effect until it takes a \\glossterm<short rest>.
+
+                As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with fiery energy.
+                You gain a +1d damage bonus with the strike.
+                In addition, each creature that loses \\glossterm<hit points> from the strike takes additional fire damage at the end of the next round equal to half the damage it took from the strike.
             """,
-            short_description="Deals fire damage and ignites",
+            short_description="Deals fire damage and can ignite",
         ),
         MagicItem(
             name="Flaming, Supreme",
@@ -82,9 +85,9 @@ def generate_weapons():
             material_type="Weapon",
             tags=[],
             description="""
-                This weapon functions like a \\mitem<greater flaming> weapon, except that the extra fire damage increases to be equal to the damage dealt by the strike.
+                This weapon functions like a \\mitem<greater flaming> weapon, except that the extra fire damage increases to be equal to the damage the creature was dealt by the strike.
             """,
-            short_description="Deals fire damage and consistently ignites",
+            short_description="Deals fire damage and can massively ignite",
         ),
     ]
 
@@ -110,10 +113,12 @@ def generate_weapons():
             description="""
                 This weapon continuously crackles with electricity.
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, it becomes \\glossterm<briefly> \\dazed.
-                After this effect ends, that creature becomes immune to this effect until it takes a \\glossterm<short rest>.
+
+                As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
+                You gain a +1 accuracy bonus with the strike.
+                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\dazed.
             """,
-            short_description="Deals electricity damage and briefly dazes",
+            short_description="Deals electricity damage and can briefly daze",
         ),
         MagicItem(
             name="Shocking, Supreme",
@@ -123,7 +128,7 @@ def generate_weapons():
             description="""
                 This weapon functions like a \\mitem<greater shocking> weapon, except that the dazing effect becomes a \\glossterm<condition>.
             """,
-            short_description="Deals electicity damage and dazes",
+            short_description="Deals electicity damage and can daze",
         ),
     ]
 
@@ -135,9 +140,9 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon is frigid to the touch.
-                As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with cold energy.
+                As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with frigid energy.
                 Damage dealt by that strike is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\glossterm<slowed>.
+                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\slowed.
             """,
             short_description="Can deal cold damage and briefly slow",
         ),
@@ -149,10 +154,12 @@ def generate_weapons():
             description="""
                 This weapon is bitterly cold to the touch.
                 All damage dealt with it is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, it becomes \\glossterm<briefly> \\glossterm<slowed>.
-                After this effect ends, that creature becomes immune to this effect until it takes a \\glossterm<short rest>.
+
+                As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with frigid energy.
+                You gain a +1d damage bonus with the strike.
+                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\deafened.
             """,
-            short_description="Deals cold damage and briefly slows",
+            short_description="Deals cold damage and can briefly slow",
         ),
         MagicItem(
             name="Freezing, Supreme",
@@ -162,7 +169,7 @@ def generate_weapons():
             description="""
                 This weapon functions like a \\mitem<greater freezing> weapon, except that the slowing effect becomes a \\glossterm<condition>.
             """,
-            short_description="Deals cold damage and slows",
+            short_description="Deals cold damage and can slow",
         ),
     ]
 

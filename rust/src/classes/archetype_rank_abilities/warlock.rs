@@ -192,11 +192,11 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
                 In addition, whenever you use an ability that deals fire damage, you can change the type of the damage to be energy damage in place of fire damage.
                 Any other aspects of the ability, including damage types other than fire, remain unchanged.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2)]),
+            modifiers: Some(vec![Modifier::MagicalPower(3)]),
         },
         RankAbility {
             name: "Greater Fiendish Resistance",
@@ -228,15 +228,15 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Brimstone",
+            name: "Greater Hellfire",
             is_magical: true,
             rank: 7,
             description: r"
-                The power bonus from your \textit{hellfire} ability increases to \plus6.
-                In addition, whenever you cause a creature to lose \glossterm{hit points} with fire damage or energy damage, it becomes \glossterm{briefly} \sickened.
-                After the effect ends, that creature then becomes immune to it until it takes a \glossterm{short rest}.
+                The power bonus from your \textit{hellfire} ability increases to \plus9.
+                In addition, whenever you use an ability that deals fire damage, you can change that ability to deal damage of all types.
+                Any other aspects of the ability remain unchanged.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![Modifier::MagicalPower(6)]),
         },
     ];
 }
