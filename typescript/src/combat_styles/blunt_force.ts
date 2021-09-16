@@ -364,7 +364,6 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
-        After it stops being dazed, it becomes immune to being dazed in this way until it takes a \\glossterm{short rest}.
       `,
       rank: 3,
       scaling: {
@@ -380,7 +379,6 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
-        After it stops being stunned, it becomes immune to being stunned in this way until it takes a \\glossterm{short rest}.
       `,
       rank: 7,
       type: "Duration",

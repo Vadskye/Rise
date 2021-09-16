@@ -321,8 +321,7 @@ export const ripAndTear: CombatStyle = {
       name: "Flay",
 
       effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d damage penalty with the strike.
+        Make a \\glossterm{strike} with a -2d damage penalty using a slashing weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\sickened.
       `,
       rank: 1,
@@ -338,8 +337,7 @@ export const ripAndTear: CombatStyle = {
       name: "Greater Flay",
 
       effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d damage penalty with the strike.
+        Make a \\glossterm{strike} with a -2d damage penalty using a slashing weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\nauseated.
       `,
       rank: 5,
