@@ -148,13 +148,14 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Fearsome Staff",
-            level=10,
+            level=7,
             material_type="Staff",
             tags=["Emotion"],
             description="""
-                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<briefly> \\glossterm<shaken> by you.
+                Whenever a creature that is suffering penalties for being \\shaken, \\frightened, or \\panicked by you gets farther than 60 feet from you, it \\glossterm<briefly> continues suffering penalties from those effects regardless of distance.
+                It must still have \\glossterm<line of sight> and \\glossterm<line of effect> to you.
             """,
-            short_description="Makes wounded creatures briefly shaken",
+            short_description="Briefly increases range of your fear effects",
         ),
         MagicItem(
             name="Fearsome Staff, Greater",
@@ -162,32 +163,69 @@ def generate_implements():
             material_type="Staff",
             tags=["Emotion"],
             description="""
-                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<shaken> by you as a \\glossterm<condition>.
+                Creatures that are shaken, frightened or panicked by you suffer penalties from those effects at any distance.
+                They must still have \\glossterm<line of sight> and \\glossterm<line of effect> to you.
             """,
-            short_description="Makes wounded creatures shaken",
+            short_description="Increases range of your fear effects",
         ),
     ]
 
     implements += [
         MagicItem(
-            name="Dazing Staff",
-            level=13,
+            name="Staff of Mental Discordance",
+            level=8,
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\glossterm<briefly> \\dazed.
+                Whenever you cause an enemy to be \\dazed, you can also make it \\glossterm<briefly> \\stunned.
             """,
-            short_description="Makes wounded creatures briefly dazed",
+            short_description="Makes dazed creatures briefly stunned",
         ),
         MagicItem(
-            name="Dazing Staff, Greater",
-            level=19,
+            name="Staff of Mental Discordance, Greater",
+            level=17,
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you cause an \\glossterm<enemy> to lose \\glossterm<hit points> with a \\glossterm<magical> ability, that creature becomes \\dazed as a \\glossterm<condition>.
+                Whenever you cause an enemy to be \\stunned, you can also make it \\glossterm<briefly> \\confused.
             """,
-            short_description="Makes wounded creatures dazed",
+            short_description="Makes stunned creatures briefly confused",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
+            name="Staff of Hindrance",
+            level=8,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Whenever you cause an enemy to be \\slowed, you can also make it \\glossterm<briefly> \\decelerated.
+            """,
+            short_description="Makes slowed creatures briefly decelerated",
+        ),
+        MagicItem(
+            name="Staff of Hindrance, Greater",
+            level=21,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Whenever you cause an enemy to be \\decelerated, you can also make it \\glossterm<briefly> \\immobilized.
+            """,
+            short_description="Makes decelerated creatures briefly immobilized",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
+            name="Staff of Malaise",
+            level=8,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Whenever you cause an enemy to be \\sickened, you can also make it \\glossterm<briefly> \\nauseated.
+            """,
+            short_description="Makes sickened creatures briefly nauseated",
         ),
     ]
 
