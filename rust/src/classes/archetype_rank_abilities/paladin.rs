@@ -579,25 +579,23 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Zealous Purge",
+            name: "Pass Judgment",
             is_magical: true,
             rank: 4,
             description: r"
-                You can use your \textit{zealous purge} ability as a standard action.
-                \begin{instantability}{Zealous Purge}[Instant]
+                You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
+                \begin{durationability}{Pass Judgment}[Duration]
                     \abilitytag{Magical}
                     \rankline
-                    Make a \glossterm{strike} with a \minus1d damage penalty.
-                    You add half your \glossterm{power} to damage with the strike instead of your full power.
-                    Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
-                    If your target shares your devoted alignment, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a creature that shares your alignment.
+                    Choose one creature within \longrange.
+                    The subject is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
+                    This only affects its alignment along the alignment axis your devoted alignment is on.
+                    For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
+                    This effect lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
 
-                    If the target takes damage from the strike, it stops being \glossterm{attuned} to one effect.
-                    It can freely choose which effect it releases its attunement to.
-
-                    \rankline
-                    \rank{6} The target stops being attuned to two effects instead of one.
-                \end{instantability}
+                    You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
+                    Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
+                \end{durationability}
             ",
             modifiers: None,
         },
@@ -629,24 +627,11 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Pass Judgment",
+            name: "Greater Pass Judgment",
             is_magical: true,
             rank: 7,
             description: r"
-                You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
-                \begin{durationability}{Pass Judgment}[Duration]
-                    \abilitytag{Magical}
-                    \rankline
-                    Choose one creature within \longrange.
-                    You gain the benefits of your \textit{zealous fixation} ability against the subject in addition to any other creatures.
-                    In addition, the subject is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
-                    This only affects its alignment along the alignment axis your devoted alignment is on.
-                    For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
-                    This ability lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
-
-                    You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
-                    Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
-                \end{durationability}
+                You gain the benefits of your \textit{zealous fixation} ability against all creatures affected by your \textit{pass judgment} ability.
             ",
             modifiers: None,
         },
