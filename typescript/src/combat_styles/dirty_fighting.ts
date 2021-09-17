@@ -254,39 +254,6 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Deattunement Strike",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike stops being \\glossterm{attuned} to one effect of its choice that it is currently attuned to.
-      `,
-      rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Deattunement Strike",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature damaged by the strike stops being \\glossterm{attuned} to one effect of its choice that it is currently attuned to.
-        Each creature that loses \\glossterm{hit points} from the strike stops being attuned to an additional effect, and becomes unable to attune to any new effects as a \\glossterm{condition}.
-      `,
-      rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
-      type: "Instant",
-    },
-
-    {
       name: "Spellbane Strike",
 
       effect: `
