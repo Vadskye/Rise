@@ -196,55 +196,6 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Deattunement",
-
-      attack: {
-        crit: `The subject stops being \\glossterm{attuned} to two abilities of its choice that it is currently attuned to.
-        In addition, as a \\glossterm{condition}, it becomes unable to \\glossterm{attune} to any additional abilities.`,
-        hit: `The subject stops being \\glossterm{attuned} to one effect of its choice that it is currently attuned to.`,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-      type: "Duration",
-    },
-
-    // this is probably broken somehow
-    {
-      name: "Steal Attunement",
-
-      functionsLike: {
-        name: 'deattunement',
-        exceptThat: `
-          you may choose to gain the ability to attune to any effects that you remove from the subject.
-          Attuning to an effect that you stole with this spell takes a \\glossterm{minor action}, and requires an \\glossterm{attunement point} as normal.
-          When you finish your next \\glossterm{long rest}, or if you steal a different attunement with this spell, you lose the ability to attune to the old effect and automatically break any attunements you have active from this ability.
-        `,
-      },
-      rank: 5,
-      scaling: "accuracy",
-      type: "Duration",
-    },
-
-    {
-      name: "Reattunement",
-
-      effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject can reattune to one ability that it stopped being attuned to since the start of the last round without spending an additional \\glossterm{attunement point}.
-        Any choices and effects of the attuned ability are restored to their exact state before the attunement was broken.
-      `,
-      rank: 3,
-      scaling: {
-        5: `You can target an additional ally within range.`,
-        7: `You can target an additional ally within range.`,
-      },
-      type: "Instant",
-    },
-
-    {
       name: "Suppress Magic",
 
       attack: {
@@ -254,9 +205,10 @@ export const thaumaturgy: MysticSphere = {
           This includes attuned spells and magic items, magical conditions, and sustained magical effects.
           However, it does not include passive magical abilities on creatures, such as the ability to cast spells.
           It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
-          The target's defense against this attack is equal to its \\glossterm{power}.
+          The target's defense against this attack is equal to 5 \\add its \\glossterm{rank}.
+          For effects that have no specific rank, such as magic items, treat their rank as being equal to one third of their level.
 
-          This spell cannot be used to interrupt or negate immediate effects.
+          This spell cannot be used to interrupt or negate immediate effects, such as spells being cast simultaneously.
           Identifying non-visual magical effects to target with this spell may require the use of the Spellsense skill (see \\pcref{Spellsense}).
         `,
       },
@@ -286,7 +238,7 @@ export const thaumaturgy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           on a hit, the effect ends completely instead of being suppressed.
-          If the effect required attunement, that attunement is broken.
+          This has no effect on abilities that require \\glossterm{attunement}.
         `,
         name: "suppress magic",
       },

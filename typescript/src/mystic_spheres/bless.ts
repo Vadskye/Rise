@@ -61,9 +61,6 @@ export const bless: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
         Each subject gains a +5 foot \\glossterm{magic bonus} to speed with all its \\glossterm{movement modes}.
-
-        You can only have one casting of this spell active at once.
-        When you cast this spell, each creature that is already attuned to this spell stops being attuned to it.
       `,
       rank: 2,
       scaling: {
