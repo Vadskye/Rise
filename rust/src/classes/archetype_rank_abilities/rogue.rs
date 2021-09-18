@@ -387,7 +387,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}, \abilitytag{Emotion}
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
-                        For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to defenses against hostile \abilitytag{Compulsion} and \abilitytag{Emotion} effects.
+                        For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to their defenses against \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
 
                         \rankline
                         \rank{3} At the end of each round, each subject removes all \glossterm{brief} effects and \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.

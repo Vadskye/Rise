@@ -152,7 +152,7 @@ export const dirtyFighting: CombatStyle = {
           On a critical hit, you can also knock loose an object held in two hands.
           Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
 
-          After you successfully knock an item loose from a creature with this ability, it gains a +5 bonus to defenses against this ability until it takes a \\glossterm{short rest}.
+          After you successfully knock an item loose from a creature with this ability, it gains a +5 bonus to its defenses against this ability until it takes a \\glossterm{short rest}.
         `,
         name: "disarm",
       },

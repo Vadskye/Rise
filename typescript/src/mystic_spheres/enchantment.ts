@@ -74,7 +74,7 @@ export const enchantment: MysticSphere = {
           It is \\glossterm{briefly} unable to pick up that item.
           It can still hold other items, but if the dropped item is placed in its hand, it will immediately drop it again.
 
-          After you successfully make a creature drop an item with this spell, it gains a +5 bonus to defenses against this spell until it takes a \\glossterm{short rest}.
+          After you successfully make a creature drop an item with this spell, it gains a +5 bonus to its defenses against this spell until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.

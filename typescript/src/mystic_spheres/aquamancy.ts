@@ -720,8 +720,8 @@ export const aquamancy: MysticSphere = {
           \\item You take penalties for fighting underwater (see \\pcref{Underwater Combat}).
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
           \\item You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
-          \\item You gain a +2 bonus to defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
-          \\item You gain a +4 bonus to defenses against the \\ability{grapple} ability.
+          \\item You gain a +2 bonus to your defenses against \\glossterm{mundane} ranged attacks from weapons or projectiles that are Small or smaller.
+          \\item You gain a +4 bonus to your defenses against the \\ability{grapple} ability.
         \\end{itemize}
       `,
       // narrative: '',
@@ -753,9 +753,9 @@ export const aquamancy: MysticSphere = {
       name: "Dampen",
 
       effect: `
-          Up to five ritual participants each gain a +2 bonus to defenses against attacks that deal fire damage.
+          Up to five ritual participants each become \\glossterm{impervious} to fire damage.
       `,
-      rank: 1,
+      rank: 2,
       type: "Attune (ritual)",
       castingTime: "one minute",
     },

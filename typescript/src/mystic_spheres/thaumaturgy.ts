@@ -401,7 +401,7 @@ export const thaumaturgy: MysticSphere = {
       name: "Absorb Magic",
 
       effect: `
-        You gain a +2 bonus to defenses against \\glossterm{magical} effects.
+        You gain a +2 bonus to your defenses against \\glossterm{magical} effects.
         In addition, the next time a \\glossterm{magical} attack beats your defenses, it has no effect on you.
         After you negate two attacks in this way, this spell's effect ends.
       `,
