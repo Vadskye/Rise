@@ -445,7 +445,7 @@ export const telekinesis: MysticSphere = {
           If the object is attended by a creature, the attack must also beat the attending creature's Reflex defense.
           If it is held in two hands or well secured, this attack automatically fails.
 
-          After you successfully steal an item from a creature with this spell, it gains a +5 bonus to defenses against this spell until it takes a \\glossterm{short rest}.
+          After you successfully steal an item from a creature with this spell, it gains a +5 bonus to its defenses against this spell until it takes a \\glossterm{short rest}.
         `,
       },
       rank: 2,

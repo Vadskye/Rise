@@ -501,7 +501,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
                         \rank{5} You suffer no penalties for acting underwater.
                         \rank{7} You are immune to \glossterm{magical} effects that restrict your mobility.
-                        In addition, you gain a \plus4 bonus to defenses against the \textit{grapple} ability and grapple actions (see \pcref{Grapple}).
+                        In addition, you gain a \plus4 bonus to your defenses against the \textit{grapple} ability and grapple actions (see \pcref{Grapple}).
                     \end{durationability}
 
                     \begin{durationability}{Form of the Hawk}[Duration]

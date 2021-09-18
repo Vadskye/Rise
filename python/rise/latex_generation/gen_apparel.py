@@ -662,7 +662,7 @@ def generate_apparel():
             description="""
                 You are immune to all effects that reduce your movement speed or prevent you from moving, including nonmagical effects such as \\glossterm<difficult terrain>.
                 This removes all penalties you would suffer for acting underwater, except for those relating to using ranged weapons.
-                This does not prevent you from being \\grappled, but you gain a +10 bonus to defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
+                This does not prevent you from being \\grappled, but you gain a +5 bonus to your defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
             """,
             short_description="Grants immunity to almost all mobility restrictions",
         )
@@ -1050,7 +1050,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +4 bonus to defenses against attacks from the \\sphere<polymorph> sphere.
+                You gain a +4 bonus to your defenses against attacks from the \\sphere<polymorph> sphere.
                 This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
             """,
             short_description="Grants +4 defenses vs form-altering attacks",
@@ -1061,7 +1061,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +8 bonus to defenses against attacks from the \\textit<polymorph> sphere.
+                You gain a +8 bonus to your defenses against attacks from the \\textit<polymorph> sphere.
                 This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
             """,
             short_description="Grants +8 defenses vs form-altering attacks",
@@ -1129,7 +1129,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +4 bonus to defenses against \\glossterm<poisons>.
+                You gain a +4 bonus to your defenses against \\glossterm<poisons>.
             """,
             short_description="Grants +4 defenses vs poisons",
         ),
@@ -1304,7 +1304,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                You gain a +4 bonus to defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
+                You gain a +4 bonus to your defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
             """,
             short_description="Grants +4 to defenses against detection",
         ),
@@ -1314,7 +1314,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                You gain a +8 bonus to defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
+                You gain a +8 bonus to your defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
             """,
             short_description="Grants +8 to defenses against detection",
         ),
@@ -1495,7 +1495,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +1 bonus to defenses against spells that target you directly.
+                You gain a +1 bonus to your defenses against spells that target you directly.
                 This does not protect you from abilities that affect an area.
             """,
             short_description="Grants +1 defenses against targeted spells",
@@ -1506,7 +1506,8 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                This item functions like a \\mitem<hexward ring>, except that the bonus increases to +2.
+                You gain a +2 bonus to your defenses against spells that target you directly.
+                This does not protect you from abilities that affect an area.
             """,
             short_description="Grants +2 defenses against targeted spells",
         ),

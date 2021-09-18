@@ -124,7 +124,7 @@ def generate_armor():
             level=5,
             material_type="Shield",
             description="""
-                You gain a +2 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
+                You gain a +2 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
             """,
             short_description="Grants +2 defenses vs small projectiles",
         ),
@@ -133,7 +133,7 @@ def generate_armor():
             level=11,
             material_type="Shield",
             description="""
-                You gain a +3 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
+                You gain a +3 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
             """,
             short_description="Grants +3 defenses vs small projectiles",
         ),
@@ -142,7 +142,7 @@ def generate_armor():
             level=17,
             material_type="Shield",
             description="""
-                You gain a +4 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
+                You gain a +4 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
             """,
             short_description="Grants +4 defenses vs small projectiles",
         ),
@@ -151,7 +151,7 @@ def generate_armor():
             level=8,
             material_type="Shield",
             description="""
-                You gain a +2 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
+                You gain a +2 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
             """,
             short_description="Grants +2 defenses vs projectiles",
         ),
@@ -160,7 +160,7 @@ def generate_armor():
             level=14,
             material_type="Shield",
             description="""
-                You gain a +3 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
+                You gain a +3 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
             """,
             short_description="Grants +3 defenses vs projectiles",
         ),
@@ -169,7 +169,7 @@ def generate_armor():
             level=20,
             material_type="Shield",
             description="""
-                You gain a +4 bonus to defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
+                You gain a +4 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
             """,
             short_description="Grants +4 defenses vs projectiles",
         ),
@@ -299,7 +299,7 @@ def generate_armor():
             level=8,
             material_type="Body armor",
             description="""
-                You gain a +4 bonus to defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
+                You gain a +4 bonus to your defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
             """,
             short_description="Reduces critical hits from strikes",
         ),
@@ -308,7 +308,7 @@ def generate_armor():
             level=17,
             material_type="Body armor",
             description="""
-                You gain a +8 bonus to defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
+                You gain a +8 bonus to your defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
             """,
             short_description="Drastically reduces critical hits from strikes",
         ),
@@ -317,7 +317,7 @@ def generate_armor():
             level=14,
             material_type="Body armor",
             description="""
-                You gain a +4 bonus to defenses when determining whether any attack gets a \\glossterm<critical hit> against you instead of a normal hit.
+                You gain a +4 bonus to your defenses when determining whether any attack gets a \\glossterm<critical hit> against you instead of a normal hit.
             """,
             short_description="Reduces critical hits from magical attacks",
         ),
