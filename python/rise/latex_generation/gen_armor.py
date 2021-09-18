@@ -440,7 +440,7 @@ def generate_armor():
             description="""
                 If your base Dexterity is at least 3, you gain a +2 bonus to Armor defense.
             """,
-            short_description="Grants +2 Armor if you have 1 base Dex",
+            short_description="Grants +2 Armor if you have 3 base Dex",
         ),
     ]
 
