@@ -329,7 +329,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
                     \end{durationability}
 
-                    \begin{durationability}{Inspiring Intonation}[\abilitytag{Sustain} (minor)]
+                    \begin{durationability}{Intonation of Ingenuity}[\abilitytag{Sustain} (minor)]
                         \abilitytag{Auditory}, \abilitytag{Emotion}
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline

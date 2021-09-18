@@ -494,7 +494,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to the Persuasion skill.
                 In addition, using the \textit{desperate exertion} ability to affect a roll using the Persuasion skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 1)]),
+            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 2)]),
         },
         RankAbility {
             name: "Denounce the Heathens",
