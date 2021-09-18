@@ -325,7 +325,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \begin{durationability}{Solo Hunter}[Duration]
                         \rankline
                         Your hunting party other than you gains no benefit from your \textit{quarry} ability.
-                        In exchange, you gain a \plus1 bonus to defenses against your quarry.
+                        In exchange, you gain a \plus1 bonus to your defenses against your quarry.
 
                         \rankline
                         \rank{4} You gain an additional \plus1 accuracy bonus against your quarry.

@@ -142,7 +142,7 @@ export const aeromancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +2 bonus to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller.
+        You gain a +2 bonus to your defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller.
         Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
       `,
       // narrative: "",
@@ -496,7 +496,7 @@ export const aeromancy: MysticSphere = {
           If the object is attended by a creature, the attack must also beat the attending creature's Reflex defense.
           If it is held in two hands or well secured, this attack automatically fails.
 
-          After you successfully steal an item from a creature with this spell, it gains a +5 bonus to defenses against this spell until it takes a \\glossterm{short rest}.
+          After you successfully steal an item from a creature with this spell, it gains a +5 bonus to its defenses against this spell until it takes a \\glossterm{short rest}.
         `,
       },
       // narrative: '',

@@ -496,7 +496,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
-                        You gain a +2 bonus to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller this round.
+                        You gain a +2 bonus to your defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller this round.
 
                         \rankline
                         \rank{3} The bonus increases to +3.
