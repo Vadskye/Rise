@@ -81,7 +81,7 @@ export const vivimancy: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d8 + \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, you regain hit points equal to the damage it took this way.
+          If it loses \\glossterm{hit points} from this damage, you regain 2d8 + \\glossterm{power} hit points.
           After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
         `,
         targeting: `
@@ -452,7 +452,7 @@ export const vivimancy: MysticSphere = {
         glance: `Half damage.`,
         hit: `
           The subject takes 2d8 + \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, you regain \\glossterm{hit points} equal to the hit points it lost this way.
+          If it loses \\glossterm{hit points} from this damage, you regain 2d8 + \\glossterm{power} hit points.
           After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
         `,
         targeting: `
@@ -470,12 +470,10 @@ export const vivimancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        Once per round, when you cause a living creature to lose \\glossterm{hit points} with a \\glossterm{strike}, you regain \\glossterm{hit points} equal to half the hit points the struck creature lost this way.
+        Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, you regain \\glossterm{hit points} equal to 2d10 + half your \\glossterm{power}.
       `,
       rank: 5,
-      scaling: {
-        7: `The healing increases to be equal to the hit points the struck creature lost this way.`,
-      },
+      scaling: { special: "The healing increases by +1d for each rank beyond 5." },
       tags: ['Healing'],
       type: "Attune (self)",
     },
