@@ -1,7 +1,7 @@
-use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
+use crate::core_mechanics::{HasDamageAbsorption, HasDefenses, HasVitalWounds};
 use crate::creatures::attack_effects::AttackEffect;
 use crate::creatures::attacks::{Attack, HasAttacks};
-use crate::creatures::{attacks, Creature};
+use crate::creatures::{attacks, Creature, HasDamageTracking};
 use std::cmp::max;
 use std::fmt;
 
@@ -33,74 +33,88 @@ impl fmt::Display for CombatResult {
 }
 
 pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
-    let mut damageable: CombatStep<Vec<DamageableCreature>, Vec<DamageableCreature>> = CombatStep {
-        blue: blue
-            .iter()
-            .map(|c| DamageableCreature::from_creature(c))
-            .collect(),
-        red: red
-            .iter()
-            .map(|c| DamageableCreature::from_creature(c))
-            .collect(),
-    };
+    let mut blue = blue.clone();
+    let mut red = red.clone();
     let mut rounds = 0.0;
+
     // For now, don't do intelligent target prioritization - just proceed linearly through the
     // array of creatures. In the future, we can intelligently sort the vectors before entering
     // this block, so the code here won't have to change.
     loop {
-        let mut living: CombatStep<Vec<&mut DamageableCreature>, Vec<&mut DamageableCreature>> =
-            CombatStep {
-                blue: damageable
-                    .blue
-                    .iter_mut()
-                    .filter(|d| d.is_alive())
+        let damage_taken: CombatStep<i32, i32>;
+        let min_rounds_to_first_death;
+        {
+            let living: CombatStep<Vec<&Creature>, Vec<&Creature>> = CombatStep {
+                blue: blue
+                    .iter()
+                    .filter(|d| !d.is_vitally_unconscious())
                     .collect(),
-                red: damageable.red.iter_mut().filter(|d| d.is_alive()).collect(),
+                red: red.iter().filter(|d| !d.is_vitally_unconscious()).collect(),
             };
-        let living_creatures: CombatStep<Vec<&Creature>, Vec<&Creature>> = CombatStep {
-            blue: living.blue.iter().map(|d| d.creature).collect(),
-            red: living.red.iter().map(|d| d.creature).collect(),
-        };
-        if living.blue.len() == 0 || living.red.len() == 0 {
-            return CombatResult {
-                blue_living_count: living.blue.len(),
-                red_living_count: living.red.len(),
-                blue_survival_percent: survival_percent(&damageable.blue),
-                rounds,
-                red_survival_percent: survival_percent(&damageable.red),
+            if living.blue.len() == 0 || living.red.len() == 0 {
+                return CombatResult {
+                    blue_living_count: living.blue.len(),
+                    red_living_count: living.red.len(),
+                    blue_survival_percent: survival_percent(&blue),
+                    rounds,
+                    red_survival_percent: survival_percent(&red),
+                };
+            }
+
+            let defender = CombatStep {
+                blue: &living.blue[0],
+                red: &living.red[0],
+            };
+            let rounds_to_first_death = CombatStep {
+                blue: calc_rounds_to_live(&living.blue, defender.red),
+                red: calc_rounds_to_live(&living.red, defender.blue),
+            };
+            min_rounds_to_first_death = if rounds_to_first_death.blue <= rounds_to_first_death.red {
+                rounds_to_first_death.blue
+            } else {
+                rounds_to_first_death.red
+            };
+
+            damage_taken = CombatStep {
+                blue: (min_rounds_to_first_death
+                    * calc_damage_per_round(&living.red, defender.blue))
+                .ceil() as i32,
+                red: (min_rounds_to_first_death * calc_damage_per_round(&living.blue, defender.red))
+                    .ceil() as i32,
             };
         }
-
-        let defender = CombatStep {
-            blue: &mut living.blue[0],
-            red: &mut living.red[0],
-        };
-        let rounds_to_first_death = CombatStep {
-            blue: calc_rounds_to_live(&living_creatures.blue, defender.red),
-            red: calc_rounds_to_live(&living_creatures.red, defender.blue),
-        };
-        let min_rounds_to_first_death = if rounds_to_first_death.blue <= rounds_to_first_death.red {
-            rounds_to_first_death.blue
-        } else {
-            rounds_to_first_death.red
-        };
-        defender.blue.take_damage(
-            min_rounds_to_first_death
-                * calc_damage_per_round(&living_creatures.red, defender.blue.creature),
-        );
-        defender.red.take_damage(
-            min_rounds_to_first_death
-                * calc_damage_per_round(&living_creatures.blue, defender.red.creature),
-        );
+        let blue_defender = blue
+            .iter_mut()
+            .find(|d| !d.is_vitally_unconscious())
+            .unwrap();
+        blue_defender.take_damage(damage_taken.blue);
+        blue_defender.apply_vital_wounds_from_damage();
+        let red_defender = red
+            .iter_mut()
+            .find(|d| !d.is_vitally_unconscious())
+            .unwrap();
+        red_defender.take_damage(damage_taken.red);
+        red_defender.apply_vital_wounds_from_damage();
         rounds += min_rounds_to_first_death;
+
+        if rounds > 1000.0 {
+            panic!("Trapped in an endless fight");
+        }
     }
 }
 
-fn survival_percent(creatures: &Vec<DamageableCreature>) -> f64 {
-    let total_damage_absorption: i32 = creatures.iter().map(|d| d.total_damage_absorption()).sum();
-    let total_damage_taken: i32 = creatures.iter().map(|d| d.damage_taken).sum();
-    return max(0, total_damage_absorption - total_damage_taken) as f64
-        / total_damage_absorption as f64;
+fn survival_percent(creatures: &Vec<Creature>) -> f64 {
+    let remaining_damage_absorption: i32 = creatures
+        .iter()
+        .map(|d| d.remaining_damage_resistance() + d.remaining_hit_points())
+        .sum();
+    let max_damage_absorption: i32 = creatures
+        .iter()
+        .map(|d| {
+            d.calc_damage_resistance() + d.calc_effective_combat_hit_points()
+        })
+        .sum();
+    return max(0, remaining_damage_absorption) as f64 / max_damage_absorption as f64;
 }
 
 fn calc_damage_per_round(attackers: &Vec<&Creature>, defender: &Creature) -> f64 {
@@ -110,10 +124,11 @@ fn calc_damage_per_round(attackers: &Vec<&Creature>, defender: &Creature) -> f64
         .sum();
 }
 
-fn calc_rounds_to_live(attackers: &Vec<&Creature>, defender: &DamageableCreature) -> f64 {
-    let damage_per_round: f64 = calc_damage_per_round(attackers, defender.creature);
+fn calc_rounds_to_live(attackers: &Vec<&Creature>, defender: &Creature) -> f64 {
+    let damage_per_round: f64 = calc_damage_per_round(attackers, defender);
     // Add 1 HP since creatures need to drop below 0 to die, not just go to 0
-    let damage_absorption = defender.remaining_damage_absorption() + 1;
+    let damage_absorption =
+        defender.remaining_damage_resistance() + defender.remaining_hit_points() + 1;
     let rounds_to_survive = damage_absorption as f64 / damage_per_round;
     // In a real fight, rounds would be broken up into discrete units, but we'd also have to
     // deal with the variance of high and low rolls. Dropping to quarter-round precision
@@ -231,40 +246,6 @@ fn calculate_hit_probability(
 fn calculate_glance_probability(attack: &attacks::Attack, accuracy: i32, defense: i32) -> f64 {
     return calculate_hit_probability(attack, accuracy + 2, defense).single_hit_probability
         - calculate_hit_probability(attack, accuracy, defense).single_hit_probability;
-}
-
-struct DamageableCreature<'a> {
-    pub creature: &'a Creature,
-    pub damage_taken: i32,
-}
-
-impl<'a> DamageableCreature<'a> {
-    pub fn from_creature(creature: &'a Creature) -> Self {
-        return DamageableCreature {
-            creature,
-            damage_taken: 0,
-        };
-    }
-
-    pub fn total_damage_absorption(&self) -> i32 {
-        let mut effective_hp = self.creature.calc_hit_points();
-        if self.creature.can_recover() {
-            effective_hp = (effective_hp as f64 * 1.5) as i32;
-        }
-        return effective_hp + self.creature.calc_damage_resistance();
-    }
-
-    pub fn remaining_damage_absorption(&self) -> i32 {
-        return self.total_damage_absorption() - self.damage_taken;
-    }
-
-    pub fn is_alive(&self) -> bool {
-        return self.remaining_damage_absorption() > 0;
-    }
-
-    pub fn take_damage(&mut self, damage: f64) {
-        self.damage_taken += damage.ceil() as i32;
-    }
 }
 
 #[cfg(test)]

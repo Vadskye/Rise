@@ -480,17 +480,12 @@ mod calc_rounds_to_live {
     fn standard_character_mirror_match() {
         let attacker = Character::standard_character(1, true).creature;
         let defender = Character::standard_character(1, true).creature;
-        assert_eq!(
-            30,
-            DamageableCreature::from_creature(&defender).remaining_damage_absorption(),
-            "Should have 30 damage absorption",
-        );
 
         assert_eq!(
             9.0,
             calc_rounds_to_live(
                 &vec![&attacker],
-                &DamageableCreature::from_creature(&defender)
+                &defender,
             ),
             "at level 1",
         );
@@ -501,7 +496,7 @@ mod calc_rounds_to_live {
             8.25,
             calc_rounds_to_live(
                 &vec![&attacker],
-                &DamageableCreature::from_creature(&defender)
+                &defender,
             ),
             "at level 20",
         );
@@ -517,7 +512,7 @@ mod calc_rounds_to_live {
             5.5,
             calc_rounds_to_live(
                 &vec![&attacker],
-                &DamageableCreature::from_creature(&defender)
+                &defender,
             ),
             "vs CR 1",
         );
@@ -527,7 +522,7 @@ mod calc_rounds_to_live {
             10.75,
             calc_rounds_to_live(
                 &vec![&attacker],
-                &DamageableCreature::from_creature(&defender)
+                &defender,
             ),
             "vs CR 2",
         );
@@ -538,7 +533,7 @@ mod calc_rounds_to_live {
             17.25,
             calc_rounds_to_live(
                 &vec![&attacker],
-                &DamageableCreature::from_creature(&defender)
+                &defender,
             ),
             "vs CR 3",
         );
@@ -548,7 +543,7 @@ mod calc_rounds_to_live {
             23.75,
             calc_rounds_to_live(
                 &vec![&attacker],
-                &DamageableCreature::from_creature(&defender)
+                &defender,
             ),
             "vs CR 4",
         );
@@ -564,7 +559,7 @@ mod calc_rounds_to_live {
             5.0,
             calc_rounds_to_live(
                 &vec![&attacker],
-                &DamageableCreature::from_creature(&defender)
+                &defender,
             ),
             "vs CR 1",
         );
@@ -574,7 +569,7 @@ mod calc_rounds_to_live {
             10.0,
             calc_rounds_to_live(
                 &vec![&attacker],
-                &DamageableCreature::from_creature(&defender)
+                &defender,
             ),
             "vs CR 2",
         );
@@ -585,7 +580,7 @@ mod calc_rounds_to_live {
             16.25,
             calc_rounds_to_live(
                 &vec![&attacker],
-                &DamageableCreature::from_creature(&defender)
+                &defender,
             ),
             "vs CR 3",
         );
@@ -595,7 +590,7 @@ mod calc_rounds_to_live {
             22.5,
             calc_rounds_to_live(
                 &vec![&attacker],
-                &DamageableCreature::from_creature(&defender)
+                &defender,
             ),
             "vs CR 4",
         );
