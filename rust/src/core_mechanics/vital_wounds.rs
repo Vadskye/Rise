@@ -2,6 +2,7 @@ use crate::core_mechanics::Defense;
 use crate::creatures::Modifier;
 use rand::Rng;
 
+#[derive(Clone)]
 pub enum VitalWound {
     Negative(i32),
     Zero,

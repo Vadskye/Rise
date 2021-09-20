@@ -1,3 +1,4 @@
+#[derive(Clone)]
 pub struct PassiveAbility {
     pub description: String,
     pub is_magical: bool,
