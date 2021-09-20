@@ -22,7 +22,7 @@ impl fmt::Display for CombatResult {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
             f,
-            "Rounds {:>5.2} Blue {} ({:>5.2}%) Red {} ({:.2}%)",
+            "Rounds {:>5.2} Blue {} ({:>5.2}%) Red {} ({:>5.2}%)",
             self.rounds,
             self.blue_living_count,
             self.blue_survival_percent,
@@ -32,7 +32,7 @@ impl fmt::Display for CombatResult {
     }
 }
 
-pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
+pub fn run_combat(blue: Vec<&Creature>, red: Vec<&Creature>) -> CombatResult {
     let mut damageable: CombatStep<Vec<DamageableCreature>, Vec<DamageableCreature>> = CombatStep {
         blue: blue
             .iter()

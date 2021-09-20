@@ -11,7 +11,7 @@ fn main() {
             Character::standard_sorcerer(level - level_difference, true).creature,
             Character::standard_sorcerer(level - level_difference, true).creature,
         ];
-        let results = run_combat(blue, red);
+        let results = run_combat(blue.iter().collect(), red.iter().collect());
         println!("L{}: {}", level, results);
     }
 }
