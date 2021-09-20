@@ -45,7 +45,7 @@ fn main() {
                 .iter()
                 .map(|c| c.calc_hit_points() + c.calc_damage_resistance())
                 .sum();
-            let results = run_combat(blue, red);
+            let results = run_combat(blue.iter().collect(), red.iter().collect());
             println!(
                 "CR{:.1}, L{:>2}, BDA{:>4}, RDA{:>4}, {}",
                 challenge_ratings[0].to_string(),
