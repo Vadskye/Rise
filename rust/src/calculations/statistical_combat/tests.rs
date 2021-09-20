@@ -697,7 +697,7 @@ mod run_combat {
         ];
 
         assert_eq!(
-            "Rounds  8.00 Blue 2 ( 0.29%) Red 0 ( 0.00%)",
+            "Rounds  8.00 Blue 2 ( 0.33%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
                 generate_monsters(ChallengeRating::One, level),
@@ -707,7 +707,7 @@ mod run_combat {
         );
 
         assert_eq!(
-            "Rounds  6.25 Blue 2 ( 0.47%) Red 0 ( 0.00%)",
+            "Rounds  6.25 Blue 2 ( 0.50%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
                 generate_monsters(ChallengeRating::Two, level),
@@ -717,7 +717,7 @@ mod run_combat {
         );
 
         assert_eq!(
-            "Rounds  7.00 Blue 2 ( 0.43%) Red 0 ( 0.00%)",
+            "Rounds  7.00 Blue 2 ( 0.47%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
                 generate_monsters(ChallengeRating::Three, level),
@@ -748,7 +748,7 @@ mod run_combat {
         ];
 
         assert_eq!(
-            "Rounds  6.75 Blue 2 ( 0.41%) Red 0 ( 0.00%)",
+            "Rounds  6.75 Blue 2 ( 0.44%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
                 generate_monsters(ChallengeRating::One, level),
@@ -758,7 +758,7 @@ mod run_combat {
         );
 
         assert_eq!(
-            "Rounds  5.75 Blue 3 ( 0.61%) Red 0 ( 0.00%)",
+            "Rounds  5.75 Blue 3 ( 0.62%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
                 generate_monsters(ChallengeRating::Two, level),
@@ -768,7 +768,7 @@ mod run_combat {
         );
 
         assert_eq!(
-            "Rounds  6.25 Blue 3 ( 0.54%) Red 0 ( 0.00%)",
+            "Rounds  6.25 Blue 3 ( 0.55%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
                 generate_monsters(ChallengeRating::Three, level),
@@ -778,7 +778,7 @@ mod run_combat {
         );
 
         assert_eq!(
-            "Rounds  6.75 Blue 2 ( 0.42%) Red 0 ( 0.00%)",
+            "Rounds  6.75 Blue 2 ( 0.44%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
                 generate_monsters(ChallengeRating::Four, level),
