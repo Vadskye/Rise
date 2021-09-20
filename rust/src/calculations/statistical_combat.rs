@@ -112,7 +112,8 @@ fn calc_damage_per_round(attackers: &Vec<&Creature>, defender: &Creature) -> f64
 
 fn calc_rounds_to_live(attackers: &Vec<&Creature>, defender: &DamageableCreature) -> f64 {
     let damage_per_round: f64 = calc_damage_per_round(attackers, defender.creature);
-    let damage_absorption = defender.remaining_damage_absorption();
+    // Add 1 HP since creatures need to drop below 0 to die, not just go to 0
+    let damage_absorption = defender.remaining_damage_absorption() + 1;
     let rounds_to_survive = damage_absorption as f64 / damage_per_round;
     // In a real fight, rounds would be broken up into discrete units, but we'd also have to
     // deal with the variance of high and low rolls. Dropping to quarter-round precision
