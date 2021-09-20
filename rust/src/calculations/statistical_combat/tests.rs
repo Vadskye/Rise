@@ -174,6 +174,55 @@ mod calc_attack_damage_per_round {
     use super::*;
 
     #[test]
+    fn standard_character_level_1_vs_self() {
+        let attacker = Character::standard_character(1, true).creature;
+        let defender = Character::standard_character(1, true).creature;
+        assert_eq!(7, defender.calc_defense(&Defense::Armor));
+
+        let certain_strike = attacker
+            .get_attack_by_name("Broadsword Certain Strike")
+            .unwrap();
+        assert_eq!(
+            "3.342",
+            format!(
+                "{:.3}",
+                calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
+            ),
+            "Certain Strike: 4.5 dph * 0.7 hit % + 2.5 dpc * 0.077 crit % = 3.15 + 0.1925 dpr",
+        );
+
+        let generic = attacker
+            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .unwrap();
+        assert_eq!(
+            "3.498",
+            format!(
+                "{:.3}",
+                calc_attack_damage_per_round(&generic, &attacker, &defender)
+            ),
+            "Generic: 6.5 dph * 0.5 hit % + 4.5 dpc * 0.055 crit % = 3.4975 dpr",
+        );
+
+        let power_strike = attacker
+            .get_attack_by_name("Broadsword Power Strike")
+            .unwrap();
+        assert_eq!(
+            "2.931",
+            format!(
+                "{:.3}",
+                calc_attack_damage_per_round(&power_strike, &attacker, &defender)
+            ),
+            "Power Strike: 9 dph * 0.3 hit % + 7 dpc * 0.033 crit % = 2.7 + .231 dpr",
+        );
+
+        assert_eq!(
+            calc_attack_damage_per_round(&generic, &attacker, &defender),
+            calc_individual_dpr(&attacker, &defender),
+            "Generic should be the best attack",
+        );
+    }
+
+    #[test]
     fn standard_character_level_1_vs_monster() {
         let attacker = Character::standard_character(1, true).creature;
         let defender = Monster::standard_monster(ChallengeRating::Two, 1, None, None).creature;
@@ -432,7 +481,13 @@ mod calc_rounds_to_live {
         let attacker = Character::standard_character(1, true).creature;
         let defender = Character::standard_character(1, true).creature;
         assert_eq!(
-            8.75,
+            30,
+            DamageableCreature::from_creature(&defender).remaining_damage_absorption(),
+            "Should have 30 damage absorption",
+        );
+
+        assert_eq!(
+            9.0,
             calc_rounds_to_live(
                 &vec![&attacker],
                 &DamageableCreature::from_creature(&defender)
@@ -459,7 +514,7 @@ mod calc_rounds_to_live {
 
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
         assert_eq!(
-            5.25,
+            5.5,
             calc_rounds_to_live(
                 &vec![&attacker],
                 &DamageableCreature::from_creature(&defender)
@@ -469,7 +524,7 @@ mod calc_rounds_to_live {
 
         let defender = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
         assert_eq!(
-            10.5,
+            10.75,
             calc_rounds_to_live(
                 &vec![&attacker],
                 &DamageableCreature::from_creature(&defender)
@@ -480,7 +535,7 @@ mod calc_rounds_to_live {
         let defender =
             Monster::standard_monster(ChallengeRating::Three, level, None, None).creature;
         assert_eq!(
-            17.0,
+            17.25,
             calc_rounds_to_live(
                 &vec![&attacker],
                 &DamageableCreature::from_creature(&defender)
@@ -490,7 +545,7 @@ mod calc_rounds_to_live {
 
         let defender = Monster::standard_monster(ChallengeRating::Four, level, None, None).creature;
         assert_eq!(
-            23.5,
+            23.75,
             calc_rounds_to_live(
                 &vec![&attacker],
                 &DamageableCreature::from_creature(&defender)
@@ -582,7 +637,7 @@ mod run_combat {
         let attacker = Character::standard_character(1, true).creature;
         let defender = Character::standard_character(1, true).creature;
         assert_eq!(
-            "Rounds  8.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
+            "Rounds  9.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
             run_combat(vec![attacker], vec![defender]).to_string(),
             "at level 1",
         );
@@ -603,7 +658,7 @@ mod run_combat {
 
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
         assert_eq!(
-            "Rounds  5.25 Blue 1 ( 0.20%) Red 0 ( 0.00%)",
+            "Rounds  5.50 Blue 1 ( 0.13%) Red 0 ( 0.00%)",
             run_combat(vec![attacker.clone()], vec![defender]).to_string(),
             "vs CR 1",
         );
@@ -642,7 +697,7 @@ mod run_combat {
         ];
 
         assert_eq!(
-            "Rounds  8.25 Blue 2 ( 0.27%) Red 0 ( 0.00%)",
+            "Rounds  8.00 Blue 2 ( 0.29%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
                 generate_monsters(ChallengeRating::One, level),
@@ -662,7 +717,7 @@ mod run_combat {
         );
 
         assert_eq!(
-            "Rounds  6.75 Blue 2 ( 0.45%) Red 0 ( 0.00%)",
+            "Rounds  7.00 Blue 2 ( 0.43%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
                 generate_monsters(ChallengeRating::Three, level),
@@ -693,7 +748,7 @@ mod run_combat {
         ];
 
         assert_eq!(
-            "Rounds  7.00 Blue 2 ( 0.40%) Red 0 ( 0.00%)",
+            "Rounds  6.75 Blue 2 ( 0.41%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
                 generate_monsters(ChallengeRating::One, level),
