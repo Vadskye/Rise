@@ -259,7 +259,7 @@ impl HasDamageAbsorption for Creature {
                     21 => 42,
                     _ => panic!("Invalid level {}", self.level),
                 }
-            },
+            }
         };
 
         let dr_from_armor: i32 = self.get_armor().iter().map(|a| a.damage_resistance()).sum();
@@ -309,6 +309,14 @@ impl HasDamageAbsorption for Creature {
             CreatureCategory::Character => hp,
             CreatureCategory::Monster(cr) => (hp as f64 * cr.hp_multiplier()) as i32,
         };
+    }
+
+    fn calc_effective_combat_hit_points(&self) -> i32 {
+        if self.can_recover() {
+            return ((self.calc_hit_points() as f64) * 1.5).floor() as i32;
+        } else {
+            return self.calc_hit_points();
+        }
     }
 }
 
@@ -473,8 +481,8 @@ impl HasDefenses for Creature {
             // TODO: check for light armor
             Defense::Armor => {
                 self.get_base_attribute(&Attribute::Constitution) / 2
-                    + (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier).floor()
-                        as i32
+                    + (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier)
+                        .floor() as i32
             }
             Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
             Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
@@ -528,7 +536,8 @@ impl HasVitalWounds for Creature {
 
     fn generate_vital_wound(&self) -> VitalWound {
         match self.category {
-            CreatureCategory::Character => VitalWound::vital_roll(self.calc_vital_roll_modifier()),
+            // CreatureCategory::Character => VitalWound::vital_roll(self.calc_vital_roll_modifier()),
+            CreatureCategory::Character => VitalWound::Zero,
             CreatureCategory::Monster(_) => VitalWound::Zero,
         }
     }
@@ -590,7 +599,7 @@ impl HasDamageTracking for Creature {
     fn apply_vital_wounds_from_damage(&mut self) {
         if self.remaining_hit_points() < 0 {
             let excess_damage = -self.remaining_hit_points();
-            self.hit_points_lost = self.calc_hit_points();
+            self.hit_points_lost = self.calc_effective_combat_hit_points();
             // One automatic vital wound, plus one more for every increment of half max HP
             let vital_wound_threshold = self.calc_hit_points() / 2;
             let vital_wound_count = 1 + excess_damage / vital_wound_threshold;
@@ -605,11 +614,11 @@ impl HasDamageTracking for Creature {
     }
 
     fn remaining_hit_points(&self) -> i32 {
-        return self.calc_hit_points() - self.damage_resistance_lost;
+        return self.calc_effective_combat_hit_points() - self.hit_points_lost;
     }
 
     fn take_damage(&mut self, damage: i32) {
-        let damage_resisted = min(self.remaining_damage_resistance(), damage);
+        let damage_resisted = min(max(0, self.remaining_damage_resistance()), damage);
         self.damage_resistance_lost += damage_resisted;
         self.hit_points_lost += damage - damage_resisted;
     }
