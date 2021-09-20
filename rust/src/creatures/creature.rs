@@ -470,7 +470,7 @@ impl HasDefenses for Creature {
             // TODO: check for light armor
             Defense::Armor => {
                 self.get_base_attribute(&Attribute::Constitution) / 2
-                    + (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier)
+                    + (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier).floor()
                         as i32
             }
             Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
