@@ -32,7 +32,7 @@ impl fmt::Display for CombatResult {
     }
 }
 
-pub fn run_combat(blue: Vec<&Creature>, red: Vec<&Creature>) -> CombatResult {
+pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
     let mut damageable: CombatStep<Vec<DamageableCreature>, Vec<DamageableCreature>> = CombatStep {
         blue: blue
             .iter()

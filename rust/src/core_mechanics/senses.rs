@@ -1,3 +1,4 @@
+#[derive(Clone)]
 pub enum Sense {
     Blindsense(i32),
     Blindsight(i32),

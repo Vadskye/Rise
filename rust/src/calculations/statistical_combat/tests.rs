@@ -573,9 +573,7 @@ mod run_combat {
                 Monster::standard_monster(cr, l, None, None).creature,
                 Monster::standard_monster(ChallengeRating::One, l, None, None).creature,
             ],
-            ChallengeRating::Four => vec![
-                Monster::standard_monster(cr, l, None, None).creature,
-            ],
+            ChallengeRating::Four => vec![Monster::standard_monster(cr, l, None, None).creature],
         }
     }
 
@@ -585,7 +583,7 @@ mod run_combat {
         let defender = Character::standard_character(1, true).creature;
         assert_eq!(
             "Rounds  8.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-            run_combat(vec![&attacker], vec![&defender]).to_string(),
+            run_combat(vec![attacker], vec![defender]).to_string(),
             "at level 1",
         );
 
@@ -593,7 +591,7 @@ mod run_combat {
         let defender = Character::standard_character(20, true).creature;
         assert_eq!(
             "Rounds  8.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-            run_combat(vec![&attacker], vec![&defender]).to_string(),
+            run_combat(vec![attacker], vec![defender]).to_string(),
             "at level 20",
         );
     }
@@ -606,14 +604,14 @@ mod run_combat {
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
         assert_eq!(
             "Rounds  5.25 Blue 1 ( 0.20%) Red 0 ( 0.00%)",
-            run_combat(vec![&attacker], vec![&defender]).to_string(),
+            run_combat(vec![attacker.clone()], vec![defender]).to_string(),
             "vs CR 1",
         );
 
         let defender = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
         assert_eq!(
             "Rounds  4.50 Blue 0 ( 0.00%) Red 1 ( 0.56%)",
-            run_combat(vec![&attacker], vec![&defender]).to_string(),
+            run_combat(vec![attacker.clone()], vec![defender]).to_string(),
             "vs CR 2",
         );
 
@@ -621,14 +619,14 @@ mod run_combat {
             Monster::standard_monster(ChallengeRating::Three, level, None, None).creature;
         assert_eq!(
             "Rounds  4.50 Blue 0 ( 0.00%) Red 1 ( 0.73%)",
-            run_combat(vec![&attacker], vec![&defender]).to_string(),
+            run_combat(vec![attacker.clone()], vec![defender]).to_string(),
             "vs CR 3",
         );
 
         let defender = Monster::standard_monster(ChallengeRating::Four, level, None, None).creature;
         assert_eq!(
             "Rounds  2.25 Blue 0 ( 0.00%) Red 1 ( 0.90%)",
-            run_combat(vec![&attacker], vec![&defender]).to_string(),
+            run_combat(vec![attacker.clone()], vec![defender]).to_string(),
             "vs CR 4",
         );
     }
@@ -642,13 +640,12 @@ mod run_combat {
             Character::standard_character(level, true).creature,
             Character::standard_character(level, true).creature,
         ];
-        let attackers: Vec<&Creature> = attackers.iter().collect();
 
         assert_eq!(
             "Rounds  8.25 Blue 2 ( 0.27%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
-                generate_monsters(ChallengeRating::One, level).iter().collect(),
+                generate_monsters(ChallengeRating::One, level),
             )
             .to_string(),
             "vs CR 1",
@@ -658,7 +655,7 @@ mod run_combat {
             "Rounds  6.25 Blue 2 ( 0.47%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
-                generate_monsters(ChallengeRating::Two, level).iter().collect(),
+                generate_monsters(ChallengeRating::Two, level),
             )
             .to_string(),
             "vs CR 2",
@@ -668,7 +665,7 @@ mod run_combat {
             "Rounds  6.75 Blue 2 ( 0.45%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
-                generate_monsters(ChallengeRating::Three, level).iter().collect(),
+                generate_monsters(ChallengeRating::Three, level),
             )
             .to_string(),
             "vs CR 3",
@@ -678,7 +675,7 @@ mod run_combat {
             "Rounds  9.00 Blue 0 ( 0.00%) Red 1 ( 0.02%)",
             run_combat(
                 attackers.clone(),
-                generate_monsters(ChallengeRating::Four, level).iter().collect(),
+                generate_monsters(ChallengeRating::Four, level),
             )
             .to_string(),
             "vs CR 4",
@@ -694,13 +691,12 @@ mod run_combat {
             Character::standard_character(level, true).creature,
             Character::standard_character(level, true).creature,
         ];
-        let attackers: Vec<&Creature> = attackers.iter().collect();
 
         assert_eq!(
             "Rounds  7.00 Blue 2 ( 0.40%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
-                generate_monsters(ChallengeRating::One, level).iter().collect(),
+                generate_monsters(ChallengeRating::One, level),
             )
             .to_string(),
             "vs CR 1",
@@ -710,7 +706,7 @@ mod run_combat {
             "Rounds  5.75 Blue 3 ( 0.61%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
-                generate_monsters(ChallengeRating::Two, level).iter().collect(),
+                generate_monsters(ChallengeRating::Two, level),
             )
             .to_string(),
             "vs CR 2",
@@ -720,7 +716,7 @@ mod run_combat {
             "Rounds  6.25 Blue 3 ( 0.54%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
-                generate_monsters(ChallengeRating::Three, level).iter().collect(),
+                generate_monsters(ChallengeRating::Three, level),
             )
             .to_string(),
             "vs CR 3",
@@ -730,7 +726,7 @@ mod run_combat {
             "Rounds  6.75 Blue 2 ( 0.42%) Red 0 ( 0.00%)",
             run_combat(
                 attackers.clone(),
-                generate_monsters(ChallengeRating::Four, level).iter().collect(),
+                generate_monsters(ChallengeRating::Four, level),
             )
             .to_string(),
             "vs CR 4",
