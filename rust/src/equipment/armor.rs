@@ -172,6 +172,8 @@ impl ArmorMaterial {
                 name: "mithral".to_string(),
                 item_level_modifier: 6,
             },
+            // The dex multiplier is handled inside the Armor definition since it's weirdly
+            // complicated
             Self::PureMithral => ArmorMaterialDefinition {
                 dr_multiplier: 2.0,
                 encumbrance_modifier: -3,
@@ -200,6 +202,14 @@ impl ArmorMaterial {
     fn encumbrance_modifier(&self) -> i32 {
         return self.definition().encumbrance_modifier;
     }
+
+    fn item_level_modifier(&self) -> i32 {
+        return self.definition().item_level_modifier;
+    }
+
+    fn name(&self) -> String {
+        return self.definition().name;
+    }
 }
 
 struct ArmorDefinition {
@@ -208,7 +218,9 @@ struct ArmorDefinition {
     defense: i32,
     dex_multiplier: f64,
     encumbrance: i32,
+    item_level: i32,
     name: String,
+    // TODO: Creature should notice this
     speed_modifier: i32,
 }
 
@@ -222,6 +234,7 @@ impl Armor {
                 defense: 2,
                 dex_multiplier: 1.0,
                 encumbrance: 1,
+                item_level: 0,
                 name: "leather".to_string(),
                 speed_modifier: 0,
             },
@@ -231,6 +244,7 @@ impl Armor {
                 defense: 2,
                 dex_multiplier: 1.0,
                 encumbrance: 2,
+                item_level: 1,
                 name: "studded leather".to_string(),
                 speed_modifier: 0,
             },
@@ -240,6 +254,7 @@ impl Armor {
                 defense: 2,
                 dex_multiplier: 1.0,
                 encumbrance: 2,
+                item_level: 1,
                 name: "chain shirt".to_string(),
                 speed_modifier: 0,
             },
@@ -249,6 +264,7 @@ impl Armor {
                 defense: 1,
                 dex_multiplier: 1.0,
                 encumbrance: 0,
+                item_level: 0,
                 name: "buckler".to_string(),
                 speed_modifier: 0,
             },
@@ -260,6 +276,7 @@ impl Armor {
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 3,
+                item_level: 1,
                 name: "hide armor".to_string(),
                 speed_modifier: -5,
             },
@@ -269,6 +286,7 @@ impl Armor {
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 5,
+                item_level: 1,
                 name: "scale mail".to_string(),
                 speed_modifier: -5,
             },
@@ -278,6 +296,7 @@ impl Armor {
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
+                item_level: 2,
                 name: "breastplate".to_string(),
                 speed_modifier: -5,
             },
@@ -287,6 +306,7 @@ impl Armor {
                 defense: 2,
                 dex_multiplier: 0.5,
                 encumbrance: 0,
+                item_level: 0,
                 name: "standard shield".to_string(),
                 speed_modifier: 0,
             },
@@ -298,6 +318,7 @@ impl Armor {
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 5,
+                item_level: 2,
                 name: "layered hide".to_string(),
                 speed_modifier: -10,
             },
@@ -307,6 +328,7 @@ impl Armor {
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 6,
+                item_level: 3,
                 name: "plated mail".to_string(),
                 speed_modifier: -10,
             },
@@ -316,6 +338,7 @@ impl Armor {
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 6,
+                item_level: 5,
                 name: "full plate".to_string(),
                 speed_modifier: -10,
             },
@@ -325,10 +348,37 @@ impl Armor {
                 defense: 3,
                 dex_multiplier: 0.0,
                 encumbrance: 2,
+                item_level: 1,
                 name: "tower shield".to_string(),
                 speed_modifier: 0,
             },
         }
+    }
+
+    fn material(&self) -> &Option<ArmorMaterial> {
+        match self {
+            // Light armor
+            Self::Leather(m) => m,
+            Self::StuddedLeather(m) => m,
+            Self::ChainShirt(m) => m,
+            Self::Buckler => &None,
+
+            // Medium armor
+            Self::Hide(m) => m,
+            Self::ScaleMail(m) => m,
+            Self::Breastplate(m) => m,
+            Self::StandardShield => &None,
+
+            // Heavy armor
+            Self::LayeredHide(m) => m,
+            Self::PlatedMail(m) => m,
+            Self::FullPlate(m) => m,
+            Self::TowerShield => &None,
+        }
+    }
+
+    pub fn accuracy_modifier(&self) -> i32 {
+        return self.definition().accuracy_modifier;
     }
 
     pub fn damage_resistance(&self) -> i32 {
@@ -336,7 +386,16 @@ impl Armor {
     }
 
     pub fn dex_multiplier(&self) -> f64 {
-        return self.definition().dex_multiplier;
+        let multiplier = self.definition().dex_multiplier;
+        if multiplier < 1.0 && self.material().is_some() {
+            let material = self.material().as_ref().unwrap();
+            return match material {
+                ArmorMaterial::PureMithral => multiplier + 0.5,
+                _ => multiplier,
+            };
+        } else {
+            return multiplier;
+        }
     }
 
     pub fn defense(&self) -> i32 {
@@ -344,11 +403,31 @@ impl Armor {
     }
 
     pub fn encumbrance(&self) -> i32 {
-        return self.definition().encumbrance;
+        if let Some(m) = self.material() {
+            return self.definition().encumbrance + m.encumbrance_modifier();
+        } else {
+            return self.definition().encumbrance;
+        }
+    }
+
+    pub fn item_level(&self) -> i32 {
+        if let Some(m) = self.material() {
+            return self.definition().item_level + m.item_level_modifier();
+        } else {
+            return self.definition().item_level;
+        }
     }
 
     pub fn name(&self) -> String {
-        return self.definition().name;
+        if let Some(m) = self.material() {
+            return format!("{} {}", m.name(), self.definition().name);
+        } else {
+            return self.definition().name;
+        }
+    }
+
+    pub fn speed_modifier(&self) -> i32 {
+        return self.definition().speed_modifier;
     }
 }
 

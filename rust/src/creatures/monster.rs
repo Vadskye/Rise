@@ -1,6 +1,6 @@
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode,
-    SpecialDefenseModifier, SpecialDefenseType, SpeedCategory,
+    SpecialDefenseModifier, SpecialDefenseType,
 };
 use crate::creatures::attacks::HasAttacks;
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
