@@ -458,7 +458,7 @@ def calc_magical_power():
                             {
                                 "disabled": True,
                                 "name": "magical_power_willpower_display",
-                                "value": "math.floor(@{willpower}/2)",
+                                "value": "floor(@{willpower}/2)",
                             }
                         ),
                     ),
@@ -487,7 +487,7 @@ def calc_mundane_power():
                             {
                                 "disabled": True,
                                 "name": "mundane_power_strength_display",
-                                "value": "math.floor(@{strength}/2)",
+                                "value": "floor(@{strength}/2)",
                             }
                         ),
                     ),
