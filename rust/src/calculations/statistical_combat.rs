@@ -140,12 +140,12 @@ fn calc_rounds_to_live(attackers: &Vec<&Creature>, defender: &Creature) -> f64 {
 fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     let attacks = attacker.calc_all_attacks();
     let mut best_damage_per_round = 0.0;
-    let mut best_attack: Option<Attack> = None;
+    // let mut best_attack: Option<Attack> = None;
     for attack in attacks {
         let average_damage_per_round = calc_attack_damage_per_round(&attack, attacker, defender);
         if average_damage_per_round > best_damage_per_round {
             best_damage_per_round = average_damage_per_round;
-            best_attack = Some(attack);
+            // best_attack = Some(attack);
         }
     }
 

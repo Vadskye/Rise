@@ -407,8 +407,10 @@ impl HasAttacks for Creature {
     }
 
     fn calc_accuracy(&self) -> i32 {
+        let accuracy_from_armor: i32 = self.get_armor().iter().map(|a| a.accuracy_modifier()).sum();
         // note implicit floor due to integer storage
-        return self.level / 2
+        return accuracy_from_armor
+            + self.level / 2
             + self.get_base_attribute(&Attribute::Perception) / 2
             + self.calc_total_modifier(ModifierType::Accuracy);
     }
@@ -538,7 +540,13 @@ impl HasVitalWounds for Creature {
         match self.category {
             // TODO: represent character vital wounds more accurately
             // CreatureCategory::Character => VitalWound::vital_roll(self.calc_vital_roll_modifier()),
-            CreatureCategory::Character => if self.calc_vital_roll_modifier() >= 0 { VitalWound::NoEffect } else { VitalWound::Zero },
+            CreatureCategory::Character => {
+                if self.calc_vital_roll_modifier() >= 0 {
+                    VitalWound::NoEffect
+                } else {
+                    VitalWound::Zero
+                }
+            }
             CreatureCategory::Monster(_) => VitalWound::Zero,
         }
     }
