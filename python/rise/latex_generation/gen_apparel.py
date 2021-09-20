@@ -1499,7 +1499,7 @@ def generate_apparel():
             tags=[],
             description="""
                 You gain a +1 bonus to your defenses against spells that target you directly.
-                This does not protect you from abilities that affect an area.
+                This does not protect you from abilities that affect an area, or from magical abilities that are not spells.
             """,
             short_description="Grants +1 defenses against targeted spells",
         ),
@@ -1510,7 +1510,7 @@ def generate_apparel():
             tags=[],
             description="""
                 You gain a +2 bonus to your defenses against spells that target you directly.
-                This does not protect you from abilities that affect an area.
+                This does not protect you from abilities that affect an area, or from magical abilities that are not spells.
             """,
             short_description="Grants +2 defenses against targeted spells",
         ),
