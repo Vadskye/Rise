@@ -65,12 +65,14 @@ impl fmt::Display for Defense {
     }
 }
 
+#[derive(Clone)]
 pub enum SpecialDefenseModifier {
     Immune(SpecialDefenseType),
     Impervious(SpecialDefenseType),
     Vulnerable(SpecialDefenseType),
 }
 
+#[derive(Clone)]
 pub enum SpecialDefenseType {
     Damage(DamageType),
     Debuff(Debuff),

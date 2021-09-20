@@ -12,6 +12,7 @@ use crate::skills::{HasSkills, Skill};
 use std::cmp::{max, min};
 use std::collections::HashMap;
 
+#[derive(Clone)]
 pub struct Creature {
     anonymous_modifiers: Vec<Modifier>,
     base_attributes: HashMap<Attribute, i32>,
@@ -33,6 +34,7 @@ pub struct Creature {
     pub weapons: Vec<Weapon>,
 }
 
+#[derive(Clone)]
 pub enum CreatureCategory {
     Character,
     Monster(ChallengeRating),
@@ -125,6 +127,7 @@ impl Creature {
     }
 }
 
+#[derive(Clone)]
 struct IdentifiedModifier {
     modifier: Modifier,
     source: String,

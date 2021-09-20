@@ -1,5 +1,6 @@
 use crate::core_mechanics::Size;
 
+#[derive(Clone)]
 pub enum MovementMode {
     Climb(SpeedCategory),
     Fly(SpeedCategory, FlightManeuverability),
@@ -8,12 +9,14 @@ pub enum MovementMode {
     Swim(SpeedCategory),
 }
 
+#[derive(Clone)]
 pub enum FlightManeuverability {
     Poor,
     Normal,
     Perfect,
 }
 
+#[derive(Clone)]
 pub enum SpeedCategory {
     Slow,
     Normal,
