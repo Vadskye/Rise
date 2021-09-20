@@ -668,9 +668,9 @@ def generate_implements():
             name="Vampiric Staff",
             level=17,
             material_type="Weapon",
-            tags=[],
+            tags=['Healing'],
             description="""
-                Once per round, when you cause a living creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain \\glossterm{hit points} equal to half the hit points the damaged creature lost this way.
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 2d10+8 \\glossterm<hit points>.
             """,
             short_description="Steals hit points from foes",
         ),

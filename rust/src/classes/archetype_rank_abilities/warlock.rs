@@ -278,7 +278,8 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     It also provides a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
                     However, the \textit{recover} action causes you to regain half as many hit points as it normally would.
 
-                    \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to half the the hit points the creature lost this way.
+                    \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d6 \add half your \glossterm{magical} \glossterm{power}.
+                    This healing increases by \plus1d for each rank beyond 1.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
 
                     \parhead{Secret of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
@@ -397,7 +398,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to five times your rank in this archetype.
 
-                    \parhead{Secret of Bloodsharing} The healing increases to be equal to the hit points lost by the creature you deal damage to.
+                    \parhead{Secret of Bloodsharing} You may add your full magical power to the amount you heal instead of half your magical power.
 
                     \parhead{Secret of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
                 }
@@ -460,6 +461,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     In addition, the defense bonus increases to \plus5.
 
                     \parhead{Secret of Bloodsharing} You can trigger the healing effect twice per round.
+                    Each individual creature can only provide you with once instance of healing per round, even if you hit it twice.
 
                     \parhead{Secret of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the subject.
                 }
