@@ -490,7 +490,7 @@ export const summoning: MysticSphere = {
         the summoned creature appears to be a snake.
         Its attacks deal 2d6 bludgeoning and piercing damage.
         Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
-        It immediately is \\sickened while it is poisoned.
+        It is immediately \\sickened while it is poisoned.
         The poison's third stage causes the subject to become \\nauseated as long as it is poisoned.
         `,
         name: "summon monster",
