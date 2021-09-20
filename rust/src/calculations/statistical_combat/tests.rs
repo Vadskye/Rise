@@ -169,6 +169,8 @@ mod damage_per_round {
 
 #[cfg(test)]
 mod attack_comparisons {
+    use crate::core_mechanics::{Attribute, HasAttributes};
+
     use super::*;
 
     #[test]
@@ -223,8 +225,9 @@ mod attack_comparisons {
     #[test]
     fn standard_character_level_1_vs_weak_monster() {
         let attacker = Character::standard_character(1, true).creature;
-        let defender = Monster::standard_monster(ChallengeRating::Two, 1, Some(0), None).creature;
-        assert_eq!(5, defender.calc_defense(&Defense::Armor));
+        let mut defender = Monster::standard_monster(ChallengeRating::Two, 1, Some(0), None).creature;
+        defender.set_base_attribute(Attribute::Dexterity, -1);
+        assert_eq!(4, defender.calc_defense(&Defense::Armor));
 
         let certain_strike = attacker
             .get_attack_by_name("Broadsword Certain Strike")
@@ -370,7 +373,8 @@ mod attack_comparisons {
     #[test]
     fn standard_character_level_20_vs_weak_cr1() {
         let attacker = Character::standard_character(20, true).creature;
-        let defender = Monster::standard_monster(ChallengeRating::One, 20, Some(0), None).creature;
+        let mut defender = Monster::standard_monster(ChallengeRating::One, 20, Some(0), None).creature;
+        defender.set_base_attribute(Attribute::Dexterity, -1);
         assert_eq!(16, defender.calc_defense(&Defense::Armor));
 
         let certain_strike = attacker
