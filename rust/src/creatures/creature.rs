@@ -536,8 +536,9 @@ impl HasVitalWounds for Creature {
 
     fn generate_vital_wound(&self) -> VitalWound {
         match self.category {
+            // TODO: represent character vital wounds more accurately
             // CreatureCategory::Character => VitalWound::vital_roll(self.calc_vital_roll_modifier()),
-            CreatureCategory::Character => VitalWound::Zero,
+            CreatureCategory::Character => if self.calc_vital_roll_modifier() >= 0 { VitalWound::NoEffect } else { VitalWound::Zero },
             CreatureCategory::Monster(_) => VitalWound::Zero,
         }
     }
