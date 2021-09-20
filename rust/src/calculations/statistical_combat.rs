@@ -2,7 +2,7 @@ use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
 use crate::creatures::attack_effects::AttackEffect;
 use crate::creatures::attacks::{Attack, HasAttacks};
 use crate::creatures::{attacks, Creature};
-use std::cmp::{max, min};
+use std::cmp::max;
 use std::fmt;
 
 pub struct CombatResult {
@@ -98,10 +98,7 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
 
 fn survival_percent(creatures: &Vec<DamageableCreature>) -> f64 {
     let total_damage_absorption: i32 = creatures.iter().map(|d| d.total_damage_absorption()).sum();
-    let total_damage_taken: i32 = creatures
-        .iter()
-        .map(|d| min(d.total_damage_absorption(), d.damage_taken))
-        .sum();
+    let total_damage_taken: i32 = creatures.iter().map(|d| d.damage_taken).sum();
     return max(0, total_damage_absorption - total_damage_taken) as f64
         / total_damage_absorption as f64;
 }
