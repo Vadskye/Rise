@@ -279,11 +279,7 @@ fn standard_character_statistics_level_1() {
         creature.calc_hit_points(),
         "HP: 11 level + 2 martial mastery + 2 con",
     );
-    assert_eq!(
-        8,
-        creature.calc_damage_resistance(),
-        "DR: 6 scale + 2 con",
-    );
+    assert_eq!(8, creature.calc_damage_resistance(), "DR: 6 scale + 2 con",);
 
     // HasResources
     assert_eq!(

@@ -52,16 +52,8 @@ fn standard_monster_statistics_level_1_cr1() {
     );
 
     // HasDamageAbsorption
-    assert_eq!(
-        13,
-        creature.calc_hit_points(),
-        "HP: 11 level + 2 con",
-    );
-    assert_eq!(
-        5,
-        creature.calc_damage_resistance(),
-        "DR: 3 level + 2 con",
-    );
+    assert_eq!(13, creature.calc_hit_points(), "HP: 11 level + 2 con",);
+    assert_eq!(5, creature.calc_damage_resistance(), "DR: 3 level + 2 con",);
 }
 
 #[test]
@@ -114,11 +106,7 @@ fn standard_monster_statistics_level_1_cr2() {
     );
 
     // HasDamageAbsorption
-    assert_eq!(
-        26,
-        creature.calc_hit_points(),
-        "HP: (11 level + 2 con) * 2",
-    );
+    assert_eq!(26, creature.calc_hit_points(), "HP: (11 level + 2 con) * 2",);
     assert_eq!(
         10,
         creature.calc_damage_resistance(),
@@ -176,11 +164,7 @@ fn standard_monster_statistics_level_1_cr3() {
     );
 
     // HasDamageAbsorption
-    assert_eq!(
-        39,
-        creature.calc_hit_points(),
-        "HP: (11 level + 2 con) * 3",
-    );
+    assert_eq!(39, creature.calc_hit_points(), "HP: (11 level + 2 con) * 3",);
     assert_eq!(
         20,
         creature.calc_damage_resistance(),
@@ -238,11 +222,7 @@ fn standard_monster_statistics_level_1_cr4() {
     );
 
     // HasDamageAbsorption
-    assert_eq!(
-        52,
-        creature.calc_hit_points(),
-        "HP: (11 level + 2 con) * 4",
-    );
+    assert_eq!(52, creature.calc_hit_points(), "HP: (11 level + 2 con) * 4",);
     assert_eq!(
         30,
         creature.calc_damage_resistance(),

@@ -3,7 +3,7 @@ use crate::creatures::{Creature, HasModifiers, ModifierType};
 use crate::equipment::HasArmor;
 use titlecase::titlecase;
 // use itertools::Itertools;
-use std::cmp::{PartialEq, max};
+use std::cmp::{max, PartialEq};
 use std::collections::HashMap;
 use std::fmt;
 
