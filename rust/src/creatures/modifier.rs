@@ -2,7 +2,7 @@ use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::attacks::Attack;
 use crate::skills::Skill;
 
-use super::Maneuver;
+use super::{Creature, Maneuver};
 
 #[derive(Clone)]
 pub enum Modifier {
@@ -160,10 +160,88 @@ impl Modifier {
     }
 }
 
+#[derive(Clone)]
+pub struct IdentifiedModifier {
+    modifier: Modifier,
+    source: String,
+    priority: i32,
+}
+
+impl IdentifiedModifier {
+    fn key(&self) -> String {
+        return format!("{} {}", self.source, self.modifier.name());
+    }
+
+    fn replaces(&self, other: &Self) -> bool {
+        return self.key() == other.key() && self.priority > other.priority;
+    }
+}
+
 pub trait HasModifiers {
     fn add_modifier(&mut self, modifier: Modifier, name: Option<&str>, priority: Option<i32>);
     fn add_magic_modifier(&mut self, modifier: Modifier);
     fn get_modifiers(&self) -> Vec<&Modifier>;
     fn get_modifiers_by_source(&self, source: &str) -> Vec<&Modifier>;
     fn calc_total_modifier(&self, modifier_type: ModifierType) -> i32;
+}
+
+impl HasModifiers for Creature {
+    fn add_modifier(&mut self, modifier: Modifier, source: Option<&str>, priority: Option<i32>) {
+        if let Some(source) = source {
+            let priority = priority.unwrap_or(0);
+            let identified_modifier = IdentifiedModifier {
+                modifier,
+                source: source.to_string(),
+                priority,
+            };
+            self.identified_modifiers
+                .retain(|im| !identified_modifier.replaces(im));
+            if self
+                .identified_modifiers
+                .iter()
+                .filter(|im| im.replaces(&identified_modifier))
+                .count()
+                == 0
+            {
+                self.identified_modifiers.push(identified_modifier);
+            }
+        } else {
+            self.anonymous_modifiers.push(modifier);
+        }
+    }
+
+    fn add_magic_modifier(&mut self, modifier: Modifier) {
+        let value = modifier.value();
+        self.add_modifier(modifier, Some("magic"), Some(value));
+    }
+
+    fn get_modifiers(&self) -> Vec<&Modifier> {
+        let mut modifiers: Vec<&Modifier> = self
+            .identified_modifiers
+            .iter()
+            .map(|im| &im.modifier)
+            .collect();
+        for m in &self.anonymous_modifiers {
+            modifiers.push(m);
+        }
+        return modifiers;
+    }
+
+    fn get_modifiers_by_source(&self, source: &str) -> Vec<&Modifier> {
+        return self
+            .identified_modifiers
+            .iter()
+            .filter(|im| im.source == source)
+            .map(|im| &im.modifier)
+            .collect();
+    }
+
+    fn calc_total_modifier(&self, mt: ModifierType) -> i32 {
+        return self
+            .get_modifiers()
+            .iter()
+            .filter(|m| m.modifier_type() == mt)
+            .map(|m| m.value())
+            .sum();
+    }
 }

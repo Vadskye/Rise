@@ -1,11 +1,6 @@
 use crate::core_mechanics::{DamageDice, DamageType};
 use std::fmt;
 
-pub trait HasWeapons {
-    fn add_weapon(&mut self, weapon: Weapon);
-    fn get_weapons(&self) -> Vec<&Weapon>;
-}
-
 #[derive(Copy, Clone)]
 pub enum Weapon {
     ArmorSpikes,

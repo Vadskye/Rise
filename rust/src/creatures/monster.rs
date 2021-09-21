@@ -4,7 +4,7 @@ use crate::core_mechanics::{
 };
 use crate::creatures::attacks::HasAttacks;
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
-use crate::equipment::{HasWeapons, Weapon};
+use crate::equipment::Weapon;
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
 use crate::skills::{HasSkills, Skill, SkillCategory};
@@ -121,7 +121,7 @@ impl Monster {
             CreatureType::Planeforged
         };
         let mut monster = Monster::new(challenge_rating, creature_type, level);
-        monster.creature.add_weapon(Weapon::Slam);
+        monster.creature.weapons.push(Weapon::Slam);
         monster.creature.add_modifier(
             Modifier::Maneuver(Maneuver::GenericScalingStrike((level + 2) / 3)),
             None,

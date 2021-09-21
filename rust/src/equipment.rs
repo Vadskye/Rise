@@ -2,4 +2,4 @@ mod armor;
 mod weapons;
 
 pub use armor::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor};
-pub use weapons::{HasWeapons, Weapon, WeaponGroup};
+pub use weapons::{Weapon, WeaponGroup};

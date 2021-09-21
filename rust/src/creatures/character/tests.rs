@@ -151,7 +151,7 @@ fn it_calculates_level_21_fighter_attacks() {
         fighter.calc_all_attacks().len(),
         "Should have no attacks without a weapon"
     );
-    fighter.add_weapon(Weapon::Broadsword);
+    fighter.weapons.push(Weapon::Broadsword);
     assert_eq!(
         vec![
             "Broadsword Certain Strike +16 (The subject takes 4d6 slashing damage.)",
