@@ -21,7 +21,6 @@ pub struct Attack {
     pub name: String,
     pub replaces_weapon: Option<Weapon>,
     pub targeting: AttackTargeting,
-    pub usage_time: UsageTime,
 }
 
 pub trait HasAttacks {
@@ -67,7 +66,6 @@ impl Attack {
             // By default, `from_weapon` replaces the base weapon
             replaces_weapon: Some(weapon),
             targeting: AttackTargeting::Strike,
-            usage_time: UsageTime::Standard,
         };
     }
 
@@ -172,12 +170,8 @@ impl Attack {
     // This should always return a string; even if there are no tags, we want a rankline after the
     // top section.
     fn latex_tags(&self) -> String {
-        // TODO: take into account tags and usage time
-        return self
-            .usage_time
-            .latex_ability_header()
-            .unwrap_or("")
-            .to_string();
+        // TODO: take tags into account
+        return "".to_string()
     }
 
     fn latex_effect(&self, creature: &Creature) -> String {

@@ -1,8 +1,5 @@
-use crate::core_mechanics::{
-    DamageDice, DamageType, Defense, MovementMode, PassiveAbility, Sense, Size, SpeedCategory,
-};
-use crate::creatures::attack_effects::{AttackEffect, DamageEffect};
-use crate::creatures::attacks::{Attack, AttackRange, AttackTargeting, UsageTime};
+use crate::core_mechanics::{MovementMode, PassiveAbility, Sense, Size, SpeedCategory};
+use crate::creatures::attacks::Attack;
 use crate::creatures::{Monster, StandardAttack};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
