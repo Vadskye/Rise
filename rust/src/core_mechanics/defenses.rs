@@ -1,9 +1,9 @@
 use crate::core_mechanics::{Attribute, DamageType, Debuff};
+use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
+use crate::equipment::HasArmor;
 use std::fmt;
 
-pub trait HasDefenses {
-    fn calc_defense(&self, defense: &Defense) -> i32;
-}
+use super::HasAttributes;
 
 #[derive(Clone, Copy, PartialEq)]
 pub enum Defense {
@@ -15,12 +15,7 @@ pub enum Defense {
 
 impl Defense {
     pub fn all() -> Vec<Self> {
-        return vec![
-            Self::Armor,
-            Self::Fortitude,
-            Self::Mental,
-            Self::Reflex,
-        ];
+        return vec![Self::Armor, Self::Fortitude, Self::Mental, Self::Reflex];
     }
 
     pub fn name(&self) -> &str {
@@ -112,5 +107,47 @@ impl SpecialDefenseType {
             Self::Debuff(debuff) => debuff.name().to_string(),
             Self::CriticalHits => "critical hits".to_string(),
         }
+    }
+}
+
+pub trait HasDefenses {
+    fn calc_defense(&self, defense: &Defense) -> i32;
+}
+
+impl HasDefenses for Creature
+where
+    Creature: HasModifiers + HasArmor + HasAttributes,
+{
+    fn calc_defense(&self, defense: &Defense) -> i32 {
+        let dex_multiplier: f64 = match self.category {
+            CreatureCategory::Character => {
+                if let Some(modifier) = self.minimum_dex_modifier() {
+                    modifier
+                } else {
+                    1.0
+                }
+            }
+            CreatureCategory::Monster(_) => 0.5,
+        };
+        let attribute_bonus = match defense {
+            // TODO: check for light armor
+            Defense::Armor => {
+                self.get_base_attribute(&Attribute::Constitution) / 2
+                    + (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier)
+                        .floor() as i32
+            }
+            Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
+            Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
+            Defense::Mental => self.get_base_attribute(&Attribute::Willpower),
+        };
+        let armor_bonus = if defense.include_armor_bonus() {
+            self.get_armor().iter().map(|a| a.defense()).sum()
+        } else {
+            0
+        };
+        return self.level / 2
+            + attribute_bonus
+            + armor_bonus
+            + self.calc_total_modifier(ModifierType::Defense(*defense));
     }
 }

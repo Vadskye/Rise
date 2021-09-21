@@ -1,5 +1,5 @@
 use crate::core_mechanics::Defense;
-use crate::creatures::Modifier;
+use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, ModifierType};
 use rand::Rng;
 
 #[derive(Clone)]
@@ -79,4 +79,48 @@ pub trait HasVitalWounds {
     fn calc_vital_roll_modifier(&self) -> i32;
     fn generate_vital_wound(&self) -> VitalWound;
     fn is_vitally_unconscious(&self) -> bool;
+}
+
+impl HasVitalWounds for Creature where Creature: HasModifiers {
+    fn add_vital_wound(&mut self, vital_wound: VitalWound) {
+        if let Some(modifiers) = vital_wound.modifiers() {
+            for m in modifiers {
+                self.add_modifier(m, None, None);
+            }
+        }
+        self.vital_wounds.push(vital_wound);
+    }
+
+    fn calc_vital_roll_modifier(&self) -> i32 {
+        match self.category {
+            CreatureCategory::Character => {
+                self.calc_total_modifier(ModifierType::VitalRoll) - self.vital_wounds.len() as i32
+            }
+            CreatureCategory::Monster(_) => 0,
+        }
+    }
+
+    fn generate_vital_wound(&self) -> VitalWound {
+        match self.category {
+            // TODO: represent character vital wounds more accurately
+            // CreatureCategory::Character => VitalWound::vital_roll(self.calc_vital_roll_modifier()),
+            CreatureCategory::Character => {
+                if self.calc_vital_roll_modifier() >= 0 {
+                    VitalWound::NoEffect
+                } else {
+                    VitalWound::Zero
+                }
+            }
+            CreatureCategory::Monster(_) => VitalWound::Zero,
+        }
+    }
+
+    fn is_vitally_unconscious(&self) -> bool {
+        for vital_wound in &self.vital_wounds {
+            if vital_wound.causes_unconsciousness() {
+                return true;
+            }
+        }
+        return false;
+    }
 }
