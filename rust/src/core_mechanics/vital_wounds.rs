@@ -81,7 +81,10 @@ pub trait HasVitalWounds {
     fn is_vitally_unconscious(&self) -> bool;
 }
 
-impl HasVitalWounds for Creature where Creature: HasModifiers {
+impl HasVitalWounds for Creature
+where
+    Creature: HasModifiers,
+{
     fn add_vital_wound(&mut self, vital_wound: VitalWound) {
         if let Some(modifiers) = vital_wound.modifiers() {
             for m in modifiers {

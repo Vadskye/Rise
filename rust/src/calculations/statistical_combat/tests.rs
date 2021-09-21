@@ -483,10 +483,7 @@ mod calc_rounds_to_live {
 
         assert_eq!(
             9.0,
-            calc_rounds_to_live(
-                &vec![&attacker],
-                &defender,
-            ),
+            calc_rounds_to_live(&vec![&attacker], &defender,),
             "at level 1",
         );
 
@@ -494,10 +491,7 @@ mod calc_rounds_to_live {
         let defender = Character::standard_character(20, true).creature;
         assert_eq!(
             8.25,
-            calc_rounds_to_live(
-                &vec![&attacker],
-                &defender,
-            ),
+            calc_rounds_to_live(&vec![&attacker], &defender,),
             "at level 20",
         );
     }
@@ -510,20 +504,14 @@ mod calc_rounds_to_live {
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
         assert_eq!(
             5.5,
-            calc_rounds_to_live(
-                &vec![&attacker],
-                &defender,
-            ),
+            calc_rounds_to_live(&vec![&attacker], &defender,),
             "vs CR 1",
         );
 
         let defender = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
         assert_eq!(
             10.75,
-            calc_rounds_to_live(
-                &vec![&attacker],
-                &defender,
-            ),
+            calc_rounds_to_live(&vec![&attacker], &defender,),
             "vs CR 2",
         );
 
@@ -531,20 +519,14 @@ mod calc_rounds_to_live {
             Monster::standard_monster(ChallengeRating::Three, level, None, None).creature;
         assert_eq!(
             17.25,
-            calc_rounds_to_live(
-                &vec![&attacker],
-                &defender,
-            ),
+            calc_rounds_to_live(&vec![&attacker], &defender,),
             "vs CR 3",
         );
 
         let defender = Monster::standard_monster(ChallengeRating::Four, level, None, None).creature;
         assert_eq!(
             23.75,
-            calc_rounds_to_live(
-                &vec![&attacker],
-                &defender,
-            ),
+            calc_rounds_to_live(&vec![&attacker], &defender,),
             "vs CR 4",
         );
     }
@@ -557,20 +539,14 @@ mod calc_rounds_to_live {
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
         assert_eq!(
             5.0,
-            calc_rounds_to_live(
-                &vec![&attacker],
-                &defender,
-            ),
+            calc_rounds_to_live(&vec![&attacker], &defender,),
             "vs CR 1",
         );
 
         let defender = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
         assert_eq!(
             10.0,
-            calc_rounds_to_live(
-                &vec![&attacker],
-                &defender,
-            ),
+            calc_rounds_to_live(&vec![&attacker], &defender,),
             "vs CR 2",
         );
 
@@ -578,20 +554,14 @@ mod calc_rounds_to_live {
             Monster::standard_monster(ChallengeRating::Three, level, None, None).creature;
         assert_eq!(
             16.25,
-            calc_rounds_to_live(
-                &vec![&attacker],
-                &defender,
-            ),
+            calc_rounds_to_live(&vec![&attacker], &defender,),
             "vs CR 3",
         );
 
         let defender = Monster::standard_monster(ChallengeRating::Four, level, None, None).creature;
         assert_eq!(
             22.5,
-            calc_rounds_to_live(
-                &vec![&attacker],
-                &defender,
-            ),
+            calc_rounds_to_live(&vec![&attacker], &defender,),
             "vs CR 4",
         );
     }
