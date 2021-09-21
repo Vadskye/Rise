@@ -14,7 +14,7 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         This has all of the same effects as the level for a player character, except that monsters do not gain legacy items or attunement points as described in \tref{Character Advancement}.
 
     \subsection{Challenge Rating}\label{Challenge Rating}
-        Each monster has a \glossterm{challenge rating} that indicates its approximate strength within its level, ranging from 1/2 to 4.
+        Each monster has a \glossterm{challenge rating} that indicates its approximate strength within its level, ranging from 1/2 to 6.
         A monster's challenge rating is a guideline to how many of that monster should typically be present in an encounter (see \pcref{Encounter Balancing}).
         This has several effects on the monster's statistics, as described in \trefnp{Challenge Rating Effects}.
 
@@ -25,8 +25,8 @@ This chapter describes the rules for monsters, and the combat statistics for a v
                 1/2     & 3                  & \mult1/2 & \mult0  & \minus1d \\
                 1       & 4                  & \mult1   & \mult1  & \tdash   \\
                 2       & 5                  & \mult2   & \mult2  & \plus1d  \\
-                3       & 5                  & \mult3   & \mult4  & \plus1d  \\
-                4       & 6                  & \mult4   & \mult6  & \plus2d  \\
+                4       & 6                  & \mult4   & \mult6  & \plus1d  \\
+                6       & 7                  & \mult6   & \mult10 & \plus2d  \\
             \end{dtabularx}
             1. This modifier applies to all damage dice rolled by the monster, including both strikes and magical abilities. \\
         \end{dtable}
@@ -46,18 +46,19 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             However, monsters with a high challenge rating can remove conditions automatically.
             At the end of each round, monsters with CR of 2 or higher roll 1d10 \add their CR.
             If the result is 11 or higher, the monster removes one condition of its choice.
+            For every 5 points by which it exceeds that result, it removes an additional condition.
             This effect cannot remove a condition applied during the current round.
             Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
 
         \subsubsection{Rank-Based Ability Access}
             Although monsters do not gain archetypes, their special abilities should still be balanced appropriately for their maximum accessible rank.
             Like a player character, a monster's maximum accessible rank is based on its level, as shown in \tref{Monster Advancement}.
-            CR 3 and CR 4 monsters gain a \plus1 bonus to their maximum rank, allowing them to use powerful abilities before player characters can.
+            CR 4 and CR 6 monsters gain a \plus1 bonus to their maximum rank, allowing them to use powerful abilities before player characters can.
 
     \subsection{Attributes}
         Each of a monster's base attributes can range from \minus9 to 3, as appropriate for the type of monster.
         A monster's attributes scale with level in the same way as player character attributes.
-        A monster can also have up to two attributes that are higher, up to the maximum base attribute value for that monster's challenge rating.
+        A monster can also have up to two attributes that are higher than 3, up to the maximum base attribute value for that monster's challenge rating.
         In general, a monster with higher starting attributes will be stronger, but not all monsters need to start with the same starting attribute total.
 
     \subsection{Level Scaling}
@@ -134,11 +135,11 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
     \subsection{Monster Actions}
         All monsters are able to take \glossterm{free actions}.
-        CR 1 or higher monsters can take \glossterm{minor actions}, though many monsters do not have any relevant minor actions to take.
+        CR 2 or higher monsters can take \glossterm{minor actions}, though many monsters do not have any relevant minor actions to take.
         Some monsters, including many high CR monsters, can either take additional actions each round or use powerful abilities as minor actions.
         These special abilities are listed in their descriptions.
 
-        In general, all monsters of CR 3 or 4 should be designed to attack multiple different PCs in every round.
+        In general, all monsters of CR 4 or 6 should be designed to attack multiple different PCs in every round.
         If the full damage output of a high-CR monster is brought to bear on a single PC, it will likely kill that PC quickly, taking a player out of the fight too early.
         Alternately, if that PC is able to avoid or resist the damage, it will trivialize the fight and remove the sense of danger.
         Instead, damage should be spread throughout the party to ensure that multiple people feel threatened and have to adjust their actions based on their personal danger tolerance.
@@ -148,7 +149,7 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         Fighting monsters of a lower level, or monsters whose combined challenge rating is less than the number of PCs, will yield an easier encounter.
         Fighting monsters of a higher level, or fighting monsters whose combined challenge rating is greater than the number of PCs, will yield a more difficult encounter.
 
-        It is generally not a good idea for PCs to fight monsters more than three levels higher or lower than their own.
+        It is generally not a good idea for PCs to fight monsters more than four levels higher or lower than their own level.
         They may find that their attacks always miss, or never miss, and other aspects of the encounter may be similarly imbalanced in ways that are not easily remedied by simply changing the number of enemies.
 
         However, intentionally using lower-level monsters with a high CR can change the tone of an encounter in ways that may be beneficial.
