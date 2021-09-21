@@ -557,13 +557,17 @@ def boring_stuff(destination):
                     ),
                     *(
                         [
-                            underlabel_spaced(
-                                "CR",
-                                number_input(
-                                    {"class": "fake-text", "name": "challenge_rating"}
-                                ),
-                                attributes={"class": "challenge-rating-input"},
-                            ),
+                            underlabel("CR", select(
+                                {"class": "challenge-rating", "name": "challenge_rating"},
+                                [
+                                    option({"value": ""}, ""),
+                                    option({"value": "0.5"}, "Half"),
+                                    option({"value": "1"}, "One"),
+                                    option({"value": "2"}, "Two"),
+                                    option({"value": "4"}, "Four"),
+                                    option({"value": "6"}, "Six"),
+                                ],
+                            )),
                             underlabel("Chat color", select(
                                 {"class": "chat-color", "name": "chat_color"},
                                 [
