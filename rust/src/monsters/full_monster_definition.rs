@@ -8,7 +8,7 @@ use crate::creatures::{
     creature::Creature,
     Monster,
 };
-use crate::equipment::{HasWeapons, Weapon};
+use crate::equipment::Weapon;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
 use crate::skills::{HasSkills, Skill};
 
@@ -33,13 +33,14 @@ pub struct FullMonsterDefinition {
 
 impl FullMonsterDefinition {
     pub fn monster(self) -> Monster {
-        let mut creature = Creature::new(self.level, CreatureCategory::Monster(self.challenge_rating));
+        let mut creature =
+            Creature::new(self.level, CreatureCategory::Monster(self.challenge_rating));
         creature.set_name(&self.name);
         for (i, attribute) in Attribute::all().iter().enumerate() {
             creature.set_base_attribute(attribute.clone(), self.attributes[i]);
         }
         for weapon in self.weapons {
-            creature.add_weapon(weapon);
+            creature.weapons.push(weapon);
         }
         creature.set_size(self.size);
         if let Some(passive_abilities) = self.passive_abilities {

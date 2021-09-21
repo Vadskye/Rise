@@ -1,3 +1,4 @@
+use crate::creatures::{Creature, HasModifiers, ModifierType};
 use std::cmp::PartialEq;
 
 #[derive(Clone, Copy, Eq, Hash)]
@@ -64,6 +65,32 @@ pub trait HasAttributes {
     fn calc_total_attribute(&self, attribute: &Attribute) -> i32;
     fn get_base_attribute(&self, attribute: &Attribute) -> i32;
     fn set_base_attribute(&mut self, attribute: Attribute, value: i32);
+}
+
+impl HasAttributes for Creature
+where
+    Creature: HasModifiers,
+{
+    fn get_base_attribute(&self, attribute: &Attribute) -> i32 {
+        let value = if let Some(a) = self.base_attributes.get(attribute) {
+            *a
+        } else {
+            0
+        };
+        return value + self.calc_total_modifier(ModifierType::BaseAttribute(*attribute));
+    }
+
+    fn calc_total_attribute(&self, attribute: &Attribute) -> i32 {
+        Attribute::calculate_total(self.get_base_attribute(attribute), self.level)
+    }
+
+    fn set_base_attribute(&mut self, attribute: Attribute, value: i32) {
+        if let Some(a) = self.base_attributes.get_mut(&attribute) {
+            *a = value;
+        } else {
+            self.base_attributes.insert(attribute, value);
+        }
+    }
 }
 
 #[cfg(test)]

@@ -1,19 +1,6 @@
-use std::fmt;
-
-pub trait HasArmor {
-    fn add_armor(&mut self, armor: Armor);
-    fn get_armor(&self) -> Vec<&Armor>;
-    fn calc_encumbrance(&self) -> i32;
-    fn minimum_dex_modifier(&self) -> Option<f64> {
-        if let Some(lowest_armor) = self.get_armor().iter().min_by(|x, y| {
-            ((x.dex_multiplier() * 2.0) as i32).cmp(&((y.dex_multiplier() * 2.0) as i32))
-        }) {
-            return Some(lowest_armor.dex_multiplier());
-        } else {
-            return None;
-        }
-    }
-}
+use crate::core_mechanics::{Attribute, HasAttributes};
+use crate::creatures::{Creature, HasModifiers, ModifierType};
+use std::{cmp::max, fmt};
 
 #[derive(Clone)]
 pub enum Armor {
@@ -466,6 +453,43 @@ impl ArmorUsageClass {
 impl fmt::Display for ArmorUsageClass {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}", self.name())
+    }
+}
+
+pub trait HasArmor {
+    fn add_armor(&mut self, armor: Armor);
+    fn get_armor(&self) -> Vec<&Armor>;
+    fn calc_encumbrance(&self) -> i32;
+    fn minimum_dex_modifier(&self) -> Option<f64> {
+        if let Some(lowest_armor) = self.get_armor().iter().min_by(|x, y| {
+            ((x.dex_multiplier() * 2.0) as i32).cmp(&((y.dex_multiplier() * 2.0) as i32))
+        }) {
+            return Some(lowest_armor.dex_multiplier());
+        } else {
+            return None;
+        }
+    }
+}
+
+impl HasArmor for Creature
+where
+    Creature: HasModifiers,
+{
+    fn add_armor(&mut self, armor: Armor) {
+        self.armor.push(armor);
+    }
+
+    fn get_armor(&self) -> Vec<&Armor> {
+        return self.armor.iter().collect();
+    }
+
+    fn calc_encumbrance(&self) -> i32 {
+        let armor_encumbrance: i32 = self.get_armor().iter().map(|a| a.encumbrance()).sum();
+        return max(
+            0,
+            armor_encumbrance - self.get_base_attribute(&Attribute::Strength)
+                + self.calc_total_modifier(ModifierType::Encumbrance),
+        );
     }
 }
 

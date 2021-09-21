@@ -1,10 +1,12 @@
-use crate::core_mechanics::{DamageDice, Defense};
+use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes};
 use crate::creatures::attack_effects::{AttackEffect, DamageEffect};
-use crate::creatures::{attack_effects, Creature};
-use crate::equipment::Weapon;
+use crate::creatures::{attack_effects, Creature, CreatureCategory, Maneuver, ModifierType};
+use crate::equipment::{HasArmor, Weapon};
 use crate::latex_formatting;
 use std::fmt;
 use titlecase::titlecase;
+
+use super::HasModifiers;
 
 #[derive(Clone)]
 pub struct Attack {
@@ -525,6 +527,127 @@ impl AttackCooldown {
                 "After the creature uses this ability, {until}.",
                 until = until,
             ));
+        }
+    }
+}
+
+impl HasAttacks for Creature
+where
+    Creature: HasAttributes + HasModifiers + HasArmor,
+{
+    fn add_special_attack(&mut self, attack: Attack) {
+        if self.special_attacks.is_none() {
+            self.special_attacks = Some(vec![]);
+        }
+        if let Some(ref mut a) = self.special_attacks {
+            a.push(attack);
+        }
+    }
+
+    fn calc_all_attacks(&self) -> Vec<Attack> {
+        let mut all_attacks: Vec<Attack> = vec![];
+        if let Some(ref special_attacks) = self.special_attacks {
+            for a in special_attacks {
+                all_attacks.push(a.clone());
+            }
+        }
+
+        for attack in self
+            .get_modifiers()
+            .iter()
+            .map(|m| m.attack_definition())
+            .collect::<Vec<Option<&Attack>>>()
+        {
+            if let Some(a) = attack {
+                all_attacks.push(a.clone());
+            }
+        }
+
+        for maneuver in self
+            .get_modifiers()
+            .iter()
+            .map(|m| m.maneuver_definition())
+            .collect::<Vec<Option<&Maneuver>>>()
+        {
+            if let Some(m) = maneuver {
+                for weapon in &self.weapons {
+                    all_attacks.push(m.attack(weapon.clone()));
+                }
+            }
+        }
+
+        let weapons_without_attacks: Vec<&Weapon> = self
+            .weapons
+            .iter()
+            .filter(|weapon| {
+                let same_weapon_attack = all_attacks.iter().any(|attack| {
+                    if let Some(w) = attack.replaces_weapon {
+                        return w.name() == weapon.name();
+                    } else {
+                        return false;
+                    }
+                });
+                return !same_weapon_attack;
+            })
+            .collect();
+        let strikes = Attack::calc_strikes(weapons_without_attacks);
+        for strike in strikes {
+            all_attacks.push(strike);
+        }
+
+        if let CreatureCategory::Monster(cr) = self.category {
+            for attack in &mut all_attacks {
+                if let AttackEffect::Damage(ref mut e) = attack.hit {
+                    e.damage_dice = e.damage_dice.add(cr.damage_increments());
+                }
+            }
+        }
+
+        if self.calc_total_modifier(ModifierType::EnableGlancingStrikes) > 0 {
+            for attack in &mut all_attacks {
+                if attack.is_strike && attack.glance.is_none() {
+                    attack.glance = Some(AttackEffect::HalfDamage);
+                }
+            }
+        }
+        return all_attacks;
+    }
+
+    fn calc_damage_per_round_multiplier(&self) -> f64 {
+        match self.category {
+            CreatureCategory::Character => 1.0,
+            CreatureCategory::Monster(cr) => cr.damage_per_round_multiplier(),
+        }
+    }
+
+    fn calc_accuracy(&self) -> i32 {
+        let accuracy_from_armor: i32 = self.get_armor().iter().map(|a| a.accuracy_modifier()).sum();
+        // note implicit floor due to integer storage
+        return accuracy_from_armor
+            + self.level / 2
+            + self.get_base_attribute(&Attribute::Perception) / 2
+            + self.calc_total_modifier(ModifierType::Accuracy);
+    }
+
+    fn calc_damage_increments(&self, is_strike: bool) -> i32 {
+        let mut increments: i32 = 0;
+        if is_strike {
+            increments += self.calc_total_modifier(ModifierType::StrikeDamageDice);
+        }
+        increments += match self.category {
+            CreatureCategory::Character => 0,
+            CreatureCategory::Monster(cr) => cr.damage_increments(),
+        };
+        return increments;
+    }
+
+    fn calc_power(&self, is_magical: bool) -> i32 {
+        if is_magical {
+            return self.calc_total_attribute(&Attribute::Willpower) / 2
+                + self.calc_total_modifier(ModifierType::MagicalPower);
+        } else {
+            return self.calc_total_attribute(&Attribute::Strength) / 2
+                + self.calc_total_modifier(ModifierType::MundanePower);
         }
     }
 }
