@@ -21,3 +21,19 @@ impl PassiveAbility {
         );
     }
 }
+
+pub enum StandardPassiveAbility {
+    TwoActions,
+}
+
+impl StandardPassiveAbility {
+    pub fn ability(&self) -> PassiveAbility {
+        match self {
+            Self::TwoActions => PassiveAbility {
+                description: "The $name can take two standard actions each round. It cannot use the same ability twice in the same round.".to_string(),
+                is_magical: false,
+                name: "Multiple Actions".to_string(),
+            },
+        }
+    }
+}

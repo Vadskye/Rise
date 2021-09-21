@@ -33,8 +33,13 @@ pub struct FullMonsterDefinition {
 
 impl FullMonsterDefinition {
     pub fn monster(self) -> Monster {
-        let mut creature =
-            Creature::new(self.level, CreatureCategory::Monster(self.challenge_rating));
+        let mut monster = Monster::new(self.challenge_rating, self.creature_type, self.level);
+        if let Some(d) = self.description {
+            monster.description = Some(d.to_string());
+        }
+        monster.movement_modes = self.movement_modes.unwrap_or(vec![MovementMode::Land(SpeedCategory::Normal)]);
+
+        let creature = &mut monster.creature;
         creature.set_name(&self.name);
         for (i, attribute) in Attribute::all().iter().enumerate() {
             creature.set_base_attribute(attribute.clone(), self.attributes[i]);
@@ -45,7 +50,7 @@ impl FullMonsterDefinition {
         creature.set_size(self.size);
         if let Some(passive_abilities) = self.passive_abilities {
             for ability in passive_abilities {
-                creature.add_passive_ability(ability);
+                creature.passive_abilities.push(ability);
             }
         }
         if let Some(senses) = self.senses {
@@ -69,22 +74,6 @@ impl FullMonsterDefinition {
             }
         }
 
-        return Monster {
-            alignment: Some(self.alignment),
-            challenge_rating: self.challenge_rating,
-            creature_type: self.creature_type,
-            creature,
-            description: if let Some(d) = self.description {
-                Some(d.to_string())
-            } else {
-                None
-            },
-            knowledge: None,
-            movement_modes: if let Some(m) = self.movement_modes {
-                m
-            } else {
-                vec![MovementMode::Land(SpeedCategory::Normal)]
-            },
-        };
+        return monster;
     }
 }
