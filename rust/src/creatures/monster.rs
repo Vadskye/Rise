@@ -85,6 +85,8 @@ impl Monster {
             8 => 24,
             _ => panic!("Invalid level '{}'", level),
         };
+        let power_scaling =
+            ((power_scaling as f64) * challenge_rating.power_scaling_multiplier()).floor() as i32;
         if power_scaling > 0 {
             creature.add_modifier(
                 Modifier::MagicalPower(power_scaling),
@@ -122,8 +124,9 @@ impl Monster {
         };
         let mut monster = Monster::new(challenge_rating, creature_type, level);
         monster.creature.weapons.push(Weapon::Slam);
+        let rank = (level + 2) / 3 + challenge_rating.rank_modifier();
         monster.creature.add_modifier(
-            Modifier::Maneuver(Maneuver::GenericScalingStrike((level + 2) / 3)),
+            Modifier::Maneuver(Maneuver::GenericScalingStrike(rank)),
             None,
             None,
         );
