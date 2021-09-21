@@ -1,3 +1,5 @@
+use crate::creatures::{Creature, Monster};
+
 #[derive(Copy, Clone, PartialEq)]
 pub enum ChallengeRating {
     Half,
@@ -8,6 +10,16 @@ pub enum ChallengeRating {
 }
 
 impl ChallengeRating {
+    pub fn all() -> Vec<Self> {
+        return vec![
+            Self::Half,
+            Self::One,
+            Self::Two,
+            Self::Four,
+            Self::Six,
+        ];
+    }
+
     pub fn accuracy_bonus(&self) -> i32 {
         return 0;
     }
@@ -86,6 +98,64 @@ impl ChallengeRating {
             ChallengeRating::Two => "2",
             ChallengeRating::Four => "4",
             ChallengeRating::Six => "6",
+        }
+    }
+
+    pub fn standard_encounter(self, level: i32) -> Vec<Creature> {
+        let creature = Monster::standard_monster(self, level, None, None).creature;
+        match self {
+            ChallengeRating::Half => vec![
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+            ],
+            ChallengeRating::One => vec![
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+            ],
+            ChallengeRating::Two => vec![creature.clone(), creature.clone()],
+            ChallengeRating::Four => vec![creature.clone()],
+            // This is too hard
+            ChallengeRating::Six => vec![creature.clone()],
+        }
+    }
+
+    pub fn difficult_encounter(self, level: i32) -> Vec<Creature> {
+        let creature = Monster::standard_monster(self, level, None, None).creature;
+        match self {
+            ChallengeRating::Half => vec![
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+            ],
+            ChallengeRating::One => vec![
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+                creature.clone(),
+            ],
+            ChallengeRating::Two => vec![creature.clone(), creature.clone(), creature.clone()],
+            ChallengeRating::Four => vec![
+                creature.clone(),
+                Monster::standard_monster(Self::Two, level, None, None).creature,
+            ],
+            ChallengeRating::Six => vec![creature.clone()],
         }
     }
 }
