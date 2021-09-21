@@ -110,9 +110,7 @@ fn survival_percent(creatures: &Vec<Creature>) -> f64 {
         .sum();
     let max_damage_absorption: i32 = creatures
         .iter()
-        .map(|d| {
-            d.calc_damage_resistance() + d.calc_effective_combat_hit_points()
-        })
+        .map(|d| d.calc_damage_resistance() + d.calc_effective_combat_hit_points())
         .sum();
     return max(0, remaining_damage_absorption) as f64 / max_damage_absorption as f64;
 }

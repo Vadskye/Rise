@@ -11,12 +11,12 @@ use std::collections::HashMap;
 #[derive(Clone)]
 pub struct Creature {
     pub anonymous_modifiers: Vec<Modifier>,
+    pub armor: Vec<Armor>,
     pub base_attributes: HashMap<Attribute, i32>,
     pub category: CreatureCategory,
     pub damage_resistance_lost: i32,
-    pub identified_modifiers: Vec<IdentifiedModifier>,
     pub hit_points_lost: i32,
-    pub armor: Vec<Armor>,
+    pub identified_modifiers: Vec<IdentifiedModifier>,
     pub level: i32,
     pub movement_modes: Vec<MovementMode>,
     pub name: Option<String>,

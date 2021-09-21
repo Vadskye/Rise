@@ -46,7 +46,10 @@ pub trait HasResources {
     fn calc_resource(&self, resource: &Resource) -> i32;
 }
 
-impl HasResources for Creature where Creature: HasModifiers {
+impl HasResources for Creature
+where
+    Creature: HasModifiers,
+{
     fn calc_resource(&self, resource: &Resource) -> i32 {
         let value = match resource {
             Resource::AttunementPoint => max(0, (self.level + 1) / 6),
