@@ -6,7 +6,7 @@ use crate::creatures::attack_effects::{
     AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
 use crate::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting, UsageTime,
+    AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting,
 };
 use crate::creatures::Monster;
 use crate::equipment::Weapon;
@@ -112,7 +112,6 @@ impl AgeCategory {
             name: "Frightful Presence".to_string(),
             replaces_weapon: None,
             targeting: AttackTargeting::Radius(None, size, AreaTargets::Enemies),
-            usage_time: UsageTime::Minor,
         });
     }
 
@@ -492,7 +491,6 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         name: "Breath Weapon".to_string(),
         replaces_weapon: None,
         targeting,
-        usage_time: UsageTime::Minor,
     };
 }
 
