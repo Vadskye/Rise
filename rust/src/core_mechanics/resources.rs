@@ -1,6 +1,6 @@
-pub trait HasResources {
-    fn calc_resource(&self, resource: &Resource) -> i32;
-}
+use crate::core_mechanics::{Attribute, HasAttributes};
+use crate::creatures::{Creature, HasModifiers, ModifierType};
+use std::cmp::max;
 
 #[derive(Clone, Copy, PartialEq)]
 pub enum Resource {
@@ -40,4 +40,23 @@ impl Resource {
     //         Self::SkillPoint => vec![attributes::INT],
     //     }
     // }
+}
+
+pub trait HasResources {
+    fn calc_resource(&self, resource: &Resource) -> i32;
+}
+
+impl HasResources for Creature where Creature: HasModifiers {
+    fn calc_resource(&self, resource: &Resource) -> i32 {
+        let value = match resource {
+            Resource::AttunementPoint => max(0, (self.level + 1) / 6),
+            Resource::FatigueTolerance => {
+                self.get_base_attribute(&Attribute::Strength)
+                    + self.get_base_attribute(&Attribute::Willpower)
+            }
+            Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
+            Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
+        };
+        return value + self.calc_total_modifier(ModifierType::Resource(*resource));
+    }
 }
