@@ -562,8 +562,8 @@ def hit_points():
                 0.5: 0.5,
                 1: 1,
                 2: 2,
-                3: 3,
                 4: 4,
+                6: 6,
             }}[challenge_rating || 0];
             new_hit_points = Math.floor(new_hit_points * cr_multiplier * (hit_points_vital_wound_multiplier || 1))
 
@@ -622,6 +622,15 @@ def magical_power():
                     8: 24,
                 }}[Math.floor(level / 3)]
                 : 0;
+            level_scaling = level_scaling * challenge_rating
+                ? {{
+                    0.5: 0.5,
+                    1: 1,
+                    2: 2,
+                    4: 3,
+                    6: 4,
+                }}[challenge_rating]
+                : 0;
             var magical_power_attribute = Math.floor(willpower / 2);
             setAttrs({{
                 magical_power_attribute,
@@ -652,6 +661,15 @@ def mundane_power():
                     7: 16,
                     8: 24,
                 }}[Math.floor(level / 3)]
+                : 0;
+            level_scaling = level_scaling * challenge_rating
+                ? {{
+                    0.5: 0.5,
+                    1: 1,
+                    2: 2,
+                    4: 3,
+                    6: 4,
+                }}[challenge_rating]
                 : 0;
             var mundane_power_attribute = Math.floor(strength / 2)
             setAttrs({{
@@ -710,8 +728,8 @@ def damage_resistance():
                 0.5: 0,
                 1: 1,
                 2: 2,
-                3: 4,
                 4: 6,
+                6: 10,
             }}[challenge_rating || 0];
             const new_damage_resistance = Math.floor(
                 (
