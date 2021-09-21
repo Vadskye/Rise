@@ -18,7 +18,7 @@ pub use damage_types::{DamageType, DamageTypeEffect};
 pub use debuffs::Debuff;
 pub use defenses::{Defense, HasDefenses, SpecialDefenseModifier, SpecialDefenseType};
 pub use movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
-pub use passive_abilities::PassiveAbility;
+pub use passive_abilities::{PassiveAbility, StandardPassiveAbility};
 pub use resources::{HasResources, Resource};
 pub use senses::Sense;
 pub use sizes::Size;

@@ -20,7 +20,7 @@ pub struct Creature {
     pub level: i32,
     pub movement_modes: Vec<MovementMode>,
     pub name: Option<String>,
-    pub passive_abilities: Option<Vec<PassiveAbility>>,
+    pub passive_abilities: Vec<PassiveAbility>,
     pub senses: Option<Vec<Sense>>,
     pub size: Size,
     pub skill_training: Option<HashMap<Skill, bool>>,
@@ -49,7 +49,7 @@ impl Creature {
             level,
             movement_modes: vec![],
             name: None,
-            passive_abilities: None,
+            passive_abilities: vec![],
             senses: None,
             size: Size::Medium,
             skill_training: None,
@@ -71,13 +71,6 @@ impl Creature {
             .as_mut()
             .unwrap()
             .push(special_defense_modifier);
-    }
-
-    pub fn add_passive_ability(&mut self, ability: PassiveAbility) {
-        if self.passive_abilities.is_none() {
-            self.passive_abilities = Some(vec![]);
-        }
-        self.passive_abilities.as_mut().unwrap().push(ability);
     }
 
     pub fn add_sense(&mut self, sense: Sense) {

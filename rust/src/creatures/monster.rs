@@ -1,7 +1,4 @@
-use crate::core_mechanics::{
-    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode,
-    SpecialDefenseModifier, SpecialDefenseType,
-};
+use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode, SpecialDefenseModifier, SpecialDefenseType, StandardPassiveAbility};
 use crate::creatures::attacks::HasAttacks;
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::Weapon;
@@ -50,6 +47,11 @@ impl Monster {
                 Some("challenge rating"),
                 None,
             );
+        }
+        if challenge_rating == ChallengeRating::Four || challenge_rating == ChallengeRating::Six {
+            creature
+                .passive_abilities
+                .push(StandardPassiveAbility::TwoActions.ability());
         }
 
         // Level scaling modifiers
@@ -383,14 +385,12 @@ impl Monster {
             .iter()
             .map(|a| a.latex_ability_block(&self.creature))
             .collect::<Vec<String>>();
-        if let Some(ref passive_abilities) = self.creature.passive_abilities {
-            let mut passive_ability_texts = passive_abilities
-                .iter()
-                .map(|a| a.to_latex())
-                .collect::<Vec<String>>();
-            passive_ability_texts.sort();
-            ability_texts = [&passive_ability_texts[..], &ability_texts[..]].concat();
-        }
+        let mut passive_ability_texts = self.creature.passive_abilities
+            .iter()
+            .map(|a| a.to_latex())
+            .collect::<Vec<String>>();
+        passive_ability_texts.sort();
+        ability_texts = [&passive_ability_texts[..], &ability_texts[..]].concat();
         return ability_texts.join("\\par ");
     }
 }
