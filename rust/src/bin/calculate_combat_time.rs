@@ -23,11 +23,11 @@ fn main() {
                 ChallengeRating::One,
             ],
             vec![ChallengeRating::Two, ChallengeRating::Two],
-            vec![ChallengeRating::Three, ChallengeRating::One],
             vec![ChallengeRating::Four],
+            vec![ChallengeRating::Six],
         ] {
             // PCs
-            let blue = vec![
+            let mut blue = vec![
                 Character::standard_character(level, true).creature,
                 Character::standard_character(level, true).creature,
                 Character::standard_character(level, true).creature,
@@ -36,6 +36,10 @@ fn main() {
             let mut red = vec![];
             for cr in &challenge_ratings {
                 red.push(Monster::standard_monster(*cr, level, None, None).creature);
+            }
+            if challenge_ratings[0] == ChallengeRating::Six {
+                blue.push(blue[0].clone());
+                blue.push(blue[0].clone());
             }
             let blue_damage_absorption: i32 = blue
                 .iter()

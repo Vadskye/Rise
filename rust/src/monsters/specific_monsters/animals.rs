@@ -148,7 +148,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             monsters: vec![
                 animal(FullAnimalDefinition {
                     attributes: vec![3, 0, 3, -8, 0, -1],
-                    challenge_rating: ChallengeRating::Three,
+                    challenge_rating: ChallengeRating::Four,
                     description: None,
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
@@ -172,7 +172,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 }),
                 animal(FullAnimalDefinition {
                     attributes: vec![4, 0, 3, -8, 0, -1],
-                    challenge_rating: ChallengeRating::Three,
+                    challenge_rating: ChallengeRating::Four,
                     description: Some("A brown bear's statistics can be used for almost any big bear, including a grizzly bear."),
                     knowledge: Some(Knowledge::new(vec![
                         (0, "

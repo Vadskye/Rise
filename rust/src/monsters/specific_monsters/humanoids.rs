@@ -111,7 +111,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually chaotic evil".to_string(),
                 attributes: vec![0, 2, 1, -2, 2, 3],
-                challenge_rating: ChallengeRating::Three,
+                challenge_rating: ChallengeRating::Two,
                 description: None,
                 knowledge: None,
                 level: 1,
@@ -147,7 +147,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually chaotic evil".to_string(),
                 attributes: vec![0, 2, 1, -2, 2, 3],
-                challenge_rating: ChallengeRating::Three,
+                challenge_rating: ChallengeRating::Two,
                 description: None,
                 knowledge: None,
                 level: 1,

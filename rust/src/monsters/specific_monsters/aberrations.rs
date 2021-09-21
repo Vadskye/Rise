@@ -117,7 +117,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(aberration(FullAberrationDefinition {
         alignment: "Usually lawful evil".to_string(),
         attributes: vec![0, 1, 4, -6, 1, 2],
-        challenge_rating: ChallengeRating::Three,
+        challenge_rating: ChallengeRating::Four,
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
