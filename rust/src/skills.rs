@@ -1,14 +1,11 @@
-use crate::core_mechanics::Attribute;
+use crate::core_mechanics::{Attribute, HasAttributes};
+use crate::creatures::{Creature, HasModifiers, ModifierType};
+use crate::equipment::HasArmor;
 use titlecase::titlecase;
 // use itertools::Itertools;
-use std::cmp::PartialEq;
+use std::cmp::{PartialEq, max};
+use std::collections::HashMap;
 use std::fmt;
-
-pub trait HasSkills {
-    fn is_skill_trained(&self, skill: &Skill) -> bool;
-    fn set_skill_trained(&mut self, skill: Skill, is_trained: bool);
-    fn calc_skill_modifier(&self, skill: &Skill) -> i32;
-}
 
 #[derive(Clone, Eq, Hash)]
 pub enum Skill {
@@ -287,5 +284,57 @@ impl SkillCategory {
             Self::Senses => "senses",
             Self::Social => "social",
         }
+    }
+}
+
+pub trait HasSkills {
+    fn is_skill_trained(&self, skill: &Skill) -> bool;
+    fn set_skill_trained(&mut self, skill: Skill, is_trained: bool);
+    fn calc_skill_modifier(&self, skill: &Skill) -> i32;
+}
+
+impl HasSkills for Creature
+where
+    Creature: HasAttributes + HasArmor + HasModifiers,
+{
+    fn set_skill_trained(&mut self, skill: Skill, trained: bool) {
+        if self.skill_training.is_none() {
+            self.skill_training = Some(HashMap::new());
+        }
+        let ref mut skill_training = self.skill_training.as_mut().unwrap();
+        skill_training.insert(skill, trained);
+    }
+
+    fn is_skill_trained(&self, skill: &Skill) -> bool {
+        if let Some(ref skill_training) = self.skill_training {
+            if let Some(p) = skill_training.get(skill) {
+                return *p;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
+        let attribute = if let Some(ref a) = skill.attribute() {
+            self.calc_total_attribute(a)
+        } else {
+            0
+        };
+        let training_modifier = if self.is_skill_trained(skill) {
+            4 + max(self.level / 2, attribute)
+        } else {
+            attribute / 2
+        };
+        let encumbrance_modifier = if skill.apply_encumbrance() {
+            self.calc_encumbrance()
+        } else {
+            0
+        };
+
+        return training_modifier - encumbrance_modifier
+            + self.calc_total_modifier(ModifierType::Skill(skill.clone()));
     }
 }
