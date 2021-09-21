@@ -195,6 +195,15 @@ struct HitProbability {
     crit_probability: f64,
 }
 
+impl HitProbability {
+    fn short_description(&self) -> String {
+        return format!(
+            "{:.3} single, {:.3} crit",
+            self.single_hit_probability, self.crit_probability
+        );
+    }
+}
+
 fn calculate_hit_probability(
     attack: &attacks::Attack,
     accuracy: i32,
