@@ -16,10 +16,7 @@ mod calculate_hit_probability {
             calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 6);
         assert_eq!(
             "0.500 single, 0.055 crit",
-            format!(
-                "{:.3} single, {:.3} crit",
-                hit_probability.single_hit_probability, hit_probability.crit_probability
-            ),
+            hit_probability.short_description(),
             "Should be around 50% with +0 vs 6",
         );
 
@@ -27,20 +24,14 @@ mod calculate_hit_probability {
             calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 0);
         assert_eq!(
             "1.000 single, 0.111 crit",
-            format!(
-                "{:.3} single, {:.3} crit",
-                hit_probability.single_hit_probability, hit_probability.crit_probability
-            ),
+            hit_probability.short_description(),
             "Should be around 100% with +0 vs 0",
         );
 
         let hit_probability = calculate_hit_probability(&Attack::from_weapon(Weapon::Claw), 1, 10);
         assert_eq!(
             "0.400 single, 0.044 crit",
-            format!(
-                "{:.3} single, {:.3} crit",
-                hit_probability.single_hit_probability, hit_probability.crit_probability
-            ),
+            hit_probability.short_description(),
             "Should include weapon accuracy modifier and non-weapon accuracy modifier",
         );
     }
@@ -51,10 +42,7 @@ mod calculate_hit_probability {
             calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 16);
         assert_eq!(
             "0.050 single, 0.005 crit",
-            format!(
-                "{:.3} single, {:.3} crit",
-                hit_probability.single_hit_probability, hit_probability.crit_probability
-            ),
+            hit_probability.short_description(),
             "Should be around 5% with +0 vs 16",
         );
 
@@ -62,10 +50,7 @@ mod calculate_hit_probability {
             calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 10, 6);
         assert_eq!(
             "1.000 single, 0.555 crit",
-            format!(
-                "{:.3} single, {:.3} crit",
-                hit_probability.single_hit_probability, hit_probability.crit_probability
-            ),
+            hit_probability.short_description(),
             "Should be over 100% with +10 vs 6",
         );
     }
@@ -92,6 +77,106 @@ mod calculate_hit_probability {
             "0.010",
             format!("{:.3}", calculate_glance_probability(attack, 0, 12),),
             "Should be 1% with +0 vs 12",
+        );
+    }
+
+    #[test]
+    fn standard_character_vs_monsters_level_1() {
+        let level = 1;
+        let attacker = Character::standard_character(level, true).creature;
+        let attack = attacker
+            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .unwrap();
+        let expected_hit_probability = vec![
+            "0.500 single, 0.055 crit",
+            "0.500 single, 0.055 crit",
+            "0.500 single, 0.055 crit",
+            "0.500 single, 0.055 crit",
+            "0.500 single, 0.055 crit",
+        ];
+        let actual_hit_probability: Vec<String> = ChallengeRating::all()
+            .into_iter()
+            .map(|cr| {
+                calculate_hit_probability(
+                    &attack,
+                    attacker.calc_accuracy(),
+                    Monster::standard_monster(cr, level, None, None)
+                        .creature
+                        .calc_defense(&Defense::Armor),
+                )
+                .short_description()
+            })
+            .collect();
+        assert_eq!(expected_hit_probability, actual_hit_probability);
+    }
+
+    #[test]
+    fn standard_character_vs_monsters_level_20() {
+        let level = 20;
+        let attacker = Character::standard_character(level, true).creature;
+        let attack = attacker
+            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .unwrap();
+        let expected_hit_probability = vec![
+            "0.400 single, 0.044 crit",
+            "0.400 single, 0.044 crit",
+            "0.400 single, 0.044 crit",
+            "0.400 single, 0.044 crit",
+            "0.400 single, 0.044 crit",
+        ];
+        let actual_hit_probability: Vec<String> = ChallengeRating::all()
+            .into_iter()
+            .map(|cr| {
+                calculate_hit_probability(
+                    &attack,
+                    attacker.calc_accuracy(),
+                    Monster::standard_monster(cr, level, None, None)
+                        .creature
+                        .calc_defense(&Defense::Armor),
+                )
+                .short_description()
+            })
+            .collect();
+        assert_eq!(expected_hit_probability, actual_hit_probability);
+    }
+
+    #[test]
+    fn monster_vs_standard_character_level_1() {
+        let level = 1;
+        let attacker = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
+        let attack = attacker
+            .get_attack_by_name("Slam Generic Scaling Strike")
+            .unwrap();
+        assert_eq!(
+            "0.500 single, 0.055 crit",
+            calculate_hit_probability(
+                &attack,
+                attacker.calc_accuracy(),
+                Character::standard_character(level, true)
+                    .creature
+                    .calc_defense(&Defense::Armor)
+            )
+            .short_description(),
+        );
+    }
+
+    #[test]
+    fn monster_vs_standard_character_level_20() {
+        let level = 20;
+        let attacker = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
+        let attack = attacker
+            .get_attack_by_name("Slam Generic Scaling Strike")
+            .unwrap();
+        assert_eq!(
+            "0.600 single, 0.066 crit",
+            calculate_hit_probability(
+                &attack,
+                attacker.calc_accuracy(),
+                Character::standard_character(level, true)
+                    .creature
+                    .calc_defense(&Defense::Armor)
+            )
+            .short_description(),
         );
     }
 }
@@ -167,7 +252,7 @@ mod calc_individual_dpr {
     }
 
     #[test]
-    fn standard_party_vs_monster_level_1() {
+    fn standard_character_vs_monster_level_1() {
         let level = 1;
         let attacker = Character::standard_character(level, true).creature;
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
@@ -178,13 +263,93 @@ mod calc_individual_dpr {
     }
 
     #[test]
-    fn standard_party_vs_monster_level_20() {
+    fn standard_character_vs_monster_level_20() {
         let level = 20;
         let attacker = Character::standard_character(level, true).creature;
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
         assert_eq!(
             "30.836",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
+        );
+    }
+
+    #[test]
+    fn monster_vs_standard_character_level_1() {
+        let level = 1;
+        let defender = Character::standard_character(level, true).creature;
+
+        let expected_combat_results = vec!["2.942", "4.553", "6.995", "10.492", "15.405"];
+        let actual_combat_results: Vec<f64> = ChallengeRating::all()
+            .into_iter()
+            .map(|cr| {
+                calc_individual_dpr(
+                    &Monster::standard_monster(cr, level, None, None).creature,
+                    &defender,
+                )
+            })
+            .collect();
+        assert_eq!(
+            expected_combat_results,
+            actual_combat_results
+                .iter()
+                .map(|d| format!("{:.3}", d))
+                .collect::<Vec<String>>(),
+            "as raw damage per round",
+        );
+
+        let percentage: Vec<String> = actual_combat_results
+            .iter()
+            .map(|d| {
+                d / (defender.calc_effective_combat_hit_points()
+                    + defender.calc_damage_resistance()) as f64
+            })
+            .map(|p| format!("{:.3}%", p))
+            .collect();
+
+        assert_eq!(
+            vec!["0.098%", "0.152%", "0.233%", "0.350%", "0.513%"],
+            percentage,
+            "as % of total damage absorption"
+        );
+    }
+
+    #[test]
+    fn monster_vs_standard_character_level_20() {
+        let level = 20;
+        let defender = Character::standard_character(level, true).creature;
+
+        let expected_combat_results = vec!["33.665", "44.191", "54.717", "85.226", "101.014"];
+        let actual_combat_results: Vec<f64> = ChallengeRating::all()
+            .into_iter()
+            .map(|cr| {
+                calc_individual_dpr(
+                    &Monster::standard_monster(cr, level, None, None).creature,
+                    &defender,
+                )
+            })
+            .collect();
+        assert_eq!(
+            expected_combat_results,
+            actual_combat_results
+                .iter()
+                .map(|d| format!("{:.3}", d))
+                .collect::<Vec<String>>(),
+            "as raw damage per round",
+        );
+
+        let percentage: Vec<String> = actual_combat_results
+            .iter()
+            .map(|d| {
+                d / (defender.calc_effective_combat_hit_points()
+                    + defender.calc_damage_resistance()) as f64
+            })
+            .map(|p| format!("{:.3}%", p))
+            .collect();
+
+        assert_eq!(
+            vec!["0.117%", "0.154%", "0.191%", "0.297%", "0.352%"],
+            percentage,
+            "as % of total damage absorption"
         );
     }
 }
