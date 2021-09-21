@@ -3,7 +3,7 @@ use crate::creatures::attack_effects::{
     self, AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
 use crate::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting, UsageTime,
+    AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting,
 };
 use crate::equipment::Weapon;
 
@@ -72,7 +72,6 @@ impl StandardAttack {
                 name: "Psionic Blast".to_string(),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Enemies),
-                usage_time: UsageTime::Standard,
             },
             Self::FrostwebSpiderBite => {
                 let mut frostweb_spider_bite = Attack::from_weapon(Weapon::MonsterBite);
@@ -105,7 +104,6 @@ impl StandardAttack {
                 name: "Gibber".to_string(),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
-                usage_time: UsageTime::Minor,
             },
 
             // Character/shared abilities
@@ -133,7 +131,6 @@ impl StandardAttack {
                 name: "Abyssal Blast".to_string(),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(AttackRange::Medium),
-                usage_time: UsageTime::Standard,
             },
             Self::BreathWeaponCone(rank, damage_type, defense) => Attack {
                 accuracy: 0,
@@ -170,7 +167,6 @@ impl StandardAttack {
                     },
                     AreaTargets::Everything,
                 ),
-                usage_time: UsageTime::Standard,
             },
             Self::BreathWeaponLine(rank, damage_type, defense) => Attack {
                 accuracy: 0,
@@ -204,7 +200,6 @@ impl StandardAttack {
                     7 => AttackTargeting::Line(20, AreaSize::Gargantuan, AreaTargets::Everything),
                     _ => panic!("Invalid rank {}", rank),
                 },
-                usage_time: UsageTime::Standard,
             },
             // TODO: add descriptive text for +accuracy vs non-bright illumination
             Self::DarkGrasp(rank) => Attack {
@@ -230,7 +225,6 @@ impl StandardAttack {
                 name: Attack::generate_modified_name("Dark Grasp", *rank, 3, Some(7)),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Anything(AttackRange::Reach),
-                usage_time: UsageTime::Standard,
             },
             Self::DarkMiasma(rank) => Attack {
                 accuracy: 0,
@@ -259,7 +253,6 @@ impl StandardAttack {
                 } else {
                     AttackTargeting::Radius(None, AreaSize::Small, AreaTargets::Enemies)
                 },
-                usage_time: UsageTime::Standard,
             },
             Self::DivineJudgment(rank) => Attack {
                 accuracy: 0,
@@ -291,7 +284,6 @@ impl StandardAttack {
                 } else {
                     AttackRange::Medium
                 }),
-                usage_time: UsageTime::Standard,
             },
             Self::DrainLife(rank) => Attack {
                 accuracy: 0,
@@ -323,7 +315,6 @@ impl StandardAttack {
                 } else {
                     AttackRange::Medium
                 }),
-                usage_time: UsageTime::Standard,
             },
             Self::Firebolt(rank) => Attack {
                 accuracy: 0,
@@ -355,7 +346,6 @@ impl StandardAttack {
                 } else {
                     AttackRange::Medium
                 }),
-                usage_time: UsageTime::Standard,
             },
             Self::MindCrush(rank) => Attack {
                 accuracy: 0,
@@ -388,7 +378,6 @@ impl StandardAttack {
                 name: Attack::generate_modified_name("Mind Crush", *rank, 3, Some(7)),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(AttackRange::Medium),
-                usage_time: UsageTime::Standard,
             },
         }
     }

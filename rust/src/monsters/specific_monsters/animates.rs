@@ -2,7 +2,7 @@ use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
     SpecialDefenseModifier, SpeedCategory,
 };
-use crate::creatures::attacks::{Attack, UsageTime};
+use crate::creatures::attacks::Attack;
 use crate::creatures::{Monster, StandardAttack};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -85,8 +85,6 @@ pub fn animates() -> Vec<MonsterEntry> {
             StandardAttack::DarkGrasp(3).attack(),
             StandardAttack::DarkMiasma(3).attack().except(
                 |a| a.name = "Chilling Aura".to_string()
-            ).except(
-                |a| a.usage_time = UsageTime::Minor,
             ),
         ]),
         special_defense_modifiers: Some(vec![
