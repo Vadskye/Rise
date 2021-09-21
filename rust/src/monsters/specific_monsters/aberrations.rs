@@ -1,6 +1,4 @@
-use crate::core_mechanics::{
-    Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier,
-};
+use crate::core_mechanics::{Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier};
 use crate::creatures::attacks::Attack;
 use crate::creatures::{Monster, StandardAttack};
 use crate::equipment::Weapon;
@@ -60,7 +58,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
     // TODO: add ritual casting
     monsters.push(MonsterEntry::Monster(aberration(FullAberrationDefinition {
         alignment: "Usually lawful evil".to_string(),
-        attributes: vec![3, -1, 4, 3, 2, 4],
+        attributes: vec![4, -2, 4, 3, 2, 5],
         challenge_rating: ChallengeRating::Four,
         description: None,
         knowledge: Some(Knowledge::new(vec![
@@ -91,12 +89,12 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             PassiveAbility {
                 description: r"
                     As a standard action, the aboleth can \glossterm{dominate} the mind of an unconscious humanoid or aberration it touches.
-                    It can dominate up to 5 creatures in this way.
+                    It can \glossterm{attune} to up to 5 separate domination effects in this way.
                     This ability has the \glossterm{Compulsion} tag.
                 ".to_string(),
                 is_magical: true,
                 name: "Dominate".to_string(),
-            }
+            },
         ]),
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
         size: Size::Huge,
@@ -107,7 +105,9 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         ]),
         special_defense_modifiers: None,
         trained_skills: Some(vec![
+            Skill::Awareness,
             Skill::Endurance,
+            Skill::SocialInsight,
             Skill::Spellsense,
             Skill::Swim,
         ]),
@@ -116,7 +116,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::Monster(aberration(FullAberrationDefinition {
         alignment: "Usually lawful evil".to_string(),
-        attributes: vec![0, 1, 4, -6, 1, 2],
+        attributes: vec![0, 2, 5, -6, 1, 3],
         challenge_rating: ChallengeRating::Four,
         description: None,
         knowledge: Some(Knowledge::new(vec![
