@@ -25,106 +25,153 @@ pub enum Weapon {
     Warhammer,
 }
 
+struct WeaponDefinition<'a> {
+    accuracy: i32,
+    damage_dice: i32,
+    damage_types: Vec<DamageType>,
+    name: &'a str,
+}
+
 impl Weapon {
-    pub fn accuracy(&self) -> i32 {
+    fn definition(&self) -> WeaponDefinition {
         match self {
-            Self::ArmorSpikes => 0,
-            Self::Battleaxe => 0,
-            Self::Bite => 0,
-            Self::Broadsword => 0,
-            Self::Claw => 2,
-            Self::Greataxe => 0,
-            Self::Greatsword => 0,
-            Self::Longbow => 0,
-            Self::MonsterBite => 0,
-            Self::MonsterClaws => 3,
-            Self::MonsterStinger => 1,
-            Self::MonsterTalons => 3,
-            Self::Sap => 2,
-            Self::Scimitar => 0,
-            Self::Sickle => 1,
-            Self::Slam => 0,
-            Self::Sledgehammer => 0,
-            Self::Spear => 0,
-            Self::Totokia => 0,
-            Self::Warhammer => 0,
+            Self::ArmorSpikes => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d6(),
+                damage_types: vec![DamageType::Piercing],
+                name: "armor spike",
+            },
+            Self::Battleaxe => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d8(),
+                damage_types: vec![DamageType::Slashing],
+                name: "battleaxe",
+            },
+            Self::Bite => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d8(),
+                damage_types: vec![DamageType::Physical],
+                name: "bite",
+            },
+            Self::Broadsword => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d8(),
+                damage_types: vec![DamageType::Slashing],
+                name: "broadsword",
+            },
+            Self::Claw => WeaponDefinition {
+                accuracy: 2,
+                damage_dice: DamageDice::d6(),
+                damage_types: vec![DamageType::Slashing],
+                name: "claw",
+            },
+            Self::Greataxe => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d10() + 1,
+                damage_types: vec![DamageType::Slashing],
+                name: "greataxe",
+            },
+            Self::Greatsword => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d10(),
+                damage_types: vec![DamageType::Slashing],
+                name: "greatsword",
+            },
+            Self::Longbow => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d8(),
+                damage_types: vec![DamageType::Piercing],
+                name: "longbow",
+            },
+            Self::MonsterBite => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d10(),
+                damage_types: vec![DamageType::Physical],
+                name: "bite",
+            },
+            Self::MonsterClaws => WeaponDefinition {
+                accuracy: 3,
+                damage_dice: DamageDice::d6(),
+                damage_types: vec![DamageType::Slashing],
+                name: "claws",
+            },
+            Self::MonsterStinger => WeaponDefinition {
+                accuracy: 1,
+                damage_dice: DamageDice::d10(),
+                damage_types: vec![DamageType::Piercing],
+                name: "stinger",
+            },
+            Self::MonsterTalons => WeaponDefinition {
+                accuracy: 3,
+                damage_dice: DamageDice::d6(),
+                damage_types: vec![DamageType::Piercing],
+                name: "talons",
+            },
+            Self::Sap => WeaponDefinition {
+                accuracy: 2,
+                damage_dice: DamageDice::d6(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "sap",
+            },
+            Self::Scimitar => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d8(),
+                damage_types: vec![DamageType::Slashing],
+                name: "scimitar",
+            },
+            Self::Sickle => WeaponDefinition {
+                accuracy: 1,
+                damage_dice: DamageDice::d6(),
+                damage_types: vec![DamageType::Slashing],
+                name: "sickle",
+            },
+            Self::Slam => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d10(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "slam",
+            },
+            Self::Sledgehammer => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: 1,
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "sledgehammer",
+            },
+            Self::Spear => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d8(),
+                damage_types: vec![DamageType::Piercing],
+                name: "spear",
+            },
+            Self::Totokia => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d10(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "totokia",
+            },
+            Self::Warhammer => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d8(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "warhammer",
+            },
         }
+    }
+
+    pub fn accuracy(&self) -> i32 {
+        return self.definition().accuracy;
     }
 
     pub fn damage_dice(&self) -> DamageDice {
-        let increments = match self {
-            Self::ArmorSpikes => DamageDice::d6(),
-            Self::Battleaxe => DamageDice::d8(),
-            Self::Bite => DamageDice::d8(),
-            Self::Broadsword => DamageDice::d8(),
-            Self::Claw => DamageDice::d6(),
-            Self::Greataxe => DamageDice::d10() + 1,
-            Self::Greatsword => DamageDice::d10(),
-            Self::Longbow => DamageDice::d8(),
-            Self::MonsterBite => DamageDice::d10(),
-            Self::MonsterClaws => DamageDice::d6(),
-            Self::MonsterStinger => DamageDice::d10(),
-            Self::MonsterTalons => DamageDice::d6(),
-            Self::Sap => DamageDice::d6(),
-            Self::Scimitar => DamageDice::d8(),
-            Self::Sickle => DamageDice::d6(),
-            Self::Slam => DamageDice::d10(),
-            Self::Sledgehammer => DamageDice::d10() + 1,
-            Self::Spear => DamageDice::d8(),
-            Self::Totokia => DamageDice::d10(),
-            Self::Warhammer => DamageDice::d8(),
-        };
-        return DamageDice::new(increments);
+        return DamageDice::new(self.definition().damage_dice);
     }
 
     pub fn damage_types(&self) -> Vec<DamageType> {
-        match self {
-            Self::ArmorSpikes => vec![DamageType::Piercing],
-            Self::Battleaxe => vec![DamageType::Slashing],
-            Self::Bite => vec![DamageType::Physical],
-            Self::Broadsword => vec![DamageType::Slashing],
-            Self::Claw => vec![DamageType::Slashing],
-            Self::Greataxe => vec![DamageType::Slashing],
-            Self::Greatsword => vec![DamageType::Slashing],
-            Self::Longbow => vec![DamageType::Piercing],
-            Self::MonsterBite => vec![DamageType::Physical],
-            Self::MonsterClaws => vec![DamageType::Slashing],
-            Self::MonsterStinger => vec![DamageType::Piercing],
-            Self::MonsterTalons => vec![DamageType::Piercing],
-            Self::Sap => vec![DamageType::Bludgeoning],
-            Self::Scimitar => vec![DamageType::Slashing],
-            Self::Sickle => vec![DamageType::Slashing],
-            Self::Slam => vec![DamageType::Bludgeoning],
-            Self::Sledgehammer => vec![DamageType::Bludgeoning],
-            Self::Spear => vec![DamageType::Piercing],
-            Self::Totokia => vec![DamageType::Bludgeoning],
-            Self::Warhammer => vec![DamageType::Bludgeoning],
-        }
+        return self.definition().damage_types;
     }
 
     pub fn name(&self) -> &str {
-        match self {
-            Self::ArmorSpikes => "armor spike",
-            Self::Battleaxe => "battleaxe",
-            Self::Bite => "bite",
-            Self::Broadsword => "broadsword",
-            Self::Claw => "claw",
-            Self::Greataxe => "greataxe",
-            Self::Greatsword => "greatsword",
-            Self::Longbow => "longbow",
-            Self::MonsterBite => "bite",
-            Self::MonsterClaws => "claws",
-            Self::MonsterStinger => "stinger",
-            Self::MonsterTalons => "talons",
-            Self::Sap => "sap",
-            Self::Scimitar => "scimitar",
-            Self::Sickle => "sickle",
-            Self::Slam => "slam",
-            Self::Sledgehammer => "sledgehammer",
-            Self::Spear => "spear",
-            Self::Totokia => "totokia",
-            Self::Warhammer => "warhammer",
-        }
+        return self.definition().name;
     }
 
     pub fn plural_name(&self) -> String {
