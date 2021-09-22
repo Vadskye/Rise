@@ -1,4 +1,6 @@
-use crate::core_mechanics::{MovementMode, PassiveAbility, Sense, Size, SpeedCategory};
+use crate::core_mechanics::{
+    MovementMode, PassiveAbility, Sense, Size, SpeedCategory, StandardPassiveAbility,
+};
 use crate::creatures::attacks::Attack;
 use crate::creatures::{Monster, StandardAttack};
 use crate::equipment::Weapon;
@@ -52,6 +54,48 @@ fn humanoid(def: FullHumanoidDefinition) -> Monster {
 
 pub fn humanoids() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
+
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        name: "Cultists".to_string(),
+        knowledge: None,
+        monsters: vec![
+            humanoid(FullHumanoidDefinition {
+                alignment: "Usually lawful evil".to_string(),
+                attributes: vec![0, 0, 1, -1, 0, 4],
+                challenge_rating: ChallengeRating::One,
+                description: None,
+                knowledge: None,
+                level: 1,
+                passive_abilities: None,
+                movement_modes: None,
+                name: "Death Cultist".to_string(),
+                senses: None,
+                size: Size::Medium,
+                special_attacks: Some(vec![StandardAttack::DrainLife(1).attack()]),
+                trained_skills: None,
+                weapons: vec![Weapon::Sickle],
+            }),
+            humanoid(FullHumanoidDefinition {
+                alignment: "Usually lawful evil".to_string(),
+                attributes: vec![0, 2, 0, -1, 0, 4],
+                challenge_rating: ChallengeRating::One,
+                description: None,
+                knowledge: None,
+                level: 4,
+                passive_abilities: None,
+                movement_modes: None,
+                name: "Pyromaniac".to_string(),
+                senses: None,
+                size: Size::Medium,
+                special_attacks: Some(vec![
+                    StandardAttack::Combustion(2).attack(),
+                    StandardAttack::Firebolt(2).attack(),
+                ]),
+                trained_skills: None,
+                weapons: vec![Weapon::Club],
+            }),
+        ],
+    }));
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         name: "Goblins".to_string(),
@@ -124,25 +168,87 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         ],
     }));
 
+    struct FullOrcDefinition {
+        attributes: Vec<i32>,
+        challenge_rating: ChallengeRating,
+        knowledge: Option<Knowledge>,
+        level: i32,
+        name: String,
+        passive_abilities: Option<Vec<PassiveAbility>>,
+        size: Size,
+        special_attacks: Option<Vec<Attack>>,
+        trained_skills: Option<Vec<Skill>>,
+        weapons: Vec<Weapon>,
+    }
+
+    impl FullOrcDefinition {
+        fn monster(self) -> Monster {
+            return humanoid(FullHumanoidDefinition {
+                // From def
+                attributes: self.attributes,
+                challenge_rating: self.challenge_rating,
+                knowledge: self.knowledge,
+                level: self.level,
+                name: self.name,
+                passive_abilities: self.passive_abilities,
+                size: self.size,
+                special_attacks: self.special_attacks,
+                trained_skills: self.trained_skills,
+                weapons: self.weapons,
+
+                alignment: "Usually lawful evil".to_string(),
+                description: None,
+                movement_modes: None,
+                senses: Some(vec![Sense::Darkvision(60)]),
+            });
+        }
+    }
+
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         name: "Orcs".to_string(),
-        knowledge: None,
-        monsters: vec![humanoid(FullHumanoidDefinition {
-            alignment: "Usually lawful evil".to_string(),
-            attributes: vec![4, 0, 2, -2, 1, 0],
-            challenge_rating: ChallengeRating::Two,
-            description: None,
-            knowledge: None,
-            level: 1,
-            passive_abilities: None,
-            movement_modes: None,
-            name: "Orc Chef".to_string(),
-            senses: None,
-            size: Size::Medium,
-            special_attacks: None,
-            trained_skills: None,
-            weapons: vec![Weapon::Sledgehammer],
-        })],
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Orcs are green-skinned humanoids that are generally larger, stronger, and less intelligent than humans.
+                Most other humanoid races consider them ugly, though orcs would say the same about most other humanoid races.
+                They tend to be selfish, but they adhere strictly to the particular orcish interpretation of honorable combat.
+            "),
+            (5, r#"
+                Honorable orc combat avoids sneak attacks or deception, allows enemies to surrender, and respects the distinction between civilians and combatants.
+                However, honorable orc combat does not require a great deal of warning before battle is joined, and they have no concept of "dirty fighting" - orcs fight brutally and with no reservations in combat.
+
+                Orcs have highly militaristic and regimented society that is divided into different clans, each of which is ruled by a powerful chieftain.
+            "#),
+            (10, "
+                Orc hierarchy and status is almost always determined by power, and chieftains can be deposed at specific intervals in a personal trial by combat.
+                You know the general patterns that determine when these personal trials by combat are permissible for local orc clans.
+            "),
+        ])),
+        monsters: vec![
+            FullOrcDefinition {
+                attributes: vec![5, 0, 2, -2, 1, 0],
+                challenge_rating: ChallengeRating::Two,
+                knowledge: None,
+                level: 1,
+                passive_abilities: None,
+                name: "Orc Butcher".to_string(),
+                size: Size::Medium,
+                special_attacks: None,
+                trained_skills: None,
+                weapons: vec![Weapon::Sledgehammer],
+            }.monster(),
+            FullOrcDefinition {
+                attributes: vec![4, 0, 2, -2, 1, 0],
+                challenge_rating: ChallengeRating::One,
+                knowledge: None,
+                level: 1,
+                passive_abilities: None,
+                name: "Orc Grunt".to_string(),
+                size: Size::Medium,
+                special_attacks: None,
+                trained_skills: None,
+                weapons: vec![Weapon::Greataxe],
+            }.monster(),
+        ],
     }));
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
@@ -181,6 +287,65 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 special_attacks: Some(vec![StandardAttack::DivineJudgment(1).attack()]),
                 trained_skills: None,
                 weapons: vec![Weapon::Warhammer],
+            }),
+        ],
+    }));
+
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        name: "Lizardfolk".to_string(),
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Lizardfolk are Medium bipedal creatures covered in reptilian scales.
+                They are slightly taller and bulkier than humans, typically standing 6 to 7 feet tall and weighing up to 250 pounds.
+                Their tail resembles that of a crocodile, and is typically 3 to 4 feet long.
+                Their scales are typically green, gray, or brown.
+                In battle, they typically fight as unorganized individuals.
+            "),
+            (5, "
+                Lizardfolk use their tail for balance on land and to accelerate their swimming while in water.
+                They prefer frontal assaults and massed rushes in battle, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
+                If lizardfolk are outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.
+                Advanced tribes use more sophisticated tactics and have better traps and ambushes.
+            "),
+        ])),
+        monsters: vec![
+            humanoid(FullHumanoidDefinition {
+                alignment: "Usually true neutral".to_string(),
+                attributes: vec![3, 0, 4, 0, 0, 0],
+                challenge_rating: ChallengeRating::One,
+                description: None,
+                knowledge: None,
+                level: 3,
+                passive_abilities: Some(vec![StandardPassiveAbility::Amphibious.ability()]),
+                movement_modes: Some(vec![
+                    MovementMode::Land(SpeedCategory::Normal),
+                    MovementMode::Swim(SpeedCategory::Normal),
+                ]),
+                name: "Lizardfolk Grunt".to_string(),
+                senses: None,
+                size: Size::Medium,
+                special_attacks: None,
+                trained_skills: None,
+                weapons: vec![Weapon::Spear],
+            }),
+            humanoid(FullHumanoidDefinition {
+                alignment: "Usually true neutral".to_string(),
+                attributes: vec![4, 0, 5, 0, 2, 0],
+                challenge_rating: ChallengeRating::Two,
+                description: None,
+                knowledge: None,
+                level: 4,
+                passive_abilities: Some(vec![StandardPassiveAbility::Amphibious.ability()]),
+                movement_modes: Some(vec![
+                    MovementMode::Land(SpeedCategory::Normal),
+                    MovementMode::Swim(SpeedCategory::Normal),
+                ]),
+                name: "Lizardfolk Elite".to_string(),
+                senses: None,
+                size: Size::Medium,
+                special_attacks: None,
+                trained_skills: None,
+                weapons: vec![Weapon::Spear],
             }),
         ],
     }));
