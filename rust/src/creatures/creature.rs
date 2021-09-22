@@ -8,6 +8,8 @@ use crate::monsters::ChallengeRating;
 use crate::skills::Skill;
 use std::collections::HashMap;
 
+use super::{HasModifiers, ModifierType};
+
 #[derive(Clone)]
 pub struct Creature {
     pub anonymous_modifiers: Vec<Modifier>,
@@ -80,12 +82,15 @@ impl Creature {
         self.senses.as_mut().unwrap().push(sense);
     }
 
-    pub fn set_level(&mut self, level: i32) {
-        self.level = level;
-    }
-
-    pub fn set_name(&mut self, name: &str) {
-        self.name = Some(name.to_string());
+    pub fn get_passive_abilities(&self) -> Vec<&PassiveAbility> {
+        let mut passive_abilities: Vec<&PassiveAbility> = self.passive_abilities.iter().collect();
+        for modifier in self.get_modifiers_by_type(ModifierType::PassiveAbility) {
+            match modifier {
+                Modifier::PassiveAbility(pa) => passive_abilities.push(pa),
+                _ => {}
+            };
+        }
+        return passive_abilities;
     }
 
     pub fn lowercase_name(&self) -> Option<String> {

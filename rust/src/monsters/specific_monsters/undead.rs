@@ -1,6 +1,5 @@
-use crate::core_mechanics::{MovementMode, PassiveAbility, Sense, Size};
-use crate::creatures::attacks::Attack;
-use crate::creatures::Monster;
+use crate::core_mechanics::{MovementMode, Sense, Size};
+use crate::creatures::{Modifier, Monster};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
@@ -16,12 +15,11 @@ struct FullUndeadDefinition {
     description: Option<&'static str>,
     knowledge: Option<Knowledge>,
     level: i32,
+    modifiers: Option<Vec<Modifier>>,
     movement_modes: Option<Vec<MovementMode>>,
     name: String,
-    passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
     size: Size,
-    special_attacks: Option<Vec<Attack>>,
     trained_skills: Option<Vec<Skill>>,
     weapons: Vec<Weapon>,
 }
@@ -35,18 +33,16 @@ fn undead(def: FullUndeadDefinition) -> Monster {
         description: def.description,
         knowledge: def.knowledge,
         level: def.level,
+        modifiers: def.modifiers,
         movement_modes: def.movement_modes,
         name: def.name,
-        passive_abilities: def.passive_abilities,
         senses: def.senses,
         size: def.size,
-        special_attacks: def.special_attacks,
         trained_skills: def.trained_skills,
         weapons: def.weapons,
 
         // Default values
         creature_type: Undead,
-        special_defense_modifiers: None,
     }
     .monster();
 }
@@ -64,12 +60,11 @@ pub fn undeads() -> Vec<MonsterEntry> {
             description: None,
             knowledge: None,
             level: 1,
-            passive_abilities: None,
+            modifiers: None,
             movement_modes: None,
             name: "Skeleton Guard".to_string(),
             senses: None,
             size: Size::Medium,
-            special_attacks: None,
             trained_skills: None,
             weapons: vec![Weapon::Scimitar],
         })],

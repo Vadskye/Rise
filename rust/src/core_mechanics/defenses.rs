@@ -98,6 +98,14 @@ impl SpecialDefenseModifier {
     pub fn vulnerable_debuff(debuff: Debuff) -> Self {
         return Self::Vulnerable(SpecialDefenseType::Debuff(debuff));
     }
+
+    pub fn description(&self) -> String {
+        match self {
+            Self::Immune(t) => format!("immune to {}", t.description()),
+            Self::Impervious(t) => format!("impervious to {}", t.description()),
+            Self::Vulnerable(t) => format!("vulnerable to {}", t.description()),
+        }
+    }
 }
 
 impl SpecialDefenseType {

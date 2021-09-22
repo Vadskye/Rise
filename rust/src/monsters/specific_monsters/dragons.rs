@@ -6,7 +6,7 @@ use crate::creatures::attack_effects::{
     AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
 use crate::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting};
-use crate::creatures::Monster;
+use crate::creatures::{Modifier, Monster};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Dragon;
@@ -501,6 +501,19 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
     if let Some(f) = age_category.frightful_presence() {
         special_attacks.push(f);
     }
+
+    let mut modifiers: Vec<Modifier> = vec![
+        Modifier::SpecialDefense(SpecialDefenseModifier::immune_damage(dragon_type.damage_type())),
+    ];
+    if let Some(passive_abilities) = dragon_type.passive_abilities() {
+        for p in passive_abilities {
+            modifiers.push(Modifier::PassiveAbility(p));
+        }
+    }
+    for a in special_attacks {
+        modifiers.push(Modifier::Attack(a));
+    }
+
     return FullMonsterDefinition {
         alignment: dragon_type.alignment().to_string(),
         attributes,
@@ -509,7 +522,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         description: None,
         knowledge: None,
         level: age_category.level() + dragon_type.level_modifier(),
-        passive_abilities: dragon_type.passive_abilities(),
+        modifiers: Some(modifiers),
         movement_modes: Some(vec![
             MovementMode::Land(SpeedCategory::Normal),
             MovementMode::Fly(SpeedCategory::VeryFast, FlightManeuverability::Poor),
@@ -517,10 +530,6 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         name: format!("{} {} Dragon", age_category.name(), dragon_type.name()),
         senses: None,
         size: age_category.size(),
-        special_attacks: Some(special_attacks),
-        special_defense_modifiers: Some(vec![SpecialDefenseModifier::immune_damage(
-            dragon_type.damage_type(),
-        )]),
         trained_skills: None,
         weapons: vec![Weapon::MonsterBite, Weapon::MonsterClaws],
     }
