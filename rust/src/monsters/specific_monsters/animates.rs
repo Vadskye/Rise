@@ -2,8 +2,7 @@ use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
     SpecialDefenseModifier, SpeedCategory,
 };
-use crate::creatures::attacks::Attack;
-use crate::creatures::{Monster, StandardAttack};
+use crate::creatures::{Modifier, Monster, StandardAttack};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animate;
@@ -21,11 +20,9 @@ struct FullAnimateDefinition {
     level: i32,
     movement_modes: Option<Vec<MovementMode>>,
     name: String,
-    passive_abilities: Option<Vec<PassiveAbility>>,
+    modifiers: Option<Vec<Modifier>>,
     senses: Option<Vec<Sense>>,
     size: Size,
-    special_attacks: Option<Vec<Attack>>,
-    special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     trained_skills: Option<Vec<Skill>>,
     weapons: Vec<Weapon>,
 }
@@ -39,13 +36,11 @@ fn animate(def: FullAnimateDefinition) -> Monster {
         description: def.description,
         knowledge: def.knowledge,
         level: def.level,
+        modifiers: def.modifiers,
         movement_modes: def.movement_modes,
         name: def.name,
-        passive_abilities: def.passive_abilities,
         senses: def.senses,
         size: def.size,
-        special_attacks: def.special_attacks,
-        special_defense_modifiers: def.special_defense_modifiers,
         trained_skills: def.trained_skills,
         weapons: def.weapons,
 
@@ -76,21 +71,18 @@ pub fn animates() -> Vec<MonsterEntry> {
             "),
         ])),
         level: 4,
-        passive_abilities: None,
+        modifiers: Some(vec![
+            Modifier::Attack(StandardAttack::DarkGrasp(3).attack()),
+            Modifier::Attack(StandardAttack::DarkMiasma(3).attack().except(
+                |a| a.name = "Chilling Aura".to_string()
+            )),
+            Modifier::SpecialDefense(SpecialDefenseModifier::impervious_damage(DamageType::Cold)),
+            Modifier::SpecialDefense(SpecialDefenseModifier::immune_debuff(Debuff::Prone)),
+        ]),
         movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Normal, FlightManeuverability::Perfect)]),
         name: "Darkwraith".to_string(),
         senses: None,
         size: Size::Medium,
-        special_attacks: Some(vec![
-            StandardAttack::DarkGrasp(3).attack(),
-            StandardAttack::DarkMiasma(3).attack().except(
-                |a| a.name = "Chilling Aura".to_string()
-            ),
-        ]),
-        special_defense_modifiers: Some(vec![
-            SpecialDefenseModifier::impervious_damage(DamageType::Cold),
-            SpecialDefenseModifier::immune_debuff(Debuff::Prone),
-        ]),
         trained_skills: Some(vec![
             Skill::Awareness,
             Skill::Stealth,
@@ -103,20 +95,14 @@ pub fn animates() -> Vec<MonsterEntry> {
         attributes: Vec<i32>,
         knowledge: Knowledge,
         level: i32,
+        modifiers: Option<Vec<Modifier>>,
         name: &str,
         size: Size,
-        special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     ) -> Monster {
-        return animate(FullAnimateDefinition {
-            alignment: alignment.to_string(),
-            attributes,
-            challenge_rating: ChallengeRating::Two,
-            description: None,
-            knowledge: Some(knowledge),
-            level,
-            passive_abilities: Some(vec![
+        let mut modifiers = modifiers.unwrap_or(vec![]);
+        modifiers.push(
                 // TODO: add Focus tag
-                PassiveAbility {
+                Modifier::PassiveAbility(PassiveAbility {
                     name: "Animate Tree".to_string(),
                     is_magical: true,
                     description: "
@@ -128,14 +114,20 @@ pub fn animates() -> Vec<MonsterEntry> {
                         When this ability ends, the tree sets down roots in its new location if possible.
                         Treants avoid stranding trees in unsustainable locations except in desperate circumstances.
                     ".to_string(),
-                },
-            ]),
+                })
+        );
+        return animate(FullAnimateDefinition {
+            alignment: alignment.to_string(),
+            attributes,
+            challenge_rating: ChallengeRating::Two,
+            description: None,
+            knowledge: Some(knowledge),
+            level,
+            modifiers: Some(modifiers),
             movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Slow)]),
             name: name.to_string(),
             senses: None,
             size,
-            special_attacks: None,
-            special_defense_modifiers,
             trained_skills: Some(vec![Skill::Awareness]),
             weapons: vec![Weapon::Slam],
         });
@@ -153,9 +145,9 @@ pub fn animates() -> Vec<MonsterEntry> {
                         Birch treants tend to be shy, and they to avoid conflict if at all possible.
                     ")]),
                     5,
+                    Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
                     "Birch Treant",
                     Size::Large,
-                    Some(vec![SpecialDefenseModifier::vulnerable_damage(DamageType::Fire)]),
                 ),
                 create_treant(
                     "Usually true neutral",
@@ -165,9 +157,9 @@ pub fn animates() -> Vec<MonsterEntry> {
                         They like playing small tricks on interesting creatures that pass by.
                     ")]),
                     6,
+                    Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
                     "Chestnut Treant",
                     Size::Large,
-                    Some(vec![SpecialDefenseModifier::vulnerable_damage(DamageType::Fire)]),
                 ),
                 create_treant(
                     "Usually true neutral",
@@ -177,9 +169,9 @@ pub fn animates() -> Vec<MonsterEntry> {
                         Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
                     ")]),
                     7,
+                    Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
                     "Willow Treant",
                     Size::Large,
-                    Some(vec![SpecialDefenseModifier::vulnerable_damage(DamageType::Fire)]),
                 ),
                 create_treant(
                     "Usually neutral evil",
@@ -189,9 +181,9 @@ pub fn animates() -> Vec<MonsterEntry> {
                         Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
                     ")]),
                     8,
+                    None,
                     "Darkroot Treant",
                     Size::Large,
-                    None,
                 ),
                 create_treant(
                     "Usually neutral good",
@@ -201,9 +193,9 @@ pub fn animates() -> Vec<MonsterEntry> {
                         They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
                     ")]),
                     9,
+                    Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
                     "Pine Treant",
                     Size::Huge,
-                    Some(vec![SpecialDefenseModifier::vulnerable_damage(DamageType::Fire)]),
                 ),
                 create_treant(
                     "Usually neutral good",
@@ -212,9 +204,9 @@ pub fn animates() -> Vec<MonsterEntry> {
                         Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
                     ")]),
                     10,
+                    Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
                     "Oak Treant",
                     Size::Huge,
-                    Some(vec![SpecialDefenseModifier::vulnerable_damage(DamageType::Fire)]),
                 ),
                 create_treant(
                     "Usually true neutral",
@@ -224,9 +216,9 @@ pub fn animates() -> Vec<MonsterEntry> {
                         They are virtually indestructible, and are fearsome when roused to anger.
                     ")]),
                     11,
+                    None,
                     "Cyprus Treant",
                     Size::Huge,
-                    None,
                 ),
             ],
         },
@@ -247,13 +239,11 @@ pub fn animates() -> Vec<MonsterEntry> {
             description: None,
             knowledge: None,
             level,
-            passive_abilities: None,
+            modifiers: None,
             movement_modes: None,
             name: name.to_string(),
             senses: Some(vec![Sense::Darkvision(60)]),
             size,
-            special_attacks: None,
-            special_defense_modifiers: None,
             trained_skills: None,
             weapons: vec![Weapon::Slam],
         });

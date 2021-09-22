@@ -18,6 +18,7 @@ pub fn generate_stock_monsters() -> Vec<MonsterEntry> {
                         description: None,
                         knowledge: None,
                         level,
+                        modifiers: None,
                         movement_modes: None,
                         name: format!(
                             "Stock {} {} (CR {})",
@@ -25,11 +26,8 @@ pub fn generate_stock_monsters() -> Vec<MonsterEntry> {
                             level,
                             challenge_rating.to_string()
                         ),
-                        passive_abilities: None,
                         senses: None,
                         size: Size::Medium,
-                        special_attacks: None,
-                        special_defense_modifiers: None,
                         trained_skills: None,
                         weapons: vec![Weapon::Bite],
                         challenge_rating,

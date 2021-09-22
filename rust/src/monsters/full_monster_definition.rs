@@ -1,13 +1,6 @@
-use crate::core_mechanics::{
-    Attribute, HasAttributes, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier,
-    SpeedCategory,
-};
-use crate::creatures::CreatureCategory;
-use crate::creatures::{
-    attacks::{Attack, HasAttacks},
-    creature::Creature,
-    Monster,
-};
+use crate::core_mechanics::{Attribute, HasAttributes, MovementMode, Sense, Size, SpeedCategory};
+use crate::creatures::Monster;
+use crate::creatures::{HasModifiers, Modifier};
 use crate::equipment::Weapon;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
 use crate::skills::{HasSkills, Skill};
@@ -20,13 +13,11 @@ pub struct FullMonsterDefinition {
     pub description: Option<&'static str>,
     pub knowledge: Option<Knowledge>,
     pub level: i32,
+    pub modifiers: Option<Vec<Modifier>>,
     pub movement_modes: Option<Vec<MovementMode>>,
     pub name: String,
-    pub passive_abilities: Option<Vec<PassiveAbility>>,
     pub senses: Option<Vec<Sense>>,
     pub size: Size,
-    pub special_attacks: Option<Vec<Attack>>,
-    pub special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     pub trained_skills: Option<Vec<Skill>>,
     pub weapons: Vec<Weapon>,
 }
@@ -42,7 +33,7 @@ impl FullMonsterDefinition {
             .unwrap_or(vec![MovementMode::Land(SpeedCategory::Normal)]);
 
         let creature = &mut monster.creature;
-        creature.set_name(&self.name);
+        creature.name = Some(self.name);
         for (i, attribute) in Attribute::all().iter().enumerate() {
             creature.set_base_attribute(attribute.clone(), self.attributes[i]);
         }
@@ -50,9 +41,9 @@ impl FullMonsterDefinition {
             creature.weapons.push(weapon);
         }
         creature.set_size(self.size);
-        if let Some(passive_abilities) = self.passive_abilities {
-            for ability in passive_abilities {
-                creature.passive_abilities.push(ability);
+        if let Some(modifiers) = self.modifiers {
+            for modifier in modifiers {
+                creature.add_modifier(modifier, None, None);
             }
         }
         if let Some(senses) = self.senses {
@@ -63,16 +54,6 @@ impl FullMonsterDefinition {
         if let Some(trained_skills) = self.trained_skills {
             for skill in trained_skills {
                 creature.set_skill_trained(skill, true);
-            }
-        }
-        if let Some(special_attacks) = self.special_attacks {
-            for a in special_attacks {
-                creature.add_special_attack(a);
-            }
-        }
-        if let Some(special_defense_modifiers) = self.special_defense_modifiers {
-            for d in special_defense_modifiers {
-                creature.add_special_defense_modifier(d);
             }
         }
 
