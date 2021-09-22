@@ -23,12 +23,18 @@ impl PassiveAbility {
 }
 
 pub enum StandardPassiveAbility {
+    Amphibious,
     TwoActions,
 }
 
 impl StandardPassiveAbility {
     pub fn ability(&self) -> PassiveAbility {
         match self {
+            Self::Amphibious => PassiveAbility {
+                description: "The $name can hold its breath for ten times the normal length of time.".to_string(),
+                is_magical: false,
+                name: "Amphibious".to_string(),
+            },
             Self::TwoActions => PassiveAbility {
                 description: "The $name can take two standard actions each round. It cannot use the same ability twice in the same round.".to_string(),
                 is_magical: false,

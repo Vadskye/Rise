@@ -8,6 +8,7 @@ pub enum Weapon {
     Bite,
     Broadsword,
     Claw,
+    Club,
     Greataxe,
     Greatsword,
     Longbow,
@@ -64,6 +65,12 @@ impl Weapon {
                 damage_dice: DamageDice::d6(),
                 damage_types: vec![DamageType::Slashing],
                 name: "claw",
+            },
+            Self::Club => WeaponDefinition {
+                accuracy: 0,
+                damage_dice: DamageDice::d8(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "club",
             },
             Self::Greataxe => WeaponDefinition {
                 accuracy: 0,
