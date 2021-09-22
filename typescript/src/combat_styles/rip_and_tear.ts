@@ -75,6 +75,9 @@ export const ripAndTear: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
       `,
       rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
+      },
       type: "Duration",
     },
 
@@ -99,6 +102,11 @@ export const ripAndTear: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Duration",
     },
 
@@ -111,6 +119,10 @@ export const ripAndTear: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\decelerated as a \\glossterm{condition}.
       `,
       rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       type: "Duration",
     },
 
