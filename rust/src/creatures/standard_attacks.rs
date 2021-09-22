@@ -18,6 +18,7 @@ pub enum StandardAttack {
     AbyssalBlast(i32),
     BreathWeaponCone(i32, DamageType, Defense),
     BreathWeaponLine(i32, DamageType, Defense),
+    Combustion(i32),
     DarkGrasp(i32),
     DarkMiasma(i32),
     DivineJudgment(i32),
@@ -200,6 +201,35 @@ impl StandardAttack {
                     7 => AttackTargeting::Line(20, AreaSize::Gargantuan, AreaTargets::Everything),
                     _ => panic!("Invalid rank {}", rank),
                 },
+            },
+            Self::Combustion(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Fortitude,
+                glance: if *rank >= 4 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    // +1d extra at ranks 4 and 7
+                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Fire],
+                    lose_hp_effects: None,
+                    power_multiplier: 1.0,
+                    take_damage_effects: None,
+                }),
+                is_magical: true,
+                is_strike: false,
+                name: Attack::generate_modified_name("Combustion", *rank, 4, Some(7)),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Creature(if *rank == 7 {
+                    AttackRange::Medium
+                } else {
+                    AttackRange::Short
+                }),
             },
             // TODO: add descriptive text for +accuracy vs non-bright illumination
             Self::DarkGrasp(rank) => Attack {
