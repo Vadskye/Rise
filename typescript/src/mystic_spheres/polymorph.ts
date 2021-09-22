@@ -381,7 +381,7 @@ export const polymorph: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 4d10 + \\glossterm{power} physical damage.
-        In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
+        In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely disintegrated, leaving behind only a pinch of fine dust.
         Its equipment is unaffected.`,
         targeting: `
