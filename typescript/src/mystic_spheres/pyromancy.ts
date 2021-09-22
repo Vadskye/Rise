@@ -327,7 +327,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 4d8 + \\glossterm{power} fire damage.
-        In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
+        In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely incinerated, leaving behind only a pinch of fine ash.
         Its equipment is unaffected.`,
         targeting: `
@@ -346,7 +346,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `The subject takes 7d10 + \\glossterm{power} fire damage.
-        In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
+        In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely incinerated, leaving behind only a pinch of fine ash.
         Its equipment is unaffected.`,
         targeting: `

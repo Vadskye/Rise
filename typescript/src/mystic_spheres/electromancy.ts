@@ -459,7 +459,7 @@ export const electromancy: MysticSphere = {
         // +2d from level, add trivial extra benefit for fun
         hit: `
           The subject takes 4d10 + \\glossterm{power} electricity damage.
-          In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
+          In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.

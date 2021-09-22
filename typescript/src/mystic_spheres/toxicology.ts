@@ -254,7 +254,7 @@ export const toxicology: MysticSphere = {
       attack: {
         hit: `
           The subject takes 4d8 + \\glossterm{power} acid damage.
-          In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
+          In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
           Its body is completely dissolved by acid, leaving behind only a splash of black sludge.
           Its equipment is unaffected.
         `,
@@ -274,7 +274,7 @@ export const toxicology: MysticSphere = {
       attack: {
         hit: `
           The subject takes 7d10 + \\glossterm{power} acid damage.
-          In addition, if the subject has no hit points remaining at the end of the current \\glossterm{phase}, it dies.
+          In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
           Its body is completely dissolved by acid, leaving behind only a splash of black sludge.
           Its equipment is unaffected.
         `,
