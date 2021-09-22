@@ -171,7 +171,7 @@ impl Attack {
     // top section.
     fn latex_tags(&self) -> String {
         // TODO: take tags into account
-        return "".to_string()
+        return "".to_string();
     }
 
     fn latex_effect(&self, creature: &Creature) -> String {
