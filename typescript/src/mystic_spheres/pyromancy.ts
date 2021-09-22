@@ -322,7 +322,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Immolate",
+      name: "Greater Combustion",
 
       attack: {
         glance: `Half damage.`,
@@ -341,7 +341,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Immolate",
+      name: "Supreme Combustion",
 
       attack: {
         glance: `Half damage.`,
