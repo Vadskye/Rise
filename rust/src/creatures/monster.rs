@@ -135,7 +135,7 @@ impl Monster {
             None,
             None,
         );
-        monster.creature.set_name("Standard Monster");
+        monster.creature.name = Some("Standard Monster".to_string());
         let starting_attribute = if let Some(a) = starting_attribute {
             a
         } else {
@@ -390,7 +390,7 @@ impl Monster {
             .collect::<Vec<String>>();
         let mut passive_ability_texts = self
             .creature
-            .passive_abilities
+            .get_passive_abilities()
             .iter()
             .map(|a| a.to_latex())
             .collect::<Vec<String>>();

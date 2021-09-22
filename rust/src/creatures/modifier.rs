@@ -1,4 +1,4 @@
-use crate::core_mechanics::{Attribute, Defense, Resource};
+use crate::core_mechanics::{Attribute, Defense, PassiveAbility, Resource, SpecialDefenseModifier};
 use crate::creatures::attacks::Attack;
 use crate::skills::Skill;
 
@@ -23,8 +23,10 @@ pub enum Modifier {
     // TODO: add this to creature calculations
     MovementSpeed(i32),
     MundanePower(i32),
+    PassiveAbility(PassiveAbility),
     Resource(Resource, i32),
     Skill(Skill, i32),
+    SpecialDefense(SpecialDefenseModifier),
     StrikeDamageDice(i32),
     VitalRoll(i32),
 }
@@ -45,8 +47,10 @@ pub enum ModifierType {
     Maneuver,
     MundanePower,
     MovementSpeed,
+    PassiveAbility,
     Resource(Resource),
     Skill(Skill),
+    SpecialDefense,
     StrikeDamageDice,
     VitalRoll,
 }
@@ -68,8 +72,10 @@ impl Modifier {
             Self::Maneuver(_) => self.name(),
             Self::MovementSpeed(v) => format!("{} {}", self.name(), v),
             Self::MundanePower(v) => format!("{} {}", self.name(), v),
+            Self::PassiveAbility(_) => self.name(),
             Self::Resource(_, v) => format!("{} by {}", self.name(), v),
             Self::Skill(_, v) => format!("{} by {}", self.name(), v),
+            Self::SpecialDefense(_) => self.name(),
             Self::StrikeDamageDice(v) => format!("{} {}", self.name(), v),
             Self::VitalRoll(v) => format!("{} {}", self.name(), v),
         }
@@ -91,8 +97,10 @@ impl Modifier {
             Self::Maneuver(m) => format!("maneuver {}", m.name()),
             Self::MovementSpeed(_) => format!("movement"),
             Self::MundanePower(_) => format!("mundane power"),
+            Self::PassiveAbility(a) => format!("passive ability {}", a.name),
             Self::Resource(r, _) => format!("resource {}", r.name()),
             Self::Skill(s, _) => format!("skill {}", s.name()),
+            Self::SpecialDefense(d) => format!("special defense {}", d.description()),
             Self::StrikeDamageDice(_) => format!("strike damage dice"),
             Self::VitalRoll(_) => format!("vital roll"),
         }
@@ -114,8 +122,10 @@ impl Modifier {
             Self::Maneuver(_) => ModifierType::Maneuver,
             Self::MovementSpeed(_) => ModifierType::MovementSpeed,
             Self::MundanePower(_) => ModifierType::MundanePower,
+            Self::PassiveAbility(_) => ModifierType::PassiveAbility,
             Self::Resource(r, _) => ModifierType::Resource(*r),
             Self::Skill(s, _) => ModifierType::Skill(s.clone()),
+            Self::SpecialDefense(_) => ModifierType::SpecialDefense,
             Self::StrikeDamageDice(_) => ModifierType::StrikeDamageDice,
             Self::VitalRoll(_) => ModifierType::VitalRoll,
         }
@@ -151,9 +161,11 @@ impl Modifier {
             Self::Maneuver(_) => &0,
             Self::MovementSpeed(v) => v,
             Self::MundanePower(v) => v,
+            Self::PassiveAbility(_) => &0,
             Self::Resource(_, v) => v,
             Self::Skill(_, v) => v,
             Self::StrikeDamageDice(v) => v,
+            Self::SpecialDefense(_) => &0,
             Self::VitalRoll(v) => v,
         };
         return *value;
@@ -182,6 +194,7 @@ pub trait HasModifiers {
     fn add_magic_modifier(&mut self, modifier: Modifier);
     fn get_modifiers(&self) -> Vec<&Modifier>;
     fn get_modifiers_by_source(&self, source: &str) -> Vec<&Modifier>;
+    fn get_modifiers_by_type(&self, modifier_type: ModifierType) -> Vec<&Modifier>;
     fn calc_total_modifier(&self, modifier_type: ModifierType) -> i32;
 }
 
@@ -227,6 +240,14 @@ impl HasModifiers for Creature {
         return modifiers;
     }
 
+    fn get_modifiers_by_type(&self, mt: ModifierType) -> Vec<&Modifier> {
+        return self
+            .get_modifiers()
+            .into_iter()
+            .filter(|m| m.modifier_type() == mt)
+            .collect();
+    }
+
     fn get_modifiers_by_source(&self, source: &str) -> Vec<&Modifier> {
         return self
             .identified_modifiers
@@ -238,9 +259,8 @@ impl HasModifiers for Creature {
 
     fn calc_total_modifier(&self, mt: ModifierType) -> i32 {
         return self
-            .get_modifiers()
+            .get_modifiers_by_type(mt)
             .iter()
-            .filter(|m| m.modifier_type() == mt)
             .map(|m| m.value())
             .sum();
     }

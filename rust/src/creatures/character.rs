@@ -66,7 +66,7 @@ impl Character {
             .creature
             .add_armor(standard_armor_by_level(level, ArmorUsageClass::Heavy));
         character.creature.add_armor(Armor::StandardShield);
-        character.creature.set_name("Standard Character");
+        character.creature.name = Some("Standard Character".to_string());
 
         if use_point_buy {
             character
@@ -111,7 +111,7 @@ impl Character {
         character
             .creature
             .add_armor(standard_armor_by_level(level, ArmorUsageClass::Heavy));
-        character.creature.set_name("Standard Greataxe");
+        character.creature.name = Some("Standard Greataxe".to_string());
 
         if use_point_buy {
             character
@@ -156,7 +156,7 @@ impl Character {
         character
             .creature
             .add_armor(standard_armor_by_level(level, ArmorUsageClass::Medium));
-        character.creature.set_name("Standard Barbarian");
+        character.creature.name = Some("Standard Barbarian".to_string());
 
         if use_point_buy {
             character
@@ -197,7 +197,7 @@ impl Character {
             ],
         );
 
-        character.creature.set_name("Standard Sorcerer");
+        character.creature.name = Some("Standard Sorcerer".to_string());
 
         if use_point_buy {
             character

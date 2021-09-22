@@ -1,8 +1,7 @@
 use crate::core_mechanics::{
     Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier,
 };
-use crate::creatures::attacks::Attack;
-use crate::creatures::{Monster, StandardAttack};
+use crate::creatures::{Modifier, Monster, StandardAttack};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Aberration;
@@ -18,13 +17,11 @@ struct FullAberrationDefinition {
     description: Option<&'static str>,
     knowledge: Option<Knowledge>,
     level: i32,
+    modifiers: Option<Vec<Modifier>>,
     movement_modes: Option<Vec<MovementMode>>,
     name: String,
-    passive_abilities: Option<Vec<PassiveAbility>>,
     senses: Option<Vec<Sense>>,
     size: Size,
-    special_attacks: Option<Vec<Attack>>,
-    special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     trained_skills: Option<Vec<Skill>>,
     weapons: Vec<Weapon>,
 }
@@ -38,13 +35,11 @@ fn aberration(def: FullAberrationDefinition) -> Monster {
         description: def.description,
         knowledge: def.knowledge,
         level: def.level,
+        modifiers: def.modifiers,
         movement_modes: def.movement_modes,
         name: def.name,
-        passive_abilities: def.passive_abilities,
         senses: def.senses,
         size: def.size,
-        special_attacks: def.special_attacks,
-        special_defense_modifiers: def.special_defense_modifiers,
         trained_skills: def.trained_skills,
         weapons: def.weapons,
 
@@ -85,27 +80,26 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             "),
         ])),
         level: 12,
+        modifiers: Some(vec![
+            Modifier::PassiveAbility(
+                PassiveAbility {
+                    description: r"
+                        As a standard action, the aboleth can \glossterm{dominate} the mind of an unconscious humanoid or aberration it touches.
+                        It can \glossterm{attune} to up to 5 separate domination effects in this way.
+                        This ability has the \glossterm{Compulsion} tag.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Dominate".to_string(),
+                },
+            ),
+            Modifier::Attack(StandardAttack::AbolethSlam.attack()),
+            Modifier::Attack(StandardAttack::AbolethPsionicBlast.attack()),
+            Modifier::Attack(StandardAttack::MindCrush(5).attack()),
+        ]),
         movement_modes: None,
         name: "Aboleth".to_string(),
-        passive_abilities: Some(vec![
-            PassiveAbility {
-                description: r"
-                    As a standard action, the aboleth can \glossterm{dominate} the mind of an unconscious humanoid or aberration it touches.
-                    It can \glossterm{attune} to up to 5 separate domination effects in this way.
-                    This ability has the \glossterm{Compulsion} tag.
-                ".to_string(),
-                is_magical: true,
-                name: "Dominate".to_string(),
-            },
-        ]),
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
         size: Size::Huge,
-        special_attacks: Some(vec![
-            StandardAttack::AbolethSlam.attack(),
-            StandardAttack::AbolethPsionicBlast.attack(),
-            StandardAttack::MindCrush(5).attack(),
-        ]),
-        special_defense_modifiers: None,
         trained_skills: Some(vec![
             Skill::Awareness,
             Skill::Endurance,
@@ -132,13 +126,14 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             "),
         ])),
         level: 5,
+        modifiers: Some(vec![
+            Modifier::Attack(StandardAttack::GibberingMoutherGibber.attack()),
+            Modifier::SpecialDefense(SpecialDefenseModifier::immune_debuff(Debuff::Prone)),
+        ]),
         movement_modes: None,
         name: "Gibbering Mouther".to_string(),
-        passive_abilities: None,
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
         size: Size::Huge,
-        special_attacks: Some(vec![StandardAttack::GibberingMoutherGibber.attack()]),
-        special_defense_modifiers: Some(vec![SpecialDefenseModifier::immune_debuff(Debuff::Prone)]),
         trained_skills: Some(vec![
             Skill::Endurance,
             Skill::Spellsense,
