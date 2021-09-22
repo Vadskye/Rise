@@ -1,4 +1,6 @@
-use crate::core_mechanics::{Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier};
+use crate::core_mechanics::{
+    Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier,
+};
 use crate::creatures::attacks::Attack;
 use crate::creatures::{Monster, StandardAttack};
 use crate::equipment::Weapon;

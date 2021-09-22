@@ -11,13 +11,7 @@ pub enum ChallengeRating {
 
 impl ChallengeRating {
     pub fn all() -> Vec<Self> {
-        return vec![
-            Self::Half,
-            Self::One,
-            Self::Two,
-            Self::Four,
-            Self::Six,
-        ];
+        return vec![Self::Half, Self::One, Self::Two, Self::Four, Self::Six];
     }
 
     pub fn accuracy_bonus(&self) -> i32 {
