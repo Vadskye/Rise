@@ -5,9 +5,7 @@ use crate::core_mechanics::{
 use crate::creatures::attack_effects::{
     AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
-use crate::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting,
-};
+use crate::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting};
 use crate::creatures::Monster;
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;

@@ -1,4 +1,7 @@
-use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode, SpecialDefenseModifier, SpecialDefenseType, StandardPassiveAbility};
+use crate::core_mechanics::{
+    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode,
+    SpecialDefenseModifier, SpecialDefenseType, StandardPassiveAbility,
+};
 use crate::creatures::attacks::HasAttacks;
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::Weapon;
@@ -385,7 +388,9 @@ impl Monster {
             .iter()
             .map(|a| a.latex_ability_block(&self.creature))
             .collect::<Vec<String>>();
-        let mut passive_ability_texts = self.creature.passive_abilities
+        let mut passive_ability_texts = self
+            .creature
+            .passive_abilities
             .iter()
             .map(|a| a.to_latex())
             .collect::<Vec<String>>();

@@ -37,7 +37,9 @@ impl FullMonsterDefinition {
         if let Some(d) = self.description {
             monster.description = Some(d.to_string());
         }
-        monster.movement_modes = self.movement_modes.unwrap_or(vec![MovementMode::Land(SpeedCategory::Normal)]);
+        monster.movement_modes = self
+            .movement_modes
+            .unwrap_or(vec![MovementMode::Land(SpeedCategory::Normal)]);
 
         let creature = &mut monster.creature;
         creature.set_name(&self.name);
