@@ -314,7 +314,7 @@ impl AttackTargeting {
                 size = area_size
             ),
             Self::Line(width, area_size, area_targets) => format!(
-                "attack vs. {defense} against {targets} in a {width} wide, {size}long line",
+                "attack vs. {defense} against {targets} in a {width} wide, {size} long line",
                 defense = defense,
                 targets = area_targets,
                 size = area_size,
