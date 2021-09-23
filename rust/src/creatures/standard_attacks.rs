@@ -5,7 +5,7 @@ use crate::creatures::attack_effects::{
 use crate::creatures::attacks::{
     AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting,
 };
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 
 pub enum StandardAttack {
     // Monster abilities
@@ -32,7 +32,7 @@ impl StandardAttack {
         match self {
             // Monster abilities
             Self::AbolethSlam => {
-                let mut aboleth_slam = Attack::from_weapon(Weapon::Slam);
+                let mut aboleth_slam = StandardWeapon::Slam.weapon().attack();
                 aboleth_slam.name = "Sliming Tentacle".to_string();
                 if let Some(e) = aboleth_slam.damage_effect_mut() {
                     e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(
@@ -76,7 +76,7 @@ impl StandardAttack {
                 targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Enemies),
             },
             Self::FrostwebSpiderBite => {
-                let mut frostweb_spider_bite = Attack::from_weapon(Weapon::MonsterBite);
+                let mut frostweb_spider_bite = StandardWeapon::MonsterBite.weapon().attack();
                 if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
                     e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(
                         attack_effects::PoisonEffect {

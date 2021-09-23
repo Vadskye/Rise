@@ -1,5 +1,5 @@
 use crate::core_mechanics::Size;
-use crate::equipment::Weapon;
+use crate::equipment::StandardWeapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::monster_entry::MonsterEntry;
@@ -29,7 +29,7 @@ pub fn generate_stock_monsters() -> Vec<MonsterEntry> {
                         senses: None,
                         size: Size::Medium,
                         trained_skills: None,
-                        weapons: vec![Weapon::Bite],
+                        weapons: vec![StandardWeapon::Bite.weapon()],
                         challenge_rating,
                     }
                     .monster(),

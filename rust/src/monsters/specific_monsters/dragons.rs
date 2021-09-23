@@ -7,7 +7,7 @@ use crate::creatures::attack_effects::{
 };
 use crate::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting};
 use crate::creatures::{Modifier, Monster};
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Dragon;
 use crate::monsters::knowledge::Knowledge;
@@ -154,12 +154,15 @@ impl AgeCategory {
     }
 
     fn weapons(&self) -> Vec<Weapon> {
-        let mut weapons = vec![Weapon::MonsterBite, Weapon::MonsterClaws];
+        let mut weapons = vec![
+            StandardWeapon::MonsterBite.weapon(),
+            StandardWeapon::MonsterClaws.weapon(),
+        ];
         match self {
-            Self::Adult => weapons.push(Weapon::Slam),
-            Self::Ancient => weapons.push(Weapon::Slam),
-            Self::Wyrm => weapons.push(Weapon::Slam),
-            _ => {},
+            Self::Adult => weapons.push(StandardWeapon::Slam.weapon()),
+            Self::Ancient => weapons.push(StandardWeapon::Slam.weapon()),
+            Self::Wyrm => weapons.push(StandardWeapon::Slam.weapon()),
+            _ => {}
         };
         return weapons;
     }

@@ -52,23 +52,6 @@ impl Attack {
         return attack;
     }
 
-    pub fn from_weapon(weapon: Weapon) -> Attack {
-        return Attack {
-            accuracy: weapon.accuracy(),
-            cooldown: None,
-            crit: None,
-            defense: Defense::Armor,
-            glance: None,
-            hit: AttackEffect::from_weapon(weapon),
-            name: titlecase(weapon.name()),
-            is_magical: false,
-            is_strike: true,
-            // By default, `from_weapon` replaces the base weapon
-            replaces_weapon: Some(weapon),
-            targeting: AttackTargeting::Strike,
-        };
-    }
-
     pub fn generate_modified_name(
         name: &str,
         rank: i32,
@@ -122,7 +105,10 @@ impl Attack {
 
     pub fn calc_strikes(weapons: Vec<&Weapon>) -> Vec<Attack> {
         // TODO: combine maneuvers with weapons and handle non-weapon attacks
-        return weapons.iter().map(|w| Self::from_weapon(**w)).collect();
+        return weapons
+            .into_iter()
+            .map(|w| w.attack())
+            .collect();
     }
 
     pub fn shorthand_description(&self, creature: &Creature) -> String {
@@ -575,8 +561,8 @@ where
             .iter()
             .filter(|weapon| {
                 let same_weapon_attack = all_attacks.iter().any(|attack| {
-                    if let Some(w) = attack.replaces_weapon {
-                        return w.name() == weapon.name();
+                    if let Some(ref w) = attack.replaces_weapon {
+                        return w.name == weapon.name;
                     } else {
                         return false;
                     }

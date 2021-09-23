@@ -1,6 +1,6 @@
 use crate::core_mechanics::{MovementMode, Sense, Size, SpeedCategory, StandardPassiveAbility};
 use crate::creatures::{Maneuver, Modifier, Monster, StandardAttack};
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Humanoid;
 use crate::monsters::knowledge::Knowledge;
@@ -68,7 +68,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Sickle],
+                weapons: vec![StandardWeapon::Sickle.weapon()],
             }),
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually lawful evil".to_string(),
@@ -86,7 +86,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Club],
+                weapons: vec![StandardWeapon::Club.weapon()],
             }),
         ],
     }));
@@ -108,7 +108,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Spear],
+                weapons: vec![StandardWeapon::Spear.weapon()],
             }),
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually chaotic evil".to_string(),
@@ -123,7 +123,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Spear],
+                weapons: vec![StandardWeapon::Spear.weapon()],
             }),
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually chaotic evil".to_string(),
@@ -138,7 +138,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Spear],
+                weapons: vec![StandardWeapon::Spear.weapon()],
             }),
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually chaotic evil".to_string(),
@@ -155,7 +155,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Spear],
+                weapons: vec![StandardWeapon::Spear.weapon()],
             }),
         ],
     }));
@@ -225,7 +225,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 name: "Orc Butcher".to_string(),
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Sledgehammer],
+                weapons: vec![StandardWeapon::Sledgehammer.weapon()],
             }.monster(),
             FullOrcDefinition {
                 attributes: vec![4, 0, 2, -2, 1, 0],
@@ -240,7 +240,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 name: "Orc Grunt".to_string(),
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Greataxe],
+                weapons: vec![StandardWeapon::Greataxe.weapon()],
             }.monster(),
             FullOrcDefinition {
                 attributes: vec![3, 0, 1, -2, 0, 0],
@@ -256,7 +256,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 name: "Orc Peon".to_string(),
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Greataxe],
+                weapons: vec![StandardWeapon::Greataxe.weapon()],
             }.monster(),
             FullOrcDefinition {
                 attributes: vec![5, 0, 3, -2, 1, 1],
@@ -272,7 +272,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 name: "Orc Veteran".to_string(),
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Greataxe, Weapon::Longbow],
+                weapons: vec![StandardWeapon::Greataxe.weapon(), StandardWeapon::Longbow.weapon()],
             }.monster(),
             FullOrcDefinition {
                 attributes: vec![6, 1, 4, -2, 2, 2],
@@ -293,7 +293,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 size: Size::Medium,
                 trained_skills: None,
                 // TODO: figure out how to make hamstring not show up for a longbow
-                weapons: vec![Weapon::Greataxe],
+                weapons: vec![StandardWeapon::Greataxe.weapon()],
             }.monster(),
             FullOrcDefinition {
                 attributes: vec![4, 0, 2, -2, 1, 0],
@@ -310,7 +310,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 name: "Orc Shaman".to_string(),
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Battleaxe],
+                weapons: vec![StandardWeapon::Battleaxe.weapon()],
             }.monster(),
         ],
     }));
@@ -333,7 +333,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Broadsword],
+                weapons: vec![StandardWeapon::Broadsword.weapon()],
             }),
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually lawful neutral".to_string(),
@@ -350,7 +350,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Warhammer],
+                weapons: vec![StandardWeapon::Warhammer.weapon()],
             }),
         ],
     }));
@@ -389,7 +389,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Spear],
+                weapons: vec![StandardWeapon::Spear.weapon()],
             }),
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually true neutral".to_string(),
@@ -407,7 +407,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
-                weapons: vec![Weapon::Spear],
+                weapons: vec![StandardWeapon::Spear.weapon()],
             }),
         ],
     }));

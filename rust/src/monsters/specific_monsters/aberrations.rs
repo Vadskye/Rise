@@ -2,7 +2,7 @@ use crate::core_mechanics::{
     Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier,
 };
 use crate::creatures::{Modifier, Monster, StandardAttack};
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Aberration;
 use crate::monsters::knowledge::Knowledge;
@@ -107,7 +107,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             Skill::Spellsense,
             Skill::Swim,
         ]),
-        weapons: vec![Weapon::Slam],
+        weapons: vec![StandardWeapon::Slam.weapon()],
     })));
 
     monsters.push(MonsterEntry::Monster(aberration(FullAberrationDefinition {
@@ -140,7 +140,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             Skill::Swim,
         ]),
         // TODO: make attacks sweeping
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
     })));
 
     return monsters;

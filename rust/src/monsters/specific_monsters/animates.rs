@@ -3,7 +3,7 @@ use crate::core_mechanics::{
     SpecialDefenseModifier, SpeedCategory,
 };
 use crate::creatures::{Modifier, Monster, StandardAttack};
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animate;
 use crate::monsters::knowledge::Knowledge;
@@ -129,7 +129,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             senses: None,
             size,
             trained_skills: Some(vec![Skill::Awareness]),
-            weapons: vec![Weapon::Slam],
+            weapons: vec![StandardWeapon::Slam.weapon()],
         });
     }
 
@@ -245,7 +245,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             senses: Some(vec![Sense::Darkvision(60)]),
             size,
             trained_skills: None,
-            weapons: vec![Weapon::Slam],
+            weapons: vec![StandardWeapon::Slam.weapon()],
         });
     }
 
