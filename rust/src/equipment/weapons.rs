@@ -187,6 +187,11 @@ impl Weapon {
         };
     }
 
+    pub fn except<F: FnOnce(&mut Self)>(mut self, f: F) -> Self {
+        f(&mut self);
+        return self;
+    }
+
     pub fn plural_name(&self) -> String {
         return format!("{}s", self.name);
     }

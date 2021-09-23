@@ -95,7 +95,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Skill::Awareness,
             Skill::Stealth,
         ]),
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![
+            StandardWeapon::MonsterBite.weapon().except(|w| w.damage_types.push(DamageType::Acid)),
+        ],
     }.monster()));
 
     return monsters;
