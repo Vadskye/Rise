@@ -507,6 +507,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
             )),
             damage_modifier: 0,
             damage_types: vec![dragon_type.damage_type()],
+            extra_defense_effect: None,
             lose_hp_effect: None,
             power_multiplier: 0.5,
             take_damage_effect: None,
