@@ -109,6 +109,13 @@ impl Monster {
             );
         }
 
+        let rank = (level + 2) / 3 + challenge_rating.rank_modifier();
+        creature.add_modifier(
+            Modifier::Maneuver(Maneuver::MonsterDamageScaling(rank)),
+            None,
+            None,
+        );
+
         return Monster {
             alignment: None,
             challenge_rating,
