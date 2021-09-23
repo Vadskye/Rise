@@ -157,9 +157,9 @@ pub fn generate_module() -> Module {
                 Her back is turned to the door.
             \\end<description>
 
-            {orc_chef}
+            {orc_butcher}
 
-            The orc chef has a -2 Awareness modifier because she is distracted by cooking, making her easy to sneak up on.
+            The orc butcher has a -2 Awareness modifier because she is distracted by cooking, making her easy to sneak up on.
             If she notices the party, she will immediately attack.
             During battle, she taunts the party by telling them that escaped prisoners make good meat.
             She prioritizes the weakest targets she can reach until they fall unconscious.
@@ -210,7 +210,7 @@ pub fn generate_module() -> Module {
 
 ",
 skeleton_guard=latex_by_name("Skeleton Guard"),
-orc_chef=latex_by_name("Orc Chef"),
+orc_butcher=latex_by_name("Orc Butcher"),
 human_cleric=latex_by_name("Human Cleric"),
 human_warrior=latex_by_name("Human Warrior"),
         ),
