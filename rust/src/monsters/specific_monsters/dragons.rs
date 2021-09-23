@@ -6,7 +6,7 @@ use crate::creatures::attack_effects::{
     AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
 use crate::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting};
-use crate::creatures::{Modifier, Monster};
+use crate::creatures::{Maneuver, Modifier, Monster};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Dragon;
@@ -37,10 +37,10 @@ impl AgeCategory {
     fn attributes(&self) -> Vec<i32> {
         match self {
             Self::Wyrmling => vec![0, 4, 2, 1, 1, 1],
-            Self::Juvenile => vec![4, 1, 4, 3, 3, 3],
+            Self::Juvenile => vec![5, 1, 4, 3, 3, 3],
             Self::Adult => vec![6, 0, 5, 4, 4, 4],
-            Self::Ancient => vec![7, -1, 7, 5, 5, 5],
-            Self::Wyrm => vec![7, -2, 7, 6, 6, 6],
+            Self::Ancient => vec![7, -1, 6, 5, 5, 5],
+            Self::Wyrm => vec![8, -2, 7, 6, 6, 6],
         }
     }
 
@@ -133,10 +133,6 @@ impl AgeCategory {
         }
     }
 
-    fn damage_rank(&self) -> i32 {
-        return ((self.level() - 1) / 3) + 2;
-    }
-
     fn name(&self) -> &str {
         match self {
             Self::Wyrmling => "Wyrmling",
@@ -156,6 +152,10 @@ impl AgeCategory {
             Self::Wyrm => Size::Colossal,
         }
     }
+}
+
+fn damage_rank(level: i32, cr: ChallengeRating) -> i32 {
+    return ((level - 1) / 3) + cr.rank_modifier();
 }
 
 enum DragonType {
@@ -487,7 +487,10 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
             None
         },
         hit: AttackEffect::Damage(DamageEffect {
-            damage_dice: DamageDice::aoe_damage(age_category.damage_rank()),
+            damage_dice: DamageDice::aoe_damage(damage_rank(
+                age_category.level() + dragon_type.level_modifier(),
+                age_category.challenge_rating(),
+            )),
             damage_modifier: 0,
             damage_types: vec![dragon_type.damage_type()],
             lose_hp_effects: None,
@@ -512,9 +515,9 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         special_attacks.push(f);
     }
 
-    let mut modifiers: Vec<Modifier> = vec![
-        Modifier::SpecialDefense(SpecialDefenseModifier::immune_damage(dragon_type.damage_type())),
-    ];
+    let mut modifiers: Vec<Modifier> = vec![Modifier::SpecialDefense(
+        SpecialDefenseModifier::immune_damage(dragon_type.damage_type()),
+    )];
     if let Some(passive_abilities) = dragon_type.passive_abilities() {
         for p in passive_abilities {
             modifiers.push(Modifier::PassiveAbility(p));
@@ -523,6 +526,10 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
     for a in special_attacks {
         modifiers.push(Modifier::Attack(a));
     }
+    let level = age_category.level() + dragon_type.level_modifier();
+    modifiers.push(Modifier::Maneuver(Maneuver::MonsterDamageScaling(
+        damage_rank(level, age_category.challenge_rating()),
+    )));
 
     return FullMonsterDefinition {
         alignment: dragon_type.alignment().to_string(),
@@ -531,7 +538,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         creature_type: Dragon,
         description: None,
         knowledge: None,
-        level: age_category.level() + dragon_type.level_modifier(),
+        level,
         modifiers: Some(modifiers),
         movement_modes: Some(vec![
             MovementMode::Land(SpeedCategory::Normal),
