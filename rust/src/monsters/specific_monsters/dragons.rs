@@ -6,7 +6,7 @@ use crate::creatures::attack_effects::{
     AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
 };
 use crate::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting};
-use crate::creatures::{Maneuver, Modifier, Monster};
+use crate::creatures::{Modifier, Monster};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Dragon;
@@ -527,9 +527,6 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         modifiers.push(Modifier::Attack(a));
     }
     let level = age_category.level() + dragon_type.level_modifier();
-    modifiers.push(Modifier::Maneuver(Maneuver::MonsterDamageScaling(
-        damage_rank(level, age_category.challenge_rating()),
-    )));
 
     return FullMonsterDefinition {
         alignment: dragon_type.alignment().to_string(),
