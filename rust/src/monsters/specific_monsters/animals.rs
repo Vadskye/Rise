@@ -275,13 +275,13 @@ pub fn animals() -> Vec<MonsterEntry> {
 
     let mut poisonous_stinger = Attack::from_weapon(Weapon::MonsterStinger);
     if let Some(e) = poisonous_stinger.damage_effect_mut() {
-        e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
+        e.lose_hp_effect = Some(attack_effects::AttackTriggeredEffect::Poison(
             attack_effects::PoisonEffect {
                 stage1: vec![Debuff::Sickened],
                 stage3_debuff: Some(vec![Debuff::Paralyzed]),
                 stage3_vital: None,
             },
-        )]);
+        ));
     }
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
         attributes: vec![1, 4, 0, -8, 2, -2],

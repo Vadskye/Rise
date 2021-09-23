@@ -1,6 +1,6 @@
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
 use crate::creatures::attack_effects::{
-    self, AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
+    self, AttackEffect, AttackEffectDuration, AttackTriggeredEffect, DamageEffect, DebuffEffect,
 };
 use crate::creatures::attacks::{
     AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting,
@@ -35,7 +35,7 @@ impl StandardAttack {
                 let mut aboleth_slam = Attack::from_weapon(Weapon::Slam);
                 aboleth_slam.name = "Sliming Tentacle".to_string();
                 if let Some(e) = aboleth_slam.damage_effect_mut() {
-                    e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
+                    e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(
                         attack_effects::PoisonEffect {
                             stage1: vec![Debuff::Nauseated],
                             stage3_debuff: None,
@@ -49,7 +49,7 @@ impl StandardAttack {
                                 ".to_string()),
                             }),
                         },
-                    )]);
+                    ));
                 }
                 aboleth_slam.glance = Some(AttackEffect::HalfDamage);
                 return aboleth_slam;
@@ -65,9 +65,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::aoe_damage(5),
                     damage_types: vec![DamageType::Energy],
                     damage_modifier: 0,
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effects: None,
+                    take_damage_effect: None,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -78,13 +78,13 @@ impl StandardAttack {
             Self::FrostwebSpiderBite => {
                 let mut frostweb_spider_bite = Attack::from_weapon(Weapon::MonsterBite);
                 if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
-                    e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
+                    e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(
                         attack_effects::PoisonEffect {
                             stage1: vec![Debuff::Slowed],
                             stage3_debuff: Some(vec![Debuff::Decelerated]),
                             stage3_vital: None,
                         },
-                    )]);
+                    ));
                 }
                 return frostweb_spider_bite;
             }
@@ -124,9 +124,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 2),
                     damage_modifier: 0,
                     damage_types: vec![DamageType::Fire],
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effects: None,
+                    take_damage_effect: None,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -148,9 +148,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_modifier: 0,
                     damage_types: vec![*damage_type],
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effects: None,
+                    take_damage_effect: None,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -184,9 +184,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_modifier: 0,
                     damage_types: vec![*damage_type],
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effects: None,
+                    take_damage_effect: None,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -218,9 +218,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
                     damage_modifier: 0,
                     damage_types: vec![DamageType::Fire],
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effects: None,
+                    take_damage_effect: None,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -247,9 +247,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::aoe_damage(*rank).add(if *rank == 7 { 2 } else { 0 }),
                     damage_modifier: 0,
                     damage_types: vec![DamageType::Cold],
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effects: None,
+                    take_damage_effect: None,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -271,9 +271,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_modifier: 0,
                     damage_types: vec![DamageType::Cold],
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effects: None,
+                    take_damage_effect: None,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -300,9 +300,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
                     damage_modifier: 0,
                     damage_types: vec![DamageType::Energy],
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effects: None,
+                    take_damage_effect: None,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -331,9 +331,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
                     damage_modifier: 0,
                     damage_types: vec![DamageType::Energy],
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effects: None,
+                    take_damage_effect: None,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -362,9 +362,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
                     damage_modifier: 0,
                     damage_types: vec![DamageType::Fire],
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effects: None,
+                    take_damage_effect: None,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -392,9 +392,9 @@ impl StandardAttack {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_modifier: 0,
                     damage_types: vec![DamageType::Energy],
-                    lose_hp_effects: None,
+                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effects: Some(vec![AttackEffect::Debuff(DebuffEffect {
+                    take_damage_effect: Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                         // TODO: add immunity after daze for early levels
                         debuffs: vec![if *rank >= 3 {
                             Debuff::Dazed
@@ -402,7 +402,7 @@ impl StandardAttack {
                             Debuff::Stunned
                         }],
                         duration: AttackEffectDuration::Brief,
-                    })]),
+                    })),
                 }),
                 is_magical: true,
                 is_strike: false,
