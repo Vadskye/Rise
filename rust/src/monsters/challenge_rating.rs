@@ -46,7 +46,7 @@ impl ChallengeRating {
             Self::One => 1.0,
             Self::Two => 1.0,
             Self::Four => 1.5,
-            Self::Six => 1.5,
+            Self::Six => 2.0,
         }
     }
 
@@ -69,8 +69,8 @@ impl ChallengeRating {
             Self::Half => 0.5,
             Self::One => 1.0,
             Self::Two => 2.0,
-            Self::Four => 3.0,
-            Self::Six => 4.0,
+            Self::Four => 2.0,
+            Self::Six => 2.0,
         }
     }
 

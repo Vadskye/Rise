@@ -121,14 +121,14 @@ fn standard_monster_statistics_level_1_cr4() {
     // HasAttacks
     assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
     assert_eq!(
-        4,
+        3,
         creature.calc_power(true),
-        "Magical power: 1 scaling * 3 cr mult + 1 wil",
+        "Magical power: 1 scaling * 2 cr mult + 1 wil",
     );
     assert_eq!(
-        6,
+        5,
         creature.calc_power(false),
-        "Mundane power: 1 scaling * 3 cr mult + 3 str",
+        "Mundane power: 1 scaling * 2 cr mult + 3 str",
     );
 
     // HasAttributes

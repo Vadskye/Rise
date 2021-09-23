@@ -25,6 +25,7 @@ impl PassiveAbility {
 pub enum StandardPassiveAbility {
     Amphibious,
     TwoActions,
+    ThreeActions,
 }
 
 impl StandardPassiveAbility {
@@ -34,6 +35,11 @@ impl StandardPassiveAbility {
                 description: "The $name can hold its breath for ten times the normal length of time.".to_string(),
                 is_magical: false,
                 name: "Amphibious".to_string(),
+            },
+            Self::ThreeActions => PassiveAbility {
+                description: "The $name can take three standard actions each round. It cannot use the same ability twice in the same round.".to_string(),
+                is_magical: false,
+                name: "Multiple Actions".to_string(),
             },
             Self::TwoActions => PassiveAbility {
                 description: "The $name can take two standard actions each round. It cannot use the same ability twice in the same round.".to_string(),

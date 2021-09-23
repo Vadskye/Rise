@@ -51,10 +51,14 @@ impl Monster {
                 None,
             );
         }
-        if challenge_rating == ChallengeRating::Four || challenge_rating == ChallengeRating::Six {
+        if challenge_rating == ChallengeRating::Four {
             creature
                 .passive_abilities
                 .push(StandardPassiveAbility::TwoActions.ability());
+        } else if challenge_rating == ChallengeRating::Six {
+            creature
+                .passive_abilities
+                .push(StandardPassiveAbility::ThreeActions.ability());
         }
 
         // Level scaling modifiers
