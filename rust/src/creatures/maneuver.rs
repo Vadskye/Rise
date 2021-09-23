@@ -1,5 +1,5 @@
 use crate::core_mechanics::{DamageType, Debuff, Defense};
-use crate::creatures::attack_effects::{AttackEffect, AttackEffectDuration, DebuffEffect};
+use crate::creatures::attack_effects::{AttackEffect, AttackEffectDuration, AttackTriggeredEffect, DebuffEffect};
 use crate::creatures::attacks::Attack;
 use crate::equipment::Weapon;
 
@@ -40,20 +40,20 @@ impl Maneuver {
                 .except_hit_damage(|d| {
                     d.damage_dice = d.damage_dice.add(-2);
                     d.power_multiplier = 0.5;
-                    d.lose_hp_effects = Some(vec![AttackEffect::Debuff(DebuffEffect {
+                    d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                         debuffs: vec![Debuff::Decelerated],
                         duration: AttackEffectDuration::Condition,
-                    })]);
+                    }));
                 }),
             Self::Hamstring(rank) => Attack::from_weapon(weapon)
                 .except(|a| a.accuracy += (rank - 1) / 2)
                 .except_hit_damage(|d| {
                     d.damage_dice = d.damage_dice.add(-1);
                     d.power_multiplier = 0.5;
-                    d.lose_hp_effects = Some(vec![AttackEffect::Debuff(DebuffEffect {
+                    d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                         debuffs: vec![Debuff::Slowed],
                         duration: AttackEffectDuration::Condition,
-                    })]);
+                    }));
                 }),
             Self::MonsterAccuracyScaling(rank) => {
                 Attack::from_weapon(weapon).except(|a| a.accuracy += (rank - 3) / 2)
