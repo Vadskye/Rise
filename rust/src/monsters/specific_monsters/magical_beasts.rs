@@ -53,7 +53,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
         alignment: "Always neutral evil".to_string(),
-        attributes: vec![0, 3, 0, 1, 2, 2],
+        attributes: vec![5, 4, 1, -8, 2, -2],
         challenge_rating: ChallengeRating::Four,
         description: None,
         knowledge: Some(Knowledge::new(vec![
