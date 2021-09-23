@@ -1,7 +1,7 @@
 use crate::core_mechanics::{DamageDice, DamageType, Debuff};
 use crate::creatures::attacks::HasAttacks;
 use crate::creatures::Creature;
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::latex_formatting;
 
 #[derive(Clone)]
@@ -120,7 +120,7 @@ impl AttackEffect {
 
     pub fn area_damage(rank: i32, damage_types: Vec<DamageType>) -> Self {
         return Self::Damage(DamageEffect {
-            damage_dice: DamageDice::new(DamageDice::d8() + rank - 1),
+            damage_dice: DamageDice::aoe_damage(rank),
             damage_modifier: 0,
             damage_types,
             lose_hp_effect: None,
@@ -131,9 +131,9 @@ impl AttackEffect {
 
     pub fn from_weapon(weapon: Weapon) -> Self {
         return Self::Damage(DamageEffect {
-            damage_dice: weapon.damage_dice(),
+            damage_dice: weapon.damage_dice,
             damage_modifier: 0,
-            damage_types: weapon.damage_types(),
+            damage_types: weapon.damage_types,
             lose_hp_effect: None,
             power_multiplier: 1.0,
             take_damage_effect: None,

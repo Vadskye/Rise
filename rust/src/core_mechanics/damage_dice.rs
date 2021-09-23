@@ -7,14 +7,14 @@ pub struct DamageDice {
 
 impl DamageDice {
     // Commonly used damage dice for weapon and spell definitions
-    pub fn d6() -> i32 {
-        return 4;
+    pub fn d6() -> Self {
+        return Self::new(4);
     }
-    pub fn d8() -> i32 {
-        return 5;
+    pub fn d8() -> Self {
+        return Self::new(5);
     }
-    pub fn d10() -> i32 {
-        return 6;
+    pub fn d10() -> Self {
+        return Self::new(6);
     }
 
     pub fn new(increments: i32) -> DamageDice {
@@ -67,11 +67,11 @@ impl DamageDice {
     }
 
     pub fn aoe_damage(rank: i32) -> Self {
-        return Self::new(Self::d8() + (rank - 1));
+        return Self::d8().add(rank - 1);
     }
 
     pub fn single_target_damage(rank: i32) -> Self {
-        return Self::new(Self::d10() + (rank - 1));
+        return Self::d10().add(rank - 1);
     }
 }
 
@@ -81,17 +81,17 @@ mod tests {
 
     #[test]
     fn standard_dice_values() {
-        let d6 = DamageDice::new(DamageDice::d6());
+        let d6 = DamageDice::d6();
         assert_eq!("1d6", d6.to_string());
-        let d8 = DamageDice::new(DamageDice::d8());
+        let d8 = DamageDice::d8();
         assert_eq!("1d8", d8.to_string());
-        let d10 = DamageDice::new(DamageDice::d10());
+        let d10 = DamageDice::d10();
         assert_eq!("1d10", d10.to_string());
     }
 
     #[test]
     fn increasing_size() {
-        let d6 = DamageDice::new(DamageDice::d6());
+        let d6 = DamageDice::d6();
         assert_eq!("1d8", d6.add(1).to_string());
         assert_eq!("1d10", d6.add(2).to_string());
         assert_eq!("2d6", d6.add(3).to_string());
@@ -100,7 +100,7 @@ mod tests {
 
     #[test]
     fn decreasing_size() {
-        let twod8 = DamageDice::new(DamageDice::d6() + 4);
+        let twod8 = DamageDice::d6().add(4);
         assert_eq!("2d8", twod8.to_string());
         assert_eq!("2d6", twod8.add(-1).to_string());
         assert_eq!("1d10", twod8.add(-2).to_string());

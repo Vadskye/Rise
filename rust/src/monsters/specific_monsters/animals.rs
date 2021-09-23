@@ -3,7 +3,7 @@ use crate::core_mechanics::{
 };
 use crate::creatures::attacks::Attack;
 use crate::creatures::{attack_effects, Modifier, Monster, StandardAttack};
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
 use crate::monsters::knowledge::Knowledge;
@@ -52,7 +52,7 @@ fn animal(def: FullAnimalDefinition) -> Monster {
 pub fn animals() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
-    let mut half_power_bite = Attack::from_weapon(Weapon::MonsterBite);
+    let mut half_power_bite = StandardWeapon::MonsterBite.weapon().attack();
     if let Some(e) = half_power_bite.damage_effect_mut() {
         e.power_multiplier = 0.5;
     }
@@ -74,7 +74,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         senses: None,
         size: Size::Medium,
         trained_skills: Some(vec![Skill::Endurance]),
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
     })));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
@@ -103,7 +103,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         trained_skills: Some(vec![
             Skill::Climb,
         ]),
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
     })));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
@@ -133,7 +133,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         senses: Some(vec![Sense::Scent]),
         size: Size::Small,
         trained_skills: Some(vec![Skill::Endurance]),
-        weapons: vec![Weapon::MonsterClaws],
+        weapons: vec![StandardWeapon::MonsterClaws.weapon()],
     })));
 
     monsters.push(MonsterEntry::MonsterGroup(
@@ -162,7 +162,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         Skill::Endurance,
                         Skill::Swim,
                     ]),
-                    weapons: vec![Weapon::MonsterBite, Weapon::MonsterClaws],
+                    weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::MonsterClaws.weapon()],
                 }),
                 animal(FullAnimalDefinition {
                     attributes: vec![5, 0, 5, -8, 0, -1],
@@ -184,7 +184,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         Skill::Endurance,
                         Skill::Swim,
                     ]),
-                    weapons: vec![Weapon::MonsterBite, Weapon::MonsterClaws],
+                    weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::MonsterClaws.weapon()],
                 }),
             ],
         }
@@ -207,7 +207,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             Skill::Flexibility,
             Skill::Stealth,
         ]),
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
     })));
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
@@ -226,7 +226,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 senses: Some(vec![Sense::Scent]),
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Awareness]),
-                weapons: vec![Weapon::MonsterBite],
+                weapons: vec![StandardWeapon::MonsterBite.weapon()],
             }),
             animal(FullAnimalDefinition {
                 attributes: vec![1, 1, 1, -7, 1, -1],
@@ -246,7 +246,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 senses: Some(vec![Sense::Scent]),
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Awareness, Skill::Endurance]),
-                weapons: vec![Weapon::MonsterBite],
+                weapons: vec![StandardWeapon::MonsterBite.weapon()],
             }),
         ],
     }));
@@ -270,10 +270,10 @@ pub fn animals() -> Vec<MonsterEntry> {
         senses: Some(vec![Sense::Tremorsense(240), Sense::Tremorsight(60)]),
         size: Size::Large,
         trained_skills: None,
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
     })));
 
-    let mut poisonous_stinger = Attack::from_weapon(Weapon::MonsterStinger);
+    let mut poisonous_stinger = StandardWeapon::MonsterStinger.weapon().attack();
     if let Some(e) = poisonous_stinger.damage_effect_mut() {
         e.lose_hp_effect = Some(attack_effects::AttackTriggeredEffect::Poison(
             attack_effects::PoisonEffect {
@@ -305,7 +305,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         trained_skills: Some(vec![
             Skill::Awareness,
         ]),
-        weapons: vec![Weapon::MonsterStinger],
+        weapons: vec![StandardWeapon::MonsterStinger.weapon()],
     },
     )));
 
@@ -333,7 +333,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 Skill::Climb,
                 Skill::Swim,
             ]),
-            weapons: vec![Weapon::MonsterBite],
+            weapons: vec![StandardWeapon::MonsterBite.weapon()],
         },
     )));
 
@@ -349,7 +349,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         senses: Some(vec![Sense::Scent]),
         size: Size::Medium,
         trained_skills: None,
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
     })));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
@@ -364,7 +364,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         senses: Some(vec![Sense::Scent]),
         size: Size::Medium,
         trained_skills: None,
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
     })));
 
     // TODO: add carrying capacity to knowledge result
@@ -374,7 +374,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 2,
         name: "Horse".to_string(),
         size: Size::Large,
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
         description: None,
         knowledge: None,
         modifiers: Some(vec![Modifier::Attack(half_power_bite.clone())]),
@@ -391,7 +391,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         name: "Pony".to_string(),
         size: Size::Medium,
         modifiers: Some(vec![Modifier::Attack(half_power_bite.clone())]),
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
         description: None,
         knowledge: None,
         movement_modes: None,
@@ -406,7 +406,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 9,
         name: "Roc".to_string(),
         size: Size::Gargantuan,
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -433,7 +433,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 6,
         name: "Vampire Eel".to_string(),
         size: Size::Medium,
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
         description: None,
         knowledge: Some(Knowledge::new(vec![(
             0,
@@ -455,7 +455,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 5,
         name: "Dire Wolf".to_string(),
         size: Size::Large,
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
         description: None,
         knowledge: Some(Knowledge::new(vec![(
             0,
@@ -478,7 +478,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 1,
         name: "Raven".to_string(),
         size: Size::Small,
-        weapons: vec![Weapon::MonsterTalons],
+        weapons: vec![StandardWeapon::MonsterTalons.weapon()],
         description: None,
         knowledge: None,
         modifiers: None,
@@ -496,7 +496,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 7,
         name: "Giant Bombardier Beetle".to_string(),
         size: Size::Large,
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
