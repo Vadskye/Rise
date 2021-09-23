@@ -1,6 +1,6 @@
 use crate::core_mechanics::{DamageType, Defense, MovementMode, Sense, Size, SpeedCategory};
 use crate::creatures::{Modifier, Monster, StandardAttack};
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::MagicalBeast;
 use crate::monsters::knowledge::Knowledge;
@@ -95,7 +95,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Skill::Awareness,
             Skill::Stealth,
         ]),
-        weapons: vec![Weapon::MonsterBite],
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
     }.monster()));
 
     return monsters;

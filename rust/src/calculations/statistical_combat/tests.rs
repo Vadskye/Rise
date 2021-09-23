@@ -3,7 +3,7 @@ use crate::core_mechanics::Defense;
 use crate::creatures::{
     Character, Creature, CreatureCategory, HasModifiers, Modifier, Monster, StandardAttack,
 };
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::ChallengeRating;
 
 #[cfg(test)]
@@ -13,7 +13,7 @@ mod calculate_hit_probability {
     #[test]
     fn simple_hit_probability() {
         let hit_probability =
-            calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 6);
+            calculate_hit_probability(&StandardWeapon::Broadsword.weapon().attack(), 0, 6);
         assert_eq!(
             "0.500 single, 0.055 crit",
             hit_probability.short_description(),
@@ -21,14 +21,14 @@ mod calculate_hit_probability {
         );
 
         let hit_probability =
-            calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 0);
+            calculate_hit_probability(&StandardWeapon::Broadsword.weapon().attack(), 0, 0);
         assert_eq!(
             "1.000 single, 0.111 crit",
             hit_probability.short_description(),
             "Should be around 100% with +0 vs 0",
         );
 
-        let hit_probability = calculate_hit_probability(&Attack::from_weapon(Weapon::Claw), 1, 10);
+        let hit_probability = calculate_hit_probability(&StandardWeapon::Claw.weapon().attack(), 1, 10);
         assert_eq!(
             "0.400 single, 0.044 crit",
             hit_probability.short_description(),
@@ -39,7 +39,7 @@ mod calculate_hit_probability {
     #[test]
     fn extreme_hit_probability() {
         let hit_probability =
-            calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 0, 16);
+            calculate_hit_probability(&StandardWeapon::Broadsword.weapon().attack(), 0, 16);
         assert_eq!(
             "0.050 single, 0.005 crit",
             hit_probability.short_description(),
@@ -47,7 +47,7 @@ mod calculate_hit_probability {
         );
 
         let hit_probability =
-            calculate_hit_probability(&Attack::from_weapon(Weapon::Broadsword), 10, 6);
+            calculate_hit_probability(&StandardWeapon::Broadsword.weapon().attack(), 10, 6);
         assert_eq!(
             "1.000 single, 0.555 crit",
             hit_probability.short_description(),
@@ -57,7 +57,7 @@ mod calculate_hit_probability {
 
     #[test]
     fn glance_probability() {
-        let attack = &Attack::from_weapon(Weapon::Broadsword);
+        let attack = &StandardWeapon::Broadsword.weapon().attack();
         assert_eq!(
             "0.200",
             format!("{:.3}", calculate_glance_probability(attack, 0, 6),),
@@ -210,7 +210,7 @@ mod calc_individual_dpr {
             "Defender should have all defenses 0",
         );
 
-        attacker.add_special_attack(Attack::from_weapon(Weapon::Broadsword));
+        attacker.add_special_attack(StandardWeapon::Broadsword.weapon().attack());
         assert_eq!(
             "5.000",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
@@ -236,7 +236,7 @@ mod calc_individual_dpr {
     fn damage_per_round_with_modifier() {
         let mut attacker = Creature::new(1, CreatureCategory::Character);
         let mut defender = Creature::new(1, CreatureCategory::Character);
-        attacker.add_special_attack(Attack::from_weapon(Weapon::Broadsword));
+        attacker.add_special_attack(StandardWeapon::Broadsword.weapon().attack());
         attacker.add_modifier(Modifier::MundanePower(2), None, None);
         assert_eq!(
             "7.000",

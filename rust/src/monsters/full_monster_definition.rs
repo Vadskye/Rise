@@ -1,7 +1,7 @@
 use crate::core_mechanics::{Attribute, HasAttributes, MovementMode, Sense, Size, SpeedCategory};
 use crate::creatures::Monster;
 use crate::creatures::{HasModifiers, Modifier};
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
 use crate::skills::{HasSkills, Skill};
 

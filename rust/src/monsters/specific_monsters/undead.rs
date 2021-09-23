@@ -1,6 +1,6 @@
 use crate::core_mechanics::{MovementMode, Sense, Size};
 use crate::creatures::{Modifier, Monster};
-use crate::equipment::Weapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
 use crate::monsters::knowledge::Knowledge;
@@ -66,7 +66,7 @@ pub fn undeads() -> Vec<MonsterEntry> {
             senses: None,
             size: Size::Medium,
             trained_skills: None,
-            weapons: vec![Weapon::Scimitar],
+            weapons: vec![StandardWeapon::Scimitar.weapon()],
         })],
     }));
 

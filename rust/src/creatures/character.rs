@@ -2,7 +2,7 @@ use super::creature::CreatureCategory;
 use crate::classes::{calc_rank_abilities, Class, ClassArchetype};
 use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasResources, Resource};
 use crate::creatures::{creature, latex, HasModifiers, Modifier};
-use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, Weapon};
+use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, StandardWeapon, Weapon};
 
 pub struct Character {
     archetypes: [ClassArchetype; 3],
@@ -61,7 +61,7 @@ impl Character {
             ],
         );
 
-        character.creature.weapons.push(Weapon::Broadsword);
+        character.creature.weapons.push(StandardWeapon::Broadsword.weapon());
         character
             .creature
             .add_armor(standard_armor_by_level(level, ArmorUsageClass::Heavy));
@@ -107,7 +107,7 @@ impl Character {
             ],
         );
 
-        character.creature.weapons.push(Weapon::Greataxe);
+        character.creature.weapons.push(StandardWeapon::Greataxe.weapon());
         character
             .creature
             .add_armor(standard_armor_by_level(level, ArmorUsageClass::Heavy));
@@ -152,7 +152,7 @@ impl Character {
             ],
         );
 
-        character.creature.weapons.push(Weapon::Greataxe);
+        character.creature.weapons.push(StandardWeapon::Greataxe.weapon());
         character
             .creature
             .add_armor(standard_armor_by_level(level, ArmorUsageClass::Medium));

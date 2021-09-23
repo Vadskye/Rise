@@ -1,7 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
 use crate::core_mechanics::{Defense, Resource};
-use crate::equipment::{Armor, ArmorUsageClass, Weapon, WeaponGroup};
+use crate::equipment::{Armor, ArmorUsageClass, StandardWeapon, Weapon, WeaponGroup};
 use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};
 use std::fmt;
@@ -503,7 +503,7 @@ impl Class {
             Self::Druid => WeaponProficiencies {
                 custom_weapon_groups: 0,
                 specific_weapon_groups: None,
-                specific_weapons: Some(vec![Weapon::Scimitar, Weapon::Sickle]),
+                specific_weapons: Some(vec![StandardWeapon::Scimitar.weapon(), StandardWeapon::Sickle.weapon()]),
                 simple_weapons: true,
             },
             Self::Fighter => WeaponProficiencies {
@@ -537,7 +537,7 @@ impl Class {
             Self::Rogue => WeaponProficiencies {
                 custom_weapon_groups: 1,
                 specific_weapon_groups: None,
-                specific_weapons: Some(vec![Weapon::Sap]),
+                specific_weapons: Some(vec![StandardWeapon::Sap.weapon()]),
                 simple_weapons: true,
             },
             Self::Sorcerer => WeaponProficiencies {
