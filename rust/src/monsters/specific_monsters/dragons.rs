@@ -36,11 +36,11 @@ impl AgeCategory {
 
     fn attributes(&self) -> Vec<i32> {
         match self {
-            Self::Wyrmling => vec![-1, 3, 1, 0, 0, 0],
-            Self::Juvenile => vec![3, 1, 2, 1, 1, 1],
-            Self::Adult => vec![4, 0, 3, 2, 2, 2],
-            Self::Ancient => vec![6, -1, 4, 3, 3, 3],
-            Self::Wyrm => vec![8, -2, 5, 4, 4, 4],
+            Self::Wyrmling => vec![0, 4, 2, 1, 1, 1],
+            Self::Juvenile => vec![4, 1, 4, 3, 3, 3],
+            Self::Adult => vec![6, 0, 5, 4, 4, 4],
+            Self::Ancient => vec![7, -1, 7, 5, 5, 5],
+            Self::Wyrm => vec![7, -2, 7, 6, 6, 6],
         }
     }
 
@@ -64,6 +64,16 @@ impl AgeCategory {
             Self::Wyrm => AreaSize::Gargantuan,
         };
         return AttackTargeting::Cone(size, AreaTargets::Everything);
+    }
+
+    fn challenge_rating(&self) -> ChallengeRating {
+        match self {
+            Self::Wyrmling => ChallengeRating::Two,
+            Self::Juvenile => ChallengeRating::Four,
+            Self::Adult => ChallengeRating::Four,
+            Self::Ancient => ChallengeRating::Six,
+            Self::Wyrm => ChallengeRating::Six,
+        }
     }
 
     fn glancing_blow(&self) -> bool {
@@ -268,7 +278,7 @@ impl DragonType {
                     Adult dragons naturally corrupt the areas around their lairs.
                     Good farmland becomes marshy and impassable, and trees become twisted and rotten.
                     Creatures in the area feel a mental pressure to be more cruel and sadistic.
-                    This warps the behavior of the few ordinary animals that remain, as well as the repitilian creatures that thrive in such conditions.
+                    This warps the behavior of the few ordinary animals that remain, as well as the reptilian creatures that thrive in such conditions.
                 "),
             ]),
             Self::Blue => Knowledge::new(vec![
@@ -517,7 +527,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
     return FullMonsterDefinition {
         alignment: dragon_type.alignment().to_string(),
         attributes,
-        challenge_rating: ChallengeRating::Four,
+        challenge_rating: age_category.challenge_rating(),
         creature_type: Dragon,
         description: None,
         knowledge: None,
