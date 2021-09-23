@@ -196,10 +196,7 @@ impl AttackEffect {
                 );
             }
             Self::HalfDamage => {
-                return format!(
-                    "{the_subject} takes half damage.",
-                    the_subject = the_subject
-                );
+                return "Half damage.".to_string();
             }
             Self::Poison(effect) => {
                 return format!(
