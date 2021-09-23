@@ -1,5 +1,5 @@
 use crate::core_mechanics::{MovementMode, Sense, Size, SpeedCategory, StandardPassiveAbility};
-use crate::creatures::{Modifier, Monster, StandardAttack};
+use crate::creatures::{Maneuver, Modifier, Monster, StandardAttack};
 use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Humanoid;
@@ -215,11 +215,13 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         ])),
         monsters: vec![
             FullOrcDefinition {
-                attributes: vec![5, 0, 2, -2, 1, 0],
+                attributes: vec![4, 0, 2, -2, 2, 0],
                 challenge_rating: ChallengeRating::Two,
                 knowledge: None,
-                level: 1,
-                modifiers: None,
+                level: 2,
+                modifiers: Some(vec![
+                    Modifier::Maneuver(Maneuver::CrushingStrike(1)),
+                ]),
                 name: "Orc Butcher".to_string(),
                 size: Size::Medium,
                 trained_skills: None,
@@ -228,13 +230,87 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             FullOrcDefinition {
                 attributes: vec![4, 0, 2, -2, 1, 0],
                 challenge_rating: ChallengeRating::One,
-                knowledge: None,
-                level: 1,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Orc grunts are the standard warrior that orc clans field in battle.
+                    "),
+                ])),
+                level: 2,
                 modifiers: None,
                 name: "Orc Grunt".to_string(),
                 size: Size::Medium,
                 trained_skills: None,
                 weapons: vec![Weapon::Greataxe],
+            }.monster(),
+            FullOrcDefinition {
+                attributes: vec![3, 0, 1, -2, 0, 0],
+                challenge_rating: ChallengeRating::Half,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Orc peons are the weakest warrior that orc clans field in battle.
+                        They have the lowest status of any adult in orc society.
+                    "),
+                ])),
+                level: 1,
+                modifiers: None,
+                name: "Orc Peon".to_string(),
+                size: Size::Medium,
+                trained_skills: None,
+                weapons: vec![Weapon::Greataxe],
+            }.monster(),
+            FullOrcDefinition {
+                attributes: vec![5, 0, 3, -2, 1, 1],
+                challenge_rating: ChallengeRating::Two,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Orc veterans are battle-hardened elite warriors who are deadly at any range.
+                        They often serve as bodyguards to orc chieftains or as devastating shock troops in battle.
+                    "),
+                ])),
+                level: 5,
+                modifiers: Some(vec![Modifier::Maneuver(Maneuver::PowerStrike(2))]),
+                name: "Orc Veteran".to_string(),
+                size: Size::Medium,
+                trained_skills: None,
+                weapons: vec![Weapon::Greataxe, Weapon::Longbow],
+            }.monster(),
+            FullOrcDefinition {
+                attributes: vec![6, 1, 4, -2, 2, 2],
+                challenge_rating: ChallengeRating::Four,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Orc clan chiefs are the among the most powerful orc warriors.
+                        Even the lowest clan chiefs commands hundreds of powerful orc warriors, plus at least as many noncombatants.
+                    "),
+                ])),
+                level: 6,
+                modifiers: Some(vec![
+                    Modifier::MovementSpeed(10),
+                    Modifier::Maneuver(Maneuver::GreaterHamstring(3)),
+                    Modifier::Maneuver(Maneuver::PowerStrike(3)),
+                ]),
+                name: "Orc Clan Chief".to_string(),
+                size: Size::Medium,
+                trained_skills: None,
+                // TODO: figure out how to make hamstring not show up for a longbow
+                weapons: vec![Weapon::Greataxe],
+            }.monster(),
+            FullOrcDefinition {
+                attributes: vec![4, 0, 2, -2, 1, 0],
+                challenge_rating: ChallengeRating::Two,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Orc shamans provide orc battle squads with divine magical support.
+                    "),
+                ])),
+                level: 2,
+                modifiers: Some(vec![Modifier::Attack(
+                    StandardAttack::DivineJudgment(1).attack(),
+                )]),
+                name: "Orc Shaman".to_string(),
+                size: Size::Medium,
+                trained_skills: None,
+                weapons: vec![Weapon::Battleaxe],
             }.monster(),
         ],
     }));
