@@ -3,19 +3,21 @@ use rise::core_mechanics::{Attribute, HasAttributes};
 use rise::creatures::attacks::HasAttacks;
 use rise::creatures::creature::Creature;
 use rise::creatures::{Character, CreatureCategory, Maneuver};
-use rise::equipment::{StandardWeapon, Weapon};
+use rise::equipment::StandardWeapon;
 
 #[test]
 fn it_calculates_attack_counts() {
     let mut creature = Creature::new(1, CreatureCategory::Character);
     creature.weapons.push(StandardWeapon::Broadsword.weapon());
-    creature.add_special_attack(Maneuver::CertainStrike(1).attack(StandardWeapon::Broadsword.weapon()));
+    creature
+        .add_special_attack(Maneuver::CertainStrike(1).attack(StandardWeapon::Broadsword.weapon()));
     assert_eq!(
         2,
         creature.calc_all_attacks().len(),
         "Should have 2 attack, since maneuvers do not override existing weapons"
     );
-    creature.add_special_attack(Maneuver::CertainStrike(1).attack(StandardWeapon::Greatsword.weapon()));
+    creature
+        .add_special_attack(Maneuver::CertainStrike(1).attack(StandardWeapon::Greatsword.weapon()));
     assert_eq!(
         3,
         creature.calc_all_attacks().len(),
@@ -35,7 +37,8 @@ fn it_calculates_attack_effects() {
     // It's useful to have a nonzero power to make sure power multipliers are calculated correctly
     creature.set_base_attribute(Attribute::Strength, 3);
     creature.weapons.push(StandardWeapon::Broadsword.weapon());
-    creature.add_special_attack(Maneuver::CertainStrike(1).attack(StandardWeapon::Broadsword.weapon()));
+    creature
+        .add_special_attack(Maneuver::CertainStrike(1).attack(StandardWeapon::Broadsword.weapon()));
     assert_eq!(
         vec![
             "Broadsword Certain Strike +2 (The subject takes 1d4+1 slashing damage.)",
@@ -62,7 +65,10 @@ fn it_derives_elemental_strike_from_archetypes() {
     );
     // It's useful to have a nonzero power to make sure power multipliers are calculated correctly
     druid.creature.set_base_attribute(Attribute::Strength, 3);
-    druid.creature.weapons.push(StandardWeapon::Broadsword.weapon());
+    druid
+        .creature
+        .weapons
+        .push(StandardWeapon::Broadsword.weapon());
     assert_eq!(
         vec![
             "Broadsword Elemental Strike +5 (The subject takes 2d6+4 bludgeoning, fire, and slashing damage.)",

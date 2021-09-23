@@ -3,7 +3,7 @@ use crate::core_mechanics::Defense;
 use crate::creatures::{
     Character, Creature, CreatureCategory, HasModifiers, Modifier, Monster, StandardAttack,
 };
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::StandardWeapon;
 use crate::monsters::ChallengeRating;
 
 #[cfg(test)]
@@ -28,7 +28,8 @@ mod calculate_hit_probability {
             "Should be around 100% with +0 vs 0",
         );
 
-        let hit_probability = calculate_hit_probability(&StandardWeapon::Claw.weapon().attack(), 1, 10);
+        let hit_probability =
+            calculate_hit_probability(&StandardWeapon::Claw.weapon().attack(), 1, 10);
         assert_eq!(
             "0.400 single, 0.044 crit",
             hit_probability.short_description(),

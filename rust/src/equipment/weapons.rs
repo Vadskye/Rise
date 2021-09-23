@@ -1,4 +1,10 @@
-use crate::{core_mechanics::{DamageDice, DamageType, Defense}, creatures::{attack_effects::AttackEffect, attacks::{Attack, AttackTargeting}}};
+use crate::{
+    core_mechanics::{DamageDice, DamageType, Defense},
+    creatures::{
+        attack_effects::AttackEffect,
+        attacks::{Attack, AttackTargeting},
+    },
+};
 use std::fmt;
 use titlecase::titlecase;
 

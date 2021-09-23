@@ -4,7 +4,6 @@ use crate::creatures::{attack_effects, Creature, CreatureCategory, Maneuver, Mod
 use crate::equipment::{HasArmor, Weapon};
 use crate::latex_formatting;
 use std::fmt;
-use titlecase::titlecase;
 
 use super::HasModifiers;
 
@@ -105,10 +104,7 @@ impl Attack {
 
     pub fn calc_strikes(weapons: Vec<&Weapon>) -> Vec<Attack> {
         // TODO: combine maneuvers with weapons and handle non-weapon attacks
-        return weapons
-            .into_iter()
-            .map(|w| w.attack())
-            .collect();
+        return weapons.into_iter().map(|w| w.attack()).collect();
     }
 
     pub fn shorthand_description(&self, creature: &Creature) -> String {
