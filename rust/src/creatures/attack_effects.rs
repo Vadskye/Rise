@@ -18,15 +18,31 @@ pub struct DamageEffect {
     pub damage_dice: DamageDice,
     pub damage_types: Vec<DamageType>,
     pub damage_modifier: i32,
-    pub lose_hp_effects: Option<Vec<AttackEffect>>,
+    pub lose_hp_effect: Option<AttackTriggeredEffect>,
     pub power_multiplier: f64,
-    pub take_damage_effects: Option<Vec<AttackEffect>>,
+    pub take_damage_effect: Option<AttackTriggeredEffect>,
 }
 
 #[derive(Clone)]
 pub struct DebuffEffect {
     pub debuffs: Vec<Debuff>,
     pub duration: AttackEffectDuration,
+}
+
+impl DebuffEffect {
+    fn description(&self) -> String {
+        let debuff_texts = self
+            .debuffs
+            .iter()
+            .map(|d| d.latex_link())
+            .collect::<Vec<&str>>()
+            .join(", ");
+        if self.duration == AttackEffectDuration::Brief {
+            return format!("{} {}.", self.duration.description(), debuff_texts);
+        } else {
+            return format!("{} {}.", debuff_texts, self.duration.description());
+        }
+    }
 }
 
 #[derive(Clone)]
@@ -36,12 +52,55 @@ pub struct PoisonEffect {
     pub stage3_vital: Option<VitalWoundEffect>,
 }
 
+impl PoisonEffect {
+    fn description(&self) -> String {
+        let mut third_stage = if let Some(ref debuffs) = self.stage3_debuff {
+            format!(
+                        "If a creature reaches the third poison stage, it becomes {debuffs} as long as it is poisoned.",
+                        debuffs = latex_formatting::join_str_list(&debuffs.iter().map(|d| d.latex_link()).collect()).unwrap(),
+                    )
+        } else {
+            String::from("")
+        };
+        if let Some(ref vital_wound) = self.stage3_vital {
+            third_stage = format!(
+                        "If a creature reaches the third poison stage, it gains a \\glossterm<vital wound>. {special_effect}",
+                        special_effect = vital_wound.special_effect.as_deref().unwrap_or(""),
+                    )
+        }
+        let debuffs =
+            latex_formatting::join_str_list(&self.stage1.iter().map(|d| d.latex_link()).collect())
+                .unwrap();
+
+        return format!(
+            "
+                \\glossterm<poisoned>.
+                As long as it is poisoned, it is {debuffs}.
+
+                At the end of each subsequent round, make an attack with the same accuracy against each poisoned creature's Fortitude defense, as normal for poisons (see \\pcref<Poison>).
+                {third_stage}
+            ",
+            debuffs = debuffs,
+            third_stage = third_stage,
+        );
+    }
+}
+
 #[derive(Clone)]
 pub struct VitalWoundEffect {
     pub special_effect: Option<String>,
 }
 
-#[derive(Clone)]
+impl VitalWoundEffect {
+    fn description(&self) -> String {
+        return format!(
+            "gains a \\glossterm<vital wound>. {special_effect}.",
+            special_effect = self.special_effect.as_deref().unwrap_or(""),
+        );
+    }
+}
+
+#[derive(Clone, PartialEq)]
 pub enum AttackEffectDuration {
     Brief,
     Condition,
@@ -64,9 +123,9 @@ impl AttackEffect {
             damage_dice: DamageDice::new(DamageDice::d8() + rank - 1),
             damage_modifier: 0,
             damage_types,
-            lose_hp_effects: None,
+            lose_hp_effect: None,
             power_multiplier: 0.5,
-            take_damage_effects: None,
+            take_damage_effect: None,
         });
     }
 
@@ -75,9 +134,9 @@ impl AttackEffect {
             damage_dice: weapon.damage_dice(),
             damage_modifier: 0,
             damage_types: weapon.damage_types(),
-            lose_hp_effects: None,
+            lose_hp_effect: None,
             power_multiplier: 1.0,
-            take_damage_effects: None,
+            take_damage_effect: None,
         });
     }
 
@@ -90,34 +149,22 @@ impl AttackEffect {
     ) -> String {
         match self {
             Self::Damage(effect) => {
-                let take_damage_effect = if let Some(ref t) = effect.take_damage_effects {
+                let take_damage_effect = if let Some(ref effect) = effect.take_damage_effect {
                     format!(
                         "
                             Each creature damaged by this attack is {effect}
                         ",
-                        effect = latex_formatting::join_string_list(
-                            &t.iter()
-                                .map(|e| e.description(
-                                    attacker,
-                                    is_magical,
-                                    is_strike,
-                                    the_subject
-                                ))
-                                .collect()
-                        )
-                        .unwrap(),
+                        effect = effect.description(),
                     )
                 } else {
                     String::from("")
                 };
-                let lose_hp_effect = if let Some(ref t) = effect.lose_hp_effects {
+                let lose_hp_effect = if let Some(ref effect) = effect.lose_hp_effect {
                     format!(
                         "
                             Each creature that loses \\glossterm<hit points> from this attack is {effect}
                         ",
-                        effect = latex_formatting::join_string_list(
-                            &t.iter().map(|e| e.description(attacker, is_magical, is_strike, the_subject)).collect()
-                        ).unwrap(),
+                        effect = effect.description(),
                     )
                 } else {
                     String::from("")
@@ -143,14 +190,8 @@ impl AttackEffect {
             }
             Self::Debuff(effect) => {
                 return format!(
-                    "{the_subject} is {debuffs} {duration}.",
-                    debuffs = effect
-                        .debuffs
-                        .iter()
-                        .map(|d| d.latex_link())
-                        .collect::<Vec<&str>>()
-                        .join(", "),
-                    duration = effect.duration.description(),
+                    "{the_subject} is {debuffs}",
+                    debuffs = effect.description(),
                     the_subject = the_subject,
                 );
             }
@@ -161,38 +202,19 @@ impl AttackEffect {
                 );
             }
             Self::Poison(effect) => {
-                let mut third_stage = if let Some(ref debuffs) = effect.stage3_debuff {
-                    format!(
-                        "If a creature reaches the third poison stage, it becomes {debuffs} as long as it is poisoned.",
-                        debuffs = latex_formatting::join_str_list(&debuffs.iter().map(|d| d.latex_link()).collect()).unwrap(),
-                    )
-                } else {
-                    String::from("")
-                };
-                if let Some(ref vital_wound) = effect.stage3_vital {
-                    third_stage = format!(
-                        "If a creature reaches the third poison stage, it gains a \\glossterm<vital wound>. {special_effect}",
-                        special_effect = vital_wound.special_effect.as_deref().unwrap_or(""),
-                    )
-                }
                 return format!(
                     "
-                        {the_subject} is \\glossterm<poisoned>.
-                        As long as it is poisoned, it is {debuffs}.
-
-                        At the end of each subsequent round, make an attack with the same accuracy against each poisoned creature's Fortitude defense, as normal for poisons (see \\pcref<Poison>).
-                        {third_stage}
+                        {the_subject} is {poisoned}
                     ",
-                    debuffs = latex_formatting::join_str_list(&effect.stage1.iter().map(|d| d.latex_link()).collect()).unwrap(),
                     the_subject = the_subject,
-                    third_stage = third_stage,
+                    poisoned = effect.description(),
                 );
             }
             Self::VitalWound(effect) => {
                 return format!(
-                    "{the_subject} gains a \\glossterm<vital wound>. {special_effect}.",
-                    special_effect = effect.special_effect.as_deref().unwrap_or(""),
+                    "{the_subject} {vital_wound}",
                     the_subject = the_subject,
+                    vital_wound = effect.description(),
                 );
             }
         };
@@ -204,6 +226,23 @@ impl AttackEffectDuration {
         match self {
             Self::Brief => "\\glossterm{briefly}",
             Self::Condition => "as a \\glossterm{condition}",
+        }
+    }
+}
+
+#[derive(Clone)]
+pub enum AttackTriggeredEffect {
+    Debuff(DebuffEffect),
+    Poison(PoisonEffect),
+    VitalWound(VitalWoundEffect),
+}
+
+impl AttackTriggeredEffect {
+    fn description(&self) -> String {
+        match self {
+            Self::Debuff(e) => e.description(),
+            Self::Poison(e) => e.description(),
+            Self::VitalWound(e) => e.description(),
         }
     }
 }
