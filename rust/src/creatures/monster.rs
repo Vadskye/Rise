@@ -4,7 +4,7 @@ use crate::core_mechanics::{
 };
 use crate::creatures::attacks::HasAttacks;
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::StandardWeapon;
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
 use crate::skills::{HasSkills, Skill, SkillCategory};

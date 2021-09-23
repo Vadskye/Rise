@@ -503,7 +503,10 @@ impl Class {
             Self::Druid => WeaponProficiencies {
                 custom_weapon_groups: 0,
                 specific_weapon_groups: None,
-                specific_weapons: Some(vec![StandardWeapon::Scimitar.weapon(), StandardWeapon::Sickle.weapon()]),
+                specific_weapons: Some(vec![
+                    StandardWeapon::Scimitar.weapon(),
+                    StandardWeapon::Sickle.weapon(),
+                ]),
                 simple_weapons: true,
             },
             Self::Fighter => WeaponProficiencies {

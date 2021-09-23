@@ -5,7 +5,7 @@ use crate::creatures::attack_effects::{
 use crate::creatures::attacks::{
     AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting,
 };
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::StandardWeapon;
 
 pub enum StandardAttack {
     // Monster abilities

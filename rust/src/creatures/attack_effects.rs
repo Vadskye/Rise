@@ -1,7 +1,7 @@
 use crate::core_mechanics::{DamageDice, DamageType, Debuff};
 use crate::creatures::attacks::HasAttacks;
 use crate::creatures::Creature;
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::Weapon;
 use crate::latex_formatting;
 
 #[derive(Clone)]
