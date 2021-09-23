@@ -286,14 +286,16 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 level: 6,
                 modifiers: Some(vec![
                     Modifier::MovementSpeed(10),
-                    Modifier::Maneuver(Maneuver::GreaterHamstring(3)),
                     Modifier::Maneuver(Maneuver::PowerStrike(3)),
+                    Modifier::Attack(
+                        Maneuver::GreaterHamstring(3)
+                            .attack(StandardWeapon::Greataxe.weapon())
+                    ),
                 ]),
                 name: "Orc Clan Chief".to_string(),
                 size: Size::Medium,
                 trained_skills: None,
-                // TODO: figure out how to make hamstring not show up for a longbow
-                weapons: vec![StandardWeapon::Greataxe.weapon()],
+                weapons: vec![StandardWeapon::Greataxe.weapon(), StandardWeapon::Longbow.weapon()],
             }.monster(),
             FullOrcDefinition {
                 attributes: vec![4, 0, 2, -2, 1, 0],

@@ -31,6 +31,7 @@ pub enum StandardWeapon {
     MonsterClaws,
     MonsterStinger,
     MonsterTalons,
+    MonsterTentacle,
     Sap,
     Scimitar,
     Sickle,
@@ -121,6 +122,12 @@ impl StandardWeapon {
                 damage_dice: DamageDice::d6(),
                 damage_types: vec![DamageType::Piercing],
                 name: "talons".to_string(),
+            },
+            Self::MonsterTentacle => Weapon {
+                accuracy: 1,
+                damage_dice: DamageDice::d8(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "tentacles".to_string(),
             },
             Self::Sap => Weapon {
                 accuracy: 2,
