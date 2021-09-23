@@ -1,6 +1,6 @@
 use crate::creatures::Monster;
 use crate::monsters::specific_monsters::{
-    aberrations, animals, animates, dragons, humanoids, undeads,
+    aberrations, animals, animates, dragons, humanoids, magical_beasts, undeads,
 };
 use crate::monsters::{generate_stock_monsters, monster_group};
 
@@ -11,6 +11,7 @@ pub fn generate_monster_entries() -> Vec<MonsterEntry> {
     entries.append(animates().as_mut());
     entries.append(dragons().as_mut());
     entries.append(humanoids().as_mut());
+    entries.append(magical_beasts().as_mut());
     entries.append(undeads().as_mut());
 
     entries.append(generate_stock_monsters::generate_stock_monsters().as_mut());
