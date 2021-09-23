@@ -1,4 +1,5 @@
-use crate::core_mechanics::{DamageType, Defense};
+use crate::core_mechanics::{DamageType, Debuff, Defense};
+use crate::creatures::attack_effects::{AttackEffect, AttackEffectDuration, DebuffEffect};
 use crate::creatures::attacks::Attack;
 use crate::equipment::Weapon;
 
@@ -8,6 +9,8 @@ pub enum Maneuver {
     CrushingStrike(i32),
     ElementalStrike(i32),
     GenericScalingStrike(i32),
+    GreaterHamstring(i32),
+    Hamstring(i32),
     PenetratingStrike(i32),
     PowerStrike(i32),
 }
@@ -30,6 +33,26 @@ impl Maneuver {
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
             Self::GenericScalingStrike(rank) => Attack::from_weapon(weapon)
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
+            Self::GreaterHamstring(rank) => Attack::from_weapon(weapon)
+                .except(|a| a.accuracy += (rank - 3) / 2)
+                .except_hit_damage(|d| {
+                    d.damage_dice = d.damage_dice.add(-2);
+                    d.power_multiplier = 0.5;
+                    d.lose_hp_effects = Some(vec![AttackEffect::Debuff(DebuffEffect {
+                        debuffs: vec![Debuff::Decelerated],
+                        duration: AttackEffectDuration::Condition,
+                    })]);
+                }),
+            Self::Hamstring(rank) => Attack::from_weapon(weapon)
+                .except(|a| a.accuracy += (rank - 1) / 2)
+                .except_hit_damage(|d| {
+                    d.damage_dice = d.damage_dice.add(-1);
+                    d.power_multiplier = 0.5;
+                    d.lose_hp_effects = Some(vec![AttackEffect::Debuff(DebuffEffect {
+                        debuffs: vec![Debuff::Slowed],
+                        duration: AttackEffectDuration::Condition,
+                    })]);
+                }),
             Self::PenetratingStrike(rank) => Attack::from_weapon(weapon)
                 .except(|a| a.accuracy += (rank - 1) / 2)
                 .except(|a| a.defense = Defense::Reflex),
@@ -48,6 +71,8 @@ impl Maneuver {
             Self::CrushingStrike(_) => "Crushing Strike",
             Self::ElementalStrike(_) => "Elemental Strike",
             Self::GenericScalingStrike(_) => "Generic Scaling Strike",
+            Self::GreaterHamstring(_) => "Greater Hamstring",
+            Self::Hamstring(_) => "Hamstring",
             Self::PenetratingStrike(_) => "Penetrating Strike",
             Self::PowerStrike(_) => "Power Strike",
         }
