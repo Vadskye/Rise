@@ -2,6 +2,7 @@ use crate::core_mechanics::Size;
 
 #[derive(Clone)]
 pub enum MovementMode {
+    Burrow(SpeedCategory),
     Climb(SpeedCategory),
     Fly(SpeedCategory, FlightManeuverability),
     Glide(SpeedCategory),
@@ -66,6 +67,7 @@ impl MovementMode {
     pub fn calc_speed(&self, size: &Size) -> i32 {
         // TODO: figure out syntax to make this less repetitive
         match self {
+            MovementMode::Burrow(speed) => calc_speed(speed, size),
             MovementMode::Climb(speed) => calc_speed(speed, size),
             MovementMode::Fly(speed, _) => calc_speed(speed, size),
             MovementMode::Glide(speed) => calc_speed(speed, size),
@@ -89,6 +91,7 @@ impl MovementMode {
 
     pub fn name(&self) -> &str {
         match self {
+            MovementMode::Burrow(_) => "Burrow",
             MovementMode::Climb(_) => "Climb",
             MovementMode::Fly(_, _) => "Fly",
             MovementMode::Glide(_) => "Glide",

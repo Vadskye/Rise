@@ -1,5 +1,5 @@
 use crate::core_mechanics::{DamageType, Debuff, Defense};
-use crate::creatures::attack_effects::{AttackEffect, AttackEffectDuration, AttackTriggeredEffect, DebuffEffect};
+use crate::creatures::attack_effects::{AttackEffectDuration, AttackTriggeredEffect, DebuffEffect};
 use crate::creatures::attacks::Attack;
 use crate::equipment::Weapon;
 
