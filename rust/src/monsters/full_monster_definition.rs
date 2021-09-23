@@ -25,6 +25,7 @@ pub struct FullMonsterDefinition {
 impl FullMonsterDefinition {
     pub fn monster(self) -> Monster {
         let mut monster = Monster::new(self.challenge_rating, self.creature_type, self.level);
+        monster.alignment = Some(self.alignment);
         if let Some(d) = self.description {
             monster.description = Some(d.to_string());
         }
