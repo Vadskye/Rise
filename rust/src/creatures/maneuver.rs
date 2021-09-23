@@ -1,7 +1,7 @@
 use crate::core_mechanics::{DamageType, Debuff, Defense};
 use crate::creatures::attack_effects::{AttackEffectDuration, AttackTriggeredEffect, DebuffEffect};
 use crate::creatures::attacks::Attack;
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::Weapon;
 
 #[derive(Clone)]
 pub enum Maneuver {
@@ -20,22 +20,27 @@ pub enum Maneuver {
 impl Maneuver {
     pub fn attack(&self, weapon: Weapon) -> Attack {
         let mut attack = match self {
-            Self::CertainStrike(rank) => weapon.attack()
+            Self::CertainStrike(rank) => weapon
+                .attack()
                 .except(|a| a.accuracy += 2 + (rank - 1) / 2)
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add(-2)),
-            Self::CrushingStrike(rank) => weapon.attack()
+            Self::CrushingStrike(rank) => weapon
+                .attack()
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2))
                 .except(|a| a.defense = Defense::Fortitude),
             // TODO: figure out how to use the higher of two powers
-            Self::ElementalStrike(rank) => weapon.attack()
+            Self::ElementalStrike(rank) => weapon
+                .attack()
                 .except_hit_damage(|d| {
                     d.damage_types
                         .append(&mut vec![DamageType::Bludgeoning, DamageType::Fire])
                 })
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
-            Self::GenericScalingStrike(rank) => weapon.attack()
+            Self::GenericScalingStrike(rank) => weapon
+                .attack()
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
-            Self::GreaterHamstring(rank) => weapon.attack()
+            Self::GreaterHamstring(rank) => weapon
+                .attack()
                 .except(|a| a.accuracy += (rank - 3) / 2)
                 .except_hit_damage(|d| {
                     d.damage_dice = d.damage_dice.add(-2);
@@ -45,7 +50,8 @@ impl Maneuver {
                         duration: AttackEffectDuration::Condition,
                     }));
                 }),
-            Self::Hamstring(rank) => weapon.attack()
+            Self::Hamstring(rank) => weapon
+                .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
                 .except_hit_damage(|d| {
                     d.damage_dice = d.damage_dice.add(-1);
@@ -58,12 +64,15 @@ impl Maneuver {
             Self::MonsterAccuracyScaling(rank) => {
                 weapon.attack().except(|a| a.accuracy += (rank - 3) / 2)
             }
-            Self::MonsterDamageScaling(rank) => weapon.attack()
+            Self::MonsterDamageScaling(rank) => weapon
+                .attack()
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
-            Self::PenetratingStrike(rank) => weapon.attack()
+            Self::PenetratingStrike(rank) => weapon
+                .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
                 .except(|a| a.defense = Defense::Reflex),
-            Self::PowerStrike(rank) => weapon.attack()
+            Self::PowerStrike(rank) => weapon
+                .attack()
                 .except(|a| a.accuracy -= 2)
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add(2 + (rank - 1) / 2)),
         };
