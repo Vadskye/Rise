@@ -33,6 +33,7 @@ impl StandardAttack {
             // Monster abilities
             Self::AbolethSlam => {
                 let mut aboleth_slam = Attack::from_weapon(Weapon::Slam);
+                aboleth_slam.name = "Sliming Tentacle".to_string();
                 if let Some(e) = aboleth_slam.damage_effect_mut() {
                     e.lose_hp_effects = Some(vec![attack_effects::AttackEffect::Poison(
                         attack_effects::PoisonEffect {
