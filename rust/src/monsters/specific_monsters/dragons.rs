@@ -152,6 +152,17 @@ impl AgeCategory {
             Self::Wyrm => Size::Colossal,
         }
     }
+
+    fn weapons(&self) -> Vec<Weapon> {
+        let mut weapons = vec![Weapon::MonsterBite, Weapon::MonsterClaws];
+        match self {
+            Self::Adult => weapons.push(Weapon::Slam),
+            Self::Ancient => weapons.push(Weapon::Slam),
+            Self::Wyrm => weapons.push(Weapon::Slam),
+            _ => {},
+        };
+        return weapons;
+    }
 }
 
 fn damage_rank(level: i32, cr: ChallengeRating) -> i32 {
@@ -545,7 +556,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         senses: None,
         size: age_category.size(),
         trained_skills: None,
-        weapons: vec![Weapon::MonsterBite, Weapon::MonsterClaws],
+        weapons: age_category.weapons(),
     }
     .monster();
 }
