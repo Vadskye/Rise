@@ -1,5 +1,6 @@
 use crate::core_mechanics::{DamageType, Defense, MovementMode, Sense, Size, SpeedCategory};
-use crate::creatures::{Modifier, Monster, StandardAttack};
+use crate::creatures::attack_effects::AttackTriggeredEffect;
+use crate::creatures::{Maneuver, Modifier, Monster, StandardAttack};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::MagicalBeast;
@@ -52,7 +53,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
     monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
-        alignment: "Always neutral evil".to_string(),
+        alignment: "Always true neutral".to_string(),
         attributes: vec![5, 4, 1, -8, 2, -2],
         challenge_rating: ChallengeRating::Four,
         description: None,
@@ -90,14 +91,105 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         ]),
         name: "Ankheg".to_string(),
         senses: Some(vec![Sense::Darkvision(60), Sense::Tremorsense(60)]),
-        size: Size::Medium,
+        size: Size::Large,
         trained_skills: Some(vec![
             Skill::Awareness,
-            Skill::Stealth,
+            Skill::Climb,
         ]),
         weapons: vec![
             StandardWeapon::MonsterBite.weapon().except(|w| w.damage_types.push(DamageType::Acid)),
         ],
+    }.monster()));
+
+    monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
+        alignment: "Always true neutral".to_string(),
+        attributes: vec![3, 4, 1, -8, 0, 3],
+        challenge_rating: ChallengeRating::Two,
+        description: None,
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                A nightcrawler is a Large worm imbued with umbramantic power.
+                Its body is colored only in shades of gray.
+                In battle, they wriggle towards their foes and try to eat them.
+            "),
+            (5, "
+                A typical nightcrawler is about 9 feet long and weighs about 700 pounds.
+                They move slowly, but are surprisingly agile in combat.
+                They can easily contort their body to avoid attacks or wrap around the defenses of foes.
+                Nightcrawlers have several magical abilities that draw on their umbramantic power to inflict cold damage on nearby foes.
+            "),
+            (10, "
+                Nightcrawlers hate and fear light.
+                They can be driven away by light, but if they have no escape, they ferociously attack any sources of light.
+            "),
+        ])),
+        level: 7,
+        modifiers: Some(vec![
+            Modifier::Attack(
+                StandardAttack::DarkMiasma(3)
+                    .attack()
+                    .except(|a| a.name = "Crawling Darkness".to_string())
+            ),
+            Modifier::Attack(
+                StandardAttack::DarkGrasp(3)
+                    .attack()
+                    .except(|a| a.name = "Dark Embrace".to_string())
+            ),
+        ]),
+        movement_modes: Some(vec![
+            MovementMode::Climb(SpeedCategory::Slow),
+            MovementMode::Land(SpeedCategory::Slow),
+        ]),
+        name: "Nightcrawler".to_string(),
+        senses: Some(vec![Sense::Darkvision(60), Sense::Blindsense(120)]),
+        size: Size::Large,
+        trained_skills: Some(vec![
+            Skill::Climb,
+        ]),
+        weapons: vec![StandardWeapon::Slam.weapon()],
+    }.monster()));
+
+    monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
+        alignment: "Always true neutral".to_string(),
+        attributes: vec![4, 4, 1, -8, 2, -1],
+        challenge_rating: ChallengeRating::Two,
+        description: None,
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                A hydra maggot is a Large maggot-like creature that wriggles across the ground in search of food.
+                It is named for the cluster of tentacles that sprout from its heads, which it uses to grab foes so it can eat them.
+            "),
+            (5, "
+                Hydra maggots are carnivorous, but are not picky, and will feast on rotting carcasses just as happily as they will feast on fresh meat.
+                When hydra maggots attack, they can shape the tip of their tentacles into a point, allowing them to impale their foes.
+                Their tentacles are quite adept at slipping past defenses and through cracks in armor.
+            "),
+        ])),
+        level: 7,
+        modifiers: Some(vec![
+            Modifier::Attack(
+                Maneuver::PenetratingStrike(3)
+                    .attack(StandardWeapon::MonsterTentacle.weapon())
+                    .except(|a| a.name = "Impaling Tentacles".to_string())
+                    .except_hit_damage(|d| d.damage_types = vec![DamageType::Piercing])
+            ),
+            Modifier::Attack(
+                StandardWeapon::MonsterTentacle.weapon().attack()
+                    .except(|a| a.name = "Grasping Tentacles".to_string())
+                    .except_hit_damage(|d| d.extra_defense_effect = Some((Defense::Fortitude, AttackTriggeredEffect::Grappled)))
+            ),
+        ]),
+        movement_modes: Some(vec![
+            MovementMode::Climb(SpeedCategory::Slow),
+            MovementMode::Land(SpeedCategory::Slow),
+        ]),
+        name: "Hydra Maggot".to_string(),
+        senses: Some(vec![Sense::Darkvision(60)]),
+        size: Size::Large,
+        trained_skills: Some(vec![
+            Skill::Climb,
+        ]),
+        weapons: vec![StandardWeapon::MonsterTentacle.weapon()],
     }.monster()));
 
     return monsters;
