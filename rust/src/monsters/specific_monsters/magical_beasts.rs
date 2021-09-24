@@ -175,11 +175,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     .except(|a| a.name = "Impaling Tentacles".to_string())
                     .except_hit_damage(|d| d.damage_types = vec![DamageType::Piercing])
             ),
-            Modifier::Attack(
-                StandardWeapon::MonsterTentacle.weapon().attack()
-                    .except(|a| a.name = "Grasping Tentacles".to_string())
-                    .except_hit_damage(|d| d.extra_defense_effect = Some((Defense::Fortitude, AttackTriggeredEffect::Grappled)))
-            ),
+            Modifier::Maneuver(Maneuver::GraspingStrike(3)),
         ]),
         movement_modes: None,
         name: "Hydra Maggot".to_string(),
@@ -238,6 +234,46 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Skill::Climb,
         ]),
         weapons: vec![stygian_leech_bite],
+    }.monster()));
+
+    monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
+        alignment: "Always true neutral".to_string(),
+        attributes: vec![4, 4, -2, -6, 3, 0],
+        challenge_rating: ChallengeRating::Two,
+        description: None,
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                A darkmantle has a small body and a large number of strong tentacles.
+                It hides itself on walls and ceilings and drops on its foes to strangle them to death.
+            "),
+            (5, r#"
+                Darkmantles hang from ceilings using a muscular "foot" at the top of their bodies.
+                They can look like a stalactite by holding their tentacles stiffly under themeselves, or like a lump of rock by spreading their tentacles so the membrane between them covers their bodies.
+                Their shell and skin usually resemble limestone, but a darkmantle can change its color to match almost any type of stony background.
+            "#),
+            (10, "
+                A darkmantle that misses its initial attack often climbs away and tries to drop on the opponent again if there is a conveniently placed wall.
+                Otherwise, it tries to climb its opponent's body to suffocate its head.
+                Darkmantles move very slowly, so they rely heavily on stealth to ambush their foes.
+            "),
+        ])),
+        level: 2,
+        modifiers: Some(vec![
+            Modifier::Maneuver(Maneuver::GraspingStrike(1)),
+        ]),
+        movement_modes: Some(vec![
+            MovementMode::Climb(SpeedCategory::Slow),
+            MovementMode::Land(SpeedCategory::Slow),
+        ]),
+        name: "Darkmantle".to_string(),
+        senses: Some(vec![Sense::Darkvision(120)]),
+        size: Size::Small,
+        trained_skills: Some(vec![
+            Skill::Awareness,
+            Skill::Climb,
+            Skill::Stealth,
+        ]),
+        weapons: vec![StandardWeapon::MonsterTentacle.weapon()],
     }.monster()));
 
     return monsters;

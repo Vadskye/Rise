@@ -11,6 +11,7 @@ pub enum Maneuver {
     GenericScalingStrike(i32),
     GraspingStrike(i32),
     GreaterHamstring(i32),
+    GreaterGraspingStrike(i32),
     Hamstring(i32),
     MightyStrike(i32),
     MonsterAccuracyScaling(i32),
@@ -40,21 +41,40 @@ impl Maneuver {
             Self::GenericScalingStrike(rank) => weapon
                 .attack()
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
-            Self::GraspingStrike(rank) => weapon
-                .attack()
-                .except(|a| a.accuracy += (rank - 1) / 2)
-                .except_hit_damage(|d| d.extra_defense_effect = Some((Defense::Fortitude, AttackTriggeredEffect::Grappled))),
-            Self::GreaterHamstring(rank) => weapon
-                .attack()
-                .except(|a| a.accuracy += (rank - 3) / 2)
-                .except_hit_damage(|d| {
-                    d.damage_dice = d.damage_dice.add(-2);
-                    d.power_multiplier = 0.5;
-                    d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
-                        debuffs: vec![Debuff::Decelerated],
-                        duration: AttackEffectDuration::Condition,
-                    }));
-                }),
+            Self::GraspingStrike(rank) => {
+                return weapon
+                    .attack()
+                    .except(|a| a.accuracy += (rank - 1) / 2)
+                    .except_hit_damage(|d| {
+                        d.extra_defense_effect = Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
+                        d.damage_dice = d.damage_dice.add(-2);
+                        d.power_multiplier = 0.5;
+                    });
+            },
+            Self::GreaterGraspingStrike(rank) => {
+                assert_minimum_rank(5, rank, "Greater Grasping Strike");
+                return weapon
+                    .attack()
+                    .except(|a| a.accuracy += (rank - 5) / 2)
+                    .except_hit_damage(|d| {
+                        d.extra_defense_effect = Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
+                        d.damage_dice = d.damage_dice.add(-1);
+                    });
+            },
+            Self::GreaterHamstring(rank) => {
+                assert_minimum_rank(3, rank, "Greater Hamstring");
+                return weapon
+                    .attack()
+                    .except(|a| a.accuracy += (rank - 3) / 2)
+                    .except_hit_damage(|d| {
+                        d.damage_dice = d.damage_dice.add(-2);
+                        d.power_multiplier = 0.5;
+                        d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
+                            debuffs: vec![Debuff::Decelerated],
+                            duration: AttackEffectDuration::Condition,
+                        }));
+                    });
+            },
             Self::Hamstring(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
@@ -81,7 +101,7 @@ impl Maneuver {
                 .except(|a| a.accuracy += (rank - 1) / 2)
                 .except(|a| a.defense = Defense::Reflex),
         };
-        attack.name = format!("{} {}", self.name(), attack.name);
+        attack.name = format!("{} {}", self.name(), attack.name).trim().to_string();
         attack.replaces_weapon = if self.should_replace_weapon() {
             Some(weapon)
         } else {
@@ -97,6 +117,7 @@ impl Maneuver {
             Self::ElementalStrike(_) => "Elemental",
             Self::GenericScalingStrike(_) => "Generic Scaling",
             Self::GraspingStrike(_) => "Grasping",
+            Self::GreaterGraspingStrike(_) => "Greater Grasping",
             Self::GreaterHamstring(_) => "Greater Hamstring",
             Self::Hamstring(_) => "Hamstring",
             Self::MightyStrike(_) => "Mighty",
@@ -112,5 +133,11 @@ impl Maneuver {
             Self::MonsterDamageScaling(_) => true,
             _ => false,
         }
+    }
+}
+
+fn assert_minimum_rank(minimum_rank: i32, actual_rank: &i32, name: &str) {
+    if actual_rank < &minimum_rank {
+        panic!("Maneuver {} requires minimum rank {}", name, minimum_rank);
     }
 }
