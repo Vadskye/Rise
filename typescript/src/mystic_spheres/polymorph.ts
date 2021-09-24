@@ -52,7 +52,7 @@ export const polymorph: MysticSphere = {
       name: "Natural Weapon",
 
       effect: `
-        You gain your choice of one of the following \\glossterm{natural weapons}: bite, claw, constrict, gore, ram, slam, or talon.
+        You gain your choice of one of the following \\glossterm{natural weapons}: bite, claw, gore, ram, slam, or talon.
         For details, see \\tref{Natural Weapons}.
       `,
       focus: false,
