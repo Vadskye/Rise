@@ -265,7 +265,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![
                 Modifier::Maneuver(Maneuver::CertainStrike(1)),
                 Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
-                Modifier::Maneuver(Maneuver::PowerStrike(1)),
+                Modifier::Maneuver(Maneuver::MightyStrike(1)),
             ]),
         },
         RankAbility {
@@ -276,7 +276,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![
                 Modifier::Maneuver(Maneuver::CertainStrike(3)),
                 Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
-                Modifier::Maneuver(Maneuver::PowerStrike(3)),
+                Modifier::Maneuver(Maneuver::MightyStrike(3)),
             ]),
         },
         RankAbility {
@@ -287,7 +287,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![
                 Modifier::Maneuver(Maneuver::CertainStrike(5)),
                 Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
-                Modifier::Maneuver(Maneuver::PowerStrike(5)),
+                Modifier::Maneuver(Maneuver::MightyStrike(5)),
             ]),
         },
         RankAbility {
@@ -298,7 +298,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![
                 Modifier::Maneuver(Maneuver::CertainStrike(7)),
                 Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
-                Modifier::Maneuver(Maneuver::PowerStrike(7)),
+                Modifier::Maneuver(Maneuver::MightyStrike(7)),
             ]),
         },
         RankAbility {

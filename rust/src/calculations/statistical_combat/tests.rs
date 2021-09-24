@@ -86,7 +86,7 @@ mod calculate_hit_probability {
         let level = 1;
         let attacker = Character::standard_character(level, true).creature;
         let attack = attacker
-            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         let expected_hit_probability = vec![
             "0.500 single, 0.055 crit",
@@ -116,7 +116,7 @@ mod calculate_hit_probability {
         let level = 20;
         let attacker = Character::standard_character(level, true).creature;
         let attack = attacker
-            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         let expected_hit_probability = vec![
             "0.400 single, 0.044 crit",
@@ -146,7 +146,7 @@ mod calculate_hit_probability {
         let level = 1;
         let attacker = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
         let attack = attacker
-            .get_attack_by_name("Slam Generic Scaling Strike")
+            .get_attack_by_name("Generic Scaling Slam")
             .unwrap();
         assert_eq!(
             "0.500 single, 0.055 crit",
@@ -166,7 +166,7 @@ mod calculate_hit_probability {
         let level = 20;
         let attacker = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
         let attack = attacker
-            .get_attack_by_name("Slam Generic Scaling Strike")
+            .get_attack_by_name("Generic Scaling Slam")
             .unwrap();
         assert_eq!(
             "0.600 single, 0.066 crit",
@@ -368,7 +368,7 @@ mod calc_attack_damage_per_round {
         assert_eq!(7, defender.calc_defense(&Defense::Armor));
 
         let certain_strike = attacker
-            .get_attack_by_name("Broadsword Certain Strike")
+            .get_attack_by_name("Certain Broadsword")
             .unwrap();
         assert_eq!(
             "3.342",
@@ -380,7 +380,7 @@ mod calc_attack_damage_per_round {
         );
 
         let generic = attacker
-            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         assert_eq!(
             "3.498",
@@ -392,7 +392,7 @@ mod calc_attack_damage_per_round {
         );
 
         let power_strike = attacker
-            .get_attack_by_name("Broadsword Power Strike")
+            .get_attack_by_name("Mighty Broadsword")
             .unwrap();
         assert_eq!(
             "2.931",
@@ -400,7 +400,7 @@ mod calc_attack_damage_per_round {
                 "{:.3}",
                 calc_attack_damage_per_round(&power_strike, &attacker, &defender)
             ),
-            "Power Strike: 9 dph * 0.3 hit % + 7 dpc * 0.033 crit % = 2.7 + .231 dpr",
+            "Mighty Strike: 9 dph * 0.3 hit % + 7 dpc * 0.033 crit % = 2.7 + .231 dpr",
         );
 
         assert_eq!(
@@ -417,7 +417,7 @@ mod calc_attack_damage_per_round {
         assert_eq!(7, defender.calc_defense(&Defense::Armor));
 
         let certain_strike = attacker
-            .get_attack_by_name("Broadsword Certain Strike")
+            .get_attack_by_name("Certain Broadsword")
             .unwrap();
         assert_eq!(
             "3.342",
@@ -429,7 +429,7 @@ mod calc_attack_damage_per_round {
         );
 
         let generic = attacker
-            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         assert_eq!(
             "3.498",
@@ -441,7 +441,7 @@ mod calc_attack_damage_per_round {
         );
 
         let power_strike = attacker
-            .get_attack_by_name("Broadsword Power Strike")
+            .get_attack_by_name("Mighty Broadsword")
             .unwrap();
         assert_eq!(
             "2.931",
@@ -449,7 +449,7 @@ mod calc_attack_damage_per_round {
                 "{:.3}",
                 calc_attack_damage_per_round(&power_strike, &attacker, &defender)
             ),
-            "Power Strike: 9 dph * 0.3 hit % + 7 dpc * 0.033 crit % = 2.7 + .231 dpr",
+            "Mighty Strike: 9 dph * 0.3 hit % + 7 dpc * 0.033 crit % = 2.7 + .231 dpr",
         );
 
         assert_eq!(
@@ -468,7 +468,7 @@ mod calc_attack_damage_per_round {
         assert_eq!(4, defender.calc_defense(&Defense::Armor));
 
         let certain_strike = attacker
-            .get_attack_by_name("Broadsword Certain Strike")
+            .get_attack_by_name("Certain Broadsword")
             .unwrap();
         assert_eq!(
             "4.775",
@@ -480,7 +480,7 @@ mod calc_attack_damage_per_round {
         );
 
         let generic = attacker
-            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         assert_eq!(
             "5.596",
@@ -492,7 +492,7 @@ mod calc_attack_damage_per_round {
         );
 
         let power_strike = attacker
-            .get_attack_by_name("Broadsword Power Strike")
+            .get_attack_by_name("Mighty Broadsword")
             .unwrap();
         assert_eq!(
             "5.862",
@@ -500,13 +500,13 @@ mod calc_attack_damage_per_round {
                 "{:.3}",
                 calc_attack_damage_per_round(&power_strike, &attacker, &defender)
             ),
-            "Power Strike: 9 dph * 0.6 hit % + 7 dpc * 0.066 crit % = 5.4 + 0.462 dpr",
+            "Mighty Strike: 9 dph * 0.6 hit % + 7 dpc * 0.066 crit % = 5.4 + 0.462 dpr",
         );
 
         assert_eq!(
             calc_attack_damage_per_round(&power_strike, &attacker, &defender),
             calc_individual_dpr(&attacker, &defender),
-            "Power Strike should be the best attack",
+            "Mighty Strike should be the best attack",
         );
     }
 
@@ -517,7 +517,7 @@ mod calc_attack_damage_per_round {
         assert_eq!(13, defender.calc_defense(&Defense::Armor));
 
         let certain_strike = attacker
-            .get_attack_by_name("Broadsword Certain Strike")
+            .get_attack_by_name("Certain Broadsword")
             .unwrap();
         assert_eq!(
             "12.546",
@@ -529,7 +529,7 @@ mod calc_attack_damage_per_round {
         );
 
         let generic = attacker
-            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         assert_eq!(
             "11.295",
@@ -541,7 +541,7 @@ mod calc_attack_damage_per_round {
         );
 
         let power_strike = attacker
-            .get_attack_by_name("Broadsword Power Strike")
+            .get_attack_by_name("Mighty Broadsword")
             .unwrap();
         assert_eq!(
             "9.662",
@@ -549,7 +549,7 @@ mod calc_attack_damage_per_round {
                 "{:.3}",
                 calc_attack_damage_per_round(&power_strike, &attacker, &defender)
             ),
-            "Power Strike: 23 dph * 0.3 hit % + 14 dpc * 0.033 crit % + 11.5 dpg * 0.2 glance % = 6.9 + 0.462 + 2.3 dpr",
+            "Mighty Strike: 23 dph * 0.3 hit % + 14 dpc * 0.033 crit % + 11.5 dpg * 0.2 glance % = 6.9 + 0.462 + 2.3 dpr",
         );
 
         assert_eq!(
@@ -566,7 +566,7 @@ mod calc_attack_damage_per_round {
         assert_eq!(19, defender.calc_defense(&Defense::Armor));
 
         let certain_strike = attacker
-            .get_attack_by_name("Broadsword Certain Strike")
+            .get_attack_by_name("Certain Broadsword")
             .unwrap();
         assert_eq!(
             "30.836",
@@ -578,7 +578,7 @@ mod calc_attack_damage_per_round {
         );
 
         let generic = attacker
-            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         assert_eq!(
             "29.444",
@@ -590,7 +590,7 @@ mod calc_attack_damage_per_round {
         );
 
         let power_strike = attacker
-            .get_attack_by_name("Broadsword Power Strike")
+            .get_attack_by_name("Mighty Broadsword")
             .unwrap();
         assert_eq!(
             "21.039",
@@ -598,7 +598,7 @@ mod calc_attack_damage_per_round {
                 "{:.3}",
                 calc_attack_damage_per_round(&power_strike, &attacker, &defender)
             ),
-            "Power Strike",
+            "Mighty Strike",
         );
 
         assert_eq!(
@@ -617,7 +617,7 @@ mod calc_attack_damage_per_round {
         assert_eq!(16, defender.calc_defense(&Defense::Armor));
 
         let certain_strike = attacker
-            .get_attack_by_name("Broadsword Certain Strike")
+            .get_attack_by_name("Certain Broadsword")
             .unwrap();
         assert_eq!(
             "34.108",
@@ -629,7 +629,7 @@ mod calc_attack_damage_per_round {
         );
 
         let generic = attacker
-            .get_attack_by_name("Broadsword Generic Scaling Strike")
+            .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         assert_eq!(
             "47.364",
@@ -641,7 +641,7 @@ mod calc_attack_damage_per_round {
         );
 
         let power_strike = attacker
-            .get_attack_by_name("Broadsword Power Strike")
+            .get_attack_by_name("Mighty Broadsword")
             .unwrap();
         assert_eq!(
             "42.623",
@@ -649,7 +649,7 @@ mod calc_attack_damage_per_round {
                 "{:.3}",
                 calc_attack_damage_per_round(&power_strike, &attacker, &defender)
             ),
-            "Power Strike",
+            "Mighty Strike",
         );
 
         assert_eq!(

@@ -101,7 +101,7 @@ impl DamageEffect {
             take_damage_effect = take_damage_effect.trim(),
             lose_hp_effect = lose_hp_effect.trim(),
             vampiric_healing = vampiric_healing.trim(),
-        );
+        ).trim().to_string();
     }
 }
 

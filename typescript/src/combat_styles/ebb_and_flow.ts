@@ -191,7 +191,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Power Strike",
+      name: "Mighty Strike",
 
       effect: `
         Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
