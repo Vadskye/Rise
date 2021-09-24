@@ -179,10 +179,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     .except_hit_damage(|d| d.extra_defense_effect = Some((Defense::Fortitude, AttackTriggeredEffect::Grappled)))
             ),
         ]),
-        movement_modes: Some(vec![
-            MovementMode::Climb(SpeedCategory::Slow),
-            MovementMode::Land(SpeedCategory::Slow),
-        ]),
+        movement_modes: None,
         name: "Hydra Maggot".to_string(),
         senses: Some(vec![Sense::Darkvision(60)]),
         size: Size::Large,
