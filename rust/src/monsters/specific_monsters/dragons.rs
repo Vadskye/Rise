@@ -511,6 +511,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
             lose_hp_effect: None,
             power_multiplier: 0.5,
             take_damage_effect: None,
+            vampiric_healing: None,
         }),
         is_magical: false,
         is_strike: false,

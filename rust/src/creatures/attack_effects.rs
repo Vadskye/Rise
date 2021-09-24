@@ -1,6 +1,6 @@
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
 use crate::creatures::attacks::HasAttacks;
-use crate::creatures::Creature;
+use crate::creatures::{Creature, CreatureCategory};
 use crate::equipment::Weapon;
 use crate::latex_formatting;
 use titlecase::titlecase;
@@ -10,6 +10,7 @@ pub enum AttackEffect {
     Damage(DamageEffect),
     Debuff(DebuffEffect),
     HalfDamage,
+    Healing(HealingEffect),
     Knockback(i32),
     Poison(PoisonEffect),
     Push(i32),
@@ -25,6 +26,7 @@ pub struct DamageEffect {
     pub lose_hp_effect: Option<AttackTriggeredEffect>,
     pub power_multiplier: f64,
     pub take_damage_effect: Option<AttackTriggeredEffect>,
+    pub vampiric_healing: Option<HealingEffect>,
 }
 
 impl DamageEffect {
@@ -63,6 +65,18 @@ impl DamageEffect {
             "".to_string()
         };
 
+        let vampiric_healing = if let Some(ref effect) = self.vampiric_healing {
+            format!(
+                "
+                    If any creature loses \\glossterm<hit points> from this attack, {regain} {effect}
+                ",
+                effect = effect.description(attacker),
+                regain = if attacker.is_character() { "you regain" } else { "the $name regains" },
+            )
+        } else {
+            "".to_string()
+        };
+
         let damage_modifier = self.damage_modifier
             + (attacker.calc_power(is_magical) as f64 * self.power_multiplier) as i32;
         let mut damage_types = self.damage_types.clone();
@@ -70,17 +84,23 @@ impl DamageEffect {
         return format!(
             "
                 {damage_dice}{damage_modifier} {damage_types} damage.
-                {take_damage_effect} {lose_hp_effect} {extra_defense_effect}
+                {take_damage_effect} {lose_hp_effect} {extra_defense_effect} {vampiric_healing}
             ",
             damage_dice = self
                 .damage_dice
                 .add(attacker.calc_damage_increments(is_strike))
                 .to_string(),
-            damage_modifier = if damage_modifier == 0 { "".to_string()} else { latex_formatting::modifier(damage_modifier)},
-            damage_types = latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from("")),
-            extra_defense_effect = extra_defense_effect,
+            damage_modifier = if damage_modifier == 0 {
+                "".to_string()
+            } else {
+                latex_formatting::modifier(damage_modifier)
+            },
+            damage_types =
+                latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from("")),
+            extra_defense_effect = extra_defense_effect.trim(),
             take_damage_effect = take_damage_effect.trim(),
             lose_hp_effect = lose_hp_effect.trim(),
+            vampiric_healing = vampiric_healing.trim(),
         );
     }
 }
@@ -104,6 +124,28 @@ impl DebuffEffect {
         } else {
             return format!("{} {}.", debuff_texts, self.duration.description());
         }
+    }
+}
+
+#[derive(Clone)]
+pub struct HealingEffect {
+    pub healing_dice: DamageDice,
+    pub is_magical: bool,
+    pub power_multiplier: f64,
+}
+
+impl HealingEffect {
+    fn description(&self, healer: &Creature) -> String {
+        return format!(
+            "{dice}{modifier} hit points.",
+            dice = self
+                .healing_dice
+                .add(healer.calc_damage_increments(false))
+                .to_string(),
+            modifier = latex_formatting::modifier(
+                (self.power_multiplier * healer.calc_power(self.is_magical) as f64).floor() as i32
+            ),
+        );
     }
 }
 
@@ -189,6 +231,7 @@ impl AttackEffect {
             lose_hp_effect: None,
             power_multiplier: 0.5,
             take_damage_effect: None,
+            vampiric_healing: None,
         });
     }
 
@@ -201,6 +244,7 @@ impl AttackEffect {
             lose_hp_effect: None,
             power_multiplier: 1.0,
             take_damage_effect: None,
+            vampiric_healing: None,
         });
     }
 
@@ -228,6 +272,13 @@ impl AttackEffect {
             }
             Self::HalfDamage => {
                 return "Half damage.".to_string();
+            }
+            Self::Healing(effect) => {
+                return format!(
+                    "{the_subject} {heals}",
+                    heals = effect.description(attacker),
+                    the_subject = the_subject,
+                );
             }
             Self::Knockback(feet) => {
                 return format!(

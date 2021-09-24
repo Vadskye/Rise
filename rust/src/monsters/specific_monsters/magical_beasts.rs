@@ -1,5 +1,7 @@
-use crate::core_mechanics::{DamageType, Defense, MovementMode, Sense, Size, SpeedCategory};
-use crate::creatures::attack_effects::AttackTriggeredEffect;
+use crate::core_mechanics::{
+    DamageDice, DamageType, Defense, MovementMode, Sense, Size, SpeedCategory,
+};
+use crate::creatures::attack_effects::{AttackTriggeredEffect, HealingEffect};
 use crate::creatures::{Maneuver, Modifier, Monster, StandardAttack};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -160,7 +162,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 It is named for the cluster of tentacles that sprout from its heads, which it uses to grab foes so it can eat them.
             "),
             (5, "
-                Hydra maggots are carnivorous, but are not picky, and will feast on rotting carcasses just as happily as they will feast on fresh meat.
+                Hydra maggots are carnivorous, but are not picky, and will feast on rotting carcasses just as happily as they feast on fresh meat.
                 When hydra maggots attack, they can shape the tip of their tentacles into a point, allowing them to impale their foes.
                 Their tentacles are quite adept at slipping past defenses and through cracks in armor.
             "),
@@ -187,6 +189,55 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Skill::Climb,
         ]),
         weapons: vec![StandardWeapon::MonsterTentacle.weapon()],
+    }.monster()));
+
+    let stygian_leech_bite = StandardWeapon::MonsterBite
+        .weapon()
+        .except(|w| w.damage_types.push(DamageType::Energy));
+    monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
+        alignment: "Always true neutral".to_string(),
+        attributes: vec![2, 3, 0, -6, 2, 3],
+        challenge_rating: ChallengeRating::One,
+        description: None,
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                A stygian leech is a Medium worm-like creature that feeds on life energy.
+                It uses its ability to crawl on walls and ceilings to drop on unsuspecting foes.
+            "),
+            (5, "
+                Stygian leeches instinctively avoid feeding on other stygian leeches, but will otherwise attempt to drain the life from any living creatures, regardless of danger.
+                They can instinctively sense the location of any living creatures nearby.
+                Their life-draining attacks can allow them to heal themselves.
+            "),
+            (10, "
+                Stygian leeches ignore non-living creatures entirely unless severely provoked.
+                Some non-living creatures, such as intelligent undead, take advantage of this by gathering stygian leeches to guard their homes.
+            "),
+        ])),
+        level: 7,
+        modifiers: Some(vec![
+            Modifier::Attack(
+                stygian_leech_bite.attack()
+                    .except(|a| a.name = "Leech Life".to_string())
+                    .except_hit_damage(|d| d.vampiric_healing = Some(HealingEffect {
+                            healing_dice: DamageDice::aoe_damage(3),
+                            is_magical: true,
+                            power_multiplier: 1.0,
+                        }
+                    ))
+            ),
+        ]),
+        movement_modes: Some(vec![
+            MovementMode::Climb(SpeedCategory::Normal),
+            MovementMode::Land(SpeedCategory::Normal),
+        ]),
+        name: "Stygian Leech".to_string(),
+        senses: Some(vec![Sense::Darkvision(120), Sense::Lifesense(120)]),
+        size: Size::Medium,
+        trained_skills: Some(vec![
+            Skill::Climb,
+        ]),
+        weapons: vec![stygian_leech_bite],
     }.monster()));
 
     return monsters;
