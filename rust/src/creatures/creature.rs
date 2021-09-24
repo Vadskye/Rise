@@ -113,6 +113,13 @@ impl Creature {
         return latex::format_creature(self);
     }
 
+    pub fn is_character(&self) -> bool {
+        match self.category {
+            CreatureCategory::Character => true,
+            CreatureCategory::Monster(_) => false,
+        }
+    }
+
     pub fn can_recover(&self) -> bool {
         match self.category {
             CreatureCategory::Character => true,
