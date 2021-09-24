@@ -9,12 +9,13 @@ pub enum Maneuver {
     CrushingStrike(i32),
     ElementalStrike(i32),
     GenericScalingStrike(i32),
+    GraspingStrike(i32),
     GreaterHamstring(i32),
     Hamstring(i32),
+    MightyStrike(i32),
     MonsterAccuracyScaling(i32),
     MonsterDamageScaling(i32),
     PenetratingStrike(i32),
-    PowerStrike(i32),
 }
 
 impl Maneuver {
@@ -39,6 +40,10 @@ impl Maneuver {
             Self::GenericScalingStrike(rank) => weapon
                 .attack()
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
+            Self::GraspingStrike(rank) => weapon
+                .attack()
+                .except(|a| a.accuracy += (rank - 1) / 2)
+                .except_hit_damage(|d| d.extra_defense_effect = Some((Defense::Fortitude, AttackTriggeredEffect::Grappled))),
             Self::GreaterHamstring(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy += (rank - 3) / 2)
@@ -61,6 +66,10 @@ impl Maneuver {
                         duration: AttackEffectDuration::Condition,
                     }));
                 }),
+            Self::MightyStrike(rank) => weapon
+                .attack()
+                .except(|a| a.accuracy -= 2)
+                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add(2 + (rank - 1) / 2)),
             Self::MonsterAccuracyScaling(rank) => {
                 weapon.attack().except(|a| a.accuracy += (rank - 3) / 2)
             }
@@ -71,12 +80,8 @@ impl Maneuver {
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
                 .except(|a| a.defense = Defense::Reflex),
-            Self::PowerStrike(rank) => weapon
-                .attack()
-                .except(|a| a.accuracy -= 2)
-                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add(2 + (rank - 1) / 2)),
         };
-        attack.name = format!("{} {}", attack.name, self.name());
+        attack.name = format!("{} {}", self.name(), attack.name);
         attack.replaces_weapon = if self.should_replace_weapon() {
             Some(weapon)
         } else {
@@ -85,26 +90,27 @@ impl Maneuver {
         return attack;
     }
 
+    pub fn name(&self) -> &str {
+        match self {
+            Self::CertainStrike(_) => "Certain",
+            Self::CrushingStrike(_) => "Crushing",
+            Self::ElementalStrike(_) => "Elemental",
+            Self::GenericScalingStrike(_) => "Generic Scaling",
+            Self::GraspingStrike(_) => "Grasping",
+            Self::GreaterHamstring(_) => "Greater Hamstring",
+            Self::Hamstring(_) => "Hamstring",
+            Self::MightyStrike(_) => "Mighty",
+            Self::MonsterAccuracyScaling(_) => "",
+            Self::MonsterDamageScaling(_) => "",
+            Self::PenetratingStrike(_) => "Penetrating",
+        }
+    }
+
     fn should_replace_weapon(&self) -> bool {
         match self {
             Self::MonsterAccuracyScaling(_) => true,
             Self::MonsterDamageScaling(_) => true,
             _ => false,
-        }
-    }
-
-    pub fn name(&self) -> &str {
-        match self {
-            Self::CertainStrike(_) => "Certain Strike",
-            Self::CrushingStrike(_) => "Crushing Strike",
-            Self::ElementalStrike(_) => "Elemental Strike",
-            Self::GenericScalingStrike(_) => "Generic Scaling Strike",
-            Self::GreaterHamstring(_) => "Greater Hamstring",
-            Self::Hamstring(_) => "Hamstring",
-            Self::MonsterAccuracyScaling(_) => "",
-            Self::MonsterDamageScaling(_) => "",
-            Self::PenetratingStrike(_) => "Penetrating Strike",
-            Self::PowerStrike(_) => "Power Strike",
         }
     }
 }

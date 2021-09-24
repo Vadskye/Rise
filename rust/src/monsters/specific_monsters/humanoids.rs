@@ -268,7 +268,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     "),
                 ])),
                 level: 5,
-                modifiers: Some(vec![Modifier::Maneuver(Maneuver::PowerStrike(2))]),
+                modifiers: Some(vec![Modifier::Maneuver(Maneuver::MightyStrike(2))]),
                 name: "Orc Veteran".to_string(),
                 size: Size::Medium,
                 trained_skills: None,
@@ -286,7 +286,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 level: 6,
                 modifiers: Some(vec![
                     Modifier::MovementSpeed(10),
-                    Modifier::Maneuver(Maneuver::PowerStrike(3)),
+                    Modifier::Maneuver(Maneuver::MightyStrike(3)),
                     Modifier::Attack(
                         Maneuver::GreaterHamstring(3)
                             .attack(StandardWeapon::Greataxe.weapon())
