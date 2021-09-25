@@ -395,7 +395,7 @@ def calc_hit_points():
                     ),
                     plus(),
                     underlabel(
-                        "Con * 2",
+                        "Con",
                         number_input(
                             {
                                 "disabled": True,
