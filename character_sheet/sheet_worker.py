@@ -642,7 +642,7 @@ def magical_power():
                     8: 24,
                 }}[Math.floor(level / 3)]
                 : 0;
-            level_scaling = level_scaling * challenge_rating
+            level_scaling = level_scaling * (challenge_rating
                 ? {{
                     0.5: 0.5,
                     1: 1,
@@ -650,7 +650,7 @@ def magical_power():
                     4: 2,
                     6: 2,
                 }}[challenge_rating]
-                : 0;
+                : 0);
             var magical_power_attribute = Math.floor(willpower / 2);
             setAttrs({{
                 magical_power_attribute,
@@ -682,7 +682,7 @@ def mundane_power():
                     8: 24,
                 }}[Math.floor(level / 3)]
                 : 0;
-            level_scaling = level_scaling * challenge_rating
+            level_scaling = level_scaling * (challenge_rating
                 ? {{
                     0.5: 0.5,
                     1: 1,
@@ -690,7 +690,7 @@ def mundane_power():
                     4: 2,
                     6: 2,
                 }}[challenge_rating]
-                : 0;
+                : 0);
             var mundane_power_attribute = Math.floor(strength / 2)
             setAttrs({{
                 mundane_power_attribute,
