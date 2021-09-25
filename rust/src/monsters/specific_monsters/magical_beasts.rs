@@ -1,7 +1,8 @@
 use crate::core_mechanics::{
-    DamageDice, DamageType, Defense, MovementMode, Sense, Size, SpeedCategory,
+    DamageDice, DamageType, Defense, FlightManeuverability, MovementMode, Sense, Size,
+    SpeedCategory,
 };
-use crate::creatures::attack_effects::{AttackTriggeredEffect, HealingEffect};
+use crate::creatures::attack_effects::HealingEffect;
 use crate::creatures::{Maneuver, Modifier, Monster, StandardAttack};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -274,6 +275,45 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Skill::Stealth,
         ]),
         weapons: vec![StandardWeapon::MonsterTentacle.weapon()],
+    }.monster()));
+
+    monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
+        alignment: "Usually true neutral".to_string(),
+        attributes: vec![4, 4, 1, -3, 2, 2],
+        challenge_rating: ChallengeRating::Four,
+        description: None,
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Griffons are powerful, majestic creatures with characteristics of both lions and eagles.
+                A pair of broad, golden wings emerge from the creature’s back that can span 25 feet or more.
+                In battle, they pounce on their foes like a lion.
+            "),
+            (5, "
+                From nose to tail, an adult griffon can measure as much as 8 feet.
+                Neither males nor females are endowed with a mane.
+                Griffons cannot speak, but they understand Common.
+            "),
+        ])),
+        level: 5,
+        modifiers: Some(vec![
+            Modifier::Attack(
+                Maneuver::PouncingStrike(3).attack(StandardWeapon::MonsterClaws.weapon()),
+            ),
+        ]),
+        movement_modes: Some(vec![
+            MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Poor),
+            MovementMode::Land(SpeedCategory::Normal),
+        ]),
+        name: "Griffon".to_string(),
+        senses: Some(vec![Sense::LowLightVision]),
+        size: Size::Large,
+        trained_skills: Some(vec![
+            Skill::Awareness,
+        ]),
+        weapons: vec![
+            StandardWeapon::MonsterBite.weapon(),
+            StandardWeapon::MonsterClaws.weapon(),
+        ],
     }.monster()));
 
     return monsters;

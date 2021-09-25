@@ -340,7 +340,7 @@ impl AttackTriggeredEffect {
     fn description(&self) -> String {
         match self {
             Self::Debuff(e) => e.description(),
-            Self::Grappled => "\\grappled.".to_string(),
+            Self::Grappled => "\\grappled by the $name.".to_string(),
             Self::Poison(e) => e.description(),
             Self::VitalWound(e) => e.description(),
         }
