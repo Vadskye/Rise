@@ -74,6 +74,7 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: "Psionic Blast".to_string(),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Enemies),
@@ -87,6 +88,7 @@ impl StandardAttack {
                 hit: AttackEffect::Push(30),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: "Drag Prey".to_string(),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(AttackRange::Reach),
@@ -119,6 +121,7 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: "Gibber".to_string(),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
@@ -148,6 +151,7 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: "Abyssal Blast".to_string(),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(AttackRange::Medium),
@@ -174,6 +178,7 @@ impl StandardAttack {
                 }),
                 is_magical: false,
                 is_strike: false,
+                movement: None,
                 name: "Breath Weapon".to_string(),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Cone(
@@ -212,6 +217,7 @@ impl StandardAttack {
                 }),
                 is_magical: false,
                 is_strike: false,
+                movement: None,
                 name: "Breath Weapon".to_string(),
                 replaces_weapon: None,
                 targeting: match rank {
@@ -248,6 +254,7 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: Attack::generate_modified_name("Combustion", *rank, 4, Some(7)),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(if *rank == 7 {
@@ -279,6 +286,7 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: Attack::generate_modified_name("Dark Grasp", *rank, 3, Some(7)),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Anything(AttackRange::Reach),
@@ -305,6 +313,7 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: Attack::generate_modified_name("Dark Miasma", *rank, 4, None),
                 replaces_weapon: None,
                 targeting: if *rank >= 4 {
@@ -336,6 +345,7 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: Attack::generate_modified_name("Divine Judgment", *rank, 4, Some(7)),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(if *rank == 7 {
@@ -369,6 +379,7 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: Attack::generate_modified_name("Drain Life", *rank, 4, Some(7)),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(if *rank == 7 {
@@ -402,6 +413,7 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: Attack::generate_modified_name("Firebolt", *rank, 4, Some(7)),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(if *rank == 7 {
@@ -442,6 +454,7 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
+                movement: None,
                 name: Attack::generate_modified_name("Mind Crush", *rank, 3, Some(7)),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(AttackRange::Medium),

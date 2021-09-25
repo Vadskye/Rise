@@ -1,7 +1,8 @@
-use crate::core_mechanics::{DamageType, Debuff, Defense};
+use crate::core_mechanics::{DamageType, Debuff, Defense, SpeedCategory};
 use crate::creatures::attack_effects::{AttackEffectDuration, AttackTriggeredEffect, DebuffEffect};
-use crate::creatures::attacks::Attack;
+use crate::creatures::attacks::{Attack, AttackMovement};
 use crate::equipment::Weapon;
+use titlecase::titlecase;
 
 #[derive(Clone)]
 pub enum Maneuver {
@@ -17,6 +18,7 @@ pub enum Maneuver {
     MonsterAccuracyScaling(i32),
     MonsterDamageScaling(i32),
     PenetratingStrike(i32),
+    PouncingStrike(i32),
 }
 
 impl Maneuver {
@@ -41,29 +43,29 @@ impl Maneuver {
             Self::GenericScalingStrike(rank) => weapon
                 .attack()
                 .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
-            Self::GraspingStrike(rank) => {
-                return weapon
-                    .attack()
-                    .except(|a| a.accuracy += (rank - 1) / 2)
-                    .except_hit_damage(|d| {
-                        d.extra_defense_effect = Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
-                        d.damage_dice = d.damage_dice.add(-2);
-                        d.power_multiplier = 0.5;
-                    });
-            },
+            Self::GraspingStrike(rank) => weapon
+                .attack()
+                .except(|a| a.accuracy += (rank - 1) / 2)
+                .except_hit_damage(|d| {
+                    d.extra_defense_effect =
+                        Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
+                    d.damage_dice = d.damage_dice.add(-2);
+                    d.power_multiplier = 0.5;
+                }),
             Self::GreaterGraspingStrike(rank) => {
                 assert_minimum_rank(5, rank, "Greater Grasping Strike");
-                return weapon
+                weapon
                     .attack()
                     .except(|a| a.accuracy += (rank - 5) / 2)
                     .except_hit_damage(|d| {
-                        d.extra_defense_effect = Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
+                        d.extra_defense_effect =
+                            Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
                         d.damage_dice = d.damage_dice.add(-1);
-                    });
-            },
+                    })
+            }
             Self::GreaterHamstring(rank) => {
                 assert_minimum_rank(3, rank, "Greater Hamstring");
-                return weapon
+                weapon
                     .attack()
                     .except(|a| a.accuracy += (rank - 3) / 2)
                     .except_hit_damage(|d| {
@@ -73,8 +75,8 @@ impl Maneuver {
                             debuffs: vec![Debuff::Decelerated],
                             duration: AttackEffectDuration::Condition,
                         }));
-                    });
-            },
+                    })
+            }
             Self::Hamstring(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
@@ -100,8 +102,21 @@ impl Maneuver {
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
                 .except(|a| a.defense = Defense::Reflex),
+            Self::PouncingStrike(rank) => weapon
+                .attack()
+                .except(|a| {
+                    a.accuracy += (rank - 1) / 2;
+                    a.movement = Some(AttackMovement {
+                        move_before_attack: true,
+                        requires_straight_line: true,
+                        speed: SpeedCategory::Normal,
+                    })
+                })
+                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add(-1)),
         };
-        attack.name = format!("{} {}", self.name(), attack.name).trim().to_string();
+        attack.name = format!("{} {}", self.name(), titlecase(weapon.name.as_str()))
+            .trim()
+            .to_string();
         attack.replaces_weapon = if self.should_replace_weapon() {
             Some(weapon)
         } else {
@@ -124,6 +139,7 @@ impl Maneuver {
             Self::MonsterAccuracyScaling(_) => "",
             Self::MonsterDamageScaling(_) => "",
             Self::PenetratingStrike(_) => "Penetrating",
+            Self::PouncingStrike(_) => "Pouncing",
         }
     }
 

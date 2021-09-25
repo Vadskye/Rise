@@ -192,6 +192,7 @@ impl Weapon {
             defense: Defense::Armor,
             glance: None,
             hit: AttackEffect::from_weapon(self.clone()),
+            movement: None,
             name: titlecase(&self.name),
             is_magical: false,
             is_strike: true,
