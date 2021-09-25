@@ -45,6 +45,18 @@ impl FlightManeuverability {
 }
 
 impl SpeedCategory {
+    pub fn its_speed(&self) -> &str {
+        match self {
+            SpeedCategory::Slow => "half its speed",
+            SpeedCategory::Normal => "its speed",
+            SpeedCategory::Fast => panic!("Fast movement has no clean textual representation"),
+            SpeedCategory::VeryFast => "twice its speed",
+            SpeedCategory::Special(_) => {
+                panic!("Special movement has no clean textual representation")
+            }
+        }
+    }
+
     pub fn speed_multiplier(&self) -> f64 {
         match self {
             SpeedCategory::Slow => 0.5,

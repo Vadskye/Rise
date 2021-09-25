@@ -1,4 +1,4 @@
-use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes};
+use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes, SpeedCategory};
 use crate::creatures::attack_effects::{AttackEffect, DamageEffect};
 use crate::creatures::{attack_effects, Creature, CreatureCategory, Maneuver, ModifierType};
 use crate::equipment::{HasArmor, Weapon};
@@ -17,6 +17,7 @@ pub struct Attack {
     pub hit: AttackEffect,
     pub is_magical: bool,
     pub is_strike: bool,
+    pub movement: Option<AttackMovement>,
     pub name: String,
     pub replaces_weapon: Option<Weapon>,
     pub targeting: AttackTargeting,
@@ -157,14 +158,40 @@ impl Attack {
     }
 
     fn latex_effect(&self, creature: &Creature) -> String {
+        let mut movement_before_attack = "".to_string();
+        let mut movement_after_attack = "".to_string();
+        let mut the_creature = "The $name";
+        if let Some(ref movement) = self.movement {
+            let straight_line_text = if movement.requires_straight_line { " in a straight line" } else {""};
+            if movement.move_before_attack {
+                movement_before_attack = format!(
+                    "The $name moves up to {speed}{straight_line_text}. Then, it",
+                    speed = movement.speed.its_speed(),
+                    straight_line_text = straight_line_text,
+                );
+                the_creature = "";
+            } else {
+                movement_after_attack = format!(
+                    "Then, the $name moves up to {speed}{straight_line_text}.",
+                    speed = movement.speed.its_speed(),
+                    straight_line_text = straight_line_text,
+                );
+            }
+        }
+
         return format!(
             "
-                The $name makes a {accuracy} {targeting}.
+                {movement_before_attack}
+                {the_creature} makes a {accuracy} {targeting}.
                 {cooldown}
+                {movement_after_attack}
                 \\hit {hit}
                 {glance}
                 {critical}
             ",
+            movement_before_attack = movement_before_attack,
+            the_creature = the_creature,
+            movement_after_attack = movement_after_attack,
             accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
             cooldown = if let Some(ref c) = self.cooldown {
                 c.description(false)
@@ -626,4 +653,11 @@ where
                 + self.calc_total_modifier(ModifierType::MundanePower);
         }
     }
+}
+
+#[derive(Clone)]
+pub struct AttackMovement {
+    pub move_before_attack: bool,
+    pub requires_straight_line: bool,
+    pub speed: SpeedCategory,
 }
