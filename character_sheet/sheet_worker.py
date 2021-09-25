@@ -308,6 +308,11 @@ def armor_defense():
                 attribute_modifier += dexterity_starting;
             }}
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
+            if (challenge_rating === 4) {{
+                level_scaling += 1;
+            }} else if (challenge_rating === 6) {{
+                level_scaling += 2;
+            }}
             var before_equipment = (
                 Math.floor(level / 2)
                 + attribute_modifier
@@ -347,6 +352,11 @@ def fortitude():
         ],
         f"""
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
+            if (challenge_rating === 4) {{
+                level_scaling += 1;
+            }} else if (challenge_rating === 6) {{
+                level_scaling += 2;
+            }}
             setAttrs({{
                 fortitude: (
                     Math.floor(level / 2)
@@ -378,6 +388,11 @@ def reflex():
         ],
         f"""
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
+            if (challenge_rating === 4) {{
+                level_scaling += 1;
+            }} else if (challenge_rating === 6) {{
+                level_scaling += 2;
+            }}
             setAttrs({{
                 reflex: (
                     Math.floor(level / 2)
@@ -409,6 +424,11 @@ def mental():
         ],
         f"""
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
+            if (challenge_rating === 4) {{
+                level_scaling += 1;
+            }} else if (challenge_rating === 6) {{
+                level_scaling += 2;
+            }}
             setAttrs({{
                 mental: (
                     Math.floor(level / 2)
@@ -627,8 +647,8 @@ def magical_power():
                     0.5: 0.5,
                     1: 1,
                     2: 2,
-                    4: 3,
-                    6: 4,
+                    4: 2,
+                    6: 2,
                 }}[challenge_rating]
                 : 0;
             var magical_power_attribute = Math.floor(willpower / 2);
@@ -667,8 +687,8 @@ def mundane_power():
                     0.5: 0.5,
                     1: 1,
                     2: 2,
-                    4: 3,
-                    6: 4,
+                    4: 2,
+                    6: 2,
                 }}[challenge_rating]
                 : 0;
             var mundane_power_attribute = Math.floor(strength / 2)

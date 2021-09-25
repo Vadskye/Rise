@@ -15,7 +15,7 @@ impl ChallengeRating {
     }
 
     pub fn accuracy_bonus(&self) -> i32 {
-        return 0;
+        0
     }
 
     pub fn damage_increments(&self) -> i32 {
@@ -51,7 +51,13 @@ impl ChallengeRating {
     }
 
     pub fn defense_bonus(&self) -> i32 {
-        return 0;
+        match self {
+            Self::Half => 0,
+            Self::One => 0,
+            Self::Two => 0,
+            Self::Four => 1,
+            Self::Six => 2,
+        }
     }
 
     pub fn dr_multiplier(&self) -> f64 {
