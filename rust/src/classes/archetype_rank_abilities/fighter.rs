@@ -188,9 +188,18 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                The bonus from your \textit{weapon expertise} ability increases to \plus3d.
+                The bonus from your \textit{weapon expertise} ability increases to \plus2d.
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(2)]),
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
+            name: "Greater Weapon Training",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                You are proficient with all weapons, including all exotic weapons.
+            ",
+            modifiers: None,
         },
     ];
 }
