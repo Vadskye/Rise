@@ -514,12 +514,12 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You gain your choice of one of the following abilities.
-                Whenever you increase your rank in this archetype, you may change your choice.
-                This can allow you to apply the benefits of insights like \textit{signature spell} to higher rank spells.
+                You can also spend \glossterm{insight points} to learn one additional \textit{mystic insight} per insight point.
                 {
                     \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
                         You double your range with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
+                        Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
                         You cannot choose this ability multiple times.
                     \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
@@ -530,11 +530,13 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                         In addition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
+                        Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
                         You can choose this ability multiple times, learning an additional spell each time.
                     \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.
                         You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
+                        Whenever you learn a new spell, you may change which of your spells this ability affects.
                 }
             ",
             modifiers: None,
