@@ -129,9 +129,36 @@ impl Attack {
 
 // LaTeX generation functions
 impl Attack {
+    pub fn is_standard_action(&self) -> bool {
+        if let AttackTargeting::CausedHpLoss(_) = self.targeting {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    pub fn latex_passive_ability(&self, creature: &Creature) -> String {
+        let mut tags_text = "".to_string();
+        if let Some(tags) = self.latex_tags() {
+            tags_text = format!("[{tags}]", tags = tags);
+        }
+        return format!(
+            "
+                \\parhead<{name}>{tags} {effect}
+            ",
+            name = latex_formatting::uppercase_first_letter(&self.name),
+            tags = tags_text,
+            effect = self.latex_effect(creature),
+        );
+    }
+
     pub fn latex_ability_block(&self, creature: &Creature) -> String {
-        let ability_components: Vec<Option<String>> =
-            vec![Some(self.latex_tags()), Some(self.latex_effect(creature))];
+        let ability_components: Vec<Option<String>> = vec![
+            // This should always return a string; even if there are no tags, we want a rankline after the
+            // top section.
+            Some(self.latex_tags().unwrap_or("".to_string())),
+            Some(self.latex_effect(creature)),
+        ];
         let ability_components = ability_components
             .iter()
             .filter(|c| c.is_some())
@@ -150,11 +177,18 @@ impl Attack {
         );
     }
 
-    // This should always return a string; even if there are no tags, we want a rankline after the
-    // top section.
-    fn latex_tags(&self) -> String {
-        // TODO: take tags into account
-        return "".to_string();
+    fn latex_tags(&self) -> Option<String> {
+        let mut tags: Vec<&str> = vec![];
+        if self.is_magical {
+            tags.push("Magical");
+        }
+        // TODO: take other tags into account
+
+        if tags.len() > 0 {
+            return Some(tags.join(", "));
+        } else {
+            return None;
+        }
     }
 
     fn latex_effect(&self, creature: &Creature) -> String {
@@ -162,7 +196,11 @@ impl Attack {
         let mut movement_after_attack = "".to_string();
         let mut the_creature = "The $name";
         if let Some(ref movement) = self.movement {
-            let straight_line_text = if movement.requires_straight_line { " in a straight line" } else {""};
+            let straight_line_text = if movement.requires_straight_line {
+                " in a straight line"
+            } else {
+                ""
+            };
             if movement.move_before_attack {
                 movement_before_attack = format!(
                     "The $name moves up to {speed}{straight_line_text}. Then, it",
@@ -182,7 +220,7 @@ impl Attack {
         return format!(
             "
                 {movement_before_attack}
-                {the_creature} makes a {accuracy} {targeting}.
+                {targeting}
                 {cooldown}
                 {movement_after_attack}
                 \\hit {hit}
@@ -190,9 +228,7 @@ impl Attack {
                 {critical}
             ",
             movement_before_attack = movement_before_attack,
-            the_creature = the_creature,
             movement_after_attack = movement_after_attack,
-            accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
             cooldown = if let Some(ref c) = self.cooldown {
                 c.description(false)
             } else {
@@ -234,7 +270,9 @@ impl Attack {
             } else {
                 "".to_string()
             },
-            targeting = self.targeting.description(&self.defense),
+            targeting = self
+                .targeting
+                .description(&self.defense, self.accuracy + creature.calc_accuracy()),
         );
     }
 }
@@ -242,8 +280,9 @@ impl Attack {
 #[derive(Clone)]
 pub enum AttackTargeting {
     Anything(AttackRange),
-    Creature(AttackRange),
+    CausedHpLoss(AttackRange),
     Cone(AreaSize, AreaTargets),
+    Creature(AttackRange),
     Line(i32, AreaSize, AreaTargets),
     Radius(Option<AttackRange>, AreaSize, AreaTargets),
     Strike,
@@ -254,6 +293,7 @@ impl AttackTargeting {
     pub fn minimum_rank(&self) -> i32 {
         match self {
             Self::Anything(range) => range.minimum_rank(),
+            Self::CausedHpLoss(range) => range.minimum_rank(),
             Self::Creature(range) => range.minimum_rank(),
             Self::Cone(size, targets) => {
                 let minimum_rank = match size {
@@ -303,35 +343,47 @@ impl AttackTargeting {
         }
     }
 
-    pub fn description(&self, defense: &Defense) -> String {
+    pub fn description(&self, defense: &Defense, accuracy: i32) -> String {
         let defense = latex_formatting::uppercase_first_letter(defense.to_string().as_str());
+        let accuracy = latex_formatting::modifier(accuracy);
+        let standard_attack_against = format!(
+            "The $name makes a {accuracy} attack vs. {defense} against",
+            accuracy = accuracy,
+            defense = defense,
+        );
         match self {
             Self::Anything(range) => format!(
-                "attack vs. {defense} against anything within {range}",
-                defense = defense,
+                "{standard_attack_against} anything within {range}.",
+                standard_attack_against = standard_attack_against,
                 range = range
             ),
-            Self::Creature(range) => format!(
-                "attack vs. {defense} against one creature within {range}",
+            Self::CausedHpLoss(range) => format!(
+                "At the end of each phase, the $name makes a {accuracy} attack vs. {defense} against each creature within {range} of it that caused it to lose \\glossterm<hit points> during that phase.",
+                accuracy = accuracy,
+                range = range,
                 defense = defense,
+            ),
+            Self::Creature(range) => format!(
+                "{standard_attack_against} one creature within {range}.",
+                standard_attack_against = standard_attack_against,
                 range = range
             ),
             Self::Cone(area_size, area_targets) => format!(
-                "attack vs. {defense} against {targets} in a {size} cone",
-                defense = defense,
+                "{standard_attack_against} {targets} in a {size} cone.",
+                standard_attack_against = standard_attack_against,
                 targets = area_targets,
                 size = area_size
             ),
             Self::Line(width, area_size, area_targets) => format!(
-                "attack vs. {defense} against {targets} in a {width} wide, {size} long line",
-                defense = defense,
+                "{standard_attack_against} {targets} in a {width} wide, {size} long line.",
+                standard_attack_against = standard_attack_against,
                 targets = area_targets,
                 size = area_size,
                 width = format!("{} ft.", width),
             ),
             Self::Radius(attack_range, area_size, area_targets) => format!(
-                "attack vs. {defense} against {targets} in a {size} radius{range}",
-                defense = defense,
+                "{standard_attack_against} {targets} in a {size} radius{range}.",
+                standard_attack_against = standard_attack_against,
                 targets = area_targets,
                 size = area_size,
                 range = if let Some(r) = attack_range {
@@ -340,13 +392,18 @@ impl AttackTargeting {
                     "".to_string()
                 },
             ),
-            Self::Strike => format!("strike vs. {defense}", defense = defense),
+            Self::Strike => format!(
+                "{standard_attack_against} vs. {defense}.",
+                standard_attack_against = standard_attack_against,
+                defense = defense,
+            ),
         }
     }
 
     pub fn subjects(&self) -> &str {
         match self {
             Self::Anything(_) => "The subject",
+            Self::CausedHpLoss(_) => "Each subject",
             Self::Creature(_) => "The subject",
             Self::Cone(_, _) => "Each subject",
             Self::Line(_, _, _) => "Each subject",
