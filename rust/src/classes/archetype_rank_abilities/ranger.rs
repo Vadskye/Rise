@@ -432,7 +432,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy}.
+                You gain a \plus1 bonus to your \glossterm{accuracy}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
