@@ -80,6 +80,7 @@ export const chronomancy: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         glance: `The effect is lasts \\glossterm{briefly}.`,
         hit: `At the end of each round, if the subject lost hit points that round, it has a 50\\% chance to be sent forward in time by one round.
+        During the next round, it ceases to exist.
         At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
         This effect lasts until the subject takes a \\glossterm{short rest}.`,
         targeting: `

@@ -425,7 +425,7 @@ export const polymorph: MysticSphere = {
         // AOE dice, no power
         hit: `Each subject takes 2d6 piercing damage.`,
         targeting: `
-          At the end of each round, make an attack vs. Armor against each creature that you are \\grappled by, and each creature that attacked you with a non-\\glossterm{Long} melee weapon that round.
+          At the end of each phase, make an attack vs. Armor against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
         `,
       },
       narrative: `

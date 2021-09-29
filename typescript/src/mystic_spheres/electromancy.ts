@@ -443,7 +443,7 @@ export const electromancy: MysticSphere = {
         // AOE dice, but no power
         hit: `Each subject takes 2d6 electricity damage.`,
         targeting: `
-          At the end of each round, make an attack vs. Fortitude against each creature that you are \\grappled by, and each creature that attacked you with a metal melee weapon that round.
+          At the end of each phase, make an attack vs. Fortitude against each creature that attacked you using a free hand or a metal melee weapon during that phase.
         `,
       },
       rank: 3,

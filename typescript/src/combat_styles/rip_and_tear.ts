@@ -242,7 +242,7 @@ export const ripAndTear: CombatStyle = {
       type: "Instant",
     },
 
-    // is 2x power equal to +2d damage? soemtimes better, sometimes worse, especially with the
+    // is 2x power equal to +2d damage? sometimes better, sometimes worse, especially with the
     // delay, so seems fine
     {
       name: "Bloodletting Strike",

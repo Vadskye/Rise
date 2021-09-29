@@ -16,7 +16,7 @@ def generate_armor():
             material_type="Body armor",
             tags=[],
             description="""
-                At the end of each round, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> that round.
+                At the end of each phase, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 2d6 energy damage.
             """,
             short_description="Damages adjacent attackers when you lose HP",
@@ -27,7 +27,7 @@ def generate_armor():
             material_type="Body armor",
             tags=[],
             description="""
-                At the end of each round, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> that round.
+                At the end of each phase, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 4d6 energy damage.
                 \\glance Half damage.
             """,
@@ -39,7 +39,7 @@ def generate_armor():
             material_type="Body armor",
             tags=[],
             description="""
-                At the end of each round, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> that round.
+                At the end of each phase, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 5d10 energy damage.
                 \\glance Half damage.
             """,
@@ -274,7 +274,7 @@ def generate_armor():
             level=10,
             material_type="Body armor",
             description="""
-                At the end of each round, make an attack vs. Fortitude against each creature adjacent to you that attacked you that round.
+                At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
                 \\hit Each target takes 2d6 energy damage.
                 \\glance Half damage.
             """,
@@ -285,8 +285,8 @@ def generate_armor():
             level=16,
             material_type="Body armor",
             description="""
-                At the end of each round, make an attack vs. Fortitude against each creature within a \\areamed radius \\glossterm<emanation> from you that attacked you that round.
-                \\hit Each target takes 2d10 energy damage.
+                At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
+                \\hit Each target takes 4d6 energy damage.
                 \\glance Half damage.
             """,
             short_description="Damages nearby attackers",
@@ -655,21 +655,6 @@ def generate_armor():
             short_description="Immune to conditions, but maximum hit points are halved",
         ),
     ]
-
-    armor.append(
-        MagicItem(
-            name="Acidic Armor",
-            level=7,
-            material_type="Body armor",
-            tags=[],
-            description="""
-            At the end of each round, if this armor is making significant contact against a creature or object other than you and your equipment, make an attack vs. Fortitude against it.
-            Generally, you can only affect another creature with this armor if you are \\grappled by it.
-            On a hit, the target takes 2d6 acid damage.
-        """,
-            short_description="Deals acid damage to anything it touches",
-        )
-    )
 
     armor.append(
         MagicItem(
