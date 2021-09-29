@@ -316,5 +316,41 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         ],
     }.monster()));
 
+    monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
+        alignment: "Usually true neutral".to_string(),
+        attributes: vec![4, 2, 2, -4, 6, -1],
+        challenge_rating: ChallengeRating::Four,
+        description: None,
+        knowledge: Some(Knowledge::new(vec![
+            (0, r#"
+              Yrthaks are virtually blind.
+              They can "see" in a short range around them with their blindsight ability, which relies on their incredible hearing.
+              Beyond that range, they cannot see, though they can still identify the existence and location of creatures at great range by sound.
+            "#),
+        ])),
+        level: 6,
+        modifiers: Some(vec![
+            Modifier::Attack(
+                StandardAttack::BreathWeaponLine(3, DamageType::Sonic, Defense::Fortitude)
+                    .attack()
+                    .except(|a| a.name = "Sonic Lance".to_string()),
+            ),
+            Modifier::Maneuver(Maneuver::PouncingStrike(3)),
+        ]),
+        movement_modes: Some(vec![
+            MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Poor),
+            MovementMode::Land(SpeedCategory::Normal),
+        ]),
+        name: "Yrthak".to_string(),
+        senses: Some(vec![Sense::Blindsight(120)]),
+        size: Size::Huge,
+        trained_skills: Some(vec![
+            Skill::Awareness,
+        ]),
+        weapons: vec![
+            StandardWeapon::MonsterBite.weapon(),
+        ],
+    }.monster()));
+
     return monsters;
 }
