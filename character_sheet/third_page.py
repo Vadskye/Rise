@@ -166,7 +166,7 @@ def personality():
             div({"class": "section-header"}, "Personal Info"),
             flex_row({"class": "personal-info-row"}, [
                 labeled_text_input("Alignment", input_attributes={"name": f"alignment"}),
-                labeled_text_input("Deity", input_attributes={"name": f"deity"}),
+                labeled_text_input("Patron Deity", input_attributes={"name": f"deity"}),
                 labeled_text_input(
                     "Experience points", input_attributes={"name": "experience"}
                 ),
