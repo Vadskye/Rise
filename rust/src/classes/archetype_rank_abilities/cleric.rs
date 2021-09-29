@@ -162,7 +162,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
                     In addition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                     You can choose this ability multiple times, choosing a different spell each time.
-                \parhead{Spell Knowledge} You learn an additional spell.
+                \parhead{Spell Knowledge} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
                     You can choose this ability multiple times, learning an additional spell each time.
                 \parhead{Spell Power} Choose a divine \glossterm{spell} you know.
                     You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
