@@ -37,12 +37,12 @@ impl StandardPassiveAbility {
                 name: "Amphibious".to_string(),
             },
             Self::ThreeActions => PassiveAbility {
-                description: "The $name can take three standard actions each round. It cannot use the same ability twice in the same round.".to_string(),
+                description: "The $name can take three standard actions each round. It cannot use the same ability or weapon twice in the same round.".to_string(),
                 is_magical: false,
                 name: "Multiple Actions".to_string(),
             },
             Self::TwoActions => PassiveAbility {
-                description: "The $name can take two standard actions each round. It cannot use the same ability twice in the same round.".to_string(),
+                description: "The $name can take two standard actions each round. It cannot use the same ability or weapon twice in the same round.".to_string(),
                 is_magical: false,
                 name: "Multiple Actions".to_string(),
             },
