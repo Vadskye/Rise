@@ -579,32 +579,11 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Pass Judgment",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
-                \begin{durationability}{Pass Judgment}[Duration]
-                    \abilitytag{Magical}
-                    \rankline
-                    Choose one creature within \longrange.
-                    The subject is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
-                    This only affects its alignment along the alignment axis your devoted alignment is on.
-                    For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
-                    This effect lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
-
-                    You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
-                    Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
-                \end{durationability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Zealous Fixation",
+            name: "Zealous Offense",
             is_magical: true,
             rank: 5,
             description: r"
-                Your \textit{zealous fixation} ability also grants you a +1 \glossterm{accuracy} bonus against the creature you are fixating on.
+                You gain a \plus1 bonus to your \glossterm{accuracy}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -627,11 +606,24 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Greater Pass Judgment",
+            name: "Pass Judgment",
             is_magical: true,
             rank: 7,
             description: r"
-                You gain the benefits of your \textit{zealous fixation} ability against all creatures affected by your \textit{pass judgment} ability.
+                You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
+                \begin{durationability}{Pass Judgment}[Duration]
+                    \abilitytag{Magical}
+                    \rankline
+                    Choose one creature within \longrange.
+                    You always gain the benefit of your \textit{zealous fixation} ability against that creature, .
+                    In addition, the subject is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
+                    This only affects its alignment along the alignment axis your devoted alignment is on.
+                    For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
+                    This effect lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
+
+                    You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
+                    Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
+                \end{durationability}
             ",
             modifiers: None,
         },
