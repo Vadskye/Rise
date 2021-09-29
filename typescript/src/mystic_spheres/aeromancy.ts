@@ -400,16 +400,16 @@ export const aeromancy: MysticSphere = {
         // crit: '',
         glance: "Half damage.",
         hit: `
-          Each subject takes 2d6 bludgeoning damage.
+          Each subject takes 2d10 bludgeoning damage.
         `,
         targeting: `
-          At the end of each round, make an attack vs. Armor against each creature within \\shortrange that attacked you during that round.
+          At the end of each phase, make an attack vs. Armor against each creature within \\shortrange of you that attacked you during that phase.
           Any effect which increases this spell's range increases the range of this retaliation by the same amount.
         `,
       },
       // effect: '',
       // narrative: '',
-      rank: 3,
+      rank: 5,
       scaling: "damage",
       type: "Attune (self)",
     },

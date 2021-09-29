@@ -174,7 +174,7 @@ export const toxicology: MysticSphere = {
         glance: `Half damage.`,
         hit: `Each subject takes 2d6 acid damage.`,
         targeting: `
-          At the end of each round, if you lost \\glossterm{hit points} during that round, make an attack vs. Fortitude against everything adjacent to you.
+          At the end of each phase, if you lost \\glossterm{hit points} during that phase, make an attack vs. Reflex against everything adjacent to you.
         `,
       },
       narrative: `

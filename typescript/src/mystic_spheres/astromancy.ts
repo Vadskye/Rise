@@ -173,8 +173,7 @@ export const astromancy: MysticSphere = {
         glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is stuck in place as a \\glossterm{condition}.
-          At the end of each round, the subject teleports back to the location it was in
-          when this spell was cast.
+          At the end of each round, the subject teleports back to the location it was in when this spell was cast.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.

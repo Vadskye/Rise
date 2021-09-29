@@ -570,7 +570,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `Each subject takes 1d10 energy damage.`,
         targeting: `
-          At the end of each round, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\smallarea radius from you that caused you to lose \\glossterm{hit points} that round.
+          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\smallarea radius from you that caused you to lose \\glossterm{hit points} that phase.
         `,
       },
       rank: 1,
@@ -586,7 +586,7 @@ export const vivimancy: MysticSphere = {
         // +1d from levels
         hit: `Each subject takes 4d6 energy damage.`,
         targeting: `
-          At the end of each round, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} that round.
+          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
       },
       rank: 4,
@@ -602,7 +602,7 @@ export const vivimancy: MysticSphere = {
         // +1d from levels
         hit: `Each subject takes 6d10 energy damage.`,
         targeting: `
-          At the end of each round, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} that round.
+          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
       },
       rank: 7,
