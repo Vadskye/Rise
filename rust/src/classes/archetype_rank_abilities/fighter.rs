@@ -193,7 +193,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Greater Weapon Training",
+            name: "Weapon Mastery",
             is_magical: false,
             rank: 7,
             description: r"
