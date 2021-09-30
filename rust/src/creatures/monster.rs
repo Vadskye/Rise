@@ -397,23 +397,14 @@ impl Monster {
         attacks.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
         let mut ability_texts = attacks
             .iter()
-            .filter(|a| a.is_standard_action())
             .map(|a| a.latex_ability_block(&self.creature))
             .collect::<Vec<String>>();
-
         let mut passive_ability_texts = self
             .creature
             .get_passive_abilities()
             .iter()
             .map(|a| a.to_latex())
             .collect::<Vec<String>>();
-
-        let mut triggered_attack_texts = attacks
-            .iter()
-            .filter(|a| !a.is_standard_action())
-            .map(|a| a.latex_passive_ability(&self.creature))
-            .collect::<Vec<String>>();
-        passive_ability_texts.append(&mut triggered_attack_texts);
         passive_ability_texts.sort();
         ability_texts = [&passive_ability_texts[..], &ability_texts[..]].concat();
         return ability_texts.join("\\par ");

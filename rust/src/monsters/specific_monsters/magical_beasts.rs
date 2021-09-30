@@ -335,6 +335,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     .attack()
                     .except(|a| a.name = "Sonic Lance".to_string()),
             ),
+            Modifier::Attack(
+                StandardAttack::RetributiveLifebond(3).attack(),
+            ),
             Modifier::Maneuver(Maneuver::PouncingStrike(3)),
         ]),
         movement_modes: Some(vec![
