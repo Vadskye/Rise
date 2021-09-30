@@ -129,34 +129,9 @@ impl Attack {
 
 // LaTeX generation functions
 impl Attack {
-    pub fn is_standard_action(&self) -> bool {
-        if let AttackTargeting::CausedHpLoss(_) = self.targeting {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    pub fn latex_passive_ability(&self, creature: &Creature) -> String {
-        let mut tags_text = "".to_string();
-        if let Some(tags) = self.latex_tags() {
-            tags_text = format!("[{tags}]", tags = tags);
-        }
-        return format!(
-            "
-                \\parhead<{name}>{tags} {effect}
-            ",
-            name = latex_formatting::uppercase_first_letter(&self.name),
-            tags = tags_text,
-            effect = self.latex_effect(creature),
-        );
-    }
-
     pub fn latex_ability_block(&self, creature: &Creature) -> String {
         let ability_components: Vec<Option<String>> = vec![
-            // This should always return a string; even if there are no tags, we want a rankline after the
-            // top section.
-            Some(self.latex_tags().unwrap_or("".to_string())),
+            Some(self.latex_ability_header()),
             Some(self.latex_effect(creature)),
         ];
         let ability_components = ability_components
@@ -177,10 +152,26 @@ impl Attack {
         );
     }
 
+    // This should always return a string; even if there are no tags, we want a rankline after the
+    // top section.
+    fn latex_ability_header(&self) -> String {
+        let tags = self.latex_tags().unwrap_or("".to_string());
+        let usage_time = self.usage_time().unwrap_or("".to_string());
+        return vec![tags, usage_time].join("\n");
+    }
+
+    fn usage_time(&self) -> Option<String> {
+        if let AttackTargeting::CausedHpLoss(_) = self.targeting {
+            return Some(r"\par \noindent Usage time: Triggered.".to_string());
+        } else {
+            return None;
+        }
+    }
+
     fn latex_tags(&self) -> Option<String> {
         let mut tags: Vec<&str> = vec![];
         if self.is_magical {
-            tags.push("Magical");
+            tags.push("\\abilitytag<Magical>");
         }
         // TODO: take other tags into account
 
@@ -192,43 +183,14 @@ impl Attack {
     }
 
     fn latex_effect(&self, creature: &Creature) -> String {
-        let mut movement_before_attack = "".to_string();
-        let mut movement_after_attack = "".to_string();
-        let mut the_creature = "The $name";
-        if let Some(ref movement) = self.movement {
-            let straight_line_text = if movement.requires_straight_line {
-                " in a straight line"
-            } else {
-                ""
-            };
-            if movement.move_before_attack {
-                movement_before_attack = format!(
-                    "The $name moves up to {speed}{straight_line_text}. Then, it",
-                    speed = movement.speed.its_speed(),
-                    straight_line_text = straight_line_text,
-                );
-                the_creature = "";
-            } else {
-                movement_after_attack = format!(
-                    "Then, the $name moves up to {speed}{straight_line_text}.",
-                    speed = movement.speed.its_speed(),
-                    straight_line_text = straight_line_text,
-                );
-            }
-        }
-
         return format!(
             "
-                {movement_before_attack}
                 {targeting}
                 {cooldown}
-                {movement_after_attack}
                 \\hit {hit}
                 {glance}
                 {critical}
             ",
-            movement_before_attack = movement_before_attack,
-            movement_after_attack = movement_after_attack,
             cooldown = if let Some(ref c) = self.cooldown {
                 c.description(false)
             } else {
@@ -272,7 +234,7 @@ impl Attack {
             },
             targeting = self
                 .targeting
-                .description(&self.defense, self.accuracy + creature.calc_accuracy()),
+                .description(&self.defense, self.accuracy + creature.calc_accuracy(), &self.movement),
         );
     }
 }
@@ -280,7 +242,7 @@ impl Attack {
 #[derive(Clone)]
 pub enum AttackTargeting {
     Anything(AttackRange),
-    CausedHpLoss(AttackRange),
+    CausedHpLoss(AreaSize),
     Cone(AreaSize, AreaTargets),
     Creature(AttackRange),
     Line(i32, AreaSize, AreaTargets),
@@ -293,7 +255,14 @@ impl AttackTargeting {
     pub fn minimum_rank(&self) -> i32 {
         match self {
             Self::Anything(range) => range.minimum_rank(),
-            Self::CausedHpLoss(range) => range.minimum_rank(),
+            Self::CausedHpLoss(size) => match size {
+                AreaSize::Small => 1,
+                AreaSize::Medium => 2,
+                AreaSize::Large => 3,
+                AreaSize::Huge => 5,
+                AreaSize::Gargantuan => 7,
+                AreaSize::Custom(_) => 7,
+            },
             Self::Creature(range) => range.minimum_rank(),
             Self::Cone(size, targets) => {
                 let minimum_rank = match size {
@@ -343,24 +312,50 @@ impl AttackTargeting {
         }
     }
 
-    pub fn description(&self, defense: &Defense, accuracy: i32) -> String {
+    pub fn description(&self, defense: &Defense, accuracy: i32, movement: &Option<AttackMovement>) -> String {
         let defense = latex_formatting::uppercase_first_letter(defense.to_string().as_str());
         let accuracy = latex_formatting::modifier(accuracy);
+
+        let mut the_creature = "The $name".to_string();
+        let mut movement_after_attack = "".to_string();
+        if let Some(ref movement) = movement {
+            let straight_line_text = if movement.requires_straight_line {
+                " in a straight line"
+            } else {
+                ""
+            };
+            if movement.move_before_attack {
+                the_creature = format!(
+                    "The $name moves up to {speed}{straight_line_text}. Then, it",
+                    speed = movement.speed.its_speed(),
+                    straight_line_text = straight_line_text,
+                );
+            } else {
+                movement_after_attack = format!(
+                    "Then, the $name moves up to {speed}{straight_line_text}.",
+                    speed = movement.speed.its_speed(),
+                    straight_line_text = straight_line_text,
+                );
+            }
+        }
+
         let standard_attack_against = format!(
-            "The $name makes a {accuracy} attack vs. {defense} against",
+            "{the_creature} makes a {accuracy} attack vs. {defense} against",
             accuracy = accuracy,
             defense = defense,
+            the_creature = the_creature,
         );
-        match self {
+
+        let main_attack = match self {
             Self::Anything(range) => format!(
                 "{standard_attack_against} anything within {range}.",
                 standard_attack_against = standard_attack_against,
                 range = range
             ),
-            Self::CausedHpLoss(range) => format!(
-                "At the end of each phase, the $name makes a {accuracy} attack vs. {defense} against each creature within {range} of it that caused it to lose \\glossterm<hit points> during that phase.",
+            Self::CausedHpLoss(size) => format!(
+                "At the end of each phase, the $name makes a {accuracy} attack vs. {defense} against each \\glossterm<enemy> within a {size} radius \\glossterm<emanation> of it that caused it to lose \\glossterm<hit points> during that phase.",
                 accuracy = accuracy,
-                range = range,
+                size = size,
                 defense = defense,
             ),
             Self::Creature(range) => format!(
@@ -397,6 +392,12 @@ impl AttackTargeting {
                 standard_attack_against = standard_attack_against,
                 defense = defense,
             ),
+        };
+
+        if movement_after_attack == "" {
+            return main_attack;
+        } else {
+            return format!("{} {}", main_attack, movement_after_attack);
         }
     }
 
@@ -584,7 +585,7 @@ impl AttackCooldown {
                 ),
             };
             return latex_formatting::latexify(format!(
-                "After the creature uses this ability, it {until}.",
+                "After the $name uses this ability, it {until}.",
                 until = until,
             ));
         }

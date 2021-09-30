@@ -570,7 +570,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `Each subject takes 1d10 energy damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\smallarea radius from you that caused you to lose \\glossterm{hit points} that phase.
+          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\smallarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
       },
       rank: 1,
