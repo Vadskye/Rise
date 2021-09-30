@@ -11,6 +11,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
       \\hypertargetraised{spell:${sphere.name.toLowerCase()}}{}%
       \\label{${sphere.name}}%
       \\textit{${sphere.shortDescription}}
+      ${sphere.specialRules ? `\\parhead{Special Rules} ${sphere.specialRules}` : ''}
 
       ${
         sphere.cantrips
