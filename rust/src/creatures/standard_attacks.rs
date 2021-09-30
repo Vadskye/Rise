@@ -14,6 +14,7 @@ pub enum StandardAttack {
     AnkhegDrag,
     GibberingMoutherGibber,
     FrostwebSpiderBite,
+    YrthakThunderingHide,
 
     // Character/shared abilities
     AbyssalBlast(i32),
@@ -126,6 +127,29 @@ impl StandardAttack {
                 name: "Gibber".to_string(),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
+            },
+            Self::YrthakThunderingHide => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Fortitude,
+                glance: Some(AttackEffect::HalfDamage),
+                hit: AttackEffect::Damage(DamageEffect {
+                    damage_dice: DamageDice::single_target_damage(3),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Sonic],
+                    extra_defense_effect: None,
+                    lose_hp_effect: None,
+                    power_multiplier: 0.0,
+                    take_damage_effect: None,
+                    vampiric_healing: None,
+                }),
+                is_magical: false,
+                is_strike: false,
+                movement: None,
+                name: "Thundering Hide".to_string(),
+                replaces_weapon: None,
+                targeting: AttackTargeting::CausedDamage(AreaSize::Tiny),
             },
 
             // Character/shared abilities
