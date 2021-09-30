@@ -26,6 +26,7 @@ pub enum StandardAttack {
     DrainLife(i32),
     Firebolt(i32),
     MindCrush(i32),
+    RetributiveLifebond(i32),
 }
 
 impl StandardAttack {
@@ -458,6 +459,40 @@ impl StandardAttack {
                 name: Attack::generate_modified_name("Mind Crush", *rank, 3, Some(7)),
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(AttackRange::Medium),
+            },
+            Self::RetributiveLifebond(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Fortitude,
+                glance: if *rank >= 4 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    // +1d extra at ranks 4 and 7
+                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Energy],
+                    extra_defense_effect: None,
+                    lose_hp_effect: None,
+                    power_multiplier: 0.0,
+                    take_damage_effect: None,
+                    vampiric_healing: None,
+                }),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: Attack::generate_modified_name("Retributive Lifebond", *rank, 4, Some(7)),
+                replaces_weapon: None,
+                targeting: AttackTargeting::CausedHpLoss(if *rank == 7 {
+                    AreaSize::Large
+                } else if *rank >= 4 {
+                    AreaSize::Medium
+                } else {
+                    AreaSize::Small
+                }),
             },
         }
     }
