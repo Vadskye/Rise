@@ -242,6 +242,7 @@ impl Attack {
 #[derive(Clone)]
 pub enum AttackTargeting {
     Anything(AttackRange),
+    CausedDamage(AreaSize),
     CausedHpLoss(AreaSize),
     Cone(AreaSize, AreaTargets),
     Creature(AttackRange),
@@ -255,7 +256,17 @@ impl AttackTargeting {
     pub fn minimum_rank(&self) -> i32 {
         match self {
             Self::Anything(range) => range.minimum_rank(),
+            Self::CausedDamage(size) => match size {
+                AreaSize::Tiny => 0,
+                AreaSize::Small => 1,
+                AreaSize::Medium => 2,
+                AreaSize::Large => 3,
+                AreaSize::Huge => 5,
+                AreaSize::Gargantuan => 7,
+                AreaSize::Custom(_) => 7,
+            },
             Self::CausedHpLoss(size) => match size {
+                AreaSize::Tiny => 0,
                 AreaSize::Small => 1,
                 AreaSize::Medium => 2,
                 AreaSize::Large => 3,
@@ -266,6 +277,7 @@ impl AttackTargeting {
             Self::Creature(range) => range.minimum_rank(),
             Self::Cone(size, targets) => {
                 let minimum_rank = match size {
+                    AreaSize::Tiny => 0,
                     AreaSize::Small => 1,
                     AreaSize::Medium => 2,
                     AreaSize::Large => 3,
@@ -277,6 +289,7 @@ impl AttackTargeting {
             }
             Self::Line(width, size, targets) => {
                 let minimum_rank = match size {
+                    AreaSize::Tiny => panic!("Tiny lines are nonsensical"),
                     AreaSize::Small => 0,
                     AreaSize::Medium => 1,
                     AreaSize::Large => 2,
@@ -294,6 +307,7 @@ impl AttackTargeting {
             }
             Self::Radius(range, size, targets) => {
                 let minimum_rank = match size {
+                    AreaSize::Tiny => panic!("Tiny cones are nonsensical"),
                     AreaSize::Small => 1,
                     AreaSize::Medium => 2,
                     AreaSize::Large => 3,
@@ -352,6 +366,12 @@ impl AttackTargeting {
                 standard_attack_against = standard_attack_against,
                 range = range
             ),
+            Self::CausedDamage(size) => format!(
+                "At the end of each phase, the $name makes a {accuracy} attack vs. {defense} against each \\glossterm<enemy> within a {size} radius \\glossterm<emanation> of it that dealt damage to it during that phase.",
+                accuracy = accuracy,
+                size = size,
+                defense = defense,
+            ),
             Self::CausedHpLoss(size) => format!(
                 "At the end of each phase, the $name makes a {accuracy} attack vs. {defense} against each \\glossterm<enemy> within a {size} radius \\glossterm<emanation> of it that caused it to lose \\glossterm<hit points> during that phase.",
                 accuracy = accuracy,
@@ -404,6 +424,7 @@ impl AttackTargeting {
     pub fn subjects(&self) -> &str {
         match self {
             Self::Anything(_) => "The subject",
+            Self::CausedDamage(_) => "Each subject",
             Self::CausedHpLoss(_) => "Each subject",
             Self::Creature(_) => "The subject",
             Self::Cone(_, _) => "Each subject",
@@ -461,6 +482,7 @@ impl fmt::Display for AttackRange {
 
 #[derive(Clone)]
 pub enum AreaSize {
+    Tiny,
     Small,
     Medium,
     Large,
@@ -472,6 +494,7 @@ pub enum AreaSize {
 impl AreaSize {
     fn latex_tag(&self) -> String {
         match self {
+            Self::Tiny => "\\tinyarea".to_string(),
             Self::Small => "\\smallarea".to_string(),
             Self::Medium => "\\medarea".to_string(),
             Self::Large => "\\largearea".to_string(),
