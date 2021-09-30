@@ -1,4 +1,4 @@
-use crate::core_mechanics::{MovementMode, Sense, Size};
+use crate::core_mechanics::{MovementMode, Sense, Size, StandardPassiveAbility};
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -25,6 +25,10 @@ struct FullUndeadDefinition {
 }
 
 fn undead(def: FullUndeadDefinition) -> Monster {
+    let mut modifiers = def.modifiers.unwrap_or(vec![]).clone();
+    modifiers.push(Modifier::PassiveAbility(
+        StandardPassiveAbility::Undead.ability(),
+    ));
     return FullMonsterDefinition {
         // From def
         alignment: def.alignment,
@@ -33,7 +37,7 @@ fn undead(def: FullUndeadDefinition) -> Monster {
         description: def.description,
         knowledge: def.knowledge,
         level: def.level,
-        modifiers: def.modifiers,
+        modifiers: Some(modifiers),
         movement_modes: def.movement_modes,
         name: def.name,
         senses: def.senses,

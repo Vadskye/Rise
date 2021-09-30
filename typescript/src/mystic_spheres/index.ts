@@ -56,6 +56,7 @@ export interface MysticSphere {
   rituals?: Ritual[];
   sources: MysticSphereSource[];
   shortDescription: string;
+  specialRules?: string;
   spells: Spell[];
 }
 
