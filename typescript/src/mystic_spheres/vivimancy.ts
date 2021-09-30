@@ -4,6 +4,12 @@ export const vivimancy: MysticSphere = {
   name: "Vivimancy",
   shortDescription: "Manipulate life energy to aid allies or harm foes.",
   sources: ["arcane", "divine", "pact"],
+  specialRules: `
+    Undead creatures are affected in unusual ways by the direct manipulation of life energy.
+    They are always considered a \\glossterm{living} creature and an \\glossterm{ally} for spells from the \sphere{vivimancy} mystic sphere.
+    Any effect from this mystic sphere that would deal energy damage to an undead creature causes that creature to regain that many lost hit points instead.
+    Likewise, any effect from this mystic sphere that would cause an undead creature to regain lost hit points instead causes it to lose that many hit points instead.
+  `,
 
   cantrips: [
     {
