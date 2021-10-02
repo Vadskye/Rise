@@ -157,7 +157,7 @@ def generate_weapons():
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with frigid energy.
                 You gain a +1d damage bonus with the strike.
-                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\deafened.
+                In addition, each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\slowed.
             """,
             short_description="Deals cold damage and can briefly slow",
         ),
