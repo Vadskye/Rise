@@ -29,6 +29,7 @@ pub enum StandardWeapon {
     Longbow,
     MonsterBite,
     MonsterClaws,
+    MonsterGore,
     MonsterStinger,
     MonsterTalons,
     MonsterTentacle,
@@ -110,6 +111,12 @@ impl StandardWeapon {
                 damage_dice: DamageDice::d6(),
                 damage_types: vec![DamageType::Slashing],
                 name: "claws".to_string(),
+            },
+            Self::MonsterGore => Weapon {
+                accuracy: 0,
+                damage_dice: DamageDice::d10(),
+                damage_types: vec![DamageType::Piercing],
+                name: "gore".to_string(),
             },
             Self::MonsterStinger => Weapon {
                 accuracy: 1,
