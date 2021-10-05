@@ -482,6 +482,15 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Stalwart Force",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You gain a \plus1d bonus to your damage with all weapons.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
             name: "Greater Stalwart Resilience",
             is_magical: false,
             rank: 5,
@@ -510,6 +519,15 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 When you use your \textit{lay on hands} ability on a creature other than yourself, it also affects you.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Supreme Stalwart Force",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                The bonus from your \textit{stalwart force} ability increases to \plus2d.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
     ];
 }
@@ -550,14 +568,34 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Zealous Fixation",
+            name: "Detect Anathema",
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you hit a creature with a \glossterm{strike}, you ignore all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
-                If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
+                You can use the \textit{detect anathema} ability as a standard action.
+                \begin{instantability}{Detect Anathema}[Instant]
+                    \abilitytag{Detection}, \abilitytag{Magical}
+                    \rankline
+                    You know the number of creatures within a \\largearea cone from you that have the alignment opposed to your devoted alignment.
+                    This does not give you any specific information about the location of those creatures.
+                    Since this is a \abilitytag{Detection} ability, it can penetrate some solid obstacles (see \pcref{Detection}).
+
+                    \rankline
+                    \rank{4} You also learn the location of all creatures with that alignment.
+                    \rank{6} You can use this ability as a \glossterm{minor action}.
+                    When you do, you \glossterm{briefly} cannot use this ability as a minor action again.
+                \end{instantability}
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Forceful Zeal",
+            is_magical: false,
+            rank: 2,
+            description: r"
+                You gain a \plus1d bonus to your damage with all weapons.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Glancing Strikes",
@@ -570,36 +608,19 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::EnableGlancingStrikes]),
         },
         RankAbility {
-            name: "Forceful Zeal",
-            is_magical: false,
+            name: "Zealous Fixation",
+            is_magical: true,
             rank: 4,
             description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Zealous Offense",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You gain a \plus1 bonus to your \glossterm{accuracy}.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Greater Zealous Exertion",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{zealous exertion} ability increases to \plus4.
+                Whenever you hit a creature with a \glossterm{strike}, you ignore all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
+                If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Greater Forceful Zeal",
             is_magical: false,
-            rank: 7,
+            rank: 5,
             description: r"
                 The bonus from your \textit{forceful zeal} ability increases to \plus2d.
             ",
@@ -608,21 +629,51 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Pass Judgment",
             is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
                 \begin{durationability}{Pass Judgment}[Duration]
                     \abilitytag{Magical}
+                    \par \noindent Usage time: One \glossterm{minor action}
                     \rankline
-                    Choose one creature within \longrange.
-                    You always gain the benefit of your \textit{zealous fixation} ability against that creature, .
+                    Choose one creature within \distrange.
+                    You always gain the benefit of your \textit{zealous fixation} ability against that creature.
                     In addition, the subject is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
                     This only affects its alignment along the alignment axis your devoted alignment is on.
                     For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
-                    This effect lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
+                    This effect lasts until you treat that creature as an \glossterm{ally}, or until you \glossterm{dismiss} this ability as a \glossterm{free action}.
 
                     You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
                     Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
+                \end{durationability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Zealous Offense",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You gain a \plus1 bonus to your \glossterm{accuracy}.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Zealous Pursuit",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                You can use the \textit{zealous pursuit} ability as a \glossterm{minor action}.
+                \begin{durationability}{Zealous Pursuit}[Instant]
+                    \abilitytag{Magical}
+                    \par \noindent Usage time: One \glossterm{minor action}
+                    \rankline
+                    You \glossterm{teleport} up to \distrange into an unoccupied space on solid ground adjacent to one creature of your choice affected by your \abilitytag{zealous fixation} ability.
+                    You do not need \glossterm{line of sight} or \glossterm{line of effect} to the creature.
+                    If multiple valid destination spaces exist, you teleport into the one closest to your original location.
+                    If no valid destination spaces exist, this ability fails with no effect.
+
+                    After you use this ability, you \glossterm{briefly} cannot use it again.
                 \end{durationability}
             ",
             modifiers: None,
