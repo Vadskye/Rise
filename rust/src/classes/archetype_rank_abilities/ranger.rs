@@ -156,7 +156,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                Whenever you take a \glossterm{short rest}, you can choose one of the following creature types: aberration, animal, animate, dragon, magical beast, monstrous humanoid, planeforged, or undead.
+                Whenever you take a \glossterm{short rest}, you can choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
                 You gain a \plus1 bonus to \glossterm{accuracy} against creatures of that type.
                 This benefit lasts until you choose a different creature type with this ability.
             ",
