@@ -57,11 +57,20 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
+            name: "Greater Mental Discipline",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                The bonus from your \textit{mental discipline} ability increases to \plus3.
+            ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Mental, 1)]),
+        },
+        RankAbility {
             name: "Disciplined Reaction",
             is_magical: false,
             rank: 4,
             description: r"
-                Whenever you gain a \glossterm{condition} or \glossterm{vital wound}, you \glossterm{briefly} ignore its effects.
+                Whenever you gain a \glossterm{condition}, you \glossterm{briefly} ignore its effects.
                 While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to \glossterm{vital rolls}.
             ",
             modifiers: None,
@@ -88,11 +97,21 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
+            name: "Supreme Mental Discipline",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus from your \textit{mental discipline} ability increases to \plus4.
+            ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Mental, 1)]),
+        },
+        RankAbility {
             name: "Greater Disciplined Reaction",
             is_magical: false,
             rank: 7,
             description: r"
-                The delay from your \textit{disciplined reaction} ability increases by an additional round.
+                Whenever you gain a \glossterm{vital wound}, you \glossterm{briefly} ignore its effects.
+                While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to \glossterm{vital rolls}.
             ",
             modifiers: None,
         },
@@ -152,6 +171,16 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             ",
             // TODO: figure out how to represent dexterity and speed
             modifiers: Some(vec![Modifier::Encumbrance(-1), Modifier::MovementSpeed(5)]),
+        },
+        RankAbility {
+            name: "Weapon Bond",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You are immune to any effect which would steal your weapon or force you to drop it, such as the \ability{disarm} ability.
+                This does not protect you from any other effects of that attack, such as damage to yourself or the weapon.
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Weapon Expertise",

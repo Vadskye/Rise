@@ -26,7 +26,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 % while this has no upgrades and should remain relevant alone.
                 \begin{instantability}{Sneak Attack}[Instant]
                     \rankline
-                    Make a \glossterm{strike} with a \glossterm{light weapon} or any weapon with the Stealthy \glossterm{weapon tag} oagainst a creature within \rngshort range.
+                    Make a \glossterm{strike} with a \glossterm{light weapon} or any weapon with the Stealthy \glossterm{weapon tag} against a creature within \rngshort range.
                     If the target is \unaware or \partiallyunaware of your attack, or if the target is adjacent to one of your \glossterm{allies}, you gain a \plus2d damage bonus with the strike.
                     You do not gain this damage bonus against creatures who that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
 
@@ -72,6 +72,15 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Assassin's Finesse",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You gain a \plus1d bonus to your damage with \glossterm{light weapons} and any weapon with the Stealthy \glossterm{weapon tag}.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Hide in Plain Sight",
             is_magical: false,
             rank: 4,
@@ -103,6 +112,15 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 Your \textit{evasion} ability also protects you from area attacks against your Fortitude and Mental defenses.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Greater Assassin's Finesse",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                The bonus from your \textit{assassin's finesse} ability increases to \plus2d.
             ",
             modifiers: None,
         },
@@ -915,6 +933,15 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            name: "Deceptive Force",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You gain a \plus1d bonus to your damage with all weapons.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
             name: "What's That Over There",
             is_magical: false,
             rank: 4,
@@ -954,6 +981,15 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                 The bonus from your \textit{exploit distraction} ability increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Greater Deceptive Force",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                The bonus from your \textit{deceptive force} ability increases to \plus2d.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Nothing Is Real",

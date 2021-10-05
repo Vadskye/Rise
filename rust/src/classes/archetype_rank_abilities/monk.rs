@@ -801,7 +801,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{transcendent might} ability increases to +2d.
+                The bonus from your \textit{transcendent might} ability increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },

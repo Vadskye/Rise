@@ -87,6 +87,15 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Battleforged Force",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                You gain a \plus1d bonus to your damage with all weapons.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
             name: "Limitless Recovery",
             is_magical: false,
             rank: 4,
@@ -103,6 +112,15 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 The bonus from your \textit{battle-scarred} ability increases to four times your rank in this archetype.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Greater Battleforged Force",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus from your \textit{battleforged force} ability increases to \plus2d.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Greater Vital Tolerance",
@@ -290,6 +308,15 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Furious Force",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                You gain a \plus1d bonus to your damage with all weapons.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
             name: "Instinctive Rage",
             is_magical: false,
             rank: 4,
@@ -307,6 +334,15 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 In addition, being panicked does not prevent you from entering a rage.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Greater Furious Force",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus from your \textit{furious force} ability increases to \plus2d.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Supreme Insensible Anger",
@@ -372,6 +408,15 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Greater Savage Rush",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                Your \textit{savage rush} ability no longer causes you to treat spaces occupied by enemies as difficult terrain.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Savage Force",
             is_magical: false,
             rank: 3,
@@ -388,15 +433,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 The speed bonus from your \textit{fast movement} ability increases to \plus10 feet.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
-        },
-        RankAbility {
-            name: "Greater Savage Rush",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                Your \textit{savage rush} ability no longer causes you to treat spaces occupied by enemies as difficult terrain.
-            ",
-            modifiers: None,
         },
         RankAbility {
             name: "Greater Savage Precision",
@@ -419,6 +455,16 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
+            name: "Supreme Savage Rush",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You can move through spaces occupied by enemies at any time.
+                If you are not sprinting, you treat those spaces as \glossterm{difficult terrain}, which causes to you to move at half speed.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Supreme Fast Movement",
             is_magical: false,
             rank: 7,
@@ -426,15 +472,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 The speed bonus from your \textit{fast movement} ability increases to \plus15 feet.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
-        },
-        RankAbility {
-            name: "Supreme Savage Rush",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                You can use your \textit{savage rush} ability to move through enemies even without using the \ability{sprint} ability.
-            ",
-            modifiers: None,
         },
     ];
 }
@@ -652,8 +689,8 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to your Reflex defense and \glossterm{initiative} checks.
             ",
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Reflex, 2),
-                Modifier::Initiative(2),
+                Modifier::Defense(Defense::Reflex, 1),
+                Modifier::Initiative(1),
             ]),
         },
         RankAbility {
@@ -693,6 +730,18 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             ",
             // TODO: figure out how to represent this
             modifiers: None,
+        },
+        RankAbility {
+            name: "Greater Animal Instincts",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                The bonus from your \textit{animal instincts} ability increases to \plus3.
+            ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Reflex, 1),
+                Modifier::Initiative(1),
+            ]),
         },
         RankAbility {
             name: "Totemic Force",
@@ -745,6 +794,18 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 The bonus from your \textit{totemic force} ability increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
+            name: "Supreme Animal Instincts",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus from your \textit{animal instincts} ability increases to \plus4.
+            ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Reflex, 1),
+                Modifier::Initiative(1),
+            ]),
         },
         RankAbility {
             name: "Supreme Totem Animal",

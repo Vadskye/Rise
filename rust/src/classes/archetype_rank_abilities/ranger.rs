@@ -65,6 +65,16 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Greater Beast Affinity",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                The bonus to the Creature Handling skill from your \textit{beast affinity} ability increases to \plus3.
+                In addition, the bonus to accuracy from that ability increases to \plus2.
+            ",
+            modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 1)]),
+        },
+        RankAbility {
             name: "Power of Beasts",
             is_magical: false,
             rank: 3,
@@ -108,14 +118,14 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Greater Beast Affinity",
+            name: "Supreme Beast Affinity",
             is_magical: false,
             rank: 6,
             description: r"
                 The bonus to the Creature Handling skill from your \textit{beast affinity} ability increases to \plus4.
-                In addition, the bonuses to accuracy and defenses from that ability increase to \plus2.
+                In addition, the bonus to defenses from that ability increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 2)]),
+            modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 1)]),
         },
         RankAbility {
             name: "Supreme Animal Companion",
@@ -146,7 +156,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                Whenever you take a \glossterm{short rest}, you can choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
+                Whenever you take a \glossterm{short rest}, you can choose one of the following creature types: aberration, animal, animate, dragon, magical beast, monstrous humanoid, planeforged, or undead.
                 You gain a \plus1 bonus to \glossterm{accuracy} against creatures of that type.
                 This benefit lasts until you choose a different creature type with this ability.
             ",
@@ -172,6 +182,16 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
+            name: "Warden's Instincts",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                You and your \glossterm{allies} who can see or hear you gain a \plus1 bonus to \glossterm{initiative} checks.
+            ",
+            // TODO: affect allies?
+            modifiers: Some(vec![Modifier::Initiative(1)]),
+        },
+        RankAbility {
             name: "Greater Know Your Enemy",
             is_magical: false,
             rank: 4,
@@ -186,9 +206,10 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You and your \glossterm{allies} who can see or hear you gain a \plus2 bonus to \glossterm{initiative} checks.
+                You and your \glossterm{allies} who can see or hear you gain a \plus5 foot bonus to land speed.
+                This does not affect any other movement modes.
             ",
-            modifiers: Some(vec![Modifier::Initiative(2)]),
+            modifiers: Some(vec![Modifier::Initiative(1)]),
         },
         RankAbility {
             name: "Greater Warden's Force",
@@ -198,6 +219,15 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                 The bonus from your \textit{warden's force} ability increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
+            name: "Greater Warden's Instincts",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus from your \textit{warden's instincts} ability increases to \plus2.
+            ",
+            modifiers: Some(vec![Modifier::Initiative(1)]),
         },
         RankAbility {
             name: "Supreme Know Your Enemy",
@@ -219,7 +249,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus4 bonus to Survival checks to follow tracks.
+                You gain a \plus3 bonus to Survival checks to follow tracks.
                 In addition, using the \textit{desperate exertion} ability on a Survival check to follow tracks only causes you to increase your \glossterm{fatigue level} by one instead of two.
             ",
             modifiers: None,
@@ -232,7 +262,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
                 \begin{attuneability}{Quarry}[\abilitytag{Attune} (self)]
                     \rankline
-                    Choose a creature within \rnglong range.
+                    Choose a creature within \longrange.
                     The target becomes your quarry.
                     You and your \glossterm{allies} within the same range are called your hunting party.
                     Your hunting party gains a \plus1 bonus to \glossterm{accuracy} against your quarry.
@@ -363,13 +393,22 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
+            name: "Greater Tracker",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                The bonus from your \textit{tracker} ability increases to \plus4.
+                In addition, you gain a \plus10 bonus to follow tracks left by your quarry.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Greater Quarry",
             is_magical: false,
             rank: 4,
             description: r"
                 You can use your \textit{quarry} ability with the \abilitytag{Sustain} (free) tag instead of the \abilitytag{Attune} (self) tag.
                 If you originally use your \textit{quarry} ability as a sustained ability, you can attune to the same quarry as a free action, even if your quarry is no longer in sight.
-                In addition, you gain a \plus10 bonus to follow tracks left by your quarry.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
@@ -390,6 +429,16 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 The bonus from your \textit{hunter's prowess} ability increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
+            name: "Supreme Tracker",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus from your \textit{tracker} ability increases to \plus5.
+                In addition, the bonus to follow tracks from your quarry from your \textit{greater tracker} ability increases to \plus20.
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Supreme Quarry",
