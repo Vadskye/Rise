@@ -74,14 +74,14 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you resume the aura, you can choose which creatures within the area are affected by aura as any combination of yourself, your \glossterm{allies}, your \glossterm{enemies}, and other creatures.
                 The effect of the aura depends on your devoted alignment, as described below.
 
-                \subparhead{Chaos} When a target rolls a 1 on an attack roll with a \glossterm{strike}, it \glossterm{explodes} (see \pcref{Exploding Attacks}.
+                \subparhead{Chaos} Whenever a target rolls a 1 on an attack roll with a \glossterm{strike}, it \glossterm{explodes} (see \pcref{Exploding Attacks}.
                 This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
                 \subparhead{Evil} Each target suffers a \minus1 penalty to \glossterm{defenses} as long as it is affected by at least one \glossterm{condition}.
                 % TODO: clarify what happens if multiple people try to Good aura the same target
-                \subparhead{Good} When a target gains a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
+                \subparhead{Good} Whenever a target gains a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
                 You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                 The target suffers any other effects of the attack normally.
-                \subparhead{Law} When a target rolls a 1 on an attack roll with a \glossterm{strike}, the attack roll is treated as a 6.
+                \subparhead{Law} Whenever a target rolls a 1 on an attack roll with a \glossterm{strike}, the attack roll is treated as a 6.
                 This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
             ",
             // Most auras loosely correlate to +0.5 accuracy in an AOE? For power level purposes,
