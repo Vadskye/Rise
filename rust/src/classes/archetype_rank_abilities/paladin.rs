@@ -117,6 +117,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 The effect of your \textit{aligned aura} becomes stronger, as described below.
+                In addition, the area increases to a \largearea radius \glossterm{emanation} from you.
 
                 \subparhead{Chaos} The effect applies to all attacks, not just \glossterm{strikes}.
                 % TODO: explain how this works on monsters
@@ -161,6 +162,8 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 The effect of your \textit{aligned aura} reaches its full power, as described below.
+                In addition, the area increases to a \hugearea radius \glossterm{emanation} from you.
+
                 \subparhead{Chaos} The effect triggers on rolling either a 1 or a 2.
                 \subparhead{Evil} The penalty increases to \minus2.
                 \subparhead{Good} The \glossterm{vital roll} bonus increases to \plus5.
