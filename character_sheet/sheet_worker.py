@@ -908,7 +908,7 @@ def debuffs():
             }}
 
             // rank 1 debuffs
-            if (dazed && !stunned) {{
+            if (dazed && !(stunned || confused)) {{
                 armor -= 2;
                 fortitude -= 2;
                 mental -= 2;
@@ -952,7 +952,7 @@ def debuffs():
                 reflex -= 4;
                 mental -= 4;
             }}
-            if (stunned) {{
+            if (stunned || confused) {{
                 armor -= 4;
                 fortitude -= 4;
                 reflex -= 4;
