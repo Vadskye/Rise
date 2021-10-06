@@ -589,8 +589,7 @@ export const aeromancy: MysticSphere = {
       name: "Dustblind",
 
       attack: {
-        crit: "The condition is must be removed twice before the effect ends.",
-        glance: "The condition lasts \\glossterm{briefly}.",
+        glance: "Half damage.",
         hit: `
           The subject takes 2d8 physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.
