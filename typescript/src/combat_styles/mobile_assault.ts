@@ -69,7 +69,7 @@ export const mobileAssault: CombatStyle = {
       name: "Greater Wanderer's Strike",
 
       effect: `
-        You can either move up to your speed or make a \\glossterm{strike}.
+        You can either move up to your speed or make a \\glossterm{strike} with a -1d damage penalty.
         If you use this ability during the \\glossterm{action phase}, you can take the other action during the \\glossterm{delayed action phase}.
       `,
       scaling: {
