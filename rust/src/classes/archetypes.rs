@@ -190,7 +190,7 @@ impl ClassArchetype {
             Self::Assassin => "Assassin",
             Self::BardicMusic => "Bardic Music",
             Self::CombatTrickster => "Combat Trickster",
-            Self::JackOfAllTrades => "Jack Of All Trades",
+            Self::JackOfAllTrades => "Jack of all Trades",
             Self::SuaveScoundrel => "Suave Scoundrel",
             // Sorcerer
             Self::SorcererArcaneMagic => "Arcane Magic",
@@ -199,11 +199,11 @@ impl ClassArchetype {
             Self::InnateArcanist => "Innate Arcanist",
             Self::WildMagic => "Wild Magic",
             // Warlock
-            Self::BlessingsOfTheAbyss => "Blessings Of The Abyss",
-            Self::KeeperOfForbiddenKnowledge => "Keeper Of Forbidden Knowledge",
+            Self::BlessingsOfTheAbyss => "Blessings of the Abyss",
+            Self::KeeperOfForbiddenKnowledge => "Keeper of Forbidden Knowledge",
             Self::PactMagic => "Pact Magic",
             Self::PactSpellMastery => "Pact Spell Mastery",
-            Self::SoulkeepersChosen => "Soulkeepers Chosen",
+            Self::SoulkeepersChosen => "Soulkeeper's Chosen",
             // Wizard
             Self::Alchemist => "Alchemist",
             Self::WizardArcaneMagic => "Arcane Magic",
