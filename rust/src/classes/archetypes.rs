@@ -204,7 +204,7 @@ impl ClassArchetype {
             Self::KeeperOfForbiddenKnowledge => "Keeper Of Forbidden Knowledge",
             Self::PactMagic => "Pact Magic",
             Self::PactSpellMastery => "Pact Spell Mastery",
-            Self::SoulkeepersChosen => "Soulkeepers Chosen",
+            Self::SoulkeepersChosen => "Soulkeeper's Chosen",
             // Wizard
             Self::Alchemist => "Alchemist",
             Self::WizardArcaneMagic => "Arcane Magic",
