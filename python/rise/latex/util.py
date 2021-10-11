@@ -49,7 +49,7 @@ def longtablify(text, include_type=True):
     return latexify(
         f"""
         \\begin<longtablewrapper>
-            \\begin<longtable><p<15em> p<8em>{type_column_text} p<20em> p<3em>>
+            \\begin<longtable><p<17em> p<6em>{type_column_text} p<20em> p<3em>>
                 {text.strip()}
             \\end<longtable>
         \\end<longtablewrapper>
