@@ -69,9 +69,9 @@ export const polymorph: MysticSphere = {
       name: "Reforge Armor",
 
       effect: `
-        Choose one suit of body armor you touch.
+        Choose one nonmagical suit of body armor you touch.
         In addition, choose one of the following special materials: adamantine, deepforged, diamondsteel, elvenweave, ironwood, mithral, or starmetal.
-        The special material chosen must not cause the item's total rank, ignoring any magical properties it has, to exceed your spellcasting rank with this spell.
+        The special material chosen must not cause the item's total rank to exceed your spellcasting rank with this spell.
         The armor changes to be composed of that material, and gains all properties and benefits of that material instead of its original properties.
         For details about armor special materials, see \\tref{Armor Special Materials}.
 
