@@ -15,7 +15,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Cleansing Potion",
-            level=9,
+            rank=3,
             material_type="Potion",
             tags=[],
             description="""
@@ -27,7 +27,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Cleansing Potion, Greater",
-            level=15,
+            rank=5,
             material_type="Potion",
             tags=[],
             description="""
@@ -42,7 +42,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Telepath's Bane",
-            level=5,
+            rank=2,
             material_type="Potion",
             tags=[],
             description="""
@@ -53,7 +53,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Telepath's Bane, Greater",
-            level=14,
+            rank=5,
             material_type="Potion",
             tags=[],
             description="""
@@ -67,7 +67,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Wound Closure",
-            level=1,
+            rank=1,
             material_type="Potion",
             tags=[],
             description="""
@@ -78,7 +78,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Wound Closure, Greater",
-            level=7,
+            rank=3,
             material_type="Potion",
             tags=[],
             description="""
@@ -89,7 +89,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Wound Closure, Supreme",
-            level=13,
+            rank=5,
             material_type="Potion",
             tags=[],
             description="""
@@ -100,7 +100,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Wound Closure, Epic",
-            level=19,
+            rank=7,
             material_type="Potion",
             tags=[],
             description="""
@@ -114,7 +114,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Healing",
-            level=1,
+            rank=1,
             material_type="Potion",
             # This seems like it should be Healing-tagged, but it's not really
             # an ability? It's not obvious how the cooldown should interact with
@@ -129,7 +129,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Healing, Greater",
-            level=6,
+            rank=2,
             material_type="Potion",
             tags=[],
             description="""
@@ -141,7 +141,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Healing, Supreme",
-            level=12,
+            rank=4,
             material_type="Potion",
             tags=[],
             description="""
@@ -153,7 +153,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Healing, Epic",
-            level=18,
+            rank=6,
             material_type="Potion",
             tags=[],
             description="""
@@ -170,7 +170,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Alchemist's Fire",
-            level=1,
+            rank=1,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -183,7 +183,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Alchemist's Fire, Greater",
-            level=7,
+            rank=3,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -196,7 +196,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Alchemist's Fire, Supreme",
-            level=13,
+            rank=5,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -209,7 +209,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Alchemist's Fire, Epic",
-            level=19,
+            rank=7,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -225,7 +225,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Acid Flask",
-            level=2,
+            rank=1,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -238,7 +238,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Acid Flask, Greater",
-            level=8,
+            rank=3,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -251,7 +251,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Acid Flask, Supreme",
-            level=14,
+            rank=5,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -264,7 +264,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Acid Flask, Epic",
-            level=20,
+            rank=7,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -280,7 +280,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Corrosive Flask",
-            level=5,
+            rank=2,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -294,7 +294,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Corrosive Flask, Greater",
-            level=14,
+            rank=5,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -311,7 +311,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Firebomb",
-            level=4,
+            rank=2,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -324,7 +324,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Firebomb, Greater",
-            level=10,
+            rank=4,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -337,7 +337,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Firebomb, Supreme",
-            level=16,
+            rank=6,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -353,7 +353,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Smokestick",
-            level=1,
+            rank=1,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -370,7 +370,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Tindertwig",
-            level=0.5,
+            rank=0,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -385,7 +385,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Flash Powder",
-            level=0.5,
+            rank=0,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -401,7 +401,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Thunderstone",
-            level=3,
+            rank=1,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -415,7 +415,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Thunderstone, Greater",
-            level=9,
+            rank=3,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -429,7 +429,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Thunderstone, Supreme",
-            level=15,
+            rank=5,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -446,7 +446,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Snowball",
-            level=4,
+            rank=2,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -460,7 +460,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Snowball, Greater",
-            level=13,
+            rank=5,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -477,7 +477,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Antitoxin Elixir",
-            level=3,
+            rank=1,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -490,7 +490,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Antitoxin Elixir, Greater",
-            level=9,
+            rank=3,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -501,7 +501,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Antitoxin Elixir, Supreme",
-            level=15,
+            rank=5,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -515,7 +515,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Sunrod",
-            level=3,
+            rank=1,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -527,7 +527,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Sunrod, Greater",
-            level=6,
+            rank=2,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -541,7 +541,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Tanglefoot Bag",
-            level=1,
+            rank=1,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -557,7 +557,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Tanglefoot Bag, Greater",
-            level=4,
+            rank=2,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -570,7 +570,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Tanglefoot Bag, Supreme",
-            level=13,
+            rank=5,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -586,7 +586,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Everburning Torch",
-            level=3,
+            rank=1,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -601,7 +601,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Strength",
-            level=3,
+            rank=1,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -613,7 +613,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Strength, Greater",
-            level=9,
+            rank=3,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -625,7 +625,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Potion of Strength, Supreme",
-            level=15,
+            rank=5,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -639,7 +639,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Bag of Shrinking",
-            level=6,
+            rank=2,
             materials=["textiles"],
             tags=[],
             description="""
@@ -653,7 +653,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Bag of Shrinking, Greater",
-            level=12,
+            rank=4,
             materials=["textiles"],
             tags=[],
             description="""
@@ -663,7 +663,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Bag of Shrinking, Supreme",
-            level=18,
+            rank=6,
             materials=["textiles"],
             tags=[],
             description="""
@@ -683,7 +683,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Bear Trap",
-            level=2,
+            rank=1,
             materials=["metal"],
             tags=[],
             description="""
@@ -699,7 +699,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Bear Trap, Greater",
-            level=11,
+            rank=4,
             materials=["metal"],
             tags=[],
             description="""
@@ -718,7 +718,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Fireburst Trap",
-            level=5,
+            rank=2,
             materials=["metal"],
             tags=[],
             description="""
@@ -733,7 +733,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Fireburst Trap, Greater",
-            level=11,
+            rank=4,
             materials=["metal"],
             tags=[],
             description="""
@@ -748,7 +748,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Fireburst Trap, Supreme",
-            level=17,
+            rank=6,
             materials=["metal"],
             tags=[],
             description="""
@@ -766,7 +766,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Artisan's Tools",
-            level=0.5,
+            rank=0,
             materials=["metal"],
             tags=[],
             description="""
@@ -777,7 +777,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Alchemist's Lab",
-            level=4,
+            rank=2,
             materials=["Alchemy"],
             tags=[],
             description="""
@@ -788,7 +788,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Disguise Kit",
-            level=1,
+            rank=1,
             materials=["Alchemy", "Textiles"],
             tags=[],
             description="""
@@ -799,7 +799,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Thieves' Tools",
-            level=1,
+            rank=1,
             materials=["Metal", "Textiles"],
             tags=[],
             description="""
@@ -813,7 +813,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Chain, 5 ft.",
-            level=0.5,
+            rank=0,
             materials=["Metal"],
             tags=[],
             # TODO: define specific HP / DR
@@ -827,7 +827,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Carriage",
-            level=2,
+            rank=1,
             materials=["Textiles", "Wood"],
             tags=[],
             description="""
@@ -839,7 +839,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Rowboat",
-            level=1,
+            rank=1,
             materials=["Wood"],
             tags=[],
             description="""
@@ -850,7 +850,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Ship, Galley",
-            level=14,
+            rank=5,
             materials=["Metal", "Textiles", "Wood"],
             tags=[],
             description="""
@@ -863,7 +863,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Ship, Keelboat",
-            level=8,
+            rank=3,
             materials=["Metal", "Textiles", "Wood"],
             tags=[],
             description="""
@@ -873,7 +873,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Ship, Longship",
-            level=11,
+            rank=4,
             materials=["Metal", "Textiles", "Wood"],
             tags=[],
             description="""
@@ -883,7 +883,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Wagon",
-            level=1,
+            rank=1,
             materials=["Wood"],
             tags=[],
             description="""
@@ -896,7 +896,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Dog, Guard",
-            level=1,
+            rank=1,
             materials=["none"],
             tags=[],
             description="""
@@ -908,7 +908,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Dog, Riding",
-            level=2,
+            rank=1,
             materials=["none"],
             tags=[],
             description="""
@@ -919,7 +919,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Horse",
-            level=2,
+            rank=1,
             materials=["none"],
             tags=[],
             description="""
@@ -930,7 +930,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Warhorse",
-            level=4,
+            rank=2,
             materials=["none"],
             tags=[],
             description="""
@@ -941,7 +941,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Pony",
-            level=1,
+            rank=1,
             materials=["none"],
             tags=[],
             description="""
@@ -953,7 +953,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Warpony",
-            level=1,
+            rank=1,
             materials=["none"],
             tags=[],
             description="""
@@ -967,7 +967,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Lock, simple",
-            level=0.5,
+            rank=0,
             materials=["Metal"],
             tags=[],
             description="""
@@ -978,7 +978,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Lock, quality",
-            level=2,
+            rank=1,
             materials=["Metal"],
             tags=[],
             description="""
@@ -989,7 +989,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Lock, masterwork",
-            level=4,
+            rank=2,
             materials=["Metal"],
             tags=[],
             description="""
@@ -1003,7 +1003,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Manacles, simple",
-            level=0.5,
+            rank=0,
             materials=["Metal"],
             tags=[],
             description="""
@@ -1014,7 +1014,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Manacles, quality",
-            level=2,
+            rank=1,
             materials=["Metal"],
             tags=[],
             description="""
@@ -1025,7 +1025,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Manacles, masterwork",
-            level=4,
+            rank=2,
             materials=["Metal"],
             tags=[],
             description="""
@@ -1039,7 +1039,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Battering Ram, Portable",
-            level=0.5,
+            rank=0,
             materials=["Wood"],
             tags=[],
             # TODO: define specific HP / DR
@@ -1053,7 +1053,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Caltrops",
-            level=0.5,
+            rank=0,
             materials=["Wood"],
             tags=[],
             description="""
@@ -1076,7 +1076,7 @@ def generate_tools():
     tools += [
         MagicItem(
             name="Outfit, Courtier's",
-            level=1,
+            rank=1,
             materials=["Jewelry", "Textiles"],
             tags=[],
             description="""
@@ -1087,7 +1087,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Outfit, Noble's",
-            level=3,
+            rank=2,
             materials=["Jewelry", "Textiles"],
             tags=[],
             description="""
@@ -1098,7 +1098,7 @@ def generate_tools():
         ),
         MagicItem(
             name="Outfit, Royal",
-            level=5,
+            rank=3,
             materials=["Jewelry", "Textiles"],
             tags=[],
             description="""
@@ -1114,7 +1114,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Poison, Nitharit",
-            level=2,
+            rank=1,
             material_type="Poison",
             tags=[],
             description="""
@@ -1128,7 +1128,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Poison, Sassone Leaf",
-            level=4,
+            rank=2,
             material_type="Poison",
             tags=[],
             description="""
@@ -1142,7 +1142,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Poison, Asp Venom",
-            level=5,
+            rank=2,
             material_type="Poison",
             tags=[],
             description="""
@@ -1156,7 +1156,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Poison, Arsenic",
-            level=8,
+            rank=3,
             material_type="Poison",
             tags=[],
             description="""
@@ -1170,7 +1170,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Poison, Dragon Bile",
-            level=10,
+            rank=4,
             material_type="Poison",
             tags=[],
             description="""
@@ -1183,7 +1183,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Poison, Insanity Mist",
-            level=14,
+            rank=5,
             material_type="Poison",
             tags=[],
             description="""
@@ -1197,7 +1197,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Poison, Black Lotus",
-            level=14,
+            rank=5,
             material_type="Poison",
             tags=[],
             description="""
@@ -1213,7 +1213,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Universal Artisan's Tools",
-            level=3,
+            rank=1,
             materials="metal",
             tags=[],
             description="""
@@ -1224,7 +1224,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Universal Artisan's Tools, Greater",
-            level=9,
+            rank=3,
             materials="metal",
             tags=[],
             description="""
@@ -1237,7 +1237,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Universal Artisan's Tools, Supreme",
-            level=15,
+            rank=5,
             materials="metal",
             tags=[],
             description="""
@@ -1269,14 +1269,14 @@ def generate_tool_latex(check=False):
 def generate_tool_table():
     tools = sorted(
         sorted(generate_tools(), key=lambda item: item.name),
-        key=lambda item: item.level,
+        key=lambda item: item.rank,
     )
     rows = [item.latex_table_row() for item in tools]
     row_text = "\n".join(rows)
     return longtablify(
         f"""
             \\lcaption<Tools, Goods, and Mounts> \\\\
-            \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+            \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
             {row_text}
         """
     )
