@@ -206,7 +206,7 @@ export const thaumaturgy: MysticSphere = {
           However, it does not include passive magical abilities on creatures, such as the ability to cast spells.
           It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
           The target's defense against this attack is equal to 5 \\add its \\glossterm{rank}.
-          For effects that have no specific rank, such as magic items, treat their rank as being equal to one third of their level.
+          For effects that have no specific rank, such as some monster abilities, treat their rank as being equal to one third of their level.
 
           This spell cannot be used to interrupt or negate immediate effects, such as spells being cast simultaneously.
           Identifying non-visual magical effects to target with this spell may require the use of the Spellsense skill (see \\pcref{Spellsense}).

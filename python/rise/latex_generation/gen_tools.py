@@ -856,7 +856,7 @@ def generate_tools():
             description="""
                 This three-masted ship has seventy oars on either side and requires a total crew of 200.
                 A typical galley is 130 feet long and 20 feet wide, and it can carry 150 tons of cargo or 250 soldiers.
-                If you increase its item level by 1, it can be fitted with a ram and castles with firing platforms fore, aft, and amidships.
+                Some rare galleys are fitted with a ram and castles with firing platforms fore, aft, and amidships.
                 This ship cannot make sea voyages and sticks to the coast. It moves about 4 miles per hour when being rowed or under sail.
             """,
             short_description="Massive, fast-moving boat with 200 crew",
