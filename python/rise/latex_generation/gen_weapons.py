@@ -890,13 +890,23 @@ def generate_weapons():
     weapons += [
         MagicItem(
             name="Vampiric",
+            rank=4,
+            material_type="Weapon",
+            tags=['Healing'],
+            description="""
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 1d10+4 \\glossterm{hit points}.
+            """,
+            short_description="Steals 1d10+4 hit points from foes",
+        ),
+        MagicItem(
+            name="Vampiric, Greater",
             rank=6,
             material_type="Weapon",
             tags=['Healing'],
             description="""
-                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 2d10+8 \\glossterm{hit points}.
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 2d10+6 \\glossterm{hit points}.
             """,
-            short_description="Steals hit points from foes",
+            short_description="Steals 2d10+6 hit points from foes",
         ),
     ]
 
