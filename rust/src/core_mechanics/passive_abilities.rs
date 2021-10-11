@@ -41,7 +41,7 @@ impl StandardPassiveAbility {
             Self::Incorporeal => PassiveAbility {
                 description: r"
                   The $name is \glossterm{incorporeal}.
-                  It does not have a tangible body, and is \glossterm{impervious} to \glossterm{physical damage}.
+                  It does not have a tangible body, and is \glossterm{immune} to \glossterm{physical damage}.
                   It can enter or pass through solid objects.
                 ".to_string(),
                 is_magical: false,
