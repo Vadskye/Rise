@@ -803,6 +803,8 @@ Items are divided into five broad categories, described below.
         The benefits here only apply to body armor that is fully made from the given special material.
         If you combine multiple special materials in any way, such as by wearing deepforged gauntlets with a mithral breastplate, you do not gain any benefits for having special materials.
 
+        Body armor that is made from a special material cannot have any magic item properties, and cannot be chosen as a \glossterm{legacy item}.
+
         \begin{dtable!*}
             \lcaption{Armor Special Materials}
 \begin{dtabularx}{\textwidth}{l c c c c >{\lcol}X}
@@ -915,6 +917,22 @@ Items are divided into five broad categories, described below.
 \newpage
 \section{Magic Armor}
     Magic body armor must be worn to gain its effects, while magic shields must be wielded.
+
+    \subsection{Magic Armor and Damage Resistance}
+        While you are attuned to magical body armor, that armor gains a multiplier to the damage resistance it provides.
+        This multiplier does not apply to any special properties the armor might have, such as a magic bonus to your damage resistance.
+        It only applies to the normal damage resistance normally provided by body armor of that type.
+        The magnitude of the multiplier is based on the magic item's rank, as listed below.
+
+        \begin{itemize}
+            \item Rank 0--2: \mult1
+            \item Rank 3: \mult2
+            \item Rank 4: \mult3
+            \item Rank 5: \mult4
+            \item Rank 6: \mult6
+            \item Rank 7: \mult8
+        \end{itemize}
+
 
     \input{generated/armor_table.tex}
 
