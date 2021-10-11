@@ -658,6 +658,73 @@ Items are divided into five broad categories, described below.
         \parhead{Whip} A whip has a 15 foot reach.
         You can use a whip against foes anywhere within your reach, including adjacent foes.
 
+    \subsection{Special Materials}\label{Special Materials}
+        Nonmagical weapons can be made from special materials that can alter the properties of the item.
+        These special materials are described in \trefnp{Weapon Special Materials}.
+        Depending on the construction of the weapon, it may be entirely composed of the special material, or it may only have its striking surface altered.
+        For example, a dragonfang spear may have a wooden haft and still gain the full benefits of being a dragonfang weapon.
+        An adamantine greatclub would only have a thin layer of adamantine around the outside, rather than being entirely forged from adamantine, because the weight and cost would otherwise be complete
+
+        A weapon that is made from a special material cannot have any magic item properties, and cannot be chosen as a \glossterm{legacy item}.
+
+        Any individual weapon can only ever gain the combat benefits of a single special material, even if it contains multiple special materials in its construction.
+        That special material is chosen at the time the weapon is crafted and cannot be altered without recrafting it.
+
+        Some creatures have vulnerabilities to specific weapon materials.
+        If those vulnerabilities are common, they are mentioned in the description of the special material.
+
+        Projectile weapons cannot be made from special materials.
+        However, the ammunition fired by projectile weapons can be made from special materials.
+
+        \begin{dtable!*}
+            \lcaption{Weapon Special Materials}
+            \begin{dtabularx}{\textwidth}{l >{\lcol}X l}
+    \tb{Material}              & \tb{Special Effect}                & \tb{Item Rank}              \tableheaderrule
+    % object damage
+    \tind Adamantine          & Double damage to objects                  & \plus4 \\
+    \tind Adamantine, pure    & Triple damage to objects                  & \plus6 \\
+    % just vulnerabilities
+    \tind Cold iron           & Common vulnerabilities                    & \plus2 \\
+    % crit damage
+    \tind Diamondsteel        & \plus1 accuracy with critical hits        & \plus3 \\
+    \tind Diamondsteel, pure  & \plus2 accuracy with critical hits        & \plus5 \\
+    % energy damage
+    \tind Dragonfang          & Deals energy damage                       & \plus4 \\
+    \tind Dragonfang, ancient & Deals energy damage, grants breath attack & \plus6 \\
+    % trade damage for accuracy
+    \tind Mithral             & \plus1 accuracy, \minus1d damage          & \plus3 \\
+    \tind Mithral, pure       & \plus2 accuracy, \minus2d damage          & \plus5 \\
+    % just vulnerabilities  
+    \tind Silvered            & Common vulnerabilities                    & \plus2 \\
+\end{dtabularx}
+        \end{dtable!*}
+
+        \parhead{Adamantine} An adamantine weapon deals double damage to objects.
+        Golems and other object-like animate creatures are often \glossterm{vulnerable} to adamantine weapons.
+
+        \parhead{Adamantine, Pure} A pure adamantine weapons deals triple damage to objects.
+        Golems and other object-like animate creatures are often \glossterm{vulnerable} to adamantine weapons.
+
+        \parhead{Cold Iron} Many fey creatures and some demons are \glossterm{vulnerable} to cold iron weapons.
+
+        \parhead{Diamondsteel} A diamondsteel weapon grants you a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
+
+        \parhead{Diamondsteel, Pure} A pure diamondsteel weapon grants you a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
+
+        \parhead{Dragonfang} Damage dealt by a dragonfang weapon is damage of the type dealt by that dragon's breath weapon in addition to its normal damage types (see \tref{Dragon Types}).
+
+        \parhead{Dragonfang, Pure} Damage dealt by a pure dragonfang weapon is damage of the type dealt by that dragon's breath weapon in addition to its normal damage types (see \tref{Dragon Types}).
+        In addition, as a standard action, you can make a \glossterm{strike} using the weapon that takes the form of a breath weapon emitted from the weapon.
+        If the dragon's breath weapon is normally a line, the strike targets everything in a \arealarge, 10 ft. wide line from you.
+        Otherwise, the strike targets everything in a \areamed cone from you.
+        After you use this ability, you \glossterm{briefly} cannot use it again.
+
+        \parhead{Mithral} A mithral weapon grants you a \plus1 accuracy bonus and a \minus1d damage penalty with strikes using the weapon.
+
+        \parhead{Mithral, Pure} A pure mithral weapon grants you a \plus2 accuracy bonus and a \minus2d damage penalty with strikes using the weapon.
+
+        \parhead{Silvered} Lycanthropes and some undead are \glossterm{vulnerable} to silvered weapons.
+
 \newpage
 \section{Magic Weapons}
     Magic weapons improve a character's combat abilities.
@@ -798,7 +865,7 @@ Items are divided into five broad categories, described below.
         Studded leather armor made with studs from special materials does not grant the wearer the properties of the special material.
 
     \subsection{Special Materials}\label{Special Materials}
-        Body armor can be made from special materials that can alter the properties of the item.
+        Nonmagical body armor can be made from special materials that can alter the properties of the item.
         These special materials are described in \trefnp{Armor Special Materials}.
         The benefits here only apply to body armor that is fully made from the given special material.
         If you combine multiple special materials in any way, such as by wearing deepforged gauntlets with a mithral breastplate, you do not gain any benefits for having special materials.
@@ -807,7 +874,7 @@ Items are divided into five broad categories, described below.
 
         \begin{dtable!*}
             \lcaption{Armor Special Materials}
-\begin{dtabularx}{\textwidth}{l c c c c >{\lcol}X}
+            \begin{dtabularx}{\textwidth}{l l l >{\ccol}X l l}
     \tb{Material}              & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                & \tb{Material} & \tb{Item Rank}              \tableheaderrule
     % metal high resistance, encum
     \tind Adamantine           & \mult4                 & \plus2           & \tdash                             & Metal         & \plus3  \\
@@ -870,24 +937,24 @@ Items are divided into five broad categories, described below.
 
         \parhead{Dragonhide} Dragonhide body armor multiplies the \glossterm{damage resistance} provided by the armor by 3.
         In addition, each dragonhide body armor is made from the hide of a particular type of dragon.
-        You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon.
+        You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon (see \tref{Dragon Types}).
         The armor's item rank is increased by 3, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Dragonhide, Ancient} Ancient dragonhide body armor multiplies the \glossterm{damage resistance} provided by the armor by 6.
         In addition, each ancient dragonhide body armor is made from the hide of a particular type of dragon.
-        You are \glossterm{immune} to damage of the type dealt by that dragon's breath weapon.
+        You are \glossterm{immune} to damage of the type dealt by that dragon's breath weapon (see \tref{Dragon Types}).
         The armor's item rank is increased by 5, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Dragonscale} Dragonscale body armor multiplies the \glossterm{damage resistance} provided by the armor by 3.
         It is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
         In addition, each dragonscale body armor is made from the scales of a particular type of dragon.
-        You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon.
+        You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon (see \tref{Dragon Types}).
         The armor's item rank is increased by 3, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Dragonscale, Ancient} Ancient dragonscale body armor multiplies the \glossterm{damage resistance} provided by the armor by 6.
         It is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
         In addition, each ancient dragonscale body armor is made from the scales of a particular type of dragon.
-        You are \glossterm{immune} to damage of the type dealt by that dragon's breath weapon.
+        You are \glossterm{immune} to damage of the type dealt by that dragon's breath weapon (see \tref{Dragon Types}).
         The armor's item rank is increased by 5, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Elvenweave} Elvenweave body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
