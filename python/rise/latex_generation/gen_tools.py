@@ -133,10 +133,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you regain 2d8+3 \\glossterm<hit points>.
+                When you drink this \\glossterm<potion>, you regain 2d8+4 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Restores 2d8+3 hit points",
+            short_description="Restores 2d8+4 hit points",
         ),
         MagicItem(
             consumable=True,
@@ -145,10 +145,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you regain 4d8+6 \\glossterm<hit points>.
+                When you drink this \\glossterm<potion>, you regain 4d8+8 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Restores 4d8+6 hit points",
+            short_description="Restores 4d8+8 hit points",
         ),
         MagicItem(
             consumable=True,
@@ -157,10 +157,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you regain 6d10+9 \\glossterm<hit points>.
+                When you drink this \\glossterm<potion>, you regain 6d10+12 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Restores 5d10+9 hit points",
+            short_description="Restores 6d10+12 hit points",
         ),
     ]
 
@@ -189,9 +189,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the subject takes 2d10+3 fire damage.
+                On a hit, the subject takes 2d10+6 fire damage.
             """,
-            short_description="Throw to deal 2d10+3 fire damage",
+            short_description="Throw to deal 2d10+6 fire damage",
         ),
         MagicItem(
             consumable=True,
@@ -202,9 +202,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the subject takes 4d10+6 fire damage.
+                On a hit, the subject takes 4d10+10 fire damage.
             """,
-            short_description="Throw to deal 4d10+6 fire damage",
+            short_description="Throw to deal 4d10+10 fire damage",
         ),
         MagicItem(
             consumable=True,
@@ -215,9 +215,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the subject takes 7d10+9 fire damage.
+                On a hit, the subject takes 7d10+14 fire damage.
             """,
-            short_description="Throw to deal 7d10+9 fire damage",
+            short_description="Throw to deal 7d10+14 fire damage",
         ),
     ]
 
@@ -231,9 +231,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 1d10+1 acid damage.
+                On a hit, the subject takes 1d10+2 acid damage.
             """,
-            short_description="Throw to deal 1d10+1 acid damage",
+            short_description="Throw to deal 1d10+2 acid damage",
         ),
         MagicItem(
             consumable=True,
@@ -244,9 +244,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 2d10+4 acid damage.
+                On a hit, the subject takes 2d10+6 acid damage.
             """,
-            short_description="Throw to deal 2d10+4 acid damage",
+            short_description="Throw to deal 2d10+6 acid damage",
         ),
         MagicItem(
             consumable=True,
@@ -257,9 +257,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 4d10+7 acid damage.
+                On a hit, the subject takes 4d10+10 acid damage.
             """,
-            short_description="Throw to deal 4d10+7 acid damage",
+            short_description="Throw to deal 4d10+10 acid damage",
         ),
         MagicItem(
             consumable=True,
@@ -270,9 +270,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 7d10+10 acid damage.
+                On a hit, the subject takes 7d10+14 acid damage.
             """,
-            short_description="Throw to deal 7d10+10 acid damage",
+            short_description="Throw to deal 7d10+14 acid damage",
         ),
     ]
 
@@ -286,10 +286,10 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 1d8+1 acid damage.
+                On a hit, the subject takes 1d8+2 acid damage.
                 If a creature loses \\glossterm<hit points> from this damage, it is \\sickened as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 1d8+1 acid damage and sicken",
+            short_description="Throw to deal 1d8+2 acid damage and sicken",
         ),
         MagicItem(
             consumable=True,
@@ -300,10 +300,10 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 2d8+3 acid damage.
+                On a hit, the subject takes 2d8+5 acid damage.
                 If a creature loses \\glossterm<hit points> from this damage, it is \\nauseated as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 2d8+3 acid damage and nauseate",
+            short_description="Throw to deal 2d8+5 acid damage and nauseate",
         ),
     ]
 
@@ -317,9 +317,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each subject takes 1d10+1 fire damage.
+                On a hit, each subject takes 1d10+2 fire damage.
             """,
-            short_description="Throw to deal 1d10+1 fire damage in an area",
+            short_description="Throw to deal 1d10+2 fire damage in an area",
         ),
         MagicItem(
             consumable=True,
@@ -330,9 +330,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each subject takes 2d10+2 fire damage.
+                On a hit, each subject takes 2d10+4 fire damage.
             """,
-            short_description="Throw to deal 2d10+2 fire damage in an area",
+            short_description="Throw to deal 2d10+4 fire damage in an area",
         ),
         MagicItem(
             consumable=True,
@@ -343,9 +343,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each subject takes 4d8+8 fire damage.
+                On a hit, each subject takes 4d8+12 fire damage.
             """,
-            short_description="Throw to deal 4d8+8 fire damage in an area",
+            short_description="Throw to deal 4d8+12 fire damage in an area",
         ),
     ]
 
@@ -421,10 +421,10 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each subject takes 1d10+2 sonic damage.
+                On a hit, each subject takes 1d10+3 sonic damage.
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened and \\dazed as a single \\glossterm<condition>.
             """,
-            short_description="Throw to deal 1d10+2 sonic damage, deafen, and daze",
+            short_description="Throw to deal 1d10+3 sonic damage, deafen, and daze",
         ),
         MagicItem(
             consumable=True,
@@ -435,10 +435,10 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each subject takes 2d8+3 sonic damage.
+                On a hit, each subject takes 2d8+5 sonic damage.
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened and \\stunned as a single \\glossterm<condition>.
             """,
-            short_description="Throw to deal 2d8+3 sonic damage, deafen, and stun",
+            short_description="Throw to deal 2d8+5 sonic damage, deafen, and stun",
         )
     ]
 
@@ -452,10 +452,10 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 1d8+1 cold damage.
+                On a hit, the subject takes 1d8+2 cold damage.
                 If a creature loses \\glossterm<hit points> from this damage, it is \\glossterm<slowed> as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 1d8+1 cold damage and slow",
+            short_description="Throw to deal 1d8+2 cold damage and slow",
         ),
         MagicItem(
             consumable=True,
@@ -466,10 +466,10 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the subject takes 2d8+3 cold damage.
+                On a hit, the subject takes 2d8+5 cold damage.
                 If a creature loses \\glossterm<hit points> from this damage, it is \\glossterm<decelerated> as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 2d8+3 cold damage and decelerate",
+            short_description="Throw to deal 2d8+5 cold damage and decelerate",
         ),
     ]
 
@@ -727,7 +727,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +8 attack vs. Reflex against everything within a \\smallarea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each subject takes 1d10+1 damage.
+                On a hit, each subject takes 1d10+2 damage.
             """,
             short_description="Deals fire damage in a small area",
         ),
@@ -742,7 +742,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +15 attack vs. Reflex against everything within a \\largearea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each subject takes 2d8+2 damage.
+                On a hit, each subject takes 2d8+4 damage.
             """,
             short_description="Deals fire damage in a large area",
         ),
@@ -757,7 +757,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +22 attack vs. Reflex against everything within a \\largearea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each subject takes 4d8+4 damage.
+                On a hit, each subject takes 4d8+6 damage.
             """,
             short_description="Deals massive fire damage in a large area",
         ),
@@ -1203,9 +1203,9 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus18.
-                The subject takes 2d10+7 physical damage each time the poison's attack succeeds.
+                The subject takes 2d10+10 physical damage each time the poison's attack succeeds.
             """,
-            short_description="Deals 2d10+7 damage per stage endlessly",
+            short_description="Deals 2d10+10 damage per stage endlessly",
         ),
     ]
 
