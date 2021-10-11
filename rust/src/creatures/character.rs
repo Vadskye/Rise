@@ -265,8 +265,8 @@ impl Character {
 
 fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     let mut modifiers = vec![];
-    // Wealth is one item of current level, two items of one level lower, and two items of two
-    // levels lower.
+    // In general, characters acquire one item of their appropriate rank per level, to a max of 5
+    // relevant items.
     // For most characters, power is most important, followed by damage resistance, and finally
     // hit points.
     // The level breakpoints for standard power and DR items are 4/10/16.

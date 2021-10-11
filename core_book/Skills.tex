@@ -458,7 +458,7 @@ This chapter describes each skill, including common uses for those skills.
         You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. If you make enough progress, you complete the item. Failure means you failed to make progress, but can try again without penalty. Critical failure means you botched the item, and negating all progress and ruining half of the material components. You can start again from scratch with your remaining components.
 
         Each item takes a certain amount of working time to craft, as shown on \tref{Crafting Time}.
-        In addition, each item requires the expenditure of raw materials with a value equal to an item two levels lower than the item you are trying to craft.
+        In addition, each item requires the expenditure of raw materials with a value equal to an item one rank lower than the item you are trying to craft (minimum rank 0).
         Note that raw materials for some items, particularly alchemical items, may be hard to come by in less civilized areas.
 
         In order to craft an item, you must make a Craft check against the item's Craft \glossterm{difficulty value}, as shown on \trefnp{Craft Requirements}.
@@ -473,22 +473,23 @@ This chapter describes each skill, including common uses for those skills.
         \begin{dtable!*}
             \lcaption{Craft Requirements}
             \begin{dtabularx}{\textwidth}{>{\lcol}X l l l}
-                \tb{Item}                   & \tb{Craft Skill} & \tb{Difficulty Value} & \tb{Crafting Time} \tableheaderrule
-                Alchemical item             & Alchemy          & 5 \add item level      & Eight hours                \\
-                Body armor                  & Varies           & 10 \add item level     & One month per item level   \\
-                Exotic weapon               & Varies           & 10 \add item level     & Eight hours per item level \\
-                Shield or non-exotic weapon & Varies           & 5 \add item level      & Eight hours per item level \\
-                Poison                      & Poison           & 5 \add item level      & Eight hours                \\
-                Other item                  & Varies           & 5 \add item level      & Eight hours per item level \\
+                \tb{Item}                   & \tb{Craft Skill} & \tb{Difficulty Value} & \tb{Crafting Time}\fn{1} \tableheaderrule
+                Alchemical item             & Alchemy          & 5 \add twice item rank      & Eight hours                \\
+                Body armor                  & Varies           & 10 \add twice item rank     & One month per item rank   \\
+                Exotic weapon               & Varies           & 10 \add twice item rank     & 24 hours per item rank \\
+                Shield or non-exotic weapon & Varies           & 5 \add twice item rank      & 24 hours per item rank \\
+                Poison                      & Poison           & 5 \add twice item rank      & Eight hours                \\
+                Other item                  & Varies           & 5 \add twice item rank      & 24 hours per item rank \\
             \end{dtabularx}
+            1.  For the purpose of crafting times, treat rank 0 items as having a rank of 1/2.
         \end{dtable!*}
 
     \subsection{Appraise Item}
         You can make a Craft check to estimate the value of an item with 1 minute of careful study. The Craft skill used must be related to the item.
-        The \glossterm{difficulty value} is equal to 5 \add the item's level.
+        The \glossterm{difficulty value} is equal to 5 \add twice the item's rank.
 
-        Success means you know the item's level, or the approximate value of the item within a level range.
-        Failure means you can only guess the item's level within one of the following bands: 1--5, 6--10, 11--15, or 16\plus.
+        Success means you know the item's rank.
+        Failure means you can only guess the item's rank within one of the following bands: 1--2, 3--4, or 5\plus
         Critical failure means you can't estimate the item's value at all.
 
         After you appraise an item, you can't appraise it again until you are presented with significant new information about the item that could clarify your appraisal.
@@ -1028,10 +1029,10 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Appraise Item}
         You can make a Knowledge check to estimate the value of an item with 1 minute of careful study. The Knowledge skill used must be related to the item.
-        The \glossterm{difficulty value} is equal to 5 \add the item's level.
+        The \glossterm{difficulty value} is equal to 5 \add twice the item's rank.
 
-        Success means you know the item's level, or the approximate value of the item within a level range.
-        Failure means you can only guess the item's level within one of the following bands: 1--5, 6--10, 11--15, or 16\plus.
+        Success means you know the item's rank.
+        Failure means you can only guess the item's rank within one of the following bands: 1--2, 3--4, or 5\plus
         Critical failure means you can't estimate the item's value at all.
 
         After you appraise an item, you can't appraise it again until you are presented with significant new information about the item that could clarify your appraisal.
@@ -1253,10 +1254,10 @@ This chapter describes each skill, including common uses for those skills.
         You can make a Profession check to estimate the value of an item with 1 minute of careful study.
         The Profession skill used must be related to the item.
         This check is always Intelligence-based, regardless of your profession.
-        The \glossterm{difficulty value} is equal to 5 \add the item's level.
+        The \glossterm{difficulty value} is equal to 5 \add twice the item's rank.
 
-        Success means you know the item's level, or the approximate value of the item within a level range.
-        Failure means you can only guess the item's level within one of the following bands: 1--5, 6--10, 11--15, or 16\plus.
+        Success means you know the item's rank.
+        Failure means you can only guess the item's rank within one of the following bands: 1--2, 3--4, or 5\plus
         Critical failure means you can't estimate the item's value at all.
 
         After you appraise an item, you can't appraise it again until you are presented with significant new information about the item that could clarify your appraisal.

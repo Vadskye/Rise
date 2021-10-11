@@ -16,11 +16,11 @@ Items are divided into five broad categories, described below.
         Potions, traps, and magic bags are all tools.
 \end{itemize}
 
-\section{Wealth And Item Levels}\label{Wealth}
+\section{Wealth And Item ranks}\label{Wealth}\label{Wealth and Item Ranks}
 
-    The worth of an item can be measured with money, or with the more abstract concept of an item's level.
+    The worth of an item can be measured with money, or with the more abstract concept of an item's rank.
     Both measurements are closely connected.
-    In general, gold pieces are a more useful concept at low levels, and item levels are more useful at high levels.
+    In general, gold pieces are a more useful concept at low levels, and item rank are more useful at high levels.
     However, both concepts function at any level, so you can use whichever makes more sense in a particular game.
 
     \subsection{Coins}
@@ -39,65 +39,50 @@ Items are divided into five broad categories, described below.
             \end{dtabularx}
         \end{dtable}
 
-    \subsection{Item Levels}\label{Item Levels}
+    \subsection{Item Ranks}\label{Item Ranks}
 
-        Each item has a level associated with it.
-        An item's level is generally correlated with the item's effectiveness, rarity, and value.
-        These effects are summarized in \trefnp{Item Levels}.
-        A magic item's \glossterm{power} is equal to half its level (see \pcref{Item Power}).
+        Each item has a rank associated with it.
+        An item's rank is generally correlated with the item's effectiveness, rarity, and value.
+        These effects are summarized in \trefnp{Item Ranks}.
+        A magic item's \glossterm{power} is equal to twice its rank (see \pcref{Item Power}).
 
-        In general, two items of a given level are worth the same as a single item that is two levels higher.
-        Likewise, one item of a given level are worth two items that are each two levels lower.
-        These exchange rates do not apply to level 1/2 or level 0 items.
+        In general, five items of a given rank are worth the same as a single item that is one rank higher.
+        Likewise, one item of a given rank is worth four items that are each one rank lower.
 
         \parhead{Gear and Consumables}
             Long-term items that are expected to be worn or otherwise used repeatedly are more expensive than items that are destroyed immediately after being used.
-            Although consumable items are cheaper, they still use their full level for the purpose of determining their power, difficulty to craft or buy, and any other purposes.
-            In general, five consumable items of a given level are worth as much as a single non-consumable item of that level.
+            Although consumable items are cheaper, they still use their full rank for all other purposes, such as their power and how difficult they are to buy.
+            In general, five consumable items of a given rank are worth as much as a single non-consumable item of that rank.
 
         \begin{dtable}
-            \lcaption{Item Levels}
+            \lcaption{Item Ranks}
             \begin{dtabularx}{\columnwidth}{c c >{\ccol}X}
-                \tb{Item Level} & \tb{Typical Gear Price} & \tb{Typical Consumable Price} \tableheaderrule
-                0   & 2 gp or less  & 4 sp or less \\
-                1/2 & 10 gp         & 2 gp         \\
-                1   & 50 gp         & 10 gp        \\
-                2   & 125 gp        & 25 gp        \\
-                3   & 250 gp        & 50 gp        \\
-                4   & 500 gp        & 100 gp       \\
-                5   & 800 gp        & 160 gp       \\
-                6   & 1,200 gp      & 240 gp       \\
-                7   & 1,800 gp      & 360 gp       \\
-                8   & 2,750 gp      & 550 gp       \\
-                9   & 4,000 gp      & 800 gp       \\
-                10  & 6,500 gp      & 1,300 gp     \\
-                11  & 10,000 gp     & 2,000 gp     \\
-                12  & 16,000 gp     & 3,200 gp     \\
-                13  & 25,000 gp     & 5,000 gp     \\
-                14  & 37,000 gp     & 7,400 gp     \\
-                15  & 55,000 gp     & 11,000 gp    \\
-                16  & 85,000 gp     & 17,000 gp    \\
-                17  & 125,000 gp    & 25,000 gp    \\
-                18  & 190,000 gp    & 38,000 gp    \\
-                19  & 280,000 gp    & 56,000 gp    \\
-                20  & 400,000 gp    & 80,000 gp    \\
-                21  & 600,000 gp    & 120,000 gp   \\
+                \tb{Item Rank} & \tb{Typical Gear Price} & \tb{Typical Consumable Price} \tableheaderrule
+                0 & 10 gp or less & 2 gp or less \\
+                1 & 40 gp         & 8 gp         \\
+                2 & 200 gp        & 40 gp        \\
+                3 & 1,000 gp      & 200 gp       \\
+                4 & 5,000 gp      & 1,000 gp     \\
+                5 & 25,000 gp     & 5,000 gp     \\
+                6 & 125,000 gp    & 25,000 gp    \\
+                7 & 625,000 gp    & 125,000 gp   \\
             \end{dtabularx}
         \end{dtable}
 
-        Items with an level of 0 or 1 may be found among common folk, though few commoners would have more than one magic item of any value.
-        Items with an level of 2 or higher are usually only owned or used by nobility, wealthy merchants, and adventurers.
+        Items with a rank of 0 or 1 may be found among common folk, though few commoners would have more than one magic item of any value.
+        Items with a rank of 2 or higher are usually only owned or used by nobility, wealthy merchants, and adventurers.
 
     \subsection{Buying and Selling Items}
-        Items of any level can be exchanged for other items based on their level.
-        In general, items with an level of 10 or less can be bought or sold in exchange for gold pieces.
-        Items with an level of 11 or higher are exceptionally rare.
+        Items of any rank can be exchanged for other items based on their rank.
+        In general, items with an rank of 3 or less can be bought or sold in exchange for gold pieces.
+        Items with an rank of 4 or higher are exceptionally rare.
         The monetary value of such items is so exorbitant that they are almost never purchased or sold with gold pieces.
         Instead, they are typically exchanged for similarly rare magic items or gems.
 
-        Wandering adventurers typically have a limited time frame to sell their items, so they must accept lower prices than merchants can charge.
-        When selling for gold pieces, you can expect to receive a quarter of the item's average value according to its level.
-        When selling for another item, you can expect to receive an item or trade good of two levels lower in exchange.
+        Wandering adventurers typically have a limited time frame to sell their items, and it can be hard to find a buyer for highly valuable items on short notice, so they must accept lower prices than merchants can charge.
+        When selling for gold pieces, you can expect to receive a fifth of the item's typical value according to its rank.
+        When selling for another item, you can expect to receive an item or trade good of one rank lower in exchange.
+        These ratios can be negotiated, and favorably disposed merchants or nobles may give better deals.
 
         \subsubsection{Trade Goods}
             Some items are considered trade goods.
@@ -126,16 +111,21 @@ Items are divided into five broad categories, described below.
                 \end{dtabularx}
             \end{dtable}
 
-    \subsection{Typical Wealth By Level}
-        A typical character has one item with a level equal to their own level, plus two items of each lower level, to a maximum of five total items.
-        This does not include the character's legacy item, if any (see \pcref{Legacy Items}).
-        For example, a typical 10th level character would have items with levels of 10, 9, 9, 8, and 8.
+    \subsection{Typical Wealth Acquisition}
+        In general, a typical character finds one non-consumable item appropriate for them per level.
+        That item would have a rank equal to that character's highest rank at the time.
+        For example, a typical 5th level character would have five items: two rank 2 items, and 3 rank 1 items.
+        In addition, characters typically find several consumable items per level that are appropriate to their rank.
+
+        Over time, lower rank items stop being useful, so most characters use no more than five or six different items at a time, plus various consumables.
+        A typical 20th level character does not carry around 20 different items.
+        However, the lower level items are essentially irrelevant from the perspective of calculating wealth, so the ``one item per level'' guideline is still useful.
 
         This is a drastic simplification of the sometimes messy process of accumulating wealth and magic items over the course of a typical campaign.
         Characters will often find additional items that they have no immediate use for.
         Players may go several sessions without acquiring any particular items until they complete their current quest, which may reward them with a large number of items at once.
         This is all fine, and the GM should not feel compelled to keep item acquisition perfectly on rails.
-        Rise is only loosely balanced around this general pace of item acquisition, and it is not hard to adjust encounters to deal with unusually wealthy or poor characters.
+        Rise is only loosely balanced around this general pace of item acquisition, and it is not hard - or always necessary - to adjust encounters to deal with unusually wealthy or poor characters.
 
 \section{Using Magic Items}
 
@@ -190,11 +180,8 @@ Items are divided into five broad categories, described below.
             However, the creatures can swap the item between them without having to reattune to it each time.
 
     \subsubsection{Item Power}\label{Item Power}
-        The \glossterm{power} of an item depends on its level.
-        If the item is not being attuned to by a creature, its power is equal to half its level.
-        If a creature is attuning to the item, its power is equal to half its level or half the level of the attuning creature, whichever is higher.
-
-        An item's \glossterm{power} also affects its defenses.
+        The \glossterm{power} of an item is equal to twice its rank.
+        An item's power also affects its defenses.
         Its Fortitude and Mental defenses are equal to 5 \add its \glossterm{power}.
         Its Armor defense and Reflex defense are not affected by its \glossterm{power}, and are solely determined by its size and shape.
 
@@ -397,10 +384,10 @@ Items are divided into five broad categories, described below.
         In other cases, a weapon can deal either of two types of damage.
         The wielder chooses which type of damage to deal when they make each \glossterm{strike} with the weapon.
 
-        \parhead{Item Level (Cost)} The first value indicates the \glossterm{item level} of the item (see \pcref{Item Levels}).
+        \parhead{Item Rank (Cost)} The first value indicates the \glossterm{item rank} of the item (see \pcref{Item Ranks}).
         The second value in parentheses indicates the average cost to buy the item.
         Items crafted for unusually large or small creatures are more expensive.
-        For each size category larger or smaller than Medium, the item's \glossterm{item level} increases by one, which increases its price.
+        For each size category larger or smaller than Medium, the item's rank increases by one, which increases its price.
 
         \parhead{Weapon Tags} Some weapons have special properties. See \pcref{Weapon Tags} for details.
 
@@ -408,143 +395,143 @@ Items are divided into five broad categories, described below.
             \RaggedRight
             \begin{longtable}{p{10em} c c c >{\ccol}p{7em} c >{\ccol}p{12em}}
                 \lcaption{Weapons}                     \\
-                \tb{Name}                          & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{1}}   & \tb{Item Level (Cost)}\fn{2} & \tb{Weapon Tags}                          \tableheaderrule
+                \tb{Name}                          & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{1}}   & \tb{Item Rank (Cost)}\fn{2} & \tb{Weapon Tags}                          \tableheaderrule
                 Armor weapons                      &        &         &        &                          &              &                                                \\
                 \tind Armor spikes\fn{3}           & Medium & \tdash  & 1d6    & Piercing                 & \tdash       & \tdash                                      \\
-                \tind Standard shield\fn{3}        & Medium & \plus0  & 1d4    & Bludgeoning              & 1/2 (10 gp)  & Forceful                                       \\
-                \tind Standard spiked shield\fn{3} & Medium & \plus0  & 1d6    & Piercing                 & 1/2 (10 gp)  & Forceful                                       \\
+                \tind Standard shield\fn{3}        & Medium & \plus0  & 1d4    & Bludgeoning              & 0 (10 gp)  & Forceful                                       \\
+                \tind Standard spiked shield\fn{3} & Medium & \plus0  & 1d6    & Piercing                 & 0 (10 gp)  & Forceful                                       \\
 
                 Axes                               &        &         &        &                          &              &                                                \\
-                \tind Battleaxe                    & Medium & \plus0  & 1d8    & Slashing                 & 1/2 (10 gp)  & Sweeping (1), Versatile Grip                   \\
-                \tind Broadaxe                     & Medium & \plus0  & 1d8    & Slashing                 & 1/2 (10 gp)  & Impact, Versatile Grip                         \\
-                \tind Greataxe                     & Heavy  & \plus0  & 2d6    & Slashing                 & 1/2 (10 gp)  & Sweeping (1)                                   \\
-                \tind Handaxe                      & Light  & \plus2  & 1d6    & Slashing                 & 1/2 (10 gp)  & Thrown (15/60)                                 \\
-                \tind Poleaxe                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 1/2 (10 gp)  & Impact, Tripping                               \\
-                \tind Shepherd's axe               & Light  & \plus2  & 1d6    & Bludgeoning or slashing  & 1/2 (10 gp)  & Long                                           \\
-                \tind Throwing axe                 & Medium & \plus0  & 1d8    & Slashing                 & 1/2 (10 gp)  & Impact, Thrown (15/60)                         \\
+                \tind Battleaxe                    & Medium & \plus0  & 1d8    & Slashing                 & 0 (10 gp)  & Sweeping (1), Versatile Grip                   \\
+                \tind Broadaxe                     & Medium & \plus0  & 1d8    & Slashing                 & 0 (10 gp)  & Impact, Versatile Grip                         \\
+                \tind Greataxe                     & Heavy  & \plus0  & 2d6    & Slashing                 & 0 (10 gp)  & Sweeping (1)                                   \\
+                \tind Handaxe                      & Light  & \plus2  & 1d6    & Slashing                 & 0 (10 gp)  & Thrown (15/60)                                 \\
+                \tind Poleaxe                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 0 (10 gp)  & Impact, Tripping                               \\
+                \tind Shepherd's axe               & Light  & \plus2  & 1d6    & Bludgeoning or slashing  & 0 (10 gp)  & Long                                           \\
+                \tind Throwing axe                 & Medium & \plus0  & 1d8    & Slashing                 & 0 (10 gp)  & Impact, Thrown (15/60)                         \\
 
                 Blades                             &        &         &        &                          &              &                                                \\
-                \tind Broadsword                   & Medium & \plus0  & 1d8    & Slashing                 & 1/2 (10 gp)  & Sweeping (1), Versatile Grip                   \\
-                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 1/2 (10 gp)  & Compact, Thrown (15/60), Stealthy              \\
-                \tind Estoc                        & Medium & \plus0  & 1d8    & Piercing                 & 1/2 (10 gp)  & Long, Versatile Grip                           \\
-                \tind Greatsword                   & Heavy  & \plus0  & 1d10   & Slashing                 & 1/2 (10 gp)  & Sweeping (2)                                   \\
-                \tind Parrying dagger              & Light  & \plus2  & 1d6    & Piercing                 & 1/2 (10 gp)  & Parrying                                       \\
-                \tind Rapier                       & Light  & \plus2  & 1d6    & Piercing                 & 1/2 (10 gp)  & Disarming                                      \\
-                \tind Scimitar                     & Medium & \plus0  & 1d8    & Slashing                 & 1/2 (10 gp)  & Keen, Mounted                                  \\
-                \tind Smallsword                   & Light  & \plus2  & 1d6    & Piercing                 & 1/2 (10 gp)  & Keen                                           \\
+                \tind Broadsword                   & Medium & \plus0  & 1d8    & Slashing                 & 0 (10 gp)  & Sweeping (1), Versatile Grip                   \\
+                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 0 (10 gp)  & Compact, Thrown (15/60), Stealthy              \\
+                \tind Estoc                        & Medium & \plus0  & 1d8    & Piercing                 & 0 (10 gp)  & Long, Versatile Grip                           \\
+                \tind Greatsword                   & Heavy  & \plus0  & 1d10   & Slashing                 & 0 (10 gp)  & Sweeping (2)                                   \\
+                \tind Parrying dagger              & Light  & \plus2  & 1d6    & Piercing                 & 0 (10 gp)  & Parrying                                       \\
+                \tind Rapier                       & Light  & \plus2  & 1d6    & Piercing                 & 0 (10 gp)  & Disarming                                      \\
+                \tind Scimitar                     & Medium & \plus0  & 1d8    & Slashing                 & 0 (10 gp)  & Keen, Mounted                                  \\
+                \tind Smallsword                   & Light  & \plus2  & 1d6    & Piercing                 & 0 (10 gp)  & Keen                                           \\
 
                 Bows                               &        &         &        &                          &              &                                                \\
                 \tind Longbow\fn{3}                & Heavy  & \plus0  & 1d8    & \tdash                   & 1st (50 gp)  & Projectile (120/480)                           \\
                 \tind Shortbow\fn{3}               & Medium & \plus0  & 1d6    & \tdash                   & 1st (50 gp)  & Projectile (90/360), Stealthy                  \\
-                \tind Arrows (20)                  & \tdash & \plus0  & \tdash & Piercing                 & 1/2 (2 gp)   & Ammunition                                     \\
-                \tind Blunted arrows (20)          & \tdash & \minus1 & \tdash & Bludgeoning              & 1/2 (2 gp)   & Ammunition, Subdual                            \\
+                \tind Arrows (20)                  & \tdash & \plus0  & \tdash & Piercing                 & 0 (2 gp)   & Ammunition                                     \\
+                \tind Blunted arrows (20)          & \tdash & \minus1 & \tdash & Bludgeoning              & 0 (2 gp)   & Ammunition, Subdual                            \\
                 \tind Fire arrows (20)\fn{3}       & \tdash & \minus1 & \tdash & Piercing and fire        & 2nd (25 gp)  & Ammunition                                     \\
 
                 Club-like weapons                  &        &         &        &                          &              &                                                \\
-                \tind Club                         & Medium & \plus0  & 1d8    & Bludgeoning              & 0            & Versatile Grip                                 \\
-                \tind Greatclub                    & Heavy  & \plus0  & 2d6    & Bludgeoning              & 1/2 (10 gp)  & Forceful                                       \\
-                \tind Greatmace                    & Heavy  & \plus0  & 2d6    & Bludgeoning              & 1/2 (10 gp)  & Impact                                         \\
-                \tind Mace                         & Medium & \plus0  & 1d8    & Bludgeoning              & 1/2 (10 gp)  & Impact, Versatile Grip                         \\
-                % \tind Flanged mace                 & Medium & \plus0  & 1d10   & Bludgeoning              & 1/2 (10 gp)  & Versatile Grip                                 \\
-                \tind Morning star                 & Medium & \plus0  & 1d10   & Bludgeoning and piercing & 1/2 (10 gp)  & Versatile Grip                                 \\
-                \tind Sap                          & Light  & \plus2  & 1d6    & Bludgeoning              & 1/2 (10 gp)  & Stealthy, Subdual                              \\
+                \tind Club                         & Medium & \plus0  & 1d8    & Bludgeoning              & \tdash            & Versatile Grip                                 \\
+                \tind Greatclub                    & Heavy  & \plus0  & 2d6    & Bludgeoning              & 0 (10 gp)  & Forceful                                       \\
+                \tind Greatmace                    & Heavy  & \plus0  & 2d6    & Bludgeoning              & 0 (10 gp)  & Impact                                         \\
+                \tind Mace                         & Medium & \plus0  & 1d8    & Bludgeoning              & 0 (10 gp)  & Impact, Versatile Grip                         \\
+                % \tind Flanged mace                 & Medium & \plus0  & 1d10   & Bludgeoning              & 0 (10 gp)  & Versatile Grip                                 \\
+                \tind Morning star                 & Medium & \plus0  & 1d10   & Bludgeoning and piercing & 0 (10 gp)  & Versatile Grip                                 \\
+                \tind Sap                          & Light  & \plus2  & 1d6    & Bludgeoning              & 0 (10 gp)  & Stealthy, Subdual                              \\
 
                 Crossbows                          &        &         &        &                          &              &                                                \\
                 \tind Hand crossbow\fn{3}          & Light  & \plus0  & 1d6    & \tdash                   & 2nd (125 gp) & Projectile (30/120), Stealthy                  \\
                 \tind Heavy crossbow\fn{3}         & Heavy  & \plus0  & 2d6    & \tdash                   & 1st (50 gp)  & Projectile (90/360)                            \\
-                \tind Crossbow bolts (20)          & \tdash & \plus0  & \tdash & Piercing                 & 1/2 (2 gp)   & Ammunition                                     \\
-                \tind Blunted crossbow bolts (20)  & \tdash & \minus1 & \tdash & Piercing                 & 1/2 (2 gp)   & Ammunition, Subdual                            \\
+                \tind Crossbow bolts (20)          & \tdash & \plus0  & \tdash & Piercing                 & 0 (2 gp)   & Ammunition                                     \\
+                \tind Blunted crossbow bolts (20)  & \tdash & \minus1 & \tdash & Piercing                 & 0 (2 gp)   & Ammunition, Subdual                            \\
 
                 Flexible weapons                   &        &         &        &                          &              &                                                \\
-                \tind Flail                        & Medium & \plus0  & 1d8    & Bludgeoning              & 1/2 (10 gp)  & Tripping, Versatile Grip                       \\
-                \tind Heavy flail                  & Heavy  & \plus0  & 2d6    & Bludgeoning              & 1/2 (10 gp)  & Tripping                                       \\
-                \tind Two-section staff            & Heavy  & \plus0  & 1d10   & Bludgeoning              & 1/2 (10 gp)  & Disarming, Tripping                            \\
-                \tind Nunchaku                     & Light  & \plus1  & 1d6    & Bludgeoning              & 1/2 (10 gp)  & Disarming, Tripping                            \\
-                \tind Slapjack                     & Light  & \plus2  & 1d6    & Bludgeoning              & 1/2 (10 gp)  & Subdual                                        \\
-                \tind Whip\fn{3}                   & Light  & \plus1  & 1d4    & Bludgeoning              & 1/2 (10 gp)  & Disarming, Subdual, Tripping                   \\
+                \tind Flail                        & Medium & \plus0  & 1d8    & Bludgeoning              & 0 (10 gp)  & Tripping, Versatile Grip                       \\
+                \tind Heavy flail                  & Heavy  & \plus0  & 2d6    & Bludgeoning              & 0 (10 gp)  & Tripping                                       \\
+                \tind Two-section staff            & Heavy  & \plus0  & 1d10   & Bludgeoning              & 0 (10 gp)  & Disarming, Tripping                            \\
+                \tind Nunchaku                     & Light  & \plus1  & 1d6    & Bludgeoning              & 0 (10 gp)  & Disarming, Tripping                            \\
+                \tind Slapjack                     & Light  & \plus2  & 1d6    & Bludgeoning              & 0 (10 gp)  & Subdual                                        \\
+                \tind Whip\fn{3}                   & Light  & \plus1  & 1d4    & Bludgeoning              & 0 (10 gp)  & Disarming, Subdual, Tripping                   \\
 
                 Headed weapons                     &        &         &        &                          &              &                                                \\
-                \tind Light hammer                 & Light  & \plus1  & 1d6    & Bludgeoning              & 1/2 (10 gp)  & Forceful, Thrown (15/60)                       \\
-                \tind Longhammer                   & Heavy  & \plus0  & 1d10   & Bludgeoning              & 1/2 (10 gp)  & Forceful, Long                                   \\
-                \tind Pick                         & Medium & \plus0  & 1d8    & Piercing                 & 1/2 (10 gp)  & Impact, Versatile Grip                         \\
-                \tind Sickle                       & Light  & \plus1  & 1d6    & Slashing                 & 1/2 (10 gp)  & Sweeping (1), Tripping                         \\
-                \tind Sledgehammer                 & Heavy  & \plus0  & 2d6    & Bludgeoning              & 1/2 (10 gp)  & Forceful                                       \\
-                \tind Warhammer                    & Medium & \plus0  & 1d8    & Bludgeoning              & 1/2 (10 gp)  & Forceful, Versatile Grip                       \\
+                \tind Light hammer                 & Light  & \plus1  & 1d6    & Bludgeoning              & 0 (10 gp)  & Forceful, Thrown (15/60)                       \\
+                \tind Longhammer                   & Heavy  & \plus0  & 1d10   & Bludgeoning              & 0 (10 gp)  & Forceful, Long                                   \\
+                \tind Pick                         & Medium & \plus0  & 1d8    & Piercing                 & 0 (10 gp)  & Impact, Versatile Grip                         \\
+                \tind Sickle                       & Light  & \plus1  & 1d6    & Slashing                 & 0 (10 gp)  & Sweeping (1), Tripping                         \\
+                \tind Sledgehammer                 & Heavy  & \plus0  & 2d6    & Bludgeoning              & 0 (10 gp)  & Forceful                                       \\
+                \tind Warhammer                    & Medium & \plus0  & 1d8    & Bludgeoning              & 0 (10 gp)  & Forceful, Versatile Grip                       \\
 
                 Monk weapons                       &        &         &        &                          &              &                                                \\
-                \tind Jitte                        & Light  & \plus2  & 1d6    & Piercing                 & 1/2 (10 gp)  & Disarming                                      \\
-                \tind Kama                         & Light  & \plus2  & 1d6    & Slashing                 & 1/2 (10 gp)  & Tripping                                       \\
-                \tind Kunai                        & Light  & \plus2  & 1d6    & Piercing                 & 1/2 (10 gp)  & Thrown (30/120)                                \\
-                \tind Nunchaku                     & Light  & \plus1  & 1d6    & Bludgeoning              & 1/2 (10 gp)  & Disarming, Tripping                            \\
+                \tind Jitte                        & Light  & \plus2  & 1d6    & Piercing                 & 0 (10 gp)  & Disarming                                      \\
+                \tind Kama                         & Light  & \plus2  & 1d6    & Slashing                 & 0 (10 gp)  & Tripping                                       \\
+                \tind Kunai                        & Light  & \plus2  & 1d6    & Piercing                 & 0 (10 gp)  & Thrown (30/120)                                \\
+                \tind Nunchaku                     & Light  & \plus1  & 1d6    & Bludgeoning              & 0 (10 gp)  & Disarming, Tripping                            \\
                 \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & 0            & Long                                           \\
-                \tind Sai                          & Light  & \plus1  & 1d6    & Piercing or bludgeoning  & 1/2 (10 gp)  & Disarming, Parrying                            \\
-                \tind Shuriken (5)                 & Light  & \plus2  & 1d4    & Piercing and slashing    & 1/2 (10 gp)  & Ammunition, Compact, Thrown (15/60), Stealthy  \\
+                \tind Sai                          & Light  & \plus1  & 1d6    & Piercing or bludgeoning  & 0 (10 gp)  & Disarming, Parrying                            \\
+                \tind Shuriken (5)                 & Light  & \plus2  & 1d4    & Piercing and slashing    & 0 (10 gp)  & Ammunition, Compact, Thrown (15/60), Stealthy  \\
 
                 Polearms                           &        &         &        &                          &              &                                                \\
-                \tind Bardiche                     & Heavy  & \plus0  & 2d6    & Slashing                 & 1/2 (10 gp)  & Sweeping (1)                                   \\
-                \tind Glaive                       & Heavy  & \plus0  & 1d10   & Slashing                 & 1/2 (10 gp)  & Long, Sweeping (1)                             \\
-                \tind Halberd                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 1/2 (10 gp)  & Long, Tripping                                 \\
-                \tind Longhammer                   & Heavy  & \plus0  & 1d10   & Bludgeoning              & 1/2 (10 gp)  & Forceful, Long                                   \\
-                \tind Poleaxe                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 1/2 (10 gp)  & Impact, Tripping                               \\
+                \tind Bardiche                     & Heavy  & \plus0  & 2d6    & Slashing                 & 0 (10 gp)  & Sweeping (1)                                   \\
+                \tind Glaive                       & Heavy  & \plus0  & 1d10   & Slashing                 & 0 (10 gp)  & Long, Sweeping (1)                             \\
+                \tind Halberd                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 0 (10 gp)  & Long, Tripping                                 \\
+                \tind Longhammer                   & Heavy  & \plus0  & 1d10   & Bludgeoning              & 0 (10 gp)  & Forceful, Long                                   \\
+                \tind Poleaxe                      & Heavy  & \plus0  & 1d10   & Piercing or slashing     & 0 (10 gp)  & Impact, Tripping                               \\
                 \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & 0            & Long                                           \\
-                \tind Scythe                       & Heavy  & \plus0  & 1d10   & Slashing                 & 1/2 (10 gp)  & Sweeping (2)                                   \\
-                \tind Swordstaff                   & Heavy  & \plus0  & 1d10   & Slashing                 & 1/2 (10 gp)  & Keen, Long                                     \\
+                \tind Scythe                       & Heavy  & \plus0  & 1d10   & Slashing                 & 0 (10 gp)  & Sweeping (2)                                   \\
+                \tind Swordstaff                   & Heavy  & \plus0  & 1d10   & Slashing                 & 0 (10 gp)  & Keen, Long                                     \\
 
                 Simple weapons                     &        &         &        &                          &              &                                                \\
                 \tind Claw sheath\fn{3}            & \tdash & \tdash  & \tdash & \tdash                   & 1st (50 gp)  &                                                \\
                 \tind Club                         & Medium & \plus0  & 1d8    & Bludgeoning              & 0            & Versatile Grip                                 \\
-                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 1/2 (10 gp)  & Compact, Stealthy, Thrown (15/60)              \\
+                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 0 (10 gp)  & Compact, Stealthy, Thrown (15/60)              \\
                 \tind Heavy crossbow\fn{3}         & Heavy  & \plus0  & 2d6    & \tdash                   & 1st (50 gp)  & Projectile (90/360)                            \\
-                \tind Crossbow bolts (20)          & \tdash & \plus0  & \tdash & Piercing                 & 1/2 (2 gp)   & Ammunition                                     \\
+                \tind Crossbow bolts (20)          & \tdash & \plus0  & \tdash & Piercing                 & 0 (2 gp)   & Ammunition                                     \\
                 \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & 0            & Long                                           \\
 
                 Spears                             &        &         &        &                          &              &                                                \\
-                \tind Greatspear                   & Heavy  & \plus0  & 2d6    & Piercing                 & 1/2 (10 gp)  & Long                                           \\
-                \tind Javelin                      & Medium & \plus1  & 1d6    & Piercing                 & 1/2 (10 gp)  & Thrown (30/120)                                \\
-                \tind Lance                        & Heavy  & \plus0  & 1d10   & Piercing                 & 1/2 (10 gp)  & Long, Mounted                                  \\
-                \tind Ranseur                      & Heavy  & \plus0  & 1d10   & Piercing                 & 1/2 (10 gp)  & Disarming, Long                                \\
-                \tind Partisan                     & Heavy  & \plus0  & 1d10   & Piercing                 & 1/2 (10 gp)  & Parrying, Long                                 \\
-                \tind Spear\fn{3}                  & Medium & \plus0  & 1d8    & Piercing                 & 1/2 (10 gp)  & Thrown (15/60), Versatile Grip                 \\
+                \tind Greatspear                   & Heavy  & \plus0  & 2d6    & Piercing                 & 0 (10 gp)  & Long                                           \\
+                \tind Javelin                      & Medium & \plus1  & 1d6    & Piercing                 & 0 (10 gp)  & Thrown (30/120)                                \\
+                \tind Lance                        & Heavy  & \plus0  & 1d10   & Piercing                 & 0 (10 gp)  & Long, Mounted                                  \\
+                \tind Ranseur                      & Heavy  & \plus0  & 1d10   & Piercing                 & 0 (10 gp)  & Disarming, Long                                \\
+                \tind Partisan                     & Heavy  & \plus0  & 1d10   & Piercing                 & 0 (10 gp)  & Parrying, Long                                 \\
+                \tind Spear\fn{3}                  & Medium & \plus0  & 1d8    & Piercing                 & 0 (10 gp)  & Thrown (15/60), Versatile Grip                 \\
 
                 Thrown weapons                     &        &         &        &                          &              &                                                \\
-                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 1/2 (10 gp)  & Compact, Stealthy, Thrown (15/60)              \\
-                \tind Dart (5)                     & Light  & \plus1  & 1d4    & Piercing                 & 1/2 (2 gp)   & Ammunition, Compact, Thrown (30/120), Stealthy \\
-                \tind Handaxe                      & Light  & \plus2  & 1d6    & Slashing                 & 1/2 (10 gp)  & Thrown (15/60)                                 \\
-                \tind Light hammer                 & Light  & \plus1  & 1d6    & Bludgeoning              & 1/2 (10 gp)  & Forceful, Thrown (15/60)                       \\
-                \tind Javelin                      & Medium & \plus1  & 1d6    & Piercing                 & 1/2 (10 gp)  & Thrown (30/120)                                \\
-                \tind Shuriken (5)                 & Light  & \plus2  & 1d4    & Piercing and slashing    & 1/2 (2 gp)   & Ammunition, Compact, Thrown (15/60), Stealthy  \\
-                \tind Sling\fn{3}                  & Light  & \plus0  & 1d6    & Bludgeoning              & 1/2 (10 gp)  & Projectile (90/360)                            \\
-                \tind Throwing axe                 & Medium & \plus0  & 1d8    & Slashing                 & 1/2 (10 gp)  & Impact, Thrown (15/60)                         \\
-                \tind Bullets, sling (20)          & \tdash & \tdash  & \tdash & \tdash                   & 1/2 (2 gp)   & Ammunition                                     \\
+                \tind Dagger                       & Light  & \plus2  & 1d4    & Piercing or slashing     & 0 (10 gp)  & Compact, Stealthy, Thrown (15/60)              \\
+                \tind Dart (5)                     & Light  & \plus1  & 1d4    & Piercing                 & 0 (2 gp)   & Ammunition, Compact, Thrown (30/120), Stealthy \\
+                \tind Handaxe                      & Light  & \plus2  & 1d6    & Slashing                 & 0 (10 gp)  & Thrown (15/60)                                 \\
+                \tind Light hammer                 & Light  & \plus1  & 1d6    & Bludgeoning              & 0 (10 gp)  & Forceful, Thrown (15/60)                       \\
+                \tind Javelin                      & Medium & \plus1  & 1d6    & Piercing                 & 0 (10 gp)  & Thrown (30/120)                                \\
+                \tind Shuriken (5)                 & Light  & \plus2  & 1d4    & Piercing and slashing    & 0 (2 gp)   & Ammunition, Compact, Thrown (15/60), Stealthy  \\
+                \tind Sling\fn{3}                  & Light  & \plus0  & 1d6    & Bludgeoning              & 0 (10 gp)  & Projectile (90/360)                            \\
+                \tind Throwing axe                 & Medium & \plus0  & 1d8    & Slashing                 & 0 (10 gp)  & Impact, Thrown (15/60)                         \\
+                \tind Bullets, sling (20)          & \tdash & \tdash  & \tdash & \tdash                   & 0 (2 gp)   & Ammunition                                     \\
 
                 Unarmed weapons                    &        &         &        &                          &              &                                                \\
-                \tind Gauntlet\fn{3}               & Light  & \plus2  & 1d3    & Bludgeoning              & 1/2 (10 gp)  & Unarmed                                        \\
-                \tind Gauntlet, spiked\fn{3}       & Light  & \plus2  & 1d3    & Piercing                 & 1/2 (10 gp)  & Unarmed                                        \\
+                \tind Gauntlet\fn{3}               & Light  & \plus2  & 1d3    & Bludgeoning              & 0 (10 gp)  & Unarmed                                        \\
+                \tind Gauntlet, spiked\fn{3}       & Light  & \plus2  & 1d3    & Piercing                 & 0 (10 gp)  & Unarmed                                        \\
                 \tind Unarmed strike\fn{3}         & Light  & \plus2  & 1d3    & Bludgeoning              & \tdash       & Subdual, Unarmed                               \\
 
                 % Exotic weapons should be +3 over normal
-                \tb{Exotic Weapons}           & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Item Level (Cost)}\fn{2} & \tb{Weapon Tags} \tableheaderrule
+                \tb{Exotic Weapons}           & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Item Rank (Cost)}\fn{2} & \tb{Weapon Tags} \tableheaderrule
                 Armor                          &         &        &        &                          &              &                                \\
                 \tind Armblade\fn{3}           & Light   & \plus2 & 1d6    & Slashing                 & 1st (50 gp)  & Grappling, Keen                \\
                 \tind Spiked knee\fn{3}        & Light   & \plus1 & 1d6    & Piercing                 & 1st (50 gp)  & Grappling, Impact              \\
                 Axes                           &         &        &        &                          &              &                                \\
-                \tind Dwarven throwing axe     & Light   & \plus2 & 1d6    & Slashing                 & 1/2 (10 gp)  & Impact, Thrown (30/120)        \\
+                \tind Dwarven throwing axe     & Light   & \plus2 & 1d6    & Slashing                 & 0 (10 gp)  & Impact, Thrown (30/120)        \\
                 \tind Dwarven waraxe           & Medium  & \plus0 & 1d10   & Slashing                 & 1st (50 gp)  & Thrown (15/60), Versatile Grip \\
                 \tind Orcish greataxe          & Heavy   & \plus0 & 2d6    & Slashing                 & 1st (50 gp)  & Impact, Sweeping (1)           \\
                 Blades                         &         &        &        &                          &              &                                \\
-                \tind Boot dagger\fn{3}        & Light   & \plus2 & 1d6    & Piercing                 & 1/2 (10 gp)  & Compact, Stealthy              \\
+                \tind Boot dagger\fn{3}        & Light   & \plus2 & 1d6    & Piercing                 & 0 (10 gp)  & Compact, Stealthy              \\
                 \tind Falchion                 & Medium  & \plus0 & 1d8    & Slashing                 & 1st (50 gp)  & Sweeping (2), Versatile Grip   \\
                 \tind Katana                   & Heavy   & \plus1 & 1d10   & Slashing                 & 1st (50 gp)  & Keen, Sweeping (1)             \\
-                \tind Kukri                    & Light   & \plus2 & 1d6    & Slashing                 & 1/2 (10 gp)  & Keen, Sweeping (1)             \\
+                \tind Kukri                    & Light   & \plus2 & 1d6    & Slashing                 & 0 (10 gp)  & Keen, Sweeping (1)             \\
                 Bows                           &         &        &        &                          &              &                                \\
                 \tind Flatbow\fn{3}            & Heavy   & \plus1 & 1d8    & \tdash                   & 1st (50 gp)  & Projectile (120/480)           \\
                 \tind Heartseeker arrows (20)  & \tdash  & \plus0 & \tdash & Piercing                 & 3rd (50 gp)  & Ammunition, Impact             \\
                 \tind Takedown bow\fn{3}       & Special & \plus0 & 1d8    & \tdash                   & 2nd (125 gp) & Projectile (120/480 or 90/360) \\
                 Club-like weapons              &         &        &        &                          &              &                                \\
-                \tind Culacula                 & Heavy   & \plus0 & 2d6    & Bludgeoning              & 1/2 (10 gp)  & Forceful, Impact, Parrying     \\
-                \tind Gnomish trick mace       & Light   & \plus2 & 1d6    & Bludgeoning              & 1/2 (10 gp)  & Impact, Tripping               \\
-                \tind Knobkerrie               & Medium  & \plus1 & 1d8    & Bludgeoning              & 1/2 (10 gp)  & Impact, Throwing (15/60)       \\
-                \tind Totokia                  & Medium  & \plus0 & 1d10   & Bludgeoning and piercing & 1/2 (10 gp)  & Impact, Versatile Grip         \\
+                \tind Culacula                 & Heavy   & \plus0 & 2d6    & Bludgeoning              & 0 (10 gp)  & Forceful, Impact, Parrying     \\
+                \tind Gnomish trick mace       & Light   & \plus2 & 1d6    & Bludgeoning              & 0 (10 gp)  & Impact, Tripping               \\
+                \tind Knobkerrie               & Medium  & \plus1 & 1d8    & Bludgeoning              & 0 (10 gp)  & Impact, Throwing (15/60)       \\
+                \tind Totokia                  & Medium  & \plus0 & 1d10   & Bludgeoning and piercing & 0 (10 gp)  & Impact, Versatile Grip         \\
                 Crossbows                      &         &        &        &                          &              &                                \\
                 \tind Arbalest\fn{3}           & Heavy   & \plus2 & 2d6    & \tdash                   & 3rd (250 gp) & Impact, Projectile (90/360)    \\
                 \tind Repeating crossbow\fn{3} & Medium  & \plus0 & 1d8    & \tdash                   & 4th (500 gp) & Impact, Projectile (90/360)    \\
@@ -566,17 +553,17 @@ Items are divided into five broad categories, described below.
                 \tind War scythe               & Heavy   & \plus0 & 2d6    & Slashing or piercing     & 1st (50 gp)  & Sweeping (2)                   \\
                 Simple weapons                 &         &        &        &                          &              &                                \\
                 Spear                          &         &        &        &                          &              &                                \\
-                \tind Gnomish smallspear       & Light   & \plus2 & 1d6    & Piercing                 & 1/2 (10 gp)  & Impact, Long                   \\
-                \tind Pike\fn{3}               & Heavy   & \plus0 & 2d6    & Piercing                 & 1/2 (10 gp)  & Long                           \\
+                \tind Gnomish smallspear       & Light   & \plus2 & 1d6    & Piercing                 & 0 (10 gp)  & Impact, Long                   \\
+                \tind Pike\fn{3}               & Heavy   & \plus0 & 2d6    & Piercing                 & 0 (10 gp)  & Long                           \\
                 Thrown weapons                 &         &        &        &                          &              &                                \\
-                \tind Bolas                    & Light   & \plus2 & 1d4    & Bludgeoning              & 1/2 (10 gp)  & Thrown (15/60), Tripping       \\
-                \tind Dwarven throwing axe     & Light   & \plus2 & 1d6    & Slashing                 & 1/2 (10 gp)  & Impact, Thrown (30/120)        \\
+                \tind Bolas                    & Light   & \plus2 & 1d4    & Bludgeoning              & 0 (10 gp)  & Thrown (15/60), Tripping       \\
+                \tind Dwarven throwing axe     & Light   & \plus2 & 1d6    & Slashing                 & 0 (10 gp)  & Impact, Thrown (30/120)        \\
                 \tind Dwarven waraxe           & Medium  & \plus0 & 1d10   & Slashing                 & 1st (50 gp)  & Thrown (15/60), Versatile Grip \\
-                \tind Net\fn{3}                & Medium  & \plus0 & \tdash & \tdash                   & 1/2 (10 gp)  & Thrown (5/30)                  \\
+                \tind Net\fn{3}                & Medium  & \plus0 & \tdash & \tdash                   & 0 (10 gp)  & Thrown (5/30)                  \\
                 Unarmed weapons                &         &        &        &                          &              &                                \\
             \end{longtable}
             1 When two types are given, the weapon is both types if the entry specifies ``and,'' or either type (attacker's choice) if the entry specifies ``or.'' \\
-            2 See \pcref{Item Levels}. \\
+            2 See \pcref{Item Ranks}. \\
             3 This weapon has special rules. \\
         \end{longtablewrapper}
 
@@ -745,34 +732,34 @@ Items are divided into five broad categories, described below.
         \parhead{Dex Bonus} This multiplier affects the contribution of your base Dexterity to your Armor defense.
         It does not change any other effects that Dexterity has.
 
-        \parhead{Item Level (Cost)} The first value indicates the \glossterm{item level} of the item (see \pcref{Item Levels}).
+        \parhead{Item Rank (Cost)} The first value indicates the \glossterm{item rank} of the item (see \pcref{Item Ranks}).
         The second value in parentheses indicates the average cost to buy the item.
         Items crafted for unusually large or small creatures are more expensive.
-        For each size category larger or smaller than Medium, the item's \glossterm{item level} increases by one, which increases its price.
+        For each size category larger or smaller than Medium, the item's rank increases by one, which increases its price.
 
         \begin{dtable!*}
             \lcaption{Armor and Shields}
             \begin{dtabularx}{\textwidth}{l c c c c c >{\lcol}X c}
-                \tb{Armor}            & \tb{Defense} & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material}     & \tb{Item Level (Cost)}  \tableheaderrule
+                \tb{Armor}            & \tb{Defense} & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material}     & \tb{Item Rank (Cost)}  \tableheaderrule
                 Light armor           &              &                        &                  &              &                &                   &              \\
-                \tind Leather         & \plus2       & \plus2                 & \plus1           & \tdash       & \tdash         & Leather           & 1/2 (10 gp)  \\
+                \tind Leather         & \plus2       & \plus2                 & \plus1           & \tdash       & \tdash         & Leather           & 0 (10 gp)  \\
                 \tind Studded leather & \plus2       & \plus3                 & \plus2           & \tdash       & \tdash         & Leather and metal & 1st (50 gp)  \\
                 \tind Chain shirt     & \plus2       & \plus3                 & \plus2           & \tdash       & \tdash         & Metal             & 1st (50 gp)  \\
-                \tind Buckler         & \plus1       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal or wood     & 1/2 (10 gp)  \\
+                \tind Buckler         & \plus1       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal or wood     & 0 (10 gp)  \\
                 Medium armor          &              &                        &                  &              &                &                   &              \\
                 \tind Hide            & \plus3       & \plus5                 & \plus3           & \minus5 ft.  & \mult1/2       & Leather           & 1st (50 gp)  \\
                 \tind Scale mail      & \plus3       & \plus6                 & \plus5           & \minus5 ft.  & \mult1/2       & Metal             & 1st (50 gp)  \\
                 \tind Breastplate     & \plus3       & \plus6                 & \plus4           & \minus5 ft.  & \mult1/2       & Metal             & 2nd (125 gp) \\
-                \tind Standard shield & \plus2       & \tdash                 & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood     & 1/2 (10 gp)  \\
+                \tind Standard shield & \plus2       & \tdash                 & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood     & 0 (10 gp)  \\
                 Heavy armor           &              &                        &                  &              &                &                   &              \\
                 \tind Layered hide    & \plus4       & \plus8                 & \plus5           & \minus10 ft. & \mult0         & Leather           & 2nd (125 gp) \\
                 \tind Plated mail     & \plus4       & \plus10                & \plus7           & \minus10 ft. & \mult0         & Metal             & 3rd (250 gp) \\
                 \tind Full plate      & \plus4       & \plus12                & \plus6           & \minus10 ft. & \mult0         & Metal             & 5th (800 gp) \\
                 \tind Tower shield    & \plus3\fn{2} & \tdash                 & \plus2\fn{1}     & \tdash       & \mult0         & Metal or wood     & 1st (50 gp)  \\
                 Extras\fn{3}          &              &                        &                  &              &                &                   &              \\
-                \tind Armor spikes    & \tdash       & \minus1                & \plus1           & \tdash       & \tdash         & Metal             & 1/2 (10 gp)  \\
-                \tind Locked gauntlet & \tdash       & \tdash                 & Special          & \tdash       & \tdash         & Metal             & 1/2 (10 gp)  \\
-                \tind Shield spikes   & \tdash       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal             & 1/2 (10 gp)  \\
+                \tind Armor spikes    & \tdash       & \minus1                & \plus1           & \tdash       & \tdash         & Metal             & 0 (10 gp)  \\
+                \tind Locked gauntlet & \tdash       & \tdash                 & Special          & \tdash       & \tdash         & Metal             & 0 (10 gp)  \\
+                \tind Shield spikes   & \tdash       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal             & 0 (10 gp)  \\
             \end{dtabularx}
             1 The hand holding the shield is not free, which may limit your actions. \\
             2 Tower shields improve your ability to take the \textit{total defense} action. See the description.
@@ -819,111 +806,111 @@ Items are divided into five broad categories, described below.
         \begin{dtable!*}
             \lcaption{Armor Special Materials}
 \begin{dtabularx}{\textwidth}{l c c c c >{\lcol}X}
-    \tb{Material}              & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                & \tb{Material} & \tb{Item Level}              \tableheaderrule
+    \tb{Material}              & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                & \tb{Material} & \tb{Item Rank}              \tableheaderrule
     % metal high resistance, encum
-    \tind Adamantine           & \mult4                 & \plus2           & \tdash                             & Metal         & \plus9  \\
-    \tind Adamantine, pure     & \mult8                 & \plus2           & \tdash                             & Metal         & \plus15 \\
+    \tind Adamantine           & \mult4                 & \plus2           & \tdash                             & Metal         & \plus3  \\
+    \tind Adamantine, pure     & \mult8                 & \plus2           & \tdash                             & Metal         & \plus5 \\
     % magic defense                                                          
-    \tind Cold iron            & \mult1/2               & \tdash           & \plus1 defense vs magic            & Metal         & \plus6  \\
-    \tind Cold iron, pure      & \mult1/2               & \tdash           & \plus2 defense vs magic            & Metal         & \plus12 \\
+    \tind Cold iron            & \mult1/2               & \tdash           & \plus1 defense vs magic            & Metal         & \plus2  \\
+    \tind Cold iron, pure      & \mult1/2               & \tdash           & \plus2 defense vs magic            & Metal         & \plus4 \\
     % metal resistance                                                       
-    \tind Deepforged           & \mult2                 & \tdash           & \tdash                             & Metal         & \plus6  \\
-    \tind Deepforged, pure     & \mult4                 & \tdash           & \tdash                             & Metal         & \plus12 \\
+    \tind Deepforged           & \mult2                 & \tdash           & \tdash                             & Metal         & \plus2  \\
+    \tind Deepforged, pure     & \mult4                 & \tdash           & \tdash                             & Metal         & \plus4 \\
     % metal crit resistance                                                  
-    \tind Diamondsteel         & \tdash                 & \tdash           & \plus4 defense vs strike crits     & Metal         & \plus6  \\
-    \tind Diamondsteel, pure   & \mult2                 & \tdash           & \plus4 defense vs crits            & Metal         & \plus12 \\
+    \tind Diamondsteel         & \tdash                 & \tdash           & \plus4 defense vs strike crits     & Metal         & \plus2  \\
+    \tind Diamondsteel, pure   & \mult2                 & \tdash           & \plus4 defense vs crits            & Metal         & \plus4 \\
     % offset leather resistance, energy defense bonus                        
-    \tind Dragonhide           & \mult3                 & \tdash           & Impervious to specific energy type & Leather       & \plus9  \\
-    \tind Dragonhide, ancient  & \mult6                 & \tdash           & Immune to specific damage type     & Leather       & \plus15 \\
+    \tind Dragonhide           & \mult3                 & \tdash           & Impervious to specific energy type & Leather       & \plus3  \\
+    \tind Dragonhide, ancient  & \mult6                 & \tdash           & Immune to specific damage type     & Leather       & \plus5 \\
     % offset metal resistance, energy defense bonus                          
-    \tind Dragonscale          & \mult3                 & \tdash           & Impervious to specific energy type & Metal         & \plus9  \\
-    \tind Dragonscale, ancient & \mult6                 & \tdash           & Immune to specific energy type     & Metal         & \plus15 \\
+    \tind Dragonscale          & \mult3                 & \tdash           & Impervious to specific energy type & Metal         & \plus3  \\
+    \tind Dragonscale, ancient & \mult6                 & \tdash           & Immune to specific energy type     & Metal         & \plus5 \\
     % leather resistance                                                     
-    \tind Elvenweave           & \mult2                 & \tdash           & \tdash                             & Leather       & \plus6  \\
-    \tind Elvenweave, pure     & \mult4                 & \tdash           & \tdash                             & Leather       & \plus12 \\
+    \tind Elvenweave           & \mult2                 & \tdash           & \tdash                             & Leather       & \plus2  \\
+    \tind Elvenweave, pure     & \mult4                 & \tdash           & \tdash                             & Leather       & \plus4 \\
     % idk                                                                    
-    \tind Ironwood             & \tdash                 & \tdash           & \tdash                             & Metal         & \plus3  \\
+    \tind Ironwood             & \tdash                 & \tdash           & \tdash                             & Metal         & \plus1  \\
     % metal encumbrance reduction                                            
-    \tind Mithral              & \tdash                 & \minus2          & \tdash                             & Metal         & \plus6  \\
-    \tind Mithral, pure        & \mult2                 & \minus3          & Reduce usage class                 & Metal         & \plus12 \\
+    \tind Mithral              & \tdash                 & \minus2          & \tdash                             & Metal         & \plus2  \\
+    \tind Mithral, pure        & \mult2                 & \minus3          & Reduce usage class                 & Metal         & \plus4 \\
     % metal resistance, recovery, encumbrance penalty                        
-    \tind Starmetal            & \mult2                 & \plus2           & Recover resistances                & Metal         & \plus6  \\
-    \tind Starmetal, pure      & \mult4                 & \plus2           & Recover resistances                & Metal         & \plus12 \\
+    \tind Starmetal            & \mult2                 & \plus2           & Recover resistances                & Metal         & \plus2  \\
+    \tind Starmetal, pure      & \mult4                 & \plus2           & Recover resistances                & Metal         & \plus4 \\
 \end{dtabularx}
         \end{dtable!*}
 
         \parhead{Adamantine} Adamantine armor increases the \glossterm{encumbrance} of the armor by 2, but it multiplies the \glossterm{damage resistance} provided by the armor by 4.
-        The armor's item level is increased by 9, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 3, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Adamantine, Pure} Pure adamantine armor increases the \glossterm{encumbrance} of the armor by 2, but it multiplies the \glossterm{damage resistance} provided by the armor by 8.
-        The armor's item level is increased by 15, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 5, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Cold Iron} Cold iron armor provides half the normal \glossterm{damage resistance}.
         In exchange, it grants a \plus1 bonus to your defenses against \glossterm{magical} abilities.
-        The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Cold Iron, Pure} Pure cold iron armor provides half the normal \glossterm{damage resistance}.
         In exchange, it grants a \plus2 bonus to your defenses against \glossterm{magical} abilities.
-        The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Deepforged} Deepforged body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
-        The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Deepforged, Pure} Pure deepforged body armor multiplies the \glossterm{damage resistance} provided by the armor by 4.
-        The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Diamondsteel} Diamondsteel body armor grants you a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
-        The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Diamondsteel, Pure} Pure diamondsteel body armor grants you a \plus4 bonus to your defenses when determining whether any attack gets a \glossterm{critical hit} against you instead of a normal hit.
         In addition, it multiplies the \glossterm{damage resistance} provided by the armor by 2.
-        The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Dragonhide} Dragonhide body armor multiplies the \glossterm{damage resistance} provided by the armor by 3.
         In addition, each dragonhide body armor is made from the hide of a particular type of dragon.
         You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon.
-        The armor's item level is increased by 9, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 3, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Dragonhide, Ancient} Ancient dragonhide body armor multiplies the \glossterm{damage resistance} provided by the armor by 6.
         In addition, each ancient dragonhide body armor is made from the hide of a particular type of dragon.
         You are \glossterm{immune} to damage of the type dealt by that dragon's breath weapon.
-        The armor's item level is increased by 15, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 5, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Dragonscale} Dragonscale body armor multiplies the \glossterm{damage resistance} provided by the armor by 3.
         It is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
         In addition, each dragonscale body armor is made from the scales of a particular type of dragon.
         You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon.
-        The armor's item level is increased by 9, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 3, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Dragonscale, Ancient} Ancient dragonscale body armor multiplies the \glossterm{damage resistance} provided by the armor by 6.
         It is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
         In addition, each ancient dragonscale body armor is made from the scales of a particular type of dragon.
         You are \glossterm{immune} to damage of the type dealt by that dragon's breath weapon.
-        The armor's item level is increased by 15, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 5, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Elvenweave} Elvenweave body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
-        The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Ironwood} The most common special material is ironwood, which is made from wood magically treated using the \spell{ironwood} ritual to be as strong as steel. Ironwood armor functions exactly like armor of the same type, except that it is made of wood.
-        The armor's item level is increased by 3, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 1, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Mithral} Mithral body armor reduces the \glossterm{encumbrance} of the armor by 2.
-        The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Mithral, Pure} Pure mithral body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
         In addition, it reduces the \glossterm{encumbrance} of the armor by 3, and it increases the contribution of your base Dexterity to your Armor defense relative to the normal limit for that type of armor.
         A multiplier of \mult1/2 becomes \mult1, and a multiplier of \mult0 becomes a \mult1/2.
-        The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Starmetal} Starmetal body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
         In addition, it increases the \glossterm{encumbrance} of the armor by 2.
         When you use the \textit{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal half to the damage resistance provided by the armor, ignoring magical enhancements.
-        The armor's item level is increased by 6, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Starmetal, Pure} Pure starmetal body armor multiplies the \glossterm{damage resistance} provided by the armor by 4.
         In addition, it increases the \glossterm{encumbrance} of the armor by 2.
         When you use the \textit{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor, ignoring magical enhancements.
-        The armor's item level is increased by 12, which increases the typical cost to buy the item (see \pcref{Item Levels}).
+        The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
 \newpage
 \section{Magic Armor}

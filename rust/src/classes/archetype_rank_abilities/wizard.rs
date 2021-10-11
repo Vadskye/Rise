@@ -11,7 +11,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
                 You may add half your magical \glossterm{power} to the damage or healing caused by any alchemical items you use.
-                In addition, whenever you use an alchemical item, you gain a \plus1d bonus to any damage or healing caused by the item for every 3 levels by which your level exceeds the item's level.
+                In addition, whenever you use an alchemical item, you gain a \plus1d bonus to any damage or healing caused by the item for each rank by which your rank in this archetype exceeds the item's rank.
             ",
             // TODO: add alchemical items as unique attacks
             modifiers: None,
@@ -27,7 +27,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 However, they are less durable, since they are partially sustained by your magic.
                 Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
 
-                You can use this ability to create alchemical items with a item level up to your level (see \pcref{Item Levels}).
+                You can use this ability to create alchemical items with a rank up to your rank in this archetype (see \pcref{Item Ranks}).
                 Creating an item in this way functions in the same way as crafting alchemical items normally, with the following changes.
                 First, you do not require any raw materials.
                 Second, you can create up to three items with this ability with 5 minutes of work.
@@ -50,8 +50,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \parhead{Aerodynamic Construction} You double the range of thrown alchemical items you create.
                         This does not affect alchemical items that are not designed to be thrown.
-                    \parhead{Complex Construction} You can use your portable workshop ability to create items with a level up to two levels higher than your level.
-                    \parhead{Efficient Crafting} You treat all alchemical items as if they were one level lower than their actual level for the purpose of determining their material requirements and crafting time without using your \textit{portable workshop} ability.
+                    \parhead{Complex Construction} You can use your portable workshop ability to create items with a rank up to one higher than your rank in this archetype.
+                    \parhead{Efficient Crafting} When you craft an alchemical item without using your \textit{portable workshop} ability, you treat it as if it was one rank lower than its actual rank for the purpose of determining its material requirements.
                     % TODO: wording
                     % \parhead{Enduring Construction} The duration of any alchemical item you create is doubled.
                         % In addition, alchemical items that last for a fixed number of uses have their number of uses doubled.

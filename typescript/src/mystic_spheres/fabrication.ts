@@ -268,7 +268,7 @@ export const fabrication: MysticSphere = {
 
       effect: `
         Choose a type of body armor, weapon, or shield that you are proficient with.
-        The item's level cannot exceed your level.
+        The item's rank cannot exceed your spellcasting rank with this spell.
         In addition, it cannot be constructed of any magical or extraordinary material.
 
         You create a normal item of that type in your hand or in any unoccupied square on solid ground within \\shortrange.
@@ -530,7 +530,7 @@ export const fabrication: MysticSphere = {
         name: 'instant weapon',
         exceptThat: `
           the weapon you create is magical.
-          You may give it a single magic weapon ability of your choice with an item level no higher than your level.
+          You may give it a single magic weapon ability of your choice with rank no higher than your spellcasting rank with this spell.
         `,
       },
       focus: false,
