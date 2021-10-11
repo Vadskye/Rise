@@ -50,7 +50,6 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Gloves of Potency",
-            # +2 since gloves are secondary for power
             rank=2,
             material_type="Glove",
             description="""
@@ -60,7 +59,6 @@ def generate_apparel():
         ),
         MagicItem(
             name="Gloves of Potency, Greater",
-            # +2 since gloves are secondary for power
             rank=4,
             material_type="Gauntlet",
             description="""
@@ -70,7 +68,6 @@ def generate_apparel():
         ),
         MagicItem(
             name="Gloves of Potency, Supreme",
-            # +2 since gloves are secondary for power
             rank=6,
             material_type="Gauntlet",
             description="""
@@ -2281,7 +2278,6 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Ring of Protection",
-            # +2 level since ring is secondary for this effect
             rank=2,
             tags=[],
             material_type="Ring",
