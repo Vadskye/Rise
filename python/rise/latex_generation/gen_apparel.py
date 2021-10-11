@@ -335,7 +335,7 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this circlet.
                 If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 2d10+3 fire damage.
+                \\hit The target takes 2d10+6 fire damage.
                 \\glance As above, except that that the target takes half damage.
             """,
             short_description="Can blast foe with fire",
@@ -349,7 +349,7 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this circlet.
                 If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 4d10+6 fire damage.
+                \\hit The target takes 4d10+10 fire damage.
                 \\glance As above, except that that the target takes half damage.
             """,
             short_description="Can blast foe with intense fire",
@@ -363,7 +363,7 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this circlet.
                 If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
-                \\hit The target takes 7d10+9 fire damage.
+                \\hit The target takes 7d10+14 fire damage.
                 \\glance As above, except that that the target takes half damage.
             """,
             short_description="Can blast foe with supremely intense fire",
@@ -505,10 +505,10 @@ def generate_apparel():
 
                 As a standard action, you can intensify the crown's energy to shock nearby enemies.
                 When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areasmall radius from you.
-                On a hit, each target takes 2d6+1 electricity damage.
+                On a hit, each target takes 2d6+3 electricity damage.
                 On a \\glossterm<glancing blow>, each target takes half damage.
             """,
-            short_description="Can deal 2d6+1 damage to nearby foes",
+            short_description="Can deal 2d6+3 damage to nearby foes",
         ),
         MagicItem(
             name="Crown of Lightning, Greater",
@@ -521,10 +521,10 @@ def generate_apparel():
 
                 As a standard action, you can intensify the crown's energy to shock nearby enemies.
                 When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areamed radius from you.
-                On a hit, each target takes 4d6+3 electricity damage.
+                On a hit, each target takes 4d6+5 electricity damage.
                 On a \\glossterm<glancing blow>, each target takes half damage.
             """,
-            short_description="Can deal 4d6+3 damage to nearby foes",
+            short_description="Can deal 4d6+5 damage to nearby foes",
         ),
         MagicItem(
             name="Crown of Lightning, Supreme",
@@ -537,10 +537,10 @@ def generate_apparel():
 
                 As a standard action, you can intensify the crown's energy to shock nearby enemies.
                 When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\hugearea radius from you.
-                On a hit, each target takes 4d10+9 electricity damage.
+                On a hit, each target takes 4d10+7 electricity damage.
                 On a \\glossterm<glancing blow>, each target takes half damage.
             """,
-            short_description="Can deal 4d10+9 damage to nearby foes",
+            short_description="Can deal 4d10+7 damage to nearby foes",
         ),
     ]
 
@@ -1352,7 +1352,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                Whenever a creature grapples you, you immediately deal it 2d6+3 piercing damage.
+                Whenever a creature grapples you, you immediately deal it 2d6+4 piercing damage.
                 This does not affect creatures that you initiate a grapple with.
             """,
             short_description="Deals damage to creatures that grapple you",
@@ -1363,7 +1363,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                Whenever a creature grapples you, you immediately deal it 4d6+6 piercing damage.
+                Whenever a creature grapples you, you immediately deal it 4d6+8 piercing damage.
                 This does not affect creatures that you initiate a grapple with.
             """,
             short_description="Deals more damage to creatures that grapple you",
@@ -1374,7 +1374,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                Whenever a creature grapples you, you immediately deal it 5d10+9 piercing damage.
+                Whenever a creature grapples you, you immediately deal it 5d10+12 piercing damage.
                 This does not affect creatures that you initiate a grapple with.
             """,
             short_description="Deals even more damage to creatures that grapple you",
@@ -1522,10 +1522,10 @@ def generate_apparel():
             material_type="Belt",
             tags=['Healing'],
             description="""
-                As a standard action, you can use this belt to regain 1d10+2 hit points.
+                As a standard action, you can use this belt to regain 1d10+4 hit points.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
-            short_description="Heals 1d10+2 hit points",
+            short_description="Heals 1d10+4 hit points",
         ),
         MagicItem(
             name="Belt of Healing, Greater",
@@ -1533,10 +1533,10 @@ def generate_apparel():
             material_type="Belt",
             tags=['Healing'],
             description="""
-                As a standard action, you can use this belt to regain 2d10+5 hit points.
+                As a standard action, you can use this belt to regain 2d10+8 hit points.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
-            short_description="Heals 2d10+5 hit points",
+            short_description="Heals 2d10+8 hit points",
         ),
         MagicItem(
             name="Belt of Healing, Supreme",
@@ -1544,10 +1544,10 @@ def generate_apparel():
             material_type="Belt",
             tags=['Healing'],
             description="""
-                As a standard action, you can use this belt to regain 4d10+8 hit points.
+                As a standard action, you can use this belt to regain 4d10+12 hit points.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
-            short_description="Heals 4d10+8 hit points",
+            short_description="Heals 4d10+12 hit points",
         ),
     ]
 
@@ -2820,10 +2820,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=['Healing'],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 1d10+2 \\glossterm<hit points>.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 1d10+4 \\glossterm<hit points>.
                 After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Heals 1d8+2 when you use \\ability<spell absorption>",
+            short_description="Heals 1d8+4 when you use \\ability<spell absorption>",
         ),
         MagicItem(
             name="Spellfeeding Amulet, Greater",
@@ -2831,10 +2831,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=['Healing'],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d10+5 \\glossterm<hit points>.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d10+8 \\glossterm<hit points>.
                 After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Heals 2d8+5 when you use \\ability<spell absorption>",
+            short_description="Heals 2d8+8 when you use \\ability<spell absorption>",
         ),
         MagicItem(
             name="Spellfeeding Amulet, Supreme",
@@ -2842,10 +2842,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=['Healing'],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d10+8 \\glossterm<hit points>.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d10+12 \\glossterm<hit points>.
                 After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Heals 4d8+8 when you use \\ability<spell absorption>",
+            short_description="Heals 4d8+12 when you use \\ability<spell absorption>",
         ),
     ]
 
