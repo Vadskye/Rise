@@ -536,9 +536,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 1d10+2 \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 1d10+4 \\glossterm<energy damage>.
             """,
-            short_description="Deals 1d10+2 damage when foes remove conditions",
+            short_description="Deals 1d10+4 damage when foes remove conditions",
         ),
         MagicItem(
             name="Hexbite Staff, Greater",
@@ -546,9 +546,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d10+5 \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d10+8 \\glossterm<energy damage>.
             """,
-            short_description="Deals 2d10+5 damage when foes remove conditions",
+            short_description="Deals 2d10+8 damage when foes remove conditions",
         ),
         MagicItem(
             name="Hexbite Staff, Supreme",
@@ -556,9 +556,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d10+8 \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d10+12 \\glossterm<energy damage>.
             """,
-            short_description="Deals 4d10+8 damage when foes remove conditions",
+            short_description="Deals 4d10+12 damage when foes remove conditions",
         ),
     ]
 
@@ -666,13 +666,23 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Vampiric Staff",
-            rank=6,
-            material_type="Weapon",
+            rank=4,
+            material_type="Staff",
             tags=['Healing'],
             description="""
-                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 2d10+8 \\glossterm<hit points>.
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 1d10+4 \\glossterm{hit points}.
             """,
-            short_description="Steals hit points from foes",
+            short_description="Steals 1d10+4 hit points from foes",
+        ),
+        MagicItem(
+            name="Vampiric, Greater",
+            rank=6,
+            material_type="Staff",
+            tags=['Healing'],
+            description="""
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 2d10+6 \\glossterm{hit points}.
+            """,
+            short_description="Steals 2d10+6 hit points from foes",
         ),
     ]
 
@@ -680,7 +690,7 @@ def generate_implements():
         MagicItem(
             name="Splitting Staff",
             rank=4,
-            material_type="Weapon",
+            material_type="Staff",
             tags=[],
             description="""
                 Whenever you use a \\glossterm<magical> ability that targets a single creature or object and which does not have the \\abilitytag<Sustain> tag, you may activate this staff.
@@ -693,7 +703,7 @@ def generate_implements():
         MagicItem(
             name="Splitting Staff, Greater",
             rank=6,
-            material_type="Weapon",
+            material_type="Staff",
             tags=[],
             description="""
                 This staff functions like a \\mitem<splitting staff>, except that activating it does not increase your \\glossterm<fatigue level>.
@@ -706,7 +716,7 @@ def generate_implements():
         MagicItem(
             name="Echoing Staff",
             rank=7,
-            material_type="Weapon",
+            material_type="Staff",
             tags=[],
             description="""
                 Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
@@ -778,7 +788,7 @@ def generate_implements():
             description="""
                 Whenever you use a \\glossterm<Healing> ability, you gain a +1 \\glossterm<accuracy> bonus during the next round.
 
-                In addition, as a standard action, you can regain 2d10+5 hit points.
+                In addition, as a standard action, you can regain 2d10+8 hit points.
                 This ability has the \\abilitytag{Healing} tag.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
@@ -792,7 +802,7 @@ def generate_implements():
             description="""
                 Whenever you use a \\glossterm<Healing> ability, you gain a +2 \\glossterm<accuracy> bonus during the next round.
 
-                In addition, as a standard action, you can regain 5d10+10 hit points.
+                In addition, as a standard action, you can regain 5d10+14 hit points.
                 This ability has the \\abilitytag{Healing} tag.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
