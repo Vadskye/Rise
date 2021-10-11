@@ -280,7 +280,7 @@ export const fabrication: MysticSphere = {
           The item created is magically enhanced.
           A weapon grants a +2 \\glossterm{magic bonus} to the wielder's \\glossterm{power},
             and armor grants a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
-          In addition, body armor can be made from any special material other than dragonhide, dragonscale, cold iron, and the pure versions of those materials.
+          In addition, body armor can be made from any special material other than dragonhide, dragonscale, cold iron, and the pure or ancient versions of those materials.
         `,
         5: `The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +8.`,
         7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +16.`,
