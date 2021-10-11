@@ -12,7 +12,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Spell Wand, 1st",
-            level=2,
+            rank=1,
             material_type="Wand",
             tags=[],
             description="""
@@ -27,7 +27,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 2nd",
-            level=5,
+            rank=2,
             material_type="Wand",
             tags=[],
             description="""
@@ -37,7 +37,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 3rd",
-            level=8,
+            rank=3,
             material_type="Wand",
             tags=[],
             description="""
@@ -47,7 +47,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 4th",
-            level=11,
+            rank=4,
             material_type="Wand",
             tags=[],
             description="""
@@ -57,7 +57,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 5th",
-            level=14,
+            rank=5,
             material_type="Wand",
             tags=[],
             description="""
@@ -67,7 +67,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 6th",
-            level=17,
+            rank=6,
             material_type="Wand",
             tags=[],
             description="""
@@ -77,7 +77,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Spell Wand, 7th",
-            level=20,
+            rank=7,
             material_type="Wand",
             tags=[],
             description="""
@@ -90,7 +90,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Shared Healing",
-            level=8,
+            rank=3,
             material_type="Staff",
             tags=[],
             description="""
@@ -101,7 +101,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Shared Healing, Greater",
-            level=17,
+            rank=6,
             material_type="Staff",
             tags=[],
             description="""
@@ -115,7 +115,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Transit",
-            level=5,
+            rank=2,
             material_type="Staff",
             tags=[],
             description="""
@@ -125,7 +125,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Transit, Greater",
-            level=11,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -135,7 +135,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Transit, Supreme",
-            level=17,
+            rank=6,
             material_type="Staff",
             tags=[],
             description="""
@@ -148,7 +148,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Fearsome Staff",
-            level=7,
+            rank=3,
             material_type="Staff",
             tags=["Emotion"],
             description="""
@@ -159,7 +159,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Fearsome Staff, Greater",
-            level=16,
+            rank=6,
             material_type="Staff",
             tags=["Emotion"],
             description="""
@@ -173,7 +173,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Mental Discordance",
-            level=8,
+            rank=3,
             material_type="Staff",
             tags=[],
             description="""
@@ -183,7 +183,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Mental Discordance, Greater",
-            level=17,
+            rank=6,
             material_type="Staff",
             tags=[],
             description="""
@@ -196,7 +196,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Hindrance",
-            level=8,
+            rank=3,
             material_type="Staff",
             tags=[],
             description="""
@@ -206,7 +206,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Hindrance, Greater",
-            level=21,
+            rank=7,
             material_type="Staff",
             tags=[],
             description="""
@@ -219,7 +219,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Malaise",
-            level=8,
+            rank=3,
             material_type="Staff",
             tags=[],
             description="""
@@ -232,7 +232,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Extending Staff",
-            level=4,
+            rank=2,
             material_type="Staff",
             description="""
                 You gain a +15 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
@@ -242,7 +242,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Extending Staff, Greater",
-            level=10,
+            rank=4,
             material_type="Staff",
             description="""
                 You gain a +30 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
@@ -252,7 +252,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Extending Staff, Supreme",
-            level=16,
+            rank=6,
             material_type="Staff",
             description="""
                 You gain a +60 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
@@ -265,7 +265,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Giants",
-            level=7,
+            rank=3,
             material_type="Staff",
             description="""
                 Whenever you use a \\glossterm<magical> ability that has a maximum size category for its targets or any objects it creates, you increase that maximum by one size category, to a maximum of Colossal.
@@ -275,7 +275,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Giants, Greater",
-            level=16,
+            rank=6,
             material_type="Staff",
             description="""
                 This implement functions like a \\mitem<staff of giants> implement, except that the maximum size category increases by two size categories.
@@ -287,7 +287,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Selective Staff",
-            level=9,
+            rank=3,
             material_type="Staff",
             tags=[],
             description="""
@@ -299,7 +299,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Selective Staff, Greater",
-            level=15,
+            rank=5,
             material_type="Staff",
             tags=[],
             description="""
@@ -313,7 +313,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Silence",
-            level=4,
+            rank=2,
             material_type="Staff",
             tags=['Swift'],
             description="""
@@ -325,7 +325,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Stillness",
-            level=4,
+            rank=2,
             material_type="Staff",
             tags=['Swift'],
             description="""
@@ -337,7 +337,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Silence, Greater",
-            level=10,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -347,7 +347,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Stillness, Greater",
-            level=10,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -357,7 +357,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Tranquility",
-            level=16,
+            rank=6,
             material_type="Staff",
             tags=[],
             description="""
@@ -370,7 +370,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Reaching Staff",
-            level=8,
+            rank=3,
             material_type="Staff",
             description="""
                 Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
@@ -386,7 +386,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Reaching Staff, Greater",
-            level=14,
+            rank=5,
             material_type="Staff",
             description="""
                 This implement functions like a \\textit<reaching staff> implement, except that activating it does not increase your \\glossterm<fatigue level>.
@@ -398,7 +398,7 @@ def generate_implements():
     implements.append(
         MagicItem(
             name="Cryptic Staff",
-            level=10,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -417,7 +417,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Widening Staff",
-            level=11,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -429,7 +429,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Widening Staff, Greater",
-            level=17,
+            rank=6,
             material_type="Staff",
             tags=[],
             description="""
@@ -442,7 +442,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Focus",
-            level=5,
+            rank=2,
             material_type="Staff",
             description="""
                 You reduce your \\glossterm<focus penalty> by 1.
@@ -451,7 +451,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Focus, Greater",
-            level=14,
+            rank=5,
             material_type="Staff",
             description="""
                 You reduce your \\glossterm<focus penalty> by 2.
@@ -463,7 +463,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Potency",
-            level=4,
+            rank=2,
             material_type="Staff",
             tags=[],
             description="""
@@ -473,7 +473,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Potency, Greater",
-            level=10,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -483,7 +483,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Potency, Supreme",
-            level=16,
+            rank=6,
             material_type="Staff",
             tags=[],
             description="""
@@ -496,7 +496,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Blessed Staff",
-            level=7,
+            rank=3,
             material_type="Staff",
             tags=[],
             description="""
@@ -507,7 +507,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Blessed Staff, Greater",
-            level=13,
+            rank=5,
             material_type="Staff",
             tags=[],
             description="""
@@ -518,7 +518,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Blessed Staff, Supreme",
-            level=19,
+            rank=7,
             material_type="Staff",
             tags=[],
             description="""
@@ -532,7 +532,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Hexbite Staff",
-            level=5,
+            rank=2,
             material_type="Staff",
             tags=[],
             description="""
@@ -542,7 +542,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Hexbite Staff, Greater",
-            level=11,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -552,7 +552,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Hexbite Staff, Supreme",
-            level=17,
+            rank=6,
             material_type="Staff",
             tags=[],
             description="""
@@ -565,7 +565,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of the Martyr",
-            level=10,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -581,7 +581,7 @@ def generate_implements():
             name="Staff of Stored Attunement",
             # this has a dangerous interaction with legacy items, so avoid
             # making that too easy
-            level=6,
+            rank=2,
             material_type="Staff",
             tags=[],
             description="""
@@ -599,7 +599,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Stored Attunement, Greater",
-            level=12,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -609,7 +609,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Stored Attunement, Supreme",
-            level=18,
+            rank=6,
             material_type="Staff",
             tags=[],
             description="""
@@ -622,7 +622,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Baneswallow Staff",
-            level=5,
+            rank=2,
             material_type="Staff",
             tags=[],
             description="""
@@ -637,7 +637,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Baneswallow Staff, Greater",
-            level=11,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -650,7 +650,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Baneswallow Staff, Supreme",
-            level=17,
+            rank=6,
             material_type="Staff",
             tags=[],
             description="""
@@ -666,7 +666,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Vampiric Staff",
-            level=17,
+            rank=6,
             material_type="Weapon",
             tags=['Healing'],
             description="""
@@ -679,7 +679,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Splitting Staff",
-            level=11,
+            rank=4,
             material_type="Weapon",
             tags=[],
             description="""
@@ -692,7 +692,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Splitting Staff, Greater",
-            level=17,
+            rank=6,
             material_type="Weapon",
             tags=[],
             description="""
@@ -705,7 +705,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Echoing Staff",
-            level=21,
+            rank=7,
             material_type="Weapon",
             tags=[],
             description="""
@@ -722,7 +722,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Radiance",
-            level=11,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -733,7 +733,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Radiance, Greater",
-            level=20,
+            rank=7,
             material_type="Staff",
             tags=[],
             description="""
@@ -747,7 +747,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Bushwalker's Staff",
-            level=11,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -758,7 +758,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Bushwalker's Staff, Greater",
-            level=20,
+            rank=7,
             material_type="Staff",
             tags=[],
             description="""
@@ -772,7 +772,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Healing Rhythm",
-            level=11,
+            rank=4,
             material_type="Staff",
             tags=['Healing'],
             description="""
@@ -786,7 +786,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Healing Rhythm",
-            level=20,
+            rank=7,
             material_type="Staff",
             tags=['Healing'],
             description="""
@@ -826,14 +826,14 @@ def generate_implement_latex(check=False):
 def generate_implement_table():
     implements = sorted(
         sorted(generate_implements(), key=lambda item: item.name),
-        key=lambda item: item.level,
+        key=lambda item: item.rank,
     )
     rows = [item.latex_table_row() for item in implements]
     row_text = "\n".join(rows)
     return longtablify(
         f"""
         \\lcaption<Implement Items> \\\\
-        \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+        \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         {row_text}
     """
     )

@@ -259,7 +259,7 @@ impl Armor {
             // Medium armor
             Self::Hide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(5, m),
+                damage_resistance: calc_dr(4, m),
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 3,
@@ -269,7 +269,7 @@ impl Armor {
             },
             Self::ScaleMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(7, m),
+                damage_resistance: calc_dr(6, m),
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 5,

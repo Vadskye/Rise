@@ -12,7 +12,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Lifebond Retribution Armor",
-            level=4,
+            rank=2,
             material_type="Body armor",
             tags=[],
             description="""
@@ -23,7 +23,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Lifebond Retribution Armor, Greater",
-            level=10,
+            rank=4,
             material_type="Body armor",
             tags=[],
             description="""
@@ -35,7 +35,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Lifebond Retribution Armor, Supreme",
-            level=16,
+            rank=6,
             material_type="Body armor",
             tags=[],
             description="""
@@ -50,7 +50,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Armor of Health",
-            level=4,
+            rank=2,
             material_type="Body armor",
             description="""
                 You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points>.
@@ -59,7 +59,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Armor of Health, Greater",
-            level=10,
+            rank=4,
             material_type="Body armor",
             description="""
                 You gain a +8 \\glossterm<magic bonus> to your \\glossterm<hit points>.
@@ -68,7 +68,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Armor of Health, Supreme",
-            level=16,
+            rank=6,
             material_type="Body armor",
             description="""
                 You gain a +16 \\glossterm<magic bonus> to your \\glossterm<hit points>.
@@ -80,7 +80,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Shield of Arrow Catching",
-            level=5,
+            rank=2,
             material_type="Shield",
             description="""
                 When an \\glossterm<ally> within a \\areasmall radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
@@ -91,7 +91,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Arrow Catching, Greater",
-            level=11,
+            rank=4,
             material_type="Shield",
             description="""
                 This item functions like a \\mitem<shield of arrow catching>, except that it affects a \\arealarge radius from you.
@@ -100,7 +100,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Boulder Catching",
-            level=8,
+            rank=3,
             material_type="Shield",
             description="""
                 This item functions like a \\mitem<shield of arrow catching>, except that it can affect projectile and thrown objects of up to Large size.
@@ -109,7 +109,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Boulder Catching, Greater",
-            level=14,
+            rank=5,
             material_type="Shield",
             description="""
                 This item functions like a \\mitem<greater shield of arrow catching>, except that it can affect projectile and thrown objects of up to Large size.
@@ -121,7 +121,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Shield of Arrow Deflection",
-            level=5,
+            rank=2,
             material_type="Shield",
             description="""
                 You gain a +2 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
@@ -130,7 +130,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Arrow Deflection, Greater",
-            level=11,
+            rank=4,
             material_type="Shield",
             description="""
                 You gain a +3 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
@@ -139,7 +139,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Arrow Deflection, Supreme",
-            level=17,
+            rank=6,
             material_type="Shield",
             description="""
                 You gain a +4 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
@@ -148,7 +148,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Boulder Deflection",
-            level=8,
+            rank=3,
             material_type="Shield",
             description="""
                 You gain a +2 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
@@ -157,7 +157,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Boulder Deflection, Greater",
-            level=14,
+            rank=5,
             material_type="Shield",
             description="""
                 You gain a +3 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
@@ -166,7 +166,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Boulder Deflection, Supreme",
-            level=20,
+            rank=7,
             material_type="Shield",
             description="""
                 You gain a +4 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
@@ -178,7 +178,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Shield of Bashing",
-            level=5,
+            rank=2,
             material_type="Shield",
             description="""
                 You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
@@ -187,7 +187,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Bashing, Greater",
-            level=11,
+            rank=4,
             material_type="Shield",
             description="""
                 You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
@@ -196,7 +196,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Shield of Bashing, Supreme",
-            level=17,
+            rank=6,
             material_type="Shield",
             description="""
                 You gain a +12 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
@@ -208,7 +208,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Covering Shield",
-            level=4,
+            rank=2,
             material_type="Shield",
             description="""
                 When you take the \\textit<total defense> action with this shield, you gain a +2 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense>).
@@ -218,7 +218,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Covering Shield, Greater",
-            level=10,
+            rank=4,
             material_type="Shield",
             description="""
                 This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +3.
@@ -228,7 +228,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Covering Shield, Supreme",
-            level=16,
+            rank=6,
             material_type="Shield",
             description="""
                 This shield functions like a \\mitem<covering shield>, except that the defense bonus increases to +4.
@@ -241,7 +241,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Featherlight Armor",
-            level=5,
+            rank=2,
             material_type="Body armor",
             description="""
                 This armor's \\glossterm<encumbrance> is reduced by 1.
@@ -250,7 +250,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Featherlight Armor, Greater",
-            level=11,
+            rank=4,
             material_type="Body armor",
             description="""
                 This armor's \\glossterm<encumbrance> is reduced by 2.
@@ -259,7 +259,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Featherlight Armor, Supreme",
-            level=17,
+            rank=6,
             material_type="Body armor",
             description="""
                 This armor's \\glossterm<encumbrance> is reduced by 3.
@@ -271,7 +271,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Armor of Retribution",
-            level=10,
+            rank=4,
             material_type="Body armor",
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
@@ -282,7 +282,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Armor of Retribution, Supreme",
-            level=16,
+            rank=6,
             material_type="Body armor",
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
@@ -296,7 +296,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Armor of Fortification",
-            level=8,
+            rank=3,
             material_type="Body armor",
             description="""
                 You gain a +4 bonus to your defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
@@ -305,7 +305,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Armor of Fortification, Greater",
-            level=17,
+            rank=6,
             material_type="Body armor",
             description="""
                 You gain a +8 bonus to your defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
@@ -314,7 +314,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Armor of Fortification, Mystic",
-            level=14,
+            rank=5,
             material_type="Body armor",
             description="""
                 You gain a +4 bonus to your defenses when determining whether any attack gets a \\glossterm<critical hit> against you instead of a normal hit.
@@ -326,7 +326,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Hidden Armor",
-            level=3,
+            rank=1,
             tags=["Sensation"],
             material_type="Body armor",
             description="""
@@ -342,7 +342,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Hidden Armor, Greater",
-            level=9,
+            rank=3,
             material_type="Body armor",
             tags=["Sensation"],
             description="""
@@ -355,7 +355,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Resistant Armor",
-            level=4,
+            rank=2,
             tags=[],
             material_type="Body armor",
             description="""
@@ -365,7 +365,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Resistant Armor, Greater",
-            level=10,
+            rank=4,
             tags=[],
             material_type="Body armor",
             description="""
@@ -375,7 +375,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Resistant Armor, Supreme",
-            level=16,
+            rank=6,
             tags=[],
             material_type="Body armor",
             description="""
@@ -388,7 +388,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Stonebody Armor",
-            level=5,
+            rank=2,
             tags=[],
             material_type="Body armor",
             description="""
@@ -399,7 +399,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Stonebody Armor, Greater",
-            level=11,
+            rank=4,
             tags=[],
             material_type="Body armor",
             description="""
@@ -410,7 +410,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Stonebody Armor, Supreme",
-            level=17,
+            rank=6,
             tags=[],
             material_type="Body armor",
             description="""
@@ -424,7 +424,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Lithe Armor",
-            level=11,
+            rank=4,
             tags=[],
             material_type="Body armor",
             description="""
@@ -434,7 +434,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Lithe Armor, Greater",
-            level=20,
+            rank=7,
             tags=[],
             material_type="Body armor",
             description="""
@@ -447,7 +447,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Agile Burst Armor",
-            level=5,
+            rank=2,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -458,7 +458,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Agile Burst Armor, Greater",
-            level=14,
+            rank=5,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -471,7 +471,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Lifeweave Armor",
-            level=5,
+            rank=2,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -482,7 +482,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Lifeweave Armor, Greater",
-            level=11,
+            rank=4,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -493,7 +493,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Lifeweave Armor, Supreme",
-            level=17,
+            rank=6,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -507,7 +507,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Soulweave Armor",
-            level=5,
+            rank=2,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -518,7 +518,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Soulweave Armor, Greater",
-            level=11,
+            rank=4,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -529,7 +529,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Soulweave Armor, Supreme",
-            level=17,
+            rank=6,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -543,7 +543,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Swiftstep Armor",
-            level=8,
+            rank=3,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -554,7 +554,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Swiftstep Armor, Greater",
-            level=14,
+            rank=5,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -568,7 +568,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Crumpling Armor",
-            level=7,
+            rank=3,
             tags=[],
             material_type="Body armor",
             description="""
@@ -581,7 +581,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Crumpling Armor, Greater",
-            level=13,
+            rank=5,
             tags=[],
             material_type="Body armor",
             description="""
@@ -591,7 +591,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Crumpling Armor, Supreme",
-            level=19,
+            rank=7,
             tags=[],
             material_type="Body armor",
             description="""
@@ -604,7 +604,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Hardblock Shield",
-            level=10,
+            rank=4,
             tags=[],
             material_type="Shield",
             description="""
@@ -615,7 +615,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Hardblock Shield, Greater",
-            level=16,
+            rank=6,
             tags=[],
             material_type="Shield",
             description="""
@@ -628,7 +628,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Shield of Mystic Reflection",
-            level=16,
+            rank=6,
             tags=[],
             material_type="Shield",
             description="""
@@ -645,7 +645,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Armor of Emptiness",
-            level=17,
+            rank=6,
             tags=[],
             material_type="Body armor",
             description="""
@@ -659,7 +659,7 @@ def generate_armor():
     armor.append(
         MagicItem(
             name="Shield of Medusa",
-            level=8,
+            rank=3,
             material_type="Shield",
             tags=["Visual"],
             description="""
@@ -700,14 +700,14 @@ def generate_armor_latex(check=False):
 def generate_armor_table():
     armor = sorted(
         sorted(generate_armor(), key=lambda item: item.name),
-        key=lambda item: item.level,
+        key=lambda item: item.rank,
     )
     rows = [item.latex_table_row() for item in armor]
     row_text = "\n".join(rows)
     return longtablify(
         f"""
         \\lcaption<Armor Items> \\\\
-        \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+        \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         {row_text}
     """
     )

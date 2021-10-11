@@ -37,7 +37,7 @@ class MagicItem(object):
     def __init__(
         self,
         description,
-        level,
+        rank,
         name,
         short_description,
         consumable=False,
@@ -49,7 +49,7 @@ class MagicItem(object):
     ):
         self.consumable = consumable
         self.description = description
-        self.level = level
+        self.rank = rank
         self.name = name
         self.tags = tags
         self.short_description = short_description
@@ -89,32 +89,25 @@ class MagicItem(object):
 
     def price(self):
         if self.consumable:
-            return consumable_item_prices[self.level]
+            return consumable_item_prices[self.rank]
         else:
-            return item_prices[self.level]
-
-    def nth_text(self):
-        if self.level == 0.5:
-            return "1/2"
-        else:
-            return f"\\nth<{self.level}>"
+            return item_prices[self.rank]
 
     def latex_table_row(self, include_type=True):
-        # \\tb<Name> & \\tb<Item Level (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+        # \\tb<Name> & \\tb<Item Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         type_text = f" & {self.material_type or ''}" if include_type else ""
-        return f"{self.name} & {self.nth_text()} ({self.price()} gp) {type_text} & {self.short_description} & \\pageref<item:{self.name}> \\\\"
+        return f"{self.name} & {self.rank} ({self.price()} gp) {type_text} & {self.short_description} & \\pageref<item:{self.name}> \\\\"
 
     def tag_text(self):
         return f"\\parhead*<Tags> {self.latex_tags()}" if self.tags else ""
 
     def latex(self):
-        level_text = f"\\nth<{self.level}>" if self.level >= 1 else "1/2"
         type_text = "" if self.material_type is None else f"\\textbf<Type>: {self.material_type}"
         materials_text = "" if self.materials == "none" else f"\\textbf<Materials>: {', '.join(sorted(self.materials)).capitalize()}"
         twocol_text = f"\\spelltwocol<{type_text}><{self.tag_text()}>" if type_text or self.tag_text() else ""
         return join(
             f"""
-                \\hypertargetraised<item:{self.name}><\\subsubsection<{self.name}\\hfill{level_text} ({self.price()} gp)>>
+                \\hypertargetraised<item:{self.name}><\\subsubsection<{self.name}\\hfill Rank~{self.rank} ({self.price()} gp)>>
                 \\lowercase<\\hypertargetraised<item:{self.name}><>>\\label<item:{self.name}>
                 {self.description}
             """,
