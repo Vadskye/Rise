@@ -66,7 +66,7 @@ export const toxicology: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d8 + \\glossterm{power} acid damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\sickened.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -86,7 +86,7 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'greater corrosive grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\nauseated instead of slowed.',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
       },
       focus: false,
       rank: 7,
@@ -101,8 +101,8 @@ export const toxicology: MysticSphere = {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         hit: `The subject becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of asp venom.
         At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref{Poison}).
-        A creature poisoned by asp venom becomes \\sickened as long as it is poisoned.
-        Reaching the third \\glossterm{poison stage} causes the subject to become \\nauseated as long as it is poisoned.
+        A creature poisoned by asp venom becomes \\dazed as long as it is poisoned.
+        Reaching the third \\glossterm{poison stage} causes the subject to become \\stunned as long as it is poisoned.
         A third failed attack ends the poison.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -190,8 +190,8 @@ export const toxicology: MysticSphere = {
       name: "Sickness",
 
       attack: {
-        crit: `The subject is \\nauseated instead of sickened.`,
-        hit: `The subject is \\sickened as a \\glossterm{condition}.`,
+        crit: `The subject is \\stunned instead of dazed.`,
+        hit: `The subject is \\dazed as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
@@ -203,12 +203,12 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: "Sickening Curse",
+      name: "Noxious Curse",
 
       attack: {
         crit: `The effect lasts until this curse is removed.`,
         glance: "The effect lasts \\glossterm{briefly}.",
-        hit: `The subject is \\sickened until it takes a \\glossterm{short rest}.`,
+        hit: `The subject is \\dazed until it takes a \\glossterm{short rest}.`,
         targeting: `
           Make an attack vs. Mental against one living creature within \\medrange.
         `,
@@ -221,11 +221,11 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: "Nauseating Curse",
+      name: "Greater Noxious Curse",
 
       functionsLike: {
-        name: 'sickening curse',
-        exceptThat: 'the subject is \\nauseated instead of sickened.',
+        name: 'noxious curse',
+        exceptThat: 'the subject is \\stunned instead of dazed.',
       },
       rank: 7,
       scaling: "accuracy",

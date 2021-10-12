@@ -720,7 +720,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You are immune to being \sickened and \nauseated.
+                You are immune to being \dazed and \stunned.
             ",
             // TODO: represent immunities?
             modifiers: None,
@@ -781,7 +781,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You are immune to being \dazed and \stunned.
+                You are immune to being \shaken, \frightened, and \panicked.
                 In addition, you are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
             ",
             modifiers: None,

@@ -348,7 +348,7 @@ def humanoids(sample_monsters):
                     "Hex",
                     f"""
                 The cultist makes a +{cultist.accuracy()} vs. Fortitude attack against one creature in Medium range.
-                \hit The target takes {cultist.standard_damage() + 1} life damage and is \\sickened as a \\glossterm<condition>.",
+                \hit The target takes {cultist.standard_damage() + 1} life damage and is \\dazed as a \\glossterm<condition>.",
             """,
                 ),
             ],
@@ -531,7 +531,7 @@ def magical_beasts(sample_monsters):
                     "Spit Acid",
                     f"""
                 The ankheg makes a +{ankheg.accuracy()} vs. Armor attack against everything in a 5 ft. wide Medium line.
-                \\hit Each target takes {ankheg.standard_damage()} acid damage, and creatures are \\sickened as a \\glossterm<condition>.
+                \\hit Each target takes {ankheg.standard_damage()} acid damage, and creatures are \\dazed as a \\glossterm<condition>.
             """,
                 ),
             ],
@@ -564,7 +564,7 @@ def magical_beasts(sample_monsters):
                     "Petrifying Gaze",
                     f"""
                 The basilisk makes a +{basilisk.accuracy()} vs. Fortitude attack against one creature in Medium range.
-                \\hit The target is \\nauseated as a \\glossterm<condition>.
+                \\hit The target is \\stunned as a \\glossterm<condition>.
                 \\crit As above, and as an additional condition, the target takes {basilisk.standard_damage() - 1} physical damage during each \\glossterm<action phase> in subsequent rounds.
                 If this damage inflicts a \\glossterm<vital wound>, the target is petrified permanently.
             """,
@@ -637,7 +637,7 @@ def magical_beasts(sample_monsters):
                     f"""
                 The cockatrice makes a bite \\glossterm<strike>.
                 In addition to the strike's normal effects, the cockatrice also makes a +{cockatrice.accuracy()} vs. Fortitude attack against the target.
-                \\hit If the strike also hit, the target is \\nauseated as a \\glossterm<condition>.
+                \\hit If the strike also hit, the target is \\stunned as a \\glossterm<condition>.
                 \\crit As above, and as an additional condition, the target takes {cockatrice.standard_damage() - 1} physical damage during each \\glossterm<action phase> in subsequent rounds.
                 If this damage inflicts a \\glossterm<vital wound>, the target is petrified permanently.
             """,
@@ -831,7 +831,7 @@ def monstrous_humanoids(sample_monsters):
                     "Wail",
                     f"""
                 The banshee makes a +{banshee.accuracy()} vs. Fortitude attack against everything in a Large radius.
-                \\hit Each target takes {banshee.standard_damage()} energy damage, and creatures are sickened as a condition.
+                \\hit Each target takes {banshee.standard_damage()} energy damage, and creatures are dazed as a condition.
             """,
                 ),
             ],
@@ -910,8 +910,8 @@ def monstrous_humanoids(sample_monsters):
                     "Green Hag's Curse",
                     f"""
                 The hag makes a +{green_hag.accuracy()} vs. Mental atack aginst one creature within Medium range.
-                \\hit As a condition, the target is \\dazed or \\sickened, as the hag chooses.
-                \\crit As two separate conditions, the target is dazed and sickened.
+                \\hit As a condition, the target is \\dazed or \\dazed, as the hag chooses.
+                \\crit As two separate conditions, the target is dazed and dazed.
             """,
                 ),
             ],
@@ -937,7 +937,7 @@ def monstrous_humanoids(sample_monsters):
                     "Petrifying Gaze",
                     f"""
                 The medusa makes a +{medusa.accuracy()} vs. Fortitude attack against one creature in Medium range.
-                \\hit The target is \\nauseated as a \\glossterm<condition>.
+                \\hit The target is \\stunned as a \\glossterm<condition>.
                 \\crit As above, and as an additional condition, the target takes {medusa.standard_damage() - 1} physical damage during each \\glossterm<action phase> in subsequent rounds.
                 If this damage inflicts a \\glossterm<vital wound>, the target is petrified permanently.
             """,

@@ -170,7 +170,7 @@ export const polymorph: MysticSphere = {
         glance: "Half damage.",
         hit: `
           The subject takes 2d8 + \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\sickened.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -193,7 +193,7 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'greater piercing grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\nauseated instead of sickened.',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
       },
       focus: false,
       rank: 7,
@@ -621,7 +621,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `The subject takes 1d6 physical damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\nauseated as a \\glossterm{condition}.`,
+        If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
         `,

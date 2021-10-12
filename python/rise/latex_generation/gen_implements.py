@@ -172,7 +172,7 @@ def generate_implements():
 
     implements += [
         MagicItem(
-            name="Staff of Mental Discordance",
+            name="Staff of Discordance",
             rank=3,
             material_type="Staff",
             tags=[],
@@ -182,7 +182,7 @@ def generate_implements():
             short_description="Makes dazed creatures briefly stunned",
         ),
         MagicItem(
-            name="Staff of Mental Discordance, Greater",
+            name="Staff of Discordance, Greater",
             rank=6,
             material_type="Staff",
             tags=[],
@@ -213,19 +213,6 @@ def generate_implements():
                 Whenever you cause an enemy to be \\decelerated, you can also make it \\glossterm<briefly> \\immobilized.
             """,
             short_description="Makes decelerated creatures briefly immobilized",
-        ),
-    ]
-
-    implements += [
-        MagicItem(
-            name="Staff of Malaise",
-            rank=3,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Whenever you cause an enemy to be \\sickened, you can also make it \\glossterm<briefly> \\nauseated.
-            """,
-            short_description="Makes sickened creatures briefly nauseated",
         ),
     ]
 

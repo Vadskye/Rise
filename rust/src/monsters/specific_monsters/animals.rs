@@ -277,7 +277,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     if let Some(e) = poisonous_stinger.damage_effect_mut() {
         e.lose_hp_effect = Some(attack_effects::AttackTriggeredEffect::Poison(
             attack_effects::PoisonEffect {
-                stage1: vec![Debuff::Sickened],
+                stage1: vec![Debuff::Dazed],
                 stage3_debuff: Some(vec![Debuff::Paralyzed]),
                 stage3_vital: None,
             },

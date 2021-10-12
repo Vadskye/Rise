@@ -11,7 +11,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a -2d damage penalty using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\sickened.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 1,
       scaling: {
@@ -28,7 +28,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a -2d damage penalty using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\nauseated.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
       `,
       rank: 5,
       scaling: {
@@ -389,7 +389,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2d damage penalty using a bludgeoning weapon.
-        Each creature damaged by the strike is \\glossterm{briefly} \\sickened.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 5,
       scaling: {
