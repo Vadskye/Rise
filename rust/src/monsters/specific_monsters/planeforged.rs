@@ -1,6 +1,6 @@
-use crate::core_mechanics::{DamageType, MovementMode, Sense, Size};
+use crate::core_mechanics::{DamageType, MovementMode, Sense, Size, SpecialDefenseModifier, SpecialDefenseType};
 use crate::creatures::{Modifier, Monster, StandardAttack};
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Planeforged;
 use crate::monsters::knowledge::Knowledge;
@@ -89,13 +89,16 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
                 Modifier::Attack(StandardAttack::Pyrohemia(6).attack()),
                 Modifier::Attack(StandardAttack::Ignition(6).attack()),
                 Modifier::Attack(StandardAttack::Pyrophobia(6).attack()),
+                Modifier::SpecialDefense(SpecialDefenseModifier::Vulnerable(
+                    SpecialDefenseType::WeaponMaterial(WeaponMaterial::ColdIron),
+                )),
             ]),
             movement_modes: None,
             name: "Soulfire Demon".to_string(),
             senses: None,
             size: Size::Large,
             trained_skills: None,
-            weapons: vec![StandardWeapon::Slam
+            weapons: vec![StandardWeapon::HeavyFlail
                 .weapon()
                 .except(|w| w.damage_types.push(DamageType::Fire))],
         }

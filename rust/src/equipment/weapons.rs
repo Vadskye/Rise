@@ -26,6 +26,7 @@ pub enum StandardWeapon {
     Club,
     Greataxe,
     Greatsword,
+    HeavyFlail,
     Longbow,
     MonsterBite,
     MonsterClaws,
@@ -93,6 +94,12 @@ impl StandardWeapon {
                 damage_dice: DamageDice::d10(),
                 damage_types: vec![DamageType::Slashing],
                 name: "greatsword".to_string(),
+            },
+            Self::HeavyFlail => Weapon {
+                accuracy: 0,
+                damage_dice: DamageDice::d10().add(1),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "heavy flail".to_string(),
             },
             Self::Longbow => Weapon {
                 accuracy: 0,
@@ -246,6 +253,37 @@ impl WeaponGroup {
             Self::Clublike => "clublike weapons",
             Self::Monk => "monk weapons",
             Self::Thrown => "thrown weapons",
+        }
+    }
+}
+
+#[derive(Clone)]
+pub enum WeaponMaterial {
+    Adamantine,
+    PureAdamantine,
+    ColdIron,
+    Normal,
+    Diamondsteel,
+    PureDiamondsteel,
+    Dragonfang(String),
+    AncientDragonfang(String),
+    Mithral,
+    PureMithral,
+}
+
+impl WeaponMaterial {
+    pub fn name(&self) -> String {
+        match self {
+            Self::Adamantine => "adamantine".to_string(),
+            Self::PureAdamantine => "pure adamantine".to_string(),
+            Self::ColdIron => "cold iron".to_string(),
+            Self::Normal => "normal".to_string(),
+            Self::Diamondsteel => "diamondsteel".to_string(),
+            Self::PureDiamondsteel => "pure diamondsteel".to_string(),
+            Self::Dragonfang(color) => format!("{} dragonfang", color),
+            Self::AncientDragonfang(color) => format!("{} ancient dragonfang", color),
+            Self::Mithral => "mithral".to_string(),
+            Self::PureMithral => "pure mithral".to_string(),
         }
     }
 }

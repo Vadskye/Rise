@@ -1,6 +1,6 @@
 use crate::core_mechanics::{Attribute, DamageType, Debuff};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
-use crate::equipment::HasArmor;
+use crate::equipment::{HasArmor, WeaponMaterial};
 use std::fmt;
 
 use super::HasAttributes;
@@ -72,6 +72,7 @@ pub enum SpecialDefenseType {
     Damage(DamageType),
     Debuff(Debuff),
     CriticalHits,
+    WeaponMaterial(WeaponMaterial),
 }
 
 impl SpecialDefenseModifier {
@@ -114,6 +115,7 @@ impl SpecialDefenseType {
             Self::Damage(damage_type) => format!("{} damage", damage_type.name()),
             Self::Debuff(debuff) => debuff.name().to_string(),
             Self::CriticalHits => "critical hits".to_string(),
+            Self::WeaponMaterial(material) => format!("{} weapons", material.name()),
         }
     }
 }
