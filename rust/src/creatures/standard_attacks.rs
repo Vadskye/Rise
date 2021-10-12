@@ -1,6 +1,7 @@
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
 use crate::creatures::attack_effects::{
-    self, AttackEffect, AttackEffectDuration, AttackTriggeredEffect, DamageEffect, DebuffEffect,
+    self, AttackEffect, AttackEffectDuration, AttackTriggeredEffect, DamageEffect,
+    DamageOverTimeEffect, DebuffEffect, DebuffInsteadEffect,
 };
 use crate::creatures::attacks::{
     AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting,
@@ -26,7 +27,11 @@ pub enum StandardAttack {
     DivineJudgment(i32),
     DrainLife(i32),
     Firebolt(i32),
+    Ignition(i32),
+    Inferno(i32),
     MindCrush(i32),
+    Pyrohemia(i32),
+    Pyrophobia(i32),
     RetributiveLifebond(i32),
 }
 
@@ -267,8 +272,14 @@ impl StandardAttack {
                     None
                 },
                 hit: AttackEffect::Damage(DamageEffect {
-                    // +1d extra at ranks 4 and 7
-                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
+                    // +1d extra at ranks 2, 4 and 7
+                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 7 {
+                        3
+                    } else if *rank >= 5 {
+                        2
+                    } else {
+                        1
+                    }),
                     damage_modifier: 0,
                     damage_types: vec![DamageType::Fire],
                     extra_defense_effect: None,
@@ -449,6 +460,76 @@ impl StandardAttack {
                     AttackRange::Medium
                 }),
             },
+            Self::Ignition(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Fortitude,
+                glance: if *rank >= 5 {
+                    Some(AttackEffect::BriefDurationInstead)
+                } else {
+                    None
+                },
+                hit: AttackEffect::DamageOverTime(DamageOverTimeEffect {
+                    can_remove_with_dex: *rank >= 5,
+                    damage: DamageEffect {
+                        // +1d extra at ranks 4 and 7
+                        damage_dice: DamageDice::aoe_damage(*rank).add(-1),
+                        damage_modifier: 0,
+                        damage_types: vec![DamageType::Fire],
+                        extra_defense_effect: None,
+                        lose_hp_effect: None,
+                        power_multiplier: 0.5,
+                        take_damage_effect: None,
+                        vampiric_healing: None,
+                    },
+                    duration: AttackEffectDuration::Condition,
+                    narrative_text: "catches on fire".to_string(),
+                }),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: Attack::generate_modified_name("Ignition", *rank, 5, None),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Creature(AttackRange::Medium),
+            },
+            Self::Inferno(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Reflex,
+                glance: if *rank >= 3 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    damage_dice: DamageDice::aoe_damage(*rank),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Fire],
+                    extra_defense_effect: None,
+                    lose_hp_effect: None,
+                    power_multiplier: 0.5,
+                    take_damage_effect: None,
+                    vampiric_healing: None,
+                }),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: Attack::generate_modified_name("Inferno", *rank, 3, Some(5)),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Radius(
+                    None,
+                    if *rank >= 5 {
+                        AreaSize::Huge
+                    } else if *rank >= 3 {
+                        AreaSize::Large
+                    } else {
+                        AreaSize::Small
+                    },
+                    AreaTargets::Everything,
+                ),
+            },
             Self::MindCrush(rank) => Attack {
                 accuracy: 0,
                 cooldown: None,
@@ -481,6 +562,85 @@ impl StandardAttack {
                 is_strike: false,
                 movement: None,
                 name: Attack::generate_modified_name("Mind Crush", *rank, 3, Some(7)),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Creature(AttackRange::Medium),
+            },
+            Self::Pyrohemia(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Fortitude,
+                glance: if *rank >= 4 {
+                    Some(AttackEffect::HalfDamage)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Damage(DamageEffect {
+                    damage_dice: DamageDice::aoe_damage(*rank),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Fire],
+                    extra_defense_effect: None,
+                    lose_hp_effect: if *rank == 4 {
+                        Some(AttackTriggeredEffect::Debuff(DebuffEffect {
+                            debuffs: vec![Debuff::Nauseated],
+                            duration: AttackEffectDuration::Brief,
+                        }))
+                    } else {
+                        None
+                    },
+                    power_multiplier: 0.5,
+                    take_damage_effect: Some(AttackTriggeredEffect::Debuff(DebuffEffect {
+                        debuffs: vec![if *rank >= 6 {
+                            Debuff::Nauseated
+                        } else {
+                            Debuff::Sickened
+                        }],
+                        duration: AttackEffectDuration::Brief,
+                    })),
+                    vampiric_healing: None,
+                }),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: Attack::generate_modified_name("Pyrohemia", *rank, 4, Some(6)),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Creature(AttackRange::Short),
+            },
+            Self::Pyrophobia(rank) => Attack {
+                accuracy: if *rank >= 5 { *rank - 5 } else { *rank - 1 },
+                cooldown: None,
+                crit: Some(AttackEffect::DebuffInstead(DebuffInsteadEffect {
+                    debuffs: vec![if *rank >= 5 {
+                        Debuff::Panicked("the $name and all other sources of fire".to_string())
+                    } else {
+                        Debuff::Frightened("the $name and all other sources of fire".to_string())
+                    }],
+                    instead_of: Debuff::Shaken(
+                        "the $name and all other sources of fire".to_string(),
+                    ),
+                })),
+                defense: Defense::Mental,
+                glance: if *rank >= 5 {
+                    Some(AttackEffect::BriefDurationInstead)
+                } else {
+                    None
+                },
+                hit: AttackEffect::Debuff(DebuffEffect {
+                    debuffs: vec![if *rank >= 5 {
+                        Debuff::Frightened("the $name and all other sources of fire".to_string())
+                    } else {
+                        Debuff::Shaken("the $name and all other sources of fire".to_string())
+                    }],
+                    duration: AttackEffectDuration::Condition,
+                }),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: if *rank >= 5 {
+                    "Primal Pyrophobia".to_string()
+                } else {
+                    "Pyrophobia".to_string()
+                },
                 replaces_weapon: None,
                 targeting: AttackTargeting::Creature(AttackRange::Medium),
             },

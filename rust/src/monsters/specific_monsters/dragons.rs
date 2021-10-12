@@ -103,16 +103,16 @@ impl AgeCategory {
             accuracy: 0,
             cooldown: None,
             crit: Some(AttackEffect::Debuff(DebuffEffect {
-                debuffs: vec![Debuff::Frightened],
+                debuffs: vec![Debuff::Frightened("the $name".to_string())],
                 duration: AttackEffectDuration::Condition,
             })),
             defense: Defense::Mental,
             glance: Some(AttackEffect::Debuff(DebuffEffect {
-                debuffs: vec![Debuff::Shaken],
+                debuffs: vec![Debuff::Shaken("the $name".to_string())],
                 duration: AttackEffectDuration::Brief,
             })),
             hit: AttackEffect::Debuff(DebuffEffect {
-                debuffs: vec![Debuff::Shaken],
+                debuffs: vec![Debuff::Shaken("the $name".to_string())],
                 duration: AttackEffectDuration::Condition,
             }),
             is_magical: false,

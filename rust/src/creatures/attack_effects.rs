@@ -7,8 +7,11 @@ use titlecase::titlecase;
 
 #[derive(Clone)]
 pub enum AttackEffect {
+    BriefDurationInstead,
     Damage(DamageEffect),
+    DamageOverTime(DamageOverTimeEffect),
     Debuff(DebuffEffect),
+    DebuffInstead(DebuffInsteadEffect),
     HalfDamage,
     Healing(HealingEffect),
     Knockback(i32),
@@ -101,6 +104,38 @@ impl DamageEffect {
             take_damage_effect = take_damage_effect.trim(),
             lose_hp_effect = lose_hp_effect.trim(),
             vampiric_healing = vampiric_healing.trim(),
+        )
+        .trim()
+        .to_string();
+    }
+}
+
+#[derive(Clone)]
+pub struct DamageOverTimeEffect {
+    pub can_remove_with_dex: bool,
+    pub damage: DamageEffect,
+    pub duration: AttackEffectDuration,
+    // For example, "catches on fire"
+    pub narrative_text: String,
+}
+
+impl DamageOverTimeEffect {
+    fn description(&self, attacker: &Creature, is_magical: bool, the_subject: &str) -> String {
+        return format!(
+            "
+                {narrative_text} {duration}.
+                At the end of each round, {the_subject} takes {damage}.
+
+                {removal}
+            ",
+            narrative_text = self.narrative_text,
+            duration = self.duration.description(),
+            damage = self.damage.description(attacker, is_magical, false),
+            the_subject = the_subject,
+            removal = if self.can_remove_with_dex { "
+                The condition can be removed if the subject makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action}.
+                Dropping \\prone as part of this action gives a +5 bonus to this check.
+            " } else { "" },
         ).trim().to_string();
     }
 }
@@ -117,13 +152,31 @@ impl DebuffEffect {
             .debuffs
             .iter()
             .map(|d| d.latex_link())
-            .collect::<Vec<&str>>()
+            .collect::<Vec<String>>()
             .join(", ");
         if self.duration == AttackEffectDuration::Brief {
             return format!("{} {}.", self.duration.description(), debuff_texts);
         } else {
             return format!("{} {}.", debuff_texts, self.duration.description());
         }
+    }
+}
+
+#[derive(Clone)]
+pub struct DebuffInsteadEffect {
+    pub debuffs: Vec<Debuff>,
+    pub instead_of: Debuff,
+}
+
+impl DebuffInsteadEffect {
+    fn description(&self) -> String {
+        let debuff_texts = self
+            .debuffs
+            .iter()
+            .map(|d| d.latex_link())
+            .collect::<Vec<String>>()
+            .join(", ");
+        return format!("{} instead of {}.", debuff_texts, self.instead_of.name());
     }
 }
 
@@ -161,7 +214,7 @@ impl PoisonEffect {
         let mut third_stage = if let Some(ref debuffs) = self.stage3_debuff {
             format!(
                         "If a creature reaches the third poison stage, it becomes {debuffs} as long as it is poisoned.",
-                        debuffs = latex_formatting::join_str_list(&debuffs.iter().map(|d| d.latex_link()).collect()).unwrap(),
+                        debuffs = latex_formatting::join_string_list(&debuffs.iter().map(|d| d.latex_link()).collect()).unwrap(),
                     )
         } else {
             String::from("")
@@ -172,9 +225,10 @@ impl PoisonEffect {
                         special_effect = vital_wound.special_effect.as_deref().unwrap_or(""),
                     )
         }
-        let debuffs =
-            latex_formatting::join_str_list(&self.stage1.iter().map(|d| d.latex_link()).collect())
-                .unwrap();
+        let debuffs = latex_formatting::join_string_list(
+            &self.stage1.iter().map(|d| d.latex_link()).collect(),
+        )
+        .unwrap();
 
         return format!(
             "
@@ -256,6 +310,9 @@ impl AttackEffect {
         the_subject: &str,
     ) -> String {
         match self {
+            Self::BriefDurationInstead => {
+                return r"The effect lasts \glossterm{briefly}.".to_string();
+            }
             Self::Damage(effect) => {
                 return format!(
                     "{the_subject} takes {damage}",
@@ -263,7 +320,21 @@ impl AttackEffect {
                     the_subject = the_subject,
                 );
             }
+            Self::DamageOverTime(effect) => {
+                return format!(
+                    "{the_subject} {damage}",
+                    damage = effect.description(attacker, is_magical, the_subject),
+                    the_subject = the_subject,
+                );
+            }
             Self::Debuff(effect) => {
+                return format!(
+                    "{the_subject} is {debuffs}",
+                    debuffs = effect.description(),
+                    the_subject = the_subject,
+                );
+            }
+            Self::DebuffInstead(effect) => {
                 return format!(
                     "{the_subject} is {debuffs}",
                     debuffs = effect.description(),

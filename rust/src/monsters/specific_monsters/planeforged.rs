@@ -1,5 +1,5 @@
 use crate::core_mechanics::{DamageType, MovementMode, Sense, Size};
-use crate::creatures::{Modifier, Monster};
+use crate::creatures::{Modifier, Monster, StandardAttack};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Planeforged;
@@ -74,6 +74,33 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
         }
         .monster()],
     }));
+
+    monsters.push(MonsterEntry::Monster(
+        FullPlaneforgedDefinition {
+            alignment: "Always chaotic evil".to_string(),
+            attributes: vec![3, 2, 3, 2, 4, 4],
+            challenge_rating: ChallengeRating::Six,
+            description: None,
+            knowledge: None,
+            level: 13,
+            modifiers: Some(vec![
+                Modifier::Attack(StandardAttack::Combustion(6).attack()),
+                Modifier::Attack(StandardAttack::Inferno(6).attack()),
+                Modifier::Attack(StandardAttack::Pyrohemia(6).attack()),
+                Modifier::Attack(StandardAttack::Ignition(6).attack()),
+                Modifier::Attack(StandardAttack::Pyrophobia(6).attack()),
+            ]),
+            movement_modes: None,
+            name: "Soulfire Demon".to_string(),
+            senses: None,
+            size: Size::Large,
+            trained_skills: None,
+            weapons: vec![StandardWeapon::Slam
+                .weapon()
+                .except(|w| w.damage_types.push(DamageType::Fire))],
+        }
+        .monster(),
+    ));
 
     return monsters;
 }
