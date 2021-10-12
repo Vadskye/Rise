@@ -145,9 +145,9 @@ impl Attack {
                     {ability_components}
                 \\end<{ability_environment}>
             ",
-            ability_environment = "instantability", // TODO
+            ability_environment = self.hit.ability_type().environment(),
             ability_components = ability_components.join("\n\\rankline "),
-            ability_type = "Instant", // TODO
+            ability_type = self.hit.ability_type().name(),
             name = latex_formatting::uppercase_first_letter(&self.name),
         );
     }
@@ -733,4 +733,32 @@ pub struct AttackMovement {
     pub move_before_attack: bool,
     pub requires_straight_line: bool,
     pub speed: SpeedCategory,
+}
+
+#[derive(Clone, PartialEq)]
+pub enum AbilityType {
+    Instant,
+    Duration,
+    Sustain(String),
+    Attune(String),
+}
+
+impl AbilityType {
+    pub fn name(&self) -> String {
+        match self {
+            Self::Instant => "Instant".to_string(),
+            Self::Duration => "Duration".to_string(),
+            Self::Sustain(action) => format!("Sustain {}", action),
+            Self::Attune(action) => format!("Attune {}", action),
+        }
+    }
+
+    pub fn environment(&self) -> &str {
+        match self {
+            Self::Instant => "instantability",
+            Self::Duration => "durationability",
+            Self::Sustain(_) => "durationability",
+            Self::Attune(_) => "attuneability",
+        }
+    }
 }
