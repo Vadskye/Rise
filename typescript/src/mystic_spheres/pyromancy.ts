@@ -271,7 +271,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `The subject catches on fire as a \\glossterm{condition}.
-        At the end of each round, it takes 1d6 fire damage.
+        At the end of each round, it takes 1d6 + half \\glossterm{power} fire damage.
 
         The condition can be removed if the subject makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
@@ -293,7 +293,7 @@ export const pyromancy: MysticSphere = {
           "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
         hit: `
           The subject catches on fire as a \\glossterm{condition}.
-          At the end of each round, it takes 2d10 + half \\glossterm{power} fire damage.
+          At the end of each round, it takes 2d8 + half \\glossterm{power} fire damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -695,7 +695,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `
-          The subject takes 2d10 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\sickened.
+          The subject takes 2d8 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\sickened.
           If it loses \\glossterm{hit points} from this damage, it is \\nauseated instead of sickened.
         `,
         targeting: `
@@ -713,7 +713,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `
-          The subject takes 4d8 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\nauseated.
+          The subject takes 4d6 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\nauseated.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
