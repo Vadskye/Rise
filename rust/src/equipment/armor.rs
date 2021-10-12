@@ -60,7 +60,7 @@ impl ArmorMaterial {
             Self::Normal => ArmorMaterialDefinition {
                 dr_multiplier: 1.0,
                 encumbrance_modifier: 0,
-                name: "Normal".to_string(),
+                name: "normal".to_string(),
                 item_rank_modifier: 0,
             },
             Self::Adamantine => ArmorMaterialDefinition {
