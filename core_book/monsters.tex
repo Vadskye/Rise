@@ -21,7 +21,7 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         \begin{dtable*}
             \lcaption{Challenge Rating Effects}
             \begin{dtabularx}{\textwidth}{l l l l X X l l}
-                \tb{CR} & \tb{HP}  & \tb{DR} & \tb{Defenses} & \tb{Power Scaling}\fn{1} & \tb{Max Attribute} & \tb{Max Rank} & \tb{Damage}\fn{2} \tableheaderrule
+                \tb{CR} & \tb{HP}  & \tb{DR} & \tb{Defenses} & \tb{Power Scaling}\fn{1} & \tb{Max Attribute} & \tb{Max Rank}\fn{2} & \tb{Damage}\fn{3} \tableheaderrule
                 1/2     & \mult1/2 & \mult0  & \plus0        & \mult1/2         & 3                  & \minus1 & \minus1d \\
                 1       & \mult1   & \mult1  & \plus0        & \mult1           & 4                  & \tdash & \tdash   \\
                 2       & \mult2   & \mult2  & \plus0        & \mult2           & 5                  & \tdash & \plus1d  \\
@@ -29,7 +29,8 @@ This chapter describes the rules for monsters, and the combat statistics for a v
                 6       & \mult6   & \mult10 & \plus2        & \mult2           & 7                  & \plus1 & \plus2d  \\
             \end{dtabularx}
             1. This modifier applies to the special power bonus that monsters get based on their level, not to any other sources of power such as Strength or Willpower. \\
-            2. This modifier applies to all damage dice rolled by the monster, including both strikes and magical abilities. \\
+            2. See \pcref{Rank-Based Ability Access}. \\
+            3. This modifier applies to all damage dice rolled by the monster, including both strikes and magical abilities. \\
         \end{dtable*}
 
         \subsubsection{Monster Vital Wounds}
@@ -54,6 +55,7 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         \subsubsection{Rank-Based Ability Access}
             Although monsters do not gain archetypes, their special abilities should still be balanced appropriately for their maximum accessible rank.
             Like a player character, a monster's maximum accessible rank is based on its level, as shown in \tref{Monster Advancement}.
+            CR 1/2 monsters take a \minus1 penalty to their maximum rank, and generally do not have particularly powerful or complex special abilities.
             CR 4 and CR 6 monsters gain a \plus1 bonus to their maximum rank, allowing them to use powerful abilities before player characters can.
 
     \subsection{Attributes}
