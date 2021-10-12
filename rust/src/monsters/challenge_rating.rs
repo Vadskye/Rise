@@ -82,7 +82,7 @@ impl ChallengeRating {
 
     pub fn rank_modifier(&self) -> i32 {
         match self {
-            Self::Half => 0,
+            Self::Half => -1,
             Self::One => 0,
             Self::Two => 0,
             Self::Four => 1,
