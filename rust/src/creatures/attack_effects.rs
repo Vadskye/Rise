@@ -124,7 +124,7 @@ impl DamageOverTimeEffect {
         return format!(
             "
                 {narrative_text} {duration}.
-                At the end of each round, {the_subject} takes {damage}.
+                At the end of each round, {the_subject} takes {damage}
 
                 {removal}
             ",
@@ -324,7 +324,7 @@ impl AttackEffect {
                 return format!(
                     "{the_subject} {damage}",
                     damage = effect.description(attacker, is_magical, the_subject),
-                    the_subject = the_subject,
+                    the_subject = the_subject.to_lowercase(),
                 );
             }
             Self::Debuff(effect) => {
