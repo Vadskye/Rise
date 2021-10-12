@@ -1,3 +1,5 @@
+use std::cmp::max;
+
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode,
     SpecialDefenseModifier, SpecialDefenseType, StandardPassiveAbility,
@@ -109,7 +111,7 @@ impl Monster {
             );
         }
 
-        let rank = (level + 2) / 3 + challenge_rating.rank_modifier();
+        let rank = max(0, (level + 2) / 3 + challenge_rating.rank_modifier());
         creature.add_modifier(
             Modifier::Maneuver(Maneuver::MonsterDamageScaling(rank)),
             Some("Basic Maneuver"),
