@@ -2,7 +2,6 @@ import { defenseBonusesByMonsterType } from "@src/calculate/defense_bonuses_by_m
 import { MonsterType } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterInput } from "@src/monsters/reformat_monster_input";
-import { aberrations } from "./aberrations";
 import { animals } from "./animals";
 import { animates } from "./animates";
 import { dragons } from "./dragons";
@@ -13,7 +12,6 @@ import { planeforged } from "./planeforged";
 import { undead } from "./undead";
 
 export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
-  "aberration": aberrations,
   "animal": animals,
   "animate": animates,
   "dragon": dragons,
@@ -37,7 +35,6 @@ function formatDefenseBonuses(monsterType: MonsterType) {
 
 // Individual monsters may have different knowledge skills
 export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
-  "aberration": ["dungeoneering"],
   "animal": ["nature"],
   "animate": ["arcana"],
   "dragon": ["arcana"],
@@ -49,9 +46,6 @@ export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
 };
 
 export const typeDescriptions: Record<MonsterType, string | null> = {
-  "aberration": `
-    ${formatDefenseBonuses("aberration")}
-  `,
   "animal": `
     ${formatDefenseBonuses("animal")}
   `,
