@@ -55,6 +55,7 @@ fn it_calculates_rank_abilities() {
             "Equipment Efficiency",
             "Glancing Strikes",
             "Greater Armor Expertise",
+            "Greater Mental Discipline",
             // 2 of these since they are used for maneuver scaling at ranks 1 and 3
             "Maneuvers",
             "Maneuvers",
@@ -114,13 +115,13 @@ fn it_calculates_level_21_fighter_defenses() {
         "10 level scaling + 3 class",
     );
     assert_eq!(
-        "Ment b10 f16",
+        "Ment b10 f18",
         format!(
             "Ment b{} f{}",
             baseline.calc_defense(&Defense::Mental),
             fighter.calc_defense(&Defense::Mental)
         ),
-        "10 level scaling + 4 class + 2 D0",
+        "10 level scaling + 4 class + 2 CD0 + 1 CD3 + 1 CD6",
     );
 }
 
@@ -154,11 +155,11 @@ fn it_calculates_level_21_fighter_attacks() {
     fighter.weapons.push(StandardWeapon::Broadsword.weapon());
     assert_eq!(
         vec![
-            "Certain Broadsword +16 (The subject takes 4d6 slashing damage.)",
-            "Generic Scaling Broadsword +11 (The subject takes 7d10 slashing damage.)",
-            "Mighty Broadsword +9 (The subject takes 9d10 slashing damage.)",
-            // +2d from discipline, +3d from equip train, +2d from martial mastery
-            "Broadsword +11 (The subject takes 4d10 slashing damage.)",
+            "Certain Broadsword +16 (The subject takes 2d10 slashing damage.)",
+            "Generic Scaling Broadsword +11 (The subject takes 6d10 slashing damage.)",
+            "Mighty Broadsword +9 (The subject takes 8d10 slashing damage.)",
+            // +2d from discipline, +2d from equip train, +2d from martial mastery
+            "Broadsword +11 (The subject takes 4d8 slashing damage.)",
         ],
         fighter
             .calc_all_attacks()
@@ -369,9 +370,9 @@ fn standard_character_statistics_level_10() {
         "Ref: 5 level + 3 fighter",
     );
     assert_eq!(
-        11,
+        12,
         creature.calc_defense(&Defense::Mental),
-        "Ment: 5 level + 4 fighter + 2 combat discipline",
+        "Ment: 5 level + 4 fighter + 3 combat discipline",
     );
 
     // HasDamageAbsorption
@@ -434,10 +435,10 @@ fn standard_character_statistics_level_20() {
     );
     assert_eq!(
         vec![
-            "Certain Broadsword +17 (The subject takes 4d6+17 slashing damage.)",
-            "Generic Scaling Broadsword +12 (The subject takes 7d10+17 slashing damage.)",
-            "Mighty Broadsword +10 (The subject takes 9d10+17 slashing damage.)",
-            "Broadsword +12 (The subject takes 4d10+17 slashing damage.)"
+            "Certain Broadsword +17 (The subject takes 2d10+17 slashing damage.)",
+            "Generic Scaling Broadsword +12 (The subject takes 6d10+17 slashing damage.)",
+            "Mighty Broadsword +10 (The subject takes 8d10+17 slashing damage.)",
+            "Broadsword +12 (The subject takes 4d8+17 slashing damage.)"
         ],
         creature
             .calc_all_attacks()
@@ -474,9 +475,9 @@ fn standard_character_statistics_level_20() {
         "Ref: 10 level + 3 fighter",
     );
     assert_eq!(
-        16,
+        18,
         creature.calc_defense(&Defense::Mental),
-        "Ment: 10 level + 4 fighter + 2 combat discipline",
+        "Ment: 10 level + 4 fighter + 4 combat discipline",
     );
 
     // HasDamageAbsorption
