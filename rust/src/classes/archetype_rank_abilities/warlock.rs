@@ -222,7 +222,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \crit The target is nauseated until this curse is removed.
 
                     \rankline
-                    You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
+                    You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
                 \end{durationability}
             ",
             modifiers: None,
