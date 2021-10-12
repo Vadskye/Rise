@@ -244,10 +244,10 @@ impl Monster {
     }
 
     fn latex_special_defense_modifiers(&self) -> String {
-        if self.creature.special_defense_modifiers.is_none() {
+        let special_defense_modifiers = self.creature.calc_special_defense_modifiers();
+        if special_defense_modifiers.len() == 0 {
             return "".to_string();
         }
-        let special_defense_modifiers = self.creature.special_defense_modifiers.as_ref().unwrap();
         let mut immune = vec![];
         let mut impervious = vec![];
         let mut vulnerable = vec![];

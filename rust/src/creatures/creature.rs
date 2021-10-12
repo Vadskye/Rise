@@ -62,19 +62,6 @@ impl Creature {
         };
     }
 
-    pub fn add_special_defense_modifier(
-        &mut self,
-        special_defense_modifier: SpecialDefenseModifier,
-    ) {
-        if self.special_defense_modifiers.is_none() {
-            self.special_defense_modifiers = Some(vec![]);
-        }
-        self.special_defense_modifiers
-            .as_mut()
-            .unwrap()
-            .push(special_defense_modifier);
-    }
-
     pub fn add_sense(&mut self, sense: Sense) {
         if self.senses.is_none() {
             self.senses = Some(vec![]);

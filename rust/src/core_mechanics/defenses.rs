@@ -1,5 +1,5 @@
 use crate::core_mechanics::{Attribute, DamageType, Debuff};
-use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
+use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, ModifierType};
 use crate::equipment::{HasArmor, WeaponMaterial};
 use std::fmt;
 
@@ -122,6 +122,8 @@ impl SpecialDefenseType {
 
 pub trait HasDefenses {
     fn calc_defense(&self, defense: &Defense) -> i32;
+    fn add_special_defense_modifier(&mut self, special_defense_modifier: SpecialDefenseModifier);
+    fn calc_special_defense_modifiers(&self) -> Vec<&SpecialDefenseModifier>;
 }
 
 impl HasDefenses for Creature
@@ -159,5 +161,34 @@ where
             + attribute_bonus
             + armor_bonus
             + self.calc_total_modifier(ModifierType::Defense(*defense));
+    }
+
+    fn add_special_defense_modifier(&mut self, special_defense_modifier: SpecialDefenseModifier) {
+        if self.special_defense_modifiers.is_none() {
+            self.special_defense_modifiers = Some(vec![]);
+        }
+        self.special_defense_modifiers
+            .as_mut()
+            .unwrap()
+            .push(special_defense_modifier);
+    }
+
+    fn calc_special_defense_modifiers(&self) -> Vec<&SpecialDefenseModifier> {
+        let mut special_defense_modifiers: Vec<&SpecialDefenseModifier> =
+            if self.special_defense_modifiers.is_some() {
+                self.special_defense_modifiers
+                    .as_ref()
+                    .unwrap()
+                    .iter()
+                    .collect()
+            } else {
+                vec![]
+            };
+        for modifier in self.get_modifiers_by_type(ModifierType::SpecialDefense) {
+            if let Modifier::SpecialDefense(def) = modifier {
+                special_defense_modifiers.push(def);
+            }
+        }
+        return special_defense_modifiers;
     }
 }
