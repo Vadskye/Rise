@@ -143,24 +143,24 @@ fn standard_monster_statistics_level_1_cr4() {
 
     // HasDefenses
     assert_eq!(
-        7,
+        8,
         creature.calc_defense(&Defense::Armor),
-        "Armor: 5 monster + 1 dex + 1 con",
+        "Armor: 5 monster + 1 dex + 1 con + 1 CR",
     );
     assert_eq!(
-        7,
+        8,
         creature.calc_defense(&Defense::Fortitude),
-        "Fort: 5 monster + 2 con",
+        "Fort: 5 monster + 2 con + 1 CR",
     );
     assert_eq!(
-        7,
+        8,
         creature.calc_defense(&Defense::Reflex),
-        "Ref: 5 monster + 2 dex",
+        "Ref: 5 monster + 2 dex + 1 CR",
     );
     assert_eq!(
-        7,
+        8,
         creature.calc_defense(&Defense::Mental),
-        "Ment: 5 monster + 2 wil",
+        "Ment: 5 monster + 2 wil + 1 R",
     );
 
     // HasDamageAbsorption
