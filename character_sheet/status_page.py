@@ -129,7 +129,7 @@ def debuffs():
         [
             flex_col([
                 debuff("blinded"),
-                debuff("confused", False),
+                debuff("confused"),
                 debuff("dazed"),
                 debuff("dazzled"),
                 debuff("decelerated"),
