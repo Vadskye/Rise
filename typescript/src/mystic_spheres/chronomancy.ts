@@ -612,7 +612,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell does not have the \\glossterm{Focus} tag.
         You can immediately use the \\textit{sprint} ability without increasing your \\glossterm{fatigue level}.
-        After you cast this spell, you cannot cast it again until after the end of the next roud.
+        After you cast this spell, you \\glossterm{briefly} cannot cast it again.
       `,
       narrative: `
         You accelerate your body to flee from combat with incredible alacrity.
