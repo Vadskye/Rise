@@ -146,15 +146,15 @@ export const revelation: MysticSphere = {
       name: "Precognitive Defense",
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
+        3: `The bonus increases to +8.`,
+        5: `The bonus increases to +16.`,
+        7: `The bonus increases to +32.`,
       },
-      type: "Attune (target)",
+      type: "Attune (self)",
     },
 
     {
@@ -168,8 +168,8 @@ export const revelation: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: `The bonuses increase to +4.`,
-        7: `The bonuses increase to +8.`,
+        5: `The bonus increases to +8.`,
+        7: `The bonus increases to +16.`,
       },
       type: "Attune (target)",
     },
