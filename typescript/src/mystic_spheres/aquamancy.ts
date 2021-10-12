@@ -90,9 +90,9 @@ export const aquamancy: MysticSphere = {
         crit: "The effect lasts until this curse is removed.",
         glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
-          The subject is \\sickened.
+          The subject is \\dazed.
           If it immerses itself in or drinks a body of water of minimum size equal to two size categories smaller than itself,
-            the subject stops being sickened for 10 minutes.
+            the subject stops being dazed for 10 minutes.
           This effect lasts until the subject takes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -109,7 +109,7 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: "desiccating curse",
-        exceptThat: "the subject is \\nauseated instead of sickened.",
+        exceptThat: "the subject is \\stunned instead of dazed.",
       },
       rank: 7,
       scaling: "accuracy",
@@ -528,7 +528,7 @@ export const aquamancy: MysticSphere = {
         crit: 'The condition must be removed twice before the effect ends.',
         // glance: '',
         hit: `
-          The subject is \\sickened as a \\glossterm{condition}.
+          The subject is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
@@ -545,7 +545,7 @@ export const aquamancy: MysticSphere = {
         crit: 'The condition must be removed twice before the effect ends.',
         glance: 'The effect lasts \\glossterm{briefly}.',
         hit: `
-          The subject is \\nauseated as a \\glossterm{condition}.
+          The subject is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
@@ -561,7 +561,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: 'The effect becomes a \\glossterm{condition}.',
         hit: `
-          Each subject that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\nauseated.
+          Each subject that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.
@@ -577,7 +577,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: 'The effect becomes a \\glossterm{condition}.',
         hit: `
-          Each subject is \\glossterm{briefly} \\nauseated.
+          Each subject is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.

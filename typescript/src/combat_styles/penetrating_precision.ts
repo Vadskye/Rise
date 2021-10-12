@@ -287,7 +287,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\shaken by you, \\slowed, or \\sickened.
+        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\shaken by you, \\slowed, or \\dazed.
       `,
       rank: 2,
       scaling: {
@@ -304,7 +304,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\decelerated, \\frightened by you, or \\nauseated.
+        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\decelerated, \\frightened by you, or \\stunned.
       `,
       rank: 6,
       type: "Instant",

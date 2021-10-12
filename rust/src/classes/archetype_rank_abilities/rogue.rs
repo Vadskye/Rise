@@ -413,12 +413,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} Each subject is immune to Compulsion and Emotion attacks.
                     \end{durationability}
 
-                    \begin{durationability}{Sickening Staccato}[Duration]
+                    \begin{durationability}{Stutterstep Staccato}[Duration]
                         \abilitytag{Auditory}
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} within a \areamed radius from you.
-                        \hit Each subject is \glossterm{briefly} \sickened.
-                        \crit Each subject is sickened as a \glossterm{condition}.
+                        \hit Each subject is \glossterm{briefly} \slowed.
+                        \crit Each subject is \slowed as a \glossterm{condition}.
 
                         \rankline
                         \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.

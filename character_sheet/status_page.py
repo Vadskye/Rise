@@ -139,10 +139,8 @@ def debuffs():
             ]),
             flex_col([
                 debuff("immobilized"),
-                debuff("nauseated"),
                 debuff("panicked"),
                 debuff("shaken"),
-                debuff("sickened"),
                 debuff("slowed"),
                 debuff("stunned"),
             ]),

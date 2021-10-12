@@ -574,10 +574,10 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{3} When a creature takes damage from your bite \glossterm{natural weapon}, it is poisoned.
                         At the end of each round, you make an attack vs. Fortitude against the target.
-                        If you hit, the target is \sickened until it removes the poison.
+                        If you hit, the target is \dazed until it removes the poison.
                         The poison is removed if you miss the target on this attack three times.
                         \rank{5} You gain a \plus1d bonus to your damage with natural weapons.
-                        \rank{7} The poison makes the target \nauseated instead of \sickened.
+                        \rank{7} The poison makes the target \stunned instead of \dazed.
                     \end{durationability}
 
                     \begin{durationability}{Form of the Wolf}[Duration]

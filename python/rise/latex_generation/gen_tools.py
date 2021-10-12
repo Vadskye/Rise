@@ -287,9 +287,9 @@ def generate_tools():
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
                 On a hit, the subject takes 1d8+2 acid damage.
-                If a creature loses \\glossterm<hit points> from this damage, it is \\sickened as a \\glossterm<condition>.
+                If a creature loses \\glossterm<hit points> from this damage, it is \\dazed as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 1d8+2 acid damage and sicken",
+            short_description="Throw to deal 1d8+2 acid damage and daze",
         ),
         MagicItem(
             consumable=True,
@@ -301,9 +301,9 @@ def generate_tools():
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
                 On a hit, the subject takes 2d8+5 acid damage.
-                If a creature loses \\glossterm<hit points> from this damage, it is \\nauseated as a \\glossterm<condition>.
+                Each creature that loses \\glossterm<hit points> from this damage becomes \\stunned as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 2d8+5 acid damage and nauseate",
+            short_description="Throw to deal 2d8+5 acid damage and stun",
         ),
     ]
 
@@ -1120,10 +1120,10 @@ def generate_tools():
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus4.
-                Its stage 1 effect makes the subject \\sickened while the poison lasts.
-                Its stage 3 effect makes the subject \\nauseated while the poison lasts.
+                Its stage 1 effect makes the subject \\dazed while the poison lasts.
+                Its stage 3 effect makes the subject \\stunned while the poison lasts.
             """,
-            short_description="Sickens and eventually nauseates",
+            short_description="Dazes and eventually stuns",
         ),
         MagicItem(
             consumable=True,
@@ -1148,10 +1148,10 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus8.
-                Its stage 1 effect makes the subject \\sickened while the poison lasts.
-                Its stage 3 effect makes the subject \\nauseated while the poison lasts.
+                Its stage 1 effect makes the subject \\dazed while the poison lasts.
+                Its stage 3 effect makes the subject \\stunned while the poison lasts.
             """,
-            short_description="Sickens and eventually nauseates",
+            short_description="Dazes and eventually stuns",
         ),
         MagicItem(
             consumable=True,

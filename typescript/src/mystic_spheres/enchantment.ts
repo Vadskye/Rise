@@ -647,7 +647,7 @@ export const enchantment: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
           As a \\glossterm{condition}, the subject feels excruciating pain from even minor injuries.
-          As long as it is at less than its maximum \\glossterm{hit points}, it is \\nauseated.
+          As long as it is at less than its maximum \\glossterm{hit points}, it is \\stunned.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
