@@ -1,6 +1,7 @@
 use super::*;
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
 use crate::creatures::attacks::HasAttacks;
+use crate::creatures::StandardAttack;
 
 #[test]
 fn standard_monster_statistics_level_1_cr1() {
@@ -170,4 +171,79 @@ fn standard_monster_statistics_level_1_cr4() {
         creature.calc_damage_resistance(),
         "DR: (3 level + 2 con) * 6",
     );
+}
+
+#[cfg(test)]
+mod firebolt_scaling {
+    use super::*;
+
+    fn generate_creature(cr: ChallengeRating, level: i32) -> Creature {
+        let mut creature = Monster::standard_monster(cr, level, None, None).creature;
+        creature.add_modifier(
+            Modifier::Attack(
+                StandardAttack::Firebolt((level + 2) / 3 + cr.rank_modifier()).attack(),
+            ),
+            None,
+            None,
+        );
+        return creature;
+    }
+
+    fn firebolt_description(creature: Creature) -> String {
+        let firebolt = creature
+            .calc_all_attacks()
+            .into_iter()
+            .find(|a| a.name.contains("Firebolt"));
+        return firebolt.unwrap().shorthand_description(&creature);
+    }
+
+    #[test]
+    fn level_1() {
+        let level = 1;
+        assert_eq!(
+            "Firebolt +1 (The subject takes 1d10+2 fire damage.)",
+            firebolt_description(generate_creature(ChallengeRating::One, level)),
+            "CR 1",
+        );
+        assert_eq!(
+            "Firebolt +1 (The subject takes 2d6+3 fire damage.)",
+            firebolt_description(generate_creature(ChallengeRating::Two, level)),
+            "CR 2",
+        );
+        assert_eq!(
+            "Firebolt +1 (The subject takes 2d8+3 fire damage.)",
+            firebolt_description(generate_creature(ChallengeRating::Four, level)),
+            "CR 4",
+        );
+        assert_eq!(
+            "Firebolt +1 (The subject takes 2d10+4 fire damage.)",
+            firebolt_description(generate_creature(ChallengeRating::Six, level)),
+            "CR 6",
+        );
+    }
+
+    #[test]
+    fn level_16() {
+        let level = 16;
+        assert_eq!(
+            "Greater Firebolt +10 (The subject takes 4d10+11 fire damage.)",
+            firebolt_description(generate_creature(ChallengeRating::One, level)),
+            "CR 1",
+        );
+        assert_eq!(
+            "Greater Firebolt +10 (The subject takes 5d10+19 fire damage.)",
+            firebolt_description(generate_creature(ChallengeRating::Two, level)),
+            "CR 2",
+        );
+        assert_eq!(
+            "Supreme Firebolt +10 (The subject takes 7d10+19 fire damage.)",
+            firebolt_description(generate_creature(ChallengeRating::Four, level)),
+            "CR 4",
+        );
+        assert_eq!(
+            "Supreme Firebolt +10 (The subject takes 8d10+27 fire damage.)",
+            firebolt_description(generate_creature(ChallengeRating::Six, level)),
+            "CR 6",
+        );
+    }
 }

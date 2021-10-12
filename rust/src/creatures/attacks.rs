@@ -679,14 +679,6 @@ where
             all_attacks.push(strike);
         }
 
-        if let CreatureCategory::Monster(cr) = self.category {
-            for attack in &mut all_attacks {
-                if let AttackEffect::Damage(ref mut e) = attack.hit {
-                    e.damage_dice = e.damage_dice.add(cr.damage_increments());
-                }
-            }
-        }
-
         if self.calc_total_modifier(ModifierType::EnableGlancingStrikes) > 0 {
             for attack in &mut all_attacks {
                 if attack.is_strike && attack.glance.is_none() {
