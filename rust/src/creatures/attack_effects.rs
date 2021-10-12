@@ -1,5 +1,5 @@
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
-use crate::creatures::attacks::HasAttacks;
+use crate::creatures::attacks::{HasAttacks, AbilityType};
 use crate::creatures::Creature;
 use crate::equipment::Weapon;
 use crate::latex_formatting;
@@ -33,6 +33,20 @@ pub struct DamageEffect {
 }
 
 impl DamageEffect {
+    fn ability_type(&self) -> AbilityType {
+        if let Some(ref effect) = self.lose_hp_effect {
+            if effect.ability_type() != AbilityType::Instant {
+                return effect.ability_type();
+            }
+        }
+        if let Some(ref effect) = self.take_damage_effect {
+            if effect.ability_type() != AbilityType::Instant {
+                return effect.ability_type();
+            }
+        }
+        return AbilityType::Instant;
+    }
+
     fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
         let extra_defense_effect = if let Some(ref effect) = self.extra_defense_effect {
             format!(
@@ -265,15 +279,20 @@ pub enum AttackEffectDuration {
 }
 
 impl AttackEffect {
-    pub fn except_damage<F: FnOnce(&mut DamageEffect)>(&self, f: F) -> AttackEffect {
-        let mut attack_effect = self.clone();
-        match attack_effect {
-            Self::Damage(ref mut d) => {
-                f(d);
-            }
-            _ => {}
-        };
-        return attack_effect;
+    pub fn ability_type(&self) -> AbilityType {
+        match self {
+            Self::BriefDurationInstead => AbilityType::Duration,
+            Self::Damage(effect) => effect.ability_type(),
+            Self::DamageOverTime(_) => AbilityType::Duration,
+            Self::Debuff(_) => AbilityType::Duration,
+            Self::DebuffInstead(_) => AbilityType::Duration,
+            Self::HalfDamage => AbilityType::Instant,
+            Self::Healing(_) => AbilityType::Instant,
+            Self::Knockback(_) => AbilityType::Instant,
+            Self::Poison(_) => AbilityType::Duration,
+            Self::Push(_) => AbilityType::Instant,
+            Self::VitalWound(_) => AbilityType::Instant,
+        }
     }
 
     pub fn area_damage(rank: i32, damage_types: Vec<DamageType>) -> Self {
@@ -287,6 +306,17 @@ impl AttackEffect {
             take_damage_effect: None,
             vampiric_healing: None,
         });
+    }
+
+    pub fn except_damage<F: FnOnce(&mut DamageEffect)>(&self, f: F) -> AttackEffect {
+        let mut attack_effect = self.clone();
+        match attack_effect {
+            Self::Damage(ref mut d) => {
+                f(d);
+            }
+            _ => {}
+        };
+        return attack_effect;
     }
 
     pub fn from_weapon(weapon: Weapon) -> Self {
@@ -408,6 +438,15 @@ pub enum AttackTriggeredEffect {
 }
 
 impl AttackTriggeredEffect {
+    fn ability_type(&self) -> AbilityType {
+        match self {
+            Self::Debuff(_) => AbilityType::Duration,
+            Self::Grappled => AbilityType::Instant,
+            Self::Poison(_) => AbilityType::Duration,
+            Self::VitalWound(_) => AbilityType::Instant,
+        }
+    }
+
     fn description(&self) -> String {
         match self {
             Self::Debuff(e) => e.description(),
