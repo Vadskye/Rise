@@ -446,7 +446,7 @@ export const chronomancy: MysticSphere = {
         hit: `
           As a \\glossterm{condition}, the subject's body temporarily ages to become extremely old.
           It is \\decelerated and \\dazzled.
-          If it was already suffering age-related penalties, it is also \\nauseated.
+          If it was already suffering age-related penalties, it is also \\stunned.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.

@@ -678,7 +678,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d10 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\sickened.
+          The subject takes 1d10 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -695,8 +695,8 @@ export const pyromancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `
-          The subject takes 2d8 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\sickened.
-          If it loses \\glossterm{hit points} from this damage, it is \\nauseated instead of sickened.
+          The subject takes 2d8 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\dazed.
+          If it loses \\glossterm{hit points} from this damage, it is \\stunned instead of dazed.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -713,7 +713,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         glance: `Half damage.`,
         hit: `
-          The subject takes 4d6 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\nauseated.
+          The subject takes 4d6 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.

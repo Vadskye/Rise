@@ -289,7 +289,7 @@ planeforgedInput.push({
           description: `
             Whenever the $name makes a creature lose hit points with its stinger, the damaged creature becomes \\glossterm{poisoned} (see \\pcref{Poison}).
             The creature loses 1d6 \\glossterm{hit points} from each hit with the poison.
-            On the poison's third hit, the creature is \\sickened until the poison ends.
+            On the poison's third hit, the creature is \\dazed until the poison ends.
           `,
           name: "Poison Sting",
         },

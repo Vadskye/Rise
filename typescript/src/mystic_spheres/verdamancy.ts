@@ -276,8 +276,8 @@ export const verdamancy: MysticSphere = {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         hit: `The subject becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of nitharit.
         At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref{Poison}).
-        A creature poisoned by nitharit becomes \\sickened as long as it is poisoned.
-        Reaching the third \\glossterm{poison stage} causes the subject to become \\nauseated as long as it is poisoned.
+        A creature poisoned by nitharit becomes \\dazed as long as it is poisoned.
+        Reaching the third \\glossterm{poison stage} causes the subject to become \\stunned as long as it is poisoned.
         A third failed attack ends the poison.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.

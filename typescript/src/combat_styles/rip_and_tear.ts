@@ -334,7 +334,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2d damage penalty using a slashing weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\sickened.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 1,
       scaling: {
@@ -350,7 +350,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2d damage penalty using a slashing weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\nauseated.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
       `,
       rank: 5,
       scaling: {

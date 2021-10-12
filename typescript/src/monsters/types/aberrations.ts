@@ -94,7 +94,7 @@ aberrationInput.push({
       description: `
         Whenever a creature is loses \\glossterm{hit points} from a strike with the aboleth's tentacle,
           the damaged creature becomes \\glossterm{poisoned} by aboleth slime.
-        The creature is \\sickened as long as it remains poisoned.
+        The creature is \\dazed as long as it remains poisoned.
         On a third hit, the creature gains a \\glossterm{vital wound}.
 
         Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound},

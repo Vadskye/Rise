@@ -421,11 +421,11 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Sickening Miasma",
+      name: "Sapping Miasma",
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition}.",
-        hit: `Each subject is \\glossterm{briefly} \\sickened.`,
+        hit: `Each subject is \\glossterm{briefly} \\dazed.`,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\medrange.
         `,
@@ -436,11 +436,11 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Nauseating Miasma",
+      name: "Greater Sapping Miasma",
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition}.",
-        hit: `Each subject is \\glossterm{briefly} \\nauseated.`,
+        hit: `Each subject is \\glossterm{briefly} \\stunned.`,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\medrange.
         `,

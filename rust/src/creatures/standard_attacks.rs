@@ -45,7 +45,7 @@ impl StandardAttack {
                 if let Some(e) = aboleth_slam.damage_effect_mut() {
                     e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(
                         attack_effects::PoisonEffect {
-                            stage1: vec![Debuff::Nauseated],
+                            stage1: vec![Debuff::Stunned],
                             stage3_debuff: None,
                             stage3_vital: Some(attack_effects::VitalWoundEffect {
                                 special_effect: Some("
@@ -582,7 +582,7 @@ impl StandardAttack {
                     extra_defense_effect: None,
                     lose_hp_effect: if *rank == 4 {
                         Some(AttackTriggeredEffect::Debuff(DebuffEffect {
-                            debuffs: vec![Debuff::Nauseated],
+                            debuffs: vec![Debuff::Stunned],
                             duration: AttackEffectDuration::Brief,
                         }))
                     } else {
@@ -591,9 +591,9 @@ impl StandardAttack {
                     power_multiplier: 0.5,
                     take_damage_effect: Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                         debuffs: vec![if *rank >= 6 {
-                            Debuff::Nauseated
+                            Debuff::Stunned
                         } else {
-                            Debuff::Sickened
+                            Debuff::Dazed
                         }],
                         duration: AttackEffectDuration::Brief,
                     })),

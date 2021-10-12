@@ -840,11 +840,9 @@ def debuffs():
             "dazed",
             "dazzled",
             "shaken",
-            "sickened",
             "slowed",
             # rank 2 debuffs
             "frightened",
-            "nauseated",
             "stunned",
             # rank 3 debuffs
             "decelerated",
@@ -931,12 +929,6 @@ def debuffs():
                 accuracy -= 2;
                 mental -= 2;
             }}
-            if (sickened && !nauseated) {{
-                armor -= 2;
-                fortitude -= 2;
-                mental -= 2;
-                reflex -= 2;
-            }}
             if (slowed && !(immobilized || decelerated)) {{
                 reflex -= 2;
             }}
@@ -944,12 +936,6 @@ def debuffs():
             // rank 2 debuffs
             if (frightened && !panicked) {{
                 accuracy -= 4;
-                mental -= 4;
-            }}
-            if (nauseated) {{
-                armor -= 4;
-                fortitude -= 4;
-                reflex -= 4;
                 mental -= 4;
             }}
             if (stunned || confused) {{

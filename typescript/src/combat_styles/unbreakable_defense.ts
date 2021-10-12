@@ -154,7 +154,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a shield.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\sickened as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 1,
       scaling: {
@@ -166,12 +166,12 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Nauseating Shield Slam",
+      name: "Greater Shield Slam",
 
       effect: `
         Make a \\glossterm{strike} with -1d damage penalty using a shield.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\nauseated as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       scaling: {
         5: "You gain a +1 accuracy bonus with the strike.",
