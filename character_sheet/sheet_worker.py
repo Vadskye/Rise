@@ -195,6 +195,7 @@ def set_skill(a, s):
                 setAttrs({{
                     {s}_ranks: ranks,
                     {s}_total: ranks + {sum_variables(misc)} - fatigue_penalty {subtract_encumbrance},
+                    {s}: ranks + {sum_variables(misc)} - fatigue_penalty {subtract_encumbrance},
                 }});
             """,
         )
