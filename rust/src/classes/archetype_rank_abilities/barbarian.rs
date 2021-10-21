@@ -725,7 +725,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Whenever you \glossterm{explode} with an attack roll, you gain a \plus2 \glossterm{accuracy} bonus with the attack.
+                Whenever you \glossterm{explode} with an attack roll, you gain a \plus2 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
                 This bonus stacks with itself if you explode multiple times with the same attack roll.
             ",
             // TODO: figure out how to represent this
