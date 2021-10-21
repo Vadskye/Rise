@@ -268,6 +268,7 @@ export const electromancy: MysticSphere = {
       name: "Greater Electric Jolt",
 
       attack: {
+        glance: "Half damage.",
         hit: `The subject takes 4d6 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\longrange.
