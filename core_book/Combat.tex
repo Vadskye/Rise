@@ -627,7 +627,9 @@
         \parhead{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
 
         \begin{durationability}{Total Defense}
-            \spelltwocol{Duration\label{Total Defense}}{\abilitytag{Swift}}
+            \spelltwocol{Duration}{\abilitytag{Swift}}
+            % This has to be after a line break for bizarre HTML generation reasons
+            \label{Total Defense}
             \rankline
             You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
             Because this ability has the \abilitytag{Swift} tag, this improves your defenses against attacks made against you during the current phase.
