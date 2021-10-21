@@ -835,8 +835,6 @@ impl Class {
                         At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
                     \subsubsection{Chaos}
-                        If you choose this domain, you add the Deception skill to your \glossterm{class skill} list.
-
                         \parhead{Gift} You are immune to \abilitytag{Compulsion} attacks.
                         \parhead{Aspect} If you roll a 1 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
                         This does not affect bonus dice rolled for exploding attacks.
@@ -849,7 +847,8 @@ impl Class {
                             You cannot control the exact nature of the event, though it always beneficial for you in some way.
                             After using this ability, you cannot use it again until you take a \glossterm{long rest}.
                         \end{instantability}
-                        \parhead{Mastery} You gain a \plus4 bonus to \glossterm{accuracy} with any attack roll that explodes (see \pcref{Exploding Attacks}).
+                        \parhead{Mastery} Whenever you \glossterm{explode} with an attack roll, you gain a \plus4 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
+                        As normal, this bonus does not stack with itself, even if you explode multiple times with the same attack roll.
 
                     \subsubsection{Death}
                         % Lame gift
