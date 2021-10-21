@@ -106,7 +106,6 @@ def vital_wound():
 def circumstances():
     return flex_row({'class': 'debuffs'}, [
         flex_col([
-            debuff("crouching"),
             debuff("flying"),
             debuff("flying poorly"),
             debuff("focusing"),
