@@ -201,9 +201,8 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         hit: `The effect is \\glossterm{suppressed} as long as you \\glossterm{sustain} this ability.`,
         targeting: `
-          Make an attack against one \\glossterm{magical} effect that is dismissable or has a duration within \\medrange.
-          This includes attuned spells and magic items, magical conditions, and sustained magical effects.
-          However, it does not include passive magical abilities on creatures, such as the ability to cast spells.
+          Make an attack against one \\glossterm{magical} effect within \\medrange that is sustained or has a specific duration.
+          This includes brief effects, conditions, and \\abilitytag{Sustain} abilities, but it does not include attuned effects or passive magical abilities on creatures.
           It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
           The target's defense against this attack is equal to 5 \\add its \\glossterm{rank}.
           For effects that have no specific rank, such as some monster abilities, treat their rank as being equal to one third of their level.
@@ -238,12 +237,27 @@ export const thaumaturgy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           on a hit, the effect ends completely instead of being suppressed.
-          This has no effect on abilities that require \\glossterm{attunement}.
+          However, the target's defense increases to 5 \\add twice its rank.
         `,
         name: "suppress magic",
       },
       rank: 4,
       scaling: "accuracy",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Dispel Magic",
+
+      functionsLike: {
+        exceptThat: `
+          on a hit, the effect ends completely instead of being suppressed.
+          In addition, this can also affect \\glossterm{Curse} effects, and the range increases to \\distrange.
+          However, the target's defense increases to 5 \\add twice its rank.
+        `,
+        name: "suppress magic",
+      },
+      rank: 7,
       type: "Instant",
     },
 
