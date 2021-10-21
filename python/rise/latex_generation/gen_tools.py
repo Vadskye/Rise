@@ -1214,7 +1214,7 @@ def generate_tools():
             consumable=True,
             name="Universal Artisan's Tools",
             rank=1,
-            materials="metal",
+            materials=["metal"],
             tags=[],
             description="""
                 This item can serve as artisan's tools for any Craft check except for Craft (alchemy).
@@ -1225,7 +1225,7 @@ def generate_tools():
             consumable=True,
             name="Universal Artisan's Tools, Greater",
             rank=3,
-            materials="metal",
+            materials=["metal"],
             tags=[],
             description="""
                 This item can serve as artisan's tools for any Craft check.
@@ -1238,7 +1238,7 @@ def generate_tools():
             consumable=True,
             name="Universal Artisan's Tools, Supreme",
             rank=5,
-            materials="metal",
+            materials=["metal"],
             tags=[],
             description="""
                 This item can serve as artisan's tools for any Craft check.
