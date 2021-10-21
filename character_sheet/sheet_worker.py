@@ -873,8 +873,8 @@ def debuffs():
                 reflex -= 2;
             }}
             if (unaware && !(asleep || helpless || paralyzed)) {{
-                armor -= 5;
-                reflex -= 5;
+                armor -= 4;
+                reflex -= 4;
             }}
             if (focusing) {{
                 armor -= Math.max(focus_penalty, 0);
@@ -915,11 +915,12 @@ def debuffs():
             if (blinded) {{
                 debuff_headers = "{{{{Miss chance=Miss on 1: [[d2]]}}}}";
             }}
-            if (blinded && !unaware) {{
+            if (blinded && !(unaware || partially_unaware || asleep || helpless || paralyzed)) {{
                 armor -= 2;
                 reflex -= 2;
             }}
             if (goaded) {{
+                debuff_headers = "{{{{Goaded=+2 accuracy vs source}}}}";
                 accuracy -= 2;
             }}
             if (shaken && !frightened && !panicked) {{
