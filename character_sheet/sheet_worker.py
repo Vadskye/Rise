@@ -824,7 +824,6 @@ def debuffs():
         ],
         boolean_variables=[
             # conditional debuffs
-            "crouching",
             "flying",
             "flying_poorly",
             "focusing",
@@ -876,9 +875,6 @@ def debuffs():
             if (unaware && !(asleep || helpless || paralyzed)) {{
                 armor -= 5;
                 reflex -= 5;
-            }}
-            if (crouching) {{
-                accuracy -= 2;
             }}
             if (focusing) {{
                 armor -= Math.max(focus_penalty, 0);
