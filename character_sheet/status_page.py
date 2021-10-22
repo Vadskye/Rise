@@ -132,7 +132,6 @@ def debuffs():
                 debuff("dazed"),
                 debuff("dazzled"),
                 debuff("decelerated"),
-                debuff("disoriented", False),
                 debuff("frightened"),
                 debuff("goaded"),
             ]),

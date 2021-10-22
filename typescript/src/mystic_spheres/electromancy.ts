@@ -183,9 +183,9 @@ export const electromancy: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{briefly} \\dazed and \\disoriented.`,
+        hit: `Each subject is \\glossterm{briefly} \\confused.`,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Fortitude against all creatures with no remaining \\glossterm{damage resistance} in a \\smallarea radius within \\medrange.
         `,
       },
       rank: 5,
