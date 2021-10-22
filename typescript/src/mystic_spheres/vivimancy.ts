@@ -418,6 +418,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition}.",
+        // No relevant glance effect
         hit: `Each subject is \\glossterm{briefly} \\dazed.`,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\medrange.
@@ -527,7 +528,8 @@ export const vivimancy: MysticSphere = {
       name: "Withering",
 
       attack: {
-        crit: `The penalty starts at -5.`,
+        crit: `The condition must be removed twice before the effect ends.`,
+        // No relevant glance effect
         hit: `As a \\glossterm{condition}, the subject's body withers.
         It takes a -2 penalty to Fortitude defense.
         Whenever it loses one or more \\glossterm{hit points} from a single attack, this penalty increases by 1.

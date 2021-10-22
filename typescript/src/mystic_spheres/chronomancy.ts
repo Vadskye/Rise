@@ -119,6 +119,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -165,6 +166,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        // No relevant glance effect
         hit: `Each target is \\glossterm{briefly} \\slowed.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.

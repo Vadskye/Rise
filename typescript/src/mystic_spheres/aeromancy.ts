@@ -68,6 +68,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: "The effect lasts until this curse is removed.",
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject takes a -2 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
         `,
@@ -481,7 +482,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        // glance: '',
+        // No relevant glance effect
         hit: `
           You \\glossterm{knockback} the object up to 60 feet towards you.
           You can use a \\glossterm{free hand} to catch the object if it reaches you.
@@ -527,7 +528,7 @@ export const aeromancy: MysticSphere = {
         crit: `
           The effect becomes a \\glossterm{condition}.
         `,
-        // glance: '',
+        // No relevant glance effect
         hit: `
           Each subject is \\glossterm{briefly} \\dazzled.
         `,
@@ -618,6 +619,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, air buffets the subject downward, pushing it towards the ground with great force.
           It is \\slowed and unable to use any fly speed or glide speed.

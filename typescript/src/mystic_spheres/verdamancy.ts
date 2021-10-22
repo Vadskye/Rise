@@ -98,6 +98,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The subject also cannot move farther than 10 feet from its original location until it ends the effect.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Reflex against one Large or smaller creature within \\medrange that is on a stable surface.
@@ -272,6 +273,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
+        // No relevant glance effect
         hit: `The subject becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of nitharit.
         At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref{Poison}).
         A creature poisoned by nitharit becomes \\dazed as long as it is poisoned.
@@ -293,6 +295,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
+        // No relevant glance effect
         hit: `The subject becomes \\glossterm{poisoned} with sassone leaf.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
         For each \\glossterm{poison stage}, including the initial stage, the subject takes 1d6 physical damage.
@@ -409,6 +412,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject takes 1d6 physical damage at the end of each round.
         If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
 
