@@ -60,7 +60,6 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
-        glance: `The effect lasts \\glossterm{briefly}.`,
         hit: `The subject is \\slowed until it takes a \\glossterm{short rest}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -78,7 +77,6 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
-        glance: `The effect is lasts \\glossterm{briefly}.`,
         hit: `At the end of each round, if the subject lost hit points that round, it has a 50\\% chance to be sent forward in time by one round.
         During the next round, it ceases to exist.
         At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
@@ -97,7 +95,6 @@ export const chronomancy: MysticSphere = {
       name: "Decelerated Timestream",
 
       attack: {
-        glance: `The effect on the creature lasts \\glossterm{briefly}, allowing the creature to act normally in the zone after that time.`,
         hit: `
           Each subject acts at half speed within the area.
           It skips every other round, starting with the round after it becomes affected by this affect.
@@ -119,7 +116,6 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -135,7 +131,6 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\distrange.
@@ -151,7 +146,6 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: `The effect lasts \\glossterm{briefly}.`,
         hit: `The subject is \\decelerated as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -198,7 +192,6 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The subject is immobilized every round.`,
-        glance: `The effect lasts \\glossterm{briefly}.`,
         hit: `As a \\glossterm{condition}, the subject is \\slowed and randomly immobilized.
         At the start of each round, it has a 50\\% chance to be \\immobilized during that round.`,
         targeting: `
@@ -216,7 +209,6 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The subject \\stunned instead of dazed.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\slowed and \\dazed as a single \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -444,7 +436,6 @@ export const chronomancy: MysticSphere = {
       // Like t3 -1 level
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: `The effect lasts \\glossterm{briefly}.`,
         hit: `
           As a \\glossterm{condition}, the subject's body temporarily ages to become extremely old.
           It is \\decelerated and \\dazzled.
@@ -530,7 +521,6 @@ export const chronomancy: MysticSphere = {
       // narrative: '',
       attack: {
         // crit: '',
-        // glance: '',
         hit: `
           The target takes 2d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} frozen in time.

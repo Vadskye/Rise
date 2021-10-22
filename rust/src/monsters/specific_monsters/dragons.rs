@@ -107,10 +107,6 @@ impl AgeCategory {
                 duration: AttackEffectDuration::Condition,
             })),
             defense: Defense::Mental,
-            glance: Some(AttackEffect::Debuff(DebuffEffect {
-                debuffs: vec![Debuff::Shaken("the $name".to_string())],
-                duration: AttackEffectDuration::Brief,
-            })),
             hit: AttackEffect::Debuff(DebuffEffect {
                 debuffs: vec![Debuff::Shaken("the $name".to_string())],
                 duration: AttackEffectDuration::Condition,
@@ -496,11 +492,6 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         cooldown: Some(AttackCooldown::Brief(None)),
         crit: None,
         defense: Defense::Reflex,
-        glance: if age_category.glancing_blow() {
-            Some(AttackEffect::HalfDamage)
-        } else {
-            None
-        },
         hit: AttackEffect::Damage(DamageEffect {
             damage_dice: DamageDice::aoe_damage(damage_rank(
                 age_category.level() + dragon_type.level_modifier(),

@@ -306,7 +306,6 @@ export const fabrication: MysticSphere = {
 
       attack: {
         crit: `Each secondary target is \\immobilized instead of slowed.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `Each secondary target is \\slowed as long as it has webbing from this ability in its space.`,
         targeting: `
           You fill a \\smallarea radius \\glossterm{zone} within \\shortrange with webs.

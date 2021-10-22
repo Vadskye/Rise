@@ -68,7 +68,6 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: "The effect lasts until this curse is removed.",
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject takes a -2 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
         `,
@@ -90,7 +89,6 @@ export const aeromancy: MysticSphere = {
         crit: `
           The effect lasts until this curse is removed.
         `,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject takes a -4 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Medium or smaller until it takes a \\glossterm{short rest}.
         `,
@@ -506,7 +504,6 @@ export const aeromancy: MysticSphere = {
       // +1.5 levels for avoidable damage, -0.5 for size limit. or something.
       attack: {
         crit: "Double damage from movement.",
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, the subject is \\slowed by incredibly fast winds that inhibit movement.
           At the end of each phase, if it moved voluntarily during that phase, it takes 2d6 bludgeoning damage.
@@ -548,7 +545,6 @@ export const aeromancy: MysticSphere = {
         crit: `
           The effect becomes a \\glossterm{condition}.
         `,
-        // glance: '',
         hit: `
           Each subject is \\glossterm{briefly} \\dazzled.
         `,
@@ -568,7 +564,6 @@ export const aeromancy: MysticSphere = {
         crit: `
           The effect becomes a \\glossterm{condition}.
         `,
-        // glance: '',
         hit: `
           Each subject with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
         `,
@@ -619,7 +614,6 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, air buffets the subject downward, pushing it towards the ground with great force.
           It is \\slowed and unable to use any fly speed or glide speed.

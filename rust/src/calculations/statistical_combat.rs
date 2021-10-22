@@ -158,15 +158,6 @@ fn calc_attack_damage_per_round(attack: &Attack, attacker: &Creature, defender: 
         attacker.calc_accuracy(),
         defender.calc_defense(&attack.defense),
     );
-    let glance_probability = if attack.glance.is_some() {
-        calculate_glance_probability(
-            &attack,
-            attacker.calc_accuracy(),
-            defender.calc_defense(&attack.defense),
-        )
-    } else {
-        0.0
-    };
     if attack.damage_effect().is_some() {
         let damage_dice = attack.calc_damage_dice(attacker).unwrap();
         let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
@@ -174,16 +165,14 @@ fn calc_attack_damage_per_round(attack: &Attack, attacker: &Creature, defender: 
             * damage_modifier as f64
             + (hit_probability.single_hit_probability + hit_probability.crit_probability)
                 * damage_dice.average_damage() as f64;
-        if let Some(ref g) = attack.glance {
-            match g {
-                AttackEffect::HalfDamage => {
-                    average_damage_per_round += glance_probability
-                        * (damage_dice.average_damage() + damage_modifier as f64)
-                        / 2.0;
-                }
-                _ => {}
-            };
-        }
+        let glance_probability = calculate_glance_probability(
+            &attack,
+            attacker.calc_accuracy(),
+            defender.calc_defense(&attack.defense),
+        );
+        average_damage_per_round += glance_probability
+            * (damage_dice.average_damage() + damage_modifier as f64)
+            / 2.0;
         return average_damage_per_round;
     } else {
         return 0.0;

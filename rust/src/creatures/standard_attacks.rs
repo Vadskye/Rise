@@ -59,7 +59,6 @@ impl StandardAttack {
                         },
                     ));
                 }
-                aboleth_slam.glance = Some(AttackEffect::HalfDamage);
                 return aboleth_slam;
             }
             // Large enemies-only cone is a rank 4 effect
@@ -68,7 +67,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
-                glance: Some(AttackEffect::HalfDamage),
                 hit: AttackEffect::Damage(DamageEffect {
                     damage_dice: DamageDice::aoe_damage(5),
                     damage_types: vec![DamageType::Energy],
@@ -91,7 +89,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                glance: None,
                 hit: AttackEffect::Push(30),
                 is_magical: true,
                 is_strike: false,
@@ -121,7 +118,6 @@ impl StandardAttack {
                     duration: AttackEffectDuration::Brief,
                 })),
                 defense: Defense::Mental,
-                glance: None,
                 hit: AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![Debuff::Dazed],
                     duration: AttackEffectDuration::Brief,
@@ -138,7 +134,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                glance: Some(AttackEffect::HalfDamage),
                 hit: AttackEffect::Damage(DamageEffect {
                     damage_dice: DamageDice::single_target_damage(3),
                     damage_modifier: 0,
@@ -163,11 +158,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Armor,
-                glance: if *rank >= 3 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     // +1d extra at rank 3/5/7
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 2),
@@ -191,11 +181,6 @@ impl StandardAttack {
                 cooldown: Some(AttackCooldown::Brief(None)),
                 crit: None,
                 defense: *defense,
-                glance: if *rank >= 3 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_modifier: 0,
@@ -230,11 +215,6 @@ impl StandardAttack {
                 cooldown: Some(AttackCooldown::Brief(None)),
                 crit: None,
                 defense: *defense,
-                glance: if *rank >= 3 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_modifier: 0,
@@ -266,11 +246,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                glance: if *rank >= 4 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     // +1d extra at ranks 2, 4 and 7
                     damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 7 {
@@ -305,11 +280,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
-                glance: if *rank >= 3 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank).add(if *rank == 7 { 2 } else { 0 }),
                     damage_modifier: 0,
@@ -332,11 +302,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
-                glance: if *rank >= 4 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_modifier: 0,
@@ -363,11 +328,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
-                glance: if *rank >= 4 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     // +1d extra at ranks 4 and 7
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
@@ -397,11 +357,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                glance: if *rank >= 4 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     // +1d extra at ranks 4 and 7
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
@@ -431,11 +386,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Armor,
-                glance: if *rank >= 4 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     // +1d extra at ranks 4 and 7
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
@@ -465,11 +415,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                glance: if *rank >= 5 {
-                    Some(AttackEffect::BriefDurationInstead)
-                } else {
-                    None
-                },
                 hit: AttackEffect::DamageOverTime(DamageOverTimeEffect {
                     can_remove_with_dex: *rank >= 5,
                     damage: DamageEffect {
@@ -498,11 +443,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
-                glance: if *rank >= 3 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_modifier: 0,
@@ -535,11 +475,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
-                glance: if *rank >= 3 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_modifier: 0,
@@ -570,11 +505,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                glance: if *rank >= 4 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_modifier: 0,
@@ -620,11 +550,6 @@ impl StandardAttack {
                     ),
                 })),
                 defense: Defense::Mental,
-                glance: if *rank >= 5 {
-                    Some(AttackEffect::BriefDurationInstead)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![if *rank >= 5 {
                         Debuff::Frightened("the $name and all other sources of fire".to_string())
@@ -649,11 +574,6 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                glance: if *rank >= 4 {
-                    Some(AttackEffect::HalfDamage)
-                } else {
-                    None
-                },
                 hit: AttackEffect::Damage(DamageEffect {
                     // +1d extra at ranks 4 and 7
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),

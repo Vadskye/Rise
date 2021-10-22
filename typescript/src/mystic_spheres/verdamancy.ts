@@ -98,7 +98,6 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The subject also cannot move farther than 10 feet from its original location until it ends the effect.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Reflex against one Large or smaller creature within \\medrange that is on a stable surface.
@@ -183,7 +182,6 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `the condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\decelerated by a mass of vines as a \\glossterm{condition}.
           While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of decelerated, and it is unable to breathe.
@@ -412,7 +410,6 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject takes 1d6 physical damage at the end of each round.
         If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
 

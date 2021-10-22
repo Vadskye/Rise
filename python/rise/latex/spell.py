@@ -59,15 +59,6 @@ class Spell(object):
             if self.level < 6 and scaling is None:
                 logger.log(WARNING, f"Spell {self.name} is missing scaling rules")
 
-            if (
-                "attack vs." in effect_text
-                and "\\glance" not in effect_text
-                and "briefly" not in effect_text
-            ):
-                logger.log(
-                    WARNING, f"Spell {self.name} is missing glancing blow effect"
-                )
-
             if scaling and scaling not in ["accuracy", "damage"]:
                 if "for each rank" in scaling:
                     # Make sure that the scaling starts from the spell's actual rank
