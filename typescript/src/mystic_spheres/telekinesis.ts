@@ -248,7 +248,6 @@ export const telekinesis: MysticSphere = {
       name: "Blastwave",
 
       attack: {
-        glance: `Half damage, and each subject moves half as far.`,
         hit: `You \\glossterm{knockback} each subject up to 15 feet in a straight line away from you.
         Moving a target upwards costs twice the normal movement cost.
         If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 + half \\glossterm{power} instead of the normal knockback damage.

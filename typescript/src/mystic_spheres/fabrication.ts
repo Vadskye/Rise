@@ -61,7 +61,6 @@ export const fabrication: MysticSphere = {
       name: "Mystic Blast Arrow",
 
       attack: {
-        glance: `Half damage.`,
         hit: `
           The subject takes 2d10 + \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is knocked \\prone.
@@ -80,7 +79,6 @@ export const fabrication: MysticSphere = {
       name: "Bladestorm",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} slashing damage.`,
         targeting: `
           This spell does not have the \\abilitytag{Focus} tag.
@@ -112,7 +110,6 @@ export const fabrication: MysticSphere = {
       name: "Missile Storm",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -128,7 +125,6 @@ export const fabrication: MysticSphere = {
       name: "Greater Missile Storm",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
@@ -144,7 +140,6 @@ export const fabrication: MysticSphere = {
       name: "Hail of Arrows",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea radius within \\medrange.
@@ -206,7 +201,6 @@ export const fabrication: MysticSphere = {
       name: "Blade Perimeter",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 2d6 + half \\glossterm{power} slashing damage.`,
         targeting: `
         A wall of whirling blades appears within \\medrange.
@@ -293,7 +287,6 @@ export const fabrication: MysticSphere = {
       name: "Meteor",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
           You create a meteor in midair within \\medrange that falls to the ground, crushing foes in its path.
@@ -390,7 +383,6 @@ export const fabrication: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 2d6 piercing damage.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
@@ -423,7 +415,6 @@ export const fabrication: MysticSphere = {
       name: "Daggercloud",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
           A swarm of daggers appears in a \\tinyarea radius \\glossterm{zone} within \\medrange.

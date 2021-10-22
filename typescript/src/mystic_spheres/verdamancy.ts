@@ -218,7 +218,6 @@ export const verdamancy: MysticSphere = {
       name: "Greater Vinestorm",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -236,7 +235,6 @@ export const verdamancy: MysticSphere = {
       name: "Supreme Vinestorm",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
@@ -432,7 +430,6 @@ export const verdamancy: MysticSphere = {
       name: "Fire Seeds",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
         % Does "seed structure" make sense?
@@ -465,7 +462,6 @@ export const verdamancy: MysticSphere = {
 
       // original targets: Each creature that moves through the area (see text)
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
         You create a wall of thorns in 15 ft.\\ high, \\smallarea \\glossterm{wall} within \\medrange.

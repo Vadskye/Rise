@@ -50,7 +50,6 @@ export const vivimancy: MysticSphere = {
       name: "Lifeseal",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 4d6 + \\glossterm{power} energy damage.
         If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} unable to regain any hit points.`,
         targeting: `
@@ -84,7 +83,6 @@ export const vivimancy: MysticSphere = {
       name: "Lifesteal Grasp",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 2d8 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you regain 2d8 + \\glossterm{power} hit points.
@@ -225,7 +223,6 @@ export const vivimancy: MysticSphere = {
       attack: {
         crit: `Double damage.
         In addition, if the subject did not already gain a \\glossterm{vital wound} from that loss of hit points, it gains a \\glossterm{vital wound}.`,
-        glance: `Half damage.`,
         hit: `The subject takes 5d10 + half \\glossterm{power} energy damage.
         If the subject would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
         targeting: `
@@ -242,7 +239,6 @@ export const vivimancy: MysticSphere = {
 
       // +1 level for situational vital wound removal
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 4d10 + \\glossterm{power} energy damage.
         If it loses \\glossterm{hit points} from this damage, you can remove one of your vital wounds.
         When you do, you increase your \\glossterm{fatigue level} by three.`,
@@ -314,7 +310,6 @@ export const vivimancy: MysticSphere = {
       name: "Circle of Death",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\medarea radius from you.
@@ -329,7 +324,6 @@ export const vivimancy: MysticSphere = {
       name: "Greater Circle of Death",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d8 + half \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\largearea radius from you.
@@ -407,7 +401,6 @@ export const vivimancy: MysticSphere = {
 
       // HP loss is treated as t3.5 debuff
       attack: {
-        glance: `Half damage.`,
         hit: `
           The subject takes 4d6 energy damage.
           If it loses \\glossterm{hit points} from this damage, it also loses additional \\glossterm{hit points} equal to half its maximum hit points.
@@ -455,7 +448,6 @@ export const vivimancy: MysticSphere = {
 
       // +2 levels for HP theft
       attack: {
-        glance: `Half damage.`,
         hit: `
           The subject takes 2d8 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you regain 2d8 + \\glossterm{power} hit points.
@@ -588,7 +580,6 @@ export const vivimancy: MysticSphere = {
       name: "Greater Retributive Lifebond",
 
       attack: {
-        glance: `Half damage.`,
         // +1d from levels
         hit: `Each subject takes 4d6 energy damage.`,
         targeting: `
@@ -604,7 +595,6 @@ export const vivimancy: MysticSphere = {
       name: "Supreme Retributive Lifebond",
 
       attack: {
-        glance: `Half damage.`,
         // +1d from levels
         hit: `Each subject takes 6d10 energy damage.`,
         targeting: `

@@ -29,7 +29,6 @@ def generate_armor():
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 4d6 energy damage.
-                \\glance Half damage.
             """,
             short_description="Damages nearby attackers when you lose HP",
         ),
@@ -41,7 +40,6 @@ def generate_armor():
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 5d10 energy damage.
-                \\glance Half damage.
             """,
             short_description="Damages attackers when you lose HP",
         ),
@@ -276,7 +274,6 @@ def generate_armor():
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
                 \\hit Each target takes 2d6 energy damage.
-                \\glance Half damage.
             """,
             short_description="Damages adjacent attackers",
         ),
@@ -287,7 +284,6 @@ def generate_armor():
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
                 \\hit Each target takes 4d6 energy damage.
-                \\glance Half damage.
             """,
             short_description="Damages nearby attackers",
         ),

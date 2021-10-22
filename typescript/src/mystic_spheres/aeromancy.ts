@@ -188,7 +188,6 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         hit: "The subject takes 2d8 \\add \\glossterm{power} bludgeoning damage.",
         targeting: "Make an attack vs. Armor against anything within \\distrange.",
       },
@@ -345,7 +344,6 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         // +1 level for farther push, +2 levels for area
         hit: `
           Each subject takes 2d10 bludgeoning damage.
@@ -398,7 +396,6 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         hit: `
           Each subject takes 2d10 bludgeoning damage.
         `,
@@ -447,7 +444,6 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         hit: `
           Each subject takes 2d6 \\add half \\glossterm{power} bludgeoning damage.
         `,
@@ -466,7 +462,6 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         hit: `
           Each subject takes 4d6 \\add half \\glossterm{power} bludgeoning damage.
           In addition, each subject is \\glossterm{pushed} 30 feet clockwise around you.
@@ -589,7 +584,6 @@ export const aeromancy: MysticSphere = {
       name: "Dustblind",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 2d8 physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.

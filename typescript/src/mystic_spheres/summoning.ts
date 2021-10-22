@@ -174,7 +174,6 @@ export const summoning: MysticSphere = {
       name: "Greater Ramming Summon",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 4d6 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything on solid ground within \\longrange.
@@ -208,7 +207,6 @@ export const summoning: MysticSphere = {
       name: "Greater Trampling Summon",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everythong on solid ground in a \\largearealong, 10 ft. wide line from you.
@@ -226,7 +224,6 @@ export const summoning: MysticSphere = {
       name: "Supreme Trampling Summon",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everything on solid ground in a \\hugearealong, 20 ft. wide line from you.

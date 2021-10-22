@@ -188,7 +188,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         hit: `
           Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
@@ -269,7 +268,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         hit: `
           Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
@@ -287,7 +285,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         hit: `
           Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.
         `,
@@ -396,7 +393,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         // +1d from normal AOE due to weird area that probably just hits one person
         hit: `
           Each subject takes 2d8 + half \\glossterm{power} bludgeoning damage.
@@ -416,7 +412,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         // +1d from normal AOE due to weird area that probably just hits one person
         hit: `
           Each subject takes 4d10 + half \\glossterm{power} bludgeoning damage.

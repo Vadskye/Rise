@@ -295,7 +295,6 @@ export const channelDivinity: MysticSphere = {
       name: "Greater Word of Faith",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           Each subject takes 2d8 + half \\glossterm{power} energy damage.
         `,
@@ -312,7 +311,6 @@ export const channelDivinity: MysticSphere = {
       name: "Supreme Word of Faith",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           Each subject takes 4d6 + half \\glossterm{power} energy damage.
         `,
@@ -470,7 +468,6 @@ export const channelDivinity: MysticSphere = {
       name: "Banish Anathema",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 2d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.

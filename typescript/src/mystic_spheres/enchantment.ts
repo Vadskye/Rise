@@ -738,7 +738,6 @@ export const enchantment: MysticSphere = {
       name: "Greater Mind Crush",
 
       attack: {
-        glance: 'Half damage.',
         hit: `
           The subject takes 2d6 + half \\glossterm{power} energy \\glossterm{subdual damage}.
           If it takes damage, it is \\glossterm{briefly} \\dazed.
@@ -755,7 +754,6 @@ export const enchantment: MysticSphere = {
       name: "Supreme Mind Crush",
 
       attack: {
-        glance: 'Half damage.',
         hit: `
           The subject takes 4d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
           If it takes damage, it is \\glossterm{briefly} \\stunned.
