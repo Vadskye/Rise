@@ -586,14 +586,18 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Glancing Strikes",
+            name: "Greater Primal Might",
             is_magical: false,
             rank: 3,
             description: r"
-                Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
-                This is called a \glossterm{glancing blow}.
+                The bonuses from your \textit{primal might} ability increase to \plus2.
             ",
-            modifiers: Some(vec![Modifier::EnableGlancingStrikes]),
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Climb, 1),
+                Modifier::Skill(Skill::Jump, 1),
+                Modifier::Skill(Skill::Swim, 1),
+                Modifier::Skill(Skill::Endurance, 1),
+            ]),
         },
         RankAbility {
             name: "Combat Style Rank (4)",
@@ -644,11 +648,11 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Primal Might",
+            name: "Supreme Primal Might",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonuses from your \textit{primal might} ability increase to \plus2.
+                The bonuses from your \textit{primal might} ability increase to \plus3.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Climb, 1),

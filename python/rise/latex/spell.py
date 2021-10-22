@@ -60,18 +60,12 @@ class Spell(object):
                 logger.log(WARNING, f"Spell {self.name} is missing scaling rules")
 
             if (
-                self.level >= 3
-                and "attack vs." in effect_text
+                "attack vs." in effect_text
                 and "\\glance" not in effect_text
-                and "end of the next round" not in effect_text
+                and "briefly" not in effect_text
             ):
                 logger.log(
                     WARNING, f"Spell {self.name} is missing glancing blow effect"
-                )
-
-            if self.level <= 2 and "\\glance" in effect_text:
-                logger.log(
-                    WARNING, f"Spell {self.name} has glancing blow effect too early"
                 )
 
             if scaling and scaling not in ["accuracy", "damage"]:

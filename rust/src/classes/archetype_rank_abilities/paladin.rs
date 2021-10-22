@@ -538,15 +538,13 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
 pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Zealous Exertion",
+            name: "Unflagging Zeal",
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus2 bonus to any roll that you use the \textit{desperate exertion} ability on.
-                This bonus stacks with the normal \plus2 bonus provided by that ability.
+                You gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
             ",
-            // TODO: represent desperate exertion at all?
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Resource(Resource::FatigueTolerance, 1)]),
         },
         RankAbility {
             name: "Smite",
@@ -601,24 +599,23 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Glancing Strikes",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
-                This is called a \glossterm{glancing blow}.
-            ",
-            modifiers: Some(vec![Modifier::EnableGlancingStrikes]),
-        },
-        RankAbility {
             name: "Zealous Fixation",
             is_magical: true,
-            rank: 4,
+            rank: 3,
             description: r"
                 Whenever you hit a creature with a \glossterm{strike}, you ignore all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
                 If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Greater Unflagging Zeal",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                The bonus from your \textit{unflagging zeal} ability increases to \plus2.
+            ",
+            modifiers: Some(vec![Modifier::Resource(Resource::FatigueTolerance, 1)]),
         },
         RankAbility {
             name: "Greater Forceful Zeal",

@@ -264,36 +264,37 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(6)]),
+            // This rank is when greater expertise kicks in
+            modifiers: Some(vec![Modifier::HitPoints(9)]),
         },
         RankAbility {
             name: "Martial Expertise",
             is_magical: false,
             rank: 4,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(8)]),
+            modifiers: Some(vec![Modifier::HitPoints(12)]),
         },
         RankAbility {
             name: "Martial Expertise",
             is_magical: false,
             rank: 5,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(10)]),
+            modifiers: Some(vec![Modifier::HitPoints(15)]),
         },
         RankAbility {
             name: "Martial Expertise",
             is_magical: false,
             rank: 6,
             description: "",
-            // This rank is when greater expertise kicks in
-            modifiers: Some(vec![Modifier::HitPoints(18)]),
+            // This rank is when supreme expertise kicks in
+            modifiers: Some(vec![Modifier::HitPoints(24)]),
         },
         RankAbility {
             name: "Martial Expertise",
             is_magical: false,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(21)]),
+            modifiers: Some(vec![Modifier::HitPoints(28)]),
         },
         RankAbility {
             name: "Maneuvers",
@@ -388,14 +389,14 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Glancing Strikes",
+            name: "Greater Martial Expertise",
             is_magical: false,
             rank: 3,
             description: r"
-                Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
-                This is called a \glossterm{glancing blow}.
+                The bonus from your \textit{martial expertise} ability increases to three times your rank in this archetype.
             ",
-            modifiers: Some(vec![Modifier::EnableGlancingStrikes]),
+            // Handled as part of bulk silent scaling
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (4)",
@@ -446,11 +447,11 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Martial Expertise",
+            name: "Supreme Martial Expertise",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{martial expertise} ability increases to three times your rank in this archetype.
+                The bonus from your \textit{martial expertise} ability increases to four times your rank in this archetype.
             ",
             // Handled as part of bulk silent scaling
             modifiers: None,

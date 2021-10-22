@@ -1124,12 +1124,11 @@ impl Class {
                         For example, a scrying sensor created by a \abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \glossterm{darkvision} would not be able to see you without light.
 
                     \subsubsection{War}
-                        \parhead{Gift} You gain proficiency an additional \glossterm{weapon group} of your choice.
+                        \parhead{Gift} You gain proficiency with an additional \glossterm{weapon group} of your choice.
                         In addition, you gain proficiency with an additional \glossterm{usage class} of armor.
                         You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
                         \parhead{Aspect} You gain a \plus1d bonus to your damage with all weapons.
-                        \parhead{Essence} Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
-                        This is called a \glossterm{glancing blow}.
+                        \parhead{Essence} You gain a \plus1 bonus to your Armor defense.
                         \parhead{Mastery} The bonus from this domain's aspect increases to \plus2d.
 
                     \subsubsection{Water}
