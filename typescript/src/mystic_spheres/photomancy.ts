@@ -176,7 +176,6 @@ export const photomancy: MysticSphere = {
         hit: `
           The subject takes 2d6 + half \\glossterm{power} energy damage and is \\glossterm{briefly} \\dazzled.
         `,
-        glance: "Half damage.",
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
@@ -247,7 +246,6 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `Double damage, and the subject also suffers consequences as if it had been struck by a beam of natural sunlight.`,
-        glance: `Half damage.`,
         hit: `
           The subject takes 2d10 + half \\glossterm{power} energy damage.
           In addition, it is \\glossterm{briefly} \\dazzled.
@@ -307,7 +305,6 @@ export const photomancy: MysticSphere = {
       name: "Pillars of Light",
 
       attack: {
-        glance: 'Half damage.',
         hit: `
           Each subject takes 2d10 + half \\glossterm{power} energy damage.
         `,
@@ -551,7 +548,6 @@ export const photomancy: MysticSphere = {
       name: "Lightbeam Dash",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -568,7 +564,6 @@ export const photomancy: MysticSphere = {
       name: "Greater Lightbeam Dash",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.

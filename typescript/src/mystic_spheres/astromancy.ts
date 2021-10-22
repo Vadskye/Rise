@@ -77,7 +77,6 @@ export const astromancy: MysticSphere = {
       name: "Banishing Grasp",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 2d8 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately disappears.
@@ -104,7 +103,6 @@ export const astromancy: MysticSphere = {
       name: "Banishment",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 2d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
@@ -292,7 +290,6 @@ export const astromancy: MysticSphere = {
       name: "Dimensional Jaunt -- Plane of Earth",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 2d6 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
@@ -333,7 +330,6 @@ export const astromancy: MysticSphere = {
       name: "Dimensional Jaunt -- Plane of Fire",
 
       attack: {
-        glance: "Half damage.",
         crit: `
           Double damage, and the burning effect becomes a \\glossterm{condition}.
         `,
@@ -362,7 +358,6 @@ export const astromancy: MysticSphere = {
       name: "Dimensional Jaunt -- Myriad",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 4d10 + \\glossterm{power} damage of all types.
         `,
@@ -382,7 +377,6 @@ export const astromancy: MysticSphere = {
       name: "Dimensional Jaunt -- Deep Astral Plane",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 4d6 energy damage.
           If it lost \\glossterm{hit points} from this damage, it is \\confused as a condition.

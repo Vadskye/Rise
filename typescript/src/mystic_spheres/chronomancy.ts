@@ -505,7 +505,6 @@ export const chronomancy: MysticSphere = {
       name: "Disjointed Deceleration",
 
       attack: {
-        glance: `Half damage.`,
         hit: `
           The subject takes 4d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.

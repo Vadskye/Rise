@@ -67,7 +67,6 @@ export const cryomancy: MysticSphere = {
       name: "Greater Freezing Grasp",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 2d8 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
@@ -116,7 +115,6 @@ export const cryomancy: MysticSphere = {
       name: "Greater Cone of Cold",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea cone from you.
@@ -131,7 +129,6 @@ export const cryomancy: MysticSphere = {
       name: "Supreme Cone of Cold",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\hugearea cone from you.
@@ -145,7 +142,6 @@ export const cryomancy: MysticSphere = {
       name: "Frozen Legs",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 2d8 cold damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
@@ -223,7 +219,6 @@ export const cryomancy: MysticSphere = {
       name: "Greater Ice Spike",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 4d10 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -370,7 +365,6 @@ export const cryomancy: MysticSphere = {
       name: "Frostbite",
 
       attack: {
-        glance: `Half damage.`,
         hit: `
           The subject takes 1d6 cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.
@@ -401,7 +395,6 @@ export const cryomancy: MysticSphere = {
       name: "Hailstorm",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea radius within \\medrange.
@@ -417,7 +410,6 @@ export const cryomancy: MysticSphere = {
       name: "Greater Hailstorm",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d10 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea radius within \\longrange.
@@ -433,7 +425,6 @@ export const cryomancy: MysticSphere = {
       name: "Blizzard",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 1d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea radius from you.
@@ -448,7 +439,6 @@ export const cryomancy: MysticSphere = {
       name: "Greater Blizzard",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea radius from you.
@@ -494,7 +484,6 @@ export const cryomancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         // +1d for attune + every other round
         hit: `Each subject takes 2d8 + half \\glossterm{power} cold damage.`,
         targeting: `
@@ -551,7 +540,6 @@ export const cryomancy: MysticSphere = {
       // original targets: ['Yourself', 'See text']
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         // AOE dice, no power
         hit: `Each subject takes 2d6 cold damage.`,
         targeting: `
@@ -568,7 +556,6 @@ export const cryomancy: MysticSphere = {
       name: "Chillwind Dash",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -584,7 +571,6 @@ export const cryomancy: MysticSphere = {
       name: "Greater Chillwind Dash",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
