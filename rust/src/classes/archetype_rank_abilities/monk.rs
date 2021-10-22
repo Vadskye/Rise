@@ -157,14 +157,19 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Glancing Strikes",
+            name: "Greater Esoteric Fluidity",
             is_magical: false,
             rank: 3,
             description: r"
-                Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
-                This is called a \glossterm{glancing blow}.
+                The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::EnableGlancingStrikes]),
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Balance, 1),
+                Modifier::Skill(Skill::Flexibility, 1),
+                Modifier::Skill(Skill::Ride, 1),
+                Modifier::Skill(Skill::SleightOfHand, 1),
+                Modifier::Skill(Skill::Stealth, 1),
+            ]),
         },
         RankAbility {
             name: "Combat Style Rank (4)",
@@ -215,11 +220,11 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Esoteric Fluidity",
+            name: "Supreme Esoteric Fluidity",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
+                The bonus from your \textit{esoteric fluidity} ability increases to \plus3.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Balance, 1),
