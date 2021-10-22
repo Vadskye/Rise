@@ -354,20 +354,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus5.
                     \end{durationability}
 
-                    \begin{durationability}{Mesmerizing Melody}[\abilitytag{Sustain} (minor)]
-                        \abilitytag{Auditory}, \abilitytag{Emotion}
-                        \rankline
-                        Make an attack vs. Mental against all creatures in a \largearea radius from you.
-                        You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
-                        \hit For the duration of your performance, each subject is \fascinated by you.
-                        Any act by you or your apparent allies that harms a subject or that causes it to feel that it is in danger breaks the effect for that creature.
-                        Harming a subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
-                        An observant subject may interpret overt threats to its allies as a threat to itself.
-
-                        \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
-                    \end{durationability}
-
                     \begin{instantability}{Palliative Poem}[Instant]
                         \abilitytag{Auditory}, \abilitytag{Healing}
                         \rankline
