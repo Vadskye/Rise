@@ -449,6 +449,8 @@ export const umbramancy: MysticSphere = {
 
       // original targets: One creature within \medrange standing on the ground
       attack: {
+        crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           If this attack succeeds against both subjects, they swap shadows with each other as a \\glossterm{condition}.
           As long as the condition lasts on both subjects, each subject has total control over the other subject's movements during each \\glossterm{movement phase}, and is unable to control its own movement.

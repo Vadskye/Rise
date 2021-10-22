@@ -114,6 +114,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition}.`,
+        // No relevant glance effect
         hit: `Each subject that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.`,
         targeting: `
           Make an attack vs. Fortitude against \\glossterm{enemies} in a \\arealarge radius from you.
