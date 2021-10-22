@@ -167,7 +167,6 @@ export const polymorph: MysticSphere = {
       name: "Greater Piercing Grasp",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 2d8 + \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
@@ -205,7 +204,6 @@ export const polymorph: MysticSphere = {
       name: "Baleful Polymorph",
 
       attack: {
-        glance: "Half damage.",
         hit: `The subject takes 2d8 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is balefully polymorphed as a \\glossterm{condition}.
         It shrinks by two \\glossterm{size categories} and is \\confused.`,
@@ -379,7 +377,6 @@ export const polymorph: MysticSphere = {
       name: "Disintegrate",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 4d10 + \\glossterm{power} physical damage.
         In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely disintegrated, leaving behind only a pinch of fine dust.
@@ -421,7 +418,6 @@ export const polymorph: MysticSphere = {
       // original targets: ['Yourself', 'See text']
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         // AOE dice, no power
         hit: `Each subject takes 2d6 piercing damage.`,
         targeting: `
@@ -441,7 +437,6 @@ export const polymorph: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         // TODO: is this damage correct?
         hit: `Each subject takes 4d6 piercing damage.`,
         targeting: `
@@ -500,7 +495,6 @@ export const polymorph: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: `Half damage.`,
         hit: `The subject takes 4d6 physical damage.
         If it loses \\glossterm{hit points} from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
         It is \\decelerated, and it and has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
@@ -604,7 +598,6 @@ export const polymorph: MysticSphere = {
       name: "Eyebite",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 2d8 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.`,
         targeting: `
@@ -809,7 +802,6 @@ export const polymorph: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} damage of your chosen type.`,
         targeting: `
           Choose one of the following damage types: acid, cold, electricity, or fire.

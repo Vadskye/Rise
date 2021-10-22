@@ -109,7 +109,6 @@ export const pyromancy: MysticSphere = {
       name: "Greater Burning Grasp",
 
       attack: {
-        glance: "Half damage from the initial hit.",
         hit: `
           The subject takes 2d8 + \\glossterm{power} fire damage.
           If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
@@ -150,7 +149,6 @@ export const pyromancy: MysticSphere = {
       name: "Pyroclasm",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} fire damage.
         In addition, if the subject is a flammable object, it catches on fire.`,
         targeting: `
@@ -167,7 +165,6 @@ export const pyromancy: MysticSphere = {
       name: "Fireball",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall radius within \\medrange.
@@ -253,7 +250,6 @@ export const pyromancy: MysticSphere = {
       name: "Greater Burning Hands",
 
       attack: {
-        glance: "Half damage.",
         hit: `Each subject takes 4d6 + \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall cone from you.
@@ -325,7 +321,6 @@ export const pyromancy: MysticSphere = {
       name: "Greater Combustion",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 4d8 + \\glossterm{power} fire damage.
         In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely incinerated, leaving behind only a pinch of fine ash.
@@ -344,7 +339,6 @@ export const pyromancy: MysticSphere = {
       name: "Supreme Combustion",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 7d10 + \\glossterm{power} fire damage.
         In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely incinerated, leaving behind only a pinch of fine ash.
@@ -381,7 +375,6 @@ export const pyromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} fire damage.`,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
@@ -431,7 +424,6 @@ export const pyromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 2d6 fire damage.`,
         targeting: `
           When you cast this spell, a cluster of flaming spheres appears over your head.
@@ -509,7 +501,6 @@ export const pyromancy: MysticSphere = {
       name: "Flame Serpent",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide shapeable line that starts within \\medrange.
@@ -524,7 +515,6 @@ export const pyromancy: MysticSphere = {
       name: "Greater Flame Serpent",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d8 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\distrange.
@@ -540,7 +530,6 @@ export const pyromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         // AOE dice, but no power
         hit: `Each subject takes 2d6 fire damage.`,
         targeting: `
@@ -559,7 +548,6 @@ export const pyromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         // TODO: is this damage correct?
         hit: `Each secondary target takes 4d6 fire damage.`,
         targeting: `
@@ -608,7 +596,6 @@ export const pyromancy: MysticSphere = {
       name: "Wall of Fire",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
         You create a wall of fire in a 15 ft.\\ high, \\medarea \\glossterm{wall} within \\medrange.
@@ -693,7 +680,6 @@ export const pyromancy: MysticSphere = {
       name: "Greater Pyrohemia",
 
       attack: {
-        glance: `Half damage.`,
         hit: `
           The subject takes 2d8 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\dazed.
           If it loses \\glossterm{hit points} from this damage, it is \\stunned instead of dazed.
@@ -711,7 +697,6 @@ export const pyromancy: MysticSphere = {
       name: "Supreme Pyrohemia",
 
       attack: {
-        glance: `Half damage.`,
         hit: `
           The subject takes 4d6 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\stunned.
         `,
@@ -797,7 +782,6 @@ export const pyromancy: MysticSphere = {
       name: "Flame Dash",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -813,7 +797,6 @@ export const pyromancy: MysticSphere = {
       name: "Greater Flame Dash",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d6 + half \\glossterm{power} fire damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.

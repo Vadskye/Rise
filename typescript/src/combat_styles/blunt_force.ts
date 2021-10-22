@@ -88,7 +88,6 @@ export const bluntForce: CombatStyle = {
       name: "Greater Ground Stomp",
 
       attack: {
-        glance: `Half damage.`,
         hit: `
           Each subject takes 2d8 + half \\glossterm{power} bludgeoning damage.
         `,
@@ -105,7 +104,6 @@ export const bluntForce: CombatStyle = {
       name: "Supreme Ground Stomp",
 
       attack: {
-        glance: `Half damage.`,
         hit: `
           Each subject takes 4d6 + half \\glossterm{power} bludgeoning damage.
           Each creature that loses \\glossterm{hit points} from this damage is knocked \\prone.
@@ -229,7 +227,6 @@ export const bluntForce: CombatStyle = {
       name: "Leap Slam",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm{land speed} (see \\pcref{Leap}).

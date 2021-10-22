@@ -47,7 +47,6 @@ export const electromancy: MysticSphere = {
       name: "Lightning Bolt",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
@@ -80,7 +79,6 @@ export const electromancy: MysticSphere = {
       name: "Greater Shocking Grasp",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 2d8 + \\glossterm{power} electricity damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
@@ -156,7 +154,6 @@ export const electromancy: MysticSphere = {
       name: "Greater Lightning Storm",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -171,7 +168,6 @@ export const electromancy: MysticSphere = {
       name: "Supreme Lightning Storm",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\gargarea radius from you.
@@ -201,7 +197,6 @@ export const electromancy: MysticSphere = {
       name: "Electromagnetic Bolt",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
@@ -232,7 +227,6 @@ export const electromancy: MysticSphere = {
       name: "Chain Lightning",
 
       attack: {
-        glance: `Half damage.`,
         hit: `
           The primary subject takes 4d6 + \\glossterm{power} electricity damage.
           Each secondary subject takes 2d10 + half \\glossterm{power} electricity damage.
@@ -268,7 +262,6 @@ export const electromancy: MysticSphere = {
       name: "Greater Electric Jolt",
 
       attack: {
-        glance: "Half damage.",
         hit: `The subject takes 4d6 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\longrange.
@@ -312,7 +305,6 @@ export const electromancy: MysticSphere = {
       name: "Greater Electroshock",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 2d8 electricity damage.
         If it loses \\glossterm{hit points} from this damage, it is \\confused as a \\glossterm{condition}.`,
         targeting: `
@@ -328,7 +320,6 @@ export const electromancy: MysticSphere = {
       name: "Call Lightning",
 
       attack: {
-        glance: `Half damage.`,
         // +1d from normal AOE due to weird area that probably just hits one person
         hit: `Each subject takes 2d8 + half \\glossterm{power} electricity damage.`,
         targeting: `
@@ -347,7 +338,6 @@ export const electromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        glance: "Half damage.",
         // +1d from normal AOE due to weird area that probably just hits one person
         hit: `
           Each subject takes 4d10 + half \\glossterm{power} electricity damage.
@@ -386,7 +376,6 @@ export const electromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         // +1d for attune + every other round
         hit: `Each subject takes 2d8 + half \\glossterm{power} electricity damage.`,
         targeting: `
@@ -420,7 +409,6 @@ export const electromancy: MysticSphere = {
       name: "Ball Lightning",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d10 electricity damage.`,
         targeting: `
           You create a Medium size ball of lightning in one space within \\longrange.
@@ -440,7 +428,6 @@ export const electromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         // AOE dice, but no power
         hit: `Each subject takes 2d6 electricity damage.`,
         targeting: `
@@ -456,7 +443,6 @@ export const electromancy: MysticSphere = {
       name: "Electrocute",
 
       attack: {
-        glance: `Half damage.`,
         // +2d from level, add trivial extra benefit for fun
         hit: `
           The subject takes 4d10 + \\glossterm{power} electricity damage.
@@ -495,7 +481,6 @@ export const electromancy: MysticSphere = {
       name: "Thunderdash",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -512,7 +497,6 @@ export const electromancy: MysticSphere = {
       name: "Greater Thunderdash",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
         You teleport into an unoccupied destination on a stable surface within \\distrange.

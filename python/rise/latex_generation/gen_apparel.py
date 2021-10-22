@@ -336,7 +336,6 @@ def generate_apparel():
                 As a standard action, you can activate this circlet.
                 If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
                 \\hit The target takes 2d10+6 fire damage.
-                \\glance As above, except that that the target takes half damage.
             """,
             short_description="Can blast foe with fire",
         ),
@@ -350,7 +349,6 @@ def generate_apparel():
                 As a standard action, you can activate this circlet.
                 If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
                 \\hit The target takes 4d10+10 fire damage.
-                \\glance As above, except that that the target takes half damage.
             """,
             short_description="Can blast foe with intense fire",
         ),
@@ -364,7 +362,6 @@ def generate_apparel():
                 As a standard action, you can activate this circlet.
                 If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
                 \\hit The target takes 7d10+14 fire damage.
-                \\glance As above, except that that the target takes half damage.
             """,
             short_description="Can blast foe with supremely intense fire",
         ),
@@ -506,7 +503,6 @@ def generate_apparel():
                 As a standard action, you can intensify the crown's energy to shock nearby enemies.
                 When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areasmall radius from you.
                 On a hit, each target takes 2d6+3 electricity damage.
-                On a \\glossterm<glancing blow>, each target takes half damage.
             """,
             short_description="Can deal 2d6+3 damage to nearby foes",
         ),
@@ -522,7 +518,6 @@ def generate_apparel():
                 As a standard action, you can intensify the crown's energy to shock nearby enemies.
                 When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areamed radius from you.
                 On a hit, each target takes 4d6+5 electricity damage.
-                On a \\glossterm<glancing blow>, each target takes half damage.
             """,
             short_description="Can deal 4d6+5 damage to nearby foes",
         ),
@@ -538,7 +533,6 @@ def generate_apparel():
                 As a standard action, you can intensify the crown's energy to shock nearby enemies.
                 When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\hugearea radius from you.
                 On a hit, each target takes 4d10+7 electricity damage.
-                On a \\glossterm<glancing blow>, each target takes half damage.
             """,
             short_description="Can deal 4d10+7 damage to nearby foes",
         ),

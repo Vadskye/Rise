@@ -63,7 +63,6 @@ export const toxicology: MysticSphere = {
       name: "Greater Corrosive Grasp",
 
       attack: {
-        glance: "Half damage.",
         hit: `
           The subject takes 2d8 + \\glossterm{power} acid damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
@@ -171,7 +170,6 @@ export const toxicology: MysticSphere = {
       name: "Acidic Blood",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 acid damage.`,
         targeting: `
           At the end of each phase, if you lost \\glossterm{hit points} during that phase, make an attack vs. Reflex against everything adjacent to you.
@@ -292,7 +290,6 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `The subject takes 2d8 + \\glossterm{power} acid damage.`,
-        glance: "Half damage.",
         targeting: `
           Make an attack vs. Fortitude against anything within \\distrange.
         `,
@@ -308,7 +305,6 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `The subject takes 4d10 + \\glossterm{power} acid damage.`,
-        glance: "Half damage.",
         targeting: `
           Make an attack vs. Fortitude against anything within \\extrange.
         `,
@@ -369,7 +365,6 @@ export const toxicology: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} acid damage.`,
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
@@ -402,7 +397,6 @@ export const toxicology: MysticSphere = {
       name: "Corrosive Splash",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 4d6 + \\glossterm{power} acid damage.
         This attack deals double damage to objects.`,
         targeting: `
@@ -420,7 +414,6 @@ export const toxicology: MysticSphere = {
       name: "Acid Rain",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\areasmall radius, 30 ft.\\ high cylinder within \\medrange.
@@ -436,7 +429,6 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Rain",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d8 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\arealarge radius, 30 ft.\\ high cylinder within \\longrange.
@@ -451,7 +443,6 @@ export const toxicology: MysticSphere = {
       name: "Acid Orb",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d6 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall radius within \\medrange.
@@ -466,7 +457,6 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Orb",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d8 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areamed radius within \\medrange.

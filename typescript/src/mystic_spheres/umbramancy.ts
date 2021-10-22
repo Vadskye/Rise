@@ -146,7 +146,6 @@ export const umbramancy: MysticSphere = {
       name: "Greater Dark Miasma",
 
       attack: {
-        glance: `Half damage.`,
         // -1d to compensate for +2a
         hit: `Each subject takes 2d6 + half \\glossterm{power} cold damage.`,
         targeting: `
@@ -428,7 +427,6 @@ export const umbramancy: MysticSphere = {
       name: "Greater Bind Shadow",
 
       attack: {
-        glance: `Half damage.`,
         hit: `
           The subject takes 2d10 cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
@@ -451,7 +449,6 @@ export const umbramancy: MysticSphere = {
 
       // original targets: One creature within \medrange standing on the ground
       attack: {
-        glance: `Half damage.`,
         hit: `
           If this attack succeeds against both subjects, they swap shadows with each other as a \\glossterm{condition}.
           As long as the condition lasts on both subjects, each subject has total control over the other subject's movements during each \\glossterm{movement phase}, and is unable to control its own movement.
@@ -474,7 +471,6 @@ export const umbramancy: MysticSphere = {
 
       // basically t3? better control than immobilized, but no defense penalties
       attack: {
-        glance: `Half damage.`,
         hit: `
           The subject takes 2d8 cold damage.
           If it loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
@@ -498,7 +494,6 @@ export const umbramancy: MysticSphere = {
 
       // original targets: One creature within \medrange standing on the ground
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 4d8 + half \\glossterm{power} cold damage.
         If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\disoriented.
         In addition, it must move a distance equal to its maximum movement speed in a straight line during each \\glossterm{movement phase}.

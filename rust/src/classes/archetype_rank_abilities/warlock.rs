@@ -177,7 +177,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
                     At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
                     After it returns, it becomes immune to being teleported in this way until it takes a \glossterm{short rest}.
-                    \glance Half damage.
 
                     \rankline
                     The damage increases by \plus1d for each rank beyond 3.

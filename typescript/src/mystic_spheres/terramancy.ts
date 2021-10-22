@@ -158,7 +158,6 @@ export const terramancy: MysticSphere = {
       name: "Earthspike",
 
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 2d8 piercing damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
@@ -241,7 +240,6 @@ export const terramancy: MysticSphere = {
       name: "Fissure",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 2d8 + half \\glossterm{power} bludgeoning damage.
         Each Large or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\prone.`,
         targeting: `
@@ -261,7 +259,6 @@ export const terramancy: MysticSphere = {
       name: "Earthquake",
 
       attack: {
-        glance: `Half damage.`,
         hit: `Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.
         Each Huge or smaller subject that takes damage this way is also knocked \\prone.`,
         targeting: `
@@ -281,7 +278,6 @@ export const terramancy: MysticSphere = {
 
       // losing line of effect compensates for recurring extra damage
       attack: {
-        glance: `Half damage.`,
         hit: `The subject takes 4d6 bludgeoning damage.
         If it is Large or smaller and it loses \\glossterm{hit points} from this damage, it is swallowed by the earth as a \\glossterm{condition}.
         While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
