@@ -51,7 +51,8 @@ export const telekinesis: MysticSphere = {
       name: "Interposing Force",
 
       attack: {
-        crit: `the difficulty value of the Strength check increases by 10.`,
+        crit: `The difficulty value of the Strength check increases by 10.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject is unable to move closer to you without effort.
         This does not impede its movement unless its movement would decrease the distance between it and you.
         As part of movement, it can make a Strength check with a \\glossterm{difficulty value} of 5.
@@ -201,6 +202,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         crit: `The subject is \\decelerated instead of slowed.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one Large or smaller target within \\medrange.
@@ -233,6 +235,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
+        // No relevant glance effect
         hit: `Each subject is \\glossterm{briefly} \\slowed.`,
         targeting: `
           Make an attack vs. Mental against all Large or smaller creatures in a \\areasmall radius within \\medrange.
@@ -439,6 +442,7 @@ export const telekinesis: MysticSphere = {
           You \\glossterm{knockback} the object up to 60 feet towards you.
           You can use a \\glossterm{free hand} to catch the object if it reaches you.
         `,
+        // No relevant glance effect
         targeting: `
           Make an attack vs. Reflex against one Small or smaller object within \\medrange.
           If the object is attended by a creature, the attack must also beat the attending creature's Reflex defense.

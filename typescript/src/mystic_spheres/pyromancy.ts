@@ -266,6 +266,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject catches on fire as a \\glossterm{condition}.
         At the end of each round, it takes 1d6 + half \\glossterm{power} fire damage.
 
@@ -358,6 +359,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         hit: `The object becomes burning hot to the touch.
         At the end of each round, it and anything touching it takes 1d10 + half \\glossterm{power} fire damage.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         targeting: `
           Choose one metal object within \\medrange.
           It must be no smaller than Tiny size and no larger than Large size.
@@ -632,6 +634,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         crit: `The subject is \\frightened instead of shaken.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\shaken by you and all other sources of fire as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.

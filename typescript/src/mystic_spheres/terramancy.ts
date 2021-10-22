@@ -222,6 +222,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         crit: `Each subject is also unable to stand up as a \\glossterm{condition}.`,
+        // No relevant glance effect
         hit: `Each subject is knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea within \\medrange that are on a stable surface.
@@ -301,6 +302,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, the subject is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is \\slowed and unable to use any fly speed or glide speed.

@@ -54,6 +54,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition}.`,
+        // No relevant glance effect
         hit: `
           Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\dazed.
           Each subject with no remaining damage resistance is \\stunned instead of dazed.
@@ -157,6 +158,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -268,6 +270,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition}.",
+        // No relevant glance effect
         hit: `Each subject is \\glossterm{briefly} \\dazzled.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange of you.
@@ -326,6 +329,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each subject.",
+        // No relevant glance effect
         hit: `
           Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\dazed.
           Each subject with no remaining damage resistance is \\stunned instead of dazed.

@@ -262,10 +262,10 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         crit: "The penalty increases to -5.",
-        // glance: '',
         hit: `
           As a \\glossterm{condition}, the subject takes a -2 penalty to Mental defense.
         `,
+        glance: "The effect lasts \\glossterm{briefly}.",
         targeting: `
           Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
         `,

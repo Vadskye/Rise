@@ -435,6 +435,7 @@ export const fabrication: MysticSphere = {
           Each subject is also unable to stand up as a \\glossterm{condition}.
           If it is somehow brought into a standing position, it will immediately fall and become prone again.
         `,
+        // No relevant glance effect
         hit: `Each subject falls \\prone.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.

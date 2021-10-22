@@ -98,6 +98,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
+        // No relevant glance effect
         hit: `The subject becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of asp venom.
         At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref{Poison}).
         A creature poisoned by asp venom becomes \\dazed as long as it is poisoned.
@@ -189,6 +190,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `The subject is \\stunned instead of dazed.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\dazed as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -513,8 +515,9 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
+        glance: "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
         hit: `The subject becomes drenched in acid as a \\glossterm{condition}.
-        At the end of each round, it takes 1d6 acid damage.
+        At the end of each round, it takes 1d6 + half \\glossterm{power} acid damage.
 
         The condition can be removed if the subject makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
@@ -535,7 +538,7 @@ export const toxicology: MysticSphere = {
           "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
         hit: `
           The subject becomes drenched in acid as a \\glossterm{condition}.
-          At the end of each round, it takes 2d10 + half \\glossterm{power} acid damage.
+          At the end of each round, it takes 2d8 + half \\glossterm{power} acid damage.
         `,
         targeting: `
           Make an attack vs. Reflex against one creature within \\medrange.

@@ -91,6 +91,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject is forced to speak out loud constantly whenever it can.
         This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
         In combat, most creatures with an intelligence of 0 or less will often talk about what they are planning on doing, which can help you predict their actions.`,
@@ -111,6 +112,7 @@ export const enchantment: MysticSphere = {
       // This is T1 + one level; it is a weird hybrid of immobilized and a minor T1 effect
       attack: {
         crit: `The subject must dance as a \\glossterm{standard action} to reset the penalties, instead of as a move action.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject is compelled to dance.
         It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
         At the end of each round, if the subject did not dance during that round, it takes a -2 penalty to \\glossterm{accuracy} and Mental defense as the compulsion intensifies.
@@ -133,6 +135,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: `Each subject is also unable to stand up as a \\glossterm{condition}.
         If it is somehow brought into a standing position, it will immediately fall and become prone again.`,
+        // No relevant glance effect
         hit: `Each subject falls \\prone.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
@@ -184,6 +187,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        // No relevant glance effect
         hit: `Each subject is \\glossterm{briefly} \\slowed.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
@@ -312,11 +316,10 @@ export const enchantment: MysticSphere = {
         crit: `The subject takes a -4 penalty to its defenses against the strike.`,
         // No glance effect since it's already one round
         hit: `
-          During the next \\glossterm{action phase}, the subject is compelled to make a \\glossterm{strike} against itself instead of taking any other actions.
+          During the next \\glossterm{action phase}, the subject is compelled to make a \\glossterm{strike} against itself as a \\glossterm{standard action}.
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
           If it has any weapons in hand or natural weapons at that time, it must use one of them.
           Otherwise, it uses its unarmed attack.
-          This does not use up any of the creature's actions for the round, and it can take any unused actions during the \\glossterm{delayed action phase} of that round.
 
           After it makes this attack against itself, it becomes \\glossterm{immune} to this effect until it takes a \\glossterm{short rest}.
         `,
@@ -335,6 +338,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        // No relevant glance effect
         hit: `Each subject is \\glossterm{briefly} \\dazed.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -364,6 +368,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The subject is \\frightened by you instead of shaken.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\shaken by either you or an \\glossterm{ally} of your choice within range as a \\glossterm{condition}.
         `,
@@ -382,6 +387,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        // No relevant glance effect
         hit: `Each subject is \\glossterm{briefly} \\shaken by either you or an \\glossterm{ally} of your choice within range.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
@@ -504,6 +510,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
         For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.`,
         targeting: `
@@ -540,6 +547,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The penalty increases to -5.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject takes a -2 penalty to Mental defense.`,
         targeting: `
           Make an attack vs. Mental with a +3 bonus against one creature within \\medrange.
@@ -627,6 +635,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The penalty increases to -8.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject takes a -4 penalty to Awareness, Social Insight, and \\glossterm{initiative} checks as a \\glossterm{condition}.`,
         targeting: `
         This spell has no \\glossterm{verbal components}.
@@ -645,6 +654,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, the subject feels excruciating pain from even minor injuries.
           As long as it is at less than its maximum \\glossterm{hit points}, it is \\stunned.
@@ -664,6 +674,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} that lasts until it is removed.`,
+        // No relevant glance effect
         hit: `The subject \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
         It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
         After this effect ends, the subject becomes immune to this spell until it takes a \\glossterm{short rest}.`,
@@ -682,6 +693,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject's \\glossterm{focus penalty} is increased by 4.`,
         targeting: `
           Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one creature within \\longrange.

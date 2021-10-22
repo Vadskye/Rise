@@ -148,6 +148,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         // No crit effect
+        // No glance effect
         hit: `One of the subject's magic auras is altered (see \\pcref{Spellsense}).
         You can change the \\glossterm{ability tags} the aura has.
         In addition, you can decrease the \\glossterm{power} of the aura by up to half your power, or increase the power of the aura up to a maximum of your power.`,
@@ -165,6 +166,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         crit: "You can sustain this spell as a \\glossterm{free action}.",
+        glance: "The suppression lasts \\glossterm{briefly}.",
         hit: `All magical properties the subject has are \\glossterm{suppressed}.`,
         targeting: `
           Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one Large or smaller \\glossterm{magical} object within \\longrange.
@@ -180,7 +182,8 @@ export const thaumaturgy: MysticSphere = {
       name: "Dismissal",
 
       attack: {
-        // no relevant crit effect
+        // No relevant crit effect
+        // No relevant glance effect
         hit: `The subject is treated as if the ability that created it was \\glossterm{dismissed}.
         This usually causes the subject to disappear.`,
         targeting: `
@@ -200,6 +203,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         hit: `The effect is \\glossterm{suppressed} as long as you \\glossterm{sustain} this ability.`,
+        glance: "The suppression lasts \\glossterm{briefly}.",
         targeting: `
           Make an attack against one \\glossterm{magical} effect within \\medrange that is sustained or has a specific duration.
           This includes brief effects, conditions, and \\abilitytag{Sustain} abilities, but it does not include attuned effects or passive magical abilities on creatures.
@@ -445,6 +449,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         crit: `The effect ends after the subject fails to cast three spells instead of only one.`,
+        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the next time the subject tries to cast a spell, the spell automatically fails with no effect instead.
         When the subject fails to cast a spell in this way, this effect ends, and the subject becomes immune to this spell until it takes a \\glossterm{short rest}.`,
         targeting: `
