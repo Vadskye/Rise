@@ -225,8 +225,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{2} The damage increases to 1d8, and the area increases to a \smallarea radius.
                         \rank{3} The damage increases to 1d10, and the area increases to a \medarea radius.
-                            In addition, if you miss by 2 or less, each subject takes half damage.
-                            This is called a \glossterm{glancing blow}.
                         \rank{4} The damage increases to 2d6.
                         \rank{5} The damage increases to 2d8, and the area increases to a \largearea radius.
                         \rank{6} The damage increases to 2d10.
@@ -299,8 +297,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{2} The damage increases to 2d6.
                         \rank{3} The damage increases to 2d10.
-                            In addition, if you miss by 2 or less, the subject takes half damage.
-                            This is called a \glossterm{glancing blow}.
                         \rank{4} The damage increases to 4d6.
                         \rank{5} The damage increases to 4d10.
                         \rank{6} The damage increases to 5d10.
@@ -328,8 +324,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         You gain a \plus1 \glossterm{accuracy} bonus and a \plus1d damage bonus with the attack for each rank beyond 1.
-                        In addition, at rank 3, the subject takes half damage if you miss by 2 or less.
-                            This is called a \glossterm{glancing blow}.
                     \end{durationability}
 
                     \begin{durationability}{Hypnotic Hymn}[\abilitytag{Sustain} (minor)]
@@ -584,14 +578,19 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Glancing Strikes",
+            name: "Greater Tricky Finesse",
             is_magical: false,
             rank: 3,
             description: r"
-                Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
-                This is called a \glossterm{glancing blow}.
+                The bonus from your \textit{tricky finesse} ability increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::EnableGlancingStrikes]),
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Balance, 1),
+                Modifier::Skill(Skill::Flexibility, 1),
+                Modifier::Skill(Skill::Ride, 1),
+                Modifier::Skill(Skill::SleightOfHand, 1),
+                Modifier::Skill(Skill::Stealth, 1),
+            ]),
         },
         RankAbility {
             name: "Combat Style Rank (4)",
@@ -642,11 +641,11 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Tricky Finesse",
+            name: "Supreme Tricky Finesse",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{tricky finesse} ability increases to \plus2.
+                The bonus from your \textit{tricky finesse} ability increases to \plus3.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Balance, 1),

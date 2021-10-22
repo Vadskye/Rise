@@ -181,11 +181,11 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     Make an attack vs. Mental against all undead creatures within a \medarea radius from you.
                     \hit Each subject is \frightened by you as a \glossterm{condition}.
                     Once this effect ends, the creature becomes immune to this effect until it takes a \glossterm{short rest}.
+                    \glance The effect lasts \glossterm{briefly}.
                     \crit As above, and each subject with no remaining \glossterm{damage resistance} immediately dies.
 
                     \rankline
                     This attack's accuracy increases by \plus2 for each rank beyond 2.
-                    \rank{3} On a \glossterm{glancing blow}, each subject is \glossterm{briefly} \frightened by you.
                 \end{instantability}
             ",
             modifiers: None,

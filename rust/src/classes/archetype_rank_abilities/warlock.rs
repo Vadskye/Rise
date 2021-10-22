@@ -78,8 +78,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{2} The damage increases to 2d6.
                     \rank{3} The damage increases to 2d10.
-                        In addition, if you miss by 2 or less, the target takes half damage.
-                        This is called a \glossterm{glancing blow}.
                     \rank{4} The damage increases to 4d6.
                     \rank{5} The damage increases to 4d10.
                     \rank{6} The damage increases to 5d10.

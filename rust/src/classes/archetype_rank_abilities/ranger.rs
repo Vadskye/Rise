@@ -608,14 +608,19 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Glancing Strikes",
+            name: "Greater Wild Senses",
             is_magical: false,
             rank: 3,
             description: r"
-                Whenever you miss by 2 or less with a \glossterm{strike}, the target takes half damage from the strike.
-                This is called a \glossterm{glancing blow}.
+                The bonuses from your \textit{wild senses} ability increase to \plus2.
             ",
-            modifiers: Some(vec![Modifier::EnableGlancingStrikes]),
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Awareness, 1),
+                Modifier::Skill(Skill::CreatureHandling, 1),
+                Modifier::Skill(Skill::SocialInsight, 1),
+                Modifier::Skill(Skill::Spellsense, 1),
+                Modifier::Skill(Skill::Survival, 1),
+            ]),
         },
         RankAbility {
             name: "Combat Style Rank (4)",
@@ -666,11 +671,11 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Wild Senses",
+            name: "Supreme Wild Senses",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonuses from your \textit{wild senses} ability increase to \plus2.
+                The bonuses from your \textit{wild senses} ability increase to \plus3.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Awareness, 1),

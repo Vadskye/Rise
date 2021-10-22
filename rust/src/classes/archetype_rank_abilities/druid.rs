@@ -465,8 +465,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{3} The Fortitude bonus increases to \plus2.
-                        \rank{5} You gain a \plus1d bonus to your damage with natural weapons.
-                        \rank{7} The Fortitude bonus increases to \plus3.
+                        \rank{5} The Fortitude bonus increases to \plus3.
+                        \rank{7} The Fortitude bonus increases to \plus4.
                     \end{durationability}
 
                     \begin{durationability}{Form of the Bull}[Duration]
@@ -572,23 +572,22 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} When a creature takes damage from your bite \glossterm{natural weapon}, it is poisoned.
-                        At the end of each round, you make an attack vs. Fortitude against the target.
-                        If you hit, the target is \dazed until it removes the poison.
-                        The poison is removed if you miss the target on this attack three times.
-                        \rank{5} You gain a \plus1d bonus to your damage with natural weapons.
-                        \rank{7} The poison makes the target \stunned instead of \dazed.
+                        \rank{3} When a creature takes damage from your bite \glossterm{natural weapon}, it is \glossterm{poisoned} (see \pcref{Poison}).
+                        The first poison stage makes the target \dazed as long as it is poisoned.
+                        The third poison stage makes the target \stunned instead of dazed.
+                        \rank{5} You gain a \plus1 accuracy bonus with all poisons.
+                        \rank{7} The accuracy bonus increases to \plus2.
                     \end{durationability}
 
                     \begin{durationability}{Form of the Wolf}[Duration]
                         \rankline
-                        You gain a \plus1 bonus to \glossterm{accuracy} against \surrounded creatures.
+                        You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} against \surrounded creatures.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The accuracy bonus increases to \plus2.
-                        \rank{5} You gain a \plus1d bonus to your damage with natural weapons.
-                        \rank{7} The accuracy bonus increases to \plus3.
+                        \rank{3} The accuracy bonus also applies whenever you are adjacent to an \glossterm{ally}.
+                        \rank{5} You gain a \plus5 foot bonus to your land speed.
+                        \rank{7} The accuracy bonus applies to all attacks, not just strikes.
                     \end{durationability}
 
                     \begin{durationability}{Myriad Form}[Duration]
@@ -647,16 +646,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Glancing Natural Strikes",
-            is_magical: true,
-            rank: 3,
-            description: r"
-                Whenever you miss by 2 or less with a \glossterm{strike} using a \glossterm{natural weapon}, the target takes half damage from the strike.
-                This is called a \glossterm{glancing blow}.
-            ",
-            modifiers: Some(vec![Modifier::EnableGlancingStrikes]),
-        },
-        RankAbility {
             name: "Greater Shifting Defense",
             is_magical: true,
             rank: 3,
@@ -664,6 +653,15 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 The bonus from your \textit{shifting defense} ability increases to \plus3.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 1)]),
+        },
+        RankAbility {
+            name: "Natural Force",
+            is_magical: true,
+            rank: 3,
+            description: r"
+                You gain a \plus1d bonus to your damage with natural weapons.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Greater Wild Aspect",
@@ -685,11 +683,11 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
-            name: "Natural Force",
+            name: "Greater Natural Force",
             is_magical: true,
             rank: 6,
             description: r"
-                You gain a \plus1d bonus to your damage with natural weapons.
+                The bonus from your \textit{natural force} ability increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
