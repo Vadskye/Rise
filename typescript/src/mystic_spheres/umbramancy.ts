@@ -494,12 +494,10 @@ export const umbramancy: MysticSphere = {
 
       // original targets: One creature within \medrange standing on the ground
       attack: {
-        hit: `The subject takes 4d8 + half \\glossterm{power} cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\disoriented.
-        In addition, it must move a distance equal to its maximum movement speed in a straight line during each \\glossterm{movement phase}.
-        It must use its movement mode with the highest speed to move this way.
-        It is not required to use the \\textit{sprint} ability, or use any other special movement ability, though it may choose to do so.
-        If it is unable to move its full speed without making a skill check or encountering a solid obstacle, it may choose to stop its movement after moving the maximum possible distance without doing so.`,
+        hit: `
+          The subject takes 4d8 + half \\glossterm{power} cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\confused.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange that is standing on the ground.
           If the subject is in \\glossterm{bright illumination} and is not touching its shadow, this attack automatically misses.

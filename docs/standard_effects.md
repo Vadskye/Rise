@@ -172,7 +172,7 @@ Each debuff rank is +4 spell ranks over its predecessor
   * List: fighting underwater, not existing
 * Rank 3
   * Generally cause partial action denial
-  * List: confused, blinded, disoriented, immobilized, panicked
+  * List: confused, blinded, immobilized, panicked
 * Rank 4
   * Generally cause complete action denial
   * List: Asleep, paralyzed

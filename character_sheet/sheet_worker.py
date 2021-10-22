@@ -848,7 +848,6 @@ def debuffs():
             "decelerated",
             "confused",
             "blinded",
-            "disoriented",
             "immobilized",
             "panicked",
             # rank 4 debuffs
