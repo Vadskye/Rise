@@ -215,7 +215,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Fortitude against one creature or object within \rngmed range.
                     \hit The target is \stunned until it takes a \glossterm{short rest}.
-                    \glance The effect lasts \glossterm{briefly}.
                     \crit The effect lasts until this curse is removed.
 
                     \rankline

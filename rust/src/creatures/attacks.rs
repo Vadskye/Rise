@@ -13,7 +13,6 @@ pub struct Attack {
     pub cooldown: Option<AttackCooldown>,
     pub crit: Option<AttackEffect>,
     pub defense: Defense,
-    pub glance: Option<AttackEffect>,
     pub hit: AttackEffect,
     pub is_magical: bool,
     pub is_strike: bool,
@@ -188,7 +187,6 @@ impl Attack {
                 {targeting}
                 {cooldown}
                 \\hit {hit}
-                {glance}
                 {critical}
             ",
             cooldown = if let Some(ref c) = self.cooldown {
@@ -206,19 +204,6 @@ impl Attack {
                 )
                 .trim()
                 .to_string(),
-            glance = if let Some(ref g) = self.glance {
-                format!(
-                    "\\glance {}",
-                    g.description(
-                        creature,
-                        self.is_magical,
-                        self.is_strike,
-                        self.targeting.subjects()
-                    )
-                )
-            } else {
-                "".to_string()
-            },
             critical = if let Some(ref g) = self.crit {
                 format!(
                     "\\crit {}",
@@ -679,13 +664,6 @@ where
             all_attacks.push(strike);
         }
 
-        if self.calc_total_modifier(ModifierType::EnableGlancingStrikes) > 0 {
-            for attack in &mut all_attacks {
-                if attack.is_strike && attack.glance.is_none() {
-                    attack.glance = Some(AttackEffect::HalfDamage);
-                }
-            }
-        }
         return all_attacks;
     }
 

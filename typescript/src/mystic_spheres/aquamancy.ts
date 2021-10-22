@@ -88,7 +88,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         crit: "The effect lasts until this curse is removed.",
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\dazed.
           If it immerses itself in or drinks a body of water of minimum size equal to two size categories smaller than itself,
@@ -123,7 +122,6 @@ export const aquamancy: MysticSphere = {
         crit: `
           The effect becomes a \\glossterm{condition}.
         `,
-        // glance: '',
         hit: `
           The majority of each subject's body is \\glossterm{briefly} surrounded by a layer of water.
           This does not impede its ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref{Underwater Combat}).
@@ -150,7 +148,6 @@ export const aquamancy: MysticSphere = {
           The water also the covers the subject's face.
           This does not meaningfully impede its sight, but it cannot breathe anything other than the water.
         `,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, the majority of the subject's body is surrounded by a layer of water.
           This does not impede its ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref{Underwater Combat}).
@@ -170,7 +167,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        // glance: '',
         hit: `
           Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
@@ -205,7 +201,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        // glance: '',
         hit: `
           The subject takes 1d8 + \\glossterm{power} bludgeoning damage.
         `,
@@ -250,7 +245,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        // glance: '',
         hit: `
           Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
@@ -352,7 +346,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        // glance: '',
         hit: `
           Each subject takes 1d10 bludgeoning damage.
           In addition, each subject is \\glossterm{pushed} 15 feet in the direction the line points away from you.
@@ -373,7 +366,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        // glance: '',
         hit: `
           Each subject takes 2d10 bludgeoning damage.
           In addition, each subject is \\glossterm{pushed} 30 feet in the direction the line points away from you.
@@ -521,7 +513,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         crit: 'The condition must be removed twice before the effect ends.',
-        // glance: '',
         hit: `
           The subject is \\dazed as a \\glossterm{condition}.
         `,
@@ -538,7 +529,6 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         crit: 'The condition must be removed twice before the effect ends.',
-        glance: 'The effect lasts \\glossterm{briefly}.',
         hit: `
           The subject is \\stunned as a \\glossterm{condition}.
         `,

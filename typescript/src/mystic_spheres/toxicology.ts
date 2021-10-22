@@ -190,7 +190,6 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `The subject is \\stunned instead of dazed.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\dazed as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -207,7 +206,6 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until this curse is removed.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\dazed until it takes a \\glossterm{short rest}.`,
         targeting: `
           Make an attack vs. Mental against one living creature within \\medrange.
@@ -515,7 +513,6 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        glance: "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
         hit: `The subject becomes drenched in acid as a \\glossterm{condition}.
         At the end of each round, it takes 1d6 + half \\glossterm{power} acid damage.
 

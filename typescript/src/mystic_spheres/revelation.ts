@@ -178,7 +178,6 @@ export const revelation: MysticSphere = {
       name: "Discern Lies",
 
       attack: {
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `When you hear the subject deliberately and knowingly speaks a lie, you know that the subject was lying.
         This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.`,
         targeting: `
@@ -332,7 +331,6 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: `The penalty increases to -4.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
         It takes a -2 penalty to the chosen defense.`,
         targeting: `
@@ -375,7 +373,6 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: "The condition must be removed twice before the effect ends.",
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, the subject's vulnerabilities become clear for all to see.
           Damage against it is treated as damage of all types, which can bypass many forms of immunity and special defenses against specific damage types.
@@ -394,7 +391,6 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -413,7 +409,6 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\dazed and \\dazzled as a \\glossterm{condition}.
           While it has no remaining \\glossterm{damage resistance}, it is \\blinded instead of dazzled.
@@ -436,7 +431,6 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject's mind is overwhelmed by a total awareness of your chosen fact.
         It is \\stunned as a \\glossterm{condition}.`,
         targeting: `
@@ -608,7 +602,6 @@ export const revelation: MysticSphere = {
       name: "Animal's Sight",
 
       attack: {
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the subject's eyes and ears instead of your own.
           If the subject stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.

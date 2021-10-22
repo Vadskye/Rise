@@ -204,7 +204,6 @@ impl Weapon {
             cooldown: None,
             crit: None,
             defense: Defense::Armor,
-            glance: None,
             hit: AttackEffect::from_weapon(self.clone()),
             movement: None,
             name: titlecase(&self.name),

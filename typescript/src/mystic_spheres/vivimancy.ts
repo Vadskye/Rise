@@ -548,7 +548,6 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until this curse is removed. The penalty resets to -2 whenever the subject takes a short rest.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `The subject becomes more vulnerable to injury until it takes a short rest.
         It takes a -2 penalty to Fortitude defense.
         Whenever it loses one or more \\glossterm{hit points} from a single attack, this penalty increases by 1.

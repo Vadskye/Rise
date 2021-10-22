@@ -928,7 +928,6 @@ impl Class {
                             Once it takes the evil action, this effect ends.
                             You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
                             After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
-                            \glance As above, except that the effect ends at the end of the next round.
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
@@ -976,7 +975,6 @@ impl Class {
                             Once it takes the good action, this effect ends.
                             You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
                             After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
-                            \glance As above, except that the effect ends at the end of the next round.
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
@@ -1021,7 +1019,6 @@ impl Class {
                             When you use this ability, you also gain the condition.
                             If this condition is removed from you, it is also removed from all other affected creatures.
                             In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
-                            \glance As above, except that the effect ends at the end of the next round.
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
@@ -1113,7 +1110,6 @@ impl Class {
                             It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
                             At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
                             After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
-                            \glance As above, except that the effect ends at the end of the next round.
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.

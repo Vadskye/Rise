@@ -51,7 +51,6 @@ export const astromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        // glance: '',
         hit: `
           The subject takes 1d10 + \\glossterm{power} energy damage.
         `,
@@ -143,7 +142,6 @@ export const astromancy: MysticSphere = {
 
       attack: {
         crit: "The effect lasts until the curse is removed.",
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject jitters randomly until it takes a \\glossterm{short rest}.
           At the end of each \\glossterm{movement phase}, if it has no remaining \\glossterm{damage resistance}, it teleports horizontally 10 feet in a random direction.
@@ -168,7 +166,6 @@ export const astromancy: MysticSphere = {
 
       attack: {
         crit: "The condition must be removed twice before the effect ends.",
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is stuck in place as a \\glossterm{condition}.
           At the end of each round, the subject teleports back to the location it was in when this spell was cast.
@@ -515,7 +512,6 @@ export const astromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        // glance: '',
         hit: `
           If you hit both subjects, they each teleport into each other's locations.
         `,
