@@ -629,7 +629,6 @@ export const polymorph: MysticSphere = {
 
       attack: {
         crit: `The subject is \\paralyzed instead of immobilized.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is \\decelerated as a \\glossterm{condition}.
           While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of decelerated.
@@ -647,7 +646,6 @@ export const polymorph: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject begins bleeding as a \\glossterm{condition}.
           At the end of each round, it takes 1d8 physical damage.

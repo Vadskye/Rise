@@ -255,7 +255,6 @@ export const barrier: MysticSphere = {
 
       attack: {
         crit: "The sphere's \\glossterm{hit points} increase to 64.",
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           A sphere of magical energy appears around the subject in its space.
           The sphere is visible as a shimmering magical membrane that does not block sight.

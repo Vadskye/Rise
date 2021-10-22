@@ -27,14 +27,12 @@ export function spellEffect(
     if (spell.attack) {
       assertEndsWithPeriod(spell.attack.targeting);
       assertEndsWithPeriod(spell.attack.hit);
-      assertEndsWithPeriod(spell.attack.glance);
       assertEndsWithPeriod(spell.attack.crit);
       // The terminal % prevents a double-space in weird edge cases
       return `
         ${spell.attack.targeting.trim() + fatiguePointsText}%
         \\vspace{0.25em}
         \\hit ${spell.attack.hit.trim()}
-        ${spell.attack.glance ? `\\glance ${spell.attack.glance.trim()}` : ""}
         ${spell.attack.crit ? `\\crit ${spell.attack.crit.trim()}` : ""}
       `;
     } else if (spell.effect) {

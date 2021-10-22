@@ -176,7 +176,6 @@ export const terramancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           The subject is is \\decelerated as a \\glossterm{condition}.
           While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of decelerated.
@@ -302,7 +301,6 @@ export const terramancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `
           As a \\glossterm{condition}, the subject is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is \\slowed and unable to use any fly speed or glide speed.

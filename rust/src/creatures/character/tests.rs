@@ -53,7 +53,6 @@ fn it_calculates_rank_abilities() {
             "Disciplined Force",
             "Enduring Discipline",
             "Equipment Efficiency",
-            "Glancing Strikes",
             "Greater Armor Expertise",
             "Greater Mental Discipline",
             // 2 of these since they are used for maneuver scaling at ranks 1 and 3
@@ -167,15 +166,6 @@ fn it_calculates_level_21_fighter_attacks() {
             .map(|a| a.shorthand_description(&fighter))
             .collect::<Vec<String>>(),
         "Should have attacks with a weapon"
-    );
-    assert_eq!(
-        4,
-        fighter
-            .calc_all_attacks()
-            .iter()
-            .filter(|a| a.glance.is_some())
-            .count(),
-        "All attacks should have glancing blows",
     );
 }
 

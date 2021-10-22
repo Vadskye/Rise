@@ -464,7 +464,6 @@ export const electromancy: MysticSphere = {
 
       attack: {
         crit: `Each bolt deals double damage.`,
-        glance: "The effect lasts \\glossterm{briefly}.",
         hit: `As a \\glossterm{condition}, the subject attracts lightning.
           As a \\glossterm{minor action}, you can call a bolt of lightning to strike the subject.
           When you do, the subject takes 2d8 electricity damage.
