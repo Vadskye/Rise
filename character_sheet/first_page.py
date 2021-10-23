@@ -514,10 +514,21 @@ def active_ability_button(ability_type, source=None):
         + " {{desc=@{active_ability0_effect}}}"
     ) if ability_type == "ability" else attack_button_text(source)
     return div({"class": "active-ability-button"}, [
-        text_input({"class": "hidden", "name": prefix + "_accuracy"}),
+        text_input({"class": "hidden", "name": prefix + "_accuracy", "value": "0"}),
         text_input({"class": "hidden", "name": prefix + "_defense"}),
         text_input({"class": "hidden", "name": prefix + "_dice"}),
-        text_input({"class": "hidden", "name": prefix + "_power"}),
+        underlabel(
+            "Power",
+            select(
+                {"class": "attack-power", "name": prefix + "_power"},
+                [
+                    option({"value": "1", "selected": True}, "Full"),
+                    option({"value": "0.5"}, "Half"),
+                    option({"value": "0"}, "None"),
+                ],
+            ),
+            {"class": "hidden"},
+        ),
         textarea({"class": "hidden", "name": prefix + "_effect"}),
         button(
             {
