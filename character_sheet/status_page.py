@@ -111,9 +111,9 @@ def circumstances():
             debuff("focusing"),
             debuff("grappled"),
             debuff("helpless"),
+            debuff("partially unaware"),
         ]),
         flex_col([
-            debuff("partially unaware"),
             debuff("prone"),
             debuff("squeezing"),
             debuff("surrounded"),
@@ -133,9 +133,9 @@ def debuffs():
                 debuff("dazzled"),
                 debuff("decelerated"),
                 debuff("frightened"),
-                debuff("goaded"),
             ]),
             flex_col([
+                debuff("goaded"),
                 debuff("immobilized"),
                 debuff("panicked"),
                 debuff("shaken"),
