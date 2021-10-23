@@ -85,8 +85,8 @@ def rolltemplate_css():
 */
 
 /* Make even-numbered rows grey */
-.sheet-rolltemplate-custom .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-custom .sheet-content :nth-child(4n) {
+.sheet-rolltemplate-custom .sheet-content > div:nth-child(4n+3),
+.sheet-rolltemplate-custom .sheet-content > div:nth-child(4n) {
   background:#EEE;
 }
 
@@ -127,6 +127,14 @@ def rolltemplate_css():
 }
 .sheet-rolltemplate-custom .sheet-container.sheet-color-purple {
   --header-bg-color: #800080;
+}
+/* Crit button color */
+.sheet-rolltemplate-custom .sheet-content .sheet-value > a:nth-child(2)  {
+    background-color: #379c12;
+}
+/* Glance button color */
+.sheet-rolltemplate-custom .sheet-content .sheet-value > a:nth-child(3)  {
+    background-color: #B31515;
 }
 """
     return jakob_default + rise_custom
