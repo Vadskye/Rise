@@ -782,7 +782,7 @@ def generate_implements():
             short_description="Grants +1 accuracy after healing",
         ),
         MagicItem(
-            name="Staff of Healing Rhythm",
+            name="Staff of Healing Rhythm, Greater",
             rank=7,
             material_type="Staff",
             tags=['Healing'],
