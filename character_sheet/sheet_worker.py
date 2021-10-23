@@ -909,17 +909,17 @@ def debuffs():
                 reflex -= 2;
             }}
             if (dazzled && !blinded) {{
-                debuff_headers = "{{{{Miss chance=Miss on 1: [[d4]]}}}}";
+                debuff_headers += " {{{{Miss chance=Miss on 1: [[d4]]}}}}";
             }}
             if (blinded) {{
-                debuff_headers = "{{{{Miss chance=Miss on 1: [[d2]]}}}}";
+                debuff_headers += " {{{{Miss chance=Miss on 1: [[d2]]}}}}";
             }}
             if (blinded && !(unaware || partially_unaware || asleep || helpless || paralyzed)) {{
                 armor -= 2;
                 reflex -= 2;
             }}
             if (goaded) {{
-                debuff_headers = "{{{{Goaded=+2 accuracy vs source}}}}";
+                debuff_headers += " {{{{Goaded=+2 accuracy vs source}}}}";
                 accuracy -= 2;
             }}
             if (shaken && !frightened && !panicked) {{
@@ -940,6 +940,9 @@ def debuffs():
                 fortitude -= 4;
                 reflex -= 4;
                 mental -= 4;
+            }}
+            if (confused) {{
+                debuff_headers += " {{{{Confusion=[[d4]]}}}}"
             }}
             if (underwater) {{
                 accuracy -= 4;
@@ -965,7 +968,7 @@ def debuffs():
                 fortitude_debuff_modifier: fortitude,
                 mental_debuff_modifier: mental,
                 reflex_debuff_modifier: reflex,
-                debuff_headers,
+                debuff_headers: debuff_headers.trim(),
             }});
         """,
     )
