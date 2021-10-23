@@ -188,6 +188,7 @@ def custom_statistic(i):
                 option({'value': 'none'}, ''),
                 option({'value': 'accuracy'}, 'Accuracy'),
                 option({'value': 'all_defenses'}, 'All defenses'),
+                option({'value': 'all_skills'}, 'All skills'),
                 option({'value': 'armor_defense'}, 'Armor'),
                 option({'value': 'damage_resistance_bonus'}, 'Damage resist'),
                 option({'value': 'encumbrance'}, 'Encumbrance'),

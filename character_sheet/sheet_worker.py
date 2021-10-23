@@ -83,6 +83,7 @@ def get_misc_variables(variable_name, count):
     if variable_name in [
         "accuracy",
         "all_defenses",
+        "all_skills",
         "armor_defense",
         "encumbrance",
         "damage_resistance_bonus",
@@ -152,7 +153,7 @@ def set_skill(a, s):
     misc = get_misc_variables(s, 4)
     if a == "other":
         return js_wrapper(
-            ["level", "fatigue_penalty", *misc],
+            ["level", "fatigue_penalty", "all_skills_custom_modifier", *misc],
             boolean_variables=[
                 f"{s}_is_trained",
             ],
@@ -165,7 +166,7 @@ def set_skill(a, s):
 
                 setAttrs({{
                     {s}_ranks: ranks,
-                    {s}_total: ranks + {sum_variables(misc)} - fatigue_penalty,
+                    {s}_total: ranks + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty,
                 }});
             """,
         )
@@ -177,6 +178,7 @@ def set_skill(a, s):
                 "level",
                 a,
                 "fatigue_penalty",
+                "all_skills_custom_modifier",
                 *misc,
                 *(["encumbrance"] if include_encumbrance else []),
             ],
@@ -194,8 +196,8 @@ def set_skill(a, s):
 
                 setAttrs({{
                     {s}_ranks: ranks,
-                    {s}_total: ranks + {sum_variables(misc)} - fatigue_penalty {subtract_encumbrance},
-                    {s}: ranks + {sum_variables(misc)} - fatigue_penalty {subtract_encumbrance},
+                    {s}_total: ranks + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty {subtract_encumbrance},
+                    {s}: ranks + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty {subtract_encumbrance},
                 }});
             """,
         )
@@ -1112,6 +1114,7 @@ def custom_modifiers():
                     setAttrs({
                         accuracy_custom_modifier: totalCustomModifiers.accuracy || 0,
                         all_defenses_custom_modifier: totalCustomModifiers.all_defenses || 0,
+                        all_skills_custom_modifier: totalCustomModifiers.all_skills || 0,
                         armor_defense_custom_modifier: totalCustomModifiers.armor_defense || 0,
                         damage_resistance_bonus_custom_modifier: totalCustomModifiers.energy_resistance_bonus || 0,
                         encumbrance_custom_modifier: totalCustomModifiers.encumbrance || 0,
