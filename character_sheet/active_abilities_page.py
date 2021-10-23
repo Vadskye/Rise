@@ -246,7 +246,16 @@ def attack(source):
                     "type": "roll",
                     "value": crit_damage_text(),
                 },
-                "Attack",
+                "",
+            ),
+            button(
+                {
+                    "class": "hidden",
+                    "name": f"power_only",
+                    "type": "roll",
+                    "value": glance_damage_text(source),
+                },
+                "",
             ),
         ],
     )
@@ -262,7 +271,13 @@ def attack_button_text(source):
         'magical': 'repeating_magicalattacks',
         'mundane': 'repeating_mundaneattacks',
     }[source];
-    damage_text = " {{Damage=" + damage + " [Crit](~" + repeating_section_name + "_damage_dice_only) }}" if damage else ""
+    damage_text = (
+        " {{"
+        + "Damage=" + damage
+        + " [C](~" + repeating_section_name + "_damage_dice_only)"
+        + " [G](~" + repeating_section_name + "_power_only)"
+        + "}}"
+    )if damage else ""
     return (
         "&{template:custom}"
         + " {{title=@{attack0_name}}}"
@@ -280,6 +295,15 @@ def crit_damage_text():
         + " {{title=@{attack0_name}}}"
         + " {{subtitle=@{character_name}}}"
         + " {{Crit Damage=[[@{attack0_dice}]]}}"
+        + " {{color=@{chat_color}}}"
+    )
+
+def glance_damage_text(source):
+    return (
+        "&{template:custom}"
+        + " {{title=@{attack0_name}}}"
+        + " {{subtitle=@{character_name}}}"
+        + " {{Glance Damage=[[floor(@{" + source + "_power}*@{attack0_power})]]}}"
         + " {{color=@{chat_color}}}"
     )
 
