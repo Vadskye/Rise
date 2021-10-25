@@ -405,7 +405,7 @@ export const terramancy: MysticSphere = {
 
       effect: `
         You are immune to \\glossterm{knockback} or \\glossterm{push} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
-        This does not make it immune to \\glossterm{teleportation}, and does not affect movement effects used by its \\glossterm{allies}.
+        This does not make you immune to \\glossterm{teleportation}, and does not affect movement effects used by its \\glossterm{allies}.
       `,
       rank: 2,
       scaling: {
