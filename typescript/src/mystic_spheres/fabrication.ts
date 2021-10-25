@@ -437,7 +437,7 @@ export const fabrication: MysticSphere = {
         // No relevant glance effect
         hit: `Each subject falls \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+          Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea radius within \\medrange.
         `,
       },
       rank: 1,
