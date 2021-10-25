@@ -526,10 +526,10 @@ export const polymorph: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        At the end of each round, the subject can remove one of its \\glossterm{vital wounds}.
+        At the end of each round, if the subject is not \\glossterm{unconscious} due to \\glossterm<fatigue>, it automatically removes one of its \\glossterm{vital wounds}.
+        It can choose to stop this regeneration if you are conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
         This cannot remove a vital wound the subject gained during the current round.
-        If it does, it increases its \\glossterm{fatigue level} by three.
+        When it removes a vital wound in this way, it increases its \\glossterm{fatigue level} by three.
       `,
       rank: 5,
       scaling: {
