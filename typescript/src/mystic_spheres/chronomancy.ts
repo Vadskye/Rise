@@ -371,18 +371,20 @@ export const chronomancy: MysticSphere = {
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
         You lock the state of the subject's body in time.
-        Note the subject's \\glossterm{hit points}, \\glossterm{vital wounds} (including \\glossterm{vital roll} results), and \\glossterm{conditions}.
+        Note the subject's current \\glossterm{hit points}, and \\glossterm{damage resistance}.
         If the subject dies, this effect ends immediately.
 
         As a \\glossterm{standard action}, you can reach through time to restore the subject's state.
-        If you do, the subject's \\glossterm{hit points} and \\glossterm{conditions} become identical to what they were when you cast this spell.
-        This effect cannot restore \\glossterm{vital wounds}.
-        This does not affect any other properties of the subject, such as any resources expended.
-        After you restore the subject's state in this way, the spell ends.
+        If you do, the subject's \\glossterm{hit points} and \\glossterm{damage resistance} become identical to what they were when you cast this spell.
+        This does not affect any other properties of the subject, such as any vital wounds gained or resources expended.
+        After you restore the subject's state in this way, it increases its \\glossterm{fatigue level} by one, and the spell ends.
       `,
       rank: 4,
       scaling: {
-        6: `The restoration effect can also remove \\glossterm{vital wounds} gained since the subject was locked.`,
+        6: `
+          When you cast the spell, you may choose to also note the subject's current \\glossterm{conditions}.
+          If you do, the restoration effect also resets the subject's conditions back to their initial state.
+      `,
       },
       type: "Sustain (minor)",
     },
