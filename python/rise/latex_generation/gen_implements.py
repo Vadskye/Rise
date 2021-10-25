@@ -566,8 +566,6 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Stored Attunement",
-            # this has a dangerous interaction with legacy items, so avoid
-            # making that too easy
             rank=2,
             material_type="Staff",
             tags=[],
@@ -578,7 +576,7 @@ def generate_implements():
                 If there are already spells invested in the staff, you can choose which spell to replace to make room for the new spell.
 
                 As a \\glossterm<minor action>, you can activate this staff.
-                When you do, you choose one of the spells that you personally stored the staff and gain its effects, with yourself as the only target.
+                When you do, you choose one of the spells that you personally stored in the staff and gain its effects, with yourself as the only target.
                 As long as you are attuned to this staff, you do not have to invest an additional attunement point to gain the benefit of a spell in this way, and this does not remove the spell from the staff's storage.
                 This effect lasts until you activate the staff again, which can allow you to easily change which benefit you gain.
             """,
