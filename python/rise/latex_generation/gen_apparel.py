@@ -1209,9 +1209,10 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                At the end of each round, you can remove one of your \\glossterm<vital wounds>.
+                At the end of each round, if are not \\glossterm<unconscious> due to \\glossterm<fatigue>, you automatically remove one of your \\glossterm<vital wounds>.
+                You can choose to stop this regeneration if you are conscious, but it happens automatically if you are unconscious due to vital wounds.
                 This cannot remove a vital wound you gained during the current round.
-                When you do, you increase your \\glossterm<fatigue level> by two.
+                When you remove a vital wound in this way, you increase your \\glossterm<fatigue level> by three.
             """,
             short_description="Automatically exert to remove vital wounds",
         )
