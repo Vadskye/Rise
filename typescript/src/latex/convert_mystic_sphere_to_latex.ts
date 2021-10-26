@@ -66,8 +66,8 @@ function convertSpellToLatex(spell: SpellLike): string {
       ${format.spellTypePrefix(spell) || ""}
       \\rankline
       \\noindent
-      ${internalComponents.join("\n\\rankline\n\n\\noindent ")}
-      \\vspace{0.1em}
+      ${internalComponents.join("\n\\rankline\n\n\\noindent ").trim()}%
+      \\vspace{0.1em}%
     \\end{${abilityType}}
     ${tableText}
   `;
