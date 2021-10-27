@@ -86,7 +86,7 @@ impl AgeCategory {
         }
     }
 
-    // TODO: handle immunity after initial attack
+    // TODO: handle immunity after initial attack, handle automatic trigger
     fn frightful_presence(&self) -> Option<Attack> {
         let size = match self {
             Self::Wyrmling => None,
