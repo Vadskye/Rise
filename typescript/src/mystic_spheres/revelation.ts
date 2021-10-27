@@ -767,7 +767,7 @@ export const revelation: MysticSphere = {
         If the chosen creature or object is within 100 miles of you, you learn the location (place, name, business name, or the like), community, country, and continent where the subject was at when you started performing this ritual.
         % Wording?
         If there is no corresponding information about an aspect of the subject's location, such as if the subject is in a location which is not part of a recognized country,
-        you learn only that that that aspect of the information is missing.
+        you learn only that that aspect of the information is missing.
       `,
 
       rank: 2,
