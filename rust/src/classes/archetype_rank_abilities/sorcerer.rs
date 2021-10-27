@@ -600,11 +600,11 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Personal Enhancement",
+            name: "Greater Arcane Infusion",
             is_magical: true,
             rank: 5,
             description: r"
-                The bonus from your \textit{personal enhancement} ability increases to three times your rank in this archetype.
+                The bonus from your \textit{arcane infusion} ability increases to three times your rank in this archetype.
             ",
             modifiers: None,
         },
