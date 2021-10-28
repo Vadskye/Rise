@@ -94,26 +94,6 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: "Greater Crushing Gravity",
-
-      attack: {
-        hit: `
-          The subject takes 4d6 + half \\glossterm{power} bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\decelerated.
-          Otherwise, it is briefly \\slowed.
-        `,
-        targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
-        `,
-      },
-      rank: 6,
-      scaling: "damage",
-      tags: [],
-      type: "Instant",
-    },
-
-    {
       name: "Shrapnel Blast",
 
       attack: {
@@ -167,25 +147,6 @@ export const terramancy: MysticSphere = {
       rank: 5,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Duration",
-    },
-
-    {
-      name: "Earthcage",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `
-          The subject is is \\decelerated as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of decelerated.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against one Large or smaller creature within \\medrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
-        `,
-      },
-      rank: 7,
-      scaling: "accuracy",
       type: "Duration",
     },
 
@@ -317,9 +278,17 @@ export const terramancy: MysticSphere = {
     {
       name: "Greater Earthbind",
 
-      functionsLike: {
-        name: 'earthbind',
-        exceptThat: 'the subject is \\decelerated instead of slowed.',
+      attack: {
+        crit: `The subject is \\immobilized instead of slowed.`,
+        hit: `
+          As a \\glossterm{condition}, the subject is pulled towards the ground with great force, approximately doubling the gravity it experiences.
+          It is \\slowed and unable to use any fly speed or glide speed.
+          This condition must be removed twice before the effect ends.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange that is no more than 120 feet above a stable surface that could support its weight.
+          This attack gains a +2 \\glossterm{accuracy} bonus if that surface is a Medium or larger body of stone.
+        `,
       },
       rank: 6,
       scaling: "accuracy",

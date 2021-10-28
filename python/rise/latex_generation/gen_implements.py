@@ -200,19 +200,19 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you cause an enemy to be \\slowed, you can also make it \\glossterm<briefly> \\decelerated.
+                Whenever you cause an enemy to be \\slowed, you can make that condition \\glossterm<briefly> impossible to remove.
             """,
-            short_description="Makes slowed creatures briefly decelerated",
+            short_description="Your slowing effects last longer",
         ),
         MagicItem(
             name="Staff of Hindrance, Greater",
-            rank=7,
+            rank=5,
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you cause an enemy to be \\decelerated, you can also make it \\glossterm<briefly> \\immobilized.
+                Whenever you cause an enemy to be \\slowed, that condition must be removed an additional time before the effect ends.
             """,
-            short_description="Makes decelerated creatures briefly immobilized",
+            short_description="Your slowing effects last much longer",
         ),
     ]
 

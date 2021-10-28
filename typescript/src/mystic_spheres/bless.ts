@@ -43,7 +43,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
-        Each subject is immune to being \\slowed, \\decelerated, \\immobilized, and \\paralyzed.
+        Each subject is immune to being \\slowed, \\immobilized, and \\paralyzed.
       `,
       rank: 4,
       scaling: {

@@ -103,7 +103,7 @@ impl StandardAttack {
                     e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(
                         attack_effects::PoisonEffect {
                             stage1: vec![Debuff::Slowed],
-                            stage3_debuff: Some(vec![Debuff::Decelerated]),
+                            stage3_debuff: Some(vec![Debuff::Immobilized]),
                             stage3_vital: None,
                         },
                     ));

@@ -768,7 +768,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You are immune to being \slowed and \decelerated.
+                You are immune to being \slowed and \immobilized.
             ",
             modifiers: None,
         },

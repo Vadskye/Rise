@@ -83,7 +83,7 @@ export const cryomancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater freezing grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\decelerated instead of slowed.',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the condition must be removed twice before the effect ends.',
       },
       rank: 7,
       scaling: "damage",
@@ -360,7 +360,8 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           The subject takes 1d6 cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+          This condition must be removed twice before the effect ends.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
@@ -611,10 +612,11 @@ export const cryomancy: MysticSphere = {
     {
       name: "Greater Bonechill",
 
+      // TODO: double check rank
       attack: {
         hit: `
           The subject takes 4d8 + \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\decelerated.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.

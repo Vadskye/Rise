@@ -116,7 +116,8 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\decelerated as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
+        This condition must be removed twice before the effect ends.
       `,
       rank: 3,
       scaling: {

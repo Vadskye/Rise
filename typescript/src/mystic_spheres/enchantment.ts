@@ -147,6 +147,7 @@ export const enchantment: MysticSphere = {
       name: "Slow Down",
 
       attack: {
+        crit: `The condition must be removed twice before the effect ends.`,
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\longrange.
@@ -154,23 +155,6 @@ export const enchantment: MysticSphere = {
       },
 
       rank: 2,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Slow Down",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\decelerated as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\longrange.
-        `,
-      },
-
-      rank: 6,
       scaling: "accuracy",
       tags: ["Compulsion"],
       type: "Duration",
@@ -188,22 +172,6 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "accuracy",
-      tags: ['Compulsion'],
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Mass Slow Down",
-
-      attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{briefly} \\decelerated.`,
-        targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
-        `,
-      },
-      rank: 6,
       scaling: "accuracy",
       tags: ['Compulsion'],
       type: "Duration",
@@ -268,7 +236,7 @@ export const enchantment: MysticSphere = {
           If the subject has no remaining \\glossterm{damage resistance}, it immediately falls asleep even if it is in combat or otherwise exerting itself.
         `,
         hit: `
-          The subject is \\glossterm{decelerated} as a \\glossterm{condition}.
+          The subject is \\glossterm{slowed} as a \\glossterm{condition}.
           During that condition, if it is not in combat or otherwise exerting itself, it falls asleep.
           It cannot be awakened while this effect lasts unless it loses \\glossterm{hit points}, which causes it to wake up and ends the effect.
           After the effect ends by other means, the subject can wake up normally, though it continues to sleep until it awakens for any reason.
