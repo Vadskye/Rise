@@ -6,42 +6,10 @@ export const bluntForce: CombatStyle = {
 
   maneuvers: [
     {
-      name: "Liver Crush",
-
-      effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty using a bludgeoning weapon.
-        The attack is made against each target's Fortitude defense instead of its Armor defense.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
-      `,
-      rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
-      type: "Duration",
-    },
-
-    {
-      name: "Nauseating Liver Crush",
-
-      effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty using a bludgeoning weapon.
-        The attack is made against each target's Fortitude defense instead of its Armor defense.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
-      `,
-      rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
-      type: "Duration",
-    },
-
-    {
       name: "Crushing Strike",
 
       effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a \minus1 accuracy penalty using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
       `,
       rank: 1,
@@ -49,23 +17,6 @@ export const bluntForce: CombatStyle = {
         3: "You gain a +1d damage bonus with the strike.",
         5: "The damage bonus increases to +2d.",
         7: "The damage bonus increases to +3d.",
-      },
-      type: "Instant",
-    },
-
-    {
-      name: "Pulverizing Power Crush",
-
-      effect: `
-        Make a \\glossterm{strike} with a -2 accuracy penalty using a bludgeoning weapon.
-        The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You gain a +2d damage bonus with the strike.
-      `,
-      rank: 1,
-      scaling: {
-        3: "The damage bonus increases to +3d.",
-        5: "The damage bonus increases to +4d.",
-        7: "The damage bonus increases to +5d.",
       },
       type: "Instant",
     },
@@ -262,11 +213,10 @@ export const bluntForce: CombatStyle = {
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         Each creature that loses \\glossterm{hit points} from the strike falls \\prone if it is no larger than one size category larger than you.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },

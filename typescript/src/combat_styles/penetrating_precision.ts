@@ -9,7 +9,7 @@ export const penetratingPrecision: CombatStyle = {
       name: "Penetrating Strike",
 
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
+        Make a \\glossterm{strike} with a \minus1d damage penalty using a piercing weapon.
         The attack is made against each subject's Reflex defense instead of its Armor defense.
       `,
       rank: 1,
