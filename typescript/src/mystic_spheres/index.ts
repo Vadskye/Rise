@@ -64,7 +64,6 @@ interface BaseSpellLike {
   attack?: StandardAttack;
   castingTime?: string;
   effect?: string;
-  focus?: boolean;
   functionsLike?: FunctionsLike;
   name: string;
   narrative?: string;
@@ -83,7 +82,6 @@ interface BaseSpellLike {
 }
 
 export interface Cantrip extends BaseSpellLike {
-  focus: false;
 }
 
 export interface Spell extends BaseSpellLike {

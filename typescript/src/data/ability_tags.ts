@@ -1,1 +1,1 @@
-export type AbilityTag = "Focus" | "Spell";
+export type AbilityTag = "Spell";

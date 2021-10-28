@@ -306,9 +306,9 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-                You reduce your \glossterm{focus penalty} by 2.
+                You gain a \plus1 bonus to your Armor defense.
             ",
-            modifiers: Some(vec![Modifier::FocusPenalty(-2)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -322,11 +322,8 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You double your range with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
-                        You cannot choose this ability multiple times.
                     \parhead{Signature Spell} Choose an arcane \glossterm{spell} you know.
-                        The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
-                        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                        You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -431,15 +428,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Draconic Focus",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                You reduce your \glossterm{focus penalty} by 1.
-            ",
-            modifiers: Some(vec![Modifier::FocusPenalty(-1)]),
-        },
-        RankAbility {
             name: "Draconic Spells",
             is_magical: true,
             rank: 1,
@@ -494,13 +482,13 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(28)]),
         },
         RankAbility {
-            name: "Greater Draconic Focus",
+            name: "Draconic Scales",
             is_magical: true,
             rank: 3,
             description: r"
-                The focus penalty reduction from your \textit{draconic focus} ability increases to 2.
+                You gain a \plus1 bonus to your Armor defense.
             ",
-            modifiers: Some(vec![Modifier::FocusPenalty(-1)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Draconic Precision",
@@ -650,7 +638,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
-                When you do, you reduce your \glossterm{focus penalty} for casting the spell by 2, and you gain a +2 bonus to \glossterm{power} with the spell.
+                When you do, you gain a +2 bonus to \glossterm{power} with the spell.
                 In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
                 Some wild magic effects cannot be meaningfully applied to all spells.
                 For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
@@ -674,7 +662,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                     \end{dtabularx}
                 \end{dtable}
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::FocusPenalty(-2)]),
+            modifiers: Some(vec![Modifier::MagicalPower(2)]),
         },
         RankAbility {
             name: "Chaotic Insight",

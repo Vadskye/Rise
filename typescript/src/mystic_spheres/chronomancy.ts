@@ -13,7 +13,6 @@ export const chronomancy: MysticSphere = {
         You can read at twice your normal speed.
         However, the mental effort imposes a -4 penalty to Mental defense.
       `,
-      focus: false,
       scaling: {
         2: "You can read at four times your normal speed.",
         4: "You can read at six times your normal speed.",
@@ -28,7 +27,6 @@ export const chronomancy: MysticSphere = {
         Make an Awareness check to notice things in a single 10-ft.\\ square within 10 feet of you.
         You gain a +4 bonus to this check.
       `,
-      focus: false,
       scaling: {
         2: "The bonus increases to +6.",
         4: "The bonus increases to +8.",
@@ -45,7 +43,6 @@ export const chronomancy: MysticSphere = {
         The subject ages as if that much time had passed.
         When this spell ends, the object returns to its original state.
       `,
-      focus: false,
       scaling: {
         2: "You can choose to age the target by up to a week.",
         4: "You can choose to age the target by up to a month.",
@@ -554,9 +551,7 @@ export const chronomancy: MysticSphere = {
     {
       name: "Accelerated Draw",
 
-      focus: false,
       effect: `
-        This spell does not have the \\glossterm{Focus} tag.
         You draw one or two weapons into your \\glossterm{free hands}.
         Then, you can make a \\glossterm{mundane} \\glossterm{strike}.
       `,
@@ -601,9 +596,7 @@ export const chronomancy: MysticSphere = {
     {
       name: "Expeditious Retreat",
 
-      focus: false,
       effect: `
-        This spell does not have the \\glossterm{Focus} tag.
         You can immediately use the \\textit{sprint} ability without increasing your \\glossterm{fatigue level}.
         After you cast this spell, you \\glossterm{briefly} cannot cast it again.
       `,

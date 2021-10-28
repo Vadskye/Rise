@@ -14,7 +14,6 @@ export const verdamancy: MysticSphere = {
         The soil in the subject becomes suffused with plant-sustaining nutrients, making it fertile ground for plants.
         This effect lasts for one year.
       `,
-      focus: false,
       scaling: {
         2: `The area increases to a 2-ft.\\ square.`,
         4: `The area increases to a 5-ft.\\ square.`,
@@ -32,7 +31,6 @@ export const verdamancy: MysticSphere = {
         The subject grows as if much time had passed, assuming that it received adequate nutrition during that time.
         When this spell ends, the plant returns to its original state.
       `,
-      focus: false,
       scaling: {
         2: `You can choose up to a month of time to grow.`,
         4: `You can choose up to three months of time to grow.`,
@@ -48,14 +46,12 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} piercing damage.`,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
         `,
       },
-      focus: false,
       rank: 1,
       scaling: "damage",
       type: "Instant",
@@ -69,14 +65,12 @@ export const verdamancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
         `,
       },
-      focus: false,
       rank: 3,
       scaling: "damage",
       type: "Instant",
@@ -88,7 +82,6 @@ export const verdamancy: MysticSphere = {
         name: 'greater ensnaring grasp',
         exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\decelerated instead of slowed.',
       },
-      focus: false,
       rank: 7,
       scaling: "damage",
       type: "Duration",

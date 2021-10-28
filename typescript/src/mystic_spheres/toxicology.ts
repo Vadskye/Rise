@@ -18,7 +18,6 @@ export const toxicology: MysticSphere = {
         If the subject is not currently poisoned, this ability has no effect.
         `,
       },
-      focus: false,
       scaling: "accuracy",
       type: "Instant",
     },
@@ -30,7 +29,6 @@ export const toxicology: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\shortrange.
         The subject gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
       `,
-      focus: false,
       scaling: {
         2: `The number of additional successes increases to two.
             The subject can split these successes among any number of different poisons affecting it.`,
@@ -47,13 +45,11 @@ export const toxicology: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} acid damage.`,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       rank: 1,
       scaling: "damage",
       type: "Instant",
@@ -68,13 +64,11 @@ export const toxicology: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       rank: 3,
       scaling: "damage",
       type: "Duration",
@@ -87,7 +81,6 @@ export const toxicology: MysticSphere = {
         name: 'greater corrosive grasp',
         exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
       },
-      focus: false,
       rank: 7,
       scaling: "damage",
       type: "Duration",

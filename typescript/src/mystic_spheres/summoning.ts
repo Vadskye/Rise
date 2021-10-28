@@ -15,7 +15,6 @@ export const summoning: MysticSphere = {
         `,
         name: "summon monster",
       },
-      focus: false,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Sustain (standard)",

@@ -387,13 +387,13 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Trained Mind",
+            name: "Spell Knowledge",
             is_magical: true,
             rank: 1,
             description: r"
-                You reduce your \glossterm{focus penalty} by 1.
+                You learn an additional spell from any arcane \glossterm{mystic sphere} that you have access to.
             ",
-            modifiers: Some(vec![Modifier::FocusPenalty(-1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Scholastic Insight",
@@ -520,15 +520,12 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You double your range with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
-                        You cannot choose this ability multiple times.
                     \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
                         The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
                         In addition, you automatically learn one free arcane ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
                     \parhead{Signature Spell} Choose an arcane \glossterm{spell} you know.
-                        The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
-                        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                        You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
@@ -546,9 +543,9 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you cast a spell with the \glossterm{Focus} tag, you may increase your \glossterm{focus penalty} by 2.
-                If you do, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
-                This is a \glossterm{Swift} ability.
+                Whenever you cast a spell during the \glossterm{action phase}, you may use this ability to extend the casting time.
+                If you do, the spell does not take effect until the \glossterm{delayed action phase}.
+                In exchange, you gain a \plus1 bonus to \glossterm{accuracy} with the spell if you were not attacked during the action phase.
             ",
             modifiers: None,
         },

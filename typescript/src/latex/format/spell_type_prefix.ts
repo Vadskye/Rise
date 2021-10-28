@@ -2,12 +2,9 @@ import { SpellLike } from "@src/mystic_spheres";
 import { sentenceCase } from "change-case";
 
 export function spellTypePrefix(
-  spell: Pick<SpellLike, "castingTime" | "focus" | "tags" | "type" | "rank">,
+  spell: Pick<SpellLike, "castingTime" | "tags" | "type" | "rank">,
 ): string {
   const tags = spell.tags || [];
-  if (spell.focus !== false) {
-    tags.push("Focus");
-  }
   const tagsText =
     tags && tags.length > 0
       ? `${tags

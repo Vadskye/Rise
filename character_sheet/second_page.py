@@ -60,7 +60,6 @@ def create_page(destination):
                         calc_attributes(),
                         div({"class": "section-header"}, "Core Statistics"),
                         calc_encumbrance(),
-                        calc_focus_penalty(),
                         calc_initiative(),
                         calc_land_speed(),
                         calc_vital_rolls(),
@@ -342,35 +341,6 @@ def calc_fatigue_tolerance():
                     "disabled": True,
                     "name": "fatigue_tolerance_display",
                     "value": "@{fatigue_tolerance}",
-                },
-            ),
-        ]
-    )
-
-
-def calc_focus_penalty():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Focus Penalty"),
-            equation(
-                [
-                    underlabel(
-                        "Base",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "focus_penalty_base",
-                                "value": "4",
-                            }
-                        ),
-                    ),
-                    minus(),
-                    equation_misc_repeat("focus_penalty", 3, minus),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "focus_penalty_display",
-                    "value": "@{focus_penalty}",
                 },
             ),
         ]

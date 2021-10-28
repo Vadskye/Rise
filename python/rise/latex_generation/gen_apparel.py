@@ -1818,7 +1818,7 @@ def generate_apparel():
 
                 As a standard action, you can activate this ring.
                 When you do, you cause the effect of the last spell invested in the ring.
-                This does not require \\glossterm<casting components> and does not have the \\abilitytag<Focus> tag, even if casting the spell normally would have those limitations.
+                This does not require \\glossterm<casting components>, even if they would normally be required to cast the spell.
                 The spell's effect is determined based on the \\glossterm<power> and other abilities of the original caster who invested the spell into the ring, not yours.
                 You do not have to have the ability to cast the spell to activate a spell in this way.
                 The \\textit<desperate exertion> ability cannot be used to affect the spell, either at the time it is invested or when it is activated.

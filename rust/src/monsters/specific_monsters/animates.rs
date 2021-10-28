@@ -101,7 +101,6 @@ pub fn animates() -> Vec<MonsterEntry> {
     ) -> Monster {
         let mut modifiers = modifiers.unwrap_or(vec![]);
         modifiers.push(
-                // TODO: add Focus tag
                 Modifier::PassiveAbility(PassiveAbility {
                     name: "Animate Tree".to_string(),
                     is_magical: true,

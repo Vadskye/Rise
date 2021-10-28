@@ -16,7 +16,6 @@ export const pyromancy: MysticSphere = {
           Make an attack vs. Fortitude against anything within \\shortrange.
         `,
       },
-      focus: false,
       scaling: {
         2: `The damage increases to 5.`,
         4: `The damage increases to 10.`,
@@ -36,7 +35,6 @@ export const pyromancy: MysticSphere = {
           Otherwise, the attack automatically hits.
         `,
       },
-      focus: false,
       scaling: {
         2: `The maximum size increases to Large.`,
         4: `The maximum size increases to Huge.`,
@@ -57,7 +55,6 @@ export const pyromancy: MysticSphere = {
 
         This effect lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
-      focus: false,
       scaling: {
         2: `The damage increases to 5.`,
         4: `The damage increases to 10.`,
@@ -76,7 +73,6 @@ export const pyromancy: MysticSphere = {
 
         This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
-      focus: false,
       scaling: {
         2: `The area increases to a \\largearea radius \\glossterm{emanation}, and the maximum temperature increase increases to 30 degrees.`,
         4: `The area increases to a \\hugearea radius \\glossterm{emanation}, and the maximum temperature increase increases to 40 degrees.`,
@@ -92,13 +88,11 @@ export const pyromancy: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} fire damage.`,
         targeting: `
-        This spell does not have the \\abilitytag{Focus} tag.
         You must have a \\glossterm{free hand} to cast this spell.
 
         Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       rank: 1,
       scaling: "damage",
       type: "Instant",
@@ -115,13 +109,11 @@ export const pyromancy: MysticSphere = {
           At the end of each round, it takes 1d10 fire damage.
         `,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       rank: 3,
       scaling: {
         special: `
@@ -139,7 +131,6 @@ export const pyromancy: MysticSphere = {
         name: 'greater burning grasp',
         exceptThat: 'the initial damage increases to 4d10 + \\glossterm{power}, and the subsequent damage increases to 4d8 + half \\glossterm{power}.',
       },
-      focus: false,
       rank: 7,
       scaling: "damage",
       type: "Duration",

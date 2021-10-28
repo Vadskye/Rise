@@ -14,7 +14,6 @@ export const umbramancy: MysticSphere = {
 
         You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Stealth skill.
       `,
-      focus: false,
       scaling: {
         2: `The bonus increases to +4.`,
         4: `The bonus increases to +5.`,
@@ -33,7 +32,6 @@ export const umbramancy: MysticSphere = {
         You can choose this spell's radius, up to a maximum of a \\smallarea radius.
         Any object or effect which blocks light also blocks this spell's effect.
       `,
-      focus: false,
       scaling: {
         2: `The maximum area increases to a \\medarea radius.`,
         4: `The range increases to \\longrange.`,
@@ -165,14 +163,12 @@ export const umbramancy: MysticSphere = {
         // -1d to compensate for +2a
         hit: `The subject takes 1d8 + \\glossterm{power} cold damage.`,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack if the target is not in \\glossterm{bright illumination}.
         `,
       },
-      focus: false,
       rank: 1,
       scaling: "damage",
       type: "Instant",
@@ -188,7 +184,6 @@ export const umbramancy: MysticSphere = {
         `,
         name: 'dark grasp',
       },
-      focus: false,
       rank: 3,
       scaling: "damage",
       type: "Duration",
@@ -201,7 +196,6 @@ export const umbramancy: MysticSphere = {
         name: 'greater dark grasp',
         exceptThat: 'the damage increases to 5d10 + \\glossterm{power} damage.',
       },
-      focus: false,
       rank: 7,
       scaling: "damage",
       type: "Duration",
