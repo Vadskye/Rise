@@ -481,7 +481,7 @@ export const polymorph: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `The subject takes 4d6 physical damage.
         If it loses \\glossterm{hit points} from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
-        It is \\decelerated, and it and has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
+        It is \\stunned, and it has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
         It is also unable to speak normally or use verbal or somatic \\glossterm{casting components}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -611,14 +611,15 @@ export const polymorph: MysticSphere = {
     {
       name: "Cripple",
 
+      // TODO: confirm range, it is a little odd
       attack: {
-        crit: `The subject is \\paralyzed instead of immobilized.`,
+        crit: `The condition must be removed twice before the effect ends.`,
         hit: `
-          The subject is \\decelerated as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of decelerated.
+          The subject is \\slowed as a \\glossterm{condition}.
+          While the subject has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\longrange.
         `,
       },
       rank: 7,

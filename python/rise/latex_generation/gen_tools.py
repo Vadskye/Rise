@@ -453,7 +453,7 @@ def generate_tools():
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
                 On a hit, the subject takes 1d8+2 cold damage.
-                If a creature loses \\glossterm<hit points> from this damage, it is \\glossterm<slowed> as a \\glossterm<condition>.
+                If a creature loses \\glossterm<hit points> from this damage, it is \\slowed as a \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d8+2 cold damage and slow",
         ),
@@ -467,9 +467,10 @@ def generate_tools():
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
                 On a hit, the subject takes 2d8+5 cold damage.
-                If a creature loses \\glossterm<hit points> from this damage, it is \\glossterm<decelerated> as a \\glossterm<condition>.
+                If a creature loses \\glossterm<hit points> from this damage, it is \\slowed as a \\glossterm<condition>.
+                This condition must be removed twice before the effect ends.
             """,
-            short_description="Throw to deal 2d8+5 cold damage and decelerate",
+            short_description="Throw to deal 2d8+5 cold damage and extensively slow",
         ),
     ]
 
@@ -576,9 +577,10 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against one creature within \\shortrange.
-                On a hit, the subject is \\glossterm<decelerated> as a \\glossterm<condition>.
+                On a hit, the subject is \\glossterm<slowed> as a \\glossterm<condition>.
+                This condition must be removed twice before the effect ends.
             """,
-            short_description="Decelerates a foe",
+            short_description="Extensively slows a foe",
         ),
     ]
 

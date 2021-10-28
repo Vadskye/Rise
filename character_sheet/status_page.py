@@ -130,11 +130,10 @@ def debuffs():
                 debuff("confused"),
                 debuff("dazed"),
                 debuff("dazzled"),
-                debuff("decelerated"),
                 debuff("frightened"),
+                debuff("goaded"),
             ]),
             flex_col([
-                debuff("goaded"),
                 debuff("immobilized"),
                 debuff("panicked"),
                 debuff("shaken"),

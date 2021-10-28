@@ -139,20 +139,6 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Decelerate",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\decelerated as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 5,
-      type: "Duration",
-    },
-
-    {
       name: "Mass Slow",
 
       attack: {
@@ -169,17 +155,19 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Mass Decelerate",
+      name: "Greater Slow",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each target is \\glossterm{briefly} \\decelerated.`,
+        crit: `The subject is \\immobilized instead of slowed.`,
+        hit: `
+          The subject is \\slowed as a \\glossterm{condition}.
+          The condition must be removed twice before the effect ends.
+        `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       rank: 5,
-      scaling: "accuracy",
       type: "Duration",
     },
 
@@ -437,8 +425,8 @@ export const chronomancy: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
           As a \\glossterm{condition}, the subject's body temporarily ages to become extremely old.
-          It is \\decelerated and \\dazzled.
-          If it was already suffering age-related penalties, it is also \\stunned.
+          It is \\slowed and \\stunned.
+          If it was already suffering age-related penalties, it is also \\blinded.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -493,26 +481,6 @@ export const chronomancy: MysticSphere = {
       type: "Duration",
     },
 
-    {
-      name: "Disjointed Deceleration",
-
-      attack: {
-        hit: `
-          The subject takes 4d6 + half \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
-        `,
-      },
-      narrative: `
-        This spell resulted from extensive research by the creator of the \\spell{disjointed slow} spell.
-        It functions similarly by creating inconsistent pockets of drastically slowed time within a foe's body.
-      `,
-      rank: 6,
-      scaling: "damage",
-      type: "Duration",
-    },
     {
       name: "Timeseal",
 

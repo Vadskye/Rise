@@ -80,7 +80,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater ensnaring grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\decelerated instead of slowed.',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the condition must be removed twice before the effect ends.',
       },
       rank: 7,
       scaling: "damage",
@@ -111,7 +111,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'entangle',
-        exceptThat: 'the subject is \\decelerated instead of slowed.',
+        exceptThat: 'the condition must be removed twice before the effect ends.',
       },
       narrative: `
         A flood of plants grow from nowhere to trap your foe.
@@ -168,26 +168,6 @@ export const verdamancy: MysticSphere = {
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
-    },
-
-    {
-      name: "Strangling Vines",
-
-      attack: {
-        crit: `the condition must be removed twice before the effect ends.`,
-        hit: `
-          The subject is \\decelerated by a mass of vines as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of decelerated, and it is unable to breathe.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one Huge or smaller creature within \\medrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
-        `,
-      },
-
-      rank: 7,
-      tags: ["Manifestation"],
-      type: "Duration",
     },
 
     {

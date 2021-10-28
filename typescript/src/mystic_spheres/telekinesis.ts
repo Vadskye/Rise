@@ -198,7 +198,7 @@ export const telekinesis: MysticSphere = {
       name: "Kinetic Impedance",
 
       attack: {
-        crit: `The subject is \\decelerated instead of slowed.`,
+        crit: `The condition must be removed twice before the effect ends.`,
         hit: `The subject is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one Large or smaller target within \\medrange.

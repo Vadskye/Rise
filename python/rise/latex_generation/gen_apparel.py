@@ -642,7 +642,7 @@ def generate_apparel():
             rank=4,
             material_type="Boots",
             description="""
-                You are immune to being \\slowed, \\decelerated, \\immobilized, and \\paralyzed.
+                You are immune to being \\slowed, \\immobilized, and \\paralyzed.
             """,
             short_description="Grants immunity to common mobility restrictions",
         ),
