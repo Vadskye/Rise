@@ -81,7 +81,7 @@ class Maneuver(object):
         nontype_tags = [
             tag
             for tag in self.tags
-            if "Attune" not in tag and "Sustain" not in tag and "Focus" not in tag
+            if "Attune" not in tag and "Sustain" not in tag
         ]
         tags_text = f"tags: {nontype_tags}," if len(nontype_tags) > 0 else ""
 

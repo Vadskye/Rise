@@ -17,7 +17,6 @@ export const terramancy: MysticSphere = {
         % should be longer than polymorph's alter object ability
         Each time you cast this spell, you can accomplish work that would take up to five rounds with a normal Craft check.
       `,
-      focus: false,
       scaling: {
         2: `The amount of work you accomplish with the spell increases to one minute.`,
         4: `The amount of work you accomplish with the spell increases to two minutes.`,

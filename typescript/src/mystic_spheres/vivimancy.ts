@@ -19,7 +19,6 @@ export const vivimancy: MysticSphere = {
         Choose a living \\glossterm{ally} within your \\glossterm{reach}.
         If the subject has a \\glossterm{vital wound} with a \\glossterm{vital roll} of 0, it treats that \\glossterm{vital roll} as a 1, preventing it from dying (see \\pcref{Vital Wounds}).
       `,
-      focus: false,
       scaling: {
         2: `The range increases to \\shortrange.`,
         4: `The minimum \\glossterm{vital roll} you can mitigate decreases to -1.`,
@@ -35,7 +34,6 @@ export const vivimancy: MysticSphere = {
         You regain two \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
-      focus: false,
       scaling: {
         3: `The healing increases to four \\glossterm{hit points}.`,
         5: `The healing increases to eight \\glossterm{hit points}.`,
@@ -67,13 +65,11 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} energy damage.`,
         targeting: `
-        This spell does not have the \\abilitytag{Focus} tag.
         You must have a \\glossterm{free hand} to cast this spell.
 
         Make a melee attack vs. Reflex against one living creature within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       rank: 1,
       scaling: "damage",
       type: "Instant",
@@ -89,13 +85,11 @@ export const vivimancy: MysticSphere = {
           After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
         `,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against one living creature within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       rank: 3,
       scaling: "damage",
       tags: ['Healing'],
@@ -109,7 +103,6 @@ export const vivimancy: MysticSphere = {
         name: 'lifesteal grasp',
         exceptThat: "the damage increases to 6d10 + \\glossterm{power}.",
       },
-      focus: false,
       rank: 7,
       scaling: "damage",
       tags: ['Healing'],

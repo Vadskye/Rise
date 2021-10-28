@@ -32,7 +32,7 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
 
   const latex = `
     \\begin{${abilityType}}{${maneuver.name}}[${maneuver.type}]
-      ${format.spellTypePrefix({ ...maneuver, focus: maneuver.focus ?? false }) || ""}
+      ${format.spellTypePrefix(maneuver) || ""}
       \\rankline
       \\noindent
       ${internalComponents.join("\n\\rankline\n\n\\noindent ").trim()}%

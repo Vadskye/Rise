@@ -218,7 +218,7 @@ humanoidInput.push({
           name: "Cure Wound",
           source: "magical",
           target: "One \\glossterm{ally} within \\rngmed range",
-          tags: ["Focus"],
+          tags: [],
         },
       ],
       armorInputs: [{ name: "studded leather" }],

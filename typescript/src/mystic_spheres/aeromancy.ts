@@ -12,7 +12,6 @@ export const aeromancy: MysticSphere = {
       effect: `
         You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Jump skill.
       `,
-      focus: false,
       narrative: `
         The air rises beneath you and pushes you up, propelling you farther when you leap.
       `,
@@ -31,7 +30,6 @@ export const aeromancy: MysticSphere = {
         If you decrease the wind's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
         You choose the speed change and direction when you cast this spell, and that choice persists for the duration of this effect.
       `,
-      focus: false,
       narrative: `
         The wind around you waxes and wanes at your command, softening the force of a tempest or creating one to harass your foes.
       `,
@@ -49,7 +47,6 @@ export const aeromancy: MysticSphere = {
         Choose yourself or an \\glossterm{ally} within \\longrange.
         Until the end of the round, that creature treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm{falling damage}.
       `,
-      focus: false,
       narrative: `
         The air beneath you suddenly accelerates into a great wind, softening the force of your unexpected fall.
       `,

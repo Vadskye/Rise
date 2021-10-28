@@ -12,7 +12,6 @@ export const revelation: MysticSphere = {
       effect: `
         You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to Awareness checks.
       `,
-      focus: false,
       scaling: {
         2: `The bonus increases to +4.`,
         4: `The bonus increases to +5.`,
@@ -28,7 +27,6 @@ export const revelation: MysticSphere = {
         You may reroll one Knowledge check you made last round.
         You can only cast this spell once per hour.
       `,
-      focus: false,
       scaling: {
         2: `You also gain a +2 \\glossterm{magic bonus} to the Knowledge check.`,
         4: `The bonus increases to +3.`,

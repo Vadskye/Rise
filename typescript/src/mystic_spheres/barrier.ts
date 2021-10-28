@@ -13,7 +13,6 @@ export const barrier: MysticSphere = {
         You are \\glossterm{impervious} to \\glossterm{energy damage} this round.
         Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
       `,
-      focus: false,
       // narrative: '',
       scaling: {
         2: "You are impervious to all damage, not just energy damage.",
@@ -30,7 +29,6 @@ export const barrier: MysticSphere = {
         `,
         name: "mystic barrier",
       },
-      focus: false,
       name: "Minor Barrier",
       scaling: {
         2: "The range increases to \\medrange.",

@@ -92,7 +92,7 @@ const standardAttacks: Record<
     hit: "The target takes $damage.",
     powerMultiplier: 1,
     source: "magical",
-    tags: ["Focus", "Spell"],
+    tags: ["Spell"],
     target: "One creature or object within \\rngmed range",
   },
   "drain life": {
@@ -102,7 +102,7 @@ const standardAttacks: Record<
     hit: "The target takes $damage.",
     powerMultiplier: 1,
     source: "magical",
-    tags: ["Focus", "Spell"],
+    tags: ["Spell"],
     target: "One living creature within \\rngmed range",
   },
   "fireball": {
@@ -112,7 +112,7 @@ const standardAttacks: Record<
     hit: "Each target takes $damage.",
     powerMultiplier: 0.5,
     source: "magical",
-    tags: ["Focus", "Spell"],
+    tags: ["Spell"],
     target: "Everything in a \\areasmall radius within \\rngmed range",
   },
 };

@@ -17,11 +17,8 @@ class Spell(object):
         tags,
         scaling=None,
         extra_text=None,
-        focus=True,
         ritual_time=None,
     ):
-        if focus:
-            tags += ["Focus"]
 
         self.level = level
         self.name = name
@@ -152,7 +149,7 @@ class Spell(object):
         nontype_tags = [
             tag
             for tag in self.tags
-            if "Attune" not in tag and "Sustain" not in tag and "Focus" not in tag
+            if "Attune" not in tag and "Sustain" not in tag
         ]
         tags_text = f"tags: {nontype_tags}," if len(nontype_tags) > 0 else ""
 

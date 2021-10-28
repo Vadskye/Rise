@@ -18,7 +18,6 @@ export const telekinesis: MysticSphere = {
         During the movement phase, you can move the subject up to five feet in any direction.
         You use your \\glossterm{power} instead of your Strength to determine your \\glossterm{carrying capacity} when moving objects in this way (see \\pcref{Weight Limits}).
       `,
-      focus: false,
       scaling: {
         2: `You can move the subject up to ten feet in any direction.`,
         4: `The range increases to \\medrange.`,
@@ -37,7 +36,6 @@ export const telekinesis: MysticSphere = {
         The force is sufficient to lift an object with a Diminuitive \\glossterm{weight category}, or to push an object with a Tiny weight category across the ground.
         Generally, the force exerted by this ability is insufficient to physically move or even meaningfully impede any creature, but it can be perceived.
       `,
-      focus: false,
       scaling: {
         2: `The force increases to lift a Tiny weight object, or to push a Small weight object.`,
         4: `The range increases to \\longrange`,
@@ -365,9 +363,7 @@ export const telekinesis: MysticSphere = {
     {
       name: "Redirect Attacks",
 
-      focus: false,
       effect: `
-        This spell does not have the \\glossterm{Focus} tag.
         You immediately take the \\textit{total defense} action.
         In addition, whenever a creature within \\longrange of you misses you with a \\glossterm{strike} this round, that creature treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.

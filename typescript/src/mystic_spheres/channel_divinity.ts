@@ -16,7 +16,6 @@ export const channelDivinity: MysticSphere = {
 
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
-      focus: false,
       name: "Testament",
       scaling: {
         2: "The range increases to \\rngmed.",
@@ -35,7 +34,6 @@ export const channelDivinity: MysticSphere = {
         Each deity has their own color or color combination.
         Typically, good is yellow, evil is purple, law is white, and chaos is a myriad of ever-changing colors.
       `,
-      focus: false,
       name: "Divine Radiance",
       narrative: `
         You call on the majesty of your deity or alignment to radiate into the world.
@@ -106,12 +104,9 @@ export const channelDivinity: MysticSphere = {
       name: "Endurance of the Faithful",
 
       effect: `
-        This spell does not have the \\abilitytag{Focus} tag.
-
         You are \\glossterm{impervious} to all damage this round.
         Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
       `,
-      focus: false,
       rank: 2,
       scaling: {
         4: `You also gain a +2 bonus to \\glossterm{vital rolls} this round.`,
@@ -400,21 +395,6 @@ export const channelDivinity: MysticSphere = {
       `,
       rank: 3,
       scaling: { 5: `The bonus increases to +2.`, 7: `The bonus increases to +3.` },
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Divine Conduit",
-
-      castingTime: "minor action",
-      effect: `
-        You reduce your \\glossterm{focus penalty} with divine spells by 2.
-      `,
-      rank: 2,
-      scaling: {
-        4: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.`,
-        6: `The power bonus increases to +4.`,
-      },
       type: "Attune (self)",
     },
 

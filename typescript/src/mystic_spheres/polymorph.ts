@@ -17,7 +17,6 @@ export const polymorph: MysticSphere = {
         % too short?
         Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
       `,
-      focus: false,
       scaling: {
         2: `The amount of work you accomplish with the spell increases to five rounds.`,
         4: `The amount of work you accomplish with the spell increases to one minute.`,
@@ -39,7 +38,6 @@ export const polymorph: MysticSphere = {
         `,
         name: "disguise creature",
       },
-      focus: false,
       scaling: {
         2: `The bonus increases to +6.`,
         4: `The bonus increases to +8.`,
@@ -55,7 +53,6 @@ export const polymorph: MysticSphere = {
         You gain your choice of one of the following \\glossterm{natural weapons}: bite, claw, gore, ram, slam, or talon.
         For details, see \\tref{Natural Weapons}.
       `,
-      focus: false,
       scaling: {
         2: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using natural weapons.`,
         4: `The power bonus increases to +4.`,
@@ -89,13 +86,10 @@ export const polymorph: MysticSphere = {
     {
       name: "Twisting Claw",
       effect: `
-        This spell does not have the \\abilitytag{Focus} tag.
-
         Make a melee \\glossterm{strike} with a -1d damage penalty using a \\glossterm{natural weapon}.
         The attack is made against the target's Reflex defense instead of its Armor defense.
         You may use the higher of your \\glossterm{magical} power and your \\glossterm{mundane} power to determine your damage with this ability.
       `,
-      focus: false,
       rank: 1,
       scaling: {
         3: 'You gain a +1 \\glossterm{accuracy} bonus with the strike.',
@@ -109,12 +103,9 @@ export const polymorph: MysticSphere = {
     {
       name: "Mighty Claw",
       effect: `
-        This spell does not have the \\abilitytag{Focus} tag.
-
         Make a melee \\glossterm{strike} with a -1 accuracy penalty and a +2d damage bonus using a \\glossterm{natural weapon}.
         You may use the higher of your \\glossterm{magical} power and your \\glossterm{mundane} power to determine your damage with this ability.
       `,
-      focus: false,
       rank: 1,
       scaling: {
         3: 'The damage bonus increases to +3d.',
@@ -127,13 +118,10 @@ export const polymorph: MysticSphere = {
     {
       name: "Distant Claw",
       effect: `
-        This spell does not have the \\abilitytag{Focus} tag.
-
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         You gain a +5 foot bonus to your \\glossterm{reach} with this strike.
         You may use the higher of your \\glossterm{magical} power and your \\glossterm{mundane} power to determine your damage with this ability.
       `,
-      focus: false,
       rank: 2,
       scaling: {
         4: 'The reach bonus increases to +10 feet.',
@@ -148,13 +136,11 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} piercing damage.`,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       narrative: `
         You twist your hand into a spike that bends past armor to injure your foe.
       `,
@@ -172,13 +158,11 @@ export const polymorph: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       narrative: `
         You twist your hand into a spike that bends past armor to impale your foe.
       `,
@@ -194,7 +178,6 @@ export const polymorph: MysticSphere = {
         name: 'greater piercing grasp',
         exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
       },
-      focus: false,
       rank: 7,
       scaling: "damage",
       type: "Duration",

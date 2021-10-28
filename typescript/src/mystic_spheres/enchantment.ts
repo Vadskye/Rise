@@ -13,7 +13,6 @@ export const enchantment: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The subject's mood improves and it feels more cheerful.
       `,
-      focus: false,
       scaling: {
         2: `You may target an additional ally within range.`,
         4: `You may target an additional ally within range.`,
@@ -39,7 +38,6 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      focus: false,
       scaling: "accuracy",
       tags: ["Compulsion"],
       type: "Instant",
@@ -670,45 +668,6 @@ export const enchantment: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
-    },
-
-    {
-      name: "Distraction",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `As a \\glossterm{condition}, the subject's \\glossterm{focus penalty} is increased by 4.`,
-        targeting: `
-          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one creature within \\longrange.
-        `,
-      },
-      rank: 2,
-      scaling: "accuracy",
-      tags: ["Emotion"],
-      type: "Duration",
-    },
-
-    {
-      name: "Delayed Distraction",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `
-          As a \\glossterm{condition}, the subject's mind is primed for distraction.
-          When it uses a \\abilitytag{Focus} ability, the distraction triggers, wrenching the subject's attention away.
-          Its \\glossterm{focus penalty} is increased by 4, and it fails to use the ability, wasting its action.
-          After the distraction is triggered this way, the condition ends, and the creature becomes immune to this effect until it takes a \\glossterm{short rest}.
-        `,
-        targeting: `
-          This spell has no \\glossterm{verbal components}.
-
-          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one creature within \\longrange.
-        `,
-      },
-      rank: 3,
-      scaling: "accuracy",
-      tags: ["Emotion", "Subtle"],
       type: "Duration",
     },
 

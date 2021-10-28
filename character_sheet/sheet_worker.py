@@ -209,7 +209,6 @@ def core_statistics():
         encumbrance(),
         fatigue_penalty(),
         fatigue_tolerance(),
-        focus_penalty(),
         hit_points(),
         initiative(),
         insight_points(),
@@ -520,17 +519,6 @@ def fatigue_tolerance():
     )
 
 
-def focus_penalty():
-    misc = get_misc_variables("focus_penalty", 3)
-    return js_wrapper(
-        ["level", *misc],
-        f"""
-            setAttrs({{
-                focus_penalty: 4 - ({sum_variables(misc)}),
-            }});
-        """,
-    )
-
 
 def hit_points():
     misc = get_misc_variables("hit_points", 4)
@@ -821,14 +809,11 @@ def standard_damage_at_power(power):
 
 def debuffs():
     return js_wrapper(
-        [
-            "focus_penalty",
-        ],
+        [],
         boolean_variables=[
             # conditional debuffs
             "flying",
             "flying_poorly",
-            "focusing",
             "goaded",
             "grappled",
             "helpless",
@@ -876,10 +861,6 @@ def debuffs():
             if (unaware && !(asleep || helpless || paralyzed)) {{
                 armor -= 4;
                 reflex -= 4;
-            }}
-            if (focusing) {{
-                armor -= Math.max(focus_penalty, 0);
-                reflex -= Math.max(focus_penalty, 0);
             }}
             if (squeezing) {{
                 accuracy -= 2;

@@ -17,7 +17,6 @@ export const fabrication: MysticSphere = {
 
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
-      focus: false,
       scaling: {
         2: `The maximum size of the object increases to Small.`,
         4: `The maximum size of the object increases to Medium.`,
@@ -81,11 +80,9 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `Each subject takes 2d6 + half \\glossterm{power} slashing damage.`,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
       },
-      focus: false,
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
@@ -99,7 +96,6 @@ export const fabrication: MysticSphere = {
         name: "bladestorm",
         exceptThat: "the damage increases to 4d10 + \\glossterm{power}.",
       },
-      focus: false,
       rank: 7,
       scaling: "damage",
       tags: ["Manifestation"],
@@ -494,15 +490,12 @@ export const fabrication: MysticSphere = {
       name: "Instant Weapon",
 
       effect: `
-        This spell does not have the \\abilitytag{Focus} tag.
-
         You create a nonmagical weapon that you are proficient with your hand.
         You can immediately make a \\glossterm{strike} with that weapon.
         This strike is considered a \\glossterm{magical} attack, so you use your magical \\glossterm{power} instead of your mundane power.
         If you create a non-crossbow projectile weapon, you also create ammunition necessary for you to attack with.
         After you make the strike, the weapon disappears.
       `,
-      focus: false,
       rank: 1,
       scaling: {
         3: `You gain a +1 bonus to \\glossterm{accuracy} with the strike.`,
@@ -524,7 +517,6 @@ export const fabrication: MysticSphere = {
           You may give it a single magic weapon ability of your choice with rank no higher than your spellcasting rank with this spell.
         `,
       },
-      focus: false,
       rank: 5,
       scaling: {
         7: `You gain a +1 bonus to \\glossterm{accuracy} with the strike.`,
