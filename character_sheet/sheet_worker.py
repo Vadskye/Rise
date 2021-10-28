@@ -832,7 +832,6 @@ def debuffs():
             "frightened",
             "stunned",
             # rank 3 debuffs
-            "decelerated",
             "confused",
             "blinded",
             "immobilized",
@@ -909,7 +908,7 @@ def debuffs():
                 accuracy -= 2;
                 mental -= 2;
             }}
-            if (slowed && !(immobilized || decelerated)) {{
+            if (slowed && !immobilized) {{
                 reflex -= 2;
             }}
 
@@ -934,7 +933,7 @@ def debuffs():
             }}
 
             // rank 3 debuffs
-            if (decelerated || immobilized) {{
+            if (immobilized) {{
                 reflex -= 4;
             }}
             if (panicked) {{

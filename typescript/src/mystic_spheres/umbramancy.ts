@@ -402,7 +402,8 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `
           The subject takes 1d8 cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\decelerated as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+          This condition must be removed twice before the effect ends.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\longrange that is standing on the ground.

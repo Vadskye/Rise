@@ -166,7 +166,7 @@ Each debuff rank is +4 spell ranks over its predecessor
   * Special: end of round low damage (DR 5/10 check to remove), unable to regain HP (-1 level), lose one attunement, enraged (cannot take non-attack actions)
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
-  * List: decelerated, frightened, generic -2 to all, stunned
+  * List: frightened, generic -2 to all, stunned
   * Special: end of round medium damage, knockback 30', lose two attunements and be unable to attune as a condition
 * Rank 2.5
   * List: fighting underwater, not existing

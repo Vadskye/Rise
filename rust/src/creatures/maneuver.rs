@@ -72,7 +72,7 @@ impl Maneuver {
                         d.damage_dice = d.damage_dice.add(-2);
                         d.power_multiplier = 0.5;
                         d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
-                            debuffs: vec![Debuff::Decelerated],
+                            debuffs: vec![Debuff::Immobilized],
                             duration: AttackEffectDuration::Condition,
                         }));
                     })

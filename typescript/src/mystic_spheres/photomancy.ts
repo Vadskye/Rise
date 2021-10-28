@@ -522,7 +522,7 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           The subject takes 2d6 + half \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects, chosen randomly: \\dazzled as a \\glossterm{condition}, \\glossterm{briefly} \\frightened by you, briefly \\decelerated, or briefly \\stunned.
+          If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects, chosen randomly: \\dazzled as a \\glossterm{condition}, \\slowed as a \\glossterm{condition}, \\glossterm{briefly} \\frightened by you, or briefly \\stunned.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\medrange.
