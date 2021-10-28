@@ -346,6 +346,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         You make a Disguise check to alter your appearance (see \\pcref{Disguise Creature}).
+        This physically changes your body to match the results of your disguise.
         You gain a +4 bonus on the check, and you ignore penalties for changing your gender, species, subtype, or age.
         However, this effect is unable to alter your equipment in any way.
       `,
