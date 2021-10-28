@@ -63,7 +63,7 @@ const baseTreant = {
       `,
       name: "Animate Tree",
       source: "magical" as const,
-      tags: ["Focus" as const],
+      tags: [],
       target: "One tree no larger than the treant (see text)",
     },
   ],

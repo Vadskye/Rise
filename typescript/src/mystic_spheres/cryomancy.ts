@@ -17,7 +17,6 @@ export const cryomancy: MysticSphere = {
           Make an attack vs. Fortitude against anything within \\shortrange.
         `,
       },
-      focus: false,
       scaling: {
         2: "The damage increases to 5.",
         4: "The damage increases to 10.",
@@ -35,7 +34,6 @@ export const cryomancy: MysticSphere = {
 
         This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
-      focus: false,
       scaling: {
         2: "The area increases to a \\largearea radius \\glossterm{emanation}, and the maximum temperature reduction increases to 30 degrees.",
         4: "The area increases to a \\hugearea radius \\glossterm{emanation}, and the maximum temperature reduction increases to 40 degrees.",
@@ -51,13 +49,11 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} cold damage.`,
         targeting: `
-        This spell does not have the \\abilitytag{Focus} tag.
         You must have a \\glossterm{free hand} to cast this spell.
 
         Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       rank: 1,
       scaling: "damage",
       type: "Instant",
@@ -72,13 +68,11 @@ export const cryomancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       rank: 3,
       scaling: "damage",
       type: "Duration",
@@ -91,7 +85,6 @@ export const cryomancy: MysticSphere = {
         name: 'greater freezing grasp',
         exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\decelerated instead of slowed.',
       },
-      focus: false,
       rank: 7,
       scaling: "damage",
       type: "Duration",

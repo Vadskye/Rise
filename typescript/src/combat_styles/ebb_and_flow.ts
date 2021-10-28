@@ -207,28 +207,6 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Focused Strike",
-
-      effect: `
-        You can only use this ability during the \\glossterm{action phase}.
-        Choose one creature within \\shortrange.
-        During the action phase, you concentrate on your target.
-        You only suffer a \\glossterm{focus penalty} for this attack during the action phase.
-
-        During the \\glossterm{delayed action phase}, you can make a melee \\glossterm{strike} against the subject.
-        You take a -1d damage penalty with the strike.
-        The attack roll \\glossterm{explodes} regardless of what you roll.
-      `,
-      focus: true,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
-      type: "Instant",
-    },
-
-    {
       name: "Hunting Strike",
 
       effect: `

@@ -425,28 +425,6 @@ def generate_implements():
             short_description="Can double area size",
         ),
     ]
-
-    implements += [
-        MagicItem(
-            name="Staff of Focus",
-            rank=2,
-            material_type="Staff",
-            description="""
-                You reduce your \\glossterm<focus penalty> by 1.
-            """,
-            short_description="Reduces \\glossterm<focus penalty> by 1",
-        ),
-        MagicItem(
-            name="Staff of Focus, Greater",
-            rank=5,
-            material_type="Staff",
-            description="""
-                You reduce your \\glossterm<focus penalty> by 2.
-            """,
-            short_description="Reduces \\glossterm<focus penalty> by 2",
-        ),
-    ]
-
     implements += [
         MagicItem(
             name="Staff of Potency",

@@ -301,22 +301,6 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Harrying Strike",
-
-      // -2 levels relative to a normal r1 debuff
-      effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        Each creature damaged by the strike \\glossterm{briefly} increases its \\glossterm{focus penalty} by 2.
-      `,
-      rank: 3,
-      scaling: {
-        5: "The penalty increases to -3.",
-        7: "The penalty increases to -4.",
-      },
-      type: "Duration",
-    },
-
-    {
       name: "Deathseeking Flurry",
 
       effect: `

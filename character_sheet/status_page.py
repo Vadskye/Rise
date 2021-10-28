@@ -108,7 +108,6 @@ def circumstances():
         flex_col([
             debuff("flying"),
             debuff("flying poorly"),
-            debuff("focusing"),
             debuff("grappled"),
             debuff("helpless"),
             debuff("partially unaware"),

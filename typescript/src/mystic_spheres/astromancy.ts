@@ -13,7 +13,6 @@ export const astromancy: MysticSphere = {
         You teleport horizontally into an unoccupied location within 5 foot \\glossterm{range} on a stable surface that can support your weight.
         If the destination is invalid, this spell fails with no effect.
       `,
-      focus: false,
       narrative: `
         You disappear with an audible pop, appearing only a few feet away - but now on the other side of the cell bars.
       `,
@@ -32,7 +31,6 @@ export const astromancy: MysticSphere = {
         It teleports into your hand or into an unccupied location within \\shortrange.
         If the destination is invalid, this spell fails with no effect.
       `,
-      focus: false,
       narrative: `
         A tankard of ale disappears from the counter, appearing directly in your hand.
         The barkeep frowns, about to say something, before a gold coin suddenly appears in the tankard's place.
@@ -55,13 +53,11 @@ export const astromancy: MysticSphere = {
           The subject takes 1d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       narrative: `
         Your touch sends part of your foe's body to the Astral Plane.
         Although most of its body remains where it was, something important - and painful - was lost.
@@ -83,7 +79,6 @@ export const astromancy: MysticSphere = {
           After this effect ends, it becomes immune to this effect until it takes a \\glossterm{short rest}.
         `,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
@@ -95,7 +90,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 4,
       scaling: "damage",
-      focus: false,
       type: "Instant",
     },
     {
@@ -655,12 +649,9 @@ export const astromancy: MysticSphere = {
       name: "Blink",
 
       effect: `
-        This spell does not have the \\abilitytag{Focus} tag.
-
         All attacks against you this round have a 50\\% \\glossterm{failure chance}.
         This ability has the \\abilitytag{Swift} tag, so it protects you from attacks against you during the current phase.
       `,
-      focus: false,
       narrative: `You quickly blink into the Astral Plane, leaving a dangerous battlefield behind.`,
       rank: 1,
       scaling: {

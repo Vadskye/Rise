@@ -324,9 +324,9 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-                You reduce your \glossterm{focus penalty} by 2.
+                You gain a \plus1 bonus to your Armor defense.
             ",
-            modifiers: Some(vec![Modifier::FocusPenalty(-2)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -340,15 +340,12 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You double your range with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
-                        You cannot choose this ability multiple times.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
                         The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
                         In addition, you automatically learn one free nature ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
                     \parhead{Signature Spell} Choose a nature \glossterm{spell} you know.
-                        The spell loses the \abilitytag{Focus} tag, allowing you to cast it without lowering your guard in combat.
-                        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                        You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Spell Knowledge} You learn an additional nature \glossterm{spell} from a \glossterm{mystic sphere} you have access to.

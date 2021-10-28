@@ -12,7 +12,6 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Spellsense skill.
       `,
-      focus: false,
       scaling: {
         2: `The bonus increases to +4.`,
         4: `The bonus increases to +5.`,
@@ -28,7 +27,6 @@ export const thaumaturgy: MysticSphere = {
         You discern whether one creature within \\shortrange has any \\glossterm{magical} abilities.
         This does not give you any information about the nature of those magical abilities.
       `,
-      focus: false,
       scaling: {
         2: `You can also discern whether the subject has the ability to cast spells of any kind.`,
         4: `You can also discern which \\glossterm{magic sources} the subject has access to, if they have access to any.`,
@@ -519,9 +517,7 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Reflect Magic",
 
-      focus: false,
       effect: `
-        This spell does not have the \\glossterm{Focus} tag.
         You immediately take the \\textit{total defense} action.
         In addition, whenever a creature within \\medrange of you misses you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
@@ -540,9 +536,7 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Reflect Targeted Magic",
 
-      focus: false,
       effect: `
-        This spell does not have the \\glossterm{Focus} tag.
         You immediately take the \\textit{total defense} action.
         In addition, any \\glossterm{targeted} \\glossterm{magical} abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
         It cannot choose to reduce its accuracy or damage against itself.

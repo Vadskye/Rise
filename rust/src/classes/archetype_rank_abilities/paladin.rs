@@ -307,9 +307,9 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-                You reduce your \glossterm{focus penalty} by 2.
+                You gain a \plus1 bonus to your Armor defense.
             ",
-            modifiers: Some(vec![Modifier::FocusPenalty(-2)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Divine Spell Versatility",
@@ -323,13 +323,13 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Combat Caster",
+            name: "Divine Conduit",
             is_magical: true,
             rank: 2,
             description: r"
-                The penalty reduction from your \textit{combat caster} ability increases to 4.
+                Whenever you cast a \glossterm{targeted} spell that does not have the \glossterm{Attune} or \glossterm{Sustain} tags, you may target an additional creature adjacent to you with the spell.
             ",
-            modifiers: Some(vec![Modifier::FocusPenalty(-2)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Wellspring of Power",
@@ -368,13 +368,13 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::MagicalPower(4)]),
         },
         RankAbility {
-            name: "Attunement Point",
+            name: "Greater Divine Conduit",
             is_magical: true,
             rank: 7,
             description: r"
-                You gain an additional \glossterm{attunement point}.
+                Your \textit{divine conduit} ability allows you to target any number of creatures adjacent to you instead of only one additional creature.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+            modifiers: None,
         },
     ];
 }

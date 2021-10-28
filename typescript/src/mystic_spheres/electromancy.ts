@@ -15,7 +15,6 @@ export const electromancy: MysticSphere = {
           Make an attack vs. Reflex against anything within \\shortrange.
         `,
       },
-      focus: false,
       scaling: {
         2: `The damage increases to 5.`,
         4: `The damage increases to 10.`,
@@ -33,7 +32,6 @@ export const electromancy: MysticSphere = {
         Smaller objects are typically pulled towards the subject, while it moves itself towards larger objects.
         Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty value} 10 Strength check to separate the two objects.
       `,
-      focus: false,
       scaling: {
         2: `The maximum size increases to Medium.`,
         4: `The maximum size increases to Large.`,
@@ -63,13 +61,11 @@ export const electromancy: MysticSphere = {
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} electricity damage.`,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       rank: 1,
       scaling: "damage",
       type: "Instant",
@@ -84,13 +80,11 @@ export const electromancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
-          This spell does not have the \\abilitytag{Focus} tag.
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
         `,
       },
-      focus: false,
       rank: 3,
       scaling: "damage",
       type: "Duration",
@@ -103,7 +97,6 @@ export const electromancy: MysticSphere = {
         name: 'greater shocking grasp',
         exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
       },
-      focus: false,
       rank: 7,
       scaling: "damage",
       type: "Duration",

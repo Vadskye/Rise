@@ -12,7 +12,6 @@ export const bless: MysticSphere = {
         The subject gains a +1 bonus to \\glossterm{accuracy} this round.
         Because this ability has the \\abilitytag{Swift} tag, this improves the subject's attacks during the current phase.
       `,
-      focus: false,
       name: "Boon of Competence",
       scaling: {
         2: "The range increases to \\shortrange.",
@@ -27,7 +26,6 @@ export const bless: MysticSphere = {
         The subject gains a +1 bonus to \\glossterm{defenses} this round.
         Because this ability has the \\abilitytag{Swift} tag, this improves the subject's defenses against attacks made against it during the current phase.
       `,
-      focus: false,
       name: "Boon of Protection",
       scaling: {
         2: "The range increases to \\shortrange.",

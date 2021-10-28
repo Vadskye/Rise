@@ -299,7 +299,7 @@ You cannot gain the same feat twice.
 
         \ff[1]{Bloodspell} Whenever you cast a spell, you may use this ability.
         When you do, you lose \glossterm{hit points} equal to the spell's rank (minimum 1).
-        In exchange, you gain a \plus2 bonus to \glossterm{power} with the spell, the spell does not require \glossterm{casting components}, and it loses the \abilitytag{Focus} tag (if it had it).
+        In exchange, you gain a \plus2 bonus to \glossterm{power} with the spell, and the spell does not require \glossterm{casting components}.
 
         \ff[3]{Spare Blood} You gain a \plus4 bonus to your maximum \glossterm{hit points}.
 
@@ -1412,8 +1412,6 @@ You cannot gain the same feat twice.
 
         \ff[1]{Mental Casting} You connect to the magical essence of the universe differently from other spellcasters, allowing you to cast spells with purely mental effort.
         None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
-        However, casting spells without components is more challenging.
-        You increase your \glossterm{focus penalty} by 1.
 
         \ff[3]{Hardened Mind} You gain a \plus2 bonus to Mental defense.
 
@@ -1917,8 +1915,8 @@ You cannot gain the same feat twice.
         \featpre Base Perception of 2.
 
         \ff[1]{Aim} You can use the \textit{aim} ability as a standard action.
-        \begin{freeability}{Aim}[\abilitytag{Focus}, \abilitytag{Sustain} (minor)]
-            Choose a creature or object within line of sight.
+        \begin{freeability}{Aim}[\abilitytag{Sustain} (minor)]
+            Choose a creature or object within \glossterm{line of sight}.
             You gain a \plus2 accuracy bonus against the target.
 
             If you lose sight of the target for a full round, this effect ends.
@@ -2024,9 +2022,6 @@ You cannot gain the same feat twice.
     \begin{feat}{Spellsword}{Magical, Spell}
         \featpre Access to a \glossterm{mystic sphere}.
 
-        \ff[1]{Magical Strikes} Whenever you make a melee \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
-        This allows you to use your \glossterm{power} with magical abilities to determine your damage.
-
         \ff[1]{Imbued Blow} You can use the \textit{imbued blow} ability as a standard action.
         \begin{freeability}{Imbued Blow}
             Make a melee \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
@@ -2038,8 +2033,10 @@ You cannot gain the same feat twice.
             \featlevel{18} The accuracy bonus increases to \plus4.
         \end{freeability}
 
+        \ff[3]{Magical Strikes} Whenever you make a melee \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
+        This allows you to use your \glossterm{power} with magical abilities to determine your damage.
+
         \ff[3]{Spellsword Conduit} You can cast spells using a melee weapon as if it were an implement (see \pcref{Implements}).
-        When you do, you reduce your \glossterm{focus penalty} by 2.
         In addition, if your legacy item is a weapon, you may choose both weapon and implement magic item effects for it.
 
         \ff[6]{Imbue Weapon} When you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
@@ -2718,7 +2715,6 @@ You cannot gain the same feat twice.
         \ff[3]{Reflexive Concealment} You gain a \plus2 bonus to the Sleight of Hand and Stealth skills.
 
         \ff[3]{Greater Suppress Light} You can cast the \spell{suppress light} \glossterm{cantrip} from the Umbramancy mystic sphere as a \glossterm{minor action}.
-        In addition, that cantrip no longer has the \abilitytag{Focus} keyword for you.
 
         \ff[6]{Darkvision} You gain \glossterm{darkvision} with a 60 foot range, allowing you to see in complete darkness clearly.
         If you already have that ability, you increase its range by 60 feet.
@@ -2989,8 +2985,8 @@ You cannot gain the same feat twice.
     \begin{feat}{Twinhand Spellcaster}{Casting, Magical}
         \featpre Base Dexterity of 1.
 
-        \ff[1]{Twinhand Focus} You can always choose to use \glossterm{somatic components} to cast your spells (see \pcref{Casting Components}).
-        As long as you have two \glossterm{free hands}, you reduce your \glossterm{focus penalty} by 2 with spells that you cast using \glossterm{somatic components}.
+        \ff[1]{Twinhand Precision} You can always choose to use \glossterm{somatic components} to cast your spells (see \pcref{Casting Components}).
+        As long as you have two \glossterm{free hands}, you gain a \plus1 \glossterm{accuracy} bonus with spells that you cast using \glossterm{somatic components}.
 
         \ff[3]{Freehand Implement} You can gain the benefits of one magical implement, such as a staff or wand, without having to hold it in your hands.
         You must still have it on your person, such as in a pocket or strapped to your back, and you must still be attuned to it to gain its benefits.
@@ -3009,7 +3005,7 @@ You cannot gain the same feat twice.
             After you use this ability, you are unable to take any actions during the following round.
         \end{instantability}
 
-        \ff[9]{Twinhand Precision} As long as you have two \glossterm{free hands}, you gain a \plus1 \glossterm{accuracy} bonus with spells that you cast using \glossterm{somatic components}.
+        \ff[9]{Greater Twinhand Precision} The bonus from your \textit{twinhand precision} ability increases to \plus2.
 
         \ff[12]{Greater Double Spell} Using your \textit{double spell} ability does not prevent you from acting during the \glossterm{movement phase} of the following round.
 
@@ -3017,7 +3013,7 @@ You cannot gain the same feat twice.
         In addition, you gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to magic implements.
 
-        \ff[18]{Greater Twinhand Precision} The bonus from your \textit{twinhand precision} ability increases to \plus2.
+        \ff[18]{Supreme Twinhand Precision} The bonus from your \textit{twinhand precision} ability increases to \plus3.
 
         \ff[21]{Supreme Double Spell} Using your \textit{double spell} ability does not prevent you from taking \glossterm{minor actions} during the following round.
     \end{feat}
