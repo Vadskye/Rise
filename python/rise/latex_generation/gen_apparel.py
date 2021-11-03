@@ -813,7 +813,7 @@ def generate_apparel():
             material_type="Ring",
             tags=['Healing'],
             description="""
-                At the end of each round, if you are at or below half your maximum \\glossterm<hit points>, you regain 2d6 hit points.
+                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 2d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
             """,
             short_description="Regains 2d6 hit points while at half hit points",
@@ -824,7 +824,7 @@ def generate_apparel():
             material_type="Ring",
             tags=['Healing'],
             description="""
-                At the end of each round, if you are at or below half your maximum \\glossterm<hit points>, you regain 4d6 hit points.
+                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 4d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
             """,
             short_description="Regains 4d6 hit points while at half hit points",
