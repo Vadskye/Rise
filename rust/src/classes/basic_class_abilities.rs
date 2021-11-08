@@ -37,10 +37,10 @@ fn generate_latex_resources(class: &Class) -> String {
             \\cf<{shorthand_name}><Resources>
             You have the following \\glossterm<resources>:
             \\begin<itemize>
-                \\item {insight_points}, which you can spend to gain additional abilities or proficiencies (see \\pcref<Insight Points>).
-                \\item {trained_skills} from among your \\glossterm<class skills> (see \\pcref<Skills>).
                 \\item {attunement_points}, which you can use to attune to items and abilities that affect you (see \\pcref<Attunement Points>).
                 \\item A \\plus{fatigue_tolerance} bonus to your \\glossterm<fatigue tolerance>, which makes it easier for you to use powerful abilities that fatigue you (see \\pcref<Fatigue>).
+                \\item {insight_points}, which you can spend to gain additional abilities or proficiencies (see \\pcref<Insight Points>).
+                \\item {trained_skills} from among your \\glossterm<class skills> (see \\pcref<Skills>).
             \\end<itemize>
         ",
         attunement_points = latex_formatting::uppercase_first_letter(&
