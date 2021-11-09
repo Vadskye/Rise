@@ -17,8 +17,8 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1d damage bonus with the strike.",
-        6: "The damage bonus increases to +2d.",
+        4: "The accuracy bonus increases to +4.",
+        6: "The accuracy bonus increases to +6.",
       },
       type: "Instant",
     },
@@ -36,7 +36,7 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +1d damage bonus with the strike.",
+        6: "You gain a +5 damage bonus with the strike.",
       },
       type: "Instant",
     },
@@ -54,7 +54,7 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 5,
       scaling: {
-        6: "You gain a +1d damage bonus with the strike.",
+        6: "You gain a +5 damage bonus with the strike.",
       },
       type: "Instant",
     },
@@ -92,13 +92,14 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
-      rank: 3,
+      rank: 1,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Duration",
     },
@@ -108,21 +109,24 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        The attack is made against each subject's Reflex defense instead of its Armor defense.
-        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
-      rank: 7,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
+      },
       type: "Duration",
     },
 
     {
-      name: "Disorienting Feint",
+      name: "Mind-Fuzzing Feint",
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{confused} as a \\glossterm{condition}.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\glossterm{briefly} \\confused.
+        After this effect ends, the creature cannot be confused by this effect again until it takes a \\glossterm{short rest}.
       `,
       rank: 7,
       type: "Duration",
@@ -133,15 +137,15 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You gain a +1d damage bonus with the strike.
+        You gain a +2 damage bonus with the strike.
         However, you \\glossterm{briefly} take a -2 penalty to all defenses.
         This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +2d.",
-        5: "The damage bonus increases to +3d.",
-        7: "The damage bonus increases to +4d.",
+        3: "The damage bonus increases to +5.",
+        5: "The damage bonus increases to +10.",
+        7: "The damage bonus increases to +15.",
       },
       type: "Instant",
     },
@@ -149,13 +153,14 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: "Reckless Flurry",
 
+      // TODO: unclear rank
       effect: `
         Make two melee \\glossterm{strikes}.
-        You take a -2d damage penalty with both strikes, and your \\glossterm{power} is \\glossterm{halved}.
-        However, you \\glossterm{briefly} take a -2 penalty to all defenses.
+        You do not add your \\glossterm{power} to damage with the strikes.
+        In addition, you \\glossterm{briefly} take a -2 penalty to all defenses.
         This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 5,
+      rank: 6,
       type: "Instant",
     },
 
@@ -164,12 +169,12 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +1d damage bonus with the strike.
+        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +2 damage bonus with the strike.
       `,
       rank: 2,
       scaling: {
-        4: "The damage bonus increases to +2d.",
-        6: "The damage bonus increases to +3d.",
+        4: "The damage bonus increases to +5.",
+        6: "The damage bonus increases to +10.",
       },
       type: "Instant",
     },
@@ -179,7 +184,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a +2 accuracy bonus.
-        You take a -2d damage penalty with the strike.
+        You do not add your \\glossterm{power} to damage with the strike.
       `,
       rank: 1,
       scaling: {
@@ -195,13 +200,13 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
-        You gain a +2d damage bonus with the strike.
+        You gain a +5 damage bonus with the strike.
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +3d.",
-        5: "The damage bonus increases to +4d.",
-        7: "The damage bonus increases to +5d.",
+        3: "The damage bonus increases to +10.",
+        5: "The damage bonus increases to +15.",
+        7: "The damage bonus increases to +20.",
       },
       type: "Instant",
     },
@@ -211,7 +216,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike with future strikes.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
@@ -252,8 +257,8 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "You gain a +1d damage bonus with the strike.",
-        7: "The damage bonus increases to +2d.",
+        5: "You gain a +5 damage bonus with the strike.",
+        7: "The damage bonus increases to +10.",
       },
       type: "Instant",
     },
@@ -263,8 +268,25 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
+      `,
+      rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Covering Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition}.
       `,
       rank: 3,
       scaling: {
@@ -278,13 +300,14 @@ export const ebbAndFlow: CombatStyle = {
       name: "Mainhand Feint",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        You \\glossterm{briefly} gain a +3d damage bonus with your \\textit{offhand strike} ability.
+        Make a melee \\glossterm{strike}.
+        You do not add your \\glossterm{power} to damage with the strike.
+        However, you \\glossterm{briefly} add your \\glossterm{power} to damage with the \\ability{offhand strike} ability.
         This bonus has the \\glossterm{Swift} tag, so it affects the \\textit{offhand strike} ability if you use it during the current phase.
       `,
       rank: 4,
       scaling: {
-        6: "The damage bonus increases to +4d.",
+        6: "You also gain a +5 damage bonus with the \\ability{offhand strike} ability.",
       },
       type: "Duration",
     },
@@ -293,13 +316,14 @@ export const ebbAndFlow: CombatStyle = {
       name: "Pursuer's Strike",
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a melee \\glossterm{strike}.
         You \\glossterm{briefly} gain a +4 bonus to contested \\glossterm{initiative} checks against each creature damaged by the strike.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "The initiative bonus increases to +6.",
-        6: "The initiative bonus increases to +8.",
+        3: "The initiative bonus increases to +6.",
+        5: "The initiative bonus increases to +8.",
+        7: "The initiative bonus increases to +10.",
       },
       type: "Duration",
     },
@@ -309,15 +333,15 @@ export const ebbAndFlow: CombatStyle = {
 
       // -1 rank for self-daze
       effect: `
-        Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         You and each creature damaged by the strike are \\glossterm{briefly} \\dazed.
         This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
@@ -326,12 +350,12 @@ export const ebbAndFlow: CombatStyle = {
       name: "Greater Reckless Assault",
 
       effect: `
-        Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         You and each creature damaged by the strike are \\glossterm{briefly} \\stunned.
         This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
-      rank: 6,
+      rank: 7,
       type: "Duration",
     },
 
@@ -339,12 +363,12 @@ export const ebbAndFlow: CombatStyle = {
       name: "Back Into the Fray",
 
       effect: `
-        Make a \\glossterm{strike}.
-        You gain a +2d damage bonus with the strike if you used the \\textit{recover} ability or a \\abilitytag{Healing} ability last round.
+        Make a melee \\glossterm{strike}.
+        You gain a +5 damage bonus with the strike if you used the \\textit{recover} ability or a \\abilitytag{Healing} ability last round.
       `,
       rank: 4,
       scaling: {
-        6: "The damage bonus increases to +3d.",
+        6: "The damage bonus increases to +10.",
       },
       type: "Instant",
     },
@@ -354,12 +378,12 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +1d damage bonus with the strike if the target is \\glossterm{surrounded}.
+        You gain a +2 damage bonus with the strike if the target is \\glossterm{surrounded}.
       `,
       rank: 2,
       scaling: {
-        4: "The damage bonus increases to +2d.",
-        6: "The damage bonus increases to +3d.",
+        4: "The damage bonus increases to +5.",
+        6: "The damage bonus increases to +10.",
       },
       type: "Instant",
     },

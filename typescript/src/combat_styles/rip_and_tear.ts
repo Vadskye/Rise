@@ -8,9 +8,10 @@ export const ripAndTear: CombatStyle = {
     {
       name: "Strip the Flesh",
 
+      // treat as r2 debuff
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage as a \\glossterm{condition}.
       `,
       rank: 3,
@@ -25,14 +26,15 @@ export const ripAndTear: CombatStyle = {
       name: "Strip the Armor",
 
       effect: `
-        Make a \\glossterm{strike} with a +1 accuracy bonus using a slashing weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Make a \\glossterm{strike} using a slashing weapon.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature that resists all damage from the strike takes the damage from the strike again.
+        This extra damage cannot cause the creature to lose \\glossterm{hit points}.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "The accuracy bonus increases to +2.",
-        6: "The accuracy bonus increases to +3.",
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +1.",
       },
       type: "Instant",
     },
@@ -43,13 +45,13 @@ export const ripAndTear: CombatStyle = {
       // -1 rank for metal armor restriction and only affecting Armor
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike that is not wearing metal armor \\glossterm{briefly} takes a -2 penalty to Armor defense.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
@@ -60,10 +62,10 @@ export const ripAndTear: CombatStyle = {
       // -1 rank for metal armor restriction and only affecting Armor
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike that is not wearing metal armor \\glossterm{briefly} takes a -4 penalty to Armor defense.
       `,
-      rank: 6,
+      rank: 7,
       type: "Instant",
     },
 
@@ -71,12 +73,13 @@ export const ripAndTear: CombatStyle = {
       name: "Brow Gash",
 
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty using a slashing weapon.
+        Make a \\glossterm{strike} using a slashing weapon.
+        Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
       `,
-      rank: 5,
+      rank: 4,
       scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
+        6: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Duration",
     },
@@ -86,7 +89,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -98,14 +101,13 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
@@ -115,27 +117,10 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
-        This condition must be removed twice before the effect ends.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\slowed as a \\glossterm{condition}.
       `,
-      rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
-      type: "Duration",
-    },
-
-    {
-      name: "Supreme Hamstring",
-
-      effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
-      `,
-      rank: 7,
+      rank: 6,
       type: "Duration",
     },
 
@@ -173,13 +158,13 @@ export const ripAndTear: CombatStyle = {
       name: "Flintspark Strike",
 
       effect: `
-        Make a strike with a +1d damage bonus using a slashing weapon.
+        Make a strike with a +2 damage bonus using a slashing weapon.
         If the subject is wearing metal armor or is significantly composed of metal, damage dealt by the strike is fire damage in addition to its normal damage types.
       `,
       rank: 3,
       scaling: {
-        5: "The damage bonus increases to +2d.",
-        7: "The damage bonus increases to +3d.",
+        5: "The damage bonus increases to +5.",
+        7: "The damage bonus increases to +10.",
       },
       type: "Instant",
     },
@@ -193,8 +178,8 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1 bonus to the Sweeping value of the strike.",
-        6: "The bonus to the Sweeping value increases to +2.",
+        4: "You gain a +2 damage bonus with the strike.",
+        6: "The damage bonus increases to +5.",
       },
       type: "Instant",
     },
@@ -208,8 +193,8 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        4: "You gain a +2 damage bonus with the strike.",
+        6: "The damage bonus increases to +5.",
       },
       type: "Instant",
     },
@@ -223,7 +208,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 5,
       scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
+        7: "You gain a +5 damage bonus with the strike.",
       },
       type: "Instant",
     },
@@ -238,13 +223,13 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +1d damage bonus with the strike.",
+        6: "You gain a +5 damage bonus with the strike.",
       },
       type: "Instant",
     },
 
-    // is 2x power equal to +2d damage? sometimes better, sometimes worse, especially with the
-    // delay, so seems fine
+    // is 2x power equal to +5-10 damage? sometimes better, sometimes worse, especially with the
+    // delay and limited stacking, so seems fine
     {
       name: "Bloodletting Strike",
 
@@ -291,16 +276,11 @@ export const ripAndTear: CombatStyle = {
     {
       name: "Twinslash",
 
-      // basically +1d
       effect: `
         Make two melee \\glossterm{strikes} using a slashing weapon.
-        You take a -2d damage penalty with both strikes, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with either strike.
       `,
-      rank: 3,
-      scaling: {
-        5: "The damage penalty with both strikes is reduced to -1d.",
-        7: "The damage penalty with both strikes is removed.",
-      },
+      rank: 6,
       type: "Instant",
     },
 
@@ -313,8 +293,8 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1d damage bonus with the strike.",
-        6: "The damage bonus increases to +2d.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
@@ -334,14 +314,14 @@ export const ripAndTear: CombatStyle = {
       name: "Flay",
 
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty using a slashing weapon.
+        Make a \\glossterm{strike} using a slashing weapon.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        4: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
@@ -350,13 +330,11 @@ export const ripAndTear: CombatStyle = {
       name: "Greater Flay",
 
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty using a slashing weapon.
+        Make a \\glossterm{strike} using a slashing weapon.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
       `,
-      rank: 5,
-      scaling: {
-        7: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
-      },
+      rank: 6,
       type: "Duration",
     },
   ],
