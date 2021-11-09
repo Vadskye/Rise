@@ -50,9 +50,9 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     You may use the higher of your \glossterm{magical} power and your \glossterm{mundane} power to determine your damage with this ability.
 
                     \rankline
-                    \rank{3} You gain a +1d damage bonus with the strike.
-                    \rank{5} The damage bonus increases to \plus2d.
-                    \rank{7} The damage bonus increases to \plus3d.
+                    \rank{3} You gain a \plus2 damage bonus with the strike.
+                    \rank{5} The damage bonus increases to \plus5.
+                    \rank{7} The damage bonus increases to \plus10.
                 \end{instantability}
             ",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
