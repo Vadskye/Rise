@@ -456,18 +456,16 @@ def checkbox(attributes=None):
 
 def underlabeled_checkbox(label_text, attributes=None, input_attributes=None):
     attributes = attributes or dict()
-    space_append(attributes, "class", "labeled-text-input")
-    return div(
+    space_append(attributes, "class", "underlabeled-checkbox")
+    return flex_col(
         attributes,
-        flex_col(
-            [
-                checkbox(input_attributes),
-                span(
-                    {"class": "under-label"},
-                    label_text,
-                ),
-            ]
-        ),
+        [
+            checkbox(input_attributes),
+            span(
+                {"class": "under-label"},
+                label_text,
+            ),
+        ]
     )
 
 
