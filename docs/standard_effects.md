@@ -183,6 +183,9 @@ Note that these are used for determining the levels of new effects, not rank upg
 have their own logic which may differ significantly from this.
 
 * Both strike-based and non-strike-based:
+  * -2 levels: debuff is brief instead of condition (single-target only, can't be combined with HP loss trigger)
+  * -2 levels: become immune to debuff after first success - only valid for non-HP brief debuffs
+  * -4 levels: debuff only applies when the target loses HP from the attack
   * +0 levels: trade -1a for +1d or vice versa
   * +0 levels: trade -1a/-1d for minor benefit
   * +0 level: add specific crit effect to non-damaging effect; standard crit effects:
@@ -192,7 +195,7 @@ have their own logic which may differ significantly from this.
   * +1 levels: +1a (any attack other than a high-damage attack)
   * +1 levels: convert condition to poison (including poison crit and +1r debuff on third stage)
   * +2 levels: +1a (high-damage attacks)
-  * +2 levels: +1d (above standard rank progression, if any)
+  * +2 levels: +1d (above standard rank progression, if any; spells only)
   * +4 levels: +1 rank to debuff
   * +4 levels: Add additional debuff of the same rank removed at the same time as existing debuff
 * Non-strikes only:
@@ -265,6 +268,9 @@ Tier 7 areas:
 * Medium radius in Extreme range
 
 ## Standard effects
+
+Maneuvers that are rank 3 or lower scale their damage as +2 +5 +10 +15 +20.
+Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 
 ### Pure damage
 
@@ -357,67 +363,66 @@ The minimum area size here should be a t2 area to make these feel different from
 
 ### Hybrid damage/debuff
 
+For strikes, going from full power -> half power and half -> none buys +3 effect levels
+
 #### Maneuvers: single-target high damage + debuff
-* Rank 1
-  * Strike, brief r1 debuff if lose HP, immune after first success
 * Rank 3
-  * Strike, brief r1 debuff if lose HP
+  * Strike, brief r0 debuff
 * Rank 5
   * Strike, brief r1 debuff, immune after first success
-  * Strike, brief r2 debuff if lose HP, immune after first success
+  * Strike, r1 debuff condition if lose HP
 * Rank 7
   * Strike, brief r1 debuff
   * Strike, brief r2 debuff if lose HP
 
 #### Maneuvers: single-target medium damage + debuff
-* Rank 1
-  * Strike with -2d, brief r1 debuff if lose HP
-* Rank 3
-  * Strike with -2d, brief r0 debuff
-  * Strike with -2d, brief r1 debuff, immune after first success
-  * Strike with -2d, brief r2 debuff if lose HP, immune after first success
-* Rank 5
-  * Strike with -2d, brief r1 debuff
-  * Strike with -2d, brief r2 debuff if lose HP
-* Rank 7
-  * Strike with -2d, brief r2 debuff if lose HP, otherwise brief r1 debuff
-  * Strike with -2d, brief r2 debuff, immune after first success
-  * Strike with -2d, brief r3 debuff if lose HP, immune after first success
+* Rank 2
+  * Strike with half power, r1 debuff condition if lose HP
+  * Strike with half power, brief r1 debuff, immune after first success
+* Rank 4
+  * Strike with half power, brief r1 debuff
+* Rank 6
+  * Strike with half power, r1 debuff condition
+  * Strike with half power, r2 debuff condition if lose HP
+  * Strike with half power, brief r2 debuff, immune after first success
 
 #### Maneuvers: single-target low damage + debuff
 * Rank 1
-  * Strike with -1d and half power, r1 debuff condition if lose HP
+  * Strike with no power, brief r1 debuff
 * Rank 3
-  * Strike with -2d and half power, r2 debuff condition if lose HP
-  * Strike with -2d and half power, brief r1 debuff
+  * Strike with no power, r2 debuff condition if lose HP - ANCHOR
+  * Strike with no power, brief r2 debuff, immune after first success
+  * Strike with no power, r1 debuff condition
 * Rank 5
-  * Strike with -2d and half power, r2 debuff condition if lose HP, otherwise r1 debuff condition
+  * Strike with no power, r2 debuff condition if lose HP, otherwise r1 debuff condition
+  * Strike with no power, brief r2 debuff
 * Rank 7
-  * Strike with -2d and half power, r3 debuff condition if lose HP
-  * Strike with -2d and half power, brief r2 debuff
+  * Strike with no power, r3 debuff condition if lose HP
+  * Strike with no power, brief r3 debuff, immune after first success
+  * Strike with no power, r2 debuff condition
 
 #### Spells: single-target high damage + debuff
+Spells only get a +1 rank bonus over martials for full damage + debuff attacks.
+Otherwise, these are too much better than just casting a pure damage spell.
 
-* Rank 3
-  * Med range, 2d8 + power damage, brief r1 debuff if lose HP
-* Rank 5
-  * Med range, 4d6 + power damage, brief r1 debuff, immune after first success
-  * Med range, 4d6 + power damage, brief r2 debuff if lose HP, immune after first success
-* Rank 7
-  * Med range, 4d10 + power damage, brief r1 debuff
-  * Med range, 4d10 + power damage, brief r2 debuff if lose HP
+* Rank 4
+  * Med range, 2d10 + power damage, brief r1 debuff, immune after first success
+  * Med range, 2d10 + power damage, r1 debuff condition if lose HP
+* Rank 6
+  * Med range, 4d8 + power damage, brief r1 debuff
+  * Med range, 4d8 + power damage, brief r2 debuff if lose HP
 
 #### Spells: single-target medium damage + debuff
 * Rank 1
   * Med range, 1d8 + half power damage, brief r1 debuff, immune after first success
-  * Med range, 1d8 + half power damage, brief r2 debuff if lose HP, immune after first success
+  * Med range, 1d8 + half power damage, r1 debuff condition if lose HP
 * Rank 3
   * Med range, 2d6 + half power damage, brief r1 debuff
   * Med range, 2d6 + half power damage, brief r2 debuff if lose HP
 * Rank 5
   * Med range, 2d10 + half power damage, brief r2 debuff if lose HP, otherwise brief r1 debuff
   * Med range, 2d10 + half power damage, brief r2 debuff, immune after first success
-  * Med range, 2d10 + half power damage, brief r3 debuff if lose HP, immune after first success
+  * Med range, 2d10 + half power damage, r2 debuff condition if lose HP
 * Rank 7
   * Med range, 4d8 + half power damage, brief r2 debuff
   * Med range, 4d8 + half power damage, brief r3 debuff if lose HP
@@ -430,14 +435,19 @@ The minimum area size here should be a t2 area to make these feel different from
   * t2 area, 2d6 + half power damage, brief r1 debuff if lose HP
 * Rank 6
   * t2 area, 2d10 + half power damage, brief r1 debuff, immune after first success
-  * t2 area, 2d10 + half power damage, brief r2 debuff if lose HP, immune after first success
 
 #### Spells: single-target low damage + debuff
 * Rank 1
   * Med range, 1d6 damage, r2 debuff condition if lose HP
+  * Med range, 1d6 damage, brief r2 debuff, immune after first success
+  * Med range, 1d6 damage, r1 debuff condition
 * Rank 3
   * Med range, 1d10 damage, r2 debuff condition if lose HP, otherwise r1 debuff condition
+  * Med range, 1d10 damage, brief r2 debuff
 * Rank 5
   * Med range, 2d8 damage, r3 debuff condition if lose HP
+  * Med range, 2d8 damage, brief r3 debuff, immune after first success
+  * Med range, 2d8 damage, r2 debuff condition
 * Rank 7
   * Med range, 4d6 damage, r3 debuff condition if lose HP, otherwise r2 debuff condition
+  * Med range, 4d6 damage, brief r3 debuff

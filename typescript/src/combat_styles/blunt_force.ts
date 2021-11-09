@@ -14,9 +14,9 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "You gain a +1d damage bonus with the strike.",
-        5: "The damage bonus increases to +2d.",
-        7: "The damage bonus increases to +3d.",
+        3: "You gain a +2 damage bonus with the strike.",
+        5: "The damage bonus increases to +5.",
+        7: "The damage bonus increases to +10.",
       },
       type: "Instant",
     },
@@ -79,8 +79,8 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1d damage bonus with the strike.",
-        6: "The damage bonus increases to +2d.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
@@ -96,7 +96,7 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +1d damage bonus with the strike.",
+        6: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Instant",
     },
@@ -118,13 +118,13 @@ export const bluntForce: CombatStyle = {
       name: "Resonating Strike",
 
       effect: `
-        Make a strike with a +1d damage bonus using a bludgeoning weapon.
+        Make a strike with a +2 damage bonus using a bludgeoning weapon.
         Damage dealt by the strike is sonic damage in addition to its normal damage types.
       `,
       rank: 3,
       scaling: {
-        5: "The damage bonus increases to +2d.",
-        7: "The damage bonus increases to +3d.",
+        5: "The damage bonus increases to +5.",
+        7: "The damage bonus increases to +10.",
       },
       type: "Instant",
     },
@@ -134,8 +134,8 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 1,
       scaling: {
@@ -147,11 +147,37 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Stunning Headshot",
+      name: "Greater Headshot",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
+      `,
+      rank: 4,
+      scaling: {
+        6: "You gain a +1 accuracy bonus with the strike.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Headshot",
+
+      effect: `
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
+      `,
+      rank: 7,
+      type: "Duration",
+    },
+
+    {
+      name: "Stunning Smash",
+
+      effect: `
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
@@ -163,11 +189,11 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Confusing Headshot",
+      name: "Head-Spinning Smash",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature that loses \\glossterm{hit points} from the strike is \\confused as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -200,7 +226,7 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +1d damage bonus with the strike.",
+        6: "The area increases to a \\medarea radius within \\medrange.",
       },
       type: "Instant",
     },
@@ -209,9 +235,11 @@ export const bluntForce: CombatStyle = {
       name: "Knockdown",
 
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty using a bludgeoning weapon.
+        Make a \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        Each creature that loses \\glossterm{hit points} from the strike falls \\prone if it is no larger than one size category larger than you.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike falls \\prone if it is no larger than one size category larger than you.
+        A creature knocked prone in this way cannot be knocked prone by this effect again until it takes a \\glossterm{short rest}.
       `,
       rank: 2,
       scaling: {
@@ -247,8 +275,8 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1d damage bonus with the strike.",
-        6: "The damage bonus increases to +2d.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
@@ -263,7 +291,7 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +1d damage bonus with the strike.",
+        6: "The maximum size category increases to three or more size categories larger than you.",
       },
       type: "Instant",
     },
@@ -274,14 +302,14 @@ export const bluntForce: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{strike} with a +2d damage bonus using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a +5 damage bonus using a bludgeoning weapon.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +3d.",
-        5: "The damage bonus increases to +4d.",
-        7: "The damage bonus increases to +5d.",
+        3: "The damage bonus increases to +10.",
+        5: "The damage bonus increases to +15.",
+        7: "The damage bonus increases to +20.",
       },
       type: "Instant",
     },
@@ -292,51 +320,25 @@ export const bluntForce: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{strike} with a +2d damage bonus using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a +5 damage bonus using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "The damage bonus increases to +3d.",
-        5: "The damage bonus increases to +4d.",
-        7: "The damage bonus increases to +5d.",
+        4: "The damage bonus increases to +10.",
+        6: "The damage bonus increases to +15.",
       },
       type: "Instant",
     },
 
     {
-      name: "Dazing Smash",
+      name: "Tenderizing Smash",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
-      `,
-      rank: 3,
-      scaling: {
-        5: "You gain a +1d damage bonus with the strike.",
-        7: "The damage bonus increases to +2d.",
-      },
-      type: "Duration",
-    },
-
-    {
-      name: "Stunning Smash",
-
-      effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
-      `,
-      rank: 7,
-      type: "Duration",
-    },
-
-    {
-      name: "Tenderizing Blow",
-
-      effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty using a bludgeoning weapon.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
       `,
       rank: 5,
       scaling: {
@@ -356,9 +358,25 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 5,
       scaling: {
-        7: "You gain a +1d damage bonus with the strike.",
+        7: "You gain a +5 damage bonus with the strike.",
       },
       type: "Duration",
+    },
+
+    {
+      name: "Stomach-Churning Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to Fortitude defense.
+      `,
+      rank: 3,
+      scaling: {
+        5: "The penalty increases to -3.",
+        7: "The penalty increases to -4.",
+      },
+      type: "Instant",
     },
   ],
 };

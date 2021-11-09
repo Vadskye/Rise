@@ -113,10 +113,10 @@ export const unbreakableDefense: CombatStyle = {
       name: "Bracing Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty.
-        Your \\glossterm{power} with the strike is halved.
+        Make a melee \\glossterm{strike}.
+        You do not add your \\glossterm{power} to damage with the strike.
 
-        In addition, you are \\glossterm{impervious} to \\glossterm{physical damage} this round.
+        You are \\glossterm{impervious} to \\glossterm{physical damage} this round.
         Becoming impervious in this way is a \\abilitytag{Swift} ability, so it affects damage you take during the current phase.
       `,
       rank: 5,
@@ -151,10 +151,11 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: "Shield Slam",
 
+      // Half power instead of no power due to shield restrictio
       effect: `
         Make a \\glossterm{strike} using a shield.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+        Each creature damaged by the strike is \\glossterm{briefy} \\dazed.
       `,
       rank: 1,
       scaling: {
@@ -169,15 +170,14 @@ export const unbreakableDefense: CombatStyle = {
       name: "Greater Shield Slam",
 
       effect: `
-        Make a \\glossterm{strike} with -1d damage penalty using a shield.
+        Make a \\glossterm{strike} using a shield.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
+        Each creature damaged by the strike is \\glossterm{briefy} \\stunned.
       `,
+      rank: 5,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        7: "You gain a +1 accuracy bonus with the strike.",
       },
-      rank: 3,
       type: "Duration",
     },
 
@@ -185,7 +185,8 @@ export const unbreakableDefense: CombatStyle = {
       name: "Defensive Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Make a melee \\glossterm{strike}.
+        You do not add your \\glossterm{power} to damage with the strike.
         In exchange, you gain a +2 bonus to Armor and Reflex defenses until the end of the round.
         The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
       `,
@@ -237,7 +238,8 @@ export const unbreakableDefense: CombatStyle = {
       name: "Revitalizing Strike",
 
       effect: `
-        Make a strike with a -2d damage penalty.
+        Make a strike.
+        Your \\glossterm{power} with the strike is halved.
         In addition, you regain 2d6 + half \\glossterm{power} hit points.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
@@ -253,7 +255,8 @@ export const unbreakableDefense: CombatStyle = {
       name: "Greater Revitalizing Strike",
 
       effect: `
-        Make a strike with a -2d damage penalty.
+        Make a strike.
+        Your \\glossterm{power} with the strike is halved.
         In addition, you regain 4d10 + \\glossterm{power} hit points.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
@@ -299,9 +302,11 @@ export const unbreakableDefense: CombatStyle = {
       name: "Prepared Defense",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d damage penalty.
-        After you make the strike, choose any one defense: Armor, Fortitude, Reflex, or Mental.
+        Make a \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        In addition, choose any one defense: Armor, Fortitude, Reflex, or Mental.
         You \\glossterm{briefly} gain a +2 bonus to that defense.
+        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
       scaling: {
@@ -316,10 +321,12 @@ export const unbreakableDefense: CombatStyle = {
       name: "Greater Prepared Defense",
 
       effect: `
-        Make a strike with a -1d damage penalty.
+        Make a strike.
+        Your \\glossterm{power} with the strike is halved.
         After you make the strike, you \\glossterm{briefly} gain a +2 bonus to all defenses.
+        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 6,
+      rank: 5,
       type: "Duration",
     },
   ],

@@ -8,25 +8,28 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: "Twinstrike",
 
+      // roll twice is a little over 2.5 accuracy
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty.
-        You roll to hit twice and take the higher result.
+        Make a \\glossterm{strike}.
+        You may reroll the accuracy roll and take the highest result.
+        However, you do not add your \\glossterm{power} to damage with the strike.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
 
+    // roll three times is about 4.5 accuracy
     {
       name: "Triplestrike",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d damage penalty.
-        You roll to hit three times and take the highest result.
+        Make a \\glossterm{strike}.
+        You may reroll the accuracy roll twice and take the highest result.
+        However, you do not add your \\glossterm{power} to damage with the strike.
       `,
       rank: 6,
       type: "Instant",
@@ -37,7 +40,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         In addition, you can drink a potion.
         You must still have a free hand that is not being used to make the strike to hold and drink the potion.
       `,
@@ -62,7 +65,7 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +1d damage bonus with both strikes.",
+        6: "You gain a +5 damage bonus with both strikes.",
       },
       type: "Instant",
     },
@@ -85,46 +88,41 @@ export const flurryOfBlows: CombatStyle = {
       name: "Rebounding Flurry",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        You can make an additional \\glossterm{strike} with a -2d damage penalty against each creature that resisted all damage from the first strike.
-        Your \\glossterm{power} with both strikes is halved.
+        Make a melee \\glossterm{strike}.
+        You can make an additional \\glossterm{strike} against each creature that resisted all damage from the first strike.
+        You do not add your \\glossterm{power} to damage with either strike.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "The damage penalty with both strikes is reduced to -1d.",
-        6: "The damage penalty with both strikes is removed.",
+        5: "You gain a +1 accuracy bonus with both strikes.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
 
+    // TODO: unclear rank
     {
       name: "Strike Flurry",
 
-      // basically +1d
       effect: `
         Make two \\glossterm{strikes}.
-        You take a -2d damage penalty with both strikes, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with either strike.
       `,
-      rank: 3,
-      scaling: {
-        5: "The damage penalty with both strikes is reduced to -1d.",
-        7: "The damage penalty with both strikes is removed.",
-      },
+      rank: 6,
       type: "Instant",
     },
 
     {
       name: "Power Flurry",
 
-      // basically +3d, -3a
       effect: `
         Make two \\glossterm{strikes} with a -3 penalty to \\glossterm{accuracy}.
         Your \\glossterm{power} is halved with both strikes.
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1d damage bonus with both strikes.",
-        6: "The damage bonus increases to +2d.",
+        4: "You gain a +2 damage bonus with both strikes.",
+        6: "The damage bonus increases to +5.",
       },
       type: "Instant",
     },
@@ -150,7 +148,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         The strike targets all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
         Each creature damaged by the strike that is no more than one size category larger than you larger than you falls \\glossterm{prone}.
       `,
@@ -166,7 +164,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make two melee \\glossterm{strikes} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
-        You take a -2d damage penalty with both strikes, and your \\glossterm{power} is halved.
+        You take a -2 accuracy penalty with both strikes, and you do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 7,
       type: "Instant",
@@ -182,7 +180,7 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +1d damage bonus with both strikes.",
+        6: "You gain a +5 damage bonus with both strikes.",
       },
       type: "Instant",
     },
@@ -268,9 +266,10 @@ export const flurryOfBlows: CombatStyle = {
 
       // condition is -1 rank worse than a normal r1 condition
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty.
-        You roll to hit twice and take the higher result.
-        Each creature that loses \\glossterm{hit points} from the strike \\glossterm{briefly} takes a -4 penalty to \\glossterm{initiative} checks and Awareness checks.
+        Make a \\glossterm{strike}.
+        You may reroll the accuracy roll twice and take the highest result.
+        However, do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike \\glossterm{briefly} takes a -4 penalty to \\glossterm{initiative} checks and Awareness checks.
       `,
       rank: 4,
       scaling: {
@@ -284,19 +283,13 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        % This would be easier to write as +1d up to +3d, but that is very
-        % annoying to track in practice due to the different dice for each stage.
-        % A static damage bonus is more complex to write down, but much easier
-        % to actually make attacks with.
-        For each previous consecutive round that you used this ability, you gain a +1 damage bonus with the strike, up to a maximum of +3.
+        For each previous consecutive round in which you used this ability, you gain a +2 damage bonus with the strike, up to a maximum of +5.
       `,
       scaling: {
-        special: `
-          The damage bonus for each consecutive round increases by 1 for each rank beyond 1.
-          In addition, the maximum damage bonus increases by 3 for each rank beyond 1.
-        `,
+        4: 'The damage bonus per round increases to +3, and the maximum damage bonus increases to +10.',
+        6: 'The damage bonus per round increases to +5, and the maximum damage bonus increases to +15.',
       },
-      rank: 1,
+      rank: 2,
       type: "Instant",
     },
 
@@ -304,15 +297,15 @@ export const flurryOfBlows: CombatStyle = {
       name: "Deathseeking Flurry",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        You can make an additional \\glossterm{strike} with a -2d damage penalty against each creature that lost hit points from the first strike.
-        Your \\glossterm{power} with both strikes is halved.
+        Make a melee \\glossterm{strike}.
+        If you use this ability during the \\glossterm{action phase}, you can make an additional \\glossterm{strike} against each creature that lost hit points from the first strike during the \\glossterm{delayed action phase}.
+        You do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 1,
       scaling: {
-        3: "The damage penalty with both strikes is reduced to -1d.",
-        5: "The damage penalty with both strikes is removed.",
-        7: "You gain a +1d damage bonus with both strikes.",
+        3: "You gain a +2 damage bonus with both strikes.",
+        5: "The damage bonus increases to +5.",
+        7: "The damage bonus increases to +10.",
       },
       type: "Instant",
     },
@@ -336,15 +329,14 @@ export const flurryOfBlows: CombatStyle = {
       name: "Mind-Numbing Swiftstrike",
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        4: "The accuracy bonus increases to +2.",
+        6: "The accuracy bonus increases to +3.",
       },
       type: "Instant",
     },
@@ -353,27 +345,11 @@ export const flurryOfBlows: CombatStyle = {
       name: "Greater Mind-Numbing Swiftstrike",
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
       `,
-      rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Mind-Numbing Swiftstrike",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\confused as a \\glossterm{condition}.
-      `,
-      rank: 7,
+      rank: 6,
       type: "Instant",
     },
   ],

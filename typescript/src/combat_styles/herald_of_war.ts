@@ -190,13 +190,14 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
       `,
-      rank: 3,
+      rank: 1,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Duration",
     },
@@ -206,14 +207,13 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -1d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       tags: ["Emotion"],
       type: "Duration",
@@ -224,10 +224,10 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You take a -2d damage penalty with the strike, and your \\glossterm{power} is halved.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 6,
       tags: ["Emotion"],
       type: "Duration",
     },
@@ -237,13 +237,14 @@ export const heraldOfWar: CombatStyle = {
       name: "Awe-Inspiring Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\smallarea radius from you.
         On a hit, each subject is \\glossterm{briefly} \\shaken by you.
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +1 accuracy bonus with both the strike and area attacks.",
+        6: "You gain a +1 accuracy bonus with both the strike and the area attack.",
       },
       type: "Duration",
     },
@@ -252,14 +253,15 @@ export const heraldOfWar: CombatStyle = {
       name: "Inspiring Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         Your \\glossterm{allies} within a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to Mental defense.
       `,
       rank: 1,
       scaling: {
-        3: "The damage penalty with the strike is reduced to -1d.",
-        5: "The damage penalty with the strike is removed.",
-        7: "You gain a +1d damage bonus with the strike.",
+        3: "You gain a +2 damage bonus with the strike.",
+        5: "The damage bonus increases to +5.",
+        7: "The damage bonus increases to +10.",
       },
       type: "Duration",
     },
@@ -281,7 +283,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Steadfast Battlecry",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\largearea radius from you \\glossterm{briefly} gain a +1 bonus to \\glossterm{vital rolls}.
+        You and each living \\glossterm{ally} in a \\hugearea radius from you \\glossterm{briefly} gain a +1 bonus to \\glossterm{vital rolls}.
       `,
       rank: 1,
       scaling: {
