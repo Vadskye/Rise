@@ -34,6 +34,8 @@ def create_page(destination):
             legacy_item(),
             div({"class": "section-header"}, "Body Armor"),
             body_armor(destination),
+            div({"class": "section-header"}, "Weapons"),
+            *weapons(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
             *(
                 [
@@ -52,7 +54,7 @@ def create_page(destination):
                     equipment(),
                 )]
                 if destination == "roll20" else
-                [equipment() for i in range(6)]
+                [equipment() for i in range(3)]
             ),
             div({"class": "section-header"}, "Inventory"),
             textarea({"name": "inventory"}),
@@ -174,3 +176,19 @@ def body_armor(destination):
             )
         ],
     )
+
+def weapons(destination):
+    if destination == "roll20":
+        return [
+            fieldset({"class": "repeating_weapons"}, weapon())
+        ]
+    else:
+        return [weapon() for i in range(3)]
+
+def weapon():
+    return flex_row([
+        labeled_text_input("Name", {"class": "weapon-name"}, {"name": "weapon_name"}),
+        labeled_text_input("Damage", {"class": "weapon-damage"}, {"name": "weapon_damage"}),
+        labeled_text_input("Tags", {"class": "weapon-tags"}, {"name": "weapon_tags"}),
+    ])
+
