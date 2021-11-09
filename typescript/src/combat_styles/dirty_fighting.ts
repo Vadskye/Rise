@@ -8,11 +8,11 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Dazing Fist",
 
-      // no dice penalty due to unarmed limitation
+      // half power instead of no power due to unarmed limitation
       effect: `
         Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 1,
       scaling: {
@@ -26,8 +26,9 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Stunning Fist",
 
+      // half power instead of no power due to unarmed limitation
       effect: `
-        Make a strike with a -1d damage penalty using an \\glossterm{unarmed attack}.
+        Make a strike penalty using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
@@ -43,9 +44,9 @@ export const dirtyFighting: CombatStyle = {
       name: "Quivering Palm",
 
       effect: `
-        Make a strike with a -1d damage penalty using an \\glossterm{unarmed attack}.
+        Make a strike using an \\glossterm{unarmed attack}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike loses additional hit points equal to a quarter of its maximum hit points.
+        Each creature that loses \\glossterm{hit points} from the strike takes additional bludgeoning damage to half of its maximum hit points, to a maximum of 100 extra damage.
       `,
       rank: 7,
       type: "Instant",
@@ -212,8 +213,8 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 2,
       scaling: {
-        4: "You gain a +1d damage bonus with the strike.",
-        6: "The damage bonus increases to +2d.",
+        4: "You gain a +2 damage bonus with the strike.",
+        6: "The damage bonus increases to +5.",
       },
       type: "Instant",
     },
@@ -257,7 +258,8 @@ export const dirtyFighting: CombatStyle = {
       name: "Alchemical Strike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         In addition, you can throw a tanglefoot bag, vial of alchemist's fire, or similar small object at a target of the strike.
         You must still have a free hand that is not being used to make the strike to throw the object.
       `,
@@ -272,14 +274,14 @@ export const dirtyFighting: CombatStyle = {
       name: "Slipstrike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +1d damage bonus.
+        Make a melee \\glossterm{strike} with a +2 damage bonus.
         After making the strike, you fall \\prone and are \\glossterm{briefly} unable to stand up.
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +2d.",
-        5: "The damage bonus increases to +3d.",
-        7: "The damage bonus increases to +4d.",
+        3: "The damage bonus increases to +5.",
+        5: "The damage bonus increases to +10.",
+        7: "The damage bonus increases to +15.",
       },
       type: "Instant",
     },
@@ -288,7 +290,8 @@ export const dirtyFighting: CombatStyle = {
       name: "Unbalancing Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a -2d damage penalty.
+        Make a \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to Reflex defense.
       `,
       rank: 3,
@@ -303,14 +306,15 @@ export const dirtyFighting: CombatStyle = {
       name: "Sweep the Leg",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
-        Each creature that loses \\glossterm{hit points} from the strike falls \\prone.
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by this strike falls \\prone.
+        A creature knocked prone in this way cannot be knocked prone by this effect again until it takes a \\glossterm{short rest}.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
@@ -319,12 +323,15 @@ export const dirtyFighting: CombatStyle = {
       name: "Anklesprainer",
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2d damage penalty.
+        Make a melee \\glossterm{strike}.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\slowed.
       `,
-      rank: 5,
+      rank: 1,
       scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Instant",
     },

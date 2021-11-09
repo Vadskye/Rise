@@ -16,8 +16,8 @@ export const mobileAssault: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1d damage bonus with the strike.",
-        6: "The damage bonus increases to +2d.",
+        4: "You gain a +2 damage bonus with the strike.",
+        6: "The damage bonus increases to +5.",
       },
       type: "Instant",
     },
@@ -38,13 +38,14 @@ export const mobileAssault: CombatStyle = {
       name: "Spring Attack",
 
       effect: `
-        Move up to half your movement speed and make a \\glossterm{strike} with a -1d damage penalty.
+        Move up to half your movement speed and make a \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         If you use this ability during the \\glossterm{action phase}, you may use the other half of your movement during the \\glossterm{delayed action phase}.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
@@ -53,7 +54,8 @@ export const mobileAssault: CombatStyle = {
       name: "Wanderer's Strike",
 
       effect: `
-        You can either move up to half your speed or make a \\glossterm{strike} with a -1d damage penalty.
+        You can either move up to half your speed or make a \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         If you use this ability during the \\glossterm{action phase}, you can take the other action during the \\glossterm{delayed action phase}.
       `,
       scaling: {
@@ -69,13 +71,13 @@ export const mobileAssault: CombatStyle = {
       name: "Greater Wanderer's Strike",
 
       effect: `
-        You can either move up to your speed or make a \\glossterm{strike} with a -1d damage penalty.
+        You can either move up to your speed or make a \\glossterm{strike}.
         If you use this ability during the \\glossterm{action phase}, you can take the other action during the \\glossterm{delayed action phase}.
       `,
       scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
+        7: "You gain a +1 accuracy bonus with the strike.",
       },
-      rank: 4,
+      rank: 5,
       type: "Instant",
     },
 
@@ -83,14 +85,15 @@ export const mobileAssault: CombatStyle = {
       name: "Push Through",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d damage penalty.
-        You can \\glossterm{briefly} move through the space of each creature that took damage from this strike.
+        Make a \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        You can \\glossterm{briefly} move through the space of each creature damaged by the strike.
       `,
       rank: 1,
       scaling: {
-        3: "The damage penalty is removed.",
-        5: "You gain a +1d damage bonus with the strike.",
-        7: "The damage bonus increases to +2d.",
+        3: "You gain a +2 damage bonus with the strike.",
+        5: "The damage bonus increases to +5.",
+        7: "The damage bonus increases to +10.",
       },
       type: "Duration",
     },
@@ -108,9 +111,9 @@ export const mobileAssault: CombatStyle = {
       },
       rank: 1,
       scaling: {
-        3: "You gain a +1d damage bonus with the strike at the end of the charge.",
-        5: "The damage bonus increases to +2d.",
-        7: "The damage bonus increases to +3d.",
+        3: "You gain a +2 damage bonus with the strike at the end of the charge.",
+        5: "The damage bonus increases to +5.",
+        7: "The damage bonus increases to +10.",
       },
       type: "Instant",
     },
@@ -125,8 +128,8 @@ export const mobileAssault: CombatStyle = {
       rank: 1,
       scaling: {
         3: "You also gain a +2 bonus to Reflex defense.",
-        5: "The defense bonus increses to +4.",
-        7: "The defense bonus increses to +6.",
+        5: "The defense bonus increses to +3.",
+        7: "The defense bonus increses to +4.",
       },
       type: "Duration",
     },
@@ -135,13 +138,15 @@ export const mobileAssault: CombatStyle = {
       name: "Retreating Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a -1d damage penalty.
+        Make a \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         In addition, you can move up to half your movement speed in a straight line away from one target of the strike.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Instant",
     },
@@ -197,7 +202,7 @@ export const mobileAssault: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +1d damage bonus with the strike.",
+        6: "You gain a +5 damage bonus with the strike.",
       },
       type: "Instant",
     },
@@ -211,8 +216,8 @@ export const mobileAssault: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "You gain a +1d damage bonus with the strike.",
-        7: "The damage bonus increases to +2d.",
+        5: "You gain a +2 damage bonus with the strike.",
+        7: "The damage bonus increases to +5.",
       },
       type: "Instant",
     },
@@ -241,9 +246,10 @@ export const mobileAssault: CombatStyle = {
         You can make a \\glossterm{strike} from any location you occupy during the leap.
       `,
       rank: 2,
+      // TODO: damage gap between this attack and leaping strike is awkward
       scaling: {
-        5: "You gain a +1d damage bonus with the strike.",
-        7: "The damage bonus increases to +2d.",
+        4: "You gain a +2 damage bonus with the strike.",
+        6: "The damage bonus increases to +5.",
       },
       type: "Instant",
     },
@@ -253,7 +259,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}, then move up to 10 feet and make another melee \\glossterm{strike}.
-        You take a -1d damage penalty with both strikes.
+        Your \\glossterm{power} with both strikes is halved.
         You cannot include the same creature or object as a target of both strikes.
         If your weapon has the Sweeping weapon tag, you ignore that tag on the first strike (see \\pcref{Sweeping}).
       `,
