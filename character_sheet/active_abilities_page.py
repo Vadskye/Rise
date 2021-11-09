@@ -26,6 +26,7 @@ from cgi_simple import (
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
+from old_attacks import old_attacks
 
 def create_page(destination):
     return flex_col(
@@ -36,21 +37,24 @@ def create_page(destination):
                 Each ability you add here will appear as a button on the Core page.
                 If you add a line with the format "Header=Effect" in an ability description, that line will become a special header for that ability, just like the "Attack" and "Defense" headers that are normally part of attacks.
             """),
-            div({"class": "section-header"}, "Magical Attacks"),
+            # New attacks
+            div({"class": "section-header"}, "Strike-Based Attacks"),
             fieldset(
-                {"class": f"repeating_magicalattacks"},
-                attack("magical"),
+                {"class": f"repeating_strikeattacks"},
+                strike_based_attack(),
             ),
-            div({"class": "section-header"}, "Mundane Attacks"),
+            div({"class": "section-header"}, "Other Damaging Attacks"),
             fieldset(
-                {"class": f"repeating_mundaneattacks"},
-                attack("mundane"),
+                {"class": f"repeating_otherdamagingattacks"},
+                other_damaging_attack(),
             ),
             div({"class": "section-header"}, "Non-Damaging Attacks"),
             fieldset(
-                {"class": f"repeating_attacks"},
-                attack("nondamaging"),
+                {"class": f"repeating_nondamagingattacks"},
+                nondamaging_attack(),
             ),
+            # Old attacks for backwards compatibility
+            *old_attacks(),
             flex_wrapper(div({"class": "section-header"}, "Other Abilities")),
             fieldset(
                 {"class": f"repeating_abilities"},
@@ -166,9 +170,7 @@ def paper_attack():
         ],
     )
 
-
-# source: 'magical', 'mundane', 'nondamaging'
-def attack(source):
+def shared_attack_framework(calcs=[], buttons=[]):
     return flex_row(
         {"class": "attack"},
         [
@@ -179,7 +181,7 @@ def attack(source):
                         labeled_text_input(
                             "Name",
                             {"class": "attack-name"},
-                            {"name": "attack0_name"},
+                            {"name": "attack_name"},
                         ),
                     ),
                     flex_row(
@@ -190,7 +192,7 @@ def attack(source):
                                 number_input(
                                     {
                                         "class": "fake-text",
-                                        "name": "attack0_accuracy",
+                                        "name": "attack_accuracy",
                                         "value": "0",
                                     }
                                 ),
@@ -199,28 +201,9 @@ def attack(source):
                             labeled_text_input(
                                 "Defense",
                                 {"class": "attack-defense"},
-                                {"name": "attack0_defense"},
+                                {"name": "attack_defense"},
                             ),
-                            labeled_text_input(
-                                "Dmg",
-                                {"class": "attack-dice"},
-                                {"name": "attack0_dice"},
-                            )
-                            if source != "nondamaging"
-                            else "",
-                            underlabel(
-                                "Power",
-                                select(
-                                    {"class": "attack-power", "name": "attack0_power"},
-                                    [
-                                        option({"value": "1", "selected": True}, "Full"),
-                                        option({"value": "0.5"}, "Half"),
-                                        option({"value": "0"}, "None"),
-                                    ],
-                                ),
-                            )
-                            if source != "nondamaging"
-                            else "",
+                            *calcs,
                         ],
                     ),
                 ],
@@ -228,85 +211,161 @@ def attack(source):
             labeled_textarea(
                 "Effect",
                 {"class": "attack-effect"},
-                {"name": "attack0_effect"},
+                {"name": "attack_effect"},
             ),
+            *buttons,
+        ],
+    )
+
+def strike_based_attack():
+    return shared_attack_framework(
+        [
+            labeled_number_input(
+                "+Dmg",
+                {"class": "attack-damage-modifier"},
+                {"name": "attack_damage_modifier"},
+            ),
+            underlabeled_checkbox(
+                "Magical?",
+                None,
+                {"class": "attack-is-magical", "name": "attack_is_magical"},
+            ),
+            underlabel(
+                "Power",
+                select(
+                    {"class": "attack-power", "name": "attack_power"},
+                    [
+                        option({"value": "1", "selected": True}, "Full"),
+                        option({"value": "0.5"}, "Half"),
+                        option({"value": "0"}, "None"),
+                    ],
+                ),
+            )
+        ],
+    )
+
+
+def other_damaging_attack():
+    return shared_attack_framework(
+        [
+            labeled_text_input(
+                "Dice",
+                {"class": "attack-damage-dice"},
+                {"name": "attack_damage_dice"},
+            ),
+            labeled_number_input(
+                "+Dmg",
+                {"class": "attack-damage-modifier"},
+                {"name": "attack_damage_modifier"},
+            ),
+            underlabeled_checkbox(
+                "Magical?",
+                None,
+                {"class": "attack-is-magical", "name": "attack_is_magical"},
+            ),
+            underlabel(
+                "Power",
+                select(
+                    {"class": "attack-power", "name": "attack_power"},
+                    [
+                        option({"value": "1", "selected": True}, "Full"),
+                        option({"value": "0.5"}, "Half"),
+                        option({"value": "0"}, "None"),
+                    ],
+                ),
+            )
+        ],
+        [
             button(
                 {
                     "class": "attack-roll",
                     "name": f"use_ability",
                     "type": "roll",
-                    "value": attack_button_text(source),
+                    "value": attack_button(construct_damage_text(
+                        "@{attack_damage_dice}+@{attack_damage_modifier}+[[" + calc_attack_power() + "]]",
+                        "repeating_otherdamagingattacks_crit",
+                        "repeating_otherdamagingattacks_glance",
+                    )),
                 },
                 "Attack",
             ),
-            button(
-                {
-                    "class": "hidden",
-                    "name": f"damage_dice_only",
-                    "type": "roll",
-                    "value": crit_damage_text(),
-                },
-                "",
-            ),
-            button(
-                {
-                    "class": "hidden",
-                    "name": f"power_only",
-                    "type": "roll",
-                    "value": glance_damage_text(source),
-                },
-                "",
-            ),
+            crit_damage_button("@{attack_damage_dice}"),
+            glance_damage_button("3"),
         ],
     )
 
-def attack_button_text(source):
-    damage = {
-        'nondamaging': '',
-        'magical': '[[@{attack0_dice}+floor(@{magical_power}*@{attack0_power})]]',
-        'mundane': '[[@{attack0_dice}+floor(@{mundane_power}*@{attack0_power})]]',
-    }[source]
-    repeating_section_name = {
-        'nondamaging': 'repeating_attacks',
-        'magical': 'repeating_magicalattacks',
-        'mundane': 'repeating_mundaneattacks',
-    }[source];
-    damage_text = (
-        " {{"
-        + "Damage=" + damage
-        + " [C](~" + repeating_section_name + "_damage_dice_only)"
-        + " [G](~" + repeating_section_name + "_power_only)"
+def calc_attack_power():
+    return (
+        "floor(@{magical_power}*@{attack_power}*@{attack_is_magical})"
+        + "+ floor(@{mundane_power}*@{attack_power}*abs(1 - @{attack_is_magical}))"
+    )
+
+def nondamaging_attack():
+    return shared_attack_framework([], [
+        button(
+            {
+                "class": "attack-roll",
+                "name": f"use_ability",
+                "type": "roll",
+                "value": attack_button(),
+            },
+            "Attack",
+        ),
+    ])
+
+def crit_damage_button(crit_damage_calculation):
+    return button(
+        {
+            "class": "hidden",
+            "name": f"crit",
+            "type": "roll",
+            "value": (
+                "&{template:custom}"
+                + " {{title=@{attack_name}}}"
+                + " {{subtitle=@{character_name}}}"
+                + " {{Crit Damage=[[" + crit_damage_calculation + "]]}}"
+                + " {{color=@{chat_color}}}"
+            ),
+        },
+        "",
+    )
+
+def glance_damage_button(glance_damage_calculation):
+    return button(
+        {
+            "class": "hidden",
+            "name": f"glance",
+            "type": "roll",
+            "value": (
+                "&{template:custom}"
+                + " {{title=@{attack_name}}}"
+                + " {{subtitle=@{character_name}}}"
+                + " {{Glance Damage=[[" + glance_damage_calculation + "]]}}"
+                + " {{color=@{chat_color}}}"
+            )
+        },
+        "",
+    )
+
+def construct_damage_text(normal_damage, crit_damage_button, glance_damage_button):
+    return (
+        " {{Damage=[[" + normal_damage + "]]"
+        + " [C](~" + crit_damage_button + ")"
+        + " [G](~" + glance_damage_button + ")"
         + "}}"
-    )if damage else ""
+    )
+
+def attack_button(damage_text=""):
     return (
         "&{template:custom}"
-        + " {{title=@{attack0_name}}}"
+        + " {{title=@{attack_name}}}"
         + " {{subtitle=@{character_name}}}"
-        + " {{Attack=[[d10!+@{attack0_accuracy}+@{accuracy}]] vs @{attack0_defense}}}"
+        + " {{Attack=[[d10!+@{attack_accuracy}+@{accuracy}]] vs @{attack_defense}}}"
         + damage_text
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
-        + " {{desc=@{attack0_effect}}}"
+        + " {{desc=@{attack_effect}}}"
     )
-
-def crit_damage_text():
-    return (
-        "&{template:custom}"
-        + " {{title=@{attack0_name}}}"
-        + " {{subtitle=@{character_name}}}"
-        + " {{Crit Damage=[[@{attack0_dice}]]}}"
-        + " {{color=@{chat_color}}}"
-    )
-
-def glance_damage_text(source):
-    return (
-        "&{template:custom}"
-        + " {{title=@{attack0_name}}}"
-        + " {{subtitle=@{character_name}}}"
-        + " {{Glance Damage=[[floor(@{" + source + "_power}*@{attack0_power})]]}}"
-        + " {{color=@{chat_color}}}"
-    )
-
 
 def universal_ability_button(name, effect, attack=None):
     return div(button(
