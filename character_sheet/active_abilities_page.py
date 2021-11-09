@@ -259,7 +259,7 @@ def weapon_buttons(i):
                 "type": "roll",
                 "value": weapon_attack_button(i),
             },
-            text_input({"disabled": "true", "name": "derp", "value": "@{weapon_" + i + "_name}"}),
+            text_input({"disabled": True, "name": "derp", "value": "@{weapon_" + i + "_name}"}),
         ),
         crit_damage_button(
             "@{weapon_" + i + "_damage_dice}",
@@ -305,11 +305,7 @@ def other_damaging_attack():
                     "class": "attack-roll",
                     "name": f"use_ability",
                     "type": "roll",
-                    "value": attack_button(construct_damage_text(
-                        "@{attack_damage_dice}+" + calc_attack_power(),
-                        "repeating_otherdamagingattacks_crit",
-                        "repeating_otherdamagingattacks_glance",
-                    )),
+                    "value": other_damaging_attack_button_text(),
                 },
                 "Attack",
             ),
@@ -317,6 +313,13 @@ def other_damaging_attack():
             glance_damage_button(calc_attack_power(), "glance"),
         ],
     )
+
+def other_damaging_attack_button_text():
+    return attack_button_text(construct_damage_text(
+        "@{attack_damage_dice}+" + calc_attack_power(),
+        "repeating_otherdamagingattacks_crit",
+        "repeating_otherdamagingattacks_glance",
+    ))
 
 def calc_attack_power():
     return (
@@ -331,7 +334,7 @@ def nondamaging_attack():
                 "class": "attack-roll",
                 "name": f"use_ability",
                 "type": "roll",
-                "value": attack_button(),
+                "value": attack_button_text(),
             },
             "Attack",
         ),
@@ -396,13 +399,13 @@ def weapon_attack_button(i):
         + " {{desc=@{attack_effect}}}"
     )
 
-def attack_button(damage_text=""):
+def attack_button_text(damage_text=None):
     return (
         "&{template:custom}"
         + " {{title=@{attack_name}}}"
         + " {{subtitle=@{character_name}}}"
         + " {{Attack=[[d10!+@{accuracy}+@{attack_accuracy}]] vs @{attack_defense}}}"
-        + " {{Damage=" + damage_text + "}}"
+        + ((" {{Damage=" + damage_text + "}}") if damage_text else "")
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
         + " {{desc=@{attack_effect}}}"
