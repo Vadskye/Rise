@@ -27,13 +27,14 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 \begin{instantability}{Sneak Attack}[Instant]
                     \rankline
                     Make a \glossterm{strike} with a \glossterm{light weapon} or any weapon with the Stealthy \glossterm{weapon tag} against a creature within \rngshort range.
-                    If the target is \unaware or \partiallyunaware of your attack, or if the target is adjacent to one of your \glossterm{allies}, you gain a \plus2d damage bonus with the strike.
+                    If the target is \unaware or \partiallyunaware of your attack, or if the target is adjacent to one of your \glossterm{allies}, you gain a \plus5 damage bonus with the strike.
+                    Unlike most damage bonuses, this damage bonus is doubled along with your damage dice when you get a \glossterm{critical hit}.
                     You do not gain this damage bonus against creatures who that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
 
                     \rankline
-                    \rank{3} The damage bonus increases to \plus3d.
-                    \rank{5} The damage bonus increases to \plus4d.
-                    \rank{7} The damage bonus increases to \plus5d.
+                    \rank{3} The damage bonus increases to \plus10.
+                    \rank{5} The damage bonus increases to \plus15.
+                    \rank{7} The damage bonus increases to \plus20.
                 \end{instantability}
             ",
             modifiers: None,
