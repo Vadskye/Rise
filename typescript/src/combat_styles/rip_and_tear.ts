@@ -74,12 +74,30 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Your \\glossterm{power} with the strike is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
       `,
-      rank: 4,
+      rank: 1,
       scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Brow Gash",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
+        This condition must be removed twice before the effect ends.
+      `,
+      rank: 5,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Duration",
     },
@@ -291,10 +309,11 @@ export const ripAndTear: CombatStyle = {
         Make a \\glossterm{strike} using a slashing weapon.
         If the target does not have any remaining \\glossterm{damage resistance}, your \\glossterm{power} with the strike is doubled.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
