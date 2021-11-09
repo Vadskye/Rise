@@ -255,7 +255,7 @@ def weapon_buttons(i):
         button(
             {
                 "class": "attack-roll",
-                "name": f"use_ability",
+                "name": f"use_ability_" + i,
                 "type": "roll",
                 "value": weapon_attack_button(i),
             },
@@ -391,7 +391,7 @@ def weapon_attack_button(i):
         + " {{Damage=" + construct_damage_text(
             "@{weapon_" + i + "_damage_dice}+" + calc_attack_power() + "+@{attack_damage_modifier}",
             "repeating_strikeattacks_crit_" + i,
-            "repeating_strikeattacks_glance",
+            "repeating_strikeattacks_glance_" + i,
         ) + "}}"
         + " {{Tags=@{weapon_" + i + "_tags}}}"
         + " {{color=@{chat_color}}}"
