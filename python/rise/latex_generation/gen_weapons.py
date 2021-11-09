@@ -913,17 +913,7 @@ def generate_weapons():
     weapons += [
         MagicItem(
             name="Surestrike",
-            rank=2,
-            material_type="Weapon",
-            tags=[],
-            description="""
-                As a standard action, you can make a \\glossterm<strike> with a +1 accuracy bonus using this weapon.
-            """,
-            short_description="Can attack with +1 accuracy",
-        ),
-        MagicItem(
-            name="Surestrike, Greater",
-            rank=4,
+            rank=3,
             material_type="Weapon",
             tags=[],
             description="""
@@ -932,8 +922,8 @@ def generate_weapons():
             short_description="Can attack with +2 accuracy",
         ),
         MagicItem(
-            name="Surestrike, Supreme",
-            rank=6,
+            name="Surestrike, Greater",
+            rank=5,
             material_type="Weapon",
             tags=[],
             description="""
@@ -941,38 +931,48 @@ def generate_weapons():
             """,
             short_description="Can attack with +3 accuracy",
         ),
+        MagicItem(
+            name="Surestrike, Supreme",
+            rank=7,
+            material_type="Weapon",
+            tags=[],
+            description="""
+                As a standard action, you can make a \\glossterm<strike> with a +4 accuracy bonus using this weapon.
+            """,
+            short_description="Can attack with +4 accuracy",
+        ),
     ]
 
     weapons += [
         MagicItem(
             name="Powerstrike",
-            rank=2,
+            rank=3,
             material_type="Weapon",
             tags=[],
             description="""
-                As a standard action, you can make a \\glossterm<strike> with a +1d damage bonus using this weapon.
+                As a standard action, you can make a \\glossterm<strike> with a +5 damage bonus using this weapon.
             """,
-            short_description="Can attack with +1d damage",
+            short_description="Can attack with +5 damage",
         ),
         MagicItem(
             name="Powerstrike, Greater",
-            rank=4,
+            rank=5,
             material_type="Weapon",
             tags=[],
             description="""
-                As a standard action, you can make a \\glossterm<strike> with a +2d damage bonus using this weapon.
+                As a standard action, you can make a \\glossterm<strike> with a +10 damage bonus using this weapon.
             """,
-            short_description="Can attack with +2d damage",
+            short_description="Can attack with +10 damage",
         ),
         MagicItem(
             name="Powerstrike, Supreme",
-            rank=6,
+            rank=7,
             material_type="Weapon",
             tags=[],
             description="""
-                As a standard action, you can make a \\glossterm<strike> with a +3d damage bonus using this weapon.
+                As a standard action, you can make a \\glossterm<strike> with a +15 damage bonus using this weapon.
             """,
-            short_description="Can attack with +3d damage",
+            short_description="Can attack with +15 damage",
         ),
     ]
 
