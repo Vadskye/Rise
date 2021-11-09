@@ -282,7 +282,7 @@ def other_damaging_attack():
                     "name": f"use_ability",
                     "type": "roll",
                     "value": attack_button(construct_damage_text(
-                        "@{attack_damage_dice}+@{attack_damage_modifier}+[[" + calc_attack_power() + "]]",
+                        "@{attack_damage_dice}+@{attack_damage_modifier}+" + calc_attack_power(),
                         "repeating_otherdamagingattacks_crit",
                         "repeating_otherdamagingattacks_glance",
                     )),
@@ -290,14 +290,14 @@ def other_damaging_attack():
                 "Attack",
             ),
             crit_damage_button("@{attack_damage_dice}"),
-            glance_damage_button("3"),
+            glance_damage_button("@{attack_damage_modifier}+" + calc_attack_power()),
         ],
     )
 
 def calc_attack_power():
     return (
-        "floor(@{magical_power}*@{attack_power}*@{attack_is_magical})"
-        + "+ floor(@{mundane_power}*@{attack_power}*abs(1 - @{attack_is_magical}))"
+        "[[floor(@{magical_power}*@{attack_power}*@{attack_is_magical})"
+        + "+ floor(@{mundane_power}*@{attack_power}*abs(1 - @{attack_is_magical}))]]"
     )
 
 def nondamaging_attack():
