@@ -1,15 +1,11 @@
 .attunement {
-    .attunement-effect {
-        flex-grow: 1;
-        margin-left: 0.5em;
-    }
-
     .attunement-name {
         width: 15em;
         margin-right: 0.5em;
     }
 
     .usage-class-dropdown {
+        margin-right: 0.5em;
         width: 80px;
 
         select {
@@ -17,6 +13,19 @@
         }
     }
 }
+.attunement-effect, .weapon-effects {
+    flex-grow: 1;
+}
+.weapon-name, .weapon-accuracy, .weapon-damage-dice, .weapon-tags {
+    margin-right: 0.5em;
+}
+.weapon-name {
+    width: 10em;
+}
+.weapon-tags {
+    width: 15em;
+}
+
 .paper .usage-class {
     width: 10em;
 }

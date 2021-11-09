@@ -213,7 +213,7 @@ def shared_attack_framework(calcs=[], buttons=[]):
                 {"class": "attack-effect"},
                 {"name": "attack_effect"},
             ),
-            *buttons,
+            flex_col({"class": "attack-buttons"}, buttons),
         ],
     )
 
@@ -225,11 +225,6 @@ def strike_based_attack():
                 {"class": "attack-damage-modifier"},
                 {"name": "attack_damage_modifier"},
             ),
-            underlabeled_checkbox(
-                "Magical?",
-                None,
-                {"class": "attack-is-magical", "name": "attack_is_magical"},
-            ),
             underlabel(
                 "Power",
                 select(
@@ -240,13 +235,17 @@ def strike_based_attack():
                         option({"value": "0"}, "None"),
                     ],
                 ),
-            )
+            ),
+            underlabeled_checkbox(
+                "Magical?",
+                {"class": "attack-is-magical"},
+                {"name": "attack_is_magical"},
+            ),
         ],
         [
             *weapon_buttons(0),
             *weapon_buttons(1),
             *weapon_buttons(2),
-            *weapon_buttons(3),
         ],
     )
 
@@ -283,16 +282,6 @@ def other_damaging_attack():
                 {"class": "attack-damage-dice"},
                 {"name": "attack_damage_dice"},
             ),
-            labeled_number_input(
-                "+Dmg",
-                {"class": "attack-damage-modifier"},
-                {"name": "attack_damage_modifier"},
-            ),
-            underlabeled_checkbox(
-                "Magical?",
-                None,
-                {"class": "attack-is-magical", "name": "attack_is_magical"},
-            ),
             underlabel(
                 "Power",
                 select(
@@ -303,7 +292,12 @@ def other_damaging_attack():
                         option({"value": "0"}, "None"),
                     ],
                 ),
-            )
+            ),
+            underlabeled_checkbox(
+                "Magical?",
+                None,
+                {"class": "attack-is-magical", "name": "attack_is_magical"},
+            ),
         ],
         [
             button(
@@ -312,7 +306,7 @@ def other_damaging_attack():
                     "name": f"use_ability",
                     "type": "roll",
                     "value": attack_button(construct_damage_text(
-                        "@{attack_damage_dice}+" + calc_attack_power() + "+@{attack_damage_modifier}",
+                        "@{attack_damage_dice}+" + calc_attack_power(),
                         "repeating_otherdamagingattacks_crit",
                         "repeating_otherdamagingattacks_glance",
                     )),
@@ -320,7 +314,7 @@ def other_damaging_attack():
                 "Attack",
             ),
             crit_damage_button("@{attack_damage_dice}", "crit"),
-            glance_damage_button("@{attack_damage_modifier}+" + calc_attack_power(), "glance"),
+            glance_damage_button(calc_attack_power(), "glance"),
         ],
     )
 

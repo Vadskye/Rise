@@ -12,8 +12,8 @@
 }
 
 .active-ability-name, .attack-prefix {
-    // Matches max reasonable width for button names on Core page
-    width: 16em;
+    // Exceeds max reasonable width for button names on Core page by about 2em
+    width: 18em;
 }
 
 .attack-name input[type=text], .active-ability-name input[type=text] {
@@ -63,7 +63,7 @@
 }
 
 textarea {
-    height: 5.5em;
+    height: 6em;
     margin: 0;
     // it seems like textareas naturally bleed into their surroundings due to
     // the weird behavior of their padding
@@ -87,3 +87,24 @@ textarea {
         margin-right: 1em;
     }
 }
+
+.attack-buttons {
+    width: 155px;
+
+    .attack-roll {
+        width: 150px;
+        margin-bottom: 0.25em;
+
+        > input[type=text] {
+            background: none;
+            border: 0;
+            box-shadow: none;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            width: 130px;
+        }
+    }
+}
+

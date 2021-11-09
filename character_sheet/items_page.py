@@ -179,19 +179,15 @@ def body_armor(destination):
     )
 
 def weapons(destination):
-    if destination == "roll20" and False:
-        return [
-            fieldset({"class": "repeating_weapons"}, weapon())
-        ]
-    else:
-        return [weapon(i) for i in range(4)]
+    return [weapon(i) for i in range(3)]
 
 def weapon(i):
     i = str(i)
-    return flex_row([
+    return flex_row({"class": "weapon"}, [
         labeled_text_input("Name", {"class": "weapon-name"}, {"name": f"weapon_{i}_name"}),
         labeled_number_input("Accuracy", {"class": "weapon-accuracy"}, {"name": f"weapon_{i}_accuracy"}),
-        labeled_text_input("Damage", {"class": "weapon-damage"}, {"name": f"weapon_{i}_damage_dice"}),
+        labeled_text_input("Damage", {"class": "weapon-damage-dice"}, {"name": f"weapon_{i}_damage_dice"}),
         labeled_text_input("Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}),
+        labeled_text_input("Effects", {"class": "weapon-effects"}, {"name": f"weapon_{i}_effects"}),
     ])
 
