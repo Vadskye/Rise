@@ -8,6 +8,7 @@ from cgi_simple import (
     flex_row,
     flex_wrapper,
     label,
+    labeled_number_input,
     labeled_text_input,
     number_input,
     option,
@@ -178,17 +179,19 @@ def body_armor(destination):
     )
 
 def weapons(destination):
-    if destination == "roll20":
+    if destination == "roll20" and False:
         return [
             fieldset({"class": "repeating_weapons"}, weapon())
         ]
     else:
-        return [weapon() for i in range(3)]
+        return [weapon(i) for i in range(4)]
 
-def weapon():
+def weapon(i):
+    i = str(i)
     return flex_row([
-        labeled_text_input("Name", {"class": "weapon-name"}, {"name": "weapon_name"}),
-        labeled_text_input("Damage", {"class": "weapon-damage"}, {"name": "weapon_damage"}),
-        labeled_text_input("Tags", {"class": "weapon-tags"}, {"name": "weapon_tags"}),
+        labeled_text_input("Name", {"class": "weapon-name"}, {"name": f"weapon_{i}_name"}),
+        labeled_number_input("Accuracy", {"class": "weapon-accuracy"}, {"name": f"weapon_{i}_accuracy"}),
+        labeled_text_input("Damage", {"class": "weapon-damage"}, {"name": f"weapon_{i}_damage_dice"}),
+        labeled_text_input("Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}),
     ])
 
