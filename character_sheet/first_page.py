@@ -24,7 +24,7 @@ from cgi_simple import (
     underlabeled_checkbox,
     underlabel_spaced,
 )
-from old_attacks import attack_button_text
+from active_abilities_page import attack_button_text, other_damaging_attack_button_text
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
 
@@ -63,28 +63,28 @@ def paper_ability():
 
 def roll20_abilities():
     return [
-        div({"class": "section-header"}, "Magical Attacks"),
+        div({"class": "section-header"}, "Strike-Based Attacks"),
         flex_row(
             {"class": "active-ability-group"},
             fieldset(
-                {"class": f"repeating_magicalattacks"},
-                active_ability_button("attack", "magical"),
+                {"class": f"repeating_strikeattacks"},
+                active_ability_button("strike-based attack"),
             ),
         ),
-        div({"class": "section-header"}, "Mundane Attacks"),
+        div({"class": "section-header"}, "Other Damaging Attacks"),
         flex_row(
             {"class": "active-ability-group"},
             fieldset(
-                {"class": f"repeating_mundaneattacks"},
-                active_ability_button("attack", "mundane"),
+                {"class": f"repeating_otherdamagingattacks"},
+                active_ability_button("other damaging attack"),
             ),
         ),
         div({"class": "section-header"}, "Non-Damaging Attacks"),
         flex_row(
             {"class": "active-ability-group"},
             fieldset(
-                {"class": f"repeating_attacks"},
-                active_ability_button("attack", "nondamaging"),
+                {"class": f"repeating_nondamagingattacks"},
+                active_ability_button("nondamaging attack"),
             ),
         ),
         div({"class": "section-header"}, "Other Abilities"),
@@ -503,20 +503,26 @@ def movement(destination):
         ],
     )
 
-def active_ability_button(ability_type, source=None):
-    prefix = "attack0" if ability_type == "attack" else "active_ability0"
+def active_ability_button(ability_type):
+    prefix = "active_ability0" if ability_type == "ability" else "attack"
     button_name = "use_ability"
-    button_value = (
-        "&{template:custom}"
-        + " {{title=@{active_ability0_name}}}"
-        + " {{subtitle=@{character_name}}}"
-        + " {{color=@{chat_color}}}"
-        + " {{desc=@{active_ability0_effect}}}"
-    ) if ability_type == "ability" else attack_button_text(source)
+    button_value = {
+        "ability": (
+            "&{template:custom}"
+            + " {{title=@{active_ability0_name}}}"
+            + " {{subtitle=@{character_name}}}"
+            + " {{color=@{chat_color}}}"
+            + " {{desc=@{active_ability0_effect}}}"
+        ),
+        "nondamaging attack": attack_button_text(),
+        "other damaging attack": other_damaging_attack_button_text(),
+        "strike-based attack": "TODO",
+    }[ability_type]
     return div({"class": "active-ability-button"}, [
         text_input({"class": "hidden", "name": prefix + "_accuracy", "value": "0"}),
         text_input({"class": "hidden", "name": prefix + "_defense"}),
-        text_input({"class": "hidden", "name": prefix + "_dice"}),
+        text_input({"class": "hidden", "name": prefix + "_damage_dice"}),
+        checkbox({"class": "hidden", "name": prefix + "_is_magical", "value": "1"}),
         underlabel(
             "Power",
             select(
