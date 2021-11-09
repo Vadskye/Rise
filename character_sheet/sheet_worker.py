@@ -923,9 +923,6 @@ def debuffs():
                 reflex -= 4;
                 mental -= 4;
             }}
-            if (confused) {{
-                debuff_headers += " {{{{Confusion=[[d4]]}}}}"
-            }}
             if (underwater) {{
                 accuracy -= 4;
                 armor -= 4;
