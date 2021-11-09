@@ -268,6 +268,19 @@ def labeled_text_input(label_name, attributes=None, input_attributes=None):
         ),
     )
 
+def labeled_number_input(label_name, attributes=None, input_attributes=None):
+    attributes = attributes or dict()
+    space_append(attributes, "class", "labeled-text-input")
+    return div(
+        attributes,
+        flex_col(
+            [
+                number_input(input_attributes),
+                span({"class": "under-label"}, label_name),
+            ]
+        ),
+    )
+
 
 def labeled_textarea(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()
@@ -283,17 +296,11 @@ def labeled_textarea(label_name, attributes=None, input_attributes=None):
     )
 
 
-def labeled_number_input(
-    label_name, input_name=None, attributes=None, input_attributes=None
+def sidelabeled_number_input(
+    label_name, attributes=None, input_attributes=None
 ):
     attributes = attributes or dict()
-    space_append(attributes, "class", "labeled-number-input")
-    input_name = input_name or label_name.lower()
-
-    if input_attributes is None:
-        input_attributes = {"name": input_name}
-    else:
-        input_attributes["name"] = input_attributes.get("name") or input_name
+    space_append(attributes, "class", "sidelabeled-number-input")
 
     return flex_row(
         attributes,
@@ -421,7 +428,7 @@ def underlabel_spaced(label_name, input_html, attributes=None):
 
 def sidelabel(label_name, input_html, attributes=None):
     attributes = attributes or dict()
-    space_append(attributes, "class", "labeled-number-input")
+    space_append(attributes, "class", "sidelabeled-number-input")
 
     return flex_row(
         attributes,
@@ -443,6 +450,7 @@ def option(attributes=None, contents=None):
 def checkbox(attributes=None):
     attributes = attributes or dict()
     attributes["type"] = "checkbox"
+    attributes["value"] = "1"
     return html_tag("input", attributes)
 
 

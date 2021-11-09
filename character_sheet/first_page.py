@@ -9,7 +9,7 @@ from cgi_simple import (
     freeform_number_input,
     invisiblebutton,
     label,
-    labeled_number_input,
+    sidelabeled_number_input,
     labeled_textarea,
     labeled_text_input,
     number_input,
@@ -24,7 +24,7 @@ from cgi_simple import (
     underlabeled_checkbox,
     underlabel_spaced,
 )
-from active_abilities_page import attack_button_text
+from old_attacks import attack_button_text
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
 
@@ -267,7 +267,7 @@ def defenses():
             div({"class": "section-header"}, "Defenses"),
             flex_row({"class": "defenses-row"}, [
                 flex_col({"class": "standard-defenses"}, [
-                    labeled_number_input(
+                    sidelabeled_number_input(
                         defense,
                         input_attributes={
                             "disabled": "true",
@@ -433,7 +433,7 @@ def core_statistics():
                     ],
                 ),
             ),
-            labeled_number_input(
+            sidelabeled_number_input(
                 "Accuracy",
                 input_attributes={
                     "disabled": True,
@@ -450,7 +450,7 @@ def movement(destination):
         {"class": "movement"},
         [
             flex_wrapper(div({"class": "section-header"}, "Movement")),
-            labeled_number_input(
+            sidelabeled_number_input(
                 "Land",
                 input_attributes={
                     "disabled": True,
@@ -477,7 +477,7 @@ def movement(destination):
                 )
                 if destination == "paper"
                 else flex_row(
-                    {"class": "labeled-number-input"},
+                    {"class": "sidelabeled-number-input"},
                     [
                         flex_wrapper(
                             {"class": "core-initiative"},
