@@ -873,12 +873,12 @@ impl Class {
                             Instant
                             \rankline
                             Make a \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy}.
-                            You gain a \plus2d damage bonus with the strike.
+                            You gain a \plus5 damage bonus with the strike.
 
                             \rankline
-                            \rank{3} The damage bonus increases to \plus3d.
-                            \rank{5} The damage bonus increases to \plus4d.
-                            \rank{7} The damage bonus increases to \plus5d.
+                            \rank{3} The damage bonus increases to \plus10.
+                            \rank{5} The damage bonus increases to \plus15.
+                            \rank{7} The damage bonus increases to \plus20.
                         \end{instantability}
                         \parhead{Aspect} Your abilities deal double damage to objects.
                         \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.
