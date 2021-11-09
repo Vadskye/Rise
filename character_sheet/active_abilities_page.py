@@ -242,6 +242,19 @@ def strike_based_attack():
                 ),
             )
         ],
+        [
+            button(
+                {
+                    "class": "attack-roll",
+                    "name": f"use_ability",
+                    "type": "roll",
+                    "value": weapon_attack_button(),
+                },
+                # text_input({"disabled": "true", "name": "derp", "value": "@{weapon_0_name}"}),
+                "Attack",
+            ),
+            glance_damage_button("@{attack_damage_modifier}+" + calc_attack_power()),
+        ],
     )
 
 
@@ -349,11 +362,41 @@ def glance_damage_button(glance_damage_calculation):
 
 def construct_damage_text(normal_damage, crit_damage_button, glance_damage_button):
     return (
-        " {{Damage=[[" + normal_damage + "]]"
+        " [[" + normal_damage + "]]"
         + " [C](~" + crit_damage_button + ")"
         + " [G](~" + glance_damage_button + ")"
-        + "}}"
     )
+
+def weapon_attack_button():
+    return (
+        "&{template:custom}"
+        + " {{title=@{attack_name}}}"
+        + " {{subtitle=@{character_name}}}"
+        + "?{Weapon"
+            + "| " + weapon_template(0)
+            + "| " + weapon_template(1)
+            + "| " + weapon_template(2)
+            + "| " + weapon_template(3)
+        + "}"
+        + " {{color=@{chat_color}}}"
+        + " @{debuff_headers}"
+        + " {{desc=@{attack_effect}}}"
+    )
+
+def weapon_template(i):
+    i = str(i)
+
+    return (
+        " @{weapon_" + i + "_name},"
+        + "{{Weapon=@{weapon_" + i + "_name}&amp;#125;&amp;#125;"
+        + " {{Attack=[[d10!+@{weapon_" + i + "_accuracy}+@{attack_accuracy}+@{accuracy}]] vs @{attack_defense}&amp;#125;&amp;#125;"
+        + " {{Damage=" + construct_damage_text(
+            "@{weapon_" + i + "_damage_dice}+@{attack_damage_modifier}+" + calc_attack_power(),
+            "repeating_strikeattacks_crit",
+            "repeating_strikeattacks_glance",
+        ) + "&amp;#125;&amp;#125;"
+        + " {{Tags=@{weapon_" + i + "_tags}&amp;#125;&amp;#125;"
+    ).replace('~', '&amp;#126;')
 
 def attack_button(damage_text=""):
     return (
@@ -361,7 +404,7 @@ def attack_button(damage_text=""):
         + " {{title=@{attack_name}}}"
         + " {{subtitle=@{character_name}}}"
         + " {{Attack=[[d10!+@{attack_accuracy}+@{accuracy}]] vs @{attack_defense}}}"
-        + damage_text
+        + " {{Damage=" + damage_text + "}}"
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
         + " {{desc=@{attack_effect}}}"
