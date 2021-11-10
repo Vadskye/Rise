@@ -585,7 +585,7 @@ def weapon_template(i):
         " @{weapon_" + i + "_name},"
         + " {{subtitle=@{character_name} - @{weapon_" + i + "_name}&amp;#125;&amp;#125;"
         + " {{Attack=[[d10!+@{accuracy}+@{weapon_" + i + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}&amp;#125;&amp;#125;"
-        + " {{Damage=[[@{weapon_" + i + "_damage_dice}+" + calc_attack_power() + "+@{attack_damage_modifier}]]&amp;#125;&amp;#125;"
+        + " {{Damage=[[[[@{weapon_" + i + "_damage_dice}]] + [[" + calc_attack_power() + "+@{attack_damage_modifier}]]]] = $[[1]] + $[[3]]&amp;#125;&amp;#125;"
         + " {{Tags=@{weapon_" + i + "_tags}&amp;#125;&amp;#125;"
     ).replace('~', '&amp;#126;')
 
