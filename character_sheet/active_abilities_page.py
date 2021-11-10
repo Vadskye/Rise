@@ -259,7 +259,7 @@ def weapon_buttons(i):
                 "type": "roll",
                 "value": weapon_attack_button(i),
             },
-            text_input({"disabled": True, "name": "derp", "value": "@{weapon_" + i + "_name}"}),
+            text_input({"disabled": True, "name": "weapon_attack_name_" + i, "value": "@{weapon_" + i + "_name}"}),
         ),
         crit_damage_button(
             "@{weapon_" + i + "_damage_dice}",

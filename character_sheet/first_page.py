@@ -24,7 +24,7 @@ from cgi_simple import (
     underlabeled_checkbox,
     underlabel_spaced,
 )
-from active_abilities_page import attack_button_text, other_damaging_attack_button_text
+from active_abilities_page import attack_button_text, calc_attack_power, construct_damage_text, other_damaging_attack_button_text, crit_damage_button, glance_damage_button
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
 
@@ -516,12 +516,28 @@ def active_ability_button(ability_type):
         ),
         "nondamaging attack": attack_button_text(),
         "other damaging attack": other_damaging_attack_button_text(),
-        "strike-based attack": "TODO",
+        "strike-based attack": weapon_attack_button_text(),
     }[ability_type]
+    extra_buttons = []
+    if ability_type == "strike-based attack":
+        for i in range(3):
+            i = str(i)
+            extra_buttons.append(crit_damage_button(
+                "@{weapon_" + i + "_damage_dice}",
+                "crit_" + i,
+                " - @{weapon_" + i + "_name}",
+            ))
+            extra_buttons.append(glance_damage_button(
+                "@{attack_damage_modifier}+" + calc_attack_power(),
+                "glance_" + i,
+                " - @{weapon_" + i + "_name}",
+            ))
+
     return div({"class": "active-ability-button"}, [
         text_input({"class": "hidden", "name": prefix + "_accuracy", "value": "0"}),
         text_input({"class": "hidden", "name": prefix + "_defense"}),
         text_input({"class": "hidden", "name": prefix + "_damage_dice"}),
+        text_input({"class": "hidden", "name": prefix + "_damage_modifier"}),
         checkbox({"class": "hidden", "name": prefix + "_is_magical", "value": "1"}),
         underlabel(
             "Power",
@@ -545,7 +561,33 @@ def active_ability_button(ability_type):
             },
             text_input({"class": "attack-label", "readonly": True, "name": prefix + "_name"}),
         ),
+        *extra_buttons,
     ])
+
+def weapon_attack_button_text():
+    return (
+        "&{template:custom}"
+        + " {{title=@{attack_name}}}"
+        + "?{Weapon"
+            + "| " + weapon_template(0)
+            + "| " + weapon_template(1)
+            + "| " + weapon_template(2)
+        + "}"
+        + " {{color=@{chat_color}}}"
+        + " @{debuff_headers}"
+        + " {{desc=@{attack_effect}}}"
+    )
+
+def weapon_template(i):
+    i = str(i)
+
+    return (
+        " @{weapon_" + i + "_name},"
+        + " {{subtitle=@{character_name} - @{weapon_" + i + "_name}&amp;#125;&amp;#125;"
+        + " {{Attack=[[d10!+@{accuracy}+@{weapon_" + i + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}&amp;#125;&amp;#125;"
+        + " {{Damage=[[@{weapon_" + i + "_damage_dice}+" + calc_attack_power() + "+@{attack_damage_modifier}]]&amp;#125;&amp;#125;"
+        + " {{Tags=@{weapon_" + i + "_tags}&amp;#125;&amp;#125;"
+    ).replace('~', '&amp;#126;')
 
 def custom_modifier_toggle():
     return flex_row({"class": "custom-modifier-toggle"}, [
