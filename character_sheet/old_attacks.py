@@ -27,17 +27,17 @@ from cgi_simple import (
 
 def old_attacks():
     return [
-        div({"class": "section-header"}, "Magical Attacks"),
+        div({"class": "section-header"}, "Magical Attacks (Deprecated)"),
         fieldset(
             {"class": f"repeating_magicalattacks"},
             attack("magical"),
         ),
-        div({"class": "section-header"}, "Mundane Attacks"),
+        div({"class": "section-header"}, "Mundane Attacks (Deprecated)"),
         fieldset(
             {"class": f"repeating_mundaneattacks"},
             attack("mundane"),
         ),
-        div({"class": "section-header"}, "Non-Damaging Attacks"),
+        div({"class": "section-header"}, "Non-Damaging Attacks (Deprecated)"),
         fieldset(
             {"class": f"repeating_attacks"},
             attack("nondamaging"),
