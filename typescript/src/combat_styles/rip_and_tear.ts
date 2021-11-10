@@ -92,12 +92,12 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
+        Each creature damaged by the strike is \\dazzled as a \\glossterm{condition}.
         This condition must be removed twice before the effect ends.
       `,
       rank: 5,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
+        7: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Duration",
     },
