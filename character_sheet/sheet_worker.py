@@ -54,7 +54,7 @@ def js_wrapper(
                 for var in variables + no_listen_variables
             ] +
             [
-                f'var {stringify_variable_name(var)} = v["{var}"] === "on" ? true : false'
+                f'var {stringify_variable_name(var)} = v["{var}"] === "on" || v["{var}"] == 1 ? true : false'
                 for var in boolean_variables
             ] +
             [
@@ -1050,7 +1050,7 @@ def attuned_effects():
             getSectionIDs("repeating_attunements", (repeatingSectionIds) => {
                 const isActiveIds = repeatingSectionIds.map((id) => `repeating_attunements_${id}_attunement_active`);
                 getAttrs(isActiveIds, (values) => {
-                    const activeAbilities = isActiveIds.filter((id) => values[id] === 'on');
+                    const activeAbilities = isActiveIds.filter((id) => values[id] == 1 || values[id] == "on");
                     setAttrs({
                         active_attunement_count: activeAbilities.length,
                     });
@@ -1080,7 +1080,7 @@ def custom_modifiers():
                     const totalCustomModifiers = {};
                     for (const id of repeatingSectionIds) {
                         const isActive = values[formatIsActiveId(id)];
-                        if (isActive === 'on') {
+                        if (isActive === 'on' || isActive == 1) {
                             for (let i=0; i < nestedCustomStatisticCount; i++) {
                                 const modifiedStatistic = values[formatStatisticId(id, i)];
                                 const value = Number(values[formatValueId(id, i)]) || 0;
