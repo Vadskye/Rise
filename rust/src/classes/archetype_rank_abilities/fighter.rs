@@ -71,7 +71,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 Whenever you gain a \glossterm{condition}, you \glossterm{briefly} ignore its effects.
-                While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to \glossterm{vital rolls}.
             ",
             modifiers: None,
         },
