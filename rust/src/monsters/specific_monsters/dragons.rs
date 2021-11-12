@@ -37,10 +37,10 @@ impl AgeCategory {
     fn attributes(&self) -> Vec<i32> {
         match self {
             Self::Wyrmling => vec![0, 4, 2, 1, 1, 1],
-            Self::Juvenile => vec![5, 1, 4, 3, 3, 3],
-            Self::Adult => vec![6, 0, 5, 4, 4, 4],
-            Self::Ancient => vec![7, -1, 6, 5, 5, 5],
-            Self::Wyrm => vec![8, -2, 7, 6, 6, 6],
+            Self::Juvenile => vec![4, 1, 4, 3, 3, 3],
+            Self::Adult => vec![5, 0, 5, 4, 4, 4],
+            Self::Ancient => vec![6, -1, 6, 5, 5, 5],
+            Self::Wyrm => vec![7, -2, 7, 6, 6, 6],
         }
     }
 
