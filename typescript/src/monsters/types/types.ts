@@ -2,7 +2,6 @@ import { defenseBonusesByMonsterType } from "@src/calculate/defense_bonuses_by_m
 import { MonsterType } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterInput } from "@src/monsters/reformat_monster_input";
-import { animates } from "./animates";
 import { dragons } from "./dragons";
 import { humanoids } from "./humanoids";
 import { magicalBeasts } from "./magical_beasts";
@@ -11,7 +10,6 @@ import { planeforged } from "./planeforged";
 import { undead } from "./undead";
 
 export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
-  "animate": animates,
   "dragon": dragons,
   "humanoid": humanoids,
   "magical beast": magicalBeasts,
@@ -33,7 +31,6 @@ function formatDefenseBonuses(monsterType: MonsterType) {
 
 // Individual monsters may have different knowledge skills
 export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
-  "animate": ["arcana"],
   "dragon": ["arcana"],
   "humanoid": ["local"],
   "magical beast": ["arcana"],
@@ -43,13 +40,6 @@ export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
 };
 
 export const typeDescriptions: Record<MonsterType, string | null> = {
-  "animate": `
-    ${formatDefenseBonuses("animate")}
-    \\parhead{Animated Life} Animates are living creatures that are fundamentally composed of inanimate matter.
-    They are considered to be both objects and creatures, and are affected equally by abilities that affect both.
-    \\parhead{Nonsentient} Animates may have an intelligence of a sort, depending on the nature of their animation, but they are fundamentally not sentient creatures.
-    All animates are immune to \\abilitytag{Compulsion} and \\abilitytag{Emotion} abilities.
-  `,
   "dragon": `
     ${formatDefenseBonuses("dragon")}
     \\parhead{Knowledge (arcana) 0}

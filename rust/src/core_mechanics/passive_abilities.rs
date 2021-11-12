@@ -24,7 +24,9 @@ impl PassiveAbility {
 
 pub enum StandardPassiveAbility {
     Amphibious,
+    Animated,
     Incorporeal,
+    Mindless,
     TwoActions,
     ThreeActions,
     Undead,
@@ -38,6 +40,14 @@ impl StandardPassiveAbility {
                 is_magical: false,
                 name: "Amphibious".to_string(),
             },
+            Self::Animated => PassiveAbility {
+                description: r"
+                  The $name is both an object and a creature.
+                  It is always considered to be \glossterm{attended} by itself.
+                ".to_string(),
+                is_magical: false,
+                name: "Animated".to_string(),
+            },
             Self::Incorporeal => PassiveAbility {
                 description: r"
                   The $name is \glossterm{incorporeal}.
@@ -46,6 +56,14 @@ impl StandardPassiveAbility {
                 ".to_string(),
                 is_magical: false,
                 name: "Incorporeal".to_string(),
+            },
+            Self::Mindless => PassiveAbility {
+                description: r"
+                  The $name is not \glossterm{sentient}.
+                  It is immune to \abilitytag{Compulsion} and \abilitytag{Emotion} abilities.
+                ".to_string(),
+                is_magical: false,
+                name: "Mindless".to_string(),
             },
             Self::ThreeActions => PassiveAbility {
                 description: "The $name can take three standard actions each round. It cannot use the same ability or weapon twice in the same round.".to_string(),
