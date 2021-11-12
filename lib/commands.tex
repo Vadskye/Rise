@@ -275,16 +275,21 @@
     }
 }
 
-\DeclareDocumentCommand{\itemhead}{s m}
+\DeclareDocumentCommand{\itemhead}{s m o}
 {
     \item
-    \IfValueTF{#1}
-    {
-        \textit{#2}
-    }
+    \IfBooleanTF{#1}
     {
         \textbf{#2}
     }
+    {
+        \textit{#2}
+    }
+    \IfValueT{#3}{
+        % without the braces the space is swallowed for some reason
+        {}~{}[#3]
+    }
+    :
 }
 
 \DeclareDocumentCommand{\featref}{s m}
