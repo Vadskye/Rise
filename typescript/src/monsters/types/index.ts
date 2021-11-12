@@ -1,4 +1,3 @@
-export * from "./magical_beasts";
 export * from "./planeforged";
 export * from "./undead";
 export * from "./types";
