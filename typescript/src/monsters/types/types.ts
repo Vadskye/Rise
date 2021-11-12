@@ -2,12 +2,10 @@ import { defenseBonusesByMonsterType } from "@src/calculate/defense_bonuses_by_m
 import { MonsterType } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterInput } from "@src/monsters/reformat_monster_input";
-import { magicalBeasts } from "./magical_beasts";
 import { planeforged } from "./planeforged";
 import { undead } from "./undead";
 
 export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
-  "magical beast": magicalBeasts,
   "planeforged": planeforged,
   "undead": undead,
 };
@@ -25,15 +23,11 @@ function formatDefenseBonuses(monsterType: MonsterType) {
 
 // Individual monsters may have different knowledge skills
 export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
-  "magical beast": ["arcana"],
   "planeforged": ["planes"],
   "undead": ["religion"],
 };
 
 export const typeDescriptions: Record<MonsterType, string | null> = {
-  "magical beast": `
-    ${formatDefenseBonuses("magical beast")}
-  `,
   "planeforged": `
     ${formatDefenseBonuses("planeforged")}
     \\parhead{Planar Essence} A planeforged is fundamentally composed of the essence of its home plane.
