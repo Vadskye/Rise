@@ -9,7 +9,7 @@ export const bluntForce: CombatStyle = {
       name: "Crushing Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a \minus1 accuracy penalty using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a \\minus1 accuracy penalty using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
       `,
       rank: 1,
