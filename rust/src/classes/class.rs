@@ -763,7 +763,7 @@ impl Class {
                     You must make a sacrifice, the details of which are subject to negotiation, and offer a part of your immortal soul.
                     In exchange, you gain the powers of a warlock.
                     The creature you make the pact with is called your soulkeeper.
-                    Most warlocks make pacts with demons or devils, though other soulkeepers are possible.
+                    Most warlocks make pacts with demons, though other soulkeepers are possible.
 
                     Offering your soul to an entity in this way grants it the ability to communicate with you in limited ways.
                     This communication typically manifests as unnatural emotional urges or whispered voices audible only to you.
