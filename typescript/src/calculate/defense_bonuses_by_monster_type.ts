@@ -10,12 +10,6 @@ export function defenseBonusesByMonsterType(monsterType: MonsterType): Record<De
       reflex: 5,
       mental: 8,
     },
-    "animal": {
-      armor: 1,
-      fortitude: 7,
-      reflex: 7,
-      mental: 4,
-    },
     "animate": {
       armor: 1,
       fortitude: 8,
