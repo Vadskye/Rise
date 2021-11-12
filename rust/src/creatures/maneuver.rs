@@ -21,17 +21,34 @@ pub enum Maneuver {
     PouncingStrike(i32),
 }
 
+fn standard_damage_scaling(rank: i32) -> i32 {
+    if rank >= 11 {
+        return 20;
+    } else if rank >= 9 {
+        return 15;
+    } else if rank >= 7 {
+        return 10;
+    } else if rank >= 5 {
+        return 5;
+    } else if rank >= 3 {
+        return 2;
+    } else {
+        return 0;
+    }
+}
+
 impl Maneuver {
     pub fn attack(&self, weapon: Weapon) -> Attack {
         let mut attack = match self {
             Self::CertainStrike(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy += 2 + (rank - 1) / 2)
-                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add(-2)),
+                .except_hit_damage(|d| d.power_multiplier = 0.0),
             Self::CrushingStrike(rank) => weapon
                 .attack()
-                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2))
-                .except(|a| a.defense = Defense::Fortitude),
+                .except(|a| a.accuracy -= 1)
+                .except(|a| a.defense = Defense::Fortitude)
+                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(*rank)),
             // TODO: figure out how to use the higher of two powers
             Self::ElementalStrike(rank) => weapon
                 .attack()
@@ -39,18 +56,17 @@ impl Maneuver {
                     d.damage_types
                         .append(&mut vec![DamageType::Bludgeoning, DamageType::Fire])
                 })
-                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
+                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(*rank)),
             Self::GenericScalingStrike(rank) => weapon
                 .attack()
-                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
+                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(*rank)),
             Self::GraspingStrike(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
                 .except_hit_damage(|d| {
                     d.extra_defense_effect =
                         Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
-                    d.damage_dice = d.damage_dice.add(-2);
-                    d.power_multiplier = 0.5;
+                    d.power_multiplier = 0.0;
                 }),
             Self::GreaterGraspingStrike(rank) => {
                 assert_minimum_rank(5, rank, "Greater Grasping Strike");
@@ -60,48 +76,50 @@ impl Maneuver {
                     .except_hit_damage(|d| {
                         d.extra_defense_effect =
                             Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
-                        d.damage_dice = d.damage_dice.add(-1);
+                        d.power_multiplier = 0.5;
                     })
             }
             Self::GreaterHamstring(rank) => {
-                assert_minimum_rank(3, rank, "Greater Hamstring");
+                assert_minimum_rank(6, rank, "Greater Hamstring");
                 weapon
                     .attack()
                     .except(|a| a.accuracy += (rank - 3) / 2)
                     .except_hit_damage(|d| {
-                        d.damage_dice = d.damage_dice.add(-2);
                         d.power_multiplier = 0.5;
-                        d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
-                            debuffs: vec![Debuff::Immobilized],
+                        d.take_damage_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
+                            debuffs: vec![Debuff::Slowed],
                             duration: AttackEffectDuration::Condition,
                         }));
                     })
             }
-            Self::Hamstring(rank) => weapon
-                .attack()
-                .except(|a| a.accuracy += (rank - 1) / 2)
-                .except_hit_damage(|d| {
-                    d.damage_dice = d.damage_dice.add(-1);
-                    d.power_multiplier = 0.5;
-                    d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
-                        debuffs: vec![Debuff::Slowed],
-                        duration: AttackEffectDuration::Condition,
-                    }));
-                }),
+            Self::Hamstring(rank) => {
+                assert_minimum_rank(6, rank, "Greater Hamstring");
+                weapon
+                    .attack()
+                    .except(|a| a.accuracy += (rank - 1) / 2)
+                    .except_hit_damage(|d| {
+                        d.power_multiplier = 0.5;
+                        d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
+                            debuffs: vec![Debuff::Slowed],
+                            duration: AttackEffectDuration::Condition,
+                        }));
+                    })
+            }
             Self::MightyStrike(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy -= 2)
-                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add(2 + (rank - 1) / 2)),
+                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(rank + 4)),
             Self::MonsterAccuracyScaling(rank) => {
                 weapon.attack().except(|a| a.accuracy += (rank - 3) / 2)
             }
             Self::MonsterDamageScaling(rank) => weapon
                 .attack()
-                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add((rank - 1) / 2)),
+                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(*rank)),
             Self::PenetratingStrike(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
-                .except(|a| a.defense = Defense::Reflex),
+                .except(|a| a.defense = Defense::Reflex)
+                .except_hit_damage(|d| d.power_multiplier = 0.5),
             Self::PouncingStrike(rank) => weapon
                 .attack()
                 .except(|a| {
@@ -112,7 +130,7 @@ impl Maneuver {
                         speed: SpeedCategory::Normal,
                     })
                 })
-                .except_hit_damage(|d| d.damage_dice = d.damage_dice.add(-1)),
+                .except_hit_damage(|d| d.power_multiplier = 0.5),
         };
         attack.name = format!("{} {}", self.name(), titlecase(weapon.name.as_str()))
             .trim()
