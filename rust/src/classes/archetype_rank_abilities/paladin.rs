@@ -560,9 +560,9 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     If your target shares your devoted alignment, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a creature that shares your alignment.
 
                     \rankline
-                    \rank{3} The damage bonus increases to \plus5.
-                    \rank{5} The damage bonus increases to \plus10.
-                    \rank{7} The damage bonus increases to \plus15.
+                    \rank{3} The damage bonus increases to \plus4.
+                    \rank{5} The damage bonus increases to \plus8.
+                    \rank{7} The damage bonus increases to \plus16.
                 \end{instantability}
             ",
             // TODO: represent special attacks

@@ -288,11 +288,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 \begin{instantability}{Enraged Strike}[Instant]
                     \rankline
                     Make a melee \glossterm{strike}.
-                    You gain a \plus2 accuracy bonus and a \plus5 damage bonus with the strike against each creature that dealt damage to you during the previous round.
+                    You gain a \plus2 accuracy bonus and a \plus4 damage bonus with the strike against each creature that dealt damage to you during the previous round.
 
                     \rankline
-                    \rank{4} The damage bonus increases to \plus10.
-                    \rank{6} The damage bonus increases to \plus15.
+                    \rank{4} The damage bonus increases to \plus8.
+                    \rank{6} The damage bonus increases to \plus16.
                 \end{instantability}
             ",
             // This is too inconsistent to add as a generally usable strike

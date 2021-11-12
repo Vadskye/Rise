@@ -33,8 +33,8 @@ export const penetratingPrecision: CombatStyle = {
       rank: 1,
       scaling: {
         3: "You gain a +2 damage bonus with the strike.",
-        5: "The damage bonus increases to +5.",
-        7: "The damage bonus increases to +10.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
       type: "Instant",
     },
@@ -66,7 +66,7 @@ export const penetratingPrecision: CombatStyle = {
       rank: 3,
       scaling: {
         5: "You gain a +2 damage bonus with the strike.",
-        7: "The damage bonus increases to +5.",
+        7: "The damage bonus increases to +4.",
       },
       type: "Instant",
     },
@@ -197,7 +197,7 @@ export const penetratingPrecision: CombatStyle = {
       name: "Heartpiercing Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a +5 damage bonus using a piercing weapon.
+        Make a \\glossterm{strike} with a +4 damage bonus using a piercing weapon.
         Each target that has any remaining \\glossterm{damage resistance} takes no damage from the strike.
       `,
       narrative: `
@@ -205,8 +205,8 @@ export const penetratingPrecision: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "The damage bonus increases to +10.",
-        7: "The damage bonus increases to +15.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
       },
       type: "Instant",
     },
@@ -293,8 +293,8 @@ export const penetratingPrecision: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "The damage bonus increases to +5.",
-        6: "The damage bonus increases to +10.",
+        4: "The damage bonus increases to +4.",
+        6: "The damage bonus increases to +8.",
       },
       type: "Instant",
     },

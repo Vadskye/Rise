@@ -33,9 +33,9 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     You do not gain these benefits against creatures who that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
 
                     \rankline
-                    \rank{3} The damage bonus increases to \plus5.
-                    \rank{5} The damage bonus increases to \plus10.
-                    \rank{7} The damage bonus increases to \plus15.
+                    \rank{3} The damage bonus increases to \plus4.
+                    \rank{5} The damage bonus increases to \plus8.
+                    \rank{7} The damage bonus increases to \plus16.
                 \end{instantability}
             ",
             modifiers: None,
