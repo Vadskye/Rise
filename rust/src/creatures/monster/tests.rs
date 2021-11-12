@@ -109,9 +109,9 @@ fn standard_monster_statistics_level_1_cr2() {
     // HasDamageAbsorption
     assert_eq!(26, creature.calc_hit_points(), "HP: (11 level + 2 con) * 2",);
     assert_eq!(
-        10,
+        15,
         creature.calc_damage_resistance(),
-        "DR: (3 level + 2 con) * 2",
+        "DR: (3 level + 2 con) * 3",
     );
 }
 
@@ -211,12 +211,12 @@ mod firebolt_scaling {
             "CR 2",
         );
         assert_eq!(
-            "Firebolt +1 (The subject takes 2d8+3 fire damage.)",
+            "Firebolt +1 (The subject takes 2d10+3 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::Four, level)),
             "CR 4",
         );
         assert_eq!(
-            "Firebolt +1 (The subject takes 2d10+4 fire damage.)",
+            "Firebolt +1 (The subject takes 4d6+3 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::Six, level)),
             "CR 6",
         );
@@ -236,12 +236,12 @@ mod firebolt_scaling {
             "CR 2",
         );
         assert_eq!(
-            "Supreme Firebolt +10 (The subject takes 7d10+19 fire damage.)",
+            "Supreme Firebolt +10 (The subject takes 8d10+19 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::Four, level)),
             "CR 4",
         );
         assert_eq!(
-            "Supreme Firebolt +10 (The subject takes 8d10+27 fire damage.)",
+            "Supreme Firebolt +10 (The subject takes 9d10+19 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::Six, level)),
             "CR 6",
         );
