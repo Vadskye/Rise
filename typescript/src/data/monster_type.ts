@@ -1,5 +1,4 @@
 export type MonsterType =
-  | "dragon"
   | "humanoid"
   | "magical beast"
   | "monstrous humanoid"
@@ -7,7 +6,6 @@ export type MonsterType =
   | "undead";
 
 export const monsterTypes: MonsterType[] = [
-  "dragon",
   "humanoid",
   "magical beast",
   "monstrous humanoid",
