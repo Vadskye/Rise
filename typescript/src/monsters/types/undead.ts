@@ -2,7 +2,6 @@ import { parseActiveAbility, parseAttack, passiveAbilities } from "@src/monsters
 import { MonsterBaseInput } from "@src/monsters/reformat_monster_input";
 import { MonsterGroupInput } from "@src/monsters/reformat_monster_input";
 import { addType, TypelessMonsterInput } from "./add_type";
-import { humanoids } from "./humanoids";
 
 export const undeadInput: TypelessMonsterInput[] = [
   {
@@ -88,9 +87,9 @@ function skelefy(monster: Omit<MonsterBaseInput, "monsterType">): MonsterBaseInp
   };
 }
 
-const lizardfolk = humanoids.find((mon) => mon.name === "Lizardfolk") as MonsterGroupInput;
-
-const skelefiableMonsters = lizardfolk.monsters;
+// const lizardfolk = humanoids.find((mon) => mon.name === "Lizardfolk") as MonsterGroupInput;
+// const skelefiableMonsters = lizardfolk.monsters;
+const skelefiableMonsters: any[] = [];
 
 undeadInput.push({
   knowledge: {
@@ -154,9 +153,9 @@ function zombify(monster: Omit<MonsterBaseInput, "monsterType">): MonsterBaseInp
   };
 }
 
-const orcs = humanoids.find((mon) => mon.name === "Orcs") as MonsterGroupInput;
-
-const zombifiableMonsters = orcs.monsters.filter((orc) => orc.name !== "Orc Shaman");
+// const orcs = humanoids.find((mon) => mon.name === "Orcs") as MonsterGroupInput;
+// const zombifiableMonsters = orcs.monsters.filter((orc) => orc.name !== "Orc Shaman");
+const zombifiableMonsters: any[] = [];
 
 undeadInput.push({
   knowledge: {
