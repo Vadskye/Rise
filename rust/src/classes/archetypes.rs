@@ -378,7 +378,7 @@ impl ClassArchetype {
             ",
             // Warlock
             Self::BlessingsOfTheAbyss => r"
-                You can only choose this archetype if your soulkeeper is a demon or devil.
+                You can only choose this archetype if your soulkeeper is a demon.
                 This archetype enhances your connection to the Abyss and allows you to channel its sinister power more directly.
             ",
             Self::KeeperOfForbiddenKnowledge => r"
