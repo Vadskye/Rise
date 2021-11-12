@@ -24,3 +24,4 @@ Sor: 2 insight, 4 skill, 4 attunement, +2 fatigue, noo armor, 0 weapon        = 
 War: 3 insight, 3 skill, 3 attunement, +3 fatigue, lgt armor, 0 weapon        = 6 + 3 + 12 + 6 + 1 + 0     = 28
 Wiz: 3 insight, 4 skill, 4 attunement, +1 fatigue, noo armor, 0 weapon        = 6 + 4 + 16 + 2 + 0 + 0     = 28
 Drg: 2 insight, 5 skill, 3 attunement, +3 fatigue, med armor, 0 weapon        = 4 + 5 + 12 + 6 + 2 + 0     = 29
+Ooz: 2 insight, 4 skill, 3 attunement, +4 fatigue, lgt armor, 0 weapon        = 6 + 4 + 12 + 8 + 1 + 0     = 29
