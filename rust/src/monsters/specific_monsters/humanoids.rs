@@ -288,7 +288,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     Modifier::MovementSpeed(10),
                     Modifier::Maneuver(Maneuver::MightyStrike(3)),
                     Modifier::Attack(
-                        Maneuver::GreaterHamstring(3)
+                        Maneuver::Hamstring(3)
                             .attack(StandardWeapon::Greataxe.weapon())
                     ),
                 ]),

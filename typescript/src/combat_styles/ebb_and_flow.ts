@@ -184,7 +184,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a +2 accuracy bonus.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Your \\glossterm{power} with the strike is halved.
       `,
       rank: 1,
       scaling: {
