@@ -1,4 +1,6 @@
-use crate::core_mechanics::{DamageType, MovementMode, Sense, Size, SpecialDefenseModifier, SpecialDefenseType};
+use crate::core_mechanics::{
+    DamageType, MovementMode, Sense, Size, SpecialDefenseModifier, SpecialDefenseType,
+};
 use crate::creatures::{Modifier, Monster, StandardAttack};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
 use crate::monsters::challenge_rating::ChallengeRating;

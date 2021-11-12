@@ -217,9 +217,11 @@ impl Attack {
             } else {
                 "".to_string()
             },
-            targeting = self
-                .targeting
-                .description(&self.defense, self.accuracy + creature.calc_accuracy(), &self.movement),
+            targeting = self.targeting.description(
+                &self.defense,
+                self.accuracy + creature.calc_accuracy(),
+                &self.movement
+            ),
         );
     }
 }
@@ -311,7 +313,12 @@ impl AttackTargeting {
         }
     }
 
-    pub fn description(&self, defense: &Defense, accuracy: i32, movement: &Option<AttackMovement>) -> String {
+    pub fn description(
+        &self,
+        defense: &Defense,
+        accuracy: i32,
+        movement: &Option<AttackMovement>,
+    ) -> String {
         let defense = latex_formatting::uppercase_first_letter(defense.to_string().as_str());
         let accuracy = latex_formatting::modifier(accuracy);
 
