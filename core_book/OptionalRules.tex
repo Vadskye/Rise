@@ -303,13 +303,11 @@
         \parhead{Special Abilities}
         \begin{itemize}
             \itemhead{Dragon Archetype} You only gain two class archetypes instead of three.
-                Instead, you treat the Dragon Archetype as one of your archetypes, and you gain ranks in that just like you gain ranks in class archetypes.
+                Instead, you treat the Dragon archetype as one of your archetypes, and you gain ranks in it just like you gain ranks in class archetypes.
         \end{itemize}
         \parhead{Automatic Languages} Common, Draconic, any one \glossterm{common language}.
 
         \subsubsection{Dragon Archetype}
-            % TODO: dragons probably do not need a rank 0 armor defense bonus; they certainly can't have that and a +2 AD from base class
-            \cf{Dgn}[0]{Draconic Scales} You gain a \plus1 bonus to Armor defense.
             \cf{Dgn}[0]{Draconic Senses} You have  \glossterm{darkvision} with a range of 60 feet and \glossterm{low-light vision}.
             \cf{Dgn}[0]{Draconic Weapons} You have a bite natural weapon and two claw natural weapons.
                 For details, see \pcref{Natural Weapons}.
@@ -532,12 +530,18 @@
 
         \parhead{Creature Type} Unlike most other playable species, oozeborn are considered animates instead of humanoids.
         \parhead{Size} Medium.
-        \parhead{Attributes} \minus1 base Intelligence, \plus1 to the base value of any other attribute
-        \parhead{Speed} 30 feet.
+        \parhead{Attributes} \minus1 base Intelligence, either \plus1 base Constitution or \plus1 base Dexterity
+        \parhead{Speed} 25 feet.
         \parhead{Special Abilities}
         \begin{itemize}
-            \itemhead{Acid Tolerance} Oozeborn are \glossterm{impervious} to acid damage.
-            \itemhead{Amorphous Form} Oozeborn gain a \plus5 bonus to the Flexibility skill (see \pcref{Flexibility}).
+            \itemhead{Oozeborn Archetype} You only gain two class archetypes instead of three.
+                Instead, you treat the Oozeborn archetype as one of your archetypes, and you gain ranks in it just like you gain ranks in class archetypes.
+        \end{itemize}
+        \parhead{Automatic Languages} Common.
+        
+        \subsubsection{Oozeborn Archetype}
+            \cf{Ooz}[0]{Acid Tolerance} You are \glossterm{impervious} to acid damage.
+            \cf{Ooz}[0]{Amorphous Form} Oozeborn gain a \plus5 bonus to the Flexibility skill (see \pcref{Flexibility}).
                 Their natural form is a loosely spherical blob.
                 They can use the \ability{mold body} ability as a standard action to adopt a particular shape.
                 \begin{durationability}{Mold Body}[\abilitytag{Sustain} (free)]
@@ -548,13 +552,52 @@
 
                     You can sustain this ability for any length of time without mental strain, ignoring the normal 5 minute limit.
                 \end{durationability}
-            \itemhead{Compressible} An oozeborn can compress its head and shoulders down to a minimum of a one inch radius, allowing it to squeeze through very small areas.
+            \cf{Ooz}[0]{Compressible Body} An oozeborn can compress its head and shoulders down to a minimum of a one inch radius, allowing it to squeeze through very small areas.
                 An oozeborn's clothing or armor is not compressed, so they may limit an oozeborn's ability to move through extremely narrow spaces.
-            \itemhead{Darkvision} Oozeborn can see in the dark clearly up to 60 feet.
+            \cf{Ooz}[0]{Darkvision} Oozeborn can see in the dark clearly up to 60 feet.
                 Darkvision does not function if an oozeborn is in a brightly lit area, and does not resume functioning until the end of the next round after the oozeborn leaves the brightly lit area.
-            \itemhead{Easily Poisoned} Oozeborn are \glossterm{vulnerable} to \glossterm{poisons}.
-        \end{itemize}
-        \parhead{Automatic Languages} Common.
+
+            \cf{Ooz}[1]{Acidic Body} You gain a slam \glossterm{natural weapon}, which deals 1d10 damage and requires a free hand to use (see \pcref{Natural Weapons}).
+            In addition, all damage you deal with natural weapons, including your unarmed attack, is acid damage in addition to its other types.
+            This does not affect damage you deal with manufactured weapons.
+
+            \cf{Ooz}[1]{Poison Dissolution} You are \glossterm{impervious} to poisons.
+
+            \cf{Ooz}[2]{Darkborn Senses} You gain the \glossterm{blindsense} ability out to 60 feet.
+            This ability allows you to sense the presence and location of objects and foes within its range without seeing them.
+            If you already have the blindsense ability, you increase its range by 60 feet.
+            In addition, you gain the \glossterm{blindsight} ability out to 15 feet.
+            With this ability, you can fight just as well with your eyes closed as with them open.
+            If you already have the blindsight ability, you increase its range by 15 feet.
+
+            \cf{Ooz}[2]{Ingest Object} You can use the \textit{ingest object} ability as a standard action.
+            This functions like the \spell{absorb object} spell, except that you do not gain the ability to absorb objects that are larger than Medium size.
+            Anything you absorb in this way takes a single point of acid damage at the end of each round while it remains absorbed.
+            This damage is insufficient to hurt most objects made from wood, stone, or metal, but it can destroy more fragile objects like paper or complex traps.
+
+            \cf{Ooz}[3]{Greater Amorphous Form} You gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
+
+            \cf{Ooz}[3]{Greater Compressible Body} You reduce your penalties for \squeezing by 1.
+
+            \cf{Ooz}[4]{Greater Acidic Body} You gain a \plus1d damage bonus with natural weapons.
+
+            \cf{Ooz}[4]{Acidic Apotheosis} You are \glossterm{immune} to acid damage and poisons.
+
+            \cf{Ooz}[5]{Greater Darkborn Senses} The range of your \glossterm{blindsense} ability increases by 60 feet.
+            In addition, the range of your \glossterm{blindsight} ability increases by 15 feet.
+
+            \cf{Ooz}[5]{Greater Ingest Object} The maximum number of objects you can absorb with your \textit{ingest object} ability increases to 2.
+            In addition, you may absorb \glossterm{allies} with that ability in addition to unattended objects.
+
+            \cf{Ooz}[6]{Supreme Amorphous Form} The bonus from your \textit{greater amorphous form} ability increases to \plus8.
+
+            \cf{Ooz}[6]{Supreme Compressible Body} You reduce your penalties for squeezing by 2, which means you take no penalties for squeezing unless you use the \ability{tight squeeze} ability (see \pcref{Flexibility}).
+
+            \cf{Ooz}[7]{Supreme Acidic Body} The bonus from your \textit{greater acidic body} ability increases to \plus2d.
+
+            \cf{Ooz}[7]{Third Arm} When you use your \textit{mold body} ability, you can create three arms instead of two.
+            You can use all three hands as free hands.
+            For example, this can allow you to use a heavy weapon and a shield simultaneously.
 
     \subsection{Tieflings}
 
