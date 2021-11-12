@@ -211,21 +211,21 @@ mod calc_individual_dpr {
         assert_eq!(
             "5.000",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-            "Should be 4.5 dph * 1.111 hit % = 5 dpr",
+            "Should be 4.5 dph * 1.111 hpr = 5 dpr",
         );
 
         defender.add_modifier(Modifier::Defense(Defense::Armor, 6), None, None);
         assert_eq!(
             "2.498",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-            "Should be 4.5 dph * 0.555 hit % = 2.498 dpr after increasing defender Armor defense",
+            "Should be 4.5 dph * 0.555 hpr = 2.498 dpr after increasing defender Armor defense",
         );
 
         attacker.add_special_attack(StandardAttack::DivineJudgment(1).attack());
         assert_eq!(
             "6.111",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-            "Should be 5.5 dph * 1.111 hit % = 6.111 dpr after adding Divine Judgment",
+            "Should be 5.5 dph * 1.111 hpr = 6.111 dpr after adding Divine Judgment",
         );
     }
 
@@ -238,13 +238,13 @@ mod calc_individual_dpr {
         assert_eq!(
             "7.000",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-            "Should be 6.5 dph * 1.00 hit % + 4.5 dpc * .111 crit % = 6.9995 dpr",
+            "Should be 6.5 dph * 1.00 hpr + 4.5 dpc * .111 cpr = 6.9995 dpr",
         );
         defender.add_modifier(Modifier::Defense(Defense::Armor, 6), None, None);
         assert_eq!(
-            "3.498",
+            "3.897",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-            "Should be 6.5 dph * 0.5 hit % + 4.5 dpc * .055 crit % = 3.4975 dpr",
+            "Should be 6.5 dph * 0.5 hpr + 4.5 dpc * .055 cpr + 2 dpg * 0.2 gpr = 3.8975 dpr",
         );
     }
 
@@ -365,34 +365,34 @@ mod calc_attack_damage_per_round {
 
         let certain_strike = attacker.get_attack_by_name("Certain Broadsword").unwrap();
         assert_eq!(
-            "3.342",
+            "3.742",
             format!(
                 "{:.3}",
                 calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
             ),
-            "Certain Strike: 4.5 dph * 0.7 hit % + 2.5 dpc * 0.077 crit % = 3.15 + 0.1925 dpr",
+            "Certain Strike dpr: 4.5 dph * 0.7 hpr + 2.5 dpc * 0.077 cpr + 2 dpg * 0.2 gpr = 3.15 + 0.1925 + 0.4",
         );
 
         let generic = attacker
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         assert_eq!(
-            "3.498",
+            "3.897",
             format!(
                 "{:.3}",
                 calc_attack_damage_per_round(&generic, &attacker, &defender)
             ),
-            "Generic: 6.5 dph * 0.5 hit % + 4.5 dpc * 0.055 crit % = 3.4975 dpr",
+            "Generic dpr: 6.5 dph * 0.5 hpr + 4.5 dpc * 0.055 cpr + 2 dpg + 0.2 gpr = 3.25 + 0.2475 + 0.4",
         );
 
         let power_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
         assert_eq!(
-            "2.931",
+            "3.331",
             format!(
                 "{:.3}",
                 calc_attack_damage_per_round(&power_strike, &attacker, &defender)
             ),
-            "Mighty Strike: 9 dph * 0.3 hit % + 7 dpc * 0.033 crit % = 2.7 + .231 dpr",
+            "Mighty Strike dpr: 9 dph * 0.3 hpr + 7 dpc * 0.033 cpr + 2 dpg + 0.2 gpr = 2.7 + .231 + 0.4",
         );
 
         assert_eq!(
@@ -410,34 +410,34 @@ mod calc_attack_damage_per_round {
 
         let certain_strike = attacker.get_attack_by_name("Certain Broadsword").unwrap();
         assert_eq!(
-            "3.342",
+            "3.742",
             format!(
                 "{:.3}",
                 calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
             ),
-            "Certain Strike: 4.5 dph * 0.7 hit % + 2.5 dpc * 0.077 crit % = 3.15 + 0.1925 dpr",
+            "Certain Strike dpr: 4.5 dph * 0.7 hpr + 2.5 dpc * 0.077 cpr + 2 dpg * 0.2 gpr = 3.15 + 0.1925 + 0.4",
         );
 
         let generic = attacker
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         assert_eq!(
-            "3.498",
+            "3.897",
             format!(
                 "{:.3}",
                 calc_attack_damage_per_round(&generic, &attacker, &defender)
             ),
-            "Generic: 6.5 dph * 0.5 hit % + 4.5 dpc * 0.055 crit % = 3.4975 dpr",
+            "Generic dpr: 6.5 dph * 0.5 hpr + 4.5 dpc * 0.055 cpr + 2 dpg * 0.2 gpr = 3.25 + 0.2475 + 0.4 gpr",
         );
 
         let power_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
         assert_eq!(
-            "2.931",
+            "3.331",
             format!(
                 "{:.3}",
                 calc_attack_damage_per_round(&power_strike, &attacker, &defender)
             ),
-            "Mighty Strike: 9 dph * 0.3 hit % + 7 dpc * 0.033 crit % = 2.7 + .231 dpr",
+            "Mighty Strike dpr: 9 dph * 0.3 hpr + 7 dpc * 0.033 cpr + 2 dpg * 0.2 gpr = 2.7 + .231 + 0.4",
         );
 
         assert_eq!(
@@ -462,29 +462,29 @@ mod calc_attack_damage_per_round {
                 "{:.3}",
                 calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
             ),
-            "Certain Strike: 4.5 dph * 1.0 hit % + 2.5 dpc * 0.110 crit % = 4.5 + 0.275 dpr",
+            "Certain Strike gpr: 4.5 dph * 1.0 hpr + 2.5 dpc * 0.110 cpr = 4.5 + 0.275",
         );
 
         let generic = attacker
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         assert_eq!(
-            "5.596",
+            "5.996",
             format!(
                 "{:.3}",
                 calc_attack_damage_per_round(&generic, &attacker, &defender)
             ),
-            "Generic: 6.5 dph * 0.8 hit % + 4.5 dpc * 0.088 crit % = 5.2 + 0.396 dpr",
+            "Generic dpr: 6.5 dph * 0.8 hpr + 4.5 dpc * 0.088 cpr + 2 dpg + 0.2 gpr = 5.2 + 0.396 + 0.4",
         );
 
         let power_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
         assert_eq!(
-            "5.862",
+            "6.262",
             format!(
                 "{:.3}",
                 calc_attack_damage_per_round(&power_strike, &attacker, &defender)
             ),
-            "Mighty Strike: 9 dph * 0.6 hit % + 7 dpc * 0.066 crit % = 5.4 + 0.462 dpr",
+            "Mighty Strike dpr: 9 dph * 0.6 hpr + 7 dpc * 0.066 cpr + 2 dpg + 0.2 gpr = 5.4 + 0.462 + 0.4",
         );
 
         assert_eq!(
@@ -502,12 +502,12 @@ mod calc_attack_damage_per_round {
 
         let certain_strike = attacker.get_attack_by_name("Certain Broadsword").unwrap();
         assert_eq!(
-            "12.546",
+            "12.996",
             format!(
                 "{:.3}",
                 calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
             ),
-            "Certain Strike: 13.5 dph * 0.8 hit % + 4.5 dpc * 0.088 crit % + 6.75 dpg * 0.2 glance % = 10.8 + 0.396 + 1.35 dpr",
+            "Certain Strike dpr: 13.5 dph * 0.8 hpr + 4.5 dpc * 0.088 cpr + 9 dpg * 0.2 gpr = 10.8 + 0.396 + 1.8",
         );
 
         let generic = attacker
@@ -519,17 +519,17 @@ mod calc_attack_damage_per_round {
                 "{:.3}",
                 calc_attack_damage_per_round(&generic, &attacker, &defender)
             ),
-            "Generic: 18 dph * 0.5 hit % + 9 dpc * 0.055 crit % + 9 dpg * 0.2 glance % = 9 + 0.495 + 1.8 dpr",
+            "Generic dpr: 18 dph * 0.5 hpr + 9 dpc * 0.055 cpr + 9 dpg * 0.2 gpr = 9 + 0.495 + 1.8",
         );
 
         let power_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
         assert_eq!(
-            "9.662",
+            "9.162",
             format!(
                 "{:.3}",
                 calc_attack_damage_per_round(&power_strike, &attacker, &defender)
             ),
-            "Mighty Strike: 23 dph * 0.3 hit % + 14 dpc * 0.033 crit % + 11.5 dpg * 0.2 glance % = 6.9 + 0.462 + 2.3 dpr",
+            "Mighty Strike dpr: 23 dph * 0.3 hpr + 14 dpc * 0.033 cpr + 9 dpg * 0.2 gpr = 6.9 + 0.462 + 1.8",
         );
 
         assert_eq!(
