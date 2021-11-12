@@ -16,8 +16,8 @@ export const bluntForce: CombatStyle = {
       rank: 1,
       scaling: {
         3: "You gain a +2 damage bonus with the strike.",
-        5: "The damage bonus increases to +5.",
-        7: "The damage bonus increases to +10.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
       type: "Instant",
     },
@@ -124,8 +124,8 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "The damage bonus increases to +5.",
-        7: "The damage bonus increases to +10.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
       type: "Instant",
     },
@@ -303,14 +303,14 @@ export const bluntForce: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{strike} with a +5 damage bonus using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a +4 damage bonus using a bludgeoning weapon.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +10.",
-        5: "The damage bonus increases to +15.",
-        7: "The damage bonus increases to +20.",
+        3: "The damage bonus increases to +8.",
+        5: "The damage bonus increases to +16.",
+        7: "The damage bonus increases to +24.",
       },
       type: "Instant",
     },
@@ -321,14 +321,14 @@ export const bluntForce: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{strike} with a +5 damage bonus using a bludgeoning weapon.
+        Make a \\glossterm{strike} with a +4 damage bonus using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 2,
       scaling: {
-        4: "The damage bonus increases to +10.",
-        6: "The damage bonus increases to +15.",
+        4: "The damage bonus increases to +8.",
+        6: "The damage bonus increases to +16.",
       },
       type: "Instant",
     },
