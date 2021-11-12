@@ -24,9 +24,12 @@ pub enum StandardWeapon {
     Broadsword,
     Claw,
     Club,
+    GiantBoulder,
     Greataxe,
+    Greatclub,
     Greatsword,
     HeavyFlail,
+    Javelin,
     Longbow,
     MonsterBite,
     MonsterClaws,
@@ -83,11 +86,25 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "club".to_string(),
             },
+            Self::GiantBoulder => Weapon {
+                // TODO: add Forceful and thrown range limits
+                // individual giants can customize these range limits
+                accuracy: 0,
+                damage_dice: DamageDice::d10(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "boulder".to_string(),
+            },
             Self::Greataxe => Weapon {
                 accuracy: 0,
                 damage_dice: DamageDice::d10().add(1),
                 damage_types: vec![DamageType::Slashing],
                 name: "greataxe".to_string(),
+            },
+            Self::Greatclub => Weapon {
+                accuracy: 0,
+                damage_dice: DamageDice::d10().add(1),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "greatclub".to_string(),
             },
             Self::Greatsword => Weapon {
                 accuracy: 0,
@@ -100,6 +117,12 @@ impl StandardWeapon {
                 damage_dice: DamageDice::d10().add(1),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "heavy flail".to_string(),
+            },
+            Self::Javelin => Weapon {
+                accuracy: 1,
+                damage_dice: DamageDice::d6(),
+                damage_types: vec![DamageType::Piercing],
+                name: "javelin".to_string(),
             },
             Self::Longbow => Weapon {
                 accuracy: 0,

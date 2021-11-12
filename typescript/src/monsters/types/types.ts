@@ -2,16 +2,12 @@ import { defenseBonusesByMonsterType } from "@src/calculate/defense_bonuses_by_m
 import { MonsterType } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterInput } from "@src/monsters/reformat_monster_input";
-import { humanoids } from "./humanoids";
 import { magicalBeasts } from "./magical_beasts";
-import { monstrousHumanoids } from "./monstrous_humanoids";
 import { planeforged } from "./planeforged";
 import { undead } from "./undead";
 
 export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
-  "humanoid": humanoids,
   "magical beast": magicalBeasts,
-  "monstrous humanoid": monstrousHumanoids,
   "planeforged": planeforged,
   "undead": undead,
 };
@@ -29,22 +25,14 @@ function formatDefenseBonuses(monsterType: MonsterType) {
 
 // Individual monsters may have different knowledge skills
 export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
-  "humanoid": ["local"],
   "magical beast": ["arcana"],
-  "monstrous humanoid": ["nature"],
   "planeforged": ["planes"],
   "undead": ["religion"],
 };
 
 export const typeDescriptions: Record<MonsterType, string | null> = {
-  "humanoid": `
-    ${formatDefenseBonuses("humanoid")}
-  `,
   "magical beast": `
     ${formatDefenseBonuses("magical beast")}
-  `,
-  "monstrous humanoid": `
-    ${formatDefenseBonuses("monstrous humanoid")}
   `,
   "planeforged": `
     ${formatDefenseBonuses("planeforged")}
