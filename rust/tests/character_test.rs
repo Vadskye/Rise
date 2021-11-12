@@ -51,6 +51,7 @@ fn it_calculates_modifiers() {
             "DR 2",
             "attack Abyssal Blast",
             "defense armor by 0",
+            "defense armor by 1",
             "defense fortitude by 5",
             "defense mental by 7",
             "defense reflex by 3",

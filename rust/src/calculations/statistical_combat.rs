@@ -135,6 +135,7 @@ fn calc_rounds_to_live(attackers: &Vec<&Creature>, defender: &Creature) -> f64 {
     return (rounds_to_survive * 4.0).ceil() / 4.0;
 }
 
+// TODO: convert this to use find_best_attack to avoid duplication
 fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     let attacks = attacker.calc_all_attacks();
     let mut best_damage_per_round = 0.0;
@@ -150,6 +151,21 @@ fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     // println!("Best attack: {}", best_attack.unwrap().name);
 
     return best_damage_per_round * attacker.calc_damage_per_round_multiplier();
+}
+
+fn find_best_attack(attacker: &Creature, defender: &Creature) -> Option<Attack> {
+    let attacks = attacker.calc_all_attacks();
+    let mut best_damage_per_round = 0.0;
+    let mut best_attack: Option<Attack> = None;
+    for attack in attacks {
+        let average_damage_per_round = calc_attack_damage_per_round(&attack, attacker, defender);
+        if average_damage_per_round > best_damage_per_round {
+            best_damage_per_round = average_damage_per_round;
+            best_attack = Some(attack);
+        }
+    }
+
+    return best_attack;
 }
 
 fn calc_attack_damage_per_round(attack: &Attack, attacker: &Creature, defender: &Creature) -> f64 {
@@ -170,8 +186,7 @@ fn calc_attack_damage_per_round(attack: &Attack, attacker: &Creature, defender: 
             attacker.calc_accuracy(),
             defender.calc_defense(&attack.defense),
         );
-        average_damage_per_round +=
-            glance_probability * (damage_modifier as f64);
+        average_damage_per_round += glance_probability * (damage_modifier as f64);
         return average_damage_per_round;
     } else {
         return 0.0;

@@ -254,7 +254,7 @@ mod calc_individual_dpr {
         let attacker = Character::standard_character(level, true).creature;
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
         assert_eq!(
-            "3.498",
+            "4.498",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
         );
     }
@@ -265,7 +265,7 @@ mod calc_individual_dpr {
         let attacker = Character::standard_character(level, true).creature;
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
         assert_eq!(
-            "27.689",
+            "25.982",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
         );
     }
@@ -275,7 +275,7 @@ mod calc_individual_dpr {
         let level = 1;
         let defender = Character::standard_character(level, true).creature;
 
-        let expected_combat_results = vec!["2.998", "4.553", "6.385", "9.578", "16.990"];
+        let expected_combat_results = vec!["3.197", "5.152", "7.385", "11.078", "19.790"];
         let actual_combat_results: Vec<f64> = ChallengeRating::all()
             .into_iter()
             .map(|cr| {
@@ -304,7 +304,7 @@ mod calc_individual_dpr {
             .collect();
 
         assert_eq!(
-            vec!["0.100%", "0.152%", "0.213%", "0.319%", "0.566%"],
+            vec!["0.107%", "0.172%", "0.246%", "0.369%", "0.660%"],
             percentage,
             "as % of total damage absorption"
         );
@@ -315,7 +315,7 @@ mod calc_individual_dpr {
         let level = 20;
         let defender = Character::standard_character(level, true).creature;
 
-        let expected_combat_results = vec!["29.465", "44.191", "58.904", "91.506", "151.434"];
+        let expected_combat_results = vec!["24.788", "37.852", "53.515", "83.873", "143.156"];
         let actual_combat_results: Vec<f64> = ChallengeRating::all()
             .into_iter()
             .map(|cr| {
@@ -344,7 +344,7 @@ mod calc_individual_dpr {
             .collect();
 
         assert_eq!(
-            vec!["0.103%", "0.154%", "0.205%", "0.319%", "0.528%"],
+            vec!["0.083%", "0.127%", "0.180%", "0.282%", "0.482%"],
             percentage,
             "as % of total damage absorption"
         );
@@ -357,48 +357,46 @@ mod calc_attack_damage_per_round {
 
     use super::*;
 
+    fn formatted_adpr(attack: &Attack, attacker: &Creature, defender: &Creature) -> String {
+        return format!(
+            "{:.3}",
+            calc_attack_damage_per_round(&attack, &attacker, &defender)
+        );
+    }
+
+    fn standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<String> {
+        let certain_strike = attacker.get_attack_by_name("Certain Broadsword").unwrap();
+        let generic_strike = attacker
+            .get_attack_by_name("Generic Scaling Broadsword")
+            .unwrap();
+        let mighty_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
+        return vec![
+            formatted_adpr(&certain_strike, &attacker, &defender),
+            formatted_adpr(&generic_strike, &attacker, &defender),
+            formatted_adpr(&mighty_strike, &attacker, &defender),
+        ];
+    }
+
     #[test]
     fn standard_character_level_1_vs_self() {
         let attacker = Character::standard_character(1, true).creature;
         let defender = Character::standard_character(1, true).creature;
         assert_eq!(7, defender.calc_defense(&Defense::Armor));
 
-        let certain_strike = attacker.get_attack_by_name("Certain Broadsword").unwrap();
+        let expected_strike_results = vec!["4.396", "3.897", "4.498"];
         assert_eq!(
-            "3.742",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
-            ),
-            "Certain Strike dpr: 4.5 dph * 0.7 hpr + 2.5 dpc * 0.077 cpr + 2 dpg * 0.2 gpr = 3.15 + 0.1925 + 0.4",
-        );
-
-        let generic = attacker
-            .get_attack_by_name("Generic Scaling Broadsword")
-            .unwrap();
-        assert_eq!(
-            "3.897",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&generic, &attacker, &defender)
-            ),
-            "Generic dpr: 6.5 dph * 0.5 hpr + 4.5 dpc * 0.055 cpr + 2 dpg + 0.2 gpr = 3.25 + 0.2475 + 0.4",
-        );
-
-        let power_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
-        assert_eq!(
-            "3.331",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&power_strike, &attacker, &defender)
-            ),
-            "Mighty Strike dpr: 9 dph * 0.3 hpr + 7 dpc * 0.033 cpr + 2 dpg + 0.2 gpr = 2.7 + .231 + 0.4",
+            expected_strike_results,
+            standard_adpr(&attacker, &defender),
+            "
+    Certain Strike dpr: 5.5 dph * 0.7 hpr + 4.5 dpc * 0.077 cpr + 1 dpg * 0.2 gpr = 3.85 + 0.3465 + 0.2
+    Generic dpr: 6.5 dph * 0.5 hpr + 4.5 dpc * 0.055 cpr + 2 dpg + 0.2 gpr = 3.25 + 0.2475 + 0.4
+    Mighty Strike dpr: 10.5 dph * 0.3 hpr + 4.5 dpc * 0.033 cpr + 6 dpg + 0.2 gpr = 3.15 + .1485 + 1.2",
         );
 
         assert_eq!(
-            calc_attack_damage_per_round(&generic, &attacker, &defender),
-            calc_individual_dpr(&attacker, &defender),
-            "Generic should be the best attack",
+            find_best_attack(&attacker, &defender).unwrap().name,
+            "Mighty Broadsword",
+            "Mighty Strike should be the best attack",
         );
     }
 
@@ -408,42 +406,20 @@ mod calc_attack_damage_per_round {
         let defender = Monster::standard_monster(ChallengeRating::Two, 1, None, None).creature;
         assert_eq!(7, defender.calc_defense(&Defense::Armor));
 
-        let certain_strike = attacker.get_attack_by_name("Certain Broadsword").unwrap();
+        let expected_strike_results = vec!["4.396", "3.897", "4.498"];
         assert_eq!(
-            "3.742",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
-            ),
-            "Certain Strike dpr: 4.5 dph * 0.7 hpr + 2.5 dpc * 0.077 cpr + 2 dpg * 0.2 gpr = 3.15 + 0.1925 + 0.4",
-        );
-
-        let generic = attacker
-            .get_attack_by_name("Generic Scaling Broadsword")
-            .unwrap();
-        assert_eq!(
-            "3.897",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&generic, &attacker, &defender)
-            ),
-            "Generic dpr: 6.5 dph * 0.5 hpr + 4.5 dpc * 0.055 cpr + 2 dpg * 0.2 gpr = 3.25 + 0.2475 + 0.4 gpr",
-        );
-
-        let power_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
-        assert_eq!(
-            "3.331",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&power_strike, &attacker, &defender)
-            ),
-            "Mighty Strike dpr: 9 dph * 0.3 hpr + 7 dpc * 0.033 cpr + 2 dpg * 0.2 gpr = 2.7 + .231 + 0.4",
+            expected_strike_results,
+            standard_adpr(&attacker, &defender),
+            "
+    Certain Strike dpr: 5.5 dph * 0.7 hpr + 4.5 dpc * 0.077 cpr + 1 dpg * 0.2 gpr = 3.85 + 0.3465 + 0.2
+    Generic dpr: 6.5 dph * 0.5 hpr + 4.5 dpc * 0.055 cpr + 2 dpg * 0.2 gpr = 3.25 + 0.2475 + 0.4 gpr
+    Mighty Strike dpr: 10.5 dph * 0.3 hpr + 4.5 dpc * 0.033 cpr + 6 dpg * 0.2 gpr = 3.15 + 0.1485 + 1.2"
         );
 
         assert_eq!(
-            calc_attack_damage_per_round(&generic, &attacker, &defender),
-            calc_individual_dpr(&attacker, &defender),
-            "Generic should be the best attack",
+            find_best_attack(&attacker, &defender).unwrap().name,
+            "Mighty Broadsword",
+            "Mighty Strike should be the best attack",
         );
     }
 
@@ -455,41 +431,19 @@ mod calc_attack_damage_per_round {
         defender.set_base_attribute(Attribute::Dexterity, -1);
         assert_eq!(4, defender.calc_defense(&Defense::Armor));
 
-        let certain_strike = attacker.get_attack_by_name("Certain Broadsword").unwrap();
+        let expected_strike_results = vec!["5.995", "5.996", "7.797"];
         assert_eq!(
-            "4.775",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
-            ),
-            "Certain Strike gpr: 4.5 dph * 1.0 hpr + 2.5 dpc * 0.110 cpr = 4.5 + 0.275",
-        );
-
-        let generic = attacker
-            .get_attack_by_name("Generic Scaling Broadsword")
-            .unwrap();
-        assert_eq!(
-            "5.996",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&generic, &attacker, &defender)
-            ),
-            "Generic dpr: 6.5 dph * 0.8 hpr + 4.5 dpc * 0.088 cpr + 2 dpg + 0.2 gpr = 5.2 + 0.396 + 0.4",
-        );
-
-        let power_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
-        assert_eq!(
-            "6.262",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&power_strike, &attacker, &defender)
-            ),
-            "Mighty Strike dpr: 9 dph * 0.6 hpr + 7 dpc * 0.066 cpr + 2 dpg + 0.2 gpr = 5.4 + 0.462 + 0.4",
+            expected_strike_results,
+            standard_adpr(&attacker, &defender),
+            "
+    Certain Strike gpr: 5.5 dph * 1.0 hpr + 4.5 dpc * 0.110 cpr = 5.5 + 0.495
+    Generic dpr: 6.5 dph * 0.8 hpr + 4.5 dpc * 0.088 cpr + 2 dpg + 0.2 gpr = 5.2 + 0.396 + 0.4
+    Mighty Strike dpr: 10.5 dph * 0.6 hpr + 4.5 dpc * 0.066 cpr + 6 dpg + 0.2 gpr = 6.3 + 0.297 + 1.2"
         );
 
         assert_eq!(
-            calc_attack_damage_per_round(&power_strike, &attacker, &defender),
-            calc_individual_dpr(&attacker, &defender),
+            find_best_attack(&attacker, &defender).unwrap().name,
+            "Mighty Broadsword",
             "Mighty Strike should be the best attack",
         );
     }
@@ -500,42 +454,20 @@ mod calc_attack_damage_per_round {
         let defender = Monster::standard_monster(ChallengeRating::Two, 10, None, None).creature;
         assert_eq!(13, defender.calc_defense(&Defense::Armor));
 
-        let certain_strike = attacker.get_attack_by_name("Certain Broadsword").unwrap();
+        let expected_strike_results = vec!["10.216", "11.585", "10.831"];
         assert_eq!(
-            "12.996",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
-            ),
-            "Certain Strike dpr: 13.5 dph * 0.8 hpr + 4.5 dpc * 0.088 cpr + 9 dpg * 0.2 gpr = 10.8 + 0.396 + 1.8",
-        );
-
-        let generic = attacker
-            .get_attack_by_name("Generic Scaling Broadsword")
-            .unwrap();
-        assert_eq!(
-            "11.295",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&generic, &attacker, &defender)
-            ),
-            "Generic dpr: 18 dph * 0.5 hpr + 9 dpc * 0.055 cpr + 9 dpg * 0.2 gpr = 9 + 0.495 + 1.8",
-        );
-
-        let power_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
-        assert_eq!(
-            "9.162",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&power_strike, &attacker, &defender)
-            ),
-            "Mighty Strike dpr: 23 dph * 0.3 hpr + 14 dpc * 0.033 cpr + 9 dpg * 0.2 gpr = 6.9 + 0.462 + 1.8",
+            expected_strike_results,
+            standard_adpr(&attacker, &defender),
+            "
+    Certain Strike dpr: 11 dph * 0.8 hpr + 7 dpc * 0.088 cpr + 4 dpg * 0.2 gpr = 8.8 + 0.616 + 0.8
+    Generic dpr: 18 dph * 0.5 hpr + 7 dpc * 0.055 cpr + 11 dpg * 0.2 gpr = 9 + 0.385 + 2.2
+    Mighty Strike dpr: 24 dph * 0.3 hpr + 7 dpc * 0.033 cpr + 17 dpg * 0.2 gpr = 7.2 + 0.231 + 3.4",
         );
 
         assert_eq!(
-            calc_attack_damage_per_round(&certain_strike, &attacker, &defender),
-            calc_individual_dpr(&attacker, &defender),
-            "Certain Strike should be the best attack",
+            find_best_attack(&attacker, &defender).unwrap().name,
+            "Generic Scaling Broadsword",
+            "Generic Strike should be the best attack",
         );
     }
 
@@ -545,41 +477,17 @@ mod calc_attack_damage_per_round {
         let defender = Monster::standard_monster(ChallengeRating::Two, 20, None, None).creature;
         assert_eq!(19, defender.calc_defense(&Defense::Armor));
 
-        let certain_strike = attacker.get_attack_by_name("Certain Broadsword").unwrap();
-        assert_eq!(
-            "27.689",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
-            ),
-            "Certain Strike",
-        );
+        let expected_strike_results = vec!["25.982", "22.992", "20.396"];
 
-        let generic = attacker
-            .get_attack_by_name("Generic Scaling Broadsword")
-            .unwrap();
         assert_eq!(
-            "26.452",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&generic, &attacker, &defender)
-            ),
-            "Generic",
-        );
-
-        let power_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
-        assert_eq!(
-            "19.268",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&power_strike, &attacker, &defender)
-            ),
-            "Mighty Strike",
+            expected_strike_results,
+            standard_adpr(&attacker, &defender),
+            "Certain Strike, Generic, Mighty Strike"
         );
 
         assert_eq!(
-            calc_attack_damage_per_round(&certain_strike, &attacker, &defender),
-            calc_individual_dpr(&attacker, &defender),
+            find_best_attack(&attacker, &defender).unwrap().name,
+            "Certain Broadsword",
             "Certain Strike should be the best attack",
         );
     }
@@ -592,43 +500,158 @@ mod calc_attack_damage_per_round {
         defender.set_base_attribute(Attribute::Dexterity, -1);
         assert_eq!(16, defender.calc_defense(&Defense::Armor));
 
-        let certain_strike = attacker.get_attack_by_name("Certain Broadsword").unwrap();
-        assert_eq!(
-            "30.442",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&certain_strike, &attacker, &defender)
-            ),
-            "Certain Strike",
-        );
+        let expected_strike_results = vec!["29.996", "36.486", "38.690"];
 
-        let generic = attacker
-            .get_attack_by_name("Generic Scaling Broadsword")
-            .unwrap();
         assert_eq!(
-            "42.541",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&generic, &attacker, &defender)
-            ),
-            "Generic",
-        );
-
-        let power_strike = attacker.get_attack_by_name("Mighty Broadsword").unwrap();
-        assert_eq!(
-            "39.020",
-            format!(
-                "{:.3}",
-                calc_attack_damage_per_round(&power_strike, &attacker, &defender)
-            ),
-            "Mighty Strike",
+            expected_strike_results,
+            standard_adpr(&attacker, &defender),
+            "Certain Strike, Generic, Mighty Strike"
         );
 
         assert_eq!(
-            calc_attack_damage_per_round(&generic, &attacker, &defender),
-            calc_individual_dpr(&attacker, &defender),
-            "Generic should be the best attack",
+            find_best_attack(&attacker, &defender).unwrap().name,
+            "Mighty Broadsword",
+            "Mighty Strike should be the best attack",
         );
+    }
+
+    #[cfg(test)]
+    mod best_attacks {
+        use super::*;
+
+        #[test]
+        fn standard_character_vs_cr2_best_attacks() {
+            let mut level = 1;
+            let mut attacker = Character::standard_character(level, true).creature;
+            let mut defender =
+                Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
+            assert_eq!(
+                calc_attack_damage_per_round(
+                    &attacker.get_attack_by_name("Mighty Broadsword").unwrap(),
+                    &attacker,
+                    &defender
+                ),
+                calc_individual_dpr(&attacker, &defender),
+                "At level 1, Mighty Strike should be the best attack",
+            );
+
+            level = 10;
+            attacker = Character::standard_character(level, true).creature;
+            defender = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
+            assert_eq!(
+                calc_attack_damage_per_round(
+                    &attacker
+                        .get_attack_by_name("Generic Scaling Broadsword")
+                        .unwrap(),
+                    &attacker,
+                    &defender
+                ),
+                calc_individual_dpr(&attacker, &defender),
+                "At level 10, Generic Strike should be the best attack",
+            );
+
+            level = 20;
+            attacker = Character::standard_character(level, true).creature;
+            defender = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
+            assert_eq!(
+                calc_attack_damage_per_round(
+                    &attacker.get_attack_by_name("Certain Broadsword").unwrap(),
+                    &attacker,
+                    &defender
+                ),
+                calc_individual_dpr(&attacker, &defender),
+                "At level 20, Certain Strike should be the best attack",
+            );
+        }
+
+        #[test]
+        fn standard_character_vs_weak_cr1_best_attacks() {
+            let mut level = 1;
+            let mut attacker = Character::standard_character(level, true).creature;
+            let mut defender =
+                Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
+            defender.set_base_attribute(Attribute::Dexterity, -1);
+            assert_eq!(
+                calc_attack_damage_per_round(
+                    &attacker.get_attack_by_name("Mighty Broadsword").unwrap(),
+                    &attacker,
+                    &defender
+                ),
+                calc_individual_dpr(&attacker, &defender),
+                "At level 1, Mighty Strike should be the best attack",
+            );
+
+            level = 10;
+            attacker = Character::standard_character(level, true).creature;
+            defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
+            defender.set_base_attribute(Attribute::Dexterity, -1);
+            assert_eq!(
+                calc_attack_damage_per_round(
+                    &attacker.get_attack_by_name("Mighty Broadsword").unwrap(),
+                    &attacker,
+                    &defender
+                ),
+                calc_individual_dpr(&attacker, &defender),
+                "At level 10, Mighty Strike should be the best attack",
+            );
+
+            level = 20;
+            attacker = Character::standard_character(level, true).creature;
+            defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
+            defender.set_base_attribute(Attribute::Dexterity, -1);
+            assert_eq!(
+                calc_attack_damage_per_round(
+                    &attacker.get_attack_by_name("Mighty Broadsword").unwrap(),
+                    &attacker,
+                    &defender
+                ),
+                calc_individual_dpr(&attacker, &defender),
+                "At level 20, Mighty Strike should be the best attack",
+            );
+        }
+
+        #[test]
+        fn standard_character_vs_cr6_best_attacks() {
+            let mut level = 1;
+            let mut attacker = Character::standard_character(level, true).creature;
+            let mut defender =
+                Monster::standard_monster(ChallengeRating::Six, level, None, None).creature;
+            assert_eq!(
+                calc_attack_damage_per_round(
+                    &attacker.get_attack_by_name("Certain Broadsword").unwrap(),
+                    &attacker,
+                    &defender
+                ),
+                calc_individual_dpr(&attacker, &defender),
+                "At level 1, Certain Strike should be the best attack",
+            );
+
+            level = 10;
+            attacker = Character::standard_character(level, true).creature;
+            defender = Monster::standard_monster(ChallengeRating::Six, level, None, None).creature;
+            assert_eq!(
+                calc_attack_damage_per_round(
+                    &attacker.get_attack_by_name("Certain Broadsword").unwrap(),
+                    &attacker,
+                    &defender
+                ),
+                calc_individual_dpr(&attacker, &defender),
+                "At level 10, Certain Strike should be the best attack",
+            );
+
+            level = 20;
+            attacker = Character::standard_character(level, true).creature;
+            defender = Monster::standard_monster(ChallengeRating::Six, level, None, None).creature;
+            assert_eq!(
+                calc_attack_damage_per_round(
+                    &attacker.get_attack_by_name("Certain Broadsword").unwrap(),
+                    &attacker,
+                    &defender
+                ),
+                calc_individual_dpr(&attacker, &defender),
+                "At level 20, Certain Strike should be the best attack",
+            );
+        }
     }
 }
 
@@ -642,7 +665,7 @@ mod calc_rounds_to_live {
         let defender = Character::standard_character(1, true).creature;
 
         assert_eq!(
-            9.0,
+            7.0,
             calc_rounds_to_live(&vec![&attacker], &defender,),
             "at level 1",
         );
@@ -650,7 +673,7 @@ mod calc_rounds_to_live {
         let attacker = Character::standard_character(20, true).creature;
         let defender = Character::standard_character(20, true).creature;
         assert_eq!(
-            9.25,
+            10.75,
             calc_rounds_to_live(&vec![&attacker], &defender,),
             "at level 20",
         );
@@ -661,33 +684,19 @@ mod calc_rounds_to_live {
         let level = 1;
         let attacker = Character::standard_character(level, true).creature;
 
+        let expected_results = vec![4.25, 8.25, 22.0, 40.5];
+
+        let mut actual_results = vec![];
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
-        assert_eq!(
-            5.5,
-            calc_rounds_to_live(&vec![&attacker], &defender,),
-            "vs CR 1",
-        );
-
+        actual_results.push(calc_rounds_to_live(&vec![&attacker], &defender));
         let defender = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
-        assert_eq!(
-            10.75,
-            calc_rounds_to_live(&vec![&attacker], &defender,),
-            "vs CR 2",
-        );
-
+        actual_results.push(calc_rounds_to_live(&vec![&attacker], &defender));
         let defender = Monster::standard_monster(ChallengeRating::Four, level, None, None).creature;
-        assert_eq!(
-            29.0,
-            calc_rounds_to_live(&vec![&attacker], &defender,),
-            "vs CR 4",
-        );
-
+        actual_results.push(calc_rounds_to_live(&vec![&attacker], &defender));
         let defender = Monster::standard_monster(ChallengeRating::Six, level, None, None).creature;
-        assert_eq!(
-            54.25,
-            calc_rounds_to_live(&vec![&attacker], &defender,),
-            "vs CR 6",
-        );
+        actual_results.push(calc_rounds_to_live(&vec![&attacker], &defender));
+
+        assert_eq!(expected_results, actual_results, "CR 1, CR 2, CR 4, CR 6",);
     }
 
     #[test]
@@ -695,33 +704,19 @@ mod calc_rounds_to_live {
         let level = 20;
         let attacker = Character::standard_character(level, true).creature;
 
+        let expected_results = vec![6.0, 11.75, 29.0, 51.25];
+
+        let mut actual_results = vec![];
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
-        assert_eq!(
-            5.5,
-            calc_rounds_to_live(&vec![&attacker], &defender,),
-            "vs CR 1",
-        );
-
+        actual_results.push(calc_rounds_to_live(&vec![&attacker], &defender));
         let defender = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
-        assert_eq!(
-            11.0,
-            calc_rounds_to_live(&vec![&attacker], &defender,),
-            "vs CR 2",
-        );
-
+        actual_results.push(calc_rounds_to_live(&vec![&attacker], &defender));
         let defender = Monster::standard_monster(ChallengeRating::Four, level, None, None).creature;
-        assert_eq!(
-            26.5,
-            calc_rounds_to_live(&vec![&attacker], &defender,),
-            "vs CR 4",
-        );
-
+        actual_results.push(calc_rounds_to_live(&vec![&attacker], &defender));
         let defender = Monster::standard_monster(ChallengeRating::Six, level, None, None).creature;
-        assert_eq!(
-            46.75,
-            calc_rounds_to_live(&vec![&attacker], &defender,),
-            "vs CR 6",
-        );
+        actual_results.push(calc_rounds_to_live(&vec![&attacker], &defender));
+
+        assert_eq!(expected_results, actual_results, "CR 1, CR 2, CR 4, CR 6",);
     }
 }
 
@@ -734,7 +729,7 @@ mod run_combat {
         let attacker = Character::standard_character(1, true).creature;
         let defender = Character::standard_character(1, true).creature;
         assert_eq!(
-            "Rounds  9.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
+            "Rounds  7.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
             run_combat(vec![attacker], vec![defender]).to_string(),
             "at level 1",
         );
@@ -742,7 +737,7 @@ mod run_combat {
         let attacker = Character::standard_character(20, true).creature;
         let defender = Character::standard_character(20, true).creature;
         assert_eq!(
-            "Rounds 10.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
+            "Rounds 11.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
             run_combat(vec![attacker], vec![defender]).to_string(),
             "at level 20",
         );
@@ -759,11 +754,11 @@ mod run_combat {
         ];
 
         let expected_combat_results = vec![
-            "Rounds  5.00 Blue 3 ( 0.55%) Red 0 ( 0.00%)",
-            "Rounds  7.75 Blue 2 ( 0.39%) Red 0 ( 0.00%)",
-            "Rounds  6.50 Blue 3 ( 0.55%) Red 0 ( 0.00%)",
-            "Rounds  9.00 Blue 2 ( 0.33%) Red 0 ( 0.00%)",
-            "Rounds  9.00 Blue 0 ( 0.00%) Red 1 ( 0.55%)",
+            "Rounds  4.25 Blue 3 ( 0.62%) Red 0 ( 0.00%)",
+            "Rounds  5.50 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
+            "Rounds  5.00 Blue 3 ( 0.59%) Red 0 ( 0.00%)",
+            "Rounds  6.25 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
+            "Rounds  8.00 Blue 0 ( 0.00%) Red 1 ( 0.47%)",
         ];
         let actual_combat_results: Vec<String> = ChallengeRating::all()
             .iter()
@@ -783,11 +778,11 @@ mod run_combat {
         ];
 
         let expected_combat_results = vec![
-            "Rounds  4.00 Blue 3 ( 0.69%) Red 0 ( 0.00%)",
-            "Rounds  7.00 Blue 2 ( 0.49%) Red 0 ( 0.00%)",
-            "Rounds  6.25 Blue 3 ( 0.60%) Red 0 ( 0.00%)",
-            "Rounds  7.50 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
-            "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.40%)",
+            "Rounds  5.25 Blue 3 ( 0.63%) Red 0 ( 0.00%)",
+            "Rounds  7.00 Blue 3 ( 0.56%) Red 0 ( 0.00%)",
+            "Rounds  6.75 Blue 3 ( 0.61%) Red 0 ( 0.00%)",
+            "Rounds  8.25 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
+            "Rounds 12.00 Blue 0 ( 0.00%) Red 1 ( 0.40%)",
         ];
         let actual_combat_results: Vec<String> = ChallengeRating::all()
             .iter()
@@ -807,11 +802,11 @@ mod run_combat {
         ];
 
         let expected_combat_results = vec![
-            "Rounds  6.75 Blue 0 ( 0.00%) Red 5 ( 0.38%)",
-            "Rounds  7.50 Blue 0 ( 0.00%) Red 3 ( 0.46%)",
-            "Rounds 11.25 Blue 0 ( 0.00%) Red 1 ( 0.22%)",
-            "Rounds  9.00 Blue 0 ( 0.00%) Red 2 ( 0.42%)",
-            "Rounds  9.00 Blue 0 ( 0.00%) Red 1 ( 0.55%)",
+            "Rounds  8.00 Blue 0 ( 0.00%) Red 2 ( 0.12%)",
+            "Rounds  6.50 Blue 0 ( 0.00%) Red 3 ( 0.44%)",
+            "Rounds 11.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
+            "Rounds  8.00 Blue 0 ( 0.00%) Red 2 ( 0.34%)",
+            "Rounds  8.00 Blue 0 ( 0.00%) Red 1 ( 0.47%)",
         ];
         let actual_combat_results: Vec<String> = ChallengeRating::all()
             .iter()
@@ -831,11 +826,11 @@ mod run_combat {
         ];
 
         let expected_combat_results = vec![
-            "Rounds 10.25 Blue 1 ( 0.15%) Red 0 ( 0.00%)",
-            "Rounds 10.00 Blue 0 ( 0.00%) Red 2 ( 0.32%)",
-            "Rounds 15.25 Blue 0 ( 0.00%) Red 1 ( 0.02%)",
-            "Rounds 11.75 Blue 0 ( 0.00%) Red 1 ( 0.25%)",
-            "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.40%)",
+            "Rounds 12.75 Blue 1 ( 0.11%) Red 0 ( 0.00%)",
+            "Rounds 12.25 Blue 0 ( 0.00%) Red 2 ( 0.24%)",
+            "Rounds 14.50 Blue 1 ( 0.13%) Red 0 ( 0.00%)",
+            "Rounds 12.25 Blue 0 ( 0.00%) Red 1 ( 0.27%)",
+            "Rounds 12.00 Blue 0 ( 0.00%) Red 1 ( 0.40%)",
         ];
         let actual_combat_results: Vec<String> = ChallengeRating::all()
             .iter()

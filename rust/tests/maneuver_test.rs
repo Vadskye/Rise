@@ -41,7 +41,7 @@ fn it_calculates_attack_effects() {
         .add_special_attack(Maneuver::CertainStrike(1).attack(StandardWeapon::Broadsword.weapon()));
     assert_eq!(
         vec![
-            "Certain Broadsword +2 (The subject takes 1d4+1 slashing damage.)",
+            "Certain Broadsword +2 (The subject takes 1d8 slashing damage.)",
             "Broadsword +0 (The subject takes 1d8+1 slashing damage.)"
         ],
         creature
@@ -71,8 +71,8 @@ fn it_derives_elemental_strike_from_archetypes() {
         .push(StandardWeapon::Broadsword.weapon());
     assert_eq!(
         vec![
-            "Elemental Broadsword +5 (The subject takes 2d6+4 bludgeoning, fire, and slashing damage.)",
-            "Broadsword +5 (The subject takes 1d10+4 slashing damage.)"
+            "Elemental Broadsword +5 (The subject takes 2d6+6 bludgeoning, fire, and slashing damage.)",
+            "Broadsword +5 (The subject takes 2d6+4 slashing damage.)"
         ],
         druid
             .creature.calc_all_attacks()

@@ -118,15 +118,15 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
     // TODO: add Giant language
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         knowledge: Some(Knowledge::new(vec![
-            (7, "
+            (0, "
               Giants are massive humanoid creatures that tower over lesser creatures.
               All giants have immense strength and unimpressive agility - except when it comes to throwing and catching rocks, which they tend to excel at.
             "),
-            (12, "
+            (5, "
                 A giant can throw objects no larger than two size categories smaller than itself with ease.
                 Giants prefer to throw boulders, but in a pinch they can throw almost anything.
             "),
-            (17, "
+            (10, "
                 A giant's \\glossterm{range limits} with an object other than a boulder are generally half its range limit with a boulder.
                 The object may also deal less damage than a boulder depending on its construction.
             "),

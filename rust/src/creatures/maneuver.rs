@@ -23,13 +23,13 @@ pub enum Maneuver {
 
 fn standard_damage_scaling(rank: i32) -> i32 {
     if rank >= 11 {
-        return 20;
+        return 24;
     } else if rank >= 9 {
-        return 15;
+        return 16;
     } else if rank >= 7 {
-        return 10;
+        return 8;
     } else if rank >= 5 {
-        return 5;
+        return 4;
     } else if rank >= 3 {
         return 2;
     } else {
@@ -43,7 +43,7 @@ impl Maneuver {
             Self::CertainStrike(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy += 2 + (rank - 1) / 2)
-                .except_hit_damage(|d| d.power_multiplier = 0.0),
+                .except_hit_damage(|d| d.power_multiplier = 0.5),
             Self::CrushingStrike(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy -= 1)
@@ -93,7 +93,7 @@ impl Maneuver {
                     })
             }
             Self::Hamstring(rank) => {
-                assert_minimum_rank(6, rank, "Greater Hamstring");
+                assert_minimum_rank(2, rank, "Hamstring");
                 weapon
                     .attack()
                     .except(|a| a.accuracy += (rank - 1) / 2)
@@ -172,6 +172,6 @@ impl Maneuver {
 
 fn assert_minimum_rank(minimum_rank: i32, actual_rank: &i32, name: &str) {
     if actual_rank < &minimum_rank {
-        panic!("Maneuver {} requires minimum rank {}", name, minimum_rank);
+        panic!("Maneuver {} requires minimum rank {} instead of {}", name, minimum_rank, actual_rank);
     }
 }

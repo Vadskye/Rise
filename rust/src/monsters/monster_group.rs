@@ -1,6 +1,7 @@
 use crate::creatures::Monster;
 use crate::latex_formatting;
 use crate::monsters::knowledge::Knowledge;
+use crate::monsters::CreatureType;
 use titlecase::titlecase;
 
 pub struct MonsterGroup {
@@ -24,7 +25,12 @@ impl MonsterGroup {
                 {monsters}
             ",
             knowledge = if let Some(ref k) = self.knowledge {
-                k.to_latex(&monsters[0].creature_type, monsters[0].creature.level)
+                if monsters.len() > 0 {
+                    k.to_latex(&monsters[0].creature_type, monsters[0].creature.level)
+                } else {
+                    // TODO: correctly support empty monster groups
+                    k.to_latex(&CreatureType::Dragon, 0)
+                }
             } else {
                 "".to_string()
             },
