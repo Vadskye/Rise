@@ -260,8 +260,8 @@ export const heraldOfWar: CombatStyle = {
       rank: 1,
       scaling: {
         3: "You gain a +2 damage bonus with the strike.",
-        5: "The damage bonus increases to +5.",
-        7: "The damage bonus increases to +10.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
       type: "Duration",
     },

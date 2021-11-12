@@ -865,7 +865,7 @@ impl Class {
                             The corpse must have an intact mouth to be able to speak.
                             This ability ends if 24 hours have passed since the creature died.
                         \end{attuneability}
-                        \parhead{Mastery} The bonus from this domain's aspect increases to \plus5.
+                        \parhead{Mastery} The bonus from this domain's aspect increases to \plus4.
 
                     \subsubsection{Destruction}
                         \parhead{Gift} You can use the \textit{destructive attack} ability as a standard action.
@@ -873,12 +873,12 @@ impl Class {
                             Instant
                             \rankline
                             Make a \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy}.
-                            You gain a \plus5 damage bonus with the strike.
+                            You gain a \plus4 damage bonus with the strike.
 
                             \rankline
-                            \rank{3} The damage bonus increases to \plus10.
-                            \rank{5} The damage bonus increases to \plus15.
-                            \rank{7} The damage bonus increases to \plus20.
+                            \rank{3} The damage bonus increases to \plus8.
+                            \rank{5} The damage bonus increases to \plus16.
+                            \rank{7} The damage bonus increases to \plus24.
                         \end{instantability}
                         \parhead{Aspect} Your abilities deal double damage to objects.
                         \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.

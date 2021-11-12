@@ -214,7 +214,7 @@ export const dirtyFighting: CombatStyle = {
       rank: 2,
       scaling: {
         4: "You gain a +2 damage bonus with the strike.",
-        6: "The damage bonus increases to +5.",
+        6: "The damage bonus increases to +4.",
       },
       type: "Instant",
     },
@@ -279,9 +279,9 @@ export const dirtyFighting: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +5.",
-        5: "The damage bonus increases to +10.",
-        7: "The damage bonus increases to +15.",
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
       },
       type: "Instant",
     },

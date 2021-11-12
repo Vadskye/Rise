@@ -17,7 +17,7 @@ export const mobileAssault: CombatStyle = {
       rank: 2,
       scaling: {
         4: "You gain a +2 damage bonus with the strike.",
-        6: "The damage bonus increases to +5.",
+        6: "The damage bonus increases to +4.",
       },
       type: "Instant",
     },
@@ -92,8 +92,8 @@ export const mobileAssault: CombatStyle = {
       rank: 1,
       scaling: {
         3: "You gain a +2 damage bonus with the strike.",
-        5: "The damage bonus increases to +5.",
-        7: "The damage bonus increases to +10.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
       type: "Duration",
     },
@@ -112,8 +112,8 @@ export const mobileAssault: CombatStyle = {
       rank: 1,
       scaling: {
         3: "You gain a +2 damage bonus with the strike at the end of the charge.",
-        5: "The damage bonus increases to +5.",
-        7: "The damage bonus increases to +10.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
       type: "Instant",
     },
@@ -217,7 +217,7 @@ export const mobileAssault: CombatStyle = {
       rank: 3,
       scaling: {
         5: "You gain a +2 damage bonus with the strike.",
-        7: "The damage bonus increases to +5.",
+        7: "The damage bonus increases to +4.",
       },
       type: "Instant",
     },
@@ -249,7 +249,7 @@ export const mobileAssault: CombatStyle = {
       // TODO: damage gap between this attack and leaping strike is awkward
       scaling: {
         4: "You gain a +2 damage bonus with the strike.",
-        6: "The damage bonus increases to +5.",
+        6: "The damage bonus increases to +4.",
       },
       type: "Instant",
     },

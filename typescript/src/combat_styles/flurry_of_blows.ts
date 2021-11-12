@@ -122,7 +122,7 @@ export const flurryOfBlows: CombatStyle = {
       rank: 2,
       scaling: {
         4: "You gain a +2 damage bonus with both strikes.",
-        6: "The damage bonus increases to +5.",
+        6: "The damage bonus increases to +4.",
       },
       type: "Instant",
     },
@@ -286,8 +286,8 @@ export const flurryOfBlows: CombatStyle = {
         For each previous consecutive round in which you used this ability, you gain a +2 damage bonus with the strike, up to a maximum of +5.
       `,
       scaling: {
-        4: 'The damage bonus per round increases to +3, and the maximum damage bonus increases to +10.',
-        6: 'The damage bonus per round increases to +5, and the maximum damage bonus increases to +15.',
+        4: 'The damage bonus per round increases to +3, and the maximum damage bonus increases to +8.',
+        6: 'The damage bonus per round increases to +6, and the maximum damage bonus increases to +16.',
       },
       rank: 2,
       type: "Instant",
@@ -304,8 +304,8 @@ export const flurryOfBlows: CombatStyle = {
       rank: 1,
       scaling: {
         3: "You gain a +2 damage bonus with both strikes.",
-        5: "The damage bonus increases to +5.",
-        7: "The damage bonus increases to +10.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
       type: "Instant",
     },

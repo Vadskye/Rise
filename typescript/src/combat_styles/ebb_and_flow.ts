@@ -143,9 +143,9 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +5.",
-        5: "The damage bonus increases to +10.",
-        7: "The damage bonus increases to +15.",
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
       },
       type: "Instant",
     },
@@ -173,8 +173,8 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "The damage bonus increases to +5.",
-        6: "The damage bonus increases to +10.",
+        4: "The damage bonus increases to +4.",
+        6: "The damage bonus increases to +8.",
       },
       type: "Instant",
     },
@@ -200,13 +200,13 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
-        You gain a +5 damage bonus with the strike.
+        You gain a +4 damage bonus with the strike.
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +10.",
-        5: "The damage bonus increases to +15.",
-        7: "The damage bonus increases to +20.",
+        3: "The damage bonus increases to +8.",
+        5: "The damage bonus increases to +16.",
+        7: "The damage bonus increases to +24.",
       },
       type: "Instant",
     },
@@ -382,8 +382,8 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 2,
       scaling: {
-        4: "The damage bonus increases to +5.",
-        6: "The damage bonus increases to +10.",
+        4: "The damage bonus increases to +4.",
+        6: "The damage bonus increases to +8.",
       },
       type: "Instant",
     },
