@@ -54,6 +54,7 @@ fn it_calculates_rank_abilities() {
             "Enduring Discipline",
             "Equipment Efficiency",
             "Greater Armor Expertise",
+            "Greater Martial Expertise",
             "Greater Mental Discipline",
             // 2 of these since they are used for maneuver scaling at ranks 1 and 3
             "Maneuvers",
@@ -367,9 +368,9 @@ fn standard_character_statistics_level_10() {
 
     // HasDamageAbsorption
     assert_eq!(
-        47,
+        51,
         creature.calc_hit_points(),
-        "HP: 31 level + 8 martial mastery + 4 con + 4 magic item",
+        "HP: 31 level + 12 martial mastery + 4 con + 4 magic item",
     );
     assert_eq!(
         24,
@@ -472,9 +473,9 @@ fn standard_character_statistics_level_20() {
 
     // HasDamageAbsorption
     assert_eq!(
-        144,
+        151,
         creature.calc_hit_points(),
-        "HP: 100 level + 21 martial mastery + 7 con + 16 magic item",
+        "HP: 100 level + 28 martial mastery + 7 con + 16 magic item",
     );
     assert_eq!(
         71,
