@@ -171,7 +171,7 @@ fn calc_attack_damage_per_round(attack: &Attack, attacker: &Creature, defender: 
             defender.calc_defense(&attack.defense),
         );
         average_damage_per_round +=
-            glance_probability * (damage_dice.average_damage() + damage_modifier as f64) / 2.0;
+            glance_probability * (damage_modifier as f64);
         return average_damage_per_round;
     } else {
         return 0.0;
