@@ -771,7 +771,7 @@ export const polymorph: MysticSphere = {
         For each creature, you choose one of the following effects.
         \\parhead{Awareness} The subject gains a +3 \\glossterm{magic bonus} to the Awareness skill.
         \\parhead{Darkvision} The subject gains \\glossterm{darkvision} with a range of 60 feet.
-        \\parhead{Low-Light Vision} The subject gains \\glossterm{low-light vision}.
+        \\parhead{Low-light Vision} The subject gains \\glossterm{low-light vision}.
         \\parhead{Scent} The subject gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Senses}).
       `,
       rank: 5,
