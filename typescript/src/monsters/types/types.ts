@@ -2,7 +2,6 @@ import { defenseBonusesByMonsterType } from "@src/calculate/defense_bonuses_by_m
 import { MonsterType } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterInput } from "@src/monsters/reformat_monster_input";
-import { animals } from "./animals";
 import { animates } from "./animates";
 import { dragons } from "./dragons";
 import { humanoids } from "./humanoids";
@@ -12,7 +11,6 @@ import { planeforged } from "./planeforged";
 import { undead } from "./undead";
 
 export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
-  "animal": animals,
   "animate": animates,
   "dragon": dragons,
   "humanoid": humanoids,
@@ -35,7 +33,6 @@ function formatDefenseBonuses(monsterType: MonsterType) {
 
 // Individual monsters may have different knowledge skills
 export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
-  "animal": ["nature"],
   "animate": ["arcana"],
   "dragon": ["arcana"],
   "humanoid": ["local"],
@@ -46,9 +43,6 @@ export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
 };
 
 export const typeDescriptions: Record<MonsterType, string | null> = {
-  "animal": `
-    ${formatDefenseBonuses("animal")}
-  `,
   "animate": `
     ${formatDefenseBonuses("animate")}
     \\parhead{Animated Life} Animates are living creatures that are fundamentally composed of inanimate matter.
