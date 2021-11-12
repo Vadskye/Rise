@@ -4,12 +4,6 @@ import { DefenseType, MonsterType } from "@src/data";
 // Monster defense bonuses are generally more balanced than PC defense bonuses.
 export function defenseBonusesByMonsterType(monsterType: MonsterType): Record<DefenseType, number> {
   return {
-    "dragon": {
-      armor: 2,
-      fortitude: 6,
-      reflex: 4,
-      mental: 6,
-    },
     "humanoid": {
       armor: 1,
       fortitude: 6,
