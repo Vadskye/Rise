@@ -26,6 +26,7 @@ export const enchantment: MysticSphere = {
       name: "Repeat",
 
       attack: {
+        crit: `The subject does not become immune to this effect.`,
         hit: `
           During the next round, the subject must repeat all actions that it took this round.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
@@ -378,7 +379,7 @@ export const enchantment: MysticSphere = {
       name: "Fearsome Aura",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
+        crit: "The subject does not become immune to this effect.",
         hit: `Each subject is \\glossterm{briefly} \\shaken by you.`,
         targeting: `
           At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
@@ -549,6 +550,7 @@ export const enchantment: MysticSphere = {
       name: "Solipsism",
 
       attack: {
+        crit: "The subject does not become immune to this effect.",
         hit: `
           As a \\glossterm{condition}, the subject believes that it is the only real creature, and the rest of the world is an illusion.
           It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
@@ -624,7 +626,7 @@ export const enchantment: MysticSphere = {
       name: "Friend to Foe",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} that lasts until it is removed.`,
+        crit: `The subject does not become immune to this effect.`,
         // No relevant glance effect
         hit: `The subject \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
         It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
