@@ -1599,10 +1599,10 @@ def generate_apparel():
             description="""
                 This belt functions like a \\mitem<shrinking belt>, except that you also gain a +2 \\glossterm<magic bonus> to Dexterity-based checks while your size is reduced.
             """,
-            short_description="Greatly reduces your size",
+            short_description="Reduces your size and increases agility",
         ),
         MagicItem(
-            name="Shrinking Belt, Greater",
+            name="Shrinking Belt, Supreme",
             rank=7,
             material_type="Belt",
             tags=[],
@@ -1610,7 +1610,7 @@ def generate_apparel():
                 This belt functions like a \\mitem<shrinking belt>, except that you also gain a +2 \\glossterm<magic bonus> to Dexterity-based checks while your size is reduced.
                 In addition, you can choose to decrease your size by either one size category or two size categories.
             """,
-            short_description="Greatly reduces your size",
+            short_description="Greatly reduces your size and increases agility",
         ),
     ]
 
