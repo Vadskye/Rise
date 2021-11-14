@@ -635,7 +635,7 @@ def magical_power():
                 : 0;
             level_scaling = level_scaling * (challenge_rating
                 ? {{
-                    0.5: 0.5,
+                    0.5: 1,
                     1: 1,
                     2: 2,
                     4: 2,
@@ -675,7 +675,7 @@ def mundane_power():
                 : 0;
             level_scaling = level_scaling * (challenge_rating
                 ? {{
-                    0.5: 0.5,
+                    0.5: 1,
                     1: 1,
                     2: 2,
                     4: 2,
@@ -738,7 +738,7 @@ def damage_resistance():
                 0: 1,
                 0.5: 0,
                 1: 1,
-                2: 2,
+                2: 3,
                 4: 6,
                 6: 10,
             }}[challenge_rating || 0];
