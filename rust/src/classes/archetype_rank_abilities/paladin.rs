@@ -74,7 +74,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you resume the aura, you can choose which creatures within the area are affected by aura as any combination of yourself, your \glossterm{allies}, your \glossterm{enemies}, and other creatures.
                 The effect of the aura depends on your devoted alignment, as described below.
 
-                \subparhead{Chaos} Whenever a target rolls a 1 on an attack roll with a \glossterm{strike}, it \glossterm{explodes} (see \pcref{Exploding Attacks}.
+                \subparhead{Chaos} Whenever a target rolls a 9 on an attack roll with a \glossterm{strike}, it \glossterm{explodes} (see \pcref{Exploding Attacks}.
                 This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
                 \subparhead{Evil} Each target suffers a \minus1 penalty to \glossterm{defenses} as long as it is affected by at least one \glossterm{condition}.
                 % TODO: clarify what happens if multiple people try to Good aura the same target

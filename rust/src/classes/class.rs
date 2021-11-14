@@ -836,7 +836,7 @@ impl Class {
 
                     \subsubsection{Chaos}
                         \parhead{Gift} You are immune to \abilitytag{Compulsion} attacks.
-                        \parhead{Aspect} If you roll a 1 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
+                        \parhead{Aspect} If you roll a 9 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
                         This does not affect bonus dice rolled for exploding attacks.
                         \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
                         \begin{instantability}{Twist of Fate}
