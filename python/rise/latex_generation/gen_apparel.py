@@ -1660,7 +1660,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Frenzied Gloves, Greater",
-            rank=5,
+            rank=7,
             material_type="Gloves",
             tags=[],
             description="""
