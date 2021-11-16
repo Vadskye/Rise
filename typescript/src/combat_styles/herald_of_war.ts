@@ -160,13 +160,27 @@ export const heraldOfWar: CombatStyle = {
       name: "Greater Directed Shout",
 
       attack: {
-        hit: `The subject takes 5d10 + \\glossterm{power} sonic damage.`,
+        hit: `The subject takes 4d6 + \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange of you.
         `,
       },
       scaling: "damage",
-      rank: 6,
+      rank: 4,
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Directed Shout",
+
+      attack: {
+        hit: `The subject takes 6d10 + \\glossterm{power} sonic damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\medrange of you.
+        `,
+      },
+      scaling: "damage",
+      rank: 7,
       type: "Instant",
     },
 
