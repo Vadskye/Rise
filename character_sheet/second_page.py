@@ -286,18 +286,7 @@ def calc_attunement_points():
                         ),
                     ),
                     plus(),
-                    underlabel(
-                        "Scaling",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "attunement_points_from_level_display",
-                                "value": "(@{attunement_points_from_level})",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("attunement_points", 3),
+                    equation_misc_repeat("attunement_points", 4),
                 ],
                 result_attributes={
                     "disabled": True,
