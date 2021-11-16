@@ -1651,11 +1651,11 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Frenzied Gloves",
-            rank=3,
+            rank=4,
             material_type="Gloves",
             tags=[],
             description="""
-                Whenever you make a \\glossterm<strike>, you \\glossterm<briefly> gain a +1 bonus to \\glossterm<accuracy> with \\glossterm<strikes>.
+                Whenever you hit with a \\glossterm<strike>, you \\glossterm<briefly> gain a +1 bonus to \\glossterm<accuracy> with \\glossterm<strikes>.
                 As normal, this bonus does not stack with itself.
             """,
             short_description="Grants +1 accuracy to continuous strikes",
