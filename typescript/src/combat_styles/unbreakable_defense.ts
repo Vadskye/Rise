@@ -326,7 +326,7 @@ export const unbreakableDefense: CombatStyle = {
         After you make the strike, you \\glossterm{briefly} gain a +2 bonus to all defenses.
         This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 5,
+      rank: 6,
       type: "Duration",
     },
   ],
