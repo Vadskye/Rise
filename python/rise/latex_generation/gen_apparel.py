@@ -1812,7 +1812,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                When you or an adjacent ally casts a spell that does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags,
+                When you or an adjacent \\glossterm<ally> casts a spell that does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags,
                     you can invest the magic of the spell in the ring.
                 If you do, the spell does not have its normal effect.
                 All decisions about the spell's effect must be made at the time that the spell is invested in this way.
