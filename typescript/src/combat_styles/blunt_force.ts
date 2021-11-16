@@ -359,7 +359,7 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 5,
       scaling: {
-        7: "You gain a +5 damage bonus with the strike.",
+        7: "You gain a +4 damage bonus with the strike.",
       },
       type: "Duration",
     },
