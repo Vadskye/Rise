@@ -258,17 +258,15 @@ def accuracy():
 
 
 def attunement_points():
-    misc = get_misc_variables("attunement_points", 3)
+    misc = get_misc_variables("attunement_points", 4)
     return js_wrapper(
         ["level", "attunement_points_from_class", *misc],
         f"""
-            var attunement_points_from_level = Math.floor(Math.max(0, (level + 1) / 6));
-            var attunement_points = attunement_points_from_class + attunement_points_from_level + {sum_variables(misc)};
+            var attunement_points = attunement_points_from_class + {sum_variables(misc)};
             setAttrs({{
                 attunement_points,
                 attunement_points_max: attunement_points,
                 attunement_points_maximum: attunement_points,
-                attunement_points_from_level,
             }});
         """,
     )
