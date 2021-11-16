@@ -688,7 +688,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     In addition, the Fortitude bonus increases to \plus2.
                 }
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(5)]),
+            modifiers: Some(vec![Modifier::MagicalPower(3)]),
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -700,13 +700,28 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater School Attunement",
+            name: "School Resilience",
             is_magical: true,
             rank: 6,
             description: r"
-                The number of attunement points you gain from your \textit{school attunement} ability increases to two.
+                You gain a defensive ability based on your chosen school.
+                {
+                    \subcf{Abjuration} You are immune to \glossterm{push} and \glossterm{knockback} effects.
+                    In addition, your spells cannot be \glossterm{suppressed} or \glossterm{dismissed} by \glossterm{magical} effects other than your own.
+
+                    \subcf{Conjuration} You passively flicker into the Astral Plane, causing all \glossterm{targeted} attacks against you to have a 10\% \glossterm{failure chance}.
+
+                    \subcf{Evocation} You are \glossterm{impervious} to cold damage, electricity damage, and fire damage.
+
+                    \subcf{Illusion} You are immune to being \dazzled and \blinded.
+
+                    \subcf{Transmutation} You are immune to being \slowed and \decelerated.
+
+                    \subcf{Necromancy} You are \glossterm{impervious} to attacks from creatures with less than half of their maximum hit points remaining and undead creatures.
+                }
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+            // TODO: represent this somehow?
+            modifiers: None,
         },
         RankAbility {
             name: "Supreme School Expertise",
