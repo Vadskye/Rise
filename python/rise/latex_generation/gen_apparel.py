@@ -1432,10 +1432,11 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Manifestation"],
             description="""
-                Fog constantly fills a \\areamed radius emanation from you.
-
-                If a 5-foot square of fog takes at least 4 fire damage from a single attack, the fog \\glossterm{briefly} disappears from that area.
+                At the end of each round, fog \\glossterm<briefly> fills a \\areamed radius zone from you.
                 This fog does not fully block sight, but it provides \\glossterm<concealment>.
+                There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
+
+                If a 5-foot square of fog takes at least 4 fire damage from a single attack, the fog disappears from that area.
             """,
             short_description="Fills nearby area with fog",
         ),
@@ -1445,10 +1446,11 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Manifestation"],
             description="""
-                A thick fog constantly fills a \\areamed radius emanation from you.
+                At the end of each round, a thick fog \\glossterm<briefly> fills a \\areamed radius zone from you.
                 This fog completely blocks sight beyond 15 feet.
+                There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
 
-                If a 5-foot square of fog takes at least 16 fire damage from a single attack, the fog \\glossterm{briefly} disappears from that area.
+                If a 5-foot square of fog takes at least 16 fire damage from a single attack, the fog disappears from that area.
             """,
             short_description="Fills nearby area with thick fog",
         ),
