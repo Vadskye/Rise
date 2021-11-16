@@ -86,7 +86,8 @@ export const polymorph: MysticSphere = {
     {
       name: "Twisting Claw",
       effect: `
-        Make a melee \\glossterm{strike} with a -1d damage penalty using a \\glossterm{natural weapon}.
+        Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
+        Your \\glossterm{power} with the strike is halved.
         The attack is made against the target's Reflex defense instead of its Armor defense.
         You may use the higher of your \\glossterm{magical} power and your \\glossterm{mundane} power to determine your damage with this ability.
       `,
@@ -99,18 +100,17 @@ export const polymorph: MysticSphere = {
       type: 'Instant',
     },
 
-    // Better than power attack, but also requires natural weapons, so this should be fine
     {
       name: "Mighty Claw",
       effect: `
-        Make a melee \\glossterm{strike} with a -1 accuracy penalty and a +2d damage bonus using a \\glossterm{natural weapon}.
+        Make a melee \\glossterm{strike} with a -1 accuracy penalty and a +2 damage bonus using a \\glossterm{natural weapon}.
         You may use the higher of your \\glossterm{magical} power and your \\glossterm{mundane} power to determine your damage with this ability.
       `,
       rank: 1,
       scaling: {
-        3: 'The damage bonus increases to +3d.',
-        5: 'The damage bonus increases to +4d.',
-        7: 'The damage bonus increases to +5d.',
+        3: 'The damage bonus increases to +4.',
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
       type: 'Instant',
     },
