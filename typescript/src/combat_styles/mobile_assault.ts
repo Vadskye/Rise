@@ -202,7 +202,7 @@ export const mobileAssault: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +5 damage bonus with the strike.",
+        6: "You gain a +4 damage bonus with the strike.",
       },
       type: "Instant",
     },

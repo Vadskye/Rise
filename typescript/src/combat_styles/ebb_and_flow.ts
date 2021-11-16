@@ -36,7 +36,7 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +5 damage bonus with the strike.",
+        6: "You gain a +4 damage bonus with the strike.",
       },
       type: "Instant",
     },
@@ -54,7 +54,7 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 5,
       scaling: {
-        6: "You gain a +5 damage bonus with the strike.",
+        6: "You gain a +4 damage bonus with the strike.",
       },
       type: "Instant",
     },
@@ -257,8 +257,8 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "You gain a +5 damage bonus with the strike.",
-        7: "The damage bonus increases to +10.",
+        5: "You gain a +4 damage bonus with the strike.",
+        7: "The damage bonus increases to +8.",
       },
       type: "Instant",
     },
@@ -364,11 +364,11 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You gain a +5 damage bonus with the strike if you used the \\textit{recover} ability or a \\abilitytag{Healing} ability last round.
+        You gain a +4 damage bonus with the strike if you used the \\textit{recover} ability or a \\abilitytag{Healing} ability last round.
       `,
       rank: 4,
       scaling: {
-        6: "The damage bonus increases to +10.",
+        6: "The damage bonus increases to +8.",
       },
       type: "Instant",
     },

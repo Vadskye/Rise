@@ -8,16 +8,18 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: "Twinstrike",
 
-      // roll twice is a little over 2.5 accuracy
+      // roll twice is a little over 2.5 accuracy; not adding power makes this normally
+      // worse than certain strike, but it's better for crit fishing
       effect: `
         Make a \\glossterm{strike}.
         You may reroll the accuracy roll and take the highest result.
         However, you do not add your \\glossterm{power} to damage with the strike.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Instant",
     },
@@ -31,7 +33,10 @@ export const flurryOfBlows: CombatStyle = {
         You may reroll the accuracy roll twice and take the highest result.
         However, you do not add your \\glossterm{power} to damage with the strike.
       `,
-      rank: 6,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
+      },
       type: "Instant",
     },
 
@@ -65,7 +70,7 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +5 damage bonus with both strikes.",
+        6: "You gain a +4 damage bonus with both strikes.",
       },
       type: "Instant",
     },
@@ -132,13 +137,14 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
-        The strike targets all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
+        The strike targets all \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
         Your \\glossterm{power} with the strike is halved.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Instant",
     },
@@ -180,7 +186,7 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +5 damage bonus with both strikes.",
+        6: "You gain a +4 damage bonus with both strikes.",
       },
       type: "Instant",
     },
