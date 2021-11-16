@@ -274,7 +274,7 @@ export const enchantment: MysticSphere = {
 
       // original targets: One creature within \medrange
       attack: {
-        crit: `The subject takes a -4 penalty to its defenses against the strike.`,
+        crit: "The subject does not become immune to this effect.",
         // No glance effect since it's already one round
         hit: `
           During the next \\glossterm{action phase}, the subject is compelled to make a \\glossterm{strike} against itself as a \\glossterm{standard action}.
