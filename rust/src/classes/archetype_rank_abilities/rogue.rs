@@ -30,7 +30,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     If the target is \unaware or \partiallyunaware of your attack, or if the target is adjacent to one of your \glossterm{allies}, you gain two benefits.
                     First, you gain a \plus2 damage bonus with the strike.
                     Second, if you get a \glossterm{critical hit}, you double all of your damage bonuses along with your damage dice.
-                    You do not gain these benefits against creatures who that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
+                    You do not gain these benefits against creatures that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
 
                     \rankline
                     \rank{3} The damage bonus increases to \plus4.
