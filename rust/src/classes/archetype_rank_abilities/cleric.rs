@@ -566,7 +566,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \hit Each subject is \shaken by you as a \glossterm{condition}.
 
                     \rankline
-                    \rank{7} Each subject with no remaining \glossterm{damage resistance} is \\frightened instead of shaken.
+                    \rank{7} Each subject with no remaining \glossterm{damage resistance} is \frightened instead of shaken.
                 \end{instantability}
             ",
             modifiers: None,
