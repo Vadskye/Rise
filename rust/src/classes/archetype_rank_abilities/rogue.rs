@@ -903,7 +903,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                You can use wands as if you were able to cast spells from all \glossterm{magic sources}.
+                You can use wands as if you were able to cast arcane spells.
                 Your maximum spell rank is equal to your rank in this archetype.
                 In addition, you gain an additional \glossterm{attunement point}.
                 You can only use this attunement point to \glossterm{attune} to magic wands or apparel items.
@@ -955,10 +955,12 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                The number of attunement points you gain from your \textit{trick magic device} ability increases to two.
-                In addition, you can use the attunement points from that ability to attune to any magic item, not just wands and apparel.
+                You can use wands as if you were able to cast spells from all \glossterm{magic sources}, not just arcane spells.
+                In addition, you gain a \plus2 bonus to \glossterm{accuracy} with abilities granted to you by magic items.
+                This includes spells cast from wands, the special strike you can make with a \mitem{surestrike} weapon, and other similar abilities.
+                However, it does not include ordinary strikes or maneuvers that simply use a magic weapon.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Greater Exploit Distraction",

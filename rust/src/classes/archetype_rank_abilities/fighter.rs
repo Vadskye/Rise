@@ -195,10 +195,11 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                The number of attunement points you gain from your \textit{efficient equipment} ability increases to two.
-                In addition, you can use the attunement points from that ability to attune to any magic item, not just weapons and armor.
+                As a \glossterm{minor action}, you can deattune from an item you are attuned to with the \glossterm{attunement point} granted by your \textit{equipment efficiency} ability.
+                When you do, you immediately regain that attunement point instead of waiting for a \glossterm{short rest}.
+                This allows you to use that attunement point to attune to a different item much more quickly than normal.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Supreme Armor Expertise",
