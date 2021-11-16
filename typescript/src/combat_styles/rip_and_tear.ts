@@ -226,7 +226,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 5,
       scaling: {
-        7: "You gain a +5 damage bonus with the strike.",
+        7: "You gain a +4 damage bonus with the strike.",
       },
       type: "Instant",
     },
@@ -241,7 +241,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +5 damage bonus with the strike.",
+        6: "You gain a +4 damage bonus with the strike.",
       },
       type: "Instant",
     },
