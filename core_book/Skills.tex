@@ -321,13 +321,15 @@ This chapter describes each skill, including common uses for those skills.
 \newpage
 \skill{Climb}{Str}
     The Climb skill represents your ability to climb obstacles.
+    A creature that is climbing without a \glossterm{climb speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
 
-    \subsection{Climb}
-        You can make a Climb check as a \glossterm{free action} while you are touching a slope, a wall, or some other steep incline (or even a ceiling with handholds).
+    \subsection{Climbing}
+        You can make a Climb check as a \glossterm{move action} while you are touching a slope, a wall, or some other steep incline (or even a ceiling with handholds).
         The \glossterm{difficulty value} of the check depends on the difficulty of the task and the conditions of the climbing surface, as shown on \trefnp{Climb Difficulty Values} and \trefnp{Climb Difficulty Modifiers}.
+        Since moving in this way is a \glossterm{move action}, you cannot also use other move actions like the \ability{block} or \ability{follow} abilities.
 
-        Success means you gain a \glossterm{climb speed} equal to the size of your space during the current phase, as described on \trefnp{Climb Speeds}.
-        Critical success means the climb speed you gain is doubled.
+        Success means you can move a distance equal to the size of your space during the current phase, as described on \trefnp{Climb Speeds}.
+        Critical success means the distance you can move is doubled.
         Failure means your action is wasted and you do not move.
         Critical failure means you fall.
 
@@ -335,15 +337,15 @@ This chapter describes each skill, including common uses for those skills.
             \lcaption{Climb Speeds}
             \begin{dtabularx}{\columnwidth}{l X}
                 \tb{Size}   & \tb{Speed}  \tableheaderrule
-                Fine        & 1/2 ft.    \\
-                Diminuitive & 1 ft.      \\
-                Tiny        & 2-1/2 ft.  \\
-                Small       & 5 ft.      \\
-                Medium      & 5 ft.      \\
-                Large       & 10 ft.     \\
-                Huge        & 15 ft.     \\
-                Gargantuan  & 20 ft.     \\
-                Colossal    & 25\add ft. \\
+                Fine       & 1/4 ft.    \\
+                Diminutive & 1/2 ft.    \\
+                Tiny       & 1 ft.      \\
+                Small      & 2-1/2 ft.  \\
+                Medium     & 5 ft.      \\
+                Large      & 10 ft.     \\
+                Huge       & 20 ft.     \\
+                Gargantuan & 40 ft.     \\
+                Colossal   & 80\add ft. \\
             \end{dtabularx}
         \end{dtable}
 
@@ -1641,15 +1643,19 @@ This chapter describes each skill, including common uses for those skills.
 \newpage
 \skill{Swim}{Str}
         The Swim skill represents your ability to swim.
+        A creature that is swimming without a \glossterm{swim speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+        In addition, ranged weapons have difficulty working underwater.
+        All ranged weapons have \glossterm{range limits} of 5/15 when used by a creature that is underwater, or when used against a target that is underwater, regardless of the attack's normal range limits or any other modifiers.
 
     \subsection{Swimming}
-        You can make a Swim check as a \glossterm{free action} while you are in water or some other thick liquid that allows swimming.
-        This is a \glossterm{Swift} ability, so you can use any swim speed you gain during the same phase that you use this ability.
+        You can make a Swim check as a \glossterm{move action} while you are in water or some other thick liquid that allows swimming.
         The \glossterm{difficulty value} depends on the turbulence of the water, as shown on \trefnp{Swim Difficulty Values}.
+        Since moving in this way is a \glossterm{move action}, you cannot also use other move actions like the \ability{block} or \ability{follow} abilities.
 
-        Success means you gain a \glossterm{swim speed} equal to one quarter of the \glossterm{base speed} for your size until the end of the phase.
-        Critical success means the swim speed you gain is equal to half the base speed for your size.
+        Success means you can move up to one quarter of the \glossterm{base speed} for your size.
+        Critical success means that you can instead move up to half the base speed for your size.
         Failure means your action is wasted and you do not move.
+        Critical failure means you sink five feet deeper into the liquid, which can cause you to start drowning.
 
         \begin{dtable}
             \lcaption{Swim Difficulty Values}
