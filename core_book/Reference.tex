@@ -12,6 +12,8 @@ It always sees the words and actions of the creature that charmed it in the most
 A charmed creature cannot be controlled like an automaton, but can be persuaded to take particular actions with the Persuasion skill (see \pcref{Persuasion}).
 It treats the creature that charmed it as a friend (a \plus10 relationship modifier) for the purpose of Persuasion checks.
 
+\debuffdef{climbing} A creature that is climbing without a \glossterm{climb speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+
 \debuffdef{confused} A confused creature takes a \minus4 penalty to all defenses and is unable to independently control its actions.
 This penalty does not stack with the \dazed or \stunned effects.
 \confusionexplanation
@@ -29,6 +31,9 @@ Among other effects, this gives its attacks a 25\% \glossterm{miss chance}.
 \debuffdef{dominated}[dominate] A dominated creature is mentally compelled to obey another creature.
 It obeys the commands of the creature of the dominated it unquestioningly, as an automaton.
 If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commmands (such as ``attack'' or ``follow'') can usually be communicated successfully.
+
+\debuffdef{flying} A creature that is flying takes a \minus2 penalty to its Armor and Reflex defenses.
+If it 
 
 \debuffdef{frightened} A frightened creature takes a \minus4 penalty to \glossterm{accuracy} and Mental defense while it is within \rngmed range of the source of its fear.
 This does not stack with the \shaken or \panicked effects.
@@ -99,6 +104,8 @@ This does not stack with the \dazed or \confused effects.
 \debuffdef{surrounded} An creature is surrounded if every space adjacent to it either contains an \glossterm{enemy} or is both empty and adjacent to an \glossterm{enemy}.
 A surrounded creature suffers a \minus2 penalty to Armor and Reflex defenses.
 
+\debuffdef{swimming} A creature that is swimming without a \glossterm{swim speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+
 \debuffdef{unaware} An creature that is unaware of an attack makes no attempt to defend itself.
 Creatures take a \minus6 penalty to Armor and Reflex defenses against attacks that they are unaware of.
 This penalty does not stack with the penalty for being \partiallyunaware.
@@ -106,6 +113,9 @@ For details, see \pcref{Awareness and Surprise}.
 
 \debuffdef{unconscious} While you are unconscious, you are \helpless and completely unable to take any actions.
 Some sensory abilities, such as the Awareness and Spellsense skills, can be used while you are asleep, but not while you are forcibly knocked unconscious.
+
+\debuffdef{underwater} Ranged weapons have difficulty working underwater.
+All ranged weapons have \glossterm{range limits} of 5/15 when used by a creature that is underwater, or when used against a target that is underwater, regardless of the attack's normal range limits or any other modifiers.
 
 \newpage
 \section{Ability Tags}\label{Ability Tags}
