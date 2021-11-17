@@ -275,7 +275,8 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a +2 damage bonus.
-        After making the strike, you fall \\prone and are \\glossterm{briefly} unable to stand up.
+        After making the strike, you fall \\prone.
+        If you use this ability during the \\glossterm{delayed action phase}, you are also \\glossterm{briefly} unable to stand up.
       `,
       rank: 1,
       scaling: {
