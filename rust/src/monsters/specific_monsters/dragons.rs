@@ -471,7 +471,7 @@ impl DragonType {
                     is_magical: false,
                     description: "
                         A black dragon can breathe underwater indefinitely.
-                        It suffers no penalties for fighting underwater, and its breath weapon functions at full strength underwater.
+                        In addition, its breath weapon functions at full strength underwater.
                     ".to_string(),
                 },
             ]),
