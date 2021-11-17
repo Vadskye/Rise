@@ -706,8 +706,8 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: `You gain a +5 foot \\glossterm{magic bonus} to your climb speed, or a +10 foot bonus if you already have a climb speed.`,
-        6: `You gain a +10 foot \\glossterm{magic bonus} to your climb speed, or a +15 foot bonus if you already have a climb speed.`,
+        4: `You gain a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot magic bonus if you already have a swim speed.`,
+        6: `You gain a +10 foot \\glossterm{magic bonus} to your swim speed, or a +15 foot magic bonus if you already have a swim speed.`,
       },
       type: "Attune (self)",
     },

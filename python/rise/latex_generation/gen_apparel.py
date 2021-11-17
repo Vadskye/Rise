@@ -648,12 +648,12 @@ def generate_apparel():
         ),
         MagicItem(
             name="Boots of Freedom, Greater",
-            rank=6,
+            rank=7,
             material_type="Boots",
             description="""
                 You are immune to all effects that reduce your movement speed or prevent you from moving, including nonmagical effects such as \\glossterm<difficult terrain>.
-                This removes all penalties you would suffer for acting underwater, except for those relating to using ranged weapons.
-                This does not prevent you from being \\grappled, but you gain a +5 bonus to your defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
+                This removes all penalties you would suffer for \\swimming.
+                This does not prevent you from being \\grappled, but you gain a +4 bonus to your defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
             """,
             short_description="Grants immunity to almost all mobility restrictions",
         )
