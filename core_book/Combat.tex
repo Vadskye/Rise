@@ -119,16 +119,17 @@
 
             Sometimes, actions that occur in the same phase can conflict with each other.
             In this case, each creature involved with conflicting actions in that phase rolls an \glossterm{initiative} check (see \pcref{Initiative}).
-            Starting from the highest check result and continuing to the lowest, each creature decides to resolve its chosen action or delay to choose a different action.
-            After the lowest initiative check result has made its choice, each creature that delayed can resolve a different action of its choice, starting from the lowest check result and continuing to the highest.
-            When deciding, each creature knows the resolved effects of the actions chosen by previous creatures that it can observe.
+            Starting from the highest check result and continuing to the lowest, each creature immediately resolves its chosen action.
+            Creatures that resolve their action afterward accomplish as much of their intended action as possible before being blocked or otherwise prevented.
 
-            When determining whether two actions conflict, it is best to be generous and consider the intention of the action.
-            The only downside to treating actions as conflicting is the time required to resolve the initiative checks and consider action changes.
+            For example, if three different creatures use the \ability{hustle} ability to move into the same space, only the creature with the highest initiative check would actually enter that space.
+            The other two creatures would take their intended path, but they would interrupt their movement when they cannot proceed farther, generally because they run into the space occupied by the first creature.
 
-            For example, one of the most common conflicts occurs when a creature tries to move into melee range with a foe that unexpectedly moves away.
-            Although the two movements not mutually impossible, the first creature can easily end up out of melee range from all foes at the end of the phase if it doesn't have enough movement to reach its target.
-            Treating the movements as conflicting allows the first creature to sprint or change its action if it chooses.
+            In general, directly conflicting actions are rare.
+            Most movements do not conflict - even reactive movements, such as when one creature attempts to follow a withdrawing creature.
+            In that case, no initiative check is necessary - both creatures simply move as far as they can, and the creatures' relative movement speeds determine who is more successful.
+            This does make it possible for creatures to be ``stranded'' out of melee range of any attackers.
+            The \ability{charge} universal ability can be helpful in such cases.
 
     \subsection{Initiative}\label{Initiative}
         When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
@@ -176,7 +177,8 @@
             \label{Hustle}
             Instant
             \rankline
-            Choose a path that you want to travel. You travel that path, up to the limit of your movement speed.
+            Choose a path that you want to travel.
+            You travel that path, up to the limit of your relevant movement speed.
         \end{instantability}
 
         \parhead{Block} As a \glossterm{move action}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
@@ -185,15 +187,16 @@
             \label{Block}
             Instant
             \rankline
-            Choose a creature to block, and the area you want to block it from entering.
-            During the current phase, you automatically move to intercept the target as it approaches the blocked area, up to the limit of your movement speed.
-            You can also use this to prevent the target from accessing a particular aspect of an area, such as picking up an item on the ground.
-            Usually, blocking a target requires that you beat the target on an opposed \glossterm{initiative} check.
-            Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
-            Failure means the target moves around you (if there is room) to enter the area.
+            During the current phase, whenever a creature that you can see attempts to move from a space adjacent to you into another space adjacent to you, you can attempt to block its movement.
+            This includes creatures whose path takes them through two consecutive spaces adjacent to you, even if neither the creature's location at the start of the phase nor its intended location at the end of the phase are adjacent to you.
+            When you do, make an opposed \glossterm{initiative} check against the creature.
+            If you beat it on the initiative check, it must spend additional movement equal to one of your relevant movement speeds to move from its space.
+            If it cannot, it stops moving.
+            This represents you automatically repositioning yourself to block its movement.
 
-            Multiple creatures can coordinate to block a single creature.
-            The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
+            You can only make this check once against any individual creature during a current phase.
+            If the creature has the ability to move through your space, such as if it uses the \ability{overrun} ability, it can ignore this additional movement cost.
+            If multiple creatures are able to block the same creature from moving, it must pay both additional movement costs, which generally keeps it stuck in place.
         \end{instantability}
 
         \parhead{Follow} As a \glossterm{move action}, you can use the \textit{follow} ability to follow a creature as it moves.
@@ -202,12 +205,27 @@
             \label{Follow}
             Instant
             \rankline
-            Choose a creature to follow, and the maximum distance you want to follow at.
-            During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your movement speed.
+            Choose a creature you can see, and the maximum distance you want to follow at.
+            During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your relevant movement speed.
+
             If the target uses an ability that makes it impossible for you to follow its movement, such as teleporting or disappearing from your sight, it is harder for you to follow its movement.
             If you can see its destination, such as if it teleported to a different location within your \glossterm{line of sight}, you must beat the target on an opposed \glossterm{initiative} check.
             Success means that you can follow its movement normally.
-            If you fail at the initiative check, or if you cannot tell where the target went, you stop moving when you become adjacent to the position where it disappeared.
+            If you fail at the initiative check, or if you cannot tell where the target went, you complete your movement as if the creature was still at the location where it disappeared.
+        \end{instantability}
+
+        \parhead{React} As a \glossterm{free action}, you can use the \textit{react} ability to try to choose your movement after seeing what another creature is going to do.
+
+        \begin{instantability}{React}
+            \label{React}
+            \spelltwocol{Instant}{\abilitytag{Swift}}
+            \rankline
+            Choose a creature that you can see.
+            Make an opposed \glossterm{initiative} check against that creature.
+            If you beat it on the initiative check, you learn whether it is going to take a \glossterm{move action} during the current phase, and if so, what that move action will be.
+            This does not give you any information about actions other than move actions, so using this ability during the action phase is often pointless.
+            If you fail, you learn nothing about that creature's movement, and that creature automatically beats you on any other opposed initiative checks during the current phase.
+            This represents you wasting time trying to watch the creature, giving it extra time to beat you in any sort of opposed contest or race.
         \end{instantability}
 
         \parhead{Withdraw} As a \glossterm{move action}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
@@ -582,17 +600,18 @@
             On a critical hit, you can move up to your full movement speed instead.
         \end{instantability}
 
-        % It's important that this is a movement *replacement* instead of a generic speed modifier
+        % It's important that this can only be used with move actions
         % to prevent it from being abused with abilities like Shove.
         \parhead{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
 
         \begin{instantability}{Sprint}
             \label{Sprint}
-            Instant
+            \spelltwocol{Instant}{\abilitytag{Swift}}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by one.
 
-            You move up to double your normal movement speed.
+            You can immediately take another \glossterm{move action}.
+            For the duration of that move action, you double your speed with all of your movement modes.
         \end{instantability}
 
         \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
