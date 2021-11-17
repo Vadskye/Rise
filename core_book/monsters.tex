@@ -9,62 +9,8 @@ This chapter describes the rules for monsters, and the combat statistics for a v
     However, they do not have classes, legacy items, or many other elements of characters.
     This section defines how monsters function.
 
-    \subsection{Level}
-        Each monster has a level that indicates its approximate strength.
-        This has all of the same effects as the level for a player character, except that monsters do not gain legacy items or attunement points as described in \tref{Character Advancement}.
-
-    \subsection{Challenge Rating}\label{Challenge Rating}
-        Each monster has a \glossterm{challenge rating} that indicates its approximate strength within its level, ranging from 1/2 to 6.
-        A monster's challenge rating is a guideline to how many of that monster should typically be present in an encounter (see \pcref{Encounter Balancing}).
-        This has several effects on the monster's statistics, as described in \trefnp{Challenge Rating Effects}.
-
-        \begin{dtable*}
-            \lcaption{Challenge Rating Effects}
-            \begin{dtabularx}{\textwidth}{l l l l X X l l}
-                \tb{CR} & \tb{HP}  & \tb{DR} & \tb{Defenses} & \tb{Power Scaling}\fn{1} & \tb{Max Attribute} & \tb{Max Rank}\fn{2} & \tb{Damage}\fn{3} \tableheaderrule
-                1/2     & \mult1/2 & \mult0  & \plus0        & \mult1           & 3                  & \minus1 & \minus1d \\
-                1       & \mult1   & \mult1  & \plus0        & \mult1           & 4                  & \tdash & \tdash   \\
-                2       & \mult2   & \mult3  & \plus0        & \mult2           & 5                  & \tdash & \plus1d  \\
-                4       & \mult4   & \mult6  & \plus1        & \mult2           & 6                  & \plus1 & \plus2d  \\
-                6       & \mult6   & \mult10 & \plus2        & \mult2           & 6                  & \plus1 & \plus3d  \\
-            \end{dtabularx}
-            1. This modifier applies to the special power bonus that monsters get based on their level, not to any other sources of power such as Strength or Willpower. \\
-            2. See \pcref{Rank-Based Ability Access}. \\
-            3. This modifier applies to all damage dice rolled by the monster, including both strikes and magical abilities. \\
-        \end{dtable*}
-
-        \subsubsection{Monster Vital Wounds}
-            Monsters do not normally make \glossterm{vital rolls} like player characters do.
-            Unless otherwise specified on the monster's description, \glossterm{vital wounds} have no negative effects on monsters.
-            Instead, once a monster gains a \glossterm{vital wound}, it is defeated.
-            Defeated monsters may be unconscious, dead, or merely flee the fight at the discretion of the Game Master.
-
-        \subsubsection{Monster Resources}
-            Unless otherwise noted in their description, monsters have no \glossterm{resources}, and their \glossterm{fatigue tolerance} is treated as 0.
-            They are unable to use abilities that would cause them to increase their \glossterm{fatigue level}, such as the \textit{desperate exertion} ability.
-
-        \subsubsection{Recovering Conditions}
-            Monsters cannot normally use the \textit{recover} ability.
-            However, monsters with a high challenge rating can remove conditions automatically.
-            At the end of each round, monsters with CR of 2 or higher roll 1d10 \add their CR.
-            If the result is 11 or higher, the monster removes one condition of its choice.
-            For every 5 points by which it exceeds that result, it removes an additional condition.
-            This effect cannot remove a condition applied during the current round.
-            Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
-
-        \subsubsection{Rank-Based Ability Access}
-            Although monsters do not gain archetypes, their special abilities should still be balanced appropriately for their maximum accessible rank.
-            Like a player character, a monster's maximum accessible rank is based on its level, as shown in \tref{Monster Advancement}.
-            CR 1/2 monsters take a \minus1 penalty to their maximum rank, and generally do not have particularly powerful or complex special abilities.
-            CR 4 and CR 6 monsters gain a \plus1 bonus to their maximum rank, allowing them to use powerful abilities before player characters can.
-
-    \subsection{Attributes}
-        Each of a monster's base attributes can range from \minus9 to 3, as appropriate for the type of monster.
-        A monster's attributes scale with level in the same way as player character attributes.
-        A monster can also have up to two attributes that are higher than 3, up to the maximum base attribute value for that monster's challenge rating.
-        In general, a monster with higher starting attributes will be stronger, but not all monsters need to start with the same starting attribute total.
-
     \subsection{Level Scaling}
+        Each monster has a level that indicates its approximate strength.
         Monsters have specific level scaling rules that differ from the rules for player characters.
         In general, their automatic level scaling is designed to keep them on par with the power that player characters gain at higher levels, but without all of the complexity of high-level PCs.
         High level monsters should have slightly higher base values for their attributes, though this is not quantified, since monster attributes can be highly varied.
@@ -123,6 +69,57 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         2. Assuming the monster has no free hands (see \pcref{Monster Natural Weapon Bonuses}). \\
         % 3. For each level beyond 21, a monster increases its maximum hit points by 25 and its maximum damage resistance by 12. \\
     \end{dtable*}
+
+    \subsection{Challenge Rating}\label{Challenge Rating}
+        Each monster has a \glossterm{challenge rating} that indicates its approximate strength within its level, ranging from 1/2 to 6.
+        A monster's challenge rating is a guideline to how many of that monster should typically be present in an encounter (see \pcref{Encounter Balancing}).
+        This has several effects on the monster's statistics, as described in \trefnp{Challenge Rating Effects}.
+
+        \begin{dtable*}
+            \lcaption{Challenge Rating Effects}
+            \begin{dtabularx}{\textwidth}{l l l l X X l l}
+                \tb{CR} & \tb{HP}  & \tb{DR} & \tb{Defenses} & \tb{Power Scaling}\fn{1} & \tb{Max Attribute} & \tb{Max Rank}\fn{2} & \tb{Damage}\fn{3} \tableheaderrule
+                1/2     & \mult1/2 & \mult0  & \plus0        & \mult1           & 3                  & \minus1 & \minus1d \\
+                1       & \mult1   & \mult1  & \plus0        & \mult1           & 4                  & \tdash & \tdash   \\
+                2       & \mult2   & \mult3  & \plus0        & \mult2           & 5                  & \tdash & \plus1d  \\
+                4       & \mult4   & \mult6  & \plus1        & \mult2           & 6                  & \plus1 & \plus2d  \\
+                6       & \mult6   & \mult10 & \plus2        & \mult2           & 6                  & \plus1 & \plus3d  \\
+            \end{dtabularx}
+            1. This modifier applies to the special power bonus that monsters get based on their level, not to any other sources of power such as Strength or Willpower. \\
+            2. See \pcref{Rank-Based Ability Access}. \\
+            3. This modifier applies to all damage dice rolled by the monster, including both strikes and magical abilities. \\
+        \end{dtable*}
+
+        \subsubsection{Monster Vital Wounds}
+            Monsters do not normally make \glossterm{vital rolls} like player characters do.
+            Unless otherwise specified on the monster's description, \glossterm{vital wounds} have no negative effects on monsters.
+            Instead, once a monster gains a \glossterm{vital wound}, it is defeated.
+            Defeated monsters may be unconscious, dead, or merely flee the fight at the discretion of the Game Master.
+
+        \subsubsection{Monster Resources}
+            Unless otherwise noted in their description, monsters have no \glossterm{resources}, and their \glossterm{fatigue tolerance} is treated as 0.
+            They are unable to use abilities that would cause them to increase their \glossterm{fatigue level}, such as the \textit{desperate exertion} ability.
+
+        \subsubsection{Recovering Conditions}
+            Monsters cannot normally use the \textit{recover} ability.
+            However, monsters with a high challenge rating can remove conditions automatically.
+            At the end of each round, monsters with CR of 2 or higher roll 1d10 \add their CR.
+            If the result is 11 or higher, the monster removes one condition of its choice.
+            For every 5 points by which it exceeds that result, it removes an additional condition.
+            This effect cannot remove a condition applied during the current round.
+            Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
+
+        \subsubsection{Rank-Based Ability Access}
+            Although monsters do not gain archetypes, their special abilities should still be balanced appropriately for their maximum accessible rank.
+            Like a player character, a monster's maximum accessible rank is based on its level, as shown in \tref{Monster Advancement}.
+            CR 1/2 monsters take a \minus1 penalty to their maximum rank, and generally do not have particularly powerful or complex special abilities.
+            CR 4 and CR 6 monsters gain a \plus1 bonus to their maximum rank, allowing them to use powerful abilities before player characters can.
+
+    \subsection{Attributes}
+        Each of a monster's base attributes can range from \minus9 to 3, as appropriate for the type of monster.
+        A monster's attributes scale with level in the same way as player character attributes.
+        A monster can also have up to two attributes that are higher than 3, up to the maximum base attribute value for that monster's challenge rating.
+        In general, a monster with higher starting attributes will be stronger, but not all monsters need to start with the same starting attribute total.
 
     \subsection{Monster Natural Weapon Bonuses}\label{Monster Natural Weapon Bonuses}
         Monsters do not use the \textit{offhand strike} ability in combat.
