@@ -810,6 +810,7 @@ def debuffs():
         [],
         boolean_variables=[
             # conditional debuffs
+            "climbing",
             "flying",
             "flying_poorly",
             "goaded",
@@ -818,7 +819,7 @@ def debuffs():
             "prone",
             "squeezing",
             "surrounded",
-            "underwater",
+            "swimming",
             "partially_unaware",
             "unaware",
             # rank 1 debuffs
@@ -873,6 +874,11 @@ def debuffs():
                 reflex -= 2;
             }}
             if (flying_poorly) {{
+                armor -= 4;
+                reflex -= 4;
+            }}
+            if (climbing || swimming) {{
+                accuracy -= 4;
                 armor -= 4;
                 reflex -= 4;
             }}
