@@ -120,7 +120,7 @@ export const aquamancy: MysticSphere = {
         `,
         hit: `
           The majority of each subject's body is \\glossterm{briefly} surrounded by a layer of water.
-          This does not impede its ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref{Underwater Combat}).
+          This does not impede its ability to breathe, but it takes penalties as if it was \\swimming.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures completely within a \\smallarea radius within \\rngmed range.
@@ -135,7 +135,7 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation"],
       type: "Duration",
     },
-    // fighting underwater is +2 ranks better than a normal rank 2 condition
+    // swimming is +2 ranks better than a normal rank 2 condition
     {
       name: "Constraining Bubble",
 
@@ -146,7 +146,7 @@ export const aquamancy: MysticSphere = {
         `,
         hit: `
           As a \\glossterm{condition}, the majority of the subject's body is surrounded by a layer of water.
-          This does not impede its ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref{Underwater Combat}).
+          This does not impede its ability to breathe, but it takes penalties as if it was \\swimming.
         `,
         targeting: `
           Make an attack vs. Reflex against a Huge or smaller creature within \\medrange.
@@ -204,7 +204,7 @@ export const aquamancy: MysticSphere = {
           Make an attack vs. Armor against anything within \\medrange.
           Whether you hit or miss, you may \\glossterm{push} yourself up to 15 feet away from the target as the water propels you backwards.
           Moving yourself upwards costs twice the normal movement cost.
-          This movement is doubled underwater instead of being dramatically slowed like normal for forced movement.
+          This movement is doubled underwater.
         `,
       },
       rank: 1,
@@ -309,30 +309,33 @@ export const aquamancy: MysticSphere = {
       type: "Sustain (minor)",
     },
     {
-      name: "Underwater Freedom",
+      name: "Aquatic Freedom",
 
       castingTime: "minor action",
       effect: `
-        You suffer no penalties for acting underwater, except for those relating to using ranged weapons.
+        You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
+        If you already have a swim speed, you gain a +5 foot \\glossterm{magic bonus} to your swim speed.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You also gain a swim speed equal to half the \\glossterm{base speed} for your size.",
-        6: "The swim speed increases to be equal to the \\glossterm{base speed} for your size.",
+        3: `You gain a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot bonus if you already have a swim speed.`,
+        5: `The speed bonus increases to +10 feet, or +15 feet if you already have a swim speed.`,
+        7: `The speed bonus increases to +15 feet, or +20 feet if you already have a swim speed.`,
       },
       type: "Attune (self)",
     },
     {
-      name: "Mass Underwater Freedom",
+      name: "Mass Aquatic Freedom",
 
       castingTime: "minor action",
       functionsLike: {
         mass: true,
-        name: "underwater freedom",
+        name: "aquatic freedom",
       },
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: "Each subject also gains a swim speed equal to half the \\glossterm{base speed} for its size.",
+        5: `Each subject gains a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot bonus if it already has a swim speed.`,
+        7: `The speed bonus increases to +10 feet, or +15 feet if it already has a swim speed.`,
       },
       type: "Attune (target)",
     },
@@ -697,19 +700,19 @@ export const aquamancy: MysticSphere = {
         This has the following effects:
         \\begin{itemize}
           \\item Your land speed is halved.
-          \\item You can use your swim speed to move around on land.
-          \\item You take penalties for fighting underwater (see \\pcref{Underwater Combat}).
+          \\item If you have a swim speed, you can use it to move around on land.
+          \\item You are always considered to be \\swimming, so you take penalties if you do not have a swim speed.
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
-          \\item You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+          \\item You gain a +6 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller.
           \\item You gain a +4 bonus to your defenses against the \\ability{grapple} ability.
         \\end{itemize}
       `,
       // narrative: '',
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: 'The damage resistance bonus increases to +8.',
-        6: 'The damage resistance bonus increases to +16.',
+        5: 'The damage resistance bonus increases to +12.',
+        7: 'The damage resistance bonus increases to +24.',
       },
       type: "Attune (self)",
     },

@@ -346,7 +346,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
         the summoned creature appears to be an water elemental.
         Its attacks deal 1d8 bludgeoning damage.
-        It has a 30 foot \\glossterm{swim speed}, and it suffers no penalties for fighting underwater (see \\pcref{Underwater Combat}).
+        It has a 30 foot \\glossterm{swim speed}.
         However, it is \\glossterm{vulnerable} to electricity damage.
         `,
         name: "summon monster",

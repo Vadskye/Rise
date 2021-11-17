@@ -184,7 +184,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \item Earth: The bonus to your Fortitude defense increases to \plus3.
                     \item Fire: You treat all fire damage you take as being \glossterm{environmental damage}.
-                    \item Water: You suffer no penalties for fighting underwater, and your swim speed increases to be equal to the base speed for your size.
+                    \item Water: Your swim speed increases to be equal to the base speed for your size.
                 \end{itemize}
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
@@ -498,7 +498,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{3} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
-                        \rank{5} You suffer no penalties for acting underwater.
+                        \rank{5} You gain a \plus10 foot bonus to your swim speed.
                         \rank{7} You are immune to \glossterm{magical} effects that restrict your mobility.
                         In addition, you gain a \plus4 bonus to your defenses against the \textit{grapple} ability and grapple actions (see \pcref{Grapple}).
                     \end{durationability}

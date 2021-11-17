@@ -927,11 +927,6 @@ def debuffs():
                 reflex -= 4;
                 mental -= 4;
             }}
-            if (underwater) {{
-                accuracy -= 4;
-                armor -= 4;
-                reflex -= 4;
-            }}
 
             // rank 3 debuffs
             if (immobilized) {{
