@@ -851,9 +851,8 @@ impl Class {
                         As normal, this bonus does not stack with itself, even if you explode multiple times with the same attack roll.
 
                     \subsubsection{Death}
-                        % Lame gift
-                        \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
-                        \parhead{Aspect} You gain a \plus2 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
+                        \parhead{Gift} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
+                        \parhead{Aspect} The bonus from this domain's gift increases to \plus2.
                         \parhead{Essence} You can use the \textit{speak with dead} ability as a standard action.
                         \begin{attuneability}{Speak with Dead}
                             \abilitytag{Attune} (self)
@@ -865,7 +864,7 @@ impl Class {
                             The corpse must have an intact mouth to be able to speak.
                             This ability ends if 24 hours have passed since the creature died.
                         \end{attuneability}
-                        \parhead{Mastery} The bonus from this domain's aspect increases to \plus4.
+                        \parhead{Mastery} The bonus from this domain's gift increases to \plus3.
 
                     \subsubsection{Destruction}
                         \parhead{Gift} You can use the \textit{destructive attack} ability as a standard action.
