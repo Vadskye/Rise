@@ -818,7 +818,6 @@ def debuffs():
             "helpless",
             "prone",
             "squeezing",
-            "surrounded",
             "swimming",
             "partially_unaware",
             "unaware",
@@ -862,10 +861,6 @@ def debuffs():
             }}
             if (squeezing) {{
                 accuracy -= 2;
-                armor -= 2;
-                reflex -= 2;
-            }}
-            if (surrounded) {{
                 armor -= 2;
                 reflex -= 2;
             }}

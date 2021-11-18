@@ -60,7 +60,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Any \surrounded \glossterm{enemy} that is adjacent to you or your animal companion takes a \minus1 penalty to \glossterm{accuracy}.
+                Any \glossterm{enemy} that is adjacent to both you and your animal companion takes a \minus1 penalty to \glossterm{accuracy} against creatures other than you.
             ",
             modifiers: None,
         },
@@ -98,9 +98,9 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                The penalty from your \textit{pack tactics} ability applies to any creature that is adjacent to you or your animal companion, regardless of whether it is surrounded.
+                The penalty from your \textit{pack tactics} ability increases to \plus2.
             ",
-            // It's actually better than this, since it also applies to allies
+            // It's actually better than this, since it applies to all allies
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
                 Modifier::Defense(Defense::Fortitude, 1),
@@ -358,7 +358,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         In exchange, you gain a \plus1 bonus to your defenses against your quarry.
 
                         \rankline
-                        \rank{4} You gain an additional \plus1 accuracy bonus against your quarry.
+                        \rank{4} The accuracy bonus from your \textit{quarry} ability increases to \plus2.
                         \rank{6} The defense bonus increases to \plus2.
                     \end{durationability}
 
@@ -367,8 +367,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
                         \rankline
-                        \rank{4} Your hunting party reduces their penalties for being \surrounded by 1.
-                        \rank{6} The penalty reduction increases to 2.
+                        \rank{4} Your hunting party gains a \plus1 bonus to \glossterm{initiative} checks.
+                        \rank{6} The initiative bonus increases to \plus2.
                     \end{durationability}
 
                     \begin{durationability}{Wolfpack}[Duration]

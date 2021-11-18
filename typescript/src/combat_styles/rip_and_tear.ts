@@ -279,14 +279,29 @@ export const ripAndTear: CombatStyle = {
       name: "Spinning Slash",
 
       effect: `
-        Make a melee \\glossterm{strike} using a slashing weapon against any number of creatures or objects within your weapon's \\glossterm{reach}.
+        Make a melee \\glossterm{strike} using a slashing weapon.
+        The strike targets all \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
         Your \\glossterm{power} with the strike is halved.
-        In addition, you take no penalties for being \\surrounded until the end of the current round.
-        This penalty removal is a \\abilitytag{Swift} effect, so it affects attacks against you during the current round.
       `,
-      rank: 4,
+      rank: 1,
       scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Spinning Slash",
+
+      effect: `
+        Make a melee \\glossterm{strike} using a slashing weapon.
+        The strike targets all \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
+      `,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Instant",
     },
@@ -330,28 +345,28 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Flay",
+      name: "Agonizing Flay",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
-      rank: 2,
+      rank: 4,
       scaling: {
-        4: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        6: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
       },
       type: "Duration",
     },
 
     {
-      name: "Greater Flay",
+      name: "Greater Agonizing Flay",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\stunned.
+        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
+        A creature stunned in this way cannot be stunned by this effect again until it takes a \\glossterm{short rest}.
       `,
       rank: 6,
       type: "Duration",
