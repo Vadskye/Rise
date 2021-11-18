@@ -120,7 +120,7 @@ export const aquamancy: MysticSphere = {
         `,
         hit: `
           The majority of each subject's body is \\glossterm{briefly} surrounded by a layer of water.
-          This does not impede its ability to breathe, but it takes penalties as if it was \\swimming.
+          This does not impede its ability to breathe, but it is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}. 
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures completely within a \\smallarea radius within \\rngmed range.
@@ -146,7 +146,7 @@ export const aquamancy: MysticSphere = {
         `,
         hit: `
           As a \\glossterm{condition}, the majority of the subject's body is surrounded by a layer of water.
-          This does not impede its ability to breathe, but it takes penalties as if it was \\swimming.
+          This does not impede its ability to breathe, but it is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}. 
         `,
         targeting: `
           Make an attack vs. Reflex against a Huge or smaller creature within \\medrange.
