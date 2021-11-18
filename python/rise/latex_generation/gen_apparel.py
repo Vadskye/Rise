@@ -2766,6 +2766,39 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
+            name="Amulet of Distant Blood",
+            rank=2,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                If you have the shark \\textit<totem animal> barbarian ability, you gain its accuracy bonus against creatures within \\medrange instead of \\shortrange.
+            """,
+            short_description="Increases range with shark \\ability<totem animal>",
+        ),
+        MagicItem(
+            name="Amulet of Distant Blood, Greater",
+            rank=4,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                If you have the shark \\textit<totem animal> barbarian ability, you gain its accuracy bonus against creatures within \\longrange instead of \\shortrange.
+            """,
+            short_description="Greatly increases range with shark \\ability<totem animal>",
+        ),
+        MagicItem(
+            name="Amulet of Distant Blood, Supreme",
+            rank=6,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                If you have the shark \\textit<totem animal> barbarian ability, you gain its accuracy bonus against creatures within \\distrange instead of \\shortrange.
+            """,
+            short_description="Drastically increases range with shark \\ability<totem animal>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
             name="Darkstalker's Amulet",
             rank=4,
             material_type="Amulet",
