@@ -578,13 +578,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{durationability}{Form of the Wolf}[Duration]
                         \rankline
-                        You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} against \surrounded creatures.
+                        You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} against creatures that are adjacent to you and one of your \glossterm{allies}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The accuracy bonus also applies whenever you are adjacent to an \glossterm{ally}.
+                        \rank{3} The accuracy bonus applies to all attacks, not just strikes.
                         \rank{5} You gain a \plus5 foot bonus to your land speed.
-                        \rank{7} The accuracy bonus applies to all attacks, not just strikes.
+                        \rank{7} The accuracy bonus applies even if you are not adjacent to a creature, as long as one of your allies is adjacent to the creature.
                     \end{durationability}
 
                     \begin{durationability}{Myriad Form}[Duration]

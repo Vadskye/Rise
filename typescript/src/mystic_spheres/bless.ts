@@ -338,7 +338,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject cannot be \\surrounded and is never \\unaware or \\partiallyunaware.
+        Each subject is never \\unaware or \\partiallyunaware.
       `,
       rank: 6,
       type: "Attune (target)",

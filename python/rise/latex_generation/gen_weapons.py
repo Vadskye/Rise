@@ -366,7 +366,7 @@ def generate_weapons():
             material_type="Weapon",
             description="""
                 When you make a \\glossterm<ranged> \\glossterm<strike> with this weapon, you may also target one or more secondary creatures or objects.
-                Each secondary target must be within 5 feet of a primary target, and must not already be a target of the strike.
+                Each secondary target must be within 10 feet of a primary target, and must not already be a target of the strike.
                 The strike affects each secondary target in the same way as the primary target.
             """,
             short_description="Hits an extra foe with ranged strikes",
@@ -739,23 +739,13 @@ def generate_weapons():
     weapons += [
         MagicItem(
             name="Wolfpack",
-            rank=3,
+            rank=5,
             material_type="Weapon",
             tags=[],
             description="""
-                Each \\glossterm<surrounded> creature that is within your \\glossterm<reach> with this weapon takes a -1 penalty to Armor and Reflex defenses.
+                Each creature that is within your \\glossterm<reach> with this weapon and adjacent to one of your \\glossterm<allies> takes a -1 penalty to Armor and Reflex defenses.
             """,
-            short_description="Imposes -1 defense penalty on surrounded creatures",
-        ),
-        MagicItem(
-            name="Wolfpack, Greater",
-            rank=6,
-            material_type="Weapon",
-            tags=[],
-            description="""
-                Each \\glossterm<surrounded> creature that is within your \\glossterm<reach> with this weapon takes a -2 penalty to Armor and Reflex defenses.
-            """,
-            short_description="Imposes -2 defense penalty on surrounded creatures",
+            short_description="Imposes -1 defense penalty with ally's help",
         ),
     ]
 
