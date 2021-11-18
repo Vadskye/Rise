@@ -334,8 +334,8 @@ export const aquamancy: MysticSphere = {
       },
       rank: 3,
       scaling: {
-        5: `Each subject gains a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot bonus if it already has a swim speed.`,
-        7: `The speed bonus increases to +10 feet, or +15 feet if it already has a swim speed.`,
+        5: `Each subject gains a +5 foot \\glossterm{magic bonus} to its swim speed, or a +10 foot bonus if it already has a swim speed.`,
+        7: `The speed bonus increases to +10 feet, or +15 feet if the subject already has a swim speed.`,
       },
       type: "Attune (target)",
     },
