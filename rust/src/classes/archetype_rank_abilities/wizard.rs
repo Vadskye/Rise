@@ -715,7 +715,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Illusion} You are immune to being \dazzled and \blinded.
 
-                    \subcf{Transmutation} You are immune to being \slowed and \decelerated.
+                    \subcf{Transmutation} You are immune to being \slowed and \immobilized.
 
                     \subcf{Necromancy} You are \glossterm{impervious} to attacks from creatures with less than half of their maximum hit points remaining and undead creatures.
                 }
