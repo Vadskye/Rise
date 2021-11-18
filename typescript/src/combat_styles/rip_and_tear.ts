@@ -207,7 +207,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a thrown \\glossterm{strike} using a slashing weapon.
-        The strike also targets an additional creature or object within 5 feet of the strike's primary target.
+        The strike also targets an additional creature or object within 10 feet of the strike's primary target.
       `,
       rank: 2,
       scaling: {
@@ -222,7 +222,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a thrown \\glossterm{strike} using a slashing weapon.
-        The strike also targets up to two additional creatures or object within 5 feet of the strike's primary target.
+        The strike also targets up to two additional creatures or object within 10 feet of the strike's primary target.
       `,
       rank: 5,
       scaling: {
