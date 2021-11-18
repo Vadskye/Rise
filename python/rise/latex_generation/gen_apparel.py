@@ -427,28 +427,6 @@ def generate_apparel():
         ),
     ]
 
-    apparel += [
-        MagicItem(
-            name="Circlet of Many Eyes",
-            rank=4,
-            material_type="Circlet",
-            description="""
-                You reduce your penalties for being \\glossterm<surrounded> by 1.
-            """,
-            short_description="Reduces penalty for being \\glossterm<surrounded> by 1",
-        ),
-        MagicItem(
-            name="Circlet of Many Eyes, Greater",
-            rank=6,
-            material_type="Circlet",
-            description="""
-                You reduce your penalties for being \\glossterm<surrounded> by 2.
-                You are still considered to be surrounded for the purpose of other abilities, even this reduces your penalties to 0.
-            """,
-            short_description="Reduces penalty for being \\glossterm<surrounded> by 2",
-        ),
-    ]
-
     apparel.append(
         MagicItem(
             name="Mask of Water Breathing",

@@ -19,7 +19,6 @@ pub enum Debuff {
     Slowed,
     Squeezing,
     Stunned,
-    Surrounded,
     Unaware,
     Unconscious,
 }
@@ -50,7 +49,6 @@ impl Debuff {
             Self::Slowed => "slowed",
             Self::Squeezing => "squeezing",
             Self::Stunned => "stunned",
-            Self::Surrounded => "surrounded",
             Self::Unaware => "unaware",
             Self::Unconscious => "unconscious",
         }
@@ -77,7 +75,6 @@ impl Debuff {
             Self::Slowed => "\\slowed".to_string(),
             Self::Squeezing => "\\squeezing".to_string(),
             Self::Stunned => "\\stunned".to_string(),
-            Self::Surrounded => "\\surrounded".to_string(),
             Self::Unaware => "\\unaware".to_string(),
             Self::Unconscious => "\\unconscious".to_string(),
         }

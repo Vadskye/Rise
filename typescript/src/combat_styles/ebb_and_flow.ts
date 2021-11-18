@@ -377,8 +377,8 @@ export const ebbAndFlow: CombatStyle = {
       name: "Tag-Team Strike",
 
       effect: `
-        Make a \\glossterm{strike}.
-        You gain a +2 damage bonus with the strike if the target is \\glossterm{surrounded}.
+        Make a melee \\glossterm{strike}.
+        You gain a +2 damage bonus with the strike if the target is adjacent to one of your \\glossterm{allies}.
       `,
       rank: 2,
       scaling: {
