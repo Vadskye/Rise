@@ -52,7 +52,8 @@ where
 {
     fn calc_resource(&self, resource: &Resource) -> i32 {
         let value = match resource {
-            Resource::AttunementPoint => max(0, (self.level + 1) / 6),
+            // Attunement points come exclusively from base class and some abilities
+            Resource::AttunementPoint => 0,
             Resource::FatigueTolerance => {
                 self.get_base_attribute(&Attribute::Strength)
                     + self.get_base_attribute(&Attribute::Willpower)

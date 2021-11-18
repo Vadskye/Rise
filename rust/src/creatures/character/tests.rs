@@ -184,13 +184,13 @@ fn it_calculates_level_21_fighter_resources() {
     )
     .creature;
     assert_eq!(
-        "AP b3 f7",
+        "AP b0 f4",
         format!(
             "AP b{} f{}",
             baseline.calc_resource(&Resource::AttunementPoint),
             fighter.calc_resource(&Resource::AttunementPoint)
         ),
-        "2 class + 3 scaling + 2 equipment training"
+        "3 class + 1 equipment training"
     );
     assert_eq!(
         "FT b0 f5",
@@ -275,9 +275,9 @@ fn standard_character_statistics_level_1() {
 
     // HasResources
     assert_eq!(
-        2,
+        3,
         creature.calc_resource(&Resource::AttunementPoint),
-        "AP: 2 class",
+        "AP: 3 class",
     );
     assert_eq!(
         7,
@@ -382,7 +382,7 @@ fn standard_character_statistics_level_10() {
     assert_eq!(
         4,
         creature.calc_resource(&Resource::AttunementPoint),
-        "AP: 2 class + 1 level + 1 equipment training",
+        "AP: 3 class + 1 equipment training",
     );
     assert_eq!(
         8,
@@ -485,9 +485,9 @@ fn standard_character_statistics_level_20() {
 
     // HasResources
     assert_eq!(
-        7,
+        4,
         creature.calc_resource(&Resource::AttunementPoint),
-        "AP: 2 class + 3 level + 2 equipment training",
+        "AP: 3 class + 1 equipment training",
     );
     assert_eq!(
         9,

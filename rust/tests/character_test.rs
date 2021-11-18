@@ -55,7 +55,7 @@ fn it_calculates_modifiers() {
             "defense fortitude by 5",
             "defense mental by 7",
             "defense reflex by 3",
-            "resource attunement point by 3",
+            "resource attunement point by 4",
             "resource fatigue tolerance by 3",
             "resource insight point by 3",
             "resource trained skill by 3"
