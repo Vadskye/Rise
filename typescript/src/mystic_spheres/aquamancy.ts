@@ -703,7 +703,7 @@ export const aquamancy: MysticSphere = {
           \\item If you have a swim speed, you can use it to move around on land.
           \\item You are always considered to be \\swimming, so you take penalties if you do not have a swim speed.
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
-          \\item You gain a +6 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+          \\item You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller.
           \\item You gain a +4 bonus to your defenses against the \\ability{grapple} ability.
         \\end{itemize}
@@ -711,8 +711,8 @@ export const aquamancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: 'The damage resistance bonus increases to +12.',
-        7: 'The damage resistance bonus increases to +24.',
+        5: 'The damage resistance bonus increases to +8.',
+        7: 'The damage resistance bonus increases to +16.',
       },
       type: "Attune (self)",
     },
