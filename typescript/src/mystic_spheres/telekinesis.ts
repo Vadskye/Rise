@@ -418,7 +418,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         You slowly create a 10 ft.\\ cube of telekinetic force within \\medrange.
         The cage appears at the end of the next round after you cast this spell.
-        Before that time, there is no visible indication of where the cage will appear, but its location can be observed with a \\glossterm{difficulty value} 25 Spellsense check (see \\pcref{Spellsense}).
+        Before that time, there is no visible indication of where the cage will appear.
         Any physical obstacles in the way of the cage at the time that it forms prevent it from appearing.
         You can create the cube around a sufficiently small creature to trap it inside.
         Each wall is transparent, but blocks physical passage and \\glossterm{line of effect}.

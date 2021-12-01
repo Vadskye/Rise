@@ -146,7 +146,7 @@ pub fn generate_module() -> Module {
             It leads to a closed trapdoor.
             The closed trapdoor has a keyhole and is tightly sealed.
             A DV 20 Strength check or a DV 25 Devices check can open it, which is almost certainly impossible for the party.
-            A DV 8 Spellsense check reveals that it is magically sealed.
+            A DV 17 Knowledge (arcana) check reveals that it is magically sealed.
             Critical success (DV 18) reveals that it was sealed with the \\ritual<mystic lock> ritual, making it effectively impossible to open without the magic key.
 
         \\subsection<The Kitchen>

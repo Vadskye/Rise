@@ -104,7 +104,6 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             Skill::Awareness,
             Skill::Endurance,
             Skill::SocialInsight,
-            Skill::Spellsense,
             Skill::Swim,
         ]),
         weapons: vec![StandardWeapon::Slam.weapon()],
@@ -136,7 +135,6 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         size: Size::Huge,
         trained_skills: Some(vec![
             Skill::Endurance,
-            Skill::Spellsense,
             Skill::Swim,
         ]),
         // TODO: make attacks sweeping

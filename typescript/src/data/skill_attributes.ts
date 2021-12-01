@@ -27,7 +27,6 @@ export const skillAttributes: Record<keyof Creature.Skills, keyof Creature.Attri
   "awareness": "per",
   "creature handling": "per",
   "social insight": "per",
-  "spellsense": "per",
   "survival": "per",
 
   // Willpower has no skills

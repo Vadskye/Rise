@@ -117,7 +117,6 @@ You cannot gain the same feat twice.
         \featref{Ride Specialization}              & Trained Ride               & Improve use of chosen skill           & \tdash          & \featpref{Ride Specialization}              \\
         \featref{Sleight of Hand Specialization}   & Trained Sleight of Hand    & Improve use of chosen skill           & \tdash          & \featpref{Sleight of Hand Specialization}   \\
         \featref{Social Insight Specialization}    & Trained Social Insight     & Improve use of chosen skill           & \tdash          & \featpref{Social Insight Specialization}    \\
-        \featref{Spellsense Specialization}        & Trained Spellsense         & Improve use of chosen skill           & \tdash          & \featpref{Spellsense Specialization}        \\
         \featref{Stealth Specialization}           & Trained Stealth            & Improve use of chosen skill           & \tdash          & \featpref{Stealth Specialization}           \\
         \featref{Survival Specialization}          & Trained Survival           & Improve use of chosen skill           & \tdash          & \featpref{Survival Specialization}          \\
         \featref{Swim Specialization}              & Trained Swim               & Improve use of chosen skill           & \tdash          & \featpref{Swim Specialization}              \\
@@ -670,9 +669,9 @@ You cannot gain the same feat twice.
 
         % TODO: wording
         \ff[3]{Disable Arcana}[Magical] You can affect spell effects on objects or areas with the Devices skill as if they were merely complex devices.
-        You must be aware of an effect to use the Devices skill to affect it, either through the Spellsense skill or because the effect is noticeable.
+        You must be aware of an effect to use the Devices skill to affect it.
         You cannot affect effects on creatures.
-        The \glossterm{difficulty value} to affect an arcane spell effect is equal to 15 \add the effect's \glossterm{power}.
+        The \glossterm{difficulty value} to affect a spell effect is equal to 15 \add twice the effect's \glossterm{rank}.
 
         \ff[6]{Rapid Improvisation} It takes you only a standard action to make a device of up to Diminuitive size with the \textit{improvise} ability (see \pcref{Improvise}).
 
@@ -1585,8 +1584,6 @@ You cannot gain the same feat twice.
             \featlevel{18} The accuracy bonus increases to \plus2.
         \end{freeability}
 
-        \ff[1]{Spell Sensitivity} You treat the Spellsense skill as a \glossterm{class skill} (see \pcref{Spellsense}).
-
         \ff[3]{Mundane Resilience} You gain a \plus4 bonus to your \glossterm{damage resistance} and \glossterm{hit points}.
 
         \ff[3]{Personal Legacy} You do not gain any legacy item upgrades (see \pcref{Legacy Items}).
@@ -1668,7 +1665,7 @@ You cannot gain the same feat twice.
             You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
             You must talk loud enough for the target to hear to draw its attention.
             \hit The target only pays attention to you as long as you sustain this ability, which requires maintaining your conversation with it.
-            It takes a \minus20 penalty to Awareness and Spellsense checks to observe anything unrelated to your conversation.
+            It takes a \minus20 penalty to Awareness checks to observe anything unrelated to your conversation.
             Any act by you or by creatures that appear to be your ally that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
 
             \rankline
@@ -1974,51 +1971,6 @@ You cannot gain the same feat twice.
         In addition, you automatically recognize the difference between a creatively worded truth and an outright lie.
     \end{feat}
 
-    \begin{feat}{Spellsense Specialization}{Skill}
-        \featpre Spellsense as a trained skill.
-
-        \ff[1]{Specialization} You gain a \plus3 bonus to the Spellsense skill.
-
-        \ff[3]{Sense Spellcasting}[Magical] You can use the \textit{sense spellcasting} ability as a standard action.
-        \begin{freeability}{Sense Spellcasting}[\abilitytag{Subtle}]
-            \target{One creature within \rngmed range}
-            Make a attack vs. Mental against the target.
-            Your \glossterm{accuracy} is equal to your Spellsense skill.
-            \hit You know whether the target is capable of casting spells.
-            If the target can cast spells, you know what sources the target can cast spells from.
-            \crit As above, except that you also know all \glossterm{mystic spheres} the target is capable of casting.
-            This does not grant you knowledge of any specific spells the target knows.
-
-            After using this ability on a target, you cannot use it again on the same target for 24 hours regardless of whether you hit or miss.
-
-            \rankline
-            You gain a \plus1 bonus to \glossterm{accuracy} with the attack at 6th level and every 3 levels thereafter.
-        \end{freeability}
-
-        \ff[6]{Unweave Magic}[Magical] You can use the \textit{unweave magic} ability as a standard action.
-        \begin{freeability}{Unweave Magic}
-            Make a Spellsense check on one \glossterm{magical} effect within \rngmed range that is sustained or has a specific duration.
-            This includes brief effects, conditions, and \abilitytag{Sustain} abilities, but it does not include attuned effects or passive magical abilities on creatures.
-            The \glossterm{difficulty value} is equal to 5 \add the \glossterm{rank} of the effect.
-            Success means the effect is \glossterm{dismissed} if it is an effect that can be dismissed.
-
-            \rankline
-            \featlevel{12} The range increases to \rnglong.
-            \featlevel{18} You can target up to two spell effects within range.
-        \end{freeability}
-
-        \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
-
-        \ff[12]{Mystic Power} You gain a \plus4 bonus to \glossterm{magical} \glossterm{power}.
-
-        \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
-
-        \ff[18]{Greater Sense Spellcasting} You can use your \textit{sense spellcasting} ability as a \glossterm{minor action}.
-        In addition, a hit grants you knowledge of all mystic spheres the target is capable of casting.
-
-        \ff[21]{Greater Mystic Power}[Magical] The bonus from your \textit{mystic power} ability increases to \plus10.
-    \end{feat}
-
     \begin{feat}{Spellsword}{Magical, Spell}
         \featpre Access to a \glossterm{mystic sphere}.
 
@@ -2285,7 +2237,7 @@ You cannot gain the same feat twice.
         \ff[6]{Accelerated Mind} You can perform primarily mental tasks more quickly as normal.
         Actions that would normally take a \glossterm{standard action} instead take a \glossterm{minor action}.
         Long-term activities can be done twice as quickly as normal.
-        This includes reading books, searching areas, identifying magical effects with the Spellsense skill, and other similar activities.
+        This includes reading books, searching areas, and other similar activities.
         It does not affect spellcasting, performing rituals, or other similar magical abilities.
 
         \ff[9]{Personal Chronomancy} You gain an additional \glossterm{attunement point}.
@@ -2364,7 +2316,7 @@ You cannot gain the same feat twice.
         When you gain access to new spell ranks, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Subtle Influence} You gain a \plus2 bonus to \glossterm{accuracy} with spells from the Enchantment mystic sphere against \unaware creatures.
-        In addition, the \glossterm{difficulty value} to observe your \abilitytag{Emotion} abilities with Spellsense, and to observe their effects with the Social Insight skill, increases by 10.
+        In addition, the \glossterm{difficulty value} to observe the effects of your \abilitytag{Emotion} abilities with the Social Insight skill increases by 10.
 
         \ff[6]{Mind Fragments} When you use \abilitytag{Compulsion} and \abilitytag{Emotion} abilities, you can affect creatures that are immune to those abilities due to not having a mind.
         You take a \minus5 accuracy penalty on attacks against such creatures.
