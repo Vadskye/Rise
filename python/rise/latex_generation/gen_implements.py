@@ -382,25 +382,6 @@ def generate_implements():
         ),
     ]
 
-    implements.append(
-        MagicItem(
-            name="Cryptic Staff",
-            rank=4,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Whenever you cast a spell, you may choose a different spell you know.
-                If you do, the visual effects and magical aura of the spell you are casting change to match your chosen spell.
-                This affects inspection of the spell itself by any means, such as with the Spellsense skill (see \\pcref<Spellsense>).
-                However, it does not alter the mechanical effects of the spell in any way.
-
-                An observer can make a Spellsense check with a \\glossterm<difficulty value> of 19 to identify the spell's true nature.
-                If the spell's effects depend on visual components, the spell may fail to work if you alter the spell's visuals too much.
-            """,
-            short_description="Makes spells hard to identify",
-        )
-    )
-
     implements += [
         MagicItem(
             name="Widening Staff",

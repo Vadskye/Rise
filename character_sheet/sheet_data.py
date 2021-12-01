@@ -30,7 +30,6 @@ ATTRIBUTE_SKILLS = {
         "Awareness",
         "Creature Handling",
         "Social Insight",
-        "Spellsense",
         "Survival",
     ],
     "willpower": [],

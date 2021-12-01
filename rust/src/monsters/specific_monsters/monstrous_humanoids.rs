@@ -322,7 +322,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                 movement_modes: None,
                 name: "Ogre Mage".to_string(),
                 senses: None,
-                trained_skills: Some(vec![Skill::Spellsense]),
+                trained_skills: None,
             }.monster(),
             // TODO: add Sweeping tag or Sweeping Strike maneuver
             OgreDefinition {

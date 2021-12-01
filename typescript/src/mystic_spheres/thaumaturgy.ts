@@ -7,16 +7,23 @@ export const thaumaturgy: MysticSphere = {
 
   cantrips: [
     {
-      name: "Sense Magic",
+      name: "Detect Magic",
 
       effect: `
-        You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Spellsense skill.
+        Choose a \\arealarge \\glossterm{cone} from you.
+        You know whether any \\glossterm{magical} abilities were activated in that area since the start of the last round.
+        This does not provide any information about passive magical effects, such as attuned spells.
+        It also does not provide any information about the number or location of those magical effects.
       `,
       scaling: {
-        2: `The bonus increases to +4.`,
-        4: `The bonus increases to +5.`,
-        6: `The bonus increases to +6.`,
+        2: `
+          You also learn if any passive magical effects existed in the area.
+          This is separate from your knowledge of active magical effects.
+        `,
+        4: `The area increases to a \\areahuge cone.`,
+        6: `You also learn the number of magical effects in the area.`,
       },
+      tags: ['Detection'],
       type: "Duration",
     },
 
@@ -142,24 +149,6 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Alter Magic Aura",
-
-      attack: {
-        // No crit effect
-        // No glance effect
-        hit: `One of the subject's magic auras is altered (see \\pcref{Spellsense}).
-        You can change the \\glossterm{ability tags} the aura has.
-        In addition, you can decrease the \\glossterm{power} of the aura by up to half your power, or increase the power of the aura up to a maximum of your power.`,
-        targeting: `
-          Make an attack vs. Mental against one Large or smaller \\glossterm{magical} object within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-      type: "Attune (self)",
-    },
-
-    {
       name: "Suppress Item",
 
       attack: {
@@ -201,14 +190,17 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         hit: `The effect is \\glossterm{suppressed} as long as you \\glossterm{sustain} this ability.`,
         targeting: `
-          Make an attack against one \\glossterm{magical} effect within \\medrange that is sustained or has a specific duration.
+          Choose a single 5-ft. square within \\medrange.
+          Make an attack against a random \\glossterm{magical} effect active in that square, if any exist.
+          This can only target magical effects that are sustained or which have a specific duration.
           This includes brief effects, conditions, and \\abilitytag{Sustain} abilities, but it does not include attuned effects or passive magical abilities on creatures.
           It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
+
           The target's defense against this attack is equal to 5 \\add its \\glossterm{rank}.
           For effects that have no specific rank, such as some monster abilities, treat their rank as being equal to one third of their level.
 
-          This spell cannot be used to interrupt or negate immediate effects, such as spells being cast simultaneously.
-          Identifying non-visual magical effects to target with this spell may require the use of the Spellsense skill (see \\pcref{Spellsense}).
+          This spell cannot be used to interrupt or negate immediate effects, such as spells being cast.
+          Identifying non-visual magical effects can be difficult, so you may have to guess which area to target.
         `,
       },
 
@@ -493,22 +485,22 @@ export const thaumaturgy: MysticSphere = {
       name: "Cryptic Spells",
 
       effect: `
-        Whenever you cast a spell, you may choose a different spell you know.
-        If you do, the visual effects and magical aura of the spell you are casting change to match your chosen spell.
-        This affects inspection of the spell itself by any means, such as with the Spellsense skill (see \\pcref{Spellsense}).
+        Whenever you cast a spell, you may choose to mimic the identifying characteristics of a different spell you know.
+        If you do, the \\glossterm{verbal components}, \\glossterm{somatic components}, visual effects, and magical aura of the spell you are casting change to match the mimic spell.
+        This affects inspection of the spell itself by any means.
         However, it does not alter the mechanical effects of the spell in any way.
+        This change cannot fully remove verbal, somatic, or visual components.
+        If the mimic spell does not have an identifying characteristic, the original characteristic of the spell you are casting is unchanged.
 
-        An observer can make a Spellsense check with a \\glossterm{difficulty value} of 15 \\add half your level to identify the spell's true nature.
-        If the spell's effects depend on visual components, the spell may fail to work if the subject alters the spell's visuals too much.
+        An observer who gets a \\glossterm{critical success} to identify the spell's effects can identify the true spell that you are casting (see \\pcref{Identify Magical Effect}).
       `,
       rank: 3,
       scaling: {
         5: `
-          You can also alter your \\glossterm{verbal components} when casting spells.
-          You must still make the same amount of noise, but you can make any noise of your choosing instead of the spell's normal verbal components.
+          The \\glossterm{difficulty value} to identify the spell also increases by 10.
         `,
         7: `
-          The difficulty value to identify the spell's true nature increases to 25 \\add half your level.
+          The \\glossterm{difficulty value} modifier increases to 20.
         `,
       },
       type: "Attune (self)",
@@ -572,7 +564,7 @@ export const thaumaturgy: MysticSphere = {
       castingTime: "one minute",
       effect: `
         Choose one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
-        All magical effects on the subject, including any magic items a subject creature wears or carries, are undetectable with the Spellsense skill and similar abilities that detect magic.
+        All magical effects on the subject, including any magic items a subject creature wears or carries, are undetectable with abilities that detect magic.
       `,
       rank: 2,
       type: "Attune (ritual)",
@@ -583,42 +575,18 @@ export const thaumaturgy: MysticSphere = {
       castingTime: "24 hours",
       effect: `
         Choose one Large or smaller \\glossterm{unattended} object within \\shortrange.
-        All magical effects on the subject are undetectable with the Spellsense skill and similar abilities that detect magic.
+        All magical effects on the subject are undetectable with abilities that detect magic.
         This effect is permanent.
       `,
       rank: 4,
       type: "Duration",
     },
     {
-      name: "Create Magic Aura",
-
-      castingTime: "one minute",
-      effect: `
-        Choose one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
-        In addition, choose any \\glossterm{mystic sphere} you have access to and any \\glossterm{power}, up to a maximum of twice your \\glossterm{power}.
-        The subject appears to have a magical effect on it that is detectable with abilities like the Spellsense skill (see \\pcref{Spellsense}).
-        The ability's power is equal to your chosen power, and it appears to be from the mystic sphere you chose.
-      `,
-      rank: 1,
-      type: "Attune (ritual)",
-    },
-    {
-      name: "Greater Create Magic Aura",
-
-      castingTime: "one minute",
-      functionsLike: {
-        exceptThat: 'you can choose any mystic sphere, not just a mystic sphere you have access to.',
-        name: 'create magic aura',
-      },
-      rank: 3,
-      type: "Attune (ritual)",
-    },
-    {
       name: "Analyze Magic",
 
       castingTime: "one hour",
       effect: `
-        Make a Spellsense check with a +10 bonus.
+        Make a Knowledge check to identify a magical effect with a +5 bonus (see \\pcref{Identify Magical Effect}).
       `,
       rank: 2,
       type: "Instant",
@@ -628,7 +596,7 @@ export const thaumaturgy: MysticSphere = {
 
       castingTime: "one hour",
       effect: `
-        Make a Spellsense check with a +15 bonus.
+        Make a Knowledge check to identify a magical effect with a +10 bonus (see \\pcref{Identify Magical Effect}).
       `,
       rank: 4,
       type: "Instant",
@@ -638,7 +606,7 @@ export const thaumaturgy: MysticSphere = {
 
       castingTime: "one hour",
       effect: `
-        Make a Spellsense check with a +20 bonus.
+        Make a Knowledge check to identify a magical effect with a +15 bonus (see \\pcref{Identify Magical Effect}).
       `,
       rank: 6,
       type: "Instant",

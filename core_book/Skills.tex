@@ -30,7 +30,6 @@ This chapter describes each skill, including common uses for those skills.
                 Awareness         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
                 Creature Handling & C        & \tdash   & C        & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
                 Social Insight    & \tdash   & C        & \tdash   & \tdash   & C        & C        & \tdash   & C        & \tdash   & C        & \tdash   & Per          \\
-                Spellsense        & \tdash   & C        & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & C        & Per          \\
                 Survival          & C        & \tdash   & C        & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
                 Deception         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{1} \\
                 Intimidate        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{1} \\
@@ -509,6 +508,16 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Identify Forgery}
         As a standard action, you can make a Craft check to evaluate whether an item is a forgery. The \glossterm{difficulty value} to identify a forgery is equal to the Craft check used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Critical failure means you randomly identify the item as genuine or forged. The check is made secretly, so you can't be sure how good the result is.
 
+    \subsection{Identify Item}
+        You can make a Craft check to identify an item of an unknown nature or purpose.
+        This is most commonly used with Craft (alchemy) to identify potions or unusual alchemical items.
+        You cannot use this ability to identify magical effects, since those are not caused by an item's physical construction.
+
+        Identifying an item takes a minute of careful evaluation.
+        The \glossterm{difficulty value} depends on how obscure the item's nature is.
+        As a rough guideline, uncommon items with few distinguishing characteristics have a base \glossterm{difficulty value} of 5 \add twice the item's rank.
+        If an item is intentionally crafted to be misleading or hard to identify, this \glossterm{difficulty value} increases by 10 or more.
+
     \subsection{Repair Item}
         You can make a Craft check to repair a broken item. This functions like crafting the item from scratch, except that you use one-tenth of the item's price to determine the price of raw materials and the crafting time.
 
@@ -986,16 +995,14 @@ This chapter describes each skill, including common uses for those skills.
     Knowledge represents a study of some body of lore, such an academic or even scientific discipline.
     Typical fields of study are listed below, but the GM may create additional fields or decide that some fields are irrelevant in a particular setting.
         \begin{itemize}
-            \item Arcana (ancient mysteries, magic traditions, arcane symbols,
-                cryptic phrases, constructs, dragons, magical beasts)
+            \item Arcana (arcane spells, constructs, dragons, magical beasts)
             \item Engineering (architecture, buildings, bridges, fortifications, siege weapons)
             \item Dungeoneering (aberrations, caverns, oozes, spelunking, subterranean monsters)
-            \item Geography (lands, terrain, climate, people, outdoor monsters)
-            \item Local (humanoids, legends, inhabitants, laws, customs, history, nobility, royalty)
-            \item Nature (animals, fey, giants, monstrous humanoids, plants, seasons and cycles, weather, vermin)
-            \item Planes (the Primal Planes, the Aligned Planes, the Astral Plane,
+            \item Local (myths and legends, laws and customs, history, nobility and royalty, nearby terrain and climate, nearby monsters)
+            \item Nature (nature spells, animals, fae, monstrous humanoids, plants, seasons, weather)
+            \item Planes (pact spells, the Primal Planes, the Aligned Planes, the Astral Plane,
                 planeforged, magic related to the planes, extraplanar monsters)
-            \item Religion (gods and goddesses, mythic history, ecclesiastic tradition, holy symbols, undead)
+            \item Religion (divine spells, undead, deities, mythic history, religious traditions, holy symbols)
         \end{itemize}
 
         You cannot retry Knowledge checks until you are presented with significant new information about the subject that could jog your memory.
@@ -1016,8 +1023,7 @@ This chapter describes each skill, including common uses for those skills.
             \item Approximate speed, to the nearest increment of 10 feet
             \item Approximate value for any one of its attributes, to the nearest increment of 5
             \item Challenge rating (see \pcref{Challenge Rating})
-            \item Highest defense
-            \item Lowest defense
+            \item Which defense is highest or lowest (but not the value of that defense)
         \end{itemize}
 
         Failure indicates you don't remember anything important about the monster.
@@ -1025,6 +1031,7 @@ This chapter describes each skill, including common uses for those skills.
 
         Some particularly famous monsters have legends about them that are much easier to recall than specific combat details about them.
         For example, even the most rural commoner has heard of dragons.
+        These common legends are indicated in the description of each monster, and have a lower difficulty value than identifying the monster itself.
 
     \subsection{Answer Question/Recall Information}
         You can make a Knowledge check reactively to remember information related to your field of study. The \glossterm{difficulty value} varies depending on the difficulty of the question. Answering a simple or trivial question that most students would be familiar with is \glossterm{difficulty value} 5. Answering a challenging question which would be beyond the reach of most initiates has a \glossterm{difficulty value} of 15. Answering a deeply complex or obscure question which might require information known only by the most learned masters in the field would be \glossterm{difficulty value} 20 or higher.
@@ -1038,6 +1045,26 @@ This chapter describes each skill, including common uses for those skills.
         Critical failure means you can't estimate the item's value at all.
 
         After you appraise an item, you can't appraise it again until you are presented with significant new information about the item that could clarify your appraisal.
+
+    \subsubsection{Identify Magical Effect}
+        Once per round, you can make a Knowledge check as a \glossterm{free action} to identify a magical effect that you observed during the current or previous round.
+        The base \glossterm{difficulty value} is equal to 15 \add twice the effect's rank.
+        You must use a Knowledge skill relevant to the magical effect.
+        Arcane effects require Knowledge (arcana), divine effects require Knowledge (nature), nature effects require Knowledge (nature), and pact effects require Knowledge (planes).
+        In some circumstances, other Knowledge skills could be used if they are directly relevant to the magical effect.
+        For example, Knowledge (dungeoneering) could be used to identify many spells from the \sphere{terramancy} \glossterm{mystic sphere}.
+
+        Success means you know in general terms what the effect does.
+        For example, if you observe someone casting a \spell{pyrohemia} spell, you know that it deals fire damage to a single target, and that it detrimentally affects the target's mind.
+        Critical success means you know exactly what the effect does, and if it is a common effect, what ability caused it.
+        For example, you might specifically identify the \spell{pyrohemia} spell, including the exact duration of its dazing effect.
+        Failure means you do not recognize the effect.
+
+        The more information you have about the magical effect, the easier it is to identify.
+        If you saw a creature use \glossterm{somatic components} to create the magical effect, the \glossterm{difficulty value} of this check is reduced by 5.
+        Likewise, observing \glossterm{verbal components} also reduces the difficulty value by 5.
+        If you can visually observe the effect, such as the eruption of a ball of fire, or if you were personally affected by a non-visual effect, you also reduce the difficulty value by 5.
+        This means that if you have all three pieces of information, the difficulty value is equal to twice the effect's rank.
 
 \newpage
 \skill{Linguistics}{Int}
@@ -1398,99 +1425,6 @@ This chapter describes each skill, including common uses for those skills.
         You can make a social assessment after only a single round of observation, but you take a \minus10 penalty on the check.
         If you don't understand the language the group is using, you take a \minus10 penalty on the check.
         The information gained at a given \glossterm{difficulty value} may vary in usefulness depending on how obvious or subtle the situation is.
-
-\newpage
-\skill{Spellsense}{Per}
-        The Spellsense skill represents your ability to notice and understand spells and magical effects.
-        While sleeping, you take a \minus10 penalty to the Spellsense skill.
-
-        % TODO: add ability to identify that a creature is attuned to active effects.
-
-    \subsection{Notice Magical Effect}
-        As a \glossterm{free action}, you can notice magical effects around you.
-        This ability has the \abilitytag{Detection} tag, so you can detect magical effects through solid objects (see \pcref{Detection}).
-        The \glossterm{difficulty value} for an \glossterm{unattended} magical item or an active magical effect is equal to 10 \sub twice the \glossterm{rank} of the effect.
-        Extremely powerful effects are very easy to notice, but more difficult to identify.
-        However, \glossterm{attended} magical items cannot be detected with this ability.
-
-        Success means that you notice the existence of the magical effect.
-        Critical success means that you know the location of the magical effect.
-        Failure means you do not notice the existence of the effect.
-
-        \abilitytag{Subtle} effects are more difficult to notice.
-        The \glossterm{difficulty value} to notice a \abilitytag{Subtle} effect is equal to 20 \add twice the \glossterm{rank} of the effect.
-        
-    \subsection{Identify Magical Effect}
-        When you notice a magical effect, you can make a Spellsense check to identify its nature.
-        Generally, you use the same Spellsense roll to both notice and identify a magical effect.
-        The \glossterm{difficulty value} is equal to 5 \add twice the \glossterm{rank} of the effect.
-        Success means you know in general terms what the effect does.
-        Critical success means you know exactly what the effect does, and if it is a common effect, what ability caused it.
-        Failure means you do not recognize the effect.
-
-        If the effect has obvious visual or other cues to its true nature, such as a wall of fire, the \glossterm{difficulty value} is lowered by 5.
-        If the effect has obvious cues that are misleading, such as a wall of fire that heals creatures that pass through it, the \glossterm{difficulty value} is increased by 5.
-
-        You cannot retry this check until you gain meaningful new information that would help you identify the effect.
-
-    \subsection{Identify Spellcasting}
-        You can identify spells being cast near you.
-        The \glossterm{difficulty value} is equal to 5 \add twice the \glossterm{rank} of the spell.
-        Success means you know what spell is being cast.
-        Failure means you do not.
-
-    \subsection{Identify Potion}
-        You can make a \glossterm{difficulty value} Spellsense check to identify a potion.
-        This takes a minute of careful evaluation.
-        For most potions, the \glossterm{difficulty value} is 10, and success means you identify what spell the potion contains.
-        Failure means you do not learn anything about the potion's nature.
-
-        Potions can be crafted to conceal their true nature.
-        The \glossterm{difficulty value} to identify such potions is usually 20.
-        Success means you know what spell the potion contains.
-        Failure means you identify the potion as whatever spell the potion is intended to resemble.
-        Critical failure means you do not learn anything about the potion's nature.
-
-    % TODO: this should give partial information on failure or only give complete information on crit
-    \subsection{Identify Magical Writing}\label{Identify Magical Writing}
-        You can make a Spellsense check as a standard action to identify a ritual or similar piece of magical writing.
-        The \glossterm{difficulty value} depends on the complexity of the writing.
-        If the writing describes a spell or ritual, the \glossterm{difficulty value} is equal to 10 \add twice the \glossterm{rank} of the spell or ritual.
-        Success means you understand the magical writing.
-        Once you decipher a particular magical writing, you do not need to decipher it again.
-
-    \subsection{Teleport Trace}
-        As a standard action, you can make a Spellsense check to learn information about a teleportation within \rngmed range of you.
-        The \glossterm{difficulty value} is equal to 10 \add 1 per round since the teleportation occurred.
-        Success means you identify the direction of the teleportation.
-        Critical success means you also identify the distance.
-        Failure means you learn no information about the teleportation.
-
-    \subsection{Modifiers}
-        All Spellsense checks share the same set of modifiers. These are noted on \trefnp{Spellsense Difficulty Modifiers}.
-
-        This table should not generally be consulted during a game. It is provided to make it easier to estimate a task's difficulty.
-
-        \begin{dtable}
-            \lcaption{Spellsense Difficulty Modifiers}
-            \begin{dtabularx}{\columnwidth}{X l}
-                \tb{Distance}                  & \tb{Difficulty Modifier\fn{1}} \tableheaderrule
-                Up to 30 feet away             & \plus0                   \\
-                31--120 feet away              & \plus2                   \\
-                121--480 feet away             & \plus5                  \\
-                481--1200 feet away            & \plus10                  \\
-                1200\add feet away             & \plus15 or more          \\
-                \tb{Number}                    & \tb{Difficulty Modifier} \\
-                1--4 magical sources      & \plus0                   \\
-                5--20 magical sources     & \minus5                  \\
-                21--100 magical sources   & \minus10                  \\
-                101--500 magical sources  & \minus15                 \\
-                \tb{Background}                & \tb{Difficulty Modifier} \\
-                Nothing similar                & 0                        \\
-                Many similar sensations        & \plus5                   \\
-                Many more intense sensations   & \plus10                  \\
-            \end{dtabularx}
-        \end{dtable}
 
 \newpage
 \skill{Stealth}{Dex}

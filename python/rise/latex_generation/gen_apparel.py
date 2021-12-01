@@ -1966,7 +1966,7 @@ def generate_apparel():
             material_type="Circlet",
             tags=[],
             description="""
-                Whenever you roll a 1 on an attack or check using the Awareness, Deduction, Social Insight, or Spellsense skills, you may reroll and take the higher result.
+                Whenever you roll a 1 on an attack or check using the Awareness, Deduction, Social Insight, or Survival skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
             """,
             short_description="Can reroll 1s with observation-based skills",
@@ -1977,7 +1977,7 @@ def generate_apparel():
             material_type="Circlet",
             tags=[],
             description="""
-                Whenever you roll a 1 on an attack or check using the Awareness, Deduction, Social Insight, or Spellsense skills, you may reroll and take the higher result.
+                Whenever you roll a 1 on an attack or check using the Awareness, Deduction, Social Insight, or Survival skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
                 In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
             """,
@@ -1989,7 +1989,7 @@ def generate_apparel():
             material_type="Circlet",
             tags=[],
             description="""
-                Whenever you roll a 1 or 2 on an attack or check using the Awareness, Deduction, Social Insight, or Spellsense skills, you may reroll and take the higher result.
+                Whenever you roll a 1 or 2 on an attack or check using the Awareness, Deduction, Social Insight, or Survival skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
                 In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
             """,
