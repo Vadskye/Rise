@@ -114,7 +114,6 @@ impl Class {
                 Skill::Medicine,
                 Skill::Persuasion,
                 Skill::SocialInsight,
-                Skill::Spellsense,
             ],
             Self::Druid => vec![
                 Skill::Awareness,
@@ -168,7 +167,6 @@ impl Class {
                 Skill::Persuasion,
                 Skill::Ride,
                 Skill::SocialInsight,
-                Skill::Spellsense,
                 Skill::Stealth,
                 Skill::Survival,
                 Skill::Swim,
@@ -243,7 +241,6 @@ impl Class {
                 Skill::Knowledge(vec![KnowledgeSubskill::Arcana, KnowledgeSubskill::Planes]),
                 Skill::Linguistics,
                 Skill::Persuasion,
-                Skill::Spellsense,
             ],
             Self::Warlock => vec![
                 Skill::Awareness,
@@ -261,7 +258,6 @@ impl Class {
                 Skill::Persuasion,
                 Skill::Ride,
                 Skill::SocialInsight,
-                Skill::Spellsense,
             ],
             Self::Wizard => vec![
                 Skill::Awareness,
@@ -272,7 +268,6 @@ impl Class {
                 Skill::Knowledge(KnowledgeSubskill::all()),
                 Skill::Linguistics,
                 Skill::Persuasion,
-                Skill::Spellsense,
             ],
         }
     }
@@ -1034,7 +1029,7 @@ impl Class {
                     \subsubsection{Magic}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \parhead{Gift} You gain a \plus4 bonus to the Spellsense skill (see \pcref{Spellsense}).
+                        \parhead{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \parhead{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
                         \parhead{Essence} You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
                         \parhead{Mastery} The power bonus from this domain's essence increases to \plus6.

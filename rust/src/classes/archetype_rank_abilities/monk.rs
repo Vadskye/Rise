@@ -485,18 +485,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus12.
                     \end{durationability}
 
-                    \begin{durationability}{Sense the Mystic Truth}[Duration]
-                        \abilitytag{Swift}
-                        \rankline
-                        You can use this ability as a \glossterm{free action}.
-                        You gain a \plus4 bonus to the Spellsense skill this round (see \pcref{Spellsense}).
-
-                        \rankline
-                        \rank{3} The bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
-                    \end{durationability}
-
                     \begin{durationability}{Shelter from Falling Rain}[Duration]
                         \abilitytag{Swift}
                         \rankline
