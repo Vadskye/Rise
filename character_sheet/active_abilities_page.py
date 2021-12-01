@@ -54,7 +54,7 @@ def create_page(destination):
                 nondamaging_attack(),
             ),
             # Old attacks for backwards compatibility
-            *old_attacks(),
+            # *old_attacks(),
             flex_wrapper(div({"class": "section-header"}, "Other Abilities")),
             fieldset(
                 {"class": f"repeating_abilities"},
