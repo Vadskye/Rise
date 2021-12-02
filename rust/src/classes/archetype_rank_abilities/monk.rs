@@ -632,6 +632,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons and unarmed weapons \glossterm{weapon groups}, natural weapons, and to any attack using one or more \glossterm{free hands}.
+                This does not include abilities that simply use \glossterm{somatic components}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
