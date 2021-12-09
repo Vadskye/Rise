@@ -488,16 +488,6 @@ This chapter describes each skill, including common uses for those skills.
             1.  For the purpose of crafting times, treat rank 0 items as having a rank of 1/2.
         \end{dtable!*}
 
-    \subsection{Appraise Item}
-        You can make a Craft check to estimate the value of an item with 1 minute of careful study. The Craft skill used must be related to the item.
-        The \glossterm{difficulty value} is equal to 5 \add twice the item's rank.
-
-        Success means you know the item's rank.
-        Failure means you can only guess the item's rank within one of the following bands: 1--2, 3--4, or 5\plus.
-        Critical failure means you can't estimate the item's value at all.
-
-        After you appraise an item, you can't appraise it again until you are presented with significant new information about the item that could clarify your appraisal.
-
     \subsection{Create Forgery}
         You can use the Craft skill to create false or defective versions of objects.
         This requires artisan's tools.
@@ -512,14 +502,40 @@ This chapter describes each skill, including common uses for those skills.
         As a standard action, you can make a Craft check to evaluate whether an item is a forgery. The \glossterm{difficulty value} to identify a forgery is equal to the Craft check used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Critical failure means you randomly identify the item as genuine or forged. The check is made secretly, so you can't be sure how good the result is.
 
     \subsection{Identify Item}
-        You can make a Craft check to identify an item of an unknown nature or purpose.
-        This is most commonly used with Craft (alchemy) to identify potions or unusual alchemical items.
-        You cannot use this ability to identify magical effects, since those are not caused by an item's physical construction.
+        You can make a Craft check to identify any unusual properties or functions of an item.
+        The Craft skill used match the primary material used to construct the item.
+        This is most commonly used to identify magic items, but it can also be used to understand esoteric nonmagical items.
 
         Identifying an item takes a minute of careful evaluation.
         The \glossterm{difficulty value} depends on how obscure the item's nature is.
-        As a rough guideline, uncommon items with few distinguishing characteristics have a base \glossterm{difficulty value} of 5 \add twice the item's rank.
-        If an item is intentionally crafted to be misleading or hard to identify, this \glossterm{difficulty value} increases by 10 or more.
+        As a rough guideline, identifying a magic item usually has a base \glossterm{difficulty value} of 10 \add twice the item's rank.
+        Items that are particularly common in a particular setting may be easier to identify, which can reduce the \glossterm{difficulty value} by 5 or more.
+        For example, a \mitem{potion of healing} is usually a fairly common magic item, so it may only require a DV 2 check to recognize.
+        The GM is responsible for determining exactly which magic items, if any, are common enough to easily identify.
+
+        Success means that you know the item's general purpose, and how to activate its functions, including any magical effects.
+        You also know the item's rank, which lets you estimate its value.
+        Failure means you learn nothing about the item.
+
+        If an item is intentionally crafted to be misleading or hard to identify, the \glossterm{difficulty value} to identify it increases by 5 or more.
+        Critical failure on a check to identify it may cause an observer to misidentify it as a different item.
+        For example, a poison carefully contructed to resemble a \mitem{potion of healing} may require a DV 17 check to correctly identify.
+        A result of 11 or less would cause an observer to confidently conclude that the poison was in fact a potion of healing.
+
+    \subsection{Identify Item}
+        You can make a Craft check to identify any unusual properties or functions of an item.
+        This is most commonly used to identify magic items, but it can also be used to understand esoteric nonmagical items.
+
+        Identifying an item takes a minute of careful evaluation.
+        The \glossterm{difficulty value} depends on how obscure the item's nature is.
+        As a rough guideline, identifying a magic item usually has a base \glossterm{difficulty value} of 10 \add twice the item's rank.
+        Items that are particularly common in a particular setting may be easier to identify, which can reduce the \glossterm{difficulty value} by 5 or more.
+        For example, a \mitem{potion of healing} is usually a fairly common magic item, so it may only require a DV 2 check to recognize.
+        However, the GM is responsible for determining exactly which magic items, if any, are common enough to easily identify.
+
+        If an item is intentionally crafted to be misleading or hard to identify, the \glossterm{difficulty value} to identify it increases by 5 or more.
+        Critical failure on a check to identify it may cause an observer to misidentify it as a different item.
+        For example, a poison carefully contructed to resemble a \mitem{potion of healing} may require a DV 17 check to correctly identify, and a result of 11 or less would cause an observer to confidently conclude that it is in fact a potion of healing.
 
     \subsection{Repair Item}
         You can make a Craft check to repair a broken item. This functions like crafting the item from scratch, except that you use one-tenth of the item's price to determine the price of raw materials and the crafting time.
@@ -998,9 +1014,10 @@ This chapter describes each skill, including common uses for those skills.
     Knowledge represents a study of some body of lore, such an academic or even scientific discipline.
     Typical fields of study are listed below, but the GM may create additional fields or decide that some fields are irrelevant in a particular setting.
         \begin{itemize}
-            \item Arcana (arcane spells, constructs, dragons, magical beasts)
-            \item Engineering (architecture, buildings, bridges, fortifications, siege weapons)
+            \item Arcana (arcane spells, dragons, magical beasts)
             \item Dungeoneering (aberrations, caverns, oozes, spelunking, subterranean monsters)
+            \item Engineering (architecture, buildings, bridges, fortifications, siege weapons)
+            \item Items (magic items, artifacts, constructs)
             \item Local (myths and legends, laws and customs, history, nobility and royalty, nearby terrain and climate, nearby monsters)
             \item Nature (nature spells, animals, fae, monstrous humanoids, plants, seasons, weather)
             \item Planes (pact spells, the Primal Planes, the Aligned Planes, the Astral Plane,
@@ -1039,15 +1056,26 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{Answer Question/Recall Information}
         You can make a Knowledge check reactively to remember information related to your field of study. The \glossterm{difficulty value} varies depending on the difficulty of the question. Answering a simple or trivial question that most students would be familiar with is \glossterm{difficulty value} 5. Answering a challenging question which would be beyond the reach of most initiates has a \glossterm{difficulty value} of 15. Answering a deeply complex or obscure question which might require information known only by the most learned masters in the field would be \glossterm{difficulty value} 20 or higher.
 
-    \subsection{Appraise Item}
-        You can make a Knowledge check to estimate the value of an item with 1 minute of careful study. The Knowledge skill used must be related to the item.
-        The \glossterm{difficulty value} is equal to 5 \add twice the item's rank.
+    \subsection{Identify Item}
+        You can make a Knowledge check to identify any unusual properties or functions of an item.
+        The Knowledge skill used must be related to the item, which generally requires that you use the Knowledge (items) skill.
+        This is most commonly used to identify magic items, but it can also be used to understand esoteric nonmagical items.
 
-        Success means you know the item's rank.
-        Failure means you can only guess the item's rank within one of the following bands: 1--2, 3--4, or 5\plus.
-        Critical failure means you can't estimate the item's value at all.
+        Identifying an item takes a minute of careful evaluation.
+        The \glossterm{difficulty value} depends on how obscure the item's nature is.
+        As a rough guideline, identifying a magic item usually has a base \glossterm{difficulty value} of 10 \add twice the item's rank.
+        Items that are particularly common in a particular setting may be easier to identify, which can reduce the \glossterm{difficulty value} by 5 or more.
+        For example, a \mitem{potion of healing} is usually a fairly common magic item, so it may only require a DV 2 check to recognize.
+        The GM is responsible for determining exactly which magic items, if any, are common enough to easily identify.
 
-        After you appraise an item, you can't appraise it again until you are presented with significant new information about the item that could clarify your appraisal.
+        Success means that you know the item's general purpose, and how to activate its functions, including any magical effects.
+        You also know the item's rank, which lets you estimate its value.
+        Failure means you learn nothing about the item.
+
+        If an item is intentionally crafted to be misleading or hard to identify, the \glossterm{difficulty value} to identify it increases by 5 or more.
+        Critical failure on a check to identify it may cause an observer to misidentify it as a different item.
+        For example, a poison carefully contructed to resemble a \mitem{potion of healing} may require a DV 17 check to correctly identify.
+        A result of 11 or less would cause an observer to confidently conclude that the poison was in fact a potion of healing.
 
     \subsubsection{Identify Magical Effect}
         Once per round, you can make a Knowledge check as a \glossterm{free action} to identify a magical effect that you observed during the current or previous round.
