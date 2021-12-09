@@ -328,7 +328,7 @@ export const enchantment: MysticSphere = {
       name: "Cause Fear",
 
       attack: {
-        crit: `The subject is \\frightened by you instead of shaken.`,
+        crit: `The subject is \\frightened by you or your ally instead of shaken.`,
         hit: `
           The subject is \\shaken by either you or an \\glossterm{ally} of your choice within range as a \\glossterm{condition}.
         `,
