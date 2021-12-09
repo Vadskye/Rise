@@ -503,7 +503,7 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Identify Item}
         You can make a Craft check to identify any unusual properties or functions of an item.
-        The Craft skill used match the primary material used to construct the item.
+        The Craft skill used must match the primary material used to construct the item.
         This is most commonly used to identify magic items, but it can also be used to understand esoteric nonmagical items.
 
         Identifying an item takes a minute of careful evaluation.
@@ -1316,17 +1316,26 @@ This chapter describes each skill, including common uses for those skills.
         For example, if you use your experience as a farmer to harrow a field, you can add your base Strength to the Profession check.
         On the other hand, if you use your experience as a sailor to determine the right angle for sails in the current wind, you can add your base Perception to the Profession check.
 
-    \subsection{Appraise Item}
-        You can make a Profession check to estimate the value of an item with 1 minute of careful study.
-        The Profession skill used must be related to the item.
-        This check is always Intelligence-based, regardless of your profession.
-        The \glossterm{difficulty value} is equal to 5 \add twice the item's rank.
+    \subsection{Identify Item}
+        You can make a Profession check to identify any unusual properties or functions of an item.
+        The Profession skill used must match the item's purpose, ignoring any magical properties it might have.
+        This is most commonly used to identify magic items, but it can also be used to understand esoteric nonmagical items.
 
-        Success means you know the item's rank.
-        Failure means you can only guess the item's rank within one of the following bands: 1--2, 3--4, or 5\plus.
-        Critical failure means you can't estimate the item's value at all.
+        Identifying an item takes a minute of careful evaluation.
+        The \glossterm{difficulty value} depends on how obscure the item's nature is.
+        As a rough guideline, identifying a magic item usually has a base \glossterm{difficulty value} of 10 \add twice the item's rank.
+        Items that are particularly common in a particular setting may be easier to identify, which can reduce the \glossterm{difficulty value} by 5 or more.
+        For example, a \mitem{potion of healing} is usually a fairly common magic item, so it may only require a DV 2 check to recognize.
+        The GM is responsible for determining exactly which magic items, if any, are common enough to easily identify.
 
-        After you appraise an item, you can't appraise it again until you are presented with significant new information about the item that could clarify your appraisal.
+        Success means that you know the item's general purpose, and how to activate its functions, including any magical effects.
+        You also know the item's rank, which lets you estimate its value.
+        Failure means you learn nothing about the item.
+
+        If an item is intentionally crafted to be misleading or hard to identify, the \glossterm{difficulty value} to identify it increases by 5 or more.
+        Critical failure on a check to identify it may cause an observer to misidentify it as a different item.
+        For example, a poison carefully contructed to resemble a \mitem{potion of healing} may require a DV 17 check to correctly identify.
+        A result of 11 or less would cause an observer to confidently conclude that the poison was in fact a potion of healing.
 
     \subsection{Earn Income}
         You can make a Profession check to practice your trade and make a decent living, earning about half your Profession check result in gold pieces per week of dedicated work. You know how to use the tools of your trade, how to perform the profession's daily tasks, how to supervise helpers, and how to handle common problems.
