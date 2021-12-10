@@ -16,7 +16,7 @@ def generate_implements():
             material_type="Wand",
             tags=[],
             description="""
-                This wand grants you knowledge of a single rank 1 spell that does not have the \\abilitytag<Attune> tag.
+                This wand grants you knowledge of a single rank 1 spell that does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags.
                 Each wand is associated with a specific spell, and a single \\glossterm<magic source> that can grant access to that spell.
                 You must have the ability to cast spells of the given rank from the same \\glossterm<magic source> as the wand.
                 However, you do not need to have access to the \\glossterm<mystic sphere> that the spell belongs to.
