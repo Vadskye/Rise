@@ -127,7 +127,7 @@ impl Class {
                 Skill::Intimidate,
                 Skill::Jump,
                 Skill::Knowledge(vec![
-                    KnowledgeSubskill::Geography,
+                    KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Nature,
                 ]),
                 Skill::Persuasion,
@@ -197,7 +197,6 @@ impl Class {
                 Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
-                    KnowledgeSubskill::Geography,
                     KnowledgeSubskill::Nature,
                 ]),
                 Skill::Medicine,
@@ -221,6 +220,8 @@ impl Class {
                 Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
+                    KnowledgeSubskill::Engineering,
+                    KnowledgeSubskill::Items,
                     KnowledgeSubskill::Local,
                 ]),
                 Skill::Linguistics,
@@ -1066,7 +1067,7 @@ impl Class {
 
                     \subsubsection{Travel}
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
-                        In addition, you add the Knowledge (geography), Survival, and Swim skills to your cleric \glossterm{class skill} list.
+                        In addition, you add the Knowledge (nature), Survival, and Swim skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.

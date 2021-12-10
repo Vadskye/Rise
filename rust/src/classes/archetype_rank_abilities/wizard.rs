@@ -366,7 +366,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     KnowledgeSubskill::Arcana,
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Engineering,
-                    KnowledgeSubskill::Geography,
+                    KnowledgeSubskill::Items,
                     KnowledgeSubskill::Local,
                     KnowledgeSubskill::Nature,
                     KnowledgeSubskill::Planes,
