@@ -646,7 +646,7 @@ def generate_tools():
             tags=[],
             description="""
                 This bag appears to be a common Small cloth sack.
-                However, it reduces the size of any \\glossterm<unattended> objects placed inside of it by one size category, allowing it to hold items of up to Medim size.
+                However, it reduces the size of any \\glossterm<unattended>, nonmagical objects placed inside of it by one size category, allowing it to hold items of up to Medim size.
                 This reduction does not affect the weight of those objects.
 
                 If this bag is destroyed, the items within it return to their original size.
@@ -683,7 +683,7 @@ def generate_tools():
             tags=[],
             description="""
                 This bag appears to be a bulky Medium cloth sack.
-                However, it reduces the size of any \\glossterm<unattended> objects placed inside of it by one size category, allowing it to hold items of up to Large size.
+                However, it reduces the size of any \\glossterm<unattended>, nonmagical objects placed inside of it by one size category, allowing it to hold items of up to Large size.
                 This reduction also affects the weight of those objects.
 
                 If this bag is destroyed, the items within it return to their original size.
