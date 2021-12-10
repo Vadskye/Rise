@@ -252,7 +252,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     KnowledgeSubskill::Arcana,
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Engineering,
-                    KnowledgeSubskill::Geography,
+                    KnowledgeSubskill::Items,
                     KnowledgeSubskill::Local,
                     KnowledgeSubskill::Nature,
                     KnowledgeSubskill::Planes,
