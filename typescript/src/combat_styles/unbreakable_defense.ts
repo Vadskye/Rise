@@ -156,7 +156,6 @@ export const unbreakableDefense: CombatStyle = {
         Make a \\glossterm{strike} using a shield.
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\glossterm{briefy} \\dazed.
-        Unlike normal, this strike does not cause you to lose the benefit of the shield's Armor defense bonus (see \\pcref{Shield Bash Attacks}).
       `,
       rank: 1,
       scaling: {
@@ -174,7 +173,6 @@ export const unbreakableDefense: CombatStyle = {
         Make a \\glossterm{strike} using a shield.
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\glossterm{briefy} \\stunned.
-        Unlike normal, this strike does not cause you to lose the benefit of the shield's Armor defense bonus (see \\pcref{Shield Bash Attacks}).
       `,
       rank: 5,
       scaling: {
