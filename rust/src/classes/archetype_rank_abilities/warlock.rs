@@ -73,7 +73,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{instantability}{Abyssal Blast}[Instant]
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
-                    \hit The target takes fire damage equal to 1d10 plus your \glossterm{power}.
+                    \hit The target takes 1d10 \add \glossterm{power} fire damage.
 
                     \rankline
                     \rank{2} The damage increases to 2d6.
