@@ -51,6 +51,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `
           The subject takes 1d6 + \\glossterm{power} energy damage.
           \\miss The subject takes 1d6 energy damage.
+          This replaces the normal damage dealt on a \\glossterm{glancing blow}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
@@ -72,6 +73,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `
           The subject takes 2d8 + \\glossterm{power} energy damage.
           \\miss The subject takes 2d8 energy damage.
+          This replaces the normal damage dealt on a \\glossterm{glancing blow}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -93,6 +95,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `
           The subject takes 4d10 + \\glossterm{power} energy damage.
           \\miss The subject takes 4d10 energy damage.
+          This replaces the normal damage dealt on a \\glossterm{glancing blow}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
@@ -109,11 +112,12 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Magic Missile Storm",
 
-      // -2d, -1 range level in exchange for the strong miss effect
+      // -1d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          Each subject takes 1d8 + half \\glossterm{power} energy damage.
-          \\miss Each subject takes 1d8 energy damage.
+          Each subject takes 1d10 + half \\glossterm{power} energy damage.
+          \\miss Each subject takes 1d10 energy damage.
+          This replaces the normal damage dealt on a \\glossterm{glancing blow}.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -130,11 +134,12 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Greater Magic Missile Storm",
 
-      // -2d, -1 range level in exchange for the strong miss effect
+      // -1d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The subject takes 2d8 + half \\glossterm{power} energy damage.
-          \\miss Each subject takes 2d8 energy damage.
+          The subject takes 2d10 + half \\glossterm{power} energy damage.
+          \\miss Each subject takes 2d10 energy damage.
+          This replaces the normal damage dealt on a \\glossterm{glancing blow}.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
