@@ -149,25 +149,34 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Fearsome Staff",
+            rank=1,
+            material_type="Staff",
+            tags=["Emotion"],
+            description="""
+                Creatures that are shaken, frightened or panicked by you suffer penalties from those effects at up to \\longrange of you instead of \\medrange.
+            """,
+            short_description="Increases range of fear effects",
+        ),
+        MagicItem(
+            name="Fearsome Staff, Greater",
             rank=3,
             material_type="Staff",
             tags=["Emotion"],
             description="""
-                Whenever a creature that is suffering penalties for being \\shaken, \\frightened, or \\panicked by you gets farther than 60 feet from you, it \\glossterm<briefly> continues suffering penalties from those effects regardless of distance.
-                It must still have \\glossterm<line of sight> and \\glossterm<line of effect> to you.
+                Creatures that are shaken, frightened or panicked by you suffer penalties from those effects at up to \\distrange of you instead of \\medrange.
             """,
-            short_description="Briefly increases range of your fear effects",
+            short_description="Greatly increases range of fear effects",
         ),
         MagicItem(
             name="Fearsome Staff, Greater",
-            rank=6,
+            rank=5,
             material_type="Staff",
             tags=["Emotion"],
             description="""
                 Creatures that are shaken, frightened or panicked by you suffer penalties from those effects at any distance.
                 They must still have \\glossterm<line of sight> and \\glossterm<line of effect> to you.
             """,
-            short_description="Increases range of your fear effects",
+            short_description="Your fear effects work at any range",
         ),
     ]
 
@@ -178,7 +187,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you cause an enemy to be \\dazed, you can also make it \\glossterm<briefly> \\stunned.
+                Whenever you cause an enemy to be \\dazed as a \\glossterm<condition>, it is also \\glossterm<briefly> \\stunned.
             """,
             short_description="Makes dazed creatures briefly stunned",
         ),
@@ -188,7 +197,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you cause an enemy to be \\stunned, you can also make it \\glossterm<briefly> \\confused.
+                Whenever you cause an enemy to be \\stunned as a \\glossterm<condition>, it is also \\glossterm<briefly> \\confused.
             """,
             short_description="Makes stunned creatures briefly confused",
         ),
@@ -201,7 +210,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you cause an enemy to be \\slowed, you can make that condition \\glossterm<briefly> impossible to remove.
+                Whenever you cause an enemy to be \\slowed as a \\glossterm<condition>, you can make that condition \\glossterm<briefly> impossible to remove.
             """,
             short_description="Your slowing effects last longer",
         ),
@@ -211,7 +220,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you cause an enemy to be \\slowed, that condition must be removed an additional time before the effect ends.
+                Whenever you cause an enemy to be \\slowed as a \\glossterm<condition>, that condition must be removed an additional time before the effect ends.
             """,
             short_description="Your slowing effects last much longer",
         ),
