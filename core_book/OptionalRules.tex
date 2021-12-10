@@ -717,6 +717,7 @@
             \begin{itemize}
                 \item Abysswalker: You can use the \textit{abyssal hop} ability as a standard action.
                     \begin{freeability}{Abyssal Hop}
+                        \abilitytag{Magical}
                         \rankline
                         You teleport horizontally into an unoccupied location within 5 foot \glossterm{range} on a stable surface that can support your weight.
                         If the destination is invalid, this spell fails with no effect.
@@ -732,10 +733,10 @@
                 \item Tempting Allure: You gain a \plus2 bonus to the Deception, Disguise, and Persuasion skills.
                     In addition, you can use the \ability{charming temptation} ability as a standard action.
                     \begin{durationability}{Charming Temptation}[Sustain (minor)]
-                      \abilitytag{Emotion}, \abilitytag{Subtle}
-                      \rankline
-                      \noindent
-                      
+                        \abilitytag{Emotion}, \abilitytag{Magical}, \abilitytag{Subtle}
+                        \rankline
+                        \noindent
+
                         Make an attack vs. Mental against one creature within \medrange.
                         You take a -5 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.%
                         \vspace{0.25em}
@@ -744,11 +745,11 @@
                         Harming the subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
                         An observant target may interpret overt threats to its allies as a threat to itself.
                         \crit Actions which threaten the charmed person without harming them do not break the effect.
-                      
+
                         \rankline
 
                         \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 2.
-                      \vspace{0.1em}
+                        \vspace{0.1em}
                     \end{durationability}
                 \item Unholy Might: You gain two claw natural weapons and one bite natural weapon (see \pcref{Natural Weapons}).
                     In addition, you gain a \plus1d bonus to your damage with all weapons.
@@ -761,13 +762,13 @@
             \cf{Tif}[4]{Greater Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability improve.
             \begin{itemize}
                 \item Abysswalker: You can use your \ability{abyssal hop} ability to teleport as a move action instead of as a standard action.
-                    When you do, you do not deal fire damage with the ability, and you \glossterm{briefly} cannot use it as a move action again.
+                    When you do, you do not deal fire damage at your destination, and you \glossterm{briefly} cannot use that ability as a move action again.
                 \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus3.
                     In addition, you can use the \ability{dominating temptation} ability as a standard action.
                     \begin{durationability}{Dominating Temptation}[Duration]
-                      \abilitytag{Compulsion}
-                      \rankline
-                      \noindent
+                        \abilitytag{Magical}
+                        \rankline
+                        \noindent
                         Make an attack vs. Mental against one creature within \shortrange.%
                         \vspace{0.25em}
                         \hit The subject is \stunned as a \glossterm{condition}.
@@ -777,10 +778,11 @@
 
                         \rankline
                         \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 4.
-                      \vspace{0.1em}
+                        \vspace{0.1em}
                     \end{durationability}
                 \item Unholy Might: You can use the \ability{unholy strength} ability as a \glossterm{minor action}.
                     \begin{attuneability}{Unholy Surge}[\abilitytag{Attune} (self)]
+                        \abilitytag{Magical}
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         You gain a \plus1 bonus to your base Strength.
