@@ -675,7 +675,6 @@
         \parhead{Special Abilities}
         \begin{itemize}
             \itemhead{Darkvision} Tieflings can see in the dark clearly up to 60 feet. Darkvision does not function if a tiefling is in a brightly lit area, and does not resume functioning until the end of the next round after the tiefling leaves the brightly lit area.
-            \itemhead{Fire Tolerance}[Magical] (Magical) Tieflings are \glossterm{impervious} to fire damage.
             \itemhead{Infernal Darkness}[Magical] A tiefling can use the \textit{infernal darkness} ability as a \glossterm{standard action}.
                 \begin{durationability}{Infernal Darkness}[\abilitytag{Sustain} (minor)]
                     \rankline
@@ -685,9 +684,157 @@
                     Any object or effect which blocks light also blocks this spell's effect.
                 \end{durationability}
             \itemhead{Infernal Presence} Tieflings gain a \plus2 bonus to the Deception and Intimidate skills.
+            \itemhead{Tiefling Archetype} You may choose three class archetypes, as normal.
+                However, you may choose the Tiefling archetype in place of one of your class archetypes.
+                If you do, you gain ranks in it just like you gain ranks in class archetypes.
+                You cannot choose tiefling as your base class.
         \end{itemize}
         \parhead{Automatic Languages} Abyssal, Common, any one \glossterm{common language}.
 
+        \subsubsection{Tiefling Archetype}
+            \cf{Tif}[0]{Abyssal Tolerance} You are \glossterm{impervious} to fire damage.
+
+            \cf{Tif}[1]{Infernal Rebuke} You can use the \textit{infernal rebuke} ability as a standard action.
+            \begin{freeability}{Infernal Rebuke}[Instant]
+                \abilitytag{Magical}
+                \rankline
+                Make an attack vs. Fortitude against one creature within \rngshort range.
+                You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target attacked you during the previous round.
+                \hit The target takes 1d8 \add \glossterm{power} fire damage.
+
+                \rankline
+                \rank{2} The damage increases to 1d10.
+                \rank{3} The damage increases to 2d8.
+                \rank{4} The damage increases to 2d10.
+                \rank{5} The damage increases to 4d8.
+                \rank{6} The damage increases to 4d10.
+                \rank{7} The damage increases to 6d10.
+            \end{freeability}
+
+            \cf{Tif}[2]{Infernal Ancestry} You deepen your connection to a particular aspect of your demonic ancestry.
+            Choose one of the following infernal ancestries: abysswalker, tempting allure, or unholy might.
+            You gain a benefit based on your chosen ancestry.
+            \begin{itemize}
+                \item Abysswalker: You can use the \textit{abyssal hop} ability as a standard action.
+                    \begin{freeability}{Abyssal Hop}
+                        \rankline
+                        You teleport horizontally into an unoccupied location within 5 foot \glossterm{range} on a stable surface that can support your weight.
+                        If the destination is invalid, this spell fails with no effect.
+                        In addition, make an attack vs. Reflex against each \glossterm{enemy} adjacent to your location after you arrive.
+                        \hit Each subject takes 1d8 \add half power fire damage.
+                        \rankline
+                        \rank{3} The damage increases to 1d10.
+                        \rank{4} The damage increases to 2d8.
+                        \rank{5} The damage increases to 2d10.
+                        \rank{6} The damage increases to 4d8.
+                        \rank{7} The damage increases to 4d10.
+                    \end{freeability}
+                \item Tempting Allure: You gain a \plus2 bonus to the Deception, Disguise, and Persuasion skills.
+                    In addition, you can use the \ability{charming temptation} ability as a standard action.
+                    \begin{durationability}{Charming Temptation}[Sustain (minor)]
+                      \abilitytag{Emotion}, \abilitytag{Focus}, \abilitytag{Subtle}
+                      \rankline
+                      \noindent
+                      
+                        Make an attack vs. Mental against one creature within \medrange.
+                        You take a -5 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.%
+                        \vspace{0.25em}
+                        \hit The subject is \charmed by you.
+                        Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
+                        Harming the subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
+                        An observant target may interpret overt threats to its allies as a threat to itself.
+                        \glance The effect lasts \glossterm{briefly}.
+                        \crit Actions which threaten the charmed person without harming them do not break the effect.
+                      
+                        \rankline
+
+                        \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 2.
+                      \vspace{0.1em}
+                    \end{durationability}
+                \item Unholy Might: You gain two claw natural weapons and one bite natural weapon (see \pcref{Natural Weapons}).
+                    In addition, you gain a \plus1d bonus to your damage with all weapons.
+            \end{itemize}
+
+            \cf{Tif}[3]{Greater Infernal Darkness} The maximum radius affected by your \textit{infernal darkness} ability increases to a \arealarge radius.
+            In addition, when you use the ability you may choose whether it also blocks \glossterm{darkvision} from seeing into the area.
+            Finally, the range of your darkvision increases by 60 feet.
+
+            \cf{Tif}[4]{Greater Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability improve.
+            \begin{itemize}
+                \item Abysswalker: You can use your \ability{abyssal hop} ability to teleport as a move action instead of as a standard action.
+                    When you do, you do not deal fire damage with the ability, and you \glossterm{briefly} cannot use it as a move action again.
+                \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus3.
+                    In addition, you can use the \ability{dominating temptation} ability as a standard action.
+                    \begin{durationability}{Dominate Person}[Duration]
+                      \abilitytag{Compulsion}
+                      \rankline
+                      \noindent
+                        Make an attack vs. Mental against one creature within \shortrange.%
+                        \vspace{0.25em}
+                        \hit The subject is \stunned as a \glossterm{condition}.
+                        \glance The effect lasts \glossterm{briefly}.
+                        \crit The subject is \confused instead of stunned.
+                        In addition, if the subject is humanoid and was already confused from a previous casting of this spell, you may \glossterm{attune} to this ability.
+                        If you do, it becomes \dominated by you for the duration of that attunement.
+
+                        \rankline
+                        \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 4.
+                      \vspace{0.1em}
+                    \end{durationability}
+                \item Unholy Might: You can use the \ability{unholy strength} ability as a \glossterm{minor action}.
+                    \begin{attuneability}{Unholy Surge}[\abilitytag{Attune} (self)]
+                        \par \noindent Usage time: One \glossterm{minor action}.
+                        \rankline
+                        You gain a \plus1 bonus to your base Strength.
+                    \end{attuneability}
+            \end{itemize}
+
+            \cf{Tif}[5]{Greater Abyssal Tolerance} You become \glossterm{immune} to fire damage.
+
+            \cf{Tif}[6]{Supreme Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability reach their peak.
+            \begin{itemize}
+                \item Abysswalker: When you use your \textit{infernal ancestry} ability to teleport as a move action, it no longer briefly prevents you from using it as a move action again.
+                    In addition, when you use it to teleport as a standard action, the range increases to \distrange.
+                \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus4.
+                    In addition, your \textit{tempting domination} ability can dominate non-humanoid creatures.
+                \item Unholy Might: The damage bonus from your \textit{infernal ancestry} ability increases to \plus2d.
+                    In addition, your \textit{unholy surge} ability loses the \glossterm{Attune} (self) tag.
+                    Instead, it lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
+            \end{itemize}
+
+            \cf{Tif}[7]{Greater Infernal Darkness} You can use your \textit{infernal darkness} ability as a \glossterm{minor action}.
+            In addition, your darkvision functions within your own \textit{infernal darkness} even if you block all other sources of darkvision from working.
+            Finally, the range of your darkvision increases by 120 feet.
+
+        % \subsubsection{Basic Class Abilities}
+        %     If you choose tiefling as your base class, you gain the following abilities.
+
+        %     \cf{Tif}{Defenses}
+        %     You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus5 Reflex, \plus7 Mental.
+
+        %     \cf{Tif}{Resources} You have the following \glossterm{resources}:
+        %     \begin{itemize}
+        %         \item Four \glossterm{attunement points}, which you can use to attune to items and abilities that affect you (see \pcref{Attunement Points}).
+        %         \item A \plus2 bonus to your \glossterm{fatigue tolerance}, which makes it easier for you to use powerful abilities that fatigue you (see \pcref{Fatigue}).
+        %         \item Three \glossterm{insight points}, which you can spend to gain additional abilities or proficiencies (see \pcref{Insight Points}).
+        %         \item Five \glossterm{trained skills}, which you can spend to learn skills (see \pcref{Trained Skills}).
+        %     \end{itemize}
+
+        %     \cf{Tif}{Weapon Proficiencies} 
+        %     You are proficient with simple weapons.
+
+        %     \cf{Tif}{Armor Proficiencies} 
+        %     You are proficient with light and medium armor.
+
+        %     \cf{Tif}{Skills}
+        %     You have the following \glossterm{class skills}:
+        %     \begin{itemize}
+        %         \item \subparhead{Strength} Climb, Jump.
+        %         \item \subparhead{Dexterity} Balance, Sleight of Hand, Stealth.
+        %         \item \subparhead{Intelligence} Craft, Disguise, Knowledge (arcana, planes), Linguistics
+        %         \item \subparhead{Perception} Awareness, Social Insight.
+        %         \item \subparhead{Other} Deception, Intimidate, Perform, Persuasion.
+        %     \end{itemize}
 
 \section{Classes}
     \subsection{Bard}
@@ -746,7 +893,6 @@
     \begin{longtable}{>{\lcol}p{11em} >{\lcol}p{12em} l >{\lcol}p{8em} >{\lcol}p{3em}}
         \lcaption{Optional Feats}\\
         \tb{General Feats} & \tb{Prerequisites} & \tb{Benefits}          & \tb{Feat Types} & \tb{Page}                 \\
-        \featref{Infernal Heritage}             & Tiefling           & Gain aspects of demons & Bloodline       & \featpref{Infernal Heritage} \\
         \featref{Naiad Heritage}                & Naiadi            & Gain aspects of naiads & Bloodline       & \featpref{Naiad Heritage} \\
     \end{longtable}
 \end{longtablewrapper}
