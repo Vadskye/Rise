@@ -275,32 +275,111 @@ def generate_implements():
             rank=6,
             material_type="Staff",
             description="""
-                This implement functions like a \\mitem<staff of giants> implement, except that the maximum size category increases by two size categories.
+                This implement functions like a \\mitem<staff of giants>, except that the maximum size category increases by two size categories.
             """,
-            short_description="Significantly increaases maximum size category of abilities",
+            short_description="Significantly increases maximum size category of abilities",
+        ),
+    ]
+
+    implements.append(
+        MagicItem(
+            name="Merciful Staff",
+            rank=1,
+            material_type="Staff",
+            description="""
+                Whenever you use a \\glossterm<magical> ability that deals damage, you may activate this staff.
+                If you do, that ability deals \\glossterm<subdual damage>.
+            """,
+            short_description="Allows dealing subdual damage",
+        )
+    )
+
+    implements += [
+        MagicItem(
+            name="Onslaught Staff",
+            rank=1,
+            material_type="Staff",
+            description="""
+                Whenever you \\glossterm<defeat> a creature within \\medrange of you with a \\glossterm<magical> ability, you gain a +5 foot bonus to your speed with all movement modes during the next round.
+            """,
+            short_description="Grants +5 speed after defeating a foe",
+        ),
+        MagicItem(
+            name="Onslaught Staff, Greater",
+            rank=3,
+            material_type="Staff",
+            description="""
+                Whenever you \\glossterm<defeat> a creature within \\medrange of you with a \\glossterm<magical> ability, you gain a +10 foot bonus to your speed with all movement modes during the next round.
+            """,
+            short_description="Grants +10 speed after defeating a foe",
+        ),
+        MagicItem(
+            name="Onslaught Staff, Supreme",
+            rank=5,
+            material_type="Staff",
+            description="""
+                Whenever you \\glossterm<defeat> a creature within \\medrange of you with a \\glossterm<magical> ability, you gain a +15 foot bonus to your speed with all movement modes during the next round.
+            """,
+            short_description="Grants +15 speed after defeating a foe",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
+            name="Staff of Focus",
+            rank=1,
+            material_type="Staff",
+            description="""
+                Whenever you cast a spell, you can activate this staff to intensify your focus on your spell.
+                If you do, you gain a +1 \\glossterm<accuracy> bonus with the spell.
+                However, you take a -2 penalty to Armor and Reflex defenses until the end of the round.
+                You cannot activate this staff if you already took damage during the current round.
+
+                These bonuses and penalties have the \\glossterm<Swift> tag, so they affect you during the current phase.
+            """,
+            short_description="Grants +1 accuracy, but -2 defenses",
+        ),
+        MagicItem(
+            name="Staff of Focus, Greater",
+            rank=5,
+            material_type="Staff",
+            description="""
+                This implement functions like a \\mitem<staff of focus>, except that the accuracy bonus increases to +2.
+            """,
+            short_description="Grants +2 accuracy, but -2 defenses",
         ),
     ]
 
     implements += [
         MagicItem(
             name="Selective Staff",
+            rank=1,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you can freely exclude a single 5-ft. square from the spell's effect.
+                All squares in the final area of the spell must be contiguous.
+                You cannot create split a spell's area into multiple completely separate areas.
+            """,
+            short_description="Allows excluding a single square from an area",
+        ),
+        MagicItem(
+            name="Selective Staff, Greater",
             rank=3,
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you can freely exclude any areas from the ability's effect.
-                All squares in the final area of the spell must be contiguous.
-                You cannot create split a spell's area into multiple completely separate areas.
+                This implement functions like a \\mitem<selective staff>, except that you can exclude any number of squares rather than only one.
             """,
             short_description="Allows excluding areas",
         ),
         MagicItem(
-            name="Selective Staff, Greater",
+            name="Selective Staff, Supreme",
             rank=5,
             material_type="Staff",
             tags=[],
             description="""
-                This implement functions like a \\mitem<selective staff> implement, except that you can split the spell's area into two completely separate areas.
+                This implement functions like a \\mitem<selective staff>, except that you can split the spell's area into two completely separate areas.
                 If you do, each of those two areas must be independently contiguous.
             """,
             short_description="Allows excluding and splitting areas",
@@ -310,7 +389,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Silence",
-            rank=2,
+            rank=1,
             material_type="Staff",
             tags=['Swift'],
             description="""
@@ -322,7 +401,7 @@ def generate_implements():
         ),
         MagicItem(
             name="Staff of Stillness",
-            rank=2,
+            rank=1,
             material_type="Staff",
             tags=['Swift'],
             description="""
@@ -386,7 +465,7 @@ def generate_implements():
             rank=5,
             material_type="Staff",
             description="""
-                This implement functions like a \\textit<reaching staff> implement, except that activating it does not increase your \\glossterm<fatigue level>.
+                This implement functions like a \\textit<reaching staff>, except that activating it does not increase your \\glossterm<fatigue level>.
             """,
             short_description="Can use abilities from a short distance away",
         ),
@@ -411,7 +490,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                This implement functions like a \\textit<widening staff> implement, except that activating it does not increase your \\glossterm<fatigue level>.
+                This implement functions like a \\textit<widening staff>, except that activating it does not increase your \\glossterm<fatigue level>.
             """,
             short_description="Can double area size",
         ),
