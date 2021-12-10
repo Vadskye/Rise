@@ -21,7 +21,8 @@ def generate_implements():
                 You must have the ability to cast spells of the given rank from the same \\glossterm<magic source> as the wand.
                 However, you do not need to have access to the \\glossterm<mystic sphere> that the spell belongs to.
                 Spells you know because of a spell wand gain any rank upgrades appropriate to your rank with that form of spellcasting.
-                If you stop attuning to this item or its effect otherwise ends, the effects of any active spells that you know because of the wand also end, regardless of their normal duration.
+
+                If you stop wielding this wand, deattune from it, or otherwise lose access to its magical effects, the effects of any active spells that you know because of the wand also end, regardless of their normal duration.
             """,
             short_description="Grants knowledge of a rank 1 spell",
         ),
