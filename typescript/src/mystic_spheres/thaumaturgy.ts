@@ -200,6 +200,7 @@ export const thaumaturgy: MysticSphere = {
           This can only target magical effects that are sustained or which have a specific duration.
           This includes brief effects, conditions, and \\abilitytag{Sustain} abilities, but it does not include attuned effects or passive magical abilities on creatures.
           It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
+          The attack cannot \\glossterm{explode} by any means.
 
           The target's defense against this attack is equal to 5 \\add its \\glossterm{rank}.
           For effects that have no specific rank, such as some monster abilities, treat their rank as being equal to one third of their level.
