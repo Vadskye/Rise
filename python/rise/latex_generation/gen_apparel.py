@@ -714,9 +714,9 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                While you are suffering penalties for being \\shaken, \\frightened, or \\panicked, you gain a +10 foot \\glossterm<magic bonus> to your speed with all movement modes.
+                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +2 bonus to your Armor defense and Reflex defense, as well as a +10 foot bonus to your speed with all movement modes.
             """,
-            short_description="Grants +10 foot speed while afraid",
+            short_description="Grants +10 foot speed and +2 defenses while afraid",
         ),
         MagicItem(
             name="Boots of the Fearful, Greater",
@@ -724,9 +724,9 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                While you are suffering penalties for being \\shaken, \\frightened, or \\panicked, you gain a +15 foot \\glossterm<magic bonus> to your speed with all movement modes.
+                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +3 bonus to your Armor defense and Reflex defense, as well as a +15 foot bonus to your speed with all movement modes.
             """,
-            short_description="Grants +15 foot speed while afraid",
+            short_description="Grants +15 foot speed and +3 defenses while afraid",
         ),
         MagicItem(
             name="Boots of the Fearful, Supreme",
@@ -734,9 +734,9 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                While you are suffering penalties for being \\shaken, \\frightened, or \\panicked, you gain a +20 foot \\glossterm<magic bonus> to your speed with all movement modes.
+                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +4 bonus to your Armor defense and Reflex defense, as well as a +20 foot bonus to your speed with all movement modes.
             """,
-            short_description="Grants +20 foot speed while afraid",
+            short_description="Grants +20 foot speed and +4 defenses while afraid",
         ),
     ]
 
