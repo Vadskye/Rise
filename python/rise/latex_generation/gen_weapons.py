@@ -398,7 +398,7 @@ def generate_weapons():
             rank=1,
             material_type="Weapon",
             description="""
-                Whenever you kill \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, you gain a +5 foot bonus to your speed with all movement modes during the next round.
+                Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, you gain a +5 foot bonus to your speed with all movement modes during the next round.
             """,
             short_description="Grants +5 speed after defeating a foe",
         ),
