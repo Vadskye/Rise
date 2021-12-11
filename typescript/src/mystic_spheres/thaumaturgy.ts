@@ -302,7 +302,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Spell Absorption",
+      name: "Spellvoid",
 
       effect: `
         Whenever you are targeted by a spell cast by another creature, before determining if it hits you, you absorb the spell.
