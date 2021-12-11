@@ -981,7 +981,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Boots of Elvenkind, Greater",
-            rank=2,
+            rank=3,
             material_type="Boots",
             description="""
                 You gain a +3 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
@@ -990,7 +990,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Boots of Elvenkind, Supreme",
-            rank=4,
+            rank=5,
             material_type="Boots",
             description="""
                 You gain a +4 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
