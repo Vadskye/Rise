@@ -409,7 +409,7 @@
         Most drakkenfel retain tatters of their wings, but they are always nonfunctional.
 
         \parhead{Size} Small.
-        \parhead{Attributes} No change. This replaces the normal bonuses and penalties to attributes from being Small.
+        \parhead{Attributes} \minus1 base Strength, either \plus1 base Dexterity or \plus1 base Constitution.
         \parhead{Speed} 25 feet.
         \parhead{Special Abilities}
         \begin{itemize}
@@ -424,6 +424,46 @@
                 Its statistics become identical to its statistics before losing its scales, including level.
         \end{itemize}
         \parhead{Automatic Languages} Common, Draconic, any one \glossterm{common language}.
+
+    \subsection{Drow}
+
+        Drow are an offshoot group of elves that live deep underground.
+        The deep caves are a far harsher environment than the surface world.
+        Resources are scarce, and dangerous monsters are far more common.
+        In order to survive, drow were forced to adopt a variety of practices condemned by surface civilizations.
+        The most notorious are their frequent use of poison, their refusal to take prisoners, their willingness to eat any non-drow creatures they kill, even sentient creatures.
+        In addition, drow society tends to reward selfishness and ambition more explicitly than surface civilizations, and the vast majority of drow are evil.
+
+        When drow find opportunities to reach the surface world, they seek to conquer territory for themselves, usually with great violence.
+        They have always been defeated and banished back to their caves, but surface civilizations still remember the danger that drow pose.
+        Even more so than tieflings or orcs, who are already viewed with suspicion, drow are anathema in almost any civilized society.
+        Drow who escape the deep caves are more likely to find a peaceful existence on other planes that do not fear an underground invasion.
+
+        \parhead{Size} Medium.
+        \parhead{Attributes} \minus1 base Constitution, \plus1 base Dexterity
+        \parhead{Speed} 30 feet.
+        \parhead{Special Abilities}
+        \begin{itemize}
+            \itemhead{Darkvision} Drow can see in the dark clearly up to 120 feet.
+                Darkvision does not function if a drow is in a brightly lit area, and does not resume functioning until the end of the next round after the drow leaves the brightly lit area.
+            \itemhead{Deep Darkness}[Magical] A drow can use the \textit{deep darkness} ability as a \glossterm{standard action}.
+                \begin{durationability}{Deep Darkness}[\abilitytag{Sustain} (minor)]
+                    \rankline
+                    \target{One \glossterm{zone} within \rngmed range}
+                    You can choose this ability's radius, up to a maximum of a \areamed radius.
+                    Light within or passing through the area is dimmed to be no brighter than \glossterm{shadowy illumination}
+                    Any object or effect which blocks light also blocks this spell's effect.
+                \end{durationability}
+            \itemhead{Keen Senses} Drow gain a \plus2 bonus to the Awareness skill (see \pcref{Awareness}).
+            \itemhead{Poison Tolerance} Drow are \glossterm{impervious} to poison.
+            \itemhead{Sensitive Eyes} Drow take a \minus2 penalty to \glossterm{accuracy} while they are in \glossterm{bright illumination}.
+                This penalty is doubled while they are in \glossterm{brilliant illumination}.
+            \itemhead{Trance} Drow do not sleep, and are immune to \glossterm{magical} effects that would cause them to sleep.
+                Instead of sleeping, drow can trance for 4 hours.
+                An elf in trance may make Perception-based checks at a \minus5 penalty.
+                Drow must still avoid strenuous activity for 8 hours to heal and gain other benefits of taking a \glossterm{long rest}.
+        \end{itemize}
+        \parhead{Automatic Languages} Common, Elven, Undercommon
 
     \subsection{Dryaidi}
 
@@ -677,15 +717,12 @@
         \parhead{Speed} 30 feet.
         \parhead{Special Abilities}
         \begin{itemize}
-            \itemhead{Darkvision} Tieflings can see in the dark clearly up to 60 feet. Darkvision does not function if a tiefling is in a brightly lit area, and does not resume functioning until the end of the next round after the tiefling leaves the brightly lit area.
-            \itemhead{Infernal Darkness}[Magical] A tiefling can use the \textit{infernal darkness} ability as a \glossterm{standard action}.
-                \begin{durationability}{Infernal Darkness}[\abilitytag{Sustain} (minor)]
-                    \rankline
-                    \target{One \glossterm{zone} within \rngmed range}
-                    You can choose this ability's radius, up to a maximum of a \areamed radius.
-                    Light within or passing through the area is dimmed to be no brighter than \glossterm{shadowy illumination}
-                    Any object or effect which blocks light also blocks this spell's effect.
-                \end{durationability}
+            \itemhead{Darkvision} Tieflings can see in the dark clearly up to 60 feet.
+                Darkvision does not function if a tiefling is in a brightly lit area, and does not resume functioning until the end of the next round after the tiefling leaves the brightly lit area.
+            \itemhead{Demonic Prejudice} Most people have negative associations with tieflings thanks to the malign influence that demons have on the world.
+                Tieflings have an Opposition relationship with most people that they meet, which influences people's behavior and makes Persuasion checks harder (see \pcref{Persuasion}).
+                People in some locations, such as the Abyss, do not have this attitude.
+            \itemhead{Fire Tolerance} Tieflings are \glossterm{impervious} to fire damage.
             \itemhead{Infernal Presence} Tieflings gain a \plus2 bonus to the Deception and Intimidate skills.
             \itemhead{Tiefling Archetype} You may choose three class archetypes, as normal.
                 However, you may choose the Tiefling archetype in place of one of your class archetypes.
@@ -695,43 +732,43 @@
         \parhead{Automatic Languages} Abyssal, Common, any one \glossterm{common language}.
 
         \subsubsection{Tiefling Archetype}
-            \cf{Tif}[0]{Abyssal Tolerance} You are \glossterm{impervious} to fire damage.
+            \cf{Tif}[0]{Infernal Resilience} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (minimum 1).
 
-            \cf{Tif}[1]{Infernal Rebuke} You can use the \textit{infernal rebuke} ability as a standard action.
-            \begin{freeability}{Infernal Rebuke}[Instant]
+            \cf{Tif}[1]{Abyssal Hop} You can use the \ability{abyssal hop} ability as a standard action.
+            \begin{freeability}{Abyssal Hop}[Instant]
                 \abilitytag{Magical}
                 \rankline
-                Make an attack vs. Fortitude against one creature within \shortrange.
-                You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target attacked you during the previous round.
-                \hit The target takes 1d8 \add \glossterm{power} fire damage.
-
+                You teleport horizontally into an unoccupied location within \shortrange on a stable surface that can support your weight.
+                If the destination is invalid, this spell fails with no effect.
+                In addition, make an attack vs. Reflex against each \glossterm{enemy} adjacent to your location after you arrive.
+                \hit Each subject takes 1d6 \add half power fire damage.
                 \rankline
-                \rank{2} The damage increases to 1d10.
-                \rank{3} The damage increases to 2d8.
-                \rank{4} The damage increases to 2d10.
-                \rank{5} The damage increases to 4d8.
-                \rank{6} The damage increases to 4d10.
-                \rank{7} The damage increases to 6d10.
+                \rank{2} The damage increases to 1d8.
+                \rank{3} The damage increases to 2d6.
+                \rank{4} The damage increases to 2d8.
+                \rank{5} The damage increases to 4d6.
+                \rank{6} The damage increases to 4d8.
+                \rank{7} The damage increases to 5d10.
             \end{freeability}
 
             \cf{Tif}[2]{Infernal Ancestry} You deepen your connection to a particular aspect of your demonic ancestry.
-            Choose one of the following infernal ancestries: abysswalker, tempting allure, or unholy might.
+            Choose one of the following infernal ancestries: hellfire conduit, tempting allure, or unholy might.
             You gain a benefit based on your chosen ancestry.
             \begin{itemize}
-                \item Abysswalker: You can use the \textit{abyssal hop} ability as a standard action.
-                    \begin{freeability}{Abyssal Hop}
+                \item Hellfire Conduit: You can use the \textit{infernal rebuke} ability as a standard action.
+                    \begin{freeability}{Infernal Rebuke}[Instant]
                         \abilitytag{Magical}
                         \rankline
-                        You teleport horizontally into an unoccupied location within 5 foot \glossterm{range} on a stable surface that can support your weight.
-                        If the destination is invalid, this spell fails with no effect.
-                        In addition, make an attack vs. Reflex against each \glossterm{enemy} adjacent to your location after you arrive.
-                        \hit Each subject takes 1d8 \add half power fire damage.
+                        Make an attack vs. Fortitude against one creature within \shortrange.
+                        You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target attacked you during the previous round.
+                        \hit The target takes 2d6 \add \glossterm{power} fire damage.
+
                         \rankline
-                        \rank{3} The damage increases to 1d10.
-                        \rank{4} The damage increases to 2d8.
-                        \rank{5} The damage increases to 2d10.
-                        \rank{6} The damage increases to 4d8.
-                        \rank{7} The damage increases to 4d10.
+                        \rank{3} The damage increases to 2d8.
+                        \rank{4} The damage increases to 4d6.
+                        \rank{5} The damage increases to 4d8.
+                        \rank{6} The damage increases to 5d10.
+                        \rank{7} The damage increases to 6d10.
                     \end{freeability}
                 \item Tempting Allure: You gain a \plus2 bonus to the Deception, Disguise, and Persuasion skills.
                     In addition, you can use the \ability{charming temptation} ability as a standard action.
@@ -758,14 +795,13 @@
                     In addition, you gain a \plus1d bonus to your damage with all weapons.
             \end{itemize}
 
-            \cf{Tif}[3]{Greater Infernal Darkness} The maximum radius affected by your \textit{infernal darkness} ability increases to a \arealarge radius.
-            In addition, when you use the ability you may choose whether it also blocks \glossterm{darkvision} from seeing into the area.
-            Finally, the range of your darkvision increases by 60 feet.
+            \cf{Tif}[3]{Abysswalker} You can use your \ability{abyssal hop} ability to teleport as a move action instead of as a standard action.
+            When you do, you do not deal fire damage at your destination, and you \glossterm{briefly} cannot use that ability as a move action again.
 
             \cf{Tif}[4]{Greater Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability improve.
             \begin{itemize}
-                \item Abysswalker: You can use your \ability{abyssal hop} ability to teleport as a move action instead of as a standard action.
-                    When you do, you do not deal fire damage at your destination, and you \glossterm{briefly} cannot use that ability as a move action again.
+                \item Hellfire Conduit: You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
+                    In addition, the area affected by your \textit{abyssal hop} ability increases to a \smallarea radius from your destination.
                 \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus3.
                     In addition, you can use the \ability{dominating temptation} ability as a standard action.
                     \begin{durationability}{Dominating Temptation}[Duration]
@@ -794,10 +830,12 @@
 
             \cf{Tif}[5]{Greater Abyssal Tolerance} You become \glossterm{immune} to fire damage.
 
+            \cf{Tif}[5]{Greater Infernal Resilience}  The bonus from your \ability{infernal resilience} ability increases to three times your rank in this archetype.
+
             \cf{Tif}[6]{Supreme Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability reach their peak.
             \begin{itemize}
-                \item Abysswalker: When you use your \textit{infernal ancestry} ability to teleport as a move action, it no longer briefly prevents you from using it as a move action again.
-                    In addition, when you use it to teleport as a standard action, the range increases to \distrange.
+                \item Hellfire Conduit: The power bonus from your \textit{greater infernal ancestry} ability increases to \plus6.
+                    In addition, the area affected by your \textit{abyssal hop} ability increases to a \medarea radius from your destination.
                 \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus4.
                     In addition, your \textit{tempting domination} ability can dominate non-humanoid creatures.
                 \item Unholy Might: The damage bonus from your \textit{infernal ancestry} ability increases to \plus2d.
@@ -805,9 +843,8 @@
                     Instead, it lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
             \end{itemize}
 
-            \cf{Tif}[7]{Greater Infernal Darkness} You can use your \textit{infernal darkness} ability as a \glossterm{minor action}.
-            In addition, your darkvision functions within your own \textit{infernal darkness} even if you block all other sources of darkvision from working.
-            Finally, the range of your darkvision increases by 120 feet.
+            \cf{Tif}[7]{Greater Abyssal Hop} When you use your \ability{abyssal hop} ability, you no longer require \glossterm{line of sight} or \glossterm{line of effect} to your destination.
+            In addition, when you use it to teleport as a standard action, the range increases to \distrange.
 
         % \subsubsection{Basic Class Abilities}
         %     If you choose tiefling as your base class, you gain the following abilities.
@@ -901,74 +938,6 @@
 \end{longtablewrapper}
 
     \section{Feat Descriptions}
-
-    \begin{feat}{Infernal Heritage}{Bloodline}
-        \featpre Tiefling species.
-
-        \ff[1]{Infernal Rebuke} You can use the \textit{infernal rebuke} ability as a standard action.
-        \begin{freeability}{Infernal Rebuke}[Instant]
-            \abilitytag{Magical}
-            \rankline
-            Make an attack vs. Fortitude against one creature within \rngshort range.
-            You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target attacked you during the previous round.
-            \hit The target takes 1d8 plus \glossterm{power} fire damage.
-
-            \rankline
-            \featlevel{3} The damage increases to 1d10.
-            \featlevel{6} The damage increases to 2d8.
-            \featlevel{9} The damage increases to 2d10.
-            \featlevel{12} The damage increases to 4d8.
-            \featlevel{15} The damage increases to 4d10.
-            \featlevel{18} The damage increases to 6d10.
-            \featlevel{21} The damage increases to 7d10.
-        \end{freeability}
-
-        \ff[3]{Infernal Ancestry} You deepen your connection to a particular aspect of your demonic ancestry.
-        You gain your choice of one of the following abilities.
-        \begin{itemize}
-            \item Abysswalker: As a standard action, you can \glossterm{teleport} yourself into an unoccupied location within \medrange on a stable surface that can support your weight.
-            If the destination is invalid, this ability fails with no effect.
-            \item Tempting Allure: You gain a \plus2 bonus to the Deception, Disguise, and Persuasion skills.
-            \item Unholy Might: You gain either two claw natural weapons or one bite natural weapon (see \pcref{Natural Weapons}).
-                In addition, you gain a \plus2 bonus to Strength for the purpose of determining your weight limits (see \pcref{Weight Limits}).
-        \end{itemize}
-
-        \ff[6]{Greater Infernal Darkness} The maximum radius affected by your \textit{infernal darkness} ability increases to a \arealarge radius.
-        In addition, when you use the ability you may choose whether it also blocks \glossterm{darkvision} from seeing into the area.
-
-        \ff[9]{Hellfire Conduit} Whenever you deal fire damage, you may also treat that damage as being pure energy damage.
-        This can help you deal damage to enemies that are highly resistant to fire damage.
-        In addition, you treat all fire damage you take as \glossterm{environmental damage}.
-
-        \ff[12]{Greater Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability improve.
-        \begin{itemize}
-            \item Abysswalker: You can use your \textit{infernal ancestry} ability to teleport as a move action instead of as a standard action.
-                When you do, you \glossterm{briefly} cannot use it as a move action again.
-                In addition, when you use it to teleport as a standard action, the range increases to \distrange.
-            \item Tempting Allure: The bonuses from your \textit{infernal ancestry} ability increase to \plus3.
-                In addition, you gain the ability to cast the \spell{charm} spell.
-                It does not have any \glossterm{somatic components} or \glossterm{verbal components} for you.
-            \item Unholy Might: The bonus to Strength from your \textit{infernal ancestry} ability increases to \plus4.
-                In addition, you gain a \plus3 bonus to your \glossterm{power}.
-        \end{itemize}
-
-        \ff[15]{Supreme Infernal Darkness} You can use your \textit{infernal darkness} ability as a \glossterm{minor action}.
-        In addition, your darkvision functions within your own \textit{infernal darkness} even if you block all other sources of darkvision from working.
-
-        \ff[18]{Greater Hellfire Conduit} Whenever you deal fire damage, you may also treat that damage as being physical damage.
-        In addition, you are immune to \glossterm{fire damage}.
-
-        \ff[21]{Supreme Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability improve.
-        \begin{itemize}
-            \item Abysswalker: When you use your \textit{infernal ancestry} ability to teleport as a move action, it no longer briefly prevents you from using it as a move action again.
-                In addition, when you use it to teleport as a standard action, the range increases to 1,000 feet.
-            \item Tempting Allure: The bonuses from your \textit{infernal ancestry} ability increase to \plus4.
-                In addition, you gain the ability to cast the \spell{dominate monster} spell.
-                It does not have any \glossterm{somatic components} or \glossterm{verbal components} for you.
-            \item Unholy Might: The bonus to Strength from your \textit{infernal ancestry} ability increases to \plus6.
-                In addition, the power bonus increases to \plus9.
-        \end{itemize}
-    \end{feat}
 
     \begin{feat}{Naiad Heritage}{Bloodline}
         \featpre Naiadi species.
