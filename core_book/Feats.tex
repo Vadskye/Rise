@@ -1547,9 +1547,6 @@ You cannot gain the same feat twice.
     \begin{feat}{Mystic Archer}{Casting}
         \featpre Access to a \glossterm{mystic sphere}.
 
-        \ff[1]{Magical Strikes}[\abilitytag{Magical}] Whenever you make a ranged \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
-        This allows you to use your \glossterm{power} with magical abilities to determine your damage.
-
         \ff[1]{Imbued Shot} You can use the \textit{imbued shot} ability as a standard action.
         \begin{freeability}{Imbued Shot}[\glossterm{Magical}]
             Make a ranged \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} using a \glossterm{projectile weapon} you wield.
@@ -1560,6 +1557,9 @@ You cannot gain the same feat twice.
             \featlevel{12} The accuracy bonus increases to \plus3.
             \featlevel{18} The accuracy bonus increases to \plus4.
         \end{freeability}
+
+        \ff[1]{Magical Strikes}[\abilitytag{Magical}] Whenever you make a ranged \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
+        When you do, you use your \glossterm{power} with magical abilities to determine your damage.
 
         \ff[3]{Guided Projectiles}[Magical] Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
 
@@ -2007,6 +2007,8 @@ You cannot gain the same feat twice.
 
         \ff[1]{Imbued Blow} You can use the \textit{imbued blow} ability as a standard action.
         \begin{freeability}{Imbued Blow}
+            \abilitytag{Magical}
+            \rankline
             Make a melee \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
             Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
 
@@ -2016,8 +2018,8 @@ You cannot gain the same feat twice.
             \featlevel{18} The accuracy bonus increases to \plus4.
         \end{freeability}
 
-        \ff[1]{Magical Strikes} Whenever you make a melee \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
-        This allows you to use your \glossterm{power} with magical abilities to determine your damage.
+        \ff[1]{Magical Strikes}[\abilitytag{Magical}] Whenever you make a melee \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
+        When you do, you use your \glossterm{power} with magical abilities to determine your damage.
 
         \ff[3]{Spellsword Conduit} You can cast spells using a melee weapon as if it were an implement (see \pcref{Implements}).
         In addition, if your legacy item is a weapon, you may choose both weapon and implement magic item effects for it.
