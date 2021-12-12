@@ -783,7 +783,7 @@ def generate_apparel():
                 At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 1d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
             """,
-            short_description="Regains 1d6 hit points while at half hit points",
+            short_description="Regains 1d6 hit points while below half hit points",
         ),
         MagicItem(
             name="Lifesaver Ring, Greater",
@@ -794,7 +794,7 @@ def generate_apparel():
                 At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 2d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
             """,
-            short_description="Regains 2d6 hit points while at half hit points",
+            short_description="Regains 2d6 hit points while below half hit points",
         ),
         MagicItem(
             name="Lifesaver Ring, Supreme",
@@ -805,7 +805,7 @@ def generate_apparel():
                 At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 4d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
             """,
-            short_description="Regains 4d6 hit points while at half hit points",
+            short_description="Regains 4d6 hit points while below half hit points",
         ),
     ]
 
