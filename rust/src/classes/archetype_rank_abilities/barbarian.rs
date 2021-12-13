@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::{Maneuver, Modifier};
 use crate::skills::Skill;
 
@@ -96,13 +96,13 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Limitless Recovery",
+            name: "Primal Resilience",
             is_magical: false,
             rank: 4,
             description: r"
-                You can use the \textit{recover} action an additional time before you take a \glossterm{short rest}.
+                You gain a \plus1 bonus to your base Constitution.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             name: "Greater Battle-Scarred",
@@ -135,11 +135,12 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Instant Recovery",
+            name: "Limitless Recovery",
             is_magical: false,
             rank: 7,
             description: r"
-                Once per \glossterm{short rest}, you can use the \textit{recover} ability as a \glossterm{minor action} instead of as a standard action.
+                You can use the \ability{recover} ability any number of times between short rests.
+                In addition, once per short rest you can use the \ability{recover} ability as a \glossterm{minor action}.
             ",
             modifiers: None,
         },
@@ -317,13 +318,13 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Instinctive Rage",
+            name: "Primal Brawn",
             is_magical: false,
             rank: 4,
             description: r"
-                You cannot be \unaware or \partiallyunaware during your \textit{rage} ability.
+                You gain a \plus1 bonus to your base Strength.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Strength, 1)]),
         },
         RankAbility {
             name: "Fearless Rage",
@@ -379,23 +380,22 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
 pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Savage Rush",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                When you use the \textit{sprint} ability, you can move through spaces occupied by enemies during that movement.
-                You treat those spaces as \glossterm{difficult terrain}, which causes to you to move at half speed.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Fast Movement",
             is_magical: false,
-            rank: 1,
+            rank: 0,
             description: r"
                 You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+        },
+        RankAbility {
+            name: "Savage Rush",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                When you use the \ability{sprint} ability, you can move through spaces occupied by enemies during that movement (see \pcref{Sprint}).
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Savage Precision",
@@ -408,13 +408,13 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Savage Rush",
+            name: "Greater Fast Movement",
             is_magical: false,
             rank: 3,
             description: r"
-                Your \textit{savage rush} ability no longer causes you to treat spaces occupied by enemies as difficult terrain.
+                The speed bonus from your \textit{fast movement} ability increases to \plus10 feet.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
         RankAbility {
             name: "Savage Force",
@@ -426,13 +426,13 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Greater Fast Movement",
+            name: "Primal Agility",
             is_magical: false,
             rank: 4,
             description: r"
-                The speed bonus from your \textit{fast movement} ability increases to \plus10 feet.
+                You gain a \plus1 bonus to your base Dexterity.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
             name: "Greater Savage Precision",
@@ -455,23 +455,22 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Supreme Savage Rush",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                You can move through spaces occupied by enemies at any time.
-                If you are not sprinting, you treat those spaces as \glossterm{difficult terrain}, which causes to you to move at half speed.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Supreme Fast Movement",
             is_magical: false,
-            rank: 7,
+            rank: 6,
             description: r"
                 The speed bonus from your \textit{fast movement} ability increases to \plus15 feet.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+        },
+        RankAbility {
+            name: "Greater Savage Rush",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                You can move through spaces occupied by enemies as if they were unoccupied.
+            ",
+            modifiers: None,
         },
     ];
 }
