@@ -21,12 +21,10 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{sneak attack} ability as a standard action.
-                % This ability gets rank upgrades while maneuvers don't
-                % because maneuvers are upgraded into higher rank maneuvers,
-                % while this has no upgrades and should remain relevant alone.
                 \begin{instantability}{Sneak Attack}[Instant]
                     \rankline
                     Make a \glossterm{strike} with a \glossterm{light weapon} or any weapon with the Stealthy \glossterm{weapon tag} against a creature within \rngshort range.
+
                     If the target is \unaware or \partiallyunaware of your attack, or if the target is adjacent to one of your \glossterm{allies}, you gain two benefits.
                     First, you gain a \plus2 damage bonus with the strike.
                     Second, if you get a \glossterm{critical hit}, you double all of your damage bonuses along with your damage dice.
