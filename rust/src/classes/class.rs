@@ -482,6 +482,65 @@ impl Class {
         }
     }
 
+    pub fn narrative_text(&self) -> String {
+        match self {
+            Self::Barbarian => r"
+                Barbarians are primal warriors that draw power from their physical prowess and unfettered emotions.
+                They fight with a raw, untamed aggression that draws inspiration from more primitive times.
+
+                Most barbarians come from the outskirts of civilization, where violence is more common.
+                Of course, becoming a barbarian is no secret rite, and anyone can discover the path for themselves.
+            ".to_string(),
+            Self::Cleric => r"
+                Clerics are divine spellcasters who draw power from their veneration of a single deity.
+                The powers of any individual cleric can vary greatly depending on their deity, and the specific aspects of that deity they choose to emulate.
+                Many clerics have exceptional healing or oratory talents, which are powerful tools in spreading the influence of their deity.
+
+                Deities are a constant background presence in the world of Rise.
+                Commoners acknowledge the influence of many deities on their life, and offer gifts or prayers to each deity according to their purview.
+                Clerics are the primary means by which deities answer these prayers.
+                In exchange for their mighty divine power, clerics are charged with serving the deity's interests in the world.
+
+                Clerics are the most common spellcasting class in the world.
+                The path to becoming a cleric is easier than for any other spellcasting class except for sorcerers, and becoming a cleric requires no special birthright.
+                Many clerics have specific responsibilities to their deity that preclude adventuring.
+                The most well-known example of this would be clerics who offer divine healing to anyone who enters their temple, but similar responsibilities exist for all deities.
+
+                Adventuring clerics can exist for a variety of reasons.
+                They may be charged to help spread knowledge of their deity, and becoming well-known as an adventurer can serve that end.
+                Alternately, they may simply be charged by their deity to grow their personal power.
+                Deities need powerful clerics to maximize their influence on the mortal world.
+            ".to_string(),
+            Self::Druid => r"
+                Druids are nature spellcasters who draw power from their veneration of the natural world.
+            ".to_string(),
+            Self::Fighter => r"
+                Fighters are highly disciplined warriors who excel in physical combat of any kind.
+            ".to_string(),
+            Self::Monk => r"
+                Monks are agile masters of ``ki'' who hone their personal abilities to strike down foes and perform supernatural feats.
+            ".to_string(),
+            Self::Paladin => r"
+                Paladins are divinely empowered warriors embody a particular alignment.
+            ".to_string(),
+            Self::Ranger => r"
+                Rangers are skilled hunters who bridge the divide between nature and civilization.
+            ".to_string(),
+            Self::Rogue => r"
+                Rogues are exceptionally skillful characters known for their ability to strike at their foe's weak points in combat.
+            ".to_string(),
+            Self::Sorcerer => r"
+                Sorcerers are arcane spellcasters who draw power from their inherently magical nature.
+            ".to_string(),
+            Self::Warlock => r"
+                Warlocks are pact spellcasters who draw their power from a dark pact made with infernal creatures.
+            ".to_string(),
+            Self::Wizard => r"
+                Wizards are arcane spellcasters who study magic to unlock its powerful secrets.
+            ".to_string(),
+        }
+    }
+
     pub fn weapon_proficiencies(&self) -> WeaponProficiencies {
         match self {
             Self::Barbarian => WeaponProficiencies {
@@ -577,6 +636,8 @@ impl Class {
                 \\newpage
                 \\section<{class_name}>\\label<{class_name}>
 
+                {description}
+
                 {archetype_table}
 
                 \\classbasics<Alignment> {class_alignment}.
@@ -603,6 +664,7 @@ impl Class {
                 .collect::<Vec<String>>()
                 .join("\n\n"),
             basic_class_abilities = generate_latex_basic_class_abilities(self).trim(),
+            description = self.narrative_text(),
             special_class_abilities = self.latex_special_class_abilities().trim(),
             class_name = titlecase(self.name()),
             class_alignment = self.alignment(),
