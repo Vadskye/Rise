@@ -642,17 +642,22 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Rituals} You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Rituals}).
-                        The maximum \glossterm{rank} of pact ritual you can learn or perform is equal to the maximum rank of pact spell that you can cast.
+                        The maximum \glossterm{rank} of pact ritual you can learn or perform is equal to the maximum \glossterm{rank} of pact spell that you can cast.
                         In addition, you automatically learn one free pact ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
-                    \parhead{Signature Spell} Choose a pact \glossterm{spell} you know.
+                    \parhead{Spell Knowledge} You learn an additional pact \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
+                        You can choose this ability multiple times, learning an additional spell each time.
+                    \parhead{Precise Spell} Choose a pact \glossterm{spell} you know.
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Spell Knowledge} You learn an additional pact \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        You can choose this ability multiple times, learning an additional spell each time.
-                    \parhead{Spell Power} Choose an arcane \glossterm{spell} you know.
-                        You gain a bonus equal to your rank in this archetype to your \glossterm{power} with that spell.
+                    \parhead{Powerful Spell} Choose a pact \glossterm{spell} you know.
+                        You gain a +2 bonus to your \glossterm{power} with that spell.
+                        This bonus increases to +4 at rank 3, +8 at rank 5, and +16 at rank 7.
+                        You can choose this ability multiple times, choosing a different spell each time.
+                        Whenever you learn a new spell, you may change which of your spells this ability affects.
+                    \parhead{Widened Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{area}: Small, Medium, Large, Huge, or Gargantuan.
+                        You double your area with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                 }
