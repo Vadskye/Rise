@@ -1019,16 +1019,16 @@
             Any ability which only specifies a radius for its area is sphere-shaped.
 
             \parhead{Wall} A wall is like a line, except that its width is not defined in squares.
-            In a narrative sense, most walls have a defined width.
-            However, in a mechanical sense, walls are considered to have no width and simply occupy the boundary between squares.
-            Like lines, walls can be shapeable.
+            Narratively, all walls have a nonzero width.
+            Mechanically, walls are considered to have no width and simply occupy the boundary between squares.
+            Like lines, some walls are shapeable.
 
-            Walls can normally be created within occupied squares, but not within solid objects.
-            Some walls are called solid walls, and cannot be created within occupied squares.
+            Walls can normally be created within or adjacent to occupied squares, but not within solid objects.
+            If a wall has a physical presence, it cannot be created inside the space of a single creature, but it can be created between two adjacent creatures.
 
-            \parhead{Specific Shapes} Some abilities specify a series of volumes that make up the area of the ability.
-            Most commonly, the volumes are cubes.
-            You may arrange the volumes as you want, with the restriction that each volume in the ability's area must be adjacent to one other volume in the ability's area.
+            % \parhead{Specific Shapes} Some abilities specify a series of volumes that make up the area of the ability.
+            % Most commonly, the volumes are cubes.
+            % You may arrange the volumes as you want, with the restriction that each volume in the ability's area must be adjacent to one other volume in the ability's area.
 
         \subsubsection{Area Size}
 
@@ -1046,6 +1046,8 @@
         \subsubsection{Area Types}\label{Area Types}
 
             \parhead{Burst} A burst ability has an immediate effect on all valid targets within an area.
+            If an ability does not explicitly specify its area type, it is normally a burst effect.
+            However, abilities that create wall-shaped areas are always zones.
 
             \parhead{Emanation} An emanation ability has effects within an area for the duration of the ability.
             It emanates from a specific creature or object, rather than a location.

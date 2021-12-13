@@ -54,7 +54,7 @@ export const barrier: MysticSphere = {
       },
       rank: 4,
       scaling: {
-        6: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 32.`,
+        6: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -90,8 +90,8 @@ export const barrier: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
-        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 32.`,
+        4: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 16.`,
+        6: `The maximum area increases to a \\largearealong wall, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -113,8 +113,8 @@ export const barrier: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
-        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 32.`,
+        4: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 16.`,
+        6: `The maximum area increases to a \\largearealong wall, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -135,9 +135,9 @@ export const barrier: MysticSphere = {
       },
       rank: 3,
       scaling: {
-        5: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 32.
+        5: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 32.
             In addition, the damage increases to 2d8 plus your \\glossterm{power}.`,
-        7: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 64.
+        7: `The maximum area increases to a \\largearealong wall, and the hit points of each square increase to 64.
             In addition, the damage increases to 2d10 plus your \\glossterm{power}.`,
       },
       tags: ["Manifestation"],
@@ -149,7 +149,7 @@ export const barrier: MysticSphere = {
 
       effect: `
         You create a wall of magical energy within \\medrange.
-        You can choose the dimensions of the wall, up to a maximum of a 15 ft.\\ high, \\smallarea length line.
+        You can choose the dimensions of the wall, up to a maximum of a 15 ft.\\ high, \\smallarea length wall.
         If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
         This can allow you to completely block off small tunnels.
         The wall is visible as a shimmering magical membrane that does not block sight.
@@ -161,9 +161,9 @@ export const barrier: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
-        5: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 32.`,
-        7: `The maximum area increases to a \\hugearealong line, and the hit points of each square increase to 64.`,
+        3: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 16.`,
+        5: `The maximum area increases to a \\largearealong wall, and the hit points of each square increase to 32.`,
+        7: `The maximum area increases to a \\hugearealong wall, and the hit points of each square increase to 64.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -180,8 +180,8 @@ export const barrier: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        4: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 16.`,
-        6: `The maximum area increases to a \\largearealong line, and the hit points of each square increase to 32.`,
+        4: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 16.`,
+        6: `The maximum area increases to a \\largearealong wall, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -284,7 +284,7 @@ export const barrier: MysticSphere = {
       },
       rank: 5,
       scaling: {
-        7: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 64.`,
+        7: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 64.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -294,7 +294,7 @@ export const barrier: MysticSphere = {
       name: "Wall of Energy Impedance",
 
       effect: `
-        You create a wall of magical energy in a 15 ft.\\ high, \\smallarealong line within \\medrange.
+        You create a wall of magical energy in a 15 ft.\\ high, \\smallarealong wall within \\medrange.
         The wall is visible as a shimmering magical membrane that does not block sight.
         It does not impede passage for objects or creatures, but any ability that deals \\glossterm{energy damage} treats the wall as an impassable barrier.
         Each 5-ft.\\ square of wall has 16 \\glossterm{hit points}.
@@ -321,7 +321,7 @@ export const barrier: MysticSphere = {
       },
       rank: 4,
       scaling: {
-        6: `The maximum area increases to a \\medarealong line, and the hit points of each square increase to 32.`,
+        6: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 32.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
