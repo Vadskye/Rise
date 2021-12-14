@@ -574,6 +574,22 @@ impl Class {
             ".to_string(),
             Self::Fighter => r"
                 Fighters are highly disciplined warriors who excel in physical combat of any kind.
+                They have a deep mastery of the implements and strategies of battle thanks to their extensive training.
+                Other martial characters may be physically stronger or capable of strange and improbable tricks, but fighters are unmatched as battlefield champions.
+
+                Each fighter has a different area of specialization, but most fighters have some amount of battlefield control.
+                They can guard their allies, impede the movement of their foes, or give battle commands to their allies to guide them.
+                This makes fighters invaluable in large-scale battles, and they are the most common class found in organized military forces.
+                The regimented nature of army life tends to drive away many people used to more freedom, but fighters are often compatible with the discipline found in armed forces.
+
+                More broadly, fighters are the most common class in many civilized settings.
+                A fighter's training requires no secret wisdom, and it can be self-taught or guided by a mentor.
+                Many people undergo some battle training regardless of their ultimate path in life, leading them to discover that they may enjoy it for its own sake.
+
+                Monks are closely related to fighters, since both classes use training and discipline to improve themselves.
+                However, monks focus more on mental control and exploring the supernatural powers that come from tapping into the body's potential.
+                In constrast, fighters have a more grounded approach, and focus more on practical knowledge that can be directly applied to physical combat.
+                A typical monk would consider fighters to be overly limited in their focus on day-to-day combat, while a typical fighter would consider monks to be wasting their training with mysticism and esoteric nonsense.
             ".to_string(),
             Self::Monk => r"
                 Monks are agile masters of ``ki'' who hone their personal abilities to strike down foes and perform supernatural feats.
