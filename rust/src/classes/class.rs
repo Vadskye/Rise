@@ -593,12 +593,79 @@ impl Class {
             ".to_string(),
             Self::Monk => r"
                 Monks are agile masters of ``ki'' who hone their personal abilities to strike down foes and perform supernatural feats.
+                They undergo extensive training to control their mind and body in unison, using each to improve the other.
+                The techniques required to become a monk are strange and unintuitive, and only a legendary few can discover them on their own.
+                Instead, most monks are trained at monastaries, where they learn how to master themselves long before they turn their attention to besting others in combat.
+
+                Unlike every other class capable of magical feats, monks draw their power entirely from themselves.
+                They have learned to tap into the life energy within their bodies, use it to cause dramatic effects in the world around them, and then reclaim that energy instead of letting it dissipate into the world.
+                This process is deeply dangerous if misapplied, which is why the training required to become a monk is so rigorous.
+                Expending one's life energy without being able to reclaim it is a fast path to inadvertent death.
+
+                Monks are famous for their ability to fight completely unarmed, and for their tendency to use unusual weapons that few non-monks use.
+                This is more a matter of tradition than any necessity.
+                Some monks prefer more common weapons, and any fighter could learn how to use monk weapons given time to train with them.
+                However, the monk weapons are well suited to the fighting styles that monks learn as part of their training.
+
+                The combat training for monks often consists of dueling other monks, and rarely involves fighting non-humanoid monsters.
+                As a result, they often try to trip, disarm, and distract their foes in combat.
+                These strategies are all most effective against humanoid opponents.
             ".to_string(),
             Self::Paladin => r"
-                Paladins are divinely empowered warriors embody a particular alignment.
+                Paladins are divinely empowered warriors who exemplify a particular alignment.
+                They can shift easily between physical combat and spellcasting depending on the situation.
+                Many paladins can heal themselves and their allies, and can share their divine connection with those nearby, making them a beacon on a battlefield.
+
+                The scope of each alignment is quite broad, so even paladins of the same alignment can be as diverse in personality and morality as any other class.
+                Paladins of law tend to be the most homogeneous in their beliefs, but even they may have stark disagreements about the rightful code to follow, and in what circumstances a personal or universal code of ethics can supercede the law in a specific territory.
+
+                Paladins are both famous and infamous for their dedication, and for their tendency to exhort those around them to act according to the paladin's ideals.
+                There is some truth to the stereotype of the stony-faced paladin who regards any form of compromise as unacceptable.
+                However, few of those overly zealous paladins make their way into adventuring parties.
+                Only paladins who understand the necessity of working as an effective team with others who do not share their ideals are likely to have any success adventuring.
+                For some paladins, this is a compromise they grudgingly make in the pursuit of the greater good - or the greater evil.
+                Others perceive no conflict at all, and eagerly work with those of opposed alignments with the goal of demonstrating the superiority of their moral compass by example.
+
+                Of all spellcasting classes, paladins are in some ways the most limited.
+                They have access to a relatively small number of mystic spheres.
+                However, they are also the only spellcasting class that can naturally use heavy armor, and they have some unique abilities that can make them powerful frontline casters.
+
+                Paladins and fighters share a similar ability to influence a battlefield at a large scale while being difficult to kill.
+                Their methods and ideology may be different, but they can often work together easily and effectively.
+                It is more difficult to characterize the relationship between paladins and other classes, since so much depends on the paladin's alignment and personal interpretation of that alignment.
+                Paladins of law typically despise barbarians and rogues, while paladins of chaos distrust the rigid mentality common to monks and fighters.
+                Warlocks are deeply suspicious to paladins of good, though paladins of good tend to be more forgiving than other paladins.
+                Paladins of evil despise druids who have too much respect for the sanctity of life.
+                All paladins may have strong feelings about clerics depending on the alignment of that cleric's deity.
             ".to_string(),
             Self::Ranger => r"
                 Rangers are skilled hunters who bridge the divide between nature and civilization.
+                They are typically most at home on the frontiers, keeping monsters and civilized groups from interfering with each other.
+                Different rangers may have more personal affinity for civilization or for monsters.
+
+                Like druids and monks, rangers are seldom self-taught.
+                Just as rangers occupy a middle space between society and the wilds beyond it, their abilities are a complex combination of training, experience, and gifts freely granted by Nature herself.
+                The vast majority of people who might attempt to learn how to be a ranger on their own would focus too much on only one aspect of a ranger's abilities.
+                These people might find the path to becoming a fighter, druid, or rogue instead.
+
+                Rangers draw their core power from their training, which includes extensive experience with weapons and armaments like a fighter.
+                However, they also study the natural world and the environment around them.
+                This study is more focused on practical knowlege about survival and hunting than the more reverent study of druids.
+                During this wilderness experience, some rangers forge a deep bond with a single animal who follows them everywhere.
+                This bond is intensified by Nature's influence, and has a hint of her magic in it.
+                Others shy away from that level of commitment or find no meaning in it, and prefer a more solitary hunt.
+
+                Traditionally, a ranger's training occurs under an experienced ranger leader.
+                Some rangers train small packs of new recruits at once, while others prefer to oversee a single apprentice.
+                There are many ways that a would-be ranger might find a mentor, but no single certain way.
+                Rangers in the wild do not tend to maintain long-term societal bonds like druidic circles, so there are fewer obvious ways to easily find an experienced mentor.
+                Without druidic magic for long-distance communication, rangers struggle to maintain cohesion across the vast territories that they patrol, so they typically make no attempt to do so.
+
+                Rangers are sometimes employed by a government to keep its borders safe from monsters.
+                They may also be found as bounty hunters, using their skills to hunt prey within civilization instead of at its edges.
+                Still others live among druidic circles.
+                More than any other class, rangers struggle to find a place to fully call home, and may wander between widely varied walks of life for years at a time.
+                They are caught between worlds, and only some rangers find peace in that division.
             ".to_string(),
             Self::Rogue => r"
                 Rogues are exceptionally skillful characters known for their ability to strike at their foe's weak points in combat.
