@@ -821,6 +821,14 @@ impl Class {
                             Daeghul, demon god of slaughter       & Chaotic evil    & Destruction, Evil, Magic, War          \\
                         \end{dtabularx}
                     \end{dtable!*}
+
+                    \cf{Clr}{Seek Guidance}
+                    You can ask your deity for guidance about how best to serve your deity's interests.
+                    This requires a ritual or prayer lasting ten minutes, with the details depending on the deity.
+                    By the end, you will have received a vision, emotional instinct, or other guidance.
+                    You cannot ask specific questions of your deity, and this is not a general method for sharing information.
+                    Deities tend to disapprove of clerics who seek guidance to solve mortal problems that they should be able to deal with themselves.
+                    You are simply informed what your current responsibilities are, such as ``tend to the wounded who enter my temple'' or ``do battle with those who serve evil''.
                 "
             }
             Self::Paladin => {
