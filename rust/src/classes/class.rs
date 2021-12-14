@@ -488,8 +488,28 @@ impl Class {
                 Barbarians are primal warriors that draw power from their physical prowess and unfettered emotions.
                 They fight with a raw, untamed aggression that draws inspiration from more primitive times.
 
-                Most barbarians come from the outskirts of civilization, where violence is more common.
-                Of course, becoming a barbarian is no secret rite, and anyone can discover the path for themselves.
+                Most barbarians originate from to the outskirts of civilization, where the societal constraints of civilization are less present.
+                Of course, becoming a barbarian is no secret rite.
+                The only thing that is required is a willingness to fully experience one's emotions and channel them into physical betterment.
+                This path evokes an ancient memory of more primitive times, before the complexity of civilized warfare, where physical supremacy was sufficient for victory.
+                Anyone can discover that path for themselves.
+
+                Barbarians are famous for their furious battle-rage.
+                Anger is one of the easiest emotions to access and channel into the violence of battle, and it is a common starting point for new barbarians who are still learning how to tap into their emotions.
+                However, any emotion can be used as a source of primal power, as long as it is sufficiently intense.
+
+                Barbarians and monks are, in some ways, two sides of the same coin.
+                Both groups develop their physical body to its peak, and believe that the mind and body must work together to maximize their potential.
+                However, a typical monk sees emotions as a tool at best and an obstacle at worst.
+                They value serenity and control over their mind and body.
+                From the perspective of a barbarian, monks completely surrender to civilization's taming and placating influences, and abandon their primal heritage.
+                Barbarian-monk multiclass characters are exceptionally rare, but not impossible.
+                Typically, they control all of their emotions in the style of monks except for a single emotion, which they unleash in the style of barbarians.
+
+                Rangers and druids are natural allies of barbarians, since all three groups prefer to live at the edges of civilization.
+                However, each has different reasons for their preference.
+                Barbarians enjoy the emotional and societal freedom of the frontier, but are typically too social to prefer life as a hermit in the deep wilderness.
+                Druids prefer nature to civilization ideologically, and rangers are best able to fulfill their responsibilities on the frontier.
             ".to_string(),
             Self::Cleric => r"
                 Clerics are divine spellcasters who draw power from their veneration of a single deity.
@@ -502,7 +522,7 @@ impl Class {
                 In exchange for their mighty divine power, clerics are charged with serving the deity's interests in the world.
 
                 Clerics are the most common spellcasting class in the world.
-                The path to becoming a cleric is easier than for any other spellcasting class except for sorcerers, and becoming a cleric requires no special birthright.
+                The path to becoming a cleric is easier than for any other spellcasting class except for sorcerers, and unlike sorcerers, clerics require no special birthright.
                 Many clerics have specific responsibilities to their deity that preclude adventuring.
                 The most well-known example of this would be clerics who offer divine healing to anyone who enters their temple, but similar responsibilities exist for all deities.
 
@@ -510,6 +530,12 @@ impl Class {
                 They may be charged to help spread knowledge of their deity, and becoming well-known as an adventurer can serve that end.
                 Alternately, they may simply be charged by their deity to grow their personal power.
                 Deities need powerful clerics to maximize their influence on the mortal world.
+
+                Paladins are natural allies of clerics, since both tap into divine powers.
+                However, the specific nature of their divine connection is quite different.
+                From the perspective of clerics, the largest difference is that paladins have no oversight and unclear responsibilities.
+                Clerics can always be confident that they are serving their deity's best interest, while paladins simply act as they see fit.
+                This distinction can leave clerics unsure where exactly a paladin's true allegiance lies, since each of the four aligments has a degree of subjectivity in its interpretation.
             ".to_string(),
             Self::Druid => r"
                 Druids are nature spellcasters who draw power from their veneration of the natural world.
