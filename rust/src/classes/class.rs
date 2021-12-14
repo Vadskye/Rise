@@ -346,7 +346,7 @@ impl Class {
 
     pub fn fatigue_tolerance(&self) -> i32 {
         match self {
-            Self::Barbarian => 4,
+            Self::Barbarian => 5,
             Self::Cleric => 2,
             Self::Druid => 2,
             Self::Fighter => 3,
@@ -424,7 +424,7 @@ impl Class {
             Self::Druid => 5,
             Self::Fighter => 4,
             Self::Monk => 5,
-            Self::Paladin => 3,
+            Self::Paladin => 4,
             Self::Ranger => 6,
             Self::Rogue => 8,
             Self::Sorcerer => 4,
@@ -602,13 +602,13 @@ impl Class {
     pub fn weapon_proficiencies(&self) -> WeaponProficiencies {
         match self {
             Self::Barbarian => WeaponProficiencies {
-                custom_weapon_groups: 3,
+                custom_weapon_groups: 1,
                 specific_weapon_groups: None,
                 specific_weapons: None,
                 simple_weapons: true,
             },
             Self::Cleric => WeaponProficiencies {
-                custom_weapon_groups: 1,
+                custom_weapon_groups: 0,
                 specific_weapon_groups: None,
                 specific_weapons: None,
                 simple_weapons: true,
@@ -635,7 +635,7 @@ impl Class {
                 simple_weapons: true,
             },
             Self::Paladin => WeaponProficiencies {
-                custom_weapon_groups: 2,
+                custom_weapon_groups: 1,
                 specific_weapon_groups: None,
                 specific_weapons: None,
                 simple_weapons: true,
