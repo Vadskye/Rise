@@ -531,14 +531,46 @@ impl Class {
                 Alternately, they may simply be charged by their deity to grow their personal power.
                 Deities need powerful clerics to maximize their influence on the mortal world.
 
-                Paladins are natural allies of clerics, since both tap into divine powers.
-                However, the specific nature of their divine connection is quite different.
-                From the perspective of clerics, the largest difference is that paladins have no oversight and unclear responsibilities.
-                Clerics can always be confident that they are serving their deity's best interest, while paladins simply act as they see fit.
-                This distinction can leave clerics unsure where exactly a paladin's true allegiance lies, since each of the four aligments has a degree of subjectivity in its interpretation.
+                Paladins and druids are closely related to clerics, since all three draw power from their veneration of external entities.
+                However, the specific nature of each connection is quite different.
+                From the perspective of clerics, the largest difference is that paladins and druids have no oversight and unclear responsibilities.
+                Clerics can always be confident that they are serving their deity's best interest, while paladins and druids simply act as they see fit.
+                This makes them unreliable allies at best and ideological foes at worst.
+                In particular, clerics and druids have some intrinsic tension.
+                Clerics want to expand the worship of their specific deity, which is easiest in civilized areas where many potential worshippers can be found.
+                This runs opposite to the typical druidic preference against civilization.
             ".to_string(),
             Self::Druid => r"
                 Druids are nature spellcasters who draw power from their veneration of the natural world.
+                They worship Nature herself, the over-deity who guides and nurtures all living things.
+                Nature grants her followers influence over her domain in gratitude for their service.
+
+                All druids value the continuation of life - in the abstract, universal sense, not the specific sense.
+                Predation is a critical part of the natural world, and most druids have no prohibitions against killing.
+                Life as a whole, across all species and levels of sentience, must continue.
+                The worst nightmare of all druids is a dead world, inhabited only by rocks and memories of the life that once existed.
+                Civilization offers the most likely path to a dead world, and this is key to the typical - but not universal - druidic rejection of civilization.
+
+                Individual druids have a great variety of opinions and interpretations about which aspects of Nature's domain are most important.
+                Some druids treat all forms of life as equal.
+                Others draw distinctions between different forms of life, such as prioritizing the needs of highly sentient or highly complex life over others.
+                Of course, many druids don't dwell on philosophical questions about the precise value of Nature's various aspects. 
+                They focus more on practical maintenance of nature in the world around them according to their own instincts.
+                Nature's domain is immense, and her guidance is virtually nonexistent.
+
+                Most druids belong to a specific druidic circle.
+                Druidic circles are groups of druids that share a similar philosophy.
+                Like druids, druidic circles have highly varied structures.
+                Some druidic circles function as communes where all members live together, either nomadically or in a specific area of land claimed by the circle.
+                Others simply have annual meetings to discuss critical matters, with many of the circle's members living in isolation at all other times.
+
+                Since druids tend to be more isolated than most, their attachment to druidic circles may seem odd to outsiders.
+                There are many reasons for this tradition, but foremost among them is the importance of continuity of knowledge in the absence of advanced civilization.
+                Druids are unlikely to simply go to a library in a city to gain important knowledge about the natural world.
+                Instead, they must learn from someone who has the knowledge they lack.
+                This means they need access to wise elders who are willing to pass on what they know.
+                Their wisdom must be kept alive between generations through oral traditions.
+                Druidic circles provide a place for this knowledge transfer to occur, and offer a path to welcoming new druids into the fold.
             ".to_string(),
             Self::Fighter => r"
                 Fighters are highly disciplined warriors who excel in physical combat of any kind.
