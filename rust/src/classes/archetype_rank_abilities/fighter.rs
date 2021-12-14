@@ -237,64 +237,49 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
 pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
+            name: "Martial Resilience",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(6)]),
+        },
+        RankAbility {
+            name: "Martial Resilience",
+            is_magical: false,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(8)]),
+        },
+        RankAbility {
+            name: "Martial Resilience",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(10)]),
+        },
+        RankAbility {
+            name: "Martial Resilience",
+            is_magical: false,
+            rank: 6,
+            description: "",
+            // This rank is when supreme resilience kicks in
+            modifiers: Some(vec![Modifier::HitPoints(18)]),
+        },
+        RankAbility {
+            name: "Martial Resilience",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(21)]),
+        },
+        RankAbility {
             name: "Martial Expertise",
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a bonus equal to twice your rank in this archetype to your \glossterm{hit points} (minimum 1).
+                You gain a \plus1 bonus to your Armor defense.
             ",
-            modifiers: Some(vec![Modifier::HitPoints(1)]),
-        },
-        RankAbility {
-            name: "Martial Expertise",
-            is_magical: false,
-            rank: 1,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(2)]),
-        },
-        RankAbility {
-            name: "Martial Expertise",
-            is_magical: false,
-            rank: 2,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(4)]),
-        },
-        RankAbility {
-            name: "Martial Expertise",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            // This rank is when greater expertise kicks in
-            modifiers: Some(vec![Modifier::HitPoints(9)]),
-        },
-        RankAbility {
-            name: "Martial Expertise",
-            is_magical: false,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(12)]),
-        },
-        RankAbility {
-            name: "Martial Expertise",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(15)]),
-        },
-        RankAbility {
-            name: "Martial Expertise",
-            is_magical: false,
-            rank: 6,
-            description: "",
-            // This rank is when supreme expertise kicks in
-            modifiers: Some(vec![Modifier::HitPoints(24)]),
-        },
-        RankAbility {
-            name: "Martial Expertise",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(28)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Maneuvers",
@@ -389,11 +374,11 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Martial Expertise",
+            name: "Martial Resilience",
             is_magical: false,
             rank: 3,
             description: r"
-                The bonus from your \textit{martial expertise} ability increases to three times your rank in this archetype.
+                You gain a bonus equal to twice your rank in this archetype to your \glossterm{hit points}.
             ",
             // Handled as part of bulk silent scaling
             modifiers: None,
@@ -447,11 +432,11 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme Martial Expertise",
+            name: "Greater Martial Resilience",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{martial expertise} ability increases to four times your rank in this archetype.
+                The bonus from your \textit{martial expertise} ability increases to three times your rank in this archetype.
             ",
             // Handled as part of bulk silent scaling
             modifiers: None,
