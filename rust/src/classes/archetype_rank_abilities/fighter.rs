@@ -573,6 +573,15 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Sentinel's Guard",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You gain a \plus1 bonus to your Armor defense.
+            ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+        },
+        RankAbility {
             name: "Supreme Threatening Influence",
             is_magical: false,
             rank: 6,
