@@ -662,7 +662,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{durationability}{Duck and Cover}[\abilitytag{Sustain} (free)]
                         \rankline
-                        Each target gains a \plus1 bonus to its Armor defense against non-\glossterm{melee} attacks.
+                        Each target gains a \plus1 bonus to its Armor defense against ranged \glossterm{strikes}.
 
                         \rankline
                         \rank{3} The bonus increases to \plus2.
@@ -675,19 +675,19 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         Each target that is adjacent to at least one other target gains a \plus1 bonus to its Armor defense.
 
                         \rankline
-                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to its Mental defense.
-                        \rank{5} The Armor defense bonus increases to \plus2.
-                        \rank{7} The Mental defense bonus increases to \plus4.
+                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Mental defense.
+                        \rank{5} The Mental defense bonus increases to \plus2.
+                        \rank{7} The Mental defense bonus increases to \plus3.
                     \end{durationability}
 
                     \begin{durationability}{Hold The Line}[\abilitytag{Sustain} (free)]
                         \rankline
-                        Your \glossterm{enemies} treat all areas adjacent to any target as \glossterm{difficult terrain}.
+                        Your \glossterm{enemies} treat all areas adjacent to any two targets as \glossterm{difficult terrain}.
 
                         \rankline
-                        \rank{3} Each area adjacent to any target is doubly difficult terrain, and costs quadruple the normal movement cost to move out of.
-                        \rank{5} Each area within a 10 foot radius \glossterm{emanation} from each target is difficult terrain.
-                        \rank{7} Each area within a 10 foot radius \glossterm{emanation} from each target is doubly difficult terrain.
+                        \rank{3} Each area adjacent to any target is difficult terrain.
+                        \rank{5} In addition, each area adjacent to any two targets is doubly difficulty terrain, which costs three times the normal movement cost to move out of.
+                        \rank{7} Each area adjacent to any target is doubly difficult terrain.
                     \end{durationability}
 
                     \begin{durationability}{Hustle}[\abilitytag{Sustain} (free)]
@@ -706,9 +706,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                             gains a \plus1 bonus to its Armor defense until the end of the round.
 
                         \rankline
-                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to its Reflex defense.
-                        \rank{5} The Armor defense bonus increases to \plus2.
-                        \rank{7} The Reflex defense bonus increases to \plus4.
+                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Reflex defense.
+                        \rank{5} The Reflex defense bonus increases to \plus2.
+                        \rank{7} The Reflex defense bonus increases to \plus3.
                     \end{durationability}
 
                     \begin{durationability}{Stand Your Ground}[\abilitytag{Sustain} (free)]
@@ -716,9 +716,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to its Armor defense until its location changes.
 
                         \rankline
-                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus2 bonus to its Fortitude defense.
-                        \rank{5} The Armor defense bonus increases to \plus2.
-                        \rank{7} The Fortitude defense bonus increases to \plus4.
+                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Fortitude defense.
+                        \rank{5} The Fortitude defense bonus increases to \plus2.
+                        \rank{7} The Fortitude defense bonus increases to \plus3.
                     \end{durationability}
                 }
             ",
