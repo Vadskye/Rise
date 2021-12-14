@@ -669,6 +669,27 @@ impl Class {
             ".to_string(),
             Self::Rogue => r"
                 Rogues are exceptionally skillful characters known for their ability to strike at their foe's weak points in combat.
+                It is dangerous to make any assumptions about rogues.
+                They can be acrobatic fighters, charismatic tricksters, inspiring musicians, stealthy assassins, or all of the above.
+                All rogues share a fundamental flexibility, preferring to use the right tools for the situation rather than solving all of their problems in the same way.
+
+                A rogue's power fundamentally comes from experience, but it is seldom the rigorous, structured training that a fighter or monk might undertake.
+                More often, rogues develop their talents by following their instincts and seeing what works and what doesn't.
+                They may have a natural gift for persuasion that they develop into a fine edge through years of charismatic conversations.
+                The back alleys of cities are a natural training ground, where education comes in the form of evading or receiving punishments for misdeeds.
+
+                While most of a rogue's skills are intuitively understandable and mundane, bardic music is an odd exception.
+                There is an underlying structure to the universe that some scholars call the Universal Harmony.
+                Exceptionally talented performances can hit tones that resonate with the Universal Harmony, which amplifies the effects of the performance beyond mundane limits.
+                This is always a simple amplification, taking effects that would be a natural result of the music and multiplying their effects.
+                A humorous musical piece can become outrageously funny, and an ominous piece can become utterly terrifying, but the full complexity of true spellcasting cannot be replicated in this way.
+
+                Some rogues discover the effects of the Universal Harmony for themselves.
+                There also exist bardic colleges that are dedicated to the study and replication of effects amplified in this way, and rogues may attend these colleges to deepen their skills.
+                Officially, bardic colleges train their attendees in musical theory and practical performance.
+                Unofficially, many bardic colleges have recognized that many of their students have a variety of less reputable talents.
+                These colleges may have night classes that train rogues in other skills, including effective deception and even assassination.
+                They maintain a level of plausible deniability, but would-be rogues can often discover the truth and complete their training there.
             ".to_string(),
             Self::Sorcerer => r"
                 Sorcerers are arcane spellcasters who draw power from their inherently magical nature.
