@@ -198,6 +198,7 @@ def custom_statistic(i):
                 option({'value': 'fatigue_tolerance'}, 'Fatigue tolerance'),
                 option({'value': 'fortitude'}, 'Fortitude'),
                 option({'value': 'hit_points'}, 'Hit points'),
+                option({'value': 'initiative'}, 'Initiative'),
                 option({'value': 'magical_power'}, 'Magical power'),
                 option({'value': 'mental'}, 'Mental'),
                 option({'value': 'mundane_power'}, 'Mundane power'),
