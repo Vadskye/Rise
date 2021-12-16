@@ -693,12 +693,86 @@ impl Class {
             ".to_string(),
             Self::Sorcerer => r"
                 Sorcerers are arcane spellcasters who draw power from their inherently magical nature.
+                They require no training or external sources to access their magical abilities.
+                Many sorcerers intuitively used their magic to influence their surroundings long before they understood exactly what they were doing, or that they were tapping into powers others could not.
+
+                Of all classes, sorcerers are the most likely to be completely self-trained.
+                Each sorcerer has a unique connection to their magical nature, and they often have idiosyncratic requirements or limitations.
+                For example, a sorcerer may feel ravenously hungry after tapping into their powers, or they may need to spend time upside down each day to ``recharge'' their magic.
+
+                The gestures and incanations spoken by sorcerers are similarly diverse - if they require any spellcasting components at all.
+                Some sorcerers channel their magic through martial arts and battle cries, and may be easily confused with barbarians or monks.
+                Others believe their magic comes from external forces, such as nature spirits or strange entities that they imagine for themselves.
+                Still others study magic extensively and imagine themselves to be wizards, but their conclusions are nonsensical and no one else can replicate their findings.
+                The only certainty is that each sorcerer is unique.
+
+                The true cause of a sorcerer's magic has more consistency than its expression.
+                Sorcerers do not draw power from their life energy or any internal storage, like monks do.
+                Instead, they steal power from the primal forces of the universe, as wizards do.
+                Sorcerers are intrinsic conduits for that raw power, and they can deepen their connection with experience.
+                A sorcerer's nature is fundamentally their birthright, and it cannot be learned.
+
+                Of course, that doesn't entirely explain why sorcerers are intrinsic conduits.
+                No one knows exactly how to predict or explain sorcerous potential.
+                However, sorcerers are much more common in bloodlines that have immortal ancestors.
+                Most commonly, this means draconic ancestry, and some sorcerers specifically tap into their draconic potential.
+                However, celestial or infernal heritage is also not unheard of, and even stranger ancestry is possible.
+                In addition, sorcerers seem to be more common in areas that have been affected by powerful magic.
             ".to_string(),
             Self::Warlock => r"
-                Warlocks are pact spellcasters who draw their power from a dark pact made with infernal creatures.
+                Warlocks are pact spellcasters who draw their power from a sinister deal made with infernal creatures.
+                Their soulkeeper grants them access to great magical power.
+                However, they must content with the whispers of demonic influence throughout their life, and they risk losing their immortal soul.
+
+                Most people view warlocks with suspicion, if not outright hostility.
+                Few warlocks are noble individuals who undertook their pact out of some self-sacrificing necessity.
+                Instead, warlocks are often power-hungry individuals who willingly fall under demonic influence to serve their own ends.
+                Even warlocks who start out with good intentions can be led astray over the years.
+                It takes great wisdom and mental fortitude to resist the constant pressure of a soulkeeper's twisted advice.
+
+                Warlocks are typically self-taught, or more accurately, educated by their soulkeeper in the use of their powers.
+                It is not uncommon for warlocks to search for warlock mentors so they can master their powers without completely trusting their soulkeeper.
+                These relationships are typically based on contracts and expectations of future services from the apprentice once their training is complete, just like a soul pact.
+                A certain level of mistrust is common, and apprentices sometimes successfully betray their mentors, just like they hope to escape their soulkeeper's clutches.
+                To minimize the danger of these relationships, warlock mentors almost never take more than a single apprentice at a time.
+
+                Clerics and warlocks have a complicated relationship.
+                From a certain perspective, they both gain power in exchange for their service to a powerful extraplanar entity.
+                Warlocks often enjoy emphasizing the similarity, which can be a useful rhetorical tool to mitigate anti-warlock prejudice.
+                For their part, clerics tend to strongly disagree with this analogy.
+
+                Rogues tend to get along better with warlocks than most classes do.
+                Many rogues have a ``do whatever works'' attitude that helps them understand why warlocks would make a soul pact, even if they might not make the same pact themselves.
+                In addition, rogues are generally flexible about their companions, and wouldn't begrudge having a warlock in a group as long as the warlock doesn't cause problems.
             ".to_string(),
             Self::Wizard => r"
                 Wizards are arcane spellcasters who study magic to unlock its powerful secrets.
+                They have spent years studying the primal forces that define the universe.
+                Their extensive research has revealed complicated ways in which those forces can be accessed and manipulated by mere mortals.
+
+                Wizards are almost never completely self-taught.
+                The primal forces of the universe do not give up their power easily, and the methods used to access that power are unintuitive.
+                Most wizards learn at arcane colleges or through direct mentorship by older, wiser wizards.
+                Even wizard prodigies who learn alone have some access to the research performed by wizards over the centuries, generally in the form of massive books.
+
+                There are two fundamental principles of arcane magic that are shared by all wizards.
+                The first principle is the creation of links between planes.
+                A wizard can expend a small amount of energy to open an extremely small, extremely short-lived interdimensional gate that leads to a source of power.
+                The destination for this gate depends on the \glossterm{mystic sphere} the wizard are manipulating.
+                As a simple example, \sphere{pyromancy} spells generally require gates to the Plane of Fire.
+                Other spheres can be more complex.
+                For example, \sphere{revelation} spells generally require gates that lead to prescient entities or extraplanar sites with powerful ambient magic.
+
+                The second principle is the manipulation of raw power accessed through these gates.
+                Wizards learn how to create complex magical bindings that can store power and release it in highly specific ways.
+                This allows them to create long-lasting effects that were fueled by extremely brief flashes of power.
+
+                Sorcerers are an endless fascination and source of frustration to wizards.
+                While wizards must spend years or decades perfecting their art, sorcerers are able to easily and intuitively replicate the same techniques for accessing and binding magical energy.
+                This often makes younger wizards jealous.
+                Wizards have spent centuries trying to understand how to mimic the shortcuts that sorcerers use, with little success.
+                However, sorcerers lack the ability to perform complex arcane rituals that do not allow any simple shortcuts.
+                Many older wizards regard this as a crippling weakness.
             ".to_string(),
         }
     }
@@ -987,14 +1061,15 @@ impl Class {
 
                     \cf{War}{Soul Pact}
                     To become a warlock, you must make a pact with a creature capable of sharing its power with you.
-                    Generally, such a creature must be 21st level, and must be a planeforged from a plane other than your own.
+                    Such a creature must be 21st level, and must be a planeforged from a plane other than your own.
                     You must make a sacrifice, the details of which are subject to negotiation, and offer a part of your immortal soul.
                     In exchange, you gain the powers of a warlock.
                     The creature you make the pact with is called your soulkeeper.
-                    Most warlocks make pacts with demons, though other soulkeepers are possible.
+                    Almost all warlocks make pacts with demons, though other soulkeepers are possible.
 
                     Offering your soul to an entity in this way grants it the ability to communicate with you in limited ways.
                     This communication typically manifests as unnatural emotional urges or whispered voices audible only to you.
+                    Many soulkeepers use this influence to tempt their warlocks into greater evils, though the skill and subtlety of this influence can vary drastically between different soulkeepers.
 
                     Your pact specifies how much of your soul is granted to your soulkeeper, and the circumstances of the transfer.
                     The most common arrangement is for a soulkeeper to gain possession of your soul immediately after you die.
@@ -1005,6 +1080,7 @@ impl Class {
 
                     The longer you spend in an afterlife that is not your own, the more likely you are to lose your sense of self and become subsumed by the plane you are on.
                     Only a soul of extraordinary strength can maintain its integrity after decades or centuries in any plane.
+                    Of course, soulkeepers generally try to accelerate this process as much as possible with various forms of torture.
                     Many warlocks seek power zealously while mortal to gain the mental fortitude necessary to keep their soul intact after death.
 
                     \cf{War}{Whispers of the Lost}[Magical]
