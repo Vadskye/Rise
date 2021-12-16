@@ -571,7 +571,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                Your \textit{threatening influence} ability applies \glossterm{difficult terrain} twice, causing enemies to move at one quarter speed.
+                Your \textit{threatening influence} ability applies \glossterm{difficult terrain} twice, causing enemies to move at one-third speed.
             ",
             modifiers: None,
         },
