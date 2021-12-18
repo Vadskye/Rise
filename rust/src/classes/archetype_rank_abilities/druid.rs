@@ -335,9 +335,10 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain your choice of one of the following abilities.
                 You can also spend \glossterm{insight points} to learn one additional \textit{mystic insight} per insight point.
+                You cannot apply the benefits of more than two \textit{mystic insight} abilities to the same spell.
                 {
                     \parhead{Distant Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
-                        You double your range with that spell.
+                        You increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
@@ -356,7 +357,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Widened Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{area}: Small, Medium, Large, Huge, or Gargantuan.
-                        You double your area with that spell.
+                        You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                 }
