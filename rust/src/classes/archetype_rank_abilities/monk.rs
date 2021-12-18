@@ -501,13 +501,13 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
-                        All attacks against you have a 20\\% \glossterm{failure chance} this round.
-                        However, your attacks also have a 20\\% failure chance this round.
+                        All attacks against you have a 20\% \glossterm{failure chance} this round.
+                        However, your attacks also have a 20\% failure chance this round.
 
                         \rankline
-                        \rank{3} The failure chance for attacks against you increases to 25\\%.
+                        \rank{3} The failure chance for attacks against you increases to 25\%.
                         \rank{5} When you use this ability, you can choose whether it becomes a \glossterm{brief} effect.
-                        \rank{7} The failure chance for attacks against you increases to 30\\%.
+                        \rank{7} The failure chance for attacks against you increases to 30\%.
                     \end{durationability}
 
                     \begin{durationability}{Thread the Eye of the Storm}[Duration]
