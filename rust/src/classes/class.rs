@@ -1327,7 +1327,8 @@ impl Class {
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                         \end{durationability}
                         % on average, slightly better than +1 accuracy
-                        \parhead{Mastery} When you roll less than a 6 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
+                        \parhead{Mastery} Whenever you roll a 1 on an \glossterm{attack roll}, the attack roll is treated as a 6.
+                        This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
 
                     \subsubsection{Life}
                         \parhead{Gift} You gain a \plus3 bonus to the Medicine skill (see \pcref{Medicine}).
