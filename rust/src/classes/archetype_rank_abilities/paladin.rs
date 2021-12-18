@@ -164,7 +164,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 The effect of your \textit{aligned aura} reaches its full power, as described below.
                 In addition, the area increases to a \hugearea radius \glossterm{emanation} from you.
 
-                \subparhead{Chaos} The effect triggers on rolling either a 1 or a 2.
+                \subparhead{Chaos} Whenever a subject \glossterm{explodes} with an attack roll, it gains a \plus2 \glossterm{accuracy} bonus with the attack.
                 \subparhead{Evil} The penalty increases to \minus2.
                 \subparhead{Good} The \glossterm{vital roll} bonus increases to \plus5.
                 \subparhead{Law} The effect triggers on rolling either a 1 or a 2.
