@@ -511,8 +511,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{durationability}{Form of the Hawk}[Duration]
                         \rankline
-                        You gain \glossterm{low-light vision}.
-                        If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
+                        You gain \stdability{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                         In addition, you gain a \plus3 bonus to Awareness.
 
                         \rankline
@@ -787,7 +786,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         It has a bite \glossterm{natural weapon}.
                     \item Swamp: A crocodile appears that has a 15 foot \glossterm{land speed} and a 25 foot \glossterm{swim speed}.
                         It has a bite \glossterm{natural weapon}.
-                    \item Underground: A dire rat appears that has \glossterm{low-light vision}.
+                    \item Underground: A dire rat appears that has \stdability{low-light vision}.
                         It has a bite \glossterm{natural weapon}.
                 \end{itemize}
             ",
