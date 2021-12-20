@@ -357,7 +357,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 accuracy penalty.
-        Each creature damaged by the strike \\glossterm{briefly} treats you as being \\glossterm{invisible}.
+        Each creature damaged by the strike \\glossterm{briefly} treats you as being \\trait{invisible} (see \pcref{Invisible}).
       `,
       rank: 5,
       scaling: {

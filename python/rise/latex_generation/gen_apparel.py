@@ -1374,7 +1374,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                At the end of each round, if you took no actions that round, you become \\glossterm<invisible>.
+                At the end of each round, if you took no actions that round, you become \\trait<invisible> (see \\pcref<Invisible>).
                 This invisibility ends after you take any action.
             """,
             short_description="Grants invisibility while inactive",
@@ -1385,7 +1385,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase>, you become \\glossterm<invisible>.
+                At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase>, you become \\trait<invisible> (see \\pcref<Invisible>).
                 This invisibility ends after you take any action other than moving during the \\glossterm<movement phase>.
             """,
             short_description="Grants invisibility while mostly inactive",
@@ -1396,7 +1396,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase> and taking \\glossterm<minor actions>, you become \\glossterm<invisible>.
+                At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase> and taking \\glossterm<minor actions>, you become \\trait<invisible> (see \\pcref<Invisible>).
                 This invisibility ends after you take any action other than moving during the movement phase and taking \\glossterm<minor actions>.
             """,
             short_description="Grants invisibility while slightly active",
@@ -1454,7 +1454,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                This cloak functions like a \\mitem<vanishing cloak>, except that you also \\glossterm{briefly} become \\glossterm<invisible>.
+                This cloak functions like a \\mitem<vanishing cloak>, except that you also \\glossterm{briefly} become \\trait<invisible (see \\pcref<Invisible>).
                 This invisibility ends after you take any action.
 
                 If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
