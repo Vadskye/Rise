@@ -282,7 +282,7 @@ export const enchantment: MysticSphere = {
           If it has any weapons in hand or natural weapons at that time, it must use one of them.
           Otherwise, it uses its unarmed attack.
 
-          After it makes this attack against itself, it becomes \\glossterm{immune} to this effect until it takes a \\glossterm{short rest}.
+          After it makes this attack against itself, it becomes \\trait{immune} to this effect until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.

@@ -712,13 +712,13 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Conjuration} You passively flicker into the Astral Plane, causing all \glossterm{targeted} attacks against you to have a 10\% \glossterm{failure chance}.
 
-                    \subcf{Evocation} You are \glossterm{impervious} to cold damage, electricity damage, and fire damage.
+                    \subcf{Evocation} You are \trait{impervious} to cold damage, electricity damage, and fire damage.
 
                     \subcf{Illusion} You are immune to being \dazzled and \blinded.
 
                     \subcf{Transmutation} You are immune to being \slowed and \immobilized.
 
-                    \subcf{Necromancy} You are \glossterm{impervious} to attacks from creatures with less than half of their maximum hit points remaining and undead creatures.
+                    \subcf{Necromancy} You are \trait{impervious} to attacks from creatures with less than half of their maximum hit points remaining and undead creatures.
                 }
             ",
             // TODO: represent this somehow?

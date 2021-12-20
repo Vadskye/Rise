@@ -254,7 +254,7 @@ planeforgedInput.push({
           Its hands are suitable only for manual labor.
         `,
         5: `
-          Individual workers are \\glossterm{mindless}, but they are given instructions by the hive mind.
+          Individual workers are \\trait{mindless}, but they are given instructions by the hive mind.
           Even the smallest formian colony typically has hundreds of workers, and larger colonies can have tens of thousands.
           Workers are generally given orders by a formian queen in groups of at least five, and it is rare to see an individual worker on its own.
         `,
@@ -279,7 +279,7 @@ planeforgedInput.push({
         `,
         5: `
           Even the smallest colony typically has dozens of warriors, and larger colonies can have thousands.
-          They are \\glossterm{mindless}, but they are given instructions by the hive mind.
+          They are \\trait{mindless}, but they are given instructions by the hive mind.
         `,
       },
       level: 5,

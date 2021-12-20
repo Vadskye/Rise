@@ -455,7 +455,7 @@ export const cryomancy: MysticSphere = {
         An item created with this spell functions like a normal item of its type, with three exceptions.
         First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your magical \\glossterm{power} to determine their damage instead of your \\glossterm{mundane} power.
         except that it reacts differently to fire damage.
-        Second, while wearing body armor from this spell, you are \\glossterm{impervious} to fire damage.
+        Second, while wearing body armor from this spell, you are \\trait{impervious} to fire damage.
         Third, whenever you lose \\glossterm{hit points} from fire damage, all armor and weapons you made with this ability disappear.
         They reappear at the end of the round.
       `,
