@@ -121,7 +121,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \begin{itemize}
                     \item Air: You gain a \glossterm{glide speed} equal to half the \glossterm{base speed} for your size.
                     \item Earth: The bonus to your Fortitude defense increases to \plus2.
-                    \item Fire: You are \glossterm{impervious} to fire damage.
+                    \item Fire: You are \trait{impervious} to fire damage.
                     \item Water: You gain a \glossterm{swim speed} equal to half the \glossterm{base speed} for your size.
                 \end{itemize}
             ",
@@ -560,7 +560,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     % \begin{durationability}{Form of the Oak}[Duration]
                     %     \rankline
-                    %     As long as you have any remaining resistance to physical damage, you are both \glossterm{immobilized} and \glossterm{impervious} to \glossterm{physical damage}.
+                    %     As long as you have any remaining resistance to physical damage, you are both \glossterm{immobilized} and \trait{impervious} to \glossterm{physical damage}.
                     %     \rankline
                     %     \rank{3} You also gain a \plus1 bonus to your Armor defense.
                     %     \rank{5} The resistance bonus increases to be equal to three times your rank in this archetype.

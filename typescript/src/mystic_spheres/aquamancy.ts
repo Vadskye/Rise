@@ -423,7 +423,7 @@ export const aquamancy: MysticSphere = {
       effect: `
         Torrential rain begins falling out of thin air within a \\medarea radius \\glossterm{zone} within \\longrange.
         The rain extinguishes minor fires such as campfires and torches on contact.
-        Everything in the area is \\glossterm{impervious} to fire damage.
+        Everything in the area is \\trait{impervious} to fire damage.
       `,
       rank: 1,
       scaling: {
@@ -737,7 +737,7 @@ export const aquamancy: MysticSphere = {
       name: "Dampen",
 
       effect: `
-          Up to five ritual participants each become \\glossterm{impervious} to fire damage.
+          Up to five ritual participants each become \\trait{impervious} to fire damage.
       `,
       rank: 2,
       type: "Attune (ritual)",
