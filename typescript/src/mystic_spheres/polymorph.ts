@@ -685,7 +685,7 @@ export const polymorph: MysticSphere = {
       name: "Draconic Senses",
 
       effect: `
-        You gain \\trait{darkvision} with a 60 foot radius, \\stdabtraitlight vision}, and \\stdabilitytraite} with a 30 foot radius.
+        You gain \\trait{darkvision} with a 60 foot radius, \\trait{low-light vision}, and \\trait{blindsense} with a 30 foot radius.
         If you already have darkvision or blindsense, the range of that ability increases by the given amount instead.
       `,
       rank: 4,
