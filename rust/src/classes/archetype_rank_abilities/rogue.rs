@@ -59,7 +59,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     You become completely undetectable by your choice of one of the following sense groups:
                     \begin{itemize}
                         \item \glossterm{Blindsense} and \glossterm{blindsight}
-                        \item \glossterm{Darkvision}
+                        \item \stdability{Darkvision}
                         \item \abilitytag{Detection} abilities
                         \item \glossterm{Lifesense} and \glossterm{lifesight}
                         \item \glossterm{Scent}

@@ -1419,7 +1419,7 @@ impl Class {
                         % This seems like it's a complicated muddle of weird and possibly hilarious edge cases
                         \parhead{Mastery} You are undetectable to all \glossterm{magical} abilities.
                         They cannot detect your presence, sounds you make, or any actions you take.
-                        For example, a scrying sensor created by a \abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \glossterm{darkvision} would not be able to see you without light.
+                        For example, a scrying sensor created by a \abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \stdability{darkvision} would not be able to see you without light.
 
                     \subsubsection{War}
                         \parhead{Gift} You gain proficiency with an additional \glossterm{weapon group} of your choice.
