@@ -314,7 +314,7 @@ def calc_fatigue_tolerance():
                     ),
                     plus(),
                     underlabel(
-                        "(Str+Wil)",
+                        "(Con+Wil)",
                         number_input(
                             {
                                 "disabled": True,

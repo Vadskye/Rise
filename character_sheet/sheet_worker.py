@@ -290,7 +290,6 @@ def armor_defense():
         [
             "level",
             "dexterity_starting",
-            "constitution_starting",
             "armor_defense_class_bonus",
             "body_armor_defense_value",
             "shield_defense_value",
@@ -301,7 +300,10 @@ def armor_defense():
             "all_defenses_vital_wound_modifier",
         ],
         f"""
-            var attribute_modifier = Math.floor(constitution_starting / 2);
+            var attribute_modifier = 0;
+            if (challenge_rating > 0) {{
+                attribute_modifier += Math.floor(constitution_starting / 2);
+            }}
             if (body_armor_usage_class === "medium" || challenge_rating > 0) {{
                 attribute_modifier += Math.floor(dexterity_starting / 2);
             }} else if (body_armor_usage_class === "none" || body_armor_usage_class === "light") {{
@@ -504,11 +506,11 @@ def skill_points():
 def fatigue_tolerance():
     misc = get_misc_variables("fatigue_tolerance", 2)
     return js_wrapper(
-        ["level", "fatigue_tolerance_base", "strength_starting", "willpower_starting", *misc],
+        ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", *misc],
         f"""
-            var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + strength_starting + willpower_starting + {sum_variables(misc)});
+            var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + constitution_starting + willpower_starting + {sum_variables(misc)});
             setAttrs({{
-                fatigue_tolerance_attributes: strength_starting + willpower_starting,
+                fatigue_tolerance_attributes: constitution_starting + willpower_starting,
                 fatigue_tolerance,
                 // for red bars
                 fatigue_points_max: fatigue_tolerance,
