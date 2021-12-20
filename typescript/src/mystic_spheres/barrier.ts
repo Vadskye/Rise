@@ -10,7 +10,7 @@ export const barrier: MysticSphere = {
       name: "Burst Ward",
 
       effect: `
-        You are \\glossterm{impervious} to \\glossterm{energy damage} this round.
+        You are \\trait{impervious} to \\glossterm{energy damage} this round.
         Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
       `,
       // narrative: '',
@@ -107,7 +107,7 @@ export const barrier: MysticSphere = {
             You can change how much the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
 
             A sound-dampening barrier increases the \\glossterm{difficulty value} of sound-based Awareness checks by 20.
-            Sound-permeable and sound-dampening barriers do not block \\glossterm{line of effect} for effects that deal \\glossterm{sonic damage}, but a sound-dampening barrier makes everything \\glossterm{impervious} to \\glossterm{sonic damage} that originates from the other side of the barrier.
+            Sound-permeable and sound-dampening barriers do not block \\glossterm{line of effect} for effects that deal \\glossterm{sonic damage}, but a sound-dampening barrier makes everything \\trait{impervious} to \\glossterm{sonic damage} that originates from the other side of the barrier.
         `,
         name: "mystic barrier",
       },
@@ -277,7 +277,7 @@ export const barrier: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the wall's defenses are each equal to 5 + your level, and it is \\glossterm{impervious} to physical damage.
+          the wall's defenses are each equal to 5 + your level, and it is \\trait{impervious} to physical damage.
           In addition, each 5-ft.\\ square of wall has 32 \\glossterm{hit points}.
         `,
         name: "mystic barrier",

@@ -104,7 +104,7 @@ export const channelDivinity: MysticSphere = {
       name: "Endurance of the Faithful",
 
       effect: `
-        You are \\glossterm{impervious} to all damage this round.
+        You are \\trait{impervious} to all damage this round.
         Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
       `,
       rank: 2,

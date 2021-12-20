@@ -97,7 +97,7 @@ export const unbreakableDefense: CombatStyle = {
       name: "Brace for Impact",
 
       effect: `
-        You are \\glossterm{impervious} to \\glossterm{physical damage} this round.
+        You are \\trait{impervious} to \\glossterm{physical damage} this round.
         Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
       `,
       rank: 2,
@@ -116,7 +116,7 @@ export const unbreakableDefense: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You do not add your \\glossterm{power} to damage with the strike.
 
-        You are \\glossterm{impervious} to \\glossterm{physical damage} this round.
+        You are \\trait{impervious} to \\glossterm{physical damage} this round.
         Becoming impervious in this way is a \\abilitytag{Swift} ability, so it affects damage you take during the current phase.
       `,
       rank: 5,

@@ -412,7 +412,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
                 You have the blood of that type of dragon in your veins.
-                You are \glossterm{impervious} to damage of the type dealt by that dragon's breath weapon.
+                You are \trait{impervious} to damage of the type dealt by that dragon's breath weapon.
 
                 \begin{dtable}
                     \lcaption{Draconic Bloodline Types}

@@ -1241,7 +1241,7 @@ impl Class {
                     \subsubsection{Fire}
                         If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \parhead{Gift} You are \glossterm{impervious} to fire damage.
+                        \parhead{Gift} You are \trait{impervious} to fire damage.
                         \parhead{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
                         \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
                         \begin{attuneability}{Speak with Fire}
