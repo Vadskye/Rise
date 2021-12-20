@@ -98,7 +98,7 @@ export const umbramancy: MysticSphere = {
       name: "Darkvision",
 
       effect: `
-        You gain \\glossterm{darkvision} with a 60 foot radius.
+        You gain \\stdability{darkvision} with a 60 foot radius, allowing you to see in complete darkness (see \\pcref{Darkvision}).
       `,
       rank: 2,
       scaling: {
@@ -543,7 +543,7 @@ export const umbramancy: MysticSphere = {
         If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
         This can allow you to completely block off small tunnels.
         The wall is visible as a solid block of darkness that blocks sight.
-        Creatures with the \\glossterm{darkvision} ability can see through the wall normally.
+        Creatures with \\stdability{darkvision} can see through the wall normally.
         It does not inhibit the passage of objects or creatures.
       `,
       rank: 1,
