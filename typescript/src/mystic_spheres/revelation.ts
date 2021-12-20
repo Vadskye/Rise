@@ -218,7 +218,7 @@ export const revelation: MysticSphere = {
       name: "Blindsense",
 
       effect: `
-        You gain \\stdability{blindsense} with a 30 foot range, allowing you to sense your surroundings without light (see \\pcref{Blindsense}).
+        You gain \\trait{blindsense} with a 30 foot range, allowing you to sense your surroundings without light (see \\pcref{Blindsense}).
       `,
       rank: 1,
       scaling: {
@@ -232,7 +232,7 @@ export const revelation: MysticSphere = {
       name: "Blindsight",
 
       effect: `
-        You gain \stdability{blindsight} with a 15 foot range, allowing you to see without light (see \pcref{Blindsight}).
+        You gain \trait{blindsight} with a 15 foot range, allowing you to see without light (see \pcref{Blindsight}).
         If you already have blindsight, the range of your blindsight increases by 15 feet.
       `,
       rank: 3,
