@@ -671,7 +671,7 @@ export const polymorph: MysticSphere = {
       name: "Eyes of Darksight",
 
       effect: `
-        You gain \\glossterm{darkvision} with a 60 foot radius.
+        You gain \\stdability{darkvision} with a 60 foot radius, allowing you to see in complete darkness (see \\pcref{Darkvision}).
       `,
       rank: 2,
       scaling: {
@@ -685,7 +685,7 @@ export const polymorph: MysticSphere = {
       name: "Draconic Senses",
 
       effect: `
-        You gain \\glossterm{darkvision} with a 60 foot radius, \\glossterm{low-light vision}, and \\glossterm{blindsense} with a 30 foot radius.
+        You gain \\stdability{darkvision} with a 60 foot radius, \\glossterm{low-light vision}, and \\glossterm{blindsense} with a 30 foot radius.
         If you already have darkvision or blindsense, the range of that ability increases by the given amount instead.
         If you already have low-light vision, you double its effectiveness, allowing you to treat sources of light as if they had four times their normal illumination range.
       `,
@@ -770,7 +770,7 @@ export const polymorph: MysticSphere = {
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         For each creature, you choose one of the following effects.
         \\parhead{Awareness} The subject gains a +3 \\glossterm{magic bonus} to the Awareness skill.
-        \\parhead{Darkvision} The subject gains \\glossterm{darkvision} with a range of 60 feet.
+        \\parhead{Darkvision} The subject gains \\stdability{darkvision} with a range of 60 feet.
         \\parhead{Low-light Vision} The subject gains \\glossterm{low-light vision}.
         \\parhead{Scent} The subject gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Senses}).
       `,

@@ -328,6 +328,18 @@
     \parhead{#1}
 }
 
+\DeclareDocumentCommand{\stdability}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{stdability}}
+    {\termlink{#2}{stdability}}
+}
+\DeclareDocumentCommand{\stdabilitydef}{m o}
+{
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{stdability}}
+    {\termdef{#1}{stdability}}
+}
 
 \DeclareDocumentCommand{\glossterm}{o m}
 {
