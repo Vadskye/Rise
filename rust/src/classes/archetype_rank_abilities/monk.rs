@@ -747,8 +747,8 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You become so attuned to the natural energy of life that you can sense it even when sight fails you.
-                You gain the \glossterm{lifesense} ability with a 120 foot range.
-                In addition, you gain the \glossterm{lifesight} ability with a 30 foot range.
+                You gain \trait{lifesense} with a 120 foot range, allowing you to sense the location of living creatures without light (see \pcref{Lifesense}).
+                In addition, you gain \trait{lifesight} with a 30 foot range, allowing you to see living creatures without light (see \pcref{Lifesight}).
             ",
             modifiers: None,
         },
@@ -785,8 +785,8 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                The range of your \glossterm{lifesense} ability increases by 360 feet.
-                In addition, the range of your \glossterm{lifesight} ability increases by 90 feet.
+                The range of your \trait{lifesense} increases by 360 feet.
+                In addition, the range of your \trait{lifesight} increases by 90 feet.
             ",
             modifiers: None,
         },
