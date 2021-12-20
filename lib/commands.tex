@@ -334,11 +334,9 @@
     {\termlink[#1]{#2}{stdability}}
     {\termlink{#2}{stdability}}
 }
-\DeclareDocumentCommand{\stdabilitydef}{m o}
+\DeclareDocumentCommand{\stdabilitydef}{m}
 {
-    \IfValueTF{#2}
-    {\termdef{#1}[#2]{stdability}}
-    {\termdef{#1}{stdability}}
+    \subsection{\termdef{#1}{stdability}}\label{#1}
 }
 
 \DeclareDocumentCommand{\glossterm}{o m}

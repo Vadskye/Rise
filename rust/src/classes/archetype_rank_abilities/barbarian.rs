@@ -709,8 +709,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it into any space adjacent to you.
 
-                \subcf{Eagle} You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
-                If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
+                \subcf{Eagle} You gain \stdability{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                 In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
 
                 \subcf{Lion} You gain a \plus1 bonus to \glossterm{accuracy} as long as you have an \glossterm{ally} adjacent to you.
