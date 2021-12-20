@@ -1454,7 +1454,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                This cloak functions like a \\mitem<vanishing cloak>, except that you also \\glossterm{briefly} become \\trait<invisible (see \\pcref<Invisible>).
+                This cloak functions like a \\mitem<vanishing cloak>, except that you also \\glossterm{briefly} become \\trait<invisible> (see \\pcref<Invisible>).
                 This invisibility ends after you take any action.
 
                 If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
@@ -2045,7 +2045,7 @@ def generate_apparel():
             material_type="Fabric",
             tags=[],
             description="""
-                While you wear this blindfold covering your eyes, you gain \\trait<blindsight> with a 15 foot range and \\stdabtraitdsense> with a 60 foot range.
+                While you wear this blindfold covering your eyes, you gain \\trait<blindsight> with a 15 foot range and \\trait<blindsense> with a 60 foot range.
                 You are also blind, as normal for wearing a blindfold.
                 Shifting this blindfold to cover or stop covering your eyes is a \\glossterm<free action> that requires a \\glossterm<free hand>.
             """,
