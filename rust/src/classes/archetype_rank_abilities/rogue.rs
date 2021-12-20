@@ -61,10 +61,10 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                         \item \stdability{Blindsense} and \stdability{blindsight}
                         \item \stdability{Darkvision}
                         \item \abilitytag{Detection} abilities
-                        \item \glossterm{Lifesense} and \glossterm{lifesight}
+                        \item \stdability{Lifesense} and \stdability{lifesight}
                         \item \glossterm{Scent}
                         \item \abilitytag{Scrying} abilities
-                        \item \glossterm{Tremorsense} and \glossterm{tremorsight}
+                        \item \stdability{Tremorsense} and \stdability{tremorsight}
                     \end{itemize}
                     If you have access to any other more unusual senses, such as the \textit{blood sense} ability from the Executioner feat, you may also choose one of those senses as a separate sense group.
                 \end{attuneability}
