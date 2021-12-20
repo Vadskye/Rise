@@ -201,10 +201,10 @@ def character_creation():
                 ]),
             ]),
             li([
-                'Spend skill points.',
+                'Allocate trained skills',
                 ul([
-                    li('You have a number of skill points based on your class, Intelligence, and possibly other abilities. That number is written in the "Resources" section of the Calcs tab.'),
-                    li('To spend skill points, increase the value in the "Points" column next to the skill that you are interested in.'),
+                    li('You have a number of trained skills based on your class, Intelligence, and possibly other abilities. That number is written in the "Resources" section of the Calcs tab.'),
+                    li('To train a skill, click the "trained" checkbox next to that skill.'),
                 ]),
             ]),
             li([
