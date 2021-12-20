@@ -679,8 +679,8 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Evocation} The power bonus increases to \plus5.
 
-                    \subcf{Illusion} You gain \stdability{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-                    In addition, you gain \stdability{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
+                    \subcf{Illusion} You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+                    In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
                     If you already have that ability, you increase its range by 60 feet.
 
                     \subcf{Transmutation} The defense bonus increases to \plus3.

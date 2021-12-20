@@ -381,7 +381,7 @@ export const photomancy: MysticSphere = {
       castingTime: "minor action",
       effect: `
         All \\glossterm{strikes} against you have a 20\\% \\glossterm{miss chance}.
-        This does not protect you against creatures that can see you without normal vision, such as with the \\stdability{blindsight} ability.
+        This does not protect you against creatures that can see you without normal vision, such as with the \\trait{blindsight} ability.
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
       rank: 4,

@@ -459,8 +459,8 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain \stdability{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-                In addition, you gain \stdability{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
+                You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+                In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
                 If you already have that ability, you increase its range by 60 feet.
             ",
             modifiers: None,
@@ -490,9 +490,9 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Your perceptions are so finely honed that you can sense your enemies without seeing them.
-                You gain \stdability{blindsense} with a 120 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
+                You gain \trait{blindsense} with a 120 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
                 If you already have the blindsense ability, you increase its range by 120 feet.
-                In addition, you gain \stdability{blindsight} with a 30 foot range, allowing you to see without light (see \pcref{Blindsight}).
+                In addition, you gain \trait{blindsight} with a 30 foot range, allowing you to see without light (see \pcref{Blindsight}).
                 If you already have the blindsight ability, you increase its range by 30 feet.
             ",
             modifiers: None,
@@ -520,8 +520,8 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The range of your \stdability{blindsense} increases by 360 feet.
-                In addition, the range of your \stdability{blindsight} increases by 90 feet.
+                The range of your \trait{blindsense} increases by 360 feet.
+                In addition, the range of your \trait{blindsight} increases by 90 feet.
             ",
             modifiers: None,
         },

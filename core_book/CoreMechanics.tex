@@ -80,7 +80,7 @@ This chapter describes the core mechanics of Rise.
         You deal damage whenever you hit with a damaging attack, regardless of whether the target loses hit points or only \glossterm{damage resistance}.
         Likewise, you take damage whenever anything deals damage to you.
         However, you only lose hit points if the damage is not mitigated by your damage resistance.
-        Many special abilities require the target to lose hit points from a damaging attack, which does not happen if the damage is resisted.
+        Many active abilities require the target to lose hit points from a damaging attack, which does not happen if the damage is resisted.
 
         \subsubsection{Dice Pools}\label{Dice Pools}
             Almost all attacks deal damage based on the result rolled from a pool of dice.
@@ -465,46 +465,91 @@ This chapter describes the core mechanics of Rise.
         Fire elementals, clay golems, and plant creatures like treants are all animates.
         Animates are considered to be both creatures and objects, and are affected fully by abilities that affect both.
 
-\section{Standard Abilities}
+\section{Standard Traits}
 
     % TODO: should there be subgroups within this section, or should it be strictly alphabetical?
     % A possible subgroup would be "sensory abilities".
 
-    \stdabilitydef{Darkvision}
-        A creature with darkvision can see perfectly in both complete darkness and \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.
-        Darkvision always has a specific range limit, and provides no benefit beyond that range.
-        As long as a creature with darkvision is in \glossterm{bright illumination} or \glossterm{brilliant illumination}, their darkvision stops working.
-        The darkvision \glossterm{briefly} stays disabled even after they leave the lit area.
-        Darkvision is disabled while you are \dazzled.
-
-    \stdabilitydef{Blindsense}
+    \traitdef{Blindsense}{blindsense}
         A creature with blindsense can sense the location of everything in its surroundings.
         This ability works regardless of concealment, invisibility, or light levels.
         Blindsense always has a specific range limit, and provides no benefit beyond that range.
         However, it only grants knowledge of location, not actual sight, so does not mitigate any \glossterm{miss chances} that would apply.
         It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
 
-    \stdabilitydef{Blindsight}
+    \traitdef{Blindsight}{blindsight}
         A creature with blindsight can see perfectly regardless of concealment, invisibility, or light levels.
         This allows the creature to ignore all \glossterm{miss chances} caused by those effects.
         Blindsight always has a specific range limit, and provides no benefit beyond that range.
         It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
 
-    \stdabilitydef{Lifesense}
-        Lifesense functions like blindsense, except that it only grants knowledge of the location of living creatures.
+    \traitdef{Darkvision}{darkvision}
+        A creature with darkvision can see perfectly in both complete darkness and \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.
+        Darkvision always has a specific range limit, and provides no benefit beyond that range.
+        As long as a creature with darkvision is in \glossterm{bright illumination} or \glossterm{brilliant illumination}, their darkvision stops working.
+        The darkvision \glossterm{briefly} stays disabled even after they leave the lit area.
+        Darkvision is disabled while you are \dazzled.
 
-    \stdabilitydef{Lifesight}
-        Lifesight functions like blindsight, except that it can only see living creatures.
+    \traitdef{Impervious}{impervious}
+        A creature can be impervious to a particular damage type.
+        It gains a \plus5 bonus to all defenses against attacks that would cause it to take damage of that type.
+        If an attack deals damage of multiple types, a creature is impervious to that attack only if it is impervious to all of the attack's damage types.
+        For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is impervious.
+        An impervious creature gains no defensive benefit against attacks that do not deal damage.
 
-    \stdabilitydef{Low-light Vision}
+    \traitdef{Immune}{immune}
+        A creature that is immune to an attack is completely unaffected by it.
+        Creatures and objects can be immune to specific damage types or debuffs.
+        It is also possible to be immune to more esoteric concepts, like being \grappled or gaining \glossterm{conditions}.
+
+        Being immune to part of an attack does not grant immunity to other aspects of that attack.
+        If an attack deals damage of multiple types, a creature is immune to that attack only if it is impervious to all of the attack's damage types.
+        This also applies to more specific immunities that are not related to damage types.
+        For example, if you are immune to being \dazed, you still take full damage from an attack that deals damage and dazes you.
+
+    \traitdef{Incorporeal}{incorporeal}
+        An incorporeal creature does not have a tangible body.
+        It is \glossterm{immune} to \glossterm{physical damage}.
+        It moves silently and ignores the effects of abilities that only work if it has a corporeal body, such as \glossterm{difficult terrain} and the \textit{grapple} or \textit{shove} abilities.
+        This includes being \grappled, detected by \trait{tremorsense}, setting off pressure plates, and so on.
+
+        Many incorporeal creatures have no Strength attribute.
+        If an incorporeal creature has a Strength attribute, it has some ability to manipulate the physical world despite being incorporeal.
+        Unless otherwise noted, an incorporeal creature with a Strength attribute may selectively choose whether it wants to interact with physical objects.
+
+        An incorporeal creature can enter or pass through solid objects, but it must remain adjacent to the object's exterior at all times.
+        If it is completely inside an object, it cannot see out or attack.
+        It can fight while partially inside an object, which grants it \glossterm{cover} and allows it to attack and see normallly.
+
+    \traitdef{Invisible}{invisible}
+        An invisible creature or object cannot be seen with light.
+        Creatures unable to see an invisible creature are at least \partiallyunaware of its attacks, and they can be fully \unaware as normal depending on their level of awareness.
+        Attackers suffer a 50\% miss chance even if they know the location of the invisible creature.
+        See \pcref{Awareness}, and \pcref{Stealth}, for how to identify invisible creatures.
+
+    \traitdef{Lifesense}{lifesense}
+        Lifesense functions like \trait{blindsense}, except that it only grants knowledge of the location of living creatures.
+
+    \traitdef{Lifesight}{lifesight}
+        Lifesight functions like \trait{blindsight}, except that it can only see living creatures.
+
+    \traitdef{Low-light Vision}{low-light vision}
         A creature with low-light vision can see perfectly in \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.
         This provides no benefit in areas of complete darkness.
         Low-light vision is disabled while you are \dazzled.
 
-    \stdabilitydef{Tremorsense}
-        Tremorsense functions like blindsense, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
+    \traitdef{Mindless}{mindless}
+        A mindless creature lacks a normally functioning mind.
+        Mindless creatures do not have an Intelligence attribute.
+        They are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} abilities.
+
+        It is possible for mindless creatures to still act as if they were intelligent through various magical means.
+        For example, animated objects can obey simple commands by virtue of the magic that controls them, but they are still mindless.
+
+    \traitdef{Tremorsense}{tremorsense}
+        Tremorsense functions like \trait{blindsense}, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
         This makes it incapable of sensing flying creatures, but it ignores \glossterm{cover} and can even sense through solid walls.
 
-    \stdabilitydef{Tremorsight}
-        Tremorsense functions like blindsight, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
+    \traitdef{Tremorsight}{tremorsight}
+        Tremorsense functions like \trait{blindsight}, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
         This makes it incapable of seeing flying creatures, but it ignores \glossterm{cover} and can even see through solid walls.
