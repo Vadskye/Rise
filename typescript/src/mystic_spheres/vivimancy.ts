@@ -620,15 +620,13 @@ export const vivimancy: MysticSphere = {
       name: "Lifesense",
 
       effect: `
-        You gain the \\glossterm{lifesense} ability with a 30 foot range.
-        This allows you to know the location of all living creatures within that range.
-        You still take normal \glossterm{miss chances} for concealment, invisibility, and so on.
+        You gain \\trait{lifesense} with a 60 foot range, allowing you to sense the location of living creatures without light (see \pcref{Lifesense}).
       `,
       rank: 1,
       scaling: {
-        3: `The range increases to 60 feet.`,
-        5: `The range increases to 120 feet.`,
-        7: `The range increases to 240 feet.`,
+        3: `The range increases to 120 feet.`,
+        5: `The range increases to 240 feet.`,
+        7: `The range increases to 480 feet.`,
       },
       type: "Attune (self)",
     },
@@ -636,14 +634,12 @@ export const vivimancy: MysticSphere = {
       name: "Lifesight",
 
       effect: `
-        You gain the \\glossterm{lifesight} ability with a 15 foot range.
-        This allows you to see any living creatures and their equipment perfectly within that range.
-        This ability works regardless of lighting conditions, blindness, invisibility, or any other means of concealment.
+        You gain \\trait{lifesight} with a 30 foot range, allowing you to see living creatures without light (see \pcref{Lifesight}).
       `,
       rank: 3,
       scaling: {
-        5: `The range increases to 30 feet.`,
-        7: `The range increases to 60 feet.`,
+        5: `The range increases to 60 feet.`,
+        7: `The range increases to 120 feet.`,
       },
       type: "Attune (self)",
     },
@@ -659,8 +655,8 @@ export const vivimancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: "The range increases to 60 feet.",
-        7: "The range increases to 120 feet.",
+        5: "The range increases to 120 feet.",
+        7: "The range increases to 240 feet.",
       },
       type: "Attune (target)",
     },
@@ -676,7 +672,7 @@ export const vivimancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: {
-        7: "The range increases to 30 feet.",
+        7: "The range increases to 60 feet.",
       },
       type: "Attune (target)",
     },
