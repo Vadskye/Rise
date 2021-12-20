@@ -473,11 +473,39 @@ This chapter describes the core mechanics of Rise.
 
     \stdabilitydef{Darkvision}
         A creature with darkvision can see perfectly in both complete darkness and \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.
-        Darkvision always has a specific range limit.
-        Beyond that range, darkvision provides no benefit.
+        Darkvision always has a specific range limit, and provides no benefit beyond that range.
         As long as a creature with darkvision is in \glossterm{bright illumination} or \glossterm{brilliant illumination}, their darkvision stops working.
         The darkvision \glossterm{briefly} stays disabled even after they leave the lit area.
+        Darkvision is disabled while you are \dazzled.
+
+    \stdabilitydef{Blindsense}
+        A creature with blindsense can sense the location of everything in its surroundings.
+        This ability works regardless of concealment, invisibility, or light levels.
+        Blindsense always has a specific range limit, and provides no benefit beyond that range.
+        However, it only grants knowledge of location, not actual sight, so does not mitigate any \glossterm{miss chances} that would apply.
+        It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
+
+    \stdabilitydef{Blindsight}
+        A creature with blindsight can see perfectly regardless of concealment, invisibility, or light levels.
+        This allows the creature to ignore all \glossterm{miss chances} caused by those effects.
+        Blindsight always has a specific range limit, and provides no benefit beyond that range.
+        It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
+
+    \stdabilitydef{Lifesense}
+        Lifesense functions like blindsense, except that it only grants knowledge of the location of living creatures.
+
+    \stdabilitydef{Lifesight}
+        Lifesight functions like blindsight, except that it can only see living creatures.
 
     \stdabilitydef{Low-light Vision}
         A creature with low-light vision can see perfectly in \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.
         This provides no benefit in areas of complete darkness.
+        Low-light vision is disabled while you are \dazzled.
+
+    \stdabilitydef{Tremorsense}
+        Tremorsense functions like blindsense, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
+        This makes it incapable of sensing flying creatures, but it ignores \glossterm{cover} and can even sense through solid walls.
+
+    \stdabilitydef{Tremorsight}
+        Tremorsense functions like blindsight, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
+        This makes it incapable of seeing flying creatures, but it ignores \glossterm{cover} and can even see through solid walls.

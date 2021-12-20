@@ -490,7 +490,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Your perceptions are so finely honed that you can sense your enemies without seeing them.
-                You gain the \glossterm{blindsense} ability out to 120 feet.
+                You gain the \stdability{blindsense} ability out to 120 feet.
                 This ability allows you to sense the presence and location of objects and foes within its range without seeing them.
                 If you already have the blindsense ability, you increase its range by 120 feet.
                 In addition, you gain the \glossterm{blindsight} ability out to 30 feet.

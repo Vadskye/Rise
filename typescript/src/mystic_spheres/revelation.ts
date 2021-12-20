@@ -219,7 +219,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         You gain the \\glossterm{blindsense} ability with a 30 foot range.
-        This allows you to sense the location of everything in your surroundings without any light, regardless of concealment or invisiblity.
+        This allows you to sense the location of everything in your surroundings without any light, regardless of concealment or invisibility.
         You still take normal \glossterm{miss chances} for concealment, invisibility, and so on.
       `,
       rank: 1,
