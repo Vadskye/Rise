@@ -459,8 +459,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
-                If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
+                You gain \stdability{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                 In addition, you gain \stdability{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
                 If you already have that ability, you increase its range by 60 feet.
             ",
