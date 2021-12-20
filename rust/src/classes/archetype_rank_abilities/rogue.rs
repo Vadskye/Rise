@@ -58,13 +58,13 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You become completely undetectable by your choice of one of the following sense groups:
                     \begin{itemize}
-                        \item \trait{Blindsense} and \stdabtraitdsight}
+                        \item \trait{Blindsense} and \trait{blindsight}
                         \item \trait{Darkvision}
                         \item \abilitytag{Detection} abilities
-                        \item \trait{Lifesense} and \stdabtraitsight}
+                        \item \trait{Lifesense} and \trait{lifesight}
                         \item \glossterm{Scent}
                         \item \abilitytag{Scrying} abilities
-                        \item \trait{Tremorsense} and \stdabtraitorsight}
+                        \item \trait{Tremorsense} and \trait{tremorsight}
                     \end{itemize}
                     If you have access to any other more unusual senses, such as the \textit{blood sense} ability from the Executioner feat, you may also choose one of those senses as a separate sense group.
                 \end{attuneability}
