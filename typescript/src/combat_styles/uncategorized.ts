@@ -15,7 +15,7 @@
 
     effect: `
         Make a \\glossterm{strike}.
-        You can reroll any \\glossterm{miss chances}, such as when attacking \\glossterm{invisible} creatures, and take the better result.
+        You can reroll any \\glossterm{miss chances}, such as when attacking \\trait{invisible} creatures, and take the better result.
         `,
 
     rank: 1,
