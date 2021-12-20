@@ -308,7 +308,7 @@
 %   #3: hyperlink prefix
 \DeclareDocumentCommand{\termdef}{m o m}
 {
-    \IfValueTF{#2}
+    \IfValueT{#2}
     {
         % Enable this to test for missing glossary definitions
         % \label{#2}\label{#2s}
@@ -317,10 +317,6 @@
 
         \hypertargetraised{#3:#2}{}
         \hypertargetraised{#3:#2s}{}
-    }
-    {
-        \hypertargetraised{\lowercase#3:#1}{}
-        \hypertargetraised{\lowercase#3:#1s}{}
     }
     % Enable this to test for missing glossary definitions
     % \label{#1}\label{#1s}
@@ -332,15 +328,16 @@
     \parhead{#1}
 }
 
-\DeclareDocumentCommand{\stdability}{o m}
+\DeclareDocumentCommand{\trait}{o m}
 {
     \IfValueTF{#1}
-    {\termlink[#1]{#2}{stdability}}
-    {\termlink{#2}{stdability}}
+    {\termlink[#1]{#2}{trait}}
+    {\termlink{#2}{trait}}
 }
-\DeclareDocumentCommand{\stdabilitydef}{m}
+\DeclareDocumentCommand{\traitdef}{m m}
 {
-    \termdef{#1}{stdability}\label{#1}
+    \termdef{#1}[#2]{trait}
+    \label{#1}
 }
 
 \DeclareDocumentCommand{\glossterm}{o m}
