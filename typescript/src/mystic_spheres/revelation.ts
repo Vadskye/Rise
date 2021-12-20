@@ -218,9 +218,7 @@ export const revelation: MysticSphere = {
       name: "Blindsense",
 
       effect: `
-        You gain the \\glossterm{blindsense} ability with a 30 foot range.
-        This allows you to sense the location of everything in your surroundings without any light, regardless of concealment or invisibility.
-        You still take normal \glossterm{miss chances} for concealment, invisibility, and so on.
+        You gain \\stdability{blindsense} with a 30 foot range, allowing you to sense your surroundings without light (see \\pcref{Blindsense}).
       `,
       rank: 1,
       scaling: {
@@ -234,8 +232,8 @@ export const revelation: MysticSphere = {
       name: "Blindsight",
 
       effect: `
-        You gain the \\glossterm{blindsight} ability with a 15 foot range.
-        This allows you to \`\`see'' your surroundings perfectly without any light, regardless of concealment or invisibility.
+        You gain \stdability{blindsight} with a 15 foot range, allowing you to see without light (see \pcref{Blindsight}).
+        If you already have blindsight, the range of your blindsight increases by 15 feet.
       `,
       rank: 3,
       scaling: {

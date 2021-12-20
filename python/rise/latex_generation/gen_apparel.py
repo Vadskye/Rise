@@ -16,8 +16,8 @@ def generate_apparel():
             material_type="Circlet",
             tags=[],
             description="""
-                If you have the \\glossterm<blindsense> ability, you increase its range by 30 feet.
-                If you have the \\glossterm<blindsight> ability, you increase its range by 15 feet.
+                If you have \\stdability<blindsense>, you increase its range by 30 feet.
+                If you have \\stdability<blindsight>, you increase its range by 15 feet.
             """,
             short_description="Increases range of blindsense and blindsight",
         ),
@@ -27,8 +27,8 @@ def generate_apparel():
             material_type="Circlet",
             tags=[],
             description="""
-                If you have the \\glossterm<blindsense> ability, you increase its range by 60 feet.
-                If you have the \\glossterm<blindsight> ability, you increase its range by 30 feet.
+                If you have \\stdability<blindsense>, you increase its range by 60 feet.
+                If you have \\stdability<blindsight>, you increase its range by 30 feet.
             """,
             short_description="Greatly increases range of blindsense and blindsight",
         ),
@@ -38,8 +38,8 @@ def generate_apparel():
             material_type="Circlet",
             tags=[],
             description="""
-                If you have the \\glossterm<blindsense> ability, you increase its range by 120 feet.
-                If you have the \\glossterm<blindsight> ability, you increase its range by 60 feet.
+                If you have \\stdability<blindsense>, you increase its range by 120 feet.
+                If you have \\stdability<blindsight>, you increase its range by 60 feet.
             """,
             short_description="Drastically increases range of blindsense and blindsight",
         ),
@@ -2045,7 +2045,7 @@ def generate_apparel():
             material_type="Fabric",
             tags=[],
             description="""
-                While you wear this blindfold covering your eyes, you gain \\glossterm<blindsight> with a 15 foot range and \\glossterm<blindsense> with a 60 foot range.
+                While you wear this blindfold covering your eyes, you gain \\stdability<blindsight> with a 15 foot range and \\stdability<blindsense> with a 60 foot range.
                 You are also blind, as normal for wearing a blindfold.
                 Shifting this blindfold to cover or stop covering your eyes is a \\glossterm<free action> that requires a \\glossterm<free hand>.
             """,
