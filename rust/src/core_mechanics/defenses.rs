@@ -141,13 +141,17 @@ where
             }
             CreatureCategory::Monster(_) => 0.5,
         };
+        let con_multiplier: f64 = match self.category {
+            CreatureCategory::Character => 0.0,
+            CreatureCategory::Monster(_) => 0.5,
+        };
+        let con_armor_bonus = (self.get_base_attribute(&Attribute::Constitution) as f64
+            * con_multiplier)
+            .floor() as i32;
+        let dex_armor_bonus =
+            (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier).floor() as i32;
         let attribute_bonus = match defense {
-            // TODO: check for light armor
-            Defense::Armor => {
-                self.get_base_attribute(&Attribute::Constitution) / 2
-                    + (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier)
-                        .floor() as i32
-            }
+            Defense::Armor => con_armor_bonus + dex_armor_bonus,
             Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
             Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
             Defense::Mental => self.get_base_attribute(&Attribute::Willpower),
