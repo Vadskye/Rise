@@ -1,5 +1,76 @@
 \chapter{Reference}\label{Reference}
 
+\section{Ability Tags}\label{Ability Tags}
+
+    \abilitytagdef{Attune} Attune abilities require an \glossterm{attunement point} to maintain.
+    For details, see \pcref{Attunement}.
+
+    \abilitytagdef{Auditory} Auditory abilities use sound to cause their effects.
+    Creatures and objects that cannot hear the effect are immune to it.
+    However, they ignore any \glossterm{miss chance} from \glossterm{concealment} or being \glossterm{blinded}.
+
+    \abilitytagdef{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
+    They have no effect on objects or creatures without minds.
+
+    \abilitytagdef{Creation} Creation abilities create permanent physical objects.
+    Objects created with Creation abilities are identical to objects created through more mundane means.
+
+    \abilitytagdef{Curse} Curse abilities lay supernatural curses on their targets.
+    They cannot be \glossterm{dismissed}, but can be removed with the \spell{dispel curse} spell.
+
+    \abilitytagdef{Detection}\label{Detection} Detection abilities reveal magical auras or information within an area.
+    They can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
+    For its ability to penetrate other materials, use the most similar substance from the list above.
+
+    \abilitytagdef{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
+    They have no effect on objects or creatures without minds.
+
+    \abilitytagdef{Healing} This tag indicates that an ability restores hit points.
+    When you use most Healing abilities, they \glossterm{briefly} prevent you from using any other Healing abilities.
+
+    \abilitytagdef{Magical} This tag indicates that an ability is \glossterm{magical}, which means that its origin derives from magic.
+    For details, see \pcref{Magical Abilities}.
+
+    \abilitytagdef{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
+    Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
+    When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
+
+    \abilitytagdef{Ritual} Ritual abilities have a number of shared properties.
+    For details, see \pcref{Spell and Ritual Mechanics}.
+
+    \abilitytagdef{Scrying} Scrying abilities create one or more invisible magical sensors that send you information.
+    Unless otherwise noted, the sensor created has the same powers of sensory acuity that you possess.
+    This includes the effect of any abilities which target you personally, such as spells to increase your visual acuity, but not abilities which affect an area around you.
+    However, the sensor is treated as a separate, independent sensory organ, and it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
+    \par The sensor can be dismissed as if it were an active spell.
+    You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way.
+
+    \abilitytagdef{Sensation} Sensation abilities create or manipulate light, sound, or other sensations.
+    You can only create sensations you understand.
+    For example, you cannot create an illusory figment which speaks coherently in a language you do not understand.
+    \par If a Sensation ability appears to create a physical object or creature, its defenses are equal to 0.
+
+    \abilitytagdef{Speech} Speech abilities use words to achieve their ends.
+    You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
+
+    \abilitytagdef{Spell} Spell abilities have a number of shared properties.
+    For details, see \pcref{Spell and Ritual Mechanics}.
+
+    \abilitytagdef{Subtle} Subtle abilities have no visual or otherwise perceivable manifestation.
+    Creatures successfully affected by Subtle abilities do not generally know that they are being influenced.
+    However, a creature that successfully resists a Subtle ability can generally notice that it resisted a special effect of some kind, just like a non-Subtle ability.
+
+    \abilitytagdef{Sustain} Sustain abilities require an action to maintain.
+    The tag includes an action type, such as (minor), which indicates the type of action required to sustain the ability.
+    For details, see \pcref{Sustained Abilities}.
+
+    \abilitytagdef{Swift} Swift abilities take effect before non-Swift abilities used during the same phase.
+    For details, see \pcref{Swift Abilities}.
+
+    \abilitytagdef{Visual} Visual abilities use visible objects or forces to cause their effects.
+    Creatures and objects that cannot see the effect are immune to it.
+
+\newpage
 \section{Circumstances and Debuffs}\label{Circumstances and Debuffs}
 
     \debuffdef{blinded} A blinded creature cannot see.
@@ -115,72 +186,94 @@
     All ranged weapons have \glossterm{range limits} of 5/15 when used by a creature that is underwater, or when used against a target that is underwater, regardless of the attack's normal range limits or any other modifiers.
 
 \newpage
-\section{Ability Tags}\label{Ability Tags}
+\section{Traits}\label{Traits}
+    % TODO: should there be subgroups within this section, or should it be strictly alphabetical?
+    % A possible subgroup would be "sensory traits".
 
-    \abilitytagdef{Attune} Attune abilities require an \glossterm{attunement point} to maintain.
-    For details, see \pcref{Attunement}.
+    \traitdef{Blindsense}{blindsense}
+        A creature with blindsense can sense the location of everything in its surroundings.
+        This ability works regardless of concealment, invisibility, or light levels.
+        Blindsense always has a specific range limit, and provides no benefit beyond that range.
+        However, it only grants knowledge of location, not actual sight, so does not mitigate any \glossterm{miss chances} that would apply.
+        It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
 
-    \abilitytagdef{Auditory} Auditory abilities use sound to cause their effects.
-    Creatures and objects that cannot hear the effect are immune to it.
-    However, they ignore any \glossterm{miss chance} from \glossterm{concealment} or being \glossterm{blinded}.
+    \traitdef{Blindsight}{blindsight}
+        A creature with blindsight can see perfectly regardless of concealment, invisibility, or light levels.
+        This allows the creature to ignore all \glossterm{miss chances} caused by those effects.
+        Blindsight always has a specific range limit, and provides no benefit beyond that range.
+        It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
 
-    \abilitytagdef{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
-    They have no effect on objects or creatures without minds.
+    \traitdef{Darkvision}{darkvision}
+        A creature with darkvision can see perfectly in both complete darkness and \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.
+        Darkvision always has a specific range limit, and provides no benefit beyond that range.
+        As long as a creature with darkvision is in \glossterm{bright illumination} or \glossterm{brilliant illumination}, their darkvision stops working.
+        The darkvision \glossterm{briefly} stays disabled even after they leave the lit area.
+        Darkvision is disabled while you are \dazzled.
 
-    \abilitytagdef{Creation} Creation abilities create permanent physical objects.
-    Objects created with Creation abilities are identical to objects created through more mundane means.
+    \traitdef{Impervious}{impervious}
+        A creature can be impervious to a particular damage type.
+        It gains a \plus5 bonus to all defenses against attacks that would cause it to take damage of that type.
+        If an attack deals damage of multiple types, a creature is impervious to that attack only if it is impervious to all of the attack's damage types.
+        For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is impervious.
+        An impervious creature gains no defensive benefit against attacks that do not deal damage.
 
-    \abilitytagdef{Curse} Curse abilities lay supernatural curses on their targets.
-    They cannot be \glossterm{dismissed}, but can be removed with the \spell{dispel curse} spell.
+    \traitdef{Immune}{immune}
+        A creature that is immune to an attack is completely unaffected by it.
+        Creatures and objects can be immune to specific damage types or debuffs.
+        It is also possible to be immune to more esoteric concepts, like being \grappled or gaining \glossterm{conditions}.
 
-    \abilitytagdef{Detection}\label{Detection} Detection abilities reveal magical auras or information within an area.
-    They can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
-    For its ability to penetrate other materials, use the most similar substance from the list above.
+        Being immune to part of an attack does not grant immunity to other aspects of that attack.
+        If an attack deals damage of multiple types, a creature is immune to that attack only if it is impervious to all of the attack's damage types.
+        This also applies to more specific immunities that are not related to damage types.
+        For example, if you are immune to being \dazed, you still take full damage from an attack that deals damage and dazes you.
 
-    \abilitytagdef{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
-    They have no effect on objects or creatures without minds.
+    \traitdef{Incorporeal}{incorporeal}
+        An incorporeal creature does not have a tangible body.
+        It is \trait{immune} to \glossterm{physical damage}.
+        It moves silently and ignores the effects of abilities that only work if it has a corporeal body, such as \glossterm{difficult terrain} and the \textit{grapple} or \textit{shove} abilities.
+        This includes being \grappled, detected by \trait{tremorsense}, setting off pressure plates, and so on.
 
-    \abilitytagdef{Healing} This tag indicates that an ability restores hit points.
-    When you use most Healing abilities, they \glossterm{briefly} prevent you from using any other Healing abilities.
+        Many incorporeal creatures have no Strength attribute.
+        If an incorporeal creature has a Strength attribute, it has some ability to manipulate the physical world despite being incorporeal.
+        Unless otherwise noted, an incorporeal creature with a Strength attribute may selectively choose whether it wants to interact with physical objects.
 
-    \abilitytagdef{Magical} This tag indicates that an ability is \glossterm{magical}, which means that its origin derives from magic.
-    For details, see \pcref{Magical Abilities}.
+        An incorporeal creature can enter or pass through solid objects, but it must remain adjacent to the object's exterior at all times.
+        If it is completely inside an object, it cannot see out or attack.
+        It can fight while partially inside an object, which grants it \glossterm{cover} and allows it to attack and see normallly.
 
-    \abilitytagdef{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
-    Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
-    When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
+    \traitdef{Invisible}{invisible}
+        An invisible creature or object cannot be seen with light.
+        Creatures unable to see an invisible creature are at least \partiallyunaware of its attacks, and they can be fully \unaware as normal depending on their level of awareness.
+        Attackers suffer a 50\% miss chance even if they know the location of the invisible creature.
+        See \pcref{Awareness}, and \pcref{Stealth}, for how to identify invisible creatures.
 
-    \abilitytagdef{Ritual} Ritual abilities have a number of shared properties.
-    For details, see \pcref{Spell and Ritual Mechanics}.
+    \traitdef{Lifesense}{lifesense}
+        Lifesense functions like \trait{blindsense}, except that it only grants knowledge of the location of living creatures.
 
-    \abilitytagdef{Scrying} Scrying abilities create one or more invisible magical sensors that send you information.
-    Unless otherwise noted, the sensor created has the same powers of sensory acuity that you possess.
-    This includes the effect of any abilities which target you personally, such as spells to increase your visual acuity, but not abilities which affect an area around you.
-    However, the sensor is treated as a separate, independent sensory organ, and it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
-    \par The sensor can be dismissed as if it were an active spell.
-    You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way.
+    \traitdef{Lifesight}{lifesight}
+        Lifesight functions like \trait{blindsight}, except that it can only see living creatures.
 
-    \abilitytagdef{Sensation} Sensation abilities create or manipulate light, sound, or other sensations.
-    You can only create sensations you understand.
-    For example, you cannot create an illusory figment which speaks coherently in a language you do not understand.
-    \par If a Sensation ability appears to create a physical object or creature, its defenses are equal to 0.
+    \traitdef{Low-light Vision}{low-light vision}
+        A creature with low-light vision can see perfectly in \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.
+        This provides no benefit in areas of complete darkness.
+        Low-light vision is disabled while you are \dazzled.
 
-    \abilitytagdef{Speech} Speech abilities use words to achieve their ends.
-    You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
+    \traitdef{Mindless}{mindless}
+        A mindless creature lacks a normally functioning mind.
+        Mindless creatures do not have an Intelligence attribute.
+        They are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} abilities.
 
-    \abilitytagdef{Spell} Spell abilities have a number of shared properties.
-    For details, see \pcref{Spell and Ritual Mechanics}.
+        It is possible for mindless creatures to still act as if they were intelligent through various magical means.
+        For example, animated objects can obey simple commands by virtue of the magic that controls them, but they are still mindless.
 
-    \abilitytagdef{Subtle} Subtle abilities have no visual or otherwise perceivable manifestation.
-    Creatures successfully affected by Subtle abilities do not generally know that they are being influenced.
-    However, a creature that successfully resists a Subtle ability can generally notice that it resisted a special effect of some kind, just like a non-Subtle ability.
+    \traitdef{Scent}{scent}
+        A creature with the scent ability has an unusually good sense of smell.
+        It reduces the \glossterm{difficulty value} of scent-based Awareness checks by 10 (see \pcref{Awareness}).
 
-    \abilitytagdef{Sustain} Sustain abilities require an action to maintain.
-    The tag includes an action type, such as (minor), which indicates the type of action required to sustain the ability.
-    For details, see \pcref{Sustained Abilities}.
+    \traitdef{Tremorsense}{tremorsense}
+        Tremorsense functions like \trait{blindsense}, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
+        This makes it incapable of sensing flying creatures, but it ignores \glossterm{cover} and can even sense through solid walls.
 
-    \abilitytagdef{Swift} Swift abilities take effect before non-Swift abilities used during the same phase.
-    For details, see \pcref{Swift Abilities}.
-
-    \abilitytagdef{Visual} Visual abilities use visible objects or forces to cause their effects.
-    Creatures and objects that cannot see the effect are immune to it.
+    \traitdef{Tremorsight}{tremorsight}
+        Tremorsense functions like \trait{blindsight}, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
+        This makes it incapable of seeing flying creatures, but it ignores \glossterm{cover} and can even see through solid walls.
