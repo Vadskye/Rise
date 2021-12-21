@@ -94,7 +94,7 @@ export const cryomancy: MysticSphere = {
       name: "Cone of Cold",
 
       attack: {
-        hit: `Each subject takes 1d8 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} cold damage.`,
         targeting: `
         Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
@@ -108,7 +108,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Cone of Cold",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea cone from you.
         `,
@@ -122,7 +122,7 @@ export const cryomancy: MysticSphere = {
       name: "Supreme Cone of Cold",
 
       attack: {
-        hit: `Each subject takes 2d10 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\hugearea cone from you.
         `,
@@ -152,7 +152,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         crit: 'The effect becomes a \\glossterm{condition}.',
         hit: `
-          Each subject that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\immobilized.
+          Each target that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\immobilized.
         `,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
@@ -167,7 +167,7 @@ export const cryomancy: MysticSphere = {
       name: "Ice Lance",
 
       attack: {
-        hit: `Each subject takes 1d10 + half \\glossterm{power} piercing and cold damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\largearealong, 5 ft. wide line from you.
         `,
@@ -182,7 +182,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Ice Lance",
 
       attack: {
-        hit: `Each subject takes 4d6 + half \\glossterm{power} piercing and cold damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\largearealong, 10 ft. wide line from you.
         `,
@@ -389,7 +389,7 @@ export const cryomancy: MysticSphere = {
       name: "Hailstorm",
 
       attack: {
-        hit: `Each subject takes 2d8 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea radius within \\medrange.
         `,
@@ -404,7 +404,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Hailstorm",
 
       attack: {
-        hit: `Each subject takes 4d10 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `Each target takes 4d10 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea radius within \\longrange.
         `,
@@ -419,7 +419,7 @@ export const cryomancy: MysticSphere = {
       name: "Blizzard",
 
       attack: {
-        hit: `Each subject takes 1d10 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea radius from you.
         `,
@@ -433,7 +433,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Blizzard",
 
       attack: {
-        hit: `Each subject takes 4d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea radius from you.
         `,
@@ -479,7 +479,7 @@ export const cryomancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // +1d for attune + every other round
-        hit: `Each subject takes 2d8 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} cold damage.`,
         targeting: `
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
           When you do, make an attack vs. Fortitude against everything in a \\largearea cone from you.
@@ -535,7 +535,7 @@ export const cryomancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // AOE dice, no power
-        hit: `Each subject takes 2d6 cold damage.`,
+        hit: `Each target takes 2d6 cold damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
         `,
@@ -550,7 +550,7 @@ export const cryomancy: MysticSphere = {
       name: "Chillwind Dash",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
@@ -565,7 +565,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Chillwind Dash",
 
       attack: {
-        hit: `Each subject takes 4d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.

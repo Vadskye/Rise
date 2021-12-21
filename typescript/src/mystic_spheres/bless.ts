@@ -43,11 +43,11 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
-        Each subject is immune to being \\slowed, \\immobilized, and \\paralyzed.
+        Each target is immune to being \\slowed, \\immobilized, and \\paralyzed.
       `,
       rank: 4,
       scaling: {
-        6: `Each subject also gains a +4 bonus to the \\textit{escape grapple} ability (see \\pcref{Grapple Actions}).`,
+        6: `Each target also gains a +4 bonus to the \\textit{escape grapple} ability (see \\pcref{Grapple Actions}).`,
       },
       type: "Attune (target)",
     },
@@ -58,7 +58,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
-        Each subject gains a +5 foot \\glossterm{magic bonus} to speed with all its \\glossterm{movement modes}.
+        Each target gains a +5 foot \\glossterm{magic bonus} to speed with all its \\glossterm{movement modes}.
       `,
       rank: 2,
       scaling: {
@@ -73,7 +73,7 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Whenever each subject finishes a \\glossterm{long rest}, it removes an additional \\glossterm{vital wound} (see \\pcref{Removing Vital Wounds}).
+        Whenever each target finishes a \\glossterm{long rest}, it removes an additional \\glossterm{vital wound} (see \\pcref{Removing Vital Wounds}).
       `,
       rank: 4,
       scaling: {
@@ -88,7 +88,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        At the end of each round, each subject regains 2d8 \\glossterm{hit points}.
+        At the end of each round, each target regains 2d8 \\glossterm{hit points}.
       `,
       rank: 5,
       scaling: {
@@ -106,14 +106,14 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject becomes proficient with one additional weapon group and all types of armor.
+        Each target becomes proficient with one additional weapon group and all types of armor.
         This does not grant proficiency with exotic weapons or improvised weapons.
       `,
       rank: 1,
       scaling: {
-        3: `Each subject also gains proficiency with all exotic weapons from weapon groups that it would be proficient with without the effects of this spell.`,
-        5: `Each subject becomes proficient with all weapon groups.`,
-        7: `Each subject becomes proficient with all exotic weapons regardless of its prior proficiencies.`,
+        3: `Each target also gains proficiency with all exotic weapons from weapon groups that it would be proficient with without the effects of this spell.`,
+        5: `Each target becomes proficient with all weapon groups.`,
+        7: `Each target becomes proficient with all exotic weapons regardless of its prior proficiencies.`,
       },
       type: "Attune (target)",
     },
@@ -210,7 +210,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject gains a +4 bonus to \\glossterm{defenses} against \\glossterm{poisons} and \\glossterm{diseases}.
+        Each target gains a +4 bonus to \\glossterm{defenses} against \\glossterm{poisons} and \\glossterm{diseases}.
         In addition, at the end of each round, it automatically gains one success to resist an active poison or disease affecting it that was not applied during that round.
       `,
       rank: 3,
@@ -227,7 +227,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject gains a +4 bonus to \\glossterm{defenses} against \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
+        Each target gains a +4 bonus to \\glossterm{defenses} against \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
         In addition, at the end of each round, it automatically removes one \\glossterm{condition} from a Compulsion or Emotion effect that was not applied during that round.
       `,
       rank: 3,
@@ -244,7 +244,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+        Each target gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
       `,
       rank: 2,
       scaling: {
@@ -260,7 +260,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Whenever each subject would gain a \\glossterm{condition}, it can choose to negate that condition.
+        Whenever each target would gain a \\glossterm{condition}, it can choose to negate that condition.
         After a creature negates a condition in this way, this spell ends for that creature.
       `,
       rank: 3,
@@ -303,8 +303,8 @@ export const bless: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
-        Each subject gains a +2 \\glossterm{magic bonus} to checks using the chosen attribute.
-        In addition, if you choose Strength, each subject gains a +2 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
+        Each target gains a +2 \\glossterm{magic bonus} to checks using the chosen attribute.
+        In addition, if you choose Strength, each target gains a +2 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
       `,
       rank: 3,
       scaling: {
@@ -320,9 +320,9 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject gains a +4 \\glossterm{magic bonus} to its maximum \\glossterm{hit points}.
+        Each target gains a +4 \\glossterm{magic bonus} to its maximum \\glossterm{hit points}.
         In addition, it immediately gains that many hit points.
-        When this ability ends, each subject loses \\glossterm{hit points} equal to the number of hit points it gained this way.
+        When this ability ends, each target loses \\glossterm{hit points} equal to the number of hit points it gained this way.
       `,
       rank: 2,
       scaling: {
@@ -338,7 +338,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject is never \\unaware or \\partiallyunaware.
+        Each target is never \\unaware or \\partiallyunaware.
       `,
       rank: 6,
       type: "Attune (target)",
@@ -350,7 +350,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        At the end of each round, each subject removes one \\glossterm{condition} of its choice affecting it.
+        At the end of each round, each target removes one \\glossterm{condition} of its choice affecting it.
         This cannot remove a condition applied during the current round.
       `,
       rank: 7,
@@ -363,13 +363,13 @@ export const bless: MysticSphere = {
       // This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject cannot fall asleep or be knocked unconscious, except by \\glossterm{vital wounds}.
+        Each target cannot fall asleep or be knocked unconscious, except by \\glossterm{vital wounds}.
         If it is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
       `,
       rank: 1,
       scaling: {
-        3: `This effect also protects each subject from being knocked unconscious by vital wounds.`,
-        5: `Each subject is also immune to being \\dazed or \\stunned.`,
+        3: `This effect also protects each target from being knocked unconscious by vital wounds.`,
+        5: `Each target is also immune to being \\dazed or \\stunned.`,
         7: `You can cast this spell as a \\glossterm{minor action}.`,
       },
       type: "Attune (target)",
@@ -380,8 +380,8 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject gains a +4 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, each subject gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+        Each target gains a +4 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
+        In addition, each target gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
       `,
       rank: 4,
       scaling: {
@@ -399,7 +399,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each subject gains a +4 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
+        Each target gains a +4 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
       `,
       rank: 2,
       scaling: {
@@ -415,7 +415,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Whenever each subject would gain a \\glossterm{vital wound}, it can choose to negate that vital wound.
+        Whenever each target would gain a \\glossterm{vital wound}, it can choose to negate that vital wound.
         After negating a vital wound for a creature in this way, this spell ends for that creature.
       `,
       rank: 7,

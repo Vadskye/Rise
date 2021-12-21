@@ -11,7 +11,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
         Your \\glossterm{power} with the strike is halved.
-        The attack is made against each subject's Reflex defense instead of its Armor defense.
+        The attack is made against each target's Reflex defense instead of its Armor defense.
       `,
       rank: 1,
       scaling: {

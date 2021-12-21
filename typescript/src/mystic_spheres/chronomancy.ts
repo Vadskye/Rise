@@ -93,7 +93,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each subject acts at half speed within the area.
+          Each target acts at half speed within the area.
           It skips every other round, starting with the round after it becomes affected by this affect.
         `,
         targeting: `
@@ -142,7 +142,7 @@ export const chronomancy: MysticSphere = {
       name: "Mass Slow",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        crit: `The effect becomes a \\glossterm{condition} on each target.`,
         // No relevant glance effect
         hit: `Each target is \\glossterm{briefly} \\slowed.`,
         targeting: `

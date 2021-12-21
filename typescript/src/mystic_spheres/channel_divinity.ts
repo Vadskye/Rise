@@ -272,7 +272,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each subject takes 1d10 + half \\glossterm{power} energy damage.
+          Each target takes 1d10 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
@@ -288,7 +288,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each subject takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes 2d8 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -304,7 +304,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each subject takes 4d6 + half \\glossterm{power} energy damage.
+          Each target takes 4d6 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
@@ -357,9 +357,9 @@ export const channelDivinity: MysticSphere = {
       name: "Divine Presence",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
+        crit: "The effect becomes a \\glossterm{condition} on each target.",
         hit: `
-          Each subject is \\glossterm{briefly} \\shaken by you.
+          Each target is \\glossterm{briefly} \\shaken by you.
         `,
         targeting: `
           At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
@@ -378,7 +378,7 @@ export const channelDivinity: MysticSphere = {
       functionsLike: {
         name: "divine presence",
         exceptThat: `
-          each subject is \\frightened by you instead of shaken.
+          each target is \\frightened by you instead of shaken.
         `,
       },
       rank: 7,

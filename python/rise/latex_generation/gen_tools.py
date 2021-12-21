@@ -317,7 +317,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each subject takes 1d10+2 fire damage.
+                On a hit, each target takes 1d10+2 fire damage.
             """,
             short_description="Throw to deal 1d10+2 fire damage in an area",
         ),
@@ -330,7 +330,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each subject takes 2d10+4 fire damage.
+                On a hit, each target takes 2d10+4 fire damage.
             """,
             short_description="Throw to deal 2d10+4 fire damage in an area",
         ),
@@ -343,7 +343,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each subject takes 4d8+12 fire damage.
+                On a hit, each target takes 4d8+12 fire damage.
             """,
             short_description="Throw to deal 4d8+12 fire damage in an area",
         ),
@@ -407,7 +407,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each subject takes 1d6+1 sonic damage.
+                On a hit, each target takes 1d6+1 sonic damage.
                 Each creature that loses \\glossterm<hit points> from this damage is \\glossterm<deafened> as a \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d6+1 sonic damage and deafen",
@@ -421,7 +421,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each subject takes 1d10+3 sonic damage.
+                On a hit, each target takes 1d10+3 sonic damage.
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened and \\dazed as a single \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d10+3 sonic damage, deafen, and daze",
@@ -435,7 +435,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each subject takes 2d8+5 sonic damage.
+                On a hit, each target takes 2d8+5 sonic damage.
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened and \\stunned as a single \\glossterm<condition>.
             """,
             short_description="Throw to deal 2d8+5 sonic damage, deafen, and stun",
@@ -756,7 +756,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +8 attack vs. Reflex against everything within a \\smallarea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each subject takes 1d10+2 damage.
+                On a hit, each target takes 1d10+2 damage.
             """,
             short_description="Deals fire damage in a small area",
         ),
@@ -771,7 +771,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +15 attack vs. Reflex against everything within a \\largearea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each subject takes 2d8+4 damage.
+                On a hit, each target takes 2d8+4 damage.
             """,
             short_description="Deals fire damage in a large area",
         ),
@@ -786,7 +786,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +22 attack vs. Reflex against everything within a \\largearea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each subject takes 4d8+6 damage.
+                On a hit, each target takes 4d8+6 damage.
             """,
             short_description="Deals massive fire damage in a large area",
         ),
