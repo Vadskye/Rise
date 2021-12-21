@@ -11,17 +11,17 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose one Medium or smaller \\glossterm{unattended} object within \\shortrange.
-        You can telekinetically control the subject object as if you were holding it in an extra hand.
+        You can telekinetically control the target object as if you were holding it in an extra hand.
         Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \\glossterm{power}.
-        At the end of each round, if the subject is outside of this ability's range, this ability ends.
+        At the end of each round, if the target is outside of this ability's range, this ability ends.
 
-        During the movement phase, you can move the subject up to five feet in any direction.
+        During the movement phase, you can move the target up to five feet in any direction.
         You use your \\glossterm{power} instead of your Strength to determine your \\glossterm{carrying capacity} when moving objects in this way (see \\pcref{Weight Limits}).
       `,
       scaling: {
-        2: `You can move the subject up to ten feet in any direction.`,
+        2: `You can move the target up to ten feet in any direction.`,
         4: `The range increases to \\medrange.`,
-        6: `You can move the subject up to thirty feet in any direction.`,
+        6: `You can move the target up to thirty feet in any direction.`,
       },
       type: "Sustain (minor)",
     },
@@ -50,7 +50,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         crit: `The difficulty value of the Strength check increases by 10.`,
-        hit: `As a \\glossterm{condition}, the subject is unable to move closer to you without effort.
+        hit: `As a \\glossterm{condition}, the target is unable to move closer to you without effort.
         This does not impede its movement unless its movement would decrease the distance between it and you.
         As part of movement, it can make a Strength check with a \\glossterm{difficulty value} of 5.
         If it succeeds, it can move towards you at half speed.`,
@@ -80,7 +80,7 @@ export const telekinesis: MysticSphere = {
       name: "Force Slam",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
@@ -94,7 +94,7 @@ export const telekinesis: MysticSphere = {
       name: "Greater Force Slam",
 
       attack: {
-        hit: `The subject takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 4d6 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
         `,
@@ -108,7 +108,7 @@ export const telekinesis: MysticSphere = {
       name: "Supreme Force Slam",
 
       attack: {
-        hit: `The subject takes 6d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 6d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\distrange.
         `,
@@ -199,7 +199,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\slowed as a \\glossterm{condition}.`,
+        hit: `The target is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one Large or smaller target within \\medrange.
         `,
@@ -249,7 +249,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `You \\glossterm{knockback} each subject up to 15 feet in a straight line away from you.
         Moving a target upwards costs twice the normal movement cost.
-        If the subject impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 + half \\glossterm{power} instead of the normal knockback damage.
+        If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 + half \\glossterm{power} instead of the normal knockback damage.
         Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\areasmall radius from you.
@@ -279,8 +279,8 @@ export const telekinesis: MysticSphere = {
       name: "Distant Shove",
       attack: {
         hit: `
-          You \\glossterm{push} the subject up to 30 feet in a straight line.
-          If the subject impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d8 + \\glossterm{power}.
+          You \\glossterm{push} the target up to 30 feet in a straight line.
+          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d8 + \\glossterm{power}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything Large or smaller within \\shortrange of you.
@@ -304,9 +304,9 @@ export const telekinesis: MysticSphere = {
       name: "Toss Foe",
 
       attack: {
-        hit: `The subject takes 1d6 bludgeoning damage.
+        hit: `The target takes 1d6 bludgeoning damage.
         If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
-        Moving the subject upwards costs twice the normal movement cost.`,
+        Moving the target upwards costs twice the normal movement cost.`,
         targeting: `
           Make an attack vs. Fortitude against anything Large or smaller within \\medrange.
         `,
@@ -348,13 +348,13 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{unattended} object within \\medrange.
-        The subject is reduced to half of its normal weight.
+        The target is reduced to half of its normal weight.
         This gives it a +4 \\glossterm{magic bonus} to the Jump skill, if applicable, and makes it easier to lift and move.
       `,
       rank: 1,
       scaling: {
         3: `The bonus increases to +6.`,
-        5: `The subject is reduced to a quarter of its normal weight. In addition, the bonus increases to +8.`,
+        5: `The target is reduced to a quarter of its normal weight. In addition, the bonus increases to +8.`,
         7: `The bonus increases to +10.`,
       },
       type: "Attune (self)",
@@ -542,7 +542,7 @@ export const telekinesis: MysticSphere = {
       name: "Distant Grasp",
       attack: {
         hit: `
-          The subject is \\grappled by telekinetic force.
+          The target is \\grappled by telekinetic force.
           You must use the \\textit{maintain grapple} ability each round to maintain the grapple, as normal for grappling.
           You may not use your Strength to maintain the grapple.
         `,

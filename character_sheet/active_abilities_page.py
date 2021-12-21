@@ -443,8 +443,8 @@ def universal_abilities():
             You reroll any attack or check you just made and gain a +2 bonus.
         """),
         universal_ability_button("Dirty Trick", """
-            Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the subject suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
-            If the subject is at its maximum hit points, this is a brief effect. Otherwise, this effect is a condition.
+            Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the target suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
+            If the target is at its maximum hit points, this is a brief effect. Otherwise, this effect is a condition.
          """, attack={"accuracy":"@{accuracy}", "defense":"Fort or Ref"}),
         universal_ability_button("Disarm", """
             Make a melee strike against an object's Reflex defense.
@@ -481,7 +481,7 @@ def universal_abilities():
         """),
         universal_ability_button("Trip", """
             Make a melee attack with a free hand against a creature's Reflex defenses. For each size category by which the target is larger than you, you take a -4 penalty to accuracy.
-            On a hit, the subject becomes prone.
+            On a hit, the target becomes prone.
          """, attack={"accuracy":"@{accuracy}", "defense":"Ref"}),
         universal_ability_button("Total Defense", """
             You gain a +2 bonus to your defenses until the end of the round. Because this ability has the Swift tag, this improves your defenses against attacks made against you during the current phase.

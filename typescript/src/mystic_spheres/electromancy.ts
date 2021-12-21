@@ -10,7 +10,7 @@ export const electromancy: MysticSphere = {
       name: "Spark",
 
       attack: {
-        hit: `The subject takes 2 electricity damage.`,
+        hit: `The target takes 2 electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against anything within \\shortrange.
         `,
@@ -29,7 +29,7 @@ export const electromancy: MysticSphere = {
       effect: `
         Choose one Small or smaller unattended metal object within \\medrange.
         It pulls itself toward metal objects within 1 foot of it.
-        Smaller objects are typically pulled towards the subject, while it moves itself towards larger objects.
+        Smaller objects are typically pulled towards the target, while it moves itself towards larger objects.
         Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty value} 10 Strength check to separate the two objects.
       `,
       scaling: {
@@ -59,7 +59,7 @@ export const electromancy: MysticSphere = {
       name: "Shocking Grasp",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} electricity damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} electricity damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -76,7 +76,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d8 + \\glossterm{power} electricity damage.
+          The target takes 2d8 + \\glossterm{power} electricity damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
@@ -95,7 +95,7 @@ export const electromancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater shocking grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
       },
       rank: 7,
       scaling: "damage",
@@ -242,7 +242,7 @@ export const electromancy: MysticSphere = {
       name: "Electric Jolt",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} electricity damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
         `,
@@ -256,7 +256,7 @@ export const electromancy: MysticSphere = {
       name: "Greater Electric Jolt",
 
       attack: {
-        hit: `The subject takes 4d6 + \\glossterm{power} electricity damage.`,
+        hit: `The target takes 4d6 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\longrange.
         `,
@@ -270,7 +270,7 @@ export const electromancy: MysticSphere = {
       name: "Supreme Electric Jolt",
 
       attack: {
-        hit: `The subject takes 6d10 + \\glossterm{power} electricity damage.`,
+        hit: `The target takes 6d10 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\distrange.
         `,
@@ -284,7 +284,7 @@ export const electromancy: MysticSphere = {
       name: "Electroshock",
 
       attack: {
-        hit: `The subject takes 1d6 electricity damage.
+        hit: `The target takes 1d6 electricity damage.
         If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -299,7 +299,7 @@ export const electromancy: MysticSphere = {
       name: "Greater Electroshock",
 
       attack: {
-        hit: `The subject takes 2d8 electricity damage.
+        hit: `The target takes 2d8 electricity damage.
         If it loses \\glossterm{hit points} from this damage, it is \\confused as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -439,8 +439,8 @@ export const electromancy: MysticSphere = {
       attack: {
         // +2d from level, add trivial extra benefit for fun
         hit: `
-          The subject takes 4d10 + \\glossterm{power} electricity damage.
-          In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
+          The target takes 4d10 + \\glossterm{power} electricity damage.
+          In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
@@ -457,9 +457,9 @@ export const electromancy: MysticSphere = {
 
       attack: {
         crit: `Each bolt deals double damage.`,
-        hit: `As a \\glossterm{condition}, the subject attracts lightning.
-          As a \\glossterm{minor action}, you can call a bolt of lightning to strike the subject.
-          When you do, the subject takes 2d8 electricity damage.
+        hit: `As a \\glossterm{condition}, the target attracts lightning.
+          As a \\glossterm{minor action}, you can call a bolt of lightning to strike the target.
+          When you do, the target takes 2d8 electricity damage.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\longrange.
@@ -509,11 +509,11 @@ export const electromancy: MysticSphere = {
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{brief} effect or \\glossterm{condition}.
         This cannot remove an effect applied during the current round.
-        For each effect removed this way, you deal the subject 4 electricity damage.
+        For each effect removed this way, you deal the target 4 electricity damage.
       `,
       rank: 4,
       scaling: {
-        6: `The subject can remove two effects.`,
+        6: `The target can remove two effects.`,
       },
       type: "Instant",
     },
@@ -522,7 +522,7 @@ export const electromancy: MysticSphere = {
       name: "Dazing Shock",
       attack: {
         hit: `
-          The subject takes 2d6 + \\glossterm{power} electricity damage.
+          The target takes 2d6 + \\glossterm{power} electricity damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
@@ -538,7 +538,7 @@ export const electromancy: MysticSphere = {
       name: "Stunning Shock",
       attack: {
         hit: `
-          The subject takes 4d8 + \\glossterm{power} electricity damage.
+          The target takes 4d8 + \\glossterm{power} electricity damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
         `,
         targeting: `

@@ -155,11 +155,11 @@ fn it_calculates_level_21_fighter_attacks() {
     fighter.weapons.push(StandardWeapon::Broadsword.weapon());
     assert_eq!(
         vec![
-            "Certain Broadsword +16 (The subject takes 4d8 slashing damage.)",
-            "Generic Scaling Broadsword +11 (The subject takes 4d8+8 slashing damage.)",
-            "Mighty Broadsword +9 (The subject takes 4d8+24 slashing damage.)",
+            "Certain Broadsword +16 (The target takes 4d8 slashing damage.)",
+            "Generic Scaling Broadsword +11 (The target takes 4d8+8 slashing damage.)",
+            "Mighty Broadsword +9 (The target takes 4d8+24 slashing damage.)",
             // +2d from discipline, +2d from equip train, +2d from martial mastery
-            "Broadsword +11 (The subject takes 4d8 slashing damage.)",
+            "Broadsword +11 (The target takes 4d8 slashing damage.)",
         ],
         fighter
             .calc_all_attacks()
@@ -321,10 +321,10 @@ fn standard_character_statistics_level_10() {
     );
     assert_eq!(
         vec![
-            "Certain Broadsword +10 (The subject takes 2d6+4 slashing damage.)",
-            "Generic Scaling Broadsword +7 (The subject takes 2d6+11 slashing damage.)",
-            "Mighty Broadsword +5 (The subject takes 2d6+17 slashing damage.)",
-            "Broadsword +7 (The subject takes 2d6+9 slashing damage.)",
+            "Certain Broadsword +10 (The target takes 2d6+4 slashing damage.)",
+            "Generic Scaling Broadsword +7 (The target takes 2d6+11 slashing damage.)",
+            "Mighty Broadsword +5 (The target takes 2d6+17 slashing damage.)",
+            "Broadsword +7 (The target takes 2d6+9 slashing damage.)",
         ],
         creature
             .calc_all_attacks()
@@ -426,10 +426,10 @@ fn standard_character_statistics_level_20() {
     );
     assert_eq!(
         vec![
-            "Certain Broadsword +17 (The subject takes 4d8+8 slashing damage.)",
-            "Generic Scaling Broadsword +12 (The subject takes 4d8+25 slashing damage.)",
-            "Mighty Broadsword +10 (The subject takes 4d8+41 slashing damage.)",
-            "Broadsword +12 (The subject takes 4d8+17 slashing damage.)"
+            "Certain Broadsword +17 (The target takes 4d8+8 slashing damage.)",
+            "Generic Scaling Broadsword +12 (The target takes 4d8+25 slashing damage.)",
+            "Mighty Broadsword +10 (The target takes 4d8+41 slashing damage.)",
+            "Broadsword +12 (The target takes 4d8+17 slashing damage.)"
         ],
         creature
             .calc_all_attacks()

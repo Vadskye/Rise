@@ -177,7 +177,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike with a +2 damage bonus using a slashing weapon.
-        If the subject is wearing metal armor or is significantly composed of metal, damage dealt by the strike is fire damage in addition to its normal damage types.
+        If the target is wearing metal armor or is significantly composed of metal, damage dealt by the strike is fire damage in addition to its normal damage types.
       `,
       rank: 3,
       scaling: {

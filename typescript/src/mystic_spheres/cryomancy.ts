@@ -11,7 +11,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2 cold damage.
+          The target takes 2 cold damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
@@ -47,7 +47,7 @@ export const cryomancy: MysticSphere = {
       name: "Freezing Grasp",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} cold damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} cold damage.`,
         targeting: `
         You must have a \\glossterm{free hand} to cast this spell.
 
@@ -64,7 +64,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d8 + \\glossterm{power} cold damage.
+          The target takes 2d8 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
@@ -135,7 +135,7 @@ export const cryomancy: MysticSphere = {
       name: "Frozen Legs",
 
       attack: {
-        hit: `The subject takes 2d8 cold damage.
+        hit: `The target takes 2d8 cold damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -197,7 +197,7 @@ export const cryomancy: MysticSphere = {
       name: "Ice Spike",
 
       attack: {
-        hit: `The subject takes 2d8 + \\glossterm{power} piercing and cold damage.`,
+        hit: `The target takes 2d8 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
         `,
@@ -212,7 +212,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Ice Spike",
 
       attack: {
-        hit: `The subject takes 4d10 + \\glossterm{power} piercing and cold damage.`,
+        hit: `The target takes 4d10 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
@@ -228,13 +228,13 @@ export const cryomancy: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject takes 1d4 cold damage.
+        The target takes 1d4 cold damage.
         In addition, it gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
       `,
       rank: 1,
       scaling: {
         3: `The number of additional successes increases to two.
-            The subject can split these successes among any number of different poisons affecting it.`,
+            The target can split these successes among any number of different poisons affecting it.`,
         5: `The number of additional successes increases to three.`,
         7: `The number of additional successes increases to four.`,
       },
@@ -246,7 +246,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d10 + half \\glossterm{power} cold damage and is \\glossterm{briefly} \\dazed.
+          The target takes 1d10 + half \\glossterm{power} cold damage and is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -263,7 +263,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d10 + half \\glossterm{power} cold damage.
+          The target takes 2d10 + half \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
           Otherwise, it is briefly \\dazed.
         `,
@@ -305,8 +305,8 @@ export const cryomancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        3: `The subject can also move on top of rough or stormy water.`,
-        5: `The subject no longer treats the water as difficult terrain.`,
+        3: `The target can also move on top of rough or stormy water.`,
+        5: `The target no longer treats the water as difficult terrain.`,
       },
       type: "Attune (target)",
     },
@@ -359,7 +359,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d6 cold damage.
+          The target takes 1d6 cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
           This condition must be removed twice before the effect ends.
         `,
@@ -448,7 +448,7 @@ export const cryomancy: MysticSphere = {
 
       effect: `
         Choose one pool of \\glossterm{unattended}, nonmagical water within \\shortrange.
-        This spell creates up to three weapons, suits of body armor, or shields from the subject pool of water.
+        This spell creates up to three weapons, suits of body armor, or shields from the target pool of water.
         You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy armor.
         The pool of water targeted must be at least as large as the largest item you create.
 
@@ -514,9 +514,9 @@ export const cryomancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         glance:
-          "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
+          "The effect lasts \\glossterm{briefly}. The target still takes damage during the next round.",
         hit: `
-          As a \\glossterm{condition}, the subject is seared by painful cold.
+          As a \\glossterm{condition}, the target is seared by painful cold.
           % TODO: standardize "ignite" damage
           At the end of each round, it takes 2d10 + half \\glossterm{power} cold damage.
         `,
@@ -580,7 +580,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d6 + \\glossterm{power} cold damage.
+          The target takes 2d6 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
@@ -597,7 +597,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d10 + \\glossterm{power} cold damage and is \\glossterm{briefly} \\slowed.
+          The target takes 2d10 + \\glossterm{power} cold damage and is \\glossterm{briefly} \\slowed.
           After it stops being slowed, it is immune to being slowed in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -615,7 +615,7 @@ export const cryomancy: MysticSphere = {
       // TODO: double check rank
       attack: {
         hit: `
-          The subject takes 4d8 + \\glossterm{power} cold damage.
+          The target takes 4d8 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -634,10 +634,10 @@ export const cryomancy: MysticSphere = {
       castingTime: "one minute",
       effect: `
         Choose either yourself or an \\glossterm{ally} or unattended object within \\medrange.
-        The subject suffers no harm from being in a cold environment.
+        The target suffers no harm from being in a cold environment.
         It can exist comfortably in conditions as low as -50 degrees Fahrenheit.
         Its equipment, if any, is also protected.
-        This does not protect the subject from cold damage.
+        This does not protect the target from cold damage.
       `,
       rank: 1,
       type: "Attune (ritual)",

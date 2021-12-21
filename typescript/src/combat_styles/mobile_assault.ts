@@ -228,7 +228,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to half your \\glossterm{land speed} (see \\pcref{Leap}).
         You can make a melee \\glossterm{strike} from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
-        If you hit with the strike, the subject takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
+        If you hit with the strike, the target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
       `,
       rank: 6,
       type: "Instant",
@@ -240,7 +240,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         Make an attack vs. Reflex against one creature adjacent to you that is no more than one size category larger than you.
         Your \\glossterm{accuracy} with this attack is equal to your Jump skill.
-        If you hit, you leap up over the subject's body, using its body as a springboard if necessary, and land in any space adjacent to it.
+        If you hit, you leap up over the target's body, using its body as a springboard if necessary, and land in any space adjacent to it.
         % TODO: wording
         Your final destination cannot be more distant from your starting location than half your \\glossterm{land speed}.
         You can make a \\glossterm{strike} from any location you occupy during the leap.

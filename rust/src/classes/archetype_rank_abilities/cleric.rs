@@ -184,9 +184,9 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 As a standard action, you can use the \ability{turn undead} ability.
                 \begin{instantability}{Turn Undead}
                     Make an attack vs. Mental against all undead creatures within a \medarea radius from you.
-                    \hit Each subject is \frightened by you as a \glossterm{condition}.
+                    \hit Each target is \frightened by you as a \glossterm{condition}.
                     Once this effect ends, the creature becomes immune to this effect until it takes a \glossterm{short rest}.
-                    \crit As above, and each subject with no remaining \glossterm{damage resistance} immediately dies.
+                    \crit As above, and each target with no remaining \glossterm{damage resistance} immediately dies.
 
                     \rankline
                     This attack's accuracy increases by \plus2 for each rank beyond 2.
@@ -389,8 +389,8 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
                     % +1d in exchange for not applying power to self
-                    The subject regains 2d6 \glossterm{hit points}.
-                    If the subject is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
+                    The target regains 2d6 \glossterm{hit points}.
+                    If the target is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
                     After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
                     \rankline
@@ -431,12 +431,12 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
 
                     Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
-                    The subject removes one of its \glossterm{vital wounds}.
+                    The target removes one of its \glossterm{vital wounds}.
 
                     \rankline
-                    \rank{5} If the subject's level is at least two levels lower than your level,
+                    \rank{5} If the target's level is at least two levels lower than your level,
                         you do not increase your fatigue level when you use this ability.
-                    \rank{7} The subject can remove an additional \glossterm{vital wound}.
+                    \rank{7} The target can remove an additional \glossterm{vital wound}.
                 \end{instantability}
 
             ",
@@ -511,12 +511,12 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit Each subject is \glossterm{briefly} \dazed.
+                    \hit Each target is \glossterm{briefly} \dazed.
 
                     \rankline
-                    \rank{3} Each subject with no remaining \glossterm{damage resistance} is \stunned instead of dazed.
-                    \rank{5} Each subject is stunned instead of dazed.
-                    \rank{7} Each subject with no remaining \glossterm{damage resistance} is \confused instead of stunned.
+                    \rank{3} Each target with no remaining \glossterm{damage resistance} is \stunned instead of dazed.
+                    \rank{5} Each target is stunned instead of dazed.
+                    \rank{7} Each target with no remaining \glossterm{damage resistance} is \confused instead of stunned.
                 \end{instantability}
             ",
             modifiers: None,
@@ -571,10 +571,10 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit Each subject is \shaken by you as a \glossterm{condition}.
+                    \hit Each target is \shaken by you as a \glossterm{condition}.
 
                     \rankline
-                    \rank{7} Each subject with no remaining \glossterm{damage resistance} is \frightened instead of shaken.
+                    \rank{7} Each target with no remaining \glossterm{damage resistance} is \frightened instead of shaken.
                 \end{instantability}
             ",
             modifiers: None,
@@ -598,7 +598,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit The subject is \stunned until it finishes a \glossterm{long rest}.
+                    \hit The target is \stunned until it finishes a \glossterm{long rest}.
                     At the end of that time, if its Willpower is 0 or lower and it is at least 3 levels lower than you, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
                 \end{instantability}
             ",

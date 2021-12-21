@@ -40,7 +40,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         Choose one Large or smaller \\glossterm{unattended}, nonmagical object within \\medrange.
         In addition, choose any number of hours, up to 24 hours.
-        The subject ages as if that much time had passed.
+        The target ages as if that much time had passed.
         When this spell ends, the object returns to its original state.
       `,
       scaling: {
@@ -57,7 +57,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
-        hit: `The subject is \\slowed until it takes a \\glossterm{short rest}.`,
+        hit: `The target is \\slowed until it takes a \\glossterm{short rest}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -74,10 +74,10 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
-        hit: `At the end of each round, if the subject lost hit points that round, it has a 50\\% chance to be sent forward in time by one round.
+        hit: `At the end of each round, if the target lost hit points that round, it has a 50\\% chance to be sent forward in time by one round.
         During the next round, it ceases to exist.
         At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
-        This effect lasts until the subject takes a \\glossterm{short rest}.`,
+        This effect lasts until the target takes a \\glossterm{short rest}.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -113,7 +113,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\slowed as a \\glossterm{condition}.`,
+        hit: `The target is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -128,7 +128,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\slowed as a \\glossterm{condition}.`,
+        hit: `The target is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\distrange.
         `,
@@ -158,9 +158,9 @@ export const chronomancy: MysticSphere = {
       name: "Greater Slow",
 
       attack: {
-        crit: `The subject is \\immobilized instead of slowed.`,
+        crit: `The target is \\immobilized instead of slowed.`,
         hit: `
-          The subject is \\slowed as a \\glossterm{condition}.
+          The target is \\slowed as a \\glossterm{condition}.
           The condition must be removed twice before the effect ends.
         `,
         targeting: `
@@ -176,8 +176,8 @@ export const chronomancy: MysticSphere = {
       name: "Stutterstop",
 
       attack: {
-        crit: `The subject is immobilized every round.`,
-        hit: `As a \\glossterm{condition}, the subject is \\slowed and randomly immobilized.
+        crit: `The target is immobilized every round.`,
+        hit: `As a \\glossterm{condition}, the target is \\slowed and randomly immobilized.
         At the start of each round, it has a 50\\% chance to be \\immobilized during that round.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -193,8 +193,8 @@ export const chronomancy: MysticSphere = {
       name: "Mental Lag",
 
       attack: {
-        crit: `The subject \\stunned instead of dazed.`,
-        hit: `The subject is \\slowed and \\dazed as a single \\glossterm{condition}.`,
+        crit: `The target \\stunned instead of dazed.`,
+        hit: `The target is \\slowed and \\dazed as a single \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
@@ -255,15 +255,15 @@ export const chronomancy: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        You reach into a possible future and create a duplicate of the subject.
-        The duplicate is identical in all ways to the subject when the spell resolves.
+        You reach into a possible future and create a duplicate of the target.
+        The duplicate is identical in all ways to the target when the spell resolves.
 
-        The subject and its duplicate can act during the next round.
-        At the end of that round, the subject and its duplicate cease to exist.
-        During that round, time does not pass for the subject.
-        At the end of the following round, the subject reappears in the place where it ceased to exist.
+        The target and its duplicate can act during the next round.
+        At the end of that round, the target and its duplicate cease to exist.
+        During that round, time does not pass for the target.
+        At the end of the following round, the target reappears in the place where it ceased to exist.
         If that space is occupied, it appears in the closest unoccupied space.
-        When the subject reappears, its condition is unchanged from when it left.
+        When the target reappears, its condition is unchanged from when it left.
         Its \\glossterm{hit points}, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
 
         The duplicate is fragile, and its actions are limited.
@@ -273,7 +273,7 @@ export const chronomancy: MysticSphere = {
       rank: 5,
       scaling: {
         7: `If you cast this spell as a standard action, you can choose to have the duplicate persist for two rounds instead of one.
-                If you do, the subject disappears for two rounds at the same time as the duplicate.`,
+                If you do, the target disappears for two rounds at the same time as the duplicate.`,
       },
       type: "Duration",
     },
@@ -284,18 +284,18 @@ export const chronomancy: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose either yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
-        You send the subject into the future, causing it to temporarily cease to exist.
-        When you cast this spell, you choose how many rounds the subject ceases to exist for, up to a maximum of five rounds.
+        You send the target into the future, causing it to temporarily cease to exist.
+        When you cast this spell, you choose how many rounds the target ceases to exist for, up to a maximum of five rounds.
         At the end of the last round, it reappears in the same location where it disappeared.
 
-        The area the subject occupied can be physically crossed, but it is treated as an invalid destination for teleportation and other similar magic.
-        When the subject reappears, all of its surroundings are adjusted as if the object had retroactively always existed in its space.
-        For example, if the location is occupied by a creature that walked into the area, the creature is relocated to the closest unoccupied space along the path it took to reach the subject.
+        The area the target occupied can be physically crossed, but it is treated as an invalid destination for teleportation and other similar magic.
+        When the target reappears, all of its surroundings are adjusted as if the object had retroactively always existed in its space.
+        For example, if the location is occupied by a creature that walked into the area, the creature is relocated to the closest unoccupied space along the path it took to reach the target.
       `,
       rank: 2,
       scaling: {
-        4: `The maximum size of the subject increases to Large.`,
-        6: `The maximum size of the subject increases to Huge.`,
+        4: `The maximum size of the target increases to Large.`,
+        6: `The maximum size of the target increases to Huge.`,
       },
       type: "Instant",
     },
@@ -338,7 +338,7 @@ export const chronomancy: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} within \\medrange.
-        The subject is placed into stasis, rendering it unconscious.
+        The target is placed into stasis, rendering it unconscious.
         While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
 
         % TODO: wording
@@ -346,7 +346,7 @@ export const chronomancy: MysticSphere = {
         If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
       `,
       rank: 4,
-      scaling: { 6: `The maximum size of the subject increases to Large.` },
+      scaling: { 6: `The maximum size of the target increases to Large.` },
       type: "Attune (self)",
     },
 
@@ -355,20 +355,20 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        You lock the state of the subject's body in time.
-        Note the subject's current \\glossterm{hit points}, and \\glossterm{damage resistance}.
-        If the subject dies, this effect ends immediately.
+        You lock the state of the target's body in time.
+        Note the target's current \\glossterm{hit points}, and \\glossterm{damage resistance}.
+        If the target dies, this effect ends immediately.
 
-        As a \\glossterm{standard action}, you can reach through time to restore the subject's state.
-        If you do, the subject's \\glossterm{hit points} and \\glossterm{damage resistance} become identical to what they were when you cast this spell.
-        This does not affect any other properties of the subject, such as any vital wounds gained or resources expended.
-        After you restore the subject's state in this way, it increases its \\glossterm{fatigue level} by one, and the spell ends.
+        As a \\glossterm{standard action}, you can reach through time to restore the target's state.
+        If you do, the target's \\glossterm{hit points} and \\glossterm{damage resistance} become identical to what they were when you cast this spell.
+        This does not affect any other properties of the target, such as any vital wounds gained or resources expended.
+        After you restore the target's state in this way, it increases its \\glossterm{fatigue level} by one, and the spell ends.
       `,
       rank: 4,
       scaling: {
         6: `
-          When you cast the spell, you may choose to also note the subject's current \\glossterm{conditions}.
-          If you do, the restoration effect also resets the subject's conditions back to their initial state.
+          When you cast the spell, you may choose to also note the target's current \\glossterm{conditions}.
+          If you do, the restoration effect also resets the target's conditions back to their initial state.
       `,
       },
       type: "Sustain (minor)",
@@ -424,7 +424,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
-          As a \\glossterm{condition}, the subject's body temporarily ages to become extremely old.
+          As a \\glossterm{condition}, the target's body temporarily ages to become extremely old.
           It is \\slowed and \\stunned.
           If it was already suffering age-related penalties, it is also \\blinded.
         `,
@@ -464,7 +464,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d10 + half \\glossterm{power} energy damage.
+          The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
           After it stops being slowed, it is immune to being slowed in this way until it takes a \\glossterm{short rest}.
         `,
@@ -585,7 +585,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{brief} effect or \\glossterm{condition}.
         This cannot remove an effect applied during the current round.
-        For each effect removed this way, you deal the subject 4 energy damage.
+        For each effect removed this way, you deal the target 4 energy damage.
       `,
       rank: 4,
       narrative: `
@@ -593,7 +593,7 @@ export const chronomancy: MysticSphere = {
         It is painful to undergo such a selective temporal acceleration, but the consequences of such distraction on the battlefield would be far worse.
       `,
       scaling: {
-        6: `The subject can remove two effects.`,
+        6: `The target can remove two effects.`,
       },
       type: "Instant",
     },
@@ -624,7 +624,7 @@ export const chronomancy: MysticSphere = {
       castingTime: "one minute",
       effect: `
         Choose one \\glossterm{unattended}, nonmagical object within \\shortrange.
-        Time does not pass for the subject, preventing it from decaying or spoiling.
+        Time does not pass for the target, preventing it from decaying or spoiling.
         This can extend the time a poison or similar item lasts before becoming inert.
         % What effects have an explicit time limit?
         If used on a corpse, this effectively extends the time limit for effects that require a fresh or intact body.
