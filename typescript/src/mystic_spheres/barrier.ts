@@ -192,13 +192,13 @@ export const barrier: MysticSphere = {
 
       effect: `
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
-        You create a sphere of magical energy around the subject in its space.
+        You create a sphere of magical energy around the target in its space.
         The sphere is visible as a shimmering magical membrane that does not block sight.
         Nothing can pass through the field until it is destroyed.
-        This prevents the subject from having \\glossterm{line of effect} to anything outside of the area.
+        This prevents the target from having \\glossterm{line of effect} to anything outside of the area.
         Each 5-ft.\\ square of the field has 8 \\glossterm{hit points}.
 
-        If another creature is in the subject's space when this spell is cast, this spell fails without effect.
+        If another creature is in the target's space when this spell is cast, this spell fails without effect.
         `,
       rank: 1,
       scaling: {
@@ -215,7 +215,7 @@ export const barrier: MysticSphere = {
 
       effect: `
         Choose one \\glossterm{unattended} openable object within \\medrange.
-        You create a curved field of magical energy that blocks access to the subject's opening mechanism.
+        You create a curved field of magical energy that blocks access to the target's opening mechanism.
         The opening mechanism must be Medium or smaller in size.
         Nothing can pass through the field until it is destroyed.
         The field has 16 \\glossterm{hit points}.
@@ -254,13 +254,13 @@ export const barrier: MysticSphere = {
       attack: {
         crit: "The sphere's \\glossterm{hit points} increase to 64.",
         hit: `
-          A sphere of magical energy appears around the subject in its space.
+          A sphere of magical energy appears around the target in its space.
           The sphere is visible as a shimmering magical membrane that does not block sight.
           Nothing can pass through the sphere until it is destroyed.
-          This prevents the subject from having \\glossterm{line of effect} to anything outside of the area.
+          This prevents the target from having \\glossterm{line of effect} to anything outside of the area.
           Each 5-ft.\\ square of the field has 32 \\glossterm{hit points}.
 
-          If another creature is in the subject's space when this spell is cast, this spell fails without effect.
+          If another creature is in the target's space when this spell is cast, this spell fails without effect.
         `,
         targeting: `
           Make an attack vs. Reflex against anything Large or smaller within \\medrange.
@@ -486,10 +486,10 @@ export const barrier: MysticSphere = {
       castingTime: "one minute",
       effect: `
         Choose either yourself or an \\glossterm{ally} or unattended object within \\medrange.
-        The subject suffers no harm from being in a hot or cold environment.
+        The target suffers no harm from being in a hot or cold environment.
         It can exist comfortably in conditions between \\minus50 and 140 degrees Fahrenheit.
         Its equipment, if any, is also protected.
-        This does not protect the subject from fire or cold damage.
+        This does not protect the target from fire or cold damage.
       `,
       rank: 1,
       type: "Attune (ritual)",

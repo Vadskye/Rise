@@ -85,10 +85,10 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: "The effect lasts until this curse is removed.",
         hit: `
-          The subject is \\dazed.
+          The target is \\dazed.
           If it immerses itself in or drinks a body of water of minimum size equal to two size categories smaller than itself,
-            the subject stops being dazed for 10 minutes.
-          This effect lasts until the subject takes a \\glossterm{short rest}.
+            the target stops being dazed for 10 minutes.
+          This effect lasts until the target takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\rngmed range.
@@ -104,7 +104,7 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: "desiccating curse",
-        exceptThat: "the subject is \\stunned instead of dazed.",
+        exceptThat: "the target is \\stunned instead of dazed.",
       },
       rank: 7,
       scaling: "accuracy",
@@ -141,11 +141,11 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         crit: `
-          The water also the covers the subject's face.
+          The water also the covers the target's face.
           This does not meaningfully impede its sight, but it cannot breathe anything other than the water.
         `,
         hit: `
-          As a \\glossterm{condition}, the majority of the subject's body is surrounded by a layer of water.
+          As a \\glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
           This does not impede its ability to breathe, but it is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}. 
         `,
         targeting: `
@@ -198,7 +198,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The subject takes 1d8 + \\glossterm{power} bludgeoning damage.
+          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -335,7 +335,7 @@ export const aquamancy: MysticSphere = {
       rank: 3,
       scaling: {
         5: `Each subject gains a +5 foot \\glossterm{magic bonus} to its swim speed, or a +10 foot bonus if it already has a swim speed.`,
-        7: `The speed bonus increases to +10 feet, or +15 feet if the subject already has a swim speed.`,
+        7: `The speed bonus increases to +10 feet, or +15 feet if the target already has a swim speed.`,
       },
       type: "Attune (target)",
     },
@@ -513,7 +513,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: 'The condition must be removed twice before the effect ends.',
         hit: `
-          The subject is \\dazed as a \\glossterm{condition}.
+          The target is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
@@ -529,7 +529,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: 'The condition must be removed twice before the effect ends.',
         hit: `
-          The subject is \\stunned as a \\glossterm{condition}.
+          The target is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\rngmed range.
@@ -652,11 +652,11 @@ export const aquamancy: MysticSphere = {
       name: "Forceful Aquajet",
 
       attack: {
-        crit: "Double damage, and you can knockback the subject 60 feet instead of 30 feet.",
+        crit: "Double damage, and you can knockback the target 60 feet instead of 30 feet.",
         hit: `
-          The subject takes 1d6 bludgeoning damage.
+          The target takes 1d6 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
-          Moving the subject upwards costs twice the normal movement cost.
+          Moving the target upwards costs twice the normal movement cost.
         `,
         targeting:
           "Make an attack vs. Armor against anything Large or smaller within \\medrange.",

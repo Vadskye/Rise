@@ -156,10 +156,10 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\dazzled as a \\glossterm{condition}.`,
+        hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the target.
         `,
       },
       rank: 1,
@@ -173,11 +173,11 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d6 + half \\glossterm{power} energy damage and is \\glossterm{briefly} \\dazzled.
+          The target takes 2d6 + half \\glossterm{power} energy damage and is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the target.
         `,
       },
       rank: 3,
@@ -192,12 +192,12 @@ export const photomancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
-          The subject is \\dazzled as a \\glossterm{condition}.
+          The target is \\dazzled as a \\glossterm{condition}.
           While it has no remaining \\glossterm{damage resistance}, it is \\blinded instead of dazzled.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the subject.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the target.
         `,
       },
       rank: 6,
@@ -211,13 +211,13 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d8 + half \\glossterm{power} energy damage.
+          The target takes 1d8 + half \\glossterm{power} energy damage.
           In addition, it is \\glossterm{briefly} \\dazzled.
           After the creature stops being dazzled, it becomes immune to being dazzled in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius around a 5 ft. wide straight line between you and the subject.
+          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
           The illumination lasts \\glossterm{briefly}. 
         `,
       },
@@ -244,15 +244,15 @@ export const photomancy: MysticSphere = {
       name: "Solar Ray",
 
       attack: {
-        crit: `Double damage, and the subject also suffers consequences as if it had been struck by a beam of natural sunlight.`,
+        crit: `Double damage, and the target also suffers consequences as if it had been struck by a beam of natural sunlight.`,
         hit: `
-          The subject takes 2d10 + half \\glossterm{power} energy damage.
+          The target takes 2d10 + half \\glossterm{power} energy damage.
           In addition, it is \\glossterm{briefly} \\dazzled.
           If it lost \\glossterm{hit points} from this damage, it is also briefly \\dazed.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius around a 5 ft. wide straight line between you and the subject.
+          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius around a 5 ft. wide straight line between you and the target.
           The illumination lasts \\glossterm{briefly}. 
         `,
       },
@@ -486,10 +486,10 @@ export const photomancy: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        You make a Disguise check to alter the subject's appearance to make it appear wounded (see \\pcref{Disguise Creature}).
-        You can choose whether the subject appears to be at less than its maximum hit points, whether it appears to have a vital wound, or both.
-        You gain a +10 bonus on the check, and you can freely alter the appearance of the subject's clothes and equipment, regardless of their original form.
-        However, this effect is unable to alter the sound, smell, texture, or temperature of the subject or its clothes and equipment.
+        You make a Disguise check to alter the target's appearance to make it appear wounded (see \\pcref{Disguise Creature}).
+        You can choose whether the target appears to be at less than its maximum hit points, whether it appears to have a vital wound, or both.
+        You gain a +10 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
+        However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
       `,
       rank: 1,
       scaling: {
@@ -521,7 +521,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d6 + half \\glossterm{power} energy damage.
+          The target takes 2d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects, chosen randomly: \\dazzled as a \\glossterm{condition}, \\slowed as a \\glossterm{condition}, \\glossterm{briefly} \\frightened by you, or briefly \\stunned.
         `,
         targeting: `
@@ -584,7 +584,7 @@ export const photomancy: MysticSphere = {
       castingTime: "one minute",
       effect: `
         Choose either yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
-        The subject glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
+        The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
       `,
       rank: 1,
       tags: ["Sensation"],
@@ -597,7 +597,7 @@ export const photomancy: MysticSphere = {
       castingTime: "one hour",
       effect: `
         Choose one Medium or smaller \\glossterm{unattended} object within \\shortrange.
-        The subject appears old and worn down.
+        The target appears old and worn down.
         It may be appear dusty, have cracks and wrinkles from age, or otherwise appear undesirable and low quality.
       `,
       rank: 1,
@@ -612,7 +612,7 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           Choose one Medium or smaller \\glossterm{unattended} object within \\medrange.
-          The subject glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
+          The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
           This effect is permanent.
         `,
         name: "continuous light",

@@ -157,10 +157,10 @@ export const summoning: MysticSphere = {
       name: "Ramming Summon",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything on solid ground within \\medrange.
-          You summon a creature with a large horn or horns, such a moose, that rams into the subject with great force before disappearing.
+          You summon a creature with a large horn or horns, such a moose, that rams into the target with great force before disappearing.
         `,
       },
       rank: 1,
@@ -173,10 +173,10 @@ export const summoning: MysticSphere = {
       name: "Greater Ramming Summon",
 
       attack: {
-        hit: `The subject takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 4d6 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything on solid ground within \\longrange.
-          You summon a large creature with a large horn or horns, such a rhinoceros, that rams into the subject with great force before disappearing.
+          You summon a large creature with a large horn or horns, such a rhinoceros, that rams into the target with great force before disappearing.
         `,
       },
       rank: 4,
@@ -423,7 +423,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
         you must also choose yourself or an \\glossterm{ally} within \\medrange to ride the summoned creature.
         The summoned creature appears to be either a Large horse or a Medium pony.
-        It comes with a bit and bridle and a riding saddle, and will only accept the subject as a rider.
+        It comes with a bit and bridle and a riding saddle, and will only accept the target as a rider.
         The creature follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
         `,
         name: "summon monster",
@@ -487,7 +487,7 @@ export const summoning: MysticSphere = {
         Its attacks deal 2d6 bludgeoning and piercing damage.
         Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
         It is immediately \\dazed while it is poisoned.
-        The poison's third stage causes the subject to become \\stunned as long as it is poisoned.
+        The poison's third stage causes the target to become \\stunned as long as it is poisoned.
         `,
         name: "summon monster",
       },

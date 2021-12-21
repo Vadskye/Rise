@@ -164,7 +164,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 The effect of your \textit{aligned aura} reaches its full power, as described below.
                 In addition, the area increases to a \hugearea radius \glossterm{emanation} from you.
 
-                \subparhead{Chaos} Whenever a subject \glossterm{explodes} with an attack roll, it gains a \plus2 \glossterm{accuracy} bonus with the attack.
+                \subparhead{Chaos} Whenever a target \glossterm{explodes} with an attack roll, it gains a \plus2 \glossterm{accuracy} bonus with the attack.
                 \subparhead{Evil} The penalty increases to \minus2.
                 \subparhead{Good} The \glossterm{vital roll} bonus increases to \plus5.
                 \subparhead{Law} The effect triggers on rolling either a 1 or a 2.
@@ -638,7 +638,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Choose one creature within \distrange.
                     You always gain the benefit of your \textit{zealous fixation} ability against that creature.
-                    In addition, the subject is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
+                    In addition, the target is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
                     This only affects its alignment along the alignment axis your devoted alignment is on.
                     For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
                     This effect lasts until you treat that creature as an \glossterm{ally}, or until you \glossterm{dismiss} this ability as a \glossterm{free action}.

@@ -72,7 +72,7 @@ export const polymorph: MysticSphere = {
         The armor changes to be composed of that material, and gains all properties and benefits of that material instead of its original properties.
         For details about armor special materials, see \\tref{Armor Special Materials}.
 
-        You can only change the subject into a special material appropriate for its base composition of either leather or metal.
+        You can only change the target into a special material appropriate for its base composition of either leather or metal.
         For example, you cannot create mithral hide armor with this spell.
       `,
       rank: 4,
@@ -134,7 +134,7 @@ export const polymorph: MysticSphere = {
       name: 'Piercing Grasp',
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} piercing damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -154,7 +154,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d8 + \\glossterm{power} piercing damage.
+          The target takes 2d8 + \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
@@ -177,7 +177,7 @@ export const polymorph: MysticSphere = {
       functionsLike: {
         name: 'greater piercing grasp',
         exceptThat:
-          'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
+          'the damage increases to 4d10 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
       },
       rank: 7,
       scaling: 'damage',
@@ -188,7 +188,7 @@ export const polymorph: MysticSphere = {
       name: 'Baleful Polymorph',
 
       attack: {
-        hit: `The subject takes 2d8 physical damage.
+        hit: `The target takes 2d8 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is balefully polymorphed as a \\glossterm{condition}.
         It shrinks by two \\glossterm{size categories} and is \\confused.`,
         targeting: `
@@ -204,7 +204,7 @@ export const polymorph: MysticSphere = {
       name: 'Twist Flesh',
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} physical damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} physical damage.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
@@ -219,9 +219,9 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'minor action',
       effect: `
-        The subject's size decreases by one \\glossterm{size category}, to a minimum of Tiny.
+        The target's size decreases by one \\glossterm{size category}, to a minimum of Tiny.
         This decreases the \\glossterm{base speed} for its size and improves its Stealth skill.
-        It may also decrease the subject's \\glossterm{reach} (see \\pcref{Size in Combat}).
+        It may also decrease the target's \\glossterm{reach} (see \\pcref{Size in Combat}).
         However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
       `,
       rank: 2,
@@ -362,8 +362,8 @@ export const polymorph: MysticSphere = {
       name: 'Disintegrate',
 
       attack: {
-        hit: `The subject takes 4d10 + \\glossterm{power} physical damage.
-        In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
+        hit: `The target takes 4d10 + \\glossterm{power} physical damage.
+        In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely disintegrated, leaving behind only a pinch of fine dust.
         Its equipment is unaffected.`,
         targeting: `
@@ -480,7 +480,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject takes 4d6 physical damage.
+        hit: `The target takes 4d6 physical damage.
         If it loses \\glossterm{hit points} from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
         It is \\stunned, and it has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
         It is also unable to speak normally or use verbal or somatic \\glossterm{casting components}.`,
@@ -497,7 +497,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The subject regains 2d6 + \\glossterm{power} \\glossterm{hit points}.
+        The target regains 2d6 + \\glossterm{power} \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 2,
@@ -511,14 +511,14 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'minor action',
       effect: `
-        At the end of each round, if the subject is not \\glossterm{unconscious} due to \\glossterm{fatigue}, it automatically removes one of its \\glossterm{vital wounds}.
+        At the end of each round, if the target is not \\glossterm{unconscious} due to \\glossterm{fatigue}, it automatically removes one of its \\glossterm{vital wounds}.
         It can choose to stop this regeneration if you are conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
-        This cannot remove a vital wound the subject gained during the current round.
+        This cannot remove a vital wound the target gained during the current round.
         When it removes a vital wound in this way, it increases its \\glossterm{fatigue level} by three.
       `,
       rank: 5,
       scaling: {
-        7: `The subject can remove two \\glossterm{vital wounds} instead of one.
+        7: `The target can remove two \\glossterm{vital wounds} instead of one.
             It increases its \\glossterm{fatigue level} by three per vital wound removed this way.`,
       },
       type: 'Attune (target)',
@@ -586,7 +586,7 @@ export const polymorph: MysticSphere = {
       name: 'Eyebite',
 
       attack: {
-        hit: `The subject takes 2d8 physical damage.
+        hit: `The target takes 2d8 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -601,7 +601,7 @@ export const polymorph: MysticSphere = {
       name: 'Organ Failure',
 
       attack: {
-        hit: `The subject takes 1d6 physical damage.
+        hit: `The target takes 1d6 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -619,8 +619,8 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
-          The subject is \\slowed as a \\glossterm{condition}.
-          While the subject has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of slowed.
+          The target is \\slowed as a \\glossterm{condition}.
+          While the target has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of slowed.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\longrange.
@@ -636,7 +636,7 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `
-          The subject begins bleeding as a \\glossterm{condition}.
+          The target begins bleeding as a \\glossterm{condition}.
           At the end of each round, it takes 1d8 physical damage.
 
           This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
@@ -657,9 +657,9 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         glance:
-          'The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.',
+          'The effect lasts \\glossterm{briefly}. The target still takes damage during the next round.',
         hit: `
-          The subject begins bleeding as a \\glossterm{condition}.
+          The target begins bleeding as a \\glossterm{condition}.
           At the end of each round, it takes 2d10 + half \\glossterm{power} physical damage.
         `,
         targeting: `
@@ -754,13 +754,13 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         For each creature, you choose one of the following effects.
-        \\parhead{Climber} The subject gains a \\glossterm{climb speed} equal to its \\glossterm{base speed}.
-        \\parhead{Runner} The subject gains a +5 foot \\glossterm{magic bonus} to its \\glossterm{land speed}.
-        \\parhead{Swimmer} The subject gains a \\glossterm{swim speed} equal to its \\glossterm{base speed}.
+        \\parhead{Climber} The target gains a \\glossterm{climb speed} equal to its \\glossterm{base speed}.
+        \\parhead{Runner} The target gains a +5 foot \\glossterm{magic bonus} to its \\glossterm{land speed}.
+        \\parhead{Swimmer} The target gains a \\glossterm{swim speed} equal to its \\glossterm{base speed}.
       `,
       rank: 4,
       scaling: {
-        6: 'The subject also gains a +5 foot \\glossterm{magic bonus} to its speed with all movement modes, and a +10 foot \\glossterm{magic bonus} to its land speed.',
+        6: 'The target also gains a +5 foot \\glossterm{magic bonus} to its speed with all movement modes, and a +10 foot \\glossterm{magic bonus} to its land speed.',
       },
       type: 'Attune (target)',
     },
@@ -772,10 +772,10 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         For each creature, you choose one of the following effects.
-        \\parhead{Awareness} The subject gains a +3 \\glossterm{magic bonus} to the Awareness skill.
-        \\parhead{Darkvision} The subject gains \\trait{darkvision} with a range of 60 feet.
-        \\parhead{Low-light Vision} The subject gains \\trait{low-light vision}.
-        \\parhead{Scent} The subject gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Senses}).
+        \\parhead{Awareness} The target gains a +3 \\glossterm{magic bonus} to the Awareness skill.
+        \\parhead{Darkvision} The target gains \\trait{darkvision} with a range of 60 feet.
+        \\parhead{Low-light Vision} The target gains \\trait{low-light vision}.
+        \\parhead{Scent} The target gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Senses}).
       `,
       rank: 5,
       scaling: {
@@ -808,11 +808,11 @@ export const polymorph: MysticSphere = {
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{brief} effect or \\glossterm{condition}.
         This cannot remove an effect applied during the current round.
-        For each effect removed this way, you deal the subject 4 physical damage.
+        For each effect removed this way, you deal the target 4 physical damage.
       `,
       rank: 4,
       scaling: {
-        6: `The subject can remove two effects.`,
+        6: `The target can remove two effects.`,
       },
       type: 'Instant',
     },
@@ -838,7 +838,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         Choose one \\glossterm{unattended}, nonmagical wall up to 50 feet high and 10 feet wide within \\medrange.
-        You create handholds in the subject, making it easier to climb.
+        You create handholds in the target, making it easier to climb.
         This reduces the \\glossterm{difficulty value} to climb the object by 10.
         When this effect ends, the handholds disappear.
       `,
@@ -896,7 +896,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         Chose one \\glossterm{unattended} object within \\shortrange.
-        The subject regains 1d8 + \\glossterm{power} hit points.
+        The target regains 1d8 + \\glossterm{power} hit points.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
       `,
       rank: 1,
@@ -910,10 +910,10 @@ export const polymorph: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         Choose one \\glossterm{unattended} manufactured weapon within \\medrange.
-        The subject changes into another weapon from the same weapon group.
+        The target changes into another weapon from the same weapon group.
         At least one ritual participant must be proficient with that weapon group.
         You cannot change it into an exotic weapon in this way.
-        When this effect ends, the subject returns to its original shape.
+        When this effect ends, the target returns to its original shape.
       `,
       rank: 1,
       type: 'Attune (ritual)',
@@ -924,7 +924,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'one minute',
       functionsLike: {
-        exceptThat: `you can also change the subject into an exotic weapon.`,
+        exceptThat: `you can also change the target into an exotic weapon.`,
         name: 'morph weapon',
       },
       rank: 3,
@@ -940,8 +940,8 @@ export const polymorph: MysticSphere = {
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
         % How should this affect Strength break difficulty value?
-        The subject gains a +5 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
-        If the subject is moved, this effect ends.
+        The target gains a +5 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
+        If the target is moved, this effect ends.
         Otherwise, it lasts for one year.
       `,
       rank: 1,
@@ -1056,7 +1056,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         Choose one Large or smaller ritual participant.
-        The subject can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
+        The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
       `,
       rank: 3,
       type: 'Attune (ritual)',
@@ -1068,7 +1068,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         Choose one Large or smaller ritual participant.
-        The subject can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
+        The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
       `,
       rank: 3,
       type: 'Attune (ritual)',

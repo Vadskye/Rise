@@ -1230,7 +1230,7 @@ impl Class {
                             \hit The target takes an evil action as soon as it can.
                             Once it takes the evil action, this effect ends.
                             You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-                            After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
+                            After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
@@ -1277,7 +1277,7 @@ impl Class {
                             \hit The target takes a good action as soon as it can.
                             Once it takes the good action, this effect ends.
                             You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-                            After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
+                            After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
@@ -1315,7 +1315,7 @@ impl Class {
                             \spelltwocol{Duration}{\abilitytag{Compulsion}}
                             \rankline
                             Make an attack vs. Mental against all creatures within a \arealarge radius from you.
-                            \hit Each subject is unable to break the laws that apply in the area, and any attempt to do so simply fails.
+                            \hit Each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
                             The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
 
                             % Sufficiently clear that this isn't part of the hit effect?
@@ -1408,10 +1408,10 @@ impl Class {
                             You must also choose a belief that the target has.
                             The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
                             If the creature does not already hold the chosen belief, this ability automatically fails.
-                            \hit The subject continues to maintain the chosen belief, regardless of any evidence to the contrary.
+                            \hit The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
                             It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
                             At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
-                            After this effect ends, the subject becomes immune to this effect until it takes a \glossterm{short rest}.
+                            After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.

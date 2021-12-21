@@ -70,9 +70,9 @@ export const revelation: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The first time the subject makes a \\glossterm{strike} this round,
+        The first time the target makes a \\glossterm{strike} this round,
         it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
-        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the subject makes during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the target makes during the current phase.
         If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
       `,
       rank: 1,
@@ -90,9 +90,9 @@ export const revelation: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The first time the subject casts a spell this round,
+        The first time the target casts a spell this round,
         it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
-        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the subject makes during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the target makes during the current phase.
         If you cast this spell on yourself, it affects the first spell you cast before the end of the next round.
       `,
       rank: 3,
@@ -176,7 +176,7 @@ export const revelation: MysticSphere = {
       name: "Discern Lies",
 
       attack: {
-        hit: `When you hear the subject deliberately and knowingly speaks a lie, you know that the subject was lying.
+        hit: `When you hear the target deliberately and knowingly speaks a lie, you know that the target was lying.
         This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.`,
         targeting: `
         This spell has no \\glossterm{verbal components}.
@@ -295,7 +295,7 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: `The penalty increases to -4.`,
-        hit: `As a \\glossterm{condition}, the subject's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
+        hit: `As a \\glossterm{condition}, the target's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
         It takes a -2 penalty to the chosen defense.`,
         targeting: `
           Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
@@ -338,7 +338,7 @@ export const revelation: MysticSphere = {
       attack: {
         crit: "The condition must be removed twice before the effect ends.",
         hit: `
-          As a \\glossterm{condition}, the subject's vulnerabilities become clear for all to see.
+          As a \\glossterm{condition}, the target's vulnerabilities become clear for all to see.
           Damage against it is treated as damage of all types, which can bypass many forms of immunity and special defenses against specific damage types.
         `,
         targeting: `
@@ -355,7 +355,7 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\dazzled as a \\glossterm{condition}.`,
+        hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -374,7 +374,7 @@ export const revelation: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
-          The subject is \\dazed and \\dazzled as a \\glossterm{condition}.
+          The target is \\dazed and \\dazzled as a \\glossterm{condition}.
           While it has no remaining \\glossterm{damage resistance}, it is \\blinded instead of dazzled.
         `,
         targeting: `
@@ -395,12 +395,12 @@ export const revelation: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject's mind is overwhelmed by a total awareness of your chosen fact.
+        hit: `The target's mind is overwhelmed by a total awareness of your chosen fact.
         It is \\stunned as a \\glossterm{condition}.`,
         targeting: `
         Choose a fact that you know and make an attack vs. Mental against one creature within \\shortrange.
-        If the subject does not already know that fact to be true or false,
-        and the subject has sufficient cognitive ability to understand the fact,
+        If the target does not already know that fact to be true or false,
+        and the target has sufficient cognitive ability to understand the fact,
         you gain a +1 bonus to \\glossterm{accuracy}.
         Otherwise, you take a -1 accuracy penalty.
         The fact does not have to be true to gain this bonus.
@@ -546,9 +546,9 @@ export const revelation: MysticSphere = {
       name: "Sensory Chain",
 
       attack: {
-        hit: `As a \\glossterm{condition}, you can see and hear out of the subject's eyes and ears instead of your own.
-        If the subject stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
-        Whenever the subject touches another creature, you can make an attack against the new creature.
+        hit: `As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
+        If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
+        Whenever the target touches another creature, you can make an attack against the new creature.
         On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
         On a miss, the condition remains on the previous creature.`,
         targeting: `
@@ -567,8 +567,8 @@ export const revelation: MysticSphere = {
 
       attack: {
         hit: `
-          As a \\glossterm{condition}, you can see and hear out of the subject's eyes and ears instead of your own.
-          If the subject stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
+          As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
+          If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
         `,
         targeting: `
           Make an attack vs. Mental against one animal within \\medrange.
@@ -588,7 +588,7 @@ export const revelation: MysticSphere = {
       castingTime: "one hour",
       effect: `
         Choose one creature within \\longrange.
-        You can see the subject's true form, regardless of any shapechanging or illusion effects.
+        You can see the target's true form, regardless of any shapechanging or illusion effects.
       `,
       rank: 3,
       type: "Attune (self)",
@@ -655,7 +655,7 @@ export const revelation: MysticSphere = {
       // original targets: one unoccupied square within \medrange
       castingTime: "one minute",
       effect: `
-        A \\glossterm{scrying sensor} appears floating in the air in the subject location.
+        A \\glossterm{scrying sensor} appears floating in the air in the target location.
         The sensor passively observes its surroundings.
         As with other \\abilitytag{Scrying} effects, its visual acuity is the same as yours.
         You can choose the minimum size category that the alarm will notify you for when you cast this spell.
@@ -728,9 +728,9 @@ export const revelation: MysticSphere = {
         A creature or object without a proper name cannot be identified by name in this way.
         If you specify the chosen creature or object's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature, or the ritual may simply fail.
 
-        If the chosen creature or object is within 100 miles of you, you learn the location (place, name, business name, or the like), community, country, and continent where the subject was at when you started performing this ritual.
+        If the chosen creature or object is within 100 miles of you, you learn the location (place, name, business name, or the like), community, country, and continent where the target was at when you started performing this ritual.
         % Wording?
-        If there is no corresponding information about an aspect of the subject's location, such as if the subject is in a location which is not part of a recognized country,
+        If there is no corresponding information about an aspect of the target's location, such as if the target is in a location which is not part of a recognized country,
         you learn only that that aspect of the information is missing.
       `,
 
@@ -762,7 +762,7 @@ export const revelation: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-        the subject does not have to be on the same plane as you.
+        the target does not have to be on the same plane as you.
         `,
         name: "discern location",
       },
@@ -776,15 +776,15 @@ export const revelation: MysticSphere = {
       // original targets: any creature within 100 miles of you
       castingTime: "one hour",
       effect: `
-        You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the subject.
+        You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
         However,  must specify your target with a precise mental image of its appearance.
-        The image does not have to be perfect, but it must unambiguously identify the subject.
-        If you specify its appearance incorrectly, or if the subject has changed its appearance, you may accidentally target a different creature, or the ritual may simply fail.
+        The image does not have to be perfect, but it must unambiguously identify the target.
+        If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the ritual may simply fail.
 
-        You send the subject a short verbal message.
+        You send the target a short verbal message.
         The message must be twenty-five words or less, and speaking the message must not take longer than five rounds.
 
-        After the the subject receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
+        After the the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
         Once it speaks twenty-five words, or you stop sustaining the effect, the ritual is \\glossterm{dismissed}.
         `,
 
@@ -801,7 +801,7 @@ export const revelation: MysticSphere = {
       functionsLike: {
         exceptThat: `
         there is no distance limitation.
-        The subject must simply be on the same plane as you.
+        The target must simply be on the same plane as you.
         `,
         name: "sending",
       },
@@ -817,7 +817,7 @@ export const revelation: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-        the subject does not have to be on the same plane as you.
+        the target does not have to be on the same plane as you.
         `,
         name: "distant sending",
       },
@@ -893,16 +893,16 @@ export const revelation: MysticSphere = {
 
       castingTime: "one hour",
       attack: {
-        hit: `A scrying sensor appears in the subject's space.
+        hit: `A scrying sensor appears in the target's space.
         This sensor functions like the sensor created by the \\spell{arcane eye} spell, except that you cannot move the sensor manually.
-        Instead, it automatically tries to follow the subject to stay in its space.
-        At the end of each phase, if the sensor is not in the subject's space, this effect is \\glossterm{dismissed}.`,
+        Instead, it automatically tries to follow the target to stay in its space.
+        At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm{dismissed}.`,
         targeting: `
         Make an attack vs. Mental against one creature on the same plane as you.
-        You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the subject.
+        You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
         However,  must specify your target with a precise mental image of its appearance.
-        The image does not have to be perfect, but it must unambiguously identify the subject.
-        If you specify its appearance incorrectly, or if the subject has changed its appearance, you may accidentally target a different creature, or the spell may simply fail without effect.
+        The image does not have to be perfect, but it must unambiguously identify the target.
+        If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply fail without effect.
         This attack roll cannot \\glossterm{explode}.
         `,
       },
@@ -917,7 +917,7 @@ export const revelation: MysticSphere = {
       castingTime: "one hour",
       functionsLike: {
         exceptThat: `
-        the subject does not have to be on the same plane as you.
+        the target does not have to be on the same plane as you.
         `,
         name: "scry creature",
       },

@@ -11,7 +11,7 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         Choose one \\glossterm{unattended}, nonmagical 1-ft.\\ square of earth.
-        The soil in the subject becomes suffused with plant-sustaining nutrients, making it fertile ground for plants.
+        The soil in the target becomes suffused with plant-sustaining nutrients, making it fertile ground for plants.
         This effect lasts for one year.
       `,
       scaling: {
@@ -28,7 +28,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one Larger or smaller inanimate, \\glossterm{unattended} plant within \\shortrange.
         In addition, choose any number of days up to a week.
-        The subject grows as if much time had passed, assuming that it received adequate nutrition during that time.
+        The target grows as if much time had passed, assuming that it received adequate nutrition during that time.
         When this spell ends, the plant returns to its original state.
       `,
       scaling: {
@@ -44,12 +44,12 @@ export const verdamancy: MysticSphere = {
       name: "Ensnaring Grasp",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} piercing damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
         `,
       },
       rank: 1,
@@ -61,14 +61,14 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d8 + \\glossterm{power} piercing damage.
+          The target takes 2d8 + \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
         `,
       },
       rank: 3,
@@ -90,11 +90,11 @@ export const verdamancy: MysticSphere = {
       name: "Entangle",
 
       attack: {
-        crit: `The subject also cannot move farther than 10 feet from its original location until it ends the effect.`,
-        hit: `The subject is \\slowed as a \\glossterm{condition}.`,
+        crit: `The target also cannot move farther than 10 feet from its original location until it ends the effect.`,
+        hit: `The target is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Reflex against one Large or smaller creature within \\medrange that is on a stable surface.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
         `,
       },
       narrative: `
@@ -126,10 +126,10 @@ export const verdamancy: MysticSphere = {
       name: "Vine Whip",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against one creature within \\medrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
         `,
       },
       rank: 1,
@@ -142,10 +142,10 @@ export const verdamancy: MysticSphere = {
       name: "Greater Vine Whip",
 
       attack: {
-        hit: `The subject takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 4d6 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against one creature within \\longrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
         `,
       },
       rank: 4,
@@ -158,10 +158,10 @@ export const verdamancy: MysticSphere = {
       name: "Supreme Vine Whip",
 
       attack: {
-        hit: `The subject takes 6d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 6d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against one creature within \\distrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the subject is in standing in \\glossterm{undergrowth}.
+          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
         `,
       },
       rank: 7,
@@ -245,10 +245,10 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         // No relevant glance effect
-        hit: `The subject becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of nitharit.
+        hit: `The target becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of nitharit.
         At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref{Poison}).
         A creature poisoned by nitharit becomes \\dazed as long as it is poisoned.
-        Reaching the third \\glossterm{poison stage} causes the subject to become \\stunned as long as it is poisoned.
+        Reaching the third \\glossterm{poison stage} causes the target to become \\stunned as long as it is poisoned.
         A third failed attack ends the poison.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -267,9 +267,9 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         // No relevant glance effect
-        hit: `The subject becomes \\glossterm{poisoned} with sassone leaf.
+        hit: `The target becomes \\glossterm{poisoned} with sassone leaf.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the subject takes 1d6 physical damage.
+        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d6 physical damage.
         Reaching the third \\glossterm{poison stage} ends the poison.
         A third failed attack also ends the poison.`,
         targeting: `
@@ -289,10 +289,10 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
-        hit: `The subject becomes \\glossterm{poisoned} with arsenic.
+        hit: `The target becomes \\glossterm{poisoned} with arsenic.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the subject takes 1d10 physical damage.
-        Reaching the third \\glossterm{poison stage} causes the subject to gain a \\glossterm{vital wound} and ends the poison.
+        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d10 physical damage.
+        Reaching the third \\glossterm{poison stage} causes the target to gain a \\glossterm{vital wound} and ends the poison.
         A third failed attack also ends the poison.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\longrange.
@@ -311,10 +311,10 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
-        hit: `The subject becomes \\glossterm{poisoned} with arsenic.
+        hit: `The target becomes \\glossterm{poisoned} with arsenic.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the subject loses 2d10 + half \\glossterm{power} \\glossterm{hit points}.
-        Reaching the third \\glossterm{poison stage} causes the subject to gain a \\glossterm{vital wound}.
+        For each \\glossterm{poison stage}, including the initial stage, the target loses 2d10 + half \\glossterm{power} \\glossterm{hit points}.
+        Reaching the third \\glossterm{poison stage} causes the target to gain a \\glossterm{vital wound}.
         A third failed attack ends the poison.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -333,12 +333,12 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
+        The target gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
       `,
       rank: 1,
       scaling: {
         3: `The number of additional successes increases to two.
-            The subject can split these successes among any number of different poisons affecting it.`,
+            The target can split these successes among any number of different poisons affecting it.`,
         5: `The number of additional successes increases to three.`,
         7: `The number of additional successes increases to four.`,
       },
@@ -383,8 +383,8 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        hit: `As a \\glossterm{condition}, the subject takes 1d6 physical damage at the end of each round.
-        If the the subject gains a \\glossterm{vital wound} from this damage, the condition ends.
+        hit: `As a \\glossterm{condition}, the target takes 1d6 physical damage at the end of each round.
+        If the the target gains a \\glossterm{vital wound} from this damage, the condition ends.
 
         This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
         The \\glossterm{difficulty value} of the check is equal to 10.`,
@@ -493,8 +493,8 @@ export const verdamancy: MysticSphere = {
       name: "Blight",
 
       attack: {
-        hit: `The subject takes 2d8 + \\glossterm{power} acid damage.
-        This damage is doubled if the subject is a plant, including plant creatures.`,
+        hit: `The target takes 2d8 + \\glossterm{power} acid damage.
+        This damage is doubled if the target is a plant, including plant creatures.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
         `,
@@ -508,8 +508,8 @@ export const verdamancy: MysticSphere = {
       name: "Greater Blight",
 
       attack: {
-        hit: `The subject takes 4d10 + \\glossterm{power} acid damage.
-        This damage is doubled if the subject is a plant, including plant creatures.`,
+        hit: `The target takes 4d10 + \\glossterm{power} acid damage.
+        This damage is doubled if the target is a plant, including plant creatures.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\medrange.
         `,
@@ -524,8 +524,8 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         Choose one nonmagical, \\glossterm{unattended} stick of wood you touch.
-        You transform the subject into a club, greatclub, or quarterstaff, as you choose (see \\pcref{Weapons}).
-        You cannot change the subject's size by more than one size category.
+        You transform the target into a club, greatclub, or quarterstaff, as you choose (see \\pcref{Weapons}).
+        You cannot change the target's size by more than one size category.
         You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} on attacks with it.
       `,
       rank: 1,
@@ -574,8 +574,8 @@ export const verdamancy: MysticSphere = {
       castingTime: "minor action",
       effect: `
         All damage you deal with \\glossterm{strikes} becomes piercing damage in addition to the attack's normal damage types.
-        Whenever you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, thorns from the striking weapon enter the subject's body.
-        As a \\glossterm{condition}, the subject unable to heal the \\glossterm{hit points} lost to the attack.
+        Whenever you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, thorns from the striking weapon enter the target's body.
+        As a \\glossterm{condition}, the target unable to heal the \\glossterm{hit points} lost to the attack.
 
         This effect can be removed with the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
         The \\glossterm{difficulty value} of the check is equal to 5 \\add your \\glossterm{power}.

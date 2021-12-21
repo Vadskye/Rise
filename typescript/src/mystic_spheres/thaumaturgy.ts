@@ -35,9 +35,9 @@ export const thaumaturgy: MysticSphere = {
         This does not give you any information about the nature of those magical abilities.
       `,
       scaling: {
-        2: `You can also discern whether the subject has the ability to cast spells of any kind.`,
-        4: `You can also discern which \\glossterm{magic sources} the subject has access to, if they have access to any.`,
-        6: `You can also discern which \\glossterm{mystic spheres} the subject has access to, if they have access to any.`,
+        2: `You can also discern whether the target has the ability to cast spells of any kind.`,
+        4: `You can also discern which \\glossterm{magic sources} the target has access to, if they have access to any.`,
+        6: `You can also discern which \\glossterm{mystic spheres} the target has access to, if they have access to any.`,
       },
       type: "Instant",
     },
@@ -49,8 +49,8 @@ export const thaumaturgy: MysticSphere = {
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The subject takes 1d6 + \\glossterm{power} energy damage.
-          \\miss The subject takes 1d6 energy damage.
+          The target takes 1d6 + \\glossterm{power} energy damage.
+          \\miss The target takes 1d6 energy damage.
           This replaces the normal damage dealt on a \\glossterm{glancing blow}.
         `,
         targeting: `
@@ -71,8 +71,8 @@ export const thaumaturgy: MysticSphere = {
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The subject takes 2d8 + \\glossterm{power} energy damage.
-          \\miss The subject takes 2d8 energy damage.
+          The target takes 2d8 + \\glossterm{power} energy damage.
+          \\miss The target takes 2d8 energy damage.
           This replaces the normal damage dealt on a \\glossterm{glancing blow}.
         `,
         targeting: `
@@ -93,8 +93,8 @@ export const thaumaturgy: MysticSphere = {
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The subject takes 4d10 + \\glossterm{power} energy damage.
-          \\miss The subject takes 4d10 energy damage.
+          The target takes 4d10 + \\glossterm{power} energy damage.
+          \\miss The target takes 4d10 energy damage.
           This replaces the normal damage dealt on a \\glossterm{glancing blow}.
         `,
         targeting: `
@@ -137,7 +137,7 @@ export const thaumaturgy: MysticSphere = {
       // -1d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The subject takes 2d10 + half \\glossterm{power} energy damage.
+          The target takes 2d10 + half \\glossterm{power} energy damage.
           \\miss Each subject takes 2d10 energy damage.
           This replaces the normal damage dealt on a \\glossterm{glancing blow}.
         `,
@@ -158,7 +158,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         crit: "You can sustain this spell as a \\glossterm{free action}.",
-        hit: `All magical properties the subject has are \\glossterm{suppressed}.`,
+        hit: `All magical properties the target has are \\glossterm{suppressed}.`,
         targeting: `
           Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one Large or smaller \\glossterm{magical} object within \\longrange.
           If the object is attended by a creature, the attack must also beat the attending creature's Mental defense.
@@ -175,8 +175,8 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         // No relevant crit effect
         // No relevant glance effect
-        hit: `The subject is treated as if the ability that created it was \\glossterm{dismissed}.
-        This usually causes the subject to disappear.`,
+        hit: `The target is treated as if the ability that created it was \\glossterm{dismissed}.
+        This usually causes the target to disappear.`,
         targeting: `
         Make an attack against anything within \\medrange.
         If the target is an effect of an ongoing \\glossterm{magical} ability, such as a summoned monster or created object, its defense against this attack is equal to the \\glossterm{power} of the ability.
@@ -368,8 +368,8 @@ export const thaumaturgy: MysticSphere = {
       name: "Dimensional Anchor",
 
       attack: {
-        hit: `The subject is unable to travel extradimensionally.
-        This prevents all \\abilitytag{Manifestation} effects and effects that teleport the subject or move it between planes.`,
+        hit: `The target is unable to travel extradimensionally.
+        This prevents all \\abilitytag{Manifestation} effects and effects that teleport the target or move it between planes.`,
         targeting: `
           Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against anything within \\longrange.
         `,
@@ -441,9 +441,9 @@ export const thaumaturgy: MysticSphere = {
       name: "Spellseal",
 
       attack: {
-        crit: `The effect ends after the subject fails to cast three spells instead of only one.`,
-        hit: `As a \\glossterm{condition}, the next time the subject tries to cast a spell, the spell automatically fails with no effect instead.
-        When the subject fails to cast a spell in this way, this effect ends, and the subject becomes immune to this spell until it takes a \\glossterm{short rest}.`,
+        crit: `The effect ends after the target fails to cast three spells instead of only one.`,
+        hit: `As a \\glossterm{condition}, the next time the target tries to cast a spell, the spell automatically fails with no effect instead.
+        When the target fails to cast a spell in this way, this effect ends, and the target becomes immune to this spell until it takes a \\glossterm{short rest}.`,
         targeting: `
         Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
         `,
@@ -557,9 +557,9 @@ export const thaumaturgy: MysticSphere = {
       castingTime: "24 hours",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\shortrange.
-        All curses affecting the subject are removed.
-        This ritual cannot remove a curse that is part of the effect of an item the subject has equipped.
-        However, it can allow the subject to remove any cursed items it has equipped.
+        All curses affecting the target are removed.
+        This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
+        However, it can allow the target to remove any cursed items it has equipped.
       `,
       rank: 3,
       type: "Instant",
@@ -570,7 +570,7 @@ export const thaumaturgy: MysticSphere = {
       castingTime: "one minute",
       effect: `
         Choose one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
-        All magical effects on the subject, including any magic items a subject creature wears or carries, are undetectable with abilities that detect magic.
+        All magical effects on the target, including any magic items a subject creature wears or carries, are undetectable with abilities that detect magic.
       `,
       rank: 2,
       type: "Attune (ritual)",
@@ -581,7 +581,7 @@ export const thaumaturgy: MysticSphere = {
       castingTime: "24 hours",
       effect: `
         Choose one Large or smaller \\glossterm{unattended} object within \\shortrange.
-        All magical effects on the subject are undetectable with abilities that detect magic.
+        All magical effects on the target are undetectable with abilities that detect magic.
         This effect is permanent.
       `,
       rank: 4,

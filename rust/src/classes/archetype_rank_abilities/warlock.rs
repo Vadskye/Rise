@@ -171,7 +171,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{durationability}{Banish to the Abyss}[Duration]
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
-                    \hit The subject takes 2d6 \add half \glossterm{power} fire damage.
+                    \hit The target takes 2d6 \add half \glossterm{power} fire damage.
                     If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
                     At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
                     After it returns, it becomes immune to being teleported in this way until it takes a \glossterm{short rest}.
@@ -457,7 +457,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Secret of Bloodsharing} You can trigger the healing effect twice per round.
                     Each individual creature can only provide you with once instance of healing per round, even if you hit it twice.
 
-                    \parhead{Secret of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the subject.
+                    \parhead{Secret of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
                 }
             ",
             // Rank 6: 30. Rank 7: 49.

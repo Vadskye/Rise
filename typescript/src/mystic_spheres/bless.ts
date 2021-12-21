@@ -9,8 +9,8 @@ export const bless: MysticSphere = {
     {
       effect: `
         Choose one \\glossterm{ally} within your \\glossterm{reach}.
-        The subject gains a +1 bonus to \\glossterm{accuracy} this round.
-        Because this ability has the \\abilitytag{Swift} tag, this improves the subject's attacks during the current phase.
+        The target gains a +1 bonus to \\glossterm{accuracy} this round.
+        Because this ability has the \\abilitytag{Swift} tag, this improves the target's attacks during the current phase.
       `,
       name: "Boon of Competence",
       scaling: {
@@ -23,8 +23,8 @@ export const bless: MysticSphere = {
     {
       effect: `
         Choose one \\glossterm{ally} within your \\glossterm{reach}.
-        The subject gains a +1 bonus to \\glossterm{defenses} this round.
-        Because this ability has the \\abilitytag{Swift} tag, this improves the subject's defenses against attacks made against it during the current phase.
+        The target gains a +1 bonus to \\glossterm{defenses} this round.
+        Because this ability has the \\abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
       `,
       name: "Boon of Protection",
       scaling: {
@@ -123,8 +123,8 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        If the subject takes the \\textit{total defense} action during the current phase, it gains an additional +2 bonus to all defenses this round.
-        Because this ability has the \\abilitytag{Swift} tag, it affects attacks against the subject during the current phase.
+        If the target takes the \\textit{total defense} action during the current phase, it gains an additional +2 bonus to all defenses this round.
+        Because this ability has the \\abilitytag{Swift} tag, it affects attacks against the target during the current phase.
         If you cast this spell on yourself, it affects the first time you use the \\textit{total defense} ability before the end of the next round.
       `,
       rank: 1,
@@ -142,9 +142,9 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The first time the subject makes a \\glossterm{strike} this round,
+        The first time the target makes a \\glossterm{strike} this round,
         it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
-        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the subject makes during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the target makes during the current phase.
         If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
       `,
       rank: 1,
@@ -162,8 +162,8 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
-        Because this ability has the \\abilitytag{Swift} tag, it affects attacks the subject makes during the current phase.
+        The target gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
+        Because this ability has the \\abilitytag{Swift} tag, it affects attacks the target makes during the current phase.
       `,
       rank: 2,
       scaling: {
@@ -179,8 +179,8 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject becomes takes half damage from all sources this round.
-        Because this ability has the \\abilitytag{Swift} tag, it affects all damage the subject takes during the current phase.
+        The target becomes takes half damage from all sources this round.
+        Because this ability has the \\abilitytag{Swift} tag, it affects all damage the target takes during the current phase.
       `,
       rank: 6,
       tags: ["Swift"],
@@ -192,8 +192,8 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject gains a +2 bonus to Armor and Reflex defenses this round.
-        Because this ability has the \\abilitytag{Swift} tag, this improves the subject's defenses against attacks made against it during the current phase.
+        The target gains a +2 bonus to Armor and Reflex defenses this round.
+        Because this ability has the \\abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
       `,
       rank: 3,
       scaling: {
@@ -280,7 +280,7 @@ export const bless: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: `The subject can remove two effects.`,
+        6: `The target can remove two effects.`,
       },
       type: "Instant",
     },
@@ -432,8 +432,8 @@ export const bless: MysticSphere = {
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
         % How should this affect Strength break difficulty value?
-        The subject gains a +5 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
-        If the subject is moved, this effect ends.
+        The target gains a +5 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
+        If the target is moved, this effect ends.
         Otherwise, it lasts for one year.
         `,
       rank: 1,

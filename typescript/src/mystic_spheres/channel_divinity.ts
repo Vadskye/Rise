@@ -121,7 +121,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d10 + \\glossterm{power} energy damage.
+          The target takes 1d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -137,7 +137,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 4d6 + \\glossterm{power} energy damage.
+          The target takes 4d6 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.
@@ -153,7 +153,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 6d10 + \\glossterm{power} energy damage.
+          The target takes 6d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\distrange.
@@ -170,7 +170,7 @@ export const channelDivinity: MysticSphere = {
       // +1 level for situational +2 accuracy
       attack: {
         hit: `
-          The subject takes 1d10 + half \\glossterm{power} energy damage.
+          The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
           After it stops being stunned, it becomes immune to being stunned in this way until it takes a \\glossterm{short rest}.
         `,
@@ -190,7 +190,7 @@ export const channelDivinity: MysticSphere = {
       // +1 level for situational +2 accuracy
       attack: {
         hit: `
-          The subject takes 2d10 + half \\glossterm{power} energy damage.
+          The target takes 2d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
@@ -209,7 +209,7 @@ export const channelDivinity: MysticSphere = {
       attack: {
         crit: "The condition must be removed twice before the effect ends.",
         hit: `
-          The subject is \\dazzled as a \\glossterm{condition}.
+          The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\distrange.
@@ -225,7 +225,7 @@ export const channelDivinity: MysticSphere = {
 
       functionsLike: {
         name: 'glimpse of divinity',
-        exceptThat: 'the subject is also \\dazed as part of the same condition.',
+        exceptThat: 'the target is also \\dazed as part of the same condition.',
       },
       rank: 7,
       scaling: "accuracy",
@@ -236,9 +236,9 @@ export const channelDivinity: MysticSphere = {
       name: "Fear of the Divine",
 
       attack: {
-        crit: "The subject is \\panicked instead of \\frightened.",
+        crit: "The target is \\panicked instead of \\frightened.",
         hit: `
-          The subject is \\frightened by you as a \\glossterm{condition}.
+          The target is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -256,7 +256,7 @@ export const channelDivinity: MysticSphere = {
       attack: {
         crit: "The penalty increases to -5.",
         hit: `
-          As a \\glossterm{condition}, the subject takes a -2 penalty to Mental defense.
+          As a \\glossterm{condition}, the target takes a -2 penalty to Mental defense.
         `,
         targeting: `
           Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
@@ -445,7 +445,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d6 + half \\glossterm{power} energy damage.
+          The target takes 2d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.

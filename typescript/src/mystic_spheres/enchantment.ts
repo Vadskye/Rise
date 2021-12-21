@@ -11,7 +11,7 @@ export const enchantment: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The subject's mood improves and it feels more cheerful.
+        The target's mood improves and it feels more cheerful.
       `,
       scaling: {
         2: `You may target an additional ally within range.`,
@@ -26,14 +26,14 @@ export const enchantment: MysticSphere = {
       name: "Repeat",
 
       attack: {
-        crit: `The subject does not become immune to this effect.`,
+        crit: `The target does not become immune to this effect.`,
         hit: `
-          During the next round, the subject must repeat all actions that it took this round.
+          During the next round, the target must repeat all actions that it took this round.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
           If it is unable to take the same action, it unable to take any action of that action type.
           For example, if a creature moved during the round that you cast this spell and was \\immobilized or knocked \\prone, it cannot move at all during the following round.
 
-          After the subject stops repeating its actions, it becomes immune to this effect until it takes a \\glossterm{short rest}.
+          After the target stops repeating its actions, it becomes immune to this effect until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -69,7 +69,7 @@ export const enchantment: MysticSphere = {
           The inability to hold the item becomes a \\glossterm{condition}.
         `,
         hit: `
-          The subject immediately drops one object it is holding in a single hand.
+          The target immediately drops one object it is holding in a single hand.
           It is \\glossterm{briefly} unable to pick up that item.
           It can still hold other items, but if the dropped item is placed in its hand, it will immediately drop it again.
 
@@ -90,7 +90,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `As a \\glossterm{condition}, the subject is forced to speak out loud constantly whenever it can.
+        hit: `As a \\glossterm{condition}, the target is forced to speak out loud constantly whenever it can.
         This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
         In combat, most creatures with an intelligence of 0 or less will often talk about what they are planning on doing, which can help you predict their actions.`,
         targeting: `
@@ -109,11 +109,11 @@ export const enchantment: MysticSphere = {
 
       // This is T1 + one level; it is a weird hybrid of immobilized and a minor T1 effect
       attack: {
-        crit: `The subject must dance as a \\glossterm{standard action} to reset the penalties, instead of as a move action.`,
-        hit: `As a \\glossterm{condition}, the subject is compelled to dance.
+        crit: `The target must dance as a \\glossterm{standard action} to reset the penalties, instead of as a move action.`,
+        hit: `As a \\glossterm{condition}, the target is compelled to dance.
         It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
-        At the end of each round, if the subject did not dance during that round, it takes a -2 penalty to \\glossterm{accuracy} and Mental defense as the compulsion intensifies.
-        This penalty stacks each round until the subject dances, which resets the penalties to 0.`,
+        At the end of each round, if the target did not dance during that round, it takes a -2 penalty to \\glossterm{accuracy} and Mental defense as the compulsion intensifies.
+        This penalty stacks each round until the target dances, which resets the penalties to 0.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -149,7 +149,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The subject is \\slowed as a \\glossterm{condition}.`,
+        hit: `The target is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\longrange.
         `,
@@ -200,10 +200,10 @@ export const enchantment: MysticSphere = {
 
       // +1 level for super attunement
       attack: {
-        crit: `The subject is \\confused instead of stunned.
-        In addition, if the subject is humanoid and was already confused from a previous casting of this spell, you may \\glossterm{attune} to this ability.
+        crit: `The target is \\confused instead of stunned.
+        In addition, if the target is humanoid and was already confused from a previous casting of this spell, you may \\glossterm{attune} to this ability.
         If you do, it becomes \\dominated by you for the duration of that attunement.`,
-        hit: `The subject is \\stunned as a \\glossterm{condition}.`,
+        hit: `The target is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
@@ -234,13 +234,13 @@ export const enchantment: MysticSphere = {
       // +1 level over normal med range r2 debuff due to sleep effect
       attack: {
         crit: `
-          If the subject has no remaining \\glossterm{damage resistance}, it immediately falls asleep even if it is in combat or otherwise exerting itself.
+          If the target has no remaining \\glossterm{damage resistance}, it immediately falls asleep even if it is in combat or otherwise exerting itself.
         `,
         hit: `
-          The subject is \\glossterm{slowed} as a \\glossterm{condition}.
+          The target is \\glossterm{slowed} as a \\glossterm{condition}.
           During that condition, if it is not in combat or otherwise exerting itself, it falls asleep.
           It cannot be awakened while this effect lasts unless it loses \\glossterm{hit points}, which causes it to wake up and ends the effect.
-          After the effect ends by other means, the subject can wake up normally, though it continues to sleep until it awakens for any reason.
+          After the effect ends by other means, the target can wake up normally, though it continues to sleep until it awakens for any reason.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -274,10 +274,10 @@ export const enchantment: MysticSphere = {
 
       // original targets: One creature within \medrange
       attack: {
-        crit: "The subject does not become immune to this effect.",
+        crit: "The target does not become immune to this effect.",
         // No glance effect since it's already one round
         hit: `
-          During the next \\glossterm{action phase}, the subject is compelled to make a \\glossterm{strike} against itself as a \\glossterm{standard action}.
+          During the next \\glossterm{action phase}, the target is compelled to make a \\glossterm{strike} against itself as a \\glossterm{standard action}.
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
           If it has any weapons in hand or natural weapons at that time, it must use one of them.
           Otherwise, it uses its unarmed attack.
@@ -328,9 +328,9 @@ export const enchantment: MysticSphere = {
       name: "Cause Fear",
 
       attack: {
-        crit: `The subject is \\frightened by you or your ally instead of shaken.`,
+        crit: `The target is \\frightened by you or your ally instead of shaken.`,
         hit: `
-          The subject is \\shaken by either you or an \\glossterm{ally} of your choice within range as a \\glossterm{condition}.
+          The target is \\shaken by either you or an \\glossterm{ally} of your choice within range as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -363,8 +363,8 @@ export const enchantment: MysticSphere = {
       name: "Frighten",
 
       attack: {
-        crit: `The subject is \\panicked by you instead of frightened.`,
-        hit: `The subject is \\frightened by you as a \\glossterm{condition}.`,
+        crit: `The target is \\panicked by you instead of frightened.`,
+        hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -379,7 +379,7 @@ export const enchantment: MysticSphere = {
       name: "Fearsome Aura",
 
       attack: {
-        crit: "The subject does not become immune to this effect.",
+        crit: "The target does not become immune to this effect.",
         hit: `Each subject is \\glossterm{briefly} \\shaken by you.`,
         targeting: `
           At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
@@ -410,9 +410,9 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `Actions which threaten the charmed person without harming them do not break the effect.`,
-        hit: `The subject is \\charmed by you.
+        hit: `The target is \\charmed by you.
         Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
-        Harming the subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
+        Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
         An observant target may interpret overt threats to its allies as a threat to itself.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
@@ -430,9 +430,9 @@ export const enchantment: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-        when the effect ends, the subject forgets all events that transpired during the spell's duration.
+        when the effect ends, the target forgets all events that transpired during the spell's duration.
         It becomes aware of its surroundings as if waking up from a daydream.
-        The subject is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
+        The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
         `,
         name: "charm",
       },
@@ -446,12 +446,12 @@ export const enchantment: MysticSphere = {
       name: "Calm Emotions",
 
       attack: {
-        crit: `Situations which cause the subject to feel that it is in danger without harming it do not break the effect.`,
+        crit: `Situations which cause the target to feel that it is in danger without harming it do not break the effect.`,
         hit: `Each subject has its emotions calmed.
         The effects of all other \\abilitytag{Emotion} abilities on that target are \\glossterm{suppressed}.
         It cannot take violent actions (although it can defend itself) or do anything destructive.
-        If the subject is harmed or feels that it is in danger, this effect is \\glossterm{dismissed}.
-        Harming the subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.`,
+        If the target is harmed or feels that it is in danger, this effect is \\glossterm{dismissed}.
+        Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.`,
         targeting: `
         Make an attack vs. Mental against all creatures in a \\largearea radius from you.
         You take a -5 penalty to \\glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
@@ -468,7 +468,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `As a \\glossterm{condition}, the subject is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
+        hit: `As a \\glossterm{condition}, the target is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
         For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.`,
         targeting: `
         Make an attack vs. Mental with a +4 bonus to \\glossterm{accuracy} against one creature within \\medrange.
@@ -485,9 +485,9 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until this curse is removed.`,
-        hit: `The subject is \\shaken by all sources of your chosen fear until it takes a \\glossterm{short rest}.`,
+        hit: `The target is \\shaken by all sources of your chosen fear until it takes a \\glossterm{short rest}.`,
         targeting: `
-        When you cast this spell, choose one of the following fears: blood (including any creature with a \\glossterm{vital wound}, even the subject), darkness (any location that does not have \\glossterm{bright illumination}), heights (any drop more 10 feet high), insects, snakes, or water.
+        When you cast this spell, choose one of the following fears: blood (including any creature with a \\glossterm{vital wound}, even the target), darkness (any location that does not have \\glossterm{bright illumination}), heights (any drop more 10 feet high), insects, snakes, or water.
 
         Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -503,7 +503,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The penalty increases to -5.`,
-        hit: `As a \\glossterm{condition}, the subject takes a -2 penalty to Mental defense.`,
+        hit: `As a \\glossterm{condition}, the target takes a -2 penalty to Mental defense.`,
         targeting: `
           Make an attack vs. Mental with a +3 bonus against one creature within \\medrange.
         `,
@@ -550,14 +550,14 @@ export const enchantment: MysticSphere = {
       name: "Solipsism",
 
       attack: {
-        crit: "The subject does not become immune to this effect.",
+        crit: "The target does not become immune to this effect.",
         hit: `
-          As a \\glossterm{condition}, the subject believes that it is the only real creature, and the rest of the world is an illusion.
+          As a \\glossterm{condition}, the target believes that it is the only real creature, and the rest of the world is an illusion.
           It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
           It still avoids obvious environmental hazards, such as cliff edges or fires.
           If it takes any damage or is otherwise harmed, including significant subjective discomfort, this effect is automatically broken.
 
-          After this effect ends, the subject becomes immune to it until it takes a \\glossterm{short rest}.
+          After this effect ends, the target becomes immune to it until it takes a \\glossterm{short rest}.
         `,
         targeting: `
         Make an attack vs. Mental against one creature within \\shortrange.
@@ -590,7 +590,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The penalty increases to -8.`,
-        hit: `The subject takes a -4 penalty to Awareness, Social Insight, and \\glossterm{initiative} checks as a \\glossterm{condition}.`,
+        hit: `The target takes a -4 penalty to Awareness, Social Insight, and \\glossterm{initiative} checks as a \\glossterm{condition}.`,
         targeting: `
         This spell has no \\glossterm{verbal components}.
 
@@ -609,7 +609,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
-          As a \\glossterm{condition}, the subject feels excruciating pain from even minor injuries.
+          As a \\glossterm{condition}, the target feels excruciating pain from even minor injuries.
           As long as it is at less than its maximum \\glossterm{hit points}, it is \\stunned.
         `,
         targeting: `
@@ -626,11 +626,11 @@ export const enchantment: MysticSphere = {
       name: "Friend to Foe",
 
       attack: {
-        crit: `The subject does not become immune to this effect.`,
+        crit: `The target does not become immune to this effect.`,
         // No relevant glance effect
-        hit: `The subject \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
+        hit: `The target \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
         It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
-        After this effect ends, the subject becomes immune to this spell until it takes a \\glossterm{short rest}.`,
+        After this effect ends, the target becomes immune to this spell until it takes a \\glossterm{short rest}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\distrange.
         `,
@@ -646,9 +646,9 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
+          The target takes 1d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
           If it takes damage, it is \\glossterm{briefly} \\dazed.
-          After this effect ends, the subject becomes immune to being dazed in this way until it takes a \\glossterm{short rest}.
+          After this effect ends, the target becomes immune to being dazed in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -663,7 +663,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d6 + half \\glossterm{power} energy \\glossterm{subdual damage}.
+          The target takes 2d6 + half \\glossterm{power} energy \\glossterm{subdual damage}.
           If it takes damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
@@ -679,7 +679,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 4d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
+          The target takes 4d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
           If it takes damage, it is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
@@ -698,7 +698,7 @@ export const enchantment: MysticSphere = {
       castingTime: "one minute",
       attack: {
         hit: `
-          The subject is compelled to deliver a message for you.
+          The target is compelled to deliver a message for you.
         You can give the animal a small piece of parchment or similarly sized item containing up to 25 words.
         In addition, choose a destination that you can clearly visualize.
         You must have a general idea of the direction and distance to that location from your current location.
@@ -712,7 +712,7 @@ export const enchantment: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against one Small or Tiny animal within \\medrange.
-          You take a -10 penalty to \\glossterm{accuracy} with the attack if the subject is currently in combat.
+          You take a -10 penalty to \\glossterm{accuracy} with the attack if the target is currently in combat.
         `,
       },
       rank: 2,
@@ -736,7 +736,7 @@ export const enchantment: MysticSphere = {
     {
       name: "Antipathy",
 
-      // original targets: ['One Large or smaller object within \\medrange', 'Creatures near the subject (see text)']
+      // original targets: ['One Large or smaller object within \\medrange', 'Creatures near the target (see text)']
       castingTime: "24 hours",
       attack: {
         crit: `The creature is \\panicked instead of frightened.`,
@@ -744,7 +744,7 @@ export const enchantment: MysticSphere = {
         targeting: `
         Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
         In addition, choose one Large or smaller object within \\medrange.
-        If the subject is moved, this effect ends.
+        If the target is moved, this effect ends.
 
         Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the chosen object, make an attack vs. Mental against it.
         Your accuracy with this attack is equal to half your level \\add half your base Perception.
@@ -773,9 +773,9 @@ export const enchantment: MysticSphere = {
         targeting: `
         Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
         In addition, choose one Large or smaller object within \\medrange.
-        If the subject is moved, this effect ends.
+        If the target is moved, this effect ends.
 
-        Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the subject, make an attack vs. Mental against it.
+        Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the target, make an attack vs. Mental against it.
         Your accuracy with this attack is equal to half your level \\add half your base Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
         After you make this attack against a particular creature, you do not make this attack against it again until it takes a \\glossterm{short rest}.

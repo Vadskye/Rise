@@ -532,7 +532,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                 \begin{durationability}{Sentinel's Challenge}[Duration]
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} in a \largearea radius from you.
-                    \hit Each subject is \goaded by you as a \glossterm{condition}.
+                    \hit Each target is \goaded by you as a \glossterm{condition}.
                     \rankline
                     You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                 \end{durationability}
@@ -677,7 +677,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{durationability}{Hustle}[\abilitytag{Sustain} (free)]
                         \rankline
-                        Each subject gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes} during any phase that it takes the \textit{sprint} action, or if it moves using a \glossterm{standard action}.
+                        Each target gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes} during any phase that it takes the \textit{sprint} action, or if it moves using a \glossterm{standard action}.
 
                         \rankline
                         \rank{3} The speed bonus increases to \plus10 feet.

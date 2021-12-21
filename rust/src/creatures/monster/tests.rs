@@ -201,22 +201,22 @@ mod firebolt_scaling {
     fn level_1() {
         let level = 1;
         assert_eq!(
-            "Firebolt +1 (The subject takes 1d10+2 fire damage.)",
+            "Firebolt +1 (The target takes 1d10+2 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::One, level)),
             "CR 1",
         );
         assert_eq!(
-            "Firebolt +1 (The subject takes 2d6+3 fire damage.)",
+            "Firebolt +1 (The target takes 2d6+3 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::Two, level)),
             "CR 2",
         );
         assert_eq!(
-            "Firebolt +1 (The subject takes 2d10+3 fire damage.)",
+            "Firebolt +1 (The target takes 2d10+3 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::Four, level)),
             "CR 4",
         );
         assert_eq!(
-            "Firebolt +1 (The subject takes 4d6+3 fire damage.)",
+            "Firebolt +1 (The target takes 4d6+3 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::Six, level)),
             "CR 6",
         );
@@ -226,22 +226,22 @@ mod firebolt_scaling {
     fn level_16() {
         let level = 16;
         assert_eq!(
-            "Greater Firebolt +10 (The subject takes 4d10+11 fire damage.)",
+            "Greater Firebolt +10 (The target takes 4d10+11 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::One, level)),
             "CR 1",
         );
         assert_eq!(
-            "Greater Firebolt +10 (The subject takes 5d10+19 fire damage.)",
+            "Greater Firebolt +10 (The target takes 5d10+19 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::Two, level)),
             "CR 2",
         );
         assert_eq!(
-            "Supreme Firebolt +10 (The subject takes 8d10+19 fire damage.)",
+            "Supreme Firebolt +10 (The target takes 8d10+19 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::Four, level)),
             "CR 4",
         );
         assert_eq!(
-            "Supreme Firebolt +10 (The subject takes 9d10+19 fire damage.)",
+            "Supreme Firebolt +10 (The target takes 9d10+19 fire damage.)",
             firebolt_description(generate_creature(ChallengeRating::Six, level)),
             "CR 6",
         );

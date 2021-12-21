@@ -11,11 +11,11 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `As above, except that the poison progresses by two stages instead of one.`,
-        hit: `Choose a poison affecting the subject.
-        The poison progresses by one stage against the subject, which can have varying effects depending on the poison (see \\pcref{Poison}).`,
+        hit: `Choose a poison affecting the target.
+        The poison progresses by one stage against the target, which can have varying effects depending on the poison (see \\pcref{Poison}).`,
         targeting: `
         Make an attack vs. Fortitude with a +4 \\glossterm{accuracy} bonus against one living creature within \\medrange.
-        If the subject is not currently poisoned, this ability has no effect.
+        If the target is not currently poisoned, this ability has no effect.
         `,
       },
       scaling: "accuracy",
@@ -27,11 +27,11 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\shortrange.
-        The subject gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
+        The target gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
       `,
       scaling: {
         2: `The number of additional successes increases to two.
-            The subject can split these successes among any number of different poisons affecting it.`,
+            The target can split these successes among any number of different poisons affecting it.`,
         4: `The number of additional successes increases to three.`,
         6: `The range increases to \\medrange.`,
       },
@@ -43,7 +43,7 @@ export const toxicology: MysticSphere = {
       name: "Corrosive Grasp",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} acid damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} acid damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -60,7 +60,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d8 + \\glossterm{power} acid damage.
+          The target takes 2d8 + \\glossterm{power} acid damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
@@ -79,7 +79,7 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'greater corrosive grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
       },
       rank: 7,
       scaling: "damage",
@@ -92,10 +92,10 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         // No relevant glance effect
-        hit: `The subject becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of asp venom.
+        hit: `The target becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of asp venom.
         At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref{Poison}).
         A creature poisoned by asp venom becomes \\dazed as long as it is poisoned.
-        Reaching the third \\glossterm{poison stage} causes the subject to become \\stunned as long as it is poisoned.
+        Reaching the third \\glossterm{poison stage} causes the target to become \\stunned as long as it is poisoned.
         A third failed attack ends the poison.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -112,9 +112,9 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
-        hit: `The subject becomes \\glossterm{poisoned} with dragon bile.
+        hit: `The target becomes \\glossterm{poisoned} with dragon bile.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the subject takes 1d10 physical damage.
+        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d10 physical damage.
         A third failed attack ends the poison.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\longrange.
@@ -182,8 +182,8 @@ export const toxicology: MysticSphere = {
       name: "Sickness",
 
       attack: {
-        crit: `The subject is \\stunned instead of dazed.`,
-        hit: `The subject is \\dazed as a \\glossterm{condition}.`,
+        crit: `The target is \\stunned instead of dazed.`,
+        hit: `The target is \\dazed as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
@@ -199,7 +199,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until this curse is removed.`,
-        hit: `The subject is \\dazed until it takes a \\glossterm{short rest}.`,
+        hit: `The target is \\dazed until it takes a \\glossterm{short rest}.`,
         targeting: `
           Make an attack vs. Mental against one living creature within \\medrange.
         `,
@@ -216,7 +216,7 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'noxious curse',
-        exceptThat: 'the subject is \\stunned instead of dazed.',
+        exceptThat: 'the target is \\stunned instead of dazed.',
       },
       rank: 7,
       scaling: "accuracy",
@@ -228,7 +228,7 @@ export const toxicology: MysticSphere = {
       name: "Acid Splash",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} acid damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
         `,
@@ -244,8 +244,8 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 4d8 + \\glossterm{power} acid damage.
-          In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
+          The target takes 4d8 + \\glossterm{power} acid damage.
+          In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
           Its body is completely dissolved by acid, leaving behind only a splash of black sludge.
           Its equipment is unaffected.
         `,
@@ -264,8 +264,8 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 7d10 + \\glossterm{power} acid damage.
-          In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
+          The target takes 7d10 + \\glossterm{power} acid damage.
+          In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
           Its body is completely dissolved by acid, leaving behind only a splash of black sludge.
           Its equipment is unaffected.
         `,
@@ -282,7 +282,7 @@ export const toxicology: MysticSphere = {
       name: "Acid Arrow",
 
       attack: {
-        hit: `The subject takes 2d8 + \\glossterm{power} acid damage.`,
+        hit: `The target takes 2d8 + \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\distrange.
         `,
@@ -297,7 +297,7 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Arrow",
 
       attack: {
-        hit: `The subject takes 4d10 + \\glossterm{power} acid damage.`,
+        hit: `The target takes 4d10 + \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\extrange.
         `,
@@ -390,7 +390,7 @@ export const toxicology: MysticSphere = {
       name: "Corrosive Splash",
 
       attack: {
-        hit: `The subject takes 4d6 + \\glossterm{power} acid damage.
+        hit: `The target takes 4d6 + \\glossterm{power} acid damage.
         This attack deals double damage to objects.`,
         targeting: `
         Make an attack vs. Fortitude against anything within \\medrange.
@@ -465,7 +465,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within your \\glossterm{reach}.
-        The subject regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
+        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 2,
@@ -479,7 +479,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\shortrange.
-        The subject regains 4d6 + \\glossterm{power} \\glossterm{hit points}.
+        The target regains 4d6 + \\glossterm{power} \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 5,
@@ -497,7 +497,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: `The subject can remove two effects.`,
+        6: `The target can remove two effects.`,
       },
       type: "Instant",
     },
@@ -506,10 +506,10 @@ export const toxicology: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        hit: `The subject becomes drenched in acid as a \\glossterm{condition}.
+        hit: `The target becomes drenched in acid as a \\glossterm{condition}.
         At the end of each round, it takes 1d6 + half \\glossterm{power} acid damage.
 
-        The condition can be removed if the subject makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
+        The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
         targeting: `
           Make an attack vs. Reflex against one creature within \\medrange.
@@ -525,9 +525,9 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         glance:
-          "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
+          "The effect lasts \\glossterm{briefly}. The target still takes damage during the next round.",
         hit: `
-          The subject becomes drenched in acid as a \\glossterm{condition}.
+          The target becomes drenched in acid as a \\glossterm{condition}.
           At the end of each round, it takes 2d8 + half \\glossterm{power} acid damage.
         `,
         targeting: `

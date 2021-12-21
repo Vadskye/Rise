@@ -415,15 +415,15 @@ impl AttackTargeting {
 
     pub fn subjects(&self) -> &str {
         match self {
-            Self::Anything(_) => "The subject",
+            Self::Anything(_) => "The target",
             Self::CausedDamage(_) => "Each subject",
             Self::CausedHpLoss(_) => "Each subject",
-            Self::Creature(_) => "The subject",
+            Self::Creature(_) => "The target",
             Self::Cone(_, _) => "Each subject",
             Self::Line(_, _, _) => "Each subject",
             Self::Radius(_, _, _) => "Each subject",
             // TODO: handle Sweeping
-            Self::Strike => "The subject",
+            Self::Strike => "The target",
         }
     }
 }
