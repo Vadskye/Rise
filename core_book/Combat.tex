@@ -134,12 +134,6 @@
             This can help prevents melee characters from feeling stuck or useless.
             In addition, the \ability{charge} universal ability can be helpful in such cases.
 
-    \subsection{Initiative}\label{Initiative}
-        When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
-        For details, see \pcref{Conflicting Actions}.
-        Your initiative is normally equal to the your base Dexterity \add your base Perception.
-        In addition, some abilities grant you bonuses that specifically apply to initiative checks.
-
 \section{Movement and Positioning}\label{Movement and Positioning}
     This section describes how creatures move and position themselves on a battlefield.
 
@@ -1074,13 +1068,13 @@
         An ability's duration determines how long its effect lasts.
         Abilities can have one of several different kinds of durations.
 
-        \subsubsection{Conditions}\label{Conditions}
-            Many abilities impose \glossterm{conditions} on their targets.
-            A condition lasts until it is removed.
-            You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
-            There are several other abilities that can also remove conditions.
+        % TODO: Is this necessary?
+        % Should this clarify interactions with bursts/zones/emanations?
+        If an ability targets creatures or objects directly, the effects travel with the subjects for the ability's duration, even if the subjects go outside the ability's initial range.
+        If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
+        Such effects can sometimes be destroyed prior to when their duration ends.
 
-        \subsubsection{Attunement}\label{Attunement}
+        \subsubsection{Attuned Abilities}\label{Attuned Abilities}
             Many abilities last as long as a creature attunes to them.
             Attuning to an ability costs an \glossterm{attunement point}.
             As long as you remain attuned to that ability, you cannot recover that attunement point by any means.
@@ -1113,6 +1107,12 @@
                 You can attune to multiple \abilitytag{Attune} (target) and \abilitytag{Attune} (self) abilities, and multiple creatures can attune to different uses of abilitytag same \glossterm{Attune} (target) ability you have.
                 However, you cannot attune to the same ability more than once, regardless of whether it is \abilitytag{Attune} (self) or \abilitytag{Attune} (target).
 
+        \subsubsection{Conditions}\label{Conditions}
+            Many abilities impose \glossterm{conditions} on their targets.
+            A condition lasts until it is removed.
+            You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
+            There are several other abilities that can also remove conditions.
+
         \subsubsection{Sustained Abilities}\label{Sustained Abilities}
             Some abilities last as long as you take an action to sustain them each round.
             The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
@@ -1130,13 +1130,6 @@
         \subsubsection{Permanent}
             Some abilities last permanently.
             Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
-
-        % Is this necessary?
-        % Should this clarify interactions with bursts/zones/emanations?
-        \subsubsection{Targeting and Durations}
-            If an ability targets creatures or objects directly, the effects travel with the targets for the ability's duration.
-            If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
-            Such effects can sometimes be destroyed prior to when their duration ends.
 
     \subsection{Combining Effects}
         Abilities do not generally affect the way another abilities function.
@@ -1306,7 +1299,7 @@
             \parhead{Attunement Rituals}
                 Rituals with the \abilitytag{Attune} (ritual) tag require a single ritual participant to \glossterm{attune} to the ritual's effect.
                 Any ritual participant can attune to the effect, but only one ritual participant can attune to the effect unless otherwise noted in the ritual's description.
-                For details, see \pcref{Attunement}.
+                For details, see \pcref{Attuned Abilities}.
 
         \subsubsection{Magical Writings}
             To record a spell in written form, a character uses complex notation that describes the magical forces involved in the spell.
