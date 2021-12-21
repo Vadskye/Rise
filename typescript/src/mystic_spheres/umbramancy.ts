@@ -447,10 +447,10 @@ export const umbramancy: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
           If this attack succeeds against both subjects, they swap shadows with each other as a \\glossterm{condition}.
-          As long as the condition lasts on both subjects, each target has total control over the other subject's movements during each \\glossterm{movement phase}, and is unable to control its own movement.
+          As long as the condition lasts on both subjects, each target has total control over the other target's movements during each \\glossterm{movement phase}, and is unable to control its own movement.
           This does not affect their movements during other phases.
 
-          If a subject enters \\glossterm{bright illumination} while it is not touching its shadow, the condition automatically ends for both subjects.
+          If a target enters \\glossterm{bright illumination} while it is not touching its shadow, the condition automatically ends for both subjects.
         `,
         targeting: `
           Make an attack vs. Mental with a +2 accuracy bonus against two creatures within \\medrange that are standing on the ground.
@@ -473,7 +473,7 @@ export const umbramancy: MysticSphere = {
           You have full control over its movement during each \\glossterm{movement phase}.
           This does not affect its movements during other phases.
 
-          If a subject enters \\glossterm{bright illumination} while it is not touching its shadow, the condition automatically ends.
+          If a target enters \\glossterm{bright illumination} while it is not touching its shadow, the condition automatically ends.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange that is standing on the ground.

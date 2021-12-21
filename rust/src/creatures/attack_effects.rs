@@ -51,7 +51,7 @@ impl DamageEffect {
         let extra_defense_effect = if let Some(ref effect) = self.extra_defense_effect {
             format!(
                 "
-                    In addition, if this attack also beats a subject's {defense} defense, it is {effect}
+                    In addition, if this attack also beats a target's {defense} defense, it is {effect}
                 ",
                 defense = titlecase(effect.0.name()),
                 effect = effect.1.description(),

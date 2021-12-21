@@ -220,7 +220,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
-        Each Huge or smaller subject that takes damage this way is also knocked \\prone.`,
+        Each Huge or smaller target that takes damage this way is also knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearea radius within \\longrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.

@@ -570,7 +570,7 @@ export const thaumaturgy: MysticSphere = {
       castingTime: "one minute",
       effect: `
         Choose one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
-        All magical effects on the target, including any magic items a subject creature wears or carries, are undetectable with abilities that detect magic.
+        All magical effects on the target, including any magic items a target creature wears or carries, are undetectable with abilities that detect magic.
       `,
       rank: 2,
       type: "Attune (ritual)",
