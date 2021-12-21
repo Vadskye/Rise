@@ -473,7 +473,7 @@ export const fabrication: MysticSphere = {
         This does not block \\glossterm{line of sight} or \\glossterm{line of effect}, but it provides cover, and non-piercing \\glossterm{melee} weapons cannot attack through the cage.
         Each 5-ft.\\ square of the field has 12 \\glossterm{hit points}.
 
-        % TODO: clarify that you can't create two cages around the same subject
+        % TODO: clarify that you can't create two cages around the same target
         % simultaneously
         If another creature is in the target's space when this spell is cast, this spell fails without effect.
       `,

@@ -222,8 +222,8 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The primary subject takes 4d6 + \\glossterm{power} electricity damage.
-          Each secondary subject takes 2d10 + half \\glossterm{power} electricity damage.
+          The primary target takes 4d6 + \\glossterm{power} electricity damage.
+          Each secondary target takes 2d10 + half \\glossterm{power} electricity damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.

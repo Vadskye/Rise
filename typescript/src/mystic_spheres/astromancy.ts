@@ -225,7 +225,7 @@ export const astromancy: MysticSphere = {
         Each target other than yourself must be Medium size or smaller.
         Each target \\glossterm{teleports} into an unoccupied location within range on a stable surface that can support its weight.
         You choose each target's destination independently.
-        If a subject's destination is invalid, this spell has no effect on it, but any other subjects still teleport normally.
+        If a target's destination is invalid, this spell has no effect on it, but any other subjects still teleport normally.
       `,
       rank: 3,
       narrative: `
@@ -407,7 +407,7 @@ export const astromancy: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among you and your \\glossterm{allies} within \\longrange.
-        Each target \\glossterm{teleports} into the location of a different subject.
+        Each target \\glossterm{teleports} into the location of a different target.
       `,
       narrative: `
         The kobold ambush exploited a weak point in your marching formation, and now everything is out of place.

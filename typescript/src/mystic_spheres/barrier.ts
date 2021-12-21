@@ -502,7 +502,7 @@ export const barrier: MysticSphere = {
       effect: `
         Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
         In addition, choose a Fine object within \\shortrange.
-        The primary subject becomes magically locked.
+        The primary target becomes magically locked.
         It can be unlocked with a Devices check with a \\glossterm{difficulty value} of 25.
         The \\glossterm{difficulty value} to break it open forcibly increases by 10.
 
@@ -541,7 +541,7 @@ export const barrier: MysticSphere = {
         You make an attack vs. Reflex against everything within a \\smallarea radius from the object.
         Your accuracy with this attack is equal to half your level \\add half your base Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
-        Each struck subject takes 2d8 + half \\glossterm{power} energy damage.
+        Each struck target takes 2d8 + half \\glossterm{power} energy damage.
 
         After the object explodes in this way, the ritual is \\glossterm{dismissed}.
         If the object is destroyed or rendered illegible, the ritual is dismissed without exploding.
