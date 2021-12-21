@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const polymorph: MysticSphere = {
-  name: "Polymorph",
-  shortDescription: "Change the physical shape or outward form of objects and creatures.",
-  sources: ["arcane", "nature", "pact"],
+  name: 'Polymorph',
+  shortDescription: 'Change the physical shape or outward form of objects and creatures.',
+  sources: ['arcane', 'nature', 'pact'],
 
   cantrips: [
     {
-      name: "Alter Object",
+      name: 'Alter Object',
 
       effect: `
         Choose one \\glossterm{unattended}, nonmagical object you touch.
@@ -22,32 +22,32 @@ export const polymorph: MysticSphere = {
         4: `The amount of work you accomplish with the spell increases to one minute.`,
         6: `The amount of work you accomplish with the spell increases to two minutes.`,
       },
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Alter Appearance",
+      name: 'Alter Appearance',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           that you gain a +4 bonus and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Disguise Creature}).
           This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
 
           This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
         `,
-        name: "disguise creature",
+        name: 'disguise creature',
       },
       scaling: {
         2: `The bonus increases to +6.`,
         4: `The bonus increases to +8.`,
         6: `The bonus increases to +10.`,
       },
-      type: "Duration",
+      type: 'Duration',
     },
 
     {
-      name: "Natural Weapon",
+      name: 'Natural Weapon',
 
       effect: `
         You gain your choice of one of the following \\glossterm{natural weapons}: bite, claw, gore, ram, slam, or talon.
@@ -58,12 +58,12 @@ export const polymorph: MysticSphere = {
         4: `The power bonus increases to +4.`,
         6: `The power bonus increases to +8.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
   ],
   spells: [
     {
-      name: "Reforge Armor",
+      name: 'Reforge Armor',
 
       effect: `
         Choose one nonmagical suit of body armor you touch.
@@ -80,11 +80,11 @@ export const polymorph: MysticSphere = {
         6: `You can also choose one of the following special materials: pure adamantine, pure deepforged, pure diamondsteel, pure elvenweave, pure mithral, or pure starmetal.`,
       },
       // TODO: weird that this is one of the few ways you can attune on behalf of an ally
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Twisting Claw",
+      name: 'Twisting Claw',
       effect: `
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         Your \\glossterm{power} with the strike is halved.
@@ -101,7 +101,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: "Mighty Claw",
+      name: 'Mighty Claw',
       effect: `
         Make a melee \\glossterm{strike} with a -1 accuracy penalty and a +2 damage bonus using a \\glossterm{natural weapon}.
         You may use the higher of your \\glossterm{magical} power and your \\glossterm{mundane} power to determine your damage with this ability.
@@ -116,7 +116,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: "Distant Claw",
+      name: 'Distant Claw',
       effect: `
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         You gain a +5 foot bonus to your \\glossterm{reach} with this strike.
@@ -131,7 +131,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: "Piercing Grasp",
+      name: 'Piercing Grasp',
 
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} piercing damage.`,
@@ -145,12 +145,12 @@ export const polymorph: MysticSphere = {
         You twist your hand into a spike that bends past armor to injure your foe.
       `,
       rank: 1,
-      scaling: "damage",
-      type: "Instant",
+      scaling: 'damage',
+      type: 'Instant',
     },
 
     {
-      name: "Greater Piercing Grasp",
+      name: 'Greater Piercing Grasp',
 
       attack: {
         hit: `
@@ -167,24 +167,25 @@ export const polymorph: MysticSphere = {
         You twist your hand into a spike that bends past armor to impale your foe.
       `,
       rank: 3,
-      scaling: "damage",
-      type: "Duration",
+      scaling: 'damage',
+      type: 'Duration',
     },
 
     {
-      name: "Supreme Piercing Grasp",
+      name: 'Supreme Piercing Grasp',
 
       functionsLike: {
         name: 'greater piercing grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
+        exceptThat:
+          'the damage increases to 4d10 + \\glossterm{power} damage, and the subject is \\stunned instead of dazed.',
       },
       rank: 7,
-      scaling: "damage",
-      type: "Duration",
+      scaling: 'damage',
+      type: 'Duration',
     },
 
     {
-      name: "Baleful Polymorph",
+      name: 'Baleful Polymorph',
 
       attack: {
         hit: `The subject takes 2d8 physical damage.
@@ -195,12 +196,12 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
-      type: "Duration",
+      scaling: 'accuracy',
+      type: 'Duration',
     },
 
     {
-      name: "Twist Flesh",
+      name: 'Twist Flesh',
 
       attack: {
         hit: `The subject takes 1d10 + \\glossterm{power} physical damage.`,
@@ -209,14 +210,14 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      type: "Instant",
+      scaling: 'damage',
+      type: 'Instant',
     },
 
     {
-      name: "Shrink",
+      name: 'Shrink',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         The subject's size decreases by one \\glossterm{size category}, to a minimum of Tiny.
         This decreases the \\glossterm{base speed} for its size and improves its Stealth skill.
@@ -228,29 +229,29 @@ export const polymorph: MysticSphere = {
         4: `You also gain a +2 \\glossterm{magic bonus} to Dexterity-based checks.`,
         6: `You can decrease your size category by up to two size categories.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Mass Shrink",
+      name: 'Mass Shrink',
 
       functionsLike: {
         exceptThat:
-          "it affects up to five creatures of your choice from among yourself and your Small or larger \\glossterm{allies} within \\medrange.",
-        name: "Shrink",
+          'it affects up to five creatures of your choice from among yourself and your Small or larger \\glossterm{allies} within \\medrange.',
+        name: 'Shrink',
       },
       // narrative: '',
       rank: 4,
       scaling: {
-        6: "Each subject also gains a +2 \\glossterm{magic bonus} to Dexterity-based checks.",
+        6: 'Each subject also gains a +2 \\glossterm{magic bonus} to Dexterity-based checks.',
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Stoneskin",
+      name: 'Stoneskin',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
       `,
@@ -261,16 +262,16 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Mass Stoneskin",
+      name: 'Mass Stoneskin',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       functionsLike: {
         mass: true,
-        name: "Stoneskin",
+        name: 'Stoneskin',
       },
       // narrative: '',
       rank: 3,
@@ -278,13 +279,13 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Enlarge",
+      name: 'Enlarge',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         Your size increases by one \\glossterm{size category}, to a maximum of Huge.
         This increases the \\glossterm{base speed} for your size and reduces your Stealth skill.
@@ -303,16 +304,16 @@ export const polymorph: MysticSphere = {
           However, if you do, the movement speed penalty increases to -10 feet.
         `,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Mass Enlarge",
+      name: 'Mass Enlarge',
 
       functionsLike: {
         exceptThat:
-          "it affects up to five creatures of your choice from among yourself and your Large or smaller \\glossterm{allies} within \\medrange.",
-        name: "Enlarge",
+          'it affects up to five creatures of your choice from among yourself and your Large or smaller \\glossterm{allies} within \\medrange.',
+        name: 'Enlarge',
       },
       // narrative: '',
       rank: 5,
@@ -321,11 +322,11 @@ export const polymorph: MysticSphere = {
           Each subject also gains a +2 \\glossterm{magic bonus} to Strength-based checks, and a +2 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
         `,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Reshape Appearance",
+      name: 'Reshape Appearance',
 
       effect: `
         You make a Disguise check to alter your appearance (see \\pcref{Disguise Creature}).
@@ -338,27 +339,27 @@ export const polymorph: MysticSphere = {
         4: `The bonus increases to +6.`,
         6: `The bonus increases to +8.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Mass Reshape Appearance",
+      name: 'Mass Reshape Appearance',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       functionsLike: {
         mass: true,
-        name: "Reshape Appearance",
+        name: 'Reshape Appearance',
       },
       // narrative: '',
       rank: 4,
       scaling: {
         4: `The bonus increases to +6.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Disintegrate",
+      name: 'Disintegrate',
 
       attack: {
         hit: `The subject takes 4d10 + \\glossterm{power} physical damage.
@@ -371,12 +372,12 @@ export const polymorph: MysticSphere = {
       },
 
       rank: 5,
-      scaling: "damage",
-      type: "Instant",
+      scaling: 'damage',
+      type: 'Instant',
     },
 
     {
-      name: "Malleable Body",
+      name: 'Malleable Body',
 
       effect: `
         Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
@@ -393,14 +394,14 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `Your damage resistance is not reduced.` },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Spikeform",
+      name: 'Spikeform',
 
       // original targets: ['Yourself', 'See text']
-      castingTime: "minor action",
+      castingTime: 'minor action',
       attack: {
         // AOE dice, no power
         hit: `Each subject takes 2d6 piercing damage.`,
@@ -412,14 +413,14 @@ export const polymorph: MysticSphere = {
         Your body grows large spikes that impale creatures who attack you.
       `,
       rank: 3,
-      scaling: "damage",
-      type: "Attune (self)",
+      scaling: 'damage',
+      type: 'Attune (self)',
     },
 
     {
-      name: "Extruding Spikes",
+      name: 'Extruding Spikes',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       attack: {
         // TODO: is this damage correct?
         hit: `Each subject takes 4d6 piercing damage.`,
@@ -431,12 +432,12 @@ export const polymorph: MysticSphere = {
         Your body grows small spikes that you can consciously extrude to impale nearby foes.
       `,
       rank: 6,
-      scaling: "damage",
-      type: "Attune (self)",
+      scaling: 'damage',
+      type: 'Attune (self)',
     },
 
     {
-      name: "Absorb Object",
+      name: 'Absorb Object',
 
       // This intentionally uses a fixed size category instead of referencing your original size
       // category to allow interaction with items like a Staff of Giants.
@@ -455,11 +456,11 @@ export const polymorph: MysticSphere = {
         5: `The maximum size of the object increases to Large.`,
         7: `The maximum size of the object increases to Huge.`,
       },
-      type: "Duration",
+      type: 'Duration',
     },
 
     {
-      name: "Camouflage",
+      name: 'Camouflage',
 
       effect: `
         If you are \\glossterm{trained} with the Stealth skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -471,11 +472,11 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Sludgeform",
+      name: 'Sludgeform',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -488,11 +489,11 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 7,
-      type: "Duration",
+      type: 'Duration',
     },
 
     {
-      name: "Brief Regeneration",
+      name: 'Brief Regeneration',
 
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
@@ -500,15 +501,15 @@ export const polymorph: MysticSphere = {
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 2,
-      scaling: { special: "The healing increases by +1d for each rank beyond 2." },
+      scaling: { special: 'The healing increases by +1d for each rank beyond 2.' },
       tags: ['Healing'],
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Vital Regeneration",
+      name: 'Vital Regeneration',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         At the end of each round, if the subject is not \\glossterm{unconscious} due to \\glossterm{fatigue}, it automatically removes one of its \\glossterm{vital wounds}.
         It can choose to stop this regeneration if you are conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
@@ -520,26 +521,26 @@ export const polymorph: MysticSphere = {
         7: `The subject can remove two \\glossterm{vital wounds} instead of one.
             It increases its \\glossterm{fatigue level} by three per vital wound removed this way.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Regeneration",
+      name: 'Regeneration',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         At the end of each round, you regain 2d6 \\glossterm{hit points}.
       `,
       rank: 4,
-      scaling: { special: "The healing increases by +1d for each rank beyond 4." },
+      scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
       tags: ['Healing'],
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Physical Enhancement",
+      name: 'Physical Enhancement',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
         You gain a +2 \\glossterm{magic bonus} to checks using the chosen attribute.
@@ -547,39 +548,42 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       scaling: { 4: `The bonus increases to +3.`, 6: `The bonus increases to +4.` },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Mass Physical Enhancement",
+      name: 'Mass Physical Enhancement',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       functionsLike: {
         mass: true,
-        name: "Physical Enhancement",
+        name: 'Physical Enhancement',
       },
       // narrative: '',
       rank: 4,
       scaling: {
-        6: "The bonus increases to +4.",
+        6: 'The bonus increases to +4.',
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Scent",
+      name: 'Scent',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
-        You gain the \\glossterm{scent} ability, giving you a +10 bonus to scent-based Awareness checks (see \\pcref{Senses}).
+        You gain the \\trait{scent} trait, which reduces the \\glossterm{difficulty value} of scent-based Awareness checks by 10 (see \\pcref{Awareness}).
       `,
       rank: 3,
-      scaling: { 5: `The bonus increases to +15.`, 7: `The bonus increases to +20.` },
-      type: "Attune (self)",
+      scaling: {
+        5: `You also gain a +2 \\glossterm{magic bonus} to Awareness.`,
+        7: `The bonus increases to +3.`,
+      },
+      type: 'Attune (self)',
     },
 
     {
-      name: "Eyebite",
+      name: 'Eyebite',
 
       attack: {
         hit: `The subject takes 2d8 physical damage.
@@ -589,12 +593,12 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
-      type: "Duration",
+      scaling: 'accuracy',
+      type: 'Duration',
     },
 
     {
-      name: "Organ Failure",
+      name: 'Organ Failure',
 
       attack: {
         hit: `The subject takes 1d6 physical damage.
@@ -604,12 +608,12 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
-      type: "Duration",
+      scaling: 'accuracy',
+      type: 'Duration',
     },
 
     {
-      name: "Cripple",
+      name: 'Cripple',
 
       // TODO: confirm range, it is a little odd
       attack: {
@@ -623,11 +627,11 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 7,
-      type: "Duration",
+      type: 'Duration',
     },
 
     {
-      name: "Bleed",
+      name: 'Bleed',
 
       attack: {
         crit: `The damage from the condition is doubled.`,
@@ -643,17 +647,17 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      type: "Duration",
+      scaling: 'damage',
+      type: 'Duration',
     },
 
     {
-      name: "Greater Bleed",
+      name: 'Greater Bleed',
 
       attack: {
         crit: `The damage from the condition is doubled.`,
         glance:
-          "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
+          'The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.',
         hit: `
           The subject begins bleeding as a \\glossterm{condition}.
           At the end of each round, it takes 2d10 + half \\glossterm{power} physical damage.
@@ -663,12 +667,12 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      type: "Duration",
+      scaling: 'damage',
+      type: 'Duration',
     },
 
     {
-      name: "Eyes of Darksight",
+      name: 'Eyes of Darksight',
 
       effect: `
         You gain \\trait{darkvision} with a 60 foot radius, allowing you to see in complete darkness (see \\pcref{Darkvision}).
@@ -678,11 +682,11 @@ export const polymorph: MysticSphere = {
         4: `The radius increases to 120 feet.`,
         6: `The radius increases to 240 feet.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Draconic Senses",
+      name: 'Draconic Senses',
 
       effect: `
         You gain \\trait{darkvision} with a 60 foot radius, \\trait{low-light vision}, and \\trait{blindsense} with a 30 foot radius.
@@ -692,13 +696,13 @@ export const polymorph: MysticSphere = {
       scaling: {
         6: `The radius of the darkvision increases by 60 feet, and the radius of the blindsense increases by 30 feet.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Swimmer",
+      name: 'Swimmer',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
         If you already have a swim speed, you gain a +5 foot \\glossterm{magic bonus} to your swim speed.
@@ -708,13 +712,13 @@ export const polymorph: MysticSphere = {
         4: `You gain a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot magic bonus if you already have a swim speed.`,
         6: `You gain a +10 foot \\glossterm{magic bonus} to your swim speed, or a +15 foot magic bonus if you already have a swim speed.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Climber",
+      name: 'Climber',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size.
         If you already have a climb speed, you gain a +5 foot \\glossterm{magic bonus} to your climb speed.
@@ -724,13 +728,13 @@ export const polymorph: MysticSphere = {
         4: `You gain a +5 foot \\glossterm{magic bonus} to your climb speed, or a +10 foot bonus if you already have a climb speed.`,
         6: `You gain a +10 foot \\glossterm{magic bonus} to your climb speed, or a +15 foot bonus if you already have a climb speed.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Runner",
+      name: 'Runner',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{land speed}.
       `,
@@ -740,13 +744,13 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +15 feet.`,
         7: `The bonus increases to +20 feet.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
 
     {
-      name: "Mass Mobility Enhancement",
+      name: 'Mass Mobility Enhancement',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         For each creature, you choose one of the following effects.
@@ -758,13 +762,13 @@ export const polymorph: MysticSphere = {
       scaling: {
         6: 'The subject also gains a +5 foot \\glossterm{magic bonus} to its speed with all movement modes, and a +10 foot \\glossterm{magic bonus} to its land speed.',
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Mass Sensory Enhancement",
+      name: 'Mass Sensory Enhancement',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         For each creature, you choose one of the following effects.
@@ -775,15 +779,15 @@ export const polymorph: MysticSphere = {
       `,
       rank: 5,
       scaling: {
-        7: "For each subject, you can choose any two of the listed enhancements.",
+        7: 'For each subject, you can choose any two of the listed enhancements.',
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Dragon Breath",
+      name: 'Dragon Breath',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       attack: {
         hit: `Each subject takes 2d10 + half \\glossterm{power} damage of your chosen type.`,
         targeting: `
@@ -794,12 +798,12 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      type: "Attune (self)",
+      scaling: 'damage',
+      type: 'Attune (self)',
     },
 
     {
-      name: "Cleansing Bodymorph",
+      name: 'Cleansing Bodymorph',
 
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{brief} effect or \\glossterm{condition}.
@@ -810,10 +814,10 @@ export const polymorph: MysticSphere = {
       scaling: {
         6: `The subject can remove two effects.`,
       },
-      type: "Instant",
+      type: 'Instant',
     },
     {
-      name: "Natural Might",
+      name: 'Natural Might',
 
       effect: `
         You gain a +3 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using \\glossterm{unarmed attacks} and \\glossterm{natural weapons}.
@@ -824,14 +828,14 @@ export const polymorph: MysticSphere = {
         5: `The power bonus increases to +12.`,
         7: `The power bonus increases to +24.`,
       },
-      type: "Attune (self)",
+      type: 'Attune (self)',
     },
   ],
   rituals: [
     {
-      name: "Create Handholds",
+      name: 'Create Handholds',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose one \\glossterm{unattended}, nonmagical wall up to 50 feet high and 10 feet wide within \\medrange.
         You create handholds in the subject, making it easier to climb.
@@ -839,13 +843,13 @@ export const polymorph: MysticSphere = {
         When this effect ends, the handholds disappear.
       `,
       rank: 1,
-      type: "Attune (ritual)",
+      type: 'Attune (ritual)',
     },
 
     {
-      name: "Craft Object",
+      name: 'Craft Object',
 
-      castingTime: "special",
+      castingTime: 'special',
       effect: `
         Choose any number of unattended, nonmagical objects within \\shortrange.
         You make a Craft check to transform the subjects into a new item (or items) made of the same materials.
@@ -855,41 +859,41 @@ export const polymorph: MysticSphere = {
         This ritual takes time equal to one tenth of the time that would normally be required to craft the object, to a minimum of one hour.
       `,
       rank: 3,
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Craft Large Object",
+      name: 'Craft Large Object',
 
-      castingTime: "special",
+      castingTime: 'special',
       functionsLike: {
         exceptThat: `
           the maximum combined size of all targets increases to Large.
         `,
-        name: "Craft Object",
+        name: 'Craft Object',
       },
       rank: 5,
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Craft Huge Object",
+      name: 'Craft Huge Object',
 
-      castingTime: "special",
+      castingTime: 'special',
       functionsLike: {
         exceptThat: `
           the maximum combined size of all targets increases to Huge.
         `,
-        name: "craft object",
+        name: 'craft object',
       },
       rank: 7,
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Mending",
+      name: 'Mending',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Chose one \\glossterm{unattended} object within \\shortrange.
         The subject regains 1d8 + \\glossterm{power} hit points.
@@ -897,13 +901,13 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       tags: ['Healing'],
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Morph Weapon",
+      name: 'Morph Weapon',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose one \\glossterm{unattended} manufactured weapon within \\medrange.
         The subject changes into another weapon from the same weapon group.
@@ -912,25 +916,25 @@ export const polymorph: MysticSphere = {
         When this effect ends, the subject returns to its original shape.
       `,
       rank: 1,
-      type: "Attune (ritual)",
+      type: 'Attune (ritual)',
     },
 
     {
-      name: "Morph Exotic Weapon",
+      name: 'Morph Exotic Weapon',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       functionsLike: {
         exceptThat: `you can also change the subject into an exotic weapon.`,
-        name: "morph weapon",
+        name: 'morph weapon',
       },
       rank: 3,
-      type: "Attune (ritual)",
+      type: 'Attune (ritual)',
     },
 
     {
-      name: "Fortify",
+      name: 'Fortify',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         Choose one \\glossterm{unattended}, nonmagical object or part of an object of up to Large size.
         Unlike most abilities, this ritual can affect individual parts of a whole object.
@@ -941,97 +945,97 @@ export const polymorph: MysticSphere = {
         Otherwise, it lasts for one year.
       `,
       rank: 1,
-      type: "Attune (ritual)",
+      type: 'Attune (ritual)',
     },
 
     {
-      name: "Enduring Fortify",
+      name: 'Enduring Fortify',
 
       // original targets: One \glossterm{unattended}, nonmagical object or part of an object of up to Large size.
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       functionsLike: {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        name: "fortify",
+        name: 'fortify',
       },
       rank: 4,
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Enduring Greater Fortify",
+      name: 'Enduring Greater Fortify',
 
       // original targets: Greater Fortify
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       functionsLike: {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        name: "greater fortify",
+        name: 'greater fortify',
       },
       rank: 5,
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Greater Fortify",
+      name: 'Greater Fortify',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
           the bonus to \\glossterm{damage resistance} increases to 10.
         `,
-        name: "fortify",
+        name: 'fortify',
       },
       rank: 4,
-      type: "Attune (ritual)",
+      type: 'Attune (ritual)',
     },
 
     {
-      name: "Supreme Fortify",
+      name: 'Supreme Fortify',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
           the bonus to \\glossterm{damage resistance} increases to 15.
         `,
-        name: "fortify",
+        name: 'fortify',
       },
       rank: 7,
-      type: "Attune (ritual)",
+      type: 'Attune (ritual)',
     },
 
     {
-      name: "Ironwood",
+      name: 'Ironwood',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         One Medium or smaller \\glossterm{unattended}, nonmagical wooden object within \\shortrange is transformed into ironwood.
         While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as iron.
         Metallic armor and weapons, such as full plate, can be crafted from ironwood.
       `,
       rank: 4,
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Purify Sustenance",
+      name: 'Purify Sustenance',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         All food and water in a single square within \\shortrange is purified.
         Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
         This does not prevent subsequent natural decay or spoiling.
       `,
       rank: 1,
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Awaken",
+      name: 'Awaken',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         One Large or smaller \\glossterm{ally} within \\medrange becomes sentient.
         Its Intelligence becomes 1d6 - 5.
@@ -1043,31 +1047,31 @@ export const polymorph: MysticSphere = {
         You can only learn this ritual if you have access to this mystic sphere through the nature \\glossterm{magic source}.
       `,
       rank: 6,
-      type: "Instant",
+      type: 'Instant',
     },
 
     {
-      name: "Air Breathing",
+      name: 'Air Breathing',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose one Large or smaller ritual participant.
         The subject can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
       `,
       rank: 3,
-      type: "Attune (ritual)",
+      type: 'Attune (ritual)',
     },
 
     {
-      name: "Gills",
+      name: 'Gills',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose one Large or smaller ritual participant.
         The subject can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
       `,
       rank: 3,
-      type: "Attune (ritual)",
+      type: 'Attune (ritual)',
     },
   ],
 };
