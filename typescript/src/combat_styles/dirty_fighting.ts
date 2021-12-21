@@ -58,7 +58,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          the subject also takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          the target also takes 1d8 + half \\glossterm{power} bludgeoning damage.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: "grapple",
@@ -74,7 +74,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          the subject also has a 25\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components} as long as it is \\grappled by you.
+          the target also has a 25\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components} as long as it is \\grappled by you.
           This failure chance increases to 50\\% with abilities that have both verbal components and \\glossterm{somatic components}.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
@@ -93,7 +93,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          if the subject has no remaining \\glossterm{damage resistance}, the subject is pinned completely instead of simply grappled.
+          if the target has no remaining \\glossterm{damage resistance}, the target is pinned completely instead of simply grappled.
           It is \\glossterm{helpless}, and the only physical ability it can use is the \\textit{escape grapple} ability (see \\pcref{Escape Grapple}).
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
@@ -109,16 +109,16 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          you \\glossterm{knockback} the subject up to 15 feet instead of pushing it.
-          On a critical hit, you knockback the subject 30 feet instead.
+          you \\glossterm{knockback} the target up to 15 feet instead of pushing it.
+          On a critical hit, you knockback the target 30 feet instead.
           Any accuracy bonuses you have that apply specifically to the \\textit{shove} ability also apply to this ability.
         `,
         name: "shove",
       },
       rank: 2,
       scaling: {
-        4: "The distance you knockback the subject increases to 30 feet, or 60 feet on a critical hit.",
-        6: "The distance you knockback the subject increases to 60 feet, or 120 feet on a critical hit.",
+        4: "The distance you knockback the target increases to 30 feet, or 60 feet on a critical hit.",
+        6: "The distance you knockback the target increases to 60 feet, or 120 feet on a critical hit.",
       },
       type: "Instant",
     },

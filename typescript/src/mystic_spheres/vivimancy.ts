@@ -17,7 +17,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose a living \\glossterm{ally} within your \\glossterm{reach}.
-        If the subject has a \\glossterm{vital wound} with a \\glossterm{vital roll} of 0, it treats that \\glossterm{vital roll} as a 1, preventing it from dying (see \\pcref{Vital Wounds}).
+        If the target has a \\glossterm{vital wound} with a \\glossterm{vital roll} of 0, it treats that \\glossterm{vital roll} as a 1, preventing it from dying (see \\pcref{Vital Wounds}).
       `,
       scaling: {
         2: `The range increases to \\shortrange.`,
@@ -48,7 +48,7 @@ export const vivimancy: MysticSphere = {
       name: "Lifeseal",
 
       attack: {
-        hit: `The subject takes 4d6 + \\glossterm{power} energy damage.
+        hit: `The target takes 4d6 + \\glossterm{power} energy damage.
         If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} unable to regain any hit points.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -63,7 +63,7 @@ export const vivimancy: MysticSphere = {
       name: "Draining Grasp",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} energy damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} energy damage.`,
         targeting: `
         You must have a \\glossterm{free hand} to cast this spell.
 
@@ -80,7 +80,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d8 + \\glossterm{power} energy damage.
+          The target takes 2d8 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you regain 2d8 + \\glossterm{power} hit points.
           After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
         `,
@@ -113,7 +113,7 @@ export const vivimancy: MysticSphere = {
       name: "Drain Life",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} energy damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
@@ -127,7 +127,7 @@ export const vivimancy: MysticSphere = {
       name: "Greater Drain Life",
 
       attack: {
-        hit: `The subject takes 4d6 + \\glossterm{power} energy damage.`,
+        hit: `The target takes 4d6 + \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\longrange.
         `,
@@ -141,7 +141,7 @@ export const vivimancy: MysticSphere = {
       name: "Supreme Drain Life",
 
       attack: {
-        hit: `The subject takes 6d10 + \\glossterm{power} energy damage.`,
+        hit: `The target takes 6d10 + \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\distrange.
         `,
@@ -156,7 +156,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The subject regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
+        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 2,
@@ -171,7 +171,7 @@ export const vivimancy: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose a living \\glossterm{ally} within \\longrange.
-        If the subject has a \\glossterm{vital wound} with a \\glossterm{vital roll} of 0, it treats that \\glossterm{vital roll} as a 1, preventing it from dying (see \\pcref{Vital Wounds}).
+        If the target has a \\glossterm{vital wound} with a \\glossterm{vital roll} of 0, it treats that \\glossterm{vital roll} as a 1, preventing it from dying (see \\pcref{Vital Wounds}).
       `,
       rank: 2,
       scaling: {
@@ -186,11 +186,11 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange
-        The subject removes one \\glossterm{vital wound}.
+        The target removes one \\glossterm{vital wound}.
         It increases its \\glossterm{fatigue level} by three for each vital wound removed this way.
       `,
       rank: 5,
-      scaling: { 7: `The subject can remove two \\glossterm{vital wounds}.` },
+      scaling: { 7: `The target can remove two \\glossterm{vital wounds}.` },
       type: "Instant",
     },
 
@@ -199,8 +199,8 @@ export const vivimancy: MysticSphere = {
 
       // +2 levels and half power for double HP loss? rank unclear
       attack: {
-        hit: `The subject takes 2d6 + half \\glossterm{power} energy damage.
-        If the subject would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
+        hit: `The target takes 2d6 + half \\glossterm{power} energy damage.
+        If the target would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
@@ -215,9 +215,9 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         crit: `Double damage.
-        In addition, if the subject did not already gain a \\glossterm{vital wound} from that loss of hit points, it gains a \\glossterm{vital wound}.`,
-        hit: `The subject takes 5d10 + half \\glossterm{power} energy damage.
-        If the subject would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
+        In addition, if the target did not already gain a \\glossterm{vital wound} from that loss of hit points, it gains a \\glossterm{vital wound}.`,
+        hit: `The target takes 5d10 + half \\glossterm{power} energy damage.
+        If the target would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
@@ -232,7 +232,7 @@ export const vivimancy: MysticSphere = {
 
       // +1 level for situational vital wound removal
       attack: {
-        hit: `The subject takes 4d10 + \\glossterm{power} energy damage.
+        hit: `The target takes 4d10 + \\glossterm{power} energy damage.
         If it loses \\glossterm{hit points} from this damage, you can remove one of your vital wounds.
         When you do, you increase your \\glossterm{fatigue level} by three.`,
         targeting: `
@@ -285,7 +285,7 @@ export const vivimancy: MysticSphere = {
 
       // Unclear rank
       attack: {
-        hit: `The subject takes 1d10 + half \\glossterm{power} energy damage.
+        hit: `The target takes 1d10 + half \\glossterm{power} energy damage.
         If it loses \\glossterm{hit points} from this damage, it is marked for death as a \\glossterm{condition}.
         If it reaches 0 hit points during this effect, it immediately dies.`,
         targeting: `
@@ -395,7 +395,7 @@ export const vivimancy: MysticSphere = {
       // HP loss is treated as t3.5 debuff
       attack: {
         hit: `
-          The subject takes 4d6 energy damage.
+          The target takes 4d6 energy damage.
           If it loses \\glossterm{hit points} from this damage, it also loses additional \\glossterm{hit points} equal to half its maximum hit points.
         `,
         targeting: `
@@ -443,7 +443,7 @@ export const vivimancy: MysticSphere = {
       // +2 levels for HP theft
       attack: {
         hit: `
-          The subject takes 2d8 + \\glossterm{power} energy damage.
+          The target takes 2d8 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you regain 2d8 + \\glossterm{power} hit points.
           After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
         `,
@@ -523,10 +523,10 @@ export const vivimancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         // No relevant glance effect
-        hit: `As a \\glossterm{condition}, the subject's body withers.
+        hit: `As a \\glossterm{condition}, the target's body withers.
         It takes a -2 penalty to Fortitude defense.
         Whenever it loses one or more \\glossterm{hit points} from a single attack, this penalty increases by 1.
-        This penalty increase stacks, and persists even if the subject regains the lost hit points.`,
+        This penalty increase stacks, and persists even if the target regains the lost hit points.`,
         targeting: `
           Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one living creature within \\longrange.
         `,
@@ -540,11 +540,11 @@ export const vivimancy: MysticSphere = {
       name: "Withering Curse",
 
       attack: {
-        crit: `The effect lasts until this curse is removed. The penalty resets to -2 whenever the subject takes a short rest.`,
-        hit: `The subject becomes more vulnerable to injury until it takes a short rest.
+        crit: `The effect lasts until this curse is removed. The penalty resets to -2 whenever the target takes a short rest.`,
+        hit: `The target becomes more vulnerable to injury until it takes a short rest.
         It takes a -2 penalty to Fortitude defense.
         Whenever it loses one or more \\glossterm{hit points} from a single attack, this penalty increases by 1.
-        This penalty increase stacks, and persists even if the subject regains the lost hit points.`,
+        This penalty increase stacks, and persists even if the target regains the lost hit points.`,
         targeting: `
         Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against one living creature within \\longrange.
         `,
@@ -695,7 +695,7 @@ export const vivimancy: MysticSphere = {
       castingTime: "one hour",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        One of the subject's physical senses, such as sight or hearing, is restored to full capacity.
+        One of the target's physical senses, such as sight or hearing, is restored to full capacity.
         This can heal both magical and mundane effects, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
       `,
       rank: 3,
@@ -758,7 +758,7 @@ export const vivimancy: MysticSphere = {
       castingTime: "24 hours",
       functionsLike: {
         exceptThat: `
-          the subject is reincarnated as its original species instead of as a random species.
+          the target is reincarnated as its original species instead of as a random species.
         `,
         name: "reincarnation",
       },
@@ -773,8 +773,8 @@ export const vivimancy: MysticSphere = {
       castingTime: "24 hours",
       effect: `
         All curses affecting yourself or one \\glossterm{ally} within \\medrange are removed.
-        This ritual cannot remove a curse that is part of the effect of an item the subject has equipped.
-        However, it can allow the subject to remove any cursed items it has equipped.
+        This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
+        However, it can allow the target to remove any cursed items it has equipped.
       `,
       rank: 3,
       type: "Instant",
@@ -786,8 +786,8 @@ export const vivimancy: MysticSphere = {
       castingTime: "24 hours",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        All of the subject's \\glossterm{vital wounds} are healed.
-        In addition, any of the subject's severed body parts or missing organs grow back by the end of the next round.
+        All of the target's \\glossterm{vital wounds} are healed.
+        In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
       `,
       rank: 3,
       type: "Instant",
@@ -828,7 +828,7 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
         it does not have to target a fully intact corpse.
-        The subject must have been part of the original creature's body at the time of death.
+        The target must have been part of the original creature's body at the time of death.
         The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
         `,
         name: "resurrection",
@@ -865,7 +865,7 @@ export const vivimancy: MysticSphere = {
         % Is this clear enough that you can't use the same gem for this ritual twice?
         Choose a nonmagical gem you hold that is worth at least 1,000 gp.
         In addition, choose one intact corpse within \\shortrange.
-        A fragment of the soul of the creature that the subject corpse belongs to is magically imprisoned in the chosen gem.
+        A fragment of the soul of the creature that the target corpse belongs to is magically imprisoned in the chosen gem.
         This does not remove the creature from its intended afterlife.
         However, it prevents the creature from being resurrected, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
         A creature holding the gem may still resurrect or reanimate the creature.

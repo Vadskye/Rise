@@ -31,7 +31,7 @@ export const fabrication: MysticSphere = {
       name: "Mystic Arrow",
 
       attack: {
-        hit: `The subject takes 2d6 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes 2d6 + \\glossterm{power} piercing damage.`,
         targeting: `
         Make an attack vs. Armor against anything within \\longrange.
         `,
@@ -46,7 +46,7 @@ export const fabrication: MysticSphere = {
       name: "Mystic Artillery",
 
       attack: {
-        hit: `The subject takes 4d8 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes 4d8 + \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor with a +1 accuracy bonus against anything within \\extrange.
         `,
@@ -61,7 +61,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d10 + \\glossterm{power} piercing damage.
+          The target takes 2d10 + \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is knocked \\prone.
         `,
         targeting: `
@@ -164,7 +164,7 @@ export const fabrication: MysticSphere = {
       name: "Blade Barrier",
 
       attack: {
-        hit: `The subject takes 1d10 + half \\glossterm{power} slashing damage.`,
+        hit: `The target takes 1d10 + half \\glossterm{power} slashing damage.`,
         targeting: `
           A wall of whirling blades appears within \\medrange.
           The wall takes the form of a 15 ft.\\ high, \\medarea wall.
@@ -197,7 +197,7 @@ export const fabrication: MysticSphere = {
       name: "Blade Perimeter",
 
       attack: {
-        hit: `The subject takes 2d6 + half \\glossterm{power} slashing damage.`,
+        hit: `The target takes 2d6 + half \\glossterm{power} slashing damage.`,
         targeting: `
         A wall of whirling blades appears within \\medrange.
         The wall takes the form of a 15 ft.\\ high, \\smallarea radius wall.
@@ -322,7 +322,7 @@ export const fabrication: MysticSphere = {
       name: "Caltrops",
 
       attack: {
-        hit: `The subject takes 1d8 + half \\glossterm{power} piercing damage.`,
+        hit: `The target takes 1d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
           Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
@@ -378,7 +378,7 @@ export const fabrication: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        hit: `The subject takes 2d6 piercing damage.`,
+        hit: `The target takes 2d6 piercing damage.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
@@ -468,14 +468,14 @@ export const fabrication: MysticSphere = {
 
       effect: `
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
-        You create a metal cage around the subject in its space.
-        The cage has a 2 inch gap between its bars, allowing the subject to see and be seen by creatures outside of the cage.
+        You create a metal cage around the target in its space.
+        The cage has a 2 inch gap between its bars, allowing the target to see and be seen by creatures outside of the cage.
         This does not block \\glossterm{line of sight} or \\glossterm{line of effect}, but it provides cover, and non-piercing \\glossterm{melee} weapons cannot attack through the cage.
         Each 5-ft.\\ square of the field has 12 \\glossterm{hit points}.
 
         % TODO: clarify that you can't create two cages around the same subject
         % simultaneously
-        If another creature is in the subject's space when this spell is cast, this spell fails without effect.
+        If another creature is in the target's space when this spell is cast, this spell fails without effect.
       `,
       rank: 3,
       scaling: {

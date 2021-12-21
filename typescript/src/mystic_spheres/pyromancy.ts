@@ -10,8 +10,8 @@ export const pyromancy: MysticSphere = {
       name: "Kindle",
 
       attack: {
-        hit: `The subject takes 2 fire damage.
-        If the subject is highly flammable, such as a torch or campfire, it ignites.`,
+        hit: `The target takes 2 fire damage.
+        If the target is highly flammable, such as a torch or campfire, it ignites.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
         `,
@@ -31,7 +31,7 @@ export const pyromancy: MysticSphere = {
         hit: `The flame is extinguished.`,
         targeting: `
           Choose one Medium or smaller active flame within \\medrange.
-          If the subject is \\glossterm{attended} by a creature, such as a torch being carried, you must make an attack vs. Reflex against the attending creature.
+          If the target is \\glossterm{attended} by a creature, such as a torch being carried, you must make an attack vs. Reflex against the attending creature.
           Otherwise, the attack automatically hits.
         `,
       },
@@ -51,7 +51,7 @@ export const pyromancy: MysticSphere = {
         You can create it at any intensity, up to a maximum heat equivalent to a roaring campfire.
         At it most intense, it sheds \\glossterm{bright illumination} in a 30 foot radius and shadowy illumination in an 60 foot radius.
         As a standard action, you can make a melee attack vs. Reflex against a creature or object.
-        On a hit, the subject takes 2 fire damage.
+        On a hit, the target takes 2 fire damage.
 
         This effect lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
@@ -86,7 +86,7 @@ export const pyromancy: MysticSphere = {
       name: "Burning Grasp",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} fire damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} fire damage.`,
         targeting: `
         You must have a \\glossterm{free hand} to cast this spell.
 
@@ -104,7 +104,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d8 + \\glossterm{power} fire damage.
+          The target takes 2d8 + \\glossterm{power} fire damage.
           If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
           At the end of each round, it takes 1d10 fire damage.
         `,
@@ -141,7 +141,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `Each subject takes 2d10 + half \\glossterm{power} fire damage.
-        In addition, if the subject is a flammable object, it catches on fire.`,
+        In addition, if the target is a flammable object, it catches on fire.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange.
         `,
@@ -183,7 +183,7 @@ export const pyromancy: MysticSphere = {
       name: "Firebolt",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} fire damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
@@ -198,7 +198,7 @@ export const pyromancy: MysticSphere = {
       name: "Greater Firebolt",
 
       attack: {
-        hit: `The subject takes 4d6 + \\glossterm{power} fire damage.`,
+        hit: `The target takes 4d6 + \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
         `,
@@ -212,7 +212,7 @@ export const pyromancy: MysticSphere = {
       name: "Supreme Firebolt",
 
       attack: {
-        hit: `The subject takes 6d10 + \\glossterm{power} fire damage.`,
+        hit: `The target takes 6d10 + \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\distrange.
         `,
@@ -257,10 +257,10 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        hit: `The subject catches on fire as a \\glossterm{condition}.
+        hit: `The target catches on fire as a \\glossterm{condition}.
         At the end of each round, it takes 1d6 + half \\glossterm{power} fire damage.
 
-        The condition can be removed if the subject makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
+        The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -277,9 +277,9 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         glance:
-          "The effect lasts \\glossterm{briefly}. The subject still takes damage during the next round.",
+          "The effect lasts \\glossterm{briefly}. The target still takes damage during the next round.",
         hit: `
-          The subject catches on fire as a \\glossterm{condition}.
+          The target catches on fire as a \\glossterm{condition}.
           At the end of each round, it takes 2d8 + half \\glossterm{power} fire damage.
         `,
         targeting: `
@@ -295,7 +295,7 @@ export const pyromancy: MysticSphere = {
       name: "Combustion",
 
       attack: {
-        hit: `The subject takes 2d8 + \\glossterm{power} fire damage.`,
+        hit: `The target takes 2d8 + \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
@@ -312,8 +312,8 @@ export const pyromancy: MysticSphere = {
       name: "Greater Combustion",
 
       attack: {
-        hit: `The subject takes 4d8 + \\glossterm{power} fire damage.
-        In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
+        hit: `The target takes 4d8 + \\glossterm{power} fire damage.
+        In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely incinerated, leaving behind only a pinch of fine ash.
         Its equipment is unaffected.`,
         targeting: `
@@ -330,8 +330,8 @@ export const pyromancy: MysticSphere = {
       name: "Supreme Combustion",
 
       attack: {
-        hit: `The subject takes 7d10 + \\glossterm{power} fire damage.
-        In addition, if the subject is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
+        hit: `The target takes 7d10 + \\glossterm{power} fire damage.
+        In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely incinerated, leaving behind only a pinch of fine ash.
         Its equipment is unaffected.`,
         targeting: `
@@ -352,7 +352,7 @@ export const pyromancy: MysticSphere = {
         targeting: `
           Choose one metal object within \\medrange.
           It must be no smaller than Tiny size and no larger than Large size.
-          If the subject is \\glossterm{attended}, make an attack vs. Reflex against the attending creature.
+          If the target is \\glossterm{attended}, make an attack vs. Reflex against the attending creature.
           Otherwise, this attack automatically hits.
         `,
       },
@@ -399,7 +399,7 @@ export const pyromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        hit: `The subject takes 2d8 + \\glossterm{power} fire damage.`,
+        hit: `The target takes 2d8 + \\glossterm{power} fire damage.`,
         targeting: `
           For the duration of this spell, you can set things on fire simply by staring at them as a standard action.
           When you do, make an attack vs. Fortitude against anything within \\shortrange from you.
@@ -415,7 +415,7 @@ export const pyromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        hit: `The subject takes 2d6 fire damage.`,
+        hit: `The target takes 2d6 fire damage.`,
         targeting: `
           When you cast this spell, a cluster of flaming spheres appears over your head.
           Each sphere is approximately one foot in diameter.
@@ -587,7 +587,7 @@ export const pyromancy: MysticSphere = {
       name: "Wall of Fire",
 
       attack: {
-        hit: `The subject takes 2d6 + half \\glossterm{power} fire damage.`,
+        hit: `The target takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
         You create a wall of fire in a 15 ft.\\ high, \\medarea \\glossterm{wall} within \\medrange.
         The flames and heat make it difficult to see through the wall, granting \\glossterm{concealment} to targets on the opposite side of the wall.
@@ -622,8 +622,8 @@ export const pyromancy: MysticSphere = {
       name: "Pyrophobia",
 
       attack: {
-        crit: `The subject is \\frightened instead of shaken.`,
-        hit: `The subject is \\shaken by you and all other sources of fire as a \\glossterm{condition}.`,
+        crit: `The target is \\frightened instead of shaken.`,
+        hit: `The target is \\shaken by you and all other sources of fire as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -638,8 +638,8 @@ export const pyromancy: MysticSphere = {
       name: "Primal Pyrophobia",
 
       attack: {
-        crit: `The subject is \\panicked instead of frightened.`,
-        hit: `The subject is \\frightened by you and all other sources of fire as a \\glossterm{condition}.`,
+        crit: `The target is \\panicked instead of frightened.`,
+        hit: `The target is \\frightened by you and all other sources of fire as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -655,7 +655,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d10 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\dazed.
+          The target takes 1d10 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -671,7 +671,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d8 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\dazed.
+          The target takes 2d8 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\dazed.
           If it loses \\glossterm{hit points} from this damage, it is \\stunned instead of dazed.
         `,
         targeting: `
@@ -688,7 +688,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 4d6 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\stunned.
+          The target takes 4d6 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -704,7 +704,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
-        hit: `The subject is highly flammable until it takes a \\glossterm{short rest}.
+        hit: `The target is highly flammable until it takes a \\glossterm{short rest}.
         Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
         While ignited in this way, it takes 1d10 fire damage at the end of each round.
 
@@ -803,11 +803,11 @@ export const pyromancy: MysticSphere = {
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{brief} effect or \\glossterm{condition}.
         This cannot remove an effect applied during the current round.
-        For each effect removed this way, you deal the subject 4 fire damage.
+        For each effect removed this way, you deal the target 4 fire damage.
       `,
       rank: 4,
       scaling: {
-        6: `The subject can remove two effects.`,
+        6: `The target can remove two effects.`,
       },
       type: "Instant",
     },
@@ -819,10 +819,10 @@ export const pyromancy: MysticSphere = {
       castingTime: "one minute",
       effect: `
         Choose either yourself or an \\glossterm{ally} or unattended object within \\medrange.
-        The subject suffers no harm from being in a hot environment.
+        The target suffers no harm from being in a hot environment.
         It can exist comfortably in conditions as high as 140 degrees Fahrenheit.
         Its equipment, if any, is also protected.
-        This does not protect the subject from fire damage.
+        This does not protect the target from fire damage.
       `,
       rank: 1,
       type: "Attune (ritual)",

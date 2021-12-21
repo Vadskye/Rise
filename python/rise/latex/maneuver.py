@@ -131,8 +131,8 @@ class Maneuver(object):
             .replace(">", "}")
             .replace("Each target", "Each subject")
             .replace("each target", "each subject")
-            .replace("The target", "The subject")
-            .replace("the target", "the subject")
+            .replace("The target", "The target")
+            .replace("the target", "the target")
             .replace(
                 "As above, except that that each subject takes half damage.",
                 "Half damage.",

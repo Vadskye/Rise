@@ -101,7 +101,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytag{Swift}
                     \rankline
                     You study a creature within \rngmed range, finding weak points you can take advantage of.
-                    As a \glossterm{brief} effect, whenever you make a melee \glossterm{strikes} against the subject that it is \unaware, the strike deals maximum damage and automatically \glossterm{explodes} regardless of what you roll.
+                    As a \glossterm{brief} effect, whenever you make a melee \glossterm{strikes} against the target that it is \unaware, the strike deals maximum damage and automatically \glossterm{explodes} regardless of what you roll.
                 \end{durationability}
             ",
             modifiers: None,
@@ -176,10 +176,10 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \medrange.
-                        For the duration of your performance, the subject gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes}.
+                        For the duration of your performance, the target gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes}.
 
                         \rankline
-                        \rank{3} The subject also gains a \plus2 bonus to its Reflex defense.
+                        \rank{3} The target also gains a \plus2 bonus to its Reflex defense.
                         \rank{5} The speed bonus increases to \plus10 feet.
                         \rank{7} The bonus to Reflex defense increases to \plus4.
                     \end{durationability}
@@ -197,7 +197,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}, \abilitytag{Emotion}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        \hit For the duration of your performance, the subject is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
+                        \hit For the duration of your performance, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
                         For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
 
                         \rankline
@@ -208,7 +208,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}
                         \rankline
                         This ability affects all \glossterm{enemies} within a \arealarge radius from you.
-                        You \glossterm{briefly} gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each subject.
+                        You \glossterm{briefly} gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each target.
 
                         \rankline
                         \rank{3} The bonus increases to \plus5.
@@ -220,7 +220,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit Each subject takes 1d6 \add half \glossterm{power} sonic damage.
+                        \hit Each target takes 1d6 \add half \glossterm{power} sonic damage.
 
                         \rankline
                         \rank{2} The damage increases to 1d8, and the area increases to a \smallarea radius.
@@ -236,10 +236,10 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \medrange.
-                        For the duration of your performance, the subject gains a \plus1 bonus to \glossterm{accuracy}.
+                        For the duration of your performance, the target gains a \plus1 bonus to \glossterm{accuracy}.
 
                         \rankline
-                        \rank{3} The subject also gains a \plus2 bonus to its Mental defense.
+                        \rank{3} The target also gains a \plus2 bonus to its Mental defense.
                         \rank{5} The accuracy bonus increases to \plus2.
                         \rank{7} The bonus to Mental defense increases to \plus4.
                     \end{durationability}
@@ -249,7 +249,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \medrange.
-                        For the duration of your performance, the subject gains a \plus1 bonus to its Armor and Reflex defenses.
+                        For the duration of your performance, the target gains a \plus1 bonus to its Armor and Reflex defenses.
 
                         \rankline
                         \rank{3} The bonus applies to all defenses.
@@ -261,22 +261,22 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}
                         \rankline
                         Choose yourself or one \glossterm{ally} within \rngmed range.
-                        The subject chooses one of its \glossterm{brief} effects or \glossterm{conditions}.
+                        The target chooses one of its \glossterm{brief} effects or \glossterm{conditions}.
                         It cannot choose an effect applied during the current round.
-                        For the duration of your performance, the subject ignores that effect.
+                        For the duration of your performance, the target ignores that effect.
 
                         \rankline
                         \rank{3} You can target an additional \glossterm{ally} within range.
                         \rank{5} This ability loses the \abilitytag{Sustain} (minor) tag.
                             Instead, the chosen effect is removed entirely.
-                        \rank{7} Each subject can remove two effects instead of one.
+                        \rank{7} Each target can remove two effects instead of one.
                     \end{durationability}
 
                     \begin{durationability}{Dazzling Discordance}[Duration]
                         \abilitytag{Auditory}
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} within a \areamed radius from you.
-                        \hit Each subject is \glossterm{briefly} \dazzled.
+                        \hit Each target is \glossterm{briefly} \dazzled.
                         \crit The effect becomes a \glossterm{condition}.
 
                         \rankline
@@ -292,7 +292,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
-                        \hit The subject takes sonic damage equal to 1d10 plus your \glossterm{power}.
+                        \hit The target takes sonic damage equal to 1d10 plus your \glossterm{power}.
 
                         \rankline
                         \rank{2} The damage increases to 2d6.
@@ -307,8 +307,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}, \abilitytag{Compulsion}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        \hit For the duration of your performance, the subject is \dazed.
-                        \crit For the duration of your performance, the subject is \stunned.
+                        \hit For the duration of your performance, the target is \dazed.
+                        \crit For the duration of your performance, the target is \stunned.
 
                         \rankline
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
@@ -318,9 +318,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}, \abilitytag{Emotion}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        \hit The subject takes 1d6 sonic damage.
+                        \hit The target takes 1d6 sonic damage.
                         If it loses \glossterm{hit points} from this damage, it is \frightened by you for the duration of your performance.
-                        Unlike normal, the subject continues to suffer the penalties of being frightened while it is beyond \rngmed range from you as long as it is still affected by your performance.
+                        Unlike normal, the target continues to suffer the penalties of being frightened while it is beyond \rngmed range from you as long as it is still affected by your performance.
 
                         \rankline
                         You gain a \plus1 \glossterm{accuracy} bonus and a \plus1d damage bonus with the attack for each rank beyond 1.
@@ -331,11 +331,11 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
                         You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
-                        \hit For the duration of your performance, the subject is \charmed by you.
+                        \hit For the duration of your performance, the target is \charmed by you.
                         Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
-                        Harming the subject is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
-                        An observant subject may interpret overt threats to its allies as a threat to itself.
-                        This ability does not have the \abilitytag{Subtle} tag, so an observant subject may notice it is being influenced.
+                        Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
+                        An observant target may interpret overt threats to its allies as a threat to itself.
+                        This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice it is being influenced.
 
                         \rankline
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
@@ -346,7 +346,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose yourself or one \glossterm{ally} within \rngmed range.
-                        For the duration of your performance, the subject gains a \plus2 bonus to \glossterm{checks}.
+                        For the duration of your performance, the target gains a \plus2 bonus to \glossterm{checks}.
 
                         \rankline
                         \rank{3} The bonus increases to \plus3.
@@ -358,7 +358,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}, \abilitytag{Healing}
                         \rankline
                         Choose one living \glossterm{ally} within \shortrange.
-                        The subject regains 1d10 \add \glossterm{power} \glossterm{hit points}.
+                        The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
                         After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
                         \rankline
@@ -414,9 +414,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \rngmed range.
-                        For the duration of your performance, the subject gains a \plus4 bonus to its maximum \glossterm{hit points}.
+                        For the duration of your performance, the target gains a \plus4 bonus to its maximum \glossterm{hit points}.
                         In addition, it immediately gains that many hit points.
-                        When this effect ends, the subject loses hit points equal to the hit points it gained this way.
+                        When this effect ends, the target loses hit points equal to the hit points it gained this way.
 
                         \rankline
                         \rank{3} The bonus increases to \plus8.
@@ -883,7 +883,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against a creature within \shortrange.
                     Your \glossterm{accuracy} is equal to your Deception skill.
-                    \hit The subject is \dazed as a \glossterm{condition}.
+                    \hit The target is \dazed as a \glossterm{condition}.
 
                     \rankline
                     \rank{3} You can target an additional creature within range.
@@ -935,9 +935,9 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     Make a attack vs. Mental against a creature within \medrange.
                     Your \glossterm{accuracy} is equal to your Deception skill.
                     In addition, choose a location on stable ground within range.
-                    \hit As a \glossterm{brief} effect, the subject is compelled to move to the location you chose if it can do so safely, and it cannot take any actions except to move to the location and look around at it.
-                    This effect automatically ends if the subject takes any damage.
-                    After this effect ends, the subject becomes immune to it until it takes a \glossterm{short rest}.
+                    \hit As a \glossterm{brief} effect, the target is compelled to move to the location you chose if it can do so safely, and it cannot take any actions except to move to the location and look around at it.
+                    This effect automatically ends if the target takes any damage.
+                    After this effect ends, the target becomes immune to it until it takes a \glossterm{short rest}.
 
                     \rankline
                     \rank{6} You can target an additional creature within range.
@@ -986,9 +986,9 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against a creature within \shortrange.
                     Your \glossterm{accuracy} is equal to your Deception skill.
-                    \hit The subject is \glossterm{briefly} convinced that nothing is real.
+                    \hit The target is \glossterm{briefly} convinced that nothing is real.
                     It is unable to take any actions and is \unaware of all attacks against it.
-                    After this effect ends, the subject becomes immune to it until it takes a \glossterm{short rest}.
+                    After this effect ends, the target becomes immune to it until it takes a \glossterm{short rest}.
                 \end{freeability}
             ",
             modifiers: None,

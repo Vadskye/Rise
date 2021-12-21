@@ -11,7 +11,7 @@ export const terramancy: MysticSphere = {
 
       effect: `
         Choose one unattended, nonmagical body of earth or unworked stone you touch.
-        You make a Craft check to alter the subject (see \\pcref{Craft}), except that you do not need any special tools to make the check, such as a shovel or hammer and chisel.
+        You make a Craft check to alter the target (see \\pcref{Craft}), except that you do not need any special tools to make the check, such as a shovel or hammer and chisel.
         The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
 
         % should be longer than polymorph's alter object ability
@@ -30,7 +30,7 @@ export const terramancy: MysticSphere = {
       name: "Rock Throw",
 
       attack: {
-        hit: `The subject takes 1d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
@@ -46,7 +46,7 @@ export const terramancy: MysticSphere = {
       name: "Greater Rock Throw",
 
       attack: {
-        hit: `The subject takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 4d6 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
@@ -62,7 +62,7 @@ export const terramancy: MysticSphere = {
       name: "Supreme Rock Throw",
 
       attack: {
-        hit: `The subject takes 6d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 6d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\distrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
@@ -79,7 +79,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d6 + half \\glossterm{power} bludgeoning damage.
+          The target takes 2d6 + half \\glossterm{power} bludgeoning damage.
           In addition, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
@@ -137,7 +137,7 @@ export const terramancy: MysticSphere = {
       name: "Earthspike",
 
       attack: {
-        hit: `The subject takes 2d8 piercing damage.
+        hit: `The target takes 2d8 piercing damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange that is on a stable surface.
@@ -238,12 +238,12 @@ export const terramancy: MysticSphere = {
 
       // losing line of effect compensates for recurring extra damage
       attack: {
-        hit: `The subject takes 4d6 bludgeoning damage.
+        hit: `The target takes 4d6 bludgeoning damage.
         If it is Large or smaller and it loses \\glossterm{hit points} from this damage, it is swallowed by the earth as a \\glossterm{condition}.
         While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
         At the end of each subsequent round, it takes 4d6 bludgeoning damage as the earth grinds it into paste.
         If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
-        Special movement abilities such as teleportation can also remove the subject from the fissure.`,
+        Special movement abilities such as teleportation can also remove the target from the fissure.`,
         targeting: `
           Make an attack vs. Reflex against one creature within \\medrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
@@ -262,7 +262,7 @@ export const terramancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
-          As a \\glossterm{condition}, the subject is pulled towards the ground with great force, approximately doubling the gravity it experiences.
+          As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is \\slowed and unable to use any fly speed or glide speed.
         `,
         targeting: `
@@ -279,9 +279,9 @@ export const terramancy: MysticSphere = {
       name: "Greater Earthbind",
 
       attack: {
-        crit: `The subject is \\immobilized instead of slowed.`,
+        crit: `The target is \\immobilized instead of slowed.`,
         hit: `
-          As a \\glossterm{condition}, the subject is pulled towards the ground with great force, approximately doubling the gravity it experiences.
+          As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is \\slowed and unable to use any fly speed or glide speed.
           This condition must be removed twice before the effect ends.
         `,

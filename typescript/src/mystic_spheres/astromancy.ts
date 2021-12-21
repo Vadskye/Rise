@@ -50,7 +50,7 @@ export const astromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The subject takes 1d10 + \\glossterm{power} energy damage.
+          The target takes 1d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -73,7 +73,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d8 + half \\glossterm{power} energy damage.
+          The target takes 2d8 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately disappears.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After this effect ends, it becomes immune to this effect until it takes a \\glossterm{short rest}.
@@ -97,7 +97,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d6 + half \\glossterm{power} energy damage.
+          The target takes 2d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
@@ -137,9 +137,9 @@ export const astromancy: MysticSphere = {
       attack: {
         crit: "The effect lasts until the curse is removed.",
         hit: `
-          The subject jitters randomly until it takes a \\glossterm{short rest}.
+          The target jitters randomly until it takes a \\glossterm{short rest}.
           At the end of each \\glossterm{movement phase}, if it has no remaining \\glossterm{damage resistance}, it teleports horizontally 10 feet in a random direction.
-          This teleportation only works if it moves the subject into an unoccupied location on a stable surface that can support its weight.
+          This teleportation only works if it moves the target into an unoccupied location on a stable surface that can support its weight.
           If the destination is invalid, the teleportation fails with no effect.
         `,
         targeting: `
@@ -161,8 +161,8 @@ export const astromancy: MysticSphere = {
       attack: {
         crit: "The condition must be removed twice before the effect ends.",
         hit: `
-          The subject is stuck in place as a \\glossterm{condition}.
-          At the end of each round, the subject teleports back to the location it was in when this spell was cast.
+          The target is stuck in place as a \\glossterm{condition}.
+          At the end of each round, the target teleports back to the location it was in when this spell was cast.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -181,7 +181,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d10 + \\glossterm{power} energy damage.
+          The target takes 1d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -202,7 +202,7 @@ export const astromancy: MysticSphere = {
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\shortrange.
         If you choose something other than yourself, it must be Medium size or smaller.
-        The subject \\glossterm{teleports} into an unoccupied location within range on a stable surface that can support its weight.
+        The target \\glossterm{teleports} into an unoccupied location within range on a stable surface that can support its weight.
         If the destination is invalid, this spell fails with no effect.
       `,
       rank: 1,
@@ -244,7 +244,7 @@ export const astromancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           this spell does not have \\glossterm{verbal components}.
-          In addition, the subject's departure and arrival with this spell are silent.
+          In addition, the target's departure and arrival with this spell are silent.
         `,
         name: "translocation",
       },
@@ -282,7 +282,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d6 bludgeoning damage.
+          The target takes 2d6 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
@@ -301,9 +301,9 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 1d8 bludgeoning damage.
+          The target takes 1d8 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
-          Moving the subject upwards costs twice the normal movement cost.
+          Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\longrange.
@@ -325,7 +325,7 @@ export const astromancy: MysticSphere = {
           Double damage, and the burning effect becomes a \\glossterm{condition}.
         `,
         hit: `
-          The subject takes 4d8 + half \\glossterm{power} fire damage.
+          The target takes 4d8 + half \\glossterm{power} fire damage.
           If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
           At the end of each round, it takes 4d8 + half \\glossterm{power} damage.
         `,
@@ -350,7 +350,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 4d10 + \\glossterm{power} damage of all types.
+          The target takes 4d10 + \\glossterm{power} damage of all types.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\shortrange.
@@ -369,7 +369,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 4d6 energy damage.
+          The target takes 4d6 energy damage.
           If it lost \\glossterm{hit points} from this damage, it is \\confused as a condition.
           Otherwise, it is \\stunned instead of confused.
         `,
@@ -635,13 +635,13 @@ export const astromancy: MysticSphere = {
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
         You send that creature into a random safe location in the Astral Plane, causing it to temporarily disappear.
-        When you cast this spell, you choose how many rounds the subject spends in the Astral Plane, up to a maximum of five rounds.
+        When you cast this spell, you choose how many rounds the target spends in the Astral Plane, up to a maximum of five rounds.
         At the end of the last round, it reappears in the same location where it disappeared, or in the closest unoccupied space if that location is occupied.
         `,
       rank: 2,
       scaling: {
-        4: `The maximum size of the subject increases to Large.`,
-        6: `The maximum size of the subject increases to Huge.`,
+        4: `The maximum size of the target increases to Large.`,
+        6: `The maximum size of the target increases to Huge.`,
       },
       type: "Duration",
     },

@@ -66,7 +66,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         crit: "The effect lasts until this curse is removed.",
         hit: `
-          The subject takes a -2 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
+          The target takes a -2 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
         `,
         targeting: "Make an attack vs. Mental against anything within \\medrange.",
       },
@@ -87,7 +87,7 @@ export const aeromancy: MysticSphere = {
           The effect lasts until this curse is removed.
         `,
         hit: `
-          The subject takes a -4 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Medium or smaller until it takes a \\glossterm{short rest}.
+          The target takes a -4 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Medium or smaller until it takes a \\glossterm{short rest}.
         `,
         targeting: "Make an attack vs. Mental against anything within \\medrange.",
       },
@@ -104,9 +104,9 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
-        You \\glossterm{push} the subject up to 60 feet in any direction.
+        You \\glossterm{push} the target up to 60 feet in any direction.
         You cannot change the direction of the movement partway through.
-        Moving the subject upwards costs twice the normal movement cost.
+        Moving the target upwards costs twice the normal movement cost.
       `,
       rank: 1,
       scaling: {
@@ -171,7 +171,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        hit: "The subject takes 1d10 + \\glossterm{power} bludgeoning damage.",
+        hit: "The target takes 1d10 + \\glossterm{power} bludgeoning damage.",
         targeting: "Make an attack vs. Armor against anything within \\medrange.",
       },
       // narrative: '',
@@ -184,7 +184,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        hit: "The subject takes 2d8 \\add \\glossterm{power} bludgeoning damage.",
+        hit: "The target takes 2d8 \\add \\glossterm{power} bludgeoning damage.",
         targeting: "Make an attack vs. Armor against anything within \\distrange.",
       },
       // narrative: '',
@@ -196,11 +196,11 @@ export const aeromancy: MysticSphere = {
       name: "Buffet",
 
       attack: {
-        crit: "Double damage, and you can knockback the subject 60 feet instead of 30 feet.",
+        crit: "Double damage, and you can knockback the target 60 feet instead of 30 feet.",
         hit: `
-          The subject takes 1d6 bludgeoning damage.
+          The target takes 1d6 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
-          Moving the subject upwards costs twice the normal movement cost.
+          Moving the target upwards costs twice the normal movement cost.
         `,
         targeting:
           "Make an attack vs. Fortitude against anything Large or smaller within \\medrange.",
@@ -259,7 +259,7 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: {
-        6: "The subject is immune to \\glossterm{falling damage} even if it does not glide.",
+        6: "The target is immune to \\glossterm{falling damage} even if it does not glide.",
       },
       type: "Attune (target)",
     },
@@ -362,7 +362,7 @@ export const aeromancy: MysticSphere = {
       effect: `
         Melee weapons you wield gain a +5 foot \\glossterm{magic bonus} to \\glossterm{reach}.
         Attacks that hit because of this reach deal bludgeoning damage instead of any other damage types.
-        This has no effect on ranged attacks the subject makes.
+        This has no effect on ranged attacks the target makes.
       `,
       // narrative: '',
       rank: 3,
@@ -502,7 +502,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         crit: "Double damage from movement.",
         hit: `
-          As a \\glossterm{condition}, the subject is \\slowed by incredibly fast winds that inhibit movement.
+          As a \\glossterm{condition}, the target is \\slowed by incredibly fast winds that inhibit movement.
           At the end of each phase, if it moved voluntarily during that phase, it takes 2d6 bludgeoning damage.
         `,
         targeting: `
@@ -578,12 +578,12 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The subject takes 2d8 physical damage.
+          The target takes 2d8 physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against one creature within \\shortrange.
-          If there is no dirt, dust, or collection of loose objects of similar size within 30 foot \\glossterm{range} of the subject's eyes, this attack automatically fails.
+          If there is no dirt, dust, or collection of loose objects of similar size within 30 foot \\glossterm{range} of the target's eyes, this attack automatically fails.
         `,
       },
       // narrative: '',
@@ -596,7 +596,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        hit: "The subject takes 2d8 \\add \\glossterm{power} piercing damage.",
+        hit: "The target takes 2d8 \\add \\glossterm{power} piercing damage.",
         targeting: "Make an attack vs. Reflex against anything within \\medrange.",
       },
       narrative: `
@@ -612,7 +612,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
-          As a \\glossterm{condition}, air buffets the subject downward, pushing it towards the ground with great force.
+          As a \\glossterm{condition}, air buffets the target downward, pushing it towards the ground with great force.
           It is \\slowed and unable to use any fly speed or glide speed.
         `,
         targeting: `
