@@ -530,7 +530,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} You gain the \glossterm{scent} ability.
+                        \rank{3} You gain the \trait{scent} ability.
                         \rank{5} You gain a \plus5 foot bonus to your land speed.
                         \rank{7} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
                     \end{durationability}
@@ -782,7 +782,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         It has a ram \glossterm{natural weapon}.
                     \item Forest: A wolverine appears that has two additional \glossterm{hit points}.
                         It has a bite \glossterm{natural weapon}.
-                    \item Plains: A wolf appears that has the \glossterm{scent} ability.
+                    \item Plains: A wolf appears that has the \trait{scent} ability.
                         It has a bite \glossterm{natural weapon}.
                     \item Swamp: A crocodile appears that has a 15 foot \glossterm{land speed} and a 25 foot \glossterm{swim speed}.
                         It has a bite \glossterm{natural weapon}.
