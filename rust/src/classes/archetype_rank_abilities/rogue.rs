@@ -62,7 +62,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                         \item \trait{Darkvision}
                         \item \abilitytag{Detection} abilities
                         \item \trait{Lifesense} and \trait{lifesight}
-                        \item \glossterm{Scent}
+                        \item \trait{Scent}
                         \item \abilitytag{Scrying} abilities
                         \item \trait{Tremorsense} and \trait{tremorsight}
                     \end{itemize}
