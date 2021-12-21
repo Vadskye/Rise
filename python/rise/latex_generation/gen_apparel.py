@@ -1536,7 +1536,7 @@ def generate_apparel():
                 As a standard action, you can activate this belt.
                 If you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
                 This increases the \\glossterm<base speed> for your size and reduces your Stealth skill.
-                It may also increase your \\glossterm<reach> (see \\pcref<Size in Combat>).
+                It may also increase your \\glossterm<reach> (see \\pcref<Size Categories>).
 
                 Your physical form is not altered fully to match your new size.
                 Your Strength and Dexterity are unchanged from your original size, and you take a -5 foot penalty to your speed with all of your \\glossterm{movement modes.}
@@ -1566,7 +1566,7 @@ def generate_apparel():
                 As a standard action, you can activate this belt.
                 If you do, your size decreases by one \\glossterm<size category>, to a minimum of Tiny.
                 This decreases the \\glossterm<base speed> for your size and improves your Stealth skill.
-                It may also decrease your \\glossterm<reach> (see \\pcref<Size in Combat>).
+                It may also decrease your \\glossterm<reach> (see \\pcref<Size Categories>).
                 This effect lasts until you activate the belt again, which returns you to your original size.
             """,
             short_description="Reduces your size",
