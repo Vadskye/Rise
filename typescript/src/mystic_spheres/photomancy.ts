@@ -107,10 +107,10 @@ export const photomancy: MysticSphere = {
       // original targets: Up to five targets within \medrange from among you and your \glossterm{allies}
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        In addition, choose one of the subjects as the primary subject.
-        You make a Disguise check to alter each target's appearance to exactly match the primary subject (see \\pcref{Disguise Creature}).
+        In addition, choose one of the targets as the primary target.
+        You make a Disguise check to alter each target's appearance to exactly match the primary target (see \\pcref{Disguise Creature}).
         You gain a +4 bonus on the check, and you can freely alter the appearance of each target's clothes and equipment, regardless of their original form.
-        However, this effect is unable to alter the sound, smell, texture, or temperature of any subject or its clothes and equipment.
+        However, this effect is unable to alter the sound, smell, texture, or temperature of any target or its clothes and equipment.
       `,
       rank: 3,
       scaling: { 5: `The bonus increases to +6.`, 7: `The bonus increases to +8.` },

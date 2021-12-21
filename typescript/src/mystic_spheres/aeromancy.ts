@@ -124,7 +124,7 @@ export const aeromancy: MysticSphere = {
         You \\glossterm{push} each target up to 60 feet in any direction.
         Each target must be pushed in the same direction.
         You cannot change the direction of the movement partway through.
-        Moving a subject upwards costs twice the normal movement cost.
+        Moving a target upwards costs twice the normal movement cost.
       `,
       rank: 3,
       scaling: {
@@ -323,7 +323,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           Each target takes 1d10 bludgeoning damage.
           In addition, each target is \\glossterm{pushed} 15 feet in the direction the line points away from you.
-          Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
+          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearealong, 5 ft. wide line from you.
@@ -344,7 +344,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           Each target takes 2d10 bludgeoning damage.
           In addition, each target is \\glossterm{pushed} 30 feet in the direction the line points away from you.
-          Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
+          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\hugearealong, 10 ft. wide line from you.

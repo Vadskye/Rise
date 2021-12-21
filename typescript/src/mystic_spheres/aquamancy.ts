@@ -348,7 +348,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each target takes 1d10 bludgeoning damage.
           In addition, each target is \\glossterm{pushed} 15 feet in the direction the line points away from you.
-          Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
+          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarealong, 10 ft. wide line from you.
@@ -368,7 +368,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each target takes 2d10 bludgeoning damage.
           In addition, each target is \\glossterm{pushed} 30 feet in the direction the line points away from you.
-          Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
+          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearealong, 15 ft. wide line from you.
