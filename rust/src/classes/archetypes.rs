@@ -544,7 +544,6 @@ mod tests {
 
         assert_eq!(
             vec![
-                "Martial Expertise",
                 "Combat Style Rank (2)",
                 "Martial Force"
             ],
