@@ -66,7 +66,7 @@ This chapter describes the core mechanics of Rise.
         However, you only lose hit points if the damage is not mitigated by your damage resistance.
         Many active abilities require the target to lose hit points from a damaging attack, which does not happen if the damage is resisted.
 
-        \subsubsection{Dice Pools}\label{Dice Pools}
+        \subsubsection{Damage Dice}\label{Damage Dice}
             Almost all attacks deal damage based on the result rolled from a pool of dice.
             Many abilities can increase or decrease your damage.
             Some modifiers add or subtract flat values from the damage you deal.
@@ -98,49 +98,56 @@ This chapter describes the core mechanics of Rise.
         For each die increment that increases the damage, move one space down the list.
         Likewise, for each die increment that decreases the damage, move one space up the list.
         After the dice pool reaches 8d10, each additional die increment simply adds an additional 10 flat damage.
+        In practice, you are unlikely to ever roll that many dice.
 
-        % TODO: different section?
-        \subsubsection{Damage Types}\label{Damage Types}
-            All damage falls into one of two categories: \glossterm{energy damage} or \glossterm{physical damage}.
-            Physical damage is the most common type of damage.
-            Energy damage is usually caused by \glossterm{magical} effects.
+        \parhead{Attribute Dice Increments} Your attributes can add or subtract dice increments from all damage dice you roll.
+        Whenever you deal damage with a \glossterm{mundane} ability, you add half your Strength in dice increments to the damage dice.
+        If your Strength is negative, this can reduce your damage.
+        Likewise, you add half your Willpower in dice increments to your damage with \glossterm{magical} abilities.
+        For example, if you are using a spell that normally deals 1d8 damage, and your Willpower is 2, you would deal 1d10 damage with that ability instead.
 
-            \subsubsection{Damage Subtypes}\label{Damage Subtypes}
-                Physical damage has three subtypes: bludgeoning damage, piercing damage, and slashing damage.
-                Energy damage has five subtypes: acid damage, cold damage, electricity damage, fire damage, and sonic damage.
-                Damage of a particular subtype is also considered damage of its primary type.
-                For example, if you are \trait{impervious} to \glossterm{physical damage}, that applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
+    % TODO: different section?
+    \subsection{Damage Types}\label{Damage Types}
+        All damage falls into one of two categories: \glossterm{energy damage} or \glossterm{physical damage}.
+        Physical damage is the most common type of damage.
+        Energy damage is usually caused by \glossterm{magical} effects.
 
-                Some damage types have special properties, as described below.
-                \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
-                \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
-                \parhead{Fire} Abilities that deal fire damage provide light equivalent to a torch for their duration.
-                % TODO: what does this actually mean
-                Abilities without a duration create a brief burst of torchlight.
-                While underwater, they deal half damage and have no nondamaging effects.
+        \subsubsection{Damage Subtypes}\label{Damage Subtypes}
+            Physical damage has three subtypes: bludgeoning damage, piercing damage, and slashing damage.
+            Energy damage has five subtypes: acid damage, cold damage, electricity damage, fire damage, and sonic damage.
+            Damage of a particular subtype is also considered damage of its primary type.
+            For example, if you are \trait{impervious} to \glossterm{physical damage}, that applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
 
-            \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
-                Some attacks deal damage that has multiple damage types.
-                Defensive abilities such as defense bonuses or damage immunities apply against an attack only if they apply to all damage types dealt by the attack.
+            Some damage types have special properties, as described below.
+            \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
+            \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
+            \parhead{Fire} Abilities that deal fire damage provide light equivalent to a torch for their duration.
+            % TODO: what does this actually mean
+            Abilities without a duration create a brief burst of torchlight.
+            While underwater, they deal half damage and have no nondamaging effects.
 
-        \subsubsection{Special Damage Types}\label{Special Damage Types}
+        \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
+            Some attacks deal damage that has multiple damage types.
+            Defensive abilities such as defense bonuses or damage immunities apply against an attack only if they apply to all damage types dealt by the attack.
 
-            These special damage types are separate from the standard damage types, like fire damage or energy damage.
+    \subsubsection{Special Damage Types}\label{Special Damage Types}
 
-            \subsubsection{Subdual Damage}\label{Subdual Damage}
-                Some attacks and environmental effects deal subdual damage.
-                Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
-                If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
-                Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
-                If you do, you deal half damage with the strike.
+        These special damage types are separate from the standard damage types, like fire damage or energy damage.
 
-            \subsubsection{Environmental Damage}\label{Environmental Damage}
-                Some abilities and environmental effects deal environmental damage.
-                Environmental damage is never dealt as the result of a successful attack roll.
-                Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
-                Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
+        \subsubsection{Subdual Damage}\label{Subdual Damage}
+            Some attacks and environmental effects deal subdual damage.
+            Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
+            If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
+            Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
+            If you do, you deal half damage with the strike.
 
-                It is possible for damage to be both environmental damage and subdual damage.
+        \subsubsection{Environmental Damage}\label{Environmental Damage}
+            Some abilities and environmental effects deal environmental damage.
+            Environmental damage is never dealt as the result of a successful attack roll.
+            Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
+            Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
+
+            It is possible for damage to be both environmental damage and subdual damage.
 
 \section{Being Attacked}\label{Being Attacked}
     When another creature attacks you, you may or may not suffer serious consequences from the attack.
