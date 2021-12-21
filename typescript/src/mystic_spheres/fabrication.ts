@@ -78,7 +78,7 @@ export const fabrication: MysticSphere = {
       name: "Bladestorm",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} slashing damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} slashing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
@@ -106,7 +106,7 @@ export const fabrication: MysticSphere = {
       name: "Missile Storm",
 
       attack: {
-        hit: `Each subject takes 2d8 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -121,7 +121,7 @@ export const fabrication: MysticSphere = {
       name: "Greater Missile Storm",
 
       attack: {
-        hit: `Each subject takes 4d6 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
@@ -136,7 +136,7 @@ export const fabrication: MysticSphere = {
       name: "Hail of Arrows",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea radius within \\medrange.
         `,
@@ -283,7 +283,7 @@ export const fabrication: MysticSphere = {
       name: "Meteor",
 
       attack: {
-        hit: `Each subject takes 2d10 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
           You create a meteor in midair within \\medrange that falls to the ground, crushing foes in its path.
           The meteor takes up a \\smallarea radius, and must be created in unoccupied space.
@@ -410,7 +410,7 @@ export const fabrication: MysticSphere = {
       name: "Daggercloud",
 
       attack: {
-        hit: `Each subject takes 2d8 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
           A swarm of daggers appears in a \\tinyarea radius \\glossterm{zone} within \\medrange.
           At the end of each round, make an attack vs. Armor with a +2 accuracy bonus against everything in the area.
@@ -427,11 +427,11 @@ export const fabrication: MysticSphere = {
 
       attack: {
         crit: `
-          Each subject is also unable to stand up as a \\glossterm{condition}.
+          Each target is also unable to stand up as a \\glossterm{condition}.
           If it is somehow brought into a standing position, it will immediately fall and become prone again.
         `,
         // No relevant glance effect
-        hit: `Each subject falls \\prone.`,
+        hit: `Each target falls \\prone.`,
         targeting: `
           Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea radius within \\medrange.
         `,
@@ -447,11 +447,11 @@ export const fabrication: MysticSphere = {
 
       attack: {
         crit: `
-          Each subject is also unable to stand up as a \\glossterm{condition}.
+          Each target is also unable to stand up as a \\glossterm{condition}.
           If it is somehow brought into a standing position, it will immediately fall and become prone again.
         `,
         hit: `
-          Each subject falls \\prone, and is \\glossterm{briefly} \\glossterm{vulnerable} to fire damage.
+          Each target falls \\prone, and is \\glossterm{briefly} \\glossterm{vulnerable} to fire damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.

@@ -831,11 +831,11 @@ export const revelation: MysticSphere = {
       // original targets: up to five ritual participants
       castingTime: "one minute",
       effect: `
-        Each subject can communicate mentally through telepathy with each other target.
+        Each target can communicate mentally through telepathy with each other target.
         This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
 
         % Is this grammatically correct?
-        Each subject must attune to this ritual independently.
+        Each target must attune to this ritual independently.
         If a target breaks its attunement, it stops being able to send and receive mental messages with other targets.
         However, the effect continues as long as at least one target attunes to it.
         If you \\glossterm{dismiss} the ritual, the effect ends for all targets.

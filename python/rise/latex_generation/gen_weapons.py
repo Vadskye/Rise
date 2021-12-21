@@ -507,7 +507,7 @@ def generate_weapons():
             material_type="Weapon",
             description="""
                 Whenever you kill a creature or knock a creature unconscious with a \\glossterm<strike> using this weapon, make an attack vs. Reflex against all \\glossterm<enemies> adjacent to that creature.
-                On a hit, each subject is \\glossterm<briefly> \\dazzled.
+                On a hit, each target is \\glossterm<briefly> \\dazzled.
             """,
             short_description="Briefly dazzles foes with blood on kill",
         ),

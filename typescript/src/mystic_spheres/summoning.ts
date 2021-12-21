@@ -189,7 +189,7 @@ export const summoning: MysticSphere = {
       name: "Trampling Summon",
 
       attack: {
-        hit: `Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
         Make an attack vs. Reflex against everything on solid ground in a \\medarealong, 5 ft. wide line from you.
         You summon a Medium creature that tramples through the area before disappearing.
@@ -206,7 +206,7 @@ export const summoning: MysticSphere = {
       name: "Greater Trampling Summon",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everythong on solid ground in a \\largearealong, 10 ft. wide line from you.
           You summon a Large creature that tramples through the area before disappearing.
@@ -223,7 +223,7 @@ export const summoning: MysticSphere = {
       name: "Supreme Trampling Summon",
 
       attack: {
-        hit: `Each subject takes 4d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everything on solid ground in a \\hugearealong, 20 ft. wide line from you.
           You summon a horde of creatures that trample through the area before disappearing.

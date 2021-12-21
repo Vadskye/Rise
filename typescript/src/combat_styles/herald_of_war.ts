@@ -11,7 +11,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         This ability targets all \\glossterm{enemies} within a \\largearea radius from you.
-        You \\glossterm{briefly} gain a +4 bonus to \\glossterm{accuracy} with \\glossterm{strikes} against each subject.
+        You \\glossterm{briefly} gain a +4 bonus to \\glossterm{accuracy} with \\glossterm{strikes} against each target.
       `,
       rank: 1,
       scaling: {
@@ -26,8 +26,8 @@ export const heraldOfWar: CombatStyle = {
       name: "Dazing Roar",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{briefly} \\dazed.`,
+        crit: `The effect becomes a \\glossterm{condition} on each target.`,
+        hit: `Each target is \\glossterm{briefly} \\dazed.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -41,8 +41,8 @@ export const heraldOfWar: CombatStyle = {
       name: "Stunning Roar",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{briefly} \\stunned.`,
+        crit: `The effect becomes a \\glossterm{condition} on each target.`,
+        hit: `Each target is \\glossterm{briefly} \\stunned.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -56,9 +56,9 @@ export const heraldOfWar: CombatStyle = {
       name: "Goading Roar",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        crit: `The effect becomes a \\glossterm{condition} on each target.`,
         hit: `
-          Each subject is \\glossterm{briefly} \\goaded.
+          Each target is \\glossterm{briefly} \\goaded.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
@@ -89,8 +89,8 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         crit: `The effect becomes a \\glossterm{condition}.`,
         hit: `
-          Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\shaken by you.
-          Each subject without remaining damage resistance is \\frightened by you instead of shaken.
+          Each target with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\shaken by you.
+          Each target without remaining damage resistance is \\frightened by you instead of shaken.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
@@ -119,7 +119,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Thunderous Shout",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} sonic damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
@@ -133,7 +133,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Greater Thunderous Shout",
 
       attack: {
-        hit: `Each subject takes 4d6 + half \\glossterm{power} sonic damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\hugearea cone from you.
         `,
@@ -254,7 +254,7 @@ export const heraldOfWar: CombatStyle = {
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
         In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\smallarea radius from you.
-        On a hit, each subject is \\glossterm{briefly} \\shaken by you.
+        On a hit, each target is \\glossterm{briefly} \\shaken by you.
       `,
       rank: 4,
       scaling: {
@@ -313,9 +313,9 @@ export const heraldOfWar: CombatStyle = {
       name: "Enraging Roar",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        crit: `The effect becomes a \\glossterm{condition} on each target.`,
         hit: `
-          Each subject is \\glossterm{briefly} unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
+          Each target is \\glossterm{briefly} unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
           For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
         `,
         targeting: `

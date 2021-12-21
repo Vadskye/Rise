@@ -275,7 +275,7 @@ export const vivimancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: {
-        7: "Each subject can ignore the vital wound effect of two of its \\glossterm{vital wounds} instead of only one.",
+        7: "Each target can ignore the vital wound effect of two of its \\glossterm{vital wounds} instead of only one.",
       },
       type: "Attune (target)",
     },
@@ -303,7 +303,7 @@ export const vivimancy: MysticSphere = {
       name: "Circle of Death",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} energy damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -317,7 +317,7 @@ export const vivimancy: MysticSphere = {
       name: "Greater Circle of Death",
 
       attack: {
-        hit: `Each subject takes 4d8 + half \\glossterm{power} energy damage.`,
+        hit: `Each target takes 4d8 + half \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -412,7 +412,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         crit: "The effect becomes a \\glossterm{condition}.",
         // No relevant glance effect
-        hit: `Each subject is \\glossterm{briefly} \\dazed.`,
+        hit: `Each target is \\glossterm{briefly} \\dazed.`,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\medrange.
         `,
@@ -427,7 +427,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         crit: "The effect becomes a \\glossterm{condition}.",
-        hit: `Each subject is \\glossterm{briefly} \\stunned.`,
+        hit: `Each target is \\glossterm{briefly} \\stunned.`,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\medrange.
         `,
@@ -487,7 +487,7 @@ export const vivimancy: MysticSphere = {
       name: "Corpse Explosion",
 
       attack: {
-        hit: `Each subject takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Choose one Small or larger corpse within \\medrange.
           Make an attack vs. Reflex against each creature within a \\smallarea radius from the corpse.
@@ -560,7 +560,7 @@ export const vivimancy: MysticSphere = {
       name: "Retributive Lifebond",
 
       attack: {
-        hit: `Each subject takes 1d10 energy damage.`,
+        hit: `Each target takes 1d10 energy damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\smallarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
@@ -575,7 +575,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         // +1d from levels
-        hit: `Each subject takes 4d6 energy damage.`,
+        hit: `Each target takes 4d6 energy damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
@@ -590,7 +590,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         // +1d from levels
-        hit: `Each subject takes 6d10 energy damage.`,
+        hit: `Each target takes 6d10 energy damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
@@ -882,7 +882,7 @@ export const vivimancy: MysticSphere = {
       effect: `
         Choose up to four corpses within \\shortrange.
         The combined levels of all targets cannot exceed your level.
-        Each subject becomes an undead creature that obeys your mental commands.
+        Each target becomes an undead creature that obeys your mental commands.
 
         You choose whether to create a skeleton or a zombie from each corpse.
         Creating a zombie require a mostly intact corpse, including most of the flesh.

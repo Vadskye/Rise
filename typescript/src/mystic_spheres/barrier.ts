@@ -417,11 +417,11 @@ export const barrier: MysticSphere = {
 
       attack: {
         crit:
-          "You also \\glossterm{knockback} each subject 20 feet in the direction that it tried to enter the area from.",
+          "You also \\glossterm{knockback} each target 20 feet in the direction that it tried to enter the area from.",
         glance:
           "The effect on the creature lasts \\glossterm{briefly}, allowing the creature to freely enter the zone after that time.",
         hit: `
-          Each subject is unable to enter the spell's area with any part of its body for the duration of the spell.
+          Each target is unable to enter the spell's area with any part of its body for the duration of the spell.
           The rest of its movement in the current phase is cancelled.
         `,
         targeting: `

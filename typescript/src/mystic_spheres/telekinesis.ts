@@ -122,7 +122,7 @@ export const telekinesis: MysticSphere = {
       name: "Force Lance",
 
       attack: {
-        hit: `Each subject takes 1d8 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
         Make an attack vs. Armor against everything in a \\medarealong, 5 ft. wide line from you.
         `,
@@ -137,7 +137,7 @@ export const telekinesis: MysticSphere = {
       name: "Greater Force Lance",
 
       attack: {
-        hit: `Each subject takes 2d10 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\largearealong, 5 ft. wide line from you.
         `,
@@ -152,7 +152,7 @@ export const telekinesis: MysticSphere = {
       name: "Supreme Force Lance",
 
       attack: {
-        hit: `Each subject takes 5d10 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 5d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\largearealong, 10 ft. wide line from you.
         `,
@@ -230,9 +230,9 @@ export const telekinesis: MysticSphere = {
       name: "Mass Kinetic Impedance",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
+        crit: "The effect becomes a \\glossterm{condition} on each target.",
         // No relevant glance effect
-        hit: `Each subject is \\glossterm{briefly} \\slowed.`,
+        hit: `Each target is \\glossterm{briefly} \\slowed.`,
         targeting: `
           Make an attack vs. Mental against all Large or smaller creatures in a \\areasmall radius within \\medrange.
         `,
@@ -247,7 +247,7 @@ export const telekinesis: MysticSphere = {
       name: "Blastwave",
 
       attack: {
-        hit: `You \\glossterm{knockback} each subject up to 15 feet in a straight line away from you.
+        hit: `You \\glossterm{knockback} each target up to 15 feet in a straight line away from you.
         Moving a target upwards costs twice the normal movement cost.
         If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 + half \\glossterm{power} instead of the normal knockback damage.
         Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.`,

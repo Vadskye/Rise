@@ -243,7 +243,7 @@ export const polymorph: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: {
-        6: 'Each subject also gains a +2 \\glossterm{magic bonus} to Dexterity-based checks.',
+        6: 'Each target also gains a +2 \\glossterm{magic bonus} to Dexterity-based checks.',
       },
       type: 'Attune (target)',
     },
@@ -319,7 +319,7 @@ export const polymorph: MysticSphere = {
       rank: 5,
       scaling: {
         7: `
-          Each subject also gains a +2 \\glossterm{magic bonus} to Strength-based checks, and a +2 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
+          Each target also gains a +2 \\glossterm{magic bonus} to Strength-based checks, and a +2 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
         `,
       },
       type: 'Attune (target)',
@@ -404,7 +404,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'minor action',
       attack: {
         // AOE dice, no power
-        hit: `Each subject takes 2d6 piercing damage.`,
+        hit: `Each target takes 2d6 piercing damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Armor against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
         `,
@@ -423,7 +423,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'minor action',
       attack: {
         // TODO: is this damage correct?
-        hit: `Each subject takes 4d6 piercing damage.`,
+        hit: `Each target takes 4d6 piercing damage.`,
         targeting: `
           As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
@@ -779,7 +779,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 5,
       scaling: {
-        7: 'For each subject, you can choose any two of the listed enhancements.',
+        7: 'For each target, you can choose any two of the listed enhancements.',
       },
       type: 'Attune (target)',
     },
@@ -789,7 +789,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'minor action',
       attack: {
-        hit: `Each subject takes 2d10 + half \\glossterm{power} damage of your chosen type.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} damage of your chosen type.`,
         targeting: `
           Choose one of the following damage types: acid, cold, electricity, or fire.
           For the duration of this spell, you can breath that type of energy like a dragon as a standard action.
