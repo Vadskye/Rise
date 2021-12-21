@@ -47,9 +47,9 @@ You can either skim past terms you don't yet understand or look them up as you g
             \begin{raggeditemize}
                 \item Strength determines how much you can carry (see \tref{Weight Limits by Strength}).
                     You generally need a Strength of at least 1 to wear heavy body armor.
-                \item You add half your total Strength to your \glossterm{power} with \glossterm{mundane} abilities, such as normal weapon attacks (see \pcref{Power}).
-                \item Your base Strength can reduce your total \glossterm{encumbrance} from \glossterm{armor} (see \pcref{Encumbrance}).
-                \item Your Strength affects Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
+                \item You add half your Strength in \glossterm{dice increments} to your damage with \glossterm{mundane} abilities (see \pcref{Damage Dice}).
+                \item If your Strength is positive, you reduce your \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your Strength (see \pcref{Encumbrance}).
+                \item You add your Strength to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
             \end{raggeditemize}
         }
 
@@ -59,11 +59,11 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Dexterity tend to have strong defensive capabilities, and prefer wearing lighter armor.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add your base Dexterity to your Reflex defense.
-                \item You add your base Dexterity to your Armor defense.
+                \item You add your Dexterity to your Reflex defense.
+                \item You add your Dexterity to your Armor defense.
                     This bonus can be reduced if you use medium or heavy armor (see \tref{Armor and Shields}).
-                \item You add your base Dexterity to your to your \glossterm{initiative} checks (see \pcref{Initiative}).
-                \item Your Dexterity affects Dexterity-based \glossterm{skills}: Balance, Flexibility, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
+                \item You add your Dexterity to your to your \glossterm{initiative} checks (see \pcref{Initiative}).
+                \item You add your Dexterity to Dexterity-based \glossterm{skills}: Balance, Flexibility, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
             \end{raggeditemize}
         }
 
@@ -73,11 +73,10 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Constitution tend to have strong defensive capabilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add your total Constitution to your \glossterm{hit points} (see \pcref{Hit Points}).
-                \item You add your total Constitution to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-                \item You add your base Constitution to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
-                \item You add your base Constitution to your Fortitude defense.
-                \item Your Constitution affects the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
+                \item You add your Constitution to your level for the purpose of determining your \glossterm{hit points} and \glossterm{damage resistance} (see \pcref{Hit Points}, and \pcref{Damage Resistance}).
+                \item You add your Constitution to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
+                \item You add your Constitution to your Fortitude defense.
+                \item You add your Constitution to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
             \end{raggeditemize}
         }
 
@@ -88,9 +87,9 @@ You can either skim past terms you don't yet understand or look them up as you g
             It has the following effects:
 
             \begin{raggeditemize}
-                \item If your base Intelligence is positive, you become \glossterm{trained} in a number of skills equal to your Intelligence (see \pcref{Trained Skills}).
-                \item You add your base Intelligence to the number of \glossterm{insight points} you gain (see \pcref{Insight Points}).
-                \item Your Intelligence affects Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Knowledge, Linguistics, and Medicine (see \pcref{Skills}).
+                \item If your Intelligence is positive, you become \glossterm{trained} in a number of skills equal to your Intelligence (see \pcref{Trained Skills}).
+                \item You add your Intelligence to the number of \glossterm{insight points} you gain (see \pcref{Insight Points}).
+                \item You add your Intelligence to Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Knowledge, Linguistics, and Medicine (see \pcref{Skills}).
             \end{raggeditemize}
 
             \par Non-sentient creatures like animals have an Intelligence of \minus6 or lower.
@@ -103,9 +102,9 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Perception tend to have strong offensive capabilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add half your base Perception to your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
+                \item You add half your Perception to your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
                 \item You add your base Perception to your \glossterm{initiative} (see \pcref{Initiative}).
-                \item Your Perception affects Perception-based \glossterm{skills}: Awareness, Creature Handling, Social Insight, and Survival (see \pcref{Skills}).
+                \item You add your Perception to Perception-based \glossterm{skills}: Awareness, Creature Handling, Social Insight, and Survival (see \pcref{Skills}).
             \end{raggeditemize}
         }
 
@@ -115,37 +114,11 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Willpower tend to have strong offensive capabilities with magical abilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add half your total Willpower to your \glossterm{power} with \glossterm{magical} abilities, such as spells (see \pcref{Power}).
-                \item You add your base Willpower to your Mental defense.
-                \item You add your base Willpower to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
+                \item You add half your Willpower in \glossterm{dice increments} to your damage with \glossterm{magical} abilities (see \pcref{Damage Dice}).
+                \item You add your Willpower to your Mental defense.
+                \item You add your Willpower to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
             \end{raggeditemize}
         }
-
-    \subsection{Base Attributes}\label{Base Attributes}
-        Most statistics depend on your \glossterm{base attributes}, rather than your total attributes.
-        Your attributes automatically increase with level as defined in \tref{Increasing Attributes With Level}, but your base attributes do not automatically increase with level.
-
-        A small number of abilities can increase your \glossterm{base attributes} after 1st level.
-        If you change a base attribute, the total value for that attribute changes appropriately.
-
-        \begin{dtable}
-            \lcaption{Increasing Attributes With Level}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Base Attribute} & \tb{Total Attribute}        \\
-                1 or lower          & Same as base attribute      \\
-                2                   & 2 \add one quarter level    \\
-                3                   & 3 \add half level           \\
-                4                   & 4 \add three-quarters level \\
-                5                   & 5 \add level                \\
-            \end{dtabularx} 
-        \end{dtable}
-
-    \subsection{Extraordinary Attributes}
-        Some abilities can increase your base attributes above 5.
-        For each point by which your base attribute exceeds 5, you increase your total attribute by one, plus one quarter of your level.
-
-        For example, a 20th level character might have a base Strength of 6.
-        Their total Strength would be equal to 6 \add one and a quarter times their level, for a total of 31.
 
 \section{Skills Overview}
     Skills represent the myriad of talents that people can have, such as cooking or swimming.
@@ -220,7 +193,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Dwarves}
         \parhead{Size} Medium.
-        \parhead{Attributes} \plus1 base Constitution, \minus1 base Dexterity.
+        \parhead{Attributes} \plus1 Constitution, \minus1 Dexterity.
         \parhead{Speed} 25 feet.
         \parhead{Special Abilities}
         \begin{raggeditemize}
@@ -234,7 +207,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Elves}
         \parhead{Size} Medium.
-        \parhead{Attributes} \minus1 base Constitution, either \plus1 base Dexterity or \plus1 base Perception
+        \parhead{Attributes} \minus1 Constitution, either \plus1 Dexterity or \plus1 Perception
         \parhead{Speed} 30 feet.
         \parhead{Special Abilities}
         \begin{raggeditemize}
@@ -251,7 +224,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Gnomes}
         \parhead{Size} Medium.
-        \parhead{Attributes} \minus1 base Strength, either \plus1 base Constitution or \plus1 base Intelligence
+        \parhead{Attributes} \minus1 Strength, either \plus1 Constitution or \plus1 Intelligence
         \parhead{Speed} 25 feet.
         \parhead{Special Abilities}
         \begin{raggeditemize}
@@ -285,7 +258,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Half-Orcs}
         \parhead{Size} Medium.
-        \parhead{Attributes} \plus1 base Strength, \minus1 base Intelligence.
+        \parhead{Attributes} \plus1 Strength, \minus1 Intelligence.
         \parhead{Speed} 30 feet.
         \parhead{Special Abilities}
         \begin{raggeditemize}
@@ -299,7 +272,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Halflings}
         \parhead{Size} Medium.
-        \parhead{Attributes} \minus1 base Strength, either \plus1 base Dexterity or \plus1 base Willpower
+        \parhead{Attributes} \minus1 Strength, either \plus1 Dexterity or \plus1 Willpower
         \parhead{Speed} 25 feet.
         \parhead{Special Abilities}
         \begin{raggeditemize}
@@ -495,35 +468,36 @@ You can either skim past terms you don't yet understand or look them up as you g
             This is the simplest method.
             Simply take the following set of attribute scores and distribute them as you choose among your attributes:
 
-            3, 2, 2, 1, 1, 0
+            % 5 + 3 + 3 + 3 = 14
+            3, 2, 2, 2, 0, 0
 
             This set of attribute scores is called the ``elite array''.
             For more extreme characters, you may use the ``savant array'':
 
-            4, 2, 1, 1, 0, 0.
+            % 8 + 3 + 3 = 14
+            4, 2, 2, 0, 0, 0.
 
             Finally, for more well-rounded characters, you may use the ``balanced array'':
 
+            % 3 + 3 + 3 + 3 + 1 + 1 = 14
             2, 2, 2, 2, 1, 1
 
         \subsubsection{Point Buy}
             With this method, you can fully control your attribute scores to precisely match what you want to be able to do.
             All your attribute scores start at 0.
-            You get 10 points to distribute among your attributes.
+            You get 14 points to distribute among your attributes.
             Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
-            The listed cost is the total cost required to gain the listed base attribute.
-            You are 1st level when you start, which adds appropriately to your total attribute score.
+            The listed cost is the total cost required to gain the listed attribute.
 
             \begin{dtable}
                 \lcaption{Attribute Score Point Costs}
-                \begin{dtabularx}{\columnwidth}{X X l}
-                    \tb{Cumulative Point Cost} & \tb{Base Attribute} & \tb{Total Attribute}        \tableheaderrule
-                    0                          & 0                         & 0                           \\
-                    1                          & 1                         & 1                           \\
-                    2                          & 2                         & 2 \add one quarter level    \\
-                    4                          & 3                         & 3 \add half level           \\
-                    6                          & 4                         & 4 \add three-quarters level \\
-                    \tdash                     & 5                         & 5 \add level                \\
+                \begin{dtabularx}{\columnwidth}{X X}
+                    \tb{Attribute} & \tb{Cumulative Point Cost} \tableheaderrule
+                    0              & 0                          \\
+                    1              & 1                          \\
+                    2              & 3                          \\
+                    3              & 5                          \\
+                    4              & 8                          \\
                 \end{dtabularx}
             \end{dtable}
 
@@ -564,7 +538,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         The class skills for each class are summarized in \tref{Class Skills}.
 
         There are other ways to become trained in skills that are not part of your class.
-        If your base Intelligence is positive, you gain additional trained skills equal to your base Intelligence.
+        If your Intelligence is positive, you gain additional trained skills equal to your Intelligence.
         You can also spend \glossterm{insight points} to gain one trained skill per insight point (see \pcref{Insight Points}).
         Some abilities can grant additional trained skills.
 
@@ -705,16 +679,14 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Accuracy}\label{Accuracy}
         Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
-        Your accuracy with an attack is normally equal to half your level \add half your base Perception.
+        Your accuracy with an attack is normally equal to half your level \add half your Perception.
         In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
 
     \subsection{Encumbrance}\label{Encumbrance}
-        Your encumbrance is a value that represents how much you are burdened by armor and weight.
+        Your encumbrance is a value that represents how much you are burdened by your armor (see \pcref{Armor}).
         You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
-        You can increase your encumbrance by wearing armor.
-        In addition, you reduce your total encumbrance from \glossterm{armor} by an amount equal to your base Strength, to a minimum of 0.
-        You apply this reduction to the total encumbrance applied by both your body armor and your shield, not individually for each piece of armor.
-        Most shields do not cause encumbrance, so this only matters for tower shields.
+        If your Strength is positive, you reduce your encumbrance by an amount equal to your Strength.
+        This cannot reduce your encumbrance below 0.
 
         Resting in armor is difficult.
         If you take a \glossterm{long rest} while you have any encumbrance, you finish your rest with a \glossterm{fatigue level} equal to the value of your encumbrance.
@@ -723,7 +695,7 @@ You can either skim past terms you don't yet understand or look them up as you g
     \subsection{Initiative}\label{Initiative}
         When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
         For details, see \pcref{Conflicting Actions}.
-        Your initiative is normally equal to the your base Dexterity \add your base Perception.
+        Your initiative is normally equal to the your Dexterity \add your Perception.
         In addition, some abilities grant you bonuses that specifically apply to initiative checks.
 
     \subsection{Power}\label{Power}
@@ -762,7 +734,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
             \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
                 Becoming slightly fatigued is not immediately detrimental.
-                Your fatigue level can be as high as your base Constitution \add your base Willpower without suffering any consequences (minimum 0).
+                Your fatigue level can be as high as your Constitution \add your Willpower without suffering any consequences (minimum 0).
                 This value is called your \glossterm{fatigue tolerance}.
                 Your \glossterm{class} gives you a bonus to your fatigue tolerance, and some abilities can also modify it.
 
