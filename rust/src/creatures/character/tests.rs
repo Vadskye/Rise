@@ -23,7 +23,6 @@ fn it_calculates_rank_abilities() {
             "Combat Styles",
             "Maneuvers",
             "Martial Expertise",
-            "Martial Expertise",
             "Mental Discipline",
         ],
         fighter_1_abilities,
@@ -54,19 +53,17 @@ fn it_calculates_rank_abilities() {
             "Enduring Discipline",
             "Equipment Efficiency",
             "Greater Armor Expertise",
-            "Greater Martial Expertise",
             "Greater Mental Discipline",
             // 2 of these since they are used for maneuver scaling at ranks 1 and 3
             "Maneuvers",
             "Maneuvers",
-            // 5 of these since there are 4 ranks in this archetype plus the rank 0
-            "Martial Expertise",
-            "Martial Expertise",
-            "Martial Expertise",
-            "Martial Expertise",
             "Martial Expertise",
             "Martial Force",
             "Martial Maneuver",
+            // 2 of these for the invisible rank 3 + 4 scaling, plus the actual rank 3
+            "Martial Resilience",
+            "Martial Resilience",
+            "Martial Resilience",
             "Mental Discipline",
             "Weapon Training"
         ],
@@ -89,7 +86,7 @@ fn it_calculates_level_21_fighter_defenses() {
     )
     .creature;
     assert_eq!(
-        "Armor b10 f11",
+        "Armor b10 f12",
         format!(
             "Armor b{} f{}",
             baseline.calc_defense(&Defense::Armor),
@@ -267,9 +264,9 @@ fn standard_character_statistics_level_1() {
 
     // HasDamageAbsorption
     assert_eq!(
-        15,
+        13,
         creature.calc_hit_points(),
-        "HP: 11 level + 2 martial mastery + 2 con",
+        "HP: 11 level + 2 con",
     );
     assert_eq!(8, creature.calc_damage_resistance(), "DR: 6 scale + 2 con",);
 
@@ -368,9 +365,9 @@ fn standard_character_statistics_level_10() {
 
     // HasDamageAbsorption
     assert_eq!(
-        51,
+        47,
         creature.calc_hit_points(),
-        "HP: 31 level + 12 martial mastery + 4 con + 4 magic item",
+        "HP: 31 level + 8 martial mastery + 4 con + 4 magic item",
     );
     assert_eq!(
         24,
@@ -473,9 +470,9 @@ fn standard_character_statistics_level_20() {
 
     // HasDamageAbsorption
     assert_eq!(
-        151,
+        144,
         creature.calc_hit_points(),
-        "HP: 100 level + 28 martial mastery + 7 con + 16 magic item",
+        "HP: 100 level + 21 martial mastery + 7 con + 16 magic item",
     );
     assert_eq!(
         71,
