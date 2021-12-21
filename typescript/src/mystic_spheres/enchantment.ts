@@ -130,10 +130,10 @@ export const enchantment: MysticSphere = {
       name: "Collapse",
 
       attack: {
-        crit: `Each subject is also unable to stand up as a \\glossterm{condition}.
+        crit: `Each target is also unable to stand up as a \\glossterm{condition}.
         If it is somehow brought into a standing position, it will immediately fall and become prone again.`,
         // No relevant glance effect
-        hit: `Each subject falls \\prone.`,
+        hit: `Each target falls \\prone.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
         `,
@@ -165,9 +165,9 @@ export const enchantment: MysticSphere = {
       name: "Mass Slow Down",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        crit: `The effect becomes a \\glossterm{condition} on each target.`,
         // No relevant glance effect
-        hit: `Each subject is \\glossterm{briefly} \\slowed.`,
+        hit: `Each target is \\glossterm{briefly} \\slowed.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
         `,
@@ -182,9 +182,9 @@ export const enchantment: MysticSphere = {
       name: "Confusion",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        crit: `The effect becomes a \\glossterm{condition} on each target.`,
         hit: `
-          Each subject with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\confused.
+          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\confused.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
@@ -257,8 +257,8 @@ export const enchantment: MysticSphere = {
       name: "Dramatic Reveal",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
-        hit: `Each subject is \\glossterm{briefly} convinced that they just learned some phenomenal cosmic truth or life-changing revelation, making them \\stunned.`,
+        crit: `The effect becomes a \\glossterm{condition} on each target.`,
+        hit: `Each target is \\glossterm{briefly} convinced that they just learned some phenomenal cosmic truth or life-changing revelation, making them \\stunned.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -298,9 +298,9 @@ export const enchantment: MysticSphere = {
       name: "Discordant Song",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        crit: `The effect becomes a \\glossterm{condition} on each target.`,
         // No relevant glance effect
-        hit: `Each subject is \\glossterm{briefly} \\dazed.`,
+        hit: `Each target is \\glossterm{briefly} \\dazed.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -346,9 +346,9 @@ export const enchantment: MysticSphere = {
       name: "Mass Fear",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each subject.`,
+        crit: `The effect becomes a \\glossterm{condition} on each target.`,
         // No relevant glance effect
-        hit: `Each subject is \\glossterm{briefly} \\shaken by either you or an \\glossterm{ally} of your choice within range.`,
+        hit: `Each target is \\glossterm{briefly} \\shaken by either you or an \\glossterm{ally} of your choice within range.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
@@ -380,7 +380,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: "The target does not become immune to this effect.",
-        hit: `Each subject is \\glossterm{briefly} \\shaken by you.`,
+        hit: `Each target is \\glossterm{briefly} \\shaken by you.`,
         targeting: `
           At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
           After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
@@ -397,7 +397,7 @@ export const enchantment: MysticSphere = {
 
       functionsLike: {
         name: 'fearsome aura',
-        exceptThat: 'each subject is \\frightened by you instead of shaken.',
+        exceptThat: 'each target is \\frightened by you instead of shaken.',
       },
       rank: 7,
       scaling: "accuracy",
@@ -447,7 +447,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `Situations which cause the target to feel that it is in danger without harming it do not break the effect.`,
-        hit: `Each subject has its emotions calmed.
+        hit: `Each target has its emotions calmed.
         The effects of all other \\abilitytag{Emotion} abilities on that target are \\glossterm{suppressed}.
         It cannot take violent actions (although it can defend itself) or do anything destructive.
         If the target is harmed or feels that it is in danger, this effect is \\glossterm{dismissed}.
@@ -724,7 +724,7 @@ export const enchantment: MysticSphere = {
 
       castingTime: "one minute",
       attack: {
-        hit: `Each subject is unable to say things it knows to be untrue.`,
+        hit: `Each target is unable to say things it knows to be untrue.`,
         targeting: `
           Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against up to five creatures within \\medrange.
         `,

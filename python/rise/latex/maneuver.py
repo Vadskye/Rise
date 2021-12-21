@@ -129,12 +129,12 @@ class Maneuver(object):
         elements_text = (
             elements_text.replace("<", "{")
             .replace(">", "}")
-            .replace("Each target", "Each subject")
-            .replace("each target", "each subject")
+            .replace("Each target", "Each target")
+            .replace("each target", "each target")
             .replace("The target", "The target")
             .replace("the target", "the target")
             .replace(
-                "As above, except that that each subject takes half damage.",
+                "As above, except that that each target takes half damage.",
                 "Half damage.",
             )
         )

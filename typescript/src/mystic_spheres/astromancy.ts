@@ -223,8 +223,8 @@ export const astromancy: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\shortrange.
         Each target other than yourself must be Medium size or smaller.
-        Each subject \\glossterm{teleports} into an unoccupied location within range on a stable surface that can support its weight.
-        You choose each subject's destination independently.
+        Each target \\glossterm{teleports} into an unoccupied location within range on a stable surface that can support its weight.
+        You choose each target's destination independently.
         If a subject's destination is invalid, this spell has no effect on it, but any other subjects still teleport normally.
       `,
       rank: 3,
@@ -407,7 +407,7 @@ export const astromancy: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among you and your \\glossterm{allies} within \\longrange.
-        Each subject \\glossterm{teleports} into the location of a different subject.
+        Each target \\glossterm{teleports} into the location of a different subject.
       `,
       narrative: `
         The kobold ambush exploited a weak point in your marching formation, and now everything is out of place.
@@ -569,7 +569,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 5,
       scaling: {
-        7: "Each subject's strikes can penetrate through any number of physical obstacles with a combined thickness of two feet or less.",
+        7: "Each target's strikes can penetrate through any number of physical obstacles with a combined thickness of two feet or less.",
       },
       type: "Attune (target)",
     },
@@ -623,7 +623,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 5,
       scaling: {
-        7: "Each subject can also ignore all sources of \\glossterm{difficult terrain}.",
+        7: "Each target can also ignore all sources of \\glossterm{difficult terrain}.",
       },
       type: "Attune (target)",
     },

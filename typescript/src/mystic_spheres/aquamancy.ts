@@ -119,7 +119,7 @@ export const aquamancy: MysticSphere = {
           The effect becomes a \\glossterm{condition}.
         `,
         hit: `
-          The majority of each subject's body is \\glossterm{briefly} surrounded by a layer of water.
+          The majority of each target's body is \\glossterm{briefly} surrounded by a layer of water.
           This does not impede its ability to breathe, but it is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}. 
         `,
         targeting: `
@@ -164,7 +164,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarealong, 10 ft. wide line from you.
@@ -181,7 +181,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
@@ -242,7 +242,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against everything within a \\smallarea radius from you.
@@ -259,7 +259,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\medarea radius from you.
@@ -276,7 +276,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
@@ -334,7 +334,7 @@ export const aquamancy: MysticSphere = {
       },
       rank: 3,
       scaling: {
-        5: `Each subject gains a +5 foot \\glossterm{magic bonus} to its swim speed, or a +10 foot bonus if it already has a swim speed.`,
+        5: `Each target gains a +5 foot \\glossterm{magic bonus} to its swim speed, or a +10 foot bonus if it already has a swim speed.`,
         7: `The speed bonus increases to +10 feet, or +15 feet if the target already has a swim speed.`,
       },
       type: "Attune (target)",
@@ -346,8 +346,8 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 1d10 bludgeoning damage.
-          In addition, each subject is \\glossterm{pushed} 15 feet in the direction the line points away from you.
+          Each target takes 1d10 bludgeoning damage.
+          In addition, each target is \\glossterm{pushed} 15 feet in the direction the line points away from you.
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
@@ -366,8 +366,8 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 2d10 bludgeoning damage.
-          In addition, each subject is \\glossterm{pushed} 30 feet in the direction the line points away from you.
+          Each target takes 2d10 bludgeoning damage.
+          In addition, each target is \\glossterm{pushed} 30 feet in the direction the line points away from you.
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
@@ -386,7 +386,7 @@ export const aquamancy: MysticSphere = {
         // crit: '',
         // +1d from normal AOE due to weird area that probably just hits one person
         hit: `
-          Each subject takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarealong, 5 ft.\\ wide vertical line within \\longrange.
@@ -405,7 +405,7 @@ export const aquamancy: MysticSphere = {
         // crit: '',
         // +1d from normal AOE due to weird area that probably just hits one person
         hit: `
-          Each subject takes 4d10 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 4d10 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft.\\ wide vertical line within \\distrange.
@@ -545,7 +545,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: 'The effect becomes a \\glossterm{condition}.',
         hit: `
-          Each subject that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
+          Each target that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.
@@ -561,7 +561,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: 'The effect becomes a \\glossterm{condition}.',
         hit: `
-          Each subject is \\glossterm{briefly} \\stunned.
+          Each target is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.

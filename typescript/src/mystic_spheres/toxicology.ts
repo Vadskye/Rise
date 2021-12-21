@@ -164,7 +164,7 @@ export const toxicology: MysticSphere = {
       name: "Acidic Blood",
 
       attack: {
-        hit: `Each subject takes 2d6 acid damage.`,
+        hit: `Each target takes 2d6 acid damage.`,
         targeting: `
           At the end of each phase, if you lost \\glossterm{hit points} during that phase, make an attack vs. Reflex against everything adjacent to you.
         `,
@@ -312,7 +312,7 @@ export const toxicology: MysticSphere = {
       name: "Acid Spray",
 
       attack: {
-        hit: `Each subject takes 1d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
@@ -327,7 +327,7 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Spray",
 
       attack: {
-        hit: `Each subject takes 2d10 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea cone from you.
         `,
@@ -342,7 +342,7 @@ export const toxicology: MysticSphere = {
       name: "Supreme Acid Spray",
 
       attack: {
-        hit: `Each subject takes 4d10 + \\glossterm{power} acid damage.`,
+        hit: `Each target takes 4d10 + \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea cone from you.
         `,
@@ -358,7 +358,7 @@ export const toxicology: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        hit: `Each subject takes 2d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} acid damage.`,
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything in a \\largearea cone from you.
@@ -407,7 +407,7 @@ export const toxicology: MysticSphere = {
       name: "Acid Rain",
 
       attack: {
-        hit: `Each subject takes 2d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\areasmall radius, 30 ft.\\ high cylinder within \\medrange.
         `,
@@ -422,7 +422,7 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Rain",
 
       attack: {
-        hit: `Each subject takes 4d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 4d8 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\arealarge radius, 30 ft.\\ high cylinder within \\longrange.
         `,
@@ -436,7 +436,7 @@ export const toxicology: MysticSphere = {
       name: "Acid Orb",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall radius within \\medrange.
         `,
@@ -450,7 +450,7 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Orb",
 
       attack: {
-        hit: `Each subject takes 4d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 4d8 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areamed radius within \\medrange.
         `,

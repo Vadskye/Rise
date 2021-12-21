@@ -174,7 +174,7 @@ export const verdamancy: MysticSphere = {
       name: "Vinestorm",
 
       attack: {
-        hit: `Each subject takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea radius from you.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
@@ -190,7 +190,7 @@ export const verdamancy: MysticSphere = {
       name: "Greater Vinestorm",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
@@ -207,7 +207,7 @@ export const verdamancy: MysticSphere = {
       name: "Supreme Vinestorm",
 
       attack: {
-        hit: `Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
@@ -404,7 +404,7 @@ export const verdamancy: MysticSphere = {
       name: "Fire Seeds",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
         % Does "seed structure" make sense?
         You transform up to three \\glossterm{unattended} acorns or similar seed structures you touch into small bombs.
@@ -436,7 +436,7 @@ export const verdamancy: MysticSphere = {
 
       // original targets: Each creature that moves through the area (see text)
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
         You create a wall of thorns in 15 ft.\\ high, \\smallarea \\glossterm{wall} within \\medrange.
         The base of at least half of the wall must be in arable earth.
@@ -662,7 +662,7 @@ export const verdamancy: MysticSphere = {
         In addition, choose a living plant that all ritual participants touch during the ritual.
         The plant must be at least one size category larger than the largest chosen ritual participant.
         In addition, choose a destination up to 100 miles away from you on your current plane.
-        By walking through the chosen plant, each subject is teleported to the closest plant to the destination that is at least one size category larger than the largest chosen ritual participant.
+        By walking through the chosen plant, each target is teleported to the closest plant to the destination that is at least one size category larger than the largest chosen ritual participant.
 
         You must specify the destination with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the destination.

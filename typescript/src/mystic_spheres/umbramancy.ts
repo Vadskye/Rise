@@ -129,7 +129,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         // -1d to compensate for +2a
-        hit: `Each subject takes 1d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
@@ -145,7 +145,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         // -1d to compensate for +2a
-        hit: `Each subject takes 2d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
@@ -267,8 +267,8 @@ export const umbramancy: MysticSphere = {
 
       // +1 level for +2 acc
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
-        hit: `Each subject is \\glossterm{briefly} \\dazzled.`,
+        crit: "The effect becomes a \\glossterm{condition} on each target.",
+        hit: `Each target is \\glossterm{briefly} \\dazzled.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
@@ -284,9 +284,9 @@ export const umbramancy: MysticSphere = {
 
       // +1 level for +2 acc
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
+        crit: "The effect becomes a \\glossterm{condition} on each target.",
         hit: `
-          Each subject is with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\glossterm{blinded}.
+          Each target is with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\glossterm{blinded}.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
@@ -447,7 +447,7 @@ export const umbramancy: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
           If this attack succeeds against both subjects, they swap shadows with each other as a \\glossterm{condition}.
-          As long as the condition lasts on both subjects, each subject has total control over the other subject's movements during each \\glossterm{movement phase}, and is unable to control its own movement.
+          As long as the condition lasts on both subjects, each target has total control over the other subject's movements during each \\glossterm{movement phase}, and is unable to control its own movement.
           This does not affect their movements during other phases.
 
           If a subject enters \\glossterm{bright illumination} while it is not touching its shadow, the condition automatically ends for both subjects.
@@ -575,8 +575,8 @@ export const umbramancy: MysticSphere = {
       castingTime: "one minute",
       effect: `
         Choose up to five creatures within \\medrange from among you and your \\glossterm{allies}.
-        At the end of each round, the footprints, scent, and other tracks left by each subject during that round are magically concealed.
-        This increases the \\glossterm{difficulty value} to follow the trail by 10, but does not prevent creatures from seeing or smelling each subject normally in combat.
+        At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
+        This increases the \\glossterm{difficulty value} to follow the trail by 10, but does not prevent creatures from seeing or smelling each target normally in combat.
         At the end of each round, if any target is outside of \\longrange from you, the effect is broken for that target and its trail is revealed.
       `,
       rank: 2,

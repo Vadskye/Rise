@@ -817,7 +817,7 @@ def generate_apparel():
             tags=['Healing'],
             description="""
                 Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
-                On a hit, each subject becomes \\glossterm<briefly> dazed.
+                On a hit, each target becomes \\glossterm<briefly> dazed.
             """,
             short_description="Dazes enemies when you are dazed or worse",
         ),
@@ -828,7 +828,7 @@ def generate_apparel():
             tags=['Healing'],
             description="""
                 Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
-                On a hit, each subject becomes \\glossterm<briefly> stunned.
+                On a hit, each target becomes \\glossterm<briefly> stunned.
             """,
             short_description="Stuns enemies when you are dazed or worse",
         ),

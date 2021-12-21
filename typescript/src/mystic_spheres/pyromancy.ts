@@ -140,7 +140,7 @@ export const pyromancy: MysticSphere = {
       name: "Pyroclasm",
 
       attack: {
-        hit: `Each subject takes 2d10 + half \\glossterm{power} fire damage.
+        hit: `Each target takes 2d10 + half \\glossterm{power} fire damage.
         In addition, if the target is a flammable object, it catches on fire.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange.
@@ -156,7 +156,7 @@ export const pyromancy: MysticSphere = {
       name: "Fireball",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall radius within \\medrange.
         `,
@@ -226,7 +226,7 @@ export const pyromancy: MysticSphere = {
       name: "Burning Hands",
 
       attack: {
-        hit: `Each subject takes 1d8 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall cone from you.
         `,
@@ -241,7 +241,7 @@ export const pyromancy: MysticSphere = {
       name: "Greater Burning Hands",
 
       attack: {
-        hit: `Each subject takes 4d6 + \\glossterm{power} fire damage.`,
+        hit: `Each target takes 4d6 + \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall cone from you.
         `,
@@ -366,7 +366,7 @@ export const pyromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        hit: `Each subject takes 2d8 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} fire damage.`,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
@@ -450,7 +450,7 @@ export const pyromancy: MysticSphere = {
       name: "Inferno",
 
       attack: {
-        hit: `Each subject takes 1d8 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius from you.
         `,
@@ -464,7 +464,7 @@ export const pyromancy: MysticSphere = {
       name: "Greater Inferno",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearea radius from you.
         `,
@@ -478,7 +478,7 @@ export const pyromancy: MysticSphere = {
       name: "Supreme Inferno",
 
       attack: {
-        hit: `Each subject takes 2d10 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\hugearea radius from you.
         `,
@@ -492,7 +492,7 @@ export const pyromancy: MysticSphere = {
       name: "Flame Serpent",
 
       attack: {
-        hit: `Each subject takes 2d8 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide shapeable line that starts within \\medrange.
         `,
@@ -506,7 +506,7 @@ export const pyromancy: MysticSphere = {
       name: "Greater Flame Serpent",
 
       attack: {
-        hit: `Each subject takes 4d8 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 4d8 + half \\glossterm{power} fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\distrange.
         `,
@@ -522,7 +522,7 @@ export const pyromancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // AOE dice, but no power
-        hit: `Each subject takes 2d6 fire damage.`,
+        hit: `Each target takes 2d6 fire damage.`,
         targeting: `
           You catch on fire.
           This does not cause you any harm, as the flames burn around your body without burning you.
@@ -578,7 +578,7 @@ export const pyromancy: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: {
-        6: `Each subject also gains a +4 \\glossterm{magic bonus} to \\glossterm{power} with strikes.`,
+        6: `Each target also gains a +4 \\glossterm{magic bonus} to \\glossterm{power} with strikes.`,
       },
       type: "Attune (target)",
     },
@@ -727,7 +727,7 @@ export const pyromancy: MysticSphere = {
 
       // original targets: One Tiny or larger active fire within \medrange (see text)
       attack: {
-        hit: `Each subject takes 1d10 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
         targeting: `
           Choose one Tiny or larger active fire within \\medrange.
           Make an attack vs. Reflex against everything within an \\smallarea radius from it.
@@ -771,7 +771,7 @@ export const pyromancy: MysticSphere = {
       name: "Flame Dash",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
@@ -786,7 +786,7 @@ export const pyromancy: MysticSphere = {
       name: "Greater Flame Dash",
 
       attack: {
-        hit: `Each subject takes 4d6 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} fire damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.

@@ -97,7 +97,7 @@ export const terramancy: MysticSphere = {
       name: "Shrapnel Blast",
 
       attack: {
-        hit: `Each subject takes 1d8 + half \\glossterm{power} bludgeoning and piercing damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning and piercing damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
@@ -180,9 +180,9 @@ export const terramancy: MysticSphere = {
       name: "Tremor",
 
       attack: {
-        crit: `Each subject is also unable to stand up as a \\glossterm{condition}.`,
+        crit: `Each target is also unable to stand up as a \\glossterm{condition}.`,
         // No relevant glance effect
-        hit: `Each subject is knocked \\prone.`,
+        hit: `Each target is knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea within \\medrange that are on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
@@ -200,7 +200,7 @@ export const terramancy: MysticSphere = {
       name: "Fissure",
 
       attack: {
-        hit: `Each subject takes 2d8 + half \\glossterm{power} bludgeoning damage.
+        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
         Each Large or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea within \\medrange that is on a stable surface.
@@ -219,7 +219,7 @@ export const terramancy: MysticSphere = {
       name: "Earthquake",
 
       attack: {
-        hit: `Each subject takes 4d8 + half \\glossterm{power} bludgeoning damage.
+        hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
         Each Huge or smaller subject that takes damage this way is also knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearea radius within \\longrange that is on a stable surface.
@@ -394,7 +394,7 @@ export const terramancy: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: {
-        6: "Each subject is also immune to \\glossterm{teleport} effects from attacks that are not critical hits.",
+        6: "Each target is also immune to \\glossterm{teleport} effects from attacks that are not critical hits.",
       },
       type: "Attune (target)",
     },
@@ -403,7 +403,7 @@ export const terramancy: MysticSphere = {
       name: "Volcano",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall radius from a point on a stable surface within \\shortrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.
@@ -422,7 +422,7 @@ export const terramancy: MysticSphere = {
       name: "Greater Volcano",
 
       attack: {
-        hit: `Each subject takes 4d8 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\arealarge radius from a point on a stable surface within \\longrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.

@@ -374,7 +374,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}, \abilitytag{Emotion}
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
-                        \hit Each subject is \glossterm{briefly} \goaded by you.
+                        \hit Each target is \glossterm{briefly} \goaded by you.
                         \crit The effect becomes a \glossterm{condition}.
 
                         \rankline
@@ -388,17 +388,17 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to their defenses against \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
 
                         \rankline
-                        \rank{3} At the end of each round, each subject removes all \glossterm{brief} effects and \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
+                        \rank{3} At the end of each round, each target removes all \glossterm{brief} effects and \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
                         \rank{5} The area increases to a \areahuge radius.
-                        \rank{7} Each subject is immune to Compulsion and Emotion attacks.
+                        \rank{7} Each target is immune to Compulsion and Emotion attacks.
                     \end{durationability}
 
                     \begin{durationability}{Stutterstep Staccato}[Duration]
                         \abilitytag{Auditory}
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} within a \areamed radius from you.
-                        \hit Each subject is \glossterm{briefly} \slowed.
-                        \crit Each subject is \slowed as a \glossterm{condition}.
+                        \hit Each target is \glossterm{briefly} \slowed.
+                        \crit Each target is \slowed as a \glossterm{condition}.
 
                         \rankline
                         \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.

@@ -121,8 +121,8 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your Large or smaller \\glossterm{allies} within \\medrange.
-        You \\glossterm{push} each subject up to 60 feet in any direction.
-        Each subject must be pushed in the same direction.
+        You \\glossterm{push} each target up to 60 feet in any direction.
+        Each target must be pushed in the same direction.
         You cannot change the direction of the movement partway through.
         Moving a subject upwards costs twice the normal movement cost.
       `,
@@ -321,8 +321,8 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 1d10 bludgeoning damage.
-          In addition, each subject is \\glossterm{pushed} 15 feet in the direction the line points away from you.
+          Each target takes 1d10 bludgeoning damage.
+          In addition, each target is \\glossterm{pushed} 15 feet in the direction the line points away from you.
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
@@ -342,8 +342,8 @@ export const aeromancy: MysticSphere = {
         // crit: '',
         // +1 level for farther push, +2 levels for area
         hit: `
-          Each subject takes 2d10 bludgeoning damage.
-          In addition, each subject is \\glossterm{pushed} 30 feet in the direction the line points away from you.
+          Each target takes 2d10 bludgeoning damage.
+          In addition, each target is \\glossterm{pushed} 30 feet in the direction the line points away from you.
           Once a subject leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
@@ -393,7 +393,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 2d10 bludgeoning damage.
+          Each target takes 2d10 bludgeoning damage.
         `,
         targeting: `
           At the end of each phase, make an attack vs. Armor against each creature within \\shortrange of you that attacked you during that phase.
@@ -441,7 +441,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 2d6 \\add half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d6 \\add half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea radius within \\medrange.
@@ -459,9 +459,9 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each subject takes 4d6 \\add half \\glossterm{power} bludgeoning damage.
-          In addition, each subject is \\glossterm{pushed} 30 feet clockwise around you.
-          Each subject's final position should be the same distance from you as its starting position.
+          Each target takes 4d6 \\add half \\glossterm{power} bludgeoning damage.
+          In addition, each target is \\glossterm{pushed} 30 feet clockwise around you.
+          Each target's final position should be the same distance from you as its starting position.
         `,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -524,7 +524,7 @@ export const aeromancy: MysticSphere = {
         `,
         // No relevant glance effect
         hit: `
-          Each subject is \\glossterm{briefly} \\dazzled.
+          Each target is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.
@@ -543,7 +543,7 @@ export const aeromancy: MysticSphere = {
           The effect becomes a \\glossterm{condition}.
         `,
         hit: `
-          Each subject is \\glossterm{briefly} \\dazzled.
+          Each target is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures in a \\largearea radius within \\longrange from you.
@@ -562,7 +562,7 @@ export const aeromancy: MysticSphere = {
           The effect becomes a \\glossterm{condition}.
         `,
         hit: `
-          Each subject with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
+          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
         `,
         targeting: `
           Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.

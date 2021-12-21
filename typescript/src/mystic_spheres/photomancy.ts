@@ -54,8 +54,8 @@ export const photomancy: MysticSphere = {
         crit: `The effect becomes a \\glossterm{condition}.`,
         // No relevant glance effect
         hit: `
-          Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\dazed.
-          Each subject with no remaining damage resistance is \\stunned instead of dazed.
+          Each target with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\dazed.
+          Each target with no remaining damage resistance is \\stunned instead of dazed.
         `,
         targeting: `
           Make an attack vs. Mental against each creature within a \\medarea cone from you.
@@ -88,8 +88,8 @@ export const photomancy: MysticSphere = {
       attack: {
         crit: `The effect becomes a \\glossterm{condition}.`,
         hit: `
-          Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
-          Each subject with no remaining damage resistance is \\confused instead of stunned.
+          Each target with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
+          Each target with no remaining damage resistance is \\confused instead of stunned.
         `,
         targeting: `
           Make an attack vs. Mental against each creature within a \\medarea cone from you.
@@ -108,8 +108,8 @@ export const photomancy: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         In addition, choose one of the subjects as the primary subject.
-        You make a Disguise check to alter each subject's appearance to exactly match the primary subject (see \\pcref{Disguise Creature}).
-        You gain a +4 bonus on the check, and you can freely alter the appearance of each subject's clothes and equipment, regardless of their original form.
+        You make a Disguise check to alter each target's appearance to exactly match the primary subject (see \\pcref{Disguise Creature}).
+        You gain a +4 bonus on the check, and you can freely alter the appearance of each target's clothes and equipment, regardless of their original form.
         However, this effect is unable to alter the sound, smell, texture, or temperature of any subject or its clothes and equipment.
       `,
       rank: 3,
@@ -268,7 +268,7 @@ export const photomancy: MysticSphere = {
       attack: {
         crit: "The effect becomes a \\glossterm{condition}.",
         // No relevant glance effect
-        hit: `Each subject is \\glossterm{briefly} \\dazzled.`,
+        hit: `Each target is \\glossterm{briefly} \\dazzled.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
@@ -285,11 +285,11 @@ export const photomancy: MysticSphere = {
 
       attack: {
         crit: `
-          The effect becomes a \\glossterm{condition} on each subject.
-          In addition, each subject is affected as if it had entered natural sunlight.
+          The effect becomes a \\glossterm{condition} on each target.
+          In addition, each target is affected as if it had entered natural sunlight.
         `,
         hit: `
-          Each subject with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
+          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
         `,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange of you.
@@ -306,7 +306,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each subject takes 2d10 + half \\glossterm{power} energy damage.
+          Each target takes 2d10 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Choose up to five \\tinyarea radius areas within \\longrange of you.
@@ -325,11 +325,11 @@ export const photomancy: MysticSphere = {
       name: "Kaleidoscopic Pattern",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
+        crit: "The effect becomes a \\glossterm{condition} on each target.",
         // No relevant glance effect
         hit: `
-          Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\dazed.
-          Each subject with no remaining damage resistance is \\stunned instead of dazed.
+          Each target with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\dazed.
+          Each target with no remaining damage resistance is \\stunned instead of dazed.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange of you.
@@ -359,10 +359,10 @@ export const photomancy: MysticSphere = {
       name: "Variegated Pattern",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each subject.",
+        crit: "The effect becomes a \\glossterm{condition} on each target.",
         hit: `
-          Each subject with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
-          Each subject with no remaining damage resistance is \\confused instead of stunned.
+          Each target with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
+          Each target with no remaining damage resistance is \\confused instead of stunned.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange of you.
@@ -549,7 +549,7 @@ export const photomancy: MysticSphere = {
       name: "Lightbeam Dash",
 
       attack: {
-        hit: `Each subject takes 2d6 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           A blast of \\glossterm{brilliant illumination} fills a 60 foot radius around both your starting location and your ending location.
@@ -565,7 +565,7 @@ export const photomancy: MysticSphere = {
       name: "Greater Lightbeam Dash",
 
       attack: {
-        hit: `Each subject takes 4d6 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           Both your departure and arrival with this spell sound like a clap of thunder.
