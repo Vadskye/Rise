@@ -221,7 +221,7 @@ export const polymorph: MysticSphere = {
       effect: `
         The target's size decreases by one \\glossterm{size category}, to a minimum of Tiny.
         This decreases the \\glossterm{base speed} for its size and improves its Stealth skill.
-        It may also decrease the target's \\glossterm{reach} (see \\pcref{Size in Combat}).
+        It may also decrease the target's \\glossterm{reach} (see \\pcref{Size Categories}).
         However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
       `,
       rank: 2,
@@ -289,7 +289,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Your size increases by one \\glossterm{size category}, to a maximum of Huge.
         This increases the \\glossterm{base speed} for your size and reduces your Stealth skill.
-        It may also increase your \\glossterm{reach} (see \\pcref{Size in Combat}).
+        It may also increase your \\glossterm{reach} (see \\pcref{Size Categories}).
 
         However, your physical form is not altered fully to match your new size.
         Your Strength and Dexterity are unchanged from your original size, and you take a -5 foot penalty to your speed with all of your \\glossterm{movement modes.}
