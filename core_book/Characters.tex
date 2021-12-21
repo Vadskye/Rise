@@ -701,6 +701,83 @@ You can either skim past terms you don't yet understand or look them up as you g
             Their effects can be more unusual and complex than abilities on normal magic items, and they can have a larger effect on the way that character interacts with the world.
             As a player, you can work with your GM to create custom magical effects of an appropriate power that are a better reflection of your character's personality and powers than the magic item abilities that exist.
 
+\section{Character Statistics}\label{Character Statistics}
+
+    \subsection{Accuracy}\label{Accuracy}
+        Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
+        Your accuracy with an attack is normally equal to half your level \add half your base Perception.
+        In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
+
+    \subsection{Encumbrance}\label{Encumbrance}
+        Your encumbrance is a value that represents how much you are burdened by armor and weight.
+        You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
+        You can increase your encumbrance by wearing armor.
+        In addition, you reduce your total encumbrance from \glossterm{armor} by an amount equal to your base Strength, to a minimum of 0.
+        You apply this reduction to the total encumbrance applied by both your body armor and your shield, not individually for each piece of armor.
+        Most shields do not cause encumbrance, so this only matters for tower shields.
+
+        Resting in armor is difficult.
+        If you take a \glossterm{long rest} while you have any encumbrance, you finish your rest with a \glossterm{fatigue level} equal to the value of your encumbrance.
+        In addition, only half the time you spend sleeping while you have encumbrance counts as sleep for the purpose of determining your fatigue (see \pcref{Sleep and Fatigue}).
+
+    \subsection{Initiative}\label{Initiative}
+        When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
+        For details, see \pcref{Conflicting Actions}.
+        Your initiative is normally equal to the your base Dexterity \add your base Perception.
+        In addition, some abilities grant you bonuses that specifically apply to initiative checks.
+
+    \subsection{Power}\label{Power}
+        Many abilities have stronger effects depending on your \glossterm{power} with that ability.
+        Your power with a particular ability depends on whether it is \glossterm{magical} or \glossterm{mundane}.
+        Some abilities allow you to freely choose which power you use with that ability.
+
+        \parhead{Magical Abilities}
+        Your power with magical abilities is normally equal to half your Willpower.
+
+        \parhead{Mundane Abilities}
+        Your power with mundane abilities is normally equal to half your Strength.
+
+\section{Resources}\label{Resources}
+
+    \subsection{Attunement Points}\label{Attunement Points}
+        You can use \glossterm{attunement points} to \glossterm{attune} to effects such as spells or items (see \pcref{Attuned Abilities}).
+        Abilities that require attunement have the \abilitytag{Attune} tag (see \pcref{Ability Tags}).
+
+        Your \glossterm{class} gives you a certain number of attunement points.
+        A small number of abilities can also grant additional \glossterm{attunement points}.
+
+        When you take a \glossterm{short rest}, you recover all \glossterm{attunement points} that you released from attuned effects.
+        For details, see \pcref{Resting}.
+
+    \subsection{Fatigue}\label{Fatigue}
+        Thoughout the day, you can become fatigued by your exertions both in and out of combat.
+        While \glossterm{hit points} are easy to restore, reducing your \glossterm{fatigue level} generally requires a \glossterm{long rest}.
+        Fatigue is still easier to recover from than \glossterm{vital wounds}.
+
+        \subsubsection{Fatigue Level}\label{Fatigue Level}
+            Your \glossterm{fatigue level} measures how fatigued you are.
+            A number of abilities and attacks can cause you to increase your fatigue level.
+            The most common abilities that increase your fatigue level are the \textit{desperate exertion}, \textit{recover}, and \textit{sprint} abilities.
+            All of those abilities are described in \pcref{Universal Abilities}.
+
+            \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
+                Becoming slightly fatigued is not immediately detrimental.
+                Your fatigue level can be as high as your base Constitution \add your base Willpower without suffering any consequences (minimum 0).
+                This value is called your \glossterm{fatigue tolerance}.
+                Your \glossterm{class} gives you a bonus to your fatigue tolerance, and some abilities can also modify it.
+
+            \subsubsection{Fatigue Penalty}\label{Fatigue Penalty}
+                You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal your \glossterm{fatigue level} \sub your \glossterm{fatigue tolerance}.
+                This penalty is called your \glossterm{fatigue penalty}.
+
+        \subsubsection{Exhaustion}\label{Exhaustion}
+            When your \glossterm{fatigue penalty} reaches \minus5, you fall \unconscious until your fatigue penalty is reduced below \minus5.
+            Generally, this means that you are unconscious for 8 hours.
+
+        \subsubsection{Recovering From Fatigue}
+            When you take a \glossterm{long rest}, your \glossterm{fatigue level} is restored to 0 (see \pcref{Resting}).
+            There are no other ways to reduce your fatigue level.
+
 \section{Sample Characters}
 
     This section lists sample characters for each class archetype.
