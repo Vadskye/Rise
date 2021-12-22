@@ -231,8 +231,7 @@ fn standard_character_statistics_level_1() {
 
     // HasAttacks
     assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-    assert_eq!(0, creature.calc_power(true), "Magical power: 0",);
-    assert_eq!(2, creature.calc_power(false), "Mundane power: 2 str",);
+    assert_eq!(0, creature.calc_power(), "Power: 0");
 
     // HasAttributes
     assert_eq!(
@@ -263,11 +262,7 @@ fn standard_character_statistics_level_1() {
     );
 
     // HasDamageAbsorption
-    assert_eq!(
-        13,
-        creature.calc_hit_points(),
-        "HP: 11 level + 2 con",
-    );
+    assert_eq!(13, creature.calc_hit_points(), "HP: 11 level + 2 con",);
     assert_eq!(8, creature.calc_damage_resistance(), "DR: 6 scale + 2 con",);
 
     // HasResources
@@ -310,12 +305,7 @@ fn standard_character_statistics_level_10() {
         creature.calc_accuracy(),
         "Accuracy: 5 level + 1 per + 1 equip train",
     );
-    assert_eq!(4, creature.calc_power(true), "Magical power: 4 magic item",);
-    assert_eq!(
-        9,
-        creature.calc_power(false),
-        "Mundane power: 4 magic item + 5 str",
-    );
+    assert_eq!(4, creature.calc_power(), "Power: 4 magic item");
     assert_eq!(
         vec![
             "Certain Broadsword +10 (The target takes 2d6+4 slashing damage.)",
@@ -415,12 +405,7 @@ fn standard_character_statistics_level_20() {
         creature.calc_accuracy(),
         "Accuracy: 10 level + 1 per + 1 equip train",
     );
-    assert_eq!(8, creature.calc_power(true), "Magical power: 8 magic item",);
-    assert_eq!(
-        17,
-        creature.calc_power(false),
-        "Mundane power: 8 magic item + 9 str",
-    );
+    assert_eq!(8, creature.calc_power(), "Power: 8 magic item");
     assert_eq!(
         vec![
             "Certain Broadsword +17 (The target takes 4d8+8 slashing damage.)",

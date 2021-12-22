@@ -189,11 +189,11 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus3 bonus to your \glossterm{power}.
                 In addition, whenever you use an ability that deals fire damage, you can change the type of the damage to be energy damage in place of fire damage.
                 Any other aspects of the ability, including damage types other than fire, remain unchanged.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(3)]),
+            modifiers: Some(vec![Modifier::Power(3)]),
         },
         RankAbility {
             name: "Greater Fiendish Resistance",
@@ -232,7 +232,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 In addition, whenever you use an ability that deals fire damage, you can change that ability to deal damage of all types.
                 Any other aspects of the ability remain unchanged.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(6)]),
+            modifiers: Some(vec![Modifier::Power(6)]),
         },
     ];
 }
@@ -379,8 +379,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 However, you take a \minus2 penalty to Mental defense.
             ",
             modifiers: Some(vec![
-                Modifier::MagicalPower(3),
-                Modifier::MundanePower(3),
+                Modifier::Power(3),
                 Modifier::Defense(Defense::Mental, 2),
             ]),
         },
@@ -442,7 +441,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{lore of corrupting power} ability increases to \plus9.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(6), Modifier::MundanePower(6)]),
+            modifiers: Some(vec![Modifier::Power(6)]),
         },
         RankAbility {
             name: "Supreme Eldritch Secret",
@@ -679,9 +678,9 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{power}.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -708,7 +707,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Mystic Insights",
@@ -773,7 +772,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 \end{durationability}
             ",
             modifiers: Some(vec![
-                Modifier::MagicalPower(2),
+                Modifier::Power(2),
                 Modifier::Defense(Defense::Fortitude, -2),
                 Modifier::Defense(Defense::Mental, -2),
                 Modifier::Resource(Resource::FatigueTolerance, 4),
@@ -817,7 +816,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 }
             ",
             modifiers: Some(vec![
-                Modifier::MagicalPower(2),
+                Modifier::Power(2),
                 Modifier::Defense(Defense::Fortitude, 2),
             ]),
         },
@@ -847,7 +846,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     Because this ability has the \abilitytag{Swift} tag, the penalties from the removed vital wound do not affect you during the current phase.
                 \end{instantability}
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Supreme Empowering Whispers",
@@ -876,7 +875,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You double the range of spells you cast during your \textit{possession} ability.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(8)]),
+            modifiers: Some(vec![Modifier::Power(8)]),
         },
     ];
 }

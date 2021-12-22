@@ -31,7 +31,7 @@ pub trait HasAttacks {
     fn calc_accuracy(&self) -> i32;
     fn calc_damage_increments(&self, is_strike: bool, is_magical: bool) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
-    fn calc_power(&self, is_magical: bool) -> i32;
+    fn calc_power(&self) -> i32;
 }
 
 impl Attack {
@@ -95,7 +95,7 @@ impl Attack {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
                 damage_effect.damage_modifier
-                    + (damage_effect.power_multiplier * creature.calc_power(self.is_magical) as f64)
+                    + (damage_effect.power_multiplier * creature.calc_power() as f64)
                         as i32,
             );
         }
@@ -706,14 +706,8 @@ where
         return increments;
     }
 
-    fn calc_power(&self, is_magical: bool) -> i32 {
-        if is_magical {
-            return self.calc_total_attribute(&Attribute::Willpower) / 2
-                + self.calc_total_modifier(ModifierType::MagicalPower);
-        } else {
-            return self.calc_total_attribute(&Attribute::Strength) / 2
-                + self.calc_total_modifier(ModifierType::MundanePower);
-        }
+    fn calc_power(&self) -> i32 {
+        return self.calc_total_modifier(ModifierType::Power);
     }
 }
 
