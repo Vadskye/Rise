@@ -176,6 +176,26 @@ mod calculate_hit_probability {
             .short_description(),
         );
     }
+
+    #[test]
+    fn standard_character_mirror_match() {
+        fn calc_at_level(level: i32) -> String {
+            let attacker = Character::standard_character(level, true).creature;
+            let attack = attacker.get_attack_by_name("Generic Scaling Broadsword").unwrap();
+            let defender = Character::standard_character(level, true).creature;
+            return calculate_hit_probability(
+                &attack,
+                attacker.calc_accuracy(),
+                defender.calc_defense(&Defense::Armor),
+            ).short_description();
+        }
+
+        assert_eq!(
+            ["0.500 single, 0.055 crit", "0.500 single, 0.055 crit", "0.500 single, 0.055 crit"],
+            [calc_at_level(1), calc_at_level(10), calc_at_level(20)],
+            "at levels 1/10/20",
+        );
+    }
 }
 
 #[cfg(test)]
@@ -665,13 +685,17 @@ mod calc_rounds_to_live {
         let defender = Character::standard_character(1, true).creature;
         let at_level_1 = calc_rounds_to_live(&vec![&attacker], &defender);
 
+        let attacker = Character::standard_character(10, true).creature;
+        let defender = Character::standard_character(10, true).creature;
+        let at_level_10 = calc_rounds_to_live(&vec![&attacker], &defender);
+
         let attacker = Character::standard_character(20, true).creature;
         let defender = Character::standard_character(20, true).creature;
         let at_level_20 = calc_rounds_to_live(&vec![&attacker], &defender);
 
         assert_eq!(
-            [6.5, 12.75],
-            [at_level_1, at_level_20],
+            [6.5, 9.0, 12.75],
+            [at_level_1, at_level_10, at_level_20],
             "at level 1 vs at level 20",
         );
     }
