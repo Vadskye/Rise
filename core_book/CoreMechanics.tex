@@ -19,9 +19,16 @@ This chapter describes the core mechanics of Rise.
         The sum of your die roll and your accuracy is called your \glossterm{attack result}.
         You compare your attack result to a \glossterm{defense} that your \glossterm{target} has (see \pcref{Defenses}).
         All attacks specify which defense they are compared to.
+
         If your result is equal to or higher than your target's defense, the attack hits.
         This almost always means the target suffers some harmful effect, such as taking \glossterm{damage} (see \pcref{Damage}).
+        If your result is 1 or 2 lower than the defender's defense, you get a \glossterm{glancing blow} (see \pcref{Glancing Blows}).
         Otherwise, the attack misses.
+        When an attack misses, the defender almost always suffers no effects from the attack.
+        Even if the attack had no obvious physical or visual effects, a creature that resists an attack still feels a hostile force or a tingle, but cannot usually deduce the exact nature of the attack.
+
+        Creatures can voluntarily lower their defenses against attacks that they are aware of.
+        When they do, their defense is treated as 0 against the attack.
 
         \subsubsection{Exploding Attacks}\label{Exploding Attacks}
             When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
@@ -149,101 +156,46 @@ This chapter describes the core mechanics of Rise.
 
             It is possible for damage to be both environmental damage and subdual damage.
 
-\section{Being Attacked}\label{Being Attacked}
-    When another creature attacks you, you may or may not suffer serious consequences from the attack.
-    The attack may miss entirely if your \glossterm{defenses} are high enough.
-    If you are hit by a damaging attack, you reduce your \glossterm{damage resistance} first, and then your \glossterm{hit points} second.
-    Taking damage in excess of your hit points can cause you to gain a \glossterm{vital wound}, which can kill you.
-    This section explains all of those concepts.
+\section{Taking Damage}\label{Taking Damage}
+    Taking damage from attacks reduces your \glossterm{damage resistance}, and then your \glossterm{hit points}, before finally inflicting \glossterm{vital wounds}.
+    To calculate your damage resistance and hit points, see \pcref{Character Statistics}.
+    This section explains those concepts in more detail.
 
-    \subsection{Defenses}\label{Defenses}
-        Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against one of your four \glossterm{defenses} (see \pcref{Attack Rolls}).
-        If the attack roll is at least as high as that defense, the attack succeeds.
-        The four defenses are described below.
-        \begin{itemize}
-            \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
-                It is the most commonly used defense.
-            \item Reflex defense: Your Reflex protects you from physical attacks that armor does not help against, such as pit traps or bolts of lightning.
-            \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and life-draining spells.
-            \item Mental defense: Your Mental defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical mind manipulation.
-        \end{itemize}
+    Whenever you take damage, you reduce your \glossterm{damage resistance} by an amount equal to the damage you took.
+    Any damage in excess of your remaining damage resistance reduces your \glossterm{hit points}.
+    There are two main difference between hit points and damage resistance.
+    First, losing \glossterm{hit points} makes you vulnerable to many debilitating debuffs.
+    Second, many abilities can restore hit points lost during combat, but damage resistance is extremely difficult to recover without taking a \glossterm{short rest}.
 
-        \subsubsection{Defense Values}\label{Defense Values}
+    \subsection{Negative Hit Points}
+        You can have negative hit points, but only briefly.
+        At the end of each \glossterm{phase}, if your hit points are negative, you gain a \glossterm{vital wound} and your hit points are set to 0 (see \pcref{Vital Wounds}).
+        % TODO: does this still need to exist? all "end of round" damage should ideally be removed
+        % Damage you take at the end of the round is considered to be part of the delayed action phase for this purpose.
+        If your negative hit points exceed half your maximum hit points, you gain an additional vital wound.
+        You gain an additional vital wound for each increment of half your maximum hit points that you have in negative hit points.
 
-            Your defenses are calculated in the following way:
-            \begin{itemize}
-                \itemhead{Armor} Half level \add Dexterity (modified depending on equipped armor) \add class defense bonus \add defense bonuses from equipped body armor and shield
-                \itemhead{Fortitude} Half level \add Constitution \add class defense bonus
-                \itemhead{Reflex} Half level \add Dexterity \add class defense bonus
-                \itemhead{Mental} Half level \add Willpower \add class defense bonus
-            \end{itemize}
-            In addition to the normal calculation, each defense may have additional bonuses or penalties applied by various abilities.
+    \subsection{Resolving Simultaneous Damage}
+        Many attacks have special effects when they cause you to lose \glossterm{hit points}.
+        In addition, some attacks have special effects based on other triggers, like whether you resisted all damage from the attack.
+        When you take damage from multiple sources during the same phase, it may not be obvious how to determine whether any individual attack caused you to lose hit points.
+        There is a rule for this situation: each attack's special effects are triggered as if all damage you took in the current phase was dealt by that attack.
 
-            \parhead{Class Bonuses} Each class provides bonuses to some combination of Armor, Fortitude, Reflex, and Mental defenses.
-            \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense.
-            These bonuses stack with any armor such creatures might wear.
+        For example, assume that you started a phase with some damage resistance remaining.
+        You are hit by two attacks: the \spell{organ failure} spell and the \maneuver{strip the armor} maneuver.
+        The combined damage from the two attacks exceeds your damage resistance, so you lose some hit points.
+        The \spell{organ failure} spell would cause you to be \stunned, because it would be treated as if it made you lose hit points, even if your damage resistance at the start of the phase exceeded the damage dealt by that spell.
+        Likewise, the \maneuver{strip the armor} maneuver would not have its bonus effect that triggers if you resist all damage from the attack, because you lost hit points from that attack as well.
 
-        \subsubsection{Resisting Attacks}
-            If an attack fails against you, you almost always suffer no effects from the attack.
-            Even if the attack had no obvious physical or visual effects, a creature that resists an attack still feels a hostile force or a tingle, but cannot usually deduce the exact nature of the attack.
+        Non-damaging attacks are simpler.
+        They always care about your current state at the time the attack is made, regardless of any damage you may take during the phase.
 
-            \parhead{Lowering Defenses} When you are subject to an attack that you are aware of, you can voluntarily lower your defenses against the attack.
-            If you do, your defense is treated as 0 against the attack.
+        \parhead{Simultaneous Damage and Healing}
+        If you regain hit points and take damage in the same phase, apply all healing effects after applying any damaging effects.
+        The healing still applies before checking for \glossterm{vital wounds}, so the order is mostly irrelevant, except that this avoids the risk of conflicting with your maximum hit point total.
 
-    \subsection{Hit Points}\label{Hit Points}
-        Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
-        Whenever you take damage that is not prevented by your \glossterm{damage resistance}, you lose that many hit points (see \pcref{Damage}).
-        When you run out of hit points, you start gaining vital wounds instead (see \pcref{Reaching Zero Hit Points}).
-
-        The number of hit points you have is based on your level, as defined in \tref{Character Advancement}.
-        In addition, each creature gains a bonus (or penalty) to its hit points equal to its Constitution.
-        Some special abilities can give you additional \glossterm{hit points}.
-
-        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
-        When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
-        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
-
-        \parhead{Bonuses to Hit Points} Any effect that grants you a bonus to your hit points increases both your maximum hit points and current hit points.
-        When that effect ends, you lose hit points equal to the bonus that it gave you while it was active.
-
-        \subsubsection{Reaching Zero Hit Points}\label{Reaching Zero Hit Points}
-        At the end of each phase, if you took damage in excess of your remaining \glossterm{hit points} during that phase, you gain a \glossterm{vital wound} and your hit points are set to 0.
-        % TODO: this should be a generic mechanic
-        Damage you take at the end of the round is considered to be part of the delayed action phase for this purpose.
-        If the combined excess damage you suffered from all sources in a given phase is greater than half your maximum hit points, you gain an additional vital wound.
-        You gain an additional vital wound for each increment of half your maximum hit points that you take in excess damage.
-
-        \subsubsection{Regaining Hit Points and Damage Resistance}\label{Regaining Hit Points and Damage Resistance}
-            Some abilities cause you to regain lost hit points or damage resistance.
-            For example, the \textit{recover} ability allows you to regain all of your lost hit points (see \pcref{Recover}).
-            You can't normally exceed your maximum hit points or maximum damage resistance, even with magical abilities, unless the ability explicitly says that you can.
-
-            \parhead{Timing} If you regain hit points and lose hit points in the same phase, the two values offset before checking other effects or limitations on the healing or damage.
-            The same applies to regaining and losing damage resistance.
-            For example, if you were at five hit point and both regained six hit points and lost six hit points simultaneously, you would not receive a vital wound for dropping below 0 hit points.
-            Instead, you would simply be at one hit point after both the healing and damage were applied.
-            Similarly, if you were at your maximum hit points and both regained and lost two hit points simultaneously, you would still be at your maximum hit points.
-
-    \subsection{Damage Resistance}\label{Damage Resistance}
-        Most creatures can resist some damage before they start losing hit points.
-        Whenever you take damage, you first apply that damage to your \glossterm{damage resistance} before applying it to your hit points.
-        You reduce your remaining damage resistance by an amount equal to the damage you take.
-        If the damage is less than your remaining damage resistance, you do not lose any hit points.
-        If the damage is more than your remaining damage resistance, your damage resistance is reduced to 0 and you lose hit points equal to the excess damage.
-
-        Essentially, your damage resistance function like extra hit points that are always subtracted before you start losing actual hit points.
-        Many attacks have specific consequences if you lose hit points from them, and your damage resistance can protect you from those consequences.
-
-        You restore your damage resistance to its full value whenever you take a \glossterm{short rest}.
-        Damage resistance cannot be restored by effects that cause creatures to regain hit points.
-        Some specific special abilities can restore damage resistance.
-
-        The base value of your damage resistance is based on your level, as defined in \tref{Character Advancement}.
-        In addition, all creatures gain a bonus to their damage resistance equal to their Constitution.
-        Body armor provides a bonus to damage resistance, and many special abilities also increase your damage resistance.
-
-        \parhead{Noticing Damage Resistance}
-        In general, it is impossible to determine whether a creature has damage resistance simply by observing them unless there are obvious visual cues like body armor.
+    \subsection{Noticing Damage Resistance}
+        In general, it is impossible to determine whether a creature has damage resistance simply by observing them unless there are obvious visual cues like bleeding injuries.
         However, when a creature takes damage from an attack, an observer can determine the result of the attack with an Awareness check with a base \glossterm{difficulty value} of 10 (before applying the normal modifiers for distance, visibility, and so on).
         The creature dealing the damage gains a \plus10 bonus to this check.
         Success on this check allows an observer to distinguish between the following three possibilities:
@@ -253,55 +205,53 @@ This chapter describes the core mechanics of Rise.
                 This means that the target's damage resistance was reduced to 0 during this phase.
             \item The creature did not resist any damage from your attack, and took all damage from the attack from their hit points.
         \end{itemize}
+        Most of the time, you can simplify this to simply ``if you attack someone, you know if you beat their damage resistance''.
+        The Awareness calculation is useful to handle unusual situations like maximum range longbow shots, where you might not be able to observe the exact result of your attack.
 
-        \parhead{Timing} If you take damage from multiple sources simultaneously, you apply your current damage resistance value against all of them equally for the purpose of determining whether any individual attack caused you to lose hit points.
-        For example, if you have 5 damage resistance remaining, and you take 3 damage and 8 damage from different sources in the same round, only the 8 damage attack would be considered to have caused you to lose hit points.
-        This is meaningful for determining the effects of attacks that have special effects if they specifically cause you to lose hit points.
+\section{Vital Wounds}\label{Vital Wounds}
+    A \glossterm{vital wound} represents serious damage to your body.
+    Each \glossterm{vital wound} has a specific detrimental effect on you.
+    You gain vital wounds by taking damage in excess of your remaining \glossterm{hit points} (see \pcref{Reaching Zero Hit Points}).
 
-    \subsection{Vital Wounds}\label{Vital Wounds}
-        A \glossterm{vital wound} represents serious damage to your body.
-        Each \glossterm{vital wound} has a specific detrimental effect on you.
-        You gain vital wounds by taking damage in excess of your remaining \glossterm{hit points} (see \pcref{Reaching Zero Hit Points}).
+    To determine the effect of a \glossterm{vital wound}, make a \glossterm{vital roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
+    The effect of the vital wound lasts until you remove that vital wound.
+    The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
 
-        To determine the effect of a \glossterm{vital wound}, make a \glossterm{vital roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
-        The effect of the vital wound lasts until you remove that vital wound.
-        The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
+    \subsection{Vital Rolls}\label{Vital Rolls}
+        To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
+        This includes vital wounds that have no specific vital wound effect.
+        The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
+        Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
 
-        \subsubsection{Vital Rolls}\label{Vital Rolls}
-            To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
-            This includes vital wounds that have no specific vital wound effect.
-            The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
-            Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
+        \parhead{Delaying Death} Vital wounds with a vital roll below 1 can kill you.
+        While you are dying in this way, if you receive healing that causes you to regain hit points, you delay your death by one round.
+        This benefit applies even if you are already at full hit points.
+        You cannot delay your death in this way by more than 5 rounds.
 
-            \parhead{Delaying Death} Vital wounds with a vital roll below 1 can kill you.
-            While you are dying in this way, if you receive healing that causes you to regain hit points, you delay your death by one round.
-            This benefit applies even if you are already at full hit points.
-            You cannot delay your death in this way by more than 5 rounds.
+        \begin{dtable}
+            \lcaption{Vital Wound Effects}
+            \begin{dtabularx}{\textwidth}{l X}
+                \tb{Vital Roll}  & \tb{Effect} \tableheaderrule
+                \minus6 or less  & You immediately die                                                              \\
+                \minus1--\minus5 & You are unconscious, and you die at the end of the next round                    \\
+                0                & You are unconscious, and you die after one minute                                \\
+                1                & You are unconscious while you have less than full hit points                     \\
+                2                & Your maximum \glossterm{hit points} and \glossterm{damage resistance} are halved \\
+                3                & You take a \minus2 penalty to \glossterm{accuracy}                               \\
+                4                & You take a \minus2 penalty to all \glossterm{defenses}                           \\
+                5                & You take a \minus1 penalty to future \glossterm{vital rolls}                     \\
+                6                & You move at half speed while you have less than full hit points                  \\
+                7                & Your maximum \glossterm{damage resistance} is halved                             \\
+                8                & You take a \minus1 penalty to \glossterm{accuracy}                               \\
+                9                & You take a \minus1 penalty to all \glossterm{defenses}                           \\
+                10 or more       & No extra vital wound effect                                                      \\
+            \end{dtabularx}
+        \end{dtable}
 
-            \begin{dtable}
-                \lcaption{Vital Wound Effects}
-                \begin{dtabularx}{\textwidth}{l X}
-                    \tb{Vital Roll}  & \tb{Effect} \tableheaderrule
-                    \minus6 or less  & You immediately die                                                              \\
-                    \minus1--\minus5 & You are unconscious, and you die at the end of the next round                    \\
-                    0                & You are unconscious, and you die after one minute                                \\
-                    1                & You are unconscious while you have less than full hit points                     \\
-                    2                & Your maximum \glossterm{hit points} and \glossterm{damage resistance} are halved \\
-                    3                & You take a \minus2 penalty to \glossterm{accuracy}                               \\
-                    4                & You take a \minus2 penalty to all \glossterm{defenses}                           \\
-                    5                & You take a \minus1 penalty to future \glossterm{vital rolls}                     \\
-                    6                & You move at half speed while you have less than full hit points                  \\
-                    7                & Your maximum \glossterm{damage resistance} is halved                             \\
-                    8                & You take a \minus1 penalty to \glossterm{accuracy}                               \\
-                    9                & You take a \minus1 penalty to all \glossterm{defenses}                           \\
-                    10 or more       & No extra vital wound effect                                                      \\
-                \end{dtabularx}
-            \end{dtable}
-
-        \subsubsection{Removing Vital Wounds}\label{Removing Vital Wounds}
-            Vital wounds take time to heal.
-            Whenever you take a \glossterm{long rest}, you remove one of your vital wounds.
-            If you have multiple vital wounds, you may choose the order in which your vital wounds are removed.
+    \subsection{Removing Vital Wounds}\label{Removing Vital Wounds}
+        Vital wounds take time to heal.
+        Whenever you take a \glossterm{long rest}, you remove one of your vital wounds.
+        If you have multiple vital wounds, you may choose the order in which your vital wounds are removed.
 
 \section{Making Checks}\label{Checks}\label{Making Checks}
     Checks are required to perform actions that have a chance of failure where the difficulty is not measured by the defense of another creature or object.

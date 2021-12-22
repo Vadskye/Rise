@@ -598,7 +598,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     When you gain a level, the following things happen:
     \begin{raggeditemize}
-        \item Your \glossterm{hit points} increase (see \trefnp{Character Advancement}).
+        \item Your \glossterm{hit points} increase (see \trefnp{Hit Points}).
         \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
         \item Your \glossterm{attributes} may increase (see \tref{Increasing Attributes With Level})
         \item Your bonus with \glossterm{trained} skills may increase (see \pcref{Trained Skills})
@@ -681,6 +681,79 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
         Your accuracy with an attack is normally equal to half your level \add half your Perception.
         In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
+
+    \subsection{Damage Resistance}\label{Damage Resistance}
+        Your \glossterm{damage resistance} measures how much damage you can shrug off without any effects.
+        For details about how damage resistance is used, see \pcref{Taking Damage}.
+
+        The amount of damage resistance you have is defined in \tref{Hit Points and Damage Resistance}.
+        You add your level and your Constitution to find the corresponding base value.
+        Body armor also provides a significant bonus to damage resistance, and many special abilities can increase your damage resistance.
+
+        \begin{dtable}
+            \lcaption{Hit Points and Damage Resistance}
+            \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
+                \tb{Level \add Con} & \tb{Hit Points} & \tb{Damage Resistance} \tableheaderrule
+                0\fn{1}  & 10  & 0  \\
+                1        & 11  & 1  \\
+                2        & 12  & 2  \\
+                3        & 13  & 3  \\
+                4        & 15  & 4  \\
+                5        & 17  & 5  \\
+                6        & 19  & 6  \\
+                7        & 22  & 7  \\
+                8        & 25  & 9  \\
+                9        & 28  & 10 \\
+                10       & 31  & 12 \\
+                11       & 35  & 13 \\
+                12       & 39  & 15 \\
+                13       & 44  & 16 \\
+                14       & 50  & 18 \\
+                15       & 56  & 20 \\
+                16       & 63  & 22 \\
+                17       & 70  & 25 \\
+                18       & 78  & 28 \\
+                19       & 88  & 32 \\
+                20       & 100 & 36 \\
+                21\fn{2} & 112 & 40 \\
+            \end{dtabularx}
+            1. For negative values, reduce maximum hit points by an amount equal to the negative value. \\
+            2. For values beyond 21, double the hit points and damage resistance of a creature with a value that is 6 lower.
+            For example, a level 20 creature with a 3 Constitution would have 140 hit points and 50 damage resistance. \\
+        \end{dtable}
+
+    \subsection{Defenses}\label{Defenses}
+        Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against one of your four \glossterm{defenses} (see \pcref{Attack Rolls}).
+        If the attack roll is at least as high as that defense, the attack hits.
+        The four defenses are described below.
+        \begin{itemize}
+            \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
+                It is the most commonly used defense.
+            \item Reflex defense: Your Reflex protects you from physical attacks that armor does not help against, such as pit traps or bolts of lightning.
+            \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and life-draining spells.
+            \item Mental defense: Your Mental defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical mind manipulation.
+        \end{itemize}
+
+        Your defenses are calculated in the following way:
+        \begin{itemize}
+            \itemhead{Armor} Half level \add Dexterity (modified depending on equipped armor) \add class defense bonus \add defense bonuses from equipped body armor and shield
+            \itemhead{Fortitude} Half level \add Constitution \add class defense bonus
+            \itemhead{Reflex} Half level \add Dexterity \add class defense bonus
+            \itemhead{Mental} Half level \add Willpower \add class defense bonus
+        \end{itemize}
+        Each defense may also have various bonuses or penalties applied by special abilities.
+
+    \subsection{Hit Points}\label{Hit Points}
+        Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
+        For details about how hit points are used, see \pcref{Taking Damage}.
+
+        The amount of hit points you have is defined in \tref{Hit Points and Damage Resistance}.
+        You add your level and your Constitution to find the corresponding base value.
+        Some special abilities can give you additional \glossterm{hit points}.
+
+        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
+        When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
+        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
     \subsection{Encumbrance}\label{Encumbrance}
         Your encumbrance is a value that represents how much you are burdened by your armor (see \pcref{Armor}).

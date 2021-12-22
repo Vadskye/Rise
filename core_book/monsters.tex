@@ -11,12 +11,12 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
     \subsection{Level Scaling}
         Each monster has a level that indicates its approximate strength.
-        Monsters have specific level scaling rules that differ from the rules for player characters.
+        Monsters have some specific level scaling rules that differ from the rules for player characters.
         In general, their automatic level scaling is designed to keep them on par with the power that player characters gain at higher levels, but without all of the complexity of high-level PCs.
         High level monsters should have slightly higher base values for their attributes, though this is not quantified, since monster attributes can be highly varied.
         They have the following specific benefits.
         \begin{itemize}
-            \item Monsters gain an intrinsic bonus to \glossterm{damage resistance} based on their level described in \tref{Monster Advancement}
+            \item Monsters use the same hit points and damage resistance rules as player characters (see \pcref{Hit Points and Damage Resistance})
             \item Monsters gain a \plus1 bonus to power with all abilities that gradually increases at 3rd level and every 3 levels thereafter, as described in \tref{Monster Advancement}
             \item Monsters gain a \plus1 bonus to all defenses at 3rd level, 12th level, and 21st level
             \item Monsters gain a \plus1d damage bonus with strikes at 4th level and every 3 levels thereafter
@@ -39,36 +39,36 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         However, bites are one of the most common monster natural weapons, and it's much more convenient to see a die value rather than a large +d value at high levels.
         The damage value for other natural weapons, such as claws, can be derived from the bite damage listed.
 
-    \begin{dtable*}
+    \begin{dtable}
         \lcaption{Monster Advancement}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Level}\fn{1} & \tb{Max Rank} & \tb{HP} & \tb{DR} & \tb{Accuracy} & \tb{Defenses} & \tb{Bite Damage} \tableheaderrule
-            1st              & 1             & 11      & 3       & \plus0        & 5             & 1d10\plus1  \\
-            2nd              & 1             & 12      & 3       & \plus1        & 6             & 1d10\plus1  \\
-            3rd              & 1             & 13      & 4       & \plus1        & 7             & 1d10\plus2  \\
-            4th              & 2             & 15      & 4       & \plus2        & 8             & 2d6\plus2   \\
-            5th              & 2             & 17      & 5       & \plus2        & 8             & 2d6\plus2   \\
-            6th              & 2             & 19      & 6       & \plus3        & 9             & 2d6\plus3   \\
-            7th              & 3             & 22      & 7       & \plus3        & 9             & 2d8\plus3   \\
-            8th              & 3             & 25      & 9       & \plus4        & 10            & 2d8\plus3   \\
-            9th              & 3             & 28      & 10      & \plus5        & 10            & 2d8\plus4   \\
-            10th             & 4             & 31      & 12      & \plus6        & 11            & 2d10\plus4  \\
-            11th             & 4             & 35      & 13      & \plus6        & 11            & 2d10\plus4  \\
-            12th             & 4             & 39      & 15      & \plus7        & 13            & 2d10\plus6  \\
-            13th             & 5             & 44      & 16      & \plus7        & 13            & 4d6\plus6   \\
-            14th             & 5             & 50      & 18      & \plus8        & 14            & 4d6\plus6   \\
-            15th             & 5             & 56      & 20      & \plus8        & 14            & 4d6\plus8   \\
-            16th             & 6             & 63      & 22      & \plus9        & 15            & 4d8\plus8   \\
-            17th             & 6             & 70      & 25      & \plus9        & 15            & 4d8\plus8   \\
-            18th             & 6             & 78      & 28      & \plus11       & 16            & 4d8\plus12  \\
-            19th             & 7             & 88      & 32      & \plus11       & 16            & 4d10\plus12 \\
-            20th             & 7             & 100     & 37      & \plus12       & 17            & 4d10\plus12 \\
-            21st             & 7             & 115     & 42      & \plus12       & 18            & 4d10\plus16 \\
+        \begin{dtabularx}{\columnwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Level}\fn{1} & \tb{Max Rank} & \tb{Accuracy} & \tb{Defenses} & \tb{Bite Damage} \tableheaderrule
+            1st              & 1             & \plus0        & 5             & 1d10\plus1  \\
+            2nd              & 1             & \plus1        & 6             & 1d10\plus1  \\
+            3rd              & 1             & \plus1        & 7             & 1d10\plus2  \\
+            4th              & 2             & \plus2        & 8             & 2d6\plus2   \\
+            5th              & 2             & \plus2        & 8             & 2d6\plus2   \\
+            6th              & 2             & \plus3        & 9             & 2d6\plus3   \\
+            7th              & 3             & \plus3        & 9             & 2d8\plus3   \\
+            8th              & 3             & \plus4        & 10            & 2d8\plus3   \\
+            9th              & 3             & \plus5        & 10            & 2d8\plus4   \\
+            10th             & 4             & \plus6        & 11            & 2d10\plus4  \\
+            11th             & 4             & \plus6        & 11            & 2d10\plus4  \\
+            12th             & 4             & \plus7        & 13            & 2d10\plus6  \\
+            13th             & 5             & \plus7        & 13            & 4d6\plus6   \\
+            14th             & 5             & \plus8        & 14            & 4d6\plus6   \\
+            15th             & 5             & \plus8        & 14            & 4d6\plus8   \\
+            16th             & 6             & \plus9        & 15            & 4d8\plus8   \\
+            17th             & 6             & \plus9        & 15            & 4d8\plus8   \\
+            18th             & 6             & \plus11       & 16            & 4d8\plus12  \\
+            19th             & 7             & \plus11       & 16            & 4d10\plus12 \\
+            20th             & 7             & \plus12       & 17            & 4d10\plus12 \\
+            21st             & 7             & \plus12       & 18            & 4d10\plus16 \\
         \end{dtabularx}
         1. The statistics in this table are accurate for CR 1 monsters. \\
         2. Assuming the monster has no free hands (see \pcref{Monster Natural Weapon Bonuses}). \\
         % 3. For each level beyond 21, a monster increases its maximum hit points by 25 and its maximum damage resistance by 12. \\
-    \end{dtable*}
+    \end{dtable}
 
     \subsection{Challenge Rating}\label{Challenge Rating}
         Each monster has a \glossterm{challenge rating} that indicates its approximate strength within its level, ranging from 1/2 to 6.
