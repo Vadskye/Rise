@@ -4,7 +4,7 @@ use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode,
     SpecialDefenseModifier, SpecialDefenseType, StandardPassiveAbility,
 };
-use crate::creatures::attacks::HasAttacks;
+use crate::creatures::attacks::{HasAttacks, PowerProgression};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::StandardWeapon;
 use crate::latex_formatting;
@@ -80,18 +80,7 @@ impl Monster {
             Some("challenge rating"),
             None,
         );
-        let power_scaling = match level / 3 {
-            0 => 1,
-            1 => 2,
-            2 => 3,
-            3 => 4,
-            4 => 6,
-            5 => 8,
-            6 => 12,
-            7 => 16,
-            8 => 24,
-            _ => panic!("Invalid level '{}'", level),
-        };
+        let power_scaling = PowerProgression::Slow.calc_power((level + 2) / 3);
         let power_scaling =
             ((power_scaling as f64) * challenge_rating.power_scaling_multiplier()).floor() as i32;
         if power_scaling > 0 {
