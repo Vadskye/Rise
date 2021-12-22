@@ -234,7 +234,7 @@ mod calc_individual_dpr {
         let mut attacker = Creature::new(1, CreatureCategory::Character);
         let mut defender = Creature::new(1, CreatureCategory::Character);
         attacker.add_special_attack(StandardWeapon::Broadsword.weapon().attack());
-        attacker.add_modifier(Modifier::MundanePower(2), None, None);
+        attacker.add_modifier(Modifier::Power(2), None, None);
         assert_eq!(
             "7.000",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
@@ -663,19 +663,16 @@ mod calc_rounds_to_live {
     fn standard_character_mirror_match() {
         let attacker = Character::standard_character(1, true).creature;
         let defender = Character::standard_character(1, true).creature;
-
-        assert_eq!(
-            6.25,
-            calc_rounds_to_live(&vec![&attacker], &defender,),
-            "at level 1",
-        );
+        let at_level_1 = calc_rounds_to_live(&vec![&attacker], &defender);
 
         let attacker = Character::standard_character(20, true).creature;
         let defender = Character::standard_character(20, true).creature;
+        let at_level_20 = calc_rounds_to_live(&vec![&attacker], &defender);
+
         assert_eq!(
-            10.5,
-            calc_rounds_to_live(&vec![&attacker], &defender,),
-            "at level 20",
+            [6.5, 12.75],
+            [at_level_1, at_level_20],
+            "at level 1 vs at level 20",
         );
     }
 

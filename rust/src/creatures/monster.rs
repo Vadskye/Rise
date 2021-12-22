@@ -96,12 +96,7 @@ impl Monster {
             ((power_scaling as f64) * challenge_rating.power_scaling_multiplier()).floor() as i32;
         if power_scaling > 0 {
             creature.add_modifier(
-                Modifier::MagicalPower(power_scaling),
-                Some("challenge rating"),
-                None,
-            );
-            creature.add_modifier(
-                Modifier::MundanePower(power_scaling),
+                Modifier::Power(power_scaling),
                 Some("challenge rating"),
                 None,
             );
@@ -362,17 +357,7 @@ impl Monster {
     }
 
     fn latex_power(&self) -> String {
-        let mundane_power = self.creature.calc_power(false);
-        let magical_power = self.creature.calc_power(true);
-        if mundane_power == magical_power {
-            return format!("\\textbf<Power> {}", mundane_power);
-        } else {
-            return format!(
-                "\\textbf<Mundane Power> {mundane} \\monsep \\textbf<Magical Power> {magical}",
-                mundane = mundane_power,
-                magical = magical_power
-            );
-        }
+        return format!("\\textbf<Power> {}", self.creature.calc_power());
     }
 
     fn latex_attributes(&self) -> String {
