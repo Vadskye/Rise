@@ -29,7 +29,7 @@ pub trait HasAttacks {
         return self.calc_all_attacks().into_iter().find(|a| a.name == name);
     }
     fn calc_accuracy(&self) -> i32;
-    fn calc_damage_increments(&self, is_strike: bool) -> i32;
+    fn calc_damage_increments(&self, is_strike: bool, is_magical: bool) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
     fn calc_power(&self, is_magical: bool) -> i32;
 }
@@ -85,7 +85,7 @@ impl Attack {
             return Some(
                 damage_effect
                     .damage_dice
-                    .add(creature.calc_damage_increments(self.is_strike)),
+                    .add(creature.calc_damage_increments(self.is_strike, self.is_magical)),
             );
         }
         return None;
@@ -690,8 +690,12 @@ where
             + self.calc_total_modifier(ModifierType::Accuracy);
     }
 
-    fn calc_damage_increments(&self, is_strike: bool) -> i32 {
-        let mut increments: i32 = 0;
+    fn calc_damage_increments(&self, is_strike: bool, is_magical: bool) -> i32 {
+        let attribute = match is_magical {
+            true => &Attribute::Willpower,
+            false => &Attribute::Strength,
+        };
+        let mut increments: i32 = self.get_base_attribute(attribute) / 2;
         if is_strike {
             increments += self.calc_total_modifier(ModifierType::StrikeDamageDice);
         }
