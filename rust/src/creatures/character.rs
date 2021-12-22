@@ -326,61 +326,28 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     return modifiers;
 }
 
-// Use a relatively smooth level progression for a (level - 1) item
+// Use a relatively smooth level progression for a rank-appropriate item
 fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armor {
+    let magic_item_rank = (level + 2) / 3;
     match max_usage_class {
         ArmorUsageClass::Heavy => {
-            if level == 21 {
-                return Armor::FullPlate(Some(ArmorMaterial::AncientDragonscale(
-                    "red".to_string(),
-                )));
-            } else if level >= 18 {
-                return Armor::FullPlate(Some(ArmorMaterial::PureDeepforged));
-            } else if level >= 15 {
-                return Armor::FullPlate(Some(ArmorMaterial::Dragonscale("red".to_string())));
-            } else if level >= 12 {
-                return Armor::FullPlate(Some(ArmorMaterial::Deepforged));
-            } else if level >= 9 {
-                return Armor::LayeredHide(Some(ArmorMaterial::Elvenweave));
-            } else if level >= 6 {
-                return Armor::FullPlate(None);
-            } else if level >= 3 {
-                return Armor::LayeredHide(None);
+            if level >= 7 {
+                return Armor::FullPlate(Some(ArmorMaterial::Magic(magic_item_rank)));
+            } else if level >= 4 {
+                return Armor::PlatedMail(None);
             } else {
                 return Armor::ScaleMail(None);
             }
         }
         ArmorUsageClass::Medium => {
-            if level >= 18 {
-                return Armor::Breastplate(Some(ArmorMaterial::AncientDragonscale(
-                    "red".to_string(),
-                )));
-            } else if level >= 15 {
-                return Armor::Breastplate(Some(ArmorMaterial::PureDeepforged));
-            } else if level >= 12 {
-                return Armor::Breastplate(Some(ArmorMaterial::Dragonscale("red".to_string())));
-            } else if level >= 9 {
-                return Armor::Breastplate(Some(ArmorMaterial::Deepforged));
-            } else if level >= 3 {
-                return Armor::Breastplate(None);
+            if level >= 4 {
+                return Armor::Breastplate(Some(ArmorMaterial::Magic(magic_item_rank)));
             } else {
                 return Armor::ScaleMail(None);
             }
         }
         ArmorUsageClass::Light => {
-            if level >= 17 {
-                return Armor::ChainShirt(Some(ArmorMaterial::AncientDragonscale(
-                    "red".to_string(),
-                )));
-            } else if level >= 14 {
-                return Armor::ChainShirt(Some(ArmorMaterial::PureDeepforged));
-            } else if level >= 11 {
-                return Armor::ChainShirt(Some(ArmorMaterial::Dragonscale("red".to_string())));
-            } else if level >= 8 {
-                return Armor::ChainShirt(Some(ArmorMaterial::Deepforged));
-            } else {
-                return Armor::ChainShirt(None);
-            }
+            return Armor::ChainShirt(Some(ArmorMaterial::Magic(magic_item_rank)));
         }
     }
 }
