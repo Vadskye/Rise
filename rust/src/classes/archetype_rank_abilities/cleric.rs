@@ -201,7 +201,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -228,7 +228,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Mystic Insights",

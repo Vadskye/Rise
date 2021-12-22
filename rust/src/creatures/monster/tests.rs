@@ -9,16 +9,7 @@ fn standard_monster_statistics_level_1_cr1() {
 
     // HasAttacks
     assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-    assert_eq!(
-        2,
-        creature.calc_power(true),
-        "Magical power: 1 scaling + 1 wil",
-    );
-    assert_eq!(
-        3,
-        creature.calc_power(false),
-        "Mundane power: 1 scaling + 2 str",
-    );
+    assert_eq!(2, creature.calc_power(), "Power: 1 scaling",);
 
     // HasAttributes
     assert_eq!(
@@ -63,16 +54,7 @@ fn standard_monster_statistics_level_1_cr2() {
 
     // HasAttacks
     assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-    assert_eq!(
-        3,
-        creature.calc_power(true),
-        "Magical power: 1 scaling * 2 cr mult + 1 wil",
-    );
-    assert_eq!(
-        5,
-        creature.calc_power(false),
-        "Mundane power: 1 scaling * 2 cr mult + 3 str",
-    );
+    assert_eq!(2, creature.calc_power(), "Power: 1 scaling * 2 cr mult",);
 
     // HasAttributes
     assert_eq!(
@@ -122,14 +104,9 @@ fn standard_monster_statistics_level_1_cr4() {
     // HasAttacks
     assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
     assert_eq!(
-        3,
-        creature.calc_power(true),
-        "Magical power: 1 scaling * 2 cr mult + 1 wil",
-    );
-    assert_eq!(
-        5,
-        creature.calc_power(false),
-        "Mundane power: 1 scaling * 2 cr mult + 3 str",
+        2,
+        creature.calc_power(),
+        "Power: 1 scaling * 2 cr mult",
     );
 
     // HasAttributes

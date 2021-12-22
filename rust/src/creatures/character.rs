@@ -285,8 +285,7 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
         0
     };
     if power > 0 {
-        modifiers.push(Modifier::MagicalPower(power));
-        modifiers.push(Modifier::MundanePower(power));
+        modifiers.push(Modifier::Power(power));
     }
 
     let dr = if level >= 23 {
