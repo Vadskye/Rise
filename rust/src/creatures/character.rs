@@ -80,7 +80,7 @@ impl Character {
                 .set_base_attribute(Attribute::Dexterity, 0);
             character
                 .creature
-                .set_base_attribute(Attribute::Constitution, 1);
+                .set_base_attribute(Attribute::Constitution, 2);
             character
                 .creature
                 .set_base_attribute(Attribute::Intelligence, 0);
