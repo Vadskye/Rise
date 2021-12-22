@@ -1,6 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
 use crate::core_mechanics::{Defense, Resource};
+use crate::creatures::attacks::PowerProgression;
 use crate::equipment::{Armor, ArmorUsageClass, StandardWeapon, Weapon, WeaponGroup};
 use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};
@@ -389,6 +390,22 @@ impl Class {
             Self::Sorcerer => "sorcerer",
             Self::Warlock => "warlock",
             Self::Wizard => "wizard",
+        }
+    }
+
+    pub fn power_progression(&self) -> PowerProgression {
+        match self {
+            Self::Barbarian => PowerProgression::Fast,
+            Self::Cleric => PowerProgression::Medium,
+            Self::Druid => PowerProgression::Medium,
+            Self::Fighter => PowerProgression::Medium,
+            Self::Monk => PowerProgression::Slow,
+            Self::Paladin => PowerProgression::Medium,
+            Self::Ranger => PowerProgression::Slow,
+            Self::Rogue => PowerProgression::Slow,
+            Self::Sorcerer => PowerProgression::Medium,
+            Self::Warlock => PowerProgression::Fast,
+            Self::Wizard => PowerProgression::Slow,
         }
     }
 
@@ -914,8 +931,8 @@ impl Class {
             "
                 \\begin<dtable!*>
                     \\lcaption<{class_name} Progression>
-                    \\begin<dtabularx><\\textwidth><l l {archetype_columns}>
-                        \\tb<Rank> & \\tb<Min Level> & {archetype_headers} \\tableheaderrule
+                    \\begin<dtabularx><\\textwidth><p<3em> l {archetype_columns}>
+                        \\tb<Rank (Level)> & \\tb<Power> & {archetype_headers} \\tableheaderrule
                         {rank_rows}
                     \\end<dtabularx>
                 \\end<dtable!*>
@@ -937,7 +954,7 @@ impl Class {
         for rank in 0..abilities_by_archetype_rank.len() {
             rank_rows.push(format!(
                 "
-                    {rank} & {minimum_level} & {archetype_abilities} \\\\
+                    {rank} ({minimum_level}) & \\plus{power} & {archetype_abilities} \\\\
                 ",
                 rank = rank,
                 minimum_level = if rank == 0 {
@@ -946,6 +963,7 @@ impl Class {
                     format!("{}", rank * 3 - 2)
                 },
                 archetype_abilities = abilities_by_archetype_rank[rank],
+                power = self.power_progression().calc_power(rank as i32),
             ))
         }
         return rank_rows
