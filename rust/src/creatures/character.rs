@@ -207,7 +207,7 @@ impl Character {
             [
                 ClassArchetype::SorcererArcaneMagic,
                 ClassArchetype::SorcererArcaneSpellMastery,
-                ClassArchetype::DraconicMagic,
+                ClassArchetype::InnateArcanist,
             ],
         );
 
