@@ -128,7 +128,7 @@ impl Character {
                 .set_base_attribute(Attribute::Dexterity, 0);
             character
                 .creature
-                .set_base_attribute(Attribute::Constitution, 1);
+                .set_base_attribute(Attribute::Constitution, 2);
             character
                 .creature
                 .set_base_attribute(Attribute::Intelligence, 0);
@@ -170,13 +170,13 @@ impl Character {
         if use_point_buy {
             character
                 .creature
-                .set_base_attribute(Attribute::Strength, 4);
+                .set_base_attribute(Attribute::Strength, 3);
             character
                 .creature
-                .set_base_attribute(Attribute::Dexterity, 0);
+                .set_base_attribute(Attribute::Dexterity, 2);
             character
                 .creature
-                .set_base_attribute(Attribute::Constitution, 1);
+                .set_base_attribute(Attribute::Constitution, 2);
             character
                 .creature
                 .set_base_attribute(Attribute::Intelligence, 0);
@@ -214,7 +214,7 @@ impl Character {
                 .set_base_attribute(Attribute::Strength, 0);
             character
                 .creature
-                .set_base_attribute(Attribute::Dexterity, 1);
+                .set_base_attribute(Attribute::Dexterity, 2);
             character
                 .creature
                 .set_base_attribute(Attribute::Constitution, 0);
