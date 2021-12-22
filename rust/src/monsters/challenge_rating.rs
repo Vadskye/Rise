@@ -22,19 +22,19 @@ impl ChallengeRating {
         match self {
             Self::Half => -1,
             Self::One => 0,
-            Self::Two => 1,
-            Self::Four => 2,
-            Self::Six => 3,
+            Self::Two => 0,
+            Self::Four => 0,
+            Self::Six => 0,
         }
     }
 
     pub fn max_base_attribute(&self) -> i32 {
         match self {
             Self::Half => 3,
-            Self::One => 4,
-            Self::Two => 5,
+            Self::One => 3,
+            Self::Two => 4,
             Self::Four => 6,
-            Self::Six => 6,
+            Self::Six => 7,
         }
     }
 
@@ -75,8 +75,8 @@ impl ChallengeRating {
             Self::Half => 1.0,
             Self::One => 1.0,
             Self::Two => 2.0,
-            Self::Four => 2.0,
-            Self::Six => 2.0,
+            Self::Four => 3.0,
+            Self::Six => 4.0,
         }
     }
 
@@ -85,7 +85,7 @@ impl ChallengeRating {
             Self::Half => -1,
             Self::One => 0,
             Self::Two => 0,
-            Self::Four => 1,
+            Self::Four => 0,
             Self::Six => 1,
         }
     }
