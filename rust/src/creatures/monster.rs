@@ -141,6 +141,9 @@ impl Monster {
         monster
             .creature
             .set_base_attribute(Attribute::Strength, challenge_rating.max_base_attribute());
+        monster
+            .creature
+            .set_base_attribute(Attribute::Willpower, challenge_rating.max_base_attribute());
 
         return monster;
     }
