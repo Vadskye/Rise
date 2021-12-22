@@ -154,7 +154,7 @@ impl Character {
             [
                 ClassArchetype::PrimalWarrior,
                 ClassArchetype::Battlerager,
-                ClassArchetype::Totemist,
+                ClassArchetype::BattleforgedResilience,
             ],
         );
 
