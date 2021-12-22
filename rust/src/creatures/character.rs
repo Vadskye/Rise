@@ -80,10 +80,10 @@ impl Character {
                 .set_base_attribute(Attribute::Dexterity, 0);
             character
                 .creature
-                .set_base_attribute(Attribute::Constitution, 2);
+                .set_base_attribute(Attribute::Constitution, 1);
             character
                 .creature
-                .set_base_attribute(Attribute::Intelligence, 1);
+                .set_base_attribute(Attribute::Intelligence, 0);
             character
                 .creature
                 .set_base_attribute(Attribute::Perception, 2);
@@ -128,10 +128,10 @@ impl Character {
                 .set_base_attribute(Attribute::Dexterity, 0);
             character
                 .creature
-                .set_base_attribute(Attribute::Constitution, 2);
+                .set_base_attribute(Attribute::Constitution, 1);
             character
                 .creature
-                .set_base_attribute(Attribute::Intelligence, 1);
+                .set_base_attribute(Attribute::Intelligence, 0);
             character
                 .creature
                 .set_base_attribute(Attribute::Perception, 2);
@@ -176,7 +176,7 @@ impl Character {
                 .set_base_attribute(Attribute::Dexterity, 0);
             character
                 .creature
-                .set_base_attribute(Attribute::Constitution, 2);
+                .set_base_attribute(Attribute::Constitution, 1);
             character
                 .creature
                 .set_base_attribute(Attribute::Intelligence, 0);
@@ -185,7 +185,7 @@ impl Character {
                 .set_base_attribute(Attribute::Perception, 2);
             character
                 .creature
-                .set_base_attribute(Attribute::Willpower, 1);
+                .set_base_attribute(Attribute::Willpower, 0);
         }
 
         for modifier in calc_standard_magic_modifiers(level) {
@@ -217,7 +217,7 @@ impl Character {
                 .set_base_attribute(Attribute::Dexterity, 1);
             character
                 .creature
-                .set_base_attribute(Attribute::Constitution, 2);
+                .set_base_attribute(Attribute::Constitution, 0);
             character
                 .creature
                 .set_base_attribute(Attribute::Intelligence, 0);
