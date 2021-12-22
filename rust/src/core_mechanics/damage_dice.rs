@@ -7,6 +7,9 @@ pub struct DamageDice {
 
 impl DamageDice {
     // Commonly used damage dice for weapon and spell definitions
+    pub fn d4() -> Self {
+        return Self::new(3);
+    }
     pub fn d6() -> Self {
         return Self::new(4);
     }
@@ -67,11 +70,11 @@ impl DamageDice {
     }
 
     pub fn aoe_damage(rank: i32) -> Self {
-        return Self::d8().add(rank - 1);
+        return Self::d6().add(rank - 1);
     }
 
     pub fn single_target_damage(rank: i32) -> Self {
-        return Self::d10().add(rank - 1);
+        return Self::d8().add(rank - 1);
     }
 }
 
