@@ -347,7 +347,7 @@ impl Class {
 
     pub fn fatigue_tolerance(&self) -> i32 {
         match self {
-            Self::Barbarian => 5,
+            Self::Barbarian => 3,
             Self::Cleric => 2,
             Self::Druid => 2,
             Self::Fighter => 3,
@@ -356,7 +356,7 @@ impl Class {
             Self::Ranger => 3,
             Self::Rogue => 2,
             Self::Sorcerer => 2,
-            Self::Warlock => 3,
+            Self::Warlock => 2,
             Self::Wizard => 1,
         }
     }
@@ -372,7 +372,7 @@ impl Class {
             Self::Ranger => 2,
             Self::Rogue => 3,
             Self::Sorcerer => 2,
-            Self::Warlock => 3,
+            Self::Warlock => 2,
             Self::Wizard => 3,
         }
     }
