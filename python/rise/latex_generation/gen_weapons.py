@@ -649,7 +649,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon automatically veers towards its intended target.
-                Any miss chance the strike would normally have is reduced.
+                Any \\glossterm<miss chance> the strike would normally have is reduced.
                 A 50\\% miss chance is reduced to a 25\\% miss chance, and a 25\\% miss chance is removed entirely.
             """,
             short_description="Reduces miss chances",
@@ -661,7 +661,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon automatically veers towards its intended target.
-                Any miss chance the strike would normally have is removed.
+                Any \\glossterm<miss chance> the strike would normally have is removed.
             """,
             short_description="Removes miss chances",
         ),
