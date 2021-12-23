@@ -1406,11 +1406,11 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Cloak of Mist",
-            rank=3,
+            rank=4,
             material_type="Cloak",
             tags=["Manifestation"],
             description="""
-                At the end of each round, fog \\glossterm<briefly> fills a \\areamed radius zone from you.
+                At the end of each round, fog \\glossterm<briefly> fills a \\smallarea radius zone from you.
                 This fog does not fully block sight, but it provides \\glossterm<concealment>.
                 There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
 
@@ -1420,11 +1420,11 @@ def generate_apparel():
         ),
         MagicItem(
             name="Cloak of Mist, Greater",
-            rank=6,
+            rank=7,
             material_type="Cloak",
             tags=["Manifestation"],
             description="""
-                At the end of each round, a thick fog \\glossterm<briefly> fills a \\areamed radius zone from you.
+                At the end of each round, a thick fog \\glossterm<briefly> fills a \\largearea radius zone from you.
                 This fog completely blocks sight beyond 15 feet.
                 There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
 
