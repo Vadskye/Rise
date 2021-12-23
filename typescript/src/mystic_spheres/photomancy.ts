@@ -446,7 +446,7 @@ export const photomancy: MysticSphere = {
         Two illusory duplicates appear around you that mirror your every move.
         The duplicates shift chaotically in your space, making it difficult to identify your real location.
 
-        All \\glossterm{targeted} attacks against you have a 50\\% miss chance.
+        All \\glossterm{targeted} attacks against you have a 50\\% \\glossterm{miss chance}.
         Like other miss chances, this miss chance is rolled before determining whether the attack beats your defenses.
         When an attack misses in this way, it affects an image, destroying it.
         When the last image is destroyed, this ability provides no further benefit.
