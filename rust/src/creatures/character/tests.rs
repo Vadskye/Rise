@@ -262,8 +262,8 @@ fn standard_character_statistics_level_1() {
     );
 
     // HasDamageAbsorption
-    assert_eq!(13, creature.calc_hit_points(), "HP: (1 level + 2 con)",);
-    assert_eq!(9, creature.calc_damage_resistance(), "DR: 6 scale + (1 level + 2 con)",);
+    assert_eq!(12, creature.calc_hit_points(), "HP: (1 level + 2 con)",);
+    assert_eq!(8, creature.calc_damage_resistance(), "DR: 5 scale + (1 level + 2 con)",);
 
     // HasResources
     assert_eq!(
@@ -355,14 +355,14 @@ fn standard_character_statistics_level_10() {
 
     // HasDamageAbsorption
     assert_eq!(
-        51,
+        44,
         creature.calc_hit_points(),
         "HP: (10 level + 2 con) + 8 martial mastery + 4 magic item",
     );
     assert_eq!(
-        35,
+        39,
         creature.calc_damage_resistance(),
-        "DR: (10 level + 2 con) + 16 elvenweave layered hide + 4 magic item",
+        "DR: (10 level + 2 con) + 20 magic full plate + 4 magic item",
     );
 
     // HasResources
@@ -455,14 +455,14 @@ fn standard_character_statistics_level_20() {
 
     // HasDamageAbsorption
     assert_eq!(
-        163,
+        137,
         creature.calc_hit_points(),
         "HP: (20 level + 2 con) + 21 martial mastery + 16 magic item",
     );
     assert_eq!(
-        108,
+        120,
         creature.calc_damage_resistance(),
-        "DR: (20 level + 2 con) + 48 pure deepforged full plate + 16 magic item",
+        "DR: (20 level + 2 con) + 60 magic full plate + 16 magic item",
     );
 
     // HasResources

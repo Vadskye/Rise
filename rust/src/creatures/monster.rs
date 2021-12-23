@@ -64,7 +64,7 @@ impl Monster {
         }
 
         creature.add_modifier(
-            Modifier::Accuracy(level / 9),
+            Modifier::Accuracy(level / 18),
             Some("challenge rating"),
             None,
         );
