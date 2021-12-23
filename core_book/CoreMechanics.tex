@@ -104,7 +104,7 @@ This chapter describes the core mechanics of Rise.
 
         For each die increment that increases the damage, move one space down the list.
         Likewise, for each die increment that decreases the damage, move one space up the list.
-        After the dice pool reaches 8d10, each additional die increment simply adds an additional 10 flat damage.
+        After the dice pool reaches 8d10, each additional die increment adds an additional 1d10.
         In practice, you are unlikely to ever roll that many dice.
 
         \parhead{Attribute Dice Increments} Your attributes can add or subtract dice increments from all damage dice you roll.
@@ -175,7 +175,7 @@ This chapter describes the core mechanics of Rise.
         If your negative hit points exceed half your maximum hit points, you gain an additional vital wound.
         You gain an additional vital wound for each increment of half your maximum hit points that you have in negative hit points.
 
-    \subsection{Resolving Simultaneous Damage}
+    \subsection{Resolving Simultaneous Damage}\label{Resolving Simultaneous Damage}
         Many attacks have special effects when they cause you to lose \glossterm{hit points}.
         In addition, some attacks have special effects based on other triggers, like whether you resisted all damage from the attack.
         When you take damage from multiple sources during the same phase, it may not be obvious how to determine whether any individual attack caused you to lose hit points.
@@ -190,7 +190,7 @@ This chapter describes the core mechanics of Rise.
         Non-damaging attacks are simpler.
         They always care about your current state at the time the attack is made, regardless of any damage you may take during the phase.
 
-        \parhead{Simultaneous Damage and Healing}
+        \parhead{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
         If you regain hit points and take damage in the same phase, apply all healing effects after applying any damaging effects.
         The healing still applies before checking for \glossterm{vital wounds}, so the order is mostly irrelevant, except that this avoids the risk of conflicting with your maximum hit point total.
 

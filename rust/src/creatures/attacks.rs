@@ -749,6 +749,8 @@ impl AbilityType {
 pub enum PowerProgression {
     Fast,
     Medium,
+    // Nothing actually uses a Slow progression, but it's useful to have around in case the design
+    // changes later.
     Slow
 }
 

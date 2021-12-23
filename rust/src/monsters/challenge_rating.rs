@@ -15,7 +15,13 @@ impl ChallengeRating {
     }
 
     pub fn accuracy_bonus(&self) -> i32 {
-        0
+        match self {
+            Self::Half => 0,
+            Self::One => 0,
+            Self::Two => 1,
+            Self::Four => 1,
+            Self::Six => 1,
+        }
     }
 
     pub fn damage_increments(&self) -> i32 {
@@ -52,7 +58,7 @@ impl ChallengeRating {
 
     pub fn defense_bonus(&self) -> i32 {
         match self {
-            Self::Half => 0,
+            Self::Half => -1,
             Self::One => 0,
             Self::Two => 0,
             Self::Four => 1,
@@ -60,13 +66,15 @@ impl ChallengeRating {
         }
     }
 
+    // These values happen to have extremely good correlations with damage dice - don't
+    // change this unless a bunch of system match changes!
     pub fn power_scaling_multiplier(&self) -> f64 {
         match self {
-            Self::Half => 1.0,
+            Self::Half => 0.5,
             Self::One => 1.0,
             Self::Two => 2.0,
-            Self::Four => 4.0,
-            Self::Six => 6.0,
+            Self::Four => 3.0,
+            Self::Six => 4.0,
         }
     }
 
@@ -92,7 +100,7 @@ impl ChallengeRating {
 
     pub fn hp_multiplier(&self) -> f64 {
         match self {
-            Self::Half => 0.5,
+            Self::Half => 1.0,
             Self::One => 1.0,
             Self::Two => 2.0,
             Self::Four => 4.0,
