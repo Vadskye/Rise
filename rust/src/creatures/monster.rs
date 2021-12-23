@@ -63,11 +63,13 @@ impl Monster {
                 .push(StandardPassiveAbility::ThreeActions.ability());
         }
 
-        creature.add_modifier(
-            Modifier::Accuracy(level / 18),
-            Some("challenge rating"),
-            None,
-        );
+        if level >= 19 {
+            creature.add_modifier(
+                Modifier::Accuracy(1),
+                Some("challenge rating"),
+                None,
+            );
+        }
         for defense in Defense::all() {
             creature.add_modifier(
                 Modifier::Defense(defense, (level + 6) / 9),
