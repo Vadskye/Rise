@@ -34,10 +34,10 @@ impl CreatureType {
 
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match defense {
-            Defense::Armor => 5,
-            Defense::Fortitude => 5,
-            Defense::Reflex => 5,
-            Defense::Mental => 5,
+            Defense::Armor => 4,
+            Defense::Fortitude => 4,
+            Defense::Reflex => 4,
+            Defense::Mental => 4,
         }
     }
 

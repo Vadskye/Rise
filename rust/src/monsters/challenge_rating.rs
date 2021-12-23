@@ -20,7 +20,7 @@ impl ChallengeRating {
 
     pub fn damage_increments(&self) -> i32 {
         match self {
-            Self::Half => -1,
+            Self::Half => 0,
             Self::One => 0,
             Self::Two => 0,
             Self::Four => 0,
@@ -60,23 +60,13 @@ impl ChallengeRating {
         }
     }
 
-    pub fn dr_multiplier(&self) -> f64 {
-        match self {
-            Self::Half => 0.0,
-            Self::One => 1.0,
-            Self::Two => 3.0,
-            Self::Four => 6.0,
-            Self::Six => 10.0,
-        }
-    }
-
     pub fn power_scaling_multiplier(&self) -> f64 {
         match self {
             Self::Half => 1.0,
             Self::One => 1.0,
             Self::Two => 2.0,
-            Self::Four => 3.0,
-            Self::Six => 4.0,
+            Self::Four => 4.0,
+            Self::Six => 6.0,
         }
     }
 
@@ -87,6 +77,16 @@ impl ChallengeRating {
             Self::Two => 0,
             Self::Four => 0,
             Self::Six => 1,
+        }
+    }
+
+    pub fn dr_multiplier(&self) -> f64 {
+        match self {
+            Self::Half => 0.0,
+            Self::One => 3.0,
+            Self::Two => 6.0,
+            Self::Four => 10.0,
+            Self::Six => 15.0,
         }
     }
 
