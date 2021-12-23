@@ -231,7 +231,7 @@ impl Armor {
             Self::Leather(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(2, m),
-                defense: 2,
+                defense: 1,
                 dex_multiplier: 1.0,
                 encumbrance: 1,
                 item_rank: 1,
@@ -241,7 +241,7 @@ impl Armor {
             Self::StuddedLeather(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(3, m),
-                defense: 2,
+                defense: 1,
                 dex_multiplier: 1.0,
                 encumbrance: 2,
                 item_rank: 1,
@@ -251,7 +251,7 @@ impl Armor {
             Self::ChainShirt(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(3, m),
-                defense: 2,
+                defense: 1,
                 dex_multiplier: 1.0,
                 encumbrance: 2,
                 item_rank: 1,
@@ -273,7 +273,7 @@ impl Armor {
             Self::Hide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(4, m),
-                defense: 3,
+                defense: 2,
                 dex_multiplier: 0.5,
                 encumbrance: 3,
                 item_rank: 1,
@@ -283,7 +283,7 @@ impl Armor {
             Self::ScaleMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(6, m),
-                defense: 3,
+                defense: 2,
                 dex_multiplier: 0.5,
                 encumbrance: 5,
                 item_rank: 1,
@@ -293,7 +293,7 @@ impl Armor {
             Self::Breastplate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(6, m),
-                defense: 3,
+                defense: 2,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
                 item_rank: 1,
@@ -314,8 +314,8 @@ impl Armor {
             // Heavy armor
             Self::LayeredHide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(8, m),
-                defense: 4,
+                damage_resistance: calc_dr(6, m),
+                defense: 3,
                 dex_multiplier: 0.0,
                 encumbrance: 5,
                 item_rank: 1,
@@ -324,8 +324,8 @@ impl Armor {
             },
             Self::PlatedMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(10, m),
-                defense: 4,
+                damage_resistance: calc_dr(8, m),
+                defense: 3,
                 dex_multiplier: 0.0,
                 encumbrance: 5,
                 item_rank: 2,
@@ -335,7 +335,7 @@ impl Armor {
             Self::FullPlate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(12, m),
-                defense: 4,
+                defense: 3,
                 dex_multiplier: 0.0,
                 encumbrance: 5,
                 item_rank: 3,
