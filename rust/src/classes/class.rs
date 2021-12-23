@@ -399,13 +399,13 @@ impl Class {
             Self::Cleric => PowerProgression::Medium,
             Self::Druid => PowerProgression::Medium,
             Self::Fighter => PowerProgression::Medium,
-            Self::Monk => PowerProgression::Slow,
+            Self::Monk => PowerProgression::Medium,
             Self::Paladin => PowerProgression::Medium,
-            Self::Ranger => PowerProgression::Slow,
-            Self::Rogue => PowerProgression::Slow,
+            Self::Ranger => PowerProgression::Medium,
+            Self::Rogue => PowerProgression::Medium,
             Self::Sorcerer => PowerProgression::Medium,
             Self::Warlock => PowerProgression::Fast,
-            Self::Wizard => PowerProgression::Slow,
+            Self::Wizard => PowerProgression::Medium,
         }
     }
 
