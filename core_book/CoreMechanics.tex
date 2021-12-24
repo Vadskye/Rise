@@ -73,10 +73,14 @@ This chapter describes the core mechanics of Rise.
         However, you only lose hit points if the damage is not mitigated by your damage resistance.
         Many active abilities require the target to lose hit points from a damaging attack, which does not happen if the damage is resisted.
 
-        \subsubsection{Damage Dice}\label{Damage Dice}
-            Almost all attacks deal damage based on the result rolled from a pool of dice.
-            Many abilities can increase or decrease your damage.
-            Some modifiers add or subtract flat values from the damage you deal.
+        \subsubsection{Dice Pools}\label{Dice Pools}
+            Almost all attacks deal damage based on a \glossterm{dice pool}.
+            Likewise, healing abilities usually heal hit points based on a dice pool.
+            Dice pools are written with the number of dice, followed by ``d'', followed by the size of dice to roll.
+            For example, 2d6 means you roll two six-sided dice.
+            You always sum the roll of all dice rolled in a dice pool to determine the total result.
+
+            Some modifiers add or subtract flat values from the result of the dice pool.
             Others add or subtract \glossterm{dice increments}.
 
             A die increment is a single increase or decrease in the value of a dice pool.
@@ -102,16 +106,16 @@ This chapter describes the core mechanics of Rise.
                 \item 8d10
             \end{itemize}
 
-        For each die increment that increases the damage, move one space down the list.
-        Likewise, for each die increment that decreases the damage, move one space up the list.
-        After the dice pool reaches 8d10, each additional die increment adds an additional 1d10.
-        In practice, you are unlikely to ever roll that many dice.
+            For each die increment that increases the damage, move one space down the list.
+            Likewise, for each die increment that decreases the damage, move one space up the list.
+            After the dice pool reaches 8d10, each additional die increment adds an additional 1d10.
+            In practice, you are unlikely to ever roll that many dice.
 
-        \parhead{Attribute Dice Increments} Your attributes can add or subtract dice increments from all damage dice you roll.
-        Whenever you deal damage with a \glossterm{mundane} ability, you add half your Strength in dice increments to the damage dice.
-        If your Strength is negative, this can reduce your damage.
-        Likewise, you add half your Willpower in dice increments to your damage with \glossterm{magical} abilities.
-        For example, if you are using a spell that normally deals 1d8 damage, and your Willpower is 2, you would deal 1d10 damage with that ability instead.
+            \parhead{Attribute Dice Increments} Your attributes can add or subtract dice increments from all dice pools you roll.
+            Whenever you use a \glossterm{mundane} ability that has a dice pool, you add half your Strength in dice increments to the dice pool.
+            If your Strength is negative, this can reduce your damage or healing.
+            Likewise, you add half your Willpower in dice increments to your dice pools with \glossterm{magical} abilities.
+            For example, if you are using a spell that normally deals 1d8 damage, and your Willpower is 2, you would deal 1d10 damage with that ability instead.
 
     % TODO: different section?
     \subsection{Damage Types}\label{Damage Types}
