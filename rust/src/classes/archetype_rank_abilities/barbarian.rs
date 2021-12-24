@@ -6,11 +6,12 @@ use crate::skills::Skill;
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Resilient Recovery",
+            name: "Experienced Endurance",
             is_magical: false,
             rank: 0,
             description: r"
-                When you use the \textit{recover} ability, you regain a quarter of your maximum \glossterm{damage resistance} at the end of the round (see \pcref{Recover}).
+                You gain a \plus2 bonus to the Endurance skill.
+                In addition, using the \textit{desperate exertion} ability to affect a roll using the Endurance skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
             ",
             modifiers: None,
         },
@@ -78,11 +79,11 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Greater Resilient Recovery",
+            name: "Resilient Recovery",
             is_magical: false,
             rank: 3,
             description: r"
-                The damage resistance you regain with your \textit{resilient recovery} ability increases to half your maximum damage resistance.
+                When you use the \textit{recover} ability, you regain a quarter of your maximum \glossterm{damage resistance} at the end of the round (see \pcref{Recover}).
             ",
             modifiers: None,
         },
