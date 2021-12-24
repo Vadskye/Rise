@@ -449,7 +449,7 @@ export const aquamancy: MysticSphere = {
       type: "Sustain (minor)",
     },
     {
-      name: "Ring of Mist",
+      name: "Misty Halo",
 
       effect: `
         Fog fills the air within a \\medarea radius \\glossterm{zone} from your location.
@@ -463,12 +463,13 @@ export const aquamancy: MysticSphere = {
       name: "Misty Shroud",
 
       effect: `
-        Fog fills the air within a \\smallarea radius \\glossterm{emanation} from your location.
-        The fog partially obstructs sight, granting \\glossterm{concealment} to anything seen through the fog (see \\pcref{Concealment}).
+        At the end of each round, fog \\glossterm<briefly> fills a \\medarea radius zone from you.
+        This fog does not fully block sight, but it provides \\glossterm<concealment>.
+        There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,
       rank: 4,
       scaling: {
-        6: "The area increases to a \\medarea radius \\glossterm{emanation}.",
+        6: "The area increases to a \\largearea radius.",
       },
       type: "Attune (self)",
     },
