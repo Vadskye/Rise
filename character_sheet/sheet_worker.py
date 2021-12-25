@@ -90,9 +90,8 @@ def get_misc_variables(variable_name, count):
         "fatigue_tolerance",
         "fortitude",
         "hit_points",
-        "magical_power",
         "mental",
-        "mundane_power",
+        "power",
         "reflex",
         "vital_rolls",
     ]:
@@ -213,8 +212,7 @@ def core_statistics():
         initiative(),
         insight_points(),
         land_speed(),
-        magical_power(),
-        mundane_power(),
+        power(),
         skill_points(),
         vital_rolls(),
         weapon_damage_dice(),
@@ -615,10 +613,10 @@ def insight_points():
     )
 
 
-def magical_power():
-    misc = get_misc_variables("magical_power", 4)
+def power():
+    misc = get_misc_variables("power", 4)
     return js_wrapper(
-        ["willpower", "perception", "level", "challenge_rating", *misc],
+        ["level", "class_power", "challenge_rating", *misc],
         f"""
             var level_scaling = challenge_rating
                 ? {{
@@ -631,63 +629,21 @@ def magical_power():
                     6: 12,
                     7: 16,
                     8: 24,
-                }}[Math.floor(level / 3)]
+                }}[Math.floor((level + 2) / 3)]
                 : 0;
             level_scaling = level_scaling * (challenge_rating
                 ? {{
-                    0.5: 1,
+                    0.5: 0.5,
                     1: 1,
                     2: 2,
-                    4: 2,
-                    6: 2,
+                    4: 3,
+                    6: 4,
                 }}[challenge_rating]
                 : 0);
-            var magical_power_attribute = Math.floor(willpower / 2);
             setAttrs({{
-                magical_power_attribute,
-                magical_power: (
-                    magical_power_attribute
-                    + level_scaling
-                    + {sum_variables(misc)}
-                ),
-            }});
-        """,
-    )
-
-
-def mundane_power():
-    misc = get_misc_variables("mundane_power", 4)
-    return js_wrapper(
-        ["strength", "perception", "level", "challenge_rating", *misc],
-        f"""
-            var level_scaling = challenge_rating
-                ? {{
-                    0: 1,
-                    1: 2,
-                    2: 3,
-                    3: 4,
-                    4: 6,
-                    5: 8,
-                    6: 12,
-                    7: 16,
-                    8: 24,
-                }}[Math.floor(level / 3)]
-                : 0;
-            level_scaling = level_scaling * (challenge_rating
-                ? {{
-                    0.5: 1,
-                    1: 1,
-                    2: 2,
-                    4: 2,
-                    6: 2,
-                }}[challenge_rating]
-                : 0);
-            var mundane_power_attribute = Math.floor(strength / 2)
-            setAttrs({{
-                mundane_power_attribute,
-                mundane_power: (
-                    mundane_power_attribute
-                    + level_scaling
+                power: (
+                    level_scaling
+                    + class_power
                     + {sum_variables(misc)}
                 ),
             }});
@@ -1074,9 +1030,8 @@ def custom_modifiers():
                         fatigue_tolerance_custom_modifier: totalCustomModifiers.fatigue_tolerance || 0,
                         fortitude_custom_modifier: totalCustomModifiers.fortitude || 0,
                         hit_points_custom_modifier: totalCustomModifiers.hit_points || 0,
-                        magical_power_custom_modifier: totalCustomModifiers.magical_power || 0,
                         mental_custom_modifier: totalCustomModifiers.mental || 0,
-                        mundane_power_custom_modifier: totalCustomModifiers.mundane_power || 0,
+                        power_custom_modifier: totalCustomModifiers.power || 0,
                         reflex_custom_modifier: totalCustomModifiers.reflex || 0,
                         vital_rolls_custom_modifier: totalCustomModifiers.vital_rolls || 0,
                     });

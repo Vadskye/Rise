@@ -47,7 +47,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike}.
                     Damage dealt by the strike is bludgeoning and fire damage in addition to its normal damage types.
-                    You may use the higher of your \glossterm{magical} power and your \glossterm{mundane} power to determine your damage with this ability.
+                    You may use either your Strength or your Willpower to determine your damage with this ability (see \pcref{Attribute Dice Increments}).
 
                     \rankline
                     \rank{3} You gain a \plus2 damage bonus with the strike.

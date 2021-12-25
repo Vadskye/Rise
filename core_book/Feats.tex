@@ -433,7 +433,7 @@ You cannot gain the same feat twice.
         In addition, if you have the \textit{smite} paladin ability and your \textit{devoted alignment} is good, you gain a \plus2 bonus to \glossterm{power} with the \textit{holy smite} ability.
         \begin{freeability}{Holy Smite}[Magical]
             Make a \glossterm{strike} with a \plus2 damage bonus.
-            Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+            Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage instead of your Strength (see \pcref{Attribute Dice Increments}).
             If your target is good, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a good creature.
 
             \rankline
@@ -474,42 +474,44 @@ You cannot gain the same feat twice.
         You must track which choices you made for archetypes that you lose access to in this way, such as which spells and maneuvers you learned.
         When you regain access to that archetype, you must make the same choices.
 
-        \ff[3]{Versatile Disguise} Whenever you use the \textit{disguise creature} and \textit{emulate creature} abilities on yourself, you may simultaneously create two different disguises.
-        This takes twice as long as creating a single disguise, and you take a \minus2 penalty to the Disguise check.
-        You can change your appearance between the two chosen disguises as a \glossterm{minor action}.
-
-        \ff[6]{Adaptive Specialty} Whenever you finish a \glossterm{short rest}, you may choose an effect from the list below.
+        \ff[3]{Adaptive Specialty} Whenever you finish a \glossterm{short rest}, you may choose an effect from the list below.
         Each effect lasts until you take a short rest.
         \begin{itemize}
-            \item Martial: You gain a \plus1 bonus to Armor defense and a \plus2 bonus to your \glossterm{mundane} \glossterm{power}.
-            \item Mystic: You gain a \plus2 bonus to Mental defense and a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
-            \item Primal: You gain a \plus2 bonus to Fortitude defense and \plus1 bonus to your \glossterm{fatigue tolerance}.
+            \item Martial: You gain a \plus1 bonus to your Armor defense.
+            \item Mystic: You gain a \plus2 bonus to your Mental defense.
+            \item Primal: You gain a \plus2 bonus to your Fortitude defense.
             \item Skilled: You gain a \plus1 bonus to all skills.
         \end{itemize}
 
-        \ff[9]{Instant Adaptation} As a standard action, you can change your choice of \textit{adaptive archetype} and \textit{adaptive specialty}.
+        \ff[6]{Versatile Disguise} Whenever you use the \textit{disguise creature} and \textit{emulate creature} abilities on yourself, you may simultaneously create two different disguises.
+        This takes twice as long as creating a single disguise, and you take a \minus2 penalty to the Disguise check.
+        You can change your appearance between the two chosen disguises as a \glossterm{minor action}.
+
+        \ff[9]{Greater Adaptive Specialty} The effects of your \textit{adaptive specialty} ability improve, as described below.
+        \begin{itemize}
+            \item Martial: You become proficient with an additional \glossterm{weapon group} or armor \glossterm{usage class} of your choice.
+                You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
+            \item Mystic: The defense bonus increases to \plus3.
+            \item Primal: You gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
+            \item Skilled: The skill bonus increases to \plus2.
+        \end{itemize}
+
+        \ff[12]{Instant Adaptation} As a standard action, you can change your choice of \textit{adaptive archetype} and \textit{adaptive specialty}.
         When you do, you increase your \glossterm{fatigue level} by two.
 
-        \ff[12]{Greater Adaptive Specialty} The effects of your \textit{adaptive specialty} ability improve, as described below.
+        \ff[15]{Supreme Adaptive Specialty} The effects of your \textit{adaptive specialty} ability improve, as described below.
         \begin{itemize}
-            \item Martial: The power bonus increases to \plus4.
-            \item Mystic: The defense bonus increases to \plus3, and the power bonus increases to \plus4.
+            \item Martial: The defense bonus increases to \plus2.
+            \item Mystic: You gain an additional \glossterm{attunement point}.
+                You can only use this attunement point to attune to spells that you cast on yourself.
             \item Primal: The defense bonus increases to \plus3, and the fatigue tolerance bonus increases to \plus2.
-            \item Skilled: The bonus increases to \plus2.
+            \item Skilled: The skill bonus increases to \plus3.
         \end{itemize}
 
-        \ff[15]{Greater Instant Adaptation} When you use your \textit{instant adaptation} ability,
+        \ff[18]{Greater Instant Adaptation} When you use your \textit{instant adaptation} ability,
         you only increase your \glossterm{fatigue level} by one.
 
-        \ff[15]{Greater Versatile Disguise} When you use your \textit{versatile disguise} ability, the time required to create the disguise is not increased, and the penalty to the Disguise check is removed.
-
-        \ff[18]{Supreme Adaptive Specialty} The effects of your \textit{adaptive specialty} ability improve, as described below.
-        \begin{itemize}
-            \item Martial: The defense bonus increases to \plus2, and the power bonus increases to \plus8.
-            \item Mystic: The defense bonus increases to \plus4, and the power bonus increases to \plus8.
-            \item Primal: The defense bonus increases to \plus4, and the fatigue tolerance bonus increases to \plus3.
-            \item Skilled: The bonus increases to \plus3.
-        \end{itemize}
+        \ff[18]{Greater Versatile Disguise} When you use your \textit{versatile disguise} ability, the time required to create the disguise is not increased, and the penalty to the Disguise check is removed.
 
         \ff[21]{Supreme Adaptive Archetype} Instead of choosing a single archetype to activate with your \textit{adaptive archetype}, you may choose a blend of two archetypes simultaneously.
         First, choose two archetypes to combine.
@@ -1017,7 +1019,7 @@ You cannot gain the same feat twice.
             \rankline
             Make a \glossterm{strike}.
             The attack is made against each target's Reflex defense instead of its Armor defense.
-            You may use the higher of your \glossterm{magical} power and your \glossterm{mundane} power to determine your damage with this ability.
+            You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \pcref{Attribute Damage Increments}).
             Each creature that loses \glossterm{hit points} from this strike is \glossterm{briefly} \slowed.
             After it stops being slowed, it becomes immune to being slowed in this way until it takes a short rest.
 
@@ -1043,7 +1045,7 @@ You cannot gain the same feat twice.
             For the duration of the movement, you can move through creatures and objects as if you were \glossterm{incorporeal}, but you do not gain the defensive benefits of being incorporeal during this phase.
             In addition, you can make a melee \glossterm{strike}.
             Your \glossterm{power} with the strike is halved.
-            You may use the higher of your \glossterm{magical} power and your \glossterm{mundane} power to determine your damage with this ability.
+            You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \pcref{Attribute Damage Increments}).
             The strike targets any number of creatures and objects within your \glossterm{reach} at any point during your movement.
 
             \rankline
@@ -1185,7 +1187,7 @@ You cannot gain the same feat twice.
         \featpre Base Strength of 2.
 
         \ff[1]{Brute Force} You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{shove} and \textit{overrun} abilities (see \pcref{Shove}, and \pcref{Overrun}).
-        In addition, you gain a \plus1 bonus to your \glossterm{mundane} \glossterm{power}.
+        In addition, you gain a \plus1 bonus to your \glossterm{power}.
 
         \ff[3]{Wall Slam} Whenever you \glossterm{push} a creature with a \glossterm{mundane} ability and the creature's movement is interrupted by a solid object, the object and creature both take bludgeoning damage equal to 1d8 plus half your \glossterm{power}.
         This damage is not doubled when you get a critical hit with the ability that caused the push.
@@ -1376,7 +1378,7 @@ You cannot gain the same feat twice.
                 If you choose this ability multiple times, its effects stack.
         \end{itemize}
 
-        \ff[6]{Martial Power} You gain a \plus2 bonus to your \glossterm{mundane} \glossterm{power}.
+        \ff[6]{Martial Power} You gain a \plus2 bonus to your \glossterm{power}.
 
         \ff[9]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
 
@@ -1550,7 +1552,7 @@ You cannot gain the same feat twice.
         \ff[1]{Imbued Shot} You can use the \textit{imbued shot} ability as a standard action.
         \begin{freeability}{Imbued Shot}[\glossterm{Magical}]
             Make a ranged \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} using a \glossterm{projectile weapon} you wield.
-            Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+            Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Attribute Dice Increments}).
 
             \rankline
             \featlevel{6} The accuracy bonus increases to \plus2.
@@ -2011,7 +2013,7 @@ You cannot gain the same feat twice.
             \abilitytag{Magical}
             \rankline
             Make a melee \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
-            Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+            Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Attribute Dice Increments}).
 
             \rankline
             \featlevel{6} The accuracy bonus increases to \plus2.
@@ -2567,7 +2569,7 @@ You cannot gain the same feat twice.
         \ff[3]{Telekinetic Strike} You can use the \textit{telekinetic strike} ability as a standard action.
         \begin{freeability}{Telekinetic Strike}[Magical]
             Make a \glossterm{strike} with a weapon you are controlling using the \spell{distant hand} cantrip.
-            Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+            Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Attribute Dice Increments}).
 
             \rankline
             \featlevel{9} You gain a \plus1 accuracy bonus with the strike.
