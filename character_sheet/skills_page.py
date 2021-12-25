@@ -102,6 +102,7 @@ def calc_skill(skill_name, attribute=None):
     visible_skill_name = re.sub('\\d', '', skill_name).title()
     skill_parsable = skill_name.lower().replace(" ", "_")
     attribute_shorthand = ATTRIBUTE_SHORTHAND[attribute] if attribute else None;
+
     return flex_row(
         {"class": "skill-row"},
         [
@@ -137,20 +138,7 @@ def calc_skill(skill_name, attribute=None):
                 else "",
             ]),
             equation(
-                [
-                    underlabel(
-                        "Train",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "skill_ranks_display",
-                                "value": f"@{{{skill_parsable}_ranks}}",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat(skill_parsable, 4),
-                ],
+                calc_skill_equation_components(skill_parsable, attribute),
                 result_attributes={
                     "disabled": True,
                     "name": f"{skill_parsable}_display",
@@ -159,6 +147,50 @@ def calc_skill(skill_name, attribute=None):
             ),
         ],
     )
+
+
+def calc_skill_equation_components(skill_parsable, attribute):
+    if attribute == 'other':
+        return [
+            underlabel(
+                "Lvl/2?",
+                number_input(
+                    {
+                        "disabled": True,
+                        "name": "skill_level_display",
+                        "value": f"@{{{skill_parsable}_level}}",
+                    }
+                ),
+            ),
+            plus(),
+            equation_misc_repeat(skill_parsable, 4),
+        ]
+    else:
+        return [
+            underlabel(
+                "Lvl/2?",
+                number_input(
+                    {
+                        "disabled": True,
+                        "name": "skill_level_display",
+                        "value": f"@{{{skill_parsable}_level}}",
+                    }
+                ),
+            ),
+            plus(),
+            underlabel(
+                ATTRIBUTE_SHORTHAND[attribute],
+                number_input(
+                    {
+                        "disabled": True,
+                        "name": "skill_attribute",
+                        "value": f"@{{{skill_parsable}_attribute}}",
+                    }
+                ),
+            ),
+            plus(),
+            equation_misc_repeat(skill_parsable, 3),
+        ]
 
 def display_skills_for_attribute(attribute, display_function):
     return "".join([
