@@ -506,9 +506,10 @@ def fatigue_tolerance():
     return js_wrapper(
         ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", *misc],
         f"""
-            var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + constitution_starting + Math.floor(willpower_starting / 2) + {sum_variables(misc)});
+            var fatigue_tolerance_attributes = constitution_starting + Math.floor(willpower_starting / 2);
+            var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + fatigue_tolerance_attributes + {sum_variables(misc)});
             setAttrs({{
-                fatigue_tolerance_attributes: constitution_starting + willpower_starting,
+                fatigue_tolerance_attributes,
                 fatigue_tolerance,
                 // for red bars
                 fatigue_points_max: fatigue_tolerance,
@@ -530,45 +531,44 @@ def hit_points():
         ],
         no_listen_variables=["hit_points", "hit_points_maximum"],
         function_body=f"""
-            var hit_points_from_level = {{
-                '-1': 9  ,
-                0:    10 ,
-                1:    11 ,
-                2:    12 ,
-                3:    13 ,
-                4:    15 ,
-                5:    17 ,
-                6:    19 ,
-                7:    22 ,
-                8:    25 ,
-                9:    28 ,
-                10:   31 ,
-                11:   35 ,
-                12:   39 ,
-                13:   44 ,
-                14:   50 ,
-                15:   56 ,
-                16:   63 ,
-                17:   70 ,
-                18:   78 ,
-                19:   88 ,
-                20:   100,
-                21:   115,
-                22:   130,
-                23:   145,
-                24:   160,
-                25:   175,
-                26:   190,
-                27:   205,
-                28:   230,
-                29:   245,
-                30:   260,
-            }}[level] || 1;
+            var levelish = level + constitution;
+            var hit_points_from_level = 9 + levelish;
+            if (levelish > 0) {{
+                var multiplier = 1;
+                while (levelish > 21) {{
+                    levelish -= 6;
+                    multiplier += 1;
+                }}
+                hit_points_from_level = multiplier * {{
+                    1:    10,
+                    2:    11,
+                    3:    12,
+                    4:    13,
+                    5:    14,
+                    6:    16,
+                    7:    18,
+                    8:    20,
+                    9:    22,
+                    10:    25,
+                    11:    28,
+                    12:    32,
+                    13:    36,
+                    14:    40,
+                    15:    44,
+                    16:    50,
+                    17:    56,
+                    18:    64,
+                    19:    72,
+                    20:    80,
+                    21:    88,
+                    22:    100,
+                }}[level + constitution] || 1;
+            }}
 
-            var new_hit_points = hit_points_from_level + constitution + {sum_variables(misc)};
+            var new_hit_points = hit_points_from_level + {sum_variables(misc)};
             var cr_multiplier = {{
                 0: 1,
-                0.5: 0.5,
+                0.5: 1,
                 1: 1,
                 2: 2,
                 4: 4,
@@ -577,7 +577,7 @@ def hit_points():
             new_hit_points = Math.floor(new_hit_points * cr_multiplier * (hit_points_vital_wound_multiplier || 1))
 
             let attrs = {{
-                hit_points_from_level,
+                hit_points_from_level: hit_points_from_level * cr_multiplier,
                 hit_points_max: new_hit_points,
                 hit_points_maximum: new_hit_points,
             }};
@@ -665,47 +665,53 @@ def damage_resistance():
         no_listen_variables=["damage_resistance", "damage_resistance_maximum"],
         function_body=f"""
             var resistance_from_level = 0;
-            if (challenge_rating > 0) {{
+            var levelish = level + constitution;
+            if (levelish > 0) {{
+                var multiplier = 1;
+                while (levelish > 21) {{
+                    levelish -= 6;
+                    multiplier += 1;
+                }}
                 resistance_from_level = {{
-                    1:    3,
-                    2:    3,
-                    3:    4,
-                    4:    4,
-                    5:    5,
-                    6:    6,
-                    7:    7,
-                    8:    9,
-                    9:    10,
-                    10:    12,
-                    11:    13,
-                    12:    15,
-                    13:    16,
-                    14:    18,
-                    15:    20,
-                    16:    22,
-                    17:    25,
-                    18:    28,
-                    19:    32,
-                    20:    37,
-                    21:    42,
-                }}[level];
+                    1:  1,
+                    2:  2,
+                    3:  3,
+                    4:  4,
+                    5:  5,
+                    6:  6,
+                    7:  7,
+                    8:  9,
+                    9:  10,
+                    10:  12,
+                    11:  13,
+                    12:  15,
+                    13:  16,
+                    14:  18,
+                    15:  20,
+                    16:  22,
+                    17:  25,
+                    18:  28,
+                    19:  32,
+                    20:  36,
+                    21:  40,
+                }}[levelish] * multiplier;
             }}
             var cr_multiplier = {{
                 0: 1,
                 0.5: 0,
-                1: 1,
-                2: 3,
-                4: 6,
-                6: 10,
+                1: 3,
+                2: 6,
+                4: 10,
+                6: 15,
             }}[challenge_rating || 0];
             const new_damage_resistance = Math.floor(
                 (
-                    resistance_from_level + constitution + damage_resistance_bonus_armor + {sum_variables(misc)}
+                    resistance_from_level + damage_resistance_bonus_armor + {sum_variables(misc)}
                 ) * cr_multiplier * (damage_resistance_bonus_vital_wound_multiplier || 1)
             );
 
             let attrs = {{
-                damage_resistance_from_level: resistance_from_level,
+                damage_resistance_from_level: resistance_from_level * cr_multiplier,
                 damage_resistance_max: new_damage_resistance,
                 damage_resistance_maximum: new_damage_resistance,
             }};

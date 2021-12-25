@@ -1,6 +1,5 @@
 use crate::core_mechanics::{Attribute, HasAttributes};
 use crate::creatures::{Creature, HasModifiers, ModifierType};
-use std::cmp::max;
 
 #[derive(Clone, Copy, PartialEq)]
 pub enum Resource {
@@ -56,7 +55,7 @@ where
             Resource::AttunementPoint => 0,
             Resource::FatigueTolerance => {
                 self.get_base_attribute(&Attribute::Strength)
-                    + self.get_base_attribute(&Attribute::Willpower)
+                    + (self.get_base_attribute(&Attribute::Willpower) / 2)
             }
             Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
             Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
