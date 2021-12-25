@@ -112,11 +112,11 @@ def sum_variables(variables):
 
 
 def attribute_change(a):
-    misc = get_misc_variables(a + "_starting", 2)
+    misc = get_misc_variables(a, 2)
     return js_wrapper(
         ["level", f"{a}_point_buy", *misc],
         f"""
-            var starting = {a}_point_buy > 0
+            var value = {a}_point_buy > 0
                 ? {{
                     1: 1,
                     2: 2,
@@ -124,16 +124,10 @@ def attribute_change(a):
                     6: 4,
                 }}[{a}_point_buy]
                 : {a}_point_buy;
-            starting += {sum_variables(misc)};
-            var scaling = 0;
-            if (starting >= 2) {{
-                scaling = Math.floor((starting-1)*0.25*level);
-            }}
+            value += {sum_variables(misc)};
 
             setAttrs({{
-                {a}: starting + scaling,
-                {a}_scaling: scaling,
-                {a}_starting: starting,
+                {a}: value,
             }});
         """,
     )
@@ -160,11 +154,11 @@ def set_skill(a, s):
                 var ranks = 0;
 
                 if ({s}_is_trained) {{
-                    ranks = 4 + Math.floor(level / 2);
+                    ranks = 3 + Math.floor(level / 2);
                 }}
 
                 setAttrs({{
-                    {s}_ranks: ranks,
+                    {s}_level: ranks,
                     {s}_total: ranks + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty,
                 }});
             """,
@@ -188,15 +182,16 @@ def set_skill(a, s):
                 var ranks = 0;
 
                 if ({s}_is_trained) {{
-                    ranks = 4 + Math.max({a}, Math.floor(level / 2));
-                }} else {{
-                    ranks = Math.floor({a} / 2);
+                    ranks = 3 + Math.floor(level / 2);
                 }}
 
+                var {s}_total = ranks + {a} + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty {subtract_encumbrance};
+
                 setAttrs({{
-                    {s}_ranks: ranks,
-                    {s}_total: ranks + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty {subtract_encumbrance},
-                    {s}: ranks + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty {subtract_encumbrance},
+                    {s}_level: ranks,
+                    {s}_attribute: {a},
+                    {s}_total,
+                    {s}: {s}_total,
                 }});
             """,
         )
@@ -234,7 +229,7 @@ def accuracy():
         [
             "challenge_rating",
             "level",
-            "perception_starting",
+            "perception",
             "fatigue_penalty",
             "accuracy_debuff_modifier",
             *misc,
@@ -244,7 +239,7 @@ def accuracy():
             setAttrs({{
                 accuracy: (
                     Math.floor(level / 2)
-                    + Math.floor(perception_starting / 2)
+                    + Math.floor(perception / 2)
                     + {sum_variables(misc)}
                     + level_scaling
                     - fatigue_penalty
@@ -287,7 +282,7 @@ def armor_defense():
     return js_wrapper(
         [
             "level",
-            "dexterity_starting",
+            "dexterity",
             "armor_defense_class_bonus",
             "body_armor_defense_value",
             "shield_defense_value",
@@ -300,12 +295,12 @@ def armor_defense():
         f"""
             var attribute_modifier = 0;
             if (challenge_rating > 0) {{
-                attribute_modifier += Math.floor(constitution_starting / 2);
+                attribute_modifier += Math.floor(constitution / 2);
             }}
             if (body_armor_usage_class === "medium" || challenge_rating > 0) {{
-                attribute_modifier += Math.floor(dexterity_starting / 2);
+                attribute_modifier += Math.floor(dexterity / 2);
             }} else if (body_armor_usage_class === "none" || body_armor_usage_class === "light") {{
-                attribute_modifier += dexterity_starting;
+                attribute_modifier += dexterity;
             }}
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
             if (challenge_rating === 4) {{
@@ -342,7 +337,7 @@ def fortitude():
     return js_wrapper(
         [
             "level",
-            "constitution_starting",
+            "constitution",
             "fortitude_class",
             "challenge_rating",
             "fortitude_debuff_modifier",
@@ -360,7 +355,7 @@ def fortitude():
             setAttrs({{
                 fortitude: (
                     Math.floor(level / 2)
-                    + constitution_starting
+                    + constitution
                     + fortitude_class
                     + level_scaling
                     + fortitude_debuff_modifier
@@ -378,7 +373,7 @@ def reflex():
     return js_wrapper(
         [
             "level",
-            "dexterity_starting",
+            "dexterity",
             "reflex_class",
             "challenge_rating",
             "reflex_debuff_modifier",
@@ -396,7 +391,7 @@ def reflex():
             setAttrs({{
                 reflex: (
                     Math.floor(level / 2)
-                    + dexterity_starting
+                    + dexterity
                     + reflex_class
                     + level_scaling
                     + reflex_debuff_modifier
@@ -414,7 +409,7 @@ def mental():
     return js_wrapper(
         [
             "level",
-            "willpower_starting",
+            "willpower",
             "mental_class",
             "challenge_rating",
             "mental_debuff_modifier",
@@ -432,7 +427,7 @@ def mental():
             setAttrs({{
                 mental: (
                     Math.floor(level / 2)
-                    + willpower_starting
+                    + willpower
                     + mental_class
                     + level_scaling
                     + mental_debuff_modifier
@@ -448,12 +443,12 @@ def mental():
 def encumbrance():
     misc = get_misc_variables("encumbrance", 2)
     return js_wrapper(
-        ["level", "body_armor_encumbrance", "strength_starting", *misc],
+        ["level", "body_armor_encumbrance", "strength", *misc],
         f"""
             setAttrs({{
                 encumbrance: Math.max(
                     body_armor_encumbrance
-                    - Math.max(0, strength_starting)
+                    - Math.max(0, strength)
                     - {'-'.join(misc)}
                 , 0),
             }});
@@ -464,9 +459,9 @@ def encumbrance():
 def initiative():
     misc = get_misc_variables("initiative", 3)
     return js_wrapper(
-        ["dexterity_starting", "perception_starting", "fatigue_penalty", *misc],
+        ["dexterity", "perception", "fatigue_penalty", *misc],
         f"""
-            var scaling = dexterity_starting + perception_starting;
+            var scaling = dexterity + perception;
             setAttrs({{
                 initiative: scaling + {sum_variables(misc)} - fatigue_penalty,
                 initiative_scaling: scaling,
@@ -490,9 +485,9 @@ def land_speed():
 def skill_points():
     misc = get_misc_variables("skill_points", 3)
     return js_wrapper(
-        ["level", "skill_points_base", "intelligence_starting", *misc],
+        ["level", "skill_points_base", "intelligence", *misc],
         f"""
-            let from_int = Math.max(0, intelligence_starting);
+            let from_int = Math.max(0, intelligence);
             setAttrs({{
                 skill_points_intelligence: from_int,
                 skill_points: skill_points_base + from_int + {sum_variables(misc)}
@@ -504,9 +499,9 @@ def skill_points():
 def fatigue_tolerance():
     misc = get_misc_variables("fatigue_tolerance", 2)
     return js_wrapper(
-        ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", *misc],
+        ["level", "fatigue_tolerance_base", "constitution", "willpower", *misc],
         f"""
-            var fatigue_tolerance_attributes = constitution_starting + Math.floor(willpower_starting / 2);
+            var fatigue_tolerance_attributes = constitution + Math.floor(willpower / 2);
             var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + fatigue_tolerance_attributes + {sum_variables(misc)});
             setAttrs({{
                 fatigue_tolerance_attributes,
@@ -604,10 +599,10 @@ def fatigue_penalty():
 def insight_points():
     misc = get_misc_variables("insight_points", 3)
     return js_wrapper(
-        ["insight_points_base", "intelligence_starting", *misc],
+        ["insight_points_base", "intelligence", *misc],
         f"""
             setAttrs({{
-                insight_points: Math.max(0, insight_points_base + intelligence_starting + {sum_variables(misc)}),
+                insight_points: Math.max(0, insight_points_base + intelligence + {sum_variables(misc)}),
             }});
         """,
     )
