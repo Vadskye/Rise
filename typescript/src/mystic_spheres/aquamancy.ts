@@ -498,7 +498,7 @@ export const aquamancy: MysticSphere = {
         The tentacle grants you a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d8 damage, as normal for a slam natural weapon, and it has the Sweeping (1) tag.
         In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
-        Strikes using the tentacle are considered \\glossterm{magical} abilities, which means you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Attribute Dice Increments}).
+        Strikes using the tentacle are considered \\glossterm{magical} abilities, which means you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
       `,
       rank: 2,
       scaling: {
