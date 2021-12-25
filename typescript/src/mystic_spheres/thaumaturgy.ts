@@ -314,7 +314,7 @@ export const thaumaturgy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to your \\glossterm{magical} \\glossterm{power}.
+        You gain a +2 \\glossterm{magic bonus} to your \\glossterm{power}.
       `,
       rank: 1,
       scaling: {
