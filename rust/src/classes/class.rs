@@ -1385,9 +1385,9 @@ impl Class {
                         \begin{attuneability}{Divine Strength}
                             \abilitytag{Attune} (self)
                             \rankline
-                            You gain a \plus1 bonus to your base Strength.
+                            You gain a \plus1 bonus to your Strength.
                         \end{attuneability}
-                        \parhead{Essence} You gain a \plus4 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
+                        \parhead{Essence} You gain a \plus1 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
                         \parhead{Mastery} Your \textit{divine strength} ability loses the \glossterm{Attune} (self) tag.
                         Instead, it lasts until you use it again.
 

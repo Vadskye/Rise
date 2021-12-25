@@ -1544,7 +1544,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                This belt functions like an \\mitem<enlarging belt>, except that you also gain a +2 \\glossterm<magic bonus> to Strength-based checks, and you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
+                This belt functions like an \\mitem<enlarging belt>, except that you also gain a +1 \\glossterm<magic bonus> to Strength-based checks, and you gain a +1 \\glossterm<magic bonus> to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
             """,
             short_description="Increases your size and strength",
         ),
