@@ -119,9 +119,9 @@ def attribute_change(a):
             var value = {a}_point_buy > 0
                 ? {{
                     1: 1,
-                    2: 2,
-                    4: 3,
-                    6: 4,
+                    3: 2,
+                    5: 3,
+                    8: 4,
                 }}[{a}_point_buy]
                 : {a}_point_buy;
             value += {sum_variables(misc)};
