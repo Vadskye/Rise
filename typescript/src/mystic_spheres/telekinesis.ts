@@ -483,7 +483,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         Choose one Tiny or smaller \\glossterm{unattended} projectile within \\longrange.
         You make a \\glossterm{strike} using the projectile against anything within \\longrange.
-        This strike is considered a \\glossterm{magical} ability, so you add your magical \\glossterm{power} to damage with the strike instead of your \\glossterm{mundane} power.
+        This strike is considered a \\glossterm{magical} ability, so you use your Willpower to determine your damage instead of your Strength (see \pcref{Attribute Dice Increments}).
         The projectile flies directly toward the target instead of originating from your position, which may allow you to avoid \\glossterm{cover} and similar obstacles.
       `,
       rank: 2,

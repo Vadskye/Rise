@@ -556,7 +556,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytag{Magical}
                     \rankline
                     Make a \glossterm{strike} with a \plus2 damage bonus.
-                    Because this is a \glossterm{magical} ability, you use your magical \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+                    Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Attribute Dice Increments}).
                     If your target shares your devoted alignment, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a creature that shares your alignment.
 
                     \rankline

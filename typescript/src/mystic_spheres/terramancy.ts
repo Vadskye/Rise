@@ -117,7 +117,7 @@ export const terramancy: MysticSphere = {
         You can create any weapon, shield, or body armor that you are proficient with, and which could normally be made entirely from metal, except for heavy armor.
         The body targeted must be at least as large as the largest item you create.
 
-        An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your magical \\glossterm{power} to determine their damage instead of your \\glossterm{mundane} power.
+        An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your Willpower to determine your damage instead of your Strength (see \pcref{Attribute Dice Increments}).
       `,
       rank: 1,
       scaling: {
