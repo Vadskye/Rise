@@ -538,7 +538,6 @@ def active_ability_button(ability_type):
         text_input({"class": "hidden", "name": prefix + "_defense"}),
         text_input({"class": "hidden", "name": prefix + "_damage_dice"}),
         text_input({"class": "hidden", "name": prefix + "_damage_modifier"}),
-        checkbox({"class": "hidden", "name": prefix + "_is_magical", "value": "1"}),
         underlabel(
             "Power",
             select(
