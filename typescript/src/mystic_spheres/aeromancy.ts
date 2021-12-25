@@ -171,7 +171,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        hit: "The target takes 1d10 + \\glossterm{power} bludgeoning damage.",
+        hit: "The target takes 1d8 + \\glossterm{power} bludgeoning damage.",
         targeting: "Make an attack vs. Armor against anything within \\medrange.",
       },
       // narrative: '',
@@ -184,7 +184,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        hit: "The target takes 2d8 \\add \\glossterm{power} bludgeoning damage.",
+        hit: "The target takes 2d6 \\add \\glossterm{power} bludgeoning damage.",
         targeting: "Make an attack vs. Armor against anything within \\distrange.",
       },
       // narrative: '',
@@ -216,7 +216,7 @@ export const aeromancy: MysticSphere = {
       functionsLike: {
         name: 'buffet',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 2d6. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
+        exceptThat: "the damage increases to 1d10. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
       },
       // narrative: '',
       rank: 4,
@@ -229,7 +229,7 @@ export const aeromancy: MysticSphere = {
       functionsLike: {
         name: 'buffet',
         // This deals an immediate 12d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 4d6. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
+        exceptThat: "the damage increases to 2d10. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
       },
       // narrative: '',
       rank: 7,
@@ -321,7 +321,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d10 bludgeoning damage.
+          Each target takes 1d8 bludgeoning damage.
           In addition, each target is \\glossterm{pushed} 15 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -342,7 +342,7 @@ export const aeromancy: MysticSphere = {
         // crit: '',
         // +1 level for farther push, +2 levels for area
         hit: `
-          Each target takes 2d10 bludgeoning damage.
+          Each target takes 2d8 bludgeoning damage.
           In addition, each target is \\glossterm{pushed} 30 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -393,7 +393,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d10 bludgeoning damage.
+          Each target takes 2d8 bludgeoning damage.
         `,
         targeting: `
           At the end of each phase, make an attack vs. Armor against each creature within \\shortrange of you that attacked you during that phase.
@@ -441,7 +441,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d6 \\add half \\glossterm{power} bludgeoning damage.
+          Each target takes 1d10 \\add half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea radius within \\medrange.
@@ -459,7 +459,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 4d6 \\add half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d10 \\add half \\glossterm{power} bludgeoning damage.
           In addition, each target is \\glossterm{pushed} 30 feet clockwise around you.
           Each target's final position should be the same distance from you as its starting position.
         `,
@@ -503,7 +503,7 @@ export const aeromancy: MysticSphere = {
         crit: "Double damage from movement.",
         hit: `
           As a \\glossterm{condition}, the target is \\slowed by incredibly fast winds that inhibit movement.
-          At the end of each phase, if it moved voluntarily during that phase, it takes 2d6 bludgeoning damage.
+          At the end of each phase, if it moved voluntarily during that phase, it takes 1d10 bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one Large or smaller creature within \\medrange.
@@ -578,7 +578,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 physical damage.
+          The target takes 2d6 physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.
         `,
         targeting: `
@@ -596,7 +596,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         // crit: '',
-        hit: "The target takes 2d8 \\add \\glossterm{power} piercing damage.",
+        hit: "The target takes 2d6 \\add \\glossterm{power} piercing damage.",
         targeting: "Make an attack vs. Reflex against anything within \\medrange.",
       },
       narrative: `

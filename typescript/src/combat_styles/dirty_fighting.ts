@@ -58,7 +58,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          the target also takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          the target also takes 1d6 + half \\glossterm{power} bludgeoning damage.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: "grapple",
@@ -227,7 +227,7 @@ export const dirtyFighting: CombatStyle = {
         // This is basically a 30' line of standard AOE damage, -1d because it's easier to optimize
         exceptThat: `
           it requires a standard action to use and does not increase your \\glossterm{fatigue level}.
-          In addition, creatures cannot choose to avoid you and each creature that you move through takes 1d10 + half \\glossterm{power} bludgeoning damage.
+          In addition, creatures cannot choose to avoid you and each creature that you move through takes 1d8 + half \\glossterm{power} bludgeoning damage.
           Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
         name: "overrun",
@@ -244,7 +244,7 @@ export const dirtyFighting: CombatStyle = {
         abilityType: "maneuver",
         exceptThat: `
           you do not treat the space occupied by creatures you move through as difficult terrain.
-          In addition, the damage increases to 4d6 + half \\glossterm{power}.
+          In addition, the damage increases to 2d10 + half \\glossterm{power}.
           Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
         name: "battering ram",

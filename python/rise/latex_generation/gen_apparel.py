@@ -2822,7 +2822,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=['Healing'],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 1d10+4 \\glossterm<hit points>.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 1d8+4 \\glossterm<hit points>.
                 After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
             short_description="Heals 1d8+4 when you use \\ability<spell absorption>",
@@ -2833,7 +2833,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=['Healing'],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d10+8 \\glossterm<hit points>.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d8+8 \\glossterm<hit points>.
                 After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
             short_description="Heals 2d8+8 when you use \\ability<spell absorption>",
@@ -2844,7 +2844,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=['Healing'],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d10+12 \\glossterm<hit points>.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d8+12 \\glossterm<hit points>.
                 After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
             short_description="Heals 4d8+12 when you use \\ability<spell absorption>",

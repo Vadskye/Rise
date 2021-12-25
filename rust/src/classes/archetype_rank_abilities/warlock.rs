@@ -73,15 +73,15 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{instantability}{Abyssal Blast}[Instant]
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
-                    \hit The target takes 1d10 \add \glossterm{power} fire damage.
+                    \hit The target takes 1d8 \add \glossterm{power} fire damage.
 
                     \rankline
-                    \rank{2} The damage increases to 2d6.
-                    \rank{3} The damage increases to 2d10.
-                    \rank{4} The damage increases to 4d6.
-                    \rank{5} The damage increases to 4d10.
-                    \rank{6} The damage increases to 5d10.
-                    \rank{7} The damage increases to 7d10.
+                    \rank{2} The damage increases to 1d10.
+                    \rank{3} The damage increases to 2d8.
+                    \rank{4} The damage increases to 2d10.
+                    \rank{5} The damage increases to 4d8.
+                    \rank{6} The damage increases to 4d10.
+                    \rank{7} The damage increases to 6d10.
                 \end{instantability}
             ",
             modifiers: Some(vec![Modifier::Attack(
@@ -171,7 +171,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{durationability}{Banish to the Abyss}[Duration]
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
-                    \hit The target takes 2d6 \add half \glossterm{power} fire damage.
+                    \hit The target takes 1d10 \add half \glossterm{power} fire damage.
                     If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
                     At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
                     After it returns, it becomes immune to being teleported in this way until it takes a \glossterm{short rest}.
@@ -274,7 +274,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     It also provides a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
                     However, the \textit{recover} action causes you to regain half as many hit points as it normally would.
 
-                    \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d6 \add half your \glossterm{magical} \glossterm{power}.
+                    \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d3 \add half your \glossterm{magical} \glossterm{power}.
                     This healing increases by \plus1d for each rank beyond 1.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
 

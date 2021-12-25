@@ -30,7 +30,7 @@ export const terramancy: MysticSphere = {
       name: "Rock Throw",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
@@ -46,7 +46,7 @@ export const terramancy: MysticSphere = {
       name: "Greater Rock Throw",
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 2d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
@@ -62,7 +62,7 @@ export const terramancy: MysticSphere = {
       name: "Supreme Rock Throw",
 
       attack: {
-        hit: `The target takes 6d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 5d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\distrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
@@ -79,7 +79,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + half \\glossterm{power} bludgeoning damage.
+          The target takes 1d10 + half \\glossterm{power} bludgeoning damage.
           In addition, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
@@ -97,7 +97,7 @@ export const terramancy: MysticSphere = {
       name: "Shrapnel Blast",
 
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning and piercing damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning and piercing damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
@@ -137,7 +137,7 @@ export const terramancy: MysticSphere = {
       name: "Earthspike",
 
       attack: {
-        hit: `The target takes 2d8 piercing damage.
+        hit: `The target takes 2d6 piercing damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange that is on a stable surface.
@@ -164,7 +164,7 @@ export const terramancy: MysticSphere = {
         If you fully exit the stone, this spell ends.
 
         If this spell ends before you exit the stone, or if the stone stops being a valid target for the spell (such as if it is broken into pieces), you are forcibly expelled from the stone.
-        When you are forcibly expelled from the stone, you take 4d10 bludgeoning damage and become \\stunned as a \\glossterm{condition}.
+        When you are forcibly expelled from the stone, you take 4d8 bludgeoning damage and become \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
       scaling: {
@@ -200,7 +200,7 @@ export const terramancy: MysticSphere = {
       name: "Fissure",
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
         Each Large or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea within \\medrange that is on a stable surface.
@@ -219,7 +219,7 @@ export const terramancy: MysticSphere = {
       name: "Earthquake",
 
       attack: {
-        hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
+        hit: `Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
         Each Huge or smaller target that takes damage this way is also knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearea radius within \\longrange that is on a stable surface.
@@ -238,10 +238,10 @@ export const terramancy: MysticSphere = {
 
       // losing line of effect compensates for recurring extra damage
       attack: {
-        hit: `The target takes 4d6 bludgeoning damage.
+        hit: `The target takes 2d10 bludgeoning damage.
         If it is Large or smaller and it loses \\glossterm{hit points} from this damage, it is swallowed by the earth as a \\glossterm{condition}.
         While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
-        At the end of each subsequent round, it takes 4d6 bludgeoning damage as the earth grinds it into paste.
+        At the end of each subsequent round, it takes 2d10 bludgeoning damage as the earth grinds it into paste.
         If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
         Special movement abilities such as teleportation can also remove the target from the fissure.`,
         targeting: `
@@ -403,7 +403,7 @@ export const terramancy: MysticSphere = {
       name: "Volcano",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall radius from a point on a stable surface within \\shortrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.
@@ -422,7 +422,7 @@ export const terramancy: MysticSphere = {
       name: "Greater Volcano",
 
       attack: {
-        hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\arealarge radius from a point on a stable surface within \\longrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.

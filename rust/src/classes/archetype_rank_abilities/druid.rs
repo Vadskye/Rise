@@ -488,7 +488,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
                         In addition, you gain a tentacle \glossterm{natural weapon} (see \tref{Natural Weapons}).
-                        This weapon deals 1d10 damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
+                        This weapon deals 1d8 damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
                         It can only be used against a foe you are grappling with.
 
                         \rankline

@@ -240,7 +240,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
-        In addition, you regain 2d6 + half \\glossterm{power} hit points.
+        In addition, you regain 1d10 + half \\glossterm{power} hit points.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       scaling: {
@@ -257,7 +257,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
-        In addition, you regain 4d10 + \\glossterm{power} hit points.
+        In addition, you regain 4d8 + \\glossterm{power} hit points.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 7,

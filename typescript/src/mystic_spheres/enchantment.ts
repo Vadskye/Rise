@@ -646,7 +646,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
+          The target takes 1d6 + half \\glossterm{power} energy \\glossterm{subdual damage}.
           If it takes damage, it is \\glossterm{briefly} \\dazed.
           After this effect ends, the target becomes immune to being dazed in this way until it takes a \\glossterm{short rest}.
         `,
@@ -663,7 +663,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + half \\glossterm{power} energy \\glossterm{subdual damage}.
+          The target takes 1d10 + half \\glossterm{power} energy \\glossterm{subdual damage}.
           If it takes damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
@@ -679,7 +679,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
+          The target takes 4d6 + half \\glossterm{power} energy \\glossterm{subdual damage}.
           If it takes damage, it is \\glossterm{briefly} \\stunned.
         `,
         targeting: `

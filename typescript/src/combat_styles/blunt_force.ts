@@ -26,7 +26,7 @@ export const bluntForce: CombatStyle = {
       name: "Ground Stomp",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
         `,
@@ -41,7 +41,7 @@ export const bluntForce: CombatStyle = {
 
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you that is on the same stable surface as you.
@@ -57,7 +57,7 @@ export const bluntForce: CombatStyle = {
 
       attack: {
         hit: `
-          Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
           Each creature that loses \\glossterm{hit points} from this damage is knocked \\prone.
         `,
         targeting: `
@@ -205,7 +205,7 @@ export const bluntForce: CombatStyle = {
       name: "Leap Slam",
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm{land speed} (see \\pcref{Leap}).
           When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, you emit a small shockwave.
