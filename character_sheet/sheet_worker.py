@@ -283,6 +283,7 @@ def armor_defense():
         [
             "level",
             "dexterity",
+            "constitution",
             "armor_defense_class_bonus",
             "body_armor_defense_value",
             "shield_defense_value",
