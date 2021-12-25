@@ -581,9 +581,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d10+8 \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d10+7 \\glossterm<energy damage>.
             """,
-            short_description="Deals 2d10+8 damage when foes remove conditions",
+            short_description="Deals 2d10+7 damage when foes remove conditions",
         ),
         MagicItem(
             name="Hexbite Staff, Supreme",
@@ -591,9 +591,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d10+12 \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d10+14 \\glossterm<energy damage>.
             """,
-            short_description="Deals 4d10+12 damage when foes remove conditions",
+            short_description="Deals 4d10+14 damage when foes remove conditions",
         ),
     ]
 
@@ -703,9 +703,9 @@ def generate_implements():
             material_type="Staff",
             tags=['Healing'],
             description="""
-                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 1d8+4 \\glossterm{hit points}.
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 1d8+3 \\glossterm{hit points}.
             """,
-            short_description="Steals 1d8+4 hit points from foes",
+            short_description="Steals 1d8+3 hit points from foes",
         ),
         MagicItem(
             name="Vampiric, Greater",
@@ -713,9 +713,9 @@ def generate_implements():
             material_type="Staff",
             tags=['Healing'],
             description="""
-                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 2d8+6 \\glossterm{hit points}.
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 2d8+7 \\glossterm{hit points}.
             """,
-            short_description="Steals 2d8+6 hit points from foes",
+            short_description="Steals 2d8+7 hit points from foes",
         ),
     ]
 
@@ -821,7 +821,7 @@ def generate_implements():
             description="""
                 Whenever you use a \\glossterm<Healing> ability, you gain a +1 \\glossterm<accuracy> bonus during the next round.
 
-                In addition, as a standard action, you can regain 2d10+8 hit points.
+                In addition, as a standard action, you can regain 2d10+7 hit points.
                 This ability has the \\abilitytag{Healing} tag.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
@@ -835,7 +835,7 @@ def generate_implements():
             description="""
                 Whenever you use a \\glossterm<Healing> ability, you gain a +2 \\glossterm<accuracy> bonus during the next round.
 
-                In addition, as a standard action, you can regain 5d10+14 hit points.
+                In addition, as a standard action, you can regain 5d10+20 hit points.
                 This ability has the \\abilitytag{Healing} tag.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
             """,
