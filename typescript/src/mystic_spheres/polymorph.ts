@@ -134,7 +134,7 @@ export const polymorph: MysticSphere = {
       name: 'Piercing Grasp',
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} piercing damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -154,7 +154,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} piercing damage.
+          The target takes 2d6 + \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
@@ -177,7 +177,7 @@ export const polymorph: MysticSphere = {
       functionsLike: {
         name: 'greater piercing grasp',
         exceptThat:
-          'the damage increases to 4d10 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
+          'the damage increases to 4d8 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
       },
       rank: 7,
       scaling: 'damage',
@@ -188,7 +188,7 @@ export const polymorph: MysticSphere = {
       name: 'Baleful Polymorph',
 
       attack: {
-        hit: `The target takes 2d8 physical damage.
+        hit: `The target takes 2d6 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is balefully polymorphed as a \\glossterm{condition}.
         It shrinks by two \\glossterm{size categories} and is \\confused.`,
         targeting: `
@@ -204,7 +204,7 @@ export const polymorph: MysticSphere = {
       name: 'Twist Flesh',
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} physical damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} physical damage.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
@@ -362,7 +362,7 @@ export const polymorph: MysticSphere = {
       name: 'Disintegrate',
 
       attack: {
-        hit: `The target takes 4d10 + \\glossterm{power} physical damage.
+        hit: `The target takes 4d8 + \\glossterm{power} physical damage.
         In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely disintegrated, leaving behind only a pinch of fine dust.
         Its equipment is unaffected.`,
@@ -404,7 +404,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'minor action',
       attack: {
         // AOE dice, no power
-        hit: `Each target takes 2d6 piercing damage.`,
+        hit: `Each target takes 1d10 piercing damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Armor against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
         `,
@@ -423,7 +423,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'minor action',
       attack: {
         // TODO: is this damage correct?
-        hit: `Each target takes 4d6 piercing damage.`,
+        hit: `Each target takes 2d10 piercing damage.`,
         targeting: `
           As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
@@ -480,7 +480,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The target takes 4d6 physical damage.
+        hit: `The target takes 2d10 physical damage.
         If it loses \\glossterm{hit points} from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
         It is \\stunned, and it has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
         It is also unable to speak normally or use verbal or somatic \\glossterm{casting components}.`,
@@ -497,7 +497,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The target regains 2d6 + \\glossterm{power} \\glossterm{hit points}.
+        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 2,
@@ -529,7 +529,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'minor action',
       effect: `
-        At the end of each round, you regain 2d6 \\glossterm{hit points}.
+        At the end of each round, you regain 1d8 \\glossterm{hit points}.
       `,
       rank: 4,
       scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
@@ -586,7 +586,7 @@ export const polymorph: MysticSphere = {
       name: 'Eyebite',
 
       attack: {
-        hit: `The target takes 2d8 physical damage.
+        hit: `The target takes 2d6 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -601,7 +601,7 @@ export const polymorph: MysticSphere = {
       name: 'Organ Failure',
 
       attack: {
-        hit: `The target takes 1d6 physical damage.
+        hit: `The target takes 1d4 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -637,7 +637,7 @@ export const polymorph: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target begins bleeding as a \\glossterm{condition}.
-          At the end of each round, it takes 1d8 physical damage.
+          At the end of each round, it takes 1d6 physical damage.
 
           This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
           The \\glossterm{difficulty value} of the check is equal to 10.
@@ -660,7 +660,7 @@ export const polymorph: MysticSphere = {
           'The effect lasts \\glossterm{briefly}. The target still takes damage during the next round.',
         hit: `
           The target begins bleeding as a \\glossterm{condition}.
-          At the end of each round, it takes 2d10 + half \\glossterm{power} physical damage.
+          At the end of each round, it takes 2d8 + half \\glossterm{power} physical damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against the one living creature within \\medrange.
@@ -789,7 +789,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'minor action',
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} damage of your chosen type.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} damage of your chosen type.`,
         targeting: `
           Choose one of the following damage types: acid, cold, electricity, or fire.
           For the duration of this spell, you can breath that type of energy like a dragon as a standard action.
@@ -896,7 +896,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         Chose one \\glossterm{unattended} object within \\shortrange.
-        The target regains 1d8 + \\glossterm{power} hit points.
+        The target regains 1d6 + \\glossterm{power} hit points.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
       `,
       rank: 1,

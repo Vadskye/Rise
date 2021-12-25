@@ -88,7 +88,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        At the end of each round, each target regains 2d8 \\glossterm{hit points}.
+        At the end of each round, each target regains 1d10 \\glossterm{hit points}.
       `,
       rank: 5,
       scaling: {

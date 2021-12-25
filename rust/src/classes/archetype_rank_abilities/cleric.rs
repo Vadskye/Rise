@@ -389,17 +389,17 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
                     % +1d in exchange for not applying power to self
-                    The target regains 2d6 \glossterm{hit points}.
+                    The target regains 1d10 \glossterm{hit points}.
                     If the target is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
                     After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
                     \rankline
-                    \rank{2} The healing increases to 2d8.
-                    \rank{3} The healing increases to 4d6.
-                    \rank{4} The healing increases to 4d8.
-                    \rank{5} The healing increases to 5d10.
-                    \rank{6} The healing increases to 6d10.
-                    \rank{7} The healing increases to 8d10.
+                    \rank{2} The healing increases to 2d6.
+                    \rank{3} The healing increases to 2d10.
+                    \rank{4} The healing increases to 4d6.
+                    \rank{5} The healing increases to 4d10.
+                    \rank{6} The healing increases to 5d10.
+                    \rank{7} The healing increases to 7d10.
                 \end{instantability}
             ",
             modifiers: None,

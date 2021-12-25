@@ -121,7 +121,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
 
                 \subparhead{Chaos} The effect applies to all attacks, not just \glossterm{strikes}.
                 % TODO: explain how this works on monsters
-                \subparhead{Evil} Whenever a target removes a \glossterm{condition}, it takes 2d8 \add half \glossterm{power} energy damage.
+                \subparhead{Evil} Whenever a target removes a \glossterm{condition}, it takes 2d6 \add half \glossterm{power} energy damage.
                 This damage increases by \plus1d for each rank beyond 4.
                 \subparhead{Good} When a target would lose \glossterm{hit points}, you may lose those hit points instead.
                 The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
@@ -403,16 +403,16 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytag{Healing}, \abilitytag{Magical}
                     \rankline
                     Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
-                    The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
+                    The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
                     After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
                     \rankline
-                    \rank{2} The healing increases to 2d6.
-                    \rank{3} The healing increases to 2d10.
-                    \rank{4} The healing increases to 4d6.
-                    \rank{5} The healing increases to 4d10.
-                    \rank{6} The healing increases to 5d10.
-                    \rank{7} The healing increases to 7d10.
+                    \rank{2} The healing increases to 1d10.
+                    \rank{3} The healing increases to 2d8.
+                    \rank{4} The healing increases to 2d10.
+                    \rank{5} The healing increases to 4d8.
+                    \rank{6} The healing increases to 4d10.
+                    \rank{7} The healing increases to 6d10.
                 \end{instantability}
             ",
             modifiers: None,

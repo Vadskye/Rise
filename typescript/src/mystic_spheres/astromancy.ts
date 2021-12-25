@@ -50,7 +50,7 @@ export const astromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy damage.
+          The target takes 1d8 + \\glossterm{power} energy damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -73,7 +73,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + half \\glossterm{power} energy damage.
+          The target takes 2d6 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately disappears.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After this effect ends, it becomes immune to this effect until it takes a \\glossterm{short rest}.
@@ -97,7 +97,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + half \\glossterm{power} energy damage.
+          The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
@@ -120,7 +120,7 @@ export const astromancy: MysticSphere = {
 
       functionsLike: {
         name: "banishment",
-        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 4d6 + half \\glossterm{power}.",
+        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 2d10 + half \\glossterm{power}.",
       },
       narrative: `
         The balor about to drag your allies into the Abyss disappears with an audible pop.
@@ -181,7 +181,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy damage.
+          The target takes 1d8 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -282,7 +282,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 bludgeoning damage.
+          The target takes 1d10 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
@@ -301,7 +301,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 bludgeoning damage.
+          The target takes 1d6 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
         `,
@@ -325,9 +325,9 @@ export const astromancy: MysticSphere = {
           Double damage, and the burning effect becomes a \\glossterm{condition}.
         `,
         hit: `
-          The target takes 4d8 + half \\glossterm{power} fire damage.
+          The target takes 4d6 + half \\glossterm{power} fire damage.
           If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
-          At the end of each round, it takes 4d8 + half \\glossterm{power} damage.
+          At the end of each round, it takes 4d6 + half \\glossterm{power} damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.
@@ -350,7 +350,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} damage of all types.
+          The target takes 4d8 + \\glossterm{power} damage of all types.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\shortrange.
@@ -369,7 +369,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d6 energy damage.
+          The target takes 2d10 energy damage.
           If it lost \\glossterm{hit points} from this damage, it is \\confused as a condition.
           Otherwise, it is \\stunned instead of confused.
         `,

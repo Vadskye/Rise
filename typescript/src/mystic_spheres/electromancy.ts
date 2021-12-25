@@ -45,7 +45,7 @@ export const electromancy: MysticSphere = {
       name: "Lightning Bolt",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
         `,
@@ -59,7 +59,7 @@ export const electromancy: MysticSphere = {
       name: "Shocking Grasp",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} electricity damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} electricity damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -76,7 +76,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} electricity damage.
+          The target takes 2d6 + \\glossterm{power} electricity damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
@@ -95,7 +95,7 @@ export const electromancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater shocking grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
+        exceptThat: 'the damage increases to 4d8 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
       },
       rank: 7,
       scaling: "damage",
@@ -134,7 +134,7 @@ export const electromancy: MysticSphere = {
       name: "Lightning Storm",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} electricity damage.`,
         targeting: `
         Make an attack vs. Reflex against all \\glossterm{enemies} in a \\areasmall radius from you.
         `,
@@ -148,7 +148,7 @@ export const electromancy: MysticSphere = {
       name: "Greater Lightning Storm",
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -162,7 +162,7 @@ export const electromancy: MysticSphere = {
       name: "Supreme Lightning Storm",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\gargarea radius from you.
         `,
@@ -191,7 +191,7 @@ export const electromancy: MysticSphere = {
       name: "Electromagnetic Bolt",
 
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
           You gain a +2 accuracy bonus against each target that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
@@ -222,8 +222,8 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The primary target takes 4d6 + \\glossterm{power} electricity damage.
-          Each secondary target takes 2d10 + half \\glossterm{power} electricity damage.
+          The primary target takes 2d10 + \\glossterm{power} electricity damage.
+          Each secondary target takes 2d8 + half \\glossterm{power} electricity damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -242,7 +242,7 @@ export const electromancy: MysticSphere = {
       name: "Electric Jolt",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} electricity damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
         `,
@@ -256,7 +256,7 @@ export const electromancy: MysticSphere = {
       name: "Greater Electric Jolt",
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} electricity damage.`,
+        hit: `The target takes 2d10 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\longrange.
         `,
@@ -270,7 +270,7 @@ export const electromancy: MysticSphere = {
       name: "Supreme Electric Jolt",
 
       attack: {
-        hit: `The target takes 6d10 + \\glossterm{power} electricity damage.`,
+        hit: `The target takes 5d10 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\distrange.
         `,
@@ -284,7 +284,7 @@ export const electromancy: MysticSphere = {
       name: "Electroshock",
 
       attack: {
-        hit: `The target takes 1d6 electricity damage.
+        hit: `The target takes 1d4 electricity damage.
         If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -299,7 +299,7 @@ export const electromancy: MysticSphere = {
       name: "Greater Electroshock",
 
       attack: {
-        hit: `The target takes 2d8 electricity damage.
+        hit: `The target takes 2d6 electricity damage.
         If it loses \\glossterm{hit points} from this damage, it is \\confused as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -315,7 +315,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         // +1d from normal AOE due to weird area that probably just hits one person
-        hit: `Each target takes 2d8 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide vertical line within \\longrange.
           If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm{accuracy} with the attack.
@@ -334,7 +334,7 @@ export const electromancy: MysticSphere = {
         // crit: '',
         // +1d from normal AOE due to weird area that probably just hits one person
         hit: `
-          Each target takes 4d10 + half \\glossterm{power} electricity damage.
+          Each target takes 4d8 + half \\glossterm{power} electricity damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft.\\ wide vertical line within \\distrange.
@@ -371,7 +371,7 @@ export const electromancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // +1d for attune + every other round
-        hit: `Each target takes 2d8 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           For the duration of this spell, you can breathe electricity like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
@@ -390,7 +390,7 @@ export const electromancy: MysticSphere = {
       functionsLike: {
         name: 'lightning breath',
         exceptThat: `
-          the damage increases to 5d10 + half \\glossterm{power}.
+          the damage increases to 4d10 + half \\glossterm{power}.
           In addition, the area increases to a \\hugearea cone.
         `,
       },
@@ -403,7 +403,7 @@ export const electromancy: MysticSphere = {
       name: "Ball Lightning",
 
       attack: {
-        hit: `Each target takes 2d10 electricity damage.`,
+        hit: `Each target takes 2d8 electricity damage.`,
         targeting: `
           You create a Medium size ball of lightning in one space within \\longrange.
           The ball of lightning does not occupy space or block movement, and can move through creatures (but not solid objects) freely.
@@ -423,7 +423,7 @@ export const electromancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // AOE dice, but no power
-        hit: `Each target takes 2d6 electricity damage.`,
+        hit: `Each target takes 1d10 electricity damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each creature that attacked you using a free hand or a metal melee weapon during that phase.
         `,
@@ -439,7 +439,7 @@ export const electromancy: MysticSphere = {
       attack: {
         // +2d from level, add trivial extra benefit for fun
         hit: `
-          The target takes 4d10 + \\glossterm{power} electricity damage.
+          The target takes 4d8 + \\glossterm{power} electricity damage.
           In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         `,
         targeting: `
@@ -459,7 +459,7 @@ export const electromancy: MysticSphere = {
         crit: `Each bolt deals double damage.`,
         hit: `As a \\glossterm{condition}, the target attracts lightning.
           As a \\glossterm{minor action}, you can call a bolt of lightning to strike the target.
-          When you do, the target takes 2d8 electricity damage.
+          When you do, the target takes 2d6 electricity damage.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\longrange.
@@ -474,7 +474,7 @@ export const electromancy: MysticSphere = {
       name: "Thunderdash",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           Both your departure and arrival with this spell sound like a clap of thunder.
@@ -490,7 +490,7 @@ export const electromancy: MysticSphere = {
       name: "Greater Thunderdash",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
         You teleport into an unoccupied destination on a stable surface within \\distrange.
         Both your departure and arrival with this spell sound like a clap of thunder.
@@ -522,7 +522,7 @@ export const electromancy: MysticSphere = {
       name: "Dazing Shock",
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} electricity damage.
+          The target takes 1d10 + \\glossterm{power} electricity damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
@@ -538,7 +538,7 @@ export const electromancy: MysticSphere = {
       name: "Stunning Shock",
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} electricity damage.
+          The target takes 4d6 + \\glossterm{power} electricity damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
         `,
         targeting: `

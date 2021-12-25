@@ -31,7 +31,7 @@ export const fabrication: MysticSphere = {
       name: "Mystic Arrow",
 
       attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} piercing damage.`,
         targeting: `
         Make an attack vs. Armor against anything within \\longrange.
         `,
@@ -46,7 +46,7 @@ export const fabrication: MysticSphere = {
       name: "Mystic Artillery",
 
       attack: {
-        hit: `The target takes 4d8 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes 4d6 + \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor with a +1 accuracy bonus against anything within \\extrange.
         `,
@@ -61,7 +61,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} piercing damage.
+          The target takes 2d8 + \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is knocked \\prone.
         `,
         targeting: `
@@ -78,7 +78,7 @@ export const fabrication: MysticSphere = {
       name: "Bladestorm",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} slashing damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} slashing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
@@ -94,7 +94,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: "bladestorm",
-        exceptThat: "the damage increases to 4d10 + \\glossterm{power}.",
+        exceptThat: "the damage increases to 4d8 + \\glossterm{power}.",
       },
       rank: 7,
       scaling: "damage",
@@ -106,7 +106,7 @@ export const fabrication: MysticSphere = {
       name: "Missile Storm",
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -121,7 +121,7 @@ export const fabrication: MysticSphere = {
       name: "Greater Missile Storm",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
@@ -136,7 +136,7 @@ export const fabrication: MysticSphere = {
       name: "Hail of Arrows",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea radius within \\medrange.
         `,
@@ -152,7 +152,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: "hail of arrows",
-        exceptThat: "the damage increases to 4d10 + \\glossterm{power}.",
+        exceptThat: "the damage increases to 4d8 + \\glossterm{power}.",
       },
       rank: 7,
       scaling: "damage",
@@ -164,7 +164,7 @@ export const fabrication: MysticSphere = {
       name: "Blade Barrier",
 
       attack: {
-        hit: `The target takes 1d10 + half \\glossterm{power} slashing damage.`,
+        hit: `The target takes 1d8 + half \\glossterm{power} slashing damage.`,
         targeting: `
           A wall of whirling blades appears within \\medrange.
           The wall takes the form of a 15 ft.\\ high, \\medarea wall.
@@ -183,7 +183,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the damage increases to 2d10 + half \\glossterm{power}.
+          the damage increases to 2d8 + half \\glossterm{power}.
           In addition, the area increases to a 20 ft.\\ high, \\largearea wall.
         `,
         name: 'blade barrier',
@@ -197,7 +197,7 @@ export const fabrication: MysticSphere = {
       name: "Blade Perimeter",
 
       attack: {
-        hit: `The target takes 2d6 + half \\glossterm{power} slashing damage.`,
+        hit: `The target takes 1d10 + half \\glossterm{power} slashing damage.`,
         targeting: `
         A wall of whirling blades appears within \\medrange.
         The wall takes the form of a 15 ft.\\ high, \\smallarea radius wall.
@@ -215,7 +215,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the damage is increased to 4d6 plus half your \\glossterm{power}.
+          the damage is increased to 2d10 plus half your \\glossterm{power}.
           % TODO: Clarify interaction with solid obstacles that block contraction?
           In addition, the wall's radius shrinks by 5 feet at the end of each round, dealing damage to everything it moves through.
           After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
@@ -283,7 +283,7 @@ export const fabrication: MysticSphere = {
       name: "Meteor",
 
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
           You create a meteor in midair within \\medrange that falls to the ground, crushing foes in its path.
           The meteor takes up a \\smallarea radius, and must be created in unoccupied space.
@@ -322,7 +322,7 @@ export const fabrication: MysticSphere = {
       name: "Caltrops",
 
       attack: {
-        hit: `The target takes 1d8 + half \\glossterm{power} piercing damage.`,
+        hit: `The target takes 1d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
           Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
@@ -342,7 +342,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'caltrops',
-        exceptThat: "the damage increases to 4d6 + \\glossterm{power}.",
+        exceptThat: "the damage increases to 2d10 + \\glossterm{power}.",
       },
       rank: 5,
       scaling: "damage",
@@ -378,7 +378,7 @@ export const fabrication: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        hit: `The target takes 2d6 piercing damage.`,
+        hit: `The target takes 1d10 piercing damage.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
@@ -398,7 +398,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         name: "daggerswarm",
         exceptThat: `
-          the damage increases to 4d8, and the range increases to \\medrange.
+          the damage increases to 4d6, and the range increases to \\medrange.
         `,
       },
       rank: 7,
@@ -410,7 +410,7 @@ export const fabrication: MysticSphere = {
       name: "Daggercloud",
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
           A swarm of daggers appears in a \\tinyarea radius \\glossterm{zone} within \\medrange.
           At the end of each round, make an attack vs. Armor with a +2 accuracy bonus against everything in the area.
