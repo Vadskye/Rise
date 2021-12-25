@@ -52,7 +52,7 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         At the end of the next round, you become infused with divine power.
-        You remove one \\glossterm{brief} effect or \\glossterm{condition} affecting you and heal 2d6 \\glossterm{hit points}.
+        You remove one \\glossterm{brief} effect or \\glossterm{condition} affecting you and heal 1d10 \\glossterm{hit points}.
         This cannot remove an effect applied during that round.
         In addition, you gain a +4 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
@@ -121,7 +121,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy damage.
+          The target takes 1d8 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -137,7 +137,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d6 + \\glossterm{power} energy damage.
+          The target takes 2d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.
@@ -153,7 +153,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 6d10 + \\glossterm{power} energy damage.
+          The target takes 5d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\distrange.
@@ -170,7 +170,7 @@ export const channelDivinity: MysticSphere = {
       // +1 level for situational +2 accuracy
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} energy damage.
+          The target takes 1d8 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
           After it stops being stunned, it becomes immune to being stunned in this way until it takes a \\glossterm{short rest}.
         `,
@@ -190,7 +190,7 @@ export const channelDivinity: MysticSphere = {
       // +1 level for situational +2 accuracy
       attack: {
         hit: `
-          The target takes 2d10 + half \\glossterm{power} energy damage.
+          The target takes 2d8 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
@@ -272,7 +272,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} energy damage.
+          Each target takes 1d8 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
@@ -288,7 +288,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes 2d6 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -304,7 +304,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 4d6 + half \\glossterm{power} energy damage.
+          Each target takes 2d10 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
@@ -343,7 +343,7 @@ export const channelDivinity: MysticSphere = {
       rank: 3,
       scaling: {
         5: `
-          You also gain a +2 \\glossterm{magic bonus} to Strength-based checks, and you gain a +2 \\glossterm{magic bonus} to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
+          You also gain a +1 \\glossterm{magic bonus} to Strength-based checks, and you gain a +1 \\glossterm{magic bonus} to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
         `,
         7: `
           You can increase your size category by up to two size categories.
@@ -445,7 +445,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + half \\glossterm{power} energy damage.
+          The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
@@ -464,7 +464,7 @@ export const channelDivinity: MysticSphere = {
 
       functionsLike: {
         name: "banish anathema",
-        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 4d6 + half \\glossterm{power}.",
+        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 2d10 + half \\glossterm{power}.",
       },
       rank: 6,
       scaling: "damage",

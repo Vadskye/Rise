@@ -464,7 +464,7 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} energy damage.
+          The target takes 1d8 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
           After it stops being slowed, it is immune to being slowed in this way until it takes a \\glossterm{short rest}.
         `,
@@ -489,7 +489,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes 2d6 + half \\glossterm{power} energy damage.
+          The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} frozen in time.
           It becomes completely immune to all damage, attacks, and effects of any kind.
           In addition, it is \\unconscious and cannot act in any way.
@@ -509,7 +509,7 @@ export const chronomancy: MysticSphere = {
 
       functionsLike: {
         name: "timeseal",
-        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 4d6 + half \\glossterm{power}.",
+        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 2d10 + half \\glossterm{power}.",
       },
       rank: 6,
       scaling: "damage",

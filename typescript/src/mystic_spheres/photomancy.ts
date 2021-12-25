@@ -173,7 +173,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + half \\glossterm{power} energy damage and is \\glossterm{briefly} \\dazzled.
+          The target takes 1d10 + half \\glossterm{power} energy damage and is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -211,7 +211,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} energy damage.
+          The target takes 1d6 + half \\glossterm{power} energy damage.
           In addition, it is \\glossterm{briefly} \\dazzled.
           After the creature stops being dazzled, it becomes immune to being dazzled in this way until it takes a \\glossterm{short rest}.
         `,
@@ -246,7 +246,7 @@ export const photomancy: MysticSphere = {
       attack: {
         crit: `Double damage, and the target also suffers consequences as if it had been struck by a beam of natural sunlight.`,
         hit: `
-          The target takes 2d10 + half \\glossterm{power} energy damage.
+          The target takes 2d8 + half \\glossterm{power} energy damage.
           In addition, it is \\glossterm{briefly} \\dazzled.
           If it lost \\glossterm{hit points} from this damage, it is also briefly \\dazed.
         `,
@@ -306,7 +306,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 2d10 + half \\glossterm{power} energy damage.
+          Each target takes 2d8 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Choose up to five \\tinyarea radius areas within \\longrange of you.
@@ -446,7 +446,7 @@ export const photomancy: MysticSphere = {
         Two illusory duplicates appear around you that mirror your every move.
         The duplicates shift chaotically in your space, making it difficult to identify your real location.
 
-        All \\glossterm{targeted} attacks against you have a 50\\% miss chance.
+        All \\glossterm{targeted} attacks against you have a 50\\% \\glossterm{miss chance}.
         Like other miss chances, this miss chance is rolled before determining whether the attack beats your defenses.
         When an attack misses in this way, it affects an image, destroying it.
         When the last image is destroyed, this ability provides no further benefit.
@@ -521,7 +521,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + half \\glossterm{power} energy damage.
+          The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects, chosen randomly: \\dazzled as a \\glossterm{condition}, \\slowed as a \\glossterm{condition}, \\glossterm{briefly} \\frightened by you, or briefly \\stunned.
         `,
         targeting: `
@@ -537,7 +537,7 @@ export const photomancy: MysticSphere = {
       name: "Greater Chromatic Orb",
 
       functionsLike: {
-        exceptThat: "the damage increases to 4d8 + half \\glossterm{power}, and the effect becomes a \\glossterm{condition}.",
+        exceptThat: "the damage increases to 4d6 + half \\glossterm{power}, and the effect becomes a \\glossterm{condition}.",
         name: "chromatic orb",
       },
       rank: 7,
@@ -549,7 +549,7 @@ export const photomancy: MysticSphere = {
       name: "Lightbeam Dash",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           A blast of \\glossterm{brilliant illumination} fills a 60 foot radius around both your starting location and your ending location.
@@ -565,7 +565,7 @@ export const photomancy: MysticSphere = {
       name: "Greater Lightbeam Dash",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           Both your departure and arrival with this spell sound like a clap of thunder.

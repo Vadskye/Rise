@@ -302,7 +302,7 @@ You cannot gain the same feat twice.
     \begin{feat}{Blindfighter}{Combat}
         \featpre Base Perception 2.
 
-        \ff[1]{Blind Awareness} When you make an attack with a miss chance, you can roll the miss chance twice and take the better result.
+        \ff[1]{Blind Awareness} When you make an attack with a \glossterm{miss chance}, you can roll the miss chance twice and take the better result.
         In addition, you are not \partiallyunaware against foes if you know their location.
 
         \ff[3]{Blindsense} You gain \trait{blindsense} with a 60 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
@@ -433,7 +433,7 @@ You cannot gain the same feat twice.
         In addition, if you have the \textit{smite} paladin ability and your \textit{devoted alignment} is good, you gain a \plus2 bonus to \glossterm{power} with the \textit{holy smite} ability.
         \begin{freeability}{Holy Smite}[Magical]
             Make a \glossterm{strike} with a \plus2 damage bonus.
-            Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+            Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
             If your target is good, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a good creature.
 
             \rankline
@@ -443,7 +443,7 @@ You cannot gain the same feat twice.
         \end{freeability}
 
         \ff[3]{Healing Light}[Magical] When you use the \textit{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \medarea radius from you, and \glossterm{shadowy illumination} in twice that radius.
-        Each \glossterm{ally} in the radius of brilliant illumination regains 1d6 \glossterm{hit points}.
+        Each \glossterm{ally} in the radius of brilliant illumination regains 1d4 \glossterm{hit points}.
         This healing increases by \plus1d at 6th level and every 3 levels thereafter.
 
         \ff[6]{Angel Wings} You gain feathery wings that sprout from your back.
@@ -456,7 +456,7 @@ You cannot gain the same feat twice.
         \ff[12]{Angelic Flight}[Magical] You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 30 feet (see \pcref{Flying}).
         At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
-        \ff[15]{Greater Healing Light} You add half your magical \glossterm{power} to the healing from your \textit{healing light} ability.
+        \ff[15]{Greater Healing Light} You add half your \glossterm{power} to the healing from your \textit{healing light} ability.
 
         \ff[18]{Greater Celestial Soul} The bonus from your \textit{celestial soul} ability increases to \plus18.
 
@@ -474,42 +474,44 @@ You cannot gain the same feat twice.
         You must track which choices you made for archetypes that you lose access to in this way, such as which spells and maneuvers you learned.
         When you regain access to that archetype, you must make the same choices.
 
-        \ff[3]{Versatile Disguise} Whenever you use the \textit{disguise creature} and \textit{emulate creature} abilities on yourself, you may simultaneously create two different disguises.
-        This takes twice as long as creating a single disguise, and you take a \minus2 penalty to the Disguise check.
-        You can change your appearance between the two chosen disguises as a \glossterm{minor action}.
-
-        \ff[6]{Adaptive Specialty} Whenever you finish a \glossterm{short rest}, you may choose an effect from the list below.
+        \ff[3]{Adaptive Specialty} Whenever you finish a \glossterm{short rest}, you may choose an effect from the list below.
         Each effect lasts until you take a short rest.
         \begin{itemize}
-            \item Martial: You gain a \plus1 bonus to Armor defense and a \plus2 bonus to your \glossterm{mundane} \glossterm{power}.
-            \item Mystic: You gain a \plus2 bonus to Mental defense and a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
-            \item Primal: You gain a \plus2 bonus to Fortitude defense and \plus1 bonus to your \glossterm{fatigue tolerance}.
+            \item Martial: You gain a \plus1 bonus to your Armor defense.
+            \item Mystic: You gain a \plus2 bonus to your Mental defense.
+            \item Primal: You gain a \plus2 bonus to your Fortitude defense.
             \item Skilled: You gain a \plus1 bonus to all skills.
         \end{itemize}
 
-        \ff[9]{Instant Adaptation} As a standard action, you can change your choice of \textit{adaptive archetype} and \textit{adaptive specialty}.
+        \ff[6]{Versatile Disguise} Whenever you use the \textit{disguise creature} and \textit{emulate creature} abilities on yourself, you may simultaneously create two different disguises.
+        This takes twice as long as creating a single disguise, and you take a \minus2 penalty to the Disguise check.
+        You can change your appearance between the two chosen disguises as a \glossterm{minor action}.
+
+        \ff[9]{Greater Adaptive Specialty} The effects of your \textit{adaptive specialty} ability improve, as described below.
+        \begin{itemize}
+            \item Martial: You become proficient with an additional \glossterm{weapon group} or armor \glossterm{usage class} of your choice.
+                You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
+            \item Mystic: The defense bonus increases to \plus3.
+            \item Primal: You gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
+            \item Skilled: The skill bonus increases to \plus2.
+        \end{itemize}
+
+        \ff[12]{Instant Adaptation} As a standard action, you can change your choice of \textit{adaptive archetype} and \textit{adaptive specialty}.
         When you do, you increase your \glossterm{fatigue level} by two.
 
-        \ff[12]{Greater Adaptive Specialty} The effects of your \textit{adaptive specialty} ability improve, as described below.
+        \ff[15]{Supreme Adaptive Specialty} The effects of your \textit{adaptive specialty} ability improve, as described below.
         \begin{itemize}
-            \item Martial: The power bonus increases to \plus4.
-            \item Mystic: The defense bonus increases to \plus3, and the power bonus increases to \plus4.
+            \item Martial: The defense bonus increases to \plus2.
+            \item Mystic: You gain an additional \glossterm{attunement point}.
+                You can only use this attunement point to attune to spells that you cast on yourself.
             \item Primal: The defense bonus increases to \plus3, and the fatigue tolerance bonus increases to \plus2.
-            \item Skilled: The bonus increases to \plus2.
+            \item Skilled: The skill bonus increases to \plus3.
         \end{itemize}
 
-        \ff[15]{Greater Instant Adaptation} When you use your \textit{instant adaptation} ability,
+        \ff[18]{Greater Instant Adaptation} When you use your \textit{instant adaptation} ability,
         you only increase your \glossterm{fatigue level} by one.
 
-        \ff[15]{Greater Versatile Disguise} When you use your \textit{versatile disguise} ability, the time required to create the disguise is not increased, and the penalty to the Disguise check is removed.
-
-        \ff[18]{Supreme Adaptive Specialty} The effects of your \textit{adaptive specialty} ability improve, as described below.
-        \begin{itemize}
-            \item Martial: The defense bonus increases to \plus2, and the power bonus increases to \plus8.
-            \item Mystic: The defense bonus increases to \plus4, and the power bonus increases to \plus8.
-            \item Primal: The defense bonus increases to \plus4, and the fatigue tolerance bonus increases to \plus3.
-            \item Skilled: The bonus increases to \plus3.
-        \end{itemize}
+        \ff[18]{Greater Versatile Disguise} When you use your \textit{versatile disguise} ability, the time required to create the disguise is not increased, and the penalty to the Disguise check is removed.
 
         \ff[21]{Supreme Adaptive Archetype} Instead of choosing a single archetype to activate with your \textit{adaptive archetype}, you may choose a blend of two archetypes simultaneously.
         First, choose two archetypes to combine.
@@ -766,21 +768,21 @@ You cannot gain the same feat twice.
             Make an attack vs. Reflex against everything in the area defined by the type of dragon from your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
             You may use your Constitution in place of your Strength to determine your \glossterm{power} with this ability.
             After you use this ability, you \glossterm{briefly} cannot use it again.
-            \hit Each target takes damage equal to 1d10 plus half your \glossterm{power}.
+            \hit Each target takes damage equal to 1d8 plus half your \glossterm{power}.
             The damage type is defined by your \textit{draconic ancestry} ability.
 
             \rankline
-            \featlevel{6} The damage increases to 2d6.
+            \featlevel{6} The damage increases to 1d10.
                 In addition, the area affected by your breath weapon increases.
                 A line breath weapon becomes a \arealarge, 5 ft.\ wide line.
                 A cone breath weapon becomes a \areamed cone.
-            \featlevel{9} The damage increases to 2d8.
-            \featlevel{12} The damage increases to 2d10.
+            \featlevel{9} The damage increases to 2d6.
+            \featlevel{12} The damage increases to 2d8.
                 In addition, the area affected by your breath weapon increases.
                 A line breath weapon becomes a \areahuge, 10 ft.\ wide line.
                 A cone breath weapon becomes a \arealarge cone.
-            \featlevel{15} The damage increases to 4d6.
-            \featlevel{18} The damage increases to 4d8.
+            \featlevel{15} The damage increases to 2d10.
+            \featlevel{18} The damage increases to 4d6.
                 In addition, the area affected by your breath weapon increases.
                 A line breath weapon becomes a \areagarg, 15 ft.\ wide line.
                 A cone breath weapon becomes a \areahuge cone.
@@ -895,16 +897,16 @@ You cannot gain the same feat twice.
         \begin{instantability}{Sudden Entropy}[Instant]
             \rankline
             Make an attack vs. Mental against one creature or object within \medrange.
-            \hit The target takes 1d10 \add \glossterm{power} damage.
+            \hit The target takes 1d8 \add \glossterm{power} damage.
             The damage is of of a random damage type from among the following options: physical damage, energy damage, or all damage types simultaneously.
 
             \rankline
-            \featlevel{6} The damage increases to 2d6.
-            \featlevel{9} The damage increases to 2d10.
-            \featlevel{12} The damage increases to 4d6.
-            \featlevel{15} The damage increases to 4d10.
-            \featlevel{18} The damage increases to 5d10.
-            \featlevel{21} The damage increases to 7d10.
+            \featlevel{6} The damage increases to 1d10.
+            \featlevel{9} The damage increases to 2d8.
+            \featlevel{12} The damage increases to 2d10.
+            \featlevel{15} The damage increases to 4d8.
+            \featlevel{18} The damage increases to 4d10.
+            \featlevel{21} The damage increases to 6d10.
         \end{instantability}
 
         \ff[6]{Improbable Vulnerability} Whenever you make an attack against an \glossterm{enemy} that is \trait{immune} or \trait{impervious} to some aspect of the attack, you have a 10\% chance to affect them as if they were not immune or impervious to the attack.
@@ -914,7 +916,7 @@ You cannot gain the same feat twice.
 
         \ff[9]{Greater Entropic Defense} You can use your \textit{entropic defense} ability whenever you suffer a critical hit from any attack, not just a strike.
 
-        \ff[12]{Friend of Chaos} Whenever you roll for a random effect, such as a miss chance or a sorcerer's \textit{wild magic} ability, you may roll twice and keep whichever result you prefer.
+        \ff[12]{Friend of Chaos} Whenever you roll for a random effect, such as a \glossterm{miss chance} or a sorcerer's \textit{wild magic} ability, you may roll twice and keep whichever result you prefer.
 
         \ff[15]{Greater Improbable Vulnerability} The chance from your \textit{improbable vulnerability} ability increases to 20\%.
 
@@ -1017,7 +1019,7 @@ You cannot gain the same feat twice.
             \rankline
             Make a \glossterm{strike}.
             The attack is made against each target's Reflex defense instead of its Armor defense.
-            You may use the higher of your \glossterm{magical} power and your \glossterm{mundane} power to determine your damage with this ability.
+            You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \pcref{Attribute Damage Increments}).
             Each creature that loses \glossterm{hit points} from this strike is \glossterm{briefly} \slowed.
             After it stops being slowed, it becomes immune to being slowed in this way until it takes a short rest.
 
@@ -1043,7 +1045,7 @@ You cannot gain the same feat twice.
             For the duration of the movement, you can move through creatures and objects as if you were \glossterm{incorporeal}, but you do not gain the defensive benefits of being incorporeal during this phase.
             In addition, you can make a melee \glossterm{strike}.
             Your \glossterm{power} with the strike is halved.
-            You may use the higher of your \glossterm{magical} power and your \glossterm{mundane} power to determine your damage with this ability.
+            You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \pcref{Attribute Damage Increments}).
             The strike targets any number of creatures and objects within your \glossterm{reach} at any point during your movement.
 
             \rankline
@@ -1164,7 +1166,7 @@ You cannot gain the same feat twice.
 
         \ff[6]{Controlled Self} You gain a \plus10 bonus to notice \abilitytag{Subtle} abilities that affect you.
 
-        \ff[6]{Unclouded Mind} You are immune to being \dazed and \stunned.
+        \ff[6]{Unclouded Mind} You are immune to being \dazed.
 
         \ff[9]{Greater Mental Discipline} The defense bonus from your \textit{mental discipline} ability increases to \plus3.
 
@@ -1173,7 +1175,7 @@ You cannot gain the same feat twice.
 
         \ff[15]{Greater Controlled Self} The bonus from your \textit{controlled self} ability increases to \plus20.
 
-        \ff[15]{Greater Unclouded Mind} You are immune to being \confused.
+        \ff[15]{Greater Unclouded Mind} You are immune to being \stunned.
 
         \ff[18]{Supreme Mental Discipline} The defense bonus from your \textit{mental discipline} ability increases to \plus4.
         In addition, the fatigue tolerance bonus increases to \plus2.
@@ -1185,16 +1187,16 @@ You cannot gain the same feat twice.
         \featpre Base Strength of 2.
 
         \ff[1]{Brute Force} You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{shove} and \textit{overrun} abilities (see \pcref{Shove}, and \pcref{Overrun}).
-        In addition, you gain a \plus1 bonus to your \glossterm{mundane} \glossterm{power}.
+        In addition, you gain a \plus1 bonus to your \glossterm{power}.
 
-        \ff[3]{Wall Slam} Whenever you \glossterm{push} a creature with a \glossterm{mundane} ability and the creature's movement is interrupted by a solid object, the object and creature both take bludgeoning damage equal to 1d10 plus half your \glossterm{power}.
+        \ff[3]{Wall Slam} Whenever you \glossterm{push} a creature with a \glossterm{mundane} ability and the creature's movement is interrupted by a solid object, the object and creature both take bludgeoning damage equal to 1d8 plus half your \glossterm{power}.
         This damage is not doubled when you get a critical hit with the ability that caused the push.
         Any individual creature or object cannot take damage in this way more than once per round.
         This damage increases by \plus1d at 6th level and every 3 levels thereafter.
 
         \ff[6]{Trample} You can use the \textit{trample} ability as a standard action.
         This ability functions like the \textit{overrun} ability, except that it does not cause you to increase your \glossterm{fatigue level} and creatures may not choose to avoid you.
-        In addition, if you move through a creature's space, it takes bludgeoning damage equal to 1d10 plus half your \glossterm{power}.
+        In addition, if you move through a creature's space, it takes bludgeoning damage equal to 1d8 plus half your \glossterm{power}.
         This damage is doubled when you get a critical hit on the trample attack.
         This damage increases by \plus1d at 9th level and every 3 levels thereafter.
 
@@ -1376,7 +1378,7 @@ You cannot gain the same feat twice.
                 If you choose this ability multiple times, its effects stack.
         \end{itemize}
 
-        \ff[6]{Martial Power} You gain a \plus2 bonus to your \glossterm{mundane} \glossterm{power}.
+        \ff[6]{Martial Power} You gain a \plus2 bonus to your \glossterm{power}.
 
         \ff[9]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
 
@@ -1400,16 +1402,16 @@ You cannot gain the same feat twice.
             \spelltwocol{Instant}{\abilitytag{Healing}}
             \rankline
             Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
-            The target regains 2d6 \add \glossterm{power} \glossterm{hit points}.
+            The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
             After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
             \rankline
-            \featlevel{6} The healing increases to 2d8.
-            \featlevel{9} The healing increases to 4d6.
-            \featlevel{12} The healing increases to 4d8.
-            \featlevel{15} The healing increases to 5d10.
-            \featlevel{18} The healing increases to 6d10.
-            \featlevel{21} The healing increases to 8d10.
+            \featlevel{6} The healing increases to 2d6.
+            \featlevel{9} The healing increases to 2d10.
+            \featlevel{12} The healing increases to 4d6.
+            \featlevel{15} The healing increases to 4d10.
+            \featlevel{18} The healing increases to 5d10.
+            \featlevel{21} The healing increases to 7d10.
         \end{instantability}
 
         \ff[6]{Purging Touch} You can use the \textit{purging touch} ability as a standard action.
@@ -1445,7 +1447,7 @@ You cannot gain the same feat twice.
 
         \ff[3]{Hardened Mind} You gain a \plus2 bonus to Mental defense.
 
-        \ff[6]{Potent Mind} You gain a \plus2 bonus to \glossterm{magical} \glossterm{power}.
+        \ff[6]{Potent Mind} You gain a \plus2 bonus to \glossterm{power}.
 
         \ff[9]{Fractured Mind} Once per round, you can sustain an ability with the \abilitytag{Sustain} (minor) tag as a \glossterm{free action}.
 
@@ -1550,7 +1552,7 @@ You cannot gain the same feat twice.
         \ff[1]{Imbued Shot} You can use the \textit{imbued shot} ability as a standard action.
         \begin{freeability}{Imbued Shot}[\glossterm{Magical}]
             Make a ranged \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} using a \glossterm{projectile weapon} you wield.
-            Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+            Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
 
             \rankline
             \featlevel{6} The accuracy bonus increases to \plus2.
@@ -1580,7 +1582,7 @@ You cannot gain the same feat twice.
         \ff[9]{Phasing Projectiles}[\glossterm{Magical}] When attacking with projectiles, you can ignore all physical obstacles in single one-foot span.
         This can allow you to fire projectiles through creatures or solid walls, though it does not grant you the ability to see through a wall.
 
-        \ff[12]{Greater Guided Projectiles} Your attacks with projectiles ignore \glossterm{concealment}, and you can roll twice for miss chances with projectile attacks (such as when attacking creatures you cannot see).
+        \ff[12]{Greater Guided Projectiles} Your attacks with projectiles ignore \glossterm{concealment}, and you can roll twice for \glossterm{miss chances} with projectile attacks (such as when attacking creatures you cannot see).
 
         \ff[15]{Greater Phasing Projectiles}[\glossterm{Magical}] Your \textit{phasing projectiles} ability improves, allowing you to ignore obstacles in up to five one-foot spans.
         The spans can be contiguous or independent, which can allow you to ignore a single obstacle up to five feet deep.
@@ -1787,7 +1789,7 @@ You cannot gain the same feat twice.
 
         \ff[3]{Studious Learning} You gain a \plus2 bonus to all Knowledge skills.
 
-        \ff[6]{Study of Magic} You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+        \ff[6]{Study of Magic} You gain a \plus2 bonus to your \glossterm{power}.
 
         \ff[9]{Expanded Spellbook} You can choose up to five spells to be in your spellbook instead of only three.
 
@@ -1832,17 +1834,18 @@ You cannot gain the same feat twice.
         \begin{instantability}{Regenerative Recovery}
             \spelltwocol{Instant}{\abilitytag{Healing}}
             \rankline
-            You must use your Constitution in place of your Strength to determine your \glossterm{power} with this ability.
-            You regain 2d6 \add \glossterm{power} \glossterm{hit points}.
+            You regain 1d10 \add \glossterm{power} \glossterm{hit points}.
+            Unlike normal, your Strength does not modify this dice pool (see \pcref{Dice Bonuses From Attributes}).
+            Instead, you gain a \plus1d bonus to the healing for every 2 Constitution you have.
             After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
             \rankline
-            \featlevel{6} The healing increases to 2d8.
-            \featlevel{9} The healing increases to 4d6.
-            \featlevel{12} The healing increases to 4d8.
-            \featlevel{15} The healing increases to 5d10.
-            \featlevel{18} The healing increases to 6d10.
-            \featlevel{21} The healing increases to 8d10.
+            \featlevel{6} The healing increases to 2d6.
+            \featlevel{9} The healing increases to 2d10.
+            \featlevel{12} The healing increases to 4d6.
+            \featlevel{15} The healing increases to 4d10.
+            \featlevel{18} The healing increases to 5d10.
+            \featlevel{21} The healing increases to 7d10.
         \end{instantability}
 
         \ff[6]{Regenerative Rest} When you take a \glossterm{short rest}, you can remove any number of \glossterm{vital wounds} affecting you.
@@ -2010,7 +2013,7 @@ You cannot gain the same feat twice.
             \abilitytag{Magical}
             \rankline
             Make a melee \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
-            Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+            Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
 
             \rankline
             \featlevel{6} The accuracy bonus increases to \plus2.
@@ -2378,7 +2381,7 @@ You cannot gain the same feat twice.
 
         \ff[3]{Greater Fabricate Trinket} The maximum size of the trinket you can create with your \textit{fabricate trinket} cantrip increases by one size category.
         You can cast it with the \abilitytag{Sustain} (minor) tag instead of the \abilitytag{Attune} (self) tag.
-        In addition, you can use your \glossterm{magical} \glossterm{power} in place of your Craft skill to create items with spells from the \sphere{Fabrication} mystic sphere.
+        In addition, you can use your \glossterm{power} in place of your Craft skill to create items with spells from the \sphere{Fabrication} mystic sphere.
 
         \ff[6]{Greater Forge} You learn the \spell{forge} spell from the Fabrication mystic sphere.
         In addition, you can cast that spell with the \abilitytag{Sustain} (minor) tag instead of the \glossterm{Attune} (self) tag.
@@ -2566,7 +2569,7 @@ You cannot gain the same feat twice.
         \ff[3]{Telekinetic Strike} You can use the \textit{telekinetic strike} ability as a standard action.
         \begin{freeability}{Telekinetic Strike}[Magical]
             Make a \glossterm{strike} with a weapon you are controlling using the \spell{distant hand} cantrip.
-            Because this is a \glossterm{magical} ability, you use your \glossterm{magical} \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+            Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
 
             \rankline
             \featlevel{9} You gain a \plus1 accuracy bonus with the strike.
@@ -2621,9 +2624,7 @@ You cannot gain the same feat twice.
         \ff[1]{Spell} You learn a spell from the \sphere{Thaumaturgy} \glossterm{mystic sphere}.
         When you gain access to new spell ranks, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Mystic Power} You gain a \plus2 bonus to \glossterm{magical} \glossterm{power}.
-
-        \ff[6]{Counterspell} You can use the \textit{counterspell} ability as a standard action.
+        \ff[3]{Counterspell} You can use the \textit{counterspell} ability as a standard action.
         \begin{freeability}{Counterspell}[\abilitytag{Swift}]
             Choose a creature within \rngmed range of you.
             If the target is casting a spell or begins casting a spell this round, you can attempt to counter the spell.
@@ -2638,6 +2639,8 @@ You cannot gain the same feat twice.
             \featlevel{18} You may target an additional creature within range.
         \end{freeability}
 
+        \ff[6]{Mystic Power} You gain a \plus2 bonus to your \glossterm{power}.
+
         \ff[9]{Personal Thaumaturgy} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Thaumaturgy} \glossterm{mystic sphere}.
 
@@ -2646,11 +2649,11 @@ You cannot gain the same feat twice.
         \ff[15]{Spell} You learn a spell from the \sphere{Thaumaturgy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[18]{Greater Mystic Power} The bonus from your \textit{mystic power} ability increases to \plus8.
+        \ff[18]{Supreme Mystic Power} The bonus from your \textit{mystic power} ability increases to \plus8.
 
         \ff[21]{Greater Counterspell} You can use your \textit{counterspell} ability as a \glossterm{minor action}.
         When you do, you \glossterm{briefly} cannot use that ability again.
-        If you actually counter a spell with that ability after using it as a minor action, you increase your \glossterm{fatigue level} by one.
+        If you successfully counter a spell with that ability after using it as a minor action, you increase your \glossterm{fatigue level} by one.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Toxicology}{Casting, Magical}
@@ -2957,20 +2960,20 @@ You cannot gain the same feat twice.
 
         \ff[3]{Durability} You gain a \plus4 bonus to your maximum \glossterm{hit points}.
 
-        \ff[6]{Ailment Tolerance} You are immune to poisons and diseases.
-
         \ff[6]{Sleepless} You need half the normal amount of rest and sleep each day to function normally.
         For example, a human would only need four hours of sleep per night.
         This does not reduce the time required for you to take a \glossterm{long rest}.
+
+        \ff[6]{Unwavering} You are immune to being \dazed.
 
         \ff[9]{Greater Fortified Body} The defense bonus from your \textit{fortified body} ability increases to \plus3.
 
         \ff[12]{Greater Durability} The bonus from your \textit{durability} ability increases to be equal to your level.
 
-        \ff[15]{Greater Ailment Tolerance} You are immune to being \paralyzed.
-
         \ff[15]{Greater Sleepless} The amount of rest and sleep you need each day is reduced to a quarter of the normal value.
         For example, a human would only need two hours of sleep per night.
+
+        \ff[15]{Greater Unwavering} You are immune to being \stunned.
 
         \ff[18]{Greater Fortified Body} The defense bonus from your \textit{fortified body} ability increases to \plus4.
 

@@ -44,7 +44,7 @@ export const verdamancy: MysticSphere = {
       name: "Ensnaring Grasp",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} piercing damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -61,7 +61,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} piercing damage.
+          The target takes 2d6 + \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
@@ -80,7 +80,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater ensnaring grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the condition must be removed twice before the effect ends.',
+        exceptThat: 'the damage increases to 4d8 + \\glossterm{power} damage, and the condition must be removed twice before the effect ends.',
       },
       rank: 7,
       scaling: "damage",
@@ -126,7 +126,7 @@ export const verdamancy: MysticSphere = {
       name: "Vine Whip",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against one creature within \\medrange.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
@@ -142,7 +142,7 @@ export const verdamancy: MysticSphere = {
       name: "Greater Vine Whip",
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 2d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against one creature within \\longrange.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
@@ -158,7 +158,7 @@ export const verdamancy: MysticSphere = {
       name: "Supreme Vine Whip",
 
       attack: {
-        hit: `The target takes 6d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 5d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against one creature within \\distrange.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
@@ -174,7 +174,7 @@ export const verdamancy: MysticSphere = {
       name: "Vinestorm",
 
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea radius from you.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
@@ -190,7 +190,7 @@ export const verdamancy: MysticSphere = {
       name: "Greater Vinestorm",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
@@ -207,7 +207,7 @@ export const verdamancy: MysticSphere = {
       name: "Supreme Vinestorm",
 
       attack: {
-        hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
@@ -224,7 +224,7 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
-        The natural weapon deals 1d10 damage, as normal for a slam natural weapon, and it has the Sweeping (1) tag.
+        The natural weapon deals 1d8 damage, as normal for a slam natural weapon, and it has the Sweeping (1) tag.
         In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
       `,
       rank: 2,
@@ -269,7 +269,7 @@ export const verdamancy: MysticSphere = {
         // No relevant glance effect
         hit: `The target becomes \\glossterm{poisoned} with sassone leaf.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d6 physical damage.
+        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d4 physical damage.
         Reaching the third \\glossterm{poison stage} ends the poison.
         A third failed attack also ends the poison.`,
         targeting: `
@@ -291,7 +291,7 @@ export const verdamancy: MysticSphere = {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         hit: `The target becomes \\glossterm{poisoned} with arsenic.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d10 physical damage.
+        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d8 physical damage.
         Reaching the third \\glossterm{poison stage} causes the target to gain a \\glossterm{vital wound} and ends the poison.
         A third failed attack also ends the poison.`,
         targeting: `
@@ -313,7 +313,7 @@ export const verdamancy: MysticSphere = {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         hit: `The target becomes \\glossterm{poisoned} with arsenic.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the target loses 2d10 + half \\glossterm{power} \\glossterm{hit points}.
+        For each \\glossterm{poison stage}, including the initial stage, the target loses 2d8 + half \\glossterm{power} \\glossterm{hit points}.
         Reaching the third \\glossterm{poison stage} causes the target to gain a \\glossterm{vital wound}.
         A third failed attack ends the poison.`,
         targeting: `
@@ -383,7 +383,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        hit: `As a \\glossterm{condition}, the target takes 1d6 physical damage at the end of each round.
+        hit: `As a \\glossterm{condition}, the target takes 1d4 physical damage at the end of each round.
         If the the target gains a \\glossterm{vital wound} from this damage, the condition ends.
 
         This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
@@ -404,7 +404,7 @@ export const verdamancy: MysticSphere = {
       name: "Fire Seeds",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
         targeting: `
         % Does "seed structure" make sense?
         You transform up to three \\glossterm{unattended} acorns or similar seed structures you touch into small bombs.
@@ -424,7 +424,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'fire seeds',
-        exceptThat: 'the damage increases to 4d8 + half \\glossterm{power}, and the range of each acorn increases to \\medrange.',
+        exceptThat: 'the damage increases to 4d6 + half \\glossterm{power}, and the range of each acorn increases to \\medrange.',
       },
       rank: 6,
       scaling: "damage",
@@ -436,7 +436,7 @@ export const verdamancy: MysticSphere = {
 
       // original targets: Each creature that moves through the area (see text)
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
         You create a wall of thorns in 15 ft.\\ high, \\smallarea \\glossterm{wall} within \\medrange.
         The base of at least half of the wall must be in arable earth.
@@ -460,7 +460,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'wall of thorns',
-        exceptThat: 'the damage increases to 4d8 + half \\glossterm{power}, and the area increases to a 20 ft. high, \\medarea \\glossterm{wall}.',
+        exceptThat: 'the damage increases to 4d6 + half \\glossterm{power}, and the area increases to a 20 ft. high, \\medarea \\glossterm{wall}.',
       },
       rank: 6,
       scaling: "damage",
@@ -493,7 +493,7 @@ export const verdamancy: MysticSphere = {
       name: "Blight",
 
       attack: {
-        hit: `The target takes 2d8 + \\glossterm{power} acid damage.
+        hit: `The target takes 2d6 + \\glossterm{power} acid damage.
         This damage is doubled if the target is a plant, including plant creatures.`,
         targeting: `
         Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
@@ -508,7 +508,7 @@ export const verdamancy: MysticSphere = {
       name: "Greater Blight",
 
       attack: {
-        hit: `The target takes 4d10 + \\glossterm{power} acid damage.
+        hit: `The target takes 4d8 + \\glossterm{power} acid damage.
         This damage is doubled if the target is a plant, including plant creatures.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\medrange.
@@ -583,7 +583,7 @@ export const verdamancy: MysticSphere = {
       rank: 3,
       scaling: {
         5: `The condition cannot be removed with the Medicine skill.`,
-        7: `Each creature affected by the condition also takes 2d10 piecing damage at the end of each round.`,
+        7: `Each creature affected by the condition also takes 2d8 piecing damage at the end of each round.`,
       },
       type: "Attune (self)",
     },

@@ -220,15 +220,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit Each target takes 1d6 \add half \glossterm{power} sonic damage.
+                        \hit Each target takes 1d4 \add half \glossterm{power} sonic damage.
 
                         \rankline
-                        \rank{2} The damage increases to 1d8, and the area increases to a \smallarea radius.
-                        \rank{3} The damage increases to 1d10, and the area increases to a \medarea radius.
-                        \rank{4} The damage increases to 2d6.
-                        \rank{5} The damage increases to 2d8, and the area increases to a \largearea radius.
-                        \rank{6} The damage increases to 2d10.
-                        \rank{7} The damage increases to 4d6, and the area increases to a \hugearea radius.
+                        \rank{2} The damage increases to 1d6, and the area increases to a \smallarea radius.
+                        \rank{3} The damage increases to 1d8, and the area increases to a \medarea radius.
+                        \rank{4} The damage increases to 1d10.
+                        \rank{5} The damage increases to 2d6, and the area increases to a \largearea radius.
+                        \rank{6} The damage increases to 2d8.
+                        \rank{7} The damage increases to 2d10, and the area increases to a \hugearea radius.
                     \end{instantability}
 
                     \begin{durationability}{Cadenza of Courage}[Sustain (minor)]
@@ -292,15 +292,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
-                        \hit The target takes sonic damage equal to 1d10 plus your \glossterm{power}.
+                        \hit The target takes sonic damage equal to 1d8 plus your \glossterm{power}.
 
                         \rankline
-                        \rank{2} The damage increases to 2d6.
-                        \rank{3} The damage increases to 2d10.
-                        \rank{4} The damage increases to 4d6.
-                        \rank{5} The damage increases to 4d10.
-                        \rank{6} The damage increases to 5d10.
-                        \rank{7} The damage increases to 7d10.
+                        \rank{2} The damage increases to 1d10.
+                        \rank{3} The damage increases to 2d8.
+                        \rank{4} The damage increases to 2d10.
+                        \rank{5} The damage increases to 4d8.
+                        \rank{6} The damage increases to 4d10.
+                        \rank{7} The damage increases to 6d10.
                     \end{instantability}
 
                     \begin{durationability}{Dizzying Ditty}[\abilitytag{Sustain} (minor)]
@@ -318,7 +318,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}, \abilitytag{Emotion}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        \hit The target takes 1d6 sonic damage.
+                        \hit The target takes 1d4 sonic damage.
                         If it loses \glossterm{hit points} from this damage, it is \frightened by you for the duration of your performance.
                         Unlike normal, the target continues to suffer the penalties of being frightened while it is beyond \rngmed range from you as long as it is still affected by your performance.
 
@@ -358,16 +358,16 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}, \abilitytag{Healing}
                         \rankline
                         Choose one living \glossterm{ally} within \shortrange.
-                        The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
+                        The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
                         After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
                         \rankline
-                        \rank{2} The healing increases to 2d6.
-                        \rank{3} The healing increases to 2d10.
-                        \rank{4} The healing increases to 4d6.
-                        \rank{5} The healing increases to 4d10.
-                        \rank{6} The healing increases to 5d10.
-                        \rank{7} The healing increases to 7d10.
+                        \rank{2} The healing increases to 1d10.
+                        \rank{3} The healing increases to 2d8.
+                        \rank{4} The healing increases to 2d10.
+                        \rank{5} The healing increases to 4d8.
+                        \rank{6} The healing increases to 4d10.
+                        \rank{7} The healing increases to 6d10.
                     \end{instantability}
 
                     \begin{durationability}{Partita of Provocation}[Duration]
@@ -741,7 +741,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::MundanePower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Greater Skill Exemplar",
@@ -807,7 +807,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{versatile power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Supreme Skill Exemplar",

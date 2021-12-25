@@ -90,9 +90,8 @@ def get_misc_variables(variable_name, count):
         "fatigue_tolerance",
         "fortitude",
         "hit_points",
-        "magical_power",
         "mental",
-        "mundane_power",
+        "power",
         "reflex",
         "vital_rolls",
     ]:
@@ -113,28 +112,22 @@ def sum_variables(variables):
 
 
 def attribute_change(a):
-    misc = get_misc_variables(a + "_starting", 2)
+    misc = get_misc_variables(a, 2)
     return js_wrapper(
         ["level", f"{a}_point_buy", *misc],
         f"""
-            var starting = {a}_point_buy > 0
+            var value = {a}_point_buy > 0
                 ? {{
                     1: 1,
-                    2: 2,
-                    4: 3,
-                    6: 4,
+                    3: 2,
+                    5: 3,
+                    8: 4,
                 }}[{a}_point_buy]
                 : {a}_point_buy;
-            starting += {sum_variables(misc)};
-            var scaling = 0;
-            if (starting >= 2) {{
-                scaling = Math.floor((starting-1)*0.25*level);
-            }}
+            value += {sum_variables(misc)};
 
             setAttrs({{
-                {a}: starting + scaling,
-                {a}_scaling: scaling,
-                {a}_starting: starting,
+                {a}: value,
             }});
         """,
     )
@@ -161,11 +154,11 @@ def set_skill(a, s):
                 var ranks = 0;
 
                 if ({s}_is_trained) {{
-                    ranks = 4 + Math.floor(level / 2);
+                    ranks = 3 + Math.floor(level / 2);
                 }}
 
                 setAttrs({{
-                    {s}_ranks: ranks,
+                    {s}_level: ranks,
                     {s}_total: ranks + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty,
                 }});
             """,
@@ -189,15 +182,16 @@ def set_skill(a, s):
                 var ranks = 0;
 
                 if ({s}_is_trained) {{
-                    ranks = 4 + Math.max({a}, Math.floor(level / 2));
-                }} else {{
-                    ranks = Math.floor({a} / 2);
+                    ranks = 3 + Math.floor(level / 2);
                 }}
 
+                var {s}_total = ranks + {a} + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty {subtract_encumbrance};
+
                 setAttrs({{
-                    {s}_ranks: ranks,
-                    {s}_total: ranks + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty {subtract_encumbrance},
-                    {s}: ranks + {sum_variables(misc)} + all_skills_custom_modifier - fatigue_penalty {subtract_encumbrance},
+                    {s}_level: ranks,
+                    {s}_attribute: {a},
+                    {s}_total,
+                    {s}: {s}_total,
                 }});
             """,
         )
@@ -213,8 +207,7 @@ def core_statistics():
         initiative(),
         insight_points(),
         land_speed(),
-        magical_power(),
-        mundane_power(),
+        power(),
         skill_points(),
         vital_rolls(),
         weapon_damage_dice(),
@@ -236,7 +229,7 @@ def accuracy():
         [
             "challenge_rating",
             "level",
-            "perception_starting",
+            "perception",
             "fatigue_penalty",
             "accuracy_debuff_modifier",
             *misc,
@@ -246,7 +239,7 @@ def accuracy():
             setAttrs({{
                 accuracy: (
                     Math.floor(level / 2)
-                    + Math.floor(perception_starting / 2)
+                    + Math.floor(perception / 2)
                     + {sum_variables(misc)}
                     + level_scaling
                     - fatigue_penalty
@@ -289,7 +282,8 @@ def armor_defense():
     return js_wrapper(
         [
             "level",
-            "dexterity_starting",
+            "dexterity",
+            "constitution",
             "armor_defense_class_bonus",
             "body_armor_defense_value",
             "shield_defense_value",
@@ -302,12 +296,12 @@ def armor_defense():
         f"""
             var attribute_modifier = 0;
             if (challenge_rating > 0) {{
-                attribute_modifier += Math.floor(constitution_starting / 2);
+                attribute_modifier += Math.floor(constitution / 2);
             }}
             if (body_armor_usage_class === "medium" || challenge_rating > 0) {{
-                attribute_modifier += Math.floor(dexterity_starting / 2);
+                attribute_modifier += Math.floor(dexterity / 2);
             }} else if (body_armor_usage_class === "none" || body_armor_usage_class === "light") {{
-                attribute_modifier += dexterity_starting;
+                attribute_modifier += dexterity;
             }}
             var level_scaling = challenge_rating ? Math.max(0, Math.floor((level + 6) / 9)) : 0;
             if (challenge_rating === 4) {{
@@ -344,7 +338,7 @@ def fortitude():
     return js_wrapper(
         [
             "level",
-            "constitution_starting",
+            "constitution",
             "fortitude_class",
             "challenge_rating",
             "fortitude_debuff_modifier",
@@ -362,7 +356,7 @@ def fortitude():
             setAttrs({{
                 fortitude: (
                     Math.floor(level / 2)
-                    + constitution_starting
+                    + constitution
                     + fortitude_class
                     + level_scaling
                     + fortitude_debuff_modifier
@@ -380,7 +374,7 @@ def reflex():
     return js_wrapper(
         [
             "level",
-            "dexterity_starting",
+            "dexterity",
             "reflex_class",
             "challenge_rating",
             "reflex_debuff_modifier",
@@ -398,7 +392,7 @@ def reflex():
             setAttrs({{
                 reflex: (
                     Math.floor(level / 2)
-                    + dexterity_starting
+                    + dexterity
                     + reflex_class
                     + level_scaling
                     + reflex_debuff_modifier
@@ -416,7 +410,7 @@ def mental():
     return js_wrapper(
         [
             "level",
-            "willpower_starting",
+            "willpower",
             "mental_class",
             "challenge_rating",
             "mental_debuff_modifier",
@@ -434,7 +428,7 @@ def mental():
             setAttrs({{
                 mental: (
                     Math.floor(level / 2)
-                    + willpower_starting
+                    + willpower
                     + mental_class
                     + level_scaling
                     + mental_debuff_modifier
@@ -450,12 +444,12 @@ def mental():
 def encumbrance():
     misc = get_misc_variables("encumbrance", 2)
     return js_wrapper(
-        ["level", "body_armor_encumbrance", "strength_starting", *misc],
+        ["level", "body_armor_encumbrance", "strength", *misc],
         f"""
             setAttrs({{
                 encumbrance: Math.max(
                     body_armor_encumbrance
-                    - Math.max(0, strength_starting)
+                    - Math.max(0, strength)
                     - {'-'.join(misc)}
                 , 0),
             }});
@@ -466,9 +460,9 @@ def encumbrance():
 def initiative():
     misc = get_misc_variables("initiative", 3)
     return js_wrapper(
-        ["dexterity_starting", "perception_starting", "fatigue_penalty", *misc],
+        ["dexterity", "perception", "fatigue_penalty", *misc],
         f"""
-            var scaling = dexterity_starting + perception_starting;
+            var scaling = dexterity + perception;
             setAttrs({{
                 initiative: scaling + {sum_variables(misc)} - fatigue_penalty,
                 initiative_scaling: scaling,
@@ -492,9 +486,9 @@ def land_speed():
 def skill_points():
     misc = get_misc_variables("skill_points", 3)
     return js_wrapper(
-        ["level", "skill_points_base", "intelligence_starting", *misc],
+        ["level", "skill_points_base", "intelligence", *misc],
         f"""
-            let from_int = Math.max(0, intelligence_starting);
+            let from_int = Math.max(0, intelligence);
             setAttrs({{
                 skill_points_intelligence: from_int,
                 skill_points: skill_points_base + from_int + {sum_variables(misc)}
@@ -506,11 +500,12 @@ def skill_points():
 def fatigue_tolerance():
     misc = get_misc_variables("fatigue_tolerance", 2)
     return js_wrapper(
-        ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", *misc],
+        ["level", "fatigue_tolerance_base", "constitution", "willpower", *misc],
         f"""
-            var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + constitution_starting + willpower_starting + {sum_variables(misc)});
+            var fatigue_tolerance_attributes = constitution + Math.floor(willpower / 2);
+            var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + fatigue_tolerance_attributes + {sum_variables(misc)});
             setAttrs({{
-                fatigue_tolerance_attributes: constitution_starting + willpower_starting,
+                fatigue_tolerance_attributes,
                 fatigue_tolerance,
                 // for red bars
                 fatigue_points_max: fatigue_tolerance,
@@ -532,45 +527,44 @@ def hit_points():
         ],
         no_listen_variables=["hit_points", "hit_points_maximum"],
         function_body=f"""
-            var hit_points_from_level = {{
-                '-1': 9  ,
-                0:    10 ,
-                1:    11 ,
-                2:    12 ,
-                3:    13 ,
-                4:    15 ,
-                5:    17 ,
-                6:    19 ,
-                7:    22 ,
-                8:    25 ,
-                9:    28 ,
-                10:   31 ,
-                11:   35 ,
-                12:   39 ,
-                13:   44 ,
-                14:   50 ,
-                15:   56 ,
-                16:   63 ,
-                17:   70 ,
-                18:   78 ,
-                19:   88 ,
-                20:   100,
-                21:   115,
-                22:   130,
-                23:   145,
-                24:   160,
-                25:   175,
-                26:   190,
-                27:   205,
-                28:   230,
-                29:   245,
-                30:   260,
-            }}[level] || 1;
+            var levelish = level + constitution;
+            var hit_points_from_level = 9 + levelish;
+            if (levelish > 0) {{
+                var multiplier = 1;
+                while (levelish > 21) {{
+                    levelish -= 6;
+                    multiplier += 1;
+                }}
+                hit_points_from_level = multiplier * {{
+                    1:    10,
+                    2:    11,
+                    3:    12,
+                    4:    13,
+                    5:    14,
+                    6:    16,
+                    7:    18,
+                    8:    20,
+                    9:    22,
+                    10:    25,
+                    11:    28,
+                    12:    32,
+                    13:    36,
+                    14:    40,
+                    15:    44,
+                    16:    50,
+                    17:    56,
+                    18:    64,
+                    19:    72,
+                    20:    80,
+                    21:    88,
+                    22:    100,
+                }}[level + constitution] || 1;
+            }}
 
-            var new_hit_points = hit_points_from_level + constitution + {sum_variables(misc)};
+            var new_hit_points = hit_points_from_level + {sum_variables(misc)};
             var cr_multiplier = {{
                 0: 1,
-                0.5: 0.5,
+                0.5: 1,
                 1: 1,
                 2: 2,
                 4: 4,
@@ -579,7 +573,7 @@ def hit_points():
             new_hit_points = Math.floor(new_hit_points * cr_multiplier * (hit_points_vital_wound_multiplier || 1))
 
             let attrs = {{
-                hit_points_from_level,
+                hit_points_from_level: hit_points_from_level * cr_multiplier,
                 hit_points_max: new_hit_points,
                 hit_points_maximum: new_hit_points,
             }};
@@ -606,19 +600,19 @@ def fatigue_penalty():
 def insight_points():
     misc = get_misc_variables("insight_points", 3)
     return js_wrapper(
-        ["insight_points_base", "intelligence_starting", *misc],
+        ["insight_points_base", "intelligence", *misc],
         f"""
             setAttrs({{
-                insight_points: Math.max(0, insight_points_base + intelligence_starting + {sum_variables(misc)}),
+                insight_points: Math.max(0, insight_points_base + intelligence + {sum_variables(misc)}),
             }});
         """,
     )
 
 
-def magical_power():
-    misc = get_misc_variables("magical_power", 4)
+def power():
+    misc = get_misc_variables("power", 4)
     return js_wrapper(
-        ["willpower", "perception", "level", "challenge_rating", *misc],
+        ["level", "class_power", "challenge_rating", *misc],
         f"""
             var level_scaling = challenge_rating
                 ? {{
@@ -631,63 +625,21 @@ def magical_power():
                     6: 12,
                     7: 16,
                     8: 24,
-                }}[Math.floor(level / 3)]
+                }}[Math.floor((level + 2) / 3)]
                 : 0;
             level_scaling = level_scaling * (challenge_rating
                 ? {{
-                    0.5: 1,
+                    0.5: 0.5,
                     1: 1,
                     2: 2,
-                    4: 2,
-                    6: 2,
+                    4: 3,
+                    6: 4,
                 }}[challenge_rating]
                 : 0);
-            var magical_power_attribute = Math.floor(willpower / 2);
             setAttrs({{
-                magical_power_attribute,
-                magical_power: (
-                    magical_power_attribute
-                    + level_scaling
-                    + {sum_variables(misc)}
-                ),
-            }});
-        """,
-    )
-
-
-def mundane_power():
-    misc = get_misc_variables("mundane_power", 4)
-    return js_wrapper(
-        ["strength", "perception", "level", "challenge_rating", *misc],
-        f"""
-            var level_scaling = challenge_rating
-                ? {{
-                    0: 1,
-                    1: 2,
-                    2: 3,
-                    3: 4,
-                    4: 6,
-                    5: 8,
-                    6: 12,
-                    7: 16,
-                    8: 24,
-                }}[Math.floor(level / 3)]
-                : 0;
-            level_scaling = level_scaling * (challenge_rating
-                ? {{
-                    0.5: 1,
-                    1: 1,
-                    2: 2,
-                    4: 2,
-                    6: 2,
-                }}[challenge_rating]
-                : 0);
-            var mundane_power_attribute = Math.floor(strength / 2)
-            setAttrs({{
-                mundane_power_attribute,
-                mundane_power: (
-                    mundane_power_attribute
-                    + level_scaling
+                power: (
+                    level_scaling
+                    + class_power
                     + {sum_variables(misc)}
                 ),
             }});
@@ -709,47 +661,53 @@ def damage_resistance():
         no_listen_variables=["damage_resistance", "damage_resistance_maximum"],
         function_body=f"""
             var resistance_from_level = 0;
-            if (challenge_rating > 0) {{
+            var levelish = level + constitution;
+            if (levelish > 0) {{
+                var multiplier = 1;
+                while (levelish > 21) {{
+                    levelish -= 6;
+                    multiplier += 1;
+                }}
                 resistance_from_level = {{
-                    1:    3,
-                    2:    3,
-                    3:    4,
-                    4:    4,
-                    5:    5,
-                    6:    6,
-                    7:    7,
-                    8:    9,
-                    9:    10,
-                    10:    12,
-                    11:    13,
-                    12:    15,
-                    13:    16,
-                    14:    18,
-                    15:    20,
-                    16:    22,
-                    17:    25,
-                    18:    28,
-                    19:    32,
-                    20:    37,
-                    21:    42,
-                }}[level];
+                    1:  1,
+                    2:  2,
+                    3:  3,
+                    4:  4,
+                    5:  5,
+                    6:  6,
+                    7:  7,
+                    8:  9,
+                    9:  10,
+                    10:  12,
+                    11:  13,
+                    12:  15,
+                    13:  16,
+                    14:  18,
+                    15:  20,
+                    16:  22,
+                    17:  25,
+                    18:  28,
+                    19:  32,
+                    20:  36,
+                    21:  40,
+                }}[levelish] * multiplier;
             }}
             var cr_multiplier = {{
                 0: 1,
                 0.5: 0,
-                1: 1,
-                2: 3,
-                4: 6,
-                6: 10,
+                1: 3,
+                2: 6,
+                4: 10,
+                6: 15,
             }}[challenge_rating || 0];
             const new_damage_resistance = Math.floor(
                 (
-                    resistance_from_level + constitution + damage_resistance_bonus_armor + {sum_variables(misc)}
+                    resistance_from_level + damage_resistance_bonus_armor + {sum_variables(misc)}
                 ) * cr_multiplier * (damage_resistance_bonus_vital_wound_multiplier || 1)
             );
 
             let attrs = {{
-                damage_resistance_from_level: resistance_from_level,
+                damage_resistance_from_level: resistance_from_level * cr_multiplier,
                 damage_resistance_max: new_damage_resistance,
                 damage_resistance_maximum: new_damage_resistance,
             }};
@@ -785,26 +743,6 @@ def skill_points_spent():
         """,
         boolean_variables=skill_points_names,
     )
-
-
-def standard_damage_at_power(power):
-    return {
-        "-4": "1d3",
-        "-2": "1d4",
-        "0": "1d6",
-        "2": "1d8",
-        "4": "1d10",
-        "6": "2d6",
-        "8": "2d8",
-        "10": "2d10",
-        "12": "4d6",
-        "14": "4d8",
-        "16": "4d10",
-        "18": "5d10",
-        "20": "6d10",
-        "22": "7d10",
-        "24": "8d10",
-    }[str(power)]
 
 
 def debuffs():
@@ -1094,9 +1032,8 @@ def custom_modifiers():
                         fatigue_tolerance_custom_modifier: totalCustomModifiers.fatigue_tolerance || 0,
                         fortitude_custom_modifier: totalCustomModifiers.fortitude || 0,
                         hit_points_custom_modifier: totalCustomModifiers.hit_points || 0,
-                        magical_power_custom_modifier: totalCustomModifiers.magical_power || 0,
                         mental_custom_modifier: totalCustomModifiers.mental || 0,
-                        mundane_power_custom_modifier: totalCustomModifiers.mundane_power || 0,
+                        power_custom_modifier: totalCustomModifiers.power || 0,
                         reflex_custom_modifier: totalCustomModifiers.reflex || 0,
                         vital_rolls_custom_modifier: totalCustomModifiers.vital_rolls || 0,
                     });
@@ -1173,3 +1110,22 @@ def blank_ability_known(i):
             }});
         """,
     )
+
+def standard_damage_at_power(power):
+    return {
+        "-4": "1d3",
+        "-2": "1d4",
+        "0": "1d6",
+        "2": "1d8",
+        "4": "1d10",
+        "6": "2d6",
+        "8": "2d8",
+        "10": "2d10",
+        "12": "4d6",
+        "14": "4d8",
+        "16": "4d10",
+        "18": "5d10",
+        "20": "6d10",
+        "22": "7d10",
+        "24": "8d10",
+    }[str(power)]

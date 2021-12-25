@@ -73,15 +73,15 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{instantability}{Abyssal Blast}[Instant]
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
-                    \hit The target takes 1d10 \add \glossterm{power} fire damage.
+                    \hit The target takes 1d8 \add \glossterm{power} fire damage.
 
                     \rankline
-                    \rank{2} The damage increases to 2d6.
-                    \rank{3} The damage increases to 2d10.
-                    \rank{4} The damage increases to 4d6.
-                    \rank{5} The damage increases to 4d10.
-                    \rank{6} The damage increases to 5d10.
-                    \rank{7} The damage increases to 7d10.
+                    \rank{2} The damage increases to 1d10.
+                    \rank{3} The damage increases to 2d8.
+                    \rank{4} The damage increases to 2d10.
+                    \rank{5} The damage increases to 4d8.
+                    \rank{6} The damage increases to 4d10.
+                    \rank{7} The damage increases to 6d10.
                 \end{instantability}
             ",
             modifiers: Some(vec![Modifier::Attack(
@@ -171,7 +171,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{durationability}{Banish to the Abyss}[Duration]
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
-                    \hit The target takes 2d6 \add half \glossterm{power} fire damage.
+                    \hit The target takes 1d10 \add half \glossterm{power} fire damage.
                     If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
                     At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
                     After it returns, it becomes immune to being teleported in this way until it takes a \glossterm{short rest}.
@@ -189,11 +189,11 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus3 bonus to your \glossterm{power}.
                 In addition, whenever you use an ability that deals fire damage, you can change the type of the damage to be energy damage in place of fire damage.
                 Any other aspects of the ability, including damage types other than fire, remain unchanged.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(3)]),
+            modifiers: Some(vec![Modifier::Power(3)]),
         },
         RankAbility {
             name: "Greater Fiendish Resistance",
@@ -232,7 +232,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 In addition, whenever you use an ability that deals fire damage, you can change that ability to deal damage of all types.
                 Any other aspects of the ability remain unchanged.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(6)]),
+            modifiers: Some(vec![Modifier::Power(6)]),
         },
     ];
 }
@@ -274,7 +274,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     It also provides a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
                     However, the \textit{recover} action causes you to regain half as many hit points as it normally would.
 
-                    \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d6 \add half your \glossterm{magical} \glossterm{power}.
+                    \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d3 \add half your \glossterm{power}.
                     This healing increases by \plus1d for each rank beyond 1.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
 
@@ -379,8 +379,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 However, you take a \minus2 penalty to Mental defense.
             ",
             modifiers: Some(vec![
-                Modifier::MagicalPower(3),
-                Modifier::MundanePower(3),
+                Modifier::Power(3),
                 Modifier::Defense(Defense::Mental, 2),
             ]),
         },
@@ -393,7 +392,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to five times your rank in this archetype.
 
-                    \parhead{Secret of Bloodsharing} You may add your full magical power to the amount you heal instead of half your magical power.
+                    \parhead{Secret of Bloodsharing} You may add your full power to the amount you heal instead of half your power.
 
                     \parhead{Secret of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
                 }
@@ -442,7 +441,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{lore of corrupting power} ability increases to \plus9.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(6), Modifier::MundanePower(6)]),
+            modifiers: Some(vec![Modifier::Power(6)]),
         },
         RankAbility {
             name: "Supreme Eldritch Secret",
@@ -670,7 +669,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you use the \textit{desperate exertion} ability to affect a \glossterm{magical} attack, you double your magical \glossterm{power} with that attack.
+                Whenever you use the \textit{desperate exertion} ability to affect a \glossterm{magical} attack, you double your \glossterm{power} with that attack.
             ",
             modifiers: None,
         },
@@ -679,9 +678,9 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{power}.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -708,7 +707,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Mystic Insights",
@@ -756,7 +755,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
-                        \item You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                        \item You gain a \plus2 bonus to your \glossterm{power}.
                         \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
                             If you would be unconscious due to fatigue without this bonus, your soulkeeper directly controls all of your actions.
                             Your soulkeeper's objectives may differ from your own, but except in very unusual circumstances, your soulkeeper is invested in continuing your life and ensuring your victory in difficult circumstances.
@@ -773,7 +772,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 \end{durationability}
             ",
             modifiers: Some(vec![
-                Modifier::MagicalPower(2),
+                Modifier::Power(2),
                 Modifier::Defense(Defense::Fortitude, -2),
                 Modifier::Defense(Defense::Mental, -2),
                 Modifier::Resource(Resource::FatigueTolerance, 4),
@@ -817,7 +816,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 }
             ",
             modifiers: Some(vec![
-                Modifier::MagicalPower(2),
+                Modifier::Power(2),
                 Modifier::Defense(Defense::Fortitude, 2),
             ]),
         },
@@ -847,7 +846,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     Because this ability has the \abilitytag{Swift} tag, the penalties from the removed vital wound do not affect you during the current phase.
                 \end{instantability}
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Supreme Empowering Whispers",
@@ -876,7 +875,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You double the range of spells you cast during your \textit{possession} ability.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(8)]),
+            modifiers: Some(vec![Modifier::Power(8)]),
         },
     ];
 }
