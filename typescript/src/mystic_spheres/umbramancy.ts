@@ -129,7 +129,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         // -1d to compensate for +2a
-        hit: `Each target takes 1d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 1d4 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
@@ -145,7 +145,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         // -1d to compensate for +2a
-        hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
@@ -161,7 +161,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         // -1d to compensate for +2a
-        hit: `The target takes 1d8 + \\glossterm{power} cold damage.`,
+        hit: `The target takes 1d6 + \\glossterm{power} cold damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -179,7 +179,7 @@ export const umbramancy: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the damage increases to 2d6 + \\glossterm{power}.
+          the damage increases to 1d10 + \\glossterm{power}.
           In addition, if the target loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazzled.
         `,
         name: 'dark grasp',
@@ -194,7 +194,7 @@ export const umbramancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater dark grasp',
-        exceptThat: 'the damage increases to 5d10 + \\glossterm{power} damage.',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage.',
       },
       rank: 7,
       scaling: "damage",
@@ -206,7 +206,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         // -1d to compensate for +2a
-        hit: `The target takes 1d10 + \\glossterm{power} cold damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\longrange.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack if the target is not in \\glossterm{bright illumination}.
@@ -222,7 +222,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         // -1d to compensate for +2a
-        hit: `The target takes 4d6 + \\glossterm{power} cold damage.`,
+        hit: `The target takes 2d10 + \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\distrange.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack if the target is not in \\glossterm{bright illumination}.
@@ -401,7 +401,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 cold damage.
+          The target takes 1d6 cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
           This condition must be removed twice before the effect ends.
         `,
@@ -423,7 +423,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d10 cold damage.
+          The target takes 2d8 cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
@@ -468,7 +468,7 @@ export const umbramancy: MysticSphere = {
       // basically t3? better control than immobilized, but no defense penalties
       attack: {
         hit: `
-          The target takes 2d8 cold damage.
+          The target takes 2d6 cold damage.
           If it loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
           You have full control over its movement during each \\glossterm{movement phase}.
           This does not affect its movements during other phases.
@@ -491,7 +491,7 @@ export const umbramancy: MysticSphere = {
       // original targets: One creature within \medrange standing on the ground
       attack: {
         hit: `
-          The target takes 4d8 + half \\glossterm{power} cold damage.
+          The target takes 4d6 + half \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\confused.
         `,
         targeting: `

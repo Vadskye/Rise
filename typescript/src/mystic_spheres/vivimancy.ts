@@ -48,7 +48,7 @@ export const vivimancy: MysticSphere = {
       name: "Lifeseal",
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} energy damage.
+        hit: `The target takes 2d10 + \\glossterm{power} energy damage.
         If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} unable to regain any hit points.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -63,7 +63,7 @@ export const vivimancy: MysticSphere = {
       name: "Draining Grasp",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} energy damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} energy damage.`,
         targeting: `
         You must have a \\glossterm{free hand} to cast this spell.
 
@@ -80,8 +80,8 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, you regain 2d8 + \\glossterm{power} hit points.
+          The target takes 2d6 + \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, you regain 2d6 + \\glossterm{power} hit points.
           After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
         `,
         targeting: `
@@ -101,7 +101,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'lifesteal grasp',
-        exceptThat: "the damage increases to 6d10 + \\glossterm{power}.",
+        exceptThat: "the damage increases to 5d10 + \\glossterm{power}.",
       },
       rank: 7,
       scaling: "damage",
@@ -113,7 +113,7 @@ export const vivimancy: MysticSphere = {
       name: "Drain Life",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} energy damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
@@ -127,7 +127,7 @@ export const vivimancy: MysticSphere = {
       name: "Greater Drain Life",
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} energy damage.`,
+        hit: `The target takes 2d10 + \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\longrange.
         `,
@@ -141,7 +141,7 @@ export const vivimancy: MysticSphere = {
       name: "Supreme Drain Life",
 
       attack: {
-        hit: `The target takes 6d10 + \\glossterm{power} energy damage.`,
+        hit: `The target takes 5d10 + \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\distrange.
         `,
@@ -156,7 +156,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
+        The target regains 1d8 + \\glossterm{power} \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 2,
@@ -199,7 +199,7 @@ export const vivimancy: MysticSphere = {
 
       // +2 levels and half power for double HP loss? rank unclear
       attack: {
-        hit: `The target takes 2d6 + half \\glossterm{power} energy damage.
+        hit: `The target takes 1d10 + half \\glossterm{power} energy damage.
         If the target would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -216,7 +216,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         crit: `Double damage.
         In addition, if the target did not already gain a \\glossterm{vital wound} from that loss of hit points, it gains a \\glossterm{vital wound}.`,
-        hit: `The target takes 5d10 + half \\glossterm{power} energy damage.
+        hit: `The target takes 4d10 + half \\glossterm{power} energy damage.
         If the target would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -232,7 +232,7 @@ export const vivimancy: MysticSphere = {
 
       // +1 level for situational vital wound removal
       attack: {
-        hit: `The target takes 4d10 + \\glossterm{power} energy damage.
+        hit: `The target takes 4d8 + \\glossterm{power} energy damage.
         If it loses \\glossterm{hit points} from this damage, you can remove one of your vital wounds.
         When you do, you increase your \\glossterm{fatigue level} by three.`,
         targeting: `
@@ -285,7 +285,7 @@ export const vivimancy: MysticSphere = {
 
       // Unclear rank
       attack: {
-        hit: `The target takes 1d10 + half \\glossterm{power} energy damage.
+        hit: `The target takes 1d8 + half \\glossterm{power} energy damage.
         If it loses \\glossterm{hit points} from this damage, it is marked for death as a \\glossterm{condition}.
         If it reaches 0 hit points during this effect, it immediately dies.`,
         targeting: `
@@ -303,7 +303,7 @@ export const vivimancy: MysticSphere = {
       name: "Circle of Death",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} energy damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -317,7 +317,7 @@ export const vivimancy: MysticSphere = {
       name: "Greater Circle of Death",
 
       attack: {
-        hit: `Each target takes 4d8 + half \\glossterm{power} energy damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} energy damage.`,
         targeting: `
           Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -331,7 +331,7 @@ export const vivimancy: MysticSphere = {
       name: "Circle of Life",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regains 2d10 \\glossterm{hit points}.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regains 2d8 \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 4,
@@ -395,7 +395,7 @@ export const vivimancy: MysticSphere = {
       // HP loss is treated as t3.5 debuff
       attack: {
         hit: `
-          The target takes 4d6 energy damage.
+          The target takes 2d10 energy damage.
           If it loses \\glossterm{hit points} from this damage, it also loses additional \\glossterm{hit points} equal to half its maximum hit points.
         `,
         targeting: `
@@ -443,8 +443,8 @@ export const vivimancy: MysticSphere = {
       // +2 levels for HP theft
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, you regain 2d8 + \\glossterm{power} hit points.
+          The target takes 2d6 + \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, you regain 2d6 + \\glossterm{power} hit points.
           After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
         `,
         targeting: `
@@ -462,7 +462,7 @@ export const vivimancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, you regain \\glossterm{hit points} equal to 2d10 + half your \\glossterm{power}.
+        Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, you regain \\glossterm{hit points} equal to 2d6 + half your \\glossterm{power}.
       `,
       rank: 5,
       scaling: { special: "The healing increases by +1d for each rank beyond 5." },
@@ -487,7 +487,7 @@ export const vivimancy: MysticSphere = {
       name: "Corpse Explosion",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Choose one Small or larger corpse within \\medrange.
           Make an attack vs. Reflex against each creature within a \\smallarea radius from the corpse.
@@ -507,7 +507,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'corpse explosion',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
+        exceptThat: 'the damage increases to 4d6 + \\glossterm{power}.',
       },
       narrative: `
         You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
@@ -560,7 +560,7 @@ export const vivimancy: MysticSphere = {
       name: "Retributive Lifebond",
 
       attack: {
-        hit: `Each target takes 1d10 energy damage.`,
+        hit: `Each target takes 1d8 energy damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\smallarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
@@ -575,7 +575,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         // +1d from levels
-        hit: `Each target takes 4d6 energy damage.`,
+        hit: `Each target takes 2d10 energy damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
@@ -590,7 +590,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         // +1d from levels
-        hit: `Each target takes 6d10 energy damage.`,
+        hit: `Each target takes 5d10 energy damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,

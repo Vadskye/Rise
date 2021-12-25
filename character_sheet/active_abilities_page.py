@@ -236,11 +236,6 @@ def strike_based_attack():
                     ],
                 ),
             ),
-            underlabeled_checkbox(
-                "Magical?",
-                {"class": "attack-is-magical"},
-                {"name": "attack_is_magical"},
-            ),
         ],
         [
             *weapon_buttons(0),
@@ -293,11 +288,6 @@ def other_damaging_attack():
                     ],
                 ),
             ),
-            underlabeled_checkbox(
-                "Magical?",
-                None,
-                {"class": "attack-is-magical", "name": "attack_is_magical"},
-            ),
         ],
         [
             button(
@@ -323,8 +313,7 @@ def other_damaging_attack_button_text():
 
 def calc_attack_power():
     return (
-        "[[floor(@{magical_power}*@{attack_power}*@{attack_is_magical})"
-        + "+ floor(@{mundane_power}*@{attack_power}*abs(1 - @{attack_is_magical}))]]"
+        "[[floor(@{power}*@{attack_power})]]"
     )
 
 def nondamaging_attack():

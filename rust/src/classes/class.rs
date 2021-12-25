@@ -1,6 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
 use crate::core_mechanics::{Defense, Resource};
+use crate::creatures::attacks::PowerProgression;
 use crate::equipment::{Armor, ArmorUsageClass, StandardWeapon, Weapon, WeaponGroup};
 use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};
@@ -346,7 +347,7 @@ impl Class {
 
     pub fn fatigue_tolerance(&self) -> i32 {
         match self {
-            Self::Barbarian => 5,
+            Self::Barbarian => 3,
             Self::Cleric => 2,
             Self::Druid => 2,
             Self::Fighter => 3,
@@ -355,7 +356,7 @@ impl Class {
             Self::Ranger => 3,
             Self::Rogue => 2,
             Self::Sorcerer => 2,
-            Self::Warlock => 3,
+            Self::Warlock => 2,
             Self::Wizard => 1,
         }
     }
@@ -371,7 +372,7 @@ impl Class {
             Self::Ranger => 2,
             Self::Rogue => 3,
             Self::Sorcerer => 2,
-            Self::Warlock => 3,
+            Self::Warlock => 2,
             Self::Wizard => 3,
         }
     }
@@ -389,6 +390,22 @@ impl Class {
             Self::Sorcerer => "sorcerer",
             Self::Warlock => "warlock",
             Self::Wizard => "wizard",
+        }
+    }
+
+    pub fn power_progression(&self) -> PowerProgression {
+        match self {
+            Self::Barbarian => PowerProgression::Fast,
+            Self::Cleric => PowerProgression::Medium,
+            Self::Druid => PowerProgression::Medium,
+            Self::Fighter => PowerProgression::Medium,
+            Self::Monk => PowerProgression::Medium,
+            Self::Paladin => PowerProgression::Medium,
+            Self::Ranger => PowerProgression::Medium,
+            Self::Rogue => PowerProgression::Medium,
+            Self::Sorcerer => PowerProgression::Medium,
+            Self::Warlock => PowerProgression::Fast,
+            Self::Wizard => PowerProgression::Medium,
         }
     }
 
@@ -914,8 +931,8 @@ impl Class {
             "
                 \\begin<dtable!*>
                     \\lcaption<{class_name} Progression>
-                    \\begin<dtabularx><\\textwidth><l l {archetype_columns}>
-                        \\tb<Rank> & \\tb<Min Level> & {archetype_headers} \\tableheaderrule
+                    \\begin<dtabularx><\\textwidth><p<3em> l {archetype_columns}>
+                        \\tb<Rank (Level)> & \\tb<Power> & {archetype_headers} \\tableheaderrule
                         {rank_rows}
                     \\end<dtabularx>
                 \\end<dtable!*>
@@ -937,7 +954,7 @@ impl Class {
         for rank in 0..abilities_by_archetype_rank.len() {
             rank_rows.push(format!(
                 "
-                    {rank} & {minimum_level} & {archetype_abilities} \\\\
+                    {rank} ({minimum_level}) & \\plus{power} & {archetype_abilities} \\\\
                 ",
                 rank = rank,
                 minimum_level = if rank == 0 {
@@ -946,6 +963,7 @@ impl Class {
                     format!("{}", rank * 3 - 2)
                 },
                 archetype_abilities = abilities_by_archetype_rank[rank],
+                power = self.power_progression().calc_power(rank as i32),
             ))
         }
         return rank_rows
@@ -1336,10 +1354,11 @@ impl Class {
 
                     \subsubsection{Magic}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        % TODO: power bonus is less relevant than it used to be, maybe grant attunement point or more spells known instead?
 
                         \parhead{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \parhead{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        \parhead{Essence} You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
+                        \parhead{Essence} You gain a \plus3 bonus to your \glossterm{power}.
                         \parhead{Mastery} The power bonus from this domain's essence increases to \plus6.
 
                     \subsubsection{Protection}
@@ -1366,9 +1385,9 @@ impl Class {
                         \begin{attuneability}{Divine Strength}
                             \abilitytag{Attune} (self)
                             \rankline
-                            You gain a \plus1 bonus to your base Strength.
+                            You gain a \plus1 bonus to your Strength.
                         \end{attuneability}
-                        \parhead{Essence} You gain a \plus4 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
+                        \parhead{Essence} You gain a \plus1 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
                         \parhead{Mastery} Your \textit{divine strength} ability loses the \glossterm{Attune} (self) tag.
                         Instead, it lasts until you use it again.
 

@@ -43,7 +43,7 @@ export const toxicology: MysticSphere = {
       name: "Corrosive Grasp",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} acid damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} acid damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -60,7 +60,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} acid damage.
+          The target takes 2d6 + \\glossterm{power} acid damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
@@ -79,7 +79,7 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'greater corrosive grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
+        exceptThat: 'the damage increases to 4d8 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
       },
       rank: 7,
       scaling: "damage",
@@ -114,7 +114,7 @@ export const toxicology: MysticSphere = {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
         hit: `The target becomes \\glossterm{poisoned} with dragon bile.
         At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d10 physical damage.
+        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d8 physical damage.
         A third failed attack ends the poison.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\longrange.
@@ -164,7 +164,7 @@ export const toxicology: MysticSphere = {
       name: "Acidic Blood",
 
       attack: {
-        hit: `Each target takes 2d6 acid damage.`,
+        hit: `Each target takes 1d10 acid damage.`,
         targeting: `
           At the end of each phase, if you lost \\glossterm{hit points} during that phase, make an attack vs. Reflex against everything adjacent to you.
         `,
@@ -228,7 +228,7 @@ export const toxicology: MysticSphere = {
       name: "Acid Splash",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} acid damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
         `,
@@ -244,7 +244,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} acid damage.
+          The target takes 4d6 + \\glossterm{power} acid damage.
           In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
           Its body is completely dissolved by acid, leaving behind only a splash of black sludge.
           Its equipment is unaffected.
@@ -264,7 +264,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 7d10 + \\glossterm{power} acid damage.
+          The target takes 6d10 + \\glossterm{power} acid damage.
           In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
           Its body is completely dissolved by acid, leaving behind only a splash of black sludge.
           Its equipment is unaffected.
@@ -282,7 +282,7 @@ export const toxicology: MysticSphere = {
       name: "Acid Arrow",
 
       attack: {
-        hit: `The target takes 2d8 + \\glossterm{power} acid damage.`,
+        hit: `The target takes 2d6 + \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\distrange.
         `,
@@ -297,7 +297,7 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Arrow",
 
       attack: {
-        hit: `The target takes 4d10 + \\glossterm{power} acid damage.`,
+        hit: `The target takes 4d8 + \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\extrange.
         `,
@@ -312,7 +312,7 @@ export const toxicology: MysticSphere = {
       name: "Acid Spray",
 
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
@@ -327,7 +327,7 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Spray",
 
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea cone from you.
         `,
@@ -342,7 +342,7 @@ export const toxicology: MysticSphere = {
       name: "Supreme Acid Spray",
 
       attack: {
-        hit: `Each target takes 4d10 + \\glossterm{power} acid damage.`,
+        hit: `Each target takes 4d8 + \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea cone from you.
         `,
@@ -358,7 +358,7 @@ export const toxicology: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} acid damage.`,
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything in a \\largearea cone from you.
@@ -377,7 +377,7 @@ export const toxicology: MysticSphere = {
       functionsLike: {
         name: 'acid breath',
         exceptThat: `
-          the damage increases to 5d10 + half \\glossterm{power}.
+          the damage increases to 4d10 + half \\glossterm{power}.
           In addition, the area increases to a \\hugearea cone.
         `,
       },
@@ -390,7 +390,7 @@ export const toxicology: MysticSphere = {
       name: "Corrosive Splash",
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} acid damage.
+        hit: `The target takes 2d10 + \\glossterm{power} acid damage.
         This attack deals double damage to objects.`,
         targeting: `
         Make an attack vs. Fortitude against anything within \\medrange.
@@ -407,7 +407,7 @@ export const toxicology: MysticSphere = {
       name: "Acid Rain",
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\areasmall radius, 30 ft.\\ high cylinder within \\medrange.
         `,
@@ -422,7 +422,7 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Rain",
 
       attack: {
-        hit: `Each target takes 4d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\arealarge radius, 30 ft.\\ high cylinder within \\longrange.
         `,
@@ -436,7 +436,7 @@ export const toxicology: MysticSphere = {
       name: "Acid Orb",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areasmall radius within \\medrange.
         `,
@@ -450,7 +450,7 @@ export const toxicology: MysticSphere = {
       name: "Greater Acid Orb",
 
       attack: {
-        hit: `Each target takes 4d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} acid damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\areamed radius within \\medrange.
         `,
@@ -465,7 +465,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within your \\glossterm{reach}.
-        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
+        The target regains 1d8 + \\glossterm{power} \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 2,
@@ -479,7 +479,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 4d6 + \\glossterm{power} \\glossterm{hit points}.
+        The target regains 2d10 + \\glossterm{power} \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 5,
@@ -507,7 +507,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `The target becomes drenched in acid as a \\glossterm{condition}.
-        At the end of each round, it takes 1d6 + half \\glossterm{power} acid damage.
+        At the end of each round, it takes 1d4 + half \\glossterm{power} acid damage.
 
         The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
@@ -528,7 +528,7 @@ export const toxicology: MysticSphere = {
           "The effect lasts \\glossterm{briefly}. The target still takes damage during the next round.",
         hit: `
           The target becomes drenched in acid as a \\glossterm{condition}.
-          At the end of each round, it takes 2d8 + half \\glossterm{power} acid damage.
+          At the end of each round, it takes 2d6 + half \\glossterm{power} acid damage.
         `,
         targeting: `
           Make an attack vs. Reflex against one creature within \\medrange.

@@ -152,11 +152,11 @@ fn it_calculates_level_21_fighter_attacks() {
     fighter.weapons.push(StandardWeapon::Broadsword.weapon());
     assert_eq!(
         vec![
-            "Certain Broadsword +16 (The target takes 4d8 slashing damage.)",
-            "Generic Scaling Broadsword +11 (The target takes 4d8+8 slashing damage.)",
-            "Mighty Broadsword +9 (The target takes 4d8+24 slashing damage.)",
+            "Certain Broadsword +16 (The target takes 4d6+8 slashing damage.)",
+            "Generic Scaling Broadsword +11 (The target takes 4d6+24 slashing damage.)",
+            "Mighty Broadsword +9 (The target takes 4d6+40 slashing damage.)",
             // +2d from discipline, +2d from equip train, +2d from martial mastery
-            "Broadsword +11 (The target takes 4d8 slashing damage.)",
+            "Broadsword +11 (The target takes 4d6+16 slashing damage.)",
         ],
         fighter
             .calc_all_attacks()
@@ -231,12 +231,11 @@ fn standard_character_statistics_level_1() {
 
     // HasAttacks
     assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-    assert_eq!(0, creature.calc_power(true), "Magical power: 0",);
-    assert_eq!(2, creature.calc_power(false), "Mundane power: 2 str",);
+    assert_eq!(2, creature.calc_power(), "Power: 2");
 
     // HasAttributes
     assert_eq!(
-        vec![4, 0, 2, 1, 2, 0],
+        vec![4, 0, 2, 0, 2, 0],
         Attribute::all()
             .iter()
             .map(|a| creature.calc_total_attribute(&a))
@@ -263,12 +262,8 @@ fn standard_character_statistics_level_1() {
     );
 
     // HasDamageAbsorption
-    assert_eq!(
-        13,
-        creature.calc_hit_points(),
-        "HP: 11 level + 2 con",
-    );
-    assert_eq!(8, creature.calc_damage_resistance(), "DR: 6 scale + 2 con",);
+    assert_eq!(12, creature.calc_hit_points(), "HP: (1 level + 2 con)",);
+    assert_eq!(8, creature.calc_damage_resistance(), "DR: 5 scale + (1 level + 2 con)",);
 
     // HasResources
     assert_eq!(
@@ -282,14 +277,14 @@ fn standard_character_statistics_level_1() {
         "FT: 3 fighter + 4 str",
     );
     assert_eq!(
-        3,
+        2,
         creature.calc_resource(&Resource::InsightPoint),
-        "Insight: 2 fighter + 1 int",
+        "Insight: 2 fighter",
     );
     assert_eq!(
-        5,
+        4,
         creature.calc_resource(&Resource::TrainedSkill),
-        "Trained skills: 4 fighter + 1 int",
+        "Trained skills: 4 fighter",
     );
 }
 
@@ -310,18 +305,13 @@ fn standard_character_statistics_level_10() {
         creature.calc_accuracy(),
         "Accuracy: 5 level + 1 per + 1 equip train",
     );
-    assert_eq!(4, creature.calc_power(true), "Magical power: 4 magic item",);
-    assert_eq!(
-        9,
-        creature.calc_power(false),
-        "Mundane power: 4 magic item + 5 str",
-    );
+    assert_eq!(10, creature.calc_power(), "Power: 6 scaling + 4 magic item");
     assert_eq!(
         vec![
-            "Certain Broadsword +10 (The target takes 2d6+4 slashing damage.)",
-            "Generic Scaling Broadsword +7 (The target takes 2d6+11 slashing damage.)",
-            "Mighty Broadsword +5 (The target takes 2d6+17 slashing damage.)",
-            "Broadsword +7 (The target takes 2d6+9 slashing damage.)",
+            "Certain Broadsword +10 (The target takes 2d8+5 slashing damage.)",
+            "Generic Scaling Broadsword +7 (The target takes 2d8+12 slashing damage.)",
+            "Mighty Broadsword +5 (The target takes 2d8+18 slashing damage.)",
+            "Broadsword +7 (The target takes 2d8+10 slashing damage.)",
         ],
         creature
             .calc_all_attacks()
@@ -333,7 +323,7 @@ fn standard_character_statistics_level_10() {
 
     // HasAttributes
     assert_eq!(
-        vec![11, 0, 4, 1, 4, 0],
+        vec![11, 0, 4, 0, 4, 0],
         Attribute::all()
             .iter()
             .map(|a| creature.calc_total_attribute(&a))
@@ -365,14 +355,14 @@ fn standard_character_statistics_level_10() {
 
     // HasDamageAbsorption
     assert_eq!(
-        47,
+        44,
         creature.calc_hit_points(),
-        "HP: 31 level + 8 martial mastery + 4 con + 4 magic item",
+        "HP: (10 level + 2 con) + 8 martial mastery + 4 magic item",
     );
     assert_eq!(
-        24,
+        39,
         creature.calc_damage_resistance(),
-        "DR: 16 elvenweave layered hide + 4 con + 4 magic item",
+        "DR: (10 level + 2 con) + 20 magic full plate + 4 magic item",
     );
 
     // HasResources
@@ -387,14 +377,14 @@ fn standard_character_statistics_level_10() {
         "FT: 3 fighter + 4 str + 1 combat discipline",
     );
     assert_eq!(
-        3,
+        2,
         creature.calc_resource(&Resource::InsightPoint),
-        "Insight: 2 fighter + 1 int",
+        "Insight: 2 fighter",
     );
     assert_eq!(
-        5,
+        4,
         creature.calc_resource(&Resource::TrainedSkill),
-        "Trained skills: 4 fighter + 1 int",
+        "Trained skills: 4 fighter",
     );
 }
 
@@ -415,18 +405,13 @@ fn standard_character_statistics_level_20() {
         creature.calc_accuracy(),
         "Accuracy: 10 level + 1 per + 1 equip train",
     );
-    assert_eq!(8, creature.calc_power(true), "Magical power: 8 magic item",);
-    assert_eq!(
-        17,
-        creature.calc_power(false),
-        "Mundane power: 8 magic item + 9 str",
-    );
+    assert_eq!(24, creature.calc_power(), "Power: 16 scaling + 8 magic item");
     assert_eq!(
         vec![
-            "Certain Broadsword +17 (The target takes 4d8+8 slashing damage.)",
-            "Generic Scaling Broadsword +12 (The target takes 4d8+25 slashing damage.)",
-            "Mighty Broadsword +10 (The target takes 4d8+41 slashing damage.)",
-            "Broadsword +12 (The target takes 4d8+17 slashing damage.)"
+            "Certain Broadsword +17 (The target takes 4d10+12 slashing damage.)",
+            "Generic Scaling Broadsword +12 (The target takes 4d10+32 slashing damage.)",
+            "Mighty Broadsword +10 (The target takes 4d10+48 slashing damage.)",
+            "Broadsword +12 (The target takes 4d10+24 slashing damage.)"
         ],
         creature
             .calc_all_attacks()
@@ -438,7 +423,7 @@ fn standard_character_statistics_level_20() {
 
     // HasAttributes
     assert_eq!(
-        vec![19, 0, 7, 1, 7, 0],
+        vec![19, 0, 7, 0, 7, 0],
         Attribute::all()
             .iter()
             .map(|a| creature.calc_total_attribute(&a))
@@ -470,14 +455,14 @@ fn standard_character_statistics_level_20() {
 
     // HasDamageAbsorption
     assert_eq!(
-        144,
+        137,
         creature.calc_hit_points(),
-        "HP: 100 level + 21 martial mastery + 7 con + 16 magic item",
+        "HP: (20 level + 2 con) + 21 martial mastery + 16 magic item",
     );
     assert_eq!(
-        71,
+        120,
         creature.calc_damage_resistance(),
-        "DR: 48 pure deepforged full plate + 7 con + 16 magic item",
+        "DR: (20 level + 2 con) + 60 magic full plate + 16 magic item",
     );
 
     // HasResources
@@ -492,13 +477,13 @@ fn standard_character_statistics_level_20() {
         "FT: 3 fighter + 4 str + 2 combat discipline",
     );
     assert_eq!(
-        3,
+        2,
         creature.calc_resource(&Resource::InsightPoint),
-        "Insight: 2 fighter + 1 int",
+        "Insight: 2 fighter",
     );
     assert_eq!(
-        5,
+        4,
         creature.calc_resource(&Resource::TrainedSkill),
-        "Trained skills: 4 fighter + 1 int",
+        "Trained skills: 4 fighter",
     );
 }

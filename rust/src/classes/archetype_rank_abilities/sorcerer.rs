@@ -360,9 +360,9 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{power}.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -389,7 +389,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Mystic Insights",
@@ -668,7 +668,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                     \end{dtabularx}
                 \end{dtable}
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Chaotic Insight",
@@ -699,7 +699,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 In addition, if you use the \textit{desperate exertion} ability to affect a spell you cast with the \textit{wildspell} ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
                 You do not gain any bonus to the wild magic reroll.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(3)]),
+            modifiers: Some(vec![Modifier::Power(3)]),
         },
         RankAbility {
             name: "Greater Chaotic Insight",
@@ -743,7 +743,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                     \end{dtabularx}
                 \end{dtable}
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(12)]),
+            modifiers: Some(vec![Modifier::Power(12)]),
         },
     ];
 }

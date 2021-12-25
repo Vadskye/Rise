@@ -119,7 +119,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Thunderous Shout",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} sonic damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
@@ -133,7 +133,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Greater Thunderous Shout",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} sonic damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\hugearea cone from you.
         `,
@@ -146,7 +146,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Directed Shout",
 
       attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} sonic damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange of you.
         `,
@@ -160,7 +160,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Greater Directed Shout",
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} sonic damage.`,
+        hit: `The target takes 2d10 + \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange of you.
         `,
@@ -174,7 +174,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Supreme Directed Shout",
 
       attack: {
-        hit: `The target takes 6d10 + \\glossterm{power} sonic damage.`,
+        hit: `The target takes 5d10 + \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange of you.
         `,
@@ -284,7 +284,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Revitalizing Battlecry",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d8 \\glossterm{hit points}.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d6 \\glossterm{hit points}.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
       `,
       rank: 6,

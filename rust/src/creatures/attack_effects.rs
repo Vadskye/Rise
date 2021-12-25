@@ -94,8 +94,8 @@ impl DamageEffect {
             "".to_string()
         };
 
-        let damage_modifier = self.damage_modifier
-            + (attacker.calc_power(is_magical) as f64 * self.power_multiplier) as i32;
+        let damage_modifier =
+            self.damage_modifier + (attacker.calc_power() as f64 * self.power_multiplier) as i32;
         let mut damage_types = self.damage_types.clone();
         damage_types.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
         return format!(
@@ -105,7 +105,7 @@ impl DamageEffect {
             ",
             damage_dice = self
                 .damage_dice
-                .add(attacker.calc_damage_increments(is_strike))
+                .add(attacker.calc_damage_increments(is_strike, is_magical))
                 .to_string(),
             damage_modifier = if damage_modifier == 0 {
                 "".to_string()
@@ -207,10 +207,10 @@ impl HealingEffect {
             "{dice}{modifier} hit points.",
             dice = self
                 .healing_dice
-                .add(healer.calc_damage_increments(false))
+                .add(healer.calc_damage_increments(false, self.is_magical))
                 .to_string(),
             modifier = latex_formatting::modifier(
-                (self.power_multiplier * healer.calc_power(self.is_magical) as f64).floor() as i32
+                (self.power_multiplier * healer.calc_power() as f64).floor() as i32
             ),
         );
     }

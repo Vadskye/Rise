@@ -47,7 +47,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike}.
                     Damage dealt by the strike is bludgeoning and fire damage in addition to its normal damage types.
-                    You may use the higher of your \glossterm{magical} power and your \glossterm{mundane} power to determine your damage with this ability.
+                    You may use either your Strength or your Willpower to determine your damage with this ability (see \pcref{Dice Bonuses From Attributes}).
 
                     \rankline
                     \rank{3} You gain a \plus2 damage bonus with the strike.
@@ -171,7 +171,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus4 bonus to your \glossterm{power}.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Supreme Elemental Balance",
@@ -379,9 +379,9 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{power}.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -408,7 +408,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Mystic Insights",
@@ -488,7 +488,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
                         In addition, you gain a tentacle \glossterm{natural weapon} (see \tref{Natural Weapons}).
-                        This weapon deals 1d10 damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
+                        This weapon deals 1d8 damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
                         It can only be used against a foe you are grappling with.
 
                         \rankline

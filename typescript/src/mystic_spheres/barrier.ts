@@ -126,7 +126,7 @@ export const barrier: MysticSphere = {
       functionsLike: {
         exceptThat: `
           it breaks objects in its area that obstruct its path.
-            Each object in the path of the wall takes energy damage equal to 2d6 plus your \\glossterm{power}.
+            Each object in the path of the wall takes energy damage equal to 1d10 plus your \\glossterm{power}.
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
             In addition, the \\glossterm{hit points} of each 5-ft.\\ square increase to 16.
@@ -136,9 +136,9 @@ export const barrier: MysticSphere = {
       rank: 3,
       scaling: {
         5: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 32.
-            In addition, the damage increases to 2d8 plus your \\glossterm{power}.`,
+            In addition, the damage increases to 2d6 plus your \\glossterm{power}.`,
         7: `The maximum area increases to a \\largearealong wall, and the hit points of each square increase to 64.
-            In addition, the damage increases to 2d10 plus your \\glossterm{power}.`,
+            In addition, the damage increases to 2d8 plus your \\glossterm{power}.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -541,7 +541,7 @@ export const barrier: MysticSphere = {
         You make an attack vs. Reflex against everything within a \\smallarea radius from the object.
         Your accuracy with this attack is equal to half your level \\add half your base Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
-        Each struck target takes 2d8 + half \\glossterm{power} energy damage.
+        Each struck target takes 2d6 + half \\glossterm{power} energy damage.
 
         After the object explodes in this way, the ritual is \\glossterm{dismissed}.
         If the object is destroyed or rendered illegible, the ritual is dismissed without exploding.

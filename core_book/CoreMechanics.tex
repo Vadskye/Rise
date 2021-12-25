@@ -19,9 +19,16 @@ This chapter describes the core mechanics of Rise.
         The sum of your die roll and your accuracy is called your \glossterm{attack result}.
         You compare your attack result to a \glossterm{defense} that your \glossterm{target} has (see \pcref{Defenses}).
         All attacks specify which defense they are compared to.
+
         If your result is equal to or higher than your target's defense, the attack hits.
         This almost always means the target suffers some harmful effect, such as taking \glossterm{damage} (see \pcref{Damage}).
+        If your result is 1 or 2 lower than the defender's defense, you get a \glossterm{glancing blow} (see \pcref{Glancing Blows}).
         Otherwise, the attack misses.
+        When an attack misses, the defender almost always suffers no effects from the attack.
+        Even if the attack had no obvious physical or visual effects, a creature that resists an attack still feels a hostile force or a tingle, but cannot usually deduce the exact nature of the attack.
+
+        Creatures can voluntarily lower their defenses against attacks that they are aware of.
+        When they do, their defense is treated as 0 against the attack.
 
         \subsubsection{Exploding Attacks}\label{Exploding Attacks}
             When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
@@ -67,9 +74,13 @@ This chapter describes the core mechanics of Rise.
         Many active abilities require the target to lose hit points from a damaging attack, which does not happen if the damage is resisted.
 
         \subsubsection{Dice Pools}\label{Dice Pools}
-            Almost all attacks deal damage based on the result rolled from a pool of dice.
-            Many abilities can increase or decrease your damage.
-            Some modifiers add or subtract flat values from the damage you deal.
+            Almost all attacks deal damage based on a \glossterm{dice pool}.
+            Likewise, healing abilities usually heal hit points based on a dice pool.
+            Dice pools are written with the number of dice, followed by ``d'', followed by the size of dice to roll.
+            For example, 2d6 means you roll two six-sided dice.
+            You always sum the roll of all dice rolled in a dice pool to determine the total result.
+
+            Some modifiers add or subtract flat values from the result of the dice pool.
             Others add or subtract \glossterm{dice increments}.
 
             A die increment is a single increase or decrease in the value of a dice pool.
@@ -95,148 +106,104 @@ This chapter describes the core mechanics of Rise.
                 \item 8d10
             \end{itemize}
 
-        For each die increment that increases the damage, move one space down the list.
-        Likewise, for each die increment that decreases the damage, move one space up the list.
-        After the dice pool reaches 8d10, each additional die increment simply adds an additional 10 flat damage.
+            For each die increment that increases the damage, move one space down the list.
+            Likewise, for each die increment that decreases the damage, move one space up the list.
+            After the dice pool reaches 8d10, each additional die increment adds an additional 1d10.
+            In practice, you are unlikely to ever roll that many dice.
 
-        % TODO: different section?
-        \subsubsection{Damage Types}\label{Damage Types}
-            All damage falls into one of two categories: \glossterm{energy damage} or \glossterm{physical damage}.
-            Physical damage is the most common type of damage.
-            Energy damage is usually caused by \glossterm{magical} effects.
+            \parhead{Dice Bonuses From Attributes}\label{Dice Bonuses From Attributes} Your attributes can add or subtract dice increments from all dice pools you roll.
+            Whenever you use a \glossterm{mundane} ability that has a dice pool, you add half your Strength in dice increments to the dice pool.
+            If your Strength is negative, this can reduce your damage or healing.
+            Likewise, you add half your Willpower in dice increments to your dice pools with \glossterm{magical} abilities.
+            For example, if you are using a spell that normally deals 1d8 damage, and your Willpower is 2 or 3, you would deal 1d10 damage with that ability instead.
 
-            \subsubsection{Damage Subtypes}\label{Damage Subtypes}
-                Physical damage has three subtypes: bludgeoning damage, piercing damage, and slashing damage.
-                Energy damage has five subtypes: acid damage, cold damage, electricity damage, fire damage, and sonic damage.
-                Damage of a particular subtype is also considered damage of its primary type.
-                For example, if you are \trait{impervious} to \glossterm{physical damage}, that applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
+            Items are an exception to this rule.
+            Some items specify their own dice pools, like a \mitem{firebomb} or a \mitem{vampiric} weapon.
+            Your Strength and Willpower do not modify the dice pools specified by items.
 
-                Some damage types have special properties, as described below.
-                \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
-                \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
-                \parhead{Fire} Abilities that deal fire damage provide light equivalent to a torch for their duration.
-                % TODO: what does this actually mean
-                Abilities without a duration create a brief burst of torchlight.
-                While underwater, they deal half damage and have no nondamaging effects.
+    % TODO: different section?
+    \subsection{Damage Types}\label{Damage Types}
+        All damage falls into one of two categories: \glossterm{energy damage} or \glossterm{physical damage}.
+        Physical damage is the most common type of damage.
+        Energy damage is usually caused by \glossterm{magical} effects.
 
-            \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
-                Some attacks deal damage that has multiple damage types.
-                Defensive abilities such as defense bonuses or damage immunities apply against an attack only if they apply to all damage types dealt by the attack.
+        \subsubsection{Damage Subtypes}\label{Damage Subtypes}
+            Physical damage has three subtypes: bludgeoning damage, piercing damage, and slashing damage.
+            Energy damage has five subtypes: acid damage, cold damage, electricity damage, fire damage, and sonic damage.
+            Damage of a particular subtype is also considered damage of its primary type.
+            For example, if you are \trait{impervious} to \glossterm{physical damage}, that applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
 
-        \subsubsection{Special Damage Types}\label{Special Damage Types}
+            Some damage types have special properties, as described below.
+            \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
+            \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
+            \parhead{Fire} Abilities that deal fire damage provide light equivalent to a torch for their duration.
+            % TODO: what does this actually mean
+            Abilities without a duration create a brief burst of torchlight.
+            While underwater, they deal half damage and have no nondamaging effects.
 
-            These special damage types are separate from the standard damage types, like fire damage or energy damage.
+        \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
+            Some attacks deal damage that has multiple damage types.
+            Defensive abilities such as defense bonuses or damage immunities apply against an attack only if they apply to all damage types dealt by the attack.
 
-            \subsubsection{Subdual Damage}\label{Subdual Damage}
-                Some attacks and environmental effects deal subdual damage.
-                Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
-                If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
-                Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
-                If you do, you deal half damage with the strike.
+    \subsubsection{Special Damage Types}\label{Special Damage Types}
 
-            \subsubsection{Environmental Damage}\label{Environmental Damage}
-                Some abilities and environmental effects deal environmental damage.
-                Environmental damage is never dealt as the result of a successful attack roll.
-                Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
-                Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
+        These special damage types are separate from the standard damage types, like fire damage or energy damage.
 
-                It is possible for damage to be both environmental damage and subdual damage.
+        \subsubsection{Subdual Damage}\label{Subdual Damage}
+            Some attacks and environmental effects deal subdual damage.
+            Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
+            If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
+            Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
+            If you do, you deal half damage with the strike.
 
-\section{Being Attacked}\label{Being Attacked}
-    When another creature attacks you, you may or may not suffer serious consequences from the attack.
-    The attack may miss entirely if your \glossterm{defenses} are high enough.
-    If you are hit by a damaging attack, you reduce your \glossterm{damage resistance} first, and then your \glossterm{hit points} second.
-    Taking damage in excess of your hit points can cause you to gain a \glossterm{vital wound}, which can kill you.
-    This section explains all of those concepts.
+        \subsubsection{Environmental Damage}\label{Environmental Damage}
+            Some abilities and environmental effects deal environmental damage.
+            Environmental damage is never dealt as the result of a successful attack roll.
+            Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
+            Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
 
-    \subsection{Defenses}\label{Defenses}
-        Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against one of your four \glossterm{defenses} (see \pcref{Attack Rolls}).
-        If the attack roll is at least as high as that defense, the attack succeeds.
-        The four defenses are described below.
-        \begin{itemize}
-            \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
-                It is the most commonly used defense.
-            \item Reflex defense: Your Reflex protects you from physical attacks that armor does not help against, such as pit traps or bolts of lightning.
-            \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and life-draining spells.
-            \item Mental defense: Your Mental defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical mind manipulation.
-        \end{itemize}
+            It is possible for damage to be both environmental damage and subdual damage.
 
-        \subsubsection{Defense Values}\label{Defense Values}
+\section{Taking Damage}\label{Taking Damage}
+    Taking damage from attacks reduces your \glossterm{damage resistance}, and then your \glossterm{hit points}, before finally inflicting \glossterm{vital wounds}.
+    To calculate your damage resistance and hit points, see \pcref{Character Statistics}.
+    This section explains those concepts in more detail.
 
-            Your defenses are calculated in the following way:
-            \begin{itemize}
-                \itemhead{Armor} Half level \add base Dexterity (modified depending on equipped armor) \add half base Constitution \add class defense bonus \add defense bonuses from equipped body armor and shield
-                \itemhead{Fortitude} Half level \add base Constitution \add class defense bonus
-                \itemhead{Reflex} Half level \add base Dexterity \add class defense bonus
-                \itemhead{Mental} Half level \add base Willpower \add class defense bonus
-            \end{itemize}
-            In addition to the normal calculation, each defense may have additional bonuses or penalties applied by various abilities.
+    Whenever you take damage, you reduce your \glossterm{damage resistance} by an amount equal to the damage you took.
+    Any damage in excess of your remaining damage resistance reduces your \glossterm{hit points}.
+    There are two main difference between hit points and damage resistance.
+    First, losing \glossterm{hit points} makes you vulnerable to many debilitating debuffs.
+    Second, many abilities can restore hit points lost during combat, but damage resistance is extremely difficult to recover without taking a \glossterm{short rest}.
 
-            \parhead{Class Bonuses} Each class provides bonuses to some combination of Armor, Fortitude, Reflex, and Mental defenses.
-            \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense.
-            These bonuses stack with any armor such creatures might wear.
+    \subsection{Negative Hit Points}
+        You can have negative hit points, but only briefly.
+        At the end of each \glossterm{phase}, if your hit points are negative, you gain a \glossterm{vital wound} and your hit points are set to 0 (see \pcref{Vital Wounds}).
+        % TODO: does this still need to exist? all "end of round" damage should ideally be removed
+        % Damage you take at the end of the round is considered to be part of the delayed action phase for this purpose.
+        If your negative hit points exceed half your maximum hit points, you gain an additional vital wound.
+        You gain an additional vital wound for each increment of half your maximum hit points that you have in negative hit points.
 
-        \subsubsection{Resisting Attacks}
-            If an attack fails against you, you almost always suffer no effects from the attack.
-            Even if the attack had no obvious physical or visual effects, a creature that resists an attack still feels a hostile force or a tingle, but cannot usually deduce the exact nature of the attack.
+    \subsection{Resolving Simultaneous Damage}\label{Resolving Simultaneous Damage}
+        Many attacks have special effects when they cause you to lose \glossterm{hit points}.
+        In addition, some attacks have special effects based on other triggers, like whether you resisted all damage from the attack.
+        When you take damage from multiple sources during the same phase, it may not be obvious how to determine whether any individual attack caused you to lose hit points.
+        There is a rule for this situation: each attack's special effects are triggered as if all damage you took in the current phase was dealt by that attack.
 
-            \parhead{Lowering Defenses} When you are subject to an attack that you are aware of, you can voluntarily lower your defenses against the attack.
-            If you do, your defense is treated as 0 against the attack.
+        For example, assume that you started a phase with some damage resistance remaining.
+        You are hit by two attacks: the \spell{organ failure} spell and the \maneuver{strip the armor} maneuver.
+        The combined damage from the two attacks exceeds your damage resistance, so you lose some hit points.
+        The \spell{organ failure} spell would cause you to be \stunned, because it would be treated as if it made you lose hit points, even if your damage resistance at the start of the phase exceeded the damage dealt by that spell.
+        Likewise, the \maneuver{strip the armor} maneuver would not have its bonus effect that triggers if you resist all damage from the attack, because you lost hit points from that attack as well.
 
-    \subsection{Hit Points}\label{Hit Points}
-        Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
-        Whenever you take damage that is not prevented by your \glossterm{damage resistance}, you lose that many hit points (see \pcref{Damage}).
-        When you run out of hit points, you start gaining vital wounds instead (see \pcref{Reaching Zero Hit Points}).
+        Non-damaging attacks are simpler.
+        They always care about your current state at the time the attack is made, regardless of any damage you may take during the phase.
 
-        The number of hit points you have is based on your level, as defined in \tref{Character Advancement}.
-        In addition, each creature gains a bonus (or penalty) to its hit points equal to its Constitution.
-        Some special abilities can give you additional \glossterm{hit points}.
+        \parhead{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
+        If you regain hit points and take damage in the same phase, apply all healing effects after applying any damaging effects.
+        The healing still applies before checking for \glossterm{vital wounds}, so the order is mostly irrelevant, except that this avoids the risk of conflicting with your maximum hit point total.
 
-        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
-        When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
-        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
-
-        \parhead{Bonuses to Hit Points} Any effect that grants you a bonus to your hit points increases both your maximum hit points and current hit points.
-        When that effect ends, you lose hit points equal to the bonus that it gave you while it was active.
-
-        \subsubsection{Reaching Zero Hit Points}\label{Reaching Zero Hit Points}
-        At the end of each phase, if you took damage in excess of your remaining \glossterm{hit points} during that phase, you gain a \glossterm{vital wound} and your hit points are set to 0.
-        % TODO: this should be a generic mechanic
-        Damage you take at the end of the round is considered to be part of the delayed action phase for this purpose.
-        If the combined excess damage you suffered from all sources in a given phase is greater than half your maximum hit points, you gain an additional vital wound.
-        You gain an additional vital wound for each increment of half your maximum hit points that you take in excess damage.
-
-        \subsubsection{Regaining Hit Points and Damage Resistance}\label{Regaining Hit Points and Damage Resistance}
-            Some abilities cause you to regain lost hit points or damage resistance.
-            For example, the \textit{recover} ability allows you to regain all of your lost hit points (see \pcref{Recover}).
-            You can't normally exceed your maximum hit points or maximum damage resistance, even with magical abilities, unless the ability explicitly says that you can.
-
-            \parhead{Timing} If you regain hit points and lose hit points in the same phase, the two values offset before checking other effects or limitations on the healing or damage.
-            The same applies to regaining and losing damage resistance.
-            For example, if you were at five hit point and both regained six hit points and lost six hit points simultaneously, you would not receive a vital wound for dropping below 0 hit points.
-            Instead, you would simply be at one hit point after both the healing and damage were applied.
-            Similarly, if you were at your maximum hit points and both regained and lost two hit points simultaneously, you would still be at your maximum hit points.
-
-    \subsection{Damage Resistance}\label{Damage Resistance}
-        Most creatures can resist some damage before they start losing hit points.
-        Whenever you take damage, you first apply that damage to your \glossterm{damage resistance} before applying it to your hit points.
-        You reduce your remaining damage resistance by an amount equal to the damage you take.
-        If the damage is less than your remaining damage resistance, you do not lose any hit points.
-        If the damage is more than your remaining damage resistance, your damage resistance is reduced to 0 and you lose hit points equal to the excess damage.
-
-        Essentially, your damage resistance function like extra hit points that are always subtracted before you start losing actual hit points.
-        Many attacks have specific consequences if you lose hit points from them, and your damage resistance can protect you from those consequences.
-
-        You restore your damage resistance to its full value whenever you take a \glossterm{short rest}.
-        Damage resistance cannot be restored by effects that cause creatures to regain hit points.
-        Some specific special abilities can restore damage resistance.
-
-        The base value of your damage resistance is based on your level, as defined in \tref{Character Advancement}.
-        In addition, all creatures gain a bonus to their damage resistance equal to their Constitution.
-        Body armor provides a bonus to damage resistance, and many special abilities also increase your damage resistance.
-
-        \parhead{Noticing Damage Resistance}
-        In general, it is impossible to determine whether a creature has damage resistance simply by observing them unless there are obvious visual cues like body armor.
+    \subsection{Noticing Damage Resistance}
+        In general, it is impossible to determine whether a creature has damage resistance simply by observing them unless there are obvious visual cues like bleeding injuries.
         However, when a creature takes damage from an attack, an observer can determine the result of the attack with an Awareness check with a base \glossterm{difficulty value} of 10 (before applying the normal modifiers for distance, visibility, and so on).
         The creature dealing the damage gains a \plus10 bonus to this check.
         Success on this check allows an observer to distinguish between the following three possibilities:
@@ -246,55 +213,53 @@ This chapter describes the core mechanics of Rise.
                 This means that the target's damage resistance was reduced to 0 during this phase.
             \item The creature did not resist any damage from your attack, and took all damage from the attack from their hit points.
         \end{itemize}
+        Most of the time, you can simplify this to simply ``if you attack someone, you know if you beat their damage resistance''.
+        The Awareness calculation is useful to handle unusual situations like maximum range longbow shots, where you might not be able to observe the exact result of your attack.
 
-        \parhead{Timing} If you take damage from multiple sources simultaneously, you apply your current damage resistance value against all of them equally for the purpose of determining whether any individual attack caused you to lose hit points.
-        For example, if you have 5 damage resistance remaining, and you take 3 damage and 8 damage from different sources in the same round, only the 8 damage attack would be considered to have caused you to lose hit points.
-        This is meaningful for determining the effects of attacks that have special effects if they specifically cause you to lose hit points.
+\section{Vital Wounds}\label{Vital Wounds}
+    A \glossterm{vital wound} represents serious damage to your body.
+    Each \glossterm{vital wound} has a specific detrimental effect on you.
+    You gain vital wounds by taking damage in excess of your remaining \glossterm{hit points} (see \pcref{Reaching Zero Hit Points}).
 
-    \subsection{Vital Wounds}\label{Vital Wounds}
-        A \glossterm{vital wound} represents serious damage to your body.
-        Each \glossterm{vital wound} has a specific detrimental effect on you.
-        You gain vital wounds by taking damage in excess of your remaining \glossterm{hit points} (see \pcref{Reaching Zero Hit Points}).
+    To determine the effect of a \glossterm{vital wound}, make a \glossterm{vital roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
+    The effect of the vital wound lasts until you remove that vital wound.
+    The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
 
-        To determine the effect of a \glossterm{vital wound}, make a \glossterm{vital roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
-        The effect of the vital wound lasts until you remove that vital wound.
-        The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
+    \subsection{Vital Rolls}\label{Vital Rolls}
+        To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
+        This includes vital wounds that have no specific vital wound effect.
+        The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
+        Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
 
-        \subsubsection{Vital Rolls}\label{Vital Rolls}
-            To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
-            This includes vital wounds that have no specific vital wound effect.
-            The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
-            Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
+        \parhead{Delaying Death} Vital wounds with a vital roll below 1 can kill you.
+        While you are dying in this way, if you receive healing that causes you to regain hit points, you delay your death by one round.
+        This benefit applies even if you are already at full hit points.
+        You cannot delay your death in this way by more than 5 rounds.
 
-            \parhead{Delaying Death} Vital wounds with a vital roll below 1 can kill you.
-            While you are dying in this way, if you receive healing that causes you to regain hit points, you delay your death by one round.
-            This benefit applies even if you are already at full hit points.
-            You cannot delay your death in this way by more than 5 rounds.
+        \begin{dtable}
+            \lcaption{Vital Wound Effects}
+            \begin{dtabularx}{\textwidth}{l X}
+                \tb{Vital Roll}  & \tb{Effect} \tableheaderrule
+                \minus6 or less  & You immediately die                                                              \\
+                \minus1--\minus5 & You are unconscious, and you die at the end of the next round                    \\
+                0                & You are unconscious, and you die after one minute                                \\
+                1                & You are unconscious while you have less than full hit points                     \\
+                2                & Your maximum \glossterm{hit points} and \glossterm{damage resistance} are halved \\
+                3                & You take a \minus2 penalty to \glossterm{accuracy}                               \\
+                4                & You take a \minus2 penalty to all \glossterm{defenses}                           \\
+                5                & You take a \minus1 penalty to future \glossterm{vital rolls}                     \\
+                6                & You move at half speed while you have less than full hit points                  \\
+                7                & Your maximum \glossterm{damage resistance} is halved                             \\
+                8                & You take a \minus1 penalty to \glossterm{accuracy}                               \\
+                9                & You take a \minus1 penalty to all \glossterm{defenses}                           \\
+                10 or more       & No extra vital wound effect                                                      \\
+            \end{dtabularx}
+        \end{dtable}
 
-            \begin{dtable}
-                \lcaption{Vital Wound Effects}
-                \begin{dtabularx}{\textwidth}{l X}
-                    \tb{Vital Roll}  & \tb{Effect} \tableheaderrule
-                    \minus6 or less  & You immediately die                                                              \\
-                    \minus1--\minus5 & You are unconscious, and you die at the end of the next round                    \\
-                    0                & You are unconscious, and you die after one minute                                \\
-                    1                & You are unconscious while you have less than full hit points                     \\
-                    2                & Your maximum \glossterm{hit points} and \glossterm{damage resistance} are halved \\
-                    3                & You take a \minus2 penalty to \glossterm{accuracy}                               \\
-                    4                & You take a \minus2 penalty to all \glossterm{defenses}                           \\
-                    5                & You take a \minus1 penalty to future \glossterm{vital rolls}                     \\
-                    6                & You move at half speed while you have less than full hit points                  \\
-                    7                & Your maximum \glossterm{damage resistance} is halved                             \\
-                    8                & You take a \minus1 penalty to \glossterm{accuracy}                               \\
-                    9                & You take a \minus1 penalty to all \glossterm{defenses}                           \\
-                    10 or more       & No extra vital wound effect                                                      \\
-                \end{dtabularx}
-            \end{dtable}
-
-        \subsubsection{Removing Vital Wounds}\label{Removing Vital Wounds}
-            Vital wounds take time to heal.
-            Whenever you take a \glossterm{long rest}, you remove one of your vital wounds.
-            If you have multiple vital wounds, you may choose the order in which your vital wounds are removed.
+    \subsection{Removing Vital Wounds}\label{Removing Vital Wounds}
+        Vital wounds take time to heal.
+        Whenever you take a \glossterm{long rest}, you remove one of your vital wounds.
+        If you have multiple vital wounds, you may choose the order in which your vital wounds are removed.
 
 \section{Making Checks}\label{Checks}\label{Making Checks}
     Checks are required to perform actions that have a chance of failure where the difficulty is not measured by the defense of another creature or object.
@@ -381,7 +346,7 @@ This chapter describes the core mechanics of Rise.
         You can take multiple long rests consecutively to recover from extensive vital wounds.
 
 \section{Size Categories}\label{Size Categories}
-    Your size affects your \glossterm{space} and \glossterm{reach} in combat, your speed with any \glossterm{movement modes} that depend on your size category's \glossterm{base speed}, your base attributes, and how noticeable you are (see \pcref{Stealth}).
+    Your size affects your \glossterm{space} and \glossterm{reach} in combat, your speed with any \glossterm{movement modes} that depend on your size category's \glossterm{base speed}, your attributes, and how noticeable you are (see \pcref{Stealth}).
     These effects are shown on \trefnp{Size Categories}.
 
     \begin{dtable*}
@@ -403,7 +368,7 @@ This chapter describes the core mechanics of Rise.
             Colossal (long)   & 80\add ft. & 40\add ft. & 80 ft. & \plus4  & \minus4 & Great wyrm red dragon    \\
         \end{dtabularx}
         1 Creatures can vary in space and reach.  These are simply typical values.  \\
-        2. Applies to base attribute value. These modifiers only apply to creature that naturally have the given size, without any temporary modifiers. \\
+        2. These modifiers only apply to creature that naturally have the given size, without any temporary modifiers. \\
     \end{dtable*}
 
     \subsection{Space}\label{Space}
@@ -451,6 +416,385 @@ This chapter describes the core mechanics of Rise.
         \parhead{Immunities} Creatures at least two size categories larger than you are difficult to fight.
         You cannot get a \glossterm{critical hit} with melee \glossterm{strikes} against such creatures.
         If you can reach a vulnerable point on the creature, such as by flying, climbing on the creature, or knocking it prone, you can get critical hits normally.
+
+    \subsection{Weight Categories}\label{Weight Categories}
+        Weight is generally measured in \glossterm{weight categories} rather than pounds or kilograms.
+        Weight categories use the same terms as \glossterm{size categories}, as shown in \tref{Weight Categories}.
+        In general, a creature's weight category is the same as its size category.
+
+        Objects and creatures can also be either \glossterm{lightweight} or \glossterm{heavyweight}.
+        Lightweight objects and creatures have a weight category that is one category lighter than their size category.
+        Heavyweight objects and creatures have a weight category that is one category heavier than their size category.
+
+        Objects that occupy only a small percentage of the space appropriate for their size category, such as swords, are usually lightweight.
+        Objects that fully occupy the space appropriate for their size category, like boulders, are usually heavyweight.
+
+        \begin{dtable}
+            \lcaption{Weight Categories}
+            \begin{dtabularx}{\textwidth}{l X}
+                \tb{Weight Category} & \tb{Average Weight} \tableheaderrule
+                Fine        & 1 oz.       \\
+                Diminuitive & 1/2 lb.     \\
+                Tiny        & 2 lb.       \\
+                Small       & 15 lb.      \\
+                Medium      & 125 lb.     \\
+                Large       & 1,000 lb.   \\
+                Huge        & 8,000 lb.   \\
+                Gargantuan  & 64,000 lb.  \\
+                Colossal    & 512,000 lb. \\
+            \end{dtabularx}
+        \end{dtable}
+
+\section{Weight Limits}\label{Weight Limits}
+
+    \begin{dtable}
+        \lcaption{Weight Limits by Strength}
+        \setlength{\tabcolsep}{4pt}
+        \begin{dtabularx}{\columnwidth}{X X X}
+            \tb{Strength} & \tb{Carrying Capacity} & \tb{Push/Drag} \tableheaderrule
+            -9            & Fine x8                & Tiny          \\
+            -8            & Diminuitive x2         & Tiny x2       \\
+            -7            & Diminuitive x4         & Tiny x4       \\
+            -6            & Diminuitive x8         & Tiny x8       \\
+            -5            & Tiny x2                & Small x2      \\
+            -4            & Tiny x4                & Small x4      \\
+            -3            & Tiny x8                & Small x8      \\
+            -2            & Small x2               & Medium x2     \\
+            -1            & Small x4               & Medium x4     \\
+            0             & Small x8               & Medium x8     \\
+            1             & Medium x2              & Large x2      \\
+            2             & Medium x4              & Large x4      \\
+            3             & Medium x8              & Large x8      \\
+            4             & Large x2               & Huge x2       \\
+            5             & Large x4               & Huge x4       \\
+            6             & Large x8               & Huge x8       \\
+            7             & Huge x2                & Gargantuan x2 \\
+            8             & Huge x4                & Gargantuan x4 \\
+            9             & Huge x8                & Gargantuan x8 \\
+            10            & Gargantuan x2          & Colossal x2   \\
+            11            & Gargantuan x4          & Colossal x4   \\
+            12            & Gargantuan x8          & Colossal x8   \\
+            13            & Colossal x2            & Colossal x16  \\
+            14\plus\fn{1} & \tdash                 & \tdash        \\
+        \end{dtabularx}
+        1 To calculate the weight limits for a creature with epic Strength, double the number of objects it can carry and drag for every point of Strength beyond 13.
+    \end{dtable}
+
+    Your Strength determines how much you can carry or push, as shown in \trefnp{Weight Limits by Strength}.
+    Your weight limits are measured in terms of how many objects or creatures of a given \glossterm{weight category} that you can carry or push at once.
+    Instead of carrying one object of a given weight category, you can carry eight objects that are one weight category lighter.
+    In general, it is not meaningful to consider the weight of any objects with a weight category lighter than your maximum weight category.
+
+    You can carry objects or creatures up to your maximum carrying capacity without any penalty.
+    This is called your \glossterm{carrying capacity}.
+    Beyond that, you can push or drag objects or creatures up your pushing and dragging limit as a standard action.
+    When you do, you move the weight 5 feet.
+
+    \parhead{Multi-Legged Creatures} The figures on \trefnp{Weight Limits by Strength} are for bipedal creatures.
+    A creature with four or more legs can carry, push, or drag twice as many objects as a bipedal creature of the same Strength.
+
+\section{Communication and Languages}\label{Languages}\label{Communication and Languages}
+
+    \parhead{Literacy}
+    All characters with an Intelligence of \minus2 or higher are presumed to be literate, allowing them to read and write any language they speak. Each language has an alphabet, though sometimes several spoken languages share a single alphabet.
+
+    \parhead{Language Rarity}\label{Language Rarity}
+    Some languages are widely spoken in the world, while others are only encountered in unusual circumstances.
+    Common languages are summarized on \trefnp{Common Languages}, below.
+    Rare languages are summarized on \trefnp{Rare Languages}, below.
+    Rare languages are more difficult to learn, and are usually only spoken by unusual creatures.
+
+    \parhead{Learning Languages}\label{Learning Languages}
+    You can spend one \glossterm{insight point} to learn two \glossterm{common languages} or one \glossterm{rare language}.
+    In addition, you can learn two common languages or one rare language by mastering the Linguistics skill (see \pcref{Linguistics}).
+
+    \begin{dtable}
+        \lcaption{Common Languages}
+        \begin{dtabularx}{\columnwidth}{l >{\lcol}X l}
+            \tb{Language} & \tb{Typical Speakers} & \tb{Alphabet} \tableheaderrule
+            Common        & Civilized creatures   & Common   \\
+            Draconic      & Dragons, kobolds      & Draconic \\
+            Dwarven       & Dwarves               & Dwarven  \\
+            Elven         & Elves                 & Elven    \\
+            Giant         & Ogres, giants         & Dwarven  \\
+            Gnoll         & Gnolls                & Common   \\
+            Gnome         & Gnomes                & Dwarven  \\
+            Goblin        & Goblins, hobgoblins   & Dwarven  \\
+            Halfling      & Halflings             & Common   \\
+            Orc           & Orcs                  & Dwarven  \\
+        \end{dtabularx}
+    \end{dtable}
+
+    \begin{dtable}
+        \lcaption{Rare Languages}
+        \begin{dtabularx}{\columnwidth}{l >{\lcol}X l}
+            \tb{Language}  & \tb{Typical Speakers}  & \tb{Alphabet} \tableheaderrule
+            Abyssal     & Evil planeforged      & Abyssal  \\
+            Aquan       & Water-based creatures & Elemental \\
+            Auran       & Air-based creatures   & Elemental \\
+            Celestial   & Good planeforged      & Celestial \\
+            Ignan       & Fire-based creatures  & Elemental \\
+            Sylvan      & Dryads, faeries       & Elven     \\
+            Terran      & Earth-based creatures & Elemental \\
+            Undercommon & Drow                  & Elven
+        \end{dtabularx}
+    \end{dtable}
+
+    \subsection{Telepathy}\label{Telepathy}
+        Some creatures have the ability to telepathically communicate with other creatures.
+        All telepathy abilities have a defined \glossterm{range}.
+        Unless otherwise specified, a telepathic creature can only communicate with one creature at a time.
+
+        As a \glossterm{free action}, a telepathic creature can open a telepathic communication channel with one creature it sees within the range of its telepathy ability.
+        The target does not have to be willing to receive telepathic communication in this way.
+        While this channel is open, the telepathic creature can cause the target to ``hear'' the telepathic creature's voice inside the target's head.
+        If the target attempts to mentally reply while the channel is open, the telepathic creature can similarly ``hear'' the reply in its head as if the target was speaking.
+        This does not generally grant the ability to detect any other thoughts, though exceptionally stupid targets may accidentally broadcast their private thoughts.
+
+        Telepathic communication uses words, so it still requires a shared language to be intelligible, even though the words are only imagined.
+        A telepathic creature may attempt to telepathically communicate with creatures without a language, though this is generally unproductive.
+        A skilled telepath can customize the mental ``voice'' it projects in the same way that a creature can attempt to disguise or alter its voice when speaking.
+
+% Is this the right location?
+\section{Planes}\label{Planes}
+    The universe of Rise is divided into \glossterm{planes}.
+    A plane is a distinct realm of existence.
+    Except for the connections between planes through \glossterm{planar rifts}, each plane is effectively an isolated universe, and different planes can obey different fundamental laws.
+    For example, the Material Plane has gravity that exerts a consistent acceleration in a single absolute direction.
+    However, the Astral Plane has subjective gravity, where each creature on the plane chooses the direction that gravity pulls it in, if any.
+
+    \subsection{General Cosmology}
+        The planes of Rise are divided up into groups.
+
+        \parhead{Primal Planes} The primal planes are manifestations of the basic building blocks of the universe.
+        Each plane in this group is predominantly composed of a single element or type of energy.
+        There are four primal planes: Air, Earth, Fire, and Water.
+
+        \parhead{Aligned Planes} The aligned planes are manifestations of the nine alignments that define the morality of the universe.
+        Each plane in this group is strongly associated with a particular alignment.
+        The souls of creatures with the corresponding alignment often spend their afterlife in the Aligned Planes.
+        There are nine aligned planes, one for each alignment combination (see \pcref{Alignment}).
+
+        \parhead{Nexus Planes} The nexus planes are composite planes with a number of distinct environments and filled with creatures of myriad alignments.
+        Nexus planes comprise the majority of civilization across all planes.
+        They do not have their own unique planar essence, and no planar creatures are native to nexus planes.
+        There are two nexus planes: the Material Plane and the Astral Plane.
+
+        \parhead{Demiplanes} These planes are small, fragmentary realms that are greatly limited in their scope.
+        There is no specific list of demiplanes, and they share few common properties.
+        Most demiplanes were created for particular purposes by beings of great power, though some simply came into existence through unknown means.
+
+    \subsection{Planar Rifts}\label{Planar Rifts}
+        Normally, there are boundaries between different planes that prevent direct passage between them.
+        However, \glossterm{planar rifts} are places where these boundaries have weakened, making interplanar travel easier.
+        A planar rift joins a specific location on one plane to a specific location on a different plane.
+        Most planar rifts lead to and from the Astral Plane, which is the space between the other planes (see \pcref{The Astral Plane}).
+
+        Most planar rifts still require the use of magic, such as the \spell{plane shift} ritual, to actually cross between planes.
+        Some especially large rifts enable physical travel between planes without the use of any magic.
+
+    \subsection{Planar Traits}
+        \subsubsection{Gravity Direction}
+            The direction of gravity on a plane can take one of the following forms:
+            \begin{itemize}
+                \item Fixed Gravity: Gravity points in a fixed direction and with a fixed strength at all locations on the plane.
+                    Almost all planes with a fixed gravity have a perfectly flat surface.
+                \item Absolute Directional Gravity: Gravity points in a consistent direction according to a rule that applies equally to everything on the plane, but which is not in a fixed direction.
+                    For example, a plane filled with floating spheres where gravity always points towards the closest sphere has absolute directional gravity.
+                \item Subjective Gravity: Each creature on the plane chooses the direction of gravity for that creature.
+                    The plane has no gravity for unattended objects and nonsentient creatures.
+                    A creature on the plane can make use the \textit{control gravity} ability as a \glossterm{minor action}.
+                    \begin{freeability}{Control Gravity}
+                        Make a Willpower check with a \glossterm{difficulty value} of 10.
+                        Success means that you choose the direction of gravity that applies to you on the current plane.
+                        Alternately, you can choose for gravity to not apply to you.
+
+                        Failure means you gain a \plus2 bonus to the next \textit{control gravity} ability you use on this plane.
+                        This bonus stacks with itself and lasts until you succeed at a \textit{control gravity} ability on this plane.
+                    \end{freeability}
+            \end{itemize}
+
+        \subsubsection{Gravity Strength} The strength of gravity on a plane can take one of the following forms:
+            \begin{itemize}
+                \item Normal Gravity: Gravity is about the strength of Earth.
+                \item No Gravity: There is no gravity on the plane.
+                    The \glossterm{range limits} of ranged weapons are quadrupled.
+                    % TODO: what additional effects are there?
+                \item Light Gravity: Gravity is about half the strength of Earth.
+                    % Should there be check penalties?
+                    The weight of all items is halved.
+                    The \glossterm{range limits} of ranged weapons are doubled.
+                \item Heavy Gravity: Gravity is about twice the strength of Earth.
+                    Creatures take a \minus2 penalty to Strength and Dexterity-based checks.
+                    The weight of all items is doubled.
+                    The \glossterm{range limits} of ranged weapons are halved, to a minimum of 5 feet.
+                    % TODO: falling damage
+                \item Extreme Gravity: Gravity is about four times the strength of Earth.
+                    Creatures take a \minus4 penalty to Strength and Dexterity-based checks.
+                    The weight of all items is quadrupled.
+                    The \glossterm{range limits} of ranged weapons are reduced to one quarter of the normal value, to a minimum of 5 feet.
+                    % TODO: falling damage
+            \end{itemize}
+
+        \subsubsection{Light} Various planes are illuminated in different ways.
+            \begin{itemize}
+                \item Fixed Source: There is a single constant source of light on the plane.
+                \item Mobile Source: There is a single source of light on the plane that moves around it, illuminating different parts of the plane at different times.
+                \item None: There is no natural source of light on the plane.
+                    Other sources of light, such as torches, function normal.
+            \end{itemize}
+
+        \subsubsection{Limits} The behavior of a plane at its limits can vary widely.
+            Some planes have different behaviors at different limits depending on their shape.
+            \begin{itemize}
+                \item Astral Gate: If you reach the limits of the plane, you find a planar gate to the Astral Plane.
+                \item Barrier: If you reach the limits of the plane, you find an impassable barrier.
+                    The barrier takes the form of a substance relevant to the plane's nature.
+                    It may be possible to dig tunnels into the barrier to some depth, but there is nothing behind the barrier.
+                    As you progress past the limit, the barrier becomes increasingly difficult to break through, and eventually it becomes completely impenetrable.
+                \item Looped: If you go beyond the limits of the plane, you wrap around to the opposite side of the plane.
+                    There is no obvious transition point or perception of transportation when this occurs - the shape of the plane simply connects to itself.
+                    On very small planes, this can allow you to see your own back, though looped planes of that size are rare.
+                \item Infinite: The plane has no limits. This is extremely rare.
+            \end{itemize}
+
+        \subsubsection{Planar Connectivity}
+            Different planes have different degrees of connection to other planes.
+            \begin{itemize}
+                \item Isolated: The plane is difficult to reach or leave.
+                    It has no permanent \glossterm{planar rifts}, and temporary rifts are rare or nonexistent.
+                \item Stable Connected: The plane has multiple permanent \glossterm{planar rifts}.
+                    However, temporary rifts are rare.
+                \item Unstable Connected: The plane has no permanent \glossterm{planar rifts}, but temporary rifts are common.
+                \item Conduit: The plane has a large number of permanent \glossterm{planar rifts}, and temporary rifts are common.
+            \end{itemize}
+
+        \subsubsection{Shape} The shape of a plane defines the shape of its core surface, and what happens if you travel beyond that surface.
+
+            \begin{itemize}
+                \item Flat Surface: The plane consists of a flat surface generally made of earth or similar material.
+                    Most activity and civilization on the plane happens on this surface.
+                    It is usually possible to construct tunnels into a flat surface plane to some depth, depending on the size of the plane.
+                \item Hollow Sphere: The plane consists of a hollow sphere with an outer boundary generally made of earth or similar material.
+                    Most activity and civilization on the plane happens on the inner surface of the sphere.
+                    Some hollow sphere planes have an outer surface that can also be accessed, but most have a limit before any outer surface can be reached.
+                \item Solid Sphere: The plane consists of a solid sphere generally made of earth or similar material.
+                    Most activity and civilization on the plane happens on the surface of the sphere.
+                    It is possible to construct tunnels into a solid sphere plane, but it may become increasingly difficult to traverse the plane as you approach the center of the sphere.
+                    In general, the limit of a solid sphere plane is located at ten times the radius of the plane's primary sphere.
+                \item Uniform: The plane has no well-defined surface or ground layer.
+                    Some uniform planes have no ground or solid obstacles, while others are composed almost entirely of ground and firmament.
+                    Uniform planes almost always still have limits of some kind.
+            \end{itemize}
+
+            % TODO: morphicness, alignment, magic
+
+    \subsection{Plane Descriptions}
+
+        \subsubsection{Primal Planes}
+
+            \parhead{The Plane of Air}
+            The Plane of Air is a a soaring landscape unencumbered by gravity or ground.
+            The vast expanses of empty air are littered with clouds and unpredictable winds.
+            Any inhabitants of the plane must adapt to a highly mobile lifestyle.
+            A number of towns and structures have been built in the plane using raw materials brought from other planes.
+            They sail through the air at the whims of the wind, and are occasionally battered by intersections with other wind streams.
+
+            The Plane of Air has the following planar traits:
+            \begin{itemize}
+                \item Gravity strength: No Gravity
+                \item Light: Fixed Source, from a sun outside the limits of the plane
+                \item Limits: Looped
+                \item Planar connectivity: Unstable Connected
+                \item Shape: Uniform, in a sphere with a radius of about 2,000 miles.
+            \end{itemize}
+
+            \parhead{The Plane of Earth}
+            The Plane of Earth is a titanically large body of earth and stone.
+            A labyrinthine series of mostly airless tunnels weave their way through the plane, connecting the few cities.
+            The plane is a major source of valuable gems, diamonds, and rare metals like mithral, but the dense rock and airless environment make successful mining difficult.
+            In addition, earthquakes periodically reshape the environment by collapsing old tunnel systems and constructing new ones.
+            Some cities have been carved out in vast underground rooms reinforced to survive the earthquakes.
+
+            The Plane of Earth has the following planar traits:
+            \begin{itemize}
+                \item Gravity direction: Fixed
+                \item Gravity strength: Normal
+                \item Light: None
+                \item Limits: Barrier, formed from increasingly dense rock that eventually becomes so hard that no known material or magic can damage it.
+                \item Planar connectivity: Stable Connected
+                \item Shape: Uniform, in a sphere with a radius of about 500 miles.
+            \end{itemize}
+
+            \parhead{The Plane of Fire}
+            The Plane of Fire is an endless searing inferno.
+            The plane's essence is highly combustible, allowing fires to burn indefinitely without any obvious fuel.
+            However, the intensity of flames on the plane are highly uneven, as the plane generates fuel in various locations that shift over time.
+            Some pockets on the surface are devoid of natural fuel, allowing the allow the construction of trading hubs where the few inhabitants of the plane who are not naturally immune to fire can survive.
+            A variety of large tunnels and magma flows run through the sphere, and the intensity of the heat generally increases as you approach the center.
+
+            The Plane of Fire has the following planar traits:
+            \begin{itemize}
+                \item Gravity direction: Absolute Directional, pointing to the center of the sphere
+                \item Gravity strength: Normal
+                \item Light: None, though the constant fires provide sufficient illumination in most locations on the plane
+                \item Limits: Looped
+                \item Planar connectivity: Unstable Connected
+                \item Shape: Solid Sphere, with a radius of about 1,000 miles.
+            \end{itemize}
+
+            \parhead{The Plane of Water}
+            The Plane of Water is an impossibly vast ocean.
+            Powerful currents sweep through the ocean, but much of it is calm, and many forms of aquatic life abound in the water.
+            The Plane of Water is the most densely populated Primal Plane, both by sentient creatures and monsters.
+            Magnificant underwater cities are carved from huge rocks that float peacefully suspended in the water.
+            Though there is no sun, simple creatures akin to plankton form the base of the food chain by feeding directly on the plane's essence.
+
+            The Plane of Earth has the following planar traits:
+            \begin{itemize}
+                \item Gravity strength: No Gravity
+                \item Light: None, though bioluminescent creatures like plankton are extremely common, making many parts of the plane well-lit
+                \item Limits: Looped
+                \item Planar connectivity: Stable Connected
+                \item Shape: Uniform, in a sphere with a radius of about 1,000 miles.
+            \end{itemize}
+
+        \subsubsection{Nexus Planes}
+
+            \parhead{The Material Plane}\label{The Material Plane}
+            The Material Plane is the plane that most Rise adventures begin on.
+            The surface of the plane is a massive sphere with a radius of about 4,000 miles.
+            It is the most familiar to most humanoid creatures.
+
+            The Material Plane has the following planar traits:
+            \begin{itemize}
+                \item Gravity direction: Absolute Directional, pointing to the center of the sphere
+                \item Gravity strength: Normal
+                \item Light: Mobile Source, from a sun and moon outside of the plane's limits
+                \item Limits: Looped
+                \item Planar connectivity: Isolated
+                \item Shape: Solid Sphere, with a radius of about 4,000 miles.
+            \end{itemize}
+
+        \parhead{The Astral Plane}\label{The Astral Plane}
+            The Astral Plane is the space between the other planes.
+            It is a necessary intermediate destination for virtually all planar journeys, as all \glossterm{planar rifts} lead to and from the Astral Plane.
+            Most activity on the Astral Plane occurs in a space called the Inner Astral Plane, a massive but finite region where all planar rifts on the Astral Plane appear.
+            % Are there any other infinite planes?
+            However, unlike all other planes, the Astral Plane has no known limits to its extent, and may in fact be infinite.
+            The area outside the Inner Astral Plane is known as the Deep Astral Plane, and few venture into those sparsely populated realms.
+            % This should be more clearly defined
+            The Deep Astral Plane has magical turbulence that interferes with long-range communication and transportation magic, making exploration difficult.
+
+            The Astral Plane has the following planar traits:
+            \begin{itemize}
+                \item Directional gravity: Subjective
+                \item Gravity strength: Normal
+                \item Light: Fixed Source, from the infinite reaches of the Deep Astral Plane
+                \item Limits: Infinite
+                \item Planar connectivity: Conduit
+                \item Shape: Uniform
+            \end{itemize}
 
 \section{Creatures and Objects}
     In the world of Rise, creatures and objects are meaningfully different.

@@ -77,8 +77,7 @@ def create_page(destination):
                                 calc_defenses(),
                                 div({"class": "section-header"}, "Offensive Statistics"),
                                 calc_accuracy(),
-                                calc_magical_power(),
-                                calc_mundane_power(),
+                                calc_power(),
                                 calc_weapon_damage_dice(),
                                 div({"class": "section-header"}, "Resources"),
                                 calc_attunement_points(),
@@ -113,16 +112,6 @@ def calc_attribute(attribute_name):
             flex_row(
                 {"class": "attribute-calc"},
                 [
-                    underlabel(
-                        "Total",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": attribute_lower + "_total_display",
-                                "value": "(@{" + attribute_lower + "})",
-                            }
-                        ),
-                    ),
                     div({"class": "calc-header"}, attribute_name),
                     equation(
                         [
@@ -135,14 +124,14 @@ def calc_attribute(attribute_name):
                                 ),
                             ),
                             plus(),
-                            equation_misc_repeat(attribute_lower + "_starting", 2),
+                            equation_misc_repeat(attribute_lower, 2),
                         ],
                         result_attributes={
                             "disabled": "true",
-                            "name": attribute_lower + "_starting_display",
-                            "value": "(@{" + attribute_lower + "_starting})",
+                            "name": attribute_lower + "_display",
+                            "value": "(@{" + attribute_lower + "})",
                         },
-                        result_label="(Base)",
+                        result_label="Base",
                     ),
                 ],
             ),
@@ -211,12 +200,12 @@ def calc_accuracy():
                     ),
                     plus(),
                     underlabel(
-                        "1/2 (Per)",
+                        "Per/2",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "accuracy_perception_display",
-                                "value": "(floor(@{perception_starting} / 2))",
+                                "value": "(floor(@{perception} / 2))",
                             }
                         ),
                     ),
@@ -240,12 +229,12 @@ def calc_damage_resistance():
             equation(
                 [
                     underlabel(
-                        "Con",
+                        "Base",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "damage_resistance_constitution",
-                                "value": "(@{constitution})",
+                                "name": "damage_resistance_base",
+                                "value": "(@{damage_resistance_from_level})",
                             }
                         ),
                     ),
@@ -314,17 +303,28 @@ def calc_fatigue_tolerance():
                     ),
                     plus(),
                     underlabel(
-                        "(Con+Wil)",
+                        "Con",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "fatigue_tolerance_attributes_display",
-                                "value": "(@{fatigue_tolerance_attributes})",
+                                "name": "fatigue_tolerance_con_display",
+                                "value": "(@{constitution})",
                             }
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("fatigue_tolerance", 3),
+                    underlabel(
+                        "Wil/2",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "fatigue_tolerance_wil_display",
+                                "value": "floor(@{willpower}/2)",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("fatigue_tolerance", 2),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -353,18 +353,7 @@ def calc_hit_points():
                         ),
                     ),
                     plus(),
-                    underlabel(
-                        "Con",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "hit_points_from_constitution",
-                                "value": "(@{constitution})",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("hit_points", 4),
+                    equation_misc_repeat("hit_points", 5),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -383,7 +372,7 @@ def calc_initiative():
             equation(
                 [
                     underlabel(
-                        "(Dex+Per)",
+                        "Dex+Per",
                         number_input(
                             {
                                 "disabled": True,
@@ -405,58 +394,23 @@ def calc_initiative():
     )
 
 
-def calc_magical_power():
+def calc_power():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Magical Power"),
+            div({"class": "calc-header"}, "Power"),
             equation(
                 [
                     underlabel(
-                        "Wil/2",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "magical_power_willpower_display",
-                                "value": "floor(@{willpower}/2)",
-                            }
-                        ),
+                        "Class",
+                        number_input({"name": "class_power"}),
                     ),
                     plus(),
-                    equation_misc_repeat("magical_power", 4),
+                    equation_misc_repeat("power", 4),
                 ],
                 result_attributes={
                     "disabled": True,
-                    "name": "magical_power_display",
-                    "value": "@{magical_power}",
-                },
-            ),
-        ]
-    )
-
-
-def calc_mundane_power():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Mundane Power"),
-            equation(
-                [
-                    underlabel(
-                        "Str/2",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "mundane_power_strength_display",
-                                "value": "floor(@{strength}/2)",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("mundane_power", 4),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "mundane_power_display",
-                    "value": "@{mundane_power}",
+                    "name": "power_display",
+                    "value": "@{power}",
                 },
             ),
         ]
@@ -497,7 +451,7 @@ def calc_weapon_damage_dice():
             div({"class": "calc-header"}, "Weapon Damage"),
             equation(
                 [
-                    equation_misc_repeat("weapon_damage_dice", 4),
+                    equation_misc_repeat("weapon_damage_dice", 5),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -611,12 +565,12 @@ def calc_encumbrance():
                     ),
                     minus(),
                     underlabel(
-                        "(Str)",
+                        "Str",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "encumbrance_strength",
-                                "value": "(@{strength_starting})",
+                                "value": "(@{strength})",
                             }
                         ),
                     ),
@@ -665,7 +619,7 @@ def calc_skill_points():
                     ),
                     plus(),
                     underlabel(
-                        "(Int)",
+                        "Int",
                         number_input(
                             {
                                 "disabled": True,
@@ -703,12 +657,12 @@ def calc_insight_points():
                     ),
                     plus(),
                     underlabel(
-                        "(Int)",
+                        "Int",
                         number_input(
                             {
                                 "disabled": True,
                                 "name": "insight_points_intelligence_display",
-                                "value": "(@{intelligence_starting})",
+                                "value": "(@{intelligence})",
                             }
                         ),
                     ),
@@ -747,7 +701,7 @@ def calc_armor():
                     ),
                     plus(),
                     underlabel(
-                        "(Attr)",
+                        "Dex?",
                         number_input(
                             {
                                 "disabled": True,
@@ -798,12 +752,12 @@ def calc_fort():
                     ),
                     plus(),
                     underlabel(
-                        "(Con)",
+                        "Con",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "fortitude_starting_attribute",
-                                "value": "(@{constitution_starting})",
+                                "name": "fortitude_attribute",
+                                "value": "(@{constitution})",
                             }
                         ),
                     ),
@@ -842,12 +796,12 @@ def calc_ref():
                     ),
                     plus(),
                     underlabel(
-                        "(Dex)",
+                        "Dex",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "reflex_starting_attribute",
-                                "value": "(@{dexterity_starting})",
+                                "name": "reflex_attribute",
+                                "value": "(@{dexterity})",
                             }
                         ),
                     ),
@@ -886,12 +840,12 @@ def calc_mental():
                     ),
                     plus(),
                     underlabel(
-                        "(Wil)",
+                        "Wil",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "mental_starting_attribute",
-                                "value": "(@{willpower_starting})",
+                                "name": "mental_attribute",
+                                "value": "(@{willpower})",
                             }
                         ),
                     ),
