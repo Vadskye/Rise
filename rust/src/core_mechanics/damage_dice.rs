@@ -37,6 +37,9 @@ impl DamageDice {
             count *= 2;
         }
         let size = match increments_mut {
+            // possible if str is -9
+            -2 => 1,
+            -1 => 1,
             0 => 1,
             1 => 2,
             2 => 3,
