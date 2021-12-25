@@ -506,7 +506,7 @@ def fatigue_tolerance():
     return js_wrapper(
         ["level", "fatigue_tolerance_base", "constitution_starting", "willpower_starting", *misc],
         f"""
-            var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + constitution_starting + willpower_starting + {sum_variables(misc)});
+            var fatigue_tolerance = Math.max(0, fatigue_tolerance_base + constitution_starting + Math.floor(willpower_starting / 2) + {sum_variables(misc)});
             setAttrs({{
                 fatigue_tolerance_attributes: constitution_starting + willpower_starting,
                 fatigue_tolerance,
