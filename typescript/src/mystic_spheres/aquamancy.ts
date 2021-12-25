@@ -164,7 +164,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarealong, 10 ft. wide line from you.
@@ -181,7 +181,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
@@ -198,7 +198,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
+          The target takes 1d6 + \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -217,7 +217,7 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: 'aquajet propulsion',
-        exceptThat: "the damage increases to 2d6 + \\glossterm{power}, and the push distance increases to 30 feet.",
+        exceptThat: "the damage increases to 1d10 + \\glossterm{power}, and the push distance increases to 30 feet.",
       },
       rank: 3,
       scaling: "damage",
@@ -229,7 +229,7 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: 'aquajet propulsion',
-        exceptThat: "the damage increases to 2d10 + \\glossterm{power}, and the push distance increases to 60 feet.",
+        exceptThat: "the damage increases to 2d8 + \\glossterm{power}, and the push distance increases to 60 feet.",
       },
       rank: 5,
       scaling: "damage",
@@ -242,7 +242,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against everything within a \\smallarea radius from you.
@@ -259,7 +259,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\medarea radius from you.
@@ -276,7 +276,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
@@ -346,7 +346,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d10 bludgeoning damage.
+          Each target takes 1d8 bludgeoning damage.
           In addition, each target is \\glossterm{pushed} 15 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -366,7 +366,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d10 bludgeoning damage.
+          Each target takes 2d8 bludgeoning damage.
           In addition, each target is \\glossterm{pushed} 30 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -386,7 +386,7 @@ export const aquamancy: MysticSphere = {
         // crit: '',
         // +1d from normal AOE due to weird area that probably just hits one person
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarealong, 5 ft.\\ wide vertical line within \\longrange.
@@ -405,7 +405,7 @@ export const aquamancy: MysticSphere = {
         // crit: '',
         // +1d from normal AOE due to weird area that probably just hits one person
         hit: `
-          Each target takes 4d10 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft.\\ wide vertical line within \\distrange.
@@ -496,7 +496,7 @@ export const aquamancy: MysticSphere = {
       effect: `
         You grow a massive watery tentacle that extends from your body.
         The tentacle grants you a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
-        The natural weapon deals 1d10 damage, as normal for a slam natural weapon, and it has the Sweeping (1) tag.
+        The natural weapon deals 1d8 damage, as normal for a slam natural weapon, and it has the Sweeping (1) tag.
         In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
         Strikes using the tentacle are considered \\glossterm{magical} abilities, which means you use your \\glossterm{magical} \\glossterm{power} to determine their damage.
       `,
@@ -655,7 +655,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         crit: "Double damage, and you can knockback the target 60 feet instead of 30 feet.",
         hit: `
-          The target takes 1d6 bludgeoning damage.
+          The target takes 1d4 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
         `,
@@ -673,7 +673,7 @@ export const aquamancy: MysticSphere = {
       functionsLike: {
         name: 'forceful aquajet',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 2d6. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
+        exceptThat: "the damage increases to 1d10. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
       },
       // narrative: '',
       rank: 4,
@@ -686,7 +686,7 @@ export const aquamancy: MysticSphere = {
       functionsLike: {
         name: 'forceful aquajet',
         // This deals an immediate 12d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 4d6. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
+        exceptThat: "the damage increases to 2d10. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
       },
       // narrative: '',
       rank: 7,

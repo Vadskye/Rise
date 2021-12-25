@@ -146,9 +146,9 @@ situations.
     * For debuffs, use -2d and full power.
   * Low: (weapon damage dice -2d) + (half power)
 * Non-strike-based attacks:
-  * High: (1d8 + 1d per rank) + (power)
-  * Medium: (1d6 + 1d per rank) + (half power)
-  * Low: (1d4 + 1d per rank)
+  * High: (1d6 + 1d per rank) + (power)
+  * Medium: (1d4 + 1d per rank) + (half power)
+  * Low: (1d3 + 1d per rank)
 
 ## Stock effects
 
@@ -293,7 +293,7 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 #### Spells: Single target
 * Rank 1
   * Med range, 1d10 + power
-  * t1 area, 1d8 + half power
+  * t1 area, 1d6 + half power
 * Rank 2
   * Close range, 2d8 + power
 * Rank 3
@@ -309,7 +309,7 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 
 #### Spells: AOE
 * Rank 1
-  * t1 area, 1d8 + half power
+  * t1 area, 1d6 + half power
 * Modifiers
   * +4 levels gives +5d and full power instead of half power
 
@@ -414,8 +414,8 @@ Otherwise, these are too much better than just casting a pure damage spell.
 
 #### Spells: single-target medium damage + debuff
 * Rank 1
-  * Med range, 1d8 + half power damage, brief r1 debuff, immune after first success
-  * Med range, 1d8 + half power damage, r1 debuff condition if lose HP
+  * Med range, 1d6 + half power damage, brief r1 debuff, immune after first success
+  * Med range, 1d6 + half power damage, r1 debuff condition if lose HP
 * Rank 3
   * Med range, 2d6 + half power damage, brief r1 debuff
   * Med range, 2d6 + half power damage, brief r2 debuff if lose HP

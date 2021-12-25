@@ -49,7 +49,7 @@ export const thaumaturgy: MysticSphere = {
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The target takes 1d6 + \\glossterm{power} energy damage.
+          The target takes 1d4 + \\glossterm{power} energy damage.
           \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
@@ -70,7 +70,7 @@ export const thaumaturgy: MysticSphere = {
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} energy damage.
+          The target takes 2d6 + \\glossterm{power} energy damage.
           \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
@@ -91,7 +91,7 @@ export const thaumaturgy: MysticSphere = {
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} energy damage.
+          The target takes 4d8 + \\glossterm{power} energy damage.
           \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
@@ -112,7 +112,7 @@ export const thaumaturgy: MysticSphere = {
       // -1d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} energy damage.
+          Each target takes 1d8 + half \\glossterm{power} energy damage.
           \\miss Each target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
@@ -133,7 +133,7 @@ export const thaumaturgy: MysticSphere = {
       // -1d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The target takes 2d10 + half \\glossterm{power} energy damage.
+          The target takes 2d8 + half \\glossterm{power} energy damage.
           \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `

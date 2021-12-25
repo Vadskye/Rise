@@ -703,9 +703,9 @@ def generate_implements():
             material_type="Staff",
             tags=['Healing'],
             description="""
-                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 1d10+4 \\glossterm{hit points}.
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 1d8+4 \\glossterm{hit points}.
             """,
-            short_description="Steals 1d10+4 hit points from foes",
+            short_description="Steals 1d8+4 hit points from foes",
         ),
         MagicItem(
             name="Vampiric, Greater",
@@ -713,9 +713,9 @@ def generate_implements():
             material_type="Staff",
             tags=['Healing'],
             description="""
-                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 2d10+6 \\glossterm{hit points}.
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 2d8+6 \\glossterm{hit points}.
             """,
-            short_description="Steals 2d10+6 hit points from foes",
+            short_description="Steals 2d8+6 hit points from foes",
         ),
     ]
 

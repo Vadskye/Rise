@@ -44,9 +44,9 @@ export const summoning: MysticSphere = {
         There are only two actions it can take.
         As a \\glossterm{move action}, it can move as you direct.
         As a standard action, it can make a melee \\glossterm{strike} against a creature within its \\glossterm{reach}.
-        If it hits, it deals 1d6 physical damage.
+        If it hits, it deals 1d4 physical damage.
+        This damage is improved by your Willpower as normal for magical attacks.
         The subtypes of damage dealt by this attack depend on the creature's appearance, but are limited to bludgeoning, piercing, and slashing damage.
-        Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
 
         If you do not command the creature's actions, it will continue to obey its last instructions if possible or do nothing otherwise.
         Summoned creatures have no mind or independent agency, and will not act on their own even if attacked.
@@ -157,7 +157,7 @@ export const summoning: MysticSphere = {
       name: "Ramming Summon",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything on solid ground within \\medrange.
           You summon a creature with a large horn or horns, such a moose, that rams into the target with great force before disappearing.
@@ -173,7 +173,7 @@ export const summoning: MysticSphere = {
       name: "Greater Ramming Summon",
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 2d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything on solid ground within \\longrange.
           You summon a large creature with a large horn or horns, such a rhinoceros, that rams into the target with great force before disappearing.
@@ -189,7 +189,7 @@ export const summoning: MysticSphere = {
       name: "Trampling Summon",
 
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
         Make an attack vs. Reflex against everything on solid ground in a \\medarealong, 5 ft. wide line from you.
         You summon a Medium creature that tramples through the area before disappearing.
@@ -206,7 +206,7 @@ export const summoning: MysticSphere = {
       name: "Greater Trampling Summon",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everythong on solid ground in a \\largearealong, 10 ft. wide line from you.
           You summon a Large creature that tramples through the area before disappearing.
@@ -223,7 +223,7 @@ export const summoning: MysticSphere = {
       name: "Supreme Trampling Summon",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everything on solid ground in a \\hugearealong, 20 ft. wide line from you.
           You summon a horde of creatures that trample through the area before disappearing.
@@ -243,7 +243,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
         the summoned creature appears to be a unicorn.
         Its attacks deal 2d6 piercing damage, and you can command it to heal instead of attack.
-        If you do, during each \\glossterm{action phase} it causes one of your \\glossterm{allies} within \\shortrange of it to regain 2d8 \\glossterm{hit points}.
+        If you do, during each \\glossterm{action phase} it causes one of your \\glossterm{allies} within \\shortrange of it to regain 2d6 \\glossterm{hit points}.
         You can tell it which creature to heal.
         If you do not instruct it to heal a specific creature, it will automatically heal the ally closest to it that has lost at least one hit point.
         `,
@@ -326,7 +326,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be an earth elemental.
-        Its attacks deal 2d8 bludgeoning damage.
+        Its attacks deal 2d6 bludgeoning damage.
         It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
         `,
         name: "summon monster",
@@ -345,7 +345,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be an water elemental.
-        Its attacks deal 1d8 bludgeoning damage.
+        Its attacks deal 1d6 bludgeoning damage.
         It has a 30 foot \\glossterm{swim speed}.
         However, it is \\glossterm{vulnerable} to electricity damage.
         `,
@@ -365,7 +365,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be an air elemental.
-        Its attacks deal 2d6 bludgeoning damage.
+        Its attacks deal 1d10 bludgeoning damage.
         It has a 30 foot \\glossterm{fly speed} with good \\glossterm{maneuverability}.
         `,
         name: "summon monster",
@@ -384,7 +384,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a fire elemental.
-        Its attacks deal 1d8 fire damage.
+        Its attacks deal 1d6 fire damage.
         In addition, it is immune to fire damage.
         `,
         name: "summon monster",
@@ -403,7 +403,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the creature appears to be a Medium bear.
-        Its attacks deal 1d10 bludgeoning and slashing damage.
+        Its attacks deal 1d8 bludgeoning and slashing damage.
         In addition, it suffers no penalty for attacking in a grapple.
         As a standard action, it can make a \\textit{grapple} attack against a creature within its \\glossterm{reach}.
         While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
@@ -484,7 +484,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a snake.
-        Its attacks deal 2d6 bludgeoning and piercing damage.
+        Its attacks deal 1d10 bludgeoning and piercing damage.
         Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
         It is immediately \\dazed while it is poisoned.
         The poison's third stage causes the target to become \\stunned as long as it is poisoned.
