@@ -453,7 +453,7 @@ export const cryomancy: MysticSphere = {
         The pool of water targeted must be at least as large as the largest item you create.
 
         An item created with this spell functions like a normal item of its type, with three exceptions.
-        First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your Willpower to determine your damage instead of your Strength (see \pcref{Attribute Dice Increments}).
+        First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
         except that it reacts differently to fire damage.
         Second, while wearing body armor from this spell, you are \\trait{impervious} to fire damage.
         Third, whenever you lose \\glossterm{hit points} from fire damage, all armor and weapons you made with this ability disappear.
