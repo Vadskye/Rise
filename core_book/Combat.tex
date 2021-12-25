@@ -354,6 +354,83 @@
             A creature moving as a result of a knockback effect does not have to be supported during the movement by solid ground.
             This can allow you to knockback creatures off of cliffs without allowing them to save themselves.
 
+    \subsection{Overland Movement}\label{Overland Movement}
+
+        Characters covering long distances cross-country use overland movement.
+        Overland movement is measured in miles per hour or miles per day.
+        A day normally represents 10 hours of actual travel time.
+        However, sailing ships and other methods of travel that keep moving without requiring a rest are listed with a full 24 hours of travel time.
+
+        \begin{dtable}
+            \lcaption{Overland Travel Distances}
+            \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c c}
+                & \multicolumn{4}{c}{\tdash\tdash\tdash Speed \tdash\tdash\tdash} \tableheaderrule
+                                     & 15 feet     & 20 feet  & 30 feet     & 40 feet  \\
+                One Hour (Overland)  &             &          &             &          \\
+                Walk                 & 3/4 mile    & 1 mile   & 1-1/2 miles & 2 miles  \\
+                Hustle               & 1-1/2 miles & 2 miles  & 3 miles     & 4 miles  \\
+                One Day (Overland)   &             &          &             &          \\
+                Walk                 & 7-1/2 miles & 10 miles & 15 miles    & 20 miles \\
+                Hustle               & \tdash      & \tdash   & \tdash      & \tdash   \\
+            \end{dtabularx}
+        \end{dtable}
+
+        \begin{dtable}
+            \lcaption{Terrain and Overland Movement}
+            \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c}
+                \tb{Terrain}   & \tb{Highway} & \tb{Road or Trail} & \tb{Trackless} \tableheaderrule
+                Desert, sandy  & \mult1       & \mult1/2           & \mult1/2 \\
+                Forest         & \mult1       & \mult1             & \mult1/2 \\
+                Hills          & \mult1       & \mult3/4           & \mult1/2 \\
+                Jungle         & \mult1       & \mult3/4           & \mult1/4 \\
+                Moor           & \mult1       & \mult1             & \mult3/4 \\
+                Mountains      & \mult3/4     & \mult3/4           & \mult1/2 \\
+                Plains         & \mult1-1/2   & \mult1             & \mult3/4 \\
+                Swamp          & \mult1       & \mult3/4           & \mult1/2 \\
+                Tundra, frozen & \mult1       & \mult3/4           & \mult3/4
+            \end{dtabularx}
+        \end{dtable}
+
+        \begin{dtable}
+            \lcaption{Mounts and Vehicles}
+            \begin{dtabularx}{\columnwidth}{>{\lcol}X l l}
+                \tb{Mount/Vehicle}                         & \tb{Per Hour} & \tb{Per Day} \tableheaderrule
+                Mount (carrying load)                      &               &          \\
+                \tind Light horse or light warhorse        & 6 miles       & 60 miles \\
+                \tind Light horse                          & 4 miles       & 40 miles \\
+                \tind Light warhorse                       & 4 miles       & 40 miles \\
+                \tind Heavy horse or heavy warhorse        & 5 miles       & 50 miles \\
+                \tind Heavy horse                          & 3-1/2 miles   & 35 miles \\
+                \tind Heavy warhorse                       & 3-1/2 miles   & 35 miles \\
+                \tind Pony or warpony                      & 4 miles       & 40 miles \\
+                \tind Pony                                 & 3 miles       & 30 miles \\
+                \tind Warpony                              & 3 miles       & 30 miles \\
+                \tind Donkey or mule                       & 3 miles       & 30 miles \\
+                \tind Donkey                               & 2 miles       & 20 miles \\
+                \tind Mule                                 & 2 miles       & 20 miles \\
+                \tind Dog, riding                          & 4 miles       & 40 miles \\
+                \tind Dog, riding                          & 3 miles       & 30 miles \\
+                \tind Cart or wagon                        & 2 miles       & 20 miles \\
+                \tb{Ship}                                  &               &          \\
+                \tind Raft or barge (poled or towed)\fn{1} & 1/2 mile      & 5 miles  \\
+                \tind Keelboat (rowed)\fn{1}               & 1 mile        & 10 miles \\
+                \tind Rowboat (rowed)\fn{1}                & 1-1/2 miles   & 15 miles \\
+                \tind Sailing ship (sailed)                & 2 miles       & 48 miles \\
+                \tind Warship (sailed and rowed)           & 2-1/2 miles   & 60 miles \\
+                \tind Longship (sailed and rowed)          & 3 miles       & 72 miles \\
+                \tind Galley (rowed and sailed)            & 4 miles       & 96 miles \\
+            \end{dtabularx}
+            1 Rafts, barges, keelboats, and rowboats are used on lakes and rivers.
+            If going downstream, add the speed of the current (typically 3 miles per hour) to the speed of the vehicle. In addition to 10 hours of being rowed, the vehicle can also float an additional 14 hours, if someone can guide it, so add an additional 42 miles to the daily distance traveled. These vehicles can't be rowed against any significant current, but they can be pulled upstream by draft animals on the shores.
+        \end{dtable}
+
+        \parhead{Walk} A character can walk 10 hours in a day of travel without a problem. Walking for longer than that, or hustling faster than that, requires an Endurance check (see \pcref{Overland Exertion}).
+        \parhead{Terrain} The terrain through which a character travels affects how much distance they can cover in an hour or a day (see \trefnp{Terrain and Overland Movement}).
+        A highway is a straight, major, paved road.
+        A road is typically a dirt track.
+        A trail is like a road, except that it allows only single-file travel and does not benefit a party traveling with vehicles.
+        Trackless terrain is a wild area with no significant paths.
+
 \section{Universal Abilities}\label{Universal Abilities}
     All creatures can use the following abilities.
 
@@ -714,6 +791,25 @@
             Some abilities allow you to grapple other creatures without becoming grappled yourself.
             You can release a creature that you are not grappled by as a \glossterm{free action}.
             If you do, the creatures stops being grappled by you.
+
+\section{Vision and Light}\label{Vision and Light}
+    Some creatures have \trait{darkvision} or other extraordinary senses, but most creatures need light to see by. 
+    In an area of \glossterm{bright illumination}, all characters can see clearly.
+
+    Creatures can see only dimly into areas that have \glossterm{shadowy illumination}.
+    Everything in the area has \glossterm{concealment}.
+    This allows creatures in the area to make Stealth checks to hide even if they don't have \glossterm{cover} (see \pcref{Stealth}).
+
+    In an area with \glossterm{brilliant illumination}, creatures can see clearly just like an area with bright illumination.
+    In addition, no shadows exist within an an area of brilliant illumination.
+    This makes many effects from the \sphere{umbramancy} mystic sphere difficult or impossible to use.
+
+    In areas of total darkness, creatures without \trait{darkvision} or some other form of supernatural vision are \blinded.
+
+    \subsection{Attacking Unseen Foes}
+        You can make \glossterm{targeted} attacks against creatures and objects you cannot see.
+        To do so, you choose a 5-foot square and make the attack against that square.
+        You have a 50\% chance to hit nothing at all with the attack and a 50\% chance to hit a random valid target in that square with your attack.
 
 \section{Circumstances, Bonuses, and Penalties}
     Many effects can grant bonuses or penalties to actions you take.
@@ -1224,6 +1320,176 @@
             Each writer uses this universal system regardless of their native language or culture.
             However, each character uses the system in their own way.
             Another person's magical writing remains incomprehensible to even the most powerful spellcaster until they take the time to study and decipher it.
+
+\section{Breaking Objects}
+    There are two main ways of breaking objects.
+    You can deal damage to objects with attacks, similarly to how you can deal damage to creatures.
+    Alternately, you can attempt to sunder the object with sheer strength.
+
+    \subsection{Damaging Objects}
+        Objects have \glossterm{hit points} and \glossterm{damage resistance} like creatures.
+        However, they treat all damage they take as \glossterm{environmental damage} (see \pcref{Environmental Damage}).
+        That means that all damage they take is reduced by their \glossterm{damage resistance} without subtracting from the remaining value of their damage resistance.
+
+        An object becomes \glossterm{broken} if its \glossterm{hit points} are reduced to 0 (see \pcref{Broken and Destroyed Objects}).
+        Objects cannot gain \glossterm{vital wounds}.
+        Objects are also not normally subject to \glossterm{critical hits}.
+
+    \subsection{Object Statistics}
+        An object's size primarily influences the number of \glossterm{hit points} it has.
+        The primary material it is constructed from determines its \glossterm{damage resistance}, and can modify the number of hit points it has.
+        Details are given in \tref{Object Statistics By Size} and \tref{Object Statistics By Material}.
+
+        \begin{dtable}
+            \lcaption{Object Statistics By Size}
+            \begin{dtabularx}{\textwidth}{l X X}
+                \tb{Size}  & \tb{Hit Points} & \tb{Sunder Difficulty Value} \tableheaderrule
+                Fine       & 1               & 1\fn{1} \\
+                Diminutive & 2               & 2       \\
+                Tiny       & 5               & 5       \\
+                Small      & 10              & 10      \\
+                Medium     & 20              & 15      \\
+                Large      & 50              & 20      \\
+                Huge       & 100             & 25      \\
+                Gargantuan & 200             & 30      \\
+                Colossal   & 500             & 35      \\
+            \end{dtabularx}
+            1. Extremely small objects may be difficult to grip effectively, which can significantly increase the difficulty to sunder them.
+        \end{dtable}
+
+        \begin{dtable}
+            \lcaption{Object Statistics By Material}
+            \begin{dtabularx}{\textwidth}{l X X X}
+                \tb{Material}   & \tb{DR}\fn{1} & \tb{Hit Points Multiplier}\fn{2} & \tb{Sunder Difficulty Value Modifier}  \tableheaderrule
+                Adamantine      & 30                    & \mult3                & \plus20              \\
+                Glass           & 5                     & \mult1/2              & \tdash               \\
+                Ice             & 1                     & \mult1/2              & \minus5              \\
+                Iron or steel   & 12                    & \mult2                & \plus10              \\
+                Leather or hide & 3                     & \tdash                & \tdash               \\
+                Mithral         & 15                    & \mult2                & \plus10              \\
+                Paper or cloth  & 1                     & \mult1/2              & \minus5              \\
+                Rope            & 2                     & \tdash                & \tdash               \\
+                Stone           & 8                     & \mult2                & \plus5               \\
+                Wood            & 5                     & \tdash                & \tdash               \\
+            \end{dtabularx}
+            1. See \pcref{Damage Resistance}. \\
+            2. Any value here modifies the number of hit points the object would normally have based on its size.
+        \end{dtable}
+
+    \subsection{Sundering Objects}
+        As a standard action, you can attempt to sunder an object you can touch.
+        This requires two hands.
+        An object's size and primary material determines the \glossterm{difficulty value} of the check.
+        The \glossterm{difficulty value} of this check decreases by 2 if the object is below its maximum \glossterm{hit points}.
+        Success means that the object breaks.
+        Failure by 5 or less means the object loses a \glossterm{hit point}, but it does not break.
+        Failure by 6 or more means nothing happens.
+
+    \subsection{Broken and Destroyed Objects}\label{Broken and Destroyed Objects}
+        An object that is reduced to 0 \glossterm{hit points} becomes \glossterm{broken}.
+        You can destroy an object by causing it to lose additional hit points equal to ten times its maximum hit points, or by succeeding at a check to sunder the object by 20.
+
+        \parhead{Broken Objects}\label{Broken Objects}
+        Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work.
+        For example, a broken wall lies in pieces on the ground and no longer blocks passage, but can be repaired with far less effort than would be required to create a wall from scratch.
+        Magic items that are broken retain their magical properties once fixed.
+        Broken (but not destroyed) objects can be repaired with the Craft skill for a cost equal to 10\% of their value (see \pcref{Craft}).
+
+        \parhead{Destroyed Objects}\label{Destroyed Objects}
+        Destroyed object have been damaged beyond hope of any sort of repair short of crafting the object again from raw materials.
+        For example, a destroyed wall is reduced to dust or small, useless chunks of rubble.
+        Magic items that are destroyed irrevocably lose their magical properties.
+        The remains of a destroyed object generally occupy a space one size category smaller than the original object.
+
+    \subsection{Relative Damage Resistance}\label{Relative Damage Resistance}
+        When an object would take damage from a \glossterm{strike}, if the \glossterm{damage resistance} of the attacking object or creature is lower than the damage resistance of the defender, the attacking object or creature takes the damage instead.
+        For example, if you try to break a stone wall with a wooden club, the club will break instead of the wall.
+        % TODO: define hardness for creatures and their natural weapons; natural weapons should generally have higher hardness than creatures to avoid hardness reflection being common
+
+\section{Poison}\label{Poison}
+    Poisons can deal damage, weaken creatures, or even kill them.
+    Some effects which are not literally poisonous, such as animal venom or fungal spores, are considered poisons.
+    Unless otherwise noted, poisons are not \glossterm{conditions}, and cannot be removed by abilities that remove conditions (see \pcref{Conditions}).
+    Common poisons are listed in \pcref{Poisons}.
+
+    \subsection{Poison Transmission}\label{Poison Transmission}\label{Transmission}
+
+        There are three ways that poisons can be contracted.
+
+        \parhead{Contact} A contact poison affects any creature that touches it with bare skin.
+        \parhead{Ingestion} An ingestion poison affects any creature that eats, drinks, or breathes it, depending on the type of poison.
+        Ingestion poisons have no effect when touched or used to coat weapons.
+        \parhead{Injury} An injury poison affects any creature loses \glossterm{hit points} from something bearing the poison.
+        Almost all injury poisons take liquid form, and are typically used to coat weapons.
+
+    \subsection{Poison Forms}\label{Poison Forms}
+
+        There are four forms of poison.
+
+        \parhead{Gas} Gaseous poisons are difficult to store, but easy to affect foes with.
+        \parhead{Liquid} Liquid poisons are the most common type of poison.
+        Liquid poisons can be used to coat weapons, slipped into food, or simply thrown at foes.
+        A dose of a liquid poison is usually about one ounce of the poison.
+        \parhead{Pellet} Some rare poisons come in small, solid pellets or cubes.
+        Typically, these pellets contain a powerful liquid poison that becomes inert quickly after being exposed.
+        Pellet poisons cannot be used to coat weapons or thrown at foes, but can be slipped into food.
+        \parhead{Powder} Poison in powder form cannot be used to coat weapons, but can be slipped into food or thrown at foes.
+
+    \subsection{Poison Effects}\label{Poison Effects}
+
+        Poisons can have a wide variety of effects, as determined by the type of poison used.
+        However, most poison share certain common properties.
+
+        \parhead{Becoming Poisoned}
+        All poisons have an base \glossterm{accuracy}.
+        When a creature first comes into contact with a poison, the poison makes an attack roll using its accuracy against the Fortitude defense of the poisoned creature.
+        On a hit, the target becomes \glossterm{poisoned} and suffers the effects of the first stage of the poison.
+        On a critical hit, the target becomes \glossterm{poisoned} and suffers the effects of the two stages of the poison.
+        On a miss, the target is not \glossterm{poisoned}.
+
+        Some attacks make the target poisoned if they hit the target.
+        In that case, the ability's accuracy defines the poison's accuracy.
+
+        Many poisons have an additional effect when they hit the target for the third time.
+
+        \parhead{Poison Attacks}
+        At the end of each subsequent round after the target becomes poisoned, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
+        Each hit increases the \glossterm{poison stage} of the poison.
+        For every 10 points by which the attack hits, the poison progresses by an additional stage.
+        On a miss, the creature gets closer to resisting the poison (see Resisting Poisons, below).
+
+        \parhead{Resisting Poisons}
+        If a poison misses a creature three times with its attack at the end of each round, the creature stops being poisoned by that poison.
+        % Some poisons may require more attacks to end the poison, as indicated in their description.
+
+        \parhead{Multiple Doses}
+        A creature can be affected by multiple doses of the same poison.
+        This does not cause the same effect to occur multiple times.
+        However, each extra dose increases the accuracy of the poison by 1, up to a maximum bonus of \plus10 more than the poison's normal accuracy.
+
+        A poison is considered the same if it has the same name and comes from the same source.
+        For example, a creature bitten multiple times by the same giant spider suffers multiple doses of the same poison.
+        A creature bitten multiple times by different giant spiders considers each spider's poison separately.
+
+        \parhead{Poison Quality} Some poisons are unusually high or low quality.
+
+    \subsection{Creating Poisons}\label{Creating Poisons}
+
+        You can use the Craft (poison) skill to create poisons.
+        To create a poison, you must make a Craft (poison) check against a \glossterm{difficulty value} equal to 10 \add the poison's base accuracy.
+        For every 2 points by which you beat this \glossterm{difficulty value}, the created poison's accuracy gains a \plus1 bonus, up to a maximum bonus of \plus10 more than the poison's base accuracy.
+
+        Creating a poison requires special materials.
+        The type of materials required, and how those materials can be acquired, depend on the type of poison.
+
+        \begin{itemize}
+            \itemhead{Plant} Plant-based poisons can typically be harvested by making a Survival check to search in appropriate terrain.
+                The \glossterm{difficulty value} of this check is usually equal to 10 \add the base accuracy of the poison.
+            \itemhead{Venom} Venom requires an appropriate body part from a creature -- often, poison it naturally produces.
+            \itemhead{Alchemical} Alchemical poisons require alchemical materials.
+                These cannot normally be found in nature.
+                In unusual circumstances, these components can be synthesized from natural chemicals or magical materials with a Craft (alchemy) check equal to 10 \add the base accuracy of the poison.
+        \end{itemize}
 
 % TODO: This is a bad name; organize these better
 \section{Special Rules}
