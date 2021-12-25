@@ -326,7 +326,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
                 Whenever you make a \glossterm{strike}, you can choose to treat it as a \glossterm{magical} ability.
-                This allows you to use your \glossterm{power} with magical abilities to determine your damage.
+                This allows you to use your Willpower to determine your damage instead of your Strength (see \pcref{Attribute Dice Increments}).
                 In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
                 If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
                 Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
