@@ -70,19 +70,9 @@ impl AgeCategory {
         match self {
             Self::Wyrmling => ChallengeRating::Two,
             Self::Juvenile => ChallengeRating::Four,
-            Self::Adult => ChallengeRating::Four,
+            Self::Adult => ChallengeRating::Six,
             Self::Ancient => ChallengeRating::Six,
             Self::Wyrm => ChallengeRating::Six,
-        }
-    }
-
-    fn glancing_blow(&self) -> bool {
-        match self {
-            Self::Wyrmling => false,
-            Self::Juvenile => true,
-            Self::Adult => true,
-            Self::Ancient => true,
-            Self::Wyrm => true,
         }
     }
 
