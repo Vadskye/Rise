@@ -463,8 +463,8 @@ export const aquamancy: MysticSphere = {
       name: "Misty Shroud",
 
       effect: `
-        At the end of each round, fog \\glossterm<briefly> fills a \\medarea radius zone from you.
-        This fog does not fully block sight, but it provides \\glossterm<concealment>.
+        At the end of each round, fog \\glossterm{briefly} fills a \\medarea radius zone from you.
+        This fog does not fully block sight, but it provides \\glossterm{concealment}.
         There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,
       rank: 4,
