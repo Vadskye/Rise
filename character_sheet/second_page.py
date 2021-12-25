@@ -124,12 +124,12 @@ def calc_attribute(attribute_name):
                                 ),
                             ),
                             plus(),
-                            equation_misc_repeat(attribute_lower + "_starting", 2),
+                            equation_misc_repeat(attribute_lower, 2),
                         ],
                         result_attributes={
                             "disabled": "true",
-                            "name": attribute_lower + "_starting_display",
-                            "value": "(@{" + attribute_lower + "_starting})",
+                            "name": attribute_lower + "_display",
+                            "value": "(@{" + attribute_lower + "})",
                         },
                         result_label="Base",
                     ),
@@ -205,7 +205,7 @@ def calc_accuracy():
                             {
                                 "disabled": True,
                                 "name": "accuracy_perception_display",
-                                "value": "(floor(@{perception_starting} / 2))",
+                                "value": "(floor(@{perception} / 2))",
                             }
                         ),
                     ),
@@ -570,7 +570,7 @@ def calc_encumbrance():
                             {
                                 "disabled": True,
                                 "name": "encumbrance_strength",
-                                "value": "(@{strength_starting})",
+                                "value": "(@{strength})",
                             }
                         ),
                     ),
@@ -662,7 +662,7 @@ def calc_insight_points():
                             {
                                 "disabled": True,
                                 "name": "insight_points_intelligence_display",
-                                "value": "(@{intelligence_starting})",
+                                "value": "(@{intelligence})",
                             }
                         ),
                     ),
@@ -756,8 +756,8 @@ def calc_fort():
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "fortitude_starting_attribute",
-                                "value": "(@{constitution_starting})",
+                                "name": "fortitude_attribute",
+                                "value": "(@{constitution})",
                             }
                         ),
                     ),
@@ -800,8 +800,8 @@ def calc_ref():
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "reflex_starting_attribute",
-                                "value": "(@{dexterity_starting})",
+                                "name": "reflex_attribute",
+                                "value": "(@{dexterity})",
                             }
                         ),
                     ),
@@ -844,8 +844,8 @@ def calc_mental():
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "mental_starting_attribute",
-                                "value": "(@{willpower_starting})",
+                                "name": "mental_attribute",
+                                "value": "(@{willpower})",
                             }
                         ),
                     ),

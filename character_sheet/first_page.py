@@ -156,25 +156,12 @@ def attribute_section(attribute):
                             attribute.capitalize(),
                         ),
                     ),
-                    underlabel(
-                        "Base",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": f"{attribute}_base_display",
-                                "value": "(@{" + attribute + "_starting})",
-                            }
-                        ),
-                    ),
-                    underlabel(
-                        "Total",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": f"{attribute}_display",
-                                "value": "(@{" + attribute + "})",
-                            }
-                        ),
+                    number_input(
+                        {
+                            "disabled": True,
+                            "name": f"{attribute}_display",
+                            "value": "(@{" + attribute + "})",
+                        }
                     ),
                 ],
             ),
