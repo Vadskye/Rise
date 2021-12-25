@@ -336,7 +336,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{power}.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },

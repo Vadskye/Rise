@@ -274,7 +274,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     It also provides a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
                     However, the \textit{recover} action causes you to regain half as many hit points as it normally would.
 
-                    \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d3 \add half your \glossterm{magical} \glossterm{power}.
+                    \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d3 \add half your \glossterm{power}.
                     This healing increases by \plus1d for each rank beyond 1.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
 
@@ -392,7 +392,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to five times your rank in this archetype.
 
-                    \parhead{Secret of Bloodsharing} You may add your full magical power to the amount you heal instead of half your magical power.
+                    \parhead{Secret of Bloodsharing} You may add your full power to the amount you heal instead of half your power.
 
                     \parhead{Secret of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
                 }
@@ -669,7 +669,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you use the \textit{desperate exertion} ability to affect a \glossterm{magical} attack, you double your magical \glossterm{power} with that attack.
+                Whenever you use the \textit{desperate exertion} ability to affect a \glossterm{magical} attack, you double your \glossterm{power} with that attack.
             ",
             modifiers: None,
         },
@@ -755,7 +755,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
-                        \item You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                        \item You gain a \plus2 bonus to your \glossterm{power}.
                         \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
                             If you would be unconscious due to fatigue without this bonus, your soulkeeper directly controls all of your actions.
                             Your soulkeeper's objectives may differ from your own, but except in very unusual circumstances, your soulkeeper is invested in continuing your life and ensuring your victory in difficult circumstances.

@@ -331,7 +331,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
                 Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
             ",
-            // TODO: use higher of magical and mundane power for strikes
+            // TODO: use higher of Str/Wil for strikes
             modifiers: None,
         },
         RankAbility {
