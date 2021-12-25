@@ -1354,10 +1354,11 @@ impl Class {
 
                     \subsubsection{Magic}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        % TODO: power bonus is less relevant than it used to be, maybe grant attunement point or more spells known instead?
 
                         \parhead{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \parhead{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        \parhead{Essence} You gain a \plus3 bonus to your \glossterm{magical} \glossterm{power}.
+                        \parhead{Essence} You gain a \plus3 bonus to your \glossterm{power}.
                         \parhead{Mastery} The power bonus from this domain's essence increases to \plus6.
 
                     \subsubsection{Protection}
