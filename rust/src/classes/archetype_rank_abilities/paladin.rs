@@ -109,7 +109,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::MundanePower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Greater Aligned Aura",
@@ -121,7 +121,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
 
                 \subparhead{Chaos} The effect applies to all attacks, not just \glossterm{strikes}.
                 % TODO: explain how this works on monsters
-                \subparhead{Evil} Whenever a target removes a \glossterm{condition}, it takes 2d8 \add half \glossterm{power} energy damage.
+                \subparhead{Evil} Whenever a target removes a \glossterm{condition}, it takes 2d6 \add half \glossterm{power} energy damage.
                 This damage increases by \plus1d for each rank beyond 4.
                 \subparhead{Good} When a target would lose \glossterm{hit points}, you may lose those hit points instead.
                 The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
@@ -154,7 +154,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{paragon power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Supreme Aligned Aura",
@@ -336,9 +336,9 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{power}.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Divine Spell Versatility",
@@ -365,7 +365,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Greater Divine Conduit",
@@ -403,16 +403,16 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytag{Healing}, \abilitytag{Magical}
                     \rankline
                     Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
-                    The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
+                    The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
                     After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
 
                     \rankline
-                    \rank{2} The healing increases to 2d6.
-                    \rank{3} The healing increases to 2d10.
-                    \rank{4} The healing increases to 4d6.
-                    \rank{5} The healing increases to 4d10.
-                    \rank{6} The healing increases to 5d10.
-                    \rank{7} The healing increases to 7d10.
+                    \rank{2} The healing increases to 1d10.
+                    \rank{3} The healing increases to 2d8.
+                    \rank{4} The healing increases to 2d10.
+                    \rank{5} The healing increases to 4d8.
+                    \rank{6} The healing increases to 4d10.
+                    \rank{7} The healing increases to 6d10.
                 \end{instantability}
             ",
             modifiers: None,
@@ -556,7 +556,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytag{Magical}
                     \rankline
                     Make a \glossterm{strike} with a \plus2 damage bonus.
-                    Because this is a \glossterm{magical} ability, you use your magical \glossterm{power} to determine your damage instead of your \glossterm{mundane} power.
+                    Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
                     If your target shares your devoted alignment, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a creature that shares your alignment.
 
                     \rankline

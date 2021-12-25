@@ -10,7 +10,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-                You may add half your magical \glossterm{power} to the damage or healing caused by any alchemical items you use.
+                You may add half your \glossterm{power} to the damage or healing caused by any alchemical items you use.
                 In addition, whenever you use an alchemical item, you gain a \plus1d bonus to any damage or healing caused by the item for each rank by which your rank in this archetype exceeds the item's rank.
             ",
             // TODO: add alchemical items as unique attacks
@@ -556,9 +556,9 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{magical} \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{power}.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Mystic Insight",
@@ -585,7 +585,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{wellspring of power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Mystic Insights",
@@ -633,7 +633,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Conjuration} You double the \glossterm{range} of arcane spells you cast.
 
-                    \subcf{Evocation} You gain a \plus2 bonus to \glossterm{magical} \glossterm{power}.
+                    \subcf{Evocation} You gain a \plus2 bonus to \glossterm{power}.
 
                     \subcf{Illusion} You gain a \plus1 bonus to \glossterm{accuracy}.
 
@@ -645,7 +645,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 }
             ",
             // Assume evocation
-            modifiers: Some(vec![Modifier::MagicalPower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -689,7 +689,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     In addition, the Fortitude bonus increases to \plus2.
                 }
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(3)]),
+            modifiers: Some(vec![Modifier::Power(3)]),
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -746,7 +746,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     In addition, the Fortitude bonus increases to \plus3.
                 }
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(12)]),
+            modifiers: Some(vec![Modifier::Power(12)]),
         },
     ];
 }

@@ -649,7 +649,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon automatically veers towards its intended target.
-                Any miss chance the strike would normally have is reduced.
+                Any \\glossterm<miss chance> the strike would normally have is reduced.
                 A 50\\% miss chance is reduced to a 25\\% miss chance, and a 25\\% miss chance is removed entirely.
             """,
             short_description="Reduces miss chances",
@@ -661,7 +661,7 @@ def generate_weapons():
             tags=[],
             description="""
                 This weapon automatically veers towards its intended target.
-                Any miss chance the strike would normally have is removed.
+                Any \\glossterm<miss chance> the strike would normally have is removed.
             """,
             short_description="Removes miss chances",
         ),
@@ -884,9 +884,9 @@ def generate_weapons():
             material_type="Weapon",
             tags=['Healing'],
             description="""
-                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 1d10+4 \\glossterm{hit points}.
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 1d8+3 \\glossterm{hit points}.
             """,
-            short_description="Steals 1d10+4 hit points from foes",
+            short_description="Steals 1d8+3 hit points from foes",
         ),
         MagicItem(
             name="Vampiric, Greater",
@@ -894,9 +894,9 @@ def generate_weapons():
             material_type="Weapon",
             tags=['Healing'],
             description="""
-                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 2d10+6 \\glossterm{hit points}.
+                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 2d8+7 \\glossterm{hit points}.
             """,
-            short_description="Steals 2d10+6 hit points from foes",
+            short_description="Steals 2d8+7 hit points from foes",
         ),
     ]
 

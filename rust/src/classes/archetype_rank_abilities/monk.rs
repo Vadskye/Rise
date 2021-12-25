@@ -326,12 +326,12 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
                 Whenever you make a \glossterm{strike}, you can choose to treat it as a \glossterm{magical} ability.
-                This allows you to use your \glossterm{power} with magical abilities to determine your damage.
+                This allows you to use your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
                 In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
                 If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
                 Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
             ",
-            // TODO: use higher of magical and mundane power for strikes
+            // TODO: use higher of Str/Wil for strikes
             modifiers: None,
         },
         RankAbility {
@@ -557,7 +557,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(2), Modifier::MundanePower(2)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Greater Ki Manifestation",
@@ -587,7 +587,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus from your \textit{ki power} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(4), Modifier::MundanePower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Supreme Ki Manifestation",

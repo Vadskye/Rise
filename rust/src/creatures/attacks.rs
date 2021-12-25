@@ -29,9 +29,9 @@ pub trait HasAttacks {
         return self.calc_all_attacks().into_iter().find(|a| a.name == name);
     }
     fn calc_accuracy(&self) -> i32;
-    fn calc_damage_increments(&self, is_strike: bool) -> i32;
+    fn calc_damage_increments(&self, is_strike: bool, is_magical: bool) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
-    fn calc_power(&self, is_magical: bool) -> i32;
+    fn calc_power(&self) -> i32;
 }
 
 impl Attack {
@@ -85,7 +85,7 @@ impl Attack {
             return Some(
                 damage_effect
                     .damage_dice
-                    .add(creature.calc_damage_increments(self.is_strike)),
+                    .add(creature.calc_damage_increments(self.is_strike, self.is_magical)),
             );
         }
         return None;
@@ -95,7 +95,7 @@ impl Attack {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
                 damage_effect.damage_modifier
-                    + (damage_effect.power_multiplier * creature.calc_power(self.is_magical) as f64)
+                    + (damage_effect.power_multiplier * creature.calc_power() as f64)
                         as i32,
             );
         }
@@ -690,8 +690,12 @@ where
             + self.calc_total_modifier(ModifierType::Accuracy);
     }
 
-    fn calc_damage_increments(&self, is_strike: bool) -> i32 {
-        let mut increments: i32 = 0;
+    fn calc_damage_increments(&self, is_strike: bool, is_magical: bool) -> i32 {
+        let attribute = match is_magical {
+            true => &Attribute::Willpower,
+            false => &Attribute::Strength,
+        };
+        let mut increments: i32 = self.get_base_attribute(attribute) / 2;
         if is_strike {
             increments += self.calc_total_modifier(ModifierType::StrikeDamageDice);
         }
@@ -702,14 +706,8 @@ where
         return increments;
     }
 
-    fn calc_power(&self, is_magical: bool) -> i32 {
-        if is_magical {
-            return self.calc_total_attribute(&Attribute::Willpower) / 2
-                + self.calc_total_modifier(ModifierType::MagicalPower);
-        } else {
-            return self.calc_total_attribute(&Attribute::Strength) / 2
-                + self.calc_total_modifier(ModifierType::MundanePower);
-        }
+    fn calc_power(&self) -> i32 {
+        return self.calc_total_modifier(ModifierType::Power);
     }
 }
 
@@ -744,6 +742,54 @@ impl AbilityType {
             Self::Duration => "durationability",
             Self::Sustain(_) => "durationability",
             Self::Attune(_) => "attuneability",
+        }
+    }
+}
+
+pub enum PowerProgression {
+    Fast,
+    Medium,
+    // Nothing actually uses a Slow progression, but it's useful to have around in case the design
+    // changes later.
+    Slow
+}
+
+impl PowerProgression {
+    pub fn calc_power(&self, rank: i32) -> i32 {
+        match self {
+            Self::Fast => match rank {
+                0 => 2,
+                1 => 3,
+                2 => 4,
+                3 => 5,  // +1
+                4 => 7,  // +2
+                5 => 10, // +3
+                6 => 14, // +4
+                7 => 20, // +6
+                _ => panic!("Invalid rank {}", rank),
+            },
+            Self::Medium => match rank {
+                0 => 1,
+                1 => 2,
+                2 => 3,
+                3 => 4,  // +1
+                4 => 6,  // +2
+                5 => 8,  // +2
+                6 => 12, // +4
+                7 => 16, // +4
+                _ => panic!("Invalid rank {}", rank),
+            },
+            Self::Slow => match rank {
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => 3,  // +1
+                4 => 4,  // +1
+                5 => 6,  // +2
+                6 => 8,  // +2
+                7 => 12, // +4
+                _ => panic!("Invalid rank {}", rank),
+            },
         }
     }
 }

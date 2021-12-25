@@ -31,7 +31,6 @@ pub enum ArmorMaterial {
     PureColdIron,
     Deepforged,
     PureDeepforged,
-    Normal,
     Diamondsteel,
     PureDiamondsteel,
     Dragonhide(String),
@@ -41,8 +40,10 @@ pub enum ArmorMaterial {
     Elvenweave,
     PureElvenweave,
     Ironwood,
+    Magic(i32),
     Mithral,
     PureMithral,
+    Normal,
     Starmetal,
     PureStarmetal,
 }
@@ -61,6 +62,18 @@ impl ArmorMaterial {
                 dr_multiplier: 1.0,
                 encumbrance_modifier: 0,
                 name: "normal".to_string(),
+                item_rank_modifier: 0,
+            },
+            Self::Magic(rank) => ArmorMaterialDefinition {
+                dr_multiplier: match rank {
+                    4 => 2.0,
+                    5 => 3.0,
+                    6 => 4.0,
+                    7 => 6.0,
+                    _ => 1.0,
+                },
+                encumbrance_modifier: 0,
+                name: "magic".to_string(),
                 item_rank_modifier: 0,
             },
             Self::Adamantine => ArmorMaterialDefinition {
@@ -259,7 +272,7 @@ impl Armor {
             // Medium armor
             Self::Hide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(4, m),
+                damage_resistance: calc_dr(3, m),
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 3,
@@ -269,7 +282,7 @@ impl Armor {
             },
             Self::ScaleMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(6, m),
+                damage_resistance: calc_dr(5, m),
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 5,
@@ -279,7 +292,7 @@ impl Armor {
             },
             Self::Breastplate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(6, m),
+                damage_resistance: calc_dr(5, m),
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
@@ -301,7 +314,7 @@ impl Armor {
             // Heavy armor
             Self::LayeredHide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(8, m),
+                damage_resistance: calc_dr(6, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 5,
@@ -311,21 +324,21 @@ impl Armor {
             },
             Self::PlatedMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(10, m),
+                damage_resistance: calc_dr(8, m),
                 defense: 4,
                 dex_multiplier: 0.0,
-                encumbrance: 5,
+                encumbrance: 6,
                 item_rank: 2,
                 name: "plated mail".to_string(),
                 speed_modifier: -10,
             },
             Self::FullPlate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(12, m),
+                damage_resistance: calc_dr(10, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 6,
-                item_rank: 2,
+                item_rank: 3,
                 name: "full plate".to_string(),
                 speed_modifier: -10,
             },

@@ -88,7 +88,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        At the end of each round, each target regains 2d8 \\glossterm{hit points}.
+        At the end of each round, each target regains 1d10 \\glossterm{hit points}.
       `,
       rank: 5,
       scaling: {
@@ -304,7 +304,7 @@ export const bless: MysticSphere = {
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
         Each target gains a +2 \\glossterm{magic bonus} to checks using the chosen attribute.
-        In addition, if you choose Strength, each target gains a +2 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
+        In addition, if you choose Strength, each target gains a +1 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
       `,
       rank: 3,
       scaling: {

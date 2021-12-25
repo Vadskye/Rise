@@ -4,7 +4,7 @@ use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode,
     SpecialDefenseModifier, SpecialDefenseType, StandardPassiveAbility,
 };
-use crate::creatures::attacks::HasAttacks;
+use crate::creatures::attacks::{HasAttacks, PowerProgression};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::StandardWeapon;
 use crate::latex_formatting;
@@ -63,11 +63,13 @@ impl Monster {
                 .push(StandardPassiveAbility::ThreeActions.ability());
         }
 
-        creature.add_modifier(
-            Modifier::Accuracy(level / 9),
-            Some("challenge rating"),
-            None,
-        );
+        if level >= 19 {
+            creature.add_modifier(
+                Modifier::Accuracy(1),
+                Some("challenge rating"),
+                None,
+            );
+        }
         for defense in Defense::all() {
             creature.add_modifier(
                 Modifier::Defense(defense, (level + 6) / 9),
@@ -80,28 +82,12 @@ impl Monster {
             Some("challenge rating"),
             None,
         );
-        let power_scaling = match level / 3 {
-            0 => 1,
-            1 => 2,
-            2 => 3,
-            3 => 4,
-            4 => 6,
-            5 => 8,
-            6 => 12,
-            7 => 16,
-            8 => 24,
-            _ => panic!("Invalid level '{}'", level),
-        };
+        let power_scaling = PowerProgression::Medium.calc_power((level + 2) / 3);
         let power_scaling =
             ((power_scaling as f64) * challenge_rating.power_scaling_multiplier()).floor() as i32;
         if power_scaling > 0 {
             creature.add_modifier(
-                Modifier::MagicalPower(power_scaling),
-                Some("challenge rating"),
-                None,
-            );
-            creature.add_modifier(
-                Modifier::MundanePower(power_scaling),
+                Modifier::Power(power_scaling),
                 Some("challenge rating"),
                 None,
             );
@@ -157,6 +143,9 @@ impl Monster {
         monster
             .creature
             .set_base_attribute(Attribute::Strength, challenge_rating.max_base_attribute());
+        monster
+            .creature
+            .set_base_attribute(Attribute::Willpower, challenge_rating.max_base_attribute());
 
         return monster;
     }
@@ -362,17 +351,7 @@ impl Monster {
     }
 
     fn latex_power(&self) -> String {
-        let mundane_power = self.creature.calc_power(false);
-        let magical_power = self.creature.calc_power(true);
-        if mundane_power == magical_power {
-            return format!("\\textbf<Power> {}", mundane_power);
-        } else {
-            return format!(
-                "\\textbf<Mundane Power> {mundane} \\monsep \\textbf<Magical Power> {magical}",
-                mundane = mundane_power,
-                magical = magical_power
-            );
-        }
+        return format!("\\textbf<Power> {}", self.creature.calc_power());
     }
 
     fn latex_attributes(&self) -> String {

@@ -80,7 +80,7 @@ export const telekinesis: MysticSphere = {
       name: "Force Slam",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
@@ -94,7 +94,7 @@ export const telekinesis: MysticSphere = {
       name: "Greater Force Slam",
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 2d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
         `,
@@ -108,7 +108,7 @@ export const telekinesis: MysticSphere = {
       name: "Supreme Force Slam",
 
       attack: {
-        hit: `The target takes 6d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 5d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\distrange.
         `,
@@ -122,7 +122,7 @@ export const telekinesis: MysticSphere = {
       name: "Force Lance",
 
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
         Make an attack vs. Armor against everything in a \\medarealong, 5 ft. wide line from you.
         `,
@@ -137,7 +137,7 @@ export const telekinesis: MysticSphere = {
       name: "Greater Force Lance",
 
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\largearealong, 5 ft. wide line from you.
         `,
@@ -152,7 +152,7 @@ export const telekinesis: MysticSphere = {
       name: "Supreme Force Lance",
 
       attack: {
-        hit: `Each target takes 5d10 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 4d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\largearealong, 10 ft. wide line from you.
         `,
@@ -249,7 +249,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `You \\glossterm{knockback} each target up to 15 feet in a straight line away from you.
         Moving a target upwards costs twice the normal movement cost.
-        If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 + half \\glossterm{power} instead of the normal knockback damage.
+        If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 1d10 + half \\glossterm{power} instead of the normal knockback damage.
         Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\areasmall radius from you.
@@ -266,7 +266,7 @@ export const telekinesis: MysticSphere = {
       functionsLike: {
         name: 'blastwave',
         exceptThat: `
-          the damage increases to 4d6 + half \\glossterm{power}, and the area increases to a \\largearea radius.
+          the damage increases to 2d10 + half \\glossterm{power}, and the area increases to a \\largearea radius.
           In addition, the knockback distance increases to 30 feet.
         `,
       },
@@ -280,7 +280,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           You \\glossterm{push} the target up to 30 feet in a straight line.
-          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d8 + \\glossterm{power}.
+          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 + \\glossterm{power}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything Large or smaller within \\shortrange of you.
@@ -294,7 +294,7 @@ export const telekinesis: MysticSphere = {
       name: "Greater Distant Shove",
       functionsLike: {
         name: 'distant shove',
-        exceptThat: "the damage increases to 4d10 + \\glossterm{power}, and the maximum size increases to Huge.",
+        exceptThat: "the damage increases to 4d8 + \\glossterm{power}, and the maximum size increases to Huge.",
       },
       rank: 6,
       type: "Instant",
@@ -304,7 +304,7 @@ export const telekinesis: MysticSphere = {
       name: "Toss Foe",
 
       attack: {
-        hit: `The target takes 1d6 bludgeoning damage.
+        hit: `The target takes 1d4 bludgeoning damage.
         If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
         Moving the target upwards costs twice the normal movement cost.`,
         targeting: `
@@ -322,7 +322,7 @@ export const telekinesis: MysticSphere = {
       functionsLike: {
         name: 'toss foe',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 2d6. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
+        exceptThat: "the damage increases to 1d10. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
       },
       // narrative: '',
       rank: 4,
@@ -335,7 +335,7 @@ export const telekinesis: MysticSphere = {
       functionsLike: {
         name: 'toss foe',
         // This deals an immediate 12d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 4d6. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
+        exceptThat: "the damage increases to 2d10. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
       },
       // narrative: '',
       rank: 7,
@@ -483,7 +483,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         Choose one Tiny or smaller \\glossterm{unattended} projectile within \\longrange.
         You make a \\glossterm{strike} using the projectile against anything within \\longrange.
-        This strike is considered a \\glossterm{magical} ability, so you add your magical \\glossterm{power} to damage with the strike instead of your \\glossterm{mundane} power.
+        This strike is considered a \\glossterm{magical} ability, so you use your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
         The projectile flies directly toward the target instead of originating from your position, which may allow you to avoid \\glossterm{cover} and similar obstacles.
       `,
       rank: 2,

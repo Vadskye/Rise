@@ -145,10 +145,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you regain 4d8+8 \\glossterm<hit points>.
+                When you drink this \\glossterm<potion>, you regain 4d8+7 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Restores 4d8+8 hit points",
+            short_description="Restores 4d8+7 hit points",
         ),
         MagicItem(
             consumable=True,
@@ -157,10 +157,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you regain 6d10+12 \\glossterm<hit points>.
+                When you drink this \\glossterm<potion>, you regain 6d10+14 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
             """,
-            short_description="Restores 6d10+12 hit points",
+            short_description="Restores 6d10+14 hit points",
         ),
     ]
 
@@ -189,9 +189,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the target takes 2d10+6 fire damage.
+                On a hit, the target takes 2d10+5 fire damage.
             """,
-            short_description="Throw to deal 2d10+6 fire damage",
+            short_description="Throw to deal 2d10+5 fire damage",
         ),
         MagicItem(
             consumable=True,
@@ -215,9 +215,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the target takes 7d10+14 fire damage.
+                On a hit, the target takes 7d10+20 fire damage.
             """,
-            short_description="Throw to deal 7d10+14 fire damage",
+            short_description="Throw to deal 7d10+20 fire damage",
         ),
     ]
 
@@ -231,9 +231,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 1d10+2 acid damage.
+                On a hit, the target takes 1d10+3 acid damage.
             """,
-            short_description="Throw to deal 1d10+2 acid damage",
+            short_description="Throw to deal 1d10+3 acid damage",
         ),
         MagicItem(
             consumable=True,
@@ -244,9 +244,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 2d10+6 acid damage.
+                On a hit, the target takes 2d10+5 acid damage.
             """,
-            short_description="Throw to deal 2d10+6 acid damage",
+            short_description="Throw to deal 2d10+5 acid damage",
         ),
         MagicItem(
             consumable=True,
@@ -270,9 +270,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 7d10+14 acid damage.
+                On a hit, the target takes 7d10+20 acid damage.
             """,
-            short_description="Throw to deal 7d10+14 acid damage",
+            short_description="Throw to deal 7d10+20 acid damage",
         ),
     ]
 
@@ -327,6 +327,8 @@ def generate_tools():
             rank=4,
             material_type="Alchemical",
             tags=[],
+            # this should be +3 by the standard progression, but that makes it
+            # weirdly bad compared to Supreme, so round to +4
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
@@ -343,9 +345,9 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each target takes 4d8+12 fire damage.
+                On a hit, each target takes 4d8+14 fire damage.
             """,
-            short_description="Throw to deal 4d8+12 fire damage in an area",
+            short_description="Throw to deal 4d8+14 fire damage in an area",
         ),
     ]
 
@@ -421,10 +423,10 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each target takes 1d10+3 sonic damage.
+                On a hit, each target takes 1d10+2 sonic damage.
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened and \\dazed as a single \\glossterm<condition>.
             """,
-            short_description="Throw to deal 1d10+3 sonic damage, deafen, and daze",
+            short_description="Throw to deal 1d10+2 sonic damage, deafen, and daze",
         ),
         MagicItem(
             consumable=True,
@@ -771,7 +773,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +15 attack vs. Reflex against everything within a \\largearea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each target takes 2d8+4 damage.
+                On a hit, each target takes 2d8+3 damage.
             """,
             short_description="Deals fire damage in a large area",
         ),
@@ -786,7 +788,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +22 attack vs. Reflex against everything within a \\largearea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each target takes 4d8+6 damage.
+                On a hit, each target takes 4d8+7 damage.
             """,
             short_description="Deals massive fire damage in a large area",
         ),

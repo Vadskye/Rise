@@ -49,9 +49,8 @@ export const thaumaturgy: MysticSphere = {
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The target takes 1d6 + \\glossterm{power} energy damage.
-          \\miss The target takes 1d6 energy damage.
-          This replaces the normal damage dealt on a \\glossterm{glancing blow}.
+          The target takes 1d4 + \\glossterm{power} energy damage.
+          \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
@@ -71,9 +70,8 @@ export const thaumaturgy: MysticSphere = {
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} energy damage.
-          \\miss The target takes 2d8 energy damage.
-          This replaces the normal damage dealt on a \\glossterm{glancing blow}.
+          The target takes 2d6 + \\glossterm{power} energy damage.
+          \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -93,9 +91,8 @@ export const thaumaturgy: MysticSphere = {
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} energy damage.
-          \\miss The target takes 4d10 energy damage.
-          This replaces the normal damage dealt on a \\glossterm{glancing blow}.
+          The target takes 4d8 + \\glossterm{power} energy damage.
+          \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
@@ -115,9 +112,8 @@ export const thaumaturgy: MysticSphere = {
       // -1d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} energy damage.
-          \\miss Each target takes 1d10 energy damage.
-          This replaces the normal damage dealt on a \\glossterm{glancing blow}.
+          Each target takes 1d8 + half \\glossterm{power} energy damage.
+          \\miss Each target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -137,9 +133,8 @@ export const thaumaturgy: MysticSphere = {
       // -1d, -1 range level in exchange for the strong miss effect
       attack: {
         hit: `
-          The target takes 2d10 + half \\glossterm{power} energy damage.
-          \\miss Each target takes 2d10 energy damage.
-          This replaces the normal damage dealt on a \\glossterm{glancing blow}.
+          The target takes 2d8 + half \\glossterm{power} energy damage.
+          \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
@@ -319,7 +314,7 @@ export const thaumaturgy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to your \\glossterm{magical} \\glossterm{power}.
+        You gain a +2 \\glossterm{magic bonus} to your \\glossterm{power}.
       `,
       rank: 1,
       scaling: {

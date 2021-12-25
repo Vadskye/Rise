@@ -6,11 +6,12 @@ use crate::skills::Skill;
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Resilient Recovery",
+            name: "Experienced Endurance",
             is_magical: false,
             rank: 0,
             description: r"
-                You regain a quarter of your maximum \glossterm{damage resistance} when you use the \textit{recover} ability (see \pcref{Recover}).
+                You gain a \plus2 bonus to the Endurance skill.
+                In addition, using the \textit{desperate exertion} ability to affect a roll using the Endurance skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
             ",
             modifiers: None,
         },
@@ -78,11 +79,11 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Greater Resilient Recovery",
+            name: "Resilient Recovery",
             is_magical: false,
             rank: 3,
             description: r"
-                The damage resistance you regain with your \textit{resilient recovery} ability increases to half your maximum damage resistance.
+                When you use the \textit{recover} ability, you regain a quarter of your maximum \glossterm{damage resistance} at the end of the round (see \pcref{Recover}).
             ",
             modifiers: None,
         },
@@ -237,7 +238,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
                         % This is an aggressive scaling that prevents any direct upgrades later in the archetype
-                        \item You gain a \plus2 bonus to your \glossterm{mundane} \glossterm{power}.
+                        \item You gain a \plus2 bonus to your \glossterm{power}.
                         \item You gain a \plus2 bonus to \glossterm{vital rolls}.
                         \item You take a \minus2 penalty to Armor and Reflex defenses.
                         \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
@@ -253,7 +254,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 \end{durationability}
             ",
             modifiers: Some(vec![
-                Modifier::MundanePower(2),
+                Modifier::Power(2),
                 Modifier::VitalRoll(2),
                 Modifier::Defense(Defense::Armor, -2),
                 Modifier::Defense(Defense::Reflex, -2),
@@ -264,21 +265,21 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: "",
-            modifiers: Some(vec![Modifier::MundanePower(4)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Rage",
             is_magical: false,
             rank: 5,
             description: "",
-            modifiers: Some(vec![Modifier::MundanePower(8)]),
+            modifiers: Some(vec![Modifier::Power(8)]),
         },
         RankAbility {
             name: "Rage",
             is_magical: false,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::MundanePower(16)]),
+            modifiers: Some(vec![Modifier::Power(16)]),
         },
         RankAbility {
             name: "Enraged Strike",

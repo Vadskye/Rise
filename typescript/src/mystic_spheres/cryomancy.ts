@@ -47,7 +47,7 @@ export const cryomancy: MysticSphere = {
       name: "Freezing Grasp",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} cold damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} cold damage.`,
         targeting: `
         You must have a \\glossterm{free hand} to cast this spell.
 
@@ -64,7 +64,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} cold damage.
+          The target takes 2d6 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
@@ -83,7 +83,7 @@ export const cryomancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater freezing grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage, and the condition must be removed twice before the effect ends.',
+        exceptThat: 'the damage increases to 4d8 + \\glossterm{power} damage, and the condition must be removed twice before the effect ends.',
       },
       rank: 7,
       scaling: "damage",
@@ -94,7 +94,7 @@ export const cryomancy: MysticSphere = {
       name: "Cone of Cold",
 
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} cold damage.`,
         targeting: `
         Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
@@ -108,7 +108,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Cone of Cold",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea cone from you.
         `,
@@ -122,7 +122,7 @@ export const cryomancy: MysticSphere = {
       name: "Supreme Cone of Cold",
 
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\hugearea cone from you.
         `,
@@ -135,7 +135,7 @@ export const cryomancy: MysticSphere = {
       name: "Frozen Legs",
 
       attack: {
-        hit: `The target takes 2d8 cold damage.
+        hit: `The target takes 2d6 cold damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -167,7 +167,7 @@ export const cryomancy: MysticSphere = {
       name: "Ice Lance",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} piercing and cold damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\largearealong, 5 ft. wide line from you.
         `,
@@ -182,7 +182,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Ice Lance",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} piercing and cold damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\largearealong, 10 ft. wide line from you.
         `,
@@ -197,7 +197,7 @@ export const cryomancy: MysticSphere = {
       name: "Ice Spike",
 
       attack: {
-        hit: `The target takes 2d8 + \\glossterm{power} piercing and cold damage.`,
+        hit: `The target takes 2d6 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
         `,
@@ -212,7 +212,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Ice Spike",
 
       attack: {
-        hit: `The target takes 4d10 + \\glossterm{power} piercing and cold damage.`,
+        hit: `The target takes 4d8 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
@@ -228,7 +228,7 @@ export const cryomancy: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The target takes 1d4 cold damage.
+        The target takes 1 cold damage.
         In addition, it gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
       `,
       rank: 1,
@@ -246,7 +246,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} cold damage and is \\glossterm{briefly} \\dazed.
+          The target takes 1d8 + half \\glossterm{power} cold damage and is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -263,7 +263,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d10 + half \\glossterm{power} cold damage.
+          The target takes 2d8 + half \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
           Otherwise, it is briefly \\dazed.
         `,
@@ -359,7 +359,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 cold damage.
+          The target takes 1d4 cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
           This condition must be removed twice before the effect ends.
         `,
@@ -378,7 +378,7 @@ export const cryomancy: MysticSphere = {
 
       functionsLike: {
         name: 'frostbite',
-        exceptThat: 'the damage increases to 2d6, and the attack gains a +3 \\glossterm{accuracy} bonus.',
+        exceptThat: 'the damage increases to 1d10, and the attack gains a +3 \\glossterm{accuracy} bonus.',
       },
       rank: 4,
       scaling: "accuracy",
@@ -389,7 +389,7 @@ export const cryomancy: MysticSphere = {
       name: "Hailstorm",
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea radius within \\medrange.
         `,
@@ -404,7 +404,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Hailstorm",
 
       attack: {
-        hit: `Each target takes 4d10 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea radius within \\longrange.
         `,
@@ -419,7 +419,7 @@ export const cryomancy: MysticSphere = {
       name: "Blizzard",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea radius from you.
         `,
@@ -433,7 +433,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Blizzard",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea radius from you.
         `,
@@ -453,7 +453,7 @@ export const cryomancy: MysticSphere = {
         The pool of water targeted must be at least as large as the largest item you create.
 
         An item created with this spell functions like a normal item of its type, with three exceptions.
-        First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your magical \\glossterm{power} to determine their damage instead of your \\glossterm{mundane} power.
+        First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
         except that it reacts differently to fire damage.
         Second, while wearing body armor from this spell, you are \\trait{impervious} to fire damage.
         Third, whenever you lose \\glossterm{hit points} from fire damage, all armor and weapons you made with this ability disappear.
@@ -479,7 +479,7 @@ export const cryomancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // +1d for attune + every other round
-        hit: `Each target takes 2d8 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
           When you do, make an attack vs. Fortitude against everything in a \\largearea cone from you.
@@ -498,7 +498,7 @@ export const cryomancy: MysticSphere = {
       functionsLike: {
         name: 'frost breath',
         exceptThat: `
-          the damage increases to 5d10 + half \\glossterm{power}.
+          the damage increases to 4d10 + half \\glossterm{power}.
           In addition, the area increases to a \\hugearea cone.
         `,
       },
@@ -518,7 +518,7 @@ export const cryomancy: MysticSphere = {
         hit: `
           As a \\glossterm{condition}, the target is seared by painful cold.
           % TODO: standardize "ignite" damage
-          At the end of each round, it takes 2d10 + half \\glossterm{power} cold damage.
+          At the end of each round, it takes 2d8 + half \\glossterm{power} cold damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -535,7 +535,7 @@ export const cryomancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // AOE dice, no power
-        hit: `Each target takes 2d6 cold damage.`,
+        hit: `Each target takes 1d10 cold damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
         `,
@@ -550,7 +550,7 @@ export const cryomancy: MysticSphere = {
       name: "Chillwind Dash",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
@@ -565,7 +565,7 @@ export const cryomancy: MysticSphere = {
       name: "Greater Chillwind Dash",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
@@ -580,7 +580,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} cold damage.
+          The target takes 1d10 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
@@ -597,7 +597,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} cold damage and is \\glossterm{briefly} \\slowed.
+          The target takes 2d8 + \\glossterm{power} cold damage and is \\glossterm{briefly} \\slowed.
           After it stops being slowed, it is immune to being slowed in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -615,7 +615,7 @@ export const cryomancy: MysticSphere = {
       // TODO: double check rank
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} cold damage.
+          The target takes 4d6 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `

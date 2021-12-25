@@ -13,41 +13,43 @@ where
     Creature: HasAttributes + HasModifiers + HasArmor,
 {
     fn calc_damage_resistance(&self) -> i32 {
-        let dr_from_level = match self.category {
-            CreatureCategory::Character => 0,
-            CreatureCategory::Monster(_) => {
-                // TODO: should this more consistently double every 6 levels at low levels?
-                match self.level {
-                    1 => 3,
-                    2 => 3,
-                    3 => 4,
-                    4 => 4,
-                    5 => 5,
-                    6 => 6,
-                    7 => 7,
-                    8 => 9,
-                    9 => 10,
-                    10 => 12,
-                    11 => 13,
-                    12 => 15,
-                    13 => 16,
-                    14 => 18,
-                    15 => 20,
-                    16 => 22,
-                    17 => 25,
-                    18 => 28,
-                    19 => 32,
-                    20 => 37,
-                    21 => 42,
-                    _ => panic!("Invalid level {}", self.level),
-                }
+        let mut levelish = self.level + self.get_base_attribute(&Attribute::Constitution);
+        let mut dr_from_level = 0;
+        if levelish > 0 {
+            let mut multiplier = 1;
+            while levelish > 21 {
+                levelish -= 6;
+                multiplier += 1;
             }
-        };
+            dr_from_level += multiplier * (match levelish {
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => 4,
+                5 => 5,
+                6 => 6,
+                7 => 7,
+                8 => 9,
+                9 => 10,
+                10 => 12,
+                11 => 13,
+                12 => 15,
+                13 => 16,
+                14 => 18,
+                15 => 20,
+                16 => 22,
+                17 => 25,
+                18 => 28,
+                19 => 32,
+                20 => 36,
+                21 => 40,
+                _ => panic!("Invalid levelish {}", levelish),
+            });
+        }
 
         let dr_from_armor: i32 = self.get_armor().iter().map(|a| a.damage_resistance()).sum();
 
         let dr = dr_from_level
-            + self.calc_total_attribute(&Attribute::Constitution)
             + dr_from_armor
             + self.calc_total_modifier(ModifierType::DamageResistance);
 
@@ -58,33 +60,44 @@ where
     }
 
     fn calc_hit_points(&self) -> i32 {
-        let hp_from_level = match self.level {
-            1 => 11,
-            2 => 12,
-            3 => 13,
-            4 => 15,
-            5 => 17,
-            6 => 19,
-            7 => 22,
-            8 => 25,
-            9 => 28,
-            10 => 31,
-            11 => 35,
-            12 => 39,
-            13 => 44,
-            14 => 50,
-            15 => 56,
-            16 => 63,
-            17 => 70,
-            18 => 78,
-            19 => 88,
-            20 => 100,
-            21 => 115,
-            _ => panic!("Invalid level {}", self.level),
-        };
+        let mut levelish = self.level + self.get_base_attribute(&Attribute::Constitution);
+        let hp_from_level;
+        if levelish > 0 {
+            let mut multiplier = 1;
+            while levelish > 21 {
+                levelish -= 6;
+                multiplier += 1;
+            }
+            hp_from_level = multiplier * (match levelish {
+                1 => 10,
+                2 => 11,
+                3 => 12,
+                4 => 13,
+                5 => 14,
+                6 => 16,  // +2
+                7 => 18,  // +2
+                8 => 20,  // +2
+                9 => 22,  // +2
+                10 => 25, // +3
+                11 => 28, // +3
+                12 => 32, // +4
+                13 => 36, // +4
+                14 => 40, // +4
+                15 => 44, // +4
+                16 => 50, // +6
+                17 => 56, // +6
+                18 => 64, // +8
+                19 => 72, // +8
+                20 => 80, // +8
+                21 => 88, // +8
+                22 => 100, // +12
+                _ => panic!("Invalid levelish {}", levelish),
+            });
+        } else {
+            hp_from_level = 9 + levelish;
+        }
 
         let hp = hp_from_level
-            + self.calc_total_attribute(&Attribute::Constitution)
             + self.calc_total_modifier(ModifierType::HitPoints);
 
         return match self.category {
@@ -95,7 +108,7 @@ where
 
     fn calc_effective_combat_hit_points(&self) -> i32 {
         if self.can_recover() {
-            return ((self.calc_hit_points() as f64) * 1.5).floor() as i32;
+            return ((self.calc_hit_points() as f64) * 1.25).floor() as i32;
         } else {
             return self.calc_hit_points();
         }
