@@ -70,7 +70,7 @@ def html_tag(tag_name, attributes=None, contents=None):
                 html_separator(),
             )
         except TypeError as e:
-            print(
+            raise Exception(
                 "{0}\n\tAttributes: {1}\n\tContents: {2}".format(
                     e,
                     attributes,
