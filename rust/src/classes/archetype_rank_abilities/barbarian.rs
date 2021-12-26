@@ -101,7 +101,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus1 bonus to your base Constitution.
+                You gain a \plus1 bonus to your Constitution.
             ",
             modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Constitution, 1)]),
         },
@@ -323,7 +323,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus1 bonus to your base Strength.
+                You gain a \plus1 bonus to your Strength.
             ",
             modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Strength, 1)]),
         },
@@ -431,7 +431,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus1 bonus to your base Dexterity.
+                You gain a \plus1 bonus to your Dexterity.
             ",
             modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Dexterity, 1)]),
         },

@@ -165,7 +165,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The penalty reduction from your \textit{armor expertise} ability increases to 2.
                 In addition, you reduce the movement speed penalty from body armor you wear by 5 feet.
-                Your base Dexterity also contributes more to your Armor defense than normal for your armor.
+                Your Dexterity also contributes more to your Armor defense than normal for your armor.
                 A multiplier of \mult1/2 becomes \mult1, and a multiplier of \mult0 becomes a \mult1/2.
             ",
             // TODO: figure out how to represent dexterity and speed
@@ -208,7 +208,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 3.
                 In addition, the movement speed penalty reduction from your \textit{greater armor expertise} ability improves to 10 feet.
-                You also always apply your full base Dexterity to your Armor defense, regardless of the armor you use.
+                You also always apply your full Dexterity to your Armor defense, regardless of the armor you use.
             ",
             modifiers: Some(vec![Modifier::Encumbrance(-1)]),
         },
