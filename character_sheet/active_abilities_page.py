@@ -35,7 +35,6 @@ def create_page(destination):
             div({"class": "tab-explanation"}, """
                 This tab is used to track the abilities that you can use.
                 Each ability you add here will appear as a button on the Core page.
-                If you add a line with the format "Header=Effect" in an ability description, that line will become a special header for that ability, just like the "Attack" and "Defense" headers that are normally part of attacks.
             """),
             # New attacks
             div({"class": "section-header"}, "Strike-Based Attacks"),
