@@ -423,7 +423,7 @@ def universal_abilities():
             Move up to your speed in a single straight line. At the end of your movement, you can make a melee strike from your new location.
         """),
         universal_ability_button("Escape Grapple", """
-            Make an attack against any number of creatures that you are grappled by. Add the highest of your accuracy ([[@{accuracy}]]), your Strength ([[@{strength}]]), or your Flexibility ([[@{flexibility_total}]]) to your accuracy.
+            Make an attack against any number of creatures that you are grappled by: [[d10!]]. Add the highest of your accuracy ([[@{accuracy}]]), half your level + your Strength ([[floor(@{level}/2)+@{strength}]]), or your Flexibility ([[@{flexibility_total}]]) to your accuracy.
             The defense of each creature is equal to the result of its maintain grapple ability. If a creature did not use that ability during the current round, its defense against this ability is 0.
             For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
         """, attack={"accuracy":"", "defense":"Special"}),
@@ -444,7 +444,7 @@ def universal_abilities():
             On a hit against both defenses, you and the target are grappled by each other.
         """, attack={"accuracy":"@{accuracy}", "defense":"Fort and Ref"}),
         universal_ability_button("Maintain Grapple", """
-            Make an attack using a free hand. Add the higher of your accuracy ([[@{accuracy}]]) or your Strength ([[@{strength}]]) to your accuracy.
+            Make an attack using a free hand: [[d10!]]. Add the higher of your accuracy ([[@{accuracy}]]) or half your level + your Strength ([[floor(@{level}/2)+@{strength}]]) to your accuracy.
             This attack has no immediate effect. The attack result determines how difficult it is for a creature to escape the grapple during the current round using the escape grapple ability.
         """, attack={"accuracy":"", "defense":"None"}),
         universal_ability_button("Overrun", """
@@ -457,7 +457,7 @@ def universal_abilities():
             You regain hit points equal to your maximum hit points. In addition, you remove all brief effects and conditions affecting you. This cannot remove effects applied during the current round.
         """),
         universal_ability_button("Shove", """
-            Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against both the Fortitude defense and total Strength of each target. Your accuracy with this attack is equal to your Strength. If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
+            Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against the Fortitude defense of each target. Your accuracy with this attack is equal to half your level \\add your Strength. If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
             On a hit, you can move up to half your movement speed in a straight line, pushing each target as you move. On a critical hit, you can move up to your full movement speed instead.
          """, attack={"accuracy":"@{strength}", "defense":"Fort and Strength"}),
         universal_ability_button("Sprint", """
