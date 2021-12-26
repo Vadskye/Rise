@@ -16,6 +16,7 @@ def generate_script():
             skill_points_spent(),
             unknown_statistic(),
             vital_wounds(),
+            universal_abilities(),
             attuned_effects(),
             custom_modifiers(),
             monster_chat_color(),
@@ -1109,6 +1110,17 @@ def blank_ability_known(i):
                 {name}: {name}_insight_points + {sum_variables(misc)}
             }});
         """,
+    )
+
+def universal_abilities():
+    return js_wrapper(
+        ["strength", "level", "accuracy", "flexibility_total"],
+        f"""
+            setAttrs({{
+                escape_grapple_accuracy: Math.max(accuracy, Math.floor(level/2) + strength, flexibility_total),
+                maintain_grapple_accuracy: Math.max(accuracy, Math.floor(level/2) + strength),
+            }});
+        """
     )
 
 def standard_damage_at_power(power):
