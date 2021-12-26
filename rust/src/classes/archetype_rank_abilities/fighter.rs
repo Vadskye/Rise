@@ -599,7 +599,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
 pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Predictive Tactics",
+            name: "Reactive Tactics",
             is_magical: false,
             rank: 0,
             description: r"
