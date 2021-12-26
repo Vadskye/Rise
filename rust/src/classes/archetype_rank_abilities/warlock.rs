@@ -752,6 +752,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
                 \begin{durationability}{Possession}[\abilitytag{Sustain} (free)]
+                    \abilitytag{Swift}
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
