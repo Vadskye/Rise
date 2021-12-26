@@ -539,7 +539,7 @@ export const barrier: MysticSphere = {
         To read the writing, a creature must concentrate on reading it, which requires a standard action.
         If a creature reads the object, the object explodes.
         You make an attack vs. Reflex against everything within a \\smallarea radius from the object.
-        Your accuracy with this attack is equal to half your level \\add half your base Perception.
+        Your accuracy with this attack is equal to half your level \\add half your Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
         Each struck target takes 2d6 + half \\glossterm{power} energy damage.
 

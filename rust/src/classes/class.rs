@@ -1350,7 +1350,7 @@ impl Class {
                         \parhead{Gift} You gain a \plus3 bonus to the Medicine skill (see \pcref{Medicine}).
                         \parhead{Aspect} You gain a \plus1 bonus to \glossterm{vital rolls} (see \pcref{Vital Rolls}).
                         \parhead{Essence} At the end of each phase, if you became \unconscious from a \glossterm{vital wound} during that phase, you can use one \glossterm{magical} ability you have that modifies \glossterm{vital rolls} or removes \glossterm{vital wounds} on yourself without taking an action.
-                        \parhead{Mastery} You gain a \plus1 bonus to your base Constitution.
+                        \parhead{Mastery} You gain a \plus1 bonus to your Constitution.
 
                     \subsubsection{Magic}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).

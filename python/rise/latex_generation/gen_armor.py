@@ -424,9 +424,9 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                If your base Dexterity is at least 3, you gain a +1 bonus to Armor defense.
+                If your Dexterity is at least 3, you gain a +1 bonus to Armor defense.
             """,
-            short_description="Grants +1 Armor if you have 3 base Dex",
+            short_description="Grants +1 Armor if you have 3 Dex",
         ),
         MagicItem(
             name="Lithe Armor, Greater",
@@ -434,9 +434,9 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                If your base Dexterity is at least 3, you gain a +2 bonus to Armor defense.
+                If your Dexterity is at least 3, you gain a +2 bonus to Armor defense.
             """,
-            short_description="Grants +2 Armor if you have 3 base Dex",
+            short_description="Grants +2 Armor if you have 3 Dex",
         ),
     ]
 
