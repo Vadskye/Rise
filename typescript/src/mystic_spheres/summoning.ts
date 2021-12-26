@@ -35,7 +35,7 @@ export const summoning: MysticSphere = {
           \\item Its \\glossterm{hit points} are equal to the base value for your level (see \\tref{Character Advancement}).
           \\item It has no \\glossterm{damage resistance}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add your level.
-          \\item Its \\glossterm{accuracy} is equal to your level \\add half your base Perception \\sub 2.
+          \\item Its \\glossterm{accuracy} is equal to your level \\add half your Perception \\sub 2.
           \\item Its \\glossterm{land speed} is 30 feet.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}

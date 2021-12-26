@@ -2586,7 +2586,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                If you have the \\ability<perfect body> ability, you gain a +1 bonus to the base value of your lowest physical attribute.
+                If you have the \\ability<perfect body> ability, you gain a +1 bonus to your lowest physical attribute.
             """,
             short_description="Improves \\ability<perfect body> on your lowest attribute",
         ),
@@ -2599,9 +2599,9 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to the base value of your Constitution.
+                You gain a +1 \\glossterm<magic bonus> to your Constitution.
             """,
-            short_description="Grants +1 base Constitution",
+            short_description="Grants +1 Constitution",
         ),
     ]
 
@@ -2612,9 +2612,9 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to the base value of your Dexterity.
+                You gain a +1 \\glossterm<magic bonus> to your Dexterity.
             """,
-            short_description="Grants +1 base Dexterity",
+            short_description="Grants +1 Dexterity",
         ),
     ]
 
@@ -2625,9 +2625,9 @@ def generate_apparel():
             material_type="Bracers",
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to the base value of your Strength.
+                You gain a +1 \\glossterm<magic bonus> to your Strength.
             """,
-            short_description="Grants +1 base Strength",
+            short_description="Grants +1 Strength",
         ),
     ]
 
@@ -2638,9 +2638,9 @@ def generate_apparel():
             material_type="Glasses",
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to the base value of your Perception.
+                You gain a +1 \\glossterm<magic bonus> to your Perception.
             """,
-            short_description="Grants +1 base Perception",
+            short_description="Grants +1 Perception",
         ),
     ]
 
@@ -2651,9 +2651,9 @@ def generate_apparel():
             material_type="Circlet",
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to the base value of your Willpower.
+                You gain a +1 \\glossterm<magic bonus> to your Willpower.
             """,
-            short_description="Grants +1 base Willpower",
+            short_description="Grants +1 Willpower",
         ),
     ]
 
