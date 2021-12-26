@@ -423,10 +423,9 @@ def universal_abilities():
             Move up to your speed in a single straight line. At the end of your movement, you can make a melee strike from your new location.
         """),
         universal_ability_button("Escape Grapple", """
-            Make an attack against any number of creatures that you are grappled by. Add the highest of your accuracy ([[@{accuracy}]]), half your level + your Strength ([[floor(@{level}/2)+@{strength}]]), or your Flexibility ([[@{flexibility_total}]]) to your attack result.
-            The defense of each creature is equal to the result of its maintain grapple ability. If a creature did not use that ability during the current round, its defense against this ability is 0.
+            Make an attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability, +4 for each size category by which it is larger than you. If a creature did not use that ability during the current round, its defense against this ability is 0.
             For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
-        """, attack={"accuracy":"", "defense":"Special"}),
+        """, attack={"accuracy":"@{escape_grapple_accuracy}", "defense":"Special"}),
         universal_ability_button("Desperate Exertion", """
             After you use this ability, you increase your fatigue level by two.
             You reroll any attack or check you just made and gain a +2 bonus.
@@ -444,9 +443,8 @@ def universal_abilities():
             On a hit against both defenses, you and the target are grappled by each other.
         """, attack={"accuracy":"@{accuracy}", "defense":"Fort and Ref"}),
         universal_ability_button("Maintain Grapple", """
-            Make an attack using a free hand. Add the higher of your accuracy ([[@{accuracy}]]) or half your level + your Strength ([[floor(@{level}/2)+@{strength}]]) to your attack result.
-            This attack has no immediate effect. The attack result determines how difficult it is for a creature to escape the grapple during the current round using the escape grapple ability.
-        """, attack={"accuracy":"", "defense":"None"}),
+            Make an attack using a free hand. This attack has no immediate effect. The attack result determines how difficult it is for a creature to escape the grapple during the current round using the escape grapple ability.
+        """, attack={"accuracy":"@{maintain_grapple_accuracy}", "defense":"None"}),
         universal_ability_button("Overrun", """
             After you use this ability, you increase your fatigue level by one.
             Move up to your movement speed in a straight line, even through creatures. Make an attack vs. Fortitude against each creature that you move through who does not choose to avoid you. For each size category by which you are larger or smaller than the target, you gain a +4 bonus or penalty to accuracy.
