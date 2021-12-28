@@ -1186,11 +1186,7 @@ def damage_dice():
 
         function parseDamageDice(attack_damage_dice) {
             if (!attack_damage_dice) {
-                return {
-                    count: 1,
-                    modifier: 0,
-                    size: 1,
-                };
+                return null;
             }
             let [count, size] = attack_damage_dice.split("d");
             if (count === '') {
@@ -1259,6 +1255,9 @@ def damage_dice():
 
         function calc_oda_string(v) {
             const damage_dice = parseDamageDice(v.attack_damage_dice);
+            if (!damage_dice) {
+                return "";
+            }
             const modifier = damage_dice.modifier + Math.floor(v.power * v.attack_power);
 
             let {count, size} = addDiceIncrements(damage_dice.count, damage_dice.size, Math.floor(v.relevant_attribute / 2));
@@ -1267,6 +1266,12 @@ def damage_dice():
 
         function calc_weapon_damage_strings(v) {
             const damage_dice = parseDamageDice(v.weapon_damage_dice);
+            if (!damage_dice) {
+                return {
+                    magical: "",
+                    mundane: "",
+                };
+            }
             let with_global_bonus = addDiceIncrements(damage_dice.count, damage_dice.size, v.all_weapons_damage_dice_bonus);
             let magical = addDiceIncrements(with_global_bonus.count, with_global_bonus.size, Math.floor(v.magical_attribute / 2));
             let mundane = addDiceIncrements(with_global_bonus.count, with_global_bonus.size, Math.floor(v.mundane_attribute / 2));
@@ -1309,7 +1314,12 @@ def damage_dice():
 
     weapon_change = """
         for (let i = 0; i < 3; i++) {
-            on(`change:weapon_${i}_damage_dice`, function(eventInfo) {
+            on(
+                `change:weapon_${i}_damage_dice`
+                + ' change:feat_name_0 change:feat_name_1 change:feat_name_2 change:feat_name_3'
+                + ' change:weapon_damage_dice'
+                + ' change:strength change:intelligence change:willpower'
+            , function(eventInfo) {
                 getWeaponDamageDiceAttrs(i, (v) => {
                     const {magical, mundane} = calc_weapon_damage_strings(v);
                     setAttrs({
