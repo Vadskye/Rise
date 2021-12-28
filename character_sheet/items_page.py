@@ -186,7 +186,7 @@ def weapon(i):
     return flex_row({"class": "weapon"}, [
         labeled_text_input("Name", {"class": "weapon-name"}, {"name": f"weapon_{i}_name"}),
         labeled_number_input("Accuracy", {"class": "weapon-accuracy"}, {"name": f"weapon_{i}_accuracy"}),
-        labeled_text_input("Damage", {"class": "weapon-damage-dice"}, {"name": f"weapon_{i}_damage_dice"}),
+        labeled_text_input("Base Die", {"class": "weapon-damage-dice"}, {"name": f"weapon_{i}_damage_dice"}),
         labeled_text_input("Magical", {"class": "calculated-weapon-damage-dice"}, {"class": "readonly-disabled", "name": f"weapon_{i}_magical_dice", "readonly": True}),
         labeled_text_input("Mundane", {"class": "calculated-weapon-damage-dice"}, {"class": "readonly-disabled", "name": f"weapon_{i}_mundane_dice", "readonly": True}),
         labeled_text_input("Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}),
