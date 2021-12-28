@@ -280,7 +280,7 @@ def other_damaging_attack():
     return shared_attack_framework(
         [
             labeled_text_input(
-                "Dice",
+                "Base Dice",
                 {"class": "attack-damage-dice"},
                 {"name": "attack_damage_dice"},
             ),
@@ -311,7 +311,7 @@ def other_damaging_attack():
                 },
                 "Attack",
             ),
-            labeled_text_input("Total Damage", {"class": "total-damage"}, {"readonly": True, "name": "totaldamage"}),
+            labeled_text_input("Total Damage", {"class": "total-damage"}, {"class": "readonly-disabled", "readonly": True, "name": "totaldamage"}),
             crit_damage_button("@{attack_damage_dice}", "crit"),
             glance_damage_button(calc_attack_power(), "glance"),
         ],
