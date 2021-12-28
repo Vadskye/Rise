@@ -147,7 +147,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain your choice of one of the following abilities.
                 You can also spend \glossterm{insight points} to learn one additional \textit{mystic insight} per insight point.
-                You cannot apply the benefits of more than two \textit{mystic insight} abilities to the same spell.
+                You cannot choose the same spell with more than two \textit{mystic insight} abilities.
                 {
                     \parhead{Distant Spell} Choose a divine \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
@@ -157,8 +157,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
                         In addition, you automatically learn one free divine ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
-                    \parhead{Spell Knowledge} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        You can choose this ability multiple times, learning an additional spell each time.
                     \parhead{Precise Spell} Choose a divine \glossterm{spell} you know.
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
