@@ -509,8 +509,9 @@ def active_ability_button(ability_type):
     if ability_type == "strike-based attack":
         for i in range(3):
             i = str(i)
+            extra_buttons.append(text_input({"class": "hidden", "name": f"weapon_{i}_adjusted_dice"}))
             extra_buttons.append(crit_damage_button(
-                "@{weapon_" + i + "_damage_dice}",
+                "@{weapon_" + i + "_adjusted_dice}",
                 "crit_" + i,
                 " - @{weapon_" + i + "_name}",
             ))
@@ -572,7 +573,7 @@ def weapon_template(i):
         " @{weapon_" + i + "_name},"
         + " {{subtitle=@{character_name} - @{weapon_" + i + "_name}&amp;#125;&amp;#125;"
         + " {{Attack=[[d10!+@{accuracy}+@{weapon_" + i + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}&amp;#125;&amp;#125;"
-        + " {{Damage=[[[[@{weapon_" + i + "_damage_dice}]] + [[" + calc_attack_power() + "+@{attack_damage_modifier}]]]] = $[[1]] + $[[3]]&amp;#125;&amp;#125;"
+        + " {{Damage=[[[[@{weapon_" + i + "_adjusted_dice}]] + [[" + calc_attack_power() + "+@{attack_damage_modifier}]]]] = $[[1]] + $[[3]]&amp;#125;&amp;#125;"
         + " {{Tags=@{weapon_" + i + "_tags}&amp;#125;&amp;#125;"
     ).replace('~', '&amp;#126;')
 
