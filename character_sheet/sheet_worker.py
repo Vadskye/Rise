@@ -903,10 +903,13 @@ def vital_rolls():
 def weapon_damage_dice():
     misc = get_misc_variables("weapon_damage_dice", 4)
     return js_wrapper(
-        ["level", *misc],
+        ["level", "challenge_rating", *misc],
         f"""
+            const from_cr = challenge_rating > 0
+                ? Math.floor((level - 1) / 3)
+                : 0;
             setAttrs({{
-                weapon_damage_dice: {sum_variables(misc)}
+                weapon_damage_dice: from_cr + {sum_variables(misc)}
             }});
         """,
     )
@@ -1182,6 +1185,13 @@ def damage_dice():
         }
 
         function parseDamageDice(attack_damage_dice) {
+            if (!attack_damage_dice) {
+                return {
+                    count: 1,
+                    modifier: 0,
+                    size: 1,
+                };
+            }
             let [count, size] = attack_damage_dice.split("d");
             if (count === '') {
                 count = 1;
