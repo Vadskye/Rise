@@ -560,7 +560,7 @@ def hit_points():
                     20:    80,
                     21:    88,
                     22:    100,
-                }}[level + constitution] || 1;
+                }}[levelish] || 1;
             }}
 
             var new_hit_points = hit_points_from_level + {sum_variables(misc)};
