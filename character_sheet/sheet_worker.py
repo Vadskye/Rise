@@ -20,6 +20,7 @@ def generate_script():
             attuned_effects(),
             custom_modifiers(),
             monster_chat_color(),
+            damage_dice(),
             debuffs(),
             "</script>",
             "",
@@ -1122,6 +1123,125 @@ def universal_abilities():
             }});
         """
     )
+
+def damage_dice():
+    # We need two functions here! One updates a specific attack when that
+    # specific attack changes, and one updates *all* attacks when general
+    # character changes happen.
+    local_change = """
+        function getDamageDiceAttrs(sectionId, callback) {
+            const damage_dice_key = `repeating_otherdamagingattacks_${sectionId}attack_damage_dice`;
+            const attack_power_key = `repeating_otherdamagingattacks_${sectionId}attack_power`;
+            const is_magical_key = `repeating_otherdamagingattacks_${sectionId}attack_is_magical`;
+            getAttrs([
+                "strength", "intelligence", "willpower",
+                "feat_name_0", "feat_name_1", "feat_name_2", "feat_name_3",
+                "power",
+                damage_dice_key,
+                attack_power_key,
+                is_magical_key,
+            ], function (v) {
+                const feats = [v.feat_name_0, v.feat_name_1, v.feat_name_2, v.feat_name_3];
+                let relevant_attribute = v[is_magical_key] === '1' ? Number(v.willpower) : Number(v.strength);
+                if (feats.includes("Precognition")) {
+                    relevant_attribute = Math.max(relevant_attribute, Number(v.intelligence));
+                }
+                const parsedAttrs = {
+                    attack_damage_dice: v[damage_dice_key],
+                    attack_power: Number(v[attack_power_key]),
+                    power: Number(v.power),
+                    relevant_attribute,
+                };
+                callback(parsedAttrs);
+            });
+        }
+
+        function parseDamageDice(attack_damage_dice) {
+            let [count, size] = attack_damage_dice.split("d");
+            let modifier = 0;
+            if (size.includes("+")) {
+                [size, modifier] = size.split("+");
+            } else if (size.includes("-")) {
+                [size, modifier] = size.split("-");
+            }
+            return {
+                count: Number(count),
+                modifier: Number(modifier),
+                size: Number(size),
+            };
+        }
+
+        function addDiceIncrements(count, size, increments) {
+            const all_dice_pools = [
+                "1d1",
+                "1d2",
+                "1d3",
+                "1d4",
+                "1d6",
+                "1d8",
+                "1d10",
+                "2d6",
+                "2d8",
+                "2d10",
+                "4d6",
+                "4d8",
+                "4d10",
+            ];
+            const key = `${count}d${size}`;
+            const initialIndex = count > 4
+                ? (count - 4) + all_dice_pools.length
+                : all_dice_pools.findIndex((pool) => pool === key);
+            const modifiedIndex = initialIndex + increments;
+            if (modifiedIndex > all_dice_pools.length) {
+                return {
+                    count: (modifiedIndex - 4) + all_dice_pools.length,
+                    size: 10,
+                };
+            } else if (modifiedIndex < 0) {
+                return {
+                    count: 1,
+                    size: 1,
+                }
+            } else {
+                const [count, size] = all_dice_pools[modifiedIndex].split('d');
+                return {count, size};
+            }
+        }
+
+        function calc_damage_dice_string(v) {
+            const damage_dice = parseDamageDice(v.attack_damage_dice);
+            const modifier = damage_dice.modifier + Math.floor(v.power * v.attack_power);
+
+            let {count, size} = addDiceIncrements(damage_dice.count, damage_dice.size, Math.floor(v.relevant_attribute / 2));
+            return `${count}d${size}+${modifier}`;
+        }
+
+        on("change:repeating_otherdamagingattacks:attack_damage_dice change:repeating_otherdamagingattacks:attack_power change:repeating_otherdamagingattacks:attack_is_magical", function(eventInfo) {
+            getDamageDiceAttrs("", (v) => {
+                setAttrs({
+                    repeating_otherdamagingattacks_totaldamage: calc_damage_dice_string(v),
+                });
+            });
+        });
+    """
+
+    global_change = """
+        on("change:strength change:intelligence change:willpower change:feat_name_0 change:feat_name_1 change:feat_name_2 change:feat_name_3 change:power", function() {
+            getSectionIDs("repeating_otherdamagingattacks", (repeatingSectionIds) => {
+                for (const sectionId of repeatingSectionIds) {
+                    getDamageDiceAttrs(sectionId + '_', (v) => {
+                        const key = `repeating_otherdamagingattacks_${sectionId}_totaldamage`;
+                        setAttrs({
+                            [key]: calc_damage_dice_string(v),
+                        });
+                    });
+                }
+            });
+        });
+    """
+
+    return local_change + global_change
+
 
 def standard_damage_at_power(power):
     return {

@@ -235,6 +235,11 @@ def strike_based_attack():
                     ],
                 ),
             ),
+            underlabeled_checkbox(
+                "Magical?",
+                {"class": "attack-is-magical"},
+                {"name": "attack_is_magical"},
+            ),
         ],
         [
             *weapon_buttons(0),
@@ -287,6 +292,11 @@ def other_damaging_attack():
                     ],
                 ),
             ),
+            underlabeled_checkbox(
+                "Magical?",
+                None,
+                {"class": "attack-is-magical", "name": "attack_is_magical"},
+            ),
         ],
         [
             button(
@@ -298,6 +308,7 @@ def other_damaging_attack():
                 },
                 "Attack",
             ),
+            labeled_text_input("Total Damage", {"class": "total-damage"}, {"readonly": True, "name": "totaldamage"}),
             crit_damage_button("@{attack_damage_dice}", "crit"),
             glance_damage_button(calc_attack_power(), "glance"),
         ],
