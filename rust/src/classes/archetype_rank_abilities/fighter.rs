@@ -436,7 +436,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{martial expertise} ability increases to three times your rank in this archetype.
+                The bonus from your \textit{martial resilience} ability increases to three times your rank in this archetype.
             ",
             // Handled as part of bulk silent scaling
             modifiers: None,
