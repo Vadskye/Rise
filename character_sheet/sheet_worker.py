@@ -1214,12 +1214,12 @@ def damage_dice():
             ];
             const key = `${count}d${size}`;
             const initialIndex = count > 4
-                ? (count - 4) + all_dice_pools.length
+                ? (count - 5) + all_dice_pools.length
                 : all_dice_pools.findIndex((pool) => pool === key);
-            const modifiedIndex = initialIndex + increments;
-            if (modifiedIndex > all_dice_pools.length) {
+            const modifiedIndex = initialIndex + Number(increments);
+            if (modifiedIndex >= all_dice_pools.length) {
                 return {
-                    count: (modifiedIndex - 4) + all_dice_pools.length,
+                    count: (modifiedIndex - all_dice_pools.length) + 5,
                     size: 10,
                 };
             } else if (modifiedIndex < 0) {
