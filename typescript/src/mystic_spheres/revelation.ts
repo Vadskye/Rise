@@ -232,7 +232,7 @@ export const revelation: MysticSphere = {
       name: "Blindsight",
 
       effect: `
-        You gain \trait{blindsight} with a 15 foot range, allowing you to see without light (see \pcref{Blindsight}).
+        You gain \\trait{blindsight} with a 15 foot range, allowing you to see without light (see \\pcref{Blindsight}).
         If you already have blindsight, the range of your blindsight increases by 15 feet.
       `,
       rank: 3,
