@@ -240,6 +240,9 @@ def strike_based_attack():
                 {"class": "attack-is-magical"},
                 {"name": "attack_is_magical"},
             ),
+            labeled_text_input("Adjusted0", {"class": "hidden"}, {"name": "weapon_0_adjusted_dice", "readonly": True}),
+            labeled_text_input("Adjusted1", {"class": "hidden"}, {"name": "weapon_1_adjusted_dice", "readonly": True}),
+            labeled_text_input("Adjusted2", {"class": "hidden"}, {"name": "weapon_2_adjusted_dice", "readonly": True}),
         ],
         [
             *weapon_buttons(0),
@@ -261,7 +264,7 @@ def weapon_buttons(i):
             text_input({"disabled": True, "name": "weapon_attack_name_" + i, "value": "@{weapon_" + i + "_name}"}),
         ),
         crit_damage_button(
-            "@{weapon_" + i + "_damage_dice}",
+            "@{weapon_" + i + "_adjusted_dice}",
             "crit_" + i,
             " - @{weapon_" + i + "_name}",
         ),
@@ -388,7 +391,7 @@ def weapon_attack_button(i):
         + " {{subtitle=@{character_name} - @{weapon_" + i + "_name}}}"
         + " {{Attack=[[d10!+@{accuracy}+@{weapon_" + i + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}}}"
         + " {{Damage=" + construct_damage_text(
-            "@{weapon_" + i + "_damage_dice}+" + calc_attack_power() + "+@{attack_damage_modifier}",
+            "@{weapon_" + i + "_adjusted_dice}+" + calc_attack_power() + "+@{attack_damage_modifier}",
             "repeating_strikeattacks_crit_" + i,
             "repeating_strikeattacks_glance_" + i,
         ) + "}}"
