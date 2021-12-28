@@ -1305,7 +1305,7 @@ def generate_apparel():
             short_description="Increases accuracy penalty on goaded foes by 1",
         ),
         MagicItem(
-            name="Challenger's Cloak",
+            name="Challenger's Cloak, Greater",
             rank=7,
             material_type="Cloak",
             tags=[],
