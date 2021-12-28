@@ -1183,6 +1183,9 @@ def damage_dice():
 
         function parseDamageDice(attack_damage_dice) {
             let [count, size] = attack_damage_dice.split("d");
+            if (count === '') {
+                count = 1;
+            }
             let modifier = 0;
             if (size.includes("+")) {
                 [size, modifier] = size.split("+");
