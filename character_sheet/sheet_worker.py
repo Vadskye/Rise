@@ -129,7 +129,7 @@ def attribute_change(a):
             value += {sum_variables(misc)};
 
             setAttrs({{
-                {a}: value,
+                {a}: value || 0,
             }});
         """,
     )
