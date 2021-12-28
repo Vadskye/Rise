@@ -1128,8 +1128,8 @@ def damage_dice():
     # We need two functions here! One updates a specific attack when that
     # specific attack changes, and one updates *all* attacks when general
     # character changes happen.
-    local_change = """
-        function getDamageDiceAttrs(sectionId, callback) {
+    infrastructure = """
+        function getOdaDamageDiceAttrs(sectionId, callback) {
             const damage_dice_key = `repeating_otherdamagingattacks_${sectionId}attack_damage_dice`;
             const attack_power_key = `repeating_otherdamagingattacks_${sectionId}attack_power`;
             const is_magical_key = `repeating_otherdamagingattacks_${sectionId}attack_is_magical`;
@@ -1151,6 +1151,31 @@ def damage_dice():
                     attack_power: Number(v[attack_power_key]),
                     power: Number(v.power),
                     relevant_attribute,
+                };
+                callback(parsedAttrs);
+            });
+        }
+
+        function getWeaponDamageDiceAttrs(weaponIndex, callback) {
+            const weapon_damage_key = `weapon_${weaponIndex}_damage_dice`;
+            getAttrs([
+                "strength", "intelligence", "willpower",
+                "feat_name_0", "feat_name_1", "feat_name_2", "feat_name_3",
+                "weapon_damage_dice",
+                weapon_damage_key,
+            ], function (v) {
+                let mundane_attribute = Number(v.strength);
+                let magical_attribute = Number(v.willpower);
+                const feats = [v.feat_name_0, v.feat_name_1, v.feat_name_2, v.feat_name_3];
+                if (feats.includes("Precognition")) {
+                    mundane_attribute = Math.max(mundane_attribute, Number(v.intelligence));
+                    magical_attribute = Math.max(magical_attribute, Number(v.intelligence));
+                }
+                const parsedAttrs = {
+                    all_weapons_damage_dice_bonus: Number(v.weapon_damage_dice) || 0,
+                    magical_attribute,
+                    mundane_attribute,
+                    weapon_damage_dice: v[weapon_damage_key],
                 };
                 callback(parsedAttrs);
             });
@@ -1208,31 +1233,89 @@ def damage_dice():
             }
         }
 
-        function calc_damage_dice_string(v) {
+        function format_dice_pool(count, size, modifier) {
+            let dice = `${count}d${size}`;
+            if (modifier > 0) {
+                return `${dice}+${modifier}`;
+            } else if (modifier < 0) {
+                return `${dice}${modifier}`;
+            } else {
+                return dice;
+            }
+        }
+
+        function calc_oda_string(v) {
             const damage_dice = parseDamageDice(v.attack_damage_dice);
             const modifier = damage_dice.modifier + Math.floor(v.power * v.attack_power);
 
             let {count, size} = addDiceIncrements(damage_dice.count, damage_dice.size, Math.floor(v.relevant_attribute / 2));
-            return `${count}d${size}+${modifier}`;
+            return format_dice_pool(count, size, modifier);
         }
 
+        function calc_weapon_damage_strings(v) {
+            const damage_dice = parseDamageDice(v.weapon_damage_dice);
+            let with_global_bonus = addDiceIncrements(damage_dice.count, damage_dice.size, v.all_weapons_damage_dice_bonus);
+            let magical = addDiceIncrements(with_global_bonus.count, with_global_bonus.size, Math.floor(v.magical_attribute / 2));
+            let mundane = addDiceIncrements(with_global_bonus.count, with_global_bonus.size, Math.floor(v.mundane_attribute / 2));
+            return {
+                magical: format_dice_pool(magical.count, magical.size, damage_dice.modifier),
+                mundane: format_dice_pool(mundane.count, mundane.size, damage_dice.modifier),
+            };
+        }
+    """
+
+    local_oda_change = """
         on("change:repeating_otherdamagingattacks:attack_damage_dice change:repeating_otherdamagingattacks:attack_power change:repeating_otherdamagingattacks:attack_is_magical", function(eventInfo) {
-            getDamageDiceAttrs("", (v) => {
+            getOdaDamageDiceAttrs("", (v) => {
                 setAttrs({
-                    repeating_otherdamagingattacks_totaldamage: calc_damage_dice_string(v),
+                    repeating_otherdamagingattacks_totaldamage: calc_oda_string(v),
                 });
             });
         });
+    """
+
+    local_strike_change = """
+        on("change:repeating_strikeattacks:attack_is_magical", function(eventInfo) {
+            getAttrs([
+                "repeating_strikeattacks_attack_is_magical",
+                "weapon_0_magical_dice", "weapon_0_mundane_dice",
+                "weapon_1_magical_dice", "weapon_1_mundane_dice",
+                "weapon_2_magical_dice", "weapon_2_mundane_dice",
+            ], function(v) {
+                let dice_type = v.repeating_strikeattacks_attack_is_magical === '1'
+                    ? 'magical'
+                    : 'mundane';
+                const attrs = {};
+                for (let i = 0; i < 3; i++) {
+                    attrs[`repeating_strikeattacks_weapon_${i}_adjusted_dice`] = v[`weapon_${i}_${dice_type}_dice`];
+                }
+                setAttrs(attrs);
+            });
+        });
+    """
+
+    weapon_change = """
+        for (let i = 0; i < 3; i++) {
+            on(`change:weapon_${i}_damage_dice`, function(eventInfo) {
+                getWeaponDamageDiceAttrs(i, (v) => {
+                    const {magical, mundane} = calc_weapon_damage_strings(v);
+                    setAttrs({
+                        [`weapon_${i}_magical_dice`]: magical,
+                        [`weapon_${i}_mundane_dice`]: mundane,
+                    });
+                });
+            });
+        }
     """
 
     global_change = """
         on("change:strength change:intelligence change:willpower change:feat_name_0 change:feat_name_1 change:feat_name_2 change:feat_name_3 change:power", function() {
             getSectionIDs("repeating_otherdamagingattacks", (repeatingSectionIds) => {
                 for (const sectionId of repeatingSectionIds) {
-                    getDamageDiceAttrs(sectionId + '_', (v) => {
+                    getOdaDamageDiceAttrs(sectionId + '_', (v) => {
                         const key = `repeating_otherdamagingattacks_${sectionId}_totaldamage`;
                         setAttrs({
-                            [key]: calc_damage_dice_string(v),
+                            [key]: calc_oda_string(v),
                         });
                     });
                 }
@@ -1240,7 +1323,7 @@ def damage_dice():
         });
     """
 
-    return local_change + global_change
+    return infrastructure + local_oda_change + local_strike_change + weapon_change + global_change
 
 
 def standard_damage_at_power(power):
