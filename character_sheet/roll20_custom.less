@@ -175,6 +175,17 @@ div.full-sheet {
     .nav-button:hover + .nav-button-label {
         background: #f0c860;
     }
+
+    input[type=text].readonly-disabled {
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 2px 1px inset;
+        cursor: default;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+        line-height: 1em;
+        text-align: center;
+    }
 }
 .ui-dialog .charsheet {
     padding-top: 0;
@@ -184,15 +195,4 @@ div.full-sheet {
 // Make sure that the controls show up over the custom modifiers
 .repcontainer > .repitem > .itemcontrol {
     z-index: 1;
-}
-
-input.readonly-disabled {
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 2px 1px inset;
-    cursor: default;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
-    line-height: 1em;
-    text-align: center;
 }
