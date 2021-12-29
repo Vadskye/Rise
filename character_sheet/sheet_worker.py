@@ -1316,6 +1316,30 @@ def damage_dice():
                 mundane: format_dice_pool(mundane.count, mundane.size, damage_dice.modifier),
             };
         }
+
+        function setStrikeTotalDamage(sectionId, v) {
+            if (sectionId) {
+                sectionId += '_';
+            }
+            const attrs = {};
+            for (let i = 0; i < 3; i++) {
+                const weapon_prefix = `repeating_strikeattacks_${sectionId}weapon_${i}_`;
+                const weapon_dice = parseDamageDice(v.weapon_dice[i]);
+                let total_damage = '';
+                let total_damage_dice = '';
+                let total_damage_modifier = '';
+                if (weapon_dice) {
+                    const modifier = weapon_dice.modifier + Math.floor(v.power * v.attack_power) + v.damage_modifier;
+                    total_damage = format_dice_pool(weapon_dice.count, weapon_dice.size, modifier);
+                    total_damage_dice = format_dice_pool(weapon_dice.count, weapon_dice.size, 0);
+                    total_damage_modifier = modifier;
+                }
+                attrs[weapon_prefix + 'total_damage'] = total_damage;
+                attrs[weapon_prefix + 'total_damage_dice'] = total_damage_dice;
+                attrs[weapon_prefix + 'total_damage_modifier'] = total_damage_modifier;
+            }
+            setAttrs(attrs);
+        }
     """
 
     local_oda_change = """
@@ -1329,26 +1353,24 @@ def damage_dice():
     """
 
     local_strike_change = """
-        on("change:repeating_strikeattacks:attack_is_magical", function(eventInfo) {
+        on("change:repeating_strikeattacks:attack_is_magical change:repeating_strikeattacks:attack_power change:repeating_strikeattacks:attack_damage_modifier", function(eventInfo) {
             getStrikeAttrs("", (v) => {
-                const attrs = {};
-                for (let i = 0; i < 3; i++) {
-                    const weapon_prefix = `repeating_strikeattacks_weapon_${i}_`;
-                    const weapon_dice = parseDamageDice(v.weapon_dice[i]);
-                    let total_damage = '';
-                    let total_damage_dice = '';
-                    let total_damage_modifier = '';
-                    if (weapon_dice) {
-                        const modifier = weapon_dice.modifier + Math.floor(v.power * v.attack_power) + v.damage_modifier;
-                        total_damage = format_dice_pool(weapon_dice.count, weapon_dice.size, modifier);
-                        total_damage_dice = format_dice_pool(weapon_dice.count, weapon_dice.size, 0);
-                        total_damage_modifier = modifier;
-                    }
-                    attrs[weapon_prefix + 'total_damage'] = total_damage;
-                    attrs[weapon_prefix + 'total_damage_dice'] = total_damage_dice;
-                    attrs[weapon_prefix + 'total_damage_modifier'] = total_damage_modifier;
+                setStrikeTotalDamage("", v);
+            });
+        });
+    """
+
+    global_strike_change = """
+        on(
+            'change:weapon_0_magical_dice change:weapon_1_magical_dice change:weapon_2_magical_dice'
+            + ' change:power'
+        , function (eventInfo) {
+            getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
+                for (const sectionId of repeatingSectionIds) {
+                    getStrikeAttrs(sectionId, (v) => {
+                        setStrikeTotalDamage(sectionId, v);
+                    });
                 }
-                setAttrs(attrs);
             });
         });
     """
@@ -1372,7 +1394,7 @@ def damage_dice():
         }
     """
 
-    global_change = """
+    global_oda_change = """
         on("change:strength change:intelligence change:willpower change:feat_name_0 change:feat_name_1 change:feat_name_2 change:feat_name_3 change:power", function() {
             getSectionIDs("repeating_otherdamagingattacks", (repeatingSectionIds) => {
                 for (const sectionId of repeatingSectionIds) {
@@ -1387,7 +1409,7 @@ def damage_dice():
         });
     """
 
-    return infrastructure + local_oda_change + local_strike_change + weapon_change + global_change
+    return infrastructure + local_oda_change + local_strike_change + weapon_change + global_oda_change + global_strike_change
 
 
 def standard_damage_at_power(power):
