@@ -1133,6 +1133,9 @@ def damage_dice():
     # character changes happen.
     infrastructure = """
         function getOdaDamageDiceAttrs(sectionId, callback) {
+            if (sectionId) {
+                sectionId = sectionId + '_';
+            }
             const damage_dice_key = `repeating_otherdamagingattacks_${sectionId}attack_damage_dice`;
             const attack_power_key = `repeating_otherdamagingattacks_${sectionId}attack_power`;
             const is_magical_key = `repeating_otherdamagingattacks_${sectionId}attack_is_magical`;
@@ -1157,6 +1160,39 @@ def damage_dice():
                 };
                 callback(parsedAttrs);
             });
+        }
+
+        function getStrikeAttrs(sectionId, callback) {
+            if (sectionId) {
+                sectionId = sectionId + '_';
+            }
+            const attack_power_key = `repeating_strikeattacks_${sectionId}attack_power`;
+            const damage_modifier_key = `repeating_strikeattacks_${sectionId}attack_damage_modifier`;
+            const is_magical_key = `repeating_strikeattacks_${sectionId}attack_is_magical`;
+            const weapon_keys = [];
+            for (let i = 0; i < 3; i++) {
+                weapon_keys.push(`weapon_${i}_magical_dice`);
+                weapon_keys.push(`weapon_${i}_mundane_dice`);
+            }
+            getAttrs([
+                attack_power_key, damage_modifier_key, is_magical_key,
+                ...weapon_keys,
+                "power",
+            ], function(v) {
+                const dice_type = v[is_magical_key] === '1' ? 'magical' : 'mundane';
+
+                const weapon_dice = [];
+                for (let i = 0; i < 3; i++) {
+                    weapon_dice.push(v[`weapon_${i}_${dice_type}_dice`]);
+                }
+                callback({
+                    attack_power: Number(v[attack_power_key]),
+                    damage_modifier: Number(v[damage_modifier_key]),
+                    power: Number(v.power),
+                    weapon_dice,
+                });
+            });
+
         }
 
         function getWeaponDamageDiceAttrs(weaponIndex, callback) {
@@ -1294,18 +1330,23 @@ def damage_dice():
 
     local_strike_change = """
         on("change:repeating_strikeattacks:attack_is_magical", function(eventInfo) {
-            getAttrs([
-                "repeating_strikeattacks_attack_is_magical",
-                "weapon_0_magical_dice", "weapon_0_mundane_dice",
-                "weapon_1_magical_dice", "weapon_1_mundane_dice",
-                "weapon_2_magical_dice", "weapon_2_mundane_dice",
-            ], function(v) {
-                let dice_type = v.repeating_strikeattacks_attack_is_magical === '1'
-                    ? 'magical'
-                    : 'mundane';
+            getStrikeAttrs("", (v) => {
                 const attrs = {};
                 for (let i = 0; i < 3; i++) {
-                    attrs[`repeating_strikeattacks_weapon_${i}_adjusted_dice`] = v[`weapon_${i}_${dice_type}_dice`];
+                    const weapon_prefix = `repeating_strikeattacks_weapon_${i}_`;
+                    const weapon_dice = parseDamageDice(v.weapon_dice[i]);
+                    let total_damage = '';
+                    let total_damage_dice = '';
+                    let total_damage_modifier = '';
+                    if (weapon_dice) {
+                        const modifier = weapon_dice.modifier + Math.floor(v.power * v.attack_power) + v.damage_modifier;
+                        total_damage = format_dice_pool(weapon_dice.count, weapon_dice.size, modifier);
+                        total_damage_dice = format_dice_pool(weapon_dice.count, weapon_dice.size, 0);
+                        total_damage_modifier = modifier;
+                    }
+                    attrs[weapon_prefix + 'total_damage'] = total_damage;
+                    attrs[weapon_prefix + 'total_damage_dice'] = total_damage_dice;
+                    attrs[weapon_prefix + 'total_damage_modifier'] = total_damage_modifier;
                 }
                 setAttrs(attrs);
             });
@@ -1335,7 +1376,7 @@ def damage_dice():
         on("change:strength change:intelligence change:willpower change:feat_name_0 change:feat_name_1 change:feat_name_2 change:feat_name_3 change:power", function() {
             getSectionIDs("repeating_otherdamagingattacks", (repeatingSectionIds) => {
                 for (const sectionId of repeatingSectionIds) {
-                    getOdaDamageDiceAttrs(sectionId + '_', (v) => {
+                    getOdaDamageDiceAttrs(sectionId, (v) => {
                         const key = `repeating_otherdamagingattacks_${sectionId}_totaldamage`;
                         setAttrs({
                             [key]: calc_oda_string(v),

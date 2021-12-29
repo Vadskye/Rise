@@ -240,22 +240,11 @@ def strike_based_attack():
                 {"class": "attack-is-magical"},
                 {"name": "attack_is_magical"},
             ),
-            labeled_text_input("Adjusted1", {"class": "hidden"}, {"name": "weapon_1_adjusted_dice", "readonly": True}),
-            labeled_text_input("Adjusted2", {"class": "hidden"}, {"name": "weapon_2_adjusted_dice", "readonly": True}),
         ],
         [
-            flex_row([
-                *weapon_buttons(0),
-                text_input({"class": "readonly-disabled strike-total-damage", "name": "weapon_0_adjusted_dice", "readonly": True}),
-            ]),
-            flex_row([
-                *weapon_buttons(1),
-                text_input({"class": "readonly-disabled strike-total-damage", "name": "weapon_1_adjusted_dice", "readonly": True}),
-            ]),
-            flex_row([
-                *weapon_buttons(2),
-                text_input({"class": "readonly-disabled strike-total-damage", "name": "weapon_2_adjusted_dice", "readonly": True}),
-            ]),
+            flex_row(weapon_buttons(0)),
+            flex_row(weapon_buttons(1)),
+            flex_row(weapon_buttons(2)),
         ],
     )
 
@@ -272,15 +261,18 @@ def weapon_buttons(i):
             text_input({"disabled": True, "name": "weapon_attack_name_" + i, "value": "@{weapon_" + i + "_name}"}),
         ),
         crit_damage_button(
-            "@{weapon_" + i + "_adjusted_dice}",
+            "@{weapon_" + i + "_total_damage_dice}",
             "crit_" + i,
             " - @{weapon_" + i + "_name}",
         ),
         glance_damage_button(
-            "@{attack_damage_modifier}+" + calc_attack_power(),
+            "@{weapon_" + i + "_total_damage_modifier}",
             "glance_" + i,
             " - @{weapon_" + i + "_name}",
         ),
+        text_input({"class": "readonly-disabled strike-total-damage", "name": f"weapon_{i}_total_damage", "readonly": True}),
+        text_input({"class": "hidden", "name": f"weapon_{i}_total_damage_dice", "readonly": True}),
+        text_input({"class": "hidden", "name": f"weapon_{i}_total_damage_modifier", "readonly": True}),
     ]
 
 
@@ -399,7 +391,7 @@ def weapon_attack_button(i):
         + " {{subtitle=@{character_name} - @{weapon_" + i + "_name}}}"
         + " {{Attack=[[d10!+@{accuracy}+@{weapon_" + i + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}}}"
         + " {{Damage=" + construct_damage_text(
-            "@{weapon_" + i + "_adjusted_dice}+" + calc_attack_power() + "+@{attack_damage_modifier}",
+            "@{weapon_" + i + "_total_damage}",
             "repeating_strikeattacks_crit_" + i,
             "repeating_strikeattacks_glance_" + i,
         ) + "}}"
