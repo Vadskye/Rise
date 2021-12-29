@@ -1380,7 +1380,7 @@ def damage_dice():
             getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
                 for (const sectionId of repeatingSectionIds) {
                     getStrikeAttrs(sectionId, (v) => {
-                        setOdaTotalDamage(sectionId, v);
+                        setStrikeTotalDamage(sectionId, v);
                     });
                 }
             });
@@ -1411,10 +1411,7 @@ def damage_dice():
             getSectionIDs("repeating_otherdamagingattacks", (repeatingSectionIds) => {
                 for (const sectionId of repeatingSectionIds) {
                     getOdaDamageDiceAttrs(sectionId, (v) => {
-                        const key = `repeating_otherdamagingattacks_${sectionId}_totaldamage`;
-                        setAttrs({
-                            [key]: calc_oda_string(v),
-                        });
+                        setOdaTotalDamage(sectionId, v);
                     });
                 }
             });
