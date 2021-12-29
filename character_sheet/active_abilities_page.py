@@ -311,15 +311,15 @@ def other_damaging_attack():
                 },
                 "Attack",
             ),
-            labeled_text_input("Total Damage", {"class": "total-damage"}, {"class": "readonly-disabled", "readonly": True, "name": "totaldamage"}),
-            crit_damage_button("@{attack_damage_dice}", "crit"),
-            glance_damage_button(calc_attack_power(), "glance"),
+            labeled_text_input("Total Damage", {"class": "total-damage"}, {"class": "readonly-disabled", "readonly": True, "name": "total_damage"}),
+            crit_damage_button("@{total_damage_dice}", "crit"),
+            glance_damage_button('[[@{total_damage_modifier}]]', "glance"),
         ],
     )
 
 def other_damaging_attack_button_text():
     return attack_button_text(construct_damage_text(
-        "@{attack_damage_dice}+" + calc_attack_power(),
+        "@{total_damage}",
         "repeating_otherdamagingattacks_crit",
         "repeating_otherdamagingattacks_glance",
     ))
