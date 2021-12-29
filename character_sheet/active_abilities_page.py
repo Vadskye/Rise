@@ -240,14 +240,22 @@ def strike_based_attack():
                 {"class": "attack-is-magical"},
                 {"name": "attack_is_magical"},
             ),
-            labeled_text_input("Adjusted0", {"class": "hidden"}, {"name": "weapon_0_adjusted_dice", "readonly": True}),
             labeled_text_input("Adjusted1", {"class": "hidden"}, {"name": "weapon_1_adjusted_dice", "readonly": True}),
             labeled_text_input("Adjusted2", {"class": "hidden"}, {"name": "weapon_2_adjusted_dice", "readonly": True}),
         ],
         [
-            *weapon_buttons(0),
-            *weapon_buttons(1),
-            *weapon_buttons(2),
+            flex_row([
+                *weapon_buttons(0),
+                text_input({"class": "readonly-disabled strike-total-damage", "name": "weapon_0_adjusted_dice", "readonly": True}),
+            ]),
+            flex_row([
+                *weapon_buttons(1),
+                text_input({"class": "readonly-disabled strike-total-damage", "name": "weapon_1_adjusted_dice", "readonly": True}),
+            ]),
+            flex_row([
+                *weapon_buttons(2),
+                text_input({"class": "readonly-disabled strike-total-damage", "name": "weapon_2_adjusted_dice", "readonly": True}),
+            ]),
         ],
     )
 
