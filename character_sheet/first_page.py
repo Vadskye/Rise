@@ -525,21 +525,9 @@ def active_ability_button(ability_type):
     return div({"class": "active-ability-button"}, [
         text_input({"class": "hidden", "name": prefix + "_accuracy", "value": "0"}),
         text_input({"class": "hidden", "name": prefix + "_defense"}),
-        text_input({"class": "hidden", "name": prefix + "_damage_dice"}),
-        text_input({"class": "hidden", "name": prefix + "_damage_modifier"}),
-        checkbox({"class": "hidden", "name": prefix + "_is_magical", "value": "1"}),
-        underlabel(
-            "Power",
-            select(
-                {"class": "attack-power", "name": prefix + "_power"},
-                [
-                    option({"value": "1", "selected": True}, "Full"),
-                    option({"value": "0.5"}, "Half"),
-                    option({"value": "0"}, "None"),
-                ],
-            ),
-            {"class": "hidden"},
-        ),
+        text_input({"class": "hidden", "name": "total_damage"}),
+        text_input({"class": "hidden", "name": "total_damage_dice"}),
+        text_input({"class": "hidden", "name": "total_damage_modifier"}),
         textarea({"class": "hidden", "name": prefix + "_effect"}),
         button(
             {

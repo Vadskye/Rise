@@ -1289,15 +1289,29 @@ def damage_dice():
             }
         }
 
-        function calc_oda_string(v) {
-            const damage_dice = parseDamageDice(v.attack_damage_dice);
-            if (!damage_dice) {
-                return "";
+        function setOdaTotalDamage(sectionId, v) {
+            if (sectionId) {
+                sectionId += '_';
             }
-            const modifier = damage_dice.modifier + Math.floor(v.power * v.attack_power);
+            const damage_dice = parseDamageDice(v.attack_damage_dice);
+            let total_damage = '';
+            let total_damage_dice = '';
+            let total_damage_modifier = '';
+            if (damage_dice) {
+                const modifier = damage_dice.modifier + Math.floor(v.power * v.attack_power);
 
-            let {count, size} = addDiceIncrements(damage_dice.count, damage_dice.size, Math.floor(v.relevant_attribute / 2));
-            return format_dice_pool(count, size, modifier);
+                let {count, size} = addDiceIncrements(damage_dice.count, damage_dice.size, Math.floor(v.relevant_attribute / 2));
+                total_damage = format_dice_pool(count, size, modifier);
+                total_damage_dice = format_dice_pool(count, size, 0);
+                total_damage_modifier = modifier;
+            }
+
+            const prefix = `repeating_otherdamagingattacks_${sectionId}`;
+            setAttrs({
+                [prefix + 'total_damage']: total_damage,
+                [prefix + 'total_damage_dice']: total_damage_dice,
+                [prefix + 'total_damage_modifier']: total_damage_modifier,
+            });
         }
 
         function calc_weapon_damage_strings(v) {
@@ -1345,9 +1359,7 @@ def damage_dice():
     local_oda_change = """
         on("change:repeating_otherdamagingattacks:attack_damage_dice change:repeating_otherdamagingattacks:attack_power change:repeating_otherdamagingattacks:attack_is_magical", function(eventInfo) {
             getOdaDamageDiceAttrs("", (v) => {
-                setAttrs({
-                    repeating_otherdamagingattacks_totaldamage: calc_oda_string(v),
-                });
+                setOdaTotalDamage("", v);
             });
         });
     """
@@ -1368,7 +1380,7 @@ def damage_dice():
             getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
                 for (const sectionId of repeatingSectionIds) {
                     getStrikeAttrs(sectionId, (v) => {
-                        setStrikeTotalDamage(sectionId, v);
+                        setOdaTotalDamage(sectionId, v);
                     });
                 }
             });
