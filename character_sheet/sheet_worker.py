@@ -568,7 +568,7 @@ def hit_points():
                 0: 1,
                 0.5: 1,
                 1: 1,
-                2: 2,
+                2: 3,
                 4: 4,
                 6: 6,
             }}[challenge_rating || 0];
@@ -697,10 +697,10 @@ def damage_resistance():
             var cr_multiplier = {{
                 0: 1,
                 0.5: 0,
-                1: 3,
-                2: 6,
-                4: 10,
-                6: 15,
+                1: 2,
+                2: 4,
+                4: 8,
+                6: 16,
             }}[challenge_rating || 0];
             const new_damage_resistance = Math.floor(
                 (
