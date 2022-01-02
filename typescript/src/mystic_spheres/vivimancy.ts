@@ -6,7 +6,7 @@ export const vivimancy: MysticSphere = {
   sources: ["arcane", "divine", "pact"],
   specialRules: `
     Undead creatures are affected in unusual ways by the direct manipulation of life energy.
-    They are always considered a \\glossterm{living} creature and an \\glossterm{ally} for spells from the \sphere{vivimancy} mystic sphere.
+    They are always considered a \\glossterm{living} creature and an \\glossterm{ally} for spells from the \\sphere{vivimancy} mystic sphere.
     Any effect from this mystic sphere that would deal energy damage to an undead creature causes that creature to regain that many lost hit points instead.
     Likewise, any effect from this mystic sphere that would cause an undead creature to regain lost hit points instead causes it to lose that many hit points instead.
   `,
@@ -620,7 +620,7 @@ export const vivimancy: MysticSphere = {
       name: "Lifesense",
 
       effect: `
-        You gain \\trait{lifesense} with a 60 foot range, allowing you to sense the location of living creatures without light (see \pcref{Lifesense}).
+        You gain \\trait{lifesense} with a 60 foot range, allowing you to sense the location of living creatures without light (see \\pcref{Lifesense}).
       `,
       rank: 1,
       scaling: {
@@ -634,7 +634,7 @@ export const vivimancy: MysticSphere = {
       name: "Lifesight",
 
       effect: `
-        You gain \\trait{lifesight} with a 30 foot range, allowing you to see living creatures without light (see \pcref{Lifesight}).
+        You gain \\trait{lifesight} with a 30 foot range, allowing you to see living creatures without light (see \\pcref{Lifesight}).
       `,
       rank: 3,
       scaling: {
