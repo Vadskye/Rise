@@ -1375,7 +1375,7 @@ def damage_dice():
     global_strike_change = """
         on(
             'change:weapon_0_magical_dice change:weapon_1_magical_dice change:weapon_2_magical_dice'
-            + ' change:power'
+            + ' change:level change:power'
         , function (eventInfo) {
             getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
                 for (const sectionId of repeatingSectionIds) {
@@ -1392,7 +1392,7 @@ def damage_dice():
             on(
                 `change:weapon_${i}_damage_dice`
                 + ' change:feat_name_0 change:feat_name_1 change:feat_name_2 change:feat_name_3'
-                + ' change:weapon_damage_dice'
+                + ' change:level change:weapon_damage_dice'
                 + ' change:strength change:intelligence change:willpower'
             , function(eventInfo) {
                 getWeaponDamageDiceAttrs(i, (v) => {
