@@ -251,7 +251,7 @@ export const umbramancy: MysticSphere = {
       name: "Fade Into Darkness",
 
       effect: `
-        At the end of each round, if you took no actions that round and are not in \\glossterm{brilliant illumination}, you become \\trait{invisible} (see \pcref{Invisible}).
+        At the end of each round, if you took no actions that round and are not in \\glossterm{brilliant illumination}, you become \\trait{invisible} (see \\pcref{Invisible}).
         This invisibility ends after you take any action.
       `,
       rank: 2,
