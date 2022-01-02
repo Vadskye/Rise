@@ -447,10 +447,10 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-            As a \\glossterm<minor action>, you can activate this item.
-            When you do, you increase your \\glossterm<fatigue level> by one, and you can \\glossterm<briefly> breathe in clean, fresh air regardless of your environment.
-            This can be used in emergencies to save yourself from drowning or other perils.
-        """,
+                As a \\glossterm<free action>, you can activate this item.
+                When you do, you increase your \\glossterm<fatigue level> by one, and you can \\glossterm<briefly> breathe in clean, fresh air regardless of your environment.
+                This can be used in emergencies to save yourself from drowning or other perils.
+            """,
             short_description="Can exert to breathe briefly",
         )
     )
