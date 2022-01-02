@@ -89,7 +89,7 @@ export const polymorph: MysticSphere = {
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         Your \\glossterm{power} with the strike is halved.
         The attack is made against the target's Reflex defense instead of its Armor defense.
-        You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \pcref{Attribute Damage Increments}).
+        You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \\pcref{Attribute Damage Increments}).
       `,
       rank: 1,
       scaling: {
@@ -104,7 +104,7 @@ export const polymorph: MysticSphere = {
       name: 'Mighty Claw',
       effect: `
         Make a melee \\glossterm{strike} with a -1 accuracy penalty and a +2 damage bonus using a \\glossterm{natural weapon}.
-        You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \pcref{Attribute Damage Increments}).
+        You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \\pcref{Attribute Damage Increments}).
       `,
       rank: 1,
       scaling: {
@@ -120,7 +120,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         You gain a +5 foot bonus to your \\glossterm{reach} with this strike.
-        You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \pcref{Attribute Damage Increments}).
+        You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \\pcref{Attribute Damage Increments}).
       `,
       rank: 2,
       scaling: {

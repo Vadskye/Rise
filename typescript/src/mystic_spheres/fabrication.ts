@@ -238,7 +238,7 @@ export const fabrication: MysticSphere = {
 
         If you create a non-crossbow projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
         The projectiles disappear after the attack is complete.
-        Any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+        Any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
 
         % Strange duration for a spell
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
@@ -361,7 +361,7 @@ export const fabrication: MysticSphere = {
         The ammunition can be blunted, but you cannot create other forms of special ammunition like fire arrows.
         The object persists until the end of the round, at which point it disappears.
         Because this spell has the \\abilitytag{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
-        Any attack with this ammunition is considered a \\glossterm{magical} attack, so you use your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+        Any attack with this ammunition is considered a \\glossterm{magical} attack, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       rank: 1,
       scaling: {
@@ -492,7 +492,7 @@ export const fabrication: MysticSphere = {
       effect: `
         You create a nonmagical weapon that you are proficient with your hand.
         You can immediately make a \\glossterm{strike} with that weapon.
-        This strike is considered a \\glossterm{magical} attack, so you use your your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+        This strike is considered a \\glossterm{magical} attack, so you use your your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
         If you create a non-crossbow projectile weapon, you also create ammunition necessary for you to attack with.
         After you make the strike, the weapon disappears.
       `,
