@@ -142,8 +142,8 @@ pub fn animals() -> Vec<MonsterEntry> {
             knowledge: None,
             monsters: vec![
                 animal(FullAnimalDefinition {
-                    attributes: vec![3, 0, 4, -8, 0, -1],
-                    challenge_rating: ChallengeRating::Four,
+                    attributes: vec![4, 0, 5, -8, 0, -1],
+                    challenge_rating: ChallengeRating::Two,
                     description: None,
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
@@ -166,7 +166,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 }),
                 animal(FullAnimalDefinition {
                     attributes: vec![5, 0, 5, -8, 0, -1],
-                    challenge_rating: ChallengeRating::Four,
+                    challenge_rating: ChallengeRating::Two,
                     description: Some("A brown bear's statistics can be used for almost any big bear, including a grizzly bear."),
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
@@ -215,7 +215,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         name: "Dogs".to_string(),
         monsters: vec![
             animal(FullAnimalDefinition {
-                attributes: vec![0, 1, 0, -7, 1, -1],
+                attributes: vec![2, 3, 1, -7, 2, -1],
                 challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: None,
@@ -229,7 +229,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 weapons: vec![StandardWeapon::MonsterBite.weapon()],
             }),
             animal(FullAnimalDefinition {
-                attributes: vec![1, 1, 1, -7, 1, -1],
+                attributes: vec![2, 3, 1, -7, 2, -1],
                 challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: Some(Knowledge::new(vec![(
@@ -252,7 +252,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     }));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
-        attributes: vec![3, 3, 1, 1, 2, 2],
+        attributes: vec![4, 6, 2, 1, 3, 0],
         challenge_rating: ChallengeRating::Four,
         description: None,
         knowledge: None,
