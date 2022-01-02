@@ -483,8 +483,8 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{guarding strike} ability as a standard action.
                 \begin{durationability}{Guarding Strike}[Duration]
                     \rankline
-                    Make a \glossterm{strike} with a \minus2d damage penalty.
-                    Your \glossterm{power} with the strike is halved.
+                    Make a \glossterm{strike}.
+                    You do not add your \glossterm{power} to damage with the strike.
                     Each creature damaged by the strike is \goaded by you as a \glossterm{condition}.
                     \rankline
                     \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the strike.
