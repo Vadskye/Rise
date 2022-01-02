@@ -1616,7 +1616,7 @@ def generate_apparel():
             description="""
                 This belt functions like a \\mitem<utility belt>, except that the belt has ten pockets, each of which is a one foot cube on the inside.
             """,
-            short_description="Contains ten very large pcokets",
+            short_description="Contains ten very large pockets",
         ),
     ]
 
