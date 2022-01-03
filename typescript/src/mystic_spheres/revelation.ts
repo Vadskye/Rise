@@ -37,7 +37,7 @@ export const revelation: MysticSphere = {
   ],
   spells: [
     {
-      name: "Proficiency",
+      name: "Weapon Proficiency",
 
       effect: `
         You gain \\glossterm{proficiency} with one weapon group of your choice, including exotic weapons from that weapon group.
@@ -47,6 +47,21 @@ export const revelation: MysticSphere = {
         3: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using weapons from the chosen weapon group.`,
         5: `The power bonus increases to +4.`,
         7: `The power bonus increases to +8.`,
+      },
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Armor Proficiency",
+
+      effect: `
+        You gain \\glossterm{proficiency} with all armor \\glossterm{usage classes}.
+      `,
+      rank: 1,
+      scaling: {
+        3: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance} while wearing armor.`,
+        5: `The bonus increases to +8.`,
+        7: `The bonus increases to +16.`,
       },
       type: "Attune (self)",
     },

@@ -180,7 +180,7 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the damage increases to 1d10 + \\glossterm{power}.
-          In addition, if the target loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazzled.
+          In addition, if the target loses \\glossterm{hit points} from this damage, it is \\dazzled as a \\glossterm{condition}.
         `,
         name: 'dark grasp',
       },
@@ -194,9 +194,9 @@ export const umbramancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater dark grasp',
-        exceptThat: 'the damage increases to 4d10 + \\glossterm{power} damage.',
+        exceptThat: 'the damage increases to 4d8 + \\glossterm{power} damage.',
       },
-      rank: 7,
+      rank: 6,
       scaling: "damage",
       type: "Duration",
     },
