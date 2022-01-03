@@ -67,13 +67,14 @@ export const astromancy: MysticSphere = {
       type: "Instant",
     },
 
-    // +1 level over banishment since Reflex is a weird defense for this effect
+    // Reflex is a weird defense for this effect, but it's very close range and free hand,
+    // so it washes out
     {
       name: "Banishing Grasp",
 
       attack: {
         hit: `
-          The target takes 2d6 + half \\glossterm{power} energy damage.
+          The target takes 2d8 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it immediately disappears.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After this effect ends, it becomes immune to this effect until it takes a \\glossterm{short rest}.

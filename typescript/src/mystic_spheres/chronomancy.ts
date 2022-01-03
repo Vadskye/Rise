@@ -53,6 +53,42 @@ export const chronomancy: MysticSphere = {
   ],
   spells: [
     {
+      name: "Accelerated Twinstrike",
+
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a \\glossterm{strike}.
+        You may reroll the accuracy roll and take the highest result.
+        However, you do not add your \\glossterm{power} to damage with the strike.
+      `,
+      rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
+      tags: [],
+      type: "Duration",
+    },
+    {
+      name: "Accelerated Triplestrike",
+
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a \\glossterm{strike}.
+        You may reroll the accuracy roll twice and take the highest result.
+        However, you do not add your \\glossterm{power} to damage with the strike.
+      `,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
+      },
+      type: "Instant",
+    },
+
+    {
       name: "Slowing Curse",
 
       attack: {
