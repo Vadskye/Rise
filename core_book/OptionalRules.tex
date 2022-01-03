@@ -554,7 +554,6 @@
         \parhead{Automatic Languages} Common, any one \glossterm{common language}.
 
     \subsection{Naiadi}
-
         Naiadi are humanoid creatures descended from naiads.
         Most naiadi are unusually physically appealing, but show no other outward signs of their heritage.
 
@@ -563,15 +562,52 @@
         \parhead{Speed} 30 feet.
         \parhead{Special Abilities}
         \begin{itemize}
-            \itemhead{Enchanting Appearance} A naiadi gains a \plus2 bonus to the Creature Handling, Perform, and Persuasion skills.
-            \itemhead{Low-light Vision} Naiadi have \trait{low-light vision}, allowing them to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-            \itemhead{Water Affinity} A naiadi has a \glossterm{swim speed} equal to the \glossterm{base speed} for their size.
-                In addition, they can breathe clean water like a human breathes air.
             \itemhead{Create Water} A naiadi can cast the \spell{create water} cantrip.
                 When they do so, they do not require verbal or somatic \glossterm{casting components}, and their spellcasting rank is considered to be equal to their rank in their highest rank archetype.
                 If they would already know that cantrip through the Aquamancy sphere, the volume of water created with the cantrip doubles.
+            \itemhead{Enchanting Appearance} A naiadi gains a \plus2 bonus to the Creature Handling, Perform, and Persuasion skills.
+            \itemhead{Low-light Vision} Naiadi have \trait{low-light vision}, allowing them to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+            \itemhead{Naiadi Archetype} You may choose three class archetypes, as normal.
+                However, you may choose the Naiadi archetype in place of one of your class archetypes.
+                If you do, you gain ranks in it just like you gain ranks in class archetypes.
+                You cannot choose naiadi as your base class.
+            \itemhead{Water Affinity} A naiadi has a \glossterm{swim speed} equal to the \glossterm{base speed} for their size.
+                In addition, they can breathe clean water like a human breathes air.
         \end{itemize}
         \parhead{Automatic Languages} Common, Sylvan, any one \glossterm{common language}.
+
+        \subsubsection{Naiadi Archetype}
+
+            \cf{Nai}[0]{Greater Enchanting Appearance} The bonuses from your \textit{enchanting appearance} species ability increase to \plus4.
+
+            \cf{Nai}[1]{Water Bond}[Magical] You can form a bond with a fresh stream, lake, or other Gargantuan or larger body of fresh water (not salt water).
+            Forming a bond or severing a bond takes one week of meditation and ritual, periodically interrupted by rest.
+            Forming a bond also requires asking permission from the water.
+            Any individual body of water can only be bonded to one naiad or naiadi in this way.
+
+            As long as your bonded water remains clean, pure, and large enough to be a valid subject of bonding, you gain a \plus1 bonus to Mental defense, a \plus1 bonus to your \glossterm{power}, and a bonus equal to twice your rank in this archetype to your \glossterm{hit points}.
+            If your bonded water becomes contaminated or shrinks below the minimum size, these bonuses are inverted into penalties until you sever the bond.
+            You can passively observe the general health and status of water you are bonded to, including knowing when significant pollutants enter the water and when the water grows or shrinks significantly.
+
+            \cf{Nai}[2]{Fluidseeker} You gain a \plus1 bonus to \glossterm{accuracy} against creatures significantly composed of water or watery fluids.
+            This is true of almost all living creatures.
+
+            \cf{Nai}[2]{Freshwater Fountain} The volume of water you can create with the \spell{create water} cantrip increases by five times.
+
+            \cf{Nai}[3]{Aqueous Form} You can cast the \spell{aqueous form} spell.
+            When you do, you do not require verbal or somatic \glossterm{casting components}, and you use your rank in this archetype as your your spellcasting rank.
+
+            \cf{Nai}[4]{Greater Water Bond} The bonuses from your \textit{water bond} ability increase to \plus2 Mental defense, \plus2 power, and three times your rank in this archetype to your hit points.
+
+            \cf{Nai}[5]{Greater Fluidseeker} The accuracy bonus from your \textit{fluidseeker} ability increases to \plus2.
+
+            \cf{Nai}[5]{Greater Freshwater Fountain} The multiplier from your \textit{freshwater fountain} ability increases to twenty times the normal volume of water.
+
+            \cf[Nai][6]{Greater Aqueous Form} When you cast the \spell{aqueous form} spell, it does not have the \abilitytag{Attune} (self) tag.
+            Instead, it lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
+            In addition, it does not reduce your \glossterm{damage resistance}.
+
+            \cf{Nai}[7]{Supreme Water Bond} The bonuses from your \textit{water bond} ability increase to \plus3 Mental defense, \plus4 power, and three times your rank in this archetype to your hit points.
 
     \subsection{Orc}
         Orcs are green-skinned humanoid creatures known for their strength and brutality.
@@ -938,53 +974,6 @@
             \item A shaman cannot gain access to more than two \textit{mystic spheres} from the magic source granted by the shaman class by any means.
             \item Shamans add Knowledge (nature) to their class skill list and remove Knowledge (planes).
         \end{itemize}
-
-
-\section{Feats}
-
-% Feat names must follow ``I have'' or ``I am (a)''.
-\begin{longtablewrapper}
-    \begin{longtable}{>{\lcol}p{11em} >{\lcol}p{12em} l >{\lcol}p{8em} >{\lcol}p{3em}}
-        \lcaption{Optional Feats}\\
-        \tb{General Feats} & \tb{Prerequisites} & \tb{Benefits}          & \tb{Feat Types} & \tb{Page}                 \\
-        \featref{Naiad Heritage}                & Naiadi            & Gain aspects of naiads & Bloodline       & \featpref{Naiad Heritage} \\
-    \end{longtable}
-\end{longtablewrapper}
-
-    \section{Feat Descriptions}
-
-    \begin{feat}{Naiad Heritage}{Bloodline}
-        \featpre Naiadi species.
-
-        \ff[1]{Water Bond}[Magical] You can form a bond with a fresh stream, lake, or other Gargantuan or larger body of fresh water (not salt water).
-        Forming a bond or severing a bond takes one week of meditation and ritual, periodically interrupted by rest.
-        Forming a bond also requires asking permission from the water.
-        Any individual body of water can only be bonded to one naiad or naiadi in this way.
-
-        As long as your bonded water remains clean, pure, and large enough to be a valid subject of bonding, you gain a \plus1 bonus to Mental defense and a bonus to your maximum \glossterm{hit points} equal to your level.
-        If your bonded water becomes contaminated or shrinks below the minimum size, you take a \minus1 penalty to Mental defense and a penalty to your maximum hit points equal to your level until you sever the bond.
-        You can passively observe the general health and status of water you are bonded to, including knowing when significant pollutants enter the water and when the water grows or shrinks significantly.
-
-        \ff[3]{Greater Enchanting Appearance} The bonuses from your \textit{enchanting appearance} species ability increase to \plus4.
-
-        \ff[6]{Aqueous Form}[Magical] You can cast the \spell{aqueous form} spell.
-        When you do, you do not require verbal or somatic \glossterm{casting components}, and your spellcasting rank is considered to be equal to your rank in your highest rank archetype.
-
-        \ff[6]{Freshwater Fountain}[Magical] The volume of water you can create with the \spell{create water} cantrip increases by five times.
-
-        \ff[9]{Greater Water Bond}[Magical] The bonus to Mental defense from your \textit{water bond} ability increases to \plus2.
-
-        \ff[12]{Supreme Enchanting Appearance} The bonuses from your \textit{enchanting appearance} species ability increase to \plus6.
-
-        \ff[15]{Fluidseeker}[Magical] You gain a \plus1 bonus to \glossterm{accuracy} against creatures significantly composed of water or watery fluids.
-        This is true of almost all living creatures.
-
-        \ff[18]{Supreme Water Bond}[Magical] The number of hit points granted by your \textit{water bond} ability increases to twice your level, and the bonus to Mental defense increases to \plus3.
-
-        \ff[21]{Greater Aqueous Form} When you cast the \spell{aqueous form} spell, it does not have the \abilitytag{Attune} (self) tag.
-        Instead, it lasts until you \glossterm{dismiss} it as a \glossterm{free action}.
-        In addition, it does not reduce your \glossterm{damage resistance}.
-    \end{feat}
 
 \section{Alternate Play Styles}
     \subsection{Tap Out}
