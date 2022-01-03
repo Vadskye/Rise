@@ -56,7 +56,7 @@ export const umbramancy: MysticSphere = {
         5: `The maximum area increases to a \\largearea radius.`,
         7: `The maximum area increases to a \\hugearea radius.`,
       },
-      tags: ["Sensation"],
+      tags: [],
       type: "Sustain (minor)",
     },
 
@@ -71,7 +71,7 @@ export const umbramancy: MysticSphere = {
         Darkvision and similar abilities which do not require light still function within the area.
       `,
       rank: 6,
-      tags: ["Sensation"],
+      tags: [],
       type: "Attune (self)",
     },
 
@@ -90,7 +90,7 @@ export const umbramancy: MysticSphere = {
         5: `The maximum area increases to a \\largearea radius \\glossterm{emanation}.`,
         7: `The maximum area increases to a \\hugearea radius \\glossterm{emanation}.`,
       },
-      tags: ["Sensation"],
+      tags: [],
       type: "Attune (self)",
     },
 
@@ -309,7 +309,7 @@ export const umbramancy: MysticSphere = {
         This effect provides no offensive benefit against creatures who can see you without light.
       `,
       rank: 6,
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Attune (self)",
     },
 
@@ -326,7 +326,7 @@ export const umbramancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      tags: ["Sensation"],
+      tags: [],
       type: "Attune (self)",
     },
 
@@ -552,7 +552,7 @@ export const umbramancy: MysticSphere = {
         5: `The area increases to a 30 ft.\\ high \\hugearealong line.`,
         7: `The area increases to a 60 ft.\\ high, \\gargarealong line.`,
       },
-      tags: ["Sensation"],
+      tags: [],
       type: "Sustain (minor)",
     },
   ],
