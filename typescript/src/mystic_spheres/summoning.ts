@@ -32,9 +32,10 @@ export const summoning: MysticSphere = {
 
         \\begin{itemize}
           \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue levels}.
-          \\item Its \\glossterm{hit points} are equal to the base value for your level (see \\tref{Character Advancement}).
+          \item Its \glossterm{hit points} are equal to the standard value for your your level (see \tref{Hit Points and Damage Resistance}).
+          \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
           \\item It has no \\glossterm{damage resistance}.
-          \\item Each of its \\glossterm{defenses} is equal to 4 \\add your level.
+          \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception \\sub 2.
           \\item Its \\glossterm{land speed} is 30 feet.
           \\item It has no \\glossterm{attunement points}.
