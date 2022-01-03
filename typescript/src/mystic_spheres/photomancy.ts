@@ -24,7 +24,7 @@ export const photomancy: MysticSphere = {
         4: `The bonus increases to +8.`,
         6: `The bonus increases to +10.`,
       },
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -42,7 +42,7 @@ export const photomancy: MysticSphere = {
         4: `The maximum radius of bright illumination increases to 60 feet.`,
         6: `The maximum radius of bright illumination increases to 120 feet.`,
       },
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
   ],
@@ -63,7 +63,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 2,
       scaling: "accuracy",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -78,7 +78,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       scaling: "accuracy",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Instant",
     },
 
@@ -97,7 +97,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 6,
       scaling: "accuracy",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -114,7 +114,7 @@ export const photomancy: MysticSphere = {
       `,
       rank: 3,
       scaling: { 5: `The bonus increases to +6.`, 7: `The bonus increases to +8.` },
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Sustain (free)",
     },
 
@@ -147,7 +147,7 @@ export const photomancy: MysticSphere = {
         5: `The area increases to a 30 ft.\\ high, \\hugearealong line.`,
         7: `The area increases to a 60 ft.\\ high, \\gargarealong line.`,
       },
-      tags: ["Sensation"],
+      tags: [],
       type: "Sustain (minor)",
     },
 
@@ -164,7 +164,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -182,7 +182,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 3,
       scaling: "accuracy",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -202,7 +202,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 6,
       scaling: "accuracy",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -223,7 +223,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -236,7 +236,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -258,7 +258,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -276,7 +276,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -297,7 +297,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 4,
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -317,7 +317,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Duration",
     },
 
@@ -338,7 +338,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 2,
       scaling: "accuracy",
-      tags: ["Compulsion", "Sensation", "Visual"],
+      tags: ["Compulsion", "Visual"],
       type: "Duration",
     },
 
@@ -351,7 +351,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       scaling: "accuracy",
-      tags: ["Compulsion", "Sensation", "Visual"],
+      tags: ["Compulsion", "Visual"],
       type: "Duration",
     },
 
@@ -371,7 +371,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 6,
       scaling: "accuracy",
-      tags: ["Compulsion", "Sensation", "Visual"],
+      tags: ["Compulsion", "Visual"],
       type: "Duration",
     },
 
@@ -388,7 +388,7 @@ export const photomancy: MysticSphere = {
       scaling: {
         6: "The miss chance increases to 25\\%.",
       },
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Attune (self)",
     },
 
@@ -405,7 +405,7 @@ export const photomancy: MysticSphere = {
         4: `The bonus increases to +6.`,
         6: `The bonus increases to +8.`,
       },
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Attune (self)",
     },
 
@@ -458,7 +458,7 @@ export const photomancy: MysticSphere = {
         5: `The spell creates four duplicates.`,
         7: `The spell creates five duplicates.`,
       },
-      tags: ["Sensation", "Visual"],
+      tags: ["Visual"],
       type: "Attune (self)",
     },
 
@@ -587,7 +587,7 @@ export const photomancy: MysticSphere = {
         The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
       `,
       rank: 1,
-      tags: ["Sensation"],
+      tags: [],
       type: "Attune (ritual)",
     },
 
@@ -601,7 +601,7 @@ export const photomancy: MysticSphere = {
         It may be appear dusty, have cracks and wrinkles from age, or otherwise appear undesirable and low quality.
       `,
       rank: 1,
-      tags: ["Sensation"],
+      tags: [],
       type: "Attune (ritual)",
     },
 
@@ -618,7 +618,7 @@ export const photomancy: MysticSphere = {
         name: "continuous light",
       },
       rank: 2,
-      tags: ["Sensation"],
+      tags: [],
       type: "Duration",
     },
   ],
