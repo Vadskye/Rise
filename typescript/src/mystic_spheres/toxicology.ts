@@ -2,7 +2,7 @@ import { MysticSphere } from ".";
 
 export const toxicology: MysticSphere = {
   name: "Toxicology",
-  shortDescription: "Create and manipulate poisons and acids.",
+  shortDescription: "Create and manipulate poisons, acids, and fungus.",
   sources: ["arcane", "nature", "pact"],
 
   cantrips: [
@@ -237,6 +237,42 @@ export const toxicology: MysticSphere = {
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
+    },
+
+    {
+      name: "Sudden Rot",
+
+      attack: {
+        hit: `
+          The target takes 2d6 + \\glossterm{power} acid damage.
+          This damage is doubled if the target is an object that is not primarily made of metal.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\shortrange.
+        `,
+      },
+      rank: 2,
+      scaling: "damage",
+      tags: [],
+      type: "Instant",
+    },
+
+    {
+      name: 'Fungal Armor',
+
+      castingTime: 'minor action',
+      effect: `
+        You gain a +8 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+        However, you take a -4 penalty to your \\glossterm{hit points}.
+      `,
+
+      rank: 1,
+      scaling: {
+        3: `The bonus increases to +16, but the penalty increases to -8.`,
+        5: `The bonus increases to +32, but the penalty increases to -16.`,
+        7: `The bonus increases to +64, but the penalty increases to -32.`,
+      },
+      type: 'Attune (self)',
     },
 
     {
@@ -502,14 +538,14 @@ export const toxicology: MysticSphere = {
       type: "Instant",
     },
     {
-      name: "Acid Soak",
+      name: "Fungal Growth",
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        hit: `The target becomes drenched in acid as a \\glossterm{condition}.
+        hit: `The target becomes covered in devouring fungus as a \\glossterm{condition}.
         At the end of each round, it takes 1d4 + half \\glossterm{power} acid damage.
 
-        The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
+        The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the fungus.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
         targeting: `
           Make an attack vs. Reflex against one creature within \\medrange.
@@ -520,14 +556,12 @@ export const toxicology: MysticSphere = {
       type: "Duration",
     },
     {
-      name: "Greater Acid Soak",
+      name: "Greater Fungal Growth",
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        glance:
-          "The effect lasts \\glossterm{briefly}. The target still takes damage during the next round.",
         hit: `
-          The target becomes drenched in acid as a \\glossterm{condition}.
+          The target becomes covered in devouring fungus as a \\glossterm{condition}.
           At the end of each round, it takes 2d6 + half \\glossterm{power} acid damage.
         `,
         targeting: `
@@ -537,6 +571,45 @@ export const toxicology: MysticSphere = {
       rank: 5,
       scaling: "damage",
       type: "Duration",
+    },
+
+    {
+      name: 'Retributive Spores',
+
+      // original targets: ['Yourself', 'See text']
+      castingTime: 'minor action',
+      attack: {
+        // AOE dice, no power
+        hit: `Each target takes 1d10 acid damage.`,
+        targeting: `
+          At the end of each phase, make an attack vs. Fortitude against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
+        `,
+      },
+      narrative: `
+        You constantly shed spores that dissolve creatures who attack you.
+      `,
+      rank: 3,
+      scaling: 'damage',
+      type: 'Attune (self)',
+    },
+
+    {
+      name: 'Greater Retributive Spores',
+
+      // original targets: ['Yourself', 'See text']
+      castingTime: 'minor action',
+      attack: {
+        // AOE dice, no power
+        hit: `Each target takes 4d8 + half \\glossterm{power} acid damage.`,
+        targeting: `
+          At the end of each phase, make an attack vs. Fortitude against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
+        `,
+      },
+      narrative: `
+        You constantly shed spores that dissolve creatures who attack you.
+      `,
+      rank: 7,
+      type: 'Attune (self)',
     },
   ],
   rituals: [],
