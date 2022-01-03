@@ -750,9 +750,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is the normal base speed for its size (see \tref{Size Categories}).
                         \item Its \glossterm{fatigue tolerance} is 0, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
-                        \item Its \glossterm{hit points} are equal to the base value for your level (see \tref{Character Advancement}).
-                        \item Its \glossterm{damage resistance} is equal to the base value for your level (see \pcref{Character Advancement}).
-                        \item Each of its \glossterm{defenses} is equal to 5 \add your level.
+                        \item Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your level (see \tref{Hit Points and Damage Resistance}).
+                        \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
                         \item Its \glossterm{accuracy} is equal to half your level \add half your Perception.
                         \item Its \glossterm{power} with its attacks is 0.
                         \item It has no \glossterm{attunement points}.
