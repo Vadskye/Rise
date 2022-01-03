@@ -62,7 +62,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 2d6 + \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -80,9 +80,9 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater ensnaring grasp',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power} damage, and the condition must be removed twice before the effect ends.',
+        exceptThat: 'the damage increases to 4d6 + \\glossterm{power} damage, and the condition must be removed twice before the effect ends.',
       },
-      rank: 7,
+      rank: 6,
       scaling: "damage",
       type: "Duration",
     },

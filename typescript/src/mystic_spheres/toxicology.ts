@@ -61,7 +61,7 @@ export const toxicology: MysticSphere = {
       attack: {
         hit: `
           The target takes 2d6 + \\glossterm{power} acid damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
+          If it loses \\glossterm{hit points} from this damage, it is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -79,9 +79,9 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'greater corrosive grasp',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
+        exceptThat: 'the damage increases to 4d6 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
       },
-      rank: 7,
+      rank: 6,
       scaling: "damage",
       type: "Duration",
     },

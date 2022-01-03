@@ -105,8 +105,11 @@ export const pyromancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 2d6 + \\glossterm{power} fire damage.
-          If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
+          If it loses \\glossterm{hit points} from this damage, it catches on fire as a \\glossterm{condition}.
           At the end of each round, it takes 1d8 fire damage.
+
+          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
+          Dropping \\prone as part of this action gives a +5 bonus to this check.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -129,9 +132,9 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater burning grasp',
-        exceptThat: 'the initial damage increases to 4d8 + \\glossterm{power}, and the subsequent damage increases to 4d6 + half \\glossterm{power}.',
+        exceptThat: 'the initial damage increases to 4d6 + \\glossterm{power}, and the subsequent damage increases to 2d10 + half \\glossterm{power}.',
       },
-      rank: 7,
+      rank: 6,
       scaling: "damage",
       type: "Duration",
     },

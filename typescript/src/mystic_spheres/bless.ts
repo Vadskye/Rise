@@ -106,7 +106,7 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target becomes proficient with one additional weapon group and all types of armor.
+        Each target becomes proficient with one additional weapon group.
         This does not grant proficiency with exotic weapons or improvised weapons.
       `,
       rank: 1,
