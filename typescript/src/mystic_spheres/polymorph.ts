@@ -418,6 +418,25 @@ export const polymorph: MysticSphere = {
     },
 
     {
+      name: 'Greater Spikeform',
+
+      // original targets: ['Yourself', 'See text']
+      castingTime: 'minor action',
+      attack: {
+        // AOE dice, no power
+        hit: `Each target takes 4d8 + half \\glossterm{power} piercing damage.`,
+        targeting: `
+          At the end of each phase, make an attack vs. Armor against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
+        `,
+      },
+      narrative: `
+        Your body grows large spikes that impale creatures who attack you.
+      `,
+      rank: 7,
+      type: 'Attune (self)',
+    },
+
+    {
       name: 'Extruding Spikes',
 
       castingTime: 'minor action',

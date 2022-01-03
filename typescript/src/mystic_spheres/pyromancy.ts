@@ -279,8 +279,6 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        glance:
-          "The effect lasts \\glossterm{briefly}. The target still takes damage during the next round.",
         hit: `
           The target catches on fire as a \\glossterm{condition}.
           At the end of each round, it takes 2d6 + half \\glossterm{power} fire damage.
