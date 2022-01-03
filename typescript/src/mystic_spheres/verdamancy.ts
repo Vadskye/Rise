@@ -220,7 +220,7 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: "Vine Tentacles",
+      name: "Vine Tentacle",
 
       effect: `
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
