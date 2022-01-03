@@ -2,7 +2,7 @@ import { MysticSphere } from ".";
 
 export const toxicology: MysticSphere = {
   name: "Toxicology",
-  shortDescription: "Create and manipulate poisons, acids, and fungus.",
+  shortDescription: "Create and manipulate poisons, acids, and fungi.",
   sources: ["arcane", "nature", "pact"],
 
   cantrips: [
