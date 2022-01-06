@@ -90,17 +90,20 @@ pub fn animates() -> Vec<MonsterEntry> {
         weapons: vec![],
     })));
 
-    fn create_treant(
-        alignment: &str,
+    struct TreantDefinition {
+        alignment: String,
         attributes: Vec<i32>,
         knowledge: Knowledge,
         level: i32,
         modifiers: Option<Vec<Modifier>>,
-        name: &str,
+        name: String,
         size: Size,
-    ) -> Monster {
-        let mut modifiers = modifiers.unwrap_or(vec![]);
-        modifiers.push(
+    }
+
+    impl TreantDefinition {
+        fn monster(self) -> Monster {
+            let mut modifiers = self.modifiers.unwrap_or(vec![]);
+            modifiers.push(
                 Modifier::PassiveAbility(PassiveAbility {
                     name: "Animate Tree".to_string(),
                     is_magical: true,
@@ -114,22 +117,23 @@ pub fn animates() -> Vec<MonsterEntry> {
                         Treants avoid stranding trees in unsustainable locations except in desperate circumstances.
                     ".to_string(),
                 })
-        );
-        return animate(FullAnimateDefinition {
-            alignment: alignment.to_string(),
-            attributes,
-            challenge_rating: ChallengeRating::Two,
-            description: None,
-            knowledge: Some(knowledge),
-            level,
-            modifiers: Some(modifiers),
-            movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Slow)]),
-            name: name.to_string(),
-            senses: None,
-            size,
-            trained_skills: Some(vec![Skill::Awareness]),
-            weapons: vec![StandardWeapon::Slam.weapon()],
-        });
+            );
+            return animate(FullAnimateDefinition {
+                alignment: self.alignment,
+                attributes: self.attributes,
+                challenge_rating: ChallengeRating::Two,
+                description: None,
+                knowledge: Some(self.knowledge),
+                level: self.level,
+                modifiers: Some(modifiers),
+                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Slow)]),
+                name: self.name,
+                senses: None,
+                size: self.size,
+                trained_skills: Some(vec![Skill::Awareness]),
+                weapons: vec![StandardWeapon::Slam.weapon()],
+            });
+        }
     }
 
     monsters.push(MonsterEntry::MonsterGroup(
@@ -137,88 +141,88 @@ pub fn animates() -> Vec<MonsterEntry> {
             knowledge: None,
             name: "Treants".to_string(),
             monsters: vec![
-                create_treant(
-                    "Usually true neutral",
-                    vec![2, 0, 2, 0, 2, -2],
-                    Knowledge::new(vec![(0, "
+                TreantDefinition {
+                    alignment: "Usually true neutral".to_string(),
+                    attributes: vec![2, 0, 2, 0, 2, -2],
+                    knowledge: Knowledge::new(vec![(0, "
                         Birch treants tend to be shy, and they to avoid conflict if at all possible.
                     ")]),
-                    5,
-                    Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
-                    "Birch Treant",
-                    Size::Large,
-                ),
-                create_treant(
-                    "Usually true neutral",
-                    vec![2, 0, 2, 0, 4, 1],
-                    Knowledge::new(vec![(0, "
+                    level: 5,
+                    modifiers: Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
+                    name: "Birch Treant".to_string(),
+                    size: Size::Large,
+                }.monster(),
+                TreantDefinition {
+                    alignment: "Usually true neutral".to_string(),
+                    attributes: vec![2, 0, 2, 0, 4, 1],
+                    knowledge: Knowledge::new(vec![(0, "
                         Chestnut treants tend to mischievous and outgoing.
                         They like playing small tricks on interesting creatures that pass by.
                     ")]),
-                    6,
-                    Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
-                    "Chestnut Treant",
-                    Size::Large,
-                ),
-                create_treant(
-                    "Usually true neutral",
-                    vec![2, 3, 2, 1, 2, -2],
-                    Knowledge::new(vec![(0, "
+                    level: 6,
+                    modifiers: Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
+                    name: "Chestnut Treant".to_string(),
+                    size: Size::Large,
+                }.monster(),
+                TreantDefinition {
+                    alignment: "Usually true neutral".to_string(),
+                    attributes: vec![2, 3, 2, 1, 2, -2],
+                    knowledge: Knowledge::new(vec![(0, "
                         Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
                         Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
                     ")]),
-                    7,
-                    Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
-                    "Willow Treant",
-                    Size::Large,
-                ),
-                create_treant(
-                    "Usually neutral evil",
-                    vec![3, 0, 1, 1, 2, 1],
-                    Knowledge::new(vec![(0, "
+                    level: 7,
+                    modifiers: Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
+                    name: "Willow Treant".to_string(),
+                    size: Size::Large,
+                }.monster(),
+                TreantDefinition {
+                    alignment: "Usually neutral evil".to_string(),
+                    attributes: vec![3, 0, 1, 1, 2, 1],
+                    knowledge: Knowledge::new(vec![(0, "
                         Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
                         Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
                     ")]),
-                    8,
-                    None,
-                    "Darkroot Treant",
-                    Size::Large,
-                ),
-                create_treant(
-                    "Usually neutral good",
-                    vec![3, -2, 4, 0, 2, 3],
-                    Knowledge::new(vec![(0, "
+                    level: 8,
+                    modifiers: None,
+                    name: "Darkroot Treant".to_string(),
+                    size: Size::Large,
+                }.monster(),
+                TreantDefinition {
+                    alignment: "Usually neutral good".to_string(),
+                    attributes: vec![3, -2, 4, 0, 2, 3],
+                    knowledge: Knowledge::new(vec![(0, "
                         Pine treants tend to be the most steadfast treants.
                         They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
                     ")]),
-                    9,
-                    Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
-                    "Pine Treant",
-                    Size::Huge,
-                ),
-                create_treant(
-                    "Usually neutral good",
-                    vec![4, -2, 4, 1, 2, 3],
-                    Knowledge::new(vec![(0, "
+                    level: 9,
+                    modifiers: Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
+                    name: "Pine Treant".to_string(),
+                    size: Size::Huge,
+                }.monster(),
+                TreantDefinition {
+                    alignment: "Usually neutral good".to_string(),
+                    attributes: vec![4, -2, 4, 1, 2, 3],
+                    knowledge: Knowledge::new(vec![(0, "
                         Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
                     ")]),
-                    10,
-                    Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
-                    "Oak Treant",
-                    Size::Huge,
-                ),
-                create_treant(
-                    "Usually true neutral",
-                    vec![4, -2, 5, 0, 2, 2],
-                    Knowledge::new(vec![(0, "
+                    level: 10,
+                    modifiers: Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
+                    name: "Oak Treant".to_string(),
+                    size: Size::Huge,
+                }.monster(),
+                TreantDefinition {
+                    alignment: "Usually true neutral".to_string(),
+                    attributes: vec![4, -2, 5, 0, 2, 2],
+                    knowledge: Knowledge::new(vec![(0, "
                         Cyprus treants are the most durable of treants.
                         They are virtually indestructible, and are fearsome when roused to anger.
                     ")]),
-                    11,
-                    None,
-                    "Cyprus Treant",
-                    Size::Huge,
-                ),
+                    level: 11,
+                    modifiers: None,
+                    name: "Cyprus Treant".to_string(),
+                    size: Size::Huge,
+                }.monster(),
             ],
         },
     ));

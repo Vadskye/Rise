@@ -100,8 +100,8 @@ pub fn undeads() -> Vec<MonsterEntry> {
         ],
     }));
 
-    let zombie_vulnerability = Modifier::SpecialDefense(SpecialDefenseModifier::Vulnerable(
-        SpecialDefenseType::Damage(DamageType::Slashing),
+    let zombie_vulnerability = Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(
+        DamageType::Slashing,
     ));
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
