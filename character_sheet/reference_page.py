@@ -14,6 +14,7 @@ from cgi_simple import (
     p,
     plus,
     span,
+    textarea,
     text_input,
     ul,
     underlabel,
@@ -25,6 +26,7 @@ def create_page(_destination):
     return flex_col(
         {"class": "page reference-page"},
         [
+            textarea({"readonly": True, "name": "rust"}),
             flex_row({'class': 'reference-row'}, [
                 standard_damage(),
                 flex_col([
