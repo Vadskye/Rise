@@ -15,8 +15,7 @@ pub enum Maneuver {
     GreaterGraspingStrike(i32),
     Hamstring(i32),
     MightyStrike(i32),
-    MonsterAccuracyScaling(i32),
-    MonsterDamageScaling(i32),
+    MonstrousStrike(i32),
     PenetratingStrike(i32),
     PouncingStrike(i32),
 }
@@ -109,12 +108,9 @@ impl Maneuver {
                 .attack()
                 .except(|a| a.accuracy -= 2)
                 .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(rank + 4)),
-            Self::MonsterAccuracyScaling(rank) => {
+            Self::MonstrousStrike(rank) => {
                 weapon.attack().except(|a| a.accuracy += (rank - 3) / 2)
             }
-            Self::MonsterDamageScaling(rank) => weapon
-                .attack()
-                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(*rank)),
             Self::PenetratingStrike(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
@@ -154,8 +150,7 @@ impl Maneuver {
             Self::GreaterHamstring(_) => "Greater Hamstring",
             Self::Hamstring(_) => "Hamstring",
             Self::MightyStrike(_) => "Mighty",
-            Self::MonsterAccuracyScaling(_) => "",
-            Self::MonsterDamageScaling(_) => "",
+            Self::MonstrousStrike(_) => "",
             Self::PenetratingStrike(_) => "Penetrating",
             Self::PouncingStrike(_) => "Pouncing",
         }
@@ -163,8 +158,7 @@ impl Maneuver {
 
     fn should_replace_weapon(&self) -> bool {
         match self {
-            Self::MonsterAccuracyScaling(_) => true,
-            Self::MonsterDamageScaling(_) => true,
+            Self::MonstrousStrike(_) => true,
             _ => false,
         }
     }
