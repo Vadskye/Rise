@@ -165,7 +165,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::MonsterClaws.weapon()],
                 }),
                 animal(FullAnimalDefinition {
-                    attributes: vec![5, 0, 5, -8, 0, -1],
+                    attributes: vec![5, 0, 5, -8, 0, 1],
                     challenge_rating: ChallengeRating::Two,
                     description: Some("A brown bear's statistics can be used for almost any big bear, including a grizzly bear."),
                     knowledge: Some(Knowledge::new(vec![
@@ -284,7 +284,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         ));
     }
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
-        attributes: vec![1, 4, 0, -8, 2, -2],
+        attributes: vec![2, 5, 1, -8, 3, -2],
         challenge_rating: ChallengeRating::Two,
         description: None,
         knowledge: Some(Knowledge::new(vec![
@@ -296,7 +296,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 Giant wasps take dead or incapacitated opponents back to their lairs as food for their unhatched young.
             "),
         ])),
-        level: 6,
+        level: 4,
         modifiers: Some(vec![Modifier::Attack(poisonous_stinger)]),
         movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Perfect)]),
         senses: None,
@@ -338,7 +338,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     )));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
-        attributes: vec![1, 2, 1, -7, 0, -1],
+        attributes: vec![2, 3, 2, -7, 2, -1],
         challenge_rating: ChallengeRating::One,
         description: None,
         knowledge: None,
@@ -353,7 +353,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     })));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
-        attributes: vec![2, 2, 2, -7, 0, -1],
+        attributes: vec![3, 3, 2, -7, 2, -1],
         challenge_rating: ChallengeRating::Two,
         description: None,
         knowledge: None,
@@ -401,12 +401,12 @@ pub fn animals() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(pony));
 
     let roc = animal(FullAnimalDefinition {
-        attributes: vec![4, 1, 3, -7, 2, -1],
+        attributes: vec![6, 1, 4, -7, 4, -1],
         challenge_rating: ChallengeRating::Four,
         level: 9,
         name: "Roc".to_string(),
         size: Size::Gargantuan,
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::MonsterTalons.weapon()],
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -423,7 +423,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         modifiers: None,
         movement_modes: None,
         senses: None,
-        trained_skills: None,
+        trained_skills: Some(vec![Skill::Awareness]),
     });
     monsters.push(MonsterEntry::Monster(roc));
 
