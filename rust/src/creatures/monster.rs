@@ -361,7 +361,7 @@ impl Monster {
                 format!(
                     "{} {}",
                     a.shorthand_name(),
-                    self.creature.calc_total_attribute(a)
+                    self.creature.get_base_attribute(a)
                 )
             })
             .collect::<Vec<String>>()

@@ -313,15 +313,15 @@ where
     }
 
     fn calc_skill_modifier(&self, skill: &Skill) -> i32 {
-        let attribute = if let Some(ref a) = skill.attribute() {
-            self.calc_total_attribute(a)
+        let attribute_modifier = if let Some(ref a) = skill.attribute() {
+            self.get_base_attribute(a)
         } else {
             0
         };
         let training_modifier = if self.is_skill_trained(skill) {
-            4 + max(self.level / 2, attribute)
+            3 + self.level / 2
         } else {
-            attribute / 2
+            0
         };
         let encumbrance_modifier = if skill.apply_encumbrance() {
             self.calc_encumbrance()
@@ -329,7 +329,7 @@ where
             0
         };
 
-        return training_modifier - encumbrance_modifier
+        return attribute_modifier + training_modifier - encumbrance_modifier
             + self.calc_total_modifier(ModifierType::Skill(skill.clone()));
     }
 }

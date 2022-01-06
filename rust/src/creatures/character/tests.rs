@@ -238,7 +238,7 @@ fn standard_character_statistics_level_1() {
         vec![4, 0, 2, 0, 2, 0],
         Attribute::all()
             .iter()
-            .map(|a| creature.calc_total_attribute(&a))
+            .map(|a| creature.get_base_attribute(&a))
             .collect::<Vec<i32>>(),
         "Attributes",
     );
@@ -323,10 +323,10 @@ fn standard_character_statistics_level_10() {
 
     // HasAttributes
     assert_eq!(
-        vec![11, 0, 4, 0, 4, 0],
+        vec![4, 0, 2, 0, 2, 0],
         Attribute::all()
             .iter()
-            .map(|a| creature.calc_total_attribute(&a))
+            .map(|a| creature.get_base_attribute(&a))
             .collect::<Vec<i32>>(),
         "Attributes",
     );
@@ -423,10 +423,10 @@ fn standard_character_statistics_level_20() {
 
     // HasAttributes
     assert_eq!(
-        vec![19, 0, 7, 0, 7, 0],
+        vec![4, 0, 2, 0, 2, 0],
         Attribute::all()
             .iter()
-            .map(|a| creature.calc_total_attribute(&a))
+            .map(|a| creature.get_base_attribute(&a))
             .collect::<Vec<i32>>(),
         "Attributes",
     );
