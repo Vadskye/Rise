@@ -824,6 +824,159 @@ mod calc_rounds_to_live {
 mod run_combat {
     use super::*;
 
+    #[cfg(test)]
+    mod difficult_encounters {
+        use super::*;
+
+        #[test]
+        fn party_vs_difficult_encounter_level_1() {
+            let level = 1;
+            let attackers = vec![
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+            ];
+
+            let expected_combat_results = vec![
+                "Rounds  3.50 Blue 0 ( 0.00%) Red 8 ( 0.67%)",
+                "Rounds  5.50 Blue 0 ( 0.00%) Red 3 ( 0.44%)",
+                "Rounds  6.25 Blue 0 ( 0.00%) Red 2 ( 0.49%)",
+                "Rounds  5.00 Blue 0 ( 0.00%) Red 2 ( 0.50%)",
+                "Rounds  5.00 Blue 0 ( 0.00%) Red 1 ( 0.58%)",
+            ];
+            let actual_combat_results: Vec<String> = ChallengeRating::all()
+                .iter()
+                .map(|cr| run_combat(attackers.clone(), cr.difficult_encounter(level)).to_string())
+                .collect();
+            assert_eq!(expected_combat_results, actual_combat_results);
+        }
+
+        #[test]
+        fn party_vs_difficult_encounter_level_10() {
+            let level = 10;
+            let attackers = vec![
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+            ];
+
+            let expected_combat_results = vec![
+                "Rounds 10.50 Blue 0 ( 0.00%) Red 2 ( 0.18%)",
+                "Rounds 15.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
+                "Rounds 15.00 Blue 0 ( 0.00%) Red 1 ( 0.10%)",
+                "Rounds 13.50 Blue 0 ( 0.00%) Red 1 ( 0.15%)",
+                "Rounds  9.00 Blue 0 ( 0.00%) Red 1 ( 0.47%)",
+            ];
+            let actual_combat_results: Vec<String> = ChallengeRating::all()
+                .iter()
+                .map(|cr| run_combat(attackers.clone(), cr.difficult_encounter(level)).to_string())
+                .collect();
+            assert_eq!(expected_combat_results, actual_combat_results);
+        }
+
+        #[test]
+        fn party_vs_difficult_encounter_level_20() {
+            let level = 20;
+            let attackers = vec![
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+            ];
+
+            let expected_combat_results = vec![
+                "Rounds 16.25 Blue 1 ( 0.02%) Red 0 ( 0.00%)",
+                "Rounds 17.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
+                "Rounds 16.00 Blue 0 ( 0.00%) Red 1 ( 0.20%)",
+                "Rounds 15.00 Blue 0 ( 0.00%) Red 1 ( 0.17%)",
+                "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.41%)",
+            ];
+            let actual_combat_results: Vec<String> = ChallengeRating::all()
+                .iter()
+                .map(|cr| run_combat(attackers.clone(), cr.difficult_encounter(level)).to_string())
+                .collect();
+            assert_eq!(expected_combat_results, actual_combat_results);
+        }
+    }
+
+    #[cfg(test)]
+    mod standard_encounters {
+        use super::*;
+        #[test]
+        fn party_vs_standard_encounter_level_1() {
+            let level = 1;
+            let attackers = vec![
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+            ];
+
+            let expected_combat_results = vec![
+                "Rounds  6.25 Blue 2 ( 0.25%) Red 0 ( 0.00%)",
+                "Rounds  4.75 Blue 2 ( 0.46%) Red 0 ( 0.00%)",
+                "Rounds  6.00 Blue 2 ( 0.41%) Red 0 ( 0.00%)",
+                "Rounds  5.25 Blue 1 ( 0.25%) Red 0 ( 0.00%)",
+                "Rounds  5.00 Blue 0 ( 0.00%) Red 1 ( 0.58%)",
+            ];
+            let actual_combat_results: Vec<String> = ChallengeRating::all()
+                .iter()
+                .map(|cr| run_combat(attackers.clone(), cr.standard_encounter(level)).to_string())
+                .collect();
+            assert_eq!(expected_combat_results, actual_combat_results);
+        }
+
+        #[test]
+        fn party_vs_standard_encounter_level_10() {
+            let level = 10;
+            let attackers = vec![
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+            ];
+
+            let expected_combat_results = vec![
+                "Rounds  5.25 Blue 3 ( 0.61%) Red 0 ( 0.00%)",
+                "Rounds  5.75 Blue 3 ( 0.64%) Red 0 ( 0.00%)",
+                "Rounds  7.00 Blue 3 ( 0.57%) Red 0 ( 0.00%)",
+                "Rounds  6.25 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
+                "Rounds  9.00 Blue 0 ( 0.00%) Red 1 ( 0.47%)",
+            ];
+            let actual_combat_results: Vec<String> = ChallengeRating::all()
+                .iter()
+                .map(|cr| run_combat(attackers.clone(), cr.standard_encounter(level)).to_string())
+                .collect();
+            assert_eq!(expected_combat_results, actual_combat_results);
+        }
+
+        #[test]
+        fn party_vs_standard_encounter_level_20() {
+            let level = 20;
+            let attackers = vec![
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+                Character::standard_character(level, true).creature,
+            ];
+
+            let expected_combat_results = vec![
+                "Rounds  6.00 Blue 3 ( 0.66%) Red 0 ( 0.00%)",
+                "Rounds  6.75 Blue 3 ( 0.62%) Red 0 ( 0.00%)",
+                "Rounds  8.50 Blue 3 ( 0.54%) Red 0 ( 0.00%)",
+                "Rounds  6.75 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
+                "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.41%)",
+            ];
+            let actual_combat_results: Vec<String> = ChallengeRating::all()
+                .iter()
+                .map(|cr| run_combat(attackers.clone(), cr.standard_encounter(level)).to_string())
+                .collect();
+            assert_eq!(expected_combat_results, actual_combat_results);
+        }
+    }
+
     #[test]
     fn standard_character_mirror_match() {
         let attacker = Character::standard_character(1, true).creature;
@@ -860,149 +1013,5 @@ mod run_combat {
             run_combat(vec![attacker], vec![defender]).to_string(),
             "at level 20",
         );
-    }
-
-    #[test]
-    fn party_vs_standard_encounter_level_1() {
-        let level = 1;
-        let attackers = vec![
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-        ];
-
-        let expected_combat_results = vec![
-            "Rounds  6.25 Blue 2 ( 0.25%) Red 0 ( 0.00%)",
-            "Rounds  6.00 Blue 2 ( 0.41%) Red 0 ( 0.00%)",
-            "Rounds  5.00 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
-            "Rounds  6.50 Blue 1 ( 0.02%) Red 0 ( 0.00%)",
-            "Rounds  5.00 Blue 0 ( 0.00%) Red 1 ( 0.57%)",
-        ];
-        let actual_combat_results: Vec<String> = ChallengeRating::all()
-            .iter()
-            .map(|cr| run_combat(attackers.clone(), cr.standard_encounter(level)).to_string())
-            .collect();
-        assert_eq!(expected_combat_results, actual_combat_results);
-    }
-
-    #[test]
-    fn party_vs_standard_encounter_level_10() {
-        let level = 10;
-        let attackers = vec![
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-        ];
-
-        let expected_combat_results = vec![
-            "Rounds  5.25 Blue 3 ( 0.61%) Red 0 ( 0.00%)",
-            "Rounds  7.00 Blue 3 ( 0.61%) Red 0 ( 0.00%)",
-            "Rounds  7.00 Blue 3 ( 0.57%) Red 0 ( 0.00%)",
-            "Rounds  7.25 Blue 2 ( 0.43%) Red 0 ( 0.00%)",
-            "Rounds  9.00 Blue 0 ( 0.00%) Red 1 ( 0.45%)",
-        ];
-        let actual_combat_results: Vec<String> = ChallengeRating::all()
-            .iter()
-            .map(|cr| run_combat(attackers.clone(), cr.standard_encounter(level)).to_string())
-            .collect();
-        assert_eq!(expected_combat_results, actual_combat_results);
-    }
-
-    #[test]
-    fn party_vs_standard_encounter_level_20() {
-        let level = 20;
-        let attackers = vec![
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-        ];
-
-        let expected_combat_results = vec![
-            "Rounds  6.00 Blue 3 ( 0.66%) Red 0 ( 0.00%)",
-            "Rounds  8.25 Blue 3 ( 0.59%) Red 0 ( 0.00%)",
-            "Rounds  8.00 Blue 3 ( 0.57%) Red 0 ( 0.00%)",
-            "Rounds  7.75 Blue 2 ( 0.48%) Red 0 ( 0.00%)",
-            "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.39%)",
-        ];
-        let actual_combat_results: Vec<String> = ChallengeRating::all()
-            .iter()
-            .map(|cr| run_combat(attackers.clone(), cr.standard_encounter(level)).to_string())
-            .collect();
-        assert_eq!(expected_combat_results, actual_combat_results);
-    }
-
-    #[test]
-    fn party_vs_difficult_encounter_level_1() {
-        let level = 1;
-        let attackers = vec![
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-        ];
-
-        let expected_combat_results = vec![
-            "Rounds  3.50 Blue 0 ( 0.00%) Red 8 ( 0.67%)",
-            "Rounds  6.25 Blue 0 ( 0.00%) Red 3 ( 0.45%)",
-            "Rounds  6.50 Blue 0 ( 0.00%) Red 2 ( 0.40%)",
-            "Rounds  5.00 Blue 0 ( 0.00%) Red 2 ( 0.50%)",
-            "Rounds  5.00 Blue 0 ( 0.00%) Red 1 ( 0.57%)",
-        ];
-        let actual_combat_results: Vec<String> = ChallengeRating::all()
-            .iter()
-            .map(|cr| run_combat(attackers.clone(), cr.difficult_encounter(level)).to_string())
-            .collect();
-        assert_eq!(expected_combat_results, actual_combat_results);
-    }
-
-    #[test]
-    fn party_vs_difficult_encounter_level_10() {
-        let level = 10;
-        let attackers = vec![
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-        ];
-
-        let expected_combat_results = vec![
-            "Rounds 10.50 Blue 0 ( 0.00%) Red 2 ( 0.18%)",
-            "Rounds 14.25 Blue 0 ( 0.00%) Red 1 ( 0.15%)",
-            "Rounds 15.50 Blue 0 ( 0.00%) Red 1 ( 0.04%)",
-            "Rounds 10.00 Blue 0 ( 0.00%) Red 1 ( 0.33%)",
-            "Rounds  9.00 Blue 0 ( 0.00%) Red 1 ( 0.45%)",
-        ];
-        let actual_combat_results: Vec<String> = ChallengeRating::all()
-            .iter()
-            .map(|cr| run_combat(attackers.clone(), cr.difficult_encounter(level)).to_string())
-            .collect();
-        assert_eq!(expected_combat_results, actual_combat_results);
-    }
-
-    #[test]
-    fn party_vs_difficult_encounter_level_20() {
-        let level = 20;
-        let attackers = vec![
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-            Character::standard_character(level, true).creature,
-        ];
-
-        let expected_combat_results = vec![
-            "Rounds 16.25 Blue 1 ( 0.02%) Red 0 ( 0.00%)",
-            "Rounds 14.25 Blue 0 ( 0.00%) Red 2 ( 0.26%)",
-            "Rounds 16.50 Blue 0 ( 0.00%) Red 1 ( 0.16%)",
-            "Rounds 11.50 Blue 0 ( 0.00%) Red 1 ( 0.32%)",
-            "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.39%)",
-        ];
-        let actual_combat_results: Vec<String> = ChallengeRating::all()
-            .iter()
-            .map(|cr| run_combat(attackers.clone(), cr.difficult_encounter(level)).to_string())
-            .collect();
-        assert_eq!(expected_combat_results, actual_combat_results);
     }
 }
