@@ -22,6 +22,7 @@ def generate_script():
             monster_chat_color(),
             damage_dice(),
             debuffs(),
+            rust(),
             "</script>",
             "",
         ]
@@ -40,7 +41,8 @@ def js_wrapper(
         boolean_variables=[],
         string_variables=[],
         no_listen_variables=[],
-        include_level=True
+        include_level=True,
+        on_sheet_open=False,
 ):
     # not everything actually depends on level, but it's convenient to make
     # everything recalculate when level changes
@@ -48,6 +50,8 @@ def js_wrapper(
         variables = variables + ["level"]
     all_unique_variables = sorted(list(set(variables + boolean_variables + string_variables)))
     change_string = " ".join([formatChangeString(var) for var in all_unique_variables])
+    if on_sheet_open:
+        change_string += " sheet:opened"
     get_attrs_string = ", ".join([f'"{var}"' for var in all_unique_variables + no_listen_variables])
     set_variables_string = (
         ";\n    ".join(
@@ -886,6 +890,57 @@ def debuffs():
                 debuff_headers: debuff_headers.trim(),
             }});
         """,
+    )
+
+def rust():
+    return js_wrapper(
+        [
+            "level", "challenge_rating",
+            "strength", "dexterity", "constitution", "intelligence", "perception", "willpower"
+        ],
+        string_variables=[
+            "alignment", "character_name", "size",
+            "weapon_0_name", "weapon_1_name", "weapon_2_name",
+        ],
+        function_body="""
+            alignment = alignment ? `Usually ${alignment}` : "";
+            const attributes = [strength, dexterity, constitution, intelligence, perception, willpower];
+            const cr = {
+                0.5: "Half",
+                1: "One",
+                2: "Two",
+                4: "Four",
+                6: "Six",
+            }[challenge_rating];
+            const weapons = [];
+            for (const weapon_name of [weapon_0_name, weapon_1_name, weapon_2_name]) {
+                if (weapon_name) {
+                    weapons.push(`StandardWeapon::${weapon_name}.weapon()`);
+                }
+            }
+            const weapon_text = `vec![${weapons.join(', ')}]`;
+            const rust = `
+                FullMonsterDefinition {
+                    alignment: "${alignment}",
+                    attributes: vec![${attributes.join(', ')}],
+                    challenge_rating: ChallengeRating::${cr},
+                    description: None,
+                    knowledge: None,
+                    level: ${level},
+                    modifiers: None,
+                    movement_modes: None,
+                    name: "${character_name}",
+                    senses: None,
+                    size: Size::${size || "Medium"},
+                    trained_skills: None,
+                    weapons: ${weapon_text},
+                }
+            `.trim();
+            setAttrs({
+                rust,
+            });
+        """,
+        on_sheet_open=True,
     )
 
 
