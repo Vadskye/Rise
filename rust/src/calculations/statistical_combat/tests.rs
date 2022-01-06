@@ -89,7 +89,7 @@ mod calculate_hit_probability {
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         let expected_hit_probability = vec![
-            "0.500 single, 0.055 crit",
+            "0.600 single, 0.066 crit",
             "0.500 single, 0.055 crit",
             "0.500 single, 0.055 crit",
             "0.400 single, 0.044 crit",
@@ -119,7 +119,7 @@ mod calculate_hit_probability {
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         let expected_hit_probability = vec![
-            "0.400 single, 0.044 crit",
+            "0.500 single, 0.055 crit",
             "0.400 single, 0.044 crit",
             "0.400 single, 0.044 crit",
             "0.300 single, 0.033 crit",
@@ -145,7 +145,7 @@ mod calculate_hit_probability {
     fn monster_vs_standard_character_level_1() {
         let level = 1;
         let attacker = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
-        let attack = attacker.get_attack_by_name("Generic Scaling Slam").unwrap();
+        let attack = attacker.get_attack_by_name("Slam").unwrap();
         assert_eq!(
             "0.500 single, 0.055 crit",
             calculate_hit_probability(
@@ -163,9 +163,9 @@ mod calculate_hit_probability {
     fn monster_vs_standard_character_level_20() {
         let level = 20;
         let attacker = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
-        let attack = attacker.get_attack_by_name("Generic Scaling Slam").unwrap();
+        let attack = attacker.get_attack_by_name("Slam").unwrap();
         assert_eq!(
-            "0.600 single, 0.066 crit",
+            "0.800 single, 0.088 crit",
             calculate_hit_probability(
                 &attack,
                 attacker.calc_accuracy(),
@@ -695,7 +695,7 @@ mod calc_rounds_to_live {
         }
 
         assert_eq!(
-            [3.0, 3.0, 3.25, 4.0, 4.0],
+            [2.5, 2.5, 2.75, 3.25, 3.25],
             [
                 calc_at_level(1),
                 calc_at_level(5),
@@ -716,7 +716,7 @@ mod calc_rounds_to_live {
         }
 
         assert_eq!(
-            [5.75, 7.5, 9.0, 10.25, 10.5],
+            [4.75, 5.75, 7.25, 8.0, 8.25],
             [
                 calc_at_level(1),
                 calc_at_level(5),
@@ -741,11 +741,11 @@ mod calc_rounds_to_live {
 
         assert_eq!(
             [
-                [3.5, 3.25],
-                [4.5, 4.75],
-                [5.25, 5.25],
-                [6.0, 6.5],
-                [6.75, 5.5]
+                [2.75, 2.75],
+                [3.75, 3.75],
+                [4.25, 4.25],
+                [4.75, 5.0],
+                [5.5, 4.25]
             ],
             [
                 calc_at_level(1),
@@ -767,7 +767,7 @@ mod calc_rounds_to_live {
         }
 
         assert_eq!(
-            [2.0, 3.25, 3.25, 4.25, 3.75],
+            [1.5, 2.75, 2.5, 3.25, 3.0],
             [
                 calc_at_level(1),
                 calc_at_level(5),
@@ -784,7 +784,7 @@ mod calc_rounds_to_live {
         let level = 1;
         let attacker = Character::standard_character(level, true).creature;
 
-        let expected_results = vec![3.5, 7.0, 16.0, 29.25];
+        let expected_results = vec![3.75, 9.5, 16.5, 32.25];
 
         let mut actual_results = vec![];
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
@@ -804,7 +804,7 @@ mod calc_rounds_to_live {
         let level = 20;
         let attacker = Character::standard_character(level, true).creature;
 
-        let expected_results = vec![5.25, 11.5, 24.5, 43.0];
+        let expected_results = vec![5.75, 14.25, 24.0, 47.0];
 
         let mut actual_results = vec![];
         let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
@@ -843,7 +843,7 @@ mod run_combat {
                 "Rounds  5.50 Blue 0 ( 0.00%) Red 3 ( 0.44%)",
                 "Rounds  6.25 Blue 0 ( 0.00%) Red 2 ( 0.49%)",
                 "Rounds  5.00 Blue 0 ( 0.00%) Red 2 ( 0.50%)",
-                "Rounds  5.00 Blue 0 ( 0.00%) Red 1 ( 0.58%)",
+                "Rounds  6.00 Blue 0 ( 0.00%) Red 1 ( 0.51%)",
             ];
             let actual_combat_results: Vec<String> = ChallengeRating::all()
                 .iter()
@@ -863,11 +863,11 @@ mod run_combat {
             ];
 
             let expected_combat_results = vec![
-                "Rounds 10.50 Blue 0 ( 0.00%) Red 2 ( 0.18%)",
-                "Rounds 15.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-                "Rounds 15.00 Blue 0 ( 0.00%) Red 1 ( 0.10%)",
-                "Rounds 13.50 Blue 0 ( 0.00%) Red 1 ( 0.15%)",
-                "Rounds  9.00 Blue 0 ( 0.00%) Red 1 ( 0.47%)",
+                "Rounds 12.50 Blue 1 ( 0.14%) Red 0 ( 0.00%)",
+                "Rounds 11.00 Blue 2 ( 0.25%) Red 0 ( 0.00%)",
+                "Rounds 16.50 Blue 0 ( 0.00%) Red 1 ( 0.03%)",
+                "Rounds 14.00 Blue 0 ( 0.00%) Red 1 ( 0.13%)",
+                "Rounds 10.00 Blue 0 ( 0.00%) Red 1 ( 0.42%)",
             ];
             let actual_combat_results: Vec<String> = ChallengeRating::all()
                 .iter()
@@ -891,7 +891,7 @@ mod run_combat {
                 "Rounds 13.50 Blue 0 ( 0.00%) Red 1 ( 0.17%)",
                 "Rounds 12.25 Blue 0 ( 0.00%) Red 1 ( 0.33%)",
                 "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.32%)",
-                "Rounds 10.00 Blue 0 ( 0.00%) Red 1 ( 0.46%)",
+                "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.41%)",
             ];
             let actual_combat_results: Vec<String> = ChallengeRating::all()
                 .iter()
@@ -919,7 +919,7 @@ mod run_combat {
                 "Rounds  4.75 Blue 2 ( 0.46%) Red 0 ( 0.00%)",
                 "Rounds  6.00 Blue 2 ( 0.41%) Red 0 ( 0.00%)",
                 "Rounds  5.25 Blue 1 ( 0.25%) Red 0 ( 0.00%)",
-                "Rounds  5.00 Blue 0 ( 0.00%) Red 1 ( 0.58%)",
+                "Rounds  6.00 Blue 0 ( 0.00%) Red 1 ( 0.51%)",
             ];
             let actual_combat_results: Vec<String> = ChallengeRating::all()
                 .iter()
@@ -939,11 +939,11 @@ mod run_combat {
             ];
 
             let expected_combat_results = vec![
-                "Rounds  5.25 Blue 3 ( 0.61%) Red 0 ( 0.00%)",
-                "Rounds  5.75 Blue 3 ( 0.64%) Red 0 ( 0.00%)",
-                "Rounds  7.00 Blue 3 ( 0.57%) Red 0 ( 0.00%)",
+                "Rounds  5.25 Blue 3 ( 0.66%) Red 0 ( 0.00%)",
+                "Rounds  5.50 Blue 3 ( 0.69%) Red 0 ( 0.00%)",
+                "Rounds  6.75 Blue 3 ( 0.61%) Red 0 ( 0.00%)",
                 "Rounds  6.25 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
-                "Rounds  9.00 Blue 0 ( 0.00%) Red 1 ( 0.47%)",
+                "Rounds 10.00 Blue 0 ( 0.00%) Red 1 ( 0.42%)",
             ];
             let actual_combat_results: Vec<String> = ChallengeRating::all()
                 .iter()
@@ -967,7 +967,7 @@ mod run_combat {
                 "Rounds  7.00 Blue 3 ( 0.56%) Red 0 ( 0.00%)",
                 "Rounds  8.50 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
                 "Rounds  7.00 Blue 2 ( 0.50%) Red 0 ( 0.00%)",
-                "Rounds 10.00 Blue 0 ( 0.00%) Red 1 ( 0.46%)",
+                "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.41%)",
             ];
             let actual_combat_results: Vec<String> = ChallengeRating::all()
                 .iter()

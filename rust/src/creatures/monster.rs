@@ -124,12 +124,6 @@ impl Monster {
         };
         let mut monster = Monster::new(challenge_rating, creature_type, level);
         monster.creature.weapons.push(StandardWeapon::Slam.weapon());
-        let rank = (level + 2) / 3 + challenge_rating.rank_modifier();
-        monster.creature.add_modifier(
-            Modifier::Maneuver(Maneuver::GenericScalingStrike(rank)),
-            None,
-            None,
-        );
         monster.creature.name = Some("Standard Monster".to_string());
         let starting_attribute = if let Some(a) = starting_attribute {
             a
