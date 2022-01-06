@@ -95,7 +95,7 @@ impl Monster {
 
         let rank = max(0, (level + 2) / 3 + challenge_rating.rank_modifier());
         creature.add_modifier(
-            Modifier::Maneuver(Maneuver::MonsterDamageScaling(rank)),
+            Modifier::Maneuver(Maneuver::MonsterAccuracyScaling(rank)),
             Some("Basic Maneuver"),
             None,
         );

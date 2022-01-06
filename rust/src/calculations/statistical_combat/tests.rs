@@ -887,11 +887,11 @@ mod run_combat {
             ];
 
             let expected_combat_results = vec![
-                "Rounds 16.25 Blue 1 ( 0.02%) Red 0 ( 0.00%)",
-                "Rounds 17.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-                "Rounds 16.00 Blue 0 ( 0.00%) Red 1 ( 0.20%)",
-                "Rounds 15.00 Blue 0 ( 0.00%) Red 1 ( 0.17%)",
-                "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.41%)",
+                "Rounds 16.25 Blue 1 ( 0.00%) Red 0 ( 0.00%)",
+                "Rounds 13.50 Blue 0 ( 0.00%) Red 1 ( 0.17%)",
+                "Rounds 12.25 Blue 0 ( 0.00%) Red 1 ( 0.33%)",
+                "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.32%)",
+                "Rounds 10.00 Blue 0 ( 0.00%) Red 1 ( 0.46%)",
             ];
             let actual_combat_results: Vec<String> = ChallengeRating::all()
                 .iter()
@@ -963,11 +963,11 @@ mod run_combat {
             ];
 
             let expected_combat_results = vec![
-                "Rounds  6.00 Blue 3 ( 0.66%) Red 0 ( 0.00%)",
-                "Rounds  6.75 Blue 3 ( 0.62%) Red 0 ( 0.00%)",
-                "Rounds  8.50 Blue 3 ( 0.54%) Red 0 ( 0.00%)",
-                "Rounds  6.75 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
-                "Rounds 11.00 Blue 0 ( 0.00%) Red 1 ( 0.41%)",
+                "Rounds  6.00 Blue 3 ( 0.65%) Red 0 ( 0.00%)",
+                "Rounds  7.00 Blue 3 ( 0.56%) Red 0 ( 0.00%)",
+                "Rounds  8.50 Blue 3 ( 0.50%) Red 0 ( 0.00%)",
+                "Rounds  7.00 Blue 2 ( 0.50%) Red 0 ( 0.00%)",
+                "Rounds 10.00 Blue 0 ( 0.00%) Red 1 ( 0.46%)",
             ];
             let actual_combat_results: Vec<String> = ChallengeRating::all()
                 .iter()
