@@ -16,7 +16,7 @@ fn standard_monster_statistics_level_1_cr1() {
         vec![3, 2, 2, 2, 2, 3],
         Attribute::all()
             .iter()
-            .map(|a| creature.calc_total_attribute(&a))
+            .map(|a| creature.get_base_attribute(&a))
             .collect::<Vec<i32>>(),
         "Attributes",
     );
@@ -65,7 +65,7 @@ fn standard_monster_statistics_level_1_cr2() {
         vec![4, 2, 2, 2, 2, 4],
         Attribute::all()
             .iter()
-            .map(|a| creature.calc_total_attribute(&a))
+            .map(|a| creature.get_base_attribute(&a))
             .collect::<Vec<i32>>(),
         "Attributes",
     );
@@ -111,10 +111,10 @@ fn standard_monster_statistics_level_1_cr4() {
 
     // HasAttributes
     assert_eq!(
-        vec![7, 2, 2, 2, 2, 7],
+        vec![6, 2, 2, 2, 2, 6],
         Attribute::all()
             .iter()
-            .map(|a| creature.calc_total_attribute(&a))
+            .map(|a| creature.get_base_attribute(&a))
             .collect::<Vec<i32>>(),
         "Attributes",
     );
