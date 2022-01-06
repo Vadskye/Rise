@@ -430,7 +430,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Greater Bardic Lore",
             is_magical: false,
-            rank: 3,
+            rank: 2,
             description: r"
                 You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                 In addition, you gain a bonus equal to your rank in this archetype to Knowledge skills that you are \glossterm{untrained} with.
