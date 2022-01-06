@@ -351,24 +351,24 @@ This chapter describes the core mechanics of Rise.
 
     \begin{dtable*}
         \lcaption{Size Categories}
-        \begin{dtabularx}{\textwidth}{l l l l p{4.5em} p{5em} X}
-            \tb{Size}         & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Strength Modifier}\fn{2} & \tb{Dexterity Modifier}\fn{2} & \tb{Example Creature} \tableheaderrule
-            Fine              & 1/4 ft.    & 0          & 5 ft.  & \minus8 & \plus4  & Fly                      \\
-            Diminuitive       & 1/2 ft.    & 0          & 10 ft. & \minus6 & \plus3  & Mouse                    \\
-            Tiny              & 1 ft.      & 0          & 15 ft. & \minus4 & \plus2  & Rat                      \\
-            Small             & 2-1/2 ft.  & 5 ft.      & 20 ft. & \minus2 & \plus1  & Cat                      \\
-            Medium            & 5 ft.      & 5 ft.      & 30 ft. & \tdash  & \tdash  & Human                    \\
-            Large (tall)      & 10 ft.     & 10 ft.     & 40 ft. & \plus1  & \minus1 & Ogre                     \\
-            Large (long)      & 10 ft.     & 5 ft.      & 40 ft. & \plus1  & \minus1 & Horse                    \\
-            Huge (tall)       & 20 ft.     & 15 ft.     & 50 ft. & \plus2  & \minus2 & Cloud giant              \\
-            Huge (long)       & 20 ft.     & 10 ft.     & 50 ft. & \plus2  & \minus2 & Bulette                  \\
-            Gargantuan (tall) & 40 ft.     & 40 ft.     & 60 ft. & \plus3  & \minus3 & 50-ft.\ animated statue  \\
-            Gargantuan (long) & 40 ft.     & 20 ft.     & 60 ft. & \plus3  & \minus3 & Kraken                   \\
-            Colossal (tall)   & 80\add ft. & 80\add ft. & 80 ft. & \plus4  & \minus4 & Colossal animated object \\
-            Colossal (long)   & 80\add ft. & 40\add ft. & 80 ft. & \plus4  & \minus4 & Great wyrm red dragon    \\
+        \begin{dtabularx}{\textwidth}{l l l l l l X}
+            \tb{Size}         & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Weight Limits}\fn{2} & \tb{Reflex Defense} & \tb{Example Creature} \tableheaderrule
+            Fine              & 1/4 ft.          & 0                & 5 ft.           & \minus4 Str        & \plus4               & Fly                      \\
+            Diminuitive       & 1/2 ft.          & 0                & 10 ft.          & \minus3 Str        & \plus3               & Mouse                    \\
+            Tiny              & 1 ft.            & 0                & 15 ft.          & \minus2 Str        & \plus2               & Rat                      \\
+            Small             & 2-1/2 ft.        & 5 ft.            & 20 ft.          & \minus1 Str        & \plus1               & Cat                      \\
+            Medium            & 5 ft.            & 5 ft.            & 30 ft.          & \tdash             & \tdash               & Human                    \\
+            Large (tall)      & 10 ft.           & 10 ft.           & 40 ft.          & \plus1 Str         & \minus1              & Ogre                     \\
+            Large (long)      & 10 ft.           & 5 ft.            & 40 ft.          & \plus1 Str         & \minus1              & Horse                    \\
+            Huge (tall)       & 20 ft.           & 15 ft.           & 50 ft.          & \plus2 Str         & \minus2              & Cloud giant              \\
+            Huge (long)       & 20 ft.           & 10 ft.           & 50 ft.          & \plus2 Str         & \minus2              & Bulette                  \\
+            Gargantuan (tall) & 40 ft.           & 40 ft.           & 60 ft.          & \plus3 Str         & \minus3              & 50-ft.\ animated statue  \\
+            Gargantuan (long) & 40 ft.           & 20 ft.           & 60 ft.          & \plus3 Str         & \minus3              & Kraken                   \\
+            Colossal (tall)   & 80\add ft.       & 80\add ft.       & 80 ft.          & \plus4 Str         & \minus4              & Colossal animated object \\
+            Colossal (long)   & 80\add ft.       & 40\add ft.       & 80 ft.          & \plus4 Str         & \minus4              & Great wyrm red dragon    \\
         \end{dtabularx}
-        1 Creatures can vary in space and reach.  These are simply typical values.  \\
-        2. These modifiers only apply to creature that naturally have the given size, without any temporary modifiers. \\
+        1 Creatures can vary in space and reach.  These are simply typical values. \\
+        2 This modifies Strength only for the purpose of determining a creature's \glossterm{weight limits} (see \pcref{Weight Limits}). \\
     \end{dtable*}
 
     \subsection{Space}\label{Space}
@@ -486,9 +486,11 @@ This chapter describes the core mechanics of Rise.
     In general, it is not meaningful to consider the weight of any objects with a weight category lighter than your maximum weight category.
 
     You can carry objects or creatures up to your maximum carrying capacity without any penalty.
-    This is called your \glossterm{carrying capacity}.
     Beyond that, you can push or drag objects or creatures up your pushing and dragging limit as a standard action.
     When you do, you move the weight 5 feet.
+
+    \parhead{Large Creatures} Unusually large or small creatures gain a bonus to their Strength for the purpose of determining their weight limits.
+    For details, see \tref{Size Categories}.
 
     \parhead{Multi-Legged Creatures} The figures on \trefnp{Weight Limits by Strength} are for bipedal creatures.
     A creature with four or more legs can carry, push, or drag twice as many objects as a bipedal creature of the same Strength.
