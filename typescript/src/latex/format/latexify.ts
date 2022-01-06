@@ -11,6 +11,22 @@ export function latexify(text: string): string {
   if (traitMatch) {
     console.error(`Problem latexifying text: contains unprefixed trait (${traitMatch.slice(0, 30)})`);
   }
+  const glosstermMatch = text.match(/[^\\]glossterm\{.*/g);
+  if (glosstermMatch) {
+    console.error(`Problem latexifying text: contains unprefixed glossterm (${glosstermMatch.slice(0, 30)})`);
+  }
+  const tabMatch = text.match(/\t.*/g);
+  if (tabMatch) {
+    console.error(`Problem latexifying text: contains actual tab character (${tabMatch.slice(0, 30)})`);
+  }
+  const plusMatch = text.match(/[^\\]plus\d.*/g);
+  if (plusMatch) {
+    console.error(`Problem latexifying text: contains unprefixed add (${plusMatch.slice(0, 30)})`);
+  }
+  const minusMatch = text.match(/[^\\]minus\d.*/g);
+  if (minusMatch) {
+    console.error(`Problem latexifying text: contains unprefixed minus (${minusMatch.slice(0, 30)})`);
+  }
 
   return text
     .replace(/ \+ /g, " \\add ")

@@ -377,7 +377,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         monsters: vec![
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually true neutral".to_string(),
-                attributes: vec![3, 0, 4, 0, 0, 0],
+                attributes: vec![3, 0, 4, 0, 0, 1],
                 challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: None,
@@ -395,7 +395,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             }),
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually true neutral".to_string(),
-                attributes: vec![4, 0, 5, 0, 2, 0],
+                attributes: vec![4, 0, 5, 0, 2, 2],
                 challenge_rating: ChallengeRating::Two,
                 description: None,
                 knowledge: None,
