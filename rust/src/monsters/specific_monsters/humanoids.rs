@@ -160,7 +160,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         ],
     }));
 
-    struct FullOrcDefinition {
+    struct OrcDefinition {
         attributes: Vec<i32>,
         challenge_rating: ChallengeRating,
         knowledge: Option<Knowledge>,
@@ -172,7 +172,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         weapons: Vec<Weapon>,
     }
 
-    impl FullOrcDefinition {
+    impl OrcDefinition {
         fn monster(self) -> Monster {
             return humanoid(FullHumanoidDefinition {
                 // From def
@@ -214,7 +214,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             "),
         ])),
         monsters: vec![
-            FullOrcDefinition {
+            OrcDefinition {
                 attributes: vec![4, 0, 2, -2, 2, 0],
                 challenge_rating: ChallengeRating::Two,
                 knowledge: None,
@@ -227,7 +227,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Sledgehammer.weapon()],
             }.monster(),
-            FullOrcDefinition {
+            OrcDefinition {
                 attributes: vec![4, 0, 2, -2, 1, 0],
                 challenge_rating: ChallengeRating::One,
                 knowledge: Some(Knowledge::new(vec![
@@ -242,7 +242,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Greataxe.weapon()],
             }.monster(),
-            FullOrcDefinition {
+            OrcDefinition {
                 attributes: vec![3, 0, 1, -2, 0, 0],
                 challenge_rating: ChallengeRating::Half,
                 knowledge: Some(Knowledge::new(vec![
@@ -258,7 +258,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Greataxe.weapon()],
             }.monster(),
-            FullOrcDefinition {
+            OrcDefinition {
                 attributes: vec![5, 0, 3, -2, 1, 1],
                 challenge_rating: ChallengeRating::Two,
                 knowledge: Some(Knowledge::new(vec![
@@ -274,7 +274,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Greataxe.weapon(), StandardWeapon::Longbow.weapon()],
             }.monster(),
-            FullOrcDefinition {
+            OrcDefinition {
                 attributes: vec![6, 1, 4, -2, 2, 2],
                 challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
@@ -297,7 +297,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Greataxe.weapon(), StandardWeapon::Longbow.weapon()],
             }.monster(),
-            FullOrcDefinition {
+            OrcDefinition {
                 attributes: vec![4, 0, 2, -2, 1, 0],
                 challenge_rating: ChallengeRating::Two,
                 knowledge: Some(Knowledge::new(vec![
