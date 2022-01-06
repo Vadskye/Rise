@@ -1,6 +1,6 @@
 use crate::core_mechanics::{
-    DamageDice, DamageType, Defense, FlightManeuverability, MovementMode, Sense, Size,
-    SpeedCategory,
+    DamageDice, DamageType, Defense, FlightManeuverability, MovementMode, PassiveAbility, Sense,
+    Size, SpecialDefenseModifier, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::attack_effects::HealingEffect;
 use crate::creatures::{Maneuver, Modifier, Monster, StandardAttack};
@@ -9,7 +9,7 @@ use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::MagicalBeast;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::FullMonsterDefinition;
+use crate::monsters::{monster_group, FullMonsterDefinition};
 use crate::skills::Skill;
 
 struct FullMagicalBeastDefinition {
@@ -354,6 +354,142 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             StandardWeapon::MonsterBite.weapon(),
         ],
     }.monster()));
+
+    struct IchorDefinition {
+        attributes: Vec<i32>,
+        challenge_rating: ChallengeRating,
+        level: i32,
+        modifiers: Option<Vec<Modifier>>,
+        name: String,
+        size: Size,
+        trained_skills: Option<Vec<Skill>>,
+        weapons: Vec<Weapon>,
+    }
+
+    impl IchorDefinition {
+        fn monster(self) -> Monster {
+            let mut modifiers = self.modifiers.unwrap_or(vec![]);
+            modifiers.push(
+                Modifier::PassiveAbility(PassiveAbility {
+                    name: "Spreading Ichor".to_string(),
+                    is_magical: true,
+                    description: r"
+                        Whenever the $name causes a living creature to lose \glossterm{hit points}, that creature becomes unable to regain hit points as a \glossterm{condition}.
+                    ".to_string(),
+                })
+            );
+            modifiers.push(Modifier::SpecialDefense(
+                SpecialDefenseModifier::vulnerable_damage(DamageType::Fire),
+            ));
+            modifiers.push(Modifier::SpecialDefense(SpecialDefenseModifier::Immune(
+                SpecialDefenseType::CriticalHits,
+            )));
+            return FullMagicalBeastDefinition {
+                alignment: "Always true neutral".to_string(),
+                attributes: self.attributes,
+                challenge_rating: self.challenge_rating,
+                description: None,
+                knowledge: None,
+                // Should be (base animal + 4)
+                level: self.level,
+                modifiers: Some(modifiers),
+                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Normal)]),
+                name: self.name,
+                senses: Some(vec![Sense::Darkvision(60)]),
+                size: self.size,
+                trained_skills: self.trained_skills,
+                weapons: self.weapons,
+            }
+            .monster();
+        }
+    }
+
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                The dreadful magical liquid known as ichor has no known origin.
+                All is known is that it can corrupt creatures who contact it.
+                Creatures who become tainted in this way recklessly attack anything they encounter, making them extremely dangerous.
+            "),
+            (5, "
+                Ichor-tainted creatures have had their internal organs restructured in unnatural ways, making them difficult to dispatch quickly.
+                When the ichor spreads, as it often does during a fight, it inhibits healing as it tries to corrupt its new host.
+            "),
+            (10, "
+                Only animals can be fully transformed by ichor.
+                Other creatures suffer temporary effects at worst.
+                The biological structure of transformed animals bears some resemblance to aberrations.
+                Some scholars theorize that this means the ichor originated from the Far Realm, while others think it is a mere imitation.
+            "),
+        ])),
+        name: "Ichor-Tainted".to_string(),
+        monsters: vec![
+            IchorDefinition {
+                attributes: vec![4, 0, 5, -9, 0, -1],
+                challenge_rating: ChallengeRating::Two,
+                level: 7,
+                modifiers: None,
+                name: "Ichor Black Bear".to_string(),
+                size: Size::Medium,
+                trained_skills: Some(vec![Skill::Climb, Skill::Endurance, Skill::Swim]),
+                weapons: vec![
+                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MonsterClaws.weapon(),
+                ],
+            }
+            .monster(),
+            IchorDefinition {
+                attributes: vec![5, 0, 5, -9, 0, 0],
+                challenge_rating: ChallengeRating::Two,
+                level: 9,
+                modifiers: None,
+                name: "Ichor Brown Bear".to_string(),
+                size: Size::Large,
+                trained_skills: Some(vec![Skill::Climb, Skill::Endurance, Skill::Swim]),
+                weapons: vec![
+                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MonsterClaws.weapon(),
+                ],
+            }
+            .monster(),
+            IchorDefinition {
+                attributes: vec![-1, 3, -1, -9, 2, -3],
+                challenge_rating: ChallengeRating::Half,
+                level: 2,
+                modifiers: None,
+                name: "Ichor Rat".to_string(),
+                size: Size::Tiny,
+                trained_skills: Some(vec![Skill::Awareness]),
+                weapons: vec![StandardWeapon::MonsterBite.weapon()],
+            }
+            .monster(),
+            IchorDefinition {
+                attributes: vec![6, 1, 4, -7, 4, -1],
+                challenge_rating: ChallengeRating::Four,
+                level: 13,
+                modifiers: None,
+                name: "Ichor Roc".to_string(),
+                size: Size::Gargantuan,
+                trained_skills: Some(vec![Skill::Awareness]),
+                weapons: vec![
+                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MonsterTalons.weapon(),
+                ],
+            }
+            .monster(),
+            IchorDefinition {
+                attributes: vec![3, 4, 3, -9, 3, -1],
+                challenge_rating: ChallengeRating::One,
+                level: 5,
+                modifiers: None,
+                name: "Ichor Wolf".to_string(),
+                size: Size::Medium,
+                trained_skills: Some(vec![Skill::Awareness]),
+                weapons: vec![StandardWeapon::MonsterBite.weapon()],
+            }
+            .monster(),
+        ],
+    }));
 
     return monsters;
 }
