@@ -13,55 +13,6 @@ fn standard_monster_statistics_level_1_cr1() {
 
     // HasAttributes
     assert_eq!(
-        vec![3, 2, 2, 2, 2, 3],
-        Attribute::all()
-            .iter()
-            .map(|a| creature.get_base_attribute(&a))
-            .collect::<Vec<i32>>(),
-        "Attributes",
-    );
-
-    // HasDefenses
-    assert_eq!(
-        7,
-        creature.calc_defense(&Defense::Armor),
-        "Armor: 5 monster + 1 dex + 1 con",
-    );
-    assert_eq!(
-        7,
-        creature.calc_defense(&Defense::Fortitude),
-        "Fort: 5 monster + 2 con",
-    );
-    assert_eq!(
-        7,
-        creature.calc_defense(&Defense::Reflex),
-        "Ref: 5 monster + 2 dex",
-    );
-    assert_eq!(
-        8,
-        creature.calc_defense(&Defense::Mental),
-        "Ment: 5 monster + 3 wil",
-    );
-
-    // HasDamageAbsorption
-    assert_eq!(12, creature.calc_hit_points(), "HP: (1 level + 2 con)",);
-    assert_eq!(
-        9,
-        creature.calc_damage_resistance(),
-        "DR: (1 level + 2 con) * 3",
-    );
-}
-
-#[test]
-fn standard_monster_statistics_level_1_cr2() {
-    let creature = Monster::standard_monster(ChallengeRating::Two, 1, None, None).creature;
-
-    // HasAttacks
-    assert_eq!(2, creature.calc_accuracy(), "Accuracy: 1 per + 1 cr",);
-    assert_eq!(4, creature.calc_power(), "Power: 2 scaling * 2 cr mult",);
-
-    // HasAttributes
-    assert_eq!(
         vec![4, 2, 2, 2, 2, 4],
         Attribute::all()
             .iter()
@@ -93,11 +44,60 @@ fn standard_monster_statistics_level_1_cr2() {
     );
 
     // HasDamageAbsorption
-    assert_eq!(24, creature.calc_hit_points(), "HP: (1 level + 2 con) * 2",);
+    assert_eq!(12, creature.calc_hit_points(), "HP: (1 level + 2 con)",);
     assert_eq!(
-        18,
+        6,
         creature.calc_damage_resistance(),
-        "DR: (1 level + 2 con) * 6",
+        "DR: (1 level + 2 con) * 2",
+    );
+}
+
+#[test]
+fn standard_monster_statistics_level_1_cr2() {
+    let creature = Monster::standard_monster(ChallengeRating::Two, 1, None, None).creature;
+
+    // HasAttacks
+    assert_eq!(2, creature.calc_accuracy(), "Accuracy: 1 per + 1 cr",);
+    assert_eq!(4, creature.calc_power(), "Power: 2 scaling * 2 cr mult",);
+
+    // HasAttributes
+    assert_eq!(
+        vec![5, 2, 2, 2, 2, 5],
+        Attribute::all()
+            .iter()
+            .map(|a| creature.get_base_attribute(&a))
+            .collect::<Vec<i32>>(),
+        "Attributes",
+    );
+
+    // HasDefenses
+    assert_eq!(
+        7,
+        creature.calc_defense(&Defense::Armor),
+        "Armor: 5 monster + 1 dex + 1 con",
+    );
+    assert_eq!(
+        7,
+        creature.calc_defense(&Defense::Fortitude),
+        "Fort: 5 monster + 2 con",
+    );
+    assert_eq!(
+        7,
+        creature.calc_defense(&Defense::Reflex),
+        "Ref: 5 monster + 2 dex",
+    );
+    assert_eq!(
+        10,
+        creature.calc_defense(&Defense::Mental),
+        "Ment: 5 monster + 5 wil",
+    );
+
+    // HasDamageAbsorption
+    assert_eq!(36, creature.calc_hit_points(), "HP: (1 level + 2 con) * 3",);
+    assert_eq!(
+        12,
+        creature.calc_damage_resistance(),
+        "DR: (1 level + 2 con) * 4",
     );
 }
 
@@ -144,9 +144,9 @@ fn standard_monster_statistics_level_1_cr4() {
     // HasDamageAbsorption
     assert_eq!(48, creature.calc_hit_points(), "HP: (1 level + 2 con) * 4",);
     assert_eq!(
-        30,
+        24,
         creature.calc_damage_resistance(),
-        "DR: (1 level + 2 con) * 10",
+        "DR: (1 level + 2 con) * 8",
     );
 }
 
@@ -186,10 +186,10 @@ mod firebolt_scaling {
         ];
         let expected = [
             "Firebolt +1 (The target takes 1d8+1 fire damage.)", // CR 0.5
-            "Firebolt +1 (The target takes 1d10+2 fire damage.)", // CR 1
+            "Firebolt +1 (The target takes 2d6+2 fire damage.)", // CR 1
             "Firebolt +2 (The target takes 2d6+4 fire damage.)",  // CR 2
             "Firebolt +2 (The target takes 2d8+6 fire damage.)",  // CR 4
-            "Firebolt +2 (The target takes 2d10+8 fire damage.)", // CR 6
+            "Firebolt +2 (The target takes 2d10+6 fire damage.)", // CR 6
         ];
         assert_eq!(expected, actual, "CR 0.5/1/2/4/6");
     }
@@ -206,10 +206,10 @@ mod firebolt_scaling {
         ];
         let expected = [
             "Greater Firebolt +9 (The target takes 4d8+6 fire damage.)",
-            "Greater Firebolt +9 (The target takes 4d10+12 fire damage.)",
+            "Greater Firebolt +9 (The target takes 5d10+12 fire damage.)",
             "Greater Firebolt +10 (The target takes 5d10+24 fire damage.)",
             "Greater Firebolt +10 (The target takes 6d10+36 fire damage.)",
-            "Supreme Firebolt +10 (The target takes 8d10+48 fire damage.)",
+            "Supreme Firebolt +10 (The target takes 8d10+36 fire damage.)",
         ];
         assert_eq!(expected, actual, "CR 0.5/1/2/4/6",);
     }
@@ -226,10 +226,10 @@ mod firebolt_scaling {
         ];
         let expected = [
             "Greater Firebolt +12 (The target takes 4d10+8 fire damage.)",
-            "Supreme Firebolt +12 (The target takes 6d10+16 fire damage.)",
+            "Supreme Firebolt +12 (The target takes 7d10+16 fire damage.)",
             "Supreme Firebolt +13 (The target takes 7d10+32 fire damage.)",
             "Supreme Firebolt +13 (The target takes 8d10+48 fire damage.)",
-            "Supreme Firebolt +13 (The target takes 9d10+64 fire damage.)",
+            "Supreme Firebolt +13 (The target takes 9d10+48 fire damage.)",
         ];
         assert_eq!(expected, actual, "CR 0.5/1/2/4/6",);
     }

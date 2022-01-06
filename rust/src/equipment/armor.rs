@@ -513,28 +513,28 @@ mod tests {
     #[test]
     fn calc_special_material_damage_resistance() {
         assert_eq!(
-            12,
+            10,
             Armor::FullPlate(None).damage_resistance(),
-            "Should be 12 with no material"
+            "Should be 10 with no material"
         );
         assert_eq!(
-            24,
+            20,
             Armor::FullPlate(Some(ArmorMaterial::Deepforged)).damage_resistance(),
             "Should be 2x with deepforged"
         );
         assert_eq!(
-            36,
+            30,
             Armor::FullPlate(Some(ArmorMaterial::Dragonhide("red".to_string())))
                 .damage_resistance(),
             "Should be 3x with dragonhide"
         );
         assert_eq!(
-            48,
+            40,
             Armor::FullPlate(Some(ArmorMaterial::Adamantine)).damage_resistance(),
             "Should be 4x with adamantine"
         );
         assert_eq!(
-            48,
+            40,
             Armor::FullPlate(Some(ArmorMaterial::PureDeepforged)).damage_resistance(),
             "Should be 4x with pure deepforged"
         );

@@ -3,6 +3,7 @@ use crate::creatures::attack_effects::{AttackEffectDuration, AttackTriggeredEffe
 use crate::creatures::attacks::{Attack, AttackMovement};
 use crate::equipment::Weapon;
 use titlecase::titlecase;
+use std::cmp::max;
 
 #[derive(Clone)]
 pub enum Maneuver {
@@ -109,7 +110,7 @@ impl Maneuver {
                 .except(|a| a.accuracy -= 2)
                 .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(rank + 4)),
             Self::MonstrousStrike(rank) => {
-                weapon.attack().except(|a| a.accuracy += (rank - 3) / 2)
+                weapon.attack().except(|a| a.accuracy += max(0, (rank - 3) / 2))
             }
             Self::PenetratingStrike(rank) => weapon
                 .attack()
