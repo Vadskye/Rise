@@ -75,12 +75,7 @@ const SKILLS_BY_ATTRIBUTE = {
     "Linguistics",
     "Medicine",
   ],
-  perception: [
-    "Awareness",
-    "Creature Handling",
-    "Social Insight",
-    "Survival",
-  ],
+  perception: ["Awareness", "Creature Handling", "Social Insight", "Survival"],
   willpower: [],
   other: [
     "Deception",
@@ -151,10 +146,17 @@ function formatChangeString(varName) {
 }
 
 function handleEverything() {
-  handleCoreStatistics();
-  handleResources();
+  handleAbilitiesKnown();
+  handleAttunedEffects();
   handleAttributes();
+  handleCoreStatistics();
+  handleCustomModifiers();
+  handleDebuffs();
+  handleMonsterChatColor();
+  handleResources();
+  handleRust();
   handleSkills();
+  handleVitalWounds();
 }
 
 function handleCoreStatistics() {
@@ -167,7 +169,10 @@ function handleCoreStatistics() {
   handleInitiative();
   handleLandSpeed();
   handlePower();
+  handleVitalRolls();
+  handleUniversalAbilities();
   handleUnknownStatistic();
+  handleWeaponDamageDice();
 }
 
 function handleDefenses() {
@@ -196,6 +201,27 @@ function calcDefenseLevelScaling(level, challengeRating) {
     levelScaling += 2;
   }
   return levelScaling;
+}
+
+function handleAbilitiesKnown() {
+  handleAbilityKnown("combat_styles");
+  handleAbilityKnown("maneuvers");
+  handleAbilityKnown("spells");
+  handleAbilityKnown("spheres");
+}
+
+function handleAbilityKnown(abilityName) {
+  onGet(
+    {
+      miscName: `${abilityName}_known`,
+      miscCount: 4,
+      numeric: [`${abilityName}_known_insight_points`],
+    },
+    (v) => {
+      const totalValue = v[`${abilityName}_known_insight_points`] + v.misc;
+      setAttrs({ [`${abilityName}_known`]: totalValue });
+    }
+  );
 }
 
 function handleAccuracy() {
@@ -308,6 +334,24 @@ function handleAttributes() {
   }
 }
 
+function handleAttunedEffects() {
+  on("change:repeating_attunements remove:repeating_attunements", function () {
+    getSectionIDs("repeating_attunements", (repeatingSectionIds) => {
+      const isActiveIds = repeatingSectionIds.map(
+        (id) => `repeating_attunements_${id}_attunement_active`
+      );
+      getAttrs(isActiveIds, (values) => {
+        const activeAbilities = isActiveIds.filter(
+          (id) => values[id] == 1 || values[id] == "on"
+        );
+        setAttrs({
+          active_attunement_count: activeAbilities.length,
+        });
+      });
+    });
+  });
+}
+
 function handleAttunementPoints() {
   onGet(
     {
@@ -321,6 +365,66 @@ function handleAttunementPoints() {
         attunement_points: ap,
         attunement_points_max: ap,
         attunement_points_maximum: ap,
+      });
+    }
+  );
+}
+
+function handleCustomModifiers() {
+  on(
+    "change:repeating_custommodifiers remove:repeating_custommodifiers",
+    function () {
+      const nestedCustomStatisticCount = 4;
+      const formatStatisticId = (id, i) =>
+        `repeating_custommodifiers_${id}_statistic${i}`;
+      const formatValueId = (id, i) =>
+        `repeating_custommodifiers_${id}_value${i}`;
+      const formatIsActiveId = (id) =>
+        `repeating_custommodifiers_${id}_is_active`;
+
+      getSectionIDs("repeating_custommodifiers", (repeatingSectionIds) => {
+        const fullAttributeIds = [];
+        for (const id of repeatingSectionIds) {
+          fullAttributeIds.push(formatIsActiveId(id));
+          for (let i = 0; i < nestedCustomStatisticCount; i++) {
+            fullAttributeIds.push(formatStatisticId(id, i));
+            fullAttributeIds.push(formatValueId(id, i));
+          }
+        }
+        getAttrs(fullAttributeIds, (values) => {
+          const totalCustomModifiers = {};
+          for (const id of repeatingSectionIds) {
+            const isActive = values[formatIsActiveId(id)];
+            if (isActive === "on" || isActive == 1) {
+              for (let i = 0; i < nestedCustomStatisticCount; i++) {
+                const modifiedStatistic = values[formatStatisticId(id, i)];
+                const value = Number(values[formatValueId(id, i)]) || 0;
+                totalCustomModifiers[modifiedStatistic] =
+                  (totalCustomModifiers[modifiedStatistic] || 0) + value;
+              }
+            }
+          }
+          setAttrs({
+            accuracy_custom_modifier: totalCustomModifiers.accuracy || 0,
+            all_defenses_custom_modifier:
+              totalCustomModifiers.all_defenses || 0,
+            all_skills_custom_modifier: totalCustomModifiers.all_skills || 0,
+            armor_defense_custom_modifier:
+              totalCustomModifiers.armor_defense || 0,
+            damage_resistance_bonus_custom_modifier:
+              totalCustomModifiers.energy_resistance_bonus || 0,
+            encumbrance_custom_modifier: totalCustomModifiers.encumbrance || 0,
+            fatigue_tolerance_custom_modifier:
+              totalCustomModifiers.fatigue_tolerance || 0,
+            fortitude_defense_custom_modifier:
+              totalCustomModifiers.fortitude || 0,
+            hit_points_custom_modifier: totalCustomModifiers.hit_points || 0,
+            mental_defense_custom_modifier: totalCustomModifiers.mental || 0,
+            power_custom_modifier: totalCustomModifiers.power || 0,
+            reflex_defense_custom_modifier: totalCustomModifiers.reflex || 0,
+            vital_rolls_custom_modifier: totalCustomModifiers.vital_rolls || 0,
+          });
+        });
       });
     }
   );
@@ -401,6 +505,161 @@ function handleDamageResistance() {
         attrs.damage_resistance = totalValue;
       }
       setAttrs(attrs);
+    }
+  );
+}
+
+function handleDebuffs() {
+  onGet(
+    {
+      boolean: [
+        // conditional debuffs
+        "climbing",
+        "flying",
+        "flying_poorly",
+        "goaded",
+        "grappled",
+        "helpless",
+        "prone",
+        "squeezing",
+        "swimming",
+        "partially_unaware",
+        "unaware",
+        // rank 1 debuffs
+        "dazed",
+        "dazzled",
+        "shaken",
+        "slowed",
+        // rank 2 debuffs
+        "frightened",
+        "stunned",
+        // rank 3 debuffs
+        "confused",
+        "blinded",
+        "immobilized",
+        "panicked",
+        // rank 4 debuffs
+        "asleep",
+        "paralyzed",
+      ],
+    },
+    (v) => {
+      let accuracy = 0;
+      let armor = 0;
+      let fortitude = 0;
+      let mental = 0;
+      let reflex = 0;
+      let debuffHeaders = "";
+
+      // circumstantial effects
+      if (v.grappled) {
+        armor -= 2;
+        reflex -= 2;
+      }
+      if (
+        v.partially_unaware &&
+        !(v.unaware || v.asleep || v.helpless || v.paralyzed || v.blinded)
+      ) {
+        armor -= 2;
+        reflex -= 2;
+      }
+      if (v.unaware && !(v.asleep || v.helpless || v.paralyzed)) {
+        armor -= 4;
+        reflex -= 4;
+      }
+      if (v.squeezing) {
+        accuracy -= 2;
+        armor -= 2;
+        reflex -= 2;
+      }
+      if (v.flying && !v.flying_poorly) {
+        armor -= 2;
+        reflex -= 2;
+      }
+      if (v.flying_poorly) {
+        armor -= 4;
+        reflex -= 4;
+      }
+      if (v.climbing || v.swimming) {
+        accuracy -= 4;
+        armor -= 4;
+        reflex -= 4;
+      }
+      if (v.prone) {
+        armor -= 2;
+        reflex -= 2;
+      }
+
+      // rank 1 debuffs
+      if (v.dazed && !(v.stunned || v.confused)) {
+        armor -= 2;
+        fortitude -= 2;
+        mental -= 2;
+        reflex -= 2;
+      }
+      if (v.dazzled && !v.blinded) {
+        debuffHeaders += " {{Miss chance=Miss on 1: [[d4]]}}";
+      }
+      if (v.blinded) {
+        debuffHeaders += " {{Miss chance=Miss on 1: [[d2]]}}";
+      }
+      if (
+        v.blinded &&
+        !(
+          v.unaware ||
+          v.partially_unaware ||
+          v.asleep ||
+          v.helpless ||
+          v.paralyzed
+        )
+      ) {
+        armor -= 2;
+        reflex -= 2;
+      }
+      if (v.goaded) {
+        debuffHeaders += " {{Goaded=+2 accuracy vs source}}";
+        accuracy -= 2;
+      }
+      if (v.shaken && !v.frightened && !v.panicked) {
+        accuracy -= 2;
+        mental -= 2;
+      }
+      if (v.slowed && !v.immobilized) {
+        reflex -= 2;
+      }
+
+      // rank 2 debuffs
+      if (v.frightened && !v.panicked) {
+        accuracy -= 4;
+        mental -= 4;
+      }
+      if (v.stunned || v.confused) {
+        armor -= 4;
+        fortitude -= 4;
+        reflex -= 4;
+        mental -= 4;
+      }
+
+      // rank 3 debuffs
+      if (v.immobilized) {
+        reflex -= 4;
+      }
+      if (v.panicked) {
+        mental -= 4;
+      }
+      if (v.asleep || v.helpless || v.paralyzed) {
+        armor -= 10;
+        reflex -= 10;
+      }
+
+      setAttrs({
+        accuracy_debuff_modifier: accuracy,
+        armor_defense_debuff_modifier: armor,
+        fortitude_defense_debuff_modifier: fortitude,
+        mental_defense_debuff_modifier: mental,
+        reflex_defense_debuff_modifier: reflex,
+        debuff_headers: debuffHeaders.trim(),
+      });
     }
   );
 }
@@ -593,6 +852,21 @@ function handleLandSpeed() {
   );
 }
 
+function handleMonsterChatColor() {
+  onGet(
+    {
+      numeric: ["challenge_rating"],
+    },
+    (v) => {
+      if (v.challenge_rating > 0) {
+        setAttrs({
+          chat_color: "monster",
+        });
+      }
+    }
+  );
+}
+
 function handleNonArmorDefense(defense, attribute) {
   onGet(
     {
@@ -661,6 +935,80 @@ function handlePower() {
   );
 }
 
+function handleRust() {
+  onGet(
+    {
+      numeric: [
+        "level",
+        "challenge_rating",
+        "strength",
+        "dexterity",
+        "constitution",
+        "intelligence",
+        "perception",
+        "willpower",
+      ],
+      string: [
+        "alignment",
+        "character_name",
+        "size",
+        "weapon_0_name",
+        "weapon_1_name",
+        "weapon_2_name",
+      ],
+    },
+    (v) => {
+      const alignment = v.alignment ? `Usually ${alignment}` : "";
+      const attributes = [
+        v.strength,
+        v.dexterity,
+        v.constitution,
+        v.intelligence,
+        v.perception,
+        v.willpower,
+      ];
+      const cr = {
+        0.5: "Half",
+        1: "One",
+        2: "Two",
+        4: "Four",
+        6: "Six",
+      }[v.challenge_rating];
+      const weapons = [];
+      for (const weaponName of [
+        v.weapon_0_name,
+        v.weapon_1_name,
+        v.weapon_2_name,
+      ]) {
+        if (weaponName) {
+          weapons.push(`StandardWeapon::${weaponName}.weapon()`);
+        }
+      }
+      const weaponText = `vec![${weapons.join(", ")}]`;
+      const rust = `
+                FullMonsterDefinition {
+                    alignment: "${alignment}",
+                    attributes: vec![${attributes.join(", ")}],
+                    challenge_rating: ChallengeRating::${cr},
+                    description: None,
+                    knowledge: None,
+                    level: ${v.level},
+                    modifiers: None,
+                    movement_modes: None,
+                    name: "${v.character_name}",
+                    senses: None,
+                    size: Size::${v.size || "Medium"},
+                    trained_skills: None,
+                    weapons: ${weaponText},
+                }
+            `.trim();
+      setAttrs({
+        rust,
+      });
+    }
+  );
+}
+
 function handleSkillPoints() {
   onGet(
     {
@@ -686,7 +1034,9 @@ function handleSkillPointsSpent() {
       skills.push(skill);
     }
   }
-  const skillsAreTrained = skills.map((s) => s.toLowerCase().replace(' ', '_') + '_is_trained');
+  const skillsAreTrained = skills.map(
+    (s) => s.toLowerCase().replace(" ", "_") + "_is_trained"
+  );
 
   onGet(
     {
@@ -709,7 +1059,7 @@ function handleSkillPointsSpent() {
 function handleSkills() {
   for (const attribute of Object.keys(SKILLS_BY_ATTRIBUTE)) {
     for (let skill of SKILLS_BY_ATTRIBUTE[attribute]) {
-      skill = skill.toLowerCase().replace(' ', '_');
+      skill = skill.toLowerCase().replace(" ", "_");
       const numeric = [
         "all_skills_custom_modifier",
         "fatigue_penalty",
@@ -754,12 +1104,120 @@ function handleSkills() {
   }
 }
 
+function handleUniversalAbilities() {
+  onGet({ numeric: ["strength", "level", "accuracy", "flexibility"] }, (v) => {
+    setAttrs({
+      escape_grapple_accuracy: Math.max(
+        v.accuracy,
+        Math.floor(v.level / 2) + v.strength,
+        v.flexibility_total
+      ),
+      maintain_grapple_accuracy: Math.max(
+        v.accuracy,
+        Math.floor(v.level / 2) + v.strength
+      ),
+    });
+  });
+}
+
 function handleUnknownStatistic() {
   onGet({ miscCount: 4, miscName: "unknown_statistic" }, (v) => {
     setAttrs({
       unknown_statistic: v.misc,
     });
   });
+}
+
+function handleVitalRolls() {
+  onGet(
+    { miscCount: 3, miscName: "vital_rolls", numeric: ["vital_wound_count"] },
+    (v) => {
+      const totalValue = v.misc - v.vital_wound_count;
+      setAttrs({ vital_rolls: totalValue });
+    }
+  );
+}
+
+function handleVitalWounds() {
+  function calcVitalWoundEffect(roll) {
+    roll = Number(roll);
+    if (roll <= -1) {
+      return "Unconscious, die next round";
+    } else if (roll >= 10) {
+      return "No effect";
+    }
+    return {
+      0: "Unconscious, die after a minute",
+      1: "Unconscious below max HP",
+      2: "Half max HP and resistances",
+      3: "-2 accuracy",
+      4: "-2 defenses",
+      5: "-1 vital rolls",
+      6: "Half speed below max HP",
+      7: "Half max resistances",
+      8: "-1 accuracy",
+      9: "-1 defenses",
+    }[roll];
+  }
+
+  function countRolls(rolls, value) {
+    return rolls.filter((r) => r == value).length;
+  }
+
+  on(
+    "change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds",
+    function (eventInfo) {
+      getSectionIDs("repeating_vitalwounds", (repeatingSectionIds) => {
+        const vitalWoundRollIds = repeatingSectionIds.map(
+          (id) => `repeating_vitalwounds_${id}_vital_wound_roll`
+        );
+        getAttrs(vitalWoundRollIds, (values) => {
+          let rolls = Object.values(values);
+          let accuracy_penalty =
+            -countRolls(rolls, 3) * 2 - countRolls(rolls, 8);
+          let defense_penalty =
+            -countRolls(rolls, 4) * 2 - countRolls(rolls, 9);
+          let vital_roll_penalty = -countRolls(rolls, 5);
+          let hp_multiplier = 0.5 ** countRolls(rolls, 2);
+          let resistance_multiplier =
+            0.5 ** (countRolls(rolls, 2) + countRolls(rolls, 7));
+          let attrs = {
+            vital_wound_count: repeatingSectionIds.length,
+
+            accuracy_vital_wound_modifier: accuracy_penalty,
+            all_defenses_vital_wound_modifier: defense_penalty,
+            hit_points_vital_wound_multiplier: hp_multiplier,
+            damage_resistance_bonus_vital_wound_multiplier:
+              resistance_multiplier,
+            vital_rolls_vital_wound_modifier: vital_roll_penalty,
+          };
+          if (eventInfo.triggerName != "remove:repeating_vitalwounds") {
+            let effect_id = eventInfo.sourceAttribute.replace(
+              "_roll",
+              "_effect"
+            );
+            attrs[effect_id] = calcVitalWoundEffect(eventInfo.newValue);
+          }
+          setAttrs(attrs);
+        });
+      });
+    }
+  );
+}
+
+function handleWeaponDamageDice() {
+  onGet(
+    {
+      miscCount: 4,
+      miscName: "weapon_damage_dice",
+      numeric: ["level", "challenge_rating"],
+    },
+    (v) => {
+      const fromCr = v.challenge_rating > 0 ? Math.floor((v.level - 1) / 3) : 0;
+      const totalValue = fromCr + v.misc;
+      setAttrs({ weapon_damage_dice: totalValue });
+    }
+  );
 }
 
 handleEverything();
