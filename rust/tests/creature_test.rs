@@ -75,7 +75,7 @@ fn it_calculates_modifiers() {
         creature.calc_defense(&Defense::Fortitude),
         "Should have 0 Fort"
     );
-    assert_eq!(3, creature.calc_damage_resistance(), "Should have 3 DR");
+    assert_eq!(4, creature.calc_damage_resistance(), "Should have 4 DR");
 }
 
 #[test]
