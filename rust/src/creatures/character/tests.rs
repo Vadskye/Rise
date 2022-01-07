@@ -232,6 +232,20 @@ fn standard_character_statistics_level_1() {
     // HasAttacks
     assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
     assert_eq!(2, creature.calc_power(), "Power: 2");
+    assert_eq!(
+        vec![
+            "Certain Broadsword +3 (The target takes 1d10+1 slashing damage.)",
+            "Generic Scaling Broadsword +1 (The target takes 1d10+2 slashing damage.)",
+            "Mighty Broadsword -1 (The target takes 1d10+6 slashing damage.)",
+            "Broadsword +1 (The target takes 1d10+2 slashing damage.)"
+        ],
+        creature
+            .calc_all_attacks()
+            .iter()
+            .map(|a| a.shorthand_description(&creature))
+            .collect::<Vec<String>>(),
+        "Attack descriptions",
+    );
 
     // HasAttributes
     assert_eq!(
@@ -263,7 +277,11 @@ fn standard_character_statistics_level_1() {
 
     // HasDamageAbsorption
     assert_eq!(12, creature.calc_hit_points(), "HP: (1 level + 2 con)",);
-    assert_eq!(8, creature.calc_damage_resistance(), "DR: 5 scale + (1 level + 2 con)",);
+    assert_eq!(
+        8,
+        creature.calc_damage_resistance(),
+        "DR: 5 scale + (1 level + 2 con)",
+    );
 
     // HasResources
     assert_eq!(
@@ -405,7 +423,11 @@ fn standard_character_statistics_level_20() {
         creature.calc_accuracy(),
         "Accuracy: 10 level + 1 per + 1 equip train",
     );
-    assert_eq!(24, creature.calc_power(), "Power: 16 scaling + 8 magic item");
+    assert_eq!(
+        24,
+        creature.calc_power(),
+        "Power: 16 scaling + 8 magic item"
+    );
     assert_eq!(
         vec![
             "Certain Broadsword +17 (The target takes 4d10+12 slashing damage.)",

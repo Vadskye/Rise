@@ -410,20 +410,28 @@ mod calc_attack_damage_per_round {
         let defender = Character::standard_character(1, true).creature;
         assert_eq!(7, defender.calc_defense(&Defense::Armor));
 
-        let expected_strike_results = vec!["4.396", "3.897", "4.498"];
+        let expected_strike_results = vec!["5.173", "4.453", "4.832"];
         assert_eq!(
             expected_strike_results,
             standard_adpr(&attacker, &defender),
             "
-    Certain Strike dpr: 5.5 dph * 0.7 hpr + 4.5 dpc * 0.077 cpr + 1 dpg * 0.2 gpr = 3.85 + 0.3465 + 0.2
-    Generic dpr: 6.5 dph * 0.5 hpr + 4.5 dpc * 0.055 cpr + 2 dpg + 0.2 gpr = 3.25 + 0.2475 + 0.4
-    Mighty Strike dpr: 10.5 dph * 0.3 hpr + 4.5 dpc * 0.033 cpr + 6 dpg + 0.2 gpr = 3.15 + .1485 + 1.2",
+    Certain Strike dpr: 6.5 dph * 0.7 hpr + 5.5 dpc * 0.077 cpr + 1 dpg * 0.2 gpr = 4.55 + 0.4235 + 0.2
+    Generic dpr: 7.5 dph * 0.5 hpr + 5.5 dpc * 0.055 cpr + 2 dpg * 0.2 gpr = 3.75 + 0.3025 + 0.4 gpr
+    Mighty Strike dpr: 11.5 dph * 0.3 hpr + 5.5 dpc * 0.033 cpr + 6 dpg * 0.2 gpr = 3.45 + 0.1815 + 1.2"
+        );
+        assert_eq!(
+            expected_strike_results,
+            standard_adpr(&attacker, &defender),
+            "
+    Certain Strike dpr: 6.5 dph * 0.7 hpr + 5.5 dpc * 0.077 cpr + 1 dpg * 0.2 gpr = 4.55 + 0.4235 + 0.2
+    Generic dpr: 7.5 dph * 0.5 hpr + 5.5 dpc * 0.055 cpr + 2 dpg * 0.2 gpr = 3.75 + 0.3025 + 0.4 gpr
+    Mighty Strike dpr: 11.5 dph * 0.3 hpr + 5.5 dpc * 0.033 cpr + 6 dpg * 0.2 gpr = 3.45 + 0.1815 + 1.2"
         );
 
         assert_eq!(
             find_best_attack(&attacker, &defender).unwrap().name,
-            "Mighty Broadsword",
-            "Mighty Strike should be the best attack",
+            "Certain Broadsword",
+            "Certain Strike should be the best attack",
         );
     }
 
@@ -433,20 +441,20 @@ mod calc_attack_damage_per_round {
         let defender = Monster::standard_monster(ChallengeRating::Two, 1, None, None).creature;
         assert_eq!(7, defender.calc_defense(&Defense::Armor));
 
-        let expected_strike_results = vec!["4.396", "3.897", "4.498"];
+        let expected_strike_results = vec!["5.173", "4.453", "4.832"];
         assert_eq!(
             expected_strike_results,
             standard_adpr(&attacker, &defender),
             "
-    Certain Strike dpr: 5.5 dph * 0.7 hpr + 4.5 dpc * 0.077 cpr + 1 dpg * 0.2 gpr = 3.85 + 0.3465 + 0.2
-    Generic dpr: 6.5 dph * 0.5 hpr + 4.5 dpc * 0.055 cpr + 2 dpg * 0.2 gpr = 3.25 + 0.2475 + 0.4 gpr
-    Mighty Strike dpr: 10.5 dph * 0.3 hpr + 4.5 dpc * 0.033 cpr + 6 dpg * 0.2 gpr = 3.15 + 0.1485 + 1.2"
+    Certain Strike dpr: 6.5 dph * 0.7 hpr + 5.5 dpc * 0.077 cpr + 1 dpg * 0.2 gpr = 4.55 + 0.4235 + 0.2
+    Generic dpr: 7.5 dph * 0.5 hpr + 5.5 dpc * 0.055 cpr + 2 dpg * 0.2 gpr = 3.75 + 0.3025 + 0.4 gpr
+    Mighty Strike dpr: 11.5 dph * 0.3 hpr + 5.5 dpc * 0.033 cpr + 6 dpg * 0.2 gpr = 3.45 + 0.1815 + 1.2"
         );
 
         assert_eq!(
             find_best_attack(&attacker, &defender).unwrap().name,
-            "Mighty Broadsword",
-            "Mighty Strike should be the best attack",
+            "Certain Broadsword",
+            "Certain Strike should be the best attack",
         );
     }
 
@@ -458,14 +466,14 @@ mod calc_attack_damage_per_round {
         defender.set_base_attribute(Attribute::Dexterity, -1);
         assert_eq!(4, defender.calc_defense(&Defense::Armor));
 
-        let expected_strike_results = vec!["5.995", "5.996", "7.797"];
+        let expected_strike_results = vec!["7.105", "6.884", "8.463"];
         assert_eq!(
             expected_strike_results,
             standard_adpr(&attacker, &defender),
             "
-    Certain Strike gpr: 5.5 dph * 1.0 hpr + 4.5 dpc * 0.110 cpr = 5.5 + 0.495
-    Generic dpr: 6.5 dph * 0.8 hpr + 4.5 dpc * 0.088 cpr + 2 dpg + 0.2 gpr = 5.2 + 0.396 + 0.4
-    Mighty Strike dpr: 10.5 dph * 0.6 hpr + 4.5 dpc * 0.066 cpr + 6 dpg + 0.2 gpr = 6.3 + 0.297 + 1.2"
+    Certain Strike dpr: 6.5 dph * 1.0 hpr + 5.5 dpc * 0.110 cpr = 6.5 + 0.605
+    Generic dpr: 7.5 dph * 0.8 hpr + 5.5 dpc * 0.088 cpr + 2 dpg + 0.2 gpr = 6.0 + 0.484 + 0.4
+    Mighty Strike dpr: 11.5 dph * 0.6 hpr + 5.5 dpc * 0.066 cpr + 6 dpg + 0.2 gpr = 6.9 + 0.363 + 1.2"
         );
 
         assert_eq!(
@@ -481,14 +489,14 @@ mod calc_attack_damage_per_round {
         let defender = Monster::standard_monster(ChallengeRating::Two, 10, None, None).creature;
         assert_eq!(13, defender.calc_defense(&Defense::Armor));
 
-        let expected_strike_results = vec!["10.216", "11.585", "10.831"];
+        let expected_strike_results = vec!["12.992", "13.395", "11.997"];
         assert_eq!(
             expected_strike_results,
             standard_adpr(&attacker, &defender),
             "
-    Certain Strike dpr: 11 dph * 0.8 hpr + 7 dpc * 0.088 cpr + 4 dpg * 0.2 gpr = 8.8 + 0.616 + 0.8
-    Generic dpr: 18 dph * 0.5 hpr + 7 dpc * 0.055 cpr + 11 dpg * 0.2 gpr = 9 + 0.385 + 2.2
-    Mighty Strike dpr: 24 dph * 0.3 hpr + 7 dpc * 0.033 cpr + 17 dpg * 0.2 gpr = 7.2 + 0.231 + 3.4",
+    Certain Strike dpr: 14 dph * 0.8 hpr + 9 dpc * 0.088 cpr + 5 dpg * 0.2 gpr = 11.2 + 0.792 + 1.0
+    Generic dpr: 21 dph * 0.5 hpr + 9 dpc * 0.055 cpr + 12 dpg * 0.2 gpr = 10.5 + 0.495 + 2.4
+    Mighty Strike dpr: 27 dph * 0.3 hpr + 9 dpc * 0.033 cpr + 18 dpg * 0.2 gpr = 8.1 + 0.297 + 3.6",
         );
 
         assert_eq!(
@@ -504,7 +512,7 @@ mod calc_attack_damage_per_round {
         let defender = Monster::standard_monster(ChallengeRating::Two, 20, None, None).creature;
         assert_eq!(19, defender.calc_defense(&Defense::Armor));
 
-        let expected_strike_results = vec!["25.982", "22.992", "20.396"];
+        let expected_strike_results = vec!["33.978", "28.968", "24.084"];
 
         assert_eq!(
             expected_strike_results,
@@ -527,7 +535,7 @@ mod calc_attack_damage_per_round {
         defender.set_base_attribute(Attribute::Dexterity, -1);
         assert_eq!(16, defender.calc_defense(&Defense::Armor));
 
-        let expected_strike_results = vec!["29.996", "36.486", "38.690"];
+        let expected_strike_results = vec!["38.884", "45.894", "45.810"];
 
         assert_eq!(
             expected_strike_results,
@@ -537,8 +545,8 @@ mod calc_attack_damage_per_round {
 
         assert_eq!(
             find_best_attack(&attacker, &defender).unwrap().name,
-            "Mighty Broadsword",
-            "Mighty Strike should be the best attack",
+            "Generic Scaling Broadsword",
+            "Generic Strike should be the best attack",
         );
     }
 
@@ -554,12 +562,12 @@ mod calc_attack_damage_per_round {
                 Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
             assert_eq!(
                 calc_attack_damage_per_round(
-                    &attacker.get_attack_by_name("Mighty Broadsword").unwrap(),
+                    &attacker.get_attack_by_name("Certain Broadsword").unwrap(),
                     &attacker,
                     &defender
                 ),
                 calc_individual_dpr(&attacker, &defender),
-                "At level 1, Mighty Strike should be the best attack",
+                "At level 1, Certain Strike should be the best attack",
             );
 
             level = 10;
@@ -614,12 +622,12 @@ mod calc_attack_damage_per_round {
             defender.set_base_attribute(Attribute::Dexterity, -1);
             assert_eq!(
                 calc_attack_damage_per_round(
-                    &attacker.get_attack_by_name("Mighty Broadsword").unwrap(),
+                    &attacker.get_attack_by_name("Generic Scaling Broadsword").unwrap(),
                     &attacker,
                     &defender
                 ),
                 calc_individual_dpr(&attacker, &defender),
-                "At level 10, Mighty Strike should be the best attack",
+                "At level 10, Generic Strike should be the best attack",
             );
 
             level = 20;
@@ -628,12 +636,12 @@ mod calc_attack_damage_per_round {
             defender.set_base_attribute(Attribute::Dexterity, -1);
             assert_eq!(
                 calc_attack_damage_per_round(
-                    &attacker.get_attack_by_name("Mighty Broadsword").unwrap(),
+                    &attacker.get_attack_by_name("Generic Scaling Broadsword").unwrap(),
                     &attacker,
                     &defender
                 ),
                 calc_individual_dpr(&attacker, &defender),
-                "At level 20, Mighty Strike should be the best attack",
+                "At level 20, Generic Scaling Strike should be the best attack",
             );
         }
 
