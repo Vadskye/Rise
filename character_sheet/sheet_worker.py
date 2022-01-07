@@ -3,30 +3,40 @@ import re
 
 
 def generate_script():
-    return "\n".join(
-        [
-            '<script type="text/worker">',
-            *[attribute_change(a.lower()) for a in ATTRIBUTES],
-            *[attribute_skills(a.lower()) for a in ATTRIBUTE_SKILLS],
-            *core_statistics(),
-            *defenses(),
-            damage_resistance(),
-            *abilities_known(),
-            attunement_points(),
-            skill_points_spent(),
-            unknown_statistic(),
-            vital_wounds(),
-            universal_abilities(),
-            attuned_effects(),
-            custom_modifiers(),
-            monster_chat_color(),
-            damage_dice(),
-            debuffs(),
-            rust(),
-            "</script>",
-            "",
-        ]
-    )
+    if True:
+        with open("./sheet_worker.js") as file:
+            lines = file.readlines()
+            return "".join([
+                '<script type="text/worker">',
+                *lines,
+                '</script>',
+                '',
+            ])
+    else:
+        return "\n".join(
+            [
+                '<script type="text/worker">',
+                *[attribute_change(a.lower()) for a in ATTRIBUTES],
+                *[attribute_skills(a.lower()) for a in ATTRIBUTE_SKILLS],
+                *core_statistics(),
+                *defenses(),
+                damage_resistance(),
+                *abilities_known(),
+                attunement_points(),
+                skill_points_spent(),
+                unknown_statistic(),
+                vital_wounds(),
+                universal_abilities(),
+                attuned_effects(),
+                custom_modifiers(),
+                monster_chat_color(),
+                damage_dice(),
+                debuffs(),
+                rust(),
+                "</script>",
+                "",
+            ]
+        )
 
 
 def formatChangeString(varName):
