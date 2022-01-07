@@ -55,9 +55,10 @@ def create_page(destination):
                             if destination == "roll20"
                             else paper_abilities_summary(),
                             div({"class": "section-header"}, "Abilities Known"),
+                            calc_combat_styles(),
                             calc_maneuvers(),
-                            calc_spells(),
                             calc_spheres(),
+                            calc_spells(),
                             div({"class": "section-header"}, "Abilities Chosen"),
                             textarea(
                                 {
@@ -266,10 +267,37 @@ def calc_spells():
     )
 
 
+def calc_combat_styles():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Combat Styles"),
+            equation(
+                [
+                    underlabel(
+                        "1/2 Insight",
+                        number_input(
+                            {
+                                "name": "combat_styles_known_insight_points",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("combat_styles_known", 4),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "combat_styles_known_display",
+                    "value": "@{combat_styles_known}",
+                },
+            ),
+        ]
+    )
+
+
 def calc_spheres():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Spheres"),
+            div({"class": "calc-header"}, "Mystic Spheres"),
             equation(
                 [
                     underlabel(
