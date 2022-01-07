@@ -391,7 +391,7 @@ def generate_implements():
             name="Staff of Silence",
             rank=1,
             material_type="Staff",
-            tags=['Swift'],
+            tags=["Swift"],
             description="""
                 As a \\glossterm<free action>, you can activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<verbal components>.
@@ -403,7 +403,7 @@ def generate_implements():
             name="Staff of Stillness",
             rank=1,
             material_type="Staff",
-            tags=['Swift'],
+            tags=["Swift"],
             description="""
                 As a \\glossterm<free action>, you can activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<somatic components>.
@@ -701,7 +701,7 @@ def generate_implements():
             name="Vampiric Staff",
             rank=4,
             material_type="Staff",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 1d8+3 \\glossterm{hit points}.
             """,
@@ -711,7 +711,7 @@ def generate_implements():
             name="Vampiric, Greater",
             rank=6,
             material_type="Staff",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 2d8+7 \\glossterm{hit points}.
             """,
@@ -817,7 +817,7 @@ def generate_implements():
             name="Staff of Healing Rhythm",
             rank=4,
             material_type="Staff",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Whenever you use a \\glossterm<Healing> ability, you gain a +1 \\glossterm<accuracy> bonus during the next round.
 
@@ -831,7 +831,7 @@ def generate_implements():
             name="Staff of Healing Rhythm, Greater",
             rank=7,
             material_type="Staff",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Whenever you use a \\glossterm<Healing> ability, you gain a +2 \\glossterm<accuracy> bonus during the next round.
 

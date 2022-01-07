@@ -25,6 +25,7 @@ from cgi_simple import (
     underlabel_spaced,
 )
 
+
 def old_attacks():
     return [
         div({"class": "section-header"}, "Magical Attacks (Deprecated)"),
@@ -43,6 +44,7 @@ def old_attacks():
             attack("nondamaging"),
         ),
     ]
+
 
 # source: 'magical', 'mundane', 'nondamaging'
 def attack(source):
@@ -90,7 +92,9 @@ def attack(source):
                                 select(
                                     {"class": "attack-power", "name": "attack0_power"},
                                     [
-                                        option({"value": "1", "selected": True}, "Full"),
+                                        option(
+                                            {"value": "1", "selected": True}, "Full"
+                                        ),
                                         option({"value": "0.5"}, "Half"),
                                         option({"value": "0"}, "None"),
                                     ],
@@ -137,24 +141,34 @@ def attack(source):
         ],
     )
 
+
 def attack_button_text(source):
     damage = {
-        'nondamaging': '',
-        'magical': '[[@{attack0_dice}+floor(@{magical_power}*@{attack0_power})]]',
-        'mundane': '[[@{attack0_dice}+floor(@{mundane_power}*@{attack0_power})]]',
+        "nondamaging": "",
+        "magical": "[[@{attack0_dice}+floor(@{magical_power}*@{attack0_power})]]",
+        "mundane": "[[@{attack0_dice}+floor(@{mundane_power}*@{attack0_power})]]",
     }[source]
     repeating_section_name = {
-        'nondamaging': 'repeating_attacks',
-        'magical': 'repeating_magicalattacks',
-        'mundane': 'repeating_mundaneattacks',
-    }[source];
+        "nondamaging": "repeating_attacks",
+        "magical": "repeating_magicalattacks",
+        "mundane": "repeating_mundaneattacks",
+    }[source]
     damage_text = (
-        " {{"
-        + "Damage=" + damage
-        + " [C](~" + repeating_section_name + "_damage_dice_only)"
-        + " [G](~" + repeating_section_name + "_power_only)"
-        + "}}"
-    )if damage else ""
+        (
+            " {{"
+            + "Damage="
+            + damage
+            + " [C](~"
+            + repeating_section_name
+            + "_damage_dice_only)"
+            + " [G](~"
+            + repeating_section_name
+            + "_power_only)"
+            + "}}"
+        )
+        if damage
+        else ""
+    )
     return (
         "&{template:custom}"
         + " {{title=@{attack0_name}}}"
@@ -166,6 +180,7 @@ def attack_button_text(source):
         + " {{desc=@{attack0_effect}}}"
     )
 
+
 def crit_damage_text():
     return (
         "&{template:custom}"
@@ -175,11 +190,14 @@ def crit_damage_text():
         + " {{color=@{chat_color}}}"
     )
 
+
 def glance_damage_text(source):
     return (
         "&{template:custom}"
         + " {{title=@{attack0_name}}}"
         + " {{subtitle=@{character_name}}}"
-        + " {{Glance Damage=[[floor(@{" + source + "_power}*@{attack0_power})]]}}"
+        + " {{Glance Damage=[[floor(@{"
+        + source
+        + "_power}*@{attack0_power})]]}}"
         + " {{color=@{chat_color}}}"
     )

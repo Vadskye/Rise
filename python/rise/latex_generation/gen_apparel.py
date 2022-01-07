@@ -634,7 +634,7 @@ def generate_apparel():
                 This does not prevent you from being \\grappled, but you gain a +4 bonus to your defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
             """,
             short_description="Grants immunity to almost all mobility restrictions",
-        )
+        ),
     ]
 
     apparel += [
@@ -778,7 +778,7 @@ def generate_apparel():
             name="Lifesaver Ring",
             rank=2,
             material_type="Ring",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 1d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
@@ -789,7 +789,7 @@ def generate_apparel():
             name="Lifesaver Ring, Greater",
             rank=4,
             material_type="Ring",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 2d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
@@ -800,7 +800,7 @@ def generate_apparel():
             name="Lifesaver Ring, Supreme",
             rank=6,
             material_type="Ring",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 4d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
@@ -814,7 +814,7 @@ def generate_apparel():
             name="Dazeshare Ring",
             rank=2,
             material_type="Ring",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
                 On a hit, each target becomes \\glossterm<briefly> dazed.
@@ -825,7 +825,7 @@ def generate_apparel():
             name="Stunshare Ring",
             rank=5,
             material_type="Ring",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
                 On a hit, each target becomes \\glossterm<briefly> stunned.
@@ -1489,7 +1489,7 @@ def generate_apparel():
             name="Belt of Healing",
             rank=2,
             material_type="Belt",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 As a standard action, you can use this belt to regain 1d10+4 hit points.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
@@ -1500,7 +1500,7 @@ def generate_apparel():
             name="Belt of Healing, Greater",
             rank=4,
             material_type="Belt",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 As a standard action, you can use this belt to regain 2d10+7 hit points.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
@@ -1511,7 +1511,7 @@ def generate_apparel():
             name="Belt of Healing, Supreme",
             rank=6,
             material_type="Belt",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 As a standard action, you can use this belt to regain 4d10+14 hit points.
                 After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
@@ -2135,7 +2135,6 @@ def generate_apparel():
             """,
             short_description="Can exert to quickly remove a debuff",
         ),
-
         MagicItem(
             name="Quickcleanse Belt, Greater",
             rank=7,
@@ -2809,7 +2808,7 @@ def generate_apparel():
             name="Spellfeeding Amulet",
             rank=2,
             material_type="Amulet",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 1d8+4 \\glossterm<hit points>.
                 After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
@@ -2820,7 +2819,7 @@ def generate_apparel():
             name="Spellfeeding Amulet, Greater",
             rank=4,
             material_type="Amulet",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d8+7 \\glossterm<hit points>.
                 After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
@@ -2831,7 +2830,7 @@ def generate_apparel():
             name="Spellfeeding Amulet, Supreme",
             rank=6,
             material_type="Amulet",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d8+14 \\glossterm<hit points>.
                 After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.

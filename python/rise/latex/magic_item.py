@@ -102,9 +102,21 @@ class MagicItem(object):
         return f"\\parhead*<Tags> {self.latex_tags()}" if self.tags else ""
 
     def latex(self):
-        type_text = "" if self.material_type is None else f"\\textbf<Type>: {self.material_type}"
-        materials_text = "" if self.materials == "none" else f"\\textbf<Materials>: {', '.join(sorted(self.materials)).capitalize()}"
-        twocol_text = f"\\spelltwocol<{type_text}><{self.tag_text()}>" if type_text or self.tag_text() else ""
+        type_text = (
+            ""
+            if self.material_type is None
+            else f"\\textbf<Type>: {self.material_type}"
+        )
+        materials_text = (
+            ""
+            if self.materials == "none"
+            else f"\\textbf<Materials>: {', '.join(sorted(self.materials)).capitalize()}"
+        )
+        twocol_text = (
+            f"\\spelltwocol<{type_text}><{self.tag_text()}>"
+            if type_text or self.tag_text()
+            else ""
+        )
         return join(
             f"""
                 \\hypertargetraised<item:{self.name}><\\subsubsection<{self.name}\\hfill Rank~{self.rank} ({self.price()} gp)>>

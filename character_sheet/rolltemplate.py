@@ -17,6 +17,7 @@ def rolltemplate_html():
 </rolltemplate>
     """
 
+
 def rolltemplate_css():
     jakob_default = """
 /* Smaller margins - remove these if you want the huge default left margin */

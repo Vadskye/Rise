@@ -28,42 +28,47 @@ def generate_script():
         ]
     )
 
+
 def formatChangeString(varName):
-    if 'repeating_' in varName:
-        return re.sub(r'repeating_([^_]+)_(.*)', r'change:repeating_\1:\2', varName)
+    if "repeating_" in varName:
+        return re.sub(r"repeating_([^_]+)_(.*)", r"change:repeating_\1:\2", varName)
     else:
-        return 'change:' + varName
+        return "change:" + varName
 
 
 def js_wrapper(
-        variables,
-        function_body,
-        boolean_variables=[],
-        string_variables=[],
-        no_listen_variables=[],
-        include_level=True,
-        on_sheet_open=False,
+    variables,
+    function_body,
+    boolean_variables=[],
+    string_variables=[],
+    no_listen_variables=[],
+    include_level=True,
+    on_sheet_open=False,
 ):
     # not everything actually depends on level, but it's convenient to make
     # everything recalculate when level changes
     if include_level:
         variables = variables + ["level"]
-    all_unique_variables = sorted(list(set(variables + boolean_variables + string_variables)))
+    all_unique_variables = sorted(
+        list(set(variables + boolean_variables + string_variables))
+    )
     change_string = " ".join([formatChangeString(var) for var in all_unique_variables])
     if on_sheet_open:
         change_string += " sheet:opened"
-    get_attrs_string = ", ".join([f'"{var}"' for var in all_unique_variables + no_listen_variables])
+    get_attrs_string = ", ".join(
+        [f'"{var}"' for var in all_unique_variables + no_listen_variables]
+    )
     set_variables_string = (
         ";\n    ".join(
             [
                 f'var {stringify_variable_name(var)} = Number(v["{var}"] || 0)'
                 for var in variables + no_listen_variables
-            ] +
-            [
+            ]
+            + [
                 f'var {stringify_variable_name(var)} = v["{var}"] === "on" || v["{var}"] == 1 ? true : false'
                 for var in boolean_variables
-            ] +
-            [
+            ]
+            + [
                 f'var {stringify_variable_name(var)} = v["{var}"]'
                 for var in string_variables
             ]
@@ -105,9 +110,9 @@ def get_misc_variables(variable_name, count):
     # Multipliers to HP and resistances can't be incorporated into the "misc"
     # bucket
     if variable_name in [
-            "accuracy",
-            "all_defenses",
-            "vital_rolls",
+        "accuracy",
+        "all_defenses",
+        "vital_rolls",
     ]:
         misc += [variable_name + "_vital_wound_modifier"]
     return misc
@@ -520,7 +525,6 @@ def fatigue_tolerance():
     )
 
 
-
 def hit_points():
     misc = get_misc_variables("hit_points", 4)
     return js_wrapper(
@@ -529,7 +533,7 @@ def hit_points():
             "constitution",
             "challenge_rating",
             "hit_points_vital_wound_multiplier",
-            *misc
+            *misc,
         ],
         no_listen_variables=["hit_points", "hit_points_maximum"],
         function_body=f"""
@@ -892,15 +896,26 @@ def debuffs():
         """,
     )
 
+
 def rust():
     return js_wrapper(
         [
-            "level", "challenge_rating",
-            "strength", "dexterity", "constitution", "intelligence", "perception", "willpower"
+            "level",
+            "challenge_rating",
+            "strength",
+            "dexterity",
+            "constitution",
+            "intelligence",
+            "perception",
+            "willpower",
         ],
         string_variables=[
-            "alignment", "character_name", "size",
-            "weapon_0_name", "weapon_1_name", "weapon_2_name",
+            "alignment",
+            "character_name",
+            "size",
+            "weapon_0_name",
+            "weapon_1_name",
+            "weapon_2_name",
         ],
         function_body="""
             alignment = alignment ? `Usually ${alignment}` : "";
@@ -955,6 +970,7 @@ def vital_rolls():
         """,
     )
 
+
 def weapon_damage_dice():
     misc = get_misc_variables("weapon_damage_dice", 4)
     return js_wrapper(
@@ -969,6 +985,7 @@ def weapon_damage_dice():
         """,
     )
 
+
 def monster_chat_color():
     return js_wrapper(
         ["challenge_rating"],
@@ -981,6 +998,7 @@ def monster_chat_color():
             }}
         """,
     )
+
 
 def vital_wounds():
     return """
@@ -1038,6 +1056,7 @@ def vital_wounds():
         });
     """
 
+
 def attuned_effects():
     return """
         on("change:repeating_attunements remove:repeating_attunements", function(eventInfo) {
@@ -1052,6 +1071,7 @@ def attuned_effects():
             });
         });
     """
+
 
 def custom_modifiers():
     return """
@@ -1102,6 +1122,7 @@ def custom_modifiers():
         });
     """
 
+
 def abilities_known():
     return [
         combat_styles_known(),
@@ -1110,6 +1131,7 @@ def abilities_known():
         spheres_known(),
         *[blank_ability_known(i) for i in range(1)],
     ]
+
 
 def combat_styles_known():
     misc = get_misc_variables("combat_styles_known", 4)
@@ -1171,6 +1193,7 @@ def blank_ability_known(i):
         """,
     )
 
+
 def universal_abilities():
     return js_wrapper(
         ["strength", "level", "accuracy", "flexibility_total"],
@@ -1179,8 +1202,9 @@ def universal_abilities():
                 escape_grapple_accuracy: Math.max(accuracy, Math.floor(level/2) + strength, flexibility_total),
                 maintain_grapple_accuracy: Math.max(accuracy, Math.floor(level/2) + strength),
             }});
-        """
+        """,
     )
+
 
 def damage_dice():
     # We need two functions here! One updates a specific attack when that
@@ -1473,7 +1497,14 @@ def damage_dice():
         });
     """
 
-    return infrastructure + local_oda_change + local_strike_change + weapon_change + global_oda_change + global_strike_change
+    return (
+        infrastructure
+        + local_oda_change
+        + local_strike_change
+        + weapon_change
+        + global_oda_change
+        + global_strike_change
+    )
 
 
 def standard_damage_at_power(power):
