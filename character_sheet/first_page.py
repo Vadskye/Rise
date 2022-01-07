@@ -24,30 +24,47 @@ from cgi_simple import (
     underlabeled_checkbox,
     underlabel_spaced,
 )
-from active_abilities_page import attack_button_text, calc_attack_power, construct_damage_text, other_damaging_attack_button_text, crit_damage_button, glance_damage_button
+from active_abilities_page import (
+    attack_button_text,
+    calc_attack_power,
+    construct_damage_text,
+    other_damaging_attack_button_text,
+    crit_damage_button,
+    glance_damage_button,
+)
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
 
 
 def create_page(destination):
-    return flex_col( {"class": "page first-page"}, [
-        boring_stuff(destination),
-        flex_row([
-            flex_col(
-                {"class": "sidebar"},
+    return flex_col(
+        {"class": "page first-page"},
+        [
+            boring_stuff(destination),
+            flex_row(
                 [
-                    attributes_and_skills(),
-                ],
+                    flex_col(
+                        {"class": "sidebar"},
+                        [
+                            attributes_and_skills(),
+                        ],
+                    ),
+                    flex_col(
+                        {"class": "main-body"},
+                        [
+                            statistics_header(destination),
+                            *(
+                                roll20_abilities()
+                                if destination == "roll20"
+                                else paper_abilities()
+                            ),
+                        ],
+                    ),
+                ]
             ),
-            flex_col(
-                {"class": "main-body"},
-                [
-                    statistics_header(destination),
-                    *(roll20_abilities() if destination == "roll20" else paper_abilities()),
-                ],
-            ),
-        ]),
-    ])
+        ],
+    )
+
 
 def paper_abilities():
     return [
@@ -55,11 +72,16 @@ def paper_abilities():
         *[paper_ability() for i in range(12)],
     ]
 
+
 def paper_ability():
-    return flex_row({"class": "paper-ability"}, [
-        labeled_text_input("Name", {"class": "ability-name"}),
-        labeled_textarea("Effect", {"class": "ability-effect"}),
-    ])
+    return flex_row(
+        {"class": "paper-ability"},
+        [
+            labeled_text_input("Name", {"class": "ability-name"}),
+            labeled_textarea("Effect", {"class": "ability-effect"}),
+        ],
+    )
+
 
 def roll20_abilities():
     return [
@@ -99,7 +121,7 @@ def roll20_abilities():
         flex_row(
             {"class": "active-ability-group"},
             fieldset(
-                {'class': 'repeating_custommodifiers'},
+                {"class": "repeating_custommodifiers"},
                 custom_modifier_toggle(),
             ),
         ),
@@ -200,7 +222,7 @@ def skill_box(name):
 
 def subskill_box(name):
     formatted_skill = name.lower().replace(" ", "_")
-    visible_skill_name = re.sub('\\d', '', name).title()
+    visible_skill_name = re.sub("\\d", "", name).title()
     return flex_row(
         {"class": "skill-box"},
         [
@@ -252,26 +274,34 @@ def defenses():
         {"class": "defenses"},
         [
             div({"class": "section-header"}, "Defenses"),
-            flex_row({"class": "defenses-row"}, [
-                flex_col({"class": "standard-defenses"}, [
-                    sidelabeled_number_input(
-                        defense,
-                        input_attributes={
-                            "disabled": "true",
-                            "name": defense.lower() + "_display",
-                            "value": "@{"
-                            + (
-                                "armor_defense"
-                                if defense == "Armor"
-                                else defense.lower()
+            flex_row(
+                {"class": "defenses-row"},
+                [
+                    flex_col(
+                        {"class": "standard-defenses"},
+                        [
+                            sidelabeled_number_input(
+                                defense,
+                                input_attributes={
+                                    "disabled": "true",
+                                    "name": defense.lower() + "_display",
+                                    "value": "@{"
+                                    + (
+                                        "armor_defense"
+                                        if defense == "Armor"
+                                        else defense.lower()
+                                    )
+                                    + "}",
+                                },
                             )
-                            + "}",
-                        },
-                    )
-                    for defense in DEFENSES
-                ]),
-                textarea({"class": "special-defenses", "name": f"special_defenses"}),
-            ]),
+                            for defense in DEFENSES
+                        ],
+                    ),
+                    textarea(
+                        {"class": "special-defenses", "name": f"special_defenses"}
+                    ),
+                ],
+            ),
         ],
     )
 
@@ -329,7 +359,12 @@ def resistances():
                     ),
                     flex_row(
                         [
-                            text_input({"class": "freeform-resistance-name", "name": "resistance_freeform_name"}),
+                            text_input(
+                                {
+                                    "class": "freeform-resistance-name",
+                                    "name": "resistance_freeform_name",
+                                }
+                            ),
                             number_input({"name": "resistance_freeform_current"}),
                             span({"class": "core-statistics-separator"}, "/"),
                             number_input({"name": "resistance_freeform_maximum"}),
@@ -337,7 +372,12 @@ def resistances():
                     ),
                     flex_row(
                         [
-                            text_input({"class": "freeform-resistance-name", "name": "resistance_freeform_name_2"}),
+                            text_input(
+                                {
+                                    "class": "freeform-resistance-name",
+                                    "name": "resistance_freeform_name_2",
+                                }
+                            ),
                             number_input({"name": "resistance_freeform_current_2"}),
                             span({"class": "core-statistics-separator"}, "/"),
                             number_input({"name": "resistance_freeform_maximum_2"}),
@@ -447,7 +487,8 @@ def movement(destination):
             ),
             *[
                 freeform_number_input(
-                    text_input_attributes={"name": f"movement_speed_{i}_name"}, number_input_attributes={"name": f"movement_speed_{i}_value"},
+                    text_input_attributes={"name": f"movement_speed_{i}_name"},
+                    number_input_attributes={"name": f"movement_speed_{i}_value"},
                 )
                 for i in range(2)
             ],
@@ -490,6 +531,7 @@ def movement(destination):
         ],
     )
 
+
 def active_ability_button(ability_type):
     prefix = "active_ability0" if ability_type == "ability" else "attack"
     button_name = "use_ability"
@@ -509,68 +551,109 @@ def active_ability_button(ability_type):
     if ability_type == "strike-based attack":
         for i in range(3):
             i = str(i)
-            extra_buttons.append(text_input({"class": "hidden", "name": f"weapon_{i}_total_damage_dice"}))
-            extra_buttons.append(text_input({"class": "hidden", "name": f"weapon_{i}_total_damage_modifier"}))
-            extra_buttons.append(crit_damage_button(
-                "@{weapon_" + i + "_total_damage_dice}",
-                "crit_" + i,
-                " - @{weapon_" + i + "_name}",
-            ))
-            extra_buttons.append(glance_damage_button(
-                "@{weapon_" + i + "_total_damage_modifier}",
-                "glance_" + i,
-                " - @{weapon_" + i + "_name}",
-            ))
+            extra_buttons.append(
+                text_input({"class": "hidden", "name": f"weapon_{i}_total_damage_dice"})
+            )
+            extra_buttons.append(
+                text_input(
+                    {"class": "hidden", "name": f"weapon_{i}_total_damage_modifier"}
+                )
+            )
+            extra_buttons.append(
+                crit_damage_button(
+                    "@{weapon_" + i + "_total_damage_dice}",
+                    "crit_" + i,
+                    " - @{weapon_" + i + "_name}",
+                )
+            )
+            extra_buttons.append(
+                glance_damage_button(
+                    "@{weapon_" + i + "_total_damage_modifier}",
+                    "glance_" + i,
+                    " - @{weapon_" + i + "_name}",
+                )
+            )
 
-    return div({"class": "active-ability-button"}, [
-        text_input({"class": "hidden", "name": prefix + "_accuracy", "value": "0"}),
-        text_input({"class": "hidden", "name": prefix + "_defense"}),
-        text_input({"class": "hidden", "name": "total_damage"}),
-        text_input({"class": "hidden", "name": "total_damage_dice"}),
-        text_input({"class": "hidden", "name": "total_damage_modifier"}),
-        textarea({"class": "hidden", "name": prefix + "_effect"}),
-        button(
-            {
-                "class": "attack-roll",
-                "name": button_name,
-                "type": "roll",
-                "value": button_value,
-            },
-            text_input({"class": "attack-label", "readonly": True, "name": prefix + "_name"}),
-        ),
-        *extra_buttons,
-    ])
+    return div(
+        {"class": "active-ability-button"},
+        [
+            text_input({"class": "hidden", "name": prefix + "_accuracy", "value": "0"}),
+            text_input({"class": "hidden", "name": prefix + "_defense"}),
+            text_input({"class": "hidden", "name": "total_damage"}),
+            text_input({"class": "hidden", "name": "total_damage_dice"}),
+            text_input({"class": "hidden", "name": "total_damage_modifier"}),
+            textarea({"class": "hidden", "name": prefix + "_effect"}),
+            button(
+                {
+                    "class": "attack-roll",
+                    "name": button_name,
+                    "type": "roll",
+                    "value": button_value,
+                },
+                text_input(
+                    {
+                        "class": "attack-label",
+                        "readonly": True,
+                        "name": prefix + "_name",
+                    }
+                ),
+            ),
+            *extra_buttons,
+        ],
+    )
+
 
 def weapon_attack_button_text():
     return (
         "&{template:custom}"
         + " {{title=@{attack_name}}}"
         + "?{Weapon"
-            + "| " + weapon_template(0)
-            + "| " + weapon_template(1)
-            + "| " + weapon_template(2)
+        + "| "
+        + weapon_template(0)
+        + "| "
+        + weapon_template(1)
+        + "| "
+        + weapon_template(2)
         + "}"
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
         + " {{desc=@{attack_effect}}}"
     )
 
+
 def weapon_template(i):
     i = str(i)
 
     return (
-        " @{weapon_" + i + "_name},"
-        + " {{subtitle=@{character_name} - @{weapon_" + i + "_name}&amp;#125;&amp;#125;"
-        + " {{Attack=[[d10!+@{accuracy}+@{weapon_" + i + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}&amp;#125;&amp;#125;"
-        + " {{Damage=[[[[@{weapon_" + i + "_total_damage_dice}]] + [[@{weapon_" + i + "_total_damage_modifier}]]]] = $[[1]] + $[[2]]&amp;#125;&amp;#125;"
-        + " {{Tags=@{weapon_" + i + "_tags}&amp;#125;&amp;#125;"
-    ).replace('~', '&amp;#126;')
+        " @{weapon_"
+        + i
+        + "_name},"
+        + " {{subtitle=@{character_name} - @{weapon_"
+        + i
+        + "_name}&amp;#125;&amp;#125;"
+        + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
+        + i
+        + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}&amp;#125;&amp;#125;"
+        + " {{Damage=[[[[@{weapon_"
+        + i
+        + "_total_damage_dice}]] + [[@{weapon_"
+        + i
+        + "_total_damage_modifier}]]]] = $[[1]] + $[[2]]&amp;#125;&amp;#125;"
+        + " {{Tags=@{weapon_"
+        + i
+        + "_tags}&amp;#125;&amp;#125;"
+    ).replace("~", "&amp;#126;")
+
 
 def custom_modifier_toggle():
-    return flex_row({"class": "custom-modifier-toggle"}, [
-        checkbox({"class": "is-active", "name": "is_active"}),
-        text_input({"name": "name", "readonly": True}),
-    ])
+    return flex_row(
+        {"class": "custom-modifier-toggle"},
+        [
+            checkbox({"class": "is-active", "name": "is_active"}),
+            text_input({"name": "name", "readonly": True}),
+        ],
+    )
+
 
 def boring_stuff(destination):
     return div(
@@ -593,31 +676,40 @@ def boring_stuff(destination):
                     ),
                     *(
                         [
-                            underlabel("CR", select(
-                                {"class": "challenge-rating", "name": "challenge_rating"},
-                                [
-                                    option({"value": ""}, ""),
-                                    option({"value": "0.5"}, "Half"),
-                                    option({"value": "1"}, "One"),
-                                    option({"value": "2"}, "Two"),
-                                    option({"value": "4"}, "Four"),
-                                    option({"value": "6"}, "Six"),
-                                ],
-                            )),
-                            underlabel("Chat color", select(
-                                {"class": "chat-color", "name": "chat_color"},
-                                [
-                                    option({"value": "black"}, "Black"),
-                                    option({"value": "blue"}, "Blue"),
-                                    option({"value": "bluegreen"}, "Bluegreen"),
-                                    option({"value": "brown"}, "Brown"),
-                                    option({"value": "gold"}, "Gold"),
-                                    option({"value": "gray"}, "Gray"),
-                                    option({"value": "green"}, "Green"),
-                                    option({"value": "orange"}, "Orange"),
-                                    option({"value": "purple"}, "Purple"),
-                                ],
-                            ))
+                            underlabel(
+                                "CR",
+                                select(
+                                    {
+                                        "class": "challenge-rating",
+                                        "name": "challenge_rating",
+                                    },
+                                    [
+                                        option({"value": ""}, ""),
+                                        option({"value": "0.5"}, "Half"),
+                                        option({"value": "1"}, "One"),
+                                        option({"value": "2"}, "Two"),
+                                        option({"value": "4"}, "Four"),
+                                        option({"value": "6"}, "Six"),
+                                    ],
+                                ),
+                            ),
+                            underlabel(
+                                "Chat color",
+                                select(
+                                    {"class": "chat-color", "name": "chat_color"},
+                                    [
+                                        option({"value": "black"}, "Black"),
+                                        option({"value": "blue"}, "Blue"),
+                                        option({"value": "bluegreen"}, "Bluegreen"),
+                                        option({"value": "brown"}, "Brown"),
+                                        option({"value": "gold"}, "Gold"),
+                                        option({"value": "gray"}, "Gray"),
+                                        option({"value": "green"}, "Green"),
+                                        option({"value": "orange"}, "Orange"),
+                                        option({"value": "purple"}, "Purple"),
+                                    ],
+                                ),
+                            ),
                         ]
                         if destination == "roll20"
                         else []

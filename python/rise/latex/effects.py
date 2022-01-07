@@ -72,9 +72,7 @@ class Effects(object):
             scaling_text = f"scaling: {scaling_text},"
 
         nontype_tags = [
-            tag
-            for tag in self.tags
-            if "Attune" not in tag and "Sustain" not in tag
+            tag for tag in self.tags if "Attune" not in tag and "Sustain" not in tag
         ]
         tags_text = f"tags: {nontype_tags}," if len(nontype_tags) > 0 else ""
 
@@ -106,7 +104,7 @@ class Effects(object):
                         casting_time_text,
                         effect_text,
                         functions_like_text,
-                        'focus: false,',
+                        "focus: false,",
                         scaling_text,
                         tags_text,
                         f'type: "{spell_type}",',
@@ -177,6 +175,7 @@ class Effects(object):
                 \\end<{ability_type}>
             """
         )
+
 
 def generate_effect_text(original_effect_text, targets):
     functions_like_matches = re.search(

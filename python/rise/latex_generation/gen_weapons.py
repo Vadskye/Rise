@@ -582,7 +582,7 @@ def generate_weapons():
                 This weapon functions like a \\mitem<fixating> weapon, except that the bonus increases by +2 with each strike.
             """,
             short_description="Grants +2 accuracy bonus against attacked foe",
-        )
+        ),
     ]
 
     weapons.append(
@@ -882,7 +882,7 @@ def generate_weapons():
             name="Vampiric",
             rank=4,
             material_type="Weapon",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 1d8+3 \\glossterm{hit points}.
             """,
@@ -892,7 +892,7 @@ def generate_weapons():
             name="Vampiric, Greater",
             rank=6,
             material_type="Weapon",
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 2d8+7 \\glossterm{hit points}.
             """,
