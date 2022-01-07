@@ -55,9 +55,10 @@ fn it_calculates_modifiers() {
             "defense fortitude by 5",
             "defense mental by 7",
             "defense reflex by 3",
+            "power 3",
             "resource attunement point by 4",
-            "resource fatigue tolerance by 3",
-            "resource insight point by 3",
+            "resource fatigue tolerance by 2",
+            "resource insight point by 2",
             "resource trained skill by 3"
         ],
         modifier_descriptions,
@@ -66,9 +67,9 @@ fn it_calculates_modifiers() {
 
     // Two from intrisic level modifier, two from rank abilities
     assert_eq!(
-        2,
+        3,
         warlock.creature.calc_damage_resistance(),
-        "Should have DR 2"
+        "Should have DR 3"
     );
 }
 
@@ -88,7 +89,7 @@ fn it_calculates_abyssal_blast() {
     assert_eq!(1, attacks.len(), "Should have one attack");
     let abyssal_blast = &attacks[0];
     assert_eq!(
-        "Abyssal Blast +10 (The target takes 7d10+15 fire damage.)",
+        "Abyssal Blast +10 (The target takes 6d10+35 fire damage.)",
         abyssal_blast.shorthand_description(&warlock.creature),
         "Should have correct description"
     );
