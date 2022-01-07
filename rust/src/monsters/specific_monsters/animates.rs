@@ -90,6 +90,97 @@ pub fn animates() -> Vec<MonsterEntry> {
         weapons: vec![],
     })));
 
+    add_animated_objects(&mut monsters);
+
+    add_treants(&mut monsters);
+
+    return monsters;
+}
+
+fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
+    // TODO: attach knowledge checks to the group as a whole, not any individual animated object
+    fn create_animated_object(
+        attributes: Vec<i32>,
+        challenge_rating: ChallengeRating,
+        level: i32,
+        name: &str,
+        size: Size,
+    ) -> Monster {
+        return animate(FullAnimateDefinition {
+            alignment: "Always true neutral".to_string(),
+            attributes,
+            challenge_rating,
+            description: None,
+            knowledge: None,
+            level,
+            modifiers: None,
+            movement_modes: None,
+            name: name.to_string(),
+            senses: Some(vec![Sense::Darkvision(60)]),
+            size,
+            trained_skills: None,
+            weapons: vec![StandardWeapon::Slam.weapon()],
+        });
+    }
+
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        knowledge: None,
+        name: "Animated Objects".to_string(),
+        monsters: vec![
+            create_animated_object(
+                vec![-4, 3, -4, 0, 0, -5],
+                ChallengeRating::Half,
+                1,
+                "Tiny Object",
+                Size::Tiny,
+            ),
+            create_animated_object(
+                vec![-2, 2, -2, 0, 0, -5],
+                ChallengeRating::One,
+                1,
+                "Small Object",
+                Size::Small,
+            ),
+            create_animated_object(
+                vec![0, 0, 0, 0, 0, -5],
+                ChallengeRating::Two,
+                2,
+                "Medium Object",
+                Size::Medium,
+            ),
+            create_animated_object(
+                vec![2, -1, 2, 0, 0, -5],
+                ChallengeRating::Two,
+                4,
+                "Large Object",
+                Size::Large,
+            ),
+            create_animated_object(
+                vec![3, -2, 3, 0, 0, -5],
+                ChallengeRating::Two,
+                7,
+                "Huge Object",
+                Size::Huge,
+            ),
+            create_animated_object(
+                vec![4, -2, 4, 0, 0, -5],
+                ChallengeRating::Two,
+                9,
+                "Gargantuan Object",
+                Size::Gargantuan,
+            ),
+            create_animated_object(
+                vec![5, -3, 5, 0, 0, -5],
+                ChallengeRating::Two,
+                11,
+                "Colossal Object",
+                Size::Colossal,
+            ),
+        ],
+    }));
+}
+
+fn add_treants(monsters: &mut Vec<MonsterEntry>) {
     struct TreantDefinition {
         alignment: String,
         attributes: Vec<i32>,
@@ -226,87 +317,4 @@ pub fn animates() -> Vec<MonsterEntry> {
             ],
         },
     ));
-
-    // TODO: attach knowledge checks to the group as a whole, not any individual animated object
-    fn create_animated_object(
-        attributes: Vec<i32>,
-        challenge_rating: ChallengeRating,
-        level: i32,
-        name: &str,
-        size: Size,
-    ) -> Monster {
-        return animate(FullAnimateDefinition {
-            alignment: "Always true neutral".to_string(),
-            attributes,
-            challenge_rating,
-            description: None,
-            knowledge: None,
-            level,
-            modifiers: None,
-            movement_modes: None,
-            name: name.to_string(),
-            senses: Some(vec![Sense::Darkvision(60)]),
-            size,
-            trained_skills: None,
-            weapons: vec![StandardWeapon::Slam.weapon()],
-        });
-    }
-
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
-        knowledge: None,
-        name: "Animated Objects".to_string(),
-        monsters: vec![
-            create_animated_object(
-                vec![-4, 3, -4, 0, 0, -5],
-                ChallengeRating::Half,
-                1,
-                "Tiny Object",
-                Size::Tiny,
-            ),
-            create_animated_object(
-                vec![-2, 2, -2, 0, 0, -5],
-                ChallengeRating::One,
-                1,
-                "Small Object",
-                Size::Small,
-            ),
-            create_animated_object(
-                vec![0, 0, 0, 0, 0, -5],
-                ChallengeRating::Two,
-                2,
-                "Medium Object",
-                Size::Medium,
-            ),
-            create_animated_object(
-                vec![2, -1, 2, 0, 0, -5],
-                ChallengeRating::Two,
-                4,
-                "Large Object",
-                Size::Large,
-            ),
-            create_animated_object(
-                vec![3, -2, 3, 0, 0, -5],
-                ChallengeRating::Two,
-                7,
-                "Huge Object",
-                Size::Huge,
-            ),
-            create_animated_object(
-                vec![4, -2, 4, 0, 0, -5],
-                ChallengeRating::Two,
-                9,
-                "Gargantuan Object",
-                Size::Gargantuan,
-            ),
-            create_animated_object(
-                vec![5, -3, 5, 0, 0, -5],
-                ChallengeRating::Two,
-                11,
-                "Colossal Object",
-                Size::Colossal,
-            ),
-        ],
-    }));
-
-    return monsters;
 }
