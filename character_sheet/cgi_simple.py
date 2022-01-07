@@ -52,7 +52,7 @@ def html_tag(tag_name, attributes=None, contents=None):
                 raise Exception("Name must not have dashes: " + attributes["name"])
 
     # An "attr_" prefix is required by roll20 for fields that are permanently
-    # stored on the sheet. We explicitly 
+    # stored on the sheet. We explicitly
     if "name" in attributes and not attributes["name"].startswith("nostore_"):
         attributes["name"] = "attr_" + attributes["name"]
 
@@ -269,6 +269,7 @@ def labeled_text_input(label_name, attributes=None, input_attributes=None):
         ),
     )
 
+
 def labeled_number_input(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, "class", "labeled-text-input")
@@ -297,9 +298,7 @@ def labeled_textarea(label_name, attributes=None, input_attributes=None):
     )
 
 
-def sidelabeled_number_input(
-    label_name, attributes=None, input_attributes=None
-):
+def sidelabeled_number_input(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, "class", "sidelabeled-number-input")
 
@@ -466,7 +465,7 @@ def underlabeled_checkbox(label_text, attributes=None, input_attributes=None):
                 {"class": "under-label"},
                 label_text,
             ),
-        ]
+        ],
     )
 
 
@@ -478,14 +477,18 @@ def label(attributes, text):
 def ol(attributes=None, contents=None):
     return html_tag("ol", attributes, contents)
 
+
 def ul(attributes=None, contents=None):
     return html_tag("ul", attributes, contents)
+
 
 def li(attributes=None, contents=None):
     return html_tag("li", attributes, contents)
 
+
 def p(attributes=None, contents=None):
     return html_tag("p", attributes, contents)
+
 
 def labeled_span(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()

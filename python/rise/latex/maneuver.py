@@ -79,9 +79,7 @@ class Maneuver(object):
             """
 
         nontype_tags = [
-            tag
-            for tag in self.tags
-            if "Attune" not in tag and "Sustain" not in tag
+            tag for tag in self.tags if "Attune" not in tag and "Sustain" not in tag
         ]
         tags_text = f"tags: {nontype_tags}," if len(nontype_tags) > 0 else ""
 
@@ -95,7 +93,11 @@ class Maneuver(object):
             err = sys.exc_info()[0]
             raise Exception(f"Unable to parse maneuver {self.name}: {err}")
 
-        targets_text = f"// original targets: {self.target}" if self.target and self.target != 'As chosen \\glossterm<strike>' else ""
+        targets_text = (
+            f"// original targets: {self.target}"
+            if self.target and self.target != "As chosen \\glossterm<strike>"
+            else ""
+        )
 
         elements_text = "\n".join(
             map(

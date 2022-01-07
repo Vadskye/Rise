@@ -28,14 +28,18 @@ from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
 from old_attacks import old_attacks
 
+
 def create_page(destination):
     return flex_col(
         {"class": "page active-abilities-page"},
         [
-            div({"class": "tab-explanation"}, """
+            div(
+                {"class": "tab-explanation"},
+                """
                 This tab is used to track the abilities that you can use.
                 Each ability you add here will appear as a button on the Core page.
-            """),
+            """,
+            ),
             # New attacks
             div({"class": "section-header"}, "Strike-Based Attacks"),
             fieldset(
@@ -61,12 +65,15 @@ def create_page(destination):
             ),
             flex_wrapper(div({"class": "section-header"}, "Universal Abilities")),
             universal_abilities(),
-            div("""
+            div(
+                """
                 These buttons cannot be customized.
                 If you have special benefits with some of these abilities, create your own versions of them above.
-            """),
+            """
+            ),
         ],
     )
+
 
 def ability():
     # TODO: make this legacy less dumb
@@ -149,6 +156,7 @@ def passive_ability(prefix, ability_number):
         ],
     )
 
+
 def paper_attack():
     return flex_row(
         {"class": "attack"},
@@ -168,6 +176,7 @@ def paper_attack():
             ),
         ],
     )
+
 
 def shared_attack_framework(calcs=[], buttons=[]):
     return flex_row(
@@ -216,6 +225,7 @@ def shared_attack_framework(calcs=[], buttons=[]):
         ],
     )
 
+
 def strike_based_attack():
     return shared_attack_framework(
         [
@@ -248,6 +258,7 @@ def strike_based_attack():
         ],
     )
 
+
 def weapon_buttons(i):
     i = str(i)
     return [
@@ -258,7 +269,13 @@ def weapon_buttons(i):
                 "type": "roll",
                 "value": weapon_attack_button(i),
             },
-            text_input({"disabled": True, "name": "weapon_attack_name_" + i, "value": "@{weapon_" + i + "_name}"}),
+            text_input(
+                {
+                    "disabled": True,
+                    "name": "weapon_attack_name_" + i,
+                    "value": "@{weapon_" + i + "_name}",
+                }
+            ),
         ),
         crit_damage_button(
             "@{weapon_" + i + "_total_damage_dice}",
@@ -270,9 +287,27 @@ def weapon_buttons(i):
             "glance_" + i,
             " - @{weapon_" + i + "_name}",
         ),
-        text_input({"class": "readonly-disabled strike-total-damage", "name": f"weapon_{i}_total_damage", "readonly": True}),
-        text_input({"class": "hidden", "name": f"weapon_{i}_total_damage_dice", "readonly": True}),
-        text_input({"class": "hidden", "name": f"weapon_{i}_total_damage_modifier", "readonly": True}),
+        text_input(
+            {
+                "class": "readonly-disabled strike-total-damage",
+                "name": f"weapon_{i}_total_damage",
+                "readonly": True,
+            }
+        ),
+        text_input(
+            {
+                "class": "hidden",
+                "name": f"weapon_{i}_total_damage_dice",
+                "readonly": True,
+            }
+        ),
+        text_input(
+            {
+                "class": "hidden",
+                "name": f"weapon_{i}_total_damage_modifier",
+                "readonly": True,
+            }
+        ),
     ]
 
 
@@ -311,36 +346,51 @@ def other_damaging_attack():
                 },
                 "Attack",
             ),
-            labeled_text_input("Total Damage", {"class": "total-damage"}, {"class": "readonly-disabled", "readonly": True, "name": "total_damage"}),
+            labeled_text_input(
+                "Total Damage",
+                {"class": "total-damage"},
+                {
+                    "class": "readonly-disabled",
+                    "readonly": True,
+                    "name": "total_damage",
+                },
+            ),
             crit_damage_button("@{total_damage_dice}", "crit"),
-            glance_damage_button('[[@{total_damage_modifier}]]', "glance"),
+            glance_damage_button("[[@{total_damage_modifier}]]", "glance"),
         ],
     )
 
-def other_damaging_attack_button_text():
-    return attack_button_text(construct_damage_text(
-        "@{total_damage}",
-        "repeating_otherdamagingattacks_crit",
-        "repeating_otherdamagingattacks_glance",
-    ))
 
-def calc_attack_power():
-    return (
-        "[[floor(@{power}*@{attack_power})]]"
+def other_damaging_attack_button_text():
+    return attack_button_text(
+        construct_damage_text(
+            "@{total_damage}",
+            "repeating_otherdamagingattacks_crit",
+            "repeating_otherdamagingattacks_glance",
+        )
     )
 
+
+def calc_attack_power():
+    return "[[floor(@{power}*@{attack_power})]]"
+
+
 def nondamaging_attack():
-    return shared_attack_framework([], [
-        button(
-            {
-                "class": "attack-roll",
-                "name": f"use_ability",
-                "type": "roll",
-                "value": attack_button_text(),
-            },
-            "Attack",
-        ),
-    ])
+    return shared_attack_framework(
+        [],
+        [
+            button(
+                {
+                    "class": "attack-roll",
+                    "name": f"use_ability",
+                    "type": "roll",
+                    "value": attack_button_text(),
+                },
+                "Attack",
+            ),
+        ],
+    )
+
 
 def crit_damage_button(crit_damage_calculation, name, subtitle_suffix=""):
     return button(
@@ -351,13 +401,18 @@ def crit_damage_button(crit_damage_calculation, name, subtitle_suffix=""):
             "value": (
                 "&{template:custom}"
                 + " {{title=@{attack_name}}}"
-                + " {{subtitle=@{character_name}" + subtitle_suffix + "}}"
-                + " {{Crit Damage=[[" + crit_damage_calculation + "]]}}"
+                + " {{subtitle=@{character_name}"
+                + subtitle_suffix
+                + "}}"
+                + " {{Crit Damage=[["
+                + crit_damage_calculation
+                + "]]}}"
                 + " {{color=@{chat_color}}}"
             ),
         },
         "",
     )
+
 
 def glance_damage_button(glance_damage_calculation, name, subtitle_suffix=""):
     return button(
@@ -368,38 +423,59 @@ def glance_damage_button(glance_damage_calculation, name, subtitle_suffix=""):
             "value": (
                 "&{template:custom}"
                 + " {{title=@{attack_name}}}"
-                + " {{subtitle=@{character_name}" + subtitle_suffix + "}}"
-                + " {{Glance Damage=[[" + glance_damage_calculation + "]]}}"
+                + " {{subtitle=@{character_name}"
+                + subtitle_suffix
+                + "}}"
+                + " {{Glance Damage=[["
+                + glance_damage_calculation
+                + "]]}}"
                 + " {{color=@{chat_color}}}"
-            )
+            ),
         },
         "",
     )
 
+
 def construct_damage_text(normal_damage, crit_damage_button, glance_damage_button):
     return (
-        " [[" + normal_damage + "]]"
-        + " [C](~" + crit_damage_button + ")"
-        + " [G](~" + glance_damage_button + ")"
+        " [["
+        + normal_damage
+        + "]]"
+        + " [C](~"
+        + crit_damage_button
+        + ")"
+        + " [G](~"
+        + glance_damage_button
+        + ")"
     )
+
 
 def weapon_attack_button(i):
     i = str(i)
     return (
         "&{template:custom}"
         + " {{title=@{attack_name}}}"
-        + " {{subtitle=@{character_name} - @{weapon_" + i + "_name}}}"
-        + " {{Attack=[[d10!+@{accuracy}+@{weapon_" + i + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}}}"
-        + " {{Damage=" + construct_damage_text(
+        + " {{subtitle=@{character_name} - @{weapon_"
+        + i
+        + "_name}}}"
+        + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
+        + i
+        + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}}}"
+        + " {{Damage="
+        + construct_damage_text(
             "@{weapon_" + i + "_total_damage}",
             "repeating_strikeattacks_crit_" + i,
             "repeating_strikeattacks_glance_" + i,
-        ) + "}}"
-        + " {{Tags=@{weapon_" + i + "_tags}}}"
+        )
+        + "}}"
+        + " {{Tags=@{weapon_"
+        + i
+        + "_tags}}}"
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
         + " {{desc=@{attack_effect}}}"
     )
+
 
 def attack_button_text(damage_text=None):
     return (
@@ -413,77 +489,138 @@ def attack_button_text(damage_text=None):
         + " {{desc=@{attack_effect}}}"
     )
 
+
 def universal_ability_button(name, effect, attack=None):
-    return div(button(
-        {
-            "type": "roll",
-            "value": (
-                "&{template:custom}"
-                + f" {{{{title={name}}}}}"
-                + " {{subtitle=@{character_name}}}"
-                + (f" {{{{Attack=[[d10!+{attack['accuracy']}]] vs {attack['defense']}}}}}" if attack else "")
-                + " {{color=@{chat_color}}}"
-                + f" {{{{desc={effect.strip()}}}}}"
-            ),
-        },
-        name,
-    ))
+    return div(
+        button(
+            {
+                "type": "roll",
+                "value": (
+                    "&{template:custom}"
+                    + f" {{{{title={name}}}}}"
+                    + " {{subtitle=@{character_name}}}"
+                    + (
+                        f" {{{{Attack=[[d10!+{attack['accuracy']}]] vs {attack['defense']}}}}}"
+                        if attack
+                        else ""
+                    )
+                    + " {{color=@{chat_color}}}"
+                    + f" {{{{desc={effect.strip()}}}}}"
+                ),
+            },
+            name,
+        )
+    )
+
 
 def universal_abilities():
-    return flex_row({"class": "universal_abilities"}, [
-        universal_ability_button("Charge", """
+    return flex_row(
+        {"class": "universal_abilities"},
+        [
+            universal_ability_button(
+                "Charge",
+                """
             After you use this ability, you briefly take a -2 penalty to all defenses.
             Move up to your speed in a single straight line. At the end of your movement, you can make a melee strike from your new location.
-        """),
-        universal_ability_button("Escape Grapple", """
+        """,
+            ),
+            universal_ability_button(
+                "Escape Grapple",
+                """
             Make an attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability, +4 for each size category by which it is larger than you. If a creature did not use that ability during the current round, its defense against this ability is 0.
             For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
-        """, attack={"accuracy":"@{escape_grapple_accuracy}", "defense":"Special"}),
-        universal_ability_button("Desperate Exertion", """
+        """,
+                attack={"accuracy": "@{escape_grapple_accuracy}", "defense": "Special"},
+            ),
+            universal_ability_button(
+                "Desperate Exertion",
+                """
             After you use this ability, you increase your fatigue level by two.
             You reroll any attack or check you just made and gain a +2 bonus.
-        """),
-        universal_ability_button("Dirty Trick", """
+        """,
+            ),
+            universal_ability_button(
+                "Dirty Trick",
+                """
             Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the target suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
             If the target is at its maximum hit points, this is a brief effect. Otherwise, this effect is a condition.
-         """, attack={"accuracy":"@{accuracy}", "defense":"Fort or Ref"}),
-        universal_ability_button("Disarm", """
+         """,
+                attack={"accuracy": "@{accuracy}", "defense": "Fort or Ref"},
+            ),
+            universal_ability_button(
+                "Disarm",
+                """
             Make a melee strike against an object's Reflex defense.
             On a hit, it may take damage from your strike. If it is attended and not held in a hand or well secured, you can choose to knock it loose. On a crit, you can deal double damage and you can also knock loose objects that are held in a single hand.
-         """, attack={"accuracy":"@{accuracy}", "defense":"Ref"}),
-        universal_ability_button("Grapple", """
+         """,
+                attack={"accuracy": "@{accuracy}", "defense": "Ref"},
+            ),
+            universal_ability_button(
+                "Grapple",
+                """
             Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your reach. For each size category by which the target is larger than you, you take a -4 penalty to accuracy.
             On a hit against both defenses, you and the target are grappled by each other.
-        """, attack={"accuracy":"@{accuracy}", "defense":"Fort and Ref"}),
-        universal_ability_button("Maintain Grapple", """
+        """,
+                attack={"accuracy": "@{accuracy}", "defense": "Fort and Ref"},
+            ),
+            universal_ability_button(
+                "Maintain Grapple",
+                """
             Make an attack using a free hand. This attack has no immediate effect. The attack result determines how difficult it is for a creature to escape the grapple during the current round using the escape grapple ability.
-        """, attack={"accuracy":"@{maintain_grapple_accuracy}", "defense":"None"}),
-        universal_ability_button("Overrun", """
+        """,
+                attack={"accuracy": "@{maintain_grapple_accuracy}", "defense": "None"},
+            ),
+            universal_ability_button(
+                "Overrun",
+                """
             After you use this ability, you increase your fatigue level by one.
             Move up to your movement speed in a straight line, even through creatures. Make an attack vs. Fortitude against each creature that you move through who does not choose to avoid you. For each size category by which you are larger or smaller than the target, you gain a +4 bonus or penalty to accuracy.
             On a hit, you move through each creature's space. On a critical hit, you also knock each creature prone. On a miss, you end your movement immediately.
-         """, attack={"accuracy": "", "defense": "Fort"}),
-        universal_ability_button("Recover", """
+         """,
+                attack={"accuracy": "", "defense": "Fort"},
+            ),
+            universal_ability_button(
+                "Recover",
+                """
             After you use this ability, you increase your fatigue level by two, and you cannot use it again until you take a short rest.
             You regain hit points equal to your maximum hit points. In addition, you remove all brief effects and conditions affecting you. This cannot remove effects applied during the current round.
-        """),
-        universal_ability_button("Shove", """
+        """,
+            ),
+            universal_ability_button(
+                "Shove",
+                """
             Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against the Fortitude defense of each target. Your accuracy with this attack is equal to half your level \\add your Strength. If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
             On a hit, you can move up to half your movement speed in a straight line, pushing each target as you move. On a critical hit, you can move up to your full movement speed instead.
-         """, attack={"accuracy":"floor(@{level}/2)+@{strength}", "defense":"Fort"}),
-        universal_ability_button("Sprint", """
+         """,
+                attack={"accuracy": "floor(@{level}/2)+@{strength}", "defense": "Fort"},
+            ),
+            universal_ability_button(
+                "Sprint",
+                """
             After you use this ability, you increase your fatigue level by one.
             You move up to double your normal movement speed.
-        """),
-        universal_ability_button("Throw", """
+        """,
+            ),
+            universal_ability_button(
+                "Throw",
+                """
             Make a Strength check to throw an object you hold in at least one hand. The base difficulty value of this check is 0. For each size category larger or smaller than the target that you are, you gain a +10 bonus or penalty to the check. You cannot throw an object whose weight exceeds your maximum carrying capacity.
             If you succeed, you throw the object five feet. For every 5 points by which you succeed, you double the distance you throw the object: ten feet, twenty feet, and so on. If you throw the object at a creature or object, you can make an attack roll to hit it with the thrown object. That attack roll is rolled separately from the Strength check you make to use this ability.
-        """),
-        universal_ability_button("Trip", """
+        """,
+            ),
+            universal_ability_button(
+                "Trip",
+                """
             Make a melee attack with a free hand against a creature's Reflex defenses. For each size category by which the target is larger than you, you take a -4 penalty to accuracy.
             On a hit, the target becomes prone.
-         """, attack={"accuracy":"@{accuracy}", "defense":"Ref"}),
-        universal_ability_button("Total Defense", """
+         """,
+                attack={"accuracy": "@{accuracy}", "defense": "Ref"},
+            ),
+            universal_ability_button(
+                "Total Defense",
+                """
             You gain a +2 bonus to your defenses until the end of the round. Because this ability has the Swift tag, this improves your defenses against attacks made against you during the current phase.
-        """),
-    ])
+        """,
+            ),
+        ],
+    )

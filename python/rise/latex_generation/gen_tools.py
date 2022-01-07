@@ -119,7 +119,7 @@ def generate_tools():
             # This seems like it should be Healing-tagged, but it's not really
             # an ability? It's not obvious how the cooldown should interact with
             # it.
-            tags=['Healing'],
+            tags=["Healing"],
             description="""
                 When you drink this \\glossterm<potion>, you regain 1d8 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
@@ -441,7 +441,7 @@ def generate_tools():
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened and \\stunned as a single \\glossterm<condition>.
             """,
             short_description="Throw to deal 2d8+5 sonic damage, deafen, and stun",
-        )
+        ),
     ]
 
     tools += [
@@ -537,7 +537,7 @@ def generate_tools():
                 This item functions like a \\mitem<sunrod>, except that the effect lasts for 8 hours.
             """,
             short_description="Emits bright illumination for 8 hours",
-        )
+        ),
     ]
 
     tools += [

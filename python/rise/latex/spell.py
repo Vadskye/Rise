@@ -147,9 +147,7 @@ class Spell(object):
             scaling_text = f"scaling: {scaling_text},"
 
         nontype_tags = [
-            tag
-            for tag in self.tags
-            if "Attune" not in tag and "Sustain" not in tag
+            tag for tag in self.tags if "Attune" not in tag and "Sustain" not in tag
         ]
         tags_text = f"tags: {nontype_tags}," if len(nontype_tags) > 0 else ""
 

@@ -44,12 +44,12 @@ ATTRIBUTE_SKILLS = {
 }
 
 SUBSKILLS = [
-    'Craft1',
-    'Craft2',
-    'Knowledge1',
-    'Knowledge2',
-    'Perform1',
-    'Perform2',
+    "Craft1",
+    "Craft2",
+    "Knowledge1",
+    "Knowledge2",
+    "Perform1",
+    "Perform2",
 ]
 
 ROLL20_CALC = {

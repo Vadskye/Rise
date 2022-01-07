@@ -14,7 +14,13 @@ from cgi_simple import (
     text_input,
     underlabel,
 )
-from sheet_data import ATTRIBUTE_SHORTHAND, ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC, SUBSKILLS
+from sheet_data import (
+    ATTRIBUTE_SHORTHAND,
+    ATTRIBUTE_SKILLS,
+    ATTRIBUTES,
+    ROLL20_CALC,
+    SUBSKILLS,
+)
 from sheet_worker import standard_damage_at_power
 
 equation_space = flex_col(
@@ -46,53 +52,63 @@ def equation_misc_repeat(name, count=1, joiner=plus):
 
 
 def create_page(destination):
-    return flex_col( {"class": "page second-page"}, [
-        div({"class": "tab-explanation"}, """
+    return flex_col(
+        {"class": "page second-page"},
+        [
+            div(
+                {"class": "tab-explanation"},
+                """
             This tab is used to track your core character statistics.
             There are open spaces in each equation so you can add custom modifiers for each statistic.
             Each custom modifier has a small text box underneath it that you can use to remind yourself why that modifier exists.
-        """),
-        flex_row(
-            [
-                flex_col(
-                    {"class": "sidebar"},
-                    [
-                        calc_attributes(),
-                        div({"class": "section-header"}, "Core Statistics"),
-                        calc_encumbrance(),
-                        calc_initiative(),
-                        calc_land_speed(),
-                        calc_vital_rolls(),
-                        calc_weight_limits(),
-                        calc_unknown_statistic(),
-                    ],
-                ),
-                flex_col(
-                    {"class": "main-body"},
-                    [
-                        flex_col(
-                            {"class": "statistics"},
-                            [
-                                div({"class": "section-header"}, "Defensive Statistics"),
-                                calc_defenses(),
-                                div({"class": "section-header"}, "Offensive Statistics"),
-                                calc_accuracy(),
-                                calc_power(),
-                                calc_weapon_damage_dice(),
-                                div({"class": "section-header"}, "Resources"),
-                                calc_attunement_points(),
-                                calc_fatigue_tolerance(),
-                                calc_insight_points(),
-                                calc_skill_points(),
-                            ],
-                        ),
-                    ],
-                ),
-            ],
-        ),
-    ])
-
-
+        """,
+            ),
+            flex_row(
+                [
+                    flex_col(
+                        {"class": "sidebar"},
+                        [
+                            calc_attributes(),
+                            div({"class": "section-header"}, "Core Statistics"),
+                            calc_encumbrance(),
+                            calc_initiative(),
+                            calc_land_speed(),
+                            calc_vital_rolls(),
+                            calc_weight_limits(),
+                            calc_unknown_statistic(),
+                        ],
+                    ),
+                    flex_col(
+                        {"class": "main-body"},
+                        [
+                            flex_col(
+                                {"class": "statistics"},
+                                [
+                                    div(
+                                        {"class": "section-header"},
+                                        "Defensive Statistics",
+                                    ),
+                                    calc_defenses(),
+                                    div(
+                                        {"class": "section-header"},
+                                        "Offensive Statistics",
+                                    ),
+                                    calc_accuracy(),
+                                    calc_power(),
+                                    calc_weapon_damage_dice(),
+                                    div({"class": "section-header"}, "Resources"),
+                                    calc_attunement_points(),
+                                    calc_fatigue_tolerance(),
+                                    calc_insight_points(),
+                                    calc_skill_points(),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    )
 
 
 def calc_attributes():
@@ -138,6 +154,7 @@ def calc_attribute(attribute_name):
         ]
     )
 
+
 def abilities(name_prefix):
     return flex_col(
         {"class": "abilities"},
@@ -169,14 +186,14 @@ def calc_weight_limits():
                 "Carrying",
                 input_attributes={
                     "name": "carrying_capacity_display",
-                }
+                },
             ),
             equation_space,
             labeled_text_input(
                 "Push/Drag",
                 input_attributes={
                     "name": "push_drag_display",
-                }
+                },
             ),
         ],
     )
@@ -444,6 +461,7 @@ def calc_vital_rolls():
             ),
         ]
     )
+
 
 def calc_weapon_damage_dice():
     return flex_row(
