@@ -32,6 +32,7 @@ module.exports = {
     getAllObjs: true,
     getAttrByName: true,
     getAttrs: true,
+    getSectionIDs: true,
     onSheetWorkerCompleted: true,
     on: true,
     Promise: true,
