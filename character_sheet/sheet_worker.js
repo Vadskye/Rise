@@ -1001,7 +1001,7 @@ function handlePower() {
               1: 1,
               2: 2,
               4: 3,
-              6: 4,
+              6: 3,
             }[v.challenge_rating]
           : 0);
       setAttrs({
