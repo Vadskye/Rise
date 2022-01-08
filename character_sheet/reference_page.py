@@ -13,6 +13,7 @@ from cgi_simple import (
     ol,
     p,
     plus,
+    radio_input,
     span,
     textarea,
     text_input,
@@ -26,7 +27,8 @@ def create_page(_destination):
     return flex_col(
         {"class": "page reference-page"},
         [
-            textarea({"readonly": True, "name": "rust"}),
+            checkbox({"class": "hidden show-rust", "name": "show_rust", "readonly": True}),
+            textarea({"class": "rust", "readonly": True, "name": "rust"}),
             flex_row(
                 {"class": "reference-row"},
                 [
