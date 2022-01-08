@@ -315,8 +315,7 @@ def generate_apparel():
             rank=2,
             material_type="Gloves",
             description="""
-            % TODO: reference basic "not designed to be thrown" mechanics?
-            You can throw any item as if it was designed to be thrown.
+            You can throw any item as if it had the Thrown (15/60) \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
             This does not improve your ability to throw items designed to be thrown, such as darts.
         """,
             short_description="Allows throwing any item accurately",
