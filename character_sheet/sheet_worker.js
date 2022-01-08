@@ -1080,6 +1080,7 @@ function handleRust() {
             `.trim();
       setAttrs({
         rust,
+        show_rust: v.challenge_rating > 0 ? '1' : '0',
       });
     }
   );
