@@ -1,6 +1,6 @@
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
-    SpecialDefenseModifier, SpeedCategory,
+    SpeedCategory, SpecialDefenseType,
 };
 use crate::creatures::{Modifier, Monster, StandardAttack};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -76,8 +76,8 @@ pub fn animates() -> Vec<MonsterEntry> {
             Modifier::Attack(StandardAttack::DarkMiasma(3).attack().except(
                 |a| a.name = "Chilling Aura".to_string()
             )),
-            Modifier::SpecialDefense(SpecialDefenseModifier::impervious_damage(DamageType::Cold)),
-            Modifier::SpecialDefense(SpecialDefenseModifier::immune_debuff(Debuff::Prone)),
+            Modifier::Impervious(SpecialDefenseType::Damage(DamageType::Cold)),
+            Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Prone)),
         ]),
         movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Normal, FlightManeuverability::Perfect)]),
         name: "Darkwraith".to_string(),
@@ -239,7 +239,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                         Birch treants tend to be shy, and they to avoid conflict if at all possible.
                     ")]),
                     level: 5,
-                    modifiers: Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
+                    modifiers: Some(vec![Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Fire))]),
                     name: "Birch Treant".to_string(),
                     size: Size::Large,
                 }.monster(),
@@ -251,7 +251,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                         They like playing small tricks on interesting creatures that pass by.
                     ")]),
                     level: 6,
-                    modifiers: Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
+                    modifiers: Some(vec![Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Fire))]),
                     name: "Chestnut Treant".to_string(),
                     size: Size::Large,
                 }.monster(),
@@ -263,7 +263,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                         Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
                     ")]),
                     level: 7,
-                    modifiers: Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
+                    modifiers: Some(vec![Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Fire))]),
                     name: "Willow Treant".to_string(),
                     size: Size::Large,
                 }.monster(),
@@ -287,7 +287,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                         They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
                     ")]),
                     level: 9,
-                    modifiers: Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
+                    modifiers: Some(vec![Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Fire))]),
                     name: "Pine Treant".to_string(),
                     size: Size::Huge,
                 }.monster(),
@@ -298,7 +298,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                         Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
                     ")]),
                     level: 10,
-                    modifiers: Some(vec![Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Fire))]),
+                    modifiers: Some(vec![Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Fire))]),
                     name: "Oak Treant".to_string(),
                     size: Size::Huge,
                 }.monster(),

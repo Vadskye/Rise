@@ -1,5 +1,5 @@
 use crate::core_mechanics::{
-    DamageType, MovementMode, Sense, Size, SpecialDefenseModifier, SpecialDefenseType,
+    DamageType, MovementMode, Sense, Size, SpecialDefenseType,
     SpeedCategory,
 };
 use crate::creatures::{Modifier, Monster, StandardAttack};
@@ -94,9 +94,9 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
                 Modifier::Attack(StandardAttack::Pyrohemia(6).attack()),
                 Modifier::Attack(StandardAttack::Ignition(6).attack()),
                 Modifier::Attack(StandardAttack::Pyrophobia(6).attack()),
-                Modifier::SpecialDefense(SpecialDefenseModifier::Vulnerable(
+                Modifier::Vulnerable(
                     SpecialDefenseType::WeaponMaterial(WeaponMaterial::ColdIron),
-                )),
+                ),
             ]),
             movement_modes: None,
             name: "Soulfire Demon".to_string(),
@@ -134,7 +134,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: Some(vec![
                     Modifier::Attack(StandardAttack::Firebolt(6).attack()),
                     Modifier::Attack(StandardAttack::Combustion(6).attack()),
-                    Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Cold)),
+                    Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Cold)),
                 ]),
                 movement_modes: None,
                 name: "Ember".to_string(),

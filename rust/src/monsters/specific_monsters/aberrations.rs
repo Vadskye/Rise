@@ -1,5 +1,5 @@
 use crate::core_mechanics::{
-    Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier,
+    Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseType, 
 };
 use crate::creatures::{Modifier, Monster, StandardAttack};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -127,7 +127,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         level: 5,
         modifiers: Some(vec![
             Modifier::Attack(StandardAttack::GibberingMoutherGibber.attack()),
-            Modifier::SpecialDefense(SpecialDefenseModifier::immune_debuff(Debuff::Prone)),
+            Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Prone)),
         ]),
         movement_modes: None,
         name: "Gibbering Mouther".to_string(),
