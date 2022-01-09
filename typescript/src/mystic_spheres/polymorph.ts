@@ -219,14 +219,13 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'minor action',
       effect: `
-        The target's size decreases by one \\glossterm{size category}, to a minimum of Tiny.
-        This decreases the \\glossterm{base speed} for its size and improves its Stealth skill.
-        It may also decrease the target's \\glossterm{reach} (see \\pcref{Size Categories}).
-        However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
+        Your size decreases by one \\glossterm{size category}, to a minimum of Tiny.
+        Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
+        It also reduces your \\glossterm{base speed} and may reduce your \\glossterm{reach} (see \\pcref{Size Categories}).
       `,
       rank: 2,
       scaling: {
-        4: `You also gain a +2 \\glossterm{magic bonus} to Dexterity-based checks.`,
+        4: `You gain a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, offsetting the penalty from reducing your size.`,
         6: `You can decrease your size category by up to two size categories.`,
       },
       type: 'Attune (self)',
@@ -243,7 +242,7 @@ export const polymorph: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: {
-        6: 'Each target also gains a +2 \\glossterm{magic bonus} to Dexterity-based checks.',
+        6: `Each target gains a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, offsetting the penalty from reducing its size.`,
       },
       type: 'Attune (target)',
     },
@@ -288,20 +287,20 @@ export const polymorph: MysticSphere = {
       castingTime: 'minor action',
       effect: `
         Your size increases by one \\glossterm{size category}, to a maximum of Huge.
-        This increases the \\glossterm{base speed} for your size and reduces your Stealth skill.
-        It may also increase your \\glossterm{reach} (see \\pcref{Size Categories}).
+        Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
+        It also increases your \\glossterm{base speed} and may increase your \\glossterm{reach} (see \\pcref{Size Categories}).
 
-        However, your physical form is not altered fully to match your new size.
-        Your Strength and Dexterity are unchanged from your original size, and you take a -5 foot penalty to your speed with all of your \\glossterm{movement modes.}
+        This spell makes you slightly clumsy in your new size.
+        You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 3,
       scaling: {
         5: `
-          You also gain a +1 \\glossterm{magic bonus} to Strength-based checks, and you gain a +1 \\glossterm{magic bonus} to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
+          The speed penalty is reduced to -5 feet.
         `,
         7: `
           You can increase your size category by up to two size categories.
-          However, if you do, the movement speed penalty increases to -10 feet.
+          However, if you do, the movement speed penalty increases to -15 feet.
         `,
       },
       type: 'Attune (self)',
@@ -319,7 +318,7 @@ export const polymorph: MysticSphere = {
       rank: 5,
       scaling: {
         7: `
-          Each target also gains a +1 \\glossterm{magic bonus} to Strength-based checks, and a +1 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
+          The speed penalty is reduced to -5 feet.
         `,
       },
       type: 'Attune (target)',

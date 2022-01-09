@@ -1538,12 +1538,12 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this belt.
                 If you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
-                This increases the \\glossterm<base speed> for your size and reduces your Stealth skill.
-                It may also increase your \\glossterm<reach> (see \\pcref<Size Categories>).
-
-                Your physical form is not altered fully to match your new size.
-                Your Strength and Dexterity are unchanged from your original size, and you take a -5 foot penalty to your speed with all of your \\glossterm{movement modes.}
                 This effect lasts until you activate the belt again, which returns you to your original size.
+
+                Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \\glossterm<weight limits>, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
+                It also increases your \\glossterm<base speed> and may increase your \\glossterm<reach> (see \\pcref<Size Categories>).
+                This item makes you slightly clumsy in your new size.
+                You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
             """,
             short_description="Increases your size",
         ),
@@ -1553,9 +1553,9 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                This belt functions like an \\mitem<enlarging belt>, except that you also gain a +1 \\glossterm<magic bonus> to Strength-based checks, and you gain a +1 \\glossterm<magic bonus> to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
+                This belt functions like an \\mitem<enlarging belt>, except that the movement speed penalty is reduced to -5.
             """,
-            short_description="Increases your size and strength",
+            short_description="Increases your size and speed",
         ),
     ]
 
@@ -1568,9 +1568,10 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this belt.
                 If you do, your size decreases by one \\glossterm<size category>, to a minimum of Tiny.
-                This decreases the \\glossterm<base speed> for your size and improves your Stealth skill.
-                It may also decrease your \\glossterm<reach> (see \\pcref<Size Categories>).
                 This effect lasts until you activate the belt again, which returns you to your original size.
+
+                Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \\glossterm<weight limits>, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
+                It also reduces your \\glossterm<base speed> and may reduce your \\glossterm<reach> (see \\pcref<Size Categories>).
             """,
             short_description="Reduces your size",
         ),
@@ -1580,9 +1581,9 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                This belt functions like a \\mitem<shrinking belt>, except that you also gain a +2 \\glossterm<magic bonus> to Dexterity-based checks while your size is reduced.
+                This belt functions like a \\mitem<shrinking belt>, except that you also gain a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, offsetting the penalty from reducing your size.
             """,
-            short_description="Reduces your size and increases agility",
+            short_description="Reduces your size without reducing weight limits",
         ),
         MagicItem(
             name="Shrinking Belt, Supreme",
@@ -1590,10 +1591,9 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                This belt functions like a \\mitem<shrinking belt>, except that you also gain a +2 \\glossterm<magic bonus> to Dexterity-based checks while your size is reduced.
-                In addition, you can choose to decrease your size by either one size category or two size categories.
+                This belt functions like a \\mitem<greater shrinking belt>, except that you can choose to decrease your size by either one size category or two size categories.
             """,
-            short_description="Greatly reduces your size and increases agility",
+            short_description="Greatly reduces your size",
         ),
     ]
 
