@@ -139,7 +139,7 @@ function generateMiscVariables(name, count) {
 
 function formatChangeString(varName) {
   if (varName.includes("repeating_")) {
-    return varName.replace(/repeating_([^_]+)_(.*)/, "change:repeating_$1:$2");
+    return varName.replaceAll(/repeating_([^_]+)_(.*)/, "change:repeating_$1:$2");
   } else {
     return "change:" + varName;
   }
@@ -1034,7 +1034,7 @@ function handleRust() {
       ],
     },
     (v) => {
-      const alignment = v.alignment ? `Usually ${alignment}` : "";
+      const alignment = v.alignment ? `Usually ${v.alignment}` : "";
       const attributes = [
         v.strength,
         v.dexterity,
@@ -1112,7 +1112,7 @@ function handleSkillPointsSpent() {
     }
   }
   const skillsAreTrained = skills.map(
-    (s) => s.toLowerCase().replace(" ", "_") + "_is_trained"
+    (s) => s.toLowerCase().replaceAll(" ", "_") + "_is_trained"
   );
 
   onGet(
@@ -1136,7 +1136,8 @@ function handleSkillPointsSpent() {
 function handleSkills() {
   for (const attribute of Object.keys(SKILLS_BY_ATTRIBUTE)) {
     for (let skill of SKILLS_BY_ATTRIBUTE[attribute]) {
-      skill = skill.toLowerCase().replace(" ", "_");
+      skill = skill.toLowerCase().replaceAll(" ", "_");
+      console.log('skill', skill);
       const numeric = [
         "all_skills_custom_modifier",
         "fatigue_penalty",
@@ -1171,6 +1172,7 @@ function handleSkills() {
             v.fatigue_penalty -
             encumbranceModifier;
           setAttrs({
+            [`${skill}_attribute`]: attributeModifier,
             [`${skill}_level`]: fromTraining,
             [`${skill}_total`]: skillValue,
             [skill]: skillValue,
@@ -1574,7 +1576,7 @@ function handleVitalWounds() {
             vital_rolls_vital_wound_modifier: vital_roll_penalty,
           };
           if (eventInfo.triggerName != "remove:repeating_vitalwounds") {
-            let effect_id = eventInfo.sourceAttribute.replace(
+            let effect_id = eventInfo.sourceAttribute.replaceAll(
               "_roll",
               "_effect"
             );
