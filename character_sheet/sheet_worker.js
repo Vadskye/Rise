@@ -1137,7 +1137,6 @@ function handleSkills() {
   for (const attribute of Object.keys(SKILLS_BY_ATTRIBUTE)) {
     for (let skill of SKILLS_BY_ATTRIBUTE[attribute]) {
       skill = skill.toLowerCase().replaceAll(" ", "_");
-      console.log('skill', skill);
       const numeric = [
         "all_skills_custom_modifier",
         "fatigue_penalty",
