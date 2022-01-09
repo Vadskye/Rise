@@ -2,7 +2,7 @@ use std::cmp::max;
 
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode,
-    SpecialDefenseModifier, SpecialDefenseType, StandardPassiveAbility,
+    SpecialDefenseType, StandardPassiveAbility,
 };
 use crate::creatures::attacks::{HasAttacks, PowerProgression};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
@@ -223,22 +223,9 @@ impl Monster {
     }
 
     fn latex_special_defense_modifiers(&self) -> String {
-        let special_defense_modifiers = self.creature.calc_special_defense_modifiers();
-        if special_defense_modifiers.len() == 0 {
-            return "".to_string();
-        }
-        let mut immune = vec![];
-        let mut impervious = vec![];
-        let mut vulnerable = vec![];
-        for special_defense_modifier in special_defense_modifiers {
-            match special_defense_modifier {
-                SpecialDefenseModifier::Immune(t) => immune.push(t),
-                SpecialDefenseModifier::Impervious(t) => impervious.push(t),
-                SpecialDefenseModifier::Vulnerable(t) => vulnerable.push(t),
-            }
-        }
+        let special_defenses = self.creature.calc_special_defenses();
 
-        fn explain_special_defense_types(header: &str, types: Vec<&SpecialDefenseType>) -> String {
+        fn explain_special_defense_types(header: &str, types: Vec<SpecialDefenseType>) -> String {
             if types.len() == 0 {
                 return "".to_string();
             }
@@ -262,9 +249,9 @@ impl Monster {
                 {impervious}
                 {vulnerable}
             ",
-            immune = explain_special_defense_types("Immune", immune),
-            impervious = explain_special_defense_types("Impervious", impervious),
-            vulnerable = explain_special_defense_types("Vulnerable", vulnerable),
+            immune = explain_special_defense_types("Immune", special_defenses.immune),
+            impervious = explain_special_defense_types("Impervious", special_defenses.impervious),
+            vulnerable = explain_special_defense_types("Vulnerable", special_defenses.vulnerable),
         );
     }
 

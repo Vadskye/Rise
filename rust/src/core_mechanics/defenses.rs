@@ -61,13 +61,6 @@ impl fmt::Display for Defense {
 }
 
 #[derive(Clone)]
-pub enum SpecialDefenseModifier {
-    Immune(SpecialDefenseType),
-    Impervious(SpecialDefenseType),
-    Vulnerable(SpecialDefenseType),
-}
-
-#[derive(Clone)]
 pub enum SpecialDefenseType {
     Damage(DamageType),
     Debuff(Debuff),
@@ -75,37 +68,19 @@ pub enum SpecialDefenseType {
     WeaponMaterial(WeaponMaterial),
 }
 
-impl SpecialDefenseModifier {
-    pub fn immune_damage(damage_type: DamageType) -> Self {
-        return Self::Immune(SpecialDefenseType::Damage(damage_type));
-    }
+pub struct SpecialDefenses {
+    pub immune: Vec<SpecialDefenseType>,
+    pub impervious: Vec<SpecialDefenseType>,
+    pub vulnerable: Vec<SpecialDefenseType>,
+}
 
-    pub fn impervious_damage(damage_type: DamageType) -> Self {
-        return Self::Impervious(SpecialDefenseType::Damage(damage_type));
-    }
-
-    pub fn vulnerable_damage(damage_type: DamageType) -> Self {
-        return Self::Vulnerable(SpecialDefenseType::Damage(damage_type));
-    }
-
-    pub fn immune_debuff(debuff: Debuff) -> Self {
-        return Self::Immune(SpecialDefenseType::Debuff(debuff));
-    }
-
-    pub fn impervious_debuff(debuff: Debuff) -> Self {
-        return Self::Impervious(SpecialDefenseType::Debuff(debuff));
-    }
-
-    pub fn vulnerable_debuff(debuff: Debuff) -> Self {
-        return Self::Vulnerable(SpecialDefenseType::Debuff(debuff));
-    }
-
-    pub fn description(&self) -> String {
-        match self {
-            Self::Immune(t) => format!("immune to {}", t.description()),
-            Self::Impervious(t) => format!("impervious to {}", t.description()),
-            Self::Vulnerable(t) => format!("vulnerable to {}", t.description()),
-        }
+impl SpecialDefenses {
+    pub fn new() -> Self {
+        return Self {
+            immune: vec![],
+            impervious: vec![],
+            vulnerable: vec![],
+        };
     }
 }
 
@@ -122,8 +97,7 @@ impl SpecialDefenseType {
 
 pub trait HasDefenses {
     fn calc_defense(&self, defense: &Defense) -> i32;
-    fn add_special_defense_modifier(&mut self, special_defense_modifier: SpecialDefenseModifier);
-    fn calc_special_defense_modifiers(&self) -> Vec<&SpecialDefenseModifier>;
+    fn calc_special_defenses(&self) -> SpecialDefenses;
 }
 
 impl HasDefenses for Creature
@@ -167,32 +141,17 @@ where
             + self.calc_total_modifier(ModifierType::Defense(*defense));
     }
 
-    fn add_special_defense_modifier(&mut self, special_defense_modifier: SpecialDefenseModifier) {
-        if self.special_defense_modifiers.is_none() {
-            self.special_defense_modifiers = Some(vec![]);
-        }
-        self.special_defense_modifiers
-            .as_mut()
-            .unwrap()
-            .push(special_defense_modifier);
-    }
-
-    fn calc_special_defense_modifiers(&self) -> Vec<&SpecialDefenseModifier> {
-        let mut special_defense_modifiers: Vec<&SpecialDefenseModifier> =
-            if self.special_defense_modifiers.is_some() {
-                self.special_defense_modifiers
-                    .as_ref()
-                    .unwrap()
-                    .iter()
-                    .collect()
-            } else {
-                vec![]
-            };
+    fn calc_special_defenses(&self) -> SpecialDefenses {
+        let mut special_defenses = SpecialDefenses::new();
         for modifier in self.get_modifiers_by_type(ModifierType::SpecialDefense) {
-            if let Modifier::SpecialDefense(def) = modifier {
-                special_defense_modifiers.push(def);
+            if let Modifier::Immune(def) = modifier {
+                special_defenses.immune.push(def.clone());
+            } else if let Modifier::Impervious(def) = modifier {
+                special_defenses.impervious.push(def.clone());
+            } else if let Modifier::Vulnerable(def) = modifier {
+                special_defenses.vulnerable.push(def.clone());
             }
         }
-        return special_defense_modifiers;
+        return special_defenses;
     }
 }

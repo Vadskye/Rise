@@ -1,6 +1,5 @@
 use crate::core_mechanics::{
-    DamageType, MovementMode, Sense, Size, SpecialDefenseModifier, SpecialDefenseType,
-    StandardPassiveAbility,
+    DamageType, MovementMode, Sense, Size, SpecialDefenseType, StandardPassiveAbility,
 };
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -59,9 +58,8 @@ pub fn undeads() -> Vec<MonsterEntry> {
 
     let mindless = Modifier::PassiveAbility(StandardPassiveAbility::Mindless.ability());
 
-    let skeleton_vulnerability = Modifier::SpecialDefense(SpecialDefenseModifier::Vulnerable(
-        SpecialDefenseType::Damage(DamageType::Bludgeoning),
-    ));
+    let skeleton_vulnerability =
+        Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Bludgeoning));
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         name: "Skeletons".to_string(),
@@ -100,9 +98,8 @@ pub fn undeads() -> Vec<MonsterEntry> {
         ],
     }));
 
-    let zombie_vulnerability = Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(
-        DamageType::Slashing,
-    ));
+    let zombie_vulnerability =
+        Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Slashing));
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         name: "Zombies".to_string(),
