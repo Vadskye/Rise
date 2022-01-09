@@ -336,18 +336,20 @@ export const channelDivinity: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Your size increases by one \\glossterm{size category}.
-        This increases the \\glossterm{base speed} for your size and reduces your Stealth skill.
-        It may also increase your \\glossterm{reach} (see \\pcref{Size Categories}).
-        However, your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
+        Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
+        It also increases your \\glossterm{base speed} and may increase your \\glossterm{reach} (see \\pcref{Size Categories}).
+
+        This spell makes you slightly clumsy in your new size.
+        You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 3,
       scaling: {
         5: `
-          You also gain a +1 \\glossterm{magic bonus} to Strength-based checks, and you gain a +1 \\glossterm{magic bonus} to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
+          The speed penalty is reduced to -5 feet.
         `,
         7: `
           You can increase your size category by up to two size categories.
-          However, if you do, the movement speed penalty increases to -10 feet.
+          However, if you do, the movement speed penalty increases to -15 feet.
         `,
       },
       type: "Attune (self)",
