@@ -16,7 +16,7 @@ pub use damage_absorption::HasDamageAbsorption;
 pub use damage_dice::DamageDice;
 pub use damage_types::{DamageType, DamageTypeEffect};
 pub use debuffs::Debuff;
-pub use defenses::{Defense, HasDefenses, SpecialDefenseModifier, SpecialDefenseType};
+pub use defenses::{Defense, HasDefenses, SpecialDefenses, SpecialDefenseType};
 pub use movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
 pub use passive_abilities::{PassiveAbility, StandardPassiveAbility};
 pub use resources::{HasResources, Resource};

@@ -1,6 +1,6 @@
 use crate::core_mechanics::{
     DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility,
-    Size, SpecialDefenseModifier, SpeedCategory,
+    Size, SpeedCategory, SpecialDefenseType,
 };
 use crate::creatures::attack_effects::{
     AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
@@ -514,8 +514,8 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         special_attacks.push(f);
     }
 
-    let mut modifiers: Vec<Modifier> = vec![Modifier::SpecialDefense(
-        SpecialDefenseModifier::immune_damage(dragon_type.damage_type()),
+    let mut modifiers: Vec<Modifier> = vec![Modifier::Immune(
+        SpecialDefenseType::Damage(dragon_type.damage_type()),
     )];
     if let Some(passive_abilities) = dragon_type.passive_abilities() {
         for p in passive_abilities {

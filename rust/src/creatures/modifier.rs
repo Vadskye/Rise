@@ -1,4 +1,4 @@
-use crate::core_mechanics::{Attribute, Defense, PassiveAbility, Resource, SpecialDefenseModifier};
+use crate::core_mechanics::{Attribute, Defense, PassiveAbility, Resource, SpecialDefenseType};
 use crate::creatures::attacks::Attack;
 use crate::skills::Skill;
 
@@ -22,9 +22,11 @@ pub enum Modifier {
     Power(i32),
     Resource(Resource, i32),
     Skill(Skill, i32),
-    SpecialDefense(SpecialDefenseModifier),
     StrikeDamageDice(i32),
     VitalRoll(i32),
+    Immune(SpecialDefenseType),
+    Impervious(SpecialDefenseType),
+    Vulnerable(SpecialDefenseType),
 }
 
 #[derive(PartialEq)]
@@ -58,6 +60,8 @@ impl Modifier {
             Self::Defense(_, v) => format!("{} by {}", self.name(), v),
             Self::Encumbrance(v) => format!("{} {}", self.name(), v),
             Self::HitPoints(v) => format!("{} {}", self.name(), v),
+            Self::Immune(t) => format!("{} to {}", self.name(), t.description()),
+            Self::Impervious(t) => format!("{} to {}", self.name(), t.description()),
             Self::Initiative(v) => format!("{} {}", self.name(), v),
             Self::Maneuver(_) => self.name(),
             Self::MovementSpeed(v) => format!("{} {}", self.name(), v),
@@ -65,9 +69,9 @@ impl Modifier {
             Self::Power(v) => format!("{} {}", self.name(), v),
             Self::Resource(_, v) => format!("{} by {}", self.name(), v),
             Self::Skill(_, v) => format!("{} by {}", self.name(), v),
-            Self::SpecialDefense(_) => self.name(),
             Self::StrikeDamageDice(v) => format!("{} {}", self.name(), v),
             Self::VitalRoll(v) => format!("{} {}", self.name(), v),
+            Self::Vulnerable(t) => format!("{} to {}", self.name(), t.description()),
         }
     }
 
@@ -80,6 +84,8 @@ impl Modifier {
             Self::Defense(d, _) => format!("defense {}", d.name()),
             Self::Encumbrance(_) => format!("encumbrance"),
             Self::HitPoints(_) => format!("HP"),
+            Self::Immune(t) => format!("immune"),
+            Self::Impervious(t) => format!("impervious"),
             Self::Initiative(_) => format!("initiative"),
             Self::Maneuver(m) => format!("maneuver {}", m.name()),
             Self::MovementSpeed(_) => format!("movement"),
@@ -87,9 +93,9 @@ impl Modifier {
             Self::Power(_) => format!("power"),
             Self::Resource(r, _) => format!("resource {}", r.name()),
             Self::Skill(s, _) => format!("skill {}", s.name()),
-            Self::SpecialDefense(d) => format!("special defense {}", d.description()),
             Self::StrikeDamageDice(_) => format!("strike damage dice"),
             Self::VitalRoll(_) => format!("vital roll"),
+            Self::Vulnerable(t) => format!("vulnerable"),
         }
     }
 
@@ -102,6 +108,8 @@ impl Modifier {
             Self::Defense(d, _) => ModifierType::Defense(*d),
             Self::Encumbrance(_) => ModifierType::Encumbrance,
             Self::HitPoints(_) => ModifierType::HitPoints,
+            Self::Immune(t) => ModifierType::SpecialDefense,
+            Self::Impervious(t) => ModifierType::SpecialDefense,
             Self::Initiative(_) => ModifierType::Initiative,
             Self::Maneuver(_) => ModifierType::Maneuver,
             Self::MovementSpeed(_) => ModifierType::MovementSpeed,
@@ -109,9 +117,9 @@ impl Modifier {
             Self::Power(_) => ModifierType::Power,
             Self::Resource(r, _) => ModifierType::Resource(*r),
             Self::Skill(s, _) => ModifierType::Skill(s.clone()),
-            Self::SpecialDefense(_) => ModifierType::SpecialDefense,
             Self::StrikeDamageDice(_) => ModifierType::StrikeDamageDice,
             Self::VitalRoll(_) => ModifierType::VitalRoll,
+            Self::Vulnerable(t) => ModifierType::SpecialDefense,
         }
     }
 
@@ -138,6 +146,8 @@ impl Modifier {
             Self::Defense(_, v) => v,
             Self::Encumbrance(v) => v,
             Self::HitPoints(v) => v,
+            Self::Immune(_) => &0,
+            Self::Impervious(_) => &0,
             Self::Initiative(v) => v,
             Self::Maneuver(_) => &0,
             Self::MovementSpeed(v) => v,
@@ -146,8 +156,8 @@ impl Modifier {
             Self::Resource(_, v) => v,
             Self::Skill(_, v) => v,
             Self::StrikeDamageDice(v) => v,
-            Self::SpecialDefense(_) => &0,
             Self::VitalRoll(v) => v,
+            Self::Vulnerable(_) => &0,
         };
         return *value;
     }

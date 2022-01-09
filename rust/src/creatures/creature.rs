@@ -1,5 +1,5 @@
 use crate::core_mechanics::{
-    Attribute, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseModifier, VitalWound,
+    Attribute, MovementMode, PassiveAbility, Sense, Size, VitalWound,
 };
 use crate::creatures::attacks;
 use crate::creatures::{latex, IdentifiedModifier, Modifier};
@@ -27,7 +27,6 @@ pub struct Creature {
     pub size: Size,
     pub skill_training: Option<HashMap<Skill, bool>>,
     pub special_attacks: Option<Vec<attacks::Attack>>,
-    pub special_defense_modifiers: Option<Vec<SpecialDefenseModifier>>,
     pub vital_wounds: Vec<VitalWound>,
     pub weapons: Vec<Weapon>,
 }
@@ -56,7 +55,6 @@ impl Creature {
             size: Size::Medium,
             skill_training: None,
             special_attacks: None,
-            special_defense_modifiers: None,
             vital_wounds: vec![],
             weapons: vec![],
         };
