@@ -26,6 +26,7 @@ pub enum StandardAttack {
     DarkMiasma(i32),
     DivineJudgment(i32),
     DrainLife(i32),
+    Fireball(i32),
     Firebolt(i32),
     Ignition(i32),
     Inferno(i32),
@@ -381,6 +382,32 @@ impl StandardAttack {
                     AttackRange::Medium
                 }),
             },
+            Self::Fireball(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Reflex,
+                hit: AttackEffect::Damage(DamageEffect {
+                    damage_dice: DamageDice::aoe_damage(*rank).add(if *rank == 7 { 1 } else { 0 }),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Fire],
+                    extra_defense_effect: None,
+                    lose_hp_effect: None,
+                    power_multiplier: if *rank == 7 { 1.0 } else { 0.5},
+                    take_damage_effect: None,
+                    vampiric_healing: None,
+                }),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: Attack::generate_modified_name("Fireball", *rank, 3, Some(7)),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Radius(
+                    Some(AttackRange::Medium),
+                    AreaSize::Small,
+                    AreaTargets::Everything,
+                ),
+            },
             Self::Firebolt(rank) => Attack {
                 accuracy: 0,
                 cooldown: None,
@@ -418,7 +445,6 @@ impl StandardAttack {
                 hit: AttackEffect::DamageOverTime(DamageOverTimeEffect {
                     can_remove_with_dex: *rank >= 5,
                     damage: DamageEffect {
-                        // +1d extra at ranks 4 and 7
                         damage_dice: DamageDice::aoe_damage(*rank).add(-1),
                         damage_modifier: 0,
                         damage_types: vec![DamageType::Fire],
