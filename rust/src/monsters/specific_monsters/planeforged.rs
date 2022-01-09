@@ -1,5 +1,6 @@
 use crate::core_mechanics::{
     DamageType, MovementMode, Sense, Size, SpecialDefenseModifier, SpecialDefenseType,
+    SpeedCategory,
 };
 use crate::creatures::{Modifier, Monster, StandardAttack};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
@@ -53,6 +54,8 @@ impl FullPlaneforgedDefinition {
 
 pub fn planeforgeds() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
+
+    add_elementals(&mut monsters);
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         name: "Imps".to_string(),
@@ -108,4 +111,40 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
     ));
 
     return monsters;
+}
+
+fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        knowledge: Some(Knowledge::new(vec![(
+            0,
+            "
+                Fire elementals are creatures formed from the raw essence of the Plane of Fire.
+                They tend to be fast and agile, and they are usually vulnerable to cold.
+            ",
+        )])),
+        name: "Fire Elementals".to_string(),
+        monsters: vec![
+            FullPlaneforgedDefinition {
+                alignment: "Usually chaotic neutral".to_string(),
+                attributes: vec![2, 4, 0, -2, 0, 2],
+                challenge_rating: ChallengeRating::One,
+                description: None,
+                knowledge: None,
+                level: 4,
+                modifiers: Some(vec![
+                    Modifier::Attack(StandardAttack::Firebolt(6).attack()),
+                    Modifier::Attack(StandardAttack::Combustion(6).attack()),
+                    Modifier::SpecialDefense(SpecialDefenseModifier::vulnerable_damage(DamageType::Cold)),
+                ]),
+                movement_modes: None,
+                name: "Ember".to_string(),
+                senses: None,
+                size: Size::Small,
+                trained_skills: None,
+                weapons: vec![StandardWeapon::Slam
+                    .weapon()
+                    .except(|w| w.damage_types.push(DamageType::Fire))],
+            }.monster()
+        ],
+    }));
 }
