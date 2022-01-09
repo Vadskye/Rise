@@ -107,6 +107,8 @@ const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
   "accuracy",
   "armor_defense",
   "fortitude_defense",
+  "reflex_defense",
+  "mental_defense",
 ]);
 
 // Multipliers to HP and resistances can't be incorporated into this simple handling
@@ -946,7 +948,7 @@ function handleMonsterChatColor() {
 function handleNonArmorDefense(defense, attribute) {
   onGet(
     {
-      miscName: defense,
+      miscName: `${defense}_defense`,
       miscCount: 3,
       numeric: [
         "level",
