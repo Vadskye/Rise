@@ -1000,7 +1000,7 @@ function handlePower() {
               0.5: 0.5,
               1: 1,
               2: 2,
-              4: 3,
+              4: 2,
               6: 3,
             }[v.challenge_rating]
           : 0);
