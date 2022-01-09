@@ -237,7 +237,7 @@ impl Monster {
                         .iter()
                         .map(|t| t.description())
                         .collect::<Vec<String>>()
-                        .join("\\monsep")
+                        .join(" \\monsep ")
                         .as_str()
                 ),
             );
