@@ -12,7 +12,7 @@ use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
 use crate::skills::{HasSkills, Skill, SkillCategory};
 use titlecase::titlecase;
 
-use super::Maneuver;
+use super::{Maneuver, ModifierType};
 
 pub struct Monster {
     pub alignment: Option<String>,
@@ -64,11 +64,7 @@ impl Monster {
         }
 
         if level >= 19 {
-            creature.add_modifier(
-                Modifier::Accuracy(1),
-                Some("challenge rating"),
-                None,
-            );
+            creature.add_modifier(Modifier::Accuracy(1), Some("challenge rating"), None);
         }
         for defense in Defense::all() {
             creature.add_modifier(
@@ -361,6 +357,21 @@ impl Monster {
             .iter()
             .map(|a| a.latex_ability_block(&self.creature))
             .collect::<Vec<String>>();
+
+        let mut active_abilities = vec![];
+        for modifier in self
+            .creature
+            .get_modifiers_by_type(ModifierType::ActiveAbility)
+        {
+            if let Modifier::ActiveAbility(a) = modifier {
+                active_abilities.push(a);
+            }
+        }
+        active_abilities.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
+        for active_ability in active_abilities {
+            ability_texts.push(active_ability.clone().latex_ability_block());
+        }
+
         let mut passive_ability_texts = self
             .creature
             .get_passive_abilities()

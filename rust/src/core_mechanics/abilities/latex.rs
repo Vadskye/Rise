@@ -27,7 +27,7 @@ pub fn latex_ability_block(
 
 fn latex_ability_header(tags: Option<Vec<AbilityTag>>, usage_time: Option<UsageTime>) -> String {
     let tags_text = if let Some(t) = tags {
-        t.iter().map(|tag| tag.description()).collect::<Vec<String>>().join(", ")
+        t.iter().map(|tag| tag.latex()).collect::<Vec<String>>().join(", ")
     } else {
         "".to_string()
     };

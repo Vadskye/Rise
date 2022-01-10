@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::Attack;
+use crate::core_mechanics::abilities::{Attack, ActiveAbility};
 use crate::core_mechanics::{Attribute, Defense, PassiveAbility, Resource, SpecialDefenseType};
 use crate::skills::Skill;
 
@@ -7,6 +7,7 @@ use super::{Creature, Maneuver};
 #[derive(Clone)]
 pub enum Modifier {
     Accuracy(i32),
+    ActiveAbility(ActiveAbility),
     Attack(Attack),
     BaseAttribute(Attribute, i32),
     DamageResistance(i32),
@@ -32,6 +33,7 @@ pub enum Modifier {
 #[derive(PartialEq)]
 pub enum ModifierType {
     Accuracy,
+    ActiveAbility,
     Attack,
     BaseAttribute(Attribute),
     DamageResistance,
@@ -54,6 +56,7 @@ impl Modifier {
     pub fn description(&self) -> String {
         match self {
             Self::Accuracy(v) => format!("{} {}", self.name(), v),
+            Self::ActiveAbility(_) => self.name(),
             Self::Attack(_) => self.name(),
             Self::BaseAttribute(_, v) => format!("{} by {}", self.name(), v),
             Self::DamageResistance(v) => format!("{} {}", self.name(), v),
@@ -78,14 +81,15 @@ impl Modifier {
     pub fn name(&self) -> String {
         match self {
             Self::Accuracy(_) => format!("accuracy"),
+            Self::ActiveAbility(a) => format!("active ability {}", a.name),
             Self::Attack(a) => format!("attack {}", a.name),
             Self::BaseAttribute(a, _) => format!("base attribute {}", a.name()),
             Self::DamageResistance(_) => format!("DR"),
             Self::Defense(d, _) => format!("defense {}", d.name()),
             Self::Encumbrance(_) => format!("encumbrance"),
             Self::HitPoints(_) => format!("HP"),
-            Self::Immune(t) => format!("immune"),
-            Self::Impervious(t) => format!("impervious"),
+            Self::Immune(t) => format!("immune to {}", t.description()),
+            Self::Impervious(t) => format!("impervious to {}", t.description()),
             Self::Initiative(_) => format!("initiative"),
             Self::Maneuver(m) => format!("maneuver {}", m.name()),
             Self::MovementSpeed(_) => format!("movement"),
@@ -95,21 +99,22 @@ impl Modifier {
             Self::Skill(s, _) => format!("skill {}", s.name()),
             Self::StrikeDamageDice(_) => format!("strike damage dice"),
             Self::VitalRoll(_) => format!("vital roll"),
-            Self::Vulnerable(t) => format!("vulnerable"),
+            Self::Vulnerable(t) => format!("vulnerable to {}", t.description()),
         }
     }
 
     pub fn modifier_type(&self) -> ModifierType {
         match self {
             Self::Accuracy(_) => ModifierType::Accuracy,
+            Self::ActiveAbility(_) => ModifierType::ActiveAbility,
             Self::Attack(_) => ModifierType::Attack,
             Self::BaseAttribute(a, _) => ModifierType::BaseAttribute(*a),
             Self::DamageResistance(_) => ModifierType::DamageResistance,
             Self::Defense(d, _) => ModifierType::Defense(*d),
             Self::Encumbrance(_) => ModifierType::Encumbrance,
             Self::HitPoints(_) => ModifierType::HitPoints,
-            Self::Immune(t) => ModifierType::SpecialDefense,
-            Self::Impervious(t) => ModifierType::SpecialDefense,
+            Self::Immune(_) => ModifierType::SpecialDefense,
+            Self::Impervious(_) => ModifierType::SpecialDefense,
             Self::Initiative(_) => ModifierType::Initiative,
             Self::Maneuver(_) => ModifierType::Maneuver,
             Self::MovementSpeed(_) => ModifierType::MovementSpeed,
@@ -119,7 +124,7 @@ impl Modifier {
             Self::Skill(s, _) => ModifierType::Skill(s.clone()),
             Self::StrikeDamageDice(_) => ModifierType::StrikeDamageDice,
             Self::VitalRoll(_) => ModifierType::VitalRoll,
-            Self::Vulnerable(t) => ModifierType::SpecialDefense,
+            Self::Vulnerable(_) => ModifierType::SpecialDefense,
         }
     }
 
@@ -140,6 +145,7 @@ impl Modifier {
     pub fn value(&self) -> i32 {
         let value = match self {
             Self::Accuracy(v) => v,
+            Self::ActiveAbility(_) => &0,
             Self::Attack(_) => &0,
             Self::BaseAttribute(_, v) => v,
             Self::DamageResistance(v) => v,
