@@ -13,6 +13,7 @@ mod usage_time;
 
 pub use ability_tag::AbilityTag;
 pub use ability_type::AbilityType;
+pub use active_ability::ActiveAbility;
 pub use attack::{Attack, HasAttacks};
 pub use attack_effect::AttackEffect;
 pub use cooldown::Cooldown;
