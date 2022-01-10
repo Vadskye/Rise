@@ -34,6 +34,7 @@ pub enum StandardAttack {
     Pyrohemia(i32),
     Pyrophobia(i32),
     RetributiveLifebond(i32),
+    WordOfFaith(i32),
 }
 
 impl StandardAttack {
@@ -623,6 +624,38 @@ impl StandardAttack {
                 } else {
                     AreaSize::Small
                 }),
+            },
+            Self::WordOfFaith(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Mental,
+                hit: AttackEffect::Damage(DamageEffect {
+                    damage_dice: DamageDice::aoe_damage(*rank),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Energy],
+                    extra_defense_effect: None,
+                    lose_hp_effect: None,
+                    power_multiplier: 0.5,
+                    take_damage_effect: None,
+                    vampiric_healing: None,
+                }),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: Attack::generate_modified_name("Word of Faith", *rank, 4, Some(6)),
+                replaces_weapon: None,
+                targeting: AttackTargeting::Radius(
+                    None,
+                    if *rank >= 6 {
+                        AreaSize::Huge
+                    } else if *rank >= 4 {
+                        AreaSize::Large
+                    } else {
+                        AreaSize::Small
+                    },
+                    AreaTargets::Enemies,
+                ),
             },
         }
     }

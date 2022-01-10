@@ -1,7 +1,8 @@
 use crate::core_mechanics::{
-    DamageType, MovementMode, Sense, Size, SpecialDefenseType, SpeedCategory,
+    DamageType, Debuff, FlightManeuverability, MovementMode, Sense, Size, SpecialDefenseType,
+    SpeedCategory,
 };
-use crate::creatures::{Modifier, Monster, StandardAttack};
+use crate::creatures::{calculate_standard_rank, Modifier, Monster, StandardAttack};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Planeforged;
@@ -53,6 +54,8 @@ impl FullPlaneforgedDefinition {
 
 pub fn planeforgeds() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
+
+    add_angels(&mut monsters);
 
     add_elementals(&mut monsters);
 
@@ -108,6 +111,128 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
     ));
 
     return monsters;
+}
+
+fn add_angels(monsters: &mut Vec<MonsterEntry>) {
+    struct Angel {
+        alignment: String,
+        attributes: Vec<i32>,
+        challenge_rating: ChallengeRating,
+        knowledge: Option<Knowledge>,
+        level: i32,
+        modifiers: Option<Vec<Modifier>>,
+        name: String,
+        size: Size,
+        trained_skills: Option<Vec<Skill>>,
+        weapons: Vec<Weapon>,
+    }
+
+    impl Angel {
+        fn monster(self) -> Monster {
+            let rank = calculate_standard_rank(self.level, self.challenge_rating);
+
+            let mut modifiers = self.modifiers.unwrap_or(vec![]);
+            modifiers.push(Modifier::Immune(SpecialDefenseType::Debuff(
+                Debuff::Shaken("".to_string()),
+            )));
+            modifiers.push(Modifier::Immune(SpecialDefenseType::Debuff(
+                Debuff::Frightened("".to_string()),
+            )));
+            modifiers.push(Modifier::Immune(SpecialDefenseType::Debuff(
+                Debuff::Panicked("".to_string()),
+            )));
+            modifiers.push(Modifier::Attack(
+                StandardAttack::DivineJudgment(rank).attack(),
+            ));
+            modifiers.push(Modifier::Attack(StandardAttack::WordOfFaith(rank).attack()));
+
+            let weapons = self
+                .weapons
+                .iter()
+                .map(|w| {
+                    w.clone()
+                        .except(|w| w.damage_types.push(DamageType::Energy))
+                })
+                .collect();
+
+            return FullPlaneforgedDefinition {
+                // From self
+                alignment: self.alignment,
+                attributes: self.attributes,
+                challenge_rating: self.challenge_rating,
+                knowledge: self.knowledge,
+                level: self.level,
+                modifiers: Some(modifiers),
+                name: self.name,
+                size: self.size,
+                trained_skills: self.trained_skills,
+
+                // Default values
+                description: None,
+                movement_modes: Some(vec![
+                    MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Perfect),
+                    MovementMode::Land(SpeedCategory::Normal),
+                ]),
+                senses: Some(vec![
+                    Sense::Darkvision(120),
+                    Sense::LowLightVision,
+                ]),
+                weapons,
+            }
+            .monster();
+        }
+    }
+
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Angels are divine beings native to the good-aligned Aligned Planes.
+            "),
+            (10, "
+                All angels have a striking and highly memorable appearance that evokes strong emotions in most viewers.
+                Most angels evoke an overpowering sense of awe and beauty, but individual angels may have highly varied appearances.
+            "),
+        ])),
+        name: "Angels".to_string(),
+        monsters: vec![
+            Angel {
+                alignment: "Always lawful good".to_string(),
+                attributes: vec![5, 5, 5, 4, 6, 4],
+                challenge_rating: ChallengeRating::Six,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Justicars enforce justice on good-aligned planes.
+                        They are extremely skilled at identifying the truth of any situation, and act to deal justice however they see fit.
+                    "),
+                    (5, "
+                        In rare circumstances, justicars may leave good-aligned planes to pursue those they see as exceptionally heinous criminals.
+                        Generally, this requires that the perpetrator committed a direct offense against a good deity or desecrated an area of a good-aligned plane.
+                        Justicars have no interest in mortal matters or minor crimes.
+                    "),
+                    (10, "
+                        Once, a powerful group of thugs and murderers broke through a magic seal guarding an ancient wizard's tower, intending to loot everything inside.
+                        They were shocked when a justicar suddenly appeared in front of them, and prepared to fight for their lives.
+                        However, the justicar ignored them.
+                        Instead, it murdered the ancient wizard of the tower and disappeared, leaving the spoils to the evildoers who broke the seal.
+
+                        This is the morality of a justicar.
+                        They consider only truly immense evils to be worthy of their attention, and ignore all lesser sins.
+                    "),
+                ])),
+                level: 14,
+                modifiers: None,
+                name: "Justicar".to_string(),
+                size: Size::Large,
+                trained_skills: Some(vec![
+                    Skill::Awareness,
+                    Skill::Deduction,
+                    Skill::SocialInsight,
+                ]),
+                weapons: vec![StandardWeapon::Greatsword.weapon()],
+            }
+            .monster(),
+        ],
+    }));
 }
 
 fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
