@@ -595,9 +595,25 @@ def generate_tools():
             tags=[],
             description="""
                 As a standard action, you can activate this item.
-                When you do, it sheds light like a torch for a week.
+                When you do, it sheds light like a torch for a week (see \\pcref<Torch>).
             """,
             short_description="Emits light like a torch for a week",
+        )
+    )
+
+    tools.append(
+        MagicItem(
+            consumable=True,
+            name="Torch",
+            rank=0,
+            material_type="Alchemical",
+            tags=[],
+            description="""
+                \\label<Torch>
+                As a standard action, you can light a torch if you have flint and steel or another source of flame handy.
+                When you do, it sheds \\glossterm<bright illumination> in a \\smallarea radius, and \\glossterm<shadowy illumination> in a \\medarea radius.
+            """,
+            short_description="Emits light",
         )
     )
 
@@ -609,7 +625,7 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you gain a +3 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                When you drink this \\glossterm<potion>, you gain a +1 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
                 This effect lasts for five minutes.
             """,
             short_description="Briefly increases carrying capacity",
@@ -621,7 +637,7 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you gain a +4 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                When you drink this \\glossterm<potion>, you gain a +2 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
                 This effect lasts for one hour.
             """,
             short_description="Increases carrying capacity",
@@ -633,7 +649,7 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you gain a +5 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                When you drink this \\glossterm<potion>, you gain a +3 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
                 This effect lasts for eight hours.
             """,
             short_description="Increases carrying capacity for an extended time",
