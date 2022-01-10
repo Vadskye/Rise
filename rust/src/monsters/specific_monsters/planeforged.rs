@@ -1,8 +1,9 @@
+use crate::core_mechanics::abilities::StandardAttack;
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, Sense, Size, SpecialDefenseType,
     SpeedCategory,
 };
-use crate::creatures::{calculate_standard_rank, Modifier, Monster, StandardAttack};
+use crate::creatures::{calculate_standard_rank, Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Planeforged;

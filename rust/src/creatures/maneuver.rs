@@ -1,6 +1,6 @@
 use crate::core_mechanics::{DamageType, Debuff, Defense, SpeedCategory};
-use crate::creatures::attack_effects::{AttackEffectDuration, AttackTriggeredEffect, DebuffEffect};
-use crate::creatures::attacks::{Attack, AttackMovement};
+use crate::core_mechanics::abilities::attack_effect::{AttackEffectDuration, AttackTriggeredEffect, DebuffEffect};
+use crate::core_mechanics::abilities::{Attack, AbilityMovement};
 use crate::equipment::Weapon;
 use titlecase::titlecase;
 use std::cmp::max;
@@ -121,7 +121,7 @@ impl Maneuver {
                 .attack()
                 .except(|a| {
                     a.accuracy += (rank - 1) / 2;
-                    a.movement = Some(AttackMovement {
+                    a.movement = Some(AbilityMovement {
                         move_before_attack: true,
                         requires_straight_line: true,
                         speed: SpeedCategory::Normal,

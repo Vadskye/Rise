@@ -1,5 +1,5 @@
+use crate::core_mechanics::abilities::HasAttacks;
 use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses};
-use crate::creatures::attacks::HasAttacks;
 use crate::creatures::Creature;
 
 pub fn format_creature(creature: &Creature) -> String {

@@ -1,5 +1,5 @@
 use rise::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses};
-use rise::creatures::attacks::HasAttacks;
+use rise::core_mechanics::abilities::HasAttacks;
 use rise::creatures::creature::Creature;
 use rise::creatures::{CreatureCategory, HasModifiers, Modifier};
 use rise::equipment::{Armor, HasArmor};

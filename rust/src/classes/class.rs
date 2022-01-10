@@ -1,7 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
+use crate::core_mechanics::abilities::PowerProgression;
 use crate::core_mechanics::{Defense, Resource};
-use crate::creatures::attacks::PowerProgression;
 use crate::equipment::{Armor, ArmorUsageClass, StandardWeapon, Weapon, WeaponGroup};
 use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};

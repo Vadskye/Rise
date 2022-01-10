@@ -1,5 +1,5 @@
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
-use crate::creatures::attacks::{AbilityType, HasAttacks};
+use crate::core_mechanics::abilities::{AbilityType, HasAttacks};
 use crate::creatures::Creature;
 use crate::equipment::Weapon;
 use crate::latex_formatting;

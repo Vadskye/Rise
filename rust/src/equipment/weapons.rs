@@ -1,10 +1,5 @@
-use crate::{
-    core_mechanics::{DamageDice, DamageType, Defense},
-    creatures::{
-        attack_effects::AttackEffect,
-        attacks::{Attack, AttackTargeting},
-    },
-};
+use crate::core_mechanics::abilities::{Attack, AttackEffect, Targeting};
+use crate::core_mechanics::{DamageDice, DamageType, Defense};
 use std::fmt;
 use titlecase::titlecase;
 
@@ -233,7 +228,7 @@ impl Weapon {
             is_magical: false,
             is_strike: true,
             replaces_weapon: Some(self.clone()),
-            targeting: AttackTargeting::Strike,
+            targeting: Targeting::Strike,
         };
     }
 

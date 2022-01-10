@@ -1,8 +1,9 @@
+use crate::core_mechanics::abilities::{StandardAttack, attack_effect};
 use crate::core_mechanics::{
     DamageType, Debuff, Defense, FlightManeuverability, MovementMode, Sense, Size, SpeedCategory,
 };
 
-use crate::creatures::{attack_effects, Modifier, Monster, StandardAttack};
+use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
@@ -275,8 +276,8 @@ pub fn animals() -> Vec<MonsterEntry> {
 
     let mut poisonous_stinger = StandardWeapon::MonsterStinger.weapon().attack();
     if let Some(e) = poisonous_stinger.damage_effect_mut() {
-        e.lose_hp_effect = Some(attack_effects::AttackTriggeredEffect::Poison(
-            attack_effects::PoisonEffect {
+        e.lose_hp_effect = Some(attack_effect::AttackTriggeredEffect::Poison(
+            attack_effect::PoisonEffect {
                 stage1: vec![Debuff::Dazed],
                 stage3_debuff: Some(vec![Debuff::Paralyzed]),
                 stage3_vital: None,

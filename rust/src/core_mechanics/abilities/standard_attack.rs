@@ -1,11 +1,11 @@
+use crate::core_mechanics::abilities::attack_effect::{
+    AttackEffectDuration, AttackTriggeredEffect, DamageEffect, DamageOverTimeEffect, DebuffEffect,
+    DebuffInsteadEffect, PoisonEffect, VitalWoundEffect,
+};
+use crate::core_mechanics::abilities::{
+    AreaSize, AreaTargets, Attack, AttackEffect, Cooldown, Range, Targeting,
+};
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
-use crate::creatures::attack_effects::{
-    self, AttackEffect, AttackEffectDuration, AttackTriggeredEffect, DamageEffect,
-    DamageOverTimeEffect, DebuffEffect, DebuffInsteadEffect,
-};
-use crate::creatures::attacks::{
-    AreaSize, AreaTargets, Attack, AttackCooldown, AttackRange, AttackTargeting,
-};
 use crate::equipment::StandardWeapon;
 
 pub enum StandardAttack {
@@ -46,10 +46,10 @@ impl StandardAttack {
                 aboleth_slam.name = "Sliming Tentacle".to_string();
                 if let Some(e) = aboleth_slam.damage_effect_mut() {
                     e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(
-                        attack_effects::PoisonEffect {
+                        PoisonEffect {
                             stage1: vec![Debuff::Stunned],
                             stage3_debuff: None,
-                            stage3_vital: Some(attack_effects::VitalWoundEffect {
+                            stage3_vital: Some(VitalWoundEffect {
                                 special_effect: Some("
                                     Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound},
                                       the target's skin is transformed into a clear, slimy membrane.
@@ -84,7 +84,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Psionic Blast".to_string(),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Cone(AreaSize::Large, AreaTargets::Enemies),
+                targeting: Targeting::Cone(AreaSize::Large, AreaTargets::Enemies),
             },
             Self::AnkhegDrag => Attack {
                 accuracy: 4,
@@ -97,18 +97,16 @@ impl StandardAttack {
                 movement: None,
                 name: "Drag Prey".to_string(),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Creature(AttackRange::Reach),
+                targeting: Targeting::Creature(Range::Reach),
             },
             Self::FrostwebSpiderBite => {
                 let mut frostweb_spider_bite = StandardWeapon::MonsterBite.weapon().attack();
                 if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
-                    e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(
-                        attack_effects::PoisonEffect {
-                            stage1: vec![Debuff::Slowed],
-                            stage3_debuff: Some(vec![Debuff::Immobilized]),
-                            stage3_vital: None,
-                        },
-                    ));
+                    e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(PoisonEffect {
+                        stage1: vec![Debuff::Slowed],
+                        stage3_debuff: Some(vec![Debuff::Immobilized]),
+                        stage3_vital: None,
+                    }));
                 }
                 return frostweb_spider_bite;
             }
@@ -129,7 +127,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Gibber".to_string(),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
+                targeting: Targeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
             },
             Self::YrthakThunderingHide => Attack {
                 accuracy: 0,
@@ -151,7 +149,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Thundering Hide".to_string(),
                 replaces_weapon: None,
-                targeting: AttackTargeting::CausedDamage(AreaSize::Tiny),
+                targeting: Targeting::CausedDamage(AreaSize::Tiny),
             },
 
             // Character/shared abilities
@@ -176,11 +174,11 @@ impl StandardAttack {
                 movement: None,
                 name: "Abyssal Blast".to_string(),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Creature(AttackRange::Medium),
+                targeting: Targeting::Creature(Range::Medium),
             },
             Self::BreathWeaponCone(rank, damage_type, defense) => Attack {
                 accuracy: 0,
-                cooldown: Some(AttackCooldown::Brief(None)),
+                cooldown: Some(Cooldown::Brief(None)),
                 crit: None,
                 defense: *defense,
                 hit: AttackEffect::Damage(DamageEffect {
@@ -198,7 +196,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Breath Weapon".to_string(),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Cone(
+                targeting: Targeting::Cone(
                     match rank {
                         1 => AreaSize::Small,
                         2 => AreaSize::Medium,
@@ -214,7 +212,7 @@ impl StandardAttack {
             },
             Self::BreathWeaponLine(rank, damage_type, defense) => Attack {
                 accuracy: 0,
-                cooldown: Some(AttackCooldown::Brief(None)),
+                cooldown: Some(Cooldown::Brief(None)),
                 crit: None,
                 defense: *defense,
                 hit: AttackEffect::Damage(DamageEffect {
@@ -233,13 +231,13 @@ impl StandardAttack {
                 name: "Breath Weapon".to_string(),
                 replaces_weapon: None,
                 targeting: match rank {
-                    1 => AttackTargeting::Line(5, AreaSize::Medium, AreaTargets::Everything),
-                    2 => AttackTargeting::Line(5, AreaSize::Large, AreaTargets::Everything),
-                    3 => AttackTargeting::Line(10, AreaSize::Large, AreaTargets::Everything),
-                    4 => AttackTargeting::Line(10, AreaSize::Huge, AreaTargets::Everything),
-                    5 => AttackTargeting::Line(15, AreaSize::Huge, AreaTargets::Everything),
-                    6 => AttackTargeting::Line(15, AreaSize::Gargantuan, AreaTargets::Everything),
-                    7 => AttackTargeting::Line(20, AreaSize::Gargantuan, AreaTargets::Everything),
+                    1 => Targeting::Line(5, AreaSize::Medium, AreaTargets::Everything),
+                    2 => Targeting::Line(5, AreaSize::Large, AreaTargets::Everything),
+                    3 => Targeting::Line(10, AreaSize::Large, AreaTargets::Everything),
+                    4 => Targeting::Line(10, AreaSize::Huge, AreaTargets::Everything),
+                    5 => Targeting::Line(15, AreaSize::Huge, AreaTargets::Everything),
+                    6 => Targeting::Line(15, AreaSize::Gargantuan, AreaTargets::Everything),
+                    7 => Targeting::Line(20, AreaSize::Gargantuan, AreaTargets::Everything),
                     _ => panic!("Invalid rank {}", rank),
                 },
             },
@@ -270,10 +268,10 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Combustion", *rank, 4, Some(7)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Creature(if *rank == 7 {
-                    AttackRange::Medium
+                targeting: Targeting::Creature(if *rank == 7 {
+                    Range::Medium
                 } else {
-                    AttackRange::Short
+                    Range::Short
                 }),
             },
             // TODO: add descriptive text for +accuracy vs non-bright illumination
@@ -297,7 +295,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Dark Grasp", *rank, 3, Some(7)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Anything(AttackRange::Reach),
+                targeting: Targeting::Anything(Range::Reach),
             },
             Self::DarkMiasma(rank) => Attack {
                 accuracy: 0,
@@ -320,9 +318,9 @@ impl StandardAttack {
                 name: Attack::generate_modified_name("Dark Miasma", *rank, 4, None),
                 replaces_weapon: None,
                 targeting: if *rank >= 4 {
-                    AttackTargeting::Radius(None, AreaSize::Large, AreaTargets::Creatures)
+                    Targeting::Radius(None, AreaSize::Large, AreaTargets::Creatures)
                 } else {
-                    AttackTargeting::Radius(None, AreaSize::Small, AreaTargets::Enemies)
+                    Targeting::Radius(None, AreaSize::Small, AreaTargets::Enemies)
                 },
             },
             Self::DivineJudgment(rank) => Attack {
@@ -346,12 +344,12 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Divine Judgment", *rank, 4, Some(7)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Creature(if *rank == 7 {
-                    AttackRange::Distant
+                targeting: Targeting::Creature(if *rank == 7 {
+                    Range::Distant
                 } else if *rank >= 4 {
-                    AttackRange::Long
+                    Range::Long
                 } else {
-                    AttackRange::Medium
+                    Range::Medium
                 }),
             },
             Self::DrainLife(rank) => Attack {
@@ -375,12 +373,12 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Drain Life", *rank, 4, Some(7)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Creature(if *rank == 7 {
-                    AttackRange::Distant
+                targeting: Targeting::Creature(if *rank == 7 {
+                    Range::Distant
                 } else if *rank >= 4 {
-                    AttackRange::Long
+                    Range::Long
                 } else {
-                    AttackRange::Medium
+                    Range::Medium
                 }),
             },
             Self::Fireball(rank) => Attack {
@@ -394,7 +392,7 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Fire],
                     extra_defense_effect: None,
                     lose_hp_effect: None,
-                    power_multiplier: if *rank == 7 { 1.0 } else { 0.5},
+                    power_multiplier: if *rank == 7 { 1.0 } else { 0.5 },
                     take_damage_effect: None,
                     vampiric_healing: None,
                 }),
@@ -403,8 +401,8 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Fireball", *rank, 3, Some(7)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Radius(
-                    Some(AttackRange::Medium),
+                targeting: Targeting::Radius(
+                    Some(Range::Medium),
                     AreaSize::Small,
                     AreaTargets::Everything,
                 ),
@@ -430,12 +428,12 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Firebolt", *rank, 4, Some(7)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Creature(if *rank == 7 {
-                    AttackRange::Distant
+                targeting: Targeting::Creature(if *rank == 7 {
+                    Range::Distant
                 } else if *rank >= 4 {
-                    AttackRange::Long
+                    Range::Long
                 } else {
-                    AttackRange::Medium
+                    Range::Medium
                 }),
             },
             Self::Ignition(rank) => Attack {
@@ -463,7 +461,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Ignition", *rank, 5, None),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Creature(AttackRange::Medium),
+                targeting: Targeting::Creature(Range::Medium),
             },
             Self::Inferno(rank) => Attack {
                 accuracy: 0,
@@ -485,7 +483,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Inferno", *rank, 3, Some(5)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Radius(
+                targeting: Targeting::Radius(
                     None,
                     if *rank >= 5 {
                         AreaSize::Huge
@@ -525,7 +523,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Mind Crush", *rank, 3, Some(7)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Creature(AttackRange::Medium),
+                targeting: Targeting::Creature(Range::Medium),
             },
             Self::Pyrohemia(rank) => Attack {
                 accuracy: 0,
@@ -561,7 +559,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Pyrohemia", *rank, 4, Some(6)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Creature(AttackRange::Short),
+                targeting: Targeting::Creature(Range::Short),
             },
             Self::Pyrophobia(rank) => Attack {
                 accuracy: if *rank >= 5 { *rank - 5 } else { *rank - 1 },
@@ -594,7 +592,7 @@ impl StandardAttack {
                     "Pyrophobia".to_string()
                 },
                 replaces_weapon: None,
-                targeting: AttackTargeting::Creature(AttackRange::Medium),
+                targeting: Targeting::Creature(Range::Medium),
             },
             Self::RetributiveLifebond(rank) => Attack {
                 accuracy: 0,
@@ -617,7 +615,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Retributive Lifebond", *rank, 4, Some(7)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::CausedHpLoss(if *rank == 7 {
+                targeting: Targeting::CausedHpLoss(if *rank == 7 {
                     AreaSize::Large
                 } else if *rank >= 4 {
                     AreaSize::Medium
@@ -645,7 +643,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Word of Faith", *rank, 4, Some(6)),
                 replaces_weapon: None,
-                targeting: AttackTargeting::Radius(
+                targeting: Targeting::Radius(
                     None,
                     if *rank >= 6 {
                         AreaSize::Huge
