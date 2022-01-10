@@ -1818,7 +1818,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +1 bonus to Strength-based \\glossterm<checks>, and you gain a +1 bonus to Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                You gain a +1 bonus to Strength-based \\glossterm<checks>, and you gain a +1 bonus to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 1.
             """,
             short_description="Grants +1 Strength for specific purposes",
@@ -1829,7 +1829,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +2 bonus to Strength-based \\glossterm<checks>, and you gain a +2 bonus to Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                You gain a +2 bonus to Strength-based \\glossterm<checks>, and you gain a +2 bonus to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 2.
             """,
             short_description="Grants +2 Strength for specific purposes",
@@ -1840,7 +1840,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +3 bonus to Strength-based \\glossterm<checks>, and you gain a +3 bonus to Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                You gain a +3 bonus to Strength-based \\glossterm<checks>, and you gain a +3 bonus to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 3.
             """,
             short_description="Grants +3 Strength for specific purposes",

@@ -625,10 +625,10 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you gain a +1 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                When you drink this \\glossterm<potion>, you gain a +1 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 This effect lasts for five minutes.
             """,
-            short_description="Briefly increases carrying capacity",
+            short_description="Briefly increases weight limits",
         ),
         MagicItem(
             consumable=True,
@@ -637,10 +637,10 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you gain a +2 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                When you drink this \\glossterm<potion>, you gain a +2 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 This effect lasts for one hour.
             """,
-            short_description="Increases carrying capacity",
+            short_description="Increases weight limits",
         ),
         MagicItem(
             consumable=True,
@@ -649,10 +649,10 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you gain a +3 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<carrying capacity> (see \\pcref<Carrying Capacity>).
+                When you drink this \\glossterm<potion>, you gain a +3 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 This effect lasts for eight hours.
             """,
-            short_description="Increases carrying capacity for an extended time",
+            short_description="Increases weight limits for an extended time",
         ),
     ]
 
