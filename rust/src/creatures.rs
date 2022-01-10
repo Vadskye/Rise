@@ -14,5 +14,5 @@ pub use creature::{Creature, CreatureCategory};
 pub use damage_tracking::HasDamageTracking;
 pub use maneuver::Maneuver;
 pub use modifier::{HasModifiers, IdentifiedModifier, Modifier, ModifierType};
-pub use monster::Monster;
+pub use monster::{calculate_standard_rank, Monster};
 pub use standard_attacks::StandardAttack;
