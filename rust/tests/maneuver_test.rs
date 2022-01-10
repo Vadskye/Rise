@@ -1,6 +1,6 @@
 use rise::classes::{Class, ClassArchetype};
 use rise::core_mechanics::{Attribute, HasAttributes};
-use rise::creatures::attacks::HasAttacks;
+use rise::core_mechanics::abilities::HasAttacks;
 use rise::creatures::creature::Creature;
 use rise::creatures::{Character, CreatureCategory, Maneuver};
 use rise::equipment::StandardWeapon;

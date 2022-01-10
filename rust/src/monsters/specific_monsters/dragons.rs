@@ -1,11 +1,9 @@
+use crate::core_mechanics::abilities::attack_effect::{DamageEffect, DebuffEffect, AttackEffectDuration};
+use crate::core_mechanics::abilities::{AreaTargets, Attack, Cooldown, AttackEffect, Targeting, AreaSize};
 use crate::core_mechanics::{
     DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility,
     Size, SpeedCategory, SpecialDefenseType,
 };
-use crate::creatures::attack_effects::{
-    AttackEffect, AttackEffectDuration, DamageEffect, DebuffEffect,
-};
-use crate::creatures::attacks::{AreaSize, AreaTargets, Attack, AttackCooldown, AttackTargeting};
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -44,7 +42,7 @@ impl AgeCategory {
         }
     }
 
-    fn breath_weapon_line(&self) -> AttackTargeting {
+    fn breath_weapon_line(&self) -> Targeting {
         let (width, size) = match self {
             Self::Wyrmling => (5, AreaSize::Medium),
             Self::Juvenile => (5, AreaSize::Large),
@@ -52,10 +50,10 @@ impl AgeCategory {
             Self::Ancient => (15, AreaSize::Gargantuan),
             Self::Wyrm => (20, AreaSize::Custom(480)),
         };
-        return AttackTargeting::Line(width, size, AreaTargets::Everything);
+        return Targeting::Line(width, size, AreaTargets::Everything);
     }
 
-    fn breath_weapon_cone(&self) -> AttackTargeting {
+    fn breath_weapon_cone(&self) -> Targeting {
         let size = match self {
             Self::Wyrmling => AreaSize::Small,
             Self::Juvenile => AreaSize::Medium,
@@ -63,7 +61,7 @@ impl AgeCategory {
             Self::Ancient => AreaSize::Huge,
             Self::Wyrm => AreaSize::Gargantuan,
         };
-        return AttackTargeting::Cone(size, AreaTargets::Everything);
+        return Targeting::Cone(size, AreaTargets::Everything);
     }
 
     fn challenge_rating(&self) -> ChallengeRating {
@@ -106,7 +104,7 @@ impl AgeCategory {
             movement: None,
             name: "Frightful Presence".to_string(),
             replaces_weapon: None,
-            targeting: AttackTargeting::Radius(None, size, AreaTargets::Enemies),
+            targeting: Targeting::Radius(None, size, AreaTargets::Enemies),
         });
     }
 
@@ -479,7 +477,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
     // TODO: add cooldown
     return Attack {
         accuracy: 0,
-        cooldown: Some(AttackCooldown::Brief(None)),
+        cooldown: Some(Cooldown::Brief(None)),
         crit: None,
         defense: Defense::Reflex,
         hit: AttackEffect::Damage(DamageEffect {

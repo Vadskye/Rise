@@ -1,7 +1,6 @@
 use super::*;
+use crate::core_mechanics::abilities::{HasAttacks, StandardAttack};
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
-use crate::creatures::attacks::HasAttacks;
-use crate::creatures::StandardAttack;
 
 #[test]
 fn standard_monster_statistics_level_1_cr1() {
@@ -187,8 +186,8 @@ mod firebolt_scaling {
         let expected = [
             "Firebolt +1 (The target takes 1d8+1 fire damage.)", // CR 0.5
             "Firebolt +1 (The target takes 2d6+2 fire damage.)", // CR 1
-            "Firebolt +2 (The target takes 2d6+4 fire damage.)",  // CR 2
-            "Firebolt +2 (The target takes 2d8+6 fire damage.)",  // CR 4
+            "Firebolt +2 (The target takes 2d6+4 fire damage.)", // CR 2
+            "Firebolt +2 (The target takes 2d8+6 fire damage.)", // CR 4
             "Firebolt +2 (The target takes 2d10+6 fire damage.)", // CR 6
         ];
         assert_eq!(expected, actual, "CR 0.5/1/2/4/6");

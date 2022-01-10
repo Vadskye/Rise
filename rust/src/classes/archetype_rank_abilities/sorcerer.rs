@@ -1,6 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::abilities::StandardAttack;
 use crate::core_mechanics::{Defense, Resource};
-use crate::creatures::{Modifier, StandardAttack};
+use crate::creatures::Modifier;
 
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![

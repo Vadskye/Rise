@@ -1,10 +1,10 @@
 use std::cmp::max;
 
+use crate::core_mechanics::abilities::{HasAttacks, PowerProgression};
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode,
     SpecialDefenseType, StandardPassiveAbility,
 };
-use crate::creatures::attacks::{HasAttacks, PowerProgression};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::StandardWeapon;
 use crate::latex_formatting;

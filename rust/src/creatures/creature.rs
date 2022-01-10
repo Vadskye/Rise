@@ -1,7 +1,7 @@
+use crate::core_mechanics::abilities::Attack;
 use crate::core_mechanics::{
     Attribute, MovementMode, PassiveAbility, Sense, Size, VitalWound,
 };
-use crate::creatures::attacks;
 use crate::creatures::{latex, IdentifiedModifier, Modifier};
 use crate::equipment::{Armor, Weapon};
 use crate::monsters::ChallengeRating;
@@ -26,7 +26,7 @@ pub struct Creature {
     pub senses: Option<Vec<Sense>>,
     pub size: Size,
     pub skill_training: Option<HashMap<Skill, bool>>,
-    pub special_attacks: Option<Vec<attacks::Attack>>,
+    pub special_attacks: Option<Vec<Attack>>,
     pub vital_wounds: Vec<VitalWound>,
     pub weapons: Vec<Weapon>,
 }
