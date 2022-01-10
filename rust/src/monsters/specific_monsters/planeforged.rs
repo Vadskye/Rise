@@ -239,6 +239,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 trained_skills: Some(vec![
                     Skill::Awareness,
                     Skill::Deduction,
+                    Skill::Intimidate,
                     Skill::SocialInsight,
                 ]),
                 weapons: vec![StandardWeapon::Greatsword.weapon()],
