@@ -37,8 +37,15 @@ pub enum Skill {
 
 pub enum SkillCategory {
     Movement,
+    Other,
     Senses,
     Social,
+}
+
+impl PartialEq for SkillCategory {
+    fn eq(&self, other: &Self) -> bool {
+        return self.name() == other.name();
+    }
 }
 
 impl Skill {
@@ -143,43 +150,37 @@ impl Skill {
     pub fn all_from_skill_category(category: &SkillCategory) -> Vec<Self> {
         return Self::all()
             .into_iter()
-            .filter(|s| {
-                if let Some(c) = s.skill_category() {
-                    c.name() == category.name()
-                } else {
-                    false
-                }
-            })
+            .filter(|s| &s.skill_category() == category)
             .collect();
     }
 
-    pub fn skill_category(&self) -> Option<SkillCategory> {
+    pub fn skill_category(&self) -> SkillCategory {
         match self {
-            Self::Awareness => Some(SkillCategory::Senses),
-            Self::Balance => Some(SkillCategory::Movement),
-            Self::Climb => Some(SkillCategory::Movement),
-            Self::Craft => None,
-            Self::CreatureHandling => None,
-            Self::Deception => Some(SkillCategory::Social),
-            Self::Deduction => Some(SkillCategory::Senses),
-            Self::Devices => None,
-            Self::Disguise => Some(SkillCategory::Social),
-            Self::Endurance => None,
-            Self::Flexibility => Some(SkillCategory::Movement),
-            Self::Intimidate => Some(SkillCategory::Social),
-            Self::Jump => Some(SkillCategory::Movement),
-            Self::Knowledge(_) => None,
-            Self::Linguistics => Some(SkillCategory::Social),
-            Self::Medicine => None,
-            Self::Perform => Some(SkillCategory::Social),
-            Self::Persuasion => Some(SkillCategory::Social),
-            Self::Profession => None,
-            Self::Ride => Some(SkillCategory::Movement),
-            Self::SleightOfHand => None,
-            Self::SocialInsight => Some(SkillCategory::Social),
-            Self::Stealth => Some(SkillCategory::Movement),
-            Self::Survival => None,
-            Self::Swim => Some(SkillCategory::Movement),
+            Self::Awareness => SkillCategory::Senses,
+            Self::Balance => SkillCategory::Movement,
+            Self::Climb => SkillCategory::Movement,
+            Self::Craft => SkillCategory::Other,
+            Self::CreatureHandling => SkillCategory::Other,
+            Self::Deception => SkillCategory::Social,
+            Self::Deduction => SkillCategory::Other,
+            Self::Devices => SkillCategory::Other,
+            Self::Disguise => SkillCategory::Social,
+            Self::Endurance => SkillCategory::Other,
+            Self::Flexibility => SkillCategory::Movement,
+            Self::Intimidate => SkillCategory::Social,
+            Self::Jump => SkillCategory::Movement,
+            Self::Knowledge(_) => SkillCategory::Other,
+            Self::Linguistics => SkillCategory::Social,
+            Self::Medicine => SkillCategory::Other,
+            Self::Perform => SkillCategory::Social,
+            Self::Persuasion => SkillCategory::Social,
+            Self::Profession => SkillCategory::Other,
+            Self::Ride => SkillCategory::Movement,
+            Self::SleightOfHand => SkillCategory::Other,
+            Self::SocialInsight => SkillCategory::Social,
+            Self::Stealth => SkillCategory::Movement,
+            Self::Survival => SkillCategory::Other,
+            Self::Swim => SkillCategory::Movement,
         }
     }
 
@@ -275,6 +276,7 @@ impl SkillCategory {
     pub fn name(&self) -> &str {
         match self {
             Self::Movement => "movement",
+            Self::Other => "other",
             Self::Senses => "senses",
             Self::Social => "social",
         }
