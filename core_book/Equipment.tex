@@ -248,7 +248,7 @@ Items are divided into five broad categories, described below.
 
     \subsection{Weapon Usage Classes}\label{Weapon Usage Classes}
         A weapon's \glossterm{usage class} is a measure of how much effort it takes to wield a weapon in combat.
-        It indicates whether a melee weapon, when wielded by a creature the weapon is sized for, is considered a light weapon, a medium weapon, or a heavy weapon.
+        It indicates whether a weapon, when wielded by a creature the weapon is sized for, is considered a light weapon, a medium weapon, or a heavy weapon.
 
         % All weapons should have two improvements over a ``baseline'' +0/+0d weapon with no properties.
         % In addition, light and heavy weapons have additional properties that are not considered improvements.
@@ -282,26 +282,16 @@ Items are divided into five broad categories, described below.
         In addition, the wielder takes a \minus2 accuracy penalty with the weapon per size category of difference.
         If a weapon's usage class would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
 
-    \subsection{Melee and Ranged Weapons}
-        Melee weapons are used for making melee attacks against foes within your \glossterm{reach} with that weapon (see \pcref{Reach}).
-        Ranged weapons are used to make attacks against distant foes within the \glossterm{range limits} of your weapon.
-        Any weapon that does not have the Projectile or Thrown \glossterm{weapon tag} is a melee weapon.
+    \subsection{Weapon Range Limits}\label{Weapon Range Limits}
+        Ranged weapon attacks become less accurate if the target is far away.
+        Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 120/480.
+        The first number indicates the maximum range for a weapon's \glossterm{close range}.
+        The second number indicates the maximum range for a weapon's \glossterm{long range}.
+        You cannot attack a target that is beyond a weapon's long range limit.
 
-            \subsubsection{Throwing Other Weapons} It is possible to throw a weapon that is not designed to be thrown.
-            The range limits are 10 feet for close range and 30 feet for long range.
-            You are treated as being nonproficient with the weapon, so you take a \minus2 accuracy penalty (see \pcref{Weapon Proficiency}).
-            If the attack hits, the weapon deals its normal damage.
-
-        \subsubsection{Weapon Range Limits}\label{Weapon Range Limits}
-            Attack with ranged weapons become less accurate if the target is far away.
-            Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 120/480.
-            The first number indicates the maximum range for a weapon's \glossterm{close range}.
-            The second number indicates the maximum range for a weapon's \glossterm{long range}.
-            You cannot attack a target that is beyond a weapon's long range limit.
-
-            Attacks at close range have no penalty.
-            Attacks at long range have a \minus4 accuracy penalty.
-            This is called a \glossterm{longshot penalty}, and some abilities can reduce this penalty.
+        Attacks at close range have no penalty.
+        Attacks at long range have a \minus4 accuracy penalty.
+        This is called a \glossterm{longshot penalty}, and some abilities can reduce this penalty.
 
     \subsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
         Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.

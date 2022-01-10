@@ -425,11 +425,26 @@ export const electromancy: MysticSphere = {
         // AOE dice, but no power
         hit: `Each target takes 1d10 electricity damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Fortitude against each creature that attacked you using a free hand or a metal melee weapon during that phase.
+          At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that made a \\glossterm{melee} attack against you during that phase.
         `,
       },
       rank: 3,
       scaling: "damage",
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Greater Personal Conduction",
+
+      castingTime: "minor action",
+      attack: {
+        // AOE dice, but no power
+        hit: `Each target takes 4d8 + half \\glossterm{power} electricity damage.`,
+        targeting: `
+          At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that made a \\glossterm{melee} attack against you during that phase.
+        `,
+      },
+      rank: 7,
       type: "Attune (self)",
     },
 

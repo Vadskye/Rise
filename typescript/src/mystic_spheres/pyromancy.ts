@@ -527,7 +527,7 @@ export const pyromancy: MysticSphere = {
         targeting: `
           You catch on fire.
           This does not cause you any harm, as the flames burn around your body without burning you.
-          At the end of each phase, make an attack vs. Reflex against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
+          At the end of each phase, make an attack vs. Reflex against each creature adjacent to you that made a \\glossterm{melee} attack against you during that phase.
         `,
       },
       rank: 3,

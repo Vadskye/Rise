@@ -263,7 +263,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
         it has the following differences.
         It has the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (self) tag.
-        The summoned creature takes the form of a melee weapon of your choice that you are proficient with.
+        The summoned creature takes the form of a weapon of your choice that you are proficient with.
         It is sized appropriately to be wielded by a creature of your size.
         It floats three feet off the ground, and has a 30 foot \\glossterm{fly speed} instead of a \\glossterm{land speed}, with good \\glossterm{maneuverability} and a maximum height of 15 feet (see \\pcref{Flying}).
         The creature's accuracy and damage are based on your chosen weapon, and it gains the effect of the weapon's normal tags (see \\pcref{Weapon Tags}).

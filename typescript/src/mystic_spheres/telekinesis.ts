@@ -166,7 +166,7 @@ export const telekinesis: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        Melee weapons you wield gain a +5 foot \\glossterm{magic bonus} to \\glossterm{reach}.
+        You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{reach} with melee \\glossterm{strikes}.
         This has no effect on ranged attacks you make.
       `,
 

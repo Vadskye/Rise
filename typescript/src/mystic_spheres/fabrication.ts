@@ -470,7 +470,7 @@ export const fabrication: MysticSphere = {
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
         You create a metal cage around the target in its space.
         The cage has a 2 inch gap between its bars, allowing the target to see and be seen by creatures outside of the cage.
-        This does not block \\glossterm{line of sight} or \\glossterm{line of effect}, but it provides cover, and non-piercing \\glossterm{melee} weapons cannot attack through the cage.
+        This does not block \\glossterm{line of sight} or \\glossterm{line of effect}, but it provides cover, and only piercing weapons can attack through the cage.
         Each 5-ft.\\ square of the field has 12 \\glossterm{hit points}.
 
         % TODO: clarify that you can't create two cages around the same target
