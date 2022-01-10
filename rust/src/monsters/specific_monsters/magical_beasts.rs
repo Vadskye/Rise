@@ -1,9 +1,10 @@
+use crate::core_mechanics::abilities::StandardAttack;
+use crate::core_mechanics::abilities::attack_effect::HealingEffect;
 use crate::core_mechanics::{
     DamageDice, DamageType, Defense, FlightManeuverability, MovementMode, PassiveAbility, Sense,
     Size, SpecialDefenseType, SpeedCategory,
 };
-use crate::creatures::attack_effects::HealingEffect;
-use crate::creatures::{Maneuver, Modifier, Monster, StandardAttack};
+use crate::creatures::{Maneuver, Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::MagicalBeast;
@@ -378,12 +379,10 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     ".to_string(),
                 })
             );
-            modifiers.push(Modifier::Vulnerable(
-                SpecialDefenseType::Damage(DamageType::Fire),
-            ));
-            modifiers.push(Modifier::Immune(
-                SpecialDefenseType::CriticalHits,
-            ));
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
+                DamageType::Fire,
+            )));
+            modifiers.push(Modifier::Immune(SpecialDefenseType::CriticalHits));
             return FullMagicalBeastDefinition {
                 alignment: "Always true neutral".to_string(),
                 attributes: self.attributes,

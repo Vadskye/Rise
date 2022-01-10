@@ -1,11 +1,10 @@
 use crate::core_mechanics::{Attribute, HasAttributes};
 use crate::creatures::{Creature, HasModifiers, ModifierType};
 use crate::equipment::HasArmor;
-use titlecase::titlecase;
-// use itertools::Itertools;
-use std::cmp::{max, PartialEq};
+use std::cmp::PartialEq;
 use std::collections::HashMap;
 use std::fmt;
+use titlecase::titlecase;
 
 #[derive(Clone, Eq, Hash)]
 pub enum Skill {

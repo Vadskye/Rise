@@ -1,7 +1,6 @@
+use crate::core_mechanics::abilities::{HasAttacks, Attack};
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses, HasVitalWounds};
-use crate::creatures::attack_effects::AttackEffect;
-use crate::creatures::attacks::{Attack, HasAttacks};
-use crate::creatures::{attacks, Creature, HasDamageTracking};
+use crate::creatures::{Creature, HasDamageTracking};
 use std::cmp::max;
 use std::fmt;
 
@@ -208,7 +207,7 @@ impl HitProbability {
 }
 
 fn calculate_hit_probability(
-    attack: &attacks::Attack,
+    attack: &Attack,
     accuracy: i32,
     defense: i32,
 ) -> HitProbability {
@@ -253,7 +252,7 @@ fn calculate_hit_probability(
     }
 }
 
-fn calculate_glance_probability(attack: &attacks::Attack, accuracy: i32, defense: i32) -> f64 {
+fn calculate_glance_probability(attack: &Attack, accuracy: i32, defense: i32) -> f64 {
     return calculate_hit_probability(attack, accuracy + 2, defense).single_hit_probability
         - calculate_hit_probability(attack, accuracy, defense).single_hit_probability;
 }

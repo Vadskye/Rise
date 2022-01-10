@@ -1,7 +1,8 @@
 use super::*;
+use crate::core_mechanics::abilities::StandardAttack;
 use crate::core_mechanics::Defense;
 use crate::creatures::{
-    Character, Creature, CreatureCategory, HasModifiers, Modifier, Monster, StandardAttack,
+    Character, Creature, CreatureCategory, HasModifiers, Modifier, Monster
 };
 use crate::equipment::StandardWeapon;
 use crate::monsters::ChallengeRating;

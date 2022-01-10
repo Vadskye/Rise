@@ -1,8 +1,9 @@
+use crate::core_mechanics::abilities::StandardAttack;
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
     SpeedCategory, SpecialDefenseType,
 };
-use crate::creatures::{Modifier, Monster, StandardAttack};
+use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animate;
