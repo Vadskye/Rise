@@ -1,9 +1,12 @@
 use crate::core_mechanics::abilities::attack_effect::DamageEffect;
-use crate::core_mechanics::abilities::{AttackEffect, AbilityMovement, Cooldown, Targeting};
+use crate::core_mechanics::abilities::{AbilityTag, AttackEffect, AbilityMovement, Cooldown, Targeting};
 use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Maneuver, ModifierType};
 use crate::equipment::{HasArmor, Weapon};
 use crate::latex_formatting;
+
+use super::UsageTime;
+use super::latex::latex_ability_block;
 
 #[derive(Clone)]
 pub struct Attack {
@@ -126,56 +129,21 @@ impl Attack {
 // LaTeX generation functions
 impl Attack {
     pub fn latex_ability_block(&self, creature: &Creature) -> String {
-        let ability_components: Vec<Option<String>> = vec![
-            Some(self.latex_ability_header()),
-            Some(self.latex_effect(creature)),
-        ];
-        let ability_components = ability_components
-            .iter()
-            .filter(|c| c.is_some())
-            .map(|c| c.as_deref().unwrap().trim())
-            .collect::<Vec<&str>>();
-        return format!(
-            "
-                \\begin<{ability_environment}>*<{name}>[{ability_type}]
-                    {ability_components}
-                \\end<{ability_environment}>
-            ",
-            ability_environment = self.hit.ability_type().environment(),
-            ability_components = ability_components.join("\n\\rankline "),
-            ability_type = self.hit.ability_type().name(),
-            name = latex_formatting::uppercase_first_letter(&self.name),
+        let tags = if self.is_magical {
+            Some(vec![AbilityTag::Magical])
+        } else { None };
+        let usage_time = if let Targeting::CausedHpLoss(_) = self.targeting {
+            Some(UsageTime::Triggered)
+        } else {
+            None
+        };
+        return latex_ability_block(
+            self.hit.ability_type(),
+            self.latex_effect(creature),
+            self.name.clone(),
+            tags,
+            usage_time,
         );
-    }
-
-    // This should always return a string; even if there are no tags, we want a rankline after the
-    // top section.
-    fn latex_ability_header(&self) -> String {
-        let tags = self.latex_tags().unwrap_or("".to_string());
-        let usage_time = self.usage_time().unwrap_or("".to_string());
-        return vec![tags, usage_time].join("\n");
-    }
-
-    fn usage_time(&self) -> Option<String> {
-        if let Targeting::CausedHpLoss(_) = self.targeting {
-            return Some(r"\par \noindent Usage time: Triggered.".to_string());
-        } else {
-            return None;
-        }
-    }
-
-    fn latex_tags(&self) -> Option<String> {
-        let mut tags: Vec<&str> = vec![];
-        if self.is_magical {
-            tags.push("\\abilitytag<Magical>");
-        }
-        // TODO: take other tags into account
-
-        if tags.len() > 0 {
-            return Some(tags.join(", "));
-        } else {
-            return None;
-        }
     }
 
     fn latex_effect(&self, creature: &Creature) -> String {
