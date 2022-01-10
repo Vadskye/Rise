@@ -722,12 +722,12 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Splitting Staff",
-            rank=4,
+            rank=2,
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\glossterm<magical> ability that targets a single creature or object and which does not have the \\abilitytag<Sustain> tag, you may activate this staff.
-                When you do, increase the number of targets that the spell affects by one.
+                Whenever you use a non-\\glossterm<strike> \\glossterm<magical> ability that targets a single creature or object and which does not have the \\abilitytag<Sustain> tag, you may activate this staff.
+                When you do, increase the number of targets that the ability affects by one.
                 In addition, you increase your \\glossterm<fatigue level> by one.
                 If the spell does not have a defined range, this staff has no effect on it.
             """,
@@ -754,7 +754,7 @@ def generate_implements():
             description="""
                 Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one.
-                In addition, during the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets.
+                In addition, during the \\glossterm<action phase> of the next round, the spell takes effect again with the same choices for all decisions, such as targets.
             """,
             short_description="Can exert to repeat effect",
         ),
@@ -846,14 +846,8 @@ def generate_implements():
     return implements
 
 
-def sanity_check(implements):
-    pass
-
-
-def generate_implement_latex(check=False):
+def generate_implement_latex():
     implements = sorted(generate_implements(), key=lambda implements: implements.name)
-    if check:
-        sanity_check(implements)
 
     texts = []
     for item in implements:
@@ -894,7 +888,7 @@ def write_to_file():
 @click.command()
 @click.option("-c", "--check/--no-check", default=False)
 @click.option("-o", "--output/--no-output", default=False)
-def main(output, check):
+def main(output):
     if output:
         write_to_file()
     else:
