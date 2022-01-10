@@ -199,6 +199,8 @@ impl Monster {
                     {movement}
                     {space_and_reach}
                     {senses}
+                    {social}
+                    {other_skills}
                     \\rankline
                     \\pari \\textbf<Attributes> {attributes}
                     % This is sometimes useful for debugging, but isn't actually useful information in general.
@@ -215,6 +217,8 @@ impl Monster {
             attributes = self.latex_attributes(),
             accuracy = latex_formatting::modifier(self.creature.calc_accuracy()),
             power = self.latex_power(),
+            social = self.latex_social(),
+            other_skills = self.latex_other_skills(),
             alignment = latex_formatting::uppercase_first_letter(
                 self.alignment.as_deref().unwrap_or("")
             ),
@@ -256,7 +260,7 @@ impl Monster {
     }
 
     fn latex_skill_modifiers_from_category(&self, skill_category: &SkillCategory) -> Vec<String> {
-        return Skill::all_from_skill_category(skill_category)
+        let mut skills = Skill::all_from_skill_category(skill_category)
             .iter()
             .filter(|s| self.creature.is_skill_trained(s))
             .map(|s| {
@@ -267,6 +271,8 @@ impl Monster {
                 )
             })
             .collect::<Vec<String>>();
+        skills.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase()));
+        return skills;
     }
 
     fn latex_movement(&self) -> String {
@@ -294,7 +300,7 @@ impl Monster {
         let senses = self.creature.senses.as_ref().unwrap_or(&senses);
         let mut sense_components = senses
             .iter()
-            .map(|s| latex_formatting::uppercase_first_letter(&s.latex_description()))
+            .map(|s| s.latex_description())
             .collect::<Vec<String>>();
         sense_components.extend(self.latex_skill_modifiers_from_category(&SkillCategory::Senses));
         if sense_components.len() > 0 {
@@ -302,7 +308,35 @@ impl Monster {
                 "
                     \\pari \\textbf<Senses> {senses}
                 ",
-                senses = &sense_components.join("\\monsep "),
+                senses = latex_formatting::uppercase_first_letter(&sense_components.join(", ")),
+            );
+        } else {
+            return "".to_string();
+        }
+    }
+
+    fn latex_social(&self) -> String {
+        let skills = self.latex_skill_modifiers_from_category(&SkillCategory::Social);
+        if skills.len() > 0 {
+            return format!(
+                "
+                    \\pari \\textbf<Social> {skills}
+                ",
+                skills = skills.join(", "),
+            );
+        } else {
+            return "".to_string();
+        }
+    }
+
+    fn latex_other_skills(&self) -> String {
+        let skills = self.latex_skill_modifiers_from_category(&SkillCategory::Other);
+        if skills.len() > 0 {
+            return format!(
+                "
+                    \\pari \\textbf<Other skills> {skills}
+                ",
+                skills = skills.join(", "),
             );
         } else {
             return "".to_string();
