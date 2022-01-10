@@ -93,7 +93,7 @@ impl Monster {
             );
         }
 
-        let rank = max(0, (level + 2) / 3 + challenge_rating.rank_modifier());
+        let rank = calculate_standard_rank(level, challenge_rating);
         creature.add_modifier(
             Modifier::Maneuver(Maneuver::MonstrousStrike(rank)),
             Some("Basic Maneuver"),
@@ -143,6 +143,10 @@ impl Monster {
 
         return monster;
     }
+}
+
+pub fn calculate_standard_rank(level: i32, challenge_rating: ChallengeRating) -> i32 {
+    return max(0, (level + 2) / 3 + challenge_rating.rank_modifier());
 }
 
 // LaTeX conversion
