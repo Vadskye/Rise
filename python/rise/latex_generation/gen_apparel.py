@@ -294,16 +294,18 @@ def generate_apparel():
             rank=4,
             material_type="Bracers",
             description="""
-                You gain a +5 foot \\glossterm<magic bonus> to your \\glossterm<reach> with melee weapons.
+                You gain a +5 foot \\glossterm<magic bonus> to your \\glossterm<reach> with melee \\glossterm<strikes>.
+                This has no effect on ranged attacks you make.
             """,
             short_description="Increases reach by five feet",
         ),
         MagicItem(
             name="Greatreach Bracers, Greater",
-            rank=7,
+            rank=6,
             material_type="Bracers",
             description="""
-                You gain a +10 foot \\glossterm<magic bonus> to your \\glossterm<reach> with melee weapons.
+                You gain a +10 foot \\glossterm<magic bonus> to your \\glossterm<reach> with melee \\glossterm<strikes>.
+                This has no effect on ranged attacks you make.
             """,
             short_description="Increases reach by ten feet",
         ),

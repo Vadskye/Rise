@@ -360,15 +360,15 @@ export const aeromancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        Melee weapons you wield gain a +5 foot \\glossterm{magic bonus} to \\glossterm{reach}.
+        You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{reach} with melee \\glossterm{strikes}.
         Attacks that hit because of this reach deal bludgeoning damage instead of any other damage types.
-        This has no effect on ranged attacks the target makes.
+        This has no effect on ranged attacks you make.
       `,
       // narrative: '',
       rank: 3,
       scaling: {
-        5: "The bonus to reach increases to +10 feet.",
-        7: "The bonus to reach increases to +15 feet.",
+        5: "The bonus increases to +10 feet.",
+        7: "The bonus increases to +15 feet.",
       },
       type: "Attune (self)",
     },
@@ -383,7 +383,7 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: {
-        7: "The bonus to reach increases to +10 feet.",
+        7: "The bonus increases to +10 feet.",
       },
       type: "Attune (target)",
     },
