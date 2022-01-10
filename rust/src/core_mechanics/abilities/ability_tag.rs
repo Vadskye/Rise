@@ -1,3 +1,4 @@
+#[derive(Clone)]
 pub enum AbilityTag {
     Attune(AttuneType),
     Auditory,
@@ -23,25 +24,47 @@ impl AbilityTag {
     pub fn description(&self) -> String {
         match self {
             Self::Attune(attune_type) => format!("Attune ({})", attune_type.description()),
-            Self::Auditory => format!("Auditory"),
-            Self::Compulsion => format!("Compulsion"),
-            Self::Creation => format!("Creation"),
-            Self::Curse => format!("Curse"),
-            Self::Detection => format!("Detection"),
-            Self::Emotion => format!("Emotion"),
-            Self::Healing => format!("Healing"),
-            Self::Magical => format!("Magical"),
-            Self::Manifestation => format!("Manifestation"),
-            Self::Scrying => format!("Scrying"),
-            Self::Speech => format!("Speech"),
-            Self::Subtle => format!("Subtle"),
+            Self::Auditory => r"Auditory".to_string(),
+            Self::Compulsion => r"Compulsion".to_string(),
+            Self::Creation => r"Creation".to_string(),
+            Self::Curse => r"Curse".to_string(),
+            Self::Detection => r"Detection".to_string(),
+            Self::Emotion => r"Emotion".to_string(),
+            Self::Healing => r"Healing".to_string(),
+            Self::Magical => r"Magical".to_string(),
+            Self::Manifestation => r"Manifestation".to_string(),
+            Self::Scrying => r"Scrying".to_string(),
+            Self::Speech => r"Speech".to_string(),
+            Self::Subtle => r"Subtle".to_string(),
             Self::Sustain(action) => format!("Sustain ({})", action.description()),
-            Self::Swift => format!("Swift"),
-            Self::Visual => format!("Visual"),
+            Self::Swift => r"Swift".to_string(),
+            Self::Visual => r"Visual".to_string(),
+        }
+    }
+
+    pub fn latex(&self) -> String {
+        match self {
+            Self::Attune(attune_type) => format!("\\abilitytag{{Attune}} ({})", attune_type.description()),
+            Self::Auditory => r"\abilitytag{Auditory}".to_string(),
+            Self::Compulsion => r"\abilitytag{Compulsion}".to_string(),
+            Self::Creation => r"\abilitytag{Creation}".to_string(),
+            Self::Curse => r"\abilitytag{Curse}".to_string(),
+            Self::Detection => r"\abilitytag{Detection}".to_string(),
+            Self::Emotion => r"\abilitytag{Emotion}".to_string(),
+            Self::Healing => r"\abilitytag{Healing}".to_string(),
+            Self::Magical => r"\abilitytag{Magical}".to_string(),
+            Self::Manifestation => r"\abilitytag{Manifestation}".to_string(),
+            Self::Scrying => r"\abilitytag{Scrying}".to_string(),
+            Self::Speech => r"\abilitytag{Speech}".to_string(),
+            Self::Subtle => r"\abilitytag{Subtle}".to_string(),
+            Self::Sustain(action) => format!("\\abilitytag{{Sustain}} ({})", action.description()),
+            Self::Swift => r"\abilitytag{Swift}".to_string(),
+            Self::Visual => r"\abilitytag{Visual}".to_string(),
         }
     }
 }
 
+#[derive(Clone)]
 pub enum AttuneType {
     Ritual,
     Personal,
@@ -58,6 +81,7 @@ impl AttuneType {
     }
 }
 
+#[derive(Clone)]
 pub enum SustainAction {
     Standard,
     Minor,

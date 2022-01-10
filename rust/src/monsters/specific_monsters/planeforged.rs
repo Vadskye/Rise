@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::StandardAttack;
+use crate::core_mechanics::abilities::{StandardAttack, ActiveAbility, AbilityType};
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, Sense, Size, SpecialDefenseType,
     SpeedCategory,
@@ -146,6 +146,18 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 StandardAttack::DivineJudgment(rank).attack(),
             ));
             modifiers.push(Modifier::Attack(StandardAttack::WordOfFaith(rank).attack()));
+            modifiers.push(Modifier::ActiveAbility(ActiveAbility {
+                ability_type: AbilityType::Instant,
+                cooldown: None,
+                effect: "
+                    The $name teleports horizontally into an unoccupied location within \\distrange.
+                    If the destination is invalid, this ability fails with no effect.
+                ".to_string(),
+                is_magical: true,
+                name: "Divine Translocation".to_string(),
+                tags: None,
+                usage_time: None,
+            }));
 
             let weapons = self
                 .weapons
