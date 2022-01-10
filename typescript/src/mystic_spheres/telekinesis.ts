@@ -16,7 +16,7 @@ export const telekinesis: MysticSphere = {
         At the end of each round, if the target is outside of this ability's range, this ability ends.
 
         During the movement phase, you can move the target up to five feet in any direction.
-        You use your \\glossterm{power} instead of your Strength to determine your \\glossterm{carrying capacity} when moving objects in this way (see \\pcref{Weight Limits}).
+        You use your Willpower instead of your Strength to determine your \\glossterm{weight limits} when moving objects in this way (see \\pcref{Weight Limits}).
       `,
       scaling: {
         2: `You can move the target up to ten feet in any direction.`,
