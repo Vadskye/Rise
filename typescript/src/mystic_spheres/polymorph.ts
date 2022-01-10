@@ -405,7 +405,7 @@ export const polymorph: MysticSphere = {
         // AOE dice, no power
         hit: `Each target takes 1d10 piercing damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Armor against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
+          At the end of each phase, make an attack vs. Armor against each creature adjacent to you that made a \\glossterm{melee} attack against you during that phase.
         `,
       },
       narrative: `
@@ -425,7 +425,7 @@ export const polymorph: MysticSphere = {
         // AOE dice, no power
         hit: `Each target takes 4d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Armor against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
+          At the end of each phase, make an attack vs. Armor against each creature adjacent to you that made a \\glossterm{melee} attack against you during that phase.
         `,
       },
       narrative: `
