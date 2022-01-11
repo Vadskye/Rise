@@ -145,6 +145,9 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::Attack(
                 StandardAttack::DivineJudgment(rank).attack(),
             ));
+            modifiers.push(Modifier::Attack(
+                StandardAttack::GlimpseOfDivinity(rank).attack(),
+            ));
             modifiers.push(Modifier::Attack(StandardAttack::WordOfFaith(rank).attack()));
             modifiers.push(Modifier::ActiveAbility(ActiveAbility {
                 ability_type: AbilityType::Instant,

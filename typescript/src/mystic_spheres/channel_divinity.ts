@@ -217,6 +217,7 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 3,
       scaling: "accuracy",
+      tags: ['Visual'],
       type: "Duration",
     },
 
@@ -229,6 +230,7 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 7,
       scaling: "accuracy",
+      tags: ['Visual'],
       type: "Duration",
     },
 
