@@ -173,7 +173,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         modifiers: Some(vec![
             Modifier::Attack(
                 Maneuver::PenetratingStrike(3)
-                    .attack(StandardWeapon::MonsterTentacle.weapon())
+                    .attack(StandardWeapon::Slam.weapon())
                     .except(|a| a.name = "Impaling Tentacles".to_string())
                     .except_hit_damage(|d| d.damage_types = vec![DamageType::Piercing])
             ),
@@ -186,7 +186,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         trained_skills: Some(vec![
             Skill::Climb,
         ]),
-        weapons: vec![StandardWeapon::MonsterTentacle.weapon()],
+        weapons: vec![StandardWeapon::Slam.weapon()],
     }.monster()));
 
     let stygian_leech_bite = StandardWeapon::MonsterBite
@@ -275,7 +275,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Skill::Climb,
             Skill::Stealth,
         ]),
-        weapons: vec![StandardWeapon::MonsterTentacle.weapon()],
+        weapons: vec![StandardWeapon::Slam.weapon()],
     }.monster()));
 
     monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
