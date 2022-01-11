@@ -1,6 +1,6 @@
-use crate::core_mechanics::abilities::StandardAttack;
+use crate::core_mechanics::abilities::{StandardAttack, ActiveAbility, AbilityType, AbilityTag};
 use crate::core_mechanics::{
-    Debuff, MovementMode, PassiveAbility, Sense, Size, SpecialDefenseType, 
+    Debuff, MovementMode, Sense, Size, SpecialDefenseType, 
 };
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -82,17 +82,18 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         ])),
         level: 12,
         modifiers: Some(vec![
-            Modifier::PassiveAbility(
-                PassiveAbility {
-                    description: r"
-                        As a standard action, the aboleth can \glossterm{dominate} the mind of an unconscious humanoid or aberration it touches.
-                        It can \glossterm{attune} to up to 5 separate domination effects in this way.
-                        This ability has the \glossterm{Compulsion} tag.
-                    ".to_string(),
-                    is_magical: true,
-                    name: "Dominate".to_string(),
-                },
-            ),
+            Modifier::ActiveAbility(ActiveAbility {
+                ability_type: AbilityType::Attune("Self".to_string()),
+                cooldown: None,
+                effect: r"
+                    The aboleth \glossterm{dominates} the mind of an unconscious humanoid or aberration it touches.
+                    It can attune to this ability five times, allowing it to control up to five different creatures.
+                ".to_string(),
+                is_magical: true,
+                name: "Dominate".to_string(),
+                tags: Some(vec![AbilityTag::Compulsion]),
+                usage_time: None,
+            }),
             Modifier::Attack(StandardAttack::AbolethSlam.attack()),
             Modifier::Attack(StandardAttack::AbolethPsionicBlast.attack()),
             Modifier::Attack(StandardAttack::MindCrush(5).attack()),
