@@ -90,6 +90,66 @@ mod to_section {
             monster.to_section(None),
         );
     }
+
+    #[test]
+    fn with_maneuvers() {
+        let mut monster = Monster::standard_monster(ChallengeRating::Two, 10, None, None);
+        monster.creature.weapons.push(StandardWeapon::Greatsword.weapon());
+        monster.creature.add_modifier(Modifier::Attack(
+            Maneuver::StripTheFlesh(4).attack(StandardWeapon::Greatsword.weapon()),
+        ), None, None);
+        monster.creature.add_modifier(Modifier::Attack(
+            Maneuver::CertainStrike(4).attack(StandardWeapon::Slam.weapon()),
+        ), None, None);
+        assert_multiline_eq(
+            r"
+                \begin{monsubsection}{Standard Monster}{10}[2]
+                    \monstersize{Medium planeforged}
+                    \RaggedRight
+                    \begin{monsterstatistics}
+                \pari \textbf{HP} 96
+                    \monsep \textbf{DR} 60
+                \pari \textbf{Defenses}
+                    Armor 13
+                    \monsep Fort 13
+                    \monsep Ref 13
+                    \monsep Ment 16
+                    \rankline
+                    \pari \textbf{Attributes} Str 5, Dex 2, Con 2, Int 2, Per 2, Wil 5
+                    \pari \textbf{Alignment}
+                \end{monsterstatistics}
+                \end{monsubsection}
+                \monsterabilitiesheader{Standard Monster}
+                \begin{instantability}*{Certain Slam}[Instant]
+                \rankline
+                The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
+                \hit The target takes 4d6\plus6 bludgeoning damage.
+            \end{instantability}
+        \par
+            \begin{instantability}*{Greatsword}[Instant]
+                \weapontag{Sweeping} (2)
+                \rankline
+                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
+                \hit The target takes 4d6\plus12 slashing damage.
+            \end{instantability}
+        \par
+            \begin{instantability}*{Slam}[Instant]
+                \rankline
+                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
+                \hit The target takes 4d6\plus12 bludgeoning damage.
+            \end{instantability}
+        \par
+            \begin{durationability}*{Strip the Flesh Greatsword}[Duration]
+                \weapontag{Sweeping} (2)
+                \rankline
+                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
+                \hit The target takes 4d6 slashing damage.
+                 Each creature that loses \glossterm{hit points} from this attack is \vulnerable to all damage as a \glossterm{condition}.
+            \end{durationability}
+",
+            monster.to_section(None),
+        );
+    }
 }
 
 #[cfg(test)]
