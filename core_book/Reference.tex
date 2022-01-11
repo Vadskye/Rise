@@ -272,3 +272,9 @@
     \traitdef{Tremorsight}{tremorsight}
         Tremorsense functions like \trait{blindsight}, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
         This makes it incapable of seeing flying creatures, but it ignores \glossterm{cover} and can even see through solid walls.
+
+    \traitdef{Vulnerable}{vulnerable}
+        A creature can be vulnerable to a particular damage type or debuff.
+        It takes a \minus4 penalty to all defenses against attacks that would cause it to take damage of that type, or that would cause it suffer that debuff.
+        This penalty applies against the whole attack even if the attack would only inflict the debuff or damage under specific circumstances, such as if the attack gets a critical hit or if the attack causes the creature to lose hit points.
+        For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is vulnerable.
