@@ -1,8 +1,8 @@
 use crate::core_mechanics::abilities::attack_effect::{DamageEffect, DebuffEffect, AttackEffectDuration};
-use crate::core_mechanics::abilities::{AreaTargets, Attack, Cooldown, AttackEffect, Targeting, AreaSize};
+use crate::core_mechanics::abilities::{AreaTargets, Attack, Cooldown, AttackEffect, Targeting, AreaSize, AbilityTag};
 use crate::core_mechanics::{
     DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility,
-    Size, SpeedCategory, SpecialDefenseType,
+    Size, SpeedCategory, SpecialDefenseType, Tag,
 };
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -104,6 +104,7 @@ impl AgeCategory {
             movement: None,
             name: "Frightful Presence".to_string(),
             replaces_weapon: None,
+            tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
             targeting: Targeting::Radius(None, size, AreaTargets::Enemies),
         });
     }
@@ -498,6 +499,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         movement: None,
         name: "Breath Weapon".to_string(),
         replaces_weapon: None,
+        tags: None,
         targeting,
     };
 }

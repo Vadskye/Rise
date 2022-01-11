@@ -10,6 +10,7 @@ mod passive_abilities;
 mod resources;
 mod senses;
 mod sizes;
+mod tag;
 mod vital_wounds;
 
 pub use attributes::{Attribute, HasAttributes};
@@ -23,4 +24,5 @@ pub use passive_abilities::{PassiveAbility, StandardPassiveAbility};
 pub use resources::{HasResources, Resource};
 pub use senses::Sense;
 pub use sizes::Size;
+pub use tag::Tag;
 pub use vital_wounds::{HasVitalWounds, VitalWound};
