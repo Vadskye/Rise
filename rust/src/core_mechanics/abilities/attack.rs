@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::attack_effect::DamageEffect;
 use crate::core_mechanics::abilities::{AbilityTag, AttackEffect, AbilityMovement, Cooldown, Targeting};
-use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes};
+use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Maneuver, ModifierType};
 use crate::equipment::{HasArmor, Weapon};
 use crate::latex_formatting;
@@ -20,6 +20,7 @@ pub struct Attack {
     pub movement: Option<AbilityMovement>,
     pub name: String,
     pub replaces_weapon: Option<Weapon>,
+    pub tags: Option<Vec<Tag>>,
     pub targeting: Targeting,
 }
 
@@ -129,15 +130,14 @@ impl Attack {
 // LaTeX generation functions
 impl Attack {
     pub fn latex_ability_block(&self, creature: &Creature) -> String {
-        let mut tags = vec![];
-        if self.is_magical {
-            tags.push(AbilityTag::Magical.latex());
-        }
-        // TODO: is "replaces weapon" actually the right check here?
-        if let Some(ref w) = self.replaces_weapon {
-            for tag in &w.tags {
-                tags.push(tag.latex());
+        let mut tags_text = vec![];
+        if let Some(ref tags) = self.tags {
+            for tag in tags {
+                tags_text.push(tag.latex());
             }
+        }
+        if self.is_magical {
+            tags_text.push(AbilityTag::Magical.latex());
         }
         let usage_time = if let Targeting::CausedHpLoss(_) = self.targeting {
             Some(UsageTime::Triggered)
@@ -147,7 +147,7 @@ impl Attack {
         return latex_ability_block(
             self.hit.ability_type(),
             self.latex_effect(creature),
-            tags,
+            tags_text,
             self.name.clone(),
             usage_time,
         );

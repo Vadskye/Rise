@@ -5,8 +5,10 @@ use crate::core_mechanics::abilities::attack_effect::{
 use crate::core_mechanics::abilities::{
     AreaSize, AreaTargets, Attack, AttackEffect, Cooldown, Range, Targeting,
 };
-use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
+use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, Tag};
 use crate::equipment::StandardWeapon;
+
+use super::AbilityTag;
 
 pub enum StandardAttack {
     // Monster abilities
@@ -84,6 +86,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Psionic Blast".to_string(),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Cone(AreaSize::Large, AreaTargets::Enemies),
             },
             Self::AnkhegDrag => Attack {
@@ -97,6 +100,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Drag Prey".to_string(),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Creature(Range::Reach),
             },
             Self::FrostwebSpiderBite => {
@@ -127,6 +131,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Gibber".to_string(),
                 replaces_weapon: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Compulsion)]),
                 targeting: Targeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
             },
             Self::YrthakThunderingHide => Attack {
@@ -149,6 +154,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Thundering Hide".to_string(),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::CausedDamage(AreaSize::Tiny),
             },
 
@@ -174,6 +180,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Abyssal Blast".to_string(),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Creature(Range::Medium),
             },
             Self::BreathWeaponCone(rank, damage_type, defense) => Attack {
@@ -196,6 +203,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Breath Weapon".to_string(),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Cone(
                     match rank {
                         1 => AreaSize::Small,
@@ -230,6 +238,7 @@ impl StandardAttack {
                 movement: None,
                 name: "Breath Weapon".to_string(),
                 replaces_weapon: None,
+                tags: None,
                 targeting: match rank {
                     1 => Targeting::Line(5, AreaSize::Medium, AreaTargets::Everything),
                     2 => Targeting::Line(5, AreaSize::Large, AreaTargets::Everything),
@@ -268,6 +277,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Combustion", *rank, 4, Some(7)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Creature(if *rank == 7 {
                     Range::Medium
                 } else {
@@ -295,6 +305,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Dark Grasp", *rank, 3, Some(7)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Anything(Range::Reach),
             },
             Self::DarkMiasma(rank) => Attack {
@@ -317,6 +328,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Dark Miasma", *rank, 4, None),
                 replaces_weapon: None,
+                tags: None,
                 targeting: if *rank >= 4 {
                     Targeting::Radius(None, AreaSize::Large, AreaTargets::Creatures)
                 } else {
@@ -344,6 +356,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Divine Judgment", *rank, 4, Some(7)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Creature(if *rank == 7 {
                     Range::Distant
                 } else if *rank >= 4 {
@@ -373,6 +386,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Drain Life", *rank, 4, Some(7)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Creature(if *rank == 7 {
                     Range::Distant
                 } else if *rank >= 4 {
@@ -401,6 +415,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Fireball", *rank, 3, Some(7)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Radius(
                     Some(Range::Medium),
                     AreaSize::Small,
@@ -428,6 +443,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Firebolt", *rank, 4, Some(7)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Creature(if *rank == 7 {
                     Range::Distant
                 } else if *rank >= 4 {
@@ -461,6 +477,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Ignition", *rank, 5, None),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Creature(Range::Medium),
             },
             Self::Inferno(rank) => Attack {
@@ -483,6 +500,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Inferno", *rank, 3, Some(5)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Radius(
                     None,
                     if *rank >= 5 {
@@ -523,6 +541,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Mind Crush", *rank, 3, Some(7)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Creature(Range::Medium),
             },
             Self::Pyrohemia(rank) => Attack {
@@ -559,6 +578,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Pyrohemia", *rank, 4, Some(6)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Creature(Range::Short),
             },
             Self::Pyrophobia(rank) => Attack {
@@ -592,6 +612,7 @@ impl StandardAttack {
                     "Pyrophobia".to_string()
                 },
                 replaces_weapon: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
                 targeting: Targeting::Creature(Range::Medium),
             },
             Self::RetributiveLifebond(rank) => Attack {
@@ -615,6 +636,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Retributive Lifebond", *rank, 4, Some(7)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::CausedHpLoss(if *rank == 7 {
                     AreaSize::Large
                 } else if *rank >= 4 {
@@ -643,6 +665,7 @@ impl StandardAttack {
                 movement: None,
                 name: Attack::generate_modified_name("Word of Faith", *rank, 4, Some(6)),
                 replaces_weapon: None,
+                tags: None,
                 targeting: Targeting::Radius(
                     None,
                     if *rank >= 6 {
