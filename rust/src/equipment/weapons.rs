@@ -79,6 +79,7 @@ pub enum StandardWeapon {
     MonsterBite,
     MonsterClaws,
     MonsterGore,
+    MonsterRam,
     MonsterStinger,
     MonsterTalons,
     Sap,
@@ -207,6 +208,13 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Piercing],
                 name: "gore".to_string(),
                 tags: vec![WeaponTag::Impact],
+            },
+            Self::MonsterRam => Weapon {
+                accuracy: 0,
+                damage_dice: DamageDice::d8(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "ram".to_string(),
+                tags: vec![WeaponTag::Forceful],
             },
             Self::MonsterStinger => Weapon {
                 accuracy: 1,
