@@ -199,9 +199,14 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             (-10, "
                 Angels are divine beings native to the good-aligned Aligned Planes.
             "),
-            (10, "
+            (0, "
                 All angels have a striking and highly memorable appearance that evokes strong emotions in most viewers.
                 Most angels evoke an overpowering sense of awe and beauty, but individual angels may have highly varied appearances.
+            "),
+            (10, "
+                In battle, angels are feared for their fundamental perfection.
+                They tend not to have any weaknesses for attackers to use against them.
+                Their only true foes are demons, who use overwhelming hordes rather than any clever tactics.
             "),
         ])),
         name: "Angels".to_string(),
