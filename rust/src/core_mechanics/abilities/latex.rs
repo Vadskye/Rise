@@ -1,12 +1,12 @@
 use crate::latex_formatting;
 
-use super::{AbilityType, AbilityTag, UsageTime};
+use super::{AbilityType, UsageTime};
 
 pub fn latex_ability_block(
     ability_type: AbilityType,
     effect: String,
+    formatted_tags: Vec<String>,
     name: String,
-    tags: Option<Vec<AbilityTag>>,
     usage_time: Option<UsageTime>,
 ) -> String {
     return format!(
@@ -19,18 +19,14 @@ pub fn latex_ability_block(
         ",
         ability_environment = ability_type.environment(),
         effect = effect,
-        header = latex_ability_header(tags, usage_time),
+        header = latex_ability_header(formatted_tags, usage_time),
         ability_type = ability_type.name(),
         name = latex_formatting::uppercase_first_letter(&name),
     );
 }
 
-fn latex_ability_header(tags: Option<Vec<AbilityTag>>, usage_time: Option<UsageTime>) -> String {
-    let tags_text = if let Some(t) = tags {
-        t.iter().map(|tag| tag.latex()).collect::<Vec<String>>().join(", ")
-    } else {
-        "".to_string()
-    };
+fn latex_ability_header(tags: Vec<String>, usage_time: Option<UsageTime>) -> String {
+    let tags_text = tags.join(", ");
     let usage_time_text = if let Some(u) = usage_time {
         u.latex_ability_header().unwrap_or("".to_string())
     } else {

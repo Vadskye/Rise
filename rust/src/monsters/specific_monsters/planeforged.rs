@@ -198,7 +198,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         knowledge: Some(Knowledge::new(vec![
-            (0, "
+            (-10, "
                 Angels are divine beings native to the good-aligned Aligned Planes.
             "),
             (10, "

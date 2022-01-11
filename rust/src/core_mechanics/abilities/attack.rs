@@ -129,9 +129,16 @@ impl Attack {
 // LaTeX generation functions
 impl Attack {
     pub fn latex_ability_block(&self, creature: &Creature) -> String {
-        let tags = if self.is_magical {
-            Some(vec![AbilityTag::Magical])
-        } else { None };
+        let mut tags = vec![];
+        if self.is_magical {
+            tags.push(AbilityTag::Magical.latex());
+        }
+        // TODO: is "replaces weapon" actually the right check here?
+        if let Some(ref w) = self.replaces_weapon {
+            for tag in &w.tags {
+                tags.push(tag.latex());
+            }
+        }
         let usage_time = if let Targeting::CausedHpLoss(_) = self.targeting {
             Some(UsageTime::Triggered)
         } else {
@@ -140,8 +147,8 @@ impl Attack {
         return latex_ability_block(
             self.hit.ability_type(),
             self.latex_effect(creature),
-            self.name.clone(),
             tags,
+            self.name.clone(),
             usage_time,
         );
     }
