@@ -10,6 +10,7 @@ use crate::equipment::StandardWeapon;
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
 use crate::skills::{HasSkills, Skill, SkillCategory};
+use regex::Regex;
 use titlecase::titlecase;
 
 use super::{Maneuver, ModifierType};
@@ -154,7 +155,7 @@ impl Monster {
         } else {
             panic!("Monster has no name")
         };
-        return latex_formatting::latexify(format!(
+        let latex = latex_formatting::latexify(format!(
             "
                 \\begin<{section_name}><{name}><{level}>[{cr}]
                     \\monstersize{size_star}<{size} {type}>
@@ -188,6 +189,13 @@ impl Monster {
             "$Name",
             titlecase(self.creature.name.as_deref().unwrap_or("")).as_str(),
         );
+        // Remove trailing spaces
+        let terminal_spaces_pattern = Regex::new(r"(?m: +$)").unwrap();
+        let latex = terminal_spaces_pattern.replace_all(&latex, "").to_string();
+        // Condense repetitive line breaks to avoid bloating file size and make testing
+        // easier.
+        let empty_line_pattern = Regex::new(r"\n+").unwrap();
+        return empty_line_pattern.replace_all(&latex, "\n").to_string();
     }
 
     fn latex_content(&self) -> String {
@@ -203,10 +211,6 @@ impl Monster {
                     {other_skills}
                     \\rankline
                     \\pari \\textbf<Attributes> {attributes}
-                    % This is sometimes useful for debugging, but isn't actually useful information in general.
-                    % To the extent that raw accuracy or power is important, that should already be
-                    % included in more specific attacks or abilities.
-                    % \\pari \\textbf<Accuracy> {accuracy} \\monsep {power}
                     \\pari \\textbf<Alignment> {alignment}
                 \\end<monsterstatistics>
             ",
@@ -215,14 +219,18 @@ impl Monster {
             movement = self.latex_movement(),
             senses = self.latex_senses(),
             attributes = self.latex_attributes(),
-            accuracy = latex_formatting::modifier(self.creature.calc_accuracy()),
-            power = self.latex_power(),
             social = self.latex_social(),
             other_skills = self.latex_other_skills(),
             alignment = latex_formatting::uppercase_first_letter(
                 self.alignment.as_deref().unwrap_or("")
             ),
             space_and_reach = "", // TODO: only display for monsters with nonstandard space/reach
+
+            // This is sometimes useful for debugging, but isn't actually useful information in general.
+            // To the extent that raw accuracy or power is important, that should already be
+            // included in more specific attacks or abilities.
+            // accuracy = latex_formatting::modifier(self.creature.calc_accuracy()),
+            // power = self.latex_power(),
         );
     }
 
@@ -365,9 +373,9 @@ impl Monster {
         );
     }
 
-    fn latex_power(&self) -> String {
-        return format!("\\textbf<Power> {}", self.creature.calc_power());
-    }
+    // fn latex_power(&self) -> String {
+    //     return format!("\\textbf<Power> {}", self.creature.calc_power());
+    // }
 
     fn latex_attributes(&self) -> String {
         return Attribute::all()
