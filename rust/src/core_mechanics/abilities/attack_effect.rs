@@ -1,5 +1,5 @@
-use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
 use crate::core_mechanics::abilities::{AbilityType, HasAttacks};
+use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
 use crate::creatures::Creature;
 use crate::equipment::Weapon;
 use crate::latex_formatting;
@@ -15,6 +15,7 @@ pub enum AttackEffect {
     HalfDamage,
     Healing(HealingEffect),
     Knockback(i32),
+    MustRemoveTwice,
     Poison(PoisonEffect),
     Push(i32),
     VitalWound(VitalWoundEffect),
@@ -166,12 +167,13 @@ impl DebuffEffect {
             .debuffs
             .iter()
             .map(|d| d.latex_link())
-            .collect::<Vec<String>>()
-            .join(", ");
+            .collect::<Vec<String>>();
+        let debuff_text =
+            latex_formatting::join_string_list(&debuff_texts).unwrap_or("".to_string());
         if self.duration == AttackEffectDuration::Brief {
-            return format!("{} {}.", self.duration.description(), debuff_texts);
+            return format!("{} {}.", self.duration.description(), debuff_text);
         } else {
-            return format!("{} {}.", debuff_texts, self.duration.description());
+            return format!("{} {}.", debuff_text, self.duration.description());
         }
     }
 }
@@ -289,6 +291,7 @@ impl AttackEffect {
             Self::HalfDamage => AbilityType::Instant,
             Self::Healing(_) => AbilityType::Instant,
             Self::Knockback(_) => AbilityType::Instant,
+            Self::MustRemoveTwice => AbilityType::Duration,
             Self::Poison(_) => AbilityType::Duration,
             Self::Push(_) => AbilityType::Instant,
             Self::VitalWound(_) => AbilityType::Instant,
@@ -388,6 +391,13 @@ impl AttackEffect {
                     ",
                     the_subject = the_subject,
                     feet = feet,
+                );
+            }
+            Self::MustRemoveTwice => {
+                return format!(
+                    "
+                        The condition must be removed twice before the effect ends.
+                    ",
                 );
             }
             Self::Poison(effect) => {
