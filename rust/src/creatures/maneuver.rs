@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DebuffEffect,
 };
-use crate::core_mechanics::abilities::{AbilityMovement, Attack};
+use crate::core_mechanics::abilities::{AbilityMovement, Attack, Targeting, AreaSize, AreaTargets};
 use crate::core_mechanics::{DamageType, Debuff, Defense, SpecialDefenseType, SpeedCategory};
 use crate::equipment::Weapon;
 use std::cmp::max;
@@ -22,6 +22,7 @@ pub enum Maneuver {
     PenetratingStrike(i32),
     PouncingStrike(i32),
     StripTheFlesh(i32),
+    Whirlwind(i32, i32),
 }
 
 fn standard_damage_scaling(rank: i32) -> i32 {
@@ -146,6 +147,13 @@ impl Maneuver {
                         }));
                     })
             }
+            Self::Whirlwind(rank, reach) => weapon
+                .attack()
+                .except(|a| a.accuracy += (rank - 1) / 2)
+                .except(|a| a.targeting = Targeting::Radius(None, AreaSize::Custom(*reach), AreaTargets::Enemies))
+                .except_hit_damage(|d| {
+                    d.power_multiplier = 0.5;
+                }),
         };
         attack.name = self.attack_name(&weapon);
         attack.replaces_weapon = if self.should_replace_weapon() {
@@ -172,6 +180,7 @@ impl Maneuver {
             Self::PenetratingStrike(_) => format!("Penetrating {}", weapon_name),
             Self::PouncingStrike(_) => format!("Pouncing {}", weapon_name),
             Self::StripTheFlesh(_) => format!("Strip the Flesh -- {}", weapon_name),
+            Self::Whirlwind(_, _) => format!("Whirlwind {}", weapon_name),
         }
     }
 
@@ -190,6 +199,7 @@ impl Maneuver {
             Self::PenetratingStrike(_) => "Penetrating Strike",
             Self::PouncingStrike(_) => "Pouncing Strike",
             Self::StripTheFlesh(_) => "Strip the Flesh",
+            Self::Whirlwind(_, _) => "Whirlwind",
         }
     }
 

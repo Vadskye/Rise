@@ -39,4 +39,27 @@ impl Size {
             Size::Colossal => "Colossal",
         }
     }
+
+    pub fn reach(&self, is_long: bool) -> i32 {
+        let tall_reach = self.space().floor() as i32;
+        if is_long && tall_reach >= 10 {
+            return tall_reach / 2;
+        } else {
+            return tall_reach;
+        }
+    }
+
+    pub fn space(&self) -> f64 {
+        match self {
+            Size::Fine => 0.25,
+            Size::Diminuitive => 0.5,
+            Size::Tiny => 1.0,
+            Size::Small => 2.5,
+            Size::Medium => 5.0,
+            Size::Large => 10.0,
+            Size::Huge => 20.0,
+            Size::Gargantuan => 40.0,
+            Size::Colossal => 80.0,
+        }
+    }
 }
