@@ -219,16 +219,21 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 challenge_rating: ChallengeRating::Six,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
-                        Seraphim are six-winged angelic beings of immense power.
+                        Seraphim are six-winged angels of immense power.
                         They burn with holy fire, which they use to immolate evildoers.
-                        A seraph resembles a massive serpent that twists and coils constantly.
+                        A seraph resembles a massive serpent that leaves a trail of fire as it flies.
+                    "),
+                    (5, "
+                        Despite their serpentine appearance, seraphim have beautiful singing voices.
+                        They sing almost constaintly both in and out of combat.
                     "),
                 ])),
                 level: 16,
                 modifiers: Some(vec![
+                    Modifier::Attack(StandardAttack::Combustion(7).attack()),
                     Modifier::Attack(
-                        Maneuver::Whirlwind(7, Size::Huge.reach(false))
-                            .attack(StandardWeapon::Slam.weapon())
+                        Maneuver::TenderizingSmash(7)
+                            .attack(StandardWeapon::MonsterRam.weapon())
                             .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
                     ),
                 ]),
@@ -236,11 +241,12 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 size: Size::Huge,
                 trained_skills: Some(vec![
                     Skill::Awareness,
+                    Skill::Endurance,
                 ]),
                 weapons: vec![
                     StandardWeapon::MonsterBite.weapon()
                         .except(|w| w.damage_types.push(DamageType::Fire)),
-                    StandardWeapon::Slam.weapon()
+                    StandardWeapon::MonsterRam.weapon()
                         .except(|w| w.damage_types.push(DamageType::Fire)),
                 ],
             }
@@ -282,12 +288,45 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 trained_skills: Some(vec![
                     Skill::Awareness,
                     Skill::Deduction,
+                    Skill::Endurance,
                     Skill::Intimidate,
                     Skill::SocialInsight,
                 ]),
                 weapons: vec![
                     StandardWeapon::Greatsword.weapon()
                         .except(|w| w.damage_types.push(DamageType::Energy)),
+                ],
+            }
+            .monster(),
+            Angel {
+                alignment: "Always neutral good".to_string(),
+                attributes: vec![4, 5, 7, 4, 4, 6],
+                challenge_rating: ChallengeRating::Six,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Ophanim resemble burning wheels rimmed with many eyes.
+                        They serve as sentries and guardians of planar portals in good-aligned planes.
+                        In combat, they spin into a raging whirlwind.
+                    "),
+                ])),
+                level: 12,
+                modifiers: Some(vec![
+                    Modifier::Attack(StandardAttack::Inferno(5).attack()),
+                    Modifier::Attack(
+                        Maneuver::Whirlwind(5, Size::Large.reach(false))
+                            .attack(StandardWeapon::Slam.weapon())
+                            .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
+                    ),
+                ]),
+                name: "Ophan".to_string(),
+                size: Size::Large,
+                trained_skills: Some(vec![
+                    Skill::Awareness,
+                    Skill::Endurance,
+                ]),
+                weapons: vec![
+                    StandardWeapon::Slam.weapon()
+                        .except(|w| w.damage_types.push(DamageType::Fire)),
                 ],
             }
             .monster(),

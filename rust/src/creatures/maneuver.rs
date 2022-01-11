@@ -15,13 +15,16 @@ pub enum Maneuver {
     GenericScalingStrike(i32),
     GraspingStrike(i32),
     GreaterHamstring(i32),
+    GreaterHeadshot(i32),
     GreaterGraspingStrike(i32),
     Hamstring(i32),
+    Headshot(i32),
     MightyStrike(i32),
     MonstrousStrike(i32),
     PenetratingStrike(i32),
     PouncingStrike(i32),
     StripTheFlesh(i32),
+    TenderizingSmash(i32),
     Whirlwind(i32, i32),
 }
 
@@ -73,7 +76,7 @@ impl Maneuver {
                     d.power_multiplier = 0.0;
                 }),
             Self::GreaterGraspingStrike(rank) => {
-                assert_minimum_rank(5, rank, "Greater Grasping Strike");
+                assert_minimum_rank(5, rank, self.name());
                 weapon
                     .attack()
                     .except(|a| a.accuracy += (rank - 5) / 2)
@@ -84,7 +87,7 @@ impl Maneuver {
                     })
             }
             Self::GreaterHamstring(rank) => {
-                assert_minimum_rank(6, rank, "Greater Hamstring");
+                assert_minimum_rank(6, rank, self.name());
                 weapon
                     .attack()
                     .except(|a| a.accuracy += (rank - 3) / 2)
@@ -96,8 +99,21 @@ impl Maneuver {
                         }));
                     })
             }
+            Self::GreaterHeadshot(rank) => {
+                assert_minimum_rank(4, rank, self.name());
+                weapon
+                    .attack()
+                    .except(|a| a.accuracy += (rank - 4) / 2)
+                    .except_hit_damage(|d| {
+                        d.power_multiplier = 0.5;
+                        d.take_damage_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
+                            debuffs: vec![Debuff::Dazed],
+                            duration: AttackEffectDuration::Brief,
+                        }));
+                    })
+            }
             Self::Hamstring(rank) => {
-                assert_minimum_rank(2, rank, "Hamstring");
+                assert_minimum_rank(2, rank, self.name());
                 weapon
                     .attack()
                     .except(|a| a.accuracy += (rank - 1) / 2)
@@ -106,6 +122,18 @@ impl Maneuver {
                         d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                             debuffs: vec![Debuff::Slowed],
                             duration: AttackEffectDuration::Condition,
+                        }));
+                    })
+            }
+            Self::Headshot(rank) => {
+                weapon
+                    .attack()
+                    .except(|a| a.accuracy += (rank - 1) / 2)
+                    .except_hit_damage(|d| {
+                        d.power_multiplier = 0.0;
+                        d.take_damage_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
+                            debuffs: vec![Debuff::Dazed],
+                            duration: AttackEffectDuration::Brief,
                         }));
                     })
             }
@@ -133,7 +161,7 @@ impl Maneuver {
                 })
                 .except_hit_damage(|d| d.power_multiplier = 0.5),
             Self::StripTheFlesh(rank) => {
-                assert_minimum_rank(3, rank, "Strip the Flesh");
+                assert_minimum_rank(3, rank, self.name());
                 weapon
                     .attack()
                     .except(|a| a.accuracy += (rank - 3) / 2)
@@ -144,6 +172,19 @@ impl Maneuver {
                                 SpecialDefenseType::AllDamage,
                             ))],
                             duration: AttackEffectDuration::Condition,
+                        }));
+                    })
+            }
+            Self::TenderizingSmash(rank) => {
+                assert_minimum_rank(5, rank, self.name());
+                weapon
+                    .attack()
+                    .except(|a| a.accuracy += (rank - 5) / 2)
+                    .except_hit_damage(|d| {
+                        d.power_multiplier = 0.0;
+                        d.take_damage_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
+                            debuffs: vec![Debuff::Stunned],
+                            duration: AttackEffectDuration::Brief,
                         }));
                     })
             }
@@ -174,12 +215,15 @@ impl Maneuver {
             Self::GraspingStrike(_) => format!("Grasping {}", weapon_name),
             Self::GreaterGraspingStrike(_) => format!("Greater Grasping {}", weapon_name),
             Self::GreaterHamstring(_) => format!("Greater Hamstring -- {}", weapon_name),
+            Self::GreaterHeadshot(_) => format!("Greater Headshot -- {}", weapon_name),
             Self::Hamstring(_) => format!("Hamstring -- {}", weapon_name),
+            Self::Headshot(_) => format!("Headshot -- {}", weapon_name),
             Self::MightyStrike(_) => format!("Mighty {}", weapon_name),
             Self::MonstrousStrike(_) => weapon_name,
             Self::PenetratingStrike(_) => format!("Penetrating {}", weapon_name),
             Self::PouncingStrike(_) => format!("Pouncing {}", weapon_name),
             Self::StripTheFlesh(_) => format!("Strip the Flesh -- {}", weapon_name),
+            Self::TenderizingSmash(_) => format!("Tenderizing {}", weapon_name),
             Self::Whirlwind(_, _) => format!("Whirlwind {}", weapon_name),
         }
     }
@@ -193,12 +237,15 @@ impl Maneuver {
             Self::GraspingStrike(_) => "Grasping Strike",
             Self::GreaterGraspingStrike(_) => "Greater Grasping Strike",
             Self::GreaterHamstring(_) => "Greater Hamstring",
+            Self::GreaterHeadshot(_) => "Greater Headshot",
             Self::Hamstring(_) => "Hamstring",
+            Self::Headshot(_) => "Headshot",
             Self::MightyStrike(_) => "Mighty Strike",
             Self::MonstrousStrike(_) => "Monstrous Strike",
             Self::PenetratingStrike(_) => "Penetrating Strike",
             Self::PouncingStrike(_) => "Pouncing Strike",
             Self::StripTheFlesh(_) => "Strip the Flesh",
+            Self::TenderizingSmash(_) => "Tenderizing Smash",
             Self::Whirlwind(_, _) => "Whirlwind",
         }
     }
