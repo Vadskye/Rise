@@ -29,6 +29,7 @@ impl FullMonsterDefinition {
         if let Some(d) = self.description {
             monster.description = Some(d.to_string());
         }
+        monster.knowledge = self.knowledge;
         monster.movement_modes = self
             .movement_modes
             .unwrap_or(vec![MovementMode::Land(SpeedCategory::Normal)]);
