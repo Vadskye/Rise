@@ -30,6 +30,7 @@ pub enum StandardAttack {
     DrainLife(i32),
     Fireball(i32),
     Firebolt(i32),
+    GlimpseOfDivinity(i32),
     Ignition(i32),
     Inferno(i32),
     MindCrush(i32),
@@ -451,6 +452,27 @@ impl StandardAttack {
                 } else {
                     Range::Medium
                 }),
+            },
+            Self::GlimpseOfDivinity(rank) => Attack {
+                accuracy: if *rank >= 7 { 0 } else { *rank - 3 },
+                cooldown: None,
+                crit: Some(AttackEffect::MustRemoveTwice),
+                defense: Defense::Mental,
+                hit: AttackEffect::Debuff(DebuffEffect {
+                    debuffs: if *rank >= 7 {
+                        vec![Debuff::Dazzled, Debuff::Dazed]
+                    } else {
+                        vec![Debuff::Dazzled]
+                    },
+                    duration: AttackEffectDuration::Condition,
+                }),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: Attack::generate_modified_name("Glimpse of Divinity", *rank, 7, None),
+                replaces_weapon: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Visual)]),
+                targeting: Targeting::Creature(Range::Medium),
             },
             Self::Ignition(rank) => Attack {
                 accuracy: 0,
