@@ -1,9 +1,11 @@
-use crate::core_mechanics::{DamageType, Debuff, Defense, SpeedCategory, SpecialDefenseType};
-use crate::core_mechanics::abilities::attack_effect::{AttackEffectDuration, AttackTriggeredEffect, DebuffEffect};
-use crate::core_mechanics::abilities::{Attack, AbilityMovement};
+use crate::core_mechanics::abilities::attack_effect::{
+    AttackEffectDuration, AttackTriggeredEffect, DebuffEffect,
+};
+use crate::core_mechanics::abilities::{AbilityMovement, Attack};
+use crate::core_mechanics::{DamageType, Debuff, Defense, SpecialDefenseType, SpeedCategory};
 use crate::equipment::Weapon;
-use titlecase::titlecase;
 use std::cmp::max;
+use titlecase::titlecase;
 
 #[derive(Clone)]
 pub enum Maneuver {
@@ -110,9 +112,9 @@ impl Maneuver {
                 .attack()
                 .except(|a| a.accuracy -= 2)
                 .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(rank + 4)),
-            Self::MonstrousStrike(rank) => {
-                weapon.attack().except(|a| a.accuracy += max(0, (rank - 3) / 2))
-            }
+            Self::MonstrousStrike(rank) => weapon
+                .attack()
+                .except(|a| a.accuracy += max(0, (rank - 3) / 2)),
             Self::PenetratingStrike(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
@@ -137,15 +139,15 @@ impl Maneuver {
                     .except_hit_damage(|d| {
                         d.power_multiplier = 0.0;
                         d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
-                            debuffs: vec![Debuff::Vulnerable(Box::new(SpecialDefenseType::AllDamage))],
+                            debuffs: vec![Debuff::Vulnerable(Box::new(
+                                SpecialDefenseType::AllDamage,
+                            ))],
                             duration: AttackEffectDuration::Condition,
                         }));
                     })
             }
         };
-        attack.name = format!("{} {}", self.name(), titlecase(weapon.name.as_str()))
-            .trim()
-            .to_string();
+        attack.name = self.attack_name(&weapon);
         attack.replaces_weapon = if self.should_replace_weapon() {
             Some(weapon)
         } else {
@@ -154,20 +156,39 @@ impl Maneuver {
         return attack;
     }
 
+    pub fn attack_name(&self, weapon: &Weapon) -> String {
+        let weapon_name = titlecase(weapon.name.as_str());
+        match self {
+            Self::CertainStrike(_) => format!("Certain {}", weapon_name),
+            Self::CrushingStrike(_) => format!("Crushing {}", weapon_name),
+            Self::ElementalStrike(_) => format!("Elemental {}", weapon_name),
+            Self::GenericScalingStrike(_) => format!("Generic Scaling {}", weapon_name),
+            Self::GraspingStrike(_) => format!("Grasping {}", weapon_name),
+            Self::GreaterGraspingStrike(_) => format!("Greater Grasping {}", weapon_name),
+            Self::GreaterHamstring(_) => format!("Greater Hamstring -- {}", weapon_name),
+            Self::Hamstring(_) => format!("Hamstring -- {}", weapon_name),
+            Self::MightyStrike(_) => format!("Mighty {}", weapon_name),
+            Self::MonstrousStrike(_) => weapon_name,
+            Self::PenetratingStrike(_) => format!("Penetrating {}", weapon_name),
+            Self::PouncingStrike(_) => format!("Pouncing {}", weapon_name),
+            Self::StripTheFlesh(_) => format!("Strip the Flesh -- {}", weapon_name),
+        }
+    }
+
     pub fn name(&self) -> &str {
         match self {
-            Self::CertainStrike(_) => "Certain",
-            Self::CrushingStrike(_) => "Crushing",
-            Self::ElementalStrike(_) => "Elemental",
-            Self::GenericScalingStrike(_) => "Generic Scaling",
-            Self::GraspingStrike(_) => "Grasping",
-            Self::GreaterGraspingStrike(_) => "Greater Grasping",
+            Self::CertainStrike(_) => "Certain Strike",
+            Self::CrushingStrike(_) => "Crushing Strike",
+            Self::ElementalStrike(_) => "Elemental Strike",
+            Self::GenericScalingStrike(_) => "Generic Scaling Strike",
+            Self::GraspingStrike(_) => "Grasping Strike",
+            Self::GreaterGraspingStrike(_) => "Greater Grasping Strike",
             Self::GreaterHamstring(_) => "Greater Hamstring",
             Self::Hamstring(_) => "Hamstring",
-            Self::MightyStrike(_) => "Mighty",
-            Self::MonstrousStrike(_) => "",
-            Self::PenetratingStrike(_) => "Penetrating",
-            Self::PouncingStrike(_) => "Pouncing",
+            Self::MightyStrike(_) => "Mighty Strike",
+            Self::MonstrousStrike(_) => "Monstrous Strike",
+            Self::PenetratingStrike(_) => "Penetrating Strike",
+            Self::PouncingStrike(_) => "Pouncing Strike",
             Self::StripTheFlesh(_) => "Strip the Flesh",
         }
     }
@@ -182,6 +203,9 @@ impl Maneuver {
 
 fn assert_minimum_rank(minimum_rank: i32, actual_rank: &i32, name: &str) {
     if actual_rank < &minimum_rank {
-        panic!("Maneuver {} requires minimum rank {} instead of {}", name, minimum_rank, actual_rank);
+        panic!(
+            "Maneuver {} requires minimum rank {} instead of {}",
+            name, minimum_rank, actual_rank
+        );
     }
 }
