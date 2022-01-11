@@ -106,7 +106,7 @@ fn standard_monster_statistics_level_1_cr4() {
 
     // HasAttacks
     assert_eq!(2, creature.calc_accuracy(), "Accuracy: 1 per + 1 cr",);
-    assert_eq!(6, creature.calc_power(), "Power: 2 scaling * 3 cr mult",);
+    assert_eq!(4, creature.calc_power(), "Power: 2 scaling * 2 cr mult",);
 
     // HasAttributes
     assert_eq!(
@@ -187,7 +187,7 @@ mod firebolt_scaling {
             "Firebolt +1 (The target takes 1d8+1 fire damage.)", // CR 0.5
             "Firebolt +1 (The target takes 2d6+2 fire damage.)", // CR 1
             "Firebolt +2 (The target takes 2d6+4 fire damage.)", // CR 2
-            "Firebolt +2 (The target takes 2d8+6 fire damage.)", // CR 4
+            "Firebolt +2 (The target takes 2d8+4 fire damage.)", // CR 4
             "Firebolt +2 (The target takes 2d10+6 fire damage.)", // CR 6
         ];
         assert_eq!(expected, actual, "CR 0.5/1/2/4/6");
@@ -207,7 +207,7 @@ mod firebolt_scaling {
             "Greater Firebolt +9 (The target takes 4d8+6 fire damage.)",
             "Greater Firebolt +9 (The target takes 5d10+12 fire damage.)",
             "Greater Firebolt +10 (The target takes 5d10+24 fire damage.)",
-            "Greater Firebolt +10 (The target takes 6d10+36 fire damage.)",
+            "Greater Firebolt +10 (The target takes 6d10+24 fire damage.)",
             "Supreme Firebolt +10 (The target takes 8d10+36 fire damage.)",
         ];
         assert_eq!(expected, actual, "CR 0.5/1/2/4/6",);
@@ -227,7 +227,7 @@ mod firebolt_scaling {
             "Greater Firebolt +12 (The target takes 4d10+8 fire damage.)",
             "Supreme Firebolt +12 (The target takes 7d10+16 fire damage.)",
             "Supreme Firebolt +13 (The target takes 7d10+32 fire damage.)",
-            "Supreme Firebolt +13 (The target takes 8d10+48 fire damage.)",
+            "Supreme Firebolt +13 (The target takes 8d10+32 fire damage.)",
             "Supreme Firebolt +13 (The target takes 9d10+48 fire damage.)",
         ];
         assert_eq!(expected, actual, "CR 0.5/1/2/4/6",);
