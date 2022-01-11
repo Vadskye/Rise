@@ -15,18 +15,15 @@ pub struct ActiveAbility {
 // LaTeX generation functions
 impl ActiveAbility {
     pub fn latex_ability_block(self) -> String {
-        let tags = if self.is_magical {
-            let mut without_magical = self.tags.unwrap_or(vec![]);
-            without_magical.push(AbilityTag::Magical);
-            Some(without_magical)
-        } else {
-            self.tags
+        let mut tags = self.tags.unwrap_or(vec![]);
+        if self.is_magical {
+            tags.push(AbilityTag::Magical);
         };
         return latex_ability_block(
             self.ability_type,
             self.effect,
+            tags.iter().map(|t| t.latex()).collect(),
             self.name,
-            tags,
             self.usage_time,
         );
     }

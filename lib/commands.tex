@@ -380,6 +380,19 @@
     {\termdef{#1}{abilitytag}}
 }
 
+\DeclareDocumentCommand{\weapontag}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{weapontag}}
+    {\termlink{#2}{weapontag}}
+}
+\DeclareDocumentCommand{\weapontagdef}{m o}
+{
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{weapontag}}
+    {\termdef{#1}{weapontag}}
+}
+
 \DeclareDocumentCommand{\hit}{}
 {
     \par \textbf{Hit}:\xspace
