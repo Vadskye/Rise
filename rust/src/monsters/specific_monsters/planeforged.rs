@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::{AbilityType, ActiveAbility, StandardAttack};
 use crate::core_mechanics::{
-    DamageType, Debuff, FlightManeuverability, MovementMode, Sense, Size, SpecialDefenseType,
-    SpeedCategory,
+    DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
+    SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Maneuver, Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
@@ -159,15 +159,14 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 tags: None,
                 usage_time: None,
             }));
-
-            let weapons = self
-                .weapons
-                .iter()
-                .map(|w| {
-                    w.clone()
-                        .except(|w| w.damage_types.push(DamageType::Energy))
-                })
-                .collect();
+            modifiers.push(Modifier::PassiveAbility(PassiveAbility {
+                description: format!("
+                    The $name can perform any ritual of rank {} or lower from the \\sphere{{bless}} or \\sphere{{channel divinity}} mystic spheres.
+                    It does not need to expend material components or increase its \\glossterm{{fatigue level}} to perform those ritauls.
+                ", rank),
+                is_magical: true,
+                name: "Divine Rituals".to_string(),
+            }));
 
             return FullPlaneforgedDefinition {
                 // From self
@@ -188,7 +187,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     MovementMode::Land(SpeedCategory::Normal),
                 ]),
                 senses: Some(vec![Sense::Darkvision(120), Sense::LowLightVision]),
-                weapons,
+                weapons: self.weapons,
             }
             .monster();
         }
@@ -212,6 +211,38 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
         name: "Angels".to_string(),
         monsters: vec![
             Angel {
+                alignment: "Always neutral good".to_string(),
+                attributes: vec![5, 6, 4, 4, 4, 6],
+                challenge_rating: ChallengeRating::Six,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Seraphim are six-winged angelic beings of immense power.
+                        They burn with holy fire, which they use to immolate evildoers.
+                        A seraph resembles a massive serpent that twists and coils constantly.
+                    "),
+                ])),
+                level: 16,
+                modifiers: Some(vec![
+                    Modifier::Attack(
+                        Maneuver::Whirlwind(7, Size::Huge.reach(false))
+                            .attack(StandardWeapon::Slam.weapon())
+                            .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
+                    ),
+                ]),
+                name: "Seraph".to_string(),
+                size: Size::Huge,
+                trained_skills: Some(vec![
+                    Skill::Awareness,
+                ]),
+                weapons: vec![
+                    StandardWeapon::MonsterBite.weapon()
+                        .except(|w| w.damage_types.push(DamageType::Fire)),
+                    StandardWeapon::Slam.weapon()
+                        .except(|w| w.damage_types.push(DamageType::Fire)),
+                ],
+            }
+            .monster(),
+            Angel {
                 alignment: "Always lawful good".to_string(),
                 attributes: vec![5, 5, 5, 4, 6, 4],
                 challenge_rating: ChallengeRating::Six,
@@ -219,6 +250,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     (0, "
                         Justicars enforce justice on good-aligned planes.
                         They are extremely skilled at identifying the truth of any situation, and act to deal justice however they see fit.
+                        Physically, a justicar appears similar to a large human with strong muscles and a constantly stern expression.
                     "),
                     (5, "
                         In rare circumstances, justicars may leave good-aligned planes to pursue those they see as exceptionally heinous criminals.
@@ -250,7 +282,10 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     Skill::Intimidate,
                     Skill::SocialInsight,
                 ]),
-                weapons: vec![StandardWeapon::Greatsword.weapon()],
+                weapons: vec![
+                    StandardWeapon::Greatsword.weapon()
+                        .except(|w| w.damage_types.push(DamageType::Energy)),
+                ],
             }
             .monster(),
         ],
