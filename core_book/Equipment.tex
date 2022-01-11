@@ -332,7 +332,7 @@ Items are divided into five broad categories, described below.
         As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
         However, you can change your grip during the \glossterm{movement phase} and then attack with your new grip during the \glossterm{action phase}.
         \parhead{Mounted}\label{Mounted Weapon} If you are mounted, and your mount moves in the same phase that you make a \glossterm{strike} with a Mounted weapon, you gain a \plus2 \glossterm{accuracy} bonus with the strike.
-        \parhead{Parrying} If a creature attacks you with a \glossterm{strike} while you wield this weapon, you \glossterm{briefly} gain a \plus2 bonus to \glossterm{accuracy} with strikes using this weapon against that creature.
+        \parhead{Parrying} If a creature attacks you with a \glossterm{melee} \glossterm{strike} while you wield this weapon, you \glossterm{briefly} gain a \plus2 bonus to \glossterm{accuracy} with strikes using this weapon against that creature.
         \parhead{Projectile} This weapon fires ammunition at range to deal damage.
         The ammunition generally breaks when used.
         Projectile weapons have two \glossterm{range limits} listed in their description (see \pcref{Weapon Range Limits}).
@@ -408,7 +408,6 @@ Items are divided into five broad categories, described below.
                 \tind Dagger                       & Light  & \plus2  & 1d3    & Piercing or slashing     & 0 (10 gp)  & Compact, Thrown (15/60), Stealthy              \\
                 \tind Estoc                        & Medium & \plus0  & 1d6    & Piercing                 & 0 (10 gp)  & Long, Versatile Grip                           \\
                 \tind Greatsword                   & Heavy  & \plus0  & 1d8   & Slashing                 & 0 (10 gp)  & Sweeping (2)                                   \\
-                \tind Parrying dagger              & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Parrying                                       \\
                 \tind Rapier                       & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Disarming                                      \\
                 \tind Scimitar                     & Medium & \plus0  & 1d6    & Slashing                 & 0 (10 gp)  & Keen, Mounted                                  \\
                 \tind Smallsword                   & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Keen                                           \\
@@ -457,7 +456,6 @@ Items are divided into five broad categories, described below.
                 \tind Kunai                        & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Thrown (30/120)                                \\
                 \tind Nunchaku                     & Light  & \plus1  & 1d4    & Bludgeoning              & 0 (10 gp)  & Disarming, Tripping                            \\
                 \tind Quarterstaff                 & Heavy  & \plus1  & 1d6    & Bludgeoning              & 0            & Long                                           \\
-                \tind Sai                          & Light  & \plus1  & 1d4    & Piercing or bludgeoning  & 0 (10 gp)  & Disarming, Parrying                            \\
                 \tind Shuriken (5)                 & Light  & \plus2  & 1d3    & Piercing and slashing    & 0 (10 gp)  & Ammunition, Compact, Thrown (15/60), Stealthy  \\
 
                 Polearms                           &        &         &        &                          &              &                                                \\
@@ -483,7 +481,6 @@ Items are divided into five broad categories, described below.
                 \tind Javelin                      & Medium & \plus1  & 1d4    & Piercing                 & 0 (10 gp)  & Thrown (30/120)                                \\
                 \tind Lance                        & Heavy  & \plus0  & 1d8   & Piercing                 & 0 (10 gp)  & Long, Mounted                                  \\
                 \tind Ranseur                      & Heavy  & \plus0  & 1d8   & Piercing                 & 0 (10 gp)  & Disarming, Long                                \\
-                \tind Partisan                     & Heavy  & \plus0  & 1d8   & Piercing                 & 0 (10 gp)  & Parrying, Long                                 \\
                 \tind Spear\fn{3}                  & Medium & \plus0  & 1d6    & Piercing                 & 0 (10 gp)  & Thrown (15/60), Versatile Grip                 \\
 
                 Thrown weapons                     &        &         &        &                          &              &                                                \\
@@ -516,6 +513,7 @@ Items are divided into five broad categories, described below.
                 \tind Falchion                 & Medium  & \plus0 & 1d6    & Slashing                 & 1 (40 gp)  & Sweeping (2), Versatile Grip   \\
                 \tind Katana                   & Heavy   & \plus1 & 1d8   & Slashing                 & 1 (40 gp)  & Keen, Sweeping (1)             \\
                 \tind Kukri                    & Light   & \plus2 & 1d4    & Slashing                 & 0 (10 gp)  & Keen, Sweeping (1)             \\
+                \tind Parrying dagger              & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Parrying, Stealthy, Thrown (15/60)                                        \\
                 Bows                           &         &        &        &                          &              &                                \\
                 \tind Flatbow\fn{3}            & Heavy   & \plus1 & 1d6    & \tdash                   & 1 (40 gp)  & Projectile (120/480)           \\
                 \tind Heartseeker arrows (20)  & \tdash  & \plus0 & \tdash & Piercing                 & 2 (40 gp)  & Ammunition, Impact             \\
@@ -540,6 +538,7 @@ Items are divided into five broad categories, described below.
                 \tind Heavy pick               & Heavy   & \plus1 & 1d8   & Piercing                 & 1 (40 gp)  & Keen, Impact                   \\
                 \tind Obuch                    & Medium  & \plus0 & 1d8   & Bludgeoning              & 1 (40 gp)  & Long, Tripping                 \\
                 Monk weapons                   &         &        &        &                          &              &                                \\
+                \tind Sai                      & Light  & \plus2  & 1d4    & Piercing or bludgeoning  & 0 (10 gp)  & Disarming, Parrying                            \\
                 \tind Three-section staff      & Heavy   & \plus0 & 1d8   & Bludgeoning              & 1 (40 gp)  & Disarming, Long, Tripping      \\
                 Polearms                       &         &        &        &                          &              &                                \\
                 \tind Fauchard                 & Heavy   & \plus0 & 1d8   & Slashing                 & 1 (40 gp)  & Long, Sweeping (2)             \\
@@ -547,6 +546,7 @@ Items are divided into five broad categories, described below.
                 Simple weapons                 &         &        &        &                          &              &                                \\
                 Spear                          &         &        &        &                          &              &                                \\
                 \tind Gnomish smallspear       & Light   & \plus2 & 1d4    & Piercing                 & 0 (10 gp)  & Impact, Long                   \\
+                \tind Partisan                 & Heavy  & \plus0  & 1d10   & Piercing                 & 1 (40 gp)  & Parrying, Long                                 \\
                 \tind Pike\fn{3}               & Heavy   & \plus0 & 1d10    & Piercing                 & 0 (10 gp)  & Long                           \\
                 Thrown weapons                 &         &        &        &                          &              &                                \\
                 \tind Bolas                    & Light   & \plus2 & 1d3    & Bludgeoning              & 0 (10 gp)  & Thrown (15/60), Tripping       \\
