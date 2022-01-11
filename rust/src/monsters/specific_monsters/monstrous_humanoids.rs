@@ -98,14 +98,14 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
             Modifier::Maneuver(Maneuver::GraspingStrike(2)),
         ]),
         movement_modes: None,
-        name: "Minotaur".to_string(),
+        name: "Choker".to_string(),
         senses: None,
         size: Size::Medium,
         trained_skills: Some(vec![
             Skill::Awareness,
         ]),
         weapons: vec![
-            StandardWeapon::MonsterTentacle.weapon(),
+            StandardWeapon::Slam.weapon(),
         ],
     }.monster()));
 
