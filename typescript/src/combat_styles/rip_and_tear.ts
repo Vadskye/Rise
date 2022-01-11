@@ -34,7 +34,7 @@ export const ripAndTear: CombatStyle = {
       rank: 3,
       scaling: {
         5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +1.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
