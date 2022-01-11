@@ -317,7 +317,7 @@ def generate_apparel():
             rank=2,
             material_type="Gloves",
             description="""
-                You can throw any item as if it had the Thrown (15/60) \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
+                You can throw any item as if it had the Thrown (30/60) \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
                 This does not improve your ability to throw items designed to be thrown, such as darts.
             """,
             short_description="Allows throwing any item 60 feet",
@@ -327,7 +327,7 @@ def generate_apparel():
             rank=4,
             material_type="Gloves",
             description="""
-                You can throw any item as if it had the Thrown (30/120) \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
+                You can throw any item as if it had the Thrown (60/120) \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
                 This can improve your ability to throw items designed to be thrown, such as darts.
             """,
             short_description="Allows throwing any item up to 120 feet",
