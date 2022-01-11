@@ -1,3 +1,5 @@
+use super::SpecialDefenseType;
+
 #[derive(Clone)]
 pub enum Debuff {
     Blinded,
@@ -21,6 +23,7 @@ pub enum Debuff {
     Stunned,
     Unaware,
     Unconscious,
+    Vulnerable(Box<SpecialDefenseType>),
 }
 
 impl Debuff {
@@ -51,6 +54,7 @@ impl Debuff {
             Self::Stunned => "stunned",
             Self::Unaware => "unaware",
             Self::Unconscious => "unconscious",
+            Self::Vulnerable(_) => "vulnerable",
         }
     }
 
@@ -77,6 +81,7 @@ impl Debuff {
             Self::Stunned => "\\stunned".to_string(),
             Self::Unaware => "\\unaware".to_string(),
             Self::Unconscious => "\\unconscious".to_string(),
+            Self::Vulnerable(t) => format!("\\vulnerable to {}", t.description()),
         }
     }
 }
