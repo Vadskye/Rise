@@ -197,6 +197,7 @@ struct HitProbability {
     crit_probability: f64,
 }
 
+#[cfg(test)]
 impl HitProbability {
     fn short_description(&self) -> String {
         return format!(
