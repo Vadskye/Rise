@@ -1,9 +1,9 @@
-use crate::core_mechanics::abilities::{StandardAttack, ActiveAbility, AbilityType};
+use crate::core_mechanics::abilities::{AbilityType, ActiveAbility, StandardAttack};
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, Sense, Size, SpecialDefenseType,
     SpeedCategory,
 };
-use crate::creatures::{calculate_standard_rank, Modifier, Monster};
+use crate::creatures::{calculate_standard_rank, Maneuver, Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Planeforged;
@@ -152,7 +152,8 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 effect: "
                     The $name teleports horizontally into an unoccupied location within \\distrange.
                     If the destination is invalid, this ability fails with no effect.
-                ".to_string(),
+                "
+                .to_string(),
                 is_magical: true,
                 name: "Divine Translocation".to_string(),
                 tags: None,
@@ -186,10 +187,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Perfect),
                     MovementMode::Land(SpeedCategory::Normal),
                 ]),
-                senses: Some(vec![
-                    Sense::Darkvision(120),
-                    Sense::LowLightVision,
-                ]),
+                senses: Some(vec![Sense::Darkvision(120), Sense::LowLightVision]),
                 weapons,
             }
             .monster();
@@ -233,7 +231,12 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     "),
                 ])),
                 level: 14,
-                modifiers: None,
+                modifiers: Some(vec![
+                    Modifier::Attack(
+                        Maneuver::StripTheFlesh(6)
+                            .attack(StandardWeapon::Greatsword.weapon())
+                    ),
+                ]),
                 name: "Justicar".to_string(),
                 size: Size::Large,
                 trained_skills: Some(vec![
