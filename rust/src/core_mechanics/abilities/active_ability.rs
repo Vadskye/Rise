@@ -8,6 +8,8 @@ pub struct ActiveAbility {
     pub effect: String,
     pub is_magical: bool,
     pub name: String,
+    // We only use ability tags instead of all tags here; active abilities shouldn't need
+    // weapon tags
     pub tags: Option<Vec<AbilityTag>>,
     pub usage_time: Option<UsageTime>,
 }
