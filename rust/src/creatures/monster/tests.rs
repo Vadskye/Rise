@@ -94,13 +94,20 @@ mod to_section {
     #[test]
     fn with_maneuvers() {
         let mut monster = Monster::standard_monster(ChallengeRating::Two, 10, None, None);
-        monster.creature.weapons.push(StandardWeapon::Greatsword.weapon());
-        monster.creature.add_modifier(Modifier::Attack(
-            Maneuver::StripTheFlesh(4).attack(StandardWeapon::Greatsword.weapon()),
-        ), None, None);
-        monster.creature.add_modifier(Modifier::Attack(
-            Maneuver::CertainStrike(4).attack(StandardWeapon::Slam.weapon()),
-        ), None, None);
+        monster
+            .creature
+            .weapons
+            .push(StandardWeapon::Greatsword.weapon());
+        monster.creature.add_modifier(
+            Modifier::Attack(
+                Maneuver::StripTheFlesh(4).attack(StandardWeapon::Greatsword.weapon()),
+            ),
+            None,
+            None,
+        );
+        monster
+            .creature
+            .add_modifier(Modifier::Maneuver(Maneuver::CertainStrike(4)), None, None);
         assert_multiline_eq(
             r"
                 \begin{monsubsection}{Standard Monster}{10}[2]
@@ -120,7 +127,14 @@ mod to_section {
                 \end{monsterstatistics}
                 \end{monsubsection}
                 \monsterabilitiesheader{Standard Monster}
-                \begin{instantability}*{Certain Slam}[Instant]
+                \begin{instantability}*{Certain Greatsword}[Instant]
+                \weapontag{Sweeping} (2)
+                \rankline
+                The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
+                \hit The target takes 4d6\plus6 slashing damage.
+            \end{instantability}
+        \par
+            \begin{instantability}*{Certain Slam}[Instant]
                 \rankline
                 The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
                 \hit The target takes 4d6\plus6 bludgeoning damage.
