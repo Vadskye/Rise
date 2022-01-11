@@ -177,8 +177,9 @@ impl Targeting {
                 },
             ),
             Self::Strike => format!(
-                "{standard_attack_against} vs. {defense}.",
-                standard_attack_against = standard_attack_against,
+                "{the_creature} makes a {accuracy} \\glossterm{{strike}} vs. {defense}.",
+                the_creature = the_creature,
+                accuracy = accuracy,
                 defense = defense,
             ),
         };

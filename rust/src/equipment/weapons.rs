@@ -33,6 +33,31 @@ pub enum WeaponTag {
     VersatileGrip,
 }
 
+impl WeaponTag {
+    pub fn latex(&self) -> String {
+        match self {
+            Self::Ammunition => r"\weapontag{Ammunition}".to_string(),
+            Self::Compact => r"\weapontag{Compact}".to_string(),
+            Self::Disarming => r"\weapontag{Disarming}".to_string(),
+            Self::Forceful => r"\weapontag{Forceful}".to_string(),
+            Self::Grappling => r"\weapontag{Grappling}".to_string(),
+            Self::Impact => r"\weapontag{Impact}".to_string(),
+            Self::Keen => r"\weapontag{Keen}".to_string(),
+            Self::Long => r"\weapontag{Long}".to_string(),
+            Self::Mounted => r"\weapontag{Mounted}".to_string(),
+            Self::Parrying => r"\weapontag{Parrying}".to_string(),
+            Self::Projectile(close, long) => format!("\\weapontag{{Projectile}} ({}/{})", close, long),
+            Self::Stealthy => r"\weapontag{Stealthy}".to_string(),
+            Self::Sweeping(count) => format!("\\weapontag{{Sweeping}} ({})", count),
+            Self::Subdual => r"\weapontag{Subdual}".to_string(),
+            Self::Thrown(close, long) => format!("\\weapontag{{Thrown}} ({}/{})", close, long),
+            Self::Tripping => r"\weapontag{Tripping}".to_string(),
+            Self::Unarmed => r"\weapontag{Unarmed}".to_string(),
+            Self::VersatileGrip => r"\weapontag{VersatileGrip}".to_string(),
+        }
+    }
+}
+
 // Local alias to make weapon definitions shorter, since "Tag" is unambiguous in this file
 use WeaponTag as Tag;
 
