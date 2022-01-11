@@ -5,7 +5,7 @@ use crate::creatures::{creature, latex, HasModifiers, Modifier};
 use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, StandardWeapon};
 
 pub struct Character {
-    archetypes: [ClassArchetype; 3],
+    // archetypes: [ClassArchetype; 3],
     class: Class,
     pub creature: creature::Creature,
 }
@@ -48,7 +48,7 @@ impl Character {
         );
 
         return Character {
-            archetypes,
+            // archetypes,
             class,
             creature,
         };
