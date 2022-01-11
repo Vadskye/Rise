@@ -1,4 +1,4 @@
-use crate::core_mechanics::{DamageType, Debuff, Defense, SpeedCategory};
+use crate::core_mechanics::{DamageType, Debuff, Defense, SpeedCategory, SpecialDefenseType};
 use crate::core_mechanics::abilities::attack_effect::{AttackEffectDuration, AttackTriggeredEffect, DebuffEffect};
 use crate::core_mechanics::abilities::{Attack, AbilityMovement};
 use crate::equipment::Weapon;
@@ -19,6 +19,7 @@ pub enum Maneuver {
     MonstrousStrike(i32),
     PenetratingStrike(i32),
     PouncingStrike(i32),
+    StripTheFlesh(i32),
 }
 
 fn standard_damage_scaling(rank: i32) -> i32 {
@@ -128,6 +129,19 @@ impl Maneuver {
                     })
                 })
                 .except_hit_damage(|d| d.power_multiplier = 0.5),
+            Self::StripTheFlesh(rank) => {
+                assert_minimum_rank(3, rank, "Strip the Flesh");
+                weapon
+                    .attack()
+                    .except(|a| a.accuracy += (rank - 3) / 2)
+                    .except_hit_damage(|d| {
+                        d.power_multiplier = 0.0;
+                        d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
+                            debuffs: vec![Debuff::Vulnerable(Box::new(SpecialDefenseType::AllDamage))],
+                            duration: AttackEffectDuration::Condition,
+                        }));
+                    })
+            }
         };
         attack.name = format!("{} {}", self.name(), titlecase(weapon.name.as_str()))
             .trim()
@@ -154,6 +168,7 @@ impl Maneuver {
             Self::MonstrousStrike(_) => "",
             Self::PenetratingStrike(_) => "Penetrating",
             Self::PouncingStrike(_) => "Pouncing",
+            Self::StripTheFlesh(_) => "Strip the Flesh",
         }
     }
 

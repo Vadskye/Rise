@@ -62,6 +62,7 @@ impl fmt::Display for Defense {
 
 #[derive(Clone)]
 pub enum SpecialDefenseType {
+    AllDamage,
     Damage(DamageType),
     Debuff(Debuff),
     CriticalHits,
@@ -87,6 +88,7 @@ impl SpecialDefenses {
 impl SpecialDefenseType {
     pub fn description(&self) -> String {
         match self {
+            Self::AllDamage => "all damage".to_string(),
             Self::Damage(damage_type) => format!("{} damage", damage_type.name()),
             Self::Debuff(debuff) => debuff.name().to_string(),
             Self::CriticalHits => "critical hits".to_string(),
