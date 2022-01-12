@@ -588,12 +588,12 @@ def active_ability_button(ability_type):
             text_input(
                 {"class": "hidden", "readonly": True, "name": prefix + "_defense"}
             ),
-            text_input({"class": "hidden", "readonly": True, "name": "total_damage"}),
+            text_input({"class": "hidden", "readonly": True, "name": "calculated_dice_and_modifier"}),
             text_input(
-                {"class": "hidden", "readonly": True, "name": "total_damage_dice"}
+                {"class": "hidden", "readonly": True, "name": "calculated_dice_pool"}
             ),
             text_input(
-                {"class": "hidden", "readonly": True, "name": "total_damage_modifier"}
+                {"class": "hidden", "readonly": True, "name": "calculated_modifier"}
             ),
             text_input({"class": "hidden", "readonly": True, "name": "targeting_text"}),
             text_input({"class": "hidden", "name": "dice_text", "readonly": True}),

@@ -95,20 +95,20 @@ def ability():
                         {"class": "attack-calcs"},
                         [
                             labeled_text_input(
-                                "Base Dice",
+                                "Base dice",
                                 {"class": "attack-damage-dice"},
-                                {"name": "active_ability0_dice"},
+                                {"name": "dice_pool"},
                             ),
                             underlabel(
                                 "Power",
                                 select(
-                                    {"class": "attack-power", "name": "active_ability0_power"},
+                                    {"class": "attack-power", "name": "power_multiplier"},
                                     [
                                         option(
-                                            {"value": "1", "selected": True}, "Full"
+                                            {"value": "1"}, "Full"
                                         ),
                                         option({"value": "0.5"}, "Half"),
-                                        option({"value": "0"}, "None"),
+                                        option({"value": "0", "selected": True}, "None"),
                                     ],
                                 ),
                             ),
@@ -133,23 +133,34 @@ def ability():
                 {"class": "active-ability-effect"},
                 {"name": "active_ability0_effect"},
             ),
-            button(
-                {
-                    "class": "attack-roll",
-                    "name": "use_ability",
-                    "type": "roll",
-                    "value": (
-                        "&{template:custom}"
-                        + " {{title=@{active_ability0_name}}}"
-                        + " {{subtitle=@{character_name}}}"
-                        + " @{targeting_text}"
-                        + " @{dice_text}"
-                        + " {{color=@{chat_color}}}"
-                        + " {{desc=@{active_ability0_effect}}}"
-                    ),
-                },
-                "Use",
-            ),
+            flex_col({"class": "attack-buttons"}, [
+                button(
+                    {
+                        "class": "attack-roll",
+                        "name": "use_ability",
+                        "type": "roll",
+                        "value": (
+                            "&{template:custom}"
+                            + " {{title=@{active_ability0_name}}}"
+                            + " {{subtitle=@{character_name}}}"
+                            + " @{targeting_text}"
+                            + " @{dice_text}"
+                            + " {{color=@{chat_color}}}"
+                            + " {{desc=@{active_ability0_effect}}}"
+                        ),
+                    },
+                    "Use",
+                ),
+                labeled_text_input(
+                    "Dice pool",
+                    {"class": "total-damage"},
+                    {
+                        "class": "readonly-disabled",
+                        "readonly": True,
+                        "name": "calculated_dice_and_modifier",
+                    },
+                ),
+            ]),
         ],
     )
 
@@ -375,7 +386,7 @@ def other_damaging_attack():
     return shared_attack_framework(
         [
             labeled_text_input(
-                "Base Dice",
+                "Base dice",
                 {"class": "attack-damage-dice"},
                 {"name": "attack_damage_dice"},
             ),
@@ -412,16 +423,16 @@ def other_damaging_attack():
                 "Attack",
             ),
             labeled_text_input(
-                "Total Damage",
+                "Total damage",
                 {"class": "total-damage"},
                 {
                     "class": "readonly-disabled",
                     "readonly": True,
-                    "name": "total_damage",
+                    "name": "calculated_dice_and_modifier",
                 },
             ),
-            crit_damage_button("@{total_damage_dice}", "crit"),
-            glance_damage_button("[[@{total_damage_modifier}]]", "glance"),
+            crit_damage_button("@{calculated_dice_pool}", "crit"),
+            glance_damage_button("[[@{calculated_modifier}]]", "glance"),
         ],
     )
 
@@ -429,7 +440,7 @@ def other_damaging_attack():
 def other_damaging_attack_button_text():
     return attack_button_text(
         construct_damage_text(
-            "@{total_damage}",
+            "@{calculated_dice_and_modifier}",
             "repeating_otherdamagingattacks_crit",
             "repeating_otherdamagingattacks_glance",
         )
