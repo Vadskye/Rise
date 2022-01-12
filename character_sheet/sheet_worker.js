@@ -158,7 +158,6 @@ function formatChangeString(varName) {
 function handleEverything() {
   handleAbilitiesKnown();
   handleAttackTargeting();
-  // handleActiveAbilityEffects();
   handleAttunedEffects();
   handleAttributes();
   handleCoreStatistics();
@@ -265,24 +264,29 @@ function calcDefenseLevelScaling(level, challengeRating) {
   return levelScaling;
 }
 
-function parseDamageDice(attack_damage_dice) {
+function parseDicePool(attack_damage_dice) {
   if (!attack_damage_dice) {
     return null;
   }
   let [count, size] = attack_damage_dice.split("d");
-  if (count === "") {
-    count = 1;
-  }
   let modifier = 0;
-  if (size.includes("+")) {
+  if (!size) {
+    if (count) {
+      return {
+        count: null,
+        modifier: count,
+        size: null,
+      };
+    }
+  } else if (size.includes("+")) {
     [size, modifier] = size.split("+");
   } else if (size.includes("-")) {
     [size, modifier] = size.split("-");
   }
   return {
-    count: Number(count),
+    count: Number(count) || null,
     modifier: Number(modifier),
-    size: Number(size),
+    size: Number(size) || null,
   };
 }
 
@@ -325,6 +329,39 @@ function handleAccuracy() {
         Math.floor(v.perception / 2) -
         v.fatigue_penalty;
       setAttrs({ accuracy });
+    }
+  );
+}
+
+function handleActiveAbilityDice() {
+  function getAbilityDicePoolAttrs(keyPrefix, callback) {
+    return getDicePoolAttrs(
+      keyPrefix,
+      "dice_pool",
+      "power_multiplier",
+      callback
+    );
+  }
+
+  // Local change
+  on(
+    "change:repeating_abilities:dice_pool" +
+      " change:repeating_abilities:power_multiplier" +
+      " change:repeating_abilities:is_magical",
+    function () {
+      const keyPrefix = "repeating_abilities";
+      getAbilityDicePoolAttrs(keyPrefix, (parsed) => {
+        const diceText = parsed.dicePoolWithModifier
+          ? '{{Value=[[@{calculated_dice_and_modifier}]]}}'
+          : '';
+        setAttrs({
+          [`${keyPrefix}_calculated_dice_and_modifier`]: parsed.dicePoolWithModifier,
+          [`${keyPrefix}_calculated_dice_pool`]: parsed.dicePool,
+          [`${keyPrefix}_calculated_modifier`]: parsed.modifier,
+          [`${keyPrefix}_calculated_dice_and_modifier`]: parsed.dicePoolWithModifier,
+          [`${keyPrefix}_dice_text`]: diceText,
+        });
+      });
     }
   );
 }
@@ -598,6 +635,7 @@ function handleCustomModifiers() {
 
 function handleDamageDice() {
   handleDicePoolAttributes();
+  handleActiveAbilityDice();
   handleOtherDamagingAttacks();
   handleStrikeAttacks();
 }
@@ -1313,70 +1351,92 @@ function handleDicePoolAttributes() {
   );
 }
 
+function getDicePoolAttrs(
+  keyPrefix,
+  dicePoolKey,
+  powerMultiplierKey,
+  callback
+) {
+  dicePoolKey = `${keyPrefix}_${dicePoolKey}`;
+  powerMultiplierKey = `${keyPrefix}_${powerMultiplierKey}`;
+  const isMagicalKey = `${keyPrefix}_is_magical`;
+  getAttrs(
+    [
+      "magical_dice_pool_modifier",
+      "mundane_dice_pool_modifier",
+      "power",
+      dicePoolKey,
+      powerMultiplierKey,
+      isMagicalKey,
+    ],
+    function (v) {
+      let dicePoolModifier =
+        v[isMagicalKey] === "1"
+          ? Number(v.magical_dice_pool_modifier)
+          : Number(v.mundane_dice_pool_modifier);
+      callback(
+        calculateDicePoolModifier({
+          dicePool: v[dicePoolKey],
+          dicePoolModifier,
+          power: Number(v.power),
+          powerMultiplier: Number(v[powerMultiplierKey]),
+        })
+      );
+    }
+  );
+}
+
+function setCalculatedDicePool(
+  keyPrefix,
+  { dicePoolWithModifier, dicePool, modifier }
+) {
+  setAttrs({
+    [`${keyPrefix}_calculated_dice_and_modifier`]: dicePoolWithModifier,
+    [`${keyPrefix}_calculated_dice_pool`]: dicePool,
+    [`${keyPrefix}_calculated_modifier`]: modifier,
+  });
+}
+
+function calculateDicePoolModifier({
+  dicePool,
+  power,
+  powerMultiplier,
+  dicePoolModifier,
+}) {
+  dicePool = parseDicePool(dicePool);
+  let totalDamage = "";
+  let totalDamageDice = "";
+  let totalDamageModifier = "";
+  if (dicePool) {
+    const modifier = dicePool.modifier + Math.floor(power * powerMultiplier);
+
+    let { count, size } = addDiceIncrements(
+      dicePool.count,
+      dicePool.size,
+      dicePoolModifier
+    );
+    totalDamage = formatDicePool(count, size, modifier);
+    totalDamageDice = formatDicePool(count, size, 0);
+    totalDamageModifier = modifier;
+  }
+  return {
+    dicePoolWithModifier: totalDamage,
+    dicePool: totalDamageDice,
+    modifier: totalDamageModifier,
+  };
+}
+
 function handleOtherDamagingAttacks() {
   // We need two functions here! One updates a specific attack when that
   // specific attack changes, and one updates *all* attacks when general
   // character changes happen.
-  function getOdaDamageDiceAttrs(sectionId, callback) {
-    if (sectionId) {
-      sectionId = sectionId + "_";
-    }
-    const damage_dice_key = `repeating_otherdamagingattacks_${sectionId}attack_damage_dice`;
-    const attack_power_key = `repeating_otherdamagingattacks_${sectionId}attack_power`;
-    const is_magical_key = `repeating_otherdamagingattacks_${sectionId}is_magical`;
-    getAttrs(
-      [
-        "magical_dice_pool_modifier",
-        "mundane_dice_pool_modifier",
-        "power",
-        damage_dice_key,
-        attack_power_key,
-        is_magical_key,
-      ],
-      function (v) {
-        let dicePoolModifier =
-          v[is_magical_key] === "1"
-            ? Number(v.magical_dice_pool_modifier)
-            : Number(v.mundane_dice_pool_modifier);
-        const parsedAttrs = {
-          attackDamageDice: v[damage_dice_key],
-          attackPower: Number(v[attack_power_key]),
-          power: Number(v.power),
-          dicePoolModifier,
-        };
-        callback(parsedAttrs);
-      }
+  function getOdaDamageDiceAttrs(keyPrefix, callback) {
+    return getDicePoolAttrs(
+      keyPrefix,
+      "attack_damage_dice",
+      "attack_power",
+      callback
     );
-  }
-
-  function setOdaTotalDamage(sectionId, v) {
-    if (sectionId) {
-      sectionId += "_";
-    }
-    const damageDice = parseDamageDice(v.attackDamageDice);
-    let totalDamage = "";
-    let totalDamageDice = "";
-    let totalDamageModifier = "";
-    if (damageDice) {
-      const modifier =
-        damageDice.modifier + Math.floor(v.power * v.attackPower);
-
-      let { count, size } = addDiceIncrements(
-        damageDice.count,
-        damageDice.size,
-        v.dicePoolModifier
-      );
-      totalDamage = formatDicePool(count, size, modifier);
-      totalDamageDice = formatDicePool(count, size, 0);
-      totalDamageModifier = modifier;
-    }
-
-    const prefix = `repeating_otherdamagingattacks_${sectionId}`;
-    setAttrs({
-      [prefix + "total_damage"]: totalDamage,
-      [prefix + "total_damage_dice"]: totalDamageDice,
-      [prefix + "total_damage_modifier"]: totalDamageModifier,
-    });
   }
 
   // Local other damaging attack change
@@ -1385,21 +1445,28 @@ function handleOtherDamagingAttacks() {
       " change:repeating_otherdamagingattacks:attack_power" +
       " change:repeating_otherdamagingattacks:is_magical",
     function () {
-      getOdaDamageDiceAttrs("", (v) => {
-        setOdaTotalDamage("", v);
+      getOdaDamageDiceAttrs("repeating_otherdamagingattacks", (parsed) => {
+        setCalculatedDicePool("repeating_otherdamagingattacks", parsed);
       });
     }
   );
 
   // Global other damaging attack change
   on(
-    "change:strength change:intelligence change:willpower change:feat_name_0 change:feat_name_1 change:feat_name_2 change:feat_name_3 change:power",
+    "change:mundane_dice_pool_modifier change:magical_dice_pool_modifier" +
+      " change:power change:level",
     function () {
       getSectionIDs("repeating_otherdamagingattacks", (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
-          getOdaDamageDiceAttrs(sectionId, (v) => {
-            setOdaTotalDamage(sectionId, v);
-          });
+          getOdaDamageDiceAttrs(
+            `repeating_otherdamagingattacks_${sectionId}`,
+            (parsed) => {
+              setCalculatedDicePool(
+                `repeating_otherdamagingattacks_${sectionId}`,
+                parsed
+              );
+            }
+          );
         }
       });
     }
@@ -1430,15 +1497,15 @@ function handleStrikeAttacks() {
       function (v) {
         const dice_type = v[is_magical_key] === "1" ? "magical" : "mundane";
 
-        const weapon_dice = [];
+        const weaponDice = [];
         for (let i = 0; i < 3; i++) {
-          weapon_dice.push(v[`weapon_${i}_${dice_type}_dice`]);
+          weaponDice.push(v[`weapon_${i}_${dice_type}_dice`]);
         }
         callback({
-          attack_power: Number(v[attack_power_key]),
-          damage_modifier: Number(v[damage_modifier_key]),
+          attackPower: Number(v[attack_power_key]),
+          damageModifier: Number(v[damage_modifier_key]),
           power: Number(v.power),
-          weapon_dice,
+          weaponDice,
         });
       }
     );
@@ -1466,16 +1533,16 @@ function handleStrikeAttacks() {
   }
 
   function calcWeaponDamageStrings(v) {
-    const damageDice = parseDamageDice(v.weaponDamageDice);
-    if (!damageDice) {
+    const dicePool = parseDicePool(v.weaponDamageDice);
+    if (!dicePool) {
       return {
         magical: "",
         mundane: "",
       };
     }
     let with_global_bonus = addDiceIncrements(
-      damageDice.count,
-      damageDice.size,
+      dicePool.count,
+      dicePool.size,
       v.allWeaponsDamageDiceBonus
     );
     let magical = addDiceIncrements(
@@ -1489,35 +1556,35 @@ function handleStrikeAttacks() {
       v.mundaneDicePoolModifier
     );
     return {
-      magical: formatDicePool(magical.count, magical.size, damageDice.modifier),
-      mundane: formatDicePool(mundane.count, mundane.size, damageDice.modifier),
+      magical: formatDicePool(magical.count, magical.size, dicePool.modifier),
+      mundane: formatDicePool(mundane.count, mundane.size, dicePool.modifier),
     };
   }
 
-  function setStrikeTotalDamage(sectionId, v) {
+  function setStrikeTotalDamage(sectionId, parsed) {
     if (sectionId) {
       sectionId += "_";
     }
     const attrs = {};
     for (let i = 0; i < 3; i++) {
       const weapon_prefix = `repeating_strikeattacks_${sectionId}weapon_${i}_`;
-      const weapon_dice = parseDamageDice(v.weapon_dice[i]);
+      const weaponDice = parseDicePool(parsed.weaponDice[i]);
       let total_damage = "";
       let total_damage_dice = "";
       let total_damage_modifier = "";
-      if (weapon_dice) {
+      if (weaponDice) {
         const modifier =
-          weapon_dice.modifier +
-          Math.floor(v.power * v.attack_power) +
-          v.damage_modifier;
+          weaponDice.modifier +
+          Math.floor(parsed.power * parsed.attackPower) +
+          parsed.damageModifier;
         total_damage = formatDicePool(
-          weapon_dice.count,
-          weapon_dice.size,
+          weaponDice.count,
+          weaponDice.size,
           modifier
         );
         total_damage_dice = formatDicePool(
-          weapon_dice.count,
-          weapon_dice.size,
+          weaponDice.count,
+          weaponDice.size,
           0
         );
         total_damage_modifier = modifier;
@@ -1533,8 +1600,8 @@ function handleStrikeAttacks() {
   on(
     "change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_power change:repeating_strikeattacks:attack_damage_modifier",
     function () {
-      getStrikeAttrs("", (v) => {
-        setStrikeTotalDamage("", v);
+      getStrikeAttrs("", (parsed) => {
+        setStrikeTotalDamage("", parsed);
       });
     }
   );
@@ -1546,8 +1613,8 @@ function handleStrikeAttacks() {
     function () {
       getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
-          getStrikeAttrs(sectionId, (v) => {
-            setStrikeTotalDamage(sectionId, v);
+          getStrikeAttrs(sectionId, (parsed) => {
+            setStrikeTotalDamage(sectionId, parsed);
           });
         }
       });
@@ -1562,8 +1629,8 @@ function handleStrikeAttacks() {
         " change:level change:weapon_damage_dice" +
         " change:strength change:intelligence change:willpower",
       function () {
-        getWeaponDamageDiceAttrs(i, (v) => {
-          const { magical, mundane } = calcWeaponDamageStrings(v);
+        getWeaponDamageDiceAttrs(i, (parsed) => {
+          const { magical, mundane } = calcWeaponDamageStrings(parsed);
           setAttrs({
             [`weapon_${i}_magical_dice`]: magical,
             [`weapon_${i}_mundane_dice`]: mundane,
