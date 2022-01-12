@@ -577,11 +577,33 @@ def active_ability_button(ability_type):
     return div(
         {"class": "active-ability-button"},
         [
-            text_input({"class": "hidden", "name": prefix + "_accuracy", "value": "0"}),
-            text_input({"class": "hidden", "name": prefix + "_defense"}),
-            text_input({"class": "hidden", "name": "total_damage"}),
-            text_input({"class": "hidden", "name": "total_damage_dice"}),
-            text_input({"class": "hidden", "name": "total_damage_modifier"}),
+            text_input(
+                {
+                    "class": "hidden",
+                    "readonly": True,
+                    "name": prefix + "_accuracy",
+                    "value": "0",
+                }
+            ),
+            text_input(
+                {"class": "hidden", "readonly": True, "name": prefix + "_defense"}
+            ),
+            text_input({"class": "hidden", "readonly": True, "name": "total_damage"}),
+            text_input(
+                {"class": "hidden", "readonly": True, "name": "total_damage_dice"}
+            ),
+            text_input(
+                {"class": "hidden", "readonly": True, "name": "total_damage_modifier"}
+            ),
+            text_input(
+                {"class": "hidden", "readonly": True, "name": "attack_target_text"}
+            ),
+            text_input(
+                {"class": "hidden", "readonly": True, "name": "attack_target_text_first_page"}
+            ),
+            text_input(
+                {"class": "hidden", "readonly": True, "name": "attack_defense_text"}
+            ),
             textarea({"class": "hidden", "name": prefix + "_effect"}),
             button(
                 {
@@ -631,9 +653,10 @@ def weapon_template(i):
         + " {{subtitle=@{character_name} - @{weapon_"
         + i
         + "_name}&amp;#125;&amp;#125;"
+        + " @{attack_target_text_first_page}"
         + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
         + i
-        + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}&amp;#125;&amp;#125;"
+        + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}&amp;#125;&amp;#125;"
         + " {{Damage=[[[[@{weapon_"
         + i
         + "_total_damage_dice}]] + [[@{weapon_"
