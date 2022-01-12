@@ -52,7 +52,8 @@ def html_tag(tag_name, attributes=None, contents=None):
                 raise Exception("Name must not have dashes: " + attributes["name"])
 
     # An "attr_" prefix is required by roll20 for fields that are permanently
-    # stored on the sheet. We explicitly
+    # stored on the sheet. We explicitly avoid storing attributes that start
+    # with "nostore_".
     if "name" in attributes and not attributes["name"].startswith("nostore_"):
         attributes["name"] = "attr_" + attributes["name"]
 
