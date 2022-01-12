@@ -1,6 +1,7 @@
 module.exports = {
   env: {},
   globals: {
+    console: true,
     WeakMap: true,
     Set: true,
     setAttrs: true,
