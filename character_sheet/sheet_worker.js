@@ -1289,17 +1289,8 @@ function handleSkills() {
 function handleDicePoolAttributes() {
   onGet(
     {
-      numeric: [
-        "strength",
-        "intelligence",
-        "willpower",
-      ],
-      string: [
-        "feat_name_0",
-        "feat_name_1",
-        "feat_name_2",
-        "feat_name_3",
-      ],
+      numeric: ["strength", "intelligence", "willpower"],
+      string: ["feat_name_0", "feat_name_1", "feat_name_2", "feat_name_3"],
     },
     (v) => {
       const feats = [
