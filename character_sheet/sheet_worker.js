@@ -409,6 +409,7 @@ function handleAttackTargeting() {
         const defenseText = "@{attack_defense}" + actualDefenseText;
         setAttrs({
           [`${repeatingSection}_attack_target_text`]: targetText,
+          [`${repeatingSection}_attack_target_text_first_page`]: targetText.replace('}}}', '}&#125;&#125;'),
           [`${repeatingSection}_attack_defense_text`]: defenseText,
         });
       }
