@@ -1,4 +1,4 @@
-// variable types: boolean, miscCount, miscName, numeric, numericWithoutListen, string
+// variable types: boolean, miscCount, miscName, numeric, string
 // options: { includeLevel?: Boolean, runOnSheetOpen?: Boolean }
 // This can be called with only two arguments, omitting `options`.
 function onGet(variables, options, callback = null) {
@@ -9,10 +9,11 @@ function onGet(variables, options, callback = null) {
       runOnSheetOpen: false,
     };
   }
-  variables.boolean = variables.boolean || [];
-  variables.numeric = variables.numeric || [];
-  variables.numericWithoutListen = variables.numericWithoutListen || [];
-  variables.string = variables.string || [];
+  const variablesWithoutListen = options.variablesWithoutListen || {};
+  for (const varType of ["boolean", "numeric", "string"]) {
+    variables[varType] = variables[varType] || [];
+    variablesWithoutListen[varType] = variablesWithoutListen[varType] || [];
+  }
   if (options.includeLevel && !variables.numeric.includes("level")) {
     variables.numeric.push("level");
   }
@@ -33,23 +34,26 @@ function onGet(variables, options, callback = null) {
   if (options.runOnSheetOpen) {
     changeString + " sheet:opened";
   }
-  const getVariables =
-    variables.listenVariables && variables.listenVariables.length > 0
-      ? [...changeVariables, ...variables.listenVariables]
-      : changeVariables;
+  const getVariables = [
+    ...changeVariables,
+    ...variablesWithoutListen.boolean,
+    ...variablesWithoutListen.numeric,
+    ...variablesWithoutListen.string,
+  ];
   on(changeString, (eventInfo) => {
     getAttrs(getVariables, (attrs) => {
       const v = { eventInfo, misc: 0 };
-      for (const b of variables.boolean) {
+      for (const b of variables.boolean.concat(
+        variablesWithoutListen.boolean
+      )) {
         v[b] = Boolean(attrs[b] === "on" || attrs[b] === "1");
       }
-      for (const n of variables.numeric) {
+      for (const n of variables.numeric.concat(
+        variablesWithoutListen.numeric
+      )) {
         v[n] = Number(attrs[n] || 0);
       }
-      for (const n of variables.numericWithoutListen) {
-        v[n] = Number(attrs[n] || 0);
-      }
-      for (const s of variables.string) {
+      for (const s of variables.string.concat(variablesWithoutListen.string)) {
         v[s] = attrs[s];
       }
       for (const m of miscVariables) {
@@ -572,7 +576,11 @@ function handleDamageResistance() {
         "damage_resistance_bonus_armor",
         "damage_resistance_bonus_vital_wound_multiplier",
       ],
-      numericWithoutListen: ["damage_resistance", "damage_resistance_maximum"],
+    },
+    {
+      variablesWithoutListen: {
+        numeric: ["damage_resistance", "damage_resistance_maximum"],
+      },
     },
     (v) => {
       var fromLevel = 0;
@@ -859,7 +867,11 @@ function handleHitPoints() {
         "challenge_rating",
         "hit_points_vital_wound_multiplier",
       ],
-      numericWithoutListen: ["hit_points", "hit_points_maximum"],
+    },
+    {
+      variablesWithoutListen: {
+        numeric: ["hit_points", "hit_points_maximum"],
+      },
     },
     (v) => {
       let levelish = v.level + v.constitution;
