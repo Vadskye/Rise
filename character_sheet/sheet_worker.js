@@ -386,10 +386,11 @@ function handleAttackTargeting() {
     "repeating_strikeattacks",
     "repeating_otherdamagingattacks",
     "repeating_nondamagingattacks",
+    "repeating_abilities",
   ]) {
     onGet(
       {
-        boolean: [`${repeatingSection}_attack_is_targeted`],
+        boolean: [`${repeatingSection}_is_targeted`],
         string: [`${repeatingSection}_attack_defense`],
       },
       { includeLevel: false },
@@ -403,12 +404,12 @@ function handleAttackTargeting() {
           const sectionPrefix = `${repeatingSection}_${sectionId}`;
           getAttrs(
             [
-              `${sectionPrefix}_attack_is_targeted`,
+              `${sectionPrefix}_is_targeted`,
               `${sectionPrefix}_attack_defense`,
             ],
             (v) => {
-              v[`${sectionPrefix}_attack_is_targeted`] = boolifySheetValue(
-                v[`${sectionPrefix}_attack_is_targeted`]
+              v[`${sectionPrefix}_is_targeted`] = boolifySheetValue(
+                v[`${sectionPrefix}_is_targeted`]
               );
               setAttackTargeting(sectionPrefix, v);
             }
@@ -421,12 +422,12 @@ function handleAttackTargeting() {
 
 function setAttackTargeting(sectionPrefix, v) {
   const { defenseText, targetText } = calcAttackTargeting(
-    v[`${sectionPrefix}_attack_is_targeted`],
+    v[`${sectionPrefix}_is_targeted`],
     v[`${sectionPrefix}_attack_defense`]
   );
   setAttrs({
-    [`${sectionPrefix}_attack_target_text`]: targetText,
-    [`${sectionPrefix}_attack_target_text_first_page`]: targetText.replace(
+    [`${sectionPrefix}_targeting_text`]: targetText,
+    [`${sectionPrefix}_targeting_text_first_page`]: targetText.replace(
       "}}}",
       "}&#125;&#125;"
     ),
@@ -435,12 +436,12 @@ function setAttackTargeting(sectionPrefix, v) {
 }
 
 function calcAttackTargeting(isTargeted, rawDefense) {
-  rawDefense = rawDefense.toLowerCase();
+  rawDefense = (rawDefense || '').toLowerCase();
   const targetText = isTargeted
     ? "{{Target=@{target|Defender|token_name}}}"
     : "";
   let actualDefenseText = "";
-  if (isTargeted) {
+  if (isTargeted && rawDefense) {
     let actualDefense = null;
     // Try to guess the actual defense based on whatever freeform text was typed
     // in
@@ -1296,7 +1297,7 @@ function handleOtherDamagingAttacks() {
     }
     const damage_dice_key = `repeating_otherdamagingattacks_${sectionId}attack_damage_dice`;
     const attack_power_key = `repeating_otherdamagingattacks_${sectionId}attack_power`;
-    const is_magical_key = `repeating_otherdamagingattacks_${sectionId}attack_is_magical`;
+    const is_magical_key = `repeating_otherdamagingattacks_${sectionId}is_magical`;
     getAttrs(
       [
         "strength",
@@ -1369,7 +1370,9 @@ function handleOtherDamagingAttacks() {
 
   // Local other damaging attack change
   on(
-    "change:repeating_otherdamagingattacks:attack_damage_dice change:repeating_otherdamagingattacks:attack_power change:repeating_otherdamagingattacks:attack_is_magical",
+    "change:repeating_otherdamagingattacks:attack_damage_dice"
+    + " change:repeating_otherdamagingattacks:attack_power"
+    + " change:repeating_otherdamagingattacks:is_magical",
     function () {
       getOdaDamageDiceAttrs("", (v) => {
         setOdaTotalDamage("", v);
@@ -1399,7 +1402,7 @@ function handleStrikeAttacks() {
     }
     const attack_power_key = `repeating_strikeattacks_${sectionId}attack_power`;
     const damage_modifier_key = `repeating_strikeattacks_${sectionId}attack_damage_modifier`;
-    const is_magical_key = `repeating_strikeattacks_${sectionId}attack_is_magical`;
+    const is_magical_key = `repeating_strikeattacks_${sectionId}is_magical`;
     const weapon_keys = [];
     for (let i = 0; i < 3; i++) {
       weapon_keys.push(`weapon_${i}_magical_dice`);
@@ -1548,7 +1551,7 @@ function handleStrikeAttacks() {
 
   // Local strike attack change
   on(
-    "change:repeating_strikeattacks:attack_is_magical change:repeating_strikeattacks:attack_power change:repeating_strikeattacks:attack_damage_modifier",
+    "change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_power change:repeating_strikeattacks:attack_damage_modifier",
     function () {
       getStrikeAttrs("", (v) => {
         setStrikeTotalDamage("", v);

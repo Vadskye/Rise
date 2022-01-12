@@ -595,11 +595,14 @@ def active_ability_button(ability_type):
             text_input(
                 {"class": "hidden", "readonly": True, "name": "total_damage_modifier"}
             ),
+            text_input({"class": "hidden", "readonly": True, "name": "targeting_text"}),
+            text_input({"class": "hidden", "name": "dice_text", "readonly": True}),
             text_input(
-                {"class": "hidden", "readonly": True, "name": "attack_target_text"}
-            ),
-            text_input(
-                {"class": "hidden", "readonly": True, "name": "attack_target_text_first_page"}
+                {
+                    "class": "hidden",
+                    "readonly": True,
+                    "name": "targeting_text_first_page",
+                }
             ),
             text_input(
                 {"class": "hidden", "readonly": True, "name": "attack_defense_text"}
@@ -653,7 +656,7 @@ def weapon_template(i):
         + " {{subtitle=@{character_name} - @{weapon_"
         + i
         + "_name}&amp;#125;&amp;#125;"
-        + " @{attack_target_text_first_page}"
+        + " @{targeting_text_first_page}"
         + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
         + i
         + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}&amp;#125;&amp;#125;"
