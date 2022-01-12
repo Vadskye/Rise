@@ -270,14 +270,12 @@ function parseDicePool(attack_damage_dice) {
   }
   let [count, size] = attack_damage_dice.split("d");
   let modifier = 0;
-  if (!size) {
-    if (count) {
-      return {
-        count: null,
-        modifier: count,
-        size: null,
-      };
-    }
+  if (!Number(size)) {
+    return {
+      count: null,
+      modifier: Number(count) || null,
+      size: null,
+    };
   } else if (size.includes("+")) {
     [size, modifier] = size.split("+");
   } else if (size.includes("-")) {
@@ -286,7 +284,7 @@ function parseDicePool(attack_damage_dice) {
   return {
     count: Number(count) || null,
     modifier: Number(modifier),
-    size: Number(size) || null,
+    size: Number(size),
   };
 }
 
@@ -1399,9 +1397,9 @@ function setCalculatedDicePool(
 
 function calculateDicePoolModifier({
   dicePool,
+  dicePoolModifier,
   power,
   powerMultiplier,
-  dicePoolModifier,
 }) {
   dicePool = parseDicePool(dicePool);
   let totalDamage = "";
@@ -1410,13 +1408,17 @@ function calculateDicePoolModifier({
   if (dicePool) {
     const modifier = dicePool.modifier + Math.floor(power * powerMultiplier);
 
-    let { count, size } = addDiceIncrements(
-      dicePool.count,
-      dicePool.size,
-      dicePoolModifier
-    );
-    totalDamage = formatDicePool(count, size, modifier);
-    totalDamageDice = formatDicePool(count, size, 0);
+    if (dicePool.count) {
+      let { count, size } = addDiceIncrements(
+        dicePool.count,
+        dicePool.size,
+        dicePoolModifier
+      );
+      totalDamage = formatDicePool(count, size, modifier);
+      totalDamageDice = formatDicePool(count, size, 0);
+    } else {
+      totalDamage = modifier;
+    }
     totalDamageModifier = modifier;
   }
   return {
