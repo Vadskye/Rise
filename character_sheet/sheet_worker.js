@@ -1006,7 +1006,7 @@ function handleHitPoints() {
       };
       let shouldSetCurrentHp =
         totalValue < v.hit_points ||
-        totalValue === v.hit_points_maximum ||
+        v.hit_points === v.hit_points_maximum ||
         !v.hit_points_maximum;
       if (shouldSetCurrentHp) {
         attrs.hit_points = totalValue;
