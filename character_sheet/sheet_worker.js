@@ -141,7 +141,7 @@ function generateMiscVariables(name, count) {
 
 function formatChangeString(varName) {
   if (varName.includes("repeating_")) {
-    return varName.replaceAll(/repeating_([^_]+)_(.*)/, "change:repeating_$1:$2");
+    return varName.replace(/repeating_([^_]+)_(.*)/, "change:repeating_$1:$2");
   } else {
     return "change:" + varName;
   }
@@ -163,6 +163,7 @@ function handleEverything() {
 
 function handleCoreStatistics() {
   handleAccuracy();
+  handleAttackTargeting();
   handleDefenses();
   handleDamageDice();
   handleDamageResistance();
@@ -370,6 +371,51 @@ function handleArmorDefense() {
       });
     }
   );
+}
+
+function handleAttackTargeting() {
+  for (const repeatingSection of ["repeating_strikeattacks", "repeating_otherdamagingattacks", "repeating_nondamagingattacks"]) {
+    onGet(
+      {
+        boolean: [`${repeatingSection}_attack_is_targeted`],
+        numericWithoutListen: ['challenge_rating'],
+        string: [`${repeatingSection}_attack_defense`],
+      },
+      { includeLevel: false },
+      (v) => {
+        const isTargeted = v[`${repeatingSection}_attack_is_targeted`];
+        const targetText = isTargeted
+          ? '{{Target=@{target|Defender|token_name}}}'
+          : '';
+        let actualDefenseText = '';
+        // Kind of arbitrary, but hide defenses for "important" enemies and show them
+        // for multi-enemy fights
+        if (isTargeted && v.challenge_rating < 4) {
+          const rawDefense = v[`${repeatingSection}_attack_defense`].toLowerCase();
+          let actualDefense = null;
+          // Try to guess the actual defense based on whatever freeform text was typed
+          // in
+          if (['armor', 'a'].includes(rawDefense)) {
+            actualDefense = 'armor_defense';
+          } else if (['fortitude', 'fort', 'f'].includes(rawDefense)) {
+            actualDefense = 'fortitude';
+          } else if (['reflex', 'ref', 'r'].includes(rawDefense)) {
+            actualDefense = 'reflex';
+          } else if (['mental', 'ment', 'm'].includes(rawDefense)) {
+            actualDefense = 'mental';
+          }
+          if (actualDefense) {
+            actualDefenseText = ' ([[[[0+@{target|Defender|' + actualDefense + '}]]]])';
+          }
+        }
+        const defenseText = "@{attack_defense}" + actualDefenseText;
+        setAttrs({
+          [`${repeatingSection}_attack_target_text`]: targetText,
+          [`${repeatingSection}_attack_defense_text`]: defenseText,
+        });
+      }
+    );
+  }
 }
 
 function handleAttributes() {
@@ -1487,6 +1533,8 @@ function handleStrikeAttacks() {
       }
     );
   }
+
+  // Changing whether a strike is targeted
 }
 
 function handleUniversalAbilities() {
