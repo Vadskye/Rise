@@ -437,7 +437,7 @@ export const revelation: MysticSphere = {
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 
         If undisturbed, the sensor floats in the air in its position.
-        During each \\glossterm{movement phase}, you can move the sensor up to 30 feet in any direction, even vertically.
+        As a \\glossterm{move action}, you can move the sensor up to 30 feet in any direction, even vertically.
         At the end of each round, if the sensor is does not have \\glossterm{line of effect} from you, it is destroyed.
       `,
       rank: 2,
