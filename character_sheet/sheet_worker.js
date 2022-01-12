@@ -378,7 +378,6 @@ function handleAttackTargeting() {
     onGet(
       {
         boolean: [`${repeatingSection}_attack_is_targeted`],
-        numericWithoutListen: ['challenge_rating'],
         string: [`${repeatingSection}_attack_defense`],
       },
       { includeLevel: false },
@@ -388,9 +387,7 @@ function handleAttackTargeting() {
           ? '{{Target=@{target|Defender|token_name}}}'
           : '';
         let actualDefenseText = '';
-        // Kind of arbitrary, but hide defenses for "important" enemies and show them
-        // for multi-enemy fights
-        if (isTargeted && v.challenge_rating < 4) {
+        if (isTargeted) {
           const rawDefense = v[`${repeatingSection}_attack_defense`].toLowerCase();
           let actualDefense = null;
           // Try to guess the actual defense based on whatever freeform text was typed
@@ -405,6 +402,7 @@ function handleAttackTargeting() {
             actualDefense = 'mental';
           }
           if (actualDefense) {
+            // TODO: find a way to hide defenses of high CR enemies
             actualDefenseText = ' ([[[[0+@{target|Defender|' + actualDefense + '}]]]])';
           }
         }
