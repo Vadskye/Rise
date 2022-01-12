@@ -8,8 +8,7 @@
 }
 
 .active-ability-name, .attack-prefix {
-    // Exceeds max reasonable width for button names on Core page by about 2em
-    width: 18em;
+    width: 16em;
 }
 
 .attack-name input[type=text], .active-ability-name input[type=text] {
@@ -96,7 +95,7 @@ textarea {
 
 .attack-buttons {
     .attack-roll {
-        width: 150px;
+        width: 140px;
         margin-bottom: 0.25em;
 
         > input[type=text] {
@@ -109,6 +108,9 @@ textarea {
             text-align: center;
             width: 130px;
         }
+    }
+    button[type=roll]:before {
+        content: none;
     }
 }
 

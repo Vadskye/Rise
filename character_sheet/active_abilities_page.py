@@ -221,6 +221,12 @@ def shared_attack_framework(calcs=[], buttons=[]):
                 {"class": "attack-effect"},
                 {"name": "attack_effect"},
             ),
+            text_input(
+                {"class": "hidden", "readonly": True, "name": "attack_target_text"}
+            ),
+            text_input(
+                {"class": "hidden", "readonly": True, "name": "attack_defense_text"}
+            ),
             flex_col({"class": "attack-buttons"}, buttons),
         ],
     )
@@ -254,6 +260,11 @@ def strike_based_attack():
                 "Magical?",
                 {"class": "attack-is-magical"},
                 {"name": "attack_is_magical"},
+            ),
+            underlabeled_checkbox(
+                "Targeted?",
+                None,
+                {"name": "attack_is_targeted"},
             ),
         ],
         [
@@ -338,7 +349,12 @@ def other_damaging_attack():
             underlabeled_checkbox(
                 "Magical?",
                 None,
-                {"class": "attack-is-magical", "name": "attack_is_magical"},
+                {"name": "attack_is_magical"},
+            ),
+            underlabeled_checkbox(
+                "Targeted?",
+                None,
+                {"name": "attack_is_targeted"},
             ),
         ],
         [
@@ -382,7 +398,13 @@ def calc_attack_power():
 
 def nondamaging_attack():
     return shared_attack_framework(
-        [],
+        [
+            underlabeled_checkbox(
+                "Targeted?",
+                None,
+                {"name": "attack_is_targeted"},
+            ),
+        ],
         [
             button(
                 {
@@ -463,9 +485,10 @@ def weapon_attack_button(i):
         + " {{subtitle=@{character_name} - @{weapon_"
         + i
         + "_name}}}"
+        + " @{attack_target_text}"
         + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
         + i
-        + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense}}}"
+        + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
         + " {{Damage="
         + construct_damage_text(
             "@{weapon_" + i + "_total_damage}",
@@ -487,7 +510,8 @@ def attack_button_text(damage_text=None):
         "&{template:custom}"
         + " {{title=@{attack_name}}}"
         + " {{subtitle=@{character_name}}}"
-        + " {{Attack=[[d10!+@{accuracy}+@{attack_accuracy}]] vs @{attack_defense}}}"
+        + " @{attack_target_text}"
+        + " {{Attack=[[d10!+@{accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
         + ((" {{Damage=" + damage_text + "}}") if damage_text else "")
         + " {{color=@{chat_color}}}"
         + " @{debuff_headers}"
