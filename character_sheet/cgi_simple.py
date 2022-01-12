@@ -52,7 +52,7 @@ def html_tag(tag_name, attributes=None, contents=None):
                 raise Exception("Name must not have dashes: " + attributes["name"])
 
     # An "attr_" prefix is required by roll20
-    if "name" in attributes:
+    if "name" in attributes and not attributes["name"].startswith("nostore_"):
         attributes["name"] = "attr_" + attributes["name"]
 
     if contents is None:
