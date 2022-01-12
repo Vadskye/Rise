@@ -374,7 +374,11 @@ function handleArmorDefense() {
 }
 
 function handleAttackTargeting() {
-  for (const repeatingSection of ["repeating_strikeattacks", "repeating_otherdamagingattacks", "repeating_nondamagingattacks"]) {
+  for (const repeatingSection of [
+    "repeating_strikeattacks",
+    "repeating_otherdamagingattacks",
+    "repeating_nondamagingattacks",
+  ]) {
     onGet(
       {
         boolean: [`${repeatingSection}_attack_is_targeted`],
@@ -384,32 +388,35 @@ function handleAttackTargeting() {
       (v) => {
         const isTargeted = v[`${repeatingSection}_attack_is_targeted`];
         const targetText = isTargeted
-          ? '{{Target=@{target|Defender|token_name}}}'
-          : '';
-        let actualDefenseText = '';
+          ? "{{Target=@{target|Defender|token_name}}}"
+          : "";
+        let actualDefenseText = "";
         if (isTargeted) {
-          const rawDefense = v[`${repeatingSection}_attack_defense`].toLowerCase();
+          const rawDefense =
+            v[`${repeatingSection}_attack_defense`].toLowerCase();
           let actualDefense = null;
           // Try to guess the actual defense based on whatever freeform text was typed
           // in
-          if (['armor', 'a'].includes(rawDefense)) {
-            actualDefense = 'armor_defense';
-          } else if (['fortitude', 'fort', 'f'].includes(rawDefense)) {
-            actualDefense = 'fortitude';
-          } else if (['reflex', 'ref', 'r'].includes(rawDefense)) {
-            actualDefense = 'reflex';
-          } else if (['mental', 'ment', 'm'].includes(rawDefense)) {
-            actualDefense = 'mental';
+          if (["armor", "a"].includes(rawDefense)) {
+            actualDefense = "armor_defense";
+          } else if (["fortitude", "fort", "f"].includes(rawDefense)) {
+            actualDefense = "fortitude";
+          } else if (["reflex", "ref", "r"].includes(rawDefense)) {
+            actualDefense = "reflex";
+          } else if (["mental", "ment", "m"].includes(rawDefense)) {
+            actualDefense = "mental";
           }
           if (actualDefense) {
             // TODO: find a way to hide defenses of high CR enemies
-            actualDefenseText = ' ([[[[0+@{target|Defender|' + actualDefense + '}]]]])';
+            actualDefenseText =
+              " ([[[[0+@{target|Defender|" + actualDefense + "}]]]])";
           }
         }
         const defenseText = "@{attack_defense}" + actualDefenseText;
         setAttrs({
           [`${repeatingSection}_attack_target_text`]: targetText,
-          [`${repeatingSection}_attack_target_text_first_page`]: targetText.replace('}}}', '}&#125;&#125;'),
+          [`${repeatingSection}_attack_target_text_first_page`]:
+            targetText.replace("}}}", "}&#125;&#125;"),
           [`${repeatingSection}_attack_defense_text`]: defenseText,
         });
       }
@@ -1127,7 +1134,7 @@ function handleRust() {
             `.trim();
       setAttrs({
         rust,
-        show_rust: v.challenge_rating > 0 ? '1' : '0',
+        show_rust: v.challenge_rating > 0 ? "1" : "0",
       });
     }
   );
