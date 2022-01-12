@@ -229,10 +229,15 @@ def shared_attack_framework(calcs=[], buttons=[]):
 def strike_based_attack():
     return shared_attack_framework(
         [
-            labeled_number_input(
+            underlabel_spaced(
                 "+Dmg",
-                {"class": "attack-damage-modifier"},
-                {"name": "attack_damage_modifier"},
+                number_input(
+                    {
+                        "class": "fake-text",
+                        "name": "attack_damage_modifier",
+                        "value": "0",
+                    }
+                ),
             ),
             underlabel(
                 "Power",
