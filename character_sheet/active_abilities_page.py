@@ -81,10 +81,52 @@ def ability():
     return flex_row(
         {"class": "ability"},
         [
-            labeled_text_input(
-                "Name",
-                {"class": "active-ability-name"},
-                {"name": "active_ability0_name"},
+            flex_col(
+                {"class": "attack-prefix"},
+                [
+                    flex_wrapper(
+                        labeled_text_input(
+                            "Name",
+                            {"class": "active-ability-name"},
+                            {"name": "active_ability0_name"},
+                        ),
+                    ),
+                    flex_row(
+                        {"class": "attack-calcs"},
+                        [
+                            labeled_text_input(
+                                "Base Dice",
+                                {"class": "attack-damage-dice"},
+                                {"name": "active_ability0_dice"},
+                            ),
+                            underlabel(
+                                "Power",
+                                select(
+                                    {"class": "attack-power", "name": "active_ability0_power"},
+                                    [
+                                        option(
+                                            {"value": "1", "selected": True}, "Full"
+                                        ),
+                                        option({"value": "0.5"}, "Half"),
+                                        option({"value": "0"}, "None"),
+                                    ],
+                                ),
+                            ),
+                            underlabeled_checkbox(
+                                "Magical?",
+                                None,
+                                {"name": "is_magical"},
+                            ),
+                            underlabeled_checkbox(
+                                "Targeted?",
+                                None,
+                                {"name": "is_targeted"},
+                            ),
+                            text_input({"class": "hidden", "name": "targeting_text", "readonly": True}),
+                            text_input({"class": "hidden", "name": "dice_text", "readonly": True}),
+                        ],
+                    ),
+                ],
             ),
             labeled_textarea(
                 "Effect",
@@ -100,6 +142,8 @@ def ability():
                         "&{template:custom}"
                         + " {{title=@{active_ability0_name}}}"
                         + " {{subtitle=@{character_name}}}"
+                        + " @{targeting_text}"
+                        + " @{dice_text}"
                         + " {{color=@{chat_color}}}"
                         + " {{desc=@{active_ability0_effect}}}"
                     ),
@@ -222,7 +266,7 @@ def shared_attack_framework(calcs=[], buttons=[]):
                 {"name": "attack_effect"},
             ),
             text_input(
-                {"class": "hidden", "readonly": True, "name": "attack_target_text"}
+                {"class": "hidden", "readonly": True, "name": "targeting_text"}
             ),
             text_input(
                 {"class": "hidden", "readonly": True, "name": "attack_defense_text"}
@@ -259,12 +303,12 @@ def strike_based_attack():
             underlabeled_checkbox(
                 "Magical?",
                 {"class": "attack-is-magical"},
-                {"name": "attack_is_magical"},
+                {"name": "is_magical"},
             ),
             underlabeled_checkbox(
                 "Targeted?",
                 None,
-                {"name": "attack_is_targeted"},
+                {"name": "is_targeted"},
             ),
         ],
         [
@@ -349,12 +393,12 @@ def other_damaging_attack():
             underlabeled_checkbox(
                 "Magical?",
                 None,
-                {"name": "attack_is_magical"},
+                {"name": "is_magical"},
             ),
             underlabeled_checkbox(
                 "Targeted?",
                 None,
-                {"name": "attack_is_targeted"},
+                {"name": "is_targeted"},
             ),
         ],
         [
@@ -402,7 +446,7 @@ def nondamaging_attack():
             underlabeled_checkbox(
                 "Targeted?",
                 None,
-                {"name": "attack_is_targeted"},
+                {"name": "is_targeted"},
             ),
         ],
         [
@@ -485,7 +529,7 @@ def weapon_attack_button(i):
         + " {{subtitle=@{character_name} - @{weapon_"
         + i
         + "_name}}}"
-        + " @{attack_target_text}"
+        + " @{targeting_text}"
         + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
         + i
         + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
@@ -510,7 +554,7 @@ def attack_button_text(damage_text=None):
         "&{template:custom}"
         + " {{title=@{attack_name}}}"
         + " {{subtitle=@{character_name}}}"
-        + " @{attack_target_text}"
+        + " @{targeting_text}"
         + " {{Attack=[[d10!+@{accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
         + ((" {{Damage=" + damage_text + "}}") if damage_text else "")
         + " {{color=@{chat_color}}}"
