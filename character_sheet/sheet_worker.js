@@ -270,7 +270,7 @@ function parseDicePool(attack_damage_dice) {
   }
   let [count, size] = attack_damage_dice.split("d");
   let modifier = 0;
-  if (!Number(size)) {
+  if (!size) {
     return {
       count: null,
       modifier: Number(count) || null,
