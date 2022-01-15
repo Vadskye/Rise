@@ -309,7 +309,7 @@ export const summoning: MysticSphere = {
           it creates a fully functional Large ballista instead of a weapon.
           The ballista functions like any other weapon, with the following exceptions.
 
-          It cannot move, and makes ranged \\glossterm{strikes} instead of melee strikes.
+          It cannot move, and makes projectile \\glossterm{strikes} instead of melee strikes.
           Its attacks have a maximum range of 120 feet and deal piercing damage.
           In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
         `,
