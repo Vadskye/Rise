@@ -256,7 +256,9 @@ function calcDefenseLevelScaling(level, challengeRating) {
   if (challengeRating > 0) {
     levelScaling += Math.max(0, Math.floor((level + 6) / 9));
   }
-  if (challengeRating === 4) {
+  if (challengeRating === 0.5) {
+    levelScaling -= 1;
+  } else if (challengeRating === 4) {
     levelScaling += 1;
   } else if (challengeRating === 6) {
     levelScaling += 2;
