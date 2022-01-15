@@ -788,7 +788,7 @@ def calc_fort():
                 ],
                 result_attributes={
                     "disabled": "true",
-                    "name": "fortitude_defense_display",
+                    "name": "fortitude_display",
                     "value": "@{fortitude}",
                 },
             ),

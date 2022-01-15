@@ -114,9 +114,9 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set([
 const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
   "accuracy",
   "armor_defense",
-  "fortitude_defense",
-  "reflex_defense",
-  "mental_defense",
+  "fortitude",
+  "reflex",
+  "mental",
 ]);
 
 // Multipliers to HP and resistances can't be incorporated into this simple handling
@@ -276,7 +276,13 @@ function parseDicePool(attack_damage_dice) {
       modifier: Number(count) || null,
       size: null,
     };
-  } else if (size.includes("+")) {
+  }
+
+  // for example, "d4"
+  if (!count) {
+    count = 1;
+  }
+  if (size.includes("+")) {
     [size, modifier] = size.split("+");
   } else if (size.includes("-")) {
     [size, modifier] = size.split("-");
@@ -617,12 +623,12 @@ function handleCustomModifiers() {
             encumbrance_custom_modifier: totalCustomModifiers.encumbrance || 0,
             fatigue_tolerance_custom_modifier:
               totalCustomModifiers.fatigue_tolerance || 0,
-            fortitude_defense_custom_modifier:
+            fortitude_custom_modifier:
               totalCustomModifiers.fortitude || 0,
             hit_points_custom_modifier: totalCustomModifiers.hit_points || 0,
-            mental_defense_custom_modifier: totalCustomModifiers.mental || 0,
+            mental_custom_modifier: totalCustomModifiers.mental || 0,
             power_custom_modifier: totalCustomModifiers.power || 0,
-            reflex_defense_custom_modifier: totalCustomModifiers.reflex || 0,
+            reflex_custom_modifier: totalCustomModifiers.reflex || 0,
             vital_rolls_custom_modifier: totalCustomModifiers.vital_rolls || 0,
           });
         });
@@ -867,9 +873,9 @@ function handleDebuffs() {
       setAttrs({
         accuracy_debuff_modifier: accuracy,
         armor_defense_debuff_modifier: armor,
-        fortitude_defense_debuff_modifier: fortitude,
-        mental_defense_debuff_modifier: mental,
-        reflex_defense_debuff_modifier: reflex,
+        fortitude_debuff_modifier: fortitude,
+        mental_debuff_modifier: mental,
+        reflex_debuff_modifier: reflex,
         debuff_headers: debuffHeaders.trim(),
       });
     }
@@ -1086,7 +1092,7 @@ function handleMonsterChatColor() {
 function handleNonArmorDefense(defense, attribute) {
   onGet(
     {
-      miscName: `${defense}_defense`,
+      miscName: defense,
       miscCount: 3,
       numeric: [
         "level",
@@ -1749,7 +1755,7 @@ function handleVitalWounds() {
 function handleWeaponDamageDice() {
   onGet(
     {
-      miscCount: 4,
+      miscCount: 5,
       miscName: "weapon_damage_dice",
       numeric: ["level", "challenge_rating"],
     },
