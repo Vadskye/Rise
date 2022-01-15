@@ -575,33 +575,11 @@ This chapter describes the core mechanics of Rise.
         \parhead{Aligned Planes} The four aligned planes are manifestations of the four alignments.
         The Celestial Heavens is good-aligned, the Abyss is evil-aligned, Ordus is law-aligned, and Discord is chaos-aligned.
 
-        The Celestial Heavens are beautiful and majestic.
-        Mountains rise dramatically out of misty clouds, trees are massive and laden with delicious fruit, and buildings surpass the wildest dreams of mortal architects.
-        A serene blue sky gives way to a night so lit by stars that it is almost as bright as the day.
-
-        The Abyss is a hellscape of fire, brimstone, and distant screaming.
-        With the exception of the great palaces of demon princes, the buildings that exist are designed for defense rather than aesthetics.
-        The terrain is typically rocky and dull, and most of the color belongs to carcasses left behind after violent battles.
-
-        Ordus is a masterpiece of logical organization.
-        It is the most consistently civilized of the aligned planes, and the cities are exquisitely planned.
-        However, laws are enforced with extreme severity.
-        Outside of the cities, even the natural territories are cleanly and simply divided.
-        A forest of evenly spaced trees might border a field in a sharp, clean transition along a perfectly straight line.
-
-        Discord is a wild maelstrom.
-        Much of the plane can be freely reshaped with only minimal force of will.
-        By working together, its inhabitants can create vast cities from thin air, though they can be destroyed with similar ease.
-        Beyond the shaped spaces, the terrain is constantly changing.
-        A field might grow trees that are consumed by a forest fire and then fall into chasms newly formed by an earthquake in a matter of minutes.
-
-        These are only broad descriptions that describe the typical appearance of each aligned plane.
-        They are all subdivided into layers and independent regions that have unique characteristics and magical phenomena.
-        In addition, powerful deities can claim territory in aligned planes to reshape it according to their desires.
-
         When mortal creatures die, their souls travel to an appropriate location on an aligned plane, where they gain new planeforged bodies and live again.
         If they pledged their soul to a deity in life, that deity can take ownership over their soul in death, and the soul is reborn within that deity's territory and under their protection.
         Otherwise, they appear on the aligned plane that most closely reflects their primary alignment in life.
+
+        For details about aligned planes, see \pcref{Aligned Planes}.
 
         \parhead{Nexus Planes} The nexus planes are composite planes with a number of distinct environments and filled with creatures of myriad alignments.
         Nexus planes comprise the majority of civilization across all planes.
@@ -704,8 +682,8 @@ This chapter describes the core mechanics of Rise.
                     Most activity and civilization on the plane happens on this surface.
                     It is usually possible to construct tunnels into a flat surface plane to some depth, depending on the size of the plane.
                 \item Hollow Sphere: The plane consists of a hollow sphere with an outer boundary generally made of earth or similar material.
-                    Most activity and civilization on the plane happens on the inner surface of the sphere.
-                    Some hollow sphere planes have an outer surface that can also be accessed, but most have a limit before any outer surface can be reached.
+                    Most activity and civilization on the plane happens on the inner surface of the sphere or in the vast open space between.
+                    Some hollow sphere planes have an outer surface that can also be accessed, but in most planes it is impossible to leave the interior of the sphere.
                 \item Solid Sphere: The plane consists of a solid sphere generally made of earth or similar material.
                     Most activity and civilization on the plane happens on the surface of the sphere.
                     It is possible to construct tunnels into a solid sphere plane, but it may become increasingly difficult to traverse the plane as you approach the center of the sphere.
@@ -717,112 +695,179 @@ This chapter describes the core mechanics of Rise.
 
             % TODO: morphicness, alignment, magic
 
-    \subsection{Plane Descriptions}
+\section{Plane Descriptions}
 
-        \subsubsection{Primal Planes}
+    \subsection{Primal Planes}
 
-            \parhead{The Plane of Air}
-            The Plane of Air is a a soaring landscape unencumbered by gravity or ground.
-            The vast expanses of empty air are littered with clouds and unpredictable winds.
-            Any inhabitants of the plane must adapt to a highly mobile lifestyle.
-            A number of towns and structures have been built in the plane using raw materials brought from other planes.
-            They sail through the air at the whims of the wind, and are occasionally battered by intersections with other wind streams.
+        \subsubsection{The Plane of Air}
+        The Plane of Air is a a soaring landscape unencumbered by gravity or ground.
+        The vast expanses of empty air are littered with clouds and unpredictable winds.
+        Any inhabitants of the plane must adapt to a highly mobile lifestyle.
+        A number of towns and structures have been built in the plane using raw materials brought from other planes.
+        They sail through the air at the whims of the wind, and are occasionally battered by intersections with other wind streams.
 
-            The Plane of Air has the following planar traits:
-            \begin{itemize}
-                \item Gravity strength: No Gravity
-                \item Light: Fixed Source, from a sun outside the limits of the plane
-                \item Limits: Looped
-                \item Planar connectivity: Unstable Connected
-                \item Shape: Uniform, in a sphere with a radius of about 2,000 miles.
-            \end{itemize}
+        The Plane of Air has the following planar traits:
+        \begin{itemize}
+            \item Gravity strength: No gravity
+            \item Light: Fixed source, from a sun outside the limits of the plane
+            \item Limits: Barrier, formed from wind currents which push back with such force that nothing can travel far.
+            \item Planar connectivity: Unstable connected
+            \item Shape: Hollow sphere with a radius of about 2,000 miles.
+        \end{itemize}
 
-            \parhead{The Plane of Earth}
-            The Plane of Earth is a titanically large body of earth and stone.
-            A labyrinthine series of mostly airless tunnels weave their way through the plane, connecting the few cities.
-            The plane is a major source of valuable gems, diamonds, and rare metals like mithral, but the dense rock and airless environment make successful mining difficult.
-            In addition, earthquakes periodically reshape the environment by collapsing old tunnel systems and constructing new ones.
-            Some cities have been carved out in vast underground rooms reinforced to survive the earthquakes.
+        \subsubsection{The Plane of Earth}
+        The Plane of Earth is a titanically large body of earth and stone.
+        A labyrinthine series of mostly airless tunnels weave their way through the plane, connecting the few cities.
+        The plane is a major source of valuable gems, diamonds, and rare metals like mithral, but the dense rock and airless environment make successful mining difficult.
+        In addition, earthquakes periodically reshape the environment by collapsing old tunnel systems and constructing new ones.
+        Some cities have been carved out in vast underground rooms reinforced to survive the earthquakes.
 
-            The Plane of Earth has the following planar traits:
-            \begin{itemize}
-                \item Gravity direction: Fixed
-                \item Gravity strength: Normal
-                \item Light: None
-                \item Limits: Barrier, formed from increasingly dense rock that eventually becomes so hard that no known material or magic can damage it.
-                \item Planar connectivity: Stable Connected
-                \item Shape: Uniform, in a sphere with a radius of about 500 miles.
-            \end{itemize}
+        The Plane of Earth has the following planar traits:
+        \begin{itemize}
+            \item Gravity direction: Fixed
+            \item Gravity strength: Normal
+            \item Light: None
+            \item Limits: Barrier, formed from increasingly dense rock that eventually becomes so hard that no known material or magic can damage it.
+            \item Planar connectivity: Stable connected
+            \item Shape: Hollow sphere with a radius of about 500 miles.
+        \end{itemize}
 
-            \parhead{The Plane of Fire}
-            The Plane of Fire is an endless searing inferno.
-            The plane's essence is highly combustible, allowing fires to burn indefinitely without any obvious fuel.
-            However, the intensity of flames on the plane are highly uneven, as the plane generates fuel in various locations that shift over time.
-            Some pockets on the surface are devoid of natural fuel, allowing the allow the construction of trading hubs where the few inhabitants of the plane who are not naturally immune to fire can survive.
-            A variety of large tunnels and magma flows run through the sphere, and the intensity of the heat generally increases as you approach the center.
+        \subsubsection{The Plane of Fire}
+        The Plane of Fire is an endless searing inferno.
+        The plane's essence is highly combustible, allowing fires to burn indefinitely without any obvious fuel.
+        However, the intensity of flames on the plane are highly uneven, as the plane generates fuel in various locations that shift over time.
+        Some pockets on the surface are devoid of natural fuel, allowing the allow the construction of trading hubs where the few inhabitants of the plane who are not naturally immune to fire can survive.
+        A variety of large tunnels and magma flows run through the sphere, and the intensity of the heat generally increases as you approach the center.
 
-            The Plane of Fire has the following planar traits:
-            \begin{itemize}
-                \item Gravity direction: Absolute Directional, pointing to the center of the sphere
-                \item Gravity strength: Normal
-                \item Light: None, though the constant fires provide sufficient illumination in most locations on the plane
-                \item Limits: Looped
-                \item Planar connectivity: Unstable Connected
-                \item Shape: Solid Sphere, with a radius of about 1,000 miles.
-            \end{itemize}
+        The Plane of Fire has the following planar traits:
+        \begin{itemize}
+            \item Gravity direction: Absolute directional, pointing to the center of the sphere
+            \item Gravity strength: Normal
+            \item Light: None, though the constant fires provide sufficient illumination in most locations on the plane
+            \item Limits: Barrier, formed from fires which burn so fiercely that further travel becomes physically impossible, even for creatures immune to fire.
+            \item Planar connectivity: Unstable connected
+            \item Shape: Flat surface, in a disc with a radius of about 2,000 miles.
+        \end{itemize}
 
-            \parhead{The Plane of Water}
-            The Plane of Water is an impossibly vast ocean.
-            Powerful currents sweep through the ocean, but much of it is calm, and many forms of aquatic life abound in the water.
-            The Plane of Water is the most densely populated Primal Plane, both by sentient creatures and monsters.
-            Magnificant underwater cities are carved from huge rocks that float peacefully suspended in the water.
-            Though there is no sun, simple creatures akin to plankton form the base of the food chain by feeding directly on the plane's essence.
+        \subsubsection{The Plane of Water}
+        The Plane of Water is an impossibly vast ocean.
+        Powerful currents sweep through the ocean, but much of it is calm, and many forms of aquatic life abound in the water.
+        The Plane of Water is the most densely populated Primal Plane, both by sentient creatures and monsters.
+        Magnificant underwater cities are carved from huge rocks that float peacefully suspended in the water.
+        Though there is no sun, simple creatures akin to plankton form the base of the food chain by feeding directly on the plane's essence.
 
-            The Plane of Earth has the following planar traits:
-            \begin{itemize}
-                \item Gravity strength: No Gravity
-                \item Light: None, though bioluminescent creatures like plankton are extremely common, making many parts of the plane well-lit
-                \item Limits: Looped
-                \item Planar connectivity: Stable Connected
-                \item Shape: Uniform, in a sphere with a radius of about 1,000 miles.
-            \end{itemize}
+        The Plane of Earth has the following planar traits:
+        \begin{itemize}
+            \item Gravity strength: No gravity
+            \item Light: None, though bioluminescent creatures like plankton are extremely common, making many parts of the plane well-lit
+            \item Limits: Barrier, formed from water currents which push back with such force that nothing can travel far.
+            \item Planar connectivity: Stable connected
+            \item Shape: Hollow sphere with a radius of about 1,000 miles.
+        \end{itemize}
 
-        \subsubsection{Nexus Planes}
+        \subsection{Aligned Planes}\label{Aligned Planes}
 
-            \parhead{The Material Plane}\label{The Material Plane}
-            The Material Plane is the plane that most Rise adventures begin on.
-            The surface of the plane is a massive sphere with a radius of about 4,000 miles.
-            It is the most familiar to most humanoid creatures.
+            \subsubsection{The Celestial Heavens}
+                The Celestial Heavens are beautiful and majestic.
+                Mountains rise dramatically out of misty clouds, trees are massive and laden with delicious fruit, and buildings surpass the wildest dreams of mortal architects.
+                A serene blue sky gives way to a night so lit by stars that it is almost as bright as the day.
 
-            The Material Plane has the following planar traits:
-            \begin{itemize}
-                \item Gravity direction: Absolute Directional, pointing to the center of the sphere
-                \item Gravity strength: Normal
-                \item Light: Mobile Source, from a sun and moon outside of the plane's limits
-                \item Limits: Looped
-                \item Planar connectivity: Isolated
-                \item Shape: Solid Sphere, with a radius of about 4,000 miles.
-            \end{itemize}
+            \subsubsection{The Abyss}
+                The Abyss is a hellscape of fire, brimstone, and distant screaming.
+                With the exception of the great palaces of demon princes, the buildings that exist are designed for defense rather than aesthetics.
+                The terrain is typically rocky and dull, and most of the color belongs to carcasses left behind after violent battles.
 
-        \parhead{The Astral Plane}\label{The Astral Plane}
-            The Astral Plane is the space between the other planes.
-            It is a necessary intermediate destination for virtually all planar journeys, as all \glossterm{planar rifts} lead to and from the Astral Plane.
-            Most activity on the Astral Plane occurs in a space called the Inner Astral Plane, a massive but finite region where all planar rifts on the Astral Plane appear.
-            % Are there any other infinite planes?
-            However, unlike all other planes, the Astral Plane has no known limits to its extent, and may in fact be infinite.
-            The area outside the Inner Astral Plane is known as the Deep Astral Plane, and few venture into those sparsely populated realms.
-            % This should be more clearly defined
-            The Deep Astral Plane has magical turbulence that interferes with long-range communication and transportation magic, making exploration difficult.
+                All manner of nightmarish creatures stalk the Abyss.
+                The best known of these creatures are demons and devils.
+                Demons are formed when mortal souls are splintered by trauma.
+                The soul splinters drift into the Astral Plane, and from there are guided to the Abyss by ancient astral currents.
+                When they arrive in the Abyss, its planar essence envelops them in new planeforged body, much like dead souls gain new bodies in their proper afterlife.
 
-            The Astral Plane has the following planar traits:
-            \begin{itemize}
-                \item Directional gravity: Subjective
-                \item Gravity strength: Normal
-                \item Light: Fixed Source, from the infinite reaches of the Deep Astral Plane
-                \item Limits: Infinite
-                \item Planar connectivity: Conduit
-                \item Shape: Uniform
-            \end{itemize}
+                Newly formed demons, known as demonspawn, are barely functional creatures.
+                They are driven entirely by the primal emotion that separated the soul splinter from its original soul, such as rage, grief, or pain.
+                This makes them functionally insane, and they are almost always driven to lash out at everything around them.
+                Rage-born demons violently attack anything they see, pain-born demons try to lessen their pain by sharing it, and so on.
+                When they succeed in their attacks, they can feed on the trauma they inflict, strengthening their soul.
+                Unfortunately, this does not generally make them more sane, since they only feed on the same urges that created them.
+
+                Demonspawn instinctively avoid attacking other demonspawn, since they can find no gratification for their urges in attacking such small, broken souls.
+                Instead, they hunt creatures with complete souls, which generally means attacking the afterlife bodies of evil-aligned creatures who went to the Abyss for their afterlife.
+                The greatest feast, however, comes from attacking mortal souls, which are much easier to splinter.
+                Demonic incursions into other planes are devastating but fortunately rare.
+
+                Unlike demons, devils are native to the Abyss itself.
+                They are far more intelligent and organized than demons, but also far less numerous.
+                Devils rule vast territories within the Abyss, using demons as their foot soldiers to protect and enlarge their territorial claims.
+
+                The only competition with devils for rulership of the Abyss comes from the evil deities and greater demons.
+                Evil deities are fairly simple to deal with.
+                They have absolute dominion over their own territory, so invading their lands is pointless.
+                In addition, since their territorial limits come from their divine power rather than force of arms, they have little ability to expand or even exert significant influence outside of their own lands.
+                As a result, devils and greater demons alike mostly ignore the deities.
+
+                Greater demons are much more troublesome.
+                On rare occasions, demonspawn are so successful in their attacks that they claim soul splinters outside the scope of their original urges.
+                This typically happens when demons find and break mortal souls.
+                When this happens, the demonspawn gains a more complete soul, and becomes a little more sane.
+                Often, this simply entices other demonspawn to attack and destroy the wayward demon.
+                However, if the demon survives the attacks from its allies and repeats this process, it can grow in power.
+
+                Demons who have expanded their soul beyond a single soul splinter are called lesser demons.
+                Eventually, the demon can gain something resembling a complete soul from all of the splinters it has collected, making it a greater demon.
+                Though more sane and functional than demonspawn, these more developed demons are no less evil.
+                Both lesser demons and greater demons have enough skill with splintering and manipulating souls to make pacts with warlocks.
+                In addition, greater demons have the power to command armies of demonspawn and lesser demons, allowing them to claim territory like devils do.
+
+            \subsubsection{Ordus}
+                Ordus is a masterpiece of logical organization.
+                It is the most consistently civilized of the aligned planes, and the cities are exquisitely planned.
+                However, laws are enforced with extreme severity.
+                Outside of the cities, even the natural territories are cleanly and simply divided.
+                A forest of evenly spaced trees might border a field in a sharp, clean transition along a perfectly straight line.
+
+            \subsubsection{Discord}
+                Discord is a wild maelstrom.
+                Much of the plane can be freely reshaped with only minimal force of will.
+                By working together, its inhabitants can create vast cities from thin air, though they can be destroyed with similar ease.
+                Beyond the shaped spaces, the terrain is constantly changing.
+                A field might grow trees that are consumed by a forest fire and then fall into chasms newly formed by an earthquake in a matter of minutes.
+
+    \subsubsection{Nexus Planes}
+
+        \parhead{The Material Plane}\label{The Material Plane}
+        The Material Plane is the plane that most Rise adventures begin on.
+        The surface of the plane is a massive sphere with a radius of about 4,000 miles.
+        It is the most familiar to most humanoid creatures.
+
+        The Material Plane has the following planar traits:
+        \begin{itemize}
+            \item Gravity direction: Absolute Directional, pointing to the center of the sphere
+            \item Gravity strength: Normal
+            \item Light: Mobile Source, from a sun and moon outside of the plane's limits
+            \item Limits: Looped
+            \item Planar connectivity: Isolated
+            \item Shape: Solid Sphere, with a radius of about 4,000 miles.
+        \end{itemize}
+
+    \parhead{The Astral Plane}\label{The Astral Plane}
+        The Astral Plane is the space between the other planes.
+        It is a necessary intermediate destination for virtually all planar journeys, as all \glossterm{planar rifts} lead to and from the Astral Plane.
+        Most activity on the Astral Plane occurs in a space called the Inner Astral Plane, a massive but finite region where all planar rifts on the Astral Plane appear.
+        % Are there any other infinite planes?
+        However, unlike all other planes, the Astral Plane has no known limits to its extent, and may in fact be infinite.
+        The area outside the Inner Astral Plane is known as the Deep Astral Plane, and few venture into those sparsely populated realms.
+        % This should be more clearly defined
+        The Deep Astral Plane has magical turbulence that interferes with long-range communication and transportation magic, making exploration difficult.
+
+        The Astral Plane has the following planar traits:
+        \begin{itemize}
+            \item Directional gravity: Subjective
+            \item Gravity strength: Normal
+            \item Light: Fixed Source, from the infinite reaches of the Deep Astral Plane
+            \item Limits: Infinite
+            \item Planar connectivity: Conduit
+            \item Shape: Uniform
+        \end{itemize}
 
 \section{Creatures and Objects}
     In the world of Rise, creatures and objects are meaningfully different.
