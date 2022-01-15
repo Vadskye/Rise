@@ -537,7 +537,7 @@ export const cryomancy: MysticSphere = {
         // AOE dice, no power
         hit: `Each target takes 1d10 cold damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Fortitude against each creature that attacked you using a free hand or non-\\glossterm{Long} melee weapon during that phase.
+          At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
         `,
       },
 
