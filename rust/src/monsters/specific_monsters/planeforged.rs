@@ -58,6 +58,8 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
 
     add_angels(&mut monsters);
 
+    // add_demons(&mut monsters);
+
     add_elementals(&mut monsters);
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
@@ -199,7 +201,8 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         knowledge: Some(Knowledge::new(vec![
             (-10, "
-                Angels are divine beings native to the good-aligned Aligned Planes.
+                Angels are the ultimate champions of good in the endless battle of good and evil.
+                They are native to the Celestial Heavens, and they often serve the interests of good-aligned deities.
             "),
             (0, "
                 All angels have a striking and highly memorable appearance that evokes strong emotions in most viewers.
@@ -326,6 +329,133 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 ]),
                 weapons: vec![
                     StandardWeapon::Slam.weapon()
+                        .except(|w| w.damage_types.push(DamageType::Fire)),
+                ],
+            }
+            .monster(),
+        ],
+    }));
+}
+
+fn add_demons(monsters: &mut Vec<MonsterEntry>) {
+    struct Demon {
+        alignment: String,
+        attributes: Vec<i32>,
+        challenge_rating: ChallengeRating,
+        knowledge: Option<Knowledge>,
+        level: i32,
+        modifiers: Option<Vec<Modifier>>,
+        movement_modes: Option<Vec<MovementMode>>,
+        name: String,
+        size: Size,
+        trained_skills: Option<Vec<Skill>>,
+        weapons: Vec<Weapon>,
+    }
+
+    impl Demon {
+        fn monster(self) -> Monster {
+            let rank = calculate_standard_rank(self.level, self.challenge_rating);
+            let teleport_range = if rank >= 7 {
+                "\\distrange"
+            } else if rank >= 5 {
+                "\\longrange"
+            } else if rank >= 3 {
+                "\\medrange"
+            } else {
+                "\\shortrange"
+            };
+
+            let mut modifiers = self.modifiers.unwrap_or(vec![]);
+            modifiers.push(Modifier::Immune(SpecialDefenseType::Damage(
+                DamageType::Fire
+            )));
+            modifiers.push(Modifier::ActiveAbility(ActiveAbility {
+                ability_type: AbilityType::Instant,
+                cooldown: None,
+                effect: format!(
+                    "
+                        The $name teleports horizontally into an unoccupied location within {range} on a stable surface that can support its weight.
+                        If the destination is invalid, this ability fails with no effect.
+                    ",
+                    range = teleport_range,
+                ),
+                is_magical: true,
+                name: "Abyssal Translocation".to_string(),
+                tags: None,
+                usage_time: None,
+            }));
+
+            return FullPlaneforgedDefinition {
+                // From self
+                alignment: self.alignment,
+                attributes: self.attributes,
+                challenge_rating: self.challenge_rating,
+                knowledge: self.knowledge,
+                level: self.level,
+                modifiers: Some(modifiers),
+                movement_modes: self.movement_modes,
+                name: self.name,
+                size: self.size,
+                trained_skills: self.trained_skills,
+
+                // Default values
+                description: None,
+                senses: Some(vec![Sense::Darkvision(120), Sense::LowLightVision]),
+                weapons: self.weapons,
+            }
+            .monster();
+        }
+    }
+
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        knowledge: Some(Knowledge::new(vec![
+            (-5, "
+                Demons are infernal beings native to the Abyss.
+                They are evil incarnate, and they spread suffering and torment wherever their influence spreads.
+            "),
+            (5, "
+                Demons were created from the torturous flames of the Abyss.
+                They all share an immunity to fire, and they can step through the Abyss to teleport.
+                However, they have few other shared traits.
+            "),
+        ])),
+        name: "Demons".to_string(),
+        monsters: vec![
+            Demon {
+                alignment: "Always neutral good".to_string(),
+                attributes: vec![5, 6, 4, 4, 4, 6],
+                challenge_rating: ChallengeRating::Six,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Seraphim are six-winged angels of immense power.
+                        They burn with holy fire, which they use to immolate evildoers.
+                        A seraph resembles a massive serpent that leaves a trail of fire as it flies.
+                    "),
+                    (5, "
+                        Despite their serpentine appearance, seraphim have beautiful singing voices.
+                        They sing almost constaintly both in and out of combat.
+                    "),
+                ])),
+                level: 16,
+                modifiers: Some(vec![
+                    Modifier::Attack(StandardAttack::Combustion(7).attack()),
+                    Modifier::Attack(
+                        Maneuver::TenderizingSmash(7)
+                            .attack(StandardWeapon::MonsterRam.weapon())
+                            .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
+                    ),
+                ]),
+                movement_modes: None,
+                name: "Seraph".to_string(),
+                size: Size::Huge,
+                trained_skills: Some(vec![
+                    Skill::Awareness,
+                    Skill::Endurance,
+                ]),
+                weapons: vec![
+                    StandardWeapon::MonsterBite.weapon()
+                        .except(|w| w.damage_types.push(DamageType::Fire)),
+                    StandardWeapon::MonsterRam.weapon()
                         .except(|w| w.damage_types.push(DamageType::Fire)),
                 ],
             }
