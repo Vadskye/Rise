@@ -32,8 +32,8 @@ export const summoning: MysticSphere = {
 
         \\begin{itemize}
           \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue levels}.
-          \item Its \\glossterm{hit points} are equal to the standard value for your your level (see \\tref{Hit Points and Damage Resistance}).
-          \item Each of its \\glossterm{defenses} is equal to 5 \\add half your level.
+          \\item Its \\glossterm{hit points} are equal to the standard value for your your level (see \\tref{Hit Points and Damage Resistance}).
+          \\item Each of its \\glossterm{defenses} is equal to 5 \\add half your level.
           \\item It has no \\glossterm{damage resistance}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception \\sub 2.
@@ -266,7 +266,7 @@ export const summoning: MysticSphere = {
         The summoned creature takes the form of a weapon of your choice that you are proficient with.
         It is sized appropriately to be wielded by a creature of your size.
         It floats three feet off the ground, and has a 30 foot \\glossterm{fly speed} instead of a \\glossterm{land speed}, with good \\glossterm{maneuverability} and a maximum height of 15 feet (see \\pcref{Flying}).
-        The creature's accuracy and damage are based on your chosen weapon, and it gains the effect of the weapon's normal tags (see \\pcref{Weapon Tags}).
+        The creature's accuracy and damage are based on your chosen weapon, and it gains the effect of the weapon's normal tags, except that it does not gain the Projectile or Thrown tags (see \\pcref{Weapon Tags}).
         Its \\glossterm{power} is 0.
         The weapon is considered to be held in two hands if possible, which can increase the damage dealt by Versatile Grip weapons (see \\pcref{Weapon Tags}).
 
