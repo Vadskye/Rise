@@ -597,6 +597,7 @@ def active_ability_button(ability_type):
             ),
             text_input({"class": "hidden", "readonly": True, "name": "targeting_text"}),
             text_input({"class": "hidden", "name": "dice_text", "readonly": True}),
+            checkbox({"class": "hidden", "name": "is_targeted", "readonly": True}),
             text_input(
                 {
                     "class": "hidden",
