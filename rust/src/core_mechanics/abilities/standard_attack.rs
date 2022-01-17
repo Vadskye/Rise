@@ -41,6 +41,7 @@ pub enum StandardAttack {
     Pyrohemia(i32),
     Pyrophobia(i32),
     RetributiveLifebond(i32),
+    Spikeform(i32),
     WordOfFaith(i32),
 }
 
@@ -526,7 +527,7 @@ impl StandardAttack {
                 accuracy: 0,
                 cooldown: None,
                 crit: None,
-                defense: Defense::Armor,
+                defense: Defense::Reflex,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
                     // +1d extra at rank 7
                     damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 7 { 1 } else { 0 }),
@@ -636,6 +637,25 @@ impl StandardAttack {
                 } else {
                     AreaSize::Small
                 }),
+            },
+            Self::Spikeform(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Armor,
+                hit: AttackEffect::Damage(SimpleDamageEffect {
+                    // +1d extra at rank 7
+                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 7 { 1 } else { 0 }),
+                    damage_types: vec![DamageType::Piercing],
+                    power_multiplier: if *rank >= 7 { 0.5 } else { 0.0 },
+                }.damage_effect()),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: Attack::generate_modified_name("Spikeform", *rank, 7, None),
+                replaces_weapon: None,
+                tags: None,
+                targeting: Targeting::MadeMeleeAttack,
             },
             Self::WordOfFaith(rank) => Attack {
                 accuracy: 0,
