@@ -23,6 +23,35 @@ pub enum AttackEffect {
 }
 
 #[derive(Clone)]
+pub struct SimpleDamageEffect {
+    pub damage_dice: DamageDice,
+    pub damage_types: Vec<DamageType>,
+    pub power_multiplier: f64,
+}
+
+impl SimpleDamageEffect {
+    pub fn damage_effect(&self) -> DamageEffect {
+        return DamageEffect {
+            // from self
+            damage_dice: self.damage_dice.clone(),
+            damage_types: self.damage_types.clone(),
+            power_multiplier: self.power_multiplier,
+
+            // default values
+            damage_modifier: 0,
+            extra_defense_effect: None,
+            lose_hp_effect: None,
+            take_damage_effect: None,
+            vampiric_healing: None,
+        };
+    }
+
+    fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
+        return self.damage_effect().description(attacker, is_magical, is_strike);
+    }
+}
+
+#[derive(Clone)]
 pub struct DamageEffect {
     pub extra_defense_effect: Option<(Defense, AttackTriggeredEffect)>,
     pub damage_dice: DamageDice,
