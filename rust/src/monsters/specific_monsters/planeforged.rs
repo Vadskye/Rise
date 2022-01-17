@@ -414,11 +414,13 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         A rageborn demon is anger personified.
-                        It lashes out constantly and violently at everything around it, including inanimate objects.
+                        It lashes out constantly and violently at everything around it.
+                        If it is left alone, it simply destroys its environment.
                     "),
                 ])),
                 level: 5,
                 modifiers: Some(vec![
+                    Modifier::Attack(StandardAttack::Enrage(2).attack()),
                     Modifier::Maneuver(Maneuver::PowerFlurry(2)),
                     Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                         AbilityTag::Emotion,
