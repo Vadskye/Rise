@@ -11,6 +11,7 @@ pub enum Targeting {
     Cone(AreaSize, AreaTargets),
     Creature(Range),
     Line(i32, AreaSize, AreaTargets),
+    MadeMeleeAttack,
     Radius(Option<Range>, AreaSize, AreaTargets),
     Strike,
     Strikes(i32),
@@ -70,6 +71,7 @@ impl Targeting {
                 };
                 return minimum_rank + width_modifier + targets.rank_modifier();
             }
+            Self::MadeMeleeAttack => 1,
             Self::Radius(range, size, targets) => {
                 let minimum_rank = match size {
                     AreaSize::Tiny => panic!("Tiny cones are nonsensical"),
@@ -167,6 +169,11 @@ impl Targeting {
                 size = area_size,
                 width = format!("{} ft.", width),
             ),
+            Self::MadeMeleeAttack => format!(
+                "At the end of each phase, the $name makes a {accuracy} attack vs. {defense} against each creature that made a \\glossterm{{melee}} attack against it using a free hand or non-Long weapon during that phase.",
+                accuracy = accuracy,
+                defense = defense,
+            ),
             Self::Radius(attack_range, area_size, area_targets) => format!(
                 "{standard_attack_against} {targets} in a {size} radius{range}.",
                 standard_attack_against = standard_attack_against,
@@ -208,6 +215,7 @@ impl Targeting {
             Self::Creature(_) => "The target",
             Self::Cone(_, _) => "Each target",
             Self::Line(_, _, _) => "Each target",
+            Self::MadeMeleeAttack => "Each target",
             Self::Radius(_, _, _) => "Each target",
             // TODO: handle Sweeping
             Self::Strike => "The target",
