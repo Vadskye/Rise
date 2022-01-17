@@ -9,6 +9,7 @@ use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, Tag};
 use crate::equipment::StandardWeapon;
 use std::cmp::max;
 
+use super::attack_effect::SimpleDamageEffect;
 use super::{AbilityTag, AbilityType};
 
 pub enum StandardAttack {
@@ -36,6 +37,7 @@ pub enum StandardAttack {
     Ignition(i32),
     Inferno(i32),
     MindCrush(i32),
+    PersonalIgnition(i32),
     Pyrohemia(i32),
     Pyrophobia(i32),
     RetributiveLifebond(i32),
@@ -74,16 +76,11 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(5),
                     damage_types: vec![DamageType::Energy],
-                    damage_modifier: 0,
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -142,16 +139,11 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::single_target_damage(3),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Sonic],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 0.0,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: false,
                 is_strike: false,
                 movement: None,
@@ -167,17 +159,12 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     // +1d extra at rank 3/5/7
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 2),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Fire],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -191,16 +178,11 @@ impl StandardAttack {
                 cooldown: Some(Cooldown::Brief(None)),
                 crit: None,
                 defense: *defense,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_modifier: 0,
                     damage_types: vec![*damage_type],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: false,
                 is_strike: false,
                 movement: None,
@@ -226,16 +208,11 @@ impl StandardAttack {
                 cooldown: Some(Cooldown::Brief(None)),
                 crit: None,
                 defense: *defense,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_modifier: 0,
                     damage_types: vec![*damage_type],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: false,
                 is_strike: false,
                 movement: None,
@@ -258,7 +235,7 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     // +1d extra at ranks 2, 4 and 7
                     damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 7 {
                         3
@@ -267,14 +244,9 @@ impl StandardAttack {
                     } else {
                         1
                     }),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Fire],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -293,16 +265,11 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank).add(if *rank == 7 { 2 } else { 0 }),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Cold],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -316,16 +283,11 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Cold],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -343,17 +305,12 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     // +1d extra at ranks 4 and 7
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Energy],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -373,17 +330,12 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     // +1d extra at ranks 4 and 7
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Energy],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -420,16 +372,11 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank).add(if *rank == 7 { 1 } else { 0 }),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Fire],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: if *rank == 7 { 1.0 } else { 0.5 },
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -447,17 +394,12 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     // +1d extra at ranks 4 and 7
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Fire],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 1.0,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -526,16 +468,11 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Fire],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -584,6 +521,25 @@ impl StandardAttack {
                 replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
+            },
+            Self::PersonalIgnition(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Armor,
+                hit: AttackEffect::Damage(SimpleDamageEffect {
+                    // +1d extra at rank 7
+                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 7 { 1 } else { 0 }),
+                    damage_types: vec![DamageType::Fire],
+                    power_multiplier: if *rank >= 7 { 0.5 } else { 0.0 },
+                }.damage_effect()),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: Attack::generate_modified_name("Personal Ignition", *rank, 7, None),
+                replaces_weapon: None,
+                tags: None,
+                targeting: Targeting::MadeMeleeAttack,
             },
             Self::Pyrohemia(rank) => Attack {
                 accuracy: 0,
@@ -661,17 +617,12 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     // +1d extra at ranks 4 and 7
                     damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Energy],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 0.0,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
@@ -691,16 +642,11 @@ impl StandardAttack {
                 cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
-                hit: AttackEffect::Damage(DamageEffect {
+                hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_modifier: 0,
                     damage_types: vec![DamageType::Energy],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
                     power_multiplier: 0.5,
-                    take_damage_effect: None,
-                    vampiric_healing: None,
-                }),
+                }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
                 movement: None,
