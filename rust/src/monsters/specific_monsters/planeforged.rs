@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{AbilityType, ActiveAbility, StandardAttack};
+use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility, StandardAttack};
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
     SpecialDefenseType, SpeedCategory,
@@ -58,7 +58,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
 
     add_angels(&mut monsters);
 
-    // add_demons(&mut monsters);
+    add_demons(&mut monsters);
 
     add_elementals(&mut monsters);
 
@@ -133,6 +133,15 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
     impl Angel {
         fn monster(self) -> Monster {
             let rank = calculate_standard_rank(self.level, self.challenge_rating);
+            let teleport_range = if rank >= 7 {
+                "\\extrange"
+            } else if rank >= 5 {
+                "\\distrange"
+            } else if rank >= 3 {
+                "\\longrange"
+            } else {
+                "\\medrange"
+            };
 
             let mut modifiers = self.modifiers.unwrap_or(vec![]);
             modifiers.push(Modifier::Immune(SpecialDefenseType::Debuff(
@@ -154,11 +163,13 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::ActiveAbility(ActiveAbility {
                 ability_type: AbilityType::Instant,
                 cooldown: None,
-                effect: "
-                    The $name teleports horizontally into an unoccupied location within \\distrange.
-                    If the destination is invalid, this ability fails with no effect.
-                "
-                .to_string(),
+                effect: format!(
+                    "
+                        The $name teleports horizontally into an unoccupied location within {range}.
+                        If the destination is invalid, this ability fails with no effect.
+                    ",
+                    range = teleport_range,
+                ),
                 is_magical: true,
                 name: "Divine Translocation".to_string(),
                 tags: None,
@@ -354,36 +365,12 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
 
     impl Demon {
         fn monster(self) -> Monster {
-            let rank = calculate_standard_rank(self.level, self.challenge_rating);
-            let teleport_range = if rank >= 7 {
-                "\\distrange"
-            } else if rank >= 5 {
-                "\\longrange"
-            } else if rank >= 3 {
-                "\\medrange"
-            } else {
-                "\\shortrange"
-            };
+            // let rank = calculate_standard_rank(self.level, self.challenge_rating);
 
             let mut modifiers = self.modifiers.unwrap_or(vec![]);
             modifiers.push(Modifier::Immune(SpecialDefenseType::Damage(
-                DamageType::Fire
+                DamageType::Fire,
             )));
-            modifiers.push(Modifier::ActiveAbility(ActiveAbility {
-                ability_type: AbilityType::Instant,
-                cooldown: None,
-                effect: format!(
-                    "
-                        The $name teleports horizontally into an unoccupied location within {range} on a stable surface that can support its weight.
-                        If the destination is invalid, this ability fails with no effect.
-                    ",
-                    range = teleport_range,
-                ),
-                is_magical: true,
-                name: "Abyssal Translocation".to_string(),
-                tags: None,
-                usage_time: None,
-            }));
 
             return FullPlaneforgedDefinition {
                 // From self
@@ -409,54 +396,43 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         knowledge: Some(Knowledge::new(vec![
-            (-5, "
-                Demons are infernal beings native to the Abyss.
-                They are evil incarnate, and they spread suffering and torment wherever their influence spreads.
+            (0, "
+                Demonspawn are infernal beings that live in the Abyss.
+                They are the weakest and least intelligent type of demon, but they are still dangerous to mortals.
             "),
             (5, "
-                Demons were created from the torturous flames of the Abyss.
-                They all share an immunity to fire, and they can step through the Abyss to teleport.
-                However, they have few other shared traits.
+                Demonspawn were formed in the torturous flames of the Abyss.
+                They all share an immunity to fire.
             "),
         ])),
-        name: "Demons".to_string(),
+        name: "Demonspawn".to_string(),
         monsters: vec![
             Demon {
-                alignment: "Always neutral good".to_string(),
-                attributes: vec![5, 6, 4, 4, 4, 6],
-                challenge_rating: ChallengeRating::Six,
+                alignment: "Always chaotic evil".to_string(),
+                attributes: vec![6, 4, 1, -4, 2, 4],
+                challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
-                        Seraphim are six-winged angels of immense power.
-                        They burn with holy fire, which they use to immolate evildoers.
-                        A seraph resembles a massive serpent that leaves a trail of fire as it flies.
-                    "),
-                    (5, "
-                        Despite their serpentine appearance, seraphim have beautiful singing voices.
-                        They sing almost constaintly both in and out of combat.
+                        A rageborn demon is anger personified.
+                        It lashes out constantly and violently at everything around it, including inanimate objects.
                     "),
                 ])),
-                level: 16,
+                level: 5,
                 modifiers: Some(vec![
-                    Modifier::Attack(StandardAttack::Combustion(7).attack()),
-                    Modifier::Attack(
-                        Maneuver::TenderizingSmash(7)
-                            .attack(StandardWeapon::MonsterRam.weapon())
-                            .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
-                    ),
+                    Modifier::Maneuver(Maneuver::PowerFlurry(2)),
+                    Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
+                        AbilityTag::Emotion,
+                    )),
                 ]),
                 movement_modes: None,
-                name: "Seraph".to_string(),
-                size: Size::Huge,
+                name: "Rageborn Demon".to_string(),
+                size: Size::Large,
                 trained_skills: Some(vec![
-                    Skill::Awareness,
                     Skill::Endurance,
                 ]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon()
-                        .except(|w| w.damage_types.push(DamageType::Fire)),
-                    StandardWeapon::MonsterRam.weapon()
-                        .except(|w| w.damage_types.push(DamageType::Fire)),
+                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MonsterClaws.weapon(),
                 ],
             }
             .monster(),

@@ -7,8 +7,9 @@ use crate::core_mechanics::abilities::{
 };
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, Tag};
 use crate::equipment::StandardWeapon;
+use std::cmp::max;
 
-use super::AbilityTag;
+use super::{AbilityTag, AbilityType};
 
 pub enum StandardAttack {
     // Monster abilities
@@ -28,6 +29,7 @@ pub enum StandardAttack {
     DarkMiasma(i32),
     DivineJudgment(i32),
     DrainLife(i32),
+    Enrage(i32),
     Fireball(i32),
     Firebolt(i32),
     GlimpseOfDivinity(i32),
@@ -395,6 +397,23 @@ impl StandardAttack {
                 } else {
                     Range::Medium
                 }),
+            },
+            Self::Enrage(rank) => Attack {
+                accuracy: max(4, 3 + rank),
+                cooldown: None,
+                crit: None,
+                defense: Defense::Mental,
+                hit: AttackEffect::Custom(AbilityType::Duration, r"
+                    As a \glossterm{condition}, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
+                    For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+                ".to_string()),
+                is_magical: true,
+                is_strike: false,
+                movement: None,
+                name: "Enrage".to_string(),
+                replaces_weapon: None,
+                tags: None,
+                targeting: Targeting::Creature(Range::Medium),
             },
             Self::Fireball(rank) => Attack {
                 accuracy: 0,

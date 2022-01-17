@@ -79,13 +79,13 @@ pub enum StandardWeapon {
     MonsterGore,
     MonsterRam,
     MonsterStinger,
-    MonsterTalons,
     Sap,
     Scimitar,
     Sickle,
     Slam,
     Sledgehammer,
     Spear,
+    Talon,
     Totokia,
     Warhammer,
 }
@@ -221,13 +221,6 @@ impl StandardWeapon {
                 name: "stinger".to_string().to_string(),
                 tags: vec![],
             },
-            Self::MonsterTalons => Weapon {
-                accuracy: 3,
-                damage_dice: DamageDice::d4(),
-                damage_types: vec![DamageType::Piercing],
-                name: "talons".to_string(),
-                tags: vec![],
-            },
             Self::Sap => Weapon {
                 accuracy: 2,
                 damage_dice: DamageDice::d4(),
@@ -269,6 +262,13 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Piercing],
                 name: "spear".to_string(),
                 tags: vec![WeaponTag::Thrown(30, 60), WeaponTag::VersatileGrip],
+            },
+            Self::Talon => Weapon {
+                accuracy: 2,
+                damage_dice: DamageDice::d4(),
+                damage_types: vec![DamageType::Piercing],
+                name: "talon".to_string(),
+                tags: vec![],
             },
             Self::Totokia => Weapon {
                 accuracy: 0,
