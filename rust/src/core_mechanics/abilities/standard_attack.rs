@@ -401,7 +401,7 @@ impl StandardAttack {
             Self::Enrage(rank) => Attack {
                 accuracy: max(4, 3 + rank),
                 cooldown: None,
-                crit: None,
+                crit: Some(AttackEffect::MustRemoveTwice),
                 defense: Defense::Mental,
                 hit: AttackEffect::Custom(AbilityType::Duration, r"
                     As a \glossterm{condition}, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
