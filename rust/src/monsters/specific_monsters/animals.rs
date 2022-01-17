@@ -407,7 +407,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 9,
         name: "Roc".to_string(),
         size: Size::Gargantuan,
-        weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::MonsterTalons.weapon()],
+        weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::Talon.weapon()],
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -479,7 +479,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 1,
         name: "Raven".to_string(),
         size: Size::Small,
-        weapons: vec![StandardWeapon::MonsterTalons.weapon()],
+        weapons: vec![StandardWeapon::Talon.weapon()],
         description: None,
         knowledge: None,
         modifiers: None,

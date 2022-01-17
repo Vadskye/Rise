@@ -472,7 +472,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 trained_skills: Some(vec![Skill::Awareness]),
                 weapons: vec![
                     StandardWeapon::MonsterBite.weapon(),
-                    StandardWeapon::MonsterTalons.weapon(),
+                    StandardWeapon::Talon.weapon(),
                 ],
             }
             .monster(),
