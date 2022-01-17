@@ -30,7 +30,6 @@ pub enum WeaponTag {
     Subdual,
     Thrown(i32, i32),
     Tripping,
-    Unarmed,
     VersatileGrip,
 }
 
@@ -55,7 +54,6 @@ impl WeaponTag {
             Self::Subdual => r"\weapontag{Subdual}".to_string(),
             Self::Thrown(close, long) => format!("\\weapontag{{Thrown}} ({}/{})", close, long),
             Self::Tripping => r"\weapontag{Tripping}".to_string(),
-            Self::Unarmed => r"\weapontag{Unarmed}".to_string(),
             Self::VersatileGrip => r"\weapontag{VersatileGrip}".to_string(),
         }
     }
@@ -196,11 +194,11 @@ impl StandardWeapon {
                 tags: vec![WeaponTag::Grappling],
             },
             Self::MonsterClaws => Weapon {
-                accuracy: 3,
-                damage_dice: DamageDice::d4(),
+                accuracy: 2,
+                damage_dice: DamageDice::d6(),
                 damage_types: vec![DamageType::Slashing],
                 name: "claws".to_string(),
-                tags: vec![WeaponTag::Grappling],
+                tags: vec![],
             },
             Self::MonsterGore => Weapon {
                 accuracy: 0,
@@ -253,7 +251,7 @@ impl StandardWeapon {
             },
             Self::Slam => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d8(),
+                damage_dice: DamageDice::d10(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "slam".to_string(),
                 tags: vec![],

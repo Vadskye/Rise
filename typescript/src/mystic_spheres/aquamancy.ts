@@ -495,8 +495,8 @@ export const aquamancy: MysticSphere = {
 
       effect: `
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
-        The natural weapon deals 1d8 damage, as normal for a slam natural weapon.
-        In addition, it has the Long and Sweeping (1) \\glossterm{weapon tags} (see \\pcref{Weapon Tags}).
+        The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
+        In addition, it has the Sweeping (1) \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
         Strikes using it are considered \\glossterm{magical} abilities, which means you use your Willpower to determine your damage dice instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       narrative: `
