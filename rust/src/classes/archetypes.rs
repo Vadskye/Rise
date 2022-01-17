@@ -300,7 +300,7 @@ impl ClassArchetype {
                 If you have any \glossterm{encumbrance}, you lose the benefit of all abilities from this archetype.
             ",
             Self::PerfectedForm => r"
-                This archetype improves the perfection of your physical body, including your unarmed attacks, through rigorous training.
+                This archetype improves the perfection of your physical body through rigorous training.
             ",
             Self::TranscendentSage => r"
                 This archetype grants you abilities to resist or remove conditions.

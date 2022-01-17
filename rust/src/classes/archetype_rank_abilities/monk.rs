@@ -609,9 +609,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You become \glossterm{proficient} with the unarmed weapons \glossterm{weapon group} (see \pcref{Weapon Groups}).
-                In addition, you gain a \plus2d damage bonus with weapons that have the Unarmed weapon tag (see \pcref{Weapon Tags}).
-                For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
+                You gain a \plus1 bonus to accuracy and a \plus1d bonus to damage with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
             // from this archetype weapons
@@ -631,7 +629,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons and unarmed weapons \glossterm{weapon groups}, natural weapons, and to any attack using one or more \glossterm{free hands}.
+                You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons \glossterm{weapon group}, natural weapons, and to any attack using one or more \glossterm{free hands}.
                 This does not include abilities that simply use \glossterm{somatic components}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -660,7 +658,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                The damage bonus from your \textit{unarmed warrior} ability increases to \plus3d.
+                The damage bonus from your \textit{unarmed warrior} ability increases to \plus2d.
             ",
             modifiers: None,
         },
@@ -699,7 +697,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                The damage bonus from your \textit{unarmed warrior} ability increases to \plus4d.
+                The damage bonus from your \textit{unarmed warrior} ability increases to \plus3d.
             ",
             // TODO: At this point, you're probably using unarmed? This is weird.
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
