@@ -1210,30 +1210,14 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Bracers of Mighty Fists",
-            rank=2,
-            material_type="Bracers",
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
-            """,
-            short_description="Grants +3 power with natural and unarmed attacks",
-        ),
-        MagicItem(
-            name="Bracers of Mighty Fists, Greater",
             rank=4,
             material_type="Bracers",
             description="""
-                You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
+                Your \\glossterm<natural weapons> gain the \\weapontag<Impact> \\glossterm<weapon tag>.
+                When you get a \\glossterm{critical hit} with natural weapons, you roll triple damage dice instead of double damage dice.
+                If the natural weapon already has the Impact weapon tag, this has no effect.
             """,
-            short_description="Grants +6 power with natural and unarmed attacks",
-        ),
-        MagicItem(
-            name="Bracers of Mighty Fists, Supreme",
-            rank=6,
-            material_type="Bracers",
-            description="""
-                You gain a +12 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
-            """,
-            short_description="Grants +12 power with natural and unarmed attacks",
+            short_description="Grants Impact weapon tag with natural weapons",
         ),
     ]
 

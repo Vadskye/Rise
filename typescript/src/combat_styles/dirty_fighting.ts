@@ -10,7 +10,7 @@ export const dirtyFighting: CombatStyle = {
 
       // half power instead of no power due to unarmed limitation
       effect: `
-        Make a strike using an \\glossterm{unarmed attack}.
+        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
@@ -28,7 +28,7 @@ export const dirtyFighting: CombatStyle = {
 
       // half power instead of no power due to unarmed limitation
       effect: `
-        Make a strike penalty using an \\glossterm{unarmed attack}.
+        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
@@ -44,7 +44,7 @@ export const dirtyFighting: CombatStyle = {
       name: "Quivering Palm",
 
       effect: `
-        Make a strike using an \\glossterm{unarmed attack}.
+        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike takes additional bludgeoning damage to half of its maximum hit points, to a maximum of 100 extra damage.
       `,

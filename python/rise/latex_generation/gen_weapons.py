@@ -251,7 +251,7 @@ def generate_weapons():
             material_type="Weapon",
             description="""
                 This weapon has the Impact weapon tag.
-                When you get a \\glossterm{critical hit} with this weapon, you deal triple damage instead of double damage.
+                When you get a \\glossterm{critical hit} with this weapon, you roll triple damage dice instead of double damage dice.
                 If the weapon already has the Impact weapon tag, this has no effect.
             """,
             short_description="Grants the Impact weapon tag",

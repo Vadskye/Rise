@@ -221,10 +221,9 @@ Items are divided into five broad categories, described below.
                 Improvised weapons & \tdash                                                                           & \tdash                                                     \\
                 Monk weapons       & Jitte, kama, kunai, nunchaku, quarterstaff, sai, shuriken                        & Three-section staff                                        \\
                 Polearms           & Bardiche, glaive, halberd, longhammer, poleaxe, quarterstaff, scythe, swordstaff & Fauchard, war scythe                                       \\
-                Simple weapons     & Claw sheath, club, dagger, heavy crossbow, quarterstaff, unarmed strike          & \tdash                                                     \\
+                Simple weapons     & Club, dagger, heavy crossbow, quarterstaff                          & \tdash                                                     \\
                 Spears             & Greatspear, javelin, lance, ranseur, partisan, spear                             & Gnomish smallspear, pike                                   \\
                 Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling, throwing axe      & Bolas, dwarven throwing axe, dwarven waraxe, net           \\
-                Unarmed weapons    & Gauntlet, spiked gauntlet, unarmed strike                                        &                                                            \\
             \end{dtabularx}
         \end{dtable!*}
 
@@ -241,10 +240,9 @@ Items are divided into five broad categories, described below.
 
         \subsubsection{Natural Weapons}\label{Natural Weapons}
             Natural weapons are weapons that are part of a creature's body instead of being manufactured and wielded.
-            Every creature has a single unarmed strike natural weapon, though most creatures are not proficient with that weapon (see \pcref{Unarmed Combat}).
-            In addition, many monsters have one or more specific natural weapons like claws.
-            Creatures are automatically proficient with all natural weapons they have other than an unarmed strike.
-            Natural weapons can be used to make offhand attacks just like manufactured weapons (see \pcref{Offhand Strike}).
+            Many monsters have natural weapons, like claws or a bite attack.
+            Natural weapons do not normally require a \glossterm{free hand} to use.
+            All bipedal creatures also have a punch/kick natural weapon.
 
     \subsection{Weapon Usage Classes}\label{Weapon Usage Classes}
         A weapon's \glossterm{usage class} is a measure of how much effort it takes to wield a weapon in combat.
@@ -354,7 +352,6 @@ Items are divided into five broad categories, described below.
         They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, so you are not considered to have any \glossterm{free hands} while throwing a heavy thrown weapon.
         \weapontagdef{Tripping} When you use the \ability{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
         This allows you to deal damage with the weapon if you successfully trip the target.
-        \weapontagdef{Unarmed} This weapon does not prevent you from using the hand it's equipped on as a free hand.
         \weapontagdef{Versatile Grip} This weapon is designed to be held in either one hand or two hands.
         While holding this weapon in two hands, you gain a \plus1d damage bonus with the weapon.
 
@@ -469,7 +466,6 @@ Items are divided into five broad categories, described below.
                 \tind Swordstaff                   & Heavy  & \plus0  & 1d8   & Slashing                 & 0 (10 gp)  & Keen, Long                                     \\
 
                 Simple weapons                     &        &         &        &                          &              &                                                \\
-                \tind Claw sheath\fn{3}            & \tdash & \tdash  & \tdash & \tdash                   & 1 (40 gp)  &                                                \\
                 \tind Club                         & Medium & \plus0  & 1d6    & Bludgeoning              & 0            & Versatile Grip                                 \\
                 \tind Dagger                       & Light  & \plus2  & 1d3    & Piercing or slashing     & 0 (10 gp)  & Compact, Stealthy, Thrown (30/60)              \\
                 \tind Heavy crossbow\fn{3}         & Heavy  & \plus0  & 1d10    & \tdash                   & 1 (40 gp)  & Projectile (90/360)                            \\
@@ -493,11 +489,6 @@ Items are divided into five broad categories, described below.
                 \tind Sling\fn{3}                  & Light  & \plus0  & 1d4    & Bludgeoning              & 0 (10 gp)  & Projectile (90/360)                            \\
                 \tind Throwing axe                 & Medium & \plus0  & 1d6    & Slashing                 & 0 (10 gp)  & Impact, Thrown (30/60)                         \\
                 \tind Bullets, sling (20)          & \tdash & \tdash  & \tdash & \tdash                   & 0 (2 gp)   & Ammunition                                     \\
-
-                Unarmed weapons                    &        &         &        &                          &              &                                                \\
-                \tind Gauntlet\fn{3}               & Light  & \plus2  & 1d2    & Bludgeoning              & 0 (10 gp)  & Unarmed                                        \\
-                \tind Gauntlet, spiked\fn{3}       & Light  & \plus2  & 1d2    & Piercing                 & 0 (10 gp)  & Unarmed                                        \\
-                \tind Unarmed strike\fn{3}         & Light  & \plus2  & 1d2    & Bludgeoning              & \tdash       & Subdual, Unarmed                               \\
 
                 % Exotic weapons should be +3 over normal
                 \tb{Exotic Weapons}           & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Item Rank (Cost)}\fn{2} & \tb{Weapon Tags} \tableheaderrule
@@ -553,7 +544,6 @@ Items are divided into five broad categories, described below.
                 \tind Dwarven throwing axe     & Light   & \plus2 & 1d4    & Slashing                 & 0 (10 gp)  & Impact, Thrown (60/120)        \\
                 \tind Dwarven waraxe           & Medium  & \plus0 & 1d8   & Slashing                 & 1 (40 gp)  & Thrown (30/60), Versatile Grip \\
                 \tind Net\fn{3}                & Medium  & \plus0 & \tdash & \tdash                   & 0 (10 gp)  & Thrown (15/30)                  \\
-                Unarmed weapons                &         &        &        &                          &              &                                \\
             \end{longtable}
             1 When two types are given, the weapon is both types if the entry specifies ``and,'' or either type (attacker's choice) if the entry specifies ``or.'' \\
             2 See \pcref{Item Ranks}. \\
@@ -565,18 +555,19 @@ Items are divided into five broad categories, described below.
             % Every natural weapon that can be used with both hands occupied should be one upgrade behind an equivalent manufatured weapon.
             \lcaption{Natural Weapons}
             \begin{dtabularx}{\textwidth}{p{12em} c c c >{\ccol}p{15em} >{\ccol}X}
-                \tb{Natural Weapons} & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Weapon Tags} \tableheaderrule
-                Bite                 & Medium           & \plus0        & 1d6         & Physical               & Grappling        \\
-                Claw\fn{2}           & Light            & \plus2        & 1d4         & Slashing               & Grappling        \\
-                Gore                 & Medium           & \plus0        & 1d6         & Piercing               & Impact           \\
-                Ram                  & Medium           & \plus0        & 1d6         & Bludgeoning            & Forceful         \\
-                Slam\fn{2}           & Medium           & \plus0        & 1d8         & Bludgeoning            & \tdash           \\
-                Stinger              & Medium           & \plus1        & 1d6         & Piercing               & \tdash           \\
-                Talon                & Light            & \plus2        & 1d4         & Piercing               & \tdash           \\
-                Unarmed Strike       & Light            & \plus2        & 1d2         & Bludgeoning            & Subdual, Unarmed \\
+                \tb{Natural Weapons}   & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Weapon Tags} \tableheaderrule
+                Bite                   & Medium           & \plus0        & 1d6         & Physical               & Grappling \\
+                Claw\fn{2}             & Light            & \plus2        & 1d4         & Slashing               & \tdash    \\
+                Gore                   & Medium           & \plus0        & 1d6         & Piercing               & Impact    \\
+                Punch/kick\fn{2}\fn{3} & Light            & \plus0        & 1d3         & Bludgeoning            & Subdual   \\
+                Ram                    & Medium           & \plus0        & 1d6         & Bludgeoning            & Forceful  \\
+                Slam\fn{2}             & Medium           & \plus0        & 1d8         & Bludgeoning            & \tdash    \\
+                Stinger                & Medium           & \plus1        & 1d6         & Piercing               & \tdash    \\
+                Talon                  & Light            & \plus2        & 1d4         & Piercing               & \tdash    \\
             \end{dtabularx}
             1 When two types are given, the weapon is both types if the entry specifies ``and,'' or either type (attacker's choice) if the entry specifies ``or''. \\
             2 This natural weapon must normally be used with a \glossterm{free hand}. \\
+            3 This weapon has special rules. \\
         \end{dtable!*}
 
     \subsection{Individual Weapon Descriptions}
@@ -605,10 +596,6 @@ Items are divided into five broad categories, described below.
         After you attack with a boot dagger, the dagger remains plainly visible.
         Concealing the dagger again requires a standard action.
         A boot dagger cannot be imbued with magic weapon properties.
-        \parhead{Claw Sheath} A claw sheath is not a weapon in itself, but a covering over a single claw that a creature can use to make claw attacks. Claw sheaths do not grant a creature without claws a claw attack. Normally, a sheath does not improve the claw attack, but magical claw sheaths can be made which grant bonuses to attacks made with the claw.
-
-        It may be possible to find or craft unusual sheaths for natural weapons other than claws.
-        However, such sheaths only exist for natural weapons that require a free hand to use, so ``bite sheaths'' are impossible.
         \parhead{Crossbow, Hand} You can draw a hand crossbow back by hand. Loading a hand crossbow is a \glossterm{free action} that requires one \glossterm{free hand} while holding the crossbow in another hand.
         \parhead{Crossbow, Heavy} You draw a heavy crossbow back by turning a small winch.
         Loading a heavy crossbow is a standard action that requires one \glossterm{free hand} while holding the crossbow in another hand.
@@ -619,8 +606,6 @@ Items are divided into five broad categories, described below.
         \parhead{Fire Arrows} These arrows are treated with alchemist's fire so they can be ignited before being shot.
         The process requires thickening the arrow shaft, reducing the precision of the arrow.
         It takes a \glossterm{move action} to ignite a fire arrow assuming you have access to an active flame the size of a torch or larger.
-        \parhead{Gauntlet} Gauntlets cannot be imbued with magic weapon properties.
-        \parhead{Gauntlet, Spiked} Spiked gauntlets cannot be imbued with magic weapon properties.
         \parhead{Longbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires one \glossterm{free hand} while holding the bow in the other hand. A longbow is too unwieldy to use while you are mounted.
         \parhead{Net} A net is used to entangle enemies. When you throw a net, you make an attack vs. Reflex against your target. If you hit, the target is \slowed. If you control the trailing rope by succeeding on an opposed Strength check while holding it, the netted creature can move only within the limits that the rope allows.
         \par A netted creature can escape with a \glossterm{difficulty value} 10 Flexibility check (normally a standard action). The net has (2/10) and can be burst with a \glossterm{difficulty value} 10 Strength check as a standard action.
@@ -628,7 +613,10 @@ Items are divided into five broad categories, described below.
         \par A net must be folded to be thrown effectively. The first time you throw your net in a fight, you make a normal ranged touch attack roll. After the net is unfolded, you take a \minus4 accuracy penalty with it. It takes 2 standard actions for a proficient user to fold a net and twice that many for a nonproficient one to do so.
         \parhead{Pike} A pike's reach starts 5 feet away from your body, even when it is short hafted.
         This allows it to reach foes 15 feet away from you while you are not short hafting it, but makes it impossible to attack an adjacent foe regardless of your grip.
-        \parhead{Shield, Standard} You can bash with a shield in addition to defending with it. See Armor for details.
+        \parhead{Punch/Kick} All bipedal creatures have access to the punch/kick \glossterm{natural weapon}.
+        If you are trained in the Balance skill or have a Dexterity of at least 2, attacking with this natural weapon does not require a \glossterm{free hand}.
+        In addition, you cannot use the \ability{offhand strike} ability to attack with a punch or kick.
+        \parhead{Shield, Standard} You cannot use the \ability{offhand strike} ability to attack with a shield.
         \parhead{Shortbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires one \glossterm{free hand} while holding the shortbow in another hand.
         \parhead{Sling} You can fire, but not load, a sling with one hand. Loading a sling is a free action that requires both hands.
         \par You can hurl ordinary stones with a sling, but stones are not as dense or as round as bullets. You take a \minus1d damage penalty with ordinary stones.
@@ -637,12 +625,10 @@ Items are divided into five broad categories, described below.
         Instead, it is affixed to the leg of body armor with a medium or heavy \glossterm{usage class} (see \pcref{Armor Usage Classes}).
         If you are not proficient with this weapon, you increase your \glossterm{encumbrance} by 2 when wearing armor with a spiked knee.
         A spiked knee cannot be imbued with magic weapon properties.
-        \parhead{Spiked Shield, Standard} You can bash with a spiked shield in addition to defending with it. See Armor for details.
+        \parhead{Spiked Shield, Standard} You cannot use the \ability{offhand strike} ability to attack with a shield.
         \parhead{Takedown Bow} A takedown bow is a bow assembled from multiple independent components that can be reconfigured into two different combinations.
         In its longbow configuration, it functions like a longbow, and in its shortbow configuration, it functions like a shortbow.
         In addition, when it is fully disassembled, it takes up space equivalent to a light usage class weapon, making it easier to transport and conceal.
-        \parhead{Unarmed Strike} Anyone can use an unarmed strike to attack.
-        However, unless you are proficient with the Unarmed Weapons weapon group, you suffer the normal penalties for attacking with a weapon you are not proficient with (see \pcref{Weapon Proficiency}).
         \parhead{Whip} A whip has a 15 foot reach.
         You can use a whip against foes anywhere within your reach, including adjacent foes.
 
@@ -836,11 +822,10 @@ Items are divided into five broad categories, described below.
         \par The price given is for a single locked gauntlet.
         If you are wearing armor that normally has gauntlets, you can replace one or both of those gauntlets with a locked gauntlet with no significant weight increase.
         Unless otherwise specified, all medium and heavy body armor comes with gauntlets.
-        Like a normal gauntlet, a locked gauntlet lets you deal normal damage rather than \glossterm{subdual damage} with unarmed attacks (see \pcref{Unarmed Combat}).
         \parhead{Shield, Standard, Wooden or Steel} You strap a shield to your forearm and grip it with your hand. A standard shield is so cumbersome that you can't use your shield hand for anything else.
         \subparhead{Shield Bash Attacks}\label{Shield Bash Attacks} You can bash an opponent with a standard shield, using it as a medium bludgeoning weapon. See \trefnp{Weapons} for the damage dealt by a shield bash.
         Magical abilities on a shield do not affect shield bash attacks made with it, and magic weapon properties cannot be applied to a shield.
-        IN addition, you cannot use the \ability{offhand strike} ability to attack with a shield.
+        In addition, you cannot use the \ability{offhand strike} ability to attack with a shield.
         \parhead{Shield, Tower} This massive shield is nearly as tall as an average human.
         When you take the \textit{total defense} action while wielding a tower shield, you gain a \plus2 bonus to Armor defense in addition to the normal bonuses from taking that action (see \pcref{Total Defense}).
         You cannot attack with a tower shield, and you cannot use your shield hand for anything else.
