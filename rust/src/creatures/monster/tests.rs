@@ -52,7 +52,7 @@ mod to_section {
                 \begin{instantability}*{Slam}[Instant]
                 \rankline
                 The standard monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d6\plus2 bludgeoning damage.
+                \hit The target takes 2d8\plus2 bludgeoning damage.
             \end{instantability}
 ",
             monster.to_section(None),
@@ -84,7 +84,7 @@ mod to_section {
                 \begin{instantability}*{Slam}[Instant]
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d6\plus12 bludgeoning damage.
+                \hit The target takes 4d8\plus12 bludgeoning damage.
             \end{instantability}
 ",
             monster.to_section(None),
@@ -137,7 +137,7 @@ mod to_section {
             \begin{instantability}*{Certain Slam}[Instant]
                 \rankline
                 The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d6\plus6 bludgeoning damage.
+                \hit The target takes 4d8\plus6 bludgeoning damage.
             \end{instantability}
         \par
             \begin{instantability}*{Greatsword}[Instant]
@@ -150,10 +150,10 @@ mod to_section {
             \begin{instantability}*{Slam}[Instant]
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d6\plus12 bludgeoning damage.
+                \hit The target takes 4d8\plus12 bludgeoning damage.
             \end{instantability}
         \par
-            \begin{durationability}*{Strip the Flesh Greatsword}[Duration]
+            \begin{durationability}*{Strip the Flesh -- Greatsword}[Duration]
                 \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
