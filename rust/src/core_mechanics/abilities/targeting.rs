@@ -13,6 +13,7 @@ pub enum Targeting {
     Line(i32, AreaSize, AreaTargets),
     Radius(Option<Range>, AreaSize, AreaTargets),
     Strike,
+    Strikes(i32),
 }
 
 impl Targeting {
@@ -87,6 +88,7 @@ impl Targeting {
                 return minimum_rank + range_modifier + targets.rank_modifier();
             }
             Self::Strike => 1,
+            Self::Strikes(_) => 1,
         }
     }
 
@@ -182,6 +184,13 @@ impl Targeting {
                 accuracy = accuracy,
                 defense = defense,
             ),
+            Self::Strikes(count) => format!(
+                "{the_creature} makes {count} simultaneous {accuracy} \\glossterm{{strikes}} vs. {defense}.",
+                the_creature = the_creature,
+                count = latex_formatting::text_number(*count),
+                accuracy = accuracy,
+                defense = defense,
+            ),
         };
 
         if movement_after_attack == "" {
@@ -202,6 +211,7 @@ impl Targeting {
             Self::Radius(_, _, _) => "Each target",
             // TODO: handle Sweeping
             Self::Strike => "The target",
+            Self::Strikes(__) => "Each target",
         }
     }
 }

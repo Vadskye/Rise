@@ -22,6 +22,7 @@ pub enum Maneuver {
     MightyStrike(i32),
     MonstrousStrike(i32),
     PenetratingStrike(i32),
+    PowerFlurry(i32),
     PouncingStrike(i32),
     StripTheFlesh(i32),
     TenderizingSmash(i32),
@@ -188,6 +189,18 @@ impl Maneuver {
                         }));
                     })
             }
+            Self::PowerFlurry(rank) => weapon
+                .attack()
+                .except(|a| a.accuracy -= 3)
+                .except(|a| a.targeting = Targeting::Strikes(2))
+                .except_hit_damage(|d| {
+                    if *rank >= 6 { 
+                        d.damage_modifier += 4
+                    } else if *rank >= 4 {
+                        d.damage_modifier += 2
+                    }
+                })
+                .except_hit_damage(|d| d.power_multiplier = 0.5),
             Self::Whirlwind(rank, reach) => weapon
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
@@ -214,17 +227,13 @@ impl Maneuver {
             Self::GenericScalingStrike(_) => format!("Generic Scaling {}", weapon_name),
             Self::GraspingStrike(_) => format!("Grasping {}", weapon_name),
             Self::GreaterGraspingStrike(_) => format!("Greater Grasping {}", weapon_name),
-            Self::GreaterHamstring(_) => format!("Greater Hamstring -- {}", weapon_name),
-            Self::GreaterHeadshot(_) => format!("Greater Headshot -- {}", weapon_name),
-            Self::Hamstring(_) => format!("Hamstring -- {}", weapon_name),
-            Self::Headshot(_) => format!("Headshot -- {}", weapon_name),
             Self::MightyStrike(_) => format!("Mighty {}", weapon_name),
             Self::MonstrousStrike(_) => weapon_name,
             Self::PenetratingStrike(_) => format!("Penetrating {}", weapon_name),
             Self::PouncingStrike(_) => format!("Pouncing {}", weapon_name),
-            Self::StripTheFlesh(_) => format!("Strip the Flesh -- {}", weapon_name),
             Self::TenderizingSmash(_) => format!("Tenderizing {}", weapon_name),
             Self::Whirlwind(_, _) => format!("Whirlwind {}", weapon_name),
+            _ => format!("{} -- {}", self.name(), weapon_name),
         }
     }
 
@@ -244,6 +253,7 @@ impl Maneuver {
             Self::MonstrousStrike(_) => "Monstrous Strike",
             Self::PenetratingStrike(_) => "Penetrating Strike",
             Self::PouncingStrike(_) => "Pouncing Strike",
+            Self::PowerFlurry(_) => "Power Flurry",
             Self::StripTheFlesh(_) => "Strip the Flesh",
             Self::TenderizingSmash(_) => "Tenderizing Smash",
             Self::Whirlwind(_, _) => "Whirlwind",

@@ -8,6 +8,7 @@ use titlecase::titlecase;
 #[derive(Clone)]
 pub enum AttackEffect {
     BriefDurationInstead,
+    Custom(AbilityType, String),
     Damage(DamageEffect),
     DamageOverTime(DamageOverTimeEffect),
     Debuff(DebuffEffect),
@@ -284,6 +285,7 @@ impl AttackEffect {
     pub fn ability_type(&self) -> AbilityType {
         match self {
             Self::BriefDurationInstead => AbilityType::Duration,
+            Self::Custom(ability_type, _) => ability_type.clone(),
             Self::Damage(effect) => effect.ability_type(),
             Self::DamageOverTime(_) => AbilityType::Duration,
             Self::Debuff(_) => AbilityType::Duration,
@@ -345,6 +347,9 @@ impl AttackEffect {
         match self {
             Self::BriefDurationInstead => {
                 return r"The effect lasts \glossterm{briefly}.".to_string();
+            }
+            Self::Custom(_, text) => {
+                return text.clone();
             }
             Self::Damage(effect) => {
                 return format!(
