@@ -54,7 +54,7 @@ impl WeaponTag {
             Self::Subdual => r"\weapontag{Subdual}".to_string(),
             Self::Thrown(close, long) => format!("\\weapontag{{Thrown}} ({}/{})", close, long),
             Self::Tripping => r"\weapontag{Tripping}".to_string(),
-            Self::VersatileGrip => r"\weapontag{VersatileGrip}".to_string(),
+            Self::VersatileGrip => r"\weapontag{Versatile Grip}".to_string(),
         }
     }
 }
