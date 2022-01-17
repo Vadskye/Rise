@@ -525,12 +525,34 @@ export const pyromancy: MysticSphere = {
         // AOE dice, but no power
         hit: `Each target takes 1d10 fire damage.`,
         targeting: `
-          You catch on fire.
-          This does not cause you any harm, as the flames burn around your body without burning you.
           At the end of each phase, make an attack vs. Reflex against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
         `,
       },
+      narrative: `
+        You catch on fire.
+        This does not cause you any harm, as the flames burn around your body without burning you.
+      `,
       rank: 3,
+      scaling: "damage",
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Greater Personal Ignition",
+
+      castingTime: "minor action",
+      attack: {
+        // AOE dice, but no power
+        hit: `Each target takes 4d8 + half \\glossterm{power} fire damage.`,
+        targeting: `
+          At the end of each phase, make an attack vs. Reflex against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
+        `,
+      },
+      narrative: `
+        You catch on fire.
+        This does not cause you any harm, as the flames burn around your body without burning you.
+      `,
+      rank: 7,
       scaling: "damage",
       type: "Attune (self)",
     },
