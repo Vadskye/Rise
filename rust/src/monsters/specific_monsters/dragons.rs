@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::attack_effect::{DamageEffect, DebuffEffect, AttackEffectDuration};
+use crate::core_mechanics::abilities::attack_effect::{DebuffEffect, AttackEffectDuration, SimpleDamageEffect};
 use crate::core_mechanics::abilities::{AreaTargets, Attack, Cooldown, AttackEffect, Targeting, AreaSize, AbilityTag};
 use crate::core_mechanics::{
     DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility,
@@ -481,19 +481,14 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         cooldown: Some(Cooldown::Brief(None)),
         crit: None,
         defense: Defense::Reflex,
-        hit: AttackEffect::Damage(DamageEffect {
+        hit: AttackEffect::Damage(SimpleDamageEffect {
             damage_dice: DamageDice::aoe_damage(damage_rank(
                 age_category.level() + dragon_type.level_modifier(),
                 age_category.challenge_rating(),
             )),
-            damage_modifier: 0,
             damage_types: vec![dragon_type.damage_type()],
-            extra_defense_effect: None,
-            lose_hp_effect: None,
             power_multiplier: 0.5,
-            take_damage_effect: None,
-            vampiric_healing: None,
-        }),
+        }.damage_effect()),
         is_magical: false,
         is_strike: false,
         movement: None,
