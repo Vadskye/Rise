@@ -279,8 +279,7 @@ export const enchantment: MysticSphere = {
         hit: `
           During the next \\glossterm{action phase}, the target is compelled to make a \\glossterm{strike} against itself as a \\glossterm{standard action}.
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
-          If it has any weapons in hand or natural weapons at that time, it must use one of them.
-          Otherwise, it uses its unarmed attack.
+          If it has any weapons in hand, it must use one of them.
 
           After it makes this attack against itself, it becomes \\trait{immune} to this effect until it takes a \\glossterm{short rest}.
         `,

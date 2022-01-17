@@ -838,13 +838,13 @@ export const polymorph: MysticSphere = {
       name: 'Natural Might',
 
       effect: `
-        You gain a +3 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using \\glossterm{unarmed attacks} and \\glossterm{natural weapons}.
+        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using \\glossterm{natural weapons}.
       `,
       rank: 1,
       scaling: {
-        3: `The power bonus increases to +6.`,
-        5: `The power bonus increases to +12.`,
-        7: `The power bonus increases to +24.`,
+        3: `The power bonus increases to +4.`,
+        5: `The power bonus increases to +8.`,
+        7: `The power bonus increases to +16.`,
       },
       type: 'Attune (self)',
     },
