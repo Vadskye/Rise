@@ -15,7 +15,7 @@ use crate::skills::Skill;
 struct FullAnimalDefinition {
     attributes: Vec<i32>,
     challenge_rating: ChallengeRating,
-    description: Option<&'static str>,
+    description: Option<String>,
     knowledge: Option<Knowledge>,
     level: i32,
     modifiers: Option<Vec<Modifier>>,
@@ -168,7 +168,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 animal(FullAnimalDefinition {
                     attributes: vec![5, 0, 5, -8, 0, 1],
                     challenge_rating: ChallengeRating::Two,
-                    description: Some("A brown bear's statistics can be used for almost any big bear, including a grizzly bear."),
+                    description: Some("A brown bear's statistics can be used for almost any big bear, including a grizzly bear.".to_string()),
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
                             Brown bears tend to be bad-tempered and territorial.

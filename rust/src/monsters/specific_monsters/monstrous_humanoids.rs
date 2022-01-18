@@ -14,7 +14,7 @@ struct FullMonstrousHumanoidDefinition {
     alignment: String,
     attributes: Vec<i32>,
     challenge_rating: ChallengeRating,
-    description: Option<&'static str>,
+    description: Option<String>,
     knowledge: Option<Knowledge>,
     level: i32,
     modifiers: Option<Vec<Modifier>>,
@@ -208,7 +208,6 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
     struct OgreDefinition {
         attributes: Vec<i32>,
         challenge_rating: ChallengeRating,
-        description: Option<&'static str>,
         knowledge: Option<Knowledge>,
         level: i32,
         modifiers: Option<Vec<Modifier>>,
@@ -225,7 +224,6 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                 // From def
                 attributes: self.attributes,
                 challenge_rating: self.challenge_rating,
-                description: self.description,
                 knowledge: self.knowledge,
                 level: self.level,
                 modifiers: self.modifiers,
@@ -236,6 +234,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
 
                 // Ogre shared traits
                 alignment: "Usually chaotic evil".to_string(),
+                description: None,
                 size: Size::Large,
                 weapons: vec![
                     StandardWeapon::Greatclub.weapon(),
@@ -267,7 +266,6 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             OgreDefinition {
                 attributes: vec![4, -1, 1, -4, 0, -1],
                 challenge_rating: ChallengeRating::One,
-                description: None,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                       Ogre gangers are relatively weak or young ogres that tend to gather together in gangs for mutual protection.
@@ -284,7 +282,6 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             OgreDefinition {
                 attributes: vec![5, -1, 3, -2, 0, -1],
                 challenge_rating: ChallengeRating::Two,
-                description: None,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                       Ogre menaces are mature adult ogres that often terrorize small towns.
@@ -301,7 +298,6 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             OgreDefinition {
                 attributes: vec![4, -1, 0, 0, 2, 3],
                 challenge_rating: ChallengeRating::Two,
-                description: None,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                       Ogre mages are unusual ogres that have innate arcane magical talent.
@@ -325,7 +321,6 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             OgreDefinition {
                 attributes: vec![6, -1, 3, -1, 2, 1],
                 challenge_rating: ChallengeRating::Four,
-                description: None,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                       Ogre skullclaimers are the leaders of large roaming bands of ogres.

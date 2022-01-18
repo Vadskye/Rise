@@ -13,7 +13,7 @@ struct FullHumanoidDefinition {
     alignment: String,
     attributes: Vec<i32>,
     challenge_rating: ChallengeRating,
-    description: Option<&'static str>,
+    description: Option<String>,
     knowledge: Option<Knowledge>,
     level: i32,
     modifiers: Option<Vec<Modifier>>,
@@ -161,6 +161,113 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         ],
     }));
 
+    add_humans(&mut monsters);
+
+    add_orcs(&mut monsters);
+
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        name: "Lizardfolk".to_string(),
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Lizardfolk are Medium bipedal creatures covered in reptilian scales.
+                They are slightly taller and bulkier than humans, typically standing 6 to 7 feet tall and weighing up to 250 pounds.
+                Their tail resembles that of a crocodile, and is typically 3 to 4 feet long.
+                Their scales are typically green, gray, or brown.
+                In battle, they typically fight as unorganized individuals.
+            "),
+            (5, "
+                Lizardfolk use their tail for balance on land and to accelerate their swimming while in water.
+                They prefer frontal assaults and massed rushes in battle, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
+                If lizardfolk are outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.
+                Advanced tribes use more sophisticated tactics and have better traps and ambushes.
+            "),
+        ])),
+        monsters: vec![
+            humanoid(FullHumanoidDefinition {
+                alignment: "Usually true neutral".to_string(),
+                attributes: vec![3, 0, 4, 0, 0, 1],
+                challenge_rating: ChallengeRating::One,
+                description: None,
+                knowledge: None,
+                level: 3,
+                modifiers: Some(vec![Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability())]),
+                movement_modes: Some(vec![
+                    MovementMode::Land(SpeedCategory::Normal),
+                    MovementMode::Swim(SpeedCategory::Normal),
+                ]),
+                name: "Lizardfolk Grunt".to_string(),
+                senses: None,
+                size: Size::Medium,
+                trained_skills: None,
+                weapons: vec![StandardWeapon::Spear.weapon()],
+            }),
+            humanoid(FullHumanoidDefinition {
+                alignment: "Usually true neutral".to_string(),
+                attributes: vec![4, 0, 5, 0, 2, 2],
+                challenge_rating: ChallengeRating::Two,
+                description: None,
+                knowledge: None,
+                level: 4,
+                modifiers: Some(vec![Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability())]),
+                movement_modes: Some(vec![
+                    MovementMode::Land(SpeedCategory::Normal),
+                    MovementMode::Swim(SpeedCategory::Normal),
+                ]),
+                name: "Lizardfolk Elite".to_string(),
+                senses: None,
+                size: Size::Medium,
+                trained_skills: None,
+                weapons: vec![StandardWeapon::Spear.weapon()],
+            }),
+        ],
+    }));
+
+    return monsters;
+}
+
+pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        name: "Humans".to_string(),
+        knowledge: None,
+        monsters: vec![
+            humanoid(FullHumanoidDefinition {
+                alignment: "Usually lawful neutral".to_string(),
+                attributes: vec![2, 0, 1, 0, 0, 1],
+                challenge_rating: ChallengeRating::One,
+                description: None,
+                knowledge: None,
+                level: 1,
+                modifiers: None,
+                // Medium armor
+                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Special(-5))]),
+                name: "Town Guard".to_string(),
+                senses: None,
+                size: Size::Medium,
+                trained_skills: None,
+                weapons: vec![StandardWeapon::Broadsword.weapon()],
+            }),
+            humanoid(FullHumanoidDefinition {
+                alignment: "Usually lawful neutral".to_string(),
+                attributes: vec![1, 0, 0, 0, 0, 3],
+                challenge_rating: ChallengeRating::Two,
+                description: None,
+                knowledge: None,
+                level: 1,
+                modifiers: Some(vec![Modifier::Attack(
+                    StandardAttack::DivineJudgment(1).attack(),
+                )]),
+                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Special(-5))]),
+                name: "Cleric of the Peace".to_string(),
+                senses: None,
+                size: Size::Medium,
+                trained_skills: None,
+                weapons: vec![StandardWeapon::Warhammer.weapon()],
+            }),
+        ],
+    }));
+}
+
+fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
     struct OrcDefinition {
         attributes: Vec<i32>,
         challenge_rating: ChallengeRating,
@@ -317,103 +424,4 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             }.monster(),
         ],
     }));
-
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
-        name: "Humans".to_string(),
-        knowledge: None,
-        monsters: vec![
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually lawful neutral".to_string(),
-                attributes: vec![2, 0, 2, 0, 0, 0],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: None,
-                // Medium armor
-                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Special(-5))]),
-                name: "Human Warrior".to_string(),
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Broadsword.weapon()],
-            }),
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually lawful neutral".to_string(),
-                attributes: vec![1, 0, 0, 0, 0, 3],
-                challenge_rating: ChallengeRating::Two,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: Some(vec![Modifier::Attack(
-                    StandardAttack::DivineJudgment(1).attack(),
-                )]),
-                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Special(-5))]),
-                name: "Human Cleric".to_string(),
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Warhammer.weapon()],
-            }),
-        ],
-    }));
-
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
-        name: "Lizardfolk".to_string(),
-        knowledge: Some(Knowledge::new(vec![
-            (0, "
-                Lizardfolk are Medium bipedal creatures covered in reptilian scales.
-                They are slightly taller and bulkier than humans, typically standing 6 to 7 feet tall and weighing up to 250 pounds.
-                Their tail resembles that of a crocodile, and is typically 3 to 4 feet long.
-                Their scales are typically green, gray, or brown.
-                In battle, they typically fight as unorganized individuals.
-            "),
-            (5, "
-                Lizardfolk use their tail for balance on land and to accelerate their swimming while in water.
-                They prefer frontal assaults and massed rushes in battle, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
-                If lizardfolk are outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.
-                Advanced tribes use more sophisticated tactics and have better traps and ambushes.
-            "),
-        ])),
-        monsters: vec![
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually true neutral".to_string(),
-                attributes: vec![3, 0, 4, 0, 0, 1],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 3,
-                modifiers: Some(vec![Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability())]),
-                movement_modes: Some(vec![
-                    MovementMode::Land(SpeedCategory::Normal),
-                    MovementMode::Swim(SpeedCategory::Normal),
-                ]),
-                name: "Lizardfolk Grunt".to_string(),
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Spear.weapon()],
-            }),
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually true neutral".to_string(),
-                attributes: vec![4, 0, 5, 0, 2, 2],
-                challenge_rating: ChallengeRating::Two,
-                description: None,
-                knowledge: None,
-                level: 4,
-                modifiers: Some(vec![Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability())]),
-                movement_modes: Some(vec![
-                    MovementMode::Land(SpeedCategory::Normal),
-                    MovementMode::Swim(SpeedCategory::Normal),
-                ]),
-                name: "Lizardfolk Elite".to_string(),
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Spear.weapon()],
-            }),
-        ],
-    }));
-
-    return monsters;
 }
