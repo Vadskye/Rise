@@ -5,7 +5,7 @@ pub fn latexify(text: String) -> String {
     let text = text
         .replace("<", "{")
         .replace(">", "}")
-        .replace(" + ", "\\add")
+        .replace(" + ", " \\add ")
         // TODO: this is an incredibly stupid hack
         .replace("}{\\lcol}", ">{\\lcol}");
 
