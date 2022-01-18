@@ -10,7 +10,7 @@ pub struct FullMonsterDefinition {
     pub attributes: Vec<i32>,
     pub challenge_rating: ChallengeRating,
     pub creature_type: CreatureType,
-    pub description: Option<&'static str>,
+    pub description: Option<String>,
     pub knowledge: Option<Knowledge>,
     pub level: i32,
     pub modifiers: Option<Vec<Modifier>>,
@@ -27,12 +27,9 @@ impl FullMonsterDefinition {
         let mut monster = Monster::new(self.challenge_rating, self.creature_type, self.level);
         monster.alignment = Some(self.alignment);
         if let Some(d) = self.description {
-            monster.description = Some(d.to_string());
+            monster.description = Some(d);
         }
         monster.knowledge = self.knowledge;
-        monster.movement_modes = self
-            .movement_modes
-            .unwrap_or(vec![MovementMode::Land(SpeedCategory::Normal)]);
 
         let creature = &mut monster.creature;
         creature.name = Some(self.name);
@@ -45,9 +42,12 @@ impl FullMonsterDefinition {
         creature.set_size(self.size);
         if let Some(modifiers) = self.modifiers {
             for modifier in modifiers {
-                creature.add_modifier(modifier, None, None);
+                creature.add_modifier(modifier, Some("FullMonsterDefinition"), None);
             }
         }
+        creature.movement_modes = self
+            .movement_modes
+            .unwrap_or(vec![MovementMode::Land(SpeedCategory::Normal)]);
         if let Some(senses) = self.senses {
             for sense in senses {
                 creature.add_sense(sense);

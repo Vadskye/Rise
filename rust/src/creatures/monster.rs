@@ -2,8 +2,8 @@ use std::cmp::max;
 
 use crate::core_mechanics::abilities::{HasAttacks, PowerProgression};
 use crate::core_mechanics::{
-    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, MovementMode,
-    SpecialDefenseType, StandardPassiveAbility,
+    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, SpecialDefenseType,
+    StandardPassiveAbility,
 };
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::StandardWeapon;
@@ -22,7 +22,6 @@ pub struct Monster {
     pub creature_type: CreatureType,
     pub description: Option<String>,
     pub knowledge: Option<Knowledge>,
-    pub movement_modes: Vec<MovementMode>,
 }
 
 impl Monster {
@@ -104,7 +103,6 @@ impl Monster {
             creature,
             description: None,
             knowledge: None,
-            movement_modes: vec![],
         };
     }
 
@@ -221,16 +219,15 @@ impl Monster {
             attributes = self.latex_attributes(),
             social = self.latex_social(),
             other_skills = self.latex_other_skills(),
-            alignment = latex_formatting::uppercase_first_letter(
-                self.alignment.as_deref().unwrap_or("")
-            ),
+            alignment =
+                latex_formatting::uppercase_first_letter(self.alignment.as_deref().unwrap_or("")),
             space_and_reach = "", // TODO: only display for monsters with nonstandard space/reach
 
-            // This is sometimes useful for debugging, but isn't actually useful information in general.
-            // To the extent that raw accuracy or power is important, that should already be
-            // included in more specific attacks or abilities.
-            // accuracy = latex_formatting::modifier(self.creature.calc_accuracy()),
-            // power = self.latex_power(),
+                                  // This is sometimes useful for debugging, but isn't actually useful information in general.
+                                  // To the extent that raw accuracy or power is important, that should already be
+                                  // included in more specific attacks or abilities.
+                                  // accuracy = latex_formatting::modifier(self.creature.calc_accuracy()),
+                                  // power = self.latex_power(),
         );
     }
 
@@ -285,6 +282,7 @@ impl Monster {
 
     fn latex_movement(&self) -> String {
         let mut movement_components = self
+            .creature
             .movement_modes
             .iter()
             .map(|m| m.description(&self.creature.size))

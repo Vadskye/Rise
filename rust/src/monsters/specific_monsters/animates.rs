@@ -16,7 +16,7 @@ struct FullAnimateDefinition {
     alignment: String,
     attributes: Vec<i32>,
     challenge_rating: ChallengeRating,
-    description: Option<&'static str>,
+    description: Option<String>,
     knowledge: Option<Knowledge>,
     level: i32,
     movement_modes: Option<Vec<MovementMode>>,

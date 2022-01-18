@@ -1,5 +1,6 @@
-use crate::core_mechanics::abilities::{Attack, ActiveAbility};
+use crate::core_mechanics::abilities::{ActiveAbility, Attack};
 use crate::core_mechanics::{Attribute, Defense, PassiveAbility, Resource, SpecialDefenseType};
+use crate::equipment::StandardWeapon;
 use crate::skills::Skill;
 
 use super::{Creature, Maneuver};
@@ -135,6 +136,16 @@ impl Modifier {
         }
     }
 
+    pub fn is_magical(&self) -> bool {
+        match self {
+            Self::ActiveAbility(a) => a.is_magical,
+            Self::Attack(a) => a.is_magical,
+            Self::PassiveAbility(a) => a.is_magical,
+            Self::Maneuver(m) => m.attack(StandardWeapon::Broadsword.weapon()).is_magical,
+            _ => false,
+        }
+    }
+
     pub fn maneuver_definition(&self) -> Option<&Maneuver> {
         match self {
             Self::Maneuver(m) => Some(m),
@@ -171,8 +182,8 @@ impl Modifier {
 
 #[derive(Clone)]
 pub struct IdentifiedModifier {
-    modifier: Modifier,
-    source: String,
+    pub modifier: Modifier,
+    pub source: String,
     priority: i32,
 }
 

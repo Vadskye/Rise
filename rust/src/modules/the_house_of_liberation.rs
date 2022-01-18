@@ -209,10 +209,10 @@ pub fn generate_module() -> Module {
             Each warrior carries 2 gp.
 
 ",
-skeleton_guard=latex_by_name("Skeleton Guard"),
+skeleton_guard=latex_by_name("Skeletal Town Guard"),
 orc_butcher=latex_by_name("Orc Butcher"),
-human_cleric=latex_by_name("Human Cleric"),
-human_warrior=latex_by_name("Human Warrior"),
+human_cleric=latex_by_name("Cleric of the Peace"),
+human_warrior=latex_by_name("Town Guard"),
         ),
     };
 }
