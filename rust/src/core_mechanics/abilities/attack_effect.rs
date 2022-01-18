@@ -475,6 +475,7 @@ impl AttackEffectDuration {
 
 #[derive(Clone)]
 pub enum AttackTriggeredEffect {
+    Custom(AbilityType, String),
     Debuff(DebuffEffect),
     Grappled,
     Poison(PoisonEffect),
@@ -484,6 +485,7 @@ pub enum AttackTriggeredEffect {
 impl AttackTriggeredEffect {
     fn ability_type(&self) -> AbilityType {
         match self {
+            Self::Custom(t, _) => t.clone(),
             Self::Debuff(_) => AbilityType::Duration,
             Self::Grappled => AbilityType::Instant,
             Self::Poison(_) => AbilityType::Duration,
@@ -493,6 +495,7 @@ impl AttackTriggeredEffect {
 
     fn description(&self) -> String {
         match self {
+            Self::Custom(_, d) => d.to_string(),
             Self::Debuff(e) => e.description(),
             Self::Grappled => "\\grappled by the $name.".to_string(),
             Self::Poison(e) => e.description(),

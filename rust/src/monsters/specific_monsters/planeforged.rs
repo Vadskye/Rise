@@ -491,34 +491,138 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
 }
 
 fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
-    struct FireElemental {
+    struct AirElemental {
         attributes: Vec<i32>,
         challenge_rating: ChallengeRating,
         level: i32,
-        modifiers: Vec<Modifier>,
         name: String,
         size: Size,
     }
 
-    impl FireElemental {
-        fn monster(mut self) -> Monster {
-            self.modifiers
-                .push(Modifier::Vulnerable(SpecialDefenseType::Damage(
-                    DamageType::Cold,
-                )));
+    impl AirElemental {
+        fn monster(self) -> Monster {
+            let rank = calculate_standard_rank(self.level, self.challenge_rating);
+            let mut modifiers = vec![];
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
+                DamageType::Electricity,
+            )));
+            modifiers.push(Modifier::Attack(StandardAttack::GustOfWind(rank).attack()));
+            modifiers.push(Modifier::Attack(StandardAttack::Windblast(rank).attack()));
+            if rank >= 3 {
+                modifiers.push(Modifier::Attack(StandardAttack::PiercingWindblast(rank).attack()));
+                modifiers.push(Modifier::Attack(StandardAttack::Windsnipe(rank).attack()));
+            }
             return FullPlaneforgedDefinition {
                 // From self
                 attributes: self.attributes,
                 challenge_rating: self.challenge_rating,
                 level: self.level,
-                modifiers: Some(self.modifiers),
                 name: self.name,
                 size: self.size,
 
                 // Default values
-                alignment: "Usually chaotic neutral".to_string(),
+                alignment: "Usually true neutral".to_string(),
                 description: None,
                 knowledge: None,
+                modifiers: Some(modifiers),
+                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Fast)]),
+                senses: None,
+                trained_skills: None,
+                weapons: vec![StandardWeapon::Slam.weapon()],
+            }
+            .monster();
+        }
+    }
+
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Air elementals are formed from the pure essence of the Plane of Air.
+                They can fly through the air with agile ease, but they tend to be physically frail.
+            "),
+            (5, "
+                Air elementals have no insulation in their wispy bodies, making them vulnerable to electrical attacks.
+            "),
+        ])),
+        name: "Air Elementals".to_string(),
+        monsters: vec![
+            AirElemental {
+                attributes: vec![2, 4, 0, -3, 2, 0],
+                challenge_rating: ChallengeRating::One,
+                level: 4,
+                name: "Breeze".to_string(),
+                size: Size::Small,
+            }
+            .monster(),
+            AirElemental {
+                attributes: vec![4, 5, 0, -2, 3, 0],
+                challenge_rating: ChallengeRating::Two,
+                level: 8,
+                name: "Gale".to_string(),
+                size: Size::Medium,
+            }
+            .monster(),
+            AirElemental {
+                attributes: vec![4, 5, 0, -2, 4, 0],
+                challenge_rating: ChallengeRating::Two,
+                level: 12,
+                name: "Tempest".to_string(),
+                size: Size::Large,
+            }
+            .monster(),
+            AirElemental {
+                attributes: vec![4, 6, 2, 1, 5, 1],
+                challenge_rating: ChallengeRating::Four,
+                level: 16,
+                name: "Tornado".to_string(),
+                size: Size::Large,
+            }
+            .monster(),
+            AirElemental {
+                attributes: vec![6, 6, 2, 2, 6, 2],
+                challenge_rating: ChallengeRating::Four,
+                level: 20,
+                name: "Elder".to_string(),
+                size: Size::Huge,
+            }
+            .monster(),
+        ],
+    }));
+
+    struct FireElemental {
+        attributes: Vec<i32>,
+        challenge_rating: ChallengeRating,
+        level: i32,
+        name: String,
+        size: Size,
+    }
+
+    impl FireElemental {
+        fn monster(self) -> Monster {
+            let rank = calculate_standard_rank(self.level, self.challenge_rating);
+            let mut modifiers = vec![];
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
+                DamageType::Cold,
+            )));
+            modifiers.push(Modifier::Attack(StandardAttack::Combustion(rank).attack()));
+            modifiers.push(Modifier::Attack(StandardAttack::Firebolt(rank).attack()));
+            if rank >= 3 {
+                modifiers.push(Modifier::Attack(StandardAttack::Ignition(rank).attack()));
+                modifiers.push(Modifier::Attack(StandardAttack::Fireball(rank).attack()));
+            }
+            return FullPlaneforgedDefinition {
+                // From self
+                attributes: self.attributes,
+                challenge_rating: self.challenge_rating,
+                level: self.level,
+                name: self.name,
+                size: self.size,
+
+                // Default values
+                alignment: "Usually true neutral".to_string(),
+                description: None,
+                knowledge: None,
+                modifiers: Some(modifiers),
                 movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Fast)]),
                 senses: None,
                 trained_skills: None,
@@ -531,23 +635,22 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
     }
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
-        knowledge: Some(Knowledge::new(vec![(
-            0,
-            "
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
                 Fire elementals are formed from the pure essence of the Plane of Fire.
-                They tend to be fast and agile, and they are usually vulnerable to cold.
-            ",
-        )])),
+                They tend to be fast and agile, and they burn their opponents to ash in combat.
+            "),
+            (5, "
+                Fire elementals burn fast and bright, with little insulation from their surroundings.
+                This makes them vulnerable to cold attacks, which can chill their very core.
+            "),
+        ])),
         name: "Fire Elementals".to_string(),
         monsters: vec![
             FireElemental {
                 attributes: vec![2, 4, 0, -3, 0, 2],
                 challenge_rating: ChallengeRating::One,
                 level: 4,
-                modifiers: vec![
-                    Modifier::Attack(StandardAttack::Combustion(2).attack()),
-                    Modifier::Attack(StandardAttack::Firebolt(2).attack()),
-                ],
                 name: "Ember".to_string(),
                 size: Size::Small,
             }
@@ -556,12 +659,6 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 attributes: vec![4, 5, 0, -2, 0, 2],
                 challenge_rating: ChallengeRating::Two,
                 level: 8,
-                modifiers: vec![
-                    Modifier::Attack(StandardAttack::Firebolt(3).attack()),
-                    Modifier::Attack(StandardAttack::Combustion(3).attack()),
-                    Modifier::Attack(StandardAttack::Ignition(3).attack()),
-                    Modifier::Attack(StandardAttack::Fireball(3).attack()),
-                ],
                 name: "Kindled".to_string(),
                 size: Size::Medium,
             }
@@ -570,12 +667,6 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 attributes: vec![4, 5, 0, -2, 0, 2],
                 challenge_rating: ChallengeRating::Two,
                 level: 12,
-                modifiers: vec![
-                    Modifier::Attack(StandardAttack::Firebolt(4).attack()),
-                    Modifier::Attack(StandardAttack::Combustion(4).attack()),
-                    Modifier::Attack(StandardAttack::Ignition(4).attack()),
-                    Modifier::Attack(StandardAttack::Fireball(4).attack()),
-                ],
                 name: "Bonfire".to_string(),
                 size: Size::Large,
             }
@@ -584,13 +675,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 attributes: vec![4, 6, 2, 1, 2, 4],
                 challenge_rating: ChallengeRating::Four,
                 level: 16,
-                modifiers: vec![
-                    Modifier::Attack(StandardAttack::Firebolt(6).attack()),
-                    Modifier::Attack(StandardAttack::Combustion(6).attack()),
-                    Modifier::Attack(StandardAttack::Ignition(6).attack()),
-                    Modifier::Attack(StandardAttack::Fireball(6).attack()),
-                ],
-                name: "Elder".to_string(),
+                name: "Inferno".to_string(),
                 size: Size::Large,
             }
             .monster(),
@@ -598,13 +683,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 attributes: vec![6, 6, 2, 2, 2, 4],
                 challenge_rating: ChallengeRating::Four,
                 level: 20,
-                modifiers: vec![
-                    Modifier::Attack(StandardAttack::Firebolt(7).attack()),
-                    Modifier::Attack(StandardAttack::Combustion(7).attack()),
-                    Modifier::Attack(StandardAttack::Ignition(7).attack()),
-                    Modifier::Attack(StandardAttack::Fireball(7).attack()),
-                ],
-                name: "Inferno".to_string(),
+                name: "Elder".to_string(),
                 size: Size::Huge,
             }
             .monster(),
