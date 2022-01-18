@@ -671,8 +671,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
                 You gain an additional \glossterm{insight point}.
-                In addition, choose any two skills.
-                Those skills are \glossterm{class skills} for you.
+                In addition, you can spend insight points to gain one additional \glossterm{trained skill} per insight point.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
         },
