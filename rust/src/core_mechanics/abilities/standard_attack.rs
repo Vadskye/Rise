@@ -19,6 +19,7 @@ pub enum StandardAttack {
     AnkhegDrag,
     GibberingMoutherGibber,
     FrostwebSpiderBite,
+    MonsterSpikes(i32),
     YrthakThunderingHide,
 
     // Character/shared abilities
@@ -134,6 +135,25 @@ impl StandardAttack {
                 replaces_weapon: None,
                 tags: Some(vec![Tag::Ability(AbilityTag::Compulsion)]),
                 targeting: Targeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
+            },
+            Self::MonsterSpikes(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Armor,
+                hit: AttackEffect::Damage(SimpleDamageEffect {
+                    // +1d extra at rank 5+
+                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 5 { 1 } else { 0 }),
+                    damage_types: vec![DamageType::Piercing],
+                    power_multiplier: if *rank >= 7 { 0.5 } else { 0.0 },
+                }.damage_effect()),
+                is_magical: false,
+                is_strike: false,
+                movement: None,
+                name: "Retributive Spikes".to_string(),
+                replaces_weapon: None,
+                tags: None,
+                targeting: Targeting::MadeMeleeAttack,
             },
             Self::YrthakThunderingHide => Attack {
                 accuracy: 0,
