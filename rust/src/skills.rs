@@ -11,6 +11,7 @@ pub enum Skill {
     Awareness,
     Balance,
     Climb,
+    // TODO: add CraftSubskill
     Craft,
     CreatureHandling,
     Deception,

@@ -61,6 +61,7 @@ impl StandardPassiveAbility {
                 description: r"
                   The $name is not \glossterm{sentient}.
                   It is immune to \abilitytag{Compulsion} and \abilitytag{Emotion} abilities.
+                  Its Intelligence attribute represents its capacity for complex action according to instinct, instructions, or some other source, rather than a true innate intelligence.
                 ".to_string(),
                 is_magical: false,
                 name: "Mindless".to_string(),

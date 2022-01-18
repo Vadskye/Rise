@@ -1,7 +1,8 @@
+use crate::core_mechanics::abilities::attack_effect::{AttackTriggeredEffect, PoisonEffect};
 use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility, StandardAttack};
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
-    SpecialDefenseType, SpeedCategory,
+    SpecialDefenseType, SpeedCategory, StandardPassiveAbility,
 };
 use crate::creatures::{calculate_standard_rank, Maneuver, Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
@@ -59,6 +60,8 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
     add_angels(&mut monsters);
 
     add_demons(&mut monsters);
+
+    add_formians(&mut monsters);
 
     add_elementals(&mut monsters);
 
@@ -384,11 +387,11 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 name: self.name,
                 size: self.size,
                 trained_skills: self.trained_skills,
+                weapons: self.weapons,
 
                 // Default values
                 description: None,
-                senses: Some(vec![Sense::Darkvision(120), Sense::LowLightVision]),
-                weapons: self.weapons,
+                senses: None,
             }
             .monster();
         }
@@ -713,6 +716,172 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 ],
                 name: "Volcanic Titan".to_string(),
                 size: Size::Huge,
+            }
+            .monster(),
+        ],
+    }));
+}
+
+fn add_formians(monsters: &mut Vec<MonsterEntry>) {
+    struct Formian {
+        attributes: Vec<i32>,
+        challenge_rating: ChallengeRating,
+        knowledge: Option<Knowledge>,
+        level: i32,
+        modifiers: Option<Vec<Modifier>>,
+        movement_modes: Option<Vec<MovementMode>>,
+        name: String,
+        size: Size,
+        trained_skills: Option<Vec<Skill>>,
+        weapons: Vec<Weapon>,
+    }
+
+    impl Formian {
+        fn monster(self) -> Monster {
+            let rank = calculate_standard_rank(self.level, self.challenge_rating);
+            let tremorsense_radius = if rank >= 7 {
+                480
+            } else if rank >= 5 {
+                240
+            } else if rank >= 3 {
+                120
+            } else {
+                60
+            };
+            let tremorsight_radius = tremorsense_radius / 4;
+
+            let mut modifiers = self.modifiers.unwrap_or(vec![]);
+            modifiers.push(Modifier::PassiveAbility(
+                StandardPassiveAbility::Mindless.ability(),
+            ));
+            modifiers.push(Modifier::PassiveAbility(PassiveAbility {
+                description: r"
+                    All formians within 50 miles of their queen are in constant telepathic communication with her, regardless of any intervening physical obstacles.
+                    They instantaneously share information about threats and discoveries.
+                    This allows formians to usually respond to new information intelligently and in perfect unison, regardless of each formian's individual intelligence.
+                ".to_string(),
+                is_magical: true,
+                name: "Hive Mind".to_string(),
+            }));
+            modifiers.push(Modifier::Immune(SpecialDefenseType::Damage(
+                DamageType::Fire,
+            )));
+
+            return FullPlaneforgedDefinition {
+                // From self
+                attributes: self.attributes,
+                challenge_rating: self.challenge_rating,
+                knowledge: self.knowledge,
+                level: self.level,
+                modifiers: Some(modifiers),
+                movement_modes: self.movement_modes,
+                name: self.name,
+                size: self.size,
+                trained_skills: self.trained_skills,
+                weapons: self.weapons,
+
+                // Default values
+                alignment: "Always lawful neutral".to_string(),
+                description: None,
+                senses: Some(vec![
+                    Sense::Tremorsense(tremorsense_radius),
+                    Sense::Tremorsight(tremorsight_radius),
+                ]),
+            }
+            .monster();
+        }
+    }
+
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Formians are ant-like inhabitants native to Ordus, the Aligned Plane of law.
+                They share a hive mind that allows telepathic communication at great distances.
+            "),
+            (5, "
+                All formians can sense their surroundings instinctively by feeling tremors in the ground.
+                Most formians are simple drones with no independent thought or agency; they act only as directed by their queen.
+                As a result, they fight with no concern for their own lives, serving only the greater good of the group.
+                They may still retreat to avoid expending unnecessary resources on a battle that is already lost.
+            "),
+            (10, "
+                Formians often attempt to set up colonies in unclaimed locations on other planes to expand their influence, though they never attack civilizations or sentient creatures to do so.
+                Once they have established their colonies, they consider themselves to have a rightful claim to that land, and they can be highly territorial.
+
+                If a formian queen is killed, all formians it was controlling immediately become inert, taking no actions of any kind.
+                These isolated formians typically die of dehydration or similar causes, though in rare cases they may be claimed by another formian queen.
+            "),
+        ])),
+        name: "Formians".to_string(),
+        monsters: vec![
+            Formian {
+                attributes: vec![1, 2, 1, -2, 0, -2],
+                challenge_rating: ChallengeRating::Half,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Workers are the basic building blocks of formian society.
+                        A typical worker is about 3 feet long and about 2-1/2 feet high at the front.
+                        Its hands are suitable only for manual labor.
+                    "),
+                    (5, "
+                        Individual workers are mindless, but they are given instructions by the hive mind.
+                        Even the smallest formian colony typically has hundreds of workers, and larger colonies can have tens of thousands.
+                        Workers are generally given orders by a formian queen in groups of at least five, and it is rare to see an individual worker on its own.
+                    "),
+                ])),
+                level: 2,
+                modifiers: None,
+                movement_modes: None,
+                name: "Worker".to_string(),
+                size: Size::Medium,
+                trained_skills: Some(vec![
+                    Skill::Craft,
+                ]),
+                weapons: vec![
+                    StandardWeapon::MonsterBite.weapon(),
+                ],
+            }
+            .monster(),
+            Formian {
+                attributes: vec![3, 3, 1, -4, 3, 0],
+                challenge_rating: ChallengeRating::One,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Warriors are the basic fighting unit of formian society.
+                        In combat, warriors use their high mobility to ruthlessly coordinate attacks on their most dangerous or most vulnerable foes.
+                    "),
+                    (5, "
+                        Even the smallest formian colony typically has dozens of warriors, and larger colonies can have thousands.
+                    "),
+                ])),
+                level: 5,
+                modifiers: Some(vec![
+                    Modifier::Attack(
+                        StandardWeapon::MonsterStinger.weapon().attack()
+                        .except_hit_damage(
+                            |d| d.lose_hp_effect = Some(
+                                AttackTriggeredEffect::Poison(PoisonEffect {
+                                    stage1: vec![Debuff::Dazed],
+                                    stage3_debuff: Some(vec![Debuff::Stunned]),
+                                    stage3_vital: None,
+                                })
+                            )
+                        )
+                        .except_hit_damage(
+                            |d| d.power_multiplier = 0.5
+                        )
+                    ),
+                ]),
+                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Fast)]),
+                name: "Warrior".to_string(),
+                size: Size::Medium,
+                trained_skills: Some(vec![
+                    Skill::Awareness,
+                    Skill::Climb,
+                    Skill::Endurance,
+                    Skill::Jump,
+                ]),
+                weapons: vec![StandardWeapon::MonsterStinger.weapon()],
             }
             .monster(),
         ],
