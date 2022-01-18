@@ -17,7 +17,7 @@ import fs from "fs";
 import { MonsterType, monsterTypes, } from "@src/data";
 
 function formatPluralMonsterType(monsterType: MonsterType): string {
-  if (["planeforged", "undead"].includes(monsterType)) {
+  if (["undead"].includes(monsterType)) {
     return monsterType;
   } else {
     return `${monsterType}s`;
