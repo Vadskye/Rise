@@ -11,7 +11,7 @@ export function generateStandardMonster(
     armorInputs: [{ name: "breastplate" }],
     challengeRating,
     level,
-    monsterType: options.monsterType || "planeforged",
+    monsterType: options.monsterType || "undead",
     name: `L${level} CR${challengeRating}`,
     startingAttributes: options.startingAttribute
       ? {

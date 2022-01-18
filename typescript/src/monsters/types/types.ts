@@ -2,11 +2,9 @@ import { defenseBonusesByMonsterType } from "@src/calculate/defense_bonuses_by_m
 import { MonsterType } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterInput } from "@src/monsters/reformat_monster_input";
-import { planeforged } from "./planeforged";
 import { undead } from "./undead";
 
 export const monsterInputsByType: Record<MonsterType, MonsterInput[]> = {
-  "planeforged": planeforged,
   "undead": undead,
 };
 
@@ -23,19 +21,10 @@ function formatDefenseBonuses(monsterType: MonsterType) {
 
 // Individual monsters may have different knowledge skills
 export const knowledgeSkillsByMonsterType: Record<MonsterType, string[]> = {
-  "planeforged": ["planes"],
   "undead": ["religion"],
 };
 
 export const typeDescriptions: Record<MonsterType, string | null> = {
-  "planeforged": `
-    ${formatDefenseBonuses("planeforged")}
-    \\parhead{Planar Essence} A planeforged is fundamentally composed of the essence of its home plane.
-    When a planeforged dies, its essence returns to its plane.
-    Weak planeforged lose their independent identity and become part of the core composition of the plane once more.
-    Strong planeforged can retain their identity and reform from that raw material given time, making them difficult or impossible to kill completely.
-    In either case, planeforged cannot be resurrected by mortal magic such as the \\spell{resurrection} spell.
-  `,
   "undead": `
     ${formatDefenseBonuses("undead")}
     \\parhead{Unliving} Undead are not living creatures, and are immune to most abilities that only affect living creatures.
