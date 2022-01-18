@@ -9,6 +9,7 @@ use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, Tag};
 use crate::equipment::StandardWeapon;
 use std::cmp::max;
 
+use super::attack::SimpleSpell;
 use super::attack_effect::SimpleDamageEffect;
 use super::{AbilityTag, AbilityType};
 
@@ -35,14 +36,18 @@ pub enum StandardAttack {
     Fireball(i32),
     Firebolt(i32),
     GlimpseOfDivinity(i32),
+    GustOfWind(i32),
     Ignition(i32),
     Inferno(i32),
     MindCrush(i32),
     PersonalIgnition(i32),
+    PiercingWindblast(i32),
     Pyrohemia(i32),
     Pyrophobia(i32),
     RetributiveLifebond(i32),
     Spikeform(i32),
+    Windblast(i32),
+    Windsnipe(i32),
     WordOfFaith(i32),
 }
 
@@ -175,9 +180,8 @@ impl StandardAttack {
             },
 
             // Character/shared abilities
-            Self::AbyssalBlast(rank) => Attack {
+            Self::AbyssalBlast(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Armor,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -186,14 +190,10 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Fire],
                     power_multiplier: 1.0,
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: "Abyssal Blast".to_string(),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
-            },
+            }.attack(),
             Self::BreathWeaponCone(rank, damage_type, defense) => Attack {
                 accuracy: 0,
                 cooldown: Some(Cooldown::Brief(None)),
@@ -251,9 +251,8 @@ impl StandardAttack {
                     _ => panic!("Invalid rank {}", rank),
                 },
             },
-            Self::Combustion(rank) => Attack {
+            Self::Combustion(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -268,40 +267,30 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Fire],
                     power_multiplier: 1.0,
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Combustion", *rank, 4, Some(7)),
-                replaces_weapon: None,
                 tags: None,
-                targeting: Targeting::Creature(if *rank == 7 {
+                targeting: Targeting::Creature(if *rank >= 7 {
                     Range::Medium
                 } else {
                     Range::Short
                 }),
-            },
+            }.attack(),
             // TODO: add descriptive text for +accuracy vs non-bright illumination
-            Self::DarkGrasp(rank) => Attack {
+            Self::DarkGrasp(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank).add(if *rank == 7 { 2 } else { 0 }),
+                    damage_dice: DamageDice::aoe_damage(*rank).add(if *rank >= 7 { 2 } else { 0 }),
                     damage_types: vec![DamageType::Cold],
                     power_multiplier: 1.0,
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Dark Grasp", *rank, 3, Some(7)),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::Anything(Range::Reach),
-            },
-            Self::DarkMiasma(rank) => Attack {
+            }.attack(),
+            Self::DarkMiasma(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -309,21 +298,16 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Cold],
                     power_multiplier: 0.5,
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Dark Miasma", *rank, 4, None),
-                replaces_weapon: None,
                 tags: None,
                 targeting: if *rank >= 4 {
                     Targeting::Radius(None, AreaSize::Large, AreaTargets::Creatures)
                 } else {
                     Targeting::Radius(None, AreaSize::Small, AreaTargets::Enemies)
                 },
-            },
-            Self::DivineJudgment(rank) => Attack {
+            }.attack(),
+            Self::DivineJudgment(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -332,23 +316,18 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Energy],
                     power_multiplier: 1.0,
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Divine Judgment", *rank, 4, Some(7)),
-                replaces_weapon: None,
                 tags: None,
-                targeting: Targeting::Creature(if *rank == 7 {
+                targeting: Targeting::Creature(if *rank >= 7 {
                     Range::Distant
                 } else if *rank >= 4 {
                     Range::Long
                 } else {
                     Range::Medium
                 }),
-            },
-            Self::DrainLife(rank) => Attack {
+            }.attack(),
+            Self::DrainLife(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -357,62 +336,47 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Energy],
                     power_multiplier: 1.0,
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Drain Life", *rank, 4, Some(7)),
-                replaces_weapon: None,
                 tags: None,
-                targeting: Targeting::Creature(if *rank == 7 {
+                targeting: Targeting::Creature(if *rank >= 7 {
                     Range::Distant
                 } else if *rank >= 4 {
                     Range::Long
                 } else {
                     Range::Medium
                 }),
-            },
-            Self::Enrage(rank) => Attack {
+            }.attack(),
+            Self::Enrage(rank) => SimpleSpell {
                 accuracy: max(4, 3 + rank),
-                cooldown: None,
                 crit: Some(AttackEffect::MustRemoveTwice),
                 defense: Defense::Mental,
                 hit: AttackEffect::Custom(AbilityType::Duration, r"
                     As a \glossterm{condition}, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
                     For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
                 ".to_string()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: "Enrage".to_string(),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
-            },
-            Self::Fireball(rank) => Attack {
+            }.attack(),
+            Self::Fireball(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank).add(if *rank == 7 { 1 } else { 0 }),
+                    damage_dice: DamageDice::aoe_damage(*rank).add(if *rank >= 7 { 1 } else { 0 }),
                     damage_types: vec![DamageType::Fire],
-                    power_multiplier: if *rank == 7 { 1.0 } else { 0.5 },
+                    power_multiplier: if *rank >= 7 { 1.0 } else { 0.5 },
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Fireball", *rank, 3, Some(7)),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::Radius(
                     Some(Range::Medium),
                     AreaSize::Small,
                     AreaTargets::Everything,
                 ),
-            },
-            Self::Firebolt(rank) => Attack {
+            }.attack(),
+            Self::Firebolt(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Armor,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -421,23 +385,18 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Fire],
                     power_multiplier: 1.0,
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Firebolt", *rank, 4, Some(7)),
-                replaces_weapon: None,
                 tags: None,
-                targeting: Targeting::Creature(if *rank == 7 {
+                targeting: Targeting::Creature(if *rank >= 7 {
                     Range::Distant
                 } else if *rank >= 4 {
                     Range::Long
                 } else {
                     Range::Medium
                 }),
-            },
-            Self::GlimpseOfDivinity(rank) => Attack {
+            }.attack(),
+            Self::GlimpseOfDivinity(rank) => SimpleSpell {
                 accuracy: if *rank >= 7 { 0 } else { *rank - 3 },
-                cooldown: None,
                 crit: Some(AttackEffect::MustRemoveTwice),
                 defense: Defense::Mental,
                 hit: AttackEffect::Debuff(DebuffEffect {
@@ -448,17 +407,43 @@ impl StandardAttack {
                     },
                     duration: AttackEffectDuration::Condition,
                 }),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Glimpse of Divinity", *rank, 7, None),
-                replaces_weapon: None,
                 tags: Some(vec![Tag::Ability(AbilityTag::Visual)]),
                 targeting: Targeting::Creature(Range::Medium),
-            },
-            Self::Ignition(rank) => Attack {
+            }.attack(),
+            Self::GustOfWind(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
+                crit: None,
+                defense: Defense::Fortitude,
+                hit: AttackEffect::Damage(DamageEffect {
+                    damage_dice: DamageDice::aoe_damage(*rank),
+                    damage_modifier: 0,
+                    damage_types: vec![DamageType::Bludgeoning],
+                    extra_defense_effect: None,
+                    lose_hp_effect: None,
+                    power_multiplier: 0.0,
+                    take_damage_effect: Some(AttackTriggeredEffect::Custom(
+                        AbilityType::Instant,
+                        format!(
+                            "
+                                In addition, each target damaged by the attack is \\glossterm{{pushed}} {feet} feet in the direction the line points away from the $name.
+                                Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+                            ",
+                            feet = if *rank >= 5 { 60 } else { 30 },
+                        )
+                    )),
+                    vampiric_healing: None,
+                }),
+                name: Attack::generate_modified_name("Fireball", *rank, 3, Some(7)),
+                tags: None,
+                targeting: Targeting::Radius(
+                    Some(Range::Medium),
+                    AreaSize::Small,
+                    AreaTargets::Everything,
+                ),
+            }.attack(),
+            Self::Ignition(rank) => SimpleSpell {
+                accuracy: 0,
                 crit: None,
                 defense: Defense::Fortitude,
                 hit: AttackEffect::DamageOverTime(DamageOverTimeEffect {
@@ -476,17 +461,12 @@ impl StandardAttack {
                     duration: AttackEffectDuration::Condition,
                     narrative_text: "catches on fire".to_string(),
                 }),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Ignition", *rank, 5, None),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
-            },
-            Self::Inferno(rank) => Attack {
+            }.attack(),
+            Self::Inferno(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -494,11 +474,7 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Fire],
                     power_multiplier: 0.5,
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Inferno", *rank, 3, Some(5)),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::Radius(
                     None,
@@ -511,10 +487,9 @@ impl StandardAttack {
                     },
                     AreaTargets::Everything,
                 ),
-            },
-            Self::MindCrush(rank) => Attack {
+            }.attack(),
+            Self::MindCrush(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
                 hit: AttackEffect::Damage(DamageEffect {
@@ -535,17 +510,12 @@ impl StandardAttack {
                     })),
                     vampiric_healing: None,
                 }),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Mind Crush", *rank, 3, Some(7)),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
-            },
-            Self::PersonalIgnition(rank) => Attack {
+            }.attack(),
+            Self::PersonalIgnition(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Reflex,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -554,17 +524,26 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Fire],
                     power_multiplier: if *rank >= 7 { 0.5 } else { 0.0 },
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Personal Ignition", *rank, 7, None),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::MadeMeleeAttack,
-            },
-            Self::Pyrohemia(rank) => Attack {
+            }.attack(),
+            Self::PiercingWindblast(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
+                crit: None,
+                defense: Defense::Reflex,
+                hit: AttackEffect::Damage(SimpleDamageEffect {
+                    // +1d extra at rank 6
+                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 6 { 1 } else { 0 }),
+                    damage_types: vec![DamageType::Piercing],
+                    power_multiplier: 1.0,
+                }.damage_effect()),
+                name: Attack::generate_modified_name("Piercing Windblast", *rank, 6, None),
+                tags: None,
+                targeting: Targeting::Creature(if *rank >= 6 { Range::Long } else { Range::Medium }),
+            }.attack(),
+            Self::Pyrohemia(rank) => SimpleSpell {
+                accuracy: 0,
                 crit: None,
                 defense: Defense::Fortitude,
                 hit: AttackEffect::Damage(DamageEffect {
@@ -591,17 +570,12 @@ impl StandardAttack {
                     })),
                     vampiric_healing: None,
                 }),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Pyrohemia", *rank, 4, Some(6)),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::Creature(Range::Short),
-            },
-            Self::Pyrophobia(rank) => Attack {
+            }.attack(),
+            Self::Pyrophobia(rank) => SimpleSpell {
                 accuracy: if *rank >= 5 { *rank - 5 } else { *rank - 1 },
-                cooldown: None,
                 crit: Some(AttackEffect::DebuffInstead(DebuffInsteadEffect {
                     debuffs: vec![if *rank >= 5 {
                         Debuff::Panicked("the $name and all other sources of fire".to_string())
@@ -621,21 +595,16 @@ impl StandardAttack {
                     }],
                     duration: AttackEffectDuration::Condition,
                 }),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: if *rank >= 5 {
                     "Primal Pyrophobia".to_string()
                 } else {
                     "Pyrophobia".to_string()
                 },
-                replaces_weapon: None,
                 tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
                 targeting: Targeting::Creature(Range::Medium),
-            },
-            Self::RetributiveLifebond(rank) => Attack {
+            }.attack(),
+            Self::RetributiveLifebond(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -644,23 +613,18 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Energy],
                     power_multiplier: 0.0,
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Retributive Lifebond", *rank, 4, Some(7)),
-                replaces_weapon: None,
                 tags: None,
-                targeting: Targeting::CausedHpLoss(if *rank == 7 {
+                targeting: Targeting::CausedHpLoss(if *rank >= 7 {
                     AreaSize::Large
                 } else if *rank >= 4 {
                     AreaSize::Medium
                 } else {
                     AreaSize::Small
                 }),
-            },
-            Self::Spikeform(rank) => Attack {
+            }.attack(),
+            Self::Spikeform(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Armor,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -669,17 +633,44 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Piercing],
                     power_multiplier: if *rank >= 7 { 0.5 } else { 0.0 },
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Spikeform", *rank, 7, None),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::MadeMeleeAttack,
-            },
-            Self::WordOfFaith(rank) => Attack {
+            }.attack(),
+            Self::Windblast(rank) => SimpleSpell {
                 accuracy: 0,
-                cooldown: None,
+                crit: None,
+                defense: Defense::Armor,
+                hit: AttackEffect::Damage(SimpleDamageEffect {
+                    // +2d extra at rank 5
+                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 5 { 2 } else { 0 }),
+                    damage_types: vec![DamageType::Bludgeoning],
+                    power_multiplier: 1.0,
+                }.damage_effect()),
+                name: Attack::generate_modified_name("Windblast", *rank, 5, None),
+                tags: None,
+                targeting: Targeting::Creature(Range::Medium),
+            }.attack(),
+            Self::Windsnipe(rank) => SimpleSpell {
+                accuracy: 0,
+                crit: None,
+                defense: Defense::Armor,
+                hit: AttackEffect::Damage(SimpleDamageEffect {
+                    // +1d extra at rank 6
+                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 6 { 1 } else { 0 }),
+                    damage_types: vec![DamageType::Bludgeoning],
+                    power_multiplier: 1.0,
+                }.damage_effect()),
+                name: Attack::generate_modified_name("Windsnipe", *rank, 5, None),
+                tags: None,
+                targeting: Targeting::Creature(if *rank >= 6 {
+                    Range::Extreme
+                } else {
+                    Range::Distant
+                }),
+            }.attack(),
+            Self::WordOfFaith(rank) => SimpleSpell {
+                accuracy: 0,
                 crit: None,
                 defense: Defense::Mental,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
@@ -687,11 +678,7 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Energy],
                     power_multiplier: 0.5,
                 }.damage_effect()),
-                is_magical: true,
-                is_strike: false,
-                movement: None,
                 name: Attack::generate_modified_name("Word of Faith", *rank, 4, Some(6)),
-                replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::Radius(
                     None,
@@ -704,7 +691,7 @@ impl StandardAttack {
                     },
                     AreaTargets::Enemies,
                 ),
-            },
+            }.attack(),
         }
     }
 }
