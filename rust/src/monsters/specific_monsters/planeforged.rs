@@ -394,6 +394,11 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
         }
     }
 
+    let painborn_demon_spike = StandardWeapon::Slam
+        .weapon()
+        .except(|w| w.name = "Spike".to_string())
+        .except(|w| w.damage_types = vec![DamageType::Piercing]);
+
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -409,13 +414,17 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
         monsters: vec![
             Demon {
                 alignment: "Always chaotic evil".to_string(),
-                attributes: vec![6, 4, 1, -4, 2, 4],
+                attributes: vec![6, 4, 3, -4, 2, 4],
                 challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
-                        A rageborn demon is anger personified.
-                        It lashes out constantly and violently at everything around it.
-                        If it is left alone, it simply destroys its environment.
+                        Rageborn demons are anger personified.
+                        They lash out constantly and violently at everything around them.
+                        If they are left alone, they simply destroy their environment.
+                    "),
+                    (5, "
+                        Since rageborn demons normally feel only anger, they have little experience with other emotions.
+                        This makes them easy to mislead with magical effects that manipulate their emotions.
                     "),
                 ])),
                 level: 5,
@@ -436,6 +445,42 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                     StandardWeapon::MonsterBite.weapon(),
                     StandardWeapon::MonsterClaws.weapon(),
                 ],
+            }
+            .monster(),
+            Demon {
+                alignment: "Always neutral evil".to_string(),
+                attributes: vec![3, 2, 6, -4, 1, 1],
+                challenge_rating: ChallengeRating::Four,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Painborn demons are pain personified.
+                        They are covered in spikes that pierce their own skin, shifting and causing them pain whenever they move.
+                        These unfortunate creatures suffer continously, and they try to share that suffering with anything around them.
+                    "),
+                    (5, "
+                        Painborn demons have a hidden desire that most of them do not even consciously realize: the desire to give up control.
+                        Fighting through their constant pain is mentally taxing.
+                        Magical effects that compel their actions, freeing them from the burden of choice, are their greatest weakness.
+                    "),
+                ])),
+                level: 5,
+                modifiers: Some(vec![
+                    Modifier::Attack(
+                        Maneuver::GraspingStrike(2).attack(StandardWeapon::MonsterClaws.weapon())
+                        .except(|a| a.name = "Impale".to_string())
+                    ),
+                    Modifier::Attack(StandardAttack::MonsterSpikes(2).attack()),
+                    Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
+                        AbilityTag::Compulsion,
+                    )),
+                ]),
+                movement_modes: None,
+                name: "Painborn Demon".to_string(),
+                size: Size::Medium,
+                trained_skills: Some(vec![
+                    Skill::Endurance,
+                ]),
+                weapons: vec![painborn_demon_spike],
             }
             .monster(),
         ],
