@@ -167,7 +167,7 @@ export const aeromancy: MysticSphere = {
       type: "Attune (target)",
     },
     {
-      name: "Windstrike",
+      name: "Windblast",
 
       attack: {
         // crit: '',
@@ -176,6 +176,19 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 1,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Greater Windblast",
+
+      attack: {
+        // crit: '',
+        hit: "The target takes 4d8 + \\glossterm{power} bludgeoning damage.",
+        targeting: "Make an attack vs. Armor against anything within \\medrange.",
+      },
+      // narrative: '',
+      rank: 5,
       scaling: "damage",
       type: "Instant",
     },
@@ -189,6 +202,19 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Greater Windsnipe",
+
+      attack: {
+        // crit: '',
+        hit: "The target takes 4d8 \\add \\glossterm{power} bludgeoning damage.",
+        targeting: "Make an attack vs. Armor against anything within \\extrange.",
+      },
+      // narrative: '',
+      rank: 6,
       scaling: "damage",
       type: "Instant",
     },
@@ -322,7 +348,7 @@ export const aeromancy: MysticSphere = {
         // crit: '',
         hit: `
           Each target takes 1d8 bludgeoning damage.
-          In addition, each target is \\glossterm{pushed} 15 feet in the direction the line points away from you.
+          In addition, each target damaged by the attack is \\glossterm{pushed} 30 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
@@ -343,7 +369,7 @@ export const aeromancy: MysticSphere = {
         // +1 level for farther push, +2 levels for area
         hit: `
           Each target takes 2d8 bludgeoning damage.
-          In addition, each target is \\glossterm{pushed} 30 feet in the direction the line points away from you.
+          In addition, each target damaged by the attack is \\glossterm{pushed} 60 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
@@ -592,7 +618,7 @@ export const aeromancy: MysticSphere = {
       type: "Duration",
     },
     {
-      name: "Piercing Windstrike",
+      name: "Piercing Windblast",
 
       attack: {
         // crit: '',
@@ -603,6 +629,21 @@ export const aeromancy: MysticSphere = {
         A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
       `,
       rank: 3,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Greater Piercing Windblast",
+
+      attack: {
+        // crit: '',
+        hit: "The target takes 4d8 \\add \\glossterm{power} piercing damage.",
+        targeting: "Make an attack vs. Reflex against anything within \\longrange.",
+      },
+      narrative: `
+        A rush of wind flows instantly through the gaps in your foe's armor to pierce its heart.
+      `,
+      rank: 6,
       scaling: "damage",
       type: "Instant",
     },
