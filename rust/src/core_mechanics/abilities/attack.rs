@@ -301,3 +301,35 @@ where
         return self.calc_total_modifier(ModifierType::Power);
     }
 }
+
+pub struct SimpleSpell {
+    pub accuracy: i32,
+    pub defense: Defense,
+    pub crit: Option<AttackEffect>,
+    pub hit: AttackEffect,
+    pub name: String,
+    pub tags: Option<Vec<Tag>>,
+    pub targeting: Targeting,
+}
+
+impl SimpleSpell {
+    pub fn attack(self) -> Attack {
+        return Attack {
+            // from self
+            accuracy: self.accuracy,
+            crit: self.crit,
+            defense: self.defense,
+            hit: self.hit,
+            name: self.name,
+            tags: self.tags,
+            targeting: self.targeting,
+
+            // defaults
+            cooldown: None,
+            is_magical: true,
+            is_strike: false,
+            movement: None,
+            replaces_weapon: None,
+        }
+    }
+}
