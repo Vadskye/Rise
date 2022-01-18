@@ -363,17 +363,17 @@ impl Class {
 
     pub fn insight_points(&self) -> i32 {
         match self {
-            Self::Barbarian => 1,
-            Self::Cleric => 3,
-            Self::Druid => 2,
-            Self::Fighter => 2,
-            Self::Monk => 2,
-            Self::Paladin => 2,
-            Self::Ranger => 2,
-            Self::Rogue => 3,
-            Self::Sorcerer => 2,
-            Self::Warlock => 2,
-            Self::Wizard => 3,
+            Self::Barbarian => 0,
+            Self::Cleric => 2,
+            Self::Druid => 1,
+            Self::Fighter => 1,
+            Self::Monk => 1,
+            Self::Paladin => 1,
+            Self::Ranger => 1,
+            Self::Rogue => 2,
+            Self::Sorcerer => 1,
+            Self::Warlock => 1,
+            Self::Wizard => 2,
         }
     }
 

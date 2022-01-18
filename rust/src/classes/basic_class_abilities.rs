@@ -38,9 +38,11 @@ fn generate_latex_resources(class: &Class) -> String {
             You have the following \\glossterm<resources>:
             \\begin<itemize>
                 \\item {attunement_points}, which you can use to attune to items and abilities that affect you (see \\pcref<Attunement Points>).
-                \\item A \\plus{fatigue_tolerance} bonus to your \\glossterm<fatigue tolerance>, which makes it easier for you to use powerful abilities that fatigue you (see \\pcref<Fatigue>).
-                \\item {insight_points}, which you can spend to gain additional abilities or proficiencies (see \\pcref<Insight Points>).
-                \\item {trained_skills} from among your \\glossterm<class skills> (see \\pcref<Skills>).
+                \\item A \\glossterm<fatigue tolerance> equal to {fatigue_tolerance}.
+                    Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \\pcref<Fatigue>).
+                \\item A number of \\glossterm<insight points> equal to {insight_points}.
+                    You can spend insight points to gain additional abilities (see \\pcref<Insight Points>).
+                \\item {trained_skills} from among your \\glossterm<class skills>, plus additional trained skills equal to your Intelligence (see \\pcref<Skills>).
             \\end<itemize>
         ",
         attunement_points = latex_formatting::uppercase_first_letter(&
@@ -50,14 +52,12 @@ fn generate_latex_resources(class: &Class) -> String {
                 "\\glossterm<attunement points>",
             )
         ),
-        fatigue_tolerance = class.fatigue_tolerance(),
-        insight_points = latex_formatting::uppercase_first_letter(&
-            generate_labeled_english_number(
-                class.insight_points(),
-                "\\glossterm<insight point>",
-                "\\glossterm<insight points>",
-            )
-        ),
+        fatigue_tolerance = format!("{} + your Constitution + half your Willpower", class.fatigue_tolerance()),
+        insight_points = if class.insight_points() > 0 {
+            format!("{} + your Intelligence", class.insight_points())
+        } else {
+            "your Intelligence".to_string()
+        },
         shorthand_name = class.shorthand_name(),
         trained_skills = latex_formatting::uppercase_first_letter(&
             generate_labeled_english_number(
