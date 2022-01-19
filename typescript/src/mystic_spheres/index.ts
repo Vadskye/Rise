@@ -81,8 +81,7 @@ interface BaseSpellLike {
     | "Sustain (standard)";
 }
 
-export interface Cantrip extends BaseSpellLike {
-}
+export type Cantrip = BaseSpellLike;
 
 export interface Spell extends BaseSpellLike {
   rank: 1 | 2 | 3 | 4 | 5 | 6 | 7;
