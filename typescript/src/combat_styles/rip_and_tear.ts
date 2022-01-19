@@ -237,6 +237,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects in a \\smallarea radius within \\shortrange.
         Your \\glossterm{power} with the strike is halved.
+        Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the subjects, you can catch the weapon instead of taking damage from it.
       `,
       rank: 4,
