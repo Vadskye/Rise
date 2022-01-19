@@ -56,8 +56,30 @@ div.full-sheet {
             font-size: 14px;
         }
 
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+        }
         input[type=number] {
-            width: 2.9em
+            -moz-appearance: textfield;
+        }
+
+        input[type=number].wide-input {
+            width: 35px;
+        }
+        input[type=number] {
+            width: 30px;
+        }
+        input[type=number]:disabled {
+            box-shadow: none;
+            border: none;
+            font-family: inherit;
+            font-size: 16px;
+            margin: 0;
+            background: #f0f0f0;
+            border-radius: 5px;
+            padding: 2px;
         }
     }
 

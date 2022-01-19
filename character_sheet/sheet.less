@@ -24,6 +24,58 @@ div.full-sheet {
         height: 1em;
         width: 1em;
     }
+
+    .equation {
+      align-items: baseline;
+      margin: 0;
+      flex-grow: 1;
+
+        > .flex-col {
+            width: 35px;
+
+            > input[type=number] {
+                width: 35px;
+            }
+        }
+        > .flex-col.equation-result {
+            width: 40px;
+
+            > input[type=number] {
+                width: 40px;
+            }
+        }
+        > .flex-col.equation-glue {
+          display: flex;
+          justify-content: center;
+          height: 1.6em;
+          width: 15px;
+          text-align: center;
+          align-items: center;
+        }
+
+        .equation-text {
+          display: flex;
+          justify-content: center;
+          height: 1.6em;
+          text-align: center;
+          align-items: center;
+          margin-left: 0.25em;
+          margin-right: 0.25em;
+        }
+        .equation-math {
+          font-size: 1em;
+        }
+
+        input[type=text].invisible-text-input {
+            font-size: 0.8em;
+            padding-top: 0;
+        }
+
+        .equation-misc {
+            // make box shadows less intense for optional fields
+            box-shadow: 0 0 2px 0px black inset;
+        }
+    }
 }
 
 .hidden {
@@ -214,42 +266,6 @@ input[type=text] {
   height: 1.5em;
   margin-left: 0.25em;
   margin-right: 0.25em;
-}
-.equation-glue {
-  display: flex;
-  justify-content: center;
-  height: 1.6em;
-  width: 1.1em;
-  text-align: center;
-  align-items: center;
-}
-.equation {
-  align-items: baseline;
-  margin: 0;
-  flex-grow: 1;
-
-    .equation-text {
-      display: flex;
-      justify-content: center;
-      height: 1.6em;
-      text-align: center;
-      align-items: center;
-      margin-left: 0.25em;
-      margin-right: 0.25em;
-    }
-    .equation-math {
-      font-size: 1em;
-    }
-
-    input[type=text].invisible-text-input {
-        font-size: 0.8em;
-        padding-top: 0;
-    }
-
-    .equation-misc {
-        // make box shadows less intense for optional fields
-        box-shadow: 0 0 2px 0px black inset;
-    }
 }
 
 .tab-explanation {
