@@ -355,6 +355,8 @@ def equation(
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     space_append(attributes, "class", "equation")
     result_attributes = result_attributes or dict()
+    underlabel_attributes = underlabel_attributes or dict()
+    space_append(underlabel_attributes, "class", "equation-result")
     input_type = input_type or number_input
 
     return flex_row(
