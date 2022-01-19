@@ -442,13 +442,13 @@ impl ClassArchetype {
         rank_ability_descriptions.sort();
         return format!(
             "
-                \\newpage
-                \\subsection<{archetype_name}>\\label<{archetype_name}>
+                \\archetypedef<{class_shorthand}><{archetype_name}>
                 {short_description}
 
                 {rank_abilities}
             ",
             archetype_name = titlecase(self.name()),
+            class_shorthand = class_shorthand,
             rank_abilities = rank_ability_descriptions.join("\n\n"),
             short_description = self.short_description(),
         );

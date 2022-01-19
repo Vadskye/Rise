@@ -940,7 +940,11 @@ impl Class {
             archetype_columns = vec![">{\\lcol}X"; archetypes.len()].join(" "),
             archetype_headers = archetypes
                 .iter()
-                .map(|a| format!("\\tb<{}>", a.name()))
+                .map(|a| format!(
+                    "\\tb<\\archetyperef<{}><{}>>",
+                    self.shorthand_name(),
+                    a.name()
+                ))
                 .collect::<Vec<String>>()
                 .join(" & "),
             class_name = titlecase(self.name()),

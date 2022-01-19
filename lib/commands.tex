@@ -305,6 +305,33 @@
     }
 }
 
+% #1: if provided, skip the hypertargetraised back reference
+% #2: class shorthand name
+% #3: archetype name
+\DeclareDocumentCommand{\archetyperef}{s m m}
+{
+    \hyperlink{archetype:#2:#3}{#3}
+    \IfBooleanF{#1}
+    {
+        \hypertargetraised{archetypetable:#2:#3}{}
+    }
+}
+
+% #1: class shorthand name
+% #2: archetype name
+\DeclareDocumentCommand{\archetypedef}{m m}
+{
+    \newpage
+    \subsection{
+        \protect
+        \hypertargetraised{archetype:#1:#2}{
+            \protect
+            \hyperlink{archetypetable:#1:#2}{#2}
+        }
+    }
+    \label{#2}
+}
+
 % args:
 %   #1: name of term
 %   #2: alternate name of term, only used for labels/targets
