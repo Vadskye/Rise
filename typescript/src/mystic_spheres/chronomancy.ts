@@ -387,26 +387,58 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Time Lock",
+      name: "Time Lock -- Mind",
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
         You lock the state of the target's body in time.
-        Note the target's current \\glossterm{hit points}, and \\glossterm{damage resistance}.
+        Note the target's current \\glossterm{conditions}.
         If the target dies, this effect ends immediately.
 
         As a \\glossterm{standard action}, you can reach through time to restore the target's state.
-        If you do, the target's \\glossterm{hit points} and \\glossterm{damage resistance} become identical to what they were when you cast this spell.
-        This does not affect any other properties of the target, such as any vital wounds gained or resources expended.
-        After you restore the target's state in this way, it increases its \\glossterm{fatigue level} by one, and the spell ends.
+        If you do, the target's \\glossterm{conditions} become identical to what they were when you cast this spell.
+        This restoration is a \\glossterm{Swift} effect, so it happens before any incoming attacks.
+        It does not affect any other properties of the target, such as any vital wounds gained or resources expended.
+        After you restore the target's state in this way, it increases its \\glossterm{fatigue level} by two, and the spell ends.
+      `,
+      rank: 1,
+      scaling: {
+        3: `
+          The target's fatigue level only increases by one instead of two.
+        `,
+        5: `
+          The target's fatigue level does not increase.
+        `,
+        7: `
+          You can target an additional \\glossterm{ally} with this spell.
+        `,
+      },
+      type: "Sustain (minor)",
+    },
+
+    {
+      name: "Time Lock -- Health",
+
+      effect: `
+        This spell functions like the \\spell{time lock -- mind} spell, except that you lock and restore the target's \\glossterm{hit points} instead of its conditions.
       `,
       rank: 4,
       scaling: {
         6: `
-          When you cast the spell, you may choose to also note the target's current \\glossterm{conditions}.
-          If you do, the restoration effect also resets the target's conditions back to their initial state.
-      `,
+          The target's fatigue level only increases by one instead of two.
+        `,
       },
+      type: "Sustain (minor)",
+    },
+
+    {
+      name: "Time Lock -- Vitality",
+
+      effect: `
+        This spell functions like the \\spell{time lock -- mind} spell, except that you lock and restore the target's \\glossterm{vital wounds} instead of its conditions.
+        In addition, the target's fatigue level increases by four when it is restored instead of only increasing by two.
+      `,
+      rank: 7,
       type: "Sustain (minor)",
     },
 
