@@ -597,10 +597,12 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         You can use your \glossterm{power} in place of your Disguise skill when making Disguise checks to alter your own appearance.
 
                         \rankline
-                        \rank{3} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category}.
-                            Your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
+                        \rank{3} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category} (see \pcref{Size Categories}).
+                            If you increase your size, you are slightly clumsy in your new size, and you take a -10 foot penalty to your speed with all of your \glossterm{movement modes}.
                         \rank{5} You can use the \textit{disguise creature} ability to disguise yourself as a \glossterm{standard action} (see \pcref{Disguise Creature}).
+                            In addition, the speed penalty for increasing your size is reduced to -5 feet.
                         \rank{7} When you use this wild aspect, you can choose to grow or shrink by up to two \glossterm{size categories} instead of only one.
+                            If you increase your size by two size categories, the speed penalty increases to -15 feet.
                     \end{durationability}
 
                     \begin{durationability}{Photosynthesis}[Duration]
