@@ -5,6 +5,10 @@ export function spellScaling(spell: Pick<SpellLike, "name" | "scaling" | "rank">
     return null;
   }
 
+  if (spell.rank === 7) {
+    return null;
+  }
+
   // Cantrips have no rank listed
   const rank = spell.rank || 0;
 
