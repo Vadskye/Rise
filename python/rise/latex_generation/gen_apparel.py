@@ -2338,7 +2338,7 @@ def generate_apparel():
             description="""
                 When you use the \\ability<rage> barbarian ability, its penalties to Armor and Reflex defense are reduced by 1.
             """,
-            short_description="Reduces defense penalties from \\textit<rage>.",
+            short_description="Reduces defense penalties from \\textit<rage>",
         ),
         MagicItem(
             name="Amulet of Rage, Greater",
@@ -2348,7 +2348,7 @@ def generate_apparel():
             description="""
                 When you use the \\ability<rage> barbarian ability, its penalties to Armor and Reflex defense are removed.
             """,
-            short_description="Removes defense penalties from \\textit<rage>.",
+            short_description="Removes defense penalties from \\textit<rage>",
         ),
     ]
 
@@ -2889,7 +2889,7 @@ def generate_apparel():
             description="""
                 When you use the \\ability<possession> warlock ability, its penalties to Fortitude and Mental defense are reduced by 1.
             """,
-            short_description="Reduces defense penalties from \\ability<possession>.",
+            short_description="Reduces defense penalties from \\ability<possession>",
         ),
         MagicItem(
             name="Amulet of Possession, Greater",
@@ -2899,7 +2899,7 @@ def generate_apparel():
             description="""
                 When you use the \\ability<possession> warlock ability, its penalties to Fortitude and Mental defense are removed.
             """,
-            short_description="Removes defense penalties from \\ability<possession>.",
+            short_description="Removes defense penalties from \\ability<possession>",
         ),
     ]
 
