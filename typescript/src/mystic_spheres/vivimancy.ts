@@ -804,7 +804,7 @@ export const vivimancy: MysticSphere = {
         The corpse returns to life.
         It must not have died due to old age.
 
-        The creature has 0 hit points when it returns to life.
+        The creature has no hit points or damage resistance when it returns to life.
         It is cured of all \\glossterm{vital wounds} and other negative effects, but the body's shape is unchanged.
         Any missing or irreparably damaged limbs or organs remain missing or damaged.
         The creature may therefore die shortly after being resurrected if its body is excessively damaged.
