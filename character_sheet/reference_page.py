@@ -1,4 +1,5 @@
 from cgi_simple import (
+    button,
     checkbox,
     div,
     equation,
@@ -220,6 +221,29 @@ def character_creation():
     ])
 
 def common_concepts():
+    short_rest = button({
+        "type": "roll",
+        "value": (
+            "&{template:default}"
+            + " !setattr --name @{character_name} --silent"
+            + " --hit_points|@{hit_points_maximum}"
+            + " --damage_resistance|@{damage_resistance_maximum}"
+            + "!!!"
+            + " {{@{character_name} takes a short rest}}"
+        ),
+    }, "Short Rest")
+    long_rest = button({
+        "type": "roll",
+        "value": (
+            "&{template:custom}"
+            + " !setattr --name @{character_name} --silent"
+            + " --hit_points|@{hit_points_maximum}"
+            + " --damage_resistance|@{damage_resistance_maximum}"
+            + " --fatigue_points|0"
+            + "!!!"
+            + " {{desc=@{character_name} takes a long rest}}"
+        ),
+    }, "Long Rest")
     return flex_col({"class": "common-concepts"}, [
         div(
             {"class": "section-header"},
@@ -227,16 +251,16 @@ def common_concepts():
         ),
         p("""<b>Critical hit</b>: If you hit with an attack by 10 or more, you get a critical hit. Unless otherwise specified, all damaging attacks deal double damage on a critical hit."""),
         p("""<b>Glancing blow</b>: If you miss with an attack by 1 or 2, you get a glancing blow. Some higher level attacks have specific effects on a glancing blow, such as dealing half damage."""),
-        p("""
-            <b>Short rest</b>: Resting for ten minutes is considered a short rest. When you take a short rest, you gain the following benefits.
+        p(f"""
+            {short_rest}: Resting for ten minutes is considered a short rest. When you take a short rest, you gain the following benefits.
             <ul>
                 <li>You regain any missing hit points and damage resistance.</li>
                 <li>You regain any attunement points you released from attuned items and abilities.</li>
                 <li>You remove all conditions affecting you.</li>
             </ul>
         """),
-        p("""
-            <b>Long rest</b>: Resting for eight hours is considered a long rest. When you take a long rest, you gain the following benefits.
+        p(f"""
+            {long_rest}: Resting for eight hours is considered a long rest. When you take a long rest, you gain the following benefits.
             <ul>
                 <li>You remove one of your vital wounds.</li>
                 <li>Your fatigue level becomes 0.</li>
