@@ -813,6 +813,98 @@
         To do so, you choose a 5-foot square and make the attack against that square.
         You have a 50\% chance to hit nothing at all with the attack and a 50\% chance to hit a random valid target in that square with your attack.
 
+    \subsection{Concealment}\label{Concealment}
+        Concealment represents anything which makes it more difficult to see your target, such as \glossterm{shadowy illumination}.
+        All \glossterm{targeted} attacks against a creature or object with concealment from you have a 25\% \glossterm{miss chance}.
+        Generally, this means that you roll 1d4, and the attack misses on a 1.
+        Determining concealment works similarly to determining cover.
+        You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
+
+        \parhead{Determining Concealment} There are two things that can cause a creature to be concealed: poor lighting, and intervening obstacles that block sight.
+        Determining concealment from obstacles that block sight works the same way as determining cover (see \pcref{Cover}).
+
+        Determining concealment from lighting conditions is simpler, since it ignores lighting conditions between you and the target.
+        If your \glossterm{target square} is in lighting that provides concealment, the target has concealment.
+        Otherwise, it does not.
+
+\section{Obstacles and Cover}\label{Obstacles and Cover}
+    In a battle, you may not be able to perfectly see all of your opponents.
+    When obstacles get in the way, they may make some attacks impossible.
+    Almost all abilities, including \glossterm{strikes}, must have \glossterm{line of sight} and \glossterm{line of effect}.
+    Smaller obstacles may simply provide \glossterm{cover} instead of making attacks impossible.
+    This section explains how to deal with obstacles and related limitations.
+
+    \subsection{Point of Origin}\label{Point of Origin}
+        When you make an attack, you have to determine the \glossterm{point of origin}.
+        For \glossterm{targeted} attacks, which are the most common, the point or origin is a grid intersection of your choice that is touching your \glossterm{space}.
+        For area attacks, the point of origin depends on the shape of the area and whether it has a defined \glossterm{range}.
+
+        If an area attack has a defined range, the point of origin is a single grid intersection of your choice within that range.
+        Cones, lines, and walls without a range use a grid intersection of your choice that is touching your space, just like targeted attacks.
+        Cylinders and spheres without a range are unusual, since they radiate from your whole body instead of a single point.
+        When determining their total size, treat every grid intersection touching your space as a point of origin.
+        When determining cover and similar effects, only use the grid intersection that is closest to the target.
+
+    \subsection{Cover}\label{Cover}
+
+        Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
+        A creature or object behind cover gains a \plus2 bonus to Armor and Reflex defenses.
+        If an attack misses the defense of a creature or object behind cover by no more than the defense bonus provided by the cover,
+            the attack is applied to the obstacle instead of to the intended target.
+        This can protect creatures behind cover from \glossterm{glancing blows} (see \pcref{Glancing Blow}).
+        In addition, a creature behind cover can hide (see \pcref{Stealth}).
+
+        Cover is only relevant if the attacker has \glossterm{line of effect} to its target (see \pcref{Line of Effect}).
+        If you don't have line of effect, you generally can't attack the target at all, so the defense bonuses from cover don't matter.
+
+        \subsubsection{Measuring Cover}
+            To measure cover for a particular attack, draw a cone from the attack's point of origin to the two closest corners of the target's space.
+            The attacker can choose between equally distant corners.
+            If there are any obstacles in that cone, the target has cover.
+
+            Obstacles only provide cover if the relevant part of the obstacle is no more than one size category smaller than the target.
+            You should ignore any irrelevant parts of the obstacle that are outside of the cone.
+            For example, although a tree might be Gargantuan or Colossal if you include all of its leaves and branches, most trees are only a Medium size obstacle at ground level, since only their trunk is relevant.
+            The rules typically ignore the complexity of three-dimensional space, so you'll have to estimate what would provide reasonable cover in some cases.
+
+            \subsubsection{Improved Cover}
+            Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
+            However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may gain a greater than normal benefit to defenses from cover at the GM's discretion.
+
+    \subsection{Line of Sight}\label{Line of Sight}
+        Unless otherwise noted in an ability's description, you cannot target a creature, object, or location that you do not have line of sight to.
+        Line of sight measures whether you can see things, not whether you can touch or reach them.
+
+        A line of sight is a straight, unblocked path between an attacker and a target.
+        To measure line of sight for a particular attack, draw a line between any grid intersection touching your \glossterm{space} and any grid intersection touching the target's space.
+        If you're targeting a particular point, you would naturally draw the line to that point instead.
+        If this line is not blocked by any obstacles that impede sight, you have line of sight to your target.
+
+    \subsection{Line of Effect}\label{Line of Effect}
+        Almost all abilities, including \glossterm{strikes}, must have a \glossterm{line of effect} to function.
+        Line of effect measures whether physical passage is possible between two locations, regardless of any sight obstacles.
+        For example, a pane of glass would block line of effect, but not line of sight.
+
+        Unless otherwise noted in an ability's description, you cannot target a creature, object, or location that you do not have line of effect to.
+        In addition, abilities that affect an area do not affect targets that the ability does not have line of effect to.
+
+        A line of effect is a straight, unblocked path between an attacker and a target.
+        To measure line of sight for a particular attack, draw a line between the attack's \glossterm{point of origin} and any grid intersection touching the target's space.
+        If you're targeting a particular point, you would naturally draw the line to that point instead.
+        If this line is not blocked by any obstacles that make physical passage impossible, you have line of effect to your target.
+
+        \subsubsection{Destroying Barriers}\label{Destroying Barriers}
+            Some abilities deal damage to both creatures and objects.
+            If a physical barrier is \glossterm{broken} by an ability, that barrier does not affect the ability's line of effect.
+            For example, a thin curtain of silk normally blocks line of effect.
+            However, an ability that destroyed the curtain would have its full effect on everything behind the curtain.
+
+        \subsubsection{Inside Creatures}
+            Creatures block line of effect to the inside of their own bodies.
+            As a result, you cannot use an ability that takes effect inside a creature unless you are also inside the creature.
+            This restriction applies even if there is no physical barrier to the inside of the creature.
+            For example, you cannot place the \glossterm{point of origin} for an area inside a creature's mouth, even if the creature has its mouth open at the time.
+
 \section{Circumstances, Bonuses, and Penalties}
     Many effects can grant bonuses or penalties to actions you take.
     This section explains a variety of common circumstances that can apply bonuses or penalties in combat.
@@ -827,62 +919,6 @@
         Most circumstances grant a \plus2 bonus or impose a \minus2 penalty.
         Extraordinary circumstances can potentially have greater modifiers.
         All circumstantial modifiers should be used at the discretion of the GM.\@
-
-    \subsection{Cover}\label{Cover}
-
-        Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
-        A creature or object behind cover gains a \plus2 bonus to Armor defense.
-        If an attack misses the Armor Defense of a creature or object behind cover by no more than the defense bonus provided by the cover,
-        the attack is applied to the obstacle instead of to the intended target.
-        In addition, a creature behind cover can hide (see \pcref{Stealth}).
-
-        \parhead{Partial Obstacles} Many obstacles, such as trees and low walls, can provide cover without normally blocking \glossterm{line of sight} or providing \glossterm{total cover}.
-        Unusually small creatures, or creatures who intentionally take cover behind such obstacles, may be able to gain total cover from them.
-
-        \parhead{Improved Cover}
-        Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
-        However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may gain a greater than normal benefit to defenses from cover.
-
-        \subsubsection{Measuring Cover}
-
-            When you make an attack, choose a single square within your \glossterm{space} and a single \glossterm{target square} within your target's space.
-            If you are making a ranged attack, choose one corner of your space.
-            If you are making a melee attack, choose any two corners of your square.
-            These corners are called the \glossterm{points of origin} for your attack.
-            For the purpose of determining cover, your attack originates from your chosen \glossterm{points of origin} and travels to the \glossterm{target square}.
-
-            % TODO: pull out ``line of sight'' and ``line of effect'' from this text
-            First, check if you can attack the target at all.
-            For each \glossterm{point of origin} of your attack, you must be able to draw two lines to any two corners of your attack's \glossterm{target square}.
-            These two lines must not overlap each other.
-            In addition, each line must not be blocked by solid objects, though they can touch the edges of spaces blocked by solid objects.
-            The lines can pass through obstacles that do not take up the entire area within their space (such as most creatures).
-            Finally, the line must not be blocked by other squares within the target's space, preventing you from targeting the ``inside'' of large creatures.
-            If you cannot draw such a line, the target has \glossterm{total cover} from you.
-            This makes all targeted attacks impossible.
-
-            Second, draw a line from the \glossterm{points of origin} of your attack to the center of your attack's target square.
-            If any such line touches a square with an obstacle that grants cover, even at an edge or corner, the target has cover from you.
-            Otherwise, if the line is uninterrupted, the target does not have cover from you.
-
-    \subsection{Total Cover}\label{Total Cover}
-        If a creature is completely behind an physical object that blocks sight, it has \glossterm{total cover} from attacks.
-        A creature with total cover cannot be targeted by any attacks.
-        Abilities that ignore \glossterm{cover} do not ignore \glossterm{total cover} unless they say otherwise.
-
-    \subsection{Concealment}\label{Concealment}
-        Concealment represents anything which makes it more difficult to see your target, such as \glossterm{shadowy illumination}.
-        All \glossterm{targeted} attacks against a creature or object with concealment from you have a 25\% \glossterm{miss chance}.
-        Generally, this means that you roll 1d4, and the attack misses on a 1.
-        Determining concealment works similarly to determining cover.
-        You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
-
-        \parhead{Determining Concealment} There are two things that can cause a creature to be concealed: poor lighting, and intervening obstacles that block sight.
-        Determining concealment from obstacles that block sight works the same way as determining cover.
-
-        Determining concealment from lighting conditions is simpler, since it ignores lighting conditions between you and the target.
-        If your \glossterm{target square} is in lighting that provides concealment, the target has concealment.
-        Otherwise, it does not.
 
     \subsection{Helpless Defenders}
         A helpless creature is completely at an opponent's mercy.
@@ -969,44 +1005,6 @@
         For abilities that affect an area within a range, the area's \glossterm{point of origin} must be within the range (see \pcref{Point of Origin}).
         There are five common ranges: \rngshort, \rngmed, \rnglong, \rngdist, and \rngext.
         Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
-
-    \subsection{Line of Sight}\label{Line of Sight}
-        Almost all abilities, including \glossterm{strikes}, must have \glossterm{line of sight} to target creatures or objects.
-        Unless otherwise noted in an ability's description, you cannot target a creature, object, or location that you do not have line of effect to.
-
-        A line of sight is a straight, unblocked path between you and a target.
-        To check if you have line of sight, find a path from any corner of one \glossterm{square} within your \glossterm{space} to any two corners of one \glossterm{square} within the \glossterm{space} of your target.
-        If those lines are not blocked by any obstacles that impede sight, you have line of sight to your target.
-
-    \subsection{Line of Effect}\label{Line of Effect}
-
-        Almost all abilities, including \glossterm{strikes}, must have a \glossterm{line of effect} to function.
-        Unless otherwise noted in an ability's description, you cannot target a creature, object, or location that you do not have line of effect to.
-        In addition, abilities that affect an area do not affect targets that the ability does not have line of effect to.
-
-        A line of effect is a straight, unblocked path between you and a target.
-        It is identified in the same way as \glossterm{line of sight}, except that it is blocked by physical obstacles instead of obstacles that block sight.
-        For example, a pane of glass would block line of effect, but not line of sight.
-
-        \subsubsection{Area Line of Effect}\label{Area Line of Effect}
-            Abilities that affect areas normally measure line of effect from the area's \glossterm{point of origin}.
-            This can allow you to affect targets that you do not have line of effect to as long as the point of origin has line of effect to both you and the target.
-
-            Areas originating from creatures do not have a single point of origin.
-            Instead, line of effect is measured from all grid intersections within or touching the creature's space.
-            If any such grid intersection has line of effect to a location, the area as a whole is considered to have line of effect to that location.
-
-        \subsubsection{Destroying Barriers}\label{Destroying Barriers}
-            Some abilities deal damage to both creatures and objects.
-            If a physical barrier is \glossterm{broken} by an ability, that barrier does not affect the ability's line of effect.
-            For example, a thin curtain of silk normally blocks line of effect.
-            However, an ability that destroyed the curtain would have its full effect on everything behind the curtain.
-
-        \subsubsection{Inside Creatures}
-            Creatures block line of effect to the inside of their own bodies.
-            As a result, you cannot use an ability that takes effect inside a creature unless you are also inside the creature.
-            This restriction applies even if there is no physical barrier to the inside of the creature.
-            You cannot place \glossterm{point of origin} for an area inside a creature's mouth, even if the creature has its mouth open at the time.
 
     \subsection{Area}\label{Area}
 
