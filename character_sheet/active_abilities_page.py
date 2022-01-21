@@ -625,6 +625,13 @@ def universal_abilities():
                 """,
             ),
             universal_ability_button(
+                "Delay",
+                """
+                    You take no actions during the action phase.
+                    Instead, you can act during the delayed action phase.
+                """,
+            ),
+            universal_ability_button(
                 "Escape Grapple",
                 """
                     Make an attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability, +4 for each size category by which it is larger than you. If a creature did not use that ability during the current round, its defense against this ability is 0.
