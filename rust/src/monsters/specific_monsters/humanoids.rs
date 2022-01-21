@@ -267,7 +267,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
     }));
 }
 
-fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
+pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
     struct OrcDefinition {
         attributes: Vec<i32>,
         challenge_rating: ChallengeRating,
