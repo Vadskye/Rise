@@ -1,9 +1,10 @@
+use crate::core_mechanics::abilities::StandardAttack;
 use crate::core_mechanics::{
-    Attribute, DamageType, HasAttributes, MovementMode, Sense, Size, SpecialDefenseType,
-    StandardPassiveAbility,
+    Attribute, DamageType, FlightManeuverability, HasAttributes, MovementMode, Sense, Size,
+    SpecialDefenseType, SpeedCategory, StandardPassiveAbility,
 };
 use crate::creatures::{Modifier, Monster};
-use crate::equipment::{Weapon, StandardWeapon};
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
 use crate::monsters::knowledge::Knowledge;
@@ -65,6 +66,40 @@ pub fn undeads() -> Vec<MonsterEntry> {
 
     add_skeletons(&mut monsters);
     add_zombies(&mut monsters);
+
+    monsters.push(MonsterEntry::Monster(FullUndeadDefinition {
+        alignment: "Always neutral evil".to_string(),
+        attributes: vec![0, 3, 0, 1, 2, 2],
+        challenge_rating: ChallengeRating::Four,
+        description: None,
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Allip are incorporeal ghost-like creatures.
+                They cannot speak intelligibly, but they are known for their propensity for babbling incoherently as they attack.
+            "),
+            (5, "
+                An allip is the spectral remains of someone driven to suicide by a madness that afflicted it in life.
+                It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink.
+            "),
+        ])),
+        level: 3,
+        modifiers: Some(vec![
+            Modifier::Attack(StandardAttack::DrainingGrasp(1).attack()),
+            Modifier::PassiveAbility(StandardPassiveAbility::Incorporeal.ability()),
+        ]),
+        movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Normal, FlightManeuverability::Perfect)]),
+        name: "Allip".to_string(),
+        senses: Some(vec![
+            Sense::Darkvision(60),
+            Sense::Lifesense(120),
+        ]),
+        size: Size::Medium,
+        trained_skills: Some(vec![
+            Skill::Awareness,
+            Skill::Stealth,
+        ]),
+        weapons: vec![],
+    }.monster()));
 
     return monsters;
 }
@@ -214,6 +249,15 @@ fn convert_to_zombie(monster: Monster) -> Monster {
         senses.push(Sense::Darkvision(60));
     }
 
+    let mut movement_modes = vec![];
+    if creature.movement_modes.len() > 0 {
+        for ref original_mode in creature.movement_modes {
+            movement_modes.push(original_mode.slower())
+        }
+    } else {
+        movement_modes.push(MovementMode::Land(SpeedCategory::Slow));
+    }
+
     return FullUndeadDefinition {
         alignment: "Always neutral evil".to_string(),
         attributes,
@@ -222,7 +266,7 @@ fn convert_to_zombie(monster: Monster) -> Monster {
         knowledge: monster.knowledge,
         level: creature.level,
         modifiers: Some(modifiers),
-        movement_modes: Some(creature.movement_modes),
+        movement_modes: Some(movement_modes),
         name: format!("Zombie {}", creature.name.unwrap()),
         senses: Some(senses),
         size: creature.size,
