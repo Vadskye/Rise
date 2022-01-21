@@ -295,7 +295,7 @@ export const aquamancy: MysticSphere = {
           You create a wall of water in a 15 ft.\\ high, \\medarealong line within \\medrange.
           The wall is four inches thick, and blocks \\glossterm{line of effect} for abilities.
           Sight through the wall is possible, though distorted.
-          The wall provides both \\glossterm{cover} and \\glossterm{concealment} to targets on the opposite side of the wall, for a total of a +4 bonus to Armor defense.
+          The wall provides both \\glossterm{cover} and \\glossterm{concealment} to targets on the opposite side of the wall (see \\pcref{Obstacles and Cover}).
           Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
           Each five-foot square of wall has \\glossterm{hit points} equal to three times your \\glossterm{power} and all of its defenses are 0.
