@@ -45,6 +45,16 @@ impl FlightManeuverability {
 }
 
 impl SpeedCategory {
+    pub fn slower(&self) -> Self {
+        match self {
+            Self::Slow => Self::Slow,
+            Self::Normal => Self::Slow,
+            Self::Fast => Self::Normal,
+            Self::VeryFast => Self::VeryFast,
+            Self::Special(speed) => Self::Special(speed / 2),
+        }
+    }
+
     pub fn its_speed(&self) -> &str {
         match self {
             SpeedCategory::Slow => "half its speed",
@@ -85,6 +95,17 @@ impl MovementMode {
             MovementMode::Glide(speed) => calc_speed(speed, size),
             MovementMode::Land(speed) => calc_speed(speed, size),
             MovementMode::Swim(speed) => calc_speed(speed, size),
+        }
+    }
+
+    pub fn slower(&self) -> Self {
+        match self {
+            Self::Burrow(speed) => Self::Burrow(speed.slower()),
+            Self::Climb(speed) => Self::Climb(speed.slower()),
+            Self::Fly(speed, m) => Self::Fly(speed.slower(), m.clone()),
+            Self::Glide(speed) => Self::Glide(speed.slower()),
+            Self::Land(speed) => Self::Land(speed.slower()),
+            Self::Swim(speed) => Self::Swim(speed.slower()),
         }
     }
 
