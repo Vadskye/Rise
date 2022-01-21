@@ -618,7 +618,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{durationability}{Plantspeaker}[Duration]
                         \rankline
                         Your speed is not reduced when moving in light or heavy \glossterm{undergrowth}.
-                        In addition, you can ignore \glossterm{cover} and \glossterm{concealment} (but not \glossterm{total cover}) from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.
+                        In addition, you can ignore \glossterm{cover} and \glossterm{concealment} from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.
                         This prevents you from suffering penalties on your attacks, and also prevents creatures from using cover or concealment from plants to hide from you.
 
                         \rankline
