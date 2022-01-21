@@ -3,13 +3,13 @@ use crate::core_mechanics::{
     StandardPassiveAbility,
 };
 use crate::creatures::{Modifier, Monster};
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::{Weapon, StandardWeapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::{monster_group, FullMonsterDefinition};
+use crate::monsters::FullMonsterDefinition;
 use crate::skills::Skill;
 use std::cmp::{max, min};
 
@@ -65,82 +65,6 @@ pub fn undeads() -> Vec<MonsterEntry> {
 
     add_skeletons(&mut monsters);
     add_zombies(&mut monsters);
-
-    let mindless = Modifier::PassiveAbility(StandardPassiveAbility::Mindless.ability());
-
-    let zombie_vulnerability =
-        Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Slashing));
-
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
-        name: "Zombies".to_string(),
-        knowledge: None,
-        monsters: vec![
-            FullUndeadDefinition {
-                alignment: "Always neutral evil".to_string(),
-                attributes: vec![3, -2, 3, 0, 0, -2],
-                challenge_rating: ChallengeRating::Half,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: Some(vec![mindless.clone(), zombie_vulnerability.clone()]),
-                movement_modes: None,
-                name: "Zombie Shambler".to_string(),
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Slam.weapon()],
-            }
-            .monster(),
-            FullUndeadDefinition {
-                alignment: "Always neutral evil".to_string(),
-                attributes: vec![4, -2, 4, 0, 0, -2],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: Some(vec![mindless.clone(), zombie_vulnerability.clone()]),
-                movement_modes: None,
-                name: "Zombie Walker".to_string(),
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Slam.weapon()],
-            }
-            .monster(),
-            FullUndeadDefinition {
-                alignment: "Always neutral evil".to_string(),
-                attributes: vec![5, -2, 5, 0, 0, -2],
-                challenge_rating: ChallengeRating::Two,
-                description: None,
-                knowledge: None,
-                level: 2,
-                modifiers: Some(vec![mindless.clone(), zombie_vulnerability.clone()]),
-                movement_modes: None,
-                name: "Zombie Brute".to_string(),
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Slam.weapon()],
-            }
-            .monster(),
-            FullUndeadDefinition {
-                alignment: "Always neutral evil".to_string(),
-                attributes: vec![6, -2, 6, 0, 0, -2],
-                challenge_rating: ChallengeRating::Four,
-                description: None,
-                knowledge: None,
-                level: 3,
-                modifiers: Some(vec![mindless.clone(), zombie_vulnerability.clone()]),
-                movement_modes: None,
-                name: "Zombie Hulk".to_string(),
-                senses: None,
-                size: Size::Large,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Slam.weapon()],
-            }
-            .monster(),
-        ],
-    }));
 
     return monsters;
 }
@@ -210,15 +134,17 @@ fn convert_to_skeleton(monster: Monster) -> Monster {
         0,
     ];
 
-    let mut modifiers = vec![
-        Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Bludgeoning)),
-    ];
+    let mut modifiers = vec![Modifier::Vulnerable(SpecialDefenseType::Damage(
+        DamageType::Bludgeoning,
+    ))];
     for im in creature.identified_modifiers {
         if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
             modifiers.push(im.modifier.clone());
         }
     }
-    modifiers.push(Modifier::PassiveAbility(StandardPassiveAbility::Mindless.ability()));
+    modifiers.push(Modifier::PassiveAbility(
+        StandardPassiveAbility::Mindless.ability(),
+    ));
 
     let mut senses = creature.senses.unwrap_or(vec![]).clone();
     if !senses.iter().any(|s| {
@@ -258,10 +184,7 @@ fn convert_to_zombie(monster: Monster) -> Monster {
             max_attribute,
             creature.get_base_attribute(&Attribute::Strength) + 2,
         ),
-        max(
-            -9,
-            creature.get_base_attribute(&Attribute::Dexterity) - 2,
-        ),
+        max(-9, creature.get_base_attribute(&Attribute::Dexterity) - 2),
         min(
             max_attribute,
             creature.get_base_attribute(&Attribute::Constitution) + 2,
@@ -271,9 +194,9 @@ fn convert_to_zombie(monster: Monster) -> Monster {
         -3,
     ];
 
-    let mut modifiers = vec![
-        Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Slashing)),
-    ];
+    let mut modifiers = vec![Modifier::Vulnerable(SpecialDefenseType::Damage(
+        DamageType::Slashing,
+    ))];
     for im in creature.identified_modifiers {
         if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
             modifiers.push(im.modifier.clone());
@@ -304,11 +227,10 @@ fn convert_to_zombie(monster: Monster) -> Monster {
         senses: Some(senses),
         size: creature.size,
         trained_skills: None,
-        weapons: creature.weapons,
+        weapons: vec![StandardWeapon::Slam.weapon()],
     }
     .monster();
 }
-
 
 fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
     let mut corpses = vec![];
@@ -335,7 +257,8 @@ fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
             "),
             (5, "
                 Zombies retain all of the \\glossterm{mundane} abilities of the reanimated creature, but lose all \\glossterm{magical} abilities.
-                They retain the ability to wield the same weapons and armor as the original creature.
+                They lose the ability to wield any weapons, though they can sometimes be found wearing the same armor as the original creature.
+                Instead of using weapons, zombies simply slam into their foes with brute force.
                 In addition, zombies are always stronger and less agile than the original creature.
                 All zombies are vulnerable to slashing damage thanks to their exposed and easily torn skin and muscles.
             "),
