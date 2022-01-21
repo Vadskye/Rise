@@ -6,41 +6,14 @@ import {
   generateCombatStyleSummaries,
   generateMysticSphereLists,
   generateMysticSphereSummaries,
-  monsterToLatex,
 } from "@src/latex";
-import { monstersByType } from "@src/monsters";
-import { typeDescriptions } from "@src/monsters/types";
 import { mysticSpheres } from "@src/mystic_spheres";
-import { titleCase } from "change-case";
 import cli from "commander";
 import fs from "fs";
-import { MonsterType, monsterTypes, } from "@src/data";
-
-function formatPluralMonsterType(monsterType: MonsterType): string {
-  if (["undead"].includes(monsterType)) {
-    return monsterType;
-  } else {
-    return `${monsterType}s`;
-  }
-}
 
 function generateLatex(latexType: string): string {
   let latex = "";
-  if (latexType === "monsters") {
-    for (const monsterType of monsterTypes) {
-      const pluralText = formatPluralMonsterType(monsterType);
-      latex += `
-        \\newpage
-        \\section{${titleCase(pluralText)}}
-
-        All ${pluralText} have the following properties unless noted otherwise in their description:
-        ${typeDescriptions[monsterType]}
-      `;
-      for (const monster of monstersByType[monsterType]) {
-        latex += monsterToLatex(monster);
-      }
-    }
-  } else if (latexType === "mystic_sphere_lists") {
+  if (latexType === "mystic_sphere_lists") {
     latex = generateMysticSphereLists();
   } else if (latexType === "mystic_sphere_summaries") {
     latex = generateMysticSphereSummaries();
