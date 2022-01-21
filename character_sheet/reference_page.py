@@ -324,12 +324,12 @@ def common_concepts():
         {
             "type": "roll",
             "value": (
-                "&{template:default}"
+                "&{template:custom}"
                 + " !setattr --name @{character_name} --silent"
                 + " --hit_points|@{hit_points_maximum}"
                 + " --damage_resistance|@{damage_resistance_maximum}"
                 + "!!!"
-                + " {{@{character_name} takes a short rest}}"
+                + " {{desc=@{character_name} takes a short rest}}"
             ),
         },
         "Short Rest",
