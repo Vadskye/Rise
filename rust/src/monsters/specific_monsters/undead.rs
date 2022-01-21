@@ -64,6 +64,7 @@ pub fn undeads() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
     add_skeletons(&mut monsters);
+    add_zombies(&mut monsters);
 
     let mindless = Modifier::PassiveAbility(StandardPassiveAbility::Mindless.ability());
 
@@ -163,13 +164,13 @@ fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
         name: "Skeletons".to_string(),
         knowledge: Some(Knowledge::new(vec![
             (0, "
-                Skeleton are the reanimated corpses of once-living creatures.
-                They are one of the most basic forms of undead, though some skeletons are still quite powerful.
+                Skeletons are the reanimated corpses of once-living creatures.
+                They are the most basic form of animated undead, since they can be created from corpses that have been reduced to mere bones.
                 Creating a skeleton is generally regarded as a fundamentally evil act.
             "),
             (5, "
                 Skeletons retain all of the \\glossterm{mundane} abilities of the reanimated creature, but lose all \\glossterm{magical} abilities.
-                They retain the ability to wield the same weapons and armor as the original creature.
+                They retain the ability to wield the same weapons and armor as the original creature, but they are completely mindless.
                 In addition, skeletons are always more agile and less strong than the original creature.
                 All skeletons are vulnerable to bludgeoning damage thanks to their exposed and easily crumpled bones.
             "),
@@ -177,7 +178,10 @@ fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
                 Creating a skeleton from a corpse requires splintering the soul of the creature the corpse belonged to.
                 The soul splinter created this way is used to give the skeleton its agency.
                 This is unpleasant for the dead creature in its afterlife, though not dangerous.
-                Skeletons require a less intact corpse than zombies, so they are preferred for reanimating bodies in a greater state of decay.
+
+                Skeletons are never created by ambient necromantic magic.
+                They have no internal intelligence or agency of any kind, and precisely obey the instructions of their controllers.
+                If their instructions are poorly worded or incomplete, skeletons may fail to fight even if attacked.
             "),
         ])),
         monsters: skeletons,
@@ -186,7 +190,7 @@ fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
 
 fn convert_to_skeleton(monster: Monster) -> Monster {
     let creature = monster.creature;
-    // +1 str, +1 dex, -2 con, fixed -8 int
+    // +1 str, +1 dex, -2 con, fixed int/per/wil
     let max_attribute = monster.challenge_rating.max_base_attribute();
     let attributes = vec![
         min(
@@ -201,7 +205,7 @@ fn convert_to_skeleton(monster: Monster) -> Monster {
             -9,
             creature.get_base_attribute(&Attribute::Constitution) - 2,
         ),
-        -8,
+        -7,
         0,
         0,
     ];
@@ -243,4 +247,108 @@ fn convert_to_skeleton(monster: Monster) -> Monster {
         weapons: creature.weapons,
     }
     .monster();
+}
+
+fn convert_to_zombie(monster: Monster) -> Monster {
+    let creature = monster.creature;
+    // +2 str, -2 dex, +2 con, fixed int/per/wil
+    let max_attribute = monster.challenge_rating.max_base_attribute();
+    let attributes = vec![
+        min(
+            max_attribute,
+            creature.get_base_attribute(&Attribute::Strength) + 2,
+        ),
+        max(
+            -9,
+            creature.get_base_attribute(&Attribute::Dexterity) - 2,
+        ),
+        min(
+            max_attribute,
+            creature.get_base_attribute(&Attribute::Constitution) + 2,
+        ),
+        -7,
+        0,
+        -3,
+    ];
+
+    let mut modifiers = vec![
+        Modifier::Vulnerable(SpecialDefenseType::Damage(DamageType::Slashing)),
+    ];
+    for im in creature.identified_modifiers {
+        if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
+            modifiers.push(im.modifier.clone());
+        }
+    }
+
+    let mut senses = creature.senses.unwrap_or(vec![]).clone();
+    if !senses.iter().any(|s| {
+        if let Sense::Darkvision(_) = s {
+            true
+        } else {
+            false
+        }
+    }) {
+        senses.push(Sense::Darkvision(60));
+    }
+
+    return FullUndeadDefinition {
+        alignment: "Always neutral evil".to_string(),
+        attributes,
+        challenge_rating: monster.challenge_rating,
+        description: monster.description,
+        knowledge: monster.knowledge,
+        level: creature.level,
+        modifiers: Some(modifiers),
+        movement_modes: Some(creature.movement_modes),
+        name: format!("Zombie {}", creature.name.unwrap()),
+        senses: Some(senses),
+        size: creature.size,
+        trained_skills: None,
+        weapons: creature.weapons,
+    }
+    .monster();
+}
+
+
+fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
+    let mut corpses = vec![];
+    let mut zombies = vec![];
+    add_humans(&mut corpses);
+
+    for entry in corpses {
+        if let MonsterEntry::MonsterGroup(group) = entry {
+            for monster in group.monsters {
+                zombies.push(convert_to_zombie(monster));
+            }
+        } else if let MonsterEntry::Monster(monster) = entry {
+            zombies.push(convert_to_zombie(monster));
+        }
+    }
+
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Zombies".to_string(),
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Zombies are the reanimated corpses of once-living creatures.
+                They must be created from corpses that still retain most of their organs and internal structure.
+                Creating a zombie is generally regarded as a fundamentally evil act.
+            "),
+            (5, "
+                Zombies retain all of the \\glossterm{mundane} abilities of the reanimated creature, but lose all \\glossterm{magical} abilities.
+                They retain the ability to wield the same weapons and armor as the original creature.
+                In addition, zombies are always stronger and less agile than the original creature.
+                All zombies are vulnerable to slashing damage thanks to their exposed and easily torn skin and muscles.
+            "),
+            (10, "
+                Creating a zombie from a corpse requires splintering the soul of the creature the corpse belonged to.
+                The soul splinter created this way is used to give the zombie its agency.
+                This is unpleasant for the dead creature in its afterlife, though not dangerous.
+
+                Zombies are sometimes created by ambient necromantic magic.
+                Even if they are created and controlled by necromancers, they still retain an animalistic hunger for flesh, especially brains.
+                If their instructions are poorly worded or incomplete, zombies may attack any living creature they see.
+            "),
+        ])),
+        monsters: zombies,
+    }));
 }
