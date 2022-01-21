@@ -1258,7 +1258,6 @@ def generate_tools():
 
     tools += [
         MagicItem(
-            consumable=True,
             name="Universal Artisan's Tools",
             rank=1,
             materials=["metal"],
@@ -1269,7 +1268,6 @@ def generate_tools():
             short_description="Use to craft almost item",
         ),
         MagicItem(
-            consumable=True,
             name="Universal Artisan's Tools, Greater",
             rank=3,
             materials=["metal"],
@@ -1282,7 +1280,6 @@ def generate_tools():
             short_description="Use to craft any item with +2 bonus",
         ),
         MagicItem(
-            consumable=True,
             name="Universal Artisan's Tools, Supreme",
             rank=5,
             materials=["metal"],
@@ -1318,14 +1315,28 @@ def generate_tool_table():
         sorted(generate_tools(), key=lambda item: item.name),
         key=lambda item: item.rank,
     )
-    rows = [item.latex_table_row() for item in tools]
-    row_text = "\n".join(rows)
+    consumable_tools = list(filter(lambda t: t.consumable, tools))
+    permanent_tools = list(filter(lambda t: not t.consumable, tools))
+
+    consumable_rows = "\n".join(
+        [item.latex_table_row(True) for item in consumable_tools]
+    )
+    permanent_rows = "\n".join(
+        [item.latex_table_row(False) for item in permanent_tools]
+    )
     return longtablify(
         f"""
-            \\lcaption<Tools, Goods, and Mounts> \\\\
+            \\lcaption<Consumable Tools> \\\\
             \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-            {row_text}
+            {consumable_rows}
         """
+    ) + longtablify(
+        f"""
+            \\lcaption<Permanent Tools, Goods, and Mounts> \\\\
+            \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+            {permanent_rows}
+        """,
+        False,
     )
 
 
