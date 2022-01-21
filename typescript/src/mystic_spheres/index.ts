@@ -89,11 +89,15 @@ export interface Spell extends BaseSpellLike {
 
 export interface Ritual extends Omit<Spell, "scaling"> {
   castingTime: string;
+  materialCost?: boolean;
 }
+
+export type Rank = 1 | 2 | 3 | 4 | 5 | 6 | 7 | null;
 
 export interface SpellLike extends BaseSpellLike {
   castingTime?: string;
-  rank?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | null;
+  materialCost?: boolean;
+  rank?: Rank;
 }
 
 export interface StandardAttack {

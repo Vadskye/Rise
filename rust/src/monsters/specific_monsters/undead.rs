@@ -14,7 +14,7 @@ use crate::monsters::FullMonsterDefinition;
 use crate::skills::Skill;
 use std::cmp::{max, min};
 
-use super::humanoids::add_humans;
+use super::humanoids::{add_humans, add_orcs};
 
 struct FullUndeadDefinition {
     alignment: String,
@@ -105,19 +105,10 @@ pub fn undeads() -> Vec<MonsterEntry> {
 }
 
 fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
-    let mut corpses = vec![];
-    let mut skeletons = vec![];
-    add_humans(&mut corpses);
-
-    for entry in corpses {
-        if let MonsterEntry::MonsterGroup(group) = entry {
-            for monster in group.monsters {
-                skeletons.push(convert_to_skeleton(monster));
-            }
-        } else if let MonsterEntry::Monster(monster) = entry {
-            skeletons.push(convert_to_skeleton(monster));
-        }
-    }
+    let skeletons = generate_corpses()
+        .iter()
+        .map(|c| convert_to_skeleton(c))
+        .collect();
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Skeletons".to_string(),
@@ -147,8 +138,27 @@ fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
     }));
 }
 
-fn convert_to_skeleton(monster: Monster) -> Monster {
-    let creature = monster.creature;
+fn generate_corpses() -> Vec<Monster> {
+    let mut corpses = vec![];
+    let mut corpse_entries = vec![];
+    add_humans(&mut corpse_entries);
+    add_orcs(&mut corpse_entries);
+
+    for entry in corpse_entries {
+        if let MonsterEntry::MonsterGroup(group) = entry {
+            for monster in group.monsters {
+                corpses.push(monster);
+            }
+        } else if let MonsterEntry::Monster(monster) = entry {
+            corpses.push(monster);
+        }
+    }
+
+    return corpses;
+}
+
+fn convert_to_skeleton(monster: &Monster) -> Monster {
+    let ref creature = monster.creature;
     // +1 str, +1 dex, -2 con, fixed int/per/wil
     let max_attribute = monster.challenge_rating.max_base_attribute();
     let attributes = vec![
@@ -172,7 +182,7 @@ fn convert_to_skeleton(monster: Monster) -> Monster {
     let mut modifiers = vec![Modifier::Vulnerable(SpecialDefenseType::Damage(
         DamageType::Bludgeoning,
     ))];
-    for im in creature.identified_modifiers {
+    for im in &creature.identified_modifiers {
         if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
             modifiers.push(im.modifier.clone());
         }
@@ -181,7 +191,7 @@ fn convert_to_skeleton(monster: Monster) -> Monster {
         StandardPassiveAbility::Mindless.ability(),
     ));
 
-    let mut senses = creature.senses.unwrap_or(vec![]).clone();
+    let mut senses = creature.senses.as_ref().unwrap_or(&vec![]).clone();
     if !senses.iter().any(|s| {
         if let Sense::Darkvision(_) = s {
             true
@@ -196,22 +206,22 @@ fn convert_to_skeleton(monster: Monster) -> Monster {
         alignment: "Always neutral evil".to_string(),
         attributes,
         challenge_rating: monster.challenge_rating,
-        description: monster.description,
-        knowledge: monster.knowledge,
+        description: monster.description.clone(),
+        knowledge: None,
         level: creature.level,
         modifiers: Some(modifiers),
-        movement_modes: Some(creature.movement_modes),
-        name: format!("Skeletal {}", creature.name.unwrap()),
+        movement_modes: Some(creature.movement_modes.clone()),
+        name: format!("Skeletal {}", creature.name.as_ref().unwrap()),
         senses: Some(senses),
-        size: creature.size,
+        size: creature.size.clone(),
         trained_skills: None,
-        weapons: creature.weapons,
+        weapons: creature.weapons.clone(),
     }
     .monster();
 }
 
-fn convert_to_zombie(monster: Monster) -> Monster {
-    let creature = monster.creature;
+fn convert_to_zombie(monster: &Monster) -> Monster {
+    let creature = &monster.creature;
     // +2 str, -2 dex, +2 con, fixed int/per/wil
     let max_attribute = monster.challenge_rating.max_base_attribute();
     let attributes = vec![
@@ -232,13 +242,13 @@ fn convert_to_zombie(monster: Monster) -> Monster {
     let mut modifiers = vec![Modifier::Vulnerable(SpecialDefenseType::Damage(
         DamageType::Slashing,
     ))];
-    for im in creature.identified_modifiers {
+    for im in &creature.identified_modifiers {
         if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
             modifiers.push(im.modifier.clone());
         }
     }
 
-    let mut senses = creature.senses.unwrap_or(vec![]).clone();
+    let mut senses = creature.senses.as_ref().unwrap_or(&vec![]).clone();
     if !senses.iter().any(|s| {
         if let Sense::Darkvision(_) = s {
             true
@@ -251,7 +261,7 @@ fn convert_to_zombie(monster: Monster) -> Monster {
 
     let mut movement_modes = vec![];
     if creature.movement_modes.len() > 0 {
-        for ref original_mode in creature.movement_modes {
+        for ref original_mode in &creature.movement_modes {
             movement_modes.push(original_mode.slower())
         }
     } else {
@@ -262,14 +272,14 @@ fn convert_to_zombie(monster: Monster) -> Monster {
         alignment: "Always neutral evil".to_string(),
         attributes,
         challenge_rating: monster.challenge_rating,
-        description: monster.description,
-        knowledge: monster.knowledge,
+        description: monster.description.clone(),
+        knowledge: None,
         level: creature.level,
         modifiers: Some(modifiers),
         movement_modes: Some(movement_modes),
-        name: format!("Zombie {}", creature.name.unwrap()),
+        name: format!("Zombie {}", creature.name.as_ref().unwrap()),
         senses: Some(senses),
-        size: creature.size,
+        size: creature.size.clone(),
         trained_skills: None,
         weapons: vec![StandardWeapon::Slam.weapon()],
     }
@@ -277,19 +287,10 @@ fn convert_to_zombie(monster: Monster) -> Monster {
 }
 
 fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
-    let mut corpses = vec![];
-    let mut zombies = vec![];
-    add_humans(&mut corpses);
-
-    for entry in corpses {
-        if let MonsterEntry::MonsterGroup(group) = entry {
-            for monster in group.monsters {
-                zombies.push(convert_to_zombie(monster));
-            }
-        } else if let MonsterEntry::Monster(monster) = entry {
-            zombies.push(convert_to_zombie(monster));
-        }
-    }
+    let zombies = generate_corpses()
+        .iter()
+        .map(|c| convert_to_zombie(c))
+        .collect();
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Zombies".to_string(),
