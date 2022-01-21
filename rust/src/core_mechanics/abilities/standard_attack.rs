@@ -31,6 +31,7 @@ pub enum StandardAttack {
     DarkGrasp(i32),
     DarkMiasma(i32),
     DivineJudgment(i32),
+    DrainingGrasp(i32),
     DrainLife(i32),
     Enrage(i32),
     Fireball(i32),
@@ -325,6 +326,19 @@ impl StandardAttack {
                 } else {
                     Range::Medium
                 }),
+            }.attack(),
+            Self::DrainingGrasp(rank) => SimpleSpell {
+                accuracy: 0,
+                crit: None,
+                defense: Defense::Armor,
+                hit: AttackEffect::Damage(SimpleDamageEffect {
+                    damage_dice: DamageDice::single_target_damage(*rank),
+                    damage_types: vec![DamageType::Energy],
+                    power_multiplier: 1.0,
+                }.damage_effect()),
+                name: "Draining Grasp".to_string(),
+                tags: None,
+                targeting: Targeting::Creature(Range::Reach),
             }.attack(),
             Self::DrainLife(rank) => SimpleSpell {
                 accuracy: 0,
