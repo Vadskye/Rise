@@ -86,35 +86,6 @@ function skelefy(monster: Omit<MonsterBaseInput, "monsterType">): MonsterBaseInp
   };
 }
 
-// const lizardfolk = humanoids.find((mon) => mon.name === "Lizardfolk") as MonsterGroupInput;
-// const skelefiableMonsters = lizardfolk.monsters;
-const skelefiableMonsters: any[] = [];
-
-undeadInput.push({
-  knowledge: {
-    0: `
-      Skeleton are the reanimated corpses of once-living creatures.
-      They are one of the most basic forms of undead, though some skeletons are still quite powerful.
-      Creating a skeleton is generally regarded as a fundamentally evil act.
-    `,
-    5: `
-      Skeletons retain all of the \\glossterm{mundane} abilities of the reanimated creature, but lose all \\glossterm{magical} abilities.
-      They retain the ability to wield the same weapons and armor as the original creature.
-      In addition, skeletons are always more agile and less strong than the original creature.
-      All skeletons are \\glossterm{vulnerable} to bludgeoning damage thanks to their exposed and easily crumpled bones.
-    `,
-    10: `
-      Creating a skeleton from a corpse requires fracturing the soul of the creature the corpse belonged to.
-      The soul splinter created this way is used to give the skeleton its agency.
-      This is unpleasant for the dead creature in its afterlife, though not dangerous.
-      Skeletons require a less intact corpse than zombies, so they are preferred for reanimating bodies in a greater state of decay.
-    `,
-  },
-  level: 1,
-  name: "Skeletons",
-  monsters: skelefiableMonsters.map(skelefy),
-});
-
 function zombify(monster: Omit<MonsterBaseInput, "monsterType">): MonsterBaseInput {
   return {
     ...monster,
