@@ -78,9 +78,7 @@ impl StandardPassiveAbility {
             },
             Self::Undead => PassiveAbility {
                 description: r"
-                  The $name is \glossterm{undead}.
-                  It is not a \glossterm{living} creature, and it is immune to \abilitytag{Compulsion} and \abilitytag{Emotion} abilities.
-                  However, it is affected in a special way by spells from the \sphere{vivimancy} \glossterm{mystic sphere} (see \pcref{Vivimancy}).
+                  The $name is not a \glossterm{living} creature, and it is affected in a special way by spells from the \sphere{vivimancy} \glossterm{mystic sphere} (see \pcref{Vivimancy}).
                 ".to_string(),
                 is_magical: false,
                 name: "Undead".to_string(),
