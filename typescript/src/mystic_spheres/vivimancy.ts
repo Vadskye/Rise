@@ -894,6 +894,7 @@ export const vivimancy: MysticSphere = {
         It affects any undead you created with this ability that are within \\distrange of you.
         Undead will obey their most recent command indefinitely.
       `,
+      materialCost: true,
       rank: 3,
       type: "Attune (self)",
     },
