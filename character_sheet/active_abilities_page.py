@@ -102,13 +102,16 @@ def ability():
                             underlabel(
                                 "Power",
                                 select(
-                                    {"class": "attack-power", "name": "power_multiplier"},
+                                    {
+                                        "class": "attack-power",
+                                        "name": "power_multiplier",
+                                    },
                                     [
-                                        option(
-                                            {"value": "1"}, "Full"
-                                        ),
+                                        option({"value": "1"}, "Full"),
                                         option({"value": "0.5"}, "Half"),
-                                        option({"value": "0", "selected": True}, "None"),
+                                        option(
+                                            {"value": "0", "selected": True}, "None"
+                                        ),
                                     ],
                                 ),
                             ),
@@ -122,8 +125,20 @@ def ability():
                                 None,
                                 {"name": "is_targeted"},
                             ),
-                            text_input({"class": "hidden", "name": "targeting_text", "readonly": True}),
-                            text_input({"class": "hidden", "name": "dice_text", "readonly": True}),
+                            text_input(
+                                {
+                                    "class": "hidden",
+                                    "name": "targeting_text",
+                                    "readonly": True,
+                                }
+                            ),
+                            text_input(
+                                {
+                                    "class": "hidden",
+                                    "name": "dice_text",
+                                    "readonly": True,
+                                }
+                            ),
                         ],
                     ),
                 ],
@@ -133,34 +148,37 @@ def ability():
                 {"class": "active-ability-effect"},
                 {"name": "active_ability0_effect"},
             ),
-            flex_col({"class": "attack-buttons"}, [
-                button(
-                    {
-                        "class": "attack-roll",
-                        "name": "use_ability",
-                        "type": "roll",
-                        "value": (
-                            "&{template:custom}"
-                            + " {{title=@{active_ability0_name}}}"
-                            + " {{subtitle=@{character_name}}}"
-                            + " @{targeting_text}"
-                            + " @{dice_text}"
-                            + " {{color=@{chat_color}}}"
-                            + " {{desc=@{active_ability0_effect}}}"
-                        ),
-                    },
-                    "Use",
-                ),
-                labeled_text_input(
-                    "Dice pool",
-                    {"class": "total-damage"},
-                    {
-                        "class": "readonly-disabled",
-                        "readonly": True,
-                        "name": "calculated_dice_and_modifier",
-                    },
-                ),
-            ]),
+            flex_col(
+                {"class": "attack-buttons"},
+                [
+                    button(
+                        {
+                            "class": "attack-roll",
+                            "name": "use_ability",
+                            "type": "roll",
+                            "value": (
+                                "&{template:custom}"
+                                + " {{title=@{active_ability0_name}}}"
+                                + " {{subtitle=@{character_name}}}"
+                                + " @{targeting_text}"
+                                + " @{dice_text}"
+                                + " {{color=@{chat_color}}}"
+                                + " {{desc=@{active_ability0_effect}}}"
+                            ),
+                        },
+                        "Use",
+                    ),
+                    labeled_text_input(
+                        "Dice pool",
+                        {"class": "total-damage"},
+                        {
+                            "class": "readonly-disabled",
+                            "readonly": True,
+                            "name": "calculated_dice_and_modifier",
+                        },
+                    ),
+                ],
+            ),
         ],
     )
 
@@ -276,9 +294,7 @@ def shared_attack_framework(calcs=[], buttons=[]):
                 {"class": "attack-effect"},
                 {"name": "attack_effect"},
             ),
-            text_input(
-                {"class": "hidden", "readonly": True, "name": "targeting_text"}
-            ),
+            text_input({"class": "hidden", "readonly": True, "name": "targeting_text"}),
             text_input(
                 {"class": "hidden", "readonly": True, "name": "attack_defense_text"}
             ),
