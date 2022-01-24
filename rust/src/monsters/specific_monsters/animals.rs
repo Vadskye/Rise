@@ -1,9 +1,9 @@
 use crate::core_mechanics::abilities::{StandardAttack, attack_effect};
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, Sense, Size, SpeedCategory,
+    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, Sense, Size, SpeedCategory, StandardPassiveAbility,
 };
 
-use crate::creatures::{Modifier, Monster};
+use crate::creatures::{Modifier, Monster, Maneuver};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
@@ -515,6 +515,31 @@ pub fn animals() -> Vec<MonsterEntry> {
         trained_skills: Some(vec![Skill::Endurance]),
     });
     monsters.push(MonsterEntry::Monster(bombardier_beetle));
+
+    monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
+        attributes: vec![5, 1, 3, -9, 2, -3],
+        challenge_rating: ChallengeRating::Four,
+        description: None,
+        knowledge: None,
+        level: 3,
+        modifiers: Some(vec![
+            Modifier::Maneuver(Maneuver::PouncingStrike(1)),
+            Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability()),
+        ]),
+        movement_modes: Some(vec![
+            MovementMode::Land(SpeedCategory::Slow),
+            MovementMode::Swim(SpeedCategory::Normal),
+        ]),
+        name: "Crocodile".to_string(),
+        senses: Some(vec![Sense::Scent]),
+        size: Size::Medium,
+        trained_skills: Some(vec![
+            Skill::Endurance,
+            Skill::Stealth,
+            Skill::Swim,
+        ]),
+        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+    })));
 
     return monsters;
 }
