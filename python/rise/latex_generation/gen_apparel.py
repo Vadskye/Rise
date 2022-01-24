@@ -1707,7 +1707,7 @@ def generate_apparel():
             description="""
                 You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
             """,
-            short_description="Grants +1 bonus to \\glossterm<vital rolls>",
+            short_description="Grants +1 bonus to vital rolls",
         ),
         MagicItem(
             name="Lifekeeping Belt, Greater",
@@ -1717,7 +1717,7 @@ def generate_apparel():
             description="""
                 You gain a +2 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
             """,
-            short_description="Grants +2 bonus to \\glossterm<vital rolls>",
+            short_description="Grants +2 bonus to vital rolls",
         ),
         MagicItem(
             name="Lifekeeping Belt, Supreme",
@@ -1727,7 +1727,7 @@ def generate_apparel():
             description="""
                 You gain a +3 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
             """,
-            short_description="Grants +3 bonus to \\glossterm<vital rolls>",
+            short_description="Grants +3 bonus to vital rolls",
         ),
     ]
 
