@@ -67,6 +67,9 @@ class MagicItem(object):
         if self.short_description.endswith("."):
                 logger.log(WARNING, f"Magic item {self.name} ends its short description with a period")
 
+        if "glossterm" in self.short_description:
+                logger.log(WARNING, f"Magic item {self.name} includes a glossterm in its short description")
+
         if self.tags:
             for tag in self.tags:
                 if not is_valid_tag(tag):
