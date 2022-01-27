@@ -5,13 +5,13 @@ use crate::core_mechanics::abilities::attack_effect::{
 use crate::core_mechanics::abilities::{
     AreaSize, AreaTargets, Attack, AttackEffect, Cooldown, Range, Targeting,
 };
-use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, Tag};
+use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, Tag, SpeedCategory};
 use crate::equipment::StandardWeapon;
 use std::cmp::max;
 
 use super::attack::SimpleSpell;
 use super::attack_effect::SimpleDamageEffect;
-use super::{AbilityTag, AbilityType};
+use super::{AbilityTag, AbilityType, AbilityMovement};
 
 pub enum StandardAttack {
     // Monster abilities
@@ -21,6 +21,8 @@ pub enum StandardAttack {
     GibberingMoutherGibber,
     FrostwebSpiderBite,
     MonsterSpikes(i32),
+    OozeDissolve(i32),
+    OozeEngulf(i32),
     YrthakThunderingHide,
 
     // Character/shared abilities
@@ -160,6 +162,46 @@ impl StandardAttack {
                 replaces_weapon: None,
                 tags: None,
                 targeting: Targeting::MadeMeleeAttack,
+            },
+            Self::OozeDissolve(rank) => Attack {
+                accuracy: 0,
+                cooldown: None,
+                crit: None,
+                defense: Defense::Fortitude,
+                hit: AttackEffect::Damage(SimpleDamageEffect {
+                    // +1d at ranks 3/5/7
+                    damage_dice: DamageDice::single_target_damage(*rank).add(max(0, (rank - 1) / 2)),
+                    damage_types: vec![DamageType::Acid],
+                    power_multiplier: 1.0,
+                }.damage_effect()),
+                is_magical: false,
+                is_strike: false,
+                movement: None,
+                name: "Dissolve".to_string(),
+                replaces_weapon: None,
+                tags: None,
+                targeting: Targeting::SharingSpace,
+            },
+            Self::OozeEngulf(rank) => Attack {
+                // +1 accuracy at ranks 3/5/7
+                accuracy: max(0, (rank - 1) / 2),
+                cooldown: None,
+                crit: None,
+                defense: Defense::Fortitude,
+                hit: AttackEffect::Custom(AbilityType::Instant, r"
+                    Each target is \grappled by the $name.
+                ".to_string()),
+                is_magical: false,
+                is_strike: false,
+                movement: Some(AbilityMovement {
+                    move_before_attack: true,
+                    requires_straight_line: true,
+                    speed: SpeedCategory::Normal,
+                }),
+                name: "Engulf".to_string(),
+                replaces_weapon: None,
+                tags: None,
+                targeting: Targeting::MovementPath,
             },
             Self::YrthakThunderingHide => Attack {
                 accuracy: 0,
