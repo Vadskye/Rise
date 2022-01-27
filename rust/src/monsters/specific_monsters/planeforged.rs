@@ -2,9 +2,9 @@ use crate::core_mechanics::abilities::attack_effect::{AttackTriggeredEffect, Poi
 use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility, StandardAttack};
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
-    SpecialDefenseType, SpeedCategory, StandardPassiveAbility,
+    SpecialDefenseType, SpeedCategory,
 };
-use crate::creatures::{calculate_standard_rank, Maneuver, Modifier, Monster};
+use crate::creatures::{calculate_standard_rank, Maneuver, Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Planeforged;
@@ -509,7 +509,9 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::Attack(StandardAttack::GustOfWind(rank).attack()));
             modifiers.push(Modifier::Attack(StandardAttack::Windblast(rank).attack()));
             if rank >= 3 {
-                modifiers.push(Modifier::Attack(StandardAttack::PiercingWindblast(rank).attack()));
+                modifiers.push(Modifier::Attack(
+                    StandardAttack::PiercingWindblast(rank).attack(),
+                ));
                 modifiers.push(Modifier::Attack(StandardAttack::Windsnipe(rank).attack()));
             }
             return FullPlaneforgedDefinition {
@@ -830,9 +832,6 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
             let tremorsight_radius = tremorsense_radius / 4;
 
             let mut modifiers = self.modifiers.unwrap_or(vec![]);
-            modifiers.push(Modifier::PassiveAbility(
-                StandardPassiveAbility::Mindless.ability(),
-            ));
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: r"
                     All formians within 50 miles of their queen are in constant telepathic communication with her, regardless of any intervening physical obstacles.
@@ -852,7 +851,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                 challenge_rating: self.challenge_rating,
                 knowledge: self.knowledge,
                 level: self.level,
-                modifiers: Some(modifiers),
+                modifiers: Some(ModifierBundle::Mindless.plus_modifiers(modifiers)),
                 movement_modes: self.movement_modes,
                 name: self.name,
                 size: self.size,

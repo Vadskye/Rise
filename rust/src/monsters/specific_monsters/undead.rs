@@ -3,7 +3,7 @@ use crate::core_mechanics::{
     Attribute, DamageType, FlightManeuverability, HasAttributes, MovementMode, Sense, Size,
     SpecialDefenseType, SpeedCategory, StandardPassiveAbility,
 };
-use crate::creatures::{Modifier, Monster};
+use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
@@ -74,7 +74,7 @@ pub fn undeads() -> Vec<MonsterEntry> {
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
-                Allip are incorporeal ghost-like creatures.
+                Allips are incorporeal ghost-like creatures.
                 They cannot speak intelligibly, but they are known for their propensity for babbling incoherently as they attack.
             "),
             (5, "
@@ -83,10 +83,9 @@ pub fn undeads() -> Vec<MonsterEntry> {
             "),
         ])),
         level: 3,
-        modifiers: Some(vec![
+        modifiers: Some(ModifierBundle::Incorporeal.plus_modifiers(vec![
             Modifier::Attack(StandardAttack::DrainingGrasp(1).attack()),
-            Modifier::PassiveAbility(StandardPassiveAbility::Incorporeal.ability()),
-        ]),
+        ])),
         movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Normal, FlightManeuverability::Perfect)]),
         name: "Allip".to_string(),
         senses: Some(vec![
@@ -187,9 +186,6 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
             modifiers.push(im.modifier.clone());
         }
     }
-    modifiers.push(Modifier::PassiveAbility(
-        StandardPassiveAbility::Mindless.ability(),
-    ));
 
     let mut senses = creature.senses.as_ref().unwrap_or(&vec![]).clone();
     if !senses.iter().any(|s| {
@@ -209,7 +205,7 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
         description: monster.description.clone(),
         knowledge: None,
         level: creature.level,
-        modifiers: Some(modifiers),
+        modifiers: Some(ModifierBundle::Mindless.plus_modifiers(modifiers)),
         movement_modes: Some(creature.movement_modes.clone()),
         name: format!("Skeletal {}", creature.name.as_ref().unwrap()),
         senses: Some(senses),

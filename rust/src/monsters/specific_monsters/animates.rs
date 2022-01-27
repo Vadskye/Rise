@@ -1,9 +1,9 @@
 use crate::core_mechanics::abilities::StandardAttack;
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
-    SpeedCategory, SpecialDefenseType,
+    SpecialDefenseType, SpeedCategory,
 };
-use crate::creatures::{Modifier, Monster};
+use crate::creatures::{Modifier, Monster, ModifierBundle};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animate;
@@ -94,6 +94,57 @@ pub fn animates() -> Vec<MonsterEntry> {
     add_animated_objects(&mut monsters);
 
     add_treants(&mut monsters);
+
+    monsters.push(MonsterEntry::Monster(animate(FullAnimateDefinition {
+        alignment: "Always true neutral".to_string(),
+        attributes: vec![4, -9, 7, -9, 0, -9],
+        challenge_rating: ChallengeRating::Four,
+        description: None,
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Gelatinous cubes are virtually transparent oozes that creep along underground tunnels, digesting anything organic they encounter.
+                They are feared for their near invisibility while immobile, making them easy to stumble into accidentally.
+            "),
+            (5, "
+                When a gelatinous cube finds prey, it simply moves through the unfortunate creature, trapping it inside the ooze's body.
+                Creatures engulfed in this way can find it difficult to escape while they are being slowly digested.
+                Gelatinous cubes are unusually fast compared to other oozes, though they are still slow compared to most creatures.
+            "),
+        ])),
+        level: 5,
+        modifiers: Some(ModifierBundle::Amorphous.plus_modifiers(vec![
+            Modifier::Attack(StandardAttack::OozeDissolve(2).attack()),
+            Modifier::Attack(StandardAttack::OozeEngulf(2).attack()),
+            Modifier::PassiveAbility(PassiveAbility {
+                description: r"
+                    The $name can move freely through spaces occupied by other creatures who do not have this ability.
+                ".to_string(),
+                is_magical: false,
+                name: "Gelatinous".to_string(),
+            }),
+            Modifier::PassiveAbility(PassiveAbility {
+                description: r"
+                    The $name is transparent, making it hard to see.
+                    While it remains immobile, it is always treated as having \glossterm{concealment}, allowing it to hide (see \pcref{Stealth}).
+                    In addition, it gains a +10 bonus to Stealth checks made to simply hide in place.
+                    Once it starts moving or fighting, it loses this concealment, since its simple cubic shape makes it fairly easy to track.
+
+                    If the $name has recently fed, it may have partially dissolved remains visibly suspended inside its body, which can make it much easier to notice.
+                ".to_string(),
+                is_magical: false,
+                name: "Transparent".to_string(),
+            }),
+        ])),
+        movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Slow)]),
+        name: "Gelatinous Cube".to_string(),
+        senses: None,
+        size: Size::Large,
+        trained_skills: Some(vec![
+            Skill::Endurance,
+            Skill::Stealth,
+        ]),
+        weapons: vec![],
+    })));
 
     return monsters;
 }
