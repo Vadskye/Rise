@@ -25,8 +25,6 @@ impl PassiveAbility {
 pub enum StandardPassiveAbility {
     Amphibious,
     Animated,
-    Incorporeal,
-    Mindless,
     TwoActions,
     ThreeActions,
     Undead,
@@ -47,24 +45,6 @@ impl StandardPassiveAbility {
                 ".to_string(),
                 is_magical: false,
                 name: "Animated".to_string(),
-            },
-            Self::Incorporeal => PassiveAbility {
-                description: r"
-                  The $name is \glossterm{incorporeal}.
-                  It does not have a tangible body, and is \trait{immune} to \glossterm{physical damage}.
-                  It can enter or pass through solid objects.
-                ".to_string(),
-                is_magical: false,
-                name: "Incorporeal".to_string(),
-            },
-            Self::Mindless => PassiveAbility {
-                description: r"
-                  The $name is not \glossterm{sentient}.
-                  It is immune to \abilitytag{Compulsion} and \abilitytag{Emotion} abilities.
-                  Its Intelligence attribute represents its capacity for complex action according to instinct, instructions, or some other source, rather than a true innate intelligence.
-                ".to_string(),
-                is_magical: false,
-                name: "Mindless".to_string(),
             },
             Self::ThreeActions => PassiveAbility {
                 description: "The $name can take three standard actions each round. It cannot use the same ability or weapon twice in the same round.".to_string(),

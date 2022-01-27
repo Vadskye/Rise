@@ -12,7 +12,9 @@ pub enum Targeting {
     Creature(Range),
     Line(i32, AreaSize, AreaTargets),
     MadeMeleeAttack,
+    MovementPath,
     Radius(Option<Range>, AreaSize, AreaTargets),
+    SharingSpace,
     Strike,
     Strikes(i32),
 }
@@ -72,6 +74,7 @@ impl Targeting {
                 return minimum_rank + width_modifier + targets.rank_modifier();
             }
             Self::MadeMeleeAttack => 1,
+            Self::MovementPath => 1,
             Self::Radius(range, size, targets) => {
                 let minimum_rank = match size {
                     AreaSize::Tiny => panic!("Tiny cones are nonsensical"),
@@ -89,6 +92,7 @@ impl Targeting {
                 };
                 return minimum_rank + range_modifier + targets.rank_modifier();
             }
+            Self::SharingSpace => 1,
             Self::Strike => 1,
             Self::Strikes(_) => 1,
         }
@@ -174,6 +178,10 @@ impl Targeting {
                 accuracy = accuracy,
                 defense = defense,
             ),
+            Self::MovementPath => format!(
+                "{standard_attack_against} each creature in the path of its movement.",
+                standard_attack_against = standard_attack_against,
+            ),
             Self::Radius(attack_range, area_size, area_targets) => format!(
                 "{standard_attack_against} {targets} in a {size} radius{range}.",
                 standard_attack_against = standard_attack_against,
@@ -184,6 +192,10 @@ impl Targeting {
                 } else {
                     "".to_string()
                 },
+            ),
+            Self::SharingSpace => format!(
+                "{standard_attack_against} everything in its space.",
+                standard_attack_against = standard_attack_against,
             ),
             Self::Strike => format!(
                 "{the_creature} makes a {accuracy} \\glossterm{{strike}} vs. {defense}.",
@@ -216,7 +228,9 @@ impl Targeting {
             Self::Cone(_, _) => "Each target",
             Self::Line(_, _, _) => "Each target",
             Self::MadeMeleeAttack => "Each target",
+            Self::MovementPath => "Each target",
             Self::Radius(_, _, _) => "Each target",
+            Self::SharingSpace => "Each target",
             // TODO: handle Sweeping
             Self::Strike => "The target",
             Self::Strikes(__) => "Each target",
