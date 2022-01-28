@@ -617,13 +617,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{durationability}{Plantspeaker}[Duration]
                         \rankline
-                        Your speed is not reduced when moving in light or heavy \glossterm{undergrowth}.
+                        Your speed is not reduced when moving in \glossterm{heavy undergrowth}.
                         In addition, you can ignore \glossterm{cover} and \glossterm{concealment} from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.
                         This prevents you from suffering penalties on your attacks, and also prevents creatures from using cover or concealment from plants to hide from you.
 
                         \rankline
                         \rank{3} You gain a \plus1 bonus to your Armor and Reflex defenses while standing in \glossterm{undergrowth}.
-                        \rank{5} The movement penalties from \glossterm{undergrowth} are doubled for enemies within a \areahuge radius emanation from you.
+                        \rank{5} All \glossterm{light undergrowth} within a \largearea radius from you is treated as \glossterm{difficult terrain} for your \glossterm{enemies}.
                         \rank{7} The bonus to your Armor and Reflex defenses increases to \plus2.
                     \end{durationability}
                 }

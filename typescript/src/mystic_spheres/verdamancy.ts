@@ -558,14 +558,41 @@ export const verdamancy: MysticSphere = {
       name: "Flourishing Vines",
 
       effect: `
-        Long, thin vines continuously grow and writhe on your body.
-        At the end of each round, you may choose to cause the vines to extend out onto the ground in a \\smallarea radius around you.
+        At the end of each round, you may choose to cause vines to extend out onto the ground in a \\smallarea radius around you.
         When you do, that area becomes covered in \\glossterm{light undergrowth}.
         Whenever your location changes by any means, the vines retreat back to your body.
-        That prevents the vines from impeding your movement, though they do impede the movement of any other creatures that move simultaneously.
+      `,
+      narrative: `
+        Long, thin vines continuously grow and writhe on your body.
+        You can extend the vines to surround you at a whim.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The area increases to a \\medarea radius.`,
+        5: `The area increases to a \\largearea radius.`,
+        7: `The area increases to a \\hugearea radius.`,
+      },
+      tags: ['Manifestation'],
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Greater Flourishing Vines",
+
+      functionsLike: {
+        name: "Flourishing Vines",
+        exceptThat: `
+          the area becomes \\glossterm{heavy undergrowth} instead of light undergrowth.
+          Since the vines retreat whenever you move, they do not impede your movement, though they do impede the movement of any other creatures that move simultaneously.
+        `,
+      },
+      narrative: `
+        A great mass of long, thin vines continuously grow and writhe on your body.
+        You can extend the vines to surround you at a whim.
       `,
       rank: 4,
       scaling: { 6: `The area increases to a \\medarea radius.` },
+      tags: ['Manifestation'],
       type: "Attune (self)",
     },
 
