@@ -1,0 +1,39 @@
+\documentclass[twocolumn,oneside,letterpaper]{book} % consider draft option
+
+\input{../lib/packages.tex}
+\input{../lib/commands.tex}
+\input{../lib/environments.tex}
+\input{../lib/formatting.tex}
+\input{../lib/pdf.tex}
+
+\pagestyle{fancy}
+\lhead{\nouppercase\leftmark}
+\chead{}
+\rhead{\nouppercase\rightmark}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{v. 8.1.0}
+
+% set image import location
+\graphicspath{ {./images/} }
+
+% \includeonly{MysticSpheres}
+
+\setcounter{tocdepth}{1}
+
+\begin{document}
+\tableofcontents
+
+\include{monsters}
+
+\include{Feats}
+
+\include{OptionalRules}
+
+\include{CampaignSettings}
+
+\include{Modules}
+
+\appendix
+
+\end{document}
