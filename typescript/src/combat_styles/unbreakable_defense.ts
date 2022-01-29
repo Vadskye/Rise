@@ -306,7 +306,7 @@ export const unbreakableDefense: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         In addition, choose any one defense: Armor, Fortitude, Reflex, or Mental.
         You \\glossterm{briefly} gain a +2 bonus to that defense.
-        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
       scaling: {
@@ -324,7 +324,7 @@ export const unbreakableDefense: CombatStyle = {
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
         After you make the strike, you \\glossterm{briefly} gain a +2 bonus to all defenses.
-        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 6,
       type: "Duration",

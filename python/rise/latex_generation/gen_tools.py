@@ -410,7 +410,7 @@ def generate_tools():
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
                 On a hit, each target takes 1d6+1 sonic damage.
-                Each creature that loses \\glossterm<hit points> from this damage is \\glossterm<deafened> as a \\glossterm<condition>.
+                Each creature that loses \\glossterm<hit points> from this damage is \\deafened as a \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d6+1 sonic damage and deafen",
         ),
@@ -550,7 +550,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against one creature within \\shortrange.
-                On a hit, the target is \\glossterm<slowed> as a \\glossterm<condition>.
+                On a hit, the target is \\slowed as a \\glossterm<condition>.
 
                 Whenever the target moves using one of its movement speeds, it can make a \\glossterm<difficulty value> 5 Strength check as part of the movement.
                 If it succeeds, the condition is removed after the movement is complete.
@@ -566,7 +566,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against one creature within \\shortrange.
-                On a hit, the target is \\glossterm<slowed> as a \\glossterm<condition>.
+                On a hit, the target is \\slowed as a \\glossterm<condition>.
             """,
             short_description="Slows a foe",
         ),
@@ -579,7 +579,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against one creature within \\shortrange.
-                On a hit, the target is \\glossterm<slowed> as a \\glossterm<condition>.
+                On a hit, the target is \\slowed as a \\glossterm<condition>.
                 This condition must be removed twice before the effect ends.
             """,
             short_description="Extensively slows a foe",

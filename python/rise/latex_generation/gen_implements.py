@@ -335,7 +335,7 @@ def generate_implements():
                 However, you take a -2 penalty to Armor and Reflex defenses until the end of the round.
                 You cannot activate this staff if you already took damage during the current round.
 
-                These bonuses and penalties have the \\glossterm<Swift> tag, so they affect you during the current phase.
+                These bonuses and penalties have the \\abilitytag<Swift> tag, so they affect you during the current phase.
             """,
             short_description="Grants +1 accuracy, but -2 defenses",
         ),
@@ -395,7 +395,7 @@ def generate_implements():
             description="""
                 As a \\glossterm<free action>, you can activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<verbal components>.
-                This ability has the \\glossterm<Swift> tag, so it allows you to cast a spell without verbal components in the same phase that you activate this staff.
+                This ability has the \\abilitytag<Swift> tag, so it allows you to cast a spell without verbal components in the same phase that you activate this staff.
             """,
             short_description="Can exert to cast spells without verbal components",
         ),
@@ -407,7 +407,7 @@ def generate_implements():
             description="""
                 As a \\glossterm<free action>, you can activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<somatic components>.
-                This ability has the \\glossterm<Swift> tag, so it allows you to cast a spell without somatic components in the same phase that you activate this staff.
+                This ability has the \\abilitytag<Swift> tag, so it allows you to cast a spell without somatic components in the same phase that you activate this staff.
             """,
             short_description="Can exert to cast spells without somatic components",
         ),
