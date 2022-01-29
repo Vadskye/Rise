@@ -352,7 +352,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You can make different choices for the new spell, such as choosing different targets.
                 If you do, you must take the result of the second roll, even if it is worse.
                 The new spell takes its full effect as if you had cast it originally, and the original spell has no effect of any kind.
-                This is a \glossterm{Swift} ability.
+                This is a \abilitytag{Swift} ability.
             ",
             modifiers: None,
         },

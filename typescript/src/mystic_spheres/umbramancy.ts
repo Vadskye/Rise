@@ -286,7 +286,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each target.",
         hit: `
-          Each target is with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\glossterm{blinded}.
+          Each target is with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.

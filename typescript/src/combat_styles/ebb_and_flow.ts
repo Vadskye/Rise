@@ -139,7 +139,7 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You gain a +2 damage bonus with the strike.
         However, you \\glossterm{briefly} take a -2 penalty to all defenses.
-        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
       scaling: {
@@ -158,7 +158,7 @@ export const ebbAndFlow: CombatStyle = {
         Make two melee \\glossterm{strikes}.
         You do not add your \\glossterm{power} to damage with the strikes.
         In addition, you \\glossterm{briefly} take a -2 penalty to all defenses.
-        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 6,
       type: "Instant",
@@ -303,7 +303,7 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You do not add your \\glossterm{power} to damage with the strike.
         However, you \\glossterm{briefly} add your \\glossterm{power} to damage with the \\ability{offhand strike} ability.
-        This bonus has the \\glossterm{Swift} tag, so it affects the \\textit{offhand strike} ability if you use it during the current phase.
+        This bonus has the \\abilitytag{Swift} tag, so it affects the \\textit{offhand strike} ability if you use it during the current phase.
       `,
       rank: 4,
       scaling: {
@@ -336,7 +336,7 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
         You and each creature damaged by the strike are \\glossterm{briefly} \\dazed.
-        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
       rank: 3,
       scaling: {
@@ -353,7 +353,7 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
         You and each creature damaged by the strike are \\glossterm{briefly} \\stunned.
-        This ability does not have the \\glossterm{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
       rank: 7,
       type: "Duration",

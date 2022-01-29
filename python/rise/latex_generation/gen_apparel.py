@@ -149,7 +149,7 @@ def generate_apparel():
             description="""
                 As a \\glossterm<free action>, you activate these bracers.
                 When you do, you increase your \\glossterm<fatigue level> by one and gain a +2 bonus to Armor defense until the end of the round.
-                This ability has the \\glossterm<Swift> tag, so it protects you against attacks against you during the current phase.
+                This ability has the \\abilitytag<Swift> tag, so it protects you against attacks against you during the current phase.
             """,
             short_description="Can exert to gain instant +2 Armor defense",
         ),
@@ -554,7 +554,7 @@ def generate_apparel():
             % This only works if you only take falling damage during the movement phase, which seems possible?
             When you take \\glossterm<falling damage>, make an attack vs Reflex against everything within a \\areasmall radius from you.
             \\hit Each target takes bludgeoning damage equal to the damage you took from falling.
-            \\crit As above, and each target is knocked \\glossterm<prone>.
+            \\crit As above, and each target is knocked \\prone.
             This does not deal double damage on a critical hit.
         """,
             short_description="Deals your falling damage to enemies",
@@ -1272,7 +1272,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                You gain a +4 bonus to your defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
+                You gain a +4 bonus to your defenses against attacks with the \\abilitytag<Detection> or \\abilitytag<Scrying> tags.
             """,
             short_description="Grants +4 to defenses against detection",
         ),
@@ -1282,7 +1282,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                You gain a +8 bonus to your defenses against attacks with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
+                You gain a +8 bonus to your defenses against attacks with the \\abilitytag<Detection> or \\abilitytag<Scrying> tags.
             """,
             short_description="Grants +8 to defenses against detection",
         ),

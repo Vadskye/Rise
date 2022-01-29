@@ -632,7 +632,7 @@ def generate_armor():
                 It cannot choose to reduce its accuracy or damage against itself.
                 Any other targets of the ability are affected normally.
 
-                This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you take the total defense action.
+                This is a \\abilitytag<Swift> ability, so it affects any abilities targeting you in the phase you take the total defense action.
             """,
             short_description="React to reflect magical attacks",
         ),
@@ -663,7 +663,7 @@ def generate_armor():
             As a standard action, you can pull the cloth back and reveal the horrifying face emblazoned on the shield.
             When you do, make an attack vs. Fortitude against each creature within a \\areasmall cone.
             On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm{briefly} \\stunned.
-            On a \\glossterm<critical hit>, each target with no remaining \\glossterm<damage resistance> is \\glossterm{briefly} \\glossterm<paralyzed>.
+            On a \\glossterm<critical hit>, each target with no remaining \\glossterm<damage resistance> is \\glossterm{briefly} \\paralyzed.
             In either case, each target is immune to this ability until it takes a \\glossterm<short rest>.
 
             If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.

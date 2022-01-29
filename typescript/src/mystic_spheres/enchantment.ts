@@ -237,7 +237,7 @@ export const enchantment: MysticSphere = {
           If the target has no remaining \\glossterm{damage resistance}, it immediately falls asleep even if it is in combat or otherwise exerting itself.
         `,
         hit: `
-          The target is \\glossterm{slowed} as a \\glossterm{condition}.
+          The target is \\slowed as a \\glossterm{condition}.
           During that condition, if it is not in combat or otherwise exerting itself, it falls asleep.
           It cannot be awakened while this effect lasts unless it loses \\glossterm{hit points}, which causes it to wake up and ends the effect.
           After the effect ends by other means, the target can wake up normally, though it continues to sleep until it awakens for any reason.

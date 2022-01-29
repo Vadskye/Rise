@@ -156,7 +156,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
         You do not add your \\glossterm{power} to damage with the strike.
         The strike targets all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
-        Each creature damaged by the strike that is no more than one size category larger than you larger than you falls \\glossterm{prone}.
+        Each creature damaged by the strike that is no more than one size category larger than you larger than you falls \\prone.
       `,
       rank: 5,
       scaling: {

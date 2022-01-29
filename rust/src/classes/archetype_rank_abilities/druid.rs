@@ -560,7 +560,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     % \begin{durationability}{Form of the Oak}[Duration]
                     %     \rankline
-                    %     As long as you have any remaining resistance to physical damage, you are both \glossterm{immobilized} and \trait{impervious} to \glossterm{physical damage}.
+                    %     As long as you have any remaining resistance to physical damage, you are both \immobilized and \trait{impervious} to \glossterm{physical damage}.
                     %     \rankline
                     %     \rank{3} You also gain a \plus1 bonus to your Armor defense.
                     %     \rank{5} The resistance bonus increases to be equal to three times your rank in this archetype.
@@ -709,7 +709,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You can change your \textit{wild aspect} as a \glossterm{free action} instead of as a minor action, and changing your wild aspect gains the \glossterm{Swift} tag.
+                You can change your \textit{wild aspect} as a \glossterm{free action} instead of as a minor action, and changing your wild aspect gains the \abilitytag{Swift} tag.
                 In addition, you learn an additional \textit{wild aspect}.
             ",
             modifiers: None,
