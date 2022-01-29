@@ -564,36 +564,36 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Crumpling Armor",
-            rank=3,
+            rank=2,
             tags=[],
             material_type="Body armor",
             description="""
-                Whenever you take damage, you can choose to have your armor crumple under the attack, cushioning the blow.
-                If you do, you only take half of that damage.
-                You can learn the amount of damage that you would take from all attacks in a given phase before you decide whether to apply this effect.
-                After you reduce damage in this way, you cannot do so again until you take a \\glossterm<short rest>.
+                Whenever you would take damage, you can choose to have your armor crumple under the attack, cushioning the blow.
+                If you do, you reduce that damage by 5.
+                This can prevent you from taking damage from that attack at all.
+                After you reduce damage twice in this way, you cannot do so again until you take a \\glossterm<short rest>.
             """,
-            short_description="Halves damage from a single attack",
+            short_description="Reduces damage from two attacks by 5",
         ),
         MagicItem(
             name="Crumpling Armor, Greater",
-            rank=5,
+            rank=4,
             tags=[],
             material_type="Body armor",
             description="""
-                This armor functions like \\mitem<crumpling armor>, except that you can use it twice between short rests.
+                This armor functions like \\mitem<crumpling armor>, except that the damage reduction increases to 10.
             """,
-            short_description="Halves damage from two attacks",
+            short_description="Reduces damage from two attacks by 10",
         ),
         MagicItem(
             name="Crumpling Armor, Supreme",
-            rank=7,
+            rank=6,
             tags=[],
             material_type="Body armor",
             description="""
-                This armor functions like \\mitem<crumpling armor>, except that you can use it three times between short rests.
+                This armor functions like \\mitem<crumpling armor>, except that the damage reduction increases to 20.
             """,
-            short_description="Halves damage from three attacks",
+            short_description="Reduces damage from two attacks by 20",
         ),
     ]
 
