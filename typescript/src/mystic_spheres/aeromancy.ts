@@ -667,17 +667,21 @@ export const aeromancy: MysticSphere = {
       type: "Duration",
     },
     {
-      name: "Mistform",
+      name: "Misty Step",
 
       effect: `
         You can move through creatures freely.
         This does not allow you to move through inanimate objects.
-        In addition, you gain a \\glossterm{glide speed} equal to the \\glossterm{base speed} for your size.
+        In addition, you gain a 30 foot \\glossterm{glide speed}.
       `,
-      // narrative: '',
-      rank: 4,
+      narrative: `
+        Your body is partially transformed into mist.
+        This allows you to drift through enemies and even the air with ease.
+      `,
+      rank: 3,
       scaling: {
-        6: "You also ignore all sources of \\glossterm{difficult terrain}.",
+        5: "You also ignore all sources of \\glossterm{difficult terrain}.",
+        7: "You also gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flying}).",
       },
       type: "Attune (self)",
     },
