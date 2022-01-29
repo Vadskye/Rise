@@ -141,6 +141,7 @@ pub fn animates() -> Vec<MonsterEntry> {
         size: Size::Large,
         trained_skills: Some(vec![
             Skill::Endurance,
+            Skill::Flexibility,
             Skill::Stealth,
         ]),
         weapons: vec![],
