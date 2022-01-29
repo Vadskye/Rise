@@ -200,7 +200,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
                 Your connection to nature grants you the ability to use nature magic.
-                You gain access to one nature \glossterm{mystic sphere} (see \pcref{Nature Mystic Spheres}).
+                You gain access to one nature \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Nature Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional nature \glossterm{mystic sphere} per two \glossterm{insight points}.
                 You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
                 You do not yet gain access to any other spells from those mystic spheres.

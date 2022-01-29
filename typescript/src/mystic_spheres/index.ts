@@ -21,6 +21,7 @@ import { toxicology } from "./toxicology";
 import { umbramancy } from "./umbramancy";
 import { verdamancy } from "./verdamancy";
 import { vivimancy } from "./vivimancy";
+import { universal } from "./universal";
 
 export const mysticSpheres: MysticSphere[] = [
   aeromancy,
@@ -46,6 +47,7 @@ export const mysticSpheres: MysticSphere[] = [
   umbramancy,
   verdamancy,
   vivimancy,
+  universal,
 ];
 
 export type MysticSphereSource = "arcane" | "divine" | "domain" | "nature" | "pact";

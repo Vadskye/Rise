@@ -183,7 +183,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
                 Your devotion to your alignment grants you the ability to use divine magic.
-                You gain access to one divine \glossterm{mystic sphere} (see \pcref{Divine Mystic Spheres}).
+                You gain access to one divine \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Divine Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
                 You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
                 You do not yet gain access to any other spells from those mystic spheres.
