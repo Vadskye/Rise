@@ -474,7 +474,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
                 Your soulkeeper grants you the ability to use pact magic.
-                You gain access to one pact \glossterm{mystic sphere} (see \pcref{Pact Mystic Spheres}).
+                You gain access to one pact \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Pact Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional pact \glossterm{mystic sphere} per two \glossterm{insight points}.
                 You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
                 You do not yet gain access to any other spells from those mystic spheres.

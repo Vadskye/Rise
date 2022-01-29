@@ -183,49 +183,6 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Firebolt",
-
-      attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
-        `,
-      },
-
-      rank: 1,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Firebolt",
-
-      attack: {
-        hit: `The target takes 2d10 + \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
-        `,
-      },
-      rank: 4,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Firebolt",
-
-      attack: {
-        hit: `The target takes 5d10 + \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Armor against anything within \\distrange.
-        `,
-      },
-      rank: 7,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
       name: "Burning Hands",
 
       attack: {

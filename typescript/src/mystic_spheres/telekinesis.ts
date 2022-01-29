@@ -77,48 +77,6 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Force Slam",
-
-      attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
-        targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Force Slam",
-
-      attack: {
-        hit: `The target takes 2d10 + \\glossterm{power} bludgeoning damage.`,
-        targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
-        `,
-      },
-      rank: 4,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Force Slam",
-
-      attack: {
-        hit: `The target takes 5d10 + \\glossterm{power} bludgeoning damage.`,
-        targeting: `
-          Make an attack vs. Armor against anything within \\distrange.
-        `,
-      },
-      rank: 7,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
       name: "Force Lance",
 
       attack: {
