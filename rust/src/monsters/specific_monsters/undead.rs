@@ -65,6 +65,7 @@ pub fn undeads() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
     add_skeletons(&mut monsters);
+    add_vampires(&mut monsters);
     add_zombies(&mut monsters);
 
     monsters.push(MonsterEntry::Monster(FullUndeadDefinition {
@@ -280,6 +281,56 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
         weapons: vec![StandardWeapon::Slam.weapon()],
     }
     .monster();
+}
+
+pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
+    struct Vampire {
+        attributes: Vec<i32>,
+        challenge_rating: ChallengeRating,
+        knowledge: Option<Knowledge>,
+        level: i32,
+        modifiers: Option<Vec<Modifier>>,
+        name: String,
+        size: Size,
+        trained_skills: Option<Vec<Skill>>,
+        weapons: Vec<Weapon>,
+    }
+
+    impl Vampire {
+        fn monster(self) -> Monster {
+            return FullUndeadDefinition {
+                // From def
+                attributes: self.attributes,
+                challenge_rating: self.challenge_rating,
+                knowledge: self.knowledge,
+                level: self.level,
+                name: self.name,
+                modifiers: self.modifiers,
+                size: self.size,
+                trained_skills: self.trained_skills,
+                weapons: self.weapons,
+
+                alignment: "Usually lawful evil".to_string(),
+                description: None,
+                movement_modes: None,
+                senses: Some(vec![Sense::Darkvision(60)]),
+            }.monster();
+        }
+    }
+
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Vampires".to_string(),
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+            "),
+            (5, r"
+            "),
+            (10, "
+            "),
+        ])),
+        monsters: vec![
+        ],
+    }));
 }
 
 fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
