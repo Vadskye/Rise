@@ -140,7 +140,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
                 You have the ability to use arcane magic.
-                You gain access to one arcane \glossterm{mystic sphere} (see \pcref{Arcane Mystic Spheres}).
+                You gain access to one arcane \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Arcane Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional arcane \glossterm{mystic sphere} per two \glossterm{insight points}.
                 You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
                 You do not yet gain access to any other spells from those mystic spheres.
@@ -418,7 +418,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
                     \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
 
-                    \parhead{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
+                    \parhead{Sphere Specialization}\label{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
                     You gain a \glossterm{power} bonus equal to your rank in this archetype and a \plus1 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
                     In exchange, you must lose access to another \glossterm{mystic sphere} you have.
                     You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.

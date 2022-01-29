@@ -167,32 +167,6 @@ export const aeromancy: MysticSphere = {
       type: "Attune (target)",
     },
     {
-      name: "Windblast",
-
-      attack: {
-        // crit: '',
-        hit: "The target takes 1d8 + \\glossterm{power} bludgeoning damage.",
-        targeting: "Make an attack vs. Armor against anything within \\medrange.",
-      },
-      // narrative: '',
-      rank: 1,
-      scaling: "damage",
-      type: "Instant",
-    },
-    {
-      name: "Greater Windblast",
-
-      attack: {
-        // crit: '',
-        hit: "The target takes 4d8 + \\glossterm{power} bludgeoning damage.",
-        targeting: "Make an attack vs. Armor against anything within \\medrange.",
-      },
-      // narrative: '',
-      rank: 5,
-      scaling: "damage",
-      type: "Instant",
-    },
-    {
       name: "Windsnipe",
 
       attack: {

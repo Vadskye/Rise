@@ -242,13 +242,13 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Armor against everything within a \\smallarea radius from you.
+          Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -259,30 +259,13 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.
-        `,
-        targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\medarea radius from you.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Instant",
-    },
-    {
-      name: "Supreme Fountain",
-
-      attack: {
-        // crit: '',
-        hit: `
-          Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
