@@ -397,7 +397,7 @@ export const chronomancy: MysticSphere = {
 
         As a \\glossterm{standard action}, you can reach through time to restore the target's state.
         If you do, the target's \\glossterm{conditions} become identical to what they were when you cast this spell.
-        This restoration is a \\glossterm{Swift} effect, so it happens before any incoming attacks.
+        This restoration is a \\abilitytag{Swift} effect, so it happens before any incoming attacks.
         It does not affect any other properties of the target, such as any vital wounds gained or resources expended.
         After you restore the target's state in this way, it increases its \\glossterm{fatigue level} by two, and the spell ends.
       `,

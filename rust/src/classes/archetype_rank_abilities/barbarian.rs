@@ -767,7 +767,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Bear} The hit point bonus increases to four times your rank in this archetype.
                 In addition, the Fortitude bonus increases to \plus2.
 
-                \subcf{Crocodile} Once per round, when you make a creature lose \glossterm{hit points} with a melee \glossterm{strike}, you can choose to either \glossterm{grapple} it or knock it \glossterm{prone}.
+                \subcf{Crocodile} Once per round, when you make a creature lose \glossterm{hit points} with a melee \glossterm{strike}, you can choose to knock it \prone or enter a grapple with it (see \pcref{Grappling}).
 
                 % TODO: The narrative connection here is loose
                 \subcf{Eagle} You gain a \plus3 bonus to the Awareness skill.

@@ -216,7 +216,7 @@ export const thaumaturgy: MysticSphere = {
       functionsLike: {
         name: 'suppress magic',
         exceptThat: `
-          it can also affect \\glossterm{Curse} effects, and the range increases to \\distrange.
+          it can also affect \\abilitytag{Curse} effects, and the range increases to \\distrange.
         `,
       },
       rank: 5,
@@ -245,7 +245,7 @@ export const thaumaturgy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           on a hit, the effect ends completely instead of being suppressed.
-          In addition, this can also affect \\glossterm{Curse} effects, and the range increases to \\distrange.
+          In addition, this can also affect \\abilitytag{Curse} effects, and the range increases to \\distrange.
           However, the target's defense increases to 5 \\add twice its rank.
         `,
         name: "suppress magic",
@@ -515,7 +515,7 @@ export const thaumaturgy: MysticSphere = {
         In addition, whenever a creature within \\medrange of you misses you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
 
-        This is a \\glossterm{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
+        This is a \\abilitytag{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
       `,
       rank: 3,
       scaling: {
@@ -535,7 +535,7 @@ export const thaumaturgy: MysticSphere = {
         It cannot choose to reduce its accuracy or damage against itself.
         Any other targets of the ability are affected normally.
 
-        This is a \\glossterm{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
+        This is a \\abilitytag{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
       `,
       rank: 5,
       scaling: {
