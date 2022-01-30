@@ -225,21 +225,6 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: "Acid Splash",
-
-      attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} acid damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Instant",
-    },
-
-    {
       name: "Sudden Rot",
 
       attack: {
@@ -339,51 +324,6 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Instant",
-    },
-
-    {
-      name: "Acid Spray",
-
-      attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} acid damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Acid Spray",
-
-      attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} acid damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against everything in a \\medarea cone from you.
-        `,
-      },
-      rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Acid Spray",
-
-      attack: {
-        hit: `Each target takes 4d8 + \\glossterm{power} acid damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearea cone from you.
-        `,
-      },
-      rank: 7,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",

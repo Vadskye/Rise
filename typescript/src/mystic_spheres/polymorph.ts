@@ -201,20 +201,6 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Twist Flesh',
-
-      attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} physical damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: 'damage',
-      type: 'Instant',
-    },
-
-    {
       name: 'Shrink',
 
       castingTime: 'minor action',

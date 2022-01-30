@@ -497,6 +497,24 @@ export const summoning: MysticSphere = {
       tags: ["Manifestation"],
       type: "Attune (self)",
     },
+    {
+      name: "Summon Annoying Insects",
+
+      attack: {
+        crit: `The condition must be removed twice before the effect ends.`,
+        hit: `The target is \\dazed as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      narrative: `
+        It's hard to concentrate on a fight when you keep being distracted by a swarm of mosquitoes that buzz right into your ears.
+      `,
+      rank: 1,
+      scaling: "accuracy",
+      tags: ["Emotion"],
+      type: "Duration",
+    },
   ],
   rituals: [
     {
