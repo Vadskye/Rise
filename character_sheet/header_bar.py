@@ -1,4 +1,5 @@
 from cgi_simple import (
+    checkbox,
     div,
     flex_col,
     flex_row,
@@ -88,4 +89,7 @@ def nav_row():
             }
         ),
         span({"class": "nav-button-label"}, "Ref"),
+        checkbox(
+            {"class": "hidden is-monster", "name": "is_monster", "readonly": True}
+        ),
     ]

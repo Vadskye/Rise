@@ -28,9 +28,6 @@ def create_page(_destination):
     return flex_col(
         {"class": "page reference-page"},
         [
-            checkbox(
-                {"class": "hidden show-rust", "name": "show_rust", "readonly": True}
-            ),
             textarea({"class": "rust", "readonly": True, "name": "rust"}),
             flex_row(
                 {"class": "reference-row"},
