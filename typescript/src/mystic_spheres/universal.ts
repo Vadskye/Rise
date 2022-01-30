@@ -12,7 +12,7 @@ export const universal: MysticSphere = {
     Whenever you learn a spell or ritual from the universal mystic sphere, you must choose a different mystic sphere that you have access to.
     Treat that spell or ritual as if it belonged to your chosen mystic sphere instead of this one.
     This allows you to gain the benefits of any sphere-specific effects when you use the spell or ritual, such as a wizard's \\textit{specialization} ability (see \\pcref{Sphere Specialization}).
-    In addition, the chosen mystic sphere determines the damage type dealt by that spell, as listed in \tref{Universal Mystic Spheres}.
+    In addition, the chosen mystic sphere determines the damage type dealt by that spell, as listed in \\tref{Universal Mystic Spheres}.
     If the spell is \\spell{mystic bolt}, your chosen mystic sphere also determines the spell's defense.
     You can learn the same spell from this mystic sphere any number of times, choosing different base mystic spheres for that spell each time.
 
