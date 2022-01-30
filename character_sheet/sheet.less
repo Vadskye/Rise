@@ -32,10 +32,6 @@ div.full-sheet {
 
         > .flex-col {
             width: 35px;
-
-            > input[type=number] {
-                width: 35px;
-            }
         }
         > .flex-col.equation-result {
             width: 40px;
@@ -44,6 +40,21 @@ div.full-sheet {
                 width: 40px;
             }
         }
+        // Firefox only
+        @-moz-document url-prefix() { 
+            > .flex-col {
+                width: 40px;
+            }
+            > .flex-col.equation-result {
+                width: 45px;
+
+                > input[type=number] {
+                    width: 45px;
+                }
+            }
+        }
+
+
         > .flex-col.equation-glue {
           display: flex;
           justify-content: center;

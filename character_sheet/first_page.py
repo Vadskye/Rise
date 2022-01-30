@@ -401,7 +401,7 @@ def core_statistics():
                     [
                         number_input(
                             {
-                                "class": "wide-input",
+                                "class": "large-number-input",
                                 "name": "hit_points",
                                 "value": "@{hit_points}",
                             }
@@ -409,7 +409,7 @@ def core_statistics():
                         span({"class": "core-statistics-separator"}, "/"),
                         number_input(
                             {
-                                "class": "wide-input",
+                                "class": "large-number-input",
                                 "disabled": True,
                                 "name": "hit_points_maximum_display",
                                 "value": "@{hit_points_maximum}",
@@ -425,7 +425,7 @@ def core_statistics():
                     [
                         number_input(
                             {
-                                "class": "wide-input",
+                                "class": "large-number-input",
                                 "name": "damage_resistance",
                                 "value": "@{damage_resistance}",
                             }
@@ -433,7 +433,7 @@ def core_statistics():
                         span({"class": "core-statistics-separator"}, "/"),
                         number_input(
                             {
-                                "class": "wide-input",
+                                "class": "large-number-input",
                                 "disabled": True,
                                 "name": "damage_resistance_maximum_display",
                                 "value": "@{damage_resistance_maximum}",
@@ -449,7 +449,6 @@ def core_statistics():
                     [
                         number_input(
                             {
-                                "class": "wide-input",
                                 "name": "fatigue_points",
                                 "value": "@{fatigue_points}",
                             }
@@ -457,7 +456,6 @@ def core_statistics():
                         span({"class": "core-statistics-separator"}, "/"),
                         number_input(
                             {
-                                "class": "wide-input",
                                 "disabled": True,
                                 "name": "fatigue_tolerance_display_first_page",
                                 "value": "@{fatigue_tolerance}",
@@ -469,7 +467,6 @@ def core_statistics():
             sidelabeled_number_input(
                 "Accuracy",
                 input_attributes={
-                    "class": "wide-input",
                     "disabled": True,
                     "name": f"accuracy_display",
                     "value": "@{accuracy}",
@@ -495,7 +492,7 @@ def movement(destination):
             *[
                 freeform_number_input(
                     text_input_attributes={"name": f"movement_speed_{i}_name"},
-                    number_input_attributes={"name": f"movement_speed_{i}_value"},
+                    number_input_attributes={"class": "large-number-input", "name": f"movement_speed_{i}_value"},
                 )
                 for i in range(2)
             ],

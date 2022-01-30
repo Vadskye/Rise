@@ -56,21 +56,41 @@ div.full-sheet {
             font-size: 14px;
         }
 
-        input[type=number]::-webkit-inner-spin-button, 
-        input[type=number]::-webkit-outer-spin-button { 
-          -webkit-appearance: none; 
-          margin: 0; 
-        }
         input[type=number] {
+            width: 35px;
+        }
+
+        input[type=number].large-number-input {
             -moz-appearance: textfield;
         }
 
-        input[type=number].wide-input {
-            width: 35px;
+        input[type=number].large-number-input::-webkit-inner-spin-button,
+        input[type=number].large-number-input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            display: none;
+            margin: 0;
         }
-        input[type=number] {
-            width: 30px;
+
+        .large-number-equation {
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                display: none;
+                margin: 0;
+            }
         }
+
+        // Firefox only
+        @-moz-document url-prefix() { 
+            input[type=number] {
+                width: 40px;
+            }
+        }
+
         input[type=number]:disabled {
             box-shadow: none;
             border: none;
@@ -107,6 +127,18 @@ div.full-sheet {
 
     input[type=checkbox] {
         margin-top: 0.4em;
+    }
+
+    input[type=checkbox].is-monster:not(:checked) ~ .page {
+        .rust {
+            display: none;
+        }
+    }
+
+    input[type=checkbox].is-monster:checked ~ .page {
+        .rust {
+            display: flex;
+        }
     }
 }
 
