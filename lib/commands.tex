@@ -8,13 +8,13 @@
 \newcommand{\x}{x\xspace}
 %NOTED BUG: Spell names with mixed capitalization (Dispel magic) will not work properly.
 \newcommand{\combatstyle}[1]{\emph{\mbox{\hyperlink{style:#1}{#1}}}}    %Italicize combat styles
-\newcommand{\sphere}[1]{\emph{\mbox{\hyperlink{spell:#1}{#1}}}}    %Italicize mystic spheres
-\newcommand{\ability}[1]{\emph{\mbox{\hyperlink{ability:#1}{#1}}}}    %Italicize mystic spheres
-\newcommand{\spell}[1]{\emph{\mbox{\hyperlink{spell:#1}{#1}}}}    %Italicize spells
-\newcommand{\maneuver}[1]{\emph{\mbox{\hyperlink{maneuver:#1}{#1}}}}    %Italicize maneuvers
-\newcommand{\stance}[1]{\emph{\mbox{\hyperlink{stance:#1}{#1}}}}    %Italicize maneuvers
-\newcommand{\spellindirect}[2]{\emph{\hyperlink{spell:#1}{#2}}}
-\newcommand{\ritual}[1]{\emph{#1}}    %Italicize spells
+\newcommand{\sphere}[1]{\emph{\mbox{\hyperlink{sphere:#1}{#1}}}}    %Italicize mystic spheres
+\newcommand{\ability}[1]{\mbox{\hyperlink{ability:#1}{#1}}}
+\newcommand{\spell}[1]{\mbox{\hyperlink{spell:#1}{#1}}}
+\newcommand{\maneuver}[1]{\mbox{\hyperlink{maneuver:#1}{#1}}}
+\newcommand{\stance}[1]{\mbox{\hyperlink{stance:#1}{#1}}}
+\newcommand{\spellindirect}[2]{\hyperlink{spell:#1}{#2}}
+\newcommand{\ritual}[1]{\mbox{\hyperlink{spell:#1}}}
 \newcommand{\subcf}[1]{\parhead{#1}}    %Bold sub-class-feature headers
 \newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
 
