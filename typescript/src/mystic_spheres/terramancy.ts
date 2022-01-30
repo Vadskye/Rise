@@ -30,13 +30,13 @@ export const terramancy: MysticSphere = {
       name: "Rock Throw",
 
       attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 2d6 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Armor against anything within \\shortrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -46,29 +46,13 @@ export const terramancy: MysticSphere = {
       name: "Greater Rock Throw",
 
       attack: {
-        hit: `The target takes 2d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 4d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
+          Make an attack vs. Armor against anything within \\medrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
         `,
       },
-      rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Rock Throw",
-
-      attack: {
-        hit: `The target takes 5d10 + \\glossterm{power} bludgeoning damage.`,
-        targeting: `
-          Make an attack vs. Armor against anything within \\distrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
-        `,
-      },
-      rank: 7,
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -97,13 +81,29 @@ export const terramancy: MysticSphere = {
       name: "Shrapnel Blast",
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning and piercing damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning and piercing damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
           This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
         `,
       },
-      rank: 1,
+      rank: 3,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Shrapnel Blast",
+
+      attack: {
+        hit: `Each target takes 4d6 + \\glossterm{power} bludgeoning and piercing damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\medarea cone from you.
+          This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
+        `,
+      },
+      rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -135,6 +135,26 @@ export const terramancy: MysticSphere = {
 
     {
       name: "Earthspike",
+
+      attack: {
+        hit: `
+          The target takes 1d4 piercing damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+          This condition must be removed twice before the effect ends.
+        `,
+        targeting: `
+          Make an attack vs. Armor against anything within \\shortrange that is on a stable surface.
+          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
+        `,
+      },
+      rank: 1,
+      scaling: "accuracy",
+      tags: ["Manifestation"],
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Earthspike",
 
       attack: {
         hit: `The target takes 2d6 piercing damage.
@@ -216,20 +236,20 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: "Earthquake",
+      name: "Greater Earthquake",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
+        hit: `Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
         Each Huge or smaller target that takes damage this way is also knocked \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea radius within \\longrange that is on a stable surface.
+          Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
         `,
       },
       narrative: `
         You create an intense tremor that rips through the ground.
       `,
-      rank: 7,
+      rank: 6,
       type: "Instant",
     },
 
@@ -266,11 +286,23 @@ export const terramancy: MysticSphere = {
           It is \\slowed and unable to use any fly speed or glide speed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange that is no more than 120 feet above a stable surface that could support its weight.
+          Make an attack vs. Fortitude against one creature within \\shortrange that is no more than 120 feet above a stable surface that could support its weight.
           This attack gains a +2 \\glossterm{accuracy} bonus if that surface is a Medium or larger body of stone.
         `,
       },
-      rank: 2,
+      rank: 1,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Distant Earthbind",
+
+      functionsLike: {
+        name: "earthbind",
+        exceptThat: "the range increases to \\longrange",
+      },
+      rank: 3,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -373,12 +405,13 @@ export const terramancy: MysticSphere = {
 
       effect: `
         You are immune to \\glossterm{knockback} or \\glossterm{push} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
-        This does not make you immune to \\glossterm{teleportation}, and does not affect movement effects used by its \\glossterm{allies}.
+        This does not make you immune to \\glossterm{teleportation}, and does not affect movement effects used by your \\glossterm{allies}.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `You are also immune to \\glossterm{teleport} effects from attacks that are not critical hits.`,
-        6: `You are immune to knockback, push, and teleport effects from all attacks, including critical hits.`,
+        3: `You are also immune to \\glossterm{teleport} effects from attacks that are not critical hits.`,
+        5: `You are immune to knockback and push effects from all attacks, including critical hits.`,
+        7: `You are immune to teleport effects from all attacks, including critical hits.`,
       },
       type: "Attune (self)",
     },
@@ -392,9 +425,10 @@ export const terramancy: MysticSphere = {
         name: "Earthen Anchor",
       },
       // narrative: '',
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: "Each target is also immune to \\glossterm{teleport} effects from attacks that are not critical hits.",
+        5: "Each target is also immune to \\glossterm{teleport} effects from attacks that are not critical hits.",
+        7: `Each target is immune to knockback and push effects from all attacks, including critical hits.`,
       },
       type: "Attune (target)",
     },
@@ -422,16 +456,35 @@ export const terramancy: MysticSphere = {
       name: "Greater Volcano",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\arealarge radius from a point on a stable surface within \\longrange.
+          Make an attack vs. Reflex against everything in a \\medarea radius from a point on a stable surface within \\medrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.
         `,
       },
       narrative: `
         You create a large volcano that bursts forth, showering nearby creatures in burning shrapnel.
       `,
-      rank: 6,
+      rank: 4,
+      scaling: "damage",
+      tags: ["Manifestation"],
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Volcano",
+
+      attack: {
+        hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning and fire damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\largearea radius from a point on a stable surface within \\longrange.
+          This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Large or larger body of stone.
+        `,
+      },
+      narrative: `
+        You create an immense volcano that bursts forth, showering nearby creatures in burning shrapnel.
+      `,
+      rank: 7,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -457,6 +510,55 @@ export const terramancy: MysticSphere = {
         6: `The maximum distance increases to 30 feet.`,
       },
       type: "Attune (self)",
+    },
+
+    {
+      name: "Stonefist",
+
+      effect: `
+        You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
+        The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
+        In addition, it has the Forceful \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
+        Strikes using it are considered \\glossterm{magical} abilities, which means you use your Willpower to determine your damage dice instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+      `,
+      rank: 2,
+      narrative: `
+        You encase one of your arms in a mighty stone bulkward, empowering it to crush your foes with sheer brute force.
+      `,
+      scaling: {
+        4: `The knockback distance from the Forceful effect increases by 10 feet.`,
+        6: `You are considered one size category larger than normal for the purpose of determining the Forceful effect.`,
+      },
+      tags: ["Manifestation"],
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Wall of Stone",
+
+      effect: `
+        You create a wall of stone within \\medrange.
+        You can choose the dimensions of the wall, up to a maximum of a 15 ft.\\ high, \\smallarea length wall.
+        Every square of the wall must be supported by solid ground.
+        If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
+        This can allow you to completely block off small tunnels.
+
+        The wall is made of magically created stone.
+        Nothing can pass through the wall until it is destroyed.
+        Each 5-ft.\\ square of wall has 8 \\glossterm{hit points}, and all of its defenses are 0.
+        If a square of wall is on stone, its hit points are doubled.
+
+        When you cast this spell, you can \\glossterm{attune} to it.
+        If you do, it gains the \\abilitytag{Attune} (self) tag and loses the \\abilitytag{Sustain} (minor) tag.
+      `,
+      rank: 2,
+      scaling: {
+        3: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 16.`,
+        5: `The maximum area increases to a \\largearealong wall, and the hit points of each square increase to 32.`,
+        7: `The maximum area increases to a \\hugearealong wall, and the hit points of each square increase to 64.`,
+      },
+      tags: ["Manifestation"],
+      type: "Sustain (minor)",
     },
   ],
   rituals: [],

@@ -29,9 +29,9 @@ function generateMysticSphereSummary(sphere: MysticSphere): string {
   `;
 }
 
-function generateSpellsSummary(category: string, spells: SpellLike[]): string | null {
+function generateSpellsSummary(category: string, spells: SpellLike[]): string {
   if (!(spells?.length > 0)) {
-    return null;
+    return "";
   }
   return `\\par\\noindent ${category}: ${spells
     .map((s) => `\\spell{${s.name.toLowerCase()}}`)

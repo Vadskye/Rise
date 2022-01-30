@@ -173,9 +173,11 @@ export const pyromancy: MysticSphere = {
     {
       name: "Greater Fireball",
 
-      functionsLike: {
-        name: 'fireball',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
+      attack: {
+        hit: `Each target takes 4d8 + \\glossterm{power} fire damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\areasmall radius within \\medrange.
+        `,
       },
       rank: 7,
       scaling: "damage",
@@ -184,21 +186,6 @@ export const pyromancy: MysticSphere = {
 
     {
       name: "Burning Hands",
-
-      attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\areasmall cone from you.
-        `,
-      },
-
-      rank: 1,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Burning Hands",
 
       attack: {
         hit: `Each target takes 2d10 + \\glossterm{power} fire damage.`,
@@ -253,15 +240,15 @@ export const pyromancy: MysticSphere = {
       name: "Combustion",
 
       attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} fire damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} fire damage.`,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       narrative: `
         Your foe ignites into flame, burning from the inside out.
       `,
-      rank: 2,
+      rank: 1,
       scaling: "damage",
       type: "Instant",
     },
@@ -270,16 +257,16 @@ export const pyromancy: MysticSphere = {
       name: "Greater Combustion",
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} fire damage.
+        hit: `The target takes 4d8 + \\glossterm{power} fire damage.
         In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         Its body is completely incinerated, leaving behind only a pinch of fine ash.
         Its equipment is unaffected.`,
         targeting: `
-        Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
 
-      rank: 4,
+      rank: 5,
       scaling: "damage",
       type: "Instant",
     },
@@ -402,48 +389,6 @@ export const pyromancy: MysticSphere = {
       rank: 7,
       scaling: "damage",
       type: "Attune (self)",
-    },
-
-    {
-      name: "Inferno",
-
-      attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius from you.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Inferno",
-
-      attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea radius from you.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Inferno",
-
-      attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\hugearea radius from you.
-        `,
-      },
-      rank: 5,
-      scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -789,6 +734,51 @@ export const pyromancy: MysticSphere = {
       scaling: {
         6: `The target can remove two effects.`,
       },
+      type: "Instant",
+    },
+
+    {
+      name: "Uncontrolled Inferno",
+
+      attack: {
+        hit: `Each target takes 1d6 + half \\glossterm{power} fire damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\medarea radius from you.
+          In addition, you take fire damage equal to half your \\glossterm{power}.
+        `,
+      },
+      rank: 1,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Uncontrolled Inferno",
+
+      attack: {
+        hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\largearea radius from you.
+          In addition, you take fire damage equal to half your \\glossterm{power}.
+        `,
+      },
+      rank: 3,
+      scaling: "damage",
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Uncontrolled Inferno",
+
+      attack: {
+        hit: `Each target takes 4d8 + \\glossterm{power} fire damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\largearea radius from you.
+          In addition, you take fire damage equal to your \\glossterm{power}.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
       type: "Instant",
     },
   ],

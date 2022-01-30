@@ -238,11 +238,11 @@ export const barrier: MysticSphere = {
         Nothing can pass through the field until it is destroyed.
         This prevents you from having \\glossterm{line of effect} to anything outside of the area.
         When you move using one of your movement speeds, the sphere moves with you, though you cannot force it against another creature or object.
-        Each 5-ft.\\ square of the field has 16 \\glossterm{hit points}.
+        The field as a whole has 32 \\glossterm{hit points}.
         `,
       rank: 5,
       scaling: {
-        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 32.`,
+        7: `The \\glossterm{hit points} of the field increase to 64.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -258,7 +258,7 @@ export const barrier: MysticSphere = {
           The sphere is visible as a shimmering magical membrane that does not block sight.
           Nothing can pass through the sphere until it is destroyed.
           This prevents the target from having \\glossterm{line of effect} to anything outside of the area.
-          Each 5-ft.\\ square of the field has 32 \\glossterm{hit points}.
+          The field as a whole has 32 \\glossterm{hit points}.
 
           If another creature is in the target's space when this spell is cast, this spell fails without effect.
         `,
