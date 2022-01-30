@@ -543,3 +543,528 @@ This chapter describes the core mechanics of Rise.
             Undercommon & Drow                  & Elven
         \end{dtabularx}
     \end{dtable}
+
+\section{Ability Mechanics}\label{Ability Mechanics}
+
+    \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
+
+        There are two types of abilities: magical abilities and mundane abilities.
+
+        \parhead{Magical Abilities}\label{Magical Abilities} A \glossterm{magical} ability is an ability fundamentally composed of or fuelled by magic.
+        Magical abilities often have effects that would be impossible without magical intervention.
+        Examples include \glossterm{spells}, a dragon's breath weapon, and a paladin's ability to smite foes.
+        Abilities that are magical in nature are indicated with a (Magical) indicator.
+        Abilities that are not magical are \glossterm{mundane}.
+
+        \parhead{Mundane Abilities}\label{Mundane Abilities} A \glossterm{mundane} ability has some form of natural explanation and does not fundamentally originate from a magical source.
+        Examples include weapon attacks, a dragon's frightful presence, and a barbarian's rage.
+        Mundane attacks often target Armor defense.
+        Unless otherwise indicated, all abilities are mundane in nature.
+        Abilities that are not mundane are \glossterm{magical}.
+
+    \subsection{Targets}\label{Targets}
+        Almost all abilities affect targets.
+        A target of an ability is a creature directly affected by the ability in some way.
+        Many abilities affect targets within a specific \glossterm{range}.
+
+        \subsubsection{Targeted Abilities}\label{Targeted Abilities}
+            Some abilities allow you to choose specific targets.
+            There can be restrictions on the targets of the ability, such as ``a creature or object'' or ``an \glossterm{ally}''.
+            These abilities are called \glossterm{targeted} abilities.
+
+        \subsubsection{Area Abilities}
+            Some abilities affect all valid targets within a given area.
+            There can be restrictions on the targets of the ability, such as ``all creatures'' or ``all \glossterm{enemies}''.
+            However, you cannot individually choose to include or exclude specific targets.
+            These abilities are not \glossterm{targeted} abilities.
+
+        \subsubsection{Invalid Targets}
+            % clarify timing
+            You can always attempt to use an ability on an invalid target.
+            If the target is still invalid when the ability resolves, the ability automatically fails and has no effect on the target.
+
+    \subsection{Range}\label{Range}
+        Many abilities can only affect targets or areas within a given \glossterm{range} of you.
+        For abilities that affect specific targets, all targets must be within the range.
+        For abilities that affect an area within a range, the area's \glossterm{point of origin} must be within the range (see \pcref{Point of Origin}).
+        There are five common ranges: \rngshort, \rngmed, \rnglong, \rngdist, and \rngext.
+        Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
+
+    \subsection{Area}\label{Area}
+
+        Some abilities affect targets within an area.
+        All areas have a \glossterm{point of origin}, an area shape, a measurement of their size in feet, and an area type (see \pcref{Point of Origin}).
+
+        \subsubsection{Area Shapes}\label{Area Shapes}
+
+            \parhead{Cone} A cone extends from the point of origin in a quarter-hemisphere, up to the given length.
+            A square is affected by a cone if it is within the cone's 90 degree arc and all of the square's points of intersection are no more than the cone's length away from the cone's point of origin.
+
+            \parhead{Cylinder} A cylinder extends out from the point of origin in a circle, up to the given radius.
+            Cylinders also have a specific height.
+            Unless otherwise specified, a cylinder's height is the same as its radius.
+            Cylinders ignore obstacles that partially block line of effect, as long as there is a path around the obstacle that lies entirely within the ability's area.
+
+            \parhead{Line} A line extends from the point of origin in a straight line, up to the given length.
+            Lines also have a specific width and height.
+            Unless otherwise specified, a line-shaped ability affects an area 5 feet wide and 5 feet high.
+            The affected squares are chosen such that they stay close to the chosen line as possible.
+            All squares affected by a line must be contiguous, so every square is adjacent to another affected square, disregarding diagonals.
+
+            \parhead{Sphere} A sphere extends from the point of origin in all directions.
+            Any ability which only specifies a radius for its area is sphere-shaped.
+
+            \parhead{Wall} A wall is like a line, except that its width is not defined in squares.
+            Narratively, all walls have a nonzero width.
+            Mechanically, walls are considered to have no width and simply occupy the boundary between squares.
+            Like lines, some walls are shapeable.
+
+            Walls can normally be created within or adjacent to occupied squares, but not within solid objects.
+            If a wall has a physical presence, it cannot be created inside the space of a single creature, but it can be created between two adjacent creatures.
+
+            % \parhead{Specific Shapes} Some abilities specify a series of volumes that make up the area of the ability.
+            % Most commonly, the volumes are cubes.
+            % You may arrange the volumes as you want, with the restriction that each volume in the ability's area must be adjacent to one other volume in the ability's area.
+
+        \subsubsection{Area Size}
+
+            The area affected by many abilities falls into one of six sizes.
+            Each size defines the extent to which the ability extends out from its origin, whether as a radius or as a length.
+            Many abilities have specific sizes, as given in the ability description.
+
+            \parhead{Tiny} Tiny areas extend 5 feet from their point of origin.
+            \parhead{Small} Small areas extend 15 feet from their point of origin.
+            \parhead{Medium} Medium areas extend 30 feet from their point of origin.
+            \parhead{Large} Large areas extend 60 feet from their point of origin.
+            \parhead{Huge} Huge areas extend 120 feet from their point of origin.
+            \parhead{Gargantuan} Gargantuan areas extend 240 feet from their point of origin.
+
+        \subsubsection{Area Types}\label{Area Types}
+
+            \parhead{Burst} A burst ability has an immediate effect on all valid targets within an area.
+            If an ability does not explicitly specify its area type, it is normally a burst effect.
+            However, abilities that create wall-shaped areas are always zones.
+
+            \parhead{Emanation} An emanation ability has effects within an area for the duration of the ability.
+            It emanates from a specific creature or object, rather than a location.
+            If that creature or object moves, the emanation moves with it.
+
+            \parhead{Zone} A zone ability has effects within an area for the duration of the ability.
+            Unless otherwise noted, it does not move after being created.
+
+            When casting an area ability, you select the point where the ability originates.
+            The point of origin of a ability is always a grid intersection.
+            When determining whether a given creature is within the area of a ability, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
+            The only difference is that instead of counting from the center of one square to the center of the next, you count from intersection to intersection.
+
+            You can freely decrease a ability's area, provided that you decrease it uniformly across all of the ability's dimensions.
+            For example, you can cast a \spell{fireball} spell that affects a 5 foot radius if you choose to do so, but you can't cast a \spell{fireball} with any shape other than a sphere.
+
+            You can count diagonally across a square, but remember that every second diagonal counts as 2 squares of distance.
+            If the far edge of a square is within the ability's area, anything within that square is within the ability's area.
+            If the ability's area only touches the near edge of a square, however, anything within that square is unaffected by the ability.
+
+    \subsection{Ability Durations}\label{Ability Durations}
+
+        An ability's duration determines how long its effect lasts.
+        Abilities can have one of several different kinds of durations.
+
+        % TODO: Is this necessary?
+        % Should this clarify interactions with bursts/zones/emanations?
+        If an ability targets creatures or objects directly, the effects travel with the subjects for the ability's duration, even if the subjects go outside the ability's initial range.
+        If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
+        Such effects can sometimes be destroyed prior to when their duration ends.
+
+        \subsubsection{Attuned Abilities}\label{Attuned Abilities}
+            Many abilities last as long as a creature attunes to them.
+            Attuning to an ability costs an \glossterm{attunement point}.
+            You can never attune to the same ability more than once.
+
+            As long as you remain attuned to an ability, you cannot recover the attunement point you used to attune to that ability by any means.
+            As a \glossterm{free action}, you can \glossterm{dismiss} any number of effects that you are attuned to, which makes you stop being attuned to them.
+            After you stop being attuned to an ability, you can recover that attunement point when you take your next \glossterm{short rest}.
+            You must dismiss an attuned effect before you start the short rest to recover its attunement point.
+
+            There are three types of attunement abilities: self, target, and ritual.
+
+            \parhead{Attune (self)} A self attunement ability requires the creature using the ability to attune to the effect.
+
+            \parhead{Attune (target)} A target attunement ability requires the target of the ability to attune to the effect.
+            If the ability targets multiple creatures, each creature must attune to the ability independently.
+
+            As a special case, if a target attunement ability targets an inanimate object, the creature using the ability must attune to the effect.
+
+            \parhead{Attune (ritual)} Only \glossterm{rituals} have the \abilitytag{Attune} (ritual) tag (see \pcref{Rituals}).
+            A ritual attunement ability requires any participant in the ritual to attune to the effect.
+
+        \subsubsection{Conditions}\label{Conditions}
+            Many abilities impose \glossterm{conditions} on their targets.
+            A condition lasts until it is removed.
+            You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
+            There are several other abilities that can also remove conditions.
+
+        \subsubsection{Sustained Abilities}\label{Sustained Abilities}
+            Some abilities last as long as you take an action to sustain them each round.
+            The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
+            At the end of each round, the ability is dismissed unless you initiated the ability that round or took the action to sustain the ability that round.
+
+            % TODO: a more robust timing system would make stating this explicitly unnecessary
+            If a sustained ability has effects that trigger at the end of the round, it ends before having its effects if you fail to sustain the ability.
+
+            Taking an action to sustain an ability only allows you to sustain a single use of that ability.
+            However, you can sustain multiple separate abilities at once if you have available actions.
+
+            You can normally only sustain an ability for up to 5 minutes.
+            After that time, the ability's effect is \glossterm{dismissed}.
+
+        \subsubsection{Permanent Abilities}
+            Some abilities last permanently.
+            Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
+
+    \subsection{Combining Effects}
+        Abilities do not generally affect the way another abilities function.
+        However, sometimes multiple effects can be in conflict on a creature.
+        If one effect makes another effect irrelevant or impossible, the latter effect is ignored.
+        If two effects both conflict with each other, the most recent effect takes precedence, and the other is ignored.
+        Unless otherwise noted, two different uses of the same ability are always considered to be conflicting with each other.
+
+        All abilities will still have as much of their effect as possible.
+        It is possible for an ability to be partially effective in this way.
+
+    \subsection{Suppressing Abilities}\label{Suppressing Abilities}
+        Abilities can be \glossterm{suppressed} by effects such as the \spell{suppress magic} spell.
+        While an ability is suppressed, it has no effect.
+        However, if it stops being suppressed, its effects continue as if they had not been interrupted.
+
+    \subsection{Ability Tags}
+        Many abilities have tags that describe the nature of the ability.
+        Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
+        For a list of ability tags, see \pcref{Ability Tags}.
+
+\section{Spell and Ritual Mechanics}\label{Spell and Ritual Mechanics}
+
+    Spells and rituals share many common properties, defined here.
+
+    % TODO: description
+    \subsection{Categories of Magic}
+
+    \subsubsection{Magic Sources}
+        There are four \glossterm{magic sources} that characters can use to cast spells and perform rituals: arcane (cast by sorcerers and wizards), divine (cast by clerics and paladins), nature (cast by druids), and pact (cast by warlocks).
+        Each magic source has a set of associated \glossterm{mystic spheres} (see Mystic Spheres, below).
+        % TODO: more description
+
+        \parhead{Characters with Multiple Magic Sources}
+            A character can have access to multiple sources of magic through the use of abilities like the Hybrid Training ability (see \pcref{Half-Elves}).
+            The \glossterm{mystic spheres}, spells, and rituals that character knows are tracked separately for each source of magic that character has access to.
+            If you have access to the same spell or ritual from multiple sources, the two versions of the ability are generally considered to be the same ability.
+            When you cast the spell or perform the ritual, you choose which source you are using for the ability.
+
+        \subsubsection{Mystic Spheres}
+            A \glossterm{mystic sphere} is a collection of thematically related magical effects that includes both \glossterm{spells} and \glossterm{rituals}.
+            Each \glossterm{mystic sphere} can be associated with any number of \glossterm{magic sources}.
+            The mystic spheres are listed at \pcref{Mystic Spheres}.
+
+    \subsection{Ability Tags}
+        All spells have the \abilitytag{Magical} and \abilitytag{Spell} \glossterm{ability tags}, and all rituals have the \abilitytag{Magical} and \abilitytag{Ritual} ability tags.
+        Since spells and rituals are already clearly indicated in the Mystic Spheres chapter, the tags are omitted here for convenience.
+        Elsewhere in this book, such as in monster descriptions, those tags are used to indicate that some abilities are considered spells and rituals.
+
+    \subsection{Casting Components}\label{Casting Components}
+        Unless otherwise noted, all spells and rituals require \glossterm{verbal components} to cast or perform.
+        In addition, spells and rituals from arcane and pact mystic sources require \glossterm{somatic components}.
+        You cannot start casting a spell or performing a ritual without all required components.
+        If you lose those components before the ability resolves, the spell fails with no effect.
+
+        To provide the verbal component for a spell or ritual, you must speak in a strong voice with a volume at least as loud as ordinary conversation.
+        To provide the somatic component for a spell or ritual, you must make a precise series of movements with at least one free hand.
+        These movements involve your whole arm in addition to gestures with your fingers.
+
+        \subsubsection{Somatic Component Failure}\label{Somatic Component Failure}
+            Encumbrance from armor interferes with the \glossterm{somatic components} required to perform arcane spells, pact spells, and all rituals.
+            When you cast a spell or perform a ritual that requires \glossterm{somatic components} while you have an \glossterm{encumbrance}, you must roll 1d10.
+            If your result is less than or equal to your \glossterm{encumbrance}, the spell fails with no effect.
+            When you perform a ritual, this roll must be repeated at the end of each round during the ritual.
+
+    \subsection{Dismissal}\label{Dismissal}
+        Many abilities can intentionally be ended early if you \glossterm{dismiss} it.
+        When an ability is dismissed, all of its lingering effects immediately end.
+        Unless otherwise noted, all \glossterm{magical} abilities with a duration can be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
+        This includes \glossterm{conditions}, \glossterm{brief} effects, and other abilities with more specific durations.
+        You can dismiss abilities as a \glossterm{free action} that requires only mental effort.
+
+    \subsection{Resurrecting the Dead}\label{Resurrecting the Dead}
+        Several rituals have the power to restore dead characters to life.
+
+        When a living creature dies, its soul departs its body, travels through the Astral Plane, and goes to abide on the plane where the creature's deity resides.
+        If the creature did not worship a deity, its soul departs to the plane corresponding to its alignment.
+        Bringing a creature back from the dead means retrieving their soul and returning it to their body.
+
+        \parhead{Death and Old Age} While a creature is dead, it still tracks that time towards its maximum age.
+        A creature's maximum age is largely determined by the strength of its soul, not the condition of its body.
+        No magic can return a creature to life when it has passed its maximum age.
+
+        \parhead{Preventing Resurrection} Enemies can take steps to make it more difficult for a character to be returned from the dead.
+        Except for \spell{true resurrection}, every ritual to raise the dead requires a body, so keeping or destroying the body is an effective deterrent.
+        The \spell{soul bind} ritual prevents any sort of revivification unless the soul is first released.
+
+        \parhead{Involuntary Resurrection} A soul cannot be returned to life if it does not wish to be.
+        A soul infallibly knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
+
+    \subsection{Functioning Like Other Spells}\label{Functioning Like Other Spells}
+        Many spells and rituals say they ``function like'' some other spell or ritual, often with some noted changes.
+        Except as otherwise noted, they retain all of the original effects and targets of the spell.
+        However, they do not have the same rank upgrades as the original spell or ritual.
+
+    \subsection{Impossible Spells and Rituals}
+        When you try to use a spell or ritual in an impossible way, the ability fails with no effect.
+        This most commonly happens if you attempt to declare an invalid target for a spell.
+
+    \subsection{Spells}\label{Spells}
+        % TODO: better description
+        A \glossterm{spell} is a discrete magical effect with a name, a \glossterm{rank}, and an effect.
+        Each \glossterm{mystic sphere} has a number of spells associated with it.
+        An ability that gives you access to \glossterm{mystic spheres} will define how many spells you know.
+        A spell's \glossterm{rank} is the minimum \glossterm{archetype rank} you must have in the relevant spellcasting archetype to be able to learn and cast the spell.
+
+        \subsubsection{Cantrips}\label{Cantrips}
+            Some \glossterm{mystic spheres} have minor spells called cantrips.
+            Anyone who has access to a mystic sphere knows all cantrips from that sphere.
+
+    \subsection{Rituals}\label{Rituals}
+        Each \glossterm{mystic sphere} has a number of \glossterm{rituals}.
+        Some spellcasting characters can learn and perform rituals.
+        Rituals are ceremonies that create magical effects.
+        Like spells, each ritual has a name, a \glossterm{rank}, and an effect.
+        Although rituals are similar to spells, abilities that affect spells do not affect rituals unless they say they do in their descriptions.
+        % Oddly located
+        A ritual's \glossterm{rank} is the minimum \glossterm{archetype rank} you must have in the relevant spellcasting archetype to be able to learn and perform the ritual.
+
+        You don't memorize a ritual as you would a normal spell.
+        Rituals are too complex for all but the most knowledgeable sages to commit to memory.
+        To perform a ritual, you need to read from a book or a scroll containing it.
+        You must have access to the \glossterm{mystic sphere} a ritual is from in order to perform the ritual.
+
+        \subsubsection{Ritual Descriptions}
+            % TODO: proper chapter references
+            Rituals are described in the body of the \glossterm{mystic sphere} they are associated with, following the description of spells from that mystic sphere.
+
+        \subsubsection{Scribing Rituals}
+            A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{fatigue level} to perform the ritual.
+            Scribing a ritual costs precious magical ink with a value equal to an item of the ritual's rank (see \tref{Item Ranks}).
+
+        \subsubsection{Performing Rituals}
+            To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual.
+            Some rituals cause the creatures performing them to increase their \glossterm{fatigue level}, as indicated in their descriptions.
+            Other creatures can suffer this fatigue to help you perform rituals; see Ritual Participants, below.
+
+            % The fatigue level cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
+            % Should this be specified explicitly?
+
+        \subsubsection{Ritual Participants}
+            Creatures can assist in the performance of rituals even if they are unable to perform rituals themselves.
+            A creature that helps perform a ritual is called a ritual participant, and the creature performing the ritual is called the ritual leader.
+            A ritual participant may increase their \glossterm{fatigue level} in place of or in addition to the fatigue level gained by the creature performing the ritual.
+            If multiple creatures are willing to increase their fatigue level or attune to effects, the ritual leader decides which creatures increase their fatigue level or attune to the ritual's effects.
+
+            The steps required to participate in rituals can be complex.
+            Ritual participants must be given specific instructions for the actions they must perform during a ritual by a creature who knows how to perform the ritual.
+            This instruction generally takes one tenth of the time required to perform the ritual.
+            A creature cannot participate in rituals unless it has an Intelligence of at least 0, can speak at least one language, and has the fine motor control required to perform the \glossterm{somatic components} of rituals.
+
+            Normally, a ritual participant can only contribute \glossterm{fatigue levels} up to a maximum of their \glossterm{fatigue tolerance}.
+            If the participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of \glossterm{fatigue levels} (until they drop unconscious).
+            Creatures willing to fatigue themselves generally tire at a rate no faster than one fatigue level per ten minutes spent performing the ritual.
+
+            \parhead{Changing Ritual Participation}
+            Rituals are deeply complex magic, and they cannot be abandoned or paused partway through.
+            If the number of ritual participants in a ritual decreases below its initial value, the ritual fails at the end of the next round if the number of participants is not restored.
+            However, ritual participants can transfer their participation to other creatures without disrupting the ritual.
+
+            In order to transfer ritual participation, the new creature must be able to participate in the ritual.
+            Similarly, the ritual leader can transfer their leadership to another creature.
+            In addition to the requirements for transferring ritual participation, the new leader must know the ritual and be able to perform it themselves.
+
+            Changing ritual participation and leadership is usually done when performing extraordinarily long or demanding rituals.
+
+            \parhead{Attunement Rituals}
+                Rituals with the \abilitytag{Attune} (ritual) tag require a single ritual participant to \glossterm{attune} to the ritual's effect.
+                Any ritual participant can attune to the effect, but only one ritual participant can attune to the effect unless otherwise noted in the ritual's description.
+                For details, see \pcref{Attuned Abilities}.
+
+        \subsubsection{Magical Writings}
+            To record a spell in written form, a character uses complex notation that describes the magical forces involved in the spell.
+            The notation constitutes a universal language that spellcasters have discovered, not invented.
+            Each writer uses this universal system regardless of their native language or culture.
+            However, each character uses the system in their own way.
+            Another person's magical writing remains incomprehensible to even the most powerful spellcaster until they take the time to study and decipher it.
+
+\section{Breaking Objects}
+    There are two main ways of breaking objects.
+    You can deal damage to objects with attacks, similarly to how you can deal damage to creatures.
+    Alternately, you can attempt to sunder the object with sheer strength.
+
+    \subsection{Damaging Objects}
+        Objects have \glossterm{hit points} and \glossterm{damage resistance} like creatures.
+        However, they treat all damage they take as \glossterm{environmental damage} (see \pcref{Environmental Damage}).
+        That means that all damage they take is reduced by their \glossterm{damage resistance} without subtracting from the remaining value of their damage resistance.
+
+        An object becomes \glossterm{broken} if its \glossterm{hit points} are reduced to 0 (see \pcref{Broken and Destroyed Objects}).
+        Objects cannot gain \glossterm{vital wounds}.
+        Objects are also not normally subject to \glossterm{critical hits}.
+
+    \subsection{Object Statistics}
+        An object's size primarily influences the number of \glossterm{hit points} it has.
+        The primary material it is constructed from determines its \glossterm{damage resistance}, and can modify the number of hit points it has.
+        Details are given in \tref{Object Statistics By Size} and \tref{Object Statistics By Material}.
+
+        \begin{dtable}
+            \lcaption{Object Statistics By Size}
+            \begin{dtabularx}{\textwidth}{l X X}
+                \tb{Size}  & \tb{Hit Points} & \tb{Sunder Difficulty Value} \tableheaderrule
+                Fine       & 1               & 1\fn{1} \\
+                Diminutive & 2               & 2       \\
+                Tiny       & 5               & 5       \\
+                Small      & 10              & 10      \\
+                Medium     & 20              & 15      \\
+                Large      & 50              & 20      \\
+                Huge       & 100             & 25      \\
+                Gargantuan & 200             & 30      \\
+                Colossal   & 500             & 35      \\
+            \end{dtabularx}
+            1. Extremely small objects may be difficult to grip effectively, which can significantly increase the difficulty to sunder them.
+        \end{dtable}
+
+        \begin{dtable}
+            \lcaption{Object Statistics By Material}
+            \begin{dtabularx}{\textwidth}{l X X X}
+                \tb{Material}   & \tb{DR}\fn{1} & \tb{Hit Points Multiplier}\fn{2} & \tb{Sunder Difficulty Value Modifier}  \tableheaderrule
+                Adamantine      & 30                    & \mult3                & \plus20              \\
+                Glass           & 5                     & \mult1/2              & \tdash               \\
+                Ice             & 1                     & \mult1/2              & \minus5              \\
+                Iron or steel   & 12                    & \mult2                & \plus10              \\
+                Leather or hide & 3                     & \tdash                & \tdash               \\
+                Mithral         & 15                    & \mult2                & \plus10              \\
+                Paper or cloth  & 1                     & \mult1/2              & \minus5              \\
+                Rope            & 2                     & \tdash                & \tdash               \\
+                Stone           & 8                     & \mult2                & \plus5               \\
+                Wood            & 5                     & \tdash                & \tdash               \\
+            \end{dtabularx}
+            1. See \pcref{Damage Resistance}. \\
+            2. Any value here modifies the number of hit points the object would normally have based on its size.
+        \end{dtable}
+
+    \subsection{Sundering Objects}
+        As a standard action, you can attempt to sunder an object you can touch.
+        This requires two hands.
+        An object's size and primary material determines the \glossterm{difficulty value} of the check.
+        The \glossterm{difficulty value} of this check decreases by 2 if the object is below its maximum \glossterm{hit points}.
+        Success means that the object breaks.
+        Failure by 5 or less means the object loses a \glossterm{hit point}, but it does not break.
+        Failure by 6 or more means nothing happens.
+
+    \subsection{Broken and Destroyed Objects}\label{Broken and Destroyed Objects}
+        An object that is reduced to 0 \glossterm{hit points} becomes \glossterm{broken}.
+        You can destroy an object by causing it to lose additional hit points equal to ten times its maximum hit points, or by succeeding at a check to sunder the object by 20.
+
+        \parhead{Broken Objects}\label{Broken Objects}
+        Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work.
+        For example, a broken wall lies in pieces on the ground and no longer blocks passage, but can be repaired with far less effort than would be required to create a wall from scratch.
+        Magic items that are broken retain their magical properties once fixed.
+        Broken (but not destroyed) objects can be repaired with the Craft skill for a cost equal to 10\% of their value (see \pcref{Craft}).
+
+        \parhead{Destroyed Objects}\label{Destroyed Objects}
+        Destroyed object have been damaged beyond hope of any sort of repair short of crafting the object again from raw materials.
+        For example, a destroyed wall is reduced to dust or small, useless chunks of rubble.
+        Magic items that are destroyed irrevocably lose their magical properties.
+        The remains of a destroyed object generally occupy a space one size category smaller than the original object.
+
+    \subsection{Relative Damage Resistance}\label{Relative Damage Resistance}
+        When an object would take damage from a \glossterm{strike}, if the \glossterm{damage resistance} of the attacking object or creature is lower than the damage resistance of the defender, the attacking object or creature takes the damage instead.
+        For example, if you try to break a stone wall with a wooden club, the club will break instead of the wall.
+        % TODO: define hardness for creatures and their natural weapons; natural weapons should generally have higher hardness than creatures to avoid hardness reflection being common
+
+\section{Poison}\label{Poison}
+    Poisons can deal damage, weaken creatures, or even kill them.
+    Some effects which are not literally poisonous, such as animal venom or fungal spores, are considered poisons.
+    Unless otherwise noted, poisons are not \glossterm{conditions}, and cannot be removed by abilities that remove conditions (see \pcref{Conditions}).
+    Common poisons are listed in \pcref{Poisons}.
+
+    \subsection{Poison Transmission}\label{Poison Transmission}\label{Transmission}
+
+        There are three ways that poisons can be contracted.
+
+        \parhead{Contact} A contact poison affects any creature that touches it with bare skin.
+        \parhead{Ingestion} An ingestion poison affects any creature that eats, drinks, or breathes it, depending on the type of poison.
+        Ingestion poisons have no effect when touched or used to coat weapons.
+        \parhead{Injury} An injury poison affects any creature loses \glossterm{hit points} from something bearing the poison.
+        Almost all injury poisons take liquid form, and are typically used to coat weapons.
+
+    \subsection{Poison Forms}\label{Poison Forms}
+
+        There are four forms of poison.
+
+        \parhead{Gas} Gaseous poisons are difficult to store, but easy to affect foes with.
+        \parhead{Liquid} Liquid poisons are the most common type of poison.
+        Liquid poisons can be used to coat weapons, slipped into food, or simply thrown at foes.
+        A dose of a liquid poison is usually about one ounce of the poison.
+        \parhead{Pellet} Some rare poisons come in small, solid pellets or cubes.
+        Typically, these pellets contain a powerful liquid poison that becomes inert quickly after being exposed.
+        Pellet poisons cannot be used to coat weapons or thrown at foes, but can be slipped into food.
+        \parhead{Powder} Poison in powder form cannot be used to coat weapons, but can be slipped into food or thrown at foes.
+
+    \subsection{Poison Effects}\label{Poison Effects}
+
+        Poisons can have a wide variety of effects, as determined by the type of poison used.
+        However, most poison share certain common properties.
+
+        \parhead{Becoming Poisoned}
+        All poisons have an base \glossterm{accuracy}.
+        When a creature first comes into contact with a poison, the poison makes an attack roll using its accuracy against the Fortitude defense of the poisoned creature.
+        On a hit, the target becomes \glossterm{poisoned} and suffers the effects of the first stage of the poison.
+        On a critical hit, the target becomes \glossterm{poisoned} and suffers the effects of the two stages of the poison.
+        On a miss, the target is not \glossterm{poisoned}.
+
+        Some attacks make the target poisoned if they hit the target.
+        In that case, the ability's accuracy defines the poison's accuracy.
+
+        Many poisons have an additional effect when they hit the target for the third time.
+
+        \parhead{Poison Attacks}
+        At the end of each subsequent round after the target becomes poisoned, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
+        Each hit increases the \glossterm{poison stage} of the poison.
+        For every 10 points by which the attack hits, the poison progresses by an additional stage.
+        On a miss, the creature gets closer to resisting the poison (see Resisting Poisons, below).
+
+        \parhead{Resisting Poisons}
+        If a poison misses a creature three times with its attack at the end of each round, the creature stops being poisoned by that poison.
+        % Some poisons may require more attacks to end the poison, as indicated in their description.
+
+        \parhead{Multiple Doses}
+        A creature can be affected by multiple doses of the same poison.
+        This does not cause the same effect to occur multiple times.
+        However, each extra dose increases the accuracy of the poison by 1, up to a maximum bonus of \plus10 more than the poison's normal accuracy.
+
+        A poison is considered the same if it has the same name and comes from the same source.
+        For example, a creature bitten multiple times by the same giant spider suffers multiple doses of the same poison.
+        A creature bitten multiple times by different giant spiders considers each spider's poison separately.
+
+        \parhead{Poison Quality} Some poisons are unusually high or low quality.
+
+    \subsection{Creating Poisons}\label{Creating Poisons}
+
+        You can use the Craft (poison) skill to create poisons.
+        To create a poison, you must make a Craft (poison) check against a \glossterm{difficulty value} equal to 10 \add the poison's base accuracy.
+        For every 2 points by which you beat this \glossterm{difficulty value}, the created poison's accuracy gains a \plus1 bonus, up to a maximum bonus of \plus10 more than the poison's base accuracy.
+
+        Creating a poison requires special materials.
+        The type of materials required, and how those materials can be acquired, depend on the type of poison.
+
+        \begin{itemize}
+            \itemhead{Plant} Plant-based poisons can typically be harvested by making a Survival check to search in appropriate terrain.
+                The \glossterm{difficulty value} of this check is usually equal to 10 \add the base accuracy of the poison.
+            \itemhead{Venom} Venom requires an appropriate body part from a creature -- often, poison it naturally produces.
+            \itemhead{Alchemical} Alchemical poisons require alchemical materials.
+                These cannot normally be found in nature.
+                In unusual circumstances, these components can be synthesized from natural chemicals or magical materials with a Craft (alchemy) check equal to 10 \add the base accuracy of the poison.
+        \end{itemize}
+
