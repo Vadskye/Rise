@@ -244,6 +244,9 @@ def calc_damage_resistance():
         [
             div({"class": "calc-header"}, "DR"),
             equation(
+                {
+                    "class": "large-number-equation",
+                },
                 [
                     underlabel(
                         "Base",
@@ -358,6 +361,9 @@ def calc_hit_points():
         [
             div({"class": "calc-header"}, "HP"),
             equation(
+                {
+                    "class": "large-number-equation",
+                },
                 [
                     underlabel(
                         "Base",
