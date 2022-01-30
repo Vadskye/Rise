@@ -177,25 +177,6 @@ export const astromancy: MysticSphere = {
       tags: [],
       type: "Duration",
     },
-    {
-      name: "Dimensional Jaunt",
-
-      attack: {
-        hit: `
-          The target takes 1d8 + \\glossterm{power} energy damage.
-        `,
-        targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
-        `,
-      },
-      narrative: `
-        You send part of your foe's body to the Astral Plane.
-        Although most of its body remains where it was, something important - and painful - was lost.
-      `,
-      rank: 1,
-      scaling: "damage",
-      type: "Instant",
-    },
     // TODO: target wording is awkward
     {
       name: "Translocation",
@@ -402,25 +383,6 @@ export const astromancy: MysticSphere = {
       },
       type: "Attune (self)",
     },
-    // TODO: target wording
-    {
-      name: "Dimensional Shuffle",
-
-      effect: `
-        Choose up to five creatures from among you and your \\glossterm{allies} within \\longrange.
-        Each target \\glossterm{teleports} into the location of a different target.
-      `,
-      narrative: `
-        The kobold ambush exploited a weak point in your marching formation, and now everything is out of place.
-        With a rapid succession of pops, you find yourself safely at a distance while the kobolds face the barbarian's whirling greataxe.
-      `,
-      rank: 2,
-      scaling: {
-        4: "The range increases to \\distrange.",
-        6: "The range increases to \\extrange.",
-      },
-      type: "Instant",
-    },
     {
       name: "Dimension Walk",
 
@@ -503,7 +465,7 @@ export const astromancy: MysticSphere = {
       type: "Attune (self)",
     },
     {
-      name: "Transposition",
+      name: "Hostile Transposition",
 
       attack: {
         // crit: '',
@@ -512,7 +474,7 @@ export const astromancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against two Large or smaller creatures within \\longrange.
-          If either creature is not standing on solid ground, this spell fails.
+          If either target is not standing on solid ground with sufficient space to support the other target, this spell fails.
         `,
       },
       narrative: `
@@ -524,7 +486,27 @@ export const astromancy: MysticSphere = {
       type: "Instant",
     },
     {
-      name: "Massive Transposition",
+      name: "Transposition",
+
+      effect: `
+        Choose two \\glossterm{allies} within \\medrange.
+        Each target teleports into the other's location.
+        If either target is not standing on solid ground with sufficient space to support the other target, this spell fails.
+      `,
+      narrative: `
+        As your enemies drew close to you, they expected you to panic and run.
+        When you were unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The range increases to \\longrange.",
+        5: "The range increases to \\distrange.",
+        7: "The range increases to \\extrange.",
+      },
+      type: "Instant",
+    },
+    {
+      name: "Massive Hostile Transposition",
 
       functionsLike: {
         exceptThat: "it can affect creatures with a maximum size of Gargantuan.",
@@ -596,16 +578,18 @@ export const astromancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        When you move using one of your movement speeds, you can move through creatures freely.
+        When you move using one of your movement speeds, you can move through a single creature freely.
+        After you finish moving through one creature in this way, other \\glossterm{enemies} block your movement as normal.
         This does not allow you to move through inanimate objects.
-        If you end your movement in spaces occupied by other creatures, both of you are still \\squeezing.
+        If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \\squeezing as long as you continue sharing space (see \\pcref{Squeezing}).
         If you are not able to move normally, such as if you are \\grappled, this spell does not help you.
       `,
       narrative: `
         You augment your body with the ability to travel short distances through the Astral Plane to reach your destination.
       `,
-      rank: 3,
+      rank: 1,
       scaling: {
+        3: "You can move through any number of creatures rather than only one.",
         5: "You also ignore all sources of \\glossterm{difficult terrain}.",
         7: "You can also move through inanimate objects that are no more than six inches thick.",
       },
@@ -622,8 +606,9 @@ export const astromancy: MysticSphere = {
       narrative: `
         You augment the bodies of your allies with the ability to travel short distances through the Astral Plane to reach their destinations.
       `,
-      rank: 5,
+      rank: 3,
       scaling: {
+        5: "Each target can move through any number of creatures rather than only one.",
         7: "Each target can also ignore all sources of \\glossterm{difficult terrain}.",
       },
       type: "Attune (target)",
@@ -634,15 +619,16 @@ export const astromancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
+        Choose yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
         You send that creature into a random safe location in the Astral Plane, causing it to temporarily disappear.
         When you cast this spell, you choose how many rounds the target spends in the Astral Plane, up to a maximum of five rounds.
         At the end of the last round, it reappears in the same location where it disappeared, or in the closest unoccupied space if that location is occupied.
-        `,
+      `,
       rank: 2,
       scaling: {
-        4: `The maximum size of the target increases to Large.`,
-        6: `The maximum size of the target increases to Huge.`,
+        3: `The maximum size of the target increases to Large.`,
+        5: `The maximum size of the target increases to Huge.`,
+        7: `The maximum size of the target increases to Gargantuan.`,
       },
       type: "Duration",
     },

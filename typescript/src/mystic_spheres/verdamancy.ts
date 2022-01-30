@@ -126,13 +126,13 @@ export const verdamancy: MysticSphere = {
       name: "Vine Whip",
 
       attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 2d6 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Armor against one creature within \\medrange.
+          Make an attack vs. Armor against one creature within \\shortrange.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -142,29 +142,13 @@ export const verdamancy: MysticSphere = {
       name: "Greater Vine Whip",
 
       attack: {
-        hit: `The target takes 2d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 4d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Armor against one creature within \\longrange.
+          Make an attack vs. Armor against one creature within \\medrange.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
         `,
       },
-      rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Vine Whip",
-
-      attack: {
-        hit: `The target takes 5d10 + \\glossterm{power} bludgeoning damage.`,
-        targeting: `
-          Make an attack vs. Armor against one creature within \\distrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
-        `,
-      },
-      rank: 7,
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",
@@ -176,7 +160,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Armor against everything in a \\smallarea radius from you.
+          Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
         `,
       },
@@ -190,30 +174,13 @@ export const verdamancy: MysticSphere = {
       name: "Greater Vinestorm",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 4d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
           You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
         `,
       },
-
-      rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Vinestorm",
-
-      attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.`,
-        targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
-        `,
-      },
-      rank: 7,
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Instant",

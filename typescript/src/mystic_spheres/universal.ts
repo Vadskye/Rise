@@ -9,43 +9,45 @@ export const universal: MysticSphere = {
     Every spellcaster has access to this mystic sphere without needing to spend insight points.
     It contains a variety of simple magical effects that all spellcasters can manage to replicate, though the details can change based on their individual fields of specialization.
 
-    Whenever you learn a spell or ritual from the universal mystic sphere, you must choose a different mystic sphere that you have access to from among the mystic spheres listed in \\tref{Mystic Sphere Damage Types}.
-    The type of damage dealt by that spell or ritual matches the damage type listed in the Mystic Sphere Damage Types table.
-    In addition, treat that spell or ritual as if it belonged to your chosen mystic sphere instead of this one.
+    Whenever you learn a spell or ritual from the universal mystic sphere, you must choose a different mystic sphere that you have access to.
+    Treat that spell or ritual as if it belonged to your chosen mystic sphere instead of this one.
     This allows you to gain the benefits of any sphere-specific effects when you use the spell or ritual, such as a wizard's \\textit{specialization} ability (see \\pcref{Sphere Specialization}).
+    In addition, the chosen mystic sphere determines the damage type dealt by that spell, as listed in \tref{Universal Mystic Spheres}.
+    If the spell is \\spell{mystic bolt}, your chosen mystic sphere also determines the spell's defense.
+    You can learn the same spell from this mystic sphere any number of times, choosing different base mystic spheres for that spell each time.
 
     The names of the abilities from this mystic sphere have fairly generic names to reflect their universal nature.
     As with all other spells, you should feel free to rename them for your own character to make them more interesting and relevant for you.
     For example, a pyromancer might rename their \\spell{mystic bolt} spell to something more fire-themed, like \\textit{firebolt} or \\textit{flamelance}.
 
-   \\begin{dtable}
-        \\lcaption{Mystic Sphere Damage Types}
-        \\begin{dtabularx}{\\columnwidth}{l >{\\lcol}X}
-            \\tb{Mystic Sphere} & \\tb{Damage Type} \\tableheaderrule
-            Aeromancy & Bludgeoning \\\\
-            Aquamancy & Bludgeoning \\\\
-            Astromancy & Energy \\\\
-            Barrier & Physical \\\\
-            Bless & Energy \\\\
-            Channel Divinity & Energy \\\\
-            Chronomancy & Energy \\\\
-            Cryomancy & Cold \\\\
-            Electromancy & Electricity \\\\
-            Enchantment & Energy and \\glossterm{subdual} \\\\
-            Fabrication & Physical \\\\
-            Photomancy & Energy \\\\
-            Polymorph & Physical \\\\
-            Pyromancy & Fire \\\\
-            Revelation & Energy and \\glossterm{subdual} \\\\
-            Summoning & Physical \\\\
-            Telekinesis & Physical \\\\
-            Terramancy & Bludgeoning \\\\
-            Thaumaturgy & Energy \\\\
-            Toxicology & Acid \\\\
-            Umbramancy & Cold \\\\
-            Verdamancy & Physical \\\\
-            Vivimancy & Energy \\\\
-        \\end{dtabularx}
+    \\begin{dtable}
+      \\lcaption{Universal Mystic Spheres}
+      \\begin{dtabularx}{\\columnwidth}{l >{\\lcol}X >{\\lcol}X}
+        \\tb{Mystic Sphere} & \\tb{Mystic Bolt Defense} & \\tb{Damage Type} \\tableheaderrule
+        Aeromancy       & Armor     & Bludgeoning \\\\
+        Aquamancy       & Armor     & Bludgeoning \\\\
+        Astromancy      & Mental    & Energy      \\\\
+        Barrier         & Armor     & Physical    \\\\
+        Bless           & Mental    & Energy and \\glossterm{subdual} \\\\
+        Channel Energy  & Mental    & Divinity    \\\\
+        Chronomancy     & Fortitude & Energy      \\\\
+        Cryomancy       & Fortitude & Cold        \\\\
+        Electromancy    & Fortitude & Electricity \\\\
+        Enchantment     & Mental    & Energy and \\glossterm{subdual} \\\\
+        Fabrication     & Armor     & Physical    \\\\
+        Photomancy      & Fortitude & Energy      \\\\
+        Polymorph       & Fortitude & Physical    \\\\
+        Pyromancy       & Armor     & Fire        \\\\
+        Revelation      & Mental    & Energy and \\glossterm{subdual} \\\\
+        Summoning       & Armor     & Physical    \\\\
+        Telekinesis     & Armor     & Physical    \\\\
+        Terramancy      & Armor     & Bludgeoning \\\\
+        Thaumaturgy     & Fortitude & Energy      \\\\
+        Toxicology      & Fortitude & Acid        \\\\
+        Umbramancy      & Fortitude & Cold        \\\\
+        Verdamancy      & Armor     & Physical    \\\\
+        Vivimancy       & Fortitude & Energy      \\\\
+      \\end{dtabularx}
     \\end{dtable}
   `,
   spells: [
@@ -55,7 +57,8 @@ export const universal: MysticSphere = {
       attack: {
         hit: `The target takes 1d8 + \\glossterm{power} damage.`,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack against anything within \\medrange.
+          The defense depends on the mystic sphere you learn this spell with, as listed in \\tref{Universal Mystic Spheres}.
         `,
       },
       rank: 1,
@@ -68,7 +71,8 @@ export const universal: MysticSphere = {
       attack: {
         hit: `The target takes 2d8 + \\glossterm{power} damage.`,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack against anything within \\medrange.
+          The defense depends on the mystic sphere you learn this spell with, as listed in \\tref{Universal Mystic Spheres}.
         `,
       },
       rank: 3,
@@ -81,7 +85,8 @@ export const universal: MysticSphere = {
       attack: {
         hit: `The target takes 4d10 + \\glossterm{power} damage.`,
         targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
+          Make an attack against anything within \\longrange.
+          The defense depends on the mystic sphere you learn this spell with, as listed in \\tref{Universal Mystic Spheres}.
         `,
       },
       rank: 6,

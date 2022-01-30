@@ -45,12 +45,38 @@ export const electromancy: MysticSphere = {
       name: "Lightning Bolt",
 
       attack: {
+        hit: `Each target takes 1d6 + half \\glossterm{power} electricity damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide line from you.
+        `,
+      },
+      rank: 1,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Greater Lightning Bolt",
+
+      attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
         `,
       },
       rank: 3,
+      scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Supreme Lightning Bolt",
+
+      attack: {
+        hit: `Each target takes 2d10 + half \\glossterm{power} electricity damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\gargarealong, 15 ft. wide line from you.
+        `,
+      },
+      rank: 6,
       scaling: "damage",
       type: "Instant",
     },
@@ -239,48 +265,6 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Electric Jolt",
-
-      attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} electricity damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Electric Jolt",
-
-      attack: {
-        hit: `The target takes 2d10 + \\glossterm{power} electricity damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against anything within \\longrange.
-        `,
-      },
-      rank: 4,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Electric Jolt",
-
-      attack: {
-        hit: `The target takes 5d10 + \\glossterm{power} electricity damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against anything within \\distrange.
-        `,
-      },
-      rank: 7,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
       name: "Electroshock",
 
       attack: {
@@ -315,14 +299,14 @@ export const electromancy: MysticSphere = {
 
       attack: {
         // +1d from normal AOE due to weird area that probably just hits one person
-        hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide vertical line within \\longrange.
+          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide vertical line within \\medrange.
           If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm{accuracy} with the attack.
           If this spell has its area increased, only the length of the line increases.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "damage",
       type: "Instant",
     },
@@ -563,6 +547,36 @@ export const electromancy: MysticSphere = {
       rank: 6,
       scaling: "damage",
       type: "Duration",
+    },
+
+    {
+      name: "Shocking Burst",
+
+      attack: {
+        hit: `Each target takes 1d6 + half \\glossterm{power} electricity damage.`,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+        `,
+      },
+      rank: 1,
+      scaling: "damage",
+      tags: [],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Shocking Burst",
+
+      attack: {
+        hit: `Each target takes 4d8 + \\glossterm{power} electricity damage.`,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+        `,
+      },
+      rank: 5,
+      scaling: "damage",
+      tags: [],
+      type: "Instant",
     },
   ],
   rituals: [],

@@ -41,7 +41,7 @@ export const aeromancy: MysticSphere = {
       type: "Sustain (minor)",
     },
     {
-      name: "Soften Landing",
+      name: "Feather Fall",
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\longrange.

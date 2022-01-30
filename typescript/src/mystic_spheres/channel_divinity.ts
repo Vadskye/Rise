@@ -104,63 +104,16 @@ export const channelDivinity: MysticSphere = {
       name: "Endurance of the Faithful",
 
       effect: `
-        You are \\trait{impervious} to all damage this round.
-        Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
+        You gain a +2 bonus to all defenses and a +2 bonus to \\glossterm{vital rolls} this round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `You also gain a +2 bonus to \\glossterm{vital rolls} this round.`,
-        6: `The bonus to vital rolls increases to +4.`,
+        3: `The bonuses increase to +3.`,
+        5: `The bonuses increase to +4.`,
+        7: `The bonuses increase to +5.`,
       },
       tags: ["Swift"],
-      type: "Instant",
-    },
-
-    {
-      name: "Divine Judgment",
-
-      attack: {
-        hit: `
-          The target takes 1d8 + \\glossterm{power} energy damage.
-        `,
-        targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Divine Judgment",
-
-      attack: {
-        hit: `
-          The target takes 2d10 + \\glossterm{power} energy damage.
-        `,
-        targeting: `
-          Make an attack vs. Mental against anything within \\longrange.
-        `,
-      },
-      rank: 4,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Divine Judgment",
-
-      attack: {
-        hit: `
-          The target takes 5d10 + \\glossterm{power} energy damage.
-        `,
-        targeting: `
-          Make an attack vs. Mental against anything within \\distrange.
-        `,
-      },
-      rank: 7,
-      scaling: "damage",
       type: "Instant",
     },
 
@@ -397,8 +350,8 @@ export const channelDivinity: MysticSphere = {
       effect: `
         You gain a +1 \\glossterm{magic bonus} to \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
       `,
-      rank: 3,
-      scaling: { 5: `The bonus increases to +2.`, 7: `The bonus increases to +3.` },
+      rank: 2,
+      scaling: { 4: `The bonus increases to +2.`, 6: `The bonus increases to +3.` },
       type: "Attune (self)",
     },
 
