@@ -300,7 +300,7 @@ export const terramancy: MysticSphere = {
 
       functionsLike: {
         name: "earthbind",
-        exceptThat: "the range increases to \\longrange",
+        exceptThat: "the range increases to \\longrange.",
       },
       rank: 3,
       scaling: "accuracy",
