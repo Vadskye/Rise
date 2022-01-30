@@ -203,7 +203,7 @@ pub fn generate_module() -> Module {
             If the guards hear anything odd outside of their room during the meal, they will send two warriors to investigate.
             After the meal, they will all investigate any noises as a group.
             If the guards notice the party enter the room, they will immediately attack, though it will take them all a standard action to draw their weapons.
-            Although they have orders to keep all prisoners alive, they will not fight using \\glossterm<subdual damage> unless they are confident that they are not in danger.
+            Although they have orders to keep all prisoners alive, they will not fight using subdual damage unless they are confident that they are not in danger.
 
             The cleric has a \\mitem<belt of vital persistence>, two \\mitem<potion of healing> items and 4 gp.
             Each warrior carries 2 gp.
