@@ -182,7 +182,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon.
         Your \\glossterm{power} with the strike is halved.
-        You \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with \\glossterm{strikes} against each creature damaged by that strike.
+        You \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with \\glossterm{strikes} against each target of that strike.
       `,
       rank: 1,
       scaling: {
