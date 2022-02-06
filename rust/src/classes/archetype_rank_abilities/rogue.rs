@@ -10,10 +10,9 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus2 bonus to the Stealth skill.
-                In addition, using the \textit{desperate exertion} ability to affect a roll using the Stealth skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+                You gain a \plus3 bonus to the Stealth skill.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Stealth, 2)]),
+            modifiers: Some(vec![Modifier::Skill(Skill::Stealth, 3)]),
         },
         RankAbility {
             name: "Sneak Attack",
@@ -866,10 +865,9 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus2 bonus to the Deception skill.
-                In addition, using the \textit{desperate exertion} ability to affect a roll using the Deception skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+                You gain a \plus3 bonus to the Deception skill.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Deception, 2)]),
+            modifiers: Some(vec![Modifier::Skill(Skill::Deception, 3)]),
         },
         RankAbility {
             name: "Confound",

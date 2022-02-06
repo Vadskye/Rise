@@ -359,7 +359,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
                 You gain a \plus2 bonus to all Knowledge skills.
-                In addition, using the \textit{desperate exertion} ability to affect a roll using a Knowledge skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
             ",
             modifiers: Some(vec![Modifier::Skill(
                 Skill::Knowledge(vec![

@@ -10,10 +10,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus2 bonus to the Endurance skill.
-                In addition, using the \textit{desperate exertion} ability to affect a roll using the Endurance skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+                You gain a \plus3 bonus to the Endurance skill.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Skill(Skill::Endurance, 3)]),
         },
         RankAbility {
             name: "Battle-Scarred",
@@ -388,6 +387,16 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             rank: 0,
             description: r"
                 You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+        },
+        RankAbility {
+            name: "Outlandish Weaponry",
+            is_magical: false,
+            rank: 0,
+            description: r"
+                You can spend two \glossterm{insight points}.
+                If you do, you gain proficiency with \glossterm{exotic weapons} from all \glossterm{weapon groups} that you are already proficient with (see \pcref{Exotic Weapons}).
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
