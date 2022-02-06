@@ -291,6 +291,18 @@
             This represents you wasting time trying to watch the creature, giving it extra time to beat you in any sort of opposed contest or race.
         \end{instantability}
 
+        \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
+
+        \begin{durationability}{Struggle}
+            \label{Struggle}
+            Duration
+            \rankline
+            Until the end of the current phase, your land speed becomes five feet, regardless of all other effects that would modify your land speed.
+            In addition, you can move a distance up to your land speed.
+            This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
+            It also does not help you if you are unable to use your movement speeds, such as if you are \immobilized.
+        \end{durationability}
+
         \parhead{Withdraw} As a \glossterm{move action}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
 
         \begin{instantability}{Withdraw}
@@ -504,23 +516,23 @@
         \begin{dtable}
             \lcaption{Special Combat Abilities}
             \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
-                \tb{Ability}             & \tb{Defense} & \tb{Brief Description} \tableheaderrule
-                Charge                   & Armor        & Move and attack                      \\
-                Desperate Exertion\fn{2} & \tdash       & Gain a bonus on a single roll        \\
-                Dirty Trick              & Fort or Ref  & Impose penalty on a foe              \\
-                Disarm                   & Ref          & Attack item, knocking it free        \\
-                Grapple                  & Fort and Ref & Wrestle with a foe                   \\
-                Offhand Strike           & Armor        & Make a strike with an offhand weapon \\
-                Overrun\fn{1}            & Fort         & Move through foe's space             \\
-                Recover\fn{1}            & \tdash       & Regain hit points, remove conditions \\
-                Shove                    & Fort         & Move a foe                           \\
-                Sprint\fn{1}             & \tdash       & Move at double speed                 \\
-                Struggle                 & \tdash       & Move 5 feet regardless of penalties  \\
-                Total Defense            & \tdash       & Gain \plus2 to defenses              \\
-                Throw                    & \tdash       & Throw a held object                  \\
-                Trip                     & Ref          & Trip a foe                           \\
+                \tb{Ability}             & \tb{Defense}       & \tb{Brief Description} \tableheaderrule
+                Charge                   & Armor              & Move and attack                      \\
+                Desperate Exertion\fn{1} & \tdash             & Gain a bonus on a single roll        \\
+                Dirty Trick              & Fort or Ref\fn{2}  & Impose penalty on a foe              \\
+                Disarm                   & Ref\fn{2}          & Attack item, knocking it free        \\
+                Grapple                  & Fort and Ref\fn{2} & Wrestle with a foe                   \\
+                Offhand Strike           & Armor              & Make a strike with an offhand weapon \\
+                Overrun\fn{1}            & Fort\fn{2}         & Move through foe's space             \\
+                Recover\fn{1}            & \tdash             & Regain hit points, remove conditions \\
+                Shove                    & Fort\fn{2}         & Move a foe                           \\
+                Sprint\fn{1}             & \tdash             & Move at double speed                 \\
+                Total Defense            & \tdash             & Gain \plus2 to defenses              \\
+                Throw                    & \tdash             & Throw a held object                  \\
+                Trip                     & Ref\fn{2}          & Trip a foe                           \\
             \end{dtabularx}
             1. This ability increases your \glossterm{fatigue level} when used. \\
+            2. For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack. \\
         \end{dtable}
 
         \parhead{Charge} You can use the \textit{charge} ability as a standard action.
@@ -584,6 +596,7 @@
             Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
             This attack must beat the target's Reflex defense.
             If the target is attended by a creature, the attack must also beat the attending creature's Reflex defense.
+            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack.
 
             \hit You choose whether the target object takes damage from the weapon you hit it with.
             In addition, if it is \glossterm{attended} and is not held in a hand or well secured, you can choose to knock it loose.
@@ -599,7 +612,7 @@
             Duration
             \rankline
             Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your \glossterm{reach}.
-            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy}.
+            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack.
 
             On a hit against both defenses, you and the target are \grappled by each other.
             For details, see \pcref{Grappling}.
@@ -628,7 +641,7 @@
             You can try to move directly through creatures in your way during this movement.
             Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
             If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
-            For each size category by which you are larger or smaller than the target, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
+            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack.
             If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \squeezing as long as you continue sharing space (see \pcref{Squeezing}).
 
             On a hit, you can move through each target's space.
@@ -658,6 +671,7 @@
 
             Make a melee attack with a free hand against the Fortitude defense of each target.
             Your \glossterm{accuracy} with this attack is equal to half your level \add your Strength.
+            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack.
             If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
 
             On a hit, you can move up to half your movement speed in a straight line, \glossterm{pushing} each target as you move.
@@ -678,18 +692,6 @@
             You can immediately take another \glossterm{move action}.
             For the duration of that move action, you double your speed with all of your movement modes.
         \end{instantability}
-
-        \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
-
-        \begin{durationability}{Struggle}
-            \label{Struggle}
-            Duration
-            \rankline
-            Until the end of the current phase, your land speed becomes five feet, regardless of all other effects that would modify your land speed.
-            In addition, you can move a distance up to your land speed.
-            This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
-            It also does not help you if you are unable to use your movement speeds, such as if you are \immobilized.
-        \end{durationability}
 
         \parhead{Throw} You can use the \textit{throw} ability to throw an object.
         You can use the ability as a standard action.
@@ -735,7 +737,7 @@
             Make a melee attack using a free hand or a weapon with the Tripping tag against a creature's Reflex defense (see \pcref{Weapon Tags}).
             If you attack with a weapon, you add the weapon's accuracy bonus, if any, to the attack.
             However, this is not a \glossterm{strike}, so abilities like the \glossterm{Sweeping} weapon tag have no effect on this attack.
-            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy}.
+            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack.
 
             On a hit, the target becomes \prone.
             In addition, if you made the attack with a Tripping weapon, the target also takes damage as if you had hit it with a \glossterm{strike} using the weapon.
