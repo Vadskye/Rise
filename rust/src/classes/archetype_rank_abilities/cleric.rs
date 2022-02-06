@@ -373,10 +373,9 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 0,
             description: r"
-                You gain a \plus2 bonus to the Medicine skill.
-                In addition, using the \textit{desperate exertion} ability to affect a roll using the Medicine skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+                You gain a \plus3 bonus to the Medicine skill.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Medicine, 2)]),
+            modifiers: Some(vec![Modifier::Skill(Skill::Medicine, 3)]),
         },
         RankAbility {
             name: "Restoration",
@@ -496,10 +495,9 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus2 bonus to the Persuasion skill.
-                In addition, using the \textit{desperate exertion} ability to affect a roll using the Persuasion skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+                You gain a \plus3 bonus to the Persuasion skill.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 2)]),
+            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 3)]),
         },
         RankAbility {
             name: "Denounce the Heathens",
@@ -538,10 +536,9 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                The bonus from your \textit{practiced persuasion} ability increases to \plus4.
-                In addition, you can use the \textit{desperate exertion} ability any number of times to affect the same Persuasion check.
+                The bonus from your \textit{practiced persuasion} ability increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 2)]),
+            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 3)]),
         },
         RankAbility {
             name: "Bless the Worthy",

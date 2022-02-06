@@ -10,10 +10,9 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus2 bonus to the Jump skill.
-                In addition, using the \textit{desperate exertion} ability to affect a roll using the Jump skill only causes you to increase your \glossterm{fatigue level} by one instead of two.
+                You gain a \plus3 bonus to the Jump skill.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Jump, 2)]),
+            modifiers: Some(vec![Modifier::Skill(Skill::Jump, 3)]),
         },
         RankAbility {
             name: "Acrobatic Accuracy",
