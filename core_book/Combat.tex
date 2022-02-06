@@ -961,54 +961,6 @@
             In either case, the mount acts according to its nature.
             Most mounts flee combat without a rider.
 
-    \subsection{General Calculations}
-
-        \subsubsection{Stacking Rules}\label{Stacking Rules}
-            Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result.
-            However, some modifiers do not stack with each other, as described below.
-            When bonuses don't stack with each other, you only apply the largest bonus.
-            Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
-
-            \parhead{Special Exceptions}
-
-            \begin{itemize}
-                \item Effects from the same source do not stack. Any ability with the same name has the same source.
-                \item Magic bonuses do not stack with each other.
-                \item If a creature gains the same condition multiple times, the effects do not stack, but each instance of the condition is tracked separately.
-                    The creature must remove all instances of the condition before the effects are removed.
-                % TODO: clarify why Dragon stacks with magic effects - maybe change size changes to "magic bonus" wording?
-                \item Multiple \glossterm{magical} effects that change a creature's \glossterm{size category} do not stack.
-                    If multiple magical effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
-                % TODO: is this necessary? can this even happen?
-                \item If you have two separate abilities which let you add the same attribute to a given roll or statistic, the attribute is still only added once.
-            \end{itemize}
-
-        \subsubsection{Maximum Bonuses}\label{Ability Limits}
-            Some bonuses specify that they cannot increase the value beyond a given point.
-            These bonuses must always be applied last, and cannot be combined with other bonuses to exceed the maximum value.
-            If multiple bonuses specify different maximum values, use the lower maximum value.
-            If a bonus with a maximum value is applied to a value that already exceeds the maximum value the bonus can provide, simply ignore the bonus and its maximum value.
-
-        \subsubsection{Doubling and Halving}\label{Doubling and Halving}
-            If you double any in-game value twice, it becomes three times as large.
-            An additional doubling would make it four times as large, and so on.
-            Likewise, if you halve any in-game value twice, it becomes one-third as large.
-            For example, if you have two different abilities that double your \glossterm{power} with an attack, you triple your power with that attack.
-
-            This also applies to calculations using real-world values, such as movement and distance, as long as you're calculating the effects of abilities.
-            For example, if you have two different abilities that double your range with a spell, your total range with that spell is three times the spell's normal range.
-
-        \subsubsection{Changing Statistics}
-
-            Your modifiers and defenses can change for many reasons.
-            In general, all changes take effect immediately.
-
-            It is not normally possible for a character to lose access to resources that require them to make choices, such as insight points or trained skills.
-            If a character does somehow lose the prerequisites for choices they have made, such as if their Intelligence is permanently reduced, they immediately lose relevant abilities until they are within their new limits.
-
-        \subsubsection{Rounding}
-            In general, if you encounter a fractional number, you round it down.
-
     \subsection{Allies and Enemies}\label{Allies and Enemies}
         Each creature you interact with in Rise is either an \glossterm{ally}, an \glossterm{enemy}, or a \glossterm{neutral party}.
         Some beneficial abilities only affect allies, and some offensive abilities only affect enemies.
