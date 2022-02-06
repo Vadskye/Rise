@@ -177,6 +177,10 @@
 
         \parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls just like any other creature would in midair. As long as it still has the ability to fly, it can regain control of its fall as a standard action, causing it to resume flying normally.
 
+        \subsubsection{Size-Limited Abilities While Flying}
+            You can reach a creature's weak spots more easily while flying than while trying to attack its feet from the ground.
+            While flying, you are treated as one size category larger than normal for the purpose of determing the effects of your melee \abilitytag{Size-Limited} abilities.
+
         \subsubsection{Flying Maneuverability}\label{Flying Maneuverability}
         Each creature with a fly speed also has a maneuverability: good, average, or poor.
         Unless otherwise specified, a creature with a fly speed has average maneuverability.
@@ -528,14 +532,12 @@
                 Trip                     & Ref\fn{2}          & Trip a foe                           \\
             \end{dtabularx}
             1. This ability increases your \glossterm{fatigue level} when used. \\
-            2. For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack. \\
+            2. This ability is \ability{Size-Limited} (see \pcref{Size-Limited}). \\
         \end{dtable}
 
-        \parhead{Charge} You can use the \textit{charge} ability as a standard action.
+        \parhead{Charge}\label{Charge} You can use the \textit{charge} ability as a standard action.
 
-        \begin{instantability}{Charge}
-            \label{Charge}
-            Instant
+        \begin{instantability}{Charge}[Instant]
             \rankline
             After you use this ability, you \glossterm{briefly} take a \minus2 penalty to all defenses.
             This ability does not have the \abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
@@ -550,10 +552,8 @@
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
         However, you must use it before the phase is over.
 
-        \begin{instantability}{Desperate Exertion}
-            \spelltwocol{Instant}{\abilitytag{Swift}}
-            % This has to be after a line break for bizarre HTML generation reasons
-            \label{Desperate Exertion}
+        \begin{instantability}{Desperate Exertion}[Instant]
+            \abilitytag{Swift}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
 
@@ -565,10 +565,10 @@
             You cannot use this ability multiple times to affect the same roll.
         \end{instantability}
 
-        \parhead{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
+        \parhead{Dirty Trick}\label{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
 
-        \begin{durationability}{Dirty Trick}\label{Dirty Trick}
-            Duration
+        \begin{durationability}{Dirty Trick}[Duration]
+            \abilitytag{Size-Limited}
             \rankline
             When you use this ability, you must describe the kind of dirty trick you are performing.
             For example, you can pull a creature's pants down, throw sand, or otherwise use your environment to attack.
@@ -583,16 +583,15 @@
             Otherwise, this effect is a \glossterm{condition}.
         \end{durationability}
 
-        \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
+        \parhead{Disarm}\label{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
 
-        \begin{instantability}{Disarm}\label{Disarm}
-            Instant
+        \begin{instantability}{Disarm}[Instant]
+            \abilitytag{Size-Limited}
             \rankline
             Make a melee \glossterm{strike} against an object.
             Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
             This attack must beat the target's Reflex defense.
             If the target is attended by a creature, the attack must also beat the attending creature's Reflex defense.
-            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack.
 
             \hit You choose whether the target object takes damage from the weapon you hit it with.
             In addition, if it is \glossterm{attended} and is not held in a hand or well secured, you can choose to knock it loose.
@@ -602,13 +601,12 @@
             \crit As above, except that you can deal double damage and you can also knock loose objects that are held in a single hand, but not objects that are held in two hands or well secured.
         \end{instantability}
 
-        \parhead{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
+        \parhead{Grapple}\label{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
 
-        \begin{durationability}{Grapple}\label{Grapple}
-            Duration
+        \begin{durationability}{Grapple}[Duration]
+            \abilitytag{Size-Limited}
             \rankline
             Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your \glossterm{reach}.
-            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack.
 
             On a hit against both defenses, you and the target are \grappled by each other.
             For details, see \pcref{Grappling}.
@@ -616,8 +614,7 @@
 
         \parhead{Offhand Strike}\label{Offhand Strike} As a \glossterm{minor action}, you can use the \textit{offhand strike} ability to quickly attack with an offhand weapon while you attack with a primary weapon.
         Your Dexterity must be at least 1 to use this ability.
-        \begin{instantability}{Offhand Strike}
-            Instant
+        \begin{instantability}{Offhand Strike}[Instant]
             \rankline
             Make a \glossterm{strike} with one non-heavy weapon that you are \glossterm{proficient} with.
             You cannot use this ability unless you also make a \glossterm{strike} with a different weapon as part of a \glossterm{standard action} during the same phase.
@@ -625,11 +622,10 @@
             In addition, you take a \minus1 penalty to \glossterm{accuracy} with the strike for each non-light weapon you attack with this phase, including the weapon used to make this strike.
         \end{instantability}
 
-        \parhead{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
+        \parhead{Overrun}\label{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
 
-        \begin{instantability}{Overrun}
-            \label{Overrun}
-            Instant
+        \begin{instantability}{Overrun}[Instant]
+            \abilitytag{Size-Limited}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by one.
 
@@ -637,7 +633,6 @@
             You can try to move directly through creatures in your way during this movement.
             Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
             If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
-            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack.
             If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \squeezing as long as you continue sharing space (see \pcref{Squeezing}).
 
             On a hit, you can move through each target's space.
@@ -645,10 +640,8 @@
             On a miss, you end your movement immediately.
         \end{instantability}
 
-        \parhead{Recover} You can use the \textit{recover} ability as a standard action.
-        \begin{instantability}{Recover}
-            \label{Recover}
-            Instant
+        \parhead{Recover}\label{Recover} You can use the \textit{recover} ability as a standard action.
+        \begin{instantability}{Recover}[Instant]
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you take a short rest.
 
@@ -658,16 +651,15 @@
             If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \pcref{Simultaneous Damage and Healing}).
         \end{instantability}
 
-        \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
+        \parhead{Shove}\label{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
 
-        \begin{instantability}{Shove}\label{Shove}
-            Instant
+        \begin{instantability}{Shove}[Instant]
+            \abilitytag{Size-Limited}
             \rankline
             Choose either one creature within your \glossterm{reach} or all creatures grappling you (see \pcref{Grappling}).
 
             Make a melee attack with a free hand against the Fortitude defense of each target.
             Your \glossterm{accuracy} with this attack is equal to half your level \add your Strength.
-            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack.
             If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
 
             On a hit, you can move up to half your movement speed in a straight line, \glossterm{pushing} each target as you move.
@@ -676,11 +668,10 @@
 
         % It's important that this can only be used with move actions
         % to prevent it from being abused with abilities like Shove.
-        \parhead{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
+        \parhead{Sprint}\label{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
 
-        \begin{instantability}{Sprint}
-            \label{Sprint}
-            \spelltwocol{Instant}{\abilitytag{Swift}}
+        \begin{instantability}{Sprint}[Instant]
+            \abilitytag{Swift}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by one.
             You can use this ability in the middle of the movement phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
@@ -689,7 +680,7 @@
             For the duration of that move action, you double your speed with all of your movement modes.
         \end{instantability}
 
-        \parhead{Throw} You can use the \textit{throw} ability to throw an object.
+        \parhead{Throw}\label{Throw} You can use the \textit{throw} ability to throw an object.
         You can use the ability as a standard action.
         Alternately, you can use it as a \glossterm{move action}.
         If you do, you take a \minus20 penalty to the check, and you cannot make an attack roll to hit with the thrown object.
@@ -697,9 +688,7 @@
         As long as you have a Strength of at least \minus2, you do not have to use this ability to throw weapons that are sized appropriately for you and which are designed to be thrown.
         Instead, you can simply use the listed \glossterm{range limits} for those weapons.
 
-        \begin{instantability}{Throw}
-            \label{Throw}
-            Instant
+        \begin{instantability}{Throw}[Instant]
             \rankline
             Make a Strength check to throw an object you hold in at least one hand.
             The base \glossterm{difficulty value} of this check is 0.
@@ -713,27 +702,23 @@
             That attack roll is rolled separately from the Strength check you make to use this ability.
         \end{instantability}
 
-        \parhead{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
+        \parhead{Total Defense}\label{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
 
-        \begin{durationability}{Total Defense}
-            \spelltwocol{Duration}{\abilitytag{Swift}}
-            % This has to be after a line break for bizarre HTML generation reasons
-            \label{Total Defense}
+        \begin{durationability}{Total Defense}[Duration]
+            \abilitytag{Swift}
             \rankline
             You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
             Because this ability has the \abilitytag{Swift} tag, this improves your defenses against attacks made against you during the current phase.
         \end{durationability}
 
-        \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
+        \parhead{Trip}\label{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
 
-        \begin{instantability}{Trip}
-            \label{Trip}
-            Instant
+        \begin{instantability}{Trip}[Instant]
+            \abilitytag{Size-Limited}
             \rankline
             Make a melee attack using a free hand or a weapon with the Tripping tag against a creature's Reflex defense (see \pcref{Weapon Tags}).
             If you attack with a weapon, you add the weapon's accuracy bonus, if any, to the attack.
             However, this is not a \glossterm{strike}, so abilities like the \glossterm{Sweeping} weapon tag have no effect on this attack.
-            For each size category by which the target is larger than you, you take a \minus4 penalty to \glossterm{accuracy} with this attack.
 
             On a hit, the target becomes \prone.
             In addition, if you made the attack with a Tripping weapon, the target also takes damage as if you had hit it with a \glossterm{strike} using the weapon.
@@ -758,11 +743,9 @@
         \subsubsection{Grapple Actions}\label{Grapple Actions}
             While grappled, you can use two special abilities to try to affect the grapple.
 
-            \parhead{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
+            \parhead{Escape Grapple}\label{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
 
-            \begin{instantability}{Escape Grapple}
-                \label{Escape Grapple}
-                Instant
+            \begin{instantability}{Escape Grapple}[Instant]
                 \rankline
                 Make an attack against any number of creatures that you are grappled by.
                 You may use either the Flexibility skill or half your level \add your Strength in place of your normal \glossterm{accuracy} with this attack (see \pcref{Flexibility}).
@@ -772,10 +755,10 @@
                 For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
             \end{instantability}
 
-            \parhead{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
+            \parhead{Maintain Grapple}\label{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
             If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
-            \begin{instantability}{Maintain Grapple}
-                \spelltwocol{Instant}{Swift}
+            \begin{instantability}{Maintain Grapple}[Duration]
+                \abilitytag{Swift}
                 \rankline
                 Make an attack using a \glossterm{free hand}.
                 You may use half your level \add your Strength in place of your normal \glossterm{accuracy} with this attack.

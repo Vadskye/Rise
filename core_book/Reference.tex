@@ -44,6 +44,9 @@
     \par The sensor can be dismissed as if it were an active spell.
     You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way.
 
+    \abilitytagdef{Size-Limited} Size-Limited abilities have no effect on creatures or objects that are more than one size category larger than you.
+    You can bypass this limitation for melee Size-Limited abilities with the \ability{creature climb} ability (see \pcref{Creature Climb}), or simply by flying close (see \pcref{Flying Mechanics}).
+
     \abilitytagdef{Speech} Speech abilities use words to achieve their ends.
     You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
 
@@ -149,9 +152,10 @@
     \debuffdef{prone} A prone creature is lying on the ground, rather than standing normally.
     It takes a \minus2 penalty to Armor and Reflex defenses, though it gains a \plus4 bonus to all defenses against ranged \glossterm{strikes}.
     In addition, it takes a \minus2 accuracy penalty.
-    It moves at half of its normal speed until it stands up.
-    A creature can stand up from being prone during the movement phase.
-    This generally requires one free hand.
+    It moves at half of its normal speed, and is considered one size category smaller than normal for determining whether it is subject to melee \abilitytag{Size-Limited} effects, including critical hits.
+
+    A creature can stand up from being prone as a \glossterm{move action}.
+    This generally requires one \glossterm{free hand}.
 
     \debuffdef{shaken} A shaken creature takes a \minus2 penalty to \glossterm{accuracy} and Mental defense while it is within \rngmed range of the source of its fear.
     This does not stack with the \frightened or \panicked effects.
