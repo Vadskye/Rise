@@ -591,6 +591,8 @@ def attack_button_text(damage_text=None):
 
 
 def universal_ability_button(name, effect, attack=None):
+    tags = attack.get("tags", []) if attack else []
+    tags_text = f" {{{{Tags={', '.join(tags)}}}}}" if len(tags) > 0 else ""
     return div(
         button(
             {
@@ -599,6 +601,7 @@ def universal_ability_button(name, effect, attack=None):
                     "&{template:custom}"
                     + f" {{{{title={name}}}}}"
                     + " {{subtitle=@{character_name}}}"
+                    + tags_text
                     + (
                         f" {{{{Attack=[[d10!+{attack['accuracy']}]] vs {attack['defense']}}}}}"
                         if attack
@@ -649,26 +652,25 @@ def universal_abilities():
             universal_ability_button(
                 "Dirty Trick",
                 """
-                    Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the target suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
-                    If the target is at its maximum hit points, this is a brief effect. Otherwise, this effect is a condition.
+                    Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the target suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental. On a critical hit, the effect becomes a condition.
                  """,
-                attack={"accuracy": "@{accuracy}", "defense": "Fort or Ref"},
+                attack={"accuracy": "@{accuracy}", "defense": "Fort or Ref", "tags": ["Size-Limited"]},
             ),
             universal_ability_button(
                 "Disarm",
                 """
-                    Make a melee strike against an object's Reflex defense.
-                    On a hit, it may take damage from your strike. If it is attended and not held in a hand or well secured, you can choose to knock it loose. On a crit, you can deal double damage and you can also knock loose objects that are held in a single hand.
+                    Make a melee strike vs. Reflex.
+                    On a hit, one of the target's objects may take damage from your strike. If it is attended and not held in a hand or well secured, you can choose to knock it loose. On a critical hit, you can deal double damage and you can also knock loose objects that are held in a single hand.
                  """,
-                attack={"accuracy": "@{accuracy}", "defense": "Ref"},
+                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Limited"]},
             ),
             universal_ability_button(
                 "Grapple",
                 """
-                    Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your reach. For each size category by which the target is larger than you, you take a -4 penalty to accuracy.
+                    Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your reach.
                     On a hit against both defenses, you and the target are grappled by each other.
                 """,
-                attack={"accuracy": "@{accuracy}", "defense": "Fort and Ref"},
+                attack={"accuracy": "@{accuracy}", "defense": "Fort and Ref", "tags": ["Size-Limited"]},
             ),
             universal_ability_button(
                 "Maintain Grapple",
@@ -681,10 +683,10 @@ def universal_abilities():
                 "Overrun",
                 """
                     After you use this ability, you increase your fatigue level by one.
-                    Move up to your movement speed in a straight line, even through creatures. Make an attack vs. Fortitude against each creature that you move through who does not choose to avoid you. For each size category by which you are larger or smaller than the target, you gain a +4 bonus or penalty to accuracy.
+                    Move up to your movement speed in a straight line, even through creatures. Make an attack vs. Fortitude against each creature that you move through who does not choose to avoid you.
                     On a hit, you move through each creature's space. On a critical hit, you also knock each creature prone. On a miss, you end your movement immediately.
                  """,
-                attack={"accuracy": "", "defense": "Fort"},
+                attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Limited"]},
             ),
             universal_ability_button(
                 "Recover",
@@ -696,10 +698,10 @@ def universal_abilities():
             universal_ability_button(
                 "Shove",
                 """
-                    Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against the Fortitude defense of each target. Your accuracy with this attack is equal to half your level \\add your Strength. If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
+                    Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against each target. Your accuracy with this attack is equal to half your level \\add your Strength. If you are not able to use any of your movement speeds, you automatically fail when you try to use this ability.
                     On a hit, you can move up to half your movement speed in a straight line, pushing each target as you move. On a critical hit, you can move up to your full movement speed instead.
                  """,
-                attack={"accuracy": "floor(@{level}/2)+@{strength}", "defense": "Fort"},
+                attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Limited"]},
             ),
             universal_ability_button(
                 "Sprint",
@@ -718,10 +720,10 @@ def universal_abilities():
             universal_ability_button(
                 "Trip",
                 """
-                    Make a melee attack with a free hand against a creature's Reflex defenses. For each size category by which the target is larger than you, you take a -4 penalty to accuracy.
+                    Make a melee attack with a free hand.
                     On a hit, the target becomes prone.
                  """,
-                attack={"accuracy": "@{accuracy}", "defense": "Ref"},
+                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Limited"]},
             ),
             universal_ability_button(
                 "Total Defense",
