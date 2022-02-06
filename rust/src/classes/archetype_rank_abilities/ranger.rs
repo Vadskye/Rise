@@ -248,10 +248,9 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 0,
             description: r"
-                You gain a \plus3 bonus to Survival checks to follow tracks.
-                In addition, using the \textit{desperate exertion} ability on a Survival check to follow tracks only causes you to increase your \glossterm{fatigue level} by one instead of two.
+                You gain a \plus3 bonus to the Survival skill.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Skill(Skill::Survival, 3)]),
         },
         RankAbility {
             name: "Quarry",
