@@ -359,7 +359,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You can use your \textit<miracle> ability once per \glossterm{long rest} instead of once per week.
+                You can use your \textit<miracle> ability once per 24 hours instead of once per week.
             ",
             modifiers: None,
         },
