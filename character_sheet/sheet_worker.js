@@ -621,7 +621,7 @@ function handleCustomModifiers() {
             armor_defense_custom_modifier:
               totalCustomModifiers.armor_defense || 0,
             damage_resistance_bonus_custom_modifier:
-              totalCustomModifiers.energy_resistance_bonus || 0,
+              totalCustomModifiers.damage_resistance_bonus || 0,
             encumbrance_custom_modifier: totalCustomModifiers.encumbrance || 0,
             fatigue_tolerance_custom_modifier:
               totalCustomModifiers.fatigue_tolerance || 0,
