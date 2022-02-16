@@ -568,12 +568,10 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                Whenever you would take damage, you can choose to have your armor crumple under the attack, cushioning the blow.
-                If you do, you reduce that damage by 5.
-                This can prevent you from taking damage from that attack at all.
-                After you reduce damage twice in this way, you cannot do so again until you take a \\glossterm<short rest>.
+                Whenever you would take \\glossterm<physical damage>, your armor crumples under the attack, reducing that damage by 5.
+                After damage is reduced twice in this way, this has no effect until you take a \\glossterm<short rest>.
             """,
-            short_description="Reduces damage from two attacks by 5",
+            short_description="Reduces physical damage from two attacks by 5",
         ),
         MagicItem(
             name="Crumpling Armor, Greater",
@@ -583,7 +581,7 @@ def generate_armor():
             description="""
                 This armor functions like \\mitem<crumpling armor>, except that the damage reduction increases to 10.
             """,
-            short_description="Reduces damage from two attacks by 10",
+            short_description="Reduces physical damage from two attacks by 10",
         ),
         MagicItem(
             name="Crumpling Armor, Supreme",
@@ -593,7 +591,7 @@ def generate_armor():
             description="""
                 This armor functions like \\mitem<crumpling armor>, except that the damage reduction increases to 20.
             """,
-            short_description="Reduces damage from two attacks by 20",
+            short_description="Reduces physical damage from two attacks by 20",
         ),
     ]
 
