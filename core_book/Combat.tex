@@ -177,9 +177,10 @@
 
         \parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls just like any other creature would in midair. As long as it still has the ability to fly, it can regain control of its fall as a standard action, causing it to resume flying normally.
 
-        \subsubsection{Size-Limited Abilities While Flying}
+        \subsubsection{Size-Based Abilities While Flying}
             You can reach a creature's weak spots more easily while flying than while trying to attack its feet from the ground.
-            While flying, you are treated as one size category larger than normal for the purpose of determing the effects of your melee \abilitytag{Size-Limited} abilities.
+            While flying, you are treated as one size category larger than normal for the purpose of determing the effects of your \abilitytag{Size-Based} abilities.
+            This cannot be combined with other effects that increase your effective size for the purpose of Size-Based abilities, such as climbing on creatures (see \pcref{Creature Climb}).
 
         \subsubsection{Flying Maneuverability}\label{Flying Maneuverability}
         Each creature with a fly speed also has a maneuverability: good, average, or poor.
@@ -532,7 +533,7 @@
                 Trip                     & Ref\fn{2}          & Trip a foe                           \\
             \end{dtabularx}
             1. This ability increases your \glossterm{fatigue level} when used. \\
-            2. This ability is \ability{Size-Limited} (see \pcref{Size-Limited}). \\
+            2. This ability is \ability{Size-Based} (see \pcref{Size-Based}). \\
         \end{dtable}
 
         \parhead{Charge}\label{Charge} You can use the \textit{charge} ability as a standard action.
@@ -568,7 +569,7 @@
         \parhead{Dirty Trick}\label{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
 
         \begin{durationability}{Dirty Trick}[Duration]
-            \abilitytag{Size-Limited}
+            \abilitytag{Size-Based}
             \rankline
             When you use this ability, you must describe the kind of dirty trick you are performing.
             For example, you can pull a creature's pants down, throw sand, or otherwise use your environment to attack.
@@ -585,7 +586,7 @@
         \parhead{Disarm}\label{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
 
         \begin{instantability}{Disarm}[Instant]
-            \abilitytag{Size-Limited}
+            \abilitytag{Size-Based}
             \rankline
             Make a melee \glossterm{strike} against an object.
             Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
@@ -603,7 +604,7 @@
         \parhead{Grapple}\label{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
 
         \begin{durationability}{Grapple}[Duration]
-            \abilitytag{Size-Limited}
+            \abilitytag{Size-Based}
             \rankline
             Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your \glossterm{reach}.
 
@@ -625,7 +626,7 @@
         \parhead{Overrun}\label{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
 
         \begin{instantability}{Overrun}[Instant]
-            \abilitytag{Size-Limited}
+            \abilitytag{Size-Based}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by one.
 
@@ -655,7 +656,7 @@
         \parhead{Shove}\label{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
 
         \begin{instantability}{Shove}[Instant]
-            \abilitytag{Size-Limited}
+            \abilitytag{Size-Based}
             \rankline
             Choose either one creature within your \glossterm{reach} or all creatures grappling you (see \pcref{Grappling}).
 
@@ -715,7 +716,7 @@
         \parhead{Trip}\label{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
 
         \begin{instantability}{Trip}[Instant]
-            \abilitytag{Size-Limited}
+            \abilitytag{Size-Based}
             \rankline
             Make a melee attack using a free hand or a weapon with the Tripping tag against a creature's Reflex defense (see \pcref{Weapon Tags}).
             If you attack with a weapon, you add the weapon's accuracy bonus, if any, to the attack.
