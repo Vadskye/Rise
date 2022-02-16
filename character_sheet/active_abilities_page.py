@@ -654,7 +654,7 @@ def universal_abilities():
                 """
                     Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the target suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental. On a critical hit, the effect becomes a condition.
                  """,
-                attack={"accuracy": "@{accuracy}", "defense": "Fort or Ref", "tags": ["Size-Limited"]},
+                attack={"accuracy": "@{accuracy}", "defense": "Fort or Ref", "tags": ["Size-Based"]},
             ),
             universal_ability_button(
                 "Disarm",
@@ -662,7 +662,7 @@ def universal_abilities():
                     Make a melee strike vs. Reflex.
                     On a hit, one of the target's objects may take damage from your strike. If it is attended and not held in a hand or well secured, you can choose to knock it loose. On a critical hit, you can deal double damage and you can also knock loose objects that are held in a single hand.
                  """,
-                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Limited"]},
+                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Based"]},
             ),
             universal_ability_button(
                 "Grapple",
@@ -670,7 +670,7 @@ def universal_abilities():
                     Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your reach.
                     On a hit against both defenses, you and the target are grappled by each other.
                 """,
-                attack={"accuracy": "@{accuracy}", "defense": "Fort and Ref", "tags": ["Size-Limited"]},
+                attack={"accuracy": "@{accuracy}", "defense": "Fort and Ref", "tags": ["Size-Based"]},
             ),
             universal_ability_button(
                 "Maintain Grapple",
@@ -686,7 +686,7 @@ def universal_abilities():
                     Move up to your movement speed in a straight line, even through creatures. Make an attack vs. Fortitude against each creature that you move through who does not choose to avoid you.
                     On a hit, you move through each creature's space. On a critical hit, you also knock each creature prone. On a miss, you end your movement immediately.
                  """,
-                attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Limited"]},
+                attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Based"]},
             ),
             universal_ability_button(
                 "Recover",
@@ -701,7 +701,7 @@ def universal_abilities():
                     Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against each target. Your accuracy with this attack is equal to half your level \\add your Strength. If you are not able to use any of your movement speeds, you automatically fail when you try to use this ability.
                     On a hit, you can move up to half your movement speed in a straight line, pushing each target as you move. On a critical hit, you can move up to your full movement speed instead.
                  """,
-                attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Limited"]},
+                attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Based"]},
             ),
             universal_ability_button(
                 "Sprint",
@@ -723,7 +723,7 @@ def universal_abilities():
                     Make a melee attack with a free hand.
                     On a hit, the target becomes prone.
                  """,
-                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Limited"]},
+                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Based"]},
             ),
             universal_ability_button(
                 "Total Defense",
