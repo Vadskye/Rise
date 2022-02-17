@@ -387,7 +387,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to their defenses against \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
 
                         \rankline
-                        \rank{3} At the end of each round, each target removes all \glossterm{brief} effects and \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
+                        \rank{3} At the end of each round, each target removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
                         \rank{5} The area increases to a \areahuge radius.
                         \rank{7} Each target is immune to Compulsion and Emotion attacks.
                     \end{durationability}
