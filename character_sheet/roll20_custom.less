@@ -103,6 +103,11 @@ div.full-sheet {
         }
     }
 
+    // fix buttons that have nested inputs in firefox
+    button > input:disabled {
+        pointer-events: none;
+    }
+
     // center alignment looks nicer, but causes weird cascade effects
     // .full-sheet {
     //     text-align: center;
