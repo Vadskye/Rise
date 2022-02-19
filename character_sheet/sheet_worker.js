@@ -498,7 +498,7 @@ function calcAttackTargeting(isTargeted, rawDefense) {
     if (actualDefense) {
       // TODO: find a way to hide defenses of high CR enemies
       actualDefenseText =
-        " ([[[[0+@{target|Defender|" + actualDefense + "}]]]])";
+        " (**@{target|Defender|" + actualDefense + "}**)";
     }
   }
   const defenseText = "@{attack_defense}" + actualDefenseText;
