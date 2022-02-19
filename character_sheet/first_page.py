@@ -669,7 +669,7 @@ def weapon_template(i):
         + i
         + "_total_damage_dice}]] + [[@{weapon_"
         + i
-        + "_total_damage_modifier}]]]] = $[[1]] + $[[2]]&amp;#125;&amp;#125;"
+        + "_total_damage_modifier}]]]] = $[[1]] + $[[2]] &amp;#125;&amp;#125;"
         + " {{Tags=@{weapon_"
         + i
         + "_tags}&amp;#125;&amp;#125;"
