@@ -6,15 +6,6 @@ use crate::skills::{KnowledgeSubskill, Skill};
 pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Stealthy Instincts",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus3 bonus to the Stealth skill.
-            ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Stealth, 3)]),
-        },
-        RankAbility {
             name: "Sneak Attack",
             is_magical: false,
             rank: 1,
@@ -73,7 +64,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Assassin's Finesse",
             is_magical: false,
-            rank: 4,
+            rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with \glossterm{light weapons} and any weapon with the Stealthy \glossterm{weapon tag}.
             ",
@@ -117,7 +108,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Greater Assassin's Finesse",
             is_magical: false,
-            rank: 7,
+            rank: 6,
             description: r"
                 The bonus from your \textit{assassin's finesse} ability increases to \plus2d.
             ",
@@ -140,12 +131,11 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Bardic Lore",
             is_magical: false,
-            rank: 0,
+            rank: 1,
             description: r"
-                You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
-                In addition, you gain all Knowledge skills as \glossterm{class skills}.
+                You gain all Knowledge skills as \glossterm{class skills}.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::TrainedSkill, 1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Bardic Performances",
@@ -427,9 +417,18 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Bardic Lore",
+            name: "Musical Tolerance",
             is_magical: false,
             rank: 2,
+            description: r"
+                You are \glossterm{impervious} to \abilitytag{Auditory} attacks.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Greater Bardic Lore",
+            is_magical: false,
+            rank: 3,
             description: r"
                 You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                 In addition, you gain a bonus equal to your rank in this archetype to Knowledge skills that you are \glossterm{untrained} with.
@@ -437,13 +436,13 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::TrainedSkill, 1)]),
         },
         RankAbility {
-            name: "Bardic Performance",
-            is_magical: true,
-            rank: 3,
+            name: "Martial Performance",
+            is_magical: false,
+            rank: 4,
             description: r"
-                You learn an additional bardic performance.
+                You gain a \plus1d bonus to your damage with all weapons.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Virtuoso",
@@ -455,9 +454,18 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme Bardic Lore",
+            name: "Bardic Performance",
             is_magical: true,
             rank: 5,
+            description: r"
+                You learn an additional bardic performance.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Supreme Bardic Lore",
+            is_magical: true,
+            rank: 6,
             description: r"
                 You gain a +2 bonus to all Knowledge skills.
             ",
@@ -476,15 +484,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             )]),
         },
         RankAbility {
-            name: "Bardic Performance",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                You learn an additional bardic performance.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Greater Virtuoso",
             is_magical: true,
             rank: 7,
@@ -493,26 +492,20 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        RankAbility {
+            name: "Greater Martial Performance",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                The bonus from your \textit{martial performance} ability increases to \plus2d.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
     ];
 }
 
 pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
     return vec![
-        RankAbility {
-            name: "Tricky Finesse",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
-            ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Balance, 1),
-                Modifier::Skill(Skill::Flexibility, 1),
-                Modifier::Skill(Skill::Ride, 1),
-                Modifier::Skill(Skill::SleightOfHand, 1),
-                Modifier::Skill(Skill::Stealth, 1),
-            ]),
-        },
         RankAbility {
             name: "Combat Styles",
             is_magical: false,
@@ -563,11 +556,11 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Tricky Finesse",
+            name: "Tricky Finesse",
             is_magical: false,
             rank: 3,
             description: r"
-                The bonus from your \textit{tricky finesse} ability increases to \plus2.
+                You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Balance, 1),
@@ -626,11 +619,11 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme Tricky Finesse",
+            name: "Greater Tricky Finesse",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{tricky finesse} ability increases to \plus3.
+                The bonus from your \textit{tricky finesse} ability increases to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Balance, 1),
@@ -667,20 +660,19 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Dabbler",
             is_magical: false,
-            rank: 0,
+            rank: 1,
             description: r"
-                You gain an additional \glossterm{insight point}.
+                You gain two additional \glossterm{insight points}.
                 In addition, you can spend insight points to gain one additional \glossterm{trained skill} per insight point.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
+            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 2)]),
         },
         RankAbility {
             name: "Skill Exemplar",
             is_magical: false,
-            rank: 1,
+            rank: 2,
             description: r"
-                You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
-                In addition, you gain a \plus1 bonus to all skills.
+                You gain a \plus1 bonus to all skills.
             ",
             modifiers: Some(vec![
                 Modifier::Resource(Resource::TrainedSkill, 1),
@@ -724,15 +716,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Greater Dabbler",
-            is_magical: false,
-            rank: 2,
-            description: r"
-                You gain an additional \glossterm{insight point}.
-            ",
-            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
-        },
-        RankAbility {
             name: "Versatile Power",
             is_magical: false,
             rank: 3,
@@ -742,9 +725,18 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
-            name: "Greater Skill Exemplar",
+            name: "Greater Dabbler",
             is_magical: false,
             rank: 4,
+            description: r"
+                You gain an additional \glossterm{insight point}.
+            ",
+            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
+        },
+        RankAbility {
+            name: "Greater Skill Exemplar",
+            is_magical: false,
+            rank: 5,
             description: r"
                 The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
             ",
@@ -788,15 +780,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::Survival, 2),
                 Modifier::Skill(Skill::Swim, 2),
             ]),
-        },
-        RankAbility {
-            name: "Supreme Dabbler",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                You gain an additional \glossterm{insight point}.
-            ",
-            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
         },
         RankAbility {
             name: "Greater Versatile Power",
@@ -861,15 +844,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
 pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Smooth Liar",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus3 bonus to the Deception skill.
-            ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Deception, 3)]),
-        },
-        RankAbility {
             name: "Confound",
             is_magical: false,
             rank: 1,
@@ -885,7 +859,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{3} You can target an additional creature within range.
                     \rank{5} The range increases to \rngmed.
-                    \rank{7} The number of targets increases to be up to 5.
+                    \rank{7} The maximum number of targets increases to 5.
                 \end{durationability}
             ",
             modifiers: None,

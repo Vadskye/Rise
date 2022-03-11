@@ -2,78 +2,20 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::abilities::StandardAttack;
 use crate::core_mechanics::{Defense, Resource};
 use crate::creatures::Modifier;
-use crate::skills::{KnowledgeSubskill, Skill};
+use crate::skills::Skill;
 
 pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Fiendish Resistance",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (minimum 1).
-            ",
-            modifiers: Some(vec![Modifier::DamageResistance(1)]),
-        },
-        RankAbility {
-            name: "Fiendish Resistance",
-            is_magical: false,
-            rank: 1,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(2)]),
-        },
-        RankAbility {
-            name: "Fiendish Resistance",
-            is_magical: false,
-            rank: 2,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(4)]),
-        },
-        RankAbility {
-            name: "Fiendish Resistance",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(6)]),
-        },
-        RankAbility {
-            name: "Fiendish Resistance",
-            is_magical: false,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(8)]),
-        },
-        RankAbility {
-            name: "Fiendish Resistance",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            // This rank is when greater Fiendish Resistance kicks in
-            modifiers: Some(vec![Modifier::DamageResistance(15)]),
-        },
-        RankAbility {
-            name: "Fiendish Resistance",
-            is_magical: false,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(18)]),
-        },
-        RankAbility {
-            name: "Fiendish Resistance",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(21)]),
-        },
-        RankAbility {
-            name: "Abyssal Blast",
+            name: "Abyssal Rebuke",
             is_magical: true,
             rank: 1,
             description: r"
-                You can use the \textit{abyssal blast} ability as a standard action.
-                \begin{instantability}{Abyssal Blast}[Instant]
+                You can use the \textit{abyssal rebuke} ability as a standard action.
+                \begin{instantability}{Abyssal Rebuke}[Instant]
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
+                    You gain a \plus2 accuracy bonus to this attack against any creature that damaged you during the previous round.
                     \hit The target takes 1d8 \add \glossterm{power} fire damage.
 
                     \rankline
@@ -86,61 +28,61 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \end{instantability}
             ",
             modifiers: Some(vec![Modifier::Attack(
-                StandardAttack::AbyssalBlast(1).attack(),
+                StandardAttack::AbyssalRebuke(1).attack(),
             )]),
         },
         RankAbility {
-            name: "Abyssal Blast",
+            name: "Abyssal Rebuke",
             is_magical: true,
             rank: 2,
             description: "",
             modifiers: Some(vec![Modifier::Attack(
-                StandardAttack::AbyssalBlast(2).attack(),
+                StandardAttack::AbyssalRebuke(2).attack(),
             )]),
         },
         RankAbility {
-            name: "Abyssal Blast",
+            name: "Abyssal Rebuke",
             is_magical: true,
             rank: 3,
             description: "",
             modifiers: Some(vec![Modifier::Attack(
-                StandardAttack::AbyssalBlast(3).attack(),
+                StandardAttack::AbyssalRebuke(3).attack(),
             )]),
         },
         RankAbility {
-            name: "Abyssal Blast",
+            name: "Abyssal Rebuke",
             is_magical: true,
             rank: 4,
             description: "",
             modifiers: Some(vec![Modifier::Attack(
-                StandardAttack::AbyssalBlast(4).attack(),
+                StandardAttack::AbyssalRebuke(4).attack(),
             )]),
         },
         RankAbility {
-            name: "Abyssal Blast",
+            name: "Abyssal Rebuke",
             is_magical: true,
             rank: 5,
             description: "",
             modifiers: Some(vec![Modifier::Attack(
-                StandardAttack::AbyssalBlast(5).attack(),
+                StandardAttack::AbyssalRebuke(5).attack(),
             )]),
         },
         RankAbility {
-            name: "Abyssal Blast",
+            name: "Abyssal Rebuke",
             is_magical: true,
             rank: 6,
             description: "",
             modifiers: Some(vec![Modifier::Attack(
-                StandardAttack::AbyssalBlast(6).attack(),
+                StandardAttack::AbyssalRebuke(6).attack(),
             )]),
         },
         RankAbility {
-            name: "Abyssal Blast",
+            name: "Abyssal Rebuke",
             is_magical: true,
             rank: 7,
             description: "",
             modifiers: Some(vec![Modifier::Attack(
-                StandardAttack::AbyssalBlast(7).attack(),
+                StandardAttack::AbyssalRebuke(7).attack(),
             )]),
         },
         RankAbility {
@@ -197,12 +139,22 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(3)]),
         },
         RankAbility {
-            name: "Greater Fiendish Resistance",
+            name: "Abyssal Spell",
             is_magical: true,
             rank: 5,
             description: r"
-                The bonus from your \textit{fiendish resistance} ability increases to three times your rank in this archetype.
+                If you have access to pact magic, you learn an additional pact spell.
             ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Greater Resist the Dark Call",
+            is_magical: true,
+            rank: 5,
+            description: r"
+                If you do not have access to pact magic, the Mental defense bonus from your \textit{resist the dark call} ability increases to \plus3, and the fatigue tolerance bonus increases to \plus2.
+            ",
+            // Assume that the warlock has pact magic
             modifiers: None,
         },
         RankAbility {
@@ -243,24 +195,11 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Reader of Hidden Tomes",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 You treat all Knowledge skills as class skills for you.
-                In addition, you gain a \plus2 bonus to all Knowledge skills.
             ",
-            modifiers: Some(vec![Modifier::Skill(
-                Skill::Knowledge(vec![
-                    KnowledgeSubskill::Arcana,
-                    KnowledgeSubskill::Dungeoneering,
-                    KnowledgeSubskill::Engineering,
-                    KnowledgeSubskill::Items,
-                    KnowledgeSubskill::Local,
-                    KnowledgeSubskill::Nature,
-                    KnowledgeSubskill::Planes,
-                    KnowledgeSubskill::Religion,
-                ]),
-                2,
-            )]),
+            modifiers: None,
         },
         RankAbility {
             name: "Eldritch Secret",
@@ -469,44 +408,35 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
 pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Cantrips",
+            name: "Spellcasting",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 Your soulkeeper grants you the ability to use pact magic.
                 You gain access to one pact \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Pact Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional pact \glossterm{mystic sphere} per two \glossterm{insight points}.
-                You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-                You do not yet gain access to any other spells from those mystic spheres.
+                You can only learn pact spells from pact mystic spheres that you have access to.
+
+                You automatically learn all \glossterm{cantrips} from each mystic sphere you have access to.
+                In addition, you learn two rank 1 pact \glossterm{spells}.
+                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 
                 Pact spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
+                Unless otherwise noted in a spell's description, casting any spell requires a \glossterm{standard action}.
                 For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+
+                When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+                    you can forget any number of spells you know to learn that many new spells in exchange,
+                    including spells of the higher rank.
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Armor Tolerance",
             is_magical: true,
-            rank: 0,
-            description: r"
-                You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spellcasting",
-            is_magical: true,
             rank: 1,
             description: r"
-                You become a rank 1 pact spellcaster.
-                You learn two rank 1 \glossterm{spells} from pact \glossterm{mystic spheres} you have access to.
-                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
-                Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-                When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-                    you can forget any number of spells you know to learn that many new spells in exchange,
-                    including spells of the higher rank.
-                All of those spells must be from pact mystic spheres you have access to.
+                You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
             ",
             modifiers: None,
         },
@@ -623,7 +553,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Combat Caster",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 You gain a \plus1 bonus to your Armor defense.
             ",
@@ -725,28 +655,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Empowering Whispers",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                You gain an ability based on the type of whispers you hear with your \textit{whispers of the lost} ability.
-                {
-                    \subcf{Mentoring Whispers} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
-
-                    \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you \glossterm{briefly} gain a \plus1 bonus to \glossterm{accuracy} against that creature.
-                    As normal, this bonus does not stack with itself, even if you miss the same creature multiple times.
-
-                    \subcf{Sycophantic Whispers} You gain a \plus2 bonus to your Mental defense.
-
-                    \subcf{Warning Whispers} You gain a \plus2 bonus to \glossterm{initiative} checks and Reflex defense.
-
-                    \subcf{Whispers of the Mighty} You gain a \plus2 bonus to your Fortitude defense.
-                }
-            ",
-            // Assume whispers of the mighty since it's easy
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
-        },
-        RankAbility {
             name: "Possession",
             is_magical: true,
             rank: 1,
@@ -781,9 +689,31 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Exchange Soul Fragment",
+            name: "Empowering Whispers",
             is_magical: true,
             rank: 2,
+            description: r"
+                You gain an ability based on the type of whispers you hear with your \textit{whispers of the lost} ability.
+                {
+                    \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point} (see \pcref{Trained Skills}).
+
+                    \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you \glossterm{briefly} gain a \plus1 bonus to \glossterm{accuracy} against that creature.
+                    As normal, this bonus does not stack with itself, even if you miss the same creature multiple times.
+
+                    \subcf{Sycophantic Whispers} You gain a \plus2 bonus to your Mental defense.
+
+                    \subcf{Warning Whispers} You gain a \plus2 bonus to \glossterm{initiative} checks and your Reflex defense.
+
+                    \subcf{Whispers of the Mighty} You gain a \plus2 bonus to your Fortitude defense.
+                }
+            ",
+            // Assume whispers of the mighty since it's easy
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
+        },
+        RankAbility {
+            name: "Exchange Soul Fragment",
+            is_magical: true,
+            rank: 3,
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
                 You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
@@ -798,29 +728,6 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 \end{instantability}
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Empowering Whispers",
-            is_magical: true,
-            rank: 3,
-            description: r"
-                You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
-                {
-                    \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point}.
-
-                    \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus2.
-
-                    \subcf{Sycophantic Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus4.
-
-                    \subcf{Warning Whispers} The bonuses from your \textit{empowering whispers} ability increases to \plus4.
-
-                    \subcf{Whispers of the Mighty} The bonus from your \textit{empowering whispers} ability increases to \plus4.
-                }
-            ",
-            modifiers: Some(vec![
-                Modifier::Power(2),
-                Modifier::Defense(Defense::Fortitude, 2),
-            ]),
         },
         RankAbility {
             name: "Greater Possession",
@@ -859,7 +766,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point}.
 
-                    \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus3.
+                    \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus2.
 
                     \subcf{Sycophantic Whispers} You are immune to all \abilitytag{Emotion} attacks.
 
