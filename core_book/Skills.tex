@@ -410,7 +410,7 @@ This chapter describes each skill, including common uses for those skills.
             \end{dtabularx}
         \end{dtable}
 
-        If you can't reach an edge, you can jump to grab it (see \pcref{Leap}).
+        If you can't reach an edge, you can jump to grab it (see \pcref{Jump}).
 
     \subsection{Stop Fall}\label{Stop Fall}
         It is possible, but difficult, to make a Climb check to stop yourself from falling when near a wall. To catch yourself while falling, make a Climb check against a \glossterm{difficulty value} equal to the wall's \glossterm{difficulty value} \add 10.
@@ -942,10 +942,6 @@ This chapter describes each skill, including common uses for those skills.
     The Jump skill represents your ability to jump.
     All Jump checks are made as part of movement, so they take no special action to perform.
 
-    \parhead{Running Start}\label{Running Start} If you move on a surface at least ten feet in a straight line before jumping from that surface, you have a running start.
-    This movement must happen in the same phase as your Jump check or during the immediately preceding phase.
-    You gain a \plus5 bonus to your Jump skill while you have a running start.
-
     \parhead{Jumping and Movement}
     Distance moved with Jump checks is considered to be part of your land speed.
     The maximum distance that you can cover with a Jump check is equal to your remaining land speed during the current phase.
@@ -962,7 +958,8 @@ This chapter describes each skill, including common uses for those skills.
     \subsection{High Jump}
         As part of movement, you can make a Jump check to jump vertically.
         Your maximum height is equal to half of your Jump check result.
-        If you have movement remaining, you can move up to five feet horizontally at the end of your jump, allowing you to jump onto ledges and similar objects.
+        If you have movement remaining, you can move up to five feet horizontally at the end of your jump while still in midair.
+        This can allow you to jump onto ledges and similar objects.
 
     \subsection{Mitigate Fall}
         As you hit the ground after a fall, you can make an Jump check to reduce falling damage.
@@ -970,10 +967,15 @@ This chapter describes each skill, including common uses for those skills.
         For every 5 points by which you beat that \glossterm{difficulty value}, you can reduce the falling damage by 10 additional feet.
         You do not need a running start to use this ability.
 
-    \subsection{Long Jump}\label{Leap}
+    \subsection{Long Jump}\label{Long Jump}
         As part of movement, you can make a Jump check to jump forward.
         You move forward any number of feet, up to a maximum equal to your Jump check result.
         Your maximum height during the jump must be no greater than half of your Jump check result, and no less than a quarter of your forward distance travelled.
+
+        Getting a running start helps you jump farther.
+        If you walk at least ten feet in a straight line before jumping, you have a running start.
+        This movement must happen in the same phase as your Jump check or during the immediately preceding phase.
+        If you have a running start, you can add a quarter of your land speed to your maximum long jump distance.
 
         You always reach your maximum height at the midpoint of the jump.
         However, you can interrupt your leap before travelling the full horizontal distance.
