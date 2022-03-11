@@ -955,7 +955,7 @@ impl Class {
     fn latex_archetype_rank_table_rows(&self) -> String {
         let mut rank_rows = Vec::new();
         let abilities_by_archetype_rank = self.generate_ability_names_by_archetype_rank();
-        for rank in 0..abilities_by_archetype_rank.len() {
+        for rank in 1..abilities_by_archetype_rank.len() {
             rank_rows.push(format!(
                 "
                     {rank} ({minimum_level}) & \\plus{power} & {archetype_abilities} \\\\
