@@ -6,35 +6,26 @@ use crate::skills::Skill;
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Cantrips",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                Your deity grants you the ability to use divine magic.
-                You gain access to one divine \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Divine Mystic Spheres}).
-                You may spend \glossterm{insight points} to gain access to one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
-                You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-                You do not yet gain access to any other spells from those mystic spheres.
-
-                Divine spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
-                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Spellcasting",
             is_magical: true,
             rank: 1,
             description: r"
-                You become a rank 1 divine spellcaster.
-                You learn two rank 1 \glossterm{spells} from divine \glossterm{mystic spheres} you have access to.
-                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
-                Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+                Your deity grants you the ability to use divine magic.
+                You gain access to one divine \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Divine Mystic Spheres}).
+                You may spend \glossterm{insight points} to gain access to one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
+                You can only learn divine spells from divine mystic spheres that you have access to.
+
+                You automatically learn all \glossterm{cantrips} from each mystic sphere you have access to.
+                In addition, you learn two rank 1 divine \glossterm{spells}.
+                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
+
+                Divine spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
+                Unless otherwise noted in a spell's description, casting any spell requires a \glossterm{standard action}.
+                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
-                All of those spells must be from divine mystic spheres you have access to.
             ",
             modifiers: None,
         },
@@ -133,10 +124,9 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Mystic Sphere",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 You gain access to an additional divine \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
-
             ",
             modifiers: None,
         },
@@ -245,13 +235,17 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Domains",
+            name: "Domain Gifts",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 You choose two domains which represent your personal spiritual inclinations.
                 You must choose your domains from among those your deity offers.
                 The domains are listed below.
+
+                Each domain has a corresponding \textit{domain gift}.
+                A domain gift is a passive ability that reinforces your ability to embody your domain.
+                You gain the \textit{domain gift} for both of your domains (see \pcref{Cleric Domain Abilities}).
 
                 \begin{itemize}
                     \item{Air}
@@ -275,28 +269,8 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                     \item{Wild}
                 \end{itemize}
             ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Domain Gift",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                Each domain has a corresponding \textit{domain gift}.
-                A domain gift is a passive ability that reinforces your ability to embody your domain.
-                You gain the \textit{domain gift} for one of your domains (see \pcref{Cleric Domain Abilities}).
-            ",
             // Domain gifts are weird; most don't have direct statistical benefits, so this is
             // mostly irrelevant.
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Domain Gift",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                You gain the \textit{domain gift} for another one of your domains.
-            ",
             modifiers: None,
         },
         RankAbility {
@@ -368,15 +342,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn healer<'a>() -> Vec<RankAbility<'a>> {
     return vec![
-        RankAbility {
-            name: "Experienced Healing",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                You gain a \plus3 bonus to the Medicine skill.
-            ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Medicine, 3)]),
-        },
         RankAbility {
             name: "Restoration",
             is_magical: true,
@@ -490,15 +455,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
     return vec![
-        RankAbility {
-            name: "Practiced Persuasion",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus3 bonus to the Persuasion skill.
-            ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 3)]),
-        },
         RankAbility {
             name: "Denounce the Heathens",
             is_magical: false,
