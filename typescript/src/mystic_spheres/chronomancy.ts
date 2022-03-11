@@ -24,13 +24,13 @@ export const chronomancy: MysticSphere = {
       name: "Accelerated Search",
 
       effect: `
-        Make an Awareness check to notice things in a single 10-ft.\\ square within 10 feet of you.
-        You gain a +4 bonus to this check.
+        Make an Awareness check to search everything in a \\smallarea radius from you (see \\pcref{Search}).
+        You gain a +2 bonus to this check.
       `,
       scaling: {
-        2: "The bonus increases to +6.",
-        4: "The bonus increases to +8.",
-        6: "The bonus increases to +10.",
+        2: "The bonus increases to +4.",
+        4: "The bonus increases to +6.",
+        6: "The bonus increases to +8.",
       },
       type: "Instant",
     },
