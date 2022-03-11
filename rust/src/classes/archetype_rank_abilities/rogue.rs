@@ -329,7 +329,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}, \abilitytag{Emotion}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who are engaged in combat during the current phase.
+                        You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
                         \hit For the duration of your performance, the target is \charmed by you.
                         Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
                         Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
