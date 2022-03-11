@@ -421,23 +421,23 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \begin{durationability}{Form of the Bear}[Duration]
                         \rankline
-                        You gain a \plus1 bonus to your Fortitude defense.
+                        You gain a \plus2 bonus to your Fortitude defense.
                         In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The Fortitude bonus increases to \plus2.
-                        \rank{5} The Fortitude bonus increases to \plus3.
-                        \rank{7} The Fortitude bonus increases to \plus4.
+                        \rank{3} The Fortitude bonus increases to \plus3.
+                        \rank{5} The Fortitude bonus increases to \plus4.
+                        \rank{7} The Fortitude bonus increases to \plus5.
                     \end{durationability}
 
                     \begin{durationability}{Form of the Bull}[Duration]
                         \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}).
+                        You gain a \plus5 foot bonus to your land speed and a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}).
                         In addition, your head transforms, granting you a gore \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The accuracy bonus increases to \plus3.
-                        \rank{5} You can move your full movement speed when you push a creature with the \textit{shove} ability even if you do not get a critical hit.
+                        \rank{3} You can move your full movement speed when you push a creature with the \textit{shove} ability even if you do not get a critical hit.
+                        \rank{5} The accuracy bonus increases to \plus4.
                         \rank{7} When you push a creature with the the \textit{shove} ability, the pushed creature also takes damage as if you had hit it with your gore natural weapon.
                         This damage cannot be combined with other effects that deal damage with a shove, such as the \textit{wall slam} ability.
                     \end{durationability}
@@ -445,13 +445,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{durationability}{Form of the Constrictor}[Duration]
                         \rankline
                         You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
-                        In addition, you gain a tentacle \glossterm{natural weapon} (see \tref{Natural Weapons}).
-                        This weapon deals 1d8 damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
-                        It can only be used against a foe you are grappling with.
+                        In addition, you can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions even if you do not have a free hand.
+                        Finally, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The accuracy bonus increases to \plus3.
-                        \rank{5} You can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions even if you do not have a free hand.
+                        \rank{3} When you grapple a creature with the \textit{grapple} ability, they also take damage as if you had hit it with a \glossterm{strike} using your bite weapon.
+                        You do not add your \glossterm{power} to this damage.
+                        \rank{5} The accuracy bonus increases to \plus4.
                         \rank{7} When you grapple a creature with the \textit{grapple} ability, you are not considered to be \grappled (see \pcref{Asymmetric Grappling}).
                     \end{durationability}
 
@@ -464,17 +464,17 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
                         \rank{5} You gain a \plus10 foot bonus to your swim speed.
                         \rank{7} You are immune to \glossterm{magical} effects that restrict your mobility.
-                        In addition, you gain a \plus4 bonus to your defenses against the \textit{grapple} ability and grapple actions (see \pcref{Grapple}).
+                        In addition, you are \glossterm{impervious} to the \textit{grapple} ability and grapple actions (see \pcref{Grapple}).
                     \end{durationability}
 
                     \begin{durationability}{Form of the Hawk}[Duration]
                         \rankline
                         You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-                        In addition, you gain a \plus3 bonus to Awareness.
+                        In addition, you gain a \plus3 bonus to the Awareness and Jump skills.
 
                         \rankline
                         \rank{3} You grow wings, granting your a glide speed equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
-                        \rank{5} The Awareness bonus increases to \plus6.
+                        \rank{5} The skill bonuses increase to \plus5.
                         \rank{7} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 60 feet (see \pcref{Flying}).
                         At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \end{durationability}
@@ -501,18 +501,19 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{3} You grow a tail that you can use as a free hand for the purpose of climbing.
-                        \rank{5} You gain a \plus5 foot bonus to your climb speed.
-                        \rank{7} You can use the \textit{creature climb} ability against creatures only one size category larger than you instead of two size categories.
+                        \rank{5} You gain a \plus10 foot bonus to your climb speed.
+                        \rank{7} You can use the \textit{creature climb} ability against creatures only one size category larger than you instead of two size categories larger than you.
                     \end{durationability}
 
                     \begin{durationability}{Form of the Mouse}[Duration]
                         \rankline
-                        You gain a \plus2 bonus to the Flexibility and Stealth skills.
+                        You gain a \plus3 bonus to the Flexibility and Stealth skills.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         
                         \rankline
                         \rank{3} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}, to a minimum of Tiny.
-                        \rank{5} The skill bonuses increases to \plus4.
+                        In addition, if you shapeshift into this form with the \textit{animal shape} ability, you can shrink by two size categories instead of only one.
+                        \rank{5} The skill bonuses increase to \plus5.
                         \rank{7} When you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
                     \end{durationability}
 
@@ -530,29 +531,31 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \glossterm{climb speed} equal to half the \glossterm{base speed} for your size.
                         You do not need to use your hands to climb in this way.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
-
-                        \rankline
-                        \rank{3} When a creature takes damage from your bite \glossterm{natural weapon}, it is \glossterm{poisoned} (see \pcref{Poison}).
+                        When a creature takes damage from your bite \glossterm{natural weapon}, it is \glossterm{poisoned} (see \pcref{Poison}).
                         The first poison stage makes the target \dazed as long as it is poisoned.
                         The third poison stage makes the target \stunned instead of dazed.
-                        \rank{5} You gain a \plus1 accuracy bonus with all poisons.
-                        \rank{7} The accuracy bonus increases to \plus2.
+
+                        \rankline
+                        \rank{3} You gain a \plus1 accuracy bonus with all poisons.
+                        \rank{5} The accuracy bonus increases to \plus2.
+                        \rank{7} The accuracy bonus increases to \plus3.
                     \end{durationability}
 
                     \begin{durationability}{Form of the Wolf}[Duration]
                         \rankline
-                        You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} against creatures that are adjacent to you and one of your \glossterm{allies}.
+                        You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are adjacent to you and one of your \glossterm{allies}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The accuracy bonus applies to all attacks, not just strikes.
-                        \rank{5} You gain a \plus5 foot bonus to your land speed.
+                        \rank{3} You gain the \trait{scent} ability.
+                        \rank{5} The accuracy bonus increases to \plus2.
                         \rank{7} The accuracy bonus applies even if you are not adjacent to a creature, as long as one of your allies is adjacent to the creature.
                     \end{durationability}
 
                     \begin{durationability}{Myriad Form}[Duration]
                         \rankline
-                        You can use your \glossterm{power} in place of your Disguise skill when making Disguise checks to alter your own appearance.
+                        If you are \glossterm{trained} with the Disguise skill, you gain a +3 bonus to it.
+                        Otherwise, you are treated as being trained in that skill.
 
                         \rankline
                         \rank{3} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category} (see \pcref{Size Categories}).
@@ -565,12 +568,16 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{durationability}{Photosynthesis}[Duration]
                         \rankline
-                        As long as you are in natural sunlight, you gain a \plus5 foot bonus to your speed with all \glossterm{movement modes}.
-                        \rankline
-                        \rank{3} As long as you are in natural sunlight, you do not gain hunger or thirst.
+                        As long as you are in natural sunlight, you gain two benefits.
+                        First, you gain a \plus5 foot bonus to your speed with all \glossterm{movement modes}.
+                        Second, you do not gain hunger or thirst.
                         When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
+                        \rankline
+                        \rank{3} As long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
+                        This cannot heal you above half your maximum \glossterm{hit points}.
                         \rank{5} The speed bonus increases to \plus10 feet.
-                        \rank{7} When you take a \glossterm{short rest} while you are in natural sunlight, you remove a \glossterm{vital wound}.
+                        \rank{7} When you take a \glossterm{short rest} while you are in natural sunlight, you can remove a \glossterm{vital wound}.
+                        When you do, you increase your \glossterm{fatigue level} by four.
                     \end{durationability}
 
                     \begin{durationability}{Plantspeaker}[Duration]
@@ -588,7 +595,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             ",
             // Arbitrarily choose Bear form, since it's easy to represent? Unclear.
             // TODO: no way to represent natural weapons.
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
         },
         RankAbility {
             name: "Shift Body",
@@ -677,7 +684,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Instant Wild Aspect",
+            name: "Instant Shift",
             is_magical: true,
             rank: 7,
             description: r"

@@ -5,15 +5,6 @@ use crate::creatures::{Maneuver, Modifier};
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Mental Discipline",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus2 bonus to your Mental defense.
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Mental, 2)]),
-        },
-        RankAbility {
             name: "Cleansing Discipline",
             is_magical: false,
             rank: 1,
@@ -23,11 +14,11 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Remove up to two \glossterm{brief} effects or \glossterm{conditions} affecting you.
                     This cannot remove effects applied during the current round.
+                    In addition, you \glossterm{briefly} cannot gain any \glossterm{conditions}.
 
                     \rankline
                     \rank{3} This ability gains the \abilitytag{Swift} tag.
                     When you use it, the removed effects do not affect you during the current phase.
-                    In addition, you \glossterm{briefly} cannot gain any \glossterm{conditions}.
                     \rank{5} You can use this ability as a \glossterm{minor action}.
                     When you do, you increase your \glossterm{fatigue level} by one.
                     \rank{7} You can remove any number of effects.
@@ -57,13 +48,13 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Greater Mental Discipline",
+            name: "Mental Discipline",
             is_magical: false,
             rank: 3,
             description: r"
-                The bonus from your \textit{mental discipline} ability increases to \plus3.
+                You gain a \plus2 bonus to your Mental defense.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Mental, 1)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Mental, 2)]),
         },
         RankAbility {
             name: "Disciplined Reaction",
@@ -100,7 +91,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{mental discipline} ability increases to \plus4.
+                The bonus from your \textit{mental discipline} ability increases to \plus3.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Mental, 1)]),
         },
@@ -119,15 +110,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
     return vec![
-        RankAbility {
-            name: "Armor Expertise",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You reduce the \glossterm{encumbrance} of body armor you wear by 1.
-            ",
-            modifiers: Some(vec![Modifier::Encumbrance(-1)]),
-        },
         RankAbility {
             name: "Weapon Training",
             is_magical: false,
@@ -159,11 +141,11 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
-            name: "Greater Armor Expertise",
+            name: "Armor Expertise",
             is_magical: false,
             rank: 3,
             description: r"
-                The penalty reduction from your \textit{armor expertise} ability increases to 2.
+                You reduce the \glossterm{encumbrance} of body armor you wear by 1.
                 In addition, you reduce the movement speed penalty from body armor you wear by 5 feet.
                 Your Dexterity also contributes more to your Armor defense than normal for your armor.
                 A multiplier of \mult1/2 becomes \mult1, and a multiplier of \mult0 becomes a \mult1/2.
@@ -206,7 +188,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 3.
+                The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 2.
                 In addition, the movement speed penalty reduction from your \textit{greater armor expertise} ability improves to 10 feet.
                 You also always apply your full Dexterity to your Armor defense, regardless of the armor you use.
             ",
@@ -241,21 +223,21 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(6)]),
+            modifiers: Some(vec![Modifier::HitPoints(9)]),
         },
         RankAbility {
             name: "Martial Resilience",
             is_magical: false,
             rank: 4,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(8)]),
+            modifiers: Some(vec![Modifier::HitPoints(12)]),
         },
         RankAbility {
             name: "Martial Resilience",
             is_magical: false,
             rank: 5,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(10)]),
+            modifiers: Some(vec![Modifier::HitPoints(15)]),
         },
         RankAbility {
             name: "Martial Resilience",
@@ -263,23 +245,14 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: "",
             // This rank is when supreme resilience kicks in
-            modifiers: Some(vec![Modifier::HitPoints(18)]),
+            modifiers: Some(vec![Modifier::HitPoints(24)]),
         },
         RankAbility {
             name: "Martial Resilience",
             is_magical: false,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::HitPoints(21)]),
-        },
-        RankAbility {
-            name: "Martial Expertise",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus1 bonus to your Armor defense.
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+            modifiers: Some(vec![Modifier::HitPoints(28)]),
         },
         RankAbility {
             name: "Maneuvers",
@@ -378,7 +351,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a bonus equal to twice your rank in this archetype to your \glossterm{hit points}.
+                You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points}.
             ",
             // Handled as part of bulk silent scaling
             modifiers: None,
@@ -436,7 +409,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{martial resilience} ability increases to three times your rank in this archetype.
+                The bonus from your \textit{martial resilience} ability increases to four times your rank in this archetype.
             ",
             // Handled as part of bulk silent scaling
             modifiers: None,
@@ -467,15 +440,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Threatening Influence",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Guarding Strike",
             is_magical: false,
             rank: 1,
@@ -491,6 +455,15 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The accuracy bonus increases to \plus2.
                     \rank{7} The accuracy bonus increases to \plus3.
                 \end{durationability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Threatening Influence",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
             ",
             modifiers: None,
         },
@@ -599,16 +572,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
 pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Reactive Tactics",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You and each \glossterm{ally} who can see or hear you gain a \plus1 bonus to initiative checks.
-            ",
-            // TODO: represent ally bonus?
-            modifiers: Some(vec![Modifier::Initiative(1)]),
-        },
-        RankAbility {
             name: "Battle Tactics",
             is_magical: false,
             rank: 1,
@@ -619,7 +582,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                 You can initiate a \textit{battle tactic} as a \glossterm{minor action}.
                 When you initiate a battle tactic, you choose whether to use visual cues like gestures, auditory cues like shouts, or both to communicate your tactic with your allies.
-                Your \textit{battle tactics} affect yourself and your \glossterm{allies} within a \areahuge radius \glossterm{emanation} from you who can either see or hear your chosen communication style.
+                Your \textit{battle tactics} affect yourself and your \glossterm{allies} who can either see or hear your chosen communication style.
 
                 All \textit{battle tactics} have the \abilitytag{Sustain} (minor) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
                 You cannot sustain multiple battle tactics simultaneously, and any existing \textit{battle tactics} end as soon as you activate another battle tactic.
@@ -710,22 +673,33 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Tactical Precision",
+            name: "Shifting Stance",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy}.
+                You gain a \plus1 bonus to your Armor defense, \glossterm{vital rolls}, or \glossterm{accuracy} against adjacent enemies.
+                As a \glossterm{minor action}, you can change which of these bonuses you gain.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Greater Reactive Tactics",
+            name: "Reactive Tactics",
             is_magical: false,
             rank: 3,
             description: r"
-                The bonus from your \textit{reactive tactics} ability increases to \plus2.
+                You and each \glossterm{ally} who can see or hear you gain a \plus1 bonus to initiative checks.
             ",
+            // TODO: represent ally bonus?
             modifiers: Some(vec![Modifier::Initiative(1)]),
+        },
+        RankAbility {
+            name: "Tactical Force",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                You gain a \plus1d bonus to your damage with all weapons.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Greater Battle Tactics",
@@ -737,22 +711,31 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Tactical Precision",
+            name: "Greater Shifting Stance",
             is_magical: false,
             rank: 5,
             description: r"
-                The bonus from your \textit{tactical precision} ability increases to \plus2.
+                The bonus from your \textit{shifting stance} ability increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Supreme Reactive Tactics",
+            name: "Greater Reactive Tactics",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{reactive tactics} ability increases to \plus3.
+                The bonus from your \textit{reactive tactics} ability increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Initiative(1)]),
+        },
+        RankAbility {
+            name: "Greater Tactical Force",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus from your \textit{tactical force} ability increases to \plus2d.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Supreme Battle Tactics",
