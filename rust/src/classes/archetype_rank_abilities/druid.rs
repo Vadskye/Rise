@@ -188,7 +188,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you learn two rank 1 nature \glossterm{spells}.
                 You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 
-                nature spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
+                Nature spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
                 Unless otherwise noted in a spell's description, casting any spell requires a \glossterm{standard action}.
                 For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 

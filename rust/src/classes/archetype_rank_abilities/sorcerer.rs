@@ -1,4 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+
 use crate::core_mechanics::abilities::StandardAttack;
 use crate::core_mechanics::{Defense, Resource};
 use crate::creatures::Modifier;
@@ -6,25 +7,33 @@ use crate::creatures::Modifier;
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Cantrips",
+            name: "Spellcasting",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
-                You have the ability to use arcane magic.
+                Your innate talents grant you the ability to use arcane magic.
                 You gain access to one arcane \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Arcane Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional arcane \glossterm{mystic sphere} per two \glossterm{insight points}.
-                You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-                You do not yet gain access to any other spells from those mystic spheres.
+                You can only learn arcane spells from arcane mystic spheres that you have access to.
+
+                You automatically learn all \glossterm{cantrips} from each mystic sphere you have access to.
+                In addition, you learn two rank 1 arcane \glossterm{spells}.
+                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 
                 Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
+                Unless otherwise noted in a spell's description, casting any spell requires a \glossterm{standard action}.
                 For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+
+                When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+                    you can forget any number of spells you know to learn that many new spells in exchange,
+                    including spells of the higher rank.
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Mage Armor",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 You can use the \textit{mage armor} ability as a standard action.
                 \begin{durationability}{Mage Armor}[Duration]
@@ -44,15 +53,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             // Assuming no other armor
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 3),
-                Modifier::DamageResistance(1),
+                Modifier::DamageResistance(2),
             ]),
-        },
-        RankAbility {
-            name: "Mage Armor",
-            is_magical: true,
-            rank: 1,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(2)]),
         },
         RankAbility {
             name: "Mage Armor",
@@ -174,23 +176,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Spellcasting",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                You become a rank 1 arcane spellcaster.
-                You learn two rank 1 \glossterm{spells} from arcane \glossterm{mystic spheres} you have access to.
-                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
-                Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-                When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-                    you can forget any number of spells you know to learn that many new spells in exchange,
-                    including spells of the higher rank.
-                All of those spells must be from arcane mystic spheres you have access to.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Spell Rank (2)",
             is_magical: true,
             rank: 2,
@@ -305,7 +290,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Combat Caster",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 You gain a \plus1 bonus to your Armor defense.
             ",
@@ -409,7 +394,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Draconic Bloodline",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
                 You have the blood of that type of dragon in your veins.
@@ -541,16 +526,28 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Innate Magic",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 None of your arcane spells have \glossterm{somatic components} or \glossterm{verbal components}.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Absorption",
+            name: "Arcane Infusion",
             is_magical: true,
             rank: 1,
+            description: r"
+                You gain a \glossterm{magic bonus} equal to twice your rank in this archetype to your \glossterm{hit points} and \glossterm{damage resistance}.
+                Because this is a magic bonus, it does not stack with other magic bonuses (see \pcref{Stacking Rules}).
+            ",
+            // TODO: figure out stacking limitations? For now, this conflicts with magic items, so
+            // treat it like you have extra attunement points instead.
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 2)]),
+        },
+        RankAbility {
+            name: "Spell Absorption",
+            is_magical: true,
+            rank: 2,
             description: r"
                 Whenever another creature uses a spell to attack you, if that spell does not have the \glossterm{Attune} tag, you can choose to absorb its energy.
                 This does not reduce the spell's effect on you, but it grants you the ability to cast the spell.
@@ -560,18 +557,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
                 When you take a \glossterm{long rest}, you lose the ability to cast any spells you have stored with this ability.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Arcane Infusion",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You gain a \glossterm{magic bonus} equal to twice your rank in this archetype to your \glossterm{hit points} and \glossterm{damage resistance}.
-                Because this is a magic bonus, it does not stack with other magic bonuses (see \pcref{Stacking Rules}).
-            ",
-            // TODO: figure out stacking limitations? For now, this conflicts with magic items, so
-            // treat it like you have extra attunement points instead.
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 2)]),
         },
         RankAbility {
             name: "Implement Freedom",
@@ -585,21 +570,21 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Spell Absorption",
+            name: "Greater Arcane Infusion",
             is_magical: true,
             rank: 4,
             description: r"
-                You can retain up to two spells with your \glossterm{spell absorption} ability.
-                In addition, whenever you absorb a spell with that ability, you gain a +2 \glossterm{accuracy} bonus with that spell during the next round.
+                The bonuses from your \textit{arcane infusion} ability increase to three times your rank in this archetype.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Arcane Infusion",
+            name: "Greater Spell Absorption",
             is_magical: true,
             rank: 5,
             description: r"
-                The bonus from your \textit{arcane infusion} ability increases to three times your rank in this archetype.
+                You can retain up to two spells with your \glossterm{spell absorption} ability.
+                In addition, whenever you absorb a spell with that ability, you gain a +2 \glossterm{accuracy} bonus with that spell during the next round.
             ",
             modifiers: None,
         },
@@ -629,16 +614,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
-        RankAbility {
-            name: "Chaotic Exertion",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                You gain a \plus2 bonus to the roll when you use the \textit{desperate exertion} ability.
-                This bonus stacks with the normal \plus2 bonus provided by that ability.
-            ",
-            modifiers: None,
-        },
         RankAbility {
             name: "Wildspell",
             is_magical: true,
@@ -683,11 +658,12 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Chaotic Exertion",
+            name: "Chaotic Exertion",
             is_magical: true,
             rank: 3,
             description: r"
-                Once per \glossterm{long rest}, you can use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level}.
+                You gain a \plus2 bonus to the roll when you use the \textit{desperate exertion} ability.
+                This bonus stacks with the normal \plus2 bonus provided by that ability.
             ",
             modifiers: None,
         },
@@ -712,11 +688,11 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme Chaotic Exertion",
+            name: "Greater Chaotic Exertion",
             is_magical: true,
             rank: 6,
             description: r"
-                You can use your \textit{chaotic exertion} ability once per \glossterm{short rest} instead of once per long rest.
+                Once per \glossterm{short rest}, you can use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level}.
             ",
             modifiers: None,
         },
