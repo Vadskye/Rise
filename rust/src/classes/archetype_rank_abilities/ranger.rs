@@ -6,16 +6,6 @@ use crate::skills::Skill;
 pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Beast Affinity",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus2 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
-                In addition, you gain a \plus1 bonus to \glossterm{accuracy} and \glossterm{defenses} against animals and magical beasts.
-            ",
-            modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
-        },
-        RankAbility {
             name: "Animal Companion",
             is_magical: true,
             rank: 1,
@@ -142,15 +132,6 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
 pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Terrain Familiarity",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You ignore \glossterm{difficult terrain} from all sources except for creature abilities.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Know Your Enemy",
             is_magical: false,
             rank: 1,
@@ -166,7 +147,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from all sources except for creature abilities.
+                You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from all sources except for creature abilities.
                 In addition, any group you are part of can travel at full speed through difficult terrain during overland travel (see \pcref{Overland Movement}).
             ",
             modifiers: None,
@@ -244,15 +225,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
 pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Tracker",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus3 bonus to the Survival skill.
-            ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Survival, 3)]),
-        },
-        RankAbility {
             name: "Quarry",
             is_magical: false,
             rank: 1,
@@ -274,7 +246,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Hunting Style",
+            name: "Hunting Styles",
             is_magical: false,
             rank: 2,
             description: r"
@@ -382,6 +354,16 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Tracker",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                You gain a \plus3 bonus to the Survival skill.
+                In addition, you gain a \plus10 bonus to follow tracks left by your quarry.
+            ",
+            modifiers: Some(vec![Modifier::Skill(Skill::Survival, 3)]),
+        },
+        RankAbility {
             name: "Hunter's Prowess",
             is_magical: false,
             rank: 3,
@@ -389,16 +371,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1d bonus to your damage with all weapons.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Greater Tracker",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                The bonus from your \textit{tracker} ability increases to \plus4.
-                In addition, you gain a \plus10 bonus to follow tracks left by your quarry.
-            ",
-            modifiers: None,
         },
         RankAbility {
             name: "Greater Quarry",
@@ -420,6 +392,16 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Greater Tracker",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The Survival bonus from your \textit{tracker} ability increases to \plus5.
+                In addition, the bonus to follow tracks from your quarry increases to \plus20.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Greater Hunter's Prowess",
             is_magical: false,
             rank: 6,
@@ -427,16 +409,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 The bonus from your \textit{hunter's prowess} ability increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Supreme Tracker",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{tracker} ability increases to \plus5.
-                In addition, the bonus to follow tracks from your quarry from your \textit{greater tracker} ability increases to \plus20.
-            ",
-            modifiers: None,
         },
         RankAbility {
             name: "Supreme Quarry",
@@ -453,17 +425,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
 pub fn scout<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Keen Vision",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-                In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
-                If you already have that ability, you increase its range by 60 feet.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Skirmisher",
             is_magical: false,
             rank: 1,
@@ -472,6 +433,17 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+        },
+        RankAbility {
+            name: "Keen Vision",
+            is_magical: false,
+            rank: 2,
+            description: r"
+                You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+                In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
+                If you already have that ability, you increase its range by 60 feet.
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Perceive Weakness",
@@ -539,20 +511,6 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
 pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Wild Senses",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                 You gain a \plus1 bonus to Perception-based checks, except \glossterm{initiative} checks.
-            ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Awareness, 1),
-                Modifier::Skill(Skill::CreatureHandling, 1),
-                Modifier::Skill(Skill::SocialInsight, 1),
-                Modifier::Skill(Skill::Survival, 1),
-            ]),
-        },
-        RankAbility {
             name: "Combat Styles",
             is_magical: false,
             rank: 1,
@@ -602,11 +560,11 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Wild Senses",
+            name: "Wild Senses",
             is_magical: false,
             rank: 3,
             description: r"
-                The bonuses from your \textit{wild senses} ability increase to \plus2.
+                 You gain a \plus1 bonus to Perception-based checks, except \glossterm{initiative} checks.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Awareness, 1),
@@ -664,11 +622,11 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme Wild Senses",
+            name: "Greater Wild Senses",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonuses from your \textit{wild senses} ability increase to \plus3.
+                The bonuses from your \textit{wild senses} ability increase to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Awareness, 1),

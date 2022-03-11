@@ -6,15 +6,6 @@ use crate::skills::Skill;
 pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Practiced Leaper",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus3 bonus to the Jump skill.
-            ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Jump, 3)]),
-        },
-        RankAbility {
             name: "Acrobatic Accuracy",
             is_magical: false,
             rank: 1,
@@ -92,21 +83,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
 pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Esoteric Fluidity",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                 You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
-            ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Balance, 1),
-                Modifier::Skill(Skill::Flexibility, 1),
-                Modifier::Skill(Skill::Ride, 1),
-                Modifier::Skill(Skill::SleightOfHand, 1),
-                Modifier::Skill(Skill::Stealth, 1),
-            ]),
-        },
-        RankAbility {
             name: "Combat Styles",
             is_magical: false,
             rank: 1,
@@ -156,11 +132,11 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Esoteric Fluidity",
+            name: "Esoteric Fluidity",
             is_magical: false,
             rank: 3,
             description: r"
-                The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
+                 You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Balance, 1),
@@ -219,11 +195,11 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme Esoteric Fluidity",
+            name: "Greater Esoteric Fluidity",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{esoteric fluidity} ability increases to \plus3.
+                The bonus from your \textit{esoteric fluidity} ability increases to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Balance, 1),
@@ -260,33 +236,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Ki Barrier",
             is_magical: true,
-            rank: 0,
-            description: r"
-                While you are not wearing other body armor, you gain a ki barrier around your body.
-                This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                It also provides a \plus3 bonus to your \glossterm{damage resistance}.
-
-                You can also use a \glossterm{free hand} to wield the barrier as a shield.
-                This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
-                Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
-            ",
-            // This only works if everyone with this archetype doesn't equip actual armor, since
-            // the system won't know not to stack the effects
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 3),
-                Modifier::DamageResistance(3),
-            ]),
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 2,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(8)]),
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
             rank: 3,
             description: "",
             modifiers: Some(vec![Modifier::DamageResistance(12)]),
@@ -303,35 +252,21 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(25)]),
+            modifiers: Some(vec![Modifier::DamageResistance(30)]),
         },
         RankAbility {
             name: "Ki Barrier",
             is_magical: true,
             rank: 6,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(30)]),
+            modifiers: Some(vec![Modifier::DamageResistance(36)]),
         },
         RankAbility {
             name: "Ki Barrier",
             is_magical: true,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(35)]),
-        },
-        RankAbility {
-            name: "Ki Energy",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                Whenever you make a \glossterm{strike}, you can choose to treat it as a \glossterm{magical} ability.
-                This allows you to use your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
-                In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
-                If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
-                Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
-            ",
-            // TODO: use higher of Str/Wil for strikes
-            modifiers: None,
+            modifiers: Some(vec![Modifier::DamageResistance(42)]),
         },
         RankAbility {
             name: "Ki Manifestations",
@@ -540,14 +475,38 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Ki Barrier",
+            name: "Ki Energy",
+            is_magical: true,
+            rank: 1,
+            description: r"
+                Whenever you make a \glossterm{strike}, you can choose to treat it as a \glossterm{magical} ability.
+                This allows you to use your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+                In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
+                If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
+                Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
+            ",
+            // TODO: use higher of Str/Wil for strikes
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Ki Barrier",
             is_magical: true,
             rank: 2,
             description: r"
-                The damage resistance bonus from your \textit{ki barrier} ability increases to four times your rank in this archetype.
-                In addition, the defense bonus from the body armor increases to \plus3.
+                While you are not wearing other body armor, you gain a ki barrier around your body.
+                This functions like body armor that provides a \plus3 bonus to your Armor defense and has no \glossterm{encumbrance}.
+                It also provides a bonus to your \glossterm{damage resistance} equal to four times your rank in this archetype.
+
+                You can also use a \glossterm{free hand} to wield the barrier as a shield.
+                This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
+                Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+            // This only works if everyone with this archetype doesn't equip actual armor, since
+            // the system won't know not to stack the effects
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 3),
+                Modifier::DamageResistance(8),
+            ]),
         },
         RankAbility {
             name: "Ki Power",
@@ -559,24 +518,23 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
-            name: "Greater Ki Manifestation",
+            name: "Hardened Ki",
             is_magical: true,
             rank: 4,
             description: r"
-                After using a \textit{ki manifestation}, you can use a different \textit{ki manifestation} after the end of the current round.
-                You still cannot use the same \textit{ki manifestation} in two consecutive rounds.
+                You gain a \plus1 bonus to your Willpower.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme Ki Barrier",
+            name: "Greater Ki Barrier",
             is_magical: true,
             rank: 5,
             description: r"
-                The damage resistance bonus from your \textit{ki barrier} ability increases to five times your rank in this archetype.
+                The damage resistance bonus from your \textit{ki barrier} ability increases to six times your rank in this archetype.
                 In addition, the defense bonus from the body armor increases to \plus4.
             ",
-            // Rank 4: 16. Rank 5: 25.
+            // Rank 4: 16. Rank 5: 30.
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
@@ -589,12 +547,12 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
-            name: "Supreme Ki Manifestation",
+            name: "Greater Ki Manifestation",
             is_magical: true,
             rank: 7,
             description: r"
-                You learn an additional \textit{ki manifestation}.
-                In addition, your \textit{greater ki manifestation} ability also allows you to use the same \textit{ki manifestation} ability in consecutive rounds.
+                After using a \textit{ki manifestation}, you can use a different \textit{ki manifestation} after the end of the current round.
+                You still cannot use the same \textit{ki manifestation} in two consecutive rounds.
             ",
             modifiers: None,
         },
@@ -606,7 +564,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Unarmed Warrior",
             is_magical: false,
-            rank: 0,
+            rank: 1,
             description: r"
                 You gain a \plus2 bonus to accuracy and a \plus1d bonus to damage with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
             ",
@@ -707,46 +665,24 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
 pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Transcend Frailty",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You are immune to being \dazed and \stunned.
-            ",
-            // TODO: represent immunities?
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Clear the Mind",
-            is_magical: false,
-            rank: 1,
-            description: r"
-                You can use the \textit{clear the mind} ability as a standard action.
-                \begin{instantability}{Clear the Mind}[Instant]
-                    \rankline
-                    Remove up to two \glossterm{brief} effects or \glossterm{conditions} affecting you.
-                    This cannot remove effects applied during the current round.
-
-                    \rankline
-                    \rank{3} This ability gains the \abilitytag{Swift} tag.
-                    When you use it, the removed effects do not affect you during the current phase.
-                    In addition, you \glossterm{briefly} cannot gain any \glossterm{conditions}.
-                    \rank{5} You can use this ability as a \glossterm{minor action}.
-                    When you do, you increase your \glossterm{fatigue level} by one.
-                    \rank{7} You can remove any number of effects.
-                \end{instantability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Feel the Flow of Life",
             is_magical: true,
-            rank: 2,
+            rank: 1,
             description: r"
                 You become so attuned to the natural energy of life that you can sense it even when sight fails you.
                 You gain \trait{lifesense} with a 120 foot range, allowing you to sense the location of living creatures without light (see \pcref{Lifesense}).
                 In addition, you gain \trait{lifesight} with a 30 foot range, allowing you to see living creatures without light (see \pcref{Lifesight}).
             ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Transcend Uncertainty",
+            is_magical: false,
+            rank: 2,
+            description: r"
+                You are immune to being \dazed, \stunned, and \confused.
+            ",
+            // TODO: represent immunities?
             modifiers: None,
         },
         RankAbility {
@@ -768,22 +704,22 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Inner Peace",
-            is_magical: false,
+            name: "Greater Feel the Flow of Life",
+            is_magical: true,
             rank: 4,
             description: r"
-                You are immune to being \shaken, \frightened, and \panicked.
-                In addition, you are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
+                The range of your \trait{lifesense} increases by 120 feet.
+                In addition, the range of your \trait{lifesight} increases by 30 feet.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Feel the Flow of Life",
-            is_magical: true,
+            name: "Transcend Emotion",
+            is_magical: false,
             rank: 5,
             description: r"
-                The range of your \trait{lifesense} increases by 360 feet.
-                In addition, the range of your \trait{lifesight} increases by 90 feet.
+                You are immune to \abilitytag{Emotion} attacks.
+                In addition, you are immune to being \shaken, \frightened, and \panicked.
             ",
             modifiers: None,
         },
@@ -805,6 +741,16 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 This means that attacks which only affect living creatures have no effect against you.
                 In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
                 You still die of old age when your time is up.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Supreme Feel the Flow of Life",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                The range of your \trait{lifesense} increases by 240 feet.
+                In addition, the range of your \trait{lifesight} increases by 60 feet.
             ",
             modifiers: None,
         },
