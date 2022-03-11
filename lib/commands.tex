@@ -405,6 +405,7 @@
 }
 \DeclareDocumentCommand{\abilitytagdef}{m o}
 {
+    \pcref{#1}
     \IfValueTF{#2}
     {\termdef{#1}[#2]{abilitytag}}
     {\termdef{#1}{abilitytag}}
