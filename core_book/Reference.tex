@@ -68,6 +68,8 @@
 
     \abilitytagdef{Visual} Visual abilities use visible objects or forces to cause their effects.
     Creatures and objects that cannot see the effect are immune to it.
+    Special vision abilities that replace normal vision entirely, such as \trait{blindsight} and \trait{tremorsense}, are unable to perceive Visual effects.
+    A creature that exclusively perceives its surroundings without normal sight, such as by closing its eyes and relying on its blindsight, is unaffected.
 
 \newpage
 \section{Circumstances and Debuffs}\label{Circumstances and Debuffs}
@@ -193,19 +195,21 @@
 
     \traitdef{Blindsense}{blindsense}
         A creature with blindsense can sense the location of everything in its surroundings.
+        It does not need to use its eyes to gain this benefit.
         This ability works regardless of concealment, invisibility, or light levels.
         Blindsense always has a specific range limit, and provides no benefit beyond that range.
         However, it only grants knowledge of location, not actual sight, so does not mitigate any \glossterm{miss chances} that would apply.
         It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
 
     \traitdef{Blindsight}{blindsight}
-        A creature with blindsight can see perfectly regardless of concealment, invisibility, or light levels.
+        A creature with blindsight can perceive its surroundings perfectly regardless of concealment, invisibility, or light levels.
+        It does not need to use its eyes to gain this benefit.
         This allows the creature to ignore all \glossterm{miss chances} caused by those effects.
         Blindsight always has a specific range limit, and provides no benefit beyond that range.
         It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
 
     \traitdef{Darkvision}{darkvision}
-        A creature with darkvision can see perfectly in both complete darkness and \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.
+        A creature with darkvision can see perfectly in both complete darkness and \glossterm{shadowy illumination} just like a human does in \glossterm{bright illumination}.
         Darkvision always has a specific range limit, and provides no benefit beyond that range.
         As long as a creature with darkvision is in \glossterm{bright illumination} or \glossterm{brilliant illumination}, their darkvision stops working.
         The darkvision \glossterm{briefly} stays disabled even after they leave the lit area.
