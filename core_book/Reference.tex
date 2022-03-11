@@ -275,6 +275,27 @@
         A creature with the scent ability has an unusually good sense of smell.
         It reduces the \glossterm{difficulty value} of scent-based Awareness checks by 10 (see \pcref{Awareness}).
 
+    % TODO: is this really a trait?
+    \traitdef{Shapeshift}{shapeshift}
+        A creature that can shapeshift can completely transform its physical body into a different shape.
+        When a shapeshifted creature dies, it returns to its original form.
+        It generally retains all of its original statistics and abilities, with the following exceptions.
+        % TODO: are more exceptions necessary?
+        \begin{itemize}
+            \item If the new shape is not normally capable of speech, the creature cannot speak.
+                This may prevent it from casting spells with \glossterm{verbal components} and using similar abilities.
+            \item The creature is limited by the number of \glossterm{free hands} present in the new form.
+                In addition, it cannot gain more free hands by shapeshifting than it originally had in its base form.
+                Even if you shapeshift to a form with many hands, you do not have the mental coordination necessary to use them all effectively.
+        \end{itemize}
+
+        When a creature shapeshifts, all of its worn and carried items that are physically incompatible with the creature's new shape meld into its body.
+        This does not break \glossterm{attunement}, and the creature still gains the benefit of any magical properties of melded items.
+        However, it does not gain the benefit of nonmagical properties from melded items.
+        For example, a creature that shapeshifts into an amorphous gas would still benefit from all attuned effects from its equipped items, such as \mitem{boots of speed}.
+        However, it would gain no benefit to its Armor defense or damage resistance from any melded body armor, and it would not be able to attack with any of its melded weapons.
+        Items exceeding a creature's \glossterm{carrying capacity} are not melded, and simply fall to the ground in place.
+
     \traitdef{Telepathy}{telepathy}
         A creature with telepathy has the ability to mentally communicate with other nearby creatures.
         All telepathy abilities have a defined \glossterm{range}.
