@@ -26,7 +26,7 @@ pub enum StandardAttack {
     YrthakThunderingHide,
 
     // Character/shared abilities
-    AbyssalBlast(i32),
+    AbyssalRebuke(i32),
     BreathWeaponCone(i32, DamageType, Defense),
     BreathWeaponLine(i32, DamageType, Defense),
     Combustion(i32),
@@ -223,7 +223,7 @@ impl StandardAttack {
             },
 
             // Character/shared abilities
-            Self::AbyssalBlast(rank) => SimpleSpell {
+            Self::AbyssalRebuke(rank) => SimpleSpell {
                 accuracy: 0,
                 crit: None,
                 defense: Defense::Armor,
@@ -233,7 +233,7 @@ impl StandardAttack {
                     damage_types: vec![DamageType::Fire],
                     power_multiplier: 1.0,
                 }.damage_effect()),
-                name: "Abyssal Blast".to_string(),
+                name: "Abyssal Rebuke".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),

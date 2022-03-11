@@ -8,10 +8,9 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Alchemical Infusion",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
-                You may add half your \glossterm{power} to the damage or healing caused by any alchemical items you use.
-                In addition, whenever you use an alchemical item, you gain a \plus1d bonus to any damage or healing caused by the item for each rank by which your rank in this archetype exceeds the item's rank.
+                You can add half your \glossterm{power} to the damage or healing caused by any alchemical items you use.
             ",
             // TODO: add alchemical items as unique attacks
             modifiers: None,
@@ -35,7 +34,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 If you try to create a fourth item, you must stop maintaining the existence of another item created.
                 You can do this as a \glossterm{free action} regardless of distance.
                 This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
-
             ",
             modifiers: None,
         },
@@ -62,6 +60,15 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Greater Alchemical Infusion",
+            is_magical: true,
+            rank: 3,
+            description: r"
+                Whenever you use an alchemical item, you gain a \plus1d bonus to any damage or healing caused by the item for each rank by which your rank in this archetype exceeds the item's rank.
             ",
             modifiers: None,
         },
@@ -135,25 +142,33 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Cantrips",
+            name: "Spellcasting",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
-                You have the ability to use arcane magic.
+                Your extensive studies grant you the ability to use arcane magic.
                 You gain access to one arcane \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Arcane Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional arcane \glossterm{mystic sphere} per two \glossterm{insight points}.
-                You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-                You do not yet gain access to any other spells from those mystic spheres.
+                You can only learn arcane spells from arcane mystic spheres that you have access to.
+
+                You automatically learn all \glossterm{cantrips} from each mystic sphere you have access to.
+                In addition, you learn two rank 1 arcane \glossterm{spells}.
+                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 
                 Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
+                Unless otherwise noted in a spell's description, casting any spell requires a \glossterm{standard action}.
                 For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+
+                When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+                    you can forget any number of spells you know to learn that many new spells in exchange,
+                    including spells of the higher rank.
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Mage Armor",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 You can use the \textit{mage armor} ability as a standard action.
                 \begin{durationability}{Mage Armor}[Duration]
@@ -173,15 +188,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             // Assuming no other armor
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 3),
-                Modifier::DamageResistance(1),
+                Modifier::DamageResistance(2),
             ]),
-        },
-        RankAbility {
-            name: "Mage Armor",
-            is_magical: true,
-            rank: 1,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(2)]),
         },
         RankAbility {
             name: "Mage Armor",
@@ -224,23 +232,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: "",
             modifiers: Some(vec![Modifier::DamageResistance(28)]),
-        },
-        RankAbility {
-            name: "Spellcasting",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                You become a rank 1 arcane spellcaster.
-                You learn two rank 1 \glossterm{spells} from arcane \glossterm{mystic spheres} you have access to.
-                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
-                Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-                When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
-                    you can forget any number of spells you know to learn that many new spells in exchange,
-                    including spells of the higher rank.
-                All of those spells must be from arcane mystic spheres you have access to.
-            ",
-            modifiers: None,
         },
         RankAbility {
             name: "Spell Rank (2)",
@@ -353,27 +344,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
     return vec![
-        RankAbility {
-            name: "Deep Knowledge",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                You gain a \plus2 bonus to all Knowledge skills.
-            ",
-            modifiers: Some(vec![Modifier::Skill(
-                Skill::Knowledge(vec![
-                    KnowledgeSubskill::Arcana,
-                    KnowledgeSubskill::Dungeoneering,
-                    KnowledgeSubskill::Engineering,
-                    KnowledgeSubskill::Items,
-                    KnowledgeSubskill::Local,
-                    KnowledgeSubskill::Nature,
-                    KnowledgeSubskill::Planes,
-                    KnowledgeSubskill::Religion,
-                ]),
-                2,
-            )]),
-        },
         RankAbility {
             name: "Ritualist",
             is_magical: true,
@@ -501,7 +471,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Mystic Sphere",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 You gain access to an additional arcane \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
             ",
@@ -607,48 +577,35 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "School Specialization",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 The arcane mystic spheres can be divided into six traditional schools of magic.
                 Choose one of the following schools of magic.
                 You are a specialist in your chosen school.
-                You cannot gain access to any arcane mystic spheres outside of your specialist school, and you cannot learn spells or rituals from those spheres by any means.
-                In exchange, you gain an additional \glossterm{insight point}.
+                You cannot gain access to any arcane mystic spheres outside of your specialized school, and you cannot learn spells or rituals from those spheres by any means.
+                In exchange, you gain an additional \glossterm{insight point}, and you gain a benefit based on your specialized school.
                 \begin{itemize}
-                    \item Abjuration: \sphere{barrier}, \sphere{telekinesis}, \sphere{thaumaturgy}
-                    \item Conjuration: \sphere{astromancy}, \sphere{fabrication}, \sphere{summoning}
-                    \item Evocation: \sphere{cryomancy}, \sphere{electromancy}, \sphere{pyromancy}
-                    \item Illusion: \sphere{enchantment}, \sphere{photomancy}, \sphere{umbramancy}
-                    \item Transmutation: \sphere{chronomancy}, \sphere{polymorph}, \sphere{terramancy}
-                    \item Necromancy: \sphere{revelation}, \sphere{vivimancy}
+                    \item Abjuration: \sphere{barrier}, \sphere{telekinesis}, and \sphere{thaumaturgy}.
+                        If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+                    \item Conjuration: \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning}.
+                        If you specialize in this school, you double the \glossterm{range} of arcane spells you cast.
+                    \item Evocation: \sphere{cryomancy}, \sphere{electromancy}, \sphere{pyromancy}.
+                        If you specialize in this school, you gain a \plus2 bonus to your \glossterm{power}.
+                    \item Illusion: \sphere{enchantment}, \sphere{photomancy}, \sphere{umbramancy}.
+                        If you specialize in this school, you gain a \plus1 bonus to your \glossterm{accuracy}.
+                    \item Transmutation: \sphere{chronomancy}, \sphere{polymorph}, \sphere{terramancy}.
+                        If you specialize in this school, you gain a \plus2 bonus to your Fortitude, Reflex, or Mental defense.
+                        You can change the defense this bonus applies to as a \glossterm{minor action}.
+                    \item Necromancy: \sphere{revelation}, \sphere{vivimancy}.
+                        If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
+                        In addition, you gain a \plus1 bonus to Fortitude defense.
                 \end{itemize}
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
-        },
-        RankAbility {
-            name: "School Expertise",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                You gain an ability based on your chosen school.
-                {
-                    \subcf{Abjuration} You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
-
-                    \subcf{Conjuration} You double the \glossterm{range} of arcane spells you cast.
-
-                    \subcf{Evocation} You gain a \plus2 bonus to \glossterm{power}.
-
-                    \subcf{Illusion} You gain a \plus1 bonus to \glossterm{accuracy}.
-
-                    \subcf{Transmutation} You gain a \plus2 bonus to your Fortitude, Reflex, or Mental defense.
-                    You can change the defense this bonus applies to as a \glossterm{minor action}.
-
-                    \subcf{Necromancy} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
-                    In addition, you gain a \plus1 bonus to Fortitude defense.
-                }
-            ",
             // Assume evocation
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![
+                Modifier::Power(2),
+                Modifier::Resource(Resource::InsightPoint, 1),
+            ]),
         },
         RankAbility {
             name: "Spell Knowledge",
@@ -670,7 +627,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
-            name: "Greater School Expertise",
+            name: "Greater School Specialization",
             is_magical: true,
             rank: 4,
             description: r"
@@ -728,7 +685,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme School Expertise",
+            name: "Supreme School Specialization",
             is_magical: true,
             rank: 7,
             description: r"
