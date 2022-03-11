@@ -207,7 +207,7 @@ export const bluntForce: CombatStyle = {
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm{land speed} (see \\pcref{Leap}).
+          You make a long jump or high jump and move as normal for the jump (see \\pcref{Jump}).
           When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, you emit a small shockwave.
           If you do, make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
         `,
