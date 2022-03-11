@@ -1,7 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Defense, Resource};
 use crate::creatures::Modifier;
-use crate::skills::{KnowledgeSubskill, Skill};
 
 pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
     return vec![
