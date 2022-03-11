@@ -5,65 +5,6 @@ use crate::creatures::Modifier;
 pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Enduring Devotion",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a bonus equal to twice your rank in this archetype to your maximum \glossterm{hit points} (minimum 1).
-            ",
-            modifiers: Some(vec![Modifier::HitPoints(1)]),
-        },
-        RankAbility {
-            name: "Enduring Devotion",
-            is_magical: false,
-            rank: 1,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(2)]),
-        },
-        RankAbility {
-            name: "Enduring Devotion",
-            is_magical: false,
-            rank: 2,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(4)]),
-        },
-        RankAbility {
-            name: "Enduring Devotion",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(6)]),
-        },
-        RankAbility {
-            name: "Enduring Devotion",
-            is_magical: false,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(8)]),
-        },
-        RankAbility {
-            name: "Enduring Devotion",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            // This rank is when greater enduring devotion kicks in
-            modifiers: Some(vec![Modifier::HitPoints(15)]),
-        },
-        RankAbility {
-            name: "Enduring Devotion",
-            is_magical: false,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(18)]),
-        },
-        RankAbility {
-            name: "Enduring Devotion",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(21)]),
-        },
-        RankAbility {
             name: "Aligned Aura",
             is_magical: true,
             rank: 1,
@@ -95,10 +36,10 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your devotion to your alignment grants you immunities.
 
-                \subparhead{Chaos} You are immune to the \slowed and \immobilized effects.
-                \subparhead{Evil} You are immune to \abilitytag{Curse} effects.
-                \subparhead{Good} You are immune to the \shaken, \frightened, and \panicked effects.
-                \subparhead{Law} You are immune to the \dazed, \stunned, and \confused effects.
+                \subparhead{Chaos} You are immune to being \slowed and \immobilized.
+                \subparhead{Evil} You are immune to being \charmed and \goaded.
+                \subparhead{Good} You are immune to \abilitytag{Curse} attacks and being \dominated.
+                \subparhead{Law} You are immune to being \dazed.
             ",
             modifiers: None,
         },
@@ -124,17 +65,9 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Evil} Whenever a target removes a \glossterm{condition}, it takes 2d6 \add half \glossterm{power} energy damage.
                 This damage increases by \plus1d for each rank beyond 4.
                 \subparhead{Good} When a target would lose \glossterm{hit points}, you may lose those hit points instead.
-                The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
+                This causes you to suffer any special effects of the attack that trigger on losing hit points in place of the target.
+                The target suffers any other effects of the attack normally.
                 \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Enduring Devotion",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                The bonus from your \textit{enduring devotion} ability increases to three times your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -178,35 +111,26 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Cantrips",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                Your devotion to your alignment grants you the ability to use divine magic.
-                You gain access to one divine \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Divine Mystic Spheres}).
-                You may spend \glossterm{insight points} to gain access to one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
-                You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-                You do not yet gain access to any other spells from those mystic spheres.
-
-                Divine spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
-                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Spellcasting",
             is_magical: true,
             rank: 1,
             description: r"
-                You become a rank 1 divine spellcaster.
-                You learn two rank 1 \glossterm{spells} from divine \glossterm{mystic spheres} you have access to.
-                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
-                Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+                Your devotion to your alignment grants you the ability to use divine magic.
+                You gain access to one divine \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Divine Mystic Spheres}).
+                You may spend \glossterm{insight points} to gain access to one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
+                You can only learn divine spells from divine mystic spheres that you have access to.
+
+                You automatically learn all \glossterm{cantrips} from each mystic sphere you have access to.
+                In addition, you learn two rank 1 divine \glossterm{spells}.
+                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
+
+                Divine spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
+                Unless otherwise noted in a spell's description, casting any spell requires a \glossterm{standard action}.
+                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
-                All of those spells must be from divine mystic spheres you have access to.
             ",
             modifiers: None,
         },
@@ -305,7 +229,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Combat Caster",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 You gain a \plus1 bonus to your Armor defense.
             ",
@@ -382,23 +306,11 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
 pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Stalwart Defense",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus1 bonus to your Fortitude defense and Mental defense.
-            ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Defense(Defense::Mental, 1),
-            ]),
-        },
-        RankAbility {
             name: "Lay on Hands",
             is_magical: true,
             rank: 1,
             description: r"
-            You can use the \textit{lay on hands} ability as a standard action.
+                You can use the \textit{lay on hands} ability as a standard action.
                 \begin{instantability}{Lay on Hands}[Instant]
                     \abilitytag{Healing}, \abilitytag{Magical}
                     \rankline
@@ -462,11 +374,11 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(28)]),
         },
         RankAbility {
-            name: "Greater Stalwart Defense",
+            name: "Stalwart Defense",
             is_magical: false,
             rank: 3,
             description: r"
-                The bonus from your \textit{stalwart defense} ability increases to \plus2.
+                You gain a \plus1 bonus to your Fortitude defense and Mental defense.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Fortitude, 1),
@@ -503,11 +415,11 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme Stalwart Defense",
+            name: "Greater Stalwart Defense",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{stalwart defense} ability increases to \plus3.
+                The bonus from your \textit{stalwart defense} ability increases to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Fortitude, 1),
@@ -538,15 +450,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
 pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Unflagging Zeal",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
-            ",
-            modifiers: Some(vec![Modifier::Resource(Resource::FatigueTolerance, 1)]),
-        },
-        RankAbility {
             name: "Smite",
             is_magical: true,
             rank: 1,
@@ -557,7 +460,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike} with a \plus2 damage bonus.
                     Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
-                    If your target shares your devoted alignment, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a creature that shares your alignment.
+                    If the target has the alignment opposed to your devoted alignment, you double all of your damage bonuses along with your damage dice when you get a \glossterm{critical hit}.
 
                     \rankline
                     \rank{3} The damage bonus increases to \plus4.
@@ -599,23 +502,23 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
+            name: "Fearless Zeal",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                You are immune to being \shaken, \frightened, and \panicked.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Zealous Fixation",
             is_magical: true,
-            rank: 3,
+            rank: 4,
             description: r"
                 Whenever you hit a creature with a \glossterm{strike}, you ignore all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
                 If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Unflagging Zeal",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                The bonus from your \textit{unflagging zeal} ability increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Resource(Resource::FatigueTolerance, 1)]),
         },
         RankAbility {
             name: "Greater Forceful Zeal",

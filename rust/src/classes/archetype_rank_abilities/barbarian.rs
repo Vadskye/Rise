@@ -433,20 +433,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Primal Might",
-            is_magical: false,
-            rank: 0,
-            description: r"
-                You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
-            ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Climb, 1),
-                Modifier::Skill(Skill::Jump, 1),
-                Modifier::Skill(Skill::Swim, 1),
-                Modifier::Skill(Skill::Endurance, 1),
-            ]),
-        },
-        RankAbility {
             name: "Combat Styles",
             is_magical: false,
             rank: 1,
@@ -496,11 +482,11 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Primal Might",
+            name: "Primal Might",
             is_magical: false,
             rank: 3,
             description: r"
-                The bonuses from your \textit{primal might} ability increase to \plus2.
+                You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Climb, 1),
@@ -558,11 +544,11 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Supreme Primal Might",
+            name: "Greater Primal Might",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonuses from your \textit{primal might} ability increase to \plus3.
+                The bonuses from your \textit{primal might} ability increase to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Climb, 1),
