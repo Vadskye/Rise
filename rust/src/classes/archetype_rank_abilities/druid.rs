@@ -1,29 +1,9 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::{Maneuver, Modifier};
-use crate::skills::Skill;
 
 pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
     return vec![
-        RankAbility {
-            name: "Elemental Balance",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                You gain a small benefit from each of the four elements.
-                \begin{itemize}
-                    \item Air: You gain a \plus2 bonus to the Jump skill.
-                    \item Earth: You gain a \plus1 bonus to your Fortitude defense.
-                    \item Fire: You suffer no heat-related penalties for being in environments with temperatures up to 150 degrees Fahrenheit.
-                    \item Water: You gain a \plus2 bonus to the Swim skill.
-                \end{itemize}
-            ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Skill(Skill::Jump, 2),
-                Modifier::Skill(Skill::Swim, 2),
-            ]),
-        },
         RankAbility {
             name: "Elemental Spell",
             is_magical: true,
@@ -113,14 +93,14 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Elemental Balance",
+            name: "Elemental Balance",
             is_magical: true,
             rank: 3,
             description: r"
-                The bonuses from your \textit{elemental balance} ability improve.
+                You gain a benefit from each of the four elements.
                 \begin{itemize}
                     \item Air: You gain a \glossterm{glide speed} equal to half the \glossterm{base speed} for your size.
-                    \item Earth: The bonus to your Fortitude defense increases to \plus2.
+                    \item Earth: You gain a \plus1 bonus to your Fortitude defense.
                     \item Fire: You are \trait{impervious} to fire damage.
                     \item Water: You gain a \glossterm{swim speed} equal to half the \glossterm{base speed} for your size.
                 \end{itemize}
@@ -174,7 +154,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
-            name: "Supreme Elemental Balance",
+            name: "Greater Elemental Balance",
             is_magical: true,
             rank: 7,
             description: r"
@@ -182,7 +162,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \begin{itemize}
                     \item Air: You gain a \glossterm{fly speed} equal to half the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
                     At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
-                    \item Earth: The bonus to your Fortitude defense increases to \plus3.
+                    \item Earth: The bonus to your Fortitude defense increases to \plus2.
                     \item Fire: You treat all fire damage you take as being \glossterm{environmental damage}.
                     \item Water: Your swim speed increases to be equal to the base speed for your size.
                 \end{itemize}
@@ -195,35 +175,26 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
 pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Cantrips",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                Your connection to nature grants you the ability to use nature magic.
-                You gain access to one nature \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Nature Mystic Spheres}).
-                You may spend \glossterm{insight points} to gain access to one additional nature \glossterm{mystic sphere} per two \glossterm{insight points}.
-                You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-                You do not yet gain access to any other spells from those mystic spheres.
-
-                Nature spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
-                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Spellcasting",
             is_magical: true,
             rank: 1,
             description: r"
-                You become a rank 1 nature spellcaster.
-                You learn two rank 1 \glossterm{spells} from nature \glossterm{mystic spheres} you have access to.
-                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per \glossterm{insight point}.
-                Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+                Your connection to nature grants you the ability to use nature magic.
+                You gain access to one nature \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Nature Mystic Spheres}).
+                You may spend \glossterm{insight points} to gain access to one additional nature \glossterm{mystic sphere} per two \glossterm{insight points}.
+                You can only learn nature spells from nature mystic spheres that you have access to.
+
+                You automatically learn all \glossterm{cantrips} from each mystic sphere you have access to.
+                In addition, you learn two rank 1 nature \glossterm{spells}.
+                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
+
+                nature spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
+                Unless otherwise noted in a spell's description, casting any spell requires a \glossterm{standard action}.
+                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
-                All of those spells must be from nature mystic spheres you have access to.
             ",
             modifiers: None,
         },
@@ -322,7 +293,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Combat Caster",
             is_magical: true,
-            rank: 0,
+            rank: 1,
             description: r"
                 You gain a \plus1 bonus to your Armor defense.
             ",
@@ -424,19 +395,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
     return vec![
-        RankAbility {
-            name: "Shifting Defense",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                You gain a \plus2 bonus to your Fortitude, Reflex, or Mental defense.
-                You can change the defense this bonus applies to as a \glossterm{standard action}.
-            ",
-            // Arbitrarily choose Ref defense? Unclear whether this should be a single defense or
-            // all defenses for the purpose of calculations, since there is no way to choose lowest
-            // defense easily
-            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 2)]),
-        },
         RankAbility {
             name: "Wild Aspects",
             is_magical: true,
@@ -650,13 +608,14 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Greater Shifting Defense",
+            name: "Regenerative Shift",
             is_magical: true,
             rank: 3,
             description: r"
-                The bonus from your \textit{shifting defense} ability increases to \plus3.
+                Whenever you activate a new \ability{wild aspect}, you regain hit points equal to a quarter of your maximum hit points.
+                After healing in this way, you \glossterm{briefly} cannot heal in this way again.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Natural Force",
@@ -668,11 +627,15 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Greater Wild Aspect",
+            name: "Animal Shape",
             is_magical: true,
             rank: 4,
             description: r"
-                You can change your \textit{wild aspect} as a \glossterm{minor action} instead of as a standard action.
+                Whenever you activate a \ability{wild aspect} that represents a specific animal, you can fully \glossterm{shapeshift} to match that animal's shape.
+                This cannot increase your \glossterm{size category}, but you can shrink by one size category if it is appropriate for that animal.
+                You may choose to reshape any body armor you wear as barding to fit the animal instead of melding it into your form.
+                The armor regains its normal shape if you take it off,.
+                For details about shapeshifting, see \pcref{Shapeshift}.
             ",
             modifiers: None,
         },
@@ -696,21 +659,30 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Supreme Shifting Defense",
+            name: "Greater Regenerative Shift",
             is_magical: true,
             rank: 6,
             description: r"
-                The bonus from your \textit{shifting defense} ability increases to \plus4.
+                When you heal with your \textit{regenerative shift} ability, you can also remove one \glossterm{brief} effect or \glossterm{condition}.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 1)]),
+            modifiers: None,
         },
         RankAbility {
-            name: "Supreme Wild Aspect",
+            name: "Greater Animal Shape",
             is_magical: true,
             rank: 7,
             description: r"
-                You can change your \textit{wild aspect} as a \glossterm{free action} instead of as a minor action, and changing your wild aspect gains the \abilitytag{Swift} tag.
-                In addition, you learn an additional \textit{wild aspect}.
+                When you shapeshift with your \textit{animal shape} ability, you may either grow or shrink by one \glossterm{size category}, regardless of whether it would normally be appropriate for that animal.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Instant Wild Aspect",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                You can change your \textit{wild aspect} as a \glossterm{minor action}, and changing your wild aspect gains the \abilitytag{Swift} tag.
+                When you change in this way, you cannot gain the benefit of your \textit{regenerative shift} ability, and you \glossterm{briefly} cannot change wild aspects as a minor action again.
             ",
             modifiers: None,
         },
@@ -719,23 +691,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
     return vec![
-        RankAbility {
-            name: "Animal Speech",
-            is_magical: true,
-            rank: 0,
-            description: r"
-                You can use the \textit{animal speech} ability as a standard action.
-                \begin{durationability}{Animal Speech}[\abilitytag{Sustain} (minor)]
-                    \rankline
-                    Choose an animal within \rnglong range.
-                    You can speak to and understand the speech of the target animal, and any other animals of the same species.
-
-                    This ability does not make the target any more friendly or cooperative than normal.
-                    Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
-                \end{durationability}
-            ",
-            modifiers: None,
-        },
         RankAbility {
             name: "Natural Servant",
             is_magical: true,
@@ -795,6 +750,23 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Animal Speech",
+            is_magical: true,
+            rank: 2,
+            description: r"
+                You can use the \textit{animal speech} ability as a standard action.
+                \begin{durationability}{Animal Speech}[\abilitytag{Sustain} (minor)]
+                    \rankline
+                    Choose an animal within \rnglong range.
+                    You can speak to and understand the speech of the target animal, and any other animals of the same species.
+
+                    This ability does not make the target any more friendly or cooperative than normal.
+                    Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
+                \end{durationability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Nature's Ally",
             is_magical: true,
             rank: 2,
@@ -814,16 +786,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             ",
             // TODO: make this only work with natural weapons
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Plant Speech",
-            is_magical: true,
-            rank: 3,
-            description: r"
-                When you use your \textit{animal speech} ability, you can choose a plant instead of an animal.
-                If you do, you can speak to and understand the speech of the target plant, and any other plants of the same species.
-            ",
-            modifiers: None,
         },
         RankAbility {
             name: "Greater Natural Servant",
