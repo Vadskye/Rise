@@ -86,15 +86,15 @@ export const revelation: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The first time the target makes a \\glossterm{strike} this round,
-        it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
+          it gains a +1 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
         Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the target makes during the current phase.
         If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +3.`,
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
+        3: `The bonus increases to +2.`,
+        5: `The bonus increases to +3.`,
+        7: `The bonus increases to +4.`,
       },
       tags: ["Swift"],
       type: "Duration",
@@ -106,14 +106,14 @@ export const revelation: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The first time the target casts a spell this round,
-        it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
+        it gains a +1 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
         Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the target makes during the current phase.
         If you cast this spell on yourself, it affects the first spell you cast before the end of the next round.
       `,
       rank: 3,
       scaling: {
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
+        5: `The bonus increases to +2.`,
+        7: `The bonus increases to +3.`,
       },
       tags: ["Swift"],
       type: "Duration",
