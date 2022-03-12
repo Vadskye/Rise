@@ -311,7 +311,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{lay on hands} ability as a standard action.
-                \begin{instantability}{Lay on Hands}[Instant]
+                \begin{instantability}{Lay on Hands}
                     \abilitytag{Magical}
                     \rankline
                     Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
@@ -459,7 +459,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{smite} ability as a standard action.
-                \begin{instantability}{Smite}[Instant]
+                \begin{instantability}{Smite}
                     \abilitytag{Magical}
                     \rankline
                     Make a \glossterm{strike} with a \plus2 damage bonus.
@@ -481,7 +481,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can use the \textit{detect anathema} ability as a standard action.
-                \begin{instantability}{Detect Anathema}[Instant]
+                \begin{instantability}{Detect Anathema}
                     \abilitytag{Detection}, \abilitytag{Magical}
                     \rankline
                     You know the number of creatures within a \\largearea cone from you that have the alignment opposed to your devoted alignment.

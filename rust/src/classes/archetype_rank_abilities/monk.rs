@@ -329,7 +329,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus15 feet.
                     \end{durationability}
 
-                    \begin{instantability}{Flash Step}[Instant]
+                    \begin{instantability}{Flash Step}
                         \rankline
                         You can use this ability as part of movement with your land speed.
                         % TODO: is 'horizontally' the correct word?

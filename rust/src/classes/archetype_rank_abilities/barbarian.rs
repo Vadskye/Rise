@@ -191,7 +191,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 As a standard action, you can use the \textit{enraged strike} ability.
-                \begin{instantability}{Enraged Strike}[Instant]
+                \begin{instantability}{Enraged Strike}
                     \rankline
                     Make a melee \glossterm{strike}.
                     You gain a \plus2 accuracy bonus and a \plus4 damage bonus with the strike against each creature that dealt damage to you during the previous round.
