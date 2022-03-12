@@ -885,6 +885,7 @@ def generate_weapons():
             tags=["Healing"],
             description="""
                 Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 1d8+3 \\glossterm{hit points}.
+                This healing cannot increase your hit points above half your maximum hit points.
             """,
             short_description="Steals 1d8+3 hit points from foes",
         ),
@@ -895,6 +896,7 @@ def generate_weapons():
             tags=["Healing"],
             description="""
                 Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 2d8+7 \\glossterm{hit points}.
+                This healing cannot increase your hit points above half your maximum hit points.
             """,
             short_description="Steals 2d8+7 hit points from foes",
         ),

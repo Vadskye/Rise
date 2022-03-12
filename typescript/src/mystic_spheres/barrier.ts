@@ -7,7 +7,7 @@ export const barrier: MysticSphere = {
 
   cantrips: [
     {
-      name: "Burst Ward",
+      name: "Personal Ward",
 
       effect: `
         You are \\trait{impervious} to \\glossterm{energy damage} this round.
@@ -393,20 +393,20 @@ export const barrier: MysticSphere = {
     },
 
     {
-      name: "Energy Shield",
+      name: "Energy Shell",
 
       effect: `
-        You surround yourself with a layer of shielding that reduces the power of energy attacks against you.
-        Whenever you would take energy damage, you take only half of that damage, and one layer of shielding is destroyed.
+        You surround yourself with two layers of shielding that reduce the power of energy attacks against you.
+        Whenever you would take energy damage, you reduce that damage by 5, and one layer of shielding is destroyed.
         When the last layer is destroyed, this ability provides no further benefit.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,
       rank: 1,
       scaling: {
-        3: `The spell creates two layers of shielding.`,
-        5: `The spell creates three layers of shielding.`,
-        7: `The spell creates four layers of shielding.`,
+        3: `The damage reduction increases to 10.`,
+        5: `The damage reduction increases to 20.`,
+        7: `The damage reduction increases to 40.`,
       },
       tags: ["Manifestation"],
       type: "Attune (self)",
@@ -477,7 +477,22 @@ export const barrier: MysticSphere = {
       },
       rank: 6,
       type: "Duration",
-    }
+    },
+
+    {
+      name: "Burst Ward",
+
+      effect: `
+        Choose yourself or an \\glossterm{ally} within \\shortrange.
+        The target \\glossterm{briefly} gains a +2 bonus to its Armor and Reflex defenses.
+      `,
+      rank: 2,
+      scaling: {
+        4: `The range increases to \\medrange.`,
+        6: `The bonus increases to +3.`,
+      },
+      type: "Duration",
+    },
   ],
   rituals: [
     {

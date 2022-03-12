@@ -343,27 +343,27 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
 pub fn healer<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Restoration",
+            name: "Divine Aid",
             is_magical: true,
             rank: 1,
             description: r"
-                You can use the \textit{restoration} ability as a standard action.
-                \begin{instantability}{Restoration}[Instant]
-                    \abilitytag{Healing}, \glossterm{Magical}
+                You can use the \textit{divine aid} ability as a standard action.
+                \begin{instantability}{Divine Aid}[Instant]
+                    \glossterm{Magical}
                     \rankline
                     Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
-                    % +1d in exchange for not applying power to self
-                    The target regains 1d10 \glossterm{hit points}.
-                    If the target is a creature other than yourself, they also regain hit points equal to your \glossterm{power}.
-                    After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
+                    The target regains 1d8 \add \glossterm{power} \glossterm{hit points}, and it \glossterm{briefly} gains a \plus2 bonus to \glossterm{vital rolls} and all defenses.
+
+                    Normally, this healing cannot increase the target's hit points above half its maximum hit points.
+                    If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
 
                     \rankline
-                    \rank{2} The healing increases to 2d6.
-                    \rank{3} The healing increases to 2d10.
-                    \rank{4} The healing increases to 4d6.
-                    \rank{5} The healing increases to 4d10.
-                    \rank{6} The healing increases to 5d10.
-                    \rank{7} The healing increases to 7d10.
+                    \rank{2} The healing increases to 1d10.
+                    \rank{3} The healing increases to 2d8.
+                    \rank{4} The healing increases to 2d10.
+                    \rank{5} The healing increases to 4d8.
+                    \rank{6} The healing increases to 4d10.
+                    \rank{7} The healing increases to 6d10.
                 \end{instantability}
             ",
             modifiers: None,

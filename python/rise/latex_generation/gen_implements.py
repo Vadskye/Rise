@@ -95,8 +95,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item as a \\glossterm<free action>.
+                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, you also regain half that many hit points.
+                This healing cannot increase your hit points above half your maximum hit points.
             """,
             short_description="Heals you when you heal others",
         ),
@@ -106,10 +107,36 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item as a \\glossterm<free action>.
+                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, you also regain that many hit points.
+                This healing cannot increase your hit points above half your maximum hit points.
             """,
             short_description="Significantly heals you when you heal others",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
+            name="Staff of Pleasant Healing",
+            rank=2,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
+                When you do, the target \\glossterm<briefly> gains a +2 bonus to its Mental defense.
+            """,
+            short_description="Grants +2 Mental defense when you heal others",
+        ),
+        MagicItem(
+            name="Staff of Pleasant Healing, Greater",
+            rank=5,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
+                When you do, the target \\glossterm<briefly> gains a +3 bonus to its Mental defense.
+            """,
+            short_description="Grants +3 Mental defense when you heal others",
         ),
     ]
 
@@ -701,9 +728,9 @@ def generate_implements():
             name="Vampiric Staff",
             rank=4,
             material_type="Staff",
-            tags=["Healing"],
             description="""
                 Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 1d8+3 \\glossterm{hit points}.
+                This healing cannot increase your hit points above half your maximum hit points.
             """,
             short_description="Steals 1d8+3 hit points from foes",
         ),
@@ -711,9 +738,9 @@ def generate_implements():
             name="Vampiric, Greater",
             rank=6,
             material_type="Staff",
-            tags=["Healing"],
             description="""
                 Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 2d8+7 \\glossterm{hit points}.
+                This healing cannot increase your hit points above half your maximum hit points.
             """,
             short_description="Steals 2d8+7 hit points from foes",
         ),

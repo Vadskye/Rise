@@ -620,7 +620,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Whenever you activate a new \ability{wild aspect}, you regain hit points equal to a quarter of your maximum hit points.
-                After healing in this way, you \glossterm{briefly} cannot heal in this way again.
+                This cannot increase your hit points above half your maximum hit points.
             ",
             modifiers: None,
         },

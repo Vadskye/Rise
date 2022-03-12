@@ -344,19 +344,18 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{durationability}
 
                     \begin{instantability}{Palliative Poem}[Instant]
-                        \abilitytag{Auditory}, \abilitytag{Healing}
+                        \abilitytag{Auditory}
                         \rankline
-                        Choose one living \glossterm{ally} within \shortrange.
-                        The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
-                        After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
+                        Choose one living \glossterm{ally} within \medrange.
+                        The target regains 1d8 \add \glossterm{power} \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
 
                         \rankline
-                        \rank{2} The healing increases to 1d10.
-                        \rank{3} The healing increases to 2d8.
-                        \rank{4} The healing increases to 2d10.
-                        \rank{5} The healing increases to 4d8.
-                        \rank{6} The healing increases to 4d10.
-                        \rank{7} The healing increases to 6d10.
+                        \rank{2} The recovery increases to 1d10.
+                        \rank{3} The recovery increases to 2d8.
+                        \rank{4} The recovery increases to 2d10.
+                        \rank{5} The recovery increases to 4d8.
+                        \rank{6} The recovery increases to 4d10.
+                        \rank{7} The recovery increases to 6d10.
                     \end{instantability}
 
                     \begin{durationability}{Partita of Provocation}[Duration]

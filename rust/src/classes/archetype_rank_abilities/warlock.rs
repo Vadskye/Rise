@@ -215,6 +215,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     However, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
                     \parhead{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d3 \add half your \glossterm{power}.
+                    You cannot regain more hit points in this way than the target lost from your attack.
                     This healing increases by \plus1d for each rank beyond 1.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
 
