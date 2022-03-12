@@ -11,7 +11,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{sneak attack} ability as a standard action.
-                \begin{instantability}{Sneak Attack}[Instant]
+                \begin{instantability}{Sneak Attack}
                     \rankline
                     Make a \glossterm{strike} with a \glossterm{light weapon} or any weapon with the Stealthy \glossterm{weapon tag} against a creature within \rngshort range.
 
@@ -205,7 +205,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus7.
                     \end{durationability}
 
-                    \begin{instantability}{Cacaphony}[Instant]
+                    \begin{instantability}{Cacaphony}
                         \abilitytag{Auditory}
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
@@ -277,7 +277,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The accuracy bonus increases to \plus6.
                     \end{durationability}
 
-                    \begin{instantability}{Dirge of Doom}[Instant]
+                    \begin{instantability}{Dirge of Doom}
                         \abilitytag{Auditory}
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
@@ -343,7 +343,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus5.
                     \end{durationability}
 
-                    \begin{instantability}{Palliative Poem}[Instant]
+                    \begin{instantability}{Palliative Poem}
                         \abilitytag{Auditory}
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.

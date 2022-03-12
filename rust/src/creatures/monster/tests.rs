@@ -49,7 +49,7 @@ mod to_section {
                 \end{monsterstatistics}
                 \end{monsubsection}
                 \monsterabilitiesheader{Standard Monster}
-                \begin{instantability}*{Slam}[Instant]
+                \begin{instantability}*{Slam}
                 \rankline
                 The standard monster makes a \plus1 \glossterm{strike} vs. Armor.
                 \hit The target takes 2d8\plus2 bludgeoning damage.
@@ -81,7 +81,7 @@ mod to_section {
                 \end{monsterstatistics}
                 \end{monsubsection}
                 \monsterabilitiesheader{Standard Monster}
-                \begin{instantability}*{Slam}[Instant]
+                \begin{instantability}*{Slam}
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
                 \hit The target takes 4d8\plus12 bludgeoning damage.
@@ -127,27 +127,27 @@ mod to_section {
                 \end{monsterstatistics}
                 \end{monsubsection}
                 \monsterabilitiesheader{Standard Monster}
-                \begin{instantability}*{Certain Greatsword}[Instant]
+                \begin{instantability}*{Certain Greatsword}
                 \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
                 \hit The target takes 4d6\plus6 slashing damage.
             \end{instantability}
         \par
-            \begin{instantability}*{Certain Slam}[Instant]
+            \begin{instantability}*{Certain Slam}
                 \rankline
                 The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
                 \hit The target takes 4d8\plus6 bludgeoning damage.
             \end{instantability}
         \par
-            \begin{instantability}*{Greatsword}[Instant]
+            \begin{instantability}*{Greatsword}
                 \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
                 \hit The target takes 4d6\plus12 slashing damage.
             \end{instantability}
         \par
-            \begin{instantability}*{Slam}[Instant]
+            \begin{instantability}*{Slam}
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
                 \hit The target takes 4d8\plus12 bludgeoning damage.

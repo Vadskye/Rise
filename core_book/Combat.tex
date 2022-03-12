@@ -538,7 +538,7 @@
 
         \parhead{Charge}\label{Charge} You can use the \textit{charge} ability as a standard action.
 
-        \begin{instantability}{Charge}[Instant]
+        \begin{instantability}{Charge}
             \rankline
             After you use this ability, you \glossterm{briefly} take a \minus2 penalty to all defenses.
             This ability does not have the \abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
@@ -553,7 +553,7 @@
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
         However, you must use it before the phase is over.
 
-        \begin{instantability}{Desperate Exertion}[Instant]
+        \begin{instantability}{Desperate Exertion}
             \abilitytag{Swift}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
@@ -585,7 +585,7 @@
 
         \parhead{Disarm}\label{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
 
-        \begin{instantability}{Disarm}[Instant]
+        \begin{instantability}{Disarm}
             \abilitytag{Size-Based}
             \rankline
             Make a melee \glossterm{strike} against an object.
@@ -614,7 +614,7 @@
 
         \parhead{Offhand Strike}\label{Offhand Strike} As a \glossterm{minor action}, you can use the \textit{offhand strike} ability to quickly attack with an offhand weapon while you attack with a primary weapon.
         Your Dexterity must be at least 1 to use this ability.
-        \begin{instantability}{Offhand Strike}[Instant]
+        \begin{instantability}{Offhand Strike}
             \rankline
             Make a \glossterm{strike}.
             The weapon must be held in a single \glossterm{free hand} or must not require a free hand to attack with, such as a bite natural weapon.
@@ -625,7 +625,7 @@
 
         \parhead{Overrun}\label{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
 
-        \begin{instantability}{Overrun}[Instant]
+        \begin{instantability}{Overrun}
             \abilitytag{Size-Based}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by one.
@@ -643,7 +643,7 @@
         \end{instantability}
 
         \parhead{Recover}\label{Recover} You can use the \textit{recover} ability as a standard action.
-        \begin{instantability}{Recover}[Instant]
+        \begin{instantability}{Recover}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you take a short rest.
 
@@ -655,7 +655,7 @@
 
         \parhead{Shove}\label{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
 
-        \begin{instantability}{Shove}[Instant]
+        \begin{instantability}{Shove}
             \abilitytag{Size-Based}
             \rankline
             Choose either one creature within your \glossterm{reach} or all creatures grappling you (see \pcref{Grappling}).
@@ -672,7 +672,7 @@
         % to prevent it from being abused with abilities like Shove.
         \parhead{Sprint}\label{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
 
-        \begin{instantability}{Sprint}[Instant]
+        \begin{instantability}{Sprint}
             \abilitytag{Swift}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by one.
@@ -690,7 +690,7 @@
         As long as you have a Strength of at least \minus2, you do not have to use this ability to throw weapons that are sized appropriately for you and which are designed to be thrown.
         Instead, you can simply use the listed \glossterm{range limits} for those weapons.
 
-        \begin{instantability}{Throw}[Instant]
+        \begin{instantability}{Throw}
             \rankline
             Make a Strength check to throw an object you hold in at least one hand.
             The base \glossterm{difficulty value} of this check is 0.
@@ -715,7 +715,7 @@
 
         \parhead{Trip}\label{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
 
-        \begin{instantability}{Trip}[Instant]
+        \begin{instantability}{Trip}
             \abilitytag{Size-Based}
             \rankline
             Make a melee attack using a free hand or a weapon with the Tripping tag against a creature's Reflex defense (see \pcref{Weapon Tags}).
@@ -747,7 +747,7 @@
 
             \parhead{Escape Grapple}\label{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
 
-            \begin{instantability}{Escape Grapple}[Instant]
+            \begin{instantability}{Escape Grapple}
                 \rankline
                 Make an attack against any number of creatures that you are grappled by.
                 You may use either the Flexibility skill or half your level \add your Strength in place of your normal \glossterm{accuracy} with this attack (see \pcref{Flexibility}).
@@ -759,14 +759,14 @@
 
             \parhead{Maintain Grapple}\label{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
             If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
-            \begin{instantability}{Maintain Grapple}[Duration]
+            \begin{durationability}{Maintain Grapple}[Duration]
                 \abilitytag{Swift}
                 \rankline
                 Make an attack using a \glossterm{free hand}.
                 You may use half your level \add your Strength in place of your normal \glossterm{accuracy} with this attack.
                 This attack has no immediate effect.
                 The attack result determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
-            \end{instantability}
+            \end{durationability}
 
         \subsubsection{Asymmetric Grappling}\label{Asymmetric Grappling}
             Normally, when you use the \textit{grapple} ability, both you and the target become grappled by each other.

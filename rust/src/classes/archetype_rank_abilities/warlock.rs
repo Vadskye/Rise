@@ -12,7 +12,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{abyssal rebuke} ability as a standard action.
-                \begin{instantability}{Abyssal Rebuke}[Instant]
+                \begin{instantability}{Abyssal Rebuke}
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
                     You gain a \plus2 accuracy bonus to this attack against any creature that damaged you during the previous round.
@@ -718,7 +718,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
                 You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
-                \begin{instantability}{Exchange Soul Fragment}[Instant]
+                \begin{instantability}{Exchange Soul Fragment}
                     \abilitytag{Swift}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
@@ -746,7 +746,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
                 You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
-                \begin{instantability}{Exchange Vitality}[Instant]
+                \begin{instantability}{Exchange Vitality}
                     \abilitytag{Swift}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three.
