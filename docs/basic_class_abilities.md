@@ -10,9 +10,10 @@ In addition, each class starts with 28 points to spend. Non-casters get an extra
 2 points: +1 fatigue tolerance
 2 points: first weapon group
 4 points: +1 attunement point
+4 points: +base power
 
 
-Brb: 1 insight, 5 skill, 3 attunement, +5 fatigue, med armor, 1 weapon        = 2 + 5 + 12 + 10+ 2 + 2     = 33
+Brb: 1 insight, 5 skill, 3 attunement, +3 fatigue, med armor, 1 weapon, +pow  = 2 + 5 + 12 + 6 + 2 + 2 + 4 = 33
 Clr: 3 insight, 4 skill, 4 attunement, +2 fatigue, med armor, 0 weapon        = 6 + 4 + 16 + 4 + 2 + 0     = 32
 Drd: 2 insight, 5 skill, 4 attunement, +2 fatigue, med armor, * weapon        = 4 + 5 + 16 + 4 + 2 + 1     = 32
 Ftr: 2 insight, 4 skill, 3 attunement, +3 fatigue, all armor, 2 weapon, +1 AD = 4 + 4 + 12 + 6 + 3 + 3 + 1 = 33
