@@ -2745,8 +2745,8 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Dabbler's Amulet",
-            rank=1,
+            name="Exemplar's Amulet",
+            rank=2,
             material_type="Amulet",
             tags=[],
             description="""
@@ -2755,8 +2755,8 @@ def generate_apparel():
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 1",
         ),
         MagicItem(
-            name="Dabbler's Amulet, Greater",
-            rank=3,
+            name="Exemplar's Amulet, Greater",
+            rank=4,
             material_type="Amulet",
             tags=[],
             description="""
@@ -2765,8 +2765,8 @@ def generate_apparel():
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 2",
         ),
         MagicItem(
-            name="Dabbler's Amulet, Supreme",
-            rank=5,
+            name="Exemplar's Amulet, Supreme",
+            rank=6,
             material_type="Amulet",
             tags=[],
             description="""
