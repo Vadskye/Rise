@@ -61,8 +61,10 @@ function convertSpellToLatex(spell: SpellLike): string {
   ].filter(Boolean);
   const tableText = spell.tableText || "";
 
+  const typeText = spell.type === "Instant" ? "" : `[${spell.type}]`;
+
   const latex = `
-    \\begin{${abilityType}}{${spell.name}}[${spell.type}]
+    \\begin{${abilityType}}{${spell.name}}${typeText}
       \\hypertargetraised{spell:${spell.name}}{}%
       \\hypertargetraised{spell:${spell.name.toLowerCase()}}{}%
       ${format.spellTypePrefix(spell) || ""}
