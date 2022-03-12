@@ -404,7 +404,7 @@ export const vivimancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gin a +4 \\glossterm{magic bonus} to your maximum \\glossterm{hit points}.
+        You gain a +4 \\glossterm{magic bonus} to your maximum \\glossterm{hit points}.
         In addition, you immediately gain that many hit points.
         When this ability ends, you lose \\glossterm{hit points} equal to the number of hit points you gained this way.
       `,
