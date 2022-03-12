@@ -504,7 +504,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{bless the worthy} ability as a standard action.
                 \begin{instantability}{Bless the Worthy}[Duration]
                     \rankline
-                    You and all \glossterm{allies} within a \medarea radius from you can each remove a \glossterm{brief} effect or \glossterm{condition}.
+                    You and all \glossterm{allies} within a \medarea radius from you can each remove a \glossterm{condition}.
                     This ability cannot remove an effect applied during the current round.
                     In addition, one of your allies in that area \glossterm{briefly} gains a \plus2 bonus to \glossterm{accuracy}.
 

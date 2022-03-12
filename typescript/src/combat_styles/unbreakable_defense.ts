@@ -141,7 +141,7 @@ export const unbreakableDefense: CombatStyle = {
       tags: [],
       scaling: {
         6: `
-          You can also remove a single \\glossterm{brief} effect or condition.
+          You can also remove a single condition.
           This cannot remove an effect applied during the current round.
         `,
       },
@@ -205,7 +205,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        You remove a \\glossterm{brief} effect or \\glossterm{condition} affecting you.
+        You remove a \\glossterm{condition} affecting you.
         This cannot remove an effect applied during the current round.
       `,
       rank: 2,
@@ -223,7 +223,7 @@ export const unbreakableDefense: CombatStyle = {
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
         Make a \\glossterm{strike}.
-        In addition, you may remove a \\glossterm{brief} effect or \\glossterm{condition} affecting you.
+        In addition, you may remove a \\glossterm{condition} affecting you.
         This cannot remove an effect applied during the current round.
         The penalties from the effect still affect you when you make the strike.
       `,

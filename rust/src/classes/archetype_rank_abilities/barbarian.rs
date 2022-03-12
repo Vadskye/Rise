@@ -11,7 +11,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \ability{recover} ability as a \glossterm{minor action}.
-                When you do, you only remove one \glossterm{brief} effect or \glossterm{condition} affecting you instead of any number.
+                When you do, you do not remove any \glossterm{condition} affecting you.
             ",
             modifiers: None,
         },

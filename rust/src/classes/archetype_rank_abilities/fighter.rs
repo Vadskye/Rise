@@ -12,7 +12,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{cleansing discipline} ability as a \glossterm{standard action}.
                 \begin{instantability}{Cleansing Discipline}[Instant]
                     \rankline
-                    Remove up to two \glossterm{brief} effects or \glossterm{conditions} affecting you.
+                    Remove up to two \glossterm{conditions} affecting you.
                     This cannot remove effects applied during the current round.
                     In addition, you \glossterm{briefly} cannot gain any \glossterm{conditions}.
 

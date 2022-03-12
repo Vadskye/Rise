@@ -468,7 +468,7 @@ export const toxicology: MysticSphere = {
       name: "Cleansing Draught",
 
       effect: `
-        You or one \\glossterm{ally} within your \\glossterm{reach} can remove a \\glossterm{brief} effect or \\glossterm{condition}.
+        You or one \\glossterm{ally} within your \\glossterm{reach} can remove a \\glossterm{condition}.
         This cannot remove an effect applied during the current round.
       `,
       rank: 4,

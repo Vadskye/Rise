@@ -52,7 +52,7 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         At the end of the next round, you become infused with divine power.
-        You remove one \\glossterm{brief} effect or \\glossterm{condition} affecting you and heal 1d10 \\glossterm{hit points}.
+        You remove one \\glossterm{condition} affecting you and heal 1d10 \\glossterm{hit points}.
         This cannot remove an effect applied during that round.
         In addition, you gain a +4 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
         After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
