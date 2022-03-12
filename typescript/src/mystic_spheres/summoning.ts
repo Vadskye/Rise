@@ -160,7 +160,7 @@ export const summoning: MysticSphere = {
         hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything on solid ground within \\medrange.
-          You summon a creature with a large horn or horns, such a moose, that rams into the target with great force before disappearing.
+          You summon a creature with a large horn or horns, such as a moose, that rams into the target with great force before disappearing.
         `,
       },
       rank: 1,
