@@ -281,16 +281,31 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Revitalizing Battlecry",
+      name: "Encouraging Battlecry",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d6 \\glossterm{hit points}.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+        When you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 1d10 \\glossterm{damage resistance}.
+      `,
+      rank: 3,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 3." },
+      tags: ['Emotion'],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Encouraging Battlecry",
+
+      effect: `
+        When you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        You and each living \\glossterm{ally} in a \\largearea radius from you each regain 4d6 \\glossterm{damage resistance}.
       `,
       rank: 6,
-      scaling: { special: "The healing increases by +1d for each rank beyond 6." },
-      tags: ['Emotion', 'Healing'],
-      type: "Duration",
+      scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
+      tags: ['Emotion'],
+      type: "Instant",
     },
 
     {

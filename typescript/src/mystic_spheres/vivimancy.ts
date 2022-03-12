@@ -9,6 +9,7 @@ export const vivimancy: MysticSphere = {
     They are always considered a \\glossterm{living} creature and an \\glossterm{ally} for spells from the \\sphere{vivimancy} mystic sphere.
     Any effect from this mystic sphere that would deal energy damage to an undead creature causes that creature to regain that many lost hit points instead.
     Likewise, any effect from this mystic sphere that would cause an undead creature to regain lost hit points instead causes it to lose that many hit points instead.
+    However, spells from this mystic sphere cannot cause undead to increase their \\glossterm{fatigue level}.
   `,
 
   cantrips: [
@@ -32,7 +33,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         You regain two \\glossterm{hit points}.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+        This healing cannot increase your hit points above half your maximum hit points.
       `,
       scaling: {
         3: `The healing increases to four \\glossterm{hit points}.`,
@@ -82,7 +83,8 @@ export const vivimancy: MysticSphere = {
         hit: `
           The target takes 2d6 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you regain 2d6 + \\glossterm{power} hit points.
-          After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+          Normally, this healing cannot increase your hit points above half your maximum hit points.
+          If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -152,16 +154,86 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Cure Wound",
+      name: "Restoration",
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 + \\glossterm{power} \\glossterm{hit points}.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+        The target regains 1d8 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+      `,
+      rank: 1,
+      scaling: { special: "The healing increases by +1d for each rank beyond 1." },
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Restoration",
+
+      effect: `
+        Choose yourself or a living \\glossterm{ally} within \\medrange.
+        The target regains 2d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+      `,
+      rank: 4,
+      scaling: { special: "The healing increases by +1d for each rank beyond 4." },
+      type: "Instant",
+    },
+
+    {
+      name: "Supreme Restoration",
+
+      effect: `
+        Choose yourself or a living \\glossterm{ally} within \\longrange.
+        The target regains 5d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+      `,
+      rank: 7,
+      type: "Instant",
+    },
+
+    {
+      name: "Stabilize Life",
+
+      effect: `
+        Choose yourself or a living \\glossterm{ally} within \\medrange.
+        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
+        This cannot increase the target's hit points above half its maximum hit points.
       `,
       rank: 2,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
-      tags: ['Healing'],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Stabilize Life",
+
+      effect: `
+        Choose yourself or a living \\glossterm{ally} within \\medrange.
+        The target regains 4d10 + \\glossterm{power} \\glossterm{hit points}.
+        This cannot increase the target's hit points above half its maximum hit points.
+      `,
+      rank: 6,
+      scaling: { special: "The healing increases by +1d for each rank beyond 6." },
+      type: "Instant",
+    },
+
+    {
+      name: "Cone of Stabilization",
+
+      effect: `
+        Each \\glossterm{ally} in a \\medarea cone regains 1d10 + half \\glossterm{power} \\glossterm{hit points}.
+        This cannot increase a target's hit points above half its maximum hit points.
+      `,
+      rank: 3,
+      scaling: { special: "The healing increases by +1d for each rank beyond 2." },
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Cone of Stabilization",
+
+      effect: `
+        Each \\glossterm{ally} in a \\largearea cone regains 4d8 + half \\glossterm{power} \\glossterm{hit points}.
+        This cannot increase a target's hit points above half its maximum hit points.
+      `,
+      rank: 7,
       type: "Instant",
     },
 
@@ -328,19 +400,6 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Circle of Life",
-
-      effect: `
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regains 2d8 \\glossterm{hit points}.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
-      `,
-      rank: 4,
-      scaling: { special: "The healing increases by +1d for each rank beyond 4." },
-      tags: ['Healing'],
-      type: "Instant",
-    },
-
-    {
       name: "Lifegift",
 
       castingTime: "minor action",
@@ -379,7 +438,7 @@ export const vivimancy: MysticSphere = {
       name: "Wellspring of Life",
 
       effect: `
-        Once per round, when you regain hit points, you may regain 3 additional hit points.
+        Once per round, when you regain hit points, you may increase that healing by 3 hit points.
       `,
       rank: 2,
       scaling: {
@@ -445,7 +504,8 @@ export const vivimancy: MysticSphere = {
         hit: `
           The target takes 2d6 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you regain 2d6 + \\glossterm{power} hit points.
-          After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+          Normally, this healing cannot increase your hit points above half your maximum hit points.
+          If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -463,6 +523,7 @@ export const vivimancy: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, you regain \\glossterm{hit points} equal to 2d6 + half your \\glossterm{power}.
+        This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 5,
       scaling: { special: "The healing increases by +1d for each rank beyond 5." },

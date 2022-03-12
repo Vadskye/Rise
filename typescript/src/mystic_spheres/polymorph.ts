@@ -497,16 +497,61 @@ export const polymorph: MysticSphere = {
     },
 
     {
+      name: 'Mending',
+
+      effect: `
+        Chose yourself or one \\glossterm{ally} within \\shortrange.
+        The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+      `,
+      rank: 1,
+      type: 'Instant',
+    },
+
+    {
+      name: 'Greater Mending',
+
+      effect: `
+        Chose yourself or one \\glossterm{ally} within \\medrange.
+        The target regains 2d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+      `,
+      rank: 4,
+      type: 'Instant',
+    },
+
+    {
+      name: 'Supreme Mending',
+
+      effect: `
+        Chose yourself or one \\glossterm{ally} within \\medrange.
+        The target regains 5d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+      `,
+      rank: 7,
+      type: 'Instant',
+    },
+
+    {
       name: 'Brief Regeneration',
 
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+        The target \\glossterm{briefly} regains 1d8 + half \\glossterm{power} \\glossterm{hit points} at the end of each round.
+        When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
       rank: 2,
       scaling: { special: 'The healing increases by +1d for each rank beyond 2.' },
-      tags: ['Healing'],
+      type: 'Instant',
+    },
+
+    {
+      name: 'Greater Brief Regeneration',
+
+      effect: `
+        Choose yourself or one living \\glossterm{ally} within \\shortrange.
+        The target \\glossterm{briefly} regains 4d8 + half \\glossterm{power} \\glossterm{hit points} at the end of each round.
+        When this effect ends, the target increases its \\glossterm{fatigue level} by one.
+      `,
+      rank: 6,
+      scaling: { special: 'The healing increases by +1d for each rank beyond 6.' },
       type: 'Instant',
     },
 
@@ -533,11 +578,38 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'minor action',
       effect: `
-        At the end of each round, you regain 1d8 \\glossterm{hit points}.
+        At the end of each round, you regain 1d6 \\glossterm{hit points}.
+        This healing cannot increase your hit points above half your maximum hit points.
+      `,
+      rank: 1,
+      scaling: { special: 'The healing increases by +1d for each rank beyond 1.' },
+      type: 'Attune (self)',
+    },
+
+    {
+      name: 'Greater Regeneration',
+
+      castingTime: 'minor action',
+      effect: `
+        At the end of each round, you regain 2d6 \\glossterm{hit points}.
+        If you gained a vital wound this round, you add your \\glossterm{power} to this healing.
+        This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 4,
       scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
-      tags: ['Healing'],
+      type: 'Attune (self)',
+    },
+
+    {
+      name: 'Supreme Regeneration',
+
+      castingTime: 'minor action',
+      effect: `
+        At the end of each round, you regain 4d6 \\glossterm{hit points}.
+        If you lost hit points this round, you add your \\glossterm{power} to this healing.
+        This healing cannot increase your hit points above half your maximum hit points.
+      `,
+      rank: 7,
       type: 'Attune (self)',
     },
 
@@ -891,20 +963,6 @@ export const polymorph: MysticSphere = {
         name: 'craft object',
       },
       rank: 7,
-      type: 'Instant',
-    },
-
-    {
-      name: 'Mending',
-
-      castingTime: 'one minute',
-      effect: `
-        Chose one \\glossterm{unattended} object within \\shortrange.
-        The target regains 1d6 + \\glossterm{power} hit points.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
-      `,
-      rank: 1,
-      tags: ['Healing'],
       type: 'Instant',
     },
 

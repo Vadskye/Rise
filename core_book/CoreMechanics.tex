@@ -202,8 +202,10 @@ This chapter describes the core mechanics of Rise.
         They always care about your current state at the time the attack is made, regardless of any damage you may take during the phase.
 
         \parhead{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
-        If you regain hit points and take damage in the same phase, apply all healing effects after applying any damaging effects.
-        The healing still applies before checking for \glossterm{vital wounds}, so the order is mostly irrelevant, except that this avoids the risk of conflicting with your maximum hit point total.
+        If you regain hit points or damage resistance and take damage in the same phase, apply all healing effects before applying any damaging effects.
+        While you are resolving these effects, you are allowed to heal beyond your maximum hit points and damage resistance.
+        At the end of the phase, if your current hit points or damage resistance exceeds your maximum, your current value is reduced to be no higher than your maximum value.
+        This order allows you to survive incoming damage by receiving simultaneous healing, potentially allowing you to avoid gaining vital wounds.
 
     \subsection{Noticing Damage Resistance}
         In general, it is impossible to determine whether a creature has damage resistance simply by observing them unless there are obvious visual cues like bleeding injuries.

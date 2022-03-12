@@ -440,28 +440,36 @@ export const toxicology: MysticSphere = {
       name: "Healing Salve",
 
       effect: `
-        Choose yourself or one \\glossterm{ally} within your \\glossterm{reach}.
-        The target regains 1d8 + \\glossterm{power} \\glossterm{hit points}.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+        Choose yourself or a living \\glossterm{ally} within your \\glossterm{reach}.
+        The target regains 1d8 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+        In addition, it \\glossterm{briefly} gains a +2 bonus to its Fortitude defense.
       `,
-      rank: 2,
-      scaling: { special: "The healing increases by +1d for each rank beyond 2." },
-      tags: ['Healing'],
-      type: "Instant",
+      rank: 1,
+      scaling: { special: "The healing increases by +1d for each rank beyond 1." },
+      type: "Duration",
     },
 
     {
       name: "Greater Healing Salve",
 
-      effect: `
-        Choose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 2d10 + \\glossterm{power} \\glossterm{hit points}.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
-      `,
-      rank: 5,
-      scaling: { special: "The healing increases by +1d for each rank beyond 5." },
-      tags: ['Healing'],
-      type: "Instant",
+      functionsLike: {
+        name: "healing salve",
+        exceptThat: "The healing increases to 2d10, and the Fortitude bonus increases to +3.",
+      },
+      rank: 4,
+      scaling: { special: "The healing increases by +1d for each rank beyond 4." },
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Healing Salve",
+
+      functionsLike: {
+        name: "healing salve",
+        exceptThat: "The healing increases to 5d10, and the Fortitude bonus increases to +3.",
+      },
+      rank: 7,
+      type: "Duration",
     },
 
     {

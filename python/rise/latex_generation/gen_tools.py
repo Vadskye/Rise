@@ -115,16 +115,14 @@ def generate_tools():
             consumable=True,
             name="Potion of Healing",
             rank=1,
+            tags=[],
             material_type="Potion",
-            # This seems like it should be Healing-tagged, but it's not really
-            # an ability? It's not obvious how the cooldown should interact with
-            # it.
-            tags=["Healing"],
             description="""
-                When you drink this \\glossterm<potion>, you regain 1d8 \\glossterm<hit points>.
-                After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
+                When you drink this \\glossterm<potion>, you regain 1d6+1 \\glossterm<hit points>.
+                % This should make it unreasonably time-inefficient to chug potions instead of just resting
+                After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
             """,
-            short_description="Restores 1d8 hit points",
+            short_description="Restores 1d6+1 hit points",
         ),
         MagicItem(
             consumable=True,
@@ -133,10 +131,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you regain 2d8+4 \\glossterm<hit points>.
-                After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
+                When you drink this \\glossterm<potion>, you regain 2d6+4 \\glossterm<hit points>.
+                After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
             """,
-            short_description="Restores 2d8+4 hit points",
+            short_description="Restores 2d6+4 hit points",
         ),
         MagicItem(
             consumable=True,
@@ -145,8 +143,8 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you regain 4d8+7 \\glossterm<hit points>.
-                After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
+                When you drink this \\glossterm<potion>, you regain 4d6+7 \\glossterm<hit points>.
+                After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
             """,
             short_description="Restores 4d8+7 hit points",
         ),
@@ -157,10 +155,10 @@ def generate_tools():
             material_type="Potion",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you regain 6d10+14 \\glossterm<hit points>.
-                After you drink this item, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
+                When you drink this \\glossterm<potion>, you regain 5d10+14 \\glossterm<hit points>.
+                After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
             """,
-            short_description="Restores 6d10+14 hit points",
+            short_description="Restores 5d10+14 hit points",
         ),
     ]
 
