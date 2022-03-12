@@ -2082,12 +2082,12 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can activate this belt.
-                When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
+                When you do, you remove one \\glossterm<condition> affecting you.
                 This cannot remove an effect applied during the current round.
 
                 After you use this ability, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Can exert to remove a debuff",
+            short_description="Can exert to remove a condition",
         ),
         MagicItem(
             name="Cleansing Belt, Greater",
@@ -2096,10 +2096,10 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can activate this belt.
-                When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
+                When you do, you remove one \\glossterm<condition> affecting you.
                 This cannot remove an effect applied during the current round.
             """,
-            short_description="Can remove a debuff",
+            short_description="Can remove a condition",
         ),
         MagicItem(
             name="Cleansing Belt, Supreme",
@@ -2108,10 +2108,10 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can activate this belt.
-                When you do, you remove up to two \\glossterm<brief> effects or \\glossterm<conditions> affecting you.
+                When you do, you remove up to two \\glossterm<conditions> affecting you.
                 This cannot remove an effects applied during the current round.
             """,
-            short_description="Can remove two debuffs",
+            short_description="Can remove two conditions",
         ),
     ]
 
@@ -2123,12 +2123,12 @@ def generate_apparel():
             tags=[],
             description="""
                 As a \\glossterm<minor action>, you can activate this belt.
-                When you do, you remove one \\glossterm<brief> effect or \\glossterm<condition> affecting you.
+                When you do, you remove one \\glossterm<condition> affecting you.
                 This cannot remove an effect applied during the current round.
 
                 After you use this belt, you increase your \\glossterm<fatigue level> by two.
             """,
-            short_description="Can exert to quickly remove a debuff",
+            short_description="Can exert to quickly remove a condition",
         ),
         MagicItem(
             name="Quickcleanse Belt, Greater",
@@ -2138,7 +2138,7 @@ def generate_apparel():
             description="""
                 This belt functions like a \\mitem<quickcleanse belt>, except that you only increase your \\glossterm<fatigue level> by one instead of two.
             """,
-            short_description="Can exert more easily to remove a debuff",
+            short_description="Can exert more easily to remove a condition",
         ),
     ]
 
@@ -2431,7 +2431,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Whenever you use the \\ability<discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<brief> effect or \\glossterm<condition>.
+                Whenever you use the \\ability<discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
                 This is not a \\abilitytag<Swift> effect, even if your \\ability<discipline> ability is a \\abilitytag<Swift> effect.
             """,
             short_description="Using \\abilitytag<discipline> also helps an adjacent ally",
@@ -2445,31 +2445,6 @@ def generate_apparel():
                 This item functions like a \\textit<amulet of shared discipline>, except that the range increases to \\medrange.
             """,
             short_description="Using the \\abilitytag<discipline> ability also helps a nearby ally",
-        ),
-    ]
-
-    apparel += [
-        MagicItem(
-            name="Amulet of Shared Clarity",
-            rank=3,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                Whenever you use the \\ability<clear the mind> monk ability, one \\glossterm<ally> within \\medrange of you can also remove a \\glossterm<brief> effect or \\glossterm<condition>.
-                If they do, they increase their \\glossterm<fatigue level> by one.
-                This is not a \\abilitytag<Swift> effect, even if your \\ability<clear the mind> ability is a \\abilitytag<Swift> effect.
-            """,
-            short_description="Using \\abilitytag<clear the mind> also helps a nearby ally",
-        ),
-        MagicItem(
-            name="Amulet of Shared Clarity, Greater",
-            rank=5,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                This item functions like a \\textit<amulet of shared clarity>, except that you can target an additional \\glossterm<ally> within range.
-            """,
-            short_description="Using \\abilitytag<clear the mind> also helps two nearby allies",
         ),
     ]
 
