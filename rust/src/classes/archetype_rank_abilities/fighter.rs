@@ -10,7 +10,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{cleansing discipline} ability as a \glossterm{standard action}.
-                \begin{instantability}{Cleansing Discipline}[Instant]
+                \begin{instantability}{Cleansing Discipline}
                     \rankline
                     Remove up to two \glossterm{conditions} affecting you.
                     This cannot remove effects applied during the current round.
@@ -117,7 +117,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{weapon training} ability by spending an hour training with a weapon.
                 You cannot use this ability with an \glossterm{exotic weapon} that is from a \glossterm{weapon group} you are not proficient with.
-                \begin{instantability}{Weapon Training}[Duration]
+                \begin{durationability}{Weapon Training}[Duration]
                     \rankline
                     You become proficient with the weapon you trained with.
                     You gain a \plus1 bonus to \glossterm{accuracy} with that weapon unless it is an \glossterm{exotic weapon} that you would not be proficient with without this ability.
@@ -126,7 +126,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{4} You can use this ability with only five minutes of training.
                     \rank{6} You can use this ability as a \glossterm{minor action}.
-                \end{instantability}
+                \end{durationability}
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },

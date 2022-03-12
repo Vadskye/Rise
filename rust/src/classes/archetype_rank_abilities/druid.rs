@@ -22,7 +22,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 If you do not have access to nature magic, you gain the ability to make a strike imbued with elemental force.
                 You can use the \textit{elemental strike} ability as a standard action.
-                \begin{instantability}{Elemental Strike}[Instant]
+                \begin{instantability}{Elemental Strike}
                     \abilitytag{Magical}
                     \rankline
                     Make a \glossterm{strike}.
