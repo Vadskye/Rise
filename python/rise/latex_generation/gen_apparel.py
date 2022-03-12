@@ -789,7 +789,7 @@ def generate_apparel():
             name="Lifesaver Ring",
             rank=2,
             material_type="Ring",
-            tags=["Healing"],
+            tags=[],
             description="""
                 At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 1d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
@@ -800,7 +800,7 @@ def generate_apparel():
             name="Lifesaver Ring, Greater",
             rank=4,
             material_type="Ring",
-            tags=["Healing"],
+            tags=[],
             description="""
                 At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 2d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
@@ -811,7 +811,7 @@ def generate_apparel():
             name="Lifesaver Ring, Supreme",
             rank=6,
             material_type="Ring",
-            tags=["Healing"],
+            tags=[],
             description="""
                 At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 4d6 hit points.
                 This effect cannot heal you above half your maximum hit points.
@@ -825,7 +825,7 @@ def generate_apparel():
             name="Dazeshare Ring",
             rank=2,
             material_type="Ring",
-            tags=["Healing"],
+            tags=[],
             description="""
                 Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
                 On a hit, each target becomes \\glossterm<briefly> dazed.
@@ -836,7 +836,7 @@ def generate_apparel():
             name="Stunshare Ring",
             rank=5,
             material_type="Ring",
-            tags=["Healing"],
+            tags=[],
             description="""
                 Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
                 On a hit, each target becomes \\glossterm<briefly> stunned.
@@ -1484,10 +1484,11 @@ def generate_apparel():
             name="Belt of Healing",
             rank=2,
             material_type="Belt",
-            tags=["Healing"],
+            tags=[],
             description="""
                 As a standard action, you can use this belt to regain 1d10+4 hit points.
-                After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+                Normally, this healing cannot increase your hit points above half your maximum hit points.
+                If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation.
             """,
             short_description="Heals 1d10+4 hit points",
         ),
@@ -1495,10 +1496,11 @@ def generate_apparel():
             name="Belt of Healing, Greater",
             rank=4,
             material_type="Belt",
-            tags=["Healing"],
+            tags=[],
             description="""
                 As a standard action, you can use this belt to regain 2d10+7 hit points.
-                After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+                Normally, this healing cannot increase your hit points above half your maximum hit points.
+                If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation.
             """,
             short_description="Heals 2d10+7 hit points",
         ),
@@ -1506,10 +1508,11 @@ def generate_apparel():
             name="Belt of Healing, Supreme",
             rank=6,
             material_type="Belt",
-            tags=["Healing"],
+            tags=[],
             description="""
                 As a standard action, you can use this belt to regain 4d10+14 hit points.
-                After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+                Normally, this healing cannot increase your hit points above half your maximum hit points.
+                If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation.
             """,
             short_description="Heals 4d10+14 hit points",
         ),
@@ -2359,7 +2362,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<restoration> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
+                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
             short_description="Grants +4 power with \\ability<restoration> and \\ability<lay on hands>",
         ),
@@ -2369,7 +2372,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<restoration> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
+                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
             short_description="Grants +8 power with \\ability<restoration> and \\ability<lay on hands>",
         ),
@@ -2379,7 +2382,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<restoration> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<power>.
+                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
             short_description="Grants +16 power with \\ability<restoration> and \\ability<lay on hands>",
         ),
@@ -2392,7 +2395,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<divine healing> cleric ability or the \\ability<lay on hands> paladin ability to remove a vital wound, you only increase your \\glossterm<fatigue level> by two instead of by three.
+                When you use the \\ability<vital restoration> cleric ability or the \\ability<lay on hands> paladin ability to remove a vital wound, you only increase your \\glossterm<fatigue level> by two instead of by three.
             """,
             short_description="Reduces fatigue required to use \\ability<divine healing> and \\ability<lay on hands>",
         ),
@@ -2778,10 +2781,10 @@ def generate_apparel():
             name="Spellfeeding Amulet",
             rank=2,
             material_type="Amulet",
-            tags=["Healing"],
+            tags=[],
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 1d8+4 \\glossterm<hit points>.
-                After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
+                This effect cannot heal you above the number of hit points you had at the start of the round.
             """,
             short_description="Heals 1d8+4 when you use \\ability<spell absorption>",
         ),
@@ -2789,10 +2792,10 @@ def generate_apparel():
             name="Spellfeeding Amulet, Greater",
             rank=4,
             material_type="Amulet",
-            tags=["Healing"],
+            tags=[],
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d8+7 \\glossterm<hit points>.
-                After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
+                This effect cannot heal you above the number of hit points you had at the start of the round.
             """,
             short_description="Heals 2d8+7 when you use \\ability<spell absorption>",
         ),
@@ -2800,10 +2803,10 @@ def generate_apparel():
             name="Spellfeeding Amulet, Supreme",
             rank=6,
             material_type="Amulet",
-            tags=["Healing"],
+            tags=[],
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d8+14 \\glossterm<hit points>.
-                After you heal in this way, you \\glossterm<briefly> gain no benefit from it or any other \\abilitytag<Healing> effect.
+                This effect cannot heal you above the number of hit points you had at the start of the round.
             """,
             short_description="Heals 4d8+14 when you use \\ability<spell absorption>",
         ),

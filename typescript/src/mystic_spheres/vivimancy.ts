@@ -40,7 +40,7 @@ export const vivimancy: MysticSphere = {
         5: `The healing increases to eight \\glossterm{hit points}.`,
         7: `The healing increases to sixteen \\glossterm{hit points}.`,
       },
-      tags: ['Healing'],
+      tags: [],
       type: "Instant",
     },
   ],
@@ -94,7 +94,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 3,
       scaling: { special: "The damage and healing increases by +1d for each rank beyond 3." },
-      tags: ['Healing'],
+      tags: [],
       type: "Duration",
     },
 
@@ -107,7 +107,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 6,
       scaling: { special: "The damage and healing increases by +1d for each rank beyond 6." },
-      tags: ['Healing'],
+      tags: [],
       type: "Duration",
     },
 
@@ -513,7 +513,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 3,
       scaling: { special: "The damage and healing increases by +1d for each rank beyond 3." },
-      tags: ['Healing'],
+      tags: [],
       type: "Instant",
     },
 
@@ -527,7 +527,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 5,
       scaling: { special: "The healing increases by +1d for each rank beyond 5." },
-      tags: ['Healing'],
+      tags: [],
       type: "Attune (self)",
     },
 

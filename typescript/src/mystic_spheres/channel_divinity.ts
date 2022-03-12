@@ -51,15 +51,16 @@ export const channelDivinity: MysticSphere = {
       name: "Faith Rewarded",
 
       effect: `
-        At the end of the next round, you become infused with divine power.
-        You remove one \\glossterm{condition} affecting you and heal 1d10 \\glossterm{hit points}.
+        At the end of the next round, you become infused with divine power, which has three effects.
+        First, you heal 2d6 + half \\glossterm{power} \\glossterm{hit points}.
+        This healing cannot increase your hit points above half your maximum hit points.
+        Second, you remove one \\glossterm{condition} affecting you.
         This cannot remove an effect applied during that round.
-        In addition, you gain a +4 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+        Third, you gain a +4 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
       `,
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },
-      tags: ['Healing'],
+      tags: [],
       type: "Duration",
     },
 
