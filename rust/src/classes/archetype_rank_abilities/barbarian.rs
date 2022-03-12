@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, Defense, Resource};
+use crate::core_mechanics::{Attribute, Defense};
 use crate::creatures::{Maneuver, Modifier};
 use crate::skills::Skill;
 
@@ -66,10 +66,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 When you use the \textit{recover} ability, you regain a quarter of your maximum \glossterm{damage resistance} at the end of the round (see \pcref{Recover}).
             ",
-            modifiers: Some(vec![
-                Modifier::VitalRoll(1),
-                Modifier::Resource(Resource::FatigueTolerance, 1),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Battleforged Force",
