@@ -10,7 +10,6 @@ valid_tags = set(
         "Curse",
         "Detection",
         "Emotion",
-        "Healing",
         "Manifestation",
         "Physical",
         "Scrying",

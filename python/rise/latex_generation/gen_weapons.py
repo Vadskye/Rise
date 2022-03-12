@@ -882,7 +882,7 @@ def generate_weapons():
             name="Vampiric",
             rank=4,
             material_type="Weapon",
-            tags=["Healing"],
+            tags=[],
             description="""
                 Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 1d8+3 \\glossterm{hit points}.
                 This healing cannot increase your hit points above half your maximum hit points.
@@ -893,7 +893,7 @@ def generate_weapons():
             name="Vampiric, Greater",
             rank=6,
             material_type="Weapon",
-            tags=["Healing"],
+            tags=[],
             description="""
                 Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike} using this weapon, you regain 2d8+7 \\glossterm{hit points}.
                 This healing cannot increase your hit points above half your maximum hit points.

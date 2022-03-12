@@ -626,20 +626,6 @@ def generate_implements():
 
     implements += [
         MagicItem(
-            name="Staff of the Martyr",
-            rank=4,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You can use \\abilitytag<Healing> abilities even if you used a Healing ability during the previous round.
-                However, \\abilitytag<Healing> abilities cannot cause you to regain any hit points.
-            """,
-            short_description="Heal others more frequently, but not yourself",
-        ),
-    ]
-
-    implements += [
-        MagicItem(
             name="Staff of Stored Attunement",
             rank=2,
             material_type="Staff",
@@ -836,37 +822,6 @@ def generate_implements():
                 In addition, as a standard action, you can \\glossterm<briefly> create \\glossterm<light undergrowth> in a \\areamed radius \\glossterm<zone> from you.
             """,
             short_description="Grants +2 accuracy vs foes in undergrowth",
-        ),
-    ]
-
-    implements += [
-        MagicItem(
-            name="Staff of Healing Rhythm",
-            rank=4,
-            material_type="Staff",
-            tags=["Healing"],
-            description="""
-                Whenever you use a \\glossterm<Healing> ability, you gain a +1 \\glossterm<accuracy> bonus during the next round.
-
-                In addition, as a standard action, you can regain 2d10+7 hit points.
-                This ability has the \\abilitytag{Healing} tag.
-                After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
-            """,
-            short_description="Grants +1 accuracy after healing",
-        ),
-        MagicItem(
-            name="Staff of Healing Rhythm, Greater",
-            rank=7,
-            material_type="Staff",
-            tags=["Healing"],
-            description="""
-                Whenever you use a \\glossterm<Healing> ability, you gain a +2 \\glossterm<accuracy> bonus during the next round.
-
-                In addition, as a standard action, you can regain 5d10+20 hit points.
-                This ability has the \\abilitytag{Healing} tag.
-                After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
-            """,
-            short_description="Grants +2 accuracy after healing",
         ),
     ]
 
