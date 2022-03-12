@@ -670,7 +670,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                When you heal with your \textit{regenerative shift} ability, you can also remove one \glossterm{brief} effect or \glossterm{condition}.
+                When you heal with your \textit{regenerative shift} ability, you can also remove one \glossterm{condition}.
             ",
             modifiers: None,
         },
