@@ -231,6 +231,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
             \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
                 \begin{attuneability}{Quarry}[\abilitytag{Attune} (self)]
+                    \abilitytag{Subtle}
                     \rankline
                     Choose a creature within \longrange.
                     The target becomes your quarry.
