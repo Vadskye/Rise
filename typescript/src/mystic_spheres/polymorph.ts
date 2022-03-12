@@ -501,7 +501,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 1,
       type: 'Instant',
@@ -512,7 +512,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 2d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 2d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 4,
       type: 'Instant',
@@ -523,7 +523,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 5d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 5d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 7,
       type: 'Instant',
