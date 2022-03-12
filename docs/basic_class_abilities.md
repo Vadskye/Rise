@@ -22,7 +22,7 @@ Pal: 2 insight, 4 skill, 3 attunement, +3 fatigue, all armor, 1 weapon, +1 AD = 
 Rgr: 2 insight, 6 skill, 3 attunement, +3 fatigue, lgt armor, 2 weapon, +1 AD = 4 + 6 + 12 + 6 + 1 + 3 + 1 = 33
 Rog: 3 insight, 8 skill, 3 attunement, +2 fatigue, lgt armor, 1 weapon        = 6 + 8 + 12 + 4 + 1 + 2     = 33
 Sor: 2 insight, 4 skill, 5 attunement, +2 fatigue, noo armor, 0 weapon        = 4 + 4 + 20 + 4 + 0 + 0     = 32
-War: 3 insight, 3 skill, 4 attunement, +3 fatigue, lgt armor, 0 weapon        = 6 + 3 + 16 + 6 + 1 + 0     = 32
+War: 2 insight, 3 skill, 4 attunement, +2 fatigue, lgt armor, 0 weapon, +pow  = 4 + 3 + 16 + 4 + 1 + 0 + 4 = 32
 Wiz: 3 insight, 4 skill, 5 attunement, +1 fatigue, noo armor, 0 weapon        = 6 + 4 + 20 + 2 + 0 + 0     = 32
 
 Drg: 2 insight, 5 skill, 4 attunement, +3 fatigue, med armor, 0 weapon        = 4 + 5 + 16 + 6 + 2 + 0     = 33
