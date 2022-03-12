@@ -55,7 +55,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Explosive Construction} The area affected by any alchemical item you create is doubled.
                     \parhead{Potent Construction} Whenever you create an alchemical item that deals damage or regains hit points, you double the item's flat modifier to damage or healing.
                     For example, a firebomb would deal 1d10+2 damage instead of 1d10+1 damage.
-                    This modifier applies you apply any other damage modifiers, such as the power bonus from your \textit{alchemical infusion} ability.
+                    This modifier applies before you calculate any other damage modifiers, such as the power bonus from your \textit{alchemical infusion} ability.
                     \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }

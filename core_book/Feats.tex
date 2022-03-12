@@ -375,6 +375,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[6]{Benevolent Transferance} You can use the \textit{benevolent transferance} ability as a \glossterm{standard action}.
         \begin{instantability}{Benevolent Transferance}
+            \rankline
             Choose an \glossterm{ally} currently \glossterm{attuned} to a spell you cast.
             In addition, choose another \glossterm{ally} to transfer the spell to.
             Both targets must be within that spell's range of you, and must be valid targets for the spell.
@@ -437,22 +438,25 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Non-evil alignment.
         \parhead{Special} You can only have one Bloodline feat.
 
-        \ff[1]{Holy Smite} You can use the \textit{holy smite} ability as a standard action.
-        In addition, if you have the \textit{smite} paladin ability and your \textit{devoted alignment} is good, you gain a \plus2 bonus to \glossterm{power} with the \textit{holy smite} ability.
-        \begin{freeability}{Holy Smite}[Magical]
-            Make a \glossterm{strike} with a \plus2 damage bonus.
-            Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
-            If your target is good, you take a single point of \glossterm{energy damage} as feedback from the attack warning you that you are persecuting a good creature.
+        \ff[1]{Rebuke Evil} You can use the \textit{rebuke evil} ability as a standard action.
+        \begin{instantability}{Rebuke Evil}
+            \rankline
+            Make an attack vs. Mental against one creature or object within \rngmed range.
+            You gain a \plus2 accuracy bonus to this attack against any creature that damaged any of your \glossterm{allies} during the previous round.
+            If the target has the alignment opposed to your devoted alignment, you double all of your damage bonuses along with your damage dice when you get a \glossterm{critical hit}.
+            \hit The target takes 1d6 \add \glossterm{power} energy damage.
 
             \rankline
-            \featlevel{6} The damage bonus increases to \plus4.
-            \featlevel{12} The damage bonus increases to \plus8.
-            \featlevel{18} The damage bonus increases to \plus16.
-        \end{freeability}
+            \rank{2} The damage increases to 1d8.
+            \rank{3} The damage increases to 2d6.
+            \rank{4} The damage increases to 2d8.
+            \rank{5} The damage increases to 4d6.
+            \rank{6} The damage increases to 4d8.
+            \rank{7} The damage increases to 5d10.
+        \end{instantability}
 
         \ff[3]{Healing Light}[Magical] When you use the \textit{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \medarea radius from you, and \glossterm{shadowy illumination} in twice that radius.
-        Each \glossterm{ally} in the radius of brilliant illumination regains 1d4 \glossterm{hit points}.
-        This healing increases by \plus1d at 6th level and every 3 levels thereafter.
+        Each \glossterm{ally} in the radius of brilliant illumination regains \glossterm{hit points} equal to your \glossterm{power}.
 
         \ff[6]{Angel Wings} You gain feathery wings that sprout from your back.
         These wings grant you a glide speed equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
@@ -901,7 +905,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You can choose to use this item after you learn the effects that the critical hit would have, but you must do so during the phase that the attack was made.
 
         \ff[3]{Sudden Entropy} You can use the \textit{sudden entropy} ability as a standard action.
-        \begin{instantability}{Sudden Entropy}[Instant]
+        \begin{instantability}{Sudden Entropy}
             \rankline
             Make an attack vs. Mental against one creature or object within \medrange.
             \hit The target takes 1d8 \add \glossterm{power} damage.
@@ -1408,13 +1412,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus3 bonus to the Medicine skill.
 
         \ff[3]{Healing Touch} You can use the \textit{healing touch} ability as a standard action.
-        In addition, if you have the \textit{restoration} cleric ability, you gain a \plus2 bonus to \glossterm{power} with both the \textit{healing touch} and \textit{restoration} abilities.
         \begin{instantability}{Healing Touch}
-            \spelltwocol{Instant}{\abilitytag{Healing}}
             \rankline
             Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
-            The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
-            After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
+            The target regains 1d10 \add \glossterm{power} \glossterm{hit points} and increases its \glossterm{fatigue level} by one.
+            In addition, make a Medicine check.
+            For each poison and disease on the target, if your check result beats a \glossterm{difficulty value} equal to 10 \add twice its \glossterm{rank}, the effect is removed.
 
             \rankline
             \featlevel{6} The healing increases to 2d6.
@@ -1425,22 +1428,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{21} The healing increases to 7d10.
         \end{instantability}
 
-        \ff[6]{Purging Touch} You can use the \textit{purging touch} ability as a standard action.
-        \begin{instantability}{Purging Touch}
-            Instant
-            \rankline
-            Make a Medicine check on yourself or an \glossterm{ally} within your \glossterm{reach}.
-            For each poison and disease on the target, if your check result beats a \glossterm{difficulty value} equal to 10 \add twice its \glossterm{rank}, the effect is removed.
-
-            \rankline
-            \featlevel{12} You can target an additional ally within your reach.
-            \featlevel{18} You can target an additional ally within your reach.
-        \end{instantability}
+        \ff[6]{Lifesaver} You can use the \textit{first aid} ability as a \glossterm{minor action} (see \pcref{First Aid}).
+        If you do, you \glossterm{briefly} cannot use it as a minor action again.
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
-        \ff[12]{Lifesaver} You can use the \textit{first aid} ability as a \glossterm{minor action} (see \pcref{First Aid}).
-        If you do, you \glossterm{briefly} cannot use it as a minor action again.
+        \ff[12]{Vital Touch} When you use your \textit{healing touch} ability, the target can also remove one \glossterm{vital wound}.
+        If it does, its increases its fatigue level by two.
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
 
@@ -1812,12 +1806,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[3]{Regenerative Recovery} You can use the \textit{regenerative recovery} ability as a standard action.
         \begin{instantability}{Regenerative Recovery}
-            \spelltwocol{Instant}{\abilitytag{Healing}}
             \rankline
+            When you use this ability, you increase your \glossterm{fatigue level} by one.
+
             You regain 1d10 \add \glossterm{power} \glossterm{hit points}.
             Unlike normal, your Strength does not modify this dice pool (see \pcref{Dice Bonuses From Attributes}).
             Instead, you gain a \plus1d bonus to the healing for every 2 Constitution you have.
-            After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
+            If you gained any \glossterm{vital wounds} during the previous round, your healing with this ability is doubled.
 
             \rankline
             \featlevel{6} The healing increases to 2d6.
@@ -2975,6 +2970,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[6]{Double Spell} You can use the \textit{double spell} ability as a \glossterm{standard action}.
         \begin{instantability}{Double Spell}
+            \rankline
             You can only use this ability if you have two \glossterm{free hands}.
 
             Choose two spells that you know which do not have the \abilitytag{Sustain} or \abilitytag{Attune} tags.

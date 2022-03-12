@@ -312,11 +312,14 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{lay on hands} ability as a standard action.
                 \begin{instantability}{Lay on Hands}[Instant]
-                    \abilitytag{Healing}, \abilitytag{Magical}
+                    \abilitytag{Magical}
                     \rankline
                     Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
                     The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
-                    After you use this ability, you \glossterm{briefly} cannot use it or any other \abilitytag{Healing} ability.
+                    In addition, it can remove one poison or disease affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
+
+                    Normally, this healing cannot increase the target's hit points above half its maximum hit points.
+                    If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
 
                     \rankline
                     \rank{2} The healing increases to 1d10.
@@ -339,35 +342,35 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(6)]),
         },
         RankAbility {
-            name: "Stalward Resilience",
+            name: "Stalwart Resilience",
             is_magical: false,
             rank: 3,
             description: "",
             modifiers: Some(vec![Modifier::DamageResistance(9)]),
         },
         RankAbility {
-            name: "Stalward Resilience",
+            name: "Stalwart Resilience",
             is_magical: false,
             rank: 4,
             description: "",
             modifiers: Some(vec![Modifier::DamageResistance(12)]),
         },
         RankAbility {
-            name: "Stalward Resilience",
+            name: "Stalwart Resilience",
             is_magical: false,
             rank: 5,
             description: "",
             modifiers: Some(vec![Modifier::DamageResistance(20)]),
         },
         RankAbility {
-            name: "Stalward Resilience",
+            name: "Stalwart Resilience",
             is_magical: false,
             rank: 6,
             description: "",
             modifiers: Some(vec![Modifier::DamageResistance(24)]),
         },
         RankAbility {
-            name: "Stalward Resilience",
+            name: "Stalwart Resilience",
             is_magical: false,
             rank: 7,
             description: "",
@@ -390,8 +393,9 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                When you use your \textit{lay on hands} ability, you can choose to remove a \glossterm{condition} of the target's choice from it instead of restoring its hit points.
-                Alternately, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
+                When you use your \textit{lay on hands} ability, the target can also remove a \glossterm{condition}.
+                This cannot remove a condition applied during the current round.
+                In addition, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
                 If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
             ",
             modifiers: None,

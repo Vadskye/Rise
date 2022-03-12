@@ -88,7 +88,8 @@ export const bless: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        At the end of each round, each target regains 1d10 \\glossterm{hit points}.
+        At the end of each round, each target regains 2d6 \\glossterm{hit points}.
+        This healing cannot increase a target's hit points above half its maximum hit points.
       `,
       rank: 5,
       scaling: {
@@ -96,7 +97,6 @@ export const bless: MysticSphere = {
           The healing increases by +1d for each rank beyond 5.
         `,
       },
-      tags: ['Healing'],
       type: "Attune (target)",
     },
 

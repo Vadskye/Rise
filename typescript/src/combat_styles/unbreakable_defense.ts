@@ -130,7 +130,7 @@ export const unbreakableDefense: CombatStyle = {
       name: "Second Wind",
 
       effect: `
-        When you use this ability, you increase your \\glossterm{fatigue level} by two.
+        When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
         You regain hit points equal to half your maximum \\glossterm{hit points}.
         If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \\pcref{Resolving Simultaneous Damage}).
@@ -241,13 +241,12 @@ export const unbreakableDefense: CombatStyle = {
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
         In addition, you regain 1d10 + half \\glossterm{power} hit points.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+        This healing cannot increase your hit points above half your maximum hit points.
       `,
       scaling: {
         special: "The healing increases by +1d for each rank beyond 3.",
       },
       rank: 3,
-      tags: ['Healing'],
       type: "Instant",
     },
 
@@ -258,10 +257,9 @@ export const unbreakableDefense: CombatStyle = {
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
         In addition, you regain 4d8 + \\glossterm{power} hit points.
-        After you use this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Healing} ability.
+        This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 7,
-      tags: ['Healing'],
       type: "Instant",
     },
 

@@ -692,7 +692,7 @@ def universal_abilities():
                 "Recover",
                 """
                     After you use this ability, you increase your fatigue level by two, and you cannot use it again until you take a short rest.
-                    You regain hit points equal to half your maximum hit points. In addition, you remove all conditions affecting you. This cannot remove effects applied during the current round.
+                    You regain hit points and damage resistance equal to half your maximum values. In addition, you remove all conditions affecting you. This cannot remove effects applied during the current round.
                 """,
             ),
             universal_ability_button(
