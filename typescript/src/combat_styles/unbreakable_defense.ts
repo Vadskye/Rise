@@ -130,7 +130,7 @@ export const unbreakableDefense: CombatStyle = {
       name: "Second Wind",
 
       effect: `
-        When you use this ability, you increase your \\glossterm{fatigue level} by one.
+        When you use this ability, you increase your \\glossterm{fatigue level} by two.
 
         You regain hit points equal to half your maximum \\glossterm{hit points}.
         If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \\pcref{Resolving Simultaneous Damage}).
