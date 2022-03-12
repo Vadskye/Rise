@@ -386,6 +386,42 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
 pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
+            name: "Primal Resilience",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(9)]),
+        },
+        RankAbility {
+            name: "Primal Resilience",
+            is_magical: false,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(12)]),
+        },
+        RankAbility {
+            name: "Primal Resilience",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(15)]),
+        },
+        RankAbility {
+            name: "Primal Resilience",
+            is_magical: false,
+            rank: 6,
+            description: "",
+            // This rank is when supreme resilience kicks in
+            modifiers: Some(vec![Modifier::HitPoints(24)]),
+        },
+        RankAbility {
+            name: "Primal Resilience",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(28)]),
+        },
+        RankAbility {
             name: "Maneuvers",
             is_magical: false,
             rank: 1,
@@ -479,18 +515,14 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Primal Might",
+            name: "Primal Resilience",
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to Strength-based \glossterm{checks} and Constitution-based \glossterm{checks}.
+                You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points}.
             ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Climb, 1),
-                Modifier::Skill(Skill::Jump, 1),
-                Modifier::Skill(Skill::Swim, 1),
-                Modifier::Skill(Skill::Endurance, 1),
-            ]),
+            // Handled as part of bulk silent scaling
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (4)",
@@ -541,18 +573,14 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Primal Might",
+            name: "Greater Primal Resilience",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonuses from your \textit{primal might} ability increase to \plus2.
+                The bonus from your \textit{primal resilience} ability increases to four times your rank in this archetype.
             ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Climb, 1),
-                Modifier::Skill(Skill::Jump, 1),
-                Modifier::Skill(Skill::Swim, 1),
-                Modifier::Skill(Skill::Endurance, 1),
-            ]),
+            // Handled as part of bulk silent scaling
+            modifiers: None,
         },
         RankAbility {
             name: "Combat Style Rank (7)",
