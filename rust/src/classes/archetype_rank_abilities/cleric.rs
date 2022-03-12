@@ -475,43 +475,48 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        // TODO: this is a little weak
         RankAbility {
-            name: "Inspiring Oration",
+            name: "Practiced Persuasion",
             is_magical: false,
             rank: 2,
             description: r"
-                Your \glossterm{allies} who can hear you in a fight gain a \plus1 bonus to their Mental defense.
-                You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
-            ",
-            // TODO: figure out allies-only buffs
-            modifiers: None,
-        },
-        // TODO: this is a little weak
-        RankAbility {
-            name: "Greater Practiced Persuasion",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                The bonus from your \textit{practiced persuasion} ability increases to \plus6.
+                You gain a \plus3 bonus to the Persuasion skill.
             ",
             modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 3)]),
         },
         RankAbility {
             name: "Bless the Worthy",
             is_magical: false,
-            rank: 4,
+            rank: 3,
             description: r"
                 You can use the \textit{bless the worthy} ability as a standard action.
                 \begin{durationability}{Bless the Worthy}[Duration]
                     \rankline
-                    You and all \glossterm{allies} within a \medarea radius from you can each remove a \glossterm{condition}.
+                    When you use this ability, you increase your \glossterm{fatigue level} by one.
+
+                    You and all \glossterm{allies} within a \medarea radius from you each regain 1d10 \glossterm{damage resistance} and can remove a \glossterm{condition}.
                     This ability cannot remove an effect applied during the current round.
-                    In addition, one of your allies in that area \glossterm{briefly} gains a \plus2 bonus to \glossterm{accuracy}.
 
                     \rankline
-                    The accuracy bonus increases by 1 for each rank beyond 4.
+                    \rank{4} The recovery increases to 2d6.
+                    \rank{5} The recovery increases to 2d10.
+                    \rank{5} The recovery increases to 4d6.
+                    \rank{6} The recovery increases to 4d10.
+                    \rank{7} The recovery increases to 5d10.
                 \end{durationability}
             ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Inspiring Oration",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                Your \glossterm{allies} who can hear you in a fight gain a \plus1 bonus to their Mental defense.
+                You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
+            ",
+            // TODO: figure out allies-only buffs
             modifiers: None,
         },
         RankAbility {
