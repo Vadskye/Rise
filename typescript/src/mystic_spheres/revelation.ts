@@ -438,11 +438,14 @@ export const revelation: MysticSphere = {
 
         If undisturbed, the sensor floats in the air in its position.
         As a \\glossterm{move action}, you can move the sensor up to 30 feet in any direction, even vertically.
-        At the end of each round, if the sensor is does not have \\glossterm{line of effect} from you, it is destroyed.
+        At the end of each round, if the sensor is not within \\distrange from you, it is destroyed.
       `,
       rank: 2,
       scaling: {
-        4: `The sensor is not destroyed if you do not have \\glossterm{line of effect} to it.`,
+        4: `
+          The sensor is not destroyed if you do not have \\glossterm{line of effect} to it.
+          If it gets farther than 240 feet from you, ignoring all obstacles, it is still destroyed.
+        `,
         6: `You constantly receive sensory input from both your body and the sensor.`,
       },
       tags: ["Scrying"],
@@ -909,7 +912,7 @@ export const revelation: MysticSphere = {
       castingTime: "one hour",
       attack: {
         hit: `A scrying sensor appears in the target's space.
-        This sensor functions like the sensor created by the \\spell{arcane eye} spell, except that you cannot move the sensor manually.
+        This sensor functions like the sensor created by the \\spell{mystic eye} spell, except that you cannot move the sensor manually.
         Instead, it automatically tries to follow the target to stay in its space.
         At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm{dismissed}.`,
         targeting: `
