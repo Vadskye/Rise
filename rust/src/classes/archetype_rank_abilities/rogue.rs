@@ -347,15 +347,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
-                        The target regains 1d8 \add \glossterm{power} \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
+                        The target regains 1d6 \add \glossterm{power} \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
 
                         \rankline
-                        \rank{2} The recovery increases to 1d10.
-                        \rank{3} The recovery increases to 2d8.
-                        \rank{4} The recovery increases to 2d10.
-                        \rank{5} The recovery increases to 4d8.
-                        \rank{6} The recovery increases to 4d10.
-                        \rank{7} The recovery increases to 6d10.
+                        \rank{2} The recovery increases to 1d8.
+                        \rank{3} The recovery increases to 2d6.
+                        \rank{4} The recovery increases to 2d8.
+                        \rank{5} The recovery increases to 4d6.
+                        \rank{6} The recovery increases to 4d8.
+                        \rank{7} The recovery increases to 5d10.
                     \end{instantability}
 
                     \begin{durationability}{Partita of Provocation}[Duration]
