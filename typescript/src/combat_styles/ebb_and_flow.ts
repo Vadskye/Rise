@@ -364,7 +364,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You gain a +4 damage bonus with the strike if you used the \\textit{recover} ability or a \\abilitytag{Healing} ability last round.
+        You gain a +4 damage bonus with the strike if you regained \\glossterm{hit points} last round.
       `,
       rank: 4,
       scaling: {
