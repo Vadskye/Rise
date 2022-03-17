@@ -320,6 +320,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
+                    % TODO: define when you can make this decision - after learning all damage and healing? don't want to waste fatigue
 
                     \rankline
                     \rank{2} The healing increases to 1d10.
