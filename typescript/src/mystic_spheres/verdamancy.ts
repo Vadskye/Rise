@@ -522,16 +522,16 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: "Flourishing Vines",
+      name: "Flourishing Grass",
 
       effect: `
-        At the end of each round, you may choose to cause vines to extend out onto the ground in a \\smallarea radius around you.
+        At the end of each round, you may choose to cause grass to extend out onto the ground in a \\smallarea radius around you.
         When you do, that area becomes covered in \\glossterm{light undergrowth}.
-        Whenever your location changes by any means, the vines retreat back to your body.
+        Whenever your location changes by any means, the grass retreats back to your body.
       `,
       narrative: `
-        Long, thin vines continuously grow and writhe on your body.
-        You can extend the vines to surround you at a whim.
+        Long, thin grass continuously grows and writhes on your body.
+        You can extend the grass to surround you at a whim.
       `,
       rank: 1,
       scaling: {
@@ -544,18 +544,18 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: "Greater Flourishing Vines",
+      name: "Greater Flourishing Grass",
 
       functionsLike: {
-        name: "Flourishing Vines",
+        name: "Flourishing Grass",
         exceptThat: `
           the area becomes \\glossterm{heavy undergrowth} instead of light undergrowth.
-          Since the vines retreat whenever you move, they do not impede your movement, though they do impede the movement of any other creatures that move simultaneously.
+          Since the grass retreats whenever you move, it does not impede your movement, though it does impede the movement of any other creatures that move simultaneously.
         `,
       },
       narrative: `
-        A great mass of long, thin vines continuously grow and writhe on your body.
-        You can extend the vines to surround you at a whim.
+        A great mass of long, thin grass continuously grows and writhes on your body.
+        You can extend the grass to surround you at a whim.
       `,
       rank: 4,
       scaling: { 6: `The area increases to a \\medarea radius.` },
