@@ -73,7 +73,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 34;
+        let expected_points = 40;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             if actual_points != expected_points {
@@ -88,20 +88,23 @@ impl Class {
     }
 
     fn calculate_point_total(&self) -> i32 {
-        // Martial classes get a free point since their rank 1 abilities are less
-        // overloaded
-        let is_martial = match self {
-            Self::Barbarian => true,
-            Self::Fighter => true,
-            Self::Monk => true,
-            Self::Paladin => true,
-            Self::Ranger => true,
-            Self::Rogue => true,
-            _ => false,
+        let custom_modifier = match self {
+            // Martial classes get three free points since their rank 1 abilities are less overloaded
+            // and they rely more on their raw statistics
+            Self::Barbarian => -3,
+            Self::Fighter => -3,
+            Self::Monk => -3,
+            Self::Paladin => -3,
+            Self::Ranger => -3,
+            Self::Rogue => -3,
+            // Druids have a couple of weird proficiencies that don't map easily but which are
+            // collectively worth a point
+            Self::Druid => 1,
+            _ => 0,
         };
         return
-            // 4 points per attunement point
-            self.attunement_points() * 4
+            // 5 points per attunement point
+            self.attunement_points() * 5
             // 1 point to get an Armor defense
             + self.defense_bonus(&Defense::Armor)
             // 2 points per fatigue tolerance
@@ -112,29 +115,32 @@ impl Class {
             + if self.power_progression().calc_power(1) == 3 { 4 } else { 0 }
             // 1 point per trained skill
             + self.trained_skills()
-            // 1 point per armor proficiency tier
-            + self.armor_proficiencies().usage_classes.len() as i32
+            // 3 points per vital roll bonus
+            + self.vital_rolls() * 3
+            // 2 points per armor proficiency tier
+            + (self.armor_proficiencies().usage_classes.len() as i32) * 2
             // 1 point for each weapon proficiency
             + self.weapon_proficiencies().custom_weapon_groups
-            // 1 extra point for the first weapon proficiency OR if they only have specific weapon
-            //   proficiencies
-            + if self.weapon_proficiencies().custom_weapon_groups > 0 || self.weapon_proficiencies().specific_weapon_groups.is_some() { 1 } else { 0 }
-            // -1 point if the class is martial
-            + if is_martial { -1 } else { 0 };
+            // 1 extra point for the first weapon proficiency
+            + if self.weapon_proficiencies().custom_weapon_groups > 0  { 1 } else { 0 }
+            // 1 extra point for a specific weapon group
+            + if self.weapon_proficiencies().specific_weapon_groups.is_some() { 1 } else { 0 }
+            // Arbitrary class-specific modifiers
+            + custom_modifier;
     }
 
     pub fn attunement_points(&self) -> i32 {
         match self {
             Self::Barbarian => 3,
             Self::Cleric => 4,
-            Self::Dragon => 4,
+            Self::Dragon => 3,
             Self::Druid => 4,
             Self::Fighter => 3,
             Self::Monk => 4,
-            Self::Oozeborn => 4,
+            Self::Oozeborn => 3,
             Self::Paladin => 3,
             Self::Ranger => 3,
-            Self::Rogue => 3,
+            Self::Rogue => 4,
             Self::Sorcerer => 5,
             Self::Warlock => 4,
             Self::Wizard => 5,
@@ -471,7 +477,7 @@ impl Class {
             Self::Dragon => 5,
             Self::Druid => 4,
             Self::Fighter => 5,
-            Self::Monk => 4,
+            Self::Monk => 5,
             Self::Oozeborn => 6,
             Self::Paladin => 5,
             Self::Ranger => 5,
@@ -486,15 +492,15 @@ impl Class {
         match self {
             Self::Barbarian => 0,
             Self::Cleric => 2,
-            Self::Dragon => 1,
+            Self::Dragon => 2,
             Self::Druid => 2,
             Self::Fighter => 1,
-            Self::Monk => 1,
+            Self::Monk => 2,
             Self::Oozeborn => 1,
             Self::Paladin => 1,
-            Self::Ranger => 1,
+            Self::Ranger => 2,
             Self::Rogue => 2,
-            Self::Sorcerer => 1,
+            Self::Sorcerer => 2,
             Self::Warlock => 1,
             Self::Wizard => 2,
         }
@@ -557,17 +563,35 @@ impl Class {
         match self {
             Self::Barbarian => 5,
             Self::Cleric => 4,
-            Self::Dragon => 5,
+            Self::Dragon => 4,
             Self::Druid => 5,
-            Self::Fighter => 4,
+            Self::Fighter => 3,
             Self::Monk => 5,
-            Self::Oozeborn => 4,
+            Self::Oozeborn => 3,
             Self::Paladin => 4,
-            Self::Ranger => 6,
-            Self::Rogue => 8,
-            Self::Sorcerer => 4,
-            Self::Warlock => 3,
-            Self::Wizard => 4,
+            Self::Ranger => 5,
+            Self::Rogue => 7,
+            Self::Sorcerer => 3,
+            Self::Warlock => 4,
+            Self::Wizard => 5,
+        }
+    }
+
+    pub fn vital_rolls(&self) -> i32 {
+        match self {
+            Self::Barbarian => 1,
+            Self::Cleric => 0,
+            Self::Dragon => 1,
+            Self::Druid => 0,
+            Self::Fighter => 1,
+            Self::Monk => 0,
+            Self::Oozeborn => 2,
+            Self::Paladin => 1,
+            Self::Ranger => 1,
+            Self::Rogue => 0,
+            Self::Sorcerer => 0,
+            Self::Warlock => 0,
+            Self::Wizard => 0,
         }
     }
 
