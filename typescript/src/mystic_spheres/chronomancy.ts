@@ -246,7 +246,7 @@ export const chronomancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +5 foot \\glossterm{magic bonus} to speed with all of your \\glossterm{movement modes}, and a +1 \\glossterm{magic bonus} to \\glossterm{initiative} checks.
+        You gain a +5 foot \\glossterm{magic bonus} to your speed with all of your \\glossterm{movement modes}, and a +1 \\glossterm{magic bonus} to \\glossterm{initiative} checks.
       `,
       rank: 1,
       scaling: {
