@@ -76,16 +76,26 @@ fn generate_latex_defenses(class: &Class) -> String {
     } else {
         "".to_string()
     };
+    let vital_text = if class.vital_rolls() > 0 {
+        format!(
+            "In addition, you gain a \\plus{} bonus to your \\glossterm<vital rolls>.",
+            class.vital_rolls()
+        )
+    } else {
+        "".to_string()
+    };
     return latex_formatting::latexify(format!(
         "
             \\cf<{shorthand_name}><Defenses>
             You gain the following bonuses to your \\glossterm<defenses>: {armor} \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
+            {vital_text}
         ",
         armor=armor_text,
         fortitude=class.defense_bonus(&Defense::Fortitude),
         reflex=class.defense_bonus(&Defense::Reflex),
         mental=class.defense_bonus(&Defense::Mental),
         shorthand_name=class.shorthand_name(),
+        vital_text=vital_text,
     ));
 }
 
