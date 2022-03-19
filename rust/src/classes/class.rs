@@ -51,6 +51,57 @@ impl Class {
         ];
     }
 
+    pub fn validate_points() {
+        let expected_points = 34;
+        for class in Self::all() {
+            let actual_points = class.calculate_point_total();
+            if actual_points != expected_points {
+                eprintln!(
+                    "Class {} has {} points; expected {}",
+                    class.name(),
+                    actual_points,
+                    expected_points
+                )
+            }
+        }
+    }
+
+    fn calculate_point_total(&self) -> i32 {
+        // Martial classes get a free point since their rank 1 abilities are less
+        // overloaded
+        let is_martial = match self {
+            Self::Barbarian => true,
+            Self::Fighter => true,
+            Self::Monk => true,
+            Self::Paladin => true,
+            Self::Ranger => true,
+            Self::Rogue => true,
+            _ => false,
+        };
+        return
+            // 4 points per attunement point
+            self.attunement_points() * 4
+            // 1 point to get an Armor defense
+            + self.defense_bonus(&Defense::Armor)
+            // 2 points per fatigue tolerance
+            + self.fatigue_tolerance() * 2
+            // 2 points per insight point
+            + self.insight_points() * 2
+            // 4 points to get a higher power progression
+            + if self.power_progression().calc_power(1) == 3 { 4 } else { 0 }
+            // 1 point per trained skill
+            + self.trained_skills()
+            // 1 point per armor proficiency tier
+            + self.armor_proficiencies().usage_classes.len() as i32
+            // 1 point for each weapon proficiency
+            + self.weapon_proficiencies().custom_weapon_groups
+            // 1 extra point for the first weapon proficiency OR if they only have specific weapon
+            //   proficiencies
+            + if self.weapon_proficiencies().custom_weapon_groups > 0 || self.weapon_proficiencies().specific_weapon_groups.is_some() { 1 } else { 0 }
+            // -1 point if the class is martial
+            + if is_martial { -1 } else { 0 };
+    }
+
     pub fn attunement_points(&self) -> i32 {
         match self {
             Self::Barbarian => 3,
@@ -365,7 +416,7 @@ impl Class {
         match self {
             Self::Barbarian => 0,
             Self::Cleric => 2,
-            Self::Druid => 1,
+            Self::Druid => 2,
             Self::Fighter => 1,
             Self::Monk => 1,
             Self::Paladin => 1,
