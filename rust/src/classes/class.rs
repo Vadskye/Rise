@@ -23,9 +23,11 @@ pub struct WeaponProficiencies {
 pub enum Class {
     Barbarian,
     Cleric,
+    Dragon,
     Druid,
     Fighter,
     Monk,
+    Oozeborn,
     Paladin,
     Ranger,
     Rogue,
@@ -36,6 +38,25 @@ pub enum Class {
 
 impl Class {
     pub fn all() -> Vec<Self> {
+        return vec![
+            Self::Barbarian,
+            Self::Cleric,
+            Self::Druid,
+            Self::Fighter,
+            Self::Monk,
+            Self::Paladin,
+            Self::Ranger,
+            Self::Rogue,
+            Self::Sorcerer,
+            Self::Warlock,
+            Self::Wizard,
+            // Optional classes
+            Self::Dragon,
+            Self::Oozeborn,
+        ];
+    }
+
+    pub fn core_classes() -> Vec<Self> {
         return vec![
             Self::Barbarian,
             Self::Cleric,
@@ -106,9 +127,11 @@ impl Class {
         match self {
             Self::Barbarian => 3,
             Self::Cleric => 4,
+            Self::Dragon => 4,
             Self::Druid => 4,
             Self::Fighter => 3,
             Self::Monk => 4,
+            Self::Oozeborn => 4,
             Self::Paladin => 3,
             Self::Ranger => 3,
             Self::Rogue => 3,
@@ -167,6 +190,24 @@ impl Class {
                 Skill::Persuasion,
                 Skill::SocialInsight,
             ],
+            Self::Dragon => vec![
+                Skill::Awareness,
+                Skill::Balance,
+                Skill::Climb,
+                Skill::Craft,
+                Skill::CreatureHandling,
+                Skill::Deception,
+                Skill::Endurance,
+                Skill::Flexibility,
+                Skill::Intimidate,
+                Skill::Knowledge(vec![KnowledgeSubskill::Arcana]),
+                Skill::Jump,
+                Skill::Persuasion,
+                Skill::SocialInsight,
+                Skill::Stealth,
+                Skill::Survival,
+                Skill::Swim,
+            ],
             Self::Druid => vec![
                 Skill::Awareness,
                 Skill::Balance,
@@ -219,6 +260,21 @@ impl Class {
                 Skill::Persuasion,
                 Skill::Ride,
                 Skill::SocialInsight,
+                Skill::Stealth,
+                Skill::Survival,
+                Skill::Swim,
+            ],
+            Self::Oozeborn => vec![
+                Skill::Awareness,
+                Skill::Balance,
+                Skill::Climb,
+                Skill::Craft,
+                Skill::Endurance,
+                Skill::Flexibility,
+                Skill::Intimidate,
+                Skill::Jump,
+                Skill::Knowledge(vec![KnowledgeSubskill::Dungeoneering]),
+                Skill::SleightOfHand,
                 Skill::Stealth,
                 Skill::Survival,
                 Skill::Swim,
@@ -339,6 +395,12 @@ impl Class {
                 Defense::Reflex => 3,
                 Defense::Mental => 7,
             },
+            Self::Dragon => match defense {
+                Defense::Armor => 0,
+                Defense::Fortitude => 7,
+                Defense::Reflex => 3,
+                Defense::Mental => 5,
+            },
             Self::Druid => match defense {
                 Defense::Armor => 0,
                 Defense::Fortitude => 5,
@@ -355,6 +417,12 @@ impl Class {
                 Defense::Armor => 1,
                 Defense::Fortitude => 3,
                 Defense::Reflex => 6,
+                Defense::Mental => 5,
+            },
+            Self::Oozeborn => match defense {
+                Defense::Armor => 0,
+                Defense::Fortitude => 7,
+                Defense::Reflex => 3,
                 Defense::Mental => 5,
             },
             Self::Paladin => match defense {
@@ -400,9 +468,11 @@ impl Class {
         match self {
             Self::Barbarian => 5,
             Self::Cleric => 4,
+            Self::Dragon => 5,
             Self::Druid => 4,
             Self::Fighter => 5,
             Self::Monk => 4,
+            Self::Oozeborn => 6,
             Self::Paladin => 5,
             Self::Ranger => 5,
             Self::Rogue => 4,
@@ -416,9 +486,11 @@ impl Class {
         match self {
             Self::Barbarian => 0,
             Self::Cleric => 2,
+            Self::Dragon => 1,
             Self::Druid => 2,
             Self::Fighter => 1,
             Self::Monk => 1,
+            Self::Oozeborn => 1,
             Self::Paladin => 1,
             Self::Ranger => 1,
             Self::Rogue => 2,
@@ -432,9 +504,11 @@ impl Class {
         match self {
             Self::Barbarian => "barbarian",
             Self::Cleric => "cleric",
+            Self::Dragon => "dragon",
             Self::Druid => "druid",
             Self::Fighter => "fighter",
             Self::Monk => "monk",
+            Self::Oozeborn => "oozeborn",
             Self::Paladin => "paladin",
             Self::Ranger => "ranger",
             Self::Rogue => "rogue",
@@ -447,16 +521,8 @@ impl Class {
     pub fn power_progression(&self) -> PowerProgression {
         match self {
             Self::Barbarian => PowerProgression::Fast,
-            Self::Cleric => PowerProgression::Medium,
-            Self::Druid => PowerProgression::Medium,
-            Self::Fighter => PowerProgression::Medium,
-            Self::Monk => PowerProgression::Medium,
-            Self::Paladin => PowerProgression::Medium,
-            Self::Ranger => PowerProgression::Medium,
-            Self::Rogue => PowerProgression::Medium,
-            Self::Sorcerer => PowerProgression::Medium,
             Self::Warlock => PowerProgression::Fast,
-            Self::Wizard => PowerProgression::Medium,
+            _ => PowerProgression::Medium,
         }
     }
 
@@ -473,9 +539,11 @@ impl Class {
         match self {
             Self::Barbarian => "Bbn",
             Self::Cleric => "Clr",
+            Self::Dragon => "Drg",
             Self::Druid => "Drd",
             Self::Fighter => "Ftr",
             Self::Monk => "Mnk",
+            Self::Oozeborn => "Ooz",
             Self::Paladin => "Pal",
             Self::Ranger => "Rgr",
             Self::Rogue => "Rog",
@@ -489,9 +557,11 @@ impl Class {
         match self {
             Self::Barbarian => 5,
             Self::Cleric => 4,
+            Self::Dragon => 5,
             Self::Druid => 5,
             Self::Fighter => 4,
             Self::Monk => 5,
+            Self::Oozeborn => 4,
             Self::Paladin => 4,
             Self::Ranger => 6,
             Self::Rogue => 8,
@@ -511,6 +581,10 @@ impl Class {
                 specific_armors: None,
                 usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
             },
+            Self::Dragon => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
+            },
             Self::Druid => ArmorProficiencies {
                 specific_armors: Some(vec![Armor::Hide(None)]),
                 usage_classes: vec![ArmorUsageClass::Light],
@@ -520,6 +594,10 @@ impl Class {
                 usage_classes: ArmorUsageClass::all(),
             },
             Self::Monk => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light],
+            },
+            Self::Oozeborn => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: vec![ArmorUsageClass::Light],
             },
@@ -608,6 +686,7 @@ impl Class {
                 Clerics want to expand the worship of their specific deity, which is easiest in civilized areas where many potential worshippers can be found.
                 This runs opposite to the typical druidic preference against civilization.
             ".to_string(),
+            Self::Dragon => r"".to_string(),
             Self::Druid => r"
                 Druids are nature spellcasters who draw power from their veneration of the natural world.
                 They worship Nature herself, the over-deity who guides and nurtures all living things.
@@ -679,6 +758,7 @@ impl Class {
                 As a result, they often try to trip, disarm, and distract their foes in combat.
                 These strategies are all most effective against humanoid opponents.
             ".to_string(),
+            Self::Oozeborn => r"".to_string(),
             Self::Paladin => r"
                 Paladins are divinely empowered warriors who exemplify a particular alignment.
                 They can shift easily between physical combat and spellcasting depending on the situation.
@@ -859,6 +939,12 @@ impl Class {
                 specific_weapons: None,
                 simple_weapons: true,
             },
+            Self::Dragon => WeaponProficiencies {
+                custom_weapon_groups: 0,
+                specific_weapon_groups: None,
+                specific_weapons: None,
+                simple_weapons: false,
+            },
             Self::Druid => WeaponProficiencies {
                 custom_weapon_groups: 0,
                 specific_weapon_groups: None,
@@ -877,6 +963,12 @@ impl Class {
             Self::Monk => WeaponProficiencies {
                 custom_weapon_groups: 0,
                 specific_weapon_groups: Some(vec![WeaponGroup::Monk]),
+                specific_weapons: None,
+                simple_weapons: true,
+            },
+            Self::Oozeborn => WeaponProficiencies {
+                custom_weapon_groups: 0,
+                specific_weapon_groups: None,
                 specific_weapons: None,
                 simple_weapons: true,
             },
