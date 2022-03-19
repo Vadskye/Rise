@@ -1679,9 +1679,9 @@ function handleUnknownStatistic() {
 
 function handleVitalRolls() {
   onGet(
-    { miscCount: 3, miscName: "vital_rolls", numeric: ["vital_wound_count"] },
+    { miscCount: 2, miscName: "vital_rolls", numeric: ["vital_roll_class", "vital_wound_count"] },
     (v) => {
-      const totalValue = v.misc - v.vital_wound_count * 2;
+      const totalValue = v.vital_roll_class + v.misc - v.vital_wound_count * 2;
       setAttrs({ vital_rolls: totalValue });
     }
   );
