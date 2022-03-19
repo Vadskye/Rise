@@ -1681,7 +1681,7 @@ function handleVitalRolls() {
   onGet(
     { miscCount: 3, miscName: "vital_rolls", numeric: ["vital_wound_count"] },
     (v) => {
-      const totalValue = v.misc - v.vital_wound_count;
+      const totalValue = v.misc - v.vital_wound_count * 2;
       setAttrs({ vital_rolls: totalValue });
     }
   );
@@ -1698,13 +1698,13 @@ function handleVitalWounds() {
     return {
       0: "Unconscious, die after a minute",
       1: "Unconscious below max HP",
-      2: "Half max HP and resistances",
-      3: "-2 accuracy",
-      4: "-2 defenses",
-      5: "-1 vital rolls",
-      6: "Half speed below max HP",
-      7: "Half max resistances",
-      8: "-1 accuracy",
+      2: "-10 foot speed",
+      3: "-5 foot speed",
+      4: "Max DR is 0",
+      5: "Half max DR",
+      6: "-2 accuracy",
+      7: "-1 accuracy",
+      8: "-2 defenses",
       9: "-1 defenses",
     }[roll];
   }

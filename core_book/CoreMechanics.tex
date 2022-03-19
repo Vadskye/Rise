@@ -231,10 +231,12 @@ This chapter describes the core mechanics of Rise.
     The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
 
     \subsection{Vital Rolls}\label{Vital Rolls}
-        To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
+        To make a \glossterm{vital roll}, roll 1d10.
+        You take a penalty to this roll equal to twice the number of \glossterm{vital wounds} you already have, not counting the vital wound you are rolling for.
         This includes vital wounds that have no specific vital wound effect.
         The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
         Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
+        This roll is not a \glossterm{check}, so you can't affect it with abilities like \glossterm{desperate exertion}.
 
         \parhead{Delaying Death} Vital wounds with a vital roll below 1 can kill you.
         While you are dying in this way, if you receive healing that causes you to regain hit points, you delay your death by one round.
@@ -245,19 +247,19 @@ This chapter describes the core mechanics of Rise.
             \lcaption{Vital Wound Effects}
             \begin{dtabularx}{\textwidth}{l X}
                 \tb{Vital Roll}  & \tb{Effect} \tableheaderrule
-                \minus6 or less  & You immediately die                                                              \\
-                \minus1--\minus5 & You are unconscious, and you die at the end of the next round                    \\
-                0                & You are unconscious, and you die after one minute                                \\
-                1                & You are unconscious while you have less than full hit points                     \\
-                2                & Your maximum \glossterm{hit points} and \glossterm{damage resistance} are halved \\
-                3                & You take a \minus2 penalty to \glossterm{accuracy}                               \\
-                4                & You take a \minus2 penalty to all \glossterm{defenses}                           \\
-                5                & You take a \minus1 penalty to future \glossterm{vital rolls}                     \\
-                6                & You move at half speed while you have less than full hit points                  \\
-                7                & Your maximum \glossterm{damage resistance} is halved                             \\
-                8                & You take a \minus1 penalty to \glossterm{accuracy}                               \\
-                9                & You take a \minus1 penalty to all \glossterm{defenses}                           \\
-                10 or more       & No extra vital wound effect                                                      \\
+                \minus6 or less  & You immediately die                                                    \\
+                \minus1--\minus5 & You are unconscious, and you die at the end of the next round          \\
+                0                & You are unconscious, and you die after one minute                      \\
+                1                & You are unconscious while you have less than full hit points           \\
+                2                & You have a \minus10 foot penalty to your speed with all movement modes \\
+                3                & You have a \minus5 foot penalty to your speed with all movement modes  \\
+                4                & Your maximum \glossterm{damage resistance} is 0                        \\
+                5                & Your maximum \glossterm{damage resistance} is halved                   \\
+                6                & You take a \minus2 penalty to \glossterm{accuracy}                     \\
+                7                & You take a \minus1 penalty to \glossterm{accuracy}                     \\
+                8                & You take a \minus2 penalty to all \glossterm{defenses}                 \\
+                9                & You take a \minus1 penalty to all \glossterm{defenses}                 \\
+                10 or more       & No extra vital wound effect                                            \\
             \end{dtabularx}
         \end{dtable}
 
