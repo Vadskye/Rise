@@ -446,7 +446,16 @@ def calc_vital_rolls():
             div({"class": "calc-header"}, "Vital Rolls"),
             equation(
                 [
-                    equation_misc_repeat("vital_rolls", 3),
+                    underlabel(
+                        "Class",
+                        number_input(
+                            {
+                                "name": "vital_roll_class",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("vital_rolls", 2),
                     minus(),
                     underlabel(
                         "Wounds",
@@ -454,7 +463,7 @@ def calc_vital_rolls():
                             {
                                 "disabled": True,
                                 "name": "vital_wound_count_display",
-                                "value": "@{vital_wound_count}",
+                                "value": "@{vital_wound_count}*2",
                             }
                         ),
                     ),
