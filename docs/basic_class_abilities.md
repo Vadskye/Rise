@@ -9,21 +9,12 @@ In addition, each class starts with 28 points to spend. Non-casters get an extra
 2 points: +1 insight point
 2 points: +1 fatigue tolerance
 2 points: first weapon group
-4 points: +1 attunement point
+3 points: +1 vital rolls
 4 points: +base power
+5 points: +1 attunement point
 
-
-Brb: 1 insight, 5 skill, 3 attunement, +3 fatigue, med armor, 1 weapon, +pow  = 2 + 5 + 12 + 6 + 2 + 2 + 4 = 33
-Clr: 3 insight, 4 skill, 4 attunement, +2 fatigue, med armor, 0 weapon        = 6 + 4 + 16 + 4 + 2 + 0     = 32
-Drd: 2 insight, 5 skill, 4 attunement, +2 fatigue, med armor, * weapon        = 4 + 5 + 16 + 4 + 2 + 1     = 32
-Ftr: 2 insight, 4 skill, 3 attunement, +3 fatigue, all armor, 2 weapon, +1 AD = 4 + 4 + 12 + 6 + 3 + 3 + 1 = 33
-Mnk: 2 insight, 5 skill, 4 attunement, +2 fatigue, lgt armor, * weapon, +1 AD = 4 + 5 + 16 + 4 + 2 + 1 + 1 = 33
-Pal: 2 insight, 4 skill, 3 attunement, +3 fatigue, all armor, 1 weapon, +1 AD = 4 + 4 + 12 + 6 + 3 + 1 + 1 = 32
-Rgr: 2 insight, 6 skill, 3 attunement, +3 fatigue, lgt armor, 2 weapon, +1 AD = 4 + 6 + 12 + 6 + 1 + 3 + 1 = 33
-Rog: 3 insight, 8 skill, 3 attunement, +2 fatigue, lgt armor, 1 weapon        = 6 + 8 + 12 + 4 + 1 + 2     = 33
-Sor: 2 insight, 4 skill, 5 attunement, +2 fatigue, noo armor, 0 weapon        = 4 + 4 + 20 + 4 + 0 + 0     = 32
-War: 2 insight, 3 skill, 4 attunement, +2 fatigue, lgt armor, 0 weapon, +pow  = 4 + 3 + 16 + 4 + 1 + 0 + 4 = 32
-Wiz: 3 insight, 4 skill, 5 attunement, +1 fatigue, noo armor, 0 weapon        = 6 + 4 + 20 + 2 + 0 + 0     = 32
+The current values for each class are calculated in class.rs.
+TODO: get dragon and ooze in there
 
 Drg: 2 insight, 5 skill, 4 attunement, +3 fatigue, med armor, 0 weapon        = 4 + 5 + 16 + 6 + 2 + 0     = 33
 Ooz: 2 insight, 4 skill, 4 attunement, +4 fatigue, lgt armor, 0 weapon        = 6 + 4 + 16 + 8 + 1 + 0     = 33
