@@ -595,7 +595,7 @@ def generate_tools():
                 \\label<Torch>
                 As a standard action, you can light a torch if you have flint and steel or another source of flame handy.
                 When you do, it sheds \\glossterm<bright illumination> in a \\smallarea radius, and \\glossterm<shadowy illumination> in a \\medarea radius.
-                A torch burns for eight hours before its fuel is expended.
+                A torch burns for eight hours before it is destroyed.
             """,
             short_description="Emits light",
         ),
@@ -606,7 +606,7 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                This item functions like a \\mitem<torch>, except that it burns for a week before its fuel is expended.
+                This item functions like a \\mitem<torch>, except that it burns for a week before it is destroyed.
             """,
             short_description="Emits light for a week",
         ),
@@ -619,12 +619,12 @@ def generate_tools():
             description="""
                 As a standard action, you can light a brilliant torch if you have flint and steel or another source of flame handy.
                 When you do, it sheds \\glossterm<brilliant illumination> in a \\smallarea radius, \\glossterm<bright illumination> in a \\medarea radius, and \\glossterm<shadowy illumination> in a \\largearea radius.
-                A brilliant torch burns for five minutes before its fuel is expended.
+                A brilliant torch burns for five minutes before it is destroyed.
             """,
             short_description="Emits brilliant light",
         ),
         MagicItem(
-            consumable=True,
+            consumable=False,
             name="Belt Lantern",
             rank=1,
             material_type="Alchemical",
@@ -632,6 +632,7 @@ def generate_tools():
             description="""
                 This item functions like a \\mitem<torch>, except that you can hang it from a belt, allowing you to shed light without holding an item in your hand.
                 However, it is fragile, so clever attackers might smash it easily.
+                A belt lantern can burn for one hour before its fuel is expended, and more oil must be added.
             """,
             short_description="Emits light without being held",
         )
