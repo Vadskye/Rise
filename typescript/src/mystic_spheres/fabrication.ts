@@ -171,7 +171,7 @@ export const fabrication: MysticSphere = {
           Whenever anything passes through the wall, make an attack vs. Armor against it.
           You can only make this attack against a given target once per \\glossterm{phase}.
 
-          Each five-foot square of wall has hit points equal to twice your \\glossterm{power}.
+          The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
           After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
@@ -208,7 +208,7 @@ export const fabrication: MysticSphere = {
         Whenever anything passes through the wall, make an attack vs. Armor against it.
         You can only make this attack against a given target once per \\glossterm{phase}.
 
-        Each five-foot square of wall has hit points equal to twice your \\glossterm{power}.
+        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
@@ -315,7 +315,7 @@ export const fabrication: MysticSphere = {
         targeting: `
           You fill a \\smallarea radius \\glossterm{zone} within \\shortrange with webs.
           The webs make the area \\glossterm{difficult terrain}.
-          Each 5-ft.\\ square of webbing has 16 \\glossterm{hit points}, and all of its defenses are 0.
+          The web has \\glossterm{hit points} equal to three times your \\glossterm{power}, and all of its defenses are 0.
 
           In addition, make an attack vs. Reflex against all Large or smaller creatures in the area.
           Whenever a creature enters the area, you make the same attack against it.
@@ -487,13 +487,13 @@ export const fabrication: MysticSphere = {
         % simultaneously
         If another creature is in the target's space when this spell is cast, this spell fails without effect.
 
-        Each 5-ft.\\ square of the field has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        The field has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 3,
       scaling: {
-        5: `The \\glossterm{hit points} of each 5-ft.\\ square increase to three times your power.`,
-        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to four times your power.`,
+        5: `The field's \\glossterm{hit points} increase to four times your power.`,
+        7: `The field's \\glossterm{hit points} increase to five times your power.`,
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (minor)",
@@ -642,7 +642,7 @@ export const fabrication: MysticSphere = {
         The wall is visible as a shimmering magical membrane that does not block sight.
         Nothing can pass through the wall until it is destroyed.
 
-        Each 5-ft.\\ square of wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
@@ -678,7 +678,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          each 5-ft. square of wall has hit points equal to three times your \\glossterm{power} instead of twice your power.
+          the wall has \\glossterm{hit points} equal to four times your \\glossterm{power} instead of three times your power.
         `,
         name: "mystic barrier",
       },
@@ -743,7 +743,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the wall's defenses are each equal to 6 + your level, and it is \\trait{impervious} to physical damage.
-          In addition, each 5-ft.\\ square of wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+          In addition, the wall's \\glossterm{hit points} increase to four times your \\glossterm{power}.
         `,
         name: "mystic barrier",
       },
@@ -864,7 +864,7 @@ export const fabrication: MysticSphere = {
         The barrier is visible as a shimmering magical membrane that does not block sight.
         As a standard action, a creature can move five feet from outside the hut to inside the hut, or vice versa.
         However, the hut blocks \\glossterm{line of effect} for all other purposes.
-        Each 5-ft.\\ square of barrier has 16 \\glossterm{hit points}, and all of its defenses are 0.
+        The barrier has \\glossterm{hit points} equal to three times your \\glossterm{power}.
 
         If you leave the zone, this effect ends.
       `,

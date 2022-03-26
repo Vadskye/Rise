@@ -414,7 +414,7 @@ export const verdamancy: MysticSphere = {
         Whenever anything moves through the wall, make an attack vs. Armor against it.
         You can only make an attack in this way against a given target once per \\glossterm{phase}.
 
-        Each five-foot square of wall has hit points equal to three times your \\glossterm{power}.
+        The wall has \\glossterm{hit points} equal to four times your \\glossterm{power}.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },

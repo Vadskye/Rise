@@ -373,7 +373,7 @@ export const telekinesis: MysticSphere = {
         The wall is visible as a shimmering magical field that does not block sight.
         Nothing can pass through the wall until it is destroyed.
 
-        Each 5-ft.\\ square of wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
@@ -397,7 +397,7 @@ export const telekinesis: MysticSphere = {
         You can create the cube around a sufficiently small creature to trap it inside.
         Each wall is transparent, but it blocks physical passage and \\glossterm{line of effect}.
 
-        Each five-foot square of wall has hit points equal to twice your \\glossterm{power}, and all of its defenses are 0.
+        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 7,

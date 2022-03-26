@@ -519,7 +519,7 @@ export const pyromancy: MysticSphere = {
         Whenever anything passes through the wall, you make an attack vs. Reflex against it.
         You can only make this attack against a given target once per \\glossterm{phase}.
 
-        Each five-foot square of wall has hit points equal to your \\glossterm{power}.
+        The wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
         It is immune to all damage types except for cold damage.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
