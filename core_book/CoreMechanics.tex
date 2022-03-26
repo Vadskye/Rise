@@ -621,6 +621,16 @@ This chapter describes the core mechanics of Rise.
             Mechanically, walls are considered to have no width and simply occupy the boundary between squares.
             Like lines, some walls are shapeable.
 
+            All walls share the following common properties unless their description says otherwise.
+            A wall's height is equal to half its length for straight walls, or half its radius for circular walls, to a minimum of 10 feet high.
+            Each 5-ft. square of a wall is considered a separate object, and can be targeted or destroyed individually.
+            All of a wall's defenses are 0, but like other objects, they are immune to \glossterm{critical hits}.
+            Most abilities that create walls indicate how many hit points each 5-ft. square of wall has.
+            If an ability does not specify a wall's hit points, it does not have hit points and cannot be destroyed with damage.
+
+            If you create a wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
+            This can allow you to completely block off small tunnels.
+
             Walls can normally be created within or adjacent to occupied squares, but not within solid objects.
             If a wall has a physical presence, it cannot be created inside the space of a single creature, but it can be created between two adjacent creatures.
 
@@ -709,6 +719,10 @@ This chapter describes the core mechanics of Rise.
             Some abilities last as long as you take an action to sustain them each round.
             The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
             At the end of each round, the ability is dismissed unless you initiated the ability that round or took the action to sustain the ability that round.
+
+            Some sustained abilities include ``attuneable'' in the tag before the action type.
+            When you use that ability, you can choose to \glossterm{attune} to it instead of sustaining it.
+            If you do, it gains the \abilitytag{Attune} (self) tag and loses the \abilitytag{Sustain} tag, so it stays active as long as you stay attuned to it.
 
             % TODO: a more robust timing system would make stating this explicitly unnecessary
             If a sustained ability has effects that trigger at the end of the round, it ends before having its effects if you fail to sustain the ability.

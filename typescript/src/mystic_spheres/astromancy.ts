@@ -473,7 +473,7 @@ export const astromancy: MysticSphere = {
           If you hit both subjects, they each teleport into each other's locations.
         `,
         targeting: `
-          Make an attack vs. Mental against two Large or smaller creatures within \\longrange.
+          Make an attack vs. Mental against two Large or smaller creatures within \\medrange.
           If either target is not standing on solid ground with sufficient space to support the other target, this spell fails.
         `,
       },
@@ -481,7 +481,7 @@ export const astromancy: MysticSphere = {
         The cultists were confident that they were safe behind their defensive wall of zombies.
         When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
       `,
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
       type: "Instant",
     },

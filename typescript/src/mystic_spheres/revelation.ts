@@ -959,5 +959,32 @@ export const revelation: MysticSphere = {
       tags: ["Scrying"],
       type: "Instant",
     },
+    {
+      name: "Private Sanctum",
+
+      castingTime: "24 hours",
+      effect: `
+        This ritual creates a ward against any external perception in a \\medarea radius \\glossterm{zone} centered on your location.
+        This effect is permanent.
+        Everything in the area is completely imperceptible from outside the area.
+        Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.
+        In addition, all \\abilitytag{Scrying} effects fail to function in the area.
+        Creatures inside the area can see within the area and outside of it without any difficulty.
+      `,
+      rank: 5,
+      type: "Instant",
+    },
+    {
+      name: "Scryward",
+
+      castingTime: "24 hours",
+      effect: `
+        This ritual creates a ward against scrying in a \\medarea radius \\glossterm{zone} centered on your location.
+        All \\abilitytag{Scrying} effects fail to function in the area.
+        This effect is permanent.
+        `,
+      rank: 3,
+      type: "Instant",
+    },
   ],
 };

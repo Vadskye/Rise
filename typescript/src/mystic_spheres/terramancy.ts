@@ -537,28 +537,22 @@ export const terramancy: MysticSphere = {
       name: "Wall of Stone",
 
       effect: `
-        You create a wall of stone within \\medrange.
-        You can choose the dimensions of the wall, up to a maximum of a 15 ft.\\ high, \\smallarea length wall.
+        You create a \\smallarealong \\glossterm{wall} of stone within \\medrange.
         Every square of the wall must be supported by solid ground.
-        If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
-        This can allow you to completely block off small tunnels.
-
-        The wall is made of magically created stone.
         Nothing can pass through the wall until it is destroyed.
-        Each 5-ft.\\ square of wall has 8 \\glossterm{hit points}, and all of its defenses are 0.
-        If a square of wall is on stone, its hit points are doubled.
 
-        When you cast this spell, you can \\glossterm{attune} to it.
-        If you do, it gains the \\abilitytag{Attune} (self) tag and loses the \\abilitytag{Sustain} (minor) tag.
+        Each 5-ft.\\ square of wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        If a square of wall is directly on stone, its hit points are doubled.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 2,
       scaling: {
-        3: `The maximum area increases to a \\medarealong wall, and the hit points of each square increase to 16.`,
-        5: `The maximum area increases to a \\largearealong wall, and the hit points of each square increase to 32.`,
-        7: `The maximum area increases to a \\hugearealong wall, and the hit points of each square increase to 64.`,
+        3: `The area increases to a \\medarealong wall.`,
+        5: `The area increases to a \\largearealong wall.`,
+        7: `The area increases to a \\hugearealong wall.`,
       },
-      tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
   ],
   rituals: [],

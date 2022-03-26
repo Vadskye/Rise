@@ -138,7 +138,7 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       tags: ["Compulsion"],
       type: "Duration",
@@ -169,7 +169,7 @@ export const enchantment: MysticSphere = {
         // No relevant glance effect
         hit: `Each target is \\glossterm{briefly} \\slowed.`,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
+          Make an attack vs. Mental against all creatures in a \\medarea radius within \\longrange.
         `,
       },
       rank: 2,
@@ -263,7 +263,7 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Emotion"],
       type: "Duration",
@@ -297,14 +297,15 @@ export const enchantment: MysticSphere = {
       name: "Discordant Song",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        // No relevant glance effect
-        hit: `Each target is \\glossterm{briefly} \\dazed.`,
+        crit: `Each target is \\stunned instead of dazed.`,
+        hit: `
+          Each target is \\dazed as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against all creatures in a \\medarea radius from you.
         `,
       },
-      rank: 2,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Compulsion"],
       type: "Duration",
@@ -314,7 +315,7 @@ export const enchantment: MysticSphere = {
       name: "Greater Discordant Song",
 
       functionsLike: {
-        exceptThat: "the area increases to a \\gargarea radius from you.",
+        exceptThat: "the attack affects all \\glossterm{enemies} in a \\largearea radius from you.",
         name: "discordant song",
       },
       rank: 6,
@@ -349,10 +350,29 @@ export const enchantment: MysticSphere = {
         // No relevant glance effect
         hit: `Each target is \\glossterm{briefly} \\shaken by either you or an \\glossterm{ally} of your choice within range.`,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental with a +1 \\glossterm{accuracy} bonus against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
       rank: 1,
+      scaling: "accuracy",
+      tags: ["Emotion"],
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Mass Fear",
+
+      attack: {
+        crit: `Each target is \\frightened instead of shaken.`,
+        // No relevant glance effect
+        hit: `
+          Each target is \\shaken as a \\glossterm{condition} by either you or an \\glossterm{ally} of your choice within range.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
+        `,
+      },
+      rank: 4,
       scaling: "accuracy",
       tags: ["Emotion"],
       type: "Duration",
@@ -456,7 +476,7 @@ export const enchantment: MysticSphere = {
         You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
         `,
       },
-      rank: 4,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Emotion"],
       type: "Sustain (standard)",

@@ -544,6 +544,25 @@ export const thaumaturgy: MysticSphere = {
       tags: ['Swift'],
       type: "Duration",
     },
+
+    {
+      name: "Wall of Magic Impedance",
+
+      effect: `
+        You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
+        The wall is visible as a shimmering magical membrane that does not block sight.
+        Objects, creatures, and \\glossterm{mundane} abilities can pass through the wall freely, but any \\glossterm{magical} ability treats the wall as an impassable barrier.
+
+        Each 5-ft.\\ square of wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+      `,
+      rank: 4,
+      scaling: {
+        6: `The area increases to a \\medarealong wall.`,
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
   ],
   rituals: [
     {

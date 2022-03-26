@@ -112,48 +112,6 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Drain Life",
-
-      attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} energy damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Drain Life",
-
-      attack: {
-        hit: `The target takes 2d10 + \\glossterm{power} energy damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\longrange.
-        `,
-      },
-      rank: 4,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Drain Life",
-
-      attack: {
-        hit: `The target takes 5d10 + \\glossterm{power} energy damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\distrange.
-        `,
-      },
-      rank: 7,
-      scaling: "damage",
-      type: "Instant",
-    },
-
-    {
       name: "Restoration",
 
       effect: `
@@ -473,7 +431,7 @@ export const vivimancy: MysticSphere = {
         // No relevant glance effect
         hit: `Each target is \\glossterm{briefly} \\dazed.`,
         targeting: `
-          Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Fortitude with a +1 \\glossterm{accuracy} bonus against all living creatures in a \\smallarea radius within \\medrange.
         `,
       },
       rank: 1,
@@ -491,7 +449,7 @@ export const vivimancy: MysticSphere = {
           Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
       type: "Duration",
     },

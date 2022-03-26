@@ -158,7 +158,7 @@ export const cryomancy: MysticSphere = {
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
       type: "Duration",
     },

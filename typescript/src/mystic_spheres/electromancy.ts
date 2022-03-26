@@ -132,14 +132,15 @@ export const electromancy: MysticSphere = {
       name: "Stunning Discharge",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition}.`,
-        // No relevant glance effect
-        hit: `Each target that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.`,
+        crit: `Creatures that have remaining damage resistance are also affected.`,
+        hit: `
+          Each target that has no remaining \\glossterm{damage resistance} is \\dazed as a \\glossterm{condition} and \\glossterm{briefly} \\stunned.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against \\glossterm{enemies} in a \\arealarge radius from you.
+          Make an attack vs. Fortitude against all creatures in a \\medarea radius from you.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -147,11 +148,16 @@ export const electromancy: MysticSphere = {
     {
       name: "Greater Stunning Discharge",
 
-      functionsLike: {
-        name: 'stunning discharge',
-        exceptThat: 'each target is stunned regardless of whether it has damage resistance remaining.',
+      attack: {
+        crit: `Creatures that have remaining damage resistance are also affected.`,
+        hit: `
+          Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition} and \\glossterm{briefly} \\confused.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against all creatures in a \\medarea radius from you.
+        `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -203,12 +209,14 @@ export const electromancy: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        hit: `Each target is \\glossterm{briefly} \\confused.`,
+        hit: `
+          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\confused.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures with no remaining \\glossterm{damage resistance} in a \\smallarea radius within \\medrange.
+          Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
       type: "Duration",
     },
