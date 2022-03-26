@@ -65,10 +65,10 @@ function convertSpellToLatex(spell: SpellLike): string {
 
   const latex = `
     \\begin{${abilityType}}{${spell.name}}${typeText}
-      \\hypertargetraised{spell:${spell.name}}{}%
-      \\hypertargetraised{spell:${spell.name.toLowerCase()}}{}%
       ${format.spellTypePrefix(spell) || ""}
       \\rankline
+      \\hypertargetraised{spell:${spell.name}}{}%
+      \\hypertargetraised{spell:${spell.name.toLowerCase()}}{}%
       \\noindent
       ${internalComponents.join("\n\\rankline\n\n\\noindent ").trim()}%
       \\vspace{0.1em}%
