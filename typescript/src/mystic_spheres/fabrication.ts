@@ -325,7 +325,7 @@ export const fabrication: MysticSphere = {
 
       rank: 4,
       scaling: "accuracy",
-      tags: ["Barrier", "Manifestation"],
+      tags: ["Manifestation"],
       type: "Sustain (attuneable, minor)",
     },
 
@@ -668,6 +668,24 @@ export const fabrication: MysticSphere = {
       scaling: {
         3: `The maximum area increases to a \\medarealong wall.`,
         5: `The maximum area increases to a \\largearealong wall.`,
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+
+    {
+      name: "Sturdy Barrier",
+
+      functionsLike: {
+        exceptThat: `
+          each 5-ft. square of wall has hit points equal to three times your \\glossterm{power} instead of twice your power.
+        `,
+        name: "mystic barrier",
+      },
+      rank: 3,
+      scaling: {
+        5: `The maximum area increases to a \\medarealong wall.`,
+        7: `The maximum area increases to a \\largearealong wall.`,
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
