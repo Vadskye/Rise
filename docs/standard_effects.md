@@ -137,14 +137,8 @@ situations.
 
 * Strike-based attacks:
   * High: (weapon damage dice) + (power)
-  * Medium: (weapon damage dice) + (half power) OR (weapon damage dice -2d) + (power)
-    * For AOE, use half power instead of -2d because large weapons feel like they should generally be
-      better at AOE. If the weapon damage dice were reduced but you still added full power, it would
-      be worse for large weapons than for small weapons, which seems odd. Large weapons should
-      generally be better for damage, including AOE, since small weapons are generally better for
-      applying debuffs and special effects.
-    * For debuffs, use -2d and full power.
-  * Low: (weapon damage dice -2d) + (half power)
+  * Medium: (weapon damage dice) + (half power)
+  * Low: (weapon damage dice)
 * Non-strike-based attacks:
   * High: (1d6 + 1d per rank) + (power)
   * Medium: (1d4 + 1d per rank) + (half power)
@@ -340,19 +334,32 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
   * "while no DR" can be replaced with "while below max HP", which is worse against minions but better against blood mages and weird stuff
 
 #### Spells: AOE debuff
-The minimum area size here should be a t2 area to make these feel different from single-target
+For the purpose of pure debuffs, treat single-target Medium range as being a t0 area, and scale from there.
+For AOE spells, brief r2 = condition r1
 * Rank 1
-  * t3 area, brief r1 debuff, condition on crit
-  * t3 area, brief r2 debuff if no DR, condition on crit
+  * t2 area: if no DR, brief r2 debuff, condition r1 debuff; on crit, works vs DR
+  * t4 area, condition: r0 debuff, or r1 on crit
+  * t4 area: brief r1 debuff, condition on crit
+  * t4 area: brief r2 debuff if no DR, condition on crit
+  * t2 area: brief r1 debuff if DR or r2 if no DR, condition on crit
 * Rank 2
-  * t2 area, brief r1 debuff if DR or r2 debuff if no DR, condition on crit
+  * t1 area, condition: r1 debuff, or r2 on crit
+  * t1 area, condition: r2 debuff while no DR, must remove twice on crit
+    * This is worse than a damage + debuff in that it doesn't deal damage, but better in that you can pre-cast it and have the full effect become active later
+  * t1 area: brief r2 debuff, condition on crit
+  * t1 area: brief r3 debuff if no DR, condition on crit
 * Rank 4
-  * t2 area, brief r3 debuff if no DR, condition on crit
-  * t2 area, brief r2 debuff, condition on crit
+  * t1 area, curse: r1 debuff, lasts forever on crit
+  * t1 area, condition: r1 debuff while DR, or r2 debuff while no DR, must remove twice on crit
+  * t1 area: if no DR, brief r3 debuff, condition r2 debuff; on crit, works vs DR
+  * t1 area: brief r1 debuff if DR or r2 if no DR, condition on crit
 * Rank 6
-  * t2 area, brief r2 debuff if DR or r3 debuff if no DR, condition on crit
+  * t1 area, condition: r2 debuff, or r3 on crit
+  * t1 area, condition: r3 debuff while no DR, must remove twice on crit
+  * t1 area, curse: r1 debuff while DR, or r2 debuff while no DR, lasts forever on crit
+  * t1 area: brief r3 debuff, condition on crit
 * Modifiers
-  * +3 levels to apply a condition instead of a brief effect, with "remove twice" crit
+  * "while no DR" can be replaced with "while below max HP", which is worse against minions but better against blood mages and weird stuff
 
 #### Spells: Attuned AOE debuff
 The minimum area size here should be a t2 area to make these feel different from single-target
@@ -376,15 +383,19 @@ For strikes, going from full power -> half power and half -> none buys +3 effect
   * Strike, brief r2 debuff if lose HP
 
 #### Maneuvers: single-target medium damage + debuff
-* Rank 2
+* Rank 1
   * Strike with half power, r1 debuff condition if lose HP
   * Strike with half power, brief r1 debuff, immune after first success
-* Rank 4
+* Rank 3
   * Strike with half power, brief r1 debuff
-* Rank 6
+  * Strike with half power, brief r2 debuff if lose HP
+* Rank 5
   * Strike with half power, r1 debuff condition
   * Strike with half power, r2 debuff condition if lose HP
   * Strike with half power, brief r2 debuff, immune after first success
+* Rank 7
+  * Strike with half power, brief r2 debuff
+  * Strike with half power, brief r3 debuff if lose HP
 
 #### Maneuvers: single-target low damage + debuff
 * Rank 1
@@ -402,30 +413,28 @@ For strikes, going from full power -> half power and half -> none buys +3 effect
   * Strike with no power, r2 debuff condition
 
 #### Spells: single-target high damage + debuff
-Spells only get a +1 rank bonus over martials for full damage + debuff attacks.
-Otherwise, these are too much better than just casting a pure damage spell.
-
-* Rank 4
-  * Med range, 2d10 + power damage, brief r1 debuff, immune after first success
-  * Med range, 2d10 + power damage, r1 debuff condition if lose HP
-* Rank 6
-  * Med range, 4d8 + power damage, brief r1 debuff
-  * Med range, 4d8 + power damage, brief r2 debuff if lose HP
+* Rank 3
+  * Med range, 2d8 + power damage, brief r1 debuff, immune after first success
+  * Med range, 2d8 + power damage, r1 debuff condition if lose HP
+* Rank 5
+  * Med range, 4d6 + power damage, brief r1 debuff
+  * Med range, 4d6 + power damage, brief r2 debuff if lose HP
 
 #### Spells: single-target medium damage + debuff
 * Rank 1
-  * Med range, 1d6 + half power damage, brief r1 debuff, immune after first success
-  * Med range, 1d6 + half power damage, r1 debuff condition if lose HP
-* Rank 3
   * Med range, 2d6 + half power damage, brief r1 debuff
   * Med range, 2d6 + half power damage, brief r2 debuff if lose HP
-* Rank 5
+* Rank 3
   * Med range, 2d10 + half power damage, brief r2 debuff if lose HP, otherwise brief r1 debuff
   * Med range, 2d10 + half power damage, brief r2 debuff, immune after first success
   * Med range, 2d10 + half power damage, r2 debuff condition if lose HP
-* Rank 7
+* Rank 5
   * Med range, 4d8 + half power damage, brief r2 debuff
   * Med range, 4d8 + half power damage, brief r3 debuff if lose HP
+* Rank 7
+  * Med range, 4d8 + half power damage, brief r3 debuff if lose HP, otherwise brief r2 debuff
+  * Med range, 4d8 + half power damage, brief r3 debuff, immune after first success
+  * Med range, 4d8 + half power damage, r3 debuff condition if lose HP
 * Modifiers
   * "Med range" can be replaced with "Reach, no focus"
   * For +4 levels, you get +5d and full power instead of half power
@@ -438,7 +447,7 @@ Otherwise, these are too much better than just casting a pure damage spell.
 
 #### Spells: single-target low damage + debuff
 * Rank 1
-  * Med range, 1d6 damage, r2 debuff condition if lose HP
+  * Med range, 1d6 damage, r2 debuff condition if lose HP -- ANCHOR
   * Med range, 1d6 damage, brief r2 debuff, immune after first success
   * Med range, 1d6 damage, r1 debuff condition
 * Rank 3

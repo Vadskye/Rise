@@ -274,7 +274,7 @@ export const umbramancy: MysticSphere = {
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -293,7 +293,7 @@ export const umbramancy: MysticSphere = {
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
         `,
       },
-      rank: 7,
+      rank: 6,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -539,12 +539,12 @@ export const umbramancy: MysticSphere = {
       name: "Wall of Darkness",
 
       effect: `
-        You create a wall of darkness in a 15 ft.\\ high, \\medarealong line within \\medrange.
-        If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
-        This can allow you to completely block off small tunnels.
+        You create a \\medarealong \\glossterm{wall} of darkness within \\medrange.
         The wall is visible as a solid block of darkness that blocks sight.
         Creatures with \\trait{darkvision} can see through the wall normally.
         It does not inhibit the passage of objects or creatures.
+
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {
@@ -552,8 +552,8 @@ export const umbramancy: MysticSphere = {
         5: `The area increases to a 30 ft.\\ high \\hugearealong line.`,
         7: `The area increases to a 60 ft.\\ high, \\gargarealong line.`,
       },
-      tags: [],
-      type: "Sustain (minor)",
+      tags: ["Barrier"],
+      type: "Sustain (attuneable, minor)",
     },
   ],
   rituals: [

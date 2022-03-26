@@ -66,7 +66,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         crit: "The effect lasts until this curse is removed.",
         hit: `
-          The target takes a -2 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller until it takes a \\glossterm{short rest}.
+          The target takes a -2 penalty to defenses against ranged \\glossterm{strikes} until it takes a \\glossterm{short rest}.
         `,
         targeting: "Make an attack vs. Mental against anything within \\medrange.",
       },
@@ -78,7 +78,7 @@ export const aeromancy: MysticSphere = {
       tags: ["Curse"],
       type: "Duration",
     },
-    // Treat greater arrow attraction as r2 -1 level
+    // Treat greater arrow attraction as r2 -2 levels
     {
       name: "Greater Curse of Arrow Attraction",
 
@@ -87,14 +87,14 @@ export const aeromancy: MysticSphere = {
           The effect lasts until this curse is removed.
         `,
         hit: `
-          The target takes a -4 penalty to defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Medium or smaller until it takes a \\glossterm{short rest}.
+          The target takes a -4 penalty to defenses against ranged \\glossterm{strikes} until it takes a \\glossterm{short rest}.
         `,
         targeting: "Make an attack vs. Mental against anything within \\medrange.",
       },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows, ensuring that they strike true.
       `,
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Curse"],
       type: "Duration",
@@ -314,14 +314,14 @@ export const aeromancy: MysticSphere = {
       },
       type: "Attune (self)",
     },
-    // +2 levels for push, -1 level for no power
+    // +2 levels for push, -2 levels for no power
     {
       name: "Gust of Wind",
 
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d8 bludgeoning damage.
+          Each target takes 1d6 bludgeoning damage.
           In addition, each target damaged by the attack is \\glossterm{pushed} 30 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -331,7 +331,7 @@ export const aeromancy: MysticSphere = {
       },
       // effect: '',
       // narrative: '',
-      rank: 2,
+      rank: 1,
       scaling: "damage",
       type: "Instant",
     },
@@ -342,7 +342,7 @@ export const aeromancy: MysticSphere = {
         // crit: '',
         // +1 level for farther push, +2 levels for area
         hit: `
-          Each target takes 2d8 bludgeoning damage.
+          Each target takes 2d6 bludgeoning damage.
           In addition, each target damaged by the attack is \\glossterm{pushed} 60 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -351,8 +351,28 @@ export const aeromancy: MysticSphere = {
         `,
       },
       // narrative: '',
-      rank: 5,
+      rank: 4,
       scaling: "damage",
+      type: "Instant",
+    },
+    {
+      name: "Supreme Gust of Wind",
+
+      attack: {
+        // crit: '',
+        // +2 levels for half power, +1 level for more area
+        hit: `
+          Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
+          In addition, each target damaged by the attack is \\glossterm{pushed} 60 feet in the direction the line points away from you.
+          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against everything in a \\hugearealong, 15 ft. wide line from you.
+        `,
+      },
+      // narrative: '',
+      rank: 7,
+      // scaling: "damage",
       type: "Instant",
     },
     {
@@ -503,7 +523,7 @@ export const aeromancy: MysticSphere = {
         crit: "Double damage from movement.",
         hit: `
           As a \\glossterm{condition}, the target is \\slowed by incredibly fast winds that inhibit movement.
-          At the end of each phase, if it moved voluntarily during that phase, it takes 1d10 bludgeoning damage.
+          At the end of each phase, if it moved using one of its movement speeds during that phase, it takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one Large or smaller creature within \\medrange.
@@ -511,7 +531,27 @@ export const aeromancy: MysticSphere = {
       },
       // effect: '',
       // narrative: '',
-      rank: 3,
+      rank: 2,
+      scaling: "damage",
+      type: "Duration",
+    },
+    {
+      name: "Greater Windseal",
+
+      // +1 level for range, +2 levels for damage die
+      attack: {
+        crit: "Double damage from movement.",
+        hit: `
+          As a \\glossterm{condition}, the target is \\slowed by incredibly fast winds that inhibit movement.
+          At the end of each phase, if it moved using one of its movement speeds during that phase, it takes 2d10 + half \\glossterm{power} bludgeoning damage.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one Large or smaller creature within \\longrange.
+        `,
+      },
+      // effect: '',
+      // narrative: '',
+      rank: 5,
       scaling: "damage",
       type: "Duration",
     },
@@ -522,12 +562,11 @@ export const aeromancy: MysticSphere = {
         crit: `
           The effect becomes a \\glossterm{condition}.
         `,
-        // No relevant glance effect
         hit: `
           Each target is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
-          Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.
+          Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\longrange from you.
         `,
       },
       // narrative: '',
@@ -546,11 +585,11 @@ export const aeromancy: MysticSphere = {
           Each target is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
-          Make an attack vs. Reflex against all creatures in a \\largearea radius within \\longrange from you.
+          Make an attack vs. Reflex against all creatures in a \\hugearea radius within \\longrange from you.
         `,
       },
       // narrative: '',
-      rank: 4,
+      rank: 5,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -569,7 +608,7 @@ export const aeromancy: MysticSphere = {
         `,
       },
       // narrative: '',
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -673,6 +712,39 @@ export const aeromancy: MysticSphere = {
         7: `The bonus increases to +6.`,
       },
       type: "Attune (self)",
+    },
+    {
+      name: "Wall of Wind",
+
+      effect: `
+        You create a wall of wind in a 20 ft.\\ high, \\medarea \\glossterm{wall} within \\medrange.
+        It does not block passage or significantly obstruct sight.
+        However, ranged \\glossterm{strikes} that pass through the wall take a -2 \\glossterm{accuracy} penalty.
+
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The penalty increases to -3.",
+        5: "The penalty increases to -4.",
+        7: "The penalty increases to -5.",
+      },
+      tags: ['Barrier'],
+      type: "Sustain (attuneable, minor)",
+    },
+    {
+      name: "Massive Wall of Wind",
+
+      functionsLike: {
+        name: "wall of wind",
+        exceptThat: "the area increases to a 30 ft. high, \\hugearea \\glossterm{wall} within \\longrange.",
+      },
+      rank: 4,
+      scaling: {
+        6: "The penalty increases to -3.",
+      },
+      tags: ['Barrier'],
+      type: "Sustain (attuneable, minor)",
     },
   ],
 
