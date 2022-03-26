@@ -27,7 +27,7 @@ export const mobileAssault: CombatStyle = {
 
       functionsLike: {
         abilityType: "maneuver",
-        exceptThat: "you can move up to your full speed instead of up to half your speed, and you add your full \\glossterm{power} to damage with the strike.",
+        exceptThat: "you can move up to your full speed instead of up to half your speed, and you do not have to move in a straight line.",
         name: "reaping harvest",
       },
       rank: 6,
