@@ -237,26 +237,6 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: "Summon Unicorn",
-
-      functionsLike: {
-        exceptThat: `
-        the summoned creature appears to be a unicorn.
-        Its attacks deal 2d6 piercing damage, and you can command it to heal instead of attack.
-        If you do, during each \\glossterm{action phase} it causes one of your \\glossterm{allies} within \\shortrange of it to regain 2d8 \\glossterm{hit points}.
-        This healing cannot increase the target's hit points above half its maximum hit points.
-        You can tell it which creature to heal.
-        If you do not instruct it to heal a specific creature, it will automatically heal the ally closest to it that appears to have lost the most hit points.
-        `,
-        name: "summon defensive monster",
-      },
-      rank: 6,
-      scaling: { special: "The damage and healing both increase by +1d for each rank beyond 6." },
-      tags: ["Manifestation"],
-      type: "Attune (self)",
-    },
-
-    {
       name: "Summon Weapon",
 
       functionsLike: {

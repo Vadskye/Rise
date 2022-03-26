@@ -40,7 +40,7 @@ export const vivimancy: MysticSphere = {
         5: `The healing increases to eight \\glossterm{hit points}.`,
         7: `The healing increases to sixteen \\glossterm{hit points}.`,
       },
-      tags: [],
+      tags: ['Swift'],
       type: "Instant",
     },
   ],
@@ -82,9 +82,8 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 2d6 + \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, you regain 2d6 + \\glossterm{power} hit points.
-          Normally, this healing cannot increase your hit points above half your maximum hit points.
-          If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation.
+          If it loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
+          If you do, you regain 2d6 + \\glossterm{power} hit points.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -109,6 +108,26 @@ export const vivimancy: MysticSphere = {
       scaling: { special: "The damage and healing increases by +1d for each rank beyond 6." },
       tags: [],
       type: "Duration",
+    },
+
+    {
+      name: "Lifesteal",
+
+      // +2 levels for HP theft
+      attack: {
+        hit: `
+          The target takes 2d6 + \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
+          If you do, you regain 2d6 + \\glossterm{power} hit points.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\medrange.
+        `,
+      },
+      rank: 3,
+      scaling: { special: "The damage and healing increases by +1d for each rank beyond 3." },
+      tags: [],
+      type: "Instant",
     },
 
     {
@@ -156,6 +175,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 2,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
+      tags: ['Swift'],
       type: "Instant",
     },
 
@@ -169,6 +189,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 6,
       scaling: { special: "The healing increases by +1d for each rank beyond 6." },
+      tags: ['Swift'],
       type: "Instant",
     },
 
@@ -181,6 +202,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 3,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
+      tags: ['Swift'],
       type: "Instant",
     },
 
@@ -192,6 +214,7 @@ export const vivimancy: MysticSphere = {
         This cannot increase a target's hit points above half its maximum hit points.
       `,
       rank: 7,
+      tags: ['Swift'],
       type: "Instant",
     },
 
@@ -452,54 +475,6 @@ export const vivimancy: MysticSphere = {
       rank: 4,
       scaling: "accuracy",
       type: "Duration",
-    },
-
-    {
-      name: "Lifesteal",
-
-      // +2 levels for HP theft
-      attack: {
-        hit: `
-          The target takes 2d6 + \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, you regain 2d6 + \\glossterm{power} hit points.
-          Normally, this healing cannot increase your hit points above half your maximum hit points.
-          If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-      rank: 3,
-      scaling: { special: "The damage and healing increases by +1d for each rank beyond 3." },
-      tags: [],
-      type: "Instant",
-    },
-
-    {
-      name: "Lifesteal Blade",
-
-      castingTime: "minor action",
-      effect: `
-        Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, you regain \\glossterm{hit points} equal to 2d6 + half your \\glossterm{power}.
-        This healing cannot increase your hit points above half your maximum hit points.
-      `,
-      rank: 5,
-      scaling: { special: "The healing increases by +1d for each rank beyond 5." },
-      tags: [],
-      type: "Attune (self)",
-    },
-
-    {
-      name: "Mass Lifesteal Blade",
-
-      castingTime: "minor action",
-      functionsLike: {
-        mass: true,
-        name: "Lifesteal Blade",
-      },
-      // narrative: '',
-      rank: 7,
-      type: "Attune (target)",
     },
 
     {
