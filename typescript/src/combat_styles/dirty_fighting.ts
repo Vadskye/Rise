@@ -8,11 +8,39 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Dazing Fist",
 
-      // half power instead of no power due to unarmed limitation
+      // full power, +1 rank instead of half power due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+      `,
+      rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Dazing Fist",
+
+      // full power, +1 rank instead of half power due to unarmed limitation
+      effect: `
+        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
+        Each creature damaged by the strike is \\dazed as a \\glossterm{condition}.
+      `,
+      rank: 6,
+      type: "Duration",
+    },
+
+    {
+      name: "Stunning Fist",
+
+      // as spell rank due to unarmed limitation
+      effect: `
+        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
       scaling: {
@@ -24,29 +52,12 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Stunning Fist",
-
-      // half power instead of no power due to unarmed limitation
-      effect: `
-        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
-      `,
-      rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
-      type: "Duration",
-    },
-
-    {
       name: "Quivering Palm",
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike takes additional bludgeoning damage to half of its maximum hit points, to a maximum of 100 extra damage.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature that loses \\glossterm{hit points} from the strike takes additional bludgeoning damage equal to four times your \\glossterm{power}.
       `,
       rank: 7,
       type: "Instant",
@@ -206,7 +217,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          if you disarm an attended item and your attack result also beats the attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
+          if you deal damage to an item and your attack result also beats an attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
           Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
         name: "disarm",
@@ -276,7 +287,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +2 damage bonus.
         After making the strike, you fall \\prone.
-        If you use this ability during the \\glossterm{delayed action phase}, you are also \\glossterm{briefly} unable to stand up.
+        If you use this ability during the \\glossterm{delayed action phase}, you are also unable to stand up during the next round's \\glossterm{movement phase}.
       `,
       rank: 1,
       scaling: {
@@ -295,10 +306,11 @@ export const dirtyFighting: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to Reflex defense.
       `,
-      rank: 3,
+      rank: 1,
       scaling: {
-        5: "The penalty increases to -3.",
-        7: "The penalty increases to -4.",
+        3: "The penalty increases to -3.",
+        5: "The penalty increases to -4.",
+        7: "The penalty increases to -5.",
       },
       type: "Instant",
     },
@@ -312,10 +324,11 @@ export const dirtyFighting: CombatStyle = {
         Each creature damaged by this strike falls \\prone.
         A creature knocked prone in this way cannot be knocked prone by this effect again until it takes a \\glossterm{short rest}.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Instant",
     },
@@ -325,14 +338,13 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\glossterm{briefly} \\slowed.
       `,
-      rank: 1,
+      rank: 3,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },

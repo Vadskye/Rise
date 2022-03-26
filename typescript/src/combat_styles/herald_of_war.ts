@@ -33,7 +33,7 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       scaling: "accuracy",
-      rank: 3,
+      rank: 2,
       type: "Duration",
     },
 
@@ -48,7 +48,7 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       scaling: "accuracy",
-      rank: 7,
+      rank: 6,
       type: "Duration",
     },
 
@@ -65,7 +65,7 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       scaling: "accuracy",
-      rank: 2,
+      rank: 1,
       tags: ["Emotion"],
       type: "Duration",
     },
@@ -78,7 +78,7 @@ export const heraldOfWar: CombatStyle = {
         exceptThat: "the area increases to a \\largearea radius.",
       },
       scaling: "accuracy",
-      rank: 5,
+      rank: 4,
       tags: ["Emotion"],
       type: "Duration",
     },
@@ -97,7 +97,7 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       scaling: "accuracy",
-      rank: 4,
+      rank: 3,
       tags: ["Emotion"],
       type: "Duration",
     },
@@ -119,7 +119,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Thunderous Shout",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} sonic damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
@@ -133,9 +133,9 @@ export const heraldOfWar: CombatStyle = {
       name: "Greater Thunderous Shout",
 
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} sonic damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} sonic damage.`,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\hugearea cone from you.
+          Make an attack vs. Fortitude against everything in a \\largearea cone from you.
         `,
       },
       rank: 6,
@@ -146,7 +146,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Directed Shout",
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} sonic damage.`,
+        hit: `The target takes 2d6 + \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange of you.
         `,
@@ -160,27 +160,13 @@ export const heraldOfWar: CombatStyle = {
       name: "Greater Directed Shout",
 
       attack: {
-        hit: `The target takes 2d10 + \\glossterm{power} sonic damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange of you.
-        `,
-      },
-      scaling: "damage",
-      rank: 4,
-      type: "Instant",
-    },
-
-    {
-      name: "Supreme Directed Shout",
-
-      attack: {
-        hit: `The target takes 5d10 + \\glossterm{power} sonic damage.`,
+        hit: `The target takes 4d8 + \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange of you.
         `,
       },
       scaling: "damage",
-      rank: 7,
+      rank: 5,
       type: "Instant",
     },
 
@@ -191,9 +177,10 @@ export const heraldOfWar: CombatStyle = {
         You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from one \\glossterm{condition} they are already affected by.
         Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from that condition during the current phase.
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: "Each ally can ignore two conditions instead of one.",
+        5: "The number of conditions that can be ignored increases to two.",
+        7: "The number of conditions that can be ignored increases to three.",
       },
       tags: ["Swift"],
       type: "Duration",
@@ -224,10 +211,11 @@ export const heraldOfWar: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       tags: ["Emotion"],
       type: "Duration",
@@ -241,7 +229,10 @@ export const heraldOfWar: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
-      rank: 6,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
+      },
       tags: ["Emotion"],
       type: "Duration",
     },
@@ -256,9 +247,10 @@ export const heraldOfWar: CombatStyle = {
         In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\smallarea radius from you.
         On a hit, each target is \\glossterm{briefly} \\shaken by you.
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: "You gain a +1 accuracy bonus with both the strike and the area attack.",
+        5: "You gain a +1 accuracy bonus with both the strike and the area attack.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
@@ -269,13 +261,13 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        Your \\glossterm{allies} within a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to Mental defense.
+        If you deal damage to a creature with the strike, \\glossterm{allies} within a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to Mental defense.
       `,
       rank: 1,
       scaling: {
-        3: "You gain a +2 damage bonus with the strike.",
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
+        3: "The bonus increases to +3.",
+        5: "The bonus increases to +4.",
+        7: "The bonus increases to +5.",
       },
       type: "Duration",
     },

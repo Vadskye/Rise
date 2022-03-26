@@ -27,9 +27,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature that resists all damage from the strike takes the damage from the strike again.
-        This extra damage cannot cause the creature to lose \\glossterm{hit points}.
+        Each creature that resists all damage from the strike \\glossterm{briefly} takes a -2 penalty to Armor defense.
       `,
       rank: 3,
       scaling: {
@@ -42,31 +40,28 @@ export const ripAndTear: CombatStyle = {
     {
       name: "Rend the Hide",
 
-      // -1 rank for metal armor restriction and only affecting Armor
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike that is not wearing metal armor \\glossterm{briefly} takes a -2 penalty to Armor defense.
+        Your \\glossterm{power} with the strike is halved, and you gain a +1 \\glossterm{accuracy} bonus against creatures that are not wearing armor.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
+      type: "Duration",
     },
 
     {
       name: "Greater Rend the Hide",
 
-      // -1 rank for metal armor restriction and only affecting Armor
-      effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike that is not wearing metal armor \\glossterm{briefly} takes a -4 penalty to Armor defense.
-      `,
-      rank: 7,
-      type: "Instant",
+      functionsLike: {
+        name: "rend the hide",
+        exceptThat: "each target is \\stunned instead of dazed.",
+      },
+      rank: 6,
+      type: "Duration",
     },
 
     {
@@ -74,8 +69,8 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
       scaling: {
@@ -87,13 +82,13 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Greater Brow Gash",
+      name: "Bloody Brow Gash",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\dazzled as a \\glossterm{condition}.
-        This condition must be removed twice before the effect ends.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
+        In addition, it \\glossterm{briefly} takes damage equal to your \\glossterm{power} at the end of each round.
       `,
       rank: 5,
       scaling: {
@@ -122,10 +117,11 @@ export const ripAndTear: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Duration",
     },
@@ -138,7 +134,7 @@ export const ripAndTear: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\slowed as a \\glossterm{condition}.
       `,
-      rank: 6,
+      rank: 5,
       type: "Duration",
     },
 
@@ -235,14 +231,13 @@ export const ripAndTear: CombatStyle = {
       name: "Ricochet",
 
       effect: `
-        Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects in a \\smallarea radius within \\shortrange.
-        Your \\glossterm{power} with the strike is halved.
+        Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects within \\shortrange of you.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
-        If you choose yourself as one of the subjects, you can catch the weapon instead of taking damage from it.
+        If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
       rank: 4,
       scaling: {
-        6: "You gain a +4 damage bonus with the strike.",
+        6: "The maximum range increases to \\medrange.",
       },
       type: "Instant",
     },
@@ -281,7 +276,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon.
-        The strike targets all \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
+        The strike targets any number of \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 1,
@@ -298,11 +293,11 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon.
-        The strike targets all \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
+        The strike targets any number of \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
       `,
-      rank: 5,
+      rank: 4,
       scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
+        6: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Instant",
     },
@@ -323,25 +318,14 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        If the target does not have any remaining \\glossterm{damage resistance}, your \\glossterm{power} with the strike is doubled.
+        If the target does not have any remaining \\glossterm{damage resistance}, you gain a +2 damage bonus with the strike.
       `,
       rank: 1,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +2.",
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
       },
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Tear Exposed Flesh",
-
-      effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        If the target does not have any remaining \\glossterm{damage resistance}, your \\glossterm{power} with the strike is tripled.
-      `,
-      rank: 6,
       type: "Instant",
     },
 
@@ -353,9 +337,10 @@ export const ripAndTear: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
+        5: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
@@ -367,9 +352,8 @@ export const ripAndTear: CombatStyle = {
         Make a \\glossterm{strike} using a slashing weapon.
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
-        A creature stunned in this way cannot be stunned by this effect again until it takes a \\glossterm{short rest}.
       `,
-      rank: 6,
+      rank: 7,
       type: "Duration",
     },
   ],

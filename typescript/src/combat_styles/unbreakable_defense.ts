@@ -149,35 +149,46 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Shield Slam",
+      name: "Shield Bash",
 
-      // Half power instead of no power due to shield restrictio
       effect: `
         Make a \\glossterm{strike} using a shield.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\glossterm{briefy} \\dazed.
+        You gain a +1 bonus to Armor defense until the end of the round.
+        The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
       `,
       rank: 1,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        3: "The defense bonus increases to +2.",
+        5: "The defense bonus increases to +3.",
+        7: "The defense bonus increases to +4.",
       },
       type: "Duration",
     },
 
     {
-      name: "Greater Shield Slam",
+      name: "Dazing Shield Slam",
+
+      // full power, +1 rank instead of half power due to shield limitation
+      effect: `
+        Make a \\glossterm{strike} using a shield.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+      `,
+      rank: 2,
+      scaling: {
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Stunning Shield Slam",
 
       effect: `
         Make a \\glossterm{strike} using a shield.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\glossterm{briefy} \\stunned.
+        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
-      rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 6,
       type: "Duration",
     },
 
@@ -325,6 +336,39 @@ export const unbreakableDefense: CombatStyle = {
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 6,
+      type: "Duration",
+    },
+
+    {
+      name: "Covering Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
+      `,
+      rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Covering Strike",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition}.
+      `,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       type: "Duration",
     },
   ],
