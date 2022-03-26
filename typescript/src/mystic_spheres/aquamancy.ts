@@ -282,7 +282,7 @@ export const aquamancy: MysticSphere = {
           The wall provides both \\glossterm{cover} and \\glossterm{concealment} to targets on the opposite side of the wall (see \\pcref{Obstacles and Cover}).
           Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
-          Each five-foot square of wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+          The wall has \\glossterm{hit points} equal to four times your \\glossterm{power}.
           After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 3,
@@ -601,7 +601,7 @@ export const aquamancy: MysticSphere = {
         You create a \\medarealong \\glossterm{wall} of fog within \\rngmed range.
         The fog makes it difficult to see through the wall, granting \\glossterm{concealment} to anything viewed through the wall (see \\pcref{Concealment}).
 
-        Each five-foot square of wall has hit points equal to your \\glossterm{power}.
+        The wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
         % TODO: also cold damage?
         It is immune to all damage except for fire damage.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
