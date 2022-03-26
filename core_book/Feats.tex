@@ -167,7 +167,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Sphere Focus: Aeromancy}        & \sphere{Aeromancy} sphere access        & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Aeromancy}        \\
         \featref{Sphere Focus: Aquamancy}        & \sphere{Aquamancy} sphere access        & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Aquamancy}        \\
         \featref{Sphere Focus: Astromancy}       & \sphere{Astromancy} sphere access       & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Astromancy}       \\
-        \featref{Sphere Focus: Barrier}          & \sphere{Barrier} sphere access          & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Barrier}          \\
         \featref{Sphere Focus: Bless}            & \sphere{Bless} sphere access            & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Bless}            \\
         \featref{Sphere Focus: Channel Divinity} & \sphere{Channel Divinity} sphere access & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Channel Divinity} \\
         \featref{Sphere Focus: Chronomancy}      & \sphere{Chronomancy} sphere access      & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Chronomancy}      \\
@@ -188,6 +187,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Sphere Focus: Verdamancy}       & \sphere{Verdamancy} sphere access       & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Verdamancy}       \\
         \featref{Sphere Focus: Vivimancy}        & \sphere{Vivimancy} sphere access        & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Vivimancy}        \\
         \featref{Twinhand Spellcaster}           & Dex 1        & Cast spells with two hands at once        & Magical & \featpref{Twinhand Spellcaster}        \\
+        \featref{Wardweaver}          & \abilitytag{Barrier} spell known          & Create more powerful barriers        & Magical & \featpref{Wardweaver}          \\
 
         \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Battle Armory}            & Str 1, Dex 1        & Switch between different weapons easily    & \tdash  & \featpref{Battle Armory}            \\
@@ -2162,30 +2162,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, you double your range with all \glossterm{magical} abilities that are not from the Astromancy mystic sphere.
     \end{feat}
 
-    \begin{feat}{Sphere Focus: Barrier}{Casting, Magical}
-        \featpre Access to the \sphere{Barrier} \glossterm{mystic sphere}.
-
-        \ff[1]{Spell} You learn a spell from the \sphere{Barrier} \glossterm{mystic sphere}.
-        When you gain access to new spell ranks, you can change which spell you know from that \glossterm{mystic sphere}.
-
-        \ff[3]{Innate Shield} You gain a \plus1 bonus to your Armor defense.
-
-        \ff[6]{Hardened Barriers} Objects you create with the \sphere{Barrier} \glossterm{mystic sphere} gain a bonus equal to your \glossterm{power} to their \glossterm{hit points}.
-        For objects with multiple separate hit point values, such as walls, this bonus applies independently to each section.
-
-        \ff[9]{Personal Barrier} You gain an additional \glossterm{attunement point}.
-        You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Barrier} \glossterm{mystic sphere}.
-
-        \ff[12]{Greater Innate Shield} The bonus from your \textit{innate shield} ability increases to \plus2.
-
-        \ff[15]{Spell} You learn a spell from the \sphere{Barrier} \glossterm{mystic sphere}.
-        When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
-
-        \ff[18]{Greater Hardened Barriers} The bonus from your \textit{hardened barriers} ability increases to twice your \glossterm{power}.
-
-        \ff[21]{Supreme Innate Shield} The bonus from your \textit{innate shield} ability increases to \plus3.
-    \end{feat}
-
     \begin{feat}{Sphere Focus: Bless}{Casting, Magical}
         \featpre Access to the \sphere{Bless} \glossterm{mystic sphere}.
 
@@ -3017,6 +2993,34 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[18]{Greater Dual Precision} The bonus from your \textit{dual precision} ability increases to \plus2.
 
         \ff[21]{Offhand Flurry} You can use the \textit{offhand strike} ability twice per round.
+    \end{feat}
+
+    \begin{feat}{Wardweaver}{Casting, Magical}
+        \featpre Knowledge of a spell with the \abilitytag{Barrier} tag.
+
+        \ff[1]{Hardened Barriers} Objects you create using abilities with the \abilitytag{Barrier} \glossterm{ability tag} gain a bonus equal to your \glossterm{power} to their \glossterm{damage resistance}.
+        In addition, they treat all damage as being \glossterm{environmental damage}, so their damage resistance is never reduced (see \pcref{Environmental Damage}).
+        For objects with multiple separate hit point values, such as walls, this bonus applies independently to each section.
+
+        \ff[3]{Barrier Spell} You learn a spell with the \abilitytag{Barrier} ability tag from any \glossterm{mystic sphere} that your \glossterm{magic source} gives access to, even if you do not have access to that mystic sphere.
+        When you gain access to new spell ranks, you can change which Barrier spell you know.
+
+        \ff[6]{Personal Ward} You gain a \plus1 bonus to your Armor defense.
+
+        \ff[9]{Defensive Barriers} Objects you create with \abilitytag{Barrier} abilities have minimum defenses equal to 5 \add half your level.
+        If the object already has specific defenses listed, it gains a \plus2 bonus to those defenses.
+
+        \ff[9]{Offensive Barriers} You gain a \plus1 bonus to \glossterm{accuracy} with \abilitytag{Barrier} spells.
+
+        \ff[12]{Greater Hardened Barriers} The damage resistance bonus from your \textit{hardened barriers} ability increases to twice your \glossterm{power}.
+
+        \ff[15]{Personal Ward} The bonus from your \textit{innate shield} ability increases to \plus2.
+
+        \ff[18]{Greater Defensive Barriers} You gain an additional \plus2 bonus to the defenses of objects you create with \abilitytag{Barrier} abilities.
+
+        \ff[18]{Greater Offensive Barriers} The accuracy bonus from your \textit{offensive barriers} ability increases to \plus2.
+
+        \ff[21]{Limitless Barriers} Using an ability with the \abilitytag{Barrier} ability tag does not briefly prevent you from using another ability with the \abilitytag{Barrier} ability tag.
     \end{feat}
 
     \begin{feat}{Weapon Focus}{Combat}
