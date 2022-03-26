@@ -124,7 +124,7 @@ const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
 const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   "accuracy",
   "all_defenses",
-  "vital_rolls",
+  "speed",
 ]);
 
 function generateMiscVariables(name, count) {
@@ -358,13 +358,15 @@ function handleActiveAbilityDice() {
       const keyPrefix = "repeating_abilities";
       getAbilityDicePoolAttrs(keyPrefix, (parsed) => {
         const diceText = parsed.dicePoolWithModifier
-          ? '{{Value=[[@{calculated_dice_and_modifier}]]}}'
-          : '';
+          ? "{{Value=[[@{calculated_dice_and_modifier}]]}}"
+          : "";
         setAttrs({
-          [`${keyPrefix}_calculated_dice_and_modifier`]: parsed.dicePoolWithModifier,
+          [`${keyPrefix}_calculated_dice_and_modifier`]:
+            parsed.dicePoolWithModifier,
           [`${keyPrefix}_calculated_dice_pool`]: parsed.dicePool,
           [`${keyPrefix}_calculated_modifier`]: parsed.modifier,
-          [`${keyPrefix}_calculated_dice_and_modifier`]: parsed.dicePoolWithModifier,
+          [`${keyPrefix}_calculated_dice_and_modifier`]:
+            parsed.dicePoolWithModifier,
           [`${keyPrefix}_dice_text`]: diceText,
         });
       });
@@ -497,8 +499,7 @@ function calcAttackTargeting(isTargeted, rawDefense) {
     }
     if (actualDefense) {
       // TODO: find a way to hide defenses of high CR enemies
-      actualDefenseText =
-        " (**@{target|Defender|" + actualDefense + "}**)";
+      actualDefenseText = " (**@{target|Defender|" + actualDefense + "}**)";
     }
   }
   const defenseText = "@{attack_defense}" + actualDefenseText;
@@ -622,11 +623,12 @@ function handleCustomModifiers() {
               totalCustomModifiers.armor_defense || 0,
             damage_resistance_bonus_custom_modifier:
               totalCustomModifiers.damage_resistance_bonus || 0,
-            encumbrance_custom_modifier: -(totalCustomModifiers.encumbrance || 0),
+            encumbrance_custom_modifier: -(
+              totalCustomModifiers.encumbrance || 0
+            ),
             fatigue_tolerance_custom_modifier:
               totalCustomModifiers.fatigue_tolerance || 0,
-            fortitude_custom_modifier:
-              totalCustomModifiers.fortitude || 0,
+            fortitude_custom_modifier: totalCustomModifiers.fortitude || 0,
             hit_points_custom_modifier: totalCustomModifiers.hit_points || 0,
             mental_custom_modifier: totalCustomModifiers.mental || 0,
             power_custom_modifier: totalCustomModifiers.power || 0,
@@ -709,7 +711,9 @@ function handleDamageResistance() {
       const totalValue = Math.floor(
         (fromLevel + v.damage_resistance_bonus_armor + v.misc) *
           crMultiplier *
-          (v.damage_resistance_bonus_vital_wound_multiplier || 1)
+          // use math.max as a dumb hack so we can use negative values to mean "really zero,
+          // don't || into 1"
+          (Math.max(0, v.damage_resistance_bonus_vital_wound_multiplier || 1))
       );
 
       let attrs = {
@@ -943,12 +947,7 @@ function handleHitPoints() {
     {
       miscName: "hit_points",
       miscCount: 4,
-      numeric: [
-        "level",
-        "constitution",
-        "challenge_rating",
-        "hit_points_vital_wound_multiplier",
-      ],
+      numeric: ["level", "constitution", "challenge_rating"],
     },
     {
       variablesWithoutListen: {
@@ -1001,11 +1000,7 @@ function handleHitPoints() {
         6: 6,
       }[v.challenge_rating || 0];
 
-      const totalValue = Math.floor(
-        (hpFromLevel + v.misc) *
-          crMultiplier *
-          (v.hit_points_vital_wound_multiplier || 1)
-      );
+      const totalValue = Math.floor((hpFromLevel + v.misc) * crMultiplier);
 
       let attrs = {
         hit_points_from_level: hpFromLevel * crMultiplier,
@@ -1679,7 +1674,11 @@ function handleUnknownStatistic() {
 
 function handleVitalRolls() {
   onGet(
-    { miscCount: 2, miscName: "vital_rolls", numeric: ["vital_roll_class", "vital_wound_count"] },
+    {
+      miscCount: 2,
+      miscName: "vital_rolls",
+      numeric: ["vital_roll_class", "vital_wound_count"],
+    },
     (v) => {
       const totalValue = v.vital_roll_class + v.misc - v.vital_wound_count * 2;
       setAttrs({ vital_rolls: totalValue });
@@ -1723,22 +1722,23 @@ function handleVitalWounds() {
         getAttrs(vitalWoundRollIds, (values) => {
           let rolls = Object.values(values);
           let accuracy_penalty =
-            -countRolls(rolls, 3) * 2 - countRolls(rolls, 8);
+            -countRolls(rolls, 6) * 2 - countRolls(rolls, 7);
           let defense_penalty =
-            -countRolls(rolls, 4) * 2 - countRolls(rolls, 9);
-          let vital_roll_penalty = -countRolls(rolls, 5);
-          let hp_multiplier = 0.5 ** countRolls(rolls, 2);
-          let resistance_multiplier =
-            0.5 ** (countRolls(rolls, 2) + countRolls(rolls, 7));
+            -countRolls(rolls, 8) * 2 - countRolls(rolls, 9);
+          let speed_penalty =
+            countRolls(rolls, 2) * -10 + countRolls(rolls, 3) * -5;
+          let resistance_multiplier = countRolls(rolls, 4) > 0
+          // dumb hack since we use || and I'm too lazy to fix it
+            ? -1
+            : 0.5 ** countRolls(rolls, 5);
           let attrs = {
             vital_wound_count: repeatingSectionIds.length,
 
             accuracy_vital_wound_modifier: accuracy_penalty,
             all_defenses_vital_wound_modifier: defense_penalty,
-            hit_points_vital_wound_multiplier: hp_multiplier,
+            speed_vital_wound_modifier: speed_penalty,
             damage_resistance_bonus_vital_wound_multiplier:
               resistance_multiplier,
-            vital_rolls_vital_wound_modifier: vital_roll_penalty,
           };
           if (eventInfo.triggerName != "remove:repeating_vitalwounds") {
             let effect_id = eventInfo.sourceAttribute.replaceAll(
