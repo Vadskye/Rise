@@ -96,10 +96,9 @@ def generate_implements():
             tags=[],
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
-                When you do, you also regain half that many hit points.
-                This healing cannot increase your hit points above half your maximum hit points.
+                When you do, you also regain half that many hit points, and you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Heals you when you heal others",
+            short_description="Exert to heal you when you heal others",
         ),
         MagicItem(
             name="Staff of Shared Healing, Greater",
@@ -108,10 +107,9 @@ def generate_implements():
             tags=[],
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
-                When you do, you also regain that many hit points.
-                This healing cannot increase your hit points above half your maximum hit points.
+                When you do, you also regain that many hit points, and you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Significantly heals you when you heal others",
+            short_description="Exert to significantly heal you when you heal others",
         ),
     ]
 
@@ -706,29 +704,6 @@ def generate_implements():
                 If you remove at least one condition in this way, you \\glossterm<briefly> gain a +8 bonus to your \\glossterm<power>.
             """,
             short_description="Can remove conditions to gain power",
-        ),
-    ]
-
-    implements += [
-        MagicItem(
-            name="Vampiric Staff",
-            rank=4,
-            material_type="Staff",
-            description="""
-                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 1d8+3 \\glossterm{hit points}.
-                This healing cannot increase your hit points above half your maximum hit points.
-            """,
-            short_description="Steals 1d8+3 hit points from foes",
-        ),
-        MagicItem(
-            name="Vampiric, Greater",
-            rank=6,
-            material_type="Staff",
-            description="""
-                Once per round, when you cause a creature to lose \\glossterm{hit points} with a \\glossterm{magical} ability, you regain 2d8+7 \\glossterm{hit points}.
-                This healing cannot increase your hit points above half your maximum hit points.
-            """,
-            short_description="Steals 2d8+7 hit points from foes",
         ),
     ]
 

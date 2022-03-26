@@ -1487,10 +1487,9 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can use this belt to regain 1d10+4 hit points.
-                Normally, this healing cannot increase your hit points above half your maximum hit points.
-                If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation.
+                When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Heals 1d10+4 hit points",
+            short_description="Exert to heal 1d10+4 hit points",
         ),
         MagicItem(
             name="Belt of Healing, Greater",
@@ -1499,10 +1498,9 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can use this belt to regain 2d10+7 hit points.
-                Normally, this healing cannot increase your hit points above half your maximum hit points.
-                If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation.
+                When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Heals 2d10+7 hit points",
+            short_description="Exert to heal 2d10+7 hit points",
         ),
         MagicItem(
             name="Belt of Healing, Supreme",
@@ -1511,10 +1509,9 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can use this belt to regain 4d10+14 hit points.
-                Normally, this healing cannot increase your hit points above half your maximum hit points.
-                If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation.
+                When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Heals 4d10+14 hit points",
+            short_description="Exert to heal 4d10+14 hit points",
         ),
     ]
 

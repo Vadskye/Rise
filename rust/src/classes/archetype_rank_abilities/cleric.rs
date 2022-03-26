@@ -349,10 +349,11 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{divine aid} ability as a standard action.
                 \begin{instantability}{Divine Aid}
-                    \glossterm{Magical}
+                    \abilitytag{Magical}, \abilitytag{Swift}
                     \rankline
                     Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
-                    The target regains 1d8 \add \glossterm{power} \glossterm{hit points}, and it \glossterm{briefly} gains a \plus2 bonus to \glossterm{vital rolls} and all defenses.
+                    The target regains 1d8 \add \glossterm{power} \glossterm{hit points}, and it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses until the end of the round.
+                    Because this ability has the \abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
