@@ -264,6 +264,9 @@ export const bluntForce: CombatStyle = {
         name: "press forward",
       },
       rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
+      },
       type: "Instant",
     },
 
