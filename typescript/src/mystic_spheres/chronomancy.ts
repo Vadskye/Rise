@@ -698,6 +698,31 @@ export const chronomancy: MysticSphere = {
       },
       type: "Attune (self)",
     },
+
+    {
+      name: 'Rewind Damage',
+
+      effect: `
+        Chose yourself or one \\glossterm{ally} within \\shortrange.
+        The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        This recovery is doubled for each consecutive round that you have cast this spell on the same target.
+      `,
+      rank: 1,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
+      type: 'Instant',
+    },
+
+    {
+      name: 'Greater Rewind Damage',
+
+      functionsLike: {
+        name: 'rewind damage',
+        exceptThat: "The recovery increases to 4d6 + \\glossterm{power}.",
+      },
+      rank: 5,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 5." },
+      type: 'Instant',
+    },
   ],
   rituals: [
     {

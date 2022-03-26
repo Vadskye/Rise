@@ -709,6 +709,31 @@ export const enchantment: MysticSphere = {
       scaling: "damage",
       type: "Instant",
     },
+
+    {
+      name: 'Restore Bravado',
+
+      effect: `
+        Chose yourself or one \\glossterm{ally} within \\medrange.
+        The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        In addition, it \\glossterm{briefly} gains a +2 bonus to its Mental defense.
+      `,
+      rank: 2,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 2." },
+      type: 'Instant',
+    },
+
+    {
+      name: 'Greater Restore Bravado',
+
+      functionsLike: {
+        name: 'restore bravado',
+        exceptThat: "The recovery increases to 4d8 + \\glossterm{power}.",
+      },
+      rank: 6,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
+      type: 'Instant',
+    },
   ],
   rituals: [
     {
