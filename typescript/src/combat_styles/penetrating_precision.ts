@@ -44,8 +44,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        You gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+        You gain a +4 accuracy bonus with contact-based and injury-based poisons delivered against each creature that lost \\glossterm{hit points} from the strike.
       `,
       rank: 1,
       scaling: {
@@ -115,31 +114,15 @@ export const penetratingPrecision: CombatStyle = {
       name: "Lunge",
 
       effect: `
-        Make a melee \\glossterm{strike} using a piercing weapon against everything in a 10 ft. long, 5 ft. wide line from you.
+        Make a melee \\glossterm{strike} using a piercing weapon against up to two creatures or objects in a 10 ft. long, 5 ft. wide line from you.
         The line must point directly away from you.
         Only one of the spaces in the line can be adjacent to you.
-        Your \\glossterm{power} with the strike is halved.
       `,
       rank: 1,
       scaling: {
         3: "You gain a +1 accuracy bonus with the strike.",
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
-      },
-      type: "Instant",
-    },
-
-    {
-      name: "Greater Lunge",
-
-      effect: `
-        Make a melee \\glossterm{strike} using a piercing weapon against everything in a 15 ft. long, 5 ft. wide line from you.
-        The line must point directly away from you.
-        Only one of the spaces in the line can be adjacent to you.
-      `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
       },
       type: "Instant",
     },
@@ -155,9 +138,9 @@ export const penetratingPrecision: CombatStyle = {
       // narrative: '',
       rank: 1,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        3: "You gain a +2 accuracy bonus with the strike for the purpose of determining whether you get a critical hit.",
+        5: "The accuracy bonus increases to +4.",
+        7: "The accuracy bonus increases to +6.",
       },
       type: "Instant",
     },
@@ -172,7 +155,10 @@ export const penetratingPrecision: CombatStyle = {
       `,
       // narrative: '',
       // TODO: unclear rank
-      rank: 6,
+      rank: 5,
+      scaling: {
+        3: "You gain a +2 accuracy bonus with the strike for the purpose of determining whether you get a critical hit.",
+      },
       type: "Instant",
     },
 
@@ -219,7 +205,12 @@ export const penetratingPrecision: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
       `,
-      rank: 2,
+      rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Duration",
     },
 
@@ -244,6 +235,11 @@ export const penetratingPrecision: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
       `,
       rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
       type: "Duration",
     },
 
@@ -252,10 +248,14 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature damaged by the strike is \\dazzled as a \\glossterm{condition}.
       `,
-      rank: 4,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       type: "Duration",
     },
 
@@ -308,12 +308,12 @@ export const penetratingPrecision: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\shaken by you, \\slowed, or \\dazed.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
+      type: "Duration",
     },
 
     {
@@ -325,8 +325,22 @@ export const penetratingPrecision: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects: \\glossterm{briefly} \\immobilized, \\frightened by you as a \\glossterm{condition}, or \\stunned as a \\glossterm{condition}.
       `,
-      rank: 7,
-      type: "Instant",
+      rank: 6,
+      type: "Duration",
+    },
+
+    {
+      name: "Sacrificial Thrust",
+
+      effect: `
+        Make a \\glossterm{strike} with a +3 \\glossterm{accuracy} bonus using a piercing weapon.
+        You \\glossterm{briefly} take a -4 penalty to all defenses against each target of your strike.
+      `,
+      rank: 4,
+      scaling: {
+        6: "The accuracy bonus increases to +5.",
+      },
+      type: "Duration",
     },
   ],
 };

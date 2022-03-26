@@ -27,7 +27,7 @@ export const mobileAssault: CombatStyle = {
 
       functionsLike: {
         abilityType: "maneuver",
-        exceptThat: "you can move up to your full speed instead of up to half your speed, and you do not have to move in a straight line.",
+        exceptThat: "you can move up to your full speed instead of up to half your speed, and you add your full \\glossterm{power} to damage with the strike.",
         name: "reaping harvest",
       },
       rank: 6,
@@ -91,9 +91,9 @@ export const mobileAssault: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "You gain a +2 damage bonus with the strike.",
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
       },
       type: "Duration",
     },
@@ -123,13 +123,13 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Your movement speed is \\glossterm{briefly} doubled.
-        However, you cannot use the \\textit{sprint} ability.
+        However, you also cannot use the \\textit{sprint} ability during that time.
       `,
       rank: 1,
       scaling: {
         3: "You also gain a +2 bonus to Reflex defense.",
-        5: "The defense bonus increses to +3.",
-        7: "The defense bonus increses to +4.",
+        5: "The defense bonus increases to +3.",
+        7: "The defense bonus increases to +4.",
       },
       type: "Duration",
     },
@@ -156,7 +156,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        In addition, you can either use the \\textit{sprint} ability or move up to your movement speed in a straight line away from one target of the strike.
+        In addition, you can move up to your movement speed in a straight line away from one target of the strike.
       `,
       rank: 5,
       scaling: {
@@ -269,6 +269,98 @@ export const mobileAssault: CombatStyle = {
         7: "The accuracy bonus increases to +2."
       },
       type: "Instant",
+    },
+
+    {
+      name: "Unbalancing Backstep",
+
+      effect: `
+        Choose a creature you can see.
+        You can move up to 5 feet away from that creature.
+        In addition, you gain a +2 bonus to your Armor and Reflex defenses until the end of the round.
+        Whenever that creature misses you with a melee \\glossterm{strike} this round, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
+        As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
+
+        The defense bonus from this ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
+        However, the movement and the penalty imposed on attackers is not Swift.
+      `,
+      rank: 2,
+      scaling: {
+        4: "The penalty increases to -3.",
+        6: "The penalty increases to -4."
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Fearsome Pounce",
+
+      effect: `
+        Move up to half your movement speed and make a \\glossterm{strike}.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
+      `,
+      rank: 1,
+      scaling: {
+        3: "You gain a +1 accuracy bonus with the strike.",
+        5: "The accuracy bonus increases to +2.",
+        7: "The accuracy bonus increases to +3.",
+      },
+      tags: ["Emotion"],
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Fearsome Pounce",
+
+      effect: `
+        Move up to half your movement speed and make a \\glossterm{strike}.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
+      `,
+      rank: 5,
+      scaling: {
+        7: "You gain a +1 accuracy bonus with the strike.",
+      },
+      tags: ["Emotion"],
+      type: "Duration",
+    },
+
+    {
+      name: "Mighty Charge",
+
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: `
+          you gain a +2 damage bonus with the strike.
+        `,
+        name: "charge",
+      },
+      rank: 2,
+      scaling: {
+        4: "The damage bonus increases to +4.",
+        6: "The damage bonus increases to +8.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Frenzied Charge",
+
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: `
+          you gain a +1 accuracy bonus and a +4 damage bonus with the strike.
+          However, the penalty to your defenses increases to \\minus4.
+        `,
+        name: "charge",
+      },
+      rank: 3,
+      scaling: {
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
+      },
+      type: "Duration",
     },
   ],
 };

@@ -60,7 +60,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Followup Strike",
+      name: "Redeeming Followup",
 
       effect: `
         Make a \\glossterm{strike}.
@@ -76,7 +76,22 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Followup Flurry",
+      name: "Victorious Followup",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You gain a +2 damage bonus with the strike against each creature that you dealt damage to with a \\glossterm{strike} last round.
+      `,
+      rank: 2,
+      scaling: {
+        4: "The damage bonus increases to +4.",
+        6: "The damage bonus increases to +8.",
+      },
+      type: "Instant",
+    },
+
+    {
+      name: "Redeeming Flurry",
 
       effect: `
         Make two \\glossterm{strikes}.
@@ -222,11 +237,10 @@ export const ebbAndFlow: CombatStyle = {
         This effect stacks with itself, up to a maximum of a +4 bonus.
         It lasts until you take a \\glossterm{short rest} or make a \\glossterm{strike} that does not include that creature as a target.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
@@ -238,10 +252,7 @@ export const ebbAndFlow: CombatStyle = {
         exceptThat: "the accuracy bonus from each strike increases to +2. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.",
         name: "hunting strike",
       },
-      rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 6,
       type: "Duration",
     },
 
@@ -264,39 +275,6 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Covering Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
-      `,
-      rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
-      type: "Duration",
-    },
-
-    {
-      name: "Greater Covering Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition}.
-      `,
-      rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
-      type: "Duration",
-    },
-
-    {
       name: "Mainhand Feint",
 
       effect: `
@@ -307,7 +285,7 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 4,
       scaling: {
-        6: "You also gain a +5 damage bonus with the \\ability{offhand strike} ability.",
+        6: "You also \\glossterm{briefly} gain a +4 damage bonus with the \\ability{offhand strike} ability.",
       },
       type: "Duration",
     },
@@ -336,12 +314,12 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
         You and each creature damaged by the strike are \\glossterm{briefly} \\dazed.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or any damaged creatures during the current phase.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        4: "You gain a +1 accuracy bonus with the strike.",
+        6: "The accuracy bonus increases to +2.",
       },
       type: "Duration",
     },
@@ -355,7 +333,7 @@ export const ebbAndFlow: CombatStyle = {
         You and each creature damaged by the strike are \\glossterm{briefly} \\stunned.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
-      rank: 7,
+      rank: 6,
       type: "Duration",
     },
 

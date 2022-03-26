@@ -262,6 +262,8 @@ Tier 7 areas:
 * Medium radius in Extreme range
 
 ## Standard effects
+AOE maneuvers can add full power instead of half power as long as they obey the -2 level rule
+Single-target maneuvers that do not use weapons get +1d extra damage dice
 
 Maneuvers that are rank 3 or lower scale their damage as +2 +5 +10 +15 +20.
 Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
@@ -384,6 +386,7 @@ For strikes, going from full power -> half power and half -> none buys +3 effect
 
 #### Maneuvers: single-target medium damage + debuff
 * Rank 1
+  * Strike with half power, brief r0 debuff
   * Strike with half power, r1 debuff condition if lose HP
   * Strike with half power, brief r1 debuff, immune after first success
 * Rank 3

@@ -94,7 +94,8 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You can make an additional \\glossterm{strike} against each creature that resisted all damage from the first strike.
+        If you use this ability during the \\glossterm{action phase}, you can make an additional \\glossterm{strike} against each creature that resisted all damage from the first strike during the \\glossterm{delayed action phase}.
+        The second strike cannot target any other creatures.
         You do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 3,
@@ -182,7 +183,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make two ranged \\glossterm{strikes} with a -4 penalty to \\glossterm{accuracy}.
         Your \\glossterm{power} with both strikes is halved.
-        For each previous round that you used this ability without moving, you reduce the accuracy penalty by 1.
+        For each previous consecutive round that you used this ability in the same location, you reduce the accuracy penalty by 1.
       `,
       rank: 4,
       scaling: {
@@ -196,7 +197,6 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea cone from you.
-        Your \\glossterm{power} with the strike is halved.
         This strike costs five projectiles.
       `,
       rank: 3,
@@ -214,10 +214,7 @@ export const flurryOfBlows: CombatStyle = {
         exceptThat: "the area increases to a \\largearea cone from you.",
         name: "shrapnel strike",
       },
-      rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 6,
       type: "Instant",
     },
 
@@ -226,7 +223,6 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea radius within \\medrange.
-        Your \\glossterm{power} with the strike is halved.
         This strike costs five projectiles.
       `,
       rank: 5,
@@ -277,9 +273,10 @@ export const flurryOfBlows: CombatStyle = {
         However, do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike \\glossterm{briefly} takes a -4 penalty to \\glossterm{initiative} checks and Awareness checks.
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
       },
       type: "Instant",
     },
@@ -332,31 +329,96 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Mind-Numbing Swiftstrike",
+      name: "Daunting Swiftstrike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
+        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
         You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
+        Each creature damaged by the strike is \\glossterm{briefly} \\shaken by you.
+        After it stops being shaken, it is immune to being shaken in this way until it takes a \\glossterm{short rest}.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "The accuracy bonus increases to +2.",
-        6: "The accuracy bonus increases to +3.",
+        3: "The accuracy bonus increases to +3.",
+        5: "The accuracy bonus increases to +4.",
+        7: "The accuracy bonus increases to +5.",
       },
-      type: "Instant",
+      type: "Duration",
     },
 
     {
-      name: "Greater Mind-Numbing Swiftstrike",
+      name: "Greater Daunting Swiftstrike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
+        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
         You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
+        Each creature damaged by the strike is \\glossterm{briefly} \\frightened by you.
+        After it stops being frightened, it is immune to being frightened in this way until it takes a \\glossterm{short rest}.
       `,
-      rank: 6,
-      type: "Instant",
+      rank: 5,
+      scaling: {
+        7: "The accuracy bonus increases to +3.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Mindbreak Twinstrike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You may reroll the accuracy roll and take the highest result.
+        However, you do not add your \\glossterm{power} to damage with the strike.
+        Eah creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+      `,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Mindshatter Twinstrike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You may reroll the accuracy roll and take the highest result.
+        However, you do not add your \\glossterm{power} to damage with the strike.
+        Eah creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
+      `,
+      rank: 7,
+      type: "Duration",
+    },
+
+    {
+      name: "Eye-Watering Swiftstrike",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Eah creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The accuracy bonus increases to +3.",
+        5: "The accuracy bonus increases to +4.",
+        7: "The accuracy bonus increases to +5.",
+      },
+      type: "Duration",
+    },
+
+    {
+      name: "Blinding Swiftstrike",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Eah creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\blinded.
+      `,
+      rank: 7,
+      type: "Duration",
     },
   ],
 };
