@@ -716,7 +716,7 @@ export const fabrication: MysticSphere = {
       name: "Entrapping Sphere",
 
       attack: {
-        crit: "The sphere's \\glossterm{hit points} increase to 64.",
+        crit: "The sphere's \\glossterm{hit points} are doubled.",
         hit: `
           A sphere of magical energy appears around the target in its space.
           The sphere is visible as a shimmering magical membrane that does not block sight.
@@ -725,7 +725,7 @@ export const fabrication: MysticSphere = {
           If another creature is in the target's space when this spell is cast, this spell fails without effect.
 
           The field as a whole has \\glossterm{hit points} equal to twice your power.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
         targeting: `
           Make an attack vs. Reflex against anything Large or smaller within \\medrange.
