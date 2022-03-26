@@ -249,10 +249,11 @@ export const unbreakableDefense: CombatStyle = {
       name: "Revitalizing Strike",
 
       effect: `
+        When you use this ability, you increase your \\glossterm{fatigue level} by one.
+
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
-        In addition, you regain 1d10 + half \\glossterm{power} hit points.
-        This healing cannot increase your hit points above half your maximum hit points.
+        In addition, you regain 1d10 + \\glossterm{power} hit points.
       `,
       scaling: {
         special: "The healing increases by +1d for each rank beyond 3.",
@@ -265,10 +266,11 @@ export const unbreakableDefense: CombatStyle = {
       name: "Greater Revitalizing Strike",
 
       effect: `
+        When you use this ability, you increase your \\glossterm{fatigue level} by one.
+
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
         In addition, you regain 4d8 + \\glossterm{power} hit points.
-        This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 7,
       type: "Instant",
