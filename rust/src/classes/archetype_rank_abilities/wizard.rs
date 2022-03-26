@@ -584,20 +584,21 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 You cannot gain access to any arcane mystic spheres outside of your specialized school, and you cannot learn spells or rituals from those spheres by any means.
                 In exchange, you gain an additional \glossterm{insight point}, and you gain a benefit based on your specialized school.
                 \begin{itemize}
-                    \item Abjuration: \sphere{barrier}, \sphere{telekinesis}, and \sphere{thaumaturgy}.
+                    \item Abjuration: \sphere{telekinesis} and \sphere{thaumaturgy}.
                         If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+                        In addition, you gain a \plus1 bonus to your Armor defense.
                     \item Conjuration: \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning}.
                         If you specialize in this school, you double the \glossterm{range} of arcane spells you cast.
-                    \item Evocation: \sphere{cryomancy}, \sphere{electromancy}, \sphere{pyromancy}.
+                    \item Evocation: \sphere{cryomancy}, \sphere{electromancy}, and \sphere{pyromancy}.
                         If you specialize in this school, you gain a \plus2 bonus to your \glossterm{power}.
-                    \item Illusion: \sphere{enchantment}, \sphere{photomancy}, \sphere{umbramancy}.
+                    \item Illusion: \sphere{enchantment}, \sphere{photomancy}, and \sphere{umbramancy}.
                         If you specialize in this school, you gain a \plus1 bonus to your \glossterm{accuracy}.
-                    \item Transmutation: \sphere{chronomancy}, \sphere{polymorph}, \sphere{terramancy}.
+                    \item Transmutation: \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy}.
                         If you specialize in this school, you gain a \plus2 bonus to your Fortitude, Reflex, or Mental defense.
                         You can change the defense this bonus applies to as a \glossterm{minor action}.
-                    \item Necromancy: \sphere{revelation}, \sphere{vivimancy}.
+                    \item Necromancy: \sphere{revelation} and \sphere{vivimancy}.
                         If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
-                        In addition, you gain a \plus1 bonus to Fortitude defense.
+                        In addition, you gain a \plus1 bonus to your Fortitude defense.
                 \end{itemize}
             ",
             // Assume evocation
@@ -691,6 +692,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 Your understanding of your chosen school improves further.
                 {
                     \subcf{Abjuration} The bonus to damage resistance increases to five times your rank in this archetype.
+                    In addition, the Armor bonus increases to \plus2.
 
                     \subcf{Conjuration} The range improvement increases to quadruple your range.
 
