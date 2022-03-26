@@ -500,32 +500,24 @@ export const polymorph: MysticSphere = {
       name: 'Mending',
 
       effect: `
-        Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        Chose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\shortrange.
+        The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} if it is a creature, or that many hit points if it is an object.
+        If it is a creature, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 1,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
       type: 'Instant',
     },
 
     {
       name: 'Greater Mending',
 
-      effect: `
-        Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 2d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-      `,
-      rank: 4,
-      type: 'Instant',
-    },
-
-    {
-      name: 'Supreme Mending',
-
-      effect: `
-        Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 5d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-      `,
-      rank: 7,
+      functionsLike: {
+        name: 'mending',
+        exceptThat: "The recovery increases to 4d6 + \\glossterm{power}.",
+      },
+      rank: 5,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 5." },
       type: 'Instant',
     },
 

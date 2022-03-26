@@ -348,6 +348,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
                         The target regains 1d6 \add \glossterm{power} \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
+                        In addition, it \glossterm{briefly} gains a +2 bonus to its Mental defense.
 
                         \rankline
                         \rank{2} The recovery increases to 1d8.
