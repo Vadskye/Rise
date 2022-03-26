@@ -394,6 +394,8 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         Teleportation into and out of a \\medarea radius \\glossterm{emanation} from you is impossible.
         Any abilities which would cause creatures to teleport within the area have no effect.
+
+        As a \\glossterm{standard action}, you can choose to temporarily \\glossterm{suppress} or resume this spell's effect without deattuning from it.
       `,
       rank: 3,
       scaling: {
