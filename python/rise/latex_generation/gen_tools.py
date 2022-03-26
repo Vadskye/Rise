@@ -627,7 +627,7 @@ def generate_tools():
             consumable=False,
             name="Belt Lantern",
             rank=1,
-            material_type="Alchemical",
+            material_type="Metal",
             tags=[],
             description="""
                 This item functions like a \\mitem<torch>, except that you can hang it from a belt, allowing you to shed light without holding an item in your hand.
