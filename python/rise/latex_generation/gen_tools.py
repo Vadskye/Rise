@@ -584,22 +584,7 @@ def generate_tools():
         ),
     ]
 
-    tools.append(
-        MagicItem(
-            consumable=True,
-            name="Everburning Torch",
-            rank=1,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                As a standard action, you can activate this item.
-                When you do, it sheds light like a torch for a week (see \\pcref<Torch>).
-            """,
-            short_description="Emits light like a torch for a week",
-        )
-    )
-
-    tools.append(
+    tools += [
         MagicItem(
             consumable=True,
             name="Torch",
@@ -610,10 +595,47 @@ def generate_tools():
                 \\label<Torch>
                 As a standard action, you can light a torch if you have flint and steel or another source of flame handy.
                 When you do, it sheds \\glossterm<bright illumination> in a \\smallarea radius, and \\glossterm<shadowy illumination> in a \\medarea radius.
+                A torch burns for eight hours before its fuel is expended.
             """,
             short_description="Emits light",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Everburning Torch",
+            rank=1,
+            material_type="Alchemical",
+            tags=[],
+            description="""
+                This item functions like a \\mitem<torch>, except that it burns for a week before its fuel is expended.
+            """,
+            short_description="Emits light for a week",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Brilliant Torch",
+            rank=2,
+            material_type="Alchemical",
+            tags=[],
+            description="""
+                As a standard action, you can light a brilliant torch if you have flint and steel or another source of flame handy.
+                When you do, it sheds \\glossterm<brilliant illumination> in a \\smallarea radius, \\glossterm<bright illumination> in a \\medarea radius, and \\glossterm<shadowy illumination> in a \\largearea radius.
+                A brilliant torch burns for five minutes before its fuel is expended.
+            """,
+            short_description="Emits brilliant light",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Belt Lantern",
+            rank=1,
+            material_type="Alchemical",
+            tags=[],
+            description="""
+                This item functions like a \\mitem<torch>, except that you can hang it from a belt, allowing you to shed light without holding an item in your hand.
+                However, it is fragile, so clever attackers might smash it easily.
+            """,
+            short_description="Emits light without being held",
         )
-    )
+    ]
 
     tools += [
         MagicItem(
