@@ -163,6 +163,30 @@ export const electromancy: MysticSphere = {
     },
 
     {
+      name: 'Energize',
+
+      effect: `
+        Chose yourself or one \\glossterm{ally} within \\medrange.
+        The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        In addition, it is \\glossterm{briefly} \\glossterm{impervious} to electricity damage.
+      `,
+      rank: 2,
+      type: 'Duration',
+    },
+
+    {
+      name: 'Greater Energize',
+
+      effect: `
+        Chose yourself or one \\glossterm{ally} within \\medrange.
+        The target regains 4d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        In addition, it is \\glossterm{briefly} \\glossterm{immune} to electricity damage.
+      `,
+      rank: 6,
+      type: 'Duration',
+    },
+
+    {
       name: "Lightning Storm",
 
       attack: {
