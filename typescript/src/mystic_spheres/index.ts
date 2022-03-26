@@ -1,7 +1,6 @@
 import { aeromancy } from "./aeromancy";
 import { aquamancy } from "./aquamancy";
 import { astromancy } from "./astromancy";
-import { barrier } from "./barrier";
 import { bless } from "./bless";
 import { channelDivinity } from "./channel_divinity";
 import { chronomancy } from "./chronomancy";
@@ -27,7 +26,6 @@ export const mysticSpheres: MysticSphere[] = [
   aeromancy,
   aquamancy,
   astromancy,
-  barrier,
   bless,
   channelDivinity,
   chronomancy,
@@ -80,7 +78,10 @@ interface BaseSpellLike {
     | "Attune (ritual)"
     | "Sustain (free)"
     | "Sustain (minor)"
-    | "Sustain (standard)";
+    | "Sustain (standard)"
+    | "Sustain (attuneable, free)"
+    | "Sustain (attuneable, minor)"
+    | "Sustain (attuneable, standard)";
 }
 
 export type Cantrip = BaseSpellLike;

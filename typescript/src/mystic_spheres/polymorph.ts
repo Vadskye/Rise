@@ -228,7 +228,7 @@ export const polymorph: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: {
-        6: `Each target gains a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, offsetting the penalty from reducing its size.`,
+        6: `Each target gains a +1 bonus to Strength for the purpose of determining its \\glossterm{weight limits}, offsetting the penalty from reducing its size.`,
       },
       type: 'Attune (target)',
     },
@@ -913,7 +913,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose one \\glossterm{unattended}, nonmagical wall up to 50 feet high and 10 feet wide within \\medrange.
+        Choose one \\glossterm{unattended}, \\glossterm{mundane} wall up to 50 feet high and 10 feet wide within \\medrange.
         You create handholds in the target, making it easier to climb.
         This reduces the \\glossterm{difficulty value} to climb the object by 10.
         When this effect ends, the handholds disappear.
@@ -1134,6 +1134,37 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       type: 'Attune (ritual)',
+    },
+    {
+      name: "Mystic Lock",
+
+      castingTime: "one minute",
+      effect: `
+        Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
+        In addition, choose a Fine object within \\shortrange.
+        The primary target becomes magically locked.
+        It can be unlocked with a Devices check with a \\glossterm{difficulty value} of 25.
+        The \\glossterm{difficulty value} to break it open forcibly increases by 10.
+
+        When the Fine object touches the sealed object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
+      `,
+      rank: 2,
+      type: "Attune (ritual)",
+    },
+
+    {
+      name: "Greater Mystic Lock",
+
+      castingTime: "one hour",
+      functionsLike: {
+        exceptThat: `
+          the \\glossterm{difficulty value} to unlock the object with a Devices check is instead equal to 35.
+            In addition, the \\glossterm{difficulty value} to break it open increases by 20 instead of by 10.
+        `,
+        name: "mystic lock",
+      },
+      rank: 4,
+      type: "Attune (ritual)",
     },
   ],
 };

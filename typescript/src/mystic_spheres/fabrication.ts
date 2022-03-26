@@ -3,7 +3,7 @@ import { MysticSphere } from ".";
 export const fabrication: MysticSphere = {
   name: "Fabrication",
   shortDescription: "Create objects to damage and impair foes.",
-  sources: ["arcane", "pact"],
+  sources: ["arcane", "divine", "pact"],
 
   cantrips: [
     {
@@ -166,16 +166,19 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} slashing damage.`,
         targeting: `
-          A wall of whirling blades appears within \\medrange.
-          The wall takes the form of a 15 ft.\\ high, \\medarea wall.
+          You create a \\medarealong \\glossterm{wall} of whirling blades wihtin \\medrange.
           The wall provides \\glossterm{cover} against attacks made through it.
           Whenever anything passes through the wall, make an attack vs. Armor against it.
           You can only make this attack against a given target once per \\glossterm{phase}.
+
+          Each five-foot square of wall has hit points equal to twice your \\glossterm{power}.
+          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
       rank: 2,
       scaling: "damage",
-      type: "Sustain (minor)",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -184,13 +187,14 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the damage increases to 2d8 + half \\glossterm{power}.
-          In addition, the area increases to a 20 ft.\\ high, \\largearea wall.
+          In addition, the area increases to a \\largearealong wall.
         `,
         name: 'blade barrier',
       },
       rank: 5,
       scaling: "damage",
-      type: "Sustain (minor)",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -199,15 +203,19 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `The target takes 1d10 + half \\glossterm{power} slashing damage.`,
         targeting: `
-        A wall of whirling blades appears within \\medrange.
-        The wall takes the form of a 15 ft.\\ high, \\smallarea radius wall.
+        You create a \\smallarea radius \\glossterm{wall} of blades within \\medrange.
         The wall provides \\glossterm{cover} against attacks made through it.
         Whenever anything passes through the wall, make an attack vs. Armor against it.
+        You can only make this attack against a given target once per \\glossterm{phase}.
+
+        Each five-foot square of wall has hit points equal to twice your \\glossterm{power}.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
       rank: 3,
       scaling: "damage",
-      type: "Sustain (minor)",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -225,7 +233,8 @@ export const fabrication: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Sustain (minor)",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -309,13 +318,15 @@ export const fabrication: MysticSphere = {
           Each 5-ft.\\ square of webbing has 16 \\glossterm{hit points}, and all of its defenses are 0.
 
           In addition, make an attack vs. Reflex against all Large or smaller creatures in the area.
+          Whenever a creature enters the area, you make the same attack against it.
+          A creature that leaves the area and re-enters it uses the original attack result against it.
         `,
       },
 
       rank: 4,
       scaling: "accuracy",
-      tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -334,7 +345,7 @@ export const fabrication: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -347,7 +358,7 @@ export const fabrication: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -419,7 +430,7 @@ export const fabrication: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -457,7 +468,7 @@ export const fabrication: MysticSphere = {
           Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Manifestation"],
       type: "Duration",
@@ -470,19 +481,21 @@ export const fabrication: MysticSphere = {
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
         You create a metal cage around the target in its space.
         The cage has a 2 inch gap between its bars, allowing the target to see and be seen by creatures outside of the cage.
-        This does not block \\glossterm{line of sight} or \\glossterm{line of effect}, but it provides cover, and only piercing weapons can attack through the cage.
-        Each 5-ft.\\ square of the field has 12 \\glossterm{hit points}.
-
+        This does not block \\glossterm{line of sight} or \\glossterm{line of effect}, but it provides cover.
+        Only piercing weapons can make \\glossterm{strikes} through the bars of the cage.
         % TODO: clarify that you can't create two cages around the same target
         % simultaneously
         If another creature is in the target's space when this spell is cast, this spell fails without effect.
+
+        Each 5-ft.\\ square of the field has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 3,
       scaling: {
-        5: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 24.`,
-        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to 48.`,
+        5: `The \\glossterm{hit points} of each 5-ft.\\ square increase to three times your power.`,
+        7: `The \\glossterm{hit points} of each 5-ft.\\ square increase to four times your power.`,
       },
-      tags: ["Manifestation"],
+      tags: ["Barrier", "Manifestation"],
       type: "Sustain (minor)",
     },
 
@@ -523,6 +536,205 @@ export const fabrication: MysticSphere = {
       },
       tags: ["Manifestation"],
       type: "Instant",
+    },
+
+    {
+      name: "Mirror Barrier",
+
+      functionsLike: {
+        exceptThat: `
+          it reflects \\glossterm{mundane} attacks against it.
+            The barrier's defenses become equal to 6 \\add half your level.
+            Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
+        `,
+        name: "mystic barrier",
+      },
+      rank: 4,
+      scaling: {
+        6: `The area increases to a \\medarealong wall.`,
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+
+    {
+      name: "Greater Mirror Barrier",
+
+      functionsLike: {
+        exceptThat: `
+          it reflects \\glossterm{mundane} attacks against it.
+            The barrier's defenses become equal to 9 \\add half your level, and the hit points of each 5-ft. square increase to three times your \\glossterm{power}.
+            Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
+        `,
+        name: "mystic barrier",
+      },
+      rank: 7,
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+
+    {
+      name: "Visual Barrier",
+
+      functionsLike: {
+        exceptThat: `
+          you can choose the visibility of the barrier.
+            There are three possibilities: fully invisible, barely visible like a normal \\spell{mystic barrier}, and visible as a deep black that completely blocks sight.
+            You can change the opacity of the barrier as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
+        `,
+        name: "mystic barrier",
+      },
+      rank: 2,
+      scaling: {
+        4: `The area increases to a \\medarealong wall.`,
+        6: `The area increases to a \\largearealong wall.`,
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+
+    {
+      name: "Sonic Barrier",
+
+      functionsLike: {
+        exceptThat: `
+          you can choose how much the barrier blocks sound.
+            There are three possibilities: fully sound-permeable, fully sound-blocking like a normal \\spell{mystic barrier}, and sound-dampening.
+            You can change how much the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
+
+            A sound-dampening barrier increases the \\glossterm{difficulty value} of sound-based Awareness checks by 20.
+            Sound-permeable and sound-dampening barriers do not block \\glossterm{line of effect} for effects that deal \\glossterm{sonic damage}, but a sound-dampening barrier makes everything \\trait{impervious} to \\glossterm{sonic damage} that originates from the other side of the barrier.
+        `,
+        name: "mystic barrier",
+      },
+      rank: 2,
+      scaling: {
+        4: `The area increases to a \\medarealong wall.`,
+        6: `The area increases to a \\largearealong wall.`,
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+
+    {
+      name: "Forceful Barrier",
+
+      functionsLike: {
+        exceptThat: `
+          it breaks objects in its area that obstruct its path.
+            Each object in the path of the wall takes energy damage equal to 1d10 plus your \\glossterm{power}.
+            Any object destroyed in this way does not block the barrier's area of effect.
+            This does no damage to creatures, who block the path of the barrier like normal.
+        `,
+        name: "mystic barrier",
+      },
+      rank: 3,
+      scaling: "damage",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+
+    {
+      name: "Mystic Barrier",
+
+      effect: `
+        You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
+        The wall is visible as a shimmering magical membrane that does not block sight.
+        Nothing can pass through the wall until it is destroyed.
+
+        Each 5-ft.\\ square of wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The maximum area increases to a \\medarealong wall.`,
+        5: `The maximum area increases to a \\largearealong wall.`,
+        7: `The maximum area increases to a \\hugearealong wall.`,
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+
+    {
+      name: "Mystic Bridge",
+
+      functionsLike: {
+        exceptThat: `
+          the wall is aligned horizontally instead of vertically.
+        `,
+        name: "mystic barrier",
+      },
+      rank: 2,
+      scaling: {
+        3: `The maximum area increases to a \\medarealong wall.`,
+        5: `The maximum area increases to a \\largearealong wall.`,
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+
+    {
+      name: "Personal Sphere",
+
+      effect: `
+        You create a sphere of magical energy around yourself.
+        The sphere is visible as a shimmering magical membrane that does not block sight.
+        Nothing can pass through the field until it is destroyed.
+        This prevents you from having \\glossterm{line of effect} to anything outside of the area.
+        When you move using one of your movement speeds, the sphere moves with you, though you cannot force it against another creature or object.
+
+        The field as a whole has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+      `,
+      rank: 5,
+      scaling: {
+        7: `The field's \\glossterm{hit points} increase to three times your power.`,
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+
+    {
+      name: "Entrapping Sphere",
+
+      attack: {
+        crit: "The sphere's \\glossterm{hit points} increase to 64.",
+        hit: `
+          A sphere of magical energy appears around the target in its space.
+          The sphere is visible as a shimmering magical membrane that does not block sight.
+          Nothing can pass through the sphere until it is destroyed.
+          This prevents the target from having \\glossterm{line of effect} to anything outside of the area.
+          If another creature is in the target's space when this spell is cast, this spell fails without effect.
+
+          The field as a whole has \\glossterm{hit points} equal to twice your power.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against anything Large or smaller within \\medrange.
+        `,
+      },
+      rank: 7,
+      // scaling: "accuracy",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (minor)",
+    },
+
+    {
+      name: "Invulnerable Barrier",
+
+      functionsLike: {
+        exceptThat: `
+          the wall's defenses are each equal to 6 + your level, and it is \\trait{impervious} to physical damage.
+          In addition, each 5-ft.\\ square of wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+        `,
+        name: "mystic barrier",
+      },
+      rank: 5,
+      scaling: {
+        7: `The area increases to a \\medarealong wall.`,
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
   ],
   rituals: [
@@ -623,6 +835,23 @@ export const fabrication: MysticSphere = {
       `,
       rank: 3,
       tags: ["Manifestation"],
+      type: "Attune (ritual)",
+    },
+    {
+      name: "Tiny Hut",
+
+      castingTime: "one minute",
+      effect: `
+        You create a permeable barrier around a \\smallarea radius \\glossterm{zone} from your location.
+        The barrier is visible as a shimmering magical membrane that does not block sight.
+        As a standard action, a creature can move five feet from outside the hut to inside the hut, or vice versa.
+        However, the hut blocks \\glossterm{line of effect} for all other purposes.
+        Each 5-ft.\\ square of barrier has 16 \\glossterm{hit points}, and all of its defenses are 0.
+
+        If you leave the zone, this effect ends.
+      `,
+      // narrative: '',
+      rank: 2,
       type: "Attune (ritual)",
     },
   ],

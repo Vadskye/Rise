@@ -43,6 +43,23 @@ export const telekinesis: MysticSphere = {
       },
       type: "Sustain (minor)",
     },
+
+    {
+      name: "Personal Ward",
+
+      effect: `
+        You are \\trait{impervious} to \\glossterm{physical damage} this round.
+        Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
+      `,
+      // narrative: '',
+      scaling: {
+        2: "You also gain a +1 bonus to your Armor and Reflex defenses.",
+        4: "The defense bonuses increase to +2.",
+        6: "The defense bonuses increase to +3.",
+      },
+      tags: ["Swift"],
+      type: "Duration",
+    },
   ],
   spells: [
     {
@@ -192,7 +209,7 @@ export const telekinesis: MysticSphere = {
         // No relevant glance effect
         hit: `Each target is \\glossterm{briefly} \\slowed.`,
         targeting: `
-          Make an attack vs. Mental against all Large or smaller creatures in a \\areasmall radius within \\medrange.
+          Make an attack vs. Mental with a +1 \\glossterm{accuracy} bonus against all Large or smaller creatures in a \\areasmall radius within \\medrange.
         `,
       },
       rank: 1,
@@ -352,22 +369,21 @@ export const telekinesis: MysticSphere = {
       name: "Wall of Force",
 
       effect: `
-        You create a wall of magical energy within \\medrange.
-        You can choose the dimensions of the wall, up to a maximum of a 15 ft.\\ high, \\smallarea length line.
-        If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
-        This can allow you to completely block off small tunnels.
+        You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
         The wall is visible as a shimmering magical field that does not block sight.
         Nothing can pass through the wall until it is destroyed.
+
         Each 5-ft.\\ square of wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {
-        3: `The \\glossterm{hit points} of each 5-ft.\\ square increases to be equal to three times your \\glossterm{power}.`,
-        5: `The area increases to a \\medarealong line.`,
-        7: `The \\glossterm{hit points} of each 5-ft.\\ square increases to be equal to four times your \\glossterm{power}.`,
+        3: `The area increases to a \\medarealong line.`,
+        5: `The area increases to a \\largearealong line.`,
+        7: `The area increases to a \\hugearealong line.`,
       },
-      tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -379,10 +395,13 @@ export const telekinesis: MysticSphere = {
         Before that time, there is no visible indication of where the cage will appear.
         Any physical obstacles in the way of the cage at the time that it forms prevent it from appearing.
         You can create the cube around a sufficiently small creature to trap it inside.
-        Each wall is transparent, but blocks physical passage and \\glossterm{line of effect}.
+        Each wall is transparent, but it blocks physical passage and \\glossterm{line of effect}.
+
         Each five-foot square of wall has hit points equal to twice your \\glossterm{power}, and all of its defenses are 0.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 7,
+      tags: ['Barrier'],
       type: "Sustain (minor)",
     },
 
@@ -512,6 +531,96 @@ export const telekinesis: MysticSphere = {
       scaling: {
         special: "Your \\glossterm{accuracy} with the attack and with maintaining the grapple increases by +1 for each rank beyond 6.",
       },
+      type: "Sustain (minor)",
+    },
+
+    {
+      name: "Kinetic Shield",
+
+      castingTime: "minor action",
+      effect: `
+        You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The bonus increases to +8.`,
+        5: `The bonus increases to +16.`,
+        7: `The bonus increases to +32.`,
+      },
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Mass Kinetic Shield",
+
+      castingTime: "minor action",
+      functionsLike: {
+        mass: true,
+        name: "kinetic shield",
+      },
+      rank: 3,
+      scaling: {
+        5: `The bonus increases to +8.`,
+        7: `The bonus increases to +16.`,
+      },
+      type: "Attune (target)",
+    },
+
+    {
+      name: "Retributive Kinetic Shield",
+
+      castingTime: "minor action",
+      effect: `
+        You gain a +16 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
+        In addition, whenever you resist damage, the attacker takes energy damage equal to half the damage resisted this way.
+        If the attacker is beyond \\shortrange of you, this reflection fails.
+        Any effect which increases this spell's range increases the range of this effect by the same amount.
+      `,
+      rank: 5,
+      scaling: { 7: `The bonus increases to +32.` },
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Kinetic Shell",
+
+      effect: `
+        You surround yourself with two layers of shielding that reduce the power of physical attacks against you.
+        Whenever you would take physical damage, you reduce that damage by 5, and one layer of shielding is destroyed.
+        When the last layer is destroyed, this ability provides no further benefit.
+
+        If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The damage reduction increases to 10.`,
+        5: `The damage reduction increases to 20.`,
+        7: `The damage reduction increases to 40.`,
+      },
+      tags: ["Manifestation"],
+      type: "Attune (self)",
+    },
+
+    {
+      name: "Repulsion Field",
+
+      attack: {
+        crit:
+          "You also \\glossterm{knockback} each target 20 feet in the direction that it tried to enter the area from.",
+        glance:
+          "The effect on the creature lasts \\glossterm{briefly}, allowing the creature to freely enter the zone after that time.",
+        hit: `
+          Each target is unable to enter the spell's area with any part of its body for the duration of the spell.
+          The rest of its movement in the current phase is cancelled.
+        `,
+        targeting: `
+          When you cast this spell, you create a repulsive field in a \\smallarea radius \\glossterm{zone} from your location.
+          Whenever an enemy makes physical contact with the spell's area, you make an attack vs. Mental against it.
+          Creatures in the area at the time that the spell is cast are unaffected by the spell.
+        `,
+      },
+      rank: 4,
+      scaling: "accuracy",
       type: "Sustain (minor)",
     },
   ],

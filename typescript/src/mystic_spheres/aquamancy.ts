@@ -111,6 +111,7 @@ export const aquamancy: MysticSphere = {
       tags: ["Curse"],
       type: "Duration",
     },
+    // swimming is +2 ranks better than a normal rank 2 condition
     {
       name: "Sphere of Constraint",
 
@@ -119,18 +120,18 @@ export const aquamancy: MysticSphere = {
           The effect becomes a \\glossterm{condition}.
         `,
         hit: `
-          The majority of each target's body is \\glossterm{briefly} surrounded by a layer of water.
-          This does not impede its ability to breathe, but it is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}. 
+          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} surrounded by a layer of water.
+          This does not impede its ability to breathe, but it is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}.
         `,
         targeting: `
-          Make an attack vs. Reflex against all creatures completely within a \\smallarea radius within \\rngmed range.
-          This attack automatically fails against creatures whose entire space is not within the area.
+          Make an attack vs. Reflex against all creatures completely within a \\smallarea radius within \\medrange.
+          This attack automatically fails against creatures whose space is not entirely within the area.
         `,
       },
       narrative: `
           A sphere of water appears in midair that adheres to your foes.
       `,
-      rank: 5,
+      rank: 2,
       scaling: "accuracy",
       tags: ["Manifestation"],
       type: "Duration",
@@ -275,18 +276,19 @@ export const aquamancy: MysticSphere = {
 
       // targeting: None,
       effect: `
-          You create a wall of water in a 15 ft.\\ high, \\medarealong line within \\medrange.
+          You create a \\medarealong \\glossterm{wall} of water within \\medrange.
           The wall is four inches thick, and blocks \\glossterm{line of effect} for abilities.
           Sight through the wall is possible, though distorted.
           The wall provides both \\glossterm{cover} and \\glossterm{concealment} to targets on the opposite side of the wall (see \\pcref{Obstacles and Cover}).
           Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
-          Each five-foot square of wall has \\glossterm{hit points} equal to three times your \\glossterm{power} and all of its defenses are 0.
+          Each five-foot square of wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 3,
       scaling: {
-        5: "The area of the wall increases to a \\largearealong line.",
-        7: "The area of the wall increases to a \\hugearealong line.",
+        5: `The area increases to a \\largearealong wall.`,
+        7: `The area increases to a \\hugearealong wall.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -322,19 +324,19 @@ export const aquamancy: MysticSphere = {
       },
       type: "Attune (target)",
     },
-    // +2 levels for push, -1 level for no power
+    // +2 levels for push
     {
       name: "Raging River",
 
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d8 bludgeoning damage.
-          In addition, each target is \\glossterm{pushed} 15 feet in the direction the line points away from you.
+          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          In addition, each target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\medarealong, 10 ft. wide line from you.
+          Make an attack vs. Fortitude against everything in a \\medarealong, 5 ft. wide line from you.
         `,
       },
       rank: 2,
@@ -342,19 +344,19 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation"],
       type: "Instant",
     },
-    // +3 levels for push, -1 level for no power
+    // +1 level for farther push, +2 levels for area
     {
       name: "Greater Raging River",
 
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d8 bludgeoning damage.
-          In addition, each target is \\glossterm{pushed} 30 feet in the direction the line points away from you.
+          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          In addition, each target damaged by the attack is \\glossterm{pushed} 30 feet in the direction the line points away from you.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearealong, 15 ft. wide line from you.
+          Make an attack vs. Fortitude against everything in a \\largearealong, 10 ft. wide line from you.
         `,
       },
       rank: 5,
@@ -537,7 +539,7 @@ export const aquamancy: MysticSphere = {
           Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       type: "Duration",
     },
@@ -545,9 +547,9 @@ export const aquamancy: MysticSphere = {
       name: "Greater Wave of Desiccation",
 
       attack: {
-        crit: 'The effect becomes a \\glossterm{condition}.',
+        crit: 'The condition must be removed twice before the effect ends.',
         hit: `
-          Each target is \\glossterm{briefly} \\stunned.
+          Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.
@@ -596,17 +598,22 @@ export const aquamancy: MysticSphere = {
       name: "Fog Wall",
 
       effect: `
-        You create a wall of fog in a 15 ft.\\ high, \\medarealong \\glossterm{wall} within \\rngmed range.
+        You create a \\medarealong \\glossterm{wall} of fog within \\rngmed range.
         The fog makes it difficult to see through the wall, granting \\glossterm{concealment} to anything viewed through the wall (see \\pcref{Concealment}).
+
+        Each five-foot square of wall has hit points equal to your \\glossterm{power}.
+        % TODO: also cold damage?
+        It is immune to all damage except for fire damage.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {
-        3: "The area increases to a 30 foot high, \\largearealong line.",
-        5: "The area increases to a 60 foot high, \\hugearealong line.",
-        7: "The area increases to a 120 foot high, 240 foot long line.",
+        3: "The area increases to a \\largearealong line.",
+        5: "The area increases to a \\hugearealong line.",
+        7: "The area increases to a 240 foot long line.",
       },
-      tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Fluid Motion",

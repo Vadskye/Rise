@@ -134,7 +134,7 @@ export const chronomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against all creatures within a \\areasmall radius \\glossterm{zone} from your location.
-          In addition, whenever a creature enters the area, you make the same attack against it.
+          Whenever a creature enters the area, you make the same attack against it.
           A creature that leaves the area and re-enters it uses the original attack result against it.
         `,
       },
@@ -179,13 +179,27 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        // No relevant glance effect
         hit: `Each target is \\glossterm{briefly} \\slowed.`,
+        targeting: `
+          Make an attack vs. Mental with a +1 \\glossterm{accuracy} bonus against all creatures in a \\smallarea radius within \\medrange.
+        `,
+      },
+      rank: 1,
+      scaling: "accuracy",
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Mass Slow",
+
+      attack: {
+        crit: `The condition must be removed twice before the effect ends.`,
+        hit: `Each target is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 4,
       scaling: "accuracy",
       type: "Duration",
     },

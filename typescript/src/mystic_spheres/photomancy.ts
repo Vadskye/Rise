@@ -61,7 +61,7 @@ export const photomancy: MysticSphere = {
           Make an attack vs. Mental against each creature within a \\medarea cone from you.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       tags: ["Visual"],
       type: "Duration",
@@ -76,7 +76,7 @@ export const photomancy: MysticSphere = {
         `,
         name: "color spray",
       },
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Visual"],
       type: "Instant",
@@ -95,7 +95,7 @@ export const photomancy: MysticSphere = {
           Make an attack vs. Mental against each creature within a \\medarea cone from you.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Visual"],
       type: "Duration",
@@ -135,11 +135,11 @@ export const photomancy: MysticSphere = {
       name: "Wall of Light",
 
       effect: `
-        You create a wall of light in a 15 ft.\\ high, \\medarealong line within \\medrange.
-        If you create the wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
-        This can allow you to completely block off small tunnels.
+        You create a \\medarealong \\glossterm{wall} of light within \\medrange.
         The wall is visible as a solid block of light that blocks sight.
         It does not inhibit the passage of objects or creatures.
+
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {
@@ -147,8 +147,8 @@ export const photomancy: MysticSphere = {
         5: `The area increases to a 30 ft.\\ high, \\hugearealong line.`,
         7: `The area increases to a 60 ft.\\ high, \\gargarealong line.`,
       },
-      tags: [],
-      type: "Sustain (minor)",
+      tags: ["Barrier"],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -270,7 +270,7 @@ export const photomancy: MysticSphere = {
         // No relevant glance effect
         hit: `Each target is \\glossterm{briefly} \\dazzled.`,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange of you.
+          Make an attack vs. Fortitude with a +1 \\glossterm{accuracy} bonus against all creatures in a \\smallarea radius within \\medrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
         `,
       },
@@ -325,14 +325,13 @@ export const photomancy: MysticSphere = {
       name: "Kaleidoscopic Pattern",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each target.",
+        crit: `Creatures that have remaining damage resistance are also affected.`,
         // No relevant glance effect
         hit: `
-          Each target with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\dazed.
-          Each target with no remaining damage resistance is \\stunned instead of dazed.
+          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{dazed} as a \\glossterm{condition} and briefly \\glossterm{stunned}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange of you.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
         `,
       },
@@ -345,27 +344,14 @@ export const photomancy: MysticSphere = {
     {
       name: "Greater Kaleidoscopic Pattern",
 
-      functionsLike: {
-        name: 'kaleidoscopic pattern',
-        exceptThat: 'the area increases to a \\medarea radius, and the range increases to \\longrange.',
-      },
-      rank: 5,
-      scaling: "accuracy",
-      tags: ["Compulsion", "Visual"],
-      type: "Duration",
-    },
-
-    {
-      name: "Variegated Pattern",
-
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each target.",
+        crit: `Creatures that have remaining damage resistance are also affected.`,
+        // No relevant glance effect
         hit: `
-          Each target with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
-          Each target with no remaining damage resistance is \\confused instead of stunned.
+          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{stunned} as a \\glossterm{condition} and briefly \\glossterm{confused}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange of you.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
         `,
       },

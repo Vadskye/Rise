@@ -514,18 +514,20 @@ export const pyromancy: MysticSphere = {
       attack: {
         hit: `The target takes 1d10 + half \\glossterm{power} fire damage.`,
         targeting: `
-        You create a wall of fire in a 15 ft.\\ high, \\medarea \\glossterm{wall} within \\medrange.
+        You create a \\medarealong \\glossterm{wall} of fire within \\medrange.
         The flames and heat make it difficult to see through the wall, granting \\glossterm{concealment} to targets on the opposite side of the wall.
         Whenever anything passes through the wall, you make an attack vs. Reflex against it.
         You can only make this attack against a given target once per \\glossterm{phase}.
 
-        Each five-foot square of wall has hit points equal to twice your \\glossterm{power}, and all of its defenses are 0.
-        It is immune to most forms of attack, but it can be destroyed by cold damage and similar effects that can destroy water.
+        Each five-foot square of wall has hit points equal to your \\glossterm{power}.
+        It is immune to all damage types except for cold damage.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
       rank: 3,
       scaling: "damage",
-      type: "Sustain (minor)",
+      tags: ['Barrier'],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -535,12 +537,13 @@ export const pyromancy: MysticSphere = {
         name: 'wall of fire',
         exceptThat: `
           the damage increases to 4d6 + half \\glossterm{power}.
-          In addition, the area increases to a 20 ft. high, \\largearea \\glossterm{wall}.
+          In addition, the area increases to a \\largearealong \\glossterm{wall}.
         `,
       },
       rank: 6,
       scaling: "damage",
-      type: "Sustain (minor)",
+      tags: ['Barrier'],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -872,6 +875,28 @@ export const pyromancy: MysticSphere = {
       rank: 5,
       tags: ["Detection"],
       type: "Instant",
+    },
+    {
+      name: "Explosive Runes",
+
+      castingTime: "one hour",
+      effect: `
+        % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
+        Choose one Medium or smaller \\glossterm{unattended} object with writing on it within \\shortrange.
+        The writing on the object is altered by the runes in subtle ways, making it more difficult to read.
+        It becomes a \\glossterm{trap}.
+        To read the writing, a creature must concentrate on reading it, which requires a standard action.
+        If a creature reads the object, the object explodes.
+        You make an attack vs. Reflex against everything within a \\smallarea radius from the object.
+        Your accuracy with this attack is equal to half your level \\add half your Perception.
+        This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
+        Each struck target takes 2d6 + half \\glossterm{power} fire damage.
+
+        After the object explodes in this way, the ritual is \\glossterm{dismissed}.
+        If the object is destroyed or rendered illegible, the ritual is dismissed without exploding.
+        `,
+      rank: 4,
+      type: "Attune (ritual)",
     },
   ],
 };

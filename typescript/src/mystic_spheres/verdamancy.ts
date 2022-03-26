@@ -406,7 +406,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
-        You create a wall of thorns in 15 ft.\\ high, \\smallarea \\glossterm{wall} within \\medrange.
+        You create a \\smallarealong \\glossterm{wall} of thorns within \\medrange.
         The base of at least half of the wall must be in arable earth.
         The wall is four inches thick, but permeable.
         It provides \\glossterm{cover} to attacks made through the wall.
@@ -414,13 +414,15 @@ export const verdamancy: MysticSphere = {
         Whenever anything moves through the wall, make an attack vs. Armor against it.
         You can only make an attack in this way against a given target once per \\glossterm{phase}.
 
-        Each five-foot square of wall has hit points equal to three times your \\glossterm{power}, and all of its defenses are 0.
+        Each five-foot square of wall has hit points equal to three times your \\glossterm{power}.
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
 
       rank: 3,
       scaling: "damage",
-      type: "Attune (self)",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -428,11 +430,12 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'wall of thorns',
-        exceptThat: 'the damage increases to 4d6 + half \\glossterm{power}, and the area increases to a 20 ft. high, \\medarea \\glossterm{wall}.',
+        exceptThat: 'the damage increases to 4d6 + half \\glossterm{power}, and the area increases to a \\medarealong \\glossterm{wall}.',
       },
       rank: 6,
       scaling: "damage",
-      type: "Attune (self)",
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
 
     {
