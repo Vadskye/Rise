@@ -36,6 +36,7 @@ def create_page(destination):
             ),
             div({"class": "section-header"}, "Inventory"),
             textarea({"name": "inventory"}),
+            # TODO: add weight limits here?
             div({"class": "section-header"}, "Proficiences"),
             proficiencies(),
             div({"class": "section-header"}, "Legacy Item"),
