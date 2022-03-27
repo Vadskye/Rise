@@ -742,10 +742,10 @@ function handleAttributes() {
 }
 
 function handleAttunedEffects() {
-  on("change:repeating_attunements remove:repeating_attunements", function () {
-    getSectionIDs("repeating_attunements", (repeatingSectionIds) => {
+  on("change:repeating_attunedmodifiers remove:repeating_attunedmodifiers", function () {
+    getSectionIDs("repeating_attunedmodifiers", (repeatingSectionIds) => {
       const isActiveIds = repeatingSectionIds.map(
-        (id) => `repeating_attunements_${id}_attunement_active`
+        (id) => `repeating_attunedmodifiers_${id}_is_active`
       );
       getAttrs(isActiveIds, (values) => {
         const activeAbilities = isActiveIds.filter(
@@ -839,12 +839,12 @@ function handleCustomModifiers() {
             getAttrs(fullAttributeIds, (values) => {
               const totalCustomModifiers = {};
               for (const id of repeatingSectionIds) {
-                // Permanent modifiers are always active; for temporary modifiers, we have
-                // to check the value from the checkbox
+                // Permanent modifiers are always active; for temporary and attuned
+                // modifiers, we have to check the value from the checkbox.
                 const isActive =
-                  modifierType === "temporary"
-                    ? values[formatIsActiveId(id)]
-                    : 1;
+                  modifierType === "permanent"
+                    ? 1
+                    : values[formatIsActiveId(id)];
                 if (isActive === "on" || isActive == 1) {
                   for (let i = 0; i < nestedCustomStatisticCount; i++) {
                     const modifiedStatistic = values[formatStatisticId(id, i)];
@@ -1282,11 +1282,11 @@ function handleLandSpeed() {
   onGet(
     {
       miscName: "speed",
-      numeric: ["level", "speed_size", "speed_armor"],
+      numeric: ["speed_size", "body_armor_speed"],
     },
     (v) => {
       // TODO: handle size more correctly
-      const totalValue = 30 - v.speed_armor + v.misc;
+      const totalValue = 30 + v.body_armor_speed + v.misc;
       setAttrs({
         land_speed: totalValue,
       });

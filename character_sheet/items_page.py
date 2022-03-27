@@ -52,8 +52,13 @@ def create_page(destination):
                 [
                     attuned_effects_tracker(),
                     fieldset(
-                        {"class": "repeating_attunements"},
+                        {"class": "repeating_attunedmodifiers"},
                         custom_modifier(show_toggle=True),
+                    ),
+                    div({"class": "section-header"}, "DEPRECATED Attunements"),
+                    fieldset(
+                        {"class": "repeating_attunements"},
+                        attunement(),
                     ),
                 ]
                 if destination == "roll20"
