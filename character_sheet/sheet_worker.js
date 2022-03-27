@@ -283,15 +283,26 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set([
   "all_defenses",
   "all_skills",
   "armor_defense",
-  "encumbrance",
+  "attunement_points",
+  "constitution",
   "damage_resistance_bonus",
+  "dexterity",
+  "encumbrance",
   "fatigue_tolerance",
   "fortitude",
   "hit_points",
+  "insight_points",
+  "intelligence",
   "mental",
+  "perception",
   "power",
   "reflex",
+  "speed",
+  "strength",
+  "weapon_damage_dice",
+  "nonclass_skill_count",
   "vital_rolls",
+  "willpower",
 ]);
 
 // Class and species, mostly
@@ -843,37 +854,12 @@ function handleCustomModifiers() {
                   }
                 }
               }
-              setAttrs({
-                [`accuracy_${modifierType}_modifier`]:
-                  totalCustomModifiers.accuracy || 0,
-                [`all_skills_${modifierType}_modifier`]:
-                  totalCustomModifiers.all_skills || 0,
-                [`armor_defense_${modifierType}_modifier`]:
-                  (totalCustomModifiers.armor_defense || 0) +
-                  (totalCustomModifiers.all_defenses || 0),
-                [`damage_resistance_bonus_${modifierType}_modifier`]:
-                  totalCustomModifiers.damage_resistance_bonus || 0,
-                [`encumbrance_${modifierType}_modifier`]: -(
-                  totalCustomModifiers.encumbrance || 0
-                ),
-                [`fatigue_tolerance_${modifierType}_modifier`]:
-                  totalCustomModifiers.fatigue_tolerance || 0,
-                [`fortitude_${modifierType}_modifier`]:
-                  (totalCustomModifiers.fortitude || 0) +
-                  (totalCustomModifiers.all_defenses || 0),
-                [`hit_points_${modifierType}_modifier`]:
-                  totalCustomModifiers.hit_points || 0,
-                [`mental_${modifierType}_modifier`]:
-                  (totalCustomModifiers.mental || 0) +
-                  (totalCustomModifiers.all_defenses || 0),
-                [`power_${modifierType}_modifier`]:
-                  totalCustomModifiers.power || 0,
-                [`reflex_${modifierType}_modifier`]:
-                  (totalCustomModifiers.reflex || 0) +
-                  (totalCustomModifiers.all_defenses || 0),
-                [`vital_rolls_${modifierType}_modifier`]:
-                  totalCustomModifiers.vital_rolls || 0,
-              });
+              const attrs = {};
+              for (const key of VARIABLES_WITH_CUSTOM_MODIFIERS) {
+                attrs[`${key}_${modifierType}_modifier`] =
+                  totalCustomModifiers[key] || 0;
+              }
+              setAttrs(attrs);
             });
           }
         );
@@ -1299,7 +1285,8 @@ function handleLandSpeed() {
       numeric: ["level", "speed_size", "speed_armor"],
     },
     (v) => {
-      const totalValue = v.speed_size - v.speed_armor + v.misc;
+      // TODO: handle size more correctly
+      const totalValue = 30 - v.speed_armor + v.misc;
       setAttrs({
         land_speed: totalValue,
       });
@@ -1350,7 +1337,12 @@ function handlePower() {
   onGet(
     {
       miscName: "power",
-      numeric: ["challenge_rating", "archetype_rank_0", "archetype_rank_1", "archetype_rank_2"],
+      numeric: [
+        "challenge_rating",
+        "archetype_rank_0",
+        "archetype_rank_1",
+        "archetype_rank_2",
+      ],
       string: ["base_class"],
     },
     (v) => {
@@ -2016,12 +2008,15 @@ function handleWeaponDamageDice() {
   onGet(
     {
       miscName: "weapon_damage_dice",
-      numeric: ["level", "challenge_rating"],
+      numeric: ["level", "challenge_rating", "strength"],
     },
     (v) => {
       const fromCr = v.challenge_rating > 0 ? Math.floor((v.level - 1) / 3) : 0;
       const totalValue = fromCr + v.misc;
-      setAttrs({ weapon_damage_dice: totalValue });
+      setAttrs({
+        weapon_damage_dice: totalValue,
+        weapon_damage_dice_including_strength: totalValue + Math.floor(v.strength / 2),
+      });
     }
   );
 }
