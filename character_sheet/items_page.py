@@ -34,10 +34,14 @@ def create_page(destination):
                 This tab is used to track your equipment, inventory, and attunements to both items and spells.
             """,
             ),
+            div({"class": "section-header"}, "Proficiences"),
+            proficiencies(),
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(),
             div({"class": "section-header"}, "Body Armor"),
             body_armor(destination),
+            div({"class": "section-header"}, "Inventory"),
+            textarea({"name": "inventory"}),
             div({"class": "section-header"}, "Weapons"),
             *weapons(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
@@ -52,19 +56,6 @@ def create_page(destination):
                 if destination == "roll20"
                 else [attunement() for i in range(8)]
             ),
-            div({"class": "section-header"}, "Non-Attunement Equipment"),
-            *(
-                [
-                    fieldset(
-                        {"class": "repeating_equipment"},
-                        equipment(),
-                    )
-                ]
-                if destination == "roll20"
-                else [equipment() for i in range(3)]
-            ),
-            div({"class": "section-header"}, "Inventory"),
-            textarea({"name": "inventory"}),
         ],
     )
 
@@ -138,6 +129,16 @@ def equipment():
                 {"name": f"equipment_effects"},
             ),
         ]
+    )
+
+def proficiencies():
+    return flex_row(
+        {"class": "proficiencies"},
+        [
+            labeled_text_input("Base class", input_attributes={"readonly": True, "name": "base_class_proficiences"}),
+            labeled_text_input("Weapon groups", input_attributes={"name": "weapon_groups"}),
+            labeled_text_input("Other proficiencies", input_attributes={"name": "other_proficiencies"}),
+        ],
     )
 
 
