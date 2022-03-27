@@ -117,7 +117,7 @@ def roll20_abilities():
                 active_ability_button("ability"),
             ),
         ),
-        flex_wrapper(div({"class": "section-header"}, "Custom Modifiers")),
+        flex_wrapper(div({"class": "section-header"}, "Toggleable Modifiers")),
         flex_row(
             {"class": "active-ability-group"},
             fieldset(
