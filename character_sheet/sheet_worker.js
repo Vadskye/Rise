@@ -1,4 +1,176 @@
 const CUSTOM_MODIFIER_TYPES = ["attuned", "temporary", "permanent"];
+const BASE_CLASS_MODIFIERS = {
+  barbarian: {
+    power: "fast",
+    armor_defense: 0,
+    fortitude: 7,
+    reflex: 5,
+    mental: 3,
+    vital_rolls: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 5,
+    insight_points: 0,
+    class_skill_count: 5,
+    proficiencies: "Light and medium armor, one weapon group",
+  },
+  cleric: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 5,
+    reflex: 3,
+    mental: 7,
+    vital_rolls: 0,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
+    insight_points: 2,
+    class_skill_count: 4,
+    proficiencies: "Light and medium armor",
+  },
+  druid: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 5,
+    reflex: 4,
+    mental: 6,
+    vital_rolls: 0,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
+    insight_points: 2,
+    class_skill_count: 5,
+    proficiencies: "Light armor, hide armor, scimitars, and sickles",
+  },
+  fighter: {
+    power: "normal",
+    armor_defense: 1,
+    fortitude: 7,
+    reflex: 3,
+    mental: 5,
+    vital_rolls: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 5,
+    insight_points: 1,
+    class_skill_count: 3,
+    proficiencies: "All armor, two weapon groups",
+  },
+  monk: {
+    power: "normal",
+    armor_defense: 1,
+    fortitude: 3,
+    reflex: 6,
+    mental: 5,
+    vital_rolls: 0,
+    attunement_points: 4,
+    fatigue_tolerance: 5,
+    insight_points: 2,
+    class_skill_count: 5,
+    proficiencies: "Light armor, monk weapons",
+  },
+  paladin: {
+    power: "normal",
+    armor_defense: 1,
+    fortitude: 6,
+    reflex: 3,
+    mental: 5,
+    vital_rolls: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 5,
+    insight_points: 1,
+    class_skill_count: 4,
+    proficiencies: "All armor, one weapon group",
+  },
+  ranger: {
+    power: "normal",
+    armor_defense: 1,
+    fortitude: 5,
+    reflex: 5,
+    mental: 4,
+    vital_rolls: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 5,
+    insight_points: 2,
+    class_skill_count: 5,
+    proficiencies:
+      "Light armor, hide armor, one weapon group, and one ranged weapon group",
+  },
+  rogue: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 3,
+    reflex: 7,
+    mental: 5,
+    vital_rolls: 0,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
+    insight_points: 2,
+    class_skill_count: 7,
+    proficiencies: "Light armor, one weapon group, and saps",
+  },
+  sorcerer: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 3,
+    reflex: 5,
+    mental: 7,
+    vital_rolls: 0,
+    attunement_points: 5,
+    fatigue_tolerance: 4,
+    insight_points: 2,
+    class_skill_count: 3,
+    proficiencies: "None",
+  },
+  warlock: {
+    power: "high",
+    armor_defense: 0,
+    fortitude: 5,
+    reflex: 3,
+    mental: 7,
+    vital_rolls: 0,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
+    insight_points: 1,
+    class_skill_count: 4,
+    proficiencies: "Light armor",
+  },
+  wizard: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 3,
+    reflex: 5,
+    mental: 7,
+    vital_rolls: 0,
+    attunement_points: 5,
+    fatigue_tolerance: 3,
+    insight_points: 2,
+    class_skill_count: 5,
+    proficiencies: "None",
+  },
+  dragon: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 7,
+    reflex: 3,
+    mental: 5,
+    vital_rolls: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 5,
+    insight_points: 2,
+    class_skill_count: 4,
+    proficiencies: "Light and medium armor",
+  },
+  oozeborn: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 7,
+    reflex: 3,
+    mental: 5,
+    vital_rolls: 2,
+    attunement_points: 3,
+    fatigue_tolerance: 6,
+    insight_points: 1,
+    class_skill_count: 3,
+    proficiencies: "Light armor",
+  },
+};
 
 function sumCustomModifiers(v, prefix) {
   let sum = 0;
@@ -125,6 +297,20 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set([
   "vital_rolls",
 ]);
 
+// Class and species, mostly
+const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
+  "armor_defense",
+  "class_skill_count",
+  "fatigue_tolerance",
+  "fortitude",
+  "insight_points",
+  "mental",
+  "power",
+  "reflex",
+  "speed",
+  "vital_rolls",
+]);
+
 const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
   "accuracy",
   "armor_defense",
@@ -154,6 +340,9 @@ function generateMiscVariables(name, count) {
       variables.push(`${name}_${modifierType}_modifier`);
     }
   }
+  if (VARIABLES_WITH_CREATION_MODIFIERS.has(name)) {
+    variables.push(`${name}_creation_modifier`);
+  }
   if (VARIABLES_WITH_DEBUFF_MODIFIERS.has(name)) {
     variables.push(`${name}_debuff_modifier`);
   }
@@ -177,6 +366,7 @@ function handleEverything() {
   handleAttunedEffects();
   handleAttributes();
   handleCoreStatistics();
+  handleCreationModifiers();
   handleCustomModifiers();
   handleDebuffs();
   handleMonsterChatColor();
@@ -590,6 +780,68 @@ function handleAttunementPoints() {
         attunement_points_max: ap,
         attunement_points_maximum: ap,
       });
+    }
+  );
+}
+
+function handleCreationModifiers() {
+  onGet(
+    {
+      numeric: ["archetype_rank_0", "archetype_rank_1", "archetype_rank_2"],
+      string: ["base_class", "species"],
+    },
+    (v) => {
+      const classModifiers = BASE_CLASS_MODIFIERS[v.base_class];
+      // TODO: confirm that the rank is actually from the character's base class
+      const maxRank = Math.max(
+        v.archetype_rank_0,
+        v.archetype_rank_1,
+        v.archetype_rank_2
+      );
+      const classPowerProgression =
+        classModifiers.power === "high"
+          ? {
+              1: 2,
+              2: 3,
+              3: 4,
+              4: 6,
+              5: 8,
+              6: 12,
+              7: 16,
+            }
+          : {
+              1: 3,
+              2: 4,
+              3: 5,
+              4: 7,
+              5: 10,
+              6: 14,
+              7: 20,
+            };
+
+      // Class proficiencies and class skill count aren't modifiers. They are simply
+      // directly set, since nothing else can modify them.
+      const attrs = {
+        class_proficiencies: classModifiers.proficiencies,
+        class_skill_count: classModifiers.class_skill_count,
+      };
+      // The simple modifier keys can simply be directly translated
+      for (const modifierKey of [
+        "armor_defense",
+        "fortitude",
+        "reflex",
+        "mental",
+        "vital_rolls",
+        "attunement_points",
+        "fatigue_tolerance",
+        "insight_points",
+      ]) {
+        attrs[`${modifierKey}_creation_modifier`] = classModifiers[modifierKey];
+      }
+      // Power has its own weird calculation
+      attrs["power_creation_modifier"] = classPowerProgression[maxRank];
+
+      setAttrs(attrs);
     }
   );
 }
