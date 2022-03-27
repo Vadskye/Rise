@@ -7,6 +7,7 @@ from cgi_simple import (
     flex_col,
     flex_row,
     flex_wrapper,
+    labeled_number_input,
     labeled_text_input,
     li,
     minus,
@@ -42,6 +43,7 @@ def create_page(_destination):
                     common_concepts(),
                 ],
             ),
+            character_statistics(),
         ],
     )
 
@@ -155,6 +157,7 @@ def skill_modifiers():
         ]
     )
 
+
 def common_concepts():
     short_rest = button(
         {
@@ -218,4 +221,39 @@ def common_concepts():
         """
             ),
         ],
+    )
+
+
+def character_statistics():
+    return flex_col(
+        [
+            div({"class": "section-header"}, "Core Statistics"),
+            flex_row(
+                {"class": "reference-statistics"},
+                [
+                    labeled_number_input(
+                        "Accuracy",
+                        input_attributes={"readonly": True, "name": "accuracy"},
+                    ),
+                    labeled_number_input(
+                        "Power", input_attributes={"readonly": True, "name": "power"}
+                    ),
+                    labeled_number_input(
+                        "Strike +d",
+                        input_attributes={
+                            "readonly": True,
+                            "name": "weapon_damage_dice",
+                        },
+                    ),
+                    labeled_number_input(
+                        "Encumbrance",
+                        input_attributes={"readonly": True, "name": "encumbrance"},
+                    ),
+                    labeled_number_input(
+                        "Vital rolls",
+                        input_attributes={"readonly": True, "name": "vital_rolls"},
+                    ),
+                ],
+            ),
+        ]
     )

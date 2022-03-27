@@ -1934,10 +1934,10 @@ function handleVitalRolls() {
   onGet(
     {
       miscName: "vital_rolls",
-      numeric: ["vital_roll_class", "vital_wound_count"],
+      numeric: ["vital_wound_count"],
     },
     (v) => {
-      const totalValue = v.vital_roll_class + v.misc - v.vital_wound_count * 2;
+      const totalValue = v.misc - v.vital_wound_count * 2;
       setAttrs({ vital_rolls: totalValue });
     }
   );
