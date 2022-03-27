@@ -185,6 +185,13 @@ def creation_guidance():
                 ),
             ),
             creation_step(
+                "Weapons",
+                """
+                    Choose or record the weapon groups your character can use.
+                """,
+                text_input({"name": "weapon_groups"}),
+            ),
+            creation_step(
                 "Insight points",
                 """
                     Spend your character's insight points.
