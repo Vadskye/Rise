@@ -185,13 +185,21 @@ const BASE_CLASS_MODIFIERS = {
 //   },
 //   elf: {
 //     constitution: -1,
-//     dexterity: 1,
 //     mental: 1,
 //     awareness: 2,
 //     balance: 2,
 //   },
 //   gnome: {
-
+//     strength: -1,
+//     insight_points: 1,
+//     speed: -5,
+//     stealth: 2,
+//   },
+//   "half-elf": {
+//     persuasion: 2,
+//   },
+//   "half-orc": {
+//     strength: 1,
 //   },
 // };
 
