@@ -300,6 +300,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set([
 // Class and species, mostly
 const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "armor_defense",
+  "attunement_points",
   "class_skill_count",
   "fatigue_tolerance",
   "fortitude",
@@ -725,23 +726,12 @@ function handleAttributes() {
     onGet(
       {
         miscName: attributeName,
-        miscCount: 2,
-        numeric: ["level", `${attributeName}_point_buy`],
+        miscCount: 0,
+        numeric: [`${attributeName}_at_creation`],
       },
       (v) => {
-        const pointBuy = v[`${attributeName}_point_buy`];
-        let totalValue =
-          pointBuy > 0
-            ? {
-                1: 1,
-                3: 2,
-                5: 3,
-                8: 4,
-              }[pointBuy]
-            : pointBuy;
-        totalValue += v.misc;
         setAttrs({
-          [attributeName]: totalValue || 0,
+          [attributeName]: v[`${attributeName}_at_creation`] + v.misc,
         });
       }
     );
@@ -1518,14 +1508,12 @@ function handleSkillPoints() {
     {
       miscName: "skill_points",
       miscCount: 3,
-      numeric: ["level", "skill_points_base", "intelligence"],
+      numeric: ["intelligence"],
     },
     (v) => {
       const fromInt = Math.max(0, v.intelligence);
-      const totalValue = v.skill_points_base + fromInt + v.misc;
       setAttrs({
-        skill_points: totalValue,
-        skill_points_intelligence: fromInt,
+        nonclass_skill_count: fromInt + v.misc,
       });
     }
   );

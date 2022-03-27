@@ -113,22 +113,22 @@ def creation_guidance():
                     {"class": "attributes"},
                     [
                         labeled_number_input(
-                            "Str", input_attributes={"name": f"strength_points"}
+                            "Str", input_attributes={"name": f"strength_at_creation"}
                         ),
                         labeled_number_input(
-                            "Dex", input_attributes={"name": f"dexterity_points"}
+                            "Dex", input_attributes={"name": f"dexterity_at_creation"}
                         ),
                         labeled_number_input(
-                            "Con", input_attributes={"name": f"constitution_points"}
+                            "Con", input_attributes={"name": f"constitution_at_creation"}
                         ),
                         labeled_number_input(
-                            "Int", input_attributes={"name": f"intelligence_points"}
+                            "Int", input_attributes={"name": f"intelligence_at_creation"}
                         ),
                         labeled_number_input(
-                            "Per", input_attributes={"name": f"perception_points"}
+                            "Per", input_attributes={"name": f"perception_at_creation"}
                         ),
                         labeled_number_input(
-                            "Wil", input_attributes={"name": f"willpower_points"}
+                            "Wil", input_attributes={"name": f"willpower_at_creation"}
                         ),
                     ],
                 ),
