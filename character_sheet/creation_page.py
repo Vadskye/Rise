@@ -191,30 +191,7 @@ def creation_guidance():
                 """,
                 text_input({"name": "weapon_groups"}),
             ),
-            creation_step(
-                "Insight points",
-                """
-                    Spend your character's insight points.
-                    You can use this section to track what you spent insight points on.
-                    The full effects of abilities that you gain should be tracked elsewhere - usually, in the <b>Abilities</b> tab.
-                """,
-                flex_col(
-                    [
-                        sidelabel(
-                            "Total insight points",
-                            number_input(
-                                {
-                                    "disabled": True,
-                                    "readonly": True,
-                                    "name": "insight_points",
-                                }
-                            ),
-                            {"class": "total-insight-points"},
-                        ),
-                        textarea({"name": "insight_points_tracking"}),
-                    ]
-                ),
-            ),
+            insight_points_step(),
             skills_step(),
             creation_step(
                 "Items",
@@ -261,8 +238,9 @@ def creation_guidance():
                     Set your level to 1 at the top of the <b>Core</b> tab, since you're done now!
                     You can also choose a chat color for your abilities there, which will help you stand out from other characters in the game.
                 """,
-                ""
+                "",
             ),
+            feats_step(),
         ],
     )
 
@@ -276,32 +254,46 @@ def creation_step(header, explanation, mechanics):
         ],
     )
 
+
+def insight_points_step():
+    max_insight_points = text_input(
+        {"class": "inline-number", "readonly": True, "name": "insight_points"}
+    )
+
+    return creation_step(
+        "Insight points",
+        f"""
+            Spend your character's insight points.
+            You can use this section to track what you spent insight points on.
+            The full effects of abilities that you gain should be tracked elsewhere - usually, in the <b>Abilities</b> tab.
+            <br>
+            As a reminder, you have {max_insight_points} total insight points.
+        """,
+        textarea({"name": "insight_points_tracking"}),
+    )
+
+
 def skills_step():
+    class_skills = text_input(
+        {"class": "inline-number", "readonly": True, "name": "class_skill_count"}
+    )
+    other_trainable_skills = text_input(
+        {"class": "inline-number", "readonly": True, "name": "nonclass_skill_count"}
+    )
+
     return creation_step(
         "Skills",
-        """
+        f"""
             Assign your character's trained skills.
+            <br>
+            As a reminder, you should train {class_skills} class skills and {other_trainable_skills} other skills.
         """,
-        flex_col(
-            [
-                sidelabel(
-                    "Total trainable skills",
-                    number_input(
-                        {
-                            "disabled": True,
-                            "readonly": True,
-                            "name": "trained_skills",
-                        }
-                    ),
-                    {"class": "total-trainable-skills"},
-                ),
-                fieldset(
-                    {"class": "repeating_trainedskills"},
-                    trained_skill(),
-                ),
-            ]
+        fieldset(
+            {"class": "repeating_trainedskills"},
+            trained_skill(),
         ),
     )
+
 
 def trained_skill():
     return select(
@@ -351,4 +343,18 @@ def trained_skill():
             option({"value": "Survival"}, "Survival"),
             option({"value": "Swim"}, "Swim"),
         ],
+    )
+
+
+def feats_step():
+    return creation_step(
+        "Feats",
+        """
+            If you're playing with feats, you can record your feats here.
+            You'll need to record any effects of those feats manually as modifiers or abilities.
+        """,
+        fieldset(
+            {"class": "repeating_feats"},
+            labeled_text_input("Feat name", input_attributes={"name": "feat_name"}),
+        ),
     )
