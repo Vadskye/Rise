@@ -1,9 +1,5 @@
-.attunement {
-    .attunement-name {
-        width: 15em;
-        margin-right: 0.5em;
-    }
-
+.attunement, .armor-definition {
+    gap: 0.5em;
     .usage-class-dropdown {
         margin-right: 0.5em;
         width: 80px;
@@ -11,6 +7,21 @@
         select {
             width: 80px;
         }
+    }
+}
+.name {
+    width: 15em;
+}
+.armor-row {
+    flex-grow: 1;
+    gap: 2em;
+}
+.armor-definition {
+    flex-grow: 1;
+
+    .name {
+        flex-grow: 1;
+        width: 10em;
     }
 }
 .attunement-effect, .weapon-effects {

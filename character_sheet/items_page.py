@@ -34,14 +34,17 @@ def create_page(destination):
                 This tab is used to track your equipment, inventory, and attunements to both items and spells.
             """,
             ),
+            div({"class": "section-header"}, "Inventory"),
+            textarea({"name": "inventory"}),
             div({"class": "section-header"}, "Proficiences"),
             proficiencies(),
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(),
-            div({"class": "section-header"}, "Body Armor"),
-            body_armor(destination),
-            div({"class": "section-header"}, "Inventory"),
-            textarea({"name": "inventory"}),
+            div({"class": "section-header"}, "Armor"),
+            flex_row({"class": "armor-row"}, [
+                armor(destination, "Body armor"),
+                armor(destination, "Shield"),
+            ]),
             div({"class": "section-header"}, "Weapons"),
             *weapons(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
@@ -98,7 +101,7 @@ def attunement():
         [
             labeled_text_input(
                 "Name",
-                {"class": "attunement-name"},
+                {"class": "name"},
                 {"name": "attunement_name"},
             ),
             labeled_text_input(
@@ -131,13 +134,21 @@ def equipment():
         ]
     )
 
+
 def proficiencies():
     return flex_row(
         {"class": "proficiencies"},
         [
-            labeled_text_input("Base class", input_attributes={"readonly": True, "name": "base_class_proficiences"}),
-            labeled_text_input("Weapon groups", input_attributes={"name": "weapon_groups"}),
-            labeled_text_input("Other proficiencies", input_attributes={"name": "other_proficiencies"}),
+            labeled_text_input(
+                "Base class",
+                input_attributes={"readonly": True, "name": "base_class_proficiences"},
+            ),
+            labeled_text_input(
+                "Weapon groups", input_attributes={"name": "weapon_groups"}
+            ),
+            labeled_text_input(
+                "Other proficiencies", input_attributes={"name": "other_proficiencies"}
+            ),
         ],
     )
 
@@ -148,11 +159,11 @@ def legacy_item():
         [
             labeled_text_input(
                 "Name",
-                {"class": "attunement-name"},
+                {"class": "name"},
                 {"name": "legacy_item_name"},
             ),
             labeled_text_input(
-                "Effect",
+                "Effects",
                 {"class": "attunement-effect"},
                 {"name": "legacy_item_effect"},
             ),
@@ -160,20 +171,32 @@ def legacy_item():
     )
 
 
-def body_armor(destination):
+def armor(destination, armor_type):
+    parseable_type = armor_type.lower().replace(" ", "_")
+
     return flex_row(
-        {"class": "attunement"},
+        {"class": "armor-definition"},
         [
             labeled_text_input(
-                "Name",
-                {"class": "attunement-name"},
-                {"name": "body_armor_name"},
+                armor_type + " name",
+                {"class": "name"},
+                {"name": parseable_type + "_name"},
+            ),
+            labeled_number_input(
+                "Encumb",
+                {"class": "armor-encumbrance"},
+                input_attributes={"name": parseable_type + "_encumbrance"},
+            ),
+            labeled_number_input(
+                "+AD",
+                {"class": "armor-defense"},
+                input_attributes={"name": parseable_type + "_defense"},
             ),
             (
                 underlabel(
                     "Usage Class",
                     select(
-                        {"name": "body_armor_usage_class"},
+                        {"name": parseable_type + "_usage_class"},
                         [
                             option({"value": "none"}, ""),
                             option({"value": "light"}, "Light"),
@@ -185,11 +208,6 @@ def body_armor(destination):
                 )
                 if destination == "roll20"
                 else labeled_text_input("Usage Class", {"class": "usage-class"})
-            ),
-            labeled_text_input(
-                "Effect",
-                {"class": "attunement-effect"},
-                {"name": "body_armor_effect"},
             ),
         ],
     )
