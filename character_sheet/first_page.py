@@ -117,12 +117,12 @@ def roll20_abilities():
                 active_ability_button("ability"),
             ),
         ),
-        flex_wrapper(div({"class": "section-header"}, "Toggleable Modifiers")),
+        flex_wrapper(div({"class": "section-header"}, "Temporary Modifiers")),
         flex_row(
             {"class": "active-ability-group"},
             fieldset(
-                {"class": "repeating_custommodifiers"},
-                custom_modifier_toggle(),
+                {"class": "repeating_temporarymodifiers"},
+                temporary_modifier_toggle(),
             ),
         ),
     ]
@@ -676,7 +676,7 @@ def weapon_template(i):
     ).replace("~", "&amp;#126;")
 
 
-def custom_modifier_toggle():
+def temporary_modifier_toggle():
     return flex_row(
         {"class": "custom-modifier-toggle"},
         [
