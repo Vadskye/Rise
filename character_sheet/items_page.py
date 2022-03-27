@@ -43,10 +43,8 @@ def create_page(destination):
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(),
             div({"class": "section-header"}, "Armor"),
-            flex_row({"class": "armor-row"}, [
-                armor(destination, "Body armor"),
-                armor(destination, "Shield"),
-            ]),
+            armor(destination, "Body armor"),
+            armor(destination, "Shield"),
             div({"class": "section-header"}, "Weapons"),
             *weapons(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
@@ -185,7 +183,7 @@ def armor(destination, armor_type):
                 {"name": parseable_type + "_name"},
             ),
             labeled_number_input(
-                "Encumb",
+                "Encumbrance",
                 {"class": "armor-encumbrance"},
                 input_attributes={"name": parseable_type + "_encumbrance"},
             ),
@@ -193,6 +191,24 @@ def armor(destination, armor_type):
                 "+AD",
                 {"class": "armor-defense"},
                 input_attributes={"name": parseable_type + "_defense"},
+            ),
+            (
+                labeled_number_input(
+                    "+DR",
+                    {"class": "armor-damage-resistance"},
+                    input_attributes={"name": parseable_type + "_damage_resistance"},
+                )
+                if armor_type == "Body armor"
+                else div()
+            ),
+            (
+                labeled_number_input(
+                    "Speed",
+                    {"class": "armor-speed"},
+                    input_attributes={"name": parseable_type + "_speed"},
+                )
+                if armor_type == "Body armor"
+                else div()
             ),
             (
                 underlabel(
