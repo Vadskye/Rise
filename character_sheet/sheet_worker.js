@@ -184,7 +184,7 @@ function customModifierNames(prefix) {
   return CUSTOM_MODIFIER_TYPES.map((t) => `${prefix}_${t}_modifier`);
 }
 
-// variable types: boolean, miscCount, miscName, numeric, string
+// variable types: boolean, miscName, numeric, string
 // options: { includeLevel?: Boolean, runOnSheetOpen?: Boolean }
 // This can be called with only two arguments, omitting `options`.
 function onGet(variables, options, callback = null) {
@@ -206,7 +206,6 @@ function onGet(variables, options, callback = null) {
 
   const miscVariables = generateMiscVariables(
     variables.miscName,
-    variables.miscCount
   );
 
   const changeVariables = [
@@ -328,14 +327,11 @@ const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   "speed",
 ]);
 
-function generateMiscVariables(name, count) {
-  if (!(name && count)) {
+function generateMiscVariables(name) {
+  if (!name) {
     return [];
   }
   const variables = [];
-  for (let i = 0; i < count; i++) {
-    variables.push(`${name}_misc_${i}`);
-  }
   if (VARIABLES_WITH_CUSTOM_MODIFIERS.has(name)) {
     for (const modifierType of CUSTOM_MODIFIER_TYPES) {
       variables.push(`${name}_${modifierType}_modifier`);
@@ -514,7 +510,6 @@ function handleAbilityKnown(abilityName) {
   onGet(
     {
       miscName: `${abilityName}_known`,
-      miscCount: 4,
       numeric: [`${abilityName}_known_insight_points`],
     },
     (v) => {
@@ -528,7 +523,6 @@ function handleAccuracy() {
   onGet(
     {
       miscName: "accuracy",
-      miscCount: 3,
       numeric: ["challenge_rating", "level", "perception", "fatigue_penalty"],
     },
     (v) => {
@@ -585,7 +579,6 @@ function handleArmorDefense() {
   onGet(
     {
       miscName: "armor_defense",
-      miscCount: 2,
       numeric: [
         "level",
         "dexterity",
@@ -726,7 +719,6 @@ function handleAttributes() {
     onGet(
       {
         miscName: attributeName,
-        miscCount: 0,
         numeric: [`${attributeName}_at_creation`],
       },
       (v) => {
@@ -760,7 +752,6 @@ function handleAttunementPoints() {
   onGet(
     {
       miscName: "attunement_points",
-      miscCount: 4,
       numeric: ["level", "attunement_points_from_class"],
     },
     (v) => {
@@ -928,7 +919,6 @@ function handleDamageResistance() {
   onGet(
     {
       miscName: "damage_resistance_bonus",
-      miscCount: 4,
       numeric: [
         "constitution",
         "level",
@@ -1168,7 +1158,6 @@ function handleEncumbrance() {
   onGet(
     {
       miscName: "encumbrance",
-      miscCount: 2,
       numeric: ["level", "body_armor_encumbrance", "strength"],
     },
     (v) => {
@@ -1199,7 +1188,6 @@ function handleFatigueTolerance() {
   onGet(
     {
       miscName: "fatigue_tolerance",
-      miscCount: 2,
       numeric: ["level", "fatigue_tolerance_base", "constitution", "willpower"],
     },
     (v) => {
@@ -1222,7 +1210,6 @@ function handleHitPoints() {
   onGet(
     {
       miscName: "hit_points",
-      miscCount: 4,
       numeric: ["level", "constitution", "challenge_rating"],
     },
     {
@@ -1299,7 +1286,6 @@ function handleInitiative() {
   onGet(
     {
       miscName: "initiative",
-      miscCount: 3,
       numeric: ["dexterity", "perception", "fatigue_penalty"],
     },
     (v) => {
@@ -1316,7 +1302,6 @@ function handleInsightPoints() {
   onGet(
     {
       miscName: "insight_points",
-      miscCount: 3,
       numeric: ["insight_points_base", "intelligence"],
     },
     (v) => {
@@ -1335,7 +1320,6 @@ function handleLandSpeed() {
   onGet(
     {
       miscName: "speed",
-      miscCount: 2,
       numeric: ["level", "speed_size", "speed_armor"],
     },
     (v) => {
@@ -1366,7 +1350,6 @@ function handleNonArmorDefense(defense, attribute) {
   onGet(
     {
       miscName: defense,
-      miscCount: 3,
       numeric: [
         "level",
         attribute,
@@ -1393,7 +1376,6 @@ function handlePower() {
   onGet(
     {
       miscName: "power",
-      miscCount: 4,
       numeric: ["level", "class_power", "challenge_rating"],
     },
     (v) => {
@@ -1507,7 +1489,6 @@ function handleSkillPoints() {
   onGet(
     {
       miscName: "skill_points",
-      miscCount: 3,
       numeric: ["intelligence"],
     },
     (v) => {
@@ -1572,7 +1553,6 @@ function handleSkills() {
         {
           boolean: [`${skill}_is_trained`],
           miscName: skill,
-          miscCount: 4,
           numeric,
         },
         (v) => {
@@ -1939,7 +1919,7 @@ function handleUniversalAbilities() {
 }
 
 function handleUnknownStatistic() {
-  onGet({ miscCount: 4, miscName: "unknown_statistic" }, (v) => {
+  onGet({ miscName: "unknown_statistic" }, (v) => {
     setAttrs({
       unknown_statistic: v.misc,
     });
@@ -1949,7 +1929,6 @@ function handleUnknownStatistic() {
 function handleVitalRolls() {
   onGet(
     {
-      miscCount: 2,
       miscName: "vital_rolls",
       numeric: ["vital_roll_class", "vital_wound_count"],
     },
@@ -2032,7 +2011,6 @@ function handleVitalWounds() {
 function handleWeaponDamageDice() {
   onGet(
     {
-      miscCount: 5,
       miscName: "weapon_damage_dice",
       numeric: ["level", "challenge_rating"],
     },
