@@ -59,32 +59,12 @@ def nav_row():
         span({"class": "nav-button-label"}, "Modifiers"),
         radio_input(
             {
-                "class": "nav-button nav-button-page8",
-                "name": "nostore_navrow",
-                "value": "page8",
-            }
-        ),
-        span({"class": "nav-button-label"}, "Items"),
-        radio_input(
-            {
-                "class": "nav-button nav-button-page7",
-                "name": "nostore_navrow",
-                "value": "page7",
-            }
-        ),
-        span({"class": "nav-button-label"}, "Ref"),
-        checkbox(
-            {"class": "hidden is-monster", "name": "is_monster", "readonly": True}
-        ),
-        span({"class": "nav-button-label"}, "!Skills"),
-        radio_input(
-            {
                 "class": "nav-button nav-button-page4",
                 "name": "nostore_navrow",
                 "value": "page4",
             }
         ),
-        span({"class": "nav-button-label"}, "!Calcs"),
+        span({"class": "nav-button-label"}, "Items"),
         radio_input(
             {
                 "class": "nav-button nav-button-page5",
@@ -92,12 +72,32 @@ def nav_row():
                 "value": "page5",
             }
         ),
-        span({"class": "nav-button-label"}, "!Identity"),
+        span({"class": "nav-button-label"}, "Ref"),
         radio_input(
             {
                 "class": "nav-button nav-button-page6",
                 "name": "nostore_navrow",
                 "value": "page6",
             }
+        ),
+        span({"class": "nav-button-label"}, "!Skills"),
+        radio_input(
+            {
+                "class": "nav-button nav-button-page7",
+                "name": "nostore_navrow",
+                "value": "page7",
+            }
+        ),
+        span({"class": "nav-button-label"}, "!Calcs"),
+        radio_input(
+            {
+                "class": "nav-button nav-button-page8",
+                "name": "nostore_navrow",
+                "value": "page8",
+            }
+        ),
+        span({"class": "nav-button-label"}, "!Identity"),
+        checkbox(
+            {"class": "hidden is-monster", "name": "is_monster", "readonly": True}
         ),
     ]
