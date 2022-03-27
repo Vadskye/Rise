@@ -56,6 +56,26 @@ def nav_row():
                 "value": "page3",
             }
         ),
+        span({"class": "nav-button-label"}, "Modifiers"),
+        radio_input(
+            {
+                "class": "nav-button nav-button-page8",
+                "name": "nostore_navrow",
+                "value": "page8",
+            }
+        ),
+        span({"class": "nav-button-label"}, "Items"),
+        radio_input(
+            {
+                "class": "nav-button nav-button-page7",
+                "name": "nostore_navrow",
+                "value": "page7",
+            }
+        ),
+        span({"class": "nav-button-label"}, "Ref"),
+        checkbox(
+            {"class": "hidden is-monster", "name": "is_monster", "readonly": True}
+        ),
         span({"class": "nav-button-label"}, "!Skills"),
         radio_input(
             {
@@ -79,25 +99,5 @@ def nav_row():
                 "name": "nostore_navrow",
                 "value": "page6",
             }
-        ),
-        span({"class": "nav-button-label"}, "Items"),
-        radio_input(
-            {
-                "class": "nav-button nav-button-page7",
-                "name": "nostore_navrow",
-                "value": "page7",
-            }
-        ),
-        span({"class": "nav-button-label"}, "Modifiers"),
-        radio_input(
-            {
-                "class": "nav-button nav-button-page8",
-                "name": "nostore_navrow",
-                "value": "page8",
-            }
-        ),
-        span({"class": "nav-button-label"}, "Ref"),
-        checkbox(
-            {"class": "hidden is-monster", "name": "is_monster", "readonly": True}
         ),
     ]
