@@ -78,12 +78,13 @@ def creation_guidance():
                 "Species",
                 """
                     Choose your character's species.
-                    Any numeric effects from your species are calculated automatically, unless you choose a custom species.
-                    You should add any non-numeric special abilities from your species on the <b>Abilities</b> tab.
+                    Any simple numeric effects from your species are calculated automatically, unless you choose a custom species.
+                    You should add any non-trivial special abilities from your species on the <b>Abilities</b> or <b>Modifiers</b> tabs.
                 """,
                 select(
                     {"class": "species", "name": "species"},
                     [
+                        option({"value": ""}, ""),
                         option({"value": "human"}, "Human"),
                         option({"value": "dwarf"}, "Dwarf"),
                         option({"value": "elf"}, "Elf"),
@@ -141,6 +142,7 @@ def creation_guidance():
                 select(
                     {"class": "base-class", "name": "base_class"},
                     [
+                        option({"value": ""}, ""),
                         option({"value": "barbarian"}, "Barbarian"),
                         option({"value": "cleric"}, "Cleric"),
                         option({"value": "druid"}, "Druid"),
@@ -299,6 +301,7 @@ def trained_skill():
     return select(
         {"class": "trained-skill", "name": "trained_skill"},
         [
+            option({"value": ""}, ""),
             option({"value": "Awareness"}, "Awareness"),
             option({"value": "Balance"}, "Balance"),
             option({"value": "Climb"}, "Climb"),
