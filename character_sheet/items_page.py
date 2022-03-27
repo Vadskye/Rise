@@ -22,6 +22,7 @@ from cgi_simple import (
     underlabeled_checkbox,
     underlabel_spaced,
 )
+from status_page import custom_modifier
 
 
 def create_page(destination):
@@ -54,11 +55,11 @@ def create_page(destination):
                     attuned_effects_tracker(),
                     fieldset(
                         {"class": "repeating_attunements"},
-                        attunement(),
+                        custom_modifier(show_toggle=True),
                     ),
                 ]
                 if destination == "roll20"
-                else [attunement() for i in range(8)]
+                else [attunement() for _ in range(8)]
             ),
         ],
     )
