@@ -31,9 +31,9 @@ def create_page(_destination):
             div(
                 {"class": "tab-explanation"},
                 """
-                This tab is used to track temporary modifiers to your character's state.
-                Circumstances and debuffs that are not in <i>italics</i> automatically modify your statistics appropriately.
-                You can use custom modifiers for temporary effects, or to define complex abilities such as a barbarian's rage.
+                This tab is used to track changes to your character's statistics.
+                All standard debuffs and circumstances are listed here.
+                In addition, you can define custom modifiers to represent your character's various abilities.
             """,
             ),
             flex_row(
@@ -85,10 +85,15 @@ def create_page(_destination):
                     ),
                 ],
             ),
-            flex_wrapper(div({"class": "section-header"}, "Custom Modifiers")),
+            flex_wrapper(div({"class": "section-header"}, "Temporary Modifiers")),
             fieldset(
-                {"class": "repeating_custommodifiers"},
-                custom_modifier(),
+                {"class": "repeating_temporarymodifiers"},
+                custom_modifier(show_toggle=True),
+            ),
+            flex_wrapper(div({"class": "section-header"}, "Permanent Modifiers")),
+            fieldset(
+                {"class": "repeating_permanentmodifiers"},
+                custom_modifier(show_toggle=False),
             ),
             textarea(
                 {
@@ -192,15 +197,18 @@ def debuff(name, representable=True):
     )
 
 
-def custom_modifier():
+def custom_modifier(show_toggle):
     return (
         flex_row(
             {"class": "custom-modifier"},
             [
-                underlabeled_checkbox(
-                    "Active?",
-                    None,
-                    {"class": "is-active", "name": "is_active"},
+                (
+                    underlabeled_checkbox(
+                        "Active?",
+                        None,
+                        {"class": "is-active", "name": "is_active"},
+                    )
+                    if show_toggle else ""
                 ),
                 labeled_text_input(
                     "Name",
