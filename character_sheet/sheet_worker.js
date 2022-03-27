@@ -1,3 +1,17 @@
+const CUSTOM_MODIFIER_TYPES = ["attuned", "temporary", "permanent"];
+
+function sumCustomModifiers(v, prefix) {
+  let sum = 0;
+  for (const name of customModifierNames(prefix)) {
+    sum += v[name];
+  }
+  return sum;
+}
+
+function customModifierNames(prefix) {
+  return CUSTOM_MODIFIER_TYPES.map((t) => `${prefix}_${t}_modifier`);
+}
+
 // variable types: boolean, miscCount, miscName, numeric, string
 // options: { includeLevel?: Boolean, runOnSheetOpen?: Boolean }
 // This can be called with only two arguments, omitting `options`.
@@ -119,7 +133,7 @@ const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
   "mental",
 ]);
 
-// Multipliers to HP and resistances can't be incorporated into this simple handling
+// Multipliers to resistances can't be incorporated into this simple handling
 // because they are multipliers instead of modifiers.
 const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   "accuracy",
@@ -136,7 +150,9 @@ function generateMiscVariables(name, count) {
     variables.push(`${name}_misc_${i}`);
   }
   if (VARIABLES_WITH_CUSTOM_MODIFIERS.has(name)) {
-    variables.push(`${name}_custom_modifier`);
+    for (const modifierType of CUSTOM_MODIFIER_TYPES) {
+      variables.push(`${name}_${modifierType}_modifier`);
+    }
   }
   if (VARIABLES_WITH_DEBUFF_MODIFIERS.has(name)) {
     variables.push(`${name}_debuff_modifier`);
@@ -387,7 +403,6 @@ function handleArmorDefense() {
         "body_armor_defense_value",
         "shield_defense_value",
         "challenge_rating",
-        "all_defenses_custom_modifier",
         "all_defenses_vital_wound_modifier",
       ],
       string: ["body_armor_usage_class"],
@@ -416,7 +431,6 @@ function handleArmorDefense() {
         v.body_armor_defense_value +
         v.shield_defense_value +
         v.misc +
-        v.all_defenses_custom_modifier +
         v.all_defenses_vital_wound_modifier;
 
       setAttrs({
@@ -581,64 +595,84 @@ function handleAttunementPoints() {
 }
 
 function handleCustomModifiers() {
-  on(
-    "change:repeating_custommodifiers remove:repeating_custommodifiers",
-    function () {
-      const nestedCustomStatisticCount = 4;
-      const formatStatisticId = (id, i) =>
-        `repeating_custommodifiers_${id}_statistic${i}`;
-      const formatValueId = (id, i) =>
-        `repeating_custommodifiers_${id}_value${i}`;
-      const formatIsActiveId = (id) =>
-        `repeating_custommodifiers_${id}_is_active`;
+  for (const modifierType of CUSTOM_MODIFIER_TYPES) {
+    on(
+      `change:repeating_${modifierType}modifiers remove:repeating_${modifierType}modifiers`,
+      function () {
+        const nestedCustomStatisticCount = 4;
+        const formatStatisticId = (id, i) =>
+          `repeating_${modifierType}modifiers_${id}_statistic${i}`;
+        const formatValueId = (id, i) =>
+          `repeating_${modifierType}modifiers_${id}_value${i}`;
+        const formatIsActiveId = (id) =>
+          `repeating_${modifierType}modifiers_${id}_is_active`;
 
-      getSectionIDs("repeating_custommodifiers", (repeatingSectionIds) => {
-        const fullAttributeIds = [];
-        for (const id of repeatingSectionIds) {
-          fullAttributeIds.push(formatIsActiveId(id));
-          for (let i = 0; i < nestedCustomStatisticCount; i++) {
-            fullAttributeIds.push(formatStatisticId(id, i));
-            fullAttributeIds.push(formatValueId(id, i));
-          }
-        }
-        getAttrs(fullAttributeIds, (values) => {
-          const totalCustomModifiers = {};
-          for (const id of repeatingSectionIds) {
-            const isActive = values[formatIsActiveId(id)];
-            if (isActive === "on" || isActive == 1) {
+        getSectionIDs(
+          `repeating_${modifierType}modifiers`,
+          (repeatingSectionIds) => {
+            const fullAttributeIds = [];
+            for (const id of repeatingSectionIds) {
+              fullAttributeIds.push(formatIsActiveId(id));
               for (let i = 0; i < nestedCustomStatisticCount; i++) {
-                const modifiedStatistic = values[formatStatisticId(id, i)];
-                const value = Number(values[formatValueId(id, i)]) || 0;
-                totalCustomModifiers[modifiedStatistic] =
-                  (totalCustomModifiers[modifiedStatistic] || 0) + value;
+                fullAttributeIds.push(formatStatisticId(id, i));
+                fullAttributeIds.push(formatValueId(id, i));
               }
             }
+            getAttrs(fullAttributeIds, (values) => {
+              const totalCustomModifiers = {};
+              for (const id of repeatingSectionIds) {
+                // Permanent modifiers are always active; for temporary modifiers, we have
+                // to check the value from the checkbox
+                const isActive =
+                  modifierType === "temporary"
+                    ? values[formatIsActiveId(id)]
+                    : 1;
+                if (isActive === "on" || isActive == 1) {
+                  for (let i = 0; i < nestedCustomStatisticCount; i++) {
+                    const modifiedStatistic = values[formatStatisticId(id, i)];
+                    const value = Number(values[formatValueId(id, i)]) || 0;
+                    totalCustomModifiers[modifiedStatistic] =
+                      (totalCustomModifiers[modifiedStatistic] || 0) + value;
+                  }
+                }
+              }
+              setAttrs({
+                [`accuracy_${modifierType}_modifier`]:
+                  totalCustomModifiers.accuracy || 0,
+                [`all_skills_${modifierType}_modifier`]:
+                  totalCustomModifiers.all_skills || 0,
+                [`armor_defense_${modifierType}_modifier`]:
+                  (totalCustomModifiers.armor_defense || 0) +
+                  (totalCustomModifiers.all_defenses || 0),
+                [`damage_resistance_bonus_${modifierType}_modifier`]:
+                  totalCustomModifiers.damage_resistance_bonus || 0,
+                [`encumbrance_${modifierType}_modifier`]: -(
+                  totalCustomModifiers.encumbrance || 0
+                ),
+                [`fatigue_tolerance_${modifierType}_modifier`]:
+                  totalCustomModifiers.fatigue_tolerance || 0,
+                [`fortitude_${modifierType}_modifier`]:
+                  (totalCustomModifiers.fortitude || 0) +
+                  (totalCustomModifiers.all_defenses || 0),
+                [`hit_points_${modifierType}_modifier`]:
+                  totalCustomModifiers.hit_points || 0,
+                [`mental_${modifierType}_modifier`]:
+                  (totalCustomModifiers.mental || 0) +
+                  (totalCustomModifiers.all_defenses || 0),
+                [`power_${modifierType}_modifier`]:
+                  totalCustomModifiers.power || 0,
+                [`reflex_${modifierType}_modifier`]:
+                  (totalCustomModifiers.reflex || 0) +
+                  (totalCustomModifiers.all_defenses || 0),
+                [`vital_rolls_${modifierType}_modifier`]:
+                  totalCustomModifiers.vital_rolls || 0,
+              });
+            });
           }
-          setAttrs({
-            accuracy_custom_modifier: totalCustomModifiers.accuracy || 0,
-            all_defenses_custom_modifier:
-              totalCustomModifiers.all_defenses || 0,
-            all_skills_custom_modifier: totalCustomModifiers.all_skills || 0,
-            armor_defense_custom_modifier:
-              totalCustomModifiers.armor_defense || 0,
-            damage_resistance_bonus_custom_modifier:
-              totalCustomModifiers.damage_resistance_bonus || 0,
-            encumbrance_custom_modifier: -(
-              totalCustomModifiers.encumbrance || 0
-            ),
-            fatigue_tolerance_custom_modifier:
-              totalCustomModifiers.fatigue_tolerance || 0,
-            fortitude_custom_modifier: totalCustomModifiers.fortitude || 0,
-            hit_points_custom_modifier: totalCustomModifiers.hit_points || 0,
-            mental_custom_modifier: totalCustomModifiers.mental || 0,
-            power_custom_modifier: totalCustomModifiers.power || 0,
-            reflex_custom_modifier: totalCustomModifiers.reflex || 0,
-            vital_rolls_custom_modifier: totalCustomModifiers.vital_rolls || 0,
-          });
-        });
-      });
-    }
-  );
+        );
+      }
+    );
+  }
 }
 
 function handleDamageDice() {
@@ -713,7 +747,7 @@ function handleDamageResistance() {
           crMultiplier *
           // use math.max as a dumb hack so we can use negative values to mean "really zero,
           // don't || into 1"
-          (Math.max(0, v.damage_resistance_bonus_vital_wound_multiplier || 1))
+          Math.max(0, v.damage_resistance_bonus_vital_wound_multiplier || 1)
       );
 
       let attrs = {
@@ -1096,7 +1130,6 @@ function handleNonArmorDefense(defense, attribute) {
         attribute,
         `${defense}_class`,
         "challenge_rating",
-        "all_defenses_custom_modifier",
         "all_defenses_vital_wound_modifier",
       ],
     },
@@ -1106,7 +1139,6 @@ function handleNonArmorDefense(defense, attribute) {
         v[attribute] +
         v[`${defense}_class`] +
         v.misc +
-        v.all_defenses_custom_modifier +
         v.all_defenses_vital_wound_modifier;
       setAttrs({
         [defense]: totalValue,
@@ -1283,9 +1315,9 @@ function handleSkills() {
     for (let skill of SKILLS_BY_ATTRIBUTE[attribute]) {
       skill = skill.toLowerCase().replaceAll(" ", "_");
       const numeric = [
-        "all_skills_custom_modifier",
         "fatigue_penalty",
         "level",
+        ...customModifierNames("all_skills"),
       ];
       const shouldAddAttribute = attribute !== "other";
       const shouldSubtractEncumbrance =
@@ -1312,7 +1344,7 @@ function handleSkills() {
             fromTraining +
             attributeModifier +
             v.misc +
-            v.all_skills_custom_modifier -
+            sumCustomModifiers(v, "all_skills") -
             v.fatigue_penalty -
             encumbranceModifier;
           setAttrs({
@@ -1729,10 +1761,11 @@ function handleVitalWounds() {
             -countRolls(rolls, 8) * 2 - countRolls(rolls, 9);
           let speed_penalty =
             countRolls(rolls, 2) * -10 + countRolls(rolls, 3) * -5;
-          let resistance_multiplier = countRolls(rolls, 4) > 0
-          // dumb hack since we use || and I'm too lazy to fix it
-            ? -1
-            : 0.5 ** countRolls(rolls, 5);
+          let resistance_multiplier =
+            countRolls(rolls, 4) > 0
+              ? // dumb hack since we use || and I'm too lazy to fix it
+                -1
+              : 0.5 ** countRolls(rolls, 5);
           let attrs = {
             vital_wound_count: repeatingSectionIds.length,
 
