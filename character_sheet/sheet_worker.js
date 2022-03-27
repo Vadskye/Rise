@@ -1251,7 +1251,9 @@ function handleSkillPointsSpent() {
   const skills = [];
   for (const attributeSkills of Object.values(SKILLS_BY_ATTRIBUTE)) {
     for (const skill of attributeSkills) {
-      skills.push(skill);
+      if (skill) {
+        skills.push(skill);
+      }
     }
   }
   const skillsAreTrained = skills.map(
