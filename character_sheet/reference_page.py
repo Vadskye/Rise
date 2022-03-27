@@ -242,7 +242,7 @@ def character_statistics():
                         "Strike +d",
                         input_attributes={
                             "readonly": True,
-                            "name": "weapon_damage_dice",
+                            "name": "weapon_damage_dice_including_strength",
                         },
                     ),
                     labeled_number_input(
