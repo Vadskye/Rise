@@ -78,8 +78,7 @@ def creation_guidance():
                 "Species",
                 """
                     Choose your character's species.
-                    Any simple numeric effects from your species are calculated automatically, unless you choose a custom species.
-                    You should add any non-trivial special abilities from your species on the <b>Abilities</b> or <b>Modifiers</b> tabs.
+                    You should add any abilities from your species on the <b>Abilities</b> or <b>Modifiers</b> tabs.
                 """,
                 select(
                     {"class": "species", "name": "species"},
