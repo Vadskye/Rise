@@ -48,7 +48,7 @@ def nav_row():
                 "value": "page2",
             }
         ),
-        span({"class": "nav-button-label"}, "Skills"),
+        span({"class": "nav-button-label"}, "Creation"),
         radio_input(
             {
                 "class": "nav-button nav-button-page3",
@@ -56,7 +56,7 @@ def nav_row():
                 "value": "page3",
             }
         ),
-        span({"class": "nav-button-label"}, "Calcs"),
+        span({"class": "nav-button-label"}, "Skills"),
         radio_input(
             {
                 "class": "nav-button nav-button-page4",
@@ -64,7 +64,7 @@ def nav_row():
                 "value": "page4",
             }
         ),
-        span({"class": "nav-button-label"}, "Identity"),
+        span({"class": "nav-button-label"}, "Calcs"),
         radio_input(
             {
                 "class": "nav-button nav-button-page5",
@@ -72,7 +72,7 @@ def nav_row():
                 "value": "page5",
             }
         ),
-        span({"class": "nav-button-label"}, "Items"),
+        span({"class": "nav-button-label"}, "Old ID"),
         radio_input(
             {
                 "class": "nav-button nav-button-page6",
@@ -80,12 +80,20 @@ def nav_row():
                 "value": "page6",
             }
         ),
-        span({"class": "nav-button-label"}, "Status"),
+        span({"class": "nav-button-label"}, "Items"),
         radio_input(
             {
                 "class": "nav-button nav-button-page7",
                 "name": "nostore_navrow",
                 "value": "page7",
+            }
+        ),
+        span({"class": "nav-button-label"}, "Status"),
+        radio_input(
+            {
+                "class": "nav-button nav-button-page8",
+                "name": "nostore_navrow",
+                "value": "page8",
             }
         ),
         span({"class": "nav-button-label"}, "Ref"),
