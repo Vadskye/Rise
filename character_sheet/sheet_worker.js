@@ -171,6 +171,29 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor",
   },
 };
+// const SPECIES_MODIFIERS = {
+//   human: {
+//     insight_points: 1,
+//     nonclass_skill_count: 1,
+//   },
+//   dwarf: {
+//     constitution: 1,
+//     "craft (metal)": 2,
+//     "craft (stone)": 2,
+//     dexterity: -1,
+//     speed: -5,
+//   },
+//   elf: {
+//     constitution: -1,
+//     dexterity: 1,
+//     mental: 1,
+//     awareness: 2,
+//     balance: 2,
+//   },
+//   gnome: {
+
+//   },
+// };
 
 function sumCustomModifiers(v, prefix) {
   let sum = 0;
@@ -312,13 +335,18 @@ const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "armor_defense",
   "attunement_points",
   "class_skill_count",
+  "dexterity",
   "fatigue_tolerance",
   "fortitude",
   "insight_points",
+  "intelligence",
   "mental",
+  "perception",
   "reflex",
   "speed",
+  "strength",
   "vital_rolls",
+  "willpower",
 ]);
 
 const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
@@ -806,6 +834,8 @@ function handleCreationModifiers() {
       ]) {
         attrs[`${modifierKey}_creation_modifier`] = classModifiers[modifierKey];
       }
+
+      // const speciesModifiers = SPECIES_MODIFIERS[v.species];
 
       setAttrs(attrs);
     }
