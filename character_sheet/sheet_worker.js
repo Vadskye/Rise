@@ -204,9 +204,7 @@ function onGet(variables, options, callback = null) {
     variables.numeric.push("level");
   }
 
-  const miscVariables = generateMiscVariables(
-    variables.miscName,
-  );
+  const miscVariables = generateMiscVariables(variables.miscName);
 
   const changeVariables = [
     ...variables.boolean,
@@ -297,6 +295,8 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set([
 ]);
 
 // Class and species, mostly
+// Note: although class influences power, that is explicitly skipped here to resolve
+// timing issues
 const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "armor_defense",
   "attunement_points",
@@ -305,7 +305,6 @@ const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "fortitude",
   "insight_points",
   "mental",
-  "power",
   "reflex",
   "speed",
   "vital_rolls",
@@ -583,13 +582,12 @@ function handleArmorDefense() {
         "level",
         "dexterity",
         "constitution",
-        "armor_defense_class_bonus",
-        "body_armor_defense_value",
-        "shield_defense_value",
+        "body_armor_defense",
+        "shield_defense",
         "challenge_rating",
         "all_defenses_vital_wound_modifier",
       ],
-      string: ["body_armor_usage_class"],
+      string: ["body_armor_usage_class", "shield_usage_class"],
     },
     (v) => {
       // calculate attributeModifier
@@ -597,29 +595,31 @@ function handleArmorDefense() {
       if (v.challenge_rating > 0) {
         attributeModifier += Math.floor(v.constitution / 2);
       }
-      if (v.body_armor_usage_class === "medium" || v.challenge_rating > 0) {
+      const worstUsageClass =
+        v.body_armor_usage_class === "heavy" || v.shield_usage_class === "heavy"
+          ? "heavy"
+          : v.body_armor_usage_class === "medium" ||
+            v.shield_usage_class === "medium"
+          ? "medium"
+          : "light";
+      if (worstUsageClass === "medium" || v.challenge_rating > 0) {
         attributeModifier += Math.floor(v.dexterity / 2);
-      } else if (
-        v.body_armor_usage_class === "none" ||
-        v.body_armor_usage_class === "light"
-      ) {
+      } else if (worstUsageClass === "light") {
         attributeModifier += v.dexterity;
       }
 
       const beforeEquipment =
         attributeModifier +
-        calcDefenseLevelScaling(v.level, v.challenge_rating) +
-        v.armor_defense_class_bonus;
+        calcDefenseLevelScaling(v.level, v.challenge_rating);
       const totalValue =
         beforeEquipment +
-        v.body_armor_defense_value +
-        v.shield_defense_value +
+        v.body_armor_defense +
+        v.shield_defense +
         v.misc +
         v.all_defenses_vital_wound_modifier;
 
       setAttrs({
         armor_defense: totalValue,
-        body_armor_attribute: attributeModifier,
       });
     }
   );
@@ -752,10 +752,10 @@ function handleAttunementPoints() {
   onGet(
     {
       miscName: "attunement_points",
-      numeric: ["level", "attunement_points_from_class"],
+      numeric: ["level"],
     },
     (v) => {
-      const ap = v.attunement_points_from_class + v.misc;
+      const ap = v.misc;
       setAttrs({
         attunement_points: ap,
         attunement_points_max: ap,
@@ -765,6 +765,8 @@ function handleAttunementPoints() {
   );
 }
 
+// Note: although class influences power, that is explicitly skipped here to resolve
+// timing issues
 function handleCreationModifiers() {
   onGet(
     {
@@ -773,32 +775,6 @@ function handleCreationModifiers() {
     },
     (v) => {
       const classModifiers = BASE_CLASS_MODIFIERS[v.base_class];
-      // TODO: confirm that the rank is actually from the character's base class
-      const maxRank = Math.max(
-        v.archetype_rank_0,
-        v.archetype_rank_1,
-        v.archetype_rank_2
-      );
-      const classPowerProgression =
-        classModifiers.power === "high"
-          ? {
-              1: 2,
-              2: 3,
-              3: 4,
-              4: 6,
-              5: 8,
-              6: 12,
-              7: 16,
-            }
-          : {
-              1: 3,
-              2: 4,
-              3: 5,
-              4: 7,
-              5: 10,
-              6: 14,
-              7: 20,
-            };
 
       // Class proficiencies and class skill count aren't modifiers. They are simply
       // directly set, since nothing else can modify them.
@@ -819,8 +795,6 @@ function handleCreationModifiers() {
       ]) {
         attrs[`${modifierKey}_creation_modifier`] = classModifiers[modifierKey];
       }
-      // Power has its own weird calculation
-      attrs["power_creation_modifier"] = classPowerProgression[maxRank];
 
       setAttrs(attrs);
     }
@@ -923,7 +897,7 @@ function handleDamageResistance() {
         "constitution",
         "level",
         "challenge_rating",
-        "damage_resistance_bonus_armor",
+        "body_armor_damage_resistance",
         "damage_resistance_bonus_vital_wound_multiplier",
       ],
     },
@@ -975,7 +949,7 @@ function handleDamageResistance() {
         6: 16,
       }[v.challenge_rating || 0];
       const totalValue = Math.floor(
-        (fromLevel + v.damage_resistance_bonus_armor + v.misc) *
+        (fromLevel + v.body_armor_damage_resistance + v.misc) *
           crMultiplier *
           // use math.max as a dumb hack so we can use negative values to mean "really zero,
           // don't || into 1"
@@ -1158,12 +1132,20 @@ function handleEncumbrance() {
   onGet(
     {
       miscName: "encumbrance",
-      numeric: ["level", "body_armor_encumbrance", "strength"],
+      numeric: [
+        "level",
+        "body_armor_encumbrance",
+        "shield_encumbrance",
+        "strength",
+      ],
     },
     (v) => {
       const totalValue = Math.max(
         0,
-        v.body_armor_encumbrance - Math.max(0, v.strength) - v.misc
+        v.body_armor_encumbrance +
+          v.shield_encumbrance -
+          Math.max(0, v.strength) -
+          v.misc
       );
       setAttrs({ encumbrance: totalValue });
     }
@@ -1188,14 +1170,11 @@ function handleFatigueTolerance() {
   onGet(
     {
       miscName: "fatigue_tolerance",
-      numeric: ["level", "fatigue_tolerance_base", "constitution", "willpower"],
+      numeric: ["level", "constitution", "willpower"],
     },
     (v) => {
       const fromAttributes = v.constitution + Math.floor(v.willpower / 2);
-      const totalValue = Math.max(
-        0,
-        v.fatigue_tolerance_base + fromAttributes + v.misc
-      );
+      const totalValue = Math.max(0, fromAttributes + v.misc);
       setAttrs({
         fatigue_tolerance_attributes: fromAttributes,
         fatigue_tolerance: totalValue,
@@ -1302,13 +1281,10 @@ function handleInsightPoints() {
   onGet(
     {
       miscName: "insight_points",
-      numeric: ["insight_points_base", "intelligence"],
+      numeric: ["intelligence"],
     },
     (v) => {
-      const totalValue = Math.max(
-        0,
-        v.insight_points_base + v.intelligence + v.misc
-      );
+      const totalValue = Math.max(0, v.intelligence + v.misc);
       setAttrs({
         insight_points: totalValue,
       });
@@ -1353,7 +1329,6 @@ function handleNonArmorDefense(defense, attribute) {
       numeric: [
         "level",
         attribute,
-        `${defense}_class`,
         "challenge_rating",
         "all_defenses_vital_wound_modifier",
       ],
@@ -1362,7 +1337,6 @@ function handleNonArmorDefense(defense, attribute) {
       const totalValue =
         calcDefenseLevelScaling(v.level, v.challenge_rating) +
         v[attribute] +
-        v[`${defense}_class`] +
         v.misc +
         v.all_defenses_vital_wound_modifier;
       setAttrs({
@@ -1376,7 +1350,8 @@ function handlePower() {
   onGet(
     {
       miscName: "power",
-      numeric: ["level", "class_power", "challenge_rating"],
+      numeric: ["challenge_rating", "archetype_rank_0", "archetype_rank_1", "archetype_rank_2"],
+      string: ["base_class"],
     },
     (v) => {
       let levelScaling = v.challenge_rating
@@ -1403,8 +1378,37 @@ function handlePower() {
               6: 3,
             }[v.challenge_rating]
           : 0);
+
+      // TODO: confirm that the rank is actually from the character's base class
+      const maxRank = Math.max(
+        v.archetype_rank_0,
+        v.archetype_rank_1,
+        v.archetype_rank_2
+      );
+      const classPowerProgression =
+        BASE_CLASS_MODIFIERS[v.base_class].power === "high"
+          ? {
+              1: 3,
+              2: 4,
+              3: 5,
+              4: 7,
+              5: 10,
+              6: 14,
+              7: 20,
+            }
+          : {
+              1: 2,
+              2: 3,
+              3: 4,
+              4: 6,
+              5: 8,
+              6: 12,
+              7: 16,
+            };
+      const classPowerModifier = classPowerProgression[maxRank];
+
       setAttrs({
-        power: levelScaling + v.class_power + v.misc,
+        power: levelScaling + classPowerModifier + v.misc,
       });
     }
   );
