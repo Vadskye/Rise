@@ -699,7 +699,7 @@ def boring_stuff(destination):
                     labeled_text_input(
                         "Player name", input_attributes={"name": "player_name"}
                     ),
-                    labeled_text_input("Concept", input_attributes={"name": "concept"}),
+                    labeled_text_input("Experience", input_attributes={"name": "experience"}),
                     underlabel_spaced(
                         "Level",
                         number_input({"class": "fake-text", "name": "level"}),
