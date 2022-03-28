@@ -45,6 +45,7 @@ def create_page(destination):
                 It's the first place you should start using the sheet.
             """,
             creation_guidance(),
+            subskill_rowids(),
         ],
     )
 
@@ -118,10 +119,12 @@ def creation_guidance():
                             "Dex", input_attributes={"name": f"dexterity_at_creation"}
                         ),
                         labeled_number_input(
-                            "Con", input_attributes={"name": f"constitution_at_creation"}
+                            "Con",
+                            input_attributes={"name": f"constitution_at_creation"},
                         ),
                         labeled_number_input(
-                            "Int", input_attributes={"name": f"intelligence_at_creation"}
+                            "Int",
+                            input_attributes={"name": f"intelligence_at_creation"},
                         ),
                         labeled_number_input(
                             "Per", input_attributes={"name": f"perception_at_creation"}
@@ -297,54 +300,70 @@ def skills_step():
 
 
 def trained_skill():
-    return select(
-        {"class": "trained-skill", "name": "trained_skill"},
+    return div(
         [
-            option({"value": ""}, ""),
-            option({"value": "Awareness"}, "Awareness"),
-            option({"value": "Balance"}, "Balance"),
-            option({"value": "Climb"}, "Climb"),
-            option({"value": "Craft (alchemy)"}, "Craft (alchemy)"),
-            option({"value": "Craft (bone)"}, "Craft (bone)"),
-            option({"value": "Craft (ceramics)"}, "Craft (ceramics)"),
-            option({"value": "Craft (jewelry)"}, "Craft (jewelry)"),
-            option({"value": "Craft (leather)"}, "Craft (leather)"),
-            option({"value": "Craft (manuscripts)"}, "Craft (manuscripts)"),
-            option({"value": "Craft (metal)"}, "Craft (metal)"),
-            option({"value": "Craft (poison)"}, "Craft (poison)"),
-            option({"value": "Craft (stone)"}, "Craft (stone)"),
-            option({"value": "Craft (textiles)"}, "Craft (textiles)"),
-            option({"value": "Craft (traps)"}, "Craft (traps)"),
-            option({"value": "Craft (wood)"}, "Craft (wood)"),
-            option({"value": "Creature Handling"}, "Creature Handling"),
-            option({"value": "Deception"}, "Deception"),
-            option({"value": "Deduction"}, "Deduction"),
-            option({"value": "Devices"}, "Devices"),
-            option({"value": "Disguise"}, "Disguise"),
-            option({"value": "Endurance"}, "Endurance"),
-            option({"value": "Flexibility"}, "Flexibility"),
-            option({"value": "Intimidate"}, "Intimidate"),
-            option({"value": "Jump"}, "Jump"),
-            option({"value": "Knowledge (arcana)"}, "Knowledge (arcana)"),
-            option({"value": "Knowledge (dungeoneering)"}, "Knowledge (dungeoneering)"),
-            option({"value": "Knowledge (engineering)"}, "Knowledge (engineering)"),
-            option({"value": "Knowledge (items)"}, "Knowledge (items)"),
-            option({"value": "Knowledge (local)"}, "Knowledge (local)"),
-            option({"value": "Knowledge (nature)"}, "Knowledge (nature)"),
-            option({"value": "Knowledge (planes)"}, "Knowledge (planes)"),
-            option({"value": "Knowledge (religion)"}, "Knowledge (religion)"),
-            option({"value": "Linguistics"}, "Linguistics"),
-            option({"value": "Medicine"}, "Medicine"),
-            option({"value": "Perform"}, "Perform"),
-            option({"value": "Persuasion"}, "Persuasion"),
-            option({"value": "Profession"}, "Profession"),
-            option({"value": "Ride"}, "Ride"),
-            option({"value": "Sleight of Hand"}, "Sleight of Hand"),
-            option({"value": "Social Insight"}, "Social Insight"),
-            option({"value": "Stealth"}, "Stealth"),
-            option({"value": "Survival"}, "Survival"),
-            option({"value": "Swim"}, "Swim"),
-        ],
+            select(
+                {"class": "trained-skill", "name": "trained_skill"},
+                [
+                    option({"value": ""}, ""),
+                    option({"value": "Awareness"}, "Awareness"),
+                    option({"value": "Balance"}, "Balance"),
+                    option({"value": "Climb"}, "Climb"),
+                    option({"value": "Craft (alchemy)"}, "Craft (alchemy)"),
+                    option({"value": "Craft (bone)"}, "Craft (bone)"),
+                    option({"value": "Craft (ceramics)"}, "Craft (ceramics)"),
+                    option({"value": "Craft (jewelry)"}, "Craft (jewelry)"),
+                    option({"value": "Craft (leather)"}, "Craft (leather)"),
+                    option({"value": "Craft (manuscripts)"}, "Craft (manuscripts)"),
+                    option({"value": "Craft (metal)"}, "Craft (metal)"),
+                    option({"value": "Craft (poison)"}, "Craft (poison)"),
+                    option({"value": "Craft (stone)"}, "Craft (stone)"),
+                    option({"value": "Craft (textiles)"}, "Craft (textiles)"),
+                    option({"value": "Craft (traps)"}, "Craft (traps)"),
+                    option({"value": "Craft (wood)"}, "Craft (wood)"),
+                    option({"value": "Creature Handling"}, "Creature Handling"),
+                    option({"value": "Deception"}, "Deception"),
+                    option({"value": "Deduction"}, "Deduction"),
+                    option({"value": "Devices"}, "Devices"),
+                    option({"value": "Disguise"}, "Disguise"),
+                    option({"value": "Endurance"}, "Endurance"),
+                    option({"value": "Flexibility"}, "Flexibility"),
+                    option({"value": "Intimidate"}, "Intimidate"),
+                    option({"value": "Jump"}, "Jump"),
+                    option({"value": "Knowledge (arcana)"}, "Knowledge (arcana)"),
+                    option(
+                        {"value": "Knowledge (dungeoneering)"},
+                        "Knowledge (dungeoneering)",
+                    ),
+                    option(
+                        {"value": "Knowledge (engineering)"}, "Knowledge (engineering)"
+                    ),
+                    option({"value": "Knowledge (items)"}, "Knowledge (items)"),
+                    option({"value": "Knowledge (local)"}, "Knowledge (local)"),
+                    option({"value": "Knowledge (nature)"}, "Knowledge (nature)"),
+                    option({"value": "Knowledge (planes)"}, "Knowledge (planes)"),
+                    option({"value": "Knowledge (religion)"}, "Knowledge (religion)"),
+                    option({"value": "Linguistics"}, "Linguistics"),
+                    option({"value": "Medicine"}, "Medicine"),
+                    option({"value": "Perform"}, "Perform"),
+                    option({"value": "Persuasion"}, "Persuasion"),
+                    option({"value": "Profession"}, "Profession"),
+                    option({"value": "Ride"}, "Ride"),
+                    option({"value": "Sleight of Hand"}, "Sleight of Hand"),
+                    option({"value": "Social Insight"}, "Social Insight"),
+                    option({"value": "Stealth"}, "Stealth"),
+                    option({"value": "Survival"}, "Survival"),
+                    option({"value": "Swim"}, "Swim"),
+                ],
+            ),
+            text_input(
+                {
+                    "class": "hidden",
+                    "name": "front_rowid",
+                    "readonly": True,
+                }
+            ),
+        ]
     )
 
 
@@ -359,4 +378,40 @@ def feats_step():
             {"class": "repeating_feats"},
             labeled_text_input("Feat name", input_attributes={"name": "feat_name"}),
         ),
+    )
+
+
+def subskill_rowids():
+    return span(
+        {"class": "hidden"},
+        [
+            text_input({"name": "craft_alchemy_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_bone_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_ceramics_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_jewelry_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_leather_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_manuscripts_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_metal_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_poison_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_stone_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_textiles_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_traps_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_wood_subskill_rowid", "readonly": True}),
+            text_input({"name": "craft_untrained_subskill_rowid", "readonly": True}),
+            text_input({"name": "knowledge_arcana_subskill_rowid", "readonly": True}),
+            text_input(
+                {"name": "knowledge_dungeoneering_subskill_rowid", "readonly": True}
+            ),
+            text_input(
+                {"name": "knowledge_engineering_subskill_rowid", "readonly": True}
+            ),
+            text_input({"name": "knowledge_items_subskill_rowid", "readonly": True}),
+            text_input({"name": "knowledge_local_subskill_rowid", "readonly": True}),
+            text_input({"name": "knowledge_nature_subskill_rowid", "readonly": True}),
+            text_input({"name": "knowledge_planes_subskill_rowid", "readonly": True}),
+            text_input({"name": "knowledge_religion_subskill_rowid", "readonly": True}),
+            text_input(
+                {"name": "knowledge_untrained_subskill_rowid", "readonly": True}
+            ),
+        ],
     )
