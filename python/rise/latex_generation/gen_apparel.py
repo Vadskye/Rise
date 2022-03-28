@@ -1614,6 +1614,31 @@ def generate_apparel():
             short_description="Contains ten very large pockets",
         ),
     ]
+    
+    apparel += [
+        MagicItem(
+            name="Refreshing Belt",
+            level=11,
+            material_type="Belt",
+            tags=[],
+            description="""
+                As a minor action, you can activate this belt.
+                When you do, you increase your \\glossterm<fatigue tolerance> by 2 until you take a short or long rest.
+                After you use this ability, you cannot use it again until you take a long rest.
+            """,
+            short_description="Increases your fatigue tolerance",
+        ),
+        MagicItem(
+            name="Refreshing Belt, Greater",
+            level=16,
+            material_type="Belt",
+            tags=[],
+            description="""
+                This belt functions like a \\mitem<refreshing belt>, except that it increases your \\glossterm<fatigue tolerance> by 4 when activated.
+            """,
+            short_description="Greatly increases your fatigue tolerance",
+        ),
+    ]
 
     apparel += [
         MagicItem(
