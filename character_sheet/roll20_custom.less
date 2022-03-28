@@ -31,13 +31,15 @@ div.full-sheet {
     }
 
     input[type=number]:disabled::-webkit-inner-spin-button,
-    input[type=number]:disabled::-webkit-outer-spin-button {
+    input[type=number]:disabled::-webkit-outer-spin-button,
+    input[type=number]:read-only::-webkit-inner-spin-button,
+    input[type=number]:read-only::-webkit-outer-spin-button {
         -webkit-appearance: none;
         display: none;
         margin: 0;
     }
 
-    input[type=number]:disabled {
+    input[type=number]:disabled, input[type=number]:read-only {
         -moz-appearance: textfield;
     }
 
@@ -91,7 +93,7 @@ div.full-sheet {
             }
         }
 
-        input[type=number]:disabled {
+        input[type=number]:disabled, input[type=number]:read-only {
             box-shadow: none;
             border: none;
             font-family: inherit;
@@ -104,7 +106,7 @@ div.full-sheet {
     }
 
     // fix buttons that have nested inputs in firefox
-    button > input:disabled {
+    button > input:disabled, button > input:read-only {
         pointer-events: none;
     }
 

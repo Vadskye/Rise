@@ -194,7 +194,7 @@ def attribute_section(attribute):
 
 def skill_box(name):
     if name in SUBSKILLS:
-        return subskill_box(name)
+        return subskill_section(name)
 
     formatted_skill = name.lower().replace(" ", "_")
     return flex_row(
@@ -211,43 +211,84 @@ def skill_box(name):
             ),
             number_input(
                 {
-                    "disabled": True,
-                    "name": formatted_skill + "_total_display",
-                    "value": "@{" + formatted_skill + "_total}",
+                    "readonly": True,
+                    "name": formatted_skill,
                 }
             ),
         ],
     )
 
 
-def subskill_box(name):
-    formatted_skill = name.lower().replace(" ", "_")
-    visible_skill_name = re.sub("\\d", "", name).title()
+def subskill_section(name):
+    parseable_name = name.lower()
+    return div(
+        [
+            untrained_subskill_box(name, parseable_name),
+            fieldset(
+                {"class": f"repeating_{parseable_name}subskills"},
+                subskill_box(name, parseable_name),
+            ),
+        ]
+    )
+
+
+def subskill_box(display_name, parseable_name):
     return flex_row(
-        {"class": "skill-box"},
+        {"class": f"skill-box {parseable_name}-box"},
         [
             subtlebutton(
                 {
                     "class": "skill-button",
-                    "name": f"roll_skill_{formatted_skill}",
+                    "name": f"roll_subskill",
                     "type": "roll",
-                    "value": f"@{{character_name}} uses {visible_skill_name} (@{{{formatted_skill}_type}}): [[d10 + @{{{formatted_skill}_total}}]]",
+                    "value": "@{subskill_button}",
                 },
-                visible_skill_name,
+                text_input(
+                    {
+                        "class": "subskill-name",
+                        "readonly": "true",
+                        "name": "subskill_name",
+                    }
+                ),
             ),
-            text_input(
+            textarea(
                 {
-                    "class": "subskill-type",
-                    "disabled": True,
-                    "name": f"{formatted_skill}_type_display",
-                    "value": f"@{{{formatted_skill}_type}}",
+                    "class": "hidden",
+                    "readonly": True,
+                    "name": "subskill_button",
                 }
             ),
             number_input(
                 {
-                    "disabled": True,
-                    "name": formatted_skill + "_total_display",
-                    "value": "@{" + formatted_skill + "_total}",
+                    "readonly": True,
+                    "name": "subskill_modifier",
+                }
+            ),
+        ],
+    )
+
+
+def untrained_subskill_box(display_name, parseable_name):
+    return flex_row(
+        {"class": f"skill-box {parseable_name}-box"},
+        [
+            subtlebutton(
+                {
+                    "class": "skill-button",
+                    "name": f"roll_subskill",
+                    "type": "roll",
+                    "value": "@{character_name} uses "
+                    + display_name
+                    + " (untrained): [[d10 + @{"
+                    + parseable_name
+                    + "_untrained}]]",
+                },
+                span({"class": "subskill-name"}, f"{display_name} (untrained)"),
+            ),
+            number_input(
+                {
+                    "readonly": True,
+                    "name": f"{parseable_name}_untrained",
                 }
             ),
         ],
@@ -492,7 +533,10 @@ def movement(destination):
             *[
                 freeform_number_input(
                     text_input_attributes={"name": f"movement_speed_{i}_name"},
-                    number_input_attributes={"class": "large-number-input", "name": f"movement_speed_{i}_value"},
+                    number_input_attributes={
+                        "class": "large-number-input",
+                        "name": f"movement_speed_{i}_value",
+                    },
                 )
                 for i in range(2)
             ],
@@ -592,7 +636,13 @@ def active_ability_button(ability_type):
             text_input(
                 {"class": "hidden", "readonly": True, "name": prefix + "_defense"}
             ),
-            text_input({"class": "hidden", "readonly": True, "name": "calculated_dice_and_modifier"}),
+            text_input(
+                {
+                    "class": "hidden",
+                    "readonly": True,
+                    "name": "calculated_dice_and_modifier",
+                }
+            ),
             text_input(
                 {"class": "hidden", "readonly": True, "name": "calculated_dice_pool"}
             ),
@@ -699,7 +749,9 @@ def boring_stuff(destination):
                     labeled_text_input(
                         "Player name", input_attributes={"name": "player_name"}
                     ),
-                    labeled_text_input("Experience", input_attributes={"name": "experience"}),
+                    labeled_text_input(
+                        "Experience", input_attributes={"name": "experience"}
+                    ),
                     underlabel_spaced(
                         "Level",
                         number_input({"class": "fake-text", "name": "level"}),

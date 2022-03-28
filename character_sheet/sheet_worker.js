@@ -283,58 +283,86 @@ function boolifySheetValue(val) {
 }
 
 const SKILLS_BY_ATTRIBUTE = {
-  strength: ["Climb", "Jump", "Swim"],
-  dexterity: ["Balance", "Flexibility", "Ride", "Sleight of Hand", "Stealth"],
+  strength: ["climb", "jump", "swim"],
+  dexterity: ["balance", "flexibility", "ride", "sleight_of_hand", "stealth"],
   constitution: ["Endurance"],
   intelligence: [
-    "Craft1",
-    "Craft2",
-    "Deduction",
-    "Devices",
-    "Disguise",
-    "Knowledge1",
-    "Knowledge2",
-    "Linguistics",
-    "Medicine",
+    "craft_alchemy",
+    "craft_bone",
+    "craft_ceramics",
+    "craft_jewelry",
+    "craft_leather",
+    "craft_manuscripts",
+    "craft_metal",
+    "craft_poison",
+    "craft_stone",
+    "craft_textiles",
+    "craft_traps",
+    "craft_wood",
+    "craft_untrained",
+    "deduction",
+    "devices",
+    "disguise",
+    "knowledge_arcana",
+    "knowledge_dungeoneering",
+    "knowledge_engineering",
+    "knowledge_items",
+    "knowledge_local",
+    "knowledge_nature",
+    "knowledge_planes",
+    "knowledge_religion",
+    "knowledge_untrained",
+    "linguistics",
+    "medicine",
   ],
-  perception: ["Awareness", "Creature Handling", "Social Insight", "Survival"],
+  perception: ["awareness", "creature_handling", "social_insight", "survival"],
   willpower: [],
-  other: [
-    "Deception",
-    "Intimidate",
-    "Perform1",
-    "Perform2",
-    "Persuasion",
-    "Profession",
-  ],
+  other: ["deception", "intimidate", "perform", "persuasion", "profession"],
 };
 
-const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set([
-  "accuracy",
-  "all_defenses",
-  "all_skills",
-  "armor_defense",
-  "attunement_points",
-  "constitution",
-  "damage_resistance_bonus",
-  "dexterity",
-  "encumbrance",
-  "fatigue_tolerance",
-  "fortitude",
-  "hit_points",
-  "insight_points",
-  "intelligence",
-  "mental",
-  "perception",
-  "power",
-  "reflex",
-  "speed",
-  "strength",
-  "weapon_damage_dice",
-  "nonclass_skill_count",
-  "vital_rolls",
-  "willpower",
-]);
+const ALL_SKILLS = Object.values(SKILLS_BY_ATTRIBUTE).flat();
+
+const SKILLS_WITH_SUBSKILLS = ["craft", "knowledge"];
+
+function formatParseableSkillName(skillName) {
+  if (!skillName) {
+    return null;
+  }
+  return skillName
+    .toLowerCase()
+    .replaceAll(" ", "_")
+    .replaceAll("(", "")
+    .replaceAll(")", "");
+}
+
+const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
+  [
+    "accuracy",
+    "all_defenses",
+    "all_skills",
+    "armor_defense",
+    "attunement_points",
+    "constitution",
+    "damage_resistance_bonus",
+    "dexterity",
+    "encumbrance",
+    "fatigue_tolerance",
+    "fortitude",
+    "hit_points",
+    "insight_points",
+    "intelligence",
+    "mental",
+    "perception",
+    "power",
+    "reflex",
+    "speed",
+    "strength",
+    "weapon_damage_dice",
+    "nonclass_skill_count",
+    "vital_rolls",
+    "willpower",
+  ].concat(ALL_SKILLS)
+);
 
 // Class and species, mostly
 // Note: although class influences power, that is explicitly skipped here to resolve
@@ -448,7 +476,7 @@ function handleResources() {
   handleFatigueTolerance();
   handleInsightPoints();
   handleSkillPoints();
-  handleSkillPointsSpent();
+  handleTrainedSkills();
 }
 
 function addDiceIncrements(count, size, increments) {
@@ -778,21 +806,24 @@ function handleAttributes() {
 }
 
 function handleAttunedEffects() {
-  on("change:repeating_attunedmodifiers remove:repeating_attunedmodifiers", function () {
-    getSectionIDs("repeating_attunedmodifiers", (repeatingSectionIds) => {
-      const isActiveIds = repeatingSectionIds.map(
-        (id) => `repeating_attunedmodifiers_${id}_is_active`
-      );
-      getAttrs(isActiveIds, (values) => {
-        const activeAbilities = isActiveIds.filter(
-          (id) => values[id] == 1 || values[id] == "on"
+  on(
+    "change:repeating_attunedmodifiers remove:repeating_attunedmodifiers",
+    function () {
+      getSectionIDs("repeating_attunedmodifiers", (repeatingSectionIds) => {
+        const isActiveIds = repeatingSectionIds.map(
+          (id) => `repeating_attunedmodifiers_${id}_is_active`
         );
-        setAttrs({
-          active_attunement_count: activeAbilities.length,
+        getAttrs(isActiveIds, (values) => {
+          const activeAbilities = isActiveIds.filter(
+            (id) => values[id] == 1 || values[id] == "on"
+          );
+          setAttrs({
+            active_attunement_count: activeAbilities.length,
+          });
         });
       });
-    });
-  });
+    }
+  );
 }
 
 function handleAttunementPoints() {
@@ -1534,16 +1565,89 @@ function handleSkillPoints() {
   );
 }
 
-function handleSkillPointsSpent() {
-  const skills = [];
-  for (const attributeSkills of Object.values(SKILLS_BY_ATTRIBUTE)) {
-    for (const skill of attributeSkills) {
-      if (skill) {
-        skills.push(skill);
+function handleTrainedSkills() {
+  on(`change:repeating_trainedskills`, function (eventInfo) {
+    const trainedSkill = formatParseableSkillName(eventInfo.newValue);
+    const untrainedSkill = formatParseableSkillName(eventInfo.previousValue);
+
+    const attrs = {};
+    if (trainedSkill) {
+      attrs[`${trainedSkill}_is_trained`] = "1";
+    }
+    if (untrainedSkill && untrainedSkill !== trainedSkill) {
+      attrs[`${untrainedSkill}_is_trained`] = "0";
+    }
+
+    let untrainedFromRootSkill = null;
+    for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
+      if (trainedSkill && trainedSkill.startsWith(skillWithSubskill)) {
+        const subskill = trainedSkill.replace(skillWithSubskill + "_", "");
+        const rowId = generateRowID();
+        const prefix = `repeating_${skillWithSubskill}subskills_${rowId}`;
+        attrs[`${trainedSkill}_subskill_rowid`] = rowId;
+        attrs[
+          `${prefix}_subskill_modifier_name`
+        ] = `${skillWithSubskill}_${subskill}`;
+        const fullSkillDescriptor = uppercaseFirstLetter(skillWithSubskill) + ` (${subskill})`;
+        attrs[`${prefix}_subskill_button`] =
+          `@{character_name} uses ${fullSkillDescriptor}:` +
+          ` [[d10 + @{${trainedSkill}}]]`;
+        attrs[`${prefix}_subskill_name`] = `(${subskill})`;
+        attrs[`${eventInfo.triggerName}_front_rowid`] = rowId;
+      }
+
+      if (
+        untrainedSkill &&
+        untrainedSkill !== trainedSkill &&
+        untrainedSkill.startsWith(skillWithSubskill)
+      ) {
+        untrainedFromRootSkill = skillWithSubskill;
       }
     }
-  }
-  const skillsAreTrained = skills.map(
+
+    // Need to resolve the whole getAttrs flow before calling setAttrs
+    if (untrainedFromRootSkill) {
+      const rowIdKey = `${eventInfo.triggerName}_front_rowid`;
+      getAttrs([rowIdKey], (v) => {
+        const rowId = v[rowIdKey];
+        removeRepeatingRow(
+          `repeating_${untrainedFromRootSkill}subskills_${rowId}`
+        );
+        attrs[`${untrainedSkill}_subskill_rowid`] = "";
+        setAttrs(attrs);
+      });
+    } else {
+      setAttrs(attrs);
+    }
+  });
+
+  on(`remove:repeating_trainedskills`, function (eventInfo) {
+    const skillNameKey = Object.keys(eventInfo.removedInfo).find((k) =>
+      k.endsWith("trained_skill")
+    );
+    const untrainedSkill = formatParseableSkillName(
+      eventInfo.removedInfo[skillNameKey]
+    );
+    if (!untrainedSkill) {
+      return;
+    }
+    const attrs = {
+      [`${untrainedSkill}_is_trained`]: "0",
+    };
+    for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
+      if (untrainedSkill.startsWith(skillWithSubskill)) {
+        const rowIdKey = Object.keys(eventInfo.removedInfo).find((k) =>
+          k.endsWith("front_rowid")
+        );
+        const rowId = eventInfo.removedInfo[rowIdKey];
+        removeRepeatingRow(`repeating_${skillWithSubskill}subskills_${rowId}`);
+        attrs[`${untrainedSkill}_subskill_rowid`] = "";
+      }
+    }
+    setAttrs(attrs);
+  });
+
+  const skillsAreTrained = ALL_SKILLS.map(
     (s) => s.toLowerCase().replaceAll(" ", "_") + "_is_trained"
   );
 
@@ -1568,7 +1672,6 @@ function handleSkillPointsSpent() {
 function handleSkills() {
   for (const attribute of Object.keys(SKILLS_BY_ATTRIBUTE)) {
     for (let skill of SKILLS_BY_ATTRIBUTE[attribute]) {
-      skill = skill.toLowerCase().replaceAll(" ", "_");
       const numeric = [
         "fatigue_penalty",
         "level",
@@ -1588,6 +1691,7 @@ function handleSkills() {
           boolean: [`${skill}_is_trained`],
           miscName: skill,
           numeric,
+          string: [`${skill}_subskill_rowid`],
         },
         (v) => {
           const isTrained = v[`${skill}_is_trained`];
@@ -1601,16 +1705,33 @@ function handleSkills() {
             sumCustomModifiers(v, "all_skills") -
             v.fatigue_penalty -
             encumbranceModifier;
-          setAttrs({
+
+          const attrs = {
             [`${skill}_attribute`]: attributeModifier,
             [`${skill}_level`]: fromTraining,
             [`${skill}_total`]: skillValue,
             [skill]: skillValue,
-          });
+          };
+
+          const rowId = v[`${skill}_subskill_rowid`];
+          if (rowId) {
+            // This is fragile - if either the base skill could contain
+            // multiple words, we'd need more clever handling
+            const [baseSkill] = skill.split("_");
+            attrs[
+              `repeating_${baseSkill}subskills_${rowId}_subskill_modifier`
+            ] = skillValue;
+          }
+
+          setAttrs(attrs);
         }
       );
     }
   }
+}
+
+function uppercaseFirstLetter(str) {
+  return str[0].toUpperCase() + str.slice(1);
 }
 
 function handleDicePoolAttributes() {
@@ -2053,7 +2174,8 @@ function handleWeaponDamageDice() {
       const totalValue = fromCr + v.misc;
       setAttrs({
         weapon_damage_dice: totalValue,
-        weapon_damage_dice_including_strength: totalValue + Math.floor(v.strength / 2),
+        weapon_damage_dice_including_strength:
+          totalValue + Math.floor(v.strength / 2),
       });
     }
   );
