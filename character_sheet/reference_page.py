@@ -43,7 +43,7 @@ def create_page(_destination):
                     common_concepts(),
                 ],
             ),
-            character_statistics(),
+            character_reference(),
         ],
     )
 
@@ -224,7 +224,7 @@ def common_concepts():
     )
 
 
-def character_statistics():
+def character_reference():
     return flex_col(
         [
             div({"class": "section-header"}, "Core Statistics"),
@@ -254,6 +254,13 @@ def character_statistics():
                         input_attributes={"readonly": True, "name": "vital_rolls"},
                     ),
                 ],
+            ),
+            div({"class": "section-header"}, "Abilities Chosen"),
+            textarea(
+                {
+                    "class": "all-abilities-known",
+                    "name": "abilities_chosen",
+                }
             ),
         ]
     )
