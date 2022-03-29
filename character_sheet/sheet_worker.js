@@ -1,4 +1,221 @@
-// variable types: boolean, miscCount, miscName, numeric, string
+const CUSTOM_MODIFIER_TYPES = ["attuned", "temporary", "permanent"];
+const BASE_CLASS_MODIFIERS = {
+  barbarian: {
+    power: "fast",
+    armor_defense: 0,
+    fortitude: 7,
+    reflex: 5,
+    mental: 3,
+    vital_rolls: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 5,
+    insight_points: 0,
+    class_skill_count: 5,
+    proficiencies: "Light and medium armor, one weapon group",
+  },
+  cleric: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 5,
+    reflex: 3,
+    mental: 7,
+    vital_rolls: 0,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
+    insight_points: 2,
+    class_skill_count: 4,
+    proficiencies: "Light and medium armor",
+  },
+  druid: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 5,
+    reflex: 4,
+    mental: 6,
+    vital_rolls: 0,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
+    insight_points: 2,
+    class_skill_count: 5,
+    proficiencies: "Light armor, hide armor, scimitars, and sickles",
+  },
+  fighter: {
+    power: "normal",
+    armor_defense: 1,
+    fortitude: 7,
+    reflex: 3,
+    mental: 4,
+    vital_rolls: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 5,
+    insight_points: 1,
+    class_skill_count: 3,
+    proficiencies: "All armor, two weapon groups",
+  },
+  monk: {
+    power: "normal",
+    armor_defense: 1,
+    fortitude: 3,
+    reflex: 6,
+    mental: 5,
+    vital_rolls: 0,
+    attunement_points: 4,
+    fatigue_tolerance: 5,
+    insight_points: 2,
+    class_skill_count: 5,
+    proficiencies: "Light armor, monk weapons",
+  },
+  paladin: {
+    power: "normal",
+    armor_defense: 1,
+    fortitude: 6,
+    reflex: 3,
+    mental: 5,
+    vital_rolls: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 5,
+    insight_points: 1,
+    class_skill_count: 4,
+    proficiencies: "All armor, one weapon group",
+  },
+  ranger: {
+    power: "normal",
+    armor_defense: 1,
+    fortitude: 5,
+    reflex: 5,
+    mental: 4,
+    vital_rolls: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 5,
+    insight_points: 2,
+    class_skill_count: 5,
+    proficiencies:
+      "Light armor, hide armor, one weapon group, and one ranged weapon group",
+  },
+  rogue: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 3,
+    reflex: 7,
+    mental: 5,
+    vital_rolls: 0,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
+    insight_points: 2,
+    class_skill_count: 7,
+    proficiencies: "Light armor, one weapon group, and saps",
+  },
+  sorcerer: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 3,
+    reflex: 5,
+    mental: 7,
+    vital_rolls: 0,
+    attunement_points: 5,
+    fatigue_tolerance: 4,
+    insight_points: 2,
+    class_skill_count: 3,
+    proficiencies: "None",
+  },
+  warlock: {
+    power: "high",
+    armor_defense: 0,
+    fortitude: 5,
+    reflex: 3,
+    mental: 7,
+    vital_rolls: 0,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
+    insight_points: 1,
+    class_skill_count: 4,
+    proficiencies: "Light armor",
+  },
+  wizard: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 3,
+    reflex: 5,
+    mental: 7,
+    vital_rolls: 0,
+    attunement_points: 5,
+    fatigue_tolerance: 3,
+    insight_points: 2,
+    class_skill_count: 5,
+    proficiencies: "None",
+  },
+  dragon: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 7,
+    reflex: 3,
+    mental: 5,
+    vital_rolls: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 5,
+    insight_points: 2,
+    class_skill_count: 4,
+    proficiencies: "Light and medium armor",
+  },
+  oozeborn: {
+    power: "normal",
+    armor_defense: 0,
+    fortitude: 7,
+    reflex: 3,
+    mental: 5,
+    vital_rolls: 2,
+    attunement_points: 3,
+    fatigue_tolerance: 6,
+    insight_points: 1,
+    class_skill_count: 3,
+    proficiencies: "Light armor",
+  },
+};
+// const SPECIES_MODIFIERS = {
+//   human: {
+//     insight_points: 1,
+//     nonclass_skill_count: 1,
+//   },
+//   dwarf: {
+//     constitution: 1,
+//     "craft (metal)": 2,
+//     "craft (stone)": 2,
+//     dexterity: -1,
+//     speed: -5,
+//   },
+//   elf: {
+//     constitution: -1,
+//     mental: 1,
+//     awareness: 2,
+//     balance: 2,
+//   },
+//   gnome: {
+//     strength: -1,
+//     insight_points: 1,
+//     speed: -5,
+//     stealth: 2,
+//   },
+//   "half-elf": {
+//     persuasion: 2,
+//   },
+//   "half-orc": {
+//     strength: 1,
+//   },
+// };
+
+function sumCustomModifiers(v, prefix) {
+  let sum = 0;
+  for (const name of customModifierNames(prefix)) {
+    sum += v[name];
+  }
+  return sum;
+}
+
+function customModifierNames(prefix) {
+  return CUSTOM_MODIFIER_TYPES.map((t) => `${prefix}_${t}_modifier`);
+}
+
+// variable types: boolean, miscName, numeric, string
 // options: { includeLevel?: Boolean, runOnSheetOpen?: Boolean }
 // This can be called with only two arguments, omitting `options`.
 function onGet(variables, options, callback = null) {
@@ -18,10 +235,7 @@ function onGet(variables, options, callback = null) {
     variables.numeric.push("level");
   }
 
-  const miscVariables = generateMiscVariables(
-    variables.miscName,
-    variables.miscCount
-  );
+  const miscVariables = generateMiscVariables(variables.miscName);
 
   const changeVariables = [
     ...variables.boolean,
@@ -69,46 +283,106 @@ function boolifySheetValue(val) {
 }
 
 const SKILLS_BY_ATTRIBUTE = {
-  strength: ["Climb", "Jump", "Swim"],
-  dexterity: ["Balance", "Flexibility", "Ride", "Sleight of Hand", "Stealth"],
+  strength: ["climb", "jump", "swim"],
+  dexterity: ["balance", "flexibility", "ride", "sleight_of_hand", "stealth"],
   constitution: ["Endurance"],
   intelligence: [
-    "Craft1",
-    "Craft2",
-    "Deduction",
-    "Devices",
-    "Disguise",
-    "Knowledge1",
-    "Knowledge2",
-    "Linguistics",
-    "Medicine",
+    "craft_alchemy",
+    "craft_bone",
+    "craft_ceramics",
+    "craft_jewelry",
+    "craft_leather",
+    "craft_manuscripts",
+    "craft_metal",
+    "craft_poison",
+    "craft_stone",
+    "craft_textiles",
+    "craft_traps",
+    "craft_wood",
+    "craft_untrained",
+    "deduction",
+    "devices",
+    "disguise",
+    "knowledge_arcana",
+    "knowledge_dungeoneering",
+    "knowledge_engineering",
+    "knowledge_items",
+    "knowledge_local",
+    "knowledge_nature",
+    "knowledge_planes",
+    "knowledge_religion",
+    "knowledge_untrained",
+    "linguistics",
+    "medicine",
   ],
-  perception: ["Awareness", "Creature Handling", "Social Insight", "Survival"],
+  perception: ["awareness", "creature_handling", "social_insight", "survival"],
   willpower: [],
-  other: [
-    "Deception",
-    "Intimidate",
-    "Perform1",
-    "Perform2",
-    "Persuasion",
-    "Profession",
-  ],
+  other: ["deception", "intimidate", "perform", "persuasion", "profession"],
 };
 
-const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set([
-  "accuracy",
-  "all_defenses",
-  "all_skills",
+const ALL_SKILLS = Object.values(SKILLS_BY_ATTRIBUTE).flat();
+
+const SKILLS_WITH_SUBSKILLS = ["craft", "knowledge"];
+
+function formatParseableSkillName(skillName) {
+  if (!skillName) {
+    return null;
+  }
+  return skillName
+    .toLowerCase()
+    .replaceAll(" ", "_")
+    .replaceAll("(", "")
+    .replaceAll(")", "");
+}
+
+const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
+  [
+    "accuracy",
+    "all_defenses",
+    "all_skills",
+    "armor_defense",
+    "attunement_points",
+    "constitution",
+    "damage_resistance_bonus",
+    "dexterity",
+    "encumbrance",
+    "fatigue_tolerance",
+    "fortitude",
+    "hit_points",
+    "insight_points",
+    "intelligence",
+    "mental",
+    "perception",
+    "power",
+    "reflex",
+    "speed",
+    "strength",
+    "weapon_damage_dice",
+    "nonclass_skill_count",
+    "vital_rolls",
+    "willpower",
+  ].concat(ALL_SKILLS)
+);
+
+// Class and species, mostly
+// Note: although class influences power, that is explicitly skipped here to resolve
+// timing issues
+const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "armor_defense",
-  "encumbrance",
-  "damage_resistance_bonus",
+  "attunement_points",
+  "class_skill_count",
+  "dexterity",
   "fatigue_tolerance",
   "fortitude",
-  "hit_points",
+  "insight_points",
+  "intelligence",
   "mental",
-  "power",
+  "perception",
   "reflex",
+  "speed",
+  "strength",
   "vital_rolls",
+  "willpower",
 ]);
 
 const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
@@ -119,7 +393,7 @@ const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
   "mental",
 ]);
 
-// Multipliers to HP and resistances can't be incorporated into this simple handling
+// Multipliers to resistances can't be incorporated into this simple handling
 // because they are multipliers instead of modifiers.
 const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   "accuracy",
@@ -127,16 +401,18 @@ const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   "speed",
 ]);
 
-function generateMiscVariables(name, count) {
-  if (!(name && count)) {
+function generateMiscVariables(name) {
+  if (!name) {
     return [];
   }
   const variables = [];
-  for (let i = 0; i < count; i++) {
-    variables.push(`${name}_misc_${i}`);
-  }
   if (VARIABLES_WITH_CUSTOM_MODIFIERS.has(name)) {
-    variables.push(`${name}_custom_modifier`);
+    for (const modifierType of CUSTOM_MODIFIER_TYPES) {
+      variables.push(`${name}_${modifierType}_modifier`);
+    }
+  }
+  if (VARIABLES_WITH_CREATION_MODIFIERS.has(name)) {
+    variables.push(`${name}_creation_modifier`);
   }
   if (VARIABLES_WITH_DEBUFF_MODIFIERS.has(name)) {
     variables.push(`${name}_debuff_modifier`);
@@ -161,6 +437,7 @@ function handleEverything() {
   handleAttunedEffects();
   handleAttributes();
   handleCoreStatistics();
+  handleCreationModifiers();
   handleCustomModifiers();
   handleDebuffs();
   handleMonsterChatColor();
@@ -199,7 +476,7 @@ function handleResources() {
   handleFatigueTolerance();
   handleInsightPoints();
   handleSkillPoints();
-  handleSkillPointsSpent();
+  handleTrainedSkills();
 }
 
 function addDiceIncrements(count, size, increments) {
@@ -307,7 +584,6 @@ function handleAbilityKnown(abilityName) {
   onGet(
     {
       miscName: `${abilityName}_known`,
-      miscCount: 4,
       numeric: [`${abilityName}_known_insight_points`],
     },
     (v) => {
@@ -321,7 +597,6 @@ function handleAccuracy() {
   onGet(
     {
       miscName: "accuracy",
-      miscCount: 3,
       numeric: ["challenge_rating", "level", "perception", "fatigue_penalty"],
     },
     (v) => {
@@ -378,19 +653,16 @@ function handleArmorDefense() {
   onGet(
     {
       miscName: "armor_defense",
-      miscCount: 2,
       numeric: [
         "level",
         "dexterity",
         "constitution",
-        "armor_defense_class_bonus",
-        "body_armor_defense_value",
-        "shield_defense_value",
+        "body_armor_defense",
+        "shield_defense",
         "challenge_rating",
-        "all_defenses_custom_modifier",
         "all_defenses_vital_wound_modifier",
       ],
-      string: ["body_armor_usage_class"],
+      string: ["body_armor_usage_class", "shield_usage_class"],
     },
     (v) => {
       // calculate attributeModifier
@@ -398,30 +670,31 @@ function handleArmorDefense() {
       if (v.challenge_rating > 0) {
         attributeModifier += Math.floor(v.constitution / 2);
       }
-      if (v.body_armor_usage_class === "medium" || v.challenge_rating > 0) {
+      const worstUsageClass =
+        v.body_armor_usage_class === "heavy" || v.shield_usage_class === "heavy"
+          ? "heavy"
+          : v.body_armor_usage_class === "medium" ||
+            v.shield_usage_class === "medium"
+          ? "medium"
+          : "light";
+      if (worstUsageClass === "medium" || v.challenge_rating > 0) {
         attributeModifier += Math.floor(v.dexterity / 2);
-      } else if (
-        v.body_armor_usage_class === "none" ||
-        v.body_armor_usage_class === "light"
-      ) {
+      } else if (worstUsageClass === "light") {
         attributeModifier += v.dexterity;
       }
 
       const beforeEquipment =
         attributeModifier +
-        calcDefenseLevelScaling(v.level, v.challenge_rating) +
-        v.armor_defense_class_bonus;
+        calcDefenseLevelScaling(v.level, v.challenge_rating);
       const totalValue =
         beforeEquipment +
-        v.body_armor_defense_value +
-        v.shield_defense_value +
+        v.body_armor_defense +
+        v.shield_defense +
         v.misc +
-        v.all_defenses_custom_modifier +
         v.all_defenses_vital_wound_modifier;
 
       setAttrs({
         armor_defense: totalValue,
-        body_armor_attribute: attributeModifier,
       });
     }
   );
@@ -521,23 +794,11 @@ function handleAttributes() {
     onGet(
       {
         miscName: attributeName,
-        miscCount: 2,
-        numeric: ["level", `${attributeName}_point_buy`],
+        numeric: [`${attributeName}_at_creation`],
       },
       (v) => {
-        const pointBuy = v[`${attributeName}_point_buy`];
-        let totalValue =
-          pointBuy > 0
-            ? {
-                1: 1,
-                3: 2,
-                5: 3,
-                8: 4,
-              }[pointBuy]
-            : pointBuy;
-        totalValue += v.misc;
         setAttrs({
-          [attributeName]: totalValue || 0,
+          [attributeName]: v[`${attributeName}_at_creation`] + v.misc,
         });
       }
     );
@@ -545,32 +806,34 @@ function handleAttributes() {
 }
 
 function handleAttunedEffects() {
-  on("change:repeating_attunements remove:repeating_attunements", function () {
-    getSectionIDs("repeating_attunements", (repeatingSectionIds) => {
-      const isActiveIds = repeatingSectionIds.map(
-        (id) => `repeating_attunements_${id}_attunement_active`
-      );
-      getAttrs(isActiveIds, (values) => {
-        const activeAbilities = isActiveIds.filter(
-          (id) => values[id] == 1 || values[id] == "on"
+  on(
+    "change:repeating_attunedmodifiers remove:repeating_attunedmodifiers",
+    function () {
+      getSectionIDs("repeating_attunedmodifiers", (repeatingSectionIds) => {
+        const isActiveIds = repeatingSectionIds.map(
+          (id) => `repeating_attunedmodifiers_${id}_is_active`
         );
-        setAttrs({
-          active_attunement_count: activeAbilities.length,
+        getAttrs(isActiveIds, (values) => {
+          const activeAbilities = isActiveIds.filter(
+            (id) => values[id] == 1 || values[id] == "on"
+          );
+          setAttrs({
+            active_attunement_count: activeAbilities.length,
+          });
         });
       });
-    });
-  });
+    }
+  );
 }
 
 function handleAttunementPoints() {
   onGet(
     {
       miscName: "attunement_points",
-      miscCount: 4,
-      numeric: ["level", "attunement_points_from_class"],
+      numeric: ["level"],
     },
     (v) => {
-      const ap = v.attunement_points_from_class + v.misc;
+      const ap = v.misc;
       setAttrs({
         attunement_points: ap,
         attunement_points_max: ap,
@@ -580,65 +843,98 @@ function handleAttunementPoints() {
   );
 }
 
-function handleCustomModifiers() {
-  on(
-    "change:repeating_custommodifiers remove:repeating_custommodifiers",
-    function () {
-      const nestedCustomStatisticCount = 4;
-      const formatStatisticId = (id, i) =>
-        `repeating_custommodifiers_${id}_statistic${i}`;
-      const formatValueId = (id, i) =>
-        `repeating_custommodifiers_${id}_value${i}`;
-      const formatIsActiveId = (id) =>
-        `repeating_custommodifiers_${id}_is_active`;
+// Note: although class influences power, that is explicitly skipped here to resolve
+// timing issues
+function handleCreationModifiers() {
+  onGet(
+    {
+      numeric: ["archetype_rank_0", "archetype_rank_1", "archetype_rank_2"],
+      string: ["base_class", "species"],
+    },
+    (v) => {
+      const classModifiers = BASE_CLASS_MODIFIERS[v.base_class];
 
-      getSectionIDs("repeating_custommodifiers", (repeatingSectionIds) => {
-        const fullAttributeIds = [];
-        for (const id of repeatingSectionIds) {
-          fullAttributeIds.push(formatIsActiveId(id));
-          for (let i = 0; i < nestedCustomStatisticCount; i++) {
-            fullAttributeIds.push(formatStatisticId(id, i));
-            fullAttributeIds.push(formatValueId(id, i));
-          }
-        }
-        getAttrs(fullAttributeIds, (values) => {
-          const totalCustomModifiers = {};
-          for (const id of repeatingSectionIds) {
-            const isActive = values[formatIsActiveId(id)];
-            if (isActive === "on" || isActive == 1) {
-              for (let i = 0; i < nestedCustomStatisticCount; i++) {
-                const modifiedStatistic = values[formatStatisticId(id, i)];
-                const value = Number(values[formatValueId(id, i)]) || 0;
-                totalCustomModifiers[modifiedStatistic] =
-                  (totalCustomModifiers[modifiedStatistic] || 0) + value;
-              }
-            }
-          }
-          setAttrs({
-            accuracy_custom_modifier: totalCustomModifiers.accuracy || 0,
-            all_defenses_custom_modifier:
-              totalCustomModifiers.all_defenses || 0,
-            all_skills_custom_modifier: totalCustomModifiers.all_skills || 0,
-            armor_defense_custom_modifier:
-              totalCustomModifiers.armor_defense || 0,
-            damage_resistance_bonus_custom_modifier:
-              totalCustomModifiers.damage_resistance_bonus || 0,
-            encumbrance_custom_modifier: -(
-              totalCustomModifiers.encumbrance || 0
-            ),
-            fatigue_tolerance_custom_modifier:
-              totalCustomModifiers.fatigue_tolerance || 0,
-            fortitude_custom_modifier: totalCustomModifiers.fortitude || 0,
-            hit_points_custom_modifier: totalCustomModifiers.hit_points || 0,
-            mental_custom_modifier: totalCustomModifiers.mental || 0,
-            power_custom_modifier: totalCustomModifiers.power || 0,
-            reflex_custom_modifier: totalCustomModifiers.reflex || 0,
-            vital_rolls_custom_modifier: totalCustomModifiers.vital_rolls || 0,
-          });
-        });
-      });
+      // Class proficiencies and class skill count aren't modifiers. They are simply
+      // directly set, since nothing else can modify them.
+      const attrs = {
+        class_proficiencies: classModifiers.proficiencies,
+        class_skill_count: classModifiers.class_skill_count,
+      };
+      // The simple modifier keys can simply be directly translated
+      for (const modifierKey of [
+        "armor_defense",
+        "fortitude",
+        "reflex",
+        "mental",
+        "vital_rolls",
+        "attunement_points",
+        "fatigue_tolerance",
+        "insight_points",
+      ]) {
+        attrs[`${modifierKey}_creation_modifier`] = classModifiers[modifierKey];
+      }
+
+      // const speciesModifiers = SPECIES_MODIFIERS[v.species];
+
+      setAttrs(attrs);
     }
   );
+}
+
+function handleCustomModifiers() {
+  for (const modifierType of CUSTOM_MODIFIER_TYPES) {
+    on(
+      `change:repeating_${modifierType}modifiers remove:repeating_${modifierType}modifiers`,
+      function () {
+        const nestedCustomStatisticCount = 3;
+        const formatStatisticId = (id, i) =>
+          `repeating_${modifierType}modifiers_${id}_statistic${i}`;
+        const formatValueId = (id, i) =>
+          `repeating_${modifierType}modifiers_${id}_value${i}`;
+        const formatIsActiveId = (id) =>
+          `repeating_${modifierType}modifiers_${id}_is_active`;
+
+        getSectionIDs(
+          `repeating_${modifierType}modifiers`,
+          (repeatingSectionIds) => {
+            const fullAttributeIds = [];
+            for (const id of repeatingSectionIds) {
+              fullAttributeIds.push(formatIsActiveId(id));
+              for (let i = 0; i < nestedCustomStatisticCount; i++) {
+                fullAttributeIds.push(formatStatisticId(id, i));
+                fullAttributeIds.push(formatValueId(id, i));
+              }
+            }
+            getAttrs(fullAttributeIds, (values) => {
+              const totalCustomModifiers = {};
+              for (const id of repeatingSectionIds) {
+                // Permanent modifiers are always active; for temporary and attuned
+                // modifiers, we have to check the value from the checkbox.
+                const isActive =
+                  modifierType === "permanent"
+                    ? 1
+                    : values[formatIsActiveId(id)];
+                if (isActive === "on" || isActive == 1) {
+                  for (let i = 0; i < nestedCustomStatisticCount; i++) {
+                    const modifiedStatistic = values[formatStatisticId(id, i)];
+                    const value = Number(values[formatValueId(id, i)]) || 0;
+                    totalCustomModifiers[modifiedStatistic] =
+                      (totalCustomModifiers[modifiedStatistic] || 0) + value;
+                  }
+                }
+              }
+              const attrs = {};
+              for (const key of VARIABLES_WITH_CUSTOM_MODIFIERS) {
+                attrs[`${key}_${modifierType}_modifier`] =
+                  totalCustomModifiers[key] || 0;
+              }
+              setAttrs(attrs);
+            });
+          }
+        );
+      }
+    );
+  }
 }
 
 function handleDamageDice() {
@@ -652,12 +948,11 @@ function handleDamageResistance() {
   onGet(
     {
       miscName: "damage_resistance_bonus",
-      miscCount: 4,
       numeric: [
         "constitution",
         "level",
         "challenge_rating",
-        "damage_resistance_bonus_armor",
+        "body_armor_damage_resistance",
         "damage_resistance_bonus_vital_wound_multiplier",
       ],
     },
@@ -709,11 +1004,11 @@ function handleDamageResistance() {
         6: 16,
       }[v.challenge_rating || 0];
       const totalValue = Math.floor(
-        (fromLevel + v.damage_resistance_bonus_armor + v.misc) *
+        (fromLevel + v.body_armor_damage_resistance + v.misc) *
           crMultiplier *
           // use math.max as a dumb hack so we can use negative values to mean "really zero,
           // don't || into 1"
-          (Math.max(0, v.damage_resistance_bonus_vital_wound_multiplier || 1))
+          Math.max(0, v.damage_resistance_bonus_vital_wound_multiplier || 1)
       );
 
       let attrs = {
@@ -892,13 +1187,20 @@ function handleEncumbrance() {
   onGet(
     {
       miscName: "encumbrance",
-      miscCount: 2,
-      numeric: ["level", "body_armor_encumbrance", "strength"],
+      numeric: [
+        "level",
+        "body_armor_encumbrance",
+        "shield_encumbrance",
+        "strength",
+      ],
     },
     (v) => {
       const totalValue = Math.max(
         0,
-        v.body_armor_encumbrance - Math.max(0, v.strength) - v.misc
+        v.body_armor_encumbrance +
+          v.shield_encumbrance -
+          Math.max(0, v.strength) -
+          v.misc
       );
       setAttrs({ encumbrance: totalValue });
     }
@@ -923,15 +1225,11 @@ function handleFatigueTolerance() {
   onGet(
     {
       miscName: "fatigue_tolerance",
-      miscCount: 2,
-      numeric: ["level", "fatigue_tolerance_base", "constitution", "willpower"],
+      numeric: ["level", "constitution", "willpower"],
     },
     (v) => {
       const fromAttributes = v.constitution + Math.floor(v.willpower / 2);
-      const totalValue = Math.max(
-        0,
-        v.fatigue_tolerance_base + fromAttributes + v.misc
-      );
+      const totalValue = Math.max(0, fromAttributes + v.misc);
       setAttrs({
         fatigue_tolerance_attributes: fromAttributes,
         fatigue_tolerance: totalValue,
@@ -946,7 +1244,6 @@ function handleHitPoints() {
   onGet(
     {
       miscName: "hit_points",
-      miscCount: 4,
       numeric: ["level", "constitution", "challenge_rating"],
     },
     {
@@ -1023,7 +1320,6 @@ function handleInitiative() {
   onGet(
     {
       miscName: "initiative",
-      miscCount: 3,
       numeric: ["dexterity", "perception", "fatigue_penalty"],
     },
     (v) => {
@@ -1040,14 +1336,10 @@ function handleInsightPoints() {
   onGet(
     {
       miscName: "insight_points",
-      miscCount: 3,
-      numeric: ["insight_points_base", "intelligence"],
+      numeric: ["intelligence"],
     },
     (v) => {
-      const totalValue = Math.max(
-        0,
-        v.insight_points_base + v.intelligence + v.misc
-      );
+      const totalValue = Math.max(0, v.intelligence + v.misc);
       setAttrs({
         insight_points: totalValue,
       });
@@ -1059,11 +1351,11 @@ function handleLandSpeed() {
   onGet(
     {
       miscName: "speed",
-      miscCount: 2,
-      numeric: ["level", "speed_size", "speed_armor"],
+      numeric: ["speed_size", "body_armor_speed"],
     },
     (v) => {
-      const totalValue = v.speed_size - v.speed_armor + v.misc;
+      // TODO: handle size more correctly
+      const totalValue = 30 + v.body_armor_speed + v.misc;
       setAttrs({
         land_speed: totalValue,
       });
@@ -1090,13 +1382,10 @@ function handleNonArmorDefense(defense, attribute) {
   onGet(
     {
       miscName: defense,
-      miscCount: 3,
       numeric: [
         "level",
         attribute,
-        `${defense}_class`,
         "challenge_rating",
-        "all_defenses_custom_modifier",
         "all_defenses_vital_wound_modifier",
       ],
     },
@@ -1104,9 +1393,7 @@ function handleNonArmorDefense(defense, attribute) {
       const totalValue =
         calcDefenseLevelScaling(v.level, v.challenge_rating) +
         v[attribute] +
-        v[`${defense}_class`] +
         v.misc +
-        v.all_defenses_custom_modifier +
         v.all_defenses_vital_wound_modifier;
       setAttrs({
         [defense]: totalValue,
@@ -1119,8 +1406,13 @@ function handlePower() {
   onGet(
     {
       miscName: "power",
-      miscCount: 4,
-      numeric: ["level", "class_power", "challenge_rating"],
+      numeric: [
+        "challenge_rating",
+        "archetype_rank_0",
+        "archetype_rank_1",
+        "archetype_rank_2",
+      ],
+      string: ["base_class"],
     },
     (v) => {
       let levelScaling = v.challenge_rating
@@ -1147,8 +1439,37 @@ function handlePower() {
               6: 3,
             }[v.challenge_rating]
           : 0);
+
+      // TODO: confirm that the rank is actually from the character's base class
+      const maxRank = Math.max(
+        v.archetype_rank_0,
+        v.archetype_rank_1,
+        v.archetype_rank_2
+      );
+      const classPowerProgression =
+        BASE_CLASS_MODIFIERS[v.base_class].power === "high"
+          ? {
+              1: 3,
+              2: 4,
+              3: 5,
+              4: 7,
+              5: 10,
+              6: 14,
+              7: 20,
+            }
+          : {
+              1: 2,
+              2: 3,
+              3: 4,
+              4: 6,
+              5: 8,
+              6: 12,
+              7: 16,
+            };
+      const classPowerModifier = classPowerProgression[maxRank];
+
       setAttrs({
-        power: levelScaling + v.class_power + v.misc,
+        power: levelScaling + classPowerModifier + v.misc,
       });
     }
   );
@@ -1232,31 +1553,101 @@ function handleRust() {
 function handleSkillPoints() {
   onGet(
     {
-      miscName: "skill_points",
-      miscCount: 3,
-      numeric: ["level", "skill_points_base", "intelligence"],
+      miscName: "nonclass_skill_count",
+      numeric: ["intelligence"],
     },
     (v) => {
       const fromInt = Math.max(0, v.intelligence);
-      const totalValue = v.skill_points_base + fromInt + v.misc;
       setAttrs({
-        skill_points: totalValue,
-        skill_points_intelligence: fromInt,
+        nonclass_skill_count: fromInt + v.misc,
       });
     }
   );
 }
 
-function handleSkillPointsSpent() {
-  const skills = [];
-  for (const attributeSkills of Object.values(SKILLS_BY_ATTRIBUTE)) {
-    for (const skill of attributeSkills) {
-      if (skill) {
-        skills.push(skill);
+function handleTrainedSkills() {
+  on(`change:repeating_trainedskills`, function (eventInfo) {
+    const trainedSkill = formatParseableSkillName(eventInfo.newValue);
+    const untrainedSkill = formatParseableSkillName(eventInfo.previousValue);
+
+    const attrs = {};
+    if (trainedSkill) {
+      attrs[`${trainedSkill}_is_trained`] = "1";
+    }
+    if (untrainedSkill && untrainedSkill !== trainedSkill) {
+      attrs[`${untrainedSkill}_is_trained`] = "0";
+    }
+
+    let untrainedFromRootSkill = null;
+    for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
+      if (trainedSkill && trainedSkill.startsWith(skillWithSubskill)) {
+        const subskill = trainedSkill.replace(skillWithSubskill + "_", "");
+        const rowId = generateRowID();
+        const prefix = `repeating_${skillWithSubskill}subskills_${rowId}`;
+        attrs[`${trainedSkill}_subskill_rowid`] = rowId;
+        attrs[
+          `${prefix}_subskill_modifier_name`
+        ] = `${skillWithSubskill}_${subskill}`;
+        const fullSkillDescriptor = uppercaseFirstLetter(skillWithSubskill) + ` (${subskill})`;
+        attrs[`${prefix}_subskill_button`] =
+          `@{character_name} uses ${fullSkillDescriptor}:` +
+          ` [[d10 + @{${trainedSkill}}]]`;
+        attrs[`${prefix}_subskill_name`] = `(${subskill})`;
+        attrs[`${eventInfo.triggerName}_front_rowid`] = rowId;
+      }
+
+      if (
+        untrainedSkill &&
+        untrainedSkill !== trainedSkill &&
+        untrainedSkill.startsWith(skillWithSubskill)
+      ) {
+        untrainedFromRootSkill = skillWithSubskill;
       }
     }
-  }
-  const skillsAreTrained = skills.map(
+
+    // Need to resolve the whole getAttrs flow before calling setAttrs
+    if (untrainedFromRootSkill) {
+      const rowIdKey = `${eventInfo.triggerName}_front_rowid`;
+      getAttrs([rowIdKey], (v) => {
+        const rowId = v[rowIdKey];
+        removeRepeatingRow(
+          `repeating_${untrainedFromRootSkill}subskills_${rowId}`
+        );
+        attrs[`${untrainedSkill}_subskill_rowid`] = "";
+        setAttrs(attrs);
+      });
+    } else {
+      setAttrs(attrs);
+    }
+  });
+
+  on(`remove:repeating_trainedskills`, function (eventInfo) {
+    const skillNameKey = Object.keys(eventInfo.removedInfo).find((k) =>
+      k.endsWith("trained_skill")
+    );
+    const untrainedSkill = formatParseableSkillName(
+      eventInfo.removedInfo[skillNameKey]
+    );
+    if (!untrainedSkill) {
+      return;
+    }
+    const attrs = {
+      [`${untrainedSkill}_is_trained`]: "0",
+    };
+    for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
+      if (untrainedSkill.startsWith(skillWithSubskill)) {
+        const rowIdKey = Object.keys(eventInfo.removedInfo).find((k) =>
+          k.endsWith("front_rowid")
+        );
+        const rowId = eventInfo.removedInfo[rowIdKey];
+        removeRepeatingRow(`repeating_${skillWithSubskill}subskills_${rowId}`);
+        attrs[`${untrainedSkill}_subskill_rowid`] = "";
+      }
+    }
+    setAttrs(attrs);
+  });
+
+  const skillsAreTrained = ALL_SKILLS.map(
     (s) => s.toLowerCase().replaceAll(" ", "_") + "_is_trained"
   );
 
@@ -1281,11 +1672,10 @@ function handleSkillPointsSpent() {
 function handleSkills() {
   for (const attribute of Object.keys(SKILLS_BY_ATTRIBUTE)) {
     for (let skill of SKILLS_BY_ATTRIBUTE[attribute]) {
-      skill = skill.toLowerCase().replaceAll(" ", "_");
       const numeric = [
-        "all_skills_custom_modifier",
         "fatigue_penalty",
         "level",
+        ...customModifierNames("all_skills"),
       ];
       const shouldAddAttribute = attribute !== "other";
       const shouldSubtractEncumbrance =
@@ -1300,8 +1690,8 @@ function handleSkills() {
         {
           boolean: [`${skill}_is_trained`],
           miscName: skill,
-          miscCount: 4,
           numeric,
+          string: [`${skill}_subskill_rowid`],
         },
         (v) => {
           const isTrained = v[`${skill}_is_trained`];
@@ -1312,19 +1702,36 @@ function handleSkills() {
             fromTraining +
             attributeModifier +
             v.misc +
-            v.all_skills_custom_modifier -
+            sumCustomModifiers(v, "all_skills") -
             v.fatigue_penalty -
             encumbranceModifier;
-          setAttrs({
+
+          const attrs = {
             [`${skill}_attribute`]: attributeModifier,
             [`${skill}_level`]: fromTraining,
             [`${skill}_total`]: skillValue,
             [skill]: skillValue,
-          });
+          };
+
+          const rowId = v[`${skill}_subskill_rowid`];
+          if (rowId) {
+            // This is fragile - if either the base skill could contain
+            // multiple words, we'd need more clever handling
+            const [baseSkill] = skill.split("_");
+            attrs[
+              `repeating_${baseSkill}subskills_${rowId}_subskill_modifier`
+            ] = skillValue;
+          }
+
+          setAttrs(attrs);
         }
       );
     }
   }
+}
+
+function uppercaseFirstLetter(str) {
+  return str[0].toUpperCase() + str.slice(1);
 }
 
 function handleDicePoolAttributes() {
@@ -1667,7 +2074,7 @@ function handleUniversalAbilities() {
 }
 
 function handleUnknownStatistic() {
-  onGet({ miscCount: 4, miscName: "unknown_statistic" }, (v) => {
+  onGet({ miscName: "unknown_statistic" }, (v) => {
     setAttrs({
       unknown_statistic: v.misc,
     });
@@ -1677,12 +2084,11 @@ function handleUnknownStatistic() {
 function handleVitalRolls() {
   onGet(
     {
-      miscCount: 2,
       miscName: "vital_rolls",
-      numeric: ["vital_roll_class", "vital_wound_count"],
+      numeric: ["vital_wound_count"],
     },
     (v) => {
-      const totalValue = v.vital_roll_class + v.misc - v.vital_wound_count * 2;
+      const totalValue = v.misc - v.vital_wound_count * 2;
       setAttrs({ vital_rolls: totalValue });
     }
   );
@@ -1729,10 +2135,11 @@ function handleVitalWounds() {
             -countRolls(rolls, 8) * 2 - countRolls(rolls, 9);
           let speed_penalty =
             countRolls(rolls, 2) * -10 + countRolls(rolls, 3) * -5;
-          let resistance_multiplier = countRolls(rolls, 4) > 0
-          // dumb hack since we use || and I'm too lazy to fix it
-            ? -1
-            : 0.5 ** countRolls(rolls, 5);
+          let resistance_multiplier =
+            countRolls(rolls, 4) > 0
+              ? // dumb hack since we use || and I'm too lazy to fix it
+                -1
+              : 0.5 ** countRolls(rolls, 5);
           let attrs = {
             vital_wound_count: repeatingSectionIds.length,
 
@@ -1759,14 +2166,17 @@ function handleVitalWounds() {
 function handleWeaponDamageDice() {
   onGet(
     {
-      miscCount: 5,
       miscName: "weapon_damage_dice",
-      numeric: ["level", "challenge_rating"],
+      numeric: ["level", "challenge_rating", "strength"],
     },
     (v) => {
       const fromCr = v.challenge_rating > 0 ? Math.floor((v.level - 1) / 3) : 0;
       const totalValue = fromCr + v.misc;
-      setAttrs({ weapon_damage_dice: totalValue });
+      setAttrs({
+        weapon_damage_dice: totalValue,
+        weapon_damage_dice_including_strength:
+          totalValue + Math.floor(v.strength / 2),
+      });
     }
   );
 }
