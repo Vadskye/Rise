@@ -186,20 +186,52 @@ def debuffs():
 
 
 def debuff(name, representable=True):
+    debuff_class = "representable-debuff" if representable else "unrepresentable-debuff"
     return label(
         {"class": "debuff-active-label"},
         [
             checkbox({"name": name.replace(" ", "_")}),
             span(
                 {
-                    "class": "representable-debuff"
-                    if representable
-                    else "unrepresentable-debuff"
+                    "class": debuff_class,
+                    "title": debuff_explanation(name),
                 },
                 name.capitalize() + "?",
             ),
         ],
     )
+
+
+def debuff_explanation(debuff):
+    return {
+        "blinded": "50% miss chance",
+        "charmed": "friendly with charmer",
+        "climbing": "-4 accuracy, defenses",
+        "confused": "-4 defenses, acts randomly",
+        "dazed": "-2 defenses",
+        "dazzled": "25% miss chance, no special vision",
+        "deafened": "25% verbal spell failure",
+        "dominated": "must obey commands",
+        "flying": "-2 Armor and Reflex",
+        "flying poorly": "-4 Armor and Reflex",
+        "frightened": "-4 accuracy and Mental within 60 ft.",
+        "goaded": "-2 accuracy vs. non-goading creatures",
+        "grappled": "limited mobility and actions",
+        "helpless": "-10 Armor and Ref",
+        "immobilized": "-4 Ref, cannot use movement speeds",
+        "panicked": "-4 Mental and must flee within 60 ft.",
+        "paralyzed": "cannot move",
+        "partially unaware": "-2 Armor and Ref",
+        "petrified": "turned to stone",
+        "prone": "half speed, -2 accuracy, Armor, and Ref",
+        "shaken": "-2 accuracy and Mental within 60 ft.",
+        "slowed": "half speed, -2 Ref",
+        "squeezing": "-2 accuracy, Armor, and Ref",
+        "stunned": "-4 defenses",
+        "swimming": "-4 accuracy, defenses",
+        "unaware": "-6 Armor and Ref",
+        "unconscious": "unable to act",
+    }[debuff]
 
 
 def custom_modifier(show_toggle, show_text):
