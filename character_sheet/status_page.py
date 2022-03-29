@@ -88,17 +88,17 @@ def create_page(_destination):
             flex_wrapper(div({"class": "section-header"}, "Temporary Modifiers")),
             fieldset(
                 {"class": "repeating_temporarymodifiers"},
-                custom_modifier(show_toggle=True),
+                custom_modifier(show_toggle=True, show_text=False),
             ),
             flex_wrapper(div({"class": "section-header"}, "Permanent Modifiers")),
             fieldset(
                 {"class": "repeating_permanentmodifiers"},
-                custom_modifier(show_toggle=False),
+                custom_modifier(show_toggle=False, show_text=False),
             ),
             flex_wrapper(div({"class": "section-header"}, "DEPRECATED - Custom Modifiers")),
             fieldset(
                 {"class": "repeating_custommodifiers"},
-                custom_modifier(show_toggle=True),
+                custom_modifier(show_toggle=True, show_text=False),
             ),
             textarea(
                 {
@@ -202,24 +202,34 @@ def debuff(name, representable=True):
     )
 
 
-def custom_modifier(show_toggle):
+def custom_modifier(show_toggle, show_text):
     return (
         flex_row(
             {"class": "custom-modifier"},
             [
-                (
-                    underlabeled_checkbox(
-                        "Active?",
-                        None,
-                        {"class": "is-active", "name": "is_active"},
-                    )
-                    if show_toggle else ""
-                ),
-                labeled_text_input(
-                    "Name",
-                    {"class": "name"},
-                    {"name": "name"},
-                ),
+                flex_row({"class": "text-prefix"}, [
+                    (
+                        underlabeled_checkbox(
+                            "Active?",
+                            None,
+                            {"class": "is-active", "name": "is_active"},
+                        )
+                        if show_toggle else ""
+                    ),
+                    labeled_text_input(
+                        "Name",
+                        {"class": "name"},
+                        {"name": "name"},
+                    ),
+                    (
+                        labeled_text_input(
+                            "Effect",
+                            {"class": "effect"},
+                            {"name": "effect"},
+                        )
+                        if show_text else ""
+                    ),
+                ]),
                 "".join([custom_statistic(str(i)) for i in range(0, 3)]),
             ],
         ),
@@ -228,6 +238,7 @@ def custom_modifier(show_toggle):
 
 def custom_statistic(i):
     return flex_row(
+        {"class": "custom-statistic"},
         [
             select(
                 {"name": "statistic" + i},
