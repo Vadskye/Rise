@@ -1438,7 +1438,7 @@ function handlePower() {
       );
       const classPowerProgression = BASE_CLASS_MODIFIERS[v.base_class].power;
       let classPowerModifier = 0;
-      if (classPowerProgression === "high") {
+      if (classPowerProgression === "fast") {
         classPowerModifier = {
           1: 3,
           2: 4,
