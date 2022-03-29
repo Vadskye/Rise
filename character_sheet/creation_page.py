@@ -79,7 +79,8 @@ def creation_guidance():
                 "Species",
                 """
                     Choose your character's species.
-                    You should add any abilities from your species on the <b>Abilities</b> or <b>Modifiers</b> tabs.
+                    You should add any numerical changes, such as attribute modifiers, in the <b>Modifiers</b> tab.
+                    Non-numeric abilities, such as darkvision, should go in the <b>Abilities</b> tab.
                 """,
                 select(
                     {"class": "species", "name": "species"},
