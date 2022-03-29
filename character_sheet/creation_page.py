@@ -280,6 +280,7 @@ def insight_points_step():
             Spend your character's insight points.
             You can use this section to track what you spent insight points on.
             The full effects of abilities that you gain should be tracked elsewhere - usually, in the <b>Abilities</b> tab.
+            You can also track the choices you've made for your all of your various abilities in the <b>Reference</b> tab.
             <br>
             As a reminder, you have {max_insight_points} total insight points.
         """,

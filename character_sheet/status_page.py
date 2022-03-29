@@ -95,6 +95,11 @@ def create_page(_destination):
                 {"class": "repeating_permanentmodifiers"},
                 custom_modifier(show_toggle=False),
             ),
+            flex_wrapper(div({"class": "section-header"}, "DEPRECATED - Custom Modifiers")),
+            fieldset(
+                {"class": "repeating_custommodifiers"},
+                custom_modifier(show_toggle=True),
+            ),
             textarea(
                 {
                     "class": "hidden",
@@ -215,7 +220,7 @@ def custom_modifier(show_toggle):
                     {"class": "name"},
                     {"name": "name"},
                 ),
-                "".join([custom_statistic(str(i)) for i in range(0, 4)]),
+                "".join([custom_statistic(str(i)) for i in range(0, 3)]),
             ],
         ),
     )
