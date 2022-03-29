@@ -44,7 +44,7 @@ const BASE_CLASS_MODIFIERS = {
     armor_defense: 1,
     fortitude: 7,
     reflex: 3,
-    mental: 5,
+    mental: 4,
     vital_rolls: 1,
     attunement_points: 3,
     fatigue_tolerance: 5,
