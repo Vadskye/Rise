@@ -168,6 +168,7 @@ def creation_guidance():
                         option({"value": "warlock"}, "Warlock"),
                         option({"value": "wizard"}, "Wizard"),
                         option({"value": "dragon"}, "(Dragon)"),
+                        option({"value": "monster"}, "(Monster)"),
                         option({"value": "oozeborn"}, "(Oozeborn)"),
                     ],
                 ),
