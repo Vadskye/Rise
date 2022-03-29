@@ -87,6 +87,14 @@ div.full-sheet {
             box-shadow: 0 0 2px 0px black inset;
         }
     }
+
+    textarea {
+        margin-bottom: 0px;
+        height: 6em;
+        // it seems like textareas naturally bleed into their surroundings due to
+        // the weird behavior of their padding
+        width: calc(100% - 1em);
+    }
 }
 
 .hidden {
@@ -259,6 +267,10 @@ input[type=text] {
 
 .labeled-text-input {
     margin-bottom: 5px;
+
+    > textarea {
+        margin-bottom: 0;
+    }
 }
 
 .underlabeled select {

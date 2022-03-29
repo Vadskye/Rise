@@ -1,9 +1,5 @@
-.attunement {
-    .attunement-name {
-        width: 15em;
-        margin-right: 0.5em;
-    }
-
+.attunement, .armor-definition {
+    gap: 0.5em;
     .usage-class-dropdown {
         margin-right: 0.5em;
         width: 80px;
@@ -11,6 +7,28 @@
         select {
             width: 80px;
         }
+    }
+}
+.name {
+    width: 15em;
+}
+.armor-row {
+    flex-grow: 1;
+    gap: 2em;
+}
+.armor-speed > input[type=number] {
+    width: 50px;
+}
+.armor-definition {
+    justify-content: space-between;
+    flex-grow: 1;
+
+    > div {
+        flex-basis: 4em;
+    }
+
+    > div.name {
+        flex-basis: 25em;
     }
 }
 .attunement-effect, .weapon-effects {
@@ -58,5 +76,24 @@
     }
     .is-active {
         font-size: 14pt;
+    }
+}
+
+.proficiencies {
+    justify-content: space-between;
+    gap: 0.5em;
+
+    > div {
+        flex-grow: 1;
+    }
+}
+
+.custom-modifier {
+    .text-prefix {
+        width: 100%;
+    }
+
+    .custom-statistic:nth-child(2) {
+        margin-left: 3.5em;
     }
 }
