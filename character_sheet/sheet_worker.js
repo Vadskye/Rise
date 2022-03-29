@@ -886,7 +886,7 @@ function handleCustomModifiers() {
     on(
       `change:repeating_${modifierType}modifiers remove:repeating_${modifierType}modifiers`,
       function () {
-        const nestedCustomStatisticCount = 4;
+        const nestedCustomStatisticCount = 3;
         const formatStatisticId = (id, i) =>
           `repeating_${modifierType}modifiers_${id}_statistic${i}`;
         const formatValueId = (id, i) =>
@@ -1553,7 +1553,7 @@ function handleRust() {
 function handleSkillPoints() {
   onGet(
     {
-      miscName: "skill_points",
+      miscName: "nonclass_skill_count",
       numeric: ["intelligence"],
     },
     (v) => {
