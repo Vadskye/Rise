@@ -29,7 +29,7 @@ export const universal: MysticSphere = {
         Astromancy      & Mental    & Energy      \\\\
         Barrier         & Armor     & Physical    \\\\
         Bless           & Mental    & Energy and \\glossterm{subdual} \\\\
-        Channel Energy  & Mental    & Divinity    \\\\
+        Channel Divinity  & Mental    & Energy    \\\\
         Chronomancy     & Fortitude & Energy      \\\\
         Cryomancy       & Fortitude & Cold        \\\\
         Electromancy    & Fortitude & Electricity \\\\
