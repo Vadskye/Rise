@@ -1,5 +1,18 @@
 const CUSTOM_MODIFIER_TYPES = ["attuned", "temporary", "permanent"];
 const BASE_CLASS_MODIFIERS = {
+  monster: {
+    power: "monster",
+    armor_defense: 5,
+    fortitude: 5,
+    reflex: 5,
+    mental: 5,
+    vital_rolls: 0,
+    attunement_points: 0,
+    fatigue_tolerance: 0,
+    insight_points: 0,
+    class_skill_count: 0,
+    proficiencies: "",
+  },
   barbarian: {
     power: "fast",
     armor_defense: 0,
@@ -349,6 +362,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     "fatigue_tolerance",
     "fortitude",
     "hit_points",
+    "initiative",
     "insight_points",
     "intelligence",
     "mental",
@@ -440,6 +454,7 @@ function handleEverything() {
   handleCreationModifiers();
   handleCustomModifiers();
   handleDebuffs();
+  handleMonsterBaseClass();
   handleMonsterChatColor();
   handleResources();
   handleRust();
@@ -1415,61 +1430,61 @@ function handlePower() {
       string: ["base_class"],
     },
     (v) => {
-      let levelScaling = v.challenge_rating
-        ? {
-            0: 1,
-            1: 2,
-            2: 3,
-            3: 4,
-            4: 6,
-            5: 8,
-            6: 12,
-            7: 16,
-            8: 24,
-          }[Math.floor((v.level + 2) / 3)]
-        : 0;
-      levelScaling =
-        levelScaling *
-        (v.challenge_rating
-          ? {
-              0.5: 0.5,
-              1: 1,
-              2: 2,
-              4: 2,
-              6: 3,
-            }[v.challenge_rating]
-          : 0);
-
       // TODO: confirm that the rank is actually from the character's base class
       const maxRank = Math.max(
         v.archetype_rank_0,
         v.archetype_rank_1,
         v.archetype_rank_2
       );
-      const classPowerProgression =
-        BASE_CLASS_MODIFIERS[v.base_class].power === "high"
-          ? {
-              1: 3,
-              2: 4,
-              3: 5,
-              4: 7,
-              5: 10,
-              6: 14,
-              7: 20,
-            }
-          : {
-              1: 2,
-              2: 3,
-              3: 4,
-              4: 6,
-              5: 8,
-              6: 12,
-              7: 16,
-            };
-      const classPowerModifier = classPowerProgression[maxRank];
+      const classPowerProgression = BASE_CLASS_MODIFIERS[v.base_class].power;
+      let classPowerModifier = 0;
+      if (classPowerProgression === "high") {
+        classPowerModifier = {
+          1: 3,
+          2: 4,
+          3: 5,
+          4: 7,
+          5: 10,
+          6: 14,
+          7: 20,
+        }[maxRank];
+      } else if (classPowerProgression === "normal") {
+        classPowerModifier = {
+          1: 2,
+          2: 3,
+          3: 4,
+          4: 6,
+          5: 8,
+          6: 12,
+          7: 16,
+        };
+      } else if (classPowerProgression === "monster") {
+        classPowerModifier = {
+          0: 1,
+          1: 2,
+          2: 3,
+          3: 4,
+          4: 6,
+          5: 8,
+          6: 12,
+          7: 16,
+          8: 24,
+        }[Math.floor((v.level + 2) / 3)];
+        classPowerModifier =
+          classPowerModifier *
+          (v.challenge_rating
+            ? {
+                0.5: 0.5,
+                1: 1,
+                2: 2,
+                4: 2,
+                6: 3,
+              }[v.challenge_rating]
+            : 0);
+      }
 
       setAttrs({
-        power: levelScaling + classPowerModifier + v.misc,
+        power: classPowerModifier + v.misc,
       });
     }
   );
@@ -1588,7 +1603,8 @@ function handleTrainedSkills() {
         attrs[
           `${prefix}_subskill_modifier_name`
         ] = `${skillWithSubskill}_${subskill}`;
-        const fullSkillDescriptor = uppercaseFirstLetter(skillWithSubskill) + ` (${subskill})`;
+        const fullSkillDescriptor =
+          uppercaseFirstLetter(skillWithSubskill) + ` (${subskill})`;
         attrs[`${prefix}_subskill_button`] =
           `@{character_name} uses ${fullSkillDescriptor}:` +
           ` [[d10 + @{${trainedSkill}}]]`;
@@ -2177,6 +2193,19 @@ function handleWeaponDamageDice() {
         weapon_damage_dice_including_strength:
           totalValue + Math.floor(v.strength / 2),
       });
+    }
+  );
+}
+
+function handleMonsterBaseClass() {
+  onGet(
+    {
+      numeric: ["challenge_rating"],
+    },
+    (v) => {
+      if (v.challenge_rating > 0) {
+        setAttrs({ base_class: "monster" });
+      }
     }
   );
 }
