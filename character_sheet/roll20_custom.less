@@ -31,13 +31,15 @@ div.full-sheet {
     }
 
     input[type=number]:disabled::-webkit-inner-spin-button,
-    input[type=number]:disabled::-webkit-outer-spin-button {
+    input[type=number]:disabled::-webkit-outer-spin-button,
+    input[type=number]:read-only::-webkit-inner-spin-button,
+    input[type=number]:read-only::-webkit-outer-spin-button {
         -webkit-appearance: none;
         display: none;
         margin: 0;
     }
 
-    input[type=number]:disabled {
+    input[type=number]:disabled, input[type=number]:read-only {
         -moz-appearance: textfield;
     }
 
@@ -57,7 +59,7 @@ div.full-sheet {
         }
 
         input[type=number] {
-            width: 35px;
+            width: 40px;
         }
 
         input[type=number].large-number-input {
@@ -91,9 +93,10 @@ div.full-sheet {
             }
         }
 
-        input[type=number]:disabled {
+        input[type=number]:disabled, input[type=number]:read-only {
             box-shadow: none;
             border: none;
+            cursor: inherit;
             font-family: inherit;
             font-size: 16px;
             margin: 0;
@@ -104,7 +107,7 @@ div.full-sheet {
     }
 
     // fix buttons that have nested inputs in firefox
-    button > input:disabled {
+    button > input:disabled, button > input:read-only {
         pointer-events: none;
     }
 
@@ -194,15 +197,19 @@ div.full-sheet {
     input:nth-of-type(8), span:nth-of-type(8) {
         left: 710px;
     }
+    input:nth-of-type(9), span:nth-of-type(9) {
+        left: 810px;
+    }
 
     input[type=radio].nav-button-page1:checked ~ .first-page,
     input[type=radio].nav-button-active:checked ~ .active-abilities-page,
-    input[type=radio].nav-button-page2:checked ~ .skills-page,
-    input[type=radio].nav-button-page3:checked ~ .second-page,
-    input[type=radio].nav-button-page4:checked ~ .third-page,
-    input[type=radio].nav-button-page5:checked ~ .items-page,
-    input[type=radio].nav-button-page6:checked ~ .status-page,
-    input[type=radio].nav-button-page7:checked ~ .reference-page {
+    input[type=radio].nav-button-page2:checked ~ .creation-page,
+    input[type=radio].nav-button-page3:checked ~ .status-page,
+    input[type=radio].nav-button-page4:checked ~ .items-page,
+    input[type=radio].nav-button-page5:checked ~ .reference-page,
+    input[type=radio].nav-button-page6:checked ~ .skills-page,
+    input[type=radio].nav-button-page7:checked ~ .second-page,
+    input[type=radio].nav-button-page8:checked ~ .third-page {
         display: flex;
     }
 
@@ -214,7 +221,7 @@ div.full-sheet {
         border: 0;
         height: 3em;
         opacity: 0;
-        width: 6.5em;
+        width: 7.4em;
         z-index: 3;
     }
 
@@ -227,7 +234,7 @@ div.full-sheet {
         height: 2em;
         padding: 0.25em;
         text-align: center;
-        width: 4.3em;
+        width: 4.8em;
         z-index: 2;
     }
 
@@ -254,4 +261,37 @@ div.full-sheet {
 // Make sure that the controls show up over the custom modifiers
 .repcontainer > .repitem > .itemcontrol {
     z-index: 1;
+}
+
+.custom-modifier {
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    gap: 1em;
+
+    .text-prefix {
+        gap: 0.5em;
+
+        .underlabeled-checkbox {
+            margin-right: 0.5em;
+        }
+
+        .effect {
+            flex-grow: 1;
+        }
+    }
+
+    .custom-statistic {
+        flex-grow: 1;
+    }
+
+    .name {
+        // this is longer than the length on the Core page, which may be bad?
+        width: 15em;
+    }
+
+    select {
+        flex-grow: 1;
+        margin-right: 0.25em;
+        width: 10em;
+    }
 }

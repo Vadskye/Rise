@@ -7,6 +7,7 @@ import active_abilities_page
 import rolltemplate
 import re
 import second_page
+import creation_page
 import header_bar
 import sheet_worker
 import skills_page
@@ -66,6 +67,7 @@ def main(destination):
                         "".join(header_bar.nav_row()),
                         first_page.create_page(cgi.DESTINATION),
                         active_abilities_page.create_page(cgi.DESTINATION),
+                        creation_page.create_page(cgi.DESTINATION),
                         skills_page.create_page(cgi.DESTINATION),
                         second_page.create_page(cgi.DESTINATION),
                         third_page.create_page(cgi.DESTINATION),
@@ -82,6 +84,7 @@ def main(destination):
             for filename in [
                 "sheet",
                 "first_page",
+                "creation_page",
                 "active_abilities_page",
                 "skills_page",
                 "second_page",

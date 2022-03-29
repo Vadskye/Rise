@@ -31,9 +31,9 @@ def create_page(_destination):
             div(
                 {"class": "tab-explanation"},
                 """
-                This tab is used to track temporary modifiers to your character's state.
-                Circumstances and debuffs that are not in <i>italics</i> automatically modify your statistics appropriately.
-                You can use custom modifiers for temporary effects, or to define complex abilities such as a barbarian's rage.
+                This tab is used to track changes to your character's statistics.
+                All standard debuffs and circumstances are listed here.
+                In addition, you can define custom modifiers to represent your character's various abilities.
             """,
             ),
             flex_row(
@@ -85,10 +85,20 @@ def create_page(_destination):
                     ),
                 ],
             ),
-            flex_wrapper(div({"class": "section-header"}, "Custom Modifiers")),
+            flex_wrapper(div({"class": "section-header"}, "Temporary Modifiers")),
+            fieldset(
+                {"class": "repeating_temporarymodifiers"},
+                custom_modifier(show_toggle=True, show_text=False),
+            ),
+            flex_wrapper(div({"class": "section-header"}, "Permanent Modifiers")),
+            fieldset(
+                {"class": "repeating_permanentmodifiers"},
+                custom_modifier(show_toggle=False, show_text=False),
+            ),
+            flex_wrapper(div({"class": "section-header"}, "DEPRECATED - Custom Modifiers")),
             fieldset(
                 {"class": "repeating_custommodifiers"},
-                custom_modifier(),
+                custom_modifier(show_toggle=True, show_text=False),
             ),
             textarea(
                 {
@@ -192,22 +202,35 @@ def debuff(name, representable=True):
     )
 
 
-def custom_modifier():
+def custom_modifier(show_toggle, show_text):
     return (
         flex_row(
             {"class": "custom-modifier"},
             [
-                underlabeled_checkbox(
-                    "Active?",
-                    None,
-                    {"class": "is-active", "name": "is_active"},
-                ),
-                labeled_text_input(
-                    "Name",
-                    {"class": "name"},
-                    {"name": "name"},
-                ),
-                "".join([custom_statistic(str(i)) for i in range(0, 4)]),
+                flex_row({"class": "text-prefix"}, [
+                    (
+                        underlabeled_checkbox(
+                            "Active?",
+                            None,
+                            {"class": "is-active", "name": "is_active"},
+                        )
+                        if show_toggle else ""
+                    ),
+                    labeled_text_input(
+                        "Name",
+                        {"class": "name"},
+                        {"name": "name"},
+                    ),
+                    (
+                        labeled_text_input(
+                            "Effect",
+                            {"class": "effect"},
+                            {"name": "effect"},
+                        )
+                        if show_text else ""
+                    ),
+                ]),
+                "".join([custom_statistic(str(i)) for i in range(0, 3)]),
             ],
         ),
     )
@@ -215,6 +238,7 @@ def custom_modifier():
 
 def custom_statistic(i):
     return flex_row(
+        {"class": "custom-statistic"},
         [
             select(
                 {"name": "statistic" + i},
@@ -223,16 +247,72 @@ def custom_statistic(i):
                     option({"value": "accuracy"}, "Accuracy"),
                     option({"value": "all_defenses"}, "All defenses"),
                     option({"value": "all_skills"}, "All skills"),
-                    option({"value": "armor_defense"}, "Armor"),
+                    option({"value": "armor_defense"}, "Armor defense"),
+                    option({"value": "attunement_points"}, "Attunement points"),
+                    option({"value": "awareness"}, "Awareness"),
+                    option({"value": "balance"}, "Balance"),
+                    option({"value": "climb"}, "Climb"),
+                    option({"value": "constitution"}, "Constitution"),
+                    option({"value": "craft_alchemy"}, "Craft (alchemy)"),
+                    option({"value": "craft_bone"}, "Craft (bone)"),
+                    option({"value": "craft_ceramics"}, "Craft (ceramics)"),
+                    option({"value": "craft_jewelry"}, "Craft (jewelry)"),
+                    option({"value": "craft_leather"}, "Craft (leather)"),
+                    option({"value": "craft_manuscripts"}, "Craft (manuscripts)"),
+                    option({"value": "craft_metal"}, "Craft (metal)"),
+                    option({"value": "craft_poison"}, "Craft (poison)"),
+                    option({"value": "craft_stone"}, "Craft (stone)"),
+                    option({"value": "craft_textiles"}, "Craft (textiles)"),
+                    option({"value": "craft_traps"}, "Craft (traps)"),
+                    option({"value": "craft_wood"}, "Craft (wood)"),
+                    option({"value": "craft_untrained"}, "Craft (untrained)"),
+                    option({"value": "creature_handling"}, "Creature Handling"),
                     option({"value": "damage_resistance_bonus"}, "Damage resist"),
+                    option({"value": "deception"}, "Deception"),
+                    option({"value": "deduction"}, "Deduction"),
+                    option({"value": "devices"}, "Devices"),
+                    option({"value": "dexterity"}, "Dexterity"),
+                    option({"value": "disguise"}, "Disguise"),
                     option({"value": "encumbrance"}, "Encumbrance"),
+                    option({"value": "endurance"}, "Endurance"),
                     option({"value": "fatigue_tolerance"}, "Fatigue tolerance"),
-                    option({"value": "fortitude"}, "Fortitude"),
+                    option({"value": "flexibility"}, "Flexibility"),
+                    option({"value": "fortitude"}, "Fortitude defense"),
                     option({"value": "hit_points"}, "Hit points"),
-                    option({"value": "mental"}, "Mental"),
+                    option({"value": "insight_points"}, "Insight points"),
+                    option({"value": "intelligence"}, "Intelligence"),
+                    option({"value": "intimidate"}, "Intimidate"),
+                    option({"value": "jump"}, "Jump"),
+                    option({"value": "knowledge_arcana"}, "Knowledge (arcana)"),
+                    option({"value": "knowledge_dungeoneering"}, "Knowledge (dungeoneering)"),
+                    option({"value": "knowledge_engineering"}, "Knowledge (engineering)"),
+                    option({"value": "knowledge_items"}, "Knowledge (items)"),
+                    option({"value": "knowledge_local"}, "Knowledge (local)"),
+                    option({"value": "knowledge_nature"}, "Knowledge (nature)"),
+                    option({"value": "knowledge_planes"}, "Knowledge (planes)"),
+                    option({"value": "knowledge_religion"}, "Knowledge (religion)"),
+                    option({"value": "knowledge_untrained"}, "Knowledge (untrained)"),
+                    option({"value": "linguistics"}, "Linguistics"),
+                    option({"value": "medicine"}, "Medicine"),
+                    option({"value": "mental"}, "Mental defense"),
+                    option({"value": "perception"}, "Perception"),
+                    option({"value": "perform"}, "Perform"),
+                    option({"value": "persuasion"}, "Persuasion"),
                     option({"value": "power"}, "Power"),
-                    option({"value": "reflex"}, "Reflex"),
+                    option({"value": "profession"}, "Profession"),
+                    option({"value": "reflex"}, "Reflex defense"),
+                    option({"value": "ride"}, "Ride"),
+                    option({"value": "sleight_of_hand"}, "Sleight of Hand"),
+                    option({"value": "social_insight"}, "Social Insight"),
+                    option({"value": "speed"}, "Speed"),
+                    option({"value": "stealth"}, "Stealth"),
+                    option({"value": "strength"}, "Strength"),
+                    option({"value": "weapon_damage_dice"}, "Strike +d damage"),
+                    option({"value": "survival"}, "Survival"),
+                    option({"value": "swim"}, "Swim"),
+                    option({"value": "nonclass_skill_count"}, "Trained skills"),
                     option({"value": "vital_rolls"}, "Vital rolls"),
+                    option({"value": "willpower"}, "Willpower"),
                 ],
             ),
             underlabel(

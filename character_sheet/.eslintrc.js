@@ -36,6 +36,8 @@ module.exports = {
     getSectionIDs: true,
     onSheetWorkerCompleted: true,
     on: true,
+    generateRowID: true,
+    removeRepeatingRow: true,
     Promise: true,
     Uint32Array: true,
     takeCardFromPlayer: true,

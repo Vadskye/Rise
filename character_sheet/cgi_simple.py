@@ -260,42 +260,36 @@ def flex_wrapper(attributes=None, contents=None):
 def labeled_text_input(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, "class", "labeled-text-input")
-    return div(
+    return flex_col(
         attributes,
-        flex_col(
-            [
-                text_input(input_attributes),
-                span({"class": "under-label"}, label_name),
-            ]
-        ),
+        [
+            text_input(input_attributes),
+            span({"class": "under-label"}, label_name),
+        ]
     )
 
 
 def labeled_number_input(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, "class", "labeled-text-input")
-    return div(
+    return flex_col(
         attributes,
-        flex_col(
-            [
-                number_input(input_attributes),
-                span({"class": "under-label"}, label_name),
-            ]
-        ),
+        [
+            number_input(input_attributes),
+            span({"class": "under-label"}, label_name),
+        ]
     )
 
 
 def labeled_textarea(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, "class", "labeled-text-input")
-    return div(
+    return flex_col(
         attributes,
-        flex_col(
-            [
-                textarea(input_attributes),
-                span({"class": "under-label"}, label_name),
-            ]
-        ),
+        [
+            textarea(input_attributes),
+            span({"class": "under-label"}, label_name),
+        ]
     )
 
 
@@ -418,14 +412,12 @@ def underlabel(label_name, input_html, attributes=None):
 def underlabel_spaced(label_name, input_html, attributes=None):
     attributes = attributes or dict()
     space_append(attributes, "class", "labeled-text-input"),
-    return div(
+    return flex_col(
         attributes,
-        flex_col(
-            [
-                input_html,
-                span({"class": "under-label"}, label_name),
-            ]
-        ),
+        [
+            input_html,
+            span({"class": "under-label"}, label_name),
+        ]
     )
 
 
@@ -496,12 +488,10 @@ def p(attributes=None, contents=None):
 def labeled_span(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, "class", "labeled-text-input")
-    return div(
+    return flex_col(
         attributes,
-        flex_col(
-            [
-                span(input_attributes),
-                span({"class": "under-label"}, label_name),
-            ]
-        ),
+        [
+            span(input_attributes),
+            span({"class": "under-label"}, label_name),
+        ]
     )
