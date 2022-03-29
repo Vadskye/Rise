@@ -262,3 +262,28 @@ div.full-sheet {
 .repcontainer > .repitem > .itemcontrol {
     z-index: 1;
 }
+
+.custom-modifier {
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    gap: 1em;
+
+    > .underlabeled-checkbox {
+        margin-right: -1em;
+    }
+
+    > div {
+        flex-grow: 1;
+    }
+
+    .name {
+        // this is longer than the length on the Core page, which may be bad?
+        width: 15em;
+    }
+
+    select {
+        flex-grow: 1;
+        margin-right: 0.25em;
+        width: 10em;
+    }
+}
