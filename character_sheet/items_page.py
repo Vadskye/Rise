@@ -48,7 +48,8 @@ def create_page(destination):
             div({"class": "section-header"}, "Weapons"),
             *weapons(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
-            *(
+            div(
+                {"class": "attunement-abilities"},
                 [
                     attuned_effects_tracker(),
                     fieldset(
@@ -62,7 +63,7 @@ def create_page(destination):
                     ),
                 ]
                 if destination == "roll20"
-                else [attunement() for _ in range(8)]
+                else [attunement() for _ in range(8)],
             ),
         ],
     )
@@ -160,7 +161,7 @@ def proficiencies():
 
 def legacy_item():
     return flex_row(
-        {"class": "attunement"},
+        {"class": "attunement legacy-item"},
         [
             labeled_text_input(
                 "Name",
@@ -171,6 +172,10 @@ def legacy_item():
                 "Effects",
                 {"class": "attunement-effect"},
                 {"name": "legacy_item_effect"},
+            ),
+            fieldset(
+                {"class": "repeating_legacymodifiers"},
+                custom_modifier(show_toggle=False, show_text=False),
             ),
         ],
     )
@@ -200,7 +205,10 @@ def armor(destination, armor_type):
             (
                 labeled_number_input(
                     "+DR",
-                    {"class": "armor-damage-resistance"},
+                    {
+                        "class": "armor-damage-resistance",
+                        "title": "Not including any attuned effects",
+                    },
                     input_attributes={"name": parseable_type + "_damage_resistance"},
                 )
                 if armor_type == "Body armor"
