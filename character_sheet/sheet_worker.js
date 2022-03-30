@@ -908,6 +908,7 @@ function handleCustomModifiers() {
           `repeating_${modifierType}modifiers_${id}_value${i}`;
         const formatIsActiveId = (id) =>
           `repeating_${modifierType}modifiers_${id}_is_active`;
+        const formatModifierKey = (modifierName) => `${modifierName}_${modifierType}_modifier`;
 
         getSectionIDs(
           `repeating_${modifierType}modifiers`,
@@ -939,10 +940,15 @@ function handleCustomModifiers() {
                 }
               }
               const attrs = {};
-              for (const key of VARIABLES_WITH_CUSTOM_MODIFIERS) {
-                attrs[`${key}_${modifierType}_modifier`] =
-                  totalCustomModifiers[key] || 0;
+              for (const modifierName of VARIABLES_WITH_CUSTOM_MODIFIERS) {
+                attrs[formatModifierKey(modifierName)] =
+                  totalCustomModifiers[modifierName] || 0;
               }
+              // Handle meta-modifiers
+              for (const defenseName of ["armor_defense", "fortitude", "reflex", "mental"]) {
+                attrs[formatModifierKey(defenseName)] += totalCustomModifiers["all_defenses"] || 0;
+              }
+
               setAttrs(attrs);
             });
           }
