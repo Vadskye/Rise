@@ -908,7 +908,8 @@ function handleCustomModifiers() {
           `repeating_${modifierType}modifiers_${id}_value${i}`;
         const formatIsActiveId = (id) =>
           `repeating_${modifierType}modifiers_${id}_is_active`;
-        const formatModifierKey = (modifierName) => `${modifierName}_${modifierType}_modifier`;
+        const formatModifierKey = (modifierName) =>
+          `${modifierName}_${modifierType}_modifier`;
 
         getSectionIDs(
           `repeating_${modifierType}modifiers`,
@@ -926,10 +927,9 @@ function handleCustomModifiers() {
               for (const id of repeatingSectionIds) {
                 // Permanent and legacy modifiers are always active; for temporary and attuned
                 // modifiers, we have to check the value from the checkbox.
-                const isActive =
-                  ["permanent", "legacy"].includes(modifierType)
-                    ? 1
-                    : values[formatIsActiveId(id)];
+                const isActive = ["permanent", "legacy"].includes(modifierType)
+                  ? 1
+                  : values[formatIsActiveId(id)];
                 if (isActive === "on" || isActive == 1) {
                   for (let i = 0; i < nestedCustomStatisticCount; i++) {
                     const modifiedStatistic = values[formatStatisticId(id, i)];
@@ -945,8 +945,46 @@ function handleCustomModifiers() {
                   totalCustomModifiers[modifierName] || 0;
               }
               // Handle meta-modifiers
-              for (const defenseName of ["armor_defense", "fortitude", "reflex", "mental"]) {
-                attrs[formatModifierKey(defenseName)] += totalCustomModifiers["all_defenses"] || 0;
+              for (const defenseName of [
+                "armor_defense",
+                "fortitude",
+                "reflex",
+                "mental",
+              ]) {
+                attrs[formatModifierKey(defenseName)] +=
+                  totalCustomModifiers["all_defenses"] || 0;
+              }
+              for (const knowledgeName of [
+                "knowledge_arcana",
+                "knowledge_dungeoneering",
+                "knowledge_engineering",
+                "knowledge_items",
+                "knowledge_local",
+                "knowledge_nature",
+                "knowledge_planes",
+                "knowledge_religion",
+                "knowledge_untrained",
+              ]) {
+                attrs[formatModifierKey(knowledgeName)] +=
+                  totalCustomModifiers["knowledge_all"] || 0;
+              }
+              for (const craftName of [
+                "craft_alchemy",
+                "craft_bone",
+                "craft_ceramics",
+                "craft_jewelry",
+                "craft_leather",
+                "craft_manuscripts",
+                "craft_metal",
+                "craft_poison",
+                "craft_stone",
+                "craft_textiles",
+                "craft_traps",
+                "craft_wood",
+                "craft_untrained",
+              ]) {
+                attrs[formatModifierKey(craftName)] +=
+                  totalCustomModifiers["craft_all"] || 0;
               }
 
               setAttrs(attrs);
