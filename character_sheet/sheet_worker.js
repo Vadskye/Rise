@@ -132,7 +132,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "None",
   },
   warlock: {
-    power: "high",
+    power: "fast",
     armor_defense: 0,
     fortitude: 5,
     reflex: 3,
