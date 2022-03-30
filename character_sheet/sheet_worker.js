@@ -1457,7 +1457,7 @@ function handlePower() {
           5: 8,
           6: 12,
           7: 16,
-        };
+        }[maxRank];
       } else if (classPowerProgression === "monster") {
         classPowerModifier = {
           0: 1,
