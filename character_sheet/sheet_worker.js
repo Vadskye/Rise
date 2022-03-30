@@ -1,4 +1,4 @@
-const CUSTOM_MODIFIER_TYPES = ["attuned", "temporary", "permanent"];
+const CUSTOM_MODIFIER_TYPES = ["attuned", "legacy", "temporary", "permanent"];
 const BASE_CLASS_MODIFIERS = {
   monster: {
     power: "monster",
@@ -923,10 +923,10 @@ function handleCustomModifiers() {
             getAttrs(fullAttributeIds, (values) => {
               const totalCustomModifiers = {};
               for (const id of repeatingSectionIds) {
-                // Permanent modifiers are always active; for temporary and attuned
+                // Permanent and legacy modifiers are always active; for temporary and attuned
                 // modifiers, we have to check the value from the checkbox.
                 const isActive =
-                  modifierType === "permanent"
+                  ["permanent", "legacy"].includes(modifierType)
                     ? 1
                     : values[formatIsActiveId(id)];
                 if (isActive === "on" || isActive == 1) {
@@ -1431,15 +1431,14 @@ function handlePower() {
     },
     (v) => {
       // TODO: confirm that the rank is actually from the character's base class
-      const maxRank = Math.max(
-        v.archetype_rank_0,
-        v.archetype_rank_1,
-        v.archetype_rank_2
-      );
+      const maxRank =
+        Math.max(v.archetype_rank_0, v.archetype_rank_1, v.archetype_rank_2) ||
+        0;
       const classPowerProgression = BASE_CLASS_MODIFIERS[v.base_class].power;
       let classPowerModifier = 0;
       if (classPowerProgression === "fast") {
         classPowerModifier = {
+          0: 0,
           1: 3,
           2: 4,
           3: 5,
@@ -1450,6 +1449,7 @@ function handlePower() {
         }[maxRank];
       } else if (classPowerProgression === "normal") {
         classPowerModifier = {
+          0: 0,
           1: 2,
           2: 3,
           3: 4,
