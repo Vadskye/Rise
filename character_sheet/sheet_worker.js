@@ -872,7 +872,7 @@ function handleCreationModifiers() {
       // Class proficiencies and class skill count aren't modifiers. They are simply
       // directly set, since nothing else can modify them.
       const attrs = {
-        class_proficiencies: classModifiers.proficiencies,
+        base_class_proficiencies: classModifiers.proficiencies,
         class_skill_count: classModifiers.class_skill_count,
       };
       // The simple modifier keys can simply be directly translated
