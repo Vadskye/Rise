@@ -139,7 +139,6 @@ export const telekinesis: MysticSphere = {
     {
       name: "Force Extension",
 
-      castingTime: "minor action",
       effect: `
         You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{reach} with melee \\glossterm{strikes}.
         This has no effect on ranged attacks you make.
@@ -156,7 +155,6 @@ export const telekinesis: MysticSphere = {
     {
       name: "Mass Force Extension",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Force Extension",
@@ -188,7 +186,6 @@ export const telekinesis: MysticSphere = {
     {
       name: "Rapid Reload",
 
-      castingTime: "minor action",
       effect: `
         You can reload weapons from the crossbow weapon group as a \\glossterm{minor action} instead of as a standard action, and without requiring any \\glossterm{free hands}.
         Each time you reload a crossbow in this way, you \\glossterm{briefly} cannot do so again.
@@ -488,7 +485,6 @@ export const telekinesis: MysticSphere = {
     {
       name: "Reactive Deflection",
 
-      castingTime: "minor action",
       effect: `
         You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
       `,
@@ -503,7 +499,6 @@ export const telekinesis: MysticSphere = {
     {
       name: "Floating Shield",
 
-      castingTime: "minor action",
       effect: `
         You can hold a buckler or standard shield without using a free hand.
         You still suffer the normal penalties if you are not proficient with it.
@@ -538,7 +533,6 @@ export const telekinesis: MysticSphere = {
     {
       name: "Kinetic Shield",
 
-      castingTime: "minor action",
       effect: `
         You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
       `,
@@ -554,7 +548,6 @@ export const telekinesis: MysticSphere = {
     {
       name: "Mass Kinetic Shield",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "kinetic shield",
@@ -570,7 +563,6 @@ export const telekinesis: MysticSphere = {
     {
       name: "Retributive Kinetic Shield",
 
-      castingTime: "minor action",
       effect: `
         You gain a +16 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
         In addition, whenever you resist damage, the attacker takes energy damage equal to half the damage resisted this way.

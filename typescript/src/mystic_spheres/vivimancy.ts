@@ -285,7 +285,6 @@ export const vivimancy: MysticSphere = {
     {
       name: "Vital Persistence",
 
-      castingTime: "minor action",
       effect: `
         Whenever you gain a \\glossterm{vital wound}, you may choose to ignore its vital wound effect (see \\pcref{Vital Wounds}).
         You are still considered to have the vital wound, and it still provides the normal -1 penalty to future vital rolls.
@@ -305,7 +304,6 @@ export const vivimancy: MysticSphere = {
     {
       name: "Mass Vital Persistence",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Vital Persistence",
@@ -387,7 +385,6 @@ export const vivimancy: MysticSphere = {
     {
       name: "Lifegift",
 
-      castingTime: "minor action",
       effect: `
         You gain a +4 \\glossterm{magic bonus} to your maximum \\glossterm{hit points}.
         In addition, you immediately gain that many hit points.
@@ -405,7 +402,6 @@ export const vivimancy: MysticSphere = {
     {
       name: "Mass Lifegift",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Lifegift",
@@ -643,7 +639,6 @@ export const vivimancy: MysticSphere = {
     {
       name: "Mass Lifesense",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Lifesense",
@@ -660,7 +655,6 @@ export const vivimancy: MysticSphere = {
     {
       name: "Mass Lifesight",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Lifesight",

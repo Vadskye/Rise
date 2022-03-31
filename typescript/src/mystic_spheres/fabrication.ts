@@ -390,7 +390,6 @@ export const fabrication: MysticSphere = {
     {
       name: "Daggerswarm",
 
-      castingTime: "minor action",
       attack: {
         hit: `The target takes 2d8 piercing damage.`,
         targeting: `
@@ -408,7 +407,6 @@ export const fabrication: MysticSphere = {
     {
       name: "Greater Daggerswarm",
 
-      castingTime: "minor action",
       functionsLike: {
         name: "daggerswarm",
         exceptThat: `
@@ -525,7 +523,6 @@ export const fabrication: MysticSphere = {
     {
       name: "Greater Instant Weapon",
 
-      castingTime: "minor action",
       functionsLike: {
         name: 'instant weapon',
         exceptThat: `

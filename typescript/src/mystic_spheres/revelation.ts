@@ -122,7 +122,6 @@ export const revelation: MysticSphere = {
     {
       name: "Precognitive Offense",
 
-      castingTime: "minor action",
       effect: `
         You gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
       `,
@@ -141,7 +140,6 @@ export const revelation: MysticSphere = {
     {
       name: "Mass Precognitive Offense",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Precognitive Offense",
@@ -173,7 +171,6 @@ export const revelation: MysticSphere = {
     {
       name: "Mass Precognitive Defense",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Precognitive Defense",
@@ -261,7 +258,6 @@ export const revelation: MysticSphere = {
     {
       name: "Mass Blindsense",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Blindsense",
@@ -278,7 +274,6 @@ export const revelation: MysticSphere = {
     {
       name: "Mass Blindsight",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Blindsight",
@@ -517,7 +512,6 @@ export const revelation: MysticSphere = {
     {
       name: "Mass Longshot",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Longshot",

@@ -263,12 +263,10 @@ export const toxicology: MysticSphere = {
     {
       name: 'Fungal Armor',
 
-      castingTime: 'minor action',
       effect: `
         You gain a +8 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
         However, you take a -4 penalty to your \\glossterm{hit points}.
       `,
-
       rank: 1,
       scaling: {
         3: `The bonus increases to +16, but the penalty increases to -8.`,
@@ -350,7 +348,6 @@ export const toxicology: MysticSphere = {
     {
       name: "Acid Breath",
 
-      castingTime: "minor action",
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} acid damage.`,
         targeting: `
@@ -367,7 +364,6 @@ export const toxicology: MysticSphere = {
     {
       name: "Greater Acid Breath",
 
-      castingTime: "minor action",
       functionsLike: {
         name: 'acid breath',
         exceptThat: `
@@ -543,7 +539,6 @@ export const toxicology: MysticSphere = {
       name: 'Retributive Spores',
 
       // original targets: ['Yourself', 'See text']
-      castingTime: 'minor action',
       attack: {
         hit: `Each target takes 2d6 acid damage.`,
         targeting: `
@@ -562,7 +557,6 @@ export const toxicology: MysticSphere = {
       name: 'Greater Retributive Spores',
 
       // original targets: ['Yourself', 'See text']
-      castingTime: 'minor action',
       attack: {
         hit: `Each target takes 4d10 + half \\glossterm{power} acid damage.`,
         targeting: `
