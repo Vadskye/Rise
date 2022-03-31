@@ -237,7 +237,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     The target becomes your quarry.
                     You and your \glossterm{allies} within the same range are called your hunting party.
                     Your hunting party gains a \plus1 bonus to \glossterm{accuracy} against your quarry.
-                    If the target is \glossterm{defeated}, you may end this ability and regain the \glossterm{attunement point} you spent to attune to this ability.
                 \end{attuneability}
             ",
             // TODO: this also affects allies
