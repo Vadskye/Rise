@@ -360,7 +360,7 @@ export const pyromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        hit: `The target takes 1d10 fire damage.`,
+        hit: `The target takes 2d8 fire damage.`,
         targeting: `
           When you cast this spell, a cluster of flaming spheres appears over your head.
           Each sphere is approximately one foot in diameter.
@@ -372,7 +372,7 @@ export const pyromancy: MysticSphere = {
 
       rank: 4,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -382,13 +382,12 @@ export const pyromancy: MysticSphere = {
       functionsLike: {
         name: 'flaming spheres',
         exceptThat: `
-          the damage increases to 4d6.
-          In addition, the range increases to \\medrange.
+          the damage increases to 4d10, and the range increases to \\medrange.
         `,
       },
       rank: 7,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -424,8 +423,8 @@ export const pyromancy: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        // AOE dice, but no power
-        hit: `Each target takes 1d10 fire damage.`,
+        // single-target dice, but no power
+        hit: `Each target takes 2d6 fire damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Reflex against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
         `,
@@ -436,7 +435,7 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 3,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -445,7 +444,7 @@ export const pyromancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // AOE dice, but no power
-        hit: `Each target takes 4d8 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 4d10 + half \\glossterm{power} fire damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Reflex against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
         `,
@@ -465,7 +464,7 @@ export const pyromancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // TODO: is this damage correct?
-        hit: `Each secondary target takes 2d10 fire damage.`,
+        hit: `Each target takes 2d10 fire damage.`,
         targeting: `
           Heat constantly radiates in a \\smallarea radius emanation from you.
           As a \\glossterm{minor action}, you can intensify the flames to make an attack vs. Fortitude against everything in the area.
@@ -473,7 +472,7 @@ export const pyromancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -482,12 +481,13 @@ export const pyromancy: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Your weapons shed light like a torch.
+        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes}.
         In addition, all damage you deal with \\glossterm{strikes} becomes fire damage in addition to the attack's normal damage types.
       `,
       rank: 2,
       scaling: {
-        4: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{power} with strikes.`,
-        8: `The bonus increases to +8.`,
+        4: `The bonus increases to +4.`,
+        6: `The bonus increases to +8.`,
       },
       type: "Attune (self)",
     },
@@ -503,7 +503,7 @@ export const pyromancy: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: {
-        6: `Each target also gains a +4 \\glossterm{magic bonus} to \\glossterm{power} with strikes.`,
+        6: `The bonus increases to +4.`,
       },
       type: "Attune (target)",
     },
@@ -583,7 +583,8 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\dazed.
+          The target takes 1d10 + half \\glossterm{power} fire damage.
+          If it takes damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -597,32 +598,12 @@ export const pyromancy: MysticSphere = {
     {
       name: "Greater Pyrohemia",
 
-      attack: {
-        hit: `
-          The target takes 2d6 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\dazed.
-          If it loses \\glossterm{hit points} from this damage, it is \\stunned instead of dazed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
-        `,
+        // +2r for full power after +1d, +1r for range
+      functionsLike: {
+        exceptThat: "the damage increases to 2d10 + \\glossterm{power}, and the range increases to \\medrange.",
+        name: "pyrohemia",
       },
-      rank: 4,
-      scaling: "damage",
-      type: "Duration",
-    },
-
-    {
-      name: "Supreme Pyrohemia",
-
-      attack: {
-        hit: `
-          The target takes 2d10 + half \\glossterm{power} fire damage and is \\glossterm{briefly} \\stunned.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
-        `,
-      },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
       type: "Duration",
     },
@@ -692,7 +673,7 @@ export const pyromancy: MysticSphere = {
         After you are restored to life this way, this spell ends.
       `,
       rank: 7,
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {

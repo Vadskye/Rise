@@ -54,9 +54,9 @@ export const polymorph: MysticSphere = {
         For details, see \\tref{Natural Weapons}.
       `,
       scaling: {
-        2: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using natural weapons.`,
-        4: `The power bonus increases to +4.`,
-        6: `The power bonus increases to +8.`,
+        2: `You can change which natural weapon you have as a \\glossterm{minor action}.`,
+        4: `You can gain up to two natural weapons at a time.`,
+        6: `You can gain up to three natural weapons at a time.`,
       },
       type: 'Attune (self)',
     },
@@ -370,16 +370,18 @@ export const polymorph: MysticSphere = {
         \\begin{itemize}
           \\item You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
-          \\item You are immune to \\glossterm{critical hits} from \\glossterm{strikes}.
-          \\item Your maximum \\glossterm{damage resistance} is halved.
+          \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
         \\end{itemize}
 
         As a \\glossterm{minor action}, you can voluntarily disable this ability and return to your normal form.
         If you do, you can resume the effect of this ability as a minor action.
       `,
-      rank: 4,
-      scaling: { 6: `Your damage resistance is not reduced.` },
-      type: 'Attune (self)',
+      rank: 3,
+      scaling: {
+        5: "The defense bonus against critical hits from strikes increases to +8.",
+        7: "You are immune to critical hits from strikes.",
+      },
+      type: 'Attune (deep, self)',
     },
 
     {
@@ -388,8 +390,7 @@ export const polymorph: MysticSphere = {
       // original targets: ['Yourself', 'See text']
       castingTime: 'minor action',
       attack: {
-        // AOE dice, no power
-        hit: `Each target takes 1d10 piercing damage.`,
+        hit: `Each target takes 2d6 piercing damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Armor against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
         `,
@@ -399,7 +400,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       scaling: 'damage',
-      type: 'Attune (self)',
+      type: 'Attune (deep, self)',
     },
 
     {
@@ -409,7 +410,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'minor action',
       attack: {
         // AOE dice, no power
-        hit: `Each target takes 4d8 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes 4d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Armor against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
         `,
@@ -418,7 +419,7 @@ export const polymorph: MysticSphere = {
         Your body grows large spikes that impale creatures who attack you.
       `,
       rank: 7,
-      type: 'Attune (self)',
+      type: 'Attune (deep, self)',
     },
 
     {
@@ -437,7 +438,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 6,
       scaling: 'damage',
-      type: 'Attune (self)',
+      type: 'Attune (deep, self)',
     },
 
     {

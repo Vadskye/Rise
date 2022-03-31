@@ -84,21 +84,21 @@ export const channelDivinity: MysticSphere = {
       name: "Agent of the Divine",
 
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}
-        In addition, you gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+        You gain a +8 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
+        In addition, you gain a +4 \\glossterm{magic bonus} to \\glossterm{power}.
       `,
       rank: 3,
       scaling: {
         5: `
-          The bonuses to hit points and damage resistance increase to +8.
-          In addition, the bonus to power increases to +4.
-        `,
-        7: `
           The bonuses to hit points and damage resistance increase to +16.
           In addition, the bonus to power increases to +8.
         `,
+        7: `
+          The bonuses to hit points and damage resistance increase to +32.
+          In addition, the bonus to power increases to +16.
+        `,
       },
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -126,7 +126,6 @@ export const channelDivinity: MysticSphere = {
         hit: `
           The target takes 1d8 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
-          After it stops being stunned, it becomes immune to being stunned in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -145,14 +144,14 @@ export const channelDivinity: MysticSphere = {
       attack: {
         hit: `
           The target takes 2d8 + half \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
+          If it takes damage, it is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\longrange.
+          Make an attack vs. Mental against anything within \\medrange.
           You gain a +2 bonus to accuracy with this attack if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "damage",
       type: "Duration",
     },
@@ -166,10 +165,10 @@ export const channelDivinity: MysticSphere = {
           The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\distrange.
+          Make an attack vs. Mental against one creature within \\longrange.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
       tags: ['Visual'],
       type: "Duration",
@@ -182,7 +181,7 @@ export const channelDivinity: MysticSphere = {
         name: 'glimpse of divinity',
         exceptThat: 'the target is also \\dazed as part of the same condition.',
       },
-      rank: 7,
+      rank: 6,
       scaling: "accuracy",
       tags: ['Visual'],
       type: "Duration",
@@ -215,7 +214,7 @@ export const channelDivinity: MysticSphere = {
           As a \\glossterm{condition}, the target takes a -2 penalty to Mental defense.
         `,
         targeting: `
-          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
+          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one creature within \\longrange.
         `,
       },
       rank: 1,
@@ -315,9 +314,9 @@ export const channelDivinity: MysticSphere = {
       name: "Divine Presence",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each target.",
+        crit: "The condition must be removed twice before the effect ends.",
         hit: `
-          Each target is \\glossterm{briefly} \\shaken by you.
+          Each target is \\shaken by you as a \\glossterm{condition}.
         `,
         targeting: `
           At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
@@ -327,7 +326,7 @@ export const channelDivinity: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -341,7 +340,7 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 7,
       tags: ["Emotion"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {

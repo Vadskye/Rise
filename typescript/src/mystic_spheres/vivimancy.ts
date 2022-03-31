@@ -46,21 +46,6 @@ export const vivimancy: MysticSphere = {
   ],
   spells: [
     {
-      name: "Lifeseal",
-
-      attack: {
-        hit: `The target takes 2d10 + \\glossterm{power} energy damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} unable to regain any hit points.`,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-      rank: 4,
-      scaling: "damage",
-      type: "Duration",
-    },
-
-    {
       name: "Draining Grasp",
 
       attack: {
@@ -336,17 +321,36 @@ export const vivimancy: MysticSphere = {
     {
       name: "Death Knell",
 
-      // Unclear rank
+      // treat as r1 debuff? mostly useless against monsters
+      // +1 level for situational +2 accuracy
       attack: {
-        hit: `The target takes 1d8 + half \\glossterm{power} energy damage.
-        If it loses \\glossterm{hit points} from this damage, it is marked for death as a \\glossterm{condition}.
-        If it reaches 0 hit points during this effect, it immediately dies.`,
+        hit: `
+          The target takes 1d8 + half \\glossterm{power} energy damage.
+          If loses \\glossterm{hit points} from this damage, it becomes marked for death as a \\glossterm{condition}.
+          While it is marked for death, it is unable to regain \\glossterm{hit points}, and it immediately dies from any vital wound that knocks it unconscious.
+          % TODO: add generic rules so this isn't necessary to state explicitly
+          Any ability that removes the condition and heals simultaneously, such as the \\ability{recover} ability, allows the creature to regain hit points from that ability normally.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\longrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
           This attack gains a +2 \\glossterm{accuracy} bonus against a creature with no remaining \\glossterm{damage resistance}.
         `,
       },
 
+      rank: 2,
+      scaling: "damage",
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Death Knell",
+
+      // treat as r1 debuff? mostly useless against monsters
+      // +1 level for situational +2 accuracy
+      functionsLike: {
+        name: "death knell",
+        exceptThat: "the damage increases to 4d8 + \\glossterm{power} energy damage.",
+      },
       rank: 2,
       scaling: "damage",
       type: "Duration",
@@ -522,7 +526,7 @@ export const vivimancy: MysticSphere = {
         Whenever it loses one or more \\glossterm{hit points} from a single attack, this penalty increases by 1.
         This penalty increase stacks, and persists even if the target regains the lost hit points.`,
         targeting: `
-          Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one living creature within \\longrange.
+          Make an attack vs. Fortitude with a +4 bonus to \\glossterm{accuracy} against one living creature within \\medrange.
         `,
       },
       rank: 1,
@@ -556,42 +560,40 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `Each target takes 1d8 energy damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\smallarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
+          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
       },
       rank: 1,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
       name: "Greater Retributive Lifebond",
 
       attack: {
-        // +1d from levels
         hit: `Each target takes 2d10 energy damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
+          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
       },
       rank: 4,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
       name: "Supreme Retributive Lifebond",
 
       attack: {
-        // +1d from levels
-        hit: `Each target takes 5d10 energy damage.`,
+        hit: `Each target takes 4d10 + half \\glossterm{power} energy damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
+          At the end of each phase, make an attack vs. Fortitude against each \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you that caused you to lose \\glossterm{hit points} during that phase.
         `,
       },
       rank: 7,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -890,7 +892,7 @@ export const vivimancy: MysticSphere = {
       `,
       materialCost: true,
       rank: 3,
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
   ],
 };

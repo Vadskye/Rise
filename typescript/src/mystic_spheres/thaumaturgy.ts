@@ -414,7 +414,7 @@ export const thaumaturgy: MysticSphere = {
         After you negate two attacks in this way, this spell's effect ends.
       `,
       rank: 6,
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {

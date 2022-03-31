@@ -67,11 +67,30 @@ export const terramancy: MysticSphere = {
           In addition, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Fortitude against anything within \\medrange.
           This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
         `,
       },
-      rank: 3,
+      rank: 1,
+      scaling: "damage",
+      tags: [],
+      type: "Instant",
+    },
+
+    {
+      name: "Greater Crushing Gravity",
+
+      attack: {
+        hit: `
+          The target takes 4d6 + half \\glossterm{power} bludgeoning damage.
+          In addition, it is \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\medrange.
+          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
+        `,
+      },
+      rank: 5,
       scaling: "damage",
       tags: [],
       type: "Instant",
@@ -122,13 +141,16 @@ export const terramancy: MysticSphere = {
       rank: 1,
       scaling: {
         3: `
-          You can also create heavy armor.
-          In addition, the items is magically enhanced.
-          A weapon grants a +2 \\glossterm{magic bonus} to \\glossterm{power} with strikes using the weapon,
-            and both shields and body armor grant a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
+          If you create body armor or a weapon, it can be created from special materials other than cold iron.
+          The item's rank still cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
         `,
-        5: `The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +8.`,
-        7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +16.`,
+        5: `
+          You can also create heavy armor.
+        `,
+        7: `
+          This spell loses the \\abilitytag{Attune} tag.
+          Instead, it lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+        `,
       },
       type: "Attune (self)",
     },
@@ -397,7 +419,7 @@ export const terramancy: MysticSphere = {
         7: `The damage reduction increases to 40.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {

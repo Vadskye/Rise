@@ -243,7 +243,10 @@ export const umbramancy: MysticSphere = {
         Your physical form becomes blurred and shifts in and out of existence.
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
       `,
-      rank: 6,
+      rank: 5,
+      scaling: {
+        7: "The miss chance increases to 25\\%.",
+      },
       type: "Attune (self)",
     },
 
@@ -310,7 +313,7 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 6,
       tags: ["Visual"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -492,7 +495,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 4d6 + half \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\confused.
+          If it loses \\glossterm{hit points} from this damage, it is \\confused as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange that is standing on the ground.
@@ -528,11 +531,12 @@ export const umbramancy: MysticSphere = {
         As a \\glossterm{minor action}, you can voluntarily disable this ability and return to your normal form.
         If you do, you can resume the effect of this ability as a minor action.
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: `You can maintain the form in bright illumination for a full round before it is suppressed.`,
+        5: `You can maintain the form in bright illumination for a full round before it is suppressed.`,
+        7: `You can maintain the form in bright illumination for up to five minutes before it is suppressed.`,
       },
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {

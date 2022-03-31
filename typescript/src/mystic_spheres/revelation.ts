@@ -152,7 +152,7 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +4.`,
         7: `The bonus increases to +8.`,
       },
-      type: "Attune (self)",
+      type: "Attune (deep, target)",
     },
 
     {
@@ -346,7 +346,9 @@ export const revelation: MysticSphere = {
       type: "Duration",
     },
 
-    // Correct rank is unclear?
+    // If the target has a vulnerability, this is like a r2 debuff. But that's pretty
+    // unlikely, and it's useless if you can *already* take advantage of the
+    // vulnerability, so it's closer to a r1 debuff?
     {
       name: "Reveal Vulnerability",
 
@@ -685,7 +687,7 @@ export const revelation: MysticSphere = {
 
       rank: 1,
       tags: ["Scrying"],
-      type: "Attune (self)",
+      type: "Attune (ritual)",
     },
 
     {
