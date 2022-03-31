@@ -1,7 +1,7 @@
 from logging import getLogger, WARNING
 from rise.latex.util import join
 from rise.statistics.rise_data import consumable_item_prices, item_prices
-from rise.latex.tags import is_valid_tag
+from rise.latex.tags import glosstermify, is_valid_tag
 
 logger = getLogger(__name__)
 
@@ -88,7 +88,7 @@ class MagicItem(object):
 
     def latex_tags(self):
         return (
-            ", ".join([f"\\abilitytag<{tag}>" for tag in sorted(self.tags)])
+            ", ".join([glosstermify(tag) for tag in sorted(self.tags)])
             if self.tags
             else ""
         )
