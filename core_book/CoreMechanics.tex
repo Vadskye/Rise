@@ -338,10 +338,9 @@ This chapter describes the core mechanics of Rise.
         \begin{itemize}
             \item Your \glossterm{hit points} become equal to your maximum hit points.
             \item Your current \glossterm{damage resistance} becomes equal to your maximum damage resistance.
-            \item You regain any \glossterm{attunement points} you released from \glossterm{attuned} effects (see \pcref{Attuned Abilities}).
+            \item You regain any \glossterm{attunement points} you released from \glossterm{deep attunement} effects (see \pcref{Deep Attunement}).
             \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
             \item Some other abilities have specific effects that last until you take a short rest.
-                For example, a barbarian cannot use their \textit{rage} ability again after raging until after they take a short rest (see Rage, page \pref{Bbn:Rage}).
         \end{itemize}
 
     \subsection{Long Rest}\label{Long Rest}
@@ -698,10 +697,11 @@ This chapter describes the core mechanics of Rise.
 
             As long as you remain attuned to an ability, you cannot recover the attunement point you used to attune to that ability by any means.
             As a \glossterm{free action}, you can \glossterm{dismiss} any number of effects that you are attuned to, which makes you stop being attuned to them.
-            After you stop being attuned to an ability, you can recover that attunement point when you take your next \glossterm{short rest}.
-            You must dismiss an attuned effect before you start the short rest to recover its attunement point.
+            After you stop being attuned to an ability, you recover that attunement point at the end of the current phase.
 
             There are three types of attunement abilities: self, target, and ritual.
+            In addition, some attunement abilities are categorized as \glossterm{deep attunement} abilities in addition to their main attunement type.
+            For details, see \pcref{Deep Attunement}, below.
 
             \parhead{Attune (self)} A self attunement ability requires the creature using the ability to attune to the effect.
 
@@ -712,6 +712,17 @@ This chapter describes the core mechanics of Rise.
 
             \parhead{Attune (ritual)} Only \glossterm{rituals} have the \abilitytag{Attune} (ritual) tag (see \pcref{Rituals}).
             A ritual attunement ability requires any participant in the ritual to attune to the effect.
+
+        \subsubsection{Deep Attunement}\label{Deep Attunement}
+            Some attuned abilities are more powerful and complicated than others, and require additional investment to take effect.
+            These are called deep attunement abilities.
+            They are indicated with ``deep'' inside the tag description, such as ``\abilitytag{Attune} (deep, self)''.
+
+            Deep attunement abilities have two main differences from ordinary attunement abilities.
+            First, they require expending two attunement points instead of only one.
+            Second, you can't get back those attunement points by any means until you take a \glossterm{short rest}, even if you release the attunement.
+
+            If a deep attunement ability has multiple people who could choose to attune to it, such as with attuned rituals, both attunement points must come from the same creature.
 
         \subsubsection{Conditions}\label{Conditions}
             Many abilities impose \glossterm{conditions} on their targets.
