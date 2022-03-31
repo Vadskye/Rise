@@ -2,6 +2,7 @@ valid_tags = set(
     [
         "Attune (ritual)",
         "Attune (ritual; see text)",
+        "Attune (deep, self)",
         "Attune (self)",
         "Attune (target)",
         "Auditory",
@@ -32,9 +33,9 @@ def glosstermify(tag):
         return tag
     elif " " in tag:
         split_tag = tag.split()
-        return f"\\glossterm<{split_tag[0]}> {' '.join(split_tag[1:])}"
+        return f"\\abilitytag<{split_tag[0]}> {' '.join(split_tag[1:])}"
     else:
-        return f"\\glossterm<{tag}>"
+        return f"\\abilitytag<{tag}>"
 
 
 def is_valid_tag(tag):
