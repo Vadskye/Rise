@@ -276,13 +276,16 @@ export const fabrication: MysticSphere = {
       rank: 1,
       scaling: {
         3: `
-          The item created is magically enhanced.
-          A weapon grants a +2 \\glossterm{magic bonus} to the wielder's \\glossterm{power},
-            and armor grants a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
-          In addition, body armor can be made from any special material other than dragonhide, dragonscale, cold iron, and the pure or ancient versions of those materials.
+          If you create body armor or a weapon, it can be created from special materials other than cold iron.
+          The item's rank still cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
         `,
-        5: `The magic bonus for a weapon increases to +4, and the magic bonus for armor increases to +8.`,
-        7: `The magic bonus for a weapon increases to +8, and the magic bonus for armor increases to +16.`,
+        5: `
+          You can create an additional item.
+        `,
+        7: `
+          This spell loses the \\abilitytag{Attune} tag.
+          Instead, it lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+        `,
       },
       tags: ['Manifestation'],
       type: "Attune (self)",
@@ -389,7 +392,7 @@ export const fabrication: MysticSphere = {
 
       castingTime: "minor action",
       attack: {
-        hit: `The target takes 1d10 piercing damage.`,
+        hit: `The target takes 2d8 piercing damage.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
@@ -399,7 +402,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -409,7 +412,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         name: "daggerswarm",
         exceptThat: `
-          the damage increases to 4d6, and the range increases to \\medrange.
+          the damage increases to 4d10, and the range increases to \\medrange.
         `,
       },
       rank: 7,

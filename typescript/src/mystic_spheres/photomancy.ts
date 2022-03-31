@@ -122,13 +122,14 @@ export const photomancy: MysticSphere = {
       name: "Blurred Motion",
 
       effect: `
-        If you move at least 15 feet during the \\glossterm{movement phase}, you gain a +1 bonus to Armor defense until the end of that round.
+        If you move at least 30 feet during the \\glossterm{movement phase}, you gain a +1 bonus to Armor defense until the end of that round.
       `,
-      rank: 5,
+      rank: 3,
       scaling: {
+        5: `The minimum distance is reduced to 15 feet.`,
         7: `The bonus increases to +2.`,
       },
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -169,38 +170,19 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: "Searing Flash",
-
-      attack: {
-        hit: `
-          The target takes 1d10 + half \\glossterm{power} energy damage and is \\glossterm{briefly} \\dazzled.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the target.
-        `,
-      },
-      rank: 3,
-      scaling: "accuracy",
-      tags: ["Visual"],
-      type: "Duration",
-    },
-
-    {
       name: "Blinding Flash",
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
-          The target is \\dazzled as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\blinded instead of dazzled.
+          If the target has no remaining \\glossterm{damage resistance}, it is \\blinded as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the target.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Visual"],
       type: "Duration",
@@ -212,13 +194,11 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 1d6 + half \\glossterm{power} energy damage.
-          In addition, it is \\glossterm{briefly} \\dazzled.
-          After the creature stops being dazzled, it becomes immune to being dazzled in this way until it takes a \\glossterm{short rest}.
+          If it takes damage, it is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
-          The illumination lasts \\glossterm{briefly}. 
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
       rank: 1,
@@ -232,7 +212,7 @@ export const photomancy: MysticSphere = {
 
       functionsLike: {
         name: 'searing light',
-        exceptThat: 'you gain a +3 accuracy bonus with the attack.',
+        exceptThat: 'you gain a +3 accuracy bonus with the attack, and the damage increases to 2d6 + half \\glossterm{power}.',
       },
       rank: 4,
       scaling: "damage",
@@ -244,16 +224,14 @@ export const photomancy: MysticSphere = {
       name: "Solar Ray",
 
       attack: {
-        crit: `Double damage, and the target also suffers consequences as if it had been struck by a beam of natural sunlight.`,
         hit: `
           The target takes 2d8 + half \\glossterm{power} energy damage.
-          In addition, it is \\glossterm{briefly} \\dazzled.
-          If it lost \\glossterm{hit points} from this damage, it is also briefly \\dazed.
+          If it takes damage, it is \\dazzled as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points}, it also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\medrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} fills a 120 foot radius around a 5 ft. wide straight line between you and the target.
-          The illumination lasts \\glossterm{briefly}. 
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 120 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
       rank: 5,
@@ -367,7 +345,7 @@ export const photomancy: MysticSphere = {
       castingTime: "minor action",
       effect: `
         All \\glossterm{strikes} against you have a 20\\% \\glossterm{miss chance}.
-        This does not protect you against creatures that can see you without normal vision, such as with the \\trait{blindsight} ability.
+        This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
       rank: 4,
@@ -429,10 +407,10 @@ export const photomancy: MysticSphere = {
       name: "Mirror Image",
 
       effect: `
-        Two illusory duplicates appear around you that mirror your every move.
+        Three illusory duplicates appear around you that mirror your every move.
         The duplicates shift chaotically in your space, making it difficult to identify your real location.
 
-        All \\glossterm{targeted} attacks against you have a 50\\% \\glossterm{miss chance}.
+        All \\glossterm{targeted} attacks against you have a 25\\% \\glossterm{miss chance}.
         Like other miss chances, this miss chance is rolled before determining whether the attack beats your defenses.
         When an attack misses in this way, it affects an image, destroying it.
         When the last image is destroyed, this ability provides no further benefit.
@@ -440,12 +418,12 @@ export const photomancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The spell creates three duplicates.`,
-        5: `The spell creates four duplicates.`,
-        7: `The spell creates five duplicates.`,
+        3: `The miss chance increases to 30\\%.`,
+        5: `The miss chance increases to 40\\%.`,
+        7: `The miss chance increases to 50\\%.`,
       },
       tags: ["Visual"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -506,6 +484,7 @@ export const photomancy: MysticSphere = {
       name: "Chromatic Orb",
 
       attack: {
+        // +2r for +1d, -1r for random effect
         hit: `
           The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects, chosen randomly: \\dazzled as a \\glossterm{condition}, \\slowed as a \\glossterm{condition}, \\glossterm{briefly} \\frightened by you, or briefly \\stunned.
@@ -514,7 +493,7 @@ export const photomancy: MysticSphere = {
           Make an attack vs. Reflex against anything within \\medrange.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "damage",
       type: "Duration",
     },
@@ -522,11 +501,12 @@ export const photomancy: MysticSphere = {
     {
       name: "Greater Chromatic Orb",
 
+        // +2r for full power after +1d, +1r for range
       functionsLike: {
-        exceptThat: "the damage increases to 4d6 + half \\glossterm{power}, and the effect becomes a \\glossterm{condition}.",
+        exceptThat: "the damage increases to 2d10 + \\glossterm{power}, and the range increases to \\longrange.",
         name: "chromatic orb",
       },
-      rank: 7,
+      rank: 5,
       scaling: "damage",
       type: "Duration",
     },

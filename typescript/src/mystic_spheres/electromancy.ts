@@ -364,7 +364,7 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      // The flavor here is a bit of a stretch, so it doesn't provide a Reflex bonus like Haste and
+      // The flavor here is a bit of a stretch, so it doesn't provide an initiative bonus like Haste and
       // there is no Mass Energize.
       name: "Energize",
 
@@ -439,14 +439,14 @@ export const electromancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // AOE dice, but no power
-        hit: `Each target takes 1d10 electricity damage.`,
+        hit: `Each target takes 2d6 electricity damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or metal weapon during that phase.
         `,
       },
       rank: 3,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -455,13 +455,13 @@ export const electromancy: MysticSphere = {
       castingTime: "minor action",
       attack: {
         // AOE dice, but no power
-        hit: `Each target takes 4d8 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 4d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
         `,
       },
       rank: 7,
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -554,10 +554,10 @@ export const electromancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 1d10 + \\glossterm{power} electricity damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\dazed.
+          If it loses \\glossterm{hit points} from this damage, it is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make a melee attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against anything within \\shortrange.
         `,
       },
       rank: 2,
@@ -570,10 +570,10 @@ export const electromancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 4d6 + \\glossterm{power} electricity damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
+          If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make a melee attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against anything within \\shortrange.
         `,
       },
       rank: 6,

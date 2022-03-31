@@ -569,15 +569,15 @@ export const aquamancy: MysticSphere = {
           \\item You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
             If you already have a swim speed, you gain a \\plus10 foot bonus to your swim speed.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
-          \\item You are immune to \\glossterm{critical hits} from \\glossterm{strikes}.
-          \\item Your \\glossterm{damage resistance} is halved.
+          \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
         \\end{itemize}
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: "The bonus to Flexibility increases to +12.",
+        5: "The defense bonus against critical hits from strikes increases to +8.",
+        7: "You are immune to critical hits from strikes.",
       },
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
     {
       name: "Fog Cloud",
@@ -697,7 +697,7 @@ export const aquamancy: MysticSphere = {
           \\item You are always considered to be \\swimming, so you take penalties if you do not have a swim speed.
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
           \\item You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
-          \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller.
+          \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
           \\item You gain a +4 bonus to your defenses against the \\ability{grapple} ability.
         \\end{itemize}
       `,
