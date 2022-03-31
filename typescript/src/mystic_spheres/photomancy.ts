@@ -342,7 +342,6 @@ export const photomancy: MysticSphere = {
     {
       name: "Blur",
 
-      castingTime: "minor action",
       effect: `
         All \\glossterm{strikes} against you have a 20\\% \\glossterm{miss chance}.
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.

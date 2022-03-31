@@ -272,7 +272,6 @@ export const channelDivinity: MysticSphere = {
     {
       name: "Mantle of Faith",
 
-      castingTime: "minor action",
       effect: `
         You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
       `,
@@ -288,7 +287,6 @@ export const channelDivinity: MysticSphere = {
     {
       name: "Divine Might",
 
-      castingTime: "minor action",
       effect: `
         Your size increases by one \\glossterm{size category}.
         Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
@@ -346,7 +344,6 @@ export const channelDivinity: MysticSphere = {
     {
       name: "Faithful Endurance",
 
-      castingTime: "minor action",
       effect: `
         You gain a +1 \\glossterm{magic bonus} to \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
       `,
@@ -358,7 +355,6 @@ export const channelDivinity: MysticSphere = {
     {
       name: "Divine Power",
 
-      castingTime: "minor action",
       effect: `
         You gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
       `,

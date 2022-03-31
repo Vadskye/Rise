@@ -203,7 +203,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Shrink',
 
-      castingTime: 'minor action',
       effect: `
         Your size decreases by one \\glossterm{size category}, to a minimum of Tiny.
         Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
@@ -236,7 +235,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Stoneskin',
 
-      castingTime: 'minor action',
       effect: `
         You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
       `,
@@ -253,7 +251,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mass Stoneskin',
 
-      castingTime: 'minor action',
       functionsLike: {
         mass: true,
         name: 'Stoneskin',
@@ -270,7 +267,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Enlarge',
 
-      castingTime: 'minor action',
       effect: `
         Your size increases by one \\glossterm{size category}, to a maximum of Huge.
         Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
@@ -330,7 +326,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mass Reshape Appearance',
 
-      castingTime: 'minor action',
       functionsLike: {
         mass: true,
         name: 'Reshape Appearance',
@@ -388,7 +383,6 @@ export const polymorph: MysticSphere = {
       name: 'Spikeform',
 
       // original targets: ['Yourself', 'See text']
-      castingTime: 'minor action',
       attack: {
         hit: `Each target takes 2d6 piercing damage.`,
         targeting: `
@@ -407,7 +401,6 @@ export const polymorph: MysticSphere = {
       name: 'Greater Spikeform',
 
       // original targets: ['Yourself', 'See text']
-      castingTime: 'minor action',
       attack: {
         // AOE dice, no power
         hit: `Each target takes 4d10 + half \\glossterm{power} piercing damage.`,
@@ -425,7 +418,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Extruding Spikes',
 
-      castingTime: 'minor action',
       attack: {
         // TODO: is this damage correct?
         hit: `Each target takes 2d10 piercing damage.`,
@@ -551,7 +543,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Vital Regeneration',
 
-      castingTime: 'minor action',
       effect: `
         At the end of each round, if the target is not \\glossterm{unconscious} due to \\glossterm{fatigue}, it automatically removes one of its \\glossterm{vital wounds}.
         It can choose to stop this regeneration if you are conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
@@ -569,7 +560,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Regeneration',
 
-      castingTime: 'minor action',
       effect: `
         At the end of each round, you regain 1d6 \\glossterm{hit points}.
         This healing cannot increase your hit points above half your maximum hit points.
@@ -582,7 +572,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Greater Regeneration',
 
-      castingTime: 'minor action',
       effect: `
         At the end of each round, you regain 2d6 \\glossterm{hit points}.
         If you gained a vital wound this round, you add your \\glossterm{power} to this healing.
@@ -596,7 +585,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Supreme Regeneration',
 
-      castingTime: 'minor action',
       effect: `
         At the end of each round, you regain 4d6 \\glossterm{hit points}.
         If you lost hit points this round, you add your \\glossterm{power} to this healing.
@@ -609,7 +597,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Physical Enhancement',
 
-      castingTime: 'minor action',
       effect: `
         When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
         You gain a +2 \\glossterm{magic bonus} to checks using the chosen attribute.
@@ -623,7 +610,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mass Physical Enhancement',
 
-      castingTime: 'minor action',
       functionsLike: {
         mass: true,
         name: 'Physical Enhancement',
@@ -639,7 +625,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Scent',
 
-      castingTime: 'minor action',
       effect: `
         You gain the \\trait{scent} trait, which reduces the \\glossterm{difficulty value} of scent-based Awareness checks by 10 (see \\pcref{Awareness}).
       `,
@@ -771,7 +756,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Swimmer',
 
-      castingTime: 'minor action',
       effect: `
         You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
         If you already have a swim speed, you gain a +5 foot \\glossterm{magic bonus} to your swim speed.
@@ -787,7 +771,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Climber',
 
-      castingTime: 'minor action',
       effect: `
         You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size.
         If you already have a climb speed, you gain a +5 foot \\glossterm{magic bonus} to your climb speed.
@@ -803,7 +786,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Runner',
 
-      castingTime: 'minor action',
       effect: `
         You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{land speed}.
       `,
@@ -819,7 +801,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mass Mobility Enhancement',
 
-      castingTime: 'minor action',
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         For each creature, you choose one of the following effects.
@@ -837,7 +818,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mass Sensory Enhancement',
 
-      castingTime: 'minor action',
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         For each creature, you choose one of the following effects.
@@ -856,7 +836,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Dragon Breath',
 
-      castingTime: 'minor action',
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} damage of your chosen type.`,
         targeting: `

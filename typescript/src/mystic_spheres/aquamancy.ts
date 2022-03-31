@@ -296,7 +296,6 @@ export const aquamancy: MysticSphere = {
     {
       name: "Aquatic Freedom",
 
-      castingTime: "minor action",
       effect: `
         You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
         If you already have a swim speed, you gain a +5 foot \\glossterm{magic bonus} to your swim speed.
@@ -312,7 +311,6 @@ export const aquamancy: MysticSphere = {
     {
       name: "Mass Aquatic Freedom",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "aquatic freedom",

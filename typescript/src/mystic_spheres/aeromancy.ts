@@ -136,7 +136,6 @@ export const aeromancy: MysticSphere = {
     {
       name: "Wind Screen",
 
-      castingTime: "minor action",
       effect: `
         You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
       `,
@@ -151,7 +150,6 @@ export const aeromancy: MysticSphere = {
     {
       name: "Mass Wind Screen",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "wind screen",
@@ -249,7 +247,6 @@ export const aeromancy: MysticSphere = {
     {
       name: "Mass Gentle Descent",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "gentle descent",
@@ -376,7 +373,6 @@ export const aeromancy: MysticSphere = {
     {
       name: "Windblade",
 
-      castingTime: "minor action",
       effect: `
         You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{reach} with melee \\glossterm{strikes}.
         Attacks that hit because of this reach deal bludgeoning damage instead of any other damage types.
@@ -393,7 +389,6 @@ export const aeromancy: MysticSphere = {
     {
       name: "Mass Windblade",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "windblade",

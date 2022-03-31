@@ -523,7 +523,6 @@ export const astromancy: MysticSphere = {
     {
       name: "Phasing Blade",
 
-      castingTime: "minor action",
       effect: `
         Whenever you make a \\glossterm{strike}, your weapon or projectile can pass through a single physical obstacle up to one foot thick on its way to the strike's target.
         This can allow your attacks to ignore \\glossterm{cover}, or even attack through solid walls.
@@ -542,7 +541,6 @@ export const astromancy: MysticSphere = {
     {
       name: "Mass Phasing Blade",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "phasing blade",
@@ -559,7 +557,6 @@ export const astromancy: MysticSphere = {
     {
       name: "Phasing Spells",
 
-      castingTime: "minor action",
       effect: `
         When determining whether you have \\glossterm{line of effect} to a particular location with spells, you can ignore a single physical obstacle up to one foot thick.
         This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
@@ -576,7 +573,6 @@ export const astromancy: MysticSphere = {
     {
       name: "Phasestep",
 
-      castingTime: "minor action",
       effect: `
         When you move using one of your movement speeds, you can move through a single creature freely.
         After you finish moving through one creature in this way, other \\glossterm{enemies} block your movement as normal.
@@ -598,7 +594,6 @@ export const astromancy: MysticSphere = {
     {
       name: "Mass Phasestep",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "phasestep",

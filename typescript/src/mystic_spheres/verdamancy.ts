@@ -316,7 +316,6 @@ export const verdamancy: MysticSphere = {
     {
       name: "Barkskin",
 
-      castingTime: "minor action",
       effect: `
         You gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
       `,
@@ -332,7 +331,6 @@ export const verdamancy: MysticSphere = {
     {
       name: "Mass Barkskin",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Barkskin",
@@ -569,7 +567,6 @@ export const verdamancy: MysticSphere = {
     {
       name: "Thornblade",
 
-      castingTime: "minor action",
       effect: `
         All damage you deal with \\glossterm{strikes} becomes piercing damage in addition to the attack's normal damage types.
         Whenever you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, thorns from the striking weapon enter the target's body.
@@ -589,7 +586,6 @@ export const verdamancy: MysticSphere = {
     {
       name: "Mass Thornblade",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Thornblade",

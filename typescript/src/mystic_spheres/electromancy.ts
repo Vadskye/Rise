@@ -263,7 +263,6 @@ export const electromancy: MysticSphere = {
     {
       name: "Magnetic Blade",
 
-      castingTime: "minor action",
       effect: `
         Metal weapons you wield gain a +1 bonus to \\glossterm{accuracy} against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
       `,
@@ -368,7 +367,6 @@ export const electromancy: MysticSphere = {
       // there is no Mass Energize.
       name: "Energize",
 
-      castingTime: "minor action",
       effect: `
         You gain a +5 foot \\glossterm{magic bonus} to speed with all of your \\glossterm{movement modes}.
       `,
@@ -384,7 +382,6 @@ export const electromancy: MysticSphere = {
     {
       name: "Lightning Breath",
 
-      castingTime: "minor action",
       attack: {
         // +1d for attune + every other round
         hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
@@ -402,7 +399,6 @@ export const electromancy: MysticSphere = {
     {
       name: "Greater Lightning Breath",
 
-      castingTime: "minor action",
       functionsLike: {
         name: 'lightning breath',
         exceptThat: `
@@ -436,7 +432,6 @@ export const electromancy: MysticSphere = {
     {
       name: "Personal Conduction",
 
-      castingTime: "minor action",
       attack: {
         // AOE dice, but no power
         hit: `Each target takes 2d6 electricity damage.`,
@@ -452,7 +447,6 @@ export const electromancy: MysticSphere = {
     {
       name: "Greater Personal Conduction",
 
-      castingTime: "minor action",
       attack: {
         // AOE dice, but no power
         hit: `Each target takes 4d10 + half \\glossterm{power} electricity damage.`,
