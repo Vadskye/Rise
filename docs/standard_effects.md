@@ -309,6 +309,22 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 * Modifiers
   * +4 levels gives +5d and full power instead of half power
 
+#### Spells: Autoattack
+
+* Rank 1
+  * 1d8 damage as a non-action vs creatures in a Medium radius that made you lose HP (Deep)
+  * 1d8 damage as a non-action vs adjacent creatures if you lose HP (Deep)
+* Rank 3
+  * 2d6 damage as a non-action vs creatures that attacked you in melee (Deep)
+  * r1 debuff condition in Small radius as non-action, crit = remove twice, once per creature (Deep)
+* Rank 4
+  * 2d8 damage as a minor action vs one creature in short range (Deep)
+  * Strike with -3 accuracy and no power as a minor action (Deep)
+* Rank 6
+  * 2d10 damage as a minor action vs everything in Small radius (Deep)
+* Rank 7
+  * r2 debuff condition in Small radius as non-action, once per creature (Deep)
+
 ### Pure debuff
 
 #### Spells: Single-target debuff
@@ -377,6 +393,7 @@ For strikes, going from full power -> half power and half -> none buys +3 effect
 #### Maneuvers: single-target high damage + debuff
 * Rank 3
   * Strike, brief r0 debuff
+  * Strike, brief r1 debuff if lose HP
 * Rank 5
   * Strike, brief r1 debuff, immune after first success
   * Strike, r1 debuff condition if lose HP
@@ -422,16 +439,21 @@ For strikes, going from full power -> half power and half -> none buys +3 effect
 * Rank 5
   * Med range, 4d6 + power damage, brief r1 debuff
   * Med range, 4d6 + power damage, brief r2 debuff if lose HP
+* Rank 7
+  * Med range, 4d10 + power damage, brief r2 debuff, immune after first success
+  * Med range, 4d10 + power damage, r2 debuff condition if lose HP
 
 #### Spells: single-target medium damage + debuff
 * Rank 1
   * Med range, 2d6 + half power damage, brief r1 debuff
   * Med range, 2d6 + half power damage, brief r2 debuff if lose HP
+  * Med range, 2d6 + half power damage, r1 debuff condition if lose HP
 * Rank 3
   * Med range, 2d10 + half power damage, brief r2 debuff if lose HP, otherwise brief r1 debuff
   * Med range, 2d10 + half power damage, brief r2 debuff, immune after first success
   * Med range, 2d10 + half power damage, r2 debuff condition if lose HP
 * Rank 5
+  * Med range, 2d6 + half power damage, r1 debuff condition
   * Med range, 4d8 + half power damage, brief r2 debuff
   * Med range, 4d8 + half power damage, brief r3 debuff if lose HP
 * Rank 7
