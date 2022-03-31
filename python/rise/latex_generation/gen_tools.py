@@ -1177,7 +1177,8 @@ def generate_tools():
     ]
 
     # POISONS
-    # Poison accuracy: as CR 3 monster, so level + ((level + 1) / 6) + 2
+    # Poison accuracy: (level / 2) + 2
+    # TODO: define poison ranks properly, especially for damage over time
     tools += [
         MagicItem(
             consumable=True,
@@ -1187,7 +1188,7 @@ def generate_tools():
             tags=[],
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus4.
+                The poison's accuracy is \\plus2.
                 Its stage 1 effect makes the target \\dazed while the poison lasts.
                 Its stage 3 effect makes the target \\stunned while the poison lasts.
             """,
@@ -1201,11 +1202,11 @@ def generate_tools():
             tags=[],
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus6.
-                The target takes 1d8 physical damage each time the poison's attack succeeds.
-                Its stage 3 effect ends the poison.
+                The poison's accuracy is \\plus4.
+                Its stage 1 effect inflicts 1d10+2 damage each time the poison's attack succeeds.
+                Its stage 3 effect also ends the poison.
             """,
-            short_description="Deals 1d8 damage per stage",
+            short_description="Deals 1d10+2 damage per stage",
         ),
         MagicItem(
             consumable=True,
@@ -1215,7 +1216,7 @@ def generate_tools():
             tags=[],
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus8.
+                The poison's accuracy is \\plus4.
                 Its stage 1 effect makes the target \\dazed while the poison lasts.
                 Its stage 3 effect makes the target \\stunned while the poison lasts.
             """,
@@ -1229,11 +1230,11 @@ def generate_tools():
             tags=[],
             description="""
                 This is an ingestion-based powder poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus11.
-                The target takes 2d6 physical damage each time the poison's attack succeeds.
-                Its stage 3 effect inflicts a \\glossterm<vital wound> on the target and ends the poison.
+                The poison's accuracy is \\plus5.
+                Its stage 1 effect inflicts 2d6+2 damage each time the poison's attack succeeds.
+                Its stage 3 effect instead inflicts 4d6+7 damage and ends the poison.
             """,
-            short_description="Deals 2d6 damage per stage, can vitally wound",
+            short_description="Deals 2d6+2 damage, ending with 4d6+7 damage",
         ),
         MagicItem(
             consumable=True,
@@ -1243,10 +1244,10 @@ def generate_tools():
             tags=[],
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus13.
-                The target takes 2d8 physical damage each time the poison's attack succeeds.
+                The poison's accuracy is \\plus7.
+                Its stage 1 effect inflicts 2d10+3 damage each time the poison's attack succeeds.
             """,
-            short_description="Deals 2d8 damage per stage endlessly",
+            short_description="Deals 2d10+3 damage endlessly",
         ),
         MagicItem(
             consumable=True,
@@ -1256,7 +1257,7 @@ def generate_tools():
             tags=[],
             description="""
                 This is an ingestion-based gas poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus18.
+                The poison's accuracy is \\plus8.
                 Its stage 1 effect makes the target \\stunned while the poison lasts.
                 Its stage 3 effect makes the target \\confused while the poison lasts.
             """,
@@ -1265,15 +1266,15 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Poison, Black Lotus",
-            rank=5,
+            rank=6,
             material_type="Poison",
             tags=[],
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus18.
-                The target takes 2d10+10 physical damage each time the poison's attack succeeds.
+                The poison's accuracy is \\plus8.
+                The target takes 4d8+14 damage each time the poison's attack succeeds.
             """,
-            short_description="Deals 2d10+10 damage per stage endlessly",
+            short_description="Deals 4d8+14 damage endlessly",
         ),
     ]
 
