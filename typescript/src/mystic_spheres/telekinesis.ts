@@ -447,11 +447,11 @@ export const telekinesis: MysticSphere = {
       effect: `
         As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -3 penalty to \\glossterm{accuracy}.
         This strike is considered a \\glossterm{magical} ability.
-        You take a -2d damage penalty with the strike, and you do not add your \\glossterm{power} to damage with the strike.
+        You do not add your \\glossterm{power} to damage with the strike.
       `,
       rank: 4,
       scaling: { 6: `The accuracy penalty is reduced to -2.` },
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -490,14 +490,12 @@ export const telekinesis: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +2 bonus to all defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller.
-        Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
+        You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: `The bonus increases to +3.`,
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
+        4: `The bonus increases to +3.`,
+        6: `The bonus increases to +4.`,
       },
       type: "Attune (self)",
     },
@@ -510,9 +508,12 @@ export const telekinesis: MysticSphere = {
         You can hold a buckler or standard shield without using a free hand.
         You still suffer the normal penalties if you are not proficient with it.
       `,
-      rank: 6,
+      rank: 4,
+      scaling: {
+        6: "You are considered to be proficient with the shield.",
+      },
       tags: [],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -578,7 +579,7 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 5,
       scaling: { 7: `The bonus increases to +32.` },
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -598,7 +599,7 @@ export const telekinesis: MysticSphere = {
         7: `The damage reduction increases to 40.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {

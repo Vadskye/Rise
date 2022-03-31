@@ -246,10 +246,11 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} cold damage and is \\glossterm{briefly} \\dazed.
+          The target takes 1d8 + half \\glossterm{power} cold damage.
+          If it takes damage, it is \\glossterm{briefly} \\dazed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\longrange.
         `,
       },
 
@@ -264,15 +265,14 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 2d8 + half \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
-          Otherwise, it is briefly \\dazed.
+          If it takes damage, it is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\longrange.
         `,
       },
 
-      rank: 5,
+      rank: 6,
       scaling: "damage",
       type: "Duration",
     },
@@ -351,7 +351,7 @@ export const cryomancy: MysticSphere = {
         7: `The damage reduction increases to 40.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -462,13 +462,16 @@ export const cryomancy: MysticSphere = {
       rank: 1,
       scaling: {
         3: `
-          You can also create heavy armor.
-          In addition, the items are magically enhanced.
-          A weapon grants a +2 \\glossterm{magic bonus} to \\glossterm{power} with strikes using the weapon,
-            and both shields and body armor grant a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
+          If you create body armor or a weapon, it can be created from special materials other than cold iron.
+          The item's rank still cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
         `,
-        5: `The bonus to power increases to +4, and the bonus to damage resistance increases to +8.`,
-        7: `The bonus to power increases to +8, and the bonus to damage resistance increases to +16.`,
+        5: `
+          You can also create heavy armor.
+        `,
+        7: `
+          This spell loses the \\abilitytag{Attune} tag.
+          Instead, it lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+        `,
       },
       type: "Attune (self)",
     },
@@ -534,8 +537,7 @@ export const cryomancy: MysticSphere = {
       // original targets: ['Yourself', 'See text']
       castingTime: "minor action",
       attack: {
-        // AOE dice, no power
-        hit: `Each target takes 1d10 cold damage.`,
+        hit: `Each target takes 2d6 cold damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
         `,
@@ -543,7 +545,23 @@ export const cryomancy: MysticSphere = {
 
       rank: 3,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
+    },
+
+    {
+      name: "Greater Frigid Aura",
+
+      castingTime: "minor action",
+      attack: {
+        hit: `Each target takes 4d10 + half \\glossterm{power} cold damage.`,
+        targeting: `
+          At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
+        `,
+      },
+
+      rank: 7,
+      // scaling: "damage",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -581,7 +599,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 1d10 + \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -597,8 +615,8 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} cold damage and is \\glossterm{briefly} \\slowed.
-          After it stops being slowed, it is immune to being slowed in this way until it takes a \\glossterm{short rest}.
+          The target takes 2d8 + \\glossterm{power} cold damage.
+          If it takes damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -616,7 +634,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 4d6 + \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+          If it takes damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.

@@ -292,11 +292,11 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -3 penalty to \\glossterm{accuracy}.
-        You take a -2d damage penalty with the strike, and you do not add your \\glossterm{power} to damage.
+        You do not add your \\glossterm{power} to damage with the strike.
       `,
       rank: 4,
       scaling: { 6: `The accuracy penalty is reduced to -2.` },
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -547,11 +547,10 @@ export const chronomancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 1d8 + half \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
-          After it stops being slowed, it is immune to being slowed in this way until it takes a \\glossterm{short rest}.
+          If it takes damage, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\longrange.
         `,
       },
       narrative: `

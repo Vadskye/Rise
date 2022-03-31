@@ -73,7 +73,9 @@ interface BaseSpellLike {
   type:
     | "Instant"
     | "Duration"
+    | "Attune (deep, self)"
     | "Attune (self)"
+    | "Attune (deep, target)"
     | "Attune (target)"
     | "Attune (ritual)"
     | "Sustain (free)"

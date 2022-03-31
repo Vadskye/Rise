@@ -263,12 +263,12 @@ export const bless: MysticSphere = {
         Whenever each target would gain a \\glossterm{condition}, it can choose to negate that condition.
         After a creature negates a condition in this way, this spell ends for that creature.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: `The spell can negate two conditions before ending.`,
-        7: `The spell can negate three conditions before ending.`,
+        4: `The spell can negate two conditions before ending.`,
+        6: `The spell can negate three conditions before ending.`,
       },
-      type: "Attune (target)",
+      type: "Attune (deep, target)",
     },
 
     {
@@ -380,17 +380,17 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, each target gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+        Each target gains a +8 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
+        In addition, each target gains a +4 \\glossterm{magic bonus} to \\glossterm{power}.
       `,
       rank: 4,
       scaling: {
         6: `
-          The bonuses to hit points and damage resistance increase to +8.
-          In addition, the bonus to power increases to +4.
+          The bonuses to hit points and damage resistance increase to +16.
+          In addition, the bonus to power increases to +8.
         `,
       },
-      type: "Attune (target)",
+      type: "Attune (deep, target)",
     },
 
     {
@@ -418,8 +418,8 @@ export const bless: MysticSphere = {
         Whenever each target would gain a \\glossterm{vital wound}, it can choose to negate that vital wound.
         After negating a vital wound for a creature in this way, this spell ends for that creature.
       `,
-      rank: 7,
-      type: "Attune (target)",
+      rank: 6,
+      type: "Attune (deep, target)",
     },
   ],
   rituals: [

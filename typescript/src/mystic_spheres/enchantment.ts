@@ -398,8 +398,8 @@ export const enchantment: MysticSphere = {
       name: "Fearsome Aura",
 
       attack: {
-        crit: "The target does not become immune to this effect.",
-        hit: `Each target is \\glossterm{briefly} \\shaken by you.`,
+        crit: `The condition must be removed twice before the effect ends.`,
+        hit: `Each target is \\shaken by you as a \\glossterm{condition}.`,
         targeting: `
           At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
           After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
@@ -408,7 +408,7 @@ export const enchantment: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -421,7 +421,7 @@ export const enchantment: MysticSphere = {
       rank: 7,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -613,7 +613,7 @@ export const enchantment: MysticSphere = {
         targeting: `
         This spell has no \\glossterm{verbal components}.
 
-        Make an attack vs. Mental with a +3 bonus to \\glossterm{accuracy} against one creature within \\longrange.
+        Make an attack vs. Mental with a +3 accuracy bonus against one creature within \\longrange.
         `,
       },
       rank: 1,
@@ -667,7 +667,6 @@ export const enchantment: MysticSphere = {
         hit: `
           The target takes 1d6 + half \\glossterm{power} energy \\glossterm{subdual damage}.
           If it takes damage, it is \\glossterm{briefly} \\dazed.
-          After this effect ends, the target becomes immune to being dazed in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -682,30 +681,14 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} energy \\glossterm{subdual damage}.
-          If it takes damage, it is \\glossterm{briefly} \\dazed.
-        `,
-        targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-      type: "Instant",
-    },
-    {
-      name: "Supreme Mind Crush",
-
-      attack: {
-        hit: `
-          The target takes 4d6 + half \\glossterm{power} energy \\glossterm{subdual damage}.
+          The target takes 2d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
           If it takes damage, it is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
         `,
       },
-      rank: 7,
+      rank: 5,
       scaling: "damage",
       type: "Instant",
     },

@@ -27,14 +27,14 @@ export const summoning: MysticSphere = {
       effect: `
         You summon a creature in an unoccupied square on stable ground within \\medrange.
         It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
-        Regardless of the appearance and size chosen, the creature's statistics use the values below.
         If a summoned creature gains a \\glossterm{vital wound} or has no hit points remaining at the end of a phase, it disappears.
+        Regardless of the appearance and size chosen, the creature's statistics use the values below.
 
         \\begin{itemize}
           \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue levels}.
           \\item Its \\glossterm{hit points} are equal to the standard value for your your level (see \\tref{Hit Points and Damage Resistance}).
           \\item It has no \\glossterm{damage resistance}.
-          \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
+          \\item Each of its \\glossterm{defenses} is equal to 5 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception \\sub 2.
           \\item Its \\glossterm{land speed} is 30 feet.
           \\item It has no \\glossterm{attunement points}.
@@ -54,7 +54,7 @@ export const summoning: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -70,7 +70,7 @@ export const summoning: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -86,7 +86,7 @@ export const summoning: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -102,7 +102,7 @@ export const summoning: MysticSphere = {
       rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -118,7 +118,7 @@ export const summoning: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -134,7 +134,7 @@ export const summoning: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -150,7 +150,7 @@ export const summoning: MysticSphere = {
       rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -239,26 +239,32 @@ export const summoning: MysticSphere = {
     {
       name: "Summon Weapon",
 
-      functionsLike: {
-        exceptThat: `
-        it has the following differences.
-        It has the \\abilitytag{Sustain} (minor) tag instead of the \\abilitytag{Attune} (self) tag.
-        The summoned creature takes the form of a weapon of your choice that you are proficient with.
+      effect: `
+        You summon a weapon in an unoccupied square on stable ground within \\medrange.
+        It takes the form of a weapon of your choice that you are proficient with, though in reality it is a manifestation of magical energy.
         It is sized appropriately to be wielded by a creature of your size.
-        It floats three feet off the ground, and has a 30 foot \\glossterm{fly speed} instead of a \\glossterm{land speed}, with good \\glossterm{maneuverability} and a maximum height of 15 feet (see \\pcref{Flying}).
-        The creature's accuracy and damage are based on your chosen weapon, and it gains the effect of the weapon's normal tags, except that it does not gain the Projectile or Thrown tags (see \\pcref{Weapon Tags}).
-        Its \\glossterm{power} is 0.
-        The weapon is considered to be held in two hands if possible, which can increase the damage dealt by Versatile Grip weapons (see \\pcref{Weapon Tags}).
+        If a summoned weapon gains a \\glossterm{vital wound} or has no hit points remaining at the end of a phase, it disappears.
+        The summoned weapon's statistics use the values below.
+
+        \\begin{itemize}
+          \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue levels}.
+          \\item Its \\glossterm{hit points} are equal to half the standard value for your your level (see \\tref{Hit Points and Damage Resistance}).
+          \\item It has no \\glossterm{damage resistance}.
+          \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
+          \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception \\sub 2, plus any accuracy modifier for the chosen weapon.
+          \\item It has a 30 foot \\glossterm{fly speed} instead of a \\glossterm{land speed}, with good \\glossterm{maneuverability} and a maximum height of 5 feet.
+          \\item It has no \\glossterm{attunement points}.
+        \\end{itemize}
 
         You cannot control the summoned weapon's actions.
         Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm{movement phase}, following that creature to the best of its abilities.
         During the \\glossterm{action phase}, it makes a melee \\glossterm{strike} against a creature within its \\glossterm{reach}.
         The weapon prefers to avoid accuracy and damage penalties that would be imposed by cover or special weapon grips.
         It choses randomly if all possible targets are equally easy to attack.
-        `,
-        name: "summon monster",
-      },
-      rank: 2,
+        If it hits, it deals damage appropriate for your chosen weapon.
+        This damage is improved by your Willpower as normal for magical attacks.
+      `,
+      rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -271,11 +277,11 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the weapon's maximum height above the ground is increased to 240 feet.
           This allows the weapon to fly up to fight airborne foes.
-          In addition, the weapon's damage bonus is increased to +3d.
+          In addition, the weapon gains a +1d damage bonus.
         `,
         name: "summon weapon",
       },
-      rank: 4,
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -289,13 +295,14 @@ export const summoning: MysticSphere = {
           it creates a fully functional Large ballista instead of a weapon.
           The ballista functions like any other weapon, with the following exceptions.
 
+          The ballista deals 1d10 damage with its attacks.
           It cannot move, and makes projectile \\glossterm{strikes} instead of melee strikes.
-          Its attacks have a maximum range of 120 feet and deal piercing damage.
-          In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
+          Its attacks deal piercing damage and have \\glossterm{range limits} of 90/360.
+          The ballista chooses to attack the creature farthest from it instead of the creature closest to it, though it avoids taking \\glossterm{longshot} penalties unless there are no valid targets within close range.
         `,
         name: "summon weapon",
       },
-      rank: 3,
+      rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -315,7 +322,7 @@ export const summoning: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -335,7 +342,7 @@ export const summoning: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -354,7 +361,7 @@ export const summoning: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -373,7 +380,7 @@ export const summoning: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -394,7 +401,7 @@ export const summoning: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -437,7 +444,7 @@ export const summoning: MysticSphere = {
       },
       rank: 7,
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -475,7 +482,7 @@ export const summoning: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
     {
       name: "Summon Annoying Insects",

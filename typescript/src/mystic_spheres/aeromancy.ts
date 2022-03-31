@@ -138,15 +138,13 @@ export const aeromancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        You gain a +2 bonus to your defenses against ranged \\glossterm{strikes} from weapons or projectiles that are Small or smaller.
-        Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
+        You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
       `,
       // narrative: "",
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: `The bonus increases to +3.`,
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
+        4: `The bonus increases to +3.`,
+        6: `The bonus increases to +4.`,
       },
       type: "Attune (self)",
     },
@@ -413,7 +411,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d8 bludgeoning damage.
+          Each target takes 2d10 bludgeoning damage.
         `,
         targeting: `
           At the end of each phase, make an attack vs. Armor against each creature within \\shortrange of you that attacked you during that phase.
@@ -424,7 +422,7 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
     {
       name: "Control Weather",
@@ -453,7 +451,7 @@ export const aeromancy: MysticSphere = {
       scaling: {
         6: "You can shape the weather for up to fifteen minutes before it takes effect, increasing the intensity of the changes you can make.",
       },
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
     {
       name: "Cyclone",
@@ -520,7 +518,7 @@ export const aeromancy: MysticSphere = {
 
       // +1.5 levels for avoidable damage, -0.5 for size limit. or something.
       attack: {
-        crit: "Double damage from movement.",
+        crit: "The condition deals double damage.",
         hit: `
           As a \\glossterm{condition}, the target is \\slowed by incredibly fast winds that inhibit movement.
           At the end of each phase, if it moved using one of its movement speeds during that phase, it takes 1d8 + half \\glossterm{power} bludgeoning damage.
@@ -540,7 +538,7 @@ export const aeromancy: MysticSphere = {
 
       // +1 level for range, +2 levels for damage die
       attack: {
-        crit: "Double damage from movement.",
+        crit: "The condition deals double damage.",
         hit: `
           As a \\glossterm{condition}, the target is \\slowed by incredibly fast winds that inhibit movement.
           At the end of each phase, if it moved using one of its movement speeds during that phase, it takes 2d10 + half \\glossterm{power} bludgeoning damage.
@@ -617,16 +615,16 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 physical damage.
+          The target takes 2d8 physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Reflex against one creature within \\shortrange.
-          If there is no dirt, dust, or collection of loose objects of similar size within 30 foot \\glossterm{range} of the target's eyes, this attack automatically fails.
+          Make an attack vs. Reflex against one creature within \\medrange.
+          If there is dirt, dust, or a collection of loose objects of similar size within 60 foot \\glossterm{range} of the target's eyes, you gain a +2 accuracy bonus with this attack.
         `,
       },
       // narrative: '',
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
       type: "Duration",
     },

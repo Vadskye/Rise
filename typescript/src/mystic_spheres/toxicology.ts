@@ -164,7 +164,7 @@ export const toxicology: MysticSphere = {
       name: "Acidic Blood",
 
       attack: {
-        hit: `Each target takes 1d10 acid damage.`,
+        hit: `Each target takes 1d8 acid damage.`,
         targeting: `
           At the end of each phase, if you lost \\glossterm{hit points} during that phase, make an attack vs. Reflex against everything adjacent to you.
         `,
@@ -173,9 +173,27 @@ export const toxicology: MysticSphere = {
         Your blood becomes acidic.
         This does not harm you, but your blood can be dangerous to anything nearby when you bleed.
       `,
-      rank: 3,
+      rank: 1,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
+    },
+
+    {
+      name: "Greater Acidic Blood",
+
+      attack: {
+        hit: `Each target takes 4d6 acid damage.`,
+        targeting: `
+          At the end of each phase, if you lost \\glossterm{hit points} during that phase, make an attack vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
+        `,
+      },
+      narrative: `
+        Your blood becomes acidic.
+        This does not harm you, but your blood can be dangerous to your enemies when you bleed.
+      `,
+      rank: 5,
+      scaling: "damage",
+      type: "Attune (deep, self)",
     },
 
     {
@@ -527,8 +545,7 @@ export const toxicology: MysticSphere = {
       // original targets: ['Yourself', 'See text']
       castingTime: 'minor action',
       attack: {
-        // AOE dice, no power
-        hit: `Each target takes 1d10 acid damage.`,
+        hit: `Each target takes 2d6 acid damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
         `,
@@ -538,7 +555,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 3,
       scaling: 'damage',
-      type: 'Attune (self)',
+      type: 'Attune (deep, self)',
     },
 
     {
@@ -547,8 +564,7 @@ export const toxicology: MysticSphere = {
       // original targets: ['Yourself', 'See text']
       castingTime: 'minor action',
       attack: {
-        // AOE dice, no power
-        hit: `Each target takes 4d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes 4d10 + half \\glossterm{power} acid damage.`,
         targeting: `
           At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
         `,
@@ -557,7 +573,7 @@ export const toxicology: MysticSphere = {
         You constantly shed spores that dissolve creatures who attack you.
       `,
       rank: 7,
-      type: 'Attune (self)',
+      type: 'Attune (deep, self)',
     },
   ],
   rituals: [],
