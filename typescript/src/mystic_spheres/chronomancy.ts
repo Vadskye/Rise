@@ -258,7 +258,6 @@ export const chronomancy: MysticSphere = {
     {
       name: "Haste",
 
-      castingTime: "minor action",
       effect: `
         You gain a +5 foot \\glossterm{magic bonus} to your speed with all of your \\glossterm{movement modes}, and a +1 \\glossterm{magic bonus} to \\glossterm{initiative} checks.
       `,
@@ -274,7 +273,6 @@ export const chronomancy: MysticSphere = {
     {
       name: "Mass Haste",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "haste",
@@ -347,7 +345,7 @@ export const chronomancy: MysticSphere = {
         4: `The maximum size of the target increases to Large.`,
         6: `The maximum size of the target increases to Huge.`,
       },
-      type: "Instant",
+      type: "Duration",
     },
 
     {
@@ -368,7 +366,6 @@ export const chronomancy: MysticSphere = {
     {
       name: "Mass Accelerated Reaction",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Accelerated Reaction",

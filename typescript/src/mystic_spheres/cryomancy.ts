@@ -280,7 +280,6 @@ export const cryomancy: MysticSphere = {
     {
       name: "Skate",
 
-      castingTime: "minor action",
       effect: `
         You can move on top of calm water as if it were land.
         You treat the water as \\glossterm{difficult terrain}.
@@ -297,7 +296,6 @@ export const cryomancy: MysticSphere = {
     {
       name: "Mass Skate",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Skate",
@@ -479,7 +477,6 @@ export const cryomancy: MysticSphere = {
     {
       name: "Frost Breath",
 
-      castingTime: "minor action",
       attack: {
         // +1d for attune + every other round
         hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
@@ -497,7 +494,6 @@ export const cryomancy: MysticSphere = {
     {
       name: "Greater Frost Breath",
 
-      castingTime: "minor action",
       functionsLike: {
         name: 'frost breath',
         exceptThat: `
@@ -535,7 +531,6 @@ export const cryomancy: MysticSphere = {
       name: "Frigid Aura",
 
       // original targets: ['Yourself', 'See text']
-      castingTime: "minor action",
       attack: {
         hit: `Each target takes 2d6 cold damage.`,
         targeting: `
@@ -551,7 +546,6 @@ export const cryomancy: MysticSphere = {
     {
       name: "Greater Frigid Aura",
 
-      castingTime: "minor action",
       attack: {
         hit: `Each target takes 4d10 + half \\glossterm{power} cold damage.`,
         targeting: `

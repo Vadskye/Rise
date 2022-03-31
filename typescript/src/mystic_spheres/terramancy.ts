@@ -441,7 +441,6 @@ export const terramancy: MysticSphere = {
     {
       name: "Mass Earthen Anchor",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Earthen Anchor",

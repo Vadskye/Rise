@@ -312,7 +312,6 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Enhance Magic",
 
-      castingTime: "minor action",
       effect: `
         You gain a +2 \\glossterm{magic bonus} to your \\glossterm{power}.
       `,
@@ -328,7 +327,6 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Mass Enhance Magic",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Enhance Magic",
@@ -453,7 +451,6 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Delay Teleportation",
 
-      castingTime: "minor action",
       effect: `
         Whenever a creature or object would teleport into a \\largearea radius \\glossterm{emanation} from you from outside of that area, that teleportation is delayed by a round.
         The teleporting creature or object remains stuck in the Astral Plane and can take no actions during that time.

@@ -309,7 +309,6 @@ export const pyromancy: MysticSphere = {
     {
       name: "Flame Breath",
 
-      castingTime: "minor action",
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
@@ -326,7 +325,6 @@ export const pyromancy: MysticSphere = {
     {
       name: "Greater Flame Breath",
 
-      castingTime: "minor action",
       functionsLike: {
         name: 'flame breath',
         exceptThat: `
@@ -342,7 +340,6 @@ export const pyromancy: MysticSphere = {
     {
       name: "Eyes of Flame",
 
-      castingTime: "minor action",
       attack: {
         hit: `The target takes 2d6 + \\glossterm{power} fire damage.`,
         targeting: `
@@ -358,7 +355,6 @@ export const pyromancy: MysticSphere = {
     {
       name: "Flaming Spheres",
 
-      castingTime: "minor action",
       attack: {
         hit: `The target takes 2d8 fire damage.`,
         targeting: `
@@ -378,7 +374,6 @@ export const pyromancy: MysticSphere = {
     {
       name: "Greater Flaming Spheres",
 
-      castingTime: "minor action",
       functionsLike: {
         name: 'flaming spheres',
         exceptThat: `
@@ -421,7 +416,6 @@ export const pyromancy: MysticSphere = {
     {
       name: "Personal Ignition",
 
-      castingTime: "minor action",
       attack: {
         // single-target dice, but no power
         hit: `Each target takes 2d6 fire damage.`,
@@ -441,7 +435,6 @@ export const pyromancy: MysticSphere = {
     {
       name: "Greater Personal Ignition",
 
-      castingTime: "minor action",
       attack: {
         // AOE dice, but no power
         hit: `Each target takes 4d10 + half \\glossterm{power} fire damage.`,
@@ -461,7 +454,6 @@ export const pyromancy: MysticSphere = {
     {
       name: "Flame Aura",
 
-      castingTime: "minor action",
       attack: {
         // TODO: is this damage correct?
         hit: `Each target takes 2d10 fire damage.`,
@@ -478,7 +470,6 @@ export const pyromancy: MysticSphere = {
     {
       name: "Flame Blade",
 
-      castingTime: "minor action",
       effect: `
         Your weapons shed light like a torch.
         You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes}.
@@ -495,7 +486,6 @@ export const pyromancy: MysticSphere = {
     {
       name: "Mass Flame Blade",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Flame Blade",

@@ -40,7 +40,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Freedom",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
         Each target is immune to being \\slowed, \\immobilized, and \\paralyzed.
@@ -55,7 +54,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Swiftness",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
         Each target gains a +5 foot \\glossterm{magic bonus} to speed with all its \\glossterm{movement modes}.
@@ -85,7 +83,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Regeneration",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         At the end of each round, each target regains 2d6 \\glossterm{hit points}.
@@ -103,7 +100,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Proficiency",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target becomes proficient with one additional weapon group.
@@ -207,7 +203,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of the Purified Body",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target gains a +4 bonus to \\glossterm{defenses} against \\glossterm{poisons} and \\glossterm{diseases}.
@@ -224,7 +219,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Mental Clarity",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target gains a +4 bonus to \\glossterm{defenses} against \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
@@ -241,7 +235,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Potency",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
@@ -257,7 +250,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Perseverance",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Whenever each target would gain a \\glossterm{condition}, it can choose to negate that condition.
@@ -299,7 +291,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Physical Prowess",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
@@ -317,7 +308,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Endurance",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target gains a +4 \\glossterm{magic bonus} to its maximum \\glossterm{hit points}.
@@ -335,7 +325,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Divine Warning",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target is never \\unaware or \\partiallyunaware.
@@ -347,7 +336,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Cleansing Renewal",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         At the end of each round, each target removes one \\glossterm{condition} of its choice affecting it.
@@ -396,7 +384,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Resilience",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target gains a +4 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
@@ -412,7 +399,6 @@ export const bless: MysticSphere = {
     {
       name: "Blessing of Vitality",
 
-      castingTime: "minor action",
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Whenever each target would gain a \\glossterm{vital wound}, it can choose to negate that vital wound.
