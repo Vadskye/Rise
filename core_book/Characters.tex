@@ -667,34 +667,34 @@ You can either skim past terms you don't yet understand or look them up as you g
         \item At 4th level, and every 3 levels thereafter, your maximum \glossterm{archetype rank} increases (see \pcref{Archetype Ranks}).
     \end{raggeditemize}
 
-    \begin{dtable}
+    \begin{dtable!*}
         \lcaption{Character Advancement}
-        \begin{dtabularx}{\columnwidth}{l l >{\lcol}X >{\lcol}X l}
-            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{Accuracy, Defenses, Skills} & \tb{Legacy Item} & \tb{XP} \tableheaderrule
-            1st        & 1                   & \tdash                        & \tdash           & 0      \\
-            2nd        & \tdash              & \plus1                        & \tdash           & 10     \\ % +10 xp
-            3rd        & \tdash              & \plus1                        & 2                & 25     \\ % +15 xp
-            4th        & 2                   & \plus2                        & \tdash           & 45     \\ % +20 xp
-            5th        & \tdash              & \plus2                        & \tdash           & 70     \\ % +25 xp
-            6th        & \tdash              & \plus3                        & \tdash           & 100    \\ % +30 xp
-            7th        & 3                   & \plus3                        & \tdash           & 140    \\ % +40 xp
-            8th        & \tdash              & \plus4                        & \tdash           & 200    \\ % +60 xp
-            9th        & \tdash              & \plus4                        & 4, 2             & 300    \\ % +100 xp
-            10th       & 4                   & \plus5                        & \tdash           & 450    \\ % +150 xp
-            11th       & \tdash              & \plus5                        & \tdash           & 700    \\ % +250 xp
-            12th       & \tdash              & \plus6                        & \tdash           & 1,000  \\ % +300 xp
-            13th       & 5                   & \plus6                        & \tdash           & 1,400  \\ % +400 xp
-            14th       & \tdash              & \plus7                        & \tdash           & 2,000  \\ % +600 xp
-            15th       & \tdash              & \plus7                        & 6, 4             & 3,000  \\ % +1000 xp
-            16th       & 6                   & \plus8                        & \tdash           & 4,500  \\ % +1,500 xp
-            17th       & \tdash              & \plus8                        & \tdash           & 7,000  \\ % +2,500 xp
-            18th       & \tdash              & \plus9                        & \tdash           & 10,000 \\ % +3,000 xp
-            19th       & 7                   & \plus9                        & \tdash           & 14,000 \\
-            20th       & \tdash              & \plus10                       & \tdash           & 20,000 \\
-            21st       & \tdash              & \plus10                       & 7, 6             & 30,000 \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X l}
+            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{Accuracy, Defenses, Skills} & \tb{Special}                        & \tb{XP} \tableheaderrule
+            1st        & 1                   & \tdash                          & \tdash                              & 0      \\
+            2nd        & \tdash              & \plus1                          & \tdash                              & 10     \\ % +10 xp
+            3rd        & \tdash              & \plus1                          & Legacy item: rank 2                 & 25     \\ % +15 xp
+            4th        & 2                   & \plus2                          & \tdash                              & 45     \\ % +20 xp
+            5th        & \tdash              & \plus2                          & \tdash                              & 70     \\ % +25 xp
+            6th        & \tdash              & \plus3                          & \plus1 \glossterm{attunement point} & 100    \\ % +30 xp
+            7th        & 3                   & \plus3                          & \tdash                              & 140    \\ % +40 xp
+            8th        & \tdash              & \plus4                          & \tdash                              & 200    \\ % +60 xp
+            9th        & \tdash              & \plus4                          & Legacy item: ranks 4 and 2          & 300    \\ % +100 xp
+            10th       & 4                   & \plus5                          & \tdash                              & 450    \\ % +150 xp
+            11th       & \tdash              & \plus5                          & \tdash                              & 700    \\ % +250 xp
+            12th       & \tdash              & \plus6                          & \plus1 \glossterm{attunement point} & 1,000  \\ % +300 xp
+            13th       & 5                   & \plus6                          & \tdash                              & 1,400  \\ % +400 xp
+            14th       & \tdash              & \plus7                          & \tdash                              & 2,000  \\ % +600 xp
+            15th       & \tdash              & \plus7                          & Legacy item: ranks 6 and 4          & 3,000  \\ % +1000 xp
+            16th       & 6                   & \plus8                          & \tdash                              & 4,500  \\ % +1,500 xp
+            17th       & \tdash              & \plus8                          & \tdash                              & 7,000  \\ % +2,500 xp
+            18th       & \tdash              & \plus9                          & \tdash                              & 10,000 \\ % +3,000 xp
+            19th       & 7                   & \plus9                          & \tdash                              & 14,000 \\
+            20th       & \tdash              & \plus10                         & \tdash                              & 20,000 \\
+            21st       & \tdash              & \plus10                         & Legacy item: ranks 7 and 6          & 30,000 \\
         \end{dtabularx}
         1. See \pcref{Archetype Ranks}. \\
-    \end{dtable}
+    \end{dtable!*}
 
     \subsection{Legacy Items}\label{Legacy Items}
 
@@ -837,14 +837,15 @@ You can either skim past terms you don't yet understand or look them up as you g
 \section{Resources}\label{Resources}
 
     \subsection{Attunement Points}\label{Attunement Points}
-        You can use \glossterm{attunement points} to \glossterm{attune} to effects such as spells or items (see \pcref{Attuned Abilities}).
-        Abilities that require attunement have the \abilitytag{Attune} tag (see \pcref{Ability Tags}).
+        Many spells and items require you to \glossterm{attune} to them before you can access their special effects (see \pcref{Attuned Abilities}).
+        Most effects require you to invest a single \glossterm{attunement point}.
+        You can stop attuning to the effect as a \glossterm{free action}, which allows you to use that attunement point elsewhere.
+        However, \glossterm{deep attunement} effects are more costly.
+        They require two attunement points, and you cannot recover those points until you complete a \glossterm{short rest}.
 
         Your \glossterm{class} gives you a certain number of attunement points.
+        At 6th level and 12th level, you gain an additional attunement point.
         A small number of abilities can also grant additional \glossterm{attunement points}.
-
-        When you take a \glossterm{short rest}, you recover all \glossterm{attunement points} that you released from attuned effects.
-        For details, see \pcref{Resting}.
 
     \subsection{Fatigue}\label{Fatigue}
         Thoughout the day, you can become fatigued by your exertions both in and out of combat.
