@@ -239,7 +239,6 @@
 
         \begin{instantability}{Hustle}
             \label{Hustle}
-            Instant
             \rankline
             Choose a path that you want to travel.
             You travel that path, up to the limit of your relevant movement speed.
@@ -247,27 +246,26 @@
 
         \parhead{Block} As a \glossterm{move action}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
 
-        \begin{instantability}{Block}
+        \begin{durationability}{Block}
             \label{Block}
-            Instant
+            \abilitytag{Swift}
             \rankline
-            During the current phase, whenever a creature that you can see attempts to move from a space adjacent to you into another space adjacent to you, you can attempt to block its movement.
-            This includes creatures whose path takes them through two consecutive spaces adjacent to you, even if neither the creature's location at the start of the phase nor its intended location at the end of the phase are adjacent to you.
-            When you do, make an opposed \glossterm{initiative} check against the creature.
+            When you use this ability, choose a creature you can see.
+            During the current phase, whenever that creature attempts to move from a space adjacent to you into another space adjacent to you, you can attempt to block its movement.
+            This includes a creature whose path takes it through two consecutive spaces adjacent to you, even if neither the creature's location at the start of the phase nor its intended location at the end of the phase are adjacent to you.
+            When you do, make an opposed \glossterm{initiative} check against the target.
             If you beat it on the initiative check, it must spend additional movement equal to one of your relevant movement speeds to move from its space.
             If it cannot, it stops moving.
             This represents you automatically repositioning yourself to block its movement.
 
-            You can only make this check once against any individual creature during a current phase.
-            If the creature has the ability to move through your space, such as if it uses the \ability{overrun} ability, it can ignore this additional movement cost.
+            If a creature has the ability to move through your space, such as if it uses the \ability{overrun} ability, it can ignore this additional movement cost.
             If multiple creatures are able to block the same creature from moving, it must pay both additional movement costs, which generally keeps it stuck in place.
-        \end{instantability}
+        \end{durationability}
 
         \parhead{Follow} As a \glossterm{move action}, you can use the \textit{follow} ability to follow a creature as it moves.
 
         \begin{instantability}{Follow}
             \label{Follow}
-            Instant
             \rankline
             Choose a creature you can see, and the maximum distance you want to follow at.
             During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your relevant movement speed.
@@ -282,7 +280,7 @@
 
         \begin{instantability}{React}
             \label{React}
-            \spelltwocol{Instant}{\abilitytag{Swift}}
+            \abilitytag{Swift}
             \rankline
             Choose a creature that you can see.
             Make an opposed \glossterm{initiative} check against that creature.
@@ -292,23 +290,10 @@
             This represents you wasting time trying to watch the creature, giving it extra time to beat you in any sort of opposed contest or race.
         \end{instantability}
 
-        \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
-
-        \begin{durationability}{Struggle}
-            \label{Struggle}
-            Duration
-            \rankline
-            Until the end of the current phase, your land speed becomes five feet, regardless of all other effects that would modify your land speed.
-            In addition, you can move a distance up to your land speed.
-            This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
-            It also does not help you if you are unable to use your movement speeds, such as if you are \immobilized.
-        \end{durationability}
-
         \parhead{Withdraw} As a \glossterm{move action}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
 
         \begin{instantability}{Withdraw}
             \label{Withdraw}
-            Instant
             \rankline
             This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
             In addition, you can specify multiple targets and try to keep away from all of them.
