@@ -177,9 +177,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                As a \glossterm{minor action}, you can deattune from an item you are attuned to with the \glossterm{attunement point} granted by your \textit{equipment efficiency} ability.
-                When you do, you immediately regain that attunement point instead of waiting for a \glossterm{short rest}.
-                This allows you to use that attunement point to attune to a different item much more quickly than normal.
+                You can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
             ",
             modifiers: None,
         },
