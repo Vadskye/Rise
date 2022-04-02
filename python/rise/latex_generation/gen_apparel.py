@@ -60,7 +60,7 @@ def generate_apparel():
         MagicItem(
             name="Gloves of Potency, Greater",
             rank=4,
-            material_type="Gauntlet",
+            material_type="Glove",
             description="""
                 You gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
@@ -69,7 +69,7 @@ def generate_apparel():
         MagicItem(
             name="Gloves of Potency, Supreme",
             rank=6,
-            material_type="Gauntlet",
+            material_type="Glove",
             description="""
                 You gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
@@ -314,6 +314,27 @@ def generate_apparel():
             short_description="Allows throwing any item up to 120 feet",
         ),
     ]
+
+    apparel += [
+        MagicItem(
+            name="Gloves of Telekinetic Propulsion",
+            rank=2,
+            material_type="Gloves",
+            description="""
+                When you make a \\glossterm<thrown> \\glossterm<strike>, you reduce your \\glossterm<longshot penalty> by 1.
+            """,
+            short_description="Reduces thrown longshot penalty by 1",
+        ),
+        MagicItem(
+            name="Gloves of Telekinetic Propulsion, Greater",
+            rank=5,
+            material_type="Gloves",
+            description="""
+                When you make a \\glossterm<thrown> \\glossterm<strike>, you reduce your \\glossterm<longshot penalty> by 2.
+            """,
+            short_description="Reduces thrown longshot penalty by 1",
+        ),
+    ]
     # Head
 
     apparel += [
@@ -325,7 +346,7 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
-                If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
+                When you do, make an attack vs. Armor against a creature or object within \\rngshort range.
                 \\hit The target takes 2d8+4 fire damage.
             """,
             short_description="Can blast foe with fire",
@@ -338,7 +359,7 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
-                If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
+                When you do, make an attack vs. Armor against a creature or object within \\rngshort range.
                 \\hit The target takes 4d8+7 fire damage.
             """,
             short_description="Can blast foe with intense fire",
@@ -351,7 +372,7 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
-                If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
+                When you do, make an attack vs. Armor against a creature or object within \\rngshort range.
                 \\hit The target takes 6d10+14 fire damage.
             """,
             short_description="Can blast foe with supremely intense fire",
@@ -1479,7 +1500,7 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can activate this belt.
-                If you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
+                When you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
                 This effect lasts until you activate the belt again, which returns you to your original size.
 
                 Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \\glossterm<weight limits>, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
@@ -1509,7 +1530,7 @@ def generate_apparel():
             tags=[],
             description="""
                 As a standard action, you can activate this belt.
-                If you do, your size decreases by one \\glossterm<size category>, to a minimum of Tiny.
+                When you do, your size decreases by one \\glossterm<size category>, to a minimum of Tiny.
                 This effect lasts until you activate the belt again, which returns you to your original size.
 
                 Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \\glossterm<weight limits>, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
@@ -1620,6 +1641,46 @@ def generate_apparel():
     ]
 
     apparel += [
+        # standard tiny cone
+        MagicItem(
+            name="Pyromancer's Glove",
+            rank=1,
+            material_type="Glove",
+            tags=[],
+            description="""
+                As a standard action, you can activate this glove.
+                When you do, make an attack vs. Reflex against everything within a \\smallarea cone.
+                \\hit Each target takes 1d8+1 fire damage.
+            """,
+            short_description="Deals 1d8+1 damage in a cone",
+        ),
+        MagicItem(
+            name="Pyromancer's Glove, Greater",
+            rank=4,
+            material_type="Glove",
+            tags=[],
+            description="""
+                As a standard action, you can activate this glove.
+                When you do, make an attack vs. Reflex against everything within a \\medarea cone.
+                \\hit Each target takes 2d10+3 fire damage.
+            """,
+            short_description="Deals 2d10+3 damage in a cone",
+        ),
+        MagicItem(
+            name="Pyromancer's Glove, Supreme",
+            rank=7,
+            material_type="Glove",
+            tags=[],
+            description="""
+                As a standard action, you can activate this glove.
+                When you do, make an attack vs. Reflex against everything within a \\largearea cone.
+                \\hit Each target takes 5d10+10 fire damage.
+            """,
+            short_description="Deals 5d10+10 damage in a cone",
+        ),
+    ]
+
+    apparel += [
         MagicItem(
             name="Belt of Vital Persistence",
             rank=1,
@@ -1695,7 +1756,7 @@ def generate_apparel():
             tags=["Scrying"],
             description="""
                 As a \\glossterm<standard action>, you can concentrate to use this item.
-                If you do, a \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngshort range.
+                When you do, a \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngshort range.
                 As long as you \\glossterm<sustain> the effect as a standard action, you see through the sensor instead of from your body.
 
                 While viewing through the sensor, your visual acuity is the same as your normal body,
@@ -2250,6 +2311,43 @@ def generate_apparel():
         ),
     ]
 
+    apparel += [
+        MagicItem(
+            name="Gauntlet of Blades",
+            rank=1,
+            material_type="Gauntlet",
+            tags=["Manifestation"],
+            description="""
+                You can activate this gauntlet as a \\glossterm<free action>.
+                When you do, a dagger \\glossterm<briefly> appears in one of your free hands.
+                The dagger disappears when this effect ends.
+            """,
+            short_description="Can summon daggers",
+        ),
+        MagicItem(
+            name="Gauntlet of Blades, Greater",
+            rank=4,
+            material_type="Gauntlet",
+            tags=[],
+            description="""
+                This item functions like a \\mitem<gauntlet of blades>, except that the daggers can have special materials.
+                When you use its ability, you chooose whether the dagger is diamondsteel, mithral, or silvered (see \\pcref<Weapon Special Materials>).
+            """,
+            short_description="Can summon daggers with special materials",
+        ),
+        MagicItem(
+            name="Gauntlet of Blades, Supreme",
+            rank=7,
+            material_type="Gauntlet",
+            tags=[],
+            description="""
+                This item functions like a \\mitem<gauntlet of blades>, except that the daggers can have almost any special material.
+                When you use its ability, you can choose to create a dagger made from any special material other than cold iron (see \\pcref<Weapon Special Materials>).
+            """,
+            short_description="Can summon daggers of any material",
+        ),
+    ]
+
     # Class ability buffs - all amulets!
 
     apparel += [
@@ -2790,14 +2888,14 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
-            name="Amulet of Abyssal Rebuke",
+            name="Amulet of Abyssal Reach",
             rank=3,
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<abyssal blast> warlock ability, you gain a +1 \\glossterm<accuracy> bonus against each creature that dealt damage to you during the previous round.
+                Your range with the \\ability<abyssal blast> warlock ability is increased to \\longrange.
             """,
-            short_description="Grants +1 accuracy with \\ability<abyssal blast> against attackers",
+            short_description="Increases range with \\ability<abyssal blast>",
         ),
         MagicItem(
             name="Amulet of Abyssal Rebuke, Greater",
@@ -2805,9 +2903,33 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<abyssal blast> warlock ability, you gain a +2 \\glossterm<accuracy> bonus against each creature that dealt damage to you during the previous round.
+                Your range with the \\ability<abyssal blast> warlock ability is increased to \\distrange.
             """,
-            short_description="Grants +2 accuracy with \\ability<abyssal blast> against attackers",
+            short_description="Greatly increases range with \\ability<abyssal blast>",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Amulet of the Frozen Abyss",
+            rank=1,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<abyssal blast> warlock ability, you may choose to convert all damage dealt by that ability to cold damage instead of fire damage.
+            """,
+            short_description="Changes \\ability<abyssal blast> to deal cold damage",
+        ),
+        MagicItem(
+            name="Amulet of the Frozen Abyss, Greater",
+            rank=4,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                When you use the \\ability<abyssal blast> warlock ability, you may choose to convert all damage dealt by that ability to cold damage instead of fire damage.
+                In addition, if you have the \\ability<hellfire> or \\ability<greater hellfire> warlock abilities, you can use them to affect abilities that deal cold damage in addition to fire damage.
+            """,
+            short_description="Changes \\ability<abyssal blast> and \\ability<hellfire> to deal cold damage",
         ),
     ]
 

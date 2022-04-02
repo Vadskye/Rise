@@ -129,6 +129,38 @@ def generate_armor():
 
     armor += [
         MagicItem(
+            name="Shield of Arrow Reflection",
+            rank=2,
+            material_type="Shield",
+            description="""
+                Whenever a creature within \\longrange of you misses you with a ranged \\glossterm<strike>, it treats itself as a target of that attack.
+            """,
+            short_description="Reflects missed ranged attacks",
+        ),
+        MagicItem(
+            name="Shield of Arrow Reflection, Greater",
+            rank=4,
+            material_type="Shield",
+            description="""
+                Whenever a creature within \\distrange of you misses you with a ranged \\glossterm<strike>, it treats itself as a target of that attack.
+                It takes a -2 penalty to defenses against attacks reflected in this way.
+            """,
+            short_description="Precisely reflects missed ranged attacks",
+        ),
+        MagicItem(
+            name="Shield of Arrow Reflection, Supreme",
+            rank=6,
+            material_type="Shield",
+            description="""
+                Whenever a creature within \\extrange of you misses you with a ranged \\glossterm<strike>, it treats itself as a target of that attack.
+                It takes a -4 penalty to defenses against attacks reflected in this way.
+            """,
+            short_description="Reflects missed ranged attacks with incredible precision",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
             name="Shield of Bashing",
             rank=2,
             material_type="Shield",
