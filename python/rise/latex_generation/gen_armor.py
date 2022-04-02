@@ -265,7 +265,7 @@ def generate_armor():
             short_description="Deals 2d8 damage to adjacent attackers",
         ),
         MagicItem(
-            name="Armor of Retribution, Supreme",
+            name="Armor of Retribution, Greater",
             rank=6,
             material_type="Body armor",
             tags=["Attune (deep, self)"],
@@ -621,14 +621,41 @@ def generate_armor():
 
     armor += [
         MagicItem(
+            name="Soulguard Shield",
+            rank=2,
+            tags=[],
+            material_type="Shield",
+            description="""
+                Whenever you would be affected by a \\glossterm<condition>, you have a 25\\% chance to avoid gaining that condition.
+                This does not prevent any other effects of the attack.
+            """,
+            short_description="Grants 25\\% chance to avoid conditions",
+        ),
+        MagicItem(
+            name="Soulguard Shield, Greater",
+            rank=6,
+            tags=[],
+            material_type="Shield",
+            description="""
+                Whenever you would be affected by a \\glossterm<condition>, you have a 50\\% chance to avoid gaining that condition.
+                This does not prevent any other effects of the attack.
+            """,
+            short_description="Grants 50\\% chance to avoid conditions",
+        ),
+    ]
+
+    armor += [
+        MagicItem(
             name="Shield of Mystic Reflection",
             rank=6,
             tags=[],
             material_type="Shield",
             description="""
-                Whenever you use the \\ability<total defense> ability, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
+                Whenever you use the \\ability<total defense> ability, you can activate this shield.
+                When you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
                 It cannot choose to reduce its accuracy or damage against itself.
                 Any other targets of the ability are affected normally.
+                After you activate this shield, you \\glossterm<briefly> cannot activate it again.
 
                 This is a \\abilitytag<Swift> ability, so it affects any abilities targeting you in the phase you take the total defense action.
             """,

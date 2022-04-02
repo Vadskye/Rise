@@ -780,6 +780,31 @@ def generate_implements():
 
     implements += [
         MagicItem(
+            name="Blinding Staff",
+            rank=4,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Whenever you cause a creature to become \\dazzled as a \\glossterm<condition>, you may activate this staff.
+                If you do, you and that creature are each \\glossterm<briefly> \\blinded.
+            """,
+            short_description="Briefly blinds you and dazzled creatures",
+        ),
+        MagicItem(
+            name="Blinding Staff, Greater",
+            rank=7,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Whenever you cause a creature to become \\dazzled as a \\glossterm<condition>, you may activate this staff.
+                If you do, that creature is \\glossterm<briefly> \\blinded.
+            """,
+            short_description="Briefly blinds dazzled creatures",
+        ),
+    ]
+
+    implements += [
+        MagicItem(
             name="Bushwalker's Staff",
             rank=4,
             material_type="Staff",
