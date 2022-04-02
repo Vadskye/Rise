@@ -231,7 +231,7 @@ def generate_implements():
     implements += [
         MagicItem(
             name="Staff of Hindrance",
-            rank=3,
+            rank=1,
             material_type="Staff",
             tags=[],
             description="""
@@ -325,27 +325,30 @@ def generate_implements():
             rank=1,
             material_type="Staff",
             description="""
-                Whenever you \\glossterm<defeat> a creature within \\medrange of you with a \\glossterm<magical> ability, you gain a +5 foot bonus to your speed with all movement modes during the next round.
+                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +10 foot bonus to your speed with all movement modes during the next round.
+                In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +1 \\glossterm<accuracy> bonus.
             """,
-            short_description="Grants +5 speed after defeating a foe",
+            short_description="Grants +10 speed, maybe +1 accuracy on kill",
         ),
         MagicItem(
             name="Onslaught Staff, Greater",
             rank=3,
             material_type="Staff",
             description="""
-                Whenever you \\glossterm<defeat> a creature within \\medrange of you with a \\glossterm<magical> ability, you gain a +10 foot bonus to your speed with all movement modes during the next round.
+                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +15 foot bonus to your speed with all movement modes during the next round.
+                In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +2 \\glossterm<accuracy> bonus.
             """,
-            short_description="Grants +10 speed after defeating a foe",
+            short_description="Grants +15 speed, maybe +2 accuracy on kill",
         ),
         MagicItem(
             name="Onslaught Staff, Supreme",
             rank=5,
             material_type="Staff",
             description="""
-                Whenever you \\glossterm<defeat> a creature within \\medrange of you with a \\glossterm<magical> ability, you gain a +15 foot bonus to your speed with all movement modes during the next round.
+                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +20 foot bonus to your speed with all movement modes during the next round.
+                In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +3 \\glossterm<accuracy> bonus.
             """,
-            short_description="Grants +15 speed after defeating a foe",
+            short_description="Grants +20 speed, maybe +3 accuracy on kill",
         ),
     ]
 
@@ -596,9 +599,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 1d10+4 \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d6+4 \\glossterm<energy damage>.
             """,
-            short_description="Deals 1d10+4 damage when foes remove conditions",
+            short_description="Deals 2d6+4 damage when foes remove conditions",
         ),
         MagicItem(
             name="Hexbite Staff, Greater",
@@ -606,9 +609,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d10+7 \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d6+7 \\glossterm<energy damage>.
             """,
-            short_description="Deals 2d10+7 damage when foes remove conditions",
+            short_description="Deals 4d6+7 damage when foes remove conditions",
         ),
         MagicItem(
             name="Hexbite Staff, Supreme",
@@ -616,9 +619,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d10+14 \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 5d10+14 \\glossterm<energy damage>.
             """,
-            short_description="Deals 4d10+14 damage when foes remove conditions",
+            short_description="Deals 5d10+14 damage when foes remove conditions",
         ),
     ]
 
@@ -629,7 +632,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                When you cast a \\glossterm<targeted> spell that has the \\glossterm<Attune> tag, you can invest the magic of the spell in this staff.
+                When you cast a \\glossterm<targeted> spell that has the \\glossterm<Attune> tag, but is not a \\glossterm<deep attunement>, you can invest the magic of the spell in this staff.
                 If you do, the spell does not have its normal effect.
                 Up to two spells can be stored this way.
                 If there are already spells invested in the staff, you can choose which spell to replace to make room for the new spell.
@@ -742,7 +745,7 @@ def generate_implements():
             description="""
                 Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one.
-                In addition, during the \\glossterm<action phase> of the next round, the spell takes effect again with the same choices for all decisions, such as targets.
+                During the \\glossterm<action phase> of the next round, the spell takes effect again with the same choices for all decisions, such as targets.
             """,
             short_description="Can exert to repeat effect",
         ),

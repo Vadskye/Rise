@@ -14,34 +14,34 @@ def generate_armor():
             name="Lifebond Retribution Armor",
             rank=2,
             material_type="Body armor",
-            tags=[],
+            tags=["Attune (deep, self)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
+                At the end of each phase, make an attack vs. Fortitude against each creature within a \\medarea radius \\glossterm<emanation> from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 2d6 energy damage.
             """,
-            short_description="Damages adjacent attackers when you lose HP",
+            short_description="Deals 2d6 damage to attackers when you lose HP",
         ),
         MagicItem(
             name="Lifebond Retribution Armor, Greater",
             rank=4,
             material_type="Body armor",
-            tags=[],
+            tags=["Attune (deep, self)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
+                At the end of each phase, make an attack vs. Fortitude against each creature within a \\medarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 4d6 energy damage.
             """,
-            short_description="Damages nearby attackers when you lose HP",
+            short_description="Deals 4d6 damage to attackers when you lose HP",
         ),
         MagicItem(
             name="Lifebond Retribution Armor, Supreme",
             rank=6,
             material_type="Body armor",
-            tags=[],
+            tags=["Attune (deep, self)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each creature within a \\smallarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
+                At the end of each phase, make an attack vs. Fortitude against each creature within a \\medarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 5d10 energy damage.
             """,
-            short_description="Damages attackers when you lose HP",
+            short_description="Deals 5d10 damage to attackers when you lose HP",
         ),
     ]
 
@@ -83,7 +83,6 @@ def generate_armor():
             description="""
                 When an \\glossterm<ally> within a \\areasmall radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
                 Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
-                This item can only affect projectiles and thrown objects that are Small or smaller.
             """,
             short_description="Redirects small nearby projectiles to hit you",
         ),
@@ -96,80 +95,35 @@ def generate_armor():
             """,
             short_description="Redirects small projectiles to hit you",
         ),
-        MagicItem(
-            name="Shield of Boulder Catching",
-            rank=3,
-            material_type="Shield",
-            description="""
-                This item functions like a \\mitem<shield of arrow catching>, except that it can affect projectile and thrown objects of up to Large size.
-            """,
-            short_description="Redirects large nearby projectiles to hit you",
-        ),
-        MagicItem(
-            name="Shield of Boulder Catching, Greater",
-            rank=5,
-            material_type="Shield",
-            description="""
-                This item functions like a \\mitem<greater shield of arrow catching>, except that it can affect projectile and thrown objects of up to Large size.
-            """,
-            short_description="Redirects large projectiles to hit you",
-        ),
     ]
 
     armor += [
         MagicItem(
             name="Shield of Arrow Deflection",
-            rank=2,
-            material_type="Shield",
-            description="""
-                You gain a +2 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
-            """,
-            short_description="Grants +2 defenses vs small projectiles",
-        ),
-        MagicItem(
-            name="Shield of Arrow Deflection, Greater",
-            rank=4,
-            material_type="Shield",
-            description="""
-                You gain a +3 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
-            """,
-            short_description="Grants +3 defenses vs small projectiles",
-        ),
-        MagicItem(
-            name="Shield of Arrow Deflection, Supreme",
-            rank=6,
-            material_type="Shield",
-            description="""
-                You gain a +4 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
-            """,
-            short_description="Grants +4 defenses vs small projectiles",
-        ),
-        MagicItem(
-            name="Shield of Boulder Deflection",
             rank=3,
             material_type="Shield",
             description="""
-                You gain a +2 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
+                You gain a +2 bonus to your defenses against ranged \\glossterm<strikes>.
             """,
-            short_description="Grants +2 defenses vs projectiles",
+            short_description="Grants +2 defenses vs ranged strikes",
         ),
         MagicItem(
-            name="Shield of Boulder Deflection, Greater",
+            name="Shield of Arrow Deflection, Greater",
             rank=5,
             material_type="Shield",
             description="""
-                You gain a +3 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
+                You gain a +3 bonus to your defenses against ranged \\glossterm<strikes>.
             """,
-            short_description="Grants +3 defenses vs projectiles",
+            short_description="Grants +3 defenses vs ranged strikes",
         ),
         MagicItem(
-            name="Shield of Boulder Deflection, Supreme",
+            name="Shield of Arrow Deflection, Supreme",
             rank=7,
             material_type="Shield",
             description="""
-                You gain a +4 bonus to your defenses against ranged \\glossterm<strikes> from weapons or projectiles that are Large or smaller.
+                You gain a +4 bonus to your defenses against ranged \\glossterm<strikes>.
             """,
-            short_description="Grants +4 defenses vs projectiles",
+            short_description="Grants +4 defenses vs ranged strikes",
         ),
     ]
 
@@ -271,21 +225,23 @@ def generate_armor():
             name="Armor of Retribution",
             rank=4,
             material_type="Body armor",
+            tags=["Attune (deep, self)"],
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
-                \\hit Each target takes 2d6 energy damage.
+                \\hit Each target takes 2d8 energy damage.
             """,
-            short_description="Damages adjacent attackers",
+            short_description="Deals 2d8 damage to adjacent attackers",
         ),
         MagicItem(
             name="Armor of Retribution, Supreme",
             rank=6,
             material_type="Body armor",
+            tags=["Attune (deep, self)"],
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
-                \\hit Each target takes 4d6 energy damage.
+                \\hit Each target takes 4d8 energy damage.
             """,
-            short_description="Damages nearby attackers",
+            short_description="Deals 4d8 damage to adjacent attackers",
         ),
     ]
 
@@ -424,7 +380,7 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                If your Dexterity is at least 3, you gain a +1 bonus to Armor defense.
+                If your Dexterity is at least 3, you gain a +1 bonus to your Armor defense.
             """,
             short_description="Grants +1 Armor if you have 3 Dex",
         ),
@@ -434,7 +390,7 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                If your Dexterity is at least 3, you gain a +2 bonus to Armor defense.
+                If your Dexterity is at least 3, you gain a +2 bonus to your Armor defense.
             """,
             short_description="Grants +2 Armor if you have 3 Dex",
         ),
@@ -443,24 +399,36 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Agile Burst Armor",
-            rank=2,
+            rank=1,
             tags=["Swift"],
             material_type="Body armor",
             description="""
-                Whenever you use the \\textit<sprint> ability, you gain a +1 bonus to Reflex defense until the end of the round.
+                Whenever you use the \\textit<sprint> ability, you gain a +1 bonus to your Reflex defense until the end of the round.
                 This effect has the \\abilitytag<Swift> tag, so it affects attacks against you during the current phase.
             """,
             short_description="Grants +1 Reflex whenever you sprint",
         ),
         MagicItem(
             name="Agile Burst Armor, Greater",
-            rank=5,
+            rank=4,
             tags=["Swift"],
             material_type="Body armor",
             description="""
-                This armor functions like \\mitem<agile burst armor>, except that the bonus also applies to Armor defense.
+                Whenever you use the \\textit<sprint> ability, you gain a +1 bonus to your Armor and Reflex defenses until the end of the round.
+                This effect has the \\abilitytag<Swift> tag, so it affects attacks against you during the current phase.
             """,
             short_description="Grants +1 Armor and Reflex whenever you sprint",
+        ),
+        MagicItem(
+            name="Agile Burst Armor, Supreme",
+            rank=7,
+            tags=["Swift"],
+            material_type="Body armor",
+            description="""
+                Whenever you use the \\textit<sprint> ability, you gain a +2 bonus to your Armor and Reflex defenses until the end of the round.
+                This effect has the \\abilitytag<Swift> tag, so it affects attacks against you during the current phase.
+            """,
+            short_description="Grants +2 Armor and Reflex whenever you sprint",
         ),
     ]
 
@@ -550,7 +518,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Swiftstep Armor, Greater",
-            rank=5,
+            rank=6,
             tags=["Swift"],
             material_type="Body armor",
             description="""
@@ -565,7 +533,7 @@ def generate_armor():
         MagicItem(
             name="Crumpling Armor",
             rank=2,
-            tags=[],
+            tags=["Attune (deep, self)"],
             material_type="Body armor",
             description="""
                 Whenever you would take \\glossterm<physical damage>, your armor crumples under the attack, reducing that damage by 5.
@@ -576,7 +544,7 @@ def generate_armor():
         MagicItem(
             name="Crumpling Armor, Greater",
             rank=4,
-            tags=[],
+            tags=["Attune (deep, self)"],
             material_type="Body armor",
             description="""
                 This armor functions like \\mitem<crumpling armor>, except that the damage reduction increases to 10.
@@ -586,7 +554,7 @@ def generate_armor():
         MagicItem(
             name="Crumpling Armor, Supreme",
             rank=6,
-            tags=[],
+            tags=["Attune (deep, self)"],
             material_type="Body armor",
             description="""
                 This armor functions like \\mitem<crumpling armor>, except that the damage reduction increases to 20.
@@ -609,7 +577,7 @@ def generate_armor():
         ),
         MagicItem(
             name="Hardblock Shield, Greater",
-            rank=6,
+            rank=7,
             tags=[],
             material_type="Shield",
             description="""
@@ -639,7 +607,7 @@ def generate_armor():
     armor += [
         MagicItem(
             name="Armor of Emptiness",
-            rank=6,
+            rank=5,
             tags=[],
             material_type="Body armor",
             description="""
@@ -650,25 +618,35 @@ def generate_armor():
         ),
     ]
 
-    armor.append(
+    armor += [
+        # Paralyzed is t4, but this has an immunity, so call this rank 4
         MagicItem(
             name="Shield of Medusa",
-            rank=3,
+            rank=4,
             material_type="Shield",
             tags=["Visual"],
             description="""
-            This shield normally has a cloth covering its face.
-            As a standard action, you can pull the cloth back and reveal the horrifying face emblazoned on the shield.
-            When you do, make an attack vs. Fortitude against each creature within a \\areasmall cone.
-            On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm{briefly} \\stunned.
-            On a \\glossterm<critical hit>, each target with no remaining \\glossterm<damage resistance> is \\glossterm{briefly} \\paralyzed.
-            In either case, each target is immune to this ability until it takes a \\glossterm<short rest>.
+                This shield normally has a cloth covering its face.
+                As a standard action, you can pull the cloth back and reveal the horrifying face emblazoned on the shield.
+                When you do, make an attack vs. Fortitude against all creatures within a \\areasmall cone.
+                On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm<briefly> \\paralyzed.
+                Each target is immune to this ability until it takes a \\glossterm<short rest>.
 
-            If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.
-        """,
-            short_description="Can briefly stun nearby foes",
-        )
-    )
+                If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.
+            """,
+            short_description="Can briefly paralyze nearby foes",
+        ),
+        MagicItem(
+            name="Shield of Medusa, Greater",
+            rank=7,
+            material_type="Shield",
+            tags=["Visual"],
+            description="""
+                This shield functions like a \\mitem<shield of medusa>, except that the attack affects all creatures within a \\largearea cone.
+            """,
+            short_description="Can briefly paralyze foes",
+        ),
+    ]
 
     # Other
 
