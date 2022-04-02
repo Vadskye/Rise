@@ -193,22 +193,13 @@ def generate_apparel():
         ),
         MagicItem(
             name="Bracers of Repulsion, Greater",
-            rank=5,
+            rank=6,
             material_type="Bracers",
             description="""
-                These bracers function like \\mitem<bracers of repulsion>, except that they target your \\glossterm<enemies> within a \\areamed radius burst.
-            """,
-            short_description="Can knock enemies back",
-        ),
-        MagicItem(
-            name="Bracers of Repulsion, Supreme",
-            rank=7,
-            material_type="Bracers",
-            description="""
-                These bracers function like \\mitem<bracers of repulsion>, except that they target your \\glossterm<enemies> within a \\areamed radius burst.
+                These bracers function like \\mitem<bracers of repulsion>, except that they target your \\glossterm<enemies> within a \\arealarge radius burst.
                 In addition, the knockback distance increases to 30 feet.
             """,
-            short_description="Can knock enemies back a great distance",
+            short_description="Can knock enemies back",
         ),
     ]
 
@@ -219,9 +210,9 @@ def generate_apparel():
             material_type="Gloves",
             tags=[],
             description="""
-            These gloves shed light as a torch.
-            As a \\glossterm<standard action>, you may snap your fingers to suppress or resume the light from either or both gloves.
-        """,
+                These gloves shed light as a torch.
+                As a \\glossterm<standard action>, you may snap your fingers to suppress or resume the light from either or both gloves.
+            """,
             short_description="Sheds light as a torch",
         )
     )
@@ -262,29 +253,19 @@ def generate_apparel():
             rank=2,
             material_type="Gauntlet",
             description="""
-                This item has the Forceful \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
+                Your punch/kick \\glossterm<natural weapon> gains the Forceful \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
             """,
-            short_description="Knocks back foe when used to strike",
+            short_description="Knocks back punched enemies",
         ),
         MagicItem(
             name="Gauntlet of the Ram, Greater",
-            rank=4,
+            rank=5,
             material_type="Gauntlet",
             description="""
-                This item has the Forceful \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
+                Your punch/kick \\glossterm<natural weapon> gains the Forceful \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
                 In addition, the \\glossterm<knockback> distance from that tag increases to 30 feet.
             """,
-            short_description="Knocks back foe 30 feet when use to strike",
-        ),
-        MagicItem(
-            name="Gauntlet of the Ram, Supreme",
-            rank=6,
-            material_type="Gauntlet",
-            description="""
-                This item has the Forceful \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
-                In addition, the \\glossterm<knockback> distance from that tag increases to 60 feet.
-            """,
-            short_description="Knocks back foe 60 feet when use to strike",
+            short_description="Knocks back punched enemies a great distance",
         ),
     ]
 
@@ -336,43 +317,42 @@ def generate_apparel():
     # Head
 
     apparel += [
-        # close range, +1d = rank 2 spell, so this is priced as rank 3
-        # This could be med range +0d, but that's weird as a legacy item choice
+        # close range, +1d = rank 2 spell
         MagicItem(
             name="Circlet of Blasting",
-            rank=3,
+            rank=2,
             material_type="Circlet",
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
                 If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 2d10+5 fire damage.
+                \\hit The target takes 2d8+4 fire damage.
             """,
             short_description="Can blast foe with fire",
         ),
-        # close range, +2d = rank 4 spell, so this is priced as rank 5
+        # close range, +2d = rank 4 spell
         MagicItem(
             name="Circlet of Blasting, Greater",
-            rank=5,
+            rank=4,
             material_type="Circlet",
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
                 If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 4d10+10 fire damage.
+                \\hit The target takes 4d8+7 fire damage.
             """,
             short_description="Can blast foe with intense fire",
         ),
         # close range, +3d = rank 6 spell, so this is priced as rank 7
         MagicItem(
             name="Circlet of Blasting, Supreme",
-            rank=7,
+            rank=6,
             material_type="Circlet",
             tags=[],
             description="""
                 As a standard action, you can activate this circlet.
-                If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
-                \\hit The target takes 7d10+20 fire damage.
+                If you do, make an attack vs. Armor against a creature or object within \\rngshort range.
+                \\hit The target takes 6d10+14 fire damage.
             """,
             short_description="Can blast foe with supremely intense fire",
         ),
@@ -444,7 +424,7 @@ def generate_apparel():
             rank=2,
             material_type="Mask",
             description="""
-            You can breathe water through this mask as easily as a human breaths air.
+            You can breathe water through this mask as easily as a human breathes air.
             This does not grant you the ability to breathe other liquids.
         """,
             short_description="Allows breathing water like air",
@@ -482,7 +462,7 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Crown of Lightning",
-            rank=3,
+            rank=2,
             material_type="Crown",
             tags=[],
             description="""
@@ -491,9 +471,9 @@ def generate_apparel():
 
                 As a standard action, you can intensify the crown's energy to shock nearby enemies.
                 When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areasmall radius from you.
-                On a hit, each target takes 2d6+2 electricity damage.
+                On a hit, each target takes 1d10+2 electricity damage.
             """,
-            short_description="Can deal 2d6+2 damage to nearby foes",
+            short_description="Can deal 1d10+2 damage to nearby foes",
         ),
         MagicItem(
             name="Crown of Lightning, Greater",
@@ -510,21 +490,6 @@ def generate_apparel():
             """,
             short_description="Can deal 4d6+5 damage to nearby foes",
         ),
-        MagicItem(
-            name="Crown of Lightning, Supreme",
-            rank=7,
-            material_type="Crown",
-            tags=[],
-            description="""
-                This crown continuously crackles with electricity.
-                The constant sparks shed light as a torch.
-
-                As a standard action, you can intensify the crown's energy to shock nearby enemies.
-                When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\hugearea radius from you.
-                On a hit, each target takes 4d10+10 electricity damage.
-            """,
-            short_description="Can deal 4d10+10 damage to nearby foes",
-        ),
     ]
 
     apparel.append(
@@ -536,7 +501,7 @@ def generate_apparel():
             description="""
                 The crown constantly emits a low-pitched rumbling.
                 To you and your \\glossterm<allies>, the sound is barely perceptible.
-                However, all other creatures within a \\arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
+                However, all other creatures within a \\medarea radius \\glossterm<emanation> from you hear the sound as a deafening, continuous roll of thunder.
                 The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area.
             """,
             short_description="Continously deafens nearby enemies",
@@ -551,12 +516,12 @@ def generate_apparel():
             rank=4,
             material_type="Boots",
             description="""
-            % This only works if you only take falling damage during the movement phase, which seems possible?
-            When you take \\glossterm<falling damage>, make an attack vs Reflex against everything within a \\areasmall radius from you.
-            \\hit Each target takes bludgeoning damage equal to the damage you took from falling.
-            \\crit As above, and each target is knocked \\prone.
-            This does not deal double damage on a critical hit.
-        """,
+                % This only works if you only take falling damage during the movement phase, which seems possible?
+                When you take \\glossterm<falling damage>, make an attack vs Reflex against everything within a \\areasmall radius from you.
+                \\hit Each target takes bludgeoning damage equal to the damage you took from falling.
+                \\crit As above, and each target is knocked \\prone.
+                This attack does not deal extra damage on a critical hit.
+            """,
             short_description="Deals your falling damage to enemies",
         )
     )
@@ -727,7 +692,7 @@ def generate_apparel():
             description="""
                 Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +2 bonus to your Armor defense and Reflex defense, as well as a +10 foot bonus to your speed with all movement modes.
             """,
-            short_description="Grants +10 foot speed and +2 defenses while afraid",
+            short_description="Helps you survive when you become afraid",
         ),
         MagicItem(
             name="Boots of the Fearful, Greater",
@@ -737,7 +702,7 @@ def generate_apparel():
             description="""
                 Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +3 bonus to your Armor defense and Reflex defense, as well as a +15 foot bonus to your speed with all movement modes.
             """,
-            short_description="Grants +15 foot speed and +3 defenses while afraid",
+            short_description="Greatly helps you survive when you become afraid",
         ),
         MagicItem(
             name="Boots of the Fearful, Supreme",
@@ -747,7 +712,7 @@ def generate_apparel():
             description="""
                 Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +4 bonus to your Armor defense and Reflex defense, as well as a +20 foot bonus to your speed with all movement modes.
             """,
-            short_description="Grants +20 foot speed and +4 defenses while afraid",
+            short_description="Drastically helps you survive when you become afraid",
         ),
     ]
 
@@ -834,7 +799,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Stunshare Ring",
-            rank=5,
+            rank=6,
             material_type="Ring",
             tags=[],
             description="""
@@ -867,12 +832,12 @@ def generate_apparel():
             rank=3,
             material_type="Boots",
             description="""
-            You treat the surface of all liquids as if they were firm ground.
-            Your feet hover about an inch above the liquid's surface, allowing you to traverse dangerous liquids without harm as long as the surface is calm.
+                You treat the surface of all liquids as if they were firm ground.
+                Your feet hover about an inch above the liquid's surface, allowing you to traverse dangerous liquids without harm as long as the surface is calm.
 
-            If you are below the surface of the liquid, you rise towards the surface at a rate of 60 feet per round.
-            Thick liquids, such as mud and lava, may cause you to rise more slowly.
-        """,
+                If you are below the surface of the liquid, you rise towards the surface at a rate of 60 feet per round.
+                Thick liquids, such as mud and lava, may cause you to rise more slowly.
+            """,
             short_description="Allows walking on liquids",
         )
     )
@@ -883,10 +848,10 @@ def generate_apparel():
             rank=1,
             material_type="Boots",
             description="""
-            You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
-            % TODO: degree symbol?
-            In addition, the boots keep you warm, protecting you in environments as cold as -50 degrees Fahrenheit.
-        """,
+                You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
+                % TODO: degree symbol?
+                In addition, the boots keep you warm, protecting you in environments as cold as -50 degrees Fahrenheit.
+            """,
             short_description="Eases travel in cold areas",
         )
     )
@@ -949,11 +914,11 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-            As a standard action, you can activate these boots.
-            When you do, you increase your \\glossterm<fatigue level> by one and teleport horizontally exactly 25 miles in a direction you specify.
-            If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
-            If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 energy damage.
-        """,
+                As a standard action, you can activate these boots.
+                When you do, you increase your \\glossterm<fatigue level> by one and teleport horizontally exactly 25 miles in a direction you specify.
+                If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
+                If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 energy damage.
+            """,
             short_description="Can exert to teleport seven leagues",
         )
     )
@@ -1044,7 +1009,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +8 bonus to your defenses against attacks from the \\textit<polymorph> sphere.
+                You gain a +8 bonus to your defenses against attacks from the \\sphere<polymorph> sphere.
                 This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
             """,
             short_description="Grants +8 defenses vs form-altering attacks",
@@ -1055,7 +1020,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                You are immune to attacks from the \\textit<polymorph> sphere.
+                You are immune to attacks from the \\sphere<polymorph> sphere.
                 This immunity also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
             """,
             short_description="Grants immunity to form-altering attacks",
@@ -1098,23 +1063,13 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Poisonbane Ring",
-            rank=1,
+            rank=2,
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +2 bonus to defenses against \\glossterm<poisons>.
+                You are \\glossterm<impervious> to \\glossterm<poisons>.
             """,
-            short_description="Grants +2 defenses vs poisons",
-        ),
-        MagicItem(
-            name="Poisonbane Ring, Greater",
-            rank=3,
-            material_type="Ring",
-            tags=[],
-            description="""
-                You gain a +4 bonus to your defenses against \\glossterm<poisons>.
-            """,
-            short_description="Grants +4 defenses vs poisons",
+            short_description="Impervious to poisons",
         ),
         MagicItem(
             name="Poisonbane Ring, Supreme",
@@ -1123,6 +1078,7 @@ def generate_apparel():
             tags=[],
             description="""
                 You are immune to \\glossterm<poisons>.
+                You stop being poisoned by any poisons currently affecting you, and new poisons cannot be applied to you.
             """,
             short_description="Grants immunity to poisons",
         ),
@@ -1154,7 +1110,7 @@ def generate_apparel():
         ),
         MagicItem(
             name="Ring of Blessed Protection, Supreme",
-            rank=6,
+            rank=7,
             material_type="Ring",
             tags=[],
             description="""
@@ -2540,9 +2496,9 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Amulet of Equality and Perfection",
-            rank=6,
+            rank=5,
             material_type="Amulet",
-            tags=[],
+            tags=["Attune (deep, self)"],
             description="""
                 If you have the \\ability<perfect body> ability, you gain a +1 bonus to your lowest physical attribute.
             """,
@@ -2555,7 +2511,7 @@ def generate_apparel():
             name="Belt of Epic Constitution",
             rank=7,
             material_type="Belt",
-            tags=[],
+            tags=["Attune (deep, self)"],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Constitution.
             """,
@@ -2568,7 +2524,7 @@ def generate_apparel():
             name="Cloak of Epic Dexterity",
             rank=7,
             material_type="Cloak",
-            tags=[],
+            tags=["Attune (deep, self)"],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Dexterity.
             """,
@@ -2581,7 +2537,7 @@ def generate_apparel():
             name="Bracers of Epic Strength",
             rank=7,
             material_type="Bracers",
-            tags=[],
+            tags=["Attune (deep, self)"],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Strength.
             """,
@@ -2594,7 +2550,7 @@ def generate_apparel():
             name="Glasses of Epic Perception",
             rank=7,
             material_type="Glasses",
-            tags=[],
+            tags=["Attune (deep, self)"],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Perception.
             """,
@@ -2607,7 +2563,7 @@ def generate_apparel():
             name="Circlet of Epic Willpower",
             rank=7,
             material_type="Circlet",
-            tags=[],
+            tags=["Attune (deep, self)"],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Willpower.
             """,
