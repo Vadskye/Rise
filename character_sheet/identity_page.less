@@ -9,3 +9,15 @@
         flex-grow: 1;
     }
 }
+
+.abilities-known {
+    .ability-known-count {
+        align-items: center;
+        display: none;
+    }
+
+    .has-ability-known:checked ~ .ability-known-count {
+        display: flex;
+        margin-right: 1em;
+    }
+}

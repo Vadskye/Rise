@@ -1,4 +1,5 @@
 from cgi_simple import (
+    checkbox,
     div,
     equation,
     plus,
@@ -8,12 +9,27 @@ from cgi_simple import (
     flex_row,
     flex_wrapper,
     labeled_textarea,
+    labeled_number_input,
     labeled_text_input,
     number_input,
     textarea,
     text_input,
     underlabel,
 )
+
+
+KNOWABLE_CONCEPTS = [
+    "Bardic performances",
+    "Battle tactics",
+    "Combat styles",
+    "Hunting styles",
+    "Ki manifestations",
+    "Maneuvers",
+    "Mystic insights",
+    "Mystic spheres",
+    "Spells",
+    "Wild aspects",
+]
 
 
 def create_page(destination):
@@ -31,6 +47,7 @@ def create_page(destination):
             if destination == "roll20"
             else paper_abilities_summary(),
             div({"class": "section-header"}, "Abilities Known"),
+            abilities_known(),
             # calc_combat_styles(),
             # calc_maneuvers(),
             # calc_spheres(),
@@ -40,7 +57,8 @@ def create_page(destination):
                 {"class": "insight-points-row"},
                 [
                     labeled_text_input(
-                        "Total", input_attributes={"readonly": True, "name": "insight_points"}
+                        "Total",
+                        input_attributes={"readonly": True, "name": "insight_points"},
                     ),
                     textarea({"name": "insight_points_tracking"}),
                 ],
@@ -145,158 +163,26 @@ def subsection_header(attributes=None, contents=None):
     return flex_col(attributes, contents)
 
 
-def archetypes():
-    return "".join(
-        [
-            div({"class": "section-header"}, "Archetypes"),
-            *[
-                flex_row(
-                    {"class": "archetype"},
-                    [
-                        labeled_text_input(
-                            "Name",
-                            {"class": "archetype-name"},
-                            {"name": f"archetype_name_{i}"},
-                        ),
-                        underlabel(
-                            "Rank",
-                            number_input({"name": f"archetype_rank_{i}"}),
-                        ),
-                    ],
-                )
-                for i in range(3)
-            ],
-        ]
-    )
-
-
-def personality():
-    return div(
-        [
-            div({"class": "section-header"}, "Personal Info"),
-            flex_row(
-                {"class": "personal-info-row"},
-                [
-                    labeled_text_input(
-                        "Alignment", input_attributes={"name": f"alignment"}
-                    ),
-                    labeled_text_input(
-                        "Patron Deity", input_attributes={"name": f"deity"}
-                    ),
-                    labeled_text_input(
-                        "Experience points", input_attributes={"name": "experience"}
-                    ),
-                ],
-            ),
-            div({"class": "section-header"}, "Personality and Background"),
-            textarea({"class": "personality", "name": "personality_and_background"}),
-        ]
-    )
-
-
-def calc_maneuvers():
+def abilities_known():
     return flex_row(
+        {"class": "abilities-known"}, [ability_known(c) for c in KNOWABLE_CONCEPTS]
+    )
+
+
+def ability_known(concept):
+    parseable_concept = concept.lower().replace(" ", "_")
+
+    return flex_row(
+        {"class": "ability-known"},
         [
-            div({"class": "calc-header"}, "Maneuvers"),
-            equation(
-                [
-                    underlabel(
-                        "Insight",
-                        number_input(
-                            {
-                                "name": "maneuvers_known_insight_points",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("maneuvers_known", 4),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "maneuvers_known_display",
-                    "value": "@{maneuvers_known}",
+            checkbox({"class": "has-ability-known hidden", "name": f"has_{parseable_concept}"}),
+            labeled_number_input(
+                concept,
+                {"class": "ability-known-count"},
+                input_attributes={
+                    "readonly": True,
+                    "name": f"{parseable_concept}_known",
                 },
             ),
-        ]
-    )
-
-
-def calc_spells():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Spells"),
-            equation(
-                [
-                    underlabel(
-                        "Insight",
-                        number_input(
-                            {
-                                "name": "spells_known_insight_points",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("spells_known", 4),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "spells_known_display",
-                    "value": "@{spells_known}",
-                },
-            ),
-        ]
-    )
-
-
-def calc_combat_styles():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Combat Styles"),
-            equation(
-                [
-                    underlabel(
-                        "1/2 Insight",
-                        number_input(
-                            {
-                                "name": "combat_styles_known_insight_points",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("combat_styles_known", 4),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "combat_styles_known_display",
-                    "value": "@{combat_styles_known}",
-                },
-            ),
-        ]
-    )
-
-
-def calc_spheres():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Mystic Spheres"),
-            equation(
-                [
-                    underlabel(
-                        "1/2 Insight",
-                        number_input(
-                            {
-                                "name": "spheres_known_insight_points",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("spheres_known", 4),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "spheres_known_display",
-                    "value": "@{spheres_known}",
-                },
-            ),
-        ]
+        ],
     )
