@@ -348,6 +348,19 @@ function formatParseableSkillName(skillName) {
     .replaceAll(")", "");
 }
 
+const KNOWABLE_CONCEPTS = [
+  "bardic_performances",
+  "battle_tactics",
+  "combat_styles",
+  "hunting_styles",
+  "ki_manifestations",
+  "maneuvers",
+  "mystic_insights",
+  "mystic_spheres",
+  "spells",
+  "wild_aspects",
+];
+
 const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
   [
     "accuracy",
@@ -366,16 +379,18 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     "insight_points",
     "intelligence",
     "mental",
+    "nonclass_skill_count",
     "perception",
     "power",
     "reflex",
     "speed",
     "strength",
-    "weapon_damage_dice",
-    "nonclass_skill_count",
     "vital_rolls",
+    "weapon_damage_dice",
     "willpower",
-  ].concat(ALL_SKILLS)
+  ]
+    .concat(ALL_SKILLS)
+    .concat(KNOWABLE_CONCEPTS.map((c) => `${c}_known`))
 );
 
 // Class and species, mostly
@@ -589,21 +604,22 @@ function parseDicePool(attack_damage_dice) {
 }
 
 function handleAbilitiesKnown() {
-  handleAbilityKnown("combat_styles");
-  handleAbilityKnown("maneuvers");
-  handleAbilityKnown("spells");
-  handleAbilityKnown("spheres");
+  for (const knowable of KNOWABLE_CONCEPTS) {
+    handleAbilityKnown(knowable);
+  }
 }
 
 function handleAbilityKnown(abilityName) {
   onGet(
     {
       miscName: `${abilityName}_known`,
-      numeric: [`${abilityName}_known_insight_points`],
     },
     (v) => {
-      const totalValue = v[`${abilityName}_known_insight_points`] + v.misc;
-      setAttrs({ [`${abilityName}_known`]: totalValue });
+      const totalValue = v.misc;
+      setAttrs({
+        [`has_${abilityName}`]: totalValue > 0 ? "1" : "0",
+        [`${abilityName}_known`]: totalValue,
+      });
     }
   );
 }
