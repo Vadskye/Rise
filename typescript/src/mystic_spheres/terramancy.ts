@@ -563,7 +563,7 @@ export const terramancy: MysticSphere = {
         Nothing can pass through the wall until it is destroyed.
 
         The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-        If the entire wall is directly on stone, its hit points are doubled.
+        If the entire wall is directly supported by stone, its hit points are doubled.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 2,
