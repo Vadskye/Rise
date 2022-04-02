@@ -277,21 +277,21 @@ export const aquamancy: MysticSphere = {
       // targeting: None,
       effect: `
           You create a \\medarealong \\glossterm{wall} of water within \\medrange.
-          The wall is four inches thick, and blocks \\glossterm{line of effect} for abilities.
+          The wall is four inches thick.
           Sight through the wall is possible, though distorted.
           The wall provides both \\glossterm{cover} and \\glossterm{concealment} to targets on the opposite side of the wall (see \\pcref{Obstacles and Cover}).
           Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
-          The wall has \\glossterm{hit points} equal to four times your \\glossterm{power}.
+          The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
           After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: `The area increases to a \\largearealong wall.`,
-        7: `The area increases to a \\hugearealong wall.`,
+        4: `The area increases to a \\largearealong wall.`,
+        6: `The area increases to a \\hugearealong wall.`,
       },
       tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Aquatic Freedom",
