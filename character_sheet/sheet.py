@@ -6,6 +6,7 @@ import first_page
 import active_abilities_page
 import rolltemplate
 import re
+import identity_page
 import second_page
 import creation_page
 import header_bar
@@ -68,6 +69,7 @@ def main(destination):
                         first_page.create_page(cgi.DESTINATION),
                         active_abilities_page.create_page(cgi.DESTINATION),
                         creation_page.create_page(cgi.DESTINATION),
+                        identity_page.create_page(cgi.DESTINATION),
                         skills_page.create_page(cgi.DESTINATION),
                         second_page.create_page(cgi.DESTINATION),
                         third_page.create_page(cgi.DESTINATION),
@@ -85,6 +87,7 @@ def main(destination):
                 "sheet",
                 "first_page",
                 "creation_page",
+                "identity_page",
                 "active_abilities_page",
                 "skills_page",
                 "second_page",

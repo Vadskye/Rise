@@ -255,12 +255,5 @@ def character_reference():
                     ),
                 ],
             ),
-            div({"class": "section-header"}, "Abilities Chosen"),
-            textarea(
-                {
-                    "class": "all-abilities-known",
-                    "name": "abilities_chosen",
-                }
-            ),
         ]
     )
