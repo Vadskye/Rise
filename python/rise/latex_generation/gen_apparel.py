@@ -79,6 +79,36 @@ def generate_apparel():
 
     apparel += [
         MagicItem(
+            name="Ambidextrous Gloves",
+            rank=2,
+            material_type="Glove",
+            description="""
+                You gain a +1 \\glossterm<accuracy> bonus with the \\ability<offhand strike> ability.
+            """,
+            short_description="Grants +1 accuracy with offhand strikes",
+        ),
+        MagicItem(
+            name="Ambidextrous Gloves",
+            rank=4,
+            material_type="Glove",
+            description="""
+                You gain a +2 \\glossterm<accuracy> bonus with the \\ability<offhand strike> ability.
+            """,
+            short_description="Grants +2 accuracy with offhand strikes",
+        ),
+        MagicItem(
+            name="Ambidextrous Gloves",
+            rank=6,
+            material_type="Glove",
+            description="""
+                You gain a +3 \\glossterm<accuracy> bonus with the \\ability<offhand strike> ability.
+            """,
+            short_description="Grants +3 accuracy with offhand strikes",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
             name="Bracers of Archery",
             rank=1,
             material_type="Bracers",
@@ -902,6 +932,36 @@ def generate_apparel():
         ),
     ]
 
+    apparel += [
+        MagicItem(
+            name="Ghost Shroud",
+            rank=2,
+            material_type="Cloak",
+            description="""
+                Creatures that are \\glossterm<incorporeal> are only \\glossterm<impervious> to physical damage you inflict instead of being immmune to it.
+            """,
+            short_description="Grants limited ability to hit incorporeal creatures",
+        ),
+        MagicItem(
+            name="Ghost Shroud, Greater",
+            rank=4,
+            material_type="Cloak",
+            description="""
+                Creatures that are \\glossterm<incorporeal> are not immune to physical damage you inflict.
+            """,
+            short_description="Grants ability to hit incorporeal creatures",
+        ),
+        MagicItem(
+            name="Ghost Shroud, Supreme",
+            rank=6,
+            material_type="Cloak",
+            description="""
+                Creatures that are \\glossterm<incorporeal> are \\glossterm<vulnerable> physical damage you inflict instead of being immune.
+            """,
+            short_description="Grants ability to hit incorporeal creatures with ease",
+        ),
+    ]
+
     apparel.append(
         MagicItem(
             name="Cloak of the Unseen Hunter",
@@ -1011,6 +1071,54 @@ def generate_apparel():
             short_description="Grants tolerance of temperature extremes",
         )
     )
+
+    apparel += [
+        MagicItem(
+            name="Cloak of Death's Door",
+            rank=2,
+            material_type="Cloak",
+            tags=[],
+            description="""
+                While you are at or below half your maximum \\glossterm<hit points>, you gain a +1 bonus to your Armor defense.
+            """,
+            short_description="Grants +1 Armor at low health",
+        ),
+        MagicItem(
+            name="Cloak of Death's Door, Greater",
+            rank=5,
+            material_type="Cloak",
+            tags=[],
+            description="""
+                While you are at or below half your maximum \\glossterm<hit points>, you gain a +1 bonus to all defenses.
+            """,
+            short_description="Grants +1 defenses at low health",
+        ),
+    ]
+
+    apparel += [
+        MagicItem(
+            name="Enraging Cloak",
+            rank=4,
+            material_type="Cloak",
+            tags=[],
+            description="""
+                You gain a +1 accuracy bonus against creatures adjacent to you.
+                However, you also take a -1 penalty to all defenses against creatures adjacent to you.
+            """,
+            short_description="Grants +1 accuracy and -1 defenses against adjacent creatures",
+        ),
+        MagicItem(
+            name="Enraging Cloak, Greater",
+            rank=7,
+            material_type="Cloak",
+            tags=[],
+            description="""
+                You gain a +2 accuracy bonus against creatures adjacent to you.
+                However, you also take a -2 penalty to all defenses against creatures adjacent to you.
+            """,
+            short_description="Grants +2 accuracy and -2 defenses against adjacent creatures",
+        ),
+    ]
 
     apparel += [
         MagicItem(
@@ -2348,6 +2456,22 @@ def generate_apparel():
         ),
     ]
 
+    apparel += [
+        MagicItem(
+            name="Ghoultouch Gauntlet",
+            rank=5,
+            material_type="Gauntlet",
+            tags=[],
+            description="""
+                As a standard action, you can make an attack vs. Fortitude against a living creature within your \\glossterm<reach>.
+                On a hit, the target takes 2d8 physical damage.
+                If it loses \\glossterm<hit points> from this damage, it is \\glossterm<briefly> \\paralyzed.
+                Whether the attack hits or misses, the target is immune to this ability until it takes a \\glossterm<short rest>.
+            """,
+            short_description="Grants a paralyzing touch",
+        ),
+    ]
+
     # Class ability buffs - all amulets!
 
     apparel += [
@@ -2415,7 +2539,7 @@ def generate_apparel():
             description="""
                 When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +4 power with \\ability<restoration> and \\ability<lay on hands>",
+            short_description="Grants +4 power with \\ability<divine aid> and \\ability<lay on hands>",
         ),
         MagicItem(
             name="Amulet of Divine Healing, Greater",
@@ -2425,7 +2549,7 @@ def generate_apparel():
             description="""
                 When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +8 power with \\ability<restoration> and \\ability<lay on hands>",
+            short_description="Grants +8 power with \\ability<divine aid> and \\ability<lay on hands>",
         ),
         MagicItem(
             name="Amulet of Divine Healing, Supreme",
@@ -2435,7 +2559,7 @@ def generate_apparel():
             description="""
                 When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
-            short_description="Grants +16 power with \\ability<restoration> and \\ability<lay on hands>",
+            short_description="Grants +16 power with \\ability<divine aid> and \\ability<lay on hands>",
         ),
     ]
 
