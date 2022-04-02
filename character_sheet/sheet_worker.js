@@ -848,7 +848,13 @@ function handleAttunementPoints() {
       numeric: ["level"],
     },
     (v) => {
-      const ap = v.misc;
+      let fromLevel = 0;
+      if (v.level >= 12) {
+        fromLevel = 2;
+      } else if (v.level >= 6) {
+        fromLevel = 1;
+      }
+      const ap = v.misc + fromLevel;
       setAttrs({
         attunement_points: ap,
         attunement_points_max: ap,
