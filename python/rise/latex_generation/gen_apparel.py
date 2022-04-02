@@ -569,7 +569,7 @@ def generate_apparel():
             description="""
                 % This only works if you only take falling damage during the movement phase, which seems possible?
                 When you take \\glossterm<falling damage>, make an attack vs Reflex against everything within a \\areasmall radius from you.
-                \\hit Each target takes bludgeoning damage equal to the damage you took from falling.
+                \\hit Each target takes bludgeoning damage equal to half the damage you took from falling.
                 \\crit As above, and each target is knocked \\prone.
                 This attack does not deal extra damage on a critical hit.
             """,
