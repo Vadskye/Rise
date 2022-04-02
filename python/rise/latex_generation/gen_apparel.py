@@ -2330,6 +2330,17 @@ def generate_apparel():
     apparel += [
         MagicItem(
             name="Ring of Mastery",
+            rank=2,
+            material_type="Ring",
+            tags=["Attune (deep, self)"],
+            description="""
+                You gain a +4 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
+                In addition, you gain a \\plus2 \\glossterm<magic bonus> to \\glossterm<power>.
+            """,
+            short_description="Grants many small bonuses",
+        ),
+        MagicItem(
+            name="Ring of Mastery, Greater",
             rank=4,
             material_type="Ring",
             tags=["Attune (deep, self)"],
@@ -2337,10 +2348,10 @@ def generate_apparel():
                 You gain a +8 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
                 In addition, you gain a \\plus4 \\glossterm<magic bonus> to \\glossterm<power>.
             """,
-            short_description="Grants many small bonuses",
+            short_description="Grants many bonuses",
         ),
         MagicItem(
-            name="Ring of Mastery, Greater",
+            name="Ring of Mastery, Supreme",
             rank=6,
             material_type="Ring",
             tags=["Attune (deep, self)"],
@@ -2348,7 +2359,7 @@ def generate_apparel():
                 You gain a +16 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
                 In addition, you gain a \\plus8 \\glossterm<magic bonus> to \\glossterm<power>.
             """,
-            short_description="Grants many bonuses",
+            short_description="Grants many large bonuses",
         ),
     ]
 
