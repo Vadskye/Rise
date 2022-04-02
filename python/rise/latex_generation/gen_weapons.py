@@ -628,7 +628,7 @@ def generate_weapons():
 
                 As a \\glossterm<minor action>, you can cut yourself with this weapon to activate it.
                 This deals a single point of physical damage to you.
-                When you do, each creature hit with the weapon takes physical damage equal to the total delayed damage built up by the weapon for that target.
+                When you do, each creature hit with the weapon takes untyped damage equal to the total delayed damage built up by the weapon for that target.
                 Creatures farther than one mile away from the weapon are unaffected by this damage.
                 This ability expends all delayed damage built up by the weapon for all targets, including targets farther than one mile from the weapon.
             """,
@@ -692,7 +692,8 @@ def generate_weapons():
             material_type="Weapon",
             tags=["Attune (deep, self)"],
             description="""
-                The first time you you make a \\glossterm<strike> with this weapon each round, you can roll twice and take the higher result.
+                When you miss with a \\glossterm<strike> with this weapon, you can reroll the attack and take the higher result.
+                After you reroll an attack in this way, you \\glossterm<briefly> cannot do so again.
             """,
             short_description="Rolls attacks twice",
         )
