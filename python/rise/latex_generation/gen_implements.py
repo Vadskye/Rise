@@ -803,6 +803,21 @@ def generate_implements():
         ),
     ]
 
+    implements += [
+        MagicItem(
+            name="Staff of Energetic Conversion",
+            rank=4,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Whenever you use a \\glossterm<magical> ability that deals a subtype of \\glossterm<energy damage>, you may choose to convert that damage to a different subtype of energy damage.
+                If the damage also other specific types, those damage types are unchanged.
+                In addition, any non-damaging effects of the attack are unchanged.
+            """,
+            short_description="Changes energy damage types",
+        ),
+    ]
+
     return implements
 
 

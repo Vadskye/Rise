@@ -287,7 +287,7 @@ def generate_weapons():
     weapons += [
         MagicItem(
             name="Longshot",
-            rank=3,
+            rank=2,
             material_type="Weapon",
             description="""
                 When you make a ranged attack using this weapon, you reduce your \\glossterm<longshot penalty> by 1.
@@ -302,15 +302,6 @@ def generate_weapons():
                 When you make a ranged attack using this weapon, you reduce your \\glossterm<longshot penalty> by 2.
             """,
             short_description="Reduces longshot penalty by 2",
-        ),
-        MagicItem(
-            name="Longshot, Supreme",
-            rank=7,
-            material_type="Weapon",
-            description="""
-                When you make a ranged attack using this weapon, you reduce your \\glossterm<longshot penalty> by 3.
-            """,
-            short_description="Reduces longshot penalty by 3",
         ),
     ]
 
