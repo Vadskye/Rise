@@ -150,7 +150,7 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +4.`,
         7: `The bonus increases to +8.`,
       },
-      type: "Attune (deep, target)",
+      type: "Attune (target)",
     },
 
     {
