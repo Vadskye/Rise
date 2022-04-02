@@ -54,9 +54,9 @@ export const polymorph: MysticSphere = {
         For details, see \\tref{Natural Weapons}.
       `,
       scaling: {
-        2: `You can change which natural weapon you have as a \\glossterm{minor action}.`,
-        4: `You can gain up to two natural weapons at a time.`,
-        6: `You can gain up to three natural weapons at a time.`,
+        2: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using natural weapons.`,
+        4: `The power bonus increases to +4.`,
+        6: `The power bonus increases to +8.`,
       },
       type: 'Attune (self)',
     },
