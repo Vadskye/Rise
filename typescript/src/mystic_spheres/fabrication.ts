@@ -415,7 +415,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune (deep, self)",
     },
 
     {

@@ -622,19 +622,18 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Greater Bonechill",
+      name: "Greater Quickchill",
 
-      // TODO: double check rank
       attack: {
         hit: `
-          The target takes 4d6 + \\glossterm{power} cold damage.
+          The target takes 4d8 + \\glossterm{power} cold damage.
           If it takes damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 7,
       scaling: "damage",
       type: "Duration",
     },
