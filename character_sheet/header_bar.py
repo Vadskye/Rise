@@ -72,7 +72,7 @@ def nav_row():
                 "value": "page5",
             }
         ),
-        span({"class": "nav-button-label"}, "Ref"),
+        span({"class": "nav-button-label"}, "Identity"),
         radio_input(
             {
                 "class": "nav-button nav-button-page6",
@@ -80,7 +80,7 @@ def nav_row():
                 "value": "page6",
             }
         ),
-        span({"class": "nav-button-label"}, "!Skills"),
+        span({"class": "nav-button-label"}, "Ref"),
         radio_input(
             {
                 "class": "nav-button nav-button-page7",
@@ -88,12 +88,20 @@ def nav_row():
                 "value": "page7",
             }
         ),
-        span({"class": "nav-button-label"}, "!Calcs"),
+        span({"class": "nav-button-label"}, "!Skills"),
         radio_input(
             {
                 "class": "nav-button nav-button-page8",
                 "name": "nostore_navrow",
                 "value": "page8",
+            }
+        ),
+        span({"class": "nav-button-label"}, "!Calcs"),
+        radio_input(
+            {
+                "class": "nav-button nav-button-page9",
+                "name": "nostore_navrow",
+                "value": "page9",
             }
         ),
         span({"class": "nav-button-label"}, "!Identity"),
