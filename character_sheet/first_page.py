@@ -25,12 +25,16 @@ from cgi_simple import (
     underlabel_spaced,
 )
 from active_abilities_page import (
+    ability,
     attack_button_text,
     calc_attack_power,
     construct_damage_text,
     other_damaging_attack_button_text,
     crit_damage_button,
     glance_damage_button,
+    strike_based_attack,
+    other_damaging_attack,
+    nondamaging_attack,
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
@@ -92,7 +96,7 @@ def roll20_abilities():
             {"class": "active-ability-group"},
             fieldset(
                 {"class": f"repeating_strikeattacks"},
-                active_ability_button("strike-based attack"),
+                strike_based_attack(),
             ),
         ),
         div({"class": "section-header"}, "Other Damaging Attacks"),
@@ -100,7 +104,7 @@ def roll20_abilities():
             {"class": "active-ability-group"},
             fieldset(
                 {"class": f"repeating_otherdamagingattacks"},
-                active_ability_button("other damaging attack"),
+                other_damaging_attack(),
             ),
         ),
         div({"class": "section-header"}, "Non-Damaging Attacks"),
@@ -108,7 +112,7 @@ def roll20_abilities():
             {"class": "active-ability-group"},
             fieldset(
                 {"class": f"repeating_nondamagingattacks"},
-                active_ability_button("nondamaging attack"),
+                nondamaging_attack(),
             ),
         ),
         div({"class": "section-header"}, "Other Abilities"),
@@ -116,7 +120,7 @@ def roll20_abilities():
             {"class": "active-ability-group"},
             fieldset(
                 {"class": f"repeating_abilities"},
-                active_ability_button("ability"),
+                ability(),
             ),
         ),
         flex_wrapper(div({"class": "section-header"}, "Temporary Modifiers")),
@@ -593,7 +597,6 @@ def active_ability_button(ability_type):
         ),
         "nondamaging attack": attack_button_text(),
         "other damaging attack": other_damaging_attack_button_text(),
-        "strike-based attack": weapon_attack_button_text(),
     }[ability_type]
     extra_buttons = []
     if ability_type == "strike-based attack":
@@ -653,13 +656,6 @@ def active_ability_button(ability_type):
             text_input({"class": "hidden", "name": "dice_text", "readonly": True}),
             checkbox({"class": "hidden", "name": "is_targeted", "readonly": True}),
             text_input(
-                {
-                    "class": "hidden",
-                    "readonly": True,
-                    "name": "targeting_text_first_page",
-                }
-            ),
-            text_input(
                 {"class": "hidden", "readonly": True, "name": "attack_defense_text"}
             ),
             textarea({"class": "hidden", "name": prefix + "_effect"}),
@@ -682,48 +678,6 @@ def active_ability_button(ability_type):
         ],
     )
 
-
-def weapon_attack_button_text():
-    return (
-        "&{template:custom}"
-        + " {{title=@{attack_name}}}"
-        + "?{Weapon"
-        + "| "
-        + weapon_template(0)
-        + "| "
-        + weapon_template(1)
-        + "| "
-        + weapon_template(2)
-        + "}"
-        + " {{color=@{chat_color}}}"
-        + " @{debuff_headers}"
-        + " {{desc=@{attack_effect}}}"
-    )
-
-
-def weapon_template(i):
-    i = str(i)
-
-    return (
-        " @{weapon_"
-        + i
-        + "_name},"
-        + " {{subtitle=@{character_name} - @{weapon_"
-        + i
-        + "_name}&amp;#125;&amp;#125;"
-        + " @{targeting_text_first_page}"
-        + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
-        + i
-        + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}&amp;#125;&amp;#125;"
-        + " {{Damage=[[[[@{weapon_"
-        + i
-        + "_total_damage_dice}]] + [[@{weapon_"
-        + i
-        + "_total_damage_modifier}]]]] = $[[1]] + $[[2]] &amp;#125;&amp;#125;"
-        + " {{Tags=@{weapon_"
-        + i
-        + "_tags}&amp;#125;&amp;#125;"
-    ).replace("~", "&amp;#126;")
 
 
 def temporary_modifier_toggle():

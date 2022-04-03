@@ -166,7 +166,16 @@ def ability():
                                 + " {{desc=@{active_ability0_effect}}}"
                             ),
                         },
-                        "Use",
+                        div({"class": "ability-name-options"}, [
+                            span({"class": "ability-name-fixed"}, "Use"),
+                            text_input(
+                                {
+                                    "class": "ability-name-dynamic",
+                                    "readonly": True,
+                                    "name": "active_ability0_name",
+                                }
+                            ),
+                        ])
                     ),
                     labeled_text_input(
                         "Dice pool",
@@ -337,11 +346,33 @@ def strike_based_attack():
                 None,
                 {"name": "is_targeted"},
             ),
+            text_input(
+                {
+                    "class": "hidden",
+                    "readonly": True,
+                    "name": "targeting_text_first_page",
+                }
+            ),
         ],
         [
-            flex_row(weapon_buttons(0)),
-            flex_row(weapon_buttons(1)),
-            flex_row(weapon_buttons(2)),
+            flex_row({"class": "specific-weapon-button"}, weapon_buttons(0)),
+            flex_row({"class": "specific-weapon-button"}, weapon_buttons(1)),
+            flex_row({"class": "specific-weapon-button"}, weapon_buttons(2)),
+            button(
+                {
+                    "class": "attack-roll strike-dropdown",
+                    "name": "use_ability",
+                    "type": "roll",
+                    "value": weapon_dropdown_button_text(),
+                },
+                text_input(
+                    {
+                        "class": "attack-label",
+                        "readonly": True,
+                        "name": "attack_name",
+                    }
+                ),
+            ),
         ],
     )
 
@@ -398,6 +429,49 @@ def weapon_buttons(i):
     ]
 
 
+def weapon_dropdown_button_text():
+    return (
+        "&{template:custom}"
+        + " {{title=@{attack_name}}}"
+        + "?{Weapon"
+        + "| "
+        + weapon_template(0)
+        + "| "
+        + weapon_template(1)
+        + "| "
+        + weapon_template(2)
+        + "}"
+        + " {{color=@{chat_color}}}"
+        + " @{debuff_headers}"
+        + " {{desc=@{attack_effect}}}"
+    )
+
+
+def weapon_template(i):
+    i = str(i)
+
+    return (
+        " @{weapon_"
+        + i
+        + "_name_sanitized},"
+        + " {{subtitle=@{character_name} - @{weapon_"
+        + i
+        + "_name_sanitized}&amp;#125;&amp;#125;"
+        + " @{targeting_text_first_page}"
+        + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
+        + i
+        + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}&amp;#125;&amp;#125;"
+        + " {{Damage=[[[[@{weapon_"
+        + i
+        + "_total_damage_dice}]] + [[@{weapon_"
+        + i
+        + "_total_damage_modifier}]]]] = $[[1]] + $[[2]] &amp;#125;&amp;#125;"
+        + " {{Tags=@{weapon_"
+        + i
+        + "_tags_sanitized} &amp;#125;&amp;#125;"
+    ).replace("~", "&amp;#126;")
+
+
 def other_damaging_attack():
     return shared_attack_framework(
         [
@@ -436,7 +510,16 @@ def other_damaging_attack():
                     "type": "roll",
                     "value": other_damaging_attack_button_text(),
                 },
-                "Attack",
+                div({"class": "ability-name-options"}, [
+                    span({"class": "ability-name-fixed"}, "Attack"),
+                    text_input(
+                        {
+                            "class": "ability-name-dynamic",
+                            "readonly": True,
+                            "name": "attack_name",
+                        }
+                    ),
+                ])
             ),
             labeled_text_input(
                 "Total damage",
@@ -484,7 +567,16 @@ def nondamaging_attack():
                     "type": "roll",
                     "value": attack_button_text(),
                 },
-                "Attack",
+                div({"class": "ability-name-options"}, [
+                    span({"class": "ability-name-fixed"}, "Attack"),
+                    text_input(
+                        {
+                            "class": "ability-name-dynamic",
+                            "readonly": True,
+                            "name": "attack_name",
+                        }
+                    ),
+                ])
             ),
         ],
     )
