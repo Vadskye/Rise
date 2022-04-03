@@ -182,7 +182,9 @@ def creation_guidance():
                     Choose your character's first class archetype.
                     As you gain new class archetypes, you should record them here.
                     You will need to add custom modifiers in the <b>Modifiers</b> tab to reflect any numeric effects of your class archetypes.
-                    In addition, if your archetypes give you special abilities, you should add those in the <b>Abilities</b> tab.
+                    If your archetypes give you special abilities, you should add those in the <b>Abilities</b> tab.
+                    If you have a specific number of abilities known, such as spells or maneuvers, you can record that number as a modifier in the <b>Modifiers</b> tab.
+                    That will cause you to see that ability listed in "Abilities Known" section of the <b>Identity</b> tab so you can more easily remember how many you are supposed to know.
                 """,
                 flex_col(
                     [
@@ -285,10 +287,9 @@ def insight_points_step():
         f"""
             Spend your character's insight points.
             You can use this section to track what you spent insight points on.
-            If you spend insight points on a common ability, such as spells or maneuvers, you can record that as a modifier in the <b>Modifiers</b> tab.
-            That will cause you to see that ability listed in the <b>Identity</b> tab so you can more easily remember how many you are supposed to know.
-            The <b>Identity</b> tab can also be used to record the full list of all abilities that you know from all sources, not just insight points.
-            The specific effects of those abilities should be tracked elsewhere - usually, in the <b>Abilities</b> tab.
+            If you spend insight points to learn an additional standard special ability, such as a spell or maneuver, you can record that as a moidifer in the <b>Modifiers</b> tab.
+            That will keep the number listed in the "Abilities Known" section of the <b>Identity</b> tab accurate for you.
+            The specific effects of abilities you learn with insight points can be tracked in the <b>Abilities</b> tab if you want to have a button representing the ability, or in the <b>Identity</b> tab if you don't need that.
             <br>
             As a reminder, you have {max_insight_points} total insight points.
         """,
