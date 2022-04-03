@@ -129,6 +129,7 @@ def roll20_abilities_summary():
 
 def passive_ability():
     return flex_row(
+        {"class": "passive-ability-row"},
         [
             labeled_text_input(
                 "Name",
@@ -144,7 +145,7 @@ def passive_ability():
                     "name": f"ability_effects",
                 },
             ),
-        ]
+        ],
     )
 
 
@@ -175,7 +176,12 @@ def ability_known(concept):
     return flex_row(
         {"class": "ability-known"},
         [
-            checkbox({"class": "has-ability-known hidden", "name": f"has_{parseable_concept}"}),
+            checkbox(
+                {
+                    "class": "has-ability-known hidden",
+                    "name": f"has_{parseable_concept}",
+                }
+            ),
             labeled_number_input(
                 concept,
                 {"class": "ability-known-count"},
