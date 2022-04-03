@@ -79,9 +79,11 @@
 }
 
 .defenses {
+    flex-grow: 1;
     .defenses-row {
         justify-content: space-between;
         .special-defenses {
+            flex-grow: 1;
             margin-left: 4px;
             margin-top: 3px;
             margin-right: 2px;
@@ -89,6 +91,19 @@
             height: 110px;
         }
 
+    }
+}
+.movement {
+    column-gap: 1em;
+    justify-content: space-between;
+
+    .freeform-number-input {
+        flex-grow: 1;
+    }
+
+    .movement-speed-name {
+        flex-grow: 1;
+        width: 5em;
     }
 }
 .paper .defenses .defenses-row .special-defenses {
@@ -214,10 +229,6 @@
         text-align: center;
         margin-top: 0.25em;
     }
-}
-
-.all-statistics .movement {
-    flex-grow: 1;
 }
 
 .attacks .section-header, .attributes-and-skills .section-header, .all-statistics .section-header {
