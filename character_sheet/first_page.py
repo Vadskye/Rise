@@ -52,7 +52,9 @@ def create_page(destination):
                     flex_col(
                         {"class": "main-body"},
                         [
-                            statistics_header(destination),
+                            statistics_header(),
+                            div({"class": "section-header"}, "Movement"),
+                            movement(destination),
                             *(
                                 roll20_abilities()
                                 if destination == "roll20"
@@ -295,7 +297,7 @@ def untrained_subskill_box(display_name, parseable_name):
     )
 
 
-def statistics_header(destination):
+def statistics_header():
     return "".join(
         [
             flex_row(
@@ -303,7 +305,6 @@ def statistics_header(destination):
                 [
                     core_statistics(),
                     defenses(),
-                    movement(destination),
                 ],
             )
         ]
@@ -518,10 +519,9 @@ def core_statistics():
 
 
 def movement(destination):
-    return flex_col(
+    return flex_row(
         {"class": "movement"},
         [
-            flex_wrapper(div({"class": "section-header"}, "Movement")),
             sidelabeled_number_input(
                 "Land",
                 input_attributes={
@@ -532,13 +532,13 @@ def movement(destination):
             ),
             *[
                 freeform_number_input(
-                    text_input_attributes={"name": f"movement_speed_{i}_name"},
+                    text_input_attributes={"class": "movement-speed-name", "name": f"movement_speed_{i}_name"},
                     number_input_attributes={
                         "class": "large-number-input",
                         "name": f"movement_speed_{i}_value",
                     },
                 )
-                for i in range(2)
+                for i in range(3)
             ],
             (
                 sidelabel(
