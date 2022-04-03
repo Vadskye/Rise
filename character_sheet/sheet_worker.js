@@ -845,12 +845,19 @@ function handleAttunedEffects() {
         const isActiveIds = repeatingSectionIds.map(
           (id) => `repeating_attunedmodifiers_${id}_is_active`
         );
-        getAttrs(isActiveIds, (values) => {
-          const activeAbilities = isActiveIds.filter(
-            (id) => values[id] == 1 || values[id] == "on"
-          );
+        const isDeepIds = repeatingSectionIds.map(
+          (id) => `repeating_attunedmodifiers_${id}_is_deep`
+        );
+        getAttrs(isActiveIds.concat(isDeepIds), (values) => {
+          let attunedCount = 0;
+          for (const id of repeatingSectionIds) {
+            if (values[`repeating_attunedmodifiers_${id}_is_active`] === "1") {
+              const attuneCost = values[`repeating_attunedmodifiers_${id}_is_deep`] === "1" ? 2 : 1;
+              attunedCount += attuneCost;
+            }
+          }
           setAttrs({
-            active_attunement_count: activeAbilities.length,
+            active_attunement_count: attunedCount,
           });
         });
       });

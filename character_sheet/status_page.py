@@ -95,7 +95,9 @@ def create_page(_destination):
                 {"class": "repeating_permanentmodifiers"},
                 custom_modifier(show_toggle=False, show_text=False),
             ),
-            flex_wrapper(div({"class": "section-header"}, "DEPRECATED - Custom Modifiers")),
+            flex_wrapper(
+                div({"class": "section-header"}, "DEPRECATED - Custom Modifiers")
+            ),
             fieldset(
                 {"class": "repeating_custommodifiers"},
                 custom_modifier(show_toggle=True, show_text=False),
@@ -239,30 +241,53 @@ def custom_modifier(show_toggle, show_text):
         flex_row(
             {"class": "custom-modifier"},
             [
-                flex_row({"class": "text-prefix"}, [
-                    (
+                flex_col(
+                    {"class": "custom-modifier-toggles"},
+                    [
                         underlabeled_checkbox(
                             "Active?",
                             None,
                             {"class": "is-active", "name": "is_active"},
+                        ),
+                        underlabeled_checkbox(
+                            "Deep?",
+                            None,
+                            {"class": "is-deep", "name": "is_deep"},
                         )
-                        if show_toggle else ""
-                    ),
-                    labeled_text_input(
-                        "Name",
-                        {"class": "name"},
-                        {"name": "name"},
-                    ),
-                    (
-                        labeled_text_input(
-                            "Effect",
-                            {"class": "effect"},
-                            {"name": "effect"},
-                        )
-                        if show_text else ""
-                    ),
-                ]),
-                "".join([custom_statistic(str(i)) for i in range(0, 3)]),
+                        if show_toggle == "deep"
+                        else "",
+                    ],
+                )
+                if show_toggle
+                else "",
+                flex_row(
+                    {"class": "custom-modifier-details"},
+                    [
+                        flex_row(
+                            {"class": "text-prefix"},
+                            [
+                                labeled_text_input(
+                                    "Name",
+                                    {"class": "name"},
+                                    {"name": "name"},
+                                ),
+                                (
+                                    labeled_text_input(
+                                        "Effect",
+                                        {"class": "effect"},
+                                        {"name": "effect"},
+                                    )
+                                    if show_text
+                                    else ""
+                                ),
+                            ],
+                        ),
+                        flex_row(
+                            {"class": "custom-modifier-dropdowns"},
+                            [custom_statistic(str(i)) for i in range(0, 3)],
+                        ),
+                    ],
+                ),
             ],
         ),
     )
@@ -283,7 +308,9 @@ def custom_statistic(i):
                     option({"value": "attunement_points"}, "Attunement points"),
                     option({"value": "awareness"}, "Awareness"),
                     option({"value": "balance"}, "Balance"),
-                    option({"value": "bardic_performances_known"}, "Bardic performances"),
+                    option(
+                        {"value": "bardic_performances_known"}, "Bardic performances"
+                    ),
                     option({"value": "battle_tactics_known"}, "Battle tactics"),
                     option({"value": "climb"}, "Climb"),
                     option({"value": "combat_styles_known"}, "Combat styles"),
@@ -324,8 +351,13 @@ def custom_statistic(i):
                     option({"value": "ki_manifestations_known"}, "Ki manifestations"),
                     option({"value": "knowledge_all"}, "Knowledge (all)"),
                     option({"value": "knowledge_arcana"}, "Knowledge (arcana)"),
-                    option({"value": "knowledge_dungeoneering"}, "Knowledge (dungeoneering)"),
-                    option({"value": "knowledge_engineering"}, "Knowledge (engineering)"),
+                    option(
+                        {"value": "knowledge_dungeoneering"},
+                        "Knowledge (dungeoneering)",
+                    ),
+                    option(
+                        {"value": "knowledge_engineering"}, "Knowledge (engineering)"
+                    ),
                     option({"value": "knowledge_items"}, "Knowledge (items)"),
                     option({"value": "knowledge_local"}, "Knowledge (local)"),
                     option({"value": "knowledge_nature"}, "Knowledge (nature)"),
@@ -365,5 +397,5 @@ def custom_statistic(i):
                 number_input({"name": "value" + i}),
                 {"class": "custom-modifier-value"},
             ),
-        ]
+        ],
     )
