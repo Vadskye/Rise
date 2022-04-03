@@ -83,6 +83,7 @@ def creation_guidance():
                     Non-numeric abilities, such as darkvision, should go in the <b>Abilities</b> tab if you want to be able to push a button to reference them.
                     If you don't care about seeing the abilities that often, you can record them under "Passive Abilities" in the <b>Identity</b> tab.
                     Important defensive abilities that you'll want to reference when you're being attacked can go in the large free text area next to your Defenses in the <b>Core</b> tab.
+                    <br>
                     You should use these same four locations whenever you gain new special abilities from any source, not just from your species.
                 """,
                 select(
@@ -183,6 +184,7 @@ def creation_guidance():
                     As you gain new class archetypes, you should record them here.
                     You will need to add custom modifiers in the <b>Modifiers</b> tab to reflect any numeric effects of your class archetypes.
                     If your archetypes give you special abilities, you should add those in the <b>Abilities</b> tab.
+                    <br>
                     If you have a specific number of abilities known, such as spells or maneuvers, you can record that number as a modifier in the <b>Modifiers</b> tab.
                     That will cause you to see that ability listed in "Abilities Known" section of the <b>Identity</b> tab so you can more easily remember how many you are supposed to know.
                 """,
