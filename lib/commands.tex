@@ -481,6 +481,10 @@
     \subsubsection{#1~Abilities}
 }
 
+\DeclareDocumentCommand{\tablebookmark}{m m}{
+    \pdfbookmark[1]{Table~-~#1}{#2}
+}
+
 \ExplSyntaxOff
 
 \newcommand{\classbasics}[1]{\par\noindent\textbf{#1}:}
