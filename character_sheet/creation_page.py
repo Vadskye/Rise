@@ -23,6 +23,7 @@ from cgi_simple import (
     text_input,
     ul,
     underlabel,
+    underlabeled_checkbox,
 )
 
 from sheet_data import (
@@ -323,7 +324,8 @@ def skills_step():
 
 
 def trained_skill():
-    return div(
+    return flex_row(
+        {"class": "skill-row"},
         [
             select(
                 {"class": "trained-skill", "name": "trained_skill"},
@@ -385,6 +387,12 @@ def trained_skill():
                     "name": "front_rowid",
                     "readonly": True,
                 }
+            ),
+            underlabeled_checkbox(
+                "Class?",
+                input_attributes={
+                    "name": "is_class_skill",
+                },
             ),
         ]
     )
