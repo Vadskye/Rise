@@ -707,7 +707,7 @@ def generate_weapons():
             tags=[],
             description="""
                 As a \\glossterm<standard action>, you can activate this weapon.
-                If you do, make a \\glossterm<strike> or use the \\textit<disarm> abilit.
+                If you do, make a melee \\glossterm<strike> or use the \\textit<disarm> ability using this weapon.
                 If you successfully knock an object loose with the disarm attempt, or if your strike hit an \\glossterm<unattended> object, this weapon can absorb the struck object.
                 The object's size category must be no larger than the weapon's size category.
 
