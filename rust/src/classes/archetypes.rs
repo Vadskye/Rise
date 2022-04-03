@@ -190,7 +190,7 @@ impl ClassArchetype {
             Self::Assassin => "Assassin",
             Self::BardicMusic => "Bardic Music",
             Self::CombatTrickster => "Combat Trickster",
-            Self::JackOfAllTrades => "Jack of all Trades",
+            Self::JackOfAllTrades => "Jack of All Trades",
             Self::SuaveScoundrel => "Suave Scoundrel",
             // Sorcerer
             Self::SorcererArcaneMagic => "Arcane Magic",
