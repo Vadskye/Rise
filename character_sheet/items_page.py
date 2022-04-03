@@ -40,13 +40,13 @@ def create_page(destination):
             # TODO: add weight limits here?
             div({"class": "section-header"}, "Proficiences"),
             proficiencies(),
-            div({"class": "section-header"}, "Legacy Item"),
-            legacy_item(),
             div({"class": "section-header"}, "Armor"),
             armor(destination, "Body armor"),
             armor(destination, "Shield"),
             div({"class": "section-header"}, "Weapons"),
             *weapons(destination),
+            div({"class": "section-header"}, "Legacy Item"),
+            legacy_item(),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
             div(
                 {"class": "attunement-abilities"},
