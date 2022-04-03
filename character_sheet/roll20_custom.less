@@ -270,11 +270,17 @@ div.full-sheet {
 .custom-modifier {
     justify-content: space-between;
     margin-bottom: 0.5em;
-    column-gap: 1em;
+    column-gap: 0.5em;
+
+    .custom-modifier-details, .custom-modifier-dropdowns {
+        column-gap: 1em;
+    }
+
+    .custom-modifier-dropdowns {
+        flex-grow: 1;
+    }
 
     .text-prefix {
-        column-gap: 0.5em;
-
         .underlabeled-checkbox {
             margin-right: 0.5em;
         }
@@ -282,6 +288,10 @@ div.full-sheet {
         .effect {
             flex-grow: 1;
         }
+    }
+
+    .custom-modifier-details {
+        flex-grow: 1;
     }
 
     .custom-statistic {
