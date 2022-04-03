@@ -88,12 +88,6 @@
     }
 }
 
-.custom-modifier {
-    .custom-statistic:nth-child(2) {
-        margin-left: 3.5em;
-    }
-}
-
 .legacy-item {
     .text-prefix {
         display: none;
@@ -101,7 +95,16 @@
 }
 
 .attunement-abilities {
-    .text-prefix {
-        width: 100%;
+    .custom-modifier-dropdowns {
+        margin-left: 3.5em;
+    }
+
+    .custom-modifier-details {
+        width: 80%;
+
+        .text-prefix {
+            column-gap: 1em;
+            flex-grow: 1;
+        }
     }
 }
