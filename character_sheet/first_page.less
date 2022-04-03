@@ -259,6 +259,8 @@
             // Active page. However, specifying a precise width here causes odd
             // behavior, so we use percentages instead.
             width: 48%;
+            flex-grow: 1;
+            max-width: 50%;
 
             font-size: 16px;
             input {
@@ -275,10 +277,22 @@
         visibility: hidden;
     }
 
-    .active-ability-button {
-        margin-bottom: 0.25em;
+    .attack, .ability {
+        margin-right: 1em;
 
-        .attack-label {
+        .attack-prefix, .attack-calcs, .attack-effect, .specific-weapon-button, .active-ability-effect {
+            display: none;
+        }
+
+        .attack-roll {
+            align-items: center;
+        }
+
+        .attack-buttons {
+            flex-grow: 1;
+        }
+
+        .attack-label, .ability-name-dynamic {
             background: none;
             box-shadow: none;
             cursor: inherit;
@@ -293,10 +307,6 @@
             box-shadow: none;
             display: flex;
             width: 100%;
-        }
-
-        .hidden {
-            display: none;
         }
     }
 
@@ -313,6 +323,19 @@
         width: 15em;
     }
 
+    .attack-buttons {
+        .ability-name-options {
+            flex-grow: 1;
+
+            .ability-name-fixed {
+                display: none;
+            }
+        }
+
+        > .labeled-text-input {
+            display: none;
+        }
+    }
 }
 
 .paper-ability {

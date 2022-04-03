@@ -87,7 +87,7 @@
 
 .attack-buttons {
     .attack-roll {
-        width: 140px;
+        width: 70px;
         margin-bottom: 0.25em;
 
         > input[type=text] {
@@ -103,11 +103,22 @@
             z-index: 0;
         }
     }
+    .specific-weapon-button .attack-roll {
+        width: 140px;
+    }
     button[type=roll]:before {
         content: none;
     }
 }
 
+.strike-dropdown {
+    display: none;
+}
+
 .total-damage, .strike-total-damage {
     width: 5em;
+}
+
+.ability-name-dynamic {
+    display: none;
 }

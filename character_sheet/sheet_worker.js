@@ -492,6 +492,7 @@ function handleCoreStatistics() {
   handleUniversalAbilities();
   handleUnknownStatistic();
   handleWeaponDamageDice();
+  handleWeaponSanitization();
 }
 
 function handleDefenses() {
@@ -2259,6 +2260,27 @@ function handleWeaponDamageDice() {
         weapon_damage_dice_including_strength:
           totalValue + Math.floor(v.strength / 2),
       });
+    }
+  );
+}
+
+function handleWeaponSanitization() {
+  const keys = [];
+  for (let i = 0; i < 3; i++) {
+    keys.push(`weapon_${i}_tags`);
+    keys.push(`weapon_${i}_name`);
+  }
+  onGet(
+    {
+      string: keys,
+    },
+    (v) => {
+      const attrs = {};
+      for (let i = 0; i < 3; i++) {
+        attrs[`weapon_${i}_name_sanitized`] = v[`weapon_${i}_name`].replace(',', '&#44;');
+        attrs[`weapon_${i}_tags_sanitized`] = v[`weapon_${i}_tags`].replace(',', '&#44;');
+      }
+      setAttrs(attrs);
     }
   );
 }
