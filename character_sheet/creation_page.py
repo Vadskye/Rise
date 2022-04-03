@@ -179,7 +179,8 @@ def creation_guidance():
             creation_step(
                 "Archetypes",
                 """
-                    Choose your character's class archetypes.
+                    Choose your character's first class archetype.
+                    As you gain new class archetypes, you should record them here.
                     You will need to add custom modifiers in the <b>Modifiers</b> tab to reflect any numeric effects of your class archetypes.
                     In addition, if your archetypes give you special abilities, you should add those in the <b>Abilities</b> tab.
                 """,
