@@ -289,6 +289,7 @@ def insight_points_step():
             You can use this section to track what you spent insight points on.
             If you spend insight points to learn an additional standard special ability, such as a spell or maneuver, you can record that as a moidifer in the <b>Modifiers</b> tab.
             That will keep the number listed in the "Abilities Known" section of the <b>Identity</b> tab accurate for you.
+            <br>
             The specific effects of abilities you learn with insight points can be tracked in the <b>Abilities</b> tab if you want to have a button representing the ability, or in the <b>Identity</b> tab if you don't need that.
             <br>
             As a reminder, you have {max_insight_points} total insight points.
