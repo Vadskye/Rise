@@ -80,7 +80,10 @@ def creation_guidance():
                 """
                     Choose your character's species.
                     You should add any numerical changes, such as attribute modifiers, in the <b>Modifiers</b> tab.
-                    Non-numeric abilities, such as darkvision, should go in the <b>Abilities</b> tab.
+                    Non-numeric abilities, such as darkvision, should go in the <b>Abilities</b> tab if you want to be able to push a button to reference them.
+                    If you don't care about seeing the abilities that often, you can record them under "Passive Abilities" in the <b>Identity</b> tab.
+                    Important defensive abilities that you'll want to reference when you're being attacked can go in the large free text area next to your Defenses in the <b>Core</b> tab.
+                    You should use these same four locations whenever you gain new special abilities from any source, not just from your species.
                 """,
                 select(
                     {"class": "species", "name": "species"},
