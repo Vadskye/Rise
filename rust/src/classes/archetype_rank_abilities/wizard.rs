@@ -519,7 +519,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you cast a spell during the \glossterm{action phase}, you may use this ability to extend the casting time.
                 If you do, the spell does not take effect until the \glossterm{delayed action phase}.
-                In exchange, you gain a \plus1 bonus to \glossterm{accuracy} with the spell if you were not attacked during the action phase.
+                In exchange, you gain a \plus1 bonus to \glossterm{accuracy} with the spell if you did not lose \glossterm{hit points} during the action phase.
             ",
             modifiers: None,
         },
