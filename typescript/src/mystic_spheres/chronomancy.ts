@@ -25,12 +25,12 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Make an Awareness check to search everything in a \\smallarea radius from you (see \\pcref{Search}).
-        You gain a +2 bonus to this check in addition to the normal +5 bonus for searching carefully.
+        
       `,
       scaling: {
-        2: "The bonus increases to +4.",
-        4: "The bonus increases to +6.",
-        6: "The bonus increases to +8.",
+        2: "You gain a +2 bonus to this check in addition to the normal +5 bonus for searching carefully.",
+        4: "The bonus increases to +3.",
+        6: "The bonus increases to +4.",
       },
       type: "Instant",
     },
