@@ -227,15 +227,6 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Combat Caster",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                You gain a \plus1 bonus to your Armor defense.
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
-        },
-        RankAbility {
             name: "Divine Spell Versatility",
             is_magical: false,
             rank: 1,
@@ -333,6 +324,15 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 \end{instantability}
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Unparalleled Guardian",
+            is_magical: true,
+            rank: 1,
+            description: r"
+                You gain a \plus1 bonus to your Armor defense.
+            ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Stalwart Resilience",
