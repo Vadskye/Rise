@@ -105,24 +105,22 @@ impl Class {
         return
             // 5 points per attunement point
             self.attunement_points() * 5
-            // 1 point to get an Armor defense
-            + self.defense_bonus(&Defense::Armor)
+            // 3 points to get an Armor defense
+            + self.defense_bonus(&Defense::Armor) * 3
             // 2 points per fatigue tolerance
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
             + self.insight_points() * 2
-            // 4 points to get a higher power progression
-            + if self.power_progression().calc_power(1) == 3 { 4 } else { 0 }
+            // 5 points to get a higher power progression
+            + if self.power_progression().calc_power(1) == 3 { 5 } else { 0 }
             // 1 point per trained skill
             + self.trained_skills()
             // 3 points per vital roll bonus
             + self.vital_rolls() * 3
-            // 2 points per armor proficiency tier
-            + (self.armor_proficiencies().usage_classes.len() as i32) * 2
+            // 1 point per armor proficiency
+            + (self.armor_proficiencies().usage_classes.len() as i32)
             // 1 point for each weapon proficiency
             + self.weapon_proficiencies().custom_weapon_groups
-            // 1 extra point for the first weapon proficiency
-            + if self.weapon_proficiencies().custom_weapon_groups > 0  { 1 } else { 0 }
             // 1 extra point for a specific weapon group
             + if self.weapon_proficiencies().specific_weapon_groups.is_some() { 1 } else { 0 }
             // Arbitrary class-specific modifiers
@@ -402,7 +400,7 @@ impl Class {
                 Defense::Mental => 7,
             },
             Self::Dragon => match defense {
-                Defense::Armor => 0,
+                Defense::Armor => 1,
                 Defense::Fortitude => 7,
                 Defense::Reflex => 3,
                 Defense::Mental => 5,
@@ -417,12 +415,12 @@ impl Class {
                 Defense::Armor => 1,
                 Defense::Fortitude => 7,
                 Defense::Reflex => 3,
-                Defense::Mental => 4,
+                Defense::Mental => 5,
             },
             Self::Monk => match defense {
                 Defense::Armor => 1,
                 Defense::Fortitude => 3,
-                Defense::Reflex => 6,
+                Defense::Reflex => 7,
                 Defense::Mental => 5,
             },
             Self::Oozeborn => match defense {
@@ -435,12 +433,12 @@ impl Class {
                 Defense::Armor => 1,
                 Defense::Fortitude => 6,
                 Defense::Reflex => 3,
-                Defense::Mental => 5,
+                Defense::Mental => 6,
             },
             Self::Ranger => match defense {
                 Defense::Armor => 1,
                 Defense::Fortitude => 5,
-                Defense::Reflex => 5,
+                Defense::Reflex => 6,
                 Defense::Mental => 4,
             },
             Self::Rogue => match defense {
@@ -477,32 +475,32 @@ impl Class {
             Self::Dragon => 5,
             Self::Druid => 4,
             Self::Fighter => 5,
-            Self::Monk => 5,
+            Self::Monk => 4,
             Self::Oozeborn => 6,
             Self::Paladin => 5,
             Self::Ranger => 5,
             Self::Rogue => 4,
             Self::Sorcerer => 4,
             Self::Warlock => 4,
-            Self::Wizard => 3,
+            Self::Wizard => 2,
         }
     }
 
     pub fn insight_points(&self) -> i32 {
         match self {
             Self::Barbarian => 0,
-            Self::Cleric => 2,
+            Self::Cleric => 3,
             Self::Dragon => 2,
             Self::Druid => 2,
-            Self::Fighter => 1,
+            Self::Fighter => 2,
             Self::Monk => 2,
             Self::Oozeborn => 1,
-            Self::Paladin => 1,
+            Self::Paladin => 2,
             Self::Ranger => 2,
-            Self::Rogue => 2,
+            Self::Rogue => 3,
             Self::Sorcerer => 2,
             Self::Warlock => 1,
-            Self::Wizard => 2,
+            Self::Wizard => 3,
         }
     }
 
@@ -561,13 +559,13 @@ impl Class {
 
     pub fn trained_skills(&self) -> i32 {
         match self {
-            Self::Barbarian => 5,
+            Self::Barbarian => 4,
             Self::Cleric => 4,
-            Self::Dragon => 4,
-            Self::Druid => 5,
+            Self::Dragon => 3,
+            Self::Druid => 6,
             Self::Fighter => 3,
-            Self::Monk => 5,
-            Self::Oozeborn => 3,
+            Self::Monk => 6,
+            Self::Oozeborn => 4,
             Self::Paladin => 4,
             Self::Ranger => 5,
             Self::Rogue => 7,
@@ -579,7 +577,7 @@ impl Class {
 
     pub fn vital_rolls(&self) -> i32 {
         match self {
-            Self::Barbarian => 1,
+            Self::Barbarian => 2,
             Self::Cleric => 0,
             Self::Dragon => 1,
             Self::Druid => 0,
