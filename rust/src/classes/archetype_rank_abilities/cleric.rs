@@ -122,20 +122,12 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Mystic Sphere",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                You gain access to an additional divine \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Mystic Insight",
             is_magical: true,
             rank: 1,
             description: r"
-                You gain your choice of one of the following abilities.
+                You learn how to further refine your spellcasting abilities.
+                Choose two mystic insights from the list below.
                 You can also spend \glossterm{insight points} to learn one additional \textit{mystic insight} per insight point.
                 You cannot choose the same spell with more than two \textit{mystic insight} abilities.
                 {
@@ -143,17 +135,14 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
+                    \parhead{Mystic Sphere} You gain access to an additional divine \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
+                        You cannot choose this ability multiple times.
                     \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
                         The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
                         In addition, you automatically learn one free divine ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
                     \parhead{Precise Spell} Choose a divine \glossterm{spell} you know.
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
-                        You can choose this ability multiple times, choosing a different spell each time.
-                        Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Powerful Spell} Choose a divine \glossterm{spell} you know.
-                        You gain a +2 bonus to your \glossterm{power} with that spell.
-                        This bonus increases to +4 at rank 3, +8 at rank 5, and +16 at rank 7.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Spell Knowledge} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.

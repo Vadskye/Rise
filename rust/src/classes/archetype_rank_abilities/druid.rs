@@ -291,20 +291,12 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Combat Caster",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                You gain a \plus1 bonus to your Armor defense.
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
-        },
-        RankAbility {
             name: "Mystic Insight",
             is_magical: true,
             rank: 1,
             description: r"
-                You gain your choice of one of the following abilities.
+                You learn how to further refine your spellcasting abilities.
+                Choose two mystic insights from the list below.
                 You can also spend \glossterm{insight points} to learn one additional \textit{mystic insight} per insight point.
                 You cannot choose the same spell with more than two \textit{mystic insight} abilities.
                 {
