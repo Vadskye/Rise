@@ -193,7 +193,7 @@ export const thaumaturgy: MysticSphere = {
           Choose a single 5-ft. square within \\medrange.
           Make an attack against a random \\glossterm{magical} effect active in that square, if any exist.
           This can only target magical effects that are sustained or which have a specific duration.
-          This includes brief effects, conditions, and \\abilitytag{Sustain} abilities, but it does not include attuned effects or passive magical abilities on creatures.
+          This includes brief effects, conditions, and \\abilitytag{Sustain} abilities, but it does not include attuned effects or permanent magical abilities on creatures.
           It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
           The attack cannot \\glossterm{explode} by any means.
 
