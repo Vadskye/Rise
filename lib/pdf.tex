@@ -97,9 +97,9 @@
 % The HTML version of spelltwocol has to put its tabularx inside of a figure
 \DeclareDocumentCommand{\spelltwocol}{m m}
 {
-    \renewcommand{\arraystretch}{0.5}
     \par\noindent
     \begin{tabularx}{\columnwidth}{@{}~>{\lcol}X~l~@{}}
+        \renewcommand{\arraystretch}{0.5}
         #1 & #2
     \end{tabularx}
 }
