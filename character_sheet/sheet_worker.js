@@ -2284,8 +2284,8 @@ function handleWeaponSanitization() {
     (v) => {
       const attrs = {};
       for (let i = 0; i < 3; i++) {
-        attrs[`weapon_${i}_name_sanitized`] = v[`weapon_${i}_name`].replace(',', '&#44;');
-        attrs[`weapon_${i}_tags_sanitized`] = v[`weapon_${i}_tags`].replace(',', '&#44;');
+        attrs[`weapon_${i}_name_sanitized`] = v[`weapon_${i}_name`].replace(',', '&#44;').replace('/', '&#47;');
+        attrs[`weapon_${i}_tags_sanitized`] = v[`weapon_${i}_tags`].replace(',', '&#44;').replace('/', '&#47;');
       }
       setAttrs(attrs);
     }
