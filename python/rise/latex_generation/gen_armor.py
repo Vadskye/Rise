@@ -297,7 +297,7 @@ def generate_armor():
             short_description="Drastically reduces critical hits from strikes",
         ),
         MagicItem(
-            name="Armor of Fortification, Mystic",
+            name="Armor of Mystic Fortification",
             rank=5,
             material_type="Body armor",
             description="""
