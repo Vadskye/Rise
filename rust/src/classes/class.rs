@@ -111,8 +111,8 @@ impl Class {
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
             + self.insight_points() * 2
-            // 5 points to get a higher power progression
-            + if self.power_progression().calc_power(1) == 3 { 5 } else { 0 }
+            // 6 points to get a higher power progression
+            + if self.power_progression().calc_power(1) == 3 { 6 } else { 0 }
             // 1 point per trained skill
             + self.trained_skills()
             // 3 points per vital roll bonus
@@ -559,7 +559,7 @@ impl Class {
 
     pub fn trained_skills(&self) -> i32 {
         match self {
-            Self::Barbarian => 4,
+            Self::Barbarian => 5,
             Self::Cleric => 4,
             Self::Dragon => 3,
             Self::Druid => 6,
@@ -570,14 +570,14 @@ impl Class {
             Self::Ranger => 5,
             Self::Rogue => 7,
             Self::Sorcerer => 3,
-            Self::Warlock => 4,
+            Self::Warlock => 3,
             Self::Wizard => 5,
         }
     }
 
     pub fn vital_rolls(&self) -> i32 {
         match self {
-            Self::Barbarian => 2,
+            Self::Barbarian => 1,
             Self::Cleric => 0,
             Self::Dragon => 1,
             Self::Druid => 0,
@@ -950,7 +950,7 @@ impl Class {
     pub fn weapon_proficiencies(&self) -> WeaponProficiencies {
         match self {
             Self::Barbarian => WeaponProficiencies {
-                custom_weapon_groups: 1,
+                custom_weapon_groups: 2,
                 specific_weapon_groups: None,
                 specific_weapons: None,
                 simple_weapons: true,
