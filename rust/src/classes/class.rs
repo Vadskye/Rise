@@ -98,8 +98,9 @@ impl Class {
             Self::Ranger => -3,
             Self::Rogue => -3,
             // Druids have a couple of weird proficiencies that don't map easily but which are
-            // collectively worth a point
-            Self::Druid => 1,
+            // collectively worth a point? But then it feels like they have too many trained skills,
+            // and it's hard to get the numbers to add up
+            // Self::Druid => 1,
             _ => 0,
         };
         return
@@ -491,7 +492,7 @@ impl Class {
             Self::Barbarian => 0,
             Self::Cleric => 3,
             Self::Dragon => 2,
-            Self::Druid => 2,
+            Self::Druid => 3,
             Self::Fighter => 2,
             Self::Monk => 2,
             Self::Oozeborn => 1,
@@ -562,7 +563,7 @@ impl Class {
             Self::Barbarian => 5,
             Self::Cleric => 4,
             Self::Dragon => 3,
-            Self::Druid => 6,
+            Self::Druid => 5,
             Self::Fighter => 3,
             Self::Monk => 6,
             Self::Oozeborn => 4,
