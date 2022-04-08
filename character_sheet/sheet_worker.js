@@ -328,9 +328,9 @@ const SKILLS_BY_ATTRIBUTE = {
     "linguistics",
     "medicine",
   ],
-  perception: ["awareness", "creature_handling", "social_insight", "survival"],
+  perception: ["awareness", "creature_handling", "deception", "persuasion", "social_insight", "survival"],
   willpower: [],
-  other: ["deception", "intimidate", "perform", "persuasion", "profession"],
+  other: ["intimidate", "perform", "profession"],
 };
 
 const ALL_SKILLS = Object.values(SKILLS_BY_ATTRIBUTE).flat();
