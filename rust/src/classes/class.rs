@@ -1301,7 +1301,7 @@ impl Class {
                     These domain abilities can be granted by the \textit{domain influence} cleric archetype.
                     All cleric domain abilities are \glossterm{magical} unless otherwise specified.
 
-                    \subsubsection{Air}
+                    \subsubsection{Air Domain}
                         If you choose this domain, you add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Jump skill to your \glossterm{class skill} list.
 
@@ -1325,7 +1325,7 @@ impl Class {
                         \parhead{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 120 feet (see \pcref{Flying}).
                         At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
-                    \subsubsection{Chaos}
+                    \subsubsection{Chaos Domain}
                         \parhead{Gift} You are immune to \abilitytag{Compulsion} attacks.
                         \parhead{Aspect} If you roll a 9 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
                         This does not affect bonus dice rolled for exploding attacks.
@@ -1341,7 +1341,7 @@ impl Class {
                         \parhead{Mastery} Whenever you \glossterm{explode} with an attack roll, you gain a \plus4 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
                         As normal, this bonus does not stack with itself, even if you explode multiple times with the same attack roll.
 
-                    \subsubsection{Death}
+                    \subsubsection{Death Domain}
                         \parhead{Gift} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
                         \parhead{Aspect} The bonus from this domain's gift increases to \plus2.
                         \parhead{Essence} You can use the \textit{speak with dead} ability as a standard action.
@@ -1357,7 +1357,7 @@ impl Class {
                         \end{attuneability}
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3.
 
-                    \subsubsection{Destruction}
+                    \subsubsection{Destruction Domain}
                         \parhead{Gift} You can use the \textit{destructive attack} ability as a standard action.
                         \begin{instantability}{Destructive Attack}
                             Instant
@@ -1384,7 +1384,7 @@ impl Class {
                         \end{instantability}
                         \parhead{Mastery} You gain a \plus4 bonus to your \glossterm{power} with all abilities.
 
-                    \subsubsection{Earth}
+                    \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
@@ -1403,7 +1403,7 @@ impl Class {
                         \end{attuneability}
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3, and the number of hit points you gain from its aspect increases to four times your rank in the Domain Mastery archetype.
 
-                    \subsubsection{Evil}
+                    \subsubsection{Evil Domain}
                         \parhead{Gift} At the start of each phase, you may choose an adjacent \glossterm{ally}.
                         If you do, the first time you would lose a \glossterm{hit point} that phase, the target loses that hit point instead.
                         If the target is unable to lose hit points, such as if it has no hit points remaining, you suffer the hit point loss normally.
@@ -1425,7 +1425,7 @@ impl Class {
                         \parhead{Mastery} You can use your domain gift to redirect your hit point loss to an adjacent unwilling creature.
                         You cannot target the same unwilling creature more than once with this ability between \glossterm{short rests}.
 
-                    \subsubsection{Fire}
+                    \subsubsection{Fire Domain}
                         If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \parhead{Gift} You are \trait{impervious} to fire damage.
@@ -1450,7 +1450,7 @@ impl Class {
                         This can help you deal damage to enemies that are highly resistant to fire damage.
                         In addition, you become immune to fire damage.
 
-                    \subsubsection{Good}
+                    \subsubsection{Good Domain}
                         \parhead{Gift} Whenever an adjacent \glossterm{ally} suffers a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
                         You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                         The original target suffers any other effects of the attack normally.
@@ -1472,7 +1472,7 @@ impl Class {
                         \parhead{Mastery} Once per round, when an \glossterm{ally} within a \areamed radius \glossterm{emanation} from you would lose \glossterm{hit points}, you may lose those hit points instead.
                         The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
 
-                    \subsubsection{Knowledge}
+                    \subsubsection{Knowledge Domain}
                         If you choose this domain, you add all Knowledge skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
@@ -1493,7 +1493,7 @@ impl Class {
                         \parhead{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} with all attacks.
                         In addition, you can use your \textit{share knowledge} ability to affect all creatures, not just your allies.
 
-                    \subsubsection{Law}
+                    \subsubsection{Law Domain}
                         \parhead{Gift} You gain a \plus2 bonus to Mental defense.
                         % Clarify - does this apply to exploding dice?
                         \parhead{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
@@ -1515,13 +1515,13 @@ impl Class {
                         \end{durationability}
                         \parhead{Mastery} When you roll a 1 or a 2 on an \glossterm{attack roll} or \glossterm{check}, it is treated as if you had rolled a 6.
 
-                    \subsubsection{Life}
+                    \subsubsection{Life Domain}
                         \parhead{Gift} You gain a \plus3 bonus to the Medicine skill (see \pcref{Medicine}).
                         \parhead{Aspect} You gain a \plus1 bonus to \glossterm{vital rolls} (see \pcref{Vital Rolls}).
                         \parhead{Essence} At the end of each phase, if you became \unconscious from a \glossterm{vital wound} during that phase, you can use one \glossterm{magical} ability you have that modifies \glossterm{vital rolls} or removes \glossterm{vital wounds} on yourself without taking an action.
                         \parhead{Mastery} You gain a \plus1 bonus to your Constitution.
 
-                    \subsubsection{Magic}
+                    \subsubsection{Magic Domain}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         % TODO: power bonus is less relevant than it used to be, maybe grant attunement point or more spells known instead?
 
@@ -1530,7 +1530,7 @@ impl Class {
                         \parhead{Essence} You gain a \plus3 bonus to your \glossterm{power}.
                         \parhead{Mastery} The power bonus from this domain's essence increases to \plus6.
 
-                    \subsubsection{Protection}
+                    \subsubsection{Protection Domain}
                         \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{minor action}.
                         \begin{durationability}{Divine Protection}
@@ -1546,7 +1546,7 @@ impl Class {
                         \parhead{Essence} The bonus from this domain's gift increases to three times your rank in this archetype.
                         \parhead{Mastery} The bonus from your \textit{divine protection} ability increases to \plus2.
 
-                    \subsubsection{Strength}
+                    \subsubsection{Strength Domain}
                         If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
@@ -1560,7 +1560,7 @@ impl Class {
                         \parhead{Mastery} Your \textit{divine strength} ability loses the \glossterm{Attune} (self) tag.
                         Instead, it lasts until you use it again.
 
-                    \subsubsection{Travel}
+                    \subsubsection{Travel Domain}
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Knowledge (nature), Survival, and Swim skills to your cleric \glossterm{class skill} list.
 
@@ -1583,7 +1583,7 @@ impl Class {
                         You can even attempt to move to locations outside of \glossterm{line of sight} and \glossterm{line of effect}, up to the limit of your remaining movement speed.
                         If your intended destination is invalid, the distance you tried to teleport is taken from your remaining movement, but you suffer no other ill effects.
 
-                    \subsubsection{Trickery}
+                    \subsubsection{Trickery Domain}
                         If you choose this domain, you add the Deception, Disguise, and Stealth skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
@@ -1609,7 +1609,7 @@ impl Class {
                         They cannot detect your presence, sounds you make, or any actions you take.
                         For example, a scrying sensor created by a \abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \trait{darkvision} would not be able to see you without light.
 
-                    \subsubsection{War}
+                    \subsubsection{War Domain}
                         \parhead{Gift} You gain proficiency with an additional \glossterm{weapon group} of your choice.
                         In addition, you gain proficiency with an additional \glossterm{usage class} of armor.
                         You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
@@ -1617,7 +1617,7 @@ impl Class {
                         \parhead{Essence} You gain a \plus1 bonus to your Armor defense.
                         \parhead{Mastery} The bonus from this domain's aspect increases to \plus2d.
 
-                    \subsubsection{Water}
+                    \subsubsection{Water Domain}
                         If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Flexibility and Swim skills to your cleric \glossterm{class skill} list.
 
@@ -1641,7 +1641,7 @@ impl Class {
                         The bonuses from this domain's gift increase to \plus10.
                         In addition, you gain a \plus1 bonus to Armor and Reflex defenses.
 
-                    \subsubsection{Wild}
+                    \subsubsection{Wild Domain}
                         If you choose this domain, you add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \glossterm{class skill} list.
 
