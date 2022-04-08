@@ -88,7 +88,7 @@ def generate_apparel():
             short_description="Grants +1 accuracy with offhand strikes",
         ),
         MagicItem(
-            name="Ambidextrous Gloves",
+            name="Ambidextrous Gloves, Greater",
             rank=4,
             material_type="Glove",
             description="""
@@ -97,7 +97,7 @@ def generate_apparel():
             short_description="Grants +2 accuracy with offhand strikes",
         ),
         MagicItem(
-            name="Ambidextrous Gloves",
+            name="Ambidextrous Gloves, Supreme",
             rank=6,
             material_type="Glove",
             description="""
