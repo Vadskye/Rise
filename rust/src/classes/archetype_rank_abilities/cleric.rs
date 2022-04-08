@@ -339,7 +339,8 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytag{Magical}, \abilitytag{Swift}
                     \rankline
                     Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
-                    The target regains 1d8 \add \glossterm{power} \glossterm{hit points}, and it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses until the end of the round.
+                    The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
+                    In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses until the end of the round.
                     Because this ability has the \abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
