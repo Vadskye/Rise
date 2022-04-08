@@ -523,8 +523,8 @@ You can either skim past terms you don't yet understand or look them up as you g
             This is the simplest method.
             Simply take the following set of attribute scores and distribute them as you choose among your attributes:
 
-            % 5 + 5 + 3 + 1 + 1 = 15
-            3, 3, 2, 1, 1, 0
+            % 5 + 3 + 3 + 3 + 1 = 15
+            3, 2, 2, 2, 1, 0
 
             This set of attribute scores is called the ``elite array''.
             For more extreme characters, you may use the ``savant array'':
@@ -545,7 +545,8 @@ You can either skim past terms you don't yet understand or look them up as you g
             The listed cost is the total cost required to gain the listed attribute.
 
             \begin{dtable}
-                \lcaption{Attribute Score Point Costs}
+                \tablebookmark{Attribute Point Costs}{attributepoints}
+                \lcaption{Attribute Point Costs}
                 \begin{dtabularx}{\columnwidth}{X X}
                     \tb{Attribute} & \tb{Cumulative Point Cost} \tableheaderrule
                     0              & 0                          \\
@@ -887,30 +888,21 @@ You can either skim past terms you don't yet understand or look them up as you g
 
         \subsubsection{Battleforged Resilience}
             \parhead{Species} Dwarf.
-            \parhead{Attributes} 2 Str, 0 Dex, 4 Con, 0 Int, 2 Per, 1 Wil (after species modifiers).
+            % 2 1 3 0 2 2 base
+            \parhead{Attributes} 2 Str, 0 Dex, 4 Con, 0 Int, 2 Per, 2 Wil (after species modifiers).
             \parhead{Class} Barbarian.
             \parhead{Archetypes} Battleforged Resilience first, Primal Warrior second, Totemist (bear totem) third.
-            \parhead{Insight Points} 1 point for heavy armor.
+            \parhead{Insight Points} None.
             \parhead{Skills} Awareness, Climb, Endurance, Medicine, Survival
-            \parhead{Weapon Groups} Axes, blades, thrown weapons.
+            \parhead{Weapon Groups} Axes, thrown weapons.
             \parhead{Languages} Common, Dwarven, Giant.
-            \parhead{Equipment} Battleaxe, standard shield, scale mail. As you gain levels, use the best heavy armor you can afford.
+            \parhead{Equipment} Battleaxe, standard shield, scale mail. As you gain levels, use the best medium armor you can afford. If you gain proficiency with heavy armor, use that instead.
             \parhead{Legacy Item} Shield.
                 At level 3, choose \mitem{covering shield}.
-                At level 9, choose \mitem{greater covering shield} and \mitem{shield of boulder catching}.
-                At level 15, choose \mitem{shield of mystic reflection}, \mitem{greater shield of boulder catching}, and \mitem{greater covering shield}.
+                At level 9, choose \mitem{greater covering shield} and \mitem{shield of arrow catching}.
+                At level 15, choose \mitem{supreme covering shield} and \mitem{greater shield of arrow catching}.
             \parhead{Combat Styles} Herald of War, Unbreakable Defense.
-            \parhead{Suggested Maneuvers}
-            \begin{raggeditemize}
-                \item Rank 1: \maneuver{boastful battlecry}, \maneuver{guard the pass}, \maneuver{shield slam}
-                \item Rank 2: \maneuver{cleanse}, \maneuver{defensive strike}, \maneuver{directed shout}
-                \item Rank 3: \maneuver{challenging strike}, \maneuver{flamboyant parry}, \maneuver{revitalizing strike}
-                \item Rank 4: \maneuver{fearsome roar}, \maneuver{rally the troops}
-                \item Rank 5: \maneuver{greater goading roar}, \maneuver{redirecting parry}
-                \item Rank 6: \maneuver{greater directed shout}, \maneuver{revitalizing battlecry}
-                \item Rank 7: \maneuver{reflective parry}, \maneuver{stunning roar}
-            \end{raggeditemize}
-            \parhead{Suggested Feats} Shieldbearer, Regenerator, Toughness.
+            \parhead{Suggested Feats} Shieldbearer, Martial Training, Regenerator, Toughness.
             \parhead{Combat Tactics} You are extremely difficult to kill.
             Take advantage of that by wading into the front lines of combat and drawing attention away from your more vulnerable allies.
             If you find yourself in danger, use defensive maneuvers like \maneuver{defensive strike} and \maneuver{flamboyant parry} to keep yourself safe.
@@ -918,28 +910,19 @@ You can either skim past terms you don't yet understand or look them up as you g
 
         \subsubsection{Battlerager}
             \parhead{Species} Half-orc.
-            \parhead{Attributes} 4 Str, 2 Dex, 2 Con, -1 Int, 2 Per, 0 Wil (after species modifiers).
+            % 3 2 2 0 2 1 base
+            \parhead{Attributes} 4 Str, 2 Dex, 2 Con, -1 Int, 2 Per, 1 Wil (after species modifiers).
             \parhead{Class} Barbarian.
             \parhead{Archetypes} Battlerager first, Primal Warrior second, Totemist (lion totem) third.
             \parhead{Insight Points} None.
             \parhead{Skills} Awareness, Climb, Endurance, Intimidate, Jump.
-            \parhead{Weapon Groups} Club-like weapons, crossbows, headed weapons.
+            \parhead{Weapon Groups} Crossbows, headed weapons.
             \parhead{Equipment} Greatmace, scale mail. As you gain levels, buy a heavy crossbow and use the best medium armor you can afford.
             \parhead{Legacy Item} Weapon.
-                At level 3, choose \mitem{potency}.
-                At level 9, choose \mitem{greater potency} and \mitem{greater bloodspray}.
-                At level 15, choose \mitem{supreme potency}, \mitem{supreme bloodspray}, and \mitem{screaming}.
-            \parhead{Combat Styles} Flurry of Blows, Unbreakable Defense.
-            \parhead{Suggested Maneuvers}
-            \begin{raggeditemize}
-                \item Rank 1: \maneuver{deathseeking flurry}, \maneuver{frenzied strike}, \maneuver{twinstrike}.
-                \item Rank 2: \maneuver{cleanse}, \maneuver{rebounding flurry}, \maneuver{steadfast strike}
-                \item Rank 3: \maneuver{revitalizing strike}, \maneuver{strike flurry}
-                \item Rank 4: \maneuver{desperate flurry}, \maneuver{second wind}
-                \item Rank 5: \maneuver{bracing strike}
-                \item Rank 6: \maneuver{greater defensive strike}, \maneuver{triplestrike}
-                \item Rank 7: \maneuver{greater desperate flurry}
-            \end{raggeditemize}
+                At level 3, choose \mitem{bloodfuel}.
+                At level 9, choose \mitem{greater bloodfuel} and \mitem{bloodspray}.
+                At level 15, choose \mitem{supreme bloodfuel} and \mitem{greater bloodspray}.
+            \parhead{Combat Styles} Ebb and Flow, Herald of War.
             \parhead{Suggested Feats} Greatweapon Warrior, Rapid Reaction, Swiftrunner.
             \parhead{Combat Tactics} You are a furious frenzy of devastating damage and lethal critical hits.
             When you roll a 10 on an attack roll, whatever you attacked will probably die.
@@ -947,30 +930,21 @@ You can either skim past terms you don't yet understand or look them up as you g
             Your maneuvers help you deal with high-Armor enemies and enemy swarms, and give you the ability to sacrifice most of your statistics other than damage in exchange for more damage.
 
         \subsubsection{Outland Savage}
-            \parhead{Species} Half-orc.
-            \parhead{Attributes} 4 Str, 2 Dex, 2 Con, 0 Int, 0 Per, 1 Wil (after species modifiers).
+            \parhead{Species} Elf.
+            % 2 3 2 1 2 0 base
+            \parhead{Attributes} 2 Str, 4 Dex, 1 Con, 1 Int, 2 Per, 0 Wil (after species modifiers).
             \parhead{Class} Barbarian.
             \parhead{Archetypes} Outland Savage first, Primal Warrior second, Totemist (wolf totem) third.
             \parhead{Insight Points} 1 point for proficiency with exotic armor weapons.
-            \parhead{Skills} Awareness, Climb, Endurance, Jump, Survival.
-            \parhead{Weapon Groups} Armor weapons, crossbows, flexible weapons.
+            \parhead{Skills} Awareness, Climb, Endurance, Jump, Stealth, Survival.
+            \parhead{Weapon Groups} Armor weapons, flexible weapons.
             \parhead{Languages} Common, Orc.
-            \parhead{Equipment} Flail, scale mail. As you gain levels, buy a heavy crossbow and use the best medium armor you can afford, and get spikes and a spiked knee crafted onto it.
+            \parhead{Equipment} Flail, scale mail. As you gain levels, use the best light armor you can afford. When you can, get spikes and a spiked knee crafted onto your armor.
             \parhead{Legacy Item} Apparel.
                 At level 3, choose \mitem{phasestep boots}.
                 At level 9, choose \mitem{enlarging belt} and \mitem{phasestep boots}.
-                At level 15, choose \mitem{supreme phasestep boots}, \mitem{winged boots}, and \mitem{enlarging belt}.
+                At level 15, choose \mitem{supreme phasestep boots} and \mitem{enlarging belt}.
             \parhead{Combat Styles} Dirty Fighting, Mobile Assault.
-            \parhead{Suggested Maneuvers}
-            \begin{raggeditemize}
-                \item Rank 1: \maneuver{push through}, \maneuver{sweep the leg}, \maneuver{wanderer's strike}
-                \item Rank 2: \maneuver{knockback shove}, \maneuver{reaping harvest}, \maneuver{strangle}
-                \item Rank 3: \maneuver{battering ram}, \maneuver{leaping strike}
-                \item Rank 4: \maneuver{greater wanderer's strike}, \maneuver{knockback sweep}
-                \item Rank 5: \maneuver{anklesprainer}, \maneuver{eye-averting strike}
-                \item Rank 6: \maneuver{leaping impact strike}, \maneuver{pin}
-                \item Rank 7: \maneuver{flash flurry}, \maneuver{greater steal weapon}
-            \end{raggeditemize}
             \parhead{Suggested Feats} Savage, Brawler, Swiftrunner.
             \parhead{Combat Tactics} You can move around the battlefield very quickly, and you are incredibly accurate with special combat actions like shoving and grappling enemies.
             Make the most of that by repositioning enemies, tripping them, or holding them in grapples so your allies can hit them.
@@ -981,21 +955,19 @@ You can either skim past terms you don't yet understand or look them up as you g
 
         \subsubsection{Primal Warrior}
             \parhead{Species} Human.
-            \parhead{Attributes} 3 Str, 2 Dex, 2 Con, 0 Int, 2 Per, 0 Wil.
+            \parhead{Attributes} 3 Str, 2 Dex, 2 Con, 1 Int, 2 Per, 0 Wil.
             \parhead{Class} Barbarian.
             \parhead{Archetypes} Primal Warrior first, Battleforged Resilience second, Outland Savage third.
-            \parhead{Insight Points} 1 point for an additional combat style, 2 points for additional maneuvers.
+            \parhead{Insight Points} 1 point for an additional combat style, 1 point for an additional maneuver.
             \parhead{Skills} Awareness, Climb, Endurance, Intimidate, Jump.
-            \parhead{Weapon Groups} Axes, crossbows, polearms.
+            \parhead{Weapon Groups} Axes, crossbows.
             \parhead{Languages} Common, Dwarven, Orc.
             \parhead{Equipment} Greataxe, scale mail. As you gain levels, buy a heavy crossbow and use the best medium armor you can afford.
             \parhead{Legacy Item} Weapon.
-                At level 3, choose \mitem{flaming}.
-                At level 9, choose \mitem{greater flaming} and \mitem{blessed}.
-                At level 15, choose \mitem{supreme flaming}, \mitem{greater blessed}, and \mitem{impactful}.
+                At level 3, choose \mitem{shocking}.
+                At level 9, choose \mitem{banechannel} and \mitem{shocking}.
+                At level 15, choose \mitem{greater dimensional trace} and \mitem{banechannel}.
             \parhead{Combat Styles} Dirty Fighting, Herald of War, Unbreakable Defense.
-            \parhead{Suggested Maneuvers} You can learn most of the maneuvers available at each rank from your combat styles, so it's not meaningful to list specific maneuvers here.
-            Choose whatever is most interesting to you.
             \parhead{Suggested Feats} Greatweapon Warrior, Weapon Focus, Swiftrunner.
             \parhead{Combat Tactics} You have a great breadth of options available to you thanks to the number of maneuvers you know.
             You have the survivability to stand in close combat, especially if you use maneuvers from Unreakable Defense, but you can also shout at mobile enemies from range with maneuvers from Herald of War.
@@ -1010,65 +982,45 @@ You can either skim past terms you don't yet understand or look them up as you g
 
             If you want to quickly create a character based on the eagle totem from this archetype, make the following choices:
             \parhead{Species} Human.
-            \parhead{Attributes} 2 Str, 1 Dex, 0 Con, 0 Int, 4 Per, 1 Wil.
+            \parhead{Attributes} 2 Str, 2 Dex, 1 Con, 0 Int, 4 Per, 0 Wil.
             \parhead{Class} Barbarian.
-            \parhead{Archetypes} Totemist (eagle totem) first, Primal Warrior second, Battlerager third.
-            \parhead{Insight Points} 1 point for proficiency with exotic bows, 1 point for an additional maneuver.
+            \parhead{Archetypes} Totemist (eagle totem) first, Primal Warrior second, Outland Savage third.
+            \parhead{Insight Points} 1 point for proficiency with exotic bows.
             \parhead{Skills} Awareness, Balance, Climb, Creature Handling, Jump, Survival.
             \parhead{Weapon Groups} Crossbows, bows, thrown weapons.
             \parhead{Languages} Common, Elven, Giant.
             \parhead{Equipment} Longbow, leather body armor. As you gain levels, buy a flatbow and use the best light armor you can afford.
             \parhead{Legacy Item} Weapon.
-                At level 3, choose \mitem{bloodfuel}.
-                At level 9, choose \mitem{greater bloodfuel} and \mitem{ricocheting}.
-                At level 15, choose \mitem{supreme bloodfuel}, \mitem{greater ricocheting}, and \mitem{greater shocking}.
+                At level 3, choose \mitem{longshot}.
+                At level 9, choose \mitem{greater iridescent} and \mitem{longshot}.
+                At level 15, choose \mitem{supreme iridescent} and \mitem{greater longshot}.
             \parhead{Combat Styles} Penetrating Precision, Unbreakable Defense.
-            \parhead{Suggested Maneuvers}
-            \begin{raggeditemize}
-                \item Rank 1: \maneuver{deathblow}, \maneuver{eye poke}, \maneuver{penetrating strike}
-                \item Rank 2: \maneuver{arrowguide}, \maneuver{called shot}, \maneuver{cleanse}
-                \item Rank 3: \maneuver{groundspike}, \maneuver{heartpiercing strike}, \maneuver{penetrating shot}
-                \item Rank 4: \maneuver{cleansing strike}, \maneuver{second wind}
-                \item Rank 5: \maneuver{eye gouge}, \maneuver{penetrating longshot}
-                \item Rank 6: \maneuver{greater called shot}, \maneuver{greater defensive strike}
-                \item Rank 7: \maneuver{greater deathblow}, \maneuver{greater groundspike}
-            \end{raggeditemize}
             \parhead{Suggested Feats} Sniper, Blindfighter, Swiftrunner.
             \parhead{Combat Tactics} You have incredible accuracy from very long range.
-            Your defenses are low, but as long as you stay far enough away from your foes, they can't take advantage of that weakness.
+            Your defenses are relatively low, but as long as you stay far enough away from your foes, they can't take advantage of that weakness.
             You have the ability to prioritize any target on the battlefield, so make the most of your maneuvers that impose conditions or deal additional damage on weakened foes.
 
     \subsection{Cleric}
 
         \subsubsection{Divine Magic}
             \parhead{Species} Gnome.
-            \parhead{Attributes} 0 Str, 0 Dex, 3 Con, 1 Int, 2 Per, 3 Wil (after species modifiers).
+            % 0 0 2 1 2 4 base
+            \parhead{Attributes} -1 Str, 0 Dex, 3 Con, 1 Int, 2 Per, 4 Wil (after species modifiers).
             \parhead{Class} Cleric.
             \parhead{Archetypes} Divine Magic first, Divine Spell Mastery second, Domain Influence third.
-            \parhead{Insight Points} 2 points for an additional mystic sphere, 1 point for an additional spell known.
+            \parhead{Insight Points} 1 point for an additional mystic insight (choosing an extra mystic sphere), 2 points for an additional mystic sphere, and 2 points for additional spells known.
             \parhead{Skills} Knowledge (local, religion), Medicine, Persuasion, Social Insight
-            \parhead{Weapon Group} Club-like weapons.
-            \parhead{Languages} Common, Dwarven, Halfling.
+            \parhead{Languages} Common, Gnome, Halfling.
             \parhead{Equipment} Mace, scale mail. As you gain levels, use the best medium armor you can afford.
             \parhead{Legacy Item} 1-handed implement.
-                At level 3, choose \mitem{staff of focus}.
-                At level 9, choose \mitem{splitting staff} and \mitem{staff of focus}.
-                At level 15, choose \mitem{greater splitting staff}, \mitem{greater staff of focus}, and \mitem{extending staff}.
+                At level 3, choose \mitem{splitting staff}.
+                At level 9, choose \mitem{staff of radiance} and \mitem{splitting staff}.
+                At level 15, choose \mitem{greater splitting staff} and \mitem{staff of radiance}.
             \parhead{Domains} Good, Magic
             \parhead{Mystic Spheres} Bless, Channel Divinity, and Photomancy
-            \parhead{Suggested Spells}
-            \begin{raggeditemize}
-                \item Rank 1: \spell{boon of precision}, \spell{divine judgment}, \spell{flash}, \spell{searing light}
-                \item Rank 2: \spell{blessing of resilience}, \spell{blessing of potency}, \spell{color spray}, \spell{divine conduit}
-                \item Rank 3: \spell{boon of avoidance}, \spell{chromatic orb}, \spell{glimpse of divinity}, \spell{lightbeam dash}
-                \item Rank 4: \spell{boon of cleansing}, \spell{greater divine judgment}, \spell{greater searing light}
-                \item Rank 5: \spell{greater color spray}, \spell{greater retributive judgment}, \spell{solar ray} 
-                \item Rank 6: \spell{boon of invulnerability}, \spell{cleansing benediction}, \spell{greater retributive judgment}
-                \item Rank 7: \spell{blessing of vitality}, \spell{greater chromatic orb}, \spell{greater glimpse of divinity}
-            \end{raggeditemize}
             \parhead{Suggested Feats} Celestial Heritage, Sphere Focus: Bless, Sphere Focus: Photomancy
             \parhead{Combat Tactics} You can protect and enhance your allies and invoke divine wrath on your foes.
-            Your attacks can hit a wide variety of defenses, so use the best spells for the situation.
+            Your attacks can hit a variety of defenses, so use the best spells for the situation.
             If you are facing a foe that not particularly vulnerable to your attacks, you can focus on helping your allies with ``boon'' spells to make their actions more effective and keep them safe.
 
         \subsubsection{Divine Spell Mastery}
@@ -1081,66 +1033,46 @@ You can either skim past terms you don't yet understand or look them up as you g
             If you want to quickly create a more martial character based on the Strength and War domains from this archetype, make the following choices:
 
             \parhead{Species} Dwarf.
-            \parhead{Attributes} 3 Str, 0 Dex, 3 Con, 0 Int, 2 Per, 1 Wil (after species modifiers).
+            % 2 1 3 0 2 2 base
+            \parhead{Attributes} 2 Str, 0 Dex, 4 Con, 0 Int, 2 Per, 2 Wil (after species modifiers).
             \parhead{Class} Cleric.
             \parhead{Archetypes} Domain Influence first, Divine Magic second, Preacher third.
-            \parhead{Insight Points} 2 points for additional spells known.
+            \parhead{Insight Points} 3 points for additional spells known.
             \parhead{Skills} Awareness, Knowledge (local, religion), Medicine
             \parhead{Weapon Group} Club-like weapons.
             \parhead{Languages} Common, Draconic, Dwarven.
             \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, use the best heavy armor you can afford.
             \parhead{Legacy Item} Armor.
                 At level 3, choose \mitem{armor of health}.
-                At level 9, choose \mitem{greater armor of health} and \mitem{crumpling armor}.
-                At level 15, choose \mitem{supreme armor of health}, \mitem{greater crumpling armor}, and \mitem{greater featherlight armor}.
-            \parhead{Domains} Strength, War
-            \parhead{Mystic Spheres} Channel Divinity
-            \parhead{Suggested Spells}
-            \begin{raggeditemize}
-                \item Rank 1: \spell{divine power}, \spell{divine judgment}, \spell{judge unworthy}, \spell{mantle of faith}
-                \item Rank 2: \spell{endurance of the faithful}, \spell{divine conduit}, \spell{retributive judgment}, \spell{word of faith}
-                \item Rank 3: \spell{banish anathema}, \spell{divine might}, \spell{glimpse of divinity}
-                \item Rank 4: \spell{faith rewarded}, \spell{greater divine judgment}, \spell{greater word of faith}
-                \item Rank 5: \spell{fear of the divine}, \spell{greater retributive judgment}
-                \item Rank 6: \spell{certain banish anathema}, \spell{divine offering}
-                \item Rank 7: \spell{greater glimpse of divinity}, \spell{supreme divine judgment}
-            \end{raggeditemize}
+                At level 9, choose \mitem{greater armor of health} and \mitem{armor of fortification}.
+                At level 15, choose \mitem{supreme armor of health} and \mitem{armor of mystic fortification}, and \mitem{greater featherlight armor}.
+            \parhead{Domains} Destruction, War
+            \parhead{Mystic Sphere} Channel Divinity
             \parhead{Suggested Feats} Weapon Focus, Sphere Focus: Channel Divinity, Shieldbearer
             \parhead{Combat Tactics} You are a frontline fighter first and foremost.
-            Your high defenses and magically enhanced resistances make you durable in combat, though you lack mobility. 
+            Your magically enhanced resistance and high defenses make you durable in combat, though you lack mobility. 
             When you need to distract foes or face down hordes, you can use your abilities from the Preacher archetype.
-            If you can't take the Weapon Focus feat, consider taking the Destruction domain instead of the Strength domain, since that gives you a standard action ability to help you deal damage with your weapon.
 
         \subsubsection{Healer}
-            \parhead{Species} Gnome.
-            \parhead{Attributes} -1 Str, 2 Dex, 3 Con, 0 Int, 0 Per, 4 Wil (after species modifiers).
+            \parhead{Species} Human.
+            % 0 2 2 1 0 4 base
+            \parhead{Attributes} 0 Str, 2 Dex, 2 Con, 1 Int, 0 Per, 3 Wil.
             \parhead{Class} Cleric.
             \parhead{Archetypes} Healer first, Divine Magic second, Domain Influence third.
-            \parhead{Insight Points} 2 points for additional spells known.
-            \parhead{Skills} Awareness, Deduction, Knowledge (religion), Medicine
+            \parhead{Insight Points} 2 points for an additional mystic sphere, 3 points for additional spells known.
+            \parhead{Skills} Awareness, Deduction, Knowledge (local, religion), Medicine
             \parhead{Weapon Group} Club-like weapons.
             \parhead{Languages} Common, Draconic, Halfling.
             \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
             \parhead{Legacy Item} 1-handed implement.
                 At level 3, choose \mitem{staff of potency}.
-                At level 9, choose \mitem{staff of healing rhythm} and \mitem{staff of focus}.
-                At level 15, choose \mitem{greater splitting staff}, \mitem{greater staff of focus}, and \mitem{staff of healing rhythm}.
+                At level 9, choose \mitem{greater staff of potency} and \mitem{staff of pleasant healing}.
+                At level 15, choose \mitem{supreme staff of potency} and \mitem{greater staff of pleasant healing}.
             \parhead{Domains} Life, Protection
-            \parhead{Mystic Spheres} Vivimancy
-            \parhead{Suggested Spells}
-            \begin{raggeditemize}
-                \item Rank 1: \spell{drain life}, \spell{draining grasp}, \spell{healer's intuition}, \spell{lifegift}, \spell{sapping miasma}
-                \item Rank 2: \spell{cure wound}, \spell{inflict wound}, \spell{triage}, \spell{wellspring of life}
-                \item Rank 3: \spell{circle of death}, \spell{lifesteal}, \spell{lifesteal grasp}
-                \item Rank 4: \spell{greater drain life}, \spell{lifeseal}, \spell{lifesight}
-                \item Rank 5: \spell{mass vital persistence}, \spell{nauseating miasma}
-                \item Rank 6: \spell{greater circle of death}, \spell{greater inflict wound}
-                \item Rank 7: \spell{avasculate}, \spell{greater lifesteal grasp}, \spell{mass lifesteal blade}
-            \end{raggeditemize}
-            \parhead{Suggested Feats} Sphere Focus: Vivimancy, Boongiver, Regenerator
+            \parhead{Mystic Spheres} Bless, Vivimancy
+            \parhead{Suggested Feats} Sphere Focus: Vivimancy, Boongiver, Sphere Focus: Bless
             \parhead{Combat Tactics} You have an unmatched mastery of healing and protection.
-            You have high defenses, so you can take to the front lines as necessary to make the most of \ability{restoration} and \ability{divine protection}, but it's generally better to let your allies take hits instead of you.
-            Since \ability{restoration} is much less effective at healing yourself, you can use spells like \spell{cure wounds} or \spell{lifesteal} to heal yourself if you lose hit points.
+            You have reasonably high defenses, so you can take to the front lines as necessary to make the most of your \ability{divine aid} and \ability{divine protection} abilities.
             Although your \ability{healer's grace} ability is powerful, you shouldn't feel bad about attacking enemies.
             That's especially important early in a fight when your allies don't need healing yet and your enemies haven't realized that it's pointless to attack your allies while you are still standing.
 
@@ -1149,26 +1081,15 @@ You can either skim past terms you don't yet understand or look them up as you g
             \parhead{Attributes} 0 Str, 0 Dex, 2 Con, 2 Int, 4 Per, 0 Wil.
             \parhead{Class} Cleric.
             \parhead{Archetypes} Preacher first, Divine Magic second, Divine Spell Mastery third.
-            \parhead{Insight Points} 5 points for additional spells known.
+            \parhead{Insight Points} 2 points for additional mystic insights (including an extra mystic sphere), 4 points for additional spells known.
             \parhead{Skills} Awareness, Knowledge (local, religion), Linguistics, Medicine, Persuasion, Social Insight
-            \parhead{Weapon Group} Flexible weapons.
             \parhead{Languages} Common, Dwarven, Elven.
-            \parhead{Equipment} Flail, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
+            \parhead{Equipment} Club, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
             \parhead{Legacy Item} Apparel.
                 At level 3, choose \mitem{amulet of blessed oration}.
-                At level 9, choose \mitem{greater amulet of blessed oration} and \mitem{bracers of repulsion}.
-                At level 15, choose \mitem{supreme amulet of blessed oration}, \mitem{greater bracers of repulsion}, and \mitem{greater boots of speed}.
+                At level 9, choose \mitem{greater amulet of blessed oration} and \mitem{greater shieldburst bracers}.
+                At level 15, choose \mitem{supreme amulet of blessed oration} and \mitem{supreme shieldburst bracers}.
             \parhead{Mystic Spheres} Enchantment, Revelation
-            \parhead{Suggested Spells}
-            \begin{raggeditemize}
-                \item Rank 1: \spell{agony}, \spell{alluring presence}, \spell{mind crush}, \spell{social intuition}, \spell{true strike}
-                \item Rank 2: \spell{friend to foe}, \spell{monologue}, \spell{reveal vulnerability}
-                \item Rank 3: \spell{charm}, \spell{curse of phobia}, \spell{discern lies}, \spell{reverse scrying}
-                \item Rank 4: \spell{confusion}, \spell{greater mind crush}, \spell{gift of knowledge}, \spell{sensory chain}
-                \item Rank 5: \spell{clairvoyance}, \spell{dominate person}, \spell{dramatic reveal}, \spell{foresight}
-                \item Rank 6: \spell{amnesiac charm}, \spell{mass blindsight}, \spell{sleep}
-                \item Rank 7: \spell{blinding visions}, \spell{mass true strike}, \spell{solipsism}, \spell{supreme mind crush}
-            \end{raggeditemize}
             \parhead{Suggested Feats} Persuasion Specialization, Sphere Focus: Enchantment, Sphere Focus: Revelation
             \parhead{Combat Tactics} Your social skills are virtually unmatched, and you have a wide variety of spells that give you narrative power in social situations.
             In combat, your \ability{denounce the heathens} ability is essentially guaranteed to hit, so you should stay close enough to the front lines to make good use of it.
