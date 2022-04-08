@@ -123,7 +123,7 @@ def generate_implements():
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, the target \\glossterm<briefly> gains a +2 bonus to its Mental defense.
             """,
-            short_description="Grants +2 Mental defense when you heal others",
+            short_description="Grants +2 Mental defense with your healing",
         ),
         MagicItem(
             name="Staff of Pleasant Healing, Greater",
@@ -134,7 +134,7 @@ def generate_implements():
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, the target \\glossterm<briefly> gains a +3 bonus to its Mental defense.
             """,
-            short_description="Grants +3 Mental defense when you heal others",
+            short_description="Grants +3 Mental defense with your healing",
         ),
     ]
 
