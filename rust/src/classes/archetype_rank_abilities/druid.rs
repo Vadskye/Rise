@@ -304,19 +304,16 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
-                        The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
-                        In addition, you automatically learn one free nature ritual of each rank you have access to, including new ranks as you gain access to them.
+                    \parhead{Mystic Sphere} You gain access to an additional nature \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
                         You cannot choose this ability multiple times.
                     \parhead{Precise Spell} Choose a nature \glossterm{spell} you know.
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Powerful Spell} Choose a nature \glossterm{spell} you know.
-                        You gain a +2 bonus to your \glossterm{power} with that spell.
-                        This bonus increases to +4 at rank 3, +8 at rank 5, and +16 at rank 7.
-                        You can choose this ability multiple times, choosing a different spell each time.
-                        Whenever you learn a new spell, you may change which of your spells this ability affects.
+                    \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
+                        The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
+                        In addition, you automatically learn one free nature ritual of each rank you have access to, including new ranks as you gain access to them.
+                        You cannot choose this ability multiple times.
                     \parhead{Widened Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{area}: Small, Medium, Large, Huge, or Gargantuan.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
