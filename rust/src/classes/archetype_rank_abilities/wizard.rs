@@ -491,8 +491,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum \glossterm{rank} of arcane spell that you can cast.
                         In addition, you automatically learn one free arcane ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
-                    \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        You can choose this ability multiple times, learning an additional spell each time.
                     \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: Small, Medium, Large, Huge, or Gargantuan.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.

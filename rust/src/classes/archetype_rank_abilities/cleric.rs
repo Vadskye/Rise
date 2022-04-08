@@ -145,8 +145,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Spell Knowledge} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        You can choose this ability multiple times, learning an additional spell each time.
                     \parhead{Widened Spell} Choose a divine \glossterm{spell} you know with a standard \glossterm{area}: Small, Medium, Large, Huge, or Gargantuan.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
