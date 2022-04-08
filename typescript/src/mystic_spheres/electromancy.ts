@@ -171,6 +171,7 @@ export const electromancy: MysticSphere = {
         In addition, it is \\glossterm{briefly} \\glossterm{impervious} to electricity damage.
       `,
       rank: 2,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 2." },
       type: 'Duration',
     },
 
@@ -183,6 +184,7 @@ export const electromancy: MysticSphere = {
         In addition, it is \\glossterm{briefly} \\glossterm{immune} to electricity damage.
       `,
       rank: 6,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
       type: 'Duration',
     },
 
