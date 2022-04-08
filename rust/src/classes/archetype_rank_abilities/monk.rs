@@ -93,7 +93,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
 
                 You learn two rank 1 \glossterm{maneuvers} chosen from combat styles you have access to.
-                You may spend \glossterm{insight points} to learn to one additional maneuver per insight point.
+                You may spend \glossterm{insight points} to learn one additional maneuver per insight point.
                 Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
                 When you gain access to a new \glossterm{rank} in this archetype,
