@@ -301,7 +301,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can gain proficiency with \glossterm{exotic weapons} from \glossterm{weapon groups} that you are already proficient with at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Savage Rush",
