@@ -115,25 +115,6 @@ export const bless: MysticSphere = {
     },
 
     {
-      name: "Boon of Shielding",
-
-      effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        If the target takes the \\textit{total defense} action during the current phase, it gains an additional +2 bonus to all defenses this round.
-        Because this ability has the \\abilitytag{Swift} tag, it affects attacks against the target during the current phase.
-        If you cast this spell on yourself, it affects the first time you use the \\textit{total defense} ability before the end of the next round.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The bonus increases to +3.`,
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
-      },
-      tags: ["Swift"],
-      type: "Duration",
-    },
-    
-    {
       name: "Boon of Precision",
 
       effect: `
@@ -410,6 +391,44 @@ export const bless: MysticSphere = {
       `,
       rank: 6,
       type: "Attune (deep, target)",
+    },
+
+    {
+      name: "Boon of Shielding",
+
+      effect: `
+        Choose yourself or a living \\glossterm{ally} within \\shortrange.
+        The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        In addition, it \\glossterm{briefly} gains a +1 bonus to all \\glossterm{defenses}.
+      `,
+      rank: 1,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
+      type: "Duration",
+    },
+
+    {
+      name: "Greater Boon of Shielding",
+
+      effect: `
+        Choose yourself or a living \\glossterm{ally} within \\shortrange.
+        The target regains 2d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        In addition, it \\glossterm{briefly} gains a +2 bonus to all \\glossterm{defenses}.
+      `,
+      rank: 4,
+      scaling: { special: "The recovery increases by +1d for each rank beyond 4." },
+      type: "Duration",
+    },
+
+    {
+      name: "Supreme Boon of Shielding",
+
+      effect: `
+        Choose yourself or a living \\glossterm{ally} within \\shortrange.
+        The target regains 4d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        In addition, it \\glossterm{briefly} gains a +3 bonus to all \\glossterm{defenses}.
+      `,
+      rank: 7,
+      type: "Duration",
     },
   ],
   rituals: [
