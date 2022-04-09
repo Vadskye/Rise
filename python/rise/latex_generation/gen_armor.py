@@ -81,10 +81,10 @@ def generate_armor():
             rank=2,
             material_type="Shield",
             description="""
-                When an \\glossterm<ally> within a \\areasmall radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
+                When an \\glossterm<ally> within a \\areasmall radius emanation from you would be attacked by a ranged \\glossterm<strike>, the attack is redirected to target you instead.
                 Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
             """,
-            short_description="Redirects small nearby projectiles to hit you",
+            short_description="Redirects nearby projectiles to hit you",
         ),
         MagicItem(
             name="Shield of Arrow Catching, Greater",
@@ -93,7 +93,17 @@ def generate_armor():
             description="""
                 This item functions like a \\mitem<shield of arrow catching>, except that it affects a \\arealarge radius from you.
             """,
-            short_description="Redirects small projectiles to hit you",
+            short_description="Redirects projectiles to hit you",
+        ),
+        MagicItem(
+            name="Shield of Arrow Catching, Supreme",
+            rank=6,
+            material_type="Shield",
+            description="""
+                This item functions like a \\mitem<shield of arrow catching>, except that it affects a \\arealarge radius from you.
+                In addition, you gain a +2 bonus to all defenses against strikes redirected in this way.
+            """,
+            short_description="Redirects projectiles to possibly hit you",
         ),
     ]
 
