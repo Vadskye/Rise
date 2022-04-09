@@ -2197,12 +2197,12 @@ function handleVitalWounds() {
       1: "Unconscious below max HP",
       2: "-10 foot speed",
       3: "-5 foot speed",
-      4: "Max DR is 0",
-      5: "Half max DR",
-      6: "-2 accuracy",
-      7: "-1 accuracy",
-      8: "-2 defenses",
-      9: "-1 defenses",
+      4: "-2 defenses",
+      5: "-1 defenses",
+      6: "Max DR is 0",
+      7: "Half max DR",
+      8: "-2 accuracy",
+      9: "-1 accuracy",
     }[roll];
   }
 
@@ -2220,16 +2220,16 @@ function handleVitalWounds() {
         getAttrs(vitalWoundRollIds, (values) => {
           let rolls = Object.values(values);
           let accuracy_penalty =
-            -countRolls(rolls, 6) * 2 - countRolls(rolls, 7);
-          let defense_penalty =
             -countRolls(rolls, 8) * 2 - countRolls(rolls, 9);
+          let defense_penalty =
+            -countRolls(rolls, 4) * 2 - countRolls(rolls, 5);
           let speed_penalty =
             countRolls(rolls, 2) * -10 + countRolls(rolls, 3) * -5;
           let resistance_multiplier =
-            countRolls(rolls, 4) > 0
+            countRolls(rolls, 6) > 0
               ? // dumb hack since we use || and I'm too lazy to fix it
                 -1
-              : 0.5 ** countRolls(rolls, 5);
+              : 0.5 ** countRolls(rolls, 7);
           let attrs = {
             vital_wound_count: repeatingSectionIds.length,
 

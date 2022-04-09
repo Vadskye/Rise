@@ -110,12 +110,12 @@ def vital_roll_effect(roll):
         1: "Unconscious below max HP",
         2: "-10 foot speed",
         3: "-5 foot speed",
-        4: "Max DR is 0",
-        5: "Half max DR",
-        6: "-2 accuracy",
-        7: "-1 accuracy",
-        8: "-2 defenses",
-        9: "-1 defenses",
+        4: "-2 defenses",
+        5: "-1 defenses",
+        6: "Max DR is 0",
+        7: "Half max DR",
+        8: "-2 accuracy",
+        9: "-1 accuracy",
         "10+": "No extra effect",
     }[roll]
 
