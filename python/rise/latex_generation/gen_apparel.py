@@ -2673,23 +2673,13 @@ def generate_apparel():
         ),
         MagicItem(
             name="Protector's Amulet, Greater",
-            rank=4,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                When you use the \\ability<protect> fighter ability, you can target an ally within \\medrange of you.
-            """,
-            short_description="Greatly increases range of the \\ability<protect> ability",
-        ),
-        MagicItem(
-            name="Protector's Amulet, Supreme",
-            rank=6,
+            rank=5,
             material_type="Amulet",
             tags=[],
             description="""
                 When you use the \\ability<protect> fighter ability, you can target an ally within \\longrange of you.
             """,
-            short_description="Drastically increases range of the \\ability<protect> ability",
+            short_description="Greatly increases range of the \\ability<protect> ability",
         ),
     ]
 
