@@ -502,6 +502,15 @@ def generate_weapons():
             """,
             short_description="Can knockback struck foes",
         ),
+        MagicItem(
+            name="Hefty, Greater",
+            rank=5,
+            material_type="Weapon",
+            description="""
+                This weapon functions like a \\mitem<hefty> weapon, except that the maximum size category that you can affect with its \\glossterm<Forceful> tag increases by one.
+            """,
+            short_description="Can knockback struck large foes",
+        ),
     ]
 
     weapons += [
