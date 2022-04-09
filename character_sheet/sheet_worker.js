@@ -297,7 +297,7 @@ function boolifySheetValue(val) {
 
 const SKILLS_BY_ATTRIBUTE = {
   strength: ["climb", "jump", "swim"],
-  dexterity: ["balance", "flexibility", "ride", "sleight_of_hand", "stealth"],
+  dexterity: ["balance", "flexibility", "perform", "ride", "sleight_of_hand", "stealth"],
   constitution: ["Endurance"],
   intelligence: [
     "craft_alchemy",
@@ -330,7 +330,7 @@ const SKILLS_BY_ATTRIBUTE = {
   ],
   perception: ["awareness", "creature_handling", "deception", "persuasion", "social_insight", "survival"],
   willpower: [],
-  other: ["intimidate", "perform", "profession"],
+  other: ["intimidate", "profession"],
 };
 
 const ALL_SKILLS = Object.values(SKILLS_BY_ATTRIBUTE).flat();
