@@ -48,8 +48,8 @@ const BASE_CLASS_MODIFIERS = {
     vital_rolls: 0,
     attunement_points: 4,
     fatigue_tolerance: 4,
-    insight_points: 2,
-    class_skill_count: 6,
+    insight_points: 3,
+    class_skill_count: 5,
     proficiencies: "Light armor, hide armor, scimitars, and sickles",
   },
   fighter: {
