@@ -567,7 +567,7 @@ impl Class {
             Self::Fighter => 3,
             Self::Monk => 6,
             Self::Oozeborn => 4,
-            Self::Paladin => 4,
+            Self::Paladin => 3,
             Self::Ranger => 5,
             Self::Rogue => 7,
             Self::Sorcerer => 3,
@@ -996,7 +996,7 @@ impl Class {
                 simple_weapons: true,
             },
             Self::Paladin => WeaponProficiencies {
-                custom_weapon_groups: 1,
+                custom_weapon_groups: 2,
                 specific_weapon_groups: None,
                 specific_weapons: None,
                 simple_weapons: true,
