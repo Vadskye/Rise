@@ -185,7 +185,7 @@ export const universal: MysticSphere = {
           When the ritual is completed, that point becomes a trap.
 
           When a creature moves within a \\smallarea radius from the chosen point, the trap activates.
-          The trap's Awareness bonus to notice creatures moving is equal to +5.
+          The trap's Awareness bonus to notice creatures moving is +10.
           You can choose the minimum size category of creature required to activate the trap.
           When the trap activates, make an attack vs. Reflex against everything within a \\smallarea radius from the trap.
 
