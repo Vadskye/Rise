@@ -621,9 +621,8 @@ export const astromancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        3: `The maximum size of the target increases to Large.`,
-        5: `The maximum size of the target increases to Huge.`,
-        7: `The maximum size of the target increases to Gargantuan.`,
+        4: `The maximum size of the target increases to Large.`,
+        6: `The maximum size of the target increases to Huge.`,
       },
       type: "Duration",
     },
