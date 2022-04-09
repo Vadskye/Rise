@@ -652,7 +652,7 @@ def generate_weapons():
             material_type="Weapon",
             tags=[],
             description="""
-                When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +2 bonus to the reroll.
+                When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +2 accuracy bonus to the reroll.
                 This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
             """,
             short_description="Grants +2 bonus with \\textit<desperate exertion>",
@@ -663,7 +663,7 @@ def generate_weapons():
             material_type="Weapon",
             tags=[],
             description="""
-                When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +3 bonus to the reroll.
+                When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +3 accuracy bonus to the reroll.
                 This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
             """,
             short_description="Grants +3 bonus with \\textit<desperate exertion>",
@@ -674,7 +674,7 @@ def generate_weapons():
             material_type="Weapon",
             tags=[],
             description="""
-                When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +4 bonus to the reroll.
+                When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +4 accuracy bonus to the reroll.
                 This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
             """,
             short_description="Grants +4 bonus with \\textit<desperate exertion>",
