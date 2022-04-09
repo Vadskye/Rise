@@ -172,4 +172,98 @@ export const universal: MysticSphere = {
       type: "Instant",
     },
   ],
+  rituals: [
+    {
+      name: "Mystic Trap",
+
+      castingTime: "one hour",
+      attack: {
+        hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
+        targeting: `
+          When you perform this ritual, choose a point in space within \\shortrange.
+          You can choose a point within an \\glossterm{unattended} container as long as the container is currently open.
+          When the ritual is completed, that point becomes a trap.
+
+          When a creature moves within a \\smallarea radius from the chosen point, the trap activates.
+          The trap's Awareness bonus to notice creatures moving is equal to +5.
+          You can choose the minimum size category of creature required to activate the trap.
+          When the trap activates, make an attack vs. Reflex against everything within a \\smallarea radius from the trap.
+
+          After the trap activates, this effect is \\glossterm{dismissed}.
+        `,
+      },
+      rank: 1,
+      scaling: {
+        "special": `
+          You can perform this ritual at a higher rank.
+          The damage increases by +1d per rank beyond 1.
+        `,
+      },
+      tags: ['Trap'],
+      type: "Attune (ritual)"
+    },
+    {
+      name: "Enduring Mystic Trap",
+
+      castingTime: "24 hours",
+      functionsLike: {
+        name: "mystic trap",
+        exceptThat: `
+          the trap persists for one year.
+          Whenever it is activated, it is temporarily \\glossterm{suppressed} for 10 minutes.
+        `,
+      },
+      rank: 1,
+      scaling: {
+        "special": `
+          You can perform this ritual at a higher rank.
+          The damage increases by +1d per rank beyond 1.
+        `,
+      },
+      tags: ['Trap'],
+      type: "Duration"
+    },
+    {
+      name: "Greater Mystic Trap",
+
+      castingTime: "24 hours",
+      functionsLike: {
+        name: "mystic trap",
+        exceptThat: `
+          the damage increases to 2d8 + half \\glossterm{power} damage.
+          In addition, the area of both the activation and the attack increases to a \\medarea radius.
+        `,
+      },
+      rank: 4,
+      scaling: {
+        "special": `
+          You can perform this ritual at a higher rank.
+          The damage increases by +1d per rank beyond 4.
+        `,
+      },
+      tags: ['Trap'],
+      type: "Duration"
+    },
+    {
+      name: "Greater Enduring Mystic Trap",
+
+      castingTime: "24 hours",
+      functionsLike: {
+        name: "greater mystic trap",
+        exceptThat: `
+          the trap persists for one year.
+          Whenever it is activated, it is temporarily \\glossterm{suppressed} for 10 minutes.
+        `,
+      },
+      rank: 4,
+      scaling: {
+        "special": `
+          You can perform this ritual at a higher rank.
+          The damage increases by +1d per rank beyond 4.
+        `,
+      },
+      tags: ['Trap'],
+      type: "Duration"
+    },
+  ],
 };
