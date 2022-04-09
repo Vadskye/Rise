@@ -92,7 +92,7 @@ export interface Spell extends BaseSpellLike {
   rank: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 }
 
-export interface Ritual extends Omit<Spell, "scaling"> {
+export interface Ritual extends Spell {
   castingTime: string;
   materialCost?: boolean;
 }
