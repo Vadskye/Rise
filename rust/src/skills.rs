@@ -68,7 +68,7 @@ impl Skill {
             Self::Knowledge(_) => Some(Attribute::Intelligence),
             Self::Linguistics => Some(Attribute::Intelligence),
             Self::Medicine => Some(Attribute::Intelligence),
-            Self::Perform => None,
+            Self::Perform => Some(Attribute::Dexterity),
             Self::Persuasion => Some(Attribute::Perception),
             Self::Profession => None,
             Self::Ride => Some(Attribute::Dexterity),
