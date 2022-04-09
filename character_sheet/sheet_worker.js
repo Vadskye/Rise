@@ -24,7 +24,7 @@ const BASE_CLASS_MODIFIERS = {
     fatigue_tolerance: 5,
     insight_points: 0,
     class_skill_count: 4,
-    proficiencies: "Light and medium armor, one weapon group",
+    proficiencies: "Light and medium armor, two weapon groups",
   },
   cleric: {
     power: "normal",
@@ -88,8 +88,8 @@ const BASE_CLASS_MODIFIERS = {
     attunement_points: 3,
     fatigue_tolerance: 5,
     insight_points: 2,
-    class_skill_count: 4,
-    proficiencies: "All armor, one weapon group",
+    class_skill_count: 3,
+    proficiencies: "All armor, two weapon groups",
   },
   ranger: {
     power: "normal",
@@ -114,7 +114,7 @@ const BASE_CLASS_MODIFIERS = {
     vital_rolls: 0,
     attunement_points: 4,
     fatigue_tolerance: 4,
-    insight_points: 2,
+    insight_points: 3,
     class_skill_count: 7,
     proficiencies: "Light armor, one weapon group, and saps",
   },
@@ -141,7 +141,7 @@ const BASE_CLASS_MODIFIERS = {
     attunement_points: 4,
     fatigue_tolerance: 4,
     insight_points: 1,
-    class_skill_count: 4,
+    class_skill_count: 3,
     proficiencies: "Light armor",
   },
   wizard: {
