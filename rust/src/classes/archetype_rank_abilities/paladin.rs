@@ -19,7 +19,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
                 \subparhead{Evil} Each target suffers a \minus1 penalty to \glossterm{defenses} as long as it is affected by at least one \glossterm{condition}.
                 % TODO: clarify what happens if multiple people try to Good aura the same target
-                \subparhead{Good} Whenever a target gains a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
+                \subparhead{Good} Whenever a target would gain a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
                 You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                 The target suffers any other effects of the attack normally.
                 \subparhead{Law} Whenever a target rolls a 1 on an attack roll with a \glossterm{strike}, the attack roll is treated as a 6.
