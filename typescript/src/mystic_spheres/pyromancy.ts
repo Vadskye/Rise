@@ -865,8 +865,15 @@ export const pyromancy: MysticSphere = {
 
         After the object explodes in this way, the ritual is \\glossterm{dismissed}.
         If the object is destroyed or rendered illegible, the ritual is dismissed without exploding.
-        `,
+      `,
       rank: 4,
+      scaling: {
+        "special": `
+          You can perform this ritual at a higher rank.
+          The damage increases by +1d per rank beyond 4.
+        `,
+      },
+      tags: ["Trap"],
       type: "Attune (ritual)",
     },
   ],
