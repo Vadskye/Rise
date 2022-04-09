@@ -430,6 +430,37 @@ export const bless: MysticSphere = {
       rank: 7,
       type: "Duration",
     },
+
+    {
+      name: 'Consecrated Strike',
+      effect: `
+        Make a \\glossterm{strike}.
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        If you use the \\ability{desperate exertion} ability to affect this strike, you gain an additional +2 accuracy bonus to the reroll.
+        This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
+      `,
+      rank: 1,
+      scaling: {
+        3: 'You gain a +2 damage bonus with the strike.',
+        5: 'The damage bonus increases to +4.',
+        7: 'The damage bonus increases to +8.',
+      },
+      type: 'Instant',
+    },
+
+    {
+      name: 'Exalted Strike',
+      effect: `
+        Make a \\glossterm{strike}.
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{bless} \\glossterm{mystic sphere} that you are attuned to, to a maximum of +3.
+      `,
+      rank: 4,
+      scaling: {
+        6: 'You gain a +1 accuracy bonus with the strike.',
+      },
+      type: 'Instant',
+    },
   ],
   rituals: [
     {
