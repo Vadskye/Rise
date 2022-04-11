@@ -182,7 +182,7 @@ export const universal: MysticSphere = {
         targeting: `
           When you perform this ritual, choose a point in space within \\shortrange.
           You can choose a point within an \\glossterm{unattended} container as long as the container is currently open.
-          When the ritual is completed, that point becomes a trap.
+          One minute after the ritual is completed, that point becomes a trap.
 
           When a creature moves within a \\smallarea radius from the chosen point, the trap activates.
           The trap's Awareness bonus to notice creatures moving is +10.
