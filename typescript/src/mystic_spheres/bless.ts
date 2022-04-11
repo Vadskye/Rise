@@ -437,7 +437,7 @@ export const bless: MysticSphere = {
         Make a \\glossterm{strike}.
         You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
         If you use the \\ability{desperate exertion} ability to affect this strike, you gain an additional +2 accuracy bonus to the reroll.
-        This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
+        This stacks with the normal +2 bonus from the \\textit{desperate exertion} ability.
       `,
       rank: 1,
       scaling: {
