@@ -445,21 +445,21 @@ This chapter describes each skill, including common uses for those skills.
 
         All item creation requires artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty of \minus5 or greater, or it may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus5 penalty, but cutting a diamond without specialized tools is impossible. A typical day's work consists of 8 hours of work.
 
-        To determine the time and difficulty of crafting an item, consult \trefnp{Craft Requirements}.
+        The time and difficulty involved in crafting an item depends on the item's rank, as defined in \trefnp{Craft Requirements}.
 
-        \begin{dtable!*}
+        \begin{dtable}
             \lcaption{Craft Requirements}
-            \begin{dtabularx}{\textwidth}{>{\lcol}X l l l}
-                \tb{Item}                   & \tb{Craft Skill} & \tb{Difficulty Value} & \tb{Crafting Time}\fn{1} \tableheaderrule
-                Alchemical item             & Alchemy          & 5 \add twice item rank      & Eight hours                \\
-                Body armor                  & Varies           & 10 \add twice item rank     & One month per item rank   \\
-                Exotic weapon               & Varies           & 10 \add twice item rank     & 24 hours per item rank \\
-                Shield or non-exotic weapon & Varies           & 5 \add twice item rank      & 24 hours per item rank \\
-                Poison                      & Poison           & 5 \add twice item rank      & Eight hours                \\
-                Other item                  & Varies           & 5 \add twice item rank      & 24 hours per item rank \\
+            \begin{dtabularx}{\columnwidth}{>{\lcol}X l l l}
+                \tb{Item}                   & \tb{Subskill} & \tb{DV}            & \tb{Crafting Time}\fn{1} \tableheaderrule
+                Alchemical item             & Alchemy       & 5 \add twice rank  & Eight hours        \\
+                Body armor                  & Varies        & 10 \add twice rank & One month per rank \\
+                Exotic weapon               & Varies        & 10 \add twice rank & 24 hours per rank  \\
+                Shield or non-exotic weapon & Varies        & 5 \add twice rank  & 24 hours per rank  \\
+                Poison                      & Poison        & 5 \add twice rank  & Eight hours        \\
+                Other item                  & Varies        & 5 \add twice rank  & 24 hours per rank  \\
             \end{dtabularx}
             1.  For the purpose of crafting times, treat rank 0 items as having a rank of 1/2.
-        \end{dtable!*}
+        \end{dtable}
 
     \subsection{Create Forgery}
         You can use the Craft skill to create false or defective versions of objects.
