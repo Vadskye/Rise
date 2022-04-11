@@ -8,11 +8,14 @@
   \setlength{\parsep}{0pt}}
 {\end{enumerate}}
 
+\ExplSyntaxOn
+
 %Define a custom table that uses that coloring
 \newenvironment{dtable}
 {\begin{table}[htb!]
-  \small
-  \rowcolors{1}{white}{tbrown}}
+    \small
+    \rowcolors{1}{white}{tbrown}
+}
 {\end{table}}
 %Plus a custom table that takes up two columns
 \newenvironment{dtable*}
@@ -45,8 +48,6 @@
 \newenvironment{spelllist}
 {\begin{description}[nosep,font=\normalfont,leftmargin=2.25em,style=nextline,itemindent=-1em]}
 {\end{description}}
-
-\ExplSyntaxOn
 
 \DeclareDocumentEnvironment{fakehang}{}
 {
