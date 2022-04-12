@@ -278,7 +278,7 @@ export const mobileAssault: CombatStyle = {
         Choose a creature you can see.
         You can move up to 5 feet away from that creature.
         In addition, you gain a +2 bonus to your Armor and Reflex defenses until the end of the round.
-        Whenever that creature misses you with a melee \\glossterm{strike} this round, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
+        Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
         As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
 
         The defense bonus from this ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
