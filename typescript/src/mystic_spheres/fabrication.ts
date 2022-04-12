@@ -545,7 +545,7 @@ export const fabrication: MysticSphere = {
         exceptThat: `
           it reflects \\glossterm{mundane} attacks against it.
             The barrier's defenses become equal to 6 \\add half your level.
-            Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
+            Whenever a creature misses or \\glossterm{glances} the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
         `,
         name: "mystic barrier",
       },
@@ -564,7 +564,7 @@ export const fabrication: MysticSphere = {
         exceptThat: `
           it reflects \\glossterm{mundane} attacks against it.
             The barrier's defenses become equal to 9 \\add half your level, and the hit points of each 5-ft. square increase to three times your \\glossterm{power}.
-            Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
+            Whenever a creature misses or \\glossterm{glances} the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
         `,
         name: "mystic barrier",
       },

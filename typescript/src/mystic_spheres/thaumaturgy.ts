@@ -511,7 +511,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         You immediately take the \\textit{total defense} action.
-        In addition, whenever a creature within \\medrange of you misses you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
+        In addition, whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
 
         This is a \\abilitytag{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
