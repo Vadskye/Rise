@@ -143,7 +143,7 @@ def generate_armor():
             rank=2,
             material_type="Shield",
             description="""
-                Whenever a creature within \\longrange of you misses you with a ranged \\glossterm<strike>, it treats itself as a target of that attack.
+                Whenever a creature within \\longrange of you misses or \\glossterm<glances> you with a ranged \\glossterm<strike>, it treats itself as a target of that attack in addition to any other targets.
             """,
             short_description="Reflects missed ranged attacks",
         ),
@@ -152,7 +152,7 @@ def generate_armor():
             rank=4,
             material_type="Shield",
             description="""
-                Whenever a creature within \\distrange of you misses you with a ranged \\glossterm<strike>, it treats itself as a target of that attack.
+                Whenever a creature within \\distrange of you misses or \\glossterm<glances> you with a ranged \\glossterm<strike>, it treats itself as a target of that attack in addition to any other targets.
                 It takes a -2 penalty to defenses against attacks reflected in this way.
             """,
             short_description="Precisely reflects missed ranged attacks",
@@ -162,7 +162,7 @@ def generate_armor():
             rank=6,
             material_type="Shield",
             description="""
-                Whenever a creature within \\extrange of you misses you with a ranged \\glossterm<strike>, it treats itself as a target of that attack.
+                Whenever a creature within \\extrange of you misses or \\glossterm<glances> you with a ranged \\glossterm<strike>, it treats itself as a target of that attack in addition to any other targets.
                 It takes a -4 penalty to defenses against attacks reflected in this way.
             """,
             short_description="Reflects missed ranged attacks with incredible precision",
@@ -612,7 +612,7 @@ def generate_armor():
             tags=[],
             material_type="Shield",
             description="""
-                Whenever a creature misses you with a melee \\glossterm<strike>, it \\glossterm<briefly> takes a -1 penalty to Armor defense.
+                Whenever a creature misses or \\glossterm<glances> you with a melee \\glossterm<strike>, it \\glossterm<briefly> takes a -1 penalty to Armor defense.
                 As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
             """,
             short_description="Imposes -1 Armor penalty when creatures miss you",
