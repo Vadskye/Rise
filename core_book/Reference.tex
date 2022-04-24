@@ -81,9 +81,8 @@
 \section{Circumstances and Debuffs}\label{Circumstances and Debuffs}
 
     \debuffdef{blinded} A blinded creature cannot see.
-    It automatically fails at actions which depend on vision, including simply seeing the locations of other objects and creatures (but see \pcref{Awareness}).
-    In addition, it has a 50\% \glossterm{miss chance} with \glossterm{targeted} attacks.
-    It is at least \partiallyunaware of all attacks against it, and it can be fully \unaware as normal depending on its level of awareness.
+    It is at least \partiallyunaware of everything, it may be fully \unaware as normal depending on its non-visual understanding of its surroundings.
+    In addition, it automatically fails at actions which depend on vision, including simply seeing the locations of other objects and creatures.
 
     \debuffdef{charmed} A charmed creature is mentally influenced to like another creature.
     It always sees the words and actions of the creature that charmed it in the most favorable way, as a close friend or trusted ally.
@@ -153,9 +152,11 @@
 
     \debuffdef{paralyzed} A paralyzed creature is unable to take physical actions. It is \helpless, but can take purely mental actions. This can cause flying creatures to crash, swimming creatures to drown, and so on. Any creature can move through a space occupied by a paralyzed creature without slowing down, and creatures can stand in a square with a paralyzed creature without \squeezing.
 
-    \debuffdef{partially unaware} An creature that is partially unaware of an attack knows that it is in danger, but is missing information about the exact location or nature of the attack.
+    \debuffdef{partially unaware} An creature that is partially unaware knows that something is nearby, but is missing information about the exact location or nature of the creature, object, or attack it is partially unaware of.
     Creatures take a \minus2 penalty to Armor and Reflex defenses against attacks that they are partially unaware of.
-    This penalty does not stack with the penalty for being \unaware.
+    They have a 50\% miss chance with \glossterm{targeted} atacks against creatures and objects that they are partially unaware of.
+
+    These penalties do not stack with the penalties for being \unaware.
     For details, see \pcref{Awareness and Surprise}.
 
     \debuffdef{prone} A prone creature is lying on the ground, rather than standing normally.
@@ -184,9 +185,11 @@
 
     \debuffdef{swimming} A creature that is swimming without a \glossterm{swim speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
 
-    \debuffdef{unaware} An creature that is unaware of an attack makes no attempt to defend itself.
+    \debuffdef{unaware} An creature that is unaware makes no attempt to defend itself.
     Creatures take a \minus6 penalty to Armor and Reflex defenses against attacks that they are unaware of.
-    This penalty does not stack with the penalty for being \partiallyunaware.
+    They are completely unable to use \glossterm{targeted} abilities against creatures and objects that they are unaware of.
+
+    These penalties do not stack with the penalties for being \partiallyunaware.
     For details, see \pcref{Awareness and Surprise}.
 
     \debuffdef{unconscious} While you are unconscious, you are \helpless and completely unable to take any actions.
