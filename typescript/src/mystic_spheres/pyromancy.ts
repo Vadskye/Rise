@@ -302,7 +302,7 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "accuracy",
+      scaling: "damage",
       type: "Sustain (minor)",
     },
 
