@@ -285,22 +285,8 @@ This chapter describes the core mechanics of Rise.
     The more difficult the task, the higher the \glossterm{difficulty value} will be.
     If your result is equal to or higher than the \glossterm{difficulty value}, the check succeeds.
     This usually means you accomplish a task successfully.
-    Normal difficulty values are described in \tref{Difficulty Values}.
-
-    \begin{dtable}
-        \lcaption{Difficulty Values}
-        \begin{dtabularx}{\columnwidth}{p{8em} X}
-            \tb{Difficulty Value} & \tb{Example (Skill Used)} \tableheaderrule
-            Trivial (0)      & Hear a coversation from 10 feet away (Awareness)                          \\
-            Average (5)      & Tie or untie a typical knot (Devices)                                     \\
-            Tough (10)       & Swim in rough water (Swim)                                                \\
-            Challenging (15) & Balance on a one-inch wide wood beam (Balance)                         \\
-            Heroic (20)      & Open a high quality lock (Devices)                                        \\
-            Legendary (25)   & Leap across a 30-foot chasm with a running start (Jump)                   \\
-            Epic (30)        & Convince a wise mayor her husband is secretly a werewolf (Persuasion)     \\
-            Godlike (40)     & Track three orcs across firm ground after 24 hours of rainfall (Survival) \\
-        \end{dtabularx}
-    \end{dtable}
+    Otherwise, the check fails.
+    This usually means that nothing happens, though sometimes there are specific consequences for failure.
 
     \subsection{Critical Success}
         If your check result is at least 10 higher than the \glossterm{difficulty value}, your check is a \glossterm{critical success}.
@@ -312,19 +298,68 @@ This chapter describes the core mechanics of Rise.
         Some checks have a special effect on a critical failure, which is usually bad for the character making the check.
         For example, a critical failure while climbing means you fall (see \pcref{Climb}).
 
-    \subsection{Types of Checks}
-        There are two types of checks: attribute checks and skill checks.
-        Your bonus with an attribute check is normally equal to your value for that attribute.
-        Your bonus with a skill check is based on your training with that skill, as well as your value for any relevant attribute (see \pcref{Skills}).
+    \subsection{Standard Difficulty Values}
+        Most checks are made against a fixed \glossterm{difficulty value} that represents how hard the task is.
+        Detailed rules for determining difficulty values in specific circumstances can be found in the Expanded Skills chapter from the Tome of Guidance.
+        However, most of the time, it's not worth the effort to consult charts and tables to figure out how hard a task is.
+        Instead, you can estimate it based on the guidelines below.
 
-        Some abilities give you bonuses to checks based on a particular attribute, such as ``Strength-based checks''.
-        Those bonuses apply to both attribute checks and checks with skills based on those attributes.
+        \begin{itemize}
+            \item DV 0 - Easy: Only an exceptionally incompetent or impaired person could possibly fail a DV 0 check. For example, this includes walking on rough ground without tripping (Balance) or noticing that a yelling, red-faced person is angry (Social Insight).
+            \item DV 5 - Average: A typical human with no relevant skills should still succeed at a DV 5 check without much issue. However, it would be possible to fail in a stressful situation where time is limited if the person had no relevant training. For example, this includes climbing a ladder (Climb) or hearing the topic of a nearby conversation in a crowded bar (Awareness).
+            \item DV 10 - Hard: A typical human with no relevant skills might succeed at a DV 10 check, but only if they were very lucky or had a lot of time on their hands. An experienced practioner might fail infrequently in stressful circumstances, but a world-class expert would never fail. For example, this includes swimming in fast-moving water (Swim) or providing first aid to mitigate a barely lethal wound (Medicine).
+            \item DV 15 - Very Hard: Only an experienced practioner could succeed at a DV 15 check, and they would still need to get lucky if they were in a rush. Even a world-class expert at the peak of real-world human potential could fail, but only rarely. For example, this includes picking a well-made lock (Devices) or holding your breath for eight minutes while staying still (Endurance).
+            \item DV 20 - Almost Impossible: A world-class expert like an Olympic medalist could succeed at a DV 20 check if they were lucky or patient. Succeeding consistently at tasks of this difficulty requires superhuman capabilities. For example, this includes climbing a weathered natural rock wall without equipment (Climb) or squeezing through a space with a diameter of only half a foot (Flexibility).
+            \item DV 25\add - Impossible: No real-world human can succeed at a DV 25 check. This sort of feat is only possible for high-level Rise characters who have explicitly surpassed ordinary limitations. For example, this includes running at full speed along a slack rope (Balance) or jumping to grap the edge of a twenty-foot cliff (Jump).
+        \end{itemize}
+
+    \subsection{Trying Again}
+        You can think of checks as being broadly divided into two categories: checks that give you information, and checks that cause a change in the world around you.
+        In general, you can retry checks that change your environment indefinitely until you succeed.
+        The only major limiting factor to those checks is that failure sometimes also changes your environment in ways that may punish your failure or make it impossible to retry the check.
+        For example, if you are trying to climb a cliff, you can keep trying until you succeed, but you may take falling damage from falling off while halfway up the cliff.
+
+        You generally cannot retry checks that give you information unless the situation changes in a way that is relevant to your check.
+        This often takes the form of giving you new information.
+        For example, if you've already examined a creature to determine whether they are disguised, you can't keep just keep staring that creature to make sure.
+        However, if you splash the creature with water which washes away some makeup, you can try again now that you have more information.
+
+        % TODO: it would be nice if this wasn't necessary
+        In addition, checks that require a free action to make can never be made more than once for the same purpose within a round.
 
     \subsection{Opposed Checks}
-        Sometimes, you're competing with another creature, such as when you are trying to hold a door closed and a ferocious ogre is trying to shove it open.
-        In that case, you both make a \glossterm{check}, and the creature with the higher result wins.
-        This is called an opposed check.
-        If you both get the same result, roll again to break the tie.
+        An opposed check involves multiple creatures competing to get the highest result.
+        In case of a tie, all tied creatures roll again to break the tie.
+        Usually, the creature with the highest result succeeds, while all other creatures either fail completely or simply succeed less effectively depending on the situation.
+
+        Some opposed checks involve multiple creatures using the same skill to see who does the best job.
+        For example, a climbing race up a wall might involve each participant rolling a Climb check, or you might make a Strength check to hold a door closed while another creature tries to shove it open.
+        Alternately, it can involve creatures rolling opposite skills.
+        For example, if you are trying to hide, you roll a Stealth check opposed by the Awareness check of any creatures who could notice you.
+
+    \subsection{Hidden Checks}
+        The GM can always make checks on your character's behalf without telling you.
+        Generally, this is used for observation-based skills.
+        For example, it's very suspicious if the GM tells you to make an Awareness check and then tells you that you don't see anything interesting.
+        One of the ways a GM can avoid that is by simply rolling a check on behalf of your character and only telling you the result if you succeed.
+
+    \subsection{Group Checks}
+        When multiple characters are trying to make the same check simultaneously, they may be able to work together.
+        There are two kinds of group checks.
+
+        \parhead{Collaborative Checks} When making a collaborative check, each member of the group gets their own result. Collaborative checks might include a group of scouts sneaking up on an enemy camp, a group of adventurers climbing a cliff, or a group of spies lying about their true allegiances.
+
+        When making a collaborative check, the group must choose a leader before making the check.
+        Each member of the group can make the check using the higher of their check modifier and half the leader's check modifier. Other modifiers apply normally.
+
+        The group leader must remain in a position to help the other members of the group for the group members to gain this benefit. For example, if a group is making a collaborative check to leap across a chasm, the leader must jump last. If the group is making a collaborative Stealth check, the leader must remain adjacent to the other members of the group to prevent their mistakes quietly. The exact circumstances depend on the situation.
+
+        \parhead{Collective Checks} The group works together to get a single result. Collective checks might include a group of diplomats persuading a noble to go to war, a group of medics tending to a dying warrior, or a group of scouts keeping watch for enemy attacks.
+
+        When making a collective check, the group uses the highest result from any character making the check.
+        In addition, that character gains a \plus1 bonus for each other character who also attempted the check without getting a \glossterm{critical failure}.
+
+        \parhead{Making Group Checks} A group check is not always possible. If the whole group is leaping over a chasm at once to escape a dragon, there is not enough time to designate a leader and have them aid the others to make a collaborative check. In general, a group check is only possible if the group has at least five rounds to work together, though this time may vary widely depending on the situation and the check being made.
 
 \section{Resting}\label{Resting}
     When you have a moment to relax, you can rest to regain some of your expended resources.

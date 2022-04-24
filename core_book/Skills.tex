@@ -3,6 +3,10 @@
 Skills represent the myriad of talents that people can have, such as cooking or swimming.
 This chapter describes each skill, including common uses for those skills.
 
+As a reminder, the GM should feel especially free to improvise or expand on the rules governing skills.
+Unlike maneuvers or spells, skills have a broad and ambiguous purview.
+If it feels relevant to the skill, it's generally fine to allow a check to make a player's action succeed, especially for fun-sounding improvisations.
+
 \section{Skill Overview}
     This section desribes how you use skills.
     For deatails about how you become trained with particular skills, see \pcref{Trained Skills}.
@@ -55,67 +59,11 @@ This chapter describes each skill, including common uses for those skills.
         If you are \glossterm{trained} in a skill, your bonus with that skill is equal to 3 \add half your level \add its associated attribute (if any).
         Many abilities can increase or decrease your bonus with particular skills.
 
-    \subsection{Trying Again}
-        In general, you can try a skill check again if you fail, and you can keep trying indefinitely. Some skills, however, have consequences of failure that must be taken into account. A few skills are virtually useless once a check has failed on an attempt to accomplish a particular task. For most skills, when a character has succeeded once at a given task, additional successes are meaningless.
-
-        Skills that require a free action to use can never be used more than once for the same purpose within a round. For example, if you fail to notice a creature sneaking up on you, you can't keep making Awareness checks as a free action until you notice. You could try again in the next round, however.
-
-    \subsection{Special Skill Checks}
-
-        \subsubsection{Opposed Checks}
-            An opposed check is a check whose success or failure is determined by comparing the check result to another character's check result. In an opposed check, the higher result succeeds, while the lower result fails. In case of a tie, the higher check modifier wins. If these scores are the same, roll again to break the tie. Typical opposed checks are described in \trefnp{Example Opposed Checks}
-
-            \begin{dtable}
-                \lcaption{Example Opposed Checks}
-                \begin{dtabularx}{\columnwidth}{*{3}{>{\lcol}X}}
-                    \tb{Task}                           & \tb{Skill (Key Ability)} & \tb{Opposing Skill (Key Ability)} \tableheaderrule
-                    Create a forged artwork             & Craft (Int)              & Craft (Int) or Awareness (Per)       \\
-                    Create a false map                  & Craft (Int)              & Craft (Int) or Knowledge (nature) \\
-                    Lie                                 & Deception (\tdash)       & Social Insight (Per)                   \\
-                    Make a bully back down              & Intimidate (none)        & Special\fn{1}                        \\
-                    Make someone look like someone else & Disguise (Int)           & Awareness (Per)                      \\
-                    Sneak up on someone                 & Stealth (Dex)            & Awareness (Per)                      \\
-                    Steal a coin pouch                  & Sleight of Hand (Dex)    & Awareness (Per)                      \\
-                    Tie a prisoner securely             & Devices (Int)\fn{2}      & Flexibility (Dex)                  \\
-                \end{dtabularx}
-                1 An Intimidate check can be opposed by the target's Mental defense, not a skill check. See the Intimidate skill description for more information. \\
-                2 You can also tie up a creature while grappling with them (see \pcref{Grapple Actions}).
-            \end{dtable}
-
-        \subsubsection{Group Skill Checks}
-            When multiple characters are trying to use the same skill simultaneously, they may be able to work together. Most skills can be done as a group skill check, where the more skilled characters assist the less skilled characters and work together to find the best result. There are two kinds of group skill checks.
-
-            \parhead{Collaborative Checks} When making a collaborative skill check, each member of the group gets their own result. Collaborative checks might include a group of scouts sneaking up on an enemy camp, a group of adventurers climbing a cliff, or a group of spies lying about their true allegiances.
-
-            When making a collaborative check, the group must choose a leader before making the check.
-            Each member of the group can make the check using the higher of their skill modifier and half the leader's skill modifier. Other modifiers apply normally.
-
-            The group leader must remain in a position to help the other members of the group for the group members to gain this benefit. For example, if a group is making a collaborative check to leap across a chasm, the leader must jump last. If the group is making a collaborative Stealth check, the leader must remain adjacent to the other members of the group to prevent their mistakes quietly. The exact circumstances depend on the situation.
-
-            \parhead{Collective Checks} The group works together to get a single result. Collective checks might include a group of diplomats persuading a noble to go to war, a group of medics tending to a dying warrior, or a group of scouts keeping watch for enemy attacks.
-
-            When making a collective check, the group uses the highest result from any character making the check.
-            In addition, that character gains a \plus1 bonus for each other character who also attempted the check without getting a \glossterm{critical failure}.
-
-            \parhead{Making Group Skill Checks} A group skill check is not always possible. If the whole group is leaping over a chasm at once to escape a dragon, there is not enough time to designate a leader and have them aid the others to make a collaborative check. In general, a group skill check is only possible if the group has at least five rounds to work together, though this time may vary widely depending on the situation and the skill being used.
-
     \subsection{Tasks}\label{Tasks}
-
         Each skill contains a brief description of how the skill is usually used.
         This description is followed by a series of \glossterm{tasks}, which are particular ways to use skills.
         These tasks are simply examples, and do not list everything the skill can be used for.
         You should be creative with your skills, rather than only using the tasks explicitly listed.
-
-    \subsubsection{Hidden Tasks}\label{Hidden Tasks}
-        Some \glossterm{tasks} are called \glossterm{hidden tasks}, and are marked with a [Hidden] tag in the task name.
-        These tasks rely on hidden information that you should not have access to.
-        For example, you can make a Social Insight check to identify whether a creature is lying.
-        If you are told to make a Social Insight check when a creature talks, you can deduce that it is probably lying regardless of the success or failure of the check.
-        To solve this issue, any checks for hidden tasks should be made secretly by the GM.\@
-        Usually, you should not even know that you made a check unless you learn a result from it.
-
-        If you are suspicious of a situation, you can ask the GM to make a relevant check for you.
-        This usually should not grant a bonus to the check, but it can ensure that the GM did not forget to make the check!
 
 \newpage
 \skill{Awareness}{Per}
@@ -128,277 +76,107 @@ This chapter describes each skill, including common uses for those skills.
     However, the \glossterm{difficulty value} of the check, and the information granted by success, can be very different between senses.
     For example, it is impossible to see through walls or without light, but that does not make hearing impossible.
 
-    While sleeping, you take a \minus10 penalty to the Awareness skill.
+    \subsection{Common Awareness Tasks}
 
-    \subsection{Identify Disguise [Hidden]}\label{Identify Disguise}
-        When you observe a disguised creature or object, you can make an Awareness check to identify the disguise.
-        The \glossterm{difficulty value} is equal to the Disguise check result used to create the disguise (see \pcref{Disguise}).
-        Success means you know that the creature or object is disguised.
-        Critical success means you can also discern its true appearance beneath the disguise.
-        Failure means you don't notice anything unusual.
-
-        You cannot retry this check until you gain meaningful new information that would help you identify the disguise.
-
-    \subsection{Identify Forgery}
-        As a standard action, you can make an Awareness check to identify forgeries.
-        The \glossterm{difficulty value} to identify a forgery is equal to the Craft check result used to make the item (see \pcref{Craft}).
-        Success means you correctly identify whether the item is a forgery or not.
-        Failure means you don't notice anything indicating the item is a forgery.
-
-        You cannot retry this check until you gain meaningful new information that would help you identify the forgery.
-
-    \subsection{Notice Creatures and Events}\label{Notice Creatures and Events}
-        As a free action, you can notice creatures and events around you.
-        The \glossterm{difficulty value} depends on the sense used and the obviousness of the event, as described on tables below.
-        Success means you notice something, but you don't know any details -- only its general direction.
-        For every 5 points by which you beat the \glossterm{difficulty value}, you learn an additional piece of information, such as what caused the event or the location of the creature.
-        Failure means you don't notice anything.
-
-        This can be used to determine the precise location of a creature or object, even if you can't see it. The \glossterm{difficulty value} to identify the location is equal to the \glossterm{difficulty value} to notice the creature or object using the appropriate sense \add 5 (since you need to learn an additional piece of information).
-
-        You gain a \plus20 bonus to this check to notice creatures and events that directly touch you, such as a creature shoving you or making a \glossterm{strike} against you.
-
-    \subsection{Notice Subtle Effects}\label{Notice Subtle Effects}
-        When you are affected by a \abilitytag{Subtle} ability, there are no obvious signs.
-        However, you can still make an Awareness check to notice the ability in two circumstances: when the effect is initially applied, and when the effect ends.
-        The \glossterm{difficulty value} to notice the effect when it is first applied to you is 20 \add twice the \glossterm{rank} of the ability, and 5 lower when it ends.
-
-        Success means that you notice that something is affecting you, but not exactly what that effect might be.
-        Critical success means you know in general terms what the effect does, such as recognizing that you are feeling unnaturally well-disposed towards a particular creature.
-        Failure means you notice nothing.
-
-    \subsection{Read Lips}
-        When you see a creature speaking, you can make an sight-based Awareness check to read its lips.
+        \parhead{Notice Disguise} If you succeed at an opposed Awareness vs. Disguise check, you can determine whether a creature or object is disguised.
+        \parhead{Notice Forgery} If you succeed at an opposed Awareness vs. Craft check, you can determine whether an object is a forgery.
+        \parhead{Notice Hidden Creature} If you succeed at an opposed Awareness vs. Stealth check, you can notice a hidden creature (see \pcref{Hide}).
+        \parhead{Notice Hidden Object} If you succeed at an opposed Awareness vs. Craft or Devices check, you can notice hidden objects such as traps and secret doors.
+        \parhead{Notice Magic Trap} If you succeed at an Awareness check, you can notice hidden magical effects such as traps.
+        The \glossterm{difficulty value} to is equal to 15 \add twice the \glossterm{rank} of the ability.
+        \parhead{Notice Sleight of Hand} If you succeed at an opposed Awareness vs. Sleight of Hand check, you can notice a creature's attempt to use the Sleight of Hand skill.
+        \parhead{Notice Subtle Effect} If you succeed at an Awareness check, you can notice the general effects of a \abilitytag{Subtle} ability affecting you.
+        The \glossterm{difficulty value} to notice the effect when it is first applied to you is 15 \add twice the \glossterm{rank} of the ability.
+        In addition, you can make another check when the ability ends to notice that you feel normal again.
+        \parhead{Read Lips} When you see a creature speaking, you can make an sight-based Awareness check to read its lips.
         The \glossterm{difficulty value} is 10 for ordinary conversation, or up to 20 if the speaking creature makes an effort to avoid moving its lips.
         You must be able to understand the language spoken.
-        Success means you can understand the general content of the message, but not the exact words.
-        Critical success means you understand the exact words.
-        Failure means you don't understand the message.
+        Success means you can understand what is being said.
 
-    \subsection{Search}\label{Search}
-        With a minute of effort, you can use the \textit{search} ability to closely investigate a small area.
-        \begin{freeability}{Search}
-            Make an Awareness check to notice things in a single 5-ft.\ square adjacent to you.
-            You gain a \plus5 bonus to this check.
-        \end{freeability}
+    \subsection{Common Awareness Modifiers}
+        While sleeping, you take a \minus10 penalty to the Awareness skill.
+        You gain a \plus20 bonus to notice the presence of creatures and events that directly touch or damage you, such as a creature shoving you or making a \glossterm{strike} against you.
 
-    \subsection{Senses}\label{Senses}
+        There are three common circumstances that can make Awareness checks more difficult: obstructions, distance, and similar background sensations.
+        Minor obstructions, short distances (generally between 30 and 120 feet), and slightly similar backgrounds increase the \glossterm{difficulty value} by \plus2.
+        Significant obstructions, long distances (generally more than 120 feet), and very similar backgrounds increase the DV by \plus5 or more.
+        If a sensation is difficult to detect for multiple reasons, the difficulty modifiers stack.
 
-        \parhead{Sight} The \glossterm{difficulty value} to see something depends on the obviousness of the sight, as shown on \trefnp{Sight-based Difficulty Values}, and other modifiers given at \trefnp{Awareness Difficulty Modifiers}.
-
-        \begin{dtable}
-            \lcaption{Sight-based Difficulty Values}
-            \begin{dtabularx}{\columnwidth}{X l}
-                \tb{Situation}                         & \tb{Base Difficulty Value\fn{1}} \tableheaderrule
-                Creature or object                     & 0                                                 \\
-                Creature trying to hide                & Stealth check result\fn{2}                        \\
-                Hidden trap, secret door, or mechanism & Craft or Devices check result                     \\
-                Magic trap                             & 15 \add double level of spell used to create trap \\
-            \end{dtabularx}
-            1 Always add any appropriate modifiers from \tref{Awareness Difficulty Modifiers} \\
-            2 Don't add size-based difficulty modifiers since they are redundant with the modifiers applied to the creature's Stealth check result.
-        \end{dtable}
-
-        \parhead{Sound} The \glossterm{difficulty value} to hear a sound depends on the intensity of the sound, as shown on \trefnp{Sound-based Difficulty Values}, and other modifiers given at \trefnp{Awareness Difficulty Modifiers}.
-        It is possible to hear sounds through doors and other objects that mostly block \glossterm{line of effect}.
-        You take a \minus2 penalty to the Awareness check for listening through a single normal wooden door.
-        Thicker obstacles can result in a penalty of \minus5 or greater.
-
-        \begin{dtable}
-            \lcaption{Sound-based Difficulty Values}
-            \begin{dtabularx}{\columnwidth}{X l}
-                \tb{Situation}                        & \tb{Base Difficulty Value\fn{1}} \tableheaderrule
-                Creature shouting                     & \minus5                    \\
-                Creature talking normally or fighting & 0                          \\
-                Creature whispering                   & 5                          \\
-                Creature standing still               & 10                         \\
-                Creature trying to be quiet           & Stealth check result\fn{2} \\
-            \end{dtabularx}
-            1 Always add any appropriate modifiers from \tref{Awareness Difficulty Modifiers} \\
-            2 Don't add size-based difficulty modifiers since they are redundant with the modifiers applied to the creature's Stealth check result.
-        \end{dtable}
-
-        \parhead{Scent} The \glossterm{difficulty value} to smell something depends on the intensity of the scent, as shown on \trefnp{Scent-based Difficulty Values}, and other modifiers given at \trefnp{Awareness Difficulty Modifiers}.
-        Creatures with \trait{scent} reduce the \glossterm{difficulty value} of scent-based Awareness checks by 10.
-
-        Smell intensity can vary widely depending on the circumstances.
-        Smells dissipate quickly with distance.
-        Double the normal distance modifiers for scent-based perception checks.
-        In general, multiple strong sources of a scent can reduce the \glossterm{difficulty value} by 5 or more.
-        An unusually weak scent can increase the \glossterm{difficulty value} by 5 or more.
-
-        \begin{dtable}
-            \lcaption{Scent-based Difficulty Values}
-            \begin{dtabularx}{\columnwidth}{X l}
-                \tb{Situation}                                & \tb{Base Difficulty Value\fn{1}} \tableheaderrule
-                Intense scent (rotting flesh, pungent spices) & 0  \\
-                Strong scent (fresh flowers)                  & 5  \\
-                Moderate scent (a dusty room)                 & 10 \\
-                Weak scent (living creature)                  & 15 \\
-            \end{dtabularx}
-            1 Always add any appropriate modifiers from \tref{Awareness Difficulty Modifiers} \\
-        \end{dtable}
-
-    \subsection{Modifiers}
-        All Awareness checks share the same set of modifiers, in addition to certain modifiers which depend on the sense. These are noted on \trefnp{Awareness Difficulty Modifiers}.
-
-        This table should not generally be consulted during a game. It is provided to make it easier to estimate a task's difficulty.
-
-        \begin{dtable}
-            \lcaption{Awareness Difficulty Modifiers}
-            \begin{dtabularx}{\columnwidth}{X l}
-                \tb{Distance}                  & \tb{Difficulty Modifier\fn{1}} \tableheaderrule
-                Up to 30 feet away             & \plus0                   \\
-                31--120 feet away              & \plus2                   \\
-                121--480 feet away             & \plus5                  \\
-                481--1200 feet away            & \plus10                  \\
-                1200\add feet away             & \plus15 or more          \\
-                \tb{Number}                    & \tb{Difficulty Modifier} \\
-                1--4 creatures or objects      & \plus0                   \\
-                5--20 creatures or objects     & \minus2                  \\
-                21--100 creatures or objects   & \minus5                  \\
-                101--500 creatures or objects  & \minus10                 \\
-                501--2500 creatures or objects & \minus15                 \\
-                2500\add creature or objects  & \minus20 or less         \\
-                \tb{Background}                & \tb{Difficulty Modifier} \\
-                Nothing similar                & 0                        \\
-                Many similar sensations        & \plus5                   \\
-                Many more intense sensations   & \plus5                   \\
-            \end{dtabularx}
-            1 Doubled for scent-based Awareness checks.
-        \end{dtable}
+        The \glossterm{difficulty value} of non-opposed checks changes depending on the size of the sensation.
+        The difficulty value increases by 5 for each size category larger than Medium, and decreases by 5 for each size category smaller than Medium.
+        Multiple sensations of the same type can also be treated as a single larger sensation, which makes them easier to detect.
+        Non-visual sensations may not have a literal size category to rely on, so the GM can decide how this modifier applies.
 
 \newpage
 \skill{Balance}{Dex}
-    The Balance skill represents your ability to maintain your balance and poise in difficult circumstances.
+    The Balance skill represents your ability to maintain your balance and poise on unsteady surfaces.
 
-    \subsection{Agile Charge}\label{Agile Charge}
-        You can make a \glossterm{difficulty value} 15 Balance check while using the \ability{charge} ability to change directions while charging (see \pcref{Charge}).
+    \subsection{Common Balance Tasks}
+        \parhead{Agile Charge}\label{Agile Charge} You can make a \glossterm{difficulty value} 15 Balance check while using the \ability{charge} ability to change directions while charging (see \pcref{Charge}).
         Success means you can make a single turn of up to 90 degrees during the movement.
-        Failure means you can't change direction, though you can continue your movement or stop.
-        Critical failure means you stop where you tried to change direction and fall \prone.
-
-    \subsection{Balance}\label{Balance}
-
-        When you are on a slippery or narrow surface, you must make an Balance check to move.
-        Success means you move along the surface at half speed.
-        Critical success means you move along the surface at full speed.
-        Failure means your action is wasted, and you do not move.
+        \parhead{Maintain Balance} Whenever you take damage while on an unsteady surface, you must make a Balance check based on the surface.
+        Failure means that you fall prone.
+        \parhead{Rapid Stand}\label{Rapid Stand} You make a \glossterm{difficulty value} 15 Balance check as a \glossterm{minor action} to stand up from a prone position.
+        Success means you stand up.
+        \parhead{Walk While Balancing} When you move using your \glossterm{land speed} on an unsteady surface, you must make an Balance check based on the surface.
+        If you choose to move at half speed, you gain a \plus5 bonus to the check.
+        Success means you move along the surface.
         Critical failure means you fall prone.
-        If you do not have enough room to fall prone, you may fall off of the edge you are balancing on.
 
-        The \glossterm{difficulty value} of Balance checks to balance varies with the surface, as described in \trefnp{Balancing Difficulty Values}.
-        In addition, if you are forcibly moved while on a slippery or narrow surface, you must make an Balance check against the same \glossterm{difficulty value}.\@
-        Success means you stay standing.
-        Failure means you fall prone.
+    \subsection{Unsteady Surfaces}
+        An unsteady surface is a surface which is difficult to balance on.
+        In general, a surface that is at least two feet wide has a base \glossterm{difficulty value} of 0.
+        It is only considered unsteady if it is slippery, mobile, or uneven.
+        Narrower surfaces always unsteady.
+        Their difficulty value is based on their width, as given in \trefnp{Narrow Surface Difficulty Values}.
 
         \begin{dtable}
-            \lcaption{Balancing Difficulty Values}
+            \lcaption{Narrow Surface Difficulty Values}
             \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Narrow Surface}           & \tb{Difficulty Value} \tableheaderrule
-                At least one foot wide        & 0             \\
-                At least six inches wide      & 5             \\
-                At least two inches wide      & 10            \\
-                At least one inch wide        & 15            \\
-                Less than than one inch wide  & 20            \\
-                \tb{Surface Condition}        & \tb{Difficulty Modifier} \\
-                Water covered                 & \plus2        \\
-                Slightly mobile (rope bridge) & \plus2        \\
-                Ice or oil covered            & \plus5        \\
-                Very mobile (slack rope)      & \plus5        \\
+                \tb{Surface Width}            & \tb{Difficulty Value} \tableheaderrule
+                At least two feet wide         & 0                        \\
+                At least one foot wide         & 5                        \\
+                At least six inches wide       & 10                        \\
+                At least two inches wide       & 15                       \\
+                Less than than two inches wide & 20                       \\
             \end{dtabularx}
         \end{dtable}
 
-    \subsection{Rapid Stand}\label{Rapid Stand}
-        You can use the \textit{rapid stand} ability as a \glossterm{minor action}.
-        \begin{freeability}{Rapid Stand}[Swift]
-            You make a \glossterm{difficulty value} 15 Balance check to stand up from a prone position quickly.
-            Success means you stand up.
-            Since this is a \abilitytag{Swift} ability, standing up in this way means you do not suffer the penalties for being prone during the current phase.
-            Failure means you fail to stand up.
-        \end{freeability}
-
+    \subsection{Common Balance Modifiers}
+        There are three common circumstances that make Balance checks more difficult: slippery, mobile, and uneven surfaces.
+        Slightly impaired surfaces increase the \glossterm{difficulty value} by \plus2.
+        Significantly impaired surfaces increase the DV by \plus5 or more.
+        If a surface is impaired for multiple reasons, the difficulty modifiers stack.
 
 \newpage
 \skill{Climb}{Str}
     The Climb skill represents your ability to climb obstacles.
     A creature that is climbing without a \glossterm{climb speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
 
-    \subsection{Climbing}
-        You can make a Climb check as a \glossterm{move action} while you are touching a slope, a wall, or some other steep incline (or even a ceiling with handholds).
-        The \glossterm{difficulty value} of the check depends on the difficulty of the task and the conditions of the climbing surface, as shown on \trefnp{Climb Difficulty Values} and \trefnp{Climb Difficulty Modifiers}.
-        Since moving in this way is a \glossterm{move action}, you cannot also use other move actions like the \ability{block} or \ability{follow} abilities.
-
-        Success means you can move a distance equal to the size of your space (see \pcref{Size Categories}).
-        Critical success means the distance you can move is doubled.
-        Failure means your action is wasted and you do not move.
-        Critical failure means you fall.
-
-        If you succeed or critically succeed on a Climb check to move, you can keep using the same result in future phases as long as you continue climbing the same wall.
-        However, if you are attacked or otherwise significantly distracted, you must make a new roll for any subsequent movement.
-
-        \begin{dtable}
-            \lcaption{Climb Difficulty Values}
-            \begin{dtabularx}{\columnwidth}{l X X}
-                \tb{DV} & \tb{Surface or Activity}                       & \tb{Example} \tableheaderrule
-                0                      & Steep slope                                    & A hill too steep to walk up                                             \\
-                5                      & Surface with large hand and foot holds         & Knotted rope, Very rough rocks, ship's rigging                          \\
-                10                     & Surface with some hand and foot holds          & Surface with pitons or carved holes, rough wall                         \\
-                10                     & Surface with only large hand holds             & Pulling yourself up by your hands while dangling                        \\
-                15                     & Uneven surface with narrow hand and foot holds & Unknotted rope, unweathered natural rock, typical ruin wall, brick wall \\
-                15                     & Overhang or ceiling with large handholds       & Tree limbs, butcher's ceiling with meat hooks                           \\
-                20                     & Rough surface with no holds                    & Weathered natural rock, well-made stone wall                            \\
-                30                     & Bracing between two opposite smooth surfaces   & Parallel glass windows                                                  \\
-                35                     & Smooth surface                                 & Glass window                                                            \\
-                40                     & Smooth ceiling                                 & Glass ceiling                                                            \\
-            \end{dtabularx}
-        \end{dtable}
-
-        \begin{dtable}
-            \lcaption{Climb Difficulty Modifiers}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Modifier\fn{1}} & \tb{Description} \tableheaderrule
-                \minus5                        & Climbing a chimney (artificial or natural) or other location where you can brace against two opposite walls \\
-                \minus2                        & Climbing a corner where you can brace against perpendicular walls                                           \\
-                \minus2                        & Inclined surface (between 45 and 60 degrees)                                                                \\
-                \minus2                        & Climbing a free-hanging object, such as a rope, where you can brace against a nearby wall                   \\
-                \plus2                         & Surface is slightly slippery, such as damp stone                                                            \\
-                \plus5                         & Surface is very slippery, such as ice or oil-covered stone                                                  \\
-            \end{dtabularx}
-            1 These modifiers are cumulative with modifiers of different kinds. Use any that apply (but not if one modifier is just a more extreme version of another).
-        \end{dtable}
-
-        \parhead{Climbing Distractions}
-        If you take damage while climbing, suddenly acquire significantly more weight (such as by catching a falling character), or otherwise are significantly distracted, you must make another Climb check against the wall's \glossterm{difficulty value} to avoid falling.
-
-    \subsubsection{Grab Edge}\label{Grab Edge}
-        If you are next to the edge of a wall or cliff, you can grab it.
-        Grabbing an edge is done as part of other movement, and does not take an action in itself.
-        The \glossterm{difficulty value} of the check depends on the nature of the edge, but a typical stone or similarly solid edge has a \glossterm{difficulty value} of 5.
-        You can pull yourself up from a grabbed edge as a \glossterm{move action} that requires a Climb check against the edge's \glossterm{difficulty value}\@.
-
-        Your ability to grab an edge depends on your reach.
-        Typically, a bipedal creature can reach a maximum vertical distance equal to one and a half times its height.
-        Quadrupedal creatures can typically reach a maximum vertical distance equal to their height.
-        If you can't reach an edge, you can jump to grab it (see \pcref{Jump}).
-
-    \subsection{Stop Fall}\label{Stop Fall}
-        It is possible, but difficult, to make a Climb check to stop yourself from falling when near a wall. To catch yourself while falling, make a Climb check against a \glossterm{difficulty value} equal to the wall's \glossterm{difficulty value} \add 10.
-
-    \subsection{Wallrun}\label{Wallrun}
-        As part of movement, you can make a Climb check to run along a wall rather than climbing it. The \glossterm{difficulty value} is 5 higher than normal for the wall, but this does not require free hands. Success means you move up to your land speed horizontally, or up to a half of your land speed vertically. Failure means you fall. Critical failure means you are prone when you land. For every round you spend running on a wall, the \glossterm{difficulty value} increases by 10.
-
-        Wallrunning on a ceiling is impossible.
-
-    \subsection{Creature Climb}\label{Creature Climb}
-        As a standard action, you can make an attack vs. Reflex against a creature adjacent to you.
-        Your \glossterm{accuracy} is equal to your Climb skill.
-        The creature must be two or more size categories larger than you.
-
-        Success means you can climb the creature as if it were a solid object with a Climb \glossterm{difficulty value} equal to its Reflex defense.
+    \subsection{Common Climb Tasks}
+        \parhead{Creature Climb} As a standard action, you can make a Climb vs. Reflex attack against a creature adjacent to you.
+        This requires two \glossterm{free hands}, and the target must be two or more size categories larger than you.
+        Success means you are climbing on the creature as if it was a surface with a \glossterm{difficulty value} equal to its Reflex defense.
         This can allow you to use \abilitytag{Size-Based} abilities against the creature as if you were one size category larger than normal.
-        The creature takes a \minus4 penalty to \glossterm{accuracy} with \glossterm{strikes} against you, but is not otherwise encumbered by your presence unless it cannot support your weight.
-        It can attempt to remove you by dealing damage to you or with an ability that moves you away from it, such as the \textit{shove} ability (see \pcref{Shove}).
+        The creature takes a \minus4 penalty to \glossterm{accuracy} with \glossterm{strikes} against you.
+        \parhead{Grab Surface} You can make a Climb check as part of movement to grab a surface that you are passing by.
+        The \glossterm{difficulty value} is 10 higher than normal for the surface if you were moving for reasons out of your control (such as if you are falling).
+        Success means you grab onto the wall and interrupt your movement.
+        This does not prevent you from taking \glossterm{falling damage} appropriate for the distance you fell.
+        \parhead{Maintain Hold} Whenever you take damage while climbing on a surface, suddenly acquire significantly more weight (such as by catching a falling character), or otherwise are significantly distracted, you must make a Climb check based on the surface.
+        Failure means you fall off of the surface, and are \prone when you land.
+        \parhead{Move} You can make a Climb check as a \glossterm{move action} while you are touching a solid surface.
+        This requires two \glossterm{free hands}.
+        The \glossterm{difficulty value} is based on the surface.
+        Success means that you move along the surface, up to a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
+        Critical success means the maximum distance you can move is doubled.
+        Critical failure means you fall.
+        \parhead{Wallrun} You can make a Climb check as part of your movement while you are touching a solid surface.
+        The \glossterm{difficulty value} is 10 higher than normal for the surface.
+        Success means you can move using your \glossterm{land speed} along the wall during the current phase.
+        You move at half speed while going up.
+        Failure means you fall.
+        For every consecutive phase that you use this ability on the same wall, the DV increases by 5.
 
     \subsection{Climb Speed}\label{Climb Speed}
         Some creatures have a listed climb speed.
