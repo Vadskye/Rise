@@ -369,7 +369,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a \\glossterm{strike}.
         You may reroll the accuracy roll and take the highest result.
         However, you do not add your \\glossterm{power} to damage with the strike.
-        Eah creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 3,
       scaling: {
@@ -386,7 +386,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a \\glossterm{strike}.
         You may reroll the accuracy roll and take the highest result.
         However, you do not add your \\glossterm{power} to damage with the strike.
-        Eah creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
       type: "Duration",
@@ -398,7 +398,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus.
         You do not add your \\glossterm{power} to damage with the strike.
-        Eah creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
       scaling: {
@@ -415,7 +415,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus.
         You do not add your \\glossterm{power} to damage with the strike.
-        Eah creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\blinded.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\blinded.
       `,
       rank: 7,
       type: "Duration",
