@@ -78,8 +78,8 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 
     \subsection{Common Awareness Tasks}
 
-        \parhead{Notice Disguise} If you succeed at an opposed Awareness vs. Disguise check, you can determine whether a creature or object is disguised.
-        \parhead{Notice Forgery} If you succeed at an opposed Awareness vs. Craft check, you can determine whether an object is a forgery.
+        \parhead{Identify Disguise} If you succeed at an opposed Awareness vs. Disguise check, you can determine whether a creature or object is disguised.
+        \parhead{Identify Forgery} If you succeed at an opposed Awareness vs. Craft check, you can determine whether an object is a forgery.
         \parhead{Notice Hidden Creature} If you succeed at an opposed Awareness vs. Stealth check, you can notice a hidden creature (see \pcref{Hide}).
         Success with a sight-based Awareness check means you can see the creature perfectly.
         Success with any other sense just means you know its exact location, and are still \partiallyunaware of it.
@@ -96,8 +96,8 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         You gain a \plus20 bonus to notice the presence of creatures and events that directly touch or damage you, such as a creature shoving you or making a \glossterm{strike} against you.
 
         There are three common circumstances that can make Awareness checks more difficult: obstructions, distance, and similar background sensations.
-        Minor obstructions, short distances, and slightly similar backgrounds increase the \glossterm{difficulty value} by \plus2.
-        Significant obstructions, long distances, and very similar backgrounds increase the DV by \plus5 or more.
+        Minor obstructions, short distances, and slightly similar backgrounds increase the \glossterm{difficulty value} by 2.
+        Significant obstructions, long distances, and very similar backgrounds increase the DV by 5 or more.
         If a sensation is difficult to detect for multiple reasons, the difficulty modifiers stack.
 
         The \glossterm{difficulty value} of non-opposed checks changes depending on the size of the sensation.
@@ -142,8 +142,8 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 
     \subsection{Common Balance Modifiers}
         There are three common circumstances that make Balance checks more difficult: slippery, mobile, and uneven surfaces.
-        Slightly impaired surfaces increase the \glossterm{difficulty value} by \plus2.
-        Significantly impaired surfaces increase the DV by \plus5 or more.
+        Slightly impaired surfaces increase the \glossterm{difficulty value} by 2.
+        Significantly impaired surfaces increase the DV by 5 or more.
         If a surface is impaired for multiple reasons, the difficulty modifiers stack.
 
 \newpage
@@ -188,6 +188,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
     You could have several Craft skills, each with a separate degree of training.
     Common Craft skills are listed below, with additional description for some skills.
 
+    % TODO: note which skills often have magic items?
     \begin{itemize}
         \item Alchemy (Alchemist's fire, tanglefoot bags, potions)
         \item Bone
@@ -203,12 +204,25 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \item Wood
     \end{itemize}
 
-    % TODO: note which skills often have magic items?
-
     A Craft skill is specifically focused on physical objects. If nothing can be created by an endeavor, it probably falls under the heading of a Profession skill. Complex structures, such as buildings or siege engines, may require Knowledge (engineering) in addition to an appropriate Craft skill.
 
-    \subsection{Create Item}
-        You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. If you make enough progress, you complete the item. Failure means you failed to make progress, but can try again without penalty. Critical failure means you botched the item, and negating all progress and ruining half of the material components. You can start again from scratch with your remaining components.
+    \subsection{Common Craft Tasks}
+        \parhead{Create Item} You can make a Craft check to create an item.
+        For details, see \pcref{Crafting Items}.
+        \parhead{Create Forgery} You can make a Craft check to create a false or defective version of an item.
+        This functions like creating the item normally, except that you treat the item's \glossterm{rank} as being one lower than it actually is (to a minimum of 0).
+        Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for sustained usage.
+        However, a forgery may function once or twice to pass cursory inspection.
+        \parhead{Identify Forgery} If you succeed at an opposed Craft vs. Craft check, you can determine whether an object is a forgery.
+        \parhead{Identify Item} You can make a Craft check to identify any unusual properties or functions of a magic item or esoteric mundane item.
+        The \glossterm{difficulty value} is equal to 5 \add twice the item's \glossterm{rank}.
+        Items that are particularly common in a particular setting may be easier to identify, which can reduce the \glossterm{difficulty value} by 2 or more.
+        Success means that you know the item's general purpose, and how to activate its functions, including any magical effects.
+        You also know the item's rank, which lets you estimate its value.
+        \parhead{Repair Item} You can make a Craft check to repair a broken item. This functions like creating the item normally, except that you treat the item's \glossterm{rank} as being two lower than it actually is (to a minimum of 0).
+
+    \subsection{Crafting Items}
+        You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. Failure means you failed to make progress, but can try again without penalty. Critical failure means you botched the item, negating all progress and ruining the material components.
 
         Each item takes a certain amount of working time to craft, as shown on \tref{Craft Requirements}.
         In addition, each item requires the expenditure of raw materials with a value equal to an item one rank lower than the item you are trying to craft (minimum rank 0).
@@ -219,7 +233,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time.
         Once your total effective working time exceeds the time required to craft the item, you have finished the item.
 
-        All item creation requires artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty of \minus5 or greater, or it may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus5 penalty, but cutting a diamond without specialized tools is impossible. A typical day's work consists of 8 hours of work.
+        All item creation requires artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty of \minus5 or greater, or it may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus5 penalty, but cutting a diamond without specialized tools is impossible.
 
         The time and difficulty involved in crafting an item depends on the item's rank, as defined in \trefnp{Craft Requirements}.
 
@@ -228,54 +242,15 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
             \begin{dtabularx}{\columnwidth}{>{\lcol}X l l l}
                 \tb{Item}                   & \tb{Subskill} & \tb{DV}            & \tb{Crafting Time}\fn{1} \tableheaderrule
                 Alchemical item             & Alchemy       & 5 \add twice rank  & Eight hours        \\
-                Body armor                  & Varies        & 10 \add twice rank & One month per rank \\
+                Body armor                  & Varies        & 10 \add twice rank & One month per rank\fn{2} \\
                 Exotic weapon               & Varies        & 10 \add twice rank & 24 hours per rank  \\
                 Shield or non-exotic weapon & Varies        & 5 \add twice rank  & 24 hours per rank  \\
                 Poison                      & Poison        & 5 \add twice rank  & Eight hours        \\
                 Other item                  & Varies        & 5 \add twice rank  & 24 hours per rank  \\
             \end{dtabularx}
-            1.  For the purpose of crafting times, treat rank 0 items as having a rank of 1/2.
+            1. For the purpose of crafting times, treat rank 0 items as having a rank of 1/2.
+            2. Assuming eight-hour working days for each day of the month.
         \end{dtable}
-
-    \subsection{Create Forgery}
-        You can use the Craft skill to create false or defective versions of objects.
-        This requires artisan's tools.
-        For example, you may wish to forge official-looking documents with Craft (manuscripts), or you may need to make items in a rush to satisfy an employer.
-
-        This functions like crafting the item from scratch, except that the Craft \glossterm{difficulty value} is 5 lower than normal, and you use one-half the item's price to determine the price of raw materials and the crafting time.
-        Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for sustained usage.
-        However, a forgery may function once or twice to pass cursory inspection.
-        A forgery can be detected with the Identify Forgery uses of the Craft and Awareness skills.
-
-    \subsection{Identify Forgery}
-        As a standard action, you can make a Craft check to evaluate whether an item is a forgery. The \glossterm{difficulty value} to identify a forgery is equal to the Craft check used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Critical failure means you randomly identify the item as genuine or forged. The check is made secretly, so you can't be sure how good the result is.
-
-    \subsection{Identify Item}
-        You can make a Craft check to identify any unusual properties or functions of an item.
-        The Craft skill used must match the primary material used to construct the item.
-        This is most commonly used to identify magic items, but it can also be used to understand esoteric nonmagical items.
-
-        Identifying an item takes a minute of careful evaluation.
-        The \glossterm{difficulty value} depends on how obscure the item's nature is.
-        As a rough guideline, identifying a magic item usually has a base \glossterm{difficulty value} of 5 \add twice the item's rank.
-        Items that are particularly common in a particular setting may be easier to identify, which can reduce the \glossterm{difficulty value} by 5 or more.
-        For example, a \mitem{potion of healing} is usually a fairly common magic item, so it may only require a DV 2 check to recognize.
-        The GM is responsible for determining exactly which magic items, if any, are common enough to easily identify.
-
-        Success means that you know the item's general purpose, and how to activate its functions, including any magical effects.
-        You also know the item's rank, which lets you estimate its value.
-        Failure means you learn nothing about the item.
-
-        If an item is intentionally crafted to be misleading or hard to identify, the \glossterm{difficulty value} to identify it increases by 5 or more.
-        Critical failure on a check to identify it may cause an observer to misidentify it as a different item.
-        For example, a poison carefully contructed to resemble a \mitem{potion of healing} may require a DV 17 check to correctly identify.
-        A result of 11 or less would cause an observer to confidently conclude that the poison was in fact a potion of healing.
-
-    \subsection{Repair Item}
-        You can make a Craft check to repair a broken item. This functions like crafting the item from scratch, except that you use one-tenth of the item's price to determine the price of raw materials and the crafting time.
-
-    \subsection{Other Tasks}
-        You can use the Craft skill for various tasks related to the object of your craft. For example, you could use Craft (wood) to sabotage a wagon so it will break at a later time, or Craft (alchemy) to purify spoiled food or ingredients. The \glossterm{difficulty value} of such tasks, and what can be accomplished, can vary widely. In general, the more difficult the task, and the more loosely it is related to the skill, the higher the \glossterm{difficulty value}.
 
 \newpage
 \skill{Creature Handling}{Per}
