@@ -81,6 +81,8 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \parhead{Notice Disguise} If you succeed at an opposed Awareness vs. Disguise check, you can determine whether a creature or object is disguised.
         \parhead{Notice Forgery} If you succeed at an opposed Awareness vs. Craft check, you can determine whether an object is a forgery.
         \parhead{Notice Hidden Creature} If you succeed at an opposed Awareness vs. Stealth check, you can notice a hidden creature (see \pcref{Hide}).
+        Success with a sight-based Awareness check means you can see the creature perfectly.
+        Success with any other sense just means you know its exact location, and are still \partiallyunaware of it.
         \parhead{Notice Hidden Object} If you succeed at an opposed Awareness vs. Craft or Devices check, you can notice hidden objects such as traps and secret doors.
         \parhead{Notice Magic Trap} If you succeed at an Awareness check, you can notice hidden magical effects such as traps.
         The \glossterm{difficulty value} to is equal to 15 \add twice the \glossterm{rank} of the ability.
@@ -88,18 +90,14 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \parhead{Notice Subtle Effect} If you succeed at an Awareness check, you can notice the general effects of a \abilitytag{Subtle} ability affecting you.
         The \glossterm{difficulty value} to notice the effect when it is first applied to you is 15 \add twice the \glossterm{rank} of the ability.
         In addition, you can make another check when the ability ends to notice that you feel normal again.
-        \parhead{Read Lips} When you see a creature speaking, you can make an sight-based Awareness check to read its lips.
-        The \glossterm{difficulty value} is 10 for ordinary conversation, or up to 20 if the speaking creature makes an effort to avoid moving its lips.
-        You must be able to understand the language spoken.
-        Success means you can understand what is being said.
 
     \subsection{Common Awareness Modifiers}
         While sleeping, you take a \minus10 penalty to the Awareness skill.
         You gain a \plus20 bonus to notice the presence of creatures and events that directly touch or damage you, such as a creature shoving you or making a \glossterm{strike} against you.
 
         There are three common circumstances that can make Awareness checks more difficult: obstructions, distance, and similar background sensations.
-        Minor obstructions, short distances (generally between 30 and 120 feet), and slightly similar backgrounds increase the \glossterm{difficulty value} by \plus2.
-        Significant obstructions, long distances (generally more than 120 feet), and very similar backgrounds increase the DV by \plus5 or more.
+        Minor obstructions, short distances, and slightly similar backgrounds increase the \glossterm{difficulty value} by \plus2.
+        Significant obstructions, long distances, and very similar backgrounds increase the DV by \plus5 or more.
         If a sensation is difficult to detect for multiple reasons, the difficulty modifiers stack.
 
         The \glossterm{difficulty value} of non-opposed checks changes depending on the size of the sensation.
@@ -155,8 +153,8 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 
     \subsection{Common Climb Tasks}
         \parhead{Creature Climb} As a standard action, you can make a Climb vs. Reflex attack against a creature adjacent to you.
-        This requires two \glossterm{free hands}, and the target must be two or more size categories larger than you.
-        Success means you are climbing on the creature as if it was a surface with a \glossterm{difficulty value} equal to its Reflex defense.
+        This requires one \glossterm{free hand}, and the target must be two or more size categories larger than you.
+        Success means you latch onto the creature and can climb on it as if it was a surface with a \glossterm{difficulty value} equal to its Reflex defense.
         This can allow you to use \abilitytag{Size-Based} abilities against the creature as if you were one size category larger than normal.
         The creature takes a \minus4 penalty to \glossterm{accuracy} with \glossterm{strikes} against you.
         \parhead{Grab Surface} You can make a Climb check as part of movement to grab a surface that you are passing by.
@@ -166,7 +164,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \parhead{Maintain Hold} Whenever you take damage while climbing on a surface, suddenly acquire significantly more weight (such as by catching a falling character), or otherwise are significantly distracted, you must make a Climb check based on the surface.
         Failure means you fall off of the surface, and are \prone when you land.
         \parhead{Move} You can make a Climb check as a \glossterm{move action} while you are touching a solid surface.
-        This requires two \glossterm{free hands}.
+        This requires two \glossterm{free hands}, or one free hand if you take a \minus5 penalty.
         The \glossterm{difficulty value} is based on the surface.
         Success means that you move along the surface, up to a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
         Critical success means the maximum distance you can move is doubled.
@@ -176,7 +174,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         Success means you can move using your \glossterm{land speed} along the wall during the current phase.
         You move at half speed while going up.
         Failure means you fall.
-        For every consecutive phase that you use this ability on the same wall, the DV increases by 5.
+        For every phase in which you use this ability on the same wall without reaching a stable stopping point, the DV increases by 5.
 
     \subsection{Climb Speed}\label{Climb Speed}
         Some creatures have a listed climb speed.
