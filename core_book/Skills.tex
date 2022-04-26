@@ -154,7 +154,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
     \subsection{Common Climb Tasks}
         \parhead{Creature Climb} As a standard action, you can make a Climb vs. Reflex attack against a creature adjacent to you.
         This requires one \glossterm{free hand}, and the target must be two or more size categories larger than you.
-        Success means you latch onto the creature and can climb on it as if it was a surface with a \glossterm{difficulty value} equal to its Reflex defense.
+        On a hit, you latch onto the target and can climb on it as if it was a surface with a \glossterm{difficulty value} equal to its Reflex defense.
         This can allow you to use \abilitytag{Size-Based} abilities against the creature as if you were one size category larger than normal.
         The creature takes a \minus4 penalty to \glossterm{accuracy} with \glossterm{strikes} against you.
         \parhead{Grab Surface} You can make a Climb check as part of movement to grab a surface that you are passing by.
@@ -256,131 +256,62 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 \skill{Creature Handling}{Per}
     % TODO: is non-sapient the right word?
     The Creature Handling skill represents your ability to influence non-sapient creatures.
-    With it, you can convince them to do what you want or train them to follow commands. This skill can only be used with creatures with an Intelligence of \minus6 or lower.
+    With it, you can convince them to do what you want or train them to follow commands.
+    This skill has no effect on creatures with an Intelligence of \minus5 or higher.
 
-        Animals are easier to handle than other kinds of creatures.
-        The \glossterm{difficulty value} listed are for animals; the \glossterm{difficulty value} to handle other kinds of creatures are 5 higher.
-
-    \subsection{Handling Creatures}
-        You can use Creature Handling to control a creature's actions using these abilities.
-        Critical failure with these abilities may make the target hostile, depending on the circumstances.
-
-        As a standard action, you can use the \textit{command} ability to control the actions of a creature.
+    \subsection{Common Creature Handling Tasks}
 
         \begin{freeability}{Command}[\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (standard)]
             \label{Command}
-            Make an attack vs. Mental against a creature within \rngmed range.
-            Your \glossterm{accuracy} is equal to your Creature Handling skill.
+            Make a Creature Handling vs. Mental attack against a creature within \rngmed range.
+            You take a \minus5 penalty to accuracy with this attack if the target is not an animal, as normal for Creature Handling attacks and checks.
             In addition, choose and state an action that the creature could take.
             \hit The target is unable to take any actions except to use the \textit{total defense} ability (see \pcref{Universal Abilities}).
             \crit The target performs the chosen action if it is physically capable of performing it.
             This can include convincing creatures to perform forced marches and similar activities (see \pcref{Overland Exertion}).
             
-            The target's defense is increased if it is not an animal, as normal for Creature Handling attacks and checks.
             You take a \minus10 accuracy penalty against an actively hostile target.
+            The target gains a \plus5 bonus to its defense against this attack if it is not an animal, as normal for Creature Handling attacks and checks.
             If the target is damaged or feels that it is in danger, this effect is automatically ended.
         \end{freeability}
+        \parhead{Perform Trained Action} You can make a \glossterm{difficulty value} 5 Creature Handling check to convince an \glossterm{ally} to perform an action it is already trained to perform.
+        \parhead{Teach Trick} You can make a Creature handling check to teach an \glossterm{ally} a trick.
+        A trick is a specific behavior that generally requires a single-word command, like ``fetch'' or ``stay''.
+        A creature can learn a maximum of two tricks per point of Intelligence it has above \minus10.
+        Teaching a trick generally takes at least a week of intermittent training.
+        Simple tricks have a \glossterm{difficulty value} of 5, while complex tricks have a \glossterm{difficulty value} of 10 or more.
 
-        As a \glossterm{free action}, you can use the \textit{perform trained action} ability to convince a creature to perform an action it knows.
-
-        \begin{freeability}{Perform Trained Action}
-            Make a \glossterm{difficulty value} 5 Creature Handling check on an \glossterm{ally} within \rnglong range and choose an action that creature could take.
-            If you succeed, the target performs the chosen action if it is trained to perform it.
-            Generally, wild animals are not trained in any actions, so this is not effective on them.
-        \end{freeability}
-
-    \subsection{Training Creatures}\label{Training Creatures}
-        You can use Creature Handling to train a creature. Success means the creature learns a trick or becomes domesticated. Failure means your time is wasted, and you must try again. Exceptional failure may indicate that the animal becomes unable to learn the trick, becomes hostile, or other consequences depending on the situation. Training a creature takes a week or more; this requires spending at least four hours each day with the creature. It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior. If the training is interrupted for a week or more, the attempt automatically fails.
-
-        \parhead{Teach a Trick} You can teach a creature a specific trick with one week of work and a successful Creature Handling check against the indicated \glossterm{difficulty value}. A creature can learn two tricks per point of Intelligence it has above \minus10. Thus, a creature with an Intelligence of \minus9 can learn two tricks, while a creature with an Intelligence of \minus5 can learn ten tricks. Possible tricks (and their associated \glossterm{difficulty value}) include, but are not necessarily limited to, the following.
-
-        \subsk{Attack (\glossterm{difficulty value} 10)} The creature attacks apparent enemies. You may point to a particular creature that you wish the creature to attack, and it will comply if able. Normally, a creature will attack only humanoids, monstrous humanoids, giants, or other creatures. Teaching a creature to attack all creatures (including such unnatural creatures as undead and aberrations) counts as two tricks.
-        \subsk{Come (\glossterm{difficulty value} 5)} The creature comes to you, even if it normally would not do so.
-        \subsk{Defend (\glossterm{difficulty value} 10)} The creature defends you (or is ready to defend you if no threat is present), even without any command being given. Alternatively, you can command the creature to defend a specific other character.
-        \subsk{Down (\glossterm{difficulty value} 5)} The creature breaks off from combat or otherwise backs down. A creature that doesn't know this trick continues to fight until it must flee (due to injury, a fear effect, or the like) or its opponent is defeated.
-        \subsk{Fetch (\glossterm{difficulty value} 5)} The creature goes and gets something. If you do not point out a specific item, the creature fetches some random object.
-        \subsk{Guard (\glossterm{difficulty value} 10)} The creature stays in place and prevents others from approaching.
-        \subsk{Heel (\glossterm{difficulty value} 5)} The creature follows you closely, even to places where it normally wouldn't go.
-        \subsk{Messenger (\glossterm{difficulty value} 15)} The creature carries a small item to a destination.
-        Once it arrives, it waits for up to 24 hours for someone to take the item from it.
-        The destination must be known to the creature.
-        \par When you instruct the creature to deliver the item, you must communicate the destination to the creature.
-        This normally requires a \glossterm{difficulty value} 20 Creature Handling check as a standard action.
-        The \glossterm{difficulty value} of this check is lowered to 15 for locations the creature is extremely familiar with, such as its home.
-        If you have other means of communicating the destination to the creature, such as the \textit{animal speech} druid ability (see Animal Speech, page \pref{Drd:Animal Speech}), that check is unnecessary.
-        \subsk{Perform (\glossterm{difficulty value} 10)} The creature performs a variety of simple tricks, such as sitting up, rolling over, roaring or barking, and so on.
-        \subsk{Seek (\glossterm{difficulty value} 5)} The creature moves into an area and looks around for anything that is obviously alive or animate.
-        \subsk{Stay (\glossterm{difficulty value} 5)} The creature stays in place, waiting for you to return. It does not challenge other creatures that come by, though it still defends itself if it needs to.
-        \subsk{Track (\glossterm{difficulty value} 10)} The creature tracks the scent presented to it. (This requires the creature to have the scent ability)
-        \subsk{Work (\glossterm{difficulty value} 5)} The creature pulls or pushes a medium or heavy load.
-
-        \parhead{Rear a Wild Creature} To rear a creature means to raise a wild creature from infancy so that it becomes domesticated. The time required depends on the creature in question. The \glossterm{difficulty value} for this check is equal to 5 \add the number of levels the creature has. You can rear as many as three creatures of the same kind at once without penalty. You can rear additional creatures, but you take a cumulative \minus2 penalty to checks you make to rear all of the animals. A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
-
-        \parhead{Bonus Tricks}\label{Bonus Tricks} Some trainers can teach creatures bonus tricks in addition to their normal maximum number of tricks known.
-        Once a creature has learned a bonus trick, that trick may not be retrained into a different trick by any trainer without the same ability to grant bonus tricks.
-        However, any trainer may untrain the trick.
+    \subsection{Common Creature Handling Modifiers}
+        Animals are easier to handle than other kinds of creatures.
+        You take a \minus5 penalty to your Creature Handling skill when using it to affect non-animals.
 
 \newpage
 \skill{Deception}{Per}
         The Deception skill represents your ability to lie or otherwise mislead people without being caught.
         Using a Deception check is part of conversation or other actions, so it requires no special action to perform.
 
-    \subsection{Blend In}
-        You can make a Deception check to blend in with a crowd.
-        Your Deception check is opposed by the Awareness checks of anyone looking for you.
-        Success means you remain unobserved.
-        Failure means the person looking for you finds you.
-
-        If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Social Insight checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in a temple or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
-
-    \subsection{Distract}\label{Distract}
-        As a standard action, you can make a Deception check to distract a creature you are interacting with.
-        Your Deception check is opposed by your target's Social Insight check.
-        Success means they \glossterm{briefly} take a \minus5 penalty to the Awareness and Social Insight skills against targets other than you.
-        Failure means they take no penalty, and realize you were trying to distract them.
-        You can continue distracting the target by using this ability against them each round.
-        The \glossterm{difficulty value} increases by 2 for each consecutive round that you have distracted the same creature.
-
-        Normally, distracting a creature requires both visible motion and sound.
-        If you take a \minus5 penalty to the Deception check, you can distract a creature without moving, or without making sound, but not without both.
-        In addition, you can take a \minus5 penalty to your Deception check to distract everyone who can see or hear you.
-
-        If you successfully distract a creature, you can attempt to hide from that creature as if you were not being observed (see \pcref{Stealth}, for details).
-
-    \subsection{Impersonate}\label{Impersonate}
-        When you are pretending to be another creature, you can assume the mannerisms and speech patterns of the creature you are impersonating.
-        To do so, you must make a Deception check.
-        Anyone observing you can oppose your check with a Social Insight check to identify the impersonation (see the \textit{identify disguise} ability, page \pref{Identify Disguise}).
-        If you succeed, the observer thinks your impersonation is accurate.
-        If you critically succeed, they also take a \minus5 penalty to any other check to see through your impersonation, such as to notice a flawed disguise.
-        If they succeed, they notice inconsistencies or mistakes in your impersonation, and may realize you are not what you seem.
-
-        % Technically these should be bonuses to the checks observers make, but that's confusing
-        If you do not know how you are supposed to act, or are physically unable to perform necessary actions, impersonation is more difficult.
-        You take a \minus2 penalty if you cannot replicate minor details of an impersonation, such as a deep voice beyond your vocal range.
-        You take a \minus5 penalty if you cannot replicate significant details of an impersonation, such as the singing voice of a famous bard or the noble manners of a crown prince.
-        You take a \minus10 or greater penalty if you cannot replicate fundamental aspects of the impersonation, such as the actions required to lead a complex ritual as an archmage.
-        Observers who do not know your impersonation is inaccurate can take similar penalties; see the \textit{identify disguise} ability for details.
-
-        A creature may not believe your impersonation even if you make a successful Deception check.
-        For example, a halfling can impersonate an orc's voice perfectly with a Deception check, but without a disguise anyone who sees the halfling will immediately realize it is not an orc (see \pcref{Disguise}).
-
-    \subsection{Lie}
-        As a free action, when you say something which you know is untrue, you can make a Deception check to avoid revealing your deception.
-        Anyone observing you lie can oppose your check with a Social Insight check.
-        If you succeed, the observer does not notice any indication that you are lying.
-        If they succeed, they realize that you are lying.
-
-        A creature that fails its Social Insight check may choose not to believe you for other reasons.
+    \subsection{Common Deception Tasks}
+        \parhead{Blend In} If you succeed at an opposed Deception vs. Awareness check, you can avoid notice among a crowd of similar creatures.
+        If you act or look significantly different from the creatures around you, observers gain a bonus to their Awareness check to notice you.
+        \parhead{Convey Hidden Message} If you succeed at an opposed Deception vs. Social Insight check, you can convey a hidden message in the guise of an ordinary conversation.
+        Failure means that an observer recognizes that a hidden message is being conveyed, while critical failure means that an observer recognizes exactly what the hidden message is.
+        In general, you must already have a pre-established code or understanding with the intended recipients of your hidden message so they can grasp its true meaning more easily than outside observers.
+        \parhead{Distract} If you succeed at an opposed Deception vs. Social Insight check, you can distract a creature you are talking with.
+        This generally makes the distracted creature \glossterm{briefly} \partiallyunaware of you, which can allow you to hide or backstab them.
+        Normally, the creature realizes that you deceived them once the distraction ends, which prevents them from being distracted again and may influence their behavior.
+        \parhead{Fascinate} If you succeed at an opposed Deception vs. Social Insight check, you can keep attention focused on you during a conversation.
+        This generally gives distracted creatures a \minus5 penalty to the Awareness and Social Insight skills to notice anything other than you.
+        You repeat this check once per minute, with a cumulative \minus5 penalty for each minute that the distraction has lasted.
+        \parhead{Impersonate} If you succeed at an opposed Deception vs. Social Insight check, you can impersonate another creature's mannerisms and speech patterns.
+        If you are unable to replicate important aspects of the impersonation, such as the beautiful singing voice of a famous bard, you may suffer a penalty to the Deception check.
+        This does not allow you to mimic a creature's appearance, which requires the Disguise skill.
+        \parhead{Lie} If you succeed at an opposed Deception vs. Social Insight check, you can lie without giving any indication that you are lying.
+        Failure means that the observer recognizes that you are intentionally lying.
+        Even if you succeed at this check, you still need the Persuasion skill to believe or take actions based on your lies.
         This check only prevents a creature from recognizing the lie based on your body language and behavior.
-        To convince creatures to believe or take actions based on lies, you need the Persuasion skill (see \pcref{Compel Belief}).
 
-    \subsection{Secret Message}
-        As part of normal speech, you can make a Deception check to attempt to convey a hidden message to another character without others understanding it using codes, metaphors, and similar misdirection tools. The \glossterm{difficulty value} is 10 for simple messages and 15 for complex messages. If the message contains completely new information, the \glossterm{difficulty value} increases by 5. You can freely increase the \glossterm{difficulty value} to make the message more difficult to intercept, but doing so also makes it more difficult for the intended recipient to interpret.
-
-        Anyone witnessing the exchange may make a Social Insight check against the same \glossterm{difficulty value} to identify the hidden message.
-        Creatures who know your system for conveying hidden messages -- normally, the intended recipient -- receive a \plus10 bonus.
-        Creatures who know in advance that a message will be conveyed also receive a \plus5 bonus on this check.
+        When your overall intention is to mislead or conceal information in a conversation, you may need to make this check even if everything you are saying is technically true.
+        Generally, using half-truths and similar trickery instead of bald-faced lies gives you a bonus to your Deception check, but a skilled observer can still see through your ruse.
 
 
 \newpage
@@ -389,46 +320,14 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
     It includes both determining which facts and observations are relevant to use as evidence, and reaching conclusions based on that evidence.
     However, this skill cannot protect you from coming to inaccurate conclusions if you rely on inaccurate or incomplete facts and observations.
 
-    \subsection{Analyze Evidence}
-        As a standard action, you can make use the \textit{analyze evidence} ability.
-        \begin{freeability}{Analyze Evidence}
-            Make a Deduction check to analyze evidence available to you and try to reach an accurate conclusion.
-            This includes both determining which evidence is relevant and deciding what that evidence proves.
-            Most deductions have two components: observations you make, and knowledge you have.
-            When you use this ability, you can decide to trust your own observations, your own knowledge, or both.
-
-            If you trust your own observations, and the deduction requires making observations, your Deduction modifier on the check is limited to be no greater than your modifier with the skill used to make observations.
-            This skill is typically Awareness or Social Insight.
-            If you trust your own knowledge, and the deduction requires knowledge, your Deduction modifier on the check is limited to be no greater than twice your Knowledge modifier with any relevant knowledge.
-            If you trust both your observations and your knowledge, both limits apply.
-
-            Alternately, you can explicitly specify either the observations or knowledge your deduction is relying on.
-            For example, you could make a deduction based on information given to you by another creature.
-            If you do, your Deduction check is not limited, but your conclusions may be inaccurate if your assumptions are inaccurate.
-
-            The base \glossterm{difficulty value} for this check is 10.
-            This \glossterm{difficulty value} is modified depending on the difficulty of the deduction and the quality of the evidence available to you, as shown on \trefnp{Deduction Difficulty Modifiers}.
-        \end{freeability}
-
-    \begin{dtable*}
-        \lcaption{Deduction Difficulty Modifiers}
-        \begin{dtabularx}{\textwidth}{X X l}
-            \tb{Evidence Quality}                                               & \tb{Example}                                                                                                                                                                                  & \tb{Difficulty Modifier} \tableheaderrule
-            No irrelevant or misleading evidence                                & Determining a historical truth by reading the relevant chapter in an accurate history book                                                                                                    & \minus5               \\
-            Some evidence is irrelevant or misleading                           & Determining a historical truth by reading contemporary accounts                                                                                                                               & \plus0                \\
-            About half of the evidence is irrelevant or misleading              & Determining a historical truth by reading eyewitness accounts                                                                                                                                 & \plus5                \\
-            Almost all evidence is irrelevant or misleading                     & Determining a historical truth by reading military propaganda                                                                                                                                 & \plus10 or more\fn{1} \\
-            All evidence is irrelevant or misleading                            & Determining a historical truth by reading a cookbook                                                                                                                                          & \tdash\fn{2}          \\
-
-            \tb{Complexity}                                                     & \tb{Example}                                                                                                                                                                                  & \tb{Difficulty Modifier} \tableheaderrule
-            Exceptionally simple logic using no more than one piece of evidence & The sky is cloudy; therefore, it might rain                                                                                                                                                  & \minus5               \\
-            Simple logic using one or two pieces of evidence                    & It is raining, and the cleric's clothes and boots are dry; therefore, they were not out in the rain                                                                                           & \plus0                \\
-            Moderately complex logic using at least three pieces of evidence    & It is raining, the mage's clothes are wet but their boots are dry, they were observed stepping into the bar, and there are no tracks leading up to the door; therefore, they can probably fly & \plus5                \\
-            Exceptionally complex logic                                         & A difficult logic puzzle                                                                                                                                                                      & \plus10 or more       \\
-        \end{dtabularx}
-        1. If there is an exceptionally large amount of irrelevant or misleading evidence relative to the amount of useful evidence, this penalty may be even larger. \\
-        2. It is impossible to make a correct deduction if there is no relevant and accurate evidence.
-    \end{dtable*}
+    \subsection{Common Deduction Tasks}
+        \parhead{Identify Surroundings} You can make a Deduction check as a standard action to understand what aspects of your environment are important and why.
+        This may require a successful Awareness check to locate hidden objects or subtle clues.
+        \parhead{Reach Conclusion} You can combine information that you know to reach a specific conclusion.
+        This may require other checks, such as Knowledge or Awareness checks, to ensure that you have enough information to work with.
+        The time required to reach a conclusion can vary dramatically depending on how much evidence you have to work with and how easy the conclusion is to reach.
+        You can reach simple conclusions immediately after learning all of the relevant information, but complicated scenarios might require days of study and analysis to eliminate all possibilities.
+        In general, sifting through a mixture of helpful and misleading evidence increases the difficulty of the Deduction check and the time required to complete it.
 
 \newpage
 \skill{Devices}{Int}
