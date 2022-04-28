@@ -1,4 +1,5 @@
-use crate::core_mechanics::abilities::{Attack, AttackEffect, Targeting};
+use crate::core_mechanics::abilities::Targeting;
+use crate::core_mechanics::attacks::{Attack, AttackEffect};
 use crate::core_mechanics::{DamageDice, DamageType, Defense, Tag};
 use std::fmt;
 use titlecase::titlecase;

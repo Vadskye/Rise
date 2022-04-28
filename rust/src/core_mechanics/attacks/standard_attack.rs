@@ -1,17 +1,16 @@
-use crate::core_mechanics::abilities::attack_effect::{
-    AttackEffectDuration, AttackTriggeredEffect, DamageEffect, DamageOverTimeEffect, DebuffEffect,
-    DebuffInsteadEffect, PoisonEffect, VitalWoundEffect,
-};
 use crate::core_mechanics::abilities::{
-    AreaSize, AreaTargets, Attack, AttackEffect, Cooldown, Range, Targeting,
+    AbilityMovement, AbilityTag, AbilityType, AreaSize, AreaTargets, Cooldown, Range, Targeting,
 };
-use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, Tag, SpeedCategory};
+use crate::core_mechanics::attacks::attack_effect::{
+    AttackEffectDuration, AttackTriggeredEffect, DamageEffect, DamageOverTimeEffect, DebuffEffect,
+    DebuffInsteadEffect, PoisonEffect, SimpleDamageEffect, VitalWoundEffect,
+};
+use crate::core_mechanics::attacks::{Attack, AttackEffect};
+use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, SpeedCategory, Tag};
 use crate::equipment::StandardWeapon;
 use std::cmp::max;
 
 use super::attack::SimpleSpell;
-use super::attack_effect::SimpleDamageEffect;
-use super::{AbilityTag, AbilityType, AbilityMovement};
 
 pub enum StandardAttack {
     // Monster abilities

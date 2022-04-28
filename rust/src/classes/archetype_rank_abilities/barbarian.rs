@@ -1,6 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::attacks::Maneuver;
 use crate::core_mechanics::{Attribute, Defense};
-use crate::creatures::{Maneuver, Modifier};
+use crate::creatures::Modifier;
 
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
     return vec![

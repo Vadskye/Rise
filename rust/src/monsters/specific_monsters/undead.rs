@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::StandardAttack;
+use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::{
     Attribute, DamageType, FlightManeuverability, HasAttributes, MovementMode, Sense, Size,
     SpecialDefenseType, SpeedCategory, StandardPassiveAbility,

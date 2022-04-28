@@ -1,10 +1,11 @@
-use crate::core_mechanics::abilities::attack_effect::{AttackTriggeredEffect, PoisonEffect};
-use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility, StandardAttack};
+use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility};
+use crate::core_mechanics::attacks::attack_effect::{AttackTriggeredEffect, PoisonEffect};
+use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
     SpecialDefenseType, SpeedCategory,
 };
-use crate::creatures::{calculate_standard_rank, Maneuver, Modifier, ModifierBundle, Monster};
+use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Planeforged;

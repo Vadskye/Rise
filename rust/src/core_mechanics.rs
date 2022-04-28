@@ -1,5 +1,6 @@
 mod attributes;
 pub mod abilities;
+pub mod attacks;
 mod damage_absorption;
 mod damage_dice;
 mod damage_types;
