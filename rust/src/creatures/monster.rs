@@ -1,6 +1,7 @@
 use std::cmp::max;
 
-use crate::core_mechanics::abilities::{HasAttacks, PowerProgression};
+use crate::core_mechanics::abilities::PowerProgression;
+use crate::core_mechanics::attacks::{HasAttacks, Maneuver};
 use crate::core_mechanics::{
     Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, SpecialDefenseType,
     StandardPassiveAbility,
@@ -13,7 +14,7 @@ use crate::skills::{HasSkills, Skill, SkillCategory};
 use regex::Regex;
 use titlecase::titlecase;
 
-use super::{Maneuver, ModifierType};
+use super::ModifierType;
 
 pub struct Monster {
     pub alignment: Option<String>,

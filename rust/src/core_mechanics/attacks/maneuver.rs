@@ -1,11 +1,13 @@
-use crate::core_mechanics::abilities::attack_effect::{
+use crate::core_mechanics::abilities::{AbilityMovement, AreaSize, AreaTargets, Targeting};
+use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DebuffEffect,
 };
-use crate::core_mechanics::abilities::{AbilityMovement, Attack, Targeting, AreaSize, AreaTargets};
 use crate::core_mechanics::{DamageType, Debuff, Defense, SpecialDefenseType, SpeedCategory};
 use crate::equipment::Weapon;
 use std::cmp::max;
 use titlecase::titlecase;
+
+use super::Attack;
 
 #[derive(Clone)]
 pub enum Maneuver {
@@ -126,18 +128,16 @@ impl Maneuver {
                         }));
                     })
             }
-            Self::Headshot(rank) => {
-                weapon
-                    .attack()
-                    .except(|a| a.accuracy += (rank - 1) / 2)
-                    .except_hit_damage(|d| {
-                        d.power_multiplier = 0.0;
-                        d.take_damage_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
-                            debuffs: vec![Debuff::Dazed],
-                            duration: AttackEffectDuration::Brief,
-                        }));
-                    })
-            }
+            Self::Headshot(rank) => weapon
+                .attack()
+                .except(|a| a.accuracy += (rank - 1) / 2)
+                .except_hit_damage(|d| {
+                    d.power_multiplier = 0.0;
+                    d.take_damage_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
+                        debuffs: vec![Debuff::Dazed],
+                        duration: AttackEffectDuration::Brief,
+                    }));
+                }),
             Self::MightyStrike(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy -= 2)
@@ -194,7 +194,7 @@ impl Maneuver {
                 .except(|a| a.accuracy -= 3)
                 .except(|a| a.targeting = Targeting::Strikes(2))
                 .except_hit_damage(|d| {
-                    if *rank >= 6 { 
+                    if *rank >= 6 {
                         d.damage_modifier += 4
                     } else if *rank >= 4 {
                         d.damage_modifier += 2
@@ -204,7 +204,10 @@ impl Maneuver {
             Self::Whirlwind(rank, reach) => weapon
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
-                .except(|a| a.targeting = Targeting::Radius(None, AreaSize::Custom(*reach), AreaTargets::Enemies))
+                .except(|a| {
+                    a.targeting =
+                        Targeting::Radius(None, AreaSize::Custom(*reach), AreaTargets::Enemies)
+                })
                 .except_hit_damage(|d| {
                     d.power_multiplier = 0.5;
                 }),

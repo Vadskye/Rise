@@ -1,9 +1,10 @@
-use crate::core_mechanics::abilities::{ActiveAbility, Attack};
+use crate::core_mechanics::abilities::ActiveAbility;
+use crate::core_mechanics::attacks::{Attack, Maneuver};
 use crate::core_mechanics::{Attribute, Defense, PassiveAbility, Resource, SpecialDefenseType};
 use crate::equipment::StandardWeapon;
 use crate::skills::Skill;
 
-use super::{Creature, Maneuver};
+use super::Creature;
 
 #[derive(Clone)]
 pub enum Modifier {

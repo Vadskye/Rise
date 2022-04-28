@@ -1,5 +1,5 @@
 use super::*;
-use crate::core_mechanics::abilities::{HasAttacks, StandardAttack};
+use crate::core_mechanics::attacks::{HasAttacks, StandardAttack};
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
 use std::cmp::max;
 

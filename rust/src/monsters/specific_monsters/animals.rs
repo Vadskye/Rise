@@ -1,9 +1,10 @@
-use crate::core_mechanics::abilities::{StandardAttack, attack_effect};
+use crate::core_mechanics::attacks::{attack_effect, Maneuver, StandardAttack};
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, Sense, Size, SpeedCategory, StandardPassiveAbility,
+    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, Sense, Size, SpeedCategory,
+    StandardPassiveAbility,
 };
 
-use crate::creatures::{Modifier, Monster, Maneuver};
+use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
@@ -534,11 +535,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         name: "Crocodile".to_string(),
         senses: Some(vec![Sense::Scent]),
         size: Size::Medium,
-        trained_skills: Some(vec![
-            Skill::Endurance,
-            Skill::Stealth,
-            Skill::Swim,
-        ]),
+        trained_skills: Some(vec![Skill::Endurance, Skill::Stealth, Skill::Swim]),
         weapons: vec![StandardWeapon::MonsterBite.weapon()],
     })));
 

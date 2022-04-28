@@ -1,10 +1,10 @@
-use crate::core_mechanics::abilities::StandardAttack;
-use crate::core_mechanics::abilities::attack_effect::HealingEffect;
+use crate::core_mechanics::attacks::attack_effect::HealingEffect;
+use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
     DamageDice, DamageType, Defense, FlightManeuverability, MovementMode, PassiveAbility, Sense,
     Size, SpecialDefenseType, SpeedCategory,
 };
-use crate::creatures::{Maneuver, Modifier, Monster};
+use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::MagicalBeast;

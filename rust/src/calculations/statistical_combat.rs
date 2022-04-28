@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{HasAttacks, Attack};
+use crate::core_mechanics::attacks::{HasAttacks, Attack};
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses, HasVitalWounds};
 use crate::creatures::{Creature, HasDamageTracking};
 use std::cmp::max;

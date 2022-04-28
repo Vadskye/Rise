@@ -1,6 +1,6 @@
 use rise::classes::{calc_rank_abilities, Class, ClassArchetype};
 use rise::core_mechanics::HasDamageAbsorption;
-use rise::core_mechanics::abilities::HasAttacks;
+use rise::core_mechanics::attacks::HasAttacks;
 use rise::creatures::{Character, HasModifiers};
 
 #[test]

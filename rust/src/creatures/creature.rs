@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::Attack;
+use crate::core_mechanics::attacks::Attack;
 use crate::core_mechanics::{
     Attribute, MovementMode, PassiveAbility, Sense, Size, VitalWound,
 };

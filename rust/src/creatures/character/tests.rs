@@ -1,6 +1,6 @@
 use super::*;
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
-use crate::core_mechanics::abilities::HasAttacks;
+use crate::core_mechanics::attacks::HasAttacks;
 use creature::Creature;
 
 #[test]
