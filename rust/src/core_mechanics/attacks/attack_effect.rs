@@ -192,6 +192,7 @@ impl DamageOverTimeEffect {
 pub struct DebuffEffect {
     pub debuffs: Vec<Debuff>,
     pub duration: AttackEffectDuration,
+    pub immune_after_effect_ends: bool,
 }
 
 impl DebuffEffect {
@@ -203,10 +204,15 @@ impl DebuffEffect {
             .collect::<Vec<String>>();
         let debuff_text =
             latex_formatting::join_string_list(&debuff_texts).unwrap_or("".to_string());
-        if self.duration == AttackEffectDuration::Brief {
-            return format!("{} {}.", self.duration.description(), debuff_text);
+        let immune_text = if self.immune_after_effect_ends {
+            " After this effect ends, the target becomes immune to this effect until it takes a \\glossterm{short rest}."
         } else {
-            return format!("{} {}.", debuff_text, self.duration.description());
+            ""
+        };
+        if self.duration == AttackEffectDuration::Brief {
+            return format!("{} {}.{}", self.duration.description(), debuff_text, immune_text);
+        } else {
+            return format!("{} {}.{}", debuff_text, self.duration.description(), immune_text);
         }
     }
 }
