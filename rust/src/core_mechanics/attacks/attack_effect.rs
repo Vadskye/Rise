@@ -1,4 +1,5 @@
-use crate::core_mechanics::abilities::{AbilityType, HasAttacks};
+use crate::core_mechanics::abilities::AbilityType;
+use crate::core_mechanics::attacks::HasAttacks;
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
 use crate::creatures::Creature;
 use crate::equipment::Weapon;
@@ -47,7 +48,9 @@ impl SimpleDamageEffect {
     }
 
     fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
-        return self.damage_effect().description(attacker, is_magical, is_strike);
+        return self
+            .damage_effect()
+            .description(attacker, is_magical, is_strike);
     }
 }
 

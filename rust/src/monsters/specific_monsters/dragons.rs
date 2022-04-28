@@ -1,8 +1,11 @@
-use crate::core_mechanics::abilities::attack_effect::{DebuffEffect, AttackEffectDuration, SimpleDamageEffect};
-use crate::core_mechanics::abilities::{AreaTargets, Attack, Cooldown, AttackEffect, Targeting, AreaSize, AbilityTag};
+use crate::core_mechanics::abilities::{AbilityTag, AreaSize, AreaTargets, Cooldown, Targeting};
+use crate::core_mechanics::attacks::attack_effect::{
+    AttackEffectDuration, DebuffEffect, SimpleDamageEffect,
+};
+use crate::core_mechanics::attacks::{Attack, AttackEffect};
 use crate::core_mechanics::{
     DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility,
-    Size, SpeedCategory, SpecialDefenseType, Tag,
+    Size, SpecialDefenseType, SpeedCategory, Tag,
 };
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -454,16 +457,15 @@ impl DragonType {
 
     fn passive_abilities(&self) -> Option<Vec<PassiveAbility>> {
         match self {
-            Self::Black => Some(vec![
-                PassiveAbility {
-                    name: "Underwater Freedom".to_string(),
-                    is_magical: false,
-                    description: "
+            Self::Black => Some(vec![PassiveAbility {
+                name: "Underwater Freedom".to_string(),
+                is_magical: false,
+                description: "
                         A black dragon can breathe underwater indefinitely.
                         In addition, its breath weapon functions at full strength underwater.
-                    ".to_string(),
-                },
-            ]),
+                    "
+                .to_string(),
+            }]),
             _ => None,
         }
     }
@@ -481,14 +483,17 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         cooldown: Some(Cooldown::Brief(None)),
         crit: None,
         defense: Defense::Reflex,
-        hit: AttackEffect::Damage(SimpleDamageEffect {
-            damage_dice: DamageDice::aoe_damage(damage_rank(
-                age_category.level() + dragon_type.level_modifier(),
-                age_category.challenge_rating(),
-            )),
-            damage_types: vec![dragon_type.damage_type()],
-            power_multiplier: 0.5,
-        }.damage_effect()),
+        hit: AttackEffect::Damage(
+            SimpleDamageEffect {
+                damage_dice: DamageDice::aoe_damage(damage_rank(
+                    age_category.level() + dragon_type.level_modifier(),
+                    age_category.challenge_rating(),
+                )),
+                damage_types: vec![dragon_type.damage_type()],
+                power_multiplier: 0.5,
+            }
+            .damage_effect(),
+        ),
         is_magical: false,
         is_strike: false,
         movement: None,
@@ -509,9 +514,9 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         special_attacks.push(f);
     }
 
-    let mut modifiers: Vec<Modifier> = vec![Modifier::Immune(
-        SpecialDefenseType::Damage(dragon_type.damage_type()),
-    )];
+    let mut modifiers: Vec<Modifier> = vec![Modifier::Immune(SpecialDefenseType::Damage(
+        dragon_type.damage_type(),
+    ))];
     if let Some(passive_abilities) = dragon_type.passive_abilities() {
         for p in passive_abilities {
             modifiers.push(Modifier::PassiveAbility(p));

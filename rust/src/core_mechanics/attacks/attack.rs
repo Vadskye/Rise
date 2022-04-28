@@ -1,12 +1,12 @@
-use crate::core_mechanics::abilities::attack_effect::DamageEffect;
-use crate::core_mechanics::abilities::{AbilityTag, AttackEffect, AbilityMovement, Cooldown, Targeting};
+use crate::core_mechanics::abilities::{latex_ability_block, UsageTime};
+use crate::core_mechanics::abilities::{AbilityMovement, AbilityTag, Cooldown, Targeting};
+use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes, Tag};
-use crate::creatures::{Creature, CreatureCategory, HasModifiers, Maneuver, ModifierType};
+use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
 use crate::equipment::{HasArmor, Weapon};
 use crate::latex_formatting;
 
-use super::UsageTime;
-use super::latex::latex_ability_block;
+use super::{AttackEffect, Maneuver};
 
 #[derive(Clone)]
 pub struct Attack {
@@ -330,6 +330,6 @@ impl SimpleSpell {
             is_strike: false,
             movement: None,
             replaces_weapon: None,
-        }
+        };
     }
 }
