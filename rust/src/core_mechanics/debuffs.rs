@@ -31,6 +31,60 @@ impl Debuff {
         return vec![];
     }
 
+    pub fn direct_upgrade(&self) -> Option<Self> {
+        match self {
+            Self::Blinded => None,
+            Self::Charmed => None,
+            Self::Confused => None,
+            Self::Dazed => Some(Self::Stunned),
+            Self::Dazzled => None,
+            Self::Deafened => None,
+            Self::Dominated => None,
+            Self::Frightened(source) => Some(Self::Panicked(source.to_string())),
+            Self::Goaded => None,
+            Self::Grappled => None,
+            Self::Immobilized => Some(Self::Paralyzed),
+            Self::Panicked(_) => None,
+            Self::Paralyzed => None,
+            Self::PartiallyUnaware => None,
+            Self::Prone => None,
+            Self::Shaken(source) => Some(Self::Frightened(source.to_string())),
+            Self::Slowed => None,
+            Self::Squeezing => None,
+            Self::Stunned => None,
+            Self::Unaware => None,
+            Self::Unconscious => None,
+            Self::Vulnerable(_) => None,
+        }
+    }
+
+    pub fn tier(&self) -> i32 {
+        match self {
+            Self::Blinded => 3,
+            Self::Charmed => 3,
+            Self::Confused => 3,
+            Self::Dazed => 1,
+            Self::Dazzled => 1,
+            Self::Deafened => 0,
+            Self::Dominated => 4,
+            Self::Frightened(_) => 2,
+            Self::Goaded => 1,
+            Self::Grappled => 3,
+            Self::Immobilized => 3,
+            Self::Panicked(_) => 3,
+            Self::Paralyzed => 4,
+            Self::PartiallyUnaware => 1,
+            Self::Prone => 2,
+            Self::Shaken(_) => 1,
+            Self::Slowed => 1,
+            Self::Squeezing => 2,
+            Self::Stunned => 2,
+            Self::Unaware => 3,
+            Self::Unconscious => 4,
+            Self::Vulnerable(_) => 2,
+        }
+    }
+
     pub fn name(&self) -> &str {
         match self {
             Self::Blinded => "blinded",
