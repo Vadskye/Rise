@@ -99,6 +99,7 @@ impl Maneuver {
                         d.take_damage_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                             debuffs: vec![Debuff::Slowed],
                             duration: AttackEffectDuration::Condition,
+                            immune_after_effect_ends: false,
                         }));
                     })
             }
@@ -112,6 +113,7 @@ impl Maneuver {
                         d.take_damage_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                             debuffs: vec![Debuff::Dazed],
                             duration: AttackEffectDuration::Brief,
+                            immune_after_effect_ends: false,
                         }));
                     })
             }
@@ -125,6 +127,7 @@ impl Maneuver {
                         d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                             debuffs: vec![Debuff::Slowed],
                             duration: AttackEffectDuration::Condition,
+                            immune_after_effect_ends: false,
                         }));
                     })
             }
@@ -136,6 +139,7 @@ impl Maneuver {
                     d.take_damage_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                         debuffs: vec![Debuff::Dazed],
                         duration: AttackEffectDuration::Brief,
+                        immune_after_effect_ends: false,
                     }));
                 }),
             Self::MightyStrike(rank) => weapon
@@ -173,6 +177,7 @@ impl Maneuver {
                                 SpecialDefenseType::AllDamage,
                             ))],
                             duration: AttackEffectDuration::Condition,
+                            immune_after_effect_ends: false,
                         }));
                     })
             }
@@ -186,6 +191,7 @@ impl Maneuver {
                         d.take_damage_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                             debuffs: vec![Debuff::Stunned],
                             duration: AttackEffectDuration::Brief,
+                            immune_after_effect_ends: false,
                         }));
                     })
             }

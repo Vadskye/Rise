@@ -39,9 +39,9 @@ impl LowDamageAndDebuff {
         // 3. Accuracy
         let mut spendable_ranks = self.rank - minimum_rank;
         let mut range = Range::Short;
-        let mut immune_after_first_success = !self.must_lose_hp;
-        if spendable_ranks >= 2 && immune_after_first_success {
-            immune_after_first_success = false;
+        let mut immune_after_effect_ends = !self.must_lose_hp;
+        if spendable_ranks >= 2 && immune_after_effect_ends {
+            immune_after_effect_ends = false;
             spendable_ranks -= 2;
         }
         if spendable_ranks >= 2 {
@@ -60,6 +60,7 @@ impl LowDamageAndDebuff {
             } else {
                 AttackEffectDuration::Brief
             },
+            immune_after_effect_ends,
         });
         let mut lose_hp_effect = None;
         let mut take_damage_effect = None;

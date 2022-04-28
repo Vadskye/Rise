@@ -96,11 +96,13 @@ impl AgeCategory {
             crit: Some(AttackEffect::Debuff(DebuffEffect {
                 debuffs: vec![Debuff::Frightened("the $name".to_string())],
                 duration: AttackEffectDuration::Condition,
+                immune_after_effect_ends: false,
             })),
             defense: Defense::Mental,
             hit: AttackEffect::Debuff(DebuffEffect {
                 debuffs: vec![Debuff::Shaken("the $name".to_string())],
                 duration: AttackEffectDuration::Condition,
+                immune_after_effect_ends: false,
             }),
             is_magical: false,
             is_strike: false,

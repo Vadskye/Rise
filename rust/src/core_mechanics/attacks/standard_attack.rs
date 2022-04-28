@@ -129,11 +129,13 @@ impl StandardAttack {
                 crit: Some(AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![Debuff::Confused],
                     duration: AttackEffectDuration::Brief,
+                    immune_after_effect_ends: false,
                 })),
                 defense: Defense::Mental,
                 hit: AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![Debuff::Dazed],
                     duration: AttackEffectDuration::Brief,
+                    immune_after_effect_ends: false,
                 }),
                 is_magical: true,
                 is_strike: false,
@@ -461,6 +463,7 @@ impl StandardAttack {
                         vec![Debuff::Dazzled]
                     },
                     duration: AttackEffectDuration::Condition,
+                    immune_after_effect_ends: false,
                 }),
                 name: Attack::generate_modified_name("Glimpse of Divinity", *rank, 7, None),
                 tags: Some(vec![Tag::Ability(AbilityTag::Visual)]),
@@ -562,6 +565,7 @@ impl StandardAttack {
                             Debuff::Stunned
                         }],
                         duration: AttackEffectDuration::Brief,
+                        immune_after_effect_ends: false,
                     })),
                     vampiric_healing: None,
                 }),
@@ -610,6 +614,7 @@ impl StandardAttack {
                         Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                             debuffs: vec![Debuff::Stunned],
                             duration: AttackEffectDuration::Brief,
+                            immune_after_effect_ends: false,
                         }))
                     } else {
                         None
@@ -622,6 +627,7 @@ impl StandardAttack {
                             Debuff::Dazed
                         }],
                         duration: AttackEffectDuration::Brief,
+                        immune_after_effect_ends: false,
                     })),
                     vampiric_healing: None,
                 }),
@@ -649,6 +655,7 @@ impl StandardAttack {
                         Debuff::Shaken("the $name and all other sources of fire".to_string())
                     }],
                     duration: AttackEffectDuration::Condition,
+                    immune_after_effect_ends: false,
                 }),
                 name: if *rank >= 5 {
                     "Primal Pyrophobia".to_string()
