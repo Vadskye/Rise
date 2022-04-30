@@ -79,3 +79,36 @@ pub fn text_number(val: i32) -> String {
         _ => panic!("Invalid number for text_number {}", val),
     }.to_string()
 }
+
+// This is mainly useful for writing tests for long strings in code more easily
+pub fn standardize_indentation(text: &str) -> String {
+    let indentation_pattern = Regex::new(r"(?m)^\s+").unwrap();
+    let no_indentation = indentation_pattern.replace_all(text.trim(), "").to_string();
+    // It's easier to write the strings in code if we have a preceding line break
+    return format!("\n{}", no_indentation);
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn standardize_indentation_works() {
+        let expected = "
+Start with a line break,
+continue for any number of lines,
+don't     remove extraneous mid-line spacing,
+end with no line break";
+        assert_eq!(
+            expected,
+            standardize_indentation(
+                "
+                    Start with a line break,
+                continue for any number of lines,
+            don't     remove extraneous mid-line spacing,
+        end with no line break
+        "
+            ),
+        );
+    }
+}

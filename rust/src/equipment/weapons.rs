@@ -131,10 +131,10 @@ impl StandardWeapon {
             },
             Self::Club => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DamageDice::d10(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "club".to_string(),
-                tags: vec![WeaponTag::VersatileGrip],
+                tags: vec![],
             },
             Self::GiantBoulder => Weapon {
                 // TODO: add Forceful and thrown range limits
