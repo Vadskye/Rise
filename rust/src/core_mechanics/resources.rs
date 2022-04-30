@@ -54,7 +54,7 @@ where
             // Attunement points come exclusively from base class and some abilities
             Resource::AttunementPoint => 0,
             Resource::FatigueTolerance => {
-                self.get_base_attribute(&Attribute::Strength)
+                self.get_base_attribute(&Attribute::Constitution)
                     + (self.get_base_attribute(&Attribute::Willpower) / 2)
             }
             Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),

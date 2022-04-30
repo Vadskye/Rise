@@ -146,7 +146,7 @@ mod calculate_hit_probability {
         let attacker = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
         let attack = attacker.get_attack_by_name("Slam").unwrap();
         assert_eq!(
-            "0.600 single, 0.066 crit",
+            "0.700 single, 0.077 crit",
             calculate_hit_probability(
                 &attack,
                 attacker.calc_accuracy(),
@@ -164,7 +164,7 @@ mod calculate_hit_probability {
         let attacker = Monster::standard_monster(ChallengeRating::Two, level, None, None).creature;
         let attack = attacker.get_attack_by_name("Slam").unwrap();
         assert_eq!(
-            "0.800 single, 0.088 crit",
+            "0.900 single, 0.099 crit",
             calculate_hit_probability(
                 &attack,
                 attacker.calc_accuracy(),
@@ -194,9 +194,9 @@ mod calculate_hit_probability {
 
         assert_eq!(
             [
-                "0.500 single, 0.055 crit",
-                "0.500 single, 0.055 crit",
-                "0.500 single, 0.055 crit"
+                "0.600 single, 0.066 crit",
+                "0.600 single, 0.066 crit",
+                "0.600 single, 0.066 crit"
             ],
             [calc_at_level(1), calc_at_level(10), calc_at_level(20)],
             "at levels 1/10/20",
@@ -301,7 +301,7 @@ mod calc_individual_dpr {
         let level = 1;
         let defender = Character::standard_character(level, true).creature;
 
-        let expected_combat_results = vec!["4.585", "6.395", "9.194", "15.789", "24.252"];
+        let expected_combat_results = vec!["5.462", "7.594", "10.593", "18.220", "27.894"];
         let actual_combat_results: Vec<f64> = ChallengeRating::all()
             .into_iter()
             .map(|cr| {
@@ -330,7 +330,7 @@ mod calc_individual_dpr {
             .collect();
 
         assert_eq!(
-            vec!["0.199%", "0.278%", "0.400%", "0.686%", "1.054%"],
+            vec!["0.237%", "0.330%", "0.461%", "0.792%", "1.213%"],
             percentage,
             "CR 1/2, CR 1, CR 2, CR 4, CR 6",
         );
@@ -341,7 +341,7 @@ mod calc_individual_dpr {
         let level = 20;
         let defender = Character::standard_character(level, true).creature;
 
-        let expected_combat_results = vec!["24.715", "40.041", "61.304", "99.282", "164.376"];
+        let expected_combat_results = vec!["28.567", "45.304", "64.967", "105.692", "172.923"];
         let actual_combat_results: Vec<f64> = ChallengeRating::all()
             .into_iter()
             .map(|cr| {
@@ -370,7 +370,7 @@ mod calc_individual_dpr {
             .collect();
 
         assert_eq!(
-            vec!["0.085%", "0.138%", "0.211%", "0.341%", "0.565%"],
+            vec!["0.095%", "0.151%", "0.217%", "0.352%", "0.576%"],
             percentage,
             "CR 1/2, CR 1, CR 2, CR 4, CR 6",
         );
@@ -401,37 +401,6 @@ mod calc_attack_damage_per_round {
             formatted_adpr(&generic_strike, &attacker, &defender),
             formatted_adpr(&mighty_strike, &attacker, &defender),
         ];
-    }
-
-    #[test]
-    fn standard_character_level_1_vs_self() {
-        let attacker = Character::standard_character(1, true).creature;
-        let defender = Character::standard_character(1, true).creature;
-        assert_eq!(7, defender.calc_defense(&Defense::Armor));
-
-        let expected_strike_results = vec!["5.173", "4.453", "4.832"];
-        assert_eq!(
-            expected_strike_results,
-            standard_adpr(&attacker, &defender),
-            "
-    Certain Strike dpr: 6.5 dph * 0.7 hpr + 5.5 dpc * 0.077 cpr + 1 dpg * 0.2 gpr = 4.55 + 0.4235 + 0.2
-    Generic dpr: 7.5 dph * 0.5 hpr + 5.5 dpc * 0.055 cpr + 2 dpg * 0.2 gpr = 3.75 + 0.3025 + 0.4 gpr
-    Mighty Strike dpr: 11.5 dph * 0.3 hpr + 5.5 dpc * 0.033 cpr + 6 dpg * 0.2 gpr = 3.45 + 0.1815 + 1.2"
-        );
-        assert_eq!(
-            expected_strike_results,
-            standard_adpr(&attacker, &defender),
-            "
-    Certain Strike dpr: 6.5 dph * 0.7 hpr + 5.5 dpc * 0.077 cpr + 1 dpg * 0.2 gpr = 4.55 + 0.4235 + 0.2
-    Generic dpr: 7.5 dph * 0.5 hpr + 5.5 dpc * 0.055 cpr + 2 dpg * 0.2 gpr = 3.75 + 0.3025 + 0.4 gpr
-    Mighty Strike dpr: 11.5 dph * 0.3 hpr + 5.5 dpc * 0.033 cpr + 6 dpg * 0.2 gpr = 3.45 + 0.1815 + 1.2"
-        );
-
-        assert_eq!(
-            find_best_attack(&attacker, &defender).unwrap().name,
-            "Certain Broadsword",
-            "Certain Strike should be the best attack",
-        );
     }
 
     #[test]
@@ -706,7 +675,7 @@ mod calc_rounds_to_live {
         }
 
         assert_eq!(
-            [2.5, 2.5, 2.75, 3.25, 3.25],
+            [2.5, 2.0, 3.0, 3.25, 3.25],
             [
                 calc_at_level(1),
                 calc_at_level(5),
@@ -727,7 +696,7 @@ mod calc_rounds_to_live {
         }
 
         assert_eq!(
-            [4.75, 5.75, 7.25, 8.0, 8.25],
+            [4.0, 5.0, 6.5, 7.25, 7.5],
             [
                 calc_at_level(1),
                 calc_at_level(5),
@@ -752,11 +721,11 @@ mod calc_rounds_to_live {
 
         assert_eq!(
             [
-                [2.75, 2.75],
-                [3.75, 3.75],
-                [4.25, 4.25],
-                [4.75, 5.0],
-                [5.5, 4.25]
+                [2.25, 2.75],
+                [3.25, 3.75],
+                [3.75, 4.5],
+                [4.25, 5.25],
+                [4.75, 4.25]
             ],
             [
                 calc_at_level(1),
@@ -993,7 +962,7 @@ mod run_combat {
         let attacker = Character::standard_character(1, true).creature;
         let defender = Character::standard_character(1, true).creature;
         assert_eq!(
-            "Rounds  5.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
+            "Rounds  4.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
             run_combat(vec![attacker], vec![defender]).to_string(),
             "at level 1",
         );
