@@ -1,5 +1,4 @@
 use crate::latex_formatting;
-use regex::Regex;
 
 use super::{AbilityType, UsageTime};
 
@@ -12,17 +11,16 @@ pub fn latex_ability_block(
 ) -> String {
     return format!(
         "
-            \\begin<{ability_environment}>*<{name}>[{ability_type}]
+            {begin}
                 {header}
                 \\rankline
                 {effect}
-            \\end<{ability_environment}>
+            {end}
         ",
-        ability_environment = ability_type.environment(),
-        effect = effect,
+        begin = ability_type.begin(&latex_formatting::uppercase_first_letter(&name)),
         header = latex_ability_header(formatted_tags, usage_time),
-        ability_type = ability_type.name(),
-        name = latex_formatting::uppercase_first_letter(&name),
+        effect = effect,
+        end = ability_type.end(),
     );
 }
 

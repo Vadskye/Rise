@@ -24,4 +24,26 @@ impl AbilityType {
             Self::Attune(_) => "attuneability",
         }
     }
+
+    fn environment_tag(&self) -> String {
+        match self {
+            Self::Instant => "".to_string(),
+            Self::Duration => "[Duration]".to_string(),
+            Self::Sustain(action) => format!("[\\abilitytag<Sustain> {}]", action),
+            Self::Attune(action) => format!("[\\abilitytag<Attune> {}]", action),
+        }
+    }
+
+    pub fn begin(&self, name: &str) -> String {
+        return format!(
+            "\\begin<{environment}>*<{name}>{tag}",
+            environment = self.environment(),
+            name = name,
+            tag = self.environment_tag()
+        );
+    }
+
+    pub fn end(&self) -> String {
+        return format!("\\end<{environment}>", environment = self.environment())
+    }
 }
