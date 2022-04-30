@@ -1,4 +1,5 @@
 use crate::latex_formatting;
+use regex::Regex;
 
 use super::{AbilityType, UsageTime};
 
