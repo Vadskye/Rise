@@ -419,18 +419,18 @@ For strikes, going from full power -> half power and half -> none buys +3 effect
 
 #### Maneuvers: single-target low damage + debuff
 * Rank 1
-  * Strike with no power, brief r1 debuff
+  * Strike with no power, brief r1 debuff if take damage
 * Rank 3
   * Strike with no power, r2 debuff condition if lose HP - ANCHOR
   * Strike with no power, brief r2 debuff, immune after first success
-  * Strike with no power, r1 debuff condition
+  * Strike with no power, r1 debuff condition if take damage
 * Rank 5
   * Strike with no power, r2 debuff condition if lose HP, otherwise r1 debuff condition
-  * Strike with no power, brief r2 debuff
+  * Strike with no power, brief r2 debuff if take damage
 * Rank 7
   * Strike with no power, r3 debuff condition if lose HP
-  * Strike with no power, brief r3 debuff, immune after first success
-  * Strike with no power, r2 debuff condition
+  * Strike with no power, brief r3 debuff if take damage, immune after first success
+  * Strike with no power, r2 debuff condition if take damage
 
 #### Spells: single-target high damage + debuff
 * Rank 3
@@ -474,16 +474,16 @@ For strikes, going from full power -> half power and half -> none buys +3 effect
 * Rank 1
   * Med range, 1d6 damage, r2 debuff condition if lose HP -- ANCHOR
   * Med range, 1d6 damage, brief r2 debuff, immune after first success
-* Rank 2
-  * Med range, 1d8 damage, r1 debuff condition if take damage
+  * Med range, 1d6 damage, r1 debuff condition if take damage
+    * This is very close to being better than a pure debuff, but the lack of crit effect and non-accuracy scaling makes this rank acceptable
+    * Note that there is no glance damage, which means no hidden +2 accuracy
 * Rank 3
   * Med range, 1d10 damage, r2 debuff condition if lose HP, otherwise r1 debuff condition
   * Med range, 1d10 damage, brief r2 debuff
 * Rank 5
   * Med range, 2d8 damage, r3 debuff condition if lose HP
   * Med range, 2d8 damage, brief r3 debuff, immune after first success
-* Rank 6
-  * Med range, 2d10 damage, r2 debuff condition
+  * Med range, 2d8 damage, r2 debuff condition
 * Rank 7
   * Med range, 4d6 damage, r3 debuff condition if lose HP, otherwise r2 debuff condition
   * Med range, 4d6 damage, brief r3 debuff
