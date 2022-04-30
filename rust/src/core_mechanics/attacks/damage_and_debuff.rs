@@ -42,6 +42,7 @@ impl LowDamageAndDebuff {
         }
         if spendable_ranks >= 4 {
             duration = AttackEffectDuration::Condition;
+            spendable_ranks -= 4;
         }
         let mut maybe_range = None;
         if !self.is_maneuver {
@@ -79,17 +80,18 @@ impl LowDamageAndDebuff {
     }
 
     fn calculate_minimum_rank(&self) -> i32 {
-        // Maneuvers are 2 ranks higher than equivalent spells.
-        let maneuver_modifier = if self.is_maneuver { 2 } else { 0 };
+        let hp_modifier = if self.must_lose_hp { -4 } else { 0 };
+        // Maneuvers are 3 ranks higher than equivalent Short-range spells.
+        let maneuver_modifier = if self.is_maneuver { 3 } else { 0 };
         // The absolute worst possible baseline is a brief debuff with "immune after
         // effect ends". At short range, that would be a rank -6 effect for a tier 1
         // debuff.
         // Although touch range spells could exist in theory, they shouldn't be common
         // and aren't part of generic generators like this.
-        let minimum_rank = self.debuff.tier() * 4 - 10 + maneuver_modifier;
-        if minimum_rank < self.rank {
+        let minimum_rank = self.debuff.tier() * 4 - 10 + hp_modifier + maneuver_modifier;
+        if minimum_rank > self.rank {
             panic!(
-                "Minimum rank is too low for {} debuff: have {}, need {}",
+                "Minimum rank is too high for {} debuff: have {}, need {}",
                 self.debuff.name(),
                 self.rank,
                 minimum_rank
@@ -126,7 +128,7 @@ impl LowDamageAndDebuff {
         };
     }
 
-    pub fn weapon_attack(&self, weapon: Weapon) -> Attack {
+    pub fn weapon_attack(&self, weapon: &Weapon) -> Attack {
         let spent_rank_results = self.spend_ranks();
 
         return weapon
@@ -136,6 +138,114 @@ impl LowDamageAndDebuff {
             .except(|a| a.defense = self.defense)
             .except_hit_damage(|d| d.damage_types.append(&mut self.damage_types.clone()))
             .except_hit_damage(|d| d.lose_hp_effect = spent_rank_results.lose_hp_effect.clone())
+            .except_hit_damage(|d| d.power_multiplier = 0.0)
             .except_hit_damage(|d| d.take_damage_effect = spent_rank_results.take_damage_effect);
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::core_mechanics::SpecialDefenseType;
+    use crate::creatures::{Character, Creature};
+    use crate::equipment::StandardWeapon;
+    use crate::latex_formatting::standardize_indentation;
+
+    fn get_basic_creature() -> Creature {
+        return Character::standard_character(1, false).creature;
+    }
+
+    fn get_standard_ability_block(config: LowDamageAndDebuff) -> String {
+        if config.is_maneuver {
+            return standardize_indentation(
+                &config
+                    .weapon_attack(&StandardWeapon::Club.weapon())
+                    .latex_ability_block(&get_basic_creature()),
+            );
+        } else {
+            return standardize_indentation(
+                &config.attack().latex_ability_block(&get_basic_creature()),
+            );
+        }
+    }
+
+    #[test]
+    fn it_generates_organ_failure() {
+        let organ_failure = LowDamageAndDebuff {
+            damage_types: vec![DamageType::Physical],
+            debuff: Debuff::Stunned,
+            defense: Defense::Fortitude,
+            must_lose_hp: true,
+            is_magical: true,
+            is_maneuver: false,
+            name: "Organ Failure".to_string(),
+            rank: 1,
+            tags: None,
+        };
+
+        assert_eq!(
+            "
+\\begin<durationability>*<Organ Failure>[Duration]
+\\abilitytag{Magical}
+\\rankline
+The $name makes a +0 attack vs. Fortitude against one creature within \\medrange.
+\\hit The target takes 1d4 physical damage.
+Each creature that loses \\glossterm<hit points> from this attack is \\stunned as a \\glossterm{condition}.
+\\end<durationability>",
+            get_standard_ability_block(organ_failure)
+        );
+    }
+
+    #[test]
+    fn it_scales_organ_failure() {
+        let organ_failure = LowDamageAndDebuff {
+            damage_types: vec![DamageType::Physical],
+            debuff: Debuff::Stunned,
+            defense: Defense::Fortitude,
+            must_lose_hp: true,
+            is_magical: true,
+            is_maneuver: false,
+            name: "Super Organ Failure".to_string(),
+            rank: 7,
+            tags: None,
+        };
+
+        assert_eq!(
+            "
+\\begin<durationability>*<Super Organ Failure>[Duration]
+\\abilitytag{Magical}
+\\rankline
+The $name makes a +5 attack vs. Fortitude against one creature within \\longrange.
+\\hit The target takes 2d10 physical damage.
+Each creature that loses \\glossterm<hit points> from this attack is \\stunned as a \\glossterm{condition}.
+\\end<durationability>",
+            get_standard_ability_block(organ_failure)
+        );
+    }
+
+    #[test]
+    fn it_generates_strip_the_flesh() {
+        let strip_the_flesh = LowDamageAndDebuff {
+            damage_types: vec![],
+            debuff: Debuff::Vulnerable(Box::new(SpecialDefenseType::AllDamage)),
+            defense: Defense::Armor,
+            must_lose_hp: true,
+            is_magical: false,
+            is_maneuver: true,
+            name: "Strip the Flesh".to_string(),
+            rank: 3,
+            tags: None,
+        };
+
+        assert_eq!(
+            "
+\\begin<durationability>*<Strip the Flesh>[Duration]
+\\rankline
+The $name makes a +0 \\glossterm{strike} vs. Armor.
+\\hit The target takes 1d10 bludgeoning damage.
+Each creature that loses \\glossterm<hit points> from this attack is \\vulnerable to all damage as a \\glossterm{condition}.
+\\end<durationability>",
+            get_standard_ability_block(strip_the_flesh)
+        );
     }
 }
