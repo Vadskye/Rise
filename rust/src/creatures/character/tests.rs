@@ -19,11 +19,8 @@ fn it_calculates_rank_abilities() {
     fighter_1_abilities.sort();
     assert_eq!(
         vec![
-            "Armor Expertise",
             "Combat Styles",
             "Maneuvers",
-            "Martial Expertise",
-            "Mental Discipline",
         ],
         fighter_1_abilities,
         "Should have correct abilities for a level 1 fighter",
@@ -52,12 +49,9 @@ fn it_calculates_rank_abilities() {
             "Disciplined Force",
             "Enduring Discipline",
             "Equipment Efficiency",
-            "Greater Armor Expertise",
-            "Greater Mental Discipline",
             // 2 of these since they are used for maneuver scaling at ranks 1 and 3
             "Maneuvers",
             "Maneuvers",
-            "Martial Expertise",
             "Martial Force",
             "Martial Maneuver",
             // 2 of these for the invisible rank 3 + 4 scaling, plus the actual rank 3
@@ -86,7 +80,7 @@ fn it_calculates_level_21_fighter_defenses() {
     )
     .creature;
     assert_eq!(
-        "Armor b10 f12",
+        "Armor b10 f11",
         format!(
             "Armor b{} f{}",
             baseline.calc_defense(&Defense::Armor),
@@ -190,13 +184,13 @@ fn it_calculates_level_21_fighter_resources() {
         "3 class + 1 equipment training"
     );
     assert_eq!(
-        "FT b0 f5",
+        "FT b0 f7",
         format!(
             "FT b{} f{}",
             baseline.calc_resource(&Resource::FatigueTolerance),
             fighter.calc_resource(&Resource::FatigueTolerance)
         ),
-        "3 class + 2 combat discipline",
+        "5 class + 2 combat discipline",
     );
     assert_eq!(
         "Insight b0 f2",
@@ -208,13 +202,13 @@ fn it_calculates_level_21_fighter_resources() {
         "2 class",
     );
     assert_eq!(
-        "Skills b0 f4",
+        "Skills b0 f3",
         format!(
             "Skills b{} f{}",
             baseline.calc_resource(&Resource::TrainedSkill),
             fighter.calc_resource(&Resource::TrainedSkill)
         ),
-        "4 class",
+        "3 class",
     );
 }
 
@@ -224,9 +218,9 @@ fn standard_character_statistics_level_1() {
 
     // HasArmor
     assert_eq!(
-        0,
+        1,
         creature.calc_encumbrance(),
-        "Encumbrance: 5 scale mail - 4 str - 1 equipment training",
+        "Encumbrance: 5 scale mail - 4 str",
     );
 
     // HasAttacks
@@ -259,9 +253,9 @@ fn standard_character_statistics_level_1() {
 
     // HasDefenses
     assert_eq!(
-        7,
+        6,
         creature.calc_defense(&Defense::Armor),
-        "Armor: 3 breastplate + 2 shield + 1 fighter + 1 con",
+        "Armor: 3 breastplate + 2 shield + 1 fighter",
     );
     assert_eq!(
         9,
@@ -270,9 +264,9 @@ fn standard_character_statistics_level_1() {
     );
     assert_eq!(3, creature.calc_defense(&Defense::Reflex), "Ref: 3 fighter",);
     assert_eq!(
-        6,
+        5,
         creature.calc_defense(&Defense::Mental),
-        "Ment: 4 fighter + 2 combat discipline",
+        "Ment: 5 fighter",
     );
 
     // HasDamageAbsorption
@@ -292,7 +286,7 @@ fn standard_character_statistics_level_1() {
     assert_eq!(
         7,
         creature.calc_resource(&Resource::FatigueTolerance),
-        "FT: 3 fighter + 4 str",
+        "FT: 5 fighter + 2 con",
     );
     assert_eq!(
         2,
@@ -300,9 +294,9 @@ fn standard_character_statistics_level_1() {
         "Insight: 2 fighter",
     );
     assert_eq!(
-        4,
+        3,
         creature.calc_resource(&Resource::TrainedSkill),
-        "Trained skills: 4 fighter",
+        "Trained skills: 3 fighter",
     );
 }
 
@@ -312,9 +306,9 @@ fn standard_character_statistics_level_10() {
 
     // HasArmor
     assert_eq!(
-        0,
+        1,
         creature.calc_encumbrance(),
-        "Encumbrance: 5 layered hide - 4 str - 1 equip train",
+        "Encumbrance: 5 layered hide - 4 str",
     );
 
     // HasAttacks
@@ -351,9 +345,9 @@ fn standard_character_statistics_level_10() {
 
     // HasDefenses
     assert_eq!(
-        13,
+        12,
         creature.calc_defense(&Defense::Armor),
-        "Armor: 5 level + 4 layered hide + 2 shield + 1 fighter + 1 con",
+        "Armor: 5 level + 4 layered hide + 2 shield + 1 fighter",
     );
     assert_eq!(
         14,
@@ -373,9 +367,9 @@ fn standard_character_statistics_level_10() {
 
     // HasDamageAbsorption
     assert_eq!(
-        44,
+        48,
         creature.calc_hit_points(),
-        "HP: (10 level + 2 con) + 8 martial mastery + 4 magic item",
+        "HP: (10 level + 2 con) + 12 martial resilience + 4 magic item",
     );
     assert_eq!(
         39,
@@ -400,9 +394,9 @@ fn standard_character_statistics_level_10() {
         "Insight: 2 fighter",
     );
     assert_eq!(
-        4,
+        3,
         creature.calc_resource(&Resource::TrainedSkill),
-        "Trained skills: 4 fighter",
+        "Trained skills: 3 fighter",
     );
 }
 
@@ -455,9 +449,9 @@ fn standard_character_statistics_level_20() {
 
     // HasDefenses
     assert_eq!(
-        18,
+        17,
         creature.calc_defense(&Defense::Armor),
-        "Armor: 10 level + 4 full plate + 2 shield + 1 fighter + 1 con",
+        "Armor: 10 level + 4 full plate + 2 shield + 1 fighter",
     );
     assert_eq!(
         19,
@@ -477,9 +471,9 @@ fn standard_character_statistics_level_20() {
 
     // HasDamageAbsorption
     assert_eq!(
-        137,
+        144,
         creature.calc_hit_points(),
-        "HP: (20 level + 2 con) + 21 martial mastery + 16 magic item",
+        "HP: (20 level + 2 con) + 28 martial resilience + 16 magic item",
     );
     assert_eq!(
         120,
@@ -504,8 +498,8 @@ fn standard_character_statistics_level_20() {
         "Insight: 2 fighter",
     );
     assert_eq!(
-        4,
+        3,
         creature.calc_resource(&Resource::TrainedSkill),
-        "Trained skills: 4 fighter",
+        "Trained skills: 3 fighter",
     );
 }
