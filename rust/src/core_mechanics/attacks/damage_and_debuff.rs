@@ -40,9 +40,9 @@ impl LowDamageAndDebuff {
             immune_after_effect_ends = false;
             spendable_ranks -= 2;
         }
-        if spendable_ranks >= 4 {
+        if spendable_ranks >= 2 {
             duration = AttackEffectDuration::Condition;
-            spendable_ranks -= 4;
+            spendable_ranks -= 2;
         }
         let mut maybe_range = None;
         if !self.is_maneuver {
@@ -56,7 +56,10 @@ impl LowDamageAndDebuff {
                 maybe_range = Some(Range::Short);
             }
         }
-        let accuracy = spendable_ranks;
+        // Maneuvers have half accuracy scaling since their base damage is higher
+        let accuracy = if self.is_maneuver {
+            spendable_ranks / 2
+        } else { spendable_ranks };
 
         let triggered_effect = AttackTriggeredEffect::Debuff(DebuffEffect {
             debuffs: vec![self.debuff.clone()],
@@ -84,11 +87,11 @@ impl LowDamageAndDebuff {
         // Maneuvers are 3 ranks higher than equivalent Short-range spells.
         let maneuver_modifier = if self.is_maneuver { 3 } else { 0 };
         // The absolute worst possible baseline is a brief debuff with "immune after
-        // effect ends". At short range, that would be a rank -6 effect for a tier 1
+        // effect ends". At short range, that would be a rank -4 effect for a tier 1
         // debuff.
         // Although touch range spells could exist in theory, they shouldn't be common
         // and aren't part of generic generators like this.
-        let minimum_rank = self.debuff.tier() * 4 - 10 + hp_modifier + maneuver_modifier;
+        let minimum_rank = self.debuff.tier() * 4 - 8 + hp_modifier + maneuver_modifier;
         if minimum_rank > self.rank {
             panic!(
                 "Minimum rank is too high for {} debuff: have {}, need {}",
@@ -246,6 +249,84 @@ The $name makes a +0 \\glossterm{strike} vs. Armor.
 Each creature that loses \\glossterm<hit points> from this attack is \\vulnerable to all damage as a \\glossterm{condition}.
 \\end<durationability>",
             get_standard_ability_block(strip_the_flesh)
+        );
+    }
+
+    #[test]
+    fn it_generates_eye_poke() {
+        let eye_poke = LowDamageAndDebuff {
+            damage_types: vec![],
+            debuff: Debuff::Dazzled,
+            defense: Defense::Armor,
+            must_lose_hp: false,
+            is_magical: false,
+            is_maneuver: true,
+            name: "Eye Poke".to_string(),
+            rank: 1,
+            tags: None,
+        };
+
+        assert_eq!(
+            "
+\\begin<durationability>*<Eye Poke>[Duration]
+\\rankline
+The $name makes a +0 \\glossterm{strike} vs. Armor.
+\\hit The target takes 1d10 bludgeoning damage.
+Each creature damaged by this attack is \\glossterm{briefly} \\dazzled.
+\\end<durationability>",
+            get_standard_ability_block(eye_poke)
+        );
+    }
+
+    #[test]
+    fn it_generates_greater_eye_poke() {
+        let eye_poke = LowDamageAndDebuff {
+            damage_types: vec![],
+            debuff: Debuff::Dazzled,
+            defense: Defense::Armor,
+            must_lose_hp: false,
+            is_magical: false,
+            is_maneuver: true,
+            name: "Greater Eye Poke".to_string(),
+            rank: 3,
+            tags: None,
+        };
+
+        assert_eq!(
+            "
+\\begin<durationability>*<Greater Eye Poke>[Duration]
+\\rankline
+The $name makes a +0 \\glossterm{strike} vs. Armor.
+\\hit The target takes 1d10 bludgeoning damage.
+Each creature damaged by this attack is \\dazzled as a \\glossterm{condition}.
+\\end<durationability>",
+            get_standard_ability_block(eye_poke)
+        );
+    }
+
+    #[test]
+    fn it_generates_super_eye_poke() {
+        let eye_poke = LowDamageAndDebuff {
+            damage_types: vec![],
+            debuff: Debuff::Dazzled,
+            defense: Defense::Armor,
+            must_lose_hp: false,
+            is_magical: false,
+            is_maneuver: true,
+            name: "Super Eye Poke".to_string(),
+            rank: 7,
+            tags: None,
+        };
+
+        assert_eq!(
+            "
+\\begin<durationability>*<Super Eye Poke>[Duration]
+\\rankline
+The $name makes a +2 \\glossterm{strike} vs. Armor.
+\\hit The target takes 1d10 bludgeoning damage.
+Each creature damaged by this attack is \\dazzled as a \\glossterm{condition}.
+\\end<durationability>",
+            get_standard_ability_block(eye_poke)
         );
     }
 }
