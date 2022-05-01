@@ -430,7 +430,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
-                        True vampires have fully awakenened their vampiric potential.
+                        True vampires have fully awakened their vampiric potential.
                         They have abandoned the world of the living and embraced their need for blood.
                     "),
                 ])),
