@@ -2,6 +2,12 @@ use regex::Regex;
 use std::fmt::Display;
 
 pub fn latexify(text: String) -> String {
+    let mut short_text = text.clone().trim().to_string();
+    short_text.truncate(50);
+    if text.contains("\t") {
+        eprintln!("Problem latexifying text: contains a tab ({})", short_text)
+    }
+
     let text = text
         .replace("<", "{")
         .replace(">", "}")
@@ -77,7 +83,8 @@ pub fn text_number(val: i32) -> String {
         9 => "nine",
         10 => "ten",
         _ => panic!("Invalid number for text_number {}", val),
-    }.to_string()
+    }
+    .to_string()
 }
 
 // This is mainly useful for writing tests for long strings in code more easily

@@ -1,9 +1,9 @@
-use crate::core_mechanics::attacks::StandardAttack;
+use crate::core_mechanics::attacks::{LowDamageAndDebuff, StandardAttack};
 use crate::core_mechanics::{
-    Attribute, DamageType, FlightManeuverability, HasAttributes, MovementMode, Sense, Size,
-    SpecialDefenseType, SpeedCategory, StandardPassiveAbility,
+    Attribute, DamageType, Debuff, Defense, FlightManeuverability, HasAttributes, MovementMode,
+    PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory, StandardPassiveAbility,
 };
-use crate::creatures::{Modifier, ModifierBundle, Monster};
+use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
@@ -291,13 +291,45 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
         level: i32,
         modifiers: Option<Vec<Modifier>>,
         name: String,
-        size: Size,
         trained_skills: Option<Vec<Skill>>,
-        weapons: Vec<Weapon>,
     }
 
     impl Vampire {
         fn monster(self) -> Monster {
+            let mut modifiers = self.modifiers.unwrap_or(vec![]);
+            modifiers.push(Modifier::PassiveAbility(PassiveAbility {
+                description: r"
+                    As a standard action, a vampire can \trait{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or its normal humanoid form.
+                    While in its bat form, it gains \trait{blindsense} (120 ft.) and a 40 foot fly speed with a 60 ft. height limit.
+                    While in its mist form, it becomes \trait{incorporeal}, and gains a 20 foot fly speed with a 60 ft. height limit and perfect maneuverability.
+
+                    In either non-humanoid form, the vampire is unable to use any standard action other than to resume its humanoid form.
+                    This ability is almost exclusively used for mobility rather than combat.
+                ".to_string(),
+                is_magical: true,
+                name: "Nightshifter".to_string(),
+            }));
+            modifiers.push(Modifier::Attack(
+                LowDamageAndDebuff {
+                    damage_types: vec![],
+                    debuff: Debuff::Stunned,
+                    defense: Defense::Armor,
+                    must_lose_hp: true,
+                    is_magical: true,
+                    is_maneuver: true,
+                    name: "Drink Blood".to_string(),
+                    rank: calculate_standard_rank(self.level, self.challenge_rating),
+                    tags: None,
+                }
+                .weapon_attack(&StandardWeapon::MonsterBite.weapon()),
+            ));
+            modifiers.push(Modifier::Attack(
+                StandardAttack::VampireAlluringGaze(calculate_standard_rank(
+                    self.level,
+                    self.challenge_rating,
+                ))
+                .attack(),
+            ));
             return FullUndeadDefinition {
                 // From def
                 attributes: self.attributes,
@@ -305,16 +337,20 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 knowledge: self.knowledge,
                 level: self.level,
                 name: self.name,
-                modifiers: self.modifiers,
-                size: self.size,
+                modifiers: Some(modifiers),
                 trained_skills: self.trained_skills,
-                weapons: self.weapons,
 
                 alignment: "Usually lawful evil".to_string(),
                 description: None,
                 movement_modes: None,
                 senses: Some(vec![Sense::Darkvision(60)]),
-            }.monster();
+                size: Size::Medium,
+                weapons: vec![
+                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::Slam.weapon(),
+                ],
+            }
+            .monster();
         }
     }
 
@@ -329,6 +365,27 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
             "),
         ])),
         monsters: vec![
+            Vampire {
+                attributes: vec![4, 6, 2, -3, 2, 2],
+                challenge_rating: ChallengeRating::Four,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Fledgling vampires are the weakest form of vampire.
+                        They are recently turned, and some still feel a strong allegiance to their old life.
+                        Despite their inexperience, they still possess most of a vampire's powerful abilities, so they should not be taken lightly.
+                    "),
+                    (5, "
+                        Most fledgling vampires are still growing accustomed to their need for blood.
+                        They may attempt to fast, which weakens them, before being consumed by an uncontrollable bloodlust.
+                    "),
+                ])),
+                level: 4,
+                modifiers: None,
+                name: "Fledgling Vampire".to_string(),
+                trained_skills: Some(vec![
+                    Skill::Awareness,
+                ]),
+            }.monster(),
         ],
     }));
 }
