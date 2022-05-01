@@ -28,7 +28,7 @@ impl ModifierBundle {
                       In addition, it gains a +10 bonus to the Flexibility skill.
                     ".to_string(),
                     is_magical: false,
-                    name: "Incorporeal".to_string(),
+                    name: "Amorphous".to_string(),
                 }),
             ],
             Self::Incorporeal => vec![
