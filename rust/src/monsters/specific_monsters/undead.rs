@@ -104,185 +104,6 @@ pub fn undeads() -> Vec<MonsterEntry> {
     return monsters;
 }
 
-fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
-    let skeletons = generate_corpses()
-        .iter()
-        .map(|c| convert_to_skeleton(c))
-        .collect();
-
-    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
-        name: "Skeletons".to_string(),
-        knowledge: Some(Knowledge::new(vec![
-            (0, "
-                Skeletons are the reanimated corpses of once-living creatures.
-                They are the most basic form of animated undead, since they can be created from corpses that have been reduced to mere bones.
-                Creating a skeleton is generally regarded as a fundamentally evil act.
-            "),
-            (5, "
-                Skeletons retain all of the \\glossterm{mundane} abilities of the reanimated creature, but lose all \\glossterm{magical} abilities.
-                They retain the ability to wield the same weapons and armor as the original creature, but they are completely mindless.
-                In addition, skeletons are always more agile and less strong than the original creature.
-                All skeletons are vulnerable to bludgeoning damage thanks to their exposed and easily crumpled bones.
-            "),
-            (10, "
-                Creating a skeleton from a corpse requires splintering the soul of the creature the corpse belonged to.
-                The soul splinter created this way is used to give the skeleton its agency.
-                This is unpleasant for the dead creature in its afterlife, though not dangerous.
-
-                Skeletons are never created by ambient necromantic magic.
-                They have no internal intelligence or agency of any kind, and precisely obey the instructions of their controllers.
-                If their instructions are poorly worded or incomplete, skeletons may fail to fight even if attacked.
-            "),
-        ])),
-        monsters: skeletons,
-    }));
-}
-
-fn generate_corpses() -> Vec<Monster> {
-    let mut corpses = vec![];
-    let mut corpse_entries = vec![];
-    add_humans(&mut corpse_entries);
-    add_orcs(&mut corpse_entries);
-
-    for entry in corpse_entries {
-        if let MonsterEntry::MonsterGroup(group) = entry {
-            for monster in group.monsters {
-                corpses.push(monster);
-            }
-        } else if let MonsterEntry::Monster(monster) = entry {
-            corpses.push(monster);
-        }
-    }
-
-    return corpses;
-}
-
-fn convert_to_skeleton(monster: &Monster) -> Monster {
-    let ref creature = monster.creature;
-    // +1 str, +1 dex, -2 con, fixed int/per/wil
-    let max_attribute = monster.challenge_rating.max_base_attribute();
-    let attributes = vec![
-        min(
-            max_attribute,
-            creature.get_base_attribute(&Attribute::Strength) + 1,
-        ),
-        min(
-            max_attribute,
-            creature.get_base_attribute(&Attribute::Dexterity) + 1,
-        ),
-        max(
-            -9,
-            creature.get_base_attribute(&Attribute::Constitution) - 2,
-        ),
-        -7,
-        0,
-        0,
-    ];
-
-    let mut modifiers = vec![Modifier::Vulnerable(SpecialDefenseType::Damage(
-        DamageType::Bludgeoning,
-    ))];
-    for im in &creature.identified_modifiers {
-        if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
-            modifiers.push(im.modifier.clone());
-        }
-    }
-
-    let mut senses = creature.senses.as_ref().unwrap_or(&vec![]).clone();
-    if !senses.iter().any(|s| {
-        if let Sense::Darkvision(_) = s {
-            true
-        } else {
-            false
-        }
-    }) {
-        senses.push(Sense::Darkvision(60));
-    }
-
-    return FullUndeadDefinition {
-        alignment: "Always neutral evil".to_string(),
-        attributes,
-        challenge_rating: monster.challenge_rating,
-        description: monster.description.clone(),
-        knowledge: None,
-        level: creature.level,
-        modifiers: Some(ModifierBundle::Mindless.plus_modifiers(modifiers)),
-        movement_modes: Some(creature.movement_modes.clone()),
-        name: format!("Skeletal {}", creature.name.as_ref().unwrap()),
-        senses: Some(senses),
-        size: creature.size.clone(),
-        trained_skills: None,
-        weapons: creature.weapons.clone(),
-    }
-    .monster();
-}
-
-fn convert_to_zombie(monster: &Monster) -> Monster {
-    let creature = &monster.creature;
-    // +2 str, -2 dex, +2 con, fixed int/per/wil
-    let max_attribute = monster.challenge_rating.max_base_attribute();
-    let attributes = vec![
-        min(
-            max_attribute,
-            creature.get_base_attribute(&Attribute::Strength) + 2,
-        ),
-        max(-9, creature.get_base_attribute(&Attribute::Dexterity) - 2),
-        min(
-            max_attribute,
-            creature.get_base_attribute(&Attribute::Constitution) + 2,
-        ),
-        -7,
-        0,
-        -3,
-    ];
-
-    let mut modifiers = vec![Modifier::Vulnerable(SpecialDefenseType::Damage(
-        DamageType::Slashing,
-    ))];
-    for im in &creature.identified_modifiers {
-        if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
-            modifiers.push(im.modifier.clone());
-        }
-    }
-
-    let mut senses = creature.senses.as_ref().unwrap_or(&vec![]).clone();
-    if !senses.iter().any(|s| {
-        if let Sense::Darkvision(_) = s {
-            true
-        } else {
-            false
-        }
-    }) {
-        senses.push(Sense::Darkvision(60));
-    }
-
-    let mut movement_modes = vec![];
-    if creature.movement_modes.len() > 0 {
-        for ref original_mode in &creature.movement_modes {
-            movement_modes.push(original_mode.slower())
-        }
-    } else {
-        movement_modes.push(MovementMode::Land(SpeedCategory::Slow));
-    }
-
-    return FullUndeadDefinition {
-        alignment: "Always neutral evil".to_string(),
-        attributes,
-        challenge_rating: monster.challenge_rating,
-        description: monster.description.clone(),
-        knowledge: None,
-        level: creature.level,
-        modifiers: Some(modifiers),
-        movement_modes: Some(movement_modes),
-        name: format!("Zombie {}", creature.name.as_ref().unwrap()),
-        senses: Some(senses),
-        size: creature.size.clone(),
-        trained_skills: None,
-        weapons: vec![StandardWeapon::Slam.weapon()],
-    }
-    .monster();
-}
-
 pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
     struct Vampire {
         attributes: Vec<i32>,
@@ -467,6 +288,185 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
             }.monster(),
         ],
     }));
+}
+
+fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
+    let skeletons = generate_corpses()
+        .iter()
+        .map(|c| convert_to_skeleton(c))
+        .collect();
+
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Skeletons".to_string(),
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Skeletons are the reanimated corpses of once-living creatures.
+                They are the most basic form of animated undead, since they can be created from corpses that have been reduced to mere bones.
+                Creating a skeleton is generally regarded as a fundamentally evil act.
+            "),
+            (5, "
+                Skeletons retain all of the \\glossterm{mundane} abilities of the reanimated creature, but lose all \\glossterm{magical} abilities.
+                They retain the ability to wield the same weapons and armor as the original creature, but they are completely mindless.
+                In addition, skeletons are always more agile and less strong than the original creature.
+                All skeletons are vulnerable to bludgeoning damage thanks to their exposed and easily crumpled bones.
+            "),
+            (10, "
+                Creating a skeleton from a corpse requires splintering the soul of the creature the corpse belonged to.
+                The soul splinter created this way is used to give the skeleton its agency.
+                This is unpleasant for the dead creature in its afterlife, though not dangerous.
+
+                Skeletons are never created by ambient necromantic magic.
+                They have no internal intelligence or agency of any kind, and precisely obey the instructions of their controllers.
+                If their instructions are poorly worded or incomplete, skeletons may fail to fight even if attacked.
+            "),
+        ])),
+        monsters: skeletons,
+    }));
+}
+
+fn generate_corpses() -> Vec<Monster> {
+    let mut corpses = vec![];
+    let mut corpse_entries = vec![];
+    add_humans(&mut corpse_entries);
+    add_orcs(&mut corpse_entries);
+
+    for entry in corpse_entries {
+        if let MonsterEntry::MonsterGroup(group) = entry {
+            for monster in group.monsters {
+                corpses.push(monster);
+            }
+        } else if let MonsterEntry::Monster(monster) = entry {
+            corpses.push(monster);
+        }
+    }
+
+    return corpses;
+}
+
+fn convert_to_skeleton(monster: &Monster) -> Monster {
+    let ref creature = monster.creature;
+    // +1 str, +1 dex, -2 con, fixed int/per/wil
+    let max_attribute = monster.challenge_rating.max_base_attribute();
+    let attributes = vec![
+        min(
+            max_attribute,
+            creature.get_base_attribute(&Attribute::Strength) + 1,
+        ),
+        min(
+            max_attribute,
+            creature.get_base_attribute(&Attribute::Dexterity) + 1,
+        ),
+        max(
+            -9,
+            creature.get_base_attribute(&Attribute::Constitution) - 2,
+        ),
+        -7,
+        0,
+        0,
+    ];
+
+    let mut modifiers = vec![Modifier::Vulnerable(SpecialDefenseType::Damage(
+        DamageType::Bludgeoning,
+    ))];
+    for im in &creature.identified_modifiers {
+        if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
+            modifiers.push(im.modifier.clone());
+        }
+    }
+
+    let mut senses = creature.senses.as_ref().unwrap_or(&vec![]).clone();
+    if !senses.iter().any(|s| {
+        if let Sense::Darkvision(_) = s {
+            true
+        } else {
+            false
+        }
+    }) {
+        senses.push(Sense::Darkvision(60));
+    }
+
+    return FullUndeadDefinition {
+        alignment: "Always neutral evil".to_string(),
+        attributes,
+        challenge_rating: monster.challenge_rating,
+        description: monster.description.clone(),
+        knowledge: None,
+        level: creature.level,
+        modifiers: Some(ModifierBundle::Mindless.plus_modifiers(modifiers)),
+        movement_modes: Some(creature.movement_modes.clone()),
+        name: format!("Skeletal {}", creature.name.as_ref().unwrap()),
+        senses: Some(senses),
+        size: creature.size.clone(),
+        trained_skills: None,
+        weapons: creature.weapons.clone(),
+    }
+    .monster();
+}
+
+fn convert_to_zombie(monster: &Monster) -> Monster {
+    let creature = &monster.creature;
+    // +2 str, -2 dex, +2 con, fixed int/per/wil
+    let max_attribute = monster.challenge_rating.max_base_attribute();
+    let attributes = vec![
+        min(
+            max_attribute,
+            creature.get_base_attribute(&Attribute::Strength) + 2,
+        ),
+        max(-9, creature.get_base_attribute(&Attribute::Dexterity) - 2),
+        min(
+            max_attribute,
+            creature.get_base_attribute(&Attribute::Constitution) + 2,
+        ),
+        -7,
+        0,
+        -3,
+    ];
+
+    let mut modifiers = vec![Modifier::Vulnerable(SpecialDefenseType::Damage(
+        DamageType::Slashing,
+    ))];
+    for im in &creature.identified_modifiers {
+        if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
+            modifiers.push(im.modifier.clone());
+        }
+    }
+
+    let mut senses = creature.senses.as_ref().unwrap_or(&vec![]).clone();
+    if !senses.iter().any(|s| {
+        if let Sense::Darkvision(_) = s {
+            true
+        } else {
+            false
+        }
+    }) {
+        senses.push(Sense::Darkvision(60));
+    }
+
+    let mut movement_modes = vec![];
+    if creature.movement_modes.len() > 0 {
+        for ref original_mode in &creature.movement_modes {
+            movement_modes.push(original_mode.slower())
+        }
+    } else {
+        movement_modes.push(MovementMode::Land(SpeedCategory::Slow));
+    }
+
+    return FullUndeadDefinition {
+        alignment: "Always neutral evil".to_string(),
+        attributes,
+        challenge_rating: monster.challenge_rating,
+        description: monster.description.clone(),
+        knowledge: None,
+        level: creature.level,
+        modifiers: Some(modifiers),
+        movement_modes: Some(movement_modes),
+        name: format!("Zombie {}", creature.name.as_ref().unwrap()),
+        senses: Some(senses),
+        size: creature.size.clone(),
+        trained_skills: None,
+        weapons: vec![StandardWeapon::Slam.weapon()],
+    }
+    .monster();
 }
 
 fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
