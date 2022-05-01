@@ -7,6 +7,9 @@ pub fn latexify(text: String) -> String {
     if text.contains("\t") {
         eprintln!("Problem latexifying text: contains a tab ({})", short_text)
     }
+    if text.contains("\r") {
+        eprintln!("Problem latexifying text: contains a carriage return ({})", short_text)
+    }
 
     let text = text
         .replace("<", "{")
