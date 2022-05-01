@@ -58,7 +58,7 @@ impl StandardPassiveAbility {
             },
             Self::Undead => PassiveAbility {
                 description: r"
-                  The $name is not a \glossterm{living} creature, and it is affected in a special way by spells from the \sphere{vivimancy} \glossterm{mystic sphere} (see \pcref{Vivimancy}).
+                  The $name is \trait{undead} instead of \glossterm{living}, and it is affected in a special way by healing effects (see \pcref{Undead})).
                 ".to_string(),
                 is_magical: false,
                 name: "Undead".to_string(),
