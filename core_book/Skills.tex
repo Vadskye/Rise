@@ -108,6 +108,8 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 \newpage
 \skill{Balance}{Dex}
     The Balance skill represents your ability to maintain your balance and poise on unsteady surfaces.
+    The base \glossterm{difficulty value} to balance on a normal surface is 0.
+    Generally, creatures only have to roll Balance checks if the surface is unsteady for some reason.
 
     \subsection{Common Balance Tasks}
         \parhead{Agile Charge}\label{Agile Charge} You can make a \glossterm{difficulty value} 15 Balance check while using the \ability{charge} ability to change directions while charging (see \pcref{Charge}).
@@ -121,27 +123,8 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         Success means you move along the surface.
         Critical failure means you fall prone.
 
-    \subsection{Unsteady Surfaces}
-        An unsteady surface is a surface which is difficult to balance on.
-        In general, a surface that is at least two feet wide has a base \glossterm{difficulty value} of 0.
-        It is only considered unsteady if it is slippery, mobile, or uneven.
-        Narrower surfaces always unsteady.
-        Their difficulty value is based on their width, as given in \trefnp{Narrow Surface Difficulty Values}.
-
-        \begin{dtable}
-            \lcaption{Narrow Surface Difficulty Values}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Surface Width}            & \tb{Difficulty Value} \tableheaderrule
-                At least two feet wide         & 0                        \\
-                At least one foot wide         & 5                        \\
-                At least six inches wide       & 10                        \\
-                At least two inches wide       & 15                       \\
-                Less than than two inches wide & 20                       \\
-            \end{dtabularx}
-        \end{dtable}
-
     \subsection{Common Balance Modifiers}
-        There are three common circumstances that make Balance checks more difficult: slippery, mobile, and uneven surfaces.
+        There are four common circumstances that make Balance checks more difficult: slippery, mobile, narrow, and uneven surfaces.
         Slightly impaired surfaces increase the \glossterm{difficulty value} by 2.
         Significantly impaired surfaces increase the DV by 5 or more.
         If a surface is impaired for multiple reasons, the difficulty modifiers stack.
