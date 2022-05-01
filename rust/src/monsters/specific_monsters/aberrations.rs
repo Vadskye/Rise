@@ -72,7 +72,6 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 Four pulsating dark blue orifices line the bottom of an aboleth's body and secrete gray slime that smells like rancid grease.
                 This slime coats its tentacles, and creatures struck by the tentacles can have their skin transformed into a similar slime.
                 Aboleths are amphibious, and they are able to drag themselves along with their tentacles on land, though they are much faster in the water.
-                A typical aboleth weighs about 6,500 pounds.
             "),
             (10, "
                 Aboleths can completely dominate the minds of lesser creatures.

@@ -22,6 +22,7 @@ pub enum StandardAttack {
     MonsterSpikes(i32),
     OozeDissolve(i32),
     OozeEngulf(i32),
+    VampireAlluringGaze(i32),
     YrthakThunderingHide,
 
     // Character/shared abilities
@@ -204,6 +205,19 @@ impl StandardAttack {
                 tags: None,
                 targeting: Targeting::MovementPath,
             },
+            Self::VampireAlluringGaze(rank) => SimpleSpell {
+                accuracy: max(0, rank - 3),
+                crit: Some(AttackEffect::MustRemoveTwice),
+                defense: Defense::Mental,
+                hit: AttackEffect::Debuff(DebuffEffect {
+                    debuffs: vec![Debuff::Charmed("the $name".to_string())],
+                    duration: AttackEffectDuration::Condition,
+                    immune_after_effect_ends: true,
+                }),
+                name: "Alluring Gaze".to_string(),
+                tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
+                targeting: Targeting::Creature(Range::Medium),
+            }.attack(),
             Self::YrthakThunderingHide => Attack {
                 accuracy: 0,
                 cooldown: None,
