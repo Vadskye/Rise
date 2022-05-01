@@ -1,7 +1,7 @@
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{MovementMode, Sense, Size};
 use crate::creatures::{Modifier, Monster};
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::{StandardWeapon, Weapon, WeaponTag};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::MonstrousHumanoid;
 use crate::monsters::knowledge::Knowledge;
@@ -112,6 +112,10 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
     // This uses a new struct, so it's cleaner to split it into a separate function
     add_ogres(&mut monsters);
 
+    let giant_club = StandardWeapon::Club
+        .weapon()
+        .except(|w| w.tags.push(WeaponTag::Sweeping(1)));
+
     // TODO: add Giant language
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         knowledge: Some(Knowledge::new(vec![
@@ -160,10 +164,8 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                 size: Size::Huge,
                 trained_skills: Some(vec![]),
                 weapons: vec![
-                    // TODO: define custom range limits
                     StandardWeapon::GiantBoulder.weapon(),
-                    // TODO: add sweeping strike or intrinsic sweep
-                    StandardWeapon::Greatclub.weapon(),
+                    giant_club.clone(),
                 ],
             }.monster(),
             FullMonstrousHumanoidDefinition {
@@ -192,10 +194,8 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                 size: Size::Gargantuan,
                 trained_skills: Some(vec![]),
                 weapons: vec![
-                    // TODO: define custom range limits
                     StandardWeapon::GiantBoulder.weapon(),
-                    // TODO: add sweeping strike or intrinsic sweep
-                    StandardWeapon::Greatclub.weapon(),
+                    giant_club.clone(),
                 ],
             }.monster(),
         ],
@@ -237,7 +237,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                 description: None,
                 size: Size::Large,
                 weapons: vec![
-                    StandardWeapon::Greatclub.weapon(),
+                    StandardWeapon::Club.weapon(),
                     StandardWeapon::Javelin.weapon(),
                 ],
             }
@@ -258,7 +258,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             "),
             (10, "
               Ogres are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as unorganized individuals.
-              They use greatclubs in battle to tenderize their meat instead of wastefully hacking off bits.
+              They use massive clubs in battle to tenderize their meat instead of wastefully hacking off bits.
             "),
         ])),
         name: "Ogres".to_string(),

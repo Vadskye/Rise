@@ -77,7 +77,7 @@ impl AgeCategory {
         }
     }
 
-    // TODO: handle immunity after initial attack, handle automatic trigger
+    // TODO: handle automatic trigger
     fn frightful_presence(&self) -> Option<Attack> {
         let size = match self {
             Self::Wyrmling => None,
@@ -102,7 +102,7 @@ impl AgeCategory {
             hit: AttackEffect::Debuff(DebuffEffect {
                 debuffs: vec![Debuff::Shaken("the $name".to_string())],
                 duration: AttackEffectDuration::Condition,
-                immune_after_effect_ends: false,
+                immune_after_effect_ends: true,
             }),
             is_magical: false,
             is_strike: false,
@@ -479,7 +479,6 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
     } else {
         age_category.breath_weapon_cone()
     };
-    // TODO: add cooldown
     return Attack {
         accuracy: 0,
         cooldown: Some(Cooldown::Brief(None)),
