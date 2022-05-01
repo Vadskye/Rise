@@ -4,6 +4,7 @@ use crate::core_mechanics::{
     PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory, StandardPassiveAbility,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
@@ -64,8 +65,9 @@ impl FullUndeadDefinition {
 pub fn undeads() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
-    add_skeletons(&mut monsters);
+    add_ghouls(&mut monsters);
     add_vampires(&mut monsters);
+    add_skeletons(&mut monsters);
     add_zombies(&mut monsters);
 
     monsters.push(MonsterEntry::Monster(FullUndeadDefinition {
@@ -102,6 +104,99 @@ pub fn undeads() -> Vec<MonsterEntry> {
     }.monster()));
 
     return monsters;
+}
+
+pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
+    struct Ghoul {
+        attributes: Vec<i32>,
+        challenge_rating: ChallengeRating,
+        knowledge: Option<Knowledge>,
+        level: i32,
+        modifiers: Option<Vec<Modifier>>,
+        name: String,
+        trained_skills: Option<Vec<Skill>>,
+    }
+
+    impl Ghoul {
+        fn monster(self) -> Monster {
+            let mut modifiers = self.modifiers.unwrap_or(vec![]);
+            modifiers.push(Modifier::Attack(
+                StandardAttack::GhoulBite(calculate_standard_rank(
+                    self.level,
+                    self.challenge_rating,
+                ))
+                .attack(),
+            ));
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)));
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(AbilityTag::Emotion)));
+            return FullUndeadDefinition {
+                // From def
+                attributes: self.attributes,
+                challenge_rating: self.challenge_rating,
+                knowledge: self.knowledge,
+                level: self.level,
+                name: self.name,
+                modifiers: Some(modifiers),
+                trained_skills: self.trained_skills,
+
+                alignment: "Always neutral evil".to_string(),
+                description: None,
+                movement_modes: None,
+                senses: Some(vec![Sense::Darkvision(60)]),
+                size: Size::Medium,
+                weapons: vec![
+                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MonsterClaws.weapon(),
+                ],
+            }
+            .monster();
+        }
+    }
+
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Ghouls".to_string(),
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Ghouls are undead creatures that hunger for the flesh of the living.
+                Their bodies are emaciated and desiccated, with no blood or fluids remaining.
+                Although they are sometimes confused with zombies, ghouls are faster and smarter than their lesser kin.
+            "),
+            (5, r"
+                Ghouls can lay simple ambushes, but lack the capacity for complex traps or schemes.
+                They are commmonly found in the service of vampires, who can create new ghouls by draining the blood of their victims completely.
+                As natural servants, ghouls are surprisingly weak-willed despite their combat acumen.
+            "),
+        ])),
+        monsters: vec![
+            Ghoul {
+                attributes: vec![2, 4, 0, -4, 1, -2],
+                challenge_rating: ChallengeRating::One,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Drudge ghouls are the weakest form of ghoul.
+                        They are typically made from incomplete corpses or partially botched rituals that failed to create a true ghoul.
+                    "),
+                ])),
+                level: 3,
+                modifiers: None,
+                name: "Drudge Ghoul".to_string(),
+                trained_skills: None,
+            }.monster(),
+            Ghoul {
+                attributes: vec![3, 4, 1, -3, 1, 0],
+                challenge_rating: ChallengeRating::One,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        True ghouls are the most common form of ghoul.
+                    "),
+                ])),
+                level: 6,
+                modifiers: None,
+                name: "True Ghoul".to_string(),
+                trained_skills: None,
+            }.monster(),
+        ],
+    }));
 }
 
 pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
@@ -180,6 +275,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 ))
                 .attack(),
             ));
+
             return FullUndeadDefinition {
                 // From def
                 attributes: self.attributes,
@@ -208,7 +304,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
         name: "Vampires".to_string(),
         knowledge: Some(Knowledge::new(vec![
             (0, "
-                Vampires are undead abominations that feast on the blood of the living.
+                Vampires are humanoid-looking undead that feast on the blood of the living.
                 They rule the night, but fear the sun, which can utterly destroy them.
                 Vampires are unable to cross running water or enter true sunlight.
                 Garlic and holy water are effective tools to defend against a vampire, but they are no guarantee.
