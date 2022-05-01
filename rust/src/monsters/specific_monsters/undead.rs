@@ -399,8 +399,9 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 Vampires are the most life-like of all undead, and they can easily pass as living if it suits their purposes.
             "),
             (10, "
-                Some vampires fully embrace their 
                 The most ancient and powerful vampires can cross running water or enter true sunlight, but only briefly.
+                In emergencies, with no blood available, vampires can enter a torpor that staves off their need for blood.
+                However, they are extremely vulnerable in this state, so only a desperate vampire would consider it.
             "),
         ])),
         monsters: vec![
@@ -423,6 +424,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 name: "Fledgling Vampire".to_string(),
                 trained_skills: Some(vec![
                     Skill::Awareness,
+                    Skill::Intimidate,
                 ]),
             }.monster(),
             Vampire {
@@ -439,6 +441,26 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 name: "True Vampire".to_string(),
                 trained_skills: Some(vec![
                     Skill::Awareness,
+                    Skill::Intimidate,
+                    Skill::SocialInsight,
+                    Skill::Persuasion,
+                ]),
+            }.monster(),
+            Vampire {
+                attributes: vec![7, 7, 6, 6, 7, 6],
+                challenge_rating: ChallengeRating::Six,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Vampire lords are one of the most powerful types of undead.
+                        They can command legions of followers and vast fortunes that they have developed over centuries.
+                    "),
+                ])),
+                level: 15,
+                modifiers: None,
+                name: "True Vampire".to_string(),
+                trained_skills: Some(vec![
+                    Skill::Awareness,
+                    Skill::Intimidate,
                     Skill::SocialInsight,
                     Skill::Persuasion,
                 ]),

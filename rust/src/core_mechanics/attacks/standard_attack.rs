@@ -207,7 +207,7 @@ impl StandardAttack {
             },
             Self::VampireAlluringGaze(rank) => SimpleSpell {
                 accuracy: max(0, rank - 3),
-                crit: Some(AttackEffect::MustRemoveTwice),
+                crit: Some(AttackEffect::Custom(AbilityType::Duration, "The effect becomes permanent.".to_string())),
                 defense: Defense::Mental,
                 hit: AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![Debuff::Charmed("the $name".to_string())],
