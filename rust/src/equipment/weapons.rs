@@ -70,7 +70,6 @@ pub enum StandardWeapon {
     Club,
     GiantBoulder,
     Greataxe,
-    Greatclub,
     Greatsword,
     HeavyFlail,
     Javelin,
@@ -137,8 +136,7 @@ impl StandardWeapon {
                 tags: vec![],
             },
             Self::GiantBoulder => Weapon {
-                // TODO: add Forceful and thrown range limits
-                // individual giants can customize these range limits
+                // Individual giants can customize these range limits
                 accuracy: 0,
                 damage_dice: DamageDice::d8(),
                 damage_types: vec![DamageType::Bludgeoning],
@@ -151,13 +149,6 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Slashing],
                 name: "greataxe".to_string(),
                 tags: vec![WeaponTag::Sweeping(1)],
-            },
-            Self::Greatclub => Weapon {
-                accuracy: 0,
-                damage_dice: DamageDice::d10(),
-                damage_types: vec![DamageType::Bludgeoning],
-                name: "greatclub".to_string(),
-                tags: vec![WeaponTag::Forceful],
             },
             Self::Greatsword => Weapon {
                 accuracy: 0,
