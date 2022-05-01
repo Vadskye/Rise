@@ -428,11 +428,8 @@ export const enchantment: MysticSphere = {
       name: "Charm",
 
       attack: {
-        crit: `Actions which threaten the charmed person without harming them do not break the effect.`,
-        hit: `The target is \\charmed by you.
-        Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
-        Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
-        An observant target may interpret overt threats to its allies as a threat to itself.`,
+        crit: `The effect persists for 5 minutes after you stop sustaining it.`,
+        hit: `The target is \\charmed by you.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
         You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
