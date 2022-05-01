@@ -3,7 +3,7 @@ use super::SpecialDefenseType;
 #[derive(Clone)]
 pub enum Debuff {
     Blinded,
-    Charmed,
+    Charmed(String),
     Confused,
     Dazed,
     Dazzled,
@@ -34,7 +34,7 @@ impl Debuff {
     pub fn direct_upgrade(&self) -> Option<Self> {
         match self {
             Self::Blinded => None,
-            Self::Charmed => None,
+            Self::Charmed(_) => None,
             Self::Confused => None,
             Self::Dazed => Some(Self::Stunned),
             Self::Dazzled => None,
@@ -61,7 +61,7 @@ impl Debuff {
     pub fn tier(&self) -> i32 {
         match self {
             Self::Blinded => 3,
-            Self::Charmed => 3,
+            Self::Charmed(_) => 3,
             Self::Confused => 3,
             Self::Dazed => 1,
             Self::Dazzled => 1,
@@ -88,7 +88,7 @@ impl Debuff {
     pub fn name(&self) -> &str {
         match self {
             Self::Blinded => "blinded",
-            Self::Charmed => "charmed",
+            Self::Charmed(_) => "charmed",
             Self::Confused => "confused",
             Self::Dazed => "dazed",
             Self::Dazzled => "dazzled",
@@ -115,7 +115,7 @@ impl Debuff {
     pub fn latex_link(&self) -> String {
         match self {
             Self::Blinded => "\\blinded".to_string(),
-            Self::Charmed => "\\charmed".to_string(),
+            Self::Charmed(source) => format!("\\charmed by {}", source),
             Self::Confused => "\\confused".to_string(),
             Self::Dazed => "\\dazed".to_string(),
             Self::Dazzled => "\\dazzled".to_string(),
