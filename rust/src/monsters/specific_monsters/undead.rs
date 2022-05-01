@@ -299,15 +299,44 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
             let mut modifiers = self.modifiers.unwrap_or(vec![]);
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: r"
+                    Whenever a vampire makes a creature lose hit points with its bite attack, it regains that much damage resistance.
+                ".to_string(),
+                is_magical: true,
+                name: "Vampiric Recovery".to_string(),
+            }));
+            modifiers.push(Modifier::PassiveAbility(PassiveAbility {
+                description: r"
                     As a standard action, a vampire can \trait{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or its normal humanoid form.
                     While in its bat form, it gains \trait{blindsense} (120 ft.) and a 40 foot fly speed with a 60 ft. height limit.
                     While in its mist form, it becomes \trait{incorporeal}, and gains a 20 foot fly speed with a 60 ft. height limit and perfect maneuverability.
 
                     In either non-humanoid form, the vampire is unable to use any standard action other than to resume its humanoid form.
                     This ability is almost exclusively used for mobility rather than combat.
+                    A vampire cannot use this ability while it is \paralyzed.
                 ".to_string(),
                 is_magical: true,
                 name: "Nightshifter".to_string(),
+            }));
+            modifiers.push(Modifier::PassiveAbility(PassiveAbility {
+                description: r"
+                    Vampires have a number of specific weaknesses.
+                    \parhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting the blood of a living creature, its maximum hit points are reduced by 50.
+                    If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
+                    This penalty is removed as soon as the vampire drinks blood.
+                    A vampire can can enter a torpor to survive indefinitely without blood.
+                    \parhead{Garlic} Whenever a vampire smells or touches garlic, it becomes \\frightened by the garlic as a condition.
+                    \parhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes briefly \\stunned.
+                    \parhead{Running Water} Whenever a vampire touches or flies over running water, it takes 100 energy damage and becomes \\stunned as a condition.
+                    This damage is repeated at the end of each round that the vampire spends touching or flying over running water.
+                    \parhead{True Sunlight} Whenever a vampire is exposed to true sunlight, it takes 100 energy damage and becomes \\blinded as a condition.
+                    If it loses hit points from this damage, it immediately dies and dissolves into a pile of ash.
+                    This damage is repeated at the end of each round that the vampire spends in true sunlight.
+                    \parhead{Wooden Stakes} If a vampire loses hit points from a critical strike using a wooden stake, the stake becomes impaled in its heart.
+                    The vampire becomes \paralyzed until the stake is removed.
+                    A wooden stake is a light improvised weapon that deals 1d4 piercing damage.
+                ".to_string(),
+                is_magical: true,
+                name: "Unholy Creature of the Night".to_string(),
             }));
             modifiers.push(Modifier::Attack(
                 LowDamageAndDebuff {
@@ -343,7 +372,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 alignment: "Usually lawful evil".to_string(),
                 description: None,
                 movement_modes: None,
-                senses: Some(vec![Sense::Darkvision(60)]),
+                senses: Some(vec![Sense::Darkvision(120)]),
                 size: Size::Medium,
                 weapons: vec![
                     StandardWeapon::MonsterBite.weapon(),
@@ -358,20 +387,30 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
         name: "Vampires".to_string(),
         knowledge: Some(Knowledge::new(vec![
             (0, "
+                Vampires are undead abominations that feast on the blood of the living.
+                They rule the night, but fear the sun, which can utterly destroy them.
+                Vampires are unable to cross running water or enter true sunlight.
+                Garlic and holy water are effective tools to defend against a vampire, but they are no guarantee.
             "),
             (5, r"
+                Because vampires are so vulnerable during the day, they typically put great effort into acquiring manors or dungeons to live in.
+                Their homes are attended by powerful servants who can protect them so they do not have to risk fighting during the day.
+                Some vampires prefer undead servants, while others use living minions who may or may not know the vampire's true nature.
+                Vampires are the most life-like of all undead, and they can easily pass as living if it suits their purposes.
             "),
             (10, "
+                Some vampires fully embrace their 
+                The most ancient and powerful vampires can cross running water or enter true sunlight, but only briefly.
             "),
         ])),
         monsters: vec![
             Vampire {
-                attributes: vec![4, 6, 2, -3, 2, 2],
+                attributes: vec![5, 6, 4, 3, 4, 3],
                 challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Fledgling vampires are the weakest form of vampire.
-                        They are recently turned, and some still feel a strong allegiance to their old life.
+                        They are recently turned, and some still feel a strong attachment to their old life.
                         Despite their inexperience, they still possess most of a vampire's powerful abilities, so they should not be taken lightly.
                     "),
                     (5, "
@@ -379,11 +418,29 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                         They may attempt to fast, which weakens them, before being consumed by an uncontrollable bloodlust.
                     "),
                 ])),
-                level: 4,
+                level: 5,
                 modifiers: None,
                 name: "Fledgling Vampire".to_string(),
                 trained_skills: Some(vec![
                     Skill::Awareness,
+                ]),
+            }.monster(),
+            Vampire {
+                attributes: vec![6, 6, 5, 4, 6, 4],
+                challenge_rating: ChallengeRating::Four,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        True vampires have fully awakenened their vampiric potential.
+                        They have abandoned the world of the living and embraced their need for blood.
+                    "),
+                ])),
+                level: 10,
+                modifiers: None,
+                name: "True Vampire".to_string(),
+                trained_skills: Some(vec![
+                    Skill::Awareness,
+                    Skill::SocialInsight,
+                    Skill::Persuasion,
                 ]),
             }.monster(),
         ],
