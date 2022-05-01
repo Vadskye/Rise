@@ -211,6 +211,11 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         In addition, each item requires the expenditure of raw materials with a value equal to an item one rank lower than the item you are trying to craft (minimum rank 0).
         Note that raw materials for some items, particularly alchemical items, may be hard to come by in less civilized areas.
 
+        You can attempt to craft items from inferior or ad-hoc materials.
+        The materials do not have to be well-suited to the item's construction, but they must be physically capable of performing any necessary actions.
+        For example, you could construct a simple arrow-throwing trap from bent sticks or creatively strung rope, but not from sand.
+        Generally, using ill-suited materials increases the \glossterm{difficulty value} of the Craft check by at least 5, and it may negatively impact the item's function or longevity.
+
         In order to craft an item, you must make a Craft check against the item's Craft \glossterm{difficulty value}, as shown on \trefnp{Craft Requirements}.
         If you succeed, you make progress on the item based on how long you spend crafting.
         For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time.
@@ -247,14 +252,13 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \begin{freeability}{Command}[\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (standard)]
             \label{Command}
             Make a Creature Handling vs. Mental attack against a creature within \rngmed range.
-            You take a \minus5 penalty to accuracy with this attack if the target is not an animal, as normal for Creature Handling attacks and checks.
             In addition, choose and state an action that the creature could take.
             \hit The target is unable to take any actions except to use the \textit{total defense} ability (see \pcref{Universal Abilities}).
             \crit The target performs the chosen action if it is physically capable of performing it.
             This can include convincing creatures to perform forced marches and similar activities (see \pcref{Overland Exertion}).
             
             You take a \minus10 accuracy penalty against an actively hostile target.
-            The target gains a \plus5 bonus to its defense against this attack if it is not an animal, as normal for Creature Handling attacks and checks.
+            You take a \minus5 penalty to accuracy with this attack if the target is not an animal, as normal for Creature Handling attacks and checks.
             If the target is damaged or feels that it is in danger, this effect is automatically ended.
         \end{freeability}
         \parhead{Perform Trained Action} You can make a \glossterm{difficulty value} 5 Creature Handling check to convince an \glossterm{ally} to perform an action it is already trained to perform.
@@ -316,61 +320,36 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 \skill{Devices}{Int}
     The Devices skill represents your ability to to manipulate mechanical devices such as locks, traps, and other contraptions.
     With enough skill, you can even manipulate magical devices.
+    Each device has a base \glossterm{difficulty value} based on its complexity.
+    Some tasks are much easier than others, and modify the difficulty value accordingly.
 
-        The \glossterm{difficulty value} of a Devices check depends on the device being manipulated. In addition, some actions are easier than others, and modify the \glossterm{difficulty value} accordingly. Standard \glossterm{difficulty value} are listed on \trefnp{Devices Difficulty Values}.
+    Many Devices checks require the use of thieves' tools.
+    If you do not have a proper set of tools, you may be able to improvise from your surroundings.
+    Generally, this imposes a penalty of at least \minus5 to the Devices check.
 
-        \begin{dtable}
-            \lcaption{Devices Difficulty Values}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}X c}
-                \tb{Device Type}                           & \tb{Devices Difficuty Value} \tableheaderrule
-                Simple device (wagon wheel, typical knot)  & 5                          \\
-                Average device (door hinge, complex knot)  & 10                         \\
-                Challenging device (typical lock or trap)  & 15                         \\
-                Difficult device (good lock, complex trap) & 20                         \\
-                Magic trap                                 & 15 \add twice \glossterm{rank} \\
-                Extraordinary device (extraordinary lock)  & 25                         \\
-            \end{dtabularx}
-        \end{dtable}
-
-    \parhead{Special Circumstances}
-        You can attempt to leave no trace of your tampering while making a Devices check to activate or subvert a device. This increases the Devices \glossterm{difficulty value} by 5, but increases the Awareness \glossterm{difficulty value} to notice the tampering by 10.
-
-    \subsection{Activate Device}
-        As a standard action, you can make a Devices check to make a device perform a function it was designed to do, even if you lack the normal requirements.
-        This requires thieves' tools, though you may be able to improvise from your surroundings with a \minus5 or greater penalty.
-        For example, you could tie or untie a knot, apply a poison, lock or unlock a lock without its key, or activate a trap without using its normal triggering mechanism (hopefully without being in its line of fire).
-
-    \subsection{Analyze Device}
-        As a standard action, you can evaluate a device to understand how it functions. The \glossterm{difficulty value} is 10 lower than normal. Success grants you an insight into the device's mechanisms. For every 5 points by which you succeed, you glean additional information about the device, which can also help you estimate the device's true difficulty. Failure means you learn nothing about the device.
-
-    \subsection{Break Device}
-        As a standard action, you can make a Devices check to break a device.
-        This requires thieves' tools, though you may be able to improvise from your surroundings with a \minus5 or greater penalty.
-        The \glossterm{difficulty value} is 5 lower than normal. This is generally not subtle, such as jamming a lock or breaking a trap while triggering it in the process. It cannot change the state of a device, but you can prevent it from being used normally; a locked door will remain locked, but you can prevent it from being unlocked with its key. Failure means the device continues to function. Critical failure may cause you to think that you successfully broke the device, while in fact it functions normally.
-
-    \subsection{Create Bindings}
-        As a standard action, you can make a Devices check to tie a knot or create a binding, including binding a helpless foe. The \glossterm{difficulty value} to escape the binding is equal to your check result.
-
-    \subsection{Improvise}\label{Improvise}
-        You can construct ad-hoc devices from available materials.
+    \subsection{Common Devices Tasks}
+        \parhead{Activate Device} You can make a Devices check using thieves' tools to make a device perform a function it was designed to do, even if you lack the normal requirements.
+        For example, you could tie or untie a knot, lock or unlock a lock without its key, or activate a trap without using its normal triggering mechanism (hopefully without being in its line of fire).
+        \parhead{Analyze Device} You can make a Devices check to study a device and understand how it functions.
+        The \glossterm{difficulty value} to analyze a device is 5 lower than the device's base difficulty value.
+        \parhead{Break Device} You can make a Devices check using thieves' tools to break a device.
+        The device ceases to function in its intended way, and the sabotage is obvious to an observer.
+        For example, you could jam a lock so it becomes unlocked and can never be locked again.
+        Breaking a trap generally triggers the trap in an unpredictable way, which may be dangerous.
+        The \glossterm{difficulty value} to break a device is 2 lower than the device's base difficulty value.
+        \parhead{Create Bindings} You can make a Devices check with a \plus5 bonus to create bindings from rope or similar materials.
+        Binding a helpless foe in this way generally requires a minute of work, though typing up very large creatures may take longer.
+        The Flexibility \glossterm{difficulty value} to escape the binding is equal to your check result.
+        \parhead{Improvise} You can make a Devices check to construct ad-hoc devices.
+        This functions like creating the item with a Craft check (see \pcref{Crafting Items}), with two exceptions.
+        First, the item is flimsy, and it breaks after being used once or twice.
+        Second, the time requirement is dramatically reduced.
         It takes five minutes to make a device of up to Tiny size.
         You can make a Small device in the time required to make four Tiny devices, a Medium device in the time required to make four Small devices, and so on.
-        You make a Devices check against the \glossterm{difficulty value} required to craft the item normally.
-        Success means you create a device that lasts long enough for a single use before breaking.
-        For every 5 points by which you succeed, the device lasts for an additional use.
-
-        Normally, you must have materials at hand which are designed for the construction of the device.
-        You can jury-rig devices together from inappropriate materials by increasing the \glossterm{difficulty value} by 10.
-        The materials do not have to be well-suited to the device's construction, but they must be physically capable of performing any necessary actions.
-        For example, you could construct a simple arrow-throwing trap from bent sticks or creatively strung rope, but not from sand.
-        Especially appropriate or inappropriate materials may decrease or further increase the \glossterm{difficulty value}.
-
-    \subsection{Subvert Device}
-        As a standard action, you can make a Devices check to subvert the normal functionality of a device.
-        This requires thieves' tools, though you may be able to improvise from your surroundings with a \minus5 or greater penalty.
-        The \glossterm{difficulty value} is 5 higher than normal. This could allow you to sabotage a hinge or lock so it breaks once it is used, disable a trap without triggering it, or disable a lock so it is perpetually closed or open. Failure means you were unsuccessful, and your action was wasted. Critical failure means you break the device immediately, think you sabotaged the device when you did not, or activate the trap, depending on the circumstances.
-
-        Once you have disabled a device, you can attempt to recover it for later use if you can carry it. This requires a separate Devices check to subvert the device. The \glossterm{difficulty value} is 5 higher than normal, as usual for a check to subvert a device.
+        \parhead{Remove Device} You can make a Devices check using thieves' tools to fully disable a device and remove it if possible.
+        This can allow you to bypass traps without ever triggering them, and even take them with you if they are small and portable.
+        Magical traps and large-scale physical traps, such as pit traps, are generally not portable.
+        The \glossterm{difficulty value} to remove a device is 5 higher than the device's base difficulty value.
 
 \newpage
 \skill{Disguise}{Int}
