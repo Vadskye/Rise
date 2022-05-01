@@ -338,3 +338,15 @@
         It takes a \minus4 penalty to all defenses against attacks that would cause it to take damage of that type, or that would cause it suffer that debuff.
         This penalty applies against the whole attack even if the attack would only inflict the debuff or damage under specific circumstances, such as if the attack gets a critical hit or if the attack causes the creature to lose hit points.
         For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is vulnerable.
+
+    \traitdef{Undead}{undead}
+        Undead creatures are affected in unusual ways by effects that directly manipulate life energy.
+        They are always considered living \glossterm{allies} for the purpose of effects that would cause living creatures to regain \glossterm{hit points}.
+        Whenever they would regain \glossterm{hit points} from an ability that normally only affects living creatures, they instead take energy damage equal to the hit points that they would have regained, ignoring any hit point maximum the ability would normally have.
+
+        Any other effects beyond simple hit point recovery are ignored.
+        For example, if a cleric uses their \ability{divine aid} ability to heal an undead creature, the undead would take damage, but it would not gain any bonus to its defenses.
+
+        Similarly, undead are always considered living creatures for the purpose of effects that would normally deal energy damage to living creatures.
+        Whenever they would take energy damage from an ability that normally only affects living creatures, they instead regain hit points equal to the energy damage that they would have taken. 
+        Any other effects beyond simple energy damage are ignored.
