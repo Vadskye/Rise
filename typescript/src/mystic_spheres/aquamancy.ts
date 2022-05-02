@@ -368,6 +368,8 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         // +1d from normal AOE due to weird area that probably just hits one person
+        // This can't be full power due to restrictions on Reflex-based single target
+        // attacks
         hit: `
           Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
         `,
@@ -387,6 +389,8 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         // +1d from normal AOE due to weird area that probably just hits one person
+        // This can't be full power due to restrictions on Reflex-based single target
+        // attacks
         hit: `
           Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
         `,
