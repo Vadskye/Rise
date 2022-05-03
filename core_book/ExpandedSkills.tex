@@ -14,15 +14,27 @@ Your game will inevitably run into situations outside the scope of what can be d
 This chapter provides additional examples and context to help you choose reasonable modifiers for specific or unusual circumstances.
 Listing those examples here emphasizes that they are guidelines instead of hard rules.
 
-\section{General Complications}
-    In most circumstances, failure and critical failure have no specific detrimental effects defined in the core rules.
-    This makes some narratively appropriate consequences of failure impossible in practice.
-    For example, the core rules do not provide a way for a character to incorrectly identify a real item as a forgery, or to believe that an undisguised character is wearing a disguise.
-    Although those can be interesting developments, and should narratively be possible, it's cumbersome to write rules to make that sort of failure possible without making it overly common.
-    Giving completely false information to players should be done sparingly, since it can send them down wild goose chases that take time and effort to resolve for little payoff.
+\section{General Guidance}
 
-    As a GM, you should feel free to decide that failure in particular circumstances causes additional complications.
-    You have the best understanding of whether mistakes or complications will improve the narrative of your game instead of derailing it.
+    \subsection{Consequences of Failure}
+        In most circumstances, failure and critical failure have no specific detrimental effects defined in the core rules.
+        This makes some narratively appropriate consequences of failure impossible in practice.
+        For example, the core rules do not provide a way for a character to incorrectly identify a real item as a forgery, or to believe that an undisguised character is wearing a disguise.
+        Although those can be interesting developments, and should narratively be possible, it's cumbersome to write rules to make that sort of failure possible without making it overly common.
+        Giving completely false information to players should be done sparingly, since it can send them down wild goose chases that take time and effort to resolve for little payoff.
+
+        As a GM, you should feel free to decide that failure in particular circumstances causes additional complications.
+        You have the best understanding of whether mistakes or complications will improve the narrative of your game instead of derailing it.
+
+    \subsection{Rushing Skills}
+        Many skill tasks are vague about exactly how much time they take to perform.
+        This is usually because the time required can vary widely depending on the circumstances.
+        For example, throwing on a wig, ashy makeup, and rags to imitate a beggar would take much less time than applying layers of beautifying makeup and donning a formal ball gown, but both may be similarly effective disguises for their intended purpose.
+
+        In most situations, the precise time required to complete tasks isn't critical, and it's reasonable to communicate that explicitly.
+        Most players don't mind being fuzzy with the details as long as they know their characters won't suffer negative consequences for being too slow or fast.
+        When time is critical, a character can try to rush their task by accepting a penalty of \minus5 or so to their check result.
+        As a GM, you will have to use your best judgment about what seems reasonable.
 
 \section{Awareness}
 
@@ -198,3 +210,42 @@ Listing those examples here emphasizes that they are guidelines instead of hard 
             Magic trap                                & 15 \add twice \glossterm{rank} \\
         \end{dtabularx}
     \end{dtable}
+
+\section{Disguise}
+    The key complexity of the Diguise skill involves applying appropriate penalties for drastic body changes.
+    It is generally easier to enlarge a creature or add new features than it is to shrink a creature or remove existing features.
+    You can use \tref{Example Disguise Modifiers} as a guide, and improvise as necessary.
+    If a creature makes multiple major alterations, the penalties stack.
+
+    \begin{dtable}
+        \lcaption{Example Balance Modifiers}
+        \begin{dtabularx}{\columnwidth}{l X}
+            \tb{Age Change}                              & \tb{Disguise Penalty} \\
+            Per age category of difference & \minus2 \\
+            \tb{Body Shape Change}                              & \tb{Disguise Penalty} \\
+            To a different gender                               & \minus2               \\
+            Per removed limb                                    & \minus5               \\
+            Per additional limb                                 & \minus10              \\
+            From bipedal to quadrupedal                         & \minus5               \\
+            From quadrupedal to bipedal                         & \minus10              \\
+            \tb{Species Change}                                 & \tb{Disguise Penalty} \tableheaderrule
+            To a similar-size species (human to elf)            & \minus2               \\
+            To a noticeably larger species (halfling to human)  & \minus5               \\
+            To a noticeably smaller species (human to halfling) & \minus15              \\
+            To a larger size category (human to ogre)           & \minus15              \\
+        \end{dtabularx}
+    \end{dtable}
+
+\section{Endurance}\label{Endurance}
+    Players should feel free to try to use Endurance to mitigate other narrative challenges beyond the standard set listed in the core book.
+    However, you should not allow players to use Endurance to ignore core game mechanics like conditions, encumbrance, or fatigue.
+    Skills are primarily intended to serve narrative purposes, and Endurance's ability to ignore vital wounds already makes it an unusually powerful combat skill.
+    If you increase its power further, it could easily become virtually mandatory for combat-focused characters.
+
+    \subsection{Uncommon Endurance Tasks}
+        \parhead{Overland Exertion} You can make an Endurance check while travelling overland to cover more round (see \pcref{Overland Movement}).
+        There are two ways that you can exert yourself: hustling, which doubles your distance travelled during a given hour, and making a forced march, which allows you to travel for an extra hour beyond the normal travel time.
+        Exerting yourself for an hour requires a \glossterm{difficulty value} 5 Endurance check.
+        The \glossterm{difficulty value} increases by 2 for every hour you spend exerting yourself between \glossterm{long rests}.
+        If you combine both forms of exertion, you increase the \glossterm{difficulty value} of the check by 4 for that hour instead of by 2.
+        Failure means you gain a \glossterm{vital wound} from \glossterm{subdual damage}.

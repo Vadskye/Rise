@@ -323,7 +323,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
     Each device has a base \glossterm{difficulty value} based on its complexity.
     Some tasks are much easier than others, and modify the difficulty value accordingly.
 
-    Many Devices checks require the use of thieves' tools.
+    Many Devices checks require the use of thieves' tools, which contains items like lockpicks and precision cutting implements.
     If you do not have a proper set of tools, you may be able to improvise from your surroundings.
     Generally, this imposes a penalty of at least \minus5 to the Devices check.
 
@@ -356,55 +356,49 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
     The Disguise skill represents your ability to create disguises to conceal the appearance of creatures or objects.
     This skill does not help you act appropriately while disguised; see Perform (acting) and Deception.
 
-    \subsection{Conceal Object}
-        As a standard action, you can make a Disguise check to conceal a creature or object on your person.
-        The target must be at least one size category smaller than you are.
-        If it is only one size category smaller than you, you take a \minus10 penalty to the check.
-        A creature must be an \glossterm{ally}, and an object must be unattended.
+    Many Disguise checks require the use of a disguise kit, which contains items like makeup and false beards.
+    If you do not have a proper kit, you may be able to improvise from your surroundings.
+    Generally, this imposes a penalty of at least \minus5 to the Disguise check.
 
-        Your Disguise check is opposed by the Awareness check of anyone observing you.
-        Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
-
-    \subsection{Disguise Creature}\label{Disguise Creature}
-        You can make a Disguise check to change the appearance of a creature using makeup, costumes, and so forth.
-        This requires a disguise kit, though you may be able to improvise from your surroundings with a \minus5 or greater penalty.
-        An observer can perceive the presence of a disguise with a Disguise or Awareness check to identify a disguise that is higher than your Disguise check. The effectiveness of a disguise depends in part on how much you're attempting to change the creature's appearance, as shown on the table below. The modifiers are cumulative; use any that apply.
-
-        The Disguise check is made secretly, so that you can't be sure how good the result is. However, you can attempt to judge its effectiveness with an identify disguise check using either Disguise or Awareness.
-
-        \parhead{Creation Time} Creating a disguise takes 30 minutes. You can take a \minus5 penalty to reduce the time to 5 minutes, a \minus10 penalty to reduce the time to 5 rounds, or a \minus15 penalty to reduce the time to a \glossterm{standard action}.
-
-        \begin{dtable}
-            \begin{dtabularx}{\columnwidth}{l >{\ccol}X}
-                \tb{Characteristic}          & \tb{Difficulty Modifier} \tableheaderrule
-                Different gender             & \plus2       \\
-                Different species or subtype & \plus2       \\
-                Different age category       & \plus2\fn{1} \\
-                Different creature type      & \plus5       \\
-                Additional limb              & \plus5\fn{2} \\
-                Different size category      & \tdash\fn{3}  \\
-            \end{dtabularx}
-            1 Per step of difference between your actual age category and your
-            disguised age category. The steps are: young, adulthood, middle age, old, and venerable. \\
-            2 Per limb. You must have suitable disguise materials available. \\
-            3 You cannot disguise yourself as a different size category.
-        \end{dtable}
-
-    \subsection{Emulate Creature}
-        You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like the \textit{disguise creature} ability, but the result of your Disguise check can't exceed the result of an Awareness check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 bonus on their checks to identify the disguise.
-
-    \subsection{Identify Disguise [Hidden]}
-        When you observe a disguised creature or object, you can make an Disguise check to identify the disguise.
-        The \glossterm{difficulty value} is equal to the Disguise check result used to create the disguise.
-        Success means you know that the creature or object is disguised.
-        Critical success means you can also discern its true appearance beneath the disguise.
-        Failure means you don't notice anything unusual.
-
-        You cannot retry this check until you gain meaningful new information that would help you identify the disguise.
+    \subsection{Common Disguise Tasks}
+        \parhead{Camouflage} You can make an opposed Disguise vs. Awareness check to blend into your surroundings and avoid being noticed.
+        This generally takes at least a minute of work to prepare your disguise to match your exact surroundings.
+        It only protects you from visual observation, so you would generally need the Stealth skill to avoid being heard while moving (see \pcref{Stealth}).
+        \parhead{Change Appearance}\label{Change Appearance} 
+        You can make an opposed Disguise vs. Awareness check using a disguise kit to change a creature's appearance.
+        Generally, applying a disguise takes at least a minute, though complex makeup applications or clothing changes can take much longer.
+        You take a penalty to the Disguise check based on how radical your changes are, especially to the creature's basic proportions.
+        \parhead{Emulate Appearance} You can make a creature look like a different specific creature.
+         This functions like the \textit{change appearance} task, except that the result of your Disguise check can't exceed the result of an Awareness check you or someone helping you made to observe the creature you are trying to emulate.
 
 \newpage
 \skill{Endurance}{Con}
     The Endurance skill represents your ability to persevere through physical trials.
+
+    \subsection{Common Endurance Tasks}
+        \parhead{Delay Vital Wound}\label{Delay Vital Wound}
+        Whenever you gain a \glossterm{vital wound}, you can make \glossterm{difficulty value} 15 Endurance check to \glossterm{briefly} ignore the special effect of the vital wound on you.
+        The vital wound still penalizes your future \glossterm{vital rolls}.
+        At the end of the next round, you must make this check again.
+        The difficulty value increases by 10 for each consecutive round that you ignore the same vital wound.
+
+        You can only delay one of your vital wounds in this way.
+        If you gain a new vital wound, you can choose to either delay the new vital wound or continue delaying the old vital wound.
+        You can make this choice after learning the \glossterm{vital roll} for the new vital wound.
+        The difficulty value to delay a new vital wound starts at 15, regardless of whether you were previously delaying a different vital wound.
+        \parhead{Hold Breath}\label{Hold Breath}
+        You can make an Endurance check to hold your breath.
+        While holding your breath, you must make an Endurance check at the end of every 5 rounds that you spend without taking any actions, or at the end of any round in which you take an action.
+        The \glossterm{difficulty value} starts at 0, and increases by 1 for each subsequent check until you breathe in air.
+        Failure means that you try to breathe in air, and you gain a \glossterm{vital wound} if there is no air available to breathe.
+
+        Essentially, you can fight while holding your breath for a number of rounds equal to your Endurance modifier with no risk of failure.
+        If you stay still, you can hold your breath for a number of minutes equal to half your Endurance modifier with no risk of failure.
+        \parhead{Stay Awake} You can make an Endurance check to stay awake beyond healthy limits.
+        A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
+        The \glossterm{difficulty value} starts at 5, and increases by 5 for each subsequent check until you catch up on your missed sleep.
+        Failure means you gain a \glossterm{vital wound} from \glossterm{subdual damage}.
+        You must make another check every 8 hours as long as you are still beyond your normal sleep limits.
 
     % This is thematically appropriate, but it breaks the rule about not introducing ``shadow'' resources
     % \subsection{Ignore Fatigue}\label{Ignore Fatigue}
@@ -416,51 +410,11 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
     %     Ignoring your fatigue is a \abilitytag{Swift} ability.
     %     You can only use this ability once per \glossterm{short rest}.
 
-    \subsection{Hold Breath}\label{Hold Breath}
-        If you hold your breath, you must make an Endurance check at the end of every 5 rounds that you spend without taking any actions, or at the end of any round in which you take an action.
-        The \glossterm{difficulty value} starts at 0, and increases by 1 for each subsequent check.
-        If you succeed, you continue holding your breath.
-        If you fail, you stop holding your breath and try to breathe in air.
-        If there is no air to breathe, you gain a \glossterm{vital wound} instead and continue holding your breathstay still
-        Essentially, you can fight while holding your breath for a number of rounds equal to your Endurance modifier with no risk of failure.
-        If you stay still, you can hold your breath for a number of minutes equal to half your Endurance modifier with no risk of failure.
-
-    \subsubsection{Overland Exertion}\label{Overland Exertion}
-        You can exert yourself while travelling overland to cover more ground (see \pcref{Overland Movement}).
-        There are two ways that you can exert yourself: hustling, which doubles your distance travelled during a given hour, and making a forced march, which allows you to travel for an extra hour beyond the normal travel time.
-        Exerting yourself for an hour in between \glossterm{long rests} requires a \glossterm{difficulty value} 5 Endurance check.
-        The \glossterm{difficulty value} increases by 2 for every hour you spend exerting yourself.
-        If you combine both forms of exertion, you increase the \glossterm{difficulty value} of the check by 4 for that hour instead of by 2.
-
-        Success means you suffer no penalty for the exertion.
-        Failure means you take a \glossterm{vital wound} from \glossterm{subdual damage}.
-
-    \subsection{Stay Awake}\label{Stay Awake}
-        A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
-        If you try to stay awake beyond those limits, you must make an Endurance check.
-        The \glossterm{difficulty value} starts at 5, and increases by 5 for each subsequent check.
-        If you succeed, you stay awake without suffering any penalties.
-        If you fail, you gain a \glossterm{vital wound} from \glossterm{subdual damage} (see \pcref{Subdual Damage}).
-        You must make another check every 8 hours as long as you are still beyond your normal sleep limits.
-
-    \subsection{Delay Vital Wound}\label{Delay Vital Wound}
-        Whenever you receive a \glossterm{vital wound}, you can make \glossterm{difficulty value} 15 Endurance check.
-        Success means that you \glossterm{briefly} delay the special effect of the vital wound on you.
-        At the end of the next round, you must make this check again.
-        The difficulty value increases by 10 for each consecutive round that you delay the same vital wound.
-
-        While a vital wound is delayed in this way, you still consider it when calculating your penalties to future \glossterm{vital rolls}, but you do not suffer any effects from its specific vital wound effect (see \pcref{Vital Wounds}).
-        The vital wound can still be removed by effects that remove vital wounds.
-        Failure means that the vital wound has its normal effect on you.
-
-        You can only delay one of your vital wounds in this way.
-        If you gain a new vital wound, you can choose to either delay the new vital wound or continue delaying the old vital wound.
-        You can make this choice after learning the \glossterm{vital roll} for the new vital wound.
-        The difficulty value to delay a new vital wound starts at 15, regardless of whether were previously delaying a different vital wound.
-
 \newpage
 \skill{Flexibility}{Dex}
     The Flexibility skill represents your ability to escape bindings and move through small areas by contorting your body.
+
+    \subsection{Common Flexibility Tasks}
 
     \subsection{Escape Bindings}
         As a standard action, you can make an Flexibility check to escape bindings and restraints. The \glossterm{difficulty value} of various restraints are given on the table below.
@@ -967,6 +921,10 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
                 Colossal    & \plus30 \\
             \end{dtabularx}
         \end{dtable}
+
+        \parhead{Conceal Object} You can make an opposed Disguise vs. Awareness check to conceal an \glossterm{ally} or \glossterm{unattended} object on your person.
+        The target must be at least one size category smaller than you are.
+        If it is only one size category smaller than you, you take a \minus10 penalty to the check.
 
     \subsection{Conceal Action}
         You can make a Sleight of Hand check to conceal an action you take, preventing observers from noticing that you took the action. You can conceal any physical action that only requires the use of your hands and arms. Your check is opposed by the Awareness check of any observers. Success means your action is unnoticed. Failure means they are able to notice your action normally.
