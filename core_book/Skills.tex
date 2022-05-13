@@ -416,43 +416,19 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 
     \subsection{Common Flexibility Tasks}
 
-    \subsection{Escape Bindings}
-        As a standard action, you can make an Flexibility check to escape bindings and restraints. The \glossterm{difficulty value} of various restraints are given on the table below.
-        You can also use Flexibility to escape grapples using the \textit{escape grapple} ability (see \pcref{Grapple Actions}).
-
-        \begin{dtable}
-            \lcaption{Flexibility Difficulty Values}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
-                \tb{Restraint}       & \tb{Difficulty Value} \tableheaderrule
-                Ropes                & Binder's Devices check \\
-                Net                  & 10                     \\
-                Manacles, simple     & 15                     \\
-                Manacles, quality   & 20                     \\
-                Manacles, masterwork & 25                     \\
-            \end{dtabularx}
-        \end{dtable}
-
-    \subsection{Tight Squeeze}
-        As a standard action, you can use the \textit{tight squeeze} ability to squeeze into spaces too small to normally fit you.
-        \begin{freeability}{Tight Squeeze}
-            Make an Flexibility check to move one foot forward into a tight space.
-            A \glossterm{difficulty value} 15 check allows you to move in a space that can fit your head and shoulders, but which is too tight to allow normal crawling.
-            For a typical human, this means squeezing through a space about a foot and a half in diameter.
-            A \glossterm{difficulty value} 25 check allows you to move in a space that can fit your head, but not your shoulders.
-            For a typical human, this means squeezing through a space about half a foot in diameter.
-            Success means you make progress through the space, while failure means your action is wasted.
-
-            This functions like \squeezing, except that the penalties are increased to \minus4.
-            If you are squeezing in a space that cannot fit your shoulders, you are also treated as \helpless.
-        \end{freeability}
+        \parhead{Escape Bindings} As a standard action, you can make an Flexibility check to escape physical bindings.
+        For simple restraints like nets and manacles, the \glossterm{difficulty value} generally depends on the quality of the restraint.
+        For complex restraints like carefully tied rope bindings, make an opposed Flexibility vs. Devices check against the creature that created the restraint.
+        \parhead{Escape Grapple} As a standard action, you can make a Flexibility check to escape a grapple.
+        For details, see \pcref{Grapple Actions}.
+        \parhead{Tight Squeeze} You can make a Flexibility check to squeeze into spaces too small to normally fit you (see \pcref{Squeezing}).
+        A \glossterm{difficulty value} 15 check allows you to move in a space that can fit your head and shoulders, but which is too tight to allow normal crawling.
+        For a typical human, this means squeezing through a space about a foot and a half in diameter.
+        A \glossterm{difficulty value} 25 check allows you to move in a space that can fit your head, but not your shoulders.
 
 \newpage
 \skill{Intimidate}{Varies}
     The Intimidate skill represents your ability to intimidate and coerce people into doing what you want.
-
-        \parhead{Check Modifiers}
-        You gain a bonus of up to \plus10 on Intimidate checks if the target thinks you or your group is stronger than it is, or that it is otherwise in some real danger from you.
-        Likewise, you take a penalty of up to \minus10 if the target thinks you or your group is weaker than it is, or that there is otherwise no chance that you could cause it harm.
 
         \parhead{Choosing an Attribute}
         No attribute is a key attribute for Intimidate.
@@ -460,16 +436,11 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         For example, if you intimidate a creature by smashing a table and threatening to smash its head in, you can add your Strength to the Intimidate check.
         On the other hand, if you intimidate a creature by staring it down in a cold fury, you can add your Willpower to the Intimidate check.
 
-    \subsection{Coerce}
-        You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier. In addition, the \glossterm{difficulty value} is up to 10 lower if the group thinks your group is significantly stronger than them, or up to 10 higher if the group thinks your group is significantly weaker.
-
-    \subsection{Demoralize}\label{Demoralize}
-
-        As a standard action, you can use the \textit{demoralize} ability to intimidate creatures in combat.
-
+    \subsection{Common Intimidate Tasks}
+        \parhead{Coerce} You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier (see \pcref{Persuasion}).
+        Generally, people dislike being coerced.
         \begin{freeability}{Demoralize}
-            Make an attack vs. Mental against a creature within \rngmed range.
-            Your \glossterm{accuracy} is equal to your Intimidate skill.
+            Make an Intimidate vs. Mental attack against a creature within \rngmed range.
             \hit The target is \glossterm{briefly} \shaken by you.
         \end{freeability}
 
