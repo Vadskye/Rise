@@ -708,7 +708,7 @@ export const enchantment: MysticSphere = {
 
       functionsLike: {
         name: 'restore bravado',
-        exceptThat: "The recovery increases to 4d8 + \\glossterm{power}.",
+        exceptThat: "the recovery increases to 4d8 + \\glossterm{power}.",
       },
       rank: 6,
       scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
