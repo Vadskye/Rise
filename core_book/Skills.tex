@@ -285,7 +285,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         In general, you must already have a pre-established code or understanding with the intended recipients of your hidden message so they can grasp its true meaning more easily than outside observers.
         \parhead{Distract} If you succeed at an opposed Deception vs. Social Insight check, you can distract a creature you are talking with.
         This generally makes the distracted creature \glossterm{briefly} \partiallyunaware of you, which can allow you to hide or backstab them.
-        Normally, the creature realizes that you deceived them once the distraction ends, which prevents them from being distracted again and may influence their behavior.
+        Normally, the creature realizes that you tricked them once the distraction ends, which prevents them from being distracted again and may influence their behavior.
         \parhead{Fascinate} If you succeed at an opposed Deception vs. Social Insight check, you can keep attention focused on you during a conversation.
         This generally gives distracted creatures a \minus5 penalty to the Awareness and Social Insight skills to notice anything other than you.
         You repeat this check once per minute, with a cumulative \minus5 penalty for each minute that the distraction has lasted.
@@ -354,7 +354,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 \newpage
 \skill{Disguise}{Int}
     The Disguise skill represents your ability to create disguises to conceal the appearance of creatures or objects.
-    This skill does not help you act appropriately while disguised; see Perform (acting) and Deception.
+    This skill does not help you act appropriately while disguised, which generally the Deception skill and may also require Social Insight.
 
     Many Disguise checks require the use of a disguise kit, which contains items like makeup and false beards.
     If you do not have a proper kit, you may be able to improvise from your surroundings.
@@ -533,40 +533,32 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
     The Medicine skill represents your practical understanding of how to tend to the wounds of living creatures.
     In order to use this skill to aid a creature, you must be able to see and touch it.
 
-    \subsection{Accelerate Recovery}\label{Accelerate Recovery}
-        You can make a \glossterm{difficulty value} 15 Medicine check to accelerate the recovery of up to four creatures from among yourself and your \glossterm{allies} during a \glossterm{long rest}.
-        Success means that each creature removes an additional vital wound (see \pcref{Removing Vital Wounds}).
-        For every 10 points by which you succeed, each creature removes an additional vital wound.
+    Many Medicine checks require the use of a medical kit, which contains items like bandages and salves.
+    If you do not have a proper kit, you may be able to improvise from your surroundings.
+    Generally, this imposes a penalty of at least \minus5 to the Medicine check.
 
-        To accelerate a creature's recovery, you need a few items and supplies (bandages, salves, and so on) that are easy to come by in civilized areas.
-        You can accelerate the recovery of additional creatures during the same rest by taking a cumulative \minus2 penalty per additional creature.
-
-    \subsection{First Aid}\label{First Aid}
-        As a standard action, you can make a Medicine check to prevent yourself or an \glossterm{ally} from dying from a \glossterm{vital wound} with a negative \glossterm{vital roll}.
-        The \glossterm{difficulty value} is equal to 0 \add 10 for each point by which the vital roll is below 1.
-        Success means that the target treats the \glossterm{vital roll} as a 1 instead of its original value.
-        This changes the effect of the vital wound, generally preventing the target from dying.
-        For details, see \pcref{Vital Wounds}.
-
-        You can use this ability to treat multiple creatures within your \glossterm{reach}.
-        You take a \minus5 penalty to the check for each additional target beyond the first.
-
-    \subsection{Identify Poison or Disease}\label{Identify Poison or Disease}
-        You can make a Medicine check to identify a poison or disease currently affecting a creature.
-        The \glossterm{difficulty value} is equal to 5 \add twice the \glossterm{rank} of the poison or disease.
-        Identifying a poison takes a standard action.
-        Identifying a disease takes five minutes of work.
-
-    \subsection{Treat Condition}\label{Treat Condition}
-        As a standard action, you can make a Medicine check to treat some specific conditions.
-        Success usually means the condition is gone, as indicated by the effect's description.
-        A condition cannot be removed by this ability unless says this ability can remove it.
-
-    \subsection{Treat Poison or Disease}
-        You can make a Medicine check to treat a creature that is currently poisoned or diseased.
-        The next time it is attacked by its current poison or disease, it can use your Medicine check or its Fortitude defense, whichever is higher.
-        Treating a poison takes a standard action.
-        Treating a disease takes five minutes of work.
+    \subsection{Common Medicine Tasks}
+        \parhead{Accelerate Recovery}\label{Accelerate Recovery}
+            You can make a \glossterm{difficulty value} 15 Medicine check using a medical kit to accelerate the recovery of up to four creatures from among yourself and your \glossterm{allies} during a \glossterm{long rest}.
+            Success means that each creature removes an additional vital wound (see \pcref{Removing Vital Wounds}).
+            For every 10 points by which you succeed, each creature removes an additional vital wound.
+        \parhead{First Aid}\label{First Aid}
+            As a standard action, you can make a Medicine check using a medical kit to prevent a creature from dying from a \glossterm{vital wound} with a negative \glossterm{vital roll}.
+            The \glossterm{difficulty value} is equal to 0 \add 10 for each point by which the vital roll is below 1.
+            Success means that the target treats the \glossterm{vital roll} as a 1 instead of its original value.
+            This changes the effect of the vital wound, generally preventing the target from dying.
+            For details, see \pcref{Vital Wounds}.
+        \parhead{Identify Affliction}\label{Identify Affliction}
+            You can make a Medicine check to identify a poison, disease, or similar affliction currently affecting a creature.
+            The \glossterm{difficulty value} is equal to 5 \add twice the \glossterm{rank} of the poison or disease.
+        \parhead{Treat Condition}\label{Treat Condition}
+            As a standard action, you can make a Medicine check to treat some specific conditions.
+            Success usually means the condition is removed, as indicated by the effect's description.
+            A condition cannot be removed by this ability unless says this ability can remove it.
+        \parhead{Treat Disease} With five minutes of work, you can make a Medicine check to treat a creature that is currently diseased.
+            The next time it is attacked by its current disease, it can use your Medicine check or its Fortitude defense, whichever is higher.
+        \parhead{Treat Poison} As a standard action, you can make a Medicine check to treat a creature that is currently poisoned.
+            The next time it is attacked by its current poison, it can use your Medicine check or its Fortitude defense, whichever is higher.
 
 \newpage
 \skill{Perform}{Dex}
@@ -587,38 +579,42 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
             \item Wind instruments (flute, pan pipes, recorder, shawm, trumpet)
         \end{itemize}
 
-        \parhead{Performance Types}
-        In general, there are three types of performances: instrumental performances, visual performances, and vocal performances.
-        \subparhead{Instrumental Performances} These performances require an instrument of some sort to create sound, which always requires at least one hand to manipulate the instrument.
-        They affect all creatures who can hear the performance.
-        \subparhead{Visual Performances} These performances require some sort of motion, such as juggling.
-        They affect all creatures who can see the performance.
-        \subparhead{Vocal Performances} These performances use your voice to create sound.
-        These are simpler to create than instrumental performances, since they don't require an instrument.
-        However, vocal performances are always in a particular language.
-        They affect all creatures who can hear the performance and understand the language the performance is in.
+        \subsection{Performance Types}
+            In general, there are three types of performances: instrumental performances, visual performances, and vocal performances.
+            \parhead{Instrumental Performances} These performances require an instrument of some sort to create sound, which always requires at least one hand to manipulate the instrument.
+            They affect all creatures who can hear the performance.
+            \subparhead{Visual Performances} These performances require some sort of motion, such as juggling.
+            They affect all creatures who can see the performance.
+            \subparhead{Vocal Performances} These performances use your voice to create sound.
+            These are simpler to create than instrumental performances, since they don't require an instrument.
+            However, vocal performances are always in a particular language.
+            They affect all creatures who can hear the performance and understand the language the performance is in.
 
-        \parhead{Limitations while Performing}
-        While you are performing, your actions are slightly limited.
-        It takes a \glossterm{minor action} to initiate and sustain a performance.
+        \subsection{Limitations while Performing}
+            It takes a \glossterm{minor action} to initiate and sustain a performance.
+            While you are performing, you cannot cast spells.
+            In addition, you take a \minus5 penalty to the Perform skill for any other performances.
+            This penalty stacks, and applies separately for each simultaneous performance.
+            For example, if you were playing a lyre, singing, and juggling balls with your feet, you would take a \minus20 penalty to all three performances.
+            These limitations are in addition to any restrictions imposed by your method of performing, such as your hands being occupied playing an instrument.
 
-        While you are performing, you cannot cast spells.
-        In addition, you take a \minus5 penalty to the Perform skill for any other performances.
-        This penalty stacks, and applies separately for each simultaneous performance.
-        For example, if you were playing a lyre, singing, and juggling balls with your feet, you would take a \minus20 penalty to all three performances.
-        These limitations are in addition to any restrictions imposed by your method of performing, such as your hands being occupied playing an instrument.
-
-        You can otherwise act normally while performing, including attacking in combat, if doing so is physically possible.
+            You can otherwise act normally while performing, including attacking in combat, if doing so is physically possible.
 
         \parhead{Performance Time}
         In general, you can maintain a performance for up to an hour.
         After that time, you must take a \glossterm{short rest} before performing again.
 
-    \subsection{Entertain}
-        You can make a Perform check to provide entertainment or to show off your skills.
-
-    \subsection{Earn Income}
-        You can make a Perform check to practice your trade and make a decent living, earning about half your Perform check result in gold pieces per week of dedicated performance.
+    \subsection{Common Perform Tasks}
+        \parhead{Distract} If you succeed at an opposed Perform vs. Social Insight check, you can distract a creature observing your performance.
+        This generally makes the distracted creature \glossterm{briefly} \partiallyunaware of you, which can allow you to hide or backstab them.
+        Normally, the creature realizes that you tricked them once the distraction ends, which prevents them from being distracted again and may influence their behavior.
+        \parhead{Entertain} You can make a Perform check to provide entertainment or to show off your skills.
+        % In theory, this should have nonlinear scaling, but it's probably not worth the effort.
+        \parhead{Earn Income} You can make a Perform check to practice your trade and make a decent living.
+        You earn about half your Perform check result in silver pieces per week of dedicated performance.
+        \parhead{Fascinate} If you succeed at an opposed Perform vs. Social Insight check, you can keep attention focused on you while you perform.
+        This generally gives distracted creatures a \minus5 penalty to the Awareness and Social Insight skills to notice anything other than you.
+        You repeat this check once per minute, with a cumulative \minus5 penalty for each minute that the distraction has lasted.
 
 \newpage
 \skill{Persuasion}{Per}
@@ -626,50 +622,27 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         Depending on how it is used, it represents a combination of verbal acuity, tact, argumentative ability, grace, etiquette, and personal magnetism.
         Using a Persuasion check usually takes at least a minute of sustained conversation.
 
-        Persuasion checks are usually made against a group. For the purposes of a Persuasion check, a ``group'' consists of creatures who consider themselves to be \glossterm{allies} and who share similar information or backgrounds. For example, in a king's court, you cannot simply influence the king alone; his trusted advisors are also part of the same group. It is possible to influence one group without influencing another. For example, the king and his advisors may be unpersuaded, but the prince may find your arguments compelling. Groups can also consist of a single creature. The game master decides what the groups are.
-
-        The base \glossterm{difficulty value} for a Persuasion check against a group is equal to 5 \add the highest Social Insight of any character in the group or half the highest level of any character in the group, whichever is higher.
-
         Not all social interactions require Persuasion checks. Much of the time, being extraordinarily persuasive is unnecessary, and creatures can be convinced with normal, inartful conversation and good reasoning. Persuasion checks should only be used when your personal persuasiveness matters.
 
-    \subsection{Compel Belief}\label{Compel Belief}
-        As part of conversation, you can make a Persuasion check to cause creatures to believe something you say. If you are lying, you must also make a Deception check to lie. Success means the group believes what you are saying is true. What they choose to do with that information is up to them, however. Failure means they do not believe you, but they do not react poorly; perhaps they simply want more verification. You may be able to try again, depending on their patience. Critical failure means the group reacts poorly, and you may have permanently damaged your credibility with them.
+    \subsection{Common Persuasion Tasks}
+        \parhead{Compel Belief} As part of conversation, you can make a Persuasion check to cause creatures to believe something you say to be true.
+        If you are lying, you must also make a Deception check to avoid revealing the lie.
+        The base \glossterm{difficulty value} is equal to each creature's Mental defense.
+        It is generally easier to convince creatures of things that are highly plausible or beneficial to them.
+        Similarly, it is generally harder to convince creatures of things that are highly unlikely or detrimental to them.
+        \parhead{Form Agreement} As part of conversation, you can make a Persuasion check to cause creatures to accept a deal or arrangement you propose.
+        The base \glossterm{difficulty value} is equal to each creature's Mental defense.
+        It is generally easier to convince creatures if the deal is good for them, and harder if it is bad for them.
+        \parhead{Gather Information} You can make a Persuasion check to gather information from people around you.
+        The \glossterm{difficulty value} is 5 for basic information, 10 for information that most people wouldn't know, and even higher for secrets or intentionally concealed information.
+        This generally requires spending a few hours to meet a variety of people and learn what they know.
 
-        Your check is modified by how believable your argument is, as well as whether the group has strong feelings about the truth of your story.
-
-        \begin{dtable}
-            \lcaption{Believability Modifiers}
-            \begin{dtabularx}{\columnwidth}{X l}
-                \tb{Description}                                                             & \tb{Difficulty Modifier}  \tableheaderrule
-                Expected to be true (``Nothing interesting happened while I was on patrol'') & \minus5         \\
-                Plausible (``The mayor is too busy to see you now.'')                        & \plus0          \\
-                Unlikely (``The north gate is under attack!'')                               & \plus5          \\
-                Extremely unlikely (``The mayor is secretly a werewolf.'')                   & \plus10         \\
-                Virtually impossible (``Your husband is secretly a werewolf.'')              & \plus15 or more \\
-                Demonstratably untrue (``You are secretly a werewolf.'')                     & \tdash\fn{1}    \\
-            \end{dtabularx}
-            1 You cannot convince someone of something that is proven to be false.  \\
-        \end{dtable}
+    \subsection{Common Persuasion Modifiers}
+        The difficulty value for all Persuasion checks is modified based on the relationship between characters in a conversation, as listed in \tref{Persuasion Relationship Modifiers}.
+        Regardless of what you are saying, you are more likely to succeed when talking to a close friend than a sworn enemy.
 
         \begin{dtable}
-            \lcaption{Motivation Modifiers}
-            \begin{dtabularx}{\columnwidth}{X l}
-                \tb{Description}                                                           & \tb{Difficulty Modifier} \tableheaderrule
-                Target wants to believe (``That dress looks lovely on you.'')              & \minus5 \\
-                Target does not have strong feelings (``I'm busy.'')                       & \plus0  \\
-                Target doesn't want the story to be true (``Your brother is a murderer.'') & \plus5  \\
-            \end{dtabularx}
-        \end{dtable}
-
-    \subsection{Form Agreement}
-        You can make a Persuasion check to convince a group to accept a deal you offer. This can be used to persuade the chamberlain to let you see the king, to negotiate peace between feuding barbarian tribes, or to convince the ogre mages that have captured you that they should ransom you back to your friends instead of twisting your limbs off one by one.
-
-        Success means the group will fulfill their end of the deal. Of course, if you don't fulfill your part, they are likely to react poorly. Failure means they did not accept the deal, but they may propose an alternate arrangement, or you can propose another deal without penalty. Critical failure means that there is virtually no chance to reach an agreement, and the group may become hostile or take other steps to end the conversation. They may have been insulted by how unfair the deal was, or you may have made a critical verbal misstep.
-
-        Your check is modified by your relationship with the group and how favorable the deal is.
-
-        \begin{dtable}
-            \lcaption{Relationship Modifiers}
+            \lcaption{Persuasion Relationship Modifiers}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X r}
                 \tb{Relationship}                                                                                                                                                                 & \tb{Difficulty Modifier} \tableheaderrule
                 Intimate: Someone who with whom you have an implicit trust.
@@ -689,24 +662,6 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
                 Nemesis: Someone who has sworn to do you, personally, harm, or vice versa. Example: The brother of a man you murdered in cold blood, or the person who murdered your brother in cold blood.                                                             & \plus15  \\
             \end{dtabularx}
         \end{dtable}
-        \begin{dtable*}
-            \begin{dtabularx}{\textwidth}{>{\lcol}X r}
-                \tb{Risk vs. Reward Judgement (Persuasion)}                                                                                                                                                                                                                                                                                          & \tb{Difficulty Modifier} \tableheaderrule
-                Fantastic: The reward for accepting the deal is very worthwhile; the risk is either acceptable or extremely unlikely. The best-case scenario is a virtual guarantee. Example: An offer to pay 10gp for directions to the well-known local tavern.                                                  & \minus15 or more                                                   \\
-                Good: The reward is good and the risk is minimal. The target is very likely to profit from the deal. Example: An offer to pay someone twice their normal daily wage to spend their evening in a seedy tavern and later report on everyone they saw there.                  & \minus10                                                           \\
-                Favorable: The reward is appealing, but there's risk involved. If all goes according to plan, though, the deal will end up benefiting the target. Example: A request for a mercenary to aid the party in battle against a weak goblin tribe in return for a cut of the money and first pick of the magic items. & \minus5                                                            \\
-                Even: The reward and risk more of less even out; or the deal involves neither reward nor risk. Example: A request for directions to a place that isn't a secret.                                                                                                                                                                     & \plus0 \\
-                Unfavorable: The reward is not enough compared to the risk involved. Even if all goes according to plan, chances are it will end badly for the target. Example: A request to free a prisoner the target is guarding for a small amount of money.                                                                 & \plus5                                                             \\
-                Bad: The reward is poor and the risk is high. The target is very likely to get the raw end of the deal. Example: A request for a mercenary to aid the party in battle against an fearsome dragon for a small cut of any non-magical treasure.                                                                    & \plus10                                                            \\
-                Horrible: There is no conceivable way that the proposed plan could end up with the target ahead or the worst-case scenario is guaranteed to occur. Example: An offer to trade a broken sword hilt for a shiny new longsword.                                                                                      & \plus15 or more                                                    \\
-            \end{dtabularx}
-        \end{dtable*}
-
-    \subsection{Gather Information}
-        An evening's time, a few gold pieces for buying drinks and making friends, and a \glossterm{difficulty value} 5 Persuasion check get you a general idea of a city's major news items, assuming there are no obvious reasons why the information would be withheld. The higher your check result, the better the information.
-
-        If you want to find out about a specific rumor, or a specific item, or obtain a map, or do something else along those lines, the \glossterm{difficulty value} for the check is generally at least 5.
-        The difficulty depends on how widely known and shared the information you seek is.
 
 \newpage
 \skill{Profession}{Varies}
