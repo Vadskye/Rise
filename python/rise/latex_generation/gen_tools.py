@@ -113,6 +113,35 @@ def generate_tools():
     tools += [
         MagicItem(
             consumable=True,
+            name="Potion of Regeneration",
+            rank=3,
+            material_type="Potion",
+            tags=[],
+            description="""
+                When you drink this \\glossterm<potion>, your body's natural healing process is accelerated.
+                The next time you take a \\glossterm<long rest>, you can remove an additional \\glossterm<vital wound>.
+                If you drink multiple potions of regeneration, their effects do not stack.
+            """,
+            short_description="Remove vital wound after long rest",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Potion of Regeneration, Greater",
+            rank=6,
+            material_type="Potion",
+            tags=[],
+            description="""
+                When you drink this \\glossterm<potion>, your body's natural healing process is greatly accelerated.
+                The next time you take a \\glossterm<long rest>, you can remove two additional \\glossterm<vital wounds>.
+                If you drink multiple potions of regeneration, their effects do not stack.
+            """,
+            short_description="Remove two vital wounds after long rest",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            consumable=True,
             name="Potion of Healing",
             rank=1,
             tags=[],
@@ -839,9 +868,9 @@ def generate_tools():
             tags=[],
             description="""
                 These are Small tools that are appropriate to a particular Craft skill other than Craft (alchemy).
-                It is very difficult to create items with the Craft skill without this item (see \\pcref<Craft>).
+                It is very difficult to create items using the Craft skill without this item (see \\pcref<Craft>).
             """,
-            short_description="Required for Craft checks",
+            short_description="Required for some Craft checks",
         ),
         MagicItem(
             name="Alchemist's Lab",
@@ -850,9 +879,9 @@ def generate_tools():
             tags=[],
             description="""
                 This is a Medium workstation that contains a wide variety of compounds and reagents.
-                It is very difficult to create items with the Craft (alchemy) skill without this item (see \\pcref<Craft>).
+                It is very difficult to create items using the Craft (alchemy) skill without this item (see \\pcref<Craft>).
             """,
-            short_description="Required for Craft (alchemy) checks",
+            short_description="Required for some Craft (alchemy) checks",
         ),
         MagicItem(
             name="Disguise Kit",
@@ -861,9 +890,20 @@ def generate_tools():
             tags=[],
             description="""
                 This is a Small kit that contains a wide variety of fabrics, makeup, and other useful tools for disguising your appearance.
-                It is very difficult to create disguises with the Disguise skill without this item (see \\pcref<Disguise>).
+                It is very difficult to create disguises using the Disguise skill without this item (see \\pcref<Disguise>).
             """,
-            short_description="Required for Disguise checks",
+            short_description="Required for some Disguise checks",
+        ),
+        MagicItem(
+            name="Medical Kit",
+            rank=1,
+            materials=["Textiles"],
+            tags=[],
+            description="""
+                This is a Small kit that contains a wide variety of bandages, salves, and other useful tools for treating wounds.
+                It is very difficult to treat wounds using the Medicine skill without this item (see \\pcref<Medicine>).
+            """,
+            short_description="Required for some Medicine checks",
         ),
         MagicItem(
             name="Thieves' Tools",
@@ -872,9 +912,9 @@ def generate_tools():
             tags=[],
             description="""
                 This is a Small kit that contains a wide variety of lockpicks and device-manipulation tools.
-                It is very difficult to manipulate devices with the Devices skill without this item (see \\pcref<Devices>).
+                It is very difficult to manipulate devices using the Devices skill without this item (see \\pcref<Devices>).
             """,
-            short_description="Required for Devices checks",
+            short_description="Required for some Devices checks",
         ),
     ]
 
