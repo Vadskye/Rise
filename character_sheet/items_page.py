@@ -95,6 +95,7 @@ def attuned_effects_tracker():
                         }
                     ),
                 ),
+                number_input({"class": "hidden", "name": "active_attunement_count", "readonly": True}),
             ],
         ),
         {"class": "attune-points"},
