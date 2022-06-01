@@ -14,6 +14,7 @@ import sheet_worker
 import skills_page
 import third_page
 import items_page
+import calculation_page
 import reference_page
 import status_page
 from subprocess import call
@@ -69,12 +70,10 @@ def main(destination):
                         first_page.create_page(cgi.DESTINATION),
                         active_abilities_page.create_page(cgi.DESTINATION),
                         creation_page.create_page(cgi.DESTINATION),
-                        identity_page.create_page(cgi.DESTINATION),
-                        skills_page.create_page(cgi.DESTINATION),
-                        second_page.create_page(cgi.DESTINATION),
-                        third_page.create_page(cgi.DESTINATION),
-                        items_page.create_page(cgi.DESTINATION),
                         status_page.create_page(cgi.DESTINATION),
+                        items_page.create_page(cgi.DESTINATION),
+                        identity_page.create_page(cgi.DESTINATION),
+                        calculation_page.create_page(cgi.DESTINATION),
                         reference_page.create_page(cgi.DESTINATION),
                         rolltemplate.rolltemplate_html(),
                     ],
@@ -86,14 +85,12 @@ def main(destination):
             for filename in [
                 "sheet",
                 "first_page",
-                "creation_page",
-                "identity_page",
                 "active_abilities_page",
-                "skills_page",
-                "second_page",
-                "third_page",
-                "items_page",
+                "creation_page",
                 "status_page",
+                "items_page",
+                "identity_page",
+                "calculation_page",
                 "reference_page",
                 "roll20_custom",
             ]:

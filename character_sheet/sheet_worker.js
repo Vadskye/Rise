@@ -1,4 +1,5 @@
 const CUSTOM_MODIFIER_TYPES = ["attuned", "legacy", "temporary", "permanent"];
+const EXPLANATION_TYPES = CUSTOM_MODIFIER_TYPES.concat(["debuff"]);
 const BASE_CLASS_MODIFIERS = {
   monster: {
     power: "monster",
@@ -297,7 +298,14 @@ function boolifySheetValue(val) {
 
 const SKILLS_BY_ATTRIBUTE = {
   strength: ["climb", "jump", "swim"],
-  dexterity: ["balance", "flexibility", "perform", "ride", "sleight_of_hand", "stealth"],
+  dexterity: [
+    "balance",
+    "flexibility",
+    "perform",
+    "ride",
+    "sleight_of_hand",
+    "stealth",
+  ],
   constitution: ["Endurance"],
   intelligence: [
     "craft_alchemy",
@@ -328,7 +336,14 @@ const SKILLS_BY_ATTRIBUTE = {
     "linguistics",
     "medicine",
   ],
-  perception: ["awareness", "creature_handling", "deception", "persuasion", "social_insight", "survival"],
+  perception: [
+    "awareness",
+    "creature_handling",
+    "deception",
+    "persuasion",
+    "social_insight",
+    "survival",
+  ],
   willpower: [],
   other: ["intimidate", "profession"],
 };
@@ -469,6 +484,7 @@ function handleEverything() {
   handleCreationModifiers();
   handleCustomModifiers();
   handleDebuffs();
+  handleModifierExplanations();
   handleMonsterBaseClass();
   handleMonsterChatColor();
   handleResources();
@@ -852,7 +868,10 @@ function handleAttunedEffects() {
           let attunedCount = 0;
           for (const id of repeatingSectionIds) {
             if (values[`repeating_attunedmodifiers_${id}_is_active`] === "1") {
-              const attuneCost = values[`repeating_attunedmodifiers_${id}_is_deep`] === "1" ? 2 : 1;
+              const attuneCost =
+                values[`repeating_attunedmodifiers_${id}_is_deep`] === "1"
+                  ? 2
+                  : 1;
               attunedCount += attuneCost;
             }
           }
@@ -902,8 +921,12 @@ function handleCreationModifiers() {
       // Class proficiencies and class skill count aren't modifiers. They are simply
       // directly set, since nothing else can modify them.
       const attrs = {
-        base_class_proficiencies: classModifiers.proficiencies,
-        class_skill_count: classModifiers.class_skill_count,
+        base_class_proficiencies: classModifiers
+          ? classModifiers.proficiencies
+          : "",
+        class_skill_count: classModifiers
+          ? classModifiers.class_skill_count
+          : "",
       };
       // The simple modifier keys can simply be directly translated
       for (const modifierKey of [
@@ -916,7 +939,9 @@ function handleCreationModifiers() {
         "fatigue_tolerance",
         "insight_points",
       ]) {
-        attrs[`${modifierKey}_creation_modifier`] = classModifiers[modifierKey];
+        attrs[`${modifierKey}_creation_modifier`] = classModifiers
+          ? classModifiers[modifierKey]
+          : 0;
       }
 
       // const speciesModifiers = SPECIES_MODIFIERS[v.species];
@@ -934,12 +959,16 @@ function handleCustomModifiers() {
         const nestedCustomStatisticCount = 3;
         const formatStatisticId = (id, i) =>
           `repeating_${modifierType}modifiers_${id}_statistic${i}`;
+        const formatNameId = (id) =>
+          `repeating_${modifierType}modifiers_${id}_name`;
         const formatValueId = (id, i) =>
           `repeating_${modifierType}modifiers_${id}_value${i}`;
         const formatIsActiveId = (id) =>
           `repeating_${modifierType}modifiers_${id}_is_active`;
         const formatModifierKey = (modifierName) =>
           `${modifierName}_${modifierType}_modifier`;
+        const formatExplanationKey = (modifierName) =>
+          `${modifierName}_${modifierType}_explanation`;
 
         getSectionIDs(
           `repeating_${modifierType}modifiers`,
@@ -947,13 +976,19 @@ function handleCustomModifiers() {
             const fullAttributeIds = [];
             for (const id of repeatingSectionIds) {
               fullAttributeIds.push(formatIsActiveId(id));
+              fullAttributeIds.push(formatNameId(id));
               for (let i = 0; i < nestedCustomStatisticCount; i++) {
                 fullAttributeIds.push(formatStatisticId(id, i));
                 fullAttributeIds.push(formatValueId(id, i));
               }
             }
             getAttrs(fullAttributeIds, (values) => {
-              const totalCustomModifiers = {};
+              // At this point, we have N modifier rows that can have up to 3 independent
+              // modifiers each. We need to group modifiers that affect the same
+              // statistic. This is made slightly more complicated by the fact that some
+              // modifiers, such as "all_defenses", can affect multiple statistics.
+              const namedModifierMap = new NamedModifierMap();
+
               for (const id of repeatingSectionIds) {
                 // Permanent and legacy modifiers are always active; for temporary and attuned
                 // modifiers, we have to check the value from the checkbox.
@@ -963,58 +998,22 @@ function handleCustomModifiers() {
                 if (isActive === "on" || isActive == 1) {
                   for (let i = 0; i < nestedCustomStatisticCount; i++) {
                     const modifiedStatistic = values[formatStatisticId(id, i)];
+                    const name = values[formatNameId(id)] || "Unknown";
                     const value = Number(values[formatValueId(id, i)]) || 0;
-                    totalCustomModifiers[modifiedStatistic] =
-                      (totalCustomModifiers[modifiedStatistic] || 0) + value;
+                    namedModifierMap.addNamedModifier(
+                      modifiedStatistic,
+                      name,
+                      value
+                    );
                   }
                 }
               }
               const attrs = {};
-              for (const modifierName of VARIABLES_WITH_CUSTOM_MODIFIERS) {
-                attrs[formatModifierKey(modifierName)] =
-                  totalCustomModifiers[modifierName] || 0;
-              }
-              // Handle meta-modifiers
-              for (const defenseName of [
-                "armor_defense",
-                "fortitude",
-                "reflex",
-                "mental",
-              ]) {
-                attrs[formatModifierKey(defenseName)] +=
-                  totalCustomModifiers["all_defenses"] || 0;
-              }
-              for (const knowledgeName of [
-                "knowledge_arcana",
-                "knowledge_dungeoneering",
-                "knowledge_engineering",
-                "knowledge_items",
-                "knowledge_local",
-                "knowledge_nature",
-                "knowledge_planes",
-                "knowledge_religion",
-                "knowledge_untrained",
-              ]) {
-                attrs[formatModifierKey(knowledgeName)] +=
-                  totalCustomModifiers["knowledge_all"] || 0;
-              }
-              for (const craftName of [
-                "craft_alchemy",
-                "craft_bone",
-                "craft_ceramics",
-                "craft_jewelry",
-                "craft_leather",
-                "craft_manuscripts",
-                "craft_metal",
-                "craft_poison",
-                "craft_stone",
-                "craft_textiles",
-                "craft_traps",
-                "craft_wood",
-                "craft_untrained",
-              ]) {
-                attrs[formatModifierKey(craftName)] +=
-                  totalCustomModifiers["craft_all"] || 0;
+              for (const statisticKey of VARIABLES_WITH_CUSTOM_MODIFIERS) {
+                attrs[formatModifierKey(statisticKey)] =
+                  namedModifierMap.calculateModifierValue(statisticKey);
+                attrs[formatExplanationKey(statisticKey)] =
+                  namedModifierMap.generateExplanation(statisticKey);
               }
 
               setAttrs(attrs);
@@ -1023,6 +1022,86 @@ function handleCustomModifiers() {
         );
       }
     );
+  }
+}
+
+class NamedModifierMap {
+  constructor() {
+    this.namedModifiersByStatistic = {};
+  }
+
+  addNamedModifier(statisticKey, name, value) {
+    if (statisticKey === "all_defenses") {
+      for (const defenseKey of [
+        "armor_defense",
+        "fortitude",
+        "reflex",
+        "mental",
+      ]) {
+        this.addNamedModifier(defenseKey, name, value);
+      }
+    } else if (statisticKey === "knowledge_all") {
+      for (const knowledgeKey of [
+        "knowledge_arcana",
+        "knowledge_dungeoneering",
+        "knowledge_engineering",
+        "knowledge_items",
+        "knowledge_local",
+        "knowledge_nature",
+        "knowledge_planes",
+        "knowledge_religion",
+        "knowledge_untrained",
+      ]) {
+        this.addNamedModifier(knowledgeKey, name, value);
+      }
+    } else if (statisticKey === "craft_all") {
+      for (const craftKey of [
+        "craft_alchemy",
+        "craft_bone",
+        "craft_ceramics",
+        "craft_jewelry",
+        "craft_leather",
+        "craft_manuscripts",
+        "craft_metal",
+        "craft_poison",
+        "craft_stone",
+        "craft_textiles",
+        "craft_traps",
+        "craft_wood",
+        "craft_untrained",
+      ]) {
+        this.addNamedModifier(craftKey, name, value);
+      }
+    }
+
+    this.namedModifiersByStatistic[statisticKey] = (
+      this.namedModifiersByStatistic[statisticKey] || []
+    ).concat({ name, value });
+  }
+
+  calculateModifierValue(statisticKey) {
+    if (!this.namedModifiersByStatistic[statisticKey]) {
+      return 0;
+    }
+    let total = 0;
+    for (const namedModifier of this.namedModifiersByStatistic[statisticKey]) {
+      total += namedModifier.value;
+    }
+    return total;
+  }
+
+  generateExplanation(statisticKey) {
+    if (!this.namedModifiersByStatistic[statisticKey]) {
+      return "";
+    }
+    let explanations = [];
+    for (const namedModifier of this.namedModifiersByStatistic[statisticKey]) {
+      let prefix = namedModifier.value > 0 ? "+" : "";
+      explanations.push(
+        `${prefix}${namedModifier.value} (${namedModifier.name})`
+      );
+    }
+    return explanations.join(" ");
   }
 }
 
@@ -1452,6 +1531,38 @@ function handleLandSpeed() {
   );
 }
 
+function handleModifierExplanations() {
+  let modifierNames = [
+    "hit_points",
+    "damage_resistance", // Note: uses "damage_resistance_bonus" for custom modifer :(
+    "armor_defense",
+    "fortitude",
+    "reflex",
+    "mental",
+  ];
+  let modifierKeys = [];
+  for (const m of modifierNames) {
+    for (const t of CUSTOM_MODIFIER_TYPES) {
+      modifierKeys.push(`${m}_${t}_explanation`);
+    }
+  }
+  onGet(
+    {
+      string: modifierKeys,
+    },
+    (v) => {
+      const attrs = {};
+      for (const modifierName of modifierNames) {
+        const explanations = CUSTOM_MODIFIER_TYPES.map(
+          (t) => v[`${modifierName}_${t}_explanation`]
+        ).filter(Boolean);
+        attrs[`${modifierName}_explanation`] = explanations.join(" ");
+      }
+      setAttrs(attrs);
+    }
+  );
+}
+
 function handleMonsterChatColor() {
   onGet(
     {
@@ -1508,7 +1619,10 @@ function handlePower() {
       const maxRank =
         Math.max(v.archetype_rank_0, v.archetype_rank_1, v.archetype_rank_2) ||
         0;
-      const classPowerProgression = BASE_CLASS_MODIFIERS[v.base_class].power;
+      const baseClassModifiers = BASE_CLASS_MODIFIERS[v.base_class];
+      const classPowerProgression = baseClassModifiers
+        ? baseClassModifiers.power
+        : null;
       let classPowerModifier = 0;
       if (classPowerProgression === "fast") {
         classPowerModifier = {
@@ -2284,8 +2398,12 @@ function handleWeaponSanitization() {
     (v) => {
       const attrs = {};
       for (let i = 0; i < 3; i++) {
-        attrs[`weapon_${i}_name_sanitized`] = v[`weapon_${i}_name`].replace(',', '&#44;').replace('/', '&#47;');
-        attrs[`weapon_${i}_tags_sanitized`] = v[`weapon_${i}_tags`].replace(',', '&#44;').replace('/', '&#47;');
+        attrs[`weapon_${i}_name_sanitized`] = v[`weapon_${i}_name`]
+          .replace(",", "&#44;")
+          .replace("/", "&#47;");
+        attrs[`weapon_${i}_tags_sanitized`] = v[`weapon_${i}_tags`]
+          .replace(",", "&#44;")
+          .replace("/", "&#47;");
       }
       setAttrs(attrs);
     }
