@@ -665,16 +665,24 @@ function handleAccuracy() {
       numeric: ["challenge_rating", "level", "perception", "fatigue_penalty"],
     },
     (v) => {
-      const crLevelScaling = v.challenge_rating
-        ? Math.max(0, Math.floor(v.level / 9))
-        : 0;
+      const crLevelScaling = v.challenge_rating && v.level >= 19 ? 1 : 0;
+      const levelModifier = Math.floor(v.level / 2);
+      const perceptionModifier = Math.floor(v.perception / 2);
       const accuracy =
         crLevelScaling +
         v.misc +
-        Math.floor(v.level / 2) +
-        Math.floor(v.perception / 2) -
+        levelModifier +
+        perceptionModifier -
         v.fatigue_penalty;
-      setAttrs({ accuracy });
+      setAttrs({
+        accuracy,
+        accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "level", value: levelModifier },
+          { name: "Per", value: perceptionModifier },
+          { name: "fatigue", value: -v.fatigue_penalty },
+          { name: "CR", value: crLevelScaling },
+        ]),
+      });
     }
   );
 }
@@ -1169,9 +1177,9 @@ function handleDamageResistance() {
           v.miscExplanation,
           [
             { name: "level", value: fromLevel },
-            { name: "con", value: fromLevelAndCon - fromLevel },
+            { name: "Con", value: fromLevelAndCon - fromLevel },
             { name: "body armor", value: v.body_armor_damage_resistance },
-            { name: "cr", value: crMultipliedValue - playerTotalValue },
+            { name: "CR", value: crMultipliedValue - playerTotalValue },
             { name: "vital wounds", value: totalValue - crMultipliedValue },
           ]
         ),
@@ -1471,8 +1479,8 @@ function handleHitPoints() {
       let attrs = {
         hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: "level", value: hpFromLevel },
-          { name: "con", value: hpFromLevelAndCon - hpFromLevel },
-          { name: "cr", value: totalValue - playerTotalValue },
+          { name: "Con", value: hpFromLevelAndCon - hpFromLevel },
+          { name: "CR", value: totalValue - playerTotalValue },
         ]),
         hit_points_max: totalValue,
         hit_points_maximum: totalValue,
