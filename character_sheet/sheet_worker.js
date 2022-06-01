@@ -1,5 +1,9 @@
 const CUSTOM_MODIFIER_TYPES = ["attuned", "legacy", "temporary", "permanent"];
-const EXPLANATION_TYPES = CUSTOM_MODIFIER_TYPES.concat(["debuff"]);
+const EXPLANATION_TYPES = CUSTOM_MODIFIER_TYPES.concat([
+  "creation",
+  "debuff",
+  "vital_wound",
+]);
 const BASE_CLASS_MODIFIERS = {
   monster: {
     power: "monster",
@@ -255,7 +259,8 @@ function onGet(variables, options, callback = null) {
     ...variables.boolean,
     ...variables.numeric,
     ...variables.string,
-    ...miscVariables,
+    ...miscVariables.explanationVariables,
+    ...miscVariables.numericVariables,
   ];
 
   const changeString = changeVariables.map(formatChangeString).join(" ");
@@ -270,7 +275,7 @@ function onGet(variables, options, callback = null) {
   ];
   on(changeString, (eventInfo) => {
     getAttrs(getVariables, (attrs) => {
-      const v = { eventInfo, misc: 0 };
+      const v = { eventInfo, misc: 0, miscExplanation: "" };
       for (const b of variables.boolean.concat(
         variablesWithoutListen.boolean
       )) {
@@ -284,9 +289,17 @@ function onGet(variables, options, callback = null) {
       for (const s of variables.string.concat(variablesWithoutListen.string)) {
         v[s] = attrs[s];
       }
-      for (const m of miscVariables) {
+      for (const m of miscVariables.numericVariables) {
         v.misc += Number(attrs[m] || 0);
       }
+      const namedModifiers = miscVariables.explanationVariables.map((e) => {
+        return {
+          name: attrs[e],
+          // This replacement matches the conventions used in generateMiscVariables.
+          value: Number(attrs[e.replace("_explanation", "_modifier")] || 0),
+        };
+      });
+      v.miscExplanation = collectNamedModifierExplanations(namedModifiers);
       callback(v);
     });
   });
@@ -446,25 +459,30 @@ const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
 ]);
 
 function generateMiscVariables(name) {
+  const explanationVariables = [];
+  const numericVariables = [];
   if (!name) {
-    return [];
+    return { explanationVariables, numericVariables };
   }
-  const variables = [];
   if (VARIABLES_WITH_CUSTOM_MODIFIERS.has(name)) {
     for (const modifierType of CUSTOM_MODIFIER_TYPES) {
-      variables.push(`${name}_${modifierType}_modifier`);
+      explanationVariables.push(`${name}_${modifierType}_explanation`);
+      numericVariables.push(`${name}_${modifierType}_modifier`);
     }
   }
   if (VARIABLES_WITH_CREATION_MODIFIERS.has(name)) {
-    variables.push(`${name}_creation_modifier`);
+    explanationVariables.push(`${name}_creation_explanation`);
+    numericVariables.push(`${name}_creation_modifier`);
   }
   if (VARIABLES_WITH_DEBUFF_MODIFIERS.has(name)) {
-    variables.push(`${name}_debuff_modifier`);
+    explanationVariables.push(`${name}_debuff_explanation`);
+    numericVariables.push(`${name}_debuff_modifier`);
   }
   if (VARIABLES_WITH_VITAL_WOUND_MODIFIERS.has(name)) {
-    variables.push(`${name}_vital_wound_modifier`);
+    explanationVariables.push(`${name}_vital_wound_explanation`);
+    numericVariables.push(`${name}_vital_wound_modifier`);
   }
-  return variables;
+  return { explanationVariables, numericVariables };
 }
 
 function formatChangeString(varName) {
@@ -484,7 +502,7 @@ function handleEverything() {
   handleCreationModifiers();
   handleCustomModifiers();
   handleDebuffs();
-  handleModifierExplanations();
+  // handleModifierExplanations();
   handleMonsterBaseClass();
   handleMonsterChatColor();
   handleResources();
@@ -1094,14 +1112,9 @@ class NamedModifierMap {
     if (!this.namedModifiersByStatistic[statisticKey]) {
       return "";
     }
-    let explanations = [];
-    for (const namedModifier of this.namedModifiersByStatistic[statisticKey]) {
-      let prefix = namedModifier.value > 0 ? "+" : "";
-      explanations.push(
-        `${prefix}${namedModifier.value} (${namedModifier.name})`
-      );
-    }
-    return explanations.join(" ");
+    return collectNamedModifierExplanations(
+      this.namedModifiersByStatistic[statisticKey]
+    );
   }
 }
 
@@ -1130,39 +1143,8 @@ function handleDamageResistance() {
       },
     },
     (v) => {
-      var fromLevel = 0;
-      var levelish = v.level + v.constitution;
-      if (levelish > 0) {
-        var multiplier = 1;
-        while (levelish > 21) {
-          levelish -= 6;
-          multiplier += 1;
-        }
-        fromLevel =
-          {
-            1: 1,
-            2: 2,
-            3: 3,
-            4: 4,
-            5: 5,
-            6: 6,
-            7: 7,
-            8: 9,
-            9: 10,
-            10: 12,
-            11: 13,
-            12: 15,
-            13: 16,
-            14: 18,
-            15: 20,
-            16: 22,
-            17: 25,
-            18: 28,
-            19: 32,
-            20: 36,
-            21: 40,
-          }[levelish] * multiplier;
-      }
+      const fromLevel = calcBaseDamageResistance(v.level);
+      const fromLevelAndCon = calcBaseDamageResistance(v.level + v.constitution);
       var crMultiplier = {
         0: 1,
         0.5: 0,
@@ -1171,16 +1153,28 @@ function handleDamageResistance() {
         4: 8,
         6: 16,
       }[v.challenge_rating || 0];
+      const playerTotalValue =
+        fromLevelAndCon + v.body_armor_damage_resistance + v.misc;
+      const crMultipliedValue = Math.floor(playerTotalValue * crMultiplier);
+      // use math.max as a dumb hack so we can use negative values to mean "really zero,
+      // don't || into 1"
       const totalValue = Math.floor(
-        (fromLevel + v.body_armor_damage_resistance + v.misc) *
-          crMultiplier *
-          // use math.max as a dumb hack so we can use negative values to mean "really zero,
-          // don't || into 1"
+        crMultipliedValue *
           Math.max(0, v.damage_resistance_bonus_vital_wound_multiplier || 1)
       );
 
       let attrs = {
-        damage_resistance_from_level: fromLevel * crMultiplier,
+        damage_resistance_explanation: formatCombinedExplanation(
+          [
+            { name: "level", value: fromLevel },
+            { name: "con", value: fromLevelAndCon - fromLevel },
+            { name: "body armor", value: v.body_armor_damage_resistance },
+            { name: "cr", value: crMultipliedValue - playerTotalValue },
+            { name: "vital wounds", value: totalValue - crMultipliedValue },
+          ],
+          v.miscExplanation
+        ),
+        damage_resistance_from_level: Math.floor(fromLevelAndCon * crMultiplier),
         damage_resistance_max: totalValue,
         damage_resistance_maximum: totalValue,
       };
@@ -1194,6 +1188,42 @@ function handleDamageResistance() {
       setAttrs(attrs);
     }
   );
+}
+
+function calcBaseDamageResistance(levelish) {
+  let baseDr = 0;
+  if (levelish > 0) {
+    var multiplier = 1;
+    while (levelish > 21) {
+      levelish -= 6;
+      multiplier += 1;
+    }
+    baseDr =
+      {
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        7: 7,
+        8: 9,
+        9: 10,
+        10: 12,
+        11: 13,
+        12: 15,
+        13: 16,
+        14: 18,
+        15: 20,
+        16: 22,
+        17: 25,
+        18: 28,
+        19: 32,
+        20: 36,
+        21: 40,
+      }[levelish] * multiplier;
+  }
+  return baseDr;
 }
 
 function handleDebuffs() {
@@ -1420,41 +1450,8 @@ function handleHitPoints() {
       },
     },
     (v) => {
-      let levelish = v.level + v.constitution;
-      let hpFromLevel = 9 + levelish;
-      if (levelish > 0) {
-        var multiplier = 1;
-        while (levelish > 21) {
-          levelish -= 6;
-          multiplier += 1;
-        }
-        hpFromLevel =
-          multiplier *
-            {
-              1: 10,
-              2: 11,
-              3: 12,
-              4: 13,
-              5: 14,
-              6: 16,
-              7: 18,
-              8: 20,
-              9: 22,
-              10: 25,
-              11: 28,
-              12: 32,
-              13: 36,
-              14: 40,
-              15: 44,
-              16: 50,
-              17: 56,
-              18: 64,
-              19: 72,
-              20: 80,
-              21: 88,
-              22: 100,
-            }[levelish] || 1;
-      }
+      const hpFromLevel = calcBaseHitPoints(v.level);
+      const hpFromLevelAndCon = calcBaseHitPoints(v.level + v.constitution);
 
       let crMultiplier = {
         0: 1,
@@ -1465,10 +1462,18 @@ function handleHitPoints() {
         6: 6,
       }[v.challenge_rating || 0];
 
-      const totalValue = Math.floor((hpFromLevel + v.misc) * crMultiplier);
+      const playerTotalValue = hpFromLevelAndCon + v.misc;
+      const totalValue = Math.floor(playerTotalValue * crMultiplier);
 
       let attrs = {
-        hit_points_from_level: hpFromLevel * crMultiplier,
+        hit_points_explanation: formatCombinedExplanation(
+          [
+            { name: "level", value: hpFromLevel },
+            { name: "con", value: hpFromLevelAndCon - hpFromLevel },
+            { name: "cr", value: totalValue - playerTotalValue },
+          ],
+          v.miscExplanation
+        ),
         hit_points_max: totalValue,
         hit_points_maximum: totalValue,
       };
@@ -1482,6 +1487,44 @@ function handleHitPoints() {
       setAttrs(attrs);
     }
   );
+}
+
+function calcBaseHitPoints(levelish) {
+  let baseHp = 9 + levelish;
+  if (levelish > 0) {
+    var multiplier = 1;
+    while (levelish > 21) {
+      levelish -= 6;
+      multiplier += 1;
+    }
+    baseHp =
+      multiplier *
+        {
+          1: 10,
+          2: 11,
+          3: 12,
+          4: 13,
+          5: 14,
+          6: 16,
+          7: 18,
+          8: 20,
+          9: 22,
+          10: 25,
+          11: 28,
+          12: 32,
+          13: 36,
+          14: 40,
+          15: 44,
+          16: 50,
+          17: 56,
+          18: 64,
+          19: 72,
+          20: 80,
+          21: 88,
+          22: 100,
+        }[levelish] || 1;
+  }
+  return baseHp;
 }
 
 function handleInitiative() {
@@ -1531,37 +1574,37 @@ function handleLandSpeed() {
   );
 }
 
-function handleModifierExplanations() {
-  let modifierNames = [
-    "hit_points",
-    "damage_resistance", // Note: uses "damage_resistance_bonus" for custom modifer :(
-    "armor_defense",
-    "fortitude",
-    "reflex",
-    "mental",
-  ];
-  let modifierKeys = [];
-  for (const m of modifierNames) {
-    for (const t of CUSTOM_MODIFIER_TYPES) {
-      modifierKeys.push(`${m}_${t}_explanation`);
-    }
-  }
-  onGet(
-    {
-      string: modifierKeys,
-    },
-    (v) => {
-      const attrs = {};
-      for (const modifierName of modifierNames) {
-        const explanations = CUSTOM_MODIFIER_TYPES.map(
-          (t) => v[`${modifierName}_${t}_explanation`]
-        ).filter(Boolean);
-        attrs[`${modifierName}_explanation`] = explanations.join(" ");
-      }
-      setAttrs(attrs);
-    }
-  );
-}
+// function handleModifierExplanations() {
+//   let modifierNames = [
+//     "hit_points",
+//     "damage_resistance", // Note: uses "damage_resistance_bonus" for custom modifer :(
+//     "armor_defense",
+//     "fortitude",
+//     "reflex",
+//     "mental",
+//   ];
+//   let modifierKeys = [];
+//   for (const m of modifierNames) {
+//     for (const t of CUSTOM_MODIFIER_TYPES) {
+//       modifierKeys.push(`${m}_${t}_explanation`);
+//     }
+//   }
+//   onGet(
+//     {
+//       string: modifierKeys,
+//     },
+//     (v) => {
+//       const attrs = {};
+//       for (const modifierName of modifierNames) {
+//         const explanations = CUSTOM_MODIFIER_TYPES.map(
+//           (t) => v[`${modifierName}_${t}_explanation`]
+//         ).filter(Boolean);
+//         attrs[`${modifierName}_explanation`] = explanations.join(" ");
+//       }
+//       setAttrs(attrs);
+//     }
+//   );
+// }
 
 function handleMonsterChatColor() {
   onGet(
@@ -2421,6 +2464,33 @@ function handleMonsterBaseClass() {
       }
     }
   );
+}
+
+function collectNamedModifierExplanations(namedModifiers) {
+  return namedModifiers
+    .map(formatNamedModifierExplanation)
+    .filter(Boolean)
+    .join(",");
+}
+
+function formatNamedModifierExplanation({ name, value }) {
+  if (value === 0) {
+    return "";
+  }
+  const prefix = value >= 0 ? "+" : "";
+  return `${prefix}${value} (${name})`;
+}
+
+function formatCombinedExplanation(localNamedModifiers, miscExplanation) {
+  // miscExplanation is comma-separated because we can't save lists as attributes, so we
+  // need to split it and reformat the whole thing together. First, put the local
+  // explanation in an identical format.
+  const localExplanation =
+    collectNamedModifierExplanations(localNamedModifiers);
+  // Smash them all together into a single explanation, putting the local modifiers
+  // first. We used comma separation so we can do fancier formatting if necessary, but a
+  // simple space-separated list might work fine.
+  return (localExplanation + miscExplanation).replace(",", " ");
 }
 
 handleEverything();
