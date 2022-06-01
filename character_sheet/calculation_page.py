@@ -30,32 +30,15 @@ def create_page(_destination):
     return flex_col(
         {"class": "page calculation-page"},
         [
+            abilities_known(),
             defensive_statistics(),
+            offensive_statistics(),
         ],
     )
 
-
-def defensive_statistics():
-    statistics = [
-        "Hit points",
-        "Damage resistance",
-        "Armor defense",
-        "Fortitude",
-        "Reflex",
-        "Mental",
-    ]
-
-    return div(
-        [
-            div({"class": "section-header"}, "Abilities Known"),
-            *[stat_row(c) for c in KNOWABLE_CONCEPTS],
-            div({"class": "section-header"}, "Defensive Statistics"),
-            *[stat_row(s) for s in statistics],
-        ]
-    )
-
-
-def stat_row(statistic_name):
+def stat_row(statistic_name, display_name = None):
+    if display_name is None:
+        display_name = statistic_name
     parseable = get_modifier_key(statistic_name)
     return flex_row(
         {"class": "statistic-row"},
@@ -72,4 +55,39 @@ def stat_row(statistic_name):
                 }
             ),
         ],
+    )
+
+def abilities_known():
+    return div(
+        [
+            div({"class": "section-header"}, "Abilities Known"),
+            *[stat_row(c) for c in KNOWABLE_CONCEPTS],
+        ]
+    )
+
+def defensive_statistics():
+    statistics = [
+        "Hit points",
+        "Damage resistance",
+        "Armor defense",
+        "Fortitude",
+        "Reflex",
+        "Mental",
+    ]
+
+    return div(
+        [
+            div({"class": "section-header"}, "Defensive Statistics"),
+            *[stat_row(s) for s in statistics],
+        ]
+    )
+
+def offensive_statistics():
+    return div(
+        [
+            div({"class": "section-header"}, "Offensive Statistics"),
+            stat_row("Accuracy"),
+            stat_row("Power"),
+            stat_row("weapon_damage_dice", "Strike +d"),
+        ]
     )
