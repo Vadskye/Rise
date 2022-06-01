@@ -16,21 +16,7 @@ from cgi_simple import (
     text_input,
     underlabel,
 )
-
-
-KNOWABLE_CONCEPTS = [
-    "Bardic performances",
-    "Battle tactics",
-    "Combat styles",
-    "Hunting styles",
-    "Ki manifestations",
-    "Maneuvers",
-    "Mystic insights",
-    "Mystic spheres",
-    "Spells",
-    "Wild aspects",
-]
-
+from sheet_data import KNOWABLE_CONCEPTS
 
 def create_page(destination):
     return flex_col(

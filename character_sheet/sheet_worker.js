@@ -292,14 +292,10 @@ function onGet(variables, options, callback = null) {
       for (const m of miscVariables.numericVariables) {
         v.misc += Number(attrs[m] || 0);
       }
-      const namedModifiers = miscVariables.explanationVariables.map((e) => {
-        return {
-          name: attrs[e],
-          // This replacement matches the conventions used in generateMiscVariables.
-          value: Number(attrs[e.replace("_explanation", "_modifier")] || 0),
-        };
-      });
-      v.miscExplanation = collectNamedModifierExplanations(namedModifiers);
+      v.miscExplanation = miscVariables.explanationVariables
+        .map((e) => attrs[e])
+        .filter(Boolean)
+        .join(",");
       callback(v);
     });
   });
@@ -653,6 +649,9 @@ function handleAbilityKnown(abilityName) {
       const totalValue = v.misc;
       setAttrs({
         [`has_${abilityName}`]: totalValue > 0 ? "1" : "0",
+        [`${abilityName}_known_explanation`]: formatCombinedExplanation(
+          v.miscExplanation
+        ),
         [`${abilityName}_known`]: totalValue,
       });
     }
@@ -1144,7 +1143,9 @@ function handleDamageResistance() {
     },
     (v) => {
       const fromLevel = calcBaseDamageResistance(v.level);
-      const fromLevelAndCon = calcBaseDamageResistance(v.level + v.constitution);
+      const fromLevelAndCon = calcBaseDamageResistance(
+        v.level + v.constitution
+      );
       var crMultiplier = {
         0: 1,
         0.5: 0,
@@ -1165,16 +1166,18 @@ function handleDamageResistance() {
 
       let attrs = {
         damage_resistance_explanation: formatCombinedExplanation(
+          v.miscExplanation,
           [
             { name: "level", value: fromLevel },
             { name: "con", value: fromLevelAndCon - fromLevel },
             { name: "body armor", value: v.body_armor_damage_resistance },
             { name: "cr", value: crMultipliedValue - playerTotalValue },
             { name: "vital wounds", value: totalValue - crMultipliedValue },
-          ],
-          v.miscExplanation
+          ]
         ),
-        damage_resistance_from_level: Math.floor(fromLevelAndCon * crMultiplier),
+        damage_resistance_from_level: Math.floor(
+          fromLevelAndCon * crMultiplier
+        ),
         damage_resistance_max: totalValue,
         damage_resistance_maximum: totalValue,
       };
@@ -1466,14 +1469,11 @@ function handleHitPoints() {
       const totalValue = Math.floor(playerTotalValue * crMultiplier);
 
       let attrs = {
-        hit_points_explanation: formatCombinedExplanation(
-          [
-            { name: "level", value: hpFromLevel },
-            { name: "con", value: hpFromLevelAndCon - hpFromLevel },
-            { name: "cr", value: totalValue - playerTotalValue },
-          ],
-          v.miscExplanation
-        ),
+        hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "level", value: hpFromLevel },
+          { name: "con", value: hpFromLevelAndCon - hpFromLevel },
+          { name: "cr", value: totalValue - playerTotalValue },
+        ]),
         hit_points_max: totalValue,
         hit_points_maximum: totalValue,
       };
@@ -2442,11 +2442,11 @@ function handleWeaponSanitization() {
       const attrs = {};
       for (let i = 0; i < 3; i++) {
         attrs[`weapon_${i}_name_sanitized`] = v[`weapon_${i}_name`]
-          .replace(",", "&#44;")
-          .replace("/", "&#47;");
+          .replaceAll(",", "&#44;")
+          .replaceAll("/", "&#47;");
         attrs[`weapon_${i}_tags_sanitized`] = v[`weapon_${i}_tags`]
-          .replace(",", "&#44;")
-          .replace("/", "&#47;");
+          .replaceAll(",", "&#44;")
+          .replaceAll("/", "&#47;");
       }
       setAttrs(attrs);
     }
@@ -2481,16 +2481,17 @@ function formatNamedModifierExplanation({ name, value }) {
   return `${prefix}${value} (${name})`;
 }
 
-function formatCombinedExplanation(localNamedModifiers, miscExplanation) {
+function formatCombinedExplanation(miscExplanation, localNamedModifiers) {
   // miscExplanation is comma-separated because we can't save lists as attributes, so we
   // need to split it and reformat the whole thing together. First, put the local
   // explanation in an identical format.
-  const localExplanation =
-    collectNamedModifierExplanations(localNamedModifiers);
+  const localExplanation = collectNamedModifierExplanations(
+    localNamedModifiers || []
+  );
   // Smash them all together into a single explanation, putting the local modifiers
   // first. We used comma separation so we can do fancier formatting if necessary, but a
   // simple space-separated list might work fine.
-  return (localExplanation + miscExplanation).replace(",", " ");
+  return (localExplanation + miscExplanation).replaceAll(",", " ");
 }
 
 handleEverything();

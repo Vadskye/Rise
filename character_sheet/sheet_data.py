@@ -40,6 +40,19 @@ ATTRIBUTE_SKILLS = {
     ],
 }
 
+KNOWABLE_CONCEPTS = [
+    "Bardic performances",
+    "Battle tactics",
+    "Combat styles",
+    "Hunting styles",
+    "Ki manifestations",
+    "Maneuvers",
+    "Mystic insights",
+    "Mystic spheres",
+    "Spells",
+    "Wild aspects",
+]
+
 SUBSKILLS = [
     "Craft",
     "Knowledge",
