@@ -23,7 +23,8 @@ from cgi_simple import (
     underlabel,
 )
 from sheet_worker import standard_damage_at_power
-
+from sheet_data import KNOWABLE_CONCEPTS
+from get_modifier_key import get_modifier_key
 
 def create_page(_destination):
     return flex_col(
@@ -36,16 +37,18 @@ def create_page(_destination):
 
 def defensive_statistics():
     statistics = [
-        "hit_points",
-        "damage_resistance",
-        "armor_defense",
-        "fortitude_defense",
-        "reflex_defense",
-        "mental_defense",
+        "Hit points",
+        "Damage resistance",
+        "Armor defense",
+        "Fortitude",
+        "Reflex",
+        "Mental",
     ]
 
     return div(
         [
+            div({"class": "section-header"}, "Abilities Known"),
+            *[stat_row(c) for c in KNOWABLE_CONCEPTS],
             div({"class": "section-header"}, "Defensive Statistics"),
             *[stat_row(s) for s in statistics],
         ]
@@ -53,23 +56,20 @@ def defensive_statistics():
 
 
 def stat_row(statistic_name):
+    parseable = get_modifier_key(statistic_name)
     return flex_row(
         {"class": "statistic-row"},
         [
-            div({"class": "statistic-name"}, format_statistic_name(statistic_name)),
+            div({"class": "statistic-name"}, statistic_name),
             number_input(
-                {"class": "statistic-value", "name": statistic_name, "readonly": True}
+                {"class": "statistic-value", "name": parseable, "readonly": True}
             ),
             text_input(
                 {
                     "class": "statistic-explanation",
-                    "name": statistic_name + "_explanation",
+                    "name": parseable + "_explanation",
                     "readonly": True,
                 }
             ),
         ],
     )
-
-
-def format_statistic_name(statistic_name):
-    return statistic_name.replace("_", " ").title()

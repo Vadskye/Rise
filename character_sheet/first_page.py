@@ -37,6 +37,7 @@ from active_abilities_page import (
     nondamaging_attack,
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
+from get_modifier_key import get_modifier_key
 import re
 
 
@@ -202,23 +203,23 @@ def skill_box(name):
     if name in SUBSKILLS:
         return subskill_section(name)
 
-    formatted_skill = name.lower().replace(" ", "_")
+    modifier_key = get_modifier_key(name)
     return flex_row(
         {"class": "skill-box"},
         [
             subtlebutton(
                 {
                     "class": "skill-button",
-                    "name": f"roll_skill_{formatted_skill}",
+                    "name": f"roll_skill_{modifier_key}",
                     "type": "roll",
-                    "value": f"@{{character_name}} uses {name}: [[d10 + @{{{formatted_skill}_total}}]]",
+                    "value": f"@{{character_name}} uses {name}: [[d10 + @{{{modifier_key}_total}}]]",
                 },
                 name,
             ),
             number_input(
                 {
                     "readonly": True,
-                    "name": formatted_skill,
+                    "name": modifier_key,
                 }
             ),
         ],
@@ -226,13 +227,13 @@ def skill_box(name):
 
 
 def subskill_section(name):
-    parseable_name = name.lower()
+    modifier_key = get_modifier_key(name)
     return div(
         [
-            untrained_subskill_box(name, parseable_name),
+            untrained_subskill_box(name, modifier_key),
             fieldset(
-                {"class": f"repeating_{parseable_name}subskills"},
-                subskill_box(name, parseable_name),
+                {"class": f"repeating_{modifier_key}subskills"},
+                subskill_box(name, modifier_key),
             ),
         ]
     )
