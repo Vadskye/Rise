@@ -221,6 +221,16 @@ const BASE_CLASS_MODIFIERS = {
 //   },
 // };
 
+const ATTRIBUTE_SHORTHAND = {
+  strength: "Str",
+  dexterity: "Dex",
+  constitution: "Con",
+  intelligence: "Int",
+  perception: "Per",
+  willpower: "Wil",
+  other: "Other",
+};
+
 function sumCustomModifiers(v, prefix) {
   let sum = 0;
   for (const name of customModifierNames(prefix)) {
@@ -589,8 +599,11 @@ function formatDicePool(count, size, modifier) {
   }
 }
 
-function calcDefenseLevelScaling(level, challengeRating) {
-  let levelScaling = Math.floor(level / 2);
+function calcDefenseCrScaling(level, challengeRating) {
+  if (!challengeRating) {
+    return 0;
+  }
+  let levelScaling = 0;
   if (challengeRating > 0) {
     levelScaling += Math.max(0, Math.floor((level + 6) / 9));
   }
@@ -756,9 +769,10 @@ function handleArmorDefense() {
         attributeModifier += v.dexterity;
       }
 
-      const beforeEquipment =
-        attributeModifier +
-        calcDefenseLevelScaling(v.level, v.challenge_rating);
+      const levelModifier = Math.floor(v.level / 2);
+      const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
+
+      const beforeEquipment = attributeModifier + levelModifier + crModifier;
       const totalValue =
         beforeEquipment +
         v.body_armor_defense +
@@ -768,6 +782,18 @@ function handleArmorDefense() {
 
       setAttrs({
         armor_defense: totalValue,
+        armor_defense_explanation: formatCombinedExplanation(
+          v.miscExplanation,
+          [
+            { name: "level", value: levelModifier },
+            // Technically inaccurate for monsters, but not really important.
+            { name: "Dex", value: attributeModifier },
+            { name: "body armor", value: v.body_armor_defense },
+            { name: "shield", value: v.shield_defense },
+            { name: "vital", value: v.all_defenses_vital_wound_modifier },
+            { name: "CR", value: crModifier },
+          ]
+        ),
       });
     }
   );
@@ -964,9 +990,13 @@ function handleCreationModifiers() {
         "fatigue_tolerance",
         "insight_points",
       ]) {
-        attrs[`${modifierKey}_creation_modifier`] = classModifiers
-          ? classModifiers[modifierKey]
-          : 0;
+        const modifierValue = classModifiers ? classModifiers[modifierKey] : 0;
+        attrs[`${modifierKey}_creation_explanation`] =
+          formatNamedModifierExplanation({
+            name: v.base_class,
+            value: modifierValue,
+          });
+        attrs[`${modifierKey}_creation_modifier`] = modifierValue;
       }
 
       // const speciesModifiers = SPECIES_MODIFIERS[v.species];
@@ -1180,7 +1210,7 @@ function handleDamageResistance() {
             { name: "Con", value: fromLevelAndCon - fromLevel },
             { name: "body armor", value: v.body_armor_damage_resistance },
             { name: "CR", value: crMultipliedValue - playerTotalValue },
-            { name: "vital wounds", value: totalValue - crMultipliedValue },
+            { name: "vital", value: totalValue - crMultipliedValue },
           ]
         ),
         damage_resistance_from_level: Math.floor(
@@ -1641,13 +1671,26 @@ function handleNonArmorDefense(defense, attribute) {
       ],
     },
     (v) => {
+      const levelModifier = Math.floor(v.level / 2);
+      const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
       const totalValue =
-        calcDefenseLevelScaling(v.level, v.challenge_rating) +
+        levelModifier +
+        crModifier +
         v[attribute] +
         v.misc +
         v.all_defenses_vital_wound_modifier;
+
       setAttrs({
         [defense]: totalValue,
+        [`${defense}_explanation`]: formatCombinedExplanation(
+          v.miscExplanation,
+          [
+            { name: "level", value: levelModifier },
+            { name: ATTRIBUTE_SHORTHAND[attribute], value: v[attribute] },
+            { name: "vital", value: v.all_defenses_vital_wound_modifier },
+            { name: "CR", value: crModifier },
+          ]
+        ),
       });
     }
   );
@@ -2499,7 +2542,10 @@ function formatCombinedExplanation(miscExplanation, localNamedModifiers) {
   // Smash them all together into a single explanation, putting the local modifiers
   // first. We used comma separation so we can do fancier formatting if necessary, but a
   // simple space-separated list might work fine.
-  return (localExplanation + miscExplanation).replaceAll(",", " ");
+  return [localExplanation, miscExplanation]
+    .filter(Boolean)
+    .join(",")
+    .replaceAll(",", " ");
 }
 
 handleEverything();
