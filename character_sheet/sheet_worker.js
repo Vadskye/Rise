@@ -2227,6 +2227,7 @@ function handleStrikeAttacks() {
     const weapon_damage_key = `weapon_${weaponIndex}_damage_dice`;
     getAttrs(
       [
+        "level",
         "mundane_dice_pool_modifier",
         "magical_dice_pool_modifier",
         "weapon_damage_dice",
@@ -2465,15 +2466,28 @@ function handleWeaponDamageDice() {
   onGet(
     {
       miscName: "weapon_damage_dice",
-      numeric: ["level", "challenge_rating", "strength"],
+      numeric: ["level", "challenge_rating", "strength", "willpower"],
     },
     (v) => {
       const fromCr = v.challenge_rating > 0 ? Math.floor((v.level - 1) / 3) : 0;
       const totalValue = fromCr + v.misc;
+      const magicalValue = totalValue + Math.floor(v.willpower / 2);
+      const mundaneValue = totalValue + Math.floor(v.strength / 2);
       setAttrs({
+        magical_damage_dice: magicalValue,
+        magical_damage_dice_explanation: formatCombinedExplanation(v.miscExplanation, [
+          {name: "Wil", value: magicalValue - totalValue},
+          {name: "CR", value: fromCr},
+        ]),
+        mundane_damage_dice: mundaneValue,
+        mundane_damage_dice_explanation: formatCombinedExplanation(v.miscExplanation, [
+          {name: "Str", value: mundaneValue - totalValue},
+          {name: "CR", value: fromCr},
+        ]),
+        weapon_damage_dice_explanation: formatCombinedExplanation(v.miscExplanation, [
+          {name: "CR", value: fromCr},
+        ]),
         weapon_damage_dice: totalValue,
-        weapon_damage_dice_including_strength:
-          totalValue + Math.floor(v.strength / 2),
       });
     }
   );
