@@ -54,6 +54,7 @@ def stat_row(statistic_name, display_name = None):
                     "readonly": True,
                 }
             ),
+            span({"class": "statistic-variable-name"}, "@{" + parseable + "}"),
         ],
     )
 
@@ -66,19 +67,16 @@ def abilities_known():
     )
 
 def defensive_statistics():
-    statistics = [
-        "Hit points",
-        "Damage resistance",
-        "Armor defense",
-        "Fortitude",
-        "Reflex",
-        "Mental",
-    ]
 
     return div(
         [
             div({"class": "section-header"}, "Defensive Statistics"),
-            *[stat_row(s) for s in statistics],
+            stat_row("hit_points", "HP"),
+            stat_row("damage_resistance", "DR"),
+            stat_row("Armor defense"),
+            stat_row("Fortitude"),
+            stat_row("Reflex"),
+            stat_row("Mental"),
         ]
     )
 
