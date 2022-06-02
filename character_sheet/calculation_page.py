@@ -43,7 +43,7 @@ def stat_row(statistic_name, display_name = None):
     return flex_row(
         {"class": "statistic-row"},
         [
-            div({"class": "statistic-name"}, statistic_name),
+            div({"class": "statistic-name"}, display_name),
             number_input(
                 {"class": "statistic-value", "name": parseable, "readonly": True}
             ),
@@ -87,7 +87,8 @@ def offensive_statistics():
         [
             div({"class": "section-header"}, "Offensive Statistics"),
             stat_row("Accuracy"),
+            stat_row("magical_damage_dice", "Magical strike +d"),
+            stat_row("mundane_damage_dice", "Mundane strike +d"),
             stat_row("Power"),
-            stat_row("weapon_damage_dice", "Strike +d"),
         ]
     )
