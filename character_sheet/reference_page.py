@@ -239,13 +239,6 @@ def character_reference():
                         "Power", input_attributes={"readonly": True, "name": "power"}
                     ),
                     labeled_number_input(
-                        "Strike +d",
-                        input_attributes={
-                            "readonly": True,
-                            "name": "weapon_damage_dice_including_strength",
-                        },
-                    ),
-                    labeled_number_input(
                         "Encumbrance",
                         input_attributes={"readonly": True, "name": "encumbrance"},
                     ),
