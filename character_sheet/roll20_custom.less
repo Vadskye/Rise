@@ -100,9 +100,10 @@ div.full-sheet {
             font-family: inherit;
             font-size: 16px;
             margin: 0;
-            background: #dadada;
+            background: inherit;
             border-radius: 5px;
             padding: 2px;
+            pointer-events: none;
         }
     }
 
@@ -123,6 +124,10 @@ div.full-sheet {
         margin: 0;
         padding: 0;
         text-shadow: none;
+    }
+
+    .subtle-button > button[type=roll]:before {
+        margin-right: 0.1em;
     }
 
     .invisible-button > button[type=roll]:before {

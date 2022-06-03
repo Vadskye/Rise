@@ -17,6 +17,7 @@ from cgi_simple import (
     underlabel,
 )
 from sheet_data import KNOWABLE_CONCEPTS
+from get_modifier_key import get_modifier_key
 
 def create_page(destination):
     return flex_col(
@@ -157,7 +158,7 @@ def abilities_known():
 
 
 def ability_known(concept):
-    parseable_concept = concept.lower().replace(" ", "_")
+    parseable_concept = get_modifier_key(concept)
 
     return flex_row(
         {"class": "ability-known"},
@@ -173,7 +174,7 @@ def ability_known(concept):
                 {"class": "ability-known-count"},
                 input_attributes={
                     "readonly": True,
-                    "name": f"{parseable_concept}_known",
+                    "name": parseable_concept,
                 },
             ),
         ],
