@@ -176,7 +176,7 @@ def attribute_section(attribute):
                 [
                     span(
                         {"class": "attribute-header number-label"},
-                        invisiblebutton(
+                        subtlebutton(
                             {
                                 "name": f"roll_{attribute}",
                                 "type": "roll",

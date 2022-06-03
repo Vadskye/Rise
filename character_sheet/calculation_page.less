@@ -1,3 +1,15 @@
+.statistic-row-wrapper {
+    .has-statistic-value {
+        display: none;
+    }
+    .has-statistic-value ~ div {
+        display: none;
+    }
+    .has-statistic-value:checked ~ div {
+        display: flex;
+    }
+}
+
 .statistic-row {
     align-items: center;
     column-gap: 0.5em;
@@ -13,6 +25,10 @@
     .statistic-explanation {
         flex-basis: 20em;
         flex-grow: 1;
+        // minimum to avoid unnecessary scroll
+        height: 1.4em;
+        background: inherit;
+        cursor: inherit;
     }
 
     .statistic-variable-name {

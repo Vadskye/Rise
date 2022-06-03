@@ -43,7 +43,6 @@ def create_page(_destination):
                     common_concepts(),
                 ],
             ),
-            character_reference(),
         ],
     )
 
@@ -221,32 +220,4 @@ def common_concepts():
         """
             ),
         ],
-    )
-
-
-def character_reference():
-    return flex_col(
-        [
-            div({"class": "section-header"}, "Core Statistics"),
-            flex_row(
-                {"class": "reference-statistics"},
-                [
-                    labeled_number_input(
-                        "Accuracy",
-                        input_attributes={"readonly": True, "name": "accuracy"},
-                    ),
-                    labeled_number_input(
-                        "Power", input_attributes={"readonly": True, "name": "power"}
-                    ),
-                    labeled_number_input(
-                        "Encumbrance",
-                        input_attributes={"readonly": True, "name": "encumbrance"},
-                    ),
-                    labeled_number_input(
-                        "Vital rolls",
-                        input_attributes={"readonly": True, "name": "vital_rolls"},
-                    ),
-                ],
-            ),
-        ]
     )
