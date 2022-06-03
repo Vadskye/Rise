@@ -488,6 +488,9 @@ function generateMiscVariables(name) {
     explanationVariables.push(`${name}_vital_wound_explanation`);
     numericVariables.push(`${name}_vital_wound_modifier`);
   }
+  if (name === "accuracy") {
+    console.log("explanationVariables", explanationVariables);
+  }
   return { explanationVariables, numericVariables };
 }
 
@@ -661,7 +664,7 @@ function handleAbilityKnown(abilityName) {
     (v) => {
       const totalValue = v.misc;
       setAttrs({
-        [`has_${abilityName}`]: totalValue > 0 ? "1" : "0",
+        [`has_${abilityName}_known`]: totalValue > 0 ? "1" : "0",
         [`${abilityName}_known_explanation`]: formatCombinedExplanation(
           v.miscExplanation
         ),
@@ -951,6 +954,10 @@ function handleAttunementPoints() {
       const ap = v.misc + fromLevel;
       setAttrs({
         attunement_points: ap,
+        attunement_points_explanation: formatCombinedExplanation(
+          v.miscExplanation,
+          [{ name: "level", value: fromLevel }]
+        ),
         attunement_points_max: ap,
         attunement_points_maximum: ap,
       });
@@ -1426,22 +1433,25 @@ function handleEncumbrance() {
   onGet(
     {
       miscName: "encumbrance",
-      numeric: [
-        "level",
-        "body_armor_encumbrance",
-        "shield_encumbrance",
-        "strength",
-      ],
+      numeric: ["body_armor_encumbrance", "shield_encumbrance", "strength"],
     },
     (v) => {
+      const strengthModifier = Math.max(0, v.strength);
       const totalValue = Math.max(
         0,
         v.body_armor_encumbrance +
           v.shield_encumbrance -
-          Math.max(0, v.strength) -
+          strengthModifier -
           v.misc
       );
-      setAttrs({ encumbrance: totalValue });
+      setAttrs({
+        encumbrance: totalValue,
+        encumbrance_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "body armor", value: v.body_armor_encumbrance },
+          { name: "shield", value: v.shield_encumbrance },
+          { name: "Str", value: -strengthModifier },
+        ]),
+      });
     }
   );
 }
@@ -1464,14 +1474,22 @@ function handleFatigueTolerance() {
   onGet(
     {
       miscName: "fatigue_tolerance",
-      numeric: ["level", "constitution", "willpower"],
+      numeric: ["constitution", "willpower"],
     },
     (v) => {
-      const fromAttributes = v.constitution + Math.floor(v.willpower / 2);
+      const fromWillpower = Math.floor(v.willpower / 2);
+      const fromAttributes = v.constitution + fromWillpower;
       const totalValue = Math.max(0, fromAttributes + v.misc);
       setAttrs({
         fatigue_tolerance_attributes: fromAttributes,
         fatigue_tolerance: totalValue,
+        fatigue_tolerance_explanation: formatCombinedExplanation(
+          v.miscExplanation,
+          [
+            { name: "Con", value: v.constitution },
+            { name: "Wil", value: fromWillpower },
+          ]
+        ),
         // for red bars
         fatigue_points_max: totalValue,
       });
@@ -1575,6 +1593,10 @@ function handleInitiative() {
       const attributeModifier = v.dexterity + v.perception;
       setAttrs({
         initiative: attributeModifier + v.misc - v.fatigue_penalty,
+        initiative_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "Dex", value: v.dexterity },
+          { name: "Per", value: v.perception },
+        ]),
         initiative_scaling: attributeModifier,
       });
     }
@@ -1591,6 +1613,10 @@ function handleInsightPoints() {
       const totalValue = Math.max(0, v.intelligence + v.misc);
       setAttrs({
         insight_points: totalValue,
+        insight_points_explanation: formatCombinedExplanation(
+          v.miscExplanation,
+          [{ name: "Int", value: v.intelligence }]
+        ),
       });
     }
   );
@@ -1607,6 +1633,10 @@ function handleLandSpeed() {
       const totalValue = 30 + v.body_armor_speed + v.misc;
       setAttrs({
         land_speed: totalValue,
+        land_speed_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "size", value: 30 },
+          { name: "body armor", value: v.body_armor_speed },
+        ]),
       });
     }
   );
@@ -1767,6 +1797,9 @@ function handlePower() {
 
       setAttrs({
         power: classPowerModifier + v.misc,
+        power_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: `${v.base_class} rank ${maxRank}`, value: classPowerModifier },
+        ]),
       });
     }
   );
@@ -1851,12 +1884,24 @@ function handleSkillPoints() {
   onGet(
     {
       miscName: "nonclass_skill_count",
-      numeric: ["intelligence"],
+      numeric: ["class_skill_count", "intelligence"],
+      string: ["base_class"],
     },
     (v) => {
       const fromInt = Math.max(0, v.intelligence);
       setAttrs({
         nonclass_skill_count: fromInt + v.misc,
+        trained_skills: fromInt + v.misc + v.class_skill_count,
+        trained_skills_explanation: formatCombinedExplanation(
+          v.miscExplanation,
+          [
+            {
+              name: v.base_class + " class skills",
+              value: v.class_skill_count,
+            },
+            { name: "Int", value: v.intelligence },
+          ]
+        ),
       });
     }
   );
@@ -2388,7 +2433,12 @@ function handleVitalRolls() {
     },
     (v) => {
       const totalValue = v.misc - v.vital_wound_count * 2;
-      setAttrs({ vital_rolls: totalValue });
+      setAttrs({
+        vital_rolls: totalValue,
+        vital_rolls_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "2x vital wound count", value: -v.vital_wound_count * 2 },
+        ]),
+      });
     }
   );
 }
@@ -2442,8 +2492,17 @@ function handleVitalWounds() {
           let attrs = {
             vital_wound_count: repeatingSectionIds.length,
 
+            accuracy_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: accuracy_penalty,
+            }),
             accuracy_vital_wound_modifier: accuracy_penalty,
+            // No vital explanation here because all_defenses requires special handling
             all_defenses_vital_wound_modifier: defense_penalty,
+            speed_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: speed_penalty,
+            }),
             speed_vital_wound_modifier: speed_penalty,
             damage_resistance_bonus_vital_wound_multiplier:
               resistance_multiplier,
@@ -2475,18 +2534,25 @@ function handleWeaponDamageDice() {
       const mundaneValue = totalValue + Math.floor(v.strength / 2);
       setAttrs({
         magical_damage_dice: magicalValue,
-        magical_damage_dice_explanation: formatCombinedExplanation(v.miscExplanation, [
-          {name: "Wil", value: magicalValue - totalValue},
-          {name: "CR", value: fromCr},
-        ]),
+        magical_damage_dice_explanation: formatCombinedExplanation(
+          v.miscExplanation,
+          [
+            { name: "Wil", value: magicalValue - totalValue },
+            { name: "CR", value: fromCr },
+          ]
+        ),
         mundane_damage_dice: mundaneValue,
-        mundane_damage_dice_explanation: formatCombinedExplanation(v.miscExplanation, [
-          {name: "Str", value: mundaneValue - totalValue},
-          {name: "CR", value: fromCr},
-        ]),
-        weapon_damage_dice_explanation: formatCombinedExplanation(v.miscExplanation, [
-          {name: "CR", value: fromCr},
-        ]),
+        mundane_damage_dice_explanation: formatCombinedExplanation(
+          v.miscExplanation,
+          [
+            { name: "Str", value: mundaneValue - totalValue },
+            { name: "CR", value: fromCr },
+          ]
+        ),
+        weapon_damage_dice_explanation: formatCombinedExplanation(
+          v.miscExplanation,
+          [{ name: "CR", value: fromCr }]
+        ),
         weapon_damage_dice: totalValue,
       });
     }
@@ -2559,7 +2625,7 @@ function formatCombinedExplanation(miscExplanation, localNamedModifiers) {
   return [localExplanation, miscExplanation]
     .filter(Boolean)
     .join(",")
-    .replaceAll(",", " ");
+    .replaceAll(",", "  ");
 }
 
 handleEverything();
