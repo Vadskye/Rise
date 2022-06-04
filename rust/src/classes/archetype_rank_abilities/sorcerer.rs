@@ -539,7 +539,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever another creature uses a spell to attack you, if that spell does not have the \glossterm{Attune} tag, you can choose to absorb its energy.
+                Whenever another creature uses a spell to attack you, if that spell does not have the \abilitytag{Attune} tag, you can choose to absorb its energy.
                 This does not reduce the spell's effect on you, but it grants you the ability to cast the spell.
                 When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
 
