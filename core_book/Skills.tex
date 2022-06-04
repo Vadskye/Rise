@@ -121,7 +121,6 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \parhead{Walk While Balancing} When you move using your \glossterm{land speed} on an unsteady surface, you must make an Balance check based on the surface.
         If you choose to move at half speed, you gain a \plus5 bonus to the check.
         Success means you move along the surface.
-        Critical failure means you fall prone.
 
     \subsection{Common Balance Modifiers}
         There are four common circumstances that make Balance checks more difficult: slippery, mobile, narrow, and uneven surfaces.
@@ -151,7 +150,6 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         The \glossterm{difficulty value} is based on the surface.
         Success means that you move along the surface, up to a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
         Critical success means the maximum distance you can move is doubled.
-        Critical failure means you fall.
         \parhead{Wallrun} You can make a Climb check as part of your movement while you are touching a solid surface.
         The \glossterm{difficulty value} is 10 higher than normal for the surface.
         Success means you can move using your \glossterm{land speed} along the wall during the current phase.
@@ -205,7 +203,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \parhead{Repair Item} You can make a Craft check to repair a broken item. This functions like creating the item normally, except that you treat the item's \glossterm{rank} as being two lower than it actually is (to a minimum of 0).
 
     \subsection{Crafting Items}
-        You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. Failure means you failed to make progress, but can try again without penalty. Critical failure means you botched the item, negating all progress and ruining the material components.
+        You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. Failure means you failed to make progress, but can try again without penalty.
 
         Each item takes a certain amount of working time to craft, as shown on \tref{Craft Requirements}.
         In addition, each item requires the expenditure of raw materials with a value equal to an item one rank lower than the item you are trying to craft (minimum rank 0).
@@ -281,7 +279,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \parhead{Blend In} If you succeed at an opposed Deception vs. Awareness check, you can avoid notice among a crowd of similar creatures.
         If you act or look significantly different from the creatures around you, observers gain a bonus to their Awareness check to notice you.
         \parhead{Convey Hidden Message} If you succeed at an opposed Deception vs. Social Insight check, you can convey a hidden message in the guise of an ordinary conversation.
-        Failure means that an observer recognizes that a hidden message is being conveyed, while critical failure means that an observer recognizes exactly what the hidden message is.
+        Failure means that an observer recognizes that a hidden message is being conveyed, and may even recognize what that message is.
         In general, you must already have a pre-established code or understanding with the intended recipients of your hidden message so they can grasp its true meaning more easily than outside observers.
         \parhead{Distract} If you succeed at an opposed Deception vs. Social Insight check, you can distract a creature you are talking with.
         This generally makes the distracted creature \glossterm{briefly} \partiallyunaware of you, which can allow you to hide or backstab them.
@@ -842,34 +840,14 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         In addition, ranged weapons have difficulty working underwater.
         All ranged weapons have \glossterm{range limits} of 5/15 when used by a creature that is underwater, or when used against a target that is underwater, regardless of the attack's normal range limits or any other modifiers.
 
-    \subsection{Swimming}
-        You can make a Swim check as a \glossterm{move action} while you are in water or some other thick liquid that allows swimming.
-        The \glossterm{difficulty value} depends on the turbulence of the water, as shown on \trefnp{Swim Difficulty Values}.
-        Since moving in this way is a \glossterm{move action}, you cannot also use other move actions like the \ability{block} or \ability{follow} abilities.
-
-        Success means you can move up to one quarter of the \glossterm{base speed} for your size.
-        Critical success means that you can instead move up to half the base speed for your size.
-        Failure means your action is wasted and you do not move.
-        Critical failure means you sink five feet deeper into the liquid, which can cause you to start drowning.
-
-        If you succeed or critically succeed on a Swim check to move, you can keep using the same result in future phases as long as you continue swimming in the same liquid.
-        However, if you are attacked or otherwise significantly distracted, you must make a new roll for any subsequent movement.
-
-        \begin{dtable}
-            \lcaption{Swim Difficulty Values}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-                \tb{Water}   & \tb{Difficulty Value} \tableheaderrule
-                Calm water   & 5  \\
-                Rough water  & 10 \\
-                Stormy water & 15 \\
-            \end{dtabularx}
-        \end{dtable}
-
-    \subsection{Swimming Underwater}
-        You can swim underwater just like you can above water.
-        If you are underwater, either because you failed a Swim check or because you are swimming underwater intentionally, you must hold your breath (see \pcref{Hold Breath}).
+    \subsection{Common Swim Tasks}
+        \parhead{Move} You can make a Swim check as a \glossterm{move action} while you are in water or a similar liquid.
+        This requires two \glossterm{free hands}, or one free hand if you take a \minus5 penalty.
+        The \glossterm{difficulty value} is based on the turbulence of the liquid.
+        Success means that you move through the water, up to a maximum distance equal to a quarter of the \glossterm{base speed} for your size (see \pcref{Size Categories}).
+        Critical success means the maximum distance you can move increases to half of your base speed.
 
     \subsection{Swim Speed}\label{Swim Speed}
         Some creatures have a listed swim speed.
-        A creature with a passive swim speed must still make a Swim check to swim through liquid.
-        However, the distance it can move if it succeeds on the Swim check is equal to its listed swim speed, regardless of its size or whether it gets a critical success on the check.
+        A creature with a passive swim speed must still make a Swim check to move in liquid.
+        However, the distance it can move if it succeeds on the Swim check is equal to its listed swim speed, regardless of its size or whether it gets a critical success.
