@@ -149,7 +149,7 @@ export const telekinesis: MysticSphere = {
         5: `The bonus increases to +10 feet.`,
         7: `The bonus increases to +15 feet.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -195,7 +195,7 @@ export const telekinesis: MysticSphere = {
         5: `Reloading a crossbow in this way does not prevent you from reloading it again.`,
         7: `You can reload as a \\glossterm{free action} instead of as a minor action. However, you can only reload with this spell once per round.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -329,7 +329,7 @@ export const telekinesis: MysticSphere = {
         5: `The target is reduced to a quarter of its normal weight. In addition, the bonus increases to +8.`,
         7: `The bonus increases to +10.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -359,7 +359,7 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `The maximum height above the surface increases to 100 feet.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -448,7 +448,7 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `The accuracy penalty is reduced to -2.` },
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -493,7 +493,7 @@ export const telekinesis: MysticSphere = {
         4: `The bonus increases to +3.`,
         6: `The bonus increases to +4.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -508,7 +508,7 @@ export const telekinesis: MysticSphere = {
         6: "You are considered to be proficient with the shield.",
       },
       tags: [],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -542,7 +542,7 @@ export const telekinesis: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -571,7 +571,7 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 5,
       scaling: { 7: `The bonus increases to +32.` },
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -591,7 +591,7 @@ export const telekinesis: MysticSphere = {
         7: `The damage reduction increases to 40.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {

@@ -157,7 +157,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `You can cast this spell as a \\glossterm{minor action}.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -175,7 +175,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 1,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -193,7 +193,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 5,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -273,7 +273,7 @@ export const toxicology: MysticSphere = {
         5: `The bonus increases to +32, but the penalty increases to -16.`,
         7: `The bonus increases to +64, but the penalty increases to -32.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -358,7 +358,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -373,7 +373,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -550,7 +550,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 3,
       scaling: 'damage',
-      type: 'Attune (deep, self)',
+      type: 'Attune (deep)',
     },
 
     {
@@ -567,7 +567,7 @@ export const toxicology: MysticSphere = {
         You constantly shed spores that dissolve creatures who attack you.
       `,
       rank: 7,
-      type: 'Attune (deep, self)',
+      type: 'Attune (deep)',
     },
   ],
   rituals: [],

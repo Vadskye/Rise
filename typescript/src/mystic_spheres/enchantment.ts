@@ -408,7 +408,7 @@ export const enchantment: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -421,7 +421,7 @@ export const enchantment: MysticSphere = {
       rank: 7,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -543,7 +543,7 @@ export const enchantment: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -559,7 +559,7 @@ export const enchantment: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -598,7 +598,7 @@ export const enchantment: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -740,7 +740,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 2,
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -754,7 +754,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 3,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -779,7 +779,7 @@ export const enchantment: MysticSphere = {
 
       rank: 4,
       tags: ["Emotion"],
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -807,7 +807,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 4,
       tags: ["Emotion"],
-      type: "Attune (ritual)",
+      type: "Attune",
     },
   ],
 };

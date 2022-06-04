@@ -267,7 +267,7 @@ export const chronomancy: MysticSphere = {
         5: `The speed bonus increases to +15 feet, and the initiative bonus increases to +3.`,
         7: `The speed bonus increases to +20 feet, and the initiative bonus increases to +4.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -294,7 +294,7 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `The accuracy penalty is reduced to -2.` },
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -360,7 +360,7 @@ export const chronomancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -394,7 +394,7 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `The maximum size of the target increases to Large.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -482,7 +482,7 @@ export const chronomancy: MysticSphere = {
       scaling: {
         6: `This effect also protects you from area attacks against your Fortitude and Mental defenses.`
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -493,7 +493,7 @@ export const chronomancy: MysticSphere = {
         You cannot take the same minor action twice in the same round.
       `,
       rank: 6,
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -692,7 +692,7 @@ export const chronomancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -736,7 +736,7 @@ export const chronomancy: MysticSphere = {
         % Does this need to explicitly clarify that it doesn't stop time from passing for the creature's soul?
       `,
       rank: 3,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
   ],
 };

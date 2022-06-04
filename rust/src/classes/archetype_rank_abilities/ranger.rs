@@ -13,7 +13,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{animal companion} ability.
                 This ability requires 8 hours of training and attunement which the target must actively participate in.
                 You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-                \begin{attuneability}{Animal Companion}[\abilitytag{Attune} (self)]
+                \begin{attuneability}{Animal Companion}[\abilitytag{Attune}]
                     \abilitytag{Emotion}, \glossterm{Magical}
                     \rankline
                     Choose a Medium or smaller animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
@@ -230,7 +230,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
             \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
-                \begin{attuneability}{Quarry}[\abilitytag{Attune} (self)]
+                \begin{attuneability}{Quarry}[\abilitytag{Attune}]
                     \abilitytag{Swift}, \abilitytag{Subtle}
                     \rankline
                     Choose a creature within \longrange.
@@ -378,7 +378,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You can use your \textit{quarry} ability with the \abilitytag{Sustain} (free) tag instead of the \abilitytag{Attune} (self) tag.
+                You can use your \textit{quarry} ability with the \abilitytag{Sustain} (free) tag instead of the \abilitytag{Attune} tag.
                 If you originally use your \textit{quarry} ability as a sustained ability, you can attune to the same quarry as a free action, even if your quarry is no longer in sight.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),

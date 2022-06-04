@@ -591,7 +591,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can use the \textit{shift body} ability whenever you finish a \glossterm{long rest}.
-                \begin{attuneability}{Shift Body}[\abilitytag{Attune} (self)]
+                \begin{attuneability}{Shift Body}[\abilitytag{Attune}]
                     \rankline
                     When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
                     You gain a \plus1 bonus to the base value of that attribute.
@@ -639,7 +639,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                Your \textit<shift body> ability loses the \abilitytag{Attune} (self) tag.
+                Your \textit<shift body> ability loses the \abilitytag{Attune} tag.
                 Instead, it lasts until you use it again.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
@@ -693,7 +693,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{natural servant} ability.
                 This ability requires spending 1 hour performing rituals in a natural area.
-                \begin{attuneability}{Natural Servant}[\abilitytag{Attune} (self)]
+                \begin{attuneability}{Natural Servant}[\abilitytag{Attune}]
                     \rankline
                     An animal native to the local environment appears to help you.
                     It follows your directions to the best of its ability as long as you remain in its natural environment.
@@ -788,8 +788,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 Your \textit{natural servant} gains an \glossterm{attunement point}.
-                This attunement point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
-                In addition, you can cast \abilitytag{Attune} (self) spells on your \textit{natural servant} if it is within \shortrange of you.
+                This attunement point is shared among any creatures you summon with your \textit{natural servant} ability.
+                In addition, you can cast \abilitytag{Attune} spells on your \textit{natural servant} if it is within \shortrange of you.
                 When you do, the natural servant attunes to the spell intead of you, as if the spell was an \abilitytag{Attune} (target) spell.
             ",
             modifiers: None,

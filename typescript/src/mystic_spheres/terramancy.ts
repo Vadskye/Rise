@@ -152,7 +152,7 @@ export const terramancy: MysticSphere = {
           Instead, it lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
         `,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -215,7 +215,7 @@ export const terramancy: MysticSphere = {
         7: `You can leave tiny tunnels carrying air through the stone as you move through it, allowing you to effectively breathe within the stone.
             These trails disappear when this spell ends.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -386,7 +386,7 @@ export const terramancy: MysticSphere = {
             This makes them more resistant to attack and allows the construction of more complex structures.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -398,7 +398,7 @@ export const terramancy: MysticSphere = {
       `,
       rank: 5,
       scaling: { 7: `Your speed increases to be equal to half the \\glossterm{base speed} for your size.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -419,7 +419,7 @@ export const terramancy: MysticSphere = {
         7: `The damage reduction increases to 40.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -435,7 +435,7 @@ export const terramancy: MysticSphere = {
         5: `You are immune to knockback and push effects from all attacks, including critical hits.`,
         7: `You are immune to teleport effects from all attacks, including critical hits.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -530,7 +530,7 @@ export const terramancy: MysticSphere = {
         `,
         6: `The maximum distance increases to 30 feet.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -551,7 +551,7 @@ export const terramancy: MysticSphere = {
         6: `You are considered one size category larger than normal for the purpose of determining the Forceful effect.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {

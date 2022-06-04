@@ -1128,7 +1128,7 @@ def undead(sample_monsters):
                     """
                 One corpse within Close range is animated as a skeleton under the dirgewalker's control.
             """,
-                    tags=["Attune (self)"],
+                    tags=["Attune"],
                 ),
                 active_ability(
                     "Mournful Dirge",

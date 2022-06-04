@@ -39,7 +39,7 @@ def generate_weapons():
         create_weapon(
             name="Concussive, Greater",
             rank=5,
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
                 All damage dealt with it is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
@@ -66,7 +66,7 @@ def generate_weapons():
         create_weapon(
             name="Flaming, Greater",
             rank=6,
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 This weapon is on fire.
                 It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
@@ -93,7 +93,7 @@ def generate_weapons():
         create_weapon(
             name="Shocking, Greater",
             rank=5,
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 This weapon continuously crackles with electricity.
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
@@ -120,7 +120,7 @@ def generate_weapons():
         create_weapon(
             name="Freezing, Greater",
             rank=5,
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 This weapon is bitterly cold to the touch.
                 All damage dealt with it is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
@@ -362,7 +362,7 @@ def generate_weapons():
                 This causes you and that creature to \\glossterm<briefly> become \\shaken by each other.
                 After a creature stops being shaken in this way, it becomes immune to this effect until it takes a \\glossterm<short rest>.
             """,
-            tags=["Attune (deep, self)", "Emotion"],
+            tags=["Attune (deep)", "Emotion"],
             short_description="Screams, making you and struck foes shaken",
         ),
         create_weapon(
@@ -373,7 +373,7 @@ def generate_weapons():
                 This causes you and that creature to \\glossterm<briefly> become \\frightened by each other.
                 After a creature stops being frightened in this way, it becomes immune to this effect until it takes a \\glossterm<short rest>.
             """,
-            tags=["Attune (deep, self)", "Emotion"],
+            tags=["Attune (deep)", "Emotion"],
             short_description="Screams, making you and struck foes frightened",
         ),
     ]
@@ -493,7 +493,7 @@ def generate_weapons():
                 This effect lasts until you make a strike with this weapon that does not include that creature as a target.
                 It stacks with itself, up to a maximum of a +4 bonus.
             """,
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             short_description="Grants +1 accuracy bonus against attacked foe",
         ),
         create_weapon(
@@ -502,7 +502,7 @@ def generate_weapons():
             description="""
                 This weapon functions like a \\mitem<fixating> weapon, except that the bonus increases by +2 with each strike.
             """,
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             short_description="Grants +2 accuracy bonus against attacked foe",
         ),
     ]
@@ -655,7 +655,7 @@ def generate_weapons():
         create_weapon(
             name="Fated",
             rank=7,
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 When you miss with a \\glossterm<strike> with this weapon, you can reroll the attack and take the higher result.
                 After you reroll an attack in this way, you \\glossterm<briefly> cannot do so again.

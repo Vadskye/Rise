@@ -290,7 +290,7 @@ export const cryomancy: MysticSphere = {
         5: `You no longer treat the water as difficult terrain.`,
         7: `You also gain a +10 foot \\glossterm{magic bonus} to your land speed.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -328,7 +328,7 @@ export const cryomancy: MysticSphere = {
         7: `Your ice trail lasts \\glossterm{briefly} after your movement.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -349,7 +349,7 @@ export const cryomancy: MysticSphere = {
         7: `The damage reduction increases to 40.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -471,7 +471,7 @@ export const cryomancy: MysticSphere = {
           Instead, it lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
         `,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -488,7 +488,7 @@ export const cryomancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -503,7 +503,7 @@ export const cryomancy: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -540,7 +540,7 @@ export const cryomancy: MysticSphere = {
 
       rank: 3,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -555,7 +555,7 @@ export const cryomancy: MysticSphere = {
 
       rank: 7,
       // scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -651,7 +651,7 @@ export const cryomancy: MysticSphere = {
         This does not protect the target from cold damage.
       `,
       rank: 1,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
     {
       name: "Frostfall",
@@ -665,7 +665,7 @@ export const cryomancy: MysticSphere = {
         Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
       `,
       rank: 4,
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -679,7 +679,7 @@ export const cryomancy: MysticSphere = {
         name: "frostfall",
       },
       rank: 7,
-      type: "Attune (self)",
+      type: "Attune",
     },
   ],
 };

@@ -48,7 +48,7 @@ export const revelation: MysticSphere = {
         5: `The power bonus increases to +4.`,
         7: `The power bonus increases to +8.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -63,7 +63,7 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -77,7 +77,7 @@ export const revelation: MysticSphere = {
         4: `The area increases to a \\largearea radius \\glossterm{emanation}.`,
         6: `The area increases to a \\hugearea radius \\glossterm{emanation}.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -134,7 +134,7 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -165,7 +165,7 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -211,7 +211,7 @@ export const revelation: MysticSphere = {
       `,
       rank: 3,
       scaling: { 5: `The bonus increases to +3.`, 7: `The bonus increases to +4.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -223,7 +223,7 @@ export const revelation: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `The bonus increases to +5.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -238,7 +238,7 @@ export const revelation: MysticSphere = {
         5: `The range increases to 120 feet.`,
         7: `The range increases to 240 feet.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Blindsight",
@@ -252,7 +252,7 @@ export const revelation: MysticSphere = {
         5: `The range increases to 30 feet.`,
         7: `The range increases to 60 feet.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -297,7 +297,7 @@ export const revelation: MysticSphere = {
       scaling: {
         7: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{initiative} checks.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -470,8 +470,8 @@ export const revelation: MysticSphere = {
         7: `You constantly receive sensory input from both your body and the sensor.`,
       },
       tags: ["Scrying"],
-      // The use of attune (self) is intentional to make the "scout the dungeon exclusively using clairvoyance" plan improbably difficult to pull of.`,
-      type: "Attune (self)",
+      // The use of attune instead of Sustain is intentional to make the "scout the dungeon exclusively using clairvoyance" plan improbably difficult to pull off.
+      type: "Attune",
     },
 
     {
@@ -506,7 +506,7 @@ export const revelation: MysticSphere = {
         5: `The penalty reduction increases to 2.`,
         7: `The penalty reduction increases to 3.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -537,7 +537,7 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -553,7 +553,7 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -605,7 +605,7 @@ export const revelation: MysticSphere = {
         You can see the target's true form, regardless of any shapechanging or illusion effects.
       `,
       rank: 3,
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -681,7 +681,7 @@ export const revelation: MysticSphere = {
 
       rank: 1,
       tags: ["Scrying"],
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -729,7 +729,7 @@ export const revelation: MysticSphere = {
         `,
 
       rank: 1,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -855,7 +855,7 @@ export const revelation: MysticSphere = {
         If you \\glossterm{dismiss} the ritual, the effect ends for all targets.
       `,
       rank: 3,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -872,7 +872,7 @@ export const revelation: MysticSphere = {
         name: "telepathic bond",
       },
       rank: 5,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -888,7 +888,7 @@ export const revelation: MysticSphere = {
         name: "telepathic bond",
       },
       rank: 7,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {

@@ -72,7 +72,7 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 6,
       tags: [],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -91,7 +91,7 @@ export const umbramancy: MysticSphere = {
         7: `The maximum area increases to a \\hugearea radius \\glossterm{emanation}.`,
       },
       tags: [],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -105,7 +105,7 @@ export const umbramancy: MysticSphere = {
         4: `The radius increases to 120 feet.`,
         6: `The radius increases to 240 feet.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -246,7 +246,7 @@ export const umbramancy: MysticSphere = {
       scaling: {
         7: "The miss chance increases to 25\\%.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -261,7 +261,7 @@ export const umbramancy: MysticSphere = {
         4: `Moving during the \\glossterm{movement phase} does not end your invisibility or prevent you from becoming invisible.`,
         6: `Taking a \\glossterm{minor action} does not end your invisibility or prevent you from becoming invisible.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -312,7 +312,7 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 6,
       tags: ["Visual"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -329,7 +329,7 @@ export const umbramancy: MysticSphere = {
         7: `The bonus increases to +6.`,
       },
       tags: [],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -395,7 +395,7 @@ export const umbramancy: MysticSphere = {
     //   `,
     //   rank: 4,
     //   scaling: { 6: `You can teleport in any direction instead of just horizontally.` },
-    //   type: "Attune (self)",
+    //   type: "Attune",
     // },
 
     {
@@ -535,7 +535,7 @@ export const umbramancy: MysticSphere = {
         5: `You can maintain the form in bright illumination for a full round before it is suppressed.`,
         7: `You can maintain the form in bright illumination for up to five minutes before it is suppressed.`,
       },
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -583,7 +583,7 @@ export const umbramancy: MysticSphere = {
         At the end of each round, if any target is outside of \\longrange from you, the effect is broken for that target and its trail is revealed.
       `,
       rank: 2,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -597,7 +597,7 @@ export const umbramancy: MysticSphere = {
         name: "conceal trail",
       },
       rank: 4,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -611,7 +611,7 @@ export const umbramancy: MysticSphere = {
         name: "conceal trail",
       },
       rank: 6,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
   ],
 };

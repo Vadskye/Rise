@@ -196,7 +196,7 @@ def generate_tools():
             consumable=True,
             name="Elixir of Resilience",
             rank=1,
-            tags=["Attune (self)"],
+            tags=["Attune"],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
@@ -208,7 +208,7 @@ def generate_tools():
             consumable=True,
             name="Elixir of Resilience, Greater",
             rank=3,
-            tags=["Attune (self)"],
+            tags=["Attune"],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
@@ -220,7 +220,7 @@ def generate_tools():
             consumable=True,
             name="Elixir of Resilience, Supreme",
             rank=5,
-            tags=["Attune (self)"],
+            tags=["Attune"],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
@@ -232,7 +232,7 @@ def generate_tools():
             consumable=True,
             name="Elixir of Resilience, Epic",
             rank=7,
-            tags=["Attune (self)"],
+            tags=["Attune"],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +32 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
@@ -247,7 +247,7 @@ def generate_tools():
             consumable=True,
             name="Elixir of Potency",
             rank=1,
-            tags=["Attune (self)"],
+            tags=["Attune"],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
@@ -259,7 +259,7 @@ def generate_tools():
             consumable=True,
             name="Elixir of Potency, Greater",
             rank=3,
-            tags=["Attune (self)"],
+            tags=["Attune"],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
@@ -271,7 +271,7 @@ def generate_tools():
             consumable=True,
             name="Elixir of Potency, Supreme",
             rank=5,
-            tags=["Attune (self)"],
+            tags=["Attune"],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
@@ -283,7 +283,7 @@ def generate_tools():
             consumable=True,
             name="Elixir of Potency, Epic",
             rank=7,
-            tags=["Attune (self)"],
+            tags=["Attune"],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<power>.
@@ -611,7 +611,7 @@ def generate_tools():
             name="Antitoxin Elixir",
             rank=1,
             material_type="Alchemical",
-            tags=["Attune (self)"],
+            tags=["Attune"],
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 bonus to your defenses against poisons.
                 The effects expire after 10 minutes.
@@ -623,7 +623,7 @@ def generate_tools():
             name="Antitoxin Elixir, Greater",
             rank=3,
             material_type="Alchemical",
-            tags=["Attune (self)"],
+            tags=["Attune"],
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +6 bonus to your defenses against poisons.
                 The effects expire after 10 minutes.
@@ -635,7 +635,7 @@ def generate_tools():
             name="Antitoxin Elixir, Supreme",
             rank=6,
             material_type="Alchemical",
-            tags=["Attune (self)"],
+            tags=["Attune"],
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you become \\glossterm<immune> to poisons.
                 The effects expire after 10 minutes.

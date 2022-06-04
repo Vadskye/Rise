@@ -145,7 +145,7 @@ export const aeromancy: MysticSphere = {
         4: `The bonus increases to +3.`,
         6: `The bonus increases to +4.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Mass Wind Screen",
@@ -242,7 +242,7 @@ export const aeromancy: MysticSphere = {
         4: "You are immune to \\glossterm{falling damage} even if you do not glide.",
         6: "You can reduce your \\glossterm{glide speed} to 20 feet or increase it to 60 feet during each phase that you glide.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Mass Gentle Descent",
@@ -270,7 +270,7 @@ export const aeromancy: MysticSphere = {
       scaling: {
         6: "The maximum height increases to 60 feet.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Agile Flight",
@@ -281,7 +281,7 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 6,
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Soaring Flight",
@@ -293,7 +293,7 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 7,
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Air Walk",
@@ -307,7 +307,7 @@ export const aeromancy: MysticSphere = {
       scaling: {
         7: "The maximum height increases to 120 feet.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     // +2 levels for push, -2 levels for no power
     {
@@ -384,7 +384,7 @@ export const aeromancy: MysticSphere = {
         5: "The bonus increases to +10 feet.",
         7: "The bonus increases to +15 feet.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Mass Windblade",
@@ -417,7 +417,7 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
     {
       name: "Control Weather",
@@ -446,7 +446,7 @@ export const aeromancy: MysticSphere = {
       scaling: {
         6: "You can shape the weather for up to fifteen minutes before it takes effect, increasing the intensity of the changes you can make.",
       },
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
     {
       name: "Cyclone",
@@ -689,7 +689,7 @@ export const aeromancy: MysticSphere = {
         5: "You also ignore all sources of \\glossterm{difficult terrain}.",
         7: "You also gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flying}).",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Airborne Jumper",
@@ -704,7 +704,7 @@ export const aeromancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Wall of Wind",

@@ -81,7 +81,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         level: 12,
         modifiers: Some(vec![
             Modifier::ActiveAbility(ActiveAbility {
-                ability_type: AbilityType::Attune("Self".to_string()),
+                ability_type: AbilityType::Attune(None),
                 cooldown: None,
                 effect: r"
                     The aboleth \glossterm{dominates} the mind of an unconscious humanoid or aberration it touches.
