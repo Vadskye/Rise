@@ -4,13 +4,25 @@ import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
 from rise.latex.util import latexify, longtablify
+from rise.latex.tags import add_attune_tag
 
+def create_armor(
+    name, rank, material_type, description, short_description, tags=None
+):
+    return MagicItem(
+        name=name,
+        rank=rank,
+        material_type=material_type,
+        description=description,
+        short_description=short_description,
+        tags=add_attune_tag(tags),
+    )
 
 def generate_armor():
     armor = []
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Lifebond Retribution Armor",
             rank=2,
             material_type="Body armor",
@@ -21,7 +33,7 @@ def generate_armor():
             """,
             short_description="Deals 2d6 damage to attackers when you lose HP",
         ),
-        MagicItem(
+        create_armor(
             name="Lifebond Retribution Armor, Greater",
             rank=4,
             material_type="Body armor",
@@ -32,7 +44,7 @@ def generate_armor():
             """,
             short_description="Deals 4d6 damage to attackers when you lose HP",
         ),
-        MagicItem(
+        create_armor(
             name="Lifebond Retribution Armor, Supreme",
             rank=6,
             material_type="Body armor",
@@ -46,7 +58,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Armor of Health",
             rank=2,
             material_type="Body armor",
@@ -55,7 +67,7 @@ def generate_armor():
             """,
             short_description="Grants +4 hit points",
         ),
-        MagicItem(
+        create_armor(
             name="Armor of Health, Greater",
             rank=4,
             material_type="Body armor",
@@ -64,7 +76,7 @@ def generate_armor():
             """,
             short_description="Grants +8 hit points",
         ),
-        MagicItem(
+        create_armor(
             name="Armor of Health, Supreme",
             rank=6,
             material_type="Body armor",
@@ -76,7 +88,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Shield of Arrow Catching",
             rank=2,
             material_type="Shield",
@@ -86,7 +98,7 @@ def generate_armor():
             """,
             short_description="Redirects nearby projectiles to hit you",
         ),
-        MagicItem(
+        create_armor(
             name="Shield of Arrow Catching, Greater",
             rank=4,
             material_type="Shield",
@@ -95,7 +107,7 @@ def generate_armor():
             """,
             short_description="Redirects projectiles to hit you",
         ),
-        MagicItem(
+        create_armor(
             name="Shield of Arrow Catching, Supreme",
             rank=6,
             material_type="Shield",
@@ -108,7 +120,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Shield of Arrow Deflection",
             rank=3,
             material_type="Shield",
@@ -117,7 +129,7 @@ def generate_armor():
             """,
             short_description="Grants +2 defenses vs ranged strikes",
         ),
-        MagicItem(
+        create_armor(
             name="Shield of Arrow Deflection, Greater",
             rank=5,
             material_type="Shield",
@@ -126,7 +138,7 @@ def generate_armor():
             """,
             short_description="Grants +3 defenses vs ranged strikes",
         ),
-        MagicItem(
+        create_armor(
             name="Shield of Arrow Deflection, Supreme",
             rank=7,
             material_type="Shield",
@@ -138,7 +150,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Shield of Arrow Reflection",
             rank=2,
             material_type="Shield",
@@ -147,7 +159,7 @@ def generate_armor():
             """,
             short_description="Reflects missed ranged attacks",
         ),
-        MagicItem(
+        create_armor(
             name="Shield of Arrow Reflection, Greater",
             rank=4,
             material_type="Shield",
@@ -157,7 +169,7 @@ def generate_armor():
             """,
             short_description="Precisely reflects missed ranged attacks",
         ),
-        MagicItem(
+        create_armor(
             name="Shield of Arrow Reflection, Supreme",
             rank=6,
             material_type="Shield",
@@ -170,7 +182,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Shield of Bashing",
             rank=2,
             material_type="Shield",
@@ -179,7 +191,7 @@ def generate_armor():
             """,
             short_description="Grants +3 power with strikes",
         ),
-        MagicItem(
+        create_armor(
             name="Shield of Bashing, Greater",
             rank=4,
             material_type="Shield",
@@ -188,7 +200,7 @@ def generate_armor():
             """,
             short_description="Grants +6 power with strikes",
         ),
-        MagicItem(
+        create_armor(
             name="Shield of Bashing, Supreme",
             rank=6,
             material_type="Shield",
@@ -200,7 +212,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Covering Shield",
             rank=2,
             material_type="Shield",
@@ -210,7 +222,7 @@ def generate_armor():
             """,
             short_description="Grants +1 Armor defense during total defense",
         ),
-        MagicItem(
+        create_armor(
             name="Covering Shield, Greater",
             rank=4,
             material_type="Shield",
@@ -220,7 +232,7 @@ def generate_armor():
             """,
             short_description="Grants +2 Armor defense during total defense",
         ),
-        MagicItem(
+        create_armor(
             name="Covering Shield, Supreme",
             rank=6,
             material_type="Shield",
@@ -233,7 +245,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Featherlight Armor",
             rank=2,
             material_type="Body armor",
@@ -242,7 +254,7 @@ def generate_armor():
             """,
             short_description="Reduces encumbrance by 1",
         ),
-        MagicItem(
+        create_armor(
             name="Featherlight Armor, Greater",
             rank=4,
             material_type="Body armor",
@@ -251,7 +263,7 @@ def generate_armor():
             """,
             short_description="Reduces encumbrance by 2",
         ),
-        MagicItem(
+        create_armor(
             name="Featherlight Armor, Supreme",
             rank=6,
             material_type="Body armor",
@@ -263,7 +275,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Armor of Retribution",
             rank=4,
             material_type="Body armor",
@@ -274,7 +286,7 @@ def generate_armor():
             """,
             short_description="Deals 2d8 damage to adjacent attackers",
         ),
-        MagicItem(
+        create_armor(
             name="Armor of Retribution, Greater",
             rank=6,
             material_type="Body armor",
@@ -288,7 +300,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Armor of Fortification",
             rank=3,
             material_type="Body armor",
@@ -297,7 +309,7 @@ def generate_armor():
             """,
             short_description="Reduces critical hits from strikes",
         ),
-        MagicItem(
+        create_armor(
             name="Armor of Fortification, Greater",
             rank=6,
             material_type="Body armor",
@@ -306,7 +318,7 @@ def generate_armor():
             """,
             short_description="Drastically reduces critical hits from strikes",
         ),
-        MagicItem(
+        create_armor(
             name="Armor of Mystic Fortification",
             rank=5,
             material_type="Body armor",
@@ -318,7 +330,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Hidden Armor",
             rank=1,
             tags=["Sensation"],
@@ -334,7 +346,7 @@ def generate_armor():
             """,
             short_description="Can look like normal clothing",
         ),
-        MagicItem(
+        create_armor(
             name="Hidden Armor, Greater",
             rank=3,
             material_type="Body armor",
@@ -347,7 +359,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Resistant Armor",
             rank=2,
             tags=[],
@@ -357,7 +369,7 @@ def generate_armor():
             """,
             short_description="Grants +4 damage resistance",
         ),
-        MagicItem(
+        create_armor(
             name="Resistant Armor, Greater",
             rank=4,
             tags=[],
@@ -367,7 +379,7 @@ def generate_armor():
             """,
             short_description="Grants +8 damage resistance",
         ),
-        MagicItem(
+        create_armor(
             name="Resistant Armor, Supreme",
             rank=6,
             tags=[],
@@ -380,7 +392,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Stonebody Armor",
             rank=2,
             tags=[],
@@ -391,7 +403,7 @@ def generate_armor():
             """,
             short_description="Grants +4 hit points and damage resistance, but -5 speed",
         ),
-        MagicItem(
+        create_armor(
             name="Stonebody Armor, Greater",
             rank=4,
             tags=[],
@@ -402,7 +414,7 @@ def generate_armor():
             """,
             short_description="Grants +8 hit points and damage resistance, but -5 speed",
         ),
-        MagicItem(
+        create_armor(
             name="Stonebody Armor, Supreme",
             rank=6,
             tags=[],
@@ -416,7 +428,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Lithe Armor",
             rank=4,
             tags=[],
@@ -426,7 +438,7 @@ def generate_armor():
             """,
             short_description="Grants +1 Armor if you have 3 Dex",
         ),
-        MagicItem(
+        create_armor(
             name="Lithe Armor, Greater",
             rank=7,
             tags=[],
@@ -439,7 +451,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Agile Burst Armor",
             rank=1,
             tags=["Swift"],
@@ -450,7 +462,7 @@ def generate_armor():
             """,
             short_description="Grants +1 Reflex whenever you sprint",
         ),
-        MagicItem(
+        create_armor(
             name="Agile Burst Armor, Greater",
             rank=4,
             tags=["Swift"],
@@ -461,7 +473,7 @@ def generate_armor():
             """,
             short_description="Grants +1 Armor and Reflex whenever you sprint",
         ),
-        MagicItem(
+        create_armor(
             name="Agile Burst Armor, Supreme",
             rank=7,
             tags=["Swift"],
@@ -475,7 +487,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Lifeweave Armor",
             rank=2,
             tags=["Swift"],
@@ -486,7 +498,7 @@ def generate_armor():
             """,
             short_description="Grants +8 damage resistance, but -4 hit points",
         ),
-        MagicItem(
+        create_armor(
             name="Lifeweave Armor, Greater",
             rank=4,
             tags=["Swift"],
@@ -497,7 +509,7 @@ def generate_armor():
             """,
             short_description="Grants +16 damage resistance, but -8 hit points",
         ),
-        MagicItem(
+        create_armor(
             name="Lifeweave Armor, Supreme",
             rank=6,
             tags=["Swift"],
@@ -511,7 +523,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Soulweave Armor",
             rank=2,
             tags=["Swift"],
@@ -522,7 +534,7 @@ def generate_armor():
             """,
             short_description="Grants +6 damage resistance, but -2 power",
         ),
-        MagicItem(
+        create_armor(
             name="Soulweave Armor, Greater",
             rank=4,
             tags=["Swift"],
@@ -533,7 +545,7 @@ def generate_armor():
             """,
             short_description="Grants +12 damage resistance, but -4 power",
         ),
-        MagicItem(
+        create_armor(
             name="Soulweave Armor, Supreme",
             rank=6,
             tags=["Swift"],
@@ -547,7 +559,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Swiftstep Armor",
             rank=3,
             tags=["Swift"],
@@ -558,7 +570,7 @@ def generate_armor():
             """,
             short_description="Reduces armor speed penalty by 5 feet",
         ),
-        MagicItem(
+        create_armor(
             name="Swiftstep Armor, Greater",
             rank=6,
             tags=["Swift"],
@@ -572,7 +584,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Crumpling Armor",
             rank=2,
             tags=["Attune (deep, self)"],
@@ -583,7 +595,7 @@ def generate_armor():
             """,
             short_description="Reduces physical damage from two attacks by 5",
         ),
-        MagicItem(
+        create_armor(
             name="Crumpling Armor, Greater",
             rank=4,
             tags=["Attune (deep, self)"],
@@ -593,7 +605,7 @@ def generate_armor():
             """,
             short_description="Reduces physical damage from two attacks by 10",
         ),
-        MagicItem(
+        create_armor(
             name="Crumpling Armor, Supreme",
             rank=6,
             tags=["Attune (deep, self)"],
@@ -606,7 +618,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Hardblock Shield",
             rank=4,
             tags=[],
@@ -617,7 +629,7 @@ def generate_armor():
             """,
             short_description="Imposes -1 Armor penalty when creatures miss you",
         ),
-        MagicItem(
+        create_armor(
             name="Hardblock Shield, Greater",
             rank=7,
             tags=[],
@@ -630,7 +642,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Soulguard Shield",
             rank=2,
             tags=[],
@@ -641,7 +653,7 @@ def generate_armor():
             """,
             short_description="Grants 25\\% chance to avoid conditions",
         ),
-        MagicItem(
+        create_armor(
             name="Soulguard Shield, Greater",
             rank=6,
             tags=[],
@@ -655,7 +667,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Shield of Mystic Reflection",
             rank=6,
             tags=[],
@@ -674,7 +686,7 @@ def generate_armor():
     ]
 
     armor += [
-        MagicItem(
+        create_armor(
             name="Armor of Emptiness",
             rank=5,
             tags=[],
@@ -689,7 +701,7 @@ def generate_armor():
 
     armor += [
         # Paralyzed is t4, but this has an immunity, so call this rank 4
-        MagicItem(
+        create_armor(
             name="Shield of Medusa",
             rank=4,
             material_type="Shield",
@@ -705,7 +717,7 @@ def generate_armor():
             """,
             short_description="Can briefly paralyze nearby foes",
         ),
-        MagicItem(
+        create_armor(
             name="Shield of Medusa, Greater",
             rank=7,
             material_type="Shield",

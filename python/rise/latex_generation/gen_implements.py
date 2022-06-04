@@ -4,13 +4,26 @@ import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
 from rise.latex.util import latexify, longtablify
+from rise.latex.tags import add_attune_tag
+
+def create_implement(
+    name, rank, material_type, description, short_description, tags=None
+):
+    return MagicItem(
+        name=name,
+        rank=rank,
+        material_type=material_type,
+        description=description,
+        short_description=short_description,
+        tags=add_attune_tag(tags),
+    )
 
 
 def generate_implements():
     implements = []
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Spell Wand, 1st",
             rank=1,
             material_type="Wand",
@@ -26,7 +39,7 @@ def generate_implements():
             """,
             short_description="Grants knowledge of a rank 1 spell",
         ),
-        MagicItem(
+        create_implement(
             name="Spell Wand, 2nd",
             rank=2,
             material_type="Wand",
@@ -36,7 +49,7 @@ def generate_implements():
             """,
             short_description="Grants knowledge of a rank 2 spell",
         ),
-        MagicItem(
+        create_implement(
             name="Spell Wand, 3rd",
             rank=3,
             material_type="Wand",
@@ -46,7 +59,7 @@ def generate_implements():
             """,
             short_description="Grants knowledge of a rank 3 spell",
         ),
-        MagicItem(
+        create_implement(
             name="Spell Wand, 4th",
             rank=4,
             material_type="Wand",
@@ -56,7 +69,7 @@ def generate_implements():
             """,
             short_description="Grants knowledge of a rank 4 spell",
         ),
-        MagicItem(
+        create_implement(
             name="Spell Wand, 5th",
             rank=5,
             material_type="Wand",
@@ -66,7 +79,7 @@ def generate_implements():
             """,
             short_description="Grants knowledge of a rank 5 spell",
         ),
-        MagicItem(
+        create_implement(
             name="Spell Wand, 6th",
             rank=6,
             material_type="Wand",
@@ -76,7 +89,7 @@ def generate_implements():
             """,
             short_description="Grants knowledge of a rank 6 spell",
         ),
-        MagicItem(
+        create_implement(
             name="Spell Wand, 7th",
             rank=7,
             material_type="Wand",
@@ -89,7 +102,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Shared Healing",
             rank=3,
             material_type="Staff",
@@ -100,7 +113,7 @@ def generate_implements():
             """,
             short_description="Exert to heal you when you heal others",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Shared Healing, Greater",
             rank=6,
             material_type="Staff",
@@ -114,7 +127,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Pleasant Healing",
             rank=2,
             material_type="Staff",
@@ -125,7 +138,7 @@ def generate_implements():
             """,
             short_description="Grants +2 Mental defense with your healing",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Pleasant Healing, Greater",
             rank=5,
             material_type="Staff",
@@ -139,7 +152,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Transit",
             rank=2,
             material_type="Staff",
@@ -149,7 +162,7 @@ def generate_implements():
             """,
             short_description="Doubles your teleportation distance",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Transit, Greater",
             rank=4,
             material_type="Staff",
@@ -159,7 +172,7 @@ def generate_implements():
             """,
             short_description="Triples your teleportation distance",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Transit, Supreme",
             rank=6,
             material_type="Staff",
@@ -172,7 +185,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Gut-Wrenching Fear",
             rank=2,
             material_type="Staff",
@@ -182,7 +195,7 @@ def generate_implements():
             """,
             short_description="Fear effects also penalize Fortitude",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Agonizing Fear",
             rank=5,
             material_type="Staff",
@@ -195,7 +208,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Discordance",
             rank=3,
             material_type="Staff",
@@ -205,7 +218,7 @@ def generate_implements():
             """,
             short_description="Makes dazed creatures briefly stunned",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Discordance, Greater",
             rank=6,
             material_type="Staff",
@@ -218,7 +231,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Hindrance",
             rank=1,
             material_type="Staff",
@@ -228,7 +241,7 @@ def generate_implements():
             """,
             short_description="Your slowing effects last longer",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Hindrance, Greater",
             rank=5,
             material_type="Staff",
@@ -241,7 +254,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Extending Staff",
             rank=2,
             material_type="Staff",
@@ -251,7 +264,7 @@ def generate_implements():
             """,
             short_description="Grants +15 foot range",
         ),
-        MagicItem(
+        create_implement(
             name="Extending Staff, Greater",
             rank=4,
             material_type="Staff",
@@ -261,7 +274,7 @@ def generate_implements():
             """,
             short_description="Grants +30 foot range",
         ),
-        MagicItem(
+        create_implement(
             name="Extending Staff, Supreme",
             rank=6,
             material_type="Staff",
@@ -274,7 +287,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Giants",
             rank=3,
             material_type="Staff",
@@ -284,7 +297,7 @@ def generate_implements():
             """,
             short_description="Increases maximum size category of abilities",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Giants, Greater",
             rank=6,
             material_type="Staff",
@@ -296,7 +309,7 @@ def generate_implements():
     ]
 
     implements.append(
-        MagicItem(
+        create_implement(
             name="Merciful Staff",
             rank=1,
             material_type="Staff",
@@ -309,7 +322,7 @@ def generate_implements():
     )
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Onslaught Staff",
             rank=1,
             material_type="Staff",
@@ -319,7 +332,7 @@ def generate_implements():
             """,
             short_description="Grants +10 speed, maybe +1 accuracy on kill",
         ),
-        MagicItem(
+        create_implement(
             name="Onslaught Staff, Greater",
             rank=3,
             material_type="Staff",
@@ -329,7 +342,7 @@ def generate_implements():
             """,
             short_description="Grants +15 speed, maybe +2 accuracy on kill",
         ),
-        MagicItem(
+        create_implement(
             name="Onslaught Staff, Supreme",
             rank=5,
             material_type="Staff",
@@ -342,7 +355,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Focus",
             rank=1,
             material_type="Staff",
@@ -355,7 +368,7 @@ def generate_implements():
             """,
             short_description="Grants +1 accuracy, but -2 defenses",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Focus, Greater",
             rank=5,
             material_type="Staff",
@@ -367,7 +380,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Selective Staff",
             rank=1,
             material_type="Staff",
@@ -379,7 +392,7 @@ def generate_implements():
             """,
             short_description="Allows excluding a single square from an area",
         ),
-        MagicItem(
+        create_implement(
             name="Selective Staff, Greater",
             rank=3,
             material_type="Staff",
@@ -389,7 +402,7 @@ def generate_implements():
             """,
             short_description="Allows excluding areas",
         ),
-        MagicItem(
+        create_implement(
             name="Selective Staff, Supreme",
             rank=5,
             material_type="Staff",
@@ -403,7 +416,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Silence",
             rank=1,
             material_type="Staff",
@@ -415,7 +428,7 @@ def generate_implements():
             """,
             short_description="Can exert to cast spells without verbal components",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Stillness",
             rank=1,
             material_type="Staff",
@@ -427,7 +440,7 @@ def generate_implements():
             """,
             short_description="Can exert to cast spells without somatic components",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Silence, Greater",
             rank=4,
             material_type="Staff",
@@ -437,7 +450,7 @@ def generate_implements():
             """,
             short_description="Can cast spells without verbal components",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Stillness, Greater",
             rank=4,
             material_type="Staff",
@@ -447,7 +460,7 @@ def generate_implements():
             """,
             short_description="Can cast spells without somatic components",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Tranquility",
             rank=6,
             material_type="Staff",
@@ -460,7 +473,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Reaching Staff",
             rank=3,
             material_type="Staff",
@@ -476,7 +489,7 @@ def generate_implements():
             """,
             short_description="Can exert to use abilities from a short distance away",
         ),
-        MagicItem(
+        create_implement(
             name="Reaching Staff, Greater",
             rank=5,
             material_type="Staff",
@@ -488,7 +501,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Widening Staff",
             rank=4,
             material_type="Staff",
@@ -500,7 +513,7 @@ def generate_implements():
             """,
             short_description="Can exert to double area size",
         ),
-        MagicItem(
+        create_implement(
             name="Widening Staff, Greater",
             rank=6,
             material_type="Staff",
@@ -512,7 +525,7 @@ def generate_implements():
         ),
     ]
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Potency",
             rank=2,
             material_type="Staff",
@@ -522,7 +535,7 @@ def generate_implements():
             """,
             short_description="Grants +2 power",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Potency, Greater",
             rank=4,
             material_type="Staff",
@@ -532,7 +545,7 @@ def generate_implements():
             """,
             short_description="Grants +4 power",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Potency, Supreme",
             rank=6,
             material_type="Staff",
@@ -545,7 +558,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Blessed Staff",
             rank=3,
             material_type="Staff",
@@ -556,7 +569,7 @@ def generate_implements():
             """,
             short_description="Grants +2 bonus with \\textit<desperate exertion>",
         ),
-        MagicItem(
+        create_implement(
             name="Blessed Staff, Greater",
             rank=5,
             material_type="Staff",
@@ -567,7 +580,7 @@ def generate_implements():
             """,
             short_description="Grants +3 bonus with \\textit<desperate exertion>",
         ),
-        MagicItem(
+        create_implement(
             name="Blessed Staff, Supreme",
             rank=7,
             material_type="Staff",
@@ -581,7 +594,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Hexbite Staff",
             rank=2,
             material_type="Staff",
@@ -591,7 +604,7 @@ def generate_implements():
             """,
             short_description="Deals 2d6+4 damage when foes remove conditions",
         ),
-        MagicItem(
+        create_implement(
             name="Hexbite Staff, Greater",
             rank=4,
             material_type="Staff",
@@ -601,7 +614,7 @@ def generate_implements():
             """,
             short_description="Deals 4d6+7 damage when foes remove conditions",
         ),
-        MagicItem(
+        create_implement(
             name="Hexbite Staff, Supreme",
             rank=6,
             material_type="Staff",
@@ -614,7 +627,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Stored Attunement",
             rank=2,
             material_type="Staff",
@@ -632,7 +645,7 @@ def generate_implements():
             """,
             short_description="Change easily between two stored attunements",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Stored Attunement, Greater",
             rank=4,
             material_type="Staff",
@@ -642,7 +655,7 @@ def generate_implements():
             """,
             short_description="Change easily between three stored attunements",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Stored Attunement, Supreme",
             rank=6,
             material_type="Staff",
@@ -655,7 +668,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Baneswallow Staff",
             rank=2,
             material_type="Staff",
@@ -670,7 +683,7 @@ def generate_implements():
             """,
             short_description="Can exert and remove a condition to gain power",
         ),
-        MagicItem(
+        create_implement(
             name="Baneswallow Staff, Greater",
             rank=4,
             material_type="Staff",
@@ -683,7 +696,7 @@ def generate_implements():
             """,
             short_description="Can remove a condition to gain power",
         ),
-        MagicItem(
+        create_implement(
             name="Baneswallow Staff, Supreme",
             rank=6,
             material_type="Staff",
@@ -699,7 +712,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Splitting Staff",
             rank=2,
             material_type="Staff",
@@ -712,7 +725,7 @@ def generate_implements():
             """,
             short_description="Can exert to add an extra target",
         ),
-        MagicItem(
+        create_implement(
             name="Splitting Staff, Greater",
             rank=6,
             material_type="Staff",
@@ -725,7 +738,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Echoing Staff",
             rank=7,
             material_type="Staff",
@@ -742,7 +755,7 @@ def generate_implements():
     # Would be nice to have a staff concept for each mystic sphere
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Radiance",
             rank=4,
             material_type="Staff",
@@ -753,7 +766,7 @@ def generate_implements():
             """,
             short_description="Grants +1 accuracy vs foes in brilliant light",
         ),
-        MagicItem(
+        create_implement(
             name="Staff of Radiance, Greater",
             rank=7,
             material_type="Staff",
@@ -767,7 +780,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Blinding Staff",
             rank=4,
             material_type="Staff",
@@ -778,7 +791,7 @@ def generate_implements():
             """,
             short_description="Briefly blinds you and dazzled creatures",
         ),
-        MagicItem(
+        create_implement(
             name="Blinding Staff, Greater",
             rank=7,
             material_type="Staff",
@@ -792,7 +805,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Bushwalker's Staff",
             rank=4,
             material_type="Staff",
@@ -803,7 +816,7 @@ def generate_implements():
             """,
             short_description="Grants +1 accuracy vs foes in undergrowth",
         ),
-        MagicItem(
+        create_implement(
             name="Bushwalker's Staff, Greater",
             rank=7,
             material_type="Staff",
@@ -817,7 +830,7 @@ def generate_implements():
     ]
 
     implements += [
-        MagicItem(
+        create_implement(
             name="Staff of Energetic Conversion",
             rank=4,
             material_type="Staff",
