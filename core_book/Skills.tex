@@ -718,51 +718,38 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 \newpage
 \skill{Sleight of Hand}{Dex}
         The Sleight of Hand skill represents your ability to pick pockets, palm objects, and perform other feats of legerdemain.
-        All Sleight of Hand checks apply a special modifier based on the size of the action taken or object affected, as shown on \trefnp{Sleight of Hand Difficulty Modifiers}.
 
-        \begin{dtable}
-            \lcaption{Sleight of Hand Difficulty Modifiers}
-            \begin{dtabularx}{\columnwidth}{X l}
-                \tb{Size}   & {Difficulty Modifier} \tableheaderrule
-                Fine        & \minus10   \\
-                Diminuitive & \minus5   \\
-                Tiny        & \plus0   \\
-                Small       & \plus5  \\
-                Medium      & \plus10  \\
-                Large       & \plus15 \\
-                Huge        & \plus20 \\
-                Gargantuan  & \plus25 \\
-                Colossal    & \plus30 \\
-            \end{dtabularx}
-        \end{dtable}
+        \subsection{Common Sleight of Hand Modifiers}
+            All Sleight of Hand checks apply a special modifier based on the size of the action taken or object affected, as shown on \trefnp{Sleight of Hand Difficulty Modifiers}.
 
-        \parhead{Conceal Object} You can make an opposed Disguise vs. Awareness check to conceal an \glossterm{ally} or \glossterm{unattended} object on your person.
-        The target must be at least one size category smaller than you are.
-        If it is only one size category smaller than you, you take a \minus10 penalty to the check.
+            \begin{dtable}
+                \lcaption{Sleight of Hand Difficulty Modifiers}
+                \begin{dtabularx}{\columnwidth}{X l}
+                    \tb{Size}   & {Difficulty Modifier} \tableheaderrule
+                    Fine        & \minus10   \\
+                    Diminuitive & \minus5   \\
+                    Tiny        & \plus0   \\
+                    Small       & \plus5  \\
+                    Medium      & \plus10  \\
+                    Large       & \plus15 \\
+                    Huge        & \plus20 \\
+                    Gargantuan  & \plus25 \\
+                    Colossal    & \plus30 \\
+                \end{dtabularx}
+            \end{dtable}
 
-    \subsection{Conceal Action}
-        You can make a Sleight of Hand check to conceal an action you take, preventing observers from noticing that you took the action. You can conceal any physical action that only requires the use of your hands and arms. Your check is opposed by the Awareness check of any observers. Success means your action is unnoticed. Failure means they are able to notice your action normally.
-
-        The space required to perform the action is the size of the action, and applies a bonus or penalty as noted above. For example, winking only requires moving your eye, so you gain a \plus10 bonus to conceal the action. Firing a longbow requires manipulating an object as large as you are, so you take a \minus10 penalty to conceal the action.
-
-        Observers that you touch as part of the action gain a \plus10 bonus to their Awareness check. If you strike them hard, as with an attack, the bonus increases to a \plus20 bonus.
-
-        If you successfully conceal an attack, the attack is treated as if it were an attack from an invisible creature. The target may be \unaware or \partiallyunaware of the attack. If the target is hit, it can tell the direction the attack came from, but not that you made the attack.
-
-        Nonhumanoid creatures without hands and arms may conceal actions using different parts of their body. Large movements can never be concealed with this ability; see the Stealth skill.
-
-    \subsection{Conceal Object}
-        As a standard action, you can make a Sleight of Hand check to conceal a creature or object on your person.
-        The target must be at least one size category smaller than you are.
-        If it is only one size category smaller than you, you take a \minus10 penalty to the check.
-        This penalty is separate from the normal modifier based on the object's size.
-        A creature must be an \glossterm{ally}, and an object must be unattended.
-
-        Your Sleight of Hand check is opposed by the Awareness check of anyone observing you.
-        Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
-
-    \subsection{Pickpocket}
-        You can make a Sleight of Hand check as a standard action to steal an object from another creature. The object must be loose and accessible, such as in a pocket. The \glossterm{difficulty value} depends on whether the creature notices your attempt using Awareness. If the creature's Awareness check exceeds your Sleight of Hand check, the creature notices your attempt and the \glossterm{difficulty value} is equal to the creature's Reflex defense. Otherwise, the creature does not notice your attempt, and the \glossterm{difficulty value} is 10. Success means you successfully steal the object. Failure means you do not steal the object.
+        \subsection{Common Sleight of Hand Tasks}
+            \parhead{Conceal Object} You can make an opposed Sleight of Hand vs. Awareness check to conceal an \glossterm{ally} or \glossterm{unattended} object on your person.
+            The target must be at least one size category smaller than you are.
+            \parhead{Conceal Action} You can make an opposed Sleight of Hand vs. Awareness check to conceal an action that you take.
+            The space required to perform the action is the size of the action, and applies a size-based bonus or penalty appropriately.
+            The action must be at least one size category smaller than you are.
+            For example, throwing a dagger is a Small-sized movement, so you take a \minus5 penalty to conceal the action.
+            If you successfully conceal an attack, the defender is at least \partiallyunaware of it (see \pcref{Awareness and Surprise}).
+            \parhead{Pickpocket} You can make an Sleight of Hand check to steal an object from another creature.
+            The object must be loose and accessible, such as in a pocket.
+            All observers, including the creature you are stealing from, can make an Awareness check against your Sleight of Hand check result to observe your attempt.
+            If your check result beats the target's Reflex defense, you steal the object.
 
 \newpage
 \skill{Social Insight}{Per}
