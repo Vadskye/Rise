@@ -58,10 +58,30 @@ impl Monster {
             creature
                 .passive_abilities
                 .push(StandardPassiveAbility::TwoActions.ability());
+            creature
+                .passive_abilities
+                .push(StandardPassiveAbility::ConditionRemoval(1).ability());
         } else if challenge_rating == ChallengeRating::Six {
             creature
                 .passive_abilities
                 .push(StandardPassiveAbility::ThreeActions.ability());
+            creature
+                .passive_abilities
+                .push(StandardPassiveAbility::ConditionRemoval(2).ability());
+        }
+        if challenge_rating == ChallengeRating::Four || challenge_rating == ChallengeRating::Six {
+            let conditions_avoided = if level >= 21 {
+                2
+            } else if level >= 12 {
+                1
+            } else {
+                0
+            };
+            if conditions_avoided > 0 {
+                creature
+                    .passive_abilities
+                    .push(StandardPassiveAbility::ConditionAvoidance(conditions_avoided).ability());
+            }
         }
 
         if level >= 19 {

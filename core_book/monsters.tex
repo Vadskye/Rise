@@ -17,11 +17,10 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         They have the following specific benefits.
         \begin{itemize}
             \item Monsters use the same hit points and damage resistance rules as player characters
-            \item Monsters gain a \plus1 bonus to all defenses at 3rd level, 12th level, and 21st level
+            \item Monsters gain a \plus1 bonus to all defenses at 3rd level and 15th level
             \item Monsters gain a \plus1d damage bonus with strikes at 4th level and every 3 levels thereafter
             \item Monsters gain a \plus1 bonus to power with all abilities that gradually increases at 4th level and every 3 levels thereafter, as described in \tref{Monster Advancement}
-            \item Monsters gain a \plus1 bonus to their roll to automatically remove conditions at 6th level and 15th level
-            \item Monsters gain a \plus1 accuracy bonus at 19th level
+            \item High-CR monsters become more resistant to conditions at 12th level and 21st level (see \pcref{Conditions on Monsters})
         \end{itemize}
 
         Monster level scaling is summarized in \tref{Monster Advancement}.
@@ -94,21 +93,23 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             Instead, once a monster gains a vital wound, it is defeated.
             Defeated monsters may be unconscious, dead, or merely flee the fight at the discretion of the Game Master.
 
+        \subsubsection{Conditions on Monsters}
+            Monsters cannot normally use the \textit{recover} ability.
+            However, monsters with a high challenge rating can remove conditions automatically.
+            At the end of each round, CR 4 monsters automatically remove one \glossterm{condition} that was not applied during that round.
+            CR 6 monsters automatically remove two conditions instead of only one.
+            Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
+
+            \parhead{Condition Avoidance} At 12th level, high-CR monsters become more resistant to conditions.
+            CR 4 and CR 6 monsters are immune to the first condition they gain between \glossterm{short rests}.
+            They cannot choose to suffer the effects of a condition in order to retain this one-time immunity for a later, more dangerous condition.
+            In addition, this does not provide any protection against detrimental \glossterm{brief} effects.
+            At 21st level, CR 4 and CR 6 monsters also gain immunity to the second condition they would gain between short rests.
+
         \subsubsection{Monster Resources}
             Unless otherwise noted in their description, monsters have no resources, and their fatigue tolerance is treated as 0.
             They are unable to use abilities that would cause them to increase their fatigue level, such as the \textit{desperate exertion} ability.
             At the GM's discretion, individual monsters may technically be attuned to their abilities or be attuned to magic items they find, but this is not an explicit part of monster definitions.
-
-        \subsubsection{Recovering Conditions}
-            Monsters cannot normally use the \textit{recover} ability.
-            However, monsters with a high challenge rating can remove conditions automatically.
-            At the end of each round, monsters with CR of 2 or higher roll 1d10 \add their CR.
-            Monsters gain a \plus1 bonus to this roll at 6th level and 15th level.
-
-            If the result is 11 or higher, the monster removes one condition of its choice.
-            For every 2 points by which it exceeds that result, it removes an additional condition.
-            This effect cannot remove a condition applied during the current round.
-            Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
 
         \subsubsection{Rank-Based Ability Access}\label{Rank-Based Ability Access}
             Although monsters do not gain archetypes, their special abilities should still be balanced appropriately for their maximum accessible rank.

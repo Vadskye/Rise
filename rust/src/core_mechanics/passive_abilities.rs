@@ -25,6 +25,8 @@ impl PassiveAbility {
 pub enum StandardPassiveAbility {
     Amphibious,
     Animated,
+    ConditionAvoidance(i32),
+    ConditionRemoval(i32),
     TwoActions,
     ThreeActions,
     Undead,
@@ -45,6 +47,24 @@ impl StandardPassiveAbility {
                 ".to_string(),
                 is_magical: false,
                 name: "Animated".to_string(),
+            },
+            Self::ConditionAvoidance(count) => {
+                // No way to gain triple condition avoidance right now
+                let first_condition = if *count == 1 {r"first \glossterm{condition}" } else { r"first two \glossterm{conditions}" };
+                return PassiveAbility {
+                    description: format!("The $name is immune to the {} it would gain.", first_condition),
+                    is_magical: false,
+                    name: "Condition Avoidance".to_string(),
+                };
+            },
+            Self::ConditionRemoval(count) => {
+                // No way to gain triple condition avoidance right now
+                let conditions = if *count == 1 {r"one old \glossterm{condition}" } else { r"two old \glossterm{conditions}" };
+                return PassiveAbility {
+                    description: format!("The $name removes {} at the end of each round.", conditions),
+                    is_magical: false,
+                    name: "Condition Removal".to_string(),
+                };
             },
             Self::ThreeActions => PassiveAbility {
                 description: "The $name can take three standard actions each round. It cannot use the same ability or weapon twice in the same round.".to_string(),
