@@ -228,7 +228,7 @@ def debuff_explanation(debuff):
         "prone": "half speed, -2 accuracy, Armor, and Ref",
         "shaken": "-2 Mental, -2 accuracy vs. source",
         "slowed": "half speed, -2 Ref",
-        "squeezing": "-2 accuracy, Armor, and Ref",
+        "squeezing": "-2 Armor and Ref",
         "stunned": "-4 defenses",
         "swimming": "-4 accuracy, defenses",
         "unaware": "-6 Armor and Ref",
