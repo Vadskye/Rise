@@ -631,7 +631,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                When you cast a \\glossterm<targeted> spell that has the \\glossterm<Attune> tag, but is not a \\glossterm<deep attunement>, you can invest the magic of the spell in this staff.
+                When you cast a \\glossterm<targeted> spell that has the \\abilitytag<Attune> tag, but is not a \\glossterm<deep attunement>, you can invest the magic of the spell in this staff.
                 If you do, the spell does not have its normal effect.
                 Up to two spells can be stored this way.
                 If there are already spells invested in the staff, you can choose which spell to replace to make room for the new spell.
