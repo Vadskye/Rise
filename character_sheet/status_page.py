@@ -209,7 +209,7 @@ def debuff_explanation(debuff):
         "blinded": "50% miss chance",
         "charmed": "friendly with charmer",
         "climbing": "-4 accuracy, defenses",
-        "confused": "-4 defenses, acts randomly",
+        "confused": "-4 defenses and randomly defend, flee, attack, or act normally",
         "dazed": "-2 defenses",
         "dazzled": "25% miss chance, no special vision",
         "deafened": "25% verbal spell failure",
