@@ -1558,7 +1558,7 @@ impl Class {
                             You gain a \plus1 bonus to your Strength.
                         \end{attuneability}
                         \parhead{Essence} You gain a \plus1 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
-                        \parhead{Mastery} Your \textit{divine strength} ability loses the \glossterm{Attune} (self) tag.
+                        \parhead{Mastery} Your \textit{divine strength} ability loses the \abilitytag{Attune} (self) tag.
                         Instead, it lasts until you use it again.
 
                     \subsubsection{Travel Domain}
