@@ -306,7 +306,7 @@ export const aquamancy: MysticSphere = {
         5: `The speed bonus increases to +10 feet, or +15 feet if you already have a swim speed.`,
         7: `The speed bonus increases to +15 feet, or +20 feet if you already have a swim speed.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Mass Aquatic Freedom",
@@ -458,7 +458,7 @@ export const aquamancy: MysticSphere = {
       scaling: {
         6: "The area increases to a \\largearea radius.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Octopus Tentacles",
@@ -475,7 +475,7 @@ export const aquamancy: MysticSphere = {
       scaling: {
         6: "You gain a +5 bonus to \\glossterm{reach} with attacks using the tentacles.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Aqueous Tentacle",
@@ -495,7 +495,7 @@ export const aquamancy: MysticSphere = {
         6: "The bonus to reach increases to 10 feet.",
       },
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Desiccation",
@@ -579,7 +579,7 @@ export const aquamancy: MysticSphere = {
         5: "The defense bonus against critical hits from strikes increases to +8.",
         7: "You are immune to critical hits from strikes.",
       },
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
     {
       name: "Fog Cloud",
@@ -641,7 +641,7 @@ export const aquamancy: MysticSphere = {
           You must still regain your normal form at the end of the movement.
         `,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Forceful Aquajet",
@@ -709,7 +709,7 @@ export const aquamancy: MysticSphere = {
         5: 'The damage resistance bonus increases to +8.',
         7: 'The damage resistance bonus increases to +16.',
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Slippery Escapist",
@@ -724,7 +724,7 @@ export const aquamancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
   ],
   rituals: [
@@ -735,7 +735,7 @@ export const aquamancy: MysticSphere = {
           Up to five ritual participants each become \\trait{impervious} to fire damage.
       `,
       rank: 2,
-      type: "Attune (ritual)",
+      type: "Attune",
       castingTime: "one minute",
     },
     {
@@ -745,7 +745,7 @@ export const aquamancy: MysticSphere = {
         One ritual participant gains the ability to breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
       `,
       rank: 3,
-      type: "Attune (ritual)",
+      type: "Attune",
       castingTime: "one minute",
     },
     {

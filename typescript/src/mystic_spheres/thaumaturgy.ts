@@ -306,7 +306,7 @@ export const thaumaturgy: MysticSphere = {
         After you absorb three spells in this way, this effect ends.
       `,
       rank: 7,
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -321,7 +321,7 @@ export const thaumaturgy: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -383,7 +383,7 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 5,
       scaling: { 7: `The area increases to a \\hugearea radius \\glossterm{zone}.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -400,7 +400,7 @@ export const thaumaturgy: MysticSphere = {
         5: `The area increases to a \\largearea radius \\glossterm{emanation}.`,
         7: `The area increases to a \\hugearea radius \\glossterm{emanation}.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -412,7 +412,7 @@ export const thaumaturgy: MysticSphere = {
         After you negate two attacks in this way, this spell's effect ends.
       `,
       rank: 6,
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -429,7 +429,7 @@ export const thaumaturgy: MysticSphere = {
       scaling: {
         6: `Whenever you sustain an ability with this effect, you can also make any relevant choices as part of sustaining the ability.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -462,7 +462,7 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `The delay increases to two rounds.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -503,7 +503,7 @@ export const thaumaturgy: MysticSphere = {
           The \\glossterm{difficulty value} modifier increases to 20.
         `,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -586,7 +586,7 @@ export const thaumaturgy: MysticSphere = {
         All magical effects on the target, including any magic items a target creature wears or carries, are undetectable with abilities that detect magic.
       `,
       rank: 2,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
     {
       name: "Permanent Suppress Magic Aura",

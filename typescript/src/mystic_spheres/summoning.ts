@@ -11,7 +11,7 @@ export const summoning: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          it has the \\abilitytag{Sustain} (standard) tag instead of the \\abilitytag{Attune} (deep, self) tag.
+          it has the \\abilitytag{Sustain} (standard) tag instead of the \\abilitytag{Attune} (deep) tag.
           In addition, it only has a single \\glossterm{hit point}.
         `,
         name: "summon monster",
@@ -55,7 +55,7 @@ export const summoning: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -71,7 +71,7 @@ export const summoning: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -87,7 +87,7 @@ export const summoning: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -103,7 +103,7 @@ export const summoning: MysticSphere = {
       rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -119,7 +119,7 @@ export const summoning: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -135,7 +135,7 @@ export const summoning: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -151,7 +151,7 @@ export const summoning: MysticSphere = {
       rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -323,7 +323,7 @@ export const summoning: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -343,7 +343,7 @@ export const summoning: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -362,7 +362,7 @@ export const summoning: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -381,7 +381,7 @@ export const summoning: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -402,7 +402,7 @@ export const summoning: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -445,7 +445,7 @@ export const summoning: MysticSphere = {
       },
       rank: 7,
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -483,7 +483,7 @@ export const summoning: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
     {
       name: "Summon Annoying Insects",
@@ -518,7 +518,7 @@ export const summoning: MysticSphere = {
       `,
       rank: 2,
       tags: ["Manifestation"],
-      type: "Attune (ritual)",
+      type: "Attune",
     },
   ],
 };

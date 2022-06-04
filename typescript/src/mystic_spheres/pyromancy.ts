@@ -319,7 +319,7 @@ export const pyromancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -334,7 +334,7 @@ export const pyromancy: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -349,7 +349,7 @@ export const pyromancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -368,7 +368,7 @@ export const pyromancy: MysticSphere = {
 
       rank: 4,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -382,7 +382,7 @@ export const pyromancy: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -429,7 +429,7 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 3,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -448,7 +448,7 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 7,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -464,7 +464,7 @@ export const pyromancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -480,7 +480,7 @@ export const pyromancy: MysticSphere = {
         4: `The bonus increases to +4.`,
         6: `The bonus increases to +8.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -649,7 +649,7 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 5,
       scaling: { 7: `The maximum height increases to 60 feet.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -663,7 +663,7 @@ export const pyromancy: MysticSphere = {
         After you are restored to life this way, this spell ends.
       `,
       rank: 7,
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -769,7 +769,7 @@ export const pyromancy: MysticSphere = {
         This does not protect the target from fire damage.
       `,
       rank: 1,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -784,7 +784,7 @@ export const pyromancy: MysticSphere = {
         Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
       `,
       rank: 4,
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -799,7 +799,7 @@ export const pyromancy: MysticSphere = {
         name: "heat wave",
       },
       rank: 7,
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -874,7 +874,7 @@ export const pyromancy: MysticSphere = {
         `,
       },
       tags: ["Trap"],
-      type: "Attune (ritual)",
+      type: "Attune",
     },
   ],
 };

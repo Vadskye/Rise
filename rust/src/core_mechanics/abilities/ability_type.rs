@@ -3,7 +3,7 @@ pub enum AbilityType {
     Instant,
     Duration,
     Sustain(String),
-    Attune(String),
+    Attune(Option<String>),
 }
 
 impl AbilityType {
@@ -12,7 +12,7 @@ impl AbilityType {
             Self::Instant => "Instant".to_string(),
             Self::Duration => "Duration".to_string(),
             Self::Sustain(action) => format!("Sustain {}", action),
-            Self::Attune(action) => format!("Attune {}", action),
+            Self::Attune(subtype) => format!("Attune{}", attune_suffix(subtype)),
         }
     }
 
@@ -30,7 +30,7 @@ impl AbilityType {
             Self::Instant => "".to_string(),
             Self::Duration => "[Duration]".to_string(),
             Self::Sustain(action) => format!("[\\abilitytag<Sustain> {}]", action),
-            Self::Attune(action) => format!("[\\abilitytag<Attune> {}]", action),
+            Self::Attune(subtype) => format!("[\\abilitytag<Attune>{}]", attune_suffix(subtype)),
         }
     }
 
@@ -44,6 +44,14 @@ impl AbilityType {
     }
 
     pub fn end(&self) -> String {
-        return format!("\\end<{environment}>", environment = self.environment())
+        return format!("\\end<{environment}>", environment = self.environment());
+    }
+}
+
+fn attune_suffix(subtype: &Option<String>) -> String {
+    if let Some(s) = subtype {
+        return format!(" ({})", s);
+    } else {
+        return "".to_string();
     }
 }

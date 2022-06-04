@@ -2346,7 +2346,7 @@ def generate_apparel():
             name="Ring of Mastery",
             rank=2,
             material_type="Ring",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 You gain a +4 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
                 In addition, you gain a \\plus2 \\glossterm<magic bonus> to \\glossterm<power>.
@@ -2357,7 +2357,7 @@ def generate_apparel():
             name="Ring of Mastery, Greater",
             rank=4,
             material_type="Ring",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 You gain a +8 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
                 In addition, you gain a \\plus4 \\glossterm<magic bonus> to \\glossterm<power>.
@@ -2368,7 +2368,7 @@ def generate_apparel():
             name="Ring of Mastery, Supreme",
             rank=6,
             material_type="Ring",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 You gain a +16 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
                 In addition, you gain a \\plus8 \\glossterm<magic bonus> to \\glossterm<power>.
@@ -2735,7 +2735,7 @@ def generate_apparel():
             name="Amulet of Equality and Perfection",
             rank=5,
             material_type="Amulet",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 If you have the \\ability<perfect body> ability, you gain a +1 bonus to your lowest physical attribute.
             """,
@@ -2748,7 +2748,7 @@ def generate_apparel():
             name="Belt of Epic Constitution",
             rank=7,
             material_type="Belt",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Constitution.
             """,
@@ -2761,7 +2761,7 @@ def generate_apparel():
             name="Cloak of Epic Dexterity",
             rank=7,
             material_type="Cloak",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Dexterity.
             """,
@@ -2774,7 +2774,7 @@ def generate_apparel():
             name="Bracers of Epic Strength",
             rank=7,
             material_type="Bracers",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Strength.
             """,
@@ -2787,7 +2787,7 @@ def generate_apparel():
             name="Glasses of Epic Perception",
             rank=7,
             material_type="Glasses",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Perception.
             """,
@@ -2800,7 +2800,7 @@ def generate_apparel():
             name="Circlet of Epic Willpower",
             rank=7,
             material_type="Circlet",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Willpower.
             """,

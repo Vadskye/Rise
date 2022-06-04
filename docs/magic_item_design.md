@@ -7,7 +7,7 @@ In general, an item providing a given effect should have an item level 3 levels 
 minimum level required to cast the corresponding spell on an arbitrary ally.
 That corresponds to being 3 levels higher than the minimum level to cast a self-only version of that
 effect.
-This matches the minimum level required to gain access to an Attune (self) version of that spell.
+This matches the minimum level required to gain access to an Attune version of that spell.
 This ensures that items are valuable, since only one person can wear an item, but everyone can use
 an Attune (target) spell.
 

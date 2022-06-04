@@ -26,7 +26,7 @@ def generate_armor():
             name="Lifebond Retribution Armor",
             rank=2,
             material_type="Body armor",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 2d6 energy damage.
@@ -37,7 +37,7 @@ def generate_armor():
             name="Lifebond Retribution Armor, Greater",
             rank=4,
             material_type="Body armor",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each \\glossterm<enemy> within a \\medarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 4d6 energy damage.
@@ -48,7 +48,7 @@ def generate_armor():
             name="Lifebond Retribution Armor, Supreme",
             rank=6,
             material_type="Body armor",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each \\glossterm<enemy> within a \\medarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
                 \\hit Each target takes 5d10 energy damage.
@@ -279,7 +279,7 @@ def generate_armor():
             name="Armor of Retribution",
             rank=4,
             material_type="Body armor",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
                 \\hit Each target takes 2d8 energy damage.
@@ -290,7 +290,7 @@ def generate_armor():
             name="Armor of Retribution, Greater",
             rank=6,
             material_type="Body armor",
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             description="""
                 At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
                 \\hit Each target takes 4d8 energy damage.
@@ -587,7 +587,7 @@ def generate_armor():
         create_armor(
             name="Crumpling Armor",
             rank=2,
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             material_type="Body armor",
             description="""
                 Whenever you would take \\glossterm<physical damage>, your armor crumples under the attack, reducing that damage by 5.
@@ -598,7 +598,7 @@ def generate_armor():
         create_armor(
             name="Crumpling Armor, Greater",
             rank=4,
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             material_type="Body armor",
             description="""
                 This armor functions like \\mitem<crumpling armor>, except that the damage reduction increases to 10.
@@ -608,7 +608,7 @@ def generate_armor():
         create_armor(
             name="Crumpling Armor, Supreme",
             rank=6,
-            tags=["Attune (deep, self)"],
+            tags=["Attune (deep)"],
             material_type="Body armor",
             description="""
                 This armor functions like \\mitem<crumpling armor>, except that the damage reduction increases to 20.

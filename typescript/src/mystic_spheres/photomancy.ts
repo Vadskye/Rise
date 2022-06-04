@@ -129,7 +129,7 @@ export const photomancy: MysticSphere = {
         5: `The minimum distance is reduced to 15 feet.`,
         7: `The bonus increases to +2.`,
       },
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -352,7 +352,7 @@ export const photomancy: MysticSphere = {
         6: "The miss chance increases to 25\\%.",
       },
       tags: ["Visual"],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -369,7 +369,7 @@ export const photomancy: MysticSphere = {
         6: `The bonus increases to +8.`,
       },
       tags: ["Visual"],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -399,7 +399,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 4,
       scaling: { 6: `The bonus increases to +6.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -422,7 +422,7 @@ export const photomancy: MysticSphere = {
         7: `The miss chance increases to 50\\%.`,
       },
       tags: ["Visual"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -553,7 +553,7 @@ export const photomancy: MysticSphere = {
       `,
       rank: 1,
       tags: [],
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -567,7 +567,7 @@ export const photomancy: MysticSphere = {
       `,
       rank: 1,
       tags: [],
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {

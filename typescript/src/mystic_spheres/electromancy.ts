@@ -273,7 +273,7 @@ export const electromancy: MysticSphere = {
         5: `The accuracy bonus increases to +2.`,
         7: `The bonus applies against targets with any metal on them, even as little as a single ring.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -378,7 +378,7 @@ export const electromancy: MysticSphere = {
         5: `The speed bonus increases to +15 feet.`,
         7: `The speed bonus increases to +20 feet.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -395,7 +395,7 @@ export const electromancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -410,7 +410,7 @@ export const electromancy: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -443,7 +443,7 @@ export const electromancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -457,7 +457,7 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
