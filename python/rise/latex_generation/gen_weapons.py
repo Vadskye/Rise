@@ -888,10 +888,11 @@ def generate_weapon_table():
     row_text = "\n".join(rows)
     return longtablify(
         f"""
-        \\lcaption<Magic Weapons> \\\\
-        \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-        {row_text}
-    """
+            \\lcaption<Magic Weapons> \\\\
+            \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
+            {row_text}
+        """,
+        include_type=False,
     )
 
 
