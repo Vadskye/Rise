@@ -173,35 +173,24 @@ def generate_implements():
 
     implements += [
         MagicItem(
-            name="Fearsome Staff",
-            rank=1,
+            name="Staff of Gut-Wrenching Fear",
+            rank=2,
             material_type="Staff",
             tags=["Emotion"],
             description="""
-                Creatures that are shaken, frightened or panicked by you suffer penalties from those effects at up to \\longrange of you instead of \\medrange.
+                Creatures that are shaken, frightened or panicked by you suffer a penalty to their Fortitude defense equal to the penalty they suffer to their Mental defense.
             """,
-            short_description="Increases range of fear effects",
+            short_description="Fear effects also penalize Fortitude",
         ),
         MagicItem(
-            name="Fearsome Staff, Greater",
-            rank=3,
-            material_type="Staff",
-            tags=["Emotion"],
-            description="""
-                Creatures that are shaken, frightened or panicked by you suffer penalties from those effects at up to \\distrange of you instead of \\medrange.
-            """,
-            short_description="Greatly increases range of fear effects",
-        ),
-        MagicItem(
-            name="Fearsome Staff, Greater",
+            name="Staff of Agonizing Fear",
             rank=5,
             material_type="Staff",
             tags=["Emotion"],
             description="""
-                Creatures that are shaken, frightened or panicked by you suffer penalties from those effects at any distance.
-                They must still have \\glossterm<line of sight> and \\glossterm<line of effect> to you.
+                Creatures that are shaken, frightened or panicked by you suffer a penalty to their non-Mental defenses equal to the penalty they suffer to their Mental defense.
             """,
-            short_description="Your fear effects work at any range",
+            short_description="Fear effects penalize all defenses",
         ),
     ]
 
