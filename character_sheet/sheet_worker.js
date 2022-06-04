@@ -1407,7 +1407,7 @@ function handleDebuffs() {
         minus2("goaded", "accuracy");
       }
       if (v.shaken && !v.frightened && !v.panicked) {
-        minus2("shaken", "accuracy");
+        debuffHeaders += " {{Shaken=-2 accuracy vs source}}";
         minus2("shaken", "mental");
       }
       if (v.slowed && !v.immobilized) {
@@ -1416,7 +1416,7 @@ function handleDebuffs() {
 
       // rank 2 debuffs
       if (v.frightened && !v.panicked) {
-        minus4("frightened", "accuracy");
+        debuffHeaders += " {{Frightened=-4 accuracy vs source}}";
         minus4("frightened", "mental");
       }
       if (v.stunned && !v.confused) {
@@ -1431,6 +1431,7 @@ function handleDebuffs() {
         minus4("immobilized", "reflex");
       }
       if (v.panicked) {
+        debuffHeaders += " {{Panicked=Cannot attack source}}";
         minus4("panicked", "mental");
       }
       if (v.asleep || v.helpless || v.paralyzed) {
@@ -1438,7 +1439,7 @@ function handleDebuffs() {
         namedModifierMap.addNamedModifier("reflex", "helpless", -10);
       }
 
-      const attrs = {};
+      const attrs = {debuff_headers: debuffHeaders.trim()};
       for (const statistic of [
         "accuracy",
         "armor_defense",
