@@ -1,10 +1,11 @@
 use crate::core_mechanics::{Attribute, DamageType, Debuff};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, ModifierType};
 use crate::equipment::{HasArmor, WeaponMaterial};
+use std::cmp::max;
 use std::fmt;
 
-use super::HasAttributes;
 use super::abilities::AbilityTag;
+use super::HasAttributes;
 
 #[derive(Clone, Copy, PartialEq)]
 pub enum Defense {
@@ -120,17 +121,15 @@ where
             }
             CreatureCategory::Monster(_) => 0.5,
         };
-        let con_multiplier: f64 = match self.category {
-            CreatureCategory::Character => 0.0,
-            CreatureCategory::Monster(_) => 0.5,
-        };
-        let con_armor_bonus = (self.get_base_attribute(&Attribute::Constitution) as f64
-            * con_multiplier)
-            .floor() as i32;
-        let dex_armor_bonus =
+        let mut armor_attribute_modifier =
             (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier).floor() as i32;
+        if matches!(self.category, CreatureCategory::Monster(_)) {
+            let con_armor_bonus =
+                (self.get_base_attribute(&Attribute::Constitution) as f64 * 0.5).floor() as i32;
+            armor_attribute_modifier = max(armor_attribute_modifier, con_armor_bonus);
+        }
         let attribute_bonus = match defense {
-            Defense::Armor => con_armor_bonus + dex_armor_bonus,
+            Defense::Armor => armor_attribute_modifier,
             Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
             Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
             Defense::Mental => self.get_base_attribute(&Attribute::Willpower),
