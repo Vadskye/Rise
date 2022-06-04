@@ -191,6 +191,108 @@ def generate_tools():
         ),
     ]
 
+    tools += [
+        MagicItem(
+            consumable=True,
+            name="Elixir of Resilience",
+            rank=1,
+            tags=[],
+            material_type="Potion",
+            description="""
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                The effects expire after 10 minutes.
+            """,
+            short_description="Grants +4 \\glossterm<damage resistance>",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Elixir of Resilience, Greater",
+            rank=3,
+            tags=[],
+            material_type="Potion",
+            description="""
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                The effects expire after 10 minutes.
+            """,
+            short_description="Grants +8 \\glossterm<damage resistance>",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Elixir of Resilience, Supreme",
+            rank=5,
+            tags=[],
+            material_type="Potion",
+            description="""
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                The effects expire after 10 minutes.
+            """,
+            short_description="Grants +16 \\glossterm<damage resistance>",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Elixir of Resilience, Epic",
+            rank=7,
+            tags=[],
+            material_type="Potion",
+            description="""
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +32 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+                The effects expire after 10 minutes.
+            """,
+            short_description="Grants +32 \\glossterm<damage resistance>",
+        ),
+    ]
+
+    tools += [
+        MagicItem(
+            consumable=True,
+            name="Elixir of Potency",
+            rank=1,
+            tags=[],
+            material_type="Potion",
+            description="""
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
+                The effects expire after 10 minutes.
+            """,
+            short_description="Grants +2 \\glossterm<power>",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Elixir of Potency, Greater",
+            rank=3,
+            tags=[],
+            material_type="Potion",
+            description="""
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
+                The effects expire after 10 minutes.
+            """,
+            short_description="Grants +4 \\glossterm<power>",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Elixir of Potency, Supreme",
+            rank=5,
+            tags=[],
+            material_type="Potion",
+            description="""
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
+                The effects expire after 10 minutes.
+            """,
+            short_description="Grants +8 \\glossterm<power>",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Elixir of Potency, Epic",
+            rank=7,
+            tags=[],
+            material_type="Potion",
+            description="""
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<power>.
+                The effects expire after 10 minutes.
+            """,
+            short_description="Grants +16 \\glossterm<power>",
+        ),
+    ]
+
     # Alchemical items
 
     tools += [
