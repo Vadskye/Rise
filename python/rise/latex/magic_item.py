@@ -127,12 +127,13 @@ class MagicItem(object):
             f"""
                 \\hypertargetraised<item:{self.name}><\\subsubsection<{self.name}\\hfill Rank~{self.rank} ({self.price()} gp)>>
                 \\lowercase<\\hypertargetraised<item:{self.name}><>>\\label<item:{self.name}>
+                \\vspace<-0.4em>
+                {twocol_text}
                 {self.description}
             """,
             self.latex_ability(),
             f"""
-                \\vspace<0.25em>
-                {twocol_text}
                 {materials_text}
+                \\vspace<0.5em>
             """,
         )
