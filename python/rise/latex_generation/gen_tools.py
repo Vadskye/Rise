@@ -202,7 +202,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 The effects expire after 10 minutes.
             """,
-            short_description="Grants +4 \\glossterm<damage resistance>",
+            short_description="Grants +4 damage resistance",
         ),
         MagicItem(
             consumable=True,
@@ -214,7 +214,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 The effects expire after 10 minutes.
             """,
-            short_description="Grants +8 \\glossterm<damage resistance>",
+            short_description="Grants +8 damage resistance",
         ),
         MagicItem(
             consumable=True,
@@ -226,7 +226,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 The effects expire after 10 minutes.
             """,
-            short_description="Grants +16 \\glossterm<damage resistance>",
+            short_description="Grants +16 damage resistance",
         ),
         MagicItem(
             consumable=True,
@@ -238,7 +238,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +32 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 The effects expire after 10 minutes.
             """,
-            short_description="Grants +32 \\glossterm<damage resistance>",
+            short_description="Grants +32 damage resistance",
         ),
     ]
 
@@ -253,7 +253,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
                 The effects expire after 10 minutes.
             """,
-            short_description="Grants +2 \\glossterm<power>",
+            short_description="Grants +2 power",
         ),
         MagicItem(
             consumable=True,
@@ -265,7 +265,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
                 The effects expire after 10 minutes.
             """,
-            short_description="Grants +4 \\glossterm<power>",
+            short_description="Grants +4 power",
         ),
         MagicItem(
             consumable=True,
@@ -277,7 +277,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
                 The effects expire after 10 minutes.
             """,
-            short_description="Grants +8 \\glossterm<power>",
+            short_description="Grants +8 power",
         ),
         MagicItem(
             consumable=True,
@@ -289,7 +289,7 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<power>.
                 The effects expire after 10 minutes.
             """,
-            short_description="Grants +16 \\glossterm<power>",
+            short_description="Grants +16 power",
         ),
     ]
 
