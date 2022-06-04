@@ -870,7 +870,7 @@ def generate_implement_table():
     row_text = "\n".join(rows)
     return longtablify(
         f"""
-        \\lcaption<Implement Items> \\\\
+        \\lcaption<Magic Implements> \\\\
         \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         {row_text}
     """
