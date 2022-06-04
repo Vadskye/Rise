@@ -613,11 +613,10 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                As a standard action, you can drink this elixir.
-                When you do, it imbues your body with a resistance to poisons for 5 minutes.
-                During that time, you gain a +2 bonus to Fortitude defense against attacks from poisons.
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 bonus to your defenses against poisons.
+                The effects expire after 10 minutes.
             """,
-            short_description="Grants +2 defenses against poisons",
+            short_description="Grants +4 defenses against poisons",
         ),
         MagicItem(
             consumable=True,
@@ -626,20 +625,22 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                This item functions like an \\mitem<antitoxin elixir>, except that the bonus increases to +4.
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +6 bonus to your defenses against poisons.
+                The effects expire after 10 minutes.
             """,
-            short_description="Grants +4 defenses against poisons",
+            short_description="Grants +6 defenses against poisons",
         ),
         MagicItem(
             consumable=True,
             name="Antitoxin Elixir, Supreme",
-            rank=5,
+            rank=6,
             material_type="Alchemical",
             tags=[],
             description="""
-                This item functions like an \\mitem<antitoxin elixir>, except that the bonus increases to +6.
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you become \\glossterm<immune> to poisons.
+                The effects expire after 10 minutes.
             """,
-            short_description="Grants +6 defenses against poisons",
+            short_description="Grants immunity to poisons",
         ),
     ]
 
