@@ -7,11 +7,12 @@ export const summoning: MysticSphere = {
 
   cantrips: [
     {
-      name: "Minor Summoning",
+      name: "Summon Distraction",
 
       functionsLike: {
         exceptThat: `
-          it has the \\abilitytag{Sustain} (standard) tag instead of the \\abilitytag{Attune} (self) tag.
+          it has the \\abilitytag{Sustain} (standard) tag instead of the \\abilitytag{Attune} (deep, self) tag.
+          In addition, it only has a single \\glossterm{hit point}.
         `,
         name: "summon monster",
       },
