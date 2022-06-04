@@ -4,16 +4,26 @@ import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
 from rise.latex.util import latexify, longtablify
+from rise.latex.tags import add_attune_tag
+
+
+def create_weapon(name, rank, description, short_description, tags=None):
+    return MagicItem(
+        name=name,
+        rank=rank,
+        description=description,
+        short_description=short_description,
+        tags=add_attune_tag(tags),
+    )
 
 
 def generate_weapons():
     weapons = []
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Concussive",
             rank=2,
-            material_type="Weapon",
             # tags=[tag],
             description="""
                 This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
@@ -25,10 +35,9 @@ def generate_weapons():
             """,
             short_description="Deals sonic damage and can deafen",
         ),
-        MagicItem(
+        create_weapon(
             name="Concussive, Greater",
             rank=5,
-            material_type="Weapon",
             tags=["Attune (deep, self)"],
             description="""
                 This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
@@ -40,10 +49,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Flaming",
             rank=3,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon is on fire.
@@ -54,10 +62,9 @@ def generate_weapons():
             """,
             short_description="Deals fire damage and can ignite",
         ),
-        MagicItem(
+        create_weapon(
             name="Flaming, Greater",
             rank=6,
-            material_type="Weapon",
             tags=["Attune (deep, self)"],
             description="""
                 This weapon is on fire.
@@ -69,10 +76,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Shocking",
             rank=2,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon continuously crackles with electricity.
@@ -83,10 +89,9 @@ def generate_weapons():
             """,
             short_description="Deals electicity damage and can daze",
         ),
-        MagicItem(
+        create_weapon(
             name="Shocking, Greater",
             rank=5,
-            material_type="Weapon",
             tags=["Attune (deep, self)"],
             description="""
                 This weapon continuously crackles with electricity.
@@ -98,10 +103,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Freezing",
             rank=2,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon is bitterly cold to the touch.
@@ -112,10 +116,9 @@ def generate_weapons():
             """,
             short_description="Can deal cold damage and briefly slow",
         ),
-        MagicItem(
+        create_weapon(
             name="Freezing, Greater",
             rank=5,
-            material_type="Weapon",
             tags=["Attune (deep, self)"],
             description="""
                 This weapon is bitterly cold to the touch.
@@ -127,28 +130,25 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Potency",
             rank=2,
-            material_type="Weapon",
             description="""
                 You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
             short_description="Grants +2 power",
         ),
-        MagicItem(
+        create_weapon(
             name="Potency, Greater",
             rank=4,
-            material_type="Weapon",
             description="""
                 You gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
             short_description="Grants +4 power",
         ),
-        MagicItem(
+        create_weapon(
             name="Potency, Supreme",
             rank=6,
-            material_type="Weapon",
             description="""
                 You gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
@@ -157,28 +157,25 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Tireless",
             rank=1,
-            material_type="Weapon",
             description="""
                 You reduce your \\glossterm<fatigue penalty> by 1 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
             """,
             short_description="Ignores 1 fatigue with strikes",
         ),
-        MagicItem(
+        create_weapon(
             name="Tireless, Greater",
             rank=3,
-            material_type="Weapon",
             description="""
                 You reduce your \\glossterm<fatigue penalty> by 2 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
             """,
             short_description="Ignores 2 fatigue with strikes",
         ),
-        MagicItem(
+        create_weapon(
             name="Tireless, Supreme",
             rank=5,
-            material_type="Weapon",
             description="""
                 You reduce your \\glossterm<fatigue penalty> by 3 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
             """,
@@ -187,10 +184,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Honed",
             rank=4,
-            material_type="Weapon",
             description="""
                 This weapon has the Keen weapon tag.
                 You gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon for the purpose of determining whether you get a \\glossterm<critical hit> (see \\pcref<Weapon Tags>).
@@ -198,10 +194,9 @@ def generate_weapons():
             """,
             short_description="Grants the Keen weapon tag",
         ),
-        MagicItem(
+        create_weapon(
             name="Impactful",
             rank=4,
-            material_type="Weapon",
             description="""
                 This weapon has the Impact weapon tag.
                 When you get a \\glossterm{critical hit} with this weapon, you roll triple damage dice instead of double damage dice.
@@ -212,10 +207,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Bloodfuel",
             rank=2,
-            material_type="Weapon",
             description="""
                 As a standard action, you can make a \\glossterm<strike> using this weapon that uses your own blood to fuel its power.
                 You gain a +4 bonus to \\glossterm<power> with the attack.
@@ -223,10 +217,9 @@ def generate_weapons():
             """,
             short_description="Can spend 2 HP for +4 power",
         ),
-        MagicItem(
+        create_weapon(
             name="Bloodfuel, Greater",
             rank=4,
-            material_type="Weapon",
             description="""
                 As a standard action, you can make a \\glossterm<strike> using this weapon that uses your own blood to fuel its power.
                 You gain a +8 bonus to \\glossterm<power> with the attack.
@@ -234,10 +227,9 @@ def generate_weapons():
             """,
             short_description="Can spend 4 HP for +8 power",
         ),
-        MagicItem(
+        create_weapon(
             name="Bloodfuel, Supreme",
             rank=6,
-            material_type="Weapon",
             description="""
                 As a standard action, you can make a \\glossterm<strike> using this weapon that uses your own blood to fuel its power.
                 You gain a +16 bonus to \\glossterm<power> with the attack.
@@ -248,10 +240,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Iridescent",
             rank=2,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon shimmers with a chaotic pattern of colors.
@@ -261,20 +252,18 @@ def generate_weapons():
             """,
             short_description="Can briefly dazzle",
         ),
-        MagicItem(
+        create_weapon(
             name="Iridescent, Greater",
             rank=4,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon functions like a \\mitem<iridescent> weapon, except that the dazzling effect becomes a \\glossterm<condition>.
             """,
             short_description="Can dazzle",
         ),
-        MagicItem(
+        create_weapon(
             name="Iridescent, Supreme",
             rank=6,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon functions like a \\mitem<iridescent> weapon, except that the dazzling effect becomes a \\glossterm<condition>.
@@ -285,19 +274,17 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Longshot",
             rank=2,
-            material_type="Weapon",
             description="""
                 When you make a ranged attack using this weapon, you reduce your \\glossterm<longshot penalty> by 1.
             """,
             short_description="Reduces longshot penalty by 1",
         ),
-        MagicItem(
+        create_weapon(
             name="Longshot, Greater",
             rank=5,
-            material_type="Weapon",
             description="""
                 When you make a ranged attack using this weapon, you reduce your \\glossterm<longshot penalty> by 2.
             """,
@@ -306,10 +293,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Ricocheting",
             rank=3,
-            material_type="Weapon",
             description="""
                 When you make a \\glossterm<ranged> \\glossterm<strike> with this weapon, you may also target one or more secondary creatures or objects.
                 Each secondary target must be within 10 feet of a primary target, and must not already be a target of the strike.
@@ -317,19 +303,17 @@ def generate_weapons():
             """,
             short_description="Hits an extra foe with ranged strikes",
         ),
-        MagicItem(
+        create_weapon(
             name="Ricocheting, Greater",
             rank=5,
-            material_type="Weapon",
             description="""
                 This weapon functions like a \\mitem<ricocheting> weapon, except that you can choose two secondary targets instead of only one.
             """,
             short_description="Hits two extra foes with ranged strikes",
         ),
-        MagicItem(
+        create_weapon(
             name="Ricocheting, Supreme",
             rank=7,
-            material_type="Weapon",
             description="""
                 This weapon functions like a \\mitem<ricocheting> weapon, except that you can choose three secondary targets instead of only one.
                 In addition, each secondary target may be up to 15 feet away from a primary target.
@@ -339,30 +323,27 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Onslaught",
             rank=1,
-            material_type="Weapon",
             description="""
                 Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, you gain a +10 foot bonus to your speed with all movement modes during the next round.
                 In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +1 \\glossterm<accuracy> bonus.
             """,
             short_description="Grants +10 speed, maybe +1 accuracy on kill",
         ),
-        MagicItem(
+        create_weapon(
             name="Onslaught, Greater",
             rank=3,
-            material_type="Weapon",
             description="""
                 Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, you gain a +15 foot bonus to your speed with all movement modes during the next round.
                 In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +2 \\glossterm<accuracy> bonus.
             """,
             short_description="Grants +15 speed, maybe +2 accuracy on kill",
         ),
-        MagicItem(
+        create_weapon(
             name="Onslaught, Supreme",
             rank=5,
-            material_type="Weapon",
             description="""
                 Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, you gain a +20 foot bonus to your speed with all movement modes during the next round.
                 In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +3 \\glossterm<accuracy> bonus.
@@ -372,10 +353,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Screaming",
             rank=2,
-            material_type="Weapon",
             description="""
                 Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, this weapons emits a blood-curdling scream.
                 This causes you and that creature to \\glossterm<briefly> become \\shaken by each other.
@@ -384,10 +364,9 @@ def generate_weapons():
             tags=["Attune (deep, self)", "Emotion"],
             short_description="Screams, making you and struck foes shaken",
         ),
-        MagicItem(
+        create_weapon(
             name="Screaming, Greater",
             rank=6,
-            material_type="Weapon",
             description="""
                 Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, this weapons emits a nightmarish scream.
                 This causes you and that creature to \\glossterm<briefly> become \\frightened by each other.
@@ -399,19 +378,17 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Routing",
             rank=2,
-            material_type="Weapon",
             description="""
                 You gain a +1 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon against creatures that are suffering penalties for being \\shaken, \\frightened, or \\panicked.
             """,
             short_description="Grants +1 accuracy vs scared foes",
         ),
-        MagicItem(
+        create_weapon(
             name="Routing, Greater",
             rank=6,
-            material_type="Weapon",
             description="""
                 You gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon against creatures that are suffering penalties for being \\shaken, \\frightened, or \\panicked.
             """,
@@ -420,10 +397,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Dimensional Trace",
             rank=2,
-            material_type="Weapon",
             description="""
                 As a standard action, you can make a \\glossterm<strike> with using this weapon.
                 You can \\glossterm<briefly> apply a dimensional trace on one creature that was dealt damage by that strike.
@@ -431,10 +407,9 @@ def generate_weapons():
             """,
             short_description="Can briefly teleport next to struck creatures",
         ),
-        MagicItem(
+        create_weapon(
             name="Dimensional Trace, Greater",
             rank=6,
-            material_type="Weapon",
             description="""
                 This weapon functions like a \\mitem<dimensional trace> weapon, except that the dimensional trace becomes a \\glossterm<condition>.
             """,
@@ -443,10 +418,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Bloodspray",
             rank=2,
-            material_type="Weapon",
             description="""
                 Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, make an attack vs. Reflex against all \\glossterm<enemies> adjacent to that creature.
                 On a hit, each target is \\glossterm<briefly> \\dazzled.
@@ -454,19 +428,17 @@ def generate_weapons():
             """,
             short_description="Briefly dazzles foes with blood on kill",
         ),
-        MagicItem(
+        create_weapon(
             name="Bloodspray, Greater",
             rank=4,
-            material_type="Weapon",
             description="""
                 This weapon functions like a \\mitem<bloodspray> weapon, except that the area of the attack increases to a \\medarea radius from the defeated creature.
             """,
             short_description="Briefly dazzles foes with widely sprayed blood on kill",
         ),
-        MagicItem(
+        create_weapon(
             name="Bloodspray, Supreme",
             rank=7,
-            material_type="Weapon",
             description="""
                 This weapon functions like a \\mitem<bloodspray> weapon, except that the area of the attack increases to a \\medarea radius from the defeated creature.
                 In addition, the dazzling effect becomes a \\glossterm<condition>.
@@ -476,10 +448,9 @@ def generate_weapons():
     ]
 
     weapons.append(
-        MagicItem(
+        create_weapon(
             name="Boomerang",
             rank=3,
-            material_type="Weapon",
             description="""
                 You can throw this weapon as if it was designed to be thrown.
                 In addition, as a standard action, you can throw this weapon in a spinning arc.
@@ -491,10 +462,9 @@ def generate_weapons():
     )
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Hefty",
             rank=3,
-            material_type="Weapon",
             description="""
                 This weapon feels heavy in the hand.
                 It gains the \\glossterm<Forceful> weapon tag (see \\pcref<Weapon Tags>).
@@ -502,10 +472,9 @@ def generate_weapons():
             """,
             short_description="Can knockback struck foes",
         ),
-        MagicItem(
+        create_weapon(
             name="Hefty, Greater",
             rank=5,
-            material_type="Weapon",
             description="""
                 This weapon functions like a \\mitem<hefty> weapon, except that the maximum size category that you can affect with its \\glossterm<Forceful> tag increases by one.
             """,
@@ -514,10 +483,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Fixating",
             rank=3,
-            material_type="Weapon",
             description="""
                 Once per \\glossterm<phase>, when you make a \\glossterm<strike> with this weapon, you gain a +1 accuracy bonus against one target of the strike with future strikes using this weapon.
                 If the strike had multiple targets, you choose which target you gain the bonus against.
@@ -527,10 +495,9 @@ def generate_weapons():
             tags=["Attune (deep, self)"],
             short_description="Grants +1 accuracy bonus against attacked foe",
         ),
-        MagicItem(
+        create_weapon(
             name="Fixating, Greater",
             rank=6,
-            material_type="Weapon",
             description="""
                 This weapon functions like a \\mitem<fixating> weapon, except that the bonus increases by +2 with each strike.
             """,
@@ -540,10 +507,9 @@ def generate_weapons():
     ]
 
     weapons.append(
-        MagicItem(
+        create_weapon(
             name="Merciful",
             rank=1,
-            material_type="Weapon",
             description="""
                 This weapon deals \\glossterm<subdual damage>.
                 As a \\glossterm<minor action>, you can toggle this effect on or off, allowing you to deal non-subdual damage with this weapon if you desire.
@@ -553,10 +519,9 @@ def generate_weapons():
     )
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Morphing",
             rank=1,
-            material_type="Weapon",
             tags=[],
             description="""
                  As a standard action, you can activate this weapon.
@@ -565,10 +530,9 @@ def generate_weapons():
             """,
             short_description="Can change into similar weapon",
         ),
-        MagicItem(
+        create_weapon(
             name="Morphing, Greater",
             rank=3,
-            material_type="Weapon",
             tags=[],
             description="""
                  As a standard action, you can activate this weapon.
@@ -581,10 +545,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Returning",
             rank=1,
-            material_type="Weapon",
             tags=[],
             description="""
                 After being thrown, this weapon teleports back into your hand at the end of the current phase.
@@ -596,10 +559,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Seeking",
             rank=3,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon automatically veers towards its intended target.
@@ -608,10 +570,9 @@ def generate_weapons():
             """,
             short_description="Reduces miss chances",
         ),
-        MagicItem(
+        create_weapon(
             name="Seeking, Greater",
             rank=6,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon automatically veers towards its intended target.
@@ -622,11 +583,10 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Soulreaving",
             rank=6,
             tags=[],
-            material_type="Weapon",
             description="""
                 This weapon is transluscent and has no physical presence for anyone except you.
                 It has no effect on objects or constructs, and creatures do not feel any pain or even notice attacks from it.
@@ -646,10 +606,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Blessed",
             rank=3,
-            material_type="Weapon",
             tags=[],
             description="""
                 When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +2 accuracy bonus to the reroll.
@@ -657,10 +616,9 @@ def generate_weapons():
             """,
             short_description="Grants +2 bonus with \\textit<desperate exertion>",
         ),
-        MagicItem(
+        create_weapon(
             name="Blessed, Greater",
             rank=5,
-            material_type="Weapon",
             tags=[],
             description="""
                 When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +3 accuracy bonus to the reroll.
@@ -668,10 +626,9 @@ def generate_weapons():
             """,
             short_description="Grants +3 bonus with \\textit<desperate exertion>",
         ),
-        MagicItem(
+        create_weapon(
             name="Blessed, Supreme",
             rank=7,
-            material_type="Weapon",
             tags=[],
             description="""
                 When you use the \\textit<desperate exertion> to affect a strike with this weapon, you gain a +4 accuracy bonus to the reroll.
@@ -682,10 +639,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Wolfpack",
             rank=5,
-            material_type="Weapon",
             tags=[],
             description="""
                 Each creature that is within your \\glossterm<reach> with this weapon and adjacent to one of your \\glossterm<allies> takes a -1 penalty to Armor and Reflex defenses.
@@ -695,10 +651,9 @@ def generate_weapons():
     ]
 
     weapons.append(
-        MagicItem(
+        create_weapon(
             name="Fated",
             rank=7,
-            material_type="Weapon",
             tags=["Attune (deep, self)"],
             description="""
                 When you miss with a \\glossterm<strike> with this weapon, you can reroll the attack and take the higher result.
@@ -709,10 +664,9 @@ def generate_weapons():
     )
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Thieving",
             rank=2,
-            material_type="Weapon",
             tags=[],
             description="""
                 As a \\glossterm<standard action>, you can activate this weapon.
@@ -728,10 +682,9 @@ def generate_weapons():
             """,
             short_description="Can absorb small items",
         ),
-        MagicItem(
+        create_weapon(
             name="Thieving, Greater",
             rank=4,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon functions like a \\mitem<thieving> weapon, except that the maximum size category of object it can absorb is one size category larger than the weapon.
@@ -739,10 +692,9 @@ def generate_weapons():
             """,
             short_description="Can absorb large items",
         ),
-        MagicItem(
+        create_weapon(
             name="Thieving, Supreme",
             rank=6,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon functions like a \\mitem<thieving> weapon, except that the maximum size category of object it can absorb is two size categories larger than the weapon.
@@ -753,10 +705,9 @@ def generate_weapons():
     ]
 
     weapons.append(
-        MagicItem(
+        create_weapon(
             name="Vorpal",
             rank=7,
-            material_type="Weapon",
             description="""
                 You gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon for the purpose of determining whether you get a \\glossterm<critical hit> (see \\pcref<Weapon Tags>).
                 In addition, critical hits with \\glossterm<strikes> using this weapon deal maximum damage.
@@ -766,10 +717,9 @@ def generate_weapons():
     )
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Phasing",
             rank=3,
-            material_type="Weapon",
             tags=[],
             description="""
                 All \\glossterm<strikes> with this weapon, including projectiles fired by this weapon, can pass through a single solid obstacle of up to one feet thick on the way to their target.
@@ -778,10 +728,9 @@ def generate_weapons():
             """,
             short_description="Can ignore obstacles when attacking",
         ),
-        MagicItem(
+        create_weapon(
             name="Phasing, Greater",
             rank=5,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon functions like a \\mitem<phasing> weapon, except that the strike can penetrate through any number of solid objects with a combined thickness of ten feet or less.
@@ -791,10 +740,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Banechannel",
             rank=4,
-            material_type="Weapon",
             tags=[],
             description="""
                 As a standard action, you can activate this weapon.
@@ -809,10 +757,9 @@ def generate_weapons():
             """,
             short_description="Remove a condition to inflict it later",
         ),
-        MagicItem(
+        create_weapon(
             name="Banechannel, Greater",
             rank=6,
-            material_type="Weapon",
             tags=[],
             description="""
                 This weapon functions like a \\textit<banechannel> weapon, except that you can infuse up to two conditions into the weapon.
@@ -824,10 +771,9 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Vampiric",
             rank=4,
-            material_type="Weapon",
             tags=[],
             description="""
                 As a standard action, you can make a \\glossterm<strike> with a +4 damage bonus using this weapon.
@@ -836,10 +782,9 @@ def generate_weapons():
             """,
             short_description="Can attack with +4 damage and steal HP",
         ),
-        MagicItem(
+        create_weapon(
             name="Vampiric, Greater",
             rank=6,
-            material_type="Weapon",
             tags=[],
             description="""
                 As a standard action, you can make a \\glossterm<strike> with a +8 damage bonus using this weapon.
@@ -851,30 +796,27 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Surestrike",
             rank=3,
-            material_type="Weapon",
             tags=[],
             description="""
                 As a standard action, you can make a \\glossterm<strike> with a +2 accuracy bonus using this weapon.
             """,
             short_description="Can attack with +2 accuracy",
         ),
-        MagicItem(
+        create_weapon(
             name="Surestrike, Greater",
             rank=5,
-            material_type="Weapon",
             tags=[],
             description="""
                 As a standard action, you can make a \\glossterm<strike> with a +3 accuracy bonus using this weapon.
             """,
             short_description="Can attack with +3 accuracy",
         ),
-        MagicItem(
+        create_weapon(
             name="Surestrike, Supreme",
             rank=7,
-            material_type="Weapon",
             tags=[],
             description="""
                 As a standard action, you can make a \\glossterm<strike> with a +4 accuracy bonus using this weapon.
@@ -884,30 +826,27 @@ def generate_weapons():
     ]
 
     weapons += [
-        MagicItem(
+        create_weapon(
             name="Powerstrike",
             rank=3,
-            material_type="Weapon",
             tags=[],
             description="""
                 As a standard action, you can make a \\glossterm<strike> with a +4 damage bonus using this weapon.
             """,
             short_description="Can attack with +4 damage",
         ),
-        MagicItem(
+        create_weapon(
             name="Powerstrike, Greater",
             rank=5,
-            material_type="Weapon",
             tags=[],
             description="""
                 As a standard action, you can make a \\glossterm<strike> with a +8 damage bonus using this weapon.
             """,
             short_description="Can attack with +8 damage",
         ),
-        MagicItem(
+        create_weapon(
             name="Powerstrike, Supreme",
             rank=7,
-            material_type="Weapon",
             tags=[],
             description="""
                 As a standard action, you can make a \\glossterm<strike> with a +16 damage bonus using this weapon.

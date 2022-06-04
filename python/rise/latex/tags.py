@@ -46,3 +46,14 @@ def to_latex_tags(tags):
     tags = filter(bool, tags)
     tags = filter(lambda t: t != "AP", tags)
     return "[" + ", ".join([glosstermify(tag) for tag in sorted(tags)]) + "]"
+
+def add_attune_tag(tags):
+    tags = tags or []
+    has_attune = False
+    for tag in tags:
+        if "Attune" in tag:
+            has_attune = True
+            break
+    if not has_attune:
+        tags += ["Attune (self)"]
+    return tags
