@@ -3156,7 +3156,7 @@ def generate_apparel_table():
     row_text = "\n".join(rows)
     return longtablify(
         f"""
-            \\lcaption<Apparel Items> \\\\
+            \\lcaption<Magic Apparel> \\\\
             \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
             {row_text}
         """

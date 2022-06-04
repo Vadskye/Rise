@@ -1491,12 +1491,14 @@ def generate_tool_table():
     )
     return longtablify(
         f"""
+            \\tablebookmark<Consumable Tools><consumabletools>
             \\lcaption<Consumable Tools> \\\\
             \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
             {consumable_rows}
         """
     ) + longtablify(
         f"""
+            \\tablebookmark<Permanent Tools, Goods, and Mounts><permanenttools>
             \\lcaption<Permanent Tools, Goods, and Mounts> \\\\
             \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
             {permanent_rows}
