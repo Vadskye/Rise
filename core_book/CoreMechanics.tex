@@ -592,6 +592,42 @@ This chapter describes the core mechanics of Rise.
         \end{dtabularx}
     \end{dtable}
 
+\section{Attunement}\label{Attunement}
+    Many special abilities and magic items only function as long as a creature attunes to them.
+    Attuned abilities have the \abilitytag{Attune} tag.
+    Attuning to an ability typically require investing a single \glossterm{attunement point} (see \pcref{Attunement Points})
+    Some abilities, called deep attunement abilities, require two attunement points instead of one (see \pcref{Deep Attunement}).
+    You can never attune to the same ability more than once.
+
+    As long as you remain attuned to an ability, you cannot recover the attunement points you used to attune to that ability by any means.
+    As a \glossterm{free action}, you can \glossterm{dismiss} any number of effects that you are attuned to, which makes you stop being attuned to them.
+    After you stop being attuned to an ability, you recover that attunement point at the end of the current phase.
+
+    Normally, the creature using the attuned ability must attune to it.
+    If that creature stops attuning to the ability, the ability ends.
+    In the special case of \glossterm{rituals}, any number of ritual participants can attune to the ability, and the ability lasts as long as any participant is still attuned to it.
+
+    There are two special subtypes of attunement abilities: deep attunements and targeted attunements.
+    They are described below.
+
+    \subsection{Deep Attunement}\label{Deep Attunement}
+        Some attuned abilities are more powerful and complicated than others, and require additional investment to take effect.
+        These are called deep attunement abilities.
+        They are identified as \abilitytag{Attune} (deep).
+
+        Deep attunement abilities have two main differences from ordinary attunement abilities.
+        First, they require expending two attunement points instead of only one.
+        Second, the attuning creature can't get back those attunement points by any means until they take a \glossterm{short rest}, even if they release the attunement.
+
+    \subsection{Targeted Attunement}\label{Targeted Attunement}
+        Some attuned abilities affect specific creatures instead of the caster.
+        These are called targeted attunement abilities.
+        They are identified as \abilitytag{Attune} (target).
+
+        The creature using a targeted attunement ability does not need to attune to the ability unless it targets itself.
+        Instead, each target must attune to its own version of the effect.
+        The effect lasts on that target as long as it stays attuned to it, regardless of whether any other targets stay attuned to the effect.
+
 \section{Ability Mechanics}\label{Ability Mechanics}
 
     \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
@@ -733,37 +769,9 @@ This chapter describes the core mechanics of Rise.
         If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
         Such effects can sometimes be destroyed prior to when their duration ends.
 
-        \subsubsection{Attuned Abilities}\label{Attuned Abilities}
-            Attuned abilities have the \abilitytag{Attune} tag.
-            Attuning to an ability typically require investing a single \glossterm{attunement point} (see \pcref{Attunement Points})
-            Some abilities, called deep attunement abilities, require two attunement points instead of one (see \pcref{Deep Attunement}).
-
-            As long as you remain attuned to an ability, you cannot recover the attunement points you used to attune to that ability by any means.
-            As a \glossterm{free action}, you can \glossterm{dismiss} any number of effects that you are attuned to, which makes you stop being attuned to them.
-            After you stop being attuned to an ability, you recover that attunement point at the end of the current phase.
-            You can never attune to the same ability more than once.
-
-            There are three types of attunement abilities: self, target, and ritual.
-
-            \parhead{Attune (self)} A self attunement ability requires the creature using the ability to attune to the effect.
-
-            \parhead{Attune (target)} A target attunement ability requires the target of the ability to attune to the effect.
-            If the ability targets multiple creatures, each creature must attune to the ability independently.
-            As a special case, if a target attunement ability targets an inanimate object, the creature using the ability must attune to the effect.
-
-            \parhead{Attune (ritual)} Only \glossterm{rituals} have the \abilitytag{Attune} (ritual) tag (see \pcref{Rituals}).
-            A ritual attunement ability requires any participant in the ritual to attune to the effect.
-
-        \subsubsection{Deep Attunement}\label{Deep Attunement}
-            Some attuned abilities are more powerful and complicated than others, and require additional investment to take effect.
-            These are called deep attunement abilities.
-            They are indicated with ``deep'' inside the tag description, such as ``\abilitytag{Attune} (deep, self)''.
-
-            Deep attunement abilities have two main differences from ordinary attunement abilities.
-            First, they require expending two attunement points instead of only one.
-            Second, you can't get back those attunement points by any means until you take a \glossterm{short rest}, even if you release the attunement.
-
-            If a deep attunement ability has multiple people who could choose to attune to it, such as with attuned rituals, both attunement points must come from the same creature.
+        \subsubsection{Attuned Abilities}
+            Many abilities last as long as a creature \glossterm{attunes} to them.
+            For details, see \pcref{Attunement}.
 
         \subsubsection{Conditions}\label{Conditions}
             Many abilities impose \glossterm{conditions} on their targets.
