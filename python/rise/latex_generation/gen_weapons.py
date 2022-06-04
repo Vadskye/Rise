@@ -13,7 +13,7 @@ def create_weapon(name, rank, description, short_description, tags=None):
         rank=rank,
         description=description,
         short_description=short_description,
-        material_type="Weapon",
+        materials=["as base weapon"],
         tags=add_attune_tag(tags),
     )
 
@@ -888,7 +888,7 @@ def generate_weapon_table():
     row_text = "\n".join(rows)
     return longtablify(
         f"""
-        \\lcaption<Weapon Items> \\\\
+        \\lcaption<Magic Weapons> \\\\
         \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         {row_text}
     """

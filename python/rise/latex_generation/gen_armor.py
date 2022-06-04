@@ -759,7 +759,7 @@ def generate_armor_table():
     row_text = "\n".join(rows)
     return longtablify(
         f"""
-        \\lcaption<Armor Items> \\\\
+        \\lcaption<Magic Armor> \\\\
         \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         {row_text}
     """
