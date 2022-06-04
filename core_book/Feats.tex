@@ -2179,7 +2179,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[3]{Aspect of Divinity} As long as you are attuned to at least one spell from the \sphere{channel divinity} mystic sphere, you gain a \plus1 bonus to \glossterm{vital rolls}.
 
-        \ff[6]{Font of Divinity} Choose a spell with the \glossterm{Attune} (self) tag from the \sphere{channel divinity} mystic sphere.
+        \ff[6]{Font of Divinity} Choose a spell with the \abilitytag{Attune} (self) tag from the \sphere{channel divinity} mystic sphere.
         When you attune to that spell, you may also choose one \glossterm{ally} within \medrange.
         That ally can also choose to attune to the spell, and you both gain its benefits.
         When you stop attuning to that spell, your ally is also forced to stop attuning to the spell.
@@ -2322,7 +2322,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, you can use your \glossterm{power} in place of your Craft skill to create items with spells from the \sphere{Fabrication} mystic sphere.
 
         \ff[6]{Greater Forge} You learn the \spell{forge} spell from the Fabrication mystic sphere.
-        In addition, you can cast that spell with the \abilitytag{Sustain} (minor) tag instead of the \glossterm{Attune} (self) tag.
+        In addition, you can cast that spell with the \abilitytag{Sustain} (minor) tag instead of the \abilitytag{Attune} (self) tag.
 
         \ff[9]{Personal Fabrication} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Fabrication} \glossterm{mystic sphere}.
@@ -2472,15 +2472,17 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[3]{Fortified Summons} Creatures you create with the \sphere{Summoning} \glossterm{mystic sphere} have half their normal \glossterm{hit points}.
         They gain a bonus to their \glossterm{damage resistance} equal to the hit points lost this way.
 
-        \ff[6]{Resummon} You can use the \textit{resummon} ability as a \glossterm{minor action}.
+        \ff[6]{Resummon} You can use the \textit{resummon} ability as a \glossterm{standard action}.
         \begin{freeability}{Resummon}
-            Choose one creature or object that you summoned with a currently active ability from the \sphere{Summoning} \glossterm{mystic sphere} with the \abilitytag{Attune} or \abilitytag{Sustain} tags.
-            You teleport the target into an unoccupied space on stable ground within \rngmed range of you.
+            After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you take a short rest.
+
+            Choose a spell from the \sphere{Summoning} mystic sphere that you are still \glossterm{attuned} to, even if all creatures created by that spell are dead.
+            All effects of that spell, including any active creatures, immediately end.
+            Then, you recreate all creatures from that spell as if you had just cast it.
 
             \rankline
-            \featlevel{12} The range increases to \rngdist.
-            \featlevel{18} You can choose two creatures or objects to teleport in this way instead of only one.
-                Each chosen creature or object can be teleported to a different location within range.
+            \featlevel{12} You can use this ability any number of times without taking a short rest.
+            \featlevel{18} You can use this ability as a \glossterm{minor action}.
         \end{freeability}
 
         \ff[9]{Personal Summoning} You gain an additional \glossterm{attunement point}.
