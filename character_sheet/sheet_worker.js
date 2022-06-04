@@ -1093,6 +1093,10 @@ class NamedModifierMap {
   }
 
   addNamedModifier(statisticKey, name, value) {
+    // support named arguments
+    if (!name) {
+      ({ statisticKey, name, value } = statisticKey);
+    }
     if (statisticKey === "all_defenses") {
       for (const defenseKey of [
         "armor_defense",
@@ -1152,13 +1156,26 @@ class NamedModifierMap {
     return total;
   }
 
-  generateExplanation(statisticKey) {
+  generateExplanation(statisticKey, sorted = false) {
     if (!this.namedModifiersByStatistic[statisticKey]) {
       return "";
     }
-    return collectNamedModifierExplanations(
-      this.namedModifiersByStatistic[statisticKey]
-    );
+    if (sorted) {
+      const modifiers = [...this.namedModifiersByStatistic[statisticKey]];
+      modifiers.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        } else if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });
+      return collectNamedModifierExplanations(modifiers);
+    } else {
+      return collectNamedModifierExplanations(
+        this.namedModifiersByStatistic[statisticKey]
+      );
+    }
   }
 }
 
@@ -1309,58 +1326,62 @@ function handleDebuffs() {
       ],
     },
     (v) => {
-      let accuracy = 0;
-      let armor = 0;
-      let fortitude = 0;
-      let mental = 0;
-      let reflex = 0;
       let debuffHeaders = "";
+
+      let namedModifierMap = new NamedModifierMap();
+
+      const minus2 = (cause, statistic) =>
+        namedModifierMap.addNamedModifier(statistic, cause, -2);
+      const minus4 = (cause, statistic) =>
+        namedModifierMap.addNamedModifier(statistic, cause, -4);
 
       // circumstantial effects
       if (v.grappled) {
-        armor -= 2;
-        reflex -= 2;
+        minus2("grappled", "armor_defense");
+        minus2("grappled", "reflex");
       }
       if (
         v.partially_unaware &&
         !(v.unaware || v.asleep || v.helpless || v.paralyzed || v.blinded)
       ) {
-        armor -= 2;
-        reflex -= 2;
+        minus2("partially unaware", "armor_defense");
+        minus2("partially unaware", "reflex");
       }
       if (v.unaware && !(v.asleep || v.helpless || v.paralyzed)) {
-        armor -= 4;
-        reflex -= 4;
+        minus4("unaware", "armor_defense");
+        minus4("unaware", "reflex");
       }
       if (v.squeezing) {
-        accuracy -= 2;
-        armor -= 2;
-        reflex -= 2;
+        minus2("squeezing", "accuracy");
+        minus2("squeezing", "armor_defense");
+        minus2("squeezing", "reflex");
       }
       if (v.flying && !v.flying_poorly) {
-        armor -= 2;
-        reflex -= 2;
+        minus2("flying", "armor_defense");
+        minus2("flying", "reflex");
       }
       if (v.flying_poorly) {
-        armor -= 4;
-        reflex -= 4;
+        minus4("flying poorly", "armor_defense");
+        minus4("flying poorly", "reflex");
       }
-      if (v.climbing || v.swimming) {
-        accuracy -= 4;
-        armor -= 4;
-        reflex -= 4;
+      if (v.climbing) {
+        minus4("climbing", "accuracy");
+        minus4("climbing", "armor_defense");
+        minus4("climbing", "reflex");
+      }
+      if (v.swimming) {
+        minus4("swimming", "accuracy");
+        minus4("swimming", "armor_defense");
+        minus4("swimming", "reflex");
       }
       if (v.prone) {
-        armor -= 2;
-        reflex -= 2;
+        minus2("prone", "armor_defense");
+        minus2("prone", "reflex");
       }
 
       // rank 1 debuffs
       if (v.dazed && !(v.stunned || v.confused)) {
-        armor -= 2;
-        fortitude -= 2;
-        mental -= 2;
-        reflex -= 2;
+        minus2("dazed", "all_defenses");
       }
       if (v.dazzled && !v.blinded) {
         debuffHeaders += " {{Miss chance=Miss on 1: [[d4]]}}";
@@ -1378,53 +1399,60 @@ function handleDebuffs() {
           v.paralyzed
         )
       ) {
-        armor -= 2;
-        reflex -= 2;
+        minus2("blinded", "armor_defense");
+        minus2("blinded", "reflex");
       }
       if (v.goaded) {
         debuffHeaders += " {{Goaded=+2 accuracy vs source}}";
-        accuracy -= 2;
+        minus2("goaded", "accuracy");
       }
       if (v.shaken && !v.frightened && !v.panicked) {
-        accuracy -= 2;
-        mental -= 2;
+        minus2("shaken", "accuracy");
+        minus2("shaken", "mental");
       }
       if (v.slowed && !v.immobilized) {
-        reflex -= 2;
+        minus2("slowed", "reflex");
       }
 
       // rank 2 debuffs
       if (v.frightened && !v.panicked) {
-        accuracy -= 4;
-        mental -= 4;
+        minus4("frightened", "accuracy");
+        minus4("frightened", "mental");
       }
-      if (v.stunned || v.confused) {
-        armor -= 4;
-        fortitude -= 4;
-        reflex -= 4;
-        mental -= 4;
+      if (v.stunned && !v.confused) {
+        minus4("stunned", "all_defenses");
+      }
+      if (v.confused) {
+        minus4("confused", "all_defenses");
       }
 
       // rank 3 debuffs
       if (v.immobilized) {
-        reflex -= 4;
+        minus4("immobilized", "reflex");
       }
       if (v.panicked) {
-        mental -= 4;
+        minus4("panicked", "mental");
       }
       if (v.asleep || v.helpless || v.paralyzed) {
-        armor -= 10;
-        reflex -= 10;
+        namedModifierMap.addNamedModifier("armor_defense", "helpless", -10);
+        namedModifierMap.addNamedModifier("reflex", "helpless", -10);
       }
 
-      setAttrs({
-        accuracy_debuff_modifier: accuracy,
-        armor_defense_debuff_modifier: armor,
-        fortitude_debuff_modifier: fortitude,
-        mental_debuff_modifier: mental,
-        reflex_debuff_modifier: reflex,
-        debuff_headers: debuffHeaders.trim(),
-      });
+      const attrs = {};
+      for (const statistic of [
+        "accuracy",
+        "armor_defense",
+        "fortitude",
+        "mental",
+        "reflex",
+      ]) {
+        attrs[`${statistic}_debuff_explanation`] =
+          namedModifierMap.generateExplanation(statistic, true);
+        attrs[`${statistic}_debuff_modifier`] =
+          namedModifierMap.calculateModifierValue(statistic);
+      }
+
+      setAttrs(attrs);
     }
   );
 }
@@ -1798,7 +1826,10 @@ function handlePower() {
       setAttrs({
         power: classPowerModifier + v.misc,
         power_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: `${v.base_class} rank ${maxRank}`, value: classPowerModifier },
+          {
+            name: `${v.base_class} rank ${maxRank}`,
+            value: classPowerModifier,
+          },
         ]),
       });
     }
