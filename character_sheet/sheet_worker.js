@@ -1346,7 +1346,6 @@ function handleDebuffs() {
         minus4("unaware", "reflex");
       }
       if (v.squeezing) {
-        minus2("squeezing", "accuracy");
         minus2("squeezing", "armor_defense");
         minus2("squeezing", "reflex");
       }
