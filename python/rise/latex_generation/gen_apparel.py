@@ -4,13 +4,27 @@ import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
 from rise.latex.util import latexify, longtablify
+from rise.latex.tags import add_attune_tag
+
+
+def create_apparel(
+    name, rank, material_type, description, short_description, tags=None
+):
+    return MagicItem(
+        name=name,
+        rank=rank,
+        material_type=material_type,
+        description=description,
+        short_description=short_description,
+        tags=add_attune_tag(tags),
+    )
 
 
 def generate_apparel():
     apparel = []
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Blind Seer's Circlet",
             rank=3,
             material_type="Circlet",
@@ -21,7 +35,7 @@ def generate_apparel():
             """,
             short_description="Increases range of blindsense and blindsight",
         ),
-        MagicItem(
+        create_apparel(
             name="Blind Seer's Circlet, Greater",
             rank=5,
             material_type="Circlet",
@@ -32,7 +46,7 @@ def generate_apparel():
             """,
             short_description="Greatly increases range of blindsense and blindsight",
         ),
-        MagicItem(
+        create_apparel(
             name="Blind Seer's Circlet, Supreme",
             rank=7,
             material_type="Circlet",
@@ -48,7 +62,7 @@ def generate_apparel():
     # Arm
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Gloves of Potency",
             rank=2,
             material_type="Glove",
@@ -57,7 +71,7 @@ def generate_apparel():
             """,
             short_description="Grants +2 power",
         ),
-        MagicItem(
+        create_apparel(
             name="Gloves of Potency, Greater",
             rank=4,
             material_type="Glove",
@@ -66,7 +80,7 @@ def generate_apparel():
             """,
             short_description="Grants +4 power",
         ),
-        MagicItem(
+        create_apparel(
             name="Gloves of Potency, Supreme",
             rank=6,
             material_type="Glove",
@@ -78,7 +92,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ambidextrous Gloves",
             rank=2,
             material_type="Glove",
@@ -87,7 +101,7 @@ def generate_apparel():
             """,
             short_description="Grants +1 accuracy with offhand strikes",
         ),
-        MagicItem(
+        create_apparel(
             name="Ambidextrous Gloves, Greater",
             rank=4,
             material_type="Glove",
@@ -96,7 +110,7 @@ def generate_apparel():
             """,
             short_description="Grants +2 accuracy with offhand strikes",
         ),
-        MagicItem(
+        create_apparel(
             name="Ambidextrous Gloves, Supreme",
             rank=6,
             material_type="Glove",
@@ -108,7 +122,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Bracers of Archery",
             rank=1,
             material_type="Bracers",
@@ -117,7 +131,7 @@ def generate_apparel():
             """,
             short_description="Grants bow proficiency",
         ),
-        MagicItem(
+        create_apparel(
             name="Bracers of Archery, Greater",
             rank=3,
             material_type="Bracers",
@@ -129,7 +143,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Bracers of Armor",
             rank=2,
             material_type="Bracers",
@@ -146,7 +160,7 @@ def generate_apparel():
             """,
             short_description="Grants encumbrance-free +2 armor",
         ),
-        MagicItem(
+        create_apparel(
             name="Bracers of Armor, Greater",
             rank=4,
             material_type="Bracers",
@@ -157,7 +171,7 @@ def generate_apparel():
             """,
             short_description="Grants encumbrance-free +3 armor",
         ),
-        MagicItem(
+        create_apparel(
             name="Bracers of Armor, Supreme",
             rank=6,
             material_type="Bracers",
@@ -171,7 +185,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Shieldburst Bracers",
             rank=1,
             material_type="Bracers",
@@ -183,7 +197,7 @@ def generate_apparel():
             """,
             short_description="Can exert to gain instant +2 Armor defense",
         ),
-        MagicItem(
+        create_apparel(
             name="Shieldburst Bracers, Greater",
             rank=3,
             material_type="Bracers",
@@ -193,7 +207,7 @@ def generate_apparel():
             """,
             short_description="Can exert to gain instant +3 Armor defense",
         ),
-        MagicItem(
+        create_apparel(
             name="Shieldburst Bracers, Supreme",
             rank=5,
             material_type="Bracers",
@@ -207,7 +221,7 @@ def generate_apparel():
 
     # TODO: Figure out correct rank and scaling
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Bracers of Repulsion",
             rank=3,
             material_type="Bracers",
@@ -221,7 +235,7 @@ def generate_apparel():
             """,
             short_description="Can knock nearby creatures back",
         ),
-        MagicItem(
+        create_apparel(
             name="Bracers of Repulsion, Greater",
             rank=6,
             material_type="Bracers",
@@ -234,7 +248,7 @@ def generate_apparel():
     ]
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Torchlight Gloves",
             rank=1,
             material_type="Gloves",
@@ -248,7 +262,7 @@ def generate_apparel():
     )
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Gauntlets of Improvisation",
             rank=1,
             material_type="Gauntlet",
@@ -257,7 +271,7 @@ def generate_apparel():
             """,
             short_description="Grants +2 power with improvised weapons",
         ),
-        MagicItem(
+        create_apparel(
             name="Gauntlets of Improvisation, Greater",
             rank=3,
             material_type="Gauntlet",
@@ -266,7 +280,7 @@ def generate_apparel():
             """,
             short_description="Grants +4 power with improvised weapons",
         ),
-        MagicItem(
+        create_apparel(
             name="Gauntlets of Improvisation, Supreme",
             rank=5,
             material_type="Gauntlet",
@@ -278,7 +292,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Gauntlet of the Ram",
             rank=2,
             material_type="Gauntlet",
@@ -287,7 +301,7 @@ def generate_apparel():
             """,
             short_description="Knocks back punched enemies",
         ),
-        MagicItem(
+        create_apparel(
             name="Gauntlet of the Ram, Greater",
             rank=5,
             material_type="Gauntlet",
@@ -300,7 +314,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Greatreach Bracers",
             rank=4,
             material_type="Bracers",
@@ -310,7 +324,7 @@ def generate_apparel():
             """,
             short_description="Increases reach by five feet",
         ),
-        MagicItem(
+        create_apparel(
             name="Greatreach Bracers, Greater",
             rank=6,
             material_type="Bracers",
@@ -323,7 +337,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Throwing Gloves",
             rank=2,
             material_type="Gloves",
@@ -333,7 +347,7 @@ def generate_apparel():
             """,
             short_description="Allows throwing any item 60 feet",
         ),
-        MagicItem(
+        create_apparel(
             name="Throwing Gloves, Greater",
             rank=4,
             material_type="Gloves",
@@ -346,7 +360,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Gloves of Telekinetic Propulsion",
             rank=2,
             material_type="Gloves",
@@ -355,7 +369,7 @@ def generate_apparel():
             """,
             short_description="Reduces thrown longshot penalty by 1",
         ),
-        MagicItem(
+        create_apparel(
             name="Gloves of Telekinetic Propulsion, Greater",
             rank=5,
             material_type="Gloves",
@@ -369,7 +383,7 @@ def generate_apparel():
 
     apparel += [
         # close range, +1d = rank 2 spell
-        MagicItem(
+        create_apparel(
             name="Circlet of Blasting",
             rank=2,
             material_type="Circlet",
@@ -382,7 +396,7 @@ def generate_apparel():
             short_description="Can blast foe with fire",
         ),
         # close range, +2d = rank 4 spell
-        MagicItem(
+        create_apparel(
             name="Circlet of Blasting, Greater",
             rank=4,
             material_type="Circlet",
@@ -395,7 +409,7 @@ def generate_apparel():
             short_description="Can blast foe with intense fire",
         ),
         # close range, +3d = rank 6 spell, so this is priced as rank 7
-        MagicItem(
+        create_apparel(
             name="Circlet of Blasting, Supreme",
             rank=6,
             material_type="Circlet",
@@ -410,7 +424,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Circlet of Persuasion",
             rank=1,
             material_type="Circlet",
@@ -419,7 +433,7 @@ def generate_apparel():
             """,
             short_description="Grants +2 Persuasion",
         ),
-        MagicItem(
+        create_apparel(
             name="Circlet of Persuasion, Greater",
             rank=3,
             material_type="Circlet",
@@ -428,7 +442,7 @@ def generate_apparel():
             """,
             short_description="Grants +3 Persuasion",
         ),
-        MagicItem(
+        create_apparel(
             name="Circlet of Persuasion, Supreme",
             rank=5,
             material_type="Circlet",
@@ -440,7 +454,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Circlet of Foresight",
             rank=1,
             material_type="Circlet",
@@ -449,7 +463,7 @@ def generate_apparel():
             """,
             short_description="Grants +2 initiative",
         ),
-        MagicItem(
+        create_apparel(
             name="Circlet of Foresight, Greater",
             rank=3,
             material_type="Circlet",
@@ -458,7 +472,7 @@ def generate_apparel():
             """,
             short_description="Grants +3 initiative",
         ),
-        MagicItem(
+        create_apparel(
             name="Circlet of Foresight, Supreme",
             rank=5,
             material_type="Circlet",
@@ -470,7 +484,7 @@ def generate_apparel():
     ]
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Mask of Water Breathing",
             rank=2,
             material_type="Mask",
@@ -483,7 +497,7 @@ def generate_apparel():
     )
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Ring of Breath",
             rank=1,
             material_type="Ring",
@@ -498,7 +512,7 @@ def generate_apparel():
     )
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Mask of Air",
             rank=3,
             material_type="Mask",
@@ -511,7 +525,7 @@ def generate_apparel():
     )
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Crown of Lightning",
             rank=2,
             material_type="Crown",
@@ -526,7 +540,7 @@ def generate_apparel():
             """,
             short_description="Can deal 1d10+2 damage to nearby foes",
         ),
-        MagicItem(
+        create_apparel(
             name="Crown of Lightning, Greater",
             rank=5,
             material_type="Crown",
@@ -544,7 +558,7 @@ def generate_apparel():
     ]
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Crown of Thunder",
             rank=5,
             material_type="Crown",
@@ -562,7 +576,7 @@ def generate_apparel():
     # Legs
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Crater Boots",
             rank=4,
             material_type="Boots",
@@ -578,7 +592,7 @@ def generate_apparel():
     )
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Phasestep Boots",
             rank=2,
             material_type="Boots",
@@ -592,7 +606,7 @@ def generate_apparel():
             """,
             short_description="Can exert to briefly move through creatures",
         ),
-        MagicItem(
+        create_apparel(
             name="Phasestep Boots, Greater",
             rank=4,
             material_type="Boots",
@@ -602,7 +616,7 @@ def generate_apparel():
             """,
             short_description="Can move through creatures",
         ),
-        MagicItem(
+        create_apparel(
             name="Phasestep Boots, Supreme",
             rank=6,
             material_type="Boots",
@@ -616,7 +630,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Boots of the Skydancer",
             rank=3,
             material_type="Boots",
@@ -629,7 +643,7 @@ def generate_apparel():
             """,
             short_description="Can very briefly walk on air",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of the Skydancer, Greater",
             rank=5,
             material_type="Boots",
@@ -642,7 +656,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Boots of Freedom",
             rank=4,
             material_type="Boots",
@@ -651,7 +665,7 @@ def generate_apparel():
             """,
             short_description="Grants immunity to common mobility restrictions",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Freedom, Greater",
             rank=7,
             material_type="Boots",
@@ -665,7 +679,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Boots of Gravitation",
             rank=3,
             material_type="Boots",
@@ -679,7 +693,7 @@ def generate_apparel():
             """,
             short_description="Redirects personal gravity to adjacent objects",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Gravitation, Greater",
             rank=5,
             material_type="Boots",
@@ -689,7 +703,7 @@ def generate_apparel():
             """,
             short_description="Redirects personal gravity to nearby objects",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Gravitation, Supreme",
             rank=7,
             material_type="Boots",
@@ -702,7 +716,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Boots of Speed",
             rank=2,
             material_type="Boots",
@@ -712,7 +726,7 @@ def generate_apparel():
             """,
             short_description="Increases speed by 5 feet",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Speed, Greater",
             rank=4,
             material_type="Boots",
@@ -722,7 +736,7 @@ def generate_apparel():
             """,
             short_description="Increases speed by 10 feet",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Speed, Supreme",
             rank=6,
             material_type="Boots",
@@ -735,7 +749,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Boots of the Fearful",
             rank=1,
             material_type="Boots",
@@ -745,7 +759,7 @@ def generate_apparel():
             """,
             short_description="Helps you survive when you become afraid",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of the Fearful, Greater",
             rank=3,
             material_type="Boots",
@@ -755,7 +769,7 @@ def generate_apparel():
             """,
             short_description="Greatly helps you survive when you become afraid",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of the Fearful, Supreme",
             rank=5,
             material_type="Boots",
@@ -768,7 +782,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Belt of Scuttling",
             rank=2,
             material_type="Belt",
@@ -778,7 +792,7 @@ def generate_apparel():
             """,
             short_description="Move at full speed while prone",
         ),
-        MagicItem(
+        create_apparel(
             name="Belt of Scuttling, Greater",
             rank=4,
             material_type="Belt",
@@ -788,7 +802,7 @@ def generate_apparel():
             """,
             short_description="Move at full speed and defend normally while prone",
         ),
-        MagicItem(
+        create_apparel(
             name="Belt of Scuttling, Supreme",
             rank=6,
             material_type="Belt",
@@ -801,7 +815,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Lifesaver Ring",
             rank=2,
             material_type="Ring",
@@ -812,7 +826,7 @@ def generate_apparel():
             """,
             short_description="Regains 1d6 hit points while below half hit points",
         ),
-        MagicItem(
+        create_apparel(
             name="Lifesaver Ring, Greater",
             rank=4,
             material_type="Ring",
@@ -823,7 +837,7 @@ def generate_apparel():
             """,
             short_description="Regains 2d6 hit points while below half hit points",
         ),
-        MagicItem(
+        create_apparel(
             name="Lifesaver Ring, Supreme",
             rank=6,
             material_type="Ring",
@@ -837,7 +851,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Dazeshare Ring",
             rank=2,
             material_type="Ring",
@@ -848,7 +862,7 @@ def generate_apparel():
             """,
             short_description="Dazes enemies when you are dazed or worse",
         ),
-        MagicItem(
+        create_apparel(
             name="Stunshare Ring",
             rank=6,
             material_type="Ring",
@@ -862,7 +876,7 @@ def generate_apparel():
     ]
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Astral Boots",
             rank=6,
             material_type="Boots",
@@ -878,7 +892,7 @@ def generate_apparel():
     )
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Boots of Water Walking",
             rank=3,
             material_type="Boots",
@@ -894,7 +908,7 @@ def generate_apparel():
     )
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Boots of the Winterlands",
             rank=1,
             material_type="Boots",
@@ -908,7 +922,7 @@ def generate_apparel():
     )
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Cloak of the Noble Rider",
             rank=2,
             material_type="Cloak",
@@ -919,7 +933,7 @@ def generate_apparel():
             """,
             short_description="Can exert to save your mount from a vital wound",
         ),
-        MagicItem(
+        create_apparel(
             name="Cloak of the Noble Rider, Greater",
             rank=4,
             material_type="Cloak",
@@ -933,7 +947,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ghost Shroud",
             rank=2,
             material_type="Cloak",
@@ -942,7 +956,7 @@ def generate_apparel():
             """,
             short_description="Grants limited ability to hit incorporeal creatures",
         ),
-        MagicItem(
+        create_apparel(
             name="Ghost Shroud, Greater",
             rank=4,
             material_type="Cloak",
@@ -951,7 +965,7 @@ def generate_apparel():
             """,
             short_description="Grants ability to hit incorporeal creatures",
         ),
-        MagicItem(
+        create_apparel(
             name="Ghost Shroud, Supreme",
             rank=6,
             material_type="Cloak",
@@ -963,7 +977,7 @@ def generate_apparel():
     ]
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Cloak of the Unseen Hunter",
             rank=6,
             material_type="Cloak",
@@ -975,7 +989,7 @@ def generate_apparel():
     )
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Boots of the Desertlands",
             rank=1,
             material_type="Boots",
@@ -989,7 +1003,7 @@ def generate_apparel():
     )
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Seven League Boots",
             rank=4,
             material_type="Boots",
@@ -1005,7 +1019,7 @@ def generate_apparel():
     )
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Winged Boots",
             rank=5,
             material_type="Boots",
@@ -1015,7 +1029,7 @@ def generate_apparel():
             """,
             short_description="Grants flight up to 15 feet high",
         ),
-        MagicItem(
+        create_apparel(
             name="Winged Boots, Greater",
             rank=7,
             material_type="Boots",
@@ -1027,7 +1041,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Boots of Elvenkind",
             rank=1,
             material_type="Boots",
@@ -1036,7 +1050,7 @@ def generate_apparel():
             """,
             short_description="Grants +2 Stealth",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Elvenkind, Greater",
             rank=3,
             material_type="Boots",
@@ -1045,7 +1059,7 @@ def generate_apparel():
             """,
             short_description="Grants +3 Stealth",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Elvenkind, Supreme",
             rank=5,
             material_type="Boots",
@@ -1059,7 +1073,7 @@ def generate_apparel():
     # Rings
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Ring of Elemental Endurance",
             rank=1,
             material_type="Ring",
@@ -1073,7 +1087,7 @@ def generate_apparel():
     )
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Cloak of Death's Door",
             rank=2,
             material_type="Cloak",
@@ -1083,7 +1097,7 @@ def generate_apparel():
             """,
             short_description="Grants +1 Armor at low health",
         ),
-        MagicItem(
+        create_apparel(
             name="Cloak of Death's Door, Greater",
             rank=5,
             material_type="Cloak",
@@ -1096,7 +1110,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Enraging Cloak",
             rank=4,
             material_type="Cloak",
@@ -1107,7 +1121,7 @@ def generate_apparel():
             """,
             short_description="Grants +1 accuracy and -1 defenses against adjacent creatures",
         ),
-        MagicItem(
+        create_apparel(
             name="Enraging Cloak, Greater",
             rank=7,
             material_type="Cloak",
@@ -1121,7 +1135,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ring of the True Form",
             rank=1,
             material_type="Ring",
@@ -1132,7 +1146,7 @@ def generate_apparel():
             """,
             short_description="Grants +4 defenses vs form-altering attacks",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of the True Form, Greater",
             rank=3,
             material_type="Ring",
@@ -1143,7 +1157,7 @@ def generate_apparel():
             """,
             short_description="Grants +8 defenses vs form-altering attacks",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of the True Form, Supreme",
             rank=5,
             material_type="Ring",
@@ -1157,7 +1171,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ring of Honeyed Words",
             rank=2,
             material_type="Ring",
@@ -1167,7 +1181,7 @@ def generate_apparel():
             """,
             short_description="Grants +2 to social skills",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of Honeyed Words, Greater",
             rank=4,
             material_type="Ring",
@@ -1177,7 +1191,7 @@ def generate_apparel():
             """,
             short_description="Grants +3 to social skills",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of Honeyed Words, Supreme",
             rank=6,
             material_type="Ring",
@@ -1190,7 +1204,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Poisonbane Ring",
             rank=2,
             material_type="Ring",
@@ -1200,7 +1214,7 @@ def generate_apparel():
             """,
             short_description="Impervious to poisons",
         ),
-        MagicItem(
+        create_apparel(
             name="Poisonbane Ring, Supreme",
             rank=5,
             material_type="Ring",
@@ -1214,7 +1228,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ring of Blessed Protection",
             rank=2,
             material_type="Ring",
@@ -1227,7 +1241,7 @@ def generate_apparel():
             """,
             short_description="Can exert to protect against critical strikes",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of Blessed Protection, Greater",
             rank=4,
             material_type="Ring",
@@ -1237,7 +1251,7 @@ def generate_apparel():
             """,
             short_description="Can exert to protect against critical mundane attacks",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of Blessed Protection, Supreme",
             rank=7,
             material_type="Ring",
@@ -1250,7 +1264,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ring of Nourishment",
             rank=1,
             material_type="Ring",
@@ -1261,7 +1275,7 @@ def generate_apparel():
             """,
             short_description="Provides food and water",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of Sustenance",
             rank=3,
             material_type="Ring",
@@ -1277,7 +1291,7 @@ def generate_apparel():
     ]
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Ring of Vital Regeneration",
             rank=5,
             material_type="Ring",
@@ -1293,7 +1307,7 @@ def generate_apparel():
     )
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Bracers of Mighty Fists",
             rank=4,
             material_type="Bracers",
@@ -1307,7 +1321,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Belt of Health",
             rank=2,
             material_type="Belt",
@@ -1316,7 +1330,7 @@ def generate_apparel():
             """,
             short_description="Grants +4 hit points",
         ),
-        MagicItem(
+        create_apparel(
             name="Belt of Health, Greater",
             rank=4,
             material_type="Belt",
@@ -1325,7 +1339,7 @@ def generate_apparel():
             """,
             short_description="Grants +8 hit points",
         ),
-        MagicItem(
+        create_apparel(
             name="Belt of Health, Supreme",
             rank=6,
             material_type="Belt",
@@ -1337,7 +1351,7 @@ def generate_apparel():
     ]
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Ring of the Planes",
             rank=4,
             material_type="Ring",
@@ -1351,7 +1365,7 @@ def generate_apparel():
     )
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Cloak of Nondetection",
             rank=2,
             material_type="Cloak",
@@ -1361,7 +1375,7 @@ def generate_apparel():
             """,
             short_description="Grants +4 to defenses against detection",
         ),
-        MagicItem(
+        create_apparel(
             name="Cloak of Nondetection, Greater",
             rank=5,
             material_type="Cloak",
@@ -1374,7 +1388,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Challenger's Cloak",
             rank=5,
             material_type="Cloak",
@@ -1384,7 +1398,7 @@ def generate_apparel():
             """,
             short_description="Increases accuracy penalty on goaded foes by 1",
         ),
-        MagicItem(
+        create_apparel(
             name="Challenger's Cloak, Greater",
             rank=7,
             material_type="Cloak",
@@ -1399,7 +1413,7 @@ def generate_apparel():
     # Cloaks
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Quilled Cloak",
             rank=2,
             material_type="Cloak",
@@ -1410,7 +1424,7 @@ def generate_apparel():
             """,
             short_description="Deals damage to creatures that grapple you",
         ),
-        MagicItem(
+        create_apparel(
             name="Quilled Cloak, Greater",
             rank=4,
             material_type="Cloak",
@@ -1421,7 +1435,7 @@ def generate_apparel():
             """,
             short_description="Deals more damage to creatures that grapple you",
         ),
-        MagicItem(
+        create_apparel(
             name="Quilled Cloak, Supreme",
             rank=6,
             material_type="Cloak",
@@ -1435,7 +1449,7 @@ def generate_apparel():
     ]
 
     apparel.append(
-        MagicItem(
+        create_apparel(
             name="Avian Cloak",
             rank=3,
             material_type="Cloak",
@@ -1448,7 +1462,7 @@ def generate_apparel():
     )
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Assassin's Cloak",
             rank=3,
             material_type="Cloak",
@@ -1459,7 +1473,7 @@ def generate_apparel():
             """,
             short_description="Grants invisibility while inactive",
         ),
-        MagicItem(
+        create_apparel(
             name="Assassin's Cloak, Greater",
             rank=5,
             material_type="Cloak",
@@ -1470,7 +1484,7 @@ def generate_apparel():
             """,
             short_description="Grants invisibility while mostly inactive",
         ),
-        MagicItem(
+        create_apparel(
             name="Assassin's Cloak, Supreme",
             rank=7,
             material_type="Cloak",
@@ -1484,7 +1498,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Cloak of Mist",
             rank=4,
             material_type="Cloak",
@@ -1496,7 +1510,7 @@ def generate_apparel():
             """,
             short_description="Fills nearby area with fog",
         ),
-        MagicItem(
+        create_apparel(
             name="Cloak of Mist, Greater",
             rank=7,
             material_type="Cloak",
@@ -1509,7 +1523,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Vanishing Cloak",
             rank=5,
             material_type="Cloak",
@@ -1522,7 +1536,7 @@ def generate_apparel():
             """,
             short_description="Can teleport silently",
         ),
-        MagicItem(
+        create_apparel(
             name="Vanishing Cloak, Greater",
             rank=7,
             material_type="Cloak",
@@ -1538,7 +1552,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Hexward Ring",
             rank=4,
             material_type="Ring",
@@ -1549,7 +1563,7 @@ def generate_apparel():
             """,
             short_description="Grants +1 defenses against targeted spells",
         ),
-        MagicItem(
+        create_apparel(
             name="Hexward Ring, Greater",
             rank=7,
             material_type="Ring",
@@ -1565,7 +1579,7 @@ def generate_apparel():
     # Belts
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Belt of Healing",
             rank=2,
             material_type="Belt",
@@ -1576,7 +1590,7 @@ def generate_apparel():
             """,
             short_description="Exert to heal 1d10+4 hit points",
         ),
-        MagicItem(
+        create_apparel(
             name="Belt of Healing, Greater",
             rank=4,
             material_type="Belt",
@@ -1587,7 +1601,7 @@ def generate_apparel():
             """,
             short_description="Exert to heal 2d10+7 hit points",
         ),
-        MagicItem(
+        create_apparel(
             name="Belt of Healing, Supreme",
             rank=6,
             material_type="Belt",
@@ -1601,7 +1615,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Enlarging Belt",
             rank=4,
             material_type="Belt",
@@ -1618,7 +1632,7 @@ def generate_apparel():
             """,
             short_description="Increases your size",
         ),
-        MagicItem(
+        create_apparel(
             name="Enlarging Belt, Greater",
             rank=6,
             material_type="Belt",
@@ -1631,7 +1645,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Shrinking Belt",
             rank=3,
             material_type="Belt",
@@ -1646,7 +1660,7 @@ def generate_apparel():
             """,
             short_description="Reduces your size",
         ),
-        MagicItem(
+        create_apparel(
             name="Shrinking Belt, Greater",
             rank=5,
             material_type="Belt",
@@ -1656,7 +1670,7 @@ def generate_apparel():
             """,
             short_description="Reduces your size without reducing weight limits",
         ),
-        MagicItem(
+        create_apparel(
             name="Shrinking Belt, Supreme",
             rank=7,
             material_type="Belt",
@@ -1669,7 +1683,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Utility Belt",
             rank=2,
             material_type="Belt",
@@ -1688,7 +1702,7 @@ def generate_apparel():
             """,
             short_description="Contains five large pockets",
         ),
-        MagicItem(
+        create_apparel(
             name="Utility Belt, Greater",
             rank=5,
             material_type="Belt",
@@ -1701,7 +1715,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Frenzied Gloves",
             rank=6,
             material_type="Gloves",
@@ -1715,7 +1729,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Gloves of Infused Force",
             rank=2,
             material_type="Gloves",
@@ -1726,7 +1740,7 @@ def generate_apparel():
             """,
             short_description="Grants +4 power to next strike",
         ),
-        MagicItem(
+        create_apparel(
             name="Gloves of Infused Force, Greater",
             rank=4,
             material_type="Gloves",
@@ -1736,7 +1750,7 @@ def generate_apparel():
             """,
             short_description="Grants +8 power to next strike",
         ),
-        MagicItem(
+        create_apparel(
             name="Gloves of Infused Force, Supreme",
             rank=6,
             material_type="Gloves",
@@ -1750,7 +1764,7 @@ def generate_apparel():
 
     apparel += [
         # standard tiny cone
-        MagicItem(
+        create_apparel(
             name="Pyromancer's Glove",
             rank=1,
             material_type="Glove",
@@ -1762,7 +1776,7 @@ def generate_apparel():
             """,
             short_description="Deals 1d8+1 damage in a cone",
         ),
-        MagicItem(
+        create_apparel(
             name="Pyromancer's Glove, Greater",
             rank=4,
             material_type="Glove",
@@ -1774,7 +1788,7 @@ def generate_apparel():
             """,
             short_description="Deals 2d10+3 damage in a cone",
         ),
-        MagicItem(
+        create_apparel(
             name="Pyromancer's Glove, Supreme",
             rank=7,
             material_type="Glove",
@@ -1789,7 +1803,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Belt of Vital Persistence",
             rank=1,
             material_type="Belt",
@@ -1801,7 +1815,7 @@ def generate_apparel():
             """,
             short_description="Can exert for +1 to a vital roll",
         ),
-        MagicItem(
+        create_apparel(
             name="Belt of Vital Persistence, Greater",
             rank=3,
             material_type="Belt",
@@ -1811,7 +1825,7 @@ def generate_apparel():
             """,
             short_description="Can exert for +2 to a vital roll",
         ),
-        MagicItem(
+        create_apparel(
             name="Belt of Vital Persistence, Supreme",
             rank=5,
             material_type="Belt",
@@ -1824,7 +1838,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Lifekeeping Belt",
             rank=3,
             material_type="Belt",
@@ -1834,7 +1848,7 @@ def generate_apparel():
             """,
             short_description="Grants +1 bonus to vital rolls",
         ),
-        MagicItem(
+        create_apparel(
             name="Lifekeeping Belt, Greater",
             rank=5,
             material_type="Belt",
@@ -1844,7 +1858,7 @@ def generate_apparel():
             """,
             short_description="Grants +2 bonus to vital rolls",
         ),
-        MagicItem(
+        create_apparel(
             name="Lifekeeping Belt, Supreme",
             rank=7,
             material_type="Belt",
@@ -1857,7 +1871,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ocular Circlet",
             rank=1,
             material_type="Circlet",
@@ -1873,7 +1887,7 @@ def generate_apparel():
             """,
             short_description="Can allow you to see at a distance",
         ),
-        MagicItem(
+        create_apparel(
             name="Ocular Circlet, Greater",
             rank=3,
             material_type="Circlet",
@@ -1887,7 +1901,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ring of Spell Investment",
             rank=2,
             material_type="Ring",
@@ -1909,7 +1923,7 @@ def generate_apparel():
             """,
             short_description="Can invest a spell to gain its effect later",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of Spell Investment, Greater",
             rank=4,
             material_type="Ring",
@@ -1923,7 +1937,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Belt of Hill Giant's Strength",
             rank=3,
             material_type="Belt",
@@ -1934,7 +1948,7 @@ def generate_apparel():
             """,
             short_description="Grants +1 Strength for specific purposes",
         ),
-        MagicItem(
+        create_apparel(
             name="Belt of Stone Giant's Strength",
             rank=5,
             material_type="Belt",
@@ -1945,7 +1959,7 @@ def generate_apparel():
             """,
             short_description="Grants +2 Strength for specific purposes",
         ),
-        MagicItem(
+        create_apparel(
             name="Belt of Storm Giant's Strength",
             rank=7,
             material_type="Belt",
@@ -1959,7 +1973,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Cloak of Translocation",
             rank=2,
             material_type="Cloak",
@@ -1970,7 +1984,7 @@ def generate_apparel():
             """,
             short_description="Can teleport up to 30 feet",
         ),
-        MagicItem(
+        create_apparel(
             name="Cloak of Translocation, Greater",
             rank=4,
             material_type="Cloak",
@@ -1980,7 +1994,7 @@ def generate_apparel():
             """,
             short_description="Can teleport up to 60 feet",
         ),
-        MagicItem(
+        create_apparel(
             name="Cloak of Translocation, Supreme",
             rank=6,
             material_type="Cloak",
@@ -1993,7 +2007,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Boots of Reliable Motion",
             rank=1,
             material_type="Boots",
@@ -2004,7 +2018,7 @@ def generate_apparel():
             """,
             short_description="Can reroll 1s with movement-based skills",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Reliable Motion, Greater",
             rank=3,
             material_type="Boots",
@@ -2016,7 +2030,7 @@ def generate_apparel():
             """,
             short_description="Can reroll 1s and exert more easily with movement-based skills",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Reliable Motion, Supreme",
             rank=5,
             material_type="Boots",
@@ -2028,7 +2042,7 @@ def generate_apparel():
             """,
             short_description="Can reroll 1s and 2s and exert more easily with movement-based skills",
         ),
-        MagicItem(
+        create_apparel(
             name="Gloves of Reliable Finesse",
             rank=1,
             material_type="Gloves",
@@ -2039,7 +2053,7 @@ def generate_apparel():
             """,
             short_description="Can reroll 1s with finesse-based skills",
         ),
-        MagicItem(
+        create_apparel(
             name="Gloves of Reliable Finesse, Greater",
             rank=3,
             material_type="Gloves",
@@ -2051,7 +2065,7 @@ def generate_apparel():
             """,
             short_description="Can reroll 1s and exert more easily with finesse-based skills",
         ),
-        MagicItem(
+        create_apparel(
             name="Gloves of Reliable Finesse, Supreme",
             rank=5,
             material_type="Gloves",
@@ -2063,7 +2077,7 @@ def generate_apparel():
             """,
             short_description="Can reroll 1s and 2s and exert more easily with finesse-based skills",
         ),
-        MagicItem(
+        create_apparel(
             name="Circlet of Reliable Observation",
             rank=1,
             material_type="Circlet",
@@ -2074,7 +2088,7 @@ def generate_apparel():
             """,
             short_description="Can reroll 1s with observation-based skills",
         ),
-        MagicItem(
+        create_apparel(
             name="Circlet of Reliable Observation, Greater",
             rank=3,
             material_type="Circlet",
@@ -2086,7 +2100,7 @@ def generate_apparel():
             """,
             short_description="Can reroll 1s and exert more easily with observation-based skills",
         ),
-        MagicItem(
+        create_apparel(
             name="Circlet of Reliable Observation, Supreme",
             rank=5,
             material_type="Circlet",
@@ -2101,7 +2115,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Boots of Levitation",
             rank=2,
             material_type="Boots",
@@ -2115,7 +2129,7 @@ def generate_apparel():
             """,
             short_description="Can exert to briefly levitate in midair",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Levitation, Greater",
             rank=4,
             material_type="Boots",
@@ -2125,7 +2139,7 @@ def generate_apparel():
             """,
             short_description="Can briefly levitate in midair",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Levitation, Supreme",
             rank=6,
             material_type="Boots",
@@ -2139,7 +2153,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Blindfold of the Third Eye",
             # Blindsight is a rank 3 self-only spell, so this would be level 10
             # if it followed that model normally. It gets +3 levels for also
@@ -2154,7 +2168,7 @@ def generate_apparel():
             """,
             short_description="Grants blindsight, blindsense, and blindness",
         ),
-        MagicItem(
+        create_apparel(
             name="Blindfold of the Third Eye, Greater",
             rank=5,
             material_type="Fabric",
@@ -2164,7 +2178,7 @@ def generate_apparel():
             """,
             short_description="Grants distant blindsight, blindsense, and blindness",
         ),
-        MagicItem(
+        create_apparel(
             name="Blindfold of the Third Eye, Supreme",
             rank=7,
             material_type="Fabric",
@@ -2177,7 +2191,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Charging Boots",
             rank=2,
             material_type="Boots",
@@ -2187,7 +2201,7 @@ def generate_apparel():
             """,
             short_description="Reduces penalties for charging by 1",
         ),
-        MagicItem(
+        create_apparel(
             name="Charging Boots, Greater",
             rank=4,
             material_type="Boots",
@@ -2200,7 +2214,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Cleansing Belt",
             rank=2,
             material_type="Belt",
@@ -2214,7 +2228,7 @@ def generate_apparel():
             """,
             short_description="Can exert to remove a condition",
         ),
-        MagicItem(
+        create_apparel(
             name="Cleansing Belt, Greater",
             rank=4,
             material_type="Belt",
@@ -2226,7 +2240,7 @@ def generate_apparel():
             """,
             short_description="Can remove a condition",
         ),
-        MagicItem(
+        create_apparel(
             name="Cleansing Belt, Supreme",
             rank=6,
             material_type="Belt",
@@ -2241,7 +2255,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Quickcleanse Belt",
             rank=5,
             material_type="Belt",
@@ -2255,7 +2269,7 @@ def generate_apparel():
             """,
             short_description="Can exert to quickly remove a condition",
         ),
-        MagicItem(
+        create_apparel(
             name="Quickcleanse Belt, Greater",
             rank=7,
             material_type="Belt",
@@ -2268,7 +2282,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Sprinting Boots",
             rank=5,
             material_type="Boots",
@@ -2282,7 +2296,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Cloak of Astral Ease",
             rank=4,
             material_type="Cloak",
@@ -2292,7 +2306,7 @@ def generate_apparel():
             """,
             short_description="Doubles distance you can teleport",
         ),
-        MagicItem(
+        create_apparel(
             name="Cloak of Astral Ease, Greater",
             rank=6,
             material_type="Cloak",
@@ -2305,7 +2319,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Boots of Desperate Flight",
             rank=2,
             material_type="Boots",
@@ -2315,7 +2329,7 @@ def generate_apparel():
             """,
             short_description="Can move when you recover",
         ),
-        MagicItem(
+        create_apparel(
             name="Boots of Desperate Flight, Greater",
             rank=4,
             material_type="Boots",
@@ -2328,7 +2342,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ring of Mastery",
             rank=2,
             material_type="Ring",
@@ -2339,7 +2353,7 @@ def generate_apparel():
             """,
             short_description="Grants many small bonuses",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of Mastery, Greater",
             rank=4,
             material_type="Ring",
@@ -2350,7 +2364,7 @@ def generate_apparel():
             """,
             short_description="Grants many bonuses",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of Mastery, Supreme",
             rank=6,
             material_type="Ring",
@@ -2364,7 +2378,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ring of Protection",
             rank=2,
             tags=[],
@@ -2374,7 +2388,7 @@ def generate_apparel():
             """,
             short_description="Grants +4 damage resistance",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of Protection, Greater",
             rank=4,
             tags=[],
@@ -2384,7 +2398,7 @@ def generate_apparel():
             """,
             short_description="Grants +8 damage resistance",
         ),
-        MagicItem(
+        create_apparel(
             name="Ring of Protection, Supreme",
             rank=6,
             tags=[],
@@ -2397,7 +2411,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Anchoring Belt",
             rank=2,
             material_type="Belt",
@@ -2408,7 +2422,7 @@ def generate_apparel():
             """,
             short_description="Protects you from most forced movement attacks",
         ),
-        MagicItem(
+        create_apparel(
             name="Anchoring Belt, Greater",
             rank=4,
             material_type="Belt",
@@ -2418,7 +2432,7 @@ def generate_apparel():
             """,
             short_description="Protects you from most forced movement and teleportation attacks",
         ),
-        MagicItem(
+        create_apparel(
             name="Anchoring Belt, Supreme",
             rank=6,
             material_type="Belt",
@@ -2431,7 +2445,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Gauntlet of Blades",
             rank=1,
             material_type="Gauntlet",
@@ -2443,7 +2457,7 @@ def generate_apparel():
             """,
             short_description="Can summon daggers",
         ),
-        MagicItem(
+        create_apparel(
             name="Gauntlet of Blades, Greater",
             rank=4,
             material_type="Gauntlet",
@@ -2454,7 +2468,7 @@ def generate_apparel():
             """,
             short_description="Can summon daggers with special materials",
         ),
-        MagicItem(
+        create_apparel(
             name="Gauntlet of Blades, Supreme",
             rank=7,
             material_type="Gauntlet",
@@ -2468,7 +2482,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Ghoultouch Gauntlet",
             rank=5,
             material_type="Gauntlet",
@@ -2486,7 +2500,7 @@ def generate_apparel():
     # Class ability buffs - all amulets!
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Undead Turning",
             rank=3,
             material_type="Amulet",
@@ -2496,7 +2510,7 @@ def generate_apparel():
             """,
             short_description="Increases area of \\ability<turn undead>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Undead Turning, Greater",
             rank=5,
             material_type="Amulet",
@@ -2506,7 +2520,7 @@ def generate_apparel():
             """,
             short_description="Greatly increases area of \\ability<turn undead>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Undead Turning, Supreme",
             rank=7,
             material_type="Amulet",
@@ -2519,7 +2533,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Rage",
             rank=4,
             material_type="Amulet",
@@ -2529,7 +2543,7 @@ def generate_apparel():
             """,
             short_description="Reduces defense penalties from \\textit<rage>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Rage, Greater",
             rank=7,
             material_type="Amulet",
@@ -2542,7 +2556,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Divine Healing",
             rank=2,
             material_type="Amulet",
@@ -2552,7 +2566,7 @@ def generate_apparel():
             """,
             short_description="Grants +4 power with \\ability<divine aid> and \\ability<lay on hands>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Divine Healing, Greater",
             rank=4,
             material_type="Amulet",
@@ -2562,7 +2576,7 @@ def generate_apparel():
             """,
             short_description="Grants +8 power with \\ability<divine aid> and \\ability<lay on hands>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Divine Healing, Supreme",
             rank=6,
             material_type="Amulet",
@@ -2575,7 +2589,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Divine Vitality",
             rank=4,
             material_type="Amulet",
@@ -2588,7 +2602,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Revivification",
             rank=7,
             material_type="Amulet",
@@ -2601,7 +2615,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Quickshift Amulet",
             rank=5,
             material_type="Amulet",
@@ -2614,7 +2628,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Shared Discipline",
             rank=4,
             material_type="Amulet",
@@ -2625,7 +2639,7 @@ def generate_apparel():
             """,
             short_description="Using \\abilitytag<discipline> also helps an adjacent ally",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Shared Discipline, Greater",
             rank=6,
             material_type="Amulet",
@@ -2638,7 +2652,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Guardian's Amulet",
             rank=3,
             material_type="Amulet",
@@ -2648,7 +2662,7 @@ def generate_apparel():
             """,
             short_description="Grants +1 accuracy with \\ability<guarding strike>",
         ),
-        MagicItem(
+        create_apparel(
             name="Guardian's Amulet, Greater",
             rank=6,
             material_type="Amulet",
@@ -2661,7 +2675,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Protector's Amulet",
             rank=2,
             material_type="Amulet",
@@ -2671,7 +2685,7 @@ def generate_apparel():
             """,
             short_description="Increases range of the \\ability<protect> ability",
         ),
-        MagicItem(
+        create_apparel(
             name="Protector's Amulet, Greater",
             rank=5,
             material_type="Amulet",
@@ -2684,7 +2698,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Sturdy Companionship",
             rank=2,
             material_type="Amulet",
@@ -2694,7 +2708,7 @@ def generate_apparel():
             """,
             short_description="Grants +8 damage resistance to animal allies",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Sturdy Companionship, Greater",
             rank=4,
             material_type="Amulet",
@@ -2704,7 +2718,7 @@ def generate_apparel():
             """,
             short_description="Grants +16 damage resistance to animal allies",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Sturdy Companionship, Supreme",
             rank=6,
             material_type="Amulet",
@@ -2717,7 +2731,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Equality and Perfection",
             rank=5,
             material_type="Amulet",
@@ -2730,7 +2744,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Belt of Epic Constitution",
             rank=7,
             material_type="Belt",
@@ -2743,7 +2757,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Cloak of Epic Dexterity",
             rank=7,
             material_type="Cloak",
@@ -2756,7 +2770,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Bracers of Epic Strength",
             rank=7,
             material_type="Bracers",
@@ -2769,7 +2783,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Glasses of Epic Perception",
             rank=7,
             material_type="Glasses",
@@ -2782,7 +2796,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Circlet of Epic Willpower",
             rank=7,
             material_type="Circlet",
@@ -2795,7 +2809,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of the Avenger",
             rank=3,
             material_type="Amulet",
@@ -2805,7 +2819,7 @@ def generate_apparel():
             """,
             short_description="Grants +1 accuracy with \\ability<smite> when avenging allies",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of the Avenger, Greater",
             rank=6,
             material_type="Amulet",
@@ -2818,7 +2832,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Swarmhunter Amulet",
             rank=4,
             material_type="Amulet",
@@ -2828,7 +2842,7 @@ def generate_apparel():
             """,
             short_description="Adds an additional target with \\ability<quarry>",
         ),
-        MagicItem(
+        create_apparel(
             name="Swarmhunter Amulet, Greater",
             rank=6,
             material_type="Amulet",
@@ -2841,7 +2855,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Distant Stealth",
             rank=2,
             material_type="Amulet",
@@ -2851,7 +2865,7 @@ def generate_apparel():
             """,
             short_description="Increases range with \\ability<sneak attack>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Distant Stealth, Greater",
             rank=4,
             material_type="Amulet",
@@ -2861,7 +2875,7 @@ def generate_apparel():
             """,
             short_description="Greatly increases range with \\ability<sneak attack>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Distant Stealth, Supreme",
             rank=6,
             material_type="Amulet",
@@ -2874,7 +2888,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Distant Blood",
             rank=2,
             material_type="Amulet",
@@ -2884,7 +2898,7 @@ def generate_apparel():
             """,
             short_description="Increases range with shark \\ability<totem animal>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Distant Blood, Greater",
             rank=4,
             material_type="Amulet",
@@ -2894,7 +2908,7 @@ def generate_apparel():
             """,
             short_description="Greatly increases range with shark \\ability<totem animal>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Distant Blood, Supreme",
             rank=6,
             material_type="Amulet",
@@ -2907,7 +2921,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Darkstalker's Amulet",
             rank=4,
             material_type="Amulet",
@@ -2920,7 +2934,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Exemplar's Amulet",
             rank=2,
             material_type="Amulet",
@@ -2930,7 +2944,7 @@ def generate_apparel():
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 1",
         ),
-        MagicItem(
+        create_apparel(
             name="Exemplar's Amulet, Greater",
             rank=4,
             material_type="Amulet",
@@ -2940,7 +2954,7 @@ def generate_apparel():
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 2",
         ),
-        MagicItem(
+        create_apparel(
             name="Exemplar's Amulet, Supreme",
             rank=6,
             material_type="Amulet",
@@ -2953,7 +2967,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Spellfeeding Amulet",
             rank=2,
             material_type="Amulet",
@@ -2964,7 +2978,7 @@ def generate_apparel():
             """,
             short_description="Heals 1d8+4 when you use \\ability<spell absorption>",
         ),
-        MagicItem(
+        create_apparel(
             name="Spellfeeding Amulet, Greater",
             rank=4,
             material_type="Amulet",
@@ -2975,7 +2989,7 @@ def generate_apparel():
             """,
             short_description="Heals 2d8+7 when you use \\ability<spell absorption>",
         ),
-        MagicItem(
+        create_apparel(
             name="Spellfeeding Amulet, Supreme",
             rank=6,
             material_type="Amulet",
@@ -2989,7 +3003,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Wild Control",
             rank=2,
             material_type="Amulet",
@@ -2999,7 +3013,7 @@ def generate_apparel():
             """,
             short_description="Mitigates total failure with \\ability<wild magic>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Wild Control, Greater",
             rank=5,
             material_type="Amulet",
@@ -3012,7 +3026,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Abyssal Reach",
             rank=3,
             material_type="Amulet",
@@ -3022,7 +3036,7 @@ def generate_apparel():
             """,
             short_description="Increases range with \\ability<abyssal blast>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Abyssal Rebuke, Greater",
             rank=6,
             material_type="Amulet",
@@ -3035,7 +3049,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of the Frozen Abyss",
             rank=1,
             material_type="Amulet",
@@ -3045,7 +3059,7 @@ def generate_apparel():
             """,
             short_description="Changes \\ability<abyssal blast> to deal cold damage",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of the Frozen Abyss, Greater",
             rank=4,
             material_type="Amulet",
@@ -3059,7 +3073,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Possession",
             rank=4,
             material_type="Amulet",
@@ -3069,7 +3083,7 @@ def generate_apparel():
             """,
             short_description="Reduces defense penalties from \\ability<possession>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Possession, Greater",
             rank=7,
             material_type="Amulet",
@@ -3082,7 +3096,7 @@ def generate_apparel():
     ]
 
     apparel += [
-        MagicItem(
+        create_apparel(
             name="Amulet of Blessed Oration",
             rank=2,
             material_type="Amulet",
@@ -3092,7 +3106,7 @@ def generate_apparel():
             """,
             short_description="Doubles area of \\ability<denounce the heathens>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Blessed Oration, Greater",
             rank=4,
             material_type="Amulet",
@@ -3102,7 +3116,7 @@ def generate_apparel():
             """,
             short_description="Triples area of \\ability<denounce the heathens> and \\ability<bless the worthy>",
         ),
-        MagicItem(
+        create_apparel(
             name="Amulet of Blessed Oration, Supreme",
             rank=6,
             material_type="Amulet",
