@@ -770,9 +770,24 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 \newpage
 \skill{Stealth}{Dex}
         The Stealth skill represents your ability to escape detection while moving or taking large-scale actions.
-        All Stealth checks are made as part of movement or other actions, so they require no special action to perform. If you have been noticed by a creature, you automatically fail all Stealth checks against that creature until you can escape its notice, such as by disappearing out of sight.
+        All Stealth checks are made as part of movement or other actions, so they require no special action to perform.
+        If you have been noticed by a creature, you automatically fail all Stealth checks against that creature until you can escape its notice, such as by disappearing out of sight.
 
-        \parhead{Size and Stealth}\label{Size and Stealth} A creature smaller than Medium size gains a \plus5 bonus to the Stealth skill for each size category by which it is smaller than Medium.
+    \subsection{Common Stealth Tasks}
+        \parhead{Avoid Notice} You can make an opposed Stealth vs. Awareness check to prevent creatures from noticing you.
+        Success means that the observer's awareness of you, such as unaware or partially unaware, does not change.
+        Failure means that the observer can observe you using any senses they detected you with.
+        Generally, success with sight-based senses causes creatures to become fully aware of you, while success with other senses causes creatures to be \partiallyunaware of you.
+        You must repeat this check whenever you take an action that you want to conceal, such as moving, or your circumstances otherwise meaningfully change in a way that would make you easier to observe.
+        \parhead{Hide} You can make an opposed Stealth vs. Awareness check to make creatures that are aware of you lose track of your position.
+        In order to use this ability, you must move in a way that makes observers lose sight of you for at least ten feet of your motion.
+        In addition, you must have \glossterm{cover} or \glossterm{concealment} for the entire duration of your movement.
+        This can be achieved by moving through total darkness, moving out of \glossterm{line of sight}, teleporting at least ten feet, or similar activities.
+        Success against an observer means that they become \partiallyunaware of you instead of fully aware of you.
+
+    \subsection{Common Stealth Modifiers}\label{Common Stealth Modifiers}
+
+        A creature smaller than Medium size gains a \plus5 bonus to the Stealth skill for each size category by which it is smaller than Medium.
         Similarly, a creature larger than Medium size takes a \minus5 bonus to the Stealth skill for each size category by which it is smaller than Medium.
         These effects are summarized below.
             \begin{itemize}
@@ -787,24 +802,15 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
                 \item Colossal: \minus20
             \end{itemize}
 
-    \subsection{Avoid Notice}
-        As part of any movement or \glossterm{standard action}, or as a \glossterm{move action} if you hide in place, you can make a Stealth check to prevent creatures from becoming aware of you as a result of that action.
-        Your Stealth check is opposed by the Awareness checks of any creatures who are capable of observing you and who are not already aware of you.
-        Success means that the observer's awareness of you does not change.
-        If it was originally \unaware of you, it stays unaware of you, and if it was originally \partiallyunaware of you, it stays partially unaware of you.
-        This effect lasts until you take an action or your circumstances otherwise meaningfully change in a way that would make you easier to observe.
-        Failure means that the observer can observe you using any senses they detected you with.
-        Generally, success with sight-based senses causes creatures to become aware of you, while success with other senses causes creatures to be \partiallyunaware of you.
-
-        If you do not have \glossterm{cover} or \glossterm{concealment} from a creature (see \pcref{Cover} and \pcref{Concealment}), that creature gains a \plus20 bonus to Awareness checks to observe you.
+        Stealth checks generally require \glossterm{cover} or \glossterm{concealment} (see \pcref{Cover} and \pcref{Concealment}).
         For this purpose, do not consider any cover that would be hidden as a result of a successful check, such as an object you hold in front of you.
-        While you are invisible, you are treated as having \glossterm{concealment} for this purpose.
-        If a creature can see you regardless of cover or concealment with an ability like \trait{lifesight} or \trait{tremorsight}, you are not considered to have cover or concealment from it, so it gains that \plus20 bonus.
+        You take a \minus20 penalty to Stealth checks against creatures who can observe you without any interfering cover or concealment.
+        This includes creatures who can ignore concealment with abilities like \trait{blindsight}.
 
-        If a creature would automatically know your location with an ability like \trait{lifesense} or \trait{blindsense}, it gains a \plus10 bonus to Awareness checks to observe you.
-        This does not stack with the Awareness bonus for not having cover or concealment.
+        You take a \minus10 penalty to Stealth checks against creatures who can know your location with a special ability like \trait{blindsense}.
+        This does not stack with the penalty for not having cover or concealment.
 
-        Larger, more obvious actions are more difficult to hide.
+        Moving stealthily is more difficult than hiding in place.
         If you use a movement speed to move, you take a penalty to your Stealth check to conceal that movement.
         This is a \minus5 penalty if you move at no more than half your speed.
         If you use the \textit{sprint} ability or move faster than half your speed, this penalty increases to \minus10.
@@ -812,23 +818,6 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         Making a \glossterm{strike}, using \glossterm{somatic components}, and taking other similar large-scale actions imposes a \minus10 penalty to the Stealth check.
         If you make a strike with a medium or heavy weapon, this penalty increases to \minus20.
         This is separate from and stacks with the \plus20 bonus that a creature gets to notice you if you hit it with a \glossterm{strike} (see \pcref{Notice Creatures and Events}).
-
-    \subsection{Blend In}
-        You can make a Stealth check to blend in with a crowd. Your Stealth check is opposed by the Awareness checks of anyone looking for you specifically. Success means you remain indistiguishable from any other random member of the crowd. Failure means the person looking for you identifed you.
-
-        If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Social Insight checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in church or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
-
-    \subsection{Hide [Hidden]}\label{Hide}
-        As part of any movement or teleportation, you can make a Stealth check to make creatures that are aware of you lose track of your position.
-        Your Stealth check is opposed by the Awareness checks of any creatures who were aware of you before your movement.
-        In order to use this ability, you must move in a way that makes observers lose sight of you for at least ten feet of your motion.
-        This can be achieved by moving through total darkness, moving out of \glossterm{line of sight}, teleporting at least ten feet, or similar activities.
-        Note that most teleportation effects make noise, which means that creatures can detect you by hearing that noise instead of beating your Stealth check.
-        In addition, you must have \glossterm{cover} or \glossterm{concealment} for the entire duration of your movement.
-        Success means that the observer becomes \partiallyunaware of you instead of fully aware of you.
-
-        If you do not have \glossterm{cover} or \glossterm{concealment} from a creature (see \pcref{Cover} and \pcref{Concealment}), that creature gains gain a \plus20 bonus to sight-based Awareness checks to observe you.
-        For this purpose, do not consider any cover that would be hidden as a result of a successful check, such as an object you hold in front of you.
 
 \newpage
 \skill{Survival}{Per}
