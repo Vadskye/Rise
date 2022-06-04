@@ -1,8 +1,8 @@
 use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility};
 use crate::core_mechanics::attacks::attack_effect::{AttackTriggeredEffect, PoisonEffect};
-use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
+use crate::core_mechanics::attacks::{Maneuver, PureDamage, StandardAttack};
 use crate::core_mechanics::{
-    DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
+    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
     SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
@@ -802,6 +802,38 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             .monster(),
         ],
     }));
+
+    monsters.push(MonsterEntry::Monster(
+        FullPlaneforgedDefinition {
+            alignment: "Always chaotic neutral".to_string(),
+            attributes: vec![-2, 4, 0, 0, 2, -2],
+            challenge_rating: ChallengeRating::One,
+            description: None,
+            knowledge: None,
+            level: 5,
+            modifiers: Some(vec![Modifier::Attack(
+                PureDamage {
+                    damage_types: vec![DamageType::Electricity],
+                    defense: Defense::Fortitude,
+                    is_magical: true,
+                    is_maneuver: false,
+                    name: "Static Shock".to_string(),
+                    range: None,
+                    rank: 2,
+                }
+                .attack(),
+            )]),
+            movement_modes: None,
+            name: "Spark Elemental".to_string(),
+            senses: None,
+            size: Size::Small,
+            trained_skills: None,
+            weapons: vec![StandardWeapon::Slam
+                .weapon()
+                .except(|w| w.damage_types.push(DamageType::Electricity))],
+        }
+        .monster(),
+    ));
 }
 
 fn add_formians(monsters: &mut Vec<MonsterEntry>) {
