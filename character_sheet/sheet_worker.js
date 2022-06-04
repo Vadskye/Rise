@@ -739,7 +739,6 @@ function handleArmorDefense() {
       numeric: [
         "level",
         "dexterity",
-        "constitution",
         "body_armor_defense",
         "shield_defense",
         "challenge_rating",
@@ -750,9 +749,6 @@ function handleArmorDefense() {
     (v) => {
       // calculate attributeModifier
       let attributeModifier = 0;
-      if (v.challenge_rating > 0) {
-        attributeModifier += Math.floor(v.constitution / 2);
-      }
       const worstUsageClass =
         v.body_armor_usage_class === "heavy" || v.shield_usage_class === "heavy"
           ? "heavy"
@@ -764,6 +760,9 @@ function handleArmorDefense() {
         attributeModifier += Math.floor(v.dexterity / 2);
       } else if (worstUsageClass === "light") {
         attributeModifier += v.dexterity;
+      }
+      if (v.challenge_rating > 0) {
+        attributeModifier = Math.max(attributeModifier, Math.floor(v.constitution / 2));
       }
 
       const levelModifier = Math.floor(v.level / 2);
