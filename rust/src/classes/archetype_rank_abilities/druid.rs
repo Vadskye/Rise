@@ -639,7 +639,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                Your \textit<shift body> ability loses the \glossterm{Attune} (self) tag.
+                Your \textit<shift body> ability loses the \abilitytag{Attune} (self) tag.
                 Instead, it lasts until you use it again.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
@@ -789,8 +789,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your \textit{natural servant} gains an \glossterm{attunement point}.
                 This attunement point is shared among any creatures you summon with your \textit{natural servant} ability, and is only recovered when you take a \glossterm{long rest}.
-                In addition, you can cast \glossterm{Attune} (self) spells on your \textit{natural servant} if it is within \shortrange of you.
-                When you do, the natural servant attunes to the spell intead of you, as if the spell was an \glossterm{Attune} (target) spell.
+                In addition, you can cast \abilitytag{Attune} (self) spells on your \textit{natural servant} if it is within \shortrange of you.
+                When you do, the natural servant attunes to the spell intead of you, as if the spell was an \abilitytag{Attune} (target) spell.
             ",
             modifiers: None,
         },
