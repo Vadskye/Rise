@@ -77,7 +77,7 @@ export const channelDivinity: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -98,7 +98,7 @@ export const channelDivinity: MysticSphere = {
           In addition, the bonus to power increases to +16.
         `,
       },
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -281,7 +281,7 @@ export const channelDivinity: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -305,7 +305,7 @@ export const channelDivinity: MysticSphere = {
           However, if you do, the movement speed penalty increases to -15 feet.
         `,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -324,7 +324,7 @@ export const channelDivinity: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -338,7 +338,7 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 7,
       tags: ["Emotion"],
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -349,7 +349,7 @@ export const channelDivinity: MysticSphere = {
       `,
       rank: 2,
       scaling: { 4: `The bonus increases to +2.`, 6: `The bonus increases to +3.` },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -364,7 +364,7 @@ export const channelDivinity: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -436,7 +436,7 @@ export const channelDivinity: MysticSphere = {
         This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
       `,
       rank: 3,
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Permanent Consecration",

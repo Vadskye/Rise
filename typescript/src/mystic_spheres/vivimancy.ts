@@ -291,7 +291,7 @@ export const vivimancy: MysticSphere = {
         5: `You can ignore the vital wound effect of two of your \\glossterm{vital wounds} instead of only one.`,
         7: `Vital wounds you ignore with this spell do not cause you to suffer any penalty to future vital rolls.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -389,7 +389,7 @@ export const vivimancy: MysticSphere = {
         5: "The bonus increases to +16.",
         7: "The bonus increases to +32.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -419,7 +419,7 @@ export const vivimancy: MysticSphere = {
         4: `The additional healing increases to 6.`,
         6: `The additional healing increases to 12.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -554,7 +554,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -568,7 +568,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -582,7 +582,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -598,7 +598,7 @@ export const vivimancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -613,7 +613,7 @@ export const vivimancy: MysticSphere = {
         5: `The range increases to 240 feet.`,
         7: `The range increases to 480 feet.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Lifesight",
@@ -626,7 +626,7 @@ export const vivimancy: MysticSphere = {
         5: `The range increases to 60 feet.`,
         7: `The range increases to 120 feet.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -879,7 +879,7 @@ export const vivimancy: MysticSphere = {
       `,
       materialCost: true,
       rank: 3,
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
   ],
 };

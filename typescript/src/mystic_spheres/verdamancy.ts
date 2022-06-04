@@ -204,7 +204,7 @@ export const verdamancy: MysticSphere = {
         6: `The bonus to reach increases to 10 feet.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -325,7 +325,7 @@ export const verdamancy: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -503,7 +503,7 @@ export const verdamancy: MysticSphere = {
         5: `The power bonus increases to +8.`,
         7: `The power bonus increases to +16.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -519,7 +519,7 @@ export const verdamancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -541,7 +541,7 @@ export const verdamancy: MysticSphere = {
         7: `The area increases to a \\hugearea radius.`,
       },
       tags: ['Manifestation'],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -561,7 +561,7 @@ export const verdamancy: MysticSphere = {
       rank: 4,
       scaling: { 6: `The area increases to a \\medarea radius.` },
       tags: ['Manifestation'],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -580,7 +580,7 @@ export const verdamancy: MysticSphere = {
         5: `The condition cannot be removed with the Medicine skill.`,
         7: `Each creature affected by the condition also takes 2d8 piecing damage at the end of each round.`,
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -614,7 +614,7 @@ export const verdamancy: MysticSphere = {
         7: `The damage resistance bonus increases to +16.`,
       },
       tags: ["Manifestation"],
-      type: "Attune (self)",
+      type: "Attune",
     },
   ],
   rituals: [

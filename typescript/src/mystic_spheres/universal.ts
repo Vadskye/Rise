@@ -200,7 +200,7 @@ export const universal: MysticSphere = {
         `,
       },
       tags: ['Trap'],
-      type: "Attune (ritual)"
+      type: "Attune"
     },
     {
       name: "Enduring Mystic Trap",

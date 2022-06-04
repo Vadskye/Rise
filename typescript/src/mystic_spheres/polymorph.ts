@@ -58,7 +58,7 @@ export const polymorph: MysticSphere = {
         4: `The power bonus increases to +4.`,
         6: `The power bonus increases to +8.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
   ],
   spells: [
@@ -80,7 +80,7 @@ export const polymorph: MysticSphere = {
         6: `You can also choose one of the following special materials: pure adamantine, pure deepforged, pure diamondsteel, pure elvenweave, pure mithral, or pure starmetal.`,
       },
       // TODO: weird that this is one of the few ways you can attune on behalf of an ally
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -213,7 +213,7 @@ export const polymorph: MysticSphere = {
         4: `You gain a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, offsetting the penalty from reducing your size.`,
         6: `You can decrease your size category by up to two size categories.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -245,7 +245,7 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -285,7 +285,7 @@ export const polymorph: MysticSphere = {
           However, if you do, the movement speed penalty increases to -15 feet.
         `,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -320,7 +320,7 @@ export const polymorph: MysticSphere = {
         4: `The bonus increases to +6.`,
         6: `The bonus increases to +8.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -376,7 +376,7 @@ export const polymorph: MysticSphere = {
         5: "The defense bonus against critical hits from strikes increases to +8.",
         7: "You are immune to critical hits from strikes.",
       },
-      type: 'Attune (deep, self)',
+      type: 'Attune (deep)',
     },
 
     {
@@ -394,7 +394,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       scaling: 'damage',
-      type: 'Attune (deep, self)',
+      type: 'Attune (deep)',
     },
 
     {
@@ -412,7 +412,7 @@ export const polymorph: MysticSphere = {
         Your body grows large spikes that impale creatures who attack you.
       `,
       rank: 7,
-      type: 'Attune (deep, self)',
+      type: 'Attune (deep)',
     },
 
     {
@@ -430,7 +430,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 6,
       scaling: 'damage',
-      type: 'Attune (deep, self)',
+      type: 'Attune (deep)',
     },
 
     {
@@ -469,7 +469,7 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -566,7 +566,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       scaling: { special: 'The healing increases by +1d for each rank beyond 1.' },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -579,7 +579,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -591,7 +591,7 @@ export const polymorph: MysticSphere = {
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 7,
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -604,7 +604,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       scaling: { 4: `The bonus increases to +3.`, 6: `The bonus increases to +4.` },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -633,7 +633,7 @@ export const polymorph: MysticSphere = {
         5: `You also gain a +2 \\glossterm{magic bonus} to Awareness.`,
         7: `The bonus increases to +3.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -736,7 +736,7 @@ export const polymorph: MysticSphere = {
         4: `The radius increases to 120 feet.`,
         6: `The radius increases to 240 feet.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -750,7 +750,7 @@ export const polymorph: MysticSphere = {
       scaling: {
         6: `The radius of the darkvision increases by 60 feet, and the radius of the blindsense increases by 30 feet.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -765,7 +765,7 @@ export const polymorph: MysticSphere = {
         4: `You gain a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot magic bonus if you already have a swim speed.`,
         6: `You gain a +10 foot \\glossterm{magic bonus} to your swim speed, or a +15 foot magic bonus if you already have a swim speed.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -780,7 +780,7 @@ export const polymorph: MysticSphere = {
         4: `You gain a +5 foot \\glossterm{magic bonus} to your climb speed, or a +10 foot bonus if you already have a climb speed.`,
         6: `You gain a +10 foot \\glossterm{magic bonus} to your climb speed, or a +15 foot bonus if you already have a climb speed.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -795,7 +795,7 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +15 feet.`,
         7: `The bonus increases to +20 feet.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -847,7 +847,7 @@ export const polymorph: MysticSphere = {
       },
       rank: 4,
       scaling: 'damage',
-      type: 'Attune (self)',
+      type: 'Attune',
     },
 
     {
@@ -876,7 +876,7 @@ export const polymorph: MysticSphere = {
         5: `The power bonus increases to +8.`,
         7: `The power bonus increases to +16.`,
       },
-      type: 'Attune (self)',
+      type: 'Attune',
     },
   ],
   rituals: [
@@ -891,7 +891,7 @@ export const polymorph: MysticSphere = {
         When this effect ends, the handholds disappear.
       `,
       rank: 1,
-      type: 'Attune (ritual)',
+      type: 'Attune',
     },
 
     {
@@ -950,7 +950,7 @@ export const polymorph: MysticSphere = {
         When this effect ends, the target returns to its original shape.
       `,
       rank: 1,
-      type: 'Attune (ritual)',
+      type: 'Attune',
     },
 
     {
@@ -962,7 +962,7 @@ export const polymorph: MysticSphere = {
         name: 'morph weapon',
       },
       rank: 3,
-      type: 'Attune (ritual)',
+      type: 'Attune',
     },
 
     {
@@ -979,7 +979,7 @@ export const polymorph: MysticSphere = {
         Otherwise, it lasts for one year.
       `,
       rank: 1,
-      type: 'Attune (ritual)',
+      type: 'Attune',
     },
 
     {
@@ -1023,7 +1023,7 @@ export const polymorph: MysticSphere = {
         name: 'fortify',
       },
       rank: 4,
-      type: 'Attune (ritual)',
+      type: 'Attune',
     },
 
     {
@@ -1037,7 +1037,7 @@ export const polymorph: MysticSphere = {
         name: 'fortify',
       },
       rank: 7,
-      type: 'Attune (ritual)',
+      type: 'Attune',
     },
 
     {
@@ -1093,7 +1093,7 @@ export const polymorph: MysticSphere = {
         The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
       `,
       rank: 3,
-      type: 'Attune (ritual)',
+      type: 'Attune',
     },
 
     {
@@ -1105,7 +1105,7 @@ export const polymorph: MysticSphere = {
         The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
       `,
       rank: 3,
-      type: 'Attune (ritual)',
+      type: 'Attune',
     },
     {
       name: "Mystic Lock",
@@ -1121,7 +1121,7 @@ export const polymorph: MysticSphere = {
         When the Fine object touches the sealed object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
       `,
       rank: 2,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -1136,7 +1136,7 @@ export const polymorph: MysticSphere = {
         name: "mystic lock",
       },
       rank: 4,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
   ],
 };

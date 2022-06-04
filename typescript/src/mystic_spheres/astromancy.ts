@@ -381,7 +381,7 @@ export const astromancy: MysticSphere = {
       scaling: {
         7: "You can choose the direction of the teleportation.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Dimension Walk",
@@ -399,7 +399,7 @@ export const astromancy: MysticSphere = {
       scaling: {
         6: "You can teleport in this way any number of times each round, allowing you to break up your teleportation between movements.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Flicker",
@@ -419,7 +419,7 @@ export const astromancy: MysticSphere = {
         4: "When you cast this spell, you can choose to increase the failure chance to 30\\%.",
         6: "When you cast this spell, you can choose to increase the failure chance to 40\\%.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Controlled Flicker",
@@ -439,7 +439,7 @@ export const astromancy: MysticSphere = {
       scaling: {
         6: "When you cast this spell, you can choose to increase the failure chance to 30\\%.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Astral Instability",
@@ -462,7 +462,7 @@ export const astromancy: MysticSphere = {
         `,
         7: "The distance you can reappear at increases to \\rngmed range.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Hostile Transposition",
@@ -536,7 +536,7 @@ export const astromancy: MysticSphere = {
         5: "Your strikes can pass through any number of physical obstacles with a combined thickness of two feet or less.",
         7: "Your strikes can pass through any number of physical obstacles with a combined thickness of five feet or less.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Mass Phasing Blade",
@@ -568,7 +568,7 @@ export const astromancy: MysticSphere = {
       scaling: {
         6: "Your spells can pass through any number of physical obstacles with a combined thickness of two feet or less.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Phasestep",
@@ -589,7 +589,7 @@ export const astromancy: MysticSphere = {
         5: "You also ignore all sources of \\glossterm{difficult terrain}.",
         7: "You can also move through inanimate objects that are no more than six inches thick.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Mass Phasestep",
@@ -658,7 +658,7 @@ export const astromancy: MysticSphere = {
         4: "The distance increases to 30 feet.",
         6: "The distance increases to 60 feet.",
       },
-      type: "Attune (self)",
+      type: "Attune",
     },
     {
       name: "Twinned Portals",

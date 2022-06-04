@@ -477,7 +477,7 @@ export const bless: MysticSphere = {
         Otherwise, it lasts for one year.
         `,
       rank: 1,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -519,7 +519,7 @@ export const bless: MysticSphere = {
         name: "blessing of fortification",
       },
       rank: 4,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -533,7 +533,7 @@ export const bless: MysticSphere = {
         name: "blessing of fortification",
       },
       rank: 7,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -545,7 +545,7 @@ export const bless: MysticSphere = {
         Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck \\glossterm{undead} or an evil \\glossterm{planeforged}.
         `,
       rank: 1,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -571,7 +571,7 @@ export const bless: MysticSphere = {
         Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good \\glossterm{planeforged}.
         `,
       rank: 1,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {

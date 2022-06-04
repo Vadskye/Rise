@@ -1,9 +1,7 @@
 valid_tags = set(
     [
-        "Attune (ritual)",
-        "Attune (ritual; see text)",
-        "Attune (deep, self)",
-        "Attune (self)",
+        "Attune",
+        "Attune (deep)",
         "Attune (target)",
         "Auditory",
         "Compulsion",
@@ -55,5 +53,5 @@ def add_attune_tag(tags):
             has_attune = True
             break
     if not has_attune:
-        tags += ["Attune (self)"]
+        tags += ["Attune"]
     return tags

@@ -288,7 +288,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       tags: ['Manifestation'],
-      type: "Attune (self)",
+      type: "Attune",
     },
 
     {
@@ -401,7 +401,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -415,7 +415,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Attune (deep, self)",
+      type: "Attune (deep)",
     },
 
     {
@@ -768,7 +768,7 @@ export const fabrication: MysticSphere = {
       `,
       rank: 3,
       tags: ["Manifestation"],
-      type: "Attune (ritual)",
+      type: "Attune",
     },
 
     {
@@ -853,7 +853,7 @@ export const fabrication: MysticSphere = {
       `,
       rank: 3,
       tags: ["Manifestation"],
-      type: "Attune (ritual)",
+      type: "Attune",
     },
     {
       name: "Tiny Hut",
@@ -870,7 +870,7 @@ export const fabrication: MysticSphere = {
       `,
       // narrative: '',
       rank: 2,
-      type: "Attune (ritual)",
+      type: "Attune",
     },
   ],
 };
