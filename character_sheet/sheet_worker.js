@@ -608,7 +608,7 @@ function calcDefenseCrScaling(level, challengeRating) {
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    levelScaling += Math.max(0, Math.floor((level + 6) / 9));
+    levelScaling += level >= 15 ? 2 : level >= 3 ? 1 : 0;
   }
   if (challengeRating === 0.5) {
     levelScaling -= 1;
@@ -678,25 +678,19 @@ function handleAccuracy() {
   onGet(
     {
       miscName: "accuracy",
-      numeric: ["challenge_rating", "level", "perception", "fatigue_penalty"],
+      numeric: ["level", "perception", "fatigue_penalty"],
     },
     (v) => {
-      const crLevelScaling = v.challenge_rating && v.level >= 19 ? 1 : 0;
       const levelModifier = Math.floor(v.level / 2);
       const perceptionModifier = Math.floor(v.perception / 2);
       const accuracy =
-        crLevelScaling +
-        v.misc +
-        levelModifier +
-        perceptionModifier -
-        v.fatigue_penalty;
+        v.misc + levelModifier + perceptionModifier - v.fatigue_penalty;
       setAttrs({
         accuracy,
         accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: "level", value: levelModifier },
           { name: "Per", value: perceptionModifier },
           { name: "fatigue", value: -v.fatigue_penalty },
-          { name: "CR", value: crLevelScaling },
         ]),
       });
     }
@@ -1439,7 +1433,7 @@ function handleDebuffs() {
         namedModifierMap.addNamedModifier("reflex", "helpless", -10);
       }
 
-      const attrs = {debuff_headers: debuffHeaders.trim()};
+      const attrs = { debuff_headers: debuffHeaders.trim() };
       for (const statistic of [
         "accuracy",
         "armor_defense",

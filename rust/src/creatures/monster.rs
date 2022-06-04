@@ -84,12 +84,10 @@ impl Monster {
             }
         }
 
-        if level >= 19 {
-            creature.add_modifier(Modifier::Accuracy(1), Some("challenge rating"), None);
-        }
+        let defense_modifier = if level >= 15 { 2 } else if level >= 3 { 1 } else { 0 };
         for defense in Defense::all() {
             creature.add_modifier(
-                Modifier::Defense(defense, (level + 6) / 9),
+                Modifier::Defense(defense, defense_modifier),
                 Some("challenge rating"),
                 None,
             );
