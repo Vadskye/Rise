@@ -105,35 +105,35 @@ class MagicItem(object):
         return f"{self.name} & {self.rank} ({self.price()} gp) {type_text} & {self.short_description} & \\pageref<item:{self.name}> \\\\"
 
     def tag_text(self):
-        return f"\\parhead*<Tags> {self.latex_tags()}" if self.tags else ""
+        return f"{self.latex_tags()}" if self.tags else ""
 
     def latex(self):
-        type_text = (
-            ""
-            if self.material_type is None
-            else f"\\textbf<Type>: {self.material_type}"
-        )
         materials_text = (
             ""
             if self.materials == "none"
-            else f"\\textbf<Materials>: {', '.join(sorted(self.materials)).capitalize()}"
+            else ', '.join(sorted(self.materials))
+        )
+        type_text = (
+            f"({materials_text})".capitalize()
+            if self.material_type is None
+            else f"{self.material_type} ({materials_text})"
         )
         twocol_text = (
             f"\\spelltwocol<{type_text}><{self.tag_text()}>"
             if type_text or self.tag_text()
             else ""
         )
+        rank_text = f"Rank~{self.rank} ({self.price()} gp)"
         return join(
             f"""
-                \\hypertargetraised<item:{self.name}><\\subsubsection<{self.name}\\hfill Rank~{self.rank} ({self.price()} gp)>>
-                \\lowercase<\\hypertargetraised<item:{self.name}><>>\\label<item:{self.name}>
-                \\vspace<-0.4em>
+                \\lowercase<\\hypertargetraised<item:{self.name}><>>
+                \\hypertargetraised<item:{self.name}><>
+                \\spelltwocol<\\normalsize \\textbf<{self.name}>><{rank_text}>
                 {twocol_text}
                 {self.description}
             """,
             self.latex_ability(),
             f"""
-                {materials_text}
                 \\vspace<0.5em>
             """,
         )

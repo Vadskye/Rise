@@ -13,6 +13,7 @@ def create_weapon(name, rank, description, short_description, tags=None):
         rank=rank,
         description=description,
         short_description=short_description,
+        material_type="Weapon",
         tags=add_attune_tag(tags),
     )
 
