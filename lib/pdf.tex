@@ -150,4 +150,16 @@
 \newcommand{\mitempref}[1]{\pageref{item:#1}}
 \newcommand{\featpcref}[1]{#1,~page~\pageref{feat:#1}}
 
+% small text for the feats table
+\newenvironment{longtablewrapper}
+{
+    \onecolumn
+    \small
+    \rowcolors{1}{white}{tbrown}
+    \renewcommand*{\arraystretch}{1.2}
+    \setlength\LTleft{0pt}
+    \setlength\LTright{0pt}
+}
+{\twocolumn}
+
 \ExplSyntaxOff
