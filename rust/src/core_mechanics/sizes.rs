@@ -1,3 +1,5 @@
+use crate::creatures::Creature;
+
 #[derive(Clone)]
 pub enum Size {
     Fine,
@@ -49,6 +51,20 @@ impl Size {
         }
     }
 
+    pub fn reflex_modifier(&self) -> i32 {
+        match self {
+            Size::Fine => 4,
+            Size::Diminuitive => 3,
+            Size::Tiny => 2,
+            Size::Small => 1,
+            Size::Medium => 0,
+            Size::Large => -1,
+            Size::Huge => -2,
+            Size::Gargantuan => -3,
+            Size::Colossal => -4,
+        }
+    }
+
     pub fn space(&self) -> f64 {
         match self {
             Size::Fine => 0.25,
@@ -61,5 +77,19 @@ impl Size {
             Size::Gargantuan => 40.0,
             Size::Colossal => 80.0,
         }
+    }
+}
+
+pub trait HasSize {
+    fn set_size(&mut self, size: Size);
+    fn get_size(&self) -> &Size;
+}
+
+impl HasSize for Creature {
+    fn set_size(&mut self, size: Size) {
+        self.size = size;
+    }
+    fn get_size(&self) -> &Size {
+        return &self.size;
     }
 }
