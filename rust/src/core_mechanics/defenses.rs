@@ -1,4 +1,4 @@
-use crate::core_mechanics::{Attribute, DamageType, Debuff};
+use crate::core_mechanics::{Attribute, DamageType, Debuff, HasSize};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, ModifierType};
 use crate::equipment::{HasArmor, WeaponMaterial};
 use std::cmp::max;
@@ -108,7 +108,7 @@ pub trait HasDefenses {
 
 impl HasDefenses for Creature
 where
-    Creature: HasModifiers + HasArmor + HasAttributes,
+    Creature: HasModifiers + HasArmor + HasAttributes + HasSize,
 {
     fn calc_defense(&self, defense: &Defense) -> i32 {
         let dex_multiplier: f64 = match self.category {
@@ -126,7 +126,7 @@ where
         if matches!(self.category, CreatureCategory::Monster(_)) {
             let con_armor_bonus =
                 (self.get_base_attribute(&Attribute::Constitution) as f64 * 0.5).floor() as i32;
-            armor_attribute_modifier = max(armor_attribute_modifier, con_armor_bonus);
+            armor_attribute_modifier += con_armor_bonus;
         }
         let attribute_bonus = match defense {
             Defense::Armor => armor_attribute_modifier,
@@ -139,9 +139,15 @@ where
         } else {
             0
         };
+        let size_modifier = if matches!(defense, Defense::Reflex) {
+            self.get_size().reflex_modifier()
+        } else {
+            0
+        };
         return self.level / 2
             + attribute_bonus
             + armor_bonus
+            + size_modifier
             + self.calc_total_modifier(ModifierType::Defense(*defense));
     }
 
