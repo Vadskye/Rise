@@ -51,6 +51,35 @@ pub fn humanoids() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        name: "Bandits".to_string(),
+        knowledge: None,
+        monsters: vec![
+            humanoid(FullHumanoidDefinition {
+                alignment: "Usually lawful evil".to_string(),
+                attributes: vec![4, 1, 2, -1, 0, 0],
+                challenge_rating: ChallengeRating::One,
+                description: None,
+                knowledge: Some(Knowledge::new(vec![
+                    (0, "
+                        Orc deserters have abandoned their clans and struck out on their own.
+                        Some are unable to leave their martial past behind them, so they turn their talents to banditry.
+                    "),
+                ])),
+                level: 3,
+                modifiers: Some(vec![
+                    Modifier::Maneuver(Maneuver::MightyStrike(1)),
+                ]),
+                movement_modes: None,
+                name: "Orc Deserter".to_string(),
+                senses: None,
+                size: Size::Medium,
+                trained_skills: Some(vec![Skill::Endurance]),
+                weapons: vec![StandardWeapon::Greataxe.weapon()],
+            }),
+        ],
+    }));
+
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         name: "Cultists".to_string(),
         knowledge: None,
         monsters: vec![
