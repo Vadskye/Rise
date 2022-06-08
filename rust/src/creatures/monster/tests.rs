@@ -36,8 +36,8 @@ mod to_section {
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 12
-                    \monsep \textbf{DR} 6
+                \pari \textbf{HP} 11
+                    \monsep \textbf{DR} 4
                 \pari \textbf{Defenses}
                     Armor 7
                     \monsep Fort 7
@@ -68,8 +68,8 @@ mod to_section {
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 96
-                    \monsep \textbf{DR} 60
+                \pari \textbf{HP} 84
+                    \monsep \textbf{DR} 52
                 \pari \textbf{Defenses}
                     Armor 13
                     \monsep Fort 13
@@ -114,8 +114,8 @@ mod to_section {
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 96
-                    \monsep \textbf{DR} 60
+                \pari \textbf{HP} 84
+                    \monsep \textbf{DR} 52
                 \pari \textbf{Defenses}
                     Armor 13
                     \monsep Fort 13
@@ -211,11 +211,11 @@ mod statistics {
         );
 
         // HasDamageAbsorption
-        assert_eq!(12, creature.calc_hit_points(), "HP: (1 level + 2 con)",);
+        assert_eq!(11, creature.calc_hit_points(), "HP: (1 level + 1 con)",);
         assert_eq!(
-            6,
+            4,
             creature.calc_damage_resistance(),
-            "DR: (1 level + 2 con) * 2",
+            "DR: (1 level + 1 con) * 2",
         );
     }
 
@@ -260,11 +260,11 @@ mod statistics {
         );
 
         // HasDamageAbsorption
-        assert_eq!(36, creature.calc_hit_points(), "HP: (1 level + 2 con) * 3",);
+        assert_eq!(33, creature.calc_hit_points(), "HP: (1 level + 1 con) * 3",);
         assert_eq!(
-            12,
+            8,
             creature.calc_damage_resistance(),
-            "DR: (1 level + 2 con) * 4",
+            "DR: (1 level + 1 con) * 4",
         );
     }
 
@@ -273,7 +273,7 @@ mod statistics {
         let creature = Monster::standard_monster(ChallengeRating::Four, 1, None, None).creature;
 
         // HasAttacks
-        assert_eq!(2, creature.calc_accuracy(), "Accuracy: 1 per + 1 cr",);
+        assert_eq!(3, creature.calc_accuracy(), "Accuracy: 1 per + 2 cr",);
         assert_eq!(4, creature.calc_power(), "Power: 2 scaling * 2 cr mult",);
 
         // HasAttributes
@@ -309,11 +309,11 @@ mod statistics {
         );
 
         // HasDamageAbsorption
-        assert_eq!(48, creature.calc_hit_points(), "HP: (1 level + 2 con) * 4",);
+        assert_eq!(44, creature.calc_hit_points(), "HP: (1 level + 1 con) * 4",);
         assert_eq!(
-            24,
+            16,
             creature.calc_damage_resistance(),
-            "DR: (1 level + 2 con) * 8",
+            "DR: (1 level + 1 con) * 8",
         );
     }
 
@@ -355,8 +355,8 @@ mod statistics {
                 "Firebolt +1 (The target takes 1d8+1 fire damage.)", // CR 0.5
                 "Firebolt +1 (The target takes 2d6+2 fire damage.)", // CR 1
                 "Firebolt +2 (The target takes 2d6+4 fire damage.)", // CR 2
-                "Firebolt +2 (The target takes 2d8+4 fire damage.)", // CR 4
-                "Firebolt +2 (The target takes 2d10+6 fire damage.)", // CR 6
+                "Firebolt +3 (The target takes 2d8+4 fire damage.)", // CR 4
+                "Firebolt +3 (The target takes 2d10+6 fire damage.)", // CR 6
             ];
             assert_eq!(expected, actual, "CR 0.5/1/2/4/6");
         }
@@ -375,8 +375,8 @@ mod statistics {
                 "Greater Firebolt +9 (The target takes 4d8+6 fire damage.)",
                 "Greater Firebolt +9 (The target takes 5d10+12 fire damage.)",
                 "Greater Firebolt +10 (The target takes 5d10+24 fire damage.)",
-                "Greater Firebolt +10 (The target takes 6d10+24 fire damage.)",
-                "Supreme Firebolt +10 (The target takes 8d10+36 fire damage.)",
+                "Greater Firebolt +11 (The target takes 6d10+24 fire damage.)",
+                "Supreme Firebolt +11 (The target takes 8d10+36 fire damage.)",
             ];
             assert_eq!(expected, actual, "CR 0.5/1/2/4/6",);
         }
@@ -392,9 +392,9 @@ mod statistics {
                 firebolt_description(generate_creature(ChallengeRating::Six, level)),
             ];
             let expected = [
-                "Greater Firebolt +12 (The target takes 4d10+8 fire damage.)",
-                "Supreme Firebolt +12 (The target takes 7d10+16 fire damage.)",
-                "Supreme Firebolt +13 (The target takes 7d10+32 fire damage.)",
+                "Greater Firebolt +11 (The target takes 4d10+8 fire damage.)",
+                "Supreme Firebolt +11 (The target takes 7d10+16 fire damage.)",
+                "Supreme Firebolt +12 (The target takes 7d10+32 fire damage.)",
                 "Supreme Firebolt +13 (The target takes 8d10+32 fire damage.)",
                 "Supreme Firebolt +13 (The target takes 9d10+48 fire damage.)",
             ];
