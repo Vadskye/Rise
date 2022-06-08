@@ -762,7 +762,7 @@ function handleArmorDefense() {
         attributeModifier += v.dexterity;
       }
       if (v.challenge_rating > 0) {
-        attributeModifier = Math.max(attributeModifier, Math.floor(v.constitution / 2));
+        attributeModifier += Math.floor(v.constitution / 2);
       }
 
       const levelModifier = Math.floor(v.level / 2);
@@ -1198,9 +1198,10 @@ function handleDamageResistance() {
     },
     (v) => {
       const fromLevel = calcBaseDamageResistance(v.level);
-      const fromLevelAndCon = calcBaseDamageResistance(
-        v.level + v.constitution
-      );
+      const conModifier = v.challenge_rating > 0
+        ? Math.floor(v.constitution / 2)
+        : v.constitution;
+      const fromLevelAndCon = calcBaseHitPoints(v.level + conModifier);
       var crMultiplier = {
         0: 1,
         0.5: 0,
@@ -1522,7 +1523,7 @@ function handleHitPoints() {
   onGet(
     {
       miscName: "hit_points",
-      numeric: ["level", "constitution", "challenge_rating"],
+      numeric: ["challenge_rating", "level", "constitution", "challenge_rating"],
     },
     {
       variablesWithoutListen: {
@@ -1531,7 +1532,10 @@ function handleHitPoints() {
     },
     (v) => {
       const hpFromLevel = calcBaseHitPoints(v.level);
-      const hpFromLevelAndCon = calcBaseHitPoints(v.level + v.constitution);
+      const conModifier = v.challenge_rating > 0
+        ? Math.floor(v.constitution / 2)
+        : v.constitution;
+      const hpFromLevelAndCon = calcBaseHitPoints(v.level + conModifier);
 
       let crMultiplier = {
         0: 1,
