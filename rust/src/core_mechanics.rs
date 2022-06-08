@@ -24,6 +24,6 @@ pub use movement_modes::{FlightManeuverability, MovementMode, SpeedCategory};
 pub use passive_abilities::{PassiveAbility, StandardPassiveAbility};
 pub use resources::{HasResources, Resource};
 pub use senses::Sense;
-pub use sizes::Size;
+pub use sizes::{HasSize, Size};
 pub use tag::Tag;
 pub use vital_wounds::{HasVitalWounds, VitalWound};
