@@ -1,6 +1,6 @@
 use crate::creatures::Monster;
+use crate::monsters::monster_group;
 use crate::monsters::specific_monsters::all_specific_monster_functions;
-use crate::monsters::{generate_stock_monsters, monster_group};
 
 pub fn generate_monster_entries() -> Vec<MonsterEntry> {
     let mut entries: Vec<MonsterEntry> = vec![];
@@ -8,7 +8,7 @@ pub fn generate_monster_entries() -> Vec<MonsterEntry> {
         entries.append(monster_fn().as_mut());
     }
 
-    entries.append(generate_stock_monsters::generate_stock_monsters().as_mut());
+    // entries.append(generate_stock_monsters::generate_stock_monsters().as_mut());
     return entries;
 }
 
