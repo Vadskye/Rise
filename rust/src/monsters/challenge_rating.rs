@@ -1,6 +1,7 @@
 use crate::creatures::{Creature, Monster};
+use serde::{Deserialize, Serialize};
 
-#[derive(Copy, Clone, PartialEq)]
+#[derive(Copy, Clone, Deserialize, PartialEq, Serialize)]
 pub enum ChallengeRating {
     Half,
     One,
