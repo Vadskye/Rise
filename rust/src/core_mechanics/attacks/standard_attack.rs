@@ -1,5 +1,6 @@
 use crate::core_mechanics::abilities::{
-    AbilityMovement, AbilityTag, AbilityType, AreaSize, AreaTargets, Cooldown, Range, Targeting, AbilityExtraContext,
+    AbilityExtraContext, AbilityMovement, AbilityTag, AbilityType, AreaSize, AreaTargets, Cooldown,
+    Range, Targeting,
 };
 use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DamageEffect, DamageOverTimeEffect, DebuffEffect,
@@ -207,6 +208,7 @@ impl StandardAttack {
                         requires_straight_line: true,
                         speed: SpeedCategory::Normal,
                     }),
+                    suffix: None,
                 }),
                 hit: AttackEffect::Custom(AbilityType::Instant, r"
                     Each target is \grappled by the $name.
@@ -271,6 +273,7 @@ impl StandardAttack {
                 extra_context: Some(AbilityExtraContext {
                     cooldown: Some(Cooldown::Brief(None)),
                     movement: None,
+                    suffix: None,
                 }),
                 hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
@@ -303,6 +306,7 @@ impl StandardAttack {
                 extra_context: Some(AbilityExtraContext {
                     cooldown: Some(Cooldown::Brief(None)),
                     movement: None,
+                    suffix: None,
                 }),
                 hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),

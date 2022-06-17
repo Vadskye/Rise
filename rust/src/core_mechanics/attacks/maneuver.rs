@@ -1,4 +1,6 @@
-use crate::core_mechanics::abilities::{AbilityMovement, AreaSize, AreaTargets, Targeting, AbilityExtraContext};
+use crate::core_mechanics::abilities::{
+    AbilityExtraContext, AbilityMovement, AreaSize, AreaTargets, Targeting,
+};
 use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DebuffEffect,
 };
@@ -26,6 +28,7 @@ pub enum Maneuver {
     PenetratingStrike(i32),
     PowerFlurry(i32),
     PouncingStrike(i32),
+    RecklessStrike(i32),
     StripTheFlesh(i32),
     TenderizingSmash(i32),
     Whirlwind(i32, i32),
@@ -165,9 +168,25 @@ impl Maneuver {
                             requires_straight_line: true,
                             speed: SpeedCategory::Normal,
                         }),
+                        suffix: None,
                     });
                 })
                 .except_hit_damage(|d| d.power_multiplier = 0.5),
+            Self::RecklessStrike(rank) => weapon
+                .attack()
+                .except(|a| {
+                    a.extra_context = Some(AbilityExtraContext {
+                        cooldown: None,
+                        movement: None,
+                        suffix: Some(
+                            "
+                                After making the attack, the $name briefly takes a -2 penalty to all defenses.
+                            "
+                            .to_string(),
+                        ),
+                    });
+                })
+                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(rank + 2)),
             Self::StripTheFlesh(rank) => {
                 assert_minimum_rank(3, rank, self.name());
                 weapon
@@ -243,6 +262,7 @@ impl Maneuver {
             Self::MonstrousStrike(_) => weapon_name,
             Self::PenetratingStrike(_) => format!("Penetrating {}", weapon_name),
             Self::PouncingStrike(_) => format!("Pouncing {}", weapon_name),
+            Self::RecklessStrike(_) => format!("Reckless {}", weapon_name),
             Self::TenderizingSmash(_) => format!("Tenderizing {}", weapon_name),
             Self::Whirlwind(_, _) => format!("Whirlwind {}", weapon_name),
             _ => format!("{} -- {}", self.name(), weapon_name),
@@ -266,6 +286,7 @@ impl Maneuver {
             Self::PenetratingStrike(_) => "Penetrating Strike",
             Self::PouncingStrike(_) => "Pouncing Strike",
             Self::PowerFlurry(_) => "Power Flurry",
+            Self::RecklessStrike(_) => "Reckless Strike",
             Self::StripTheFlesh(_) => "Strip the Flesh",
             Self::TenderizingSmash(_) => "Tenderizing Smash",
             Self::Whirlwind(_, _) => "Whirlwind",
