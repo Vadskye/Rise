@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{
-    AbilityMovement, AbilityTag, AbilityType, AreaSize, AreaTargets, Cooldown, Range, Targeting,
+    AbilityMovement, AbilityTag, AbilityType, AreaSize, AreaTargets, Cooldown, Range, Targeting, AbilityExtraContext,
 };
 use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DamageEffect, DamageOverTimeEffect, DebuffEffect,
@@ -86,9 +86,9 @@ impl StandardAttack {
             // Large enemies-only cone is a rank 4 effect
             Self::AbolethPsionicBlast => Attack {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Mental,
+                extra_context: None,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(5),
                     damage_types: vec![DamageType::Energy],
@@ -96,7 +96,6 @@ impl StandardAttack {
                 }.damage_effect()),
                 is_magical: true,
                 is_strike: false,
-                movement: None,
                 name: "Psionic Blast".to_string(),
                 replaces_weapon: None,
                 tags: None,
@@ -104,13 +103,12 @@ impl StandardAttack {
             },
             Self::AnkhegDrag => Attack {
                 accuracy: 4,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
+                extra_context: None,
                 hit: AttackEffect::Push(30),
                 is_magical: true,
                 is_strike: false,
-                movement: None,
                 name: "Drag Prey".to_string(),
                 replaces_weapon: None,
                 tags: None,
@@ -142,13 +140,13 @@ impl StandardAttack {
             }.weapon_attack(&StandardWeapon::MonsterBite.weapon()),
             Self::GibberingMoutherGibber => Attack {
                 accuracy: 0,
-                cooldown: None,
                 crit: Some(AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![Debuff::Confused],
                     duration: AttackEffectDuration::Brief,
                     immune_after_effect_ends: false,
                 })),
                 defense: Defense::Mental,
+                extra_context: None,
                 hit: AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![Debuff::Dazed],
                     duration: AttackEffectDuration::Brief,
@@ -156,7 +154,6 @@ impl StandardAttack {
                 }),
                 is_magical: true,
                 is_strike: false,
-                movement: None,
                 name: "Gibber".to_string(),
                 replaces_weapon: None,
                 tags: Some(vec![Tag::Ability(AbilityTag::Compulsion)]),
@@ -164,9 +161,9 @@ impl StandardAttack {
             },
             Self::MonsterSpikes(rank) => Attack {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Armor,
+                extra_context: None,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
                     // +1d extra at rank 5+
                     damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 5 { 1 } else { 0 }),
@@ -175,7 +172,6 @@ impl StandardAttack {
                 }.damage_effect()),
                 is_magical: false,
                 is_strike: false,
-                movement: None,
                 name: "Retributive Spikes".to_string(),
                 replaces_weapon: None,
                 tags: None,
@@ -183,9 +179,9 @@ impl StandardAttack {
             },
             Self::OozeDissolve(rank) => Attack {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
+                extra_context: None,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
                     // +1d at ranks 3/5/7
                     damage_dice: DamageDice::single_target_damage(*rank).add(max(0, (rank - 1) / 2)),
@@ -194,7 +190,6 @@ impl StandardAttack {
                 }.damage_effect()),
                 is_magical: false,
                 is_strike: false,
-                movement: None,
                 name: "Dissolve".to_string(),
                 replaces_weapon: None,
                 tags: None,
@@ -203,19 +198,21 @@ impl StandardAttack {
             Self::OozeEngulf(rank) => Attack {
                 // +1 accuracy at ranks 3/5/7
                 accuracy: max(0, (rank - 1) / 2),
-                cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
+                extra_context: Some(AbilityExtraContext {
+                    cooldown: None,
+                    movement: Some(AbilityMovement {
+                        move_before_attack: true,
+                        requires_straight_line: true,
+                        speed: SpeedCategory::Normal,
+                    }),
+                }),
                 hit: AttackEffect::Custom(AbilityType::Instant, r"
                     Each target is \grappled by the $name.
                 ".to_string()),
                 is_magical: false,
                 is_strike: false,
-                movement: Some(AbilityMovement {
-                    move_before_attack: true,
-                    requires_straight_line: true,
-                    speed: SpeedCategory::Normal,
-                }),
                 name: "Engulf".to_string(),
                 replaces_weapon: None,
                 tags: None,
@@ -236,9 +233,9 @@ impl StandardAttack {
             }.attack(),
             Self::YrthakThunderingHide => Attack {
                 accuracy: 0,
-                cooldown: None,
                 crit: None,
                 defense: Defense::Fortitude,
+                extra_context: None,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::single_target_damage(3),
                     damage_types: vec![DamageType::Sonic],
@@ -246,7 +243,6 @@ impl StandardAttack {
                 }.damage_effect()),
                 is_magical: false,
                 is_strike: false,
-                movement: None,
                 name: "Thundering Hide".to_string(),
                 replaces_weapon: None,
                 tags: None,
@@ -270,9 +266,12 @@ impl StandardAttack {
             }.attack(),
             Self::BreathWeaponCone(rank, damage_type, defense) => Attack {
                 accuracy: 0,
-                cooldown: Some(Cooldown::Brief(None)),
                 crit: None,
                 defense: *defense,
+                extra_context: Some(AbilityExtraContext {
+                    cooldown: Some(Cooldown::Brief(None)),
+                    movement: None,
+                }),
                 hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_types: vec![*damage_type],
@@ -280,7 +279,6 @@ impl StandardAttack {
                 }.damage_effect()),
                 is_magical: false,
                 is_strike: false,
-                movement: None,
                 name: "Breath Weapon".to_string(),
                 replaces_weapon: None,
                 tags: None,
@@ -300,9 +298,12 @@ impl StandardAttack {
             },
             Self::BreathWeaponLine(rank, damage_type, defense) => Attack {
                 accuracy: 0,
-                cooldown: Some(Cooldown::Brief(None)),
                 crit: None,
                 defense: *defense,
+                extra_context: Some(AbilityExtraContext {
+                    cooldown: Some(Cooldown::Brief(None)),
+                    movement: None,
+                }),
                 hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::aoe_damage(*rank),
                     damage_types: vec![*damage_type],
@@ -310,7 +311,6 @@ impl StandardAttack {
                 }.damage_effect()),
                 is_magical: false,
                 is_strike: false,
-                movement: None,
                 name: "Breath Weapon".to_string(),
                 replaces_weapon: None,
                 tags: None,

@@ -26,9 +26,9 @@ impl PureDamage {
 
         return Attack {
             accuracy: 0,
-            cooldown: None,
             crit: None,
             defense: self.defense,
+            extra_context: None,
             hit: AttackEffect::Damage(DamageEffect {
                 damage_dice: DamageDice::single_target_damage(self.rank)
                     .add(spent_rank_results.damage_dice_modifier),
@@ -42,7 +42,6 @@ impl PureDamage {
             }),
             is_magical: self.is_magical,
             is_strike: false,
-            movement: None,
             name: self.name.clone(),
             replaces_weapon: None,
             tags: None,
