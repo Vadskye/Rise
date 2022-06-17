@@ -1,9 +1,11 @@
-use crate::core_mechanics::attacks::{HasAttacks, Attack};
+use crate::core_mechanics::attacks::{Attack, HasAttacks};
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses, HasVitalWounds};
 use crate::creatures::{Creature, HasDamageTracking};
+use serde::{Deserialize, Serialize};
 use std::cmp::max;
 use std::fmt;
 
+#[derive(Deserialize, Serialize)]
 pub struct CombatResult {
     blue_living_count: usize,
     blue_survival_percent: f64,
@@ -140,7 +142,8 @@ fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     // println!("Best attack: {}", best_attack.unwrap().name);
 
     if let Some(attack) = best_attack {
-        return calc_attack_damage_per_round(&attack, attacker, defender) * attacker.calc_damage_per_round_multiplier();
+        return calc_attack_damage_per_round(&attack, attacker, defender)
+            * attacker.calc_damage_per_round_multiplier();
     } else {
         return 0.0;
     }
@@ -201,11 +204,7 @@ impl HitProbability {
     }
 }
 
-fn calculate_hit_probability(
-    attack: &Attack,
-    accuracy: i32,
-    defense: i32,
-) -> HitProbability {
+fn calculate_hit_probability(attack: &Attack, accuracy: i32, defense: i32) -> HitProbability {
     // hardcoded
     let max_explosion_depth = 2.0;
 
