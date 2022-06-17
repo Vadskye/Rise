@@ -153,19 +153,20 @@ impl Attack {
     }
 
     fn latex_effect(&self, creature: &Creature) -> String {
+        let mut context = &AbilityExtraContext::empty();
+        if let Some(ref c) = self.extra_context {
+            context = c;
+        }
         return format!(
             "
                 {targeting}
                 {cooldown}
+                {suffix}
                 \\hit {hit}
                 {critical}
             ",
-            cooldown = if let Some(ref context) = self.extra_context {
-                if let Some(ref cooldown) = context.cooldown {
-                    cooldown.description(false)
-                } else {
-                    "".to_string()
-                }
+            cooldown = if let Some(ref cooldown) = context.cooldown {
+                cooldown.description(false)
             } else {
                 "".to_string()
             },
@@ -192,14 +193,15 @@ impl Attack {
             } else {
                 "".to_string()
             },
+            suffix = if let Some(ref s) = context.suffix {
+                s.trim()
+            } else {
+                ""
+            },
             targeting = self.targeting.description(
                 &self.defense,
                 self.accuracy + creature.calc_accuracy(),
-                if let Some(ref context) = self.extra_context {
-                    &context.movement
-                } else {
-                    &None
-                }
+                &context.movement
             ),
         );
     }
