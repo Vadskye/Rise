@@ -287,11 +287,10 @@ impl Weapon {
         let generic_tags = self.tags.iter().map(|t| Tag::Weapon(t.clone())).collect();
         return Attack {
             accuracy: self.accuracy,
-            cooldown: None,
             crit: None,
             defense: Defense::Armor,
+            extra_context: None,
             hit: AttackEffect::from_weapon(self.clone()),
-            movement: None,
             name: titlecase(&self.name),
             is_magical: false,
             is_strike: true,

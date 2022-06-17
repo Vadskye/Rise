@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{latex_ability_block, UsageTime};
-use crate::core_mechanics::abilities::{AbilityMovement, AbilityTag, Cooldown, Targeting};
+use crate::core_mechanics::abilities::{AbilityExtraContext, AbilityTag, Targeting};
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
@@ -11,13 +11,12 @@ use super::{AttackEffect, Maneuver};
 #[derive(Clone)]
 pub struct Attack {
     pub accuracy: i32,
-    pub cooldown: Option<Cooldown>,
     pub crit: Option<AttackEffect>,
     pub defense: Defense,
+    pub extra_context: Option<AbilityExtraContext>,
     pub hit: AttackEffect,
     pub is_magical: bool,
     pub is_strike: bool,
-    pub movement: Option<AbilityMovement>,
     pub name: String,
     pub replaces_weapon: Option<Weapon>,
     pub tags: Option<Vec<Tag>>,
@@ -161,8 +160,12 @@ impl Attack {
                 \\hit {hit}
                 {critical}
             ",
-            cooldown = if let Some(ref c) = self.cooldown {
-                c.description(false)
+            cooldown = if let Some(ref context) = self.extra_context {
+                if let Some(ref cooldown) = context.cooldown {
+                    cooldown.description(false)
+                } else {
+                    "".to_string()
+                }
             } else {
                 "".to_string()
             },
@@ -192,7 +195,11 @@ impl Attack {
             targeting = self.targeting.description(
                 &self.defense,
                 self.accuracy + creature.calc_accuracy(),
-                &self.movement
+                if let Some(ref context) = self.extra_context {
+                    &context.movement
+                } else {
+                    &None
+                }
             ),
         );
     }
@@ -325,10 +332,9 @@ impl SimpleSpell {
             targeting: self.targeting,
 
             // defaults
-            cooldown: None,
+            extra_context: None,
             is_magical: true,
             is_strike: false,
-            movement: None,
             replaces_weapon: None,
         };
     }

@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{AbilityMovement, AreaSize, AreaTargets, Targeting};
+use crate::core_mechanics::abilities::{AbilityMovement, AreaSize, AreaTargets, Targeting, AbilityExtraContext};
 use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DebuffEffect,
 };
@@ -158,11 +158,14 @@ impl Maneuver {
                 .attack()
                 .except(|a| {
                     a.accuracy += (rank - 1) / 2;
-                    a.movement = Some(AbilityMovement {
-                        move_before_attack: true,
-                        requires_straight_line: true,
-                        speed: SpeedCategory::Normal,
-                    })
+                    a.extra_context = Some(AbilityExtraContext {
+                        cooldown: None,
+                        movement: Some(AbilityMovement {
+                            move_before_attack: true,
+                            requires_straight_line: true,
+                            speed: SpeedCategory::Normal,
+                        }),
+                    });
                 })
                 .except_hit_damage(|d| d.power_multiplier = 0.5),
             Self::StripTheFlesh(rank) => {
