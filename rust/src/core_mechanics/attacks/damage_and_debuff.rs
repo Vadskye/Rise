@@ -108,9 +108,9 @@ impl LowDamageAndDebuff {
 
         return Attack {
             accuracy: spent_rank_results.accuracy,
-            cooldown: None,
             crit: None,
             defense: self.defense,
+            extra_context: None,
             hit: AttackEffect::Damage(DamageEffect {
                 damage_dice: DamageDice::single_target_damage(self.rank - 2),
                 damage_modifier: 0,
@@ -123,7 +123,6 @@ impl LowDamageAndDebuff {
             }),
             is_magical: self.is_magical,
             is_strike: false,
-            movement: None,
             name: self.name.clone(),
             replaces_weapon: None,
             tags: self.tags.clone(),

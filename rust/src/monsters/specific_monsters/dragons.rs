@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{AbilityTag, AreaSize, AreaTargets, Cooldown, Targeting};
+use crate::core_mechanics::abilities::{AbilityExtraContext, AbilityTag, AreaSize, AreaTargets, Cooldown, Targeting};
 use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, DebuffEffect, SimpleDamageEffect,
 };
@@ -92,13 +92,13 @@ impl AgeCategory {
         let size = size.unwrap();
         return Some(Attack {
             accuracy: 0,
-            cooldown: None,
             crit: Some(AttackEffect::Debuff(DebuffEffect {
                 debuffs: vec![Debuff::Frightened("the $name".to_string())],
                 duration: AttackEffectDuration::Condition,
                 immune_after_effect_ends: false,
             })),
             defense: Defense::Mental,
+            extra_context: None,
             hit: AttackEffect::Debuff(DebuffEffect {
                 debuffs: vec![Debuff::Shaken("the $name".to_string())],
                 duration: AttackEffectDuration::Condition,
@@ -106,7 +106,6 @@ impl AgeCategory {
             }),
             is_magical: false,
             is_strike: false,
-            movement: None,
             name: "Frightful Presence".to_string(),
             replaces_weapon: None,
             tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
@@ -481,9 +480,12 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
     };
     return Attack {
         accuracy: 0,
-        cooldown: Some(Cooldown::Brief(None)),
         crit: None,
         defense: Defense::Reflex,
+        extra_context: Some(AbilityExtraContext {
+            cooldown: Some(Cooldown::Brief(None)),
+            movement: None,
+        }),
         hit: AttackEffect::Damage(
             SimpleDamageEffect {
                 damage_dice: DamageDice::aoe_damage(damage_rank(
@@ -497,7 +499,6 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         ),
         is_magical: false,
         is_strike: false,
-        movement: None,
         name: "Breath Weapon".to_string(),
         replaces_weapon: None,
         tags: None,
