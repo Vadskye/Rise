@@ -47,11 +47,11 @@ impl SimpleDamageEffect {
         };
     }
 
-    fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
-        return self
-            .damage_effect()
-            .description(attacker, is_magical, is_strike);
-    }
+    // fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
+    //     return self
+    //         .damage_effect()
+    //         .description(attacker, is_magical, is_strike);
+    // }
 }
 
 #[derive(Clone)]

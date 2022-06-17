@@ -1,7 +1,6 @@
 use crate::core_mechanics::{Attribute, DamageType, Debuff, HasSize};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, ModifierType};
 use crate::equipment::{HasArmor, WeaponMaterial};
-use std::cmp::max;
 use std::fmt;
 
 use super::abilities::AbilityTag;
