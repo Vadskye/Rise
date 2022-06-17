@@ -678,19 +678,21 @@ function handleAccuracy() {
   onGet(
     {
       miscName: "accuracy",
-      numeric: ["level", "perception", "fatigue_penalty"],
+      numeric: ["challenge_rating", "level", "perception", "fatigue_penalty"],
     },
     (v) => {
       const levelModifier = Math.floor(v.level / 2);
       const perceptionModifier = Math.floor(v.perception / 2);
+      const crModifier = v.challenge_rating >= 4 ? 2 : Math.floor(v.challenge_rating / 2);
       const accuracy =
-        v.misc + levelModifier + perceptionModifier - v.fatigue_penalty;
+        v.misc + levelModifier + crModifier + perceptionModifier - v.fatigue_penalty;
       setAttrs({
         accuracy,
         accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: "level", value: levelModifier },
           { name: "Per", value: perceptionModifier },
           { name: "fatigue", value: -v.fatigue_penalty },
+          { name: "CR", value: crModifier },
         ]),
       });
     }
@@ -739,6 +741,7 @@ function handleArmorDefense() {
       numeric: [
         "level",
         "dexterity",
+        "constitution",
         "body_armor_defense",
         "shield_defense",
         "challenge_rating",
@@ -1201,14 +1204,14 @@ function handleDamageResistance() {
       const conModifier = v.challenge_rating > 0
         ? Math.floor(v.constitution / 2)
         : v.constitution;
-      const fromLevelAndCon = calcBaseHitPoints(v.level + conModifier);
+      const fromLevelAndCon = calcBaseDamageResistance(v.level + conModifier);
       var crMultiplier = {
         0: 1,
         0.5: 0,
         1: 2,
         2: 4,
         4: 8,
-        6: 16,
+        6: 12,
       }[v.challenge_rating || 0];
       const playerTotalValue =
         fromLevelAndCon + v.body_armor_damage_resistance + v.misc;
