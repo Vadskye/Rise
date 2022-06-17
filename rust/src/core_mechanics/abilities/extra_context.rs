@@ -5,6 +5,17 @@ use crate::latex_formatting;
 pub struct AbilityExtraContext {
     pub cooldown: Option<Cooldown>,
     pub movement: Option<AbilityMovement>,
+    pub suffix: Option<String>,
+}
+
+impl AbilityExtraContext {
+    pub fn empty() -> Self {
+        return Self {
+            cooldown: None,
+            movement: None,
+            suffix: None,
+        };
+    }
 }
 
 #[derive(Clone)]

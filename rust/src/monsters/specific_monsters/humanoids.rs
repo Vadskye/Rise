@@ -67,7 +67,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 ])),
                 level: 3,
                 modifiers: Some(vec![
-                    Modifier::Maneuver(Maneuver::MightyStrike(1)),
+                    Modifier::Maneuver(Maneuver::RecklessStrike(1)),
                 ]),
                 movement_modes: None,
                 name: "Orc Deserter".to_string(),

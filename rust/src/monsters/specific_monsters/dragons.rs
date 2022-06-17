@@ -485,6 +485,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         extra_context: Some(AbilityExtraContext {
             cooldown: Some(Cooldown::Brief(None)),
             movement: None,
+            suffix: None,
         }),
         hit: AttackEffect::Damage(
             SimpleDamageEffect {
