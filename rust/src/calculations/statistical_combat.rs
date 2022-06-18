@@ -8,9 +8,11 @@ use std::fmt;
 #[derive(Deserialize, Serialize)]
 pub struct CombatResult {
     blue_living_count: usize,
+    blue_rounds_to_live: f64,
     blue_survival_percent: f64,
     rounds: f64,
     red_living_count: usize,
+    red_rounds_to_live: f64,
     red_survival_percent: f64,
 }
 
@@ -23,8 +25,10 @@ impl fmt::Display for CombatResult {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
             f,
-            "Rounds {:>5.2} Blue {} ({:>5.2}%) Red {} ({:>5.2}%)",
+            "Rounds {:>5.2}/B{:>5.2}/R{:>5.2} Blue {} ({:>5.2}%) Red {} ({:>5.2}%)",
             self.rounds,
+            self.blue_rounds_to_live,
+            self.red_rounds_to_live,
             self.blue_living_count,
             self.blue_survival_percent,
             self.red_living_count,
@@ -37,6 +41,8 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
     let mut blue = blue.clone();
     let mut red = red.clone();
     let mut rounds = 0.0;
+    let blue_rounds_to_live = calc_rounds_to_live(&blue.iter().collect(), &red.iter().collect());
+    let red_rounds_to_live = calc_rounds_to_live(&red.iter().collect(), &blue.iter().collect());
 
     // For now, don't do intelligent target prioritization - just proceed linearly through the
     // array of creatures. In the future, we can intelligently sort the vectors before entering
@@ -56,6 +62,8 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
                 return CombatResult {
                     blue_living_count: living.blue.len(),
                     red_living_count: living.red.len(),
+                    blue_rounds_to_live,
+                    red_rounds_to_live,
                     blue_survival_percent: survival_percent(&blue),
                     rounds,
                     red_survival_percent: survival_percent(&red),
@@ -67,8 +75,8 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
                 red: &living.red[0],
             };
             let rounds_to_first_death = CombatStep {
-                blue: calc_rounds_to_live(&living.blue, defender.red),
-                red: calc_rounds_to_live(&living.red, defender.blue),
+                blue: calc_rounds_to_live(&living.blue, &vec![defender.red]),
+                red: calc_rounds_to_live(&living.red, &vec![defender.blue]),
             };
             min_rounds_to_first_death = if rounds_to_first_death.blue <= rounds_to_first_death.red {
                 rounds_to_first_death.blue
@@ -123,17 +131,26 @@ fn calc_damage_per_round(attackers: &Vec<&Creature>, defender: &Creature) -> f64
         .sum();
 }
 
-fn calc_rounds_to_live(attackers: &Vec<&Creature>, defender: &Creature) -> f64 {
-    let damage_per_round: f64 = calc_damage_per_round(attackers, defender);
-    // Add 1 HP since creatures need to drop below 0 to die, not just go to 0
-    let damage_absorption =
-        defender.remaining_damage_resistance() + defender.remaining_hit_points() + 1;
+fn calc_rounds_to_live(attackers: &Vec<&Creature>, defenders: &Vec<&Creature>) -> f64 {
+    let mut damage_per_round = 0.0;
+    let mut damage_absorption = 0;
+    for defender in defenders {
+        // Divide to average the dpr across all defenders
+        damage_per_round += calc_damage_per_round(attackers, defender) / (defenders.len() as f64);
+        // Add 1 HP since creatures need to drop below 0 to die, not just go to 0
+        damage_absorption += defender.remaining_damage_resistance() + defender.remaining_hit_points() + 1;
+    }
+        
     let rounds_to_survive = damage_absorption as f64 / damage_per_round;
     // In a real fight, rounds would be broken up into discrete units, but we'd also have to
     // deal with the variance of high and low rolls. Dropping to quarter-round precision
     // precision still leaves some awareness of the downsides of excess overkill while being
     // more precise than true integer rounds
     return (rounds_to_survive * 4.0).ceil() / 4.0;
+}
+
+fn calc_individual_rounds_to_live(attacker: &Creature, defender: &Creature) -> f64 {
+    return calc_rounds_to_live(&vec![attacker], &vec![defender]);
 }
 
 fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
