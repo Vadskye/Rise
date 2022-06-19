@@ -7,10 +7,12 @@ use std::fmt;
 
 #[derive(Deserialize, Serialize)]
 pub struct CombatResult {
+    blue_damage_per_round: i32,
     blue_living_count: usize,
     blue_rounds_to_live: f64,
     blue_survival_percent: f64,
     rounds: f64,
+    red_damage_per_round: i32,
     red_living_count: usize,
     red_rounds_to_live: f64,
     red_survival_percent: f64,
@@ -41,6 +43,8 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
     let mut blue = blue.clone();
     let mut red = red.clone();
     let mut rounds = 0.0;
+    let blue_damage_per_round = calc_damage_per_round(&blue.iter().collect(), &red[0]) as i32;
+    let red_damage_per_round = calc_damage_per_round(&red.iter().collect(), &blue[0]) as i32;
     let blue_rounds_to_live = calc_rounds_to_live(&red.iter().collect(), &blue.iter().collect());
     let red_rounds_to_live = calc_rounds_to_live(&blue.iter().collect(), &red.iter().collect());
 
@@ -60,6 +64,8 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
             };
             if living.blue.len() == 0 || living.red.len() == 0 {
                 return CombatResult {
+                    blue_damage_per_round,
+                    red_damage_per_round,
                     blue_living_count: living.blue.len(),
                     red_living_count: living.red.len(),
                     blue_rounds_to_live,
