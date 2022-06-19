@@ -5,12 +5,14 @@ use std::cmp::max;
 use std::fmt;
 
 pub struct CombatResult {
+    pub blue_accuracy: f64,
     pub blue_damage_per_round: i32,
     pub blue_living_count: usize,
     pub blue_rounds_to_live: f64,
     pub blue_survival_percent: f64,
     pub rounds: f64,
     pub red_damage_per_round: i32,
+    pub red_accuracy: f64,
     pub red_living_count: usize,
     pub red_rounds_to_live: f64,
     pub red_survival_percent: f64,
@@ -43,8 +45,10 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
     let mut rounds = 0.0;
     let blue_damage_per_round = calc_damage_per_round(&blue.iter().collect(), &red[0]) as i32;
     let red_damage_per_round = calc_damage_per_round(&red.iter().collect(), &blue[0]) as i32;
+    let blue_accuracy = calc_best_attack_accuracy(&blue[0], &red[0]);
     let blue_rounds_to_live = calc_rounds_to_live(&red.iter().collect(), &blue.iter().collect());
     let red_rounds_to_live = calc_rounds_to_live(&blue.iter().collect(), &red.iter().collect());
+    let red_accuracy = calc_best_attack_accuracy(&red[0], &blue[0]);
 
     // For now, don't do intelligent target prioritization - just proceed linearly through the
     // array of creatures. In the future, we can intelligently sort the vectors before entering
@@ -62,6 +66,8 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
             };
             if living.blue.len() == 0 || living.red.len() == 0 {
                 return CombatResult {
+                    blue_accuracy,
+                    red_accuracy,
                     blue_damage_per_round,
                     red_damage_per_round,
                     blue_living_count: living.blue.len(),
@@ -162,6 +168,15 @@ fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     if let Some(attack) = best_attack {
         return calc_attack_damage_per_round(&attack, attacker, defender)
             * attacker.calc_damage_per_round_multiplier();
+    } else {
+        return 0.0;
+    }
+}
+
+fn calc_best_attack_accuracy(attacker: &Creature, defender: &Creature) -> f64 {
+    let best_attack: Option<Attack> = find_best_attack(attacker, defender);
+    if let Some(ref a) = best_attack {
+        return calculate_hit_probability(a, attacker.calc_accuracy(), defender.calc_defense(&a.defense)).single_hit_probability;
     } else {
         return 0.0;
     }
