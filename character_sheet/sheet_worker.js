@@ -610,12 +610,8 @@ function calcDefenseCrScaling(level, challengeRating) {
   if (challengeRating > 0) {
     levelScaling += level >= 15 ? 2 : level >= 3 ? 1 : 0;
   }
-  if (challengeRating === 0.5) {
-    levelScaling -= 1;
-  } else if (challengeRating === 4) {
+  if (challengeRating === 4) {
     levelScaling += 1;
-  } else if (challengeRating === 6) {
-    levelScaling += 2;
   }
   return levelScaling;
 }
@@ -683,9 +679,13 @@ function handleAccuracy() {
     (v) => {
       const levelModifier = Math.floor(v.level / 2);
       const perceptionModifier = Math.floor(v.perception / 2);
-      const crModifier = v.challenge_rating >= 4 ? 2 : Math.floor(v.challenge_rating / 2);
+      const crModifier = v.challenge_rating == 4 ? 1 : 0;
       const accuracy =
-        v.misc + levelModifier + crModifier + perceptionModifier - v.fatigue_penalty;
+        v.misc +
+        levelModifier +
+        crModifier +
+        perceptionModifier -
+        v.fatigue_penalty;
       setAttrs({
         accuracy,
         accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
@@ -1201,17 +1201,15 @@ function handleDamageResistance() {
     },
     (v) => {
       const fromLevel = calcBaseDamageResistance(v.level);
-      const conModifier = v.challenge_rating > 0
-        ? Math.floor(v.constitution / 2)
-        : v.constitution;
+      const conModifier =
+        v.challenge_rating > 0
+          ? Math.floor(v.constitution / 2)
+          : v.constitution;
       const fromLevelAndCon = calcBaseDamageResistance(v.level + conModifier);
       var crMultiplier = {
         0: 1,
-        0.5: 0,
         1: 2,
-        2: 4,
         4: 8,
-        6: 12,
       }[v.challenge_rating || 0];
       const playerTotalValue =
         fromLevelAndCon + v.body_armor_damage_resistance + v.misc;
@@ -1526,7 +1524,12 @@ function handleHitPoints() {
   onGet(
     {
       miscName: "hit_points",
-      numeric: ["challenge_rating", "level", "constitution", "challenge_rating"],
+      numeric: [
+        "challenge_rating",
+        "level",
+        "constitution",
+        "challenge_rating",
+      ],
     },
     {
       variablesWithoutListen: {
@@ -1535,18 +1538,16 @@ function handleHitPoints() {
     },
     (v) => {
       const hpFromLevel = calcBaseHitPoints(v.level);
-      const conModifier = v.challenge_rating > 0
-        ? Math.floor(v.constitution / 2)
-        : v.constitution;
+      const conModifier =
+        v.challenge_rating > 0
+          ? Math.floor(v.constitution / 2)
+          : v.constitution;
       const hpFromLevelAndCon = calcBaseHitPoints(v.level + conModifier);
 
       let crMultiplier = {
         0: 1,
-        0.5: 1,
         1: 1,
-        2: 3,
         4: 4,
-        6: 6,
       }[v.challenge_rating || 0];
 
       const playerTotalValue = hpFromLevelAndCon + v.misc;
@@ -1814,11 +1815,8 @@ function handlePower() {
           classPowerModifier *
           (v.challenge_rating
             ? {
-                0.5: 0.5,
                 1: 1,
-                2: 2,
                 4: 2,
-                6: 3,
               }[v.challenge_rating]
             : 0);
       }
@@ -1869,11 +1867,8 @@ function handleRust() {
         v.willpower,
       ];
       const cr = {
-        0.5: "Half",
         1: "One",
-        2: "Two",
         4: "Four",
-        6: "Six",
       }[v.challenge_rating];
       const weapons = [];
       for (const weaponName of [
