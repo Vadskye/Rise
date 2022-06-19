@@ -52,6 +52,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 1,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 6.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 4.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 3.25,
+      "red_survival_percent": 0.5555555555555556
+    }
+  },
+  {
     "cr": "Half",
     "level": 2,
     "result": {
@@ -101,6 +114,19 @@
       "red_living_count": 0,
       "red_rounds_to_live": 5.25,
       "red_survival_percent": 0.0
+    }
+  },
+  {
+    "cr": "Six",
+    "level": 2,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 6.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 4.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 3.5,
+      "red_survival_percent": 0.5740740740740741
     }
   },
   {
@@ -156,6 +182,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 3,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 8.5,
+      "blue_survival_percent": 0.0,
+      "rounds": 5.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 3.75,
+      "red_survival_percent": 0.6031746031746031
+    }
+  },
+  {
     "cr": "Half",
     "level": 4,
     "result": {
@@ -205,6 +244,19 @@
       "red_living_count": 0,
       "red_rounds_to_live": 5.75,
       "red_survival_percent": 0.0
+    }
+  },
+  {
+    "cr": "Six",
+    "level": 4,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 7.0,
+      "blue_survival_percent": 0.0,
+      "rounds": 5.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 3.75,
+      "red_survival_percent": 0.5138888888888888
     }
   },
   {
@@ -260,6 +312,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 5,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 8.0,
+      "blue_survival_percent": 0.0,
+      "rounds": 6.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 4.5,
+      "red_survival_percent": 0.5059523809523809
+    }
+  },
+  {
     "cr": "Half",
     "level": 6,
     "result": {
@@ -309,6 +374,19 @@
       "red_living_count": 0,
       "red_rounds_to_live": 8.75,
       "red_survival_percent": 0.0
+    }
+  },
+  {
+    "cr": "Six",
+    "level": 6,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 9.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 8.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 5.5,
+      "red_survival_percent": 0.4270833333333333
     }
   },
   {
@@ -364,6 +442,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 7,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 8.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 8.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 5.5,
+      "red_survival_percent": 0.3508771929824561
+    }
+  },
+  {
     "cr": "Half",
     "level": 8,
     "result": {
@@ -413,6 +504,19 @@
       "red_living_count": 0,
       "red_rounds_to_live": 9.5,
       "red_survival_percent": 0.0
+    }
+  },
+  {
+    "cr": "Six",
+    "level": 8,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 9.0,
+      "blue_survival_percent": 0.0,
+      "rounds": 8.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 6.0,
+      "red_survival_percent": 0.4126984126984127
     }
   },
   {
@@ -468,6 +572,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 9,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 9.0,
+      "blue_survival_percent": 0.0,
+      "rounds": 9.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 6.5,
+      "red_survival_percent": 0.3299319727891156
+    }
+  },
+  {
     "cr": "Half",
     "level": 10,
     "result": {
@@ -517,6 +634,19 @@
       "red_living_count": 0,
       "red_rounds_to_live": 9.75,
       "red_survival_percent": 0.0
+    }
+  },
+  {
+    "cr": "Six",
+    "level": 10,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 8.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 8.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 5.5,
+      "red_survival_percent": 0.3765432098765432
     }
   },
   {
@@ -572,6 +702,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 11,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 8.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 8.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 6.0,
+      "red_survival_percent": 0.3817204301075269
+    }
+  },
+  {
     "cr": "Half",
     "level": 12,
     "result": {
@@ -621,6 +764,19 @@
       "red_living_count": 0,
       "red_rounds_to_live": 11.75,
       "red_survival_percent": 0.0
+    }
+  },
+  {
+    "cr": "Six",
+    "level": 12,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 9.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 9.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 6.75,
+      "red_survival_percent": 0.3627450980392157
     }
   },
   {
@@ -676,6 +832,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 13,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 7.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 8.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 6.0,
+      "red_survival_percent": 0.2675438596491228
+    }
+  },
+  {
     "cr": "Half",
     "level": 14,
     "result": {
@@ -725,6 +894,19 @@
       "red_living_count": 0,
       "red_rounds_to_live": 10.25,
       "red_survival_percent": 0.0
+    }
+  },
+  {
+    "cr": "Six",
+    "level": 14,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 8.0,
+      "blue_survival_percent": 0.0,
+      "rounds": 9.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 6.5,
+      "red_survival_percent": 0.25793650793650796
     }
   },
   {
@@ -780,6 +962,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 15,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 10.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 10.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 6.75,
+      "red_survival_percent": 0.35638297872340424
+    }
+  },
+  {
     "cr": "Half",
     "level": 16,
     "result": {
@@ -829,6 +1024,19 @@
       "red_living_count": 0,
       "red_rounds_to_live": 10.0,
       "red_survival_percent": 0.0
+    }
+  },
+  {
+    "cr": "Six",
+    "level": 16,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 9.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 9.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 5.75,
+      "red_survival_percent": 0.3789308176100629
     }
   },
   {
@@ -884,6 +1092,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 17,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 10.5,
+      "blue_survival_percent": 0.0,
+      "rounds": 10.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 6.5,
+      "red_survival_percent": 0.3888888888888889
+    }
+  },
+  {
     "cr": "Half",
     "level": 18,
     "result": {
@@ -933,6 +1154,19 @@
       "red_living_count": 0,
       "red_rounds_to_live": 12.25,
       "red_survival_percent": 0.0
+    }
+  },
+  {
+    "cr": "Six",
+    "level": 18,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 10.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 11.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 7.25,
+      "red_survival_percent": 0.32598039215686275
     }
   },
   {
@@ -988,6 +1222,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 19,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 9.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 10.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 6.75,
+      "red_survival_percent": 0.31140350877192985
+    }
+  },
+  {
     "cr": "Half",
     "level": 20,
     "result": {
@@ -1040,6 +1287,19 @@
     }
   },
   {
+    "cr": "Six",
+    "level": 20,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 9.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 10.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 7.0,
+      "red_survival_percent": 0.3055555555555556
+    }
+  },
+  {
     "cr": "Half",
     "level": 21,
     "result": {
@@ -1089,6 +1349,19 @@
       "red_living_count": 0,
       "red_rounds_to_live": 12.25,
       "red_survival_percent": 0.0
+    }
+  },
+  {
+    "cr": "Six",
+    "level": 21,
+    "result": {
+      "blue_living_count": 0,
+      "blue_rounds_to_live": 10.25,
+      "blue_survival_percent": 0.0,
+      "rounds": 11.0,
+      "red_living_count": 1,
+      "red_rounds_to_live": 7.5,
+      "red_survival_percent": 0.3173758865248227
     }
   }
 ]
