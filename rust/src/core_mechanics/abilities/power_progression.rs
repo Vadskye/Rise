@@ -17,6 +17,7 @@ impl PowerProgression {
                 5 => 10, // +3
                 6 => 14, // +4
                 7 => 20, // +6
+                8 => 28, // +8
                 _ => panic!("Invalid rank {}", rank),
             },
             Self::Medium => match rank {
@@ -27,6 +28,7 @@ impl PowerProgression {
                 5 => 8,  // +2
                 6 => 12, // +4
                 7 => 16, // +4
+                8 => 22, // +6
                 _ => panic!("Invalid rank {}", rank),
             },
             Self::Slow => match rank {
@@ -37,6 +39,7 @@ impl PowerProgression {
                 5 => 6,  // +2
                 6 => 8,  // +2
                 7 => 12, // +4
+                8 => 16, // +4
                 _ => panic!("Invalid rank {}", rank),
             },
         }

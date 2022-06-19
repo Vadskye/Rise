@@ -59,7 +59,11 @@ fn run_standard_combat(level: i32, cr: ChallengeRating) -> StandardCombatResult 
     };
     let mut monsters = vec![];
     for _ in 0..count {
-        monsters.push(Monster::standard_monster(cr, level, None, None).creature);
+        if matches!(cr, ChallengeRating::Two) {
+            monsters.push(Monster::standard_monster(ChallengeRating::One, level + 3, None, None).creature);
+        } else {
+            monsters.push(Monster::standard_monster(cr, level, None, None).creature);
+        }
     }
     let combat_result = run_combat(pcs, monsters);
     return StandardCombatResult {
