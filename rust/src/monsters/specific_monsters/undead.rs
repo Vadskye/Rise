@@ -364,8 +364,8 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 ]),
             }.monster(),
             Vampire {
-                attributes: vec![7, 7, 6, 6, 7, 6],
-                challenge_rating: ChallengeRating::Six,
+                attributes: vec![6, 6, 6, 5, 6, 5],
+                challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Vampire lords are one of the most powerful types of undead.

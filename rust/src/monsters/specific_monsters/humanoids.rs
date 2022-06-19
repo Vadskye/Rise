@@ -127,8 +127,8 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         monsters: vec![
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually chaotic evil".to_string(),
-                attributes: vec![0, 3, -1, -2, 1, -2],
-                challenge_rating: ChallengeRating::Half,
+                attributes: vec![-1, 3, -2, -2, 1, -2],
+                challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: None,
                 level: 1,
@@ -158,7 +158,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually chaotic evil".to_string(),
                 attributes: vec![1, 3, 1, -2, 1, -2],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: None,
                 level: 1,
@@ -173,7 +173,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually chaotic evil".to_string(),
                 attributes: vec![0, 2, 1, -2, 2, 3],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: None,
                 level: 1,
@@ -232,11 +232,11 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             }),
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually true neutral".to_string(),
-                attributes: vec![4, 0, 5, 0, 2, 2],
-                challenge_rating: ChallengeRating::Two,
+                attributes: vec![3, 0, 4, 0, 2, 2],
+                challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: None,
-                level: 4,
+                level: 6,
                 modifiers: Some(vec![Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability())]),
                 movement_modes: Some(vec![
                     MovementMode::Land(SpeedCategory::Normal),
@@ -278,7 +278,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
             humanoid(FullHumanoidDefinition {
                 alignment: "Usually lawful neutral".to_string(),
                 attributes: vec![1, 0, 0, 0, 0, 3],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: None,
                 level: 1,
@@ -353,7 +353,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
         monsters: vec![
             OrcDefinition {
                 attributes: vec![4, 0, 2, -2, 2, 0],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 knowledge: None,
                 level: 2,
                 modifiers: Some(vec![
@@ -380,8 +380,8 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 weapons: vec![StandardWeapon::Greataxe.weapon()],
             }.monster(),
             OrcDefinition {
-                attributes: vec![3, 0, 1, -2, 0, 0],
-                challenge_rating: ChallengeRating::Half,
+                attributes: vec![3, 0, 0, -2, 0, 0],
+                challenge_rating: ChallengeRating::One,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Orc peons are the weakest warrior that orc clans field in battle.
@@ -396,8 +396,8 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 weapons: vec![StandardWeapon::Greataxe.weapon()],
             }.monster(),
             OrcDefinition {
-                attributes: vec![5, 0, 3, -2, 1, 1],
-                challenge_rating: ChallengeRating::Two,
+                attributes: vec![4, 0, 3, -2, 1, 1],
+                challenge_rating: ChallengeRating::One,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Orc veterans are battle-hardened elite warriors who are deadly at any range.
@@ -435,8 +435,8 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 weapons: vec![StandardWeapon::Greataxe.weapon(), StandardWeapon::Longbow.weapon()],
             }.monster(),
             OrcDefinition {
-                attributes: vec![4, 0, 2, -2, 1, 0],
-                challenge_rating: ChallengeRating::Two,
+                attributes: vec![4, 0, 2, -2, 1, 2],
+                challenge_rating: ChallengeRating::One,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Orc shamans provide orc battle squads with divine magical support.

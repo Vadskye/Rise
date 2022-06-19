@@ -1,47 +1,36 @@
 use crate::creatures::{Creature, Monster};
 use serde::Serialize;
+use std::cmp::max;
 
 #[derive(Copy, Clone, PartialEq, Serialize)]
 pub enum ChallengeRating {
-    Half,
     One,
-    Two,
     Four,
-    Six,
 }
 
 impl ChallengeRating {
     pub fn all() -> Vec<Self> {
-        return vec![Self::Half, Self::One, Self::Two, Self::Four, Self::Six];
+        return vec![Self::One, Self::Four];
     }
 
     pub fn accuracy_bonus(&self) -> i32 {
         match self {
-            Self::Half => 0,
             Self::One => 0,
-            Self::Two => 1,
-            Self::Four => 2,
-            Self::Six => 2,
+            Self::Four => 1,
         }
     }
 
     pub fn damage_increments(&self) -> i32 {
         match self {
-            Self::Half => 0,
             Self::One => 0,
-            Self::Two => 0,
             Self::Four => 0,
-            Self::Six => 0,
         }
     }
 
     pub fn max_base_attribute(&self) -> i32 {
         match self {
-            Self::Half => 3,
             Self::One => 4,
-            Self::Two => 5,
             Self::Four => 6,
-            Self::Six => 7,
         }
     }
 
@@ -49,21 +38,15 @@ impl ChallengeRating {
     // is higher than it would appear based purely on their damage dice.
     pub fn damage_per_round_multiplier(&self) -> f64 {
         match self {
-            Self::Half => 1.0,
             Self::One => 1.0,
-            Self::Two => 1.0,
-            Self::Four => 1.5,
-            Self::Six => 2.0,
+            Self::Four => 2.0,
         }
     }
 
     pub fn defense_bonus(&self) -> i32 {
         match self {
-            Self::Half => -1,
             Self::One => 0,
-            Self::Two => 0,
             Self::Four => 1,
-            Self::Six => 2,
         }
     }
 
@@ -71,120 +54,168 @@ impl ChallengeRating {
     // change this unless a bunch of system match changes!
     pub fn power_scaling_multiplier(&self) -> f64 {
         match self {
-            Self::Half => 0.5,
             Self::One => 1.0,
-            Self::Two => 2.0,
             Self::Four => 2.0,
-            Self::Six => 3.0,
         }
     }
 
     pub fn rank_modifier(&self) -> i32 {
         match self {
-            Self::Half => -1,
             Self::One => 0,
-            Self::Two => 0,
             Self::Four => 0,
-            Self::Six => 1,
         }
     }
 
     pub fn dr_multiplier(&self) -> f64 {
         match self {
-            Self::Half => 0.0,
             Self::One => 2.0,
-            Self::Two => 4.0,
             Self::Four => 8.0,
-            Self::Six => 12.0,
         }
     }
 
     pub fn hp_multiplier(&self) -> f64 {
         match self {
-            Self::Half => 1.0,
             Self::One => 1.0,
-            Self::Two => 3.0,
             Self::Four => 4.0,
-            Self::Six => 6.0,
         }
     }
 
     pub fn from_string(text: String) -> Self {
         match text.as_str() {
-            "0.5" => ChallengeRating::Half,
             "1" => ChallengeRating::One,
-            "2" => ChallengeRating::Two,
             "4" => ChallengeRating::Four,
-            "6" => ChallengeRating::Six,
             _ => panic!("Invalid challenge rating '{}'", text),
         }
     }
 
     pub fn to_string(&self) -> &str {
         match self {
-            ChallengeRating::Half => "0.5",
             ChallengeRating::One => "1",
-            ChallengeRating::Two => "2",
             ChallengeRating::Four => "4",
-            ChallengeRating::Six => "6",
         }
     }
 
-    pub fn standard_encounter(self, level: i32) -> Vec<Creature> {
-        let creature = Monster::standard_monster(self, level, None, None).creature;
-        match self {
-            ChallengeRating::Half => vec![
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
+    pub fn difficult_encounter(level: i32, count: i32) -> Vec<Creature> {
+        fn sm(cr: ChallengeRating, l: i32) -> Creature {
+            return Monster::standard_monster(cr, max(l, 1), None, None)
+                .creature;
+        }
+
+        match count {
+            1 => vec![
+                sm(ChallengeRating::Four, level + 3),
             ],
-            ChallengeRating::One => vec![
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
+            2 => vec![
+                sm(ChallengeRating::Four, level),
+                sm(ChallengeRating::One, level + 3),
             ],
-            ChallengeRating::Two => vec![creature.clone(), creature.clone()],
-            ChallengeRating::Four => vec![creature.clone()],
-            // This is too hard
-            ChallengeRating::Six => vec![creature.clone()],
+            3 => vec![
+                sm(ChallengeRating::Four, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+            ],
+            4 => vec![
+                sm(ChallengeRating::One, level + 3),
+                sm(ChallengeRating::One, level + 3),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+            ],
+            5 => vec![
+                sm(ChallengeRating::One, level + 3),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+            ],
+            6 => vec![
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+            ],
+            7 => vec![
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+            ],
+            8 => vec![
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+            ],
+            _ => panic!("Invalid monster count {}", count),
         }
     }
 
-    pub fn difficult_encounter(self, level: i32) -> Vec<Creature> {
-        let creature = Monster::standard_monster(self, level, None, None).creature;
-        match self {
-            ChallengeRating::Half => vec![
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
+    pub fn standard_encounter(level: i32, count: i32) -> Vec<Creature> {
+        fn sm(cr: ChallengeRating, l: i32) -> Creature {
+            return Monster::standard_monster(cr, max(l, 1), None, None)
+                .creature;
+        }
+
+        match count {
+            1 => vec![sm(ChallengeRating::Four, level)],
+            2 => vec![
+                sm(ChallengeRating::One, level + 3),
+                sm(ChallengeRating::One, level + 3),
             ],
-            ChallengeRating::One => vec![
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
-                creature.clone(),
+            3 => vec![
+                sm(ChallengeRating::One, level + 3),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
             ],
-            ChallengeRating::Two => vec![creature.clone(), creature.clone(), creature.clone()],
-            ChallengeRating::Four => vec![
-                creature.clone(),
-                Monster::standard_monster(Self::Two, level, None, None).creature,
+            4 => vec![
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
             ],
-            ChallengeRating::Six => vec![creature.clone()],
+            5 => vec![
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+            ],
+            6 => vec![
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+            ],
+            7 => vec![
+                sm(ChallengeRating::One, level),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+            ],
+            8 => vec![
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::One, level - 3),
+            ],
+            _ => panic!("Invalid monster count {}", count),
         }
     }
 }

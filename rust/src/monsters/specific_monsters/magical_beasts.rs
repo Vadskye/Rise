@@ -108,7 +108,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
         alignment: "Always true neutral".to_string(),
         attributes: vec![3, 4, 1, -8, 0, 3],
-        challenge_rating: ChallengeRating::Two,
+        challenge_rating: ChallengeRating::One,
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -156,7 +156,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
         alignment: "Always true neutral".to_string(),
         attributes: vec![4, 4, 1, -8, 2, -1],
-        challenge_rating: ChallengeRating::Two,
+        challenge_rating: ChallengeRating::One,
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -241,7 +241,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
         alignment: "Always true neutral".to_string(),
         attributes: vec![4, 4, -2, -6, 3, 0],
-        challenge_rating: ChallengeRating::Two,
+        challenge_rating: ChallengeRating::One,
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -424,8 +424,8 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         name: "Ichor-Tainted".to_string(),
         monsters: vec![
             IchorDefinition {
-                attributes: vec![4, 0, 5, -9, 0, -1],
-                challenge_rating: ChallengeRating::Two,
+                attributes: vec![4, 0, 4, -9, 0, -1],
+                challenge_rating: ChallengeRating::One,
                 level: 7,
                 modifiers: None,
                 name: "Ichor Black Bear".to_string(),
@@ -438,8 +438,8 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             }
             .monster(),
             IchorDefinition {
-                attributes: vec![5, 0, 5, -9, 0, 0],
-                challenge_rating: ChallengeRating::Two,
+                attributes: vec![5, 0, 6, -9, 2, 0],
+                challenge_rating: ChallengeRating::Four,
                 level: 9,
                 modifiers: None,
                 name: "Ichor Brown Bear".to_string(),
@@ -452,9 +452,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             }
             .monster(),
             IchorDefinition {
-                attributes: vec![-1, 3, -1, -9, 2, -3],
-                challenge_rating: ChallengeRating::Half,
-                level: 2,
+                attributes: vec![-1, 4, -1, -9, 2, -3],
+                challenge_rating: ChallengeRating::One,
+                level: 1,
                 modifiers: None,
                 name: "Ichor Rat".to_string(),
                 size: Size::Tiny,

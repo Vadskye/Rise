@@ -182,7 +182,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
         monsters: vec![
             create_animated_object(
                 vec![-4, 3, -4, 0, 0, -5],
-                ChallengeRating::Half,
+                ChallengeRating::One,
                 1,
                 "Tiny Object",
                 Size::Tiny,
@@ -196,35 +196,35 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
             ),
             create_animated_object(
                 vec![0, 0, 0, 0, 0, -5],
-                ChallengeRating::Two,
+                ChallengeRating::One,
                 2,
                 "Medium Object",
                 Size::Medium,
             ),
             create_animated_object(
                 vec![2, -1, 2, 0, 0, -5],
-                ChallengeRating::Two,
+                ChallengeRating::One,
                 4,
                 "Large Object",
                 Size::Large,
             ),
             create_animated_object(
                 vec![3, -2, 3, 0, 0, -5],
-                ChallengeRating::Two,
+                ChallengeRating::One,
                 7,
                 "Huge Object",
                 Size::Huge,
             ),
             create_animated_object(
                 vec![4, -2, 4, 0, 0, -5],
-                ChallengeRating::Two,
+                ChallengeRating::One,
                 9,
                 "Gargantuan Object",
                 Size::Gargantuan,
             ),
             create_animated_object(
                 vec![5, -3, 5, 0, 0, -5],
-                ChallengeRating::Two,
+                ChallengeRating::One,
                 11,
                 "Colossal Object",
                 Size::Colossal,
@@ -265,7 +265,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
             return animate(FullAnimateDefinition {
                 alignment: self.alignment,
                 attributes: self.attributes,
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: Some(self.knowledge),
                 level: self.level,
@@ -357,7 +357,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 }.monster(),
                 TreantDefinition {
                     alignment: "Usually true neutral".to_string(),
-                    attributes: vec![4, -2, 5, 0, 2, 2],
+                    attributes: vec![4, -2, 6, 0, 0, 2],
                     knowledge: Knowledge::new(vec![(0, "
                         Cyprus treants are the most durable of treants.
                         They are virtually indestructible, and are fearsome when roused to anger.

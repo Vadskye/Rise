@@ -71,11 +71,11 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
         knowledge: None,
         monsters: vec![FullPlaneforgedDefinition {
             alignment: "Always chaotic evil".to_string(),
-            attributes: vec![2, 3, 2, 1, 0, -2],
-            challenge_rating: ChallengeRating::Half,
+            attributes: vec![2, 4, 2, 1, 0, -2],
+            challenge_rating: ChallengeRating::One,
             description: None,
             knowledge: None,
-            level: 13,
+            level: 10,
             modifiers: None,
             movement_modes: None,
             name: "Flamefist Imp".to_string(),
@@ -93,7 +93,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
         FullPlaneforgedDefinition {
             alignment: "Always chaotic evil".to_string(),
             attributes: vec![3, 2, 3, 2, 4, 4],
-            challenge_rating: ChallengeRating::Six,
+            challenge_rating: ChallengeRating::Four,
             description: None,
             knowledge: None,
             level: 13,
@@ -234,7 +234,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             Angel {
                 alignment: "Always neutral good".to_string(),
                 attributes: vec![5, 6, 4, 4, 4, 6],
-                challenge_rating: ChallengeRating::Six,
+                challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Seraphim are six-winged angels of immense power.
@@ -272,7 +272,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             Angel {
                 alignment: "Always lawful good".to_string(),
                 attributes: vec![5, 5, 5, 4, 6, 4],
-                challenge_rating: ChallengeRating::Six,
+                challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Justicars enforce justice on good-aligned planes.
@@ -319,7 +319,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             Angel {
                 alignment: "Always neutral good".to_string(),
                 attributes: vec![4, 5, 7, 4, 4, 6],
-                challenge_rating: ChallengeRating::Six,
+                challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Ophanim resemble burning wheels rimmed with many eyes.
@@ -559,7 +559,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             .monster(),
             AirElemental {
                 attributes: vec![4, 5, 0, -2, 3, 0],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 level: 8,
                 name: "Gale".to_string(),
                 size: Size::Medium,
@@ -567,7 +567,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             .monster(),
             AirElemental {
                 attributes: vec![4, 5, 0, -2, 4, 0],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 level: 12,
                 name: "Tempest".to_string(),
                 size: Size::Large,
@@ -660,7 +660,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             .monster(),
             FireElemental {
                 attributes: vec![4, 5, 0, -2, 0, 2],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 level: 8,
                 name: "Kindled".to_string(),
                 size: Size::Medium,
@@ -668,7 +668,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             .monster(),
             FireElemental {
                 attributes: vec![4, 5, 0, -2, 0, 2],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 level: 12,
                 name: "Bonfire".to_string(),
                 size: Size::Large,
@@ -766,7 +766,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
         monsters: vec![
             MagmaElemental {
                 attributes: vec![4, 4, 5, -4, 0, 0],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 level: 6,
                 modifiers: vec![
                     Modifier::Attack(StandardAttack::Combustion(2).attack()),
@@ -778,7 +778,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             .monster(),
             MagmaElemental {
                 attributes: vec![5, 5, 6, -3, 0, 0],
-                challenge_rating: ChallengeRating::Four,
+                challenge_rating: ChallengeRating::One,
                 level: 12,
                 modifiers: vec![
                     Modifier::Attack(StandardAttack::Combustion(4).attack()),
@@ -926,8 +926,8 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
         name: "Formians".to_string(),
         monsters: vec![
             Formian {
-                attributes: vec![1, 2, 1, -2, 0, -2],
-                challenge_rating: ChallengeRating::Half,
+                attributes: vec![1, 3, -1, -2, 0, -2],
+                challenge_rating: ChallengeRating::One,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Workers are the basic building blocks of formian society.
@@ -940,7 +940,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                         Workers are generally given orders by a formian queen in groups of at least five, and it is rare to see an individual worker on its own.
                     "),
                 ])),
-                level: 2,
+                level: 1,
                 modifiers: None,
                 movement_modes: None,
                 name: "Worker".to_string(),

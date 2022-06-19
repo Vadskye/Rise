@@ -60,7 +60,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     }
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
         attributes: vec![3, 0, 3, -8, 1, 0],
-        challenge_rating: ChallengeRating::Two,
+        challenge_rating: ChallengeRating::One,
         description: None,
         knowledge: Some(Knowledge::new(vec![(
             0,
@@ -144,8 +144,8 @@ pub fn animals() -> Vec<MonsterEntry> {
             knowledge: None,
             monsters: vec![
                 animal(FullAnimalDefinition {
-                    attributes: vec![4, 0, 5, -8, 0, -1],
-                    challenge_rating: ChallengeRating::Two,
+                    attributes: vec![4, 0, 4, -8, 0, -1],
+                    challenge_rating: ChallengeRating::One,
                     description: None,
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
@@ -167,8 +167,8 @@ pub fn animals() -> Vec<MonsterEntry> {
                     weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::MonsterClaws.weapon()],
                 }),
                 animal(FullAnimalDefinition {
-                    attributes: vec![5, 0, 5, -8, 0, 1],
-                    challenge_rating: ChallengeRating::Two,
+                    attributes: vec![5, 0, 6, -8, 0, 1],
+                    challenge_rating: ChallengeRating::Four,
                     description: Some("A brown bear's statistics can be used for almost any big bear, including a grizzly bear.".to_string()),
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
@@ -193,8 +193,8 @@ pub fn animals() -> Vec<MonsterEntry> {
     ));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
-        attributes: vec![-7, 3, -1, -7, 1, -2],
-        challenge_rating: ChallengeRating::Half,
+        attributes: vec![-7, 4, -2, -7, 1, -2],
+        challenge_rating: ChallengeRating::One,
         description: None,
         knowledge: None,
         level: 1,
@@ -287,7 +287,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     }
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
         attributes: vec![2, 5, 1, -8, 3, -2],
-        challenge_rating: ChallengeRating::Two,
+        challenge_rating: ChallengeRating::One,
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -355,8 +355,8 @@ pub fn animals() -> Vec<MonsterEntry> {
     })));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
-        attributes: vec![3, 3, 2, -7, 2, -1],
-        challenge_rating: ChallengeRating::Two,
+        attributes: vec![3, 3, 3, -7, 2, -1],
+        challenge_rating: ChallengeRating::One,
         description: None,
         knowledge: None,
         level: 1,
@@ -372,7 +372,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     // TODO: add carrying capacity to knowledge result
     let horse = animal(FullAnimalDefinition {
         attributes: vec![2, 1, 3, -7, 0, -3],
-        challenge_rating: ChallengeRating::Two,
+        challenge_rating: ChallengeRating::One,
         level: 2,
         name: "Horse".to_string(),
         size: Size::Large,
@@ -430,8 +430,8 @@ pub fn animals() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(roc));
 
     let vampire_eel = animal(FullAnimalDefinition {
-        attributes: vec![2, 2, 2, -8, 1, -1],
-        challenge_rating: ChallengeRating::Half,
+        attributes: vec![2, 4, 2, -8, 1, -1],
+        challenge_rating: ChallengeRating::One,
         level: 6,
         name: "Vampire Eel".to_string(),
         size: Size::Medium,
@@ -476,7 +476,7 @@ pub fn animals() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
         attributes: vec![-8, 3, -4, -6, 2, -1],
-        challenge_rating: ChallengeRating::Half,
+        challenge_rating: ChallengeRating::One,
         level: 1,
         name: "Raven".to_string(),
         size: Size::Small,
@@ -494,7 +494,7 @@ pub fn animals() -> Vec<MonsterEntry> {
 
     let bombardier_beetle = animal(FullAnimalDefinition {
         attributes: vec![3, -1, 4, -9, 0, 1],
-        challenge_rating: ChallengeRating::Two,
+        challenge_rating: ChallengeRating::One,
         level: 7,
         name: "Giant Bombardier Beetle".to_string(),
         size: Size::Large,
