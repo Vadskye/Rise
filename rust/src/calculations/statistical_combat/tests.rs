@@ -666,6 +666,10 @@ mod calc_attack_damage_per_round {
 mod calc_rounds_to_live {
     use super::*;
 
+    fn calc_individual_rounds_to_live(attacker: &Creature, defender: &Creature) -> f64 {
+        return calc_rounds_to_live(&vec![attacker], &vec![defender]);
+    }
+
     #[test]
     fn standard_barbarian_mirror_match() {
         fn calc_at_level(level: i32) -> f64 {
