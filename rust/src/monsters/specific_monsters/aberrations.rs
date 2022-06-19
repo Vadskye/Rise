@@ -55,8 +55,8 @@ pub fn aberrations() -> Vec<MonsterEntry> {
     // TODO: add ritual casting
     monsters.push(MonsterEntry::Monster(aberration(FullAberrationDefinition {
         alignment: "Usually lawful evil".to_string(),
-        attributes: vec![4, -2, 5, 4, 4, 7],
-        challenge_rating: ChallengeRating::Six,
+        attributes: vec![4, -2, 5, 4, 4, 6],
+        challenge_rating: ChallengeRating::Four,
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (-10, "

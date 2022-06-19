@@ -5,26 +5,11 @@ use rise::monsters::ChallengeRating;
 
 fn main() {
     for level in vec![2, 8, 14, 20] {
-        for challenge_ratings in vec![
-            vec![
-                ChallengeRating::Half,
-                ChallengeRating::Half,
-                ChallengeRating::Half,
-                ChallengeRating::Half,
-                ChallengeRating::Half,
-                ChallengeRating::Half,
-                ChallengeRating::Half,
-                ChallengeRating::Half,
-            ],
-            vec![
-                ChallengeRating::One,
-                ChallengeRating::One,
-                ChallengeRating::One,
-                ChallengeRating::One,
-            ],
-            vec![ChallengeRating::Two, ChallengeRating::Two],
-            vec![ChallengeRating::Four],
-            vec![ChallengeRating::Six],
+        for red in vec![
+            ChallengeRating::standard_encounter(level, 8),
+            ChallengeRating::standard_encounter(level, 4),
+            ChallengeRating::standard_encounter(level, 2),
+            ChallengeRating::standard_encounter(level, 1),
         ] {
             // PCs
             let mut blue = vec![
@@ -33,14 +18,6 @@ fn main() {
                 Character::standard_character(level, true).creature,
                 Character::standard_character(level, true).creature,
             ];
-            let mut red = vec![];
-            for cr in &challenge_ratings {
-                red.push(Monster::standard_monster(*cr, level, None, None).creature);
-            }
-            if challenge_ratings[0] == ChallengeRating::Six {
-                blue.push(blue[0].clone());
-                blue.push(blue[0].clone());
-            }
             let blue_damage_absorption: i32 = blue
                 .iter()
                 .map(|c| c.calc_hit_points() + c.calc_damage_resistance())
@@ -51,8 +28,8 @@ fn main() {
                 .sum();
             let results = run_combat(blue, red);
             println!(
-                "CR{:.1}, L{:>2}, BDA{:>4}, RDA{:>4}, {}",
-                challenge_ratings[0].to_string(),
+                "Count{:.1}, L{:>2}, BDA{:>4}, RDA{:>4}, {}",
+                red.len(),
                 level,
                 blue_damage_absorption,
                 red_damage_absorption,

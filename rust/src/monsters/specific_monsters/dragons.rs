@@ -69,11 +69,11 @@ impl AgeCategory {
 
     fn challenge_rating(&self) -> ChallengeRating {
         match self {
-            Self::Wyrmling => ChallengeRating::Two,
+            Self::Wyrmling => ChallengeRating::One,
             Self::Juvenile => ChallengeRating::Four,
-            Self::Adult => ChallengeRating::Six,
-            Self::Ancient => ChallengeRating::Six,
-            Self::Wyrm => ChallengeRating::Six,
+            Self::Adult => ChallengeRating::Four,
+            Self::Ancient => ChallengeRating::Four,
+            Self::Wyrm => ChallengeRating::Four,
         }
     }
 

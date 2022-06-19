@@ -1,5 +1,5 @@
 use rise::calculations::statistical_combat::run_combat;
-use rise::creatures::{Character, Monster};
+use rise::creatures::Character;
 use rise::monsters::ChallengeRating;
 use serde::Serialize;
 use std::io;
@@ -7,13 +7,8 @@ use std::io;
 fn main() {
     let mut standard_combat_results = vec![];
     for level in 1..22 {
-        for cr in vec![
-            ChallengeRating::Half,
-            ChallengeRating::One,
-            ChallengeRating::Two,
-            ChallengeRating::Four,
-        ] {
-            standard_combat_results.push(run_standard_combat(level, cr));
+        for monster_count in vec![1, 2, 4, 8] {
+            standard_combat_results.push(run_standard_combat(level, monster_count));
         }
     }
 
@@ -27,8 +22,8 @@ fn main() {
 
 #[derive(Serialize)]
 struct StandardCombatResult {
-    cr: ChallengeRating,
     level: i32,
+    monster_count: i32,
     // All fields from CombatResult
     blue_accuracy: f64,
     red_accuracy: f64,
@@ -43,32 +38,18 @@ struct StandardCombatResult {
     red_survival_percent: f64,
 }
 
-fn run_standard_combat(level: i32, cr: ChallengeRating) -> StandardCombatResult {
+fn run_standard_combat(level: i32, monster_count: i32) -> StandardCombatResult {
     let pcs = vec![
         Character::standard_character(level, true).creature,
         Character::standard_character(level, true).creature,
         Character::standard_character(level, true).creature,
         Character::standard_character(level, true).creature,
     ];
-    let count = match cr {
-        ChallengeRating::Half => 8,
-        ChallengeRating::One => 4,
-        ChallengeRating::Two => 2,
-        ChallengeRating::Four => 1,
-        ChallengeRating::Six => 1,
-    };
-    let mut monsters = vec![];
-    for _ in 0..count {
-        if matches!(cr, ChallengeRating::Two) {
-            monsters.push(Monster::standard_monster(ChallengeRating::One, level + 3, None, None).creature);
-        } else {
-            monsters.push(Monster::standard_monster(cr, level, None, None).creature);
-        }
-    }
+    let monsters = ChallengeRating::standard_encounter(level, monster_count);
     let combat_result = run_combat(pcs, monsters);
     return StandardCombatResult {
-        cr,
         level,
+        monster_count,
         blue_accuracy: combat_result.blue_accuracy,
         red_accuracy: combat_result.red_accuracy,
         blue_damage_per_round: combat_result.blue_damage_per_round,

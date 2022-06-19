@@ -137,7 +137,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
             FullMonstrousHumanoidDefinition {
                 alignment: "Usually chaotic evil".to_string(),
                 attributes: vec![5, -2, 4, -2, -2, -2],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
@@ -156,7 +156,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                       They can live to be 70 years old.
                     "),
                 ])),
-                level: 7,
+                level: 10,
                 modifiers: None,
                 movement_modes: None,
                 name: "Hill Giant".to_string(),
@@ -171,7 +171,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
             FullMonstrousHumanoidDefinition {
                 alignment: "Usually true neutral".to_string(),
                 attributes: vec![5, -1, 5, 0, 0, -2],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 description: None,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
@@ -186,7 +186,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                       Elder stone giants tend to be wiser and more cautious, and avoid unnecessary conflict.
                     "),
                 ])),
-                level: 10,
+                level: 13,
                 modifiers: None,
                 movement_modes: None,
                 name: "Stone Giant".to_string(),
@@ -280,15 +280,15 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             }.monster(),
             // TODO: add Sweeping tag or Sweeping Strike maneuver
             OgreDefinition {
-                attributes: vec![5, -1, 3, -2, 0, -1],
-                challenge_rating: ChallengeRating::Two,
+                attributes: vec![4, -1, 3, -2, 0, -1],
+                challenge_rating: ChallengeRating::One,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                       Ogre menaces are mature adult ogres that often terrorize small towns.
                       They tend to work in pairs or with minions like goblins that they bully into submission.
                     "),
                 ])),
-                level: 4,
+                level: 5,
                 modifiers: None,
                 movement_modes: None,
                 name: "Ogre Menace".to_string(),
@@ -297,7 +297,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             }.monster(),
             OgreDefinition {
                 attributes: vec![4, -1, 0, 0, 2, 3],
-                challenge_rating: ChallengeRating::Two,
+                challenge_rating: ChallengeRating::One,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                       Ogre mages are unusual ogres that have innate arcane magical talent.
@@ -305,7 +305,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                       They are more intelligent than other ogres, and more likely to use combat strategies like hiding behind their minions.
                     "),
                 ])),
-                level: 5,
+                level: 6,
                 modifiers: Some(vec![
                     // TODO: is pyromancy the right school?
                     Modifier::Attack(StandardAttack::Firebolt(2).attack()),
