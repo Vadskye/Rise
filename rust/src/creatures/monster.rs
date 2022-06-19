@@ -75,7 +75,13 @@ impl Monster {
             }
         }
 
-        let defense_modifier = if level >= 15 { 2 } else if level >= 3 { 1 } else { 0 };
+        let defense_modifier = if level >= 15 {
+            2
+        } else if level >= 6 {
+            1
+        } else {
+            0
+        };
         for defense in Defense::all() {
             creature.add_modifier(
                 Modifier::Defense(defense, defense_modifier),
