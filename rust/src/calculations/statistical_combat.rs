@@ -149,10 +149,6 @@ fn calc_rounds_to_live(attackers: &Vec<&Creature>, defenders: &Vec<&Creature>) -
     return (rounds_to_survive * 4.0).ceil() / 4.0;
 }
 
-fn calc_individual_rounds_to_live(attacker: &Creature, defender: &Creature) -> f64 {
-    return calc_rounds_to_live(&vec![attacker], &vec![defender]);
-}
-
 fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     let best_attack: Option<Attack> = find_best_attack(attacker, defender);
 
