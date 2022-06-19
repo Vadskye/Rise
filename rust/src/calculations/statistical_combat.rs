@@ -41,8 +41,8 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
     let mut blue = blue.clone();
     let mut red = red.clone();
     let mut rounds = 0.0;
-    let blue_rounds_to_live = calc_rounds_to_live(&blue.iter().collect(), &red.iter().collect());
-    let red_rounds_to_live = calc_rounds_to_live(&red.iter().collect(), &blue.iter().collect());
+    let blue_rounds_to_live = calc_rounds_to_live(&red.iter().collect(), &blue.iter().collect());
+    let red_rounds_to_live = calc_rounds_to_live(&blue.iter().collect(), &red.iter().collect());
 
     // For now, don't do intelligent target prioritization - just proceed linearly through the
     // array of creatures. In the future, we can intelligently sort the vectors before entering
