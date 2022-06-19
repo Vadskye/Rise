@@ -4,6 +4,7 @@ use std::cmp::max;
 
 #[derive(Copy, Clone, PartialEq, Serialize)]
 pub enum ChallengeRating {
+    Half,
     One,
     Four,
 }
@@ -15,6 +16,7 @@ impl ChallengeRating {
 
     pub fn accuracy_bonus(&self) -> i32 {
         match self {
+            Self::Half => 0,
             Self::One => 0,
             Self::Four => 1,
         }
@@ -22,6 +24,7 @@ impl ChallengeRating {
 
     pub fn damage_increments(&self) -> i32 {
         match self {
+            Self::Half => 0,
             Self::One => 0,
             Self::Four => 0,
         }
@@ -29,6 +32,7 @@ impl ChallengeRating {
 
     pub fn max_base_attribute(&self) -> i32 {
         match self {
+            Self::Half => 3,
             Self::One => 4,
             Self::Four => 6,
         }
@@ -38,6 +42,7 @@ impl ChallengeRating {
     // is higher than it would appear based purely on their damage dice.
     pub fn damage_per_round_multiplier(&self) -> f64 {
         match self {
+            Self::Half => 1.0,
             Self::One => 1.0,
             Self::Four => 2.0,
         }
@@ -45,6 +50,7 @@ impl ChallengeRating {
 
     pub fn defense_bonus(&self) -> i32 {
         match self {
+            Self::Half => 0,
             Self::One => 0,
             Self::Four => 1,
         }
@@ -54,6 +60,7 @@ impl ChallengeRating {
     // change this unless a bunch of system match changes!
     pub fn power_scaling_multiplier(&self) -> f64 {
         match self {
+            Self::Half => 0.5,
             Self::One => 1.0,
             Self::Four => 2.0,
         }
@@ -61,6 +68,7 @@ impl ChallengeRating {
 
     pub fn rank_modifier(&self) -> i32 {
         match self {
+            Self::Half => 0,
             Self::One => 0,
             Self::Four => 0,
         }
@@ -68,6 +76,7 @@ impl ChallengeRating {
 
     pub fn dr_multiplier(&self) -> f64 {
         match self {
+            Self::Half => 0.0,
             Self::One => 2.0,
             Self::Four => 8.0,
         }
@@ -75,6 +84,7 @@ impl ChallengeRating {
 
     pub fn hp_multiplier(&self) -> f64 {
         match self {
+            Self::Half => 1.0,
             Self::One => 1.0,
             Self::Four => 4.0,
         }
@@ -82,6 +92,7 @@ impl ChallengeRating {
 
     pub fn from_string(text: String) -> Self {
         match text.as_str() {
+            "0.5" => ChallengeRating::Half,
             "1" => ChallengeRating::One,
             "4" => ChallengeRating::Four,
             _ => panic!("Invalid challenge rating '{}'", text),
@@ -90,6 +101,7 @@ impl ChallengeRating {
 
     pub fn to_string(&self) -> &str {
         match self {
+            ChallengeRating::Half => "0.5",
             ChallengeRating::One => "1",
             ChallengeRating::Four => "4",
         }
@@ -185,35 +197,35 @@ impl ChallengeRating {
                 sm(ChallengeRating::One, level),
                 sm(ChallengeRating::One, level),
                 sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
             ],
             6 => vec![
                 sm(ChallengeRating::One, level),
                 sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
             ],
             7 => vec![
                 sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
             ],
             8 => vec![
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
+                sm(ChallengeRating::Half, level),
             ],
             _ => panic!("Invalid monster count {}", count),
         }
