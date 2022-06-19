@@ -608,7 +608,7 @@ function calcDefenseCrScaling(level, challengeRating) {
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    levelScaling += level >= 15 ? 2 : level >= 3 ? 1 : 0;
+    levelScaling += level >= 15 ? 2 : level >= 6 ? 1 : 0;
   }
   if (challengeRating === 4) {
     levelScaling += 1;
@@ -1208,6 +1208,7 @@ function handleDamageResistance() {
       const fromLevelAndCon = calcBaseDamageResistance(v.level + conModifier);
       var crMultiplier = {
         0: 1,
+        0.5: 0,
         1: 2,
         4: 8,
       }[v.challenge_rating || 0];
@@ -1546,6 +1547,7 @@ function handleHitPoints() {
 
       let crMultiplier = {
         0: 1,
+        0.5: 1,
         1: 1,
         4: 4,
       }[v.challenge_rating || 0];
@@ -1815,6 +1817,7 @@ function handlePower() {
           classPowerModifier *
           (v.challenge_rating
             ? {
+                0.5: 0.5,
                 1: 1,
                 4: 2,
               }[v.challenge_rating]
