@@ -12,6 +12,7 @@ fn main() {
             ChallengeRating::One,
             ChallengeRating::Two,
             ChallengeRating::Four,
+            ChallengeRating::Six,
         ] {
             standard_combat_results.push(run_standard_combat(level, cr));
         }
