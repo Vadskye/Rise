@@ -1,21 +1,19 @@
 use crate::core_mechanics::attacks::{Attack, HasAttacks};
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses, HasVitalWounds};
 use crate::creatures::{Creature, HasDamageTracking};
-use serde::{Deserialize, Serialize};
 use std::cmp::max;
 use std::fmt;
 
-#[derive(Deserialize, Serialize)]
 pub struct CombatResult {
-    blue_damage_per_round: i32,
-    blue_living_count: usize,
-    blue_rounds_to_live: f64,
-    blue_survival_percent: f64,
-    rounds: f64,
-    red_damage_per_round: i32,
-    red_living_count: usize,
-    red_rounds_to_live: f64,
-    red_survival_percent: f64,
+    pub blue_damage_per_round: i32,
+    pub blue_living_count: usize,
+    pub blue_rounds_to_live: f64,
+    pub blue_survival_percent: f64,
+    pub rounds: f64,
+    pub red_damage_per_round: i32,
+    pub red_living_count: usize,
+    pub red_rounds_to_live: f64,
+    pub red_survival_percent: f64,
 }
 
 struct CombatStep<T, TT> {
@@ -144,9 +142,10 @@ fn calc_rounds_to_live(attackers: &Vec<&Creature>, defenders: &Vec<&Creature>) -
         // Divide to average the dpr across all defenders
         damage_per_round += calc_damage_per_round(attackers, defender) / (defenders.len() as f64);
         // Add 1 HP since creatures need to drop below 0 to die, not just go to 0
-        damage_absorption += defender.remaining_damage_resistance() + defender.remaining_hit_points() + 1;
+        damage_absorption +=
+            defender.remaining_damage_resistance() + defender.remaining_hit_points() + 1;
     }
-        
+
     let rounds_to_survive = damage_absorption as f64 / damage_per_round;
     // In a real fight, rounds would be broken up into discrete units, but we'd also have to
     // deal with the variance of high and low rolls. Dropping to quarter-round precision
