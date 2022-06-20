@@ -1,10 +1,10 @@
 use std::cmp::max;
 
 use crate::core_mechanics::abilities::PowerProgression;
-use crate::core_mechanics::attacks::{HasAttacks, Maneuver};
+use crate::core_mechanics::attacks::{HasAttacks, Maneuver, PureDamage};
 use crate::core_mechanics::{
-    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, SpecialDefenseType,
-    StandardPassiveAbility,
+    Attribute, DamageType, Defense, HasAttributes, HasDamageAbsorption, HasDefenses,
+    SpecialDefenseType, StandardPassiveAbility,
 };
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::StandardWeapon;
@@ -109,6 +109,22 @@ impl Monster {
         creature.add_modifier(
             Modifier::Maneuver(Maneuver::MonstrousStrike(rank)),
             Some("Basic Maneuver"),
+            None,
+        );
+        creature.add_modifier(
+            Modifier::Attack(
+                PureDamage {
+                    damage_types: vec![DamageType::Energy],
+                    defense: Defense::Armor,
+                    is_magical: true,
+                    is_maneuver: false,
+                    name: "Generic Monster Damage".to_string(),
+                    range: None,
+                    rank,
+                }
+                .attack(),
+            ),
+            Some("Generic Monster Damage"),
             None,
         );
 
