@@ -295,12 +295,9 @@
         \columnbreak
         \begin{flushright}
             \large\textbf{Level~#3}
-            \IfValueTF{#4}
+            \IfValueT{#4}
             {
-                \textbf{~[CR~#4]}
-            }
-            {
-                \textbf{~[CR~1]}
+                \textbf{~[#4]}
             }
         \end{flushright}
     \end{multicols}
@@ -329,12 +326,9 @@
         \columnbreak
         \begin{flushright}
             \textbf{Level~#3}
-            \IfValueTF{#4}
+            \IfValueT{#4}
             {
-                \textbf{~[CR~#4]}
-            }
-            {
-                \textbf{~[CR~1]}
+                \textbf{~[#4]}
             }
         \end{flushright}
     \end{multicols}
