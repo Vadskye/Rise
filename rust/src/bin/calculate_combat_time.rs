@@ -1,6 +1,6 @@
 use rise::calculations::statistical_combat::run_combat;
 use rise::core_mechanics::HasDamageAbsorption;
-use rise::creatures::{Character, Monster};
+use rise::creatures::Character;
 use rise::monsters::ChallengeRating;
 
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
             ChallengeRating::standard_encounter(level, 1),
         ] {
             // PCs
-            let mut blue = vec![
+            let blue = vec![
                 Character::standard_character(level, true).creature,
                 Character::standard_character(level, true).creature,
                 Character::standard_character(level, true).creature,
@@ -26,14 +26,11 @@ fn main() {
                 .iter()
                 .map(|c| c.calc_hit_points() + c.calc_damage_resistance())
                 .sum();
+            let red_count = red.len();
             let results = run_combat(blue, red);
             println!(
                 "Count{:.1}, L{:>2}, BDA{:>4}, RDA{:>4}, {}",
-                red.len(),
-                level,
-                blue_damage_absorption,
-                red_damage_absorption,
-                results
+                red_count, level, blue_damage_absorption, red_damage_absorption, results
             );
         }
     }
