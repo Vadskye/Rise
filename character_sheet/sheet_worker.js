@@ -1789,6 +1789,7 @@ function handlePower() {
           5: 10,
           6: 14,
           7: 20,
+          8: 28,
         }[maxRank];
       } else if (classPowerProgression === "normal") {
         classPowerModifier = {
@@ -1800,18 +1801,19 @@ function handlePower() {
           5: 8,
           6: 12,
           7: 16,
+          8: 22,
         }[maxRank];
       } else if (classPowerProgression === "monster") {
         classPowerModifier = {
-          0: 1,
-          1: 2,
-          2: 3,
-          3: 4,
-          4: 6,
-          5: 8,
-          6: 12,
-          7: 16,
-          8: 24,
+          0: 0,
+          1: 3,
+          2: 4,
+          3: 5,
+          4: 7,
+          5: 10,
+          6: 14,
+          7: 20,
+          8: 28,
         }[Math.floor((v.level + 2) / 3)];
         classPowerModifier =
           classPowerModifier *
