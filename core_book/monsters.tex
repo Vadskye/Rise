@@ -20,13 +20,10 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             \item Monsters have a \plus5 bonus to all defenses that increases to \plus6 at 3rd level and \plus7 at 15th level
             \item Monsters gain a \plus1d damage bonus with strikes at 4th level and every 3 levels thereafter
             \item Monsters gain a \plus1 bonus to power with all abilities that gradually increases at 4th level and every 3 levels thereafter, as described in \tref{Monster Advancement}
-            \item High CR monsters automatically remove conditions at the end of each round, and become more resistant to conditions at 12th level and 21st level (see \pcref{Conditions on Monsters})
+            \item Elite monsters automatically remove conditions at the end of each round, and become more resistant to conditions at 12th level and 21st level (see \pcref{Conditions on Monsters})
         \end{itemize}
 
         Monster level scaling is summarized in \tref{Monster Advancement}.
-        The values in that table are accurate for CR 1 monsters, since they are individually the most similar to player characters and have the fewest multipliers and modifiers.
-        The statistics for monsters with a different CR can be extrapolated from those base values.
-
         Monsters gain the same statistical benefits from their attributes that player characters do.
         The values listed in the Monster Advancement table do not include bonuses from attributes.
         When creating a new monster, make sure to decide its attributes appropriately, since they can have a large effect on the monster's overall power level and combat style.
@@ -40,84 +37,99 @@ This chapter describes the rules for monsters, and the combat statistics for a v
     \begin{dtable}
         \lcaption{Monster Advancement}
         \begin{dtabularx}{\columnwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Level}\fn{1} & \tb{Max Rank} & \tb{Accuracy} & \tb{Defenses} & \tb{Bite Damage} \tableheaderrule
-            1st              & 1             & \plus0        & 5             & 1d8\plus2  \\
-            2nd              & 1             & \plus1        & 6             & 1d8\plus2  \\
-            3rd              & 1             & \plus1        & 7             & 1d8\plus2  \\
-            4th              & 2             & \plus2        & 8             & 1d10\plus3 \\
-            5th              & 2             & \plus2        & 8             & 1d10\plus3 \\
-            6th              & 2             & \plus3        & 9             & 1d10\plus3 \\
-            7th              & 3             & \plus3        & 9             & 2d6\plus4  \\
-            8th              & 3             & \plus4        & 10            & 2d6\plus4  \\
-            9th              & 3             & \plus4        & 10            & 2d6\plus4  \\
-            10th             & 4             & \plus5        & 11            & 2d8\plus6  \\
-            11th             & 4             & \plus5        & 11            & 2d8\plus6  \\
-            12th             & 4             & \plus6        & 13            & 2d8\plus6  \\
-            13th             & 5             & \plus6        & 13            & 2d10\plus8 \\
-            14th             & 5             & \plus7        & 14            & 2d10\plus8 \\
-            15th             & 5             & \plus7        & 14            & 2d10\plus8 \\
-            16th             & 6             & \plus8        & 15            & 4d6\plus12 \\
-            17th             & 6             & \plus8        & 15            & 4d6\plus12 \\
-            18th             & 6             & \plus9        & 16            & 4d6\plus12 \\
-            19th             & 7             & \plus9       & 16            & 4d8\plus16 \\
-            20th             & 7             & \plus10       & 17            & 4d8\plus16 \\
-            21st             & 7             & \plus10       & 18            & 4d8\plus16 \\
+            \tb{Standard Monsters} & & & & \\
+            \tb{Level} & \tb{Max Rank} & \tb{Accuracy} & \tb{Defenses} & \tb{Bite Damage}\fn{1} \tableheaderrule
+            1st              & 1             & \plus0        & 5             & 1d8\plus3  \\
+            2nd              & 1             & \plus1        & 6             & 1d8\plus3  \\
+            3rd              & 1             & \plus1        & 7             & 1d8\plus3  \\
+            4th              & 2             & \plus2        & 8             & 1d10\plus4 \\
+            5th              & 2             & \plus2        & 8             & 1d10\plus4 \\
+            6th              & 2             & \plus3        & 9             & 1d10\plus4 \\
+            7th              & 3             & \plus3        & 9             & 2d6\plus5  \\
+            8th              & 3             & \plus4        & 10            & 2d6\plus5  \\
+            9th              & 3             & \plus4        & 10            & 2d6\plus5  \\
+            10th             & 4             & \plus5        & 11            & 2d8\plus7  \\
+            11th             & 4             & \plus5        & 11            & 2d8\plus7  \\
+            12th             & 4             & \plus6        & 13            & 2d8\plus7  \\
+            13th             & 5             & \plus6        & 13            & 2d10\plus10 \\
+            14th             & 5             & \plus7        & 14            & 2d10\plus10 \\
+            15th             & 5             & \plus7        & 14            & 2d10\plus10 \\
+            16th             & 6             & \plus8        & 15            & 4d6\plus14 \\
+            17th             & 6             & \plus8        & 15            & 4d6\plus14 \\
+            18th             & 6             & \plus9        & 16            & 4d6\plus14 \\
+            19th             & 7             & \plus9       & 16            & 4d8\plus20 \\
+            20th             & 7             & \plus10       & 17            & 4d8\plus20 \\
+            21st             & 7             & \plus10       & 18            & 4d8\plus20 \\
+            \tb{Elite Monsters} & & & & \\
+            \tb{Level} & \tb{Max Rank} & \tb{Accuracy} & \tb{Defenses} & \tb{Bite Damage} \tableheaderrule
+            1st              & 2             & \plus1        & 6             & 1d8\plus6  \\
+            2nd              & 2             & \plus2        & 7             & 1d8\plus6  \\
+            3rd              & 2             & \plus2        & 8             & 1d8\plus6  \\
+            4th              & 3             & \plus3        & 9             & 1d10\plus8 \\
+            5th              & 3             & \plus3        & 9             & 1d10\plus8 \\
+            6th              & 3             & \plus4        & 10             & 1d10\plus8 \\
+            7th              & 4             & \plus4        & 10             & 2d6\plus10  \\
+            8th              & 4             & \plus5        & 11            & 2d6\plus10  \\
+            9th              & 4             & \plus5        & 11            & 2d6\plus10  \\
+            10th             & 5             & \plus6        & 12            & 2d8\plus14  \\
+            11th             & 5             & \plus6        & 12            & 2d8\plus14  \\
+            12th             & 5             & \plus7        & 14            & 2d8\plus14  \\
+            13th             & 6             & \plus7        & 14            & 2d10\plus20 \\
+            14th             & 6             & \plus8        & 15            & 2d10\plus20 \\
+            15th             & 6             & \plus8        & 15            & 2d10\plus20 \\
+            16th             & 7             & \plus9        & 16            & 4d6\plus28 \\
+            17th             & 7             & \plus9        & 16            & 4d6\plus28 \\
+            18th             & 7             & \plus10        & 17            & 4d6\plus28 \\
+            19th             & 8\fn{2}       & \plus10       & 17            & 4d8\plus40 \\
+            20th             & 8             & \plus11       & 18            & 4d8\plus40 \\
+            21st             & 8             & \plus11       & 19            & 4d8\plus40 \\
         \end{dtabularx}
-        1. The statistics in this table are accurate for CR 1 monsters. \\
-        2. Assuming the monster has no free hands (see \pcref{Monster Natural Weapon Bonuses}). \\
-        % 3. For each level beyond 21, a monster increases its maximum hit points by 25 and its maximum damage resistance by 12. \\
+        1. Assuming the monster has no free hands (see \pcref{Monster Natural Weapon Bonuses}). \\
+        2. There are no standard rank 8 abilities. However, these monsters may continue to scale the power of lower-rank abilities or have entirely novel abilities. \\
     \end{dtable}
 
-    \subsection{Challenge Rating}\label{Challenge Rating}
-        Each monster has a challenge rating that indicates its approximate strength within its level, ranging from 1/2 to 6.
-        A monster's challenge rating is a guideline to how many of that monster should typically be present in an encounter (see \pcref{Encounter Balancing}).
-        This has several effects on the monster's statistics, as described in \trefnp{Challenge Rating Effects}.
+    \subsection{Elite Monsters}\label{Elite Monsters}
+        Elite monsters are approximately four times as strong as an ordinary monster.
+        They have a number of benefits and modifiers to make them more appropriate as a solo encounter than simply using a very high level ordinary monster:
+        \begin{itemize}
+            \item Elite monsters gain a \plus1 bonus to their \glossterm{accuracy} and all \glossterm{defenses}.
+            \item Elite monsters have twice the \glossterm{power} of standard monsters.
+            \item Elite monsters can have a maximum attribute of 6 (see \pcref{Monster Attributes}).
+            \item Elite monsters gain a \plus1 bonus to their maximum ability \glossterm{rank} (see \pcref{Monster Ability Access}).
+            \item Elite monsters can take two standard actions each round. However, they cannot use the same ability or weapon twice in the same round, unless they have two different versions of the same weapon (such as multiple independent tentacles).
+            \item Elite monsters automatically remove \glossterm{conditions} (see \pcref{Conditions on Monsters}).
+        \end{itemize}
 
-        \begin{dtable*}
-            \lcaption{Challenge Rating Effects}
-            \begin{dtabularx}{\textwidth}{l l l l l X X l}
-                \tb{CR} & \tb{HP} & \tb{DR} & \tb{Accuracy} & \tb{Defenses} & \tb{Power Scaling}\fn{1} & \tb{Max Attribute} & \tb{Max Rank}\fn{2} \tableheaderrule
-                1/2     & \mult1  & \mult0  & \plus0        & \minus1       & \mult1/2                 & 3                  & \minus1 \\
-                1       & \mult1  & \mult2  & \plus0        & \plus0        & \mult1                   & 4                  & \tdash  \\
-                2       & \mult3  & \mult4  & \plus1        & \plus0        & \mult2                   & 5                  & \tdash  \\
-                4       & \mult4  & \mult8  & \plus1        & \plus1        & \mult2                   & 6                  & \tdash  \\
-                6       & \mult6  & \mult16 & \plus1        & \plus2        & \mult3                   & 7                  & \plus1  \\
-            \end{dtabularx}
-            1. This modifier applies to the special power bonus that monsters get based on their level, not to any other sources of power such as Strength or Willpower. \\
-            2. See \pcref{Rank-Based Ability Access}. \\
-        \end{dtable*}
-
-        \subsubsection{Monster Vital Wounds}
+        \subsection{Monster Vital Wounds}
             Monsters do not normally make vital rolls like player characters do.
             Unless otherwise specified on the monster's description, vital wounds have no negative effects on monsters.
             Instead, once a monster gains a vital wound, it is defeated.
             Defeated monsters may be unconscious, dead, or merely flee the fight at the discretion of the Game Master.
 
-        \subsubsection{Conditions on Monsters}\label{Conditions on Monsters}
-            Monsters cannot normally use the \textit{recover} ability.
-            However, monsters with a high challenge rating can remove conditions automatically.
-            At the end of each round, CR 4 monsters automatically remove one \glossterm{condition} that was not applied during that round.
-            CR 6 monsters automatically remove two conditions instead of only one.
+        \subsection{Conditions on Monsters}\label{Conditions on Monsters}
+            Monsters cannot normally use the \textit{recover} ability, since they cannot use abilities which would give them \glossterm{fatigue}.
+            Standard monsters can only remove \glossterm{conditions} by taking a \glossterm{short rest}.
+            However, elite monsters remove conditions automatically.
+            At the end of each round, elite monsters automatically remove one \glossterm{condition} that was not applied during that round.
             Monsters without a sufficient understanding of the conditions affecting them generally choose randomly.
 
-            \parhead{Condition Avoidance} At 12th level, high-CR monsters become more resistant to conditions.
-            CR 4 and CR 6 monsters are immune to the first condition they gain between \glossterm{short rests}.
+            \parhead{Condition Avoidance} At 12th level, elite monsters become more resistant to conditions.
+            They automatically negate to the first condition they would gain between \glossterm{short rests}.
             They cannot choose to suffer the effects of a condition in order to retain this one-time immunity for a later, more dangerous condition.
             In addition, this does not provide any protection against detrimental \glossterm{brief} effects.
-            At 21st level, CR 4 and CR 6 monsters also gain immunity to the second condition they would gain between short rests.
+            At 21st level, they also gain immunity to the second condition they would gain between short rests.
 
-        \subsubsection{Monster Resources}
+        \subsection{Monster Resources}
             Unless otherwise noted in their description, monsters have no resources, and their fatigue tolerance is treated as 0.
             They are unable to use abilities that would cause them to increase their fatigue level, such as the \textit{desperate exertion} ability.
             At the GM's discretion, individual monsters may technically be attuned to their abilities or be attuned to magic items they find, but this is not an explicit part of monster definitions.
 
-        \subsubsection{Rank-Based Ability Access}\label{Rank-Based Ability Access}
+        \subsection{Monster Ability Access}\label{Monster Ability Access}
             Although monsters do not gain archetypes, their special abilities should still be balanced appropriately for their maximum accessible rank.
             Like a player character, a monster's maximum accessible rank is based on its level, as shown in \tref{Monster Advancement}.
-            CR 1/2 monsters take a \minus1 penalty to their maximum rank, and generally do not have particularly powerful or complex special abilities.
-            CR 6 monsters gain a \plus1 bonus to their maximum rank, allowing them to use powerful abilities before player characters can.
+            Elite monsters gain a \plus1 bonus to the maximum rank of abilities they can use, allowing them to use powerful abilities before player characters can.
 
-            It's not always meaningful to give every monster multiple maneuvers, especially low CR monsters.
+            It's not always meaningful to give every monster multiple active abilities.
             However, maneuvers provide significant power at high levels, so monsters shouldn't just use basic strikes.
             All monsters have access to the \textit{monstrous strike} maneuver, which they use whenever they aren't using a specific maneuver from a defined combat style.
             This keeps their simple strikes on par with any special abilities they might have.
@@ -131,10 +143,11 @@ This chapter describes the rules for monsters, and the combat statistics for a v
                 \rank{7} The accuracy bonus increases to \plus3.
             \end{freeability}
 
-    \subsection{Attributes}
-        Each of a monster's base attributes can range from \minus9 to whatever the maximum base attribute is for a monster of its CR.
-        A monster's total attributes scale with level in the same way as player character attributes.
-        In general, a monster with higher base attributes will be stronger, but not all monsters need to start with the same base attribute total.
+    \subsection{Monster Attributes}\label{Monster Attributes}
+        Each of a standard monster's attributes can range from \minus9 to 4.
+        Elite monsters can have attributes up to 6, and they generally have higher attributes overall.
+        A few specific monsters of legendary power can exceed this limit.
+        In general, a monster with higher attributes will be stronger, but not all monsters need to start with the same attribute total.
 
     \subsection{Monster Natural Weapon Bonuses}\label{Monster Natural Weapon Bonuses}
         Monsters do not use the \textit{offhand strike} ability in combat.
@@ -158,14 +171,11 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 \section{Monster Combat Mechanics}
 
     \subsection{Monster Actions}\label{Monster Actions}
-        All monsters are able to take free actions, move actions, and standard actions in the same way as player characters.
-        CR 2 or higher monsters can take minor actions, though most monsters do not have any relevant minor actions to take.
-        All CR 4 monsters can take an additional standard action each round, and CR 6 monsters can take two additional standard actions each round.
-        However, they cannot use the same ability or weapon twice in the same round, unless they have two different versions of the same weapon (such as two claws).
-        These special abilities are listed in their descriptions.
+        All monsters are able to take free actions, move actions, \glossterm{minor actions}, and standard actions in the same way as player characters.
+        Elite monsters can take an additional standard action each round, as indicated in their descriptions.
 
-        In general, all monsters of CR 4 or 6 should be designed to attack multiple different PCs in every round.
-        If the full damage output of a high-CR monster is brought to bear on a single PC, it will likely kill that PC quickly, taking a player out of the fight too early.
+        In general, elite monsters should be designed to attack multiple different PCs in every round.
+        If the full damage output of an elite monster is brought to bear on a single PC, it will likely kill that PC quickly, taking a player out of the fight too early.
         Alternately, if that PC is able to avoid or resist the damage, it will trivialize the fight and remove the sense of danger.
         Instead, damage should be spread throughout the party to ensure that multiple people feel threatened and have to adjust their actions based on their personal danger tolerance.
 
@@ -174,36 +184,23 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         Monsters may want to inflict debuffs on multiple attackers to reduce the damage they take, which may require dealing enough damage to inflict HP-based debuffs.
 
     \subsection{Encounter Balancing}\label{Encounter Balancing}
-        In general, a group of PCs of a given level will have an appropriate challenge from fighting monsters of the same level with a combined challenge rating equal to the number of PCs.
-        Fighting monsters of a lower level, or monsters whose combined challenge rating is less than the number of PCs, will yield an easier encounter.
-        Fighting monsters of a higher level, or fighting monsters whose combined challenge rating is greater than the number of PCs, will yield a more difficult encounter.
+        In general, a group of PCs of a given level will have an appropriate challenge from fighting an equal number of monsters of their level.
+        Alternately, they can fight a single elite monster of their level.
+        You can generally replace one monster of a given level with two monsters that are two or three levels lower.
+        Similarly, you can replace two monsters of a given level with one monster that is two or three levels higher.
+        To make encounters easier or harder, you can change the number of monsters or the level of the monsters.
 
-        It is generally not a good idea for PCs to fight monsters more than four levels higher or lower than their own level.
+        It is generally not a good idea for PCs to fight monsters five or more levels higher or lower than their own level.
         They may find that their attacks always miss, or never miss, and other aspects of the encounter may be similarly imbalanced in ways that are not easily remedied by simply changing the number of enemies.
 
-        However, intentionally using lower-level monsters with a high CR can change the tone of an encounter in ways that may be beneficial.
-        A fight against four CR 1 monsters of the party's level has a different pace and tone than a fight against four CR 2 monsters that are two or three levels lower than the party, but both encounters can be similarly challenging.
+        There are many ways that you can make encounters easier or harder in ways that don't simply involve changing the level and number of monsters.
+        If monsters enter the battle gradually over time, rather than all at once, you can use a larger number of monsters without overwhelming the players.
+        Similarly, having multiple separate fights without letting the players take a \glossterm{short rest} can dramatically increase the danger and difficulty of the later fights.
 
-        \subsubsection{Balancing By Player Capabilities}
-            You can use your knowledge of the capabilities of your players to guess the difficulty of an encounter.
-            If they have the perfect spell for a situation, they might be able to trivialize an encounter that looks numerically difficult.
-
-            CR 1/2 monsters are generally vulnerable to large area attacks due to their numbers.
-            Most CR 1/2 monsters have only melee attacks, so they are also weaker in tight corridors or against Barrier abilities, whch prevent them from making effective use of their numerical superiority.
-            Since they have no damage resistance, they are exceptionally vulnerable to area attacks that care about damage resistance, such as the \textit{prismatic spray} spell.
-            Debuffing attacks and high-damage single-target attacks are an inefficient way to deal with them.
-
-            CR 1 monsters are the most well-rounded type of monster.
-            Debuffs, area attacks, and single-target attacks are all reasonably effective without being devastating.
-            They to be most vulnerable to attacks that target a small number of enemies without sacrificing too much damage, like Sweeping weapons.
-
-            CR 2 monsters are most vulnerable to debilitating conditions.
-            They are individually strong enough to be worth debuffing, and they lack the intrinsic condition resilience that higher CR monsters have.
-            Area attacks are generally not worth the damage loss compared to single-target attacks, but Sweeping weapons are very useful if they group up.
-
-            CR 4 and CR 6 monsters are most vulnerable to single-target attacks, especially single-target attacks that also inflict brief debuffs.
-            Debuffs are powerful, but conditions are unlikely to last long.
-            It is possible to apply more conditions to a CR 4 monster than it can remove with effort, but that strategy tends to be ineffective against CR 6 monsters.
+        The terrain and physical location of a fight can also dramatically change its difficulty.
+        Narrow corridors and tight spaces favor smaller groups, highly defensive characters, and mid-range spellcasters who can attack safely from the back lines.
+        Wide-open terrain favors large groups, highly mobile creatures, and long-range combatants like archers.
+        A party with good tactics can easily hold a five-foot tunnel against dozens or even hundreds of melee-only enemy combatants, even if they would be swarmed and killed easily by those same enemies in an open field.
 
     \subsection{Monster Knowledge}
         You can remember relevant knowledge about monsters by making Knowledge skill checks.

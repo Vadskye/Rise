@@ -21,10 +21,14 @@ pub fn generate_stock_monsters() -> Vec<MonsterEntry> {
                         modifiers: None,
                         movement_modes: None,
                         name: format!(
-                            "Stock {} {} (CR {})",
+                            "Stock {} {}{}",
                             creature_type.name(),
                             level,
-                            challenge_rating.to_string()
+                            if matches!(challenge_rating, ChallengeRating::Four) {
+                                " (Elite)"
+                            } else {
+                                ""
+                            },
                         ),
                         senses: None,
                         size: Size::Medium,
