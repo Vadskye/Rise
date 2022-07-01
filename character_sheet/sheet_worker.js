@@ -2302,6 +2302,8 @@ function handleStrikeAttacks() {
     getAttrs(
       [
         "level",
+        "strength",
+        "willpower",
         "mundane_dice_pool_modifier",
         "magical_dice_pool_modifier",
         "weapon_damage_dice",
