@@ -24,7 +24,7 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 7,
     reflex: 5,
     mental: 3,
-    vital_rolls: 2,
+    vital_rolls: 1,
     attunement_points: 3,
     fatigue_tolerance: 5,
     insight_points: 0,
