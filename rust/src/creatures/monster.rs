@@ -187,7 +187,7 @@ impl Monster {
         };
         let latex = latex_formatting::latexify(format!(
             "
-                \\begin<{section_name}><{name}><{level}>[{cr}]
+                \\begin<{section_name}><{name}><{level}>{elite}
                     \\monstersize{size_star}<{size} {type}>
 
                     {description}
@@ -203,7 +203,7 @@ impl Monster {
             size_star = if section_name == "monsubsubsection" { "*" } else { "" },
             name = name,
             level = self.creature.level,
-            cr = self.challenge_rating.to_string(),
+            elite = if matches!(self.challenge_rating, ChallengeRating::Four) { "[Elite]" } else {""},
             size = self.creature.size.name(),
             type = self.creature_type.name(),
             description = self.description.as_deref().unwrap_or(""),

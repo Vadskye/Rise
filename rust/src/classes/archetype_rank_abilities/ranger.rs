@@ -16,7 +16,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 \begin{attuneability}{Animal Companion}[\abilitytag{Attune}]
                     \abilitytag{Emotion}, \glossterm{Magical}
                     \rankline
-                    Choose a Medium or smaller animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
+                    Choose a non-\glossterm{elite} Medium or smaller animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level.
                     The target serves as a loyal companion to you.
                     It follows your directions to the best of its ability.
 
