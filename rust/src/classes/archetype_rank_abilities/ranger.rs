@@ -13,7 +13,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{animal companion} ability.
                 This ability requires 8 hours of training and attunement which the target must actively participate in.
                 You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-                \begin{attuneability}{Animal Companion}[\abilitytag{Attune}]
+                \begin{attuneability}{Animal Companion}
                     \abilitytag{Emotion}, \glossterm{Magical}
                     \rankline
                     Choose a non-\glossterm{elite} Medium or smaller animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level.
@@ -230,7 +230,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
             \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
-                \begin{attuneability}{Quarry}[\abilitytag{Attune}]
+                \begin{attuneability}{Quarry}
                     \abilitytag{Swift}, \abilitytag{Subtle}
                     \rankline
                     Choose a creature within \longrange.
