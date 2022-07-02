@@ -280,7 +280,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                 After you use a \textit{ki manifestation}, you \glossterm{briefly} cannot use a \textit{ki manifestation} again.
                 {
-                    \begin{durationability}{Abandon the Fragile Self}[Duration]
+                    \begin{activeability}{Abandon the Fragile Self}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -291,9 +291,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You can negate any number of conditions instead of only one condition.
                         \rank{5} The defense penalty is reduced to \minus1.
                         \rank{7} The defense penalty is removed.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Burst of Blinding Speed}[Duration]
+                    \begin{activeability}{Burst of Blinding Speed}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -303,9 +303,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You can also ignore \glossterm{difficult terrain} this phase.
                         \rank{5} The speed bonus increases to \plus15 feet.
                         \rank{7} You can also move or stand on liquids as if they were solid this phase.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Calm the Inner Tempest}[Duration]
+                    \begin{activeability}{Calm the Inner Tempest}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -315,9 +315,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The bonus increases to \plus8.
                         \rank{5} This becomes a \glossterm{brief} effect.
                         \rank{7} The bonus increases to \plus12.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Extend the Flow of Ki}[Duration]
+                    \begin{activeability}{Extend the Flow of Ki}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -327,9 +327,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The bonus increases to \plus10 feet.
                         \rank{5} This becomes a \glossterm{brief} effect.
                         \rank{7} The bonus increases to \plus15 feet.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{instantability}{Flash Step}
+                    \begin{activeability}{Flash Step}
                         \rankline
                         You can use this ability as part of movement with your land speed.
                         % TODO: is 'horizontally' the correct word?
@@ -344,9 +344,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} You can use this ability to move even if you are \immobilized or \grappled.
                         \rank{7} You can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
                         If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
-                    \end{instantability}
+                    \end{activeability}
 
-                    \begin{durationability}{Flurry of a Thousand Cuts}[Duration]
+                    \begin{activeability}{Flurry of a Thousand Cuts}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -356,9 +356,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You also gain a +1 \glossterm{accuracy} bonus with the \ability{offhand strike} ability.
                         \rank{5} This becomes a \glossterm{brief} effect.
                         \rank{7} The accuracy bonus increases to +2.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Hear the Rustling Wings}[Duration]
+                    \begin{activeability}{Hear the Rustling Wings}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -368,9 +368,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The bonus increases to \plus8.
                         \rank{5} This becomes a \glossterm{brief} effect.
                         \rank{7} The bonus increases to \plus12.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Kindle the Living Flame}[Duration]
+                    \begin{activeability}{Kindle the Living Flame}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -380,9 +380,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You also gain a +2 \glossterm{power} bonus with strikes.
                         \rank{5} This becomes a \glossterm{brief} effect.
                         \rank{7} The power bonus increases to +4.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Leap of the Heavens}[Duration]
+                    \begin{activeability}{Leap of the Heavens}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -392,9 +392,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The bonus increases to \plus8.
                         \rank{5} This becomes a \glossterm{brief} effect.
                         \rank{7} The bonus increases to \plus12.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Rest Atop the Precipice}[Duration]
+                    \begin{activeability}{Rest Atop the Precipice}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -404,9 +404,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The bonus increases to \plus8.
                         \rank{5} This becomes a \glossterm{brief} effect.
                         \rank{7} The bonus increases to \plus12.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Scale the Highest Tower}[Duration]
+                    \begin{activeability}{Scale the Highest Tower}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -417,9 +417,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The Climb bonus increases to \plus8.
                         \rank{5} This becomes a \glossterm{brief} effect.
                         \rank{7} The bonus increases to \plus12.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Shelter from Falling Rain}[Duration]
+                    \begin{activeability}{Shelter from Falling Rain}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -429,9 +429,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The bonus increases to +3.
                         \rank{5} This becomes a \glossterm{brief} effect.
                         \rank{7} The bonus increases to +4.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Step Between the Mystic Worlds}[Duration]
+                    \begin{activeability}{Step Between the Mystic Worlds}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -442,9 +442,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The failure chance for attacks against you increases to 25\%.
                         \rank{5} When you use this ability, you can choose whether it becomes a \glossterm{brief} effect.
                         \rank{7} The failure chance for attacks against you increases to 30\%.
-                    \end{durationability}
+                    \end{activeability}
 
-                    \begin{durationability}{Thread the Eye of the Storm}[Duration]
+                    \begin{activeability}{Thread the Eye of the Storm}
                         \abilitytag{Swift}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
@@ -454,11 +454,11 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The penalty reduction increases to 2.
                         \rank{5} This becomes a \glossterm{brief} effect.
                         \rank{7} The penalty reduction increases to 3.
-                    \end{durationability}
+                    \end{activeability}
 
                     % TODO: this is confusing since skills no longer directly reference attributes
-                    % \begin{durationability}{Surpass the Mortal Limits}
-                    %     \spelltwocol{Duration}{\abilitytag{Swift}}
+                    % \begin{activeability}{Surpass the Mortal Limits}
+                    %     \abilitytag{Swift}
                     %     \rankline
                     %     You can use this ability as a \glossterm{free action}.
                     %     You can use your \glossterm{power} in place of your Strength, Dexterity, and Constitution when making checks this phase.
@@ -467,7 +467,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     %     \rank{3} You also gain a \plus2 bonus to checks based on Strength, Dexterity, and Constitution.
                     %     \rank{5} The effect lasts until the end of the current round.
                     %     \rank{7} The bonus increases to \plus4.
-                    % \end{durationability}
+                    % \end{activeability}
 
                     % TODO: add more
                 }

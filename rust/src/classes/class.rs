@@ -1331,14 +1331,13 @@ impl Class {
                         \parhead{Aspect} If you roll a 9 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
                         This does not affect bonus dice rolled for exploding attacks.
                         \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
-                        \begin{instantability}{Twist of Fate}
-                            Instant
+                        \begin{activeability}{Twist of Fate}
                             \rankline
                             An improbable event occurs within \rnglong range.
                             You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
                             You cannot control the exact nature of the event, though it always beneficial for you in some way.
                             After using this ability, you cannot use it again until you take a \glossterm{long rest}.
-                        \end{instantability}
+                        \end{activeability}
                         \parhead{Mastery} Whenever you \glossterm{explode} with an attack roll, you gain a \plus4 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
                         As normal, this bonus does not stack with itself, even if you explode multiple times with the same attack roll.
 
@@ -1360,8 +1359,7 @@ impl Class {
 
                     \subsubsection{Destruction Domain}
                         \parhead{Gift} You can use the \textit{destructive attack} ability as a standard action.
-                        \begin{instantability}{Destructive Attack}
-                            Instant
+                        \begin{activeability}{Destructive Attack}
                             \rankline
                             Make a \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy}.
                             You gain a \plus4 damage bonus with the strike.
@@ -1370,11 +1368,10 @@ impl Class {
                             \rank{3} The damage bonus increases to \plus8.
                             \rank{5} The damage bonus increases to \plus16.
                             \rank{7} The damage bonus increases to \plus24.
-                        \end{instantability}
+                        \end{activeability}
                         \parhead{Aspect} Your abilities deal double damage to objects.
                         \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.
-                        \begin{instantability}{Lay Waste}
-                            Instant
+                        \begin{activeability}{Lay Waste}
                             \rankline
                             Make an attack vs. Fortitude against all \glossterm{unattended} objects in a \areamed radius.
                             You may freely exclude any number of 5-ft. cubes from the area, as long as the resulting area is still contiguous.
@@ -1382,7 +1379,7 @@ impl Class {
 
                             \rankline
                             \rank{6} The area increases to a \arealarge radius.
-                        \end{instantability}
+                        \end{activeability}
                         \parhead{Mastery} You gain a \plus4 bonus to your \glossterm{power} with all abilities.
 
                     \subsubsection{Earth Domain}
@@ -1410,8 +1407,8 @@ impl Class {
                         If the target is unable to lose hit points, such as if it has no hit points remaining, you suffer the hit point loss normally.
                         \parhead{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
                         \parhead{Essence} You can use the \textit{compel evil} ability as a standard action.
-                        \begin{durationability}{Compel Evil}
-                            \spelltwocol{Duration}{\abilitytag{Compulsion}}
+                        \begin{activeability}{Compel Evil}
+                            \abilitytag{Compulsion}
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
                             Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
@@ -1422,7 +1419,7 @@ impl Class {
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-                        \end{durationability}
+                        \end{activeability}
                         \parhead{Mastery} You can use your domain gift to redirect your hit point loss to an adjacent unwilling creature.
                         You cannot target the same unwilling creature more than once with this ability between \glossterm{short rests}.
 
@@ -1457,8 +1454,8 @@ impl Class {
                         The original target suffers any other effects of the attack normally.
                         \parhead{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
                         \parhead{Essence} You can use the \textit{compel good} ability as a standard action.
-                        \begin{instantability}{Compel Good}
-                            \spelltwocol{Instant}{\abilitytag{Compulsion}}
+                        \begin{activeability}{Compel Good}
+                            \abilitytag{Compulsion}
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
                             Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
@@ -1469,7 +1466,7 @@ impl Class {
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-                        \end{instantability}
+                        \end{activeability}
                         \parhead{Mastery} Once per round, when an \glossterm{ally} within a \areamed radius \glossterm{emanation} from you would lose \glossterm{hit points}, you may lose those hit points instead.
                         The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
 
@@ -1479,8 +1476,7 @@ impl Class {
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to Fortitude, Reflex, and Mental defenses.
                         \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
-                        \begin{instantability}{Share Knowledge}
-                            Instant
+                        \begin{activeability}{Share Knowledge}
                             \rankline
                             Make a Knowledge check of any kind.
                             Your \glossterm{allies} within a \arealarge radius learn the results of your check.
@@ -1490,7 +1486,7 @@ impl Class {
 
                             \rankline
                             \rank{6} You gain a \plus3 bonus to the Knowledge check.
-                        \end{instantability}
+                        \end{activeability}
                         \parhead{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} with all attacks.
                         In addition, you can use your \textit{share knowledge} ability to affect all creatures, not just your allies.
 
@@ -1499,8 +1495,8 @@ impl Class {
                         % Clarify - does this apply to exploding dice?
                         \parhead{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
                         \parhead{Essence} You can use the \textit{compel law} ability as a standard action.
-                        \begin{durationability}{Compel Law}
-                            \spelltwocol{Duration}{\abilitytag{Compulsion}}
+                        \begin{activeability}{Compel Law}
+                            \abilitytag{Compulsion}
                             \rankline
                             Make an attack vs. Mental against all creatures within a \arealarge radius from you.
                             \hit Each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
@@ -1513,7 +1509,7 @@ impl Class {
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-                        \end{durationability}
+                        \end{activeability}
                         \parhead{Mastery} When you roll a 1 or a 2 on an \glossterm{attack roll} or \glossterm{check}, it is treated as if you had rolled a 6.
 
                     \subsubsection{Life Domain}
@@ -1534,8 +1530,8 @@ impl Class {
                     \subsubsection{Protection Domain}
                         \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{minor action}.
-                        \begin{durationability}{Divine Protection}
-                            \spelltwocol{Duration}{\abilitytag{Swift}}
+                        \begin{activeability}{Divine Protection}
+                            \abilitytag{Swift}
                             \rankline
                             Choose an \glossterm{ally} adjacent to you.
                             It gains a \plus1 bonus to all defenses until the end of the round.
@@ -1543,7 +1539,7 @@ impl Class {
 
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
-                        \end{durationability}
+                        \end{activeability}
                         \parhead{Essence} The bonus from this domain's gift increases to three times your rank in this archetype.
                         \parhead{Mastery} The bonus from your \textit{divine protection} ability increases to \plus2.
 
@@ -1568,15 +1564,14 @@ impl Class {
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
                         \parhead{Essence} You can use the \textit{dimensional travel} ability as a standard action.
-                        \begin{instantability}{Dimensional Travel}
-                            Instant
+                        \begin{activeability}{Dimensional Travel}
                             \rankline
                             You teleport up to 1 mile in any direction.
                             You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
 
                             \rankline
                             \rank{6} The maximum distance increases to 5 miles.
-                        \end{instantability}
+                        \end{activeability}
                         \parhead{Mastery} When you would move using one of your movement speeds, you can teleport the same distance instead.
                         This does not change the total distance you can move, but you can teleport in any direction, including vertically.
                         Being \grappled or otherwise physically constrained does not prevent you from teleporting in this way.
@@ -1590,7 +1585,7 @@ impl Class {
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
                         \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
-                        \begin{durationability}{Compel Belief}
+                        \begin{activeability}{Compel Belief}
                             \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Compulsion}}
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
@@ -1604,7 +1599,7 @@ impl Class {
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-                        \end{durationability}
+                        \end{activeability}
                         % This seems like it's a complicated muddle of weird and possibly hilarious edge cases
                         \parhead{Mastery} You are undetectable to all \glossterm{magical} abilities.
                         They cannot detect your presence, sounds you make, or any actions you take.

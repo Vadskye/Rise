@@ -25,7 +25,6 @@ export const photomancy: MysticSphere = {
         6: `The bonus increases to +10.`,
       },
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -43,7 +42,6 @@ export const photomancy: MysticSphere = {
         6: `The maximum radius of bright illumination increases to 120 feet.`,
       },
       tags: ["Visual"],
-      type: "Duration",
     },
   ],
   spells: [
@@ -64,7 +62,6 @@ export const photomancy: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -79,7 +76,6 @@ export const photomancy: MysticSphere = {
       rank: 4,
       scaling: "accuracy",
       tags: ["Visual"],
-      type: "Instant",
     },
 
     {
@@ -98,7 +94,6 @@ export const photomancy: MysticSphere = {
       rank: 5,
       scaling: "accuracy",
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -166,7 +161,6 @@ export const photomancy: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -185,7 +179,6 @@ export const photomancy: MysticSphere = {
       rank: 5,
       scaling: "accuracy",
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -204,7 +197,6 @@ export const photomancy: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -217,7 +209,6 @@ export const photomancy: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -237,7 +228,6 @@ export const photomancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -255,7 +245,6 @@ export const photomancy: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -276,7 +265,6 @@ export const photomancy: MysticSphere = {
       },
       rank: 4,
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -296,7 +284,6 @@ export const photomancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Visual"],
-      type: "Duration",
     },
 
     {
@@ -316,7 +303,6 @@ export const photomancy: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion", "Visual"],
-      type: "Duration",
     },
 
     {
@@ -336,7 +322,6 @@ export const photomancy: MysticSphere = {
       rank: 6,
       scaling: "accuracy",
       tags: ["Compulsion", "Visual"],
-      type: "Duration",
     },
 
     {
@@ -476,7 +461,6 @@ export const photomancy: MysticSphere = {
       scaling: {
         6: "Taking actions does not end this invisibility.",
       },
-      type: "Duration",
     },
 
     {
@@ -494,7 +478,6 @@ export const photomancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -507,7 +490,6 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -523,7 +505,6 @@ export const photomancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -539,7 +520,6 @@ export const photomancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
   ],
   rituals: [
@@ -584,7 +564,6 @@ export const photomancy: MysticSphere = {
       },
       rank: 2,
       tags: [],
-      type: "Duration",
     },
   ],
 };

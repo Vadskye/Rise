@@ -18,7 +18,6 @@ export const bless: MysticSphere = {
         4: "The bonus increases to +2.",
         6: "The range increases to \\medrange.",
       },
-      type: "Duration",
     },
     {
       effect: `
@@ -33,7 +32,6 @@ export const bless: MysticSphere = {
         6: "The range increases to \\medrange.",
       },
       tags: ['Swift'],
-      type: "Duration",
     },
   ],
   spells: [
@@ -131,7 +129,6 @@ export const bless: MysticSphere = {
         7: `The bonus increases to +5.`,
       },
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -148,7 +145,6 @@ export const bless: MysticSphere = {
         6: `The accuracy bonus increases to +6.`,
       },
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -161,7 +157,6 @@ export const bless: MysticSphere = {
       `,
       rank: 6,
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -178,7 +173,6 @@ export const bless: MysticSphere = {
         7: `The bonus increases to +4.`,
       },
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -255,7 +249,6 @@ export const bless: MysticSphere = {
       scaling: {
         6: `The target can remove two effects.`,
       },
-      type: "Instant",
     },
 
     {
@@ -266,7 +259,6 @@ export const bless: MysticSphere = {
         This cannot remove effects applied during the current round.
       `,
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -403,7 +395,6 @@ export const bless: MysticSphere = {
       `,
       rank: 1,
       scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
-      type: "Duration",
     },
 
     {
@@ -416,7 +407,6 @@ export const bless: MysticSphere = {
       `,
       rank: 4,
       scaling: { special: "The recovery increases by +1d for each rank beyond 4." },
-      type: "Duration",
     },
 
     {
@@ -428,7 +418,6 @@ export const bless: MysticSphere = {
         In addition, it \\glossterm{briefly} gains a +3 bonus to all \\glossterm{defenses}.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -445,7 +434,6 @@ export const bless: MysticSphere = {
         5: 'The damage bonus increases to +4.',
         7: 'The damage bonus increases to +8.',
       },
-      type: 'Instant',
     },
 
     {
@@ -459,7 +447,6 @@ export const bless: MysticSphere = {
       scaling: {
         6: 'You gain a +1 accuracy bonus with the strike.',
       },
-      type: 'Instant',
     },
   ],
   rituals: [
@@ -491,7 +478,6 @@ export const bless: MysticSphere = {
         name: "blessing of fortification",
       },
       rank: 4,
-      type: "Instant",
     },
 
     {
@@ -505,7 +491,6 @@ export const bless: MysticSphere = {
         name: "greater fortification",
       },
       rank: 5,
-      type: "Instant",
     },
 
     {
@@ -559,7 +544,6 @@ export const bless: MysticSphere = {
         name: "bless water",
       },
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -585,7 +569,6 @@ export const bless: MysticSphere = {
         name: "curse water",
       },
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -598,7 +581,6 @@ export const bless: MysticSphere = {
         This does not prevent subsequent natural decay or spoiling.
       `,
       rank: 1,
-      type: "Instant",
     },
   ],
 };

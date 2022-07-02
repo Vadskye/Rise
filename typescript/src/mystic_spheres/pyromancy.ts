@@ -21,7 +21,6 @@ export const pyromancy: MysticSphere = {
         4: `The damage increases to 10.`,
         6: `The damage increases to 20.`,
       },
-      type: "Instant",
     },
 
     {
@@ -40,7 +39,6 @@ export const pyromancy: MysticSphere = {
         4: `The maximum size increases to Huge.`,
         6: `The maximum size increases to Gargantuan.`,
       },
-      type: "Instant",
     },
 
     {
@@ -60,7 +58,6 @@ export const pyromancy: MysticSphere = {
         4: `The damage increases to 10.`,
         6: `The damage increases to 20.`,
       },
-      type: "Duration",
     },
 
     {
@@ -78,7 +75,6 @@ export const pyromancy: MysticSphere = {
         4: `The area increases to a \\hugearea radius \\glossterm{emanation}, and the maximum temperature increase increases to 40 degrees.`,
         6: `The area increases to a \\gargarea radius \\glossterm{emanation}, and the maximum temperature increase increases to 50 degrees.`,
       },
-      type: "Duration",
     },
   ],
   spells: [
@@ -95,7 +91,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     // r1 burning effect
@@ -123,7 +118,6 @@ export const pyromancy: MysticSphere = {
           The damage from both the initial hit and the subsequent burning increases by +1d for each rank beyond 3.
         `,
       },
-      type: "Duration",
     },
 
     // r2 burning effect
@@ -136,7 +130,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -152,7 +145,6 @@ export const pyromancy: MysticSphere = {
 
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -167,7 +159,6 @@ export const pyromancy: MysticSphere = {
 
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -181,7 +172,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -196,7 +186,6 @@ export const pyromancy: MysticSphere = {
 
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -215,7 +204,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -233,7 +221,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -250,7 +237,6 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -268,7 +254,6 @@ export const pyromancy: MysticSphere = {
 
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -285,7 +270,6 @@ export const pyromancy: MysticSphere = {
       },
 
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -396,7 +380,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -410,7 +393,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -549,7 +531,6 @@ export const pyromancy: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -565,7 +546,6 @@ export const pyromancy: MysticSphere = {
       rank: 5,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -582,7 +562,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -595,7 +574,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -618,7 +596,6 @@ export const pyromancy: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Curse"],
-      type: "Duration",
     },
 
     {
@@ -637,7 +614,6 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -678,7 +654,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -693,7 +668,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -708,7 +682,6 @@ export const pyromancy: MysticSphere = {
       scaling: {
         6: `The target can remove two effects.`,
       },
-      type: "Instant",
     },
 
     {
@@ -723,7 +696,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -738,7 +710,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -753,7 +724,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Instant",
     },
   ],
   rituals: [
@@ -813,7 +783,6 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 1,
       tags: ["Detection"],
-      type: "Instant",
     },
 
     {
@@ -829,7 +798,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 3,
       tags: ["Detection"],
-      type: "Instant",
     },
 
     {
@@ -845,7 +813,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 5,
       tags: ["Detection"],
-      type: "Instant",
     },
     {
       name: "Explosive Runes",

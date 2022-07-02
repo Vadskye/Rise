@@ -165,7 +165,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             ));
             modifiers.push(Modifier::Attack(StandardAttack::WordOfFaith(rank).attack()));
             modifiers.push(Modifier::ActiveAbility(ActiveAbility {
-                ability_type: AbilityType::Instant,
+                ability_type: AbilityType::Normal,
                 cooldown: None,
                 effect: format!(
                     "

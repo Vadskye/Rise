@@ -20,7 +20,6 @@ export const ebbAndFlow: CombatStyle = {
         4: "The accuracy bonus increases to +4.",
         6: "The accuracy bonus increases to +6.",
       },
-      type: "Instant",
     },
 
     {
@@ -38,7 +37,6 @@ export const ebbAndFlow: CombatStyle = {
       scaling: {
         6: "You gain a +4 damage bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -56,7 +54,6 @@ export const ebbAndFlow: CombatStyle = {
       scaling: {
         6: "You gain a +4 damage bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -72,7 +69,6 @@ export const ebbAndFlow: CombatStyle = {
         5: "The accuracy bonus increases to +3.",
         7: "The accuracy bonus increases to +4.",
       },
-      type: "Instant",
     },
 
     {
@@ -87,7 +83,6 @@ export const ebbAndFlow: CombatStyle = {
         4: "The damage bonus increases to +4.",
         6: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -99,7 +94,6 @@ export const ebbAndFlow: CombatStyle = {
         You take a -4 accuracy penalty with the strikes against anything other than creatures that you missed with a \\glossterm{strike} last round.
       `,
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -116,7 +110,6 @@ export const ebbAndFlow: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -131,7 +124,6 @@ export const ebbAndFlow: CombatStyle = {
       scaling: {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Duration",
     },
 
     {
@@ -144,7 +136,6 @@ export const ebbAndFlow: CombatStyle = {
         After this effect ends, the creature cannot be confused by this effect again until it takes a \\glossterm{short rest}.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -162,7 +153,6 @@ export const ebbAndFlow: CombatStyle = {
         5: "The damage bonus increases to +8.",
         7: "The damage bonus increases to +16.",
       },
-      type: "Instant",
     },
 
     {
@@ -176,7 +166,6 @@ export const ebbAndFlow: CombatStyle = {
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -191,7 +180,6 @@ export const ebbAndFlow: CombatStyle = {
         4: "The damage bonus increases to +4.",
         6: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -207,7 +195,6 @@ export const ebbAndFlow: CombatStyle = {
         5: "The accuracy bonus increases to +4.",
         7: "The accuracy bonus increases to +5.",
       },
-      type: "Instant",
     },
 
     {
@@ -223,7 +210,6 @@ export const ebbAndFlow: CombatStyle = {
         5: "The damage bonus increases to +16.",
         7: "The damage bonus increases to +24.",
       },
-      type: "Instant",
     },
 
     {
@@ -242,7 +228,6 @@ export const ebbAndFlow: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -253,7 +238,6 @@ export const ebbAndFlow: CombatStyle = {
         name: "hunting strike",
       },
       rank: 6,
-      type: "Duration",
     },
 
     {
@@ -271,7 +255,6 @@ export const ebbAndFlow: CombatStyle = {
         5: "You gain a +4 damage bonus with the strike.",
         7: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -287,7 +270,6 @@ export const ebbAndFlow: CombatStyle = {
       scaling: {
         6: "You also \\glossterm{briefly} gain a +4 damage bonus with the \\ability{offhand strike} ability.",
       },
-      type: "Duration",
     },
 
     {
@@ -303,7 +285,6 @@ export const ebbAndFlow: CombatStyle = {
         5: "The initiative bonus increases to +8.",
         7: "The initiative bonus increases to +10.",
       },
-      type: "Duration",
     },
 
     {
@@ -321,7 +302,6 @@ export const ebbAndFlow: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -334,7 +314,6 @@ export const ebbAndFlow: CombatStyle = {
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
       rank: 6,
-      type: "Duration",
     },
 
     {
@@ -348,7 +327,6 @@ export const ebbAndFlow: CombatStyle = {
       scaling: {
         6: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -363,7 +341,6 @@ export const ebbAndFlow: CombatStyle = {
         4: "The damage bonus increases to +4.",
         6: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
   ],
 };

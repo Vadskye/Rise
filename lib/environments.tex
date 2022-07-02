@@ -57,7 +57,7 @@
 \definecolor{cosmiclatte}{rgb}{1.0, 0.97, 0.91}
 
 \newmdenv[
-    backgroundcolor=cosmiclatte,
+    backgroundcolor=MintCream,
     leftline=true,
     topline=true,
     rightline=true,
@@ -70,10 +70,10 @@
     innerrightmargin=0.5em,
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
-]{freeabilitymdframed}
-\DeclareDocumentEnvironment{freeability}{s o m o}
+]{activeabilitymdframed}
+\DeclareDocumentEnvironment{activeability}{s o m o}
 {
-    \begin{freeabilitymdframed}
+    \begin{activeabilitymdframed}
     \RaggedRight
     \IfBooleanF{#1}{
         \lowercase{\hypertargetraised{ability:#3}{}}
@@ -91,7 +91,7 @@
     }
 }
 {
-    \end{freeabilitymdframed}
+    \end{activeabilitymdframed}
 }
 
 \newmdenv[
@@ -108,10 +108,10 @@
     innerrightmargin=0.5em,
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
-]{durationabilitymdframed}
-\DeclareDocumentEnvironment{durationability}{s o m o}
+]{sustainabilitymdframed}
+\DeclareDocumentEnvironment{sustainability}{s o m o}
 {
-    \begin{durationabilitymdframed}
+    \begin{sustainabilitymdframed}
     \RaggedRight
     \IfBooleanF{#1}{
         \lowercase{\hypertargetraised{ability:#3}{}}
@@ -129,7 +129,7 @@
     }
 }
 {
-    \end{durationabilitymdframed}
+    \end{sustainabilitymdframed}
 }
 
 \newmdenv[
@@ -168,44 +168,6 @@
 }
 {
     \end{attuneabilitymdframed}
-}
-
-\newmdenv[
-    backgroundcolor=MintCream,
-    leftline=true,
-    topline=true,
-    rightline=true,
-    bottomline=true,
-    roundcorner=4pt,
-    skipabove=0.5em,
-    skipbelow=0.5em,
-    leftmargin=0pt,
-    innerleftmargin=0.25em,
-    innerrightmargin=0.5em,
-    innertopmargin=0.5em,
-    innerbottommargin=0.25em,
-]{instantabilitymdframed}
-\DeclareDocumentEnvironment{instantability}{s o m}
-{
-    \begin{instantabilitymdframed}
-    \RaggedRight
-    \IfBooleanF{#1}{
-        \lowercase{\hypertargetraised{ability:#3}{}}
-        \hypertargetraised{ability:#3}{}
-        \lowercase{\hypertargetraised{spell:#3}{}}
-        \hypertargetraised{spell:#3}{}
-        \lowercase{\hypertargetraised{maneuver:#3}{}}
-        \hypertargetraised{maneuver:#3}{}
-    }
-    \spelltwocol{
-        {\normalsize \textbf{#3}}
-        \IfValueTF{#2}{~--~#2}{}
-    }{
-        Instant
-    }
-}
-{
-    \end{instantabilitymdframed}
 }
 
 \DeclareDocumentEnvironment{dtabularx}{m m}

@@ -27,7 +27,6 @@ export const unbreakableDefense: CombatStyle = {
         7: "The penalty increases to -5.",
       },
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -50,7 +49,6 @@ export const unbreakableDefense: CombatStyle = {
         7: "The Armor defense bonus increases to +4.",
       },
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -72,7 +70,6 @@ export const unbreakableDefense: CombatStyle = {
         7: "A creature that makes a strike against itself in this way takes a -2 penalty to defenses against that strike.",
       },
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -90,7 +87,6 @@ export const unbreakableDefense: CombatStyle = {
       },
       rank: 7,
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -106,7 +102,6 @@ export const unbreakableDefense: CombatStyle = {
         6: "You also negate any \\glossterm{conditions} that you would gain this round.",
       },
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -123,7 +118,6 @@ export const unbreakableDefense: CombatStyle = {
       scaling: {
         7: "You are impervious to all damage, not just physical damage.",
       },
-      type: "Duration",
     },
 
     {
@@ -145,7 +139,6 @@ export const unbreakableDefense: CombatStyle = {
           This cannot remove an effect applied during the current round.
         `,
       },
-      type: "Duration",
     },
 
     {
@@ -162,7 +155,6 @@ export const unbreakableDefense: CombatStyle = {
         5: "The defense bonus increases to +3.",
         7: "The defense bonus increases to +4.",
       },
-      type: "Duration",
     },
 
     {
@@ -178,7 +170,6 @@ export const unbreakableDefense: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -189,7 +180,6 @@ export const unbreakableDefense: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 6,
-      type: "Duration",
     },
 
     {
@@ -207,7 +197,6 @@ export const unbreakableDefense: CombatStyle = {
         6: "The defense bonuses increase to +4.",
       },
       tags: ["Swift (see text)"],
-      type: "Duration",
     },
 
     {
@@ -224,7 +213,6 @@ export const unbreakableDefense: CombatStyle = {
         4: "Using this ability does not increase your fatigue level.",
         6: "You may remove an additional effect.",
       },
-      type: "Duration",
     },
 
     {
@@ -242,7 +230,6 @@ export const unbreakableDefense: CombatStyle = {
       scaling: {
         6: "You gain a +1d damage bonus with the strike.",
       },
-      type: "Duration",
     },
 
     {
@@ -259,7 +246,6 @@ export const unbreakableDefense: CombatStyle = {
         special: "The healing increases by +1d for each rank beyond 3.",
       },
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -273,7 +259,6 @@ export const unbreakableDefense: CombatStyle = {
         In addition, you regain 4d8 + \\glossterm{power} hit points.
       `,
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -290,7 +275,6 @@ export const unbreakableDefense: CombatStyle = {
         6: "The bonus increases to +3.",
       },
       tags: ["\\abilitytag{Swift} (see text)"],
-      type: "Duration",
     },
 
     {
@@ -306,7 +290,6 @@ export const unbreakableDefense: CombatStyle = {
         5: "The area increases to a \\medarea radius.",
         7: "The area increases to a \\largearea radius.",
       },
-      type: "Duration",
     },
 
     {
@@ -325,7 +308,6 @@ export const unbreakableDefense: CombatStyle = {
         5: "The bonus increases to +4.",
         7: "The bonus increases to +5.",
       },
-      type: "Duration",
     },
 
     {
@@ -338,7 +320,6 @@ export const unbreakableDefense: CombatStyle = {
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 6,
-      type: "Duration",
     },
 
     {
@@ -355,7 +336,6 @@ export const unbreakableDefense: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -371,7 +351,6 @@ export const unbreakableDefense: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
   ],
 };

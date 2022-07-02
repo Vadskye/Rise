@@ -19,7 +19,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -36,7 +35,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "The damage bonus increases to +4.",
         7: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -52,7 +50,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "The accuracy bonus increases to +6.",
         7: "The accuracy bonus increases to +7.",
       },
-      type: "Instant",
     },
 
     {
@@ -67,7 +64,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "You gain a +2 damage bonus with the strike.",
         7: "The damage bonus increases to +4.",
       },
-      type: "Instant",
     },
 
     {
@@ -81,7 +77,6 @@ export const penetratingPrecision: CombatStyle = {
       scaling: {
         7: "You gain a +4 damage bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -96,7 +91,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -107,7 +101,6 @@ export const penetratingPrecision: CombatStyle = {
         You reduce your \\glossterm{longshot penalty} with the strike by 4.
       `,
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -124,7 +117,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -142,7 +134,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "The accuracy bonus increases to +4.",
         7: "The accuracy bonus increases to +6.",
       },
-      type: "Instant",
     },
 
     {
@@ -159,7 +150,6 @@ export const penetratingPrecision: CombatStyle = {
       scaling: {
         3: "You gain a +2 accuracy bonus with the strike for the purpose of determining whether you get a critical hit.",
       },
-      type: "Instant",
     },
 
     {
@@ -176,7 +166,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "The accuracy bonus increases to +4.",
         7: "The accuracy bonus increases to +5.",
       },
-      type: "Instant",
     },
 
     {
@@ -194,7 +183,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "The damage bonus increases to +8.",
         7: "The damage bonus increases to +16.",
       },
-      type: "Instant",
     },
 
     {
@@ -211,7 +199,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -223,7 +210,6 @@ export const penetratingPrecision: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -240,7 +226,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -256,7 +241,6 @@ export const penetratingPrecision: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -269,7 +253,6 @@ export const penetratingPrecision: CombatStyle = {
         This condition must be removed twice before the effect ends.
       `,
       rank: 3,
-      type: "Duration",
     },
 
     {
@@ -281,7 +264,6 @@ export const penetratingPrecision: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -296,7 +278,6 @@ export const penetratingPrecision: CombatStyle = {
         4: "The damage bonus increases to +4.",
         6: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -313,7 +294,6 @@ export const penetratingPrecision: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -326,7 +306,6 @@ export const penetratingPrecision: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects: \\glossterm{briefly} \\immobilized, \\frightened by you as a \\glossterm{condition}, or \\stunned as a \\glossterm{condition}.
       `,
       rank: 6,
-      type: "Duration",
     },
 
     {
@@ -340,7 +319,6 @@ export const penetratingPrecision: CombatStyle = {
       scaling: {
         6: "The accuracy bonus increases to +5.",
       },
-      type: "Duration",
     },
   ],
 };

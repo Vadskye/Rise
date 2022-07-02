@@ -20,7 +20,6 @@ export const aeromancy: MysticSphere = {
         4: "The bonus increases to +5.",
         6: "The bonus increases to +6.",
       },
-      type: "Duration",
     },
     {
       name: "Manipulate Air",
@@ -55,7 +54,6 @@ export const aeromancy: MysticSphere = {
         4: "The distance reduction increases to 100 feet.",
         6: "The distance reduction increases to 200 feet.",
       },
-      type: "Duration",
     },
   ],
   spells: [
@@ -76,7 +74,6 @@ export const aeromancy: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Curse"],
-      type: "Duration",
     },
     // Treat greater arrow attraction as r2 -2 levels
     {
@@ -97,7 +94,6 @@ export const aeromancy: MysticSphere = {
       rank: 5,
       scaling: "accuracy",
       tags: ["Curse"],
-      type: "Duration",
     },
     {
       name: "Propulsion",
@@ -114,7 +110,6 @@ export const aeromancy: MysticSphere = {
         5: "The distance increases to 240 feet.",
         7: "The distance increases to 480 feet.",
       },
-      type: "Instant",
     },
     {
       name: "Mass Propulsion",
@@ -131,7 +126,6 @@ export const aeromancy: MysticSphere = {
         5: "The distance increases to 120 feet.",
         7: "The distance increases to 240 feet.",
       },
-      type: "Instant",
     },
     {
       name: "Wind Screen",
@@ -173,7 +167,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Greater Windsnipe",
@@ -186,7 +179,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Buffet",
@@ -204,7 +196,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 1,
       scaling: "accuracy",
-      type: "Instant",
     },
     {
       name: "Greater Buffet",
@@ -217,7 +208,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: "accuracy",
-      type: "Instant",
     },
     {
       name: "Supreme Buffet",
@@ -230,7 +220,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 7,
       scaling: "accuracy",
-      type: "Instant",
     },
     {
       name: "Gentle Descent",
@@ -328,7 +317,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Greater Gust of Wind",
@@ -348,7 +336,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Supreme Gust of Wind",
@@ -368,7 +355,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 7,
       // scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Windblade",
@@ -463,7 +449,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
     // 2 levels for push
     {
@@ -483,7 +468,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Windtheft",
@@ -506,7 +490,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 2,
       scaling: "accuracy",
-      type: "Instant",
     },
     {
       name: "Windseal",
@@ -526,7 +509,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 2,
       scaling: "damage",
-      type: "Duration",
     },
     {
       name: "Greater Windseal",
@@ -546,7 +528,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: "damage",
-      type: "Duration",
     },
     {
       name: "Dust Cloud",
@@ -565,7 +546,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
     {
       name: "Massive Dust Cloud",
@@ -584,7 +564,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: "accuracy",
-      type: "Duration",
     },
     {
       name: "Blinding Dust Cloud",
@@ -603,7 +582,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: "accuracy",
-      type: "Duration",
     },
     {
       name: "Dustblind",
@@ -621,7 +599,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 6,
       scaling: "accuracy",
-      type: "Duration",
     },
     {
       name: "Piercing Windblast",
@@ -636,7 +613,6 @@ export const aeromancy: MysticSphere = {
       `,
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Greater Piercing Windblast",
@@ -651,7 +627,6 @@ export const aeromancy: MysticSphere = {
       `,
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Downdraft",
@@ -670,7 +645,6 @@ export const aeromancy: MysticSphere = {
       // +1 level since it's stronger than a typical rank 1 debuff
       rank: 2,
       scaling: "accuracy",
-      type: "Duration",
     },
     {
       name: "Misty Step",
@@ -766,7 +740,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 1,
       tags: ["Detection"],
-      type: "Instant",
     },
     {
       name: "Greater Detect Air",
@@ -778,7 +751,6 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
-      type: "Instant",
     },
     {
       name: "Supreme Detect Air",
@@ -790,7 +762,6 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 5,
-      type: "Instant",
     },
   ],
 };

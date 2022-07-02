@@ -167,7 +167,6 @@ export const summoning: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -183,7 +182,6 @@ export const summoning: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -200,7 +198,6 @@ export const summoning: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -217,7 +214,6 @@ export const summoning: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -234,7 +230,6 @@ export const summoning: MysticSphere = {
       rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -501,7 +496,6 @@ export const summoning: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
   ],
   rituals: [

@@ -62,7 +62,6 @@ export const universal: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Greater Mystic Bolt",
@@ -76,7 +75,6 @@ export const universal: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Supreme Mystic Bolt",
@@ -90,7 +88,6 @@ export const universal: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Mystic Blast",
@@ -103,7 +100,6 @@ export const universal: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Greater Mystic Blast",
@@ -116,7 +112,6 @@ export const universal: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Supreme Mystic Blast",
@@ -129,7 +124,6 @@ export const universal: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -143,7 +137,6 @@ export const universal: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Greater Mystic Discharge",
@@ -156,7 +149,6 @@ export const universal: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Supreme Mystic Discharge",
@@ -169,7 +161,6 @@ export const universal: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
   ],
   rituals: [
@@ -221,7 +212,6 @@ export const universal: MysticSphere = {
         `,
       },
       tags: ['Trap'],
-      type: "Duration"
     },
     {
       name: "Greater Mystic Trap",
@@ -242,7 +232,6 @@ export const universal: MysticSphere = {
         `,
       },
       tags: ['Trap'],
-      type: "Duration"
     },
     {
       name: "Greater Enduring Mystic Trap",
@@ -263,7 +252,6 @@ export const universal: MysticSphere = {
         `,
       },
       tags: ['Trap'],
-      type: "Duration"
     },
   ],
 };

@@ -20,7 +20,6 @@ export const electromancy: MysticSphere = {
         4: `The damage increases to 10.`,
         6: `The damage increases to 20.`,
       },
-      type: "Instant",
     },
 
     {
@@ -52,7 +51,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Greater Lightning Bolt",
@@ -65,7 +63,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Supreme Lightning Bolt",
@@ -78,7 +75,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -94,7 +90,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -113,7 +108,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -125,7 +119,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -142,7 +135,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -159,7 +151,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 5,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -172,7 +163,6 @@ export const electromancy: MysticSphere = {
       `,
       rank: 2,
       scaling: { special: "The recovery increases by +1d for each rank beyond 2." },
-      type: 'Duration',
     },
 
     {
@@ -185,7 +175,6 @@ export const electromancy: MysticSphere = {
       `,
       rank: 6,
       scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
-      type: 'Duration',
     },
 
     {
@@ -199,7 +188,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -213,7 +201,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -227,7 +214,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -244,7 +230,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 4,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -259,7 +244,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -294,7 +278,6 @@ export const electromancy: MysticSphere = {
         special:
           "The damage to both the primary and secondary subjects increases by +1d for each rank beyond 5.",
       },
-      type: "Instant",
     },
 
     {
@@ -309,7 +292,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -324,7 +306,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 5,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -341,7 +322,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -361,7 +341,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -476,7 +455,6 @@ export const electromancy: MysticSphere = {
 
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -494,7 +472,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -510,7 +487,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -527,7 +503,6 @@ export const electromancy: MysticSphere = {
 
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -542,7 +517,6 @@ export const electromancy: MysticSphere = {
       scaling: {
         6: `The target can remove two effects.`,
       },
-      type: "Instant",
     },
 
     {
@@ -558,7 +532,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -574,7 +547,6 @@ export const electromancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -589,7 +561,6 @@ export const electromancy: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: [],
-      type: "Instant",
     },
 
     {
@@ -604,7 +575,6 @@ export const electromancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: [],
-      type: "Instant",
     },
   ],
   rituals: [],

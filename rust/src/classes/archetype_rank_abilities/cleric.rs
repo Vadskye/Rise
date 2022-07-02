@@ -159,7 +159,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 As a standard action, you can use the \ability{turn undead} ability.
-                \begin{instantability}{Turn Undead}
+                \begin{activeability}{Turn Undead}
                     Make an attack vs. Mental against all undead creatures within a \medarea radius from you.
                     \hit Each target is \frightened by you as a \glossterm{condition}.
                     Once this effect ends, the creature becomes immune to this effect until it takes a \glossterm{short rest}.
@@ -167,7 +167,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     This attack's accuracy increases by \plus2 for each rank beyond 2.
-                \end{instantability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -335,7 +335,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{divine aid} ability as a standard action.
-                \begin{instantability}{Divine Aid}
+                \begin{activeability}{Divine Aid}
                     \abilitytag{Magical}, \abilitytag{Swift}
                     \rankline
                     Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
@@ -353,7 +353,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The healing increases to 4d8.
                     \rank{6} The healing increases to 4d10.
                     \rank{7} The healing increases to 6d10.
-                \end{instantability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -378,7 +378,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{vital restoration} ability as a standard action.
-                \begin{instantability}{Vital Restoration}
+                \begin{activeability}{Vital Restoration}
                     \abilitytag{Magical}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
@@ -390,7 +390,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} If the target's level is at least two levels lower than your level,
                         you do not increase your fatigue level when you use this ability.
                     \rank{7} The target can remove an additional \glossterm{vital wound}.
-                \end{instantability}
+                \end{activeability}
 
             ",
             modifiers: None,
@@ -419,14 +419,14 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can use the \textit{revivify} ability as a standard action.
-                \begin{instantability}{Revivify}
+                \begin{activeability}{Revivify}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by four (see \pcref{Fatigue}).
 
                     Choose one intact corpse within your \glossterm{reach}.
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is restored to life, as the \ritual{resurrection} ritual.
                     After using this ability, you cannot use it again until you take a \glossterm{long rest}.
-                \end{instantability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -450,7 +450,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{denounce the heathens} ability as a standard action.
-                \begin{durationability}{Denounce the Heathens}[Duration]
+                \begin{activeability}{Denounce the Heathens}
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -460,7 +460,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rank{3} Each target with no remaining \glossterm{damage resistance} is \stunned instead of dazed.
                     \rank{5} Each target is stunned instead of dazed.
                     \rank{7} Each target with no remaining \glossterm{damage resistance} is \confused instead of stunned.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -480,7 +480,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{bless the worthy} ability as a standard action.
-                \begin{durationability}{Bless the Worthy}[Duration]
+                \begin{activeability}{Bless the Worthy}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
@@ -493,7 +493,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The recovery increases to 4d6.
                     \rank{6} The recovery increases to 4d10.
                     \rank{7} The recovery increases to 5d10.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -514,7 +514,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use the \textit{condemn the fearful} ability as a standard action.
-                \begin{durationability}{Condemn the Fearful}[Duration]
+                \begin{activeability}{Condemn the Fearful}
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -522,7 +522,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{7} Each target with no remaining \glossterm{damage resistance} is \frightened instead of shaken.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -541,13 +541,13 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You can use the \textit{convert the irresolute} ability as a standard action.
-                \begin{durationability}{Convert the Irresolute}[Duration]
+                \begin{activeability}{Convert the Irresolute}
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
                     \hit The target is \stunned until it finishes a \glossterm{long rest}.
                     At the end of that time, if its Willpower is 0 or lower and it is at least 3 levels lower than you, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },
