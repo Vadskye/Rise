@@ -160,6 +160,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \ability{turn undead} ability.
                 \begin{activeability}{Turn Undead}
+                    \rankline
                     Make an attack vs. Mental against all undead creatures within a \medarea radius from you.
                     \hit Each target is \frightened by you as a \glossterm{condition}.
                     Once this effect ends, the creature becomes immune to this effect until it takes a \glossterm{short rest}.
