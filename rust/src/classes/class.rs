@@ -1345,6 +1345,7 @@ impl Class {
                         \parhead{Aspect} The bonus from this domain's gift increases to \plus2.
                         \parhead{Essence} You can use the \textit{speak with dead} ability as a standard action.
                         \begin{attuneability}{Speak with Dead}
+                            \rankline
                             Choose a corpse within \rngshort range.
                             The corpse must have died no more than 24 hours ago.
                             It regains a semblance of life, allowing you to speak with it as if it were the creature the corpse belonged to.
@@ -1386,6 +1387,7 @@ impl Class {
                         \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{hit points}.
                         \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
                         \begin{attuneability}{Speak with Earth}
+                            \rankline
                             You can speak with earth within a \areahuge radius \glossterm{zone} from your location.
                             You can ask the earth simple questions and understand its responses.
 
@@ -1425,6 +1427,7 @@ impl Class {
                         \parhead{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
                         \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
                         \begin{attuneability}{Speak with Fire}
+                            \rankline
                             You can speak with and command fire within a \areahuge radius \glossterm{zone} from your location.
                             You can ask the fire simple questions and understand its responses.
                             If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
@@ -1614,6 +1617,7 @@ impl Class {
                         \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
                         \parhead{Essence} You can use the \textit{speak with water} ability as a standard action.
                         \begin{attuneability}{Speak with Water}
+                            \rankline
                             You can speak with and command water within a \areahuge \glossterm{zone} from your location.
                             You can ask the water simple questions and understand its responses.
                             If you command the water to perform a task, it will do so do the best of its ability until this effect ends.
