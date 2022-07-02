@@ -1157,7 +1157,7 @@ impl Class {
                     latex_formatting::uppercase_first_letter(
                         &abilities_at_rank
                             .iter()
-                            .map(|a| a.name.to_owned())
+                            .map(|a| a.name.replace("+", r"\plus"))
                             .collect::<Vec<String>>()
                             .join(", ")
                             .to_lowercase(),
