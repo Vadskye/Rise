@@ -668,7 +668,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{sustainability}
 
         \ff[6]{Undetectable Lies} As a \glossterm{minor action}, you can use the \textit{undetectable lies} ability.
-        \begin{attuneability}{Undetectable Lies}[\abilitytag{Attune}]
+        \begin{attuneability}{Undetectable Lies}
+            \par \noindent Usage time: One \glossterm{minor action}.
+            \rankline
             Any \glossterm{magical} abilities which detect lies are unable to detect lies you speak.
         \end{attuneability}
 
@@ -734,8 +736,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[12]{Disguise Size}[Magical] You can use the \textit{disguise size} ability as a \glossterm{standard action}.
         \begin{attuneability}{Disguise Size}
-            \abilitytag{Attune}
-            \rankline
             You increase or decrease your size by one \glossterm{size category}.
             Your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
             This effect lasts as long as you \glossterm{attune} to it.
@@ -1102,9 +1102,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[6]{Tempting Concoction} You can use the \textit{tempting concoction} ability as a \glossterm{standard action}.
         \begin{attuneability}{Tempting Concoction}
-            \spelltwocol{\abilitytag{Attune}}{\abilitytag{Emotion}, \glossterm{Magical}, \abilitytag{Subtle}}
+            \abilitytag{Emotion}, \glossterm{Magical}, \abilitytag{Subtle}
             \rankline
-            \targets{See text}
             Choose one liquid poison or potion you created, or an object containing one of those liquids, within \rngshort range.
             Whenever an \glossterm{enemy} notices the chosen object, make an attack vs. Mental against it.
             If the poison or potion is not concealed inside a less suspicious object, such as a tankard of ale or an apple, you take a \minus4 penalty to \glossterm{accuracy}.
@@ -1525,7 +1524,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[6]{Imbue Projectile} When you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
         \begin{attuneability}{Imbue Projectile}
-            \spelltwocol{\abilitytag{Attune}}{\glossterm{Magical}}
+            \glossterm{Magical}
             \rankline
             The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
@@ -1882,7 +1881,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[6]{Extradimensional Concealment}[Magical] When you use the \textit{conceal object} ability, you can use the \textit{extradimensional pocket} ability.
         \begin{attuneability}{Extradimensional Pocket}
-            \spelltwocol{\abilitytag{Attune}}{\glossterm{Magical}}
+            \glossterm{Magical}
             \rankline
             You conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
             When your attunement to this ability ends, the object appears in a free hand.
@@ -1992,7 +1991,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[6]{Imbue Weapon} When you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue weapon} ability.
         \begin{attuneability}{Imbue Weapon}
-            \spelltwocol{\abilitytag{Attune}}{\glossterm{Magical}}
+            \glossterm{Magical}
             \rankline
             The spell does not have its effect immediately.
             Instead, its power is imbued in a non-projectile weapon you hold.
@@ -2772,8 +2771,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[18]{Find the Path}[Magical] You can use the \textit{find the path} ability as a standard action.
         \begin{attuneability}{Find the Path}
-            \abilitytag{Attune}
-            \rankline
             When you use this ability, you must unambiguously specify a location on the same plane as you.
             You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
             You are not always led in the exact direction of the destination -- if there is an impassable obstacle between the target and the destination, this ability will direct you around the obstacle, rather than through it.
