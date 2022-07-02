@@ -210,7 +210,7 @@ impl StandardAttack {
                     }),
                     suffix: None,
                 }),
-                hit: AttackEffect::Custom(AbilityType::Instant, r"
+                hit: AttackEffect::Custom(AbilityType::Normal, r"
                     Each target is \grappled by the $name.
                 ".to_string()),
                 is_magical: false,
@@ -222,7 +222,7 @@ impl StandardAttack {
             },
             Self::VampireAlluringGaze(rank) => SimpleSpell {
                 accuracy: max(0, rank - 3),
-                crit: Some(AttackEffect::Custom(AbilityType::Duration, "The effect becomes permanent.".to_string())),
+                crit: Some(AttackEffect::Custom(AbilityType::Normal, "The effect becomes permanent.".to_string())),
                 defense: Defense::Mental,
                 hit: AttackEffect::Debuff(DebuffEffect {
                     debuffs: vec![Debuff::Charmed("the $name".to_string())],
@@ -441,7 +441,7 @@ impl StandardAttack {
                 accuracy: max(4, 3 + rank),
                 crit: Some(AttackEffect::MustRemoveTwice),
                 defense: Defense::Mental,
-                hit: AttackEffect::Custom(AbilityType::Duration, r"
+                hit: AttackEffect::Custom(AbilityType::Normal, r"
                     As a \glossterm{condition}, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
                     For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
                 ".to_string()),
@@ -515,7 +515,7 @@ impl StandardAttack {
                     lose_hp_effect: None,
                     power_multiplier: 0.0,
                     take_damage_effect: Some(AttackTriggeredEffect::Custom(
-                        AbilityType::Instant,
+                        AbilityType::Normal,
                         format!(
                             "
                                 In addition, each target damaged by the attack is \\glossterm{{pushed}} {feet} feet in the direction the line points away from the $name.

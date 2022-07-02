@@ -7,7 +7,6 @@
         `,
 
     rank: 7,
-    type: "Instant",
   },
 
   {
@@ -19,7 +18,6 @@
         `,
 
     rank: 1,
-    type: "Instant",
   },
 
   {
@@ -31,7 +29,6 @@
         `,
 
     rank: 4,
-    type: "Instant",
   },
 
   {
@@ -42,6 +39,5 @@
         `,
 
     rank: 7,
-    type: "Instant",
   },
 ];

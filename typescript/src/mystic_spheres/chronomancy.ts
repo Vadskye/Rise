@@ -32,7 +32,6 @@ export const chronomancy: MysticSphere = {
         4: "The bonus increases to +3.",
         6: "The bonus increases to +4.",
       },
-      type: "Instant",
     },
     {
       name: "Rapid Aging",
@@ -69,7 +68,6 @@ export const chronomancy: MysticSphere = {
         7: "The accuracy bonus increases to +3.",
       },
       tags: [],
-      type: "Duration",
     },
     {
       name: "Accelerated Triplestrike",
@@ -85,7 +83,6 @@ export const chronomancy: MysticSphere = {
       scaling: {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -101,7 +98,6 @@ export const chronomancy: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Curse"],
-      type: "Duration",
     },
 
     // This is a very unique combination of triggers and effects, so correct rank is hard
@@ -121,7 +117,6 @@ export const chronomancy: MysticSphere = {
       rank: 5,
       scaling: "accuracy",
       tags: ["Curse"],
-      type: "Duration",
     },
 
     {
@@ -141,7 +136,6 @@ export const chronomancy: MysticSphere = {
 
       rank: 5,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -156,7 +150,6 @@ export const chronomancy: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -171,7 +164,6 @@ export const chronomancy: MysticSphere = {
       },
       rank: 3,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -186,7 +178,6 @@ export const chronomancy: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -201,7 +192,6 @@ export const chronomancy: MysticSphere = {
       },
       rank: 4,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -218,7 +208,6 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      type: "Duration",
     },
 
     // -2 levels for 50% chance of activation
@@ -236,7 +225,6 @@ export const chronomancy: MysticSphere = {
 
       rank: 7,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -252,7 +240,6 @@ export const chronomancy: MysticSphere = {
 
       rank: 4,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -323,7 +310,6 @@ export const chronomancy: MysticSphere = {
         7: `If you cast this spell as a standard action, you can choose to have the duplicate persist for two rounds instead of one.
                 If you do, the target disappears for two rounds at the same time as the duplicate.`,
       },
-      type: "Duration",
     },
 
     {
@@ -345,7 +331,6 @@ export const chronomancy: MysticSphere = {
         4: `The maximum size of the target increases to Large.`,
         6: `The maximum size of the target increases to Huge.`,
       },
-      type: "Duration",
     },
 
     {
@@ -468,7 +453,6 @@ export const chronomancy: MysticSphere = {
         After you cast this spell, you cannot cast it again until you take a \\glossterm{short rest}.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -513,7 +497,6 @@ export const chronomancy: MysticSphere = {
       },
       rank: 7,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -535,7 +518,6 @@ export const chronomancy: MysticSphere = {
         5: `You can cast this spell as a \\glossterm{minor action}.`,
         7: `The length of frozen time increases to five minutes.`,
       },
-      type: "Duration",
     },
 
     {
@@ -556,7 +538,6 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 2,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -580,7 +561,6 @@ export const chronomancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Duration",
     },
     {
       name: "Certain Timeseal",
@@ -591,7 +571,6 @@ export const chronomancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -610,7 +589,6 @@ export const chronomancy: MysticSphere = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -636,7 +614,6 @@ export const chronomancy: MysticSphere = {
         4: "You can perform any two of the listed actions.",
         6: "You can perform any combination of the listed actions.",
       },
-      type: "Instant",
     },
 
     {
@@ -654,7 +631,6 @@ export const chronomancy: MysticSphere = {
         4: "You also gain a +5 foot bonus to your movement speed while you sprint.",
         6: "The speed bonus increases to +10 feet.",
       },
-      type: "Instant",
     },
 
     {
@@ -673,7 +649,6 @@ export const chronomancy: MysticSphere = {
       scaling: {
         6: `The target can remove two effects.`,
       },
-      type: "Instant",
     },
 
     {
@@ -705,7 +680,6 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 1,
       scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
-      type: 'Instant',
     },
 
     {
@@ -717,7 +691,6 @@ export const chronomancy: MysticSphere = {
       },
       rank: 5,
       scaling: { special: "The recovery increases by +1d for each rank beyond 5." },
-      type: 'Instant',
     },
   ],
   rituals: [

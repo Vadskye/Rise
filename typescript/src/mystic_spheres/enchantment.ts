@@ -41,7 +41,6 @@ export const enchantment: MysticSphere = {
       },
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Instant",
     },
   ],
   spells: [
@@ -57,7 +56,6 @@ export const enchantment: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Instant",
     },
 
     // This is a weird effect with no clearly defined rank
@@ -82,7 +80,6 @@ export const enchantment: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -101,7 +98,6 @@ export const enchantment: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -122,7 +118,6 @@ export const enchantment: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     // "fall prone" is like a brief t1 effect
@@ -141,7 +136,6 @@ export const enchantment: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -158,7 +152,6 @@ export const enchantment: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -175,7 +168,6 @@ export const enchantment: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ['Compulsion'],
-      type: "Duration",
     },
 
     {
@@ -192,7 +184,6 @@ export const enchantment: MysticSphere = {
       },
       rank: 4,
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -211,7 +202,6 @@ export const enchantment: MysticSphere = {
       rank: 5,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -225,7 +215,6 @@ export const enchantment: MysticSphere = {
       },
       rank: 7,
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -250,7 +239,6 @@ export const enchantment: MysticSphere = {
       rank: 6,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -266,7 +254,6 @@ export const enchantment: MysticSphere = {
       rank: 4,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -290,7 +277,6 @@ export const enchantment: MysticSphere = {
       rank: 4,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -308,7 +294,6 @@ export const enchantment: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -321,7 +306,6 @@ export const enchantment: MysticSphere = {
       rank: 6,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -339,7 +323,6 @@ export const enchantment: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -356,7 +339,6 @@ export const enchantment: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -375,7 +357,6 @@ export const enchantment: MysticSphere = {
       rank: 4,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -391,7 +372,6 @@ export const enchantment: MysticSphere = {
       rank: 4,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -493,7 +473,6 @@ export const enchantment: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -511,7 +490,6 @@ export const enchantment: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ['Curse', 'Emotion'],
-      type: "Duration",
     },
 
     {
@@ -527,7 +505,6 @@ export const enchantment: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -582,7 +559,6 @@ export const enchantment: MysticSphere = {
       },
       rank: 7,
       tags: ['Emotion', "Subtle"],
-      type: "Duration",
     },
 
     {
@@ -616,7 +592,6 @@ export const enchantment: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Emotion", "Subtle"],
-      type: "Duration",
     },
 
     {
@@ -635,7 +610,6 @@ export const enchantment: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -654,7 +628,6 @@ export const enchantment: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -671,7 +644,6 @@ export const enchantment: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Greater Mind Crush",
@@ -687,7 +659,6 @@ export const enchantment: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -700,7 +671,6 @@ export const enchantment: MysticSphere = {
       `,
       rank: 2,
       scaling: { special: "The recovery increases by +1d for each rank beyond 2." },
-      type: 'Instant',
     },
 
     {
@@ -712,7 +682,6 @@ export const enchantment: MysticSphere = {
       },
       rank: 6,
       scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
-      type: 'Instant',
     },
   ],
   rituals: [

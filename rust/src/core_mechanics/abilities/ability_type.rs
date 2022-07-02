@@ -1,7 +1,6 @@
 #[derive(Clone, PartialEq)]
 pub enum AbilityType {
-    Instant,
-    Duration,
+    Normal,
     Sustain(String),
     Attune(Option<String>),
 }
@@ -9,8 +8,7 @@ pub enum AbilityType {
 impl AbilityType {
     pub fn name(&self) -> String {
         match self {
-            Self::Instant => "Instant".to_string(),
-            Self::Duration => "Duration".to_string(),
+            Self::Normal => "".to_string(),
             Self::Sustain(action) => format!("Sustain {}", action),
             Self::Attune(subtype) => format!("Attune{}", attune_suffix(subtype)),
         }
@@ -18,17 +16,15 @@ impl AbilityType {
 
     pub fn environment(&self) -> &str {
         match self {
-            Self::Instant => "instantability",
-            Self::Duration => "durationability",
-            Self::Sustain(_) => "durationability",
+            Self::Normal => "activeability",
+            Self::Sustain(_) => "sustainability",
             Self::Attune(_) => "attuneability",
         }
     }
 
     fn environment_tag(&self) -> String {
         match self {
-            Self::Instant => "".to_string(),
-            Self::Duration => "[Duration]".to_string(),
+            Self::Normal => "".to_string(),
             Self::Sustain(action) => format!("[\\abilitytag<Sustain> {}]", action),
             Self::Attune(subtype) => format!("[\\abilitytag<Attune>{}]", attune_suffix(subtype)),
         }

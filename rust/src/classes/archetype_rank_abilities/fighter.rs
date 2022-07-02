@@ -11,7 +11,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{cleansing discipline} ability as a \glossterm{standard action}.
-                \begin{instantability}{Cleansing Discipline}
+                \begin{activeability}{Cleansing Discipline}
                     \rankline
                     Remove up to two \glossterm{conditions} affecting you.
                     This cannot remove effects applied during the current round.
@@ -23,7 +23,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} You can use this ability as a \glossterm{minor action}.
                     When you do, you increase your \glossterm{fatigue level} by one.
                     \rank{7} You can remove any number of effects.
-                \end{instantability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -118,7 +118,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{weapon training} ability by spending an hour training with a weapon.
                 You cannot use this ability with an \glossterm{exotic weapon} that is from a \glossterm{weapon group} you are not proficient with.
-                \begin{durationability}{Weapon Training}[Duration]
+                \begin{activeability}{Weapon Training}
                     \rankline
                     You become proficient with the weapon you trained with.
                     You gain a \plus1 bonus to \glossterm{accuracy} with that weapon unless it is an \glossterm{exotic weapon} that you would not be proficient with without this ability.
@@ -127,7 +127,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{4} You can use this ability with only five minutes of training.
                     \rank{6} You can use this ability as a \glossterm{minor action}.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -444,7 +444,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{guarding strike} ability as a standard action.
-                \begin{durationability}{Guarding Strike}[Duration]
+                \begin{activeability}{Guarding Strike}
                     \rankline
                     Make a \glossterm{strike}.
                     You do not add your \glossterm{power} to damage with the strike.
@@ -453,7 +453,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the strike.
                     \rank{5} The accuracy bonus increases to \plus2.
                     \rank{7} The accuracy bonus increases to \plus3.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -472,7 +472,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can use the \textit{protect} ability as a \glossterm{minor action}.
-                \begin{durationability}{Protect}[Duration]
+                \begin{activeability}{Protect}
                     \abilitytag{Swift}
                     \rankline
                     Choose an \glossterm{ally} adjacent to you.
@@ -481,7 +481,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
 
                     A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                     While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -501,13 +501,13 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You can use the \textit{sentinel's challenge} ability as a standard action.
-                \begin{durationability}{Sentinel's Challenge}[Duration]
+                \begin{activeability}{Sentinel's Challenge}
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} in a \largearea radius from you.
                     \hit Each target is \goaded by you as a \glossterm{condition}.
                     \rankline
                     You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -587,7 +587,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 You cannot sustain multiple battle tactics simultaneously, and any existing \textit{battle tactics} end as soon as you activate another battle tactic.
 
                 {
-                    \begin{durationability}{Break Through}[\abilitytag{Sustain} (free)]
+                    \begin{sustainability}{Break Through}[\abilitytag{Sustain} (free)]
                         \rankline
                         Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{overrun} and \textit{shove} abilities (see \pcref{Special Combat Abilities}).
 
@@ -595,9 +595,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The bonus increases to \plus3.
                         \rank{5} The bonus increases to \plus4.
                         \rank{7} The bonus increases to \plus4.
-                    \end{durationability}
+                    \end{sustainability}
 
-                    \begin{durationability}{Dogpile}[\abilitytag{Sustain} (free)]
+                    \begin{sustainability}{Dogpile}[\abilitytag{Sustain} (free)]
                         \rankline
                         Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and with all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
 
@@ -605,9 +605,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The bonus increases to \plus3.
                         \rank{5} The bonus increases to \plus4.
                         \rank{7} The bonus increases to \plus5.
-                    \end{durationability}
+                    \end{sustainability}
 
-                    \begin{durationability}{Duck and Cover}[\abilitytag{Sustain} (free)]
+                    \begin{sustainability}{Duck and Cover}[\abilitytag{Sustain} (free)]
                         \rankline
                         Each target gains a \plus1 bonus to its Armor defense against ranged \glossterm{strikes}.
 
@@ -615,9 +615,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The bonus increases to \plus2.
                         \rank{5} The bonus increases to \plus3.
                         \rank{7} The bonus increases to \plus4.
-                    \end{durationability}
+                    \end{sustainability}
 
-                    \begin{durationability}{Group Up}[\abilitytag{Sustain} (free)]
+                    \begin{sustainability}{Group Up}[\abilitytag{Sustain} (free)]
                         \rankline
                         Each target that is adjacent to at least one other target gains a \plus1 bonus to its Armor defense.
 
@@ -625,9 +625,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Mental defense.
                         \rank{5} The Mental defense bonus increases to \plus2.
                         \rank{7} The Mental defense bonus increases to \plus3.
-                    \end{durationability}
+                    \end{sustainability}
 
-                    \begin{durationability}{Hold The Line}[\abilitytag{Sustain} (free)]
+                    \begin{sustainability}{Hold The Line}[\abilitytag{Sustain} (free)]
                         \rankline
                         Your \glossterm{enemies} treat all areas adjacent to any two targets as \glossterm{difficult terrain}.
 
@@ -635,9 +635,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} Each area adjacent to any target is difficult terrain.
                         \rank{5} In addition, each area adjacent to any two targets is doubly difficulty terrain, which costs three times the normal movement cost to move out of.
                         \rank{7} Each area adjacent to any target is doubly difficult terrain.
-                    \end{durationability}
+                    \end{sustainability}
 
-                    \begin{durationability}{Hustle}[\abilitytag{Sustain} (free)]
+                    \begin{sustainability}{Hustle}[\abilitytag{Sustain} (free)]
                         \rankline
                         Each target gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes} during any phase that it takes the \textit{sprint} action, or if it moves using a \glossterm{standard action}.
 
@@ -645,9 +645,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The speed bonus increases to \plus10 feet.
                         \rank{5} The speed bonus increases to \plus15 feet.
                         \rank{7} The speed bonus increases to \plus20 feet.
-                    \end{durationability}
+                    \end{sustainability}
 
-                    \begin{durationability}{Keep Moving}[\abilitytag{Sustain} (free)]
+                    \begin{sustainability}{Keep Moving}[\abilitytag{Sustain} (free)]
                         \rankline
                         Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
                             gains a \plus1 bonus to its Armor defense until the end of the round.
@@ -656,9 +656,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Reflex defense.
                         \rank{5} The Reflex defense bonus increases to \plus2.
                         \rank{7} The Reflex defense bonus increases to \plus3.
-                    \end{durationability}
+                    \end{sustainability}
 
-                    \begin{durationability}{Stand Your Ground}[\abilitytag{Sustain} (free)]
+                    \begin{sustainability}{Stand Your Ground}[\abilitytag{Sustain} (free)]
                         \rankline
                         Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to its Armor defense until its location changes.
 
@@ -666,7 +666,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Fortitude defense.
                         \rank{5} The Fortitude defense bonus increases to \plus2.
                         \rank{7} The Fortitude defense bonus increases to \plus3.
-                    \end{durationability}
+                    \end{sustainability}
                 }
             ",
             modifiers: None,

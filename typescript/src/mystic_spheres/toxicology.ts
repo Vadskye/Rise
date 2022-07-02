@@ -19,7 +19,6 @@ export const toxicology: MysticSphere = {
         `,
       },
       scaling: "accuracy",
-      type: "Instant",
     },
 
     {
@@ -35,7 +34,6 @@ export const toxicology: MysticSphere = {
         4: `The number of additional successes increases to three.`,
         6: `The range increases to \\medrange.`,
       },
-      type: "Instant",
     },
   ],
   spells: [
@@ -52,7 +50,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -71,7 +68,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -83,7 +79,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -104,7 +99,6 @@ export const toxicology: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -126,7 +120,6 @@ export const toxicology: MysticSphere = {
         special: "The hit point loss from the poison increases by +1d for each rank beyond 3.",
       },
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -145,7 +138,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 2,
       scaling: "accuracy",
-      type: "Instant",
     },
 
     {
@@ -209,7 +201,6 @@ export const toxicology: MysticSphere = {
 
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -226,7 +217,6 @@ export const toxicology: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Curse"],
-      type: "Duration",
     },
 
     {
@@ -239,7 +229,6 @@ export const toxicology: MysticSphere = {
       rank: 7,
       scaling: "accuracy",
       tags: ["Curse"],
-      type: "Duration",
     },
 
     {
@@ -257,7 +246,6 @@ export const toxicology: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: [],
-      type: "Instant",
     },
 
     {
@@ -293,7 +281,6 @@ export const toxicology: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -312,7 +299,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 7,
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -327,7 +313,6 @@ export const toxicology: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -342,7 +327,6 @@ export const toxicology: MysticSphere = {
       rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -390,7 +374,6 @@ export const toxicology: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -405,7 +388,6 @@ export const toxicology: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -419,7 +401,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 7,
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -433,7 +414,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -447,7 +427,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -460,7 +439,6 @@ export const toxicology: MysticSphere = {
       `,
       rank: 1,
       scaling: { special: "The healing increases by +1d for each rank beyond 1." },
-      type: "Duration",
     },
 
     {
@@ -472,7 +450,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },
-      type: "Duration",
     },
 
     {
@@ -483,7 +460,6 @@ export const toxicology: MysticSphere = {
         exceptThat: "The healing increases to 5d10, and the Fortitude bonus increases to +3.",
       },
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -497,7 +473,6 @@ export const toxicology: MysticSphere = {
       scaling: {
         6: `The target can remove two effects.`,
       },
-      type: "Instant",
     },
     {
       name: "Fungal Growth",
@@ -515,7 +490,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Duration",
     },
     {
       name: "Greater Fungal Growth",
@@ -532,7 +506,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Duration",
     },
 
     {

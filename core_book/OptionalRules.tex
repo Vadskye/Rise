@@ -314,7 +314,7 @@
 
             \cf{Dgn}[1]{Draconic Breath} You can use the \textit{breath weapon} ability as a \glossterm{standard action}.
             % +1d to compensate for cooldown
-            \begin{freeability}{Breath Weapon}
+            \begin{activeability}{Breath Weapon}
                 Make an attack vs. Reflex against everything in the area defined by your dragon type (see \trefnp{Dragon Types}).
                 After you use this ability, you \glossterm{briefly} cannot use it again.
                 \hit Each target takes damage equal to 1d8 plus half your \glossterm{power}.
@@ -336,7 +336,7 @@
                     A line breath weapon becomes a \areagarg, 15 ft.\ wide line.
                     A cone breath weapon becomes a \areahuge cone.
                 \rank{7} The damage increases to 4d8.
-            \end{freeability}
+            \end{activeability}
 
             \cf{Dgn}[2]{Draconic Flight}[Magical] Your wings grow larger, granting you a limited ability to fly.
             You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
@@ -446,13 +446,13 @@
         \begin{itemize}
             \itemhead{Darkvision} Drow have \trait{darkvision} with a 120 foot range, allowing them to see in complete darkness (see \pcref{Darkvision}).
             \itemhead{Deep Darkness}[Magical] A drow can use the \textit{deep darkness} ability as a \glossterm{standard action}.
-                \begin{durationability}{Deep Darkness}[\abilitytag{Sustain} (minor)]
+                \begin{sustainability}{Deep Darkness}[\abilitytag{Sustain} (minor)]
                     \rankline
                     \target{One \glossterm{zone} within \rngmed range}
                     You can choose this ability's radius, up to a maximum of a \areamed radius.
                     Light within or passing through the area is dimmed to be no brighter than \glossterm{shadowy illumination}
                     Any object or effect which blocks light also blocks this spell's effect.
-                \end{durationability}
+                \end{sustainability}
             \itemhead{Drow Prejudice} Almost all surface-dwellers have negative associations with drow.
                 Drow have an Opposition relationship with most people that they meet, which influences people's behavior and makes Persuasion checks harder (see \pcref{Persuasion}).
                 People in some locations, such as deep underground, do not have this attitude.
@@ -477,14 +477,14 @@
         \parhead{Special Abilities}
         \begin{itemize}
             \itemhead{Ingrain} A dryaidi use the \textit{ingrain} ability as a standard action.
-                \begin{freeability}{Ingrain}
+                \begin{activeability}{Ingrain}
                     The dryaidi's land speed becomes 5 feet, regardless of any modifiers that normally apply.
                     It gains a \plus4 bonus to Fortitude defense and a \plus1 bonus to Armor defense.
                     When moving, it may ignore \glossterm{difficult terrain} of any kind.
                     If the dryaidi takes a \glossterm{long rest} while this ability is active, it acquires nutrients sufficient to replace a day's worth of food and water.
 
                     This ability lasts until the dryaidi ends it as a standard action.
-                \end{freeability}
+                \end{activeability}
             \itemhead{Photosynthesis} While in sunlight, a dryaidi gains a \plus5 foot bonus to its land speed.
             \itemhead{Plant Nature} A dryaidi is considered both a creature and a plant.
             \itemhead{Unhurried and Unfaltering} Dryaidi have a \minus10 penalty to their \glossterm{land speed}.
@@ -499,7 +499,7 @@
         \parhead{Special Abilities}
         \begin{raggeditemize}
             \itemhead{Fae Step} As a standard action, you can use the \ability{fae step} ability.
-            \begin{freeability}{Fae Step}
+            \begin{activeability}{Fae Step}
                 You \glossterm{teleport} into an unoccupied location within \shortrange on a stable surface that can support your weight.
                 If the destination is invalid, this ability fails with no effect.
 
@@ -508,7 +508,7 @@
                 \rank{3} The range increases to \medrange.
                 \rank{5} The range increases to \longrange.
                 \rank{7} The range increases to \distrange.
-            \end{freeability}
+            \end{activeability}
             \itemhead{Fae Season} Eladrin respond strongly to their emotions, and change their abilities based on the season they currently represent.
                 An eladrin must choose one of the following seasons when it finishes a \glossterm{short rest}.
                 The chosen season lasts until it changes to a different season.
@@ -628,14 +628,14 @@
             \itemhead{Amorphous Form} An oozeborn's natural form is a loosely spherical blob.
                 They have a \minus5 foot penalty to their \glossterm{land speed}, but they gain a \plus5 bonus to the Flexibility skill (see \pcref{Flexibility}).
                 They can use the \ability{mold body} ability as a standard action to adopt a particular shape.
-                \begin{durationability}{Mold Body}[\abilitytag{Sustain} (free)]
+                \begin{sustainability}{Mold Body}[\abilitytag{Sustain} (free)]
                     You make a Disguise check to alter your appearance (see \pcref{Disguise Creature}).
                     This physically changes your body to match the results of your disguise.
                     You gain a \plus4 bonus on the check, and you ignore penalties for changing your gender, species, subtype, age, and number of limbs (up to 4).
                     However, this effect is unable to alter your equipment in any way.
 
                     You can sustain this ability for any length of time without mental strain, ignoring the normal 5 minute limit.
-                \end{durationability}
+                \end{sustainability}
             \itemhead{Compressible Body} Oozeborn can compress their head and shoulders down to a minimum of a one inch radius, allowing them to squeeze through very small areas.
                 Their clothing or armor is not compressed, so they may limit their ability to move through extremely narrow spaces.
             \itemhead{Darkvision} Oozeborn have \trait{darkvision} with a 60 foot range, allowing them to see in complete darkness (see \pcref{Darkvision}).
@@ -768,7 +768,7 @@
 
         \subsubsection{Tiefling Archetype}
             \cf{Tif}[1]{Abyssal Hop} You can use the \ability{abyssal hop} ability as a standard action.
-            \begin{freeability}{Abyssal Hop}[Instant]
+            \begin{activeability}{Abyssal Hop}
                 \abilitytag{Magical}
                 \rankline
                 You teleport horizontally into an unoccupied location within \shortrange on a stable surface that can support your weight.
@@ -782,7 +782,7 @@
                 \rank{5} The damage increases to 2d10.
                 \rank{6} The damage increases to 4d6.
                 \rank{7} The damage increases to 4d10.
-            \end{freeability}
+            \end{activeability}
 
             \cf{Tif}[1]{Infernal Resilience} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance}.
 
@@ -791,7 +791,7 @@
             You gain a benefit based on your chosen ancestry.
             \begin{itemize}
                 \item Hellfire Conduit: You can use the \textit{infernal rebuke} ability as a standard action.
-                    \begin{freeability}{Infernal Rebuke}[Instant]
+                    \begin{activeability}{Infernal Rebuke}
                         \abilitytag{Magical}
                         \rankline
                         Make an attack vs. Fortitude against one creature within \shortrange.
@@ -804,10 +804,10 @@
                         \rank{5} The damage increases to 4d6.
                         \rank{6} The damage increases to 4d10.
                         \rank{7} The damage increases to 5d10.
-                    \end{freeability}
+                    \end{activeability}
                 \item Tempting Allure: You gain a \plus2 bonus to the Deception, Disguise, and Persuasion skills.
                     In addition, you can use the \ability{charming temptation} ability as a standard action.
-                    \begin{durationability}{Charming Temptation}[Sustain (minor)]
+                    \begin{sustainability}{Charming Temptation}[Sustain (minor)]
                         \abilitytag{Emotion}, \abilitytag{Magical}, \abilitytag{Subtle}
                         \rankline
                         \noindent
@@ -825,7 +825,7 @@
 
                         \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 2.
                         \vspace{0.1em}
-                    \end{durationability}
+                    \end{sustainability}
                 \item Unholy Might: You gain two claw natural weapons and one bite natural weapon (see \pcref{Natural Weapons}).
                     In addition, you gain a \plus1d bonus to your damage with all weapons.
             \end{itemize}
@@ -839,7 +839,7 @@
                     In addition, the area affected by your \textit{abyssal hop} ability increases to a \smallarea radius from your destination.
                 \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus3.
                     In addition, you can use the \ability{dominating temptation} ability as a standard action.
-                    \begin{durationability}{Dominating Temptation}[Duration]
+                    \begin{activeability}{Dominating Temptation}
                         \abilitytag{Magical}
                         \rankline
                         \noindent
@@ -853,7 +853,7 @@
                         \rankline
                         \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 4.
                         \vspace{0.1em}
-                    \end{durationability}
+                    \end{activeability}
                 \item Unholy Might: You can use the \ability{unholy strength} ability as a \glossterm{minor action}.
                     \begin{attuneability}{Unholy Surge}[\abilitytag{Attune}]
                         \abilitytag{Magical}

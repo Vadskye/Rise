@@ -136,7 +136,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{rage} ability as a \glossterm{free action}.
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
-                \begin{durationability}{Rage}[\abilitytag{Sustain} (free)]
+                \begin{sustainability}{Rage}[\abilitytag{Sustain} (free)]
                     \abilitytag{Emotion}, \abilitytag{Swift}
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
@@ -155,7 +155,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rank{3} The power bonus increases to \plus4.
                     \rank{5} The power bonus increases to \plus8.
                     \rank{7} The power bonus increases to \plus16.
-                \end{durationability}
+                \end{sustainability}
             ",
             modifiers: Some(vec![
                 Modifier::Power(2),
@@ -191,7 +191,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 As a standard action, you can use the \textit{enraged strike} ability.
-                \begin{instantability}{Enraged Strike}
+                \begin{activeability}{Enraged Strike}
                     \rankline
                     Make a melee \glossterm{strike}.
                     You gain a \plus2 accuracy bonus and a \plus4 damage bonus with the strike against each creature that dealt damage to you during the previous round.
@@ -199,7 +199,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{4} The damage bonus increases to \plus8.
                     \rank{6} The damage bonus increases to \plus16.
-                \end{instantability}
+                \end{activeability}
             ",
             // This is too inconsistent to add as a generally usable strike
             modifiers: None,

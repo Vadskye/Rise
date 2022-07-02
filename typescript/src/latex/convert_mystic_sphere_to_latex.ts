@@ -1,7 +1,7 @@
-import * as format from "@src/latex/format";
-import { assertEndsWithPeriod } from "@src/latex/format/spell_effect";
-import { MysticSphere, SpellLike } from "@src/mystic_spheres";
-import _ from "lodash";
+import * as format from '@src/latex/format';
+import { assertEndsWithPeriod } from '@src/latex/format/spell_effect';
+import { MysticSphere, SpellLike } from '@src/mystic_spheres';
+import _ from 'lodash';
 
 export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   assertEndsWithPeriod(sphere.shortDescription);
@@ -19,15 +19,15 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
             \\subsection{Cantrips}
             ${sortByRankAndLevel(sphere.cantrips)
               .map(convertSpellToLatex)
-              .join("\n")}
+              .join('\n')}
           `
-          : ""
+          : ''
       }
 
       \\subsection{Spells}
         ${sortByRankAndLevel(sphere.spells)
           .map(convertSpellToLatex)
-          .join("\n")}
+          .join('\n')}
 
       ${
         sphere.rituals
@@ -35,42 +35,44 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
             \\subsection{Rituals}
             ${sortByRankAndLevel(sphere.rituals)
               .map(convertSpellToLatex)
-              .join("\n")}
+              .join('\n')}
           `
-          : ""
+          : ''
       }
   `);
 }
 
-export function determineAbilityType(spell: Pick<SpellLike, "type">): string {
-  if (spell.type === "Instant") {
-    return "instantability";
-  } else if (spell.type.includes("Attune")) {
-    return "attuneability";
+export function determineAbilityType(spell: Pick<SpellLike, 'type'>): string {
+  if (!spell.type) {
+    return 'activeability';
+  } else if (spell.type.includes('Attune')) {
+    return 'attuneability';
+  } else if (spell.type.includes('Sustain')) {
+    return 'sustainability';
   } else {
-    return "durationability";
+    return 'activeability';
   }
 }
 
 function convertSpellToLatex(spell: SpellLike): string {
   const abilityType = determineAbilityType(spell);
   const internalComponents = [
-    format.spellEffect(spell, "spell"),
+    format.spellEffect(spell, 'spell'),
     format.spellScaling(spell),
     format.spellNarrative(spell),
   ].filter(Boolean);
-  const tableText = spell.tableText || "";
+  const tableText = spell.tableText || '';
 
-  const typeText = spell.type === "Instant" ? "" : `[${spell.type}]`;
+  const typeText = spell.type ? `[${spell.type}]` : '';
 
   const latex = `
     \\begin{${abilityType}}{${spell.name}}${typeText}
-      ${format.spellTypePrefix(spell) || ""}
+      ${format.spellTypePrefix(spell) || ''}
       \\rankline
       \\hypertargetraised{spell:${spell.name}}{}%
       \\hypertargetraised{spell:${spell.name.toLowerCase()}}{}%
       \\noindent
-      ${internalComponents.join("\n\\rankline\n\n\\noindent ").trim()}%
+      ${internalComponents.join('\n\\rankline\n\n\\noindent ').trim()}%
       \\vspace{0.1em}%
     \\end{${abilityType}}
     ${tableText}
@@ -83,7 +85,7 @@ function convertSpellToLatex(spell: SpellLike): string {
   return latex;
 }
 
-export function sortByRankAndLevel<T extends Pick<SpellLike, "name" | "rank">>(spells: T[]): T[] {
+export function sortByRankAndLevel<T extends Pick<SpellLike, 'name' | 'rank'>>(spells: T[]): T[] {
   // Sort by level as primary, name as secondary
   return _.sortBy(
     _.sortBy(spells, (s) => s.name),

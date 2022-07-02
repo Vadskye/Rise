@@ -23,7 +23,6 @@ export const aquamancy: MysticSphere = {
         6: "The volume created increases to twenty gallons.",
       },
       tags: ["Creation"],
-      type: "Instant",
     },
     {
       name: "Manipulate Water",
@@ -58,7 +57,6 @@ export const aquamancy: MysticSphere = {
         4: "The volume affected increases to twenty gallons.",
         6: "The volume affected increases to fifty gallons.",
       },
-      type: "Instant",
     },
     {
       name: "Slippery Escape",
@@ -75,7 +73,6 @@ export const aquamancy: MysticSphere = {
         6: "The bonus increases to +6.",
       },
       tags: ["Manifestation"],
-      type: "Duration",
     },
   ],
   spells: [
@@ -97,7 +94,6 @@ export const aquamancy: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Curse"],
-      type: "Duration",
     },
     {
       name: "Greater Desiccating Curse",
@@ -109,7 +105,6 @@ export const aquamancy: MysticSphere = {
       rank: 7,
       scaling: "accuracy",
       tags: ["Curse"],
-      type: "Duration",
     },
     // swimming is +2 ranks better than a normal rank 2 condition
     {
@@ -134,7 +129,6 @@ export const aquamancy: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Duration",
     },
     // swimming is +2 ranks better than a normal rank 2 condition
     {
@@ -156,7 +150,6 @@ export const aquamancy: MysticSphere = {
       rank: 6,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Duration",
     },
 
     {
@@ -174,7 +167,6 @@ export const aquamancy: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     {
       name: "Greater Crushing Wave",
@@ -191,7 +183,6 @@ export const aquamancy: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     {
       name: "Aquajet Propulsion",
@@ -211,7 +202,6 @@ export const aquamancy: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     {
       name: "Greater Aquajet Propulsion",
@@ -223,7 +213,6 @@ export const aquamancy: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     {
       name: "Supreme Aquajet Propulsion",
@@ -235,7 +224,6 @@ export const aquamancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     {
       name: "Fountain",
@@ -252,7 +240,6 @@ export const aquamancy: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     {
       name: "Greater Fountain",
@@ -269,7 +256,6 @@ export const aquamancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     {
       name: "Wall of Water",
@@ -340,7 +326,6 @@ export const aquamancy: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     // +1 level for farther push, +2 levels for area
     {
@@ -360,7 +345,6 @@ export const aquamancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     {
       name: "Geyser",
@@ -381,7 +365,6 @@ export const aquamancy: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     {
       name: "Greater Geyser",
@@ -402,7 +385,6 @@ export const aquamancy: MysticSphere = {
       rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
     {
       name: "Rainstorm",
@@ -511,7 +493,6 @@ export const aquamancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Duration",
     },
     {
       name: "Greater Desiccation",
@@ -527,7 +508,6 @@ export const aquamancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Duration",
     },
     {
       name: "Wave of Desiccation",
@@ -543,7 +523,6 @@ export const aquamancy: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
     {
       name: "Greater Wave of Desiccation",
@@ -559,7 +538,6 @@ export const aquamancy: MysticSphere = {
       },
       rank: 5,
       scaling: "accuracy",
-      type: "Duration",
     },
     {
       name: "Aqueous Form",
@@ -659,7 +637,6 @@ export const aquamancy: MysticSphere = {
       // narrative: '',
       rank: 1,
       scaling: "accuracy",
-      type: "Instant",
     },
     {
       name: "Greater Forceful Aquajet",
@@ -672,7 +649,6 @@ export const aquamancy: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Supreme Forceful Aquajet",
@@ -685,7 +661,6 @@ export const aquamancy: MysticSphere = {
       // narrative: '',
       rank: 7,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Personal Aquarium",
@@ -758,7 +733,6 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 1,
       tags: ["Detection"],
-      type: "Instant",
       castingTime: "one minute",
     },
     {
@@ -770,7 +744,6 @@ export const aquamancy: MysticSphere = {
       },
       rank: 3,
       tags: ["Detection"],
-      type: "Instant",
       castingTime: "one minute",
     },
     {
@@ -782,7 +755,6 @@ export const aquamancy: MysticSphere = {
       },
       rank: 5,
       tags: ["Detection"],
-      type: "Instant",
       castingTime: "one minute",
     },
   ],

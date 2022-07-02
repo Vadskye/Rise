@@ -69,16 +69,16 @@ pub struct DamageEffect {
 impl DamageEffect {
     fn ability_type(&self) -> AbilityType {
         if let Some(ref effect) = self.lose_hp_effect {
-            if effect.ability_type() != AbilityType::Instant {
+            if effect.ability_type() != AbilityType::Normal {
                 return effect.ability_type();
             }
         }
         if let Some(ref effect) = self.take_damage_effect {
-            if effect.ability_type() != AbilityType::Instant {
+            if effect.ability_type() != AbilityType::Normal {
                 return effect.ability_type();
             }
         }
-        return AbilityType::Instant;
+        return AbilityType::Normal;
     }
 
     fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
@@ -322,19 +322,19 @@ pub enum AttackEffectDuration {
 impl AttackEffect {
     pub fn ability_type(&self) -> AbilityType {
         match self {
-            Self::BriefDurationInstead => AbilityType::Duration,
+            Self::BriefDurationInstead => AbilityType::Normal,
             Self::Custom(ability_type, _) => ability_type.clone(),
             Self::Damage(effect) => effect.ability_type(),
-            Self::DamageOverTime(_) => AbilityType::Duration,
-            Self::Debuff(_) => AbilityType::Duration,
-            Self::DebuffInstead(_) => AbilityType::Duration,
-            Self::HalfDamage => AbilityType::Instant,
-            Self::Healing(_) => AbilityType::Instant,
-            Self::Knockback(_) => AbilityType::Instant,
-            Self::MustRemoveTwice => AbilityType::Duration,
-            Self::Poison(_) => AbilityType::Duration,
-            Self::Push(_) => AbilityType::Instant,
-            Self::VitalWound(_) => AbilityType::Instant,
+            Self::DamageOverTime(_) => AbilityType::Normal,
+            Self::Debuff(_) => AbilityType::Normal,
+            Self::DebuffInstead(_) => AbilityType::Normal,
+            Self::HalfDamage => AbilityType::Normal,
+            Self::Healing(_) => AbilityType::Normal,
+            Self::Knockback(_) => AbilityType::Normal,
+            Self::MustRemoveTwice => AbilityType::Normal,
+            Self::Poison(_) => AbilityType::Normal,
+            Self::Push(_) => AbilityType::Normal,
+            Self::VitalWound(_) => AbilityType::Normal,
         }
     }
 
@@ -495,10 +495,7 @@ impl AttackTriggeredEffect {
     fn ability_type(&self) -> AbilityType {
         match self {
             Self::Custom(t, _) => t.clone(),
-            Self::Debuff(_) => AbilityType::Duration,
-            Self::Grappled => AbilityType::Instant,
-            Self::Poison(_) => AbilityType::Duration,
-            Self::VitalWound(_) => AbilityType::Instant,
+            _ => AbilityType::Normal,
         }
     }
 

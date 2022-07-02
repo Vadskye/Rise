@@ -30,7 +30,7 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
     format.spellNarrative(maneuver),
   ].filter(Boolean);
 
-  const typeText = maneuver.type === "Instant" ? "" : `[${maneuver.type}]`;
+  const typeText = maneuver.type ? `[${maneuver.type}]` : "";
 
   const latex = `
     \\begin{${abilityType}}{${maneuver.name}}${typeText}

@@ -19,7 +19,6 @@ export const bluntForce: CombatStyle = {
         5: "The damage bonus increases to +4.",
         7: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -33,7 +32,6 @@ export const bluntForce: CombatStyle = {
       },
       scaling: "damage",
       rank: 2,
-      type: "Instant",
     },
 
     {
@@ -49,7 +47,6 @@ export const bluntForce: CombatStyle = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -66,7 +63,6 @@ export const bluntForce: CombatStyle = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -82,7 +78,6 @@ export const bluntForce: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -94,7 +89,6 @@ export const bluntForce: CombatStyle = {
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -109,7 +103,6 @@ export const bluntForce: CombatStyle = {
         5: "The damage bonus increases to +4.",
         7: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -126,7 +119,6 @@ export const bluntForce: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -141,7 +133,6 @@ export const bluntForce: CombatStyle = {
       scaling: {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Duration",
     },
 
     {
@@ -157,7 +148,6 @@ export const bluntForce: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -169,7 +159,6 @@ export const bluntForce: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\confused as a \\glossterm{condition}.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -185,7 +174,6 @@ export const bluntForce: CombatStyle = {
       },
       scaling: "damage",
       rank: 4,
-      type: "Instant",
     },
 
     {
@@ -200,7 +188,6 @@ export const bluntForce: CombatStyle = {
       scaling: {
         6: "The maximum range increases to \\medrange.",
       },
-      type: "Instant",
     },
 
     {
@@ -219,7 +206,6 @@ export const bluntForce: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -235,7 +221,6 @@ export const bluntForce: CombatStyle = {
         4: "The bonus knockback distance increases to 20 feet.",
         6: "The bonus knockback distance increases to 30 feet.",
       },
-      type: "Instant",
     },
 
     {
@@ -253,7 +238,6 @@ export const bluntForce: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -267,7 +251,6 @@ export const bluntForce: CombatStyle = {
       scaling: {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -285,7 +268,6 @@ export const bluntForce: CombatStyle = {
         5: "The damage bonus increases to +16.",
         7: "The damage bonus increases to +24.",
       },
-      type: "Instant",
     },
 
     {
@@ -303,7 +285,6 @@ export const bluntForce: CombatStyle = {
         4: "The damage bonus increases to +8.",
         6: "The damage bonus increases to +16.",
       },
-      type: "Instant",
     },
 
     {
@@ -319,7 +300,6 @@ export const bluntForce: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -331,7 +311,6 @@ export const bluntForce: CombatStyle = {
         After it stops being stunned, it is immune to being stunned in this way until it takes a \\glossterm{short rest}.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -347,7 +326,6 @@ export const bluntForce: CombatStyle = {
       scaling: {
         7: "You gain a +4 damage bonus with the strike.",
       },
-      type: "Duration",
     },
 
     {
@@ -364,7 +342,6 @@ export const bluntForce: CombatStyle = {
         5: "The penalty increases to -4.",
         7: "The penalty increases to -3.",
       },
-      type: "Instant",
     },
 
     {
@@ -382,7 +359,6 @@ export const bluntForce: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
   ],
 };

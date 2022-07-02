@@ -19,7 +19,6 @@ export const umbramancy: MysticSphere = {
         4: `The bonus increases to +5.`,
         6: `The bonus increases to +6.`,
       },
-      type: "Duration",
     },
 
     {
@@ -136,7 +135,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -152,7 +150,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -170,7 +167,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -185,7 +181,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -197,7 +192,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -213,7 +207,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -229,7 +222,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -278,7 +270,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 2,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -297,7 +288,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 6,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -348,7 +338,6 @@ export const umbramancy: MysticSphere = {
         5: `The teleportation range increases to \\longrange.`,
         7: `The teleportation range increases to \\distrange.`,
       },
-      type: "Instant",
     },
 
     {
@@ -363,7 +352,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 4,
       scaling: { 6: `The teleportation range increases to \\medrange.` },
-      type: "Instant",
     },
 
     {
@@ -379,7 +367,6 @@ export const umbramancy: MysticSphere = {
         name: "shadowstep",
       },
       rank: 7,
-      type: "Instant",
     },
 
     // Silent move action teleportation invalidates HiPS
@@ -417,7 +404,6 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 2,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -438,7 +424,6 @@ export const umbramancy: MysticSphere = {
         You pin your foe's shadow to the ground, preventing it from moving.
       `,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -461,7 +446,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 2,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -484,7 +468,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 5,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -505,7 +488,6 @@ export const umbramancy: MysticSphere = {
         You compel a foe's shadow to dance, controlling its movement.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
