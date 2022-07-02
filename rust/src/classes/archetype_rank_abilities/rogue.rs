@@ -44,7 +44,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{darkstalker} ability as a standard action.
-                \begin{attuneability}{Darkstalker}[\abilitytag{Attune}]
+                \begin{attuneability}{Darkstalker}
                     \rankline
                     You become completely undetectable by your choice of one of the following sense groups:
                     \begin{itemize}

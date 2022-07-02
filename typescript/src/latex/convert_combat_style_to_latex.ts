@@ -1,6 +1,7 @@
 import { CombatStyle, Maneuver } from "@src/combat_styles";
 import {
   determineAbilityType,
+  determineAbilityTypeSuffix,
   sortByRankAndLevel,
 } from "@src/latex/convert_mystic_sphere_to_latex";
 import * as format from "@src/latex/format";
@@ -30,7 +31,7 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
     format.spellNarrative(maneuver),
   ].filter(Boolean);
 
-  const typeText = maneuver.type ? `[${maneuver.type}]` : "";
+  const typeText = determineAbilityTypeSuffix(maneuver);
 
   const latex = `
     \\begin{${abilityType}}{${maneuver.name}}${typeText}

@@ -54,6 +54,19 @@ export function determineAbilityType(spell: Pick<SpellLike, 'type'>): string {
   }
 }
 
+export function determineAbilityTypeSuffix(spell: Pick<SpellLike, 'type'>): string {
+  if (!spell.type) {
+    return "";
+  } else if (spell.type.includes('Attune') && spell.type.includes('(')) {
+    // grab the bits inside the parentheses
+    return spell.type.replace(/^.*\(/, '').replace(/\).*$/, '');
+  } else if (spell.type.includes('Sustain')) {
+    return spell.type;
+  } else {
+    return "";
+  }
+}
+
 function convertSpellToLatex(spell: SpellLike): string {
   const abilityType = determineAbilityType(spell);
   const internalComponents = [
@@ -63,7 +76,7 @@ function convertSpellToLatex(spell: SpellLike): string {
   ].filter(Boolean);
   const tableText = spell.tableText || '';
 
-  const typeText = spell.type ? `[${spell.type}]` : '';
+  const typeText = determineAbilityTypeSuffix(spell);
 
   const latex = `
     \\begin{${abilityType}}{${spell.name}}${typeText}

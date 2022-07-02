@@ -591,7 +591,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can use the \textit{shift body} ability whenever you finish a \glossterm{long rest}.
-                \begin{attuneability}{Shift Body}[\abilitytag{Attune}]
+                \begin{attuneability}{Shift Body}
                     \rankline
                     When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
                     You gain a \plus1 bonus to the base value of that attribute.
@@ -693,7 +693,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{natural servant} ability.
                 This ability requires spending 1 hour performing rituals in a natural area.
-                \begin{attuneability}{Natural Servant}[\abilitytag{Attune}]
+                \begin{attuneability}{Natural Servant}
                     \rankline
                     An animal native to the local environment appears to help you.
                     It follows your directions to the best of its ability as long as you remain in its natural environment.
