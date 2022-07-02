@@ -1578,8 +1578,8 @@ impl Class {
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
                         \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
-                        \begin{activeability}{Compel Belief}
-                            \spelltwocol{\abilitytag{Sustain} (minor)}{\abilitytag{Compulsion}}
+                        \begin{sustainability}{Compel Belief}[\abilitytag{Sustain} (minor)]
+                            \abilitytag{Compulsion}
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
                             You must also choose a belief that the target has.
@@ -1592,7 +1592,7 @@ impl Class {
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-                        \end{activeability}
+                        \end{sustainability}
                         % This seems like it's a complicated muddle of weird and possibly hilarious edge cases
                         \parhead{Mastery} You are undetectable to all \glossterm{magical} abilities.
                         They cannot detect your presence, sounds you make, or any actions you take.
