@@ -19,7 +19,6 @@ export const heraldOfWar: CombatStyle = {
         5: "The bonus increases to +6.",
         7: "The bonus increases to +7.",
       },
-      type: "Instant",
     },
 
     {
@@ -34,7 +33,6 @@ export const heraldOfWar: CombatStyle = {
       },
       scaling: "accuracy",
       rank: 2,
-      type: "Duration",
     },
 
     {
@@ -49,7 +47,6 @@ export const heraldOfWar: CombatStyle = {
       },
       scaling: "accuracy",
       rank: 6,
-      type: "Duration",
     },
 
     {
@@ -67,7 +64,6 @@ export const heraldOfWar: CombatStyle = {
       scaling: "accuracy",
       rank: 1,
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -80,7 +76,6 @@ export const heraldOfWar: CombatStyle = {
       scaling: "accuracy",
       rank: 4,
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -99,7 +94,6 @@ export const heraldOfWar: CombatStyle = {
       scaling: "accuracy",
       rank: 3,
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -112,7 +106,6 @@ export const heraldOfWar: CombatStyle = {
       scaling: "accuracy",
       rank: 6,
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -126,7 +119,6 @@ export const heraldOfWar: CombatStyle = {
       },
       scaling: "damage",
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -139,7 +131,6 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -153,7 +144,6 @@ export const heraldOfWar: CombatStyle = {
       },
       scaling: "damage",
       rank: 2,
-      type: "Instant",
     },
 
     {
@@ -167,7 +157,6 @@ export const heraldOfWar: CombatStyle = {
       },
       scaling: "damage",
       rank: 5,
-      type: "Instant",
     },
 
     {
@@ -183,7 +172,6 @@ export const heraldOfWar: CombatStyle = {
         7: "The number of conditions that can be ignored increases to three.",
       },
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -200,7 +188,6 @@ export const heraldOfWar: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -218,7 +205,6 @@ export const heraldOfWar: CombatStyle = {
         7: "The accuracy bonus increases to +3.",
       },
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -234,7 +220,6 @@ export const heraldOfWar: CombatStyle = {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     // The rank here is pretty ambiguous
@@ -252,7 +237,6 @@ export const heraldOfWar: CombatStyle = {
         5: "You gain a +1 accuracy bonus with both the strike and the area attack.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -269,7 +253,6 @@ export const heraldOfWar: CombatStyle = {
         5: "The bonus increases to +4.",
         7: "The bonus increases to +5.",
       },
-      type: "Duration",
     },
 
     {
@@ -283,7 +266,6 @@ export const heraldOfWar: CombatStyle = {
       rank: 3,
       scaling: { special: "The recovery increases by +1d for each rank beyond 3." },
       tags: ['Emotion'],
-      type: "Instant",
     },
 
     {
@@ -297,7 +279,6 @@ export const heraldOfWar: CombatStyle = {
       rank: 6,
       scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
       tags: ['Emotion'],
-      type: "Instant",
     },
 
     {
@@ -313,7 +294,6 @@ export const heraldOfWar: CombatStyle = {
         7: "The bonus increases to +4.",
       },
       tags: ['Emotion'],
-      type: "Duration",
     },
 
     {
@@ -332,7 +312,6 @@ export const heraldOfWar: CombatStyle = {
       rank: 2,
       scaling: "accuracy",
       tags: ['Emotion'],
-      type: "Duration",
     },
 
     {
@@ -345,7 +324,6 @@ export const heraldOfWar: CombatStyle = {
       scaling: "accuracy",
       rank: 5,
       tags: ["Emotion"],
-      type: "Duration",
     },
   ],
 };

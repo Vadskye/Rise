@@ -21,7 +21,6 @@ export const astromancy: MysticSphere = {
         4: "The range increases to \\rngshort.",
         6: "The range increases to \\rngmed.",
       },
-      type: "Instant",
     },
     {
       name: "Translocate Object",
@@ -40,7 +39,6 @@ export const astromancy: MysticSphere = {
         4: "The maximum size increases to Medium.",
         6: "The range increases to \\rnglong.",
       },
-      type: "Instant",
     },
   ],
   spells: [
@@ -64,7 +62,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     // Reflex is a weird defense for this effect, but it's very close range and free hand,
@@ -91,7 +88,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Banishment",
@@ -113,7 +109,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 3,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -129,7 +124,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
     // treat this as r3 -1 level; it's brutal to melee-only types
     {
@@ -153,7 +147,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 6,
       tags: ["Curse"],
-      type: "Duration",
     },
     // treat this as r3 -1 level; it's similar to immobilized, but harder to cheese with Long weapons
     {
@@ -175,7 +168,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 7,
       tags: [],
-      type: "Duration",
     },
     // TODO: target wording is awkward
     {
@@ -197,7 +189,6 @@ export const astromancy: MysticSphere = {
         5: "The range increases to \\rnglong.",
         7: "The range increases to \\rngdist.",
       },
-      type: "Instant",
     },
     {
       name: "Mass Translocation",
@@ -218,7 +209,6 @@ export const astromancy: MysticSphere = {
         5: "The range increases to \\rngmed.",
         7: "The range increases to \\rnglong.",
       },
-      type: "Instant",
     },
     {
       name: "Silent Translocation",
@@ -239,7 +229,6 @@ export const astromancy: MysticSphere = {
         5: "The range increases to \\rngmed.",
         7: "The range increases to \\rnglong.",
       },
-      type: "Instant",
     },
     {
       name: "Dimension Door",
@@ -257,7 +246,6 @@ export const astromancy: MysticSphere = {
       scaling: {
         6: "The range increases to 900 feet.",
       },
-      type: "Instant",
     },
     {
       name: "Dimensional Jaunt -- Plane of Earth",
@@ -276,7 +264,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 4,
       scaling: "accuracy",
-      type: "Duration",
     },
     {
       name: "Dimensional Jaunt -- Plane of Air",
@@ -296,7 +283,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 2,
       scaling: "accuracy",
-      type: "Instant",
     },
     // +2 levels for +1d; this is applying the r2 version of the ignited debuff
     {
@@ -324,7 +310,6 @@ export const astromancy: MysticSphere = {
           The damage of both the initial hit and the subsequent condition increases by +1d for each rank beyond 6.
         `,
       },
-      type: "Duration",
     },
     // +1 level for all damage types
     {
@@ -344,7 +329,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Dimensional Jaunt -- Deep Astral Plane",
@@ -364,7 +348,6 @@ export const astromancy: MysticSphere = {
         The distance of the journey, combined with the bizarre destination, is deeply unsettling.
       `,
       rank: 7,
-      type: "Duration",
     },
     {
       name: "Dimensional Jitter",
@@ -483,7 +466,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 2,
       scaling: "accuracy",
-      type: "Instant",
     },
     {
       name: "Transposition",
@@ -503,7 +485,6 @@ export const astromancy: MysticSphere = {
         5: "The range increases to \\distrange.",
         7: "The range increases to \\extrange.",
       },
-      type: "Instant",
     },
     {
       name: "Massive Hostile Transposition",
@@ -518,7 +499,6 @@ export const astromancy: MysticSphere = {
       `,
       rank: 5,
       scaling: "accuracy",
-      type: "Instant",
     },
     {
       name: "Phasing Blade",
@@ -624,7 +604,6 @@ export const astromancy: MysticSphere = {
         4: `The maximum size of the target increases to Large.`,
         6: `The maximum size of the target increases to Huge.`,
       },
-      type: "Duration",
     },
     {
       name: "Blink",
@@ -641,7 +620,6 @@ export const astromancy: MysticSphere = {
         7: `The defense bonus increases to +3.`,
       },
       tags: ['Swift'],
-      type: "Duration",
     },
     {
       name: "Distant Spells",
@@ -722,7 +700,6 @@ export const astromancy: MysticSphere = {
       `,
       tags: [],
       castingTime: "1 hour",
-      type: "Instant",
     },
     {
       name: "Astral Projection",
@@ -738,7 +715,6 @@ export const astromancy: MysticSphere = {
       rank: 5,
       tags: [],
       castingTime: "24 hours",
-      type: "Duration",
     },
     {
       name: "Homeward Shift",
@@ -752,7 +728,6 @@ export const astromancy: MysticSphere = {
       rank: 4,
       tags: [],
       castingTime: "24 hours",
-      type: "Instant",
     },
     {
       name: "Overland Teleportation",
@@ -770,7 +745,6 @@ export const astromancy: MysticSphere = {
       `,
       tags: [],
       castingTime: "24 hours",
-      type: "Instant",
     },
     {
       name: "Distant Overland Teleportation",
@@ -785,7 +759,6 @@ export const astromancy: MysticSphere = {
       rank: 7,
       tags: [],
       castingTime: "24 hours",
-      type: "Instant",
     },
     {
       name: "Retrieve Legacy",
@@ -797,7 +770,6 @@ export const astromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 2,
-      type: "Instant",
     },
     {
       name: "Astral Chest",
@@ -815,7 +787,6 @@ export const astromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 3,
-      type: "Instant",
     },
   ],
 };

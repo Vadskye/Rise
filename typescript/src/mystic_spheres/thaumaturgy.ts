@@ -24,7 +24,6 @@ export const thaumaturgy: MysticSphere = {
         6: `You also learn the number of magical effects in the area.`,
       },
       tags: ['Detection'],
-      type: "Duration",
     },
 
     {
@@ -39,7 +38,6 @@ export const thaumaturgy: MysticSphere = {
         4: `You can also discern which \\glossterm{magic sources} the target has access to, if they have access to any.`,
         6: `You can also discern which \\glossterm{mystic spheres} the target has access to, if they have access to any.`,
       },
-      type: "Instant",
     },
   ],
   spells: [
@@ -61,7 +59,6 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -82,7 +79,6 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -103,7 +99,6 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 7,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -124,7 +119,6 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -145,7 +139,6 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -181,7 +174,6 @@ export const thaumaturgy: MysticSphere = {
 
       rank: 2,
       scaling: "accuracy",
-      type: "Instant",
     },
 
     {
@@ -236,7 +228,6 @@ export const thaumaturgy: MysticSphere = {
       },
       rank: 4,
       scaling: "accuracy",
-      type: "Instant",
     },
 
     {
@@ -251,7 +242,6 @@ export const thaumaturgy: MysticSphere = {
         name: "suppress magic",
       },
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -272,7 +262,6 @@ export const thaumaturgy: MysticSphere = {
       },
       rank: 4,
       scaling: "accuracy",
-      type: "Instant",
     },
 
     {
@@ -293,7 +282,6 @@ export const thaumaturgy: MysticSphere = {
       },
 
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -445,7 +433,6 @@ export const thaumaturgy: MysticSphere = {
       },
       rank: 2,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -522,7 +509,6 @@ export const thaumaturgy: MysticSphere = {
         7: `The defense bonus increases to +2.`,
       },
       tags: ['Swift'],
-      type: "Duration",
     },
 
     {
@@ -541,7 +527,6 @@ export const thaumaturgy: MysticSphere = {
         7: `You gain an additional +1 bonus to all defenses.`,
       },
       tags: ['Swift'],
-      type: "Duration",
     },
 
     {
@@ -575,7 +560,6 @@ export const thaumaturgy: MysticSphere = {
         However, it can allow the target to remove any cursed items it has equipped.
       `,
       rank: 3,
-      type: "Instant",
     },
     {
       name: "Suppress Magic Aura",
@@ -598,7 +582,6 @@ export const thaumaturgy: MysticSphere = {
         This effect is permanent.
       `,
       rank: 4,
-      type: "Duration",
     },
     {
       name: "Analyze Magic",
@@ -608,7 +591,6 @@ export const thaumaturgy: MysticSphere = {
         Make a Knowledge check to identify a magical effect with a +5 bonus (see \\pcref{Identify Magical Effect}).
       `,
       rank: 2,
-      type: "Instant",
     },
     {
       name: "Greater Analyze Magic",
@@ -618,7 +600,6 @@ export const thaumaturgy: MysticSphere = {
         Make a Knowledge check to identify a magical effect with a +10 bonus (see \\pcref{Identify Magical Effect}).
       `,
       rank: 4,
-      type: "Instant",
     },
     {
       name: "Supreme Analyze Magic",
@@ -628,7 +609,6 @@ export const thaumaturgy: MysticSphere = {
         Make a Knowledge check to identify a magical effect with a +15 bonus (see \\pcref{Identify Magical Effect}).
       `,
       rank: 6,
-      type: "Instant",
     },
   ],
 };

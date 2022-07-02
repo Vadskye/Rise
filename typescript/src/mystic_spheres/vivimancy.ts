@@ -18,7 +18,6 @@ export const vivimancy: MysticSphere = {
         4: `The minimum \\glossterm{vital roll} you can mitigate decreases to -1.`,
         6: `The minimum \\glossterm{vital roll} you can mitigate decreases to -2.`,
       },
-      type: "Instant",
     },
 
     {
@@ -34,7 +33,6 @@ export const vivimancy: MysticSphere = {
         7: `The healing increases to sixteen \\glossterm{hit points}.`,
       },
       tags: ['Swift'],
-      type: "Instant",
     },
   ],
   spells: [
@@ -51,7 +49,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -72,7 +69,6 @@ export const vivimancy: MysticSphere = {
       rank: 3,
       scaling: { special: "The damage and healing increases by +1d for each rank beyond 3." },
       tags: [],
-      type: "Duration",
     },
 
     {
@@ -85,7 +81,6 @@ export const vivimancy: MysticSphere = {
       rank: 6,
       scaling: { special: "The damage and healing increases by +1d for each rank beyond 6." },
       tags: [],
-      type: "Duration",
     },
 
     {
@@ -105,7 +100,6 @@ export const vivimancy: MysticSphere = {
       rank: 3,
       scaling: { special: "The damage and healing increases by +1d for each rank beyond 3." },
       tags: [],
-      type: "Instant",
     },
 
     {
@@ -117,7 +111,6 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 1,
       scaling: { special: "The healing increases by +1d for each rank beyond 1." },
-      type: "Instant",
     },
 
     {
@@ -129,7 +122,6 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },
-      type: "Instant",
     },
 
     {
@@ -140,7 +132,6 @@ export const vivimancy: MysticSphere = {
         The target regains 5d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -154,7 +145,6 @@ export const vivimancy: MysticSphere = {
       rank: 2,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
       tags: ['Swift'],
-      type: "Instant",
     },
 
     {
@@ -168,7 +158,6 @@ export const vivimancy: MysticSphere = {
       rank: 6,
       scaling: { special: "The healing increases by +1d for each rank beyond 6." },
       tags: ['Swift'],
-      type: "Instant",
     },
 
     {
@@ -181,7 +170,6 @@ export const vivimancy: MysticSphere = {
       rank: 3,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
       tags: ['Swift'],
-      type: "Instant",
     },
 
     {
@@ -193,7 +181,6 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 7,
       tags: ['Swift'],
-      type: "Instant",
     },
 
     {
@@ -209,7 +196,6 @@ export const vivimancy: MysticSphere = {
         4: `The minimum \\glossterm{vital roll} you can mitigate decreases to -1.`,
         6: `The minimum \\glossterm{vital roll} you can mitigate decreases to -2.`,
       },
-      type: "Instant",
     },
 
     {
@@ -222,7 +208,6 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 5,
       scaling: { 7: `The target can remove two \\glossterm{vital wounds}.` },
-      type: "Instant",
     },
 
     {
@@ -238,7 +223,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -255,7 +239,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -272,7 +255,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -330,7 +312,6 @@ export const vivimancy: MysticSphere = {
 
       rank: 2,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -344,7 +325,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -358,7 +338,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -372,7 +351,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -436,7 +414,6 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -452,7 +429,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -467,7 +443,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 4,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -486,7 +461,6 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -501,7 +475,6 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -520,7 +493,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -540,7 +512,6 @@ export const vivimancy: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Curse"],
-      type: "Duration",
     },
 
     {
@@ -669,7 +640,6 @@ export const vivimancy: MysticSphere = {
           All diseases affecting yourself or one \\glossterm{ally} within \\medrange are removed.
       `,
       rank: 2,
-      type: "Instant",
     },
 
     {
@@ -682,7 +652,6 @@ export const vivimancy: MysticSphere = {
         This can heal both magical and mundane effects, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
       `,
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -731,7 +700,6 @@ export const vivimancy: MysticSphere = {
         \\end{dtable}
       `,
       tags: ["Creation"],
-      type: "Duration",
     },
 
     {
@@ -746,7 +714,6 @@ export const vivimancy: MysticSphere = {
       },
       rank: 6,
       tags: ["Creation"],
-      type: "Instant",
     },
 
     {
@@ -759,7 +726,6 @@ export const vivimancy: MysticSphere = {
         However, it can allow the target to remove any cursed items it has equipped.
       `,
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -772,7 +738,6 @@ export const vivimancy: MysticSphere = {
         In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
       `,
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -799,7 +764,6 @@ export const vivimancy: MysticSphere = {
       `,
       materialCost: true,
       rank: 4,
-      type: "Duration",
     },
 
     {
@@ -817,7 +781,6 @@ export const vivimancy: MysticSphere = {
       materialCost: true,
       rank: 6,
       tags: ["Creation"],
-      type: "Instant",
     },
 
     {
@@ -837,7 +800,6 @@ export const vivimancy: MysticSphere = {
       materialCost: true,
       rank: 7,
       tags: ["Creation"],
-      type: "Instant",
     },
 
     {
@@ -855,7 +817,6 @@ export const vivimancy: MysticSphere = {
         If the gem is shattered, the fragment of the creature's soul returns to its body.
       `,
       rank: 6,
-      type: "Instant",
     },
 
     {

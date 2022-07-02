@@ -363,14 +363,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
         As normal, you can exchange this spell for other spells as you gain access to new spell ranks, but the spell must always have the \abilitytag{Attune} tag.
 
         \ff[3]{Share Boon} When you cast a spell with the \abilitytag{Attune} tag, you can use the \textit{share boon} ability.
-        \begin{durationability}{Share Boon}
+        \begin{activeability}{Share Boon}
             The spell's \abilitytag{Attune} tag changes to \abilitytag{Attune} (target).
             Choose one \glossterm{ally} within \rngmed range.
             That ally is the target of the spell, and the spell affects that creature as if it were you instead of affecting you.
 
             You can only use this ability to affect one spell at a time.
             If you use it again, the original ally's attunement to the old spell is released, as the \textit{release attunement} ability (see \pcref{Attuned Abilities}).
-        \end{durationability}
+        \end{activeability}
 
         \ff[6]{Sustain Attunement} Whenever you cast an \abilitytag{Attune} (target) spell that is not a \glossterm{deep attunement}, you can choose to replace its \abilitytag{Attune} tag with the \abilitytag{Sustain (minor)} tag.
         When you do, you increase your \glossterm{fatigue level} by one.
@@ -423,7 +423,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \parhead{Special} You can only have one Bloodline feat.
 
         \ff[1]{Rebuke Evil} You can use the \textit{rebuke evil} ability as a standard action.
-        \begin{instantability}{Rebuke Evil}
+        \begin{activeability}{Rebuke Evil}
             \rankline
             Make an attack vs. Mental against one creature or object within \rngmed range.
             You gain a \plus2 accuracy bonus to this attack against any creature that damaged any of your \glossterm{allies} during the previous round.
@@ -437,7 +437,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rank{5} The damage increases to 4d6.
             \rank{6} The damage increases to 4d8.
             \rank{7} The damage increases to 5d10.
-        \end{instantability}
+        \end{activeability}
 
         \ff[3]{Healing Light}[Magical] When you use the \textit{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \medarea radius from you, and \glossterm{shadowy illumination} in twice that radius.
         Each \glossterm{ally} in the radius of brilliant illumination regains \glossterm{hit points} equal to your \glossterm{power}.
@@ -656,7 +656,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus3 bonus to the Deception skill.
 
         \ff[3]{Dual Speech}[Magical] When you speak, you can use the \textit{dual speech} ability.
-        \begin{freeability}{Dual Speech}[\abilitytag{Sustain} (minor)]
+        \begin{sustainability}{Dual Speech}[\abilitytag{Sustain} (minor)]
             You speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
             You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group. 
 
@@ -665,7 +665,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{9} You can speak entirely different words with your two voices.
             \featlevel{15} You can also speak with a third voice, using separate words and vocal patterns.
             \featlevel{21} You can also speak with a fourth voice, using separate words and vocal patterns.
-        \end{freeability}
+        \end{sustainability}
 
         \ff[6]{Undetectable Lies} As a \glossterm{minor action}, you can use the \textit{undetectable lies} ability.
         \begin{attuneability}{Undetectable Lies}[\abilitytag{Attune}]
@@ -675,13 +675,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
         \ff[12]{Deceive Magic}[\glossterm{Magical}] When you would be hit by a \glossterm{magical} attack, you can use this ability in response.
-        \begin{freeability}{Deceive Magic}[\abilitytag{Swift}]
+        \begin{activeability}{Deceive Magic}[\abilitytag{Swift}]
             When you use this ability, you increase your \glossterm{fatigue level} by two.
             After you use this ability, you \glossterm{briefly} cannot use it again.
 
             The attack must be rerolled.
             This can cause the attack to hit you instead of getting a \glossterm{critical hit}, or it can cause the attack to miss entirely.
-        \end{freeability}
+        \end{activeability}
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
 
@@ -760,7 +760,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % Uses rank 1 area, not rank 2. Also uses weird line vs cone scaling.
         \ff[3]{Breath Weapon} You can use the \textit{breath weapon} ability as a \glossterm{standard action}.
-        \begin{freeability}{Breath Weapon}
+        \begin{activeability}{Breath Weapon}
             Make an attack vs. Reflex against everything in the area defined by the type of dragon from your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
             After you use this ability, you \glossterm{briefly} cannot use it again.
             \hit Each target takes damage equal to 1d8 plus half your \glossterm{power}.
@@ -781,7 +781,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
                 In addition, the area affected by your breath weapon increases.
                 A line breath weapon becomes a \areagarg, 15 ft.\ wide line.
                 A cone breath weapon becomes a \areahuge cone.
-        \end{freeability}
+        \end{activeability}
 
         \ff[6]{Draconic Wings} You gain leathery wings that sprout from your back.
         These wings grant you a glide speed equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
@@ -822,7 +822,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Dexterity 1, Intelligence 1.
 
         \ff[1]{Duelist Strike} You can use the \textit{duelist strike} ability as a standard action.
-        \begin{freeability}{Duelist Strike}
+        \begin{activeability}{Duelist Strike}
             Make a melee \glossterm{strike} with a light or medium weapon.
             This strikes only targets a single creature, even if your weapon would normally have the Sweeping tag.
             If you are the creature's only \glossterm{enemy} adjacent to it, you gain a \plus1 accuracy bonus with the strike.
@@ -832,7 +832,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} You gain a \plus1 accuracy bonus with the strike.
             \featlevel{12} The automatic accuracy bonus increases to \plus2.
             \featlevel{18} The automatic accuracy bonus increases to \plus3.
-        \end{freeability}
+        \end{activeability}
 
         \ff[3]{Defensive Stance} You gain a \plus1 bonus to your Armor defense as long as you wield a non-projectile weapon.
 
@@ -889,7 +889,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You can choose to use this item after you learn the effects that the critical hit would have, but you must do so during the phase that the attack was made.
 
         \ff[3]{Sudden Entropy} You can use the \textit{sudden entropy} ability as a standard action.
-        \begin{instantability}{Sudden Entropy}
+        \begin{activeability}{Sudden Entropy}
             \rankline
             Make an attack vs. Mental against one creature or object within \medrange.
             \hit The target takes 1d8 \add \glossterm{power} damage.
@@ -902,7 +902,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{15} The damage increases to 4d8.
             \featlevel{18} The damage increases to 4d10.
             \featlevel{21} The damage increases to 6d10.
-        \end{instantability}
+        \end{activeability}
 
         \ff[6]{Improbable Vulnerability} Whenever you make an attack against an \glossterm{enemy} that is \trait{immune} or \trait{impervious} to some aspect of the attack, you have a 10\% chance to affect them as if they were not immune or impervious to the attack.
         This has no effect on objects.
@@ -930,7 +930,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         % This ability is melee-only because it makes some of the questions around ``is this creature marked''
         % less narratively awkward since you can automatically detect them with blood sense.
         \ff[1]{Execution} You can use the \textit{execution} ability as a standard action.
-        \begin{freeability}{Execution}
+        \begin{activeability}{Execution}
             Make a melee \glossterm{strike}.
             If the target is \textit{marked for execution}, you gain a \plus4 damage bonus.
 
@@ -938,7 +938,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} The damage bonus increases to \plus8.
             \featlevel{12} The damage bonus increases to \plus16.
             \featlevel{18} The damage bonus increases to \plus24.
-        \end{freeability}
+        \end{activeability}
 
         \ff[3]{Blood Sense}[Magical] You automatically know the location of all creatures that are \textit{marked for execution} within 120 feet of you, regardless of concealment or invisibility.
         You must have \glossterm{line of effect} to a creature to sense it in this way, but you do not need \glossterm{line of sight}.
@@ -977,13 +977,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
         \ff[12]{Escape Magic}[Magical] You can use the \textit{escape magic} ability as a standard action.
-        \begin{freeability}{Escape Magic}
+        \begin{activeability}{Escape Magic}
             You make an Flexibility attack against all \glossterm{magical} effects on you.
             You may exclude any number of effects you are aware of from this attack, allowing you to maintain beneficial magical effects.
             The \glossterm{difficulty value} for each effect is equal to 10 \add twice the effect's \glossterm{rank}.
             \hit Each effect is \glossterm{dismissed}, if it is an effect that can be dismissed.
             Unless otherwise noted, all \glossterm{magical} abilities with a duration can be dismissed, including \glossterm{conditions} (see \pcref{Dismissal}).
-        \end{freeability}
+        \end{activeability}
 
         You can only dismiss effects with this ability which target you directly, not area effects which include you as a target.
         If an ability targets multiple creatures, you can only remove its effects on you.
@@ -1010,7 +1010,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % as rank 3 strike, but scales to rank 9 strike
         \ff[6]{Spectral Strike} You can use the \textit{spectral strike} ability as a standard action.
-        \begin{durationability}{Spectral Strike}
+        \begin{activeability}{Spectral Strike}
             \abilitytag{Magical}
             \rankline
             Make a \glossterm{strike}.
@@ -1022,7 +1022,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             \featlevel{12} Each target is no longer immune to being slowed after the first successful slow effect.
             \featlevel{18} The slowing effect becomes a \glossterm{condition} instead of a brief effect.
-        \end{durationability}
+        \end{activeability}
 
         \ff[9]{Greater Ghost Step} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
         This grants you the defensive benefits of being incorporeal during the current phase.
@@ -1034,7 +1034,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % Like a mostly better version of Greater Reaping Harvest
         \ff[15]{Spectral Reap} You can use the \textit{spectral reap} ability as a \glossterm{standard action}.
-        \begin{durationability}{Spectral Reap}
+        \begin{activeability}{Spectral Reap}
             \abilitytag{Magical}
             \rankline
             Move up to your movement speed in a straight line.
@@ -1046,7 +1046,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             \featlevel{21} You gain a \plus1d bonus to damage with the strike.
-        \end{durationability}
+        \end{activeability}
 
         \ff[18]{Supreme Ghost Step} You can use your \textit{ghost step} ability to affect any movement you make during the \glossterm{movement phase}, even if you do not use the \textit{sprint} ability.
 
@@ -1258,7 +1258,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Either Intelligence 2 or Willpower 2.
 
         \ff[1]{Battle Command} You can use the \textit{battle command} ability as a standard action.
-        \begin{freeability}{Battle Command}[\abilitytag{Swift}]
+        \begin{activeability}{Battle Command}[\abilitytag{Swift}]
             Choose an \glossterm{ally} within \rngmed range.
             During the current phase, the target gains a \plus2 bonus to \glossterm{accuracy} and rolls twice for any \glossterm{strikes} it makes, keeping the better result.
 
@@ -1266,19 +1266,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} The accuracy bonus increases to \plus3.
             \featlevel{12} The accuracy bonus increases to \plus4.
             \featlevel{18} The accuracy bonus increases to \plus5.
-        \end{freeability}
+        \end{activeability}
 
         \ff[3]{Encouraging Presence} As long as you are conscious, your \glossterm{allies} who can see or hear you are immune to being \shaken and \frightened.
 
         \ff[6]{Bolster} You can use the \textit{bolster} ability as a standard action.
-        \begin{freeability}{Bolster}[\abilitytag{Emotion}]
+        \begin{activeability}{Bolster}[\abilitytag{Emotion}]
             One \glossterm{ally} within \medrange \glossterm{briefly} gains a \plus2 bonus to \glossterm{vital rolls} and can remove a \glossterm{condition}.
             This cannot remove a condition applied during the current round.
 
             \rankline
             \featlevel{12} The bonus increases to \plus3.
             \featlevel{18} The bonus increases to \plus4.
-        \end{freeability}
+        \end{activeability}
 
         \ff[9]{Brave Leader} You gain a \plus2 bonus to your Mental defense.
 
@@ -1302,12 +1302,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[6]{Language Focus} By spending a day in focused concentration on learning a specific \glossterm{common language}, you can use the \textit{language focus} ability.
         You must have access to either a creature fluent in the language willing to help you or at least a book's worth of material written in the language.
-        \begin{freeability}{Language Focus}
+        \begin{activeability}{Language Focus}
             If you had access to written material on the language, including from a teacher, you can read or write the language.
             If you had access to a speaker of the language, you can speak and understand the language.
 
             This ability's effect lasts until you use this ability again.
-        \end{freeability}
+        \end{activeability}
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
@@ -1358,14 +1358,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
     \begin{feat}{Martial Training}{Combat}
         \ff[1]{Trained Strike} You can use the \textit{trained strike} ability as a standard action.
-        \begin{freeability}{Trained Strike}
+        \begin{activeability}{Trained Strike}
             Make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
 
             \rankline
             \featlevel{6} The accuracy bonus increases to \plus2.
             \featlevel{12} The accuracy bonus increases to \plus3.
             \featlevel{18} The accuracy bonus increases to \plus4.
-        \end{freeability}
+        \end{activeability}
 
         \ff[3]{Equipment Training} You choose one of the following benefits.
         \begin{itemize}
@@ -1396,7 +1396,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus3 bonus to the Medicine skill.
 
         \ff[3]{Healing Touch} You can use the \textit{healing touch} ability as a standard action.
-        \begin{instantability}{Healing Touch}
+        \begin{activeability}{Healing Touch}
             \rankline
             Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
             The target regains 1d10 \add \glossterm{power} \glossterm{hit points} and increases its \glossterm{fatigue level} by one.
@@ -1410,7 +1410,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{15} The healing increases to 4d10.
             \featlevel{18} The healing increases to 5d10.
             \featlevel{21} The healing increases to 7d10.
-        \end{instantability}
+        \end{activeability}
 
         \ff[6]{Lifesaver} You can use the \textit{first aid} ability as a \glossterm{minor action} (see \pcref{First Aid}).
         If you do, you \glossterm{briefly} cannot use it as a minor action again.
@@ -1464,7 +1464,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         The damage types for each mystic sphere are given in \tref{Universal Mystic Spheres}.
 
         \ff[6]{Spell Fusion} You can use the \textit{spell fusion} ability as a \glossterm{standard action}.
-        \begin{freeability}{Spell Fusion}
+        \begin{activeability}{Spell Fusion}
             Choose two spells that you know which do not have the \abilitytag{Sustain} or \abilitytag{Attune} tags.
             You cast both spells simultaneously.
             Both spells that you fuse in this way must have the same area shape, such as a cone or sphere, and targeting restrictions, such as affecting only enemies or living creatures.
@@ -1473,7 +1473,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             Roll the attack roll and damage for each spell separately.
 
             After you use this ability, you are unable to take any actions during the following round.
-        \end{freeability}
+        \end{activeability}
 
         % TODO: make this based on spheres known?
         \ff[9]{Alter Conditions} When you cast a spell that inflicts a \glossterm{debuff} with a standard effect as a \glossterm{condition}, you can change that effect to another effect of the same rank.
@@ -1507,7 +1507,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Access to a \glossterm{mystic sphere}.
 
         \ff[1]{Imbued Shot} You can use the \textit{imbued shot} ability as a standard action.
-        \begin{freeability}{Imbued Shot}[\glossterm{Magical}]
+        \begin{activeability}{Imbued Shot}[\glossterm{Magical}]
             Make a ranged \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} using a \glossterm{projectile weapon} you wield.
             Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
 
@@ -1515,7 +1515,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} The accuracy bonus increases to \plus2.
             \featlevel{12} The accuracy bonus increases to \plus3.
             \featlevel{18} The accuracy bonus increases to \plus4.
-        \end{freeability}
+        \end{activeability}
 
         \ff[1]{Magical Strikes}[\abilitytag{Magical}] Whenever you make a ranged \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
         When you do, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
@@ -1560,7 +1560,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % Much stronger than Spellbreaker because this is a huge part of the whole Null thing
         \ff[1]{Sever Magic} You can use the \textit{sever magic} ability as a standard action.
-        \begin{freeability}{Sever Magic}
+        \begin{activeability}{Sever Magic}
             Make a \glossterm{strike}.
             You take a \minus1d damage penalty with the strike.
             If the target takes damage from the strike, it stops being \glossterm{attuned} to one effect of its choice that it is currently attuned to.
@@ -1572,7 +1572,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
             \featlevel{12} A struck target stops being attuned to an additional effect of its choice.
             \featlevel{18} The accuracy bonus increases to \plus2.
-        \end{freeability}
+        \end{activeability}
 
         \ff[3]{Mundane Resilience} You gain a \plus4 bonus to your \glossterm{damage resistance} and \glossterm{hit points}.
 
@@ -1649,7 +1649,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus3 bonus to the Persuasion skill.
 
         \ff[3]{Compel Attention}[Magical] You can use the \textit{compel attention} ability as a standard action.
-        \begin{freeability}{Compel Attention}[\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}]
+        \begin{sustainability}{Compel Attention}[\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}]
             Make an attack vs. Mental against a creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
             You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
@@ -1662,7 +1662,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{9} You may target up to five creatures within range.
             \featlevel{15} You may target any number of creatures within range.
             \featlevel{21} The range increases to \distrange.
-        \end{freeability}
+        \end{sustainability}
 
         \ff[6]{First Impressions} When you first meet creatures, you have an Ally relationship instead of a Just Met relationship (see \tref{Relationship Modifiers}.
         This does not affect your relationship with creatures who would not normally have a Just Met relationship with you.
@@ -1670,7 +1670,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
         \ff[12]{Suggestion}[Magical] You can use the \textit{suggestion} ability as a standard action.
-        \begin{freeability}{Suggestion}[\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)]
+        \begin{sustainability}{Suggestion}[\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)]
             Make an attack vs. Mental against a target within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
             You must also make a verbal suggestion of a particular course of action to the target.
@@ -1683,7 +1683,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             \featlevel{18} You may target up to five creatures within range.
-        \end{freeability}
+        \end{sustainability}
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
 
@@ -1700,7 +1700,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, you gain a bonus to \glossterm{initiative} checks equal to your Intelligence.
 
         \ff[3]{Combat Prediction} You can use the \textit{combat prediction} ability as a standard action.
-        \begin{freeability}{Combat Prediction}[\abilitytag{Subtle}, \abilitytag{Sustain} (free)]
+        \begin{sustainability}{Combat Prediction}[\abilitytag{Subtle}, \abilitytag{Sustain} (free)]
             Make an attack vs. Mental with a \plus3 \glossterm{accuracy} bonus against a creature within \rngmed range of you.
             \hit That creature's intentions become obvious to you as long as you sustain this ability.
             This gives you a \plus2 bonus to \glossterm{accuracy} and \glossterm{defenses} against that creature.
@@ -1711,7 +1711,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             The creature may change its actions based on your interference if you communicate your insight in a way it understands.
             \rankline
             You gain a \plus2 bonus to \glossterm{accuracy} with the attack at 6th level and every 3 levels thereafter.
-        \end{freeability}
+        \end{sustainability}
 
         \ff[6]{Foresight} During the \glossterm{movement phase}, you choose your action after all other creatures have chosen their actions.
         When you choose your action, you have insight into the actions chosen by any creatures within \shortrange of you that you can see.
@@ -1789,7 +1789,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Diehard} You gain a \plus2 bonus to \glossterm{vital rolls}.
 
         \ff[3]{Regenerative Recovery} You can use the \textit{regenerative recovery} ability as a standard action.
-        \begin{instantability}{Regenerative Recovery}
+        \begin{activeability}{Regenerative Recovery}
             \rankline
             When you use this ability, you increase your \glossterm{fatigue level} by one.
 
@@ -1805,7 +1805,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{15} The healing increases to 4d10.
             \featlevel{18} The healing increases to 5d10.
             \featlevel{21} The healing increases to 7d10.
-        \end{instantability}
+        \end{activeability}
 
         \ff[6]{Regenerative Rest} When you take a \glossterm{short rest}, you can remove any number of \glossterm{vital wounds} affecting you.
         If you do, you increase your \glossterm{fatigue level} by four per vital wound removed this way.
@@ -1905,7 +1905,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Perception 2.
 
         \ff[1]{Aim} You can use the \textit{aim} ability as a standard action.
-        \begin{freeability}{Aim}[\abilitytag{Sustain} (minor)]
+        \begin{sustainability}{Aim}[\abilitytag{Sustain} (minor)]
             \abilitytag{Subtle}
             \rankline
             Choose a creature or object within \glossterm{line of sight}.
@@ -1917,7 +1917,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} You also gain a \plus4 bonus to \glossterm{power} against the target if it is \unaware of you.
             \featlevel{12} The \glossterm{accuracy} bonus increases to \plus3.
             \featlevel{18} The \glossterm{power} bonus increases to \plus8.
-        \end{freeability}
+        \end{sustainability}
 
         \ff[3]{Distance Tolerance} You reduce your \glossterm{longshot penalty} by 1.
 
@@ -1942,7 +1942,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[3]{Social Intuition} You reduce the penalty for making a social assessment after only a single round of observation, and the penalty for making a social assessment without understanding the language, by 5 each (see \pcref{Social Assessment}).
 
         \ff[6]{Read Emotions}[Magical] You can use the \textit{read emotions} ability as a standard action.
-        \begin{freeability}{Read Emotions}[\abilitytag{Emotion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}]
+        \begin{sustainability}{Read Emotions}[\abilitytag{Emotion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}]
             Make an attack vs. Mental against a creature within \rngshort range.
             Your \glossterm{accuracy} is equal to your Social Insight skill.
             \hit You know the target's current emotions.
@@ -1952,7 +1952,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             \featlevel{12} The range increases to \rnglong range.
             \featlevel{18} You can use this ability as a \glossterm{minor action}.
-        \end{freeability}
+        \end{sustainability}
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
@@ -1971,7 +1971,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Access to a \glossterm{mystic sphere}.
 
         \ff[1]{Imbued Blow} You can use the \textit{imbued blow} ability as a standard action.
-        \begin{freeability}{Imbued Blow}
+        \begin{activeability}{Imbued Blow}
             \abilitytag{Magical}
             \rankline
             Make a melee \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
@@ -1981,7 +1981,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} The accuracy bonus increases to \plus2.
             \featlevel{12} The accuracy bonus increases to \plus3.
             \featlevel{18} The accuracy bonus increases to \plus4.
-        \end{freeability}
+        \end{activeability}
 
         \ff[1]{Magical Strikes}[\abilitytag{Magical}] Whenever you make a melee \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
         When you do, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
@@ -2376,12 +2376,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[3]{Reshaper} You gain a \plus2 bonus to all Craft skills.
         In addition as a standard action, you can use the \textit{alter self} ability.
-        \begin{freeability}{Alter Self}
+        \begin{activeability}{Alter Self}
             Make a Disguise check to alter your appearance (see \pcref{Disguise Creature}), except that you can use your \glossterm{power} in place of your Disguise skill.
             You can only alter your physical body, not your clothes or equipment.
 
             This ability lasts until you use it again.
-        \end{freeability}
+        \end{activeability}
 
         \ff[6]{Malleable Flesh} You gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
 
@@ -2390,7 +2390,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[12]{Greater Reshaper} The bonus from your \textit{reshaper} ability increases to \plus4.
         In addition, you can use the \textit{alter poison} ability as a standard action.
-        \begin{freeability}{Alter Poison}
+        \begin{activeability}{Alter Poison}
             Make an attack vs. Fortitude with a \plus2 \glossterm{accuracy} bonus against a creature within \shortrange.
             \hit The target stops being poisoned by one poison currently affecting it.
             In addition, as a \glossterm{condition}, the target's \glossterm{mundane} poisons have no effect.
@@ -2398,7 +2398,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             You gain a \plus2 bonus to \glossterm{accuracy} with the attack at 15th level and every 3 levels thereafter.
-        \end{freeability}
+        \end{activeability}
 
         \ff[15]{Spell} You learn a spell from the \sphere{Polymorph} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
@@ -2473,7 +2473,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         They gain a bonus to their \glossterm{damage resistance} equal to the hit points lost this way.
 
         \ff[6]{Resummon} You can use the \textit{resummon} ability as a \glossterm{standard action}.
-        \begin{freeability}{Resummon}
+        \begin{activeability}{Resummon}
             After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you take a short rest.
 
             Choose a spell from the \sphere{Summoning} mystic sphere that you are still \glossterm{attuned} to, even if all creatures created by that spell are dead.
@@ -2483,7 +2483,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             \featlevel{12} You can use this ability any number of times without taking a short rest.
             \featlevel{18} You can use this ability as a \glossterm{minor action}.
-        \end{freeability}
+        \end{activeability}
 
         \ff[9]{Personal Summoning} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Summoning} \glossterm{mystic sphere}.
@@ -2507,14 +2507,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[3]{Greater Distant Hand} You can use the \spell{distant hand} \glossterm{cantrip} as a \glossterm{minor action}, and you can \glossterm{sustain} it as a \glossterm{minor action}.
 
         \ff[3]{Telekinetic Strike} You can use the \textit{telekinetic strike} ability as a standard action.
-        \begin{freeability}{Telekinetic Strike}[Magical]
+        \begin{activeability}{Telekinetic Strike}[Magical]
             Make a \glossterm{strike} with a weapon you are controlling using the \spell{distant hand} cantrip.
             Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
 
             \rankline
             \featlevel{9} You gain a \plus1 accuracy bonus with the strike.
             \featlevel{15} The accuracy bonus increases to \plus2.
-        \end{freeability}
+        \end{activeability}
 
         \ff[6]{Partial Levitation} You gain a \plus4 bonus to the Jump skill.
         In addition, as a \glossterm{free action}, you can slow your fall while falling.
@@ -2565,7 +2565,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         When you gain access to new spell ranks, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Counterspell} You can use the \textit{counterspell} ability as a standard action.
-        \begin{freeability}{Counterspell}[\abilitytag{Swift}]
+        \begin{activeability}{Counterspell}[\abilitytag{Swift}]
             Choose a creature within \rngmed range of you.
             If the target is casting a spell or begins casting a spell this round, you can attempt to counter the spell.
             if your maximum spell level is higher than the target's maximum spell rank, their spell has no effect when it resolves.
@@ -2579,7 +2579,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             \featlevel{12} You gain a \plus2 bonus to the check.
             \featlevel{18} The bonus increases to \plus4.
-        \end{freeability}
+        \end{activeability}
 
         \ff[6]{Mystic Power} You gain a \plus2 bonus to your \glossterm{power}.
 
@@ -2605,7 +2605,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         When you gain access to new spell ranks, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Cleanse Toxins} You can use the \textit{cleanse toxins} ability as a standard action.
-        \begin{freeability}{Cleanse Toxins}
+        \begin{activeability}{Cleanse Toxins}
             \label{Cleanse Toxins}
             \target{Yourself or one \glossterm{ally} within your \glossterm{reach}}
             You remove all \glossterm{poisons} and \glossterm{diseases} affecting the target.
@@ -2614,7 +2614,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             \featlevel{9} The range increases to \rngmed.
             \featlevel{15} You can use this ability as a \glossterm{minor action}.
-        \end{freeability}
+        \end{activeability}
 
         \ff[6]{Innate Poison} 
         When you become poisoned, such as by drinking poison or from an enemy's attack, your body naturally repurposes the poison.
@@ -2847,7 +2847,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % This is a rank 2 spell effect
         \ff[3]{Mental Assault} You can use the \textit{mental assault} ability as a standard action.
-        \begin{durationability}{Mental Assault}
+        \begin{activeability}{Mental Assault}
             \abilitytag{Emotion}
             \rankline
             Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
@@ -2856,10 +2856,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             You gain a \plus2 bonus to \glossterm{accuracy} with the attack at 6th level and every 3 levels thereafter.
-        \end{durationability}
+        \end{activeability}
 
         \ff[6]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
-        \begin{durationability}{Read Mind}
+        \begin{activeability}{Read Mind}
             \abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Subtle}
             \rankline
             Make an attack vs. Mental against a creature within half the maximum range of your \glossterm{telepathy}.
@@ -2872,7 +2872,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             You gain a \plus2 bonus to \glossterm{accuracy} with the attack at 9th level and every 3 levels thereafter.
-        \end{durationability}
+        \end{activeability}
 
         \ff[9]{Greater Telepathy} The range of your \glossterm{telepathy} ability increases to 120 feet.
         In addition, you automatically know the location of any creature with an Intelligence of 0 or higher within half the maximum range of your telepathy.
@@ -2936,7 +2936,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, if your legacy item is an apparel item, you may choose both apparel and implement magic item effects for it.
 
         \ff[6]{Double Spell} You can use the \textit{double spell} ability as a \glossterm{standard action}.
-        \begin{instantability}{Double Spell}
+        \begin{activeability}{Double Spell}
             \rankline
             You can only use this ability if you have two \glossterm{free hands}.
 
@@ -2946,7 +2946,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             Both spells must affect completely different targets, with no overlap between their targets or areas (if any).
 
             After you use this ability, you are unable to take any actions during the following round.
-        \end{instantability}
+        \end{activeability}
 
         \ff[9]{Greater Twinhand Precision} The bonus from your \textit{twinhand precision} ability increases to \plus2.
 
@@ -3017,7 +3017,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         This is your focused weapon, and many abilities from this feat give you benefits with your focused weapon.
 
         \ff[1]{Perfect Strike} You can use the \textit{perfect strike} ability as a standard action.
-        \begin{freeability}{Perfect Strike}
+        \begin{activeability}{Perfect Strike}
             Make a \glossterm{strike} using your focused weapon.
             You gain your choice of either a \plus1 accuracy bonus or a \plus2 damage bonus with the strike.
 
@@ -3025,7 +3025,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} The accuracy bonus increases to \plus2, and the damage bonus increases to \plus4.
             \featlevel{12} The accuracy bonus increases to \plus3, and the damage bonus increases to \plus8.
             \featlevel{18} The accuracy bonus increases to \plus4, and the damage bonus increases to \plus16.
-        \end{freeability}
+        \end{activeability}
 
         \ff[3]{Firm Grip} Your focused weapon is considered to be well-secured whenever you want it to be, making it difficult or impossible for you to be disarmed.
 
@@ -3047,7 +3047,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % TODO: this would be better if it hit threatened people, but increased weapon range is too common
         \ff[1]{Cyclone} You can use the \textit{cyclone} ability as a standard action.
-        \begin{freeability}{Cyclone}[\abilitytag{Sustain} (standard)]
+        \begin{sustainability}{Cyclone}[\abilitytag{Sustain} (standard)]
             When you use this ability, make a melee \glossterm{strike} with a slashing weapon.
             Your \glossterm{power} with the strike is halved.
             The strike targets any number of creatures adjacent to you.
@@ -3058,7 +3058,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} You gain a \plus2 damage bonus with the strike.
             \featlevel{12} The damage bonus increases to \plus4.
             \featlevel{18} The damage bonus increases to \plus8.
-        \end{freeability}
+        \end{sustainability}
 
         \ff[3]{Unfettered Movement} During each phase, you may move through one creature's space during movement.
         You treat its space as \glossterm{difficult terrain}.

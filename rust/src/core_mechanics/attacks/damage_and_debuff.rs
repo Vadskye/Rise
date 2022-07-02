@@ -187,13 +187,13 @@ mod tests {
 
         assert_eq!(
             "
-\\begin<durationability>*<Organ Failure>[Duration]
+\\begin<ability>*<Organ Failure>
 \\abilitytag{Magical}
 \\rankline
 The $name makes a +0 attack vs. Fortitude against one creature within \\medrange.
 \\hit The target takes 1d4 physical damage.
 Each creature that loses \\glossterm<hit points> from this attack is \\stunned as a \\glossterm{condition}.
-\\end<durationability>",
+\\end<ability>",
             get_standard_ability_block(organ_failure)
         );
     }
@@ -214,13 +214,13 @@ Each creature that loses \\glossterm<hit points> from this attack is \\stunned a
 
         assert_eq!(
             "
-\\begin<durationability>*<Super Organ Failure>[Duration]
+\\begin<ability>*<Super Organ Failure>
 \\abilitytag{Magical}
 \\rankline
 The $name makes a +5 attack vs. Fortitude against one creature within \\longrange.
 \\hit The target takes 2d10 physical damage.
 Each creature that loses \\glossterm<hit points> from this attack is \\stunned as a \\glossterm{condition}.
-\\end<durationability>",
+\\end<ability>",
             get_standard_ability_block(organ_failure)
         );
     }
@@ -241,12 +241,12 @@ Each creature that loses \\glossterm<hit points> from this attack is \\stunned a
 
         assert_eq!(
             "
-\\begin<durationability>*<Strip the Flesh>[Duration]
+\\begin<ability>*<Strip the Flesh>
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
 \\hit The target takes 1d10 bludgeoning damage.
 Each creature that loses \\glossterm<hit points> from this attack is \\vulnerable to all damage as a \\glossterm{condition}.
-\\end<durationability>",
+\\end<ability>",
             get_standard_ability_block(strip_the_flesh)
         );
     }
@@ -267,12 +267,12 @@ Each creature that loses \\glossterm<hit points> from this attack is \\vulnerabl
 
         assert_eq!(
             "
-\\begin<durationability>*<Eye Poke>[Duration]
+\\begin<ability>*<Eye Poke>
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
 \\hit The target takes 1d10 bludgeoning damage.
 Each creature damaged by this attack is \\glossterm{briefly} \\dazzled.
-\\end<durationability>",
+\\end<ability>",
             get_standard_ability_block(eye_poke)
         );
     }
@@ -293,12 +293,12 @@ Each creature damaged by this attack is \\glossterm{briefly} \\dazzled.
 
         assert_eq!(
             "
-\\begin<durationability>*<Greater Eye Poke>[Duration]
+\\begin<ability>*<Greater Eye Poke>
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
 \\hit The target takes 1d10 bludgeoning damage.
 Each creature damaged by this attack is \\dazzled as a \\glossterm{condition}.
-\\end<durationability>",
+\\end<ability>",
             get_standard_ability_block(eye_poke)
         );
     }
@@ -319,12 +319,12 @@ Each creature damaged by this attack is \\dazzled as a \\glossterm{condition}.
 
         assert_eq!(
             "
-\\begin<durationability>*<Super Eye Poke>[Duration]
+\\begin<ability>*<Super Eye Poke>
 \\rankline
 The $name makes a +2 \\glossterm{strike} vs. Armor.
 \\hit The target takes 1d10 bludgeoning damage.
 Each creature damaged by this attack is \\dazzled as a \\glossterm{condition}.
-\\end<durationability>",
+\\end<ability>",
             get_standard_ability_block(eye_poke)
         );
     }

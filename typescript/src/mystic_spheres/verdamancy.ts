@@ -19,7 +19,6 @@ export const verdamancy: MysticSphere = {
         4: `The area increases to a 5-ft.\\ square.`,
         6: `The area increases to a 10-ft.\\ square.`,
       },
-      type: "Instant",
     },
 
     {
@@ -54,7 +53,6 @@ export const verdamancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Greater Ensnaring Grasp",
@@ -73,7 +71,6 @@ export const verdamancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Supreme Ensnaring Grasp",
@@ -84,7 +81,6 @@ export const verdamancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
     {
       name: "Entangle",
@@ -103,7 +99,6 @@ export const verdamancy: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Duration",
     },
 
     {
@@ -119,7 +114,6 @@ export const verdamancy: MysticSphere = {
       rank: 5,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Duration",
     },
 
     {
@@ -135,7 +129,6 @@ export const verdamancy: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -151,7 +144,6 @@ export const verdamancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -167,7 +159,6 @@ export const verdamancy: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -183,7 +174,6 @@ export const verdamancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -226,7 +216,6 @@ export const verdamancy: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -249,7 +238,6 @@ export const verdamancy: MysticSphere = {
         special: "The hit point loss from the poison increases by +1d for each rank beyond 1.",
       },
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -271,7 +259,6 @@ export const verdamancy: MysticSphere = {
         special: "The hit point loss from the poison increases by +1d for each rank beyond 3.",
       },
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -293,7 +280,6 @@ export const verdamancy: MysticSphere = {
         special: "The hit point loss from the poison increases by +1d for each rank beyond 5.",
       },
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -310,7 +296,6 @@ export const verdamancy: MysticSphere = {
         5: `The number of additional successes increases to three.`,
         7: `The number of additional successes increases to four.`,
       },
-      type: "Instant",
     },
 
     {
@@ -363,7 +348,6 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -470,7 +454,6 @@ export const verdamancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -485,7 +468,6 @@ export const verdamancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -630,7 +612,6 @@ export const verdamancy: MysticSphere = {
         `,
 
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -644,7 +625,6 @@ export const verdamancy: MysticSphere = {
         If the \\ritual{fertility} ritual is also applied to the same area, the most recently performed ritual takes precedence.
       `,
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -666,7 +646,6 @@ export const verdamancy: MysticSphere = {
         % TODO: does this need more clarity about what teleportation works?
       `,
       rank: 5,
-      type: "Instant",
     },
   ],
 };

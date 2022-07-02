@@ -25,7 +25,6 @@ export const channelDivinity: MysticSphere = {
         `,
         6: "The range increases to \\rnglong.",
       },
-      type: "Duration",
     },
     {
       effect: `
@@ -61,7 +60,6 @@ export const channelDivinity: MysticSphere = {
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },
       tags: [],
-      type: "Duration",
     },
 
     {
@@ -115,7 +113,6 @@ export const channelDivinity: MysticSphere = {
         7: `The bonuses increase to +5.`,
       },
       tags: ["Swift"],
-      type: "Instant",
     },
 
     {
@@ -134,7 +131,6 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -153,7 +149,6 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -171,7 +166,6 @@ export const channelDivinity: MysticSphere = {
       rank: 2,
       scaling: "accuracy",
       tags: ['Visual'],
-      type: "Duration",
     },
 
     {
@@ -184,7 +178,6 @@ export const channelDivinity: MysticSphere = {
       rank: 6,
       scaling: "accuracy",
       tags: ['Visual'],
-      type: "Duration",
     },
 
     {
@@ -202,7 +195,6 @@ export const channelDivinity: MysticSphere = {
       rank: 5,
       tags: ['Emotion'],
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -219,7 +211,6 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -235,7 +226,6 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -251,7 +241,6 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -266,7 +255,6 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -409,7 +397,6 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -421,7 +408,6 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
 
   ],
@@ -446,7 +432,6 @@ export const channelDivinity: MysticSphere = {
         The area within an \\medarea radius \\glossterm{zone} from your location becomes permanently sacred to your deity.
       `,
       rank: 5,
-      type: "Duration",
     },
 
     {
@@ -465,7 +450,6 @@ export const channelDivinity: MysticSphere = {
         % TODO: does this need more clarity about what teleportation works?
         `,
       rank: 5,
-      type: "Instant",
     },
 
     {
@@ -483,7 +467,6 @@ export const channelDivinity: MysticSphere = {
         For example, if you are presented with seven doorways, with one doorway leading to a magnificent treasure and all other doorways leading to certain death, you cannot simply perform this ritual six times to determine the correct doorway.
       `,
       rank: 5,
-      type: "Instant",
     },
   ],
 };

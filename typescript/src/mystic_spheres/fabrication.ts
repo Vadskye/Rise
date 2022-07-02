@@ -23,7 +23,6 @@ export const fabrication: MysticSphere = {
         6: `The maximum size of the object increases to Large.`,
       },
       tags: ["Manifestation"],
-      type: "Duration",
     },
   ],
   spells: [
@@ -39,7 +38,6 @@ export const fabrication: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -53,7 +51,6 @@ export const fabrication: MysticSphere = {
       },
       rank: 6,
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -71,7 +68,6 @@ export const fabrication: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -86,7 +82,6 @@ export const fabrication: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -99,7 +94,6 @@ export const fabrication: MysticSphere = {
       rank: 7,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -114,7 +108,6 @@ export const fabrication: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -129,7 +122,6 @@ export const fabrication: MysticSphere = {
       rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -144,7 +136,6 @@ export const fabrication: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -157,7 +148,6 @@ export const fabrication: MysticSphere = {
       rank: 7,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -259,7 +249,6 @@ export const fabrication: MysticSphere = {
         7: `The power bonus increases to +8.`,
       },
       tags: ["Manifestation"],
-      type: "Duration",
     },
 
     {
@@ -306,7 +295,6 @@ export const fabrication: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -384,7 +372,6 @@ export const fabrication: MysticSphere = {
         7: `The power bonus increases to +8.`,
       },
       tags: ["Manifestation", "Swift"],
-      type: "Duration",
     },
 
     {
@@ -451,7 +438,6 @@ export const fabrication: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Duration",
     },
 
     {
@@ -472,7 +458,6 @@ export const fabrication: MysticSphere = {
       rank: 4,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Duration",
     },
 
     {
@@ -517,7 +502,6 @@ export const fabrication: MysticSphere = {
         7: `The accuracy bonus increases to +3.`,
       },
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -535,7 +519,6 @@ export const fabrication: MysticSphere = {
         7: `You gain a +1 bonus to \\glossterm{accuracy} with the strike.`,
       },
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -781,7 +764,6 @@ export const fabrication: MysticSphere = {
       `,
       rank: 1,
       tags: ["Creation"],
-      type: "Instant",
     },
 
     {
@@ -795,7 +777,6 @@ export const fabrication: MysticSphere = {
       `,
       rank: 2,
       tags: ["Creation"],
-      type: "Instant",
     },
 
     {
@@ -809,7 +790,6 @@ export const fabrication: MysticSphere = {
       `,
       rank: 3,
       tags: ["Creation"],
-      type: "Instant",
     },
 
     {
@@ -823,7 +803,6 @@ export const fabrication: MysticSphere = {
         It requires one \\glossterm{fatigue level} from its participants.
       `,
       rank: 1,
-      type: "Instant",
     },
 
     {
@@ -839,7 +818,6 @@ export const fabrication: MysticSphere = {
         name: "copy writing",
       },
       rank: 4,
-      type: "Instant",
     },
 
     {

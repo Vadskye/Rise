@@ -21,7 +21,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     // roll three times is about 4.5 accuracy
@@ -37,7 +36,6 @@ export const flurryOfBlows: CombatStyle = {
       scaling: {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -54,7 +52,6 @@ export const flurryOfBlows: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -72,7 +69,6 @@ export const flurryOfBlows: CombatStyle = {
       scaling: {
         6: "You gain a +4 damage bonus with both strikes.",
       },
-      type: "Instant",
     },
 
     {
@@ -86,7 +82,6 @@ export const flurryOfBlows: CombatStyle = {
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -103,7 +98,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "You gain a +1 accuracy bonus with both strikes.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     // TODO: unclear rank
@@ -115,7 +109,6 @@ export const flurryOfBlows: CombatStyle = {
         You do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -130,7 +123,6 @@ export const flurryOfBlows: CombatStyle = {
         4: "You gain a +2 damage bonus with both strikes.",
         6: "The damage bonus increases to +4.",
       },
-      type: "Instant",
     },
 
     {
@@ -147,7 +139,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -163,7 +154,6 @@ export const flurryOfBlows: CombatStyle = {
       scaling: {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -174,7 +164,6 @@ export const flurryOfBlows: CombatStyle = {
         You take a -2 accuracy penalty with both strikes, and you do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -189,7 +178,6 @@ export const flurryOfBlows: CombatStyle = {
       scaling: {
         6: "You gain a +4 damage bonus with both strikes.",
       },
-      type: "Instant",
     },
 
     {
@@ -204,7 +192,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -215,7 +202,6 @@ export const flurryOfBlows: CombatStyle = {
         name: "shrapnel strike",
       },
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -229,7 +215,6 @@ export const flurryOfBlows: CombatStyle = {
       scaling: {
         7: "The area increases to a \\medarea radius.",
       },
-      type: "Instant",
     },
 
     {
@@ -245,7 +230,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -260,7 +244,6 @@ export const flurryOfBlows: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -278,7 +261,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -293,7 +275,6 @@ export const flurryOfBlows: CombatStyle = {
         6: 'The damage bonus per round increases to +6, and the maximum damage bonus increases to +16.',
       },
       rank: 2,
-      type: "Instant",
     },
 
     {
@@ -310,7 +291,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "The damage bonus increases to +4.",
         7: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -325,7 +305,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -343,7 +322,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "The accuracy bonus increases to +4.",
         7: "The accuracy bonus increases to +5.",
       },
-      type: "Duration",
     },
 
     {
@@ -359,7 +337,6 @@ export const flurryOfBlows: CombatStyle = {
       scaling: {
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -376,7 +353,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -389,7 +365,6 @@ export const flurryOfBlows: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -406,7 +381,6 @@ export const flurryOfBlows: CombatStyle = {
         5: "The accuracy bonus increases to +4.",
         7: "The accuracy bonus increases to +5.",
       },
-      type: "Duration",
     },
 
     {
@@ -418,7 +392,6 @@ export const flurryOfBlows: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\blinded.
       `,
       rank: 7,
-      type: "Duration",
     },
   ],
 };

@@ -19,7 +19,6 @@ export const mobileAssault: CombatStyle = {
         4: "You gain a +2 damage bonus with the strike.",
         6: "The damage bonus increases to +4.",
       },
-      type: "Instant",
     },
 
     {
@@ -31,7 +30,6 @@ export const mobileAssault: CombatStyle = {
         name: "reaping harvest",
       },
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -47,7 +45,6 @@ export const mobileAssault: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -64,7 +61,6 @@ export const mobileAssault: CombatStyle = {
         7: "The accuracy bonus increases to +3.",
       },
       rank: 1,
-      type: "Instant",
     },
 
     {
@@ -78,7 +74,6 @@ export const mobileAssault: CombatStyle = {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
       rank: 5,
-      type: "Instant",
     },
 
     {
@@ -95,7 +90,6 @@ export const mobileAssault: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -115,7 +109,6 @@ export const mobileAssault: CombatStyle = {
         5: "The damage bonus increases to +4.",
         7: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -131,7 +124,6 @@ export const mobileAssault: CombatStyle = {
         5: "The defense bonus increases to +3.",
         7: "The defense bonus increases to +4.",
       },
-      type: "Duration",
     },
 
     {
@@ -148,7 +140,6 @@ export const mobileAssault: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -162,7 +153,6 @@ export const mobileAssault: CombatStyle = {
       scaling: {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -177,7 +167,6 @@ export const mobileAssault: CombatStyle = {
       scaling: {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -189,7 +178,6 @@ export const mobileAssault: CombatStyle = {
         If you have any \\glossterm{encumbrance}, you take a -2 \\glossterm{accuracy} penalty with the strike.
       `,
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -204,7 +192,6 @@ export const mobileAssault: CombatStyle = {
       scaling: {
         6: "You gain a +4 damage bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -219,7 +206,6 @@ export const mobileAssault: CombatStyle = {
         5: "You gain a +2 damage bonus with the strike.",
         7: "The damage bonus increases to +4.",
       },
-      type: "Instant",
     },
 
     {
@@ -231,7 +217,6 @@ export const mobileAssault: CombatStyle = {
         If you hit with the strike, the target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
       `,
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -251,7 +236,6 @@ export const mobileAssault: CombatStyle = {
         4: "You gain a +2 damage bonus with the strike.",
         6: "The damage bonus increases to +4.",
       },
-      type: "Instant",
     },
 
     {
@@ -268,7 +252,6 @@ export const mobileAssault: CombatStyle = {
         5: "You gain a +1 accuracy bonus with both strikes.",
         7: "The accuracy bonus increases to +2."
       },
-      type: "Instant",
     },
 
     {
@@ -289,7 +272,6 @@ export const mobileAssault: CombatStyle = {
         4: "The penalty increases to -3.",
         6: "The penalty increases to -4."
       },
-      type: "Duration",
     },
 
     {
@@ -307,7 +289,6 @@ export const mobileAssault: CombatStyle = {
         7: "The accuracy bonus increases to +3.",
       },
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -323,7 +304,6 @@ export const mobileAssault: CombatStyle = {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
       tags: ["Emotion"],
-      type: "Duration",
     },
 
     {
@@ -341,7 +321,6 @@ export const mobileAssault: CombatStyle = {
         4: "The damage bonus increases to +4.",
         6: "The damage bonus increases to +8.",
       },
-      type: "Duration",
     },
 
     {
@@ -360,7 +339,6 @@ export const mobileAssault: CombatStyle = {
         5: "The damage bonus increases to +8.",
         7: "The damage bonus increases to +16.",
       },
-      type: "Duration",
     },
   ],
 };

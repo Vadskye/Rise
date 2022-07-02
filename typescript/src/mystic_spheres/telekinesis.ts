@@ -58,7 +58,6 @@ export const telekinesis: MysticSphere = {
         6: "The defense bonuses increase to +3.",
       },
       tags: ["Swift"],
-      type: "Duration",
     },
   ],
   spells: [
@@ -78,7 +77,6 @@ export const telekinesis: MysticSphere = {
 
       rank: 2,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -90,7 +88,6 @@ export const telekinesis: MysticSphere = {
       },
       rank: 7,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -105,7 +102,6 @@ export const telekinesis: MysticSphere = {
 
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -120,7 +116,6 @@ export const telekinesis: MysticSphere = {
 
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -133,7 +128,6 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -180,7 +174,6 @@ export const telekinesis: MysticSphere = {
 
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -212,7 +205,6 @@ export const telekinesis: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Compulsion"],
-      type: "Duration",
     },
 
     {
@@ -229,7 +221,6 @@ export const telekinesis: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -244,7 +235,6 @@ export const telekinesis: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -259,7 +249,6 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -269,7 +258,6 @@ export const telekinesis: MysticSphere = {
         exceptThat: "the damage increases to 4d8 + \\glossterm{power}, and the maximum size increases to Huge.",
       },
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -286,7 +274,6 @@ export const telekinesis: MysticSphere = {
 
       rank: 1,
       scaling: "accuracy",
-      type: "Instant",
     },
     {
       name: "Greater Toss Foe",
@@ -299,7 +286,6 @@ export const telekinesis: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: "accuracy",
-      type: "Instant",
     },
     {
       name: "Supreme Toss Foe",
@@ -312,7 +298,6 @@ export const telekinesis: MysticSphere = {
       // narrative: '',
       rank: 7,
       // scaling: "accuracy",
-      type: "Instant",
     },
 
     {
@@ -346,7 +331,6 @@ export const telekinesis: MysticSphere = {
         7: `The defense bonus increases to +2.`,
       },
       tags: ['Swift'],
-      type: "Duration",
     },
 
     {
@@ -421,7 +405,6 @@ export const telekinesis: MysticSphere = {
       },
       rank: 2,
       scaling: "accuracy",
-      type: "Instant",
     },
 
     {
@@ -435,7 +418,6 @@ export const telekinesis: MysticSphere = {
       },
       rank: 5,
       scaling: "accuracy",
-      type: "Instant",
     },
 
     {
@@ -465,7 +447,6 @@ export const telekinesis: MysticSphere = {
         4: `The range increases to \\distrange.`,
         6: `The range increases to \\extrange.`,
       },
-      type: "Instant",
     },
 
     {
@@ -479,7 +460,6 @@ export const telekinesis: MysticSphere = {
       scaling: {
         6: `The damage bonus increases to +2d.`,
       },
-      type: "Instant",
     },
 
     {

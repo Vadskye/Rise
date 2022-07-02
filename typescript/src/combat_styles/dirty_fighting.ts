@@ -18,7 +18,6 @@ export const dirtyFighting: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -30,7 +29,6 @@ export const dirtyFighting: CombatStyle = {
         Each creature damaged by the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 6,
-      type: "Duration",
     },
 
     {
@@ -48,7 +46,6 @@ export const dirtyFighting: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -60,7 +57,6 @@ export const dirtyFighting: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike takes additional bludgeoning damage equal to four times your \\glossterm{power}.
       `,
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -76,7 +72,6 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -95,7 +90,6 @@ export const dirtyFighting: CombatStyle = {
       scaling: {
         6: "You gain a +1 \\glossterm{accuracy} bonus with the attack.",
       },
-      type: "Instant",
     },
 
     {
@@ -111,7 +105,6 @@ export const dirtyFighting: CombatStyle = {
         name: "grapple",
       },
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -131,7 +124,6 @@ export const dirtyFighting: CombatStyle = {
         4: "The distance you knockback the target increases to 30 feet, or 60 feet on a critical hit.",
         6: "The distance you knockback the target increases to 60 feet, or 120 feet on a critical hit.",
       },
-      type: "Instant",
     },
 
     {
@@ -151,7 +143,6 @@ export const dirtyFighting: CombatStyle = {
       scaling: {
         6: "The distance you knockback each target increases to 30 feet, or 60 feet on a critical hit.",
       },
-      type: "Instant",
     },
 
     {
@@ -173,7 +164,6 @@ export const dirtyFighting: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the attack.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -191,7 +181,6 @@ export const dirtyFighting: CombatStyle = {
       scaling: {
         6: "You gain a +1 accuracy bonus with the attack.",
       },
-      type: "Instant",
     },
 
     {
@@ -208,7 +197,6 @@ export const dirtyFighting: CombatStyle = {
         name: "disarm weapon",
       },
       rank: 7,
-      type: "Instant",
     },
 
     {
@@ -227,7 +215,6 @@ export const dirtyFighting: CombatStyle = {
         4: "You gain a +2 damage bonus with the strike.",
         6: "The damage bonus increases to +4.",
       },
-      type: "Instant",
     },
 
     {
@@ -245,7 +232,6 @@ export const dirtyFighting: CombatStyle = {
       },
       scaling: "damage",
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -262,7 +248,6 @@ export const dirtyFighting: CombatStyle = {
       },
       scaling: "damage",
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -278,7 +263,6 @@ export const dirtyFighting: CombatStyle = {
       scaling: {
         6: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -295,7 +279,6 @@ export const dirtyFighting: CombatStyle = {
         5: "The damage bonus increases to +8.",
         7: "The damage bonus increases to +16.",
       },
-      type: "Instant",
     },
 
     {
@@ -312,7 +295,6 @@ export const dirtyFighting: CombatStyle = {
         5: "The penalty increases to -4.",
         7: "The penalty increases to -5.",
       },
-      type: "Instant",
     },
 
     {
@@ -330,7 +312,6 @@ export const dirtyFighting: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -346,7 +327,6 @@ export const dirtyFighting: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -361,7 +341,6 @@ export const dirtyFighting: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -375,7 +354,6 @@ export const dirtyFighting: CombatStyle = {
       scaling: {
         7: "The accuracy penalty is reduced to -1.",
       },
-      type: "Duration",
     },
   ],
 };

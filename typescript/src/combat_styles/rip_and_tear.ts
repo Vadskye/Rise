@@ -19,7 +19,6 @@ export const ripAndTear: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -34,7 +33,6 @@ export const ripAndTear: CombatStyle = {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Instant",
     },
 
     {
@@ -50,7 +48,6 @@ export const ripAndTear: CombatStyle = {
         4: "You gain a +1 accuracy bonus with the strike.",
         6: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -61,7 +58,6 @@ export const ripAndTear: CombatStyle = {
         exceptThat: "each target is \\stunned instead of dazed.",
       },
       rank: 6,
-      type: "Duration",
     },
 
     {
@@ -78,7 +74,6 @@ export const ripAndTear: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -94,7 +89,6 @@ export const ripAndTear: CombatStyle = {
       scaling: {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Duration",
     },
 
     {
@@ -106,7 +100,6 @@ export const ripAndTear: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -123,7 +116,6 @@ export const ripAndTear: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Duration",
     },
 
     {
@@ -135,7 +127,6 @@ export const ripAndTear: CombatStyle = {
         Each creature damaged by the strike is \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
-      type: "Duration",
     },
 
     {
@@ -151,7 +142,6 @@ export const ripAndTear: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -165,7 +155,6 @@ export const ripAndTear: CombatStyle = {
       scaling: {
         6: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -180,7 +169,6 @@ export const ripAndTear: CombatStyle = {
         5: "The damage bonus increases to +4.",
         7: "The damage bonus increases to +8.",
       },
-      type: "Instant",
     },
 
     {
@@ -195,7 +183,6 @@ export const ripAndTear: CombatStyle = {
         4: "You gain a +2 damage bonus with the strike.",
         6: "The damage bonus increases to +4.",
       },
-      type: "Instant",
     },
 
     {
@@ -210,7 +197,6 @@ export const ripAndTear: CombatStyle = {
         4: "You gain a +2 damage bonus with the strike.",
         6: "The damage bonus increases to +4.",
       },
-      type: "Instant",
     },
 
     {
@@ -224,7 +210,6 @@ export const ripAndTear: CombatStyle = {
       scaling: {
         7: "You gain a +4 damage bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -239,7 +224,6 @@ export const ripAndTear: CombatStyle = {
       scaling: {
         6: "The maximum range increases to \\medrange.",
       },
-      type: "Instant",
     },
 
     // is 2x power equal to +5-10 damage? sometimes better, sometimes worse, especially with the
@@ -257,7 +241,6 @@ export const ripAndTear: CombatStyle = {
       scaling: {
         7: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Duration",
     },
 
     {
@@ -268,7 +251,6 @@ export const ripAndTear: CombatStyle = {
         exceptThat: 'the strike gains the \\glossterm{Sweeping} (1) tag, or you gain a +1 bonus to the Sweeping value if it already had that tag (see \\pcref{Weapon Tags}).',
       },
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -285,7 +267,6 @@ export const ripAndTear: CombatStyle = {
         5: "The accuracy bonus increases to +2.",
         7: "The accuracy bonus increases to +3.",
       },
-      type: "Instant",
     },
 
     {
@@ -299,7 +280,6 @@ export const ripAndTear: CombatStyle = {
       scaling: {
         6: "You gain a +1 accuracy bonus with the strike.",
       },
-      type: "Instant",
     },
 
     {
@@ -310,7 +290,6 @@ export const ripAndTear: CombatStyle = {
         You do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -326,7 +305,6 @@ export const ripAndTear: CombatStyle = {
         5: "The damage bonus increases to +8.",
         7: "The damage bonus increases to +16.",
       },
-      type: "Instant",
     },
 
     {
@@ -342,7 +320,6 @@ export const ripAndTear: CombatStyle = {
         5: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
-      type: "Duration",
     },
 
     {
@@ -354,7 +331,6 @@ export const ripAndTear: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
       `,
       rank: 7,
-      type: "Duration",
     },
   ],
 };

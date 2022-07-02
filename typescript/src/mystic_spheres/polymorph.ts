@@ -22,7 +22,6 @@ export const polymorph: MysticSphere = {
         4: `The amount of work you accomplish with the spell increases to one minute.`,
         6: `The amount of work you accomplish with the spell increases to two minutes.`,
       },
-      type: 'Instant',
     },
 
     {
@@ -43,7 +42,6 @@ export const polymorph: MysticSphere = {
         4: `The bonus increases to +8.`,
         6: `The bonus increases to +10.`,
       },
-      type: 'Duration',
     },
 
     {
@@ -97,7 +95,6 @@ export const polymorph: MysticSphere = {
         5: 'The accuracy bonus increases to +2.',
         7: 'The accuracy bonus increases to +3.',
       },
-      type: 'Instant',
     },
 
     {
@@ -112,7 +109,6 @@ export const polymorph: MysticSphere = {
         5: 'The damage bonus increases to +8.',
         7: 'The damage bonus increases to +16.',
       },
-      type: 'Instant',
     },
 
     {
@@ -127,7 +123,6 @@ export const polymorph: MysticSphere = {
         4: 'The reach bonus increases to +10 feet.',
         6: 'The reach bonus increases to +15 feet.',
       },
-      type: 'Instant',
     },
 
     {
@@ -146,7 +141,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       scaling: 'damage',
-      type: 'Instant',
     },
 
     {
@@ -168,7 +162,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       scaling: 'damage',
-      type: 'Duration',
     },
 
     {
@@ -181,7 +174,6 @@ export const polymorph: MysticSphere = {
       },
       rank: 6,
       scaling: 'damage',
-      type: 'Duration',
     },
 
     {
@@ -197,7 +189,6 @@ export const polymorph: MysticSphere = {
       },
       rank: 5,
       scaling: 'accuracy',
-      type: 'Duration',
     },
 
     {
@@ -353,7 +344,6 @@ export const polymorph: MysticSphere = {
 
       rank: 5,
       scaling: 'damage',
-      type: 'Instant',
     },
 
     {
@@ -453,7 +443,6 @@ export const polymorph: MysticSphere = {
         5: `The maximum size of the object increases to Large.`,
         7: `The maximum size of the object increases to Huge.`,
       },
-      type: 'Duration',
     },
 
     {
@@ -486,7 +475,6 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 7,
-      type: 'Duration',
     },
 
     {
@@ -499,7 +487,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
-      type: 'Instant',
     },
 
     {
@@ -511,7 +498,6 @@ export const polymorph: MysticSphere = {
       },
       rank: 5,
       scaling: { special: "The recovery increases by +1d for each rank beyond 5." },
-      type: 'Instant',
     },
 
     {
@@ -524,7 +510,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       scaling: { special: 'The healing increases by +1d for each rank beyond 2.' },
-      type: 'Instant',
     },
 
     {
@@ -537,7 +522,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 6,
       scaling: { special: 'The healing increases by +1d for each rank beyond 6.' },
-      type: 'Instant',
     },
 
     {
@@ -648,7 +632,6 @@ export const polymorph: MysticSphere = {
       },
       rank: 5,
       scaling: 'accuracy',
-      type: 'Duration',
     },
 
     {
@@ -663,7 +646,6 @@ export const polymorph: MysticSphere = {
       },
       rank: 1,
       scaling: 'accuracy',
-      type: 'Duration',
     },
 
     {
@@ -681,7 +663,6 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 7,
-      type: 'Duration',
     },
 
     {
@@ -702,7 +683,6 @@ export const polymorph: MysticSphere = {
       },
       rank: 2,
       scaling: 'damage',
-      type: 'Duration',
     },
 
     {
@@ -722,7 +702,6 @@ export const polymorph: MysticSphere = {
       },
       rank: 5,
       scaling: 'damage',
-      type: 'Duration',
     },
 
     {
@@ -862,7 +841,6 @@ export const polymorph: MysticSphere = {
       scaling: {
         6: `The target can remove two effects.`,
       },
-      type: 'Instant',
     },
     {
       name: 'Natural Might',
@@ -907,7 +885,6 @@ export const polymorph: MysticSphere = {
         This ritual takes time equal to one tenth of the time that would normally be required to craft the object, to a minimum of one hour.
       `,
       rank: 3,
-      type: 'Instant',
     },
 
     {
@@ -921,7 +898,6 @@ export const polymorph: MysticSphere = {
         name: 'Craft Object',
       },
       rank: 5,
-      type: 'Instant',
     },
 
     {
@@ -935,7 +911,6 @@ export const polymorph: MysticSphere = {
         name: 'craft object',
       },
       rank: 7,
-      type: 'Instant',
     },
 
     {
@@ -994,7 +969,6 @@ export const polymorph: MysticSphere = {
         name: 'fortify',
       },
       rank: 4,
-      type: 'Instant',
     },
 
     {
@@ -1009,7 +983,6 @@ export const polymorph: MysticSphere = {
         name: 'greater fortify',
       },
       rank: 5,
-      type: 'Instant',
     },
 
     {
@@ -1050,7 +1023,6 @@ export const polymorph: MysticSphere = {
         Metallic armor and weapons, such as full plate, can be crafted from ironwood.
       `,
       rank: 4,
-      type: 'Instant',
     },
 
     {
@@ -1063,7 +1035,6 @@ export const polymorph: MysticSphere = {
         This does not prevent subsequent natural decay or spoiling.
       `,
       rank: 1,
-      type: 'Instant',
     },
 
     {
@@ -1081,7 +1052,6 @@ export const polymorph: MysticSphere = {
         You can only learn this ritual if you have access to this mystic sphere through the nature \\glossterm{magic source}.
       `,
       rank: 6,
-      type: 'Instant',
     },
 
     {

@@ -17,7 +17,6 @@ export const revelation: MysticSphere = {
         4: `The bonus increases to +5.`,
         6: `The bonus increases to +6.`,
       },
-      type: "Duration",
     },
 
     {
@@ -32,7 +31,6 @@ export const revelation: MysticSphere = {
         4: `The bonus increases to +3.`,
         6: `The bonus increases to +4.`,
       },
-      type: "Instant",
     },
   ],
   spells: [
@@ -97,7 +95,6 @@ export const revelation: MysticSphere = {
         7: `The bonus increases to +4.`,
       },
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -116,7 +113,6 @@ export const revelation: MysticSphere = {
         7: `The bonus increases to +3.`,
       },
       tags: ["Swift"],
-      type: "Duration",
     },
 
     {
@@ -315,7 +311,6 @@ export const revelation: MysticSphere = {
 
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -327,7 +322,6 @@ export const revelation: MysticSphere = {
       },
       rank: 5,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -338,7 +332,6 @@ export const revelation: MysticSphere = {
         name: "True Strike",
       },
       rank: 7,
-      type: "Duration",
     },
 
     // If the target has a vulnerability, this is like a r2 debuff. But that's pretty
@@ -359,7 +352,6 @@ export const revelation: MysticSphere = {
       },
       rank: 2,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -377,7 +369,6 @@ export const revelation: MysticSphere = {
       `,
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -398,7 +389,6 @@ export const revelation: MysticSphere = {
       `,
       rank: 7,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     // +1 level for +1 accuracy
@@ -420,7 +410,6 @@ export const revelation: MysticSphere = {
       },
       rank: 6,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -630,7 +619,6 @@ export const revelation: MysticSphere = {
         For example, if you are presented with seven doorways, with one doorway leading to a magnificent treasure and all other doorways leading to certain death, you cannot simply perform this ritual six times to determine the correct doorway.
       `,
       rank: 2,
-      type: "Instant",
     },
 
     {
@@ -645,7 +633,6 @@ export const revelation: MysticSphere = {
         name: "augury",
       },
       rank: 4,
-      type: "Instant",
     },
 
     {
@@ -660,7 +647,6 @@ export const revelation: MysticSphere = {
         name: "augury",
       },
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -698,7 +684,6 @@ export const revelation: MysticSphere = {
         `,
 
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -714,7 +699,6 @@ export const revelation: MysticSphere = {
         name: "locate creature",
       },
       rank: 3,
-      type: "Instant",
     },
 
     {
@@ -749,7 +733,6 @@ export const revelation: MysticSphere = {
       `,
 
       rank: 2,
-      type: "Instant",
     },
 
     {
@@ -765,7 +748,6 @@ export const revelation: MysticSphere = {
         name: "discern location",
       },
       rank: 4,
-      type: "Instant",
     },
 
     {
@@ -781,7 +763,6 @@ export const revelation: MysticSphere = {
         name: "discern location",
       },
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -899,7 +880,6 @@ export const revelation: MysticSphere = {
         One ritual participant learns the precise distance and direction to their \\glossterm{legacy item}, if it is on the same plane.
       `,
       rank: 2,
-      type: "Instant",
     },
 
     {
@@ -922,7 +902,6 @@ export const revelation: MysticSphere = {
       },
       rank: 4,
       tags: ["Scrying"],
-      type: "Instant",
     },
 
     {
@@ -937,7 +916,6 @@ export const revelation: MysticSphere = {
       },
       rank: 6,
       tags: ["Scrying"],
-      type: "Instant",
     },
     {
       name: "Prophetic Dream",
@@ -953,7 +931,6 @@ export const revelation: MysticSphere = {
       `,
       rank: 4,
       tags: ["Scrying"],
-      type: "Instant",
     },
     {
       name: "Private Sanctum",
@@ -968,7 +945,6 @@ export const revelation: MysticSphere = {
         Creatures inside the area can see within the area and outside of it without any difficulty.
       `,
       rank: 5,
-      type: "Instant",
     },
     {
       name: "Scryward",
@@ -980,7 +956,6 @@ export const revelation: MysticSphere = {
         This effect is permanent.
         `,
       rank: 3,
-      type: "Instant",
     },
   ],
 };

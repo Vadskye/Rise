@@ -70,9 +70,7 @@ interface BaseSpellLike {
   scaling?: "accuracy" | "damage" | Record<string, string>;
   tableText?: string;
   tags?: string[];
-  type:
-    | "Instant"
-    | "Duration"
+  type?:
     | "Attune"
     | "Attune (deep)"
     | "Attune (deep, target)"

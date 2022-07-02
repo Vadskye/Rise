@@ -22,7 +22,6 @@ export const cryomancy: MysticSphere = {
         4: "The damage increases to 10.",
         6: "The damage increases to 20.",
       },
-      type: "Instant",
     },
     {
       name: "Chill Air",
@@ -39,7 +38,6 @@ export const cryomancy: MysticSphere = {
         4: "The area increases to a \\hugearea radius \\glossterm{emanation}, and the maximum temperature reduction increases to 40 degrees.",
         6: "The area increases to a \\gargarea radius \\glossterm{emanation}, and the maximum temperature reduction increases to 50 degrees.",
       },
-      type: "Duration",
     },
   ],
   spells: [
@@ -56,7 +54,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -75,7 +72,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -87,7 +83,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -101,7 +96,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 1,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -115,7 +109,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -128,7 +121,6 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      type: "Instant",
     },
 
     {
@@ -143,7 +135,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 5,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -160,7 +151,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 4,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -175,7 +165,6 @@ export const cryomancy: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -190,7 +179,6 @@ export const cryomancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -205,7 +193,6 @@ export const cryomancy: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -220,7 +207,6 @@ export const cryomancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -238,7 +224,6 @@ export const cryomancy: MysticSphere = {
         5: `The number of additional successes increases to three.`,
         7: `The number of additional successes increases to four.`,
       },
-      type: "Instant",
     },
 
     {
@@ -256,7 +241,6 @@ export const cryomancy: MysticSphere = {
 
       rank: 2,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -274,7 +258,6 @@ export const cryomancy: MysticSphere = {
 
       rank: 6,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -368,7 +351,6 @@ export const cryomancy: MysticSphere = {
 
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -380,7 +362,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 4,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -395,7 +376,6 @@ export const cryomancy: MysticSphere = {
 
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -410,7 +390,6 @@ export const cryomancy: MysticSphere = {
 
       rank: 7,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -424,7 +403,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -438,7 +416,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -524,7 +501,6 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      type: "Duration",
     },
 
     {
@@ -570,7 +546,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -585,7 +560,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 6,
       scaling: "damage",
-      type: "Instant",
     },
     {
       name: "Bonechill",
@@ -601,7 +575,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 2,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -618,7 +591,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
-      type: "Duration",
     },
 
     {
@@ -635,7 +607,6 @@ export const cryomancy: MysticSphere = {
       },
       rank: 7,
       scaling: "damage",
-      type: "Duration",
     },
   ],
   rituals: [

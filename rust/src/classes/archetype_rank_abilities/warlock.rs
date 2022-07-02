@@ -12,7 +12,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{abyssal rebuke} ability as a standard action.
-                \begin{instantability}{Abyssal Rebuke}
+                \begin{activeability}{Abyssal Rebuke}
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
                     You gain a \plus2 accuracy bonus to this attack against any creature that damaged you during the previous round.
@@ -25,7 +25,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The damage increases to 4d8.
                     \rank{6} The damage increases to 4d10.
                     \rank{7} The damage increases to 6d10.
-                \end{instantability}
+                \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Attack(
                 StandardAttack::AbyssalRebuke(1).attack(),
@@ -111,7 +111,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{banish to the abyss} ability as a standard action.
-                \begin{durationability}{Banish to the Abyss}[Duration]
+                \begin{activeability}{Banish to the Abyss}
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
                     \hit The target takes 1d10 \add half \glossterm{power} fire damage.
@@ -123,7 +123,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     The damage increases by \plus1d for each rank beyond 3.
                     \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
                     \rank{7} The accuracy bonus increases to \plus2.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -163,7 +163,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can use the \textit{abyssal curse} ability as a standard action.
-                \begin{durationability}{Abyssal Curse}[Duration]
+                \begin{activeability}{Abyssal Curse}
                     \abilitytag{Curse}
                     \rankline
                     Make an attack vs. Fortitude against one creature or object within \rngmed range.
@@ -172,7 +172,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -651,7 +651,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
-                \begin{durationability}{Possession}[\abilitytag{Sustain} (free)]
+                \begin{sustainability}{Possession}[\abilitytag{Sustain} (free)]
                     \abilitytag{Swift}
                     \rankline
                     You gain the following benefits and drawbacks:
@@ -670,7 +670,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rank{3} The power bonus increases to \plus4.
                     \rank{5} The power bonus increases to \plus8.
                     \rank{7} The power bonus increases to \plus16.
-                \end{durationability}
+                \end{sustainability}
             ",
             modifiers: Some(vec![
                 Modifier::Power(2),
@@ -708,7 +708,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
                 You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
-                \begin{instantability}{Exchange Soul Fragment}
+                \begin{activeability}{Exchange Soul Fragment}
                     \abilitytag{Swift}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
@@ -716,7 +716,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     Remove a \glossterm{condition} affecting you.
                     This cannot remove an effect applied during the current round.
                     Because this ability has the \abilitytag{Swift} tag, the penalties from the removed effect do not affect you during the current phase.
-                \end{instantability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -736,7 +736,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
                 You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
-                \begin{instantability}{Exchange Vitality}
+                \begin{activeability}{Exchange Vitality}
                     \abilitytag{Swift}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three.
@@ -744,7 +744,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     Remove one of your \glossterm{vital wounds}.
                     This cannot remove a vital wound applied during the current round.
                     Because this ability has the \abilitytag{Swift} tag, the penalties from the removed vital wound do not affect you during the current phase.
-                \end{instantability}
+                \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },

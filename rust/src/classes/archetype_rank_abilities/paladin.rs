@@ -302,7 +302,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{lay on hands} ability as a standard action.
-                \begin{instantability}{Lay on Hands}
+                \begin{activeability}{Lay on Hands}
                     \abilitytag{Magical}, \abilitytag{Swift}
                     \rankline
                     Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
@@ -321,7 +321,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The healing increases to 4d8.
                     \rank{6} The healing increases to 4d10.
                     \rank{7} The healing increases to 6d10.
-                \end{instantability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -461,7 +461,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{smite} ability as a standard action.
-                \begin{instantability}{Smite}
+                \begin{activeability}{Smite}
                     \abilitytag{Magical}
                     \rankline
                     Make a \glossterm{strike} with a \plus2 damage bonus.
@@ -472,7 +472,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rank{3} The damage bonus increases to \plus4.
                     \rank{5} The damage bonus increases to \plus8.
                     \rank{7} The damage bonus increases to \plus16.
-                \end{instantability}
+                \end{activeability}
             ",
             // TODO: represent special attacks
             modifiers: None,
@@ -483,7 +483,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can use the \textit{detect anathema} ability as a standard action.
-                \begin{instantability}{Detect Anathema}
+                \begin{activeability}{Detect Anathema}
                     \abilitytag{Detection}, \abilitytag{Magical}
                     \rankline
                     You know the number of creatures within a \\largearea cone from you that have the alignment opposed to your devoted alignment.
@@ -494,7 +494,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} You also learn the location of all creatures with that alignment.
                     \rank{6} You can use this ability as a \glossterm{minor action}.
                     When you do, you \glossterm{briefly} cannot use this ability as a minor action again.
-                \end{instantability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -541,7 +541,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
-                \begin{durationability}{Pass Judgment}[Duration]
+                \begin{activeability}{Pass Judgment}
                     \abilitytag{Magical}
                     \par \noindent Usage time: One \glossterm{minor action}
                     \rankline
@@ -554,7 +554,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                     You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
                     Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -573,7 +573,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You can use the \textit{zealous pursuit} ability as a \glossterm{minor action}.
-                \begin{durationability}{Zealous Pursuit}[Instant]
+                \begin{activeability}{Zealous Pursuit}
                     \abilitytag{Magical}
                     \par \noindent Usage time: One \glossterm{minor action}
                     \rankline
@@ -583,7 +583,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     If no valid destination spaces exist, this ability fails with no effect.
 
                     After you use this ability, you \glossterm{briefly} cannot use it again.
-                \end{durationability}
+                \end{activeability}
             ",
             modifiers: None,
         },

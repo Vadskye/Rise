@@ -22,7 +22,6 @@ export const terramancy: MysticSphere = {
         4: `The amount of work you accomplish with the spell increases to two minutes.`,
         6: `The amount of work you accomplish with the spell increases to five minutes.`,
       },
-      type: "Instant",
     },
   ],
   spells: [
@@ -39,7 +38,6 @@ export const terramancy: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -55,7 +53,6 @@ export const terramancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -74,7 +71,6 @@ export const terramancy: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: [],
-      type: "Instant",
     },
 
     {
@@ -93,7 +89,6 @@ export const terramancy: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: [],
-      type: "Instant",
     },
 
     {
@@ -109,7 +104,6 @@ export const terramancy: MysticSphere = {
       rank: 3,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -125,7 +119,6 @@ export const terramancy: MysticSphere = {
       rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -172,7 +165,6 @@ export const terramancy: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Duration",
     },
 
     {
@@ -189,7 +181,6 @@ export const terramancy: MysticSphere = {
       rank: 5,
       scaling: "accuracy",
       tags: ["Manifestation"],
-      type: "Duration",
     },
 
     {
@@ -235,7 +226,6 @@ export const terramancy: MysticSphere = {
       `,
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -254,7 +244,6 @@ export const terramancy: MysticSphere = {
       `,
       rank: 4,
       scaling: "damage",
-      type: "Instant",
     },
 
     {
@@ -272,7 +261,6 @@ export const terramancy: MysticSphere = {
         You create an intense tremor that rips through the ground.
       `,
       rank: 6,
-      type: "Instant",
     },
 
     {
@@ -295,7 +283,6 @@ export const terramancy: MysticSphere = {
         You open up a rift in the ground that swallows and traps a foe.
       `,
       rank: 7,
-      type: "Duration",
     },
 
     {
@@ -314,7 +301,6 @@ export const terramancy: MysticSphere = {
       },
       rank: 1,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -326,7 +312,6 @@ export const terramancy: MysticSphere = {
       },
       rank: 3,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -346,7 +331,6 @@ export const terramancy: MysticSphere = {
       },
       rank: 6,
       scaling: "accuracy",
-      type: "Duration",
     },
 
     {
@@ -470,7 +454,6 @@ export const terramancy: MysticSphere = {
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -489,7 +472,6 @@ export const terramancy: MysticSphere = {
       rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
@@ -508,7 +490,6 @@ export const terramancy: MysticSphere = {
       rank: 7,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Instant",
     },
 
     {
