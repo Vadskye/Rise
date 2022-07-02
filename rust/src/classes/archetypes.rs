@@ -226,7 +226,7 @@ impl ClassArchetype {
         return self
             .abilities_at_rank(rank)
             .into_iter()
-            .filter(|a| a.description != "")
+            .filter(|a| a.description.trim() != "" || a.name.contains("+"))
             .collect();
     }
 
@@ -432,7 +432,7 @@ impl ClassArchetype {
         let all_magical = self.is_magical();
         let mut rank_ability_descriptions = archetype_rank_abilities(self)
             .iter()
-            .filter(|a| a.description != "")
+            .filter(|a| a.description.trim() != "")
             .map(|a| {
                 a.latex_class_feature(class_shorthand, !all_magical)
                     .trim()
