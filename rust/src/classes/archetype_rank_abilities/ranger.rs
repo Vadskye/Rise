@@ -1,4 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::attacks::Maneuver;
 use crate::core_mechanics::{Defense, Resource};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
@@ -40,8 +41,30 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     % Oddly placed? there must be text between an itemize block and the end of a mdframed env
                     Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
                 \end{attuneability}
+
+                \advancement At each level, the statistics of your animal companion improve as described above.
+                At rank 4, your animal companion gains an \glossterm{attunement point}.
+                In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{vital rolls}.
+                At rank 7, it gains an additional attunement point.
+                In addition, the bonuses from the rank 4 improvement increase to \plus2.
             ",
             // TODO: represent extra creature?
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Animal Companion+",
+            is_magical: true,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Animal Companion+",
+            is_magical: true,
+            rank: 7,
+            description: r"
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -50,44 +73,16 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 Any \glossterm{enemy} that is adjacent to both you and your animal companion takes a \minus1 penalty to \glossterm{accuracy} against creatures other than you.
+
+                \advancement At rank 5, this penalty also applies to all defenses.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Beast Affinity",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                The bonus to the Creature Handling skill from your \textit{beast affinity} ability increases to \plus3.
-                In addition, the bonus to accuracy from that ability increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 1)]),
-        },
-        RankAbility {
-            name: "Power of Beasts",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You and your \textit{animal companion} gain a \plus1d damage bonus with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Greater Animal Companion",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                Your \textit{animal companion} gains an \glossterm{attunement point}.
-                In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{vital rolls}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Pack Tactics",
+            name: "Pack Tactics+",
             is_magical: false,
             rank: 5,
             description: r"
-                The penalty from your \textit{pack tactics} ability increases to \plus2.
             ",
             // It's actually better than this, since it applies to all allies
             modifiers: Some(vec![
@@ -98,33 +93,42 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Greater Power of Beasts",
+            name: "Beast Affinity",
             is_magical: false,
-            rank: 6,
+            rank: 3,
             description: r"
-                The bonus from your \textit{power of beasts} ability increases to \plus2d.
+                You gain a \plus3 bonus to the Creature Handling skill.
+
+                \advancement At rank 6, this bonus increases to \plus5.
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },
         RankAbility {
-            name: "Supreme Beast Affinity",
+            name: "Beast Affinity+",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus to the Creature Handling skill from your \textit{beast affinity} ability increases to \plus4.
-                In addition, the bonus to defenses from that ability increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 1)]),
         },
         RankAbility {
-            name: "Supreme Animal Companion",
-            is_magical: true,
-            rank: 7,
+            name: "Power of Beasts",
+            is_magical: false,
+            rank: 3,
             description: r"
-                Your \textit{animal companion} gains an additional \glossterm{attunement point}.
-                In addition, the bonuses from your \textit{greater animal companion} ability increase to \plus2.
+                You and your \textit{animal companion} gain a \plus1d damage bonus with all weapons.
+
+                \advancement At rank 6, this bonus increases to \plus2d.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
+            name: "Power of Beasts+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
     ];
 }
@@ -139,6 +143,27 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you take a \glossterm{short rest}, you can choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
                 You gain a \plus1 bonus to \glossterm{accuracy} against creatures of that type.
                 This benefit lasts until you choose a different creature type with this ability.
+
+                \advancement At rank 4, this bonus increases to \plus2.
+                In addition, you can choose two creature types instead of one.
+                At rank 7, this bonus increases to \plus3.
+                In addition, you can choose three creature types instead of two.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Know Your Enemy+",
+            is_magical: false,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Know Your Enemy+",
+            is_magical: false,
+            rank: 7,
+            description: r"
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -149,6 +174,17 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from all sources except for creature abilities.
                 In addition, any group you are part of can travel at full speed through difficult terrain during overland travel (see \pcref{Overland Movement}).
+
+                \advancement At rank 5, you and your \glossterm{allies} who can see or hear you gain a \plus5 foot bonus to land speed.
+                This does not affect any other movement modes.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Experienced Guide+",
+            is_magical: false,
+            rank: 5,
+            description: r"
             ",
             modifiers: None,
         },
@@ -157,7 +193,18 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus1d bonus to damage with projectile weapons and light weapons.
+                You gain a \plus1d bonus to damage with all weapons.
+
+                \advancement At rank 6, this bonus increases to \plus2d.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
+            name: "Warden's Force+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus from your \textit{warden's force} ability increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -167,57 +214,19 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You and your \glossterm{allies} who can see or hear you gain a \plus1 bonus to \glossterm{initiative} checks.
+
+                \advancement At rank 6, this bonus increases to \plus2.
             ",
             // TODO: affect allies?
             modifiers: Some(vec![Modifier::Initiative(1)]),
         },
         RankAbility {
-            name: "Greater Know Your Enemy",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                The bonus from your \textit{know your enemy} ability increases to \plus2.
-                In addition, you can choose two creature types with that ability instead of one.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Greater Experienced Guide",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                You and your \glossterm{allies} who can see or hear you gain a \plus5 foot bonus to land speed.
-                This does not affect any other movement modes.
-            ",
-            modifiers: Some(vec![Modifier::Initiative(1)]),
-        },
-        RankAbility {
-            name: "Greater Warden's Force",
+            name: "Warden's Instincts+",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{warden's force} ability increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Greater Warden's Instincts",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{warden's instincts} ability increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Initiative(1)]),
-        },
-        RankAbility {
-            name: "Supreme Know Your Enemy",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The bonus from your \textit{know your enemy} ability increases to \plus3.
-                In addition, you can choose three creature types with that ability instead of two.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ];
 }
@@ -239,12 +248,32 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     Your hunting party gains a \plus1 bonus to \glossterm{accuracy} against your quarry.
                     Because this ability has the \abilitytag{Swift} tag, this affects attacks against the target during the current phase.
                 \end{attuneability}
+
+                \advancement At rank 4, you can use this ability with the \abilitytag{Sustain} (free) tag instead of the \abilitytag{Attune} tag.
+                If you originally use your \textit{quarry} ability as a sustained ability, you can attune to the same quarry as a free action, even if your quarry is no longer in sight.
+                At rank 7, the accuracy bonus increases to \plus2.
             ",
             // TODO: this also affects allies
             modifiers: Some(vec![
                 Modifier::Accuracy(1),
                 Modifier::Resource(Resource::AttunementPoint, -1),
             ]),
+        },
+        RankAbility {
+            name: "Quarry+",
+            is_magical: false,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            name: "Quarry+",
+            is_magical: false,
+            rank: 7,
+            description: r"
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Hunting Styles",
@@ -351,6 +380,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{6} Your quarry is \slowed instead of moving at half speed.
                     \end{activeability}
                 }
+
+                \advancement At ranks 4 and 6, each hunting style improves as described above.
             ",
             modifiers: None,
         },
@@ -361,8 +392,19 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus3 bonus to the Survival skill.
                 In addition, you gain a \plus10 bonus to follow tracks left by your quarry.
+
+                \advancement At rank 6, the Survival bonus increases to \plus5.
+                In addition, the bonus to follow tracks from your quarry increases to \plus20.
             ",
             modifiers: Some(vec![Modifier::Skill(Skill::Survival, 3)]),
+        },
+        RankAbility {
+            name: "Tracker+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Hunter's Prowess",
@@ -370,18 +412,18 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
+
+                \advancement At rank 6, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Greater Quarry",
+            name: "Hunter's Prowess+",
             is_magical: false,
-            rank: 4,
+            rank: 6,
             description: r"
-                You can use your \textit{quarry} ability with the \abilitytag{Sustain} (free) tag instead of the \abilitytag{Attune} tag.
-                If you originally use your \textit{quarry} ability as a sustained ability, you can attune to the same quarry as a free action, even if your quarry is no longer in sight.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Flexible Hunting Style",
@@ -391,34 +433,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 As a \glossterm{minor action}, you can change which \textit{hunting style} you have active.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Tracker",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The Survival bonus from your \textit{tracker} ability increases to \plus5.
-                In addition, the bonus to follow tracks from your quarry increases to \plus20.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Hunter's Prowess",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{hunter's prowess} ability increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Supreme Quarry",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The accuracy bonus from your \textit{quarry} ability increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ];
 }
@@ -432,6 +446,26 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 At the start of each phase, if there is no more than one creature adjacent to you, you gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes} during that phase.
                 In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
+
+                \advancement At rank 4, the speed bonus increases to \plus10 feet.
+                At rank 7, the speed bonus increases to \plus15 feet.
+                In addition, the longshot penalty reduction increases to 2.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+        },
+        RankAbility {
+            name: "Skirmisher+",
+            is_magical: false,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+        },
+        RankAbility {
+            name: "Skirmisher+",
+            is_magical: false,
+            rank: 7,
+            description: r"
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
@@ -452,6 +486,16 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy}.
+
+                \advancement At rank 5, this bonus increases to \plus2.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Perceive Weakness+",
+            is_magical: false,
+            rank: 5,
+            description: r"
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -465,46 +509,19 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                 If you already have the blindsense ability, you increase its range by 120 feet.
                 In addition, you gain \trait{blindsight} with a 30 foot range, allowing you to see without light (see \pcref{Blindsight}).
                 If you already have the blindsight ability, you increase its range by 30 feet.
+
+                \advancement At rank 6, the range of your blindsense increases by 120 feet.
+                In addition, the range of your blindsight increases by 30 feet.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Skirmisher",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                The speed bonus from your \textit{skirmisher} ability increases to \plus10 feet.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
-        },
-        RankAbility {
-            name: "Greater Perceive Weakness",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The bonus from your \textit{perceive weakness} ability increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Greater Blindsight",
+            name: "Blindsight+",
             is_magical: false,
             rank: 6,
             description: r"
-                The range of your \trait{blindsense} increases by 360 feet.
-                In addition, the range of your \trait{blindsight} increases by 90 feet.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Supreme Skirmisher",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The speed bonus from your \textit{skirmisher} ability increases to \plus15 feet.
-                In addition, the penalty reduction from that ability increases to 2.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
     ];
 }
@@ -512,32 +529,87 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
 pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Combat Styles",
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 1,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(1)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
+                Modifier::Maneuver(Maneuver::MightyStrike(1)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(3)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
+                Modifier::Maneuver(Maneuver::MightyStrike(3)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(5)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
+                Modifier::Maneuver(Maneuver::MightyStrike(5)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(7)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
+                Modifier::Maneuver(Maneuver::MightyStrike(7)),
+            ]),
+        },
+        RankAbility {
+            name: "Wild Maneuvers",
             is_magical: false,
             rank: 1,
             description: r"
-                You can channel your wild energy into ferocious attacks.
+                You can channel your connection to the wilderness into dangerous attacks.
                 You gain access to one of the following \glossterm{combat styles}: \textit{flurry of blows}, \textit{mobile assault}, or \textit{penetrating precision}.
                 In addition, you gain access to any combat style of your choice (see \pcref{Combat Styles}).
                 You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
+                You can only learn primal \glossterm{maneuvers} from primal combat styles that you have access to.
 
-                You learn two rank 1 \glossterm{maneuvers} chosen from combat styles you have access to.
+                You learn two rank 1 primal \glossterm{maneuvers}.
                 You may spend \glossterm{insight points} to learn one additional maneuver per insight point.
                 Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
                 When you gain access to a new \glossterm{rank} in this archetype,
                     you can exchange any number of maneuvers you know for other maneuvers,
                     including maneuvers of the higher rank.
+
+                \advancement You learn an additional primal maneuver at rank 4 and rank 7.
+                The maximum rank of primal maneuvers that you can learn is equal to your rank in this archetype.
+                Wild maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Combat Style Rank (2)",
+            name: "Wild Maneuvers+",
             is_magical: false,
-            rank: 2,
+            rank: 4,
             description: r"
-                You become a rank 2 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 2.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Wild Maneuvers+",
+            is_magical: false,
+            rank: 7,
+            description: r"
             ",
             modifiers: None,
         },
@@ -547,18 +619,18 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
+
+                \advancement At rank 5, the bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Combat Style Rank (3)",
+            name: "Wild Force+",
             is_magical: false,
-            rank: 3,
+            rank: 5,
             description: r"
-                You become a rank 3 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 3.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Wild Senses",
@@ -566,6 +638,8 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                  You gain a \plus1 bonus to Perception-based checks, except \glossterm{initiative} checks.
+
+                 \advancement At rank 6, this bonus increases to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Awareness, 1),
@@ -575,59 +649,10 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Combat Style Rank (4)",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You become a rank 4 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 4.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Wild Maneuver",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Combat Style Rank (5)",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                You become a rank 5 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 5.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Wild Force",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The bonus from your \textit{wild force} ability increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Combat Style Rank (6)",
+            name: "Wild Senses+",
             is_magical: false,
             rank: 6,
             description: r"
-                You become a rank 6 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 6.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Wild Senses",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The bonuses from your \textit{wild senses} ability increase to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Awareness, 1),
@@ -635,25 +660,6 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::SocialInsight, 1),
                 Modifier::Skill(Skill::Survival, 1),
             ]),
-        },
-        RankAbility {
-            name: "Combat Style Rank (7)",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                You become a rank 7 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 7.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Wild Maneuver",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
-            ",
-            modifiers: None,
         },
     ];
 }
