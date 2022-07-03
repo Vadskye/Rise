@@ -273,7 +273,7 @@ export const polymorph: MysticSphere = {
         `,
         7: `
           You can increase your size category by up to two size categories.
-          However, if you do, the movement speed penalty increases to -15 feet.
+          However, if you do, the movement speed penalty increases to -10 feet.
         `,
       },
       type: 'Attune',
