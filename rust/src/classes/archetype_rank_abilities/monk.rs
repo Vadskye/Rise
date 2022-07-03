@@ -1,4 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::attacks::Maneuver;
 use crate::core_mechanics::{Attribute, Defense};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
@@ -12,6 +13,25 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you make a Jump check that moves you over or adjacent to a creature, if your Jump check result beats that creature's Reflex defense, you gain a \plus1 bonus to \glossterm{accuracy} against that creature for the rest of the current round.
                 This is a \abilitytag{Swift} effect, so it helps you if you make a Jump check in the same phase that you make a strike, such as with the \ability{leaping strike} \glossterm{maneuver}.
+
+                \advancement At rank 4, this bonus increases to \plus2.
+                At rank 7, this bonus increases to \plus3, and the effect lasts \glossterm{briefly} instead of only for the current round.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Acrobatic Accuracy+",
+            is_magical: false,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Acrobatic Accuracy+",
+            is_magical: false,
+            rank: 7,
+            description: r"
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -23,6 +43,16 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
                 This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
                 If you have the \textit{evasion} rogue ability with the same effect as this ability, you reduce the total damage you take to one quarter of the normal value instead.
+
+                \advancement At rank 5, this ability also protects you from area attacks against your Fortitude and Mental defenses.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Evasion+",
+            is_magical: false,
+            rank: 5,
+            description: r"
             ",
             modifiers: None,
         },
@@ -36,46 +66,19 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 You cannot walk in the air, but you can continue jumping or remain in place.
                 The air holds you until the end of the current round, at which point you fall normally.
                 After you land on air in this way, you \glossterm{briefly} cannot do so again.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Acrobatic Accuracy",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                The bonus from your \textit{acrobatic accuracy} ability increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Greater Evasion",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                Your \textit{evasion} ability also protects you from area attacks against your Fortitude and Mental defenses.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Airdance",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                When you use your \textit{airdance} ability to land in the air, you can walk around freely in the air as if it was fully solid until the end of the round.
+
+                \advancement At rank 6, when you use this ability to land in the air, you can walk around freely in the air as if it was fully solid until the end of the round.
                 In addition, the maxium height above the ground increases to 60 feet.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Acrobatic Accuracy",
-            is_magical: false,
-            rank: 7,
+            name: "Airdance+",
+            is_magical: true,
+            rank: 6,
             description: r"
-                The bonus from your \textit{acrobatic accuracy} ability increases to \plus3.
-                In addition, the bonus lasts \glossterm{briefly}, instead of only for the current round.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: None,
         },
     ];
 }
@@ -83,32 +86,87 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
 pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Combat Styles",
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 1,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(1)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
+                Modifier::Maneuver(Maneuver::MightyStrike(1)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(3)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
+                Modifier::Maneuver(Maneuver::MightyStrike(3)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(5)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
+                Modifier::Maneuver(Maneuver::MightyStrike(5)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(7)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
+                Modifier::Maneuver(Maneuver::MightyStrike(7)),
+            ]),
+        },
+        RankAbility {
+            name: "Esoteric Maneuvers",
             is_magical: false,
             rank: 1,
             description: r"
                 You can perform a wide variety of unusual attacks.
-                You gain access to one of the following \glossterm{combat styles}: \textit{ebb and flow}, \textit{flurry of blows}, or \textit{mobile assault}.
+                You gain access to one of the following \glossterm{combat styles}: \textit{dirty fighting}, \textit{herald of war}, or \textit{unbreakable defense}.
                 In addition, you gain access to any combat style of your choice (see \pcref{Combat Styles}).
                 You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
+                You can only learn esoteric \glossterm{maneuvers} from esoteric combat styles that you have access to.
 
-                You learn two rank 1 \glossterm{maneuvers} chosen from combat styles you have access to.
+                You learn two rank 1 esoteric \glossterm{maneuvers}.
                 You may spend \glossterm{insight points} to learn one additional maneuver per insight point.
                 Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
                 When you gain access to a new \glossterm{rank} in this archetype,
                     you can exchange any number of maneuvers you know for other maneuvers,
                     including maneuvers of the higher rank.
+
+                \advancement You learn an additional esoteric maneuver at rank 4 and rank 7.
+                The maximum rank of esoteric maneuvers that you can learn is equal to your rank in this archetype.
+                Esoteric maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Combat Style Rank (2)",
+            name: "Esoteric Maneuvers+",
             is_magical: false,
-            rank: 2,
+            rank: 4,
             description: r"
-                You become a rank 2 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 2.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Esoteric Maneuvers+",
+            is_magical: false,
+            rank: 7,
+            description: r"
             ",
             modifiers: None,
         },
@@ -118,25 +176,28 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
+
+                \advancement At rank 5, the bonus increases to \plus2d.
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(2)]),
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Combat Style Rank (3)",
+            name: "Esoteric Force+",
             is_magical: false,
-            rank: 3,
+            rank: 5,
             description: r"
-                You become a rank 3 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 3.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
+
         RankAbility {
             name: "Esoteric Fluidity",
             is_magical: false,
             rank: 3,
             description: r"
                  You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
+
+                 \advancement At rank 6, this bonus increases to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Balance, 1),
@@ -147,55 +208,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Combat Style Rank (4)",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You become a rank 4 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 4.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Esoteric Maneuver",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Combat Style Rank (5)",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                You become a rank 5 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 5.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Esoteric Force",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The bonus from your \textit{esoteric force} ability increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Combat Style Rank (6)",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                You become a rank 6 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 6.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Esoteric Fluidity",
+            name: "Esoteric Fluidity+",
             is_magical: false,
             rank: 6,
             description: r"
@@ -208,25 +221,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::SleightOfHand, 1),
                 Modifier::Skill(Skill::Stealth, 1),
             ]),
-        },
-        RankAbility {
-            name: "Combat Style Rank (7)",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                You become a rank 7 combat style user.
-                This gives you access to maneuvers that require a minimum rank of 7.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Esoteric Maneuver",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
-            ",
-            modifiers: None,
         },
     ];
 }
@@ -471,6 +465,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     % TODO: add more
                 }
+
+                \advancement At ranks 3, 5, and 7, each ki manifestation improves as described above.
             ",
             modifiers: None,
         },
@@ -500,6 +496,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 You can also use a \glossterm{free hand} to wield the barrier as a shield.
                 This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
                 Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
+
+                \advancement At rank 5, the damage resistance bonus increases to six times your rank in this archetype, and the defense bonus from the body armor increases to \plus4.
             ",
             // This only works if everyone with this archetype doesn't equip actual armor, since
             // the system won't know not to stack the effects
@@ -509,13 +507,32 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            name: "Ki Barrier+",
+            is_magical: true,
+            rank: 5,
+            description: r"
+            ",
+            // Rank 4: 16. Rank 5: 30.
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+        },
+        RankAbility {
             name: "Ki Power",
             is_magical: true,
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+
+                \advancement At rank 6, this bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
+        },
+        RankAbility {
+            name: "Ki Power+",
+            is_magical: true,
+            rank: 6,
+            description: r"
+            ",
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Hardened Ki",
@@ -527,27 +544,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Ki Barrier",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                The damage resistance bonus from your \textit{ki barrier} ability increases to six times your rank in this archetype.
-                In addition, the defense bonus from the body armor increases to \plus4.
-            ",
-            // Rank 4: 16. Rank 5: 30.
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
-        },
-        RankAbility {
-            name: "Greater Ki Power",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{ki power} ability increases to \plus6.
-            ",
-            modifiers: Some(vec![Modifier::Power(4)]),
-        },
-        RankAbility {
-            name: "Greater Ki Manifestation",
+            name: "Endless Ki",
             is_magical: true,
             rank: 7,
             description: r"
@@ -567,10 +564,30 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You gain a \plus2 bonus to accuracy and a \plus1d bonus to damage with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
+
+                \advancement At rank 4, the damage bonus increases to \plus2d.
+                At rank 7, the damage bonus increases to \plus3d.
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
             // from this archetype weapons
             modifiers: None,
+        },
+        RankAbility {
+            name: "Unarmed Warrior+",
+            is_magical: false,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Unarmed Warrior+",
+            is_magical: false,
+            rank: 7,
+            description: r"
+            ",
+            // TODO: At this point, you're probably using unarmed? This is weird.
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Fast Movement",
@@ -578,6 +595,25 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
+
+                \advancement At rank 4, this bonus increases to \plus10 feet.
+                At rank 7, this bonus increases to \plus20 feet.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+        },
+        RankAbility {
+            name: "Fast Movement+",
+            is_magical: false,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+        },
+        RankAbility {
+            name: "Fast Movement+",
+            is_magical: false,
+            rank: 7,
+            description: r"
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
@@ -588,6 +624,16 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons \glossterm{weapon group}, natural weapons, and to any attack using one or more \glossterm{free hands}.
                 This does not include abilities that simply use \glossterm{somatic components}.
+
+                \advancement At rank 5, this bonus increases to \plus2.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Perfect Precision+",
+            is_magical: false,
+            rank: 5,
+            description: r"
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -597,67 +643,22 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
-                You permanently gain a \plus1 bonus to the base value of that attribute.
+                You permanently gain a \plus1 bonus to that attribute.
+
+                \advancement At rank 6, this bonus applies to all physical attributes, not just the one you chose.
             ",
             modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
-            name: "Greater Fast Movement",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                The speed bonus from your \textit{fast movement} ability increases to \plus10 feet.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
-        },
-        RankAbility {
-            name: "Greater Unarmed Warrior",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                The damage bonus from your \textit{unarmed warrior} ability increases to \plus2d.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Perfect Precision",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The bonuses from your \textit{perfect precision} ability increase to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Greater Perfect Body",
+            name: "Perfect Body+",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{perfect body} ability applies to the base value of all physical attributes, not just the one you chose.
             ",
             modifiers: Some(vec![
                 Modifier::BaseAttribute(Attribute::Strength, 1),
                 Modifier::BaseAttribute(Attribute::Dexterity, 1),
             ]),
-        },
-        RankAbility {
-            name: "Supreme Fast Movement",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
-        },
-        RankAbility {
-            name: "Supreme Unarmed Warrior",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The damage bonus from your \textit{unarmed warrior} ability increases to \plus3d.
-            ",
-            // TODO: At this point, you're probably using unarmed? This is weird.
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
     ];
 }
@@ -672,6 +673,25 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 You become so attuned to the natural energy of life that you can sense it even when sight fails you.
                 You gain \trait{lifesense} with a 120 foot range, allowing you to sense the location of living creatures without light (see \pcref{Lifesense}).
                 In addition, you gain \trait{lifesight} with a 30 foot range, allowing you to see living creatures without light (see \pcref{Lifesight}).
+
+                \advancement At rank 4, the range of your lifesense increases by 120 feet, and the range of your lifesight increases by 30 feet.
+                At rank 7, the range of your lifesense increases by 240 feet, and the range of your lifesight increases by 60 feet.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Feel the Flow of Life+",
+            is_magical: true,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Feel the Flow of Life+",
+            is_magical: true,
+            rank: 7,
+            description: r"
             ",
             modifiers: None,
         },
@@ -700,18 +720,18 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
+
+                \advancement At rank 6, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Greater Feel the Flow of Life",
-            is_magical: true,
-            rank: 4,
+            name: "Transcendent Might+",
+            is_magical: false,
+            rank: 6,
             description: r"
-                The range of your \trait{lifesense} increases by 120 feet.
-                In addition, the range of your \trait{lifesight} increases by 30 feet.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Transcend Emotion",
@@ -724,15 +744,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Transcendent Might",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{transcendent might} ability increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
             name: "Transcend Mortality",
             is_magical: true,
             rank: 6,
@@ -741,16 +752,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 This means that attacks which only affect living creatures have no effect against you.
                 In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
                 You still die of old age when your time is up.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Supreme Feel the Flow of Life",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The range of your \trait{lifesense} increases by 240 feet.
-                In addition, the range of your \trait{lifesight} increases by 60 feet.
             ",
             modifiers: None,
         },
