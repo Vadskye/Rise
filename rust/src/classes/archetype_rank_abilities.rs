@@ -13,6 +13,7 @@ mod rogue;
 mod sorcerer;
 mod warlock;
 mod wizard;
+mod standard_modifiers;
 
 pub struct RankAbility<'a> {
     pub description: &'a str,
