@@ -719,7 +719,6 @@ impl Class {
                 Predation is a critical part of the natural world, and most druids have no prohibitions against killing.
                 Life as a whole, across all species and levels of sentience, must continue.
                 The worst nightmare of all druids is a dead world, inhabited only by rocks and memories of the life that once existed.
-                Civilization offers the most likely path to a dead world, and this is key to the typical - but not universal - druidic rejection of civilization.
 
                 Individual druids have a great variety of opinions and interpretations about which aspects of Nature's domain are most important.
                 Some druids treat all forms of life as equal.
@@ -727,6 +726,12 @@ impl Class {
                 Of course, many druids don't dwell on philosophical questions about the precise value of Nature's various aspects. 
                 They focus more on practical maintenance of nature in the world around them according to their own instincts.
                 Nature's domain is immense, and her guidance is virtually nonexistent.
+
+                Many druids avoid or actively reject overly developed civilization.
+                The details and causes of this aversion can be source of great disagreement between different druids.
+                Civilization tends to displace or kill natural life, and replaces the vibrant diversity of a forest or jungle with a the smaller subset of life that can exist in cities and cultivated farms.
+                In general, druids who value all forms of life equally and consider diversity to be intrinsically valuable tend to reject civilization most strongly.
+                On the other hand, druids who value life according to its sentience or complexity are typically more tolerant of civilization.
 
                 Most druids belong to a specific druidic circle.
                 Druidic circles are groups of druids that share a similar philosophy.
