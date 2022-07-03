@@ -298,7 +298,7 @@ def generate_weapons():
             name="Ricocheting",
             rank=3,
             description="""
-                When you make a \\glossterm<ranged> \\glossterm<strike> with this weapon, you may also target one or more secondary creatures or objects.
+                When you make a \\glossterm<ranged> \\glossterm<strike> with this weapon, you may also target one additional secondary creature or object.
                 Each secondary target must be within 10 feet of a primary target, and must not already be a target of the strike.
                 The strike affects each secondary target in the same way as the primary target.
             """,
