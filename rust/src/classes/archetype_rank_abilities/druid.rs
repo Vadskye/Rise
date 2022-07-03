@@ -42,11 +42,12 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{3} You gain a \plus2 damage bonus with the strike.
+                    \rank{4} You gain a \plus5 bonus to your \glossterm{reach} with the strike.
                     \rank{5} The damage bonus increases to \plus4.
                     \rank{7} The damage bonus increases to \plus8.
                 \end{activeability}
 
-                \advancement At rank 4, you gain a \plus5 foot bonus to your \glossterm{reach} with this ability.
+                \advancement At ranks 3, 4, 5, and 7, this ability improves as described above.
             ",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
         },
@@ -525,7 +526,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
                 }
 
-                \advancement At ranks 3, 5, and 7, each wild aspect increases in power as indicated above.
+                \advancement At ranks 3, 5, and 7, each wild aspect improves as indicated above.
             ",
             // Arbitrarily choose Bear form, since it's easy to represent? Unclear.
             // TODO: no way to represent natural weapons.
@@ -691,7 +692,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         It has a bite \glossterm{natural weapon}.
                 \end{itemize}
 
-                \advancement At rank 7, you may choose to have a Large natural servant appear instead of a Medium natural servant.
+                \advancement At each level, the statistics of your natural servant improve as described above.
+                At rank 7, you may choose to have a Large natural servant appear instead of a Medium natural servant.
             ",
             // TODO: represent a whole extra creature???
             modifiers: None,

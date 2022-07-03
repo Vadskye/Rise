@@ -129,6 +129,8 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     This attack's accuracy increases by \plus2 for each rank beyond 2.
                 \end{activeability}
+
+                \advancement At each rank, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -295,6 +297,8 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The healing increases to 4d10.
                     \rank{7} The healing increases to 6d10.
                 \end{activeability}
+
+                \advancement This ability improves at each rank as described above.
             ",
             modifiers: None,
         },
@@ -343,6 +347,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The target can remove an additional \glossterm{vital wound}.
                 \end{activeability}
 
+                \advancement At ranks 3 and 5, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -406,6 +411,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} Each target is stunned instead of dazed.
                     \rank{7} Each target with no remaining \glossterm{damage resistance} is \confused instead of stunned.
                 \end{activeability}
+
+                \advancement At ranks 3, 5, and 7, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -439,6 +446,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The recovery increases to 4d10.
                     \rank{7} The recovery increases to 5d10.
                 \end{activeability}
+
+                \advancement At each rank, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -478,6 +487,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{7} Each target with no remaining \glossterm{damage resistance} is \frightened instead of shaken.
                 \end{activeability}
+
+                \advancement At rank 7, this ability improves as described above.
             ",
             modifiers: None,
         },
