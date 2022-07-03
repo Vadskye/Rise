@@ -156,6 +156,8 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The power bonus increases to \plus8.
                     \rank{7} The power bonus increases to \plus16.
                 \end{sustainability}
+
+                \advancement At ranks 3, 5, and 7, this ability improves as described above.
             ",
             modifiers: Some(vec![
                 Modifier::Power(2),
@@ -201,7 +203,8 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The damage bonus increases to \plus16.
                 \end{activeability}
 
-                \advancement At rank 7, you gain the accuracy and damage bonuses against each creature that attacked you during the previous round, regardless of whether they dealt damage to you.
+                \advancement At ranks 4 and 6, this ability improves as described above.
+                At rank 7, you gain the accuracy and damage bonuses against each creature that attacked you during the previous round, regardless of whether they dealt damage to you.
             ",
             // This is too inconsistent to add as a generally usable strike
             modifiers: None,
@@ -598,7 +601,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 At rank 4, you gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
                 At rank 7, the accuracy bonus increases to \plus2.
 
-                \advancement At ranks 4 and 7, each totem animal increases in power as indicated above.
+                \advancement At ranks 4 and 7, each totem animal improves as indicated above.
             ",
             // For convenience in balancing, assume lion totem instead of representing each totem
             modifiers: Some(vec![Modifier::Accuracy(1)]),
