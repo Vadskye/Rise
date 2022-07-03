@@ -469,7 +469,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Combat Styles",
+            name: "Primal Maneuvers",
             is_magical: false,
             rank: 1,
             description: r"
@@ -477,8 +477,9 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You gain access to one of the following \glossterm{combat styles}: \textit{dirty fighting}, \textit{herald of war}, or \textit{unbreakable defense}.
                 In addition, you gain access to any combat style of your choice (see \pcref{Combat Styles}).
                 You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
+                You can only learn primal \glossterm{maneuvers} from primal combat styles that you have access to.
 
-                You learn two rank 1 \glossterm{maneuvers} chosen from combat styles you have access to.
+                You learn two rank 1 primal \glossterm{maneuvers}.
                 You may spend \glossterm{insight points} to learn one additional maneuver per insight point.
                 Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
@@ -486,8 +487,25 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                     you can exchange any number of maneuvers you know for other maneuvers,
                     including maneuvers of the higher rank.
 
-                \advancement The maximum rank of primal maneuvers that you can learn is equal to your rank in this archetype.
-                In addition, each maneuver increases in power in unique ways based on your rank in this archetype, as indicated in their description.
+                \advancement You learn an additional primal maneuver at rank 4 and rank 7.
+                The maximum rank of primal maneuvers that you can learn is equal to your rank in this archetype.
+                Each primal maneuver also increases in power in unique ways based on your rank in this archetype, as indicated in their description.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Primal Maneuvers+",
+            is_magical: false,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Primal Maneuvers+",
+            is_magical: false,
+            rank: 7,
+            description: r"
             ",
             modifiers: None,
         },
@@ -529,25 +547,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
             ",
             // Handled as part of bulk silent scaling
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Primal Maneuver",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You learn an additional \glossterm{maneuver} from a combat style you have access to (see \pcref{Combat Styles}).
-
-                \advancement At rank 7, you learn an additional maneuver.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Primal Maneuver+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-            ",
             modifiers: None,
         },
     ];
