@@ -182,7 +182,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                Your deity grants you the ability to use nature magic.
+                Your connection to nature grants you the ability to use nature magic.
                 You gain access to one nature \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Nature Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional nature \glossterm{mystic sphere} per two \glossterm{insight points}.
                 You can only learn nature spells from nature mystic spheres that you have access to.
@@ -206,7 +206,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Divine Spells+",
+            name: "Nature Spells+",
             is_magical: true,
             rank: 2,
             description: r"
@@ -214,7 +214,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Divine Spells+",
+            name: "Nature Spells+",
             is_magical: true,
             rank: 4,
             description: r"
@@ -222,7 +222,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Divine Spells+",
+            name: "Nature Spells+",
             is_magical: true,
             rank: 7,
             description: r"
