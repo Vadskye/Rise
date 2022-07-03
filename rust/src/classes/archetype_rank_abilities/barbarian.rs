@@ -598,7 +598,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 At rank 4, you gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
                 At rank 7, the accuracy bonus increases to \plus2.
 
-                \advancement Each totem animal increases in power in unique ways at rank 4 and rank 7, as indicated above.
+                \advancement At ranks 4 and 7, each totem animal increases in power as indicated above.
             ",
             // For convenience in balancing, assume lion totem instead of representing each totem
             modifiers: Some(vec![Modifier::Accuracy(1)]),
