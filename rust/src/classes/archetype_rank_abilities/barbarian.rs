@@ -489,7 +489,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                 \advancement You learn an additional primal maneuver at rank 4 and rank 7.
                 The maximum rank of primal maneuvers that you can learn is equal to your rank in this archetype.
-                Each primal maneuver also increases in power in unique ways based on your rank in this archetype, as indicated in their description.
+                Primal maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
         },
