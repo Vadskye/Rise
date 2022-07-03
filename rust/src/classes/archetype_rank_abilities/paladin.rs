@@ -15,18 +15,52 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you resume the aura, you can choose which creatures within the area are affected by aura as any combination of yourself, your \glossterm{allies}, your \glossterm{enemies}, and other creatures.
                 The effect of the aura depends on your devoted alignment, as described below.
 
-                \subparhead{Chaos} Whenever a target rolls a 9 on an attack roll with a \glossterm{strike}, it \glossterm{explodes} (see \pcref{Exploding Attacks}.
+                \subcf{Chaos} Whenever a target rolls a 9 on an attack roll with a \glossterm{strike}, it \glossterm{explodes} (see \pcref{Exploding Attacks}.
                 This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
-                \subparhead{Evil} Each target suffers a \minus1 penalty to \glossterm{defenses} as long as it is affected by at least one \glossterm{condition}.
+
+                At rank 4, the effect applies to all attacks, not just strikes.
+                At rank 7, whenever a target \glossterm{explodes} with an attack roll, it gains a \plus2 \glossterm{accuracy} bonus with the attack.
+
+                \subcf{Evil} Each target suffers a \minus1 penalty to its Armor defense as long as it is affected by at least one \glossterm{condition}.
+
+                At rank 4, the penalty applies to all defenses.
+                At rank 7, the penalty increases to \minus2.
+
                 % TODO: clarify what happens if multiple people try to Good aura the same target
-                \subparhead{Good} Whenever a target would gain a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
+                \subcf{Good} Whenever a target would gain a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
                 You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                 The target suffers any other effects of the attack normally.
-                \subparhead{Law} Whenever a target rolls a 1 on an attack roll with a \glossterm{strike}, the attack roll is treated as a 6.
+
+                At rank 4, whenever a target would lose \glossterm{hit points}, you may lose those hit points instead.
+                This causes you to suffer any special effects of the attack that trigger on losing hit points in place of the target.
+                The target suffers any other effects of the attack normally.
+                At rank 7, the vital roll bonus increases to \plus10.
+
+                \subcf{Law} Whenever a target rolls a 1 on an attack roll with a \glossterm{strike}, the attack roll is treated as a 6.
                 This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
+
+                At rank 4, the effect applies to all attacks, not just strikes.
+                At rank 7, the effect triggers on rolling either a 1 or a 2.
             ",
             // Most auras loosely correlate to +0.5 accuracy in an AOE? For power level purposes,
             // approximate as a personal +1 accuracy.
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Aligned Aura+",
+            is_magical: true,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Aligned Aura+",
+            is_magical: true,
+            rank: 7,
+            description: r"
+            ",
+            // Another awkward approximation
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
@@ -40,6 +74,16 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Evil} You are immune to being \charmed and \goaded.
                 \subparhead{Good} You are immune to \abilitytag{Curse} attacks and being \dominated.
                 \subparhead{Law} You are immune to being \dazed.
+
+                \advancement At rank 5, this effect is shared with your \glossterm{allies} within the area of your \textit{aligned aura}.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Aligned Immunity+",
+            is_magical: true,
+            rank: 5,
+            description: r"
             ",
             modifiers: None,
         },
@@ -49,61 +93,18 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+
+                \advancement At rank 6, this bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
-            name: "Greater Aligned Aura",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                The effect of your \textit{aligned aura} becomes stronger, as described below.
-                In addition, the area increases to a \largearea radius \glossterm{emanation} from you.
-
-                \subparhead{Chaos} The effect applies to all attacks, not just \glossterm{strikes}.
-                % TODO: explain how this works on monsters
-                \subparhead{Evil} Whenever a target removes a \glossterm{condition}, it takes 2d6 \add half \glossterm{power} energy damage.
-                This damage increases by \plus1d for each rank beyond 4.
-                \subparhead{Good} When a target would lose \glossterm{hit points}, you may lose those hit points instead.
-                This causes you to suffer any special effects of the attack that trigger on losing hit points in place of the target.
-                The target suffers any other effects of the attack normally.
-                \subparhead{Law} The effect applies to all attacks, not just \glossterm{strikes}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Aligned Immunity",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                The effect of your \textit{aligned immunity} ability is shared with your \glossterm{allies} within the area of your \textit{aligned aura}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Paragon Power",
+            name: "Paragon Power+",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus from your \textit{paragon power} ability increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
-        },
-        RankAbility {
-            name: "Supreme Aligned Aura",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The effect of your \textit{aligned aura} reaches its full power, as described below.
-                In addition, the area increases to a \hugearea radius \glossterm{emanation} from you.
-
-                \subparhead{Chaos} Whenever a target \glossterm{explodes} with an attack roll, it gains a \plus2 \glossterm{accuracy} bonus with the attack.
-                \subparhead{Evil} The penalty increases to \minus2.
-                \subparhead{Good} The \glossterm{vital roll} bonus increases to \plus5.
-                \subparhead{Law} The effect triggers on rolling either a 1 or a 2.
-            ",
-            // Another awkward approximation
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ];
 }
@@ -111,7 +112,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Spellcasting",
+            name: "Divine Spells",
             is_magical: true,
             rank: 1,
             description: r"
@@ -131,93 +132,34 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
+
+                \advancement At ranks 2, 4, and 7, you learn an additional divine spell.
+                The maximum rank of divine spells that you can learn is equal to your rank in this archetype.
+                Divine spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Rank (2)",
+            name: "Divine Spells+",
             is_magical: true,
             rank: 2,
             description: r"
-                You become a rank 2 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 2.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (3)",
-            is_magical: true,
-            rank: 3,
-            description: r"
-                You become a rank 3 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (4)",
+            name: "Divine Spells+",
             is_magical: true,
             rank: 4,
             description: r"
-                You become a rank 4 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (5)",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You become a rank 5 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (6)",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                You become a rank 6 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (7)",
+            name: "Divine Spells+",
             is_magical: true,
             rank: 7,
             description: r"
-                You become a rank 7 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
             modifiers: None,
         },
@@ -234,6 +176,16 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
                 You learn a spell from one of the mystic spheres that are unique to divine spellcasters: \sphere{bless} or \sphere{channel divinity}.
                 You do not have to have access to that mystic sphere.
                 As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
+
+                \advancement At rank 4, you learn an additional spell with this ability.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Divine Spell Versatility+",
+            is_magical: false,
+            rank: 4,
+            description: r"
             ",
             modifiers: None,
         },
@@ -243,6 +195,16 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 Whenever you cast a \glossterm{targeted} spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may target an additional creature adjacent to you with the spell.
+
+                \advancement At rank 7, this ability allows you to target any number of creatures adjacent to you instead of only one additional creature.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Divine Conduit+",
+            is_magical: true,
+            rank: 7,
+            description: r"
             ",
             modifiers: None,
         },
@@ -252,17 +214,18 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power}.
+
+                \advancement At rank 6, this bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
-            name: "Divine Spell Versatility",
-            is_magical: false,
-            rank: 4,
+            name: "Wellspring of Power+",
+            is_magical: true,
+            rank: 6,
             description: r"
-                You learn an additional spell with your \textit{divine spell versatility} ability.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -272,24 +235,6 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
-        },
-        RankAbility {
-            name: "Greater Wellspring of Power",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{wellspring of power} ability increases to \plus6.
-            ",
-            modifiers: Some(vec![Modifier::Power(4)]),
-        },
-        RankAbility {
-            name: "Greater Divine Conduit",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                Your \textit{divine conduit} ability allows you to target any number of creatures adjacent to you instead of only one additional creature.
-            ",
-            modifiers: None,
         },
     ];
 }
@@ -322,6 +267,29 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The healing increases to 4d10.
                     \rank{7} The healing increases to 6d10.
                 \end{activeability}
+
+                \advancement At each rank, this ability improves as described above.
+                At rank 4, the target can also remove a \glossterm{condition}.
+                This cannot remove a condition applied during the current round.
+                In addition, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
+                If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
+                At rank 7, when you use this ability on a creature other than yourself, it also targets you.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Lay on Hands+",
+            is_magical: true,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Lay on Hands+",
+            is_magical: true,
+            rank: 7,
+            description: r"
             ",
             modifiers: None,
         },
@@ -340,8 +308,18 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+
+                \advancement At rank 5, this bonus increases to five times your rank in this archetype.
             ",
             modifiers: Some(vec![Modifier::DamageResistance(6)]),
+        },
+        RankAbility {
+            name: "Stalwart Resilience+",
+            is_magical: false,
+            rank: 5,
+            description: r"
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Stalwart Resilience",
@@ -362,21 +340,21 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(20)]),
+            modifiers: Some(vec![Modifier::DamageResistance(25)]),
         },
         RankAbility {
             name: "Stalwart Resilience",
             is_magical: false,
             rank: 6,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(24)]),
+            modifiers: Some(vec![Modifier::DamageResistance(30)]),
         },
         RankAbility {
             name: "Stalwart Resilience",
             is_magical: false,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(28)]),
+            modifiers: Some(vec![Modifier::DamageResistance(35)]),
         },
         RankAbility {
             name: "Stalwart Defense",
@@ -384,6 +362,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1 bonus to your Fortitude defense and Mental defense.
+
+                \advancement At rank 6, this bonus increases to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Fortitude, 1),
@@ -391,16 +371,15 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Greater Lay on Hands",
-            is_magical: true,
-            rank: 4,
+            name: "Stalwart Defense+",
+            is_magical: false,
+            rank: 6,
             description: r"
-                When you use your \textit{lay on hands} ability, the target can also remove a \glossterm{condition}.
-                This cannot remove a condition applied during the current round.
-                In addition, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
-                If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
             ",
-            modifiers: None,
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::Defense(Defense::Mental, 1),
+            ]),
         },
         RankAbility {
             name: "Stalwart Force",
@@ -408,45 +387,16 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
+
+                \advancement At rank 7, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Greater Stalwart Resilience",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The resistance bonus from your \textit{stalwart resilience} ability increases to four times your rank in this archetype.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Stalwart Defense",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{stalwart defense} ability increases to \plus2.
-            ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Defense(Defense::Mental, 1),
-            ]),
-        },
-        RankAbility {
-            name: "Supreme Lay on Hands",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                When you use your \textit{lay on hands} ability on a creature other than yourself, it also affects you.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Supreme Stalwart Force",
+            name: "Stalwart Force+",
             is_magical: false,
             rank: 7,
             description: r"
-                The bonus from your \textit{stalwart force} ability increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -473,6 +423,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The damage bonus increases to \plus8.
                     \rank{7} The damage bonus increases to \plus16.
                 \end{activeability}
+
+                \advancement At ranks 3, 5, and 7, this ability improves as described above.
             ",
             // TODO: represent special attacks
             modifiers: None,
@@ -495,6 +447,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} You can use this ability as a \glossterm{minor action}.
                     When you do, you \glossterm{briefly} cannot use this ability as a minor action again.
                 \end{activeability}
+
+                \advancement At ranks 4 and 6, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -504,6 +458,16 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
+
+                \advancement At rank 5, this bonus increases to \plus2d.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
+            name: "Forceful Zeal+",
+            is_magical: false,
+            rank: 5,
+            description: r"
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -525,15 +489,6 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Forceful Zeal",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The bonus from your \textit{forceful zeal} ability increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Pass Judgment",
