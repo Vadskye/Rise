@@ -6,7 +6,7 @@ use crate::skills::Skill;
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Spellcasting",
+            name: "Divine Spells",
             is_magical: true,
             rank: 1,
             description: r"
@@ -26,93 +26,34 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
+
+                \advancement At ranks 2, 4, and 7, you learn an additional divine spell.
+                The maximum rank of divine spells that you can learn is equal to your rank in this archetype.
+                Divine spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Rank (2)",
+            name: "Divine Spells+",
             is_magical: true,
             rank: 2,
             description: r"
-                You become a rank 2 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 2.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (3)",
-            is_magical: true,
-            rank: 3,
-            description: r"
-                You become a rank 3 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Knowledge",
+            name: "Divine Spells+",
             is_magical: true,
             rank: 4,
             description: r"
-                You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Rank (4)",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You become a rank 4 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (5)",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You become a rank 5 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (6)",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                You become a rank 6 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (7)",
+            name: "Divine Spells+",
             is_magical: true,
             rank: 7,
             description: r"
-                You become a rank 7 divine spellcaster.
-                This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
             modifiers: None,
         },
@@ -150,6 +91,25 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                 }
+
+                \advancement At rank 4, you gain an additional \textit{mystic insight}.
+                At rank 7, you gain two additional \textit{mystic insights}.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Mystic Insight+",
+            is_magical: true,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Mystic Insight+",
+            is_magical: true,
+            rank: 7,
+            description: r"
             ",
             modifiers: None,
         },
@@ -178,17 +138,18 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power}.
+
+                \advancement At rank 6, this bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
-            name: "Mystic Insight",
+            name: "Wellspring of Power+",
             is_magical: true,
-            rank: 4,
+            rank: 6,
             description: r"
-                You gain an additional \textit{mystic insight} ability.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -198,24 +159,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
-        },
-        RankAbility {
-            name: "Greater Wellspring of Power",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{wellspring of power} ability increases to \plus6.
-            ",
-            modifiers: Some(vec![Modifier::Power(4)]),
-        },
-        RankAbility {
-            name: "Mystic Insights",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                You gain two additional \textit{mystic insight} abilities.
-            ",
-            modifiers: None,
         },
     ];
 }
@@ -269,16 +212,17 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 Each domain has a corresponding \textit{domain aspect}.
                 A domain aspect is an active ability that allows you to exert the influence of your domain in the world.
                 You gain the \textit{domain aspect} ability for one of your domains (see \pcref{Cleric Domain Abilities}).
+
+                \advancement At rank 3, you gain the \textit{domain aspect} for another one of your domains.
             ",
             // Domain aspects are also weird. Some give statistical benfits, but many don't
             modifiers: None,
         },
         RankAbility {
-            name: "Domain Aspect",
+            name: "Domain Aspect+",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain the \textit{domain aspect} for another one of your domains.
             ",
             modifiers: None,
         },
@@ -299,10 +243,15 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Once per week, you can request a miracle as a standard action.
                 You mentally specify your request, and your deity fulfills that request in the manner it sees fit.
-                This can emulate the effects of any spell or ritual, or have any other effect of a similar power level.
+                At your deity's discretion, this can emulate the effects of any divine spell or ritual, or have any other effect of a similar power level.
+
+                Miracles are most effective when your request is directly related to your deity's domains and general purview.
+                They do not have to be extremely specific, since deities prefer to have leeway to act as they see fit, but they should not be overly broad or vague.
                 If the deity has a direct interest in your situation, the miracle may be of even greater power.
 
                 If you perform an extraordinary service for your deity, you can gain the ability to request an additional miracle that week.
+
+                \advancement At rank 7, you can use this ability once per 24 hours instead of once per week.
             ",
             modifiers: None,
         },
@@ -313,15 +262,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Each domain has a corresponding \textit{domain mastery}.
                 You gain the \textit{domain mastery} for both of your domains (see \pcref{Cleric Domain Abilities}).
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Miracle",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                You can use your \textit<miracle> ability once per 24 hours instead of once per week.
             ",
             modifiers: None,
         },
@@ -365,6 +305,8 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to all defenses.
                 Whenever you attack or deal damage to a living creature, you \glossterm{briefly} lose this bonus.
+
+                \advancement At rank 5, this bonus increases to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
@@ -372,6 +314,14 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Defense(Defense::Reflex, 1),
                 Modifier::Defense(Defense::Mental, 1),
             ]),
+        },
+        RankAbility {
+            name: "Healer's Grace+",
+            is_magical: true,
+            rank: 5,
+            description: r"
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Vital Restoration",
@@ -401,16 +351,19 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                At the end of each phase, if a living \glossterm{ally} within \longrange of you lost \glossterm{hit points} during that phase, you can \glossterm{teleport} into the unoccupied square closest to that creature.
+                At the end of each phase, you automatically know the identity and location of each living \glossterm{ally} within \longrange of you that lost \glossterm{hit points} during that phase.
+                In addition, you can choose to \glossterm{teleport} to any one of those allies.
+                You arrive in the unoccupied square on solid ground closest to that ally.
+
+                \advancement At rank 7, this ability no longer requires \glossterm{line of sight} or \glossterm{line of effect}, and the range increases to \extrange.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Healer's Grace",
+            name: "Called to the Needy+",
             is_magical: true,
-            rank: 5,
+            rank: 7,
             description: r"
-                The bonus from your \textit{healer's grace} ability increases to \plus2.
             ",
             modifiers: None,
         },
@@ -428,15 +381,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is restored to life, as the \ritual{resurrection} ritual.
                     After using this ability, you cannot use it again until you take a \glossterm{long rest}.
                 \end{activeability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Called to the Needy",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The range limit of your \ability{called to the needy} ability increases to \extrange, and it no longer requires \glossterm{line of sight} or \glossterm{line of effect}.
             ",
             modifiers: None,
         },
@@ -505,8 +449,18 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your \glossterm{allies} who can hear you in a fight gain a \plus1 bonus to their Mental defense.
                 You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
+
+                \advancement At rank 6, this bonus increases to \plus2.
             ",
             // TODO: figure out allies-only buffs
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Inspiring Oration+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -524,15 +478,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{7} Each target with no remaining \glossterm{damage resistance} is \frightened instead of shaken.
                 \end{activeability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Inspiring Oration",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{inspiring oration} ability increases to \plus2.
             ",
             modifiers: None,
         },
