@@ -551,7 +551,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} You can use the \textit{disguise creature} ability to disguise yourself as a \glossterm{standard action} (see \pcref{Disguise Creature}).
                             In addition, the speed penalty for increasing your size is reduced to -5 feet.
                         \rank{7} When you use this wild aspect, you can choose to grow or shrink by up to two \glossterm{size categories} instead of only one.
-                            If you increase your size by two size categories, the speed penalty increases to -15 feet.
+                            If you increase your size by two size categories, the speed penalty increases to -10 feet.
                     \end{activeability}
 
                     \begin{activeability}{Photosynthesis}
