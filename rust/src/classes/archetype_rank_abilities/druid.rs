@@ -13,6 +13,16 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 If you have access to nature magic, you learn a spell from any of the mystic spheres associated with the four elements: \sphere{aeromancy}, \sphere{aquamancy}, \sphere{pyromancy}, or \sphere{terramancy}.
                 You do not have to have access to that mystic sphere.
                 As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
+
+                \advancement At rank 4, you learn an additional spell with this ability.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Elemental Spell+",
+            is_magical: true,
+            rank: 4,
+            description: r"
             ",
             modifiers: None,
         },
@@ -35,8 +45,19 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The damage bonus increases to \plus4.
                     \rank{7} The damage bonus increases to \plus8.
                 \end{activeability}
+
+                \advancement At rank 4, you gain a \plus5 foot bonus to your \glossterm{reach} with this ability.
             ",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
+        },
+        RankAbility {
+            name: "Elemental Strike+",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                If you do not have access to nature magic, you gain a +5 foot bonus to your \glossterm{reach} with your \textit{elemental strike} ability.
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Elemental Strike",
@@ -101,31 +122,27 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 You gain a benefit from each of the four elements.
                 \begin{itemize}
                     \item Air: You gain a \glossterm{glide speed} equal to half the \glossterm{base speed} for your size.
+                    At rank 7, you gain a \glossterm{fly speed} equal to half the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
                     \item Earth: You gain a \plus1 bonus to your Fortitude defense.
+                    At rank 7, this bonus increases to \plus2.
                     \item Fire: You are \trait{impervious} to fire damage.
+                    At rank 7, you treat all fire damage you take as being \glossterm{environmental damage}.
                     \item Water: You gain a \glossterm{swim speed} equal to half the \glossterm{base speed} for your size.
+                    At rank 7, this speed increases to be equal to the base speed for your size.
                 \end{itemize}
+
+                \advancement At rank 7, each element increases in power as indicated above.
             ",
             // TODO: represent movement speeds
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
-            name: "Elemental Spell",
+            name: "Elemental Balance+",
             is_magical: true,
-            rank: 4,
+            rank: 7,
             description: r"
-                If you have access to nature magic, you learn an additional spell with your \textit{elemental spell} ability.
             ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Elemental Strike",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                If you do not have access to nature magic, you gain a +5 foot bonus to your \glossterm{reach} with your \textit{elemental strike} ability.
-            ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
             name: "Elemental Control",
@@ -154,33 +171,17 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },
-        RankAbility {
-            name: "Greater Elemental Balance",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The bonuses from your \textit{elemental balance} ability improve.
-                \begin{itemize}
-                    \item Air: You gain a \glossterm{fly speed} equal to half the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
-                    At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
-                    \item Earth: The bonus to your Fortitude defense increases to \plus2.
-                    \item Fire: You treat all fire damage you take as being \glossterm{environmental damage}.
-                    \item Water: Your swim speed increases to be equal to the base speed for your size.
-                \end{itemize}
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
-        },
     ];
 }
 
 pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Spellcasting",
+            name: "Nature Spells",
             is_magical: true,
             rank: 1,
             description: r"
-                Your connection to nature grants you the ability to use nature magic.
+                Your deity grants you the ability to use nature magic.
                 You gain access to one nature \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Nature Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional nature \glossterm{mystic sphere} per two \glossterm{insight points}.
                 You can only learn nature spells from nature mystic spheres that you have access to.
@@ -196,93 +197,34 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
+
+                \advancement At ranks 2, 4, and 7, you learn an additional nature spell.
+                The maximum rank of nature spells that you can learn is equal to your rank in this archetype.
+                Nature spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Rank (2)",
+            name: "Divine Spells+",
             is_magical: true,
             rank: 2,
             description: r"
-                You become a rank 2 nature spellcaster.
-                This gives you access to spells that require a minimum rank of 2.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You learn an additional nature \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (3)",
-            is_magical: true,
-            rank: 3,
-            description: r"
-                You become a rank 3 nature spellcaster.
-                This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (4)",
+            name: "Divine Spells+",
             is_magical: true,
             rank: 4,
             description: r"
-                You become a rank 4 nature spellcaster.
-                This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional nature \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (5)",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You become a rank 5 nature spellcaster.
-                This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (6)",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                You become a rank 6 nature spellcaster.
-                This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Rank (7)",
+            name: "Divine Spells+",
             is_magical: true,
             rank: 7,
             description: r"
-                You become a rank 7 nature spellcaster.
-                This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Knowledge",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                You learn an additional nature \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
             ",
             modifiers: None,
         },
@@ -320,6 +262,25 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                 }
+
+                \advancement At rank 4, you gain an additional \textit{mystic insight}.
+                At rank 7, you gain two additional \textit{mystic insights}.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Mystic Insight+",
+            is_magical: true,
+            rank: 4,
+            description: r"
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Mystic Insight+",
+            is_magical: true,
+            rank: 7,
+            description: r"
             ",
             modifiers: None,
         },
@@ -339,17 +300,18 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power}.
+
+                \advancement At rank 6, this bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
-            name: "Mystic Insight",
+            name: "Wellspring of Power+",
             is_magical: true,
-            rank: 4,
+            rank: 6,
             description: r"
-                You gain an additional \textit{mystic insight} ability.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -359,24 +321,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
-        },
-        RankAbility {
-            name: "Greater Wellspring of Power",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{wellspring of power} ability increases to \plus6.
-            ",
-            modifiers: Some(vec![Modifier::Power(4)]),
-        },
-        RankAbility {
-            name: "Mystic Insights",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                You gain two additional \textit{mystic insight} abilities.
-            ",
-            modifiers: None,
         },
     ];
 }
@@ -580,6 +524,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus to your Armor and Reflex defenses increases to \plus2.
                     \end{activeability}
                 }
+
+                \advancement At ranks 3, 5, and 7, each wild aspect increases in power as indicated above.
             ",
             // Arbitrarily choose Bear form, since it's easy to represent? Unclear.
             // TODO: no way to represent natural weapons.
@@ -593,14 +539,25 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{shift body} ability whenever you finish a \glossterm{long rest}.
                 \begin{attuneability}{Shift Body}
                     \rankline
-                    When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
+                    When you use this ability, choose a physica \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
                     You gain a \plus1 bonus to the base value of that attribute.
                 \end{attuneability}
+
+                \advancement At rank 5, this ability loses the \abilitytag{Attune} tag.
+                Instead, it lasts until you use it again.
             ",
             modifiers: Some(vec![
                 Modifier::BaseAttribute(Attribute::Constitution, 1),
                 Modifier::Resource(Resource::AttunementPoint, -1),
             ]),
+        },
+        RankAbility {
+            name: "Shift Body+",
+            is_magical: true,
+            rank: 5,
+            description: r"
+            ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             name: "Regenerative Shift",
@@ -609,6 +566,16 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you activate a new \ability{wild aspect}, you regain hit points equal to a quarter of your maximum hit points.
                 This cannot increase your hit points above half your maximum hit points.
+
+                \advancement At rank 6, you can also remove one \glossterm{condition} that was not applied during the current round whenever you activate a new \textit{wild aspect}.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Regenerative Shift+",
+            is_magical: true,
+            rank: 6,
+            description: r"
             ",
             modifiers: None,
         },
@@ -618,6 +585,16 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with natural weapons.
+
+                \advancement At rank 6, this bonus increases to \plus2d.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
+            name: "Natural Force+",
+            is_magical: true,
+            rank: 6,
+            description: r"
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -631,43 +608,16 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 You may choose to reshape any body armor you wear as barding to fit the animal instead of melding it into your form.
                 The armor regains its normal shape if you take it off,.
                 For details about shapeshifting, see \pcref{Shapeshift}.
+
+                \advancement At rank 7, you may either grow or shrink by one \glossterm{size category} when you shapeshift with this ability, regardless of whether it would normally be appropriate for that animal.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Greater Shift Body",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                Your \textit<shift body> ability loses the \abilitytag{Attune} tag.
-                Instead, it lasts until you use it again.
-            ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
-        },
-        RankAbility {
-            name: "Greater Natural Force",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The bonus from your \textit{natural force} ability increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Greater Regenerative Shift",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                When you heal with your \textit{regenerative shift} ability, you can also remove one \glossterm{condition}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Animal Shape",
+            name: "Animal Shape+",
             is_magical: true,
             rank: 7,
             description: r"
-                When you shapeshift with your \textit{animal shape} ability, you may either grow or shrink by one \glossterm{size category}, regardless of whether it would normally be appropriate for that animal.
             ",
             modifiers: None,
         },
@@ -740,8 +690,18 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     \item Underground: A dire rat appears that has \trait{low-light vision}.
                         It has a bite \glossterm{natural weapon}.
                 \end{itemize}
+
+                \advancement At rank 7, you may choose to have a Large natural servant appear instead of a Medium natural servant.
             ",
             // TODO: represent a whole extra creature???
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Natural Servant+",
+            is_magical: true,
+            rank: 7,
+            description: r"
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -758,6 +718,17 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     This ability does not make the target any more friendly or cooperative than normal.
                     Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
                 \end{sustainability}
+
+                \advancement At rank 6, you may target any living creature that knows at least one language.
+                If you target a non-animal in this way, you do not gain the ability to speak with and understand the speech of other creatures of the target's species.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Animal Speech+",
+            is_magical: true,
+            rank: 6,
+            description: r"
             ",
             modifiers: None,
         },
@@ -769,6 +740,19 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 Animals will not willingly attack you or your \glossterm{allies} within a \largearea radius \glossterm{emanation} from you.
                 They can be compelled to attack despite this protection with a Creature Handling check against a \glossterm{difficulty value} equal to 10 \add your level.
                 If any target attacks a creature that this ability protects you from, this ability is \glossterm{suppressed} until you take a \glossterm{short rest}.
+
+                \advancement At rank 5, this ability also protects you and your allies from plant-based \glossterm{animates }and elemental-based \glossterm{planeforged}.
+                In addition, all creatures that you are protected from with this ability automatically attempt to aid you and your allies if they observe you fighting.
+                Finally, the effect can no longer be bypassed with a Creature Handling check or any other form of control that does not first suppress this effect.
+                Even creatures summoned by enemies to fight you will immediately turn on their summoners or otherwise avoid attacking you.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Nature's Ally+",
+            is_magical: true,
+            rank: 5,
+            description: r"
             ",
             modifiers: None,
         },
@@ -778,46 +762,14 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You and your \textit{natural servant} gain a \plus1d damage bonus with \glossterm{natural weapons}.
+
+                \advancement At rank 6, this bonus increases to \plus2d.
             ",
             // TODO: make this only work with natural weapons
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Greater Natural Servant",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                Your \textit{natural servant} gains an \glossterm{attunement point}.
-                This attunement point is shared among any creatures you summon with your \textit{natural servant} ability.
-                In addition, you can cast \abilitytag{Attune} spells on your \textit{natural servant} if it is within \shortrange of you.
-                When you do, the natural servant attunes to the spell intead of you, as if the spell was an \abilitytag{Attune} (target) spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Nature's Ally",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                Your \textit{nature's ally} ability also protects you and your allies from plant-based animates and elemental-based animates.
-                In addition, all creatures that you are protected from with this ability automatically attempt to aid you and your allies if they observe you fighting.
-                Finally, the effect can no longer be bypassed with a Creature Handling check or any other form of control that does not first suppress this effect.
-                Even creatures summoned by enemies to fight you will immediately turn on their summoners or otherwise avoid attacking you.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Universal Speech",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                When you use your \textit{animal speech} ability, you can choose any living creature that knows at least one language.
-                When you do, you can speak in and understand that creature's native language.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Greater Nature's Might",
+            name: "Nature's Might+",
             is_magical: true,
             rank: 6,
             description: r"
@@ -827,12 +779,24 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Supreme Natural Servant",
+            name: "Natural Attunement",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                Your \textit{natural servant} gains an \glossterm{attunement point}.
+                This attunement point is shared among any creatures you summon with your \textit{natural servant} ability.
+                In addition, you can cast \abilitytag{Attune} spells on your \textit{natural servant} if it is within \shortrange of you.
+                When you do, the natural servant attunes to the spell intead of you, as if the spell was an \abilitytag{Attune} (target) spell.
+
+                \advancement At rank 7, your natural servant gains an additional attunement point.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Natural Attunement+",
             is_magical: true,
             rank: 7,
             description: r"
-                Your \textit{natural servant} gains two additional \glossterm{attunement points}.
-                In addition, you may choose to have a Large natural servant appear instead of a Medium natural servant.
             ",
             modifiers: None,
         },
