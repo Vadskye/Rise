@@ -21,8 +21,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-
-                \advancement At rank 5, this bonus increases to five times your rank in this archetype.
             ",
             modifiers: Some(vec![Modifier::DamageResistance(6)]),
         },
@@ -30,7 +28,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             name: "Battle-Scarred+",
             is_magical: false,
             rank: 5,
-            description: r"",
+            description: r"
+                The damage resistance bonus increases to five times your rank in this archetype.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -74,8 +74,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 When you use the \textit{recover} ability, you regain a quarter of your maximum \glossterm{damage resistance} at the end of the round (see \pcref{Recover}).
-
-                \advancement At rank 6, this recovery increases to half your maximum damage resistance.
             ",
             modifiers: None,
         },
@@ -83,7 +81,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             name: "Resilient Recovery+",
             is_magical: false,
             rank: 6,
-            description: r"",
+            description: r"
+                The damage resistance recovery increases to half your maximum damage resistance.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -92,8 +92,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 6, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -101,7 +99,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             name: "Battleforged Force+",
             is_magical: false,
             rank: 6,
-            description: r"",
+            description: r"
+                The damage bonus increases to \plus2d.
+            ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
@@ -156,8 +156,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The power bonus increases to \plus8.
                     \rank{7} The power bonus increases to \plus16.
                 \end{sustainability}
-
-                \advancement At ranks 3, 5, and 7, this ability improves as described above.
             ",
             modifiers: Some(vec![
                 Modifier::Power(2),
@@ -202,9 +200,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} The damage bonus increases to \plus8.
                     \rank{6} The damage bonus increases to \plus16.
                 \end{activeability}
-
-                \advancement At ranks 4 and 6, this ability improves as described above.
-                At rank 7, you gain the accuracy and damage bonuses against each creature that attacked you during the previous round, regardless of whether they dealt damage to you.
             ",
             // This is too inconsistent to add as a generally usable strike
             modifiers: None,
@@ -213,7 +208,9 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             name: "Enraged Strike+",
             is_magical: false,
             rank: 7,
-            description: r"",
+            description: r"
+                When you use your \ability{enraged strike} ability, you gain the accuracy and damage bonuses against each creature that attacked you during the previous round, regardless of whether they dealt damage to you.
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -222,8 +219,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You ignore all penalties to your accuracy and damage resistance from \glossterm{vital wounds}.
-
-                \advancement At rank 6, you also ignore penalties to your movement speed and defenses from vital wounds.
             ",
             modifiers: None,
         },
@@ -232,6 +227,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                You ignore penalties to your movement speed and defenses from vital wounds.
             ",
             modifiers: None,
         },
@@ -241,8 +237,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 6, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -250,7 +244,9 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             name: "Furious Force+",
             is_magical: false,
             rank: 6,
-            description: r"",
+            description: r"
+                The damage bonus increases to \plus2d.
+            ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
@@ -268,7 +264,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You are immune to being \shaken, \frightened, and \panicked during your \textit{rage} ability.
-                In addition, being panicked does not prevent you from entering a rage.
             ",
             modifiers: None,
         },
@@ -296,8 +291,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use your Strength or Dexterity in place of your Perception to determine your \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, and \textit{trip} abilities, as well as with grapple actions (see \pcref{Special Combat Abilities}, and \pcref{Grapple Actions}).
                 In addition, you gain a \plus1 bonus to \glossterm{accuracy} with those abilities and with the \textit{shove} ability.
-
-                \advancement At rank 5, the accuracy bonus increases to \plus3.
             ",
             modifiers: None,
         },
@@ -306,6 +299,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                The accuracy bonus increases to \plus3.
             ",
             modifiers: None,
         },
@@ -326,8 +320,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
                 In addition, when you use the \ability{sprint} ability, you can move through spaces occupied by enemies during that movement (see \pcref{Sprint}).
 
-                \advancement At rank 6, the speed bonus increases to \plus10 feet.
-                In addition, when you use the \ability{overrun} or \ability{shove} abilities, you can simultaneously use the \ability{sprint} ability to increase your movement speed during the effect.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
@@ -336,6 +328,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The speed bonus increases to \plus10 feet.
+                In addition, when you use the \ability{overrun} or \ability{shove} abilities, you can simultaneously use the \ability{sprint} ability to increase your movement speed during the effect.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
@@ -355,8 +349,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 6, the bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -365,6 +357,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -490,8 +483,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                     you can exchange any number of maneuvers you know for other maneuvers,
                     including maneuvers of the higher rank.
 
-                \advancement You learn an additional primal maneuver at rank 4 and rank 7.
-                The maximum rank of primal maneuvers that you can learn is equal to your rank in this archetype.
+                \advancement The maximum rank of primal maneuvers that you can learn is equal to your rank in this archetype.
                 Primal maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
@@ -501,6 +493,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
+                You learn an additional primal maneuver.
             ",
             modifiers: None,
         },
@@ -509,6 +502,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
+                You learn an additional primal maneuver.
             ",
             modifiers: None,
         },
@@ -518,8 +512,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 5, the bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -528,6 +520,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -537,8 +530,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points}.
-
-                \advancement At rank 6, the bonus increases to four times your rank in this archetype.
             ",
             // Handled as part of bulk silent scaling
             modifiers: None,
@@ -548,6 +539,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The hit point bonus increases to four times your rank in this archetype.
             ",
             // Handled as part of bulk silent scaling
             modifiers: None,
@@ -568,40 +560,18 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Bear} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
                 In addition, you gain a \plus1 bonus to your Fortitude defense.
 
-                At rank 4, the hit point bonus increases to four times your rank in this archetype, and the Fortitude defense bonus increases to \plus2.
-                At rank 7, the hit point bonus increases to five times your rank in this archetype, and the Fortitude defense bonus increases to \plus3.
-
                 \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it into any space adjacent to you.
                 This ability has no effect on creatures that are two or more size categories larger than you.
-
-                At rank 4, if the creature loses \glossterm{hit points} from the strike, you can also knock it \prone or enter a grapple with it (see \pcref{Grappling}).
-                At rank 7, the creature does not have to lose hit points for you to knock it prone or grapple it.
 
                 \subcf{Eagle} You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                 In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
 
-                % TODO: The narrative connection here is loose
-                At rank 4, you gain a \plus3 bonus to the Awareness skill, and you become immune to being \dazzled and \blinded.
-                At rank 7, the longshot penalty reduction increases to 2, and the Awareness bonus increases to \plus6.
-
                 \subcf{Lion} You gain a \plus1 bonus to \glossterm{accuracy} as long as you have an \glossterm{ally} adjacent to you.
-
-                At rank 4, you gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
-                At rank 7, the accuracy bonus increases to \plus2.
 
                 \subcf{Shark} You gain a \plus2 bonus to \glossterm{accuracy} against creatures within \shortrange of you that are below their maximum hit points.
 
-                % TODO: should probably be +3/+4?
-                At rank 4, the accuracy bonus increases to \plus4.
-                At rank 7, the accuracy bonus increases to \plus6.
-
                 \subcf{Wolf} At the start of each round, you may choose one of your \glossterm{allies}.
                 That creature gains a \plus1 bonus to \glossterm{accuracy} during that round as long as it is adjacent to you.
-
-                At rank 4, you gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
-                At rank 7, the accuracy bonus increases to \plus2.
-
-                \advancement At ranks 4 and 7, each totem animal improves as indicated above.
             ",
             // For convenience in balancing, assume lion totem instead of representing each totem
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -611,6 +581,22 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
+                The benefit from your \textit{totem animal} ability improves.
+
+                \subcf{Bear} The hit point bonus increases to four times your rank in this archetype.
+                In addition, the Fortitude bonus increases to \plus2.
+
+                \subcf{Crocodile} If the creature loses \glossterm{hit points} from the strike, you can also knock it \prone or enter a grapple with it (see \pcref{Grappling}).
+
+                % TODO: The narrative connection here is loose
+                \subcf{Eagle} You gain a \plus3 bonus to the Awareness skill.
+                In addition, you are immune to being \dazzled and \blinded.
+
+                \subcf{Lion} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
+
+                \subcf{Shark} The accuracy bonus increases to \plus4.
+
+                \subcf{Wolf} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
@@ -619,6 +605,21 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
+                The benefit from your \textit{totem animal} ability improves further.
+
+                \subcf{Bear} The hit point bonus increases to five times your rank in this archetype.
+                In addition, the Fortitude bonus increases to \plus3.
+
+                \subcf{Crocodile} The creature does not have to lose hit points for you to knock it prone or grapple it.
+
+                \subcf{Eagle} The longshot penalty reduction increases to 2.
+                In addition, the Awareness bonus increases to \plus6.
+
+                \subcf{Lion} The accuracy bonus increases to \plus2.
+
+                \subcf{Shark} The accuracy bonus increases to \plus6.
+
+                \subcf{Wolf} The accuracy bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -629,9 +630,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you \glossterm{explode} with an attack roll, you gain a \plus2 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
                 This bonus stacks with itself if you explode multiple times with the same attack roll.
-
-                \advancement At rank 5, your attacks \glossterm{explode} on a 9 in addition to the normal explosion on a 10.
-                This does not affect additional rolls with exploding dice.
             ",
             // TODO: figure out how to represent this
             modifiers: None,
@@ -641,6 +639,8 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                Your attacks \glossterm{explode} on a 9 in addition to the normal explosion on a 10.
+                This does not affect additional rolls with exploding dice.
             ",
             modifiers: None,
         },
@@ -650,8 +650,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your Reflex defense and \glossterm{initiative} checks.
-
-                \advancement At rank 6, these bonuses increase to \plus3.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Reflex, 2),
@@ -663,6 +661,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The Reflex defense and initiative bonuses increase to \plus3.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Reflex, 1),
@@ -675,8 +674,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 6, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -685,6 +682,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
