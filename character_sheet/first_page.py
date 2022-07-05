@@ -723,7 +723,6 @@ def boring_stuff(destination):
                                     },
                                     [
                                         option({"value": ""}, ""),
-                                        option({"value": "0.5"}, "Half"),
                                         option({"value": "1"}, "One"),
                                         option({"value": "4"}, "Four"),
                                     ],
