@@ -78,7 +78,7 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
-            name="Shocking",
+            name="Arcing",
             rank=2,
             tags=[],
             description="""
@@ -86,20 +86,22 @@ def generate_weapons():
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
-                Each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\dazed.
+                The strike also affects one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
+                The secondary target does not have to be within your \\glossterm<reach>.
             """,
-            short_description="Deals electicity damage and can daze",
+            short_description="Deals electicity damage and can arc 15 feet",
         ),
         create_weapon(
-            name="Shocking, Greater",
+            name="Arcing, Greater",
             rank=5,
             tags=["Attune (deep)"],
             description="""
                 This weapon continuously crackles with electricity.
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-                Whenever you cause a creature to lose \\glossterm<hit points> with a \\glossterm<strike>, that creature becomes \\glossterm<briefly> \\dazed.
+                Whenever you make a strike, the strike can also affect one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
+                The secondary target does not have to be within your \\glossterm<reach>.
             """,
-            short_description="Deals electricity damage and dazes",
+            short_description="Deals electricity damage and arcs 15 feet",
         ),
     ]
 
@@ -159,6 +161,60 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
+            name="Studied",
+            rank=3,
+            description="""
+                You gain a \\glossterm<magic bonus> to your \\glossterm<power> equal to your Intelligence.
+            """,
+            short_description="Grants power equal to Intelligence",
+        ),
+        create_weapon(
+            name="Studied, Greater",
+            rank=5,
+            description="""
+                You gain a \\glossterm<magic bonus> to your \\glossterm<power> equal to twice your Intelligence.
+            """,
+            short_description="Grants power equal to twice Intelligence",
+        ),
+        create_weapon(
+            name="Studied, Supreme",
+            rank=7,
+            description="""
+                You gain a \\glossterm<magic bonus> to your \\glossterm<power> equal to four times your Intelligence.
+            """,
+            short_description="Grants power equal to four times Intelligence",
+        ),
+    ]
+
+    weapons += [
+        create_weapon(
+            name="Finesse",
+            rank=3,
+            description="""
+                You gain a \\glossterm<magic bonus> to your \\glossterm<power> equal to your Dexterity.
+            """,
+            short_description="Grants power equal to Dexterity",
+        ),
+        create_weapon(
+            name="Finesse, Greater",
+            rank=5,
+            description="""
+                You gain a \\glossterm<magic bonus> to your \\glossterm<power> equal to twice your Dexterity.
+            """,
+            short_description="Grants power equal to twice Dexterity",
+        ),
+        create_weapon(
+            name="Finesse, Supreme",
+            rank=7,
+            description="""
+                You gain a \\glossterm<magic bonus> to your \\glossterm<power> equal to four times your Dexterity.
+            """,
+            short_description="Grants power equal to four times Dexterity",
+        ),
+    ]
+
+    weapons += [
+        create_weapon(
             name="Tireless",
             rank=1,
             description="""
@@ -181,6 +237,29 @@ def generate_weapons():
                 You reduce your \\glossterm<fatigue penalty> by 3 when determining your \\glossterm<accuracy> with \\glossterm<strikes> using this weapon.
             """,
             short_description="Ignores 3 fatigue with strikes",
+        ),
+    ]
+
+    weapons += [
+        create_weapon(
+            name="Unbalanced",
+            rank=3,
+            description="""
+                You take a -1 \\glossterm<accuracy> penalty to strikes using this weapon.
+                However, your attack rolls with strikes using this weapon \\glossterm<explode> on a 9.
+                This does not affect bonus dice rolled for exploding attacks (see \\pcref<Exploding Attacks>).
+            """,
+            short_description="-1 accuracy, but explode on a 9",
+        ),
+        create_weapon(
+            name="Unbalanced, Greater",
+            rank=7,
+            description="""
+                You take a -2 \\glossterm<accuracy> penalty to strikes using this weapon.
+                However, your attack rolls with strikes using this weapon \\glossterm<explode> on an 8 or 9.
+                This does not affect bonus dice rolled for exploding attacks (see \\pcref<Exploding Attacks>).
+            """,
+            short_description="-2 accuracy, but explode on an 8 or 9",
         ),
     ]
 
