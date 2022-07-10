@@ -35,8 +35,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 If you try to create a fourth item, you must stop maintaining the existence of another item created.
                 You can do this as a \glossterm{free action} regardless of distance.
                 This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
-
-                \advancement At rank 5, the number of items you can simultaneously create and maintain with this ability increases to be equal to your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -45,6 +43,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
+                The number of items you can simultaneously create and maintain with this ability increases to be equal to your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -71,8 +70,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }
-
-                \advancement At ranks 4 and 6, you gain an additional \textit{alchemical discovery} ability.
             ",
             modifiers: None,
         },
@@ -81,6 +78,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You gain an additional \textit{alchemical discovery} ability.
             ",
             modifiers: None,
         },
@@ -89,6 +87,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                You gain an additional \textit{alchemical discovery} ability.
             ",
             modifiers: None,
         },
@@ -108,9 +107,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Fortitude defense.
                 In addition, you are immune to poisons.
-
-                \advancement At rank 7, the defense bonus increases to +2.
-                In addition, you are immune to acid damage.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
@@ -119,6 +115,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                The defense bonus increases to +2.
+                In addition, you are immune to acid damage.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
@@ -128,8 +126,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can drink up to two doses of potions, elixirs, and other drinkable alchemical items as part of the same standard action.
-
-                \advancement At rank 7, you can drink a single dose of a potion, elixir, or other drinkable alchemical item as a \glossterm{minor action}.
             ",
             modifiers: None,
         },
@@ -138,6 +134,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
+                You can drink a single dose of a potion, elixir, or other drinkable alchemical item as a \glossterm{minor action}.
             ",
             modifiers: None,
         },
@@ -168,8 +165,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
 
-                \advancement At ranks 2, 4, and 7, you learn an additional arcane spell.
-                The maximum rank of arcane spells that you can learn is equal to your rank in this archetype.
+                \advancement The maximum rank of arcane spells that you can learn is equal to your rank in this archetype.
                 Arcane spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
@@ -179,6 +175,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
+                You learn an additional arcane spell.
             ",
             modifiers: None,
         },
@@ -187,6 +184,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You learn an additional arcane spell.
             ",
             modifiers: None,
         },
@@ -195,6 +193,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You learn an additional arcane spell.
             ",
             modifiers: None,
         },
@@ -217,10 +216,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
                     In addition, it is automatically dismissed if you wear other body armor of any kind.
                 \end{activeability}
-
-                \advancement At rank 3, the damage resistance bonus increases to three times your rank in this archetype.
-                At rank 6, the damage resistance bonus increases to four times your rank in this archetype.
-                In addition, the defense bonus from the body armor increases to \plus3.
             ",
             // Assuming no other armor
             modifiers: Some(vec![
@@ -233,6 +228,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"        
+                The damage resistance bonus increases to three times your rank in this archetype.
             ",
             // Rank 2: 4. Rank 3: 9.
             modifiers: None,
@@ -242,6 +238,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                The damage resistance bonus increases to four times your rank in this archetype.
+                In addition, the defense bonus from the body armor increases to \plus3.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
@@ -343,8 +341,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
                     \par You cannot choose this insight multiple times.
                 }
-
-                \advancement At ranks 4 and 6, you gain an additional scholastic insight.
             ",
             modifiers: None,
         },
@@ -353,6 +349,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You gain an additional scholastic insight.
             ",
             modifiers: None,
         },
@@ -361,6 +358,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                You gain an additional scholastic insight.
             ",
             modifiers: None,
         },
@@ -389,11 +387,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
 
                 You can have only one spell with this ability active at a time.
                 If you use this ability again with a different spell, the old contingency is removed.
-
-                \advancement At rank 7, you may have two separate contingencies active at the same time.
-                Each contingency may have separate triggering conditions.
-                Only one contigency can trigger each round.
-                If multiple contingencies would activate simultaneously, choose one to activate randomly.
             ",
             modifiers: None,
         },
@@ -402,6 +395,10 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You may have two separate contingencies active at the same time.
+                Each contingency may have separate triggering conditions.
+                Only one contigency can trigger each round.
+                If multiple contingencies would activate simultaneously, choose one to activate randomly.
             ",
             modifiers: None,
         },
@@ -448,9 +445,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                 }
-
-                \advancement At rank 4, you gain an additional \textit{mystic insight}.
-                At rank 7, you gain two additional \textit{mystic insights}.
             ",
             modifiers: None,
         },
@@ -459,6 +453,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You gain an additional \textit{mystic insight}.
             ",
             modifiers: None,
         },
@@ -467,6 +462,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You gain two additional \textit{mystic insights}.
             ",
             modifiers: None,
         },
@@ -487,8 +483,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power}.
-
-                \advancement At rank 6, this bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
@@ -497,6 +491,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                The power bonus increases to +6.
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },
@@ -529,48 +524,22 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
                     In addition, you gain a \plus1 bonus to your Armor defense.
 
-                    At rank 4, the damage resistance bonus increases to four times your rank in this archetype.
-                    At rank 7, the damage resistance bonus increases to five times your rank in this archetype.
-                    In addition, the defense bonus increases to \plus2.
-
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
                     If you specialize in this school, you double the \glossterm{range} of arcane spells you cast.
-
-                    At rank 4, you triple your range instead.
-                    At rank 7, you quadruple your range instead.
 
                 \subcf{Evocation} The \sphere{cryomancy}, \sphere{electromancy}, and \sphere{pyromancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your \glossterm{power}.
 
-                    At rank 4, this bonus increases to +5.
-                    At rank 7, this bonus increases to +12.
-
                 \subcf{Illusion} The \sphere{enchantment}, \sphere{photomancy}, and \sphere{umbramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus1 bonus to your \glossterm{accuracy}.
-
-                    At rank 4, you gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-                    In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
-                    If you already have that ability, you increase its range by 60 feet.
-                    At rank 7, the accuracy bonus increases to +2.
 
                 \subcf{Transmutation} The \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your Fortitude, Reflex, or Mental defense.
                     You can change which defense this bonus applies to as a \glossterm{minor action}.
 
-                    At rank 4, the bonus increases to +3.
-                    At rank 7, the bonus increases to +4.
-                    In addition, you can change which defense the bonus applies to as a \glossterm{free action}.
-
                 \subcf{Necromancy} The \sphere{revelation} and \sphere{vivimancy} mystic spheres.
                     If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
                     In addition, you gain a \plus1 bonus to your Fortitude defense.
-
-                    At rank 4, the hit point bonus increases to four times your rank in this archetype.
-                    In addition, the defense bonus increases to \plus2.
-                    At rank 7, the hit point bonus increases to five times your rank in this archetype.
-                    In addition, the defense bonus increases to \plus3.
-
-                \advancement At ranks 4 and 7, the benefit from each school improves as described above.
             ",
             // Assume evocation
             modifiers: Some(vec![
@@ -583,6 +552,23 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                Your understanding of your chosen school improves.
+                {
+                    \subcf{Abjuration} The bonus to damage resistance increases to four times your rank in this archetype.
+
+                    \subcf{Conjuration} The range improvement increases to triple your range.
+
+                    \subcf{Evocation} The power bonus increases to \plus5.
+
+                    \subcf{Illusion} You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+                    In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
+                    If you already have that ability, you increase its range by 60 feet.
+
+                    \subcf{Transmutation} The defense bonus increases to \plus3.
+
+                    \subcf{Necromancy} The hit point bonus increases to four times your rank in this archetype.
+                    In addition, the Fortitude bonus increases to \plus2.
+                }
             ",
             modifiers: Some(vec![Modifier::Power(3)]),
         },
@@ -591,6 +577,23 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                Your understanding of your chosen school reaches its full potential.
+                {
+                    \subcf{Abjuration} The bonus to damage resistance increases to five times your rank in this archetype.
+                    In addition, the Armor bonus increases to \plus2.
+
+                    \subcf{Conjuration} The range improvement increases to quadruple your range.
+
+                    \subcf{Evocation} The power bonus increases to \plus12.
+
+                    \subcf{Illusion} The accuracy bonus increases to \plus2.
+
+                    \subcf{Transmutation} The defense bonus increases to \plus4.
+                    In addition, you can change which defense the bonus applies to as a \glossterm{free action}.
+
+                    \subcf{Necromancy} The hit point bonus increases to five times your rank in this archetype.
+                    In addition, the Fortitude bonus increases to \plus3.
+                }
             ",
             modifiers: Some(vec![Modifier::Power(10)]),
         },
@@ -600,8 +603,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You learn an additional arcane spell from your chosen school.
-
-                \advancement At rank 5, you learn an additional arcane spell from your chosen school.
             ",
             modifiers: None,
         },
@@ -610,6 +611,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
+                You learn an additional arcane spell from your chosen school.
             ",
             modifiers: None,
         },
