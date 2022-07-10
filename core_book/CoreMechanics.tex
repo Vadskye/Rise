@@ -662,6 +662,20 @@ This chapter describes the core mechanics of Rise.
             You can always attempt to use an ability on an invalid target.
             If the target is still invalid when the ability resolves, the ability automatically fails and has no effect on the target.
 
+        \subsubsection{Primary and Secondary Targets}\label{Primary and Secondary Targets}
+            Some abilities that affect multiple targets distinguish between their primary and secondary targets.
+            For example, the \spell{chain lightning} spell affects secondary targets within a small radius around a primary target.
+            If an ability does not mention secondary targets, all of its targets are primary targets.
+            Unless otherwise specified, abilities have the same effect on their primary and secondary targets.
+            However, some targeting rules are different between the two.
+
+            First, \glossterm{line of effect} for secondary targets is always measured from the primary target, rather than from the ability's source.
+            However, \glossterm{line of sight} is still measured from the ability's source.
+            This can allow you to hit secondary targets behind walls if you can still see them or otherwise target them, and if there is no wall separating from the primary target.
+
+            Second, secondary targets use the same \glossterm{longshot penalty} as the primary target, even if they are farther away.
+            
+
     \subsection{Range}\label{Range}
         Many abilities can only affect targets or areas within a given \glossterm{range} of you.
         For abilities that affect specific targets, all targets must be within the range.
