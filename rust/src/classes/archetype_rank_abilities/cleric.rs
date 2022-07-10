@@ -27,8 +27,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
 
-                \advancement At ranks 2, 4, and 7, you learn an additional divine spell.
-                The maximum rank of divine spells that you can learn is equal to your rank in this archetype.
+                \advancement The maximum rank of divine spells that you can learn is equal to your rank in this archetype.
                 Divine spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
@@ -38,6 +37,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
+                You learn an additional divine spell.
             ",
             modifiers: None,
         },
@@ -46,6 +46,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You learn an additional divine spell.
             ",
             modifiers: None,
         },
@@ -54,6 +55,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You learn an additional divine spell.
             ",
             modifiers: None,
         },
@@ -91,9 +93,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                 }
-
-                \advancement At rank 4, you gain an additional \textit{mystic insight}.
-                At rank 7, you gain two additional \textit{mystic insights}.
             ",
             modifiers: None,
         },
@@ -102,6 +101,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You gain an additional \textit{mystic insight}.
             ",
             modifiers: None,
         },
@@ -110,6 +110,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You gain two additional \textit{mystic insights}.
             ",
             modifiers: None,
         },
@@ -129,8 +130,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     This attack's accuracy increases by \plus2 for each rank beyond 2.
                 \end{activeability}
-
-                \advancement At each rank, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -140,8 +139,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power}.
-
-                \advancement At rank 6, this bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
@@ -150,6 +147,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                The power bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },
@@ -214,8 +212,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 Each domain has a corresponding \textit{domain aspect}.
                 A domain aspect is an active ability that allows you to exert the influence of your domain in the world.
                 You gain the \textit{domain aspect} ability for one of your domains (see \pcref{Cleric Domain Abilities}).
-
-                \advancement At rank 3, you gain the \textit{domain aspect} for another one of your domains.
             ",
             // Domain aspects are also weird. Some give statistical benfits, but many don't
             modifiers: None,
@@ -225,6 +221,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
+                At rank 3, you gain the \textit{domain aspect} for another one of your domains.
             ",
             modifiers: None,
         },
@@ -252,8 +249,15 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 If the deity has a direct interest in your situation, the miracle may be of even greater power.
 
                 If you perform an extraordinary service for your deity, you can gain the ability to request an additional miracle that week.
-
-                \advancement At rank 7, you can use this ability once per 24 hours instead of once per week.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Miracle+",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                You can use this ability once per 24 hours instead of once per week.
             ",
             modifiers: None,
         },
@@ -309,8 +313,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to all defenses.
                 Whenever you attack or deal damage to a living creature, you \glossterm{briefly} lose this bonus.
-
-                \advancement At rank 5, this bonus increases to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
@@ -324,6 +326,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
+                The defense bonus increases to \plus2.
             ",
             modifiers: None,
         },
@@ -346,8 +349,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                         you do not increase your fatigue level when you use this ability.
                     \rank{7} The target can remove an additional \glossterm{vital wound}.
                 \end{activeability}
-
-                \advancement At ranks 3 and 5, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -359,8 +360,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 At the end of each phase, you automatically know the identity and location of each living \glossterm{ally} within \longrange of you that lost \glossterm{hit points} during that phase.
                 In addition, you can choose to \glossterm{teleport} to any one of those allies.
                 You arrive in the unoccupied square on solid ground closest to that ally.
-
-                \advancement At rank 7, this ability no longer requires \glossterm{line of sight} or \glossterm{line of effect}, and the range increases to \extrange.
             ",
             modifiers: None,
         },
@@ -369,6 +368,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                This ability no longer requires \glossterm{line of sight} or \glossterm{line of effect}, and the range increases to \extrange.
             ",
             modifiers: None,
         },
@@ -411,8 +411,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} Each target is stunned instead of dazed.
                     \rank{7} Each target with no remaining \glossterm{damage resistance} is \confused instead of stunned.
                 \end{activeability}
-
-                \advancement At ranks 3, 5, and 7, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -446,8 +444,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The recovery increases to 4d10.
                     \rank{7} The recovery increases to 5d10.
                 \end{activeability}
-
-                \advancement At each rank, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -458,8 +454,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your \glossterm{allies} who can hear you in a fight gain a \plus1 bonus to their Mental defense.
                 You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
-
-                \advancement At rank 6, this bonus increases to \plus2.
             ",
             // TODO: figure out allies-only buffs
             modifiers: None,
@@ -469,6 +463,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The defense bonus increases to \plus2.
             ",
             modifiers: None,
         },
@@ -487,8 +482,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{7} Each target with no remaining \glossterm{damage resistance} is \frightened instead of shaken.
                 \end{activeability}
-
-                \advancement At rank 7, this ability improves as described above.
             ",
             modifiers: None,
         },
