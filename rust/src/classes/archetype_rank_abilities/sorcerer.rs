@@ -29,8 +29,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
 
-                \advancement At ranks 2, 4, and 7, you learn an additional arcane spell.
-                The maximum rank of arcane spells that you can learn is equal to your rank in this archetype.
+                \advancement The maximum rank of arcane spells that you can learn is equal to your rank in this archetype.
                 Arcane spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
@@ -40,6 +39,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
+                You learn an additional arcane spell.
             ",
             modifiers: None,
         },
@@ -48,6 +48,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You learn an additional arcane spell.
             ",
             modifiers: None,
         },
@@ -56,6 +57,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You learn an additional arcane spell.
             ",
             modifiers: None,
         },
@@ -78,10 +80,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
                     In addition, it is automatically dismissed if you wear other body armor of any kind.
                 \end{activeability}
-
-                \advancement At rank 3, the damage resistance bonus increases to three times your rank in this archetype.
-                At rank 6, the damage resistance bonus increases to four times your rank in this archetype.
-                In addition, the defense bonus from the body armor increases to \plus3.
             ",
             // Assuming no other armor
             modifiers: Some(vec![
@@ -94,6 +92,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"        
+                The damage resistance bonus increases to three times your rank in this archetype.
             ",
             // Rank 2: 4. Rank 3: 9.
             modifiers: None,
@@ -103,6 +102,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                The damage resistance bonus increases to four times your rank in this archetype.
+                In addition, the defense bonus from the body armor increases to \plus3.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
@@ -183,9 +184,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                 }
-
-                \advancement At rank 4, you gain an additional \textit{mystic insight}.
-                At rank 7, you gain two additional \textit{mystic insights}.
             ",
             modifiers: None,
         },
@@ -194,6 +192,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You gain an additional \textit{mystic insight}.
             ",
             modifiers: None,
         },
@@ -202,6 +201,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You gain two additional \textit{mystic insights}.
             ",
             modifiers: None,
         },
@@ -224,8 +224,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power}.
-
-                \advancement At rank 6, this bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
@@ -234,6 +232,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                The power bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },
@@ -295,8 +294,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
-
-                \advancement At rank 6, this bonus increases to five times your rank in this archetype.
             ",
             modifiers: Some(vec![Modifier::DamageResistance(6)]),
         },
@@ -305,6 +302,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                The damage resistance bonus increases to five times your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -358,8 +356,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You gain a \plus1 bonus to \glossterm{accuracy} with any spell that either deals damage of your dragon's damage type or is from your dragon's \glossterm{mystic sphere}.
-
-                \advancement At rank 7, this bonus increases to +2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -368,6 +364,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                The accuracy bonus increases to +2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -401,8 +398,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \glossterm{magic bonus} equal to twice your rank in this archetype to your \glossterm{hit points} and \glossterm{damage resistance}.
                 Because this is a magic bonus, it does not stack with other magic bonuses (see \pcref{Stacking Rules}).
-
-                \advancement At rank 4, these bonuses increase to three times your rank in this archetype.
             ",
             // TODO: figure out stacking limitations? For now, this conflicts with magic items, so
             // treat it like you have extra attunement points instead.
@@ -413,6 +408,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                The magic bonuses increase to three times your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -428,10 +424,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you are attacked by a new spell, if you already have the ability to cast a spell with this ability, you choose whether to absorb the new spell or retain your currently absorbed spell.
                 When you take a \glossterm{long rest}, you lose the ability to cast any spells you have stored with this ability.
 
-                \advancement At rank 5, you can retain up to two spells with this ability.
-                In addition, whenever you absorb a spell, you gain a +2 \glossterm{accuracy} bonus with that spell during the next round.
-                \advancement At rank 7, you can absorb and retain any \glossterm{magical} attack with this ability, not just spells.
-                In addition, the accuracy bonus increases to +4.
             ",
             modifiers: None,
         },
@@ -440,6 +432,8 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
+                You can retain up to two spells with this ability.
+                In addition, whenever you absorb a spell, you gain a +2 \glossterm{accuracy} bonus with that spell during the next round.
             ",
             modifiers: None,
         },
@@ -448,6 +442,8 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You can absorb and retain any \glossterm{magical} attack with this ability, not just spells.
+                In addition, the accuracy bonus increases to +4.
             ",
             modifiers: None,
         },
@@ -459,10 +455,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
                 You can gain the benefits of one magical implement, such as a staff or wand, without having to hold it in your hands.
                 You must still have it on your person, such as in a pocket or strapped to your back, and you must still be attuned to it to gain its benefits.
                 This ability only affects one implement at a time.
-
-                \advancement At rank 6, you can gain the benefits of an additional magical implement with this ability.
-                In addition, you gain an additional \glossterm{attunement point}.
-                You can only use this attunement point to \glossterm{attune} to magic implements.
             ",
             modifiers: None,
         },
@@ -471,6 +463,9 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                You can gain the benefits of an additional magical implement with this ability.
+                In addition, you gain an additional \glossterm{attunement point}.
+                You can only use this attunement point to \glossterm{attune} to magic implements.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
@@ -508,11 +503,26 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         10 & During the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
                 \end{dtable}
-
-                \advancement At rank 4, the power bonus increases to +5.
+            ",
+            modifiers: Some(vec![Modifier::Power(2)]),
+        },
+        RankAbility {
+            name: "Wildspell+",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                The power bonus increases to +5.
                 In addition, if you use the \textit{desperate exertion} ability on a spell affected by this ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
                 You do not gain any bonus to the wild magic reroll.
-                At rank 7, the power bonus increases to +10.
+            ",
+            modifiers: Some(vec![Modifier::Power(3)]),
+        },
+        RankAbility {
+            name: "Wildspell+",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                The power bonus increases to +10.
                 In addition, you replace your normal wild magic effects with the effects from the \trefnp{Epic Wild Magic Effects} table.
                 \begin{dtable}
                     \lcaption{Epic Wild Magic Effects}
@@ -531,22 +541,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                     \end{dtabularx}
                 \end{dtable}
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
-        },
-        RankAbility {
-            name: "Wildspell+",
-            is_magical: true,
-            rank: 4,
-            description: r"
-            ",
-            modifiers: Some(vec![Modifier::Power(3)]),
-        },
-        RankAbility {
-            name: "Wildspell+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-            ",
             // 5 higher than the previous wildspell+ ability; this is awkward
             modifiers: Some(vec![Modifier::Power(8)]),
         },
@@ -558,8 +552,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 You learn a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags from any \glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
                 The spell does not have to be from a mystic sphere on the arcane mystic sphere list.
                 As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
-
-                \advancement At rank 5, you learn an additional spell with this ability.
             ",
             modifiers: None,
         },
@@ -568,6 +560,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
+                You learn an additional spell with this ability.
             ",
             modifiers: None,
         },
@@ -578,8 +571,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to the roll when you use the \textit{desperate exertion} ability.
                 This bonus stacks with the normal \plus2 bonus provided by that ability.
-
-                \advancement At rank 6, you can use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level} once per \glossterm{short rest}.
             ",
             modifiers: None,
         },
@@ -588,6 +579,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                Once per \glossterm{short rest}, you can use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level}.
             ",
             modifiers: None,
         },
