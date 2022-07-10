@@ -85,6 +85,7 @@ def generate_weapons():
                 This weapon continuously crackles with electricity.
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
+                % TODO: note that it explicitly *does* work if you hit an object like the ground
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
                 The strike also affects one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
                 The secondary target does not have to be within your \\glossterm<reach>.
