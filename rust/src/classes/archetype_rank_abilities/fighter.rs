@@ -24,8 +24,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     When you do, you increase your \glossterm{fatigue level} by one.
                     \rank{7} You can remove any number of effects.
                 \end{activeability}
-
-                \advancement At ranks 3, 5, and 7, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -35,8 +33,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1 bonus to \glossterm{vital rolls} and your \glossterm{fatigue tolerance} (see \pcref{Vital Rolls}, and \pcref{Fatigue Tolerance}).
-
-                \advancement At rank 5, these bonuses increase to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::VitalRoll(1),
@@ -48,6 +44,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                The vital roll and fatigue tolerance bonuses increase to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::VitalRoll(1),
@@ -60,8 +57,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 6, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -69,7 +64,9 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             name: "Disciplined Force+",
             is_magical: false,
             rank: 6,
-            description: r"",
+            description: r"
+                The damage bonus increases to \plus2d.
+            ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
@@ -78,8 +75,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your Mental defense.
-
-                \advancement At rank 6, this bonus increases to \plus3.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Mental, 2)]),
         },
@@ -88,6 +83,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The Mental defense bonus increases to \plus3.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Mental, 1)]),
         },
@@ -97,17 +93,16 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 Whenever you gain a \glossterm{condition}, you \glossterm{briefly} ignore its effects.
-
-                \advancement At rank 7, you also \glossterm{briefly} ignore the vital wound effect of each vital wound you gain.
-                While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to \glossterm{vital rolls}.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Disciplined Reaction+",
+            name: "Vital Discipline",
             is_magical: false,
             rank: 7,
             description: r"
+                You \glossterm{briefly} ignore the vital wound effect of each vital wound you gain.
+                While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to \glossterm{vital rolls}.
             ",
             modifiers: None,
         },
@@ -133,8 +128,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} You can use this ability with only five minutes of training.
                     \rank{6} You can use this ability as a \glossterm{minor action}.
                 \end{activeability}
-
-                \advancement At ranks 4 and 6, this ability improves as described above.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -145,8 +138,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
                 You can only use this attunement point to \glossterm{attune} to magic weapons and magic armor.
-
-                \advancement At rank 5, you can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
@@ -155,6 +146,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                You can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
             ",
             modifiers: None,
         },
@@ -167,10 +159,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you reduce the movement speed penalty from body armor you wear by 5 feet.
                 Your Dexterity also contributes more to your Armor defense than normal for your armor.
                 A multiplier of \mult1/2 becomes \mult1, and a multiplier of \mult0 becomes a \mult1/2.
-
-                \advancement At rank 6, the encumbrance reduction increases to 2.
-                In addition, the movement speed penalty reduction increases to 10 feet.
-                You also always apply your full Dexterity to your Armor defense, regardless of the armor you use.
             ",
             // TODO: figure out how to represent dexterity and speed
             modifiers: Some(vec![Modifier::Encumbrance(-1), Modifier::MovementSpeed(5)]),
@@ -180,6 +168,9 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The encumbrance reduction increases to 2.
+                In addition, the movement speed penalty reduction increases to 10 feet.
+                You also always apply your full Dexterity to your Armor defense, regardless of the armor you use.
             ",
             modifiers: Some(vec![Modifier::Encumbrance(-1)]),
         },
@@ -199,8 +190,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 7, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -209,6 +198,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -326,8 +316,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     you can exchange any number of maneuvers you know for other maneuvers,
                     including maneuvers of the higher rank.
 
-                \advancement You learn an additional martial maneuver at rank 4 and rank 7.
-                The maximum rank of martial maneuvers that you can learn is equal to your rank in this archetype.
+                \advancement The maximum rank of martial maneuvers that you can learn is equal to your rank in this archetype.
                 Martial maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
@@ -337,6 +326,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
+                You learn an additional martial maneuver.
             ",
             modifiers: None,
         },
@@ -345,6 +335,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
+                You learn an additional martial maneuver.
             ",
             modifiers: None,
         },
@@ -354,8 +345,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 5, the bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -364,6 +353,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -373,8 +363,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points}.
-
-                \advancement At rank 6, the bonus increases to four times your rank in this archetype.
             ",
             // Handled as part of bulk silent scaling
             modifiers: None,
@@ -384,6 +372,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The hit point bonus increases to four times your rank in this archetype.
             ",
             // Handled as part of bulk silent scaling
             modifiers: None,
@@ -410,8 +399,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The accuracy bonus increases to \plus2.
                     \rank{7} The accuracy bonus increases to \plus3.
                 \end{activeability}
-
-                \advancement At ranks 3, 5, and 7, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -421,10 +408,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
-
-                \advancement At rank 3, the area affected by this ability increases to a \smallarea radius \glossterm{emanation} from you.
-                However, it does not affect creatures who are moving in a straight line directly towards you.
-                At rank 6, this ability applies \glossterm{difficult terrain} twice, causing enemies to move at one-third speed.
             ",
             modifiers: None,
         },
@@ -433,6 +416,8 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
+                The area affected by this ability increases to a \smallarea radius \glossterm{emanation} from you.
+                However, it does not affect creatures who are moving in a straight line directly towards you.
             ",
             modifiers: None,
         },
@@ -441,6 +426,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                This ability applies \glossterm{difficult terrain} twice, causing enemies to move at one-third speed.
             ",
             modifiers: None,
         },
@@ -460,8 +446,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                     While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
                 \end{activeability}
-
-                \advancement At rank 5, the defense bonus increases to \plus3.
             ",
             modifiers: None,
         },
@@ -470,6 +454,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                The Armor defense bonus increases to \plus3.
             ",
             modifiers: None,
         },
@@ -486,8 +471,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                 \end{activeability}
-
-                \advancement At each rank, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -499,6 +482,15 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1d bonus to your damage with all weapons.
 
                 \advancement At rank 7, this bonus increases to \plus2d.
+            ",
+            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+        },
+        RankAbility {
+            name: "Sentinel's Force+",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -623,9 +615,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The Fortitude defense bonus increases to \plus3.
                     \end{sustainability}
                 }
-
-                \advancement At ranks 3, 5, and 7, each battle tactic improves as described above.
-                In addition, at ranks 4 and 7, you learn an additional battle tactic.
             ",
             modifiers: None,
         },
@@ -634,6 +623,16 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
+                You learn an additional battle tactic.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Battle Tactics+",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                You learn an additional battle tactic.
             ",
             modifiers: None,
         },
@@ -642,10 +641,8 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 bonus to your Armor defense, \glossterm{vital rolls}, or \glossterm{accuracy} against adjacent enemies.
+                You gain a \plus1 bonus to your \glossterm{accuracy} against adjacent enemies, Armor defense, or \glossterm{vital rolls}.
                 As a \glossterm{minor action}, you can change which of these bonuses you gain.
-
-                \advancement At rank 5, this bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -654,6 +651,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                The bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -663,8 +661,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You and each \glossterm{ally} who can see or hear you gain a \plus1 bonus to initiative checks.
-
-                \advancement At rank 6, this bonus increases to \plus2.
             ",
             // TODO: represent ally bonus?
             modifiers: Some(vec![Modifier::Initiative(1)]),
@@ -674,6 +670,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The initiative bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Initiative(1)]),
         },
@@ -683,8 +680,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 6, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -693,6 +688,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
