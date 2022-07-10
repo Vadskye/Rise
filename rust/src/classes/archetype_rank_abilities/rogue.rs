@@ -26,8 +26,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The damage bonus increases to \plus8.
                     \rank{7} The damage bonus increases to \plus16.
                 \end{activeability}
-
-                \advancement At ranks 3, 5, and 7, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -38,8 +36,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
                 This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
-
-                \advancement At rank 6, this ability also protects you from area attacks against your Fortitude and Mental defenses.
             ",
             modifiers: None,
         },
@@ -48,6 +44,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                This ability also protects you from area attacks against your Fortitude and Mental defenses.
             ",
             modifiers: None,
         },
@@ -71,10 +68,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \end{itemize}
                     If you have access to any other more unusual senses, such as the \textit{blood sense} ability from the Executioner feat, you may also choose one of those senses as a separate sense group.
                 \end{attuneability}
-
-                \advancement At rank 5, you can attune to this ability multiple times.
-                Each time, you can choose a different sense group.
-                At rank 7, when you use this ability, you become undetectable by any number of the possible sense groups rather than only one.
             ",
             modifiers: None,
         },
@@ -83,6 +76,8 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                You can attune to this ability multiple times.
+                Each time, you can choose a different sense group.
             ",
             modifiers: None,
         },
@@ -91,6 +86,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
+                When you use this ability, you become undetectable by any number of the possible sense groups rather than only one.
             ",
             modifiers: None,
         },
@@ -100,8 +96,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with \glossterm{light weapons} and any weapon with the Stealthy \glossterm{weapon tag}.
-
-                \advancement At rank 6, this bonus increases to \plus2d.
             ",
             modifiers: None,
         },
@@ -110,6 +104,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: None,
         },
@@ -151,8 +146,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain all Knowledge skills as \glossterm{class skills}.
                 In addition, you gain a bonus equal to your rank in this archetype to Knowledge skills that you are \glossterm{untrained} with.
-
-                \advancement At rank 6, you gain a \plus2 bonus to all Knowledge skills.
             ",
             modifiers: None,
         },
@@ -161,6 +154,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                You gain a \plus2 bonus to all Knowledge skills.
             ",
             modifiers: Some(vec![Modifier::Skill(
                 Skill::Knowledge(vec![
@@ -452,10 +446,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus32.
                     \end{activeability}
                 }
-
-                \advancement At ranks 3, 5, and 7, each bardic performance improves as described above.
-                Some bardic performances improve at every rank instead.
-                At rank 5, you learn an additional bardic performance.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Bardic Performances+",
+            is_magical: true,
+            rank: 5,
+            description: r"
+                You learn an additional bardic performance.
             ",
             modifiers: None,
         },
@@ -465,8 +464,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You are \glossterm{impervious} to \abilitytag{Auditory} attacks.
-
-                \advancement At rank 5, you become \glossterm{immune} to \abilitytag{Auditory} attacks.
             ",
             modifiers: None,
         },
@@ -475,6 +472,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                You are \glossterm{immune} to \abilitytag{Auditory} attacks.
             ",
             modifiers: None,
         },
@@ -493,8 +491,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 6, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -503,6 +499,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -512,8 +509,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
-
-                \advancement At rank 7, you can sustain up to three bardic performances in this way instead of only two.
             ",
             modifiers: None,
         },
@@ -522,15 +517,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Bardic Performance",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You learn an additional bardic performance.
+                You can sustain up to three bardic performances in this way instead of only two.
             ",
             modifiers: None,
         },
@@ -592,9 +579,9 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 You gain access to one of the following \glossterm{combat styles}: \textit{dirty fighting}, \textit{ebb and flow}, or \textit{mobile assault}.
                 In addition, you gain access to any combat style of your choice (see \pcref{Combat Styles}).
                 You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
-                You can only learn primal \glossterm{maneuvers} from primal combat styles that you have access to.
+                You can only learn trick \glossterm{maneuvers} from trick combat styles that you have access to.
 
-                You learn two rank 1 primal \glossterm{maneuvers}.
+                You learn two rank 1 trick \glossterm{maneuvers}.
                 You may spend \glossterm{insight points} to learn one additional maneuver per insight point.
                 Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
@@ -602,8 +589,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                     you can exchange any number of maneuvers you know for other maneuvers,
                     including maneuvers of the higher rank.
 
-                \advancement You learn an additional primal maneuver at rank 4 and rank 7.
-                The maximum rank of primal maneuvers that you can learn is equal to your rank in this archetype.
+                \advancement The maximum rank of trick maneuvers that you can learn is equal to your rank in this archetype.
                 Trick maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
@@ -613,6 +599,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
+                You learn an additional trick maneuver.
             ",
             modifiers: None,
         },
@@ -621,6 +608,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
+                You learn an additional trick maneuver.
             ",
             modifiers: None,
         },
@@ -630,8 +618,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 5, the bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -640,6 +626,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -649,8 +636,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
-
-                \advancement At rank 6, this bonus increases to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Balance, 1),
@@ -665,6 +650,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The bonus to Dexterity-based checks increases to \plus2.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Balance, 1),
@@ -686,8 +672,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain two additional \glossterm{insight points}.
                 In addition, you can spend insight points to gain one additional \glossterm{trained skill} per insight point.
-
-                \advancement At rank 4, you gain an additional insight point.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 2)]),
         },
@@ -707,10 +691,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to all skills.
                 In addition, using the \ability{desperate exertion} ability to affect a skill check only increases your \glossterm{fatigue level} by one point.
-
-                \advancement At rank 5, this bonus increases to \plus3.
-                At rank 7, this bonus increases to \plus5.
-                In addition, once per \glossterm{short rest} you can use the \ability{desperate exertion} ability to affect a skill check without increasing your fatigue level.
             ",
             modifiers: Some(vec![
                 Modifier::Resource(Resource::TrainedSkill, 1),
@@ -758,6 +738,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
+                The skill bonus increases to \plus3.
             ",
             modifiers: Some(vec![
                 Modifier::Resource(Resource::TrainedSkill, 2),
@@ -805,6 +786,8 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
+                The skill bonus increases to \plus5.
+                In addition, once per \glossterm{short rest} you can use the \ability{desperate exertion} ability to affect a skill check without increasing your fatigue level.
             ",
             modifiers: Some(vec![
                 Modifier::Resource(Resource::TrainedSkill, 2),
@@ -853,8 +836,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power} with all abilities.
-
-                \advancement At rank 6, this bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
@@ -863,6 +844,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The power bonus increases to \plus6.
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },
@@ -889,8 +871,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The range increases to \rngmed.
                     \rank{7} The maximum number of targets increases to 5.
                 \end{activeability}
-
-                \advancement At ranks 3, 5, and 7, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -903,11 +883,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                 Your maximum spell rank is equal to your rank in this archetype.
                 In addition, you gain an additional \glossterm{attunement point}.
                 You can only use this attunement point to \glossterm{attune} to magic wands or apparel items.
-
-                \advancement At rank 5, you can use wands as if you were able to cast spells from all \glossterm{magic sources}, not just arcane spells.
-                In addition, you gain a \plus2 bonus to \glossterm{accuracy} with abilities granted to you by magic items.
-                This includes spells cast from wands, the special strike you can make with a \mitem{surestrike} weapon, and other similar abilities.
-                However, it does not include ordinary strikes or maneuvers that simply use a magic weapon.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
@@ -916,6 +891,10 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
+                You can use wands as if you were able to cast spells from all \glossterm{magic sources}, not just arcane spells.
+                In addition, you gain a \plus2 bonus to \glossterm{accuracy} with abilities granted to you by magic items.
+                This includes spells cast from wands, the special strike you can make with a \mitem{surestrike} weapon, and other similar abilities.
+                However, it does not include ordinary strikes or maneuvers that simply use a magic weapon.
             ",
             modifiers: None,
         },
@@ -925,8 +904,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1 \glossterm{accuracy} bonus against creatures affected by any \glossterm{condition}.
-
-                \advancement At rank 6, this bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -935,6 +912,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
+                The accuracy bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -944,8 +922,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 7, this bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -954,6 +930,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
+                The damage bonus increases to \plus2d.
             ",
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
@@ -976,8 +953,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{6} You can target an additional creature within range.
                 \end{activeability}
-
-                \advancement At rank 6, this ability improves as described above.
             ",
             modifiers: None,
         },

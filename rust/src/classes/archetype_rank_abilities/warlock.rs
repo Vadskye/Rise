@@ -28,8 +28,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The damage increases to 4d10.
                     \rank{7} The damage increases to 6d10.
                 \end{activeability}
-
-                \advancement At each rank, this ability improves as described above.
             ",
             modifiers: Some(vec![Modifier::Attack(
                 StandardAttack::AbyssalRebuke(1).attack(),
@@ -96,8 +94,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 If you have access to pact magic, choose one of the following \glossterm{mystic spheres}: \sphere{astromancy}, \sphere{enchantment}, \sphere{pyromancy}, or \sphere{summoning}.
                 You gain access to that mystic sphere.
-
-                \advancement At rank 5, you learn an additional pact spell.
             ",
             modifiers: None,
         },
@@ -106,6 +102,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
+                If you have access to pact magic, you learn an additional pact spell.
             ",
             modifiers: None,
         },
@@ -115,8 +112,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 If you do not have access to pact magic, you gain a +2 bonus to your Mental defense and a +1 bonus to your \glossterm{fatigue tolerance}.
-
-                \advancement At rank 5, the Mental defense bonus increases to +3, and the fatigue tolerance bonus increases to +2.
             ",
             // Assume that the warlock has pact magic
             modifiers: None,
@@ -126,6 +121,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
+                If you do not have access to pact magic, the Mental defense bonus increases to +3, and the fatigue tolerance bonus increases to +2.
             ",
             // Assume that the warlock has pact magic
             modifiers: None,
@@ -149,8 +145,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
                     \rank{7} The accuracy bonus increases to \plus2.
                 \end{activeability}
-
-                \advancement At ranks 5 and 7, this ability improves as described above.
             ",
             modifiers: None,
         },
@@ -162,10 +156,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus3 bonus to your \glossterm{power}.
                 In addition, whenever you use an ability that deals fire damage, you can change the type of the damage to be energy damage in place of fire damage.
                 Any other aspects of the ability, including damage types other than fire, remain unchanged.
-
-                \advancement At rank 7, this bonus increases to +9.
-                In addition, whenever you use an ability that deals fire damage, you can change that ability to deal damage of all types.
-                Any other aspects of the ability remain unchanged.
             ",
             modifiers: Some(vec![Modifier::Power(3)]),
         },
@@ -174,6 +164,9 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                The power bonus increases to +9.
+                In addition, whenever you use an ability that deals fire damage, you can change that ability to deal damage of all types.
+                Any other aspects of the ability remain unchanged.
             ",
             modifiers: Some(vec![Modifier::Power(6)]),
         },
@@ -223,30 +216,17 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     It also provides a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
                     However, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
-                    At rank 4, the damage resistance bonus increases to five times your rank in this archetype.
-                    At rank 7, the damage resistance bonus increases to seven times your rank in this archetype.
-                    In addition, the defense bonus increases to \plus5.
-
                     \subcf{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d3 \add half your \glossterm{power}.
                     You cannot regain more hit points in this way than the target lost from your attack.
                     This healing increases by \plus1d for each rank beyond 1.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
-
-                    At rank 4, you may add your full power to the amount you heal instead of half your power.
-                    At rank 7, you can trigger the healing effect twice per round.
-                    Each individual creature can only provide you with once instance of healing per round, even if you hit it twice.
 
                     \subcf{Secret of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
                     It is removed when the creature takes a \glossterm{short rest}.
                     However, whenever you would gain a \glossterm{condition} that you are not \trait{immune} to, that effect becomes a \abilitytag{Curse} on you instead of a condition.
                     If you were already affected by a Curse from this ability, the old Curse becomes a condition instead.
                     Whenever you take a \glossterm{short rest}, you remove any Curse affecting you as a result of this ability.
-
-                    At rank 4, you can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
-                    At rank 7, you can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
                 }
-
-                \advancement At ranks 4 and 7, each eldritch secret improves as described above.
             ",
             // Assume secret of bloodforging
             modifiers: Some(vec![
@@ -259,6 +239,14 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                The effect of your chosen secret improves.
+                {
+                    \subcf{Secret of Bloodforging} The bonus to damage resistance from the armor increases to five times your rank in this archetype.
+
+                    \subcf{Secret of Bloodsharing} You may add your full power to the amount you heal instead of half your power.
+
+                    \subcf{Secret of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
+                }
             ",
             modifiers: None,
         },
@@ -267,8 +255,17 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                Your understanding of your chosen secret reaches its full potential.
+                {
+                    \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to seven times your rank in this archetype.
+                    In addition, the defense bonus increases to \plus5.
+
+                    \parhead{Secret of Bloodsharing} You can trigger the healing effect twice per round.
+                    Each individual creature can only provide you with once instance of healing per round, even if you hit it twice.
+
+                    \parhead{Secret of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
+                }
             ",
-            // Rank 6: 30. Rank 7: 49.
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
@@ -321,8 +318,6 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 You gain up to two additional \glossterm{insight points}.
                 For each insight point you gain in this way, you take a \minus1 penalty to all skills other than Knowledge skills.
                 For each insight point you choose not to gain in this way, you gain a \plus1 bonus to all Knowledge skills.
-
-                \advancement At rank 5, the maximum number of insight points you can gain with this ability increases to four.
             ",
             modifiers: Some(vec![
                 Modifier::Resource(Resource::InsightPoint, 2),
@@ -357,6 +352,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
+                The maximum number of insight points you can gain with this ability increases to four.
             ",
             modifiers: Some(vec![
                 Modifier::Resource(Resource::InsightPoint, 2),
@@ -393,8 +389,6 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus3 bonus to \glossterm{power}.
                 However, you take a \minus2 penalty to Mental defense.
-
-                \advancement At rank 6, the power bonus increases to +9.
             ",
             modifiers: Some(vec![
                 Modifier::Power(3),
@@ -406,6 +400,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                The power bonus increases to +9.
             ",
             modifiers: Some(vec![Modifier::Power(6)]),
         },
@@ -419,13 +414,13 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                Your innate talents grant you the ability to use arcane magic.
-                You gain access to one arcane \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Pact Mystic Spheres}).
-                You may spend \glossterm{insight points} to gain access to one additional arcane \glossterm{mystic sphere} per two \glossterm{insight points}.
-                You can only learn arcane spells from arcane mystic spheres that you have access to.
+                Your soulkeeper grants you the ability to use pact magic.
+                You gain access to one pact \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Pact Mystic Spheres}).
+                You may spend \glossterm{insight points} to gain access to one additional pact \glossterm{mystic sphere} per two \glossterm{insight points}.
+                You can only learn pact spells from pact mystic spheres that you have access to.
 
                 You automatically learn all \glossterm{cantrips} from each mystic sphere you have access to.
-                In addition, you learn two rank 1 arcane \glossterm{spells}.
+                In addition, you learn two rank 1 pact \glossterm{spells}.
                 You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 
                 Pact spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
@@ -436,8 +431,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
 
-                \advancement At ranks 2, 4, and 7, you learn an additional arcane spell.
-                The maximum rank of arcane spells that you can learn is equal to your rank in this archetype.
+                \advancement The maximum rank of pact spells that you can learn is equal to your rank in this archetype.
                 Pact spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
@@ -447,6 +441,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
+                You learn an additional pact spell.
             ",
             modifiers: None,
         },
@@ -455,6 +450,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You learn an additional pact spell.
             ",
             modifiers: None,
         },
@@ -463,6 +459,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You learn an additional pact spell.
             ",
             modifiers: None,
         },
@@ -472,9 +469,6 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
-
-                \advancement At rank 3, this reduction increases to 3.
-                At rank 6, this reduction increases to 4.
             ",
             modifiers: None,
         },
@@ -483,6 +477,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
+                The encumbrance reduction increases to 3.
             ",
             modifiers: None,
         },
@@ -491,6 +486,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                The encumbrance reduction increases to 4.
             ",
             modifiers: None,
         },
@@ -533,9 +529,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                 }
-
-                \advancement At rank 4, you gain an additional \textit{mystic insight}.
-                At rank 7, you gain two additional \textit{mystic insights}.
             ",
             modifiers: None,
         },
@@ -544,6 +537,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You gain an additional \textit{mystic insight}.
             ",
             modifiers: None,
         },
@@ -552,6 +546,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You gain two additional \textit{mystic insights}.
             ",
             modifiers: None,
         },
@@ -570,8 +565,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus2 bonus to your \glossterm{power}.
-
-                \advancement At rank 6, this bonus increases to +6.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
@@ -580,6 +573,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
+                The power bonus increases to +6.
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },
@@ -623,8 +617,6 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The power bonus increases to \plus8.
                     \rank{7} The power bonus increases to \plus16.
                 \end{sustainability}
-
-                \advancement At ranks 3, 5, and 7, this ability improves as described above.
             ",
             modifiers: Some(vec![
                 Modifier::Power(2),
@@ -642,30 +634,38 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point} (see \pcref{Trained Skills}).
 
-                    At rank 6, you gain an additional insight point.
-
                     \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you \glossterm{briefly} gain a \plus1 bonus to \glossterm{accuracy} against that creature.
                     As normal, this bonus does not stack with itself, even if you miss the same creature multiple times.
 
-                    At rank 6, this bonus increases to +2.
-
                     \subcf{Sycophantic Whispers} You gain a \plus2 bonus to your Mental defense.
-
-                    At rank 6, you are immune to all \abilitytag{Emotion} attacks.
 
                     \subcf{Warning Whispers} You gain a \plus2 bonus to \glossterm{initiative} checks and your Reflex defense.
 
-                    At rank 6, you are never \unaware or \partiallyunaware.
-
                     \subcf{Whispers of the Mighty} You gain a \plus2 bonus to your Fortitude defense.
-
-                    At rank 6, you gain a +1 bonus to your \glossterm{vital rolls}.
                 }
-
-                \advancement At rank 6, each type of empowering whispers improves as described above.
             ",
             // Assume whispers of the mighty since it's easy
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
+        },
+        RankAbility {
+            name: "Empowering Whispers+",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                The effect of the whispers you hear improves.
+                {
+                    \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point}.
+
+                    \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus2.
+
+                    \subcf{Sycophantic Whispers} You are immune to all \abilitytag{Emotion} attacks.
+
+                    \subcf{Warning Whispers} You are never \unaware or \partiallyunaware.
+
+                    \subcf{Whispers of the Mighty} You gain a \plus1 bonus to \glossterm{vital rolls}.
+                }
+            ",
+            modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
             name: "Exchange Soul Fragment",
@@ -713,26 +713,6 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
-        },
-        RankAbility {
-            name: "Supreme Empowering Whispers",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
-                {
-                    \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point}.
-
-                    \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus2.
-
-                    \subcf{Sycophantic Whispers} You are immune to all \abilitytag{Emotion} attacks.
-
-                    \subcf{Warning Whispers} You are never \unaware or \partiallyunaware.
-
-                    \subcf{Whispers of the Mighty} You gain a \plus1 bonus to \glossterm{vital rolls}.
-                }
-            ",
-            modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
             name: "Distant Possession",
