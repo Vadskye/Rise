@@ -121,12 +121,6 @@
     margin-right: 0;
 }
 
-.other-skills {
-    .attribute {
-        justify-content: center;
-    }
-}
-
 .standard-defenses > div, .resources > div, .hit-points > div {
     margin-bottom: 0.1em;
 }
@@ -139,14 +133,9 @@
     margin-bottom: 0.75em;
 
     .attribute {
-        align-items: baseline;
+        align-items: center;
         justify-content: space-between;
         text-align: center;
-
-        .attribute-header  {
-            font-size: 14px;
-            font-weight: 600;
-        }
 
         .underlabeled {
             margin-left: 0.5em;
@@ -158,6 +147,12 @@
 }
 .attribute-section:nth-child(7) {
     margin-bottom: 0.25em;
+}
+
+.other-skills {
+    .attribute {
+        justify-content: center;
+    }
 }
 
 .resource-row div {
@@ -352,20 +347,6 @@
     }
 }
 
-.paper .attribute button, .paper .other-skills .attribute .attribute-header {
-    font-size: 14pt;
-    font-weight: bold;
-}
-
-.paper .attribute {
-    flex-direction: row-reverse;
-    margin-bottom: -1.25em;
-}
-
-.paper .other-skills .attribute {
-    margin-bottom: 0;
-}
-
 .challenge-rating {
     width: 5em;
 }
@@ -376,4 +357,46 @@
 
 .sidebar .repcontrol {
     display: none;
+}
+
+.paper {
+    /* Hide the "current / max" pattern */
+    .core-statistics-split {
+        :nth-child(1), :nth-child(2) {
+            display: none;
+        }
+    }
+
+    /* Give the special defenses a little more poof */
+    .standard-defenses {
+        margin-right: 0.25em;
+    }
+
+    /* Make the craft/knowledge/persuasion subskills full width */
+    fieldset .subtle-button {
+        flex-grow: 1;
+        padding-right: 0.25em;
+
+        button {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+
+            input[type=text] {
+                width: 100%;
+            }
+        }
+    }
+
+    /* Make the attributes bigger */
+    .attribute {
+        button, .other-skills {
+            font-size: 1.2em;
+        }
+    }
+
+    /* Shrink the ability text boxes */
+    .ability-effect textarea {
+        height: 4em;
+    }
 }

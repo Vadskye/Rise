@@ -76,7 +76,7 @@ def create_page(destination):
 def paper_abilities():
     return [
         div({"class": "section-header"}, "Attacks and Abilities"),
-        *[paper_ability() for i in range(12)],
+        *[paper_ability() for i in range(9)],
     ]
 
 
@@ -147,7 +147,7 @@ def attributes_and_skills():
                     flex_row(
                         {"class": "attribute"},
                         [
-                            div({"class": "attribute-header"}, "Other Skills"),
+                            div({"class": "other-skills"}, "Other Skills"),
                         ],
                     ),
                     "".join([skill_box(skill) for skill in ATTRIBUTE_SKILLS["other"]]),
@@ -175,7 +175,7 @@ def attribute_section(attribute):
                 {"class": "attribute"},
                 [
                     span(
-                        {"class": "attribute-header number-label"},
+                        {"class": "number-label"},
                         subtlebutton(
                             {
                                 "name": f"roll_{attribute}",
