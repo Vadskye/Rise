@@ -307,6 +307,20 @@
 }
 
 .paper {
+    /* Shrink the attributes and skills so they can fit on one page */
+    .attributes-and-skills {
+        font-size: 10pt;
+    }
+    .skill-box .skill-button {
+        font-size: 10pt;
+    }
+    .knowledge-box .subtle-button {
+        width: 11.5em;
+        input[type=text] {
+            width: 11.5em;
+        }
+    }
+
     /* Hide the "current / max" pattern */
     .core-statistics-split {
         :nth-child(1), :nth-child(2) {
