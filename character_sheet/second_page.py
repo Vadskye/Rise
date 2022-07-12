@@ -23,11 +23,6 @@ from sheet_data import (
 )
 from sheet_worker import standard_damage_at_power
 
-equation_space = flex_col(
-    {"class": "equation-glue"}, div({"class": "equation-math"}, " ")
-)
-
-
 def equation_misc(name, i=0):
     return flex_col(
         [
@@ -188,7 +183,6 @@ def calc_weight_limits():
                     "name": "carrying_capacity_display",
                 },
             ),
-            equation_space,
             labeled_text_input(
                 "Push/Drag",
                 input_attributes={
@@ -481,7 +475,7 @@ def calc_vital_rolls():
 def calc_weapon_damage_dice():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Weapon Damage"),
+            div({"class": "calc-header"}, "Strike Damage"),
             equation(
                 [
                     equation_misc_repeat("weapon_damage_dice", 5),

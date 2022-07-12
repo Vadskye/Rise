@@ -1,5 +1,5 @@
 /* This whole page will only be used for paper sheets */
-.paper {
+div.paper {
   .abilities,
   .statistics {
     flex-grow: 1;
@@ -12,15 +12,10 @@
   .sidebar > .flex-row,
   .defenses > .flex-row {
     margin-bottom: 0.5em;
-    align-items: baseline;
   }
   .calc-attributes {
     margin-left: 0.25em;
     flex-grow: 1;
-
-    .attribute-calc {
-      align-items: baseline;
-    }
 
     .calc-header {
       flex-grow: 1;
@@ -43,13 +38,20 @@
   }
 
   .weight-limits {
+    justify-content: space-between;
     input[type="text"] {
       width: 8.5em;
     }
   }
 
-  /* use normal width boxes for equation results */
-  .equation-result > input[type="number"] {
-    width: 30px !important;
+  /* use only slightly wider boxes for equations */
+  .equation-result {
+    width: 35px !important;
+    > input[type="number"] {
+      width: 35px !important;
+    }
+  }
+  .equation > .flex-col {
+      width: 30px;
   }
 }
