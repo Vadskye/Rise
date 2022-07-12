@@ -282,7 +282,7 @@
 
 .paper-ability {
     .ability-name {
-        width: 10em;
+        width: 12em;
         margin-right: 0.25em;
     }
     .ability-effect {
@@ -310,15 +310,19 @@
     /* Shrink the attributes and skills so they can fit on one page */
     .attributes-and-skills {
         font-size: 10pt;
+
+        .section-header {
+            // match the other headers
+            font-size: 18.75px;
+        }
     }
     .skill-box .skill-button {
+        margin-left: 0;
         font-size: 10pt;
     }
     .knowledge-box .subtle-button {
-        width: 11.5em;
-        input[type=text] {
-            width: 11.5em;
-        }
+        width: 11.25em;
+        margin: 0;
     }
 
     /* Hide the "current / max" pattern */
