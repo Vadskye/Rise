@@ -97,7 +97,7 @@ def trained_skills_tracker():
                     }
                 ),
             ),
-            span({"class": "equation-glue"}, "/"),
+            span({"class": "trained-skills-separator"}, "/"),
             underlabel(
                 "Max",
                 number_input(
@@ -144,15 +144,6 @@ def calc_skill(skill_name, attribute=None):
                             }
                         ),
                     ),
-                    underlabel(
-                        "Trained?",
-                        checkbox(
-                            {
-                                "class": "is-class-skill",
-                                "name": skill_parsable + "_is_trained",
-                            }
-                        ),
-                    ),
                 ],
             ),
             div(
@@ -185,7 +176,7 @@ def calc_skill_equation_components(skill_parsable, attribute):
     if attribute == "other":
         return [
             underlabel(
-                "Lvl/2?",
+                "Train?",
                 number_input(
                     {
                         "disabled": True,
@@ -195,12 +186,12 @@ def calc_skill_equation_components(skill_parsable, attribute):
                 ),
             ),
             plus(),
-            equation_misc_repeat(skill_parsable, 4),
+            equation_misc_repeat(skill_parsable, 2),
         ]
     else:
         return [
             underlabel(
-                "Lvl/2?",
+                "Train?",
                 number_input(
                     {
                         "disabled": True,
@@ -210,18 +201,7 @@ def calc_skill_equation_components(skill_parsable, attribute):
                 ),
             ),
             plus(),
-            underlabel(
-                ATTRIBUTE_SHORTHAND[attribute],
-                number_input(
-                    {
-                        "disabled": True,
-                        "name": "skill_attribute",
-                        "value": f"@{{{skill_parsable}_attribute}}",
-                    }
-                ),
-            ),
-            plus(),
-            equation_misc_repeat(skill_parsable, 3),
+            equation_misc_repeat(skill_parsable, 2),
         ]
 
 

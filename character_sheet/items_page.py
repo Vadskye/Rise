@@ -10,6 +10,7 @@ from cgi_simple import (
     label,
     labeled_number_input,
     labeled_text_input,
+    labeled_textarea,
     number_input,
     option,
     plus,
@@ -36,7 +37,7 @@ def create_page(destination):
             """,
             ),
             div({"class": "section-header"}, "Inventory"),
-            textarea({"name": "inventory"}),
+            textarea({"class": "inventory", "name": "inventory"}),
             # TODO: add weight limits here?
             div({"class": "section-header"}, "Proficiences"),
             proficiencies(),
@@ -46,7 +47,7 @@ def create_page(destination):
             div({"class": "section-header"}, "Weapons"),
             *weapons(destination),
             div({"class": "section-header"}, "Legacy Item"),
-            legacy_item(),
+            legacy_item(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
             div(
                 {"class": "attunement-abilities"},
@@ -160,7 +161,8 @@ def proficiencies():
     )
 
 
-def legacy_item():
+def legacy_item(destination):
+    text_shape = labeled_textarea if destination == "paper" else labeled_text_input
     return flex_row(
         {"class": "attunement legacy-item"},
         [
@@ -169,10 +171,10 @@ def legacy_item():
                 {"class": "name"},
                 {"name": "legacy_item_name"},
             ),
-            labeled_text_input(
+            text_shape(
                 "Effects",
                 {"class": "attunement-effect"},
-                {"name": "legacy_item_effect"},
+                {"class": "legacy-item-effect", "name": "legacy_item_effect"},
             ),
             fieldset(
                 {"class": "repeating_legacymodifiers"},
