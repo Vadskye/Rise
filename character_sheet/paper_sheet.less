@@ -1,95 +1,118 @@
-/* buttons shouldn't appear on paper */
-button {
+body {
+  height: 10.5in;
+  width: 8in;
+  padding: 0;
+  // Enable or disable this to get an idea of how the pages fit into paper
+  // sheets
+  // margin: 0.1in;
+  // box-shadow: 0 0 2px 1px inset;
+}
+
+.paper {
+  /* buttons shouldn't appear on paper */
+  button {
     border: 0;
     color: inherit;
     cursor: inherit;
     background-color: inherit;
-}
+  }
 
-body {
-    height: 10.5in;
-    width: 8in;
-    padding: 0;
-    // Enable or disable this to get an idea of how the pages fit into paper
-    // sheets
-    // margin: 0.1in;
-    // box-shadow: 0 0 2px 1px inset;
-}
-
-.ui-dialog {
+  .ui-dialog {
     width: 100%;
     height: 100%;
-}
+  }
 
-input[type=number], input[type=text].fake-number {
+  input[type="number"],
+  input[type="text"].fake-number {
     border: 1px solid black;
     box-shadow: none !important;
-}
+  }
 
-input[type=text], input.equation-misc {
+  input[type="text"],
+  input.equation-misc {
     box-shadow: none !important;
     border: 0;
     border-bottom: 1px solid black;
-}
+  }
 
+  .skill-box input[type="number"],
+  input[type="number"].skill-training,
+  input[type="number"].skill-ranks,
+  input[type="number"].skill-misc {
+    border: 1px solid #aaa;
+  }
 
-.skill-box input[type=number], input[type=number].skill-training, input[type=number].skill-ranks, input[type=number].skill-misc  {
-    border: 1px solid #AAA;
-}
-
-body {
+  body {
     -webkit-print-color-adjust: exact;
-}
+  }
 
-input:disabled {
+  input:disabled {
     background-color: white;
-}
+  }
 
-input[type=number], input[type=text].fake-number {
+  input[type="number"],
+  input[type="text"].fake-number {
     height: 2em;
     padding-top: 0;
-}
+  }
 
-div.full-sheet input[type=number].fake-text {
+  div.full-sheet input[type="number"].fake-text {
     border-bottom: 1px solid black;
     height: 21px;
-}
+  }
 
-.attack-roll {
+  .attack-roll {
     display: none;
-}
+  }
 
-.skill-row .skill-name {
+  .skill-row .skill-name {
     border-bottom: 1px solid black;
     height: 1em;
-}
+  }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     display: none;
     margin: 0;
-}
+  }
 
-input[type=number] {
+  input[type="number"] {
     -moz-appearance: textfield;
-}
+  }
 
-.invisible-text-input {
+  .invisible-text-input {
     display: none;
-}
+  }
 
-.tab-explanation {
+  .tab-explanation {
     display: none;
-}
+  }
 
-textarea {
+  textarea {
     resize: none;
-}
+  }
 
-/* fieldset normally has a weird border that we don't want */
-fieldset {
+  /* fieldset normally has a weird border that we don't want */
+  fieldset {
     border: none;
     margin: 0;
     padding: 0;
+  }
+
+  /* The paper sheet uses smaller underlabels, so it needs less padding */
+  .underlabeled {
+    padding-bottom: 0.8em;
+  }
+
+  /* use only slightly wider boxes for equations */
+  .equation-result {
+    width: 35px !important;
+    > input[type="number"] {
+      width: 35px !important;
+    }
+  }
+  .equation > .flex-col {
+    width: 30px;
+  }
 }
