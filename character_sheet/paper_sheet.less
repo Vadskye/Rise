@@ -8,7 +8,7 @@ body {
   // box-shadow: 0 0 2px 1px inset;
 }
 
-.paper {
+div.paper {
   /* buttons shouldn't appear on paper */
   button {
     border: 0;
@@ -106,13 +106,13 @@ body {
   }
 
   /* use only slightly wider boxes for equations */
+  .equation > .flex-col {
+    width: 30px;
+  }
   .equation-result {
     width: 35px !important;
     > input[type="number"] {
       width: 35px !important;
     }
-  }
-  .equation > .flex-col {
-    width: 30px;
   }
 }
