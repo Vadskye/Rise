@@ -13,7 +13,7 @@ ATTRIBUTE_SHORTHAND = {
 }
 ATTRIBUTE_SKILLS = {
     "strength": "Climb Jump Swim".split(),
-    "dexterity": ["Balance", "Flexibility", "Ride", "Sleight of Hand", "Stealth"],
+    "dexterity": ["Balance", "Flexibility", "Perform", "Ride", "Sleight of Hand", "Stealth"],
     "constitution": ["Endurance"],
     "intelligence": [
         "Craft",
@@ -34,7 +34,6 @@ ATTRIBUTE_SKILLS = {
     "other": [
         "Deception",
         "Intimidate",
-        "Perform",
         "Persuasion",
         "Profession",
     ],
@@ -56,6 +55,7 @@ KNOWABLE_CONCEPTS = [
 SUBSKILLS = [
     "Craft",
     "Knowledge",
+    "Perform",
 ]
 
 ROLL20_CALC = {
