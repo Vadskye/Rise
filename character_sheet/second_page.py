@@ -127,7 +127,7 @@ def calc_attribute(attribute_name):
                     equation(
                         [
                             underlabel(
-                                "Points",
+                                "Base",
                                 number_input(
                                     {
                                         "name": attribute_lower + "_point_buy",
@@ -142,7 +142,7 @@ def calc_attribute(attribute_name):
                             "name": attribute_lower + "_display",
                             "value": "(@{" + attribute_lower + "})",
                         },
-                        result_label="Base",
+                        result_label="Total",
                     ),
                 ],
             ),
