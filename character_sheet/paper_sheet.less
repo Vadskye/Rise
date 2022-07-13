@@ -2,6 +2,7 @@ body {
   height: 10.5in;
   width: 8in;
   padding: 0;
+  -webkit-print-color-adjust: exact;
   // Enable or disable this to get an idea of how the pages fit into paper
   // sheets
   // margin: 0.1in;
@@ -42,10 +43,6 @@ div.paper {
     border: 1px solid #aaa;
   }
 
-  body {
-    -webkit-print-color-adjust: exact;
-  }
-
   input:disabled {
     background-color: white;
   }
@@ -56,7 +53,7 @@ div.paper {
     padding-top: 0;
   }
 
-  div.full-sheet input[type="number"].fake-text {
+  input[type="number"].fake-text {
     border-bottom: 1px solid black;
     height: 21px;
   }
