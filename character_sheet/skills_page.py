@@ -84,29 +84,18 @@ def calc_skills(destination):
 
 def trained_skills_tracker():
     return flex_row(
-        {"class": "skill-points"},
+        {"class": "trained-skills"},
         [
-            div({"class": "skill-points-label"}, "Trained Skills"),
-            underlabel(
-                "Current",
-                number_input(
-                    {
-                        "disabled": True,
-                        "name": "skill_points_spent_display",
-                        "value": "@{skill_points_spent}",
-                    }
-                ),
-            ),
-            span({"class": "trained-skills-separator"}, "/"),
-            underlabel(
-                "Max",
-                number_input(
-                    {
-                        "disabled": True,
-                        "name": "skill_points_total_display",
-                        "value": "@{skill_points}",
-                    }
-                ),
+            div({"class": "trained-skills-label"}, "Trained skills"),
+            equation(
+                [
+                    underlabel("Class", number_input({"name": "class_trained_skills"})),
+                    plus(),
+                    equation_misc_repeat("trained_skills", 3),
+                ],
+                result_attributes={
+                    "name": "trained_skills_display",
+                },
             ),
         ],
     )
