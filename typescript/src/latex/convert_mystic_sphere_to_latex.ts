@@ -59,9 +59,9 @@ export function determineAbilityTypeSuffix(spell: Pick<SpellLike, 'type'>): stri
     return "";
   } else if (spell.type.includes('Attune') && spell.type.includes('(')) {
     // grab the bits inside the parentheses
-    return spell.type.replace(/^.*\(/, '').replace(/\).*$/, '');
+    return '[' + spell.type.replace(/^.*\(/, '').replace(/\).*$/, '') + ']'
   } else if (spell.type.includes('Sustain')) {
-    return spell.type;
+    return '[' + spell.type + ']';
   } else {
     return "";
   }
