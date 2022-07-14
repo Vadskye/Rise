@@ -489,8 +489,6 @@ export const cryomancy: MysticSphere = {
       // original targets: One creature within \shortrange
       attack: {
         crit: `The damage from the condition is doubled.`,
-        glance:
-          "The effect lasts \\glossterm{briefly}. The target still takes damage during the next round.",
         hit: `
           As a \\glossterm{condition}, the target is seared by painful cold.
           % TODO: standardize "ignite" damage

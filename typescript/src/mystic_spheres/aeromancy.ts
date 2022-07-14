@@ -499,7 +499,7 @@ export const aeromancy: MysticSphere = {
         crit: "The condition deals double damage.",
         hit: `
           As a \\glossterm{condition}, the target is \\slowed by incredibly fast winds that inhibit movement.
-          At the end of each phase, if it moved using one of its movement speeds during that phase, it takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          At the end of each phase, if it moved using one of its movement speeds during that phase, it takes 1d10 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one Large or smaller creature within \\medrange.
@@ -518,7 +518,7 @@ export const aeromancy: MysticSphere = {
         crit: "The condition deals double damage.",
         hit: `
           As a \\glossterm{condition}, the target is \\slowed by incredibly fast winds that inhibit movement.
-          At the end of each phase, if it moved using one of its movement speeds during that phase, it takes 2d10 + half \\glossterm{power} bludgeoning damage.
+          At the end of each phase, if it moved using one of its movement speeds during that phase, it takes 4d6 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one Large or smaller creature within \\longrange.
