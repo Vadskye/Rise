@@ -169,7 +169,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from all sources except for creature abilities.
-                In addition, any group you are part of can travel at full speed through difficult terrain during overland travel (see \pcref{Overland Movement}).
+                In addition, any group you are part of can travel at full speed through difficult terrain during overland travel.
             ",
             modifiers: None,
         },
