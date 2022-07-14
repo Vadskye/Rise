@@ -21,7 +21,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Evil} Each target suffers a \minus1 penalty to its Armor defense as long as it is affected by at least one \glossterm{condition}.
 
                 % TODO: clarify what happens if multiple people try to Good aura the same target
-                \subcf{Good} Whenever a target would gain a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
+                \subcf{Good} Whenever a targeted \glossterm{ally} would gain a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
                 You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                 The target suffers any other effects of the attack normally.
 
@@ -43,7 +43,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Chaos} The effect applies to all attacks, not just \glossterm{strikes}.
                 % TODO: explain how this works on monsters
                 \subcf{Evil} The penalty applies to all defenses.
-                \subcf{Good} When a target would lose \glossterm{hit points}, you may lose those hit points instead.
+                \subcf{Good} When a targeted \glossterm{ally} would lose \glossterm{hit points}, you may lose those hit points instead.
                 This causes you to suffer any special effects of the attack that trigger on taking damage or losing hit points, while the target does not.
                 The target suffers any other effects of the attack normally.
                 \subcf{Law} The effect applies to all attacks, not just \glossterm{strikes}.
