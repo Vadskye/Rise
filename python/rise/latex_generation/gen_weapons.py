@@ -88,6 +88,7 @@ def generate_weapons():
                 % TODO: note that it explicitly *does* work if you hit an object like the ground
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
                 The strike also affects one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
+                This effect triggers even if the primary target was an inanimate object, like the ground.
                 The secondary target does not have to be within your \\glossterm<reach>.
             """,
             short_description="Deals electicity damage and can arc 15 feet",
@@ -100,6 +101,7 @@ def generate_weapons():
                 This weapon continuously crackles with electricity.
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
                 Whenever you make a strike, the strike can also affect one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
+                This effect triggers even if the primary target was an inanimate object, like the ground.
                 The secondary target does not have to be within your \\glossterm<reach>.
             """,
             short_description="Deals electricity damage and arcs 15 feet",
