@@ -537,6 +537,120 @@
         \parhead{Species Feat Options} 
         \parhead{Automatic Languages} Common, Sylvan, and any one \glossterm{common language} (see \tref{Common Languages}).
 
+    \subsection{Harpy}
+        Harpies are winged creatures with the upper body of a humanoid and the lower body of a bird.
+        The vast majority of harpies are female, but male harpies do exist.
+
+        \parhead{Creature Type} Unlike most other playable species, harpies are considered monstrous humanoids instead of humanoids.
+        \parhead{Size} Medium.
+        \parhead{Attributes} \minus1 Intelligence, \plus1 Dexterity.
+        \parhead{Special Abilities}
+        \begin{itemize}
+            \itemhead{Prehensile Talons} Harpies have a talon natural weapon on each foot (see \pcref{Natural Weapons}).
+                In addition, they can use their feet as \glossterm{free hands}.
+                However, their talons are not able to effectively wield shields or manufactured weapons.
+            \itemhead{Wings} Harpies have a feathered wings that sprout from their shoulders in place of arms.
+                These wings grant them a glide speed equal to the \glossterm{base speed} for their size (see \pcref{Gliding}).
+            \itemhead{Armless} Harpies do not have arms or hands.
+            \itemhead{Harpy Archetype} Harpies only gain two class archetypes instead of three.
+                Instead, they treat the Harpy archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
+        \end{itemize}
+        \parhead{Automatic Languages} Common.
+        
+        \subsubsection{Harpy Archetype}
+
+            \cf{Hrp}[1]{Winged Agility} You gain a \plus4 bonus to the Balance and Jump skills as long as you can use your wings to help you.
+
+            \cf{Hrp}[1]{Winged Combat} At the start of each phase, you can make a short hop off of solid ground to hover in your space using your wings.
+            This allows you to use both of your feet without standing on them during that phase, so you can attack with both talons at once.
+            You must land at the end of the phase, and you can only use this ability once per round.
+            This brief hovering does not cause you to suffer penalties for flying.
+
+            \cf{Hrp}[2]{Luring Song} You can use the \textit{luring song} ability as a standard action.
+                \begin{activeability}{Luring Song}
+                    \abilitytag{Auditory}, \abilitytag{Compulsion}
+                    \rankline
+                    Make an attack vs. Mental against a creature within \longrange.
+                    \hit As a \glossterm{condition}, the target must move towards you as best it can during each \glossterm{movement phase}.
+                    In addition, it cannot move farther away from you at any time, except as necessary to get closer to you (such as to avoid an intervening obstacle).
+                    It can otherwise act freely, and is still able to attack you and your allies.
+
+                    If you attack the target with any ability other than this one, this effect is automatically broken.
+                    When this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
+                    \crit The condition must be removed twice before the effect ends.
+
+                    \rankline
+                    \rank{4} You can target an additional creature within range.
+                    \rank{6} The maximum number of targets increases to 5.
+                \end{activeability}
+
+            \cf{Hrp}[2]{Raking Talons} You gain a \plus1d damage bonus with all \glossterm{natural weapons}.
+
+            \cf{Hrp}[3]{Flight} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
+            At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+
+            \cf{Hrp}[4]{Greater Winged Agility} You can use your wings to help you maneuver on the ground more effectively, such as by briefly hovering or gliding over obstacles.
+            The Balance and Jump bonuses from your \textit{winged agility} ability increase to \plus8.
+            In addition, you ignore movement penalties from \glossterm{difficult terrain}.
+
+            \cf{Hrp}[4]{Greater Winged Combat} You can use your \textit{winged combat} any number of times in the same round.
+            You must still land between each phase.
+
+            \cf{Hrp}[5]{Greater Raking Talons} The damage bonus from your \textit{raking talons} ability improves to \plus2d.
+
+            % dazed enemies in medarea radius is a rank 5 spell. charm + not a condition make this better.
+            \cf{Hrp}[5]{Siren Song} You can use the \textit{siren song} ability as a standard action.
+            \begin{sustainability}{Siren Song}[\abilitytag{Sustain} (minor)]
+                \abilitytag{Auditory}, \abilitytag{Emotion}
+                \rankline
+                Make an attack vs. Mental against any number of creatures within a \medarea radius from you.
+                \hit Each target is both \charmed by you and \dazed as long as it can still hear you sing.
+                It remains dazed even if it stops being charmed, such as if you or your allies attack it.
+                This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice that it is being influenced.
+                \rankline
+                \rank{7} The area increases to a \largearea radius.
+            \end{sustainability}
+
+            \cf{Hrp}[6]{Agile Flight} Your flight improves to have good maneuverability (see \pcref{Flying Maneuverability}).
+            In addition, your maximum height increases to 30 feet.
+
+            \cf{Hrp}[7]{Mythic Siren} You gain a \plus5 \glossterm{accuracy} bonus with your \ability{luring song} and \ability{siren song} abilities.
+
+        \subsubsection{Basic Class Abilities}
+            If you choose harpy as your base class, you gain the following abilities.
+
+            \cf{Hrp}{Power} Your automatic bonus to power based on your rank in this archetype is the same as a fighter (see \pcref{Class-Based Power Bonuses}).
+
+            \cf{Hrp}{Defenses}
+            You gain the following bonuses to your \glossterm{defenses}: \plus1 Armor, \plus3 Fortitude, \plus5 Reflex, \plus7 Mental.
+            In addition, you gain a \plus1 bonus to your \glossterm{vital rolls}.
+
+            \cf{Hrp}{Resources} You have the following \glossterm{resources}:
+            \begin{itemize}
+                \item Three \glossterm{attunement points}, which you can use to attune to items and abilities that affect you (see \pcref{Attunement Points}).
+                \item A \glossterm{fatigue tolerance} equal to 4 \add your Constitution \add half your Willpower.
+                    Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \pcref{Fatigue}).
+                \item A number of \glossterm{insight points} equal to 2 \add your Intelligence.
+                    You can spend insight points to gain additional abilities (see \pcref{Insight Points}).
+                \item Six \glossterm{trained skills} from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence (see \pcref{Skills}).
+            \end{itemize}
+
+            \cf{Hrp}{Weapon Proficiencies} 
+            You are not proficient with any weapon groups, even simple weapons.
+            You are still proficient with your natural weapons.
+
+            \cf{Hrp}{Armor Proficiencies} 
+            You are proficient with light armor.
+
+            \cf{Hrp}{Skills}
+            You have the following \glossterm{class skills}:
+            \begin{itemize}
+                \item \subparhead{Strength} Climb, Jump.
+                \item \subparhead{Dexterity} Balance, Flexibility, Perform, Stealth.
+                \item \subparhead{Perception} Awareness, Creature Handling, Deception, Persuasion, Survival.
+                \item \subparhead{Other} Intimidate.
+            \end{itemize}
+
     \subsection{Kit}
 
         Kit are humanoid creatures that have noticeable foxlike characteristics.
