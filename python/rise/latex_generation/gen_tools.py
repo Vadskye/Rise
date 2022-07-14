@@ -1319,9 +1319,12 @@ def generate_tools():
         ),
     ]
 
-    # POISONS
+    # POISONS - non-injury
     # Poison accuracy: (level / 2) + 2
     # TODO: define poison ranks properly, especially for damage over time
+    # For now, treat poison DOT ending on stage 3 as a rank 3 effect; it's
+    # halfway between Ignition and Greater Ignition
+    # Stage 3 effects get to be rank+4, since they are slow and rare
     tools += [
         MagicItem(
             consumable=True,
@@ -1337,29 +1340,31 @@ def generate_tools():
             """,
             short_description="Dazes and eventually stuns",
         ),
+        # -2 ranks for -1d
         MagicItem(
             consumable=True,
             name="Poison, Sassone Leaf",
-            rank=2,
+            rank=1,
             material_type="Poison",
             tags=[],
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus4.
-                Its stage 1 effect inflicts 1d10+2 damage each time the poison's attack succeeds.
+                The poison's accuracy is \\plus2.
+                Its stage 1 effect inflicts 1d6+1 damage each time the poison's attack succeeds.
                 Its stage 3 effect also ends the poison.
             """,
-            short_description="Deals 1d10+2 damage per stage",
+            short_description="Deals 1d6+1 damage per stage",
         ),
+        # +1 rank for +1 accuracy
         MagicItem(
             consumable=True,
-            name="Poison, Asp Venom",
+            name="Poison, Bloodroot",
             rank=2,
             material_type="Poison",
             tags=[],
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus4.
+                The poison's accuracy is \\plus5.
                 Its stage 1 effect makes the target \\dazed while the poison lasts.
                 Its stage 3 effect makes the target \\stunned while the poison lasts.
             """,
@@ -1375,22 +1380,22 @@ def generate_tools():
                 This is an ingestion-based powder poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus5.
                 Its stage 1 effect inflicts 2d6+2 damage each time the poison's attack succeeds.
-                Its stage 3 effect instead inflicts 4d6+7 damage and ends the poison.
+                Its stage 3 effect also ends the poison.
             """,
-            short_description="Deals 2d6+2 damage, ending with 4d6+7 damage",
+            short_description="Deals 2d6+2 damage",
         ),
         MagicItem(
             consumable=True,
             name="Poison, Dragon Bile",
-            rank=4,
+            rank=5,
             material_type="Poison",
             tags=[],
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus7.
-                Its stage 1 effect inflicts 2d10+3 damage each time the poison's attack succeeds.
+                The poison's accuracy is \\plus8.
+                Its stage 1 effect inflicts 2d10+5 damage each time the poison's attack succeeds.
             """,
-            short_description="Deals 2d10+3 damage endlessly",
+            short_description="Deals 2d10+5 damage endlessly",
         ),
         MagicItem(
             consumable=True,
@@ -1406,6 +1411,7 @@ def generate_tools():
             """,
             short_description="Stuns and eventually confuses",
         ),
+        # +1 rank for +1 accuracy
         MagicItem(
             consumable=True,
             name="Poison, Black Lotus",
@@ -1414,10 +1420,115 @@ def generate_tools():
             tags=[],
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus8.
-                The target takes 4d8+14 damage each time the poison's attack succeeds.
+                The poison's accuracy is \\plus11.
+                The target takes 4d6+7 damage each time the poison's attack succeeds.
             """,
-            short_description="Deals 4d8+14 damage endlessly",
+            short_description="Deals 4d6+7 damage endlessly",
+        ),
+    ]
+
+    # Injury-based poisons
+    # Accuracy: (level / 2) + 2
+    # Effect: as hp-only effect, so generally rank + 4
+    # Damage over time is underwhelming as a HP-only effect, so damage over time
+    # works as if it was 2 ranks higher
+    tools += [
+        MagicItem(
+            consumable=True,
+            name="Poison, Black Adder Venom",
+            rank=1,
+            material_type="Poison",
+            tags=[],
+            description="""
+                This is a injury-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus2.
+                Its stage 1 effect inflicts 2d6+2 damage each time the poison's attack succeeds.
+            """,
+            short_description="Deals 2d6+2 damage endlessly",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Poison, Asp Venom",
+            rank=1,
+            material_type="Poison",
+            tags=[],
+            description="""
+                This is a contact-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus2.
+                Its stage 1 effect makes the target \\stunned while the poison lasts.
+                Its stage 3 effect makes the target \\blinded while the poison lasts.
+            """,
+            short_description="Stuns and eventually blinds",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Poison, Blood Leech Venom",
+            rank=2,
+            material_type="Poison",
+            tags=[],
+            description="""
+                This is a injury-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus4.
+                Its stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
+            """,
+            short_description="Inflicts damage vulnerability",
+        ),
+        # +1 rank for +1 accuracy
+        MagicItem(
+            consumable=True,
+            name="Poison, Giant Wasp Venom",
+            rank=2,
+            material_type="Poison",
+            tags=[],
+            description="""
+                This is a injury-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus5.
+                Its stage 1 effect makes the target \\slowed and \\dazed while the poison lasts.
+                Its stage 3 effect makes the target \\stunned while the poison lasts instead of dazed.
+            """,
+            short_description="Slows and dazes, eventually stuns",
+        ),
+        # +2 ranks for full power
+        MagicItem(
+            consumable=True,
+            name="Poison, Wyvern Venom",
+            rank=3,
+            material_type="Poison",
+            tags=[],
+            description="""
+                This is a injury-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus5.
+                Its stage 1 effect inflicts 2d10+5 damage each time the poison's attack succeeds.
+            """,
+            short_description="Deals 2d10+5 damage endlessly",
+        ),
+        # +1 rank for +1 accuracy, +2 ranks for full power
+        MagicItem(
+            consumable=True,
+            name="Poison, Purple Worm Venom",
+            rank=4,
+            material_type="Poison",
+            tags=[],
+            description="""
+                This is a injury-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus8.
+                Its stage 1 effect inflicts 4d6+7 damage each time the poison's attack succeeds.
+            """,
+            short_description="Deals 4d6+7 damage endlessly",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Poison, Cockatrice Bile",
+            rank=5,
+            material_type="Poison",
+            tags=[],
+            description="""
+                This is a injury-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus8.
+                Its stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
+                Its stage 3 effect makes the target \\petrified while the poison lasts.
+            """,
+            short_description="Slows and stuns, eventually petrifies",
         ),
     ]
 
