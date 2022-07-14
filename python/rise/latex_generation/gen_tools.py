@@ -1355,6 +1355,21 @@ def generate_tools():
             """,
             short_description="Deals 1d6+1 damage per stage",
         ),
+        # -2 ranks for -1d
+        MagicItem(
+            consumable=True,
+            name="Poison, Jellyfish Extract",
+            rank=1,
+            material_type="Poison",
+            tags=[],
+            description="""
+                This is a contact-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus2.
+                Its stage 1 effect inflicts 1d6+1 damage each time the poison's attack succeeds.
+                Its stage 3 effect also ends the poison.
+            """,
+            short_description="Deals 1d6+1 damage per stage",
+        ),
         # +1 rank for +1 accuracy
         MagicItem(
             consumable=True,
@@ -1518,7 +1533,7 @@ def generate_tools():
         ),
         MagicItem(
             consumable=True,
-            name="Poison, Cockatrice Bile",
+            name="Poison, Cockatrice Venom",
             rank=5,
             material_type="Poison",
             tags=[],
