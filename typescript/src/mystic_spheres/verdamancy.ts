@@ -202,18 +202,17 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
-        // No relevant glance effect
-        hit: `The target becomes \\glossterm{poisoned} by the first \\glossterm{poison stage} of nitharit.
-        At the end of each subsequent round, you repeat this attack, as normal for poisons (see \\pcref{Poison}).
-        A creature poisoned by nitharit becomes \\dazed as long as it is poisoned.
-        Reaching the third \\glossterm{poison stage} causes the target to become \\stunned as long as it is poisoned.
-        A third failed attack ends the poison.`,
+        hit: `
+          The target becomes \\glossterm{poisoned} with nitharit (see \\pcref{Poison}).
+          The stage 1 effect makes the target \\dazed while the poison lasts.
+          The stage 3 effect makes the target \\stunned while the poison lasts.
+        `,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
 
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       tags: ["Manifestation"],
     },
@@ -223,20 +222,18 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
-        // No relevant glance effect
-        hit: `The target becomes \\glossterm{poisoned} with sassone leaf.
-        At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d4 physical damage.
-        Reaching the third \\glossterm{poison stage} ends the poison.
-        A third failed attack also ends the poison.`,
+        hit: `
+          The target becomes \\glossterm{poisoned} with sassone leaf (see \\pcref{Poison}).
+          The stage 1 effect inflicts 1d4 + half \\glossterm{power} damage each time the poison's attack succeeds.
+          The stage 3 effect also ends the poison.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
+
       rank: 1,
-      scaling: {
-        special: "The hit point loss from the poison increases by +1d for each rank beyond 1.",
-      },
+      scaling: "damage",
       tags: ["Manifestation"],
     },
 
@@ -245,19 +242,18 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
-        hit: `The target becomes \\glossterm{poisoned} with arsenic.
-        At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the target takes 1d8 physical damage.
-        Reaching the third \\glossterm{poison stage} causes the target to gain a \\glossterm{vital wound} and ends the poison.
-        A third failed attack also ends the poison.`,
+        hit: `
+          The target becomes \\glossterm{poisoned} with arsenic (see \\pcref{Poison}).
+          The stage 1 effect inflicts 1d10 + half \\glossterm{power} damage each time the poison's attack succeeds.
+          The stage 3 effect also ends the poison.
+        `,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\longrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
+
       rank: 3,
-      scaling: {
-        special: "The hit point loss from the poison increases by +1d for each rank beyond 3.",
-      },
+      scaling: "damage",
       tags: ["Manifestation"],
     },
 
@@ -266,19 +262,17 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
-        hit: `The target becomes \\glossterm{poisoned} with arsenic.
-        At the end of each subsequent round, you repeat this attack, as normal for poisons.
-        For each \\glossterm{poison stage}, including the initial stage, the target loses 2d8 + half \\glossterm{power} \\glossterm{hit points}.
-        Reaching the third \\glossterm{poison stage} causes the target to gain a \\glossterm{vital wound}.
-        A third failed attack ends the poison.`,
+        hit: `
+          The target becomes \\glossterm{poisoned} with black lotus extract (see \\pcref{Poison}).
+          The stage 1 effect inflicts 2d10 + half \\glossterm{power} damage each time the poison's attack succeeds.
+        `,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude with a +1 accuracy bonus against one living creature within \\medrange.
         `,
       },
-      rank: 5,
-      scaling: {
-        special: "The hit point loss from the poison increases by +1d for each rank beyond 5.",
-      },
+
+      rank: 6,
+      scaling: "damage",
       tags: ["Manifestation"],
     },
 
