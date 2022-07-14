@@ -101,7 +101,7 @@ export const pyromancy: MysticSphere = {
         hit: `
           The target takes 2d6 + \\glossterm{power} fire damage.
           If it loses \\glossterm{hit points} from this damage, it catches on fire as a \\glossterm{condition}.
-          At the end of each round, it takes 1d8 fire damage.
+          At the end of each round, it takes 1d10 + half \\glossterm{power} fire damage.
 
           The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
@@ -126,9 +126,12 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: 'greater burning grasp',
-        exceptThat: 'the initial damage increases to 4d6 + \\glossterm{power}, and the subsequent damage increases to 2d10 + half \\glossterm{power}.',
+        exceptThat: `
+          the initial damage increases to 4d8 + \\glossterm{power}, and the subsequent damage increases to 4d6 + half \\glossterm{power}.
+          In addition, the condition cannot be removed with a Dexterity check.
+        `,
       },
-      rank: 6,
+      rank: 7,
       scaling: "damage",
     },
 
@@ -194,7 +197,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `The target catches on fire as a \\glossterm{condition}.
-        At the end of each round, it takes 1d4 + half \\glossterm{power} fire damage.
+        At the end of each round, it takes 1d6 + half \\glossterm{power} fire damage.
 
         The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
@@ -213,7 +216,7 @@ export const pyromancy: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target catches on fire as a \\glossterm{condition}.
-          At the end of each round, it takes 2d6 + half \\glossterm{power} fire damage.
+          At the end of each round, it takes 2d8 + half \\glossterm{power} fire damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -221,55 +224,6 @@ export const pyromancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-    },
-
-    {
-      name: "Combustion",
-
-      attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-      narrative: `
-        Your foe ignites into flame, burning from the inside out.
-      `,
-      rank: 1,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Combustion",
-
-      attack: {
-        hit: `The target takes 4d8 + \\glossterm{power} fire damage.
-        In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
-        Its body is completely incinerated, leaving behind only a pinch of fine ash.
-        Its equipment is unaffected.`,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-
-      rank: 5,
-      scaling: "damage",
-    },
-
-    {
-      name: "Supreme Combustion",
-
-      attack: {
-        hit: `The target takes 6d10 + \\glossterm{power} fire damage.
-        In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
-        Its body is completely incinerated, leaving behind only a pinch of fine ash.
-        Its equipment is unaffected.`,
-        targeting: `
-        Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-
-      rank: 7,
     },
 
     {
@@ -277,7 +231,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `The object becomes burning hot to the touch.
-        At the end of each round, it and anything touching it takes 1d8 + half \\glossterm{power} fire damage.`,
+        At the end of each round, it and anything touching it takes 1d10 + half \\glossterm{power} fire damage.`,
         targeting: `
           Choose one metal object within \\medrange.
           It must be no smaller than Tiny size and no larger than Large size.

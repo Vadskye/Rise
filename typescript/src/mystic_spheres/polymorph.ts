@@ -668,11 +668,12 @@ export const polymorph: MysticSphere = {
     {
       name: 'Bleed',
 
+      // +1 level relative to Ignition because the check DV is always 10
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target begins bleeding as a \\glossterm{condition}.
-          At the end of each round, it takes 1d6 physical damage.
+          At the end of each round, it takes 1d8 + half \\glossterm{power} physical damage.
 
           This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
           The \\glossterm{difficulty value} of the check is equal to 10.
@@ -690,8 +691,6 @@ export const polymorph: MysticSphere = {
 
       attack: {
         crit: `The damage from the condition is doubled.`,
-        glance:
-          'The effect lasts \\glossterm{briefly}. The target still takes damage during the next round.',
         hit: `
           The target begins bleeding as a \\glossterm{condition}.
           At the end of each round, it takes 2d8 + half \\glossterm{power} physical damage.
