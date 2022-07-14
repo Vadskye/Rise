@@ -26,6 +26,7 @@ pub enum Class {
     Dragon,
     Druid,
     Fighter,
+    Harpy,
     Monk,
     Oozeborn,
     Paladin,
@@ -52,6 +53,7 @@ impl Class {
             Self::Wizard,
             // Optional classes
             Self::Dragon,
+            Self::Harpy,
             Self::Oozeborn,
         ];
     }
@@ -135,6 +137,7 @@ impl Class {
             Self::Dragon => 3,
             Self::Druid => 4,
             Self::Fighter => 3,
+            Self::Harpy => 3,
             Self::Monk => 4,
             Self::Oozeborn => 3,
             Self::Paladin => 3,
@@ -249,6 +252,8 @@ impl Class {
                 Skill::Ride,
                 Skill::Swim,
             ],
+            // This is in OptionalRules.tex, not here
+            Self::Harpy => vec![],
             Self::Monk => vec![
                 Skill::Awareness,
                 Skill::Balance,
@@ -419,6 +424,12 @@ impl Class {
                 Defense::Reflex => 3,
                 Defense::Mental => 5,
             },
+            Self::Harpy => match defense {
+                Defense::Armor => 1,
+                Defense::Fortitude => 3,
+                Defense::Reflex => 7,
+                Defense::Mental => 5,
+            },
             Self::Monk => match defense {
                 Defense::Armor => 1,
                 Defense::Fortitude => 3,
@@ -477,6 +488,7 @@ impl Class {
             Self::Dragon => 5,
             Self::Druid => 4,
             Self::Fighter => 5,
+            Self::Harpy => 4,
             Self::Monk => 4,
             Self::Oozeborn => 6,
             Self::Paladin => 5,
@@ -495,6 +507,7 @@ impl Class {
             Self::Dragon => 2,
             Self::Druid => 3,
             Self::Fighter => 2,
+            Self::Harpy => 2,
             Self::Monk => 2,
             Self::Oozeborn => 1,
             Self::Paladin => 2,
@@ -513,6 +526,7 @@ impl Class {
             Self::Dragon => "dragon",
             Self::Druid => "druid",
             Self::Fighter => "fighter",
+            Self::Harpy => "harpy",
             Self::Monk => "monk",
             Self::Oozeborn => "oozeborn",
             Self::Paladin => "paladin",
@@ -548,6 +562,7 @@ impl Class {
             Self::Dragon => "Drg",
             Self::Druid => "Drd",
             Self::Fighter => "Ftr",
+            Self::Harpy => "Hrp",
             Self::Monk => "Mnk",
             Self::Oozeborn => "Ooz",
             Self::Paladin => "Pal",
@@ -566,6 +581,7 @@ impl Class {
             Self::Dragon => 3,
             Self::Druid => 5,
             Self::Fighter => 3,
+            Self::Harpy => 6,
             Self::Monk => 6,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
@@ -584,6 +600,7 @@ impl Class {
             Self::Dragon => 1,
             Self::Druid => 0,
             Self::Fighter => 1,
+            Self::Harpy => 1,
             Self::Monk => 0,
             Self::Oozeborn => 2,
             Self::Paladin => 1,
@@ -616,6 +633,10 @@ impl Class {
             Self::Fighter => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: ArmorUsageClass::all(),
+            },
+            Self::Harpy => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Monk => ArmorProficiencies {
                 specific_armors: None,
@@ -767,6 +788,7 @@ impl Class {
                 In constrast, fighters have a more grounded approach, and focus more on practical knowledge that can be directly applied to physical combat.
                 A typical monk would consider fighters to be overly limited in their focus on day-to-day combat, while a typical fighter would consider monks to be wasting their training with mysticism and esoteric nonsense.
             ".to_string(),
+            Self::Harpy => r"".to_string(),
             Self::Monk => r"
                 Monks are agile masters of ``ki'' who hone their personal abilities to strike down foes and perform supernatural feats.
                 They undergo extensive training to control their mind and body in unison, using each to improve the other.
@@ -988,6 +1010,12 @@ impl Class {
                 specific_weapon_groups: None,
                 specific_weapons: None,
                 simple_weapons: true,
+            },
+            Self::Harpy => WeaponProficiencies {
+                custom_weapon_groups: 0,
+                specific_weapon_groups: None,
+                specific_weapons: None,
+                simple_weapons: false,
             },
             Self::Monk => WeaponProficiencies {
                 custom_weapon_groups: 0,
