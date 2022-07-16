@@ -484,7 +484,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
                 Some wild magic effects cannot be meaningfully applied to all spells.
                 For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
-                Any wildspell effects that do not make sense for a particular spell should be ignored.
+                Any wildspell effects that do not make sense for a particular spell have no effect.
                 The rolled wild magic effect always applies to the round that you cast the spell, even if the spell doesn't have its normal effect immediately.
 
                 \begin{dtable}
