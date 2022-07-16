@@ -35,14 +35,14 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Elemental Strike}
                     \abilitytag{Magical}
                     \rankline
-                    Make a \glossterm{strike}.
+                    Make a \glossterm{strike} with a +2 damage bonus.
                     Damage dealt by the strike is bludgeoning and fire damage in addition to its normal damage types.
                     You may use either your Strength or your Willpower to determine your damage with this ability (see \pcref{Dice Bonuses From Attributes}).
 
                     \rankline
-                    \rank{3} You gain a \plus2 damage bonus with the strike.
-                    \rank{5} The damage bonus increases to \plus4.
-                    \rank{7} The damage bonus increases to \plus8.
+                    \rank{3} The damage bonus increases to \plus4.
+                    \rank{5} The damage bonus increases to \plus8.
+                    \rank{7} The damage bonus increases to \plus16.
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
@@ -112,6 +112,24 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Elemental Power",
+            is_magical: true,
+            rank: 2,
+            description: r"
+                You gain a \plus2 bonus to your \glossterm{power}.
+            ",
+            modifiers: Some(vec![Modifier::Power(2)]),
+        },
+        RankAbility {
+            name: "Elemental Power+",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                The power bonus increases to +6.
+            ",
+            modifiers: Some(vec![Modifier::Power(4)]),
+        },
+        RankAbility {
             name: "Elemental Balance",
             is_magical: true,
             rank: 3,
@@ -160,15 +178,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \end{itemize}
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Elemental Power",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                You gain a \plus4 bonus to your \glossterm{power}.
-            ",
-            modifiers: Some(vec![Modifier::Power(4)]),
         },
     ];
 }
