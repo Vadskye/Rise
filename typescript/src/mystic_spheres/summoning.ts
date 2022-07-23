@@ -33,15 +33,14 @@ export const summoning: MysticSphere = {
 
         \\begin{itemize}
           \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue levels}.
-          \\item Its \\glossterm{hit points} are equal to the standard value for your your level (see \\tref{Hit Points and Damage Resistance}).
-          \\item It has no \\glossterm{damage resistance}.
+          \\item Its \\glossterm{hit points} and \\glossterm{damage resistance} are equal to the standard value for your your level (see \\tref{Hit Points and Damage Resistance}).
           \\item Each of its \\glossterm{defenses} is equal to 5 \\add half your level.
-          \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception \\sub 2.
+          \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception.
           \\item Its \\glossterm{land speed} is 30 feet.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}
 
-        Each round, you can choose the creature's actions by mentally commanding it as a \\glossterm{minor action}.
+        Each round, you can choose the creature's actions by mentally commanding it as a \\glossterm{free action}.
         There are only two actions it can take.
         As a \\glossterm{move action}, it can move as you direct.
         As a standard action, it can make a melee \\glossterm{strike} against a creature within its \\glossterm{reach}.
@@ -64,7 +63,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +1 \\glossterm{accuracy} bonus and a +2d damage bonus with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
+          It gains a +1 \\glossterm{accuracy} bonus and a +2d damage bonus with its attacks, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
         `,
         name: "summon monster",
       },
@@ -80,7 +79,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +2 \\glossterm{accuracy} bonus and a +4d damage bonus with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
+          It gains a +2 \\glossterm{accuracy} bonus and a +4d damage bonus with its attacks, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
         `,
         name: "summon monster",
       },
@@ -96,7 +95,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +3 \\glossterm{accuracy} bonus and a +6d damage bonus with its attacks, but its \\glossterm{hit points} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
+          It gains a +3 \\glossterm{accuracy} bonus and a +6d damage bonus with its attacks, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved and it takes a -2 penalty to all \\glossterm{defenses}.
         `,
         name: "summon monster",
       },
@@ -127,8 +126,8 @@ export const summoning: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the summoned creature is more defensively inclined.
-          It gains a +2 bonus to all defenses, and it gains a +2d damage bonus with its attacks.
+          the summoned creature is much more defensively inclined.
+          It gains a +2 bonus to all defenses, and it gains a +1d damage bonus with its attacks.
         `,
         name: "summon monster",
       },
@@ -144,7 +143,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more defensively inclined.
-          It gains a +3 bonus to all defenses, and it gains a +4d damage bonus with its attacks.
+          It gains a +3 bonus to all defenses, and it gains a +2d damage bonus with its attacks.
         `,
         name: "summon monster",
       },
