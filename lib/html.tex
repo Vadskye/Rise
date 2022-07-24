@@ -121,12 +121,12 @@
 }
 
 % The HTML version of threecol has to put its tabularx inside of a figure
-\DeclareDocumentCommand{\threecol}{m m m}
+\DeclareDocumentCommand{\sectiontwocol}{m m}
 {
+    \renewcommand{\arraystretch}{0.5}
     \begin{figure}
-    \begin{tabularx}{\linewidth}{@{}~l~>{\lcol}X~r~@{}}
-        \renewcommand{\arraystretch}{0.5}
-        #1 & #2 & #3
+    \begin{tabularx}{\linewidth}{>{\lcol}X~l}
+        #1 & #2
     \end{tabularx}
     \end{figure}
 }

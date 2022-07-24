@@ -510,9 +510,7 @@
             \protect
             \hyperlink{itemtable:#1}{
                 \IfValueTF{#2}{
-                    % Compensate for dumb extra paragraph created by hspace
-                    \vspace{-1em}
-                    \spelltwocol{\hspace{-0.5em}#1}{\normalsize #2}
+                    \sectiontwocol{#1}{\normalsize #2}
                 }{
                     #1
                 }
