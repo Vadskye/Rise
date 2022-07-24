@@ -111,22 +111,6 @@ impl Monster {
             Some("Basic Maneuver"),
             None,
         );
-        creature.add_modifier(
-            Modifier::Attack(
-                PureDamage {
-                    damage_types: vec![DamageType::Energy],
-                    defense: Defense::Armor,
-                    is_magical: true,
-                    is_maneuver: false,
-                    name: "Generic Monster Damage".to_string(),
-                    range: None,
-                    rank,
-                }
-                .attack(),
-            ),
-            Some("Generic Monster Damage"),
-            None,
-        );
 
         return Monster {
             alignment: None,
@@ -169,6 +153,25 @@ impl Monster {
             .set_base_attribute(Attribute::Willpower, challenge_rating.max_base_attribute());
 
         return monster;
+    }
+
+    pub fn add_magical_attack(&mut self) {
+        self.creature.add_modifier(
+            Modifier::Attack(
+                PureDamage {
+                    damage_types: vec![DamageType::Energy],
+                    defense: Defense::Armor,
+                    is_magical: true,
+                    is_maneuver: false,
+                    name: "Generic Monster Damage".to_string(),
+                    range: None,
+                    rank: calculate_standard_rank(self.creature.level, self.challenge_rating),
+                }
+                .attack(),
+            ),
+            Some("Generic Monster Damage"),
+            None,
+        );
     }
 }
 
