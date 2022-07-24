@@ -330,7 +330,6 @@ export const flurryOfBlows: CombatStyle = {
         Make a melee \\glossterm{strike} with a +2 accuracy bonus.
         You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\frightened by you.
-        After it stops being frightened, it is immune to being frightened in this way until it takes a \\glossterm{short rest}.
       `,
       rank: 5,
       scaling: {
