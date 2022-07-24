@@ -119,6 +119,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Chameleon}          & Trained Disguise, Int 1 & Adapt your archetypes and abilities & \tdash             & \featpref{Chameleon}          \\
         \featref{Draconic Heritage}  & \tdash                   & Gain aspects of draconic power      & Bloodline          & \featpref{Draconic Heritage}  \\
         \featref{Entropist}          & Wil 1                    & Master chaos and entropy            & \tdash             & \featpref{Entropist}          \\
+        \featref{Herbalist}          & Trained Knowledge (nature) & Brew potions with natural ingredients & \tdash          & \featpref{Herbalist}                        \\
         \featref{Iron Will}          & Wil 1                    & Increase mental resilience          & \tdash             & \featpref{Iron Will}          \\
         \featref{Null}               & Wil 2                    & Become immune to magic              & \tdash             & \featpref{Null}               \\
         \featref{Precognition}       & Int 2                    & React to future events              & \tdash             & \featpref{Precognition}       \\
@@ -141,7 +142,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Endurance Specialization}         & Trained Endurance          & Improve use of chosen skill           & \tdash          & \featpref{Endurance Specialization}         \\
         \featref{Flexibility Specialization}       & Trained Flexibility        & Improve use of chosen skill           & \tdash          & \featpref{Flexibility Specialization}       \\
         \featref{Intimidate Specialization}        & Trained Intimidate         & Improve use of chosen skill           & \tdash          & \featpref{Intimidate Specialization}        \\
-        \featref{Herbalist}                        & Trained Knowledge (nature) & Brew potions with natural ingredients & \tdash          & \featpref{Herbalist}                        \\
         \featref{Jump Specialization}              & Trained Jump               & Improve use of chosen skill           & \tdash          & \featpref{Jump Specialization}              \\
         \featref{Knowledge Specialization}         & Trained Knowledge          & Improve use of chosen skill           & \tdash          & \featpref{Knowledge Specialization}         \\
         \featref{Linguistics Specialization}       & Trained Linguistics        & Improve use of chosen skill           & \tdash          & \featpref{Linguistics Specialization}       \\
@@ -1092,17 +1092,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[21]{Greater Power Attack} The damage bonus from your \textit{power attack} ability increases to \plus3d.
     \end{feat}
 
-    \begin{feat}{Herbalist}{Skill}
+    \begin{feat}{Herbalist}{General}
         \featpre Knowledge (nature) as a trained skill.
 
         \ff[1]{Esoteric Concoction} You can use your Knowledge (nature) skill in place of Craft (alchemy) or Craft (poison) to create poisons and potions.
         This does not help you create other alchemical items, such as alchemist's fire.
         When you do, you must use esoteric natural ingredients in place of the normal ingredients.
+        However, all poisons you create with this ability deteriorate and lose their effectiveness after 8 hours.
+
         The replacement ingredients must be difficult to acquire in large quantities and impossible to acquire in a normal city.
         For example, you can use the tail of a blind mouse or the dew from a four-leafed clover, but you could not use dirt or ordinary tree bark.
         Once you have determined a purpose for a particular replacement ingredient, you cannot use that ingredient as a replacement in any other poison or potion.
 
-        In general, it requires an hour of work and a Knowledge (nature) check equal to 5 \add the level of the item to find ingredients for an item in this way.
+        In general, it requires an hour of work and a Knowledge (nature) check equal to 5 \add twice the rank of the item to find ingredients for an item in this way.
         Each time you find ingredients for an item this way, the time required to find ingredients again increases by an hour and the difficulty value increases by 5.
         Whenever you finish a \glossterm{long rest} or enter a different environment with different ingredients, these penalties reset.
 
@@ -1114,6 +1116,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             Choose one liquid poison or potion you created, or an object containing one of those liquids, within \rngshort range.
             Whenever an \glossterm{enemy} notices the chosen object, make an attack vs. Mental against it.
+            You are not aware of this attack, so you cannot use abilities like \ability{desperate exertion} to affect it.
             If the poison or potion is not concealed inside a less suspicious object, such as a tankard of ale or an apple, you take a \minus4 penalty to \glossterm{accuracy}.
             You cannot make this attack more than once against any individual target during this ability's duration.
             \hit The target is filled with the desire to investigate and try to consume the liquid or the object containing the liquid.
@@ -1121,21 +1124,25 @@ Feats also make the system more mechanically complex, so they are not necessaril
             This effect lasts until the target consumes the object or until it takes a \glossterm{short rest}.
 
             \rankline
-            \featlevel{12} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-            \featlevel{18} The accuracy bonus increases to \plus2.
+            You gain a \plus1 accuracy bonus with the attack for every 3 levels beyond 6.
         \end{attuneability}
 
+        \ff[6]{Poison Tolerance} You gain a \plus1 bonus to your Fortitude defense.
+        In addition, you are \glossterm{impervious} to poisons.
+
         \ff[9]{Efficient Concoction} The time required to find ingredients with your \textit{esoteric concoction} ability is halved.
+        In addition, the \glossterm{difficulty value} of the Knowledge check is reduced by 5.
 
         \ff[12]{Greater Potent Poisons} The bonus from your \textit{potent concoction} ability increases to \plus2.
 
-        \ff[15]{Poison Tolerance} You gain a \plus2 bonus to Fortitude defense.
+        \ff[15]{Greater Poison Tolerance} The bonus from your \textit{poison tolerance} ability increases to \plus3.
+        In addition, you are \glossterm{immune} to poisons.
 
-        \ff[18]{Blended Poison} You can create poisons that combine two poison effects into a single dose.
+        \ff[18]{Greater Efficient Concoction} The time required to find ingredients with your \textit{esoteric concoction} ability is reduced to five minutes, and the duration does not increase when you find ingredients for an item.
+
+        \ff[21]{Blended Poison} You can create poisons that combine two poison effects into a single dose.
         This requires twice the normal time to create a poison, and requires all ingredients required to make both poisons.
         A creature affected by the blended poison suffers the full effects of both poisons.
-
-        \ff[21]{Greater Efficient Concoction} The time required to find ingredients with your \textit{esoteric concoction} ability is reduced to one-tenth of the normal time.
     \end{feat}
 
     \begin{feat}{Intimidate Specialization}{Skill}
