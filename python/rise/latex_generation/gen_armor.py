@@ -490,7 +490,7 @@ def generate_armor():
         create_armor(
             name="Lifeweave Armor",
             rank=2,
-            tags=["Swift"],
+            tags=[],
             material_type="Body armor",
             description="""
                 You gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
@@ -501,7 +501,7 @@ def generate_armor():
         create_armor(
             name="Lifeweave Armor, Greater",
             rank=4,
-            tags=["Swift"],
+            tags=[],
             material_type="Body armor",
             description="""
                 You gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
@@ -512,7 +512,7 @@ def generate_armor():
         create_armor(
             name="Lifeweave Armor, Supreme",
             rank=6,
-            tags=["Swift"],
+            tags=[],
             material_type="Body armor",
             description="""
                 You gain a +32 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
@@ -526,7 +526,7 @@ def generate_armor():
         create_armor(
             name="Soulweave Armor",
             rank=2,
-            tags=["Swift"],
+            tags=[],
             material_type="Body armor",
             description="""
                 You gain a +6 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
@@ -537,7 +537,7 @@ def generate_armor():
         create_armor(
             name="Soulweave Armor, Greater",
             rank=4,
-            tags=["Swift"],
+            tags=[],
             material_type="Body armor",
             description="""
                 You gain a +12 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
@@ -548,7 +548,7 @@ def generate_armor():
         create_armor(
             name="Soulweave Armor, Supreme",
             rank=6,
-            tags=["Swift"],
+            tags=[],
             material_type="Body armor",
             description="""
                 You gain a +24 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
@@ -562,7 +562,7 @@ def generate_armor():
         create_armor(
             name="Swiftstep Armor",
             rank=3,
-            tags=["Swift"],
+            tags=[],
             material_type="Body armor",
             description="""
                 The penalty to your speed from this armor is reduced by 5 feet.
@@ -573,7 +573,7 @@ def generate_armor():
         create_armor(
             name="Swiftstep Armor, Greater",
             rank=6,
-            tags=["Swift"],
+            tags=[],
             material_type="Body armor",
             description="""
                 The penalty to your speed from this armor is reduced by 10 feet.
