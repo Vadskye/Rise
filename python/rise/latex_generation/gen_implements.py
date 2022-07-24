@@ -866,7 +866,9 @@ def generate_implement_table():
         sorted(generate_implements(), key=lambda item: item.name),
         key=lambda item: item.rank,
     )
-    rows = [item.latex_table_row() for item in implements]
+    rows = []
+    for item in implements:
+        rows += item.latex_table_rows(include_type=True)
     row_text = "\n".join(rows)
     return longtablify(
         f"""
