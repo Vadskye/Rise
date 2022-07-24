@@ -2,6 +2,7 @@ from logging import getLogger, WARNING
 from rise.latex.util import join
 from rise.statistics.rise_data import consumable_item_prices, item_prices
 from rise.latex.tags import glosstermify, is_valid_tag
+import re
 
 logger = getLogger(__name__)
 
@@ -127,7 +128,7 @@ class MagicItem(object):
             material_type = 'Body'
         # \\tb<Name> & \\tb<Item Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         type_text = f" & {material_type}" if include_type else ""
-        return f"\\itemref<{plus_suffix(self.name, upgrade_tier)}> & {rank_price_text(self, rank)} {type_text} & {short_description} & \\itempref<{self.name}> \\\\"
+        return f"\\itemref<{self.name}>{'+' * upgrade_tier} & {rank_price_text(self, rank)} {type_text} & {short_description} & \\itempref<{self.name}> \\\\"
 
     def tag_text(self):
         return f"{self.latex_tags()}" if self.tags else ""
@@ -168,3 +169,13 @@ def plus_suffix(name, upgrade_tier):
 
 def rank_price_text(item, rank):
     return f"{rank} ({price(item, rank)} gp)"
+
+first_cell_pattern = re.compile(r"&[^&]+&")
+def sorted_table_rows(rows):
+    # Outer sort: rank
+    return sorted(
+        # Inner sort: name
+        sorted(rows),
+        key=lambda r: (first_cell_pattern.search(r) or [])[0]
+    )
+
