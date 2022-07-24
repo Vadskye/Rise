@@ -484,7 +484,7 @@ export const enchantment: MysticSphere = {
         crit: `The penalty increases to -5.`,
         hit: `As a \\glossterm{condition}, the target takes a -2 penalty to Mental defense.`,
         targeting: `
-          Make an attack vs. Mental with a +4 bonus against one creature within \\medrange.
+          Make an attack vs. Mental with a +3 bonus against one creature within \\longrange.
         `,
       },
       rank: 1,
