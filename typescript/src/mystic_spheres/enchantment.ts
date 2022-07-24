@@ -314,7 +314,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: `The target is \\frightened by you or your ally instead of shaken.`,
         hit: `
-          The target is \\shaken by either you or an \\glossterm{ally} of your choice within range as a \\glossterm{condition}.
+          As a \\glossterm{condition}, the target is \\shaken by a creature of your choice within range.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -326,12 +326,12 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: "Mass Fear",
+      name: "Fear",
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each target.`,
         // No relevant glance effect
-        hit: `Each target is \\glossterm{briefly} \\shaken by either you or an \\glossterm{ally} of your choice within range.`,
+        hit: `Each target is \\glossterm{briefly} \\shaken by a creature of your choice within range.`,
         targeting: `
           Make an attack vs. Mental with a +1 \\glossterm{accuracy} bonus against all creatures in a \\smallarea radius within \\medrange.
         `,
@@ -348,7 +348,7 @@ export const enchantment: MysticSphere = {
         crit: `Each target is \\frightened instead of shaken.`,
         // No relevant glance effect
         hit: `
-          Each target is \\shaken as a \\glossterm{condition} by either you or an \\glossterm{ally} of your choice within range.
+          Each target is \\shaken as a \\glossterm{condition} by a creature of your choice within range.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
