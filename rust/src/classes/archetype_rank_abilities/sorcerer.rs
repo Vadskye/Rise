@@ -210,9 +210,13 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you use the \ability{desperate exertion} ability to affect a spell you cast during the current phase, you can change which spell you cast before rerolling.
-                You can make different choices for the new spell, such as choosing different targets.
-                If you do, you must take the result of the second roll, even if it is worse.
+                Whenever you use the \ability{desperate exertion} ability to affect an attack roll from a spell you cast during the current phase, you can change which spell you cast before rerolling.
+                The new spell must still make an attack.
+                You can make different choices for how you resolve the new spell, such as choosing different targets.
+                However, the new spell must still have all of the same choices about how it was cast, including the use of the \textit{wildspell} ability.
+                This does not cause you to reroll the wild magic roll.
+
+                When you use this ability to change your spell, you must take the result of the second roll, even if it is worse.
                 The new spell takes its full effect as if you had cast it originally, and the original spell has no effect of any kind.
                 This is a \abilitytag{Swift} ability.
             ",
