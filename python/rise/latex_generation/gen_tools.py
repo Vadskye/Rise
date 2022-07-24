@@ -1609,24 +1609,27 @@ def generate_tool_table():
     consumable_tools = list(filter(lambda t: t.consumable, tools))
     permanent_tools = list(filter(lambda t: not t.consumable, tools))
 
-    consumable_rows = "\n".join(
-        [item.latex_table_row(True) for item in consumable_tools]
-    )
-    permanent_rows = "\n".join(
-        [item.latex_table_row(False) for item in permanent_tools]
-    )
+    consumable_rows = []
+    for item in consumable_tools:
+        consumable_rows += item.latex_table_rows(include_type=True)
+    consumable_rows_text = "\n".join(consumable_rows)
+
+    permanent_rows = []
+    for item in permanent_tools:
+        permanent_rows += item.latex_table_rows(include_type=False)
+    permanent_rows_text = "\n".join(permanent_rows)
     return longtablify(
         f"""
             \\lcaption<Consumable Tools> \\\\
             \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-            {consumable_rows}
+            {consumable_rows_text}
         """,
         wrapper_text="\\tablebookmark<Consumable Tools><consumabletools>"
     ) + longtablify(
         f"""
             \\lcaption<Permanent Tools, Goods, and Mounts> \\\\
             \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-            {permanent_rows}
+            {permanent_rows_text}
         """,
         False,
         wrapper_text="\\tablebookmark<Permanent Tools, Goods, and Mounts><permanenttools>"
