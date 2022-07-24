@@ -100,8 +100,9 @@ class MagicItem(object):
             return item_prices[self.rank]
 
     def latex_table_row(self, include_type=True):
+        material_type = ("Body" if self.material_type == "Body armor" else self.material_type) or ''
         # \\tb<Name> & \\tb<Item Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-        type_text = f" & {self.material_type or ''}" if include_type else ""
+        type_text = f" & {material_type}" if include_type else ""
         return f"{self.name} & {self.rank} ({self.price()} gp) {type_text} & {self.short_description} & \\pageref<item:{self.name}> \\\\"
 
     def tag_text(self):
