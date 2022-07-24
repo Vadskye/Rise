@@ -1216,7 +1216,6 @@ impl Class {
                     You must worship a specific deity to be a cleric.
                     For details, see \tref{Deities}.
 
-                    \begin{dtable!*
                     \cf{Clr}{Seek Guidance}
                     You can ask your deity for guidance about how best to serve your deity's interests.
                     This requires a ritual or prayer lasting ten minutes, with the details depending on the deity.
@@ -1295,7 +1294,7 @@ impl Class {
             Self::Cleric => {
                 r"
                 \newpage
-                \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
+                \section{Cleric Domain Abilities}\label{Cleric Domain Abilities}
                     These domain abilities can be granted by the \textit{domain influence} cleric archetype.
                     All cleric domain abilities are \glossterm{magical} unless otherwise specified.
 
