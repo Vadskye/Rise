@@ -2,7 +2,7 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem, Upgrade
+from rise.latex.magic_item import MagicItem, Upgrade, sorted_table_rows
 from rise.latex.util import latexify, longtablify
 from rise.latex.tags import add_attune_tag
 
@@ -83,24 +83,18 @@ def generate_apparel():
                 You gain a +1 \\glossterm<accuracy> bonus with the \\ability<offhand strike> ability.
             """,
             short_description="Grants +1 accuracy with offhand strikes",
-        ),
-        create_apparel(
-            name="Ambidextrous Gloves, Greater",
-            rank=4,
-            material_type="Glove",
-            description="""
-                You gain a +2 \\glossterm<accuracy> bonus with the \\ability<offhand strike> ability.
-            """,
-            short_description="Grants +2 accuracy with offhand strikes",
-        ),
-        create_apparel(
-            name="Ambidextrous Gloves, Supreme",
-            rank=6,
-            material_type="Glove",
-            description="""
-                You gain a +3 \\glossterm<accuracy> bonus with the \\ability<offhand strike> ability.
-            """,
-            short_description="Grants +3 accuracy with offhand strikes",
+            upgrades=[
+                Upgrade(
+                    description="The accuracy bonus increases to +2.",
+                    rank=4,
+                    short_description="Grants +2 accuracy with offhand strikes",
+                ),
+                Upgrade(
+                    description="The accuracy bonus increases to +3.",
+                    rank=6,
+                    short_description="Grants +3 accuracy with offhand strikes",
+                ),
+            ],
         ),
     ]
 
@@ -113,15 +107,13 @@ def generate_apparel():
                 You are proficient with bows.
             """,
             short_description="Grants bow proficiency",
-        ),
-        create_apparel(
-            name="Bracers of Archery, Greater",
-            rank=3,
-            material_type="Bracers",
-            description="""
-                You are proficient with bows, including exotic bows.
-            """,
-            short_description="Grants exotic bow proficiency",
+            upgrades=[
+                Upgrade(
+                    description="You are also proficient with exotic bows (see \\pcref<Exotic Weapons>)",
+                    rank=3,
+                    short_description="Grants exotic bow proficiency",
+                ),
+            ]
         ),
     ]
 
@@ -142,28 +134,18 @@ def generate_apparel():
                 The armor and shield provided from this ability are dismissed if you have other body armor of any kind.
             """,
             short_description="Grants encumbrance-free +2 armor",
-        ),
-        create_apparel(
-            name="Bracers of Armor, Greater",
-            rank=4,
-            material_type="Bracers",
-            tags=[],
-            description="""
-                These bracers function like \\textit<bracers of armor>, except that the defense bonus from the body armor increases to +3.
-                In addition, its bonus to \\glossterm{damage resistance} increases to +8.
-            """,
-            short_description="Grants encumbrance-free +3 armor",
-        ),
-        create_apparel(
-            name="Bracers of Armor, Supreme",
-            rank=6,
-            material_type="Bracers",
-            tags=[],
-            description="""
-                These bracers function like \\textit<bracers of armor>, except that the defense bonus from the body armor increases to +4.
-                In addition, its bonus to \\glossterm{damage resistance} increases to +16.
-            """,
-            short_description="Grants encumbrance-free +4 armor",
+            upgrades=[
+                Upgrade(
+                    description="The defense bonus from the body armor increases to +3, and the damage resistance bonus increases to +8.",
+                    rank=4,
+                    short_description="Grants encumbrance-free +3 armor",
+                ),
+                Upgrade(
+                    description="The defense bonus from the body armor increases to +4, and the damage resistance bonus increases to +16.",
+                    rank=6,
+                    short_description="Grants encumbrance-free +4 armor",
+                ),
+            ],
         ),
     ]
 
@@ -179,26 +161,18 @@ def generate_apparel():
                 This ability has the \\abilitytag<Swift> tag, so it protects you against attacks against you during the current phase.
             """,
             short_description="Can exert to gain instant +2 Armor defense",
-        ),
-        create_apparel(
-            name="Shieldburst Bracers, Greater",
-            rank=3,
-            material_type="Bracers",
-            tags=[],
-            description="""
-                These bracers function like \\textit<shieldburst bracers>, except that the defense bonus increases to +3.
-            """,
-            short_description="Can exert to gain instant +3 Armor defense",
-        ),
-        create_apparel(
-            name="Shieldburst Bracers, Supreme",
-            rank=5,
-            material_type="Bracers",
-            tags=[],
-            description="""
-                These bracers function like \\textit<shieldburst bracers>, except that the defense bonus increases to +4.
-            """,
-            short_description="Can exert to gain instant +4 Armor defense",
+            upgrades=[
+                Upgrade(
+                    description="The defense bonus increases to +3.",
+                    rank=3,
+                    short_description="Can exert to gain instant +3 Armor defense",
+                ),
+                Upgrade(
+                    description="The defense bonus increases to +4.",
+                    rank=5,
+                    short_description="Can exert to gain instant +4 Armor defense",
+                ),
+            ],
         ),
     ]
 
@@ -217,16 +191,13 @@ def generate_apparel():
                 On a hit, you \\glossterm<knockback> each target up to 15 feet in a straight line directly away from you.
             """,
             short_description="Can knock nearby creatures back",
-        ),
-        create_apparel(
-            name="Bracers of Repulsion, Greater",
-            rank=6,
-            material_type="Bracers",
-            description="""
-                These bracers function like \\mitem<bracers of repulsion>, except that they target your \\glossterm<enemies> within a \\arealarge radius burst.
-                In addition, the knockback distance increases to 30 feet.
-            """,
-            short_description="Can knock enemies back",
+            upgrades=[
+                Upgrade(
+                    description="The area increases to a \\arealarge radius that only affects your enemies, and the knockback distance increases to 30 feet.",
+                    rank=6,
+                    short_description="Can knock enemies back",
+                ),
+            ],
         ),
     ]
 
@@ -253,24 +224,18 @@ def generate_apparel():
                 You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<improvised weapons>.
             """,
             short_description="Grants +2 power with improvised weapons",
-        ),
-        create_apparel(
-            name="Gauntlets of Improvisation, Greater",
-            rank=3,
-            material_type="Gauntlet",
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<improvised weapons>.
-            """,
-            short_description="Grants +4 power with improvised weapons",
-        ),
-        create_apparel(
-            name="Gauntlets of Improvisation, Supreme",
-            rank=5,
-            material_type="Gauntlet",
-            description="""
-                You gain a +8 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<improvised weapons>.
-            """,
-            short_description="Grants +8 power with improvised weapons",
+            upgrades=[
+                Upgrade(
+                    description="The power bonus increases to +4.",
+                    rank=3,
+                    short_description="Grants +4 power with improvised weapons",
+                ),
+                Upgrade(
+                    description="The power bonus increases to +8.",
+                    rank=5,
+                    short_description="Grants +8 power with improvised weapons",
+                ),
+            ],
         ),
     ]
 
@@ -2335,28 +2300,18 @@ def generate_apparel():
                 In addition, you gain a \\plus2 \\glossterm<magic bonus> to \\glossterm<power>.
             """,
             short_description="Grants many small bonuses",
-        ),
-        create_apparel(
-            name="Ring of Mastery, Greater",
-            rank=4,
-            material_type="Ring",
-            tags=["Attune (deep)"],
-            description="""
-                You gain a +8 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
-                In addition, you gain a \\plus4 \\glossterm<magic bonus> to \\glossterm<power>.
-            """,
-            short_description="Grants many bonuses",
-        ),
-        create_apparel(
-            name="Ring of Mastery, Supreme",
-            rank=6,
-            material_type="Ring",
-            tags=["Attune (deep)"],
-            description="""
-                You gain a +16 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
-                In addition, you gain a \\plus8 \\glossterm<magic bonus> to \\glossterm<power>.
-            """,
-            short_description="Grants many large bonuses",
+            upgrades=[
+                Upgrade(
+                    description="The hit point and damage resistance bonuses increase to +8, and the power bonus increases to +4.",
+                    rank=4,
+                    short_description="Grants many bonuses",
+                ),
+                Upgrade(
+                    description="The hit point and damage resistance bonuses increase to +16, and the power bonus increases to +8.",
+                    rank=6,
+                    short_description="Grants many large bonuses",
+                ),
+            ],
         ),
     ]
 
@@ -3138,7 +3093,7 @@ def generate_apparel_table():
     rows = []
     for item in apparel:
         rows += item.latex_table_rows(include_type=True)
-    row_text = "\n".join(rows)
+    row_text = "\n".join(sorted_table_rows(rows))
     return longtablify(
         f"""
             \\lcaption<Magic Apparel> \\\\
