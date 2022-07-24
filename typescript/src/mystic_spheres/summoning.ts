@@ -156,13 +156,19 @@ export const summoning: MysticSphere = {
     {
       name: "Ramming Summon",
 
+      // solid ground and -1d for knockback
       attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
+        hit: `
+          The target takes 1d6 + \\glossterm{power} bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 15 feet in a straight line horizontally away from you.
+        `,
         targeting: `
           Make an attack vs. Armor against anything on solid ground within \\medrange.
-          You summon a creature with a large horn or horns, such as a moose, that rams into the target with great force before disappearing.
         `,
       },
+      narrative: `
+          You summon a creature with a large horn or horns, such as a moose, that rams into the target with great force before disappearing.
+      `,
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
@@ -171,14 +177,20 @@ export const summoning: MysticSphere = {
     {
       name: "Greater Ramming Summon",
 
+      // +4 ranks for on-damage instead of on-hp
       attack: {
-        hit: `The target takes 2d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `
+          The target takes 2d6 + \\glossterm{power} bludgeoning damage.
+          If it takes damage, you \\glossterm{knockback} it up to 15 feet in a straight line horizontally away from you.
+        `,
         targeting: `
-          Make an attack vs. Armor against anything on solid ground within \\longrange.
-          You summon a large creature with a large horn or horns, such a rhinoceros, that rams into the target with great force before disappearing.
+          Make an attack vs. Armor against anything on solid ground within \\medrange.
         `,
       },
-      rank: 4,
+      narrative: `
+          You summon a large creature with a large horn or horns, such a rhinoceros, that rams into the target with great force before disappearing.
+      `,
+      rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
     },
@@ -189,9 +201,9 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
-        Make an attack vs. Reflex against everything on solid ground in a \\medarealong, 5 ft. wide line from you.
-        You summon a Medium creature that tramples through the area before disappearing.
-        The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
+          Make an attack vs. Reflex against everything on solid ground in a \\medarealong, 5 ft. wide line from you.
+          You summon a Medium creature that tramples through the area before disappearing.
+          The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
         `,
       },
       rank: 1,
