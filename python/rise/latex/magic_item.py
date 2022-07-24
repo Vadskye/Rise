@@ -100,7 +100,9 @@ class MagicItem(object):
             return item_prices[self.rank]
 
     def latex_table_row(self, include_type=True):
-        material_type = ("Body" if self.material_type == "Body armor" else self.material_type) or ''
+        material_type = self.material_type or ''
+        if material_type == "Body armor":
+            material_type = 'Body'
         # \\tb<Name> & \\tb<Item Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         type_text = f" & {material_type}" if include_type else ""
         return f"\\itemref<{self.name}> & {self.rank} ({self.price()} gp) {type_text} & {self.short_description} & \\itempref<{self.name}> \\\\"
@@ -120,12 +122,12 @@ class MagicItem(object):
             else f"{self.material_type} ({materials_text})"
         )
         rank_text = f"Rank~{self.rank} ({self.price()} gp)"
-        tag_header_middle = '[' + self.tag_text() + ']' if self.tag_text() else ''
+        tag_argument = '[' + self.tag_text() + ']' if self.tag_text() else ''
         return join(
             f"""
-                \\itemsection<{self.name}>
+                \\itemsection<{self.name}>{tag_argument}
                 \\vspace<-0.5em>
-                \\itemheader<{type_text}>{tag_header_middle}<{rank_text}>
+                \\spelltwocol<{type_text}><{rank_text}>
                 {self.description}
             """,
             self.latex_ability(),
