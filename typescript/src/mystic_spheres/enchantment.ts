@@ -91,7 +91,7 @@ export const enchantment: MysticSphere = {
         This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
         In combat, most creatures with an intelligence of 0 or less will often talk about what they are planning on doing, which can help you predict their actions.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\longrange.
+          Make an attack vs. Mental with a +3 accuracy bonus against one creature within \\longrange.
         `,
       },
 
@@ -499,12 +499,12 @@ export const enchantment: MysticSphere = {
         crit: `The penalty increases to -5.`,
         hit: `As a \\glossterm{condition}, the target takes a -2 penalty to Mental defense.`,
         targeting: `
-          Make an attack vs. Mental with a +3 bonus against one creature within \\medrange.
+          Make an attack vs. Mental with a +4 bonus against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
-      tags: ["Emotion"],
+      tags: ["Emotion", "Subtle"],
     },
 
     {
