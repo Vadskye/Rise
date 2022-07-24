@@ -120,6 +120,17 @@
     \end{figure}
 }
 
+% The HTML version of threecol has to put its tabularx inside of a figure
+\DeclareDocumentCommand{\threecol}{m m m}
+{
+    \begin{figure}
+    \begin{tabularx}{\linewidth}{@{}~l~>{\lcol}X~r~@{}}
+        \renewcommand{\arraystretch}{0.5}
+        #1 & #2 & #3
+    \end{tabularx}
+    \end{figure}
+}
+
 % The HTML version of termlink can't use mbox
 % args:
 %   #1: reference name of term, if different from display name
@@ -163,7 +174,7 @@
 \newcommand{\tref}[1]{Table~\ref{cap:#1}:~\hyperref[cap:#1]{#1}}
 \newcommand{\trefnp}[1]{Table~\ref{cap:#1}:~\hyperref[cap:#1]{#1}}
 \newcommand{\featpref}[1]{\hyperref[feat:#1]{here}}
-\newcommand{\mitempref}[1]{\hyperref[item:#1]{here}}
+\newcommand{\itempref}[1]{\hyperref[item:#1]{here}}
 \newcommand{\featpcref}[1]{\hyperref[feat:#1]{#1}}
 
 % small text for the feats table

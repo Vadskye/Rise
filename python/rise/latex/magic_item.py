@@ -103,7 +103,7 @@ class MagicItem(object):
         material_type = ("Body" if self.material_type == "Body armor" else self.material_type) or ''
         # \\tb<Name> & \\tb<Item Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         type_text = f" & {material_type}" if include_type else ""
-        return f"{self.name} & {self.rank} ({self.price()} gp) {type_text} & {self.short_description} & \\pageref<item:{self.name}> \\\\"
+        return f"\\itemref<{self.name}> & {self.rank} ({self.price()} gp) {type_text} & {self.short_description} & \\itempref<{self.name}> \\\\"
 
     def tag_text(self):
         return f"{self.latex_tags()}" if self.tags else ""
@@ -119,22 +119,14 @@ class MagicItem(object):
             if self.material_type is None
             else f"{self.material_type} ({materials_text})"
         )
-        twocol_text = (
-            f"\\spelltwocol<{type_text}><{self.tag_text()}>"
-            if type_text or self.tag_text()
-            else ""
-        )
         rank_text = f"Rank~{self.rank} ({self.price()} gp)"
+        tag_header_middle = '[' + self.tag_text() + ']' if self.tag_text() else ''
         return join(
             f"""
-                \\lowercase<\\hypertargetraised<item:{self.name}><>>
-                \\hypertargetraised<item:{self.name}><>
-                \\spelltwocol<\\normalsize \\textbf<{self.name}>><{rank_text}>
-                {twocol_text}
+                \\itemsection<{self.name}>
+                \\vspace<-0.5em>
+                \\itemheader<{type_text}>{tag_header_middle}<{rank_text}>
                 {self.description}
             """,
             self.latex_ability(),
-            f"""
-                \\vspace<0.5em>
-            """,
         )

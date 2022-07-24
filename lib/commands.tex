@@ -305,6 +305,15 @@
     }
 }
 
+\DeclareDocumentCommand{\itemref}{s m}
+{
+    \hyperlink{item:#2}{#2}
+    \IfBooleanF{#1}
+    {
+        \hypertargetraised{itemtable:#2}{}
+    }
+}
+
 % #1: if provided, skip the hypertargetraised back reference
 % #2: class shorthand name
 % #3: archetype name
@@ -492,6 +501,27 @@
 \DeclareDocumentCommand{\advancement}{}{
     \parhead{Advancement}
 }
+
+\DeclareDocumentCommand{\itemsection}{m}
+{
+    \subsubsection[#1]{
+        \protect
+        \hypertargetraised{item:#1}{
+            \protect
+            \hyperlink{itemtable:#1}{#1}
+        }
+    }
+    \label{item:#1}
+}
+
+\DeclareDocumentCommand{\itemheader}{m o m}
+{
+    \spelltwocol{#1}{#3}
+    \IfValueT{#2}{
+        \spelltwocol{}{#2}
+    }
+}
+
 
 \ExplSyntaxOff
 
