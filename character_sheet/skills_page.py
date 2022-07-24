@@ -176,7 +176,7 @@ def calc_skill_equation_components(skill_parsable, attribute):
     if attribute == "other":
         return [
             underlabel(
-                "Train?",
+                "Train",
                 number_input(
                     {
                         "disabled": True,
@@ -191,7 +191,7 @@ def calc_skill_equation_components(skill_parsable, attribute):
     else:
         return [
             underlabel(
-                "Train?",
+                "Train",
                 number_input(
                     {
                         "disabled": True,
