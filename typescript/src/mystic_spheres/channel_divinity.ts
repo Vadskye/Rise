@@ -206,7 +206,7 @@ export const channelDivinity: MysticSphere = {
           As a \\glossterm{condition}, the target takes a -2 penalty to Mental defense.
         `,
         targeting: `
-          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one creature within \\longrange.
+          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one creature within \\medrange.
         `,
       },
       rank: 1,
