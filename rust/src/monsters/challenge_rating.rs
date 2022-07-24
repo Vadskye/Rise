@@ -109,8 +109,9 @@ impl ChallengeRating {
 
     pub fn difficult_encounter(level: i32, count: i32) -> Vec<Creature> {
         fn sm(cr: ChallengeRating, l: i32) -> Creature {
-            return Monster::standard_monster(cr, max(l, 1), None, None)
-                .creature;
+            let mut monster = Monster::standard_monster(cr, max(l, 1), None, None);
+            monster.add_magical_attack();
+            return monster.creature;
         }
 
         match count {
@@ -172,8 +173,9 @@ impl ChallengeRating {
 
     pub fn standard_encounter(level: i32, count: i32) -> Vec<Creature> {
         fn sm(cr: ChallengeRating, l: i32) -> Creature {
-            return Monster::standard_monster(cr, max(l, 1), None, None)
-                .creature;
+            let mut monster = Monster::standard_monster(cr, max(l, 1), None, None);
+            monster.add_magical_attack();
+            return monster.creature;
         }
 
         match count {
