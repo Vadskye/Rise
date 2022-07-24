@@ -290,10 +290,10 @@ export const enchantment: MysticSphere = {
           Each target is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
@@ -302,10 +302,10 @@ export const enchantment: MysticSphere = {
       name: "Greater Discordant Song",
 
       functionsLike: {
-        exceptThat: "the attack affects all \\glossterm{enemies} in a \\largearea radius from you.",
+        exceptThat: "the area increases to a \\hugearea radius from you.",
         name: "discordant song",
       },
-      rank: 6,
+      rank: 7,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
@@ -365,13 +365,13 @@ export const enchantment: MysticSphere = {
       name: "Frighten",
 
       attack: {
-        crit: `The target is \\panicked by you instead of frightened.`,
+        crit: `The target is \\panicked instead of frightened.`,
         hit: `As a \\glossterm{condition}, the target is \\frightened by a creature of your choice within range.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Emotion"],
     },

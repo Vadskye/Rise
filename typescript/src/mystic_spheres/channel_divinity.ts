@@ -184,9 +184,10 @@ export const channelDivinity: MysticSphere = {
       name: "Fear of the Divine",
 
       attack: {
-        crit: "The target is \\panicked instead of \\frightened.",
+        crit: "The condition must be removed twice before the effect ends.",
         hit: `
           The target is \\frightened by you as a \\glossterm{condition}.
+          While it has no remaining \\glossterm{damage resistance}, it is \\panicked instead of frightened.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
