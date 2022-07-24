@@ -755,7 +755,9 @@ def generate_armor_table():
         sorted(generate_armor(), key=lambda item: item.name),
         key=lambda item: item.rank,
     )
-    rows = [item.latex_table_row() for item in armor]
+    rows = []
+    for item in armor:
+        rows += item.latex_table_rows(include_type=True)
     row_text = "\n".join(rows)
     return longtablify(
         f"""

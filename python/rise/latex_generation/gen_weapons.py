@@ -966,7 +966,9 @@ def generate_weapon_table():
         sorted(generate_weapons(), key=lambda item: item.name),
         key=lambda item: item.rank,
     )
-    rows = [item.latex_table_row(include_type=False) for item in weapons]
+    rows = []
+    for item in weapons:
+        rows += item.latex_table_rows(include_type=False)
     row_text = "\n".join(rows)
     return longtablify(
         f"""

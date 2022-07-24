@@ -2,13 +2,13 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem
+from rise.latex.magic_item import MagicItem, Upgrade
 from rise.latex.util import latexify, longtablify
 from rise.latex.tags import add_attune_tag
 
 
 def create_apparel(
-    name, rank, material_type, description, short_description, tags=None
+    name, rank, material_type, description, short_description, tags=None, upgrades=None
 ):
     return MagicItem(
         name=name,
@@ -17,6 +17,7 @@ def create_apparel(
         description=description,
         short_description=short_description,
         tags=add_attune_tag(tags),
+        upgrades=upgrades,
     )
 
 
@@ -34,28 +35,16 @@ def generate_apparel():
                 If you have \\trait<blindsight>, you increase its range by 15 feet.
             """,
             short_description="Increases range of blindsense and blindsight",
-        ),
-        create_apparel(
-            name="Blind Seer's Circlet, Greater",
-            rank=5,
-            material_type="Circlet",
-            tags=[],
-            description="""
-                If you have \\trait<blindsense>, you increase its range by 60 feet.
-                If you have \\trait<blindsight>, you increase its range by 30 feet.
-            """,
-            short_description="Greatly increases range of blindsense and blindsight",
-        ),
-        create_apparel(
-            name="Blind Seer's Circlet, Supreme",
-            rank=7,
-            material_type="Circlet",
-            tags=[],
-            description="""
-                If you have \\trait<blindsense>, you increase its range by 120 feet.
-                If you have \\trait<blindsight>, you increase its range by 60 feet.
-            """,
-            short_description="Drastically increases range of blindsense and blindsight",
+            upgrades=[
+                Upgrade(
+                    description="Blindsense increases by 60 feet, and blindsight increases to 30 feet.",
+                    rank=5,
+                ),
+                Upgrade(
+                    description="Blindsense increases by 120 feet, and blindsight increases to 60 feet.",
+                    rank=7,
+                ),
+            ],
         ),
     ]
 
@@ -70,24 +59,18 @@ def generate_apparel():
                 You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
             """,
             short_description="Grants +2 power",
-        ),
-        create_apparel(
-            name="Gloves of Potency, Greater",
-            rank=4,
-            material_type="Glove",
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +4 power",
-        ),
-        create_apparel(
-            name="Gloves of Potency, Supreme",
-            rank=6,
-            material_type="Glove",
-            description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +8 power",
+            upgrades=[
+                Upgrade(
+                    description="The power bonus increases to +4.",
+                    rank=4,
+                    short_description="Grants +4 power",
+                ),
+                Upgrade(
+                    description="The power bonus increases to +8.",
+                    rank=6,
+                    short_description="Grants +8 power",
+                ),
+            ],
         ),
     ]
 
@@ -3152,7 +3135,9 @@ def generate_apparel_table():
         sorted(generate_apparel(), key=lambda item: item.name),
         key=lambda item: item.rank,
     )
-    rows = [item.latex_table_row() for item in apparel]
+    rows = []
+    for item in apparel:
+        rows += item.latex_table_rows(include_type=True)
     row_text = "\n".join(rows)
     return longtablify(
         f"""
