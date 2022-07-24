@@ -314,7 +314,6 @@ export const flurryOfBlows: CombatStyle = {
         Make a melee \\glossterm{strike} with a +2 accuracy bonus.
         You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\shaken by you.
-        After it stops being shaken, it is immune to being shaken in this way until it takes a \\glossterm{short rest}.
       `,
       rank: 1,
       scaling: {
