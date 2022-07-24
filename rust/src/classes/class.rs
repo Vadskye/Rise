@@ -1294,7 +1294,7 @@ impl Class {
             Self::Cleric => {
                 r"
                 \newpage
-                \section{Cleric Domain Abilities}\label{Cleric Domain Abilities}
+                \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
                     These domain abilities can be granted by the \textit{domain influence} cleric archetype.
                     All cleric domain abilities are \glossterm{magical} unless otherwise specified.
 
