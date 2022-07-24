@@ -234,7 +234,7 @@ export const chronomancy: MysticSphere = {
         crit: `The target \\stunned instead of dazed.`,
         hit: `The target is \\slowed and \\dazed as a single \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
 

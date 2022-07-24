@@ -102,6 +102,26 @@ export const toxicology: MysticSphere = {
     },
 
     {
+      name: "Poison -- Giant Wasp Venom",
+
+      attack: {
+        crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
+        hit: `
+          The target takes 1d4 acid damage.
+          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
+          The stage 1 effect makes the target \\slowed and \\dazed while the poison lasts.
+          The stage 3 effect makes the target \\stunned while the poison lasts instead of dazed.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a +1 accuracy bonus against one living creature within \\medrange.
+        `,
+      },
+      rank: 1,
+      scaling: "accuracy",
+      tags: ["Manifestation"],
+    },
+
+    {
       name: "Poison -- Blood Leech Venom",
 
       attack: {
@@ -113,26 +133,6 @@ export const toxicology: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-      rank: 2,
-      scaling: "accuracy",
-      tags: ["Manifestation"],
-    },
-
-    {
-      name: "Poison -- Giant Wasp Venom",
-
-      attack: {
-        crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
-        hit: `
-          The target takes 1d8 acid damage.
-          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
-          The stage 1 effect makes the target \\slowed and \\dazed while the poison lasts.
-          The stage 3 effect makes the target \\stunned while the poison lasts instead of dazed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude with a +1 accuracy bonus against one living creature within \\medrange.
         `,
       },
       rank: 2,
