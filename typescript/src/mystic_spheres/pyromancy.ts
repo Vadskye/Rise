@@ -477,9 +477,12 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         crit: `The target is \\frightened instead of shaken.`,
-        hit: `The target is \\shaken by you and all other sources of fire as a \\glossterm{condition}.`,
+        hit: `
+          The target is \\shaken by you as a \\glossterm{condition}.
+          Whenever it takes fire damage, the penalties from this condition are \\glossterm{briefly} doubled.
+        `,
         targeting: `
-        Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       rank: 1,
@@ -492,7 +495,10 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         crit: `The target is \\panicked instead of frightened.`,
-        hit: `The target is \\frightened by you and all other sources of fire as a \\glossterm{condition}.`,
+        hit: `
+          The target is \\frightened by you as a \\glossterm{condition}.
+          Whenever it takes fire damage, the penalties from this condition are \\glossterm{briefly} doubled.
+        `,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
         `,

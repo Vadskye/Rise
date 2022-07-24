@@ -88,11 +88,11 @@ export const heraldOfWar: CombatStyle = {
           Each target without remaining damage resistance is \\frightened by you instead of shaken.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       scaling: "accuracy",
-      rank: 3,
+      rank: 2,
       tags: ["Emotion"],
     },
 
@@ -101,7 +101,7 @@ export const heraldOfWar: CombatStyle = {
 
       functionsLike: {
         name: "fearsome roar",
-        exceptThat: "the area increases to a \\largearea radius.",
+        exceptThat: "the area increases to a \\hugearea radius.",
       },
       scaling: "accuracy",
       rank: 6,
@@ -195,14 +195,13 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\shaken by you.
       `,
       rank: 1,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        3: "You gain a +2 accuracy bonus with the strike.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
       tags: ["Emotion"],
     },
@@ -212,8 +211,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\frightened by you.
       `,
       rank: 5,
       scaling: {
@@ -229,13 +227,13 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\smallarea radius from you.
+        In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
         On a hit, each target is \\glossterm{briefly} \\shaken by you.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: "You gain a +1 accuracy bonus with both the strike and the area attack.",
-        7: "The accuracy bonus increases to +2.",
+        4: "You gain a +1 accuracy bonus with both the strike and the area attack.",
+        6: "The accuracy bonus increases to +2.",
       },
     },
 

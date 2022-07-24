@@ -317,7 +317,7 @@ export const enchantment: MysticSphere = {
           As a \\glossterm{condition}, the target is \\shaken by a creature of your choice within range.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
         `,
       },
       rank: 1,
@@ -326,14 +326,14 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: "Fear",
+      name: "Mass Fear",
 
       attack: {
         crit: `The effect becomes a \\glossterm{condition} on each target.`,
         // No relevant glance effect
         hit: `Each target is \\glossterm{briefly} \\shaken by a creature of your choice within range.`,
         targeting: `
-          Make an attack vs. Mental with a +1 \\glossterm{accuracy} bonus against all creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
         `,
       },
       rank: 1,
@@ -351,10 +351,10 @@ export const enchantment: MysticSphere = {
           Each target is \\shaken as a \\glossterm{condition} by a creature of your choice within range.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Emotion"],
     },
@@ -364,7 +364,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         crit: `The target is \\panicked by you instead of frightened.`,
-        hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
+        hit: `As a \\glossterm{condition}, the target is \\frightened by a creature of your choice within range.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -381,7 +381,7 @@ export const enchantment: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `Each target is \\shaken by you as a \\glossterm{condition}.`,
         targeting: `
-          At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
+          At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius \\glossterm{emanation} from you.
           After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
         `,
       },
@@ -473,23 +473,6 @@ export const enchantment: MysticSphere = {
       rank: 1,
       scaling: "accuracy",
       tags: ["Emotion"],
-    },
-
-    {
-      name: "Curse of Phobia",
-
-      attack: {
-        crit: `The effect lasts until this curse is removed.`,
-        hit: `The target is \\shaken by all sources of your chosen fear until it takes a \\glossterm{short rest}.`,
-        targeting: `
-        When you cast this spell, choose one of the following fears: blood (including any creature with a \\glossterm{vital wound}, even the target), darkness (any location that does not have \\glossterm{bright illumination}), heights (any drop more 10 feet high), insects, snakes, or water.
-
-        Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 3,
-      scaling: "accuracy",
-      tags: ['Curse', 'Emotion'],
     },
 
     {

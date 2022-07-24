@@ -279,7 +279,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
       rank: 1,

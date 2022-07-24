@@ -438,7 +438,7 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Screaming",
-            rank=2,
+            rank=1,
             description="""
                 Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, this weapons emits a blood-curdling scream.
                 This causes you and that creature to \\glossterm<briefly> become \\shaken by each other.
@@ -449,7 +449,7 @@ def generate_weapons():
         ),
         create_weapon(
             name="Screaming, Greater",
-            rank=6,
+            rank=5,
             description="""
                 Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, this weapons emits a nightmarish scream.
                 This causes you and that creature to \\glossterm<briefly> become \\frightened by each other.

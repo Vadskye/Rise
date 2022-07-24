@@ -1150,10 +1150,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Intimidate skill.
 
-        \ff[3]{Greater Demoralize} When you use the \textit{demoralize} ability, the target is \shaken by you as a \glossterm{condition} instead of being shaken the end of the next round.
+        \ff[3]{Greater Demoralize} When you use the \textit{demoralize} ability, the target is \shaken by you as a \glossterm{condition} instead of being briefly shaken.
         For details, see \pcref{Demoralize}.
 
-        \ff[6]{Threatening Presence} Creatures that are shaken, frightened, or panicked by you suffer the full penalties for those conditions as long as they are within \distrange of you instead of the normal \medrange limit.
+        \ff[6]{Threatening Presence} Creatures that are shaken, frightened, or panicked by you suffer a penalty to their Armor defense equal to the penalty they suffer to their Mental defense.
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
@@ -1161,7 +1161,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
 
-        \ff[18]{Greater Threatening Presence} Creatures that are suffering penalties for being shaken, frightened, or panicked by you also take a \minus2 penalty to all defenses in addition to the normal penalties.
+        \ff[18]{Greater Threatening Presence} The defense penalty from your \textit{threatening presence} ability also applies to Fortitude and Reflex defenses.
 
         \ff[21]{Mass Demoralize} When you use the \textit{demoralize} ability, it affects all \glossterm{enemies} within a \largearea radius.
     \end{feat}
@@ -1502,7 +1502,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \lcaption{Debuff Effect Ranks}
             \begin{dtabularx}{\columnwidth}{l >{\lcol}X}
                 \tb{Rank} & \tb{Condition effects} \tableheaderrule
-                1 & Dazed, dazzled, goaded (by you), shaken (by you), slowed \\
+                % omit shaken; it's a tier 0.5 debuff that shouldn't be upgraded
+                1 & Dazed, dazzled, goaded (by you), slowed \\ 
                 2 & Frightened (by you), stunned \\
                 3 & Blinded, confused, immobilized, panicked (by you) \\
                 4 & Asleep\fn{1}, paralyzed \\

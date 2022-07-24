@@ -475,7 +475,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{condemn the fearful} ability as a standard action.
                 \begin{activeability}{Condemn the Fearful}
                     \rankline
-                    Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+                    Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
                     \hit Each target is \shaken by you as a \glossterm{condition}.
 

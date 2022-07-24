@@ -305,7 +305,7 @@ export const channelDivinity: MysticSphere = {
           Each target is \\shaken by you as a \\glossterm{condition}.
         `,
         targeting: `
-          At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius \\glossterm{emanation} from you.
+          At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius \\glossterm{emanation} from you.
           After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
         `,
       },
