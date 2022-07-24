@@ -103,19 +103,21 @@ export const enchantment: MysticSphere = {
     {
       name: "Dance",
 
-      // This is T1 + one level; it is a weird hybrid of immobilized and a minor T1 effect
+      // This is T1; it is a weird hybrid of immobilized and a minor T1 effect
       attack: {
         crit: `The target must dance as a \\glossterm{standard action} to reset the penalties, instead of as a move action.`,
-        hit: `As a \\glossterm{condition}, the target is compelled to dance.
-        It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
-        At the end of each round, if the target did not dance during that round, it takes a -2 penalty to \\glossterm{accuracy} and Mental defense as the compulsion intensifies.
-        This penalty stacks each round until the target dances, which resets the penalties to 0.`,
+        hit: `
+          As a \\glossterm{condition}, the target is compelled to dance.
+          It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
+          At the end of each movement phase, if the target did not dance during that phase, it takes a -2 penalty to its defenses as the compulsion intensifies.
+          This penalty stacks each round until the target dances, which resets the penalties to 0.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
 
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
