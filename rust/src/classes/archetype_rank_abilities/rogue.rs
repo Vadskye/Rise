@@ -340,9 +340,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytag{Auditory}, \abilitytag{Emotion}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        \hit The target takes 1d4 sonic damage.
+                        \hit The target takes 1d6 + half \glossterm{power} sonic damage.
                         If it loses \glossterm{hit points} from this damage, it is \frightened by you for the duration of your performance.
-                        Unlike normal, the target continues to suffer the penalties of being frightened while it is beyond \rngmed range from you as long as it is still affected by your performance.
 
                         \rankline
                         You gain a \plus1 \glossterm{accuracy} bonus and a \plus1d damage bonus with the attack for each rank beyond 1.
