@@ -1475,6 +1475,21 @@ def generate_tools():
             """,
             short_description="Stuns and eventually blinds",
         ),
+        # +1 rank for +1 accuracy
+        MagicItem(
+            consumable=True,
+            name="Poison, Giant Wasp Venom",
+            rank=1,
+            material_type="Poison",
+            tags=[],
+            description="""
+                This is a injury-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus3.
+                Its stage 1 effect makes the target \\slowed and \\dazed while the poison lasts.
+                Its stage 3 effect makes the target \\stunned while the poison lasts instead of dazed.
+            """,
+            short_description="Slows and dazes, eventually stuns",
+        ),
         MagicItem(
             consumable=True,
             name="Poison, Blood Leech Venom",
@@ -1487,21 +1502,6 @@ def generate_tools():
                 Its stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
             """,
             short_description="Inflicts damage vulnerability",
-        ),
-        # +1 rank for +1 accuracy
-        MagicItem(
-            consumable=True,
-            name="Poison, Giant Wasp Venom",
-            rank=2,
-            material_type="Poison",
-            tags=[],
-            description="""
-                This is a injury-based liquid poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus5.
-                Its stage 1 effect makes the target \\slowed and \\dazed while the poison lasts.
-                Its stage 3 effect makes the target \\stunned while the poison lasts instead of dazed.
-            """,
-            short_description="Slows and dazes, eventually stuns",
         ),
         # +2 ranks for full power
         MagicItem(
