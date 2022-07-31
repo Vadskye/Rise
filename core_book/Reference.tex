@@ -94,37 +94,37 @@
     Harming a charmed creature is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
     An observant creature may interpret overt threats to its allies as a threat to itself.
 
-    \debuffdef{climbing} A creature that is climbing without a \glossterm{climb speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+    \debuffdef{climbing} A creature that is climbing without a \glossterm{climb speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
 
-    \debuffdef{confused} A confused creature takes a \minus4 penalty to all defenses and is unable to independently control its actions.
+    \debuffdef{confused} A confused creature takes a \minus2 penalty to all defenses and is unable to independently control its actions.
     This penalty does not stack with the \dazed or \stunned effects.
     \confusionexplanation
     % Kind of an awkward hack
     A confused creature automatically stops being confused after ten minutes, even if it was unable to rest due to its confusion.
 
-    \debuffdef{dazed} A dazed creature takes a \minus2 penalty to all defenses.
+    \debuffdef{dazed} A dazed creature takes a \minus1 penalty to all defenses.
     This does not stack with the \stunned or \confused effects.
 
     \debuffdef{dazzled} A dazzled creature has difficulty seeing.
     It loses the benefits of the \trait{darkvision} and \trait{low-light vision} abilities if it has them.
     In addition, it treats everything as if it had \glossterm{concealment}.
-    Among other effects, this gives its \glossterm{targeted} attacks a 25\% \glossterm{miss chance}.
+    Among other effects, this gives its \glossterm{targeted} attacks a 20\% \glossterm{miss chance}.
 
-    \debuffdef{deafened} A deafened creature cannot hear. It automatically fails at actions which depend on hearing. In addition, it has a 25\% failure chance when casting any spell with verbal components.
+    \debuffdef{deafened} A deafened creature cannot hear. It automatically fails at actions which depend on hearing. In addition, it has a 20\% failure chance when casting any spell with verbal components.
 
     \debuffdef{dominated}[dominate] A dominated creature is mentally compelled to obey another creature.
     It obeys the commands of the creature of the dominated it unquestioningly, as an automaton.
     If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commmands (such as ``attack'' or ``follow'') can usually be communicated successfully.
 
     \debuffdef{flying} A creature that is flying takes a \minus2 penalty to its Armor and Reflex defenses.
-    If it 
+    If it has a poor \glossterm{maneuverability}, this penalty increases to \minus4 (see \pcref{Maneuverability}).
 
-    \debuffdef{frightened} A frightened creature takes a \minus4 penalty to its Mental defense.
-    In addition, it takes a \minus4 penalty to \glossterm{accuracy} against the source of its fear.
+    \debuffdef{frightened} A frightened creature takes a \minus2 penalty to its Mental defense.
+    In addition, it takes a \minus2 penalty to \glossterm{accuracy} against the source of its fear.
     This does not stack with the \shaken or \panicked effects.
     If the source of a frightened creature's fear is \glossterm{defeated}, this effect is broken.
 
-    \debuffdef{goaded} A goaded creature takes a \minus2 penalty to \glossterm{accuracy} against creatures other than the creature that goaded it it as long as it is within \rngmed range of of that creature.
+    \debuffdef{goaded} A goaded creature takes a \minus1 penalty to \glossterm{accuracy} against creatures other than the creature that goaded it it as long as it is within \rngmed range of of that creature.
     If the goading creature is \glossterm{defeated}, this effect is broken.
     If a creature is goaded by multiple different creatures simultaneously, it suffers the accuracy penalty on all of its attacks.
 
@@ -133,17 +133,15 @@
     \begin{itemize}
         \item You are unable to use one of your hands for any purposes other than grappling.
             This prevents humanoid creatures from taking any actions which would require having two free hands, such as attacking with heavy weapons.
+            This does not affect creatures without hands.
         \item You take a \minus2 penalty to Armor and Reflex defenses.
-        \item Abilities that have \glossterm{somatic components} have a 25\% \glossterm{failure chance}.
         \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \textit{shove} ability (see \pcref{Shove}).
     \end{itemize}
 
     Other than the restrictions listed above, you can act normally. You can also try to move the grapple, escape the grapple, or pin your opponent. For details, see \pcref{Grapple Actions}.
 
     \debuffdef{helpless} A helpless creature is completely at an opponent's mercy.
-    It takes a \minus10 penalty to its Armor and Reflex defenses.
-    In addition, it is \unaware of all attacks against it.
-    The penalty for being unaware does not stack with the penalty for being helpless, but this allows appropriate use of abilities like a rogue's \ability{sneak attack} on helpless creatures.
+    It is considered to be \unaware of all attacks against it, even if it knows they are coming.
     Paralyzed, bound, and unconscious creatures are helpless.
 
     \debuffdef{immobilized} An immobilized creature takes a \minus4 penalty to Reflex defense and can't use any of its movement speeds.
@@ -168,26 +166,25 @@
 
     \debuffdef{prone} A prone creature is lying on the ground, rather than standing normally.
     It takes a \minus2 penalty to Armor and Reflex defenses, though it gains a \plus4 bonus to all defenses against ranged \glossterm{strikes}.
-    In addition, it takes a \minus2 accuracy penalty.
     It moves at half of its normal speed, and is considered one size category smaller than normal when determining whether it is subject to \abilitytag{Size-Based} effects, including critical hits.
 
     A creature can stand up from being prone as a \glossterm{move action}.
     This generally requires one \glossterm{free hand}.
     If a creature becomes prone while in a precarious situation, such as on a narrow ledge, it may fall.
 
-    \debuffdef{shaken} A shaken creature takes a \minus2 penalty to its Mental defense.
-    In addition, it takes a \minus2 penalty to \glossterm{accuracy} against the source of its fear.
+    \debuffdef{shaken} A shaken creature takes a \minus1 penalty to its Mental defense.
+    In addition, it takes a \minus1 penalty to \glossterm{accuracy} against the source of its fear.
     This does not stack with the \frightened or \panicked effects.
     If the source of a shaken creature's fear is \glossterm{defeated}, this effect is broken.
 
-    \debuffdef{slowed} A slowed creature moves at half speed and takes a \minus2 penalty to Reflex defense.
+    \debuffdef{slowed} A slowed creature moves at half speed and takes a \minus1 penalty to its Reflex defense.
     This does not stack with the \immobilized effect.
 
     \debuffdef{squeezing} A squeezing creature is trying to move though an area too small for it to fight in normally.
     While squeezing, a creature moves at half speed and takes a \minus2 penalty to its Armor and Reflex defenses.
     For details, see \pcref{Squeezing}.
 
-    \debuffdef{stunned} A stunned creature takes a \minus4 penalty to all defenses.
+    \debuffdef{stunned} A stunned creature takes a \minus2 penalty to all defenses.
     This does not stack with the \dazed or \confused effects.
 
     \debuffdef{swimming} A creature that is swimming without a \glossterm{swim speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
