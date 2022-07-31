@@ -626,8 +626,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You can change your \textit{wild aspect} as a \glossterm{minor action}, and changing your wild aspect gains the \abilitytag{Swift} tag.
-                When you change in this way, you cannot gain the benefit of your \textit{regenerative shift} ability, and you \glossterm{briefly} cannot change wild aspects as a minor action again.
+                You can change your \textit{wild aspect} as a \glossterm{minor action}.
+                When you change in this way, it gains the \abilitytag{Swift} tag, so you can use your new abilities immediately.
+                However, you do not gain the benefit of your \textit{regenerative shift} ability, and you \glossterm{briefly} cannot change wild aspects as a minor action again.
             ",
             modifiers: None,
         },

@@ -434,7 +434,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-                    You and all \glossterm{allies} within a \medarea radius from you each regain 1d10 \glossterm{damage resistance} and can remove a \glossterm{condition}.
+                    You and all \glossterm{allies} within a \medarea radius from you each regain 1d10 \glossterm{damage resistance}.
+                    In addition, each ally affected by more than one \glossterm{condition} can remove one of those conditions.
                     This ability cannot remove an effect applied during the current round.
 
                     \rankline

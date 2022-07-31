@@ -6,31 +6,9 @@ use crate::creatures::Modifier;
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Cleansing Discipline",
-            is_magical: false,
-            rank: 1,
-            description: r"
-                You can use the \textit{cleansing discipline} ability as a \glossterm{standard action}.
-                \begin{activeability}{Cleansing Discipline}
-                    \rankline
-                    Remove up to two \glossterm{conditions} affecting you.
-                    This cannot remove effects applied during the current round.
-                    In addition, you \glossterm{briefly} cannot gain any \glossterm{conditions}.
-
-                    \rankline
-                    \rank{3} This ability gains the \abilitytag{Swift} tag.
-                    When you use it, the removed effects do not affect you during the current phase.
-                    \rank{5} You can use this ability as a \glossterm{minor action}.
-                    When you do, you increase your \glossterm{fatigue level} by one.
-                    \rank{7} You can remove any number of effects.
-                \end{activeability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Enduring Discipline",
             is_magical: false,
-            rank: 2,
+            rank: 1,
             description: r"
                 You gain a \plus1 bonus to \glossterm{vital rolls} and your \glossterm{fatigue tolerance} (see \pcref{Vital Rolls}, and \pcref{Fatigue Tolerance}).
             ",
@@ -38,6 +16,26 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::VitalRoll(1),
                 Modifier::Resource(Resource::FatigueTolerance, 1),
             ]),
+        },
+        RankAbility {
+            name: "Cleansing Discipline",
+            is_magical: false,
+            rank: 2,
+            description: r"
+                You can use the \textit{cleansing discipline} ability as a \glossterm{standard action}.
+                \begin{activeability}{Cleansing Discipline}[\ablitytag{Swift}]
+                    \rankline
+                    Remove one \glossterm{condition} affecting you.
+                    This cannot remove effects applied during the current round.
+                    Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
+
+                    \rankline
+                    \rank{4} You \glossterm{briefly} cannot gain any \glossterm{conditions} after using this ability.
+                    \rank{6} You can use this ability as a \glossterm{minor action}.
+                    When you do, you increase your \glossterm{fatigue level} by one.
+                \end{activeability}
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Enduring Discipline+",

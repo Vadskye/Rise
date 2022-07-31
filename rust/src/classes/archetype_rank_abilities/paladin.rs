@@ -276,9 +276,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                The target of this ability can also remove a \glossterm{condition}.
+                Instead regaining hit points, you can cause the target to remove a \glossterm{condition} or a \glossterm{vital wound}.
                 This cannot remove a condition applied during the current round.
-                In addition, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
                 If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
             ",
             modifiers: None,
