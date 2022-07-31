@@ -58,21 +58,14 @@ impl Monster {
             creature
                 .passive_abilities
                 .push(StandardPassiveAbility::TwoActions.ability());
+            let maximum_conditions = if level >= 12 {
+                2
+            } else {
+                3
+            };
             creature
                 .passive_abilities
-                .push(StandardPassiveAbility::ConditionRemoval(1).ability());
-            let conditions_avoided = if level >= 21 {
-                2
-            } else if level >= 12 {
-                1
-            } else {
-                0
-            };
-            if conditions_avoided > 0 {
-                creature
-                    .passive_abilities
-                    .push(StandardPassiveAbility::ConditionAvoidance(conditions_avoided).ability());
-            }
+                .push(StandardPassiveAbility::ConditionRemoval(maximum_conditions).ability());
         }
 
         let defense_modifier = if level >= 15 {
