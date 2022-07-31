@@ -104,7 +104,7 @@ class MagicItem(object):
         if self.upgrades is None:
             return None
         return "\n".join([
-            f"\\rank<{u.rank}> {u.description}"
+            f"\\rank<{rank_price_text(self, u.rank)}> {u.description}"
             for u in self.upgrades
         ])
 
