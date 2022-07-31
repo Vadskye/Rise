@@ -677,21 +677,12 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Exchange Soul Fragment}
                     \abilitytag{Swift}
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by one.
+                    When you use this ability, you increase your \glossterm{fatigue level} by two.
 
                     Remove a \glossterm{condition} affecting you.
                     This cannot remove an effect applied during the current round.
                     Because this ability has the \abilitytag{Swift} tag, the penalties from the removed effect do not affect you during the current phase.
                 \end{activeability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Unwavering Possession",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You are immune to being \dazed, \stunned, and \confused during your \textit{possession} ability.
             ",
             modifiers: None,
         },
@@ -713,6 +704,15 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
+        },
+        RankAbility {
+            name: "Unwavering Possession",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                You are immune to being \dazed, \stunned, and \confused during your \textit{possession} ability.
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Distant Possession",

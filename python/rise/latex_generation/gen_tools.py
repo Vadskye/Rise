@@ -15,7 +15,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Cleansing Potion",
-            rank=3,
+            rank=4,
             material_type="Potion",
             tags=[],
             description="""
@@ -27,7 +27,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Cleansing Potion, Greater",
-            rank=5,
+            rank=6,
             material_type="Potion",
             tags=[],
             description="""

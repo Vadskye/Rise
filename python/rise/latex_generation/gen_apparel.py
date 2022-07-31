@@ -2572,10 +2572,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Whenever you use the \\ability<discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
+                Whenever you use the \\ability<cleansing discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
                 This is not a \\abilitytag<Swift> effect, even if your \\ability<discipline> ability is a \\abilitytag<Swift> effect.
             """,
-            short_description="Using \\abilitytag<discipline> also helps an adjacent ally",
+            short_description="Using \\abilitytag<cleansing discipline> also helps an adjacent ally",
         ),
         create_apparel(
             name="Amulet of Shared Discipline, Greater",
@@ -2585,7 +2585,7 @@ def generate_apparel():
             description="""
                 This item functions like a \\textit<amulet of shared discipline>, except that the range increases to \\medrange.
             """,
-            short_description="Using the \\abilitytag<discipline> ability also helps a nearby ally",
+            short_description="Using the \\abilitytag<cleansing discipline> ability also helps a nearby ally",
         ),
     ]
 
