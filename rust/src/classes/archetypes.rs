@@ -303,7 +303,7 @@ impl ClassArchetype {
                 This archetype improves the perfection of your physical body through rigorous training.
             ",
             Self::TranscendentSage => r"
-                This archetype grants you abilities to resist or remove conditions.
+                This archetype grants you abilities to ignore debilitating effects and sense life energy.
             ",
             // Paladin
             Self::DevotedParagon => r"
