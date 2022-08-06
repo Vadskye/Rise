@@ -480,66 +480,6 @@ export const aquamancy: MysticSphere = {
       type: "Attune",
     },
     {
-      name: "Desiccation",
-
-      attack: {
-        crit: 'The condition must be removed twice before the effect ends.',
-        hit: `
-          The target is \\dazed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\rngmed range.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-    },
-    {
-      name: "Greater Desiccation",
-
-      attack: {
-        crit: 'The condition must be removed twice before the effect ends.',
-        hit: `
-          The target is \\stunned as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\rngmed range.
-        `,
-      },
-      rank: 5,
-      scaling: "damage",
-    },
-    {
-      name: "Wave of Desiccation",
-
-      attack: {
-        crit: 'The effect becomes a \\glossterm{condition}.',
-        hit: `
-          Each target that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-    },
-    {
-      name: "Greater Wave of Desiccation",
-
-      attack: {
-        crit: 'The condition must be removed twice before the effect ends.',
-        hit: `
-          Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against all living creatures in a \\largearealong, 15 ft. wide line from you.
-        `,
-      },
-      rank: 5,
-      scaling: "accuracy",
-    },
-    {
       name: "Aqueous Form",
 
       effect: `

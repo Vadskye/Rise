@@ -219,22 +219,6 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Shock and Awe",
-
-      attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\confused.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
-        `,
-      },
-      rank: 4,
-      scaling: "accuracy",
-    },
-
-    {
       name: "Electromagnetic Bolt",
 
       attack: {
@@ -462,17 +446,36 @@ export const electromancy: MysticSphere = {
     {
       name: "Lightning Rod",
 
+      // -1 level vs Greater Ignition due to minor action cost
       attack: {
         crit: `Each bolt deals double damage.`,
         hit: `As a \\glossterm{condition}, the target attracts lightning.
           As a \\glossterm{minor action}, you can call a bolt of lightning to strike the target.
-          When you do, the target takes 2d6 electricity damage.
+          When you do, the target takes 2d6 + half \\glossterm{power} electricity damage.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against anything within \\medrange.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+    },
+
+    {
+      name: "Greater Lightning Rod",
+
+      // -1 level vs Greater Ignition due to minor action cost
+      attack: {
+        crit: `Each bolt deals double damage.`,
+        hit: `As a \\glossterm{condition}, the target attracts lightning.
+          As a \\glossterm{minor action}, you can call a bolt of lightning to strike the target.
+          When you do, the target takes 4d8 + half \\glossterm{power} electricity damage.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\longrange.
         `,
       },
-      rank: 4,
+      rank: 7,
       scaling: "damage",
     },
 

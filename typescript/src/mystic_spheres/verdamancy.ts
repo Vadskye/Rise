@@ -326,21 +326,41 @@ export const verdamancy: MysticSphere = {
     {
       name: "Embedded Growth",
 
+      // short range and -1d relative to ignition for more difficult removal
       attack: {
         crit: `The damage from the condition is doubled.`,
-        hit: `As a \\glossterm{condition}, the target takes 1d4 physical damage at the end of each round.
+        hit: `As a \\glossterm{condition}, the target takes 1d4 + half \\glossterm{power} physical damage at the end of each round.
         If the the target gains a \\glossterm{vital wound} from this damage, the condition ends.
 
         This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
         The \\glossterm{difficulty value} of the check is equal to 10.`,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
       `,
       rank: 1,
+      scaling: "damage",
+    },
+
+    {
+      name: "Greater Embedded Growth",
+
+      attack: {
+        crit: `The damage from the condition is doubled.`,
+        hit: `
+          As a \\glossterm{condition}, the target takes 2d6 + half \\glossterm{power} physical damage at the end of each round.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+      narrative: `
+        You throw a seed that embeds itself in a foe and grows painfully.
+      `,
+      rank: 4,
       scaling: "damage",
     },
 

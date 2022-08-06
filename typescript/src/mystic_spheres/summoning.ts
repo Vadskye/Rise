@@ -506,7 +506,25 @@ export const summoning: MysticSphere = {
       `,
       rank: 1,
       scaling: "accuracy",
-      tags: ["Emotion"],
+      tags: [],
+    },
+
+    {
+      name: "Greater Summon Annoying Insects",
+
+      attack: {
+        crit: `The condition must be removed twice before the effect ends.`,
+        hit: `The target is \\stunned as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      narrative: `
+        It's hard to concentrate on a fight when you keep being distracted by a swarm of sand flies that buzz right into your eyes.
+      `,
+      rank: 5,
+      scaling: "accuracy",
+      tags: [],
     },
   ],
   rituals: [

@@ -391,27 +391,6 @@ export const revelation: MysticSphere = {
       scaling: "accuracy",
     },
 
-    // +1 level for +1 accuracy
-    {
-      name: "Stunning Truth",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The target's mind is overwhelmed by a total awareness of your chosen fact.
-        It is \\stunned as a \\glossterm{condition}.`,
-        targeting: `
-        Choose a fact that you know and make an attack vs. Mental against one creature within \\shortrange.
-        If the target does not already know that fact to be true or false,
-        and the target has sufficient cognitive ability to understand the fact,
-        you gain a +1 bonus to \\glossterm{accuracy}.
-        Otherwise, you take a -1 accuracy penalty.
-        The fact does not have to be true to gain this bonus.
-        `,
-      },
-      rank: 6,
-      scaling: "accuracy",
-    },
-
     {
       name: "Mystic Eye",
 

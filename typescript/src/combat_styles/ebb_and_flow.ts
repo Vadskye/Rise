@@ -118,7 +118,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
+        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
       `,
       rank: 5,
       scaling: {

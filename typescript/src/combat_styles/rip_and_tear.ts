@@ -40,24 +40,13 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Your \\glossterm{power} with the strike is halved, and you gain a +1 \\glossterm{accuracy} bonus against creatures that are not wearing armor.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+        You gain a +1 \\glossterm{accuracy} bonus with the strike against creatures that are not wearing armor.
       `,
       rank: 2,
       scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
+        4: "The accuracy bonus increases to +2.",
+        6: "The accuracy bonus increases to +3.",
       },
-    },
-
-    {
-      name: "Greater Rend the Hide",
-
-      functionsLike: {
-        name: "rend the hide",
-        exceptThat: "each target is \\stunned instead of dazed.",
-      },
-      rank: 6,
     },
 
     {
