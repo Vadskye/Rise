@@ -273,21 +273,6 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Pursuer's Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        You \\glossterm{briefly} gain a +4 bonus to contested \\glossterm{initiative} checks against each creature damaged by the strike.
-      `,
-      rank: 1,
-      scaling: {
-        3: "The initiative bonus increases to +6.",
-        5: "The initiative bonus increases to +8.",
-        7: "The initiative bonus increases to +10.",
-      },
-    },
-
-    {
       name: "Reckless Assault",
 
       // -1 rank for self-daze

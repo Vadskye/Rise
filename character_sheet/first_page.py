@@ -461,44 +461,8 @@ def movement(destination):
                         "name": f"movement_speed_{i}_value",
                     },
                 )
-                for i in range(3)
+                for i in range(4)
             ],
-            (
-                sidelabel(
-                    "Initiative",
-                    number_input(
-                        {
-                            "disabled": True,
-                            "name": "initiative_display",
-                            "value": "@{initiative}",
-                        }
-                    ),
-                )
-                if destination == "paper"
-                else flex_row(
-                    {"class": "sidelabeled-number-input"},
-                    [
-                        flex_wrapper(
-                            {"class": "core-initiative"},
-                            subtlebutton(
-                                {
-                                    "name": "roll_initiative",
-                                    "type": "roll",
-                                    "value": f"@{{character_name}} rolls initiative: [[d10+@{{initiative}}]]",
-                                },
-                                "Initiative",
-                            ),
-                        ),
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "initiative_display",
-                                "value": "@{initiative}",
-                            }
-                        ),
-                    ],
-                )
-            ),
         ],
     )
 

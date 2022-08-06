@@ -409,7 +409,6 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     "fatigue_tolerance",
     "fortitude",
     "hit_points",
-    "initiative",
     "insight_points",
     "intelligence",
     "mental",
@@ -528,7 +527,6 @@ function handleCoreStatistics() {
   handleEncumbrance();
   handleFatiguePenalty();
   handleHitPoints();
-  handleInitiative();
   handleLandSpeed();
   handlePower();
   handleVitalRolls();
@@ -1612,26 +1610,6 @@ function calcBaseHitPoints(levelish) {
         }[levelish] || 1;
   }
   return baseHp;
-}
-
-function handleInitiative() {
-  onGet(
-    {
-      miscName: "initiative",
-      numeric: ["dexterity", "perception", "fatigue_penalty"],
-    },
-    (v) => {
-      const attributeModifier = v.dexterity + v.perception;
-      setAttrs({
-        initiative: attributeModifier + v.misc - v.fatigue_penalty,
-        initiative_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: "Dex", value: v.dexterity },
-          { name: "Per", value: v.perception },
-        ]),
-        initiative_scaling: attributeModifier,
-      });
-    }
-  );
 }
 
 function handleInsightPoints() {

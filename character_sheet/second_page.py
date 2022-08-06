@@ -66,7 +66,6 @@ def create_page(destination):
                             calc_attributes(),
                             div({"class": "section-header"}, "Core Statistics"),
                             calc_encumbrance(),
-                            calc_initiative(),
                             calc_land_speed(),
                             calc_vital_rolls(),
                             calc_weight_limits(),
@@ -376,35 +375,6 @@ def calc_hit_points():
                     "disabled": True,
                     "name": "hit_points_display",
                     "value": "@{hit_points_maximum}",
-                },
-            ),
-        ]
-    )
-
-
-def calc_initiative():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Initiative"),
-            equation(
-                [
-                    underlabel(
-                        "Dex+Per",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "initiative_scaling_display",
-                                "value": "@{initiative_scaling}",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("initiative", 3),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "initiative_display",
-                    "value": "@{initiative}",
                 },
             ),
         ]

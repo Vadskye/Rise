@@ -401,36 +401,6 @@ def generate_apparel():
         ),
     ]
 
-    apparel += [
-        create_apparel(
-            name="Circlet of Foresight",
-            rank=1,
-            material_type="Circlet",
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<initiative> checks.
-            """,
-            short_description="Grants +2 initiative",
-        ),
-        create_apparel(
-            name="Circlet of Foresight, Greater",
-            rank=3,
-            material_type="Circlet",
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to \\glossterm<initiative> checks.
-            """,
-            short_description="Grants +3 initiative",
-        ),
-        create_apparel(
-            name="Circlet of Foresight, Supreme",
-            rank=5,
-            material_type="Circlet",
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<initiative> checks.
-            """,
-            short_description="Grants +4 initiative",
-        ),
-    ]
-
     apparel.append(
         create_apparel(
             name="Mask of Water Breathing",

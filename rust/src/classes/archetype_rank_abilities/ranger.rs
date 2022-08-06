@@ -201,23 +201,22 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Warden's Instincts",
+            name: "Steadfast Warden",
             is_magical: false,
             rank: 3,
             description: r"
-                You and your \glossterm{allies} who can see or hear you gain a \plus1 bonus to \glossterm{initiative} checks.
+                You gain a \plus2 bonus to your Fortitude defense.
             ",
-            // TODO: affect allies?
-            modifiers: Some(vec![Modifier::Initiative(1)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
-            name: "Warden's Instincts+",
+            name: "Steadfast Warden+",
             is_magical: false,
             rank: 6,
             description: r"
-                The initiative bonus increases to \plus2.
+                The defense bonus increases to \plus3.
             ",
-            modifiers: Some(vec![Modifier::Initiative(1)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
     ];
 }
@@ -354,8 +353,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
                         \rankline
-                        \rank{4} Your hunting party gains a \plus1 bonus to \glossterm{initiative} checks.
-                        \rank{6} The initiative bonus increases to \plus2.
+                        \rank{4} At the start of each phase, you can declare one creature you see to be your quarry in addition to any existing creatures.
+                        \rank{6} You can add any number of creatures at the start of each phase.
                     \end{activeability}
 
                     \begin{activeability}{Wolfpack}
@@ -427,7 +426,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                At the start of each phase, if there is no more than one creature adjacent to you, you gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes} during that phase.
+                You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
                 In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
@@ -617,11 +616,13 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                 You gain a \plus1 bonus to Perception-based checks, except \glossterm{initiative} checks.
+                 You gain a \plus1 bonus to Perception-based checks.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Awareness, 1),
                 Modifier::Skill(Skill::CreatureHandling, 1),
+                Modifier::Skill(Skill::Deception, 1),
+                Modifier::Skill(Skill::Persuasion, 1),
                 Modifier::Skill(Skill::SocialInsight, 1),
                 Modifier::Skill(Skill::Survival, 1),
             ]),
