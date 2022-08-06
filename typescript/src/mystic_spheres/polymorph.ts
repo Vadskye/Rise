@@ -51,11 +51,7 @@ export const polymorph: MysticSphere = {
         You gain your choice of one of the following \\glossterm{natural weapons}: bite, claw, gore, ram, slam, or talon.
         For details, see \\tref{Natural Weapons}.
       `,
-      scaling: {
-        2: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using natural weapons.`,
-        4: `The power bonus increases to +4.`,
-        6: `The power bonus increases to +8.`,
-      },
+      // no scaling; unclear what scaling could exist
       type: 'Attune',
     },
   ],
@@ -767,20 +763,6 @@ export const polymorph: MysticSphere = {
       scaling: {
         6: `The target can remove two effects.`,
       },
-    },
-    {
-      name: 'Natural Might',
-
-      effect: `
-        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using \\glossterm{natural weapons}.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The power bonus increases to +4.`,
-        5: `The power bonus increases to +8.`,
-        7: `The power bonus increases to +16.`,
-      },
-      type: 'Attune',
     },
   ],
   rituals: [
