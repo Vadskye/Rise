@@ -309,7 +309,7 @@ export const revelation: MysticSphere = {
 
       rank: 5,
       scaling: {
-        7: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{initiative} checks.`,
+        7: `You also gain a +3 \\glossterm{magic bonus} to Awareness.`,
       },
       type: "Attune",
     },

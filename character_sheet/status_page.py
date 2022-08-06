@@ -343,7 +343,6 @@ def custom_statistic(i):
                     option({"value": "fortitude"}, "Fortitude defense"),
                     option({"value": "hit_points"}, "Hit points"),
                     option({"value": "hunting_styles_known"}, "Hunting styles"),
-                    option({"value": "initiative"}, "Initiative"),
                     option({"value": "insight_points"}, "Insight points"),
                     option({"value": "intelligence"}, "Intelligence"),
                     option({"value": "intimidate"}, "Intimidate"),
