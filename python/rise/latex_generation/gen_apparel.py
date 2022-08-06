@@ -1531,7 +1531,7 @@ def generate_apparel():
             name="Belt of Healing",
             rank=2,
             material_type="Belt",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a standard action, you can use this belt to regain 1d10+4 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -1542,7 +1542,7 @@ def generate_apparel():
             name="Belt of Healing, Greater",
             rank=4,
             material_type="Belt",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a standard action, you can use this belt to regain 2d10+7 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -1553,7 +1553,7 @@ def generate_apparel():
             name="Belt of Healing, Supreme",
             rank=6,
             material_type="Belt",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a standard action, you can use this belt to regain 4d10+14 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -2572,10 +2572,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Whenever you use the \\ability<discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
+                Whenever you use the \\ability<cleansing discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
                 This is not a \\abilitytag<Swift> effect, even if your \\ability<discipline> ability is a \\abilitytag<Swift> effect.
             """,
-            short_description="Using \\abilitytag<discipline> also helps an adjacent ally",
+            short_description="Using \\abilitytag<cleansing discipline> also helps an adjacent ally",
         ),
         create_apparel(
             name="Amulet of Shared Discipline, Greater",
@@ -2585,7 +2585,7 @@ def generate_apparel():
             description="""
                 This item functions like a \\textit<amulet of shared discipline>, except that the range increases to \\medrange.
             """,
-            short_description="Using the \\abilitytag<discipline> ability also helps a nearby ally",
+            short_description="Using the \\abilitytag<cleansing discipline> ability also helps a nearby ally",
         ),
     ]
 
@@ -2911,10 +2911,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 1d8+4 \\glossterm<hit points>.
-                This effect cannot heal you above the number of hit points you had at the start of the round.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d6+4 \\glossterm<hit points>.
+                When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Heals 1d8+4 when you use \\ability<spell absorption>",
+            short_description="Exert to heal 2d6+4 with \\ability<spell absorption>",
         ),
         create_apparel(
             name="Spellfeeding Amulet, Greater",
@@ -2922,10 +2922,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d8+7 \\glossterm<hit points>.
-                This effect cannot heal you above the number of hit points you had at the start of the round.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d6+7 \\glossterm<hit points>.
+                When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Heals 2d8+7 when you use \\ability<spell absorption>",
+            short_description="Exert to heal 4d6+7 with \\ability<spell absorption>",
         ),
         create_apparel(
             name="Spellfeeding Amulet, Supreme",
@@ -2933,10 +2933,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d8+14 \\glossterm<hit points>.
-                This effect cannot heal you above the number of hit points you had at the start of the round.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 5d10+14 \\glossterm<hit points>.
+                When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Heals 4d8+14 when you use \\ability<spell absorption>",
+            short_description="Exert to heal 5d10+14 with \\ability<spell absorption>",
         ),
     ]
 

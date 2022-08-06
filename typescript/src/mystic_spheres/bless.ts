@@ -391,10 +391,11 @@ export const bless: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-        In addition, it \\glossterm{briefly} gains a +1 bonus to all \\glossterm{defenses}.
+        In addition, it gains a +1 bonus to all \\glossterm{defenses} until the end of the round.
       `,
       rank: 1,
       scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
+      tags: ['Swift'],
     },
 
     {
@@ -403,10 +404,11 @@ export const bless: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains 2d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-        In addition, it \\glossterm{briefly} gains a +2 bonus to all \\glossterm{defenses}.
+        In addition, it gains a +2 bonus to all \\glossterm{defenses} until the end of the round.
       `,
       rank: 4,
       scaling: { special: "The recovery increases by +1d for each rank beyond 4." },
+      tags: ['Swift'],
     },
 
     {
@@ -415,9 +417,10 @@ export const bless: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains 4d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-        In addition, it \\glossterm{briefly} gains a +3 bonus to all \\glossterm{defenses}.
+        In addition, it gains a +3 bonus to all \\glossterm{defenses} until the end of the round.
       `,
       rank: 7,
+      tags: ['Swift'],
     },
 
     {

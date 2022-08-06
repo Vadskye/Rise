@@ -247,8 +247,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{lay on hands} ability as a standard action.
-                \begin{activeability}{Lay on Hands}
-                    \abilitytag{Magical}, \abilitytag{Swift}
+                \begin{activeability}{Lay on Hands}[\abilitytag{Magical}, \abilitytag{Swift}]
                     \rankline
                     Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
                     The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
@@ -276,9 +275,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                The target of this ability can also remove a \glossterm{condition}.
+                Instead regaining hit points, you can cause the target to remove a \glossterm{condition} or a \glossterm{vital wound}.
                 This cannot remove a condition applied during the current round.
-                In addition, you can choose to remove a \glossterm{vital wound} of the target's choice from it.
                 If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
             ",
             modifiers: None,
@@ -407,8 +405,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{smite} ability as a standard action.
-                \begin{activeability}{Smite}
-                    \abilitytag{Magical}
+                \begin{activeability}{Smite}[\abilitytag{Magical}]
                     \rankline
                     Make a \glossterm{strike} with a \plus2 damage bonus.
                     Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
@@ -429,8 +426,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can use the \textit{detect anathema} ability as a standard action.
-                \begin{activeability}{Detect Anathema}
-                    \abilitytag{Detection}, \abilitytag{Magical}
+                \begin{activeability}{Detect Anathema}[\abilitytag{Detection}, \abilitytag{Magical}]
                     \rankline
                     You know the number of creatures within a \\largearea cone from you that have the alignment opposed to your devoted alignment.
                     This does not give you any specific information about the location of those creatures.
@@ -487,8 +483,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
-                \begin{activeability}{Pass Judgment}
-                    \abilitytag{Magical}
+                \begin{activeability}{Pass Judgment}[\abilitytag{Magical}]
                     \par \noindent Usage time: One \glossterm{minor action}
                     \rankline
                     Choose one creature within \distrange.
@@ -519,8 +514,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You can use the \textit{zealous pursuit} ability as a \glossterm{minor action}.
-                \begin{activeability}{Zealous Pursuit}
-                    \abilitytag{Magical}
+                \begin{activeability}{Zealous Pursuit}[\abilitytag{Magical}]
                     \par \noindent Usage time: One \glossterm{minor action}
                     \rankline
                     You \glossterm{teleport} up to \distrange into an unoccupied space on solid ground adjacent to one creature of your choice affected by your \abilitytag{zealous fixation} ability.
