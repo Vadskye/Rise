@@ -1396,8 +1396,8 @@ impl Class {
 
                     \subsubsection{Evil Domain}
                         \parhead{Gift} At the start of each phase, you may choose an adjacent \glossterm{ally}.
-                        If you do, the first time you would lose a \glossterm{hit point} that phase, the target loses that hit point instead.
-                        If the target is unable to lose hit points, such as if it has no hit points remaining, you suffer the hit point loss normally.
+                        Whenever you lose \glossterm{hit points} this round, that ally loses half of those hit points in place of you.
+                        You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
                         \parhead{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
                         \parhead{Essence} You can use the \textit{compel evil} ability as a standard action.
                         \begin{activeability}{Compel Evil}[\abilitytag{Compulsion}]
