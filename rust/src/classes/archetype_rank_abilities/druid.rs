@@ -32,8 +32,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 If you do not have access to nature magic, you gain the ability to make a strike imbued with elemental force.
                 You can use the \textit{elemental strike} ability as a standard action.
-                \begin{activeability}{Elemental Strike}
-                    \abilitytag{Magical}
+                \begin{activeability}{Elemental Strike}[\abilitytag{Magical}]
                     \rankline
                     Make a \glossterm{strike} with a +2 damage bonus.
                     Damage dealt by the strike is bludgeoning and fire damage in addition to its normal damage types.
@@ -83,7 +82,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can use the \textit{elemental influence} ability as a standard action.
-                \begin{sustainability}{Elemental Influence}[\abilitytag{Sustain} (standard)]
+                \begin{sustainability}{Elemental Influence}{\abilitytag{Sustain} (standard)}
                     \rankline
                     You can speak with air, earth, fire, and water within a \areahuge \glossterm{zone} from your location.
                     You can ask the elements simple questions and understand their responses.
@@ -541,7 +540,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can use the \textit{shift body} ability whenever you finish a \glossterm{long rest}.
-                \begin{attuneability}{Shift Body}
+                \begin{attuneability}{Shift Body}{\abilitytag{Attune}}
                     \rankline
                     When you use this ability, choose a physica \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
                     You gain a \plus1 bonus to the base value of that attribute.
@@ -644,7 +643,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{natural servant} ability.
                 This ability requires spending 1 hour performing rituals in a natural area.
-                \begin{attuneability}{Natural Servant}
+                \begin{attuneability}{Natural Servant}{\abilitytag{Attune}}
                     \rankline
                     An animal native to the local environment appears to help you.
                     It follows your directions to the best of its ability as long as you remain in its natural environment.
@@ -710,7 +709,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can use the \textit{animal speech} ability as a standard action.
-                \begin{sustainability}{Animal Speech}[\abilitytag{Sustain} (minor)]
+                \begin{sustainability}{Animal Speech}{\abilitytag{Sustain} (minor)}
                     \rankline
                     Choose an animal within \rnglong range.
                     You can speak to and understand the speech of the target animal, and any other animals of the same species.

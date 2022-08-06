@@ -659,7 +659,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus3 bonus to the Deception skill.
 
         \ff[3]{Dual Speech}[Magical] When you speak, you can use the \textit{dual speech} ability.
-        \begin{sustainability}{Dual Speech}[\abilitytag{Sustain} (minor)]
+        \begin{sustainability}{Dual Speech}{\abilitytag{Sustain} (minor)}
             \rankline
             You speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
             You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group. 
@@ -672,7 +672,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{sustainability}
 
         \ff[6]{Undetectable Lies} As a \glossterm{minor action}, you can use the \textit{undetectable lies} ability.
-        \begin{attuneability}{Undetectable Lies}
+        \begin{attuneability}{Undetectable Lies}{\abilitytag{Attune}}
             \par \noindent Usage time: One \glossterm{minor action}.
             \rankline
             Any \glossterm{magical} abilities which detect lies are unable to detect lies you speak.
@@ -740,7 +740,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
         \ff[12]{Disguise Size}[Magical] You can use the \textit{disguise size} ability as a \glossterm{standard action}.
-        \begin{attuneability}{Disguise Size}
+        \begin{attuneability}{Disguise Size}{\abilitytag{Attune}}
             \rankline
             You increase or decrease your size by one \glossterm{size category}.
             Your physical form is not altered fully to match your new size, and your Strength and Dexterity are unchanged.
@@ -1019,8 +1019,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % as rank 3 strike, but scales to rank 9 strike
         \ff[6]{Spectral Strike} You can use the \textit{spectral strike} ability as a standard action.
-        \begin{activeability}{Spectral Strike}
-            \abilitytag{Magical}
+        \begin{activeability}{Spectral Strike}[\abilitytag{Magical}]
             \rankline
             Make a \glossterm{strike}.
             The attack is made against each target's Reflex defense instead of its Armor defense.
@@ -1043,8 +1042,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % Like a mostly better version of Greater Reaping Harvest
         \ff[15]{Spectral Reap} You can use the \textit{spectral reap} ability as a \glossterm{standard action}.
-        \begin{activeability}{Spectral Reap}
-            \abilitytag{Magical}
+        \begin{activeability}{Spectral Reap}[\abilitytag{Magical}]
             \rankline
             Move up to your movement speed in a straight line.
             For the duration of the movement, you can move through creatures and objects as if you were \trait{incorporeal}, but you do not gain the defensive benefits of being incorporeal during this phase.
@@ -1112,8 +1110,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[3]{Potent Poisons} You gain a \plus1 bonus to \glossterm{accuracy} with any poisons you create, including poisonous spells you cast.
 
         \ff[6]{Tempting Concoction} You can use the \textit{tempting concoction} ability as a \glossterm{standard action}.
-        \begin{attuneability}{Tempting Concoction}
-            \abilitytag{Emotion}, \glossterm{Magical}, \abilitytag{Subtle}
+        \begin{attuneability}{Tempting Concoction}{\abilitytag{Attune}, \abilitytag{Emotion}, \glossterm{Magical}, \abilitytag{Subtle}}
             \rankline
             Choose one liquid poison or potion you created, or an object containing one of those liquids, within \rngshort range.
             Whenever an \glossterm{enemy} notices the chosen object, make an attack vs. Mental against it.
@@ -1543,10 +1540,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[3]{Guided Projectiles}[Magical] Your attacks with projectiles ignore \glossterm{cover}.
 
-        \ff[6]{Imbue Projectile} When you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
+        \ff[6]{Imbue Projectile}[Magical] When you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
-        \begin{attuneability}{Imbue Projectile}
-            \glossterm{Magical}
+        \begin{attuneability}{Imbue Projectile}{\abilitytag{Attune}}
             \rankline
             The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
@@ -1672,7 +1668,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus3 bonus to the Persuasion skill.
 
         \ff[3]{Compel Attention}[Magical] You can use the \textit{compel attention} ability as a standard action.
-        \begin{sustainability}{Compel Attention}[\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}]
+        \begin{sustainability}{Compel Attention}{\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}}
             \rankline
             Make an attack vs. Mental against a creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -1694,7 +1690,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
         \ff[12]{Suggestion}[Magical] You can use the \textit{suggestion} ability as a standard action.
-        \begin{sustainability}{Suggestion}[\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)]
+        \begin{sustainability}{Suggestion}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
             \rankline
             Make an attack vs. Mental against a target within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -1725,7 +1721,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, you gain a bonus to \glossterm{initiative} checks equal to your Intelligence.
 
         \ff[3]{Combat Prediction} You can use the \textit{combat prediction} ability as a standard action.
-        \begin{sustainability}{Combat Prediction}[\abilitytag{Subtle}, \abilitytag{Sustain} (free)]
+        \begin{sustainability}{Combat Prediction}{\abilitytag{Subtle}, \abilitytag{Sustain} (free)}
             \rankline
             Make an attack vs. Mental with a \plus3 \glossterm{accuracy} bonus against a creature within \rngmed range of you.
             \hit That creature's intentions become obvious to you as long as you sustain this ability.
@@ -1907,8 +1903,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         The container's size cannot exceed your own size.
 
         \ff[6]{Extradimensional Concealment}[Magical] When you use the \textit{conceal object} ability, you can use the \textit{extradimensional pocket} ability.
-        \begin{attuneability}{Extradimensional Pocket}
-            \glossterm{Magical}
+        \begin{attuneability}{Extradimensional Pocket}{\abilitytag{Attune}}
             \rankline
             You conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
             When your attunement to this ability ends, the object appears in a free hand.
@@ -1931,8 +1926,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Perception 2.
 
         \ff[1]{Aim} You can use the \textit{aim} ability as a standard action.
-        \begin{sustainability}{Aim}[\abilitytag{Sustain} (minor)]
-            \abilitytag{Subtle}
+        \begin{sustainability}{Aim}{\abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
             \rankline
             Choose a creature or object within \glossterm{line of sight}.
             You gain a \plus2 accuracy bonus against the target.
@@ -1968,7 +1962,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[3]{Social Intuition} You reduce the penalty for making a social assessment after only a single round of observation, and the penalty for making a social assessment without understanding the language, by 5 each (see \pcref{Social Assessment}).
 
         \ff[6]{Read Emotions}[Magical] You can use the \textit{read emotions} ability as a standard action.
-        \begin{sustainability}{Read Emotions}[\abilitytag{Emotion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}]
+        \begin{sustainability}{Read Emotions}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}}
             \rankline
             Make an attack vs. Mental against a creature within \rngshort range.
             Your \glossterm{accuracy} is equal to your Social Insight skill.
@@ -1998,8 +1992,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Access to a \glossterm{mystic sphere}.
 
         \ff[1]{Imbued Blow} You can use the \textit{imbued blow} ability as a standard action.
-        \begin{activeability}{Imbued Blow}
-            \abilitytag{Magical}
+        \begin{activeability}{Imbued Blow}[\abilitytag{Magical}]
             \rankline
             Make a melee \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
             Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
@@ -2019,10 +2012,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[6]{Personal Enhancement} You gain a \glossterm{magic bonus} equal to your level to your \glossterm{hit points} and \glossterm{damage resistance}.
         Because this is a magic bonus, it does not stack with other magic bonuses (see \pcref{Stacking Rules}).
 
-        \ff[9]{Imbue Weapon} When you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
+        \ff[9]{Imbue Weapon}[Magical] When you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue weapon} ability.
-        \begin{attuneability}{Imbue Weapon}
-            \glossterm{Magical}
+        \begin{attuneability}{Imbue Weapon}{\abilitytag{Attune}}
             \rankline
             The spell does not have its effect immediately.
             Instead, its power is imbued in a non-projectile weapon you hold.
@@ -2801,7 +2793,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
 
         \ff[18]{Find the Path}[Magical] You can use the \textit{find the path} ability as a standard action.
-        \begin{attuneability}{Find the Path}
+        \begin{attuneability}{Find the Path}{\abilitytag{Attune}}
             \rankline
             When you use this ability, you must unambiguously specify a location on the same plane as you.
             You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
@@ -2876,8 +2868,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % This is a rank 2 spell effect
         \ff[3]{Mental Assault} You can use the \textit{mental assault} ability as a standard action.
-        \begin{activeability}{Mental Assault}
-            \abilitytag{Emotion}
+        \begin{activeability}{Mental Assault}[\abilitytag{Emotion}]
             \rankline
             Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
             \hit As a \glossterm{condition}, the target is \dazed while it has any \glossterm{damage resistance} remaining, and \stunned while it does not.
@@ -2888,8 +2879,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{activeability}
 
         \ff[6]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
-        \begin{sustainability}{Read Mind}[\abilitytag{Sustain} (standard)]
-            \abilitytag{Emotion}, \abilitytag{Subtle}
+        \begin{sustainability}{Read Mind}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (standard)}
             \rankline
             Make an attack vs. Mental against a creature within half the maximum range of your \glossterm{telepathy}.
             Whether you hit or miss, you cannot attack the target with this ability again until it takes a \glossterm{short rest}.
@@ -3077,7 +3067,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % TODO: this would be better if it hit threatened people, but increased weapon range is too common
         \ff[1]{Cyclone} You can use the \textit{cyclone} ability as a standard action.
-        \begin{sustainability}{Cyclone}[\abilitytag{Sustain} (standard)]
+        \begin{sustainability}{Cyclone}{\abilitytag{Sustain} (standard)}
             \rankline
             When you use this ability, make a melee \glossterm{strike} with a slashing weapon.
             Your \glossterm{power} with the strike is halved.

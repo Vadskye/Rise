@@ -137,8 +137,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{rage} ability as a \glossterm{free action}.
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
-                \begin{sustainability}{Rage}[\abilitytag{Sustain} (free)]
-                    \abilitytag{Emotion}, \abilitytag{Swift}
+                \begin{sustainability}{Rage}{\abilitytag{Emotion}, \abilitytag{Sustain} (free), \abilitytag{Swift}}
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
