@@ -1,7 +1,7 @@
 import { Rank, SpellLike } from "@src/mystic_spheres";
 
 export function assertEndsWithPeriod(text: string | null | undefined): void {
-  if (text && !text.trim().endsWith(".")) {
+  if (text && !(text.trim().endsWith(".") || text.trim().endsWith("{itemize}"))) {
     throw new Error(`Text should end with period: ${text}`);
   }
 }
