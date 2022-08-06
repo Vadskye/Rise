@@ -50,21 +50,6 @@ export const bless: MysticSphere = {
     },
 
     {
-      name: "Blessing of Swiftness",
-
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
-        Each target gains a +5 foot \\glossterm{magic bonus} to speed with all its \\glossterm{movement modes}.
-      `,
-      rank: 2,
-      scaling: {
-        4: `The speed bonus increases to +10 feet.`,
-        6: `The speed bonus increases to +15 feet.`,
-      },
-      type: "Attune (target)",
-    },
-
-    {
       name: "Blessing of Recovery",
 
       effect: `
