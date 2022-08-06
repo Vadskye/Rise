@@ -461,8 +461,7 @@
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
         However, you must use it before the phase is over.
 
-        \begin{activeability}{Desperate Exertion}
-            \abilitytag{Swift}
+        \begin{activeability}{Desperate Exertion}[\abilitytag{Swift}]
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
 
@@ -476,8 +475,7 @@
 
         \parhead{Dirty Trick}\label{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
 
-        \begin{activeability}{Dirty Trick}
-            \abilitytag{Size-Based}
+        \begin{activeability}{Dirty Trick}[\abilitytag{Size-Based}]
             \rankline
             When you use this ability, you must describe the kind of dirty trick you are performing.
             For example, you can pull a creature's pants down, throw sand, or otherwise use your environment to attack.
@@ -493,8 +491,7 @@
 
         \parhead{Disarm}\label{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
 
-        \begin{activeability}{Disarm}
-            \abilitytag{Size-Based}
+        \begin{activeability}{Disarm}[\abilitytag{Size-Based}]
             \rankline
             Make a melee \glossterm{strike} against an object.
             Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
@@ -511,8 +508,7 @@
 
         \parhead{Grapple}\label{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
 
-        \begin{activeability}{Grapple}
-            \abilitytag{Size-Based}
+        \begin{activeability}{Grapple}[\abilitytag{Size-Based}]
             \rankline
             Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your \glossterm{reach}.
 
@@ -533,8 +529,7 @@
 
         \parhead{Overrun}\label{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
 
-        \begin{activeability}{Overrun}
-            \abilitytag{Size-Based}
+        \begin{activeability}{Overrun}[\abilitytag{Size-Based}]
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by one.
 
@@ -551,20 +546,19 @@
         \end{activeability}
 
         \parhead{Recover}\label{Recover} You can use the \textit{recover} ability as a standard action.
-        \begin{activeability}{Recover}
+        \begin{activeability}{Recover}[\abilitytag{Swift}]
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you take a short rest.
 
             You regain \glossterm{hit points} equal to half your maximum hit points.
             In addition, you remove any number of \glossterm{conditions} affecting you.
+            Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
             This cannot remove effects applied during the current round.
-            If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \pcref{Simultaneous Damage and Healing}).
         \end{activeability}
 
         \parhead{Shove}\label{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
 
-        \begin{activeability}{Shove}
-            \abilitytag{Size-Based}
+        \begin{activeability}{Shove}[\abilitytag{Size-Based}]
             \rankline
             Choose either one creature within your \glossterm{reach} or all creatures grappling you (see \pcref{Grappling}).
 
@@ -580,8 +574,7 @@
         % to prevent it from being abused with abilities like Shove.
         \parhead{Sprint}\label{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
 
-        \begin{activeability}{Sprint}
-            \abilitytag{Swift}
+        \begin{activeability}{Sprint}[\abilitytag{Swift}]
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by one.
             You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
@@ -614,8 +607,7 @@
 
         \parhead{Total Defense}\label{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
 
-        \begin{activeability}{Total Defense}
-            \abilitytag{Swift}
+        \begin{activeability}{Total Defense}[\abilitytag{Swift}]
             \rankline
             You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
             Because this ability has the \abilitytag{Swift} tag, this improves your defenses against attacks made against you during the current phase.
@@ -623,8 +615,7 @@
 
         \parhead{Trip}\label{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
 
-        \begin{activeability}{Trip}
-            \abilitytag{Size-Based}
+        \begin{activeability}{Trip}[\abilitytag{Size-Based}]
             \rankline
             Make a melee attack using a free hand or a weapon with the Tripping tag against a creature's Reflex defense (see \pcref{Weapon Tags}).
             If you attack with a weapon, you add the weapon's accuracy bonus, if any, to the attack.
@@ -646,7 +637,6 @@
                     This prevents humanoid creatures from taking any actions which would require having two free hands, such as attacking with heavy weapons.
                     This does not affect creatures without hands.
                 \item You take a \minus2 penalty to Armor and Reflex defenses.
-                \item Abilities that have \glossterm{somatic components} have a 25\% \glossterm{failure chance}.
                 \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \textit{shove} ability (see \pcref{Shove}).
             \end{itemize}
 
@@ -667,8 +657,7 @@
 
             \parhead{Maintain Grapple}\label{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
             If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
-            \begin{activeability}{Maintain Grapple}
-                \abilitytag{Swift}
+            \begin{activeability}{Maintain Grapple}[\abilitytag{Swift}]
                 \rankline
                 Make an attack using a \glossterm{free hand}.
                 You may use half your level \add your Strength in place of your normal \glossterm{accuracy} with this attack.
@@ -837,7 +826,7 @@
             In the case of abnormally large mounts (two or more size categories larger than you), you may not completely share space. Such situations should be handled on a case-by-case basis, depending on the nature of the mount.
 
             \parhead{Flying Mounts} Flying mounts are harder to ride and control than terrestrial mounts, especially mounts that can change directions rapidly.
-            The \glossterm{difficulty value} for all Ride checks on a mount using a fly speed is increased by 10 if the mount has poor or average maneuverablity, or by 15 if it has perfect maneuverability.
+            The \glossterm{difficulty value} for all Ride checks on a mount using a fly speed is increased by 10 if the mount has poor or average maneuverability, or by 15 if it has perfect maneuverability.
 
             \parhead{Combat while Mounted} With a \glossterm{difficulty value} 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
 

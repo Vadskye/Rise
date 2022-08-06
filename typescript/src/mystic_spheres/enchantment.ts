@@ -652,10 +652,11 @@ export const enchantment: MysticSphere = {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
         The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-        In addition, it \\glossterm{briefly} gains a +2 bonus to its Mental defense.
+        In addition, it gains a +2 bonus to its Mental defense this round.
       `,
       rank: 2,
       scaling: { special: "The recovery increases by +1d for each rank beyond 2." },
+      tags: ['Swift'],
     },
 
     {
@@ -667,6 +668,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 6,
       scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
+      tags: ['Swift'],
     },
   ],
   rituals: [

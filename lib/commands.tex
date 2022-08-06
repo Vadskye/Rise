@@ -66,8 +66,6 @@
 \newcommand{\hugearealong}{Huge \reminder{120 ft. long}\xspace}
 \newcommand{\gargarealong}{Gargantuan \reminder{240 ft. long}\xspace}
 
-\newcommand{\confusionexplanation}{A confused creature cannot take actions normally. When it becomes confused, and at the beginning of each round, it randomly decides to have one of four behaviors that round: attack the nearest creature as if it was an \glossterm{enemy}, freeze in place and use the \ability{total defense} ability, flee from its enemies, or act normally. A confused character who can't carry out the indicated action does nothing but babble incoherently.\xspace}
-
 \newcommand{\featpre}{\parhead{Prerequisite} }
 \newcommand{\featpres}{\parhead{Prerequisites} }
 %featref no target
@@ -78,28 +76,34 @@
 
 \newcommand{\blinded}{\debuff{blinded} \reminder{50\% miss chance, \minus2 Armor and Ref}\xspace}
 \newcommand{\charmed}{\debuff{charmed} \reminder{friendly with charmer}\xspace}
-\newcommand{\climbing}{\debuff{climbing} \reminder{\minus4 accuracy, defenses}\xspace}
-\newcommand{\confused}{\debuff{confused} \reminder{\minus4 defenses, acts randomly}\xspace}
-\newcommand{\dazed}{\debuff{dazed} \reminder{\minus2 defenses}\xspace}
-\newcommand{\dazzled}{\debuff{dazzled} \reminder{25\% miss chance, no special vision}\xspace}
-\newcommand{\deafened}{\debuff{deafened} \reminder{25\% verbal spell failure}\xspace}
+\newcommand{\climbing}{\debuff{climbing} \reminder{\minus2 accuracy, defenses}\xspace}
+\newcommand{\confused}{\debuff{confused} \reminder{\minus2 defenses, randomly attack or defend}\xspace}
+\newcommand{\dazed}{\debuff{dazed} \reminder{\minus1 defenses}\xspace}
+% Assume 60% hit chance, so 0.6 dpr.
+% with -1 accuracy, 0.5 dpr.
+% with 20% miss chance, 0.48 dpr.
+% Assume 40% base hit chance; 0.3 dpr vs 0.32 dpr.
+% So dazzled is about equal to -1 accuracy in common circumstances,
+% but better against high-accuracy targets and worse against low-accuracy targets.
+\newcommand{\dazzled}{\debuff{dazzled} \reminder{20\% miss chance, no special vision}\xspace}
+\newcommand{\deafened}{\debuff{deafened} \reminder{20\% verbal spell failure}\xspace}
 \newcommand{\dominated}{\debuff{dominated} \reminder{must obey commands}\xspace}
-\newcommand{\frightened}{\debuff{frightened} \reminder{\minus4 Mental, -4 accuracy vs. source}\xspace}
-\newcommand{\goaded}{\debuff{goaded} \reminder{\minus2 accuracy vs. non-goading creatures}\xspace}
+\newcommand{\frightened}{\debuff{frightened} \reminder{\minus2 Mental, -2 accuracy vs. source}\xspace}
+\newcommand{\goaded}{\debuff{goaded} \reminder{\minus1 accuracy vs. non-goading creatures}\xspace}
 % Too complicated to try to summarize :/
 \newcommand{\grappled}{\debuff{grappled}\xspace}
-\newcommand{\helpless}{\debuff{helpless} \reminder{\minus10 Armor and Ref}\xspace}
+\newcommand{\helpless}{\debuff{helpless} \reminder{\minus6 Armor and Ref}\xspace}
 \newcommand{\immobilized}{\debuff{immobilized} \reminder{\minus4 Ref, cannot use movement speeds}\xspace}
 \newcommand{\panicked}{\debuff{panicked} \reminder{\minus4 Mental, cannot attack source}\xspace}
 \newcommand{\paralyzed}{\debuff{paralyzed} \reminder{cannot move}\xspace}
 \newcommand{\partiallyunaware}{\debuff{partially unaware} \reminder{50\% miss chance, \minus2 Armor and Ref}\xspace}
 \newcommand{\petrified}{\debuff{petrified}\xspace}
-\newcommand{\prone}{\debuff{prone} \reminder{half speed, \minus2 accuracy, Armor, and Ref}\xspace}
-\newcommand{\shaken}{\debuff{shaken} \reminder{\minus2 Mental, -2 accuracy vs. source}\xspace}
-\newcommand{\slowed}{\debuff{slowed} \reminder{half speed, \minus2 Ref}\xspace}
+\newcommand{\prone}{\debuff{prone} \reminder{half speed, \minus2 Armor and Ref}\xspace}
+\newcommand{\shaken}{\debuff{shaken} \reminder{\minus1 Mental, \minus1 accuracy vs. source}\xspace}
+\newcommand{\slowed}{\debuff{slowed} \reminder{half speed, \minus1 Ref}\xspace}
 \newcommand{\squeezing}{\debuff{squeezing} \reminder{\minus2 Armor and Ref}\xspace}
-\newcommand{\stunned}{\debuff{stunned} \reminder{\minus4 defenses}\xspace}
-\newcommand{\swimming}{\debuff{swimming} \reminder{\minus4 accuracy, defenses}\xspace}
+\newcommand{\stunned}{\debuff{stunned} \reminder{\minus2 defenses}\xspace}
+\newcommand{\swimming}{\debuff{swimming} \reminder{\minus2 accuracy, defenses}\xspace}
 \newcommand{\unaware}{\debuff{unaware} \reminder{\minus6 Armor and Ref}\xspace}
 \newcommand{\unconscious}{\debuff{unconscious}\xspace}
 

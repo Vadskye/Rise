@@ -282,8 +282,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{divine aid} ability as a standard action.
-                \begin{activeability}{Divine Aid}
-                    \abilitytag{Magical}, \abilitytag{Swift}
+                \begin{activeability}{Divine Aid}[\abilitytag{Magical}, \abilitytag{Swift}]
                     \rankline
                     Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
                     The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
@@ -336,8 +335,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{vital restoration} ability as a standard action.
-                \begin{activeability}{Vital Restoration}
-                    \abilitytag{Magical}
+                \begin{activeability}{Vital Restoration}[\abilitytag{Magical}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
 
@@ -430,11 +428,12 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{bless the worthy} ability as a standard action.
-                \begin{activeability}{Bless the Worthy}
+                \begin{activeability}{Bless the Worthy}[\abilitytag{Swift}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-                    You and all \glossterm{allies} within a \medarea radius from you each regain 1d10 \glossterm{damage resistance} and can remove a \glossterm{condition}.
+                    You and all \glossterm{allies} within a \medarea radius from you each regain 1d10 \glossterm{damage resistance}.
+                    In addition, each ally affected by more than one \glossterm{condition} can remove one of those conditions.
                     This ability cannot remove an effect applied during the current round.
 
                     \rankline

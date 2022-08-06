@@ -1306,7 +1306,7 @@ impl Class {
                         In addition, you take half damage from \glossterm{falling damage}.
                         \parhead{Aspect} You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
                         \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
-                        \begin{attuneability}{Speak with Air}[deep]
+                        \begin{attuneability}{Speak with Air}{\abilitytag{Attune} (deep)}
                             \rankline
                             You can speak with and command air within a \areahuge radius \glossterm{zone} from your location.
                             You can ask the air simple questions and understand its responses.
@@ -1340,7 +1340,7 @@ impl Class {
                         \parhead{Gift} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
                         \parhead{Aspect} The bonus from this domain's gift increases to \plus2.
                         \parhead{Essence} You can use the \textit{speak with dead} ability as a standard action.
-                        \begin{attuneability}{Speak with Dead}
+                        \begin{attuneability}{Speak with Dead}{\abilitytag{Attune}}
                             \rankline
                             Choose a corpse within \rngshort range.
                             The corpse must have died no more than 24 hours ago.
@@ -1382,7 +1382,7 @@ impl Class {
                         \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
                         \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{hit points}.
                         \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
-                        \begin{attuneability}{Speak with Earth}
+                        \begin{attuneability}{Speak with Earth}{\abilitytag{Attune}}
                             \rankline
                             You can speak with earth within a \areahuge radius \glossterm{zone} from your location.
                             You can ask the earth simple questions and understand its responses.
@@ -1400,8 +1400,7 @@ impl Class {
                         If the target is unable to lose hit points, such as if it has no hit points remaining, you suffer the hit point loss normally.
                         \parhead{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
                         \parhead{Essence} You can use the \textit{compel evil} ability as a standard action.
-                        \begin{activeability}{Compel Evil}
-                            \abilitytag{Compulsion}
+                        \begin{activeability}{Compel Evil}[\abilitytag{Compulsion}]
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
                             Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
@@ -1422,7 +1421,7 @@ impl Class {
                         \parhead{Gift} You are \trait{impervious} to fire damage.
                         \parhead{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
                         \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
-                        \begin{attuneability}{Speak with Fire}
+                        \begin{attuneability}{Speak with Fire}{\abilitytag{Attune}}
                             \rankline
                             You can speak with and command fire within a \areahuge radius \glossterm{zone} from your location.
                             You can ask the fire simple questions and understand its responses.
@@ -1446,8 +1445,7 @@ impl Class {
                         The original target suffers any other effects of the attack normally.
                         \parhead{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
                         \parhead{Essence} You can use the \textit{compel good} ability as a standard action.
-                        \begin{activeability}{Compel Good}
-                            \abilitytag{Compulsion}
+                        \begin{activeability}{Compel Good}[\abilitytag{Compulsion}]
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
                             Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
@@ -1487,8 +1485,7 @@ impl Class {
                         % Clarify - does this apply to exploding dice?
                         \parhead{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
                         \parhead{Essence} You can use the \textit{compel law} ability as a standard action.
-                        \begin{activeability}{Compel Law}
-                            \abilitytag{Compulsion}
+                        \begin{activeability}{Compel Law}[\abilitytag{Compulsion}]
                             \rankline
                             Make an attack vs. Mental against all creatures within a \arealarge radius from you.
                             \hit Each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
@@ -1522,8 +1519,7 @@ impl Class {
                     \subsubsection{Protection Domain}
                         \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{minor action}.
-                        \begin{activeability}{Divine Protection}
-                            \abilitytag{Swift}
+                        \begin{activeability}{Divine Protection}[\abilitytag{Swift}]
                             \rankline
                             Choose an \glossterm{ally} adjacent to you.
                             It gains a \plus1 bonus to all defenses until the end of the round.
@@ -1540,7 +1536,7 @@ impl Class {
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You can use the \textit{divine strength} ability as a \glossterm{minor action}.
-                        \begin{attuneability}{Divine Strength}
+                        \begin{attuneability}{Divine Strength}{\abilitytag{Attune}}
                             Usage time: One \glossterm{minor action}.
                             \rankline
                             You gain a \plus1 bonus to your Strength.
@@ -1577,8 +1573,7 @@ impl Class {
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
                         \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
-                        \begin{sustainability}{Compel Belief}[\abilitytag{Sustain} (minor)]
-                            \abilitytag{Compulsion}
+                        \begin{sustainability}{Compel Belief}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
                             You must also choose a belief that the target has.
@@ -1612,7 +1607,7 @@ impl Class {
                         \parhead{Gift} You gain a \plus2 bonus to the Flexibility and Swim skills.
                         \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
                         \parhead{Essence} You can use the \textit{speak with water} ability as a standard action.
-                        \begin{attuneability}{Speak with Water}
+                        \begin{attuneability}{Speak with Water}{\abilitytag{Attune}}
                             \rankline
                             You can speak with and command water within a \areahuge \glossterm{zone} from your location.
                             You can ask the water simple questions and understand its responses.

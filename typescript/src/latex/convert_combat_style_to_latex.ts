@@ -1,7 +1,6 @@
 import { CombatStyle, Maneuver } from "@src/combat_styles";
 import {
   determineAbilityType,
-  determineAbilityTypeSuffix,
   sortByRankAndLevel,
 } from "@src/latex/convert_mystic_sphere_to_latex";
 import * as format from "@src/latex/format";
@@ -31,12 +30,15 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
     format.spellNarrative(maneuver),
   ].filter(Boolean);
 
-  const typeText = determineAbilityTypeSuffix(maneuver);
+  const rankText = maneuver.rank ? `Rank ${maneuver.rank}` : '';
+  const wrappedRankText = abilityType === 'activeability' ? `[${rankText}]` : `{${rankText}}`;
 
   const latex = `
-    \\begin{${abilityType}}{${maneuver.name}}${typeText}
+    \\begin{${abilityType}}{${maneuver.name}}${wrappedRankText}
       ${format.spellTypePrefix(maneuver) || ""}
       \\rankline
+      \\hypertargetraised{maneuver:${maneuver.name}}{}%
+      \\hypertargetraised{maneuver:${maneuver.name.toLowerCase()}}{}%
       \\noindent
       ${internalComponents.join("\n\\rankline\n\n\\noindent ").trim()}%
       \\vspace{0.1em}%
