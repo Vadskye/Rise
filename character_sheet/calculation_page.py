@@ -95,7 +95,6 @@ def core_statistics():
         [
             div({"class": "section-header"}, "Core Statistics"),
             stat_row("Encumbrance"),
-            stat_row("Initiative"),
             stat_row("Land speed"),
         ]
     )

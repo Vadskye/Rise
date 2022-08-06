@@ -649,11 +649,10 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your Reflex defense and \glossterm{initiative} checks.
+                You gain a \plus2 bonus to your Reflex defense.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Reflex, 2),
-                Modifier::Initiative(2),
             ]),
         },
         RankAbility {
@@ -661,11 +660,10 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The Reflex defense and initiative bonuses increase to \plus3.
+                The defense bonus increases to \plus3.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Reflex, 1),
-                Modifier::Initiative(1),
             ]),
         },
         RankAbility {

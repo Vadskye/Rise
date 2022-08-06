@@ -657,19 +657,19 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You and each \glossterm{ally} who can see or hear you gain a \plus1 bonus to initiative checks.
+                You and each \glossterm{ally} who can see or hear you gain a \plus1 bonus to Reflex defense.
             ",
             // TODO: represent ally bonus?
-            modifiers: Some(vec![Modifier::Initiative(1)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 1)]),
         },
         RankAbility {
             name: "Reactive Tactics+",
             is_magical: false,
             rank: 6,
             description: r"
-                The initiative bonus increases to \plus2.
+                The defense bonus increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Initiative(1)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 1)]),
         },
         RankAbility {
             name: "Tactical Force",

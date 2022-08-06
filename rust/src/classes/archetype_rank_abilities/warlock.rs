@@ -637,7 +637,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Sycophantic Whispers} You gain a \plus2 bonus to your Mental defense.
 
-                    \subcf{Warning Whispers} You gain a \plus2 bonus to \glossterm{initiative} checks and your Reflex defense.
+                    \subcf{Warning Whispers} You gain a \plus2 bonus to your Reflex defense.
 
                     \subcf{Whispers of the Mighty} You gain a \plus2 bonus to your Fortitude defense.
                 }

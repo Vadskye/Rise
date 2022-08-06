@@ -198,13 +198,13 @@ export const chronomancy: MysticSphere = {
       name: "Haste",
 
       effect: `
-        You gain a +5 foot \\glossterm{magic bonus} to your speed with all of your \\glossterm{movement modes}, and a +1 \\glossterm{magic bonus} to \\glossterm{initiative} checks.
+        You gain a +5 foot \\glossterm{magic bonus} to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 1,
       scaling: {
-        3: `The speed bonus increases to +10 feet, and the initiative bonus increases to +2.`,
-        5: `The speed bonus increases to +15 feet, and the initiative bonus increases to +3.`,
-        7: `The speed bonus increases to +20 feet, and the initiative bonus increases to +4.`,
+        3: `The speed bonus increases to +10 feet.`,
+        5: `The speed bonus increases to +15 feet.`,
+        7: `The speed bonus increases to +20 feet.`,
       },
       type: "Attune",
     },
@@ -218,8 +218,8 @@ export const chronomancy: MysticSphere = {
       },
       rank: 3,
       scaling: {
-        5: `The speed bonus increases to +10 feet, and the initiative bonus increases to +2.`,
-        7: `The speed bonus increases to +15 feet, and the initiative bonus increases to +3.`,
+        5: `The speed bonus increases to +10 feet.`,
+        7: `The speed bonus increases to +15 feet.`,
       },
       type: "Attune (target)",
     },
@@ -283,37 +283,6 @@ export const chronomancy: MysticSphere = {
         4: `The maximum size of the target increases to Large.`,
         6: `The maximum size of the target increases to Huge.`,
       },
-    },
-
-    {
-      name: "Accelerated Reaction",
-
-      effect: `
-        You gain a +3 \\glossterm{magic bonus} to \\glossterm{initiative} checks.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +5.`,
-        7: `The bonus increases to +6.`,
-      },
-      type: "Attune",
-    },
-
-    {
-      name: "Mass Accelerated Reaction",
-
-      functionsLike: {
-        mass: true,
-        name: "Accelerated Reaction",
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
-      },
-      type: "Attune (target)",
     },
 
     {

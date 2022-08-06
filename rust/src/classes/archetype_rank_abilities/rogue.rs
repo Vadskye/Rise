@@ -612,7 +612,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to Dexterity-based \glossterm{checks}, except \glossterm{initiative} checks.
+                You gain a \plus1 bonus to Dexterity-based \glossterm{checks}.
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::Balance, 1),

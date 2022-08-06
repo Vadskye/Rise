@@ -247,23 +247,6 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Distracting Twinstrike",
-
-      // condition is -1 rank worse than a normal r1 condition
-      effect: `
-        Make a \\glossterm{strike}.
-        You may reroll the accuracy roll twice and take the highest result.
-        However, do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike \\glossterm{briefly} takes a -4 penalty to \\glossterm{initiative} checks and Awareness checks.
-      `,
-      rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
-    },
-
-    {
       name: "Frenzied Strike",
 
       effect: `
