@@ -58,30 +58,6 @@ export const enchantment: MysticSphere = {
       tags: ["Compulsion"],
     },
 
-    // This is a weird effect with no clearly defined rank
-    {
-      name: "Drop",
-
-      attack: {
-        crit: `
-          The inability to hold the item becomes a \\glossterm{condition}.
-        `,
-        hit: `
-          The target immediately drops one object it is holding in a single hand.
-          It is \\glossterm{briefly} unable to pick up that item.
-          It can still hold other items, but if the dropped item is placed in its hand, it will immediately drop it again.
-
-          After you successfully make a creature drop an item with this spell, it gains a +5 bonus to its defenses against this spell until it takes a \\glossterm{short rest}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 3,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
-    },
-
     {
       name: "Monologue",
 
@@ -135,41 +111,9 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 1,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
-    },
-
-    {
-      name: "Slow Down",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The target is \\slowed as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\longrange.
-        `,
-      },
-
       rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion"],
-    },
-
-    {
-      name: "Mass Slow Down",
-
-      attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        // No relevant glance effect
-        hit: `Each target is \\glossterm{briefly} \\slowed.`,
-        targeting: `
-          Make an attack vs. Mental against all creatures in a \\medarea radius within \\longrange.
-        `,
-      },
-      rank: 2,
-      scaling: "accuracy",
-      tags: ['Compulsion'],
     },
 
     {
@@ -241,21 +185,6 @@ export const enchantment: MysticSphere = {
       rank: 6,
       scaling: "accuracy",
       tags: ["Compulsion"],
-    },
-
-    {
-      name: "Dramatic Reveal",
-
-      attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        hit: `Each target is \\glossterm{briefly} convinced that they just learned some phenomenal cosmic truth or life-changing revelation, making them \\stunned.`,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
-        `,
-      },
-      rank: 4,
-      scaling: "accuracy",
-      tags: ["Emotion"],
     },
 
     {
@@ -560,23 +489,6 @@ export const enchantment: MysticSphere = {
         7: `The bonus increases to +6.`,
       },
       type: "Attune",
-    },
-
-    {
-      name: "Dull the Senses",
-
-      attack: {
-        crit: `The penalty increases to -8.`,
-        hit: `The target takes a -4 penalty to Awareness, Social Insight, and \\glossterm{initiative} checks as a \\glossterm{condition}.`,
-        targeting: `
-        This spell has no \\glossterm{verbal components}.
-
-        Make an attack vs. Mental with a +3 accuracy bonus against one creature within \\longrange.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-      tags: ["Emotion", "Subtle"],
     },
 
     {

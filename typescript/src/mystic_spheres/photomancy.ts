@@ -52,14 +52,13 @@ export const photomancy: MysticSphere = {
         crit: `The effect becomes a \\glossterm{condition}.`,
         // No relevant glance effect
         hit: `
-          Each target with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\dazed.
-          Each target with no remaining damage resistance is \\stunned instead of dazed.
+          Each target with no remaining damage resistance is \\glossterm{briefly} \\blinded.
         `,
         targeting: `
-          Make an attack vs. Mental against each creature within a \\medarea cone from you.
+          Make an attack vs. Mental against each creature within a \\smallarea cone from you.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "accuracy",
       tags: ["Visual"],
     },
@@ -69,11 +68,11 @@ export const photomancy: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the area increases to a \\hugearea cone from you.
+          the area increases to a \\largearea cone from you.
         `,
         name: "color spray",
       },
-      rank: 4,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Visual"],
     },
@@ -82,16 +81,16 @@ export const photomancy: MysticSphere = {
       name: "Prismatic Spray",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition}.`,
+        crit: `Creatures that have remaining damage resistance are also affected.`,
+        // No relevant glance effect
         hit: `
-          Each target with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\stunned.
-          Each target with no remaining damage resistance is \\confused instead of stunned.
+          Each target with no remaining damage resistance is \\blinded as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against each creature within a \\medarea cone from you.
+          Make an attack vs. Mental against each creature within a \\smallarea cone from you.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
       tags: ["Visual"],
     },
@@ -231,23 +230,6 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: "Lightburst",
-
-      attack: {
-        crit: "The effect becomes a \\glossterm{condition}.",
-        // No relevant glance effect
-        hit: `Each target is \\glossterm{briefly} \\dazzled.`,
-        targeting: `
-          Make an attack vs. Fortitude with a +1 \\glossterm{accuracy} bonus against all creatures in a \\smallarea radius within \\medrange of you.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-      tags: ["Visual"],
-    },
-
-    {
       name: "Sunburst",
 
       attack: {
@@ -290,36 +272,17 @@ export const photomancy: MysticSphere = {
       name: "Kaleidoscopic Pattern",
 
       attack: {
-        crit: `Creatures that have remaining damage resistance are also affected.`,
+        crit: `The effect becomes a \\glossterm{condition}.`,
         // No relevant glance effect
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{dazed} as a \\glossterm{condition} and briefly \\glossterm{stunned}.
+          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\glossterm{confused}.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange of you.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
         `,
       },
-      rank: 2,
-      scaling: "accuracy",
-      tags: ["Compulsion", "Visual"],
-    },
-
-    {
-      name: "Greater Kaleidoscopic Pattern",
-
-      attack: {
-        crit: `Creatures that have remaining damage resistance are also affected.`,
-        // No relevant glance effect
-        hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{stunned} as a \\glossterm{condition} and briefly \\glossterm{confused}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange of you.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
-        `,
-      },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Compulsion", "Visual"],
     },

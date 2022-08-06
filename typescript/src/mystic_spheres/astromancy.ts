@@ -331,7 +331,7 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Dimensional Jaunt -- Deep Astral Plane",
+      name: "Dimensional Jaunt -- Far Realm",
 
       attack: {
         hit: `

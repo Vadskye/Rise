@@ -58,7 +58,11 @@ export const toxicology: MysticSphere = {
       attack: {
         hit: `
           The target takes 2d6 + \\glossterm{power} acid damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\dazed as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, it becomes coated in acid as a \\glossterm{condition}.
+          At the end of each round, it takes 1d10 + half \\glossterm{power} acid damage.
+
+          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
+          Dropping \\prone as part of this action gives a +5 bonus to this check.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -75,9 +79,12 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'greater corrosive grasp',
-        exceptThat: 'the damage increases to 4d6 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
+        exceptThat: `
+          the initial damage increases to 4d8 + \\glossterm{power}, and the subsequent damage increases to 4d6 + half \\glossterm{power}.
+          In addition, the condition cannot be removed with a Dexterity check.
+        `,
       },
-      rank: 6,
+      rank: 7,
       scaling: "damage",
     },
 
@@ -282,49 +289,6 @@ export const toxicology: MysticSphere = {
       rank: 5,
       scaling: "damage",
       type: "Attune (deep)",
-    },
-
-    {
-      name: "Sickness",
-
-      attack: {
-        crit: `The target is \\stunned instead of dazed.`,
-        hit: `The target is \\dazed as a \\glossterm{condition}.`,
-        targeting: `
-        Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-
-      rank: 1,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Noxious Curse",
-
-      attack: {
-        crit: `The effect lasts until this curse is removed.`,
-        hit: `The target is \\dazed until it takes a \\glossterm{short rest}.`,
-        targeting: `
-          Make an attack vs. Mental against one living creature within \\medrange.
-        `,
-      },
-
-      rank: 3,
-      scaling: "accuracy",
-      tags: ["Curse"],
-    },
-
-    {
-      name: "Greater Noxious Curse",
-
-      functionsLike: {
-        name: 'noxious curse',
-        exceptThat: 'the target is \\stunned instead of dazed.',
-      },
-      rank: 7,
-      scaling: "accuracy",
-      tags: ["Curse"],
     },
 
     {
