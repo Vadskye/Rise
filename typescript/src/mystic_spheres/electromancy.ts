@@ -337,11 +337,10 @@ export const electromancy: MysticSphere = {
       effect: `
         You gain a +5 foot \\glossterm{magic bonus} to speed with all of your \\glossterm{movement modes}.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: `The speed bonus increases to +10 feet.`,
-        5: `The speed bonus increases to +15 feet.`,
-        7: `The speed bonus increases to +20 feet.`,
+        4: `The speed bonus increases to +10 feet.`,
+        6: `The speed bonus increases to +15 feet.`,
       },
       type: "Attune",
     },

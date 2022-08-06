@@ -636,7 +636,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Boots of Speed",
-            rank=2,
+            rank=3,
             material_type="Boots",
             tags=[],
             description="""
@@ -646,7 +646,7 @@ def generate_apparel():
         ),
         create_apparel(
             name="Boots of Speed, Greater",
-            rank=4,
+            rank=5,
             material_type="Boots",
             tags=[],
             description="""
@@ -656,7 +656,7 @@ def generate_apparel():
         ),
         create_apparel(
             name="Boots of Speed, Supreme",
-            rank=6,
+            rank=7,
             material_type="Boots",
             tags=[],
             description="""

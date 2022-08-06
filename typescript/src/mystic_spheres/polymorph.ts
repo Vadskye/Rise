@@ -661,10 +661,10 @@ export const polymorph: MysticSphere = {
         You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
         If you already have a swim speed, you gain a +5 foot \\glossterm{magic bonus} to your swim speed.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: `You gain a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot magic bonus if you already have a swim speed.`,
-        6: `You gain a +10 foot \\glossterm{magic bonus} to your swim speed, or a +15 foot magic bonus if you already have a swim speed.`,
+        5: `You gain a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot magic bonus if you already have a swim speed.`,
+        7: `You gain a +10 foot \\glossterm{magic bonus} to your swim speed, or a +15 foot magic bonus if you already have a swim speed.`,
       },
       type: 'Attune',
     },
@@ -676,10 +676,10 @@ export const polymorph: MysticSphere = {
         You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size.
         If you already have a climb speed, you gain a +5 foot \\glossterm{magic bonus} to your climb speed.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: `You gain a +5 foot \\glossterm{magic bonus} to your climb speed, or a +10 foot bonus if you already have a climb speed.`,
-        6: `You gain a +10 foot \\glossterm{magic bonus} to your climb speed, or a +15 foot bonus if you already have a climb speed.`,
+        5: `You gain a +5 foot \\glossterm{magic bonus} to your climb speed, or a +10 foot bonus if you already have a climb speed.`,
+        7: `You gain a +10 foot \\glossterm{magic bonus} to your climb speed, or a +15 foot bonus if you already have a climb speed.`,
       },
       type: 'Attune',
     },
@@ -690,30 +690,12 @@ export const polymorph: MysticSphere = {
       effect: `
         You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{land speed}.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: `The bonus increases to +10 feet.`,
-        5: `The bonus increases to +15 feet.`,
-        7: `The bonus increases to +20 feet.`,
+        4: `The bonus increases to +10 feet.`,
+        6: `The bonus increases to +15 feet.`,
       },
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Mobility Enhancement',
-
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        For each creature, you choose one of the following effects.
-        \\parhead{Climber} The target gains a \\glossterm{climb speed} equal to its \\glossterm{base speed}.
-        \\parhead{Runner} The target gains a +5 foot \\glossterm{magic bonus} to its \\glossterm{land speed}.
-        \\parhead{Swimmer} The target gains a \\glossterm{swim speed} equal to its \\glossterm{base speed}.
-      `,
-      rank: 4,
-      scaling: {
-        6: 'The target also gains a +5 foot \\glossterm{magic bonus} to its speed with all movement modes, and a +10 foot \\glossterm{magic bonus} to its land speed.',
-      },
-      type: 'Attune (target)',
     },
 
     {

@@ -200,28 +200,12 @@ export const chronomancy: MysticSphere = {
       effect: `
         You gain a +5 foot \\glossterm{magic bonus} to your speed with all of your \\glossterm{movement modes}.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: `The speed bonus increases to +10 feet.`,
-        5: `The speed bonus increases to +15 feet.`,
-        7: `The speed bonus increases to +20 feet.`,
+        4: `The speed bonus increases to +10 feet.`,
+        6: `The speed bonus increases to +15 feet.`,
       },
       type: "Attune",
-    },
-
-    {
-      name: "Mass Haste",
-
-      functionsLike: {
-        mass: true,
-        name: "haste",
-      },
-      rank: 3,
-      scaling: {
-        5: `The speed bonus increases to +10 feet.`,
-        7: `The speed bonus increases to +15 feet.`,
-      },
-      type: "Attune (target)",
     },
 
     {

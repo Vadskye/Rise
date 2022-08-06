@@ -286,11 +286,10 @@ export const aquamancy: MysticSphere = {
         You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
         If you already have a swim speed, you gain a +5 foot \\glossterm{magic bonus} to your swim speed.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: `You gain a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot bonus if you already have a swim speed.`,
-        5: `The speed bonus increases to +10 feet, or +15 feet if you already have a swim speed.`,
-        7: `The speed bonus increases to +15 feet, or +20 feet if you already have a swim speed.`,
+        4: `You gain a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot bonus if you already have a swim speed.`,
+        6: `The speed bonus increases to +10 feet, or +15 feet if you already have a swim speed.`,
       },
       type: "Attune",
     },
@@ -301,10 +300,9 @@ export const aquamancy: MysticSphere = {
         mass: true,
         name: "aquatic freedom",
       },
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: `Each target gains a +5 foot \\glossterm{magic bonus} to its swim speed, or a +10 foot bonus if it already has a swim speed.`,
-        7: `The speed bonus increases to +10 feet, or +15 feet if the target already has a swim speed.`,
+        6: `Each target gains a +5 foot \\glossterm{magic bonus} to its swim speed, or a +10 foot bonus if it already has a swim speed.`,
       },
       type: "Attune (target)",
     },
