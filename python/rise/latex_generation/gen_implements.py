@@ -109,20 +109,9 @@ def generate_implements():
             tags=[],
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
-                When you do, you also regain half that many hit points, and you increase your \\glossterm<fatigue level> by one.
-            """,
-            short_description="Exert to heal you when you heal others",
-        ),
-        create_implement(
-            name="Staff of Shared Healing, Greater",
-            rank=6,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, you also regain that many hit points, and you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Exert to significantly heal you when you heal others",
+            short_description="Exert to heal you when you heal others",
         ),
     ]
 

@@ -144,7 +144,7 @@ def generate_tools():
             consumable=True,
             name="Potion of Healing",
             rank=1,
-            tags=[],
+            tags=['Swift'],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, you regain 1d6+1 \\glossterm<hit points>.
@@ -158,7 +158,7 @@ def generate_tools():
             name="Potion of Healing, Greater",
             rank=2,
             material_type="Potion",
-            tags=[],
+            tags=['Swift'],
             description="""
                 When you drink this \\glossterm<potion>, you regain 2d6+4 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
@@ -170,7 +170,7 @@ def generate_tools():
             name="Potion of Healing, Supreme",
             rank=4,
             material_type="Potion",
-            tags=[],
+            tags=['Swift'],
             description="""
                 When you drink this \\glossterm<potion>, you regain 4d6+7 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
@@ -182,7 +182,7 @@ def generate_tools():
             name="Potion of Healing, Epic",
             rank=6,
             material_type="Potion",
-            tags=[],
+            tags=['Swift'],
             description="""
                 When you drink this \\glossterm<potion>, you regain 5d10+14 \\glossterm<hit points>.
                 After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.

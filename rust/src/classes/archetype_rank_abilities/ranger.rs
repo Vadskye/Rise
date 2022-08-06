@@ -318,7 +318,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Lifeseal}
                         \abilitytag{Magical}
                         \rankline
-                        As long as your quarry is adjacent to any member of your hunting party, it cannot regain \glossterm{hit points}.
+                        As long as your quarry is adjacent to any member of your hunting party, it cannot regain \glossterm{hit points} or \glossterm{damage resistance}.
 
                         \rankline
                         \rank{4} This effect instead applies if the target is within \rngmed range of any member of your hunting party.

@@ -431,6 +431,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{bless the worthy} ability as a standard action.
                 \begin{activeability}{Bless the Worthy}
+                    \abilitytag{Swift}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 

@@ -682,8 +682,8 @@ def attack_button_text(damage_text=None):
     )
 
 
-def universal_ability_button(name, effect, attack=None):
-    tags = attack.get("tags", []) if attack else []
+def universal_ability_button(name, effect, attack=None, tags=None):
+    tags = attack.get("tags", []) if attack else (tags or [])
     tags_text = f" {{{{Tags={', '.join(tags)}}}}}" if len(tags) > 0 else ""
     return div(
         button(
@@ -786,6 +786,7 @@ def universal_abilities():
                     After you use this ability, you increase your fatigue level by two, and you cannot use it again until you take a short rest.
                     You regain hit points equal to half your maximum hit points. In addition, you remove all conditions affecting you. This cannot remove effects applied during the current round.
                 """,
+                tags=["Swift"],
             ),
             universal_ability_button(
                 "Shove",
