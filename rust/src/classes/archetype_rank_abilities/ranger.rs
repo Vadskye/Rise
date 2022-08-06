@@ -14,8 +14,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{animal companion} ability.
                 This ability requires 8 hours of training and attunement which the target must actively participate in.
                 You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-                \begin{attuneability}{Animal Companion}
-                    \abilitytag{Emotion}, \glossterm{Magical}
+                \begin{attuneability}{Animal Companion}{\abilitytag{Attune}, \abilitytag{Emotion}, \glossterm{Magical}}
                     \rankline
                     Choose a non-\glossterm{elite} Medium or smaller animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level.
                     The target serves as a loyal companion to you.
@@ -231,8 +230,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
             \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
-                \begin{attuneability}{Quarry}
-                    \abilitytag{Swift}, \abilitytag{Subtle}
+                \begin{attuneability}{Quarry}{\abilitytag{Attune}, \abilitytag{Swift}, \abilitytag{Subtle}}
                     \rankline
                     Choose a creature within \longrange.
                     The target becomes your quarry.
@@ -277,8 +275,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
                 Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
                 {
-                    \begin{activeability}{Anchoring}
-                        \abilitytag{Magical}
+                    \begin{activeability}{Anchoring}[\abilitytag{Magical}]
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                         This prevents all \abilitytag{Manifestation} and \glossterm{teleportation} effects.
@@ -315,10 +312,9 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{6} The penalty increases to \minus4.
                     \end{activeability}
 
-                    \begin{activeability}{Lifeseal}
-                        \abilitytag{Magical}
+                    \begin{activeability}{Lifeseal}[\abilitytag{Magical}]
                         \rankline
-                        As long as your quarry is adjacent to any member of your hunting party, it cannot regain \glossterm{hit points}.
+                        As long as your quarry is adjacent to any member of your hunting party, it cannot regain \glossterm{hit points} or \glossterm{damage resistance}.
 
                         \rankline
                         \rank{4} This effect instead applies if the target is within \rngmed range of any member of your hunting party.

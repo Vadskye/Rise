@@ -5,6 +5,21 @@ export function spellTypePrefix(
   spell: Pick<SpellLike, "castingTime" | "tags" | "type" | "rank">,
 ): string {
   const tags = spell.tags || [];
+  if (spell.type) {
+    if (spell.type.includes('(')) {
+      // grab the bits inside the parentheses
+      const inParens = spell.type.replace(/^.*\(/, '').replace(/\).*$/, '');
+      if (spell.type.includes('Attune')) {
+        tags.push(`\\abilitytag{Attune} (${inParens})`);
+      } else if (spell.type.includes('Sustain')) {
+        tags.push(`\\abilitytag{Sustain} (${inParens})`);
+      } else {
+        throw new Error(`Unrecognized type with parens: ${spell.type}`)
+      }
+    } else {
+      tags.push(spell.type)
+    }
+  }
   const tagsText =
     tags && tags.length > 0
       ? `${tags
@@ -12,16 +27,16 @@ export function spellTypePrefix(
           .map((t) => (t.includes("abilitytag") ? t : `\\abilitytag{${t}}`))
           .join(", ")}`
       : "";
-  const rankText = spell.rank ? `Rank ${spell.rank}` : "";
-  const tagLine: string = tagsText || rankText ? `\\spelltwocol{${tagsText}}{${rankText}}` : "";
 
   if (spell.castingTime) {
-    const castingTime =
+    const castingText =
       spell.castingTime === "minor action"
         ? `One \\glossterm{${spell.castingTime}}`
         : sentenceCase(spell.castingTime);
-    return `${tagLine}\n\\noindent Casting time: ${castingTime}`;
+    return `\\spelltwocol{Casting time: ${castingText}}{${tagsText}}`;
+  } else if (tagsText) {
+    return `\\spelltwocol{}{${tagsText}}`;
   } else {
-    return tagLine;
+    return '';
   }
 }

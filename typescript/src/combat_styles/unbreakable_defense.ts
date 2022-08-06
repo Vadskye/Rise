@@ -127,12 +127,10 @@ export const unbreakableDefense: CombatStyle = {
         When you use this ability, you increase your \\glossterm{fatigue level} by two.
 
         You regain hit points equal to half your maximum \\glossterm{hit points}.
-        If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \\pcref{Resolving Simultaneous Damage}).
-
         After you use this ability, you cannot use it again until you take a \\glossterm{short rest}.
       `,
       rank: 4,
-      tags: [],
+      tags: ['Swift'],
       scaling: {
         6: `
           You can also remove a single condition.
@@ -241,6 +239,8 @@ export const unbreakableDefense: CombatStyle = {
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
         In addition, you regain 1d10 + \\glossterm{power} hit points.
+
+        If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \\pcref{Resolving Simultaneous Damage}).
       `,
       scaling: {
         special: "The healing increases by +1d for each rank beyond 3.",

@@ -87,7 +87,7 @@
         {\normalsize \textbf{#3}}
         \IfValueTF{#2}{~--~#2}{}
     }{
-        \IfValueTF{#4}{#4}{}
+        \IfValueT{#4}{#4}
     }
 }
 {
@@ -109,7 +109,7 @@
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{sustainabilitymdframed}
-\DeclareDocumentEnvironment{sustainability}{s o m o}
+\DeclareDocumentEnvironment{sustainability}{s o m m}
 {
     \begin{sustainabilitymdframed}
     \RaggedRight
@@ -125,7 +125,7 @@
         {\normalsize \textbf{#3}}
         \IfValueTF{#2}{~--~#2}{}
     }{
-        \IfValueTF{#4}{#4}{}
+        #4
     }
 }
 {
@@ -147,7 +147,7 @@
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{attuneabilitymdframed}
-\DeclareDocumentEnvironment{attuneability}{s o m o}
+\DeclareDocumentEnvironment{attuneability}{s o m m}
 {
     \begin{attuneabilitymdframed}
     \RaggedRight
@@ -163,8 +163,7 @@
         {\normalsize \textbf{#3}}
         \IfValueTF{#2}{~--~#2}{}
     }{
-        \abilitytag{Attune}
-        \IfValueT{#4}{~(#4)}
+        #4
     }
 }
 {

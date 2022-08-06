@@ -54,7 +54,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{darkstalker} ability as a standard action.
-                \begin{attuneability}{Darkstalker}
+                \begin{attuneability}{Darkstalker}{\abilitytag{Attune}}
                     \rankline
                     You become completely undetectable by your choice of one of the following sense groups:
                     \begin{itemize}
@@ -125,8 +125,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use the \textit{assassination} ability as a \glossterm{minor action}.
-                \begin{activeability}{Assassination}
-                    \abilitytag{Swift}
+                \begin{activeability}{Assassination}[\abilitytag{Swift}]
                     \rankline
                     You study a creature within \rngmed range, finding weak points you can take advantage of.
                     As a \glossterm{brief} effect, whenever you make a melee \glossterm{strikes} against the target that it is \unaware, the strike deals maximum damage and automatically \glossterm{explodes} regardless of what you roll.
@@ -193,8 +192,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 However, targets do not stop being affected by your performance simply by travelling beyond the initial range of the bardic performance ability.
                 Using a bardic performance ability with an immediate effect does not interfere with your ability to sustain other bardic performance abilities.
                 {
-                    \begin{sustainability}{Aria of Alacrity}[\abilitytag{Sustain} (minor)]
-                        \abilitytag{Auditory}
+                    \begin{sustainability}{Aria of Alacrity}{\abilitytag{Auditory}, \abilitytag{Sustain} (minor)}
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \medrange.
@@ -215,8 +213,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     %
                     % Bardsong debuffs are interesting, since they can't be removed like conditions, but also can't be stacked.
                     % For now, they're just ranked in the same way as conditions.
-                    \begin{sustainability}{Ballad of Belligerence}[\abilitytag{Sustain} (minor)]
-                        \abilitytag{Auditory}, \abilitytag{Emotion}
+                    \begin{sustainability}{Ballad of Belligerence}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
                         \hit For the duration of your performance, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
@@ -226,8 +223,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
                     \end{sustainability}
 
-                    \begin{activeability}{Boastful Bravura}
-                        \abilitytag{Auditory}
+                    \begin{activeability}{Boastful Bravura}[\abilitytag{Auditory}]
                         \rankline
                         This ability affects all \glossterm{enemies} within a \arealarge radius from you.
                         You \glossterm{briefly} gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each target.
@@ -238,8 +234,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus7.
                     \end{activeability}
 
-                    \begin{activeability}{Cacaphony}
-                        \abilitytag{Auditory}
+                    \begin{activeability}{Cacaphony}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
                         \hit Each target takes 1d4 \add half \glossterm{power} sonic damage.
@@ -253,8 +248,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The damage increases to 2d10, and the area increases to a \hugearea radius.
                     \end{activeability}
 
-                    \begin{sustainability}{Cadenza of Courage}[Sustain (minor)]
-                        \abilitytag{Auditory}, \abilitytag{Emotion}
+                    \begin{sustainability}{Cadenza of Courage}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \medrange.
@@ -266,8 +260,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus to Mental defense increases to \plus4.
                     \end{sustainability}
 
-                    \begin{sustainability}{Cantata of Caution}[Sustain (minor)]
-                        \abilitytag{Auditory}, \abilitytag{Emotion}
+                    \begin{sustainability}{Cantata of Caution}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \medrange.
@@ -279,8 +272,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus to Fortitude and Mental defenses also increases to \plus2.
                     \end{sustainability}
 
-                    \begin{sustainability}{Cleansing Counterpoint}[Sustain (minor)]
-                        \abilitytag{Auditory}
+                    \begin{sustainability}{Cleansing Counterpoint}{\abilitytag{Auditory}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Choose yourself or one \glossterm{ally} within \rngmed range.
                         The target chooses one of its \glossterm{brief} effects or \glossterm{conditions}.
@@ -294,8 +286,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} Each target can remove two effects instead of one.
                     \end{sustainability}
 
-                    \begin{activeability}{Dazzling Discordance}
-                        \abilitytag{Auditory}
+                    \begin{activeability}{Dazzling Discordance}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} within a \areamed radius from you.
                         \hit Each target is \glossterm{briefly} \dazzled.
@@ -310,8 +301,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The accuracy bonus increases to \plus6.
                     \end{activeability}
 
-                    \begin{activeability}{Dirge of Doom}
-                        \abilitytag{Auditory}
+                    \begin{activeability}{Dirge of Doom}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
                         \hit The target takes sonic damage equal to 1d8 plus your \glossterm{power}.
@@ -325,8 +315,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The damage increases to 6d10.
                     \end{activeability}
 
-                    \begin{sustainability}{Dizzying Ditty}[\abilitytag{Sustain} (minor)]
-                        \abilitytag{Auditory}, \abilitytag{Compulsion}
+                    \begin{sustainability}{Dizzying Ditty}{\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
                         \hit For the duration of your performance, the target is \dazed.
@@ -336,8 +325,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
                     \end{sustainability}
 
-                    \begin{sustainability}{Frightening Fugue}[\abilitytag{Sustain} (minor)]
-                        \abilitytag{Auditory}, \abilitytag{Emotion}
+                    \begin{sustainability}{Frightening Fugue}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
                         \hit The target takes 1d6 + half \glossterm{power} sonic damage.
@@ -347,8 +335,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus1 \glossterm{accuracy} bonus and a \plus1d damage bonus with the attack for each rank beyond 1.
                     \end{sustainability}
 
-                    \begin{sustainability}{Hypnotic Hymn}[\abilitytag{Sustain} (minor)]
-                        \abilitytag{Auditory}, \abilitytag{Emotion}
+                    \begin{sustainability}{Hypnotic Hymn}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
                         You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
@@ -359,8 +346,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
                     \end{sustainability}
 
-                    \begin{sustainability}{Intonation of Ingenuity}[\abilitytag{Sustain} (minor)]
-                        \abilitytag{Auditory}, \abilitytag{Emotion}
+                    \begin{sustainability}{Intonation of Ingenuity}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose yourself or one \glossterm{ally} within \rngmed range.
@@ -372,8 +358,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus5.
                     \end{sustainability}
 
-                    \begin{activeability}{Palliative Poem}
-                        \abilitytag{Auditory}
+                    \begin{activeability}{Palliative Poem}[\abilitytag{Auditory}, \abilitytag{Swift}]
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
                         The target regains 1d6 \add \glossterm{power} \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
@@ -388,8 +373,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The recovery increases to 5d10.
                     \end{activeability}
 
-                    \begin{activeability}{Partita of Provocation}
-                        \abilitytag{Auditory}, \abilitytag{Emotion}
+                    \begin{activeability}{Partita of Provocation}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                         \hit Each target is \glossterm{briefly} \goaded by you.
@@ -399,8 +383,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
                     \end{activeability}
 
-                    \begin{sustainability}{Serenade of Serenity}[\abilitytag{Sustain} (minor)]
-                        \abilitytag{Auditory}, \abilitytag{Emotion}
+                    \begin{sustainability}{Serenade of Serenity}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to their defenses against \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
@@ -411,8 +394,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} Each target is immune to Compulsion and Emotion attacks.
                     \end{sustainability}
 
-                    \begin{activeability}{Stutterstep Staccato}
-                        \abilitytag{Auditory}
+                    \begin{activeability}{Stutterstep Staccato}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} within a \areamed radius from you.
                         \hit Each target is \glossterm{briefly} \slowed.
@@ -427,8 +409,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The accuracy bonus increases to \plus6.
                     \end{activeability}
 
-                    \begin{activeability}{Vigorous Verse}
-                        \abilitytag{Auditory}
+                    \begin{activeability}{Vigorous Verse}[\abilitytag{Auditory}]
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \rngmed range.
@@ -855,8 +836,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{confound} ability as a standard action.
-                \begin{activeability}{Confound}
-                    \abilitytag{Compulsion}
+                \begin{activeability}{Confound}[\abilitytag{Compulsion}]
                     \rankline
                     Make an attack vs. Mental against a creature within \shortrange.
                     Your \glossterm{accuracy} is equal to your Deception skill.
@@ -936,8 +916,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You can use the \textit{what's that over there} ability as a standard action.
-                \begin{activeability}{What's That Over There}
-                    \abilitytag{Compulsion}
+                \begin{activeability}{What's That Over There}[\abilitytag{Compulsion}]
                     \rankline
                     Make a attack vs. Mental against a creature within \medrange.
                     Your \glossterm{accuracy} is equal to your Deception skill.
@@ -958,8 +937,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You can use the \textit{nothing is real} ability as a standard action.
-                \begin{activeability}{Nothing Is Real}
-                    \abilitytag{Compulsion}
+                \begin{activeability}{Nothing Is Real}[\abilitytag{Compulsion}]
                     \rankline
                     Make an attack vs. Mental against a creature within \shortrange.
                     Your \glossterm{accuracy} is equal to your Deception skill.
