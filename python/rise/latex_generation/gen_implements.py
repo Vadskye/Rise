@@ -104,7 +104,7 @@ def generate_implements():
     implements += [
         create_implement(
             name="Staff of Shared Healing",
-            rank=3,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
