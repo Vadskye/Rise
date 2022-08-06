@@ -348,6 +348,34 @@ export const channelDivinity: MysticSphere = {
       scaling: "damage",
     },
 
+    {
+      name: "Unwavering Faith",
+
+      effect: `
+        You are \\glossterm{immune} to \\abilitytag{Compulsion} and \\abilitytag{Emotion} attacks.
+      `,
+      rank: 5,
+      scaling: {
+        7: "You also ignore penalties to your accuracy and defenses from \\glossterm{vital wounds}.",
+      },
+      type: "Attune",
+    },
+
+    {
+      name: "Holy Blade",
+
+      effect: `
+        Your weapons shed light like a torch.
+        You gain a +4 \\glossterm{magic bonus} to \\glossterm{power} while you wield a weapon you are proficient with.
+        In addition, all damage you deal with \\glossterm{strikes} becomes energy damage in addition to the attack's normal damage types.
+      `,
+      rank: 3,
+      scaling: {
+        5: `The power bonus increases to +8.`,
+        7: `The power bonus increases to +16.`,
+      },
+      type: "Attune",
+    },
   ],
   rituals: [
     {

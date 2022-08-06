@@ -244,7 +244,7 @@ export const fabrication: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using the weapon.`,
+        3: `You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} while you wield the weapon.`,
         5: `The power bonus increases to +4.`,
         7: `The power bonus increases to +8.`,
       },
@@ -367,9 +367,14 @@ export const fabrication: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with any \\glossterm{strike} using ammunition created with this spell.`,
-        5: `The power bonus increases to +4.`,
-        7: `The power bonus increases to +8.`,
+        3: `This spell also has no \\glossterm{verbal components}.`,
+        5: `
+          You can also create special ammunition like fire arrows that you are proficient with.
+        `,
+        7: `
+          You can cast this spell as a \\glossterm{free action}.
+          When you do, you cannot cast this spell again this round.
+        `,
       },
       tags: ["Manifestation", "Swift"],
     },

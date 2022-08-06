@@ -42,7 +42,7 @@ export const revelation: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} with \\glossterm{strikes} using weapons from the chosen weapon group.`,
+        3: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} while you wield a weapon from the chosen weapon group.`,
         5: `The power bonus increases to +4.`,
         7: `The power bonus increases to +8.`,
       },
@@ -131,6 +131,24 @@ export const revelation: MysticSphere = {
         7: `The bonus increases to +16.`,
       },
       type: "Attune",
+    },
+
+    {
+      name: "Armorbreak Sight",
+
+      effect: `
+        Whenever you make a \\glossterm{strike} that would attack a creature's Armor defense, you may instead attack that creature's Reflex defense.
+        If you do, you \\glossterm{briefly} cannot apply this effect again.
+        You must make this choice before rolling the attack roll.
+      `,
+      narrative: `
+        You intuitively perceive gaps in your foes' armor.
+      `,
+      rank: 4,
+      scaling: {
+        6: "Applying this effect to a strike does not prevent you from applying it again.",
+      },
+      type: "Attune (deep)",
     },
 
     {
