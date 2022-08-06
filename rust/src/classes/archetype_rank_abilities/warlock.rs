@@ -176,8 +176,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can use the \textit{abyssal curse} ability as a standard action.
-                \begin{activeability}{Abyssal Curse}
-                    \abilitytag{Curse}
+                \begin{activeability}{Abyssal Curse}[\abilitytag{Curse}]
                     \rankline
                     Make an attack vs. Fortitude against one creature or object within \rngmed range.
                     \hit The target is \stunned until it takes a \glossterm{short rest}.
@@ -597,8 +596,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
-                \begin{sustainability}{Possession}[\abilitytag{Sustain} (free)]
-                    \abilitytag{Swift}
+                \begin{sustainability}{Possession}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
@@ -674,8 +672,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
                 You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
-                \begin{activeability}{Exchange Soul Fragment}
-                    \abilitytag{Swift}
+                \begin{activeability}{Exchange Soul Fragment}[\abilitytag{Swift}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by two.
 
@@ -693,8 +690,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
                 You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
-                \begin{activeability}{Exchange Vitality}
-                    \abilitytag{Swift}
+                \begin{activeability}{Exchange Vitality}[\abilitytag{Swift}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three.
 
