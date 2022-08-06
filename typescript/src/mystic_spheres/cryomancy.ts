@@ -237,7 +237,7 @@ export const cryomancy: MysticSphere = {
       scaling: {
         3: `You can also move on top of rough or stormy water.`,
         5: `You no longer treat the water as difficult terrain.`,
-        7: `You also gain a +10 foot \\glossterm{magic bonus} to your land speed.`,
+        7: `You also gain a +5 foot \\glossterm{magic bonus} to your land speed.`,
       },
       type: "Attune",
     },
