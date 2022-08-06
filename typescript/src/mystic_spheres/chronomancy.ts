@@ -120,25 +120,6 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Decelerated Timestream",
-
-      attack: {
-        hit: `
-          Each target acts at half speed within the area.
-          It skips every other round, starting with the round after it becomes affected by this affect.
-        `,
-        targeting: `
-          Make an attack vs. Mental against all creatures within a \\areasmall radius \\glossterm{zone} from your location.
-          Whenever a creature enters the area, you make the same attack against it.
-          A creature that leaves the area and re-enters it uses the original attack result against it.
-        `,
-      },
-
-      rank: 5,
-      scaling: "accuracy",
-    },
-
-    {
       name: "Slow",
 
       attack: {
@@ -149,20 +130,6 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Distant Slow",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The target is \\slowed as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\distrange.
-        `,
-      },
-      rank: 3,
       scaling: "accuracy",
     },
 
@@ -224,21 +191,6 @@ export const chronomancy: MysticSphere = {
       },
 
       rank: 7,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Mental Lag",
-
-      attack: {
-        crit: `The target \\stunned instead of dazed.`,
-        hit: `The target is \\slowed and \\dazed as a single \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-
-      rank: 4,
       scaling: "accuracy",
     },
 
@@ -481,25 +433,6 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Accelerate Aging",
-
-      // Like t3 -1 level
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `
-          As a \\glossterm{condition}, the target's body temporarily ages to become extremely old.
-          It is \\slowed and \\stunned.
-          If it was already suffering age-related penalties, it is also \\blinded.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
-        `,
-      },
-      rank: 7,
-      scaling: "accuracy",
-    },
-
-    {
       name: "Instant Analysis",
 
       effect: `
@@ -518,26 +451,6 @@ export const chronomancy: MysticSphere = {
         5: `You can cast this spell as a \\glossterm{minor action}.`,
         7: `The length of frozen time increases to five minutes.`,
       },
-    },
-
-    {
-      name: "Disjointed Slow",
-
-      attack: {
-        hit: `
-          The target takes 1d8 + half \\glossterm{power} energy damage.
-          If it takes damage, it is \\glossterm{briefly} \\slowed.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\longrange.
-        `,
-      },
-      narrative: `
-        This spell was discovered accidentally by an inexperienced chronomancer, but it has since been weaponized to great effect.
-        It creates inconsistent pockets of slowed time at random within a foe's body.
-      `,
-      rank: 2,
-      scaling: "damage",
     },
 
     {

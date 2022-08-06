@@ -420,35 +420,6 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Sapping Miasma",
-
-      attack: {
-        crit: "The effect becomes a \\glossterm{condition}.",
-        // No relevant glance effect
-        hit: `Each target is \\glossterm{briefly} \\dazed.`,
-        targeting: `
-          Make an attack vs. Fortitude with a +1 \\glossterm{accuracy} bonus against all living creatures in a \\smallarea radius within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Greater Sapping Miasma",
-
-      attack: {
-        crit: "The effect becomes a \\glossterm{condition}.",
-        hit: `Each target is \\glossterm{briefly} \\stunned.`,
-        targeting: `
-          Make an attack vs. Fortitude against all living creatures in a \\smallarea radius within \\medrange.
-        `,
-      },
-      rank: 4,
-      scaling: "accuracy",
-    },
-
-    {
       name: "Corpse Explosion",
 
       attack: {
@@ -491,7 +462,7 @@ export const vivimancy: MysticSphere = {
         Whenever it loses one or more \\glossterm{hit points} from a single attack, this penalty increases by 1.
         This penalty increase stacks, and persists even if the target regains the lost hit points.`,
         targeting: `
-          Make an attack vs. Fortitude with a +4 bonus to \\glossterm{accuracy} against one living creature within \\medrange.
+          Make an attack vs. Fortitude with a +3 bonus to \\glossterm{accuracy} against one living creature within \\medrange.
         `,
       },
       rank: 1,
@@ -508,7 +479,7 @@ export const vivimancy: MysticSphere = {
         Whenever it loses one or more \\glossterm{hit points} from a single attack, this penalty increases by 1.
         This penalty increase stacks, and persists even if the target regains the lost hit points.`,
         targeting: `
-        Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against one living creature within \\longrange.
+        Make an attack vs. Mental with a +3 bonus to \\glossterm{accuracy} against one living creature within \\medrange.
         `,
       },
 

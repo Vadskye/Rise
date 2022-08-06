@@ -152,69 +152,6 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: "Glimpse of Divinity",
-
-      attack: {
-        crit: "The condition must be removed twice before the effect ends.",
-        hit: `
-          The target is \\dazzled as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\longrange.
-        `,
-      },
-      rank: 2,
-      scaling: "accuracy",
-      tags: ['Visual'],
-    },
-
-    {
-      name: "Greater Glimpse of Divinity",
-
-      functionsLike: {
-        name: 'glimpse of divinity',
-        exceptThat: 'the target is also \\dazed as part of the same condition.',
-      },
-      rank: 6,
-      scaling: "accuracy",
-      tags: ['Visual'],
-    },
-
-    {
-      name: "Fear of the Divine",
-
-      attack: {
-        crit: "The condition must be removed twice before the effect ends.",
-        hit: `
-          The target is \\frightened by you as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\panicked instead of frightened.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 5,
-      tags: ['Emotion'],
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Judge Unworthy",
-
-      attack: {
-        crit: "The penalty increases to -5.",
-        hit: `
-          As a \\glossterm{condition}, the target takes a -2 penalty to Mental defense.
-        `,
-        targeting: `
-          Make an attack vs. Mental with a +3 \\glossterm{accuracy} bonus against one creature within \\longrange.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-    },
-
-    {
       name: "Word of Faith",
 
       attack: {

@@ -126,57 +126,6 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Piercing Grasp',
-
-      attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} piercing damage.`,
-        targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
-        `,
-      },
-      narrative: `
-        You twist your hand into a spike that bends past armor to injure your foe.
-      `,
-      rank: 1,
-      scaling: 'damage',
-    },
-
-    {
-      name: 'Greater Piercing Grasp',
-
-      attack: {
-        hit: `
-          The target takes 2d6 + \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\dazed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
-        `,
-      },
-      narrative: `
-        You twist your hand into a spike that bends past armor to impale your foe.
-      `,
-      rank: 3,
-      scaling: 'damage',
-    },
-
-    {
-      name: 'Supreme Piercing Grasp',
-
-      functionsLike: {
-        name: 'greater piercing grasp',
-        exceptThat:
-          'the damage increases to 4d6 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
-      },
-      rank: 6,
-      scaling: 'damage',
-    },
-
-    {
       name: 'Baleful Polymorph',
 
       attack: {
@@ -468,8 +417,13 @@ export const polymorph: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `The target takes 2d10 physical damage.
         If it loses \\glossterm{hit points} from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
-        It is \\stunned, and it has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
-        It is also unable to speak normally or use verbal or somatic \\glossterm{casting components}.`,
+        This has the following effects:
+        \\begin{itemize}
+          \\item Its exposed flesh makes it \\vulnerable to all damage.
+          \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
+          \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
+        \\end{itemize}
+        `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
@@ -619,34 +573,6 @@ export const polymorph: MysticSphere = {
         7: `The bonus increases to +3.`,
       },
       type: 'Attune',
-    },
-
-    {
-      name: 'Eyebite',
-
-      attack: {
-        hit: `The target takes 2d6 physical damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.`,
-        targeting: `
-        Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-      rank: 5,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Organ Failure',
-
-      attack: {
-        hit: `The target takes 1d4 physical damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
-        targeting: `
-        Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: 'accuracy',
     },
 
     {

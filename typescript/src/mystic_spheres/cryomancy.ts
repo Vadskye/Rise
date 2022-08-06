@@ -227,40 +227,6 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Mindchill",
-
-      attack: {
-        hit: `
-          The target takes 1d8 + half \\glossterm{power} cold damage.
-          If it takes damage, it is \\glossterm{briefly} \\dazed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\longrange.
-        `,
-      },
-
-      rank: 2,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Mindchill",
-
-      attack: {
-        hit: `
-          The target takes 2d8 + half \\glossterm{power} cold damage.
-          If it takes damage, it is \\dazed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\longrange.
-        `,
-      },
-
-      rank: 6,
-      scaling: "damage",
-    },
-
-    {
       name: "Skate",
 
       effect: `
@@ -481,24 +447,6 @@ export const cryomancy: MysticSphere = {
       rank: 7,
       scaling: "damage",
       type: "Attune",
-    },
-
-    {
-      name: "Frostburn",
-
-      // original targets: One creature within \shortrange
-      attack: {
-        crit: `The damage from the condition is doubled.`,
-        hit: `
-          As a \\glossterm{condition}, the target is seared by painful cold.
-          % TODO: standardize "ignite" damage
-          At the end of each round, it takes 2d8 + half \\glossterm{power} cold damage.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-      rank: 5,
     },
 
     {

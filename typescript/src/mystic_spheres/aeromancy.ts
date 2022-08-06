@@ -492,44 +492,6 @@ export const aeromancy: MysticSphere = {
       scaling: "accuracy",
     },
     {
-      name: "Windseal",
-
-      // +1.5 levels for avoidable damage, -0.5 for size limit. or something.
-      attack: {
-        crit: "The condition deals double damage.",
-        hit: `
-          As a \\glossterm{condition}, the target is \\slowed by incredibly fast winds that inhibit movement.
-          At the end of each phase, if it moved using one of its movement speeds during that phase, it takes 1d10 + half \\glossterm{power} bludgeoning damage.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one Large or smaller creature within \\medrange.
-        `,
-      },
-      // effect: '',
-      // narrative: '',
-      rank: 2,
-      scaling: "damage",
-    },
-    {
-      name: "Greater Windseal",
-
-      // +1 level for range, +2 levels for damage die
-      attack: {
-        crit: "The condition deals double damage.",
-        hit: `
-          As a \\glossterm{condition}, the target is \\slowed by incredibly fast winds that inhibit movement.
-          At the end of each phase, if it moved using one of its movement speeds during that phase, it takes 4d6 + half \\glossterm{power} bludgeoning damage.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one Large or smaller creature within \\longrange.
-        `,
-      },
-      // effect: '',
-      // narrative: '',
-      rank: 5,
-      scaling: "damage",
-    },
-    {
       name: "Dust Cloud",
 
       attack: {
@@ -627,24 +589,6 @@ export const aeromancy: MysticSphere = {
       `,
       rank: 6,
       scaling: "damage",
-    },
-    {
-      name: "Downdraft",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `
-          As a \\glossterm{condition}, air buffets the target downward, pushing it towards the ground with great force.
-          It is \\slowed and unable to use any fly speed or glide speed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-      // narrative: '',
-      // +1 level since it's stronger than a typical rank 1 debuff
-      rank: 2,
-      scaling: "accuracy",
     },
     {
       name: "Misty Step",
