@@ -111,6 +111,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 1,
       scaling: { special: "The healing increases by +1d for each rank beyond 1." },
+      tags: ["Swift"],
     },
 
     {
@@ -122,6 +123,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },
+      tags: ["Swift"],
     },
 
     {
@@ -132,6 +134,7 @@ export const vivimancy: MysticSphere = {
         The target regains 5d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 7,
+      tags: ["Swift"],
     },
 
     {

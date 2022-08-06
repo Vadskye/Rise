@@ -263,7 +263,7 @@ export const heraldOfWar: CombatStyle = {
       `,
       rank: 3,
       scaling: { special: "The recovery increases by +1d for each rank beyond 3." },
-      tags: ['Emotion'],
+      tags: ['Emotion', 'Swift'],
     },
 
     {
@@ -276,7 +276,7 @@ export const heraldOfWar: CombatStyle = {
       `,
       rank: 6,
       scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
-      tags: ['Emotion'],
+      tags: ['Emotion', 'Swift'],
     },
 
     {
