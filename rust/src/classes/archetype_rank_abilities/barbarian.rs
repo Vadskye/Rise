@@ -73,7 +73,8 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                When you use the \textit{recover} ability, you regain a quarter of your maximum \glossterm{damage resistance} at the end of the round (see \pcref{Recover}).
+                When you use the \textit{recover} ability, you also regain a quarter of your maximum \glossterm{damage resistance} (see \pcref{Recover}).
+                This effect has the \abilitytag{Swift} tag, like the \ability{recover} ability.
             ",
             modifiers: None,
         },

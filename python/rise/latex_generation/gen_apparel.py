@@ -1531,7 +1531,7 @@ def generate_apparel():
             name="Belt of Healing",
             rank=2,
             material_type="Belt",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a standard action, you can use this belt to regain 1d10+4 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -1542,7 +1542,7 @@ def generate_apparel():
             name="Belt of Healing, Greater",
             rank=4,
             material_type="Belt",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a standard action, you can use this belt to regain 2d10+7 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -1553,7 +1553,7 @@ def generate_apparel():
             name="Belt of Healing, Supreme",
             rank=6,
             material_type="Belt",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a standard action, you can use this belt to regain 4d10+14 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -2911,10 +2911,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 1d8+4 \\glossterm<hit points>.
-                This effect cannot heal you above the number of hit points you had at the start of the round.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d6+4 \\glossterm<hit points>.
+                When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Heals 1d8+4 when you use \\ability<spell absorption>",
+            short_description="Exert to heal 2d6+4 with \\ability<spell absorption>",
         ),
         create_apparel(
             name="Spellfeeding Amulet, Greater",
@@ -2922,10 +2922,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d8+7 \\glossterm<hit points>.
-                This effect cannot heal you above the number of hit points you had at the start of the round.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d6+7 \\glossterm<hit points>.
+                When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Heals 2d8+7 when you use \\ability<spell absorption>",
+            short_description="Exert to heal 4d6+7 with \\ability<spell absorption>",
         ),
         create_apparel(
             name="Spellfeeding Amulet, Supreme",
@@ -2933,10 +2933,10 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d8+14 \\glossterm<hit points>.
-                This effect cannot heal you above the number of hit points you had at the start of the round.
+                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 5d10+14 \\glossterm<hit points>.
+                When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Heals 4d8+14 when you use \\ability<spell absorption>",
+            short_description="Exert to heal 5d10+14 with \\ability<spell absorption>",
         ),
     ]
 
