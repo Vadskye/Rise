@@ -490,6 +490,7 @@ export const aquamancy: MysticSphere = {
             If you already have a swim speed, you gain a \\plus10 foot bonus to your swim speed.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
+          \\item You ignore \\glossterm{difficult terrain} from all sources except for creature abilities.
         \\end{itemize}
       `,
       rank: 3,
@@ -615,7 +616,7 @@ export const aquamancy: MysticSphere = {
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
           \\item You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
-          \\item You gain a +4 bonus to your defenses against the \\ability{grapple} ability.
+          \\item You gain a +2 bonus to your defenses against the \\ability{grapple} ability.
         \\end{itemize}
       `,
       // narrative: '',
