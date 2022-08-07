@@ -692,7 +692,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
                 \begin{activeability}{Exchange Vitality}[\abilitytag{Swift}]
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by three.
+                    When you use this ability, you increase your \glossterm{fatigue level} by four.
 
                     Remove one of your \glossterm{vital wounds}.
                     This cannot remove a vital wound applied during the current round.
@@ -711,11 +711,11 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Distant Possession",
+            name: "Split Soul",
             is_magical: true,
             rank: 7,
             description: r"
-                You double the range of spells you cast during your \textit{possession} ability.
+                You reduce the fatigue you gain from using your \ability{exchange soul conduit} and \ability{exchange vitality} abilities by one.
             ",
             modifiers: Some(vec![Modifier::Power(8)]),
         },
