@@ -292,7 +292,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        You lock the state of the target's body in time.
+        You lock the state of the target's mind in time.
         Note the target's current \\glossterm{conditions}.
         If the target dies, this effect ends immediately.
 
@@ -302,16 +302,39 @@ export const chronomancy: MysticSphere = {
         It does not affect any other properties of the target, such as any vital wounds gained or resources expended.
         After you restore the target's state in this way, it increases its \\glossterm{fatigue level} by two, and the spell ends.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: `
+        4: `
           The target's fatigue level only increases by one instead of two.
         `,
-        5: `
+        6: `
           The target's fatigue level does not increase.
         `,
-        7: `
-          You can target an additional \\glossterm{ally} with this spell.
+      },
+      type: "Sustain (minor)",
+    },
+
+    {
+      name: "Time Lock -- Location",
+
+      effect: `
+        Choose yourself or an \\glossterm{ally} within \\medrange.
+        You lock the state of the target's body in time.
+        Note the target's current location.
+        If the target dies, this effect ends immediately.
+
+        As a \\glossterm{standard action}, you can reach through time to restore the target's state.
+        If you do, the target \\glossterm{teleports} back to where it was when you cast this spell.
+        This teleportation does not require \\glossterm{line of sight} or \\glossterm{line of effect}.
+        After you restore the target's state in this way, it increases its \\glossterm{fatigue level} by one, and the spell ends.
+      `,
+      rank: 2,
+      scaling: {
+        4: `
+          The target's fatigue level does not increase.
+        `,
+        6: `
+          You can target two \\glossterm{allies} with this spell.
         `,
       },
       type: "Sustain (minor)",
