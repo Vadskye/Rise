@@ -59,9 +59,9 @@ impl Monster {
                 .passive_abilities
                 .push(StandardPassiveAbility::TwoActions.ability());
             let maximum_conditions = if level >= 12 {
-                2
-            } else {
                 3
+            } else {
+                4
             };
             creature
                 .passive_abilities

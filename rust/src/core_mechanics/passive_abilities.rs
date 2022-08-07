@@ -49,7 +49,7 @@ impl StandardPassiveAbility {
             },
             Self::ConditionRemoval(count) => {
                 // This count handling is stupid
-                let conditions = if *count == 2 {r"two or more \glossterm{conditions}" } else { r"three or more \glossterm{conditions}" };
+                let conditions = if *count == 3 {r"three or more \glossterm{conditions}" } else { r"four or more \glossterm{conditions}" };
                 return PassiveAbility {
                     description: format!("At the end of each round, if the $name has {}, it removes its oldest condition.", conditions),
                     is_magical: false,
