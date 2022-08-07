@@ -160,13 +160,13 @@ Each debuff rank is +4 spell ranks over its predecessor
   * Special: end of round medium damage (DR 5/10 check to remove), unable to regain HP (-1 level), lose one attunement, enraged (cannot take non-attack actions)
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
-  * List: frightened, generic -2 to all, stunned
+  * List: frightened, stunned
   * Special: end of round medium damage, knockback 30', lose two attunements and be unable to attune as a condition
 * Rank 2.5
-  * List: fighting underwater, not existing, vulnerable to all damage (2.25, really)
+  * List: fighting underwater, not existing
 * Rank 3
-  * Generally cause partial action denial
-  * List: confused, blinded, immobilized, panicked
+  * Generally cause partial action denial or debilitating penalties
+  * List: confused, blinded, immobilized, panicked, vulnerable to all damage
 * Rank 4
   * Generally cause complete action denial
   * List: Asleep, paralyzed

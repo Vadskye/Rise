@@ -129,17 +129,17 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: "Poison -- Blood Leech Venom",
+      name: "Poison -- Black Adder Venom",
 
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
         hit: `
           The target takes 1d6 acid damage.
-          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
-          The stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
+          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
+          The stage 1 effect inflicts 2d6 + half \\glossterm{power} damage each time the poison's attack succeeds.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude with a +1 accuracy bonus against one living creature within \\medrange.
         `,
       },
       rank: 2,
@@ -163,6 +163,25 @@ export const toxicology: MysticSphere = {
       },
       rank: 3,
       scaling: "damage",
+      tags: ["Manifestation"],
+    },
+
+    {
+      name: "Poison -- Blood Leech Venom",
+
+      attack: {
+        crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
+        hit: `
+          The target takes 1d6 acid damage.
+          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
+          The stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\medrange.
+        `,
+      },
+      rank: 5,
+      scaling: "accuracy",
       tags: ["Manifestation"],
     },
 
