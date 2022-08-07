@@ -375,7 +375,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{activeability}{Partita of Provocation}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                         \rankline
-                        Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+                        Make an attack vs. Mental against all \glossterm{enemies} within a \smallarea radius from you.
                         \hit Each target is \glossterm{briefly} \goaded by you.
                         \crit The effect becomes a \glossterm{condition}.
 

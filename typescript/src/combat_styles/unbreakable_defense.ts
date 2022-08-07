@@ -330,26 +330,9 @@ export const unbreakableDefense: CombatStyle = {
         You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
       `,
-      rank: 1,
+      rank: 4,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
-    },
-
-    {
-      name: "Greater Covering Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition}.
-      `,
-      rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        6: "You gain a +1 accuracy bonus with the strike.",
       },
     },
   ],

@@ -389,9 +389,10 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{guarding strike} ability as a standard action.
                 \begin{activeability}{Guarding Strike}
                     \rankline
-                    Make a \glossterm{strike}.
-                    You do not add your \glossterm{power} to damage with the strike.
+                    Make a melee \glossterm{strike}.
+                    Your \glossterm{power} with the strike is halved.
                     Each creature damaged by the strike is \goaded by you as a \glossterm{condition}.
+                    This condition is removed if you move farther away from the creature.
                     \rankline
                     \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the strike.
                     \rank{5} The accuracy bonus increases to \plus2.
@@ -465,6 +466,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} in a \largearea radius from you.
                     \hit Each target is \goaded by you as a \glossterm{condition}.
+                    This condition is removed if you move farther away from the target.
                     \rankline
                     You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                 \end{activeability}
