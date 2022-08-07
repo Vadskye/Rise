@@ -888,7 +888,7 @@ def generate_apparel():
             rank=6,
             material_type="Cloak",
             description="""
-                Creatures that are \\glossterm<incorporeal> are \\glossterm<vulnerable> physical damage you inflict instead of being immune.
+                Creatures that are \\glossterm<incorporeal> are \\glossterm<vulnerable> to physical damage you inflict instead of being immune.
             """,
             short_description="Grants ability to hit incorporeal creatures with ease",
         ),

@@ -1450,25 +1450,12 @@ def generate_tools():
     tools += [
         MagicItem(
             consumable=True,
-            name="Poison, Black Adder Venom",
-            rank=1,
-            material_type="Poison",
-            tags=[],
-            description="""
-                This is a injury-based liquid poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus2.
-                Its stage 1 effect inflicts 2d6+2 damage each time the poison's attack succeeds.
-            """,
-            short_description="Deals 2d6+2 damage endlessly",
-        ),
-        MagicItem(
-            consumable=True,
             name="Poison, Asp Venom",
             rank=1,
             material_type="Poison",
             tags=[],
             description="""
-                This is a contact-based liquid poison (see \\pcref<Poison>).
+                This is an injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus2.
                 Its stage 1 effect makes the target \\stunned while the poison lasts.
                 Its stage 3 effect makes the target \\blinded while the poison lasts.
@@ -1490,18 +1477,19 @@ def generate_tools():
             """,
             short_description="Slows and dazes, eventually stuns",
         ),
+        # +1 rank for +1 accuracy
         MagicItem(
             consumable=True,
-            name="Poison, Blood Leech Venom",
+            name="Poison, Black Adder Venom",
             rank=2,
             material_type="Poison",
             tags=[],
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus4.
-                Its stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
+                Its stage 1 effect inflicts 2d8+3 damage each time the poison's attack succeeds.
             """,
-            short_description="Inflicts damage vulnerability",
+            short_description="Deals 2d8+3 damage endlessly",
         ),
         # +2 ranks for full power
         MagicItem(
@@ -1544,6 +1532,19 @@ def generate_tools():
                 Its stage 3 effect makes the target \\petrified while the poison lasts.
             """,
             short_description="Slows and stuns, eventually petrifies",
+        ),
+        MagicItem(
+            consumable=True,
+            name="Poison, Blood Leech Venom",
+            rank=5,
+            material_type="Poison",
+            tags=[],
+            description="""
+                This is a injury-based liquid poison (see \\pcref<Poison>).
+                The poison's accuracy is \\plus8.
+                Its stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
+            """,
+            short_description="Inflicts damage vulnerability",
         ),
     ]
 

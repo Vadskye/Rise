@@ -62,7 +62,7 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       scaling: "accuracy",
-      rank: 1,
+      rank: 4,
       tags: ["Emotion"],
     },
 
@@ -74,7 +74,7 @@ export const heraldOfWar: CombatStyle = {
         exceptThat: "the area increases to a \\largearea radius.",
       },
       scaling: "accuracy",
-      rank: 4,
+      rank: 7,
       tags: ["Emotion"],
     },
 
@@ -178,15 +178,13 @@ export const heraldOfWar: CombatStyle = {
       name: "Challenging Strike",
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a melee \\glossterm{strike}.
         You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
       `,
-      rank: 1,
+      rank: 4,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        6: "You gain a +1 accuracy bonus with the strike.",
       },
     },
 

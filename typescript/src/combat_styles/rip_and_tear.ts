@@ -8,17 +8,27 @@ export const ripAndTear: CombatStyle = {
     {
       name: "Strip the Flesh",
 
-      // treat as r2 debuff
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         You do not add your \\glossterm{power} to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{briefly} \\glossterm{vulnerable} to all damage.
       `,
       rank: 3,
       scaling: {
         5: "You gain a +1 accuracy bonus with the strike.",
         7: "The accuracy bonus increases to +2.",
       },
+    },
+
+    {
+      name: "Greater Strip the Flesh",
+
+      effect: `
+        Make a \\glossterm{strike} using a slashing weapon.
+        You do not add your \\glossterm{power} to damage with the strike.
+        Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{vulnerable} to all damage as a \\glossterm{condition}.
+      `,
+      rank: 7,
     },
 
     {
