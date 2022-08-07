@@ -47,7 +47,7 @@ export const channelDivinity: MysticSphere = {
   ],
   spells: [
     {
-      name: "Faith Rewarded",
+      name: "Deliverance of the Faithful",
 
       effect: `
         At the end of the next round, you become infused with divine power, which has three effects.
@@ -55,10 +55,26 @@ export const channelDivinity: MysticSphere = {
         This healing cannot increase your hit points above half your maximum hit points.
         Second, you remove one \\glossterm{condition} affecting you.
         This cannot remove an effect applied during that round.
-        Third, you gain a +4 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
+        Third, you gain a +2 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
       `,
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },
+      tags: [],
+    },
+
+    {
+      name: "Triumph of the Faithful",
+
+      effect: `
+        At the end of the next round, you become infused with divine power.
+        You gain a +3 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The accuracy bonus increases to +4.",
+        5: "The accuracy bonus increases to +5.",
+        7: "The accuracy bonus increases to +6.",
+      },
       tags: [],
     },
 
