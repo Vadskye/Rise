@@ -746,6 +746,20 @@ export const polymorph: MysticSphere = {
         6: `The target can remove two effects.`,
       },
     },
+
+    {
+      name: 'Flense',
+
+      attack: {
+        hit: `The target takes 1d4 physical damage.
+        If it loses \\glossterm{hit points} from this damage, it is \\vulnerable to all damage as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\medrange.
+        `,
+      },
+      rank: 1,
+      scaling: 'accuracy',
+    },
   ],
   rituals: [
     {
