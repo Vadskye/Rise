@@ -326,7 +326,7 @@ export const unbreakableDefense: CombatStyle = {
       name: "Covering Strike",
 
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a \\glossterm{strike}.
         You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
       `,
