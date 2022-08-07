@@ -684,6 +684,15 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Unwavering Possession",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                You are immune to being \dazed, \stunned, and \confused during your \textit{possession} ability.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Exchange Vitality",
             is_magical: true,
             rank: 5,
@@ -700,15 +709,6 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
-        },
-        RankAbility {
-            name: "Unwavering Possession",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You are immune to being \dazed, \stunned, and \confused during your \textit{possession} ability.
-            ",
-            modifiers: None,
         },
         RankAbility {
             name: "Split Soul",
