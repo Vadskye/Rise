@@ -460,7 +460,7 @@ export const fabrication: MysticSphere = {
           Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 7,
       scaling: "accuracy",
       tags: ["Manifestation"],
     },
