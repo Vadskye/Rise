@@ -62,7 +62,7 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       scaling: "accuracy",
-      rank: 4,
+      rank: 3,
       tags: ["Emotion"],
     },
 
