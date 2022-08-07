@@ -1324,6 +1324,8 @@ function handleDebuffs() {
 
       let namedModifierMap = new NamedModifierMap();
 
+      const minus1 = (cause, statistic) =>
+        namedModifierMap.addNamedModifier(statistic, cause, -1);
       const minus2 = (cause, statistic) =>
         namedModifierMap.addNamedModifier(statistic, cause, -2);
       const minus4 = (cause, statistic) =>
@@ -1341,7 +1343,7 @@ function handleDebuffs() {
         minus2("partially unaware", "armor_defense");
         minus2("partially unaware", "reflex");
       }
-      if (v.unaware && !(v.asleep || v.helpless || v.paralyzed)) {
+      if (v.unaware || v.asleep || v.helpless || v.paralyzed) {
         minus4("unaware", "armor_defense");
         minus4("unaware", "reflex");
       }
@@ -1358,14 +1360,14 @@ function handleDebuffs() {
         minus4("flying poorly", "reflex");
       }
       if (v.climbing) {
-        minus4("climbing", "accuracy");
-        minus4("climbing", "armor_defense");
-        minus4("climbing", "reflex");
+        minus2("climbing", "accuracy");
+        minus2("climbing", "armor_defense");
+        minus2("climbing", "reflex");
       }
       if (v.swimming) {
-        minus4("swimming", "accuracy");
-        minus4("swimming", "armor_defense");
-        minus4("swimming", "reflex");
+        minus2("swimming", "accuracy");
+        minus2("swimming", "armor_defense");
+        minus2("swimming", "reflex");
       }
       if (v.prone) {
         minus2("prone", "armor_defense");
@@ -1374,10 +1376,10 @@ function handleDebuffs() {
 
       // rank 1 debuffs
       if (v.dazed && !(v.stunned || v.confused)) {
-        minus2("dazed", "all_defenses");
+        minus1("dazed", "all_defenses");
       }
       if (v.dazzled && !v.blinded) {
-        debuffHeaders += " {{Miss chance=Miss on 1: [[d4]]}}";
+        debuffHeaders += " {{Miss chance=Miss on 1: [[d5]]}}";
       }
       if (v.blinded) {
         debuffHeaders += " {{Miss chance=Miss on 1: [[d2]]}}";
@@ -1400,23 +1402,23 @@ function handleDebuffs() {
         minus2("goaded", "accuracy");
       }
       if (v.shaken && !v.frightened && !v.panicked) {
-        debuffHeaders += " {{Shaken=-2 accuracy vs source}}";
-        minus2("shaken", "mental");
+        debuffHeaders += " {{Shaken=-1 accuracy vs source}}";
+        minus1("shaken", "mental");
       }
       if (v.slowed && !v.immobilized) {
-        minus2("slowed", "reflex");
+        minus1("slowed", "reflex");
       }
 
       // rank 2 debuffs
       if (v.frightened && !v.panicked) {
-        debuffHeaders += " {{Frightened=-4 accuracy vs source}}";
-        minus4("frightened", "mental");
+        debuffHeaders += " {{Frightened=-2 accuracy vs source}}";
+        minus2("frightened", "mental");
       }
       if (v.stunned && !v.confused) {
-        minus4("stunned", "all_defenses");
+        minus2("stunned", "all_defenses");
       }
       if (v.confused) {
-        minus4("confused", "all_defenses");
+        minus2("confused", "all_defenses");
       }
 
       // rank 3 debuffs
@@ -1426,10 +1428,6 @@ function handleDebuffs() {
       if (v.panicked) {
         debuffHeaders += " {{Panicked=Cannot attack source}}";
         minus4("panicked", "mental");
-      }
-      if (v.asleep || v.helpless || v.paralyzed) {
-        namedModifierMap.addNamedModifier("armor_defense", "helpless", -10);
-        namedModifierMap.addNamedModifier("reflex", "helpless", -10);
       }
 
       const attrs = { debuff_headers: debuffHeaders.trim() };
