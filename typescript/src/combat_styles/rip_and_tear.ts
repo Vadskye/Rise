@@ -17,7 +17,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Greater Strip the Flesh",
+      name: "Strip the Flesh+",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
@@ -93,9 +93,9 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Greater Hamstring",
+      name: "Hamstring",
 
-      effect: `
+      effect+: `
         Make a \\glossterm{strike} using a slashing weapon.
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\slowed as a \\glossterm{condition}.
@@ -256,7 +256,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Greater Agonizing Flay",
+      name: "Agonizing Flay+",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.

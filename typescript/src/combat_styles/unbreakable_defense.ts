@@ -203,7 +203,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Greater Revitalizing Strike",
+      name: "Revitalizing Strike+",
 
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
@@ -251,7 +251,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Greater Prepared Defense",
+      name: "Prepared Defense+",
 
       effect: `
         Make a strike.

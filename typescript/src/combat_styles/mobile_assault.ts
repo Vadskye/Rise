@@ -18,7 +18,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Greater Reaping Harvest",
+      name: "Reaping Harvest+",
 
       effect: `
         Move up to your movement speed in a straight line.
@@ -224,7 +224,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Greater Fearsome Pounce",
+      name: "Fearsome Pounce+",
 
       effect: `
         Move up to half your movement speed and make a \\glossterm{strike}.
