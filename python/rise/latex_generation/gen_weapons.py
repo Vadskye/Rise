@@ -488,15 +488,16 @@ def generate_weapons():
                 You can \\glossterm<briefly> apply a dimensional trace on one creature that was dealt damage by that strike.
                 At the start of each \\glossterm<action phase>, if any creature within \\distrange of you has a dimensional trace active from this weapon, you can choose to automatically \\glossterm<teleport> into the closest unoccupied square adjacent to that creature.
             """,
-            short_description="Can briefly teleport next to struck creatures",
+            short_description="Can briefly teleport next to struck creature",
         ),
         create_weapon(
             name="Dimensional Trace, Greater",
             rank=6,
             description="""
-                This weapon functions like a \\mitem<dimensional trace> weapon, except that the dimensional trace becomes a \\glossterm<condition>.
+                This weapon functions like a \\mitem<dimensional trace> weapon, except that the dimensional trace is applied even if the strike missed the target's defenses.
+                However, if the strike failed due to a \\glossterm<miss chance> or a \\glossterm<failure chance>, the dimensional trace is not applied.
             """,
-            short_description="Can teleport next to struck creatures",
+            short_description="Can briefly teleport next to attacked creature",
         ),
     ]
 
@@ -649,7 +650,7 @@ def generate_weapons():
             description="""
                 This weapon automatically veers towards its intended target.
                 Any \\glossterm<miss chance> the strike would normally have is reduced.
-                A 50\\% miss chance is reduced to a 25\\% miss chance, and a 25\\% miss chance is removed entirely.
+                A 50\\% miss chance is reduced to a 20\\% miss chance, and a 20\\% miss chance is removed entirely.
             """,
             short_description="Reduces miss chances",
         ),
