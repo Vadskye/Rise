@@ -202,7 +202,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Greater Hunting Strike",
+      name: "Hunting Strike+",
 
       functionsLike: {
         exceptThat: "the accuracy bonus from each strike increases to +2. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.",
@@ -250,7 +250,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Greater Reckless Assault",
+      name: "Reckless Assault+",
 
       effect: `
         Make a melee \\glossterm{strike}.

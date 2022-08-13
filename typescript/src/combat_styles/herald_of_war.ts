@@ -59,7 +59,7 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Greater Goading Roar",
+      name: "Goading Roar+",
 
       functionsLike: {
         name: 'goading roar',
@@ -146,7 +146,7 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Greater Challenging Strike",
+      name: "Challenging Strike+",
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -168,7 +168,7 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Greater Fearsome Blow",
+      name: "Fearsome Blow+",
 
       effect: `
         Make a \\glossterm{strike}.

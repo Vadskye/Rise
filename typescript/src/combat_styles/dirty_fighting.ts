@@ -171,7 +171,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Greater Steal Weapon",
+      name: "Steal Weapon+",
 
       functionsLike: {
         abilityType: "maneuver",

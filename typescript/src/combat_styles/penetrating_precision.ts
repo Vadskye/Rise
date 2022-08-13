@@ -195,7 +195,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Greater Groundspike",
+      name: "Groundspike+",
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
@@ -233,7 +233,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Greater Called Shot",
+      name: "Called Shot+",
 
       // +2 ranks for choice of debuff?
       effect: `

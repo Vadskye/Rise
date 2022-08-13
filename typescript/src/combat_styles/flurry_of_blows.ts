@@ -238,7 +238,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Greater Daunting Swiftstrike",
+      name: "Daunting Swiftstrike+",
 
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus.
