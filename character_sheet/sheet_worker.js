@@ -1344,8 +1344,8 @@ function handleDebuffs() {
         minus2("partially unaware", "reflex");
       }
       if (v.unaware || v.asleep || v.helpless || v.paralyzed) {
-        minus4("unaware", "armor_defense");
-        minus4("unaware", "reflex");
+        namedModifierMap.addNamedModifier("armor_defense", "unaware", -6);
+        namedModifierMap.addNamedModifier("reflex", "unaware", -6);
       }
       if (v.squeezing) {
         minus2("squeezing", "armor_defense");
