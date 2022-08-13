@@ -14,10 +14,6 @@ export const ripAndTear: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike becomes \\glossterm{briefly} \\glossterm{vulnerable} to all damage.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     {
@@ -39,10 +35,6 @@ export const ripAndTear: CombatStyle = {
         Each creature that resists all damage from the strike \\glossterm{briefly} takes a -2 penalty to Armor defense.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     {
@@ -50,13 +42,9 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You gain a +1 \\glossterm{accuracy} bonus with the strike against creatures that are not wearing armor.
+        You gain a +1 \\glossterm{accuracy} bonus with the strike against creatures that are not wearing metal armor.
       `,
-      rank: 2,
-      scaling: {
-        4: "The accuracy bonus increases to +2.",
-        6: "The accuracy bonus increases to +3.",
-      },
+      rank: 3,
     },
 
     {
@@ -68,11 +56,6 @@ export const ripAndTear: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
@@ -85,9 +68,6 @@ export const ripAndTear: CombatStyle = {
         In addition, it \\glossterm{briefly} takes damage equal to your \\glossterm{power} at the end of each round.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
     },
 
     {
@@ -110,11 +90,6 @@ export const ripAndTear: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
@@ -133,41 +108,29 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee strike using a slashing weapon.
-        At the end of this phase, each creature that you hit during this phase with both this strike and the \\textit{offhand strike} ability takes slashing damage equal to half your \\glossterm{power} (minimum 1).
+        At the end of this phase, each creature that you hit during this phase with both this strike and the \\textit{offhand strike} ability takes slashing damage equal to half your \\glossterm{power}.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
-      name: "Greater Two-Weapon Rend",
+      name: "Two-Weapon Rend+",
 
       effect: `
         Make a melee strike using a slashing weapon.
         At the end of this phase, each creature that you hit during this phase with both this strike and the \\textit{offhand strike} ability takes slashing damage equal to your \\glossterm{power}.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 5,
     },
 
     {
       name: "Flintspark Strike",
 
       effect: `
-        Make a strike with a +2 damage bonus using a slashing weapon.
-        If the target is wearing metal armor or is significantly composed of metal, damage dealt by the strike is fire damage in addition to its normal damage types.
+        Make a strike using a slashing weapon.
+        Damage dealt by the strike is fire damage in addition to its normal damage types.
       `,
-      rank: 3,
-      scaling: {
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
-      },
+      rank: 1,
     },
 
     {
@@ -177,11 +140,7 @@ export const ripAndTear: CombatStyle = {
         Make a melee \\glossterm{strike} using a slashing weapon.
         The strike gains the \\glossterm{Sweeping} (1) tag, or you gain a +1 bonus to the Sweeping value if it already had that tag (see \\pcref{Weapon Tags}).
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +2 damage bonus with the strike.",
-        6: "The damage bonus increases to +4.",
-      },
+      rank: 3,
     },
 
     {
@@ -191,24 +150,17 @@ export const ripAndTear: CombatStyle = {
         Make a thrown \\glossterm{strike} using a slashing weapon.
         The strike also targets an additional creature or object within 10 feet of the strike's primary target.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +2 damage bonus with the strike.",
-        6: "The damage bonus increases to +4.",
-      },
+      rank: 3,
     },
 
     {
-      name: "Greater Sweeping Throw",
+      name: "Sweeping Throw+",
 
       effect: `
         Make a thrown \\glossterm{strike} using a slashing weapon.
         The strike also targets up to two additional creatures or object within 10 feet of the strike's primary target.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +4 damage bonus with the strike.",
-      },
     },
 
     {
@@ -219,10 +171,7 @@ export const ripAndTear: CombatStyle = {
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
-      rank: 4,
-      scaling: {
-        6: "The maximum range increases to \\medrange.",
-      },
+      rank: 3,
     },
 
     // is 2x power equal to +5-10 damage? sometimes better, sometimes worse, especially with the
@@ -237,9 +186,6 @@ export const ripAndTear: CombatStyle = {
         This damage does not stack if you use this strike on the same creature again before it stops bleeding.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
     },
 
     {
@@ -261,24 +207,16 @@ export const ripAndTear: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
-      name: "Greater Spinning Slash",
+      name: "Spinning Slash+",
 
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon.
         The strike targets any number of \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 5,
     },
 
     {
@@ -288,7 +226,7 @@ export const ripAndTear: CombatStyle = {
         Make two melee \\glossterm{strikes} using a slashing weapon.
         You do not add your \\glossterm{power} to damage with either strike.
       `,
-      rank: 6,
+      rank: 5,
     },
 
     {
@@ -315,10 +253,6 @@ export const ripAndTear: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 \\glossterm{accuracy} bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     {

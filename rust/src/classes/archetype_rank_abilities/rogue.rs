@@ -1,8 +1,8 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::Resource;
-use crate::core_mechanics::attacks::Maneuver;
 use crate::creatures::Modifier;
 use crate::skills::{KnowledgeSubskill, Skill};
+use super::standard_modifiers::add_standard_maneuver_modifiers;
 
 pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -502,51 +502,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 1,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(1)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
-                Modifier::Maneuver(Maneuver::MightyStrike(1)),
-            ]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(3)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
-                Modifier::Maneuver(Maneuver::MightyStrike(3)),
-            ]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(5)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
-                Modifier::Maneuver(Maneuver::MightyStrike(5)),
-            ]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(7)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
-                Modifier::Maneuver(Maneuver::MightyStrike(7)),
-            ]),
-        },
+    let mut abilities = vec![
         RankAbility {
             name: "Trick Maneuvers",
             is_magical: false,
@@ -564,19 +520,28 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
 
                 When you gain access to a new \glossterm{rank} in this archetype,
                     you can exchange any number of maneuvers you know for other maneuvers,
-                    including maneuvers of the higher rank.
+                    including maneuvers of a higher rank.
 
-                \advancement The maximum rank of trick maneuvers that you can learn is equal to your rank in this archetype.
-                Trick maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
+                \advancement Some trick maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Trick Maneuvers+",
             is_magical: false,
-            rank: 4,
+            rank: 3,
             description: r"
                 You learn an additional trick maneuver.
+                In addition, you gain access to rank 3 trick maneuvers.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Trick Maneuvers+",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You gain access to rank 5 trick maneuvers.
             ",
             modifiers: None,
         },
@@ -586,6 +551,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You learn an additional trick maneuver.
+                In addition, you gain access to rank 7 trick maneuvers.
             ",
             modifiers: None,
         },
@@ -608,36 +574,47 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Tricky Finesse",
+            name: "Enhanced Maneuvers",
             is_magical: false,
-            rank: 3,
+            rank: 4,
             description: r"
-                You gain a \plus1 bonus to Dexterity-based \glossterm{checks}.
+                You gain the ability to customize your weaker trick maneuvers.
+                For each rank 1 trick maneuver you know, choose one enhancement from the list below.
+
+                Whenever you increase your rank in this archetype, you can change your enhancements.
+                However, you must still apply them to rank 1 trick maneuvers.
+                {
+                    \parhead{Debilitating Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
+                    However, your \glossterm{power} with the maneuver is treated as 0.
+                    You can only apply this enhancement to manuevers which can inflict a \glossterm{condition}.
+
+                    \parhead{Finishing Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver against creatures who are at less than their maximum \glossterm{hit points}.
+                    You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
+
+                    \parhead{Mobile Maneuver} You can move up to 5 feet before or after using your chosen maneuver.
+                    You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
+
+                    \parhead{Powerful Maneuver} You gain a \plus2 bonus to your \glossterm{power} with your chosen maneuver.
+                    This bonus increases to \plus3 at rank 4, and to \plus4 at rank 6.
+
+                    \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
+                }
             ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Balance, 1),
-                Modifier::Skill(Skill::Flexibility, 1),
-                Modifier::Skill(Skill::Ride, 1),
-                Modifier::Skill(Skill::SleightOfHand, 1),
-                Modifier::Skill(Skill::Stealth, 1),
-            ]),
+            modifiers: None,
         },
         RankAbility {
-            name: "Tricky Finesse+",
+            name: "Enhanced Maneuvers+",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus to Dexterity-based checks increases to \plus2.
+                You can also choose an enhancement for each of your rank 3 and rank 5 trick maneuvers.
+                In addition, you double the effect of enhancements you apply to your rank 1 trick maneuvers.
             ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Balance, 1),
-                Modifier::Skill(Skill::Flexibility, 1),
-                Modifier::Skill(Skill::Ride, 1),
-                Modifier::Skill(Skill::SleightOfHand, 1),
-                Modifier::Skill(Skill::Stealth, 1),
-            ]),
+            modifiers: None,
         },
     ];
+    add_standard_maneuver_modifiers(&mut abilities);
+    return abilities;
 }
 
 pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {

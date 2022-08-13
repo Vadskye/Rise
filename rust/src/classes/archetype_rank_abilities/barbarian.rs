@@ -1,7 +1,8 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::attacks::Maneuver;
 use crate::core_mechanics::{Attribute, Defense};
 use crate::creatures::Modifier;
+
+use super::standard_modifiers::add_standard_maneuver_modifiers;
 
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -383,87 +384,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
-        RankAbility {
-            name: "Primal Resilience",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(9)]),
-        },
-        RankAbility {
-            name: "Primal Resilience",
-            is_magical: false,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(12)]),
-        },
-        RankAbility {
-            name: "Primal Resilience",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(15)]),
-        },
-        RankAbility {
-            name: "Primal Resilience",
-            is_magical: false,
-            rank: 6,
-            description: "",
-            // This rank is when supreme resilience kicks in
-            modifiers: Some(vec![Modifier::HitPoints(24)]),
-        },
-        RankAbility {
-            name: "Primal Resilience",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(28)]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 1,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(1)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
-                Modifier::Maneuver(Maneuver::MightyStrike(1)),
-            ]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(3)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
-                Modifier::Maneuver(Maneuver::MightyStrike(3)),
-            ]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(5)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
-                Modifier::Maneuver(Maneuver::MightyStrike(5)),
-            ]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(7)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
-                Modifier::Maneuver(Maneuver::MightyStrike(7)),
-            ]),
-        },
+    let mut abilities = vec![
         RankAbility {
             name: "Primal Maneuvers",
             is_magical: false,
@@ -481,19 +402,28 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                 When you gain access to a new \glossterm{rank} in this archetype,
                     you can exchange any number of maneuvers you know for other maneuvers,
-                    including maneuvers of the higher rank.
+                    including maneuvers of a higher rank.
 
-                \advancement The maximum rank of primal maneuvers that you can learn is equal to your rank in this archetype.
-                Primal maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
+                \advancement Some primal maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Primal Maneuvers+",
             is_magical: false,
-            rank: 4,
+            rank: 3,
             description: r"
                 You learn an additional primal maneuver.
+                In addition, you gain access to rank 3 primal maneuvers.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Primal Maneuvers+",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You gain access to rank 5 primal maneuvers.
             ",
             modifiers: None,
         },
@@ -503,6 +433,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You learn an additional primal maneuver.
+                In addition, you gain access to rank 7 primal maneuvers.
             ",
             modifiers: None,
         },
@@ -525,26 +456,59 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Primal Resilience",
+            name: "Enhanced Maneuvers",
             is_magical: false,
-            rank: 3,
+            rank: 4,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points}.
+                You gain the ability to customize your weaker primal maneuvers.
+                For each rank 1 primal maneuver you know, choose one enhancement from the list below.
+
+                Whenever you increase your rank in this archetype, you can change your enhancements.
+                However, you must still apply them to rank 1 primal maneuvers.
+                {
+                    \parhead{Finishing Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver against creatures who are at less than their maximum \glossterm{hit points}.
+                    You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
+
+                    % at rank 4, level 10, reasonable base damage would be 2d8+10. Assuming 60% accuracy:
+                    % base dpr: 19*0.6 = 11.4
+                    % +2 acc: 19*0.8 = 15.2
+                    % +4 dmg: 23*0.6 = 13.8
+                    % +6 dmg: 25*0.6 = 15.0
+                    % +8 dmg: 27*0.6 = 16.2
+
+                    % at rank 6, level 16, reasonable base damage would be 4d6+20. Assuming 60% accuracy:
+                    % base dpr: 33*0.6 = 19.8
+                    % +2 acc: 33*0.8 = 26.4
+                    % +8 dmg: 41*0.6 = 24.6
+                    % +16 dmg: 49*0.6 = 29.4
+                    \parhead{Powerful Maneuver} You gain a \plus2 bonus to your \glossterm{power} with your chosen maneuver.
+                    This bonus increases to \plus3 at rank 4, and to \plus4 at rank 6.
+
+                    \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
+
+                    \parhead{Reckless Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
+                    However, you \glossterm{briefly} take a \minus2 penalty to your defenses after you use that maneuver.
+                    You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
+
+                    \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
+                    You can only apply this enhancement to maneuvers that affect an area.
+                }
             ",
-            // Handled as part of bulk silent scaling
             modifiers: None,
         },
         RankAbility {
-            name: "Primal Resilience+",
+            name: "Enhanced Maneuvers+",
             is_magical: false,
             rank: 6,
             description: r"
-                The hit point bonus increases to four times your rank in this archetype.
+                You can also choose an enhancement for each of your rank 3 and rank 5 primal maneuvers.
+                In addition, you double the effect of enhancements you apply to your rank 1 primal maneuvers.
             ",
-            // Handled as part of bulk silent scaling
             modifiers: None,
         },
     ];
+    add_standard_maneuver_modifiers(&mut abilities);
+    return abilities;
 }
 
 pub fn totemist<'a>() -> Vec<RankAbility<'a>> {

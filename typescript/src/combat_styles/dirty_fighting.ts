@@ -8,27 +8,23 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Dazing Fist",
 
-      // full power, +1 rank instead of half power due to unarmed limitation
+      // full power due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 1,
     },
 
     {
-      name: "Greater Dazing Fist",
+      name: "Dazing Fist+",
 
-      // full power, +1 rank instead of half power due to unarmed limitation
+      // full power due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         Each creature damaged by the strike is \\dazed as a \\glossterm{condition}.
       `,
-      rank: 6,
+      rank: 5,
     },
 
     {
@@ -41,11 +37,6 @@ export const dirtyFighting: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
@@ -65,12 +56,12 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          the target also takes 1d6 + half \\glossterm{power} bludgeoning damage.
+          the target also takes 1d8 + half \\glossterm{power} bludgeoning damage.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: "grapple",
       },
-      rank: 2,
+      rank: 3,
       scaling: "damage",
     },
 
@@ -80,16 +71,26 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          the target also has a 25\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components} as long as it is \\grappled by you.
-          This failure chance increases to 50\\% with abilities that have both verbal components and \\glossterm{somatic components}.
+          the target also has a 20\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components} as long as it is \\grappled by you.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: "grapple",
       },
-      rank: 4,
-      scaling: {
-        6: "You gain a +1 \\glossterm{accuracy} bonus with the attack.",
+      rank: 1,
+    },
+
+    {
+      name: "Muzzling Grapple+",
+
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: `
+          the target also has a 50\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components} as long as it is \\grappled by you.
+          Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
+        `,
+        name: "grapple",
       },
+      rank: 5,
     },
 
     {
@@ -98,13 +99,13 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          if the target has no remaining \\glossterm{damage resistance}, the target is pinned completely instead of simply grappled.
+          if the target has no remaining \\glossterm{damage resistance}, it is pinned completely instead of simply grappled.
           It is \\helpless, and the only physical ability it can use is the \\textit{escape grapple} ability (see \\pcref{Escape Grapple}).
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: "grapple",
       },
-      rank: 6,
+      rank: 7,
     },
 
     {
@@ -119,11 +120,7 @@ export const dirtyFighting: CombatStyle = {
         `,
         name: "shove",
       },
-      rank: 2,
-      scaling: {
-        4: "The distance you knockback the target increases to 30 feet, or 60 feet on a critical hit.",
-        6: "The distance you knockback the target increases to 60 feet, or 120 feet on a critical hit.",
-      },
+      rank: 1,
     },
 
     {
@@ -139,10 +136,7 @@ export const dirtyFighting: CombatStyle = {
         `,
         name: "shove",
       },
-      rank: 4,
-      scaling: {
-        6: "The distance you knockback each target increases to 30 feet, or 60 feet on a critical hit.",
-      },
+      rank: 3,
     },
 
     {
@@ -159,11 +153,7 @@ export const dirtyFighting: CombatStyle = {
         `,
         name: "disarm",
       },
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the attack.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 3,
     },
 
     {
@@ -177,10 +167,7 @@ export const dirtyFighting: CombatStyle = {
         `,
         name: "disarm weapon",
       },
-      rank: 4,
-      scaling: {
-        6: "You gain a +1 accuracy bonus with the attack.",
-      },
+      rank: 5,
     },
 
     {
@@ -210,11 +197,7 @@ export const dirtyFighting: CombatStyle = {
         `,
         name: "disarm",
       },
-      rank: 2,
-      scaling: {
-        4: "You gain a +2 damage bonus with the strike.",
-        6: "The damage bonus increases to +4.",
-      },
+      rank: 3,
     },
 
     {
@@ -235,19 +218,19 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Greater Battering Ram",
+      name: "Battering Ram+",
 
       functionsLike: {
         abilityType: "maneuver",
         exceptThat: `
           you do not treat the space occupied by creatures you move through as difficult terrain.
-          In addition, the damage increases to 2d10 + half \\glossterm{power}.
+          In addition, the damage increases to 4d8 + half \\glossterm{power}.
           Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
         name: "battering ram",
       },
       scaling: "damage",
-      rank: 6,
+      rank: 7,
     },
 
     {
@@ -255,30 +238,22 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         In addition, you can throw a tanglefoot bag, vial of alchemist's fire, or similar small object at a target of the strike.
         You must still have a free hand that is not being used to make the strike to throw the object.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 3,
     },
 
     {
       name: "Slipstrike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +2 damage bonus.
+        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
         After making the strike, you fall \\prone.
         If you use this ability during the \\glossterm{delayed action phase}, you are also unable to stand up during the next round's \\glossterm{movement phase}.
       `,
       rank: 1,
-      scaling: {
-        3: "The damage bonus increases to +4.",
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
-      },
     },
 
     {
@@ -290,11 +265,6 @@ export const dirtyFighting: CombatStyle = {
         Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to Reflex defense.
       `,
       rank: 1,
-      scaling: {
-        3: "The penalty increases to -3.",
-        5: "The penalty increases to -4.",
-        7: "The penalty increases to -5.",
-      },
     },
 
     {
@@ -303,15 +273,10 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by this strike falls \\prone.
+        Each creature damaged by the strike falls \\prone if it is no larger than one size category larger than you.
         A creature knocked prone in this way cannot be knocked prone by this effect again until it takes a \\glossterm{short rest}.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
@@ -323,10 +288,6 @@ export const dirtyFighting: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\slowed.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     {
@@ -336,11 +297,7 @@ export const dirtyFighting: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You may switch places with one creature damaged by the strike that is the same \\glossterm{size category} as you or smaller.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 1,
     },
 
     {
@@ -351,9 +308,6 @@ export const dirtyFighting: CombatStyle = {
         Each creature damaged by the strike \\glossterm{briefly} treats you as being \\trait{invisible} (see \\pcref{Invisible}).
       `,
       rank: 5,
-      scaling: {
-        7: "The accuracy penalty is reduced to -1.",
-      },
     },
   ],
 };

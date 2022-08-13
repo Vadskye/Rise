@@ -6,7 +6,7 @@ export const penetratingPrecision: CombatStyle = {
 
   maneuvers: [
     {
-      name: "Penetrating Strike",
+      name: "Armorpiercer",
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
@@ -14,11 +14,16 @@ export const penetratingPrecision: CombatStyle = {
         The attack is made against each target's Reflex defense instead of its Armor defense.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
+    },
+
+    {
+      name: "Armorpiercer+",
+
+      effect: `
+        Make a \\glossterm{strike} using a piercing weapon.
+        The attack is made against each target's Reflex defense instead of its Armor defense.
+      `,
+      rank: 3,
     },
 
     {
@@ -30,11 +35,6 @@ export const penetratingPrecision: CombatStyle = {
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +2 damage bonus with the strike.",
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
-      },
     },
 
     {
@@ -45,11 +45,6 @@ export const penetratingPrecision: CombatStyle = {
         You gain a +4 accuracy bonus with contact-based and injury-based poisons delivered against each creature that lost \\glossterm{hit points} from the strike.
       `,
       rank: 1,
-      scaling: {
-        3: "The accuracy bonus increases to +5.",
-        5: "The accuracy bonus increases to +6.",
-        7: "The accuracy bonus increases to +7.",
-      },
     },
 
     {
@@ -60,23 +55,16 @@ export const penetratingPrecision: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +2 damage bonus with the strike.",
-        7: "The damage bonus increases to +4.",
-      },
     },
 
     {
-      name: "Penetrating Longshot",
+      name: "Penetrating Shot+",
 
       effect: `
         Make a ranged \\glossterm{strike} against everything in a \\hugearealong, 5 ft. wide line from you.
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +4 damage bonus with the strike.",
-      },
     },
 
     {
@@ -87,20 +75,16 @@ export const penetratingPrecision: CombatStyle = {
         You reduce your \\glossterm{longshot penalty} with the strike by 2.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     {
-      name: "Greater Distant Shot",
+      name: "Distant Shot+",
 
       effect: `
         Make a ranged \\glossterm{strike}.
         You reduce your \\glossterm{longshot penalty} with the strike by 4.
       `,
-      rank: 6,
+      rank: 7,
     },
 
     {
@@ -112,11 +96,6 @@ export const penetratingPrecision: CombatStyle = {
         Only one of the spaces in the line can be adjacent to you.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
@@ -124,32 +103,22 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        If you get a critical hit with the strike, you gain a damage bonus with the strike equal to your \\glossterm{power}.
-        This bonus applies before applying any multipliers for the critical hit.
+        If you get a \\glossterm{critical hit}, you double all of your damage bonuses along with your damage dice.
       `,
       // narrative: '',
       rank: 1,
-      scaling: {
-        3: "You gain a +2 accuracy bonus with the strike for the purpose of determining whether you get a critical hit.",
-        5: "The accuracy bonus increases to +4.",
-        7: "The accuracy bonus increases to +6.",
-      },
     },
 
     {
-      name: "Greater Deathblow",
+      name: "Deathblow+",
 
+      // TODO: unclear rank
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        If you get a critical hit with the strike, you gain a damage bonus with the strike equal to twice your \\glossterm{power}.
-        This bonus applies before applying any multipliers for the critical hit.
+        You gain a +4 accuracy bonus with the strike for the purpose of determining whether you get a critical hit.
+        If you get a \\glossterm{critical hit}, you double all of your damage bonuses along with your damage dice.
       `,
-      // narrative: '',
-      // TODO: unclear rank
       rank: 5,
-      scaling: {
-        3: "You gain a +2 accuracy bonus with the strike for the purpose of determining whether you get a critical hit.",
-      },
     },
 
     {
@@ -161,11 +130,6 @@ export const penetratingPrecision: CombatStyle = {
         You \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with \\glossterm{strikes} against each target of that strike.
       `,
       rank: 1,
-      scaling: {
-        3: "The accuracy bonus increases to +3.",
-        5: "The accuracy bonus increases to +4.",
-        7: "The accuracy bonus increases to +5.",
-      },
     },
 
     {
@@ -190,24 +154,8 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
-      `,
-      rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
-    },
-
-    {
-      name: "Blinding Eye Gouge",
-
-      effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
         You do not add your \\glossterm{power} to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -221,15 +169,10 @@ export const penetratingPrecision: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
-      name: "Greater Eye Poke",
+      name: "Eye Poke+",
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
@@ -237,10 +180,6 @@ export const penetratingPrecision: CombatStyle = {
         Each creature damaged by the strike is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     {
@@ -271,54 +210,48 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a piercing weapon.
-        You gain a +2 damage bonus with the strike if the target moved towards you during the movement phase.
+        You gain a +2 damage bonus with the strike if you stayed in the same location while the target moved towards you during the movement phase.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "The damage bonus increases to +4.",
-        6: "The damage bonus increases to +8.",
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
       },
     },
 
     {
       name: "Called Shot",
 
-      // +1 level for choice of debuff
+      // +2 ranks for choice of debuff?
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\shaken by you, \\slowed, or \\dazed.
+        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\shaken by you, \\slowed, \\dazzled, or \\dazed.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 3,
     },
 
     {
       name: "Greater Called Shot",
 
-      // +1 level for choice of debuff
+      // +2 ranks for choice of debuff?
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects: \\glossterm{briefly} \\immobilized, \\frightened by you as a \\glossterm{condition}, or \\stunned as a \\glossterm{condition}.
       `,
-      rank: 6,
+      rank: 7,
     },
 
     {
       name: "Sacrificial Thrust",
 
       effect: `
-        Make a \\glossterm{strike} with a +3 \\glossterm{accuracy} bonus using a piercing weapon.
+        Make a \\glossterm{strike} with a +2 \\glossterm{accuracy} bonus using a piercing weapon.
         You \\glossterm{briefly} take a -4 penalty to all defenses against each target of your strike.
       `,
-      rank: 4,
-      scaling: {
-        6: "The accuracy bonus increases to +5.",
-      },
+      rank: 3,
     },
   ],
 };
