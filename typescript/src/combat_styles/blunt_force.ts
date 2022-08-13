@@ -6,7 +6,7 @@ export const bluntForce: CombatStyle = {
 
   maneuvers: [
     {
-      name: "Crushing Strike",
+      name: "Armorcrusher",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -14,55 +14,29 @@ export const bluntForce: CombatStyle = {
         The attack is made against each target's Fortitude defense instead of its Armor defense.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +2 damage bonus with the strike.",
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
-      },
+    },
+
+    {
+      name: "Armorcrusher+",
+
+      effect: `
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        The attack is made against each target's Fortitude defense instead of its Armor defense.
+      `,
+      rank: 3,
     },
 
     {
       name: "Ground Stomp",
 
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
         `,
       },
       scaling: "damage",
-      rank: 2,
-    },
-
-    {
-      name: "Greater Ground Stomp",
-
-      attack: {
-        hit: `
-          Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius from you that is on the same stable surface as you.
-        `,
-      },
-      rank: 4,
-      scaling: "damage",
-    },
-
-    {
-      name: "Supreme Ground Stomp",
-
-      attack: {
-        hit: `
-          Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
-          Each creature that loses \\glossterm{hit points} from this damage is knocked \\prone.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius from you that is on the same stable surface as you.
-        `,
-      },
-      rank: 6,
-      scaling: "damage",
+      rank: 1,
     },
 
     {
@@ -74,39 +48,20 @@ export const bluntForce: CombatStyle = {
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
-    },
-
-    {
-      name: "Greater Ground Slam",
-
-      effect: `
-        Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
-        The strike targets everything on that surface in a \\medarealong, 10 ft. wide line from you.
-        All damage dealt by this attack is bludgeoning damage instead of its normal types.
-      `,
-      rank: 6,
     },
 
     {
       name: "Resonating Strike",
 
       effect: `
-        Make a strike with a +2 damage bonus using a bludgeoning weapon.
+        Make a strike using a bludgeoning weapon.
         Damage dealt by the strike is sonic damage in addition to its normal damage types.
       `,
-      rank: 3,
-      scaling: {
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
-      },
+      rank: 1,
     },
 
     {
-      name: "Headshot",
+      name: "Gutshot",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -114,15 +69,10 @@ export const bluntForce: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
-      name: "Greater Headshot",
+      name: "Gutshot+",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -130,13 +80,10 @@ export const bluntForce: CombatStyle = {
         Each creature damaged by the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
     },
 
     {
-      name: "Stunning Smash",
+      name: "Headshot",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -144,14 +91,10 @@ export const bluntForce: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     {
-      name: "Head-Spinning Smash",
+      name: "Headshot+",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -165,7 +108,7 @@ export const bluntForce: CombatStyle = {
       name: "Leap Slam",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           You make a long jump or high jump and move as normal for the jump (see \\pcref{Jump}).
           When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, you emit a small shockwave.
@@ -173,7 +116,7 @@ export const bluntForce: CombatStyle = {
         `,
       },
       scaling: "damage",
-      rank: 4,
+      rank: 3,
     },
 
     {
@@ -184,28 +127,19 @@ export const bluntForce: CombatStyle = {
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
-      rank: 4,
-      scaling: {
-        6: "The maximum range increases to \\medrange.",
-      },
+      rank: 3,
     },
 
     {
       name: "Knockdown",
 
       effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
+        Make a melee \\glossterm{strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        Your \\glossterm{power} with the strike is halved.
+        You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike falls \\prone if it is no larger than one size category larger than you.
-        A creature knocked prone in this way cannot be knocked prone by this effect again until it takes a \\glossterm{short rest}.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
@@ -216,11 +150,7 @@ export const bluntForce: CombatStyle = {
         The strike gains the \\glossterm{Forceful} weapon tag (see \\pcref{Weapon Tags}).
         If it already has that weapon tag, the maximum size category of creature that you can \\glossterm{knockback} with that tag increases by one size category, and the knockback distance increases by 10 feet.
       `,
-      rank: 2,
-      scaling: {
-        4: "The bonus knockback distance increases to 20 feet.",
-        6: "The bonus knockback distance increases to 30 feet.",
-      },
+      rank: 3,
     },
 
     {
@@ -228,29 +158,22 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        After you make the strike, you can move up to 10 feet.
+        After you make the strike, you can move up to 5 feet.
         During this movement, you can move into space occupied by creatures that you damaged with the strike.
         When you do, you \\glossterm{push} that creature up to 5 feet in any direction.
-        You cannot push creatures two or more size categories larger than you with this ability.
+        You cannot push creatures that are two or more size categories larger than you with this ability.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 1,
     },
 
     {
-      name: "Greater Press Forward",
+      name: "Press Forward+",
 
       functionsLike: {
-        exceptThat: "you can move up to your full movement speed instead of only 10 feet.",
+        exceptThat: "you can move up to your full movement speed instead of only 5 feet.",
         name: "press forward",
       },
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
     },
 
     {
@@ -280,10 +203,10 @@ export const bluntForce: CombatStyle = {
         The attack is made against each target's Fortitude defense instead of its Armor defense.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "The damage bonus increases to +8.",
-        6: "The damage bonus increases to +16.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
       },
     },
 
@@ -293,24 +216,8 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
-        After it stops being dazed, it is immune to being dazed in this way until it takes a \\glossterm{short rest}.
       `,
-      rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
-    },
-
-    {
-      name: "Greater Tenderizing Smash",
-
-      effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
-        After it stops being stunned, it is immune to being stunned in this way until it takes a \\glossterm{short rest}.
-      `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -323,9 +230,6 @@ export const bluntForce: CombatStyle = {
         Each creature damaged by the strike \\glossterm{briefly} takes half the damage from the strike again at the end of each round.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +4 damage bonus with the strike.",
-      },
     },
 
     {
@@ -337,28 +241,29 @@ export const bluntForce: CombatStyle = {
         Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to Fortitude defense.
       `,
       rank: 1,
-      scaling: {
-        3: "The penalty increases to -3.",
-        5: "The penalty increases to -4.",
-        7: "The penalty increases to -3.",
-      },
     },
 
     {
-      name: "Resonant Smash",
+      name: "Earsplitting Bonedrum",
 
-      // -1 rank for self-deafen
+      // -2 ranks for self-deafen? seems generous
       effect: `
         Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
         You and each creature damaged by the strike are \\glossterm{briefly} \\deafened.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect abilities used by you or any damaged creatures during the current phase.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 3,
+    },
+
+    {
+      name: "Impactful Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        If you get a \\glossterm{critical hit} with the strike, you roll triple damage dice instead of double damage dice.
+        If your weapon has the \\weapontag{Impact} weapon tag, you roll quadruple damage dice instead.
+      `,
+      rank: 1,
     },
   ],
 };

@@ -15,11 +15,7 @@ export const ebbAndFlow: CombatStyle = {
         During the \\glossterm{delayed action phase}, make a melee \\glossterm{strike}.
         You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that attacked you during the action phase of this round.
       `,
-      rank: 2,
-      scaling: {
-        4: "The accuracy bonus increases to +4.",
-        6: "The accuracy bonus increases to +6.",
-      },
+      rank: 1,
     },
 
     {
@@ -33,10 +29,7 @@ export const ebbAndFlow: CombatStyle = {
         The strike targets one creature or object of your choice,
         plus each creature within your weapon's \\glossterm{reach} that attacked you during the action phase of this round.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +4 damage bonus with the strike.",
-      },
+      rank: 3,
     },
 
     {
@@ -64,11 +57,6 @@ export const ebbAndFlow: CombatStyle = {
         You gain a +1 bonus to \\glossterm{accuracy} with the strike against each creature that you missed with a \\glossterm{strike} last round.
       `,
       rank: 1,
-      scaling: {
-        3: "The accuracy bonus increases to +2.",
-        5: "The accuracy bonus increases to +3.",
-        7: "The accuracy bonus increases to +4.",
-      },
     },
 
     {
@@ -78,10 +66,10 @@ export const ebbAndFlow: CombatStyle = {
         Make a \\glossterm{strike}.
         You gain a +2 damage bonus with the strike against each creature that you dealt damage to with a \\glossterm{strike} last round.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "The damage bonus increases to +4.",
-        6: "The damage bonus increases to +8.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
     },
 
@@ -93,7 +81,7 @@ export const ebbAndFlow: CombatStyle = {
         Your \\glossterm{power} with both strikes is halved.
         You take a -4 accuracy penalty with the strikes against anything other than creatures that you missed with a \\glossterm{strike} last round.
       `,
-      rank: 6,
+      rank: 5,
     },
 
     {
@@ -105,11 +93,6 @@ export const ebbAndFlow: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
@@ -121,9 +104,6 @@ export const ebbAndFlow: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
     },
 
     {
@@ -144,7 +124,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         You gain a +2 damage bonus with the strike.
-        However, you \\glossterm{briefly} take a -2 penalty to all defenses.
+        However, you \\glossterm{briefly} take a -2 penalty to all defenses after making the strike.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
@@ -161,11 +141,11 @@ export const ebbAndFlow: CombatStyle = {
       // TODO: unclear rank
       effect: `
         Make two melee \\glossterm{strikes}.
-        You do not add your \\glossterm{power} to damage with the strikes.
-        In addition, you \\glossterm{briefly} take a -2 penalty to all defenses.
+        Your \\glossterm{power} with each strike is halved.
+        In addition, you \\glossterm{briefly} take a -2 penalty to all defenses after making the strikes.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 6,
+      rank: 7,
     },
 
     {
@@ -175,10 +155,10 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike}.
         If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +2 damage bonus with the strike.
       `,
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "The damage bonus increases to +4.",
-        6: "The damage bonus increases to +8.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
     },
 
@@ -190,11 +170,6 @@ export const ebbAndFlow: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 1,
-      scaling: {
-        3: "The accuracy bonus increases to +3.",
-        5: "The accuracy bonus increases to +4.",
-        7: "The accuracy bonus increases to +5.",
-      },
     },
 
     {
@@ -217,17 +192,13 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Your \\glossterm{power} with the strike is halved.
         After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike with future strikes.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
         It lasts until you take a \\glossterm{short rest} or make a \\glossterm{strike} that does not include that creature as a target.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 3,
     },
 
     {
@@ -237,7 +208,7 @@ export const ebbAndFlow: CombatStyle = {
         exceptThat: "the accuracy bonus from each strike increases to +2. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.",
         name: "hunting strike",
       },
-      rank: 6,
+      rank: 7,
     },
 
     {
@@ -251,10 +222,6 @@ export const ebbAndFlow: CombatStyle = {
         You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that did not attack you during the action phase of this round.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +4 damage bonus with the strike.",
-        7: "The damage bonus increases to +8.",
-      },
     },
 
     {
@@ -266,27 +233,20 @@ export const ebbAndFlow: CombatStyle = {
         However, you \\glossterm{briefly} add your \\glossterm{power} to damage with the \\ability{offhand strike} ability.
         This bonus has the \\abilitytag{Swift} tag, so it affects the \\textit{offhand strike} ability if you use it during the current phase.
       `,
-      rank: 4,
-      scaling: {
-        6: "You also \\glossterm{briefly} gain a +4 damage bonus with the \\ability{offhand strike} ability.",
-      },
+      rank: 5,
+      tags: ['Swift'],
     },
 
     {
       name: "Reckless Assault",
 
-      // -1 rank for self-daze
+      // -2 ranks for self-daze? seems generous
       effect: `
         Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
         You and each creature damaged by the strike are \\glossterm{briefly} \\dazed.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or any damaged creatures during the current phase.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 3,
     },
 
     {
@@ -294,11 +254,10 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
         You and each creature damaged by the strike are \\glossterm{briefly} \\stunned.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
-      rank: 6,
+      rank: 7,
     },
 
     {
@@ -306,12 +265,9 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You gain a +4 damage bonus with the strike if you regained \\glossterm{hit points} last round.
+        You gain a +2 accuracy bonus with the strike if you regained \\glossterm{hit points} and did not make any attacks last round.
       `,
-      rank: 4,
-      scaling: {
-        6: "The damage bonus increases to +8.",
-      },
+      rank: 3,
     },
 
     {
@@ -321,11 +277,7 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You gain a +2 damage bonus with the strike if the target is adjacent to one of your \\glossterm{allies}.
       `,
-      rank: 2,
-      scaling: {
-        4: "The damage bonus increases to +4.",
-        6: "The damage bonus increases to +8.",
-      },
+      rank: 3,
     },
   ],
 };

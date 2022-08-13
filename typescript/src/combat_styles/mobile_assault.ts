@@ -12,24 +12,20 @@ export const mobileAssault: CombatStyle = {
         Move up to half your movement speed in a straight line.
         You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
         Your \\glossterm{power} with the strike is halved.
-        The strike targets any number of creatures and objects within your \\glossterm{reach} at any point during your movement, except for the space you start in and the space you end in.
+        The strike targets any number of creatures and objects within your \\glossterm{reach} at any point during your movement.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +2 damage bonus with the strike.",
-        6: "The damage bonus increases to +4.",
-      },
+      rank: 3,
     },
 
     {
       name: "Greater Reaping Harvest",
 
-      functionsLike: {
-        abilityType: "maneuver",
-        exceptThat: "you can move up to your full speed instead of up to half your speed, and you do not have to move in a straight line.",
-        name: "reaping harvest",
-      },
-      rank: 6,
+      effect: `
+        Move up to your movement speed in a straight line.
+        You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
+        The strike targets any number of creatures and objects within your \\glossterm{reach} at any point during your movement.
+      `,
+      rank: 7,
     },
 
     {
@@ -40,11 +36,7 @@ export const mobileAssault: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         If you use this ability during the \\glossterm{action phase}, you may use the other half of your movement during the \\glossterm{delayed action phase}.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 3,
     },
 
     {
@@ -55,24 +47,16 @@ export const mobileAssault: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         If you use this ability during the \\glossterm{action phase}, you can take the other action during the \\glossterm{delayed action phase}.
       `,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
       rank: 1,
     },
 
     {
-      name: "Greater Wanderer's Strike",
+      name: "Wanderer's Strike+",
 
       effect: `
         You can either move up to your speed or make a \\glossterm{strike}.
         If you use this ability during the \\glossterm{action phase}, you can take the other action during the \\glossterm{delayed action phase}.
       `,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
       rank: 5,
     },
 
@@ -80,16 +64,10 @@ export const mobileAssault: CombatStyle = {
       name: "Push Through",
 
       effect: `
-        Make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
+        Make a melee \\glossterm{strike}.
         You can \\glossterm{briefly} move through the space of each creature damaged by the strike.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
@@ -104,11 +82,6 @@ export const mobileAssault: CombatStyle = {
         name: "charge",
       },
       rank: 1,
-      scaling: {
-        3: "You gain a +2 damage bonus with the strike at the end of the charge.",
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
-      },
     },
 
     {
@@ -119,11 +92,6 @@ export const mobileAssault: CombatStyle = {
         However, you also cannot use the \\textit{sprint} ability during that time.
       `,
       rank: 1,
-      scaling: {
-        3: "You also gain a +2 bonus to Reflex defense.",
-        5: "The defense bonus increases to +3.",
-        7: "The defense bonus increases to +4.",
-      },
     },
 
     {
@@ -135,24 +103,16 @@ export const mobileAssault: CombatStyle = {
         In addition, you can move up to half your movement speed in a straight line away from one target of the strike.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
-      name: "Greater Retreating Strike",
+      name: "Retreating Strike+",
 
       effect: `
         Make a \\glossterm{strike}.
         In addition, you can move up to your movement speed in a straight line away from one target of the strike.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
     },
 
     {
@@ -161,21 +121,18 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} against any single creature within a 5 ft.\\ wide line between your starting location and your ending location.
-        If you have any \\glossterm{encumbrance}, you take a -2 \\glossterm{accuracy} penalty with the strike.
+        You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
     },
 
     {
       name: "Flash Flurry",
 
       effect: `
-        You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
+        You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\medrange.
         In addition, you can make a melee \\glossterm{strike} that targets up to three creatures within a 5 ft.\\ wide line between your starting location and your ending location.
-        If you have any \\glossterm{encumbrance}, you take a -2 \\glossterm{accuracy} penalty with the strike.
+        You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 7,
     },
@@ -186,12 +143,9 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} at your destination.
-        If you have any \\glossterm{encumbrance}, you take a -2 \\glossterm{accuracy} penalty with the strike.
+        You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +4 damage bonus with the strike.",
-      },
+      rank: 3,
     },
 
     {
@@ -202,10 +156,6 @@ export const mobileAssault: CombatStyle = {
         You can make a melee \\glossterm{strike} from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +2 damage bonus with the strike.",
-        7: "The damage bonus increases to +4.",
-      },
     },
 
     {
@@ -216,7 +166,7 @@ export const mobileAssault: CombatStyle = {
         You can make a melee \\glossterm{strike} from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
         If you hit with the strike, the target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
       `,
-      rank: 6,
+      rank: 7,
     },
 
     {
@@ -228,14 +178,9 @@ export const mobileAssault: CombatStyle = {
         If you hit, you leap up over the target's body, using its body as a springboard if necessary, and land in any space adjacent to it.
         % TODO: wording
         Your final destination cannot be more distant from your starting location than half your \\glossterm{land speed}.
-        You can make a \\glossterm{strike} from any location you occupy during the leap.
+        If this attack succeeds, you can make a \\glossterm{strike} from any location you occupy during the leap.
       `,
-      rank: 2,
-      // TODO: damage gap between this attack and leaping strike is awkward
-      scaling: {
-        4: "You gain a +2 damage bonus with the strike.",
-        6: "The damage bonus increases to +4.",
-      },
+      rank: 1,
     },
 
     {
@@ -248,10 +193,6 @@ export const mobileAssault: CombatStyle = {
         If your weapon has the Sweeping weapon tag, you ignore that tag on the first strike (see \\pcref{Sweeping}).
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with both strikes.",
-        7: "The accuracy bonus increases to +2."
-      },
     },
 
     {
@@ -267,11 +208,7 @@ export const mobileAssault: CombatStyle = {
         The defense bonus from this ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
         However, the movement and the penalty imposed on attackers is not Swift.
       `,
-      rank: 2,
-      scaling: {
-        4: "The penalty increases to -3.",
-        6: "The penalty increases to -4."
-      },
+      rank: 1,
     },
 
     {
@@ -283,11 +220,6 @@ export const mobileAssault: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
       tags: ["Emotion"],
     },
 
@@ -300,9 +232,6 @@ export const mobileAssault: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
       tags: ["Emotion"],
     },
 
@@ -316,10 +245,10 @@ export const mobileAssault: CombatStyle = {
         `,
         name: "charge",
       },
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: "The damage bonus increases to +4.",
-        6: "The damage bonus increases to +8.",
+        5: "The damage bonus increases to +4.",
+        7: "The damage bonus increases to +8.",
       },
     },
 
@@ -335,10 +264,6 @@ export const mobileAssault: CombatStyle = {
         name: "charge",
       },
       rank: 3,
-      scaling: {
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
-      },
     },
   ],
 };
