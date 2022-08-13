@@ -16,11 +16,6 @@ export const flurryOfBlows: CombatStyle = {
         However, you do not add your \\glossterm{power} to damage with the strike.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     // roll three times is about 4.5 accuracy
@@ -33,9 +28,6 @@ export const flurryOfBlows: CombatStyle = {
         However, you do not add your \\glossterm{power} to damage with the strike.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
     },
 
     {
@@ -47,11 +39,7 @@ export const flurryOfBlows: CombatStyle = {
         In addition, you can drink a potion.
         You must still have a free hand that is not being used to make the strike to hold and drink the potion.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 3,
     },
 
     {
@@ -65,21 +53,17 @@ export const flurryOfBlows: CombatStyle = {
         Make two \\glossterm{strikes}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +4 damage bonus with both strikes.",
-      },
+      rank: 3,
     },
 
     {
-      name: "Greater Desperate Flurry",
+      name: "Desperate Flurry+",
 
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
         Make three \\glossterm{strikes}.
         Your \\glossterm{power} with each strike is halved.
-        You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
       rank: 7,
     },
@@ -94,10 +78,6 @@ export const flurryOfBlows: CombatStyle = {
         You do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with both strikes.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     // TODO: unclear rank
@@ -108,21 +88,17 @@ export const flurryOfBlows: CombatStyle = {
         Make two \\glossterm{strikes}.
         You do not add your \\glossterm{power} to damage with either strike.
       `,
-      rank: 6,
+      rank: 5,
     },
 
     {
       name: "Power Flurry",
 
       effect: `
-        Make two \\glossterm{strikes} with a -3 penalty to \\glossterm{accuracy}.
+        Make two \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
         Your \\glossterm{power} is halved with both strikes.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +2 damage bonus with both strikes.",
-        6: "The damage bonus increases to +4.",
-      },
+      rank: 3,
     },
 
     {
@@ -134,11 +110,6 @@ export const flurryOfBlows: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
@@ -151,9 +122,6 @@ export const flurryOfBlows: CombatStyle = {
         Each creature damaged by the strike that is no more than one size category larger than you larger than you falls \\prone.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
     },
 
     {
@@ -174,10 +142,7 @@ export const flurryOfBlows: CombatStyle = {
         Your \\glossterm{power} with both strikes is halved.
         For each previous consecutive round that you used this ability in the same location, you reduce the accuracy penalty by 1.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +4 damage bonus with both strikes.",
-      },
+      rank: 3,
     },
 
     {
@@ -188,20 +153,16 @@ export const flurryOfBlows: CombatStyle = {
         This strike costs five projectiles.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     {
-      name: "Greater Shrapnel Burst",
+      name: "Shrapnel Burst+",
 
-      functionsLike: {
-        exceptThat: "the area increases to a \\largearea cone from you.",
-        name: "shrapnel strike",
-      },
-      rank: 6,
+      effect: `
+        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\largearea cone from you.
+        This strike costs ten projectiles.
+      `,
+      rank: 5,
     },
 
     {
@@ -212,9 +173,6 @@ export const flurryOfBlows: CombatStyle = {
         This strike costs five projectiles.
       `,
       rank: 5,
-      scaling: {
-        7: "The area increases to a \\medarea radius.",
-      },
     },
 
     {
@@ -225,25 +183,16 @@ export const flurryOfBlows: CombatStyle = {
         Then, you can make a \\glossterm{strike}.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
-      name: "Quickshot",
+      name: "Quickfire",
 
       effect: `
-        Make a ranged \\glossterm{strike} using a \\glossterm{projectile} weapon against a creature adjacent to you.
-        You do not suffer the normal -4 accuracy penalty for using a medium or large ranged weapon against a creature adjacent to you on this attack.
+        Make a ranged \\glossterm{strike} using a \\glossterm{projectile} weapon.
+        You do not suffer the normal -4 accuracy penalty for using a \\abilitytag{Projectile} weapon against a creature adjacent to you on this attack.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 3,
     },
 
     {
@@ -251,13 +200,9 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        For each previous consecutive round in which you used this ability, you gain a +2 damage bonus with the strike, up to a maximum of +5.
+        For each previous consecutive round in which you used this ability, you gain a +1 accuracy bonus with the strike, up to a maximum of +4.
       `,
-      scaling: {
-        4: 'The damage bonus per round increases to +3, and the maximum damage bonus increases to +8.',
-        6: 'The damage bonus per round increases to +6, and the maximum damage bonus increases to +16.',
-      },
-      rank: 2,
+      rank: 1,
     },
 
     {
@@ -265,29 +210,20 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If you use this ability during the \\glossterm{action phase}, you can make an additional \\glossterm{strike} against each creature that lost hit points from the first strike during the \\glossterm{delayed action phase}.
+        If you use this ability during the \\glossterm{action phase}, you can make an additional \\glossterm{strike} during the \\glossterm{delayed action phase} against each creature that lost hit points from the first strike.
         You do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +2 damage bonus with both strikes.",
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
-      },
     },
 
     {
       name: "Static Strike",
 
       effect: `
-        Make a melee strike with a +1 accuracy bonus.
+        Make a melee strike.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
       `,
-      rank: 3,
-      scaling: {
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
-      },
+      rank: 1,
     },
 
     {
@@ -299,11 +235,6 @@ export const flurryOfBlows: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\shaken by you.
       `,
       rank: 1,
-      scaling: {
-        3: "The accuracy bonus increases to +3.",
-        5: "The accuracy bonus increases to +4.",
-        7: "The accuracy bonus increases to +5.",
-      },
     },
 
     {
@@ -315,9 +246,6 @@ export const flurryOfBlows: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\frightened by you.
       `,
       rank: 5,
-      scaling: {
-        7: "The accuracy bonus increases to +3.",
-      },
     },
 
     {
@@ -330,10 +258,6 @@ export const flurryOfBlows: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     {
@@ -357,11 +281,6 @@ export const flurryOfBlows: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
-      scaling: {
-        3: "The accuracy bonus increases to +3.",
-        5: "The accuracy bonus increases to +4.",
-        7: "The accuracy bonus increases to +5.",
-      },
     },
 
     {

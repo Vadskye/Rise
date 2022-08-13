@@ -14,11 +14,6 @@ export const heraldOfWar: CombatStyle = {
         You \\glossterm{briefly} gain a +4 bonus to \\glossterm{accuracy} with \\glossterm{strikes} against each target.
       `,
       rank: 1,
-      scaling: {
-        3: "The bonus increases to +5.",
-        5: "The bonus increases to +6.",
-        7: "The bonus increases to +7.",
-      },
     },
 
     {
@@ -28,11 +23,10 @@ export const heraldOfWar: CombatStyle = {
         crit: `The effect becomes a \\glossterm{condition} on each target.`,
         hit: `Each target is \\glossterm{briefly} \\dazed.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
-      scaling: "accuracy",
-      rank: 2,
+      rank: 1,
     },
 
     {
@@ -42,11 +36,10 @@ export const heraldOfWar: CombatStyle = {
         crit: `The effect becomes a \\glossterm{condition} on each target.`,
         hit: `Each target is \\glossterm{briefly} \\stunned.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
-      scaling: "accuracy",
-      rank: 6,
+      rank: 5,
     },
 
     {
@@ -61,7 +54,6 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
-      scaling: "accuracy",
       rank: 3,
       tags: ["Emotion"],
     },
@@ -73,7 +65,6 @@ export const heraldOfWar: CombatStyle = {
         name: 'goading roar',
         exceptThat: "the area increases to a \\largearea radius.",
       },
-      scaling: "accuracy",
       rank: 7,
       tags: ["Emotion"],
     },
@@ -88,23 +79,10 @@ export const heraldOfWar: CombatStyle = {
           Each target without remaining damage resistance is \\frightened by you instead of shaken.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      scaling: "accuracy",
-      rank: 2,
-      tags: ["Emotion"],
-    },
-
-    {
-      name: "Greater Fearsome Roar",
-
-      functionsLike: {
-        name: "fearsome roar",
-        exceptThat: "the area increases to a \\hugearea radius.",
-      },
-      scaling: "accuracy",
-      rank: 6,
+      rank: 3,
       tags: ["Emotion"],
     },
 
@@ -122,41 +100,16 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Greater Thunderous Shout",
-
-      attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} sonic damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearea cone from you.
-        `,
-      },
-      rank: 6,
-    },
-
-    {
       name: "Directed Shout",
 
       attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} sonic damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange of you.
-        `,
-      },
-      scaling: "damage",
-      rank: 2,
-    },
-
-    {
-      name: "Greater Directed Shout",
-
-      attack: {
-        hit: `The target takes 4d8 + \\glossterm{power} sonic damage.`,
+        hit: `The target takes 2d8 + \\glossterm{power} sonic damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange of you.
         `,
       },
       scaling: "damage",
-      rank: 5,
+      rank: 3,
     },
 
     {
@@ -166,11 +119,18 @@ export const heraldOfWar: CombatStyle = {
         You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from one \\glossterm{condition} they are already affected by.
         Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from that condition during the current phase.
       `,
-      rank: 2,
-      scaling: {
-        4: "The number of conditions that can be ignored increases to two.",
-        6: "The number of conditions that can be ignored increases to three.",
-      },
+      rank: 1,
+      tags: ["Swift"],
+    },
+
+    {
+      name: "Rally the Troops+",
+
+      effect: `
+        You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from all \\glossterm{conditions} they are already affected by.
+        Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from those conditions during the current phase.
+      `,
+      rank: 5,
       tags: ["Swift"],
     },
 
@@ -183,10 +143,6 @@ export const heraldOfWar: CombatStyle = {
         Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
       `,
       rank: 3,
-      scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
-      },
     },
 
     {
@@ -208,11 +164,6 @@ export const heraldOfWar: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\shaken by you.
       `,
       rank: 1,
-      scaling: {
-        3: "You gain a +2 accuracy bonus with the strike.",
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
-      },
       tags: ["Emotion"],
     },
 
@@ -224,9 +175,6 @@ export const heraldOfWar: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\frightened by you.
       `,
       rank: 5,
-      scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
-      },
       tags: ["Emotion"],
     },
 
@@ -240,11 +188,7 @@ export const heraldOfWar: CombatStyle = {
         In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
         On a hit, each target is \\glossterm{briefly} \\shaken by you.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with both the strike and the area attack.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 3,
     },
 
     {
@@ -256,11 +200,6 @@ export const heraldOfWar: CombatStyle = {
         If you deal damage to a creature with the strike, \\glossterm{allies} within a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to Mental defense.
       `,
       rank: 1,
-      scaling: {
-        3: "The bonus increases to +3.",
-        5: "The bonus increases to +4.",
-        7: "The bonus increases to +5.",
-      },
     },
 
     {
@@ -277,15 +216,14 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Greater Encouraging Battlecry",
+      name: "Encouraging Battlecry+",
 
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        You and each living \\glossterm{ally} in a \\largearea radius from you each regain 4d6 \\glossterm{damage resistance}.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d6 + half \\glossterm{power} \\glossterm{damage resistance}.
       `,
-      rank: 6,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
+      rank: 7,
       tags: ['Emotion', 'Swift'],
     },
 
@@ -293,14 +231,9 @@ export const heraldOfWar: CombatStyle = {
       name: "Steadfast Battlecry",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\hugearea radius from you \\glossterm{briefly} gain a +1 bonus to \\glossterm{vital rolls}.
+        You and each living \\glossterm{ally} in a \\hugearea radius from you \\glossterm{briefly} gain a +2 bonus to \\glossterm{vital rolls}.
       `,
-      rank: 1,
-      scaling: {
-        3: "The bonus increases to +2.",
-        5: "The bonus increases to +3.",
-        7: "The bonus increases to +4.",
-      },
+      rank: 3,
       tags: ['Emotion'],
     },
 
@@ -314,24 +247,11 @@ export const heraldOfWar: CombatStyle = {
           For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 2,
-      scaling: "accuracy",
+      rank: 3,
       tags: ['Emotion'],
-    },
-
-    {
-      name: "Greater Enraging Roar",
-
-      functionsLike: {
-        name: 'enraging roar',
-        exceptThat: "the area increases to a \\largearea radius.",
-      },
-      scaling: "accuracy",
-      rank: 5,
-      tags: ["Emotion"],
     },
   ],
 };

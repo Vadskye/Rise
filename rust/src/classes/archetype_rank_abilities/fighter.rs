@@ -1,7 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::attacks::Maneuver;
 use crate::core_mechanics::{Defense, Resource};
 use crate::creatures::Modifier;
+use super::standard_modifiers::add_standard_maneuver_modifiers;
 
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -212,89 +212,8 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
     ];
 }
 
-// Every rank within this archetype applies a HP bonus to represent Martial Expertise
 pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
-        RankAbility {
-            name: "Martial Resilience",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(9)]),
-        },
-        RankAbility {
-            name: "Martial Resilience",
-            is_magical: false,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(12)]),
-        },
-        RankAbility {
-            name: "Martial Resilience",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(15)]),
-        },
-        RankAbility {
-            name: "Martial Resilience",
-            is_magical: false,
-            rank: 6,
-            description: "",
-            // This rank is when supreme resilience kicks in
-            modifiers: Some(vec![Modifier::HitPoints(24)]),
-        },
-        RankAbility {
-            name: "Martial Resilience",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(28)]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 1,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(1)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
-                Modifier::Maneuver(Maneuver::MightyStrike(1)),
-            ]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(3)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
-                Modifier::Maneuver(Maneuver::MightyStrike(3)),
-            ]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(5)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
-                Modifier::Maneuver(Maneuver::MightyStrike(5)),
-            ]),
-        },
-        RankAbility {
-            name: "Maneuvers",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(7)),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
-                Modifier::Maneuver(Maneuver::MightyStrike(7)),
-            ]),
-        },
+    let mut abilities = vec![
         RankAbility {
             name: "Martial Maneuvers",
             is_magical: false,
@@ -312,19 +231,28 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
 
                 When you gain access to a new \glossterm{rank} in this archetype,
                     you can exchange any number of maneuvers you know for other maneuvers,
-                    including maneuvers of the higher rank.
+                    including maneuvers of a higher rank.
 
-                \advancement The maximum rank of martial maneuvers that you can learn is equal to your rank in this archetype.
-                Martial maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
+                \advancement Some martial maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Martial Maneuvers+",
             is_magical: false,
-            rank: 4,
+            rank: 3,
             description: r"
                 You learn an additional martial maneuver.
+                In addition, you gain access to rank 3 martial maneuvers.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Martial Maneuvers+",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You gain access to rank 5 martial maneuvers.
             ",
             modifiers: None,
         },
@@ -334,6 +262,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You learn an additional martial maneuver.
+                In addition, you gain access to rank 7 martial maneuvers.
             ",
             modifiers: None,
         },
@@ -356,26 +285,48 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Martial Resilience",
+            name: "Enhanced Maneuvers",
             is_magical: false,
-            rank: 3,
+            rank: 4,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points}.
+                You gain the ability to customize your weaker martial maneuvers.
+                For each rank 1 martial maneuver you know, choose one enhancement from the list below.
+
+                Whenever you increase your rank in this archetype, you can change your enhancements.
+                However, you must still apply them to rank 1 martial maneuvers.
+                {
+                    \parhead{Counter Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver against creatures who attacked you during the previous round.
+                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+
+                    \parhead{Debilitating Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
+                    However, your \glossterm{power} with the maneuver is treated as 0.
+                    You can only apply this enhancement to manuevers which can inflict a \glossterm{condition}.
+
+                    \parhead{Guarding Maneuver} You gain a +1 bonus to your Armor defense when you use the maneuver.
+                    This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
+                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+
+                    \parhead{Powerful Maneuver} You gain a \plus2 bonus to your \glossterm{power} with your chosen maneuver.
+                    This bonus increases to \plus3 at rank 4, and to \plus4 at rank 6.
+
+                    \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
+                }
             ",
-            // Handled as part of bulk silent scaling
             modifiers: None,
         },
         RankAbility {
-            name: "Martial Resilience+",
+            name: "Enhanced Maneuvers+",
             is_magical: false,
             rank: 6,
             description: r"
-                The hit point bonus increases to four times your rank in this archetype.
+                You can also choose an enhancement for each of your rank 3 and rank 5 martial maneuvers.
+                In addition, you double the effect of enhancements you apply to your rank 1 martial maneuvers.
             ",
-            // Handled as part of bulk silent scaling
             modifiers: None,
         },
     ];
+    add_standard_maneuver_modifiers(&mut abilities);
+    return abilities;
 }
 
 // TODO: This archetype has several abilities that are hard to represent numerically
@@ -464,9 +415,8 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{sentinel's challenge} ability as a standard action.
                 \begin{activeability}{Sentinel's Challenge}
                     \rankline
-                    Make an attack vs. Mental against all \glossterm{enemies} in a \largearea radius from you.
+                    Make an attack vs. Mental against all \glossterm{enemies} in a \medarea radius from you.
                     \hit Each target is \goaded by you as a \glossterm{condition}.
-                    This condition is removed if you move farther away from the target.
                     \rankline
                     You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                 \end{activeability}

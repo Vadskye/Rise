@@ -1,4 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
+use crate::core_mechanics::attacks::Maneuver;
 use crate::core_mechanics::attacks::StandardAttack;
 use crate::creatures::Modifier;
 
@@ -80,6 +81,36 @@ pub fn add_standard_spell_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<'a>
                 Modifier::Attack(StandardAttack::DrainLife(7).attack()),
                 Modifier::Attack(StandardAttack::Firebolt(7).attack()),
             ]),
+        },
+    ]);
+}
+
+pub fn add_standard_maneuver_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<'a>>) {
+    rank_abilities.append(&mut vec![
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 1,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::CertainStrike(1)),
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
+                Modifier::Maneuver(Maneuver::MightyStrike(1)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 2,
+            description: "",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 4,
+            description: "",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]);
 }

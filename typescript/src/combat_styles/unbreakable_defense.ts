@@ -21,11 +21,6 @@ export const unbreakableDefense: CombatStyle = {
         name: "total defense",
       },
       rank: 1,
-      scaling: {
-        3: "The penalty increases to -3.",
-        5: "The penalty increases to -4.",
-        7: "The penalty increases to -5.",
-      },
       tags: ["Swift"],
     },
 
@@ -44,10 +39,6 @@ export const unbreakableDefense: CombatStyle = {
         name: "total defense",
       },
       rank: 3,
-      scaling: {
-        5: "The Armor defense bonus increases to +3.",
-        7: "The Armor defense bonus increases to +4.",
-      },
       tags: ["Swift"],
     },
 
@@ -66,9 +57,6 @@ export const unbreakableDefense: CombatStyle = {
         name: "total defense",
       },
       rank: 5,
-      scaling: {
-        7: "A creature that makes a strike against itself in this way takes a -2 penalty to defenses against that strike.",
-      },
       tags: ["Swift"],
     },
 
@@ -93,14 +81,10 @@ export const unbreakableDefense: CombatStyle = {
       name: "Brace for Impact",
 
       effect: `
-        You are \\trait{impervious} to \\glossterm{physical damage} this round.
-        Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
+        You are \\trait{impervious} to all damage this round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
-      rank: 2,
-      scaling: {
-        4: "You are impervious to all damage, not just physical damage.",
-        6: "You also negate any \\glossterm{conditions} that you would gain this round.",
-      },
+      rank: 3,
       tags: ["Swift"],
     },
 
@@ -111,13 +95,10 @@ export const unbreakableDefense: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You do not add your \\glossterm{power} to damage with the strike.
 
-        You are \\trait{impervious} to \\glossterm{physical damage} this round.
+        You are \\trait{impervious} to all damage this round.
         Becoming impervious in this way is a \\abilitytag{Swift} ability, so it affects damage you take during the current phase.
       `,
       rank: 5,
-      scaling: {
-        7: "You are impervious to all damage, not just physical damage.",
-      },
     },
 
     {
@@ -129,14 +110,8 @@ export const unbreakableDefense: CombatStyle = {
         You regain hit points equal to half your maximum \\glossterm{hit points}.
         After you use this ability, you cannot use it again until you take a \\glossterm{short rest}.
       `,
-      rank: 4,
+      rank: 3,
       tags: ['Swift'],
-      scaling: {
-        6: `
-          You can also remove a single condition.
-          This cannot remove an effect applied during the current round.
-        `,
-      },
     },
 
     {
@@ -148,11 +123,7 @@ export const unbreakableDefense: CombatStyle = {
         The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
       `,
       rank: 1,
-      scaling: {
-        3: "The defense bonus increases to +2.",
-        5: "The defense bonus increases to +3.",
-        7: "The defense bonus increases to +4.",
-      },
+      tags: ["Swift (see text)"],
     },
 
     {
@@ -163,11 +134,7 @@ export const unbreakableDefense: CombatStyle = {
         Make a \\glossterm{strike} using a shield.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
       `,
-      rank: 2,
-      scaling: {
-        4: "You gain a +1 accuracy bonus with the strike.",
-        6: "The accuracy bonus increases to +2.",
-      },
+      rank: 1,
     },
 
     {
@@ -177,7 +144,7 @@ export const unbreakableDefense: CombatStyle = {
         Make a \\glossterm{strike} using a shield.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
-      rank: 6,
+      rank: 5,
     },
 
     {
@@ -189,11 +156,7 @@ export const unbreakableDefense: CombatStyle = {
         In exchange, you gain a +2 bonus to Armor and Reflex defenses until the end of the round.
         The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
       `,
-      rank: 2,
-      scaling: {
-        4: "The defense bonuses increase to +3.",
-        6: "The defense bonuses increase to +4.",
-      },
+      rank: 1,
       tags: ["Swift (see text)"],
     },
 
@@ -201,16 +164,10 @@ export const unbreakableDefense: CombatStyle = {
       name: "Cleanse",
 
       effect: `
-        When you use this ability, you increase your \\glossterm{fatigue level} by one.
-
         You remove a \\glossterm{condition} affecting you.
         This cannot remove an effect applied during the current round.
       `,
-      rank: 2,
-      scaling: {
-        4: "Using this ability does not increase your fatigue level.",
-        6: "You may remove an additional effect.",
-      },
+      rank: 5,
     },
 
     {
@@ -224,10 +181,7 @@ export const unbreakableDefense: CombatStyle = {
         This cannot remove an effect applied during the current round.
         The penalties from the effect still affect you when you make the strike.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +1d damage bonus with the strike.",
-      },
+      rank: 3,
     },
 
     {
@@ -265,15 +219,11 @@ export const unbreakableDefense: CombatStyle = {
       name: "Steadfast Strike",
 
       effect: `
-        Make a strike.
-        In addition, you gain a +1 bonus to \\glossterm{vital rolls} until the end of the round.
+        Make a melee strike.
+        In addition, you gain a +2 bonus to \\glossterm{vital rolls} until the end of the round.
         This bonus is a \\abilitytag{Swift} effect, so it affects any vital wounds you gain during the current phase.
       `,
-      rank: 2,
-      scaling: {
-        4: "The bonus increases to +2.",
-        6: "The bonus increases to +3.",
-      },
+      rank: 3,
       tags: ["\\abilitytag{Swift} (see text)"],
     },
 
@@ -282,14 +232,9 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your \\glossterm{enemies} \\glossterm{briefly} treat all squares within a \\tinyarea radius \\glossterm{zone} from your location as \\glossterm{difficult terrain}.
+        Your \\glossterm{enemies} \\glossterm{briefly} treat all squares within a \\smallarea radius \\glossterm{zone} from your location as \\glossterm{difficult terrain}.
       `,
-      rank: 1,
-      scaling: {
-        3: "The area increases to a \\smallarea radius.",
-        5: "The area increases to a \\medarea radius.",
-        7: "The area increases to a \\largearea radius.",
-      },
+      rank: 3,
     },
 
     {
@@ -303,11 +248,6 @@ export const unbreakableDefense: CombatStyle = {
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
-      scaling: {
-        3: "The bonus increases to +3.",
-        5: "The bonus increases to +4.",
-        7: "The bonus increases to +5.",
-      },
     },
 
     {
@@ -319,7 +259,7 @@ export const unbreakableDefense: CombatStyle = {
         After you make the strike, you \\glossterm{briefly} gain a +2 bonus to all defenses.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 6,
+      rank: 5,
     },
 
     {
@@ -330,10 +270,7 @@ export const unbreakableDefense: CombatStyle = {
         You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
       `,
-      rank: 4,
-      scaling: {
-        6: "You gain a +1 accuracy bonus with the strike.",
-      },
+      rank: 5,
     },
   ],
 };
