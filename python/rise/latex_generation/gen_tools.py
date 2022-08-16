@@ -1,6 +1,6 @@
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem
+from rise.latex.magic_item import MagicItem, Upgrade
 from rise.latex.util import latexify, longtablify
 
 # In general, a rank X potion or alchemical item should be one rank behind an
@@ -23,18 +23,15 @@ def generate_tools():
                 This cannot remove an effect applied during the current round.
             """,
             short_description="Removes a condition",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Cleansing Potion, Greater",
-            rank=6,
-            material_type="Potion",
-            tags=[],
-            description="""
-                When you drink this \\glossterm<potion>, you remove two \\glossterm<conditions> affecting you.
-                This cannot remove effects applied during the current round.
-            """,
-            short_description="Removes two conditions",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        You remove two conditions instead of only one.
+                    """,
+                    short_description="Removes two conditions",
+                ),
+            ],
         ),
     ]
 
@@ -49,17 +46,15 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, you take a -2 penalty to your Intelligence as a \\glossterm<condition>.
             """,
             short_description="Imposes -2 Intelligence penalty",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Telepath's Bane, Greater",
-            rank=5,
-            material_type="Potion",
-            tags=[],
-            description="""
-                When you drink this \\glossterm<potion>, you take a -4 penalty to your Intelligence as a \\glossterm<condition>.
-            """,
-            short_description="Imposes -4 Inteligence penalty",
+            upgrades=[
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The Intelligence penalty increases to -4.
+                    """,
+                    short_description="Imposes -4 Inteligence penalty",
+                ),
+            ],
         ),
     ]
 
@@ -74,39 +69,29 @@ def generate_tools():
                 When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, you treat that vital roll as a 1 instead (see \\pcref<Vital Wounds>).
             """,
             short_description="Prevents death from barely lethal vital wounds",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Potion of Wound Closure, Greater",
-            rank=3,
-            material_type="Potion",
-            tags=[],
-            description="""
-                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0 or -1, you treat that vital roll as a 1 instead (see \\pcref<Vital Wounds>).
-            """,
-            short_description="Prevents death from vital wounds",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Potion of Wound Closure, Supreme",
-            rank=5,
-            material_type="Potion",
-            tags=[],
-            description="""
-                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, -1, or -2, you treat that vital roll as a 1 instead (see \\pcref<Vital Wounds>).
-            """,
-            short_description="Prevents death from major vital wounds",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Potion of Wound Closure, Epic",
-            rank=7,
-            material_type="Potion",
-            tags=[],
-            description="""
-                When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, -1, -2, or -3, you treat that vital roll as a 1 instead (see \\pcref<Vital Wounds>).
-            """,
-            short_description="Prevents death from almost any vital wound",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The potion can also affect vital wounds with a vital roll of -1.
+                    """,
+                    short_description="Prevents death from vital wounds",
+                ),
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The potion can also affect vital wounds with a vital roll of -1 or -2.
+                    """,
+                    short_description="Prevents death from major vital wounds",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The potion can also affect vital wounds with a vital roll of -1, -2, or -3.
+                    """,
+                    short_description="Prevents death from almost any vital wound",
+                ),
+            ],
         ),
     ]
 
@@ -123,19 +108,15 @@ def generate_tools():
                 If you drink multiple potions of regeneration, their effects do not stack.
             """,
             short_description="Remove vital wound after long rest",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Potion of Regeneration, Greater",
-            rank=6,
-            material_type="Potion",
-            tags=[],
-            description="""
-                When you drink this \\glossterm<potion>, your body's natural healing process is greatly accelerated.
-                The next time you take a \\glossterm<long rest>, you can remove two additional \\glossterm<vital wounds>.
-                If you drink multiple potions of regeneration, their effects do not stack.
-            """,
-            short_description="Remove two vital wounds after long rest",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        You remove two additional vital wounds instead of only one.
+                    """,
+                    short_description="Remove two vital wounds after long rest",
+                ),
+            ],
         ),
     ]
 
@@ -152,42 +133,29 @@ def generate_tools():
                 After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
             """,
             short_description="Restores 1d6+1 hit points",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Potion of Healing, Greater",
-            rank=2,
-            material_type="Potion",
-            tags=['Swift'],
-            description="""
-                When you drink this \\glossterm<potion>, you regain 2d6+4 \\glossterm<hit points>.
-                After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
-            """,
-            short_description="Restores 2d6+4 hit points",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Potion of Healing, Supreme",
-            rank=4,
-            material_type="Potion",
-            tags=['Swift'],
-            description="""
-                When you drink this \\glossterm<potion>, you regain 4d6+7 \\glossterm<hit points>.
-                After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
-            """,
-            short_description="Restores 4d8+7 hit points",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Potion of Healing, Epic",
-            rank=6,
-            material_type="Potion",
-            tags=['Swift'],
-            description="""
-                When you drink this \\glossterm<potion>, you regain 5d10+14 \\glossterm<hit points>.
-                After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
-            """,
-            short_description="Restores 5d10+14 hit points",
+            upgrades=[
+                Upgrade(
+                    rank=2,
+                    description="""
+                        The healing increases to 2d6+4.
+                    """,
+                    short_description="Restores 2d6+4 hit points",
+                ),
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The healing increases to 4d6+7.
+                    """,
+                    short_description="Restores 4d6+7 hit points",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The healing increases to 5d10+14.
+                    """,
+                    short_description="Restores 5d10+14 hit points",
+                ),
+            ],
         ),
     ]
 
@@ -203,42 +171,29 @@ def generate_tools():
                 The effects expire after 10 minutes.
             """,
             short_description="Grants +4 damage resistance",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Elixir of Resilience, Greater",
-            rank=3,
-            tags=["Attune"],
-            material_type="Potion",
-            description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-                The effects expire after 10 minutes.
-            """,
-            short_description="Grants +8 damage resistance",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Elixir of Resilience, Supreme",
-            rank=5,
-            tags=["Attune"],
-            material_type="Potion",
-            description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-                The effects expire after 10 minutes.
-            """,
-            short_description="Grants +16 damage resistance",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Elixir of Resilience, Epic",
-            rank=7,
-            tags=["Attune"],
-            material_type="Potion",
-            description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +32 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-                The effects expire after 10 minutes.
-            """,
-            short_description="Grants +32 damage resistance",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The damage resistance bonus increases to +8.
+                    """,
+                    short_description="Grants +8 damage resistance",
+                ),
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The damage resistance bonus increases to +16.
+                    """,
+                    short_description="Grants +16 damage resistance",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The damage resistance bonus increases to +32.
+                    """,
+                    short_description="Grants +32 damage resistance",
+                ),
+            ]
         ),
     ]
 
@@ -254,42 +209,29 @@ def generate_tools():
                 The effects expire after 10 minutes.
             """,
             short_description="Grants +2 power",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Elixir of Potency, Greater",
-            rank=3,
-            tags=["Attune"],
-            material_type="Potion",
-            description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
-                The effects expire after 10 minutes.
-            """,
-            short_description="Grants +4 power",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Elixir of Potency, Supreme",
-            rank=5,
-            tags=["Attune"],
-            material_type="Potion",
-            description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
-                The effects expire after 10 minutes.
-            """,
-            short_description="Grants +8 power",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Elixir of Potency, Epic",
-            rank=7,
-            tags=["Attune"],
-            material_type="Potion",
-            description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<power>.
-                The effects expire after 10 minutes.
-            """,
-            short_description="Grants +16 power",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The power bonus increases to +4.
+                    """,
+                    short_description="Grants +4 power",
+                ),
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The power bonus increases to +8.
+                    """,
+                    short_description="Grants +8 power",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The power bonus increases to +16.
+                    """,
+                    short_description="Grants +16 power",
+                ),
+            ]
         ),
     ]
 
@@ -305,48 +247,32 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the target takes 1d10 fire damage.
+                On a hit, the target takes 1d10+3 fire damage.
             """,
-            short_description="Throw to deal 1d10 fire damage",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Alchemist's Fire, Greater",
-            rank=3,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the target takes 2d10+5 fire damage.
-            """,
-            short_description="Throw to deal 2d10+5 fire damage",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Alchemist's Fire, Supreme",
-            rank=5,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the target takes 4d10+10 fire damage.
-            """,
-            short_description="Throw to deal 4d10+10 fire damage",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Alchemist's Fire, Epic",
-            rank=7,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the target takes 7d10+20 fire damage.
-            """,
-            short_description="Throw to deal 7d10+20 fire damage",
+            short_description="Throw to deal 1d10+3 fire damage",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The damage increases to 2d10+5.
+                    """,
+                    short_description="Throw to deal 2d10+5 fire damage",
+                ),
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The damage increases to 4d10+10.
+                    """,
+                    short_description="Throw to deal 4d10+10 fire damage",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The damage increases to 7d10+20.
+                    """,
+                    short_description="Throw to deal 7d10+20 fire damage",
+                ),
+            ]
         ),
     ]
 
@@ -354,85 +280,31 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Acid Flask",
-            rank=1,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 1d10+3 acid damage.
-            """,
-            short_description="Throw to deal 1d10+3 acid damage",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Acid Flask, Greater",
-            rank=3,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 2d10+5 acid damage.
-            """,
-            short_description="Throw to deal 2d10+5 acid damage",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Acid Flask, Supreme",
-            rank=5,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 4d10+10 acid damage.
-            """,
-            short_description="Throw to deal 4d10+10 acid damage",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Acid Flask, Epic",
-            rank=7,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 7d10+20 acid damage.
-            """,
-            short_description="Throw to deal 7d10+20 acid damage",
-        ),
-    ]
-
-    tools += [
-        MagicItem(
-            consumable=True,
-            name="Corrosive Flask",
             rank=2,
             material_type="Alchemical",
             tags=[],
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 1d8+2 acid damage.
-                If a creature loses \\glossterm<hit points> from this damage, it is \\dazed as a \\glossterm<condition>.
+                On a hit, the target takes 2d6+4 acid damage.
             """,
-            short_description="Throw to deal 1d8+2 acid damage and daze",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Corrosive Flask, Greater",
-            rank=5,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 2d8+5 acid damage.
-                Each creature that loses \\glossterm<hit points> from this damage becomes \\stunned as a \\glossterm<condition>.
-            """,
-            short_description="Throw to deal 2d8+5 acid damage and stun",
+            short_description="Throw to deal 2d6+4 acid damage",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The damage increases to 4d6+7.
+                    """,
+                    short_description="Throw to deal 4d6+7 acid damage",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The damage increases to 5d10+14.
+                    """,
+                    short_description="Throw to deal 5d10+14 acid damage",
+                ),
+            ],
         ),
     ]
 
@@ -449,34 +321,24 @@ def generate_tools():
                 On a hit, each target takes 1d10+2 fire damage.
             """,
             short_description="Throw to deal 1d10+2 fire damage in an area",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Firebomb, Greater",
-            rank=4,
-            material_type="Alchemical",
-            tags=[],
-            # this should be +3 by the standard progression, but that makes it
-            # weirdly bad compared to Supreme, so round to +4
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each target takes 2d10+4 fire damage.
-            """,
-            short_description="Throw to deal 2d10+4 fire damage in an area",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Firebomb, Supreme",
-            rank=6,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each target takes 4d8+14 fire damage.
-            """,
-            short_description="Throw to deal 4d8+14 fire damage in an area",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    # this should be +3 by the standard progression, but that makes it
+                    # weirdly bad compared to Supreme, so round to +4
+                    description="""
+                        The damage increases to 2d10+4.
+                    """,
+                    short_description="Throw to deal 2d10+4 fire damage in an area",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The damage increases to 4d8+14.
+                    """,
+                    short_description="Throw to deal 4d8+14 fire damage in an area",
+                ),
+            ],
         ),
     ]
 
@@ -542,34 +404,24 @@ def generate_tools():
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened as a \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d6+1 sonic damage and deafen",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Thunderstone, Greater",
-            rank=3,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each target takes 1d10+2 sonic damage.
-                Each creature that loses \\glossterm<hit points> from this damage is \\deafened and \\dazed as a single \\glossterm<condition>.
-            """,
-            short_description="Throw to deal 1d10+2 sonic damage, deafen, and daze",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Thunderstone, Supreme",
-            rank=5,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each target takes 2d8+5 sonic damage.
-                Each creature that loses \\glossterm<hit points> from this damage is \\deafened and \\stunned as a single \\glossterm<condition>.
-            """,
-            short_description="Throw to deal 2d8+5 sonic damage, deafen, and stun",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The damage increases to 1d10+2.
+                        In addition, each creature that loses hit points from the damage is also \\dazed as part of the same condition.
+                    """,
+                    short_description="Throw to deal 1d10+2 sonic damage, deafen, and daze",
+                ),
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The damage increases to 2d8+5.
+                        In addition, each creature that loses hit points from the damage is also \\stunned as part of the same condition.
+                    """,
+                    short_description="Throw to deal 2d8+5 sonic damage, deafen, and stun",
+                ),
+            ],
         ),
     ]
 
@@ -587,21 +439,15 @@ def generate_tools():
                 If a creature loses \\glossterm<hit points> from this damage, it is \\slowed as a \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d8+2 cold damage and slow",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Snowball, Greater",
-            rank=5,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 2d8+5 cold damage.
-                If a creature loses \\glossterm<hit points> from this damage, it is \\slowed as a \\glossterm<condition>.
-                This condition must be removed twice before the effect ends.
-            """,
-            short_description="Throw to deal 2d8+5 cold damage and extensively slow",
+            upgrades=[
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The damage increases to 2d8+5, and the condition must be removed twice before the effect ends.
+                    """,
+                    short_description="Throw to deal 2d8+5 cold damage and extensively slow",
+                ),
+            ],
         ),
     ]
 
@@ -617,30 +463,22 @@ def generate_tools():
                 The effects expire after 10 minutes.
             """,
             short_description="Grants +4 defenses against poisons",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Antitoxin Elixir, Greater",
-            rank=3,
-            material_type="Alchemical",
-            tags=["Attune"],
-            description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +6 bonus to your defenses against poisons.
-                The effects expire after 10 minutes.
-            """,
-            short_description="Grants +6 defenses against poisons",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Antitoxin Elixir, Supreme",
-            rank=6,
-            material_type="Alchemical",
-            tags=["Attune"],
-            description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you become \\glossterm<immune> to poisons.
-                The effects expire after 10 minutes.
-            """,
-            short_description="Grants immunity to poisons",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The defense bonus increases to +8.
+                    """,
+                    short_description="Grants +8 defenses against poisons",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        You become immune to poison instead of gaining a defense bonus.
+                    """,
+                    short_description="Grants immunity to poisons",
+                ),
+            ],
         ),
     ]
 
@@ -656,17 +494,15 @@ def generate_tools():
                 When you do, it creates \\glossterm<bright illumination> in a 60 foot radius and \\glossterm<shadowy illumination> in a 120 foot radius for 5 minutes.
             """,
             short_description="Emits bright illumination",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Sunrod, Greater",
-            rank=2,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                This item functions like a \\mitem<sunrod>, except that the effect lasts for 8 hours.
-            """,
-            short_description="Emits bright illumination for 8 hours",
+            upgrades=[
+                Upgrade(
+                    rank=2,
+                    description="""
+                        The effect lasts for 8 hours.
+                    """,
+                    short_description="Emits bright illumination for 8 hours",
+                ),
+            ],
         ),
     ]
 
@@ -686,33 +522,22 @@ def generate_tools():
                 If it succeeds, the condition is removed after the movement is complete.
             """,
             short_description="Slows a foe, though it is easily removable",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Tanglefoot Bag, Greater",
-            rank=2,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Reflex against one creature within \\shortrange.
-                On a hit, the target is \\slowed as a \\glossterm<condition>.
-            """,
-            short_description="Slows a foe",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Tanglefoot Bag, Supreme",
-            rank=5,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                You can throw this item as a standard action.
-                When you do, make an attack vs. Reflex against one creature within \\shortrange.
-                On a hit, the target is \\slowed as a \\glossterm<condition>.
-                This condition must be removed twice before the effect ends.
-            """,
-            short_description="Extensively slows a foe",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The condition cannot be removed with a Strength check.
+                    """,
+                    short_description="Slows a foe",
+                ),
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The condition cannot be removed with a Strength check, and it must be removed twice before the effect ends.
+                    """,
+                    short_description="Resiliently slows a foe",
+                ),
+            ],
         ),
     ]
 
@@ -782,30 +607,22 @@ def generate_tools():
                 This effect lasts for five minutes.
             """,
             short_description="Briefly increases weight limits",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Potion of Strength, Greater",
-            rank=3,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                When you drink this \\glossterm<potion>, you gain a +2 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
-                This effect lasts for one hour.
-            """,
-            short_description="Increases weight limits",
-        ),
-        MagicItem(
-            consumable=True,
-            name="Potion of Strength, Supreme",
-            rank=5,
-            material_type="Alchemical",
-            tags=[],
-            description="""
-                When you drink this \\glossterm<potion>, you gain a +3 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
-                This effect lasts for eight hours.
-            """,
-            short_description="Increases weight limits for an extended time",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The Strength bonus increases to +2, and the effect lasts for one hour.
+                    """,
+                    short_description="Increases weight limits",
+                ),
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The Strength bonus increases to +3, and the effect lasts for eight hours.
+                    """,
+                    short_description="Increases weight limits",
+                ),
+            ],
         ),
     ]
 
@@ -823,26 +640,22 @@ def generate_tools():
                 If this bag is destroyed, the items within it return to their original size.
             """,
             short_description="Shrinks items by one size category",
-        ),
-        MagicItem(
-            name="Bag of Shrinking, Greater",
-            rank=3,
-            materials=["textiles"],
-            tags=[],
-            description="""
-                This bag functions like a \\mitem<bag of shrinking>, except that it reduces the size of contained objects by two size categories instead of one.
-            """,
-            short_description="Shrinks items by two size categories",
-        ),
-        MagicItem(
-            name="Bag of Shrinking, Supreme",
-            rank=5,
-            materials=["textiles"],
-            tags=[],
-            description="""
-                This bag functions like a \\mitem<bag of shrinking>, except that it reduces the size of contained objects by three size categories instead of one.
-            """,
-            short_description="Shrinks items by three size categories",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The bag reduces the size of contained objects by two size categories instead of one.
+                    """,
+                    short_description="Shrinks items by two size categories",
+                ),
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The bag reduces the size of contained objects by three size categories instead of one.
+                    """,
+                    short_description="Shrinks items by three size categories",
+                ),
+            ],
         ),
     ]
 
@@ -860,21 +673,20 @@ def generate_tools():
                 If this bag is destroyed, the items within it return to their original size.
             """,
             short_description="Shrinks items by one size and weight category",
-        ),
-        MagicItem(
-            name="Bag of Holding, Greater",
-            rank=6,
-            materials=["textiles"],
-            tags=[],
-            description="""
-                This bag functions like a \\mitem<bag of holding>, except that it reduces the size and weight of contained objects by two size categories instead of one.
-            """,
-            short_description="Shrinks items by two size and weight categories",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The bag reduces the size and weight of contained objects by two size categories instead of one.
+                    """,
+                    short_description="Shrinks items by two size and weight categories",
+                ),
+            ],
         ),
     ]
 
     # TRAPS
-    # Trap accuracy: as CR 3 monster, so level + ((level + 1) / 6) + 2
+    # Trap accuracy: as elite monster with 4 per, so +2 over base elite monster
     # Trap effect: as rank-appropriate spell with power = half level
     # Trap level: relevant rank - 2 for single-square since it's hard to
     # activate, rank + 1 for easier triggers
@@ -890,28 +702,22 @@ def generate_tools():
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
                 While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> 11 Awareness check.
 
-                The first time a creature walks through that space, the trap makes a +4 attack vs. Armor against it.
+                The first time a creature walks through that space, the trap makes a +3 attack vs. Armor against it.
                 After the trap triggers, it must be manually deployed again.
                 On a hit, the creature takes 1d8 damage.
                 If it loses \\glossterm<hit points> from this damage, it is \\glossterm<briefly> \\immobilized.
             """,
             short_description="Damages and briefly immobilizes",
-        ),
-        MagicItem(
-            name="Bear Trap, Greater",
-            rank=4,
-            materials=["metal"],
-            tags=[],
-            description="""
-                As a standard action, you can deploy this trap on a space on the ground adjacent to you.
-                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> 20 Awareness check.
-
-                The first time a creature walks through that space, the trap makes a +16 attack vs. Armor against it.
-                After the trap triggers, it must be manually deployed again.
-                On a hit, the creature takes 2d8 damage.
-                If it loses \\glossterm<hit points> from this damage, it is \\immobilized as a \\glossterm<condition>.
-            """,
-            short_description="Damages and immobilizes",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The accuracy increases to +8 and the damage increases to 2d8.
+                        In addition, the effect becomes a \\glossterm<condition>.
+                    """,
+                    short_description="Damages and immobilizes",
+                ),
+            ],
         ),
     ]
 
@@ -925,41 +731,28 @@ def generate_tools():
                 As a standard action, you can deploy this trap on a space on the ground adjacent to you.
                 While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> 14 Awareness check.
 
-                The first time a creature walks through that space, the trap makes a +8 attack vs. Reflex against everything within a \\smallarea radius of it.
+                The first time a creature walks through that space, the trap makes a +5 attack vs. Reflex against everything within a \\smallarea radius of it.
                 After the trap triggers, it must be manually deployed again.
                 On a hit, each target takes 1d10+2 damage.
             """,
-            short_description="Deals fire damage in a small area",
-        ),
-        MagicItem(
-            name="Fireburst Trap, Greater",
-            rank=4,
-            materials=["metal"],
-            tags=[],
-            description="""
-                As a standard action, you can deploy this trap on a space on the ground adjacent to you.
-                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> 20 Awareness check.
-
-                The first time a creature walks through that space, the trap makes a +15 attack vs. Reflex against everything within a \\largearea radius of it.
-                After the trap triggers, it must be manually deployed again.
-                On a hit, each target takes 2d8+3 damage.
-            """,
-            short_description="Deals fire damage in a large area",
-        ),
-        MagicItem(
-            name="Fireburst Trap, Supreme",
-            rank=6,
-            materials=["metal"],
-            tags=[],
-            description="""
-                As a standard action, you can deploy this trap on a space on the ground adjacent to you.
-                While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> 26 Awareness check.
-
-                The first time a creature walks through that space, the trap makes a +22 attack vs. Reflex against everything within a \\largearea radius of it.
-                After the trap triggers, it must be manually deployed again.
-                On a hit, each target takes 4d8+7 damage.
-            """,
-            short_description="Deals massive fire damage in a large area",
+            short_description="Deals 1d10+2 fire damage in a small area",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The accuracy increases to +8 and the damage increases to 2d10+4.
+                    """,
+                    short_description="Deals 2d10+4 fire damage in a small area",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The accuracy increases to +12 and the damage increases to 4d10+7.
+                        In addition, the area increases to a \\largearea radius.
+                    """,
+                    short_description="Deals 4d10+7 fire damage in a large area",
+                ),
+            ],
         ),
     ]
 
@@ -1558,30 +1351,23 @@ def generate_tools():
                 This item can serve as artisan's tools for any Craft check except for Craft (alchemy).
             """,
             short_description="Use to craft almost item",
-        ),
-        MagicItem(
-            name="Universal Artisan's Tools, Greater",
-            rank=3,
-            materials=["metal"],
-            tags=[],
-            description="""
-                This item can serve as artisan's tools for any Craft check.
-                In addition, you gain a +2 \\glossterm<magic bonus> to the Craft skill when using this item to create an item.
-                This provides no benefit when using the Craft skill for other purposes, such as to appraise an item.
-            """,
-            short_description="Use to craft any item with +2 bonus",
-        ),
-        MagicItem(
-            name="Universal Artisan's Tools, Supreme",
-            rank=5,
-            materials=["metal"],
-            tags=[],
-            description="""
-                This item can serve as artisan's tools for any Craft check.
-                In addition, you gain a +3 \\glossterm<magic bonus> to the Craft skill when using this item to create an item.
-                This provides no benefit when using the Craft skill for other purposes, such as to appraise an item.
-            """,
-            short_description="Use to craft any item with +3 bonus",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The tools also grant a +2 \\glossterm<magic bonus> to the Craft skill when using this item to create an item.
+                        This provides no benefit when using the Craft skill for other purposes, such as to appraise an item.
+                    """,
+                    short_description="Use to craft any item with +2 bonus",
+                ),
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The magic bonus increases to +4.
+                    """,
+                    short_description="Use to craft any item with +4 bonus",
+                ),
+            ],
         ),
     ]
 
