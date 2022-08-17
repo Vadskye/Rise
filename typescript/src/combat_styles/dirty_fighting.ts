@@ -8,7 +8,7 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Dazing Fist",
 
-      // full power due to unarmed limitation
+      // -2 ranks due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
@@ -19,7 +19,7 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Dazing Fist+",
 
-      // full power due to unarmed limitation
+      // -2 ranks due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         Each creature damaged by the strike is \\dazed as a \\glossterm{condition}.
@@ -30,13 +30,13 @@ export const dirtyFighting: CombatStyle = {
     {
       name: "Stunning Fist",
 
-      // as spell rank due to unarmed limitation
+      // -2 ranks due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        You do not add your \\glossterm{power} to damage with the strike.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
@@ -44,8 +44,8 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        You do not add your \\glossterm{power} to damage with the strike.
         Each creature that loses \\glossterm{hit points} from the strike takes additional bludgeoning damage equal to four times your \\glossterm{power}.
+        Those creatures cannot take extra damage from this effect again until they take a \\glossterm{short rest}.
       `,
       rank: 7,
     },
@@ -287,7 +287,7 @@ export const dirtyFighting: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\glossterm{briefly} \\slowed.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {

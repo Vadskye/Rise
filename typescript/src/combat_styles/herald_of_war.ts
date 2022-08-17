@@ -134,6 +134,7 @@ export const heraldOfWar: CombatStyle = {
       tags: ["Swift"],
     },
 
+    // -2 ranks for melee goad
     {
       name: "Challenging Strike",
 
@@ -153,7 +154,7 @@ export const heraldOfWar: CombatStyle = {
         You do not add your \\glossterm{power} to damage with the strike.
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition}.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -161,7 +162,8 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\shaken by you.
+        Each creature damaged by the strike is \\glossterm{briefly} \\shaken by you.
+        After this effect ends, the creature cannot be shaken by this effect again until it takes a \\glossterm{short rest}.
       `,
       rank: 1,
       tags: ["Emotion"],
@@ -172,7 +174,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\frightened by you.
+        Each creature damged by the strike is is \\shaken by you as a \\glossterm{condition}.
       `,
       rank: 5,
       tags: ["Emotion"],
