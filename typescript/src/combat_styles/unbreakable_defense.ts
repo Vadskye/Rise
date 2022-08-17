@@ -129,7 +129,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: "Dazing Shield Slam",
 
-      // full power, +1 rank instead of half power due to shield limitation
+      // -2 ranks due to shield limitation
       effect: `
         Make a \\glossterm{strike} using a shield.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
@@ -140,6 +140,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: "Stunning Shield Slam",
 
+      // -2 ranks due to shield limitation
       effect: `
         Make a \\glossterm{strike} using a shield.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.

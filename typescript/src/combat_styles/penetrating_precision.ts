@@ -229,7 +229,7 @@ export const penetratingPrecision: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\shaken by you, \\slowed, \\dazzled, or \\dazed.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
@@ -241,7 +241,7 @@ export const penetratingPrecision: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects: \\glossterm{briefly} \\immobilized, \\frightened by you as a \\glossterm{condition}, or \\stunned as a \\glossterm{condition}.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {

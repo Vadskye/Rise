@@ -272,15 +272,16 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 
 #### Maneuvers
 * Rank 1
-  * Strike with -2 acc, +2d
-  * Strike with +3 acc, -2d
-  * Strike with -1d, move half speed
-  * Strike, attack Fort or Ref defense
+  * Strike with -2 acc, +4 power
+  * Strike with +2 acc, half power
+  * Strike with half power, move half speed
+  * Strike vs Fort/Ref, half power
 * Rank 2
   * AOE: strike against ~5 targets, half power
   * Strike with weird random benefit (reroll miss chance)
 * Rank 3
-  * Strike with +1d or +1 acc
+  * Strike with +2 power or +1 acc
+  * Strike vs Fort/Ref
 * Rank 5
   * Strike with +2d or +2 acc
 * Rank 7
@@ -391,33 +392,38 @@ The minimum area size here should be a t2 area to make these feel different from
 For strikes, going from full power -> half power and half -> none buys +3 effect levels
 
 #### Maneuvers: single-target high damage + debuff
-* Rank 3
+* Rank 1
   * Strike, brief r0 debuff
   * Strike, brief r1 debuff if lose HP
-* Rank 5
+* Rank 3
   * Strike, brief r1 debuff, immune after first success
   * Strike, r1 debuff condition if lose HP
-* Rank 7
+* Rank 5
   * Strike, brief r1 debuff
   * Strike, brief r2 debuff if lose HP
+* Rank 7
+  * Strike, r1 debuff condition
+  * Strike, brief r2 debuff, immune after first success
+  * Strike, r2 debuff condition if lose HP
 
 #### Maneuvers: single-target medium damage + debuff
 * Rank 1
-  * Strike with half power, brief r0 debuff
-  * Strike with half power, r1 debuff condition if lose HP
-  * Strike with half power, brief r1 debuff, immune after first success
-* Rank 3
   * Strike with half power, brief r1 debuff
   * Strike with half power, brief r2 debuff if lose HP
-* Rank 5
+* Rank 3
   * Strike with half power, r1 debuff condition
   * Strike with half power, r2 debuff condition if lose HP
   * Strike with half power, brief r2 debuff, immune after first success
-* Rank 7
+* Rank 5
   * Strike with half power, brief r2 debuff
   * Strike with half power, brief r3 debuff if lose HP
+* Rank 7
+  * Strike with half power, r2 debuff condition
+  * Strike with half power, r3 debuff condition if lose HP
+  * Strike with half power, brief r3 debuff, immune after first success
 
 #### Maneuvers: single-target low damage + debuff
+-2 rank penalty; spells should be the best at non-damaging debuffs
 * Rank 1
   * Strike with no power, brief r1 debuff if take damage
 * Rank 3
