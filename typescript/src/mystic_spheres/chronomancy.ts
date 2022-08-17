@@ -509,16 +509,15 @@ export const chronomancy: MysticSphere = {
       name: "Expeditious Retreat",
 
       effect: `
-        You can immediately use the \\textit{sprint} ability without increasing your \\glossterm{fatigue level}.
-        After you cast this spell, you \\glossterm{briefly} cannot cast it again.
+        You \\glossterm{briefly} gain a +20 \\glossterm{magic bonus} to your speed with all \\glossterm{movement modes}.
       `,
       narrative: `
         You accelerate your body to flee from combat with incredible alacrity.
       `,
       rank: 2,
       scaling: {
-        4: "You also gain a +5 foot bonus to your movement speed while you sprint.",
-        6: "The speed bonus increases to +10 feet.",
+        4: "The speed bonus increases to +30 feet.",
+        6: "The speed bonus increases to +40 feet.",
       },
     },
 
