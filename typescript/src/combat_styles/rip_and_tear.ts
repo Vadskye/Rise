@@ -53,7 +53,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
       `,
       rank: 1,
     },
@@ -86,21 +86,19 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
-      name: "Hamstring",
+      name: "Hamstring+",
 
-      effect+: `
+      effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\slowed as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
@@ -252,7 +250,7 @@ export const ripAndTear: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
@@ -263,7 +261,7 @@ export const ripAndTear: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
       `,
-      rank: 7,
+      rank: 5,
     },
   ],
 };

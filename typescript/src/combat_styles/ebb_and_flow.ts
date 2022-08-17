@@ -153,12 +153,12 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +2 damage bonus with the strike.
+        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +4 damage bonus with the strike.
       `,
       rank: 3,
       scaling: {
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
       },
     },
 
@@ -275,7 +275,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You gain a +2 damage bonus with the strike if the target is adjacent to one of your \\glossterm{allies}.
+        You gain a +1 accuracy bonus with the strike if the target is adjacent to one of your \\glossterm{allies}.
       `,
       rank: 3,
     },

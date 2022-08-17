@@ -65,8 +65,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 1,
     },
@@ -76,8 +75,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\dazed as a \\glossterm{condition}.
+        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
       `,
       rank: 5,
     },
@@ -87,7 +85,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
@@ -98,7 +96,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\confused as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -216,8 +214,20 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
+        After this effect ends, the creature cannot be dazed by this effect again until it takes a \\glossterm{short rest}.
       `,
-      rank: 5,
+      rank: 3,
+    },
+
+    {
+      name: "Tenderizing Smash+",
+
+      effect: `
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
+        After this effect ends, the creature cannot be stunned by this effect again until it takes a \\glossterm{short rest}.
+      `,
+      rank: 7,
     },
 
     {
@@ -238,7 +248,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to Fortitude defense.
+        Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to its Fortitude defense.
       `,
       rank: 1,
     },
@@ -250,7 +260,6 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         You and each creature damaged by the strike are \\glossterm{briefly} \\deafened.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect abilities used by you or any damaged creatures during the current phase.
       `,
       rank: 3,
     },
