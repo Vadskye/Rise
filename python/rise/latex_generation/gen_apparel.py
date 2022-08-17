@@ -2206,7 +2206,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                You can use these boots when you take the \\textit<sprint> action to avoid increasing your\\glossterm<fatigue level> (see \\pcref<Sprint>).
+                You can use these boots when you take the \\textit<sprint> action during the \\glossterm<movement phase> to avoid increasing your\\glossterm<fatigue level> (see \\pcref<Sprint>).
                 After you use this boots in this way, you \\glossterm{briefly} cannot use them again.
             """,
             short_description="Can sprint without exertion",
