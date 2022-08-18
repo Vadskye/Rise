@@ -111,7 +111,7 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
@@ -519,10 +519,10 @@ export const enchantment: MysticSphere = {
         It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
         After this effect ends, the target becomes immune to this spell until it takes a \\glossterm{short rest}.`,
         targeting: `
-          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },

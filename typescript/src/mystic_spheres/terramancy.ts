@@ -224,7 +224,7 @@ export const terramancy: MysticSphere = {
       narrative: `
         You create an highly localized tremor that rips through the ground.
       `,
-      rank: 2,
+      rank: 3,
       scaling: "accuracy",
     },
 
