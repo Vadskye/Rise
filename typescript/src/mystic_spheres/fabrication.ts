@@ -440,7 +440,7 @@ export const fabrication: MysticSphere = {
           Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Manifestation"],
     },
