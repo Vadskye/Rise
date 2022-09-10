@@ -257,7 +257,7 @@ impl Range {
             Self::Medium => 1,
             Self::Long => 2,
             Self::Distant => 3,
-            Self::Extreme => 3,
+            Self::Extreme => 4,
             // TODO: calculate rank based on number of feet
             Self::Custom(_) => 5,
         }
