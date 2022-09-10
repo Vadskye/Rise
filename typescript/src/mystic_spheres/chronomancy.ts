@@ -198,11 +198,10 @@ export const chronomancy: MysticSphere = {
       name: "Haste",
 
       effect: `
-        You gain a +5 foot \\glossterm{magic bonus} to your speed with all of your \\glossterm{movement modes}.
+        You gain a +10 foot \\glossterm{magic bonus} to your speed with all of your \\glossterm{movement modes}.
       `,
-      rank: 2,
+      rank: 4,
       scaling: {
-        4: `The speed bonus increases to +10 feet.`,
         6: `The speed bonus increases to +15 feet.`,
       },
       type: "Attune",
@@ -242,10 +241,6 @@ export const chronomancy: MysticSphere = {
         If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
       rank: 5,
-      scaling: {
-        7: `If you cast this spell as a standard action, you can choose to have the duplicate persist for two rounds instead of one.
-                If you do, the target disappears for two rounds at the same time as the duplicate.`,
-      },
     },
 
     {
@@ -334,7 +329,7 @@ export const chronomancy: MysticSphere = {
           The target's fatigue level does not increase.
         `,
         6: `
-          You can target two \\glossterm{allies} with this spell.
+          You can target an additional \\glossterm{ally} within range.
         `,
       },
       type: "Sustain (minor)",
@@ -391,9 +386,6 @@ export const chronomancy: MysticSphere = {
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
       rank: 4,
-      scaling: {
-        6: `This effect also protects you from area attacks against your Fortitude and Mental defenses.`
-      },
       type: "Attune",
     },
 
@@ -405,7 +397,7 @@ export const chronomancy: MysticSphere = {
         You cannot take the same minor action twice in the same round.
       `,
       rank: 6,
-      type: "Attune",
+      type: "Attune (deep)",
     },
 
     {
@@ -423,10 +415,6 @@ export const chronomancy: MysticSphere = {
         After casting this spell, you cannot cast it again until you take a \\glossterm{short rest}.
       `,
       rank: 3,
-      scaling: {
-        5: `You can cast this spell as a \\glossterm{minor action}.`,
-        7: `The length of frozen time increases to five minutes.`,
-      },
     },
 
     {
@@ -535,7 +523,7 @@ export const chronomancy: MysticSphere = {
         It is painful to undergo such a selective temporal acceleration, but the consequences of such distraction on the battlefield would be far worse.
       `,
       scaling: {
-        6: `The target can remove two effects.`,
+        6: `The target can remove two conditions.`,
       },
     },
 

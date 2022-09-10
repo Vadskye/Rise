@@ -255,27 +255,15 @@ export const fabrication: MysticSphere = {
       name: "Forge",
 
       effect: `
-        Choose a type of body armor, weapon, or shield that you are proficient with.
-        The item's rank cannot exceed your spellcasting rank with this spell.
-        In addition, it cannot be constructed of any magical or extraordinary material.
-
-        You create a normal item of that type in your hand or in any unoccupied square on solid ground within \\shortrange.
+        This spell creates one or two weapons, suits of body armor, or shields.
+        You can create any weapon, shield, or body armor that you are proficient with.
         It is sized appropriately for you, up to a maximum of a Medium size item.
+        The items appear in your hand or on the ground at your feet.
+
+        If you create body armor or a weapon, it can be created from any special material other than cold iron.
+        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
       `,
       rank: 1,
-      scaling: {
-        3: `
-          If you create body armor or a weapon, it can be created from special materials other than cold iron.
-          The item's rank still cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
-        `,
-        5: `
-          You can create an additional item.
-        `,
-        7: `
-          This spell loses the \\abilitytag{Attune} tag.
-          Instead, it lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
-        `,
-      },
       tags: ['Manifestation'],
       type: "Attune",
     },
@@ -357,25 +345,17 @@ export const fabrication: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
-        This spell has no \\glossterm{somatic components}.
+        This spell has no \\glossterm{somatic components} or \\glossterm{verbal components}.
 
-        You create a nonmagical arrow in a bow that you are holding.
-        The ammunition can be blunted, but you cannot create other forms of special ammunition like fire arrows.
+        You create an arrow in a bow that you are holding.
+        You can create special ammunition of any type that you are proficient with.
+        However, the item's rank cannot exceed half your spellcasting rank with this spell.
+
         The object persists until the end of the round, at which point it disappears.
         Because this spell has the \\abilitytag{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
         Any attack with this ammunition is considered a \\glossterm{magical} attack, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       rank: 1,
-      scaling: {
-        3: `This spell also has no \\glossterm{verbal components}.`,
-        5: `
-          You can also create special ammunition like fire arrows that you are proficient with.
-        `,
-        7: `
-          You can cast this spell as a \\glossterm{free action}.
-          When you do, you cannot cast this spell again this round.
-        `,
-      },
       tags: ["Manifestation", "Swift"],
     },
 

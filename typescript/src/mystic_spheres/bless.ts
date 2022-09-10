@@ -43,9 +43,6 @@ export const bless: MysticSphere = {
         Each target is immune to being \\slowed, \\immobilized, and \\paralyzed.
       `,
       rank: 4,
-      scaling: {
-        6: `Each target also gains a +4 bonus to the \\textit{escape grapple} ability (see \\pcref{Grapple Actions}).`,
-      },
       type: "Attune (target)",
     },
 
@@ -58,7 +55,7 @@ export const bless: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: `The number of vital wounds removed increases to two.`,
+        6: `Each target removes two additional vital wounds instead of only one.`,
       },
       type: "Attune (target)",
     },
@@ -85,15 +82,9 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target becomes proficient with one additional weapon group.
-        This does not grant proficiency with exotic weapons or improvised weapons.
+        Each target becomes proficient with one additional weapon group, including exotic weapons from that weapon group.
       `,
       rank: 1,
-      scaling: {
-        3: `Each target also gains proficiency with all exotic weapons from weapon groups that it would be proficient with without the effects of this spell.`,
-        5: `Each target becomes proficient with all weapon groups.`,
-        7: `Each target becomes proficient with all exotic weapons regardless of its prior proficiencies.`,
-      },
       type: "Attune (target)",
     },
 
@@ -109,9 +100,9 @@ export const bless: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +3.`,
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
+        3: `The accuracy bonus increases to +3.`,
+        5: `The accuracy bonus increases to +4.`,
+        7: `The accuracy bonus increases to +5.`,
       },
       tags: ["Swift"],
     },
@@ -123,6 +114,7 @@ export const bless: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The target gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
         Because this ability has the \\abilitytag{Swift} tag, it affects attacks the target makes during the current phase.
+        If you cast this spell on yourself, it affects the first attack you make before the end of the next round.
       `,
       rank: 2,
       scaling: {
@@ -309,15 +301,11 @@ export const bless: MysticSphere = {
       // This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target cannot fall asleep or be knocked unconscious, except by \\glossterm{vital wounds}.
-        If it is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
+        Each target cannot fall asleep or be knocked unconscious, even by \\glossterm{vital wounds}.
+        This does not prevent the target from dying due to vital wounds.
+        If a target is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
       `,
-      rank: 1,
-      scaling: {
-        3: `This effect also protects each target from being knocked unconscious by vital wounds.`,
-        5: `Each target is also immune to being \\dazed or \\stunned.`,
-        7: `You can cast this spell as a \\glossterm{minor action}.`,
-      },
+      rank: 3,
       type: "Attune (target)",
     },
 

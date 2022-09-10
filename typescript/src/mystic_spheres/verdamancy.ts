@@ -189,10 +189,6 @@ export const verdamancy: MysticSphere = {
       narrative: `
         You grow a massive vine tentacle from your body.
       `,
-      scaling: {
-        4: `You gain a +5 foot bonus to \\glossterm{reach} with attacks using the tentacle.`,
-        6: `The bonus to reach increases to 10 feet.`,
-      },
       tags: ["Manifestation"],
       type: "Attune",
     },
@@ -566,16 +562,12 @@ export const verdamancy: MysticSphere = {
       effect: `
         All damage you deal with \\glossterm{strikes} becomes piercing damage in addition to the attack's normal damage types.
         Whenever you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, thorns from the striking weapon enter the target's body.
-        As a \\glossterm{condition}, the target unable to heal the \\glossterm{hit points} lost to the attack.
+        As a \\glossterm{condition}, the target is unable to heal the \\glossterm{hit points} lost to the attack.
 
         This effect can be removed with the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
         The \\glossterm{difficulty value} of the check is equal to 5 \\add your \\glossterm{power}.
       `,
       rank: 3,
-      scaling: {
-        5: `The condition cannot be removed with the Medicine skill.`,
-        7: `Each creature affected by the condition also takes 2d8 piecing damage at the end of each round.`,
-      },
       type: "Attune",
     },
 
@@ -588,9 +580,6 @@ export const verdamancy: MysticSphere = {
       },
       // narrative: '',
       rank: 5,
-      scaling: {
-        7: `The condition cannot be removed with the Medicine skill.`,
-      },
       type: "Attune (target)",
     },
 

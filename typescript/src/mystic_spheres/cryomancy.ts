@@ -230,15 +230,10 @@ export const cryomancy: MysticSphere = {
       name: "Skate",
 
       effect: `
-        You can move on top of calm water as if it were land.
-        You treat the water as \\glossterm{difficult terrain}.
+        You can move on top of water as if it were land.
+        This also works on other liquids that can be frozen like water.
       `,
-      rank: 1,
-      scaling: {
-        3: `You can also move on top of rough or stormy water.`,
-        5: `You no longer treat the water as difficult terrain.`,
-        7: `You also gain a +5 foot \\glossterm{magic bonus} to your land speed.`,
-      },
+      rank: 3,
       type: "Attune",
     },
 
@@ -250,11 +245,7 @@ export const cryomancy: MysticSphere = {
         name: "Skate",
       },
       // narrative: '',
-      rank: 3,
-      scaling: {
-        3: `The target can also move on top of rough or stormy water.`,
-        5: `The target no longer treats the water as difficult terrain.`,
-      },
+      rank: 5,
       type: "Attune (target)",
     },
 
@@ -272,10 +263,6 @@ export const cryomancy: MysticSphere = {
         However, most Large or larger creatures will break the ice trail if they step onto it, which may cause both of you to fall.
       `,
       rank: 3,
-      scaling: {
-        5: `Your ice trail collapses more gradually.  If you are still standing on your own ice trail when it disappears, you treat your fall as if it were 60 feet shorter than it actually was for the purpose of determining \\glossterm{falling damage}.`,
-        7: `Your ice trail lasts \\glossterm{briefly} after your movement.`,
-      },
       tags: ["Manifestation"],
       type: "Attune",
     },
@@ -389,31 +376,21 @@ export const cryomancy: MysticSphere = {
 
       effect: `
         Choose one pool of \\glossterm{unattended}, nonmagical water within \\shortrange.
-        This spell creates up to three weapons, suits of body armor, or shields from the target pool of water.
-        You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy armor.
+        This spell creates one or two weapons, suits of body armor, or shields from the target pool of water.
+        You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made of metal.
+        It is sized appropriately for you, up to a maximum of a Medium size item.
         The pool of water targeted must be at least as large as the largest item you create.
+
+        If you create body armor or a weapon, it can be created from any metallic special material other than cold iron.
+        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
 
         An item created with this spell functions like a normal item of its type, with three exceptions.
         First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
-        except that it reacts differently to fire damage.
         Second, while wearing body armor from this spell, you are \\trait{impervious} to fire damage.
-        Third, whenever you lose \\glossterm{hit points} from fire damage, all armor and weapons you made with this ability disappear.
-        They reappear at the end of the round.
+        Third, whenever you lose \\glossterm{hit points} from fire damage, all items you made with this ability disappear.
+        They reappear at the end of the next round.
       `,
       rank: 1,
-      scaling: {
-        3: `
-          If you create body armor or a weapon, it can be created from special materials other than cold iron.
-          The item's rank still cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
-        `,
-        5: `
-          You can also create heavy armor.
-        `,
-        7: `
-          This spell loses the \\abilitytag{Attune} tag.
-          Instead, it lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
-        `,
-      },
       type: "Attune",
     },
 

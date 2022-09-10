@@ -283,14 +283,10 @@ export const aquamancy: MysticSphere = {
       name: "Aquatic Freedom",
 
       effect: `
-        You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
-        If you already have a swim speed, you gain a +5 foot \\glossterm{magic bonus} to your swim speed.
+        You gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
+        If you already have a swim speed, you gain a +10 foot \\glossterm{magic bonus} to your swim speed.
       `,
       rank: 2,
-      scaling: {
-        4: `You gain a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot bonus if you already have a swim speed.`,
-        6: `The speed bonus increases to +10 feet, or +15 feet if you already have a swim speed.`,
-      },
       type: "Attune",
     },
     {
@@ -301,9 +297,6 @@ export const aquamancy: MysticSphere = {
         name: "aquatic freedom",
       },
       rank: 4,
-      scaling: {
-        6: `Each target gains a +5 foot \\glossterm{magic bonus} to its swim speed, or a +10 foot bonus if it already has a swim speed.`,
-      },
       type: "Attune (target)",
     },
     // +2 levels for push
@@ -393,11 +386,6 @@ export const aquamancy: MysticSphere = {
         Everything in the area is \\trait{impervious} to fire damage.
       `,
       rank: 1,
-      scaling: {
-        3: "The area increases to a \\largearea radius \\glossterm{zone}.",
-        5: "The range increases to a \\distrange.",
-        7: "The area increases to a \\hugearea radius \\glossterm{zone}.",
-      },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
     },
@@ -452,9 +440,6 @@ export const aquamancy: MysticSphere = {
         name: "aqueous tentacle",
       },
       rank: 4,
-      scaling: {
-        6: "You gain a +5 bonus to \\glossterm{reach} with attacks using the tentacles.",
-      },
       type: "Attune",
     },
     {
@@ -470,10 +455,6 @@ export const aquamancy: MysticSphere = {
         You grow a massive watery tentacle that extends from your body.
       `,
       rank: 2,
-      scaling: {
-        4: "You gain a +5 foot bonus to \\glossterm{reach} with attacks using the tentacle.",
-        6: "The bonus to reach increases to 10 feet.",
-      },
       tags: ["Manifestation"],
       type: "Attune",
     },
@@ -484,7 +465,7 @@ export const aquamancy: MysticSphere = {
         You transform your body and equipment into water, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
         \\begin{itemize}
-          \\item You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
+          \\item You gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
             If you already have a swim speed, you gain a \\plus10 foot bonus to your swim speed.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
@@ -492,10 +473,6 @@ export const aquamancy: MysticSphere = {
         \\end{itemize}
       `,
       rank: 3,
-      scaling: {
-        5: "The defense bonus against critical hits from strikes increases to +8.",
-        7: "You are immune to critical hits from strikes.",
-      },
       type: "Attune (deep)",
     },
     {
@@ -552,12 +529,6 @@ export const aquamancy: MysticSphere = {
         This usually causes you to die.
       `,
       rank: 5,
-      scaling: {
-        7: `
-          You can transform to and from water any number of times during a single movement.
-          You must still regain your normal form at the end of the movement.
-        `,
-      },
       type: "Attune",
     },
     {

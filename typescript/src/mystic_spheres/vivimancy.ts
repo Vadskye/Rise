@@ -273,8 +273,8 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: `You can ignore the vital wound effect of two of your \\glossterm{vital wounds} instead of only one.`,
-        7: `Vital wounds you ignore with this spell do not cause you to suffer any penalty to future vital rolls.`,
+        5: `You can ignore two vital wound effects.`,
+        7: `You can ignore three vital wound effects.`,
       },
       type: "Attune",
     },
@@ -289,7 +289,7 @@ export const vivimancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: {
-        7: "Each target can ignore the vital wound effect of two of its \\glossterm{vital wounds} instead of only one.",
+        7: "Each target can ignore two vital wound effects.",
       },
       type: "Attune (target)",
     },
