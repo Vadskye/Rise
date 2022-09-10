@@ -232,7 +232,7 @@ export const channelDivinity: MysticSphere = {
       effect: `
         Your size increases by one \\glossterm{size category}.
         Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
-        It also increases your \\glossterm{base speed} and may increase your \\glossterm{reach} (see \\pcref{Size Categories}).
+        It also increases your \\glossterm{base speed} (see \\pcref{Size Categories}).
 
         This spell makes you slightly clumsy in your new size.
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
@@ -247,7 +247,7 @@ export const channelDivinity: MysticSphere = {
       effect: `
         Your size increases by two \\glossterm{size categories}.
         This gives you a +2 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -2 penalty to your Reflex defense, and a -10 penalty to Stealth.
-        It also increases your \\glossterm{base speed} and may increase your \\glossterm{reach} (see \\pcref{Size Categories}).
+        It also increases your \\glossterm{base speed} (see \\pcref{Size Categories}).
 
         This spell makes you slightly clumsy in your new size.
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.

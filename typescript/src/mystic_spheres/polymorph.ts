@@ -105,13 +105,13 @@ export const polymorph: MysticSphere = {
       name: 'Distant Claw',
       effect: `
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
-        You gain a +5 foot bonus to your \\glossterm{reach} with this strike.
+        The strike gains the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
         You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
       `,
       rank: 2,
       scaling: {
-        4: 'The reach bonus increases to +10 feet.',
-        6: 'The reach bonus increases to +15 feet.',
+        4: 'You gain a +1 \\glossterm{accuracy} bonus with the strike.',
+        6: 'The accuracy bonus increases to +2.',
       },
     },
 
@@ -136,7 +136,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Your size decreases by one \\glossterm{size category}, to a minimum of Tiny.
         Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
-        It also reduces your \\glossterm{base speed} and may reduce your \\glossterm{reach} (see \\pcref{Size Categories}).
+        It also reduces your \\glossterm{base speed} (see \\pcref{Size Categories}).
       `,
       rank: 2,
       type: 'Attune',
@@ -148,7 +148,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Your size decreases by two \\glossterm{size categories}, to a minimum of Tiny.
         This gives you a -2 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +2 bonus to your Reflex defense, and a +10 bonus to Stealth.
-        It also reduces your \\glossterm{base speed} and may reduce your \\glossterm{reach} (see \\pcref{Size Categories}).
+        It also reduces your \\glossterm{base speed} (see \\pcref{Size Categories}).
       `,
       rank: 6,
       type: 'Attune',
@@ -205,7 +205,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Your size increases by one \\glossterm{size category}, to a maximum of Huge.
         Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
-        It also increases your \\glossterm{base speed} and may increase your \\glossterm{reach} (see \\pcref{Size Categories}).
+        It also increases your \\glossterm{base speed} (see \\pcref{Size Categories}).
 
         This spell makes you slightly clumsy in your new size.
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
@@ -220,7 +220,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Your size increases by two \\glossterm{size categories}.
         This gives you a +2 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -2 penalty to your Reflex defense, and a -10 penalty to Stealth.
-        It also increases your \\glossterm{base speed} and may increase your \\glossterm{reach} (see \\pcref{Size Categories}).
+        It also increases your \\glossterm{base speed} (see \\pcref{Size Categories}).
 
         This spell makes you slightly clumsy in your new size.
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.

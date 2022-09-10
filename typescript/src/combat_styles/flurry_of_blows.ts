@@ -106,7 +106,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
-        The strike targets all \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
+        The strike targets all \\glossterm{enemies} adjacent to you.
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 1,
@@ -118,7 +118,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
         You do not add your \\glossterm{power} to damage with the strike.
-        The strike targets all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
+        The strike targets all \\glossterm{enemies} adjacent to you.
         Each creature damaged by the strike that is no more than one size category larger than you larger than you falls \\prone.
       `,
       rank: 5,
@@ -128,7 +128,7 @@ export const flurryOfBlows: CombatStyle = {
       name: "Whirlwind Flurry",
 
       effect: `
-        Make two melee \\glossterm{strikes} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} within your weapon's \\glossterm{reach}.
+        Make two melee \\glossterm{strikes} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} adjacent to you.
         You take a -2 accuracy penalty with both strikes, and you do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 7,

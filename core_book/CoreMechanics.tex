@@ -397,28 +397,28 @@ This chapter describes the core mechanics of Rise.
         You can take multiple long rests consecutively to recover from extensive vital wounds.
 
 \section{Size Categories}\label{Size Categories}
-    Your size affects your \glossterm{space} and \glossterm{reach} in combat, your speed with any \glossterm{movement modes} that depend on your size category's \glossterm{base speed}, your attributes, and how noticeable you are (see \pcref{Stealth}).
+    Your size affects your \glossterm{space} in combat, your speed with any \glossterm{movement modes} that depend on your size category's \glossterm{base speed}, your attributes, and how noticeable you are (see \pcref{Stealth}).
     These effects are shown on \trefnp{Size Categories}.
 
     \begin{dtable*}
         \lcaption{Size Categories}
-        \begin{dtabularx}{\textwidth}{l l l l l l X}
-            \tb{Size}         & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Weight Limits}\fn{2} & \tb{Reflex Defense} & \tb{Example Creature} \tableheaderrule
-            Fine              & 1/4 ft.          & 0                & 5 ft.           & \minus4 Str        & \plus4               & Fly                      \\
-            Diminuitive       & 1/2 ft.          & 0                & 10 ft.          & \minus3 Str        & \plus3               & Mouse                    \\
-            Tiny              & 1 ft.            & 0                & 15 ft.          & \minus2 Str        & \plus2               & Rat                      \\
-            Small             & 2-1/2 ft.        & 5 ft.            & 20 ft.          & \minus1 Str        & \plus1               & Cat                      \\
-            Medium            & 5 ft.            & 5 ft.            & 30 ft.          & \tdash             & \tdash               & Human                    \\
-            Large (tall)      & 10 ft.           & 10 ft.           & 40 ft.          & \plus1 Str         & \minus1              & Ogre                     \\
-            Large (long)      & 10 ft.           & 5 ft.            & 40 ft.          & \plus1 Str         & \minus1              & Horse                    \\
-            Huge (tall)       & 20 ft.           & 20 ft.           & 50 ft.          & \plus2 Str         & \minus2              & Cloud giant              \\
-            Huge (long)       & 20 ft.           & 10 ft.           & 50 ft.          & \plus2 Str         & \minus2              & Bulette                  \\
-            Gargantuan (tall) & 40 ft.           & 40 ft.           & 60 ft.          & \plus3 Str         & \minus3              & 50-ft.\ animated statue  \\
-            Gargantuan (long) & 40 ft.           & 20 ft.           & 60 ft.          & \plus3 Str         & \minus3              & Kraken                   \\
-            Colossal (tall)   & 80\add ft.       & 80\add ft.       & 80 ft.          & \plus4 Str         & \minus4              & Colossal animated object \\
-            Colossal (long)   & 80\add ft.       & 40\add ft.       & 80 ft.          & \plus4 Str         & \minus4              & Great wyrm red dragon    \\
+        \begin{dtabularx}{\textwidth}{l l l l l X}
+            \tb{Size}         & \tb{Space}\fn{1} & \tb{Base Speed} & \tb{Weight Limits}\fn{2} & \tb{Reflex Defense} & \tb{Example Creature} \tableheaderrule
+            Fine              & 1/4 ft.          & 5 ft.           & \minus4 Str        & \plus4               & Fly                      \\
+            Diminuitive       & 1/2 ft.          & 10 ft.          & \minus3 Str        & \plus3               & Mouse                    \\
+            Tiny              & 1 ft.            & 15 ft.          & \minus2 Str        & \plus2               & Rat                      \\
+            Small             & 2-1/2 ft.        & 20 ft.          & \minus1 Str        & \plus1               & Cat                      \\
+            Medium            & 5 ft.            & 30 ft.          & \tdash             & \tdash               & Human                    \\
+            Large (tall)      & 10 ft.           & 40 ft.          & \plus1 Str         & \minus1              & Ogre                     \\
+            Large (long)      & 10 ft.           & 40 ft.          & \plus1 Str         & \minus1              & Horse                    \\
+            Huge (tall)       & 20 ft.           & 50 ft.          & \plus2 Str         & \minus2              & Cloud giant              \\
+            Huge (long)       & 20 ft.           & 50 ft.          & \plus2 Str         & \minus2              & Bulette                  \\
+            Gargantuan (tall) & 40 ft.           & 60 ft.          & \plus3 Str         & \minus3              & 50-ft.\ animated statue  \\
+            Gargantuan (long) & 40 ft.           & 60 ft.          & \plus3 Str         & \minus3              & Kraken                   \\
+            Colossal (tall)   & 80\add ft.       & 80 ft.          & \plus4 Str         & \minus4              & Colossal animated object \\
+            Colossal (long)   & 80\add ft.       & 80 ft.          & \plus4 Str         & \minus4              & Great wyrm red dragon    \\
         \end{dtabularx}
-        1 Creatures can vary in space and reach.  These are simply typical values. \\
+        1 Creatures can vary in space.  These are simply typical values. \\
         2 This modifies Strength only for the purpose of determining a creature's \glossterm{weight limits} (see \pcref{Weight Limits}). \\
     \end{dtable*}
 
@@ -428,8 +428,9 @@ This chapter describes the core mechanics of Rise.
         Normally, other creatures can't be in the space you occupy.
         Most creatures have a space significantly larger than the physical space their body occupies because they need room to maneuver in combat.
 
-    \subsection{Reach}\label{Reach}
-        A creature's \glossterm{reach} is the distance that its \glossterm{melee} attacks can reach.
+        Exceptionally large creatures can often attack at some distance from their core body thanks to long arms or other appendages.
+        This is represented by making their space larger than their body alone would require.
+        Even Colossal creatures can still only make melee attacks against adjacent foes - or more often, against smaller creatures sharing space with them.
 
     \subsection{Base Speed}\label{Base Speed}
         Each size category has a \glossterm{base speed} that indicates how far creatures of that size category can generally move.
@@ -448,18 +449,10 @@ This chapter describes the core mechanics of Rise.
         Ignoring flight, you can fit four Small creatures in a square, twenty-five Tiny creatures, 100 Diminuitive creatures, or 400 Fine creatures.
         If the creatures can fly, the number of creatures that can fit into a space increases drastically.
 
-        \parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. You can attack into your own square if you need to, so you can attack such creatures normally.
-
-        If a creature without a natural reach uses a Long weapon, it gains no benefits or penalties (see \pcref{Long Weapon}).
-
         \parhead{Movement} Creatures two size categories smaller than you are not considered obstacles and do not hinder your movement.
 
     \subsection{Very Large Creatures}\label{Very Large Creatures}
         \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
-
-        \parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
-
-        Creatures with a large natural reach using Long weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures (see \pcref{Long Weapon}).
 
         \parhead{Movement} Creatures two size categories larger than you are not considered obstacles and do not hinder your movement.
 

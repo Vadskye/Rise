@@ -1049,7 +1049,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             In addition, you can make a melee \glossterm{strike}.
             Your \glossterm{power} with the strike is halved.
             You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \pcref{Dice Bonuses From Attributes}).
-            The strike targets any number of creatures and objects within your \glossterm{reach} at any point during your movement.
+            The strike targets any number of creatures and objects adjacent to you at any point during your movement.
 
             \rankline
             \featlevel{21} You gain a \plus1d bonus to damage with the strike.
@@ -1069,7 +1069,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Cleave} Whenever you make a \glossterm{melee} \glossterm{strike} with a weapon you hold in two hands, it gains the Sweeping (1) tag (see \pcref{Sweeping}).
         If the weapon already has the Sweeping tag, you increase the number of secondary targets by 1.
         In addition, you can choose secondary targets within 15 feet of the primary target instead of the normal 10 feet.
-        Each secondary target must still be within your \glossterm{reach} with the weapon.
+        Each secondary target must still be adjacent to you unless you are using a \weapontag{Long} weapon (see \pcref{Weapon Tags}).
 
         \ff[3]{Power Attack} Whenever you make a non-\glossterm{projectile} strike with a weapon you wield in two hands, you may take a \minus1 penalty to \glossterm{accuracy}.
         If you do, you gain a \plus1d damage bonus.
@@ -1413,7 +1413,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[3]{Healing Touch} You can use the \textit{healing touch} ability as a standard action.
         \begin{activeability}{Healing Touch}{\abilitytag{Swift}}
             \rankline
-            Choose yourself or a living \glossterm{ally} within your \glossterm{reach}.
+            Choose yourself or an adjacent living \glossterm{ally}.
             The target regains 1d10 \add \glossterm{power} \glossterm{hit points} and increases its \glossterm{fatigue level} by one.
             In addition, make a Medicine check.
             For each poison and disease on the target, if your check result beats a \glossterm{difficulty value} equal to 10 \add twice its \glossterm{rank}, the effect is removed.
@@ -2632,7 +2632,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[3]{Cleanse Toxins} You can use the \textit{cleanse toxins} ability as a standard action.
         \begin{activeability}{Cleanse Toxins}
             \label{Cleanse Toxins}
-            \target{Yourself or one \glossterm{ally} within your \glossterm{reach}}
+            \target{Yourself or one adjacent \glossterm{ally}}
             You remove all \glossterm{poisons} and \glossterm{diseases} affecting the target.
             This cannot remove a poison or disease applied during the current round.
 

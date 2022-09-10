@@ -129,7 +129,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          it affects up to three creatures within your \\glossterm{reach} instead of only one.
+          it affects up to three creatures adjacent to you instead of only one.
           In addition, you \\glossterm{knockback} each target up to 15 feet instead of pushing it.
           On a critical hit, you knockback each target 30 feet instead.
           Any accuracy bonuses you have that apply specifically to the \\textit{shove} ability also apply to this ability.

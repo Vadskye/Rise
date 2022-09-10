@@ -16,7 +16,8 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
                 \begin{attuneability}{Animal Companion}{\abilitytag{Attune}, \abilitytag{Emotion}, \glossterm{Magical}}
                     \rankline
-                    Choose a non-\glossterm{elite} Medium or smaller animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level.
+                    Choose an adjacent non-\glossterm{elite} Medium or smaller animal \glossterm{ally}.
+                    Its level must not exceed your level.
                     The target serves as a loyal companion to you.
                     It follows your directions to the best of its ability.
 

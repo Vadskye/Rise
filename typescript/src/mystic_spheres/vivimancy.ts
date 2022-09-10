@@ -10,7 +10,7 @@ export const vivimancy: MysticSphere = {
       name: "Ablate Vital Wound",
 
       effect: `
-        Choose a living \\glossterm{ally} within your \\glossterm{reach}.
+        Choose an adjacent living \\glossterm{ally}.
         If the target has a \\glossterm{vital wound} with a \\glossterm{vital roll} of 0, it treats that \\glossterm{vital roll} as a 1, preventing it from dying (see \\pcref{Vital Wounds}).
       `,
       scaling: {
@@ -44,7 +44,7 @@ export const vivimancy: MysticSphere = {
         targeting: `
         You must have a \\glossterm{free hand} to cast this spell.
 
-        Make a melee attack vs. Reflex against one living creature within your \\glossterm{reach}.
+        Make a melee attack vs. Reflex against an adjacent living creature.
         `,
       },
       rank: 1,
@@ -63,7 +63,7 @@ export const vivimancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make a melee attack vs. Reflex against one living creature within your \\glossterm{reach}.
+          Make a melee attack vs. Reflex against an adjacent living creature.
         `,
       },
       rank: 3,

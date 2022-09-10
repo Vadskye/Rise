@@ -43,7 +43,7 @@ export const summoning: MysticSphere = {
         Each round, you can choose the creature's actions by mentally commanding it as a \\glossterm{free action}.
         There are only two actions it can take.
         As a \\glossterm{move action}, it can move as you direct.
-        As a standard action, it can make a melee \\glossterm{strike} against a creature within its \\glossterm{reach}.
+        As a standard action, it can make a melee \\glossterm{strike} against a creature adjacent to it.
         If it hits, it deals 1d4 physical damage.
         This damage is improved by your Willpower as normal for magical attacks.
         The subtypes of damage dealt by this attack depend on the creature's appearance, but are limited to bludgeoning, piercing, and slashing damage.
@@ -265,7 +265,7 @@ export const summoning: MysticSphere = {
 
         You cannot control the summoned weapon's actions.
         Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm{movement phase}, following that creature to the best of its abilities.
-        During the \\glossterm{action phase}, it makes a melee \\glossterm{strike} against a creature within its \\glossterm{reach}.
+        During the \\glossterm{action phase}, it makes a melee \\glossterm{strike} against a creature adjacent to it.
         The weapon prefers to avoid accuracy and damage penalties that would be imposed by cover or special weapon grips.
         It choses randomly if all possible targets are equally easy to attack.
         If it hits, it deals damage appropriate for your chosen weapon.
@@ -400,7 +400,7 @@ export const summoning: MysticSphere = {
         the creature appears to be a Medium bear.
         Its attacks deal 1d8 bludgeoning and slashing damage.
         In addition, it suffers no penalty for attacking in a grapple.
-        As a standard action, it can make a \\textit{grapple} attack against a creature within its \\glossterm{reach}.
+        As a standard action, it can make a \\textit{grapple} attack against a creature adjacent to it.
         While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
         `,
         name: "summon monster",

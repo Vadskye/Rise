@@ -134,15 +134,10 @@ export const telekinesis: MysticSphere = {
       name: "Force Extension",
 
       effect: `
-        You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{reach} with melee \\glossterm{strikes}.
-        This has no effect on ranged attacks you make.
+        Your melee \\glossterm{strikes} gain the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
       `,
 
       rank: 3,
-      scaling: {
-        5: `The bonus increases to +10 feet.`,
-        7: `The bonus increases to +15 feet.`,
-      },
       type: "Attune",
     },
 
@@ -155,9 +150,6 @@ export const telekinesis: MysticSphere = {
       },
       // narrative: '',
       rank: 5,
-      scaling: {
-        7: `The bonus increases to +10 feet.`,
-      },
       type: "Attune (target)",
     },
 

@@ -284,12 +284,12 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Extend the Flow of Ki}[\abilitytag{Swift}]
                         \rankline
                         You can use this ability as a \glossterm{free action}.
-                        You gain a \plus5 foot bonus to your \glossterm{reach} this round.
+                        Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag this round, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus10 feet.
+                        \rank{3} You can attack enemies up to 15 feet away from you.
                         \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus15 feet.
+                        \rank{7} You can attack enemies up to 20 feet away from you.
                     \end{activeability}
 
                     \begin{activeability}{Flash Step}

@@ -49,7 +49,7 @@ export const cryomancy: MysticSphere = {
         targeting: `
         You must have a \\glossterm{free hand} to cast this spell.
 
-        Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+        Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
       rank: 1,
@@ -67,7 +67,7 @@ export const cryomancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+          Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
       rank: 3,

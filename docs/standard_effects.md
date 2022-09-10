@@ -302,7 +302,7 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
   * Med range, 4d10 + power
   * t1 area, 4d8 + half power
 * Modifiers
-  * "Med range" can be replaced with "Reach, no focus"
+  * "Med range" can be replaced with "Adjacent, no focus"
 
 #### Spells: AOE
 * Rank 1
@@ -467,7 +467,7 @@ For strikes, going from full power -> half power and half -> none buys +3 effect
   * Med range, 4d8 + half power damage, brief r3 debuff, immune after first success
   * Med range, 4d8 + half power damage, r3 debuff condition if lose HP
 * Modifiers
-  * "Med range" can be replaced with "Reach, no focus"
+  * "Med range" can be replaced with "Adjacent, no focus"
   * For +4 levels, you get +5d and full power instead of half power
 
 #### Spells: AOE medium damage + debuff

@@ -345,31 +345,12 @@ export const aeromancy: MysticSphere = {
       name: "Windblade",
 
       effect: `
-        You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{reach} with melee \\glossterm{strikes}.
-        Attacks that hit because of this reach deal bludgeoning damage instead of any other damage types.
-        This has no effect on ranged attacks you make.
+        Your melee \\glossterm{strikes} gain the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
+        Attacks that hit because of this extra range deal bludgeoning damage instead of any other damage types.
       `,
       // narrative: '',
       rank: 3,
-      scaling: {
-        5: "The bonus increases to +10 feet.",
-        7: "The bonus increases to +15 feet.",
-      },
       type: "Attune",
-    },
-    {
-      name: "Mass Windblade",
-
-      functionsLike: {
-        mass: true,
-        name: "windblade",
-      },
-      // narrative: '',
-      rank: 5,
-      scaling: {
-        7: "The bonus increases to +10 feet.",
-      },
-      type: "Attune (target)",
     },
     {
       name: "Retributive Winds",
