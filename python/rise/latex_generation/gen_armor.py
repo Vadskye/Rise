@@ -565,8 +565,8 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                This armor does not penalize your movement speed.
-                If the armor does not reduce your speed, this has no effect.
+                This armor does not penalize your movement speed for being heavy (see \\pcref<Armor Usage Classes>).
+                If the armor is not heavy armor, this has no effect.
             """,
             short_description="Removes armor speed penalty",
         ),
