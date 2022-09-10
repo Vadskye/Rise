@@ -61,18 +61,12 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Choose one nonmagical suit of body armor you touch.
-        In addition, choose one of the following special materials: adamantine, deepforged, diamondsteel, elvenweave, ironwood, mithral, or starmetal.
+        The armor becomes composed of a special material of your choice other than cold iron (see \\tref{Armor Special Materials}).
         The special material chosen must not cause the item's total rank to exceed your spellcasting rank with this spell.
-        The armor changes to be composed of that material, and gains all properties and benefits of that material instead of its original properties.
-        For details about armor special materials, see \\tref{Armor Special Materials}.
-
         You can only change the target into a special material appropriate for its base composition of either leather or metal.
         For example, you cannot create mithral hide armor with this spell.
       `,
       rank: 4,
-      scaling: {
-        6: `You can also choose one of the following special materials: pure adamantine, pure deepforged, pure diamondsteel, pure elvenweave, pure mithral, or pure starmetal.`,
-      },
       // TODO: weird that this is one of the few ways you can attune on behalf of an ally
       type: 'Attune',
     },
@@ -145,10 +139,18 @@ export const polymorph: MysticSphere = {
         It also reduces your \\glossterm{base speed} and may reduce your \\glossterm{reach} (see \\pcref{Size Categories}).
       `,
       rank: 2,
-      scaling: {
-        4: `You gain a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, offsetting the penalty from reducing your size.`,
-        6: `You can decrease your size category by up to two size categories.`,
-      },
+      type: 'Attune',
+    },
+
+    {
+      name: 'Greater Shrink',
+
+      effect: `
+        Your size decreases by two \\glossterm{size categories}, to a minimum of Tiny.
+        This gives you a -2 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +2 bonus to your Reflex defense, and a +10 bonus to Stealth.
+        It also reduces your \\glossterm{base speed} and may reduce your \\glossterm{reach} (see \\pcref{Size Categories}).
+      `,
+      rank: 6,
       type: 'Attune',
     },
 
@@ -162,9 +164,6 @@ export const polymorph: MysticSphere = {
       },
       // narrative: '',
       rank: 4,
-      scaling: {
-        6: `Each target gains a +1 bonus to Strength for the purpose of determining its \\glossterm{weight limits}, offsetting the penalty from reducing its size.`,
-      },
       type: 'Attune (target)',
     },
 
@@ -212,16 +211,22 @@ export const polymorph: MysticSphere = {
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 3,
-      scaling: {
-        5: `
-          The speed penalty is reduced to -5 feet.
-        `,
-        7: `
-          You can increase your size category by up to two size categories.
-          However, if you do, the movement speed penalty increases to -10 feet.
-        `,
-      },
       type: 'Attune',
+    },
+
+    {
+      name: "Greater Enlarge",
+
+      effect: `
+        Your size increases by two \\glossterm{size categories}.
+        This gives you a +2 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -2 penalty to your Reflex defense, and a -10 penalty to Stealth.
+        It also increases your \\glossterm{base speed} and may increase your \\glossterm{reach} (see \\pcref{Size Categories}).
+
+        This spell makes you slightly clumsy in your new size.
+        You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
+      `,
+      rank: 7,
+      type: "Attune",
     },
 
     {
@@ -234,11 +239,6 @@ export const polymorph: MysticSphere = {
       },
       // narrative: '',
       rank: 5,
-      scaling: {
-        7: `
-          The speed penalty is reduced to -5 feet.
-        `,
-      },
       type: 'Attune (target)',
     },
 
@@ -298,7 +298,7 @@ export const polymorph: MysticSphere = {
         Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
         \\begin{itemize}
-          \\item You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size.
+          \\item You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
         \\end{itemize}
@@ -658,14 +658,10 @@ export const polymorph: MysticSphere = {
       name: 'Swimmer',
 
       effect: `
-        You gain a \\glossterm{swim speed} equal to the \\glossterm{base speed} for your size.
-        If you already have a swim speed, you gain a +5 foot \\glossterm{magic bonus} to your swim speed.
+        You gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
+        If you already have a swim speed, you gain a +10 foot \\glossterm{magic bonus} to your swim speed.
       `,
       rank: 3,
-      scaling: {
-        5: `You gain a +5 foot \\glossterm{magic bonus} to your swim speed, or a +10 foot magic bonus if you already have a swim speed.`,
-        7: `You gain a +10 foot \\glossterm{magic bonus} to your swim speed, or a +15 foot magic bonus if you already have a swim speed.`,
-      },
       type: 'Attune',
     },
 
@@ -673,14 +669,10 @@ export const polymorph: MysticSphere = {
       name: 'Climber',
 
       effect: `
-        You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size.
-        If you already have a climb speed, you gain a +5 foot \\glossterm{magic bonus} to your climb speed.
+        You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size.
+        If you already have a climb speed, you gain a +10 foot \\glossterm{magic bonus} to your climb speed.
       `,
       rank: 3,
-      scaling: {
-        5: `You gain a +5 foot \\glossterm{magic bonus} to your climb speed, or a +10 foot bonus if you already have a climb speed.`,
-        7: `You gain a +10 foot \\glossterm{magic bonus} to your climb speed, or a +15 foot bonus if you already have a climb speed.`,
-      },
       type: 'Attune',
     },
 
@@ -688,11 +680,10 @@ export const polymorph: MysticSphere = {
       name: 'Runner',
 
       effect: `
-        You gain a +5 foot \\glossterm{magic bonus} to your \\glossterm{land speed}.
+        You gain a +10 foot \\glossterm{magic bonus} to your \\glossterm{land speed}.
       `,
-      rank: 2,
+      rank: 4,
       scaling: {
-        4: `The bonus increases to +10 feet.`,
         6: `The bonus increases to +15 feet.`,
       },
       type: 'Attune',

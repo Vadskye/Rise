@@ -308,9 +308,6 @@ export const revelation: MysticSphere = {
       `,
 
       rank: 5,
-      scaling: {
-        7: `You also gain a +3 \\glossterm{magic bonus} to Awareness.`,
-      },
       type: "Attune",
     },
 
@@ -429,7 +426,9 @@ export const revelation: MysticSphere = {
           The sensor is not destroyed if you do not have \\glossterm{line of effect} to it.
           If it gets farther than 240 feet from you, ignoring all obstacles, it is still destroyed.
         `,
-        6: `You constantly receive sensory input from both your body and the sensor.`,
+        6: `
+          The maximum distance before the sensor is destroyed increases to 480 feet.
+        `,
       },
       tags: ["Scrying"],
       type: "Sustain (minor)",
@@ -452,9 +451,6 @@ export const revelation: MysticSphere = {
         If undisturbed, the sensor floats in the air in its position.
       `,
       rank: 5,
-      scaling: {
-        7: `You constantly receive sensory input from both your body and the sensor.`,
-      },
       tags: ["Scrying"],
       // The use of attune instead of Sustain is intentional to make the "scout the dungeon exclusively using clairvoyance" plan improbably difficult to pull off.
       type: "Attune",

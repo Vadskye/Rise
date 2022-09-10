@@ -238,15 +238,21 @@ export const channelDivinity: MysticSphere = {
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 3,
-      scaling: {
-        5: `
-          The speed penalty is reduced to -5 feet.
-        `,
-        7: `
-          You can increase your size category by up to two size categories.
-          However, if you do, the movement speed penalty increases to -15 feet.
-        `,
-      },
+      type: "Attune",
+    },
+
+    {
+      name: "Greater Divine Might",
+
+      effect: `
+        Your size increases by two \\glossterm{size categories}.
+        This gives you a +2 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -2 penalty to your Reflex defense, and a -10 penalty to Stealth.
+        It also increases your \\glossterm{base speed} and may increase your \\glossterm{reach} (see \\pcref{Size Categories}).
+
+        This spell makes you slightly clumsy in your new size.
+        You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
+      `,
+      rank: 7,
       type: "Attune",
     },
 
@@ -371,9 +377,6 @@ export const channelDivinity: MysticSphere = {
         You are \\glossterm{immune} to \\abilitytag{Compulsion} and \\abilitytag{Emotion} attacks.
       `,
       rank: 5,
-      scaling: {
-        7: "You also ignore penalties to your accuracy and defenses from \\glossterm{vital wounds}.",
-      },
       type: "Attune",
     },
 

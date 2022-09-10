@@ -106,9 +106,9 @@ export const aeromancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "The distance increases to 120 feet.",
-        5: "The distance increases to 240 feet.",
-        7: "The distance increases to 480 feet.",
+        3: "The distance increases to 90 feet.",
+        5: "The distance increases to 120 feet.",
+        7: "The distance increases to 150 feet.",
       },
     },
     {
@@ -123,8 +123,8 @@ export const aeromancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "The distance increases to 120 feet.",
-        7: "The distance increases to 240 feet.",
+        5: "The distance increases to 90 feet.",
+        7: "The distance increases to 120 feet.",
       },
     },
     {
@@ -135,10 +135,6 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: "",
       rank: 2,
-      scaling: {
-        4: `The bonus increases to +3.`,
-        6: `The bonus increases to +4.`,
-      },
       type: "Attune",
     },
     {
@@ -149,11 +145,7 @@ export const aeromancy: MysticSphere = {
         name: "wind screen",
       },
       // narrative: "",
-      rank: 3,
-      scaling: {
-        5: "The bonus to Armor defense increases to +2.",
-        7: "The bonus to Armor defense increases to +3.",
-      },
+      rank: 4,
       type: "Attune (target)",
     },
     {
@@ -227,10 +219,6 @@ export const aeromancy: MysticSphere = {
       effect: "You gain a 30 foot \\glossterm{glide speed} (see \\pcref{Gliding}).",
       // narrative: '',
       rank: 2,
-      scaling: {
-        4: "You are immune to \\glossterm{falling damage} even if you do not glide.",
-        6: "You can reduce your \\glossterm{glide speed} to 20 feet or increase it to 60 feet during each phase that you glide.",
-      },
       type: "Attune",
     },
     {
@@ -242,9 +230,6 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 4,
-      scaling: {
-        6: "The target is immune to \\glossterm{falling damage} even if it does not glide.",
-      },
       type: "Attune (target)",
     },
     {
@@ -256,10 +241,10 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 4,
+      type: "Attune",
       scaling: {
         6: "The maximum height increases to 60 feet.",
       },
-      type: "Attune",
     },
     {
       name: "Agile Flight",
@@ -293,10 +278,10 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 5,
+      type: "Attune",
       scaling: {
         7: "The maximum height increases to 120 feet.",
       },
-      type: "Attune",
     },
     // +2 levels for push, -2 levels for no power
     {
@@ -429,9 +414,6 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 4,
-      scaling: {
-        6: "You can shape the weather for up to fifteen minutes before it takes effect, increasing the intensity of the changes you can make.",
-      },
       type: "Attune (deep)",
     },
     {
@@ -603,10 +585,6 @@ export const aeromancy: MysticSphere = {
         This allows you to drift through enemies and even the air with ease.
       `,
       rank: 3,
-      scaling: {
-        5: "You also ignore all sources of \\glossterm{difficult terrain}.",
-        7: "You also gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flying}).",
-      },
       type: "Attune",
     },
     {

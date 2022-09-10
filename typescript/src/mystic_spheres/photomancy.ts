@@ -116,13 +116,9 @@ export const photomancy: MysticSphere = {
       name: "Blurred Motion",
 
       effect: `
-        If you move at least 30 feet during the \\glossterm{movement phase}, you gain a +1 bonus to Armor defense until the end of that round.
+        If you move at least 15 feet during the \\glossterm{movement phase}, you gain a +1 bonus to Armor defense until the end of that round.
       `,
       rank: 3,
-      scaling: {
-        5: `The minimum distance is reduced to 15 feet.`,
-        7: `The bonus increases to +2.`,
-      },
       type: "Attune (deep)",
     },
 
@@ -291,14 +287,11 @@ export const photomancy: MysticSphere = {
       name: "Blur",
 
       effect: `
-        All \\glossterm{strikes} against you have a 20\\% \\glossterm{miss chance}.
+        All \\glossterm{strikes} against you have a 25\\% \\glossterm{miss chance}.
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
-      rank: 4,
-      scaling: {
-        6: "The miss chance increases to 25\\%.",
-      },
+      rank: 5,
       tags: ["Visual"],
       type: "Attune",
     },
@@ -387,7 +380,7 @@ export const photomancy: MysticSphere = {
       rank: 2,
       scaling: {
         4: `The maximum range increases to \\longrange.`,
-        6: `You can create a second duplicate of yourself.`,
+        6: `The maximum range increases to \\distrange.`,
       },
       type: "Sustain (minor)",
     },
@@ -421,9 +414,6 @@ export const photomancy: MysticSphere = {
         This invisibility ends after you take any action.
       `,
       rank: 4,
-      scaling: {
-        6: "Taking actions does not end this invisibility.",
-      },
     },
 
     {

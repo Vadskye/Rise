@@ -228,16 +228,13 @@ export const umbramancy: MysticSphere = {
       name: "Shadow Mantle",
 
       effect: `
-        All \\glossterm{strikes} against you have a 20\\% \\glossterm{failure chance}.
+        All \\glossterm{strikes} against you have a 25\\% \\glossterm{failure chance}.
       `,
       narrative: `
         Your physical form becomes blurred and shifts in and out of existence.
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
       `,
-      rank: 5,
-      scaling: {
-        7: "The miss chance increases to 25\\%.",
-      },
+      rank: 6,
       type: "Attune",
     },
 
@@ -500,7 +497,7 @@ export const umbramancy: MysticSphere = {
           \\item You are nearly flat, allowing you to pass under doors and through other narrow passages.
           Your horizontal dimensions are unchanged, and you cannot enter spaces that are more narrow than you can normally fit through.
           \\item You can freely move through space occupied by other creatures, and other creatures can freely move through your space.
-          \\item You gain a \\glossterm{climb speed} equal to the \\glossterm{base speed} for your size, and you can climb without using any hands.
+          \\item You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size, and you can climb without using any hands.
           \\item You are always treated as being \\prone.
           \\item You gain a +4 \\glossterm{magic bonus} to the Stealth skill.
         \\end{itemize}

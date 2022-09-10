@@ -412,9 +412,6 @@ export const thaumaturgy: MysticSphere = {
         Instead, you always make the same choice you made the last time you manually sustained the effect.
       `,
       rank: 4,
-      scaling: {
-        6: `Whenever you sustain an ability with this effect, you can also make any relevant choices as part of sustaining the ability.`,
-      },
       type: "Attune",
     },
 
@@ -446,7 +443,6 @@ export const thaumaturgy: MysticSphere = {
         This does not affect teleportation away from the area unless that teleportation's destination lies within the area.
       `,
       rank: 4,
-      scaling: { 6: `The delay increases to two rounds.` },
       type: "Attune",
     },
 
@@ -480,14 +476,6 @@ export const thaumaturgy: MysticSphere = {
         An observer who gets a \\glossterm{critical success} to identify the spell's effects can identify the true spell that you are casting (see \\pcref{Identify Magical Effect}).
       `,
       rank: 3,
-      scaling: {
-        5: `
-          The \\glossterm{difficulty value} to identify the spell also increases by 10.
-        `,
-        7: `
-          The \\glossterm{difficulty value} modifier increases to 20.
-        `,
-      },
       type: "Attune",
     },
 
