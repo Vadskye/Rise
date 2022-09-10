@@ -370,13 +370,14 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
-            name: "Primal Speed",
+            name: "Primal Rush",
             is_magical: false,
             rank: 7,
             description: r"
-                You gain a \plus10 foot bonus to your land speed.
+                You can use the \textit{sprint} ability during the \glossterm{movement phase} without increasing your \glossterm{fatigue level}.
+                After you use this ability, you \glossterm{briefly} cannot use it again.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(10)]),
+            modifiers: None,
         },
     ];
 }
