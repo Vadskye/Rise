@@ -106,8 +106,7 @@ def get_latex(
                 \\begin<monsterfooter>
                     \\pari \\textbf<Awareness> +6
                     \\pari \\textbf<Speed> {speed} ft.;
-                        \\textbf<Space> {space} ft.;
-                        \\textbf<Reach> {reach} ft.
+                        \\textbf<Space> {space} ft.
                     \\pari \\textbf<Attributes>:
                         Str {strength},
                         Dex {dexterity},

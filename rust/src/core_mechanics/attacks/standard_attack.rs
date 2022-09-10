@@ -113,7 +113,7 @@ impl StandardAttack {
                 name: "Drag Prey".to_string(),
                 replaces_weapon: None,
                 tags: None,
-                targeting: Targeting::Creature(Range::Reach),
+                targeting: Targeting::Creature(Range::Adjacent),
             },
             Self::FrostwebSpiderBite => {
                 let mut frostweb_spider_bite = StandardWeapon::MonsterBite.weapon().attack();
@@ -365,7 +365,7 @@ impl StandardAttack {
                 }.damage_effect()),
                 name: Attack::generate_modified_name("Dark Grasp", *rank, 3, Some(7)),
                 tags: None,
-                targeting: Targeting::Anything(Range::Reach),
+                targeting: Targeting::Anything(Range::Adjacent),
             }.attack(),
             Self::DarkMiasma(rank) => SimpleSpell {
                 accuracy: 0,
@@ -415,7 +415,7 @@ impl StandardAttack {
                 }.damage_effect()),
                 name: "Draining Grasp".to_string(),
                 tags: None,
-                targeting: Targeting::Creature(Range::Reach),
+                targeting: Targeting::Creature(Range::Adjacent),
             }.attack(),
             Self::DrainLife(rank) => SimpleSpell {
                 accuracy: 0,

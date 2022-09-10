@@ -319,16 +319,9 @@ Items are divided into five broad categories, described below.
         % Note: this is pretty simply 20% more damage. +1d is a little over 20% more *weapon* damage,
         % ignoring power, so 20% more damage is still better than +1d.
         \weapontagdef{Keen} You gain a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
-        \weapontagdef{Long}\label{Long Weapon} This weapon can be used to attack at double your natural \glossterm{reach} (so 10 feet for a typical Medium creature).
-        However, it cannot attack a creature within your natural reach.
+        \weapontagdef{Long}\label{Long Weapon} This weapon can be used to make melee \glossterm{strikes} against targets up to 10 feet away from you.
+        If you use an ability with more specific targets than simply making a melee strike, such as affecting ``all enemies adjacent to you'', this weapon tag does not increase your range with that ability.
         In addition, you can inflict \glossterm{critical hits} with melee \glossterm{strikes} using a Long weapon against creatures up to two size categories larger than you (see \pcref{Very Large Creatures}).
-
-        Long weapons can be held using a different grip to strike nearby foes.
-        This is called ``short hafting''.
-        While short hafting a Long weapon, you ignore the weapon's Long property.
-        You can change your grip as a \glossterm{free action} that requires the hand or hands used to hold the weapon.
-        As normal, you cannot combine that action with other actions using the same hands, so you cannot change your grip and attack with the weapon in the same phase.
-        However, you can change your grip during the \glossterm{movement phase} and then attack with your new grip during the \glossterm{action phase}.
         \weapontagdef{Mounted}\label{Mounted Weapon} If you are mounted, and your mount moves in the same phase that you make a \glossterm{strike} with a Mounted weapon, you gain a \plus2 \glossterm{accuracy} bonus with the strike.
         \weapontagdef{Parrying} If a creature attacks you with a \glossterm{melee} \glossterm{strike} while you wield this weapon, you \glossterm{briefly} gain a \plus2 bonus to \glossterm{accuracy} with strikes using this weapon against that creature.
         \weapontagdef{Projectile} This weapon fires ammunition at range to deal damage.
@@ -340,7 +333,8 @@ Items are divided into five broad categories, described below.
         \weapontagdef{Stealthy}
         A stealthy weapon is smaller, quieter, or otherwise less noticeable than most weapons.
         You only take a \minus5 penalty to Stealth when trying to conceal strikes with a stealthy weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
-        \weapontagdef{Sweeping}\label{Sweeping} When you make a \glossterm{melee} \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects within your \glossterm{reach} with that weapon.
+        \weapontagdef{Sweeping}\label{Sweeping} When you make a \glossterm{melee} \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects adjacent to you.
+        If the weapon also has the \weapontag{Long} weapon tag, each secondary target may instead be within 10 feet of you.
         Each secondary target must be within 10 feet of a primary target, and must not already be a target of the strike.
         The strike affects each secondary target in the same way as the primary targets.
         Sweeping weapons have a number that indicates the number of secondary targets you can affect.
@@ -587,8 +581,7 @@ Items are divided into five broad categories, described below.
         Your \glossterm{power} is halved for the purpose of this damage, and this damage is not doubled if you get a critical hit with the grapple or shove attack.
         If you would already deal damage with that ability from another source, such as with the \textit{wall slam} ability from the Savage feat, you instead gain a \plus1d bonus to that damage, and that damage becomes piercing damage in addition to its other types.
         Armor spikes cannot be imbued with magic weapon properties.
-        \parhead{Bladed Whip} A bladed whip has a 15 foot reach.
-        You can use a bladed whip against foes anywhere within your reach, including adjacent foes.
+        \parhead{Bladed Whip} A bladed whip can be used to attack targets within 15 feet instead of the normal 10 feet for a Long weapon.
         \parhead{Boot Dagger} A boot dagger is a modified boot or boot sole which contains a hidden dagger.
         The dagger is normally concealed, and requires an Awareness check with a \glossterm{difficulty value} of 15 to find.
         Attacking with a boot dagger does not require a \glossterm{free hand}, but you must make a Balance check with a \glossterm{difficulty value} of 10 during each phase that you attack with it.
@@ -615,8 +608,8 @@ Items are divided into five broad categories, described below.
         \par A netted creature can escape with a \glossterm{difficulty value} 10 Flexibility check (normally a standard action). The net has (2/10) and can be burst with a \glossterm{difficulty value} 10 Strength check as a standard action.
         \par A net is useful only against creatures within one size category of you.
         \par A net must be folded to be thrown effectively. The first time you throw your net in a fight, you make a normal ranged touch attack roll. After the net is unfolded, you take a \minus4 accuracy penalty with it. It takes 2 standard actions for a proficient user to fold a net and twice that many for a nonproficient one to do so.
-        \parhead{Pike} A pike's reach starts 5 feet away from your body, even when it is short hafted.
-        This allows it to reach foes 15 feet away from you while you are not short hafting it, but makes it impossible to attack an adjacent foe regardless of your grip.
+        \parhead{Pike} A pike can be used to attack targets within 15 feet instead of the normal 10 feet for a Long weapon.
+        However, you cannot use it to attack targets adjacent to you.
         \parhead{Punch/Kick} All bipedal creatures have access to the punch/kick \glossterm{natural weapon}.
         Normally, this represents a punch, which requires a \glossterm{free hand}.
         If you are trained in the Balance skill or have a Dexterity of at least 2, you can make it a kick, which does not require a free hand.
@@ -637,8 +630,7 @@ Items are divided into five broad categories, described below.
         \parhead{Talon} This weapon has the Versatile Grip tag, which may seem odd for an obviously one-handed weapon.
         The damage bonus from that tag represents attacking with talons on both feet at once, rather than grabbing one talon with both feet.
         If a creature only has a talon on a single foot, which is unusual, it cannot gain the benefit of the Versatile Grip tag.
-        \parhead{Whip} A whip has a 15 foot reach.
-        You can use a whip against foes anywhere within your reach, including adjacent foes.
+        \parhead{Whip} A whip can be used to attack targets within 15 feet instead of the normal 10 feet for a Long weapon.
 
     \subsection{Special Materials}\label{Special Materials}
         Nonmagical weapons can be made from special materials that can alter the properties of the item.

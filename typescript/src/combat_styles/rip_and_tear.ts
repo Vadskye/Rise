@@ -201,7 +201,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon.
-        The strike targets any number of \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
+        The strike targets any number of \\glossterm{enemies} adjacent to you.
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 1,
@@ -212,7 +212,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon.
-        The strike targets any number of \\glossterm{enemies} within your \\glossterm{reach} with that weapon.
+        The strike targets any number of \\glossterm{enemies} adjacent to you.
       `,
       rank: 5,
     },

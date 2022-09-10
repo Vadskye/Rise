@@ -87,7 +87,7 @@ def generate_weapons():
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
                 The strike also affects one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
                 This effect triggers even if the primary target was an inanimate object, like the ground.
-                The secondary target does not have to be within your \\glossterm<reach>.
+                The secondary target does not have to be adjacent to you.
             """,
             short_description="Deals electicity damage and can arc 15 feet",
             upgrades=[
@@ -97,7 +97,7 @@ def generate_weapons():
                         You do not have to make a special attack to hit extra creatures with the weapon.
                         Whenever you make a strike, the strike can also affect one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
                         This effect triggers even if the primary target was an inanimate object, like the ground.
-                        The secondary target does not have to be within your \\glossterm<reach>.
+                        The secondary target does not have to be adjacent to you.
                     """,
                     short_description="Deals electricity damage and arcs 15 feet",
                 ),
@@ -706,7 +706,7 @@ def generate_weapons():
             rank=5,
             tags=[],
             description="""
-                Each creature that is within your \\glossterm<reach> with this weapon and adjacent to one of your \\glossterm<allies> takes a -1 penalty to Armor and Reflex defenses.
+                Each creature that is adjacent to both you and one of your \\glossterm<allies> takes a -1 penalty to Armor and Reflex defenses.
             """,
             short_description="Imposes -1 defense penalty with ally's help",
         ),
