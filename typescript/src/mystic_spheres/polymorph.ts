@@ -683,9 +683,6 @@ export const polymorph: MysticSphere = {
         You gain a +10 foot \\glossterm{magic bonus} to your \\glossterm{land speed}.
       `,
       rank: 4,
-      scaling: {
-        6: `The bonus increases to +15 feet.`,
-      },
       type: 'Attune',
     },
 

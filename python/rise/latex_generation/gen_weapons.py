@@ -409,13 +409,6 @@ def generate_weapons():
             short_description="Grants +10 speed, maybe +1 accuracy on kill",
             upgrades=[
                 Upgrade(
-                    rank=3,
-                    description="""
-                        The speed bonus increases to +15 feet, and the accuracy bonus increases to +2.
-                    """,
-                    short_description="Grants +15 speed, maybe +2 accuracy on kill",
-                ),
-                Upgrade(
                     rank=5,
                     description="""
                         The speed bonus increases to +20 feet, and the accuracy bonus increases to +3.

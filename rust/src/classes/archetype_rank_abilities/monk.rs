@@ -266,7 +266,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{3} You can also ignore \glossterm{difficult terrain} this phase.
-                        \rank{5} The speed bonus increases to \plus15 feet.
+                        \rank{5} The speed bonus increases to \plus20 feet.
                         \rank{7} You can also move or stand on liquids as if they were solid this phase.
                     \end{activeability}
 
@@ -550,16 +550,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus10 foot bonus to your land speed while you have no \glossterm{encumbrance}.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
-        },
-        RankAbility {
-            name: "Unhindered Movement+",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                The speed bonus increases to \plus15 feet.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+            modifiers: Some(vec![Modifier::MovementSpeed(10)]),
         },
         RankAbility {
             name: "Unhindered Movement+",
@@ -568,7 +559,17 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The speed bonus increases to \plus20 feet.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+            modifiers: Some(vec![Modifier::MovementSpeed(10)]),
+        },
+        RankAbility {
+            name: "Unhindered Agility",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You gain a \plus3 bonus to your Reflex defense while you have no \glossterm{encumbrance}.
+            ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 3)]),
+                
         },
         RankAbility {
             name: "Perfect Precision",
