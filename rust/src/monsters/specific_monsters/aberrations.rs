@@ -98,7 +98,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         ]),
         movement_modes: None,
         name: "Aboleth".to_string(),
-        senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
+        senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(480)]),
         size: Size::Huge,
         trained_skills: Some(vec![
             Skill::Awareness,
@@ -131,7 +131,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         ]),
         movement_modes: None,
         name: "Gibbering Mouther".to_string(),
-        senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(900)]),
+        senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(480)]),
         size: Size::Huge,
         trained_skills: Some(vec![
             Skill::Endurance,
