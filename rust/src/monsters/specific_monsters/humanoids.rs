@@ -267,8 +267,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                 knowledge: None,
                 level: 1,
                 modifiers: None,
-                // Medium armor
-                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Special(-5))]),
+                movement_modes: None,
                 name: "Town Guard".to_string(),
                 senses: None,
                 size: Size::Medium,
@@ -285,7 +284,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: Some(vec![Modifier::Attack(
                     StandardAttack::DivineJudgment(1).attack(),
                 )]),
-                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Special(-5))]),
+                movement_modes: None,
                 name: "Cleric of the Peace".to_string(),
                 senses: None,
                 size: Size::Medium,
