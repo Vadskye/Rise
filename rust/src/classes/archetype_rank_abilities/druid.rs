@@ -497,9 +497,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category} (see \pcref{Size Categories}).
                             If you increase your size, you are slightly clumsy in your new size, and you take a -10 foot penalty to your speed with all of your \glossterm{movement modes}.
                         \rank{5} You can use the \textit{disguise creature} ability to disguise yourself as a \glossterm{standard action} (see \pcref{Disguise Creature}).
-                            In addition, the speed penalty for increasing your size is reduced to -5 feet.
                         \rank{7} When you use this wild aspect, you can choose to grow or shrink by up to two \glossterm{size categories} instead of only one.
-                            If you increase your size by two size categories, the speed penalty increases to -10 feet.
                     \end{activeability}
 
                     \begin{activeability}{Photosynthesis}
@@ -682,7 +680,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         It has a bite \glossterm{natural weapon}.
                     \item Plains: A wolf appears that has the \trait{scent} ability.
                         It has a bite \glossterm{natural weapon}.
-                    \item Swamp: A crocodile appears that has a 15 foot \glossterm{land speed} and a 25 foot \glossterm{swim speed}.
+                    \item Swamp: A crocodile appears that has a 20 foot \glossterm{land speed} and a 30 foot \glossterm{swim speed}.
                         It has a bite \glossterm{natural weapon}.
                     \item Underground: A dire rat appears that has \trait{low-light vision}.
                         It has a bite \glossterm{natural weapon}.

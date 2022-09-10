@@ -1520,16 +1520,6 @@ def generate_apparel():
             """,
             short_description="Increases your size",
         ),
-        create_apparel(
-            name="Enlarging Belt, Greater",
-            rank=6,
-            material_type="Belt",
-            tags=[],
-            description="""
-                This belt functions like an \\mitem<enlarging belt>, except that the movement speed penalty is reduced to -5.
-            """,
-            short_description="Increases your size and speed",
-        ),
     ]
 
     apparel += [

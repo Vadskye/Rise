@@ -561,25 +561,14 @@ def generate_armor():
     armor += [
         create_armor(
             name="Swiftstep Armor",
-            rank=3,
+            rank=5,
             tags=[],
             material_type="Body armor",
             description="""
-                The penalty to your speed from this armor is reduced by 5 feet.
+                This armor does not penalize your movement speed.
                 If the armor does not reduce your speed, this has no effect.
             """,
-            short_description="Reduces armor speed penalty by 5 feet",
-        ),
-        create_armor(
-            name="Swiftstep Armor, Greater",
-            rank=6,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                The penalty to your speed from this armor is reduced by 10 feet.
-                If the armor does not reduce your speed, this has no effect.
-            """,
-            short_description="Reduces armor speed penalty by 10 feet",
+            short_description="Removes armor speed penalty",
         ),
     ]
 

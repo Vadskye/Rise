@@ -278,7 +278,7 @@ impl Armor {
                 encumbrance: 3,
                 item_rank: 1,
                 name: "hide armor".to_string(),
-                speed_modifier: -5,
+                speed_modifier: 0,
             },
             Self::ScaleMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
@@ -288,17 +288,17 @@ impl Armor {
                 encumbrance: 5,
                 item_rank: 1,
                 name: "scale mail".to_string(),
-                speed_modifier: -5,
+                speed_modifier: 0,
             },
             Self::Breastplate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(5, m),
+                damage_resistance: calc_dr(6, m),
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
                 item_rank: 1,
                 name: "breastplate".to_string(),
-                speed_modifier: -5,
+                speed_modifier: 0,
             },
             Self::StandardShield => ArmorDefinition {
                 accuracy_modifier: 0,
@@ -314,7 +314,7 @@ impl Armor {
             // Heavy armor
             Self::LayeredHide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(6, m),
+                damage_resistance: calc_dr(8, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 5,
@@ -324,7 +324,7 @@ impl Armor {
             },
             Self::PlatedMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(8, m),
+                damage_resistance: calc_dr(10, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 6,
@@ -334,7 +334,7 @@ impl Armor {
             },
             Self::FullPlate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(10, m),
+                damage_resistance: calc_dr(12, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 6,
