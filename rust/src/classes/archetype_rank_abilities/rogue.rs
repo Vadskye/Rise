@@ -192,18 +192,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 However, targets do not stop being affected by your performance simply by travelling beyond the initial range of the bardic performance ability.
                 Using a bardic performance ability with an immediate effect does not interfere with your ability to sustain other bardic performance abilities.
                 {
-                    \begin{sustainability}{Aria of Alacrity}{\abilitytag{Auditory}, \abilitytag{Sustain} (minor)}
-                        \par \noindent Usage time: One \glossterm{minor action}.
-                        \rankline
-                        Choose one \glossterm{ally} within \medrange.
-                        For the duration of your performance, the target gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes}.
-
-                        \rankline
-                        \rank{3} The target also gains a \plus2 bonus to its Reflex defense.
-                        \rank{5} The speed bonus increases to \plus10 feet.
-                        \rank{7} The bonus to Reflex defense increases to \plus4.
-                    \end{sustainability}
-
                     % Bardic performance power guidelines:
                     % These generally start from the same rank 1 baseline effect as spells.
                     % Since there are no higher rank bardic performances, they need more aggressive rank scalings to ensure

@@ -1550,7 +1550,7 @@ impl Class {
                         In addition, you add the Knowledge (nature), Survival, and Swim skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
-                        \parhead{Aspect} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
+                        \parhead{Aspect} You can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
                         \parhead{Essence} You can use the \textit{dimensional travel} ability as a standard action.
                         \begin{activeability}{Dimensional Travel}
                             \rankline

@@ -524,8 +524,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Climb skill.
 
-        \ff[3]{Climb Speed} You gain a \glossterm{climb speed} equal to the \glossterm{base speed} for your size.
-        If you already have a climb speed, you gain a \plus5 foot bonus to your climb speed.
+        \ff[3]{Climb Speed} You gain a \glossterm{climb speed} 10 feet slower than the \glossterm{base speed} for your size.
+        If you already have a climb speed, you gain a \plus10 foot bonus to your climb speed.
         A successful Climb check to move allows you to travel a distance equal to your climb speed.
 
         \ff[6]{Creature Climber} You can use the \textit{creature climb} ability against creatures one or more size categories larger than you instead of two (see \pcref{Creature Climb}).
@@ -533,13 +533,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus5.
 
-        \ff[12]{Rapid Climber} You gain a \plus5 foot bonus to your climb speed.
+        \ff[12]{Freehand Climb} You only need one \glossterm{free hand} to move while climbing.
 
         \ff[15]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus7.
 
         \ff[18]{Greater Creature Climber} You can use the \textit{creature climb} ability against creatures of the same size category as you or larger.
 
-        \ff[21]{Greater Rapid Climber} The speed bonus from your \textit{rapid climber} ability increases to \plus15 feet.
+        \ff[21]{Rapid Climber} You gain a \plus10 foot bonus to your climb speed.
     \end{feat}
 
     \begin{feat}{Combat Style Versatility}{Combat}
@@ -2113,7 +2113,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Swim Familiarity} You gain a \plus2 bonus to the Swim skill.
-        In addition, if you have a swim speed, you gain a \plus5 foot bonus to your swim speed.
+        In addition, if you have a swim speed, you gain a \plus10 foot \glossterm{magic bonus} to your swim speed.
         Otherwise, you reduce your penalties for \swimming by 2.
 
         \ff[6]{Slippery Escapist} You gain a \plus2 bonus to the Flexibility skill.
@@ -2123,7 +2123,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Aquamancy} \glossterm{mystic sphere}.
 
         \ff[12]{Greater Swim Familiarity} The Swim bonus from your \textit{swim familiarity} ability increases to \plus4.
-        In addition, the speed bonus from that ability increases to \plus10 feet, and the penalty reduction increases to \minus4.
+        In addition, the speed bonus from that ability increases to \plus20 feet, and the penalty reduction increases to \minus4.
 
         \ff[15]{Spell} You learn a spell from the \sphere{Aquamancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
@@ -2221,10 +2221,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Spell} You learn a spell from the \sphere{Chronomancy} \glossterm{mystic sphere}.
         When you gain access to new spell ranks, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Accelerated Movement} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
+        \ff[3]{Accelerated Reaction} You gain a \plus2 bonus to your Reflex defense.
 
         \ff[6]{Accelerated Mind} You can perform primarily mental tasks more quickly as normal.
-        Actions that would normally take a \glossterm{standard action} instead take a \glossterm{minor action}.
+        \glossterm{Mundane} mental actions that would normally take a \glossterm{standard action} instead take a \glossterm{minor action}.
         Long-term activities can be done twice as quickly as normal.
         This includes reading books, searching areas, and other similar activities.
         It does not affect spellcasting, performing rituals, or other similar magical abilities.
@@ -2232,15 +2232,17 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[9]{Personal Chronomancy} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Chronomancy} \glossterm{mystic sphere}.
 
-        \ff[12]{Greater Accelerated Movement} The speed bonus from your \textit{accelerated movement} ability increases to \plus10 feet.
+        \ff[12]{Accelerated Movement} You gain a \plus10 foot bonus to your speed with all of your \glossterm{movement modes}.
 
         \ff[15]{Spell} You learn a spell from the \sphere{Chronomancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[18]{Greater Accelerated Mind} You can perform \glossterm{mundane} mental tasks that would normally take \glossterm{standard actions} as \glossterm{minor actions}.
-        In addition, the speed increase for long-term tasks from your \textit{accelerated mind} ability increases to five times normal speed.
+        \ff[18]{Greater Accelerated Reaction} The defense bonus from your \textit{accelerated reaction} ability increases to \plus4.
 
-        \ff[21]{Supreme Accelerated Movement} The speed bonus from your \textit{accelerated movement} ability increases to \plus15 feet.
+        \ff[21]{Greater Accelerated Mind} Once per round, you can perform a purely mental action that would normally require a \glossterm{minor action} as a \glossterm{free action}.
+        This can be used to sustain spells or perform other magical feats.
+        However, you cannot take the same minor action twice in the same round.
+        In addition, the speed increase for long-term tasks from your \textit{accelerated mind} ability increases to five times normal speed.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Cryomancy}{Casting, Magical}
@@ -2264,11 +2266,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[15]{Spell} You learn a spell from the \sphere{Cryomancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[18]{Greater Icy Carapace} The number of bonus layers you gain from your \textit{icy carapace} ability increases to two.
+        \ff[18]{Cold Immunity} You are \trait{immune} to cold damage.
 
-        \ff[21]{Cold Immunity} You are \trait{immune} to cold damage.
+        \ff[18]{Supreme Frozen Blood} You are immune to being \slowed and \immobilized.
 
-        \ff[21]{Supreme Frozen Blood} You are immune to being \slowed and \immobilized.
+        \ff[21]{Greater Icy Carapace} The number of bonus layers you gain from your \textit{icy carapace} ability increases to two.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Electromancy}{Casting, Magical}
@@ -2279,23 +2281,24 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[3]{Electricity Tolerance} You are \trait{impervious} to electricity damage.
 
-        \ff[3]{Energetic Rush} You gain a \plus5 foot bonus to your land speed.
+        \ff[3]{Static Buildup} Whenever you use the \ability{sprint} ability, you gain a \plus1 accuracy bonus with your next spell from the \sphere{Electromancy} mystic sphere.
+        This bonus disappears if not used before the end of the next round.
 
         \ff[6]{Magnetic Attraction} You gain a \plus1 \glossterm{accuracy} bonus against any creature that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
         \ff[9]{Personal Electromancy} You gain an additional \glossterm{attunement point}.
         You can only use this attunement point to \glossterm{attune} to spells and rituals from the \sphere{Electromancy} \glossterm{mystic sphere}.
 
-        \ff[12]{Greater Energetic Rush} The bonus from your \textit{energetic rush} ability increases to \plus10 feet.
+        \ff[12]{Energetic Rush} You gain a \plus10 foot bonus to your land speed.
 
         \ff[15]{Spell} You learn a spell from the \sphere{Electromancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that mystic sphere.
 
-        \ff[18]{Greater Magnetic Attraction} The bonus from your \textit{magnetic attraction} ability increases to \plus2.
+        \ff[18]{Electricity Immunity} You are \trait{immune} to electricity damage.
 
-        \ff[21]{Electricity Immunity} You are \trait{immune} to electricity damage.
+        \ff[18]{Greater Static Buildup} The bonus from your \textit{static buildup} ability increases to \plus2.
 
-        \ff[21]{Supreme Energetic Rush} The bonus from your \textit{energetic rush} ability increases to \plus15 feet.
+        \ff[21]{Greater Magnetic Attraction} The bonus from your \textit{magnetic attraction} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Enchantment}{Casting, Magical}
@@ -2812,24 +2815,24 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Swiftrunner}{General}
         \featpre Dexterity 1.
 
-        \ff[1]{Rapid Movement} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
-
-        \ff[3]{Sprinter} When you use the \textit{sprint} ability, you can move up to triple your movement speed.
+        \ff[1]{Sprinter} When you use the \textit{sprint} ability, you can move up to triple your movement speed.
         In addition, you gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
 
-        \ff[6]{Wall Runner} You gain a \plus5 bonus to checks with the \textit{wallrun} ability (see \pcref{Wallrun}).
+        \ff[3]{Wall Runner} You gain a \plus5 bonus to checks with the \textit{wallrun} ability (see \pcref{Wallrun}).
         This bonus increases to \plus10 while you are affected by the \textit{sprint} ability.
 
-        \ff[9]{Water Runner} During your movement with the \textit{sprint} ability, you can move on water and similar liquids as if they were solid ground.
+        \ff[6]{Water Runner} During your movement with the \textit{sprint} ability, you can move on water and similar liquids as if they were solid ground.
 
-        \ff[12]{Greater Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus10 feet.
+        \ff[9]{Rapid Movement} You gain a \plus10 foot bonus to your land speed.
 
-        \ff[15]{Greater Sprinter} When you use the \textit{sprint} ability, you can move up to four times your movement speed.
+        \ff[12]{Greater Sprinter} When you use the \textit{sprint} ability, you can move up to four times your movement speed.
         In addition, the bonus to your \glossterm{fatigue tolerance} from your \textit{sprinter} ability increases to \plus2.
+
+        \ff[15]{Greater Wall Runner} You can move at full speed while wallrunning vertically, instead of at only half speed.
 
         \ff[18]{Cloud Runner} During your movement with the \textit{sprint} ability, you can move on dense fog and similar gaseous substances as if they were solid ground.
 
-        \ff[21]{Supreme Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus15 feet.
+        \ff[21]{Greater Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus20 feet.
     \end{feat}
 
     \begin{feat}{Swim Specialization}{Skill}
@@ -2837,7 +2840,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Swim skill.
 
-        \ff[3]{Swim Speed} You gain a \glossterm{swim speed} equal to the \glossterm{base speed} for your size.
+        \ff[3]{Swim Speed} You gain a \glossterm{swim speed} 10 feet slower than the \glossterm{base speed} for your size.
         If you already have a swim speed, you gain a \plus10 foot bonus to your swim speed.
         A successful Swim check to move allows you to move a distance equal to your swim speed.
 
@@ -2857,7 +2860,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[18]{Rapid Swimmer} You gain a \plus10 foot bonus to your swim speed.
 
-        \ff[21]{Greater Earth Swimmer} Your swim speed in earth increases to be equal to the \glossterm{base speed} for your size.
+        \ff[21]{Greater Earth Swimmer} Your swim speed in earth increases to be 10 feet slower than the \glossterm{base speed} for your size.
         In addition, you reduce your penalties for swimming in earth by 2.
     \end{feat}
 
@@ -3076,29 +3079,28 @@ Feats also make the system more mechanically complex, so they are not necessaril
             The strike targets any number of creatures adjacent to you at any point during your movement.
 
             \rankline
-            \featlevel{6} You gain a \plus2 damage bonus with the strike.
-            \featlevel{12} The damage bonus increases to \plus4.
-            \featlevel{18} The damage bonus increases to \plus8.
+            \featlevel{6} You gain a \plus1 accuracy bonus with the strike.
+            \featlevel{12} The accuracy bonus increases to \plus2.
+            \featlevel{18} The accuracy bonus increases to \plus3.
         \end{sustainability}
 
         \ff[3]{Unfettered Movement} During each phase, you may move through one creature's space during movement.
-        You treat its space as \glossterm{difficult terrain}.
         After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
         Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
         If you end your movement in a creature's space with this ability, you and that creature are \squeezing if you are no more than one size category larger or smaller than it.
 
-        \ff[6]{Windrush} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
-
-        \ff[9]{Eye of the Storm} You reduce your penalties for \squeezing with other creatures by 1, and your movement speed is not reduced while squeezing with other creatures.
+        \ff[6]{Storm Dancer} You reduce your penalties for \squeezing with other creatures by 1, and your movement speed is not reduced while squeezing with other creatures.
         This does not reduce your penalties for squeezing in tight spaces.
 
-        \ff[12]{Greater Unfettered Movement} Using your \textit{unfettered movement} ability does not cause you to treat spaces occupied by creatures as difficult terrain.
+        \ff[9]{Eye of the Storm} You gain a \plus1 bonus to your Armor defense while you are adjacent to at least two other creatures.
 
-        \ff[15]{Greater Windrush} The bonus from your \textit{windrush} ability increases to \plus10 feet.
+        \ff[12]{Greater Storm Dancer} You take no penalties for squeezing with other creatures.
 
-        \ff[18]{Greater Eye of the Storm} You take no penalties for squeezing with other creatures.
+        \ff[15]{Greater Unfettered Movement} You can move through spaces occupied by enemies as if they were unoccupied.
 
-        \ff[21]{Supreme Unfettered Movement} You may move through any number of creatures with your \textit{unfettered movement} ability.
+        \ff[18]{Greater Eye of the Storm} The Armor defense bonus from your \textit{eye of the storm} ability increases to \plus2.
+
+        \ff[21]{Greater Cyclone} Your \glossterm{power} is not halved with the strike from your \ability{cyclone} ability.
     \end{feat}
 
 \section{Other Feat Rules}
