@@ -138,11 +138,18 @@ impl Targeting {
         );
 
         let main_attack = match self {
-            Self::Anything(range) => format!(
-                "{standard_attack_against} anything within {range}.",
-                standard_attack_against = standard_attack_against,
-                range = range
-            ),
+            Self::Anything(range) => if matches!(range, Range::Adjacent) {
+                format!(
+                    "{standard_attack_against} anything adjacent.",
+                    standard_attack_against = standard_attack_against,
+                )
+            } else {
+                format!(
+                    "{standard_attack_against} anything within {range}.",
+                    standard_attack_against = standard_attack_against,
+                    range = range
+                )
+            },
             Self::CausedDamage(size) => format!(
                 "At the end of each phase, the $name makes a {accuracy} attack vs. {defense} against each \\glossterm<enemy> within a {size} radius \\glossterm<emanation> of it that dealt damage to it during that phase.",
                 accuracy = accuracy,
@@ -155,11 +162,18 @@ impl Targeting {
                 size = size,
                 defense = defense,
             ),
-            Self::Creature(range) => format!(
-                "{standard_attack_against} one creature within {range}.",
-                standard_attack_against = standard_attack_against,
-                range = range
-            ),
+            Self::Creature(range) => if matches!(range, Range::Adjacent) {
+                format!(
+                    "{standard_attack_against} one adjacent creature.",
+                    standard_attack_against = standard_attack_against,
+                )
+            } else {
+                format!(
+                    "{standard_attack_against} one creature within {range}.",
+                    standard_attack_against = standard_attack_against,
+                    range = range
+                )
+            },
             Self::Cone(area_size, area_targets) => format!(
                 "{standard_attack_against} {targets} in a {size} cone.",
                 standard_attack_against = standard_attack_against,
