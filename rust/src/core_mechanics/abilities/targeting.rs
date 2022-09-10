@@ -240,7 +240,7 @@ impl Targeting {
 
 #[derive(Clone)]
 pub enum Range {
-    Reach,
+    Adjacent,
     Short,
     Medium,
     Long,
@@ -252,11 +252,12 @@ pub enum Range {
 impl Range {
     pub fn minimum_rank(&self) -> i32 {
         match self {
-            Self::Reach => -1,
+            Self::Adjacent => -1,
             Self::Short => 0,
             Self::Medium => 1,
             Self::Long => 2,
             Self::Distant => 3,
+            Self::Extreme => 3,
             // TODO: calculate rank based on number of feet
             Self::Custom(_) => 5,
         }
@@ -264,11 +265,12 @@ impl Range {
 
     fn latex_tag(&self) -> String {
         match self {
-            Self::Reach => "\\glossterm{reach}".to_string(),
+            Self::Adjacent => "Adjacent".to_string(),
             Self::Short => "\\shortrange".to_string(),
             Self::Medium => "\\medrange".to_string(),
             Self::Long => "\\longrange".to_string(),
             Self::Distant => "\\distrange".to_string(),
+            Self::Extreme => "\\extrange".to_string(),
             Self::Custom(feet) => format!("{} ft.", feet),
         }
     }
