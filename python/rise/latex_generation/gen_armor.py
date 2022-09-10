@@ -394,36 +394,36 @@ def generate_armor():
     armor += [
         create_armor(
             name="Stonebody Armor",
-            rank=2,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
-                However, you take a -5 foot penalty to your \\glossterm<movement speed> with all movement modes.
-            """,
-            short_description="Grants +4 hit points and damage resistance, but -5 speed",
-        ),
-        create_armor(
-            name="Stonebody Armor, Greater",
-            rank=4,
+            rank=3,
             tags=[],
             material_type="Body armor",
             description="""
                 You gain a +8 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
-                However, you take a -5 foot penalty to your \\glossterm<movement speed> with all movement modes.
+                However, you take a -10 foot penalty to your \\glossterm<movement speed> with all movement modes.
             """,
-            short_description="Grants +8 hit points and damage resistance, but -5 speed",
+            short_description="Grants +8 hit points and damage resistance, but -10 speed",
         ),
         create_armor(
-            name="Stonebody Armor, Supreme",
-            rank=6,
+            name="Stonebody Armor, Greater",
+            rank=5,
             tags=[],
             material_type="Body armor",
             description="""
                 You gain a +16 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
-                However, you take a -5 foot penalty to your \\glossterm<movement speed> with all movement modes.
+                However, you take a -10 foot penalty to your \\glossterm<movement speed> with all movement modes.
             """,
-            short_description="Grants +16 hit points and damage resistance, but -5 speed",
+            short_description="Grants +16 hit points and damage resistance, but -10 speed",
+        ),
+        create_armor(
+            name="Stonebody Armor, Supreme",
+            rank=7,
+            tags=[],
+            material_type="Body armor",
+            description="""
+                You gain a +32 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
+                However, you take a -10 foot penalty to your \\glossterm<movement speed> with all movement modes.
+            """,
+            short_description="Grants +32 hit points and damage resistance, but -10 speed",
         ),
     ]
 

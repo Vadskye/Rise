@@ -167,18 +167,17 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from all sources except for creature abilities.
+                You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
                 In addition, any group you are part of can travel at full speed through difficult terrain during overland travel.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Swift Guide",
+            name: "Experienced Guide+",
             is_magical: false,
             rank: 5,
             description: r"
-                You and your \glossterm{allies} who can see or hear you gain a \plus5 foot bonus to land speed.
-                This does not affect any other movement modes.
+                You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from all sources, including spells and special abilities from enemies.
             ",
             modifiers: None,
         },
@@ -422,42 +421,25 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
 pub fn scout<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Skirmisher",
+            name: "Keen Vision",
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
-                In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
-        },
-        RankAbility {
-            name: "Skirmisher+",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                The speed bonus increases to \plus10 feet.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
-        },
-        RankAbility {
-            name: "Skirmisher+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The speed bonus increases to \plus15 feet.
-                In addition, the longshot penalty reduction increases to 2.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
-        },
-        RankAbility {
-            name: "Keen Vision",
-            is_magical: false,
-            rank: 2,
-            description: r"
+                You reduce your \glossterm{longshot penalty} by 1.
                 You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                 In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
                 If you already have that ability, you increase its range by 60 feet.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Keen Vision+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The longshot penalty reduction increases to 2.
+                In addition, the range of your darkvision increases by 120 feet.
+                Your darkvision is also not disabled in \glossterm{bright illumination} or when you become \dazzled.
             ",
             modifiers: None,
         },
@@ -495,12 +477,21 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Blindsight+",
             is_magical: false,
-            rank: 6,
+            rank: 7,
             description: r"
-                The range of your blindsense increases by 120 feet.
-                In addition, the range of your blindsight increases by 30 feet.
+                The range of your blindsense increases by 240 feet.
+                In addition, the range of your blindsight increases by 60 feet.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Skirmisher",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You gain a \plus10 foot bonus to your land speed.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(10)]),
         },
     ];
 }
