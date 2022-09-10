@@ -184,10 +184,6 @@ export const telekinesis: MysticSphere = {
         Each time you reload a crossbow in this way, you \\glossterm{briefly} cannot do so again.
       `,
       rank: 3,
-      scaling: {
-        5: `Reloading a crossbow in this way does not prevent you from reloading it again.`,
-        7: `You can reload as a \\glossterm{free action} instead of as a minor action. However, you can only reload with this spell once per round.`,
-      },
       type: "Attune",
     },
 
@@ -338,11 +334,11 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         % TODO: Wording
-        As long as you remain within 50 feet above a surface that could support your weight, you float in midair, unaffected by gravity.
+        As long as you remain within 30 feet above a surface that could support your weight, you float in midair, unaffected by gravity.
         During the movement phase, you can move yourself up to ten feet in any direction as a \\glossterm{move action}.
       `,
       rank: 4,
-      scaling: { 6: `The maximum height above the surface increases to 100 feet.` },
+      scaling: { 6: `The maximum height above the surface increases to 60 feet.` },
       type: "Attune",
     },
 
@@ -450,19 +446,6 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Mighty Mind Arrow",
-
-      functionsLike: {
-        name: 'mind arrow',
-        exceptThat: 'you gain a +1d bonus to damage with the strike.',
-      },
-      rank: 4,
-      scaling: {
-        6: `The damage bonus increases to +2d.`,
-      },
-    },
-
-    {
       name: "Reactive Deflection",
 
       effect: `
@@ -484,9 +467,6 @@ export const telekinesis: MysticSphere = {
         You still suffer the normal penalties if you are not proficient with it.
       `,
       rank: 4,
-      scaling: {
-        6: "You are considered to be proficient with the shield.",
-      },
       tags: [],
       type: "Attune (deep)",
     },

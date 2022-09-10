@@ -125,26 +125,18 @@ export const terramancy: MysticSphere = {
       name: "Earthcraft",
 
       effect: `
-        You create up to three weapons, suits of body armor, or shields from a body of earth or stone within 5 feet of you.
-        You can create any weapon, shield, or body armor that you are proficient with, and which could normally be made entirely from metal, except for heavy armor.
+        This spell creates one or two weapons, suits of body armor, or shields from a body of earth or stone within 5 feet of you.
         The body targeted must be at least as large as the largest item you create.
+        You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made of metal.
+        It is sized appropriately for you, up to a maximum of a Medium size item.
+        The items appear in your hand or on the ground at your feet.
+
+        If you create body armor or a weapon, it can be created from any special material other than cold iron.
+        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
 
         An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       rank: 1,
-      scaling: {
-        3: `
-          If you create body armor or a weapon, it can be created from special materials other than cold iron.
-          The item's rank still cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
-        `,
-        5: `
-          You can also create heavy armor.
-        `,
-        7: `
-          This spell loses the \\abilitytag{Attune} tag.
-          Instead, it lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
-        `,
-      },
       type: "Attune",
     },
 
@@ -200,12 +192,6 @@ export const terramancy: MysticSphere = {
         When you are forcibly expelled from the stone, you take 4d8 bludgeoning damage and become \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
-      scaling: {
-        5: `Exiting the stone does not cause this spell to end.
-            You can repeatedly exit and re-enter the stone as long as you maintain attunement to the spell.`,
-        7: `You can leave tiny tunnels carrying air through the stone as you move through it, allowing you to effectively breathe within the stone.
-            These trails disappear when this spell ends.`,
-      },
       type: "Attune",
     },
 
@@ -381,7 +367,7 @@ export const terramancy: MysticSphere = {
         This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
       `,
       rank: 5,
-      scaling: { 7: `Your speed increases to be equal to half the \\glossterm{base speed} for your size.` },
+      scaling: { 7: `Your speed increases to be equal to 10 feet less than the \\glossterm{base speed} for your size.` },
       type: "Attune",
     },
 
@@ -410,15 +396,10 @@ export const terramancy: MysticSphere = {
       name: "Earthen Anchor",
 
       effect: `
-        You are immune to \\glossterm{knockback} or \\glossterm{push} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
-        This does not make you immune to \\glossterm{teleportation}, and does not affect movement effects used by your \\glossterm{allies}.
+        You are immune to \\glossterm{knockback}, \\glossterm{push}, and \\glossterm{teleport} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
+        This does not affect movement effects used by your \\glossterm{allies}.
       `,
       rank: 1,
-      scaling: {
-        3: `You are also immune to \\glossterm{teleport} effects from attacks that are not critical hits.`,
-        5: `You are immune to knockback and push effects from all attacks, including critical hits.`,
-        7: `You are immune to teleport effects from all attacks, including critical hits.`,
-      },
       type: "Attune",
     },
 
@@ -431,10 +412,6 @@ export const terramancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
-      scaling: {
-        5: "Each target is also immune to \\glossterm{teleport} effects from attacks that are not critical hits.",
-        7: `Each target is immune to knockback and push effects from all attacks, including critical hits.`,
-      },
       type: "Attune (target)",
     },
 
@@ -527,10 +504,6 @@ export const terramancy: MysticSphere = {
       narrative: `
         You encase one of your arms in a mighty stone bulkward, empowering it to crush your foes with sheer brute force.
       `,
-      scaling: {
-        4: `The knockback distance from the Forceful effect increases by 10 feet.`,
-        6: `You are considered one size category larger than normal for the purpose of determining the Forceful effect.`,
-      },
       tags: ["Manifestation"],
       type: "Attune",
     },

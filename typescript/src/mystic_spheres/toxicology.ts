@@ -551,7 +551,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: `The target can remove two effects.`,
+        6: `The target can remove two conditions.`,
       },
     },
     {

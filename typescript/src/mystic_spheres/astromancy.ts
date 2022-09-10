@@ -361,9 +361,6 @@ export const astromancy: MysticSphere = {
         Will they ever learn?
       `,
       rank: 5,
-      scaling: {
-        7: "You can choose the direction of the teleportation.",
-      },
       type: "Attune",
     },
     {
@@ -379,9 +376,6 @@ export const astromancy: MysticSphere = {
         Why would you walk when you can teleport?
       `,
       rank: 4,
-      scaling: {
-        6: "You can teleport in this way any number of times each round, allowing you to break up your teleportation between movements.",
-      },
       type: "Attune",
     },
     {
@@ -438,13 +432,6 @@ export const astromancy: MysticSphere = {
         Armor and shields can offer some protection, but true defensive mastery comes from not being hit at all.
         Few people send themselves to another plane just to avoid danger, but it's a virtually unbeatable defense.
       `,
-      scaling: {
-        5: `
-          When you disappear, you can choose where you reappear.
-          You can choose any unoccupied location within \\rngshort range from the location where you disappeared.
-        `,
-        7: "The distance you can reappear at increases to \\rngmed range.",
-      },
       type: "Attune",
     },
     {
@@ -564,11 +551,6 @@ export const astromancy: MysticSphere = {
         You augment your body with the ability to travel short distances through the Astral Plane to reach your destination.
       `,
       rank: 1,
-      scaling: {
-        3: "You can move through any number of creatures rather than only one.",
-        5: "You also ignore all sources of \\glossterm{difficult terrain}.",
-        7: "You can also move through inanimate objects that are no more than six inches thick.",
-      },
       type: "Attune",
     },
     {
@@ -582,10 +564,6 @@ export const astromancy: MysticSphere = {
         You augment the bodies of your allies with the ability to travel short distances through the Astral Plane to reach their destinations.
       `,
       rank: 3,
-      scaling: {
-        5: "Each target can move through any number of creatures rather than only one.",
-        7: "Each target can also ignore all sources of \\glossterm{difficult terrain}.",
-      },
       type: "Attune (target)",
     },
 

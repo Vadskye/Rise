@@ -239,10 +239,6 @@ export const electromancy: MysticSphere = {
         Metal weapons you wield gain a +1 bonus to \\glossterm{accuracy} against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
       `,
       rank: 3,
-      scaling: {
-        5: `The accuracy bonus increases to +2.`,
-        7: `The bonus applies against targets with any metal on them, even as little as a single ring.`,
-      },
       type: "Attune",
     },
 
@@ -330,16 +326,15 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      // The flavor here is a bit of a stretch, so it doesn't provide an initiative bonus like Haste and
-      // there is no Mass Energize.
+      // The flavor here is a bit of a stretch, so it only affects land speed and there is
+      // no Mass Energize.
       name: "Energize",
 
       effect: `
-        You gain a +5 foot \\glossterm{magic bonus} to speed with all of your \\glossterm{movement modes}.
+        You gain a +10 foot \\glossterm{magic bonus} to your land speed.
       `,
-      rank: 2,
+      rank: 4,
       scaling: {
-        4: `The speed bonus increases to +10 feet.`,
         6: `The speed bonus increases to +15 feet.`,
       },
       type: "Attune",
