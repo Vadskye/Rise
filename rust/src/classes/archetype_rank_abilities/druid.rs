@@ -135,10 +135,10 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a benefit from each of the four elements.
                 \begin{itemize}
-                    \item Air: You gain a \glossterm{glide speed} equal to half the \glossterm{base speed} for your size.
+                    \item Air: You gain a \glossterm{glide speed} 10 feet slower than the \glossterm{base speed} for your size.
                     \item Earth: You gain a \plus1 bonus to your Fortitude defense.
                     \item Fire: You are \trait{impervious} to fire damage.
-                    \item Water: You gain a \glossterm{swim speed} equal to half the \glossterm{base speed} for your size.
+                    \item Water: You gain a \glossterm{swim speed} 10 feet slower than the \glossterm{base speed} for your size.
                 \end{itemize}
             ",
             // TODO: represent movement speeds
@@ -151,11 +151,11 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your benefits from each element improve.
                 \begin{itemize}
-                    \item Air: You gain a \glossterm{fly speed} equal to half the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
+                    \item Air: You gain a \glossterm{fly speed} 10 feet slower than the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
                     At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \item Earth: The bonus to your Fortitude defense increases to \plus2.
                     \item Fire: You treat all fire damage you take as being \glossterm{environmental damage}.
-                    \item Water: Your swim speed increases to be equal to the base speed for your size.
+                    \item Water: You gain a \plus10 foot bonus to your swim speed.
                 \end{itemize}
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
@@ -369,11 +369,11 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{activeability}{Form of the Bull}
                         \rankline
-                        You gain a \plus5 foot bonus to your land speed and a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}).
+                        You can move your full movement speed when you push a creature with the \ability{shove} ability even if you do not get a critical hit (see \pcref{Shove}).
                         In addition, your head transforms, granting you a gore \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} You can move your full movement speed when you push a creature with the \textit{shove} ability even if you do not get a critical hit.
+                        \rank{3} You gain a \plus2 accuracy bonus with the \ability{shove} ability.
                         \rank{5} The accuracy bonus increases to \plus4.
                         \rank{7} When you push a creature with the the \textit{shove} ability, the pushed creature also takes damage as if you had hit it with your gore natural weapon.
                         This damage cannot be combined with other effects that deal damage with a shove, such as the \textit{wall slam} ability.
@@ -394,7 +394,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{activeability}{Form of the Fish}
                         \rankline
-                        You gain a \glossterm{swim speed} equal to the \glossterm{base speed} for your size.
+                        You gain a \glossterm{swim speed} 10 feet slower than the \glossterm{base speed} for your size.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
@@ -419,21 +419,21 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Form of the Hound}
                         \rankline
                         You gain the ability to move on all four limbs.
-                        When doing so, you gain a \plus10 foot bonus to your land speed.
+                        When doing so, you gain a \plus10 foot bonus to your land speed, but you have no \glossterm{free hands}.
                         When not using your hands to move, your ability to use your hands is unchanged.
                         You can descend to four legs and rise up to stand on two legs again as part of movement.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
                         \rank{3} You gain the \trait{scent} ability.
-                        \rank{5} You gain a \plus5 foot bonus to your land speed.
+                        \rank{5} You can run on three limbs instead of four, allowing you to retain one free hand while keeping the speed bonus.
                         \rank{7} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
                     \end{activeability}
 
                     % Seems boring? What abilities would make sense?
                     \begin{activeability}{Form of the Monkey}
                         \rankline
-                        You gain a \glossterm{climb speed} equal to the \glossterm{base speed} for your size.
+                        You gain a \glossterm{climb speed} 10 feet slower than the \glossterm{base speed} for your size.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
@@ -465,8 +465,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{activeability}{Form of the Viper}
                         \rankline
-                        You gain a \glossterm{climb speed} equal to half the \glossterm{base speed} for your size.
-                        You do not need to use your hands to climb in this way.
+                        You do not need to use \glossterm{free hands} to climb (see \pcref{Climb}).
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         When a creature takes damage from your bite \glossterm{natural weapon}, it is \glossterm{poisoned} (see \pcref{Poison}).
                         The first poison stage makes the target \dazed as long as it is poisoned.
@@ -505,14 +504,12 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{activeability}{Photosynthesis}
                         \rankline
-                        As long as you are in natural sunlight, you gain two benefits.
-                        First, you gain a \plus5 foot bonus to your speed with all \glossterm{movement modes}.
-                        Second, you do not gain hunger or thirst.
-                        When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
-                        \rankline
-                        \rank{3} As long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
+                        As long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
                         This cannot heal you above half your maximum \glossterm{hit points}.
-                        \rank{5} The speed bonus increases to \plus10 feet.
+                        \rankline
+                        \rank{3} You do not gain hunger or thirst while in natural sunlight.
+                        When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
+                        \rank{5} Using the \ability{recover} ability while in natural sunlight only increases your \glossterm{fatigue level} by one.
                         \rank{7} When you take a \glossterm{short rest} while you are in natural sunlight, you can remove a \glossterm{vital wound}.
                         When you do, you increase your \glossterm{fatigue level} by four.
                     \end{activeability}

@@ -544,25 +544,25 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Fast Movement",
+            name: "Unhindered Movement",
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
+                You gain a \plus10 foot bonus to your land speed while you have no \glossterm{encumbrance}.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
         RankAbility {
-            name: "Fast Movement+",
+            name: "Unhindered Movement+",
             is_magical: false,
             rank: 4,
             description: r"
-                The speed bonus increases to \plus10 feet.
+                The speed bonus increases to \plus15 feet.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(5)]),
         },
         RankAbility {
-            name: "Fast Movement+",
+            name: "Unhindered Movement+",
             is_magical: false,
             rank: 7,
             description: r"

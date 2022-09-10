@@ -323,16 +323,6 @@ def generate_implements():
         ),
         create_implement(
             name="Onslaught Staff, Greater",
-            rank=3,
-            material_type="Staff",
-            description="""
-                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +15 foot bonus to your speed with all movement modes during the next round.
-                In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +2 \\glossterm<accuracy> bonus.
-            """,
-            short_description="Grants +15 speed, maybe +2 accuracy on kill",
-        ),
-        create_implement(
-            name="Onslaught Staff, Supreme",
             rank=5,
             material_type="Staff",
             description="""

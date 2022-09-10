@@ -636,16 +636,6 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Boots of Speed",
-            rank=3,
-            material_type="Boots",
-            tags=[],
-            description="""
-                You gain a +5 foot \\glossterm<magic bonus> to your land speed.
-            """,
-            short_description="Increases speed by 5 feet",
-        ),
-        create_apparel(
-            name="Boots of Speed, Greater",
             rank=5,
             material_type="Boots",
             tags=[],
@@ -653,16 +643,6 @@ def generate_apparel():
                 You gain a +10 foot \\glossterm<magic bonus> to your land speed.
             """,
             short_description="Increases speed by 10 feet",
-        ),
-        create_apparel(
-            name="Boots of Speed, Supreme",
-            rank=7,
-            material_type="Boots",
-            tags=[],
-            description="""
-                You gain a +15 foot \\glossterm<magic bonus> to your land speed.
-            """,
-            short_description="Increases speed by 15 feet",
         ),
     ]
 
@@ -679,16 +659,6 @@ def generate_apparel():
         ),
         create_apparel(
             name="Boots of the Fearful, Greater",
-            rank=3,
-            material_type="Boots",
-            tags=[],
-            description="""
-                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +3 bonus to your Armor defense and Reflex defense, as well as a +15 foot bonus to your speed with all movement modes.
-            """,
-            short_description="Greatly helps you survive when you become afraid",
-        ),
-        create_apparel(
-            name="Boots of the Fearful, Supreme",
             rank=5,
             material_type="Boots",
             tags=[],

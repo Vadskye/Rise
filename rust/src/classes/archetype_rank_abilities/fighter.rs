@@ -535,7 +535,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{sustainability}{Hustle}{\abilitytag{Sustain} (minor)}
                         \rankline
-                        Each target gains a \plus5 foot bonus to its speed with all of its \glossterm{movement modes} during any phase that it takes the \textit{sprint} action, or if it moves using a \glossterm{standard action}.
+                        Each target gains a \plus5 foot bonus to its land speed during any phase that it takes the \textit{sprint} action.
 
                         \rankline
                         \rank{3} The speed bonus increases to \plus10 feet.

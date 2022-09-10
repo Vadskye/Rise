@@ -318,21 +318,19 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
-                In addition, when you use the \ability{sprint} ability, you can move through spaces occupied by enemies during that movement (see \pcref{Sprint}).
-
+                When you use the \ability{sprint} ability, you can move through spaces occupied by enemies as if they were unoccupied during that movement (see \pcref{Sprint}).
+                In addition, when you use the \ability{overrun} or \ability{shove} abilities, you can simultaneously use the \ability{sprint} ability to increase your movement speed during the effect.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Savage Rush+",
             is_magical: false,
             rank: 6,
             description: r"
-                The speed bonus increases to \plus10 feet.
-                In addition, when you use the \ability{overrun} or \ability{shove} abilities, you can simultaneously use the \ability{sprint} ability to increase your movement speed during the effect.
+                You can move through spaces occupied by enemies as if they were unoccupied.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Versatile Savagery",
@@ -372,13 +370,13 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
-            name: "Unstoppable Rush",
+            name: "Primal Speed",
             is_magical: false,
             rank: 7,
             description: r"
-                You can move through spaces occupied by enemies as if they were unoccupied.
+                You gain a \plus10 foot bonus to your land speed.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::MovementSpeed(10)]),
         },
     ];
 }
@@ -556,13 +554,13 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Eagle} You gain a \plus3 bonus to the Awareness skill.
                 In addition, you are immune to being \dazzled and \blinded.
 
-                \subcf{Lion} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
+                \subcf{Lion} The accuracy bonus applies as long as an ally is within \shortrange of you.
 
                 \subcf{Shark} The accuracy bonus increases to \plus4.
 
-                \subcf{Wolf} You gain a \plus5 foot bonus to your speed with all of your \glossterm{movement modes}.
+                \subcf{Wolf} The accuracy bonus applies as long as the ally is within \shortrange of you.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(5)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Totem Animal+",
