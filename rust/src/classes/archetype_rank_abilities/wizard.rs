@@ -525,7 +525,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     In addition, you gain a \plus1 bonus to your Armor defense.
 
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
-                    If you specialize in this school, you double the \glossterm{range} of arcane spells you cast.
+                    If you specialize in this school, you gain a \plus30 foot bonus to the \glossterm{range} of arcane spells you cast.
 
                 \subcf{Evocation} The \sphere{cryomancy}, \sphere{electromancy}, and \sphere{pyromancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your \glossterm{power}.

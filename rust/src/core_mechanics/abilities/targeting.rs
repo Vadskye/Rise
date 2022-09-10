@@ -257,7 +257,6 @@ impl Range {
             Self::Medium => 1,
             Self::Long => 2,
             Self::Distant => 3,
-            Self::Extreme => 4,
             // TODO: calculate rank based on number of feet
             Self::Custom(_) => 5,
         }
@@ -270,7 +269,6 @@ impl Range {
             Self::Medium => "\\medrange".to_string(),
             Self::Long => "\\longrange".to_string(),
             Self::Distant => "\\distrange".to_string(),
-            Self::Extreme => "\\extrange".to_string(),
             Self::Custom(feet) => format!("{} ft.", feet),
         }
     }
