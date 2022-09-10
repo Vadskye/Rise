@@ -316,7 +316,7 @@ export const photomancy: MysticSphere = {
     {
       name: "Mass Disguise Image",
 
-      castingTime: "minor ation",
+      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Disguise Image",
