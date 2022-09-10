@@ -141,7 +141,7 @@ impl StandardWeapon {
                 damage_dice: DamageDice::d8(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "boulder".to_string(),
-                tags: vec![WeaponTag::Forceful, WeaponTag::Thrown(120, 480)],
+                tags: vec![WeaponTag::Forceful, WeaponTag::Thrown(120, 360)],
             },
             Self::Greataxe => Weapon {
                 accuracy: 0,
@@ -176,7 +176,7 @@ impl StandardWeapon {
                 damage_dice: DamageDice::d6(),
                 damage_types: vec![DamageType::Piercing],
                 name: "longbow".to_string(),
-                tags: vec![WeaponTag::Projectile(120, 480)],
+                tags: vec![WeaponTag::Projectile(120, 360)],
             },
             Self::MonsterBite => Weapon {
                 accuracy: 0,
