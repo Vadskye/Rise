@@ -51,7 +51,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                If you do not have access to nature magic, you gain a +5 foot bonus to your \glossterm{reach} with your \textit{elemental strike} ability.
+                If you do not have access to nature magic, your melee strikes with the \textit{elemental strike} ability gain the \weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
             ",
             modifiers: None,
         },

@@ -27,7 +27,7 @@ export const ebbAndFlow: CombatStyle = {
 
         During the \\glossterm{delayed action phase}, make a melee \\glossterm{strike} with a slashing or bludgeoning weapon.
         The strike targets one creature or object of your choice,
-        plus each creature within your weapon's \\glossterm{reach} that attacked you during the action phase of this round.
+          plus each creature adjacent to you that attacked you during the action phase of this round.
       `,
       rank: 3,
     },

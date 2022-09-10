@@ -284,7 +284,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{divine aid} ability as a standard action.
                 \begin{activeability}{Divine Aid}[\abilitytag{Magical}, \abilitytag{Swift}]
                     \rankline
-                    Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
+                    Choose yourself or one adjacent living \glossterm{ally}.
                     The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
                     In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses until the end of the round.
                     Because this ability has the \abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
@@ -339,7 +339,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
 
-                    Choose yourself or one living \glossterm{ally} within your \glossterm{reach}.
+                    Choose yourself or one adjacent living \glossterm{ally}.
                     The target removes one of its \glossterm{vital wounds}.
 
                     \rankline
@@ -380,7 +380,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by four (see \pcref{Fatigue}).
 
-                    Choose one intact corpse within your \glossterm{reach}.
+                    Choose one adjacent intact corpse.
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is restored to life, as the \ritual{resurrection} ritual.
                     After using this ability, you cannot use it again until you take a \glossterm{long rest}.
                 \end{activeability}

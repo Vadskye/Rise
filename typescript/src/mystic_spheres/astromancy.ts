@@ -53,7 +53,7 @@ export const astromancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+          Make a melee attack vs. Reflex against adjacent to you.
         `,
       },
       narrative: `
@@ -79,7 +79,7 @@ export const astromancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make a melee attack vs. Reflex against anything within your \\glossterm{reach}.
+          Make a melee attack vs. Reflex against adjacent to you.
         `,
       },
       narrative: `

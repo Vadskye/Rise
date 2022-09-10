@@ -744,7 +744,7 @@ def universal_abilities():
             universal_ability_button(
                 "Dirty Trick",
                 """
-                    Make a melee attack with a free hand against the Fortitude or Reflex defense of one creature within your reach. On a hit, the target suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental. On a critical hit, the effect becomes a condition.
+                    Make a melee attack with a free hand against the Fortitude or Reflex defense of an adjacent creature. On a hit, the target suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental. On a critical hit, the effect becomes a condition.
                  """,
                 attack={"accuracy": "@{accuracy}", "defense": "Fort or Ref", "tags": ["Size-Based"]},
             ),
@@ -759,7 +759,7 @@ def universal_abilities():
             universal_ability_button(
                 "Grapple",
                 """
-                    Make a melee attack with a free hand against the Fortitude and Reflex defenses of one creature within your reach.
+                    Make a melee attack with a free hand against the Fortitude and Reflex defenses of an adjacent creature.
                     On a hit against both defenses, you and the target are grappled by each other.
                 """,
                 attack={"accuracy": "@{accuracy}", "defense": "Fort and Ref", "tags": ["Size-Based"]},
@@ -791,7 +791,7 @@ def universal_abilities():
             universal_ability_button(
                 "Shove",
                 """
-                    Choose either one creature within your reach or all creatures grappling you. Make a melee attack with a free hand against each target. Your accuracy with this attack is equal to half your level \\add your Strength. If you are not able to use any of your movement speeds, you automatically fail when you try to use this ability.
+                    Choose either one adjacent creature or all creatures grappling you. Make a melee attack with a free hand against each target. Your accuracy with this attack is equal to half your level \\add your Strength. If you are not able to use any of your movement speeds, you automatically fail when you try to use this ability.
                     On a hit, you can move up to half your movement speed in a straight line, pushing each target as you move. On a critical hit, you can move up to your full movement speed instead.
                  """,
                 attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Based"]},

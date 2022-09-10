@@ -12,7 +12,7 @@ export const mobileAssault: CombatStyle = {
         Move up to half your movement speed in a straight line.
         You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
         Your \\glossterm{power} with the strike is halved.
-        The strike targets any number of creatures and objects within your \\glossterm{reach} at any point during your movement.
+        The strike targets any number of creatures and objects adjacent to you at any point during your movement.
       `,
       rank: 3,
     },
@@ -23,7 +23,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         Move up to your movement speed in a straight line.
         You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
-        The strike targets any number of creatures and objects within your \\glossterm{reach} at any point during your movement.
+        The strike targets any number of creatures and objects adjacent to you at any point during your movement.
       `,
       rank: 7,
     },

@@ -267,20 +267,9 @@ def generate_apparel():
             rank=4,
             material_type="Bracers",
             description="""
-                You gain a +5 foot \\glossterm<magic bonus> to your \\glossterm<reach> with melee \\glossterm<strikes>.
-                This has no effect on ranged attacks you make.
+                Your melee \\glossterm{strikes} gain the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
             """,
-            short_description="Increases reach by five feet",
-        ),
-        create_apparel(
-            name="Greatreach Bracers, Greater",
-            rank=6,
-            material_type="Bracers",
-            description="""
-                You gain a +10 foot \\glossterm<magic bonus> to your \\glossterm<reach> with melee \\glossterm<strikes>.
-                This has no effect on ranged attacks you make.
-            """,
-            short_description="Increases reach by ten feet",
+            short_description="Allows attacking non-adjacent foes",
         ),
     ]
 
@@ -1514,7 +1503,7 @@ def generate_apparel():
                 This effect lasts until you activate the belt again, which returns you to your original size.
 
                 Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \\glossterm<weight limits>, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
-                It also increases your \\glossterm<base speed> and may increase your \\glossterm<reach> (see \\pcref<Size Categories>).
+                It also increases your \\glossterm<base speed> (see \\pcref<Size Categories>).
                 This item makes you slightly clumsy in your new size.
                 You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
             """,
@@ -1534,7 +1523,7 @@ def generate_apparel():
                 This effect lasts until you activate the belt again, which returns you to your original size.
 
                 Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \\glossterm<weight limits>, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
-                It also reduces your \\glossterm<base speed> and may reduce your \\glossterm<reach> (see \\pcref<Size Categories>).
+                It also reduces your \\glossterm<base speed> (see \\pcref<Size Categories>).
             """,
             short_description="Reduces your size",
         ),
@@ -2356,7 +2345,7 @@ def generate_apparel():
             material_type="Gauntlet",
             tags=[],
             description="""
-                As a standard action, you can make an attack vs. Fortitude against a living creature within your \\glossterm<reach>.
+                As a standard action, you can make an attack vs. Fortitude against an adjacent living creature.
                 On a hit, the target takes 2d8 physical damage.
                 If it loses \\glossterm<hit points> from this damage, it is \\glossterm<briefly> \\paralyzed.
                 Whether the attack hits or misses, the target is immune to this ability until it takes a \\glossterm<short rest>.
