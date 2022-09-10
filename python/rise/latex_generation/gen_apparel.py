@@ -2164,29 +2164,6 @@ def generate_apparel():
 
     apparel += [
         create_apparel(
-            name="Cloak of Astral Ease",
-            rank=4,
-            material_type="Cloak",
-            tags=[],
-            description="""
-                All \\glossterm<magical> abilities that \\glossterm<teleport> you have the maximum distance they can teleport you doubled.
-            """,
-            short_description="Doubles distance you can teleport",
-        ),
-        create_apparel(
-            name="Cloak of Astral Ease, Greater",
-            rank=6,
-            material_type="Cloak",
-            tags=[],
-            description="""
-                All \\glossterm<magical> abilities that \\glossterm<teleport> you have the maximum distance they can teleport you tripled.
-            """,
-            short_description="Triples distance you can teleport",
-        ),
-    ]
-
-    apparel += [
-        create_apparel(
             name="Boots of Desperate Flight",
             rank=2,
             material_type="Boots",
