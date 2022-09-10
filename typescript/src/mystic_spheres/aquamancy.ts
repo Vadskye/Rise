@@ -466,7 +466,7 @@ export const aquamancy: MysticSphere = {
         This has the following effects:
         \\begin{itemize}
           \\item You gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
-            If you already have a swim speed, you gain a \\plus10 foot bonus to your swim speed.
+            If you already have a swim speed, you gain a \\plus10 foot \\glossterm{magic bonus} to your swim speed.
           \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
           \\item You ignore \\glossterm{difficult terrain} from all sources except for creature abilities.
