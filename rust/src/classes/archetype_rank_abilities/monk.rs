@@ -566,7 +566,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus3 bonus to your Reflex defense while you have no \glossterm{encumbrance}.
+                You gain a \plus2 bonus to your Reflex defense while you have no \glossterm{encumbrance}.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 3)]),
                 
