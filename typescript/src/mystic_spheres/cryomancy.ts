@@ -262,7 +262,7 @@ export const cryomancy: MysticSphere = {
         Creatures following closely behind you while you move may also be able to use your ice trail.
         However, most Large or larger creatures will break the ice trail if they step onto it, which may cause both of you to fall.
       `,
-      rank: 3,
+      rank: 4,
       tags: ["Manifestation"],
       type: "Attune",
     },

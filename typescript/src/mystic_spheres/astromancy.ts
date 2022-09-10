@@ -53,7 +53,7 @@ export const astromancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make a melee attack vs. Reflex against adjacent to you.
+          Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
       narrative: `
@@ -79,7 +79,7 @@ export const astromancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make a melee attack vs. Reflex against adjacent to you.
+          Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
       narrative: `
@@ -551,6 +551,22 @@ export const astromancy: MysticSphere = {
         You augment your body with the ability to travel short distances through the Astral Plane to reach your destination.
       `,
       rank: 1,
+      type: "Attune",
+    },
+
+    {
+      name: "Greater Phasestep",
+
+      effect: `
+        When you move using one of your movement speeds, you can move through creatures freely.
+        You can also move through inanimate objects that are no more than six inches thick.
+        If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \\squeezing as long as you continue sharing space (see \\pcref{Squeezing}).
+        If you are not able to move normally, such as if you are \\grappled, this spell does not help you.
+      `,
+      narrative: `
+        You augment your body with the ability to travel through the Astral Plane to reach your destination.
+      `,
+      rank: 5,
       type: "Attune",
     },
     {
