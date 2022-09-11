@@ -940,9 +940,9 @@ function handleAttunementPoints() {
     },
     (v) => {
       let fromLevel = 0;
-      if (v.level >= 12) {
+      if (v.level >= 11) {
         fromLevel = 2;
-      } else if (v.level >= 6) {
+      } else if (v.level >= 5) {
         fromLevel = 1;
       }
       const ap = v.misc + fromLevel;
