@@ -234,7 +234,7 @@ export const astromancy: MysticSphere = {
       name: "Dimension Door",
 
       effect: `
-        You teleport to an unoccupied destination on a stable surface within \\extrange range of you.
+        You teleport to an unoccupied destination on a stable surface within \\extrange of you.
         You must clearly visualize the destination's appearance and have an approximate knowledge of its direction and distance from you.
         However, you do not need \\glossterm{line of sight} or \\glossterm{line of effect} to your destination.
       `,
