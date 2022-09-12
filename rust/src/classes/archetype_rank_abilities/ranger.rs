@@ -575,7 +575,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You gain the ability to customize your weaker wild maneuvers.
-                For each rank 1 wild maneuver you know, choose one enhancement from the list below.
+                For each rank 1 wild maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
 
                 Whenever you increase your rank in this archetype, you can change your enhancements.
                 However, you must still apply them to rank 1 wild maneuvers.
