@@ -319,7 +319,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 When you use the \ability{sprint} ability, you can move through spaces occupied by enemies as if they were unoccupied during that movement (see \pcref{Sprint}).
-                In addition, when you use the \ability{overrun} or \ability{shove} abilities, you can simultaneously use the \ability{sprint} ability to increase your movement speed during the effect.
+                In addition, when you use the \ability{charge}, \ability{overrun} or \ability{shove} abilities, you can simultaneously use the \ability{sprint} ability to increase your movement speed during the effect.
             ",
             modifiers: None,
         },
