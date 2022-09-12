@@ -143,33 +143,14 @@ def generate_implements():
     implements += [
         create_implement(
             name="Staff of Transit",
-            rank=2,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Your \\glossterm<magical> abilities have the maximum distance they can \\glossterm<teleport> targets doubled.
-            """,
-            short_description="Doubles your teleportation distance",
-        ),
-        create_implement(
-            name="Staff of Transit, Greater",
             rank=4,
             material_type="Staff",
             tags=[],
             description="""
-                Your \\glossterm<magical> abilities have the maximum distance they can \\glossterm<teleport> targets tripled.
+                Your \\glossterm<magical> abilities have the maximum distance they can \\glossterm<teleport> targets doubled.
+                This does not increase their range.
             """,
-            short_description="Triples your teleportation distance",
-        ),
-        create_implement(
-            name="Staff of Transit, Supreme",
-            rank=6,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Your \\glossterm<magical> abilities have the maximum distance they can \\glossterm<teleport> targets quadrupled.
-            """,
-            short_description="Quadruples your teleportation distance",
+            short_description="Doubles your teleportation distance",
         ),
     ]
 
