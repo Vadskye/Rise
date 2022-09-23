@@ -1089,6 +1089,8 @@ impl Class {
                 \\newpage
                 \\section<{class_name}>\\label<{class_name}>
 
+                \\includegraphics[width=\\columnwidth]<classes/{class_name}>
+
                 {description}
 
                 {archetype_table}
