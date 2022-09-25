@@ -53,7 +53,7 @@ KNOWABLE_CONCEPTS = [
     "Hunting styles",
     "Ki manifestations",
     "Maneuvers",
-    "Mystic insights",
+    "Metamagic",
     "Mystic spheres",
     "Spells",
     "Wild aspects",
