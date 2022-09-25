@@ -497,14 +497,14 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Mystic Insight",
+            name: "Metamagic",
             is_magical: true,
             rank: 1,
             description: r"
                 You learn how to further refine your spellcasting abilities.
-                Choose two mystic insights from the list below.
-                You can also spend \glossterm{insight points} to learn one additional \textit{mystic insight} per insight point.
-                You cannot choose the same spell with more than two \textit{mystic insight} abilities.
+                Choose two metamagic abilities from the list below.
+                You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
+                You cannot choose the same spell with more than two metamagic abilities.
                 {
                     \parhead{Distant Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
@@ -532,20 +532,20 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Mystic Insight+",
+            name: "Metamagic+",
             is_magical: true,
             rank: 4,
             description: r"
-                You gain an additional \textit{mystic insight}.
+                You gain an additional metamagic ability.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Mystic Insight+",
+            name: "Metamagic+",
             is_magical: true,
             rank: 7,
             description: r"
-                You gain two additional \textit{mystic insights}.
+                You gain two additional metamagic abilities.
             ",
             modifiers: None,
         },
