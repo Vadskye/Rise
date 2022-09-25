@@ -142,20 +142,6 @@ def generate_implements():
 
     implements += [
         create_implement(
-            name="Staff of Transit",
-            rank=4,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Your \\glossterm<magical> abilities have the maximum distance they can \\glossterm<teleport> targets doubled.
-                This does not increase their range.
-            """,
-            short_description="Doubles your teleportation distance",
-        ),
-    ]
-
-    implements += [
-        create_implement(
             name="Staff of Gut-Wrenching Fear",
             rank=2,
             material_type="Staff",
@@ -462,6 +448,31 @@ def generate_implements():
 
     implements += [
         create_implement(
+            name="Distant Staff",
+            rank=3,
+            material_type="Staff",
+            tags=[],
+            description="""
+                Whenever you use a \\glossterm<magical> ability with a \\glossterm<range>, you may activate this staff.
+                When you do, you double the spell's range.
+                In addition, you increase your \\glossterm<fatigue level> by two.
+            """,
+            short_description="Can exert to double area size",
+        ),
+        create_implement(
+            name="Distant Staff, Greater",
+            rank=6,
+            material_type="Staff",
+            tags=[],
+            description="""
+                This implement functions like a \\textit<distant staff>, except that activating it only increases your fatigue level by one.
+            """,
+            short_description="Can exert to double range",
+        ),
+    ]
+
+    implements += [
+        create_implement(
             name="Widening Staff",
             rank=4,
             material_type="Staff",
@@ -469,19 +480,19 @@ def generate_implements():
             description="""
                 Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags, you may activate this staff.
                 When you do, you double the spell's area.
-                In addition, you increase your \\glossterm<fatigue level> by one.
+                In addition, you increase your \\glossterm<fatigue level> by two.
             """,
             short_description="Can exert to double area size",
         ),
         create_implement(
             name="Widening Staff, Greater",
-            rank=6,
+            rank=7,
             material_type="Staff",
             tags=[],
             description="""
-                This implement functions like a \\textit<widening staff>, except that activating it does not increase your \\glossterm<fatigue level>.
+                This implement functions like a \\textit<widening staff>, except that activating it only increases your fatigue level by one.
             """,
-            short_description="Can double area size",
+            short_description="Can exert to double area size",
         ),
     ]
     implements += [
