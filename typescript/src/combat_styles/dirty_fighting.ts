@@ -192,7 +192,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          if you deal damage to an item and your attack result also beats an attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
+          if you deal damage to an item and your attack roll also beats an attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
           Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
         name: "disarm",

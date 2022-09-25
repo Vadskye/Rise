@@ -317,7 +317,7 @@ def animates(sample_monsters):
                     "Forceful Smash",
                     f"""
                 The ram makes a slam strike.
-                In addition to the strike's normal effects, compare the attack result against the target's Fortitude defense.
+                In addition to the strike's normal effects, compare the attack roll against the target's Fortitude defense.
                 \\hit The target moves up to 10 feet in a direction of the ram's choice, as the \\textit<shove> ability (see \\pcref<Shove>).
                 The ram does not have to move with the target to push it back.
             """,
@@ -884,7 +884,7 @@ def monstrous_humanoids(sample_monsters):
                     "Thunderstrike",
                     f"""
                 The storm giant makes a greatsword strike against a target.
-                If its attack result beats the target's Fortitude defense,
+                If its attack roll beats the target's Fortitude defense,
                     the target also takes {storm_giant.standard_damage()} energy damage
                     and is deafened as a condition.
             """,
@@ -1009,7 +1009,7 @@ def outsiders(sample_monsters):
                     "Venomous Bite",
                     f"""
                 The bebelith makes a bite strike.
-                If it hits, and the attack result beats the target's Fortitude defense, the target is also poisoned as a condition.
+                If it hits, and the attack roll beats the target's Fortitude defense, the target is also poisoned as a condition.
                 If the target is poisoned, it takes {bebelith.standard_damage()} damage during each \\glossterm<action phase> in subsequent rounds.
             """,
                 ),
