@@ -13,25 +13,24 @@ This chapter describes the core mechanics of Rise.
 \section{Making Attacks}\label{Attacks}
     \includegraphics[width=\columnwidth]{core mechanics/making attacks}
 
-    Anything that affects another creature in a potentially harmful way, such as striking a creature with a sword, is an attack.
-    Many abilities are always considered attacks, even if you use them in a way that you believe is not harmful.
-    To make an attack, you must make an \glossterm{attack roll}.
-
     \subsection{Attack Rolls}\label{Attack Rolls}
-        To make an attack roll, roll 1d10 and add your \glossterm{accuracy} with the attack.
-        The sum of your die roll and your accuracy is called your \glossterm{attack result}.
-        You compare your attack result to a \glossterm{defense} that your \glossterm{target} has (see \pcref{Defenses}).
-        All attacks specify which defense they are compared to.
+        To make an attack, roll 1d10 and add your \glossterm{accuracy} with the attack.
+        Each attack specifies a relevant \glossterm{defense} (see \pcref{Defenses}).
 
-        If your result is equal to or higher than your target's defense, the attack hits.
-        This almost always means the target suffers some harmful effect, such as taking \glossterm{damage} (see \pcref{Dealing Damage}).
-        If your result is 1 or 2 lower than the defender's defense, you get a \glossterm{glancing blow} (see \pcref{Glancing Blows}).
+        If the result of your attack roll meets or exceeds the defense of the creature or object you are attacking, the attack hits.
+        If your result is 1 or 2 lower than the defender's defense, you get a \glossterm{glancing blow} (see below).
         Otherwise, the attack misses.
-        When an attack misses, the defender almost always suffers no effects from the attack.
-        Even if the attack had no obvious physical or visual effects, a creature that resists an attack still feels a hostile force or a tingle, but cannot usually deduce the exact nature of the attack.
 
-        Creatures can voluntarily lower their defenses against attacks that they are aware of.
-        When they do, their defense is treated as 0 against the attack.
+        \subsubsection{Glancing Blows}\label{Glancing Blows}
+            When you miss on an attack by 2 or less, it is called a \glossterm{glancing blow}.
+            All damaging attacks have a standard glancing blow effect.
+            If you get a glancing blow with a damaging attack, you roll no damage dice.
+            However, if the attack deals damage that is not based on dice, you still deal that damage.
+            For example, many attacks add your \glossterm{power} to damage, and that damage is still dealt on a glancing blow.
+
+            Non-damaging attacks do not have any special effects on a glancing blow.
+            A glancing blow is not considered to be a miss for the purpose of abilities that trigger on missed attacks.
+            However, many abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
 
         \subsubsection{Exploding Attacks}\label{Exploding Attacks}
             When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
@@ -42,7 +41,7 @@ This chapter describes the core mechanics of Rise.
 
         \subsubsection{Critical Hits}\label{Critical Hits}
             If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit}.
-            Some attacks have specific effects when you get a critical hit, as indicated in their descriptions or in other abilities.
+            Some attacks have specific effects when you get a critical hit.
             In addition, all damaging attacks have a standard critical hit effect.
             For every increment of 10 by which you beat the target's defense, you double the number of damage dice you roll.
             As normal, two doublings become a tripling, so if you beat your opponent's defense by 20, you roll triple the damage dice.
@@ -54,33 +53,11 @@ This chapter describes the core mechanics of Rise.
             Critical hits with \glossterm{melee} attacks are a \abilitytag{Size-Based} effect.
             This means you cannot normally get a critical hit with a melee attack against a creature that is two or more size categories larger than you (see \pcref{Size Categories}).
 
-        \subsubsection{Glancing Blows}\label{Glancing Blows}
-            When you miss on an attack by 2 or less, it is called a glancing blow.
-            All damaging attacks have a standard glancing blow effect.
-            Non-damaging attacks do not have any special effects on a glancing blow.
-            If you get a glancing blow with a damaging attack, you roll no damage dice.
-            This does not reduce the damage from your \glossterm{power} or any other non-dice damage modifiers.
-            If you would not normally add your \glossterm{power} to the attack, it deals no damage.
-
-            A glancing blow is not considered to be a miss for the purpose of abilities that trigger on missed attacks.
-            However, many abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
-
     \subsection{Dealing Damage}\label{Dealing Damage}
         Many \glossterm{attacks} deal damage to their targets.
+        When a creature is dealt damage, it gets closer to death (see \pcref{Taking Damage}).
         In general, most damaging attacks deal an amount of damage determined by rolling some number of dice and adding some multiplier of your \glossterm{power} with that attack.
         The details are given in each attack's description.
-
-        When a creature is dealt damage, the damage first reduces that creature's \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-        Any damage in excess of the creature's remaining damage resistance causes it to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
-        If you take damage that would reduce your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
-        Monsters typically do not gain vital wounds like player characters do.
-        Instead, they simply die or fall unconscious when they reach 0 hit points.
-
-        \parhead{Dealing Damage, Taking Damage, and Losing Hit Points}
-        You deal damage whenever you hit with a damaging attack, regardless of whether the target loses hit points or only \glossterm{damage resistance}.
-        Likewise, you take damage whenever anything deals damage to you.
-        However, you only lose hit points if the damage is not mitigated by your damage resistance.
-        Many active abilities require the target to lose hit points from a damaging attack, which does not happen if the damage is resisted.
 
         \subsubsection{Dice Pools}\label{Dice Pools}
             Almost all attacks deal damage based on a \glossterm{dice pool}.
@@ -161,7 +138,14 @@ This chapter describes the core mechanics of Rise.
 
     \subsubsection{Special Damage Types}\label{Special Damage Types}
 
-        These special damage types are separate from the standard damage types, like fire damage or energy damage.
+        Subdual damage and environmental damage are separate from the standard damage types, like fire damage or energy damage.
+        It is possible for damage to be both environmental damage and subdual damage.
+
+        \subsubsection{Environmental Damage}\label{Environmental Damage}
+            Some abilities and environmental effects deal environmental damage.
+            Environmental damage is never dealt as the result of a successful attack roll.
+            Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
+            Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
 
         \subsubsection{Subdual Damage}\label{Subdual Damage}
             Some attacks and environmental effects deal subdual damage.
@@ -170,24 +154,18 @@ This chapter describes the core mechanics of Rise.
             Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
             If you do, you deal half damage with the strike.
 
-        \subsubsection{Environmental Damage}\label{Environmental Damage}
-            Some abilities and environmental effects deal environmental damage.
-            Environmental damage is never dealt as the result of a successful attack roll.
-            Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
-            Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
-
-            It is possible for damage to be both environmental damage and subdual damage.
-
 \section{Taking Damage}\label{Taking Damage}
     Taking damage from attacks reduces your \glossterm{damage resistance}, and then your \glossterm{hit points}, before finally inflicting \glossterm{vital wounds}.
     To calculate your damage resistance and hit points, see \pcref{Character Statistics}.
     This section explains those concepts in more detail.
 
-    Whenever you take damage, you reduce your \glossterm{damage resistance} by an amount equal to the damage you took.
-    Any damage in excess of your remaining damage resistance reduces your \glossterm{hit points}.
-    There are two main difference between hit points and damage resistance.
-    First, losing \glossterm{hit points} makes you vulnerable to many debilitating debuffs.
-    Second, many abilities can restore hit points lost during combat, but damage resistance is extremely difficult to recover without taking a \glossterm{short rest}.
+    When you are dealt damage, the damage first reduces your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+    Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
+    Hit points and damage resistance function in the same way, but damage resistance can protect you from debilitating attacks that only work if they make you lose hit points.
+    If you are dealt damage that would reduce your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
+
+    Monsters typically do not gain vital wounds like player characters do.
+    Instead, they simply die or fall unconscious when they reach 0 hit points.
 
     \subsection{Negative Hit Points}\label{Negative Hit Points}
         You can have negative hit points, but only briefly.
@@ -220,20 +198,6 @@ This chapter describes the core mechanics of Rise.
 
         Most healing effects are \abilitytag{Swift}, which avoids some of this complexity.
         Swift healing effects are fully resolved before damage is dealt, so you cannot heal beyond your maximum hit points and damage resistance.
-
-    \subsection{Noticing Damage Resistance}
-        In general, it is impossible to determine whether a creature has damage resistance simply by observing them unless there are obvious visual cues like bleeding injuries.
-        However, when a creature takes damage from an attack, an observer can determine the result of the attack with an Awareness check with a base \glossterm{difficulty value} of 10 (before applying the normal modifiers for distance, visibility, and so on).
-        The creature dealing the damage gains a \plus10 bonus to this check.
-        Success on this check allows an observer to distinguish between the following three possibilities:
-        \begin{itemize}
-            \item The creature resisted all damage from your attack.
-            \item The creature resisted some damage from your attack, but also lost some hit points.
-                This means that the target's damage resistance was reduced to 0 during this phase.
-            \item The creature did not resist any damage from your attack, and took all damage from the attack from their hit points.
-        \end{itemize}
-        Most of the time, you can simplify this to simply ``if you attack someone, you know if you beat their damage resistance''.
-        The Awareness calculation is useful to handle unusual situations like maximum range longbow shots, where you might not be able to observe the exact result of your attack.
 
 \section{Vital Wounds}\label{Vital Wounds}
     \includegraphics[width=\columnwidth]{core mechanics/vital wounds}
@@ -1007,47 +971,6 @@ This chapter describes the core mechanics of Rise.
         An object becomes \glossterm{broken} if its \glossterm{hit points} are reduced to 0 (see \pcref{Broken and Destroyed Objects}).
         Objects cannot gain \glossterm{vital wounds}.
         Objects are also not normally subject to \glossterm{critical hits}.
-
-    \subsection{Object Statistics}
-        An object's size primarily influences the number of \glossterm{hit points} it has.
-        The primary material it is constructed from determines its \glossterm{damage resistance}, and can modify the number of hit points it has.
-        Details are given in \tref{Object Statistics By Size} and \tref{Object Statistics By Material}.
-
-        \begin{dtable}
-            \lcaption{Object Statistics By Size}
-            \begin{dtabularx}{\textwidth}{l X X}
-                \tb{Size}  & \tb{Hit Points} & \tb{Sunder Difficulty Value} \tableheaderrule
-                Fine       & 1               & 1\fn{1} \\
-                Diminutive & 2               & 2       \\
-                Tiny       & 5               & 5       \\
-                Small      & 10              & 10      \\
-                Medium     & 20              & 15      \\
-                Large      & 50              & 20      \\
-                Huge       & 100             & 25      \\
-                Gargantuan & 200             & 30      \\
-                Colossal   & 500             & 35      \\
-            \end{dtabularx}
-            1. Extremely small objects may be difficult to grip effectively, which can significantly increase the difficulty to sunder them.
-        \end{dtable}
-
-        \begin{dtable}
-            \lcaption{Object Statistics By Material}
-            \begin{dtabularx}{\textwidth}{l X X X}
-                \tb{Material}   & \tb{DR}\fn{1} & \tb{Hit Points Multiplier}\fn{2} & \tb{Sunder Difficulty Value Modifier}  \tableheaderrule
-                Adamantine      & 30                    & \mult3                & \plus20              \\
-                Glass           & 5                     & \mult1/2              & \tdash               \\
-                Ice             & 1                     & \mult1/2              & \minus5              \\
-                Iron or steel   & 12                    & \mult2                & \plus10              \\
-                Leather or hide & 3                     & \tdash                & \tdash               \\
-                Mithral         & 15                    & \mult2                & \plus10              \\
-                Paper or cloth  & 1                     & \mult1/2              & \minus5              \\
-                Rope            & 2                     & \tdash                & \tdash               \\
-                Stone           & 8                     & \mult2                & \plus5               \\
-                Wood            & 5                     & \tdash                & \tdash               \\
-            \end{dtabularx}
-            1. See \pcref{Damage Resistance}. \\
-            2. Any value here modifies the number of hit points the object would normally have based on its size.
-        \end{dtable}
 
     \subsection{Sundering Objects}
         As a standard action, you can attempt to sunder an object you can touch.

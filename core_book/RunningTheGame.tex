@@ -173,3 +173,59 @@ It includes some context for the narrative universe of Rise, mechanics for monst
             Tundra, frozen & \mult1       & \mult3/4           & \mult3/4
         \end{dtabularx}
     \end{dtable}
+
+\section{Uncommon Combat Circumstances}
+
+    Even if the attack had no obvious physical or visual effects, a creature that resists an attack still feels a hostile force or a tingle, but cannot usually deduce the exact nature of the attack.
+
+    Creatures can voluntarily lower their defenses against attacks that they are aware of.
+    When they do, their defense is treated as 0 against the attack.
+
+    \parhead{Dealing Damage, Taking Damage, and Losing Hit Points}
+    Some abilities trigger when a creature deals damage or is dealt damage.
+    Other abilities trigger when a creature loses hit points or causes another creature to lose hit points.
+    An attack deals damage even if all damage dealt by the attack is applied to \glossterm{damage resistance} instead of \glossterm{hit points}.
+
+    \subsection{Object Statistics}
+        An object's size primarily influences the number of \glossterm{hit points} it has.
+        The primary material it is constructed from determines its \glossterm{damage resistance}, and can modify the number of hit points it has.
+        Details are given in \tref{Object Statistics By Size} and \tref{Object Statistics By Material}.
+
+        These rules are more detailed than you should really need.
+        During a typical game session, it's often best to just guess whether a character could plausibly sunder or smash an object rather than consulting these tables.
+
+        \begin{dtable}
+            \lcaption{Object Statistics By Size}
+            \begin{dtabularx}{\textwidth}{l X X}
+                \tb{Size}  & \tb{Hit Points} & \tb{Sunder Difficulty Value} \tableheaderrule
+                Fine       & 1               & 1\fn{1} \\
+                Diminutive & 2               & 2       \\
+                Tiny       & 5               & 5       \\
+                Small      & 10              & 10      \\
+                Medium     & 20              & 15      \\
+                Large      & 50              & 20      \\
+                Huge       & 100             & 25      \\
+                Gargantuan & 200             & 30      \\
+                Colossal   & 500             & 35      \\
+            \end{dtabularx}
+            1. Extremely small objects may be difficult to grip effectively, which can significantly increase the difficulty to sunder them.
+        \end{dtable}
+
+        \begin{dtable}
+            \lcaption{Object Statistics By Material}
+            \begin{dtabularx}{\textwidth}{l X X X}
+                \tb{Material}   & \tb{DR}\fn{1} & \tb{Hit Points Multiplier}\fn{2} & \tb{Sunder Difficulty Value Modifier}  \tableheaderrule
+                Adamantine      & 30                    & \mult3                & \plus20              \\
+                Glass           & 5                     & \mult1/2              & \tdash               \\
+                Ice             & 1                     & \mult1/2              & \minus5              \\
+                Iron or steel   & 12                    & \mult2                & \plus10              \\
+                Leather or hide & 3                     & \tdash                & \tdash               \\
+                Mithral         & 15                    & \mult2                & \plus10              \\
+                Paper or cloth  & 1                     & \mult1/2              & \minus5              \\
+                Rope            & 2                     & \tdash                & \tdash               \\
+                Stone           & 8                     & \mult2                & \plus5               \\
+                Wood            & 5                     & \tdash                & \tdash               \\
+            \end{dtabularx}
+            1. See \pcref{Damage Resistance}. \\
+            2. Any value here modifies the number of hit points the object would normally have based on its size.
+        \end{dtable}

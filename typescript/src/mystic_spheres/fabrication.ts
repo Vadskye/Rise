@@ -298,7 +298,6 @@ export const fabrication: MysticSphere = {
 
           In addition, make an attack vs. Reflex against all Large or smaller creatures in the area.
           Whenever a creature enters the area, you make the same attack against it.
-          A creature that leaves the area and re-enters it uses the original attack result against it.
         `,
       },
 
