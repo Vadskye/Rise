@@ -1087,9 +1087,9 @@ impl Class {
         return latex_formatting::latexify(format!(
             "
                 \\newpage
-                \\section<{class_name}>\\label<{class_name}>
+                \\section<{class_name_title}>\\label<{class_name_title}>
 
-                \\includegraphics[width=\\columnwidth]<classes/{class_name}>
+                \\includegraphics[width=\\columnwidth]<classes/{class_name_lower}>
 
                 {description}
 
@@ -1097,7 +1097,7 @@ impl Class {
 
                 \\classbasics<Alignment> {class_alignment}.
 
-                \\classbasics<Archetypes> {class_name}s have the {archetype_names} archetypes.
+                \\classbasics<Archetypes> {class_name_title}s have the {archetype_names} archetypes.
 
                 {basic_class_abilities}
 
@@ -1121,7 +1121,8 @@ impl Class {
             basic_class_abilities = generate_latex_basic_class_abilities(self).trim(),
             description = self.narrative_text(),
             special_class_abilities = self.latex_special_class_abilities().trim(),
-            class_name = titlecase(self.name()),
+            class_name_title = titlecase(self.name()),
+            class_name_lower = self.name(),
             class_alignment = self.alignment(),
             suffix = self.latex_suffix(),
         ));

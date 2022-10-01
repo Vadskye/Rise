@@ -24,6 +24,8 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     Your magical connection to the animal improves its resilience and strength in combat.
                     If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
                     All other aspects of the animal, such as its speed and natural weapons, are unchanged.
+                    Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
+
                     % Same as Natural Servant except that it gains more resistance since having the animal die is more problematic
                     \begin{itemize}
                         % TODO: figure out why this is a 2
@@ -38,8 +40,8 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                         \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points, damage resistance, and power.
                     \end{itemize}
 
-                    % Oddly placed? there must be text between an itemize block and the end of a mdframed env
-                    Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
+                    % There must be text between an itemize block and the end of a mdframed env
+                    \hypertarget{itemizespace}{}
                 \end{attuneability}
 
             ",
