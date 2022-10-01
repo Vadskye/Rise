@@ -88,6 +88,11 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     You can ask the elements simple questions and understand their responses.
                     Each element has different limitations on its memory and awareness, as described below.
 
+                    Air, earth, and water are only able to give information about what they touch.
+                    This includes the general shapes, sizes, and locations of creatures and objects they interacted with, but not any details about color or subjective appearance.
+                    Fire is also able to give information about anything illuminated by its light, allowing it to report more detailed information like color.
+                    It is still unable to make meaningful subjective judgments like a creature would.
+
                     \begin{itemize}
                         \item Air: Air can remember events up to an hour ago on a very calm day or only a few minutes ago on a windy day.
                             Moving air is aware of events near where it blew through, not necessarily in your current location.
@@ -101,11 +106,8 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                             Moving water is aware of events near where it moved through, not necessarily in your current location.
                     \end{itemize}
 
-                    % Oddly placed? there must be text between an itemize block and the end of a mdframed env
-                    Air, earth, and water are only able to give information about what they touch.
-                    This includes the general shapes, sizes, and locations of creatures and objects they interacted with, but not any details about color or subjective appearance.
-                    Fire is also able to give information about anything illuminated by its light, allowing it to report more detailed information like color.
-                    It is still unable to make meaningful subjective judgments like a creature would.
+                    % There must be text between an itemize block and the end of a mdframed env
+                    \hypertarget{itemizespace}{}
                 \end{sustainability}
             ",
             modifiers: None,
@@ -646,6 +648,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
 
                     Your magical connection to the animal improves its resilience and strength in combat.
                     The animal's statistics use the values below, except that each animal also gains a special ability based on the environment you are in.
+                    Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
+
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is the normal base speed for its size (see \tref{Size Categories}).
                         \item Its \glossterm{fatigue tolerance} is 0, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
@@ -659,8 +663,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points, damage resistance, and power.
                     \end{itemize}
 
-                    % Oddly placed? there must be text between an itemize block and the end of a mdframed env
-                    Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
+                    % There must be text between an itemize block and the end of a mdframed env
+                    \hypertarget{itemizespace}{}
                 \end{attuneability}
 
                 The special ability of the animal that appears depends on your environment, as described below.
