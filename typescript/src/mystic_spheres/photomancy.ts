@@ -287,7 +287,7 @@ export const photomancy: MysticSphere = {
       name: "Blur",
 
       effect: `
-        All \\glossterm{strikes} against you have a 25\\% \\glossterm{miss chance}.
+        All \\glossterm{targeted} attacks against you have a 20\\% \\glossterm{miss chance}.
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
@@ -350,7 +350,7 @@ export const photomancy: MysticSphere = {
         Three illusory duplicates appear around you that mirror your every move.
         The duplicates shift chaotically in your space, making it difficult to identify your real location.
 
-        All \\glossterm{targeted} attacks against you have a 25\\% \\glossterm{miss chance}.
+        All \\glossterm{targeted} attacks against you have a 20\\% \\glossterm{miss chance}.
         Like other miss chances, this miss chance is rolled before determining whether the attack beats your defenses.
         When an attack misses in this way, it affects an image, destroying it.
         When the last image is destroyed, this ability provides no further benefit.
@@ -410,10 +410,23 @@ export const photomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{verbal components}.
 
-        You become \\glossterm{briefly} invisible.
+        You \\glossterm{briefly} become \\trait{invisible}.
         This invisibility ends after you take any action.
       `,
       rank: 4,
+    },
+
+    {
+      name: "Enduring Invisibility",
+
+      effect: `
+        This spell has no \\glossterm{verbal components}.
+
+        You become \\trait{invisible}.
+        This invisibility ends after you take damage.
+      `,
+      rank: 7,
+      tags: ['Sustain (standard)'],
     },
 
     {
