@@ -2188,23 +2188,23 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Ring of Mastery",
-            rank=2,
+            rank=3,
             material_type="Ring",
             tags=["Attune (deep)"],
             description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
-                In addition, you gain a \\plus2 \\glossterm<magic bonus> to \\glossterm<power>.
+                You gain a +6 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
+                In addition, you gain a \\plus3 \\glossterm<magic bonus> to \\glossterm<power>.
             """,
             short_description="Grants many small bonuses",
             upgrades=[
                 Upgrade(
-                    description="The hit point and damage resistance bonuses increase to +8, and the power bonus increases to +4.",
-                    rank=4,
+                    description="The hit point and damage resistance bonuses increase to +12, and the power bonus increases to +6.",
+                    rank=5,
                     short_description="Grants many bonuses",
                 ),
                 Upgrade(
-                    description="The hit point and damage resistance bonuses increase to +16, and the power bonus increases to +8.",
-                    rank=6,
+                    description="The hit point and damage resistance bonuses increase to +24, and the power bonus increases to +12.",
+                    rank=7,
                     short_description="Grants many large bonuses",
                 ),
             ],
