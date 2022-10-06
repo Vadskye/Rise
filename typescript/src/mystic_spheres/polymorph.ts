@@ -31,9 +31,10 @@ export const polymorph: MysticSphere = {
         abilityType: 'ability',
         exceptThat: `
           that you gain a +4 bonus and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Disguise Creature}).
-          This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
+          This is a physical change to your body, so no amount of inspection will reveal your true form.
+          A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
 
-          This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+          This ability lasts until you use it again.
         `,
         name: 'disguise creature',
       },
@@ -56,6 +57,27 @@ export const polymorph: MysticSphere = {
     },
   ],
   spells: [
+    {
+      name: 'Alter Self',
+
+      functionsLike: {
+        abilityType: 'ability',
+        exceptThat: `
+          that you gain a +4 bonus and you cannot change the appearance of your equipment (see \\pcref{Disguise Creature}).
+          This is a physical change to your body, so no amount of inspection will reveal your true form.
+          A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
+        `,
+        name: 'disguise creature',
+      },
+      rank: 2,
+      scaling: {
+        2: `The bonus increases to +6.`,
+        4: `The bonus increases to +8.`,
+        6: `The bonus increases to +10.`,
+      },
+      tags: ['Attune'],
+    },
+
     {
       name: 'Reforge Armor',
 
@@ -564,10 +586,6 @@ export const polymorph: MysticSphere = {
         You gain the \\trait{scent} trait, which reduces the \\glossterm{difficulty value} of scent-based Awareness checks by 10 (see \\pcref{Awareness}).
       `,
       rank: 3,
-      scaling: {
-        5: `You also gain a +2 \\glossterm{magic bonus} to Awareness.`,
-        7: `The bonus increases to +3.`,
-      },
       type: 'Attune',
     },
 

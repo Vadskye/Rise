@@ -10,18 +10,18 @@ export const telekinesis: MysticSphere = {
       name: "Distant Hand",
 
       effect: `
-        Choose one Medium or smaller \\glossterm{unattended} object within \\shortrange.
-        You can telekinetically control the target object as if you were holding it in an extra hand.
+        Choose one Medium or smaller \\glossterm{unattended} object within \\medrange.
+        You can telekinetically control the target object as if you were holding it in a single extra hand.
         Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \\glossterm{power}.
         At the end of each round, if the target is outside of this ability's range, this ability ends.
 
-        During the movement phase, you can move the target up to five feet in any direction.
+        During the movement phase, you can move the target up to 5 feet in any direction.
         You use your Willpower instead of your Strength to determine your \\glossterm{weight limits} when moving objects in this way (see \\pcref{Weight Limits}).
       `,
       scaling: {
-        2: `You can move the target up to ten feet in any direction.`,
-        4: `The range increases to \\medrange.`,
-        6: `You can move the target up to thirty feet in any direction.`,
+        2: `The distance moved increases to 15 feet.`,
+        4: `The distance moved increases to 30 feet.`,
+        6: `The distance moved increases to 60 feet.`,
       },
       type: "Sustain (minor)",
     },
