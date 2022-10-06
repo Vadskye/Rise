@@ -602,6 +602,21 @@ export const aquamancy: MysticSphere = {
       type: "Attune",
     },
     {
+      name: 'Waterward',
+
+      effect: `
+        You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+      `,
+
+      rank: 1,
+      scaling: {
+        3: `The bonus increases to +8.`,
+        5: `The bonus increases to +16.`,
+        7: `The bonus increases to +32.`,
+      },
+      type: 'Attune',
+    },
+    {
       name: "Slippery Escapist",
 
       effect: `
