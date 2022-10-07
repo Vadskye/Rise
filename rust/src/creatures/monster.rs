@@ -87,7 +87,7 @@ impl Monster {
             Some("challenge rating"),
             None,
         );
-        let power_scaling = PowerProgression::Medium.calc_power((level + 2) / 3);
+        let power_scaling = PowerProgression::Fast.calc_power((level + 2) / 3);
         let power_scaling =
             ((power_scaling as f64) * challenge_rating.power_scaling_multiplier()).floor() as i32;
         if power_scaling > 0 {
