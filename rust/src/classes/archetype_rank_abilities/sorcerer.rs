@@ -12,7 +12,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                Your soulkeeper grants you the ability to use pact magic.
+                Your innate talents grant you the ability to use arcane magic.
                 You gain access to one arcane \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Arcane Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional arcane \glossterm{mystic sphere} per two \glossterm{insight points}.
                 You can only learn arcane spells from arcane mystic spheres that you have access to.
