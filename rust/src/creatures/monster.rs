@@ -70,7 +70,7 @@ impl Monster {
 
         let defense_modifier = if level >= 15 {
             2
-        } else if level >= 6 {
+        } else if level >= 3 {
             1
         } else {
             0

@@ -606,7 +606,7 @@ function calcDefenseCrScaling(level, challengeRating) {
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    levelScaling += level >= 15 ? 2 : level >= 6 ? 1 : 0;
+    levelScaling += level >= 15 ? 2 : level >= 3 ? 1 : 0;
   }
   if (challengeRating === 4) {
     levelScaling += 1;
