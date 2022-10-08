@@ -532,16 +532,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} Each area adjacent to any target is doubly difficult terrain.
                     \end{sustainability}
 
-                    \begin{sustainability}{Hustle}{\abilitytag{Sustain} (minor)}
-                        \rankline
-                        Each target gains a \plus5 foot bonus to its land speed during any phase that it takes the \textit{sprint} action.
-
-                        \rankline
-                        \rank{3} The speed bonus increases to \plus10 feet.
-                        \rank{5} The speed bonus increases to \plus15 feet.
-                        \rank{7} The speed bonus increases to \plus20 feet.
-                    \end{sustainability}
-
                     \begin{sustainability}{Keep Moving}{\abilitytag{Sustain} (minor)}
                         \rankline
                         Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
@@ -551,6 +541,16 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Reflex defense.
                         \rank{5} The Reflex defense bonus increases to \plus2.
                         \rank{7} The Reflex defense bonus increases to \plus3.
+                    \end{sustainability}
+
+                    \begin{sustainability}{Rush}{\abilitytag{Sustain} (minor)}
+                        \rankline
+                        Each target gains a \plus5 foot bonus to its land speed during any phase that it takes the \textit{sprint} action.
+
+                        \rankline
+                        \rank{3} The speed bonus increases to \plus10 feet.
+                        \rank{5} The speed bonus increases to \plus15 feet.
+                        \rank{7} The speed bonus increases to \plus20 feet.
                     \end{sustainability}
 
                     \begin{sustainability}{Stand Your Ground}{\abilitytag{Sustain} (minor)}
