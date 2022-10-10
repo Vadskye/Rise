@@ -10,8 +10,8 @@
     \subsection{Rounds}\label{Rounds}
 
         Combat takes place in a series of \glossterm{rounds}, which represent about six seconds of time.
-        Each round of a combat is divided into three \glossterm{phases} (see \pcref{Phases}).
-        After all phases are complete, the round ends and the next round begins.
+        Each round of a combat is divided into two \glossterm{phases}: the movement phase and the action phase (see \pcref{Phases}).
+        After both phases are complete, the round ends and the next round begins.
 
     \subsection{Actions}\label{Actions}
 
@@ -45,10 +45,11 @@
             Using a free action does not take much time or attention, and it can be done at the same time as any other actions.
 
             You can take any number of free actions per round.
+            However, you cannot use the same free action twice in a single round unless an ability specifies otherwise.
 
     \subsection{Phases}\label{Phases}
 
-        There are three \glossterm{phases} in each round: a \glossterm{movement phase}, an \glossterm{action phase}, and sometimes a \glossterm{delayed action phase}.
+        There are two \glossterm{phases} in each round: a \glossterm{movement phase} and an \glossterm{action phase}.
         Each phase specifies the types of actions that can be taken during that phase.
         As a special case, \glossterm{free actions} may be taken during any phase.
 
@@ -62,83 +63,95 @@
             Alternately, you can take a \glossterm{move action} or additional \glossterm{minor action} in place of your standard action.
             Most of the time, you will simply take a single standard action.
 
-        \subsubsection{The Delayed Action Phase}\label{The Delayed Action Phase}
-            During the \glossterm{delayed action phase}, you can take a \glossterm{minor action}, a \glossterm{standard action}, or both if you did not use the corresponding action in the \glossterm{action phase}.
-            Alternately, you can take a \glossterm{move action} or additional \glossterm{minor action} in place of a standard action.
-            In addition, some abilities have effects during the delayed action phase instead of or in addition to their effects in the action phase.
-            For example, the \ability{spring attack} \glossterm{maneuver} allows you to move during the action phase and again during the delayed action phase.
-
-        \subsubsection{Triggered Ability Timing}\label{Triggered Ability Timing}
-            Some abilities trigger at the start or end of particular phases, or at the start or end of the round.
-            Here is the order in which these abilities trigger each round, and some notable events that occur during the round:
-            \begin{itemize}
-                \item Start of round
-                \item Start of movement phase
-                \item End of movement phase
-                \item Start of action phase
-                \item End of action phase
-                \item Start of delayed action phase
-                \item End of delayed action phase
-                \item End of round
-            \end{itemize}
-
     \subsection{Resolving Actions}\label{Resolving Actions}
 
-        Within each phase, actions of all creatures are simultaneously resolved in the following order.
-        All \glossterm{allies} with the ability to communicate can freely coordinate their actions with each other, within reasonable limits.
+        Actions in combat are partially sequential, and partially simultaneous.
+        You and your \glossterm{allies} who can see or otherwise communicate with each other generally act as a single allied group.
+        One at a time, each person in the allied group declares their actions, rolls all relevant dice, and applies the results appropriately.
+        You can freely choose the order in which people act within the allied group, as long as everyone agrees with the order chosen.
+        If one of your allies acts before you, you can learn the result of their action before deciding your own action.
+        For example, if they knock an enemy \prone, that enemy would suffer the appropriate defense penalties against your attacks.
 
-        \begin{enumerate*}
-            \item Choose actions.
-            \item Determine targets affected by actions.
-            \item Apply the results of \abilitytag{Swift} abilities.
-            \item Check action success.
-                Example: Making attack rolls.
-            \item Determine action results.
-                Example: Making damage rolls.
-            \item Apply action results.
-                Examples: Adding \glossterm{vital wounds}, moving creature locations, and applying penalties.
-        \end{enumerate*}
+        Although your actions resolve sequentially within your allied group, they resolve simultaneously with the actions of anyone outside your allied group.
+        Essentially, you locally resolve the effects of your actions within your allied group, but those actions do not globally resolve until later.
+        This means that you cannot interrupt enemy actions, even by killing them.
+        Generally, you won't know what actions your enemies will take until after you have already resolved your action.
+        However, their actions will resolve as if they had acted before you, not after you.
+        This goes both ways, of course.
+        You can freely decide your actions without knowing what your enemy is doing because their actions cannot interrupt yours.
 
-        In the vast majority of cases, there is no need to go through this order explicitly.
-        Combats will run much faster if attack and damage rolls are generally made and announced at the same time as those actions are chosen, even before all characters have explicitly stated their actions.
-        However, the order of resolution is important because it limits direct interaction between player actions and enemy actions.
-        Even if a player is knocked unconscious or suffers a debilitating penalty from an enemy attack, they still get to act normally during that phase.
+        Once all allied groups have locally resolved their actions, the results of all of those actions is announced.
+        Then, each allied group updates their own status to reflect the actions that all of the other allied groups took during the same phase.
+        Once all of the actions have been globally resolved, the phase ends.
+        In a typical combat, this just means that the GM will tell you what the monsters did to you after you tell the GM what you did to them.
+
+        With this system, it's possible for two combatants to kill each other during the same phase, leaving both dead!
+        This might seem strange if you're used to other games which always resolve one action at a time.
+        However, this situation is not uncommon in fantasty fiction, and it's certainly possible in real life.
 
         \subsubsection{Swift Abilities}\label{Swift Abilities}
-            Some abilities resolve before other actions in the same phase.
-            These abilities have the \abilitytag{Swift} tag.
-            They resolve after targets are determined, but before attack rolls are made.
-            Swift abilities never require attack rolls, and almost always affect only the creature using the ability.
+            A small number of abilities with the \abilitytag{Swift} tag resolve differently from most actions.
+            Swift abilities resolve before all non-Swift abilities, so they can change the results of your enemy's actions.
+            However, Swift abilities are always simple, and cannot interrupt actions or make attack rolls.
+            You declare Swift abilities during your normal turn within your allied group, and you don't have to go first within your group or do anything special to use them.
 
-            For example, the \textit{total defense} ability is a swift ability.
-            It increases your defenses against attacks made during the same phase (see \pcref{Total Defense}).
+            For example, the \ability{total defense} ability gives you a bonus to your defenses during the current phase.
+            That ability has to resolve before your enemies attack you during that phase, or else it would be pointless.
+            Almost all healing abilities are also Swift, so they heal creatures before they take damage from incoming attacks.
+            Swift abilities don't get much more complicated than that.
 
             Some abilities have only part of their effect resolve early.
-            For example, the \textit{reckless attack} ability immediately reduces your defenses, which affects attacks made against you during the current phase, and makes an attack with the normal timing.
+            For example, the \textit{reckless attack} ability immediately reduces your defenses, which affects attacks made against you during the current phase, and makes a \glossterm{strike} with the normal timing.
 
-        % This may be too complicated
-        \subsubsection{Conflicting Actions}\label{Conflicting Actions}
-            Sometimes, actions that occur in the same phase can conflict with each other.
-            In this case, each creature involved with conflicting actions in that phase rolls an \glossterm{initiative} check (see \pcref{Initiative}).
-            Starting from the highest check result and continuing to the lowest, each creature immediately resolves its chosen action.
-            Creatures that resolve their action afterward accomplish as much of their intended action as possible before being blocked or otherwise prevented.
+        \subsubsection{Action Resolution Summary} 
+            \begin{enumerate*}
+                \item Start of phase effects resolve globally
+                \item \abilitytag{Swift} abilities resolve globally
+                \item Actions of your allied group resolve locally
+                \item Actions of other allied groups resolve locally
+                \item Actions of each allied group are announced, and resolve globally
+                \item End of phase effects resolve globally
+            \end{enumerate*}
 
-            For example, if three different creatures move into the same space, only the creature with the highest initiative check would actually enter that space.
-            The other two creatures would take their intended path, but they would interrupt their movement when they cannot proceed farther, generally because they run into the space occupied by the first creature.
+        \subsubsection{Deciding Action Order}\label{Deciding Action Order}
+            Try not to spend too much time the exact order of everyone's actions within your allied group.
+            Most of the time, the exact order doesn't matter.
+            It's generally fine to just start rolling dice if you already know what you're going to do, and just act in the order that people decide their actions.
+            The GM can help resolve situations where this is ambiguous.
 
-            In general, directly conflicting actions are rare.
-            Most movements do not conflict - even reactive movements, such as when one creature attempts to follow a withdrawing creature.
-            In that case, no initiative check is necessary - both creatures simply move as far as they can, and the creatures' relative movement speeds determine who is more successful.
-            This does make it possible for creatures to be ``stranded'' out of melee range of any attackers.
-            Player characters are normally allowed to break this symmetry by reactively using the \textit{sprint} ability, while monsters cannot sprint.
-            This can help prevents melee characters from feeling stuck or useless.
-            In addition, the \ability{charge} universal ability can be helpful in such cases.
+        \subsubsection{Multi-Group Battles}\label{Multi-Group Battles}
+            Sometimes, there might be more than two groups in a battle.
+            This works in basically the same way as a two-sided battle.
+            Each allied group resolves sequentially with itself, but simultaneously with all enemy groups.
+            It's possible for two different groups to attack and kill the same creature, which wastes some of their actions.
+            That's a natural consequence of not coordinating effectively.
 
-    \subsection{Initiative}\label{Initiative}
-        When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll an \glossterm{opposed check} with their initiative modifier.
-        For details, see \pcref{Conflicting Actions}.
-        Your initiative modifier is equal to your movement speed that you are using to take the action.
-        In the unusual situation that no movement speed is relevant, just roll without applying a modifier.
+    % This may be too complicated
+    \subsection{Conflicting Actions}\label{Conflicting Actions}
+        Sometimes, actions that occur in the same phase can be mutually impossible.
+        Almost all conflicting actions are the result of competing movements.
+        When actions conflict, each creature involved rolls an \glossterm{initiative} check (see \pcref{Initiative}).
+        Starting from the highest check result and continuing to the lowest, each creature immediately resolves its chosen action.
+        Creatures that resolve their action afterward accomplish as much of their intended action as possible before being blocked or otherwise prevented.
+
+        For example, if three different creatures attempt to move into the same space, only the creature with the highest initiative check would actually enter that space.
+        The other two creatures would take their intended path, but they would interrupt their movement when they cannot proceed farther, generally because they run into the space occupied by the first creature.
+
+        In general, directly conflicting actions are rare.
+        Most movements do not conflict - even reactive movements, such as when one creature attempts to follow a withdrawing creature.
+        In that case, no initiative check is necessary.
+        Both creatures simply move as far as they can, and the creatures' relative movement speeds determine who is more successful.
+
+        This does make it possible for creatures to be ``stranded'' out of melee range of any attackers.
+        Player characters are normally allowed to break this symmetry by reactively using the \textit{sprint} ability, while monsters cannot sprint.
+        This can help prevents melee characters from feeling stuck or useless.
+        In addition, the \ability{charge} universal ability can be helpful in such cases.
+
+        \subsubsection{Initiative}\label{Initiative}
+            When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll an \glossterm{opposed check} with their initiative modifier.
+            For details, see \pcref{Conflicting Actions}.
+            Your initiative modifier is equal to your movement speed that you are using to take the action.
+            In the unusual situation that no movement speed is relevant, just roll without applying a modifier.
 
 \section{Movement and Positioning}\label{Movement and Positioning}
     This section describes how creatures move and position themselves on a battlefield.
@@ -818,8 +831,7 @@
         It is usually \unaware of all until that point, though unusually vigilant or perceptive creatures may be \partiallyunaware.
 
         If a surprise attack begins a combat, the creatures who initiate the attack can choose which phase to start in.
-        Generally, this should start in \glossterm{delayed action phase}, though sometimes the \glossterm{movement phase} is more advantageous for the attackers.
-        Starting a surprise attack during the \glossterm{action phase} is generally a bad idea because the attacked creatures may be able to take actions during the delayed action phase.
+        Generally, this should start in \glossterm{action phase}, though sometimes the \glossterm{movement phase} is more advantageous for the attackers.
 
 % TODO: This is a bad name; organize these better
 \section{Special Combat Rules}
