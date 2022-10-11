@@ -295,7 +295,7 @@ export const astromancy: MysticSphere = {
         hit: `
           The target takes 4d6 + half \\glossterm{power} fire damage.
           If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
-          At the end of each round, it takes 4d6 + half \\glossterm{power} damage.
+          During the next \\glossterm{action phase}, it takes 4d6 + half \\glossterm{power} damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.
