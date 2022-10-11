@@ -215,7 +215,7 @@ export const fabrication: MysticSphere = {
         exceptThat: `
           the damage is increased to 2d10 plus half your \\glossterm{power}.
           % TODO: Clarify interaction with solid obstacles that block contraction?
-          In addition, the wall's radius shrinks by 5 feet at the end of each round, dealing damage to everything it moves through.
+          In addition, the wall's radius shrinks by 5 feet during each subsequent \\glossterm{action phase}, dealing damage to everything it moves through.
           After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
           Once it expands back to its maximum radius, it begins shrinking again.
         `,

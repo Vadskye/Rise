@@ -541,7 +541,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         7 & The spell's area is tripled this round \\
                         8 & Each target that loses hit points from the spell this round is also \glossterm{briefly} \stunned \\
                         9 & You gain a \plus4 bonus to \glossterm{accuracy} with the spell this round, but you take the minimum possible result when the spell would deal damage \\
-                        10 & During both the \glossterm{action phase} and \glossterm{delayed action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
+                        10 & During each \glossterm{action phase} of the next two rounds, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
                 \end{dtable}
             ",

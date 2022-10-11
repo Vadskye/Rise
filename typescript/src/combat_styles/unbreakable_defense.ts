@@ -119,8 +119,8 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a shield.
-        You gain a +1 bonus to Armor defense until the end of the round.
-        The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
+        In addition, you gain a +1 bonus to Armor defense this round.
+        The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 1,
       tags: ["Swift (see text)"],
@@ -154,8 +154,8 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         You do not add your \\glossterm{power} to damage with the strike.
-        In exchange, you gain a +2 bonus to Armor and Reflex defenses until the end of the round.
-        The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
+        In exchange, you gain a +2 bonus to Armor and Reflex defenses this round.
+        The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 1,
       tags: ["Swift (see text)"],
@@ -221,11 +221,11 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee strike.
-        In addition, you gain a +2 bonus to \\glossterm{vital rolls} until the end of the round.
-        This bonus is a \\abilitytag{Swift} effect, so it affects any vital wounds you gain during the current phase.
+        In addition, you gain a +2 bonus to \\glossterm{vital rolls} this round.
+        The vital roll bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 3,
-      tags: ["\\abilitytag{Swift} (see text)"],
+      tags: ["Swift (see text)"],
     },
 
     {

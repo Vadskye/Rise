@@ -170,27 +170,11 @@ This chapter describes the core mechanics of Rise.
     \subsection{Negative Hit Points}\label{Negative Hit Points}
         You can have negative hit points, but only briefly.
         At the end of each round, if your hit points are negative, you gain a \glossterm{vital wound} and your hit points are set to 0 (see \pcref{Vital Wounds}).
-        % TODO: does this still need to exist? all "end of round" damage should ideally be removed
-        % Damage you take at the end of the round is considered to be part of the action phase for this purpose.
+        This is checked after applying all healing and damage that takes place at the end of the round.
         If your negative hit points equal or exceed half your maximum hit points, you gain an additional vital wound.
         You gain an additional vital wound for each increment of half your maximum hit points that you have in negative hit points.
 
-    \subsection{Resolving Simultaneous Damage}\label{Resolving Simultaneous Damage}
-        Many attacks have special effects when they cause you to lose \glossterm{hit points}.
-        In addition, some attacks have special effects based on other triggers, like whether you resisted all damage from the attack.
-        When you take damage from multiple sources during the same phase, it may not be obvious how to determine whether any individual attack caused you to lose hit points.
-        There is a rule for this situation: each attack's special effects are triggered as if all damage you took in the current phase was dealt by that attack.
-
-        For example, assume that you started a phase with some damage resistance remaining.
-        You are hit by two attacks: the \spell{organ failure} spell and the \maneuver{strip the armor} maneuver.
-        The combined damage from the two attacks exceeds your damage resistance, so you lose some hit points.
-        The \spell{organ failure} spell would cause you to be \stunned, because it would be treated as if it made you lose hit points, even if your damage resistance at the start of the phase exceeded the damage dealt by that spell.
-        Likewise, the \maneuver{strip the armor} maneuver would not have its bonus effect that triggers if you resist all damage from the attack, because you lost hit points from that attack as well.
-
-        Non-damaging attacks are simpler.
-        They always care about your current state at the time the attack is made, regardless of any damage you may take during the phase.
-
-        \parhead{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
+    \subsection{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
         If you regain hit points or damage resistance and take damage simultaneously, apply all healing effects before applying any damaging effects.
         While you are resolving these effects, you are allowed to heal beyond your maximum hit points and damage resistance.
         At the end of the phase, if your current hit points or damage resistance exceeds your maximum, your current value is reduced to be no higher than your maximum value.
@@ -766,9 +750,6 @@ This chapter describes the core mechanics of Rise.
             When you use that ability, you can choose to \glossterm{attune} to it instead of sustaining it.
             If you do, it gains the \abilitytag{Attune} tag and loses the \abilitytag{Sustain} tag, so it stays active as long as you stay attuned to it.
 
-            % TODO: a more robust timing system would make stating this explicitly unnecessary
-            If a sustained ability has effects that trigger at the end of the round, it ends before having its effects if you fail to sustain the ability.
-
             Taking an action to sustain an ability only allows you to sustain a single use of that ability.
             However, you can sustain multiple separate abilities at once if you have available actions.
 
@@ -1067,7 +1048,7 @@ This chapter describes the core mechanics of Rise.
         Many poisons have an additional effect when they hit the target for the third time.
 
         \parhead{Poison Attacks}
-        At the end of each subsequent round after the target becomes poisoned, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
+        During each subsequent \glossterm{action phase} after the target becomes poisoned, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
         If the poison was applied by a spell or other special ability, the accuracy bonus of this attack is equal to the accuracy of the original ability that applied the poison.
 
         Each hit increases the \glossterm{poison stage} of the poison.
@@ -1075,7 +1056,7 @@ This chapter describes the core mechanics of Rise.
         On a miss, the creature gets closer to resisting the poison (see Resisting Poisons, below).
 
         \parhead{Resisting Poisons}
-        If a poison misses a creature three times with its attack at the end of each round, the creature stops being poisoned by that poison.
+        If a poison misses a creature three times with its attack during each action phase, the creature stops being poisoned by that poison.
         % Some poisons may require more attacks to end the poison, as indicated in their description.
 
         \parhead{Multiple Doses}

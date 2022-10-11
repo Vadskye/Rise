@@ -534,7 +534,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Shark} You gain a \plus2 bonus to \glossterm{accuracy} against creatures within \shortrange of you that are below their maximum hit points.
 
                 \subcf{Wolf} At the start of each round, you may choose one of your \glossterm{allies}.
-                That creature gains a \plus1 bonus to \glossterm{accuracy} during that round as long as it is adjacent to you.
+                That ally gains a \plus1 bonus to \glossterm{accuracy} during that round as long as it is adjacent to you.
             ",
             // For convenience in balancing, assume lion totem instead of representing each totem
             modifiers: Some(vec![Modifier::Accuracy(1)]),

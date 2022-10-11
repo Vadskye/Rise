@@ -1322,7 +1322,7 @@ impl Class {
                             \rank{6} The area increases to a \areagarg radius.
                         \end{attuneability}
                         \parhead{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 120 feet (see \pcref{Flying}).
-                        At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                        As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
                     \subsubsection{Chaos Domain}
                         \parhead{Gift} You are immune to \abilitytag{Compulsion} attacks.
@@ -1526,8 +1526,7 @@ impl Class {
                         \begin{activeability}{Divine Protection}[\abilitytag{Swift}]
                             \rankline
                             Choose an \glossterm{ally} adjacent to you.
-                            It gains a \plus1 bonus to all defenses until the end of the round.
-                            Because this ability has the \abilitytag{Swift} tag, this bonus applies against attacks made in the current phase.
+                            It gains a \plus1 bonus to all defenses this round.
 
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.

@@ -257,7 +257,7 @@ export const terramancy: MysticSphere = {
         hit: `The target takes 2d10 bludgeoning damage.
         If it is Large or smaller and it loses \\glossterm{hit points} from this damage, it is swallowed by the earth as a \\glossterm{condition}.
         While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
-        At the end of each subsequent round, it takes 4d6 bludgeoning damage as the earth grinds it into paste.
+        During each subsequent \\glossterm{action phase}, it takes 4d6 bludgeoning damage as the earth grinds it into paste.
         If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
         Special movement abilities such as teleportation can also remove the target from the fissure.`,
         targeting: `
@@ -346,7 +346,7 @@ export const terramancy: MysticSphere = {
         % TODO: define hit points and resistances of earth
 
         The fortifications form slowly, rather than instantly.
-        The structure becomes complete at the end of the action phase in the next round after this spell is cast.
+        The structure becomes complete at the end of the next round after this spell is cast.
         This makes it difficult to trap creatures within structures formed.
       `,
       rank: 4,

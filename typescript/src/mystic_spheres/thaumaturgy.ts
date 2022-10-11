@@ -502,16 +502,11 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         You immediately take the \\textit{total defense} action.
-        In addition, any \\glossterm{targeted} \\glossterm{magical} abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
+        In addition, any \\glossterm{targeted} \\glossterm{magical} abilities that would target you this round are redirected to target the creature using that ability instead of you.
         It cannot choose to reduce its accuracy or damage against itself.
         Any other targets of the ability are affected normally.
-
-        This is a \\abilitytag{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
       `,
       rank: 5,
-      scaling: {
-        7: `You gain an additional +1 bonus to all defenses.`,
-      },
       tags: ['Swift'],
     },
 

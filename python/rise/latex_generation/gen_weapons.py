@@ -58,7 +58,7 @@ def generate_weapons():
                 It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with fiery energy.
-                Each creature that loses \\glossterm<hit points> from the strike takes additional fire damage at the end of the next round equal to your damage dice with that strike.
+                Each creature that loses \\glossterm<hit points> from the strike takes additional fire damage during the next \\glossterm<action phase> equal to your damage dice with that strike.
             """,
             short_description="Deals fire damage and can ignite",
             upgrades=[
@@ -66,7 +66,7 @@ def generate_weapons():
                     rank=6,
                     description="""
                         You do not have to make a special attack to ignite creatures with the weapon.
-                        Whenever you cause a creature to lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, that creature takes additional fire damage at the end of the next round equal to your damage dice with that strike.
+                        Whenever you cause a creature to lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, that creature takes additional fire damage during the next \\glossterm<action phase> equal to your damage dice with that strike.
                     """,
                     short_description="Deals fire damage and ignites",
                 ),
@@ -469,7 +469,7 @@ def generate_weapons():
             description="""
                 As a standard action, you can make a \\glossterm<strike> with using this weapon.
                 You can \\glossterm<briefly> apply a dimensional trace on one creature that was dealt damage by that strike.
-                At the start of each \\glossterm<action phase>, if any creature within \\distrange of you has a dimensional trace active from this weapon, you can choose to automatically \\glossterm<teleport> into the closest unoccupied square adjacent to that creature.
+                As a \\glossterm<free action>, if any creature within \\distrange of you has a dimensional trace active from this weapon, you can \\glossterm<teleport> into the closest unoccupied square adjacent to that creature.
             """,
             short_description="Can briefly teleport next to struck creature",
             upgrades=[

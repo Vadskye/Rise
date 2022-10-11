@@ -358,7 +358,7 @@ export const umbramancy: MysticSphere = {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
           You take a -2 penalty to \\glossterm{accuracy} with the strike due to its rushed nature.
-          In addition, if you cast this spell during the \\glossterm{action phase}, you can repeat the teleportation and strike during the \\glossterm{delayed action phase}.
+          In addition, you can repeat the teleportation and strike.
           The second strike takes a -2 accuracy penalty just like the first strike, and it cannot target any of the same creatures as the first strike.
         `,
         name: "shadowstep",
