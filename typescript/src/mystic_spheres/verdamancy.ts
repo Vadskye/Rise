@@ -325,11 +325,14 @@ export const verdamancy: MysticSphere = {
       // short range and -1d relative to ignition for more difficult removal
       attack: {
         crit: `The damage from the condition is doubled.`,
-        hit: `As a \\glossterm{condition}, the target takes 1d4 + half \\glossterm{power} physical damage at the end of each round.
-        If the the target gains a \\glossterm{vital wound} from this damage, the condition ends.
+        hit: `
+          The target is afflicted by uncontrolled plant growth within its body as a \\glossterm{condition}.
+          It takes 1d4 + half \\glossterm{power} physical damage immediately and during each subsequent \\glossterm{action phase}.
+          If it gains a \\glossterm{vital wound} from this damage, the condition ends.
 
-        This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
-        The \\glossterm{difficulty value} of the check is equal to 10.`,
+          This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
+          The \\glossterm{difficulty value} of the check is equal to 10.
+        `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
@@ -347,7 +350,8 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `
-          As a \\glossterm{condition}, the target takes 2d6 + half \\glossterm{power} physical damage at the end of each round.
+          The target is afflicted by uncontrolled plant growth within its body as a \\glossterm{condition}.
+          It takes 2d6 + half \\glossterm{power} physical damage immediately and during each subsequent \\glossterm{action phase}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.

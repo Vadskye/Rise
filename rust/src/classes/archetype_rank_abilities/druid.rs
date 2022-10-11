@@ -154,7 +154,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 Your benefits from each element improve.
                 \begin{itemize}
                     \item Air: You gain a \glossterm{fly speed} 10 feet slower than the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
-                    At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \item Earth: The bonus to your Fortitude defense increases to \plus2.
                     \item Fire: You treat all fire damage you take as being \glossterm{environmental damage}.
                     \item Water: You gain a \plus10 foot bonus to your swim speed.
@@ -415,7 +415,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You grow wings, granting your a glide speed equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
                         \rank{5} The skill bonuses increase to \plus5.
                         \rank{7} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 60 feet (see \pcref{Flying}).
-                        At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                        As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \end{activeability}
 
                     \begin{activeability}{Form of the Hound}

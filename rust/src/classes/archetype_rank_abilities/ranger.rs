@@ -355,8 +355,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
                         \rankline
-                        \rank{4} At the start of each phase, you can declare one creature you see to be your quarry in addition to any existing creatures.
-                        \rank{6} You can add any number of creatures at the start of each phase.
+                        \rank{4} As a \glossterm{free action}, you can declare one creature you see to be your quarry in addition to any existing creatures.
+                        \rank{6} You can add any number of creatures as a free action instead of only one.
                     \end{activeability}
 
                     \begin{activeability}{Wolfpack}

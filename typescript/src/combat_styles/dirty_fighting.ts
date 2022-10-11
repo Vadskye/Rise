@@ -179,7 +179,7 @@ export const dirtyFighting: CombatStyle = {
           you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
           Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
 
-          In addition, if you use this ability during the \\glossterm{action phase}, you can make a \\glossterm{strike} with a weapon you stole this way during the \\glossterm{delayed action phase}.
+          In addition, you can make a \\glossterm{strike} with a weapon you stole this way.
         `,
         name: "disarm weapon",
       },
@@ -251,9 +251,8 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +1 accuracy bonus.
         After making the strike, you fall \\prone.
-        If you use this ability during the \\glossterm{delayed action phase}, you are also unable to stand up during the next round's \\glossterm{movement phase}.
       `,
-      rank: 1,
+      rank: 2,
     },
 
     {

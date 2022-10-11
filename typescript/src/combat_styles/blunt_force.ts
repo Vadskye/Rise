@@ -237,7 +237,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike \\glossterm{briefly} takes half the damage from the strike again at the end of each round.
+        Each creature damaged by the strike takes the damage from the strike again during the next \\glossterm{action phase}.
       `,
       rank: 5,
     },

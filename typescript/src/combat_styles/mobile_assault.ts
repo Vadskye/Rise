@@ -34,7 +34,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         Move up to half your movement speed and make a \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        If you use this ability during the \\glossterm{action phase}, you may use the other half of your movement during the \\glossterm{delayed action phase}.
+        After making the strike, you can use the other half of your movement.
       `,
       rank: 3,
     },
@@ -43,9 +43,8 @@ export const mobileAssault: CombatStyle = {
       name: "Wanderer's Strike",
 
       effect: `
-        You can either move up to half your speed or make a \\glossterm{strike}.
+        You can move up to half your speed and make a \\glossterm{strike}, in either order.
         Your \\glossterm{power} with the strike is halved.
-        If you use this ability during the \\glossterm{action phase}, you can take the other action during the \\glossterm{delayed action phase}.
       `,
       rank: 1,
     },
@@ -54,8 +53,7 @@ export const mobileAssault: CombatStyle = {
       name: "Wanderer's Strike+",
 
       effect: `
-        You can either move up to your speed or make a \\glossterm{strike}.
-        If you use this ability during the \\glossterm{action phase}, you can take the other action during the \\glossterm{delayed action phase}.
+        You can move up your speed and make a \\glossterm{strike}, in either order.
       `,
       rank: 5,
     },
@@ -201,12 +199,11 @@ export const mobileAssault: CombatStyle = {
       effect: `
         Choose a creature you can see.
         You can move up to 5 feet away from that creature.
-        In addition, you gain a +2 bonus to your Armor and Reflex defenses until the end of the round.
-        Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
+        In addition, you gain a +2 bonus to your Armor and Reflex defenses this round.
+        Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it takes a -2 penalty to Armor defense during the next round.
         As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
 
-        The defense bonus from this ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
-        However, the movement and the penalty imposed on attackers is not Swift.
+        The defense bonus and reactive penalties are \\abilitytag{Swift} effects, but not the movement.
       `,
       rank: 1,
     },

@@ -123,6 +123,16 @@ export const photomancy: MysticSphere = {
     },
 
     {
+      name: "Greater Blurred Motion",
+
+      effect: `
+        If you move at least 30 feet during the \\glossterm{movement phase}, you gain a +2 bonus to Armor defense until the end of that round.
+      `,
+      rank: 7,
+      type: "Attune (deep)",
+    },
+
+    {
       name: "Wall of Light",
 
       effect: `

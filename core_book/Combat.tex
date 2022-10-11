@@ -106,12 +106,17 @@
 
         \subsubsection{Action Resolution Summary} 
             \begin{enumerate*}
-                \item Start of phase effects resolve globally
+                \item Round begins - "start of round" resolve globally
+                \item Movement phase begins - "start of phase" effects resolve globally
+                \item Movements resolve globally, using \glossterm{initiative} checks when strictly necessary
+                \item Movement phase ends - "end of phase" effects resolve globally
+                \item Action phase begins - "start of phase" effects resolve globally
                 \item \abilitytag{Swift} abilities resolve globally
                 \item Actions of your allied group resolve locally
                 \item Actions of other allied groups resolve locally
                 \item Actions of each allied group are announced, and resolve globally
-                \item End of phase effects resolve globally
+                \item Action phase ends - "end of phase" effects resolve globally
+                \item Round ends - "end of round" effects resolve globally
             \end{enumerate*}
 
         \subsubsection{Deciding Action Order}\label{Deciding Action Order}
@@ -632,8 +637,8 @@
 
         \begin{activeability}{Total Defense}[\abilitytag{Swift}]
             \rankline
-            You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
-            Because this ability has the \abilitytag{Swift} tag, this improves your defenses against attacks made against you during the current phase.
+            You gain a \plus2 bonus to your \glossterm{defenses} this round.
+            Because this ability has the \abilitytag{Swift} tag, this improves your defenses against attacks made against you during the current round.
         \end{activeability}
 
         \parhead{Trip}\label{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
@@ -832,7 +837,7 @@
         It is usually \unaware of all until that point, though unusually vigilant or perceptive creatures may be \partiallyunaware.
 
         If a surprise attack begins a combat, the creatures who initiate the attack can choose which phase to start in.
-        Generally, this should start in \glossterm{action phase}, though sometimes the \glossterm{movement phase} is more advantageous for the attackers.
+        Generally, they should start in \glossterm{action phase}, though sometimes the \glossterm{movement phase} is more advantageous for the attackers.
 
 % TODO: This is a bad name; organize these better
 \section{Special Combat Rules}

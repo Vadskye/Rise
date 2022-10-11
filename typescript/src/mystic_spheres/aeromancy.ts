@@ -44,7 +44,7 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\longrange.
-        Until the end of the round, that creature treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm{falling damage}.
+        That creature treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm{falling damage} this round.
       `,
       narrative: `
         The air beneath you suddenly accelerates into a great wind, softening the force of your unexpected fall.

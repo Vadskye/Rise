@@ -73,7 +73,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If you use this ability during the \\glossterm{action phase}, you can make an additional \\glossterm{strike} against each creature that resisted all damage from the first strike during the \\glossterm{delayed action phase}.
+        Then, make an additional \\glossterm{strike} against each creature that resisted all damage from the first strike with its \\glossterm{damage resistance}.
         The second strike cannot target any other creatures.
         You do not add your \\glossterm{power} to damage with either strike.
       `,
@@ -210,7 +210,8 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If you use this ability during the \\glossterm{action phase}, you can make an additional \\glossterm{strike} during the \\glossterm{delayed action phase} against each creature that lost hit points from the first strike.
+        Then, make an additional strike against each creature that lost hit points from the first strike.
+        The second strike cannot target any other creatures.
         You do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 1,

@@ -9,25 +9,21 @@ export const ebbAndFlow: CombatStyle = {
       name: "Counterstrike",
 
       effect: `
-        You can only use this ability during the \\glossterm{action phase}.
-        During that phase, you prepare to retaliate against any incoming attacks.
-
-        During the \\glossterm{delayed action phase}, make a melee \\glossterm{strike}.
-        You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that attacked you during the action phase of this round.
+        Choose a creature you can see.
+        If that creature attacks you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        You can only attack that creature once in this way, even if it attacks you multiple times.
       `,
       rank: 1,
+      tags: ['Swift'],
     },
 
     {
       name: "Counter Sweep",
 
       effect: `
-        You can only use this ability during the \\glossterm{action phase}.
-        During that phase, you prepare to retaliate against any incoming attacks.
-
-        During the \\glossterm{delayed action phase}, make a melee \\glossterm{strike} with a slashing or bludgeoning weapon.
-        The strike targets one creature or object of your choice,
-          plus each creature adjacent to you that attacked you during the action phase of this round.
+        Whenever a creature attacks you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        This strike must be made using a slashing or bludgeoning weapon.
+        You can only attack any individual creature once in this way, even if it attacks you multiple times.
       `,
       rank: 3,
     },
@@ -36,17 +32,12 @@ export const ebbAndFlow: CombatStyle = {
       name: "Counter Flurry",
 
       effect: `
-        You can only use this ability during the \\glossterm{action phase}.
-        During that phase, you prepare to retaliate against any incoming attacks.
-
-        During the \\glossterm{delayed action phase}, make two melee \\glossterm{strikes}.
+        Choose a creature you can see.
+        If that creature attacks you this round, you immediately make two melee \\glossterm{strikes} with a -2 accuracy penalty against them as a \\glossterm{reactive attack} if possible.
         Your \\glossterm{power} with both strikes is halved.
-        You take a -4 penalty to \\glossterm{accuracy} with the strikes against any target that did not attack you during the action phase of this round.
+        You can only attack that creature once in this way, even if it attacks you multiple times.
       `,
       rank: 5,
-      scaling: {
-        6: "You gain a +4 damage bonus with the strike.",
-      },
     },
 
     {
@@ -215,11 +206,9 @@ export const ebbAndFlow: CombatStyle = {
       name: "Punish Inattention",
 
       effect: `
-        You can only use this ability during the \\glossterm{action phase}.
-        During that phase, you prepare to strike against creatures who do not force you back.
-
-        During the \\glossterm{delayed action phase}, make a melee \\glossterm{strike}.
-        You gain a +2 bonus to \\glossterm{accuracy} with the strike against each creature that did not attack you during the action phase of this round.
+        Choose a creature you can see.
+        If that creature takes a \\glossterm{standard action} that does not attack you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        You can only attack that creature once in this way, even if it takes multiple standard actions.
       `,
       rank: 3,
     },

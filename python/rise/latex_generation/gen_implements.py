@@ -302,31 +302,6 @@ def generate_implements():
 
     implements += [
         create_implement(
-            name="Staff of Focus",
-            rank=1,
-            material_type="Staff",
-            description="""
-                Whenever you cast a spell during the \\glossterm<action phase>, you can activate this staff to intensify your focus on your spell.
-                If you do, you gain a +1 \\glossterm<accuracy> bonus with the spell.
-                However, you take a -2 penalty to Armor and Reflex defenses until the end of the round.
-
-                These bonuses and penalties have the \\abilitytag<Swift> tag, so they affect you during the current phase.
-            """,
-            short_description="Grants +1 accuracy, but -2 defenses",
-        ),
-        create_implement(
-            name="Staff of Focus, Greater",
-            rank=5,
-            material_type="Staff",
-            description="""
-                This implement functions like a \\mitem<staff of focus>, except that the accuracy bonus increases to +2.
-            """,
-            short_description="Grants +2 accuracy, but -2 defenses",
-        ),
-    ]
-
-    implements += [
-        create_implement(
             name="Selective Staff",
             rank=1,
             material_type="Staff",
