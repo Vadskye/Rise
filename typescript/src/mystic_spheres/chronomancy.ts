@@ -471,7 +471,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         You can change your appearance or equipment with superhuman speed.
         This has no effect on any creatures other than yourself.
-        This can have any one of the following effects, which are completed at the end of the current phase regardless of the time they would normally take:
+        This can have any one of the following effects, which are completed at the end of the current round regardless of the time they would normally take:
         \\begin{itemize}
           \\item You can take off your body armor or clothing, along with any weapons or shields you have equipped.
             You can leave the items on the ground in your square or stow them in an available location, such as in a backpack you wear.

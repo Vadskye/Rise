@@ -59,7 +59,7 @@ export const toxicology: MysticSphere = {
         hit: `
           The target takes 2d6 + \\glossterm{power} acid damage.
           If it loses \\glossterm{hit points} from this damage, it becomes coated in acid as a \\glossterm{condition}.
-          At the end of each round, it takes 1d10 + half \\glossterm{power} acid damage.
+          It takes 1d10 + half \\glossterm{power} acid damage immediately and during each subsequent \\glossterm{action phase}.
 
           The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
@@ -280,7 +280,7 @@ export const toxicology: MysticSphere = {
       attack: {
         hit: `Each target takes 1d8 acid damage.`,
         targeting: `
-          At the end of each phase, if you lost \\glossterm{hit points} during that phase, make an attack vs. Reflex against everything adjacent to you.
+          Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against everything adjacent to you.
         `,
       },
       narrative: `
@@ -298,7 +298,7 @@ export const toxicology: MysticSphere = {
       attack: {
         hit: `Each target takes 4d6 acid damage.`,
         targeting: `
-          At the end of each phase, if you lost \\glossterm{hit points} during that phase, make an attack vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
       narrative: `
@@ -560,7 +560,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `The target becomes covered in devouring fungus as a \\glossterm{condition}.
-        At the end of each round, it takes 1d6 + half \\glossterm{power} acid damage.
+        It takes 1d6 + half \\glossterm{power} acid damage immediately and during each subsequent \\glossterm{action phase}.
 
         The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the fungus.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
@@ -578,7 +578,7 @@ export const toxicology: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target becomes covered in devouring fungus as a \\glossterm{condition}.
-          At the end of each round, it takes 2d8 + half \\glossterm{power} acid damage.
+          It takes 2d8 + half \\glossterm{power} acid damage immediately and during each subsequent \\glossterm{action phase}.
         `,
         targeting: `
           Make an attack vs. Reflex against one creature within \\medrange.
@@ -586,41 +586,6 @@ export const toxicology: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
-    },
-
-    {
-      name: 'Retributive Spores',
-
-      // original targets: ['Yourself', 'See text']
-      attack: {
-        hit: `Each target takes 2d6 acid damage.`,
-        targeting: `
-          At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
-        `,
-      },
-      narrative: `
-        You constantly shed spores that dissolve creatures who attack you.
-      `,
-      rank: 3,
-      scaling: 'damage',
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Greater Retributive Spores',
-
-      // original targets: ['Yourself', 'See text']
-      attack: {
-        hit: `Each target takes 4d10 + half \\glossterm{power} acid damage.`,
-        targeting: `
-          At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
-        `,
-      },
-      narrative: `
-        You constantly shed spores that dissolve creatures who attack you.
-      `,
-      rank: 7,
-      type: 'Attune (deep)',
     },
   ],
   rituals: [],

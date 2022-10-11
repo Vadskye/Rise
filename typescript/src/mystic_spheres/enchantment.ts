@@ -312,7 +312,7 @@ export const enchantment: MysticSphere = {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `Each target is \\shaken by you as a \\glossterm{condition}.`,
         targeting: `
-          At the end of each phase, make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius \\glossterm{emanation} from you.
+          Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
           After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
         `,
       },
