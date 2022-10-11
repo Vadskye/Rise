@@ -358,10 +358,10 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d10 bludgeoning damage.
+          Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          At the end of each phase, make an attack vs. Armor against each creature within \\shortrange of you that attacked you during that phase.
+          Whenever a creature attacks you, make an attack vs. Armor against them.
           Any effect which increases this spell's range increases the range of this retaliation by the same amount.
         `,
       },

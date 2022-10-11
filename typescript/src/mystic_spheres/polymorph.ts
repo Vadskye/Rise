@@ -343,7 +343,7 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `Each target takes 2d6 piercing damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Armor against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Armor against them.
         `,
       },
       narrative: `
@@ -362,7 +362,7 @@ export const polymorph: MysticSphere = {
         // AOE dice, no power
         hit: `Each target takes 4d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Armor against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Armor against them.
         `,
       },
       narrative: `
@@ -614,7 +614,7 @@ export const polymorph: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target begins bleeding as a \\glossterm{condition}.
-          At the end of each round, it takes 1d8 + half \\glossterm{power} physical damage.
+          It takes 1d8 + half \\glossterm{power} physical damage immediately and during each subsequent \\glossterm{action phase}.
 
           This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
           The \\glossterm{difficulty value} of the check is equal to 10.
@@ -634,7 +634,7 @@ export const polymorph: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target begins bleeding as a \\glossterm{condition}.
-          At the end of each round, it takes 2d8 + half \\glossterm{power} physical damage.
+          It takes 2d8 + half \\glossterm{power} physical damage immediately and during each subsequent \\glossterm{action phase}.
         `,
         targeting: `
           Make an attack vs. Fortitude against the one living creature within \\medrange.

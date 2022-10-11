@@ -1507,7 +1507,8 @@ impl Class {
                     \subsubsection{Life Domain}
                         \parhead{Gift} You gain a \plus3 bonus to the Medicine skill (see \pcref{Medicine}).
                         \parhead{Aspect} You gain a \plus1 bonus to \glossterm{vital rolls} (see \pcref{Vital Rolls}).
-                        \parhead{Essence} At the end of each phase, if you became \unconscious from a \glossterm{vital wound} during that phase, you can use one \glossterm{magical} ability you have that modifies \glossterm{vital rolls} or removes \glossterm{vital wounds} on yourself without taking an action.
+                        \parhead{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \glossterm{magical} ability that removes \glossterm{vital wounds} on yourself without taking an action.
+                        You cannot affect any other creatures with this ability.
                         \parhead{Mastery} You gain a \plus1 bonus to your Constitution.
 
                     \subsubsection{Magic Domain}

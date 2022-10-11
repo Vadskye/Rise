@@ -101,7 +101,7 @@ export const pyromancy: MysticSphere = {
         hit: `
           The target takes 2d6 + \\glossterm{power} fire damage.
           If it loses \\glossterm{hit points} from this damage, it catches on fire as a \\glossterm{condition}.
-          At the end of each round, it takes 1d10 + half \\glossterm{power} fire damage.
+          During each subsequent \\glossterm{action phase}, it takes 1d10 + half \\glossterm{power} fire damage.
 
           The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
@@ -197,7 +197,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `The target catches on fire as a \\glossterm{condition}.
-        At the end of each round, it takes 1d6 + half \\glossterm{power} fire damage.
+        During each subsequent \\glossterm{action phase}, it takes 1d6 + half \\glossterm{power} fire damage.
 
         The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
@@ -216,7 +216,7 @@ export const pyromancy: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target catches on fire as a \\glossterm{condition}.
-          At the end of each round, it takes 2d8 + half \\glossterm{power} fire damage.
+          It takes 2d8 + half \\glossterm{power} fire damage immediately and during each subsequent \\glossterm{action phase}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -231,7 +231,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `The object becomes burning hot to the touch.
-        At the end of each round, it and anything touching it takes 1d10 + half \\glossterm{power} fire damage.`,
+        It and anything touching it takes 1d10 + half \\glossterm{power} fire damage immediately and during each subsequent \\glossterm{action phase}.`,
         targeting: `
           Choose one metal object within \\medrange.
           It must be no smaller than Tiny size and no larger than Large size.
@@ -356,7 +356,7 @@ export const pyromancy: MysticSphere = {
         // single-target dice, but no power
         hit: `Each target takes 2d6 fire damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Reflex against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Fortitude against them.
         `,
       },
       narrative: `
@@ -375,7 +375,7 @@ export const pyromancy: MysticSphere = {
         // AOE dice, but no power
         hit: `Each target takes 4d10 + half \\glossterm{power} fire damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Reflex against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Reflex against them.
         `,
       },
       narrative: `

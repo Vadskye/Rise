@@ -396,7 +396,7 @@ export const fabrication: MysticSphere = {
         hit: `Each target takes 2d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
           A swarm of daggers appears in a \\tinyarea radius \\glossterm{zone} within \\medrange.
-          At the end of each round, make an attack vs. Armor with a +2 accuracy bonus against everything in the area.
+          Make an attack vs. Armor with a +2 accuracy bonus against everything in the area immediately and during each subsequent \\glossterm{action phase}.
         `,
       },
       rank: 5,

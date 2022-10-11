@@ -394,7 +394,7 @@ export const electromancy: MysticSphere = {
         // AOE dice, but no power
         hit: `Each target takes 2d6 electricity damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or metal weapon during that phase.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Fortitude against them.
         `,
       },
       rank: 3,
@@ -409,7 +409,7 @@ export const electromancy: MysticSphere = {
         // AOE dice, but no power
         hit: `Each target takes 4d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          At the end of each phase, make an attack vs. Fortitude against each creature that made a \\glossterm{melee} attack against you using a free hand or non-Long weapon during that phase.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Fortitude against them.
         `,
       },
       rank: 7,
