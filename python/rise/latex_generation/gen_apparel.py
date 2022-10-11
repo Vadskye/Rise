@@ -157,8 +157,7 @@ def generate_apparel():
             tags=["Swift"],
             description="""
                 As a \\glossterm<free action>, you activate these bracers.
-                When you do, you increase your \\glossterm<fatigue level> by one and gain a +2 bonus to Armor defense until the end of the round.
-                This ability has the \\abilitytag<Swift> tag, so it protects you against attacks against you during the current phase.
+                When you do, you increase your \\glossterm<fatigue level> by one and gain a +2 bonus to your Armor defense this round.
             """,
             short_description="Can exert to gain instant +2 Armor defense",
             upgrades=[
@@ -186,8 +185,6 @@ def generate_apparel():
                 As a standard action, you can activate these bracers.
                 When you do, they emit a telekinetic burst of force.
                 Make an attack vs. Fortitude against everything within a \\areasmall radius burst from you.
-                If you use this item during the \\glossterm<delayed action phase>,
-                    you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the \\glossterm<action phase>.
                 On a hit, you \\glossterm<knockback> each target up to 15 feet in a straight line directly away from you.
             """,
             short_description="Can knock nearby creatures back",
@@ -506,7 +503,7 @@ def generate_apparel():
             tags=["Swift"],
             description="""
                 As a \\glossterm<free action>, you can activate these boots.
-                When you do, you increase your \\glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds until the end of the round.
+                When you do, you increase your \\glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds this round.
                 This does not allow you to move through inanimate objects.
                 If you end your movement in spaces occupied by other creatures, both of you are still \\squeezing.
                 If you are not able to move normally, such as if you are \\grappled, these boots do not help you.
@@ -1356,8 +1353,8 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase>, you become \\trait<invisible> (see \\pcref<Invisible>).
-                This invisibility ends after you take any action other than moving during the \\glossterm<movement phase>.
+                At the end of each round, if you took no actions during the \\glossterm<action phase> of that round, you become \\trait<invisible> (see \\pcref<Invisible>).
+                This invisibility ends after you take any action during the action phase.
             """,
             short_description="Grants invisibility while mostly inactive",
         ),
@@ -1367,8 +1364,8 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase> and taking \\glossterm<minor actions>, you become \\trait<invisible> (see \\pcref<Invisible>).
-                This invisibility ends after you take any action other than moving during the movement phase and taking \\glossterm<minor actions>.
+                At the end of each round, if you took no \\glossterm<standard actions> during that round, you become \\trait<invisible> (see \\pcref<Invisible>).
+                This invisibility ends after you take a standard action.
             """,
             short_description="Grants invisibility while slightly active",
         ),

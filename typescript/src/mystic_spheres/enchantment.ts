@@ -343,7 +343,7 @@ export const enchantment: MysticSphere = {
         hit: `The target is \\charmed by you.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
-        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
+        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
         `,
       },
       rank: 3,
@@ -381,7 +381,7 @@ export const enchantment: MysticSphere = {
         Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.`,
         targeting: `
         Make an attack vs. Mental against all creatures in a \\largearea radius from you.
-        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
+        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
         `,
       },
       rank: 3,
@@ -468,7 +468,7 @@ export const enchantment: MysticSphere = {
         `,
         targeting: `
         Make an attack vs. Mental against one creature within \\shortrange.
-        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
+        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
         `,
       },
       rank: 7,
@@ -604,7 +604,7 @@ export const enchantment: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against one Small or Tiny animal within \\medrange.
-          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
+          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
         `,
       },
       rank: 2,

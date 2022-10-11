@@ -197,7 +197,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `The target catches on fire as a \\glossterm{condition}.
-        During each subsequent \\glossterm{action phase}, it takes 1d6 + half \\glossterm{power} fire damage.
+        It takes 1d6 + half \\glossterm{power} fire damage immediately and during each subsequent \\glossterm{action phase}.
 
         The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
@@ -543,7 +543,7 @@ export const pyromancy: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `The target is highly flammable until it takes a \\glossterm{short rest}.
         Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
-        While ignited in this way, it takes 1d8 fire damage at the end of each round.
+        While ignited in this way, it takes 1d8 + half \\glossterm{power} fire damage during each \\glossterm{action phase}.
 
         It can put out the fire by making a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.

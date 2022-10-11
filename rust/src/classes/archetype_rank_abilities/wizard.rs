@@ -471,9 +471,10 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you cast a spell during the \glossterm{action phase}, you may use this ability to extend the casting time.
-                If you do, the spell does not take effect until the \glossterm{delayed action phase}.
-                In exchange, you gain a \plus1 bonus to \glossterm{accuracy} with the spell if you did not lose \glossterm{hit points} during the action phase.
+                Whenever you cast a spell, you can use this ability to make the spell's incantations more nuanced and complex.
+                If you do, you gain a \plus1 accuracy bonus with the spell.
+                However, you take a \minus2 penalty to your Armor and Reflex defenses this round.
+                This defense penalty is \abilitytag{Swift}.
             ",
             modifiers: None,
         },

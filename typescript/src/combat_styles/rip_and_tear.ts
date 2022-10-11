@@ -59,26 +59,14 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Bloody Brow Gash",
-
-      effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
-        In addition, it \\glossterm{briefly} takes damage equal to your \\glossterm{power} at the end of each round.
-      `,
-      rank: 5,
-    },
-
-    {
       name: "Blinding Brow Gash",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\blinded.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -172,17 +160,26 @@ export const ripAndTear: CombatStyle = {
       rank: 3,
     },
 
-    // is 2x power equal to +5-10 damage? sometimes better, sometimes worse, especially with the
-    // delay and limited stacking, so seems fine
     {
       name: "Bloodletting Strike",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature damaged by the strike \\glossterm{briefly} bleeds from the wound.
-        It takes physical damage equal to half your \\glossterm{power} with that strike at the end of each round.
+        Each creature damaged by the strike takes slashing damage equal to half your \\glossterm{power} with that strike during the next \\glossterm{action phase}.
         This damage does not stack if you use this strike on the same creature again before it stops bleeding.
       `,
+      rank: 2,
+    },
+
+    // is 2x power equal to +5-10 damage? sometimes better, sometimes worse, especially with the
+    // delay and limited stacking, so seems fine
+    {
+      name: "Greater Bloodletting Strike",
+
+      functionsLike: {
+        name: 'bloodletting strike',
+        exceptThat: 'the extra damage increases to be equal to your \\glossterm{power} with the strike.',
+      },
       rank: 5,
     },
 

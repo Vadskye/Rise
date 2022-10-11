@@ -514,7 +514,7 @@ export const toxicology: MysticSphere = {
       effect: `
         Choose yourself or an adjacent living \\glossterm{ally}.
         The target regains 1d8 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
-        In addition, it gains a +2 bonus to its Fortitude defense until the end of the round.
+        In addition, it gains a +2 bonus to its Fortitude defense this round.
       `,
       rank: 1,
       scaling: { special: "The healing increases by +1d for each rank beyond 1." },

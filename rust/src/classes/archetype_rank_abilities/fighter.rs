@@ -388,8 +388,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Protect}[\abilitytag{Swift}]
                     \rankline
                     Choose an \glossterm{ally} adjacent to you.
-                    It gains a \plus2 bonus to its Armor defense until the end of the round.
-                    Because this ability has the \abilitytag{Swift} tag, this bonus applies against attacks made in the current phase.
+                    It gains a \plus2 bonus to its Armor defense this round.
 
                     A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                     While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
@@ -535,7 +534,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Keep Moving}{\abilitytag{Sustain} (minor)}
                         \rankline
                         Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
-                            gains a \plus1 bonus to its Armor defense until the end of the round.
+                            gains a \plus1 bonus to its Armor defense this round.
 
                         \rankline
                         \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Reflex defense.
