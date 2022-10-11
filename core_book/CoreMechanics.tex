@@ -169,9 +169,9 @@ This chapter describes the core mechanics of Rise.
 
     \subsection{Negative Hit Points}\label{Negative Hit Points}
         You can have negative hit points, but only briefly.
-        At the end of each \glossterm{phase}, if your hit points are negative, you gain a \glossterm{vital wound} and your hit points are set to 0 (see \pcref{Vital Wounds}).
+        At the end of each round, if your hit points are negative, you gain a \glossterm{vital wound} and your hit points are set to 0 (see \pcref{Vital Wounds}).
         % TODO: does this still need to exist? all "end of round" damage should ideally be removed
-        % Damage you take at the end of the round is considered to be part of the delayed action phase for this purpose.
+        % Damage you take at the end of the round is considered to be part of the action phase for this purpose.
         If your negative hit points equal or exceed half your maximum hit points, you gain an additional vital wound.
         You gain an additional vital wound for each increment of half your maximum hit points that you have in negative hit points.
 
@@ -759,7 +759,8 @@ This chapter describes the core mechanics of Rise.
             Sustained abilities have the \abilitytag{Sustain} tag.
             They last as long as you take an action to sustain them each round.
             The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
-            At the end of each round, the ability is dismissed unless you initiated the ability that round or took the action to sustain the ability that round.
+            Sustaining an ability has the \abilitytag{Swift} tag.
+            When \abilitytag{Swift} abilities resolve during each action phase, the ability is dismissed unless you take the action to sustain the ability that round.
 
             Some sustained abilities include ``attuneable'' in the tag before the action type.
             When you use that ability, you can choose to \glossterm{attune} to it instead of sustaining it.
