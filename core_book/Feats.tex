@@ -742,10 +742,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Entropist}{General, Magical}
         \featpre Willpower 2.
 
-        \ff[1]{Entropic Defense} Whenever you are hit by a \glossterm{critical hit}, you may use this ability.
-        When you do, you increase your \glossterm{fatigue level} by two, and the attacker rerolls the attack against you, which may prevent the attack from getting a critical hit against you.
-        This does not protect any other targets of the attack.
-        You can choose to use this ability after you learn the effects that the critical hit would have, but you must do so during the phase that the attack was made.
+        \ff[1]{Entropic Defense} Whenever you are hit by a \glossterm{critical hit}, there is a 20\% chance that the attack is treated as a regular hit against you instead of a critical hit.
 
         \ff[3]{Sudden Entropy} You can use the \textit{sudden entropy} ability as a standard action.
         \begin{activeability}{Sudden Entropy}
@@ -764,9 +761,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{activeability}
 
         \ff[9]{Friend of Chaos} Whenever you roll for a random effect, such as a \glossterm{miss chance} or a sorcerer's \textit{wild magic} ability, you may roll twice and keep whichever result you prefer.
+        This does not affect your own \textit{entropic defense} ability, since the attacker rolls that chance instead of you.
 
         \ff[15]{Improbable Vulnerability} Whenever you make an attack against an \glossterm{enemy} that is \trait{immune} or \trait{impervious} to some aspect of the attack, you have a 50\% chance to affect them as if they were not immune or impervious to the attack.
         This has no effect on objects.
+
+        \ff[21]{Entropic Defense+} The chance from your \textit{entropic defense} ability increases to 50\%.
 
         \ff[21]{Master of Chaos} Whenever you roll for a random effect, such as a miss chance or a sorcerer's \textit{wild magic} ability, you may use this ability.
         When you do, you increase your \glossterm{fatigue level} by two, and you may freely choose the random result.
