@@ -1398,9 +1398,10 @@ impl Class {
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3, and the number of hit points you gain from its aspect increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Evil Domain}
-                        \parhead{Gift} At the start of each phase, you may choose an adjacent \glossterm{ally}.
+                        \parhead{Gift} As a \glossterm{free action}, you may choose an adjacent \glossterm{ally}.
                         Whenever you lose \glossterm{hit points} this round, that ally loses half of those hit points in place of you.
                         You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
+                        This ability has the \abilitytag{Swift} tag.
                         \parhead{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
                         \parhead{Essence} You can use the \textit{compel evil} ability as a standard action.
                         \begin{activeability}{Compel Evil}[\abilitytag{Compulsion}]
