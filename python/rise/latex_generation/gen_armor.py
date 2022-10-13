@@ -28,7 +28,7 @@ def generate_armor():
             material_type="Body armor",
             tags=["Attune (deep)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you that caused you to lose \\glossterm<hit points> during that phase.
+                Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
                 \\hit Each target takes 2d6 energy damage.
             """,
             short_description="Deals 2d6 damage to attackers when you lose HP",
@@ -39,7 +39,7 @@ def generate_armor():
             material_type="Body armor",
             tags=["Attune (deep)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each \\glossterm<enemy> within a \\medarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
+                Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
                 \\hit Each target takes 4d6 energy damage.
             """,
             short_description="Deals 4d6 damage to attackers when you lose HP",
@@ -50,7 +50,7 @@ def generate_armor():
             material_type="Body armor",
             tags=["Attune (deep)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each \\glossterm<enemy> within a \\medarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
+                Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
                 \\hit Each target takes 5d10 energy damage.
             """,
             short_description="Deals 5d10 damage to attackers when you lose HP",
@@ -281,7 +281,7 @@ def generate_armor():
             material_type="Body armor",
             tags=["Attune (deep)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
+                Whenever an adjacent creature attacks you, make a \\glossterm<reactive attack> vs. Fortitude against them.
                 \\hit Each target takes 2d8 energy damage.
             """,
             short_description="Deals 2d8 damage to adjacent attackers",
@@ -292,7 +292,7 @@ def generate_armor():
             material_type="Body armor",
             tags=["Attune (deep)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
+                Whenever an adjacent creature attacks you, make a \\glossterm<reactive attack> vs. Fortitude against them.
                 \\hit Each target takes 4d8 energy damage.
             """,
             short_description="Deals 4d8 damage to adjacent attackers",

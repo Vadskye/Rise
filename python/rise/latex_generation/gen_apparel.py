@@ -1104,36 +1104,26 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Ring of Blessed Protection",
-            rank=2,
+            rank=1,
             material_type="Ring",
-            tags=[],
+            tags=['Attune (deep)'],
             description="""
-                Whenever you are hit by a \\glossterm<critical hit> from a \\glossterm<strike>, you may activate this item.
-                When you do, you increase your \\glossterm<fatigue level> by two, and the attacker rerolls the attack against you, which may prevent the attack from getting a critical hit against you.
+                Whenever you are hit by a \\glossterm<critical hit> from a \\glossterm<strike>, this item automatically activates.
+                When it does, the attacker rerolls the attack against you, which may prevent the attack from getting a critical hit against you.
                 This does not protect any other targets of the attack.
-                You can choose to use this item after you learn the effects that the critical hit would have, but you must do so during the phase that the attack was made.
+                You stop being attuned to this item when it activates in this way, and you must attune to it again to gain its effects.
             """,
-            short_description="Can exert to protect against critical strikes",
+            short_description="Can protect against one critical strike",
         ),
         create_apparel(
             name="Ring of Blessed Protection, Greater",
-            rank=4,
+            rank=5,
             material_type="Ring",
-            tags=[],
-            description="""
-                This item functions like a \\textit<ring of blessed protection>, except that it also protects against any \\glossterm<mundane> attack, not just strikes.
-            """,
-            short_description="Can exert to protect against critical mundane attacks",
-        ),
-        create_apparel(
-            name="Ring of Blessed Protection, Supreme",
-            rank=7,
-            material_type="Ring",
-            tags=[],
+            tags=['Attune (deep)'],
             description="""
                 This item functions like a \\textit<ring of blessed protection>, except that it protects against any attack, not just strikes.
             """,
-            short_description="Can exert to protect against critical attacks",
+            short_description="Can protect against one critical attack",
         ),
     ]
 
@@ -1159,7 +1149,7 @@ def generate_apparel():
                 The ring must be worn for 24 hours before it begins to work.
 
                 In addition, you need only one-quarter your normal amount of sleep (or similar activity, such as elven trance) each day.
-                """,
+            """,
             short_description="Provides food, water, and rest",
         ),
     ]
