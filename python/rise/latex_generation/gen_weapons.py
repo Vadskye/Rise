@@ -490,7 +490,7 @@ def generate_weapons():
             name="Bloodspray",
             rank=2,
             description="""
-                Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, make an attack vs. Reflex against all \\glossterm<enemies> adjacent to that creature.
+                Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, make a \\glossterm<reactive attack> vs. Reflex against all \\glossterm<enemies> adjacent to that creature.
                 On a hit, each target is \\glossterm<briefly> \\dazzled.
                 You gain a +2 \\glossterm<accuracy> bonus with this secondary attack if the defeated creature was at least one size category larger than you.
             """,

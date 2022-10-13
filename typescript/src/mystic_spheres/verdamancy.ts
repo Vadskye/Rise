@@ -407,7 +407,7 @@ export const verdamancy: MysticSphere = {
         The wall is four inches thick, but permeable.
         It provides \\glossterm{cover} to attacks made through the wall.
         Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
-        Whenever anything moves through the wall, make an attack vs. Armor against it.
+        Whenever anything moves through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
         You can only make an attack in this way against a given target once per \\glossterm{phase}.
 
         The wall has \\glossterm{hit points} equal to four times your \\glossterm{power}.

@@ -1064,7 +1064,7 @@ def generate_tools():
                 You scatter caltrops on the ground in the hope that your enemies step on them or are at least forced to slow down to avoid them.
                 One 2-pound bag of caltrops covers a 5-foot square.
 
-                Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, the caltrops make an attack vs. the creature's Armor defense.
+                Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, the caltrops make a \\glossterm<reactive attack> vs. Armor against the creature.
                 Unlike most attacks, this attack can happen during the \\glossterm<movement phase>.
                 The accuracy of the caltrops is \\plus0.
                 On a hit, the caltrops deal 1d6 piercing damage.

@@ -731,7 +731,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
+                Whenever you become \\dazed, \\stunned, or \\confused, make a \\glossterm<reactive attack> vs. Mental against all \\glossterm<enemies> adjacent to you.
                 On a hit, each target becomes \\glossterm<briefly> dazed.
             """,
             short_description="Dazes enemies when you are dazed or worse",
@@ -742,7 +742,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
+                Whenever you become \\dazed, \\stunned, or \\confused, make a \\glossterm<reactive attack> vs. Mental against all \\glossterm<enemies> adjacent to you.
                 On a hit, each target becomes \\glossterm<briefly> stunned.
             """,
             short_description="Stuns enemies when you are dazed or worse",
