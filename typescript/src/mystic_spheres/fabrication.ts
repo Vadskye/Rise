@@ -158,7 +158,7 @@ export const fabrication: MysticSphere = {
         targeting: `
           You create a \\medarealong \\glossterm{wall} of whirling blades wihtin \\medrange.
           The wall provides \\glossterm{cover} against attacks made through it.
-          Whenever anything passes through the wall, make an attack vs. Armor against it.
+          Whenever anything passes through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
           You can only make this attack against a given target once per \\glossterm{phase}.
 
           The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
@@ -195,7 +195,7 @@ export const fabrication: MysticSphere = {
         targeting: `
         You create a \\smallarea radius \\glossterm{wall} of blades within \\medrange.
         The wall provides \\glossterm{cover} against attacks made through it.
-        Whenever anything passes through the wall, make an attack vs. Armor against it.
+        Whenever anything passes through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
         You can only make this attack against a given target once per \\glossterm{phase}.
 
         The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
@@ -314,7 +314,7 @@ export const fabrication: MysticSphere = {
         hit: `The target takes 1d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
-          Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
+          Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
           You cannot make this attack against the same creature more than once per \\glossterm{phase}.
           Unlike most attacks, this attack can happen during the \\glossterm{movement phase}.
           Caltrops may not be effective against creatures with an unusual anatomy.

@@ -542,14 +542,17 @@ export const revelation: MysticSphere = {
       name: "Sensory Chain",
 
       attack: {
-        hit: `As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
-        If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
-        Whenever the target touches another creature, you can make an attack against the new creature.
-        On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
-        On a miss, the condition remains on the previous creature.`,
+        hit: `
+          As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
+          If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
+          While using the target's senses, you can choose any creatures you see as intended targets to continue the chain.
+          Whenever the currently affected creature touches an intended target, you make a \\glossterm{reactive attack} against the new creature.
+          You can only make this attack against a given target once per \\glossterm{phase}.
+          On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
+          On a miss, the condition remains on the previous creature.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
-          You cannot make this attack against that same creature again until this spell ends.
         `,
       },
 

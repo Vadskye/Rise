@@ -560,7 +560,7 @@ export const telekinesis: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you create a repulsive field in a \\smallarea radius \\glossterm{zone} from your location.
-          Whenever an enemy makes physical contact with the spell's area, you make an attack vs. Mental against it.
+          Whenever an enemy makes physical contact with the spell's area, you make a \\glossterm{reactive attack} vs. Mental against it.
           Creatures in the area at the time that the spell is cast are unaffected by the spell.
         `,
       },

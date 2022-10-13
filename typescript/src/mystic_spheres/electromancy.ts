@@ -394,7 +394,7 @@ export const electromancy: MysticSphere = {
         // AOE dice, but no power
         hit: `Each target takes 2d6 electricity damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 3,
@@ -409,7 +409,7 @@ export const electromancy: MysticSphere = {
         // AOE dice, but no power
         hit: `Each target takes 4d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 7,
