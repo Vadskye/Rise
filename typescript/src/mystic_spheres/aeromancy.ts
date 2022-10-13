@@ -361,8 +361,9 @@ export const aeromancy: MysticSphere = {
           Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Whenever a creature attacks you, make an attack vs. Armor against them.
+          Whenever a creature attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
           Any effect which increases this spell's range increases the range of this retaliation by the same amount.
+          You can only make this attack against a given target once per \\glossterm{phase}.
         `,
       },
       // effect: '',

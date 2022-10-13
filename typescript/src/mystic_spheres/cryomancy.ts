@@ -433,7 +433,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `Each target takes 2d6 cold damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
 
@@ -448,7 +448,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `Each target takes 4d10 + half \\glossterm{power} cold damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
 

@@ -494,7 +494,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `Each target takes 1d8 energy damage.`,
         targeting: `
-          Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make an attack vs. Fortitude against them.
+          Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 1,
@@ -508,7 +508,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `Each target takes 2d10 energy damage.`,
         targeting: `
-          Whenever an \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make an attack vs. Fortitude against them.
+          Whenever an \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 4,
@@ -522,7 +522,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `Each target takes 4d10 + half \\glossterm{power} energy damage.`,
         targeting: `
-          Whenever an \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make an attack vs. Fortitude against them.
+          Whenever an \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 7,

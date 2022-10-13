@@ -356,7 +356,7 @@ export const pyromancy: MysticSphere = {
         // single-target dice, but no power
         hit: `Each target takes 2d6 fire damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       narrative: `
@@ -375,7 +375,7 @@ export const pyromancy: MysticSphere = {
         // AOE dice, but no power
         hit: `Each target takes 4d10 + half \\glossterm{power} fire damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Reflex against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
       },
       narrative: `
@@ -442,7 +442,7 @@ export const pyromancy: MysticSphere = {
         targeting: `
         You create a \\medarealong \\glossterm{wall} of fire within \\medrange.
         The flames and heat make it difficult to see through the wall, granting \\glossterm{concealment} to targets on the opposite side of the wall.
-        Whenever anything passes through the wall, you make an attack vs. Reflex against it.
+        Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
         You can only make this attack against a given target once per \\glossterm{phase}.
 
         The wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.

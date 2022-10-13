@@ -343,7 +343,7 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `Each target takes 2d6 piercing damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Armor against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
       },
       narrative: `
@@ -362,7 +362,7 @@ export const polymorph: MysticSphere = {
         // AOE dice, no power
         hit: `Each target takes 4d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make an attack vs. Armor against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
       },
       narrative: `
