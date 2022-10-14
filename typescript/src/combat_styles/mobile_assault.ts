@@ -206,6 +206,7 @@ export const mobileAssault: CombatStyle = {
         The defense bonus and reactive penalties are \\abilitytag{Swift} effects, but not the movement.
       `,
       rank: 1,
+      tags: ['Swift (see text)'],
     },
 
     {

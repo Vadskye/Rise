@@ -274,8 +274,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Instead, if you choose weapons as your legacy item category, you choose magic weapon abilities that apply to all nonmagical weapons you wield.
         If you wield a magical weapon, it keeps its own magical effects instead of your chosen legacy item properties.
 
-        \ff[3]{Swift Draw} Sheathing and drawing weapons becomes a \abilitytag{Swift} ability for you, so you can draw a weapon and attack with it in the same phase.
-
         \ff[9]{Versatile Force} You gain a \plus3 bonus to your \glossterm{power}.
 
         \ff[15]{Versatile Force+} The bonus from your \textit{versatile force} ability increases to \plus6.
@@ -399,7 +397,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[3]{Healing Light}[Magical] When you use the \textit{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \medarea radius \glossterm{zone} from you, and \glossterm{shadowy illumination} in twice that radius.
         At the end of each round, each \glossterm{ally} in the radius of brilliant illumination regains \glossterm{hit points} equal to your \glossterm{power}.
-        This is a \abilitytag{Swift} ability.
 
         \ff[9]{Angel Wings} You gain feathery wings that sprout from your back.
         These wings grant you a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 30 feet (see \pcref{Flying}).
@@ -569,15 +566,17 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[15]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[21]{Deceive Magic}[\glossterm{Magical}] When you would be hit by a \glossterm{magical} attack, you can use this ability in response.
-        \begin{activeability}{Deceive Magic}[\abilitytag{Swift}]
+        \ff[21]{Deceive Reality}[\glossterm{Magical}] Once per \glossterm{long rest}, you can use the \ability{deceive reality} ability as a standard action.
+        \begin{activeability}{Deceive Reality}
             \rankline
-            When you use this ability, you increase your \glossterm{fatigue level} by two.
-            After you use this ability, you \glossterm{briefly} cannot use it again.
-            You can choose to use this ability after you learn the effects that the attack would have, but you must do so during the phase that the attack was made.
+            You tell a lie that becomes true.
+            The lie must not directly affect sentient creatures.
+            The effects of the lie must be \glossterm{mundane}, so you cannot create artifacts or specific spell effects.
+            You cannot affect anything beyond one mile from you, ignoring \glossterm{line of sight} and \glossterm{line of effect}.
+            In addition, all effects of this ability end after ten minutes.
+            However, within those limits, you can generally alter reality around you.
 
-            The attack must be rerolled.
-            This can cause the attack to hit you instead of getting a \glossterm{critical hit}, or it can cause the attack to miss entirely.
+            Some examples of lies that would be valid to use with this ability are "I have a bathtub full of diamonds in the other room", "Suddenly, all of the torches in the room were extinguished simultaneously", and "Don't worry, my basement cellar has always had an escape tunnel for emergencies".
         \end{activeability}
     \end{feat}
 
@@ -1476,7 +1475,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Diehard} You gain a \plus2 bonus to \glossterm{vital rolls}.
 
         \ff[3]{Regenerative Recovery} You can use the \textit{regenerative recovery} ability as a standard action.
-        \begin{activeability}{Regenerative Recovery}{\abilitytag{Swift}}
+        \begin{activeability}{Regenerative Recovery}
             \rankline
             When you use this ability, you increase your \glossterm{fatigue level} by one.
 
@@ -2103,17 +2102,16 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \begin{activeability}{Countermagic}[\abilitytag{Swift}]
             \rankline
             Choose a creature within \rngmed range of you.
-            If the target uses a \glossterm{magical} ability as a standard action this round, you can attempt to counter that ability.
-            You and the target each make an opposed level \glossterm{check}.
-            If you match or beat the target's result, its ability has no effect.
+            If the target uses a \glossterm{magical} ability as a standard action this round, you can make a \glossterm{reactive attack} vs. Mental against that creature.
+            On a hit, the target's ability has no effect.
 
             If a creature is capable of using multiple abilities during a single phase, only the first ability it uses can be countered.
             This is common for \glossterm{elite} monsters.
 
             \rankline
-            \featlevel{9} You gain a \plus2 bonus to the check.
-            \featlevel{15} The bonus increases to \plus4.
-            \featlevel{21} The bonus increases to \plus6.
+            \featlevel{9} You gain a \plus2 bonus to accuracy with the attack.
+            \featlevel{15} The accuracy bonus increases to \plus4.
+            \featlevel{21} The accuracy bonus increases to \plus6.
         \end{activeability}
 
         \ff[9]{Intrinsic Thaumaturgy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Thaumaturgy} mystic sphere.

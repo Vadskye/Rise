@@ -351,11 +351,10 @@ export const fabrication: MysticSphere = {
         However, the item's rank cannot exceed half your spellcasting rank with this spell.
 
         The object persists until the end of the round, at which point it disappears.
-        Because this spell has the \\abilitytag{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
         Any attack with this ammunition is considered a \\glossterm{magical} attack, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       rank: 1,
-      tags: ["Manifestation", "Swift"],
+      tags: ["Manifestation"],
     },
 
     {

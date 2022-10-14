@@ -21,7 +21,7 @@ export const unbreakableDefense: CombatStyle = {
         name: "total defense",
       },
       rank: 1,
-      tags: ["Swift"],
+      tags: ["Swift (see text)"],
     },
 
     {
@@ -39,7 +39,7 @@ export const unbreakableDefense: CombatStyle = {
         name: "total defense",
       },
       rank: 3,
-      tags: ["Swift"],
+      tags: ["Swift (see text)"],
     },
 
     {
@@ -111,7 +111,7 @@ export const unbreakableDefense: CombatStyle = {
         After you use this ability, you cannot use it again until you take a \\glossterm{short rest}.
       `,
       rank: 3,
-      tags: ['Swift'],
+      tags: [],
     },
 
     {

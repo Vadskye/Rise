@@ -220,10 +220,9 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You do not add your \\glossterm{power} to damage with the strike.
         However, you \\glossterm{briefly} add your \\glossterm{power} to damage with the \\ability{offhand strike} ability.
-        This bonus has the \\abilitytag{Swift} tag, so it affects the \\textit{offhand strike} ability if you use it during the current phase.
       `,
       rank: 5,
-      tags: ['Swift'],
+      tags: [],
     },
 
     {
