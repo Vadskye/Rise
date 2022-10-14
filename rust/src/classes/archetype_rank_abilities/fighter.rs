@@ -26,8 +26,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Cleansing Discipline}[\abilitytag{Swift}]
                     \rankline
                     Remove one \glossterm{condition} affecting you.
-                    This cannot remove effects applied during the current round.
-                    Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
+                    Because this ability has the \abilitytag{Swift} tag, the removed condition does not affect you during the current phase.
 
                     \rankline
                     \rank{4} You \glossterm{briefly} cannot gain any \glossterm{conditions} after using this ability.
@@ -121,10 +120,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     You become proficient with the weapon you trained with.
                     You gain a \plus1 bonus to \glossterm{accuracy} with that weapon unless it is an \glossterm{exotic weapon} that you would not be proficient with without this ability.
                     This ability's effect lasts until you use this ability again.
-
-                    \rankline
-                    \rank{4} You can use this ability with only five minutes of training.
-                    \rank{6} You can use this ability as a \glossterm{minor action}.
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),

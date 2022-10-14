@@ -618,13 +618,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Instant Shift",
+            name: "Hybrid Aspect",
             is_magical: true,
             rank: 7,
             description: r"
-                You can change your \textit{wild aspect} as a \glossterm{minor action}.
-                When you change in this way, it gains the \abilitytag{Swift} tag, so you can use your new abilities immediately.
-                However, you do not gain the benefit of your \textit{regenerative shift} ability, and you \glossterm{briefly} cannot change wild aspects as a minor action again.
+                When you use your \textit{wild aspect} ability, you can take on two aspects at once, gaining the full benefits of both.
+                When you do, you increase your \glossterm{fatigue level} by two.
+                This hybrid aspect only lasts for ten minutes, at which point you choose which single aspect remains active.
             ",
             modifiers: None,
         },
