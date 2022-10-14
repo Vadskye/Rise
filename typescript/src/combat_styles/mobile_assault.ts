@@ -256,12 +256,12 @@ export const mobileAssault: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          you gain a +1 accuracy bonus and a +4 damage bonus with the strike.
+          you gain a +2 accuracy bonus with the strike.
           However, the penalty to your defenses increases to \\minus4.
         `,
         name: "charge",
       },
-      rank: 3,
+      rank: 4,
     },
   ],
 };
