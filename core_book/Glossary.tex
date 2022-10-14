@@ -317,7 +317,9 @@ If you run out of hit points, you gain \glossterm{vital wounds} when you take da
 For details, see \pcref{Hit Points}.
 
 \glossdef{immune} A creature that is immune to a particular damage type, debuff, or other ability treats that effect as if it did not exist.
-If the entire effect of a \glossterm{condition} would be to apply a debuff that a creature is immune to, the creature does not gain that condition at all.
+An immune creature cannot gain \glossterm{conditions} or similar effects like \glossterm{poison} if it is immune to them, or if the only effect of that condition would be to apply a specific debuff that it is immune to.
+In addition, a creature that temporarily becomes immune to an effect immediately removes all instances of that effect.
+For example, a creature that suddenly becomes immune to poison would remove all poisons currently affecting it, and those poisons would not return once the immunity ends.
 
 \glossdef{improvised weapon}[improvised weapons] An improvised weapon is an object which could conceivably be used as a weapon, but which was not designed for that purpose.
 Common examples include doors and wine bottles.
