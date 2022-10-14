@@ -10,7 +10,6 @@ export const bless: MysticSphere = {
       effect: `
         Choose one adjacent \\glossterm{ally}.
         The target gains a +1 bonus to \\glossterm{accuracy} this round.
-        Because this ability has the \\abilitytag{Swift} tag, this improves the target's attacks during the current phase.
       `,
       name: "Boon of Competence",
       scaling: {
@@ -93,9 +92,8 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The first time the target makes a \\glossterm{strike} this round,
-        it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
-        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the target makes during the current phase.
+        The next time the target makes a \\glossterm{strike} this round,
+          it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
         If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
       `,
       rank: 1,
@@ -104,7 +102,7 @@ export const bless: MysticSphere = {
         5: `The accuracy bonus increases to +4.`,
         7: `The accuracy bonus increases to +5.`,
       },
-      tags: ["Swift"],
+      tags: [],
     },
 
     {
@@ -113,7 +111,6 @@ export const bless: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The target gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
-        Because this ability has the \\abilitytag{Swift} tag, it affects attacks the target makes during the current phase.
         If you cast this spell on yourself, it affects the first attack you make before the end of the next round.
       `,
       rank: 2,
@@ -121,7 +118,7 @@ export const bless: MysticSphere = {
         4: `The accuracy bonus increases to +5.`,
         6: `The accuracy bonus increases to +6.`,
       },
-      tags: ["Swift"],
+      tags: [],
     },
 
     {
@@ -365,10 +362,11 @@ export const bless: MysticSphere = {
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
+        This defense bonus is \\abilitytag{Swift}, but the recovery is not.
       `,
       rank: 1,
       scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
-      tags: ['Swift'],
+      tags: ['Swift (see text)'],
     },
 
     {
@@ -378,10 +376,11 @@ export const bless: MysticSphere = {
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains 2d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to all \\glossterm{defenses} this round.
+        This defense bonus is \\abilitytag{Swift}, but the recovery is not.
       `,
       rank: 4,
       scaling: { special: "The recovery increases by +1d for each rank beyond 4." },
-      tags: ['Swift'],
+      tags: ['Swift (see text)'],
     },
 
     {
@@ -391,9 +390,10 @@ export const bless: MysticSphere = {
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains 4d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +3 bonus to all \\glossterm{defenses} this round.
+        This defense bonus is \\abilitytag{Swift}, but the recovery is not.
       `,
       rank: 7,
-      tags: ['Swift'],
+      tags: ['Swift (see text)'],
     },
 
     {

@@ -603,7 +603,7 @@ export const astromancy: MysticSphere = {
       name: "Blink",
 
       effect: `
-        All attacks against you this round have a 25\\% \\glossterm{failure chance}.
+        All attacks against you this round have a 20\\% \\glossterm{failure chance}.
         In addition, you gain a +2 bonus to all defenses.
         This ability has the \\abilitytag{Swift} tag, so it protects you from attacks against you during the current phase.
       `,

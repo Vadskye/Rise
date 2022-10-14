@@ -341,11 +341,10 @@ def generate_implements():
             name="Staff of Silence",
             rank=1,
             material_type="Staff",
-            tags=["Swift"],
+            tags=[],
             description="""
                 As a \\glossterm<free action>, you can activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<verbal components>.
-                This ability has the \\abilitytag<Swift> tag, so it allows you to cast a spell without verbal components in the same phase that you activate this staff.
             """,
             short_description="Can exert to cast spells without verbal components",
         ),
@@ -353,11 +352,10 @@ def generate_implements():
             name="Staff of Stillness",
             rank=1,
             material_type="Staff",
-            tags=["Swift"],
+            tags=[],
             description="""
                 As a \\glossterm<free action>, you can activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<somatic components>.
-                This ability has the \\abilitytag<Swift> tag, so it allows you to cast a spell without somatic components in the same phase that you activate this staff.
             """,
             short_description="Can exert to cast spells without somatic components",
         ),

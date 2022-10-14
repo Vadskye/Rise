@@ -515,10 +515,11 @@ export const toxicology: MysticSphere = {
         Choose yourself or an adjacent living \\glossterm{ally}.
         The target regains 1d8 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Fortitude defense this round.
+        This defense bonus is \\abilitytag{Swift}, but the recovery is not.
       `,
       rank: 1,
       scaling: { special: "The healing increases by +1d for each rank beyond 1." },
-      tags: ['Swift'],
+      tags: ['Swift (see text)'],
     },
 
     {
@@ -530,6 +531,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },
+      tags: ['Swift (see text)'],
     },
 
     {
@@ -540,6 +542,7 @@ export const toxicology: MysticSphere = {
         exceptThat: "The healing increases to 5d10, and the Fortitude bonus increases to +3.",
       },
       rank: 7,
+      tags: ['Swift (see text)'],
     },
 
     {

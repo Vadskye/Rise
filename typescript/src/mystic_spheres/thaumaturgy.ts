@@ -490,10 +490,6 @@ export const thaumaturgy: MysticSphere = {
         This is a \\abilitytag{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
       `,
       rank: 3,
-      scaling: {
-        5: `You gain an additional +1 bonus to all defenses.`,
-        7: `The defense bonus increases to +2.`,
-      },
       tags: ['Swift'],
     },
 

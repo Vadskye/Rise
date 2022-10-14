@@ -500,7 +500,7 @@ def generate_apparel():
             name="Phasestep Boots",
             rank=2,
             material_type="Boots",
-            tags=["Swift"],
+            tags=[],
             description="""
                 As a \\glossterm<free action>, you can activate these boots.
                 When you do, you increase your \\glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds this round.
@@ -514,7 +514,7 @@ def generate_apparel():
             name="Phasestep Boots, Greater",
             rank=4,
             material_type="Boots",
-            tags=["Swift"],
+            tags=[],
             description="""
                 These boots function like \\mitem<phasestep boots>, except that their effect is always active.
             """,
@@ -524,7 +524,7 @@ def generate_apparel():
             name="Phasestep Boots, Supreme",
             rank=6,
             material_type="Boots",
-            tags=["Swift"],
+            tags=[],
             description="""
                 These boots function like \\mitem<phasestep boots>, except that their effect is always active.
                 In addition, you ignore all sources of \\glossterm<difficult terrain>.
@@ -538,7 +538,7 @@ def generate_apparel():
             name="Boots of the Skydancer",
             rank=3,
             material_type="Boots",
-            tags=["Swift"],
+            tags=[],
             description="""
                 As a \\glossterm<free action>, you can activate these boots.
                 When you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
@@ -551,7 +551,7 @@ def generate_apparel():
             name="Boots of the Skydancer, Greater",
             rank=5,
             material_type="Boots",
-            tags=["Swift"],
+            tags=[],
             description="""
                 These boots function like \\magicitem<boots of the skydancer>, except that the ability lasts \\glossterm<briefly>.
             """,
@@ -1447,7 +1447,7 @@ def generate_apparel():
             name="Belt of Healing",
             rank=2,
             material_type="Belt",
-            tags=['Swift'],
+            tags=[],
             description="""
                 As a standard action, you can use this belt to regain 1d10+4 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -1458,7 +1458,7 @@ def generate_apparel():
             name="Belt of Healing, Greater",
             rank=4,
             material_type="Belt",
-            tags=['Swift'],
+            tags=[],
             description="""
                 As a standard action, you can use this belt to regain 2d10+7 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -1469,7 +1469,7 @@ def generate_apparel():
             name="Belt of Healing, Supreme",
             rank=6,
             material_type="Belt",
-            tags=['Swift'],
+            tags=[],
             description="""
                 As a standard action, you can use this belt to regain 4d10+14 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -2453,10 +2453,9 @@ def generate_apparel():
             name="Amulet of Shared Discipline",
             rank=4,
             material_type="Amulet",
-            tags=[],
+            tags=['Swift'],
             description="""
                 Whenever you use the \\ability<cleansing discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
-                This is not a \\abilitytag<Swift> effect, even if your \\ability<discipline> ability is a \\abilitytag<Swift> effect.
             """,
             short_description="Using \\abilitytag<cleansing discipline> also helps an adjacent ally",
         ),
@@ -2464,7 +2463,7 @@ def generate_apparel():
             name="Amulet of Shared Discipline, Greater",
             rank=6,
             material_type="Amulet",
-            tags=[],
+            tags=['Swift'],
             description="""
                 This item functions like a \\textit<amulet of shared discipline>, except that the range increases to \\medrange.
             """,
