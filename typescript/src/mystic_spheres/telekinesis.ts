@@ -183,14 +183,13 @@ export const telekinesis: MysticSphere = {
       name: "Mass Kinetic Impedance",
 
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each target.",
-        // No relevant glance effect
-        hit: `Each target is \\glossterm{briefly} \\slowed.`,
+        crit: "The condition must be removed twice before the effect ends.",
+        hit: `Each target is \\slowed as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental with a +1 \\glossterm{accuracy} bonus against all Large or smaller creatures in a \\areasmall radius within \\medrange.
+          Make an attack vs. Mental against all Large or smaller creatures in a \\areasmall radius within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
@@ -552,8 +551,6 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit:
           "You also \\glossterm{knockback} each target 20 feet in the direction that it tried to enter the area from.",
-        glance:
-          "The effect on the creature lasts \\glossterm{briefly}, allowing the creature to freely enter the zone after that time.",
         hit: `
           Each target is unable to enter the spell's area with any part of its body for the duration of the spell.
           The rest of its movement in the current phase is cancelled.

@@ -137,12 +137,11 @@ export const channelDivinity: MysticSphere = {
       // +1 level for situational +2 accuracy
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\stunned.
+          The target takes 1d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
-          You gain a +2 bonus to accuracy with this attack if the target attacked you or one of your \\glossterm{allies} during the previous round.
+          You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
       rank: 2,
@@ -152,15 +151,14 @@ export const channelDivinity: MysticSphere = {
     {
       name: "Greater Retributive Judgment",
 
-      // +1 level for situational +2 accuracy
+      // +3 levels for situational +4 accuracy, +2 levels for +1d
       attack: {
         hit: `
-          The target takes 2d8 + half \\glossterm{power} energy damage.
-          If it takes damage, it is \\glossterm{briefly} \\stunned.
+          The target takes 4d8 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
-          You gain a +2 bonus to accuracy with this attack if the target attacked you or one of your \\glossterm{allies} during the previous round.
+          You gain a +4 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
       rank: 6,

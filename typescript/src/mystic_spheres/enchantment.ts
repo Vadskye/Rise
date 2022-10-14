@@ -108,7 +108,7 @@ export const enchantment: MysticSphere = {
         // No relevant glance effect
         hit: `Each target falls \\prone.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 3,
@@ -120,15 +120,15 @@ export const enchantment: MysticSphere = {
       name: "Confusion",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
+        crit: `Creatures that have remaining damage resistance are also affected.`,
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\confused.
+          Each target with no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 4,
+      rank: 7,
       tags: ["Compulsion"],
     },
 
@@ -257,23 +257,7 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: "Mass Fear",
-
-      attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        // No relevant glance effect
-        hit: `Each target is \\glossterm{briefly} \\shaken by a creature of your choice within range.`,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-      tags: ["Emotion"],
-    },
-
-    {
-      name: "Greater Mass Fear",
+      name: "Cause Mass Fear",
 
       attack: {
         crit: `Each target is \\frightened instead of shaken.`,
@@ -282,10 +266,10 @@ export const enchantment: MysticSphere = {
           Each target is \\shaken as a \\glossterm{condition} by a creature of your choice within range.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Emotion"],
     },
@@ -530,32 +514,36 @@ export const enchantment: MysticSphere = {
     {
       name: "Mind Crush",
 
+      // +1 level for conditional +2 accuracy
       attack: {
         hit: `
-          The target takes 1d6 + half \\glossterm{power} energy \\glossterm{subdual damage}.
-          If it takes damage, it is \\glossterm{briefly} \\dazed.
+          The target takes 1d10 + \\glossterm{power} energy \\glossterm{subdual damage}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
+          You gain a +2 accuracy bonus if the target has a negative Intelligence.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "damage",
+      tags: ['Emotion'],
     },
     {
       name: "Greater Mind Crush",
 
+      // +3 levels for conditional +4 accuracy, +2 levels for +1d
       attack: {
         hit: `
-          The target takes 2d8 + half \\glossterm{power} energy \\glossterm{subdual damage}.
-          If it takes damage, it is \\glossterm{briefly} \\stunned.
+          The target takes 4d8 + \\glossterm{power} energy \\glossterm{subdual damage}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
+          You gain a +4 accuracy bonus if the target has a negative Intelligence.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "damage",
+      tags: ['Emotion'],
     },
 
     {

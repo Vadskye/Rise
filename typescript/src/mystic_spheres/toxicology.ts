@@ -266,11 +266,9 @@ export const toxicology: MysticSphere = {
       name: "Poison Immunity",
 
       effect: `
-        You become immune to all \\glossterm{poisons}.
-        You stop being poisoned by any poisons currently affecting you, and new poisons cannot be applied to you.
+        You become \\glossterm{immune} to \\glossterm{poisons}.
       `,
       rank: 4,
-      scaling: { 6: `You can cast this spell as a \\glossterm{minor action}.` },
       type: "Attune",
     },
 

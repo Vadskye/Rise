@@ -108,30 +108,6 @@ export const aquamancy: MysticSphere = {
     },
     // swimming is +2 ranks better than a normal rank 2 condition
     {
-      name: "Sphere of Constraint",
-
-      attack: {
-        crit: `
-          The effect becomes a \\glossterm{condition}.
-        `,
-        hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} surrounded by a layer of water.
-          This does not impede its ability to breathe, but it is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against all creatures completely within a \\smallarea radius within \\medrange.
-          This attack automatically fails against creatures whose space is not entirely within the area.
-        `,
-      },
-      narrative: `
-          A sphere of water appears in midair that adheres to your foes.
-      `,
-      rank: 2,
-      scaling: "accuracy",
-      tags: ["Manifestation"],
-    },
-    // swimming is +2 ranks better than a normal rank 2 condition
-    {
       name: "Constraining Bubble",
 
       attack: {

@@ -187,21 +187,6 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Triage",
-
-      castingTime: "minor action",
-      effect: `
-        Choose a living \\glossterm{ally} within \\longrange.
-        If the target has a \\glossterm{vital wound} with a \\glossterm{vital roll} of 0, it treats that \\glossterm{vital roll} as a 1, preventing it from dying (see \\pcref{Vital Wounds}).
-      `,
-      rank: 2,
-      scaling: {
-        4: `The minimum \\glossterm{vital roll} you can mitigate decreases to -1.`,
-        6: `The minimum \\glossterm{vital roll} you can mitigate decreases to -2.`,
-      },
-    },
-
-    {
       name: "Cure Vital Wound",
 
       effect: `
