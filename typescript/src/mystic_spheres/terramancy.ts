@@ -60,14 +60,16 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} bludgeoning damage.
-          In addition, it is \\glossterm{briefly} \\slowed.
+          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
+          This attack gains a +1 \\glossterm{accuracy} bonus for each size category by which the target is larger than Medium size.
         `,
       },
+      narrative: `
+        The bigger they are, the more heavily gravity pulls them to the ground.
+      `,
       rank: 1,
       scaling: "damage",
       tags: [],
@@ -78,14 +80,16 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d6 + half \\glossterm{power} bludgeoning damage.
-          In addition, it is \\slowed as a \\glossterm{condition}.
+          The target takes 2d10 + \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
+          This attack gains a +2 \\glossterm{accuracy} bonus for each size category by which the target is larger than Medium size.
         `,
       },
+      narrative: `
+        The bigger they are, the more heavily gravity pulls them to the ground.
+      `,
       rank: 5,
       scaling: "damage",
       tags: [],
@@ -203,7 +207,7 @@ export const terramancy: MysticSphere = {
         // No relevant glance effect
         hit: `Each target is knocked \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea within \\medrange that are on a stable surface.
+          Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea within \\shortrange that are on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
         `,
       },
@@ -221,7 +225,7 @@ export const terramancy: MysticSphere = {
         hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
         Each Large or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea within \\medrange that is on a stable surface.
+          Make an attack vs. Reflex against everything in a \\smallarea within \\shortrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
         `,
       },
@@ -239,7 +243,7 @@ export const terramancy: MysticSphere = {
         hit: `Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
         Each Huge or smaller target that takes damage this way is also knocked \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange that is on a stable surface.
+          Make an attack vs. Reflex against everything in a \\medarea radius within \\medrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
         `,
       },

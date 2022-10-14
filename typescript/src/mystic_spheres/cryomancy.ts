@@ -138,22 +138,6 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Mass Frozen Legs",
-
-      attack: {
-        crit: 'The effect becomes a \\glossterm{condition}.',
-        hit: `
-          Each target that has no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\immobilized.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\medrange.
-        `,
-      },
-      rank: 4,
-      scaling: "accuracy",
-    },
-
-    {
       name: "Ice Lance",
 
       attack: {
@@ -501,34 +485,18 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Quickchill",
+      name: "Greater Bonechill",
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} cold damage.
-          If it takes damage, it is \\glossterm{briefly} \\slowed.
+          The target takes 4d6 + \\glossterm{power} cold damage.
+          In addition, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
-      rank: 4,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Quickchill",
-
-      attack: {
-        hit: `
-          The target takes 4d8 + \\glossterm{power} cold damage.
-          If it takes damage, it is \\slowed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-      rank: 7,
+      rank: 6,
       scaling: "damage",
     },
   ],

@@ -49,10 +49,9 @@ export const photomancy: MysticSphere = {
       name: "Color Spray",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition}.`,
-        // No relevant glance effect
+        crit: `The target is \\stunned instead of dazed.`,
         hit: `
-          Each target with no remaining damage resistance is \\glossterm{briefly} \\blinded.
+          Each target is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against each creature within a \\smallarea cone from you.
@@ -81,10 +80,9 @@ export const photomancy: MysticSphere = {
       name: "Prismatic Spray",
 
       attack: {
-        crit: `Creatures that have remaining damage resistance are also affected.`,
-        // No relevant glance effect
+        crit: `The target is \\confused instead of stunned.`,
         hit: `
-          Each target with no remaining damage resistance is \\blinded as a \\glossterm{condition}.
+          Each target is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against each creature within a \\smallarea cone from you.
@@ -192,7 +190,7 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 1d6 + half \\glossterm{power} energy damage.
-          If it takes damage, it is \\glossterm{briefly} \\dazzled.
+          If your attack also beat the target's Fortitude defense, it is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\medrange.
@@ -326,7 +324,6 @@ export const photomancy: MysticSphere = {
     {
       name: "Mass Disguise Image",
 
-      castingTime: "minor action",
       functionsLike: {
         mass: true,
         name: "Disguise Image",

@@ -137,20 +137,6 @@ export const chronomancy: MysticSphere = {
       name: "Mass Slow",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        hit: `Each target is \\glossterm{briefly} \\slowed.`,
-        targeting: `
-          Make an attack vs. Mental with a +1 \\glossterm{accuracy} bonus against all creatures in a \\smallarea radius within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Greater Mass Slow",
-
-      attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `Each target is \\slowed as a \\glossterm{condition}.`,
         targeting: `
@@ -159,22 +145,6 @@ export const chronomancy: MysticSphere = {
       },
       rank: 4,
       scaling: "accuracy",
-    },
-
-    {
-      name: "Greater Slow",
-
-      attack: {
-        crit: `The target is \\immobilized instead of slowed.`,
-        hit: `
-          The target is \\slowed as a \\glossterm{condition}.
-          The condition must be removed twice before the effect ends.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 5,
     },
 
     // -2 levels for 50% chance of activation
@@ -200,7 +170,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         You gain a +10 foot \\glossterm{magic bonus} to your speed with all of your \\glossterm{movement modes}.
       `,
-      rank: 4,
+      rank: 3,
       type: "Attune",
     },
 
@@ -221,6 +191,7 @@ export const chronomancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
+        When you cast this spell, you increase your \\glossterm{fatigue level} by one.
         Choose yourself or one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the target.
         The duplicate is identical in all ways to the target when the spell resolves.
@@ -234,7 +205,8 @@ export const chronomancy: MysticSphere = {
         Its \\glossterm{hit points}, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
 
         The duplicate is fragile, and its actions are limited.
-        It cannot use actions that would cause it to increase its \\glossterm{fatigue level}, lose \\glossterm{hit points}, or otherwise suffer negative consequences as a cost of the action.
+        It cannot use abilities that have limitations on their usage, such as only being usable once per short rest.
+        It cannot use abilities that would increase its \\glossterm{fatigue level}, cause it to lose hit points, or otherwise directly suffer negative consequences as a cost of the action.
         If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
       rank: 5,
@@ -390,7 +362,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         You can take two \\glossterm{minor actions} each round instead of one.
-        You cannot take the same minor action twice in the same round.
+        As normal, you cannot take the same minor action twice in the same round.
       `,
       rank: 6,
       type: "Attune (deep)",
@@ -492,16 +464,21 @@ export const chronomancy: MysticSphere = {
     {
       name: "Expeditious Retreat",
 
-      effect: `
-        You \\glossterm{briefly} gain a +20 \\glossterm{magic bonus} to your speed with all \\glossterm{movement modes}.
-      `,
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: `
+          you gain a +10 foot \\glossterm{magic bonus} to your land speed for the duration of the movement.
+        `,
+        name: "sprint",
+      },
       narrative: `
         You accelerate your body to flee from combat with incredible alacrity.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "The speed bonus increases to +30 feet.",
-        6: "The speed bonus increases to +40 feet.",
+        3: "The speed bonus increases to +20 feet.",
+        5: "The speed bonus increases to +30 feet.",
+        7: "The speed bonus increases to +40 feet.",
       },
     },
 

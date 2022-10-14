@@ -325,14 +325,20 @@ export const polymorph: MysticSphere = {
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
         \\end{itemize}
 
-        As a \\glossterm{minor action}, you can voluntarily disable this ability and return to your normal form.
-        If you do, you can resume the effect of this ability as a minor action.
+        You can suppress or resume this effect as a \\glossterm{free action}.
       `,
       rank: 3,
-      scaling: {
-        5: "The defense bonus against critical hits from strikes increases to +8.",
-        7: "You are immune to critical hits from strikes.",
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Greater Malleable Body',
+
+      functionsLike: {
+        name: "malleable body",
+        exceptThat: "you become \\glossterm{immune} to critical hits from strikes."
       },
+      rank: 7,
       type: 'Attune (deep)',
     },
 

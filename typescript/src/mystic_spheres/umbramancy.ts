@@ -248,7 +248,7 @@ export const umbramancy: MysticSphere = {
       rank: 2,
       scaling: {
         4: `Moving during the \\glossterm{movement phase} does not end your invisibility or prevent you from becoming invisible.`,
-        6: `Taking a \\glossterm{minor action} does not end your invisibility or prevent you from becoming invisible.`,
+        6: `Taking \\glossterm{free actions} and \\glossterm{minor actions} does not end your invisibility or prevent you from becoming invisible.`,
       },
       type: "Attune",
     },
@@ -259,31 +259,13 @@ export const umbramancy: MysticSphere = {
       // +1 level for +2 acc
       attack: {
         crit: "The effect becomes a \\glossterm{condition} on each target.",
-        hit: `Each target is \\glossterm{briefly} \\dazzled.`,
+        hit: `Each target is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
         `,
       },
-      rank: 2,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Blinding Shroud",
-
-      // +1 level for +2 acc
-      attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each target.",
-        hit: `
-          Each target is with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
-        `,
-        targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
-        `,
-      },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
     },
 
@@ -502,18 +484,25 @@ export const umbramancy: MysticSphere = {
           \\item You gain a +4 \\glossterm{magic bonus} to the Stealth skill.
         \\end{itemize}
 
-        While you are in \\glossterm{bright illumination}, this effect is \\glossterm{suppressed}, and you return to your normal size and shape.
-        If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists for the rest of the round.
+        At the end of each round, if you are in \\glossterm{bright illumination}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
+        If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists \\glossterm{briefly}.
         This form offers you no special immunity to damage, as creatures can simply attack the shadow.
 
-        As a \\glossterm{minor action}, you can voluntarily disable this ability and return to your normal form.
-        If you do, you can resume the effect of this ability as a minor action.
+        You can suppress or resume this ability as a \\glossterm{free action}.
       `,
       rank: 3,
-      scaling: {
-        5: `You can maintain the form in bright illumination for a full round before it is suppressed.`,
-        7: `You can maintain the form in bright illumination for up to five minutes before it is suppressed.`,
+      type: "Attune (deep)",
+    },
+
+    {
+      name: "Deep Shadowform",
+
+      functionsLike: {
+        exceptThat: "bright illumination does not suppress the effect. It is still suppressed by \\glossterm{brilliant illumination}.",
+        name: "Shadowform",
       },
+      // narrative: '',
+      rank: 7,
       type: "Attune (deep)",
     },
 
