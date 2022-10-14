@@ -670,13 +670,20 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
-                You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
+                Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
+                You can use the \textit{exchange soul fragment} ability as a standard action.
                 \begin{activeability}{Exchange Soul Fragment}
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by two.
+                    When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-                    Remove a \glossterm{condition} affecting you.
+                    You regain 2d6 \add power \glossterm{damage resistance}.
+                    In addition, you may remove a \glossterm{condition} affecting you.
+
+                    \rankline
+                    \rank{4} The healing increases to 2d8.
+                    \rank{5} The healing increases to 4d6.
+                    \rank{6} The healing increases to 4d8.
+                    \rank{7} The healing increases to 5d10.
                 \end{activeability}
             ",
             modifiers: None,
@@ -695,11 +702,11 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
-                You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
+                Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
+                You can use the \textit{exchange vitality} ability as a standard action.
                 \begin{activeability}{Exchange Vitality}
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by four.
+                    When you use this ability, you increase your \glossterm{fatigue level} by three.
 
                     Remove one of your \glossterm{vital wounds}.
                 \end{activeability}
@@ -707,7 +714,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
-            name: "Split Soul",
+            name: "Soul Fountain",
             is_magical: true,
             rank: 7,
             description: r"

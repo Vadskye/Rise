@@ -244,8 +244,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
         Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
 
-        \ff[8]{Instant Stand} You can use the \textit{rapid stand} ability as a \glossterm{free action} instead of a \glossterm{minor action} (see \pcref{Rapid Stand}).
-
         \ff[9]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
          % modifier at 10th: 12dex + 2mst + 2ft = 16
@@ -1175,11 +1173,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{activeability}
 
         \ff[9]{Vital Touch} When you use your \textit{healing touch} ability, the target can also remove one \glossterm{vital wound}.
-        If it does, its increases its fatigue level by two.
+        If it does, its increases its \glossterm{fatigue level} by three.
 
         \ff[15]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[21]{Lifesaver} You can use the \textit{first aid} ability as a \glossterm{minor action}.
+        \ff[21]{Vital Touch+} Your \textit{vital touch} ability only increases the target's fatigue level by two.
     \end{feat}
 
     \begin{feat}{Mental Magic}{Casting, Magical}
@@ -1604,8 +1602,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
             This bonus does not stack with other effects that allow you access to the target's mind, such as \ability{read mind}.
 
             \rankline
-            \featlevel{12} The range increases to \rnglong range.
-            \featlevel{18} You can use this ability as a \glossterm{minor action}.
+            \featlevel{12} The range increases to \medrange.
+            \featlevel{18} The range increases to \longrange.
         \end{sustainability}
 
         \ff[9]{Truthsense} Whenever a creature within a \arealarge radius \glossterm{emanation} from you that you can hear and see speaks truth to the best of its knowledge with no attempt at evasion, concealment, or creative wording, you automatically recognize that.
@@ -2141,14 +2139,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[3]{Cleanse Toxins} You can use the \textit{cleanse toxins} ability as a standard action.
         \begin{activeability}{Cleanse Toxins}
             \label{Cleanse Toxins}
-            \target{Yourself or one adjacent \glossterm{ally}}
-            You remove all \glossterm{poisons} and \glossterm{diseases} affecting the target.
+            You remove all \glossterm{poisons} and \glossterm{diseases} affecting yourself or one \glossterm{ally} within \medrange.
             This cannot remove a poison or disease applied during the current round.
-
-            \rankline
-            \featlevel{9} The range increases to \rngmed.
-            \featlevel{15} You can use this ability as a \glossterm{minor action}.
-            \featlevel{21} You can use this ability as a \glossterm{free action}.
         \end{activeability}
 
         \ff[9]{Intrinsic Toxicology} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Toxicology} mystic sphere.
