@@ -511,10 +511,12 @@ export const pyromancy: MysticSphere = {
     {
       name: "Pyrohemia",
 
+      // normal damaging effect at short range would be 2d6 + power,
+      // so 2d10 + power with HP restriction seems reasonable.
       attack: {
         hit: `
           The target takes 1d10 + half \\glossterm{power} fire damage.
-          If it takes damage, it is \\glossterm{briefly} \\dazed.
+          If it loses \\glossterm{hit points} from this damage, it takes the damage again.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -527,12 +529,17 @@ export const pyromancy: MysticSphere = {
     {
       name: "Greater Pyrohemia",
 
-        // +2r for full power after +1d, +1r for range
-      functionsLike: {
-        exceptThat: "the damage increases to 2d10 + \\glossterm{power}, and the range increases to \\medrange.",
-        name: "pyrohemia",
+        // all four ranks to double power, which is spicy
+      attack: {
+        hit: `
+          The target takes 4d6 + \\glossterm{power} fire damage.
+          If it loses \\glossterm{hit points} from this damage, it takes the damage again.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "damage",
     },
 

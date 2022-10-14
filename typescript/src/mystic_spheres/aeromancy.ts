@@ -458,56 +458,32 @@ export const aeromancy: MysticSphere = {
     {
       name: "Dust Cloud",
 
-      attack: {
-        crit: `
-          The effect becomes a \\glossterm{condition}.
-        `,
-        hit: `
-          Each target is \\glossterm{briefly} \\dazzled.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\longrange from you.
-        `,
-      },
+      effect: `
+        You create a cloud of dust in a \\smallarea radius \\glossterm{zone} within \\medrange from you.
+        The cloud provides has \\glossterm{concealment} for everything in the area.
+      `,
       // narrative: '',
       rank: 1,
-      scaling: "accuracy",
+      tags: ['Sustain (minor)'],
+      scaling: {
+        3: "You can choose to create a \\medarea radius instead.",
+        5: "You can choose to create a \\largearea radius instead.",
+        7: "You can choose to create a \\hugearea radius instead.",
+      },
     },
     {
-      name: "Massive Dust Cloud",
+      name: "Dust Storm",
 
-      attack: {
-        crit: `
-          The effect becomes a \\glossterm{condition}.
-        `,
-        hit: `
-          Each target is \\glossterm{briefly} \\dazzled.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against all creatures in a \\hugearea radius within \\longrange from you.
-        `,
+      functionsLike: {
+        name: "dust cloud",
+        exceptThat: "you can move the cloud up to 15 feet whenever you sustain this spell.",
       },
       // narrative: '',
-      rank: 5,
-      scaling: "accuracy",
-    },
-    {
-      name: "Blinding Dust Cloud",
-
-      attack: {
-        crit: `
-          The effect becomes a \\glossterm{condition}.
-        `,
-        hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against all creatures in a \\smallarea radius within \\medrange from you.
-        `,
+      rank: 3,
+      scaling: {
+        5: "You can choose to create a \\medarea radius instead.",
+        7: "You can choose to create a \\largearea radius instead.",
       },
-      // narrative: '',
-      rank: 4,
-      scaling: "accuracy",
     },
     {
       name: "Dustblind",

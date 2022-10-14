@@ -127,29 +127,29 @@ export const electromancy: MysticSphere = {
       attack: {
         crit: `Creatures that have remaining damage resistance are also affected.`,
         hit: `
-          Each target that has no remaining \\glossterm{damage resistance} is \\dazed as a \\glossterm{condition} and \\glossterm{briefly} \\stunned.
+          Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\medarea radius from you.
+          Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "accuracy",
     },
 
     {
-      name: "Greater Stunning Discharge",
+      name: "Brain-Scrambling Discharge",
 
       attack: {
         crit: `Creatures that have remaining damage resistance are also affected.`,
         hit: `
-          Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition} and \\glossterm{briefly} \\confused.
+          Each target that has no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\medarea radius from you.
+          Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
     },
 
