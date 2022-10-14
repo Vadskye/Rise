@@ -125,7 +125,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use the \textit{assassination} ability as a \glossterm{minor action}.
-                \begin{activeability}{Assassination}[\abilitytag{Swift}]
+                \begin{activeability}{Assassination}
                     \rankline
                     You study a creature within \rngmed range, finding weak points you can take advantage of.
                     As a \glossterm{brief} effect, whenever you make a melee \glossterm{strikes} against the target that it is \unaware, the strike deals maximum damage and automatically \glossterm{explodes} regardless of what you roll.
@@ -346,7 +346,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus5.
                     \end{sustainability}
 
-                    \begin{activeability}{Palliative Poem}[\abilitytag{Auditory}, \abilitytag{Swift}]
+                    \begin{activeability}{Palliative Poem}[\abilitytag{Auditory}]
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
                         The target regains 1d6 \add \glossterm{power} \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.

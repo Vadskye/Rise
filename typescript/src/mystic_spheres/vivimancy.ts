@@ -32,7 +32,7 @@ export const vivimancy: MysticSphere = {
         5: `The healing increases to eight \\glossterm{hit points}.`,
         7: `The healing increases to sixteen \\glossterm{hit points}.`,
       },
-      tags: ['Swift'],
+      tags: [],
     },
   ],
   spells: [
@@ -111,7 +111,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 1,
       scaling: { special: "The healing increases by +1d for each rank beyond 1." },
-      tags: ["Swift"],
+      tags: [],
     },
 
     {
@@ -123,7 +123,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 4,
       scaling: { special: "The healing increases by +1d for each rank beyond 4." },
-      tags: ["Swift"],
+      tags: [],
     },
 
     {
@@ -134,7 +134,7 @@ export const vivimancy: MysticSphere = {
         The target regains 5d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 7,
-      tags: ["Swift"],
+      tags: [],
     },
 
     {
@@ -147,7 +147,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 2,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
-      tags: ['Swift'],
+      tags: [],
     },
 
     {
@@ -160,7 +160,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 6,
       scaling: { special: "The healing increases by +1d for each rank beyond 6." },
-      tags: ['Swift'],
+      tags: [],
     },
 
     {
@@ -172,7 +172,7 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 3,
       scaling: { special: "The healing increases by +1d for each rank beyond 2." },
-      tags: ['Swift'],
+      tags: [],
     },
 
     {
@@ -183,7 +183,7 @@ export const vivimancy: MysticSphere = {
         This cannot increase a target's hit points above half its maximum hit points.
       `,
       rank: 7,
-      tags: ['Swift'],
+      tags: [],
     },
 
     {

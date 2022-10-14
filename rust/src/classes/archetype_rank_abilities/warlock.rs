@@ -672,13 +672,11 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
                 You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
-                \begin{activeability}{Exchange Soul Fragment}[\abilitytag{Swift}]
+                \begin{activeability}{Exchange Soul Fragment}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by two.
 
                     Remove a \glossterm{condition} affecting you.
-                    This cannot remove an effect applied during the current round.
-                    Because this ability has the \abilitytag{Swift} tag, the penalties from the removed effect do not affect you during the current phase.
                 \end{activeability}
             ",
             modifiers: None,
@@ -699,13 +697,11 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
                 You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
-                \begin{activeability}{Exchange Vitality}[\abilitytag{Swift}]
+                \begin{activeability}{Exchange Vitality}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by four.
 
                     Remove one of your \glossterm{vital wounds}.
-                    This cannot remove a vital wound applied during the current round.
-                    Because this ability has the \abilitytag{Swift} tag, the penalties from the removed vital wound do not affect you during the current phase.
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Power(4)]),

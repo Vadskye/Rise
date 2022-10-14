@@ -160,10 +160,11 @@ export const electromancy: MysticSphere = {
         Chose yourself or one \\glossterm{ally} within \\medrange.
         The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it is \\glossterm{impervious} to electricity damage this round.
+        This defense bonus is \\abilitytag{Swift}, but the recovery is not.
       `,
       rank: 2,
       scaling: { special: "The recovery increases by +1d for each rank beyond 2." },
-      tags: ['Swift'],
+      tags: ['Swift (see text)'],
     },
 
     {
@@ -173,10 +174,11 @@ export const electromancy: MysticSphere = {
         Chose yourself or one \\glossterm{ally} within \\medrange.
         The target regains 4d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it is \\glossterm{immune} to electricity damage this round.
+        This immunity is \\abilitytag{Swift}, but the recovery is not.
       `,
       rank: 6,
       scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
-      tags: ['Swift'],
+      tags: ['Swift (see text)'],
     },
 
     {

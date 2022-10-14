@@ -247,12 +247,11 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{lay on hands} ability as a standard action.
-                \begin{activeability}{Lay on Hands}[\abilitytag{Magical}, \abilitytag{Swift}]
+                \begin{activeability}{Lay on Hands}[\abilitytag{Magical}]
                     \rankline
                     Choose yourself or an adjacent living \glossterm{ally}.
                     The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
                     In addition, it can remove one poison or disease affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
-                    Because this ability has the \abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
