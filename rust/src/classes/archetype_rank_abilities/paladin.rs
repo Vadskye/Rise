@@ -11,7 +11,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your devotion to your alignment affects the world around you, bringing it closer to your ideals.
                 You constantly radiate an aura in a \areamed radius \glossterm{emanation} from you.
-                You can suppress or resume the aura as a \glossterm{minor action}.
+                You can suppress or resume the aura as a \glossterm{free action}.
                 Whenever you resume the aura, you can choose which creatures within the area are affected by aura as any combination of yourself, your \glossterm{allies}, your \glossterm{enemies}, and other creatures.
                 The effect of the aura depends on your devoted alignment, as described below.
 
@@ -433,8 +433,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{4} You also learn the location of all creatures with that alignment.
-                    \rank{6} You can use this ability as a \glossterm{minor action}.
-                    When you do, you \glossterm{briefly} cannot use this ability as a minor action again.
+                    \rank{6} The area increases to a \\gargarea cone.
                 \end{activeability}
             ",
             modifiers: None,

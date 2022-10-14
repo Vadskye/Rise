@@ -65,8 +65,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                         % In addition, alchemical items that last for a fixed number of uses have their number of uses doubled.
                     \parhead{Explosive Construction} The area affected by any alchemical item you create is doubled.
                     \parhead{Potent Construction} Whenever you create an alchemical item that deals damage or regains hit points, you double the item's flat modifier to damage or healing.
-                    For example, a firebomb would deal 1d10+2 damage instead of 1d10+1 damage.
-                    This modifier applies before you calculate any other damage modifiers, such as the power bonus from your \textit{alchemical infusion} ability.
+                    For example, a firebomb would deal 1d10+4 damage instead of 1d10+2 damage.
+                    This modifier applies before you calculate any other damage modifiers, such as the power bonus from your \textit{alchemical power} ability.
                     \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }
@@ -101,6 +101,15 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Alchemical Infusion+",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                You gain a \plus1d bonus to the damage or healing caused by alchemical items you use.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Alchemical Tolerance",
             is_magical: true,
             rank: 3,
@@ -126,15 +135,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can drink up to two doses of potions, elixirs, and other drinkable alchemical items as part of the same standard action.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Experienced Quaffing+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                You can drink a single dose of a potion, elixir, or other drinkable alchemical item as a \glossterm{minor action}.
             ",
             modifiers: None,
         },

@@ -233,7 +233,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
                 \begin{attuneability}{Quarry}{\abilitytag{Attune}, \abilitytag{Subtle}}
                     \rankline
-                    Choose a creature within \longrange.
+                    Choose a creature within \extrange.
                     The target becomes your quarry.
                     You and your \glossterm{allies} within the same range are called your hunting party.
                     Your hunting party gains a \plus1 bonus to \glossterm{accuracy} against your quarry.
@@ -250,8 +250,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You can use this ability with the \abilitytag{Sustain} (free) tag instead of the \abilitytag{Attune} tag.
-                If you originally used it as a sustained ability, you can attune to the same quarry as a free action, even if your quarry is no longer in sight.
+                This ability now has the \abilitytag{Sustain} (attuneable, free) tag instead of the \abilitytag{Attune} tag (see \pcref{Sustained Abilities}).
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
@@ -385,7 +384,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The Survival bonus increases to \plus5.
+                The Survival bonus increases to \plus6.
                 In addition, the bonus to follow tracks from your quarry increases to \plus20.
             ",
             modifiers: None,
@@ -413,7 +412,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                As a \glossterm{minor action}, you can change which \textit{hunting style} you have active.
+                You can change which \textit{hunting style} you have active as a \glossterm{minor action}.
             ",
             modifiers: None,
         },
