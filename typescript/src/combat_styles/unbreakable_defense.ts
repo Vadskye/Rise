@@ -107,7 +107,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by two.
 
-        You regain hit points equal to half your maximum \\glossterm{hit points}.
+        You regain all of your hit points.
         After you use this ability, you cannot use it again until you take a \\glossterm{short rest}.
       `,
       rank: 3,
