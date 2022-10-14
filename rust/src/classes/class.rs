@@ -1539,11 +1539,10 @@ impl Class {
                         If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
-                        \parhead{Aspect} You can use the \textit{divine strength} ability as a \glossterm{minor action}.
+                        \parhead{Aspect} You can use the \textit{divine strength} ability as a standard action.
                         \begin{attuneability}{Divine Strength}{\abilitytag{Attune}}
-                            Usage time: One \glossterm{minor action}.
                             \rankline
-                            You gain a \plus1 bonus to your Strength.
+                            You gain a \plus1 \glossterm{magic bonus} to your Strength.
                         \end{attuneability}
                         \parhead{Essence} You gain a \plus1 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
                         \parhead{Mastery} Your \textit{divine strength} ability loses the \abilitytag{Attune} tag.
