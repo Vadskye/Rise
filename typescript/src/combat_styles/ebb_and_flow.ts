@@ -45,7 +45,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +1 bonus to \\glossterm{accuracy} with the strike against each creature that you missed with a \\glossterm{strike} last round.
+        You gain a +2 accuracy bonus with the strike against each creature that you missed with a \\glossterm{strike} last round.
       `,
       rank: 1,
     },
@@ -55,13 +55,9 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +2 damage bonus with the strike against each creature that you dealt damage to with a \\glossterm{strike} last round.
+        You gain a +2 accuracy bonus with the strike against each creature that you dealt damage to with a \\glossterm{strike} last round.
       `,
       rank: 3,
-      scaling: {
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
-      },
     },
 
     {
