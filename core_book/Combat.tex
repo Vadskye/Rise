@@ -729,7 +729,6 @@
 
             On a hit, the target \glossterm{briefly} suffers a \minus2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
             You choose the defense, which must be appropriate for the action you described.
-            On a critical hit, the effect becomes a \glossterm{condition}.
         \end{activeability}
 
         \parhead{Disarm}\label{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
@@ -742,11 +741,10 @@
             If the target is attended by a creature, the attack must also beat the attending creature's Reflex defense.
 
             \hit You choose whether the target object takes damage from the weapon you hit it with.
-            In addition, if it is \glossterm{attended} and is not held in a hand or well secured, you can choose to knock it loose.
-            Well secured objects include rings worn on fingers, equipped shields, and similarly affixed objects.
+            In addition, if it is \glossterm{attended}, your attack result beat the target's Fortitude defense, and the object is not well secured, you can choose to knock it loose.
             If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
-
-            \crit As above, except that you can deal double damage and you can also knock loose objects that are held in a single hand, but not objects that are held in two hands or well secured.
+            Well secured objects include rings worn on fingers, equipped shields, and similarly affixed objects.
+            In addition, objects held in two hands are considered well secured.
         \end{activeability}
 
         \parhead{Grapple}\label{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
@@ -784,7 +782,6 @@
             If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \squeezing as long as you continue sharing space (see \pcref{Squeezing}).
 
             On a hit, you can move through each target's space.
-            On a critical hit, each target is also knocked \prone.
             On a miss, you end your movement immediately.
         \end{activeability}
 
@@ -810,7 +807,6 @@
             If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
 
             On a hit, you can move up to half your movement speed in a straight line, \glossterm{pushing} each target as you move.
-            On a critical hit, you can move up to your full movement speed instead.
         \end{activeability}
 
         % It's important that this can only be used with move actions
@@ -866,8 +862,9 @@
             However, this is not a \glossterm{strike}, so abilities like the \glossterm{Sweeping} weapon tag have no effect on this attack.
 
             On a hit, the target becomes \prone.
-            In addition, if you made the attack with a Tripping weapon, the target also takes damage as if you had hit it with a \glossterm{strike} using the weapon.
+            In addition, if you made the attack with a Tripping weapon and the attack also beat the target's Armor defense, it takes damage as if you had hit it with a \glossterm{strike} using the weapon.
             You do not add your \glossterm{power} to this damage.
+            This damage is doubled as normal for damaging attacks if you get a \glossterm{critical hit} against the target's Armor defense.
         \end{activeability}
 
     \subsection{Grappling}\label{Grappling}
