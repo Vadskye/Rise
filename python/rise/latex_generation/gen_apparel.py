@@ -639,7 +639,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +2 bonus to your Armor defense and Reflex defense, as well as a +10 foot bonus to your speed with all movement modes.
+                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +2 bonus to your Armor defense and Reflex defense, as well as a +10 foot bonus to your land speed.
             """,
             short_description="Helps you survive when you become afraid",
         ),
@@ -649,7 +649,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +4 bonus to your Armor defense and Reflex defense, as well as a +20 foot bonus to your speed with all movement modes.
+                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +4 bonus to your Armor defense and Reflex defense, as well as a +20 foot bonus to your land speed.
             """,
             short_description="Drastically helps you survive when you become afraid",
         ),

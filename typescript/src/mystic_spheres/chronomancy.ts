@@ -168,7 +168,7 @@ export const chronomancy: MysticSphere = {
       name: "Haste",
 
       effect: `
-        You gain a +10 foot \\glossterm{magic bonus} to your speed with all of your \\glossterm{movement modes}.
+        You gain a +10 foot \\glossterm{magic bonus} to your land speed.
       `,
       rank: 3,
       type: "Attune",
