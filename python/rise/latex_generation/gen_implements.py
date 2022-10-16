@@ -283,7 +283,7 @@ def generate_implements():
             rank=1,
             material_type="Staff",
             description="""
-                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +10 foot bonus to your speed with all movement modes during the next round.
+                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +10 foot bonus to your land speed during the next round.
                 In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +1 \\glossterm<accuracy> bonus.
             """,
             short_description="Grants +10 speed, maybe +1 accuracy on kill",
@@ -293,7 +293,7 @@ def generate_implements():
             rank=5,
             material_type="Staff",
             description="""
-                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +20 foot bonus to your speed with all movement modes during the next round.
+                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +20 foot bonus to your land speed during the next round.
                 In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +3 \\glossterm<accuracy> bonus.
             """,
             short_description="Grants +20 speed, maybe +3 accuracy on kill",
