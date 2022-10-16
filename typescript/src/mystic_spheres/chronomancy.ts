@@ -21,19 +21,6 @@ export const chronomancy: MysticSphere = {
       type: "Sustain (free)",
     },
     {
-      name: "Accelerated Search",
-
-      effect: `
-        Make an Awareness check to search everything in a \\smallarea radius from you (see \\pcref{Search}).
-        
-      `,
-      scaling: {
-        2: "You gain a +2 bonus to this check in addition to the normal +5 bonus for searching carefully.",
-        4: "The bonus increases to +3.",
-        6: "The bonus increases to +4.",
-      },
-    },
-    {
       name: "Rapid Aging",
 
       effect: `
