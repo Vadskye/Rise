@@ -70,10 +70,11 @@ export const revelation: MysticSphere = {
       effect: `
         All invisibility effects within a \\medarea radius \\glossterm{emanation} from you are \\glossterm{suppressed}.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The area increases to a \\largearea radius \\glossterm{emanation}.`,
-        6: `The area increases to a \\hugearea radius \\glossterm{emanation}.`,
+        3: "You can choose to affect a \\largearea radius instead.",
+        5: "You can choose to affect a \\hugearea radius instead.",
+        7: "You can choose to affect a \\gargarea radius instead.",
       },
       type: "Attune",
     },

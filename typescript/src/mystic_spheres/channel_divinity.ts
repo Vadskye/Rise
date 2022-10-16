@@ -334,7 +334,7 @@ export const channelDivinity: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: `The area increases to a \\largearea radius.`,
+        6: "You can choose to create a \\largearea radius instead.",
       },
       type: "Sustain (minor)",
     },

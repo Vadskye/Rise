@@ -346,9 +346,9 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The area increases to a \\medarealong line.`,
-        5: `The area increases to a \\largearealong line.`,
-        7: `The area increases to a \\hugearealong line.`,
+        3: "You can choose to create a \\largearealong wall instead.",
+        5: "You can choose to create a \\hugearealong wall instead.",
+        7: "You can choose to create a \\gargarealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",

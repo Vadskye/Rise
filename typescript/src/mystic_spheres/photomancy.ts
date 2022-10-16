@@ -142,9 +142,9 @@ export const photomancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The area increases to a \\largearealong line.`,
-        5: `The area increases to a 30 ft.\\ high, \\hugearealong line.`,
-        7: `The area increases to a 60 ft.\\ high, \\gargarealong line.`,
+        3: "You can choose to create a \\largearealong wall instead.",
+        5: "You can choose to create a \\hugearealong wall instead.",
+        7: "You can choose to create a \\gargarealong wall instead.",
       },
       tags: ["Barrier"],
       type: "Sustain (attuneable, minor)",

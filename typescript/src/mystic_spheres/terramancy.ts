@@ -335,7 +335,9 @@ export const terramancy: MysticSphere = {
         This does not affect objects under structural stress, such as walls and support columns.
       `,
       rank: 4,
-      scaling: { 6: `The area increases to a \\medarea radius.` },
+      scaling: {
+        6: "You can choose to affect a \\medarea radius instead.",
+      },
       type: "Sustain (minor)",
     },
 
@@ -526,9 +528,9 @@ export const terramancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        3: `The area increases to a \\medarealong wall.`,
-        5: `The area increases to a \\largearealong wall.`,
-        7: `The area increases to a \\hugearealong wall.`,
+        3: "You can choose to create a \\medarealong wall instead.",
+        5: "You can choose to create a \\largearealong wall instead.",
+        7: "You can choose to create a \\hugearealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",

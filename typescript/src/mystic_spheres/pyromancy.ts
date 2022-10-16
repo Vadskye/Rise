@@ -71,9 +71,9 @@ export const pyromancy: MysticSphere = {
         This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
       scaling: {
-        2: `The area increases to a \\largearea radius \\glossterm{emanation}, and the maximum temperature increase increases to 30 degrees.`,
-        4: `The area increases to a \\hugearea radius \\glossterm{emanation}, and the maximum temperature increase increases to 40 degrees.`,
-        6: `The area increases to a \\gargarea radius \\glossterm{emanation}, and the maximum temperature increase increases to 50 degrees.`,
+        3: "You can choose to affect a \\largearea radius instead, and the maximum temperature change increases to 30 degrees.",
+        5: "You can choose to affect a \\hugearea radius instead, and the maximum temperature change increases to 40 degrees.",
+        7: "You can choose to affect a \\gargarea radius instead, and the maximum temperature change increases to 50 degrees.",
       },
     },
   ],
