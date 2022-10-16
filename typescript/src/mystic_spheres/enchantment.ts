@@ -293,7 +293,7 @@ export const enchantment: MysticSphere = {
       name: "Fearsome Aura",
 
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
+        crit: `The target is \\frightened by you instead of shaken.`,
         hit: `Each target is \\shaken by you as a \\glossterm{condition}.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
@@ -309,9 +309,13 @@ export const enchantment: MysticSphere = {
     {
       name: "Greater Fearsome Aura",
 
-      functionsLike: {
-        name: 'fearsome aura',
-        exceptThat: 'each target is \\frightened by you instead of shaken.',
+      attack: {
+        crit: `The target is \\panicked by you instead of shaken.`,
+        hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
+        targeting: `
+          Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
+          After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
+        `,
       },
       rank: 7,
       scaling: "accuracy",
