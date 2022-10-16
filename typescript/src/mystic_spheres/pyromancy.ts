@@ -438,19 +438,20 @@ export const pyromancy: MysticSphere = {
       name: "Wall of Fire",
 
       attack: {
-        hit: `The target takes 1d10 + half \\glossterm{power} fire damage.`,
+        hit: `The target takes 1d8 + half \\glossterm{power} fire damage.`,
         targeting: `
-        You create a \\medarealong \\glossterm{wall} of fire within \\medrange.
-        The flames and heat make it difficult to see through the wall, granting \\glossterm{concealment} to targets on the opposite side of the wall.
-        Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
-        You can only make this attack against a given target once per \\glossterm{phase}.
+          You create a \\smallarealong \\glossterm{wall} of fire within \\medrange.
+          Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
+          In addition, when you cast this spell and during each subsequent action phase, make an attack vs. Reflex against any creature currently sharing space with it.
+          Generally, this is only possible for Large or larger creatures.
+          You can only attack a given target with this spell once per \\glossterm{phase}.
 
-        The wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
-        It is immune to all damage types except for cold damage.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+          The wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+          It is immune to all damage types except for cold damage.
+          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "damage",
       tags: ['Barrier'],
       type: "Sustain (attuneable, minor)",
@@ -463,7 +464,7 @@ export const pyromancy: MysticSphere = {
         name: 'wall of fire',
         exceptThat: `
           the damage increases to 4d6 + half \\glossterm{power}.
-          In addition, the area increases to a \\largearealong \\glossterm{wall}.
+          In addition, the area increases to a \\medarealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },
       rank: 6,
