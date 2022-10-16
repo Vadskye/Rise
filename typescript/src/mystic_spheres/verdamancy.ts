@@ -15,9 +15,9 @@ export const verdamancy: MysticSphere = {
         This effect lasts for one year.
       `,
       scaling: {
-        2: `The area increases to a 2-ft.\\ square.`,
-        4: `The area increases to a 5-ft.\\ square.`,
-        6: `The area increases to a 10-ft.\\ square.`,
+        2: "You can choose to affect a 2-ft. square instead.",
+        4: "You can choose to affect a 5-ft. square instead.",
+        6: "You can choose to affect a 10-ft. square instead.",
       },
     },
 
@@ -449,8 +449,8 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: `The area increases to a \\medarea radius.`,
-        6: `The area increases to a \\largearea radius.`,
+        4: "You can choose to affect a \\medarea radius instead.",
+        6: "You can choose to affect a \\largearea radius instead.",
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -532,9 +532,9 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The area increases to a \\medarea radius.`,
-        5: `The area increases to a \\largearea radius.`,
-        7: `The area increases to a \\hugearea radius.`,
+        3: "When you cast this spell, you can choose to affect a \\medarea radius instead.",
+        5: "When you cast this spell, you can choose to affect a \\largearea radius instead.",
+        7: "When you cast this spell, you can choose to affect a \\hugearea radius instead.",
       },
       tags: ['Manifestation'],
       type: "Attune",
@@ -554,8 +554,10 @@ export const verdamancy: MysticSphere = {
         A great mass of long, thin grass continuously grows and writhes on your body.
         You can extend the grass to surround you at a whim.
       `,
-      rank: 4,
-      scaling: { 6: `The area increases to a \\medarea radius.` },
+      rank: 5,
+      scaling: { 
+        7: "When you cast this spell, you can choose to affect a \\medarea radius instead.",
+      },
       tags: ['Manifestation'],
       type: "Attune",
     },

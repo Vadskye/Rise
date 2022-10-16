@@ -33,9 +33,9 @@ export const aeromancy: MysticSphere = {
         The wind around you waxes and wanes at your command, softening the force of a tempest or creating one to harass your foes.
       `,
       scaling: {
-        2: "The area increases to a \\largearea radius, and the maximum speed change increases to 20 miles per hour.",
-        4: "The area increases to a \\hugearea radius, and the maximum speed change increases to 40 miles per hour.",
-        6: "The area increases to a \\gargarea radius, and the maximum speed change increases to 80 miles per hour.",
+        3: "You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 20 miles per hour.",
+        5: "You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 40 miles per hour.",
+        7: "You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 60 miles per hour.",
       },
       type: "Sustain (minor)",
     },

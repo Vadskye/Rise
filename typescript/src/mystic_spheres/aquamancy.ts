@@ -36,9 +36,9 @@ export const aquamancy: MysticSphere = {
         Generally, moving water uphill costs at least 5 miles per hour of speed for every foot of elevation that you are trying to climb, which can limit your ability to move water up large distances.
       `,
       scaling: {
-        2: "The area increases to a \\largearea radius, and the maximum speed change increases to 10 miles per hour.",
-        4: "The area increases to a \\hugearea radius, and the maximum speed change increases to 20 miles per hour.",
-        6: "The area increases to a \\gargarea radius, and the maximum speed change increases to 40 miles per hour.",
+        3: "You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 10 miles per hour.",
+        5: "You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 15 miles per hour.",
+        7: "You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 20 miles per hour.",
       },
       type: "Sustain (minor)",
     },
@@ -490,9 +490,9 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "The area increases to a \\largearealong line.",
-        5: "The area increases to a \\hugearealong line.",
-        7: "The area increases to a 240 foot long line.",
+        3: "You can choose to create a \\largearealong wall instead.",
+        5: "You can choose to create a \\hugearealong wall instead.",
+        7: "You can choose to create a \\gargarealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
