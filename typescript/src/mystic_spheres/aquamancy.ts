@@ -238,19 +238,21 @@ export const aquamancy: MysticSphere = {
 
       // targeting: None,
       effect: `
-          You create a \\medarealong \\glossterm{wall} of water within \\medrange.
+          You create a \\smallarealong \\glossterm{wall} of water within \\medrange.
           The wall is four inches thick.
           Sight through the wall is possible, though distorted.
           The wall provides both \\glossterm{cover} and \\glossterm{concealment} to targets on the opposite side of the wall (see \\pcref{Obstacles and Cover}).
+          In addition, ranged \\glossterm{strikes} that pass through the wall take a -4 accuracy penalty.
           Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
           The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
           After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The area increases to a \\largearealong wall.`,
-        6: `The area increases to a \\hugearealong wall.`,
+        3: `You can increase the area to a \\medarealong wall.`,
+        5: `You can increase the area to a \\largearealong wall.`,
+        7: `You can increase the area to a \\hugearealong wall.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -369,13 +371,14 @@ export const aquamancy: MysticSphere = {
       name: "Obscuring Mist",
 
       effect: `
-        Fog fills the air within a \\smallarea radius \\glossterm{zone} from your location.
+        Fog fills the air within a \\largearea radius \\glossterm{zone} from your location.
         The fog partially obstructs sight, granting \\glossterm{concealment} to anything seen through the fog (see \\pcref{Concealment}).
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "The area increases to a \\medarea radius \\glossterm{zone}.",
-        6: "The area increases to a \\largearea radius \\glossterm{zone}.",
+        3: "You can choose to create a \\hugearea radius instead.",
+        5: "You can choose to create a \\gargarea radius instead.",
+        7: "You can choose to create a 240 foot radius instead.",
       },
       type: "Sustain (minor)",
     },
@@ -383,11 +386,15 @@ export const aquamancy: MysticSphere = {
       name: "Misty Halo",
 
       effect: `
-        Fog fills the air within a \\medarea radius \\glossterm{zone} from your location.
+        Fog fills the air within a \\largearea radius \\glossterm{zone} from your location.
         The fog partially obstructs sight, granting \\glossterm{concealment} to anything seen through the fog (see \\pcref{Concealment}).
         You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds your location without blocking sight to things near to you.
       `,
-      rank: 6,
+      rank: 3,
+      scaling: {
+        5: "You can choose to create a \\hugearea radius instead.",
+        7: "You can choose to create a \\gargarea radius instead.",
+      },
       type: "Sustain (minor)",
     },
     {
@@ -398,9 +405,10 @@ export const aquamancy: MysticSphere = {
         This fog does not fully block sight, but it provides \\glossterm{concealment}.
         There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: "The area increases to a \\largearea radius.",
+        5: "When you cast this spell, you can choose to create a \\largearea radius instead.",
+        7: "When you cast this spell, you can choose to create a \\hugearea radius instead.",
       },
       type: "Attune",
     },
@@ -461,12 +469,12 @@ export const aquamancy: MysticSphere = {
 
       effect: `
         A cloud of fog appears in a \\medarea radius within \\longrange.
-        All sight through the area is partially obscured, granting \\glossterm{concealment} to anything in the area and anything viewed through the area (see \\pcref{Concealment}).
+        The fog provides \\glossterm{concealment} for everything in the area.
       `,
       rank: 3,
       scaling: {
-        5: "The area increases to a \\largearea radius.",
-        7: "The area increases to a \\hugearea radius.",
+        5: "You can choose to create a \\largearea radius instead.",
+        7: "You can choose to create a \\hugearea radius instead.",
       },
       tags: ["Manifestation"],
       type: "Sustain (minor)",
@@ -475,12 +483,9 @@ export const aquamancy: MysticSphere = {
       name: "Fog Wall",
 
       effect: `
-        You create a \\medarealong \\glossterm{wall} of fog within \\rngmed range.
+        You create a \\medarealong \\glossterm{wall} of fog within \\longrange.
         The fog makes it difficult to see through the wall, granting \\glossterm{concealment} to anything viewed through the wall (see \\pcref{Concealment}).
 
-        The wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
-        % TODO: also cold damage?
-        It is immune to all damage except for fire damage.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
