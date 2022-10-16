@@ -30,6 +30,8 @@ export interface CombatStyle {
   stances?: Stance[];
 }
 
-export type Maneuver = Spell;
+export interface Maneuver extends Omit<Spell, 'rank'> {
+  rank: 1 | 3 | 5 | 7;
+}
 
 export type Stance = Spell;

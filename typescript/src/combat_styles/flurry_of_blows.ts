@@ -119,7 +119,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
         You do not add your \\glossterm{power} to damage with the strike.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        Each creature damaged by the strike that is no more than one size category larger than you larger than you falls \\prone.
+        Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
@@ -162,7 +162,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\largearea cone from you.
         This strike costs ten projectiles.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
@@ -179,10 +179,20 @@ export const flurryOfBlows: CombatStyle = {
       name: "Quickdraw",
 
       effect: `
-        You draw one or two small or medium weapons into your \\glossterm{free hands}.
+        You can sheathe any small or medium weapons you wield, then draw one or two small or medium weapons into your \\glossterm{free hands}.
         Then, you can make a \\glossterm{strike}.
       `,
-      rank: 1,
+      rank: 3,
+    },
+
+    {
+      name: "Heavy Quickdraw",
+
+      effect: `
+        You can sheathe any weapons you wield, then draw one or two weapons into your \\glossterm{free hands}.
+        Then, you can make a \\glossterm{strike}.
+      `,
+      rank: 5,
     },
 
     {
@@ -200,9 +210,22 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        For each previous consecutive round in which you used this ability, you gain a +1 accuracy bonus with the strike, up to a maximum of +4.
+        For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
+        If you \\glossterm{teleport}, your streak of consecutive rounds is broken.
       `,
       rank: 1,
+    },
+
+    {
+      name: "Frenzied Flurry",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        For each previous consecutive round in which you used this ability, you can make an additional \\glossterm{strike}, up to a maximum of three extra strikes.
+        Your \\glossterm{power} with each extra strike is halved.
+        If you \\glossterm{teleport}, your streak of consecutive rounds is broken.
+      `,
+      rank: 7,
     },
 
     {
@@ -223,30 +246,14 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee strike.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
+        If your attack result beats a target's Fortitude defense, you gain a +2 damage bonus with the strike against that target.
       `,
       rank: 1,
-    },
-
-    {
-      name: "Daunting Swiftstrike",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\shaken by you.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: "Daunting Swiftstrike+",
-
-      effect: `
-        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\frightened by you.
-      `,
-      rank: 5,
+      scaling: {
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
+      },
     },
 
     {

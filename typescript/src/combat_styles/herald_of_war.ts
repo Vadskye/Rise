@@ -20,70 +20,71 @@ export const heraldOfWar: CombatStyle = {
       name: "Dazing Roar",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        hit: `Each target is \\glossterm{briefly} \\dazed.`,
+        crit: `Each target is \\stunned instead of dazed.`,
+        hit: `Each target is \\dazed as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 1,
+      tags: ["Compulsion"],
+      rank: 3,
     },
 
     {
       name: "Stunning Roar",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        hit: `Each target is \\glossterm{briefly} \\stunned.`,
+        crit: `The condition must be removed twice before the effect ends.`,
+        hit: `Each target is \\stunned as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 5,
+      tags: ["Compulsion"],
+      rank: 7,
     },
 
+    // -2 ranks for functionally melee-range goad
     {
       name: "Goading Roar",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        hit: `
-          Each target is \\glossterm{briefly} \\goaded.
-        `,
+        crit: `The condition must be removed twice before the effect ends.`,
+        hit: `Each target is \\goaded as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius from you.
         `,
       },
+      tags: ["Emotion"],
       rank: 3,
-      tags: ["Emotion"],
-    },
-
-    {
-      name: "Goading Roar+",
-
-      functionsLike: {
-        name: 'goading roar',
-        exceptThat: "the area increases to a \\largearea radius.",
-      },
-      rank: 7,
-      tags: ["Emotion"],
     },
 
     {
       name: "Fearsome Roar",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition}.`,
-        hit: `
-          Each target with remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\shaken by you.
-          Each target without remaining damage resistance is \\frightened by you instead of shaken.
-        `,
+        crit: `Each target is \\frightened instead of shaken.`,
+        hit: `Each target is \\shaken by you as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 3,
       tags: ["Emotion"],
+      rank: 1,
+    },
+
+    {
+      name: "Fearsome Roar+",
+
+      attack: {
+        crit: `Each target is \\panicked instead of frightened.`,
+        hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+        `,
+      },
+      tags: ["Emotion"],
+      rank: 5,
     },
 
     {
@@ -140,8 +141,8 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 3,
     },
@@ -151,10 +152,9 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition}.
+        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
@@ -162,10 +162,9 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature damaged by the strike is \\glossterm{briefly} \\shaken by you.
-        After this effect ends, the creature cannot be shaken by this effect again until it takes a \\glossterm{short rest}.
+        Each creature damaged by the strike is \\shaken by you if your attack result beats its Mental defense.
       `,
-      rank: 1,
+      rank: 3,
       tags: ["Emotion"],
     },
 
@@ -174,9 +173,9 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature damged by the strike is is \\shaken by you as a \\glossterm{condition}.
+        Each creature damaged by the strike is \\frightened by you if your attack result beats its Mental defense.
       `,
-      rank: 5,
+      rank: 7,
       tags: ["Emotion"],
     },
 
@@ -188,20 +187,9 @@ export const heraldOfWar: CombatStyle = {
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
         In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
-        On a hit, each target is \\glossterm{briefly} \\shaken by you.
+        On a hit, each target is \\shaken by you as a \\glossterm{condition}.
       `,
       rank: 3,
-    },
-
-    {
-      name: "Inspiring Strike",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
-        If you deal damage to a creature with the strike, \\glossterm{allies} within a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to Mental defense.
-      `,
-      rank: 1,
     },
 
     {
@@ -233,27 +221,10 @@ export const heraldOfWar: CombatStyle = {
       name: "Steadfast Battlecry",
 
       effect: `
-        You and each living \\glossterm{ally} in a \\hugearea radius from you \\glossterm{briefly} gain a +2 bonus to \\glossterm{vital rolls}.
+        You and each living \\glossterm{ally} in a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to \\glossterm{vital rolls}.
       `,
       rank: 3,
-      tags: ['Emotion'],
-    },
-
-    {
-      name: "Enraging Roar",
-
-      attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        hit: `
-          Each target is \\glossterm{briefly} unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
-          For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
-        `,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
-        `,
-      },
-      rank: 3,
-      tags: ['Emotion'],
+      tags: ['Emotion', 'Swift'],
     },
   ],
 };

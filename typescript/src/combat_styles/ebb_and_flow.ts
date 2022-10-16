@@ -76,8 +76,8 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\dazed as a \\glossterm{condition} if your attack results beats its Reflex defense.
       `,
       rank: 1,
     },
@@ -87,8 +87,8 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\stunned as a \\glossterm{condition} if your attack results beats its Reflex defense.
       `,
       rank: 5,
     },
@@ -98,8 +98,8 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\confused.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\glossterm{briefly} \\confused if your attack results beats its Reflex defense.
         After this effect ends, the creature cannot be confused by this effect again until it takes a \\glossterm{short rest}.
       `,
       rank: 7,
@@ -224,13 +224,13 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: "Reckless Assault",
 
-      // -2 ranks for self-daze? seems generous
+      // -2 ranks for self-daze
       effect: `
         Make a melee \\glossterm{strike}.
-        You and each creature damaged by the strike are \\glossterm{briefly} \\dazed.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or any damaged creatures during the current phase.
+        You and each creature that lost \\glossterm{hit points} from the strike are \\dazed as a \\glossterm{condition}.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
@@ -238,10 +238,10 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You and each creature damaged by the strike are \\glossterm{briefly} \\stunned.
+        You and each creature that lost \\glossterm{hit points} from the strike are \\stunned as a \\glossterm{condition}.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -249,7 +249,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You gain a +2 accuracy bonus with the strike if you regained \\glossterm{hit points} and did not make any attacks last round.
+        You gain a +2 accuracy bonus with the strike if you regained \\glossterm{hit points} or \\glossterm{damage resistance} and did not make any attacks last round.
       `,
       rank: 3,
     },
@@ -261,7 +261,7 @@ export const ebbAndFlow: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You gain a +1 accuracy bonus with the strike if the target is adjacent to one of your \\glossterm{allies}.
       `,
-      rank: 3,
+      rank: 1,
     },
   ],
 };

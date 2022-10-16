@@ -154,7 +154,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -165,21 +165,10 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazzled.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\dazzled as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
       rank: 1,
-    },
-
-    {
-      name: "Eye Poke+",
-
-      effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\dazzled as a \\glossterm{condition}.
-      `,
-      rank: 3,
     },
 
     {
@@ -187,11 +176,10 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
-        This condition must be removed twice before the effect ends.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
@@ -199,7 +187,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -210,14 +198,9 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a piercing weapon.
-        You gain a +2 damage bonus with the strike if you stayed in the same location while the target moved towards you during the movement phase.
+        You gain a +2 accuracy bonus with the strike if you stayed in the same location while the target moved towards you during the movement phase.
       `,
       rank: 1,
-      scaling: {
-        3: "The damage bonus increases to +4.",
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
-      },
     },
 
     {
@@ -227,7 +210,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\shaken by you, \\slowed, \\dazzled, or \\dazed.
+        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\dazed, \\dazzled, or \\slowed.
       `,
       rank: 1,
     },
@@ -239,7 +222,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
         Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects: \\glossterm{briefly} \\immobilized, \\frightened by you as a \\glossterm{condition}, or \\stunned as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\dazed, \\dazzled, and \\slowed as a single condition.
       `,
       rank: 5,
     },
@@ -252,6 +235,21 @@ export const penetratingPrecision: CombatStyle = {
         You \\glossterm{briefly} take a -4 penalty to all defenses against each target of your strike.
       `,
       rank: 3,
+    },
+
+    {
+      name: "Pierce Weakness",
+
+      effect: `
+        Make a strike using a piercing weapon.
+        If your attack result beats a target's Reflex defense, you gain a +2 damage bonus with the strike against that target.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
+      },
     },
   ],
 };

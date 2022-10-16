@@ -17,17 +17,6 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Dazing Fist+",
-
-      // -2 ranks due to unarmed limitation
-      effect: `
-        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Each creature damaged by the strike is \\dazed as a \\glossterm{condition}.
-      `,
-      rank: 5,
-    },
-
-    {
       name: "Stunning Fist",
 
       // -2 ranks due to unarmed limitation
@@ -36,7 +25,7 @@ export const dirtyFighting: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
@@ -192,7 +181,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          if you deal damage to an item and your attack roll also beats an attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
+          if you deal damage to an item and your attack roll beats an attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
           Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
         name: "disarm",
@@ -249,21 +238,10 @@ export const dirtyFighting: CombatStyle = {
       name: "Slipstrike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
+        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
         After making the strike, you fall \\prone.
       `,
-      rank: 2,
-    },
-
-    {
-      name: "Unbalancing Strike",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to Reflex defense.
-      `,
-      rank: 1,
+      rank: 3,
     },
 
     {
@@ -272,7 +250,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike falls \\prone if it is no larger than one size category larger than you.
+        Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
         A creature knocked prone in this way cannot be knocked prone by this effect again until it takes a \\glossterm{short rest}.
       `,
       rank: 1,
@@ -284,9 +262,20 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\glossterm{briefly} \\slowed.
+        Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
       rank: 1,
+    },
+
+    {
+      name: "Anklebreaker",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
+      `,
+      rank: 7,
     },
 
     {
@@ -304,9 +293,9 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 accuracy penalty.
-        Each creature damaged by the strike \\glossterm{briefly} treats you as being \\trait{invisible} (see \\pcref{Invisible}).
+        As a \\glossterm{condition}, each creature that loses \\glossterm{hit points} from the strike treats you as being \\trait{invisible} (see \\pcref{Invisible}).
       `,
-      rank: 5,
+      rank: 3,
     },
   ],
 };
