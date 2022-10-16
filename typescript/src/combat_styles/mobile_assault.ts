@@ -75,7 +75,7 @@ export const mobileAssault: CombatStyle = {
         abilityType: "ability",
         exceptThat: `
           you can move up to twice your speed instead of up to your speed, and the defense penalty is removed.
-          After you use this ability, you increase your \\glossterm{fatigue level} by 1.
+          When you use this ability, you increase your \\glossterm{fatigue level} by one.
         `,
         name: "charge",
       },
@@ -96,21 +96,11 @@ export const mobileAssault: CombatStyle = {
       name: "Retreating Strike",
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        In addition, you can move up to half your movement speed in a straight line away from one target of the strike.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: "Retreating Strike+",
-
-      effect: `
-        Make a \\glossterm{strike}.
         In addition, you can move up to your movement speed in a straight line away from one target of the strike.
       `,
-      rank: 5,
+      rank: 3,
     },
 
     {
@@ -213,7 +203,7 @@ export const mobileAssault: CombatStyle = {
       name: "Fearsome Pounce",
 
       effect: `
-        Move up to half your movement speed and make a \\glossterm{strike}.
+        Move up to half your movement speed and make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
@@ -225,8 +215,8 @@ export const mobileAssault: CombatStyle = {
       name: "Fearsome Pounce+",
 
       effect: `
-        Move up to half your movement speed and make a \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Move up to half your movement speed and make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 5,
@@ -239,14 +229,15 @@ export const mobileAssault: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          you gain a +2 damage bonus with the strike.
+          you gain a +2 damage bonus with the strike if you moved at least 15 feet during the charge.
         `,
         name: "charge",
       },
-      rank: 3,
+      rank: 1,
       scaling: {
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
       },
     },
 
@@ -256,12 +247,12 @@ export const mobileAssault: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          you gain a +2 accuracy bonus with the strike.
+          you gain a +2 accuracy bonus with the strike if you moved at least 15 feet during the charge.
           However, the penalty to your defenses increases to \\minus4.
         `,
         name: "charge",
       },
-      rank: 4,
+      rank: 3,
     },
   ],
 };

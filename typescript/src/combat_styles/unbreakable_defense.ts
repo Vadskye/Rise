@@ -177,12 +177,23 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{strike}.
-        In addition, you may remove a \\glossterm{condition} affecting you.
-        This cannot remove an effect applied during the current round.
-        The penalties from the effect still affect you when you make the strike.
+        Remove a \\glossterm{condition} affecting you.
+        Then, make a \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
       `,
       rank: 3,
+    },
+
+    {
+      name: "Cleansing Strike+",
+
+      effect: `
+        When you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        Remove a \\glossterm{condition} affecting you.
+        Then, make a \\glossterm{strike}.
+      `,
+      rank: 7,
     },
 
     {
@@ -194,8 +205,6 @@ export const unbreakableDefense: CombatStyle = {
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
         In addition, you regain 1d10 + \\glossterm{power} hit points.
-
-        If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \\pcref{Resolving Simultaneous Damage}).
       `,
       scaling: {
         special: "The healing increases by +1d for each rank beyond 3.",
@@ -268,8 +277,8 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 5,
     },
