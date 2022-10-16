@@ -20,7 +20,7 @@ export const thaumaturgy: MysticSphere = {
           You also learn if any passive magical effects existed in the area.
           This is separate from your knowledge of active magical effects.
         `,
-        4: `The area increases to a \\areahuge cone.`,
+        4: "You can choose to create a \\hugearea cone instead.",
         6: `You also learn the number of magical effects in the area.`,
       },
       tags: ['Detection'],
@@ -369,8 +369,10 @@ export const thaumaturgy: MysticSphere = {
         Extraplanar travel into or out of the area is impossible.
         This prevents all \\abilitytag{Manifestation} effects and effects teleport targets or move them between planes.
       `,
-      rank: 5,
-      scaling: { 7: `The area increases to a \\hugearea radius \\glossterm{zone}.` },
+      rank: 4,
+      scaling: {
+        6: "You can choose to create a \\hugearea radius instead.",
+      },
       type: "Attune",
     },
 
@@ -381,10 +383,10 @@ export const thaumaturgy: MysticSphere = {
         Teleportation into and out of a \\medarea radius \\glossterm{emanation} from you is impossible.
         Any abilities which would cause creatures to teleport within the area have no effect.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: `The area increases to a \\largearea radius \\glossterm{emanation}.`,
-        7: `The area increases to a \\hugearea radius \\glossterm{emanation}.`,
+        4: "You can choose to create a \\largearea radius instead.",
+        6: "You can choose to create a \\hugearea radius instead.",
       },
       type: "Attune",
     },
@@ -458,7 +460,9 @@ export const thaumaturgy: MysticSphere = {
         You break an area's connection to magic.
       `,
       rank: 5,
-      scaling: { 7: `The maximum area increases to a \\hugearea radius.` },
+      scaling: {
+        7: "The maximum area increases to a \\hugearea radius.",
+      },
       type: "Sustain (minor)",
     },
 
@@ -519,7 +523,7 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: `The area increases to a \\medarealong wall.`,
+        6: "You can choose to create a \\medarealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",

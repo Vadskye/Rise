@@ -352,6 +352,7 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 
 #### Spells: AOE debuff
 For the purpose of pure debuffs, treat single-target Medium range as being a t1 area, and scale from there.
+Zone-type spells that only function in the area have a -2 rank modifier
 * Rank 1
   * t3 area, condition: r0.5 debuff, or r1 on crit
   * t1 area, condition: r1 debuff, or r2 on crit
