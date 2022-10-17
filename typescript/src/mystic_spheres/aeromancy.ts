@@ -57,74 +57,50 @@ export const aeromancy: MysticSphere = {
     },
   ],
   spells: [
-    // Treat arrow attraction as r1 -1 level
+    // Treat as r1.5 debuff
     {
-      name: "Curse of Arrow Attraction",
+      name: "Arrow Attraction",
 
-      attack: {
-        crit: "The effect lasts until this curse is removed.",
-        hit: `
-          The target takes a -2 penalty to defenses against ranged \\glossterm{strikes} until it takes a \\glossterm{short rest}.
-        `,
-        targeting: "Make an attack vs. Mental against anything within \\medrange.",
-      },
-      narrative: `
-        The air around your foe ripples with hidden air currents that seem to guide the flight of arrows, ensuring that they strike true.
+      effect: `
+        Choose a creature or object within \\medrange.
+        That creature takes a -2 penalty to defenses against ranged \\glossterm{strikes}.
       `,
-      rank: 2,
+      narrative: `
+        The air around your foe ripples with hidden air currents that seem to guide the flight of arrows.
+      `,
+      rank: 3,
       scaling: "accuracy",
-      tags: ["Curse"],
+      tags: ['Sustain (minor)'],
     },
-    // Treat greater arrow attraction as r2 -2 levels
-    {
-      name: "Greater Curse of Arrow Attraction",
 
-      attack: {
-        crit: `
-          The effect lasts until this curse is removed.
-        `,
-        hit: `
-          The target takes a -4 penalty to defenses against ranged \\glossterm{strikes} until it takes a \\glossterm{short rest}.
-        `,
-        targeting: "Make an attack vs. Mental against anything within \\medrange.",
-      },
-      narrative: `
-        The air around your foe ripples with hidden air currents that seem to guide the flight of arrows, ensuring that they strike true.
+    {
+      name: "Greater Arrow Attraction",
+
+      effect: `
+        Choose a creature or object within \\medrange.
+        That creature takes a -4 penalty to defenses against ranged \\glossterm{strikes}.
       `,
-      rank: 5,
+      narrative: `
+        The air around your foe ripples with hidden air currents that seem to guide the flight of arrows with extreme precision.
+      `,
+      rank: 7,
       scaling: "accuracy",
-      tags: ["Curse"],
+      tags: ['Sustain (minor)'],
     },
     {
       name: "Propulsion",
 
       effect: `
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
-        You \\glossterm{push} the target up to 60 feet in any direction.
+        You \\glossterm{knockback} the target up to 60 feet in any direction.
         You cannot change the direction of the movement partway through.
         Moving the target upwards costs twice the normal movement cost.
       `,
       rank: 1,
       scaling: {
-        3: "The distance increases to 90 feet.",
-        5: "The distance increases to 120 feet.",
-        7: "The distance increases to 150 feet.",
-      },
-    },
-    {
-      name: "Mass Propulsion",
-
-      effect: `
-        Choose up to five creatures from among yourself and your Large or smaller \\glossterm{allies} within \\medrange.
-        You \\glossterm{push} each target up to 60 feet in any direction.
-        Each target must be pushed in the same direction.
-        You cannot change the direction of the movement partway through.
-        Moving a target upwards costs twice the normal movement cost.
-      `,
-      rank: 3,
-      scaling: {
-        5: "The distance increases to 90 feet.",
-        7: "The distance increases to 120 feet.",
+        3: "The maximum distance increases to 90 feet.",
+        5: "The maximum distance increases to 120 feet.",
+        7: "The maximum distance increases to 150 feet.",
       },
     },
     {
@@ -134,38 +110,31 @@ export const aeromancy: MysticSphere = {
         You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
       `,
       // narrative: "",
-      rank: 2,
+      rank: 1,
       type: "Attune",
     },
     {
-      name: "Mass Wind Screen",
-
-      functionsLike: {
-        mass: true,
-        name: "wind screen",
-      },
-      // narrative: "",
-      rank: 4,
-      type: "Attune (target)",
-    },
-    {
-      name: "Windsnipe",
+      name: "Windslash",
 
       attack: {
         // crit: '',
-        hit: "The target takes 2d6 \\add \\glossterm{power} bludgeoning damage.",
-        targeting: "Make an attack vs. Armor against anything within \\distrange.",
+        hit: `
+          The target takes 1d10 \\add \\glossterm{power} slashing damage.
+        `,
+        targeting: "Make an attack vs. Armor against anything within \\longrange.",
       },
       // narrative: '',
-      rank: 3,
+      rank: 2,
       scaling: "damage",
     },
     {
-      name: "Greater Windsnipe",
+      name: "Greater Windslash",
 
       attack: {
         // crit: '',
-        hit: "The target takes 4d8 \\add \\glossterm{power} bludgeoning damage.",
+        hit: `
+          The target takes 4d8 \\add \\glossterm{power} slashing damage.
+        `,
         targeting: "Make an attack vs. Armor against anything within \\extrange.",
       },
       // narrative: '',
@@ -173,21 +142,50 @@ export const aeromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Buffet",
+      name: "Windsnipe",
 
       attack: {
-        crit: "Double damage, and you can knockback the target 60 feet instead of 30 feet.",
+        // crit: '',
         hit: `
-          The target takes 1d6 bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
-          Moving the target upwards costs twice the normal movement cost.
+          The target takes 1d6 \\add half \\glossterm{power} bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, you \\glossterm{push} it up to 30 feet horizontally.
         `,
-        targeting:
-          "Make an attack vs. Fortitude against anything Large or smaller within \\medrange.",
+        targeting: "Make an attack vs. Fortitude against anything within \\distrange.",
       },
       // narrative: '',
       rank: 1,
-      scaling: "accuracy",
+      scaling: "damage",
+    },
+    {
+      name: "Greater Windsnipe",
+
+      attack: {
+        // crit: '',
+        hit: `
+          The target takes 2d8 \\add half \\glossterm{power} bludgeoning damage.
+          If it takes damage, you \\glossterm{push} it up to 30 feet horizontally.
+        `,
+        targeting: "Make an attack vs. Fortitude against anything within \\distrange.",
+      },
+      // narrative: '',
+      rank: 5,
+      scaling: "damage",
+    },
+    {
+      name: "Buffet",
+
+      attack: {
+        hit: `
+          The target takes 1d6 bludgeoning damage.
+          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          Moving the target upwards costs twice the normal movement cost.
+        `,
+        targeting:
+          "Make an attack vs. Fortitude against anything within \\medrange.",
+      },
+      // narrative: '',
+      rank: 1,
+      scaling: "damage",
     },
     {
       name: "Greater Buffet",
@@ -195,22 +193,10 @@ export const aeromancy: MysticSphere = {
       functionsLike: {
         name: 'buffet',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 1d10. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
+        exceptThat: "the damage increases to 2d6. In addition, the knockback distance increases to 60 feet, and the maximum size category increases to Huge.",
       },
       // narrative: '',
-      rank: 4,
-      scaling: "accuracy",
-    },
-    {
-      name: "Supreme Buffet",
-
-      functionsLike: {
-        name: 'buffet',
-        // This deals an immediate 12d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 2d10. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
-      },
-      // narrative: '',
-      rank: 7,
+      rank: 5,
       scaling: "accuracy",
     },
     {
@@ -269,77 +255,47 @@ export const aeromancy: MysticSphere = {
       rank: 7,
       type: "Attune",
     },
+    // -1 rank for stacking up creatures (bad against groups)
     {
-      name: "Air Walk",
-
-      effect: `
-        You can walk on air as if it were solid ground.
-        This only functions as long as you are no more than 60 feet above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
-      `,
-      // narrative: '',
-      rank: 5,
-      type: "Attune",
-      scaling: {
-        7: "The maximum height increases to 120 feet.",
-      },
-    },
-    // +2 levels for push, -2 levels for no power
-    {
-      name: "Gust of Wind",
+      name: "Wind Tunnel",
 
       attack: {
-        // crit: '',
+        crit: "The target is pushed 30 feet instead.",
         hit: `
-          Each target takes 1d6 bludgeoning damage.
-          In addition, each target damaged by the attack is \\glossterm{pushed} 30 feet in the direction the line points away from you.
-          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+          Each target is \\glossterm{pushed} 15 feet in the direction the wind blows.
+          Once a target leaves the area, it stops being pushed and blocks any other targets from being pushed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearealong, 5 ft. wide line from you.
+          You create a continuous blast of wind in a \\medarealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
+          The wind blows in a direction that you choose when you cast the spell.
+          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Fortitude against everything in the area.
         `,
       },
       // effect: '',
       // narrative: '',
       rank: 1,
-      scaling: "damage",
+      scaling: "accuracy",
+      tags: ['Sustain (minor)'],
     },
     {
-      name: "Greater Gust of Wind",
+      name: "Greater Wind Tunnel",
 
       attack: {
-        // crit: '',
-        // +1 level for farther push, +2 levels for area
+        crit: "The target is pushed 60 feet instead.",
         hit: `
-          Each target takes 2d6 bludgeoning damage.
-          In addition, each target damaged by the attack is \\glossterm{pushed} 60 feet in the direction the line points away from you.
-          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+          Each target is \\glossterm{pushed} 30 feet in the direction the wind blows.
+          Once a target leaves the area, it stops being pushed and blocks any other targets from being pushed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\hugearealong, 10 ft. wide line from you.
+          You create a continuous flow of wind in a \\largearealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
+          The wind blows in a direction that you choose when you cast the spell.
+          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Fortitude against everything in the area.
         `,
       },
       // narrative: '',
       rank: 4,
-      scaling: "damage",
-    },
-    {
-      name: "Supreme Gust of Wind",
-
-      attack: {
-        // crit: '',
-        // +2 levels for half power, +1 level for more area
-        hit: `
-          Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
-          In addition, each target damaged by the attack is \\glossterm{pushed} 60 feet in the direction the line points away from you.
-          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against everything in a \\hugearealong, 15 ft. wide line from you.
-        `,
-      },
-      // narrative: '',
-      rank: 7,
-      // scaling: "damage",
+      scaling: "accuracy",
+      tags: ['Sustain (minor)'],
     },
     {
       name: "Windblade",
@@ -358,10 +314,10 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Whenever a creature attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
+          Whenever a creature within \\medrange of you attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
           Any effect which increases this spell's range increases the range of this retaliation by the same amount.
           You can only make this attack against a given target once per \\glossterm{phase}.
         `,
@@ -404,17 +360,33 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d10 \\add half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d6 \\add half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\smallarea radius within \\medrange.
+          Make an attack vs. Reflex against everything in a \\medarea radius within \\medrange.
         `,
       },
       // narrative: '',
-      rank: 3,
+      rank: 4,
       scaling: "damage",
     },
-    // 2 levels for push
+    {
+      name: "Greater Cyclone",
+
+      attack: {
+        // crit: '',
+        hit: `
+          Each target takes 4d6 \\add half \\glossterm{power} bludgeoning damage.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\largearea radius within \\distrange.
+        `,
+      },
+      // narrative: '',
+      rank: 7,
+    },
+    // 2 levels for push; normally, 30' push is r1, but clockwise is much worse than
+    // towards/away, so it's closer to r0.5
     {
       name: "Hurricane",
 
@@ -426,11 +398,11 @@ export const aeromancy: MysticSphere = {
           Each target's final position should be the same distance from you as its starting position.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       // narrative: '',
-      rank: 6,
+      rank: 5,
       scaling: "damage",
     },
     {
@@ -445,30 +417,27 @@ export const aeromancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Reflex against one Small or smaller object within \\medrange.
-          If the object is attended by a creature, the attack must also beat the attending creature's Reflex defense.
+          If the object is attended by a creature, the attack must also beat the attending creature's Fortitude and Reflex defenses.
           If it is held in two hands or well secured, this attack automatically fails.
-
-          After you successfully steal an item from a creature with this spell, it gains a +5 bonus to its defenses against this spell until it takes a \\glossterm{short rest}.
         `,
       },
       // narrative: '',
-      rank: 2,
+      rank: 5,
       scaling: "accuracy",
     },
     {
       name: "Dust Cloud",
 
       effect: `
-        You create a cloud of dust in a \\smallarea radius \\glossterm{zone} within \\medrange from you.
+        You create a cloud of dust in a \\medarea radius \\glossterm{zone} within \\medrange from you.
         The cloud provides has \\glossterm{concealment} for everything in the area.
       `,
       // narrative: '',
-      rank: 1,
+      rank: 2,
       tags: ['Sustain (minor)'],
       scaling: {
-        3: "You can choose to create a \\medarea radius instead.",
-        5: "You can choose to create a \\largearea radius instead.",
-        7: "You can choose to create a \\hugearea radius instead.",
+        4: "You can choose to create a \\largearea radius instead.",
+        6: "You can choose to create a \\hugearea radius instead.",
       },
     },
     {
@@ -476,13 +445,12 @@ export const aeromancy: MysticSphere = {
 
       functionsLike: {
         name: "dust cloud",
-        exceptThat: "you can move the cloud up to 15 feet whenever you sustain this spell.",
+        exceptThat: "you can move the cloud up to 15 feet at the end of each round.",
       },
       // narrative: '',
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: "You can choose to create a \\medarea radius instead.",
-        7: "You can choose to create a \\largearea radius instead.",
+        6: "You can choose to create a \\largearea radius instead.",
       },
     },
     {
@@ -490,45 +458,17 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 physical damage.
+          The target takes 2d10 physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Reflex against one creature within \\medrange.
-          If there is dirt, dust, or a collection of loose objects of similar size within 60 foot \\glossterm{range} of the target's eyes, you gain a +2 accuracy bonus with this attack.
+          Make an attack vs. Reflex against one creature within \\longrange.
+          If there is dirt, dust, or a collection of loose objects of similar size within 15 feet of the target's eyes, you gain a +2 accuracy bonus with this attack.
         `,
       },
       // narrative: '',
       rank: 6,
       scaling: "accuracy",
-    },
-    {
-      name: "Piercing Windblast",
-
-      attack: {
-        // crit: '',
-        hit: "The target takes 2d6 \\add \\glossterm{power} piercing damage.",
-        targeting: "Make an attack vs. Reflex against anything within \\medrange.",
-      },
-      narrative: `
-        A rush of wind flows rapidly through the gaps in your foe's armor to pierce its heart.
-      `,
-      rank: 3,
-      scaling: "damage",
-    },
-    {
-      name: "Greater Piercing Windblast",
-
-      attack: {
-        // crit: '',
-        hit: "The target takes 4d8 \\add \\glossterm{power} piercing damage.",
-        targeting: "Make an attack vs. Reflex against anything within \\longrange.",
-      },
-      narrative: `
-        A rush of wind flows instantly through the gaps in your foe's armor to pierce its heart.
-      `,
-      rank: 6,
-      scaling: "damage",
     },
     {
       name: "Misty Step",
@@ -542,7 +482,7 @@ export const aeromancy: MysticSphere = {
         Your body is partially transformed into mist.
         This allows you to drift through enemies and even the air with ease.
       `,
-      rank: 3,
+      rank: 4,
       type: "Attune",
     },
     {
@@ -564,34 +504,63 @@ export const aeromancy: MysticSphere = {
       name: "Wall of Wind",
 
       effect: `
-        You create a wall of wind in a 20 ft.\\ high, \\medarea \\glossterm{wall} within \\medrange.
+        You create a \\medarea \\glossterm{wall} of wind within \\longrange.
         It does not block passage or significantly obstruct sight.
-        However, ranged \\glossterm{strikes} that pass through the wall take a -2 \\glossterm{accuracy} penalty.
+        However, ranged \\glossterm{strikes} that pass through the wall take a -4 accuracy penalty.
 
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {
-        3: "The penalty increases to -3.",
-        5: "The penalty increases to -4.",
-        7: "The penalty increases to -5.",
+        3: `You can increase the area to a \\medarealong wall.`,
+        5: `You can increase the area to a \\largearealong wall.`,
+        7: `You can increase the area to a \\hugearealong wall.`,
       },
       tags: ['Barrier'],
       type: "Sustain (attuneable, minor)",
     },
     {
-      name: "Massive Wall of Wind",
+      name: "Air Walk",
 
-      functionsLike: {
-        name: "wall of wind",
-        exceptThat: "the area increases to a 30 ft. high, \\hugearea \\glossterm{wall} within \\longrange.",
+      effect: `
+        You can walk on air up to a foot above the ground.
+        This allows you to ignore \\glossterm{difficult terrain} from all sources other than creature abilities.
+        The extra height is generally insufficient to change your \\glossterm{space} in battle.
+      `,
+      rank: 2,
+      type: "Attune",
+    },
+    {
+      name: "Windburst",
+
+      attack: {
+        // crit: '',
+        hit: `
+          Each target takes 1d10 \\add half \\glossterm{power} bludgeoning damage.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius from you.
+        `,
       },
-      rank: 4,
-      scaling: {
-        6: "The penalty increases to -3.",
+      // narrative: '',
+      rank: 3,
+      scaling: "damage",
+    },
+    {
+      name: "Greater Windburst",
+
+      attack: {
+        // crit: '',
+        hit: `
+          Each target takes 4d8 \\add half \\glossterm{power} bludgeoning damage.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\hugearea radius from you.
+        `,
       },
-      tags: ['Barrier'],
-      type: "Sustain (attuneable, minor)",
+      // narrative: '',
+      rank: 7,
+      scaling: "damage",
     },
   ],
 

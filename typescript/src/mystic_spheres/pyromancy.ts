@@ -154,13 +154,13 @@ export const pyromancy: MysticSphere = {
       name: "Fireball",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\areasmall radius within \\medrange.
+          Make an attack vs. Reflex against everything in a \\medarea radius within \\medrange.
         `,
       },
 
-      rank: 3,
+      rank: 4,
       scaling: "damage",
     },
 
@@ -353,17 +353,18 @@ export const pyromancy: MysticSphere = {
       name: "Personal Ignition",
 
       attack: {
-        // single-target dice, but no power
-        hit: `Each target takes 2d6 fire damage.`,
+        hit: `The target takes 1d8 + half \\glossterm{power} fire damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          In addition, during each action phase, make an attack vs. Fortitude against any creature that you are currently \\grappled by.
+          You can only attack a given target with this spell once per \\glossterm{phase}.
         `,
       },
       narrative: `
         You catch on fire.
         This does not cause you any harm, as the flames burn around your body without burning you.
       `,
-      rank: 3,
+      rank: 2,
       scaling: "damage",
       type: "Attune (deep)",
     },
@@ -372,17 +373,18 @@ export const pyromancy: MysticSphere = {
       name: "Greater Personal Ignition",
 
       attack: {
-        // AOE dice, but no power
-        hit: `Each target takes 4d10 + half \\glossterm{power} fire damage.`,
+        hit: `The target takes 4d8 + half \\glossterm{power} fire damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Reflex against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          In addition, during each action phase, make an attack vs. Fortitude against any creature that you are currently \\grappled by.
+          You can only attack a given target with this spell once per \\glossterm{phase}.
         `,
       },
       narrative: `
         You catch on fire.
         This does not cause you any harm, as the flames burn around your body without burning you.
       `,
-      rank: 7,
+      rank: 6,
       scaling: "damage",
       type: "Attune",
     },

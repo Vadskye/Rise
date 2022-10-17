@@ -265,7 +265,7 @@ export const umbramancy: MysticSphere = {
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
     },
 
@@ -369,7 +369,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 cold damage.
+          The target takes 1d8 cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
           This condition must be removed twice before the effect ends.
         `,
@@ -390,7 +390,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 cold damage.
+          The target takes 2d10 cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
@@ -433,7 +433,7 @@ export const umbramancy: MysticSphere = {
       // basically t3? better control than immobilized, but no defense penalties
       attack: {
         hit: `
-          The target takes 2d6 cold damage.
+          The target takes 2d8 cold damage.
           If it loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
           You have full control over its movement during each \\glossterm{movement phase}.
           This does not affect its movements during other phases.
@@ -511,8 +511,8 @@ export const umbramancy: MysticSphere = {
 
       effect: `
         You create a \\medarealong \\glossterm{wall} of darkness within \\medrange.
-        The wall is visible as a solid block of darkness that blocks sight.
-        Creatures with \\trait{darkvision} can see through the wall normally.
+        The wall is visible as a solid block of darkness.
+        It blocks ordinary vision and \\trait{low-light vision}, but creatures with \\trait{darkvision} can see through the wall normally.
         It does not inhibit the passage of objects or creatures.
 
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.

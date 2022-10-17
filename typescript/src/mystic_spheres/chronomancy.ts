@@ -130,7 +130,7 @@ export const chronomancy: MysticSphere = {
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 3,
       scaling: "accuracy",
     },
 
@@ -340,8 +340,8 @@ export const chronomancy: MysticSphere = {
         You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
-      rank: 4,
-      type: "Attune",
+      rank: 3,
+      type: "Attune (deep)",
     },
 
     {

@@ -141,7 +141,7 @@ export const polymorph: MysticSphere = {
       name: 'Baleful Polymorph',
 
       attack: {
-        hit: `The target takes 2d6 physical damage.
+        hit: `The target takes 2d8 physical damage.
         If it loses \\glossterm{hit points} from this damage, it is balefully polymorphed as a \\glossterm{condition}.
         It shrinks by two \\glossterm{size categories} and is \\confused.`,
         targeting: `
@@ -345,9 +345,8 @@ export const polymorph: MysticSphere = {
     {
       name: 'Spikeform',
 
-      // original targets: ['Yourself', 'See text']
       attack: {
-        hit: `Each target takes 2d6 piercing damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
@@ -363,9 +362,7 @@ export const polymorph: MysticSphere = {
     {
       name: 'Greater Spikeform',
 
-      // original targets: ['Yourself', 'See text']
       attack: {
-        // AOE dice, no power
         hit: `Each target takes 4d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
@@ -439,7 +436,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The target takes 2d10 physical damage.
+        hit: `The target takes 4d6 physical damage.
         If it loses \\glossterm{hit points} from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
         This has the following effects:
         \\begin{itemize}
@@ -764,7 +761,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d4 physical damage.
+          The target takes 1d6 physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\vulnerable to all damage.
         `,
         targeting: `
@@ -780,7 +777,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d4 physical damage.
+          The target takes 2d8 physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\vulnerable to all damage as a \\glossterm{condition}.
         `,
         targeting: `

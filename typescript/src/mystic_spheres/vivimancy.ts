@@ -394,7 +394,7 @@ export const vivimancy: MysticSphere = {
       // HP loss is treated as t3.5 debuff
       attack: {
         hit: `
-          The target takes 2d10 energy damage.
+          The target takes 4d6 energy damage.
           If it loses \\glossterm{hit points} from this damage, it also loses additional \\glossterm{hit points} equal to half its maximum hit points.
         `,
         targeting: `
@@ -477,7 +477,7 @@ export const vivimancy: MysticSphere = {
       name: "Retributive Lifebond",
 
       attack: {
-        hit: `Each target takes 1d8 energy damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} energy damage.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
@@ -491,7 +491,7 @@ export const vivimancy: MysticSphere = {
       name: "Greater Retributive Lifebond",
 
       attack: {
-        hit: `Each target takes 2d10 energy damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} energy damage.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make \\glossterm{reactive attack} vs. Fortitude against them.
         `,

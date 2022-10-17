@@ -189,7 +189,7 @@ export const telekinesis: MysticSphere = {
           Make an attack vs. Mental against all Large or smaller creatures in a \\areasmall radius within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
@@ -198,7 +198,7 @@ export const telekinesis: MysticSphere = {
       name: "Blastwave",
 
       attack: {
-        hit: `You \\glossterm{knockback} each target up to 15 feet in a straight line away from you.
+        hit: `You \\glossterm{knockback} each target up to 30 feet in a straight line away from you.
         Moving a target upwards costs twice the normal movement cost.
         If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 1d10 + half \\glossterm{power} instead of the normal knockback damage.
         Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.`,
@@ -217,7 +217,6 @@ export const telekinesis: MysticSphere = {
         name: 'blastwave',
         exceptThat: `
           the damage increases to 2d10 + half \\glossterm{power}, and the area increases to a \\largearea radius.
-          In addition, the knockback distance increases to 30 feet.
         `,
       },
       rank: 6,
@@ -251,7 +250,7 @@ export const telekinesis: MysticSphere = {
       name: "Toss Foe",
 
       attack: {
-        hit: `The target takes 1d4 bludgeoning damage.
+        hit: `The target takes 1d6 bludgeoning damage.
         If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
         Moving the target upwards costs twice the normal movement cost.`,
         targeting: `

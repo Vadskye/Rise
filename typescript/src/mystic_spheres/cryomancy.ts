@@ -127,7 +127,7 @@ export const cryomancy: MysticSphere = {
       name: "Frozen Legs",
 
       attack: {
-        hit: `The target takes 2d6 cold damage.
+        hit: `The target takes 2d8 cold damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -237,11 +237,11 @@ export const cryomancy: MysticSphere = {
       name: "Skyskate",
 
       effect: `
-        Whenever you move using one of your movement speeds, you can leave a trail of ice behind you.
-        The ice lasts until the end of the round before disappearing.
+        Whenever you move using your land speed, you can leave a trail of ice behind you.
+        The ice lasts \\glossterm{briefly} before disappearing.
 
         While you are leaving a trail of ice behind you, you can move into thin air by walking on your own ice trail, just as if it was solid ground.
-        If you are still standing on your own ice trail when it disappears at the end of the round, you fall.
+        If you are still standing on your own ice trail when it disappears, you fall.
 
         Creatures following closely behind you while you move may also be able to use your ice trail.
         However, most Large or larger creatures will break the ice trail if they step onto it, which may cause both of you to fall.
@@ -277,7 +277,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d4 cold damage.
+          The target takes 1d6 cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
           This condition must be removed twice before the effect ends.
         `,
@@ -415,7 +415,7 @@ export const cryomancy: MysticSphere = {
 
       // original targets: ['Yourself', 'See text']
       attack: {
-        hit: `Each target takes 2d6 cold damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,

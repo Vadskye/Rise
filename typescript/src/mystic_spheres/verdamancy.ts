@@ -400,22 +400,22 @@ export const verdamancy: MysticSphere = {
 
       // original targets: Each creature that moves through the area (see text)
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
+        hit: `The target takes 1d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
         You create a \\smallarealong \\glossterm{wall} of thorns within \\medrange.
         The base of at least half of the wall must be in arable earth.
         The wall is four inches thick, but permeable.
-        It provides \\glossterm{cover} to attacks made through the wall.
+        It provides \\glossterm{cover} to attacks made through the wall, but does not fully block sight.
         Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
         Whenever anything moves through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
-        You can only make an attack in this way against a given target once per \\glossterm{phase}.
+        You can only make this attack against a given target once per \\glossterm{phase}.
 
-        The wall has \\glossterm{hit points} equal to four times your \\glossterm{power}.
+        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
 
-      rank: 3,
+      rank: 2,
       scaling: "damage",
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -426,9 +426,9 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'wall of thorns',
-        exceptThat: 'the damage increases to 4d6 + half \\glossterm{power}, and the area increases to a \\medarealong \\glossterm{wall}.',
+        exceptThat: 'the damage increases to 2d10 + half \\glossterm{power}, and the area increases to a \\medarealong \\glossterm{wall}.',
       },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",

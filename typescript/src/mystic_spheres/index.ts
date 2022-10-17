@@ -60,7 +60,7 @@ export interface MysticSphere {
   spells: Spell[];
 }
 
-interface BaseSpellLike {
+export interface BaseSpellLike {
   attack?: StandardAttack;
   castingTime?: string;
   effect?: string;
