@@ -129,48 +129,26 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Disarm Weapon",
+      name: "Disarm",
 
-      functionsLike: {
-        abilityType: "ability",
-        exceptThat: `
-          you can also knock loose objects held in a single hand.
-          On a critical hit, you can also knock loose an object held in two hands.
-          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
-
-          After you successfully knock an item loose from a creature with this ability, it gains a +5 bonus to its defenses against this ability until it takes a \\glossterm{short rest}.
-        `,
-        name: "disarm",
-      },
-      rank: 3,
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        If your attack result beats a damaged creature's Fortitude and Reflex defenses, it drops one item of your choice that it is holding in a single hand.
+      `,
+      rank: 5,
+      tags: ['Size-Based'],
     },
 
     {
       name: "Steal Weapon",
 
       functionsLike: {
-        abilityType: "maneuver",
         exceptThat: `
           you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
           Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
-        name: "disarm weapon",
-      },
-      rank: 5,
-    },
-
-    {
-      name: "Steal Weapon+",
-
-      functionsLike: {
-        abilityType: "maneuver",
-        exceptThat: `
-          you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
-          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
-
-          In addition, you can make a \\glossterm{strike} with a weapon you stole this way.
-        `,
-        name: "disarm weapon",
+        name: "disarm",
       },
       rank: 7,
     },
