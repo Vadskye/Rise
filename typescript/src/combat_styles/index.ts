@@ -1,4 +1,4 @@
-import { Spell } from "@src/mystic_spheres";
+import { BaseSpellLike } from "@src/mystic_spheres";
 import { bluntForce } from "./blunt_force";
 import { dirtyFighting } from "./dirty_fighting";
 import { ebbAndFlow } from "./ebb_and_flow";
@@ -30,8 +30,8 @@ export interface CombatStyle {
   stances?: Stance[];
 }
 
-export interface Maneuver extends Omit<Spell, 'rank'> {
+export interface Maneuver extends BaseSpellLike {
   rank: 1 | 3 | 5 | 7;
 }
 
-export type Stance = Spell;
+export type Stance = Maneuver;
