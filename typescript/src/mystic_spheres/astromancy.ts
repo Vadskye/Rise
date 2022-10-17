@@ -191,26 +191,6 @@ export const astromancy: MysticSphere = {
       },
     },
     {
-      name: "Mass Translocation",
-
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\shortrange.
-        Each target other than yourself must be Medium size or smaller.
-        Each target \\glossterm{teleports} into an unoccupied location within range on a stable surface that can support its weight.
-        You choose each target's destination independently.
-        If a target's destination is invalid, this spell has no effect on it, but any other subjects still teleport normally.
-      `,
-      rank: 3,
-      narrative: `
-        You teleport your allies across the chasm all at once.
-        The orcs chasing you can only stand on the other side and shout angrily.
-      `,
-      scaling: {
-        5: "The range increases to \\rngmed.",
-        7: "The range increases to \\rnglong.",
-      },
-    },
-    {
       name: "Silent Translocation",
 
       functionsLike: {
@@ -234,7 +214,7 @@ export const astromancy: MysticSphere = {
       name: "Dimension Door",
 
       effect: `
-        You teleport to an unoccupied destination on a stable surface within \\extrange of you.
+        You teleport to an unoccupied destination on a stable surface within 300 feet of you.
         You must clearly visualize the destination's appearance and have an approximate knowledge of its direction and distance from you.
         However, you do not need \\glossterm{line of sight} or \\glossterm{line of effect} to your destination.
       `,
@@ -244,7 +224,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: "The range increases to 480 feet.",
+        6: "The maximum distance increases to 600 feet.",
       },
     },
     {
@@ -252,7 +232,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 bludgeoning damage.
+          The target takes 2d6 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
@@ -270,7 +250,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 bludgeoning damage.
+          The target takes 1d8 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
         `,
@@ -504,22 +484,6 @@ export const astromancy: MysticSphere = {
         7: "Your strikes can pass through any number of physical obstacles with a combined thickness of five feet or less.",
       },
       type: "Attune",
-    },
-    {
-      name: "Mass Phasing Blade",
-
-      functionsLike: {
-        mass: true,
-        name: "phasing blade",
-      },
-      narrative: `
-        You augment the weapons of your allies with the ability to travel short distances through the Astral Plane to reach their targets.
-      `,
-      rank: 5,
-      scaling: {
-        7: "Each target's strikes can penetrate through any number of physical obstacles with a combined thickness of two feet or less.",
-      },
-      type: "Attune (target)",
     },
     {
       name: "Phasing Spells",

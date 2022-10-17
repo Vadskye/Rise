@@ -445,6 +445,9 @@ export const thaumaturgy: MysticSphere = {
         This does not affect teleportation away from the area unless that teleportation's destination lies within the area.
       `,
       rank: 4,
+      scaling: {
+        6: "You can choose to affect a \\hugearea radius instead.",
+      },
       type: "Attune",
     },
 
