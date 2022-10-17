@@ -583,7 +583,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Abjuration} The bonus to damage resistance increases to five times your rank in this archetype.
                     In addition, the Armor bonus increases to \plus2.
 
-                    \subcf{Conjuration} The range improvement increases to \plus120 feet.
+                    \subcf{Conjuration} The range improvement increases to \plus90 feet.
 
                     \subcf{Evocation} The power bonus increases to \plus12.
 
