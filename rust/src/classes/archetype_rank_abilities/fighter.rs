@@ -171,8 +171,8 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You are immune to any effect which would steal your weapon or force you to drop it, such as the \ability{disarm} ability.
-                This does not protect you from any other effects of that attack, such as damage to yourself or the weapon.
+                You are immune to any effect which would steal your weapon or force you to drop it.
+                This does not protect you from any other effects of that attack, such as damage to yourself.
             ",
             modifiers: None,
         },
