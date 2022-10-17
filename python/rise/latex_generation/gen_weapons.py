@@ -725,45 +725,6 @@ def generate_weapons():
         )
     )
 
-    weapons += [
-        create_weapon(
-            name="Thieving",
-            rank=2,
-            tags=[],
-            description="""
-                As a \\glossterm<standard action>, you can activate this weapon.
-                If you do, make a melee \\glossterm<strike> or use the \\textit<disarm> ability using this weapon.
-                If you successfully knock an object loose with the disarm attempt, or if your strike hit an \\glossterm<unattended> object, this weapon can absorb the struck object.
-                The object's size category must be no larger than the weapon's size category.
-
-                An absorbed object leaves no trace that it ever existed.
-                This weapon can hold no more than three objects at once.
-                If you attempt to absorb an object while the weapon is full, the attempt fails.
-                As a standard action, you can retrieve the last item absorbed by the weapon.
-                The item appears in your hand, or falls to the ground if your hand is occupied.
-            """,
-            short_description="Can absorb small items",
-            upgrades=[
-                Upgrade(
-                    rank=4,
-                    description="""
-                        The maximum size category of object this weapon can absorb is one size category larger than the weapon.
-                        In addition, you gain a +1 bonus to \\glossterm<accuracy> with the \\textit<disarm> ability using the weapon.
-                    """,
-                    short_description="Can absorb large items",
-                ),
-                Upgrade(
-                    rank=6,
-                    description="""
-                        The maximum size category of object this weapon can absorb is two size categories larger than the weapon.
-                        In addition, you gain a +2 bonus to \\glossterm<accuracy> with the \\textit<disarm> ability using the weapon.
-                    """,
-                    short_description="Can absorb large items",
-                ),
-            ],
-        ),
-    ]
-
     weapons.append(
         create_weapon(
             name="Vorpal",
