@@ -128,7 +128,7 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 7,
+      rank: 6,
       tags: ["Compulsion"],
     },
 
@@ -222,7 +222,7 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 4,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
@@ -230,11 +230,16 @@ export const enchantment: MysticSphere = {
     {
       name: "Greater Discordant Song",
 
-      functionsLike: {
-        exceptThat: "the area increases to a \\hugearea radius from you.",
-        name: "discordant song",
+      attack: {
+        crit: `Each target is \\stunned instead of dazed.`,
+        hit: `
+          Each target is \\dazed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
+        `,
       },
-      rank: 7,
+      rank: 6,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
@@ -269,7 +274,7 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 2,
       scaling: "accuracy",
       tags: ["Emotion"],
     },

@@ -149,7 +149,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d4 piercing damage.
+          The target takes 1d6 piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
           This condition must be removed twice before the effect ends.
         `,
@@ -167,7 +167,7 @@ export const terramancy: MysticSphere = {
       name: "Greater Earthspike",
 
       attack: {
-        hit: `The target takes 2d6 piercing damage.
+        hit: `The target takes 2d8 piercing damage.
         If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange that is on a stable surface.
@@ -258,7 +258,7 @@ export const terramancy: MysticSphere = {
 
       // losing line of effect compensates for recurring extra damage
       attack: {
-        hit: `The target takes 2d10 bludgeoning damage.
+        hit: `The target takes 4d6 bludgeoning damage.
         If it is Large or smaller and it loses \\glossterm{hit points} from this damage, it is swallowed by the earth as a \\glossterm{condition}.
         While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
         During each subsequent \\glossterm{action phase}, it takes 4d6 bludgeoning damage as the earth grinds it into paste.
@@ -329,14 +329,14 @@ export const terramancy: MysticSphere = {
       effect: `
         % TODO: wording to allow it to affect smaller parts of larger objects
         % TODO: define maximum resistance
-        Choose one \\smallarea radius \\glossterm{zone} within \\longrange.
+        Choose a \\smallarea radius \\glossterm{zone} within \\longrange.
         All earth and stone in the area is softened into a thick sludge, creating a quagmire that is difficult to move through.
         The movement cost required to move out of each affected square within the area is quadrupled.
         This does not affect objects under structural stress, such as walls and support columns.
       `,
-      rank: 4,
+      rank: 5,
       scaling: {
-        6: "You can choose to affect a \\medarea radius instead.",
+        7: "You can choose to affect a \\medarea radius instead.",
       },
       type: "Sustain (minor)",
     },
@@ -526,7 +526,7 @@ export const terramancy: MysticSphere = {
         If the entire wall is directly supported by stone, its hit points are doubled.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
         3: "You can choose to create a \\medarealong wall instead.",
         5: "You can choose to create a \\largearealong wall instead.",

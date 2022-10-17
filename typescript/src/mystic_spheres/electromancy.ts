@@ -133,7 +133,7 @@ export const electromancy: MysticSphere = {
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
     },
 
@@ -149,7 +149,7 @@ export const electromancy: MysticSphere = {
           Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
     },
 
@@ -268,7 +268,7 @@ export const electromancy: MysticSphere = {
       name: "Electroshock",
 
       attack: {
-        hit: `The target takes 1d4 electricity damage.
+        hit: `The target takes 1d6 electricity damage.
         If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -282,7 +282,7 @@ export const electromancy: MysticSphere = {
       name: "Greater Electroshock",
 
       attack: {
-        hit: `The target takes 2d6 electricity damage.
+        hit: `The target takes 2d8 electricity damage.
         If it loses \\glossterm{hit points} from this damage, it is \\confused as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -393,8 +393,7 @@ export const electromancy: MysticSphere = {
       name: "Personal Conduction",
 
       attack: {
-        // AOE dice, but no power
-        hit: `Each target takes 2d6 electricity damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
@@ -408,7 +407,6 @@ export const electromancy: MysticSphere = {
       name: "Greater Personal Conduction",
 
       attack: {
-        // AOE dice, but no power
         hit: `Each target takes 4d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.

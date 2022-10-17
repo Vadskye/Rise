@@ -94,7 +94,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
         hit: `
-          The target takes 1d4 acid damage.
+          The target takes 1d6 acid damage.
           If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
           The stage 1 effect makes the target \\stunned while the poison lasts.
           The stage 3 effect makes the target \\blinded while the poison lasts.
@@ -114,7 +114,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
         hit: `
-          The target takes 1d4 acid damage.
+          The target takes 1d6 acid damage.
           If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
           The stage 1 effect makes the target \\slowed and \\dazed while the poison lasts.
           The stage 3 effect makes the target \\stunned while the poison lasts instead of dazed.
@@ -153,7 +153,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
         hit: `
-          The target takes 1d8 acid damage.
+          The target takes 1d10 acid damage.
           If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
           The stage 1 effect inflicts 2d8 + \\glossterm{power} damage each time the poison's attack succeeds.
         `,
@@ -172,7 +172,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
         hit: `
-          The target takes 1d6 acid damage.
+          The target takes 2d8 acid damage.
           If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
           The stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
         `,
@@ -191,7 +191,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
         hit: `
-          The target takes 2d6 acid damage.
+          The target takes 2d8 acid damage.
           If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by cockatrice bile (see \\pcref{Poison}).
           The stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
           The stage 3 effect makes the target \\petrified while the poison lasts.

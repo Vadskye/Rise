@@ -57,7 +57,7 @@ export const photomancy: MysticSphere = {
           Make an attack vs. Mental against each creature within a \\smallarea cone from you.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "accuracy",
       tags: ["Visual"],
     },
@@ -71,7 +71,7 @@ export const photomancy: MysticSphere = {
         `,
         name: "color spray",
       },
-      rank: 5,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Visual"],
     },
@@ -88,7 +88,7 @@ export const photomancy: MysticSphere = {
           Make an attack vs. Mental against each creature within a \\smallarea cone from you.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Visual"],
     },
@@ -134,8 +134,9 @@ export const photomancy: MysticSphere = {
       name: "Wall of Light",
 
       effect: `
-        You create a \\medarealong \\glossterm{wall} of light within \\medrange.
-        The wall is visible as a solid block of light that blocks sight.
+        You create a \\medarealong \\glossterm{wall} of light within \\longrange.
+        The wall is visible as a solid block of light.
+        It blocks all forms of vision, including \\trait{darkvision}, but does not block senses like \trait{blindsight} that do not require the use of eyes.
         It does not inhibit the passage of objects or creatures.
 
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
@@ -276,17 +277,32 @@ export const photomancy: MysticSphere = {
       name: "Kaleidoscopic Pattern",
 
       attack: {
-        crit: `The effect becomes a \\glossterm{condition}.`,
-        // No relevant glance effect
+        crit: `The target is \\stunned instead of dazed.`,
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\glossterm{confused}.
+          Each target is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange of you.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the center of that area.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 5,
+      rank: 3,
+      scaling: "accuracy",
+      tags: ["Compulsion", "Visual"],
+    },
+
+    {
+      name: "Greater Kaleidoscopic Pattern",
+
+      attack: {
+        crit: `The target is \\confused instead of dazed.`,
+        hit: `
+          Each target is \\stunned as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+        `,
+      },
+      rank: 3,
       scaling: "accuracy",
       tags: ["Compulsion", "Visual"],
     },
