@@ -806,7 +806,7 @@ impl Class {
                 However, the monk weapons are well suited to the fighting styles that monks learn as part of their training.
 
                 The combat training for monks often consists of dueling other monks, and rarely involves fighting non-humanoid monsters.
-                As a result, they often try to trip, disarm, and distract their foes in combat.
+                As a result, they often try to trip, grapple, or distract their foes in combat.
                 These strategies are all most effective against humanoid opponents.
             ".to_string(),
             Self::Oozeborn => r"".to_string(),
@@ -1321,7 +1321,7 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{attuneability}
-                        \parhead{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 120 feet (see \pcref{Flying}).
+                        \parhead{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 60 feet (see \pcref{Flying}).
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
                     \subsubsection{Chaos Domain}
