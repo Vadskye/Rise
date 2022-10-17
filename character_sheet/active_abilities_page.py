@@ -742,14 +742,6 @@ def universal_abilities():
                 attack={"accuracy": "@{accuracy}", "defense": "Fort or Ref", "tags": ["Size-Based"]},
             ),
             universal_ability_button(
-                "Disarm",
-                """
-                    Make a melee strike vs. Reflex.
-                    On a hit, one of the target's objects may take damage from your strike. If your attack also beat the target's Fort defense, and the item is not well secured, you can choose to knock it loose.
-                 """,
-                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Based"]},
-            ),
-            universal_ability_button(
                 "Grapple",
                 """
                     Make a melee attack with a free hand against the Fortitude and Reflex defenses of an adjacent creature.

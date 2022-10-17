@@ -277,19 +277,19 @@ def generate_apparel():
             material_type="Gloves",
             description="""
                 You can throw any item as if it had the Thrown (30/60) \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
-                This does not improve your ability to throw items designed to be thrown, such as darts.
+                The item must be at least one size category smaller than you, and you must be able to pick it up within your \\glossterm<weight limits>.
             """,
-            short_description="Allows throwing any item 60 feet",
+            short_description="Allows throwing objects up to 60 feet",
         ),
         create_apparel(
             name="Throwing Gloves, Greater",
-            rank=4,
+            rank=6,
             material_type="Gloves",
             description="""
                 You can throw any item as if it had the Thrown (60/120) \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
-                This can improve your ability to throw items designed to be thrown, such as darts.
+                The item must be at least one size category smaller than you, and you must be able to pick it up within your \\glossterm<weight limits>.
             """,
-            short_description="Allows throwing any item up to 120 feet",
+            short_description="Allows throwing objects up to 120 feet",
         ),
     ]
 
@@ -1565,6 +1565,44 @@ def generate_apparel():
                 This belt functions like a \\mitem<utility belt>, except that the belt has ten pockets, each of which is a one foot cube on the inside.
             """,
             short_description="Contains ten very large pockets",
+        ),
+    ]
+
+    apparel += [
+        create_apparel(
+            name="Thieving Gloves",
+            rank=2,
+            material_type="Gloves",
+            tags=[],
+            description="""
+                As a \\glossterm<standard action>, you can activate these gloves.
+                When you do, the gloves absorb one Small or smaller object you are touching with them.
+
+                An absorbed object leaves no trace that it ever existed.
+                This weapon can hold no more than three objects at once.
+                If you attempt to absorb an object while gloves are full, the attempt fails.
+
+                As a free action, you can retrieve the last item absorbed by the gloves.
+                The item appears in your hand, or falls to the ground if your hand is occupied.
+                The item similarly reappears if you stop attuning to these gloves or take them off.
+            """,
+            short_description="Can absorb a small item",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The maximum size category that the gloves can absorb increases to Medium.
+                    """,
+                    short_description="Can absorb an item",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The maximum size category that the gloves can absorb increases to Large.
+                    """,
+                    short_description="Can absorb a large item",
+                ),
+            ],
         ),
     ]
 
