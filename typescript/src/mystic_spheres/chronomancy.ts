@@ -72,21 +72,6 @@ export const chronomancy: MysticSphere = {
       },
     },
 
-    {
-      name: "Slowing Curse",
-
-      attack: {
-        crit: `The effect lasts until the curse is removed.`,
-        hit: `The target is \\slowed until it takes a \\glossterm{short rest}.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 3,
-      scaling: "accuracy",
-      tags: ["Curse"],
-    },
-
     // This is a very unique combination of triggers and effects, so correct rank is hard
     {
       name: "Curse of Temporal Dislocation",
@@ -107,6 +92,22 @@ export const chronomancy: MysticSphere = {
     },
 
     {
+      name: "Disjointed Slow",
+
+      attack: {
+        hit: `
+          The target takes 1d6 energy damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      rank: 1,
+      scaling: "damage",
+    },
+
+    {
       name: "Slow",
 
       attack: {
@@ -116,7 +117,7 @@ export const chronomancy: MysticSphere = {
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 5,
       scaling: "accuracy",
     },
 
@@ -130,7 +131,7 @@ export const chronomancy: MysticSphere = {
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 3,
+      rank: 7,
       scaling: "accuracy",
     },
 
@@ -139,9 +140,11 @@ export const chronomancy: MysticSphere = {
       name: "Stutterstop",
 
       attack: {
-        crit: `The target is immobilized every round.`,
-        hit: `As a \\glossterm{condition}, the target is \\slowed and randomly immobilized.
-        At the start of each round, it has a 50\\% chance to be \\immobilized during that round.`,
+        crit: `The target is immobilized every round as long as it has no remaining damage resistance.`,
+        hit: `
+          As a \\glossterm{condition}, the target is \\slowed and randomly immobilized.
+          At the start of each round, if it has no remaining \\glossterm{damage resistance}, it has a 50\\% chance to be \\immobilized during that round.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -383,7 +386,7 @@ export const chronomancy: MysticSphere = {
           The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} frozen in time.
           It becomes completely immune to all damage, attacks, and effects of any kind.
-          In addition, it is \\unconscious and cannot act in any way.
+          In addition, it cannot act in any way, and the duration of other effects on it does not expire.
           At the end of the next round, it returns to normal, with no awareness of the intervening time.
           After it returns to normal, it becomes immune to being frozen in time in this way until it takes a \\glossterm{short rest}.
         `,
@@ -470,21 +473,17 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Disjointed Expiration",
+      name: "Sudden Expiration",
 
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
         This cannot remove an effect applied during the current round.
-        For each effect removed this way, you deal the target 4 energy damage.
       `,
       rank: 4,
       narrative: `
         You twist time to let your ally's nausea run its natural course in mere seconds.
         It is painful to undergo such a selective temporal acceleration, but the consequences of such distraction on the battlefield would be far worse.
       `,
-      scaling: {
-        6: `The target can remove two conditions.`,
-      },
     },
 
     {

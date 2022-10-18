@@ -288,20 +288,13 @@ export const fabrication: MysticSphere = {
     {
       name: "Web",
 
-      attack: {
-        crit: `Each secondary target is \\immobilized instead of slowed.`,
-        hit: `Each secondary target is \\slowed as long as it has webbing from this ability in its space.`,
-        targeting: `
-          You fill a \\smallarea radius \\glossterm{zone} within \\shortrange with webs.
-          The webs make the area \\glossterm{difficult terrain}.
-          The web has \\glossterm{hit points} equal to three times your \\glossterm{power}, and all of its defenses are 0.
+      effect: `
+        You fill a \\smallarea radius \\glossterm{zone} within \\medrange with webs.
+        The webs make the area \\glossterm{difficult terrain}.
+        The web has \\glossterm{hit points} equal to three times your \\glossterm{power}, and all of its defenses are 0.
+      `,
 
-          In addition, make an attack vs. Reflex against all Large or smaller creatures in the area.
-          Whenever a creature enters the area, you make the same attack against it.
-        `,
-      },
-
-      rank: 4,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Manifestation"],
       type: "Sustain (attuneable, minor)",

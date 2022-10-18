@@ -156,22 +156,24 @@ Each debuff rank is +4 spell ranks over its predecessor
   * Instant effects: push 15'
 * Rank 1
   * Generally give -1 to a category (accuracy/defenses)
-  * Conditions: Dazed, dazzled, shaken, slowed
+  * Conditions: Dazed, dazzled, shaken
   * Instant effects: push 30'
   * Special: end of round medium damage (DR 5/10 check to remove), unable to regain HP (-1 level), lose one attunement, enraged (cannot take non-attack actions)
 * Rank 1.5
   * Instant effects: prone
 * Rank 2
   * Generally give -2 to a category (accuracy/defenses)
-  * Conditions: goaded, frightened, stunned
-  * Instant effects: knockback 30'
+  * Conditions: goaded, frightened, slowed, stunned
+  * Instant effects: knockback 30', stop existing briefly (immune until short rest)
   * Special: end of round medium damage
 * Rank 2.5
-  * List: fighting underwater, not existing
+  * Conditions: submerged (swimming penalties)
 * Rank 3
   * Generally cause partial action denial or debilitating penalties
-  * Conditions: confused, blinded, immobilized, panicked, vulnerable to all damage
+  * Conditions: confused, blinded, panicked, vulnerable to all damage
   * Instant effects: knockback 60'
+* Rank 3.5
+  * Conditions: immobilized
 * Rank 4
   * Generally cause complete action denial
   * List: Asleep, paralyzed

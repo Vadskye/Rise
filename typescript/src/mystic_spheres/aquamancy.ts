@@ -348,7 +348,7 @@ export const aquamancy: MysticSphere = {
         7: "You can choose to create a \\gargarea radius instead.",
       },
       tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Obscuring Mist",
@@ -363,7 +363,7 @@ export const aquamancy: MysticSphere = {
         5: "You can choose to create a \\gargarea radius instead.",
         7: "You can choose to create a 240 foot radius instead.",
       },
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Misty Halo",
@@ -378,7 +378,7 @@ export const aquamancy: MysticSphere = {
         5: "You can choose to create a \\hugearea radius instead.",
         7: "You can choose to create a \\gargarea radius instead.",
       },
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Misty Shroud",
@@ -473,7 +473,7 @@ export const aquamancy: MysticSphere = {
         6: "You can choose to create a \\hugearea radius instead.",
       },
       tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Solid Fog Cloud",
@@ -485,7 +485,7 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 6,
       tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Fog Wall",

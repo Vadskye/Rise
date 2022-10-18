@@ -151,7 +151,6 @@ export const terramancy: MysticSphere = {
         hit: `
           The target takes 1d6 piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
-          This condition must be removed twice before the effect ends.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange that is on a stable surface.
@@ -167,14 +166,16 @@ export const terramancy: MysticSphere = {
       name: "Greater Earthspike",
 
       attack: {
-        hit: `The target takes 2d8 piercing damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
+        hit: `
+          The target takes 4d6 piercing damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
+        `,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
         `,
       },
-      rank: 5,
+      rank: 7,
       scaling: "accuracy",
       tags: ["Manifestation"],
     },
@@ -279,28 +280,17 @@ export const terramancy: MysticSphere = {
       name: "Earthbind",
 
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
+        crit: `It is also \\slowed as part of the same condition.`,
         hit: `
           As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
-          It is \\slowed and unable to use any fly speed or glide speed.
+          It is unable to use any fly speed or glide speed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange that is no more than 120 feet above a stable surface that could support its weight.
+          Make an attack vs. Fortitude against one creature within \\longrange that is no more than 120 feet above a stable surface that could support its weight.
           This attack gains a +2 \\glossterm{accuracy} bonus if that surface is a Medium or larger body of stone.
         `,
       },
       rank: 1,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Distant Earthbind",
-
-      functionsLike: {
-        name: "earthbind",
-        exceptThat: "the range increases to \\longrange.",
-      },
-      rank: 3,
       scaling: "accuracy",
     },
 
@@ -312,10 +302,9 @@ export const terramancy: MysticSphere = {
         hit: `
           As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is \\slowed and unable to use any fly speed or glide speed.
-          This condition must be removed twice before the effect ends.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange that is no more than 120 feet above a stable surface that could support its weight.
+          Make an attack vs. Fortitude against one creature within \\longrange that is no more than 120 feet above a stable surface that could support its weight.
           This attack gains a +2 \\glossterm{accuracy} bonus if that surface is a Medium or larger body of stone.
         `,
       },

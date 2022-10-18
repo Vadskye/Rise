@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const verdamancy: MysticSphere = {
-  name: "Verdamancy",
-  shortDescription: "Animate and manipulate plants.",
-  sources: ["domain", "nature"],
+  name: 'Verdamancy',
+  shortDescription: 'Animate and manipulate plants.',
+  sources: ['domain', 'nature'],
 
   cantrips: [
     {
-      name: "Fertile Patch",
+      name: 'Fertile Patch',
 
       effect: `
         Choose one \\glossterm{unattended}, nonmagical 1-ft.\\ square of earth.
@@ -15,14 +15,14 @@ export const verdamancy: MysticSphere = {
         This effect lasts for one year.
       `,
       scaling: {
-        2: "You can choose to affect a 2-ft. square instead.",
-        4: "You can choose to affect a 5-ft. square instead.",
-        6: "You can choose to affect a 10-ft. square instead.",
+        2: 'You can choose to affect a 2-ft. square instead.',
+        4: 'You can choose to affect a 5-ft. square instead.',
+        6: 'You can choose to affect a 10-ft. square instead.',
       },
     },
 
     {
-      name: "Rapid Growth",
+      name: 'Rapid Growth',
 
       effect: `
         Choose one Larger or smaller inanimate, \\glossterm{unattended} plant within \\shortrange.
@@ -35,12 +35,12 @@ export const verdamancy: MysticSphere = {
         4: `You can choose up to three months of time to grow.`,
         6: `You can choose up to a year of time to grow.`,
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
   ],
   spells: [
     {
-      name: "Ensnaring Grasp",
+      name: 'Ensnaring Grasp',
 
       attack: {
         hit: `The target takes 1d8 + \\glossterm{power} piercing damage.`,
@@ -52,14 +52,14 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Greater Ensnaring Grasp",
+      name: 'Greater Ensnaring Grasp',
 
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} piercing damage.
+          The target takes 2d10 + \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -69,21 +69,31 @@ export const verdamancy: MysticSphere = {
           You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
         `,
       },
-      rank: 3,
-      scaling: "damage",
+      rank: 5,
+      scaling: 'damage',
     },
     {
-      name: "Supreme Ensnaring Grasp",
+      name: 'Entangling Plants',
 
-      functionsLike: {
-        name: 'greater ensnaring grasp',
-        exceptThat: 'the damage increases to 4d6 + \\glossterm{power} damage, and the condition must be removed twice before the effect ends.',
+      attack: {
+        crit: `The condition persists even if the target stops being in undergrowth.`,
+        hit: `
+          The target is \\slowed as a \\glossterm{condition}.
+          The condition is removed if the target stops being in undergrowth. 
+        `,
+        targeting: `
+          Make an attack vs. Reflex against one Large or smaller creature within \\medrange that is on \\glossterm{undergrowth}.
+        `,
       },
-      rank: 6,
-      scaling: "damage",
+      narrative: `
+        Plants twist and writhe to trap your foe.
+      `,
+      rank: 1,
+      scaling: 'accuracy',
+      tags: [],
     },
     {
-      name: "Entangle",
+      name: 'Entangle',
 
       attack: {
         crit: `The target also cannot move farther than 10 feet from its original location until it ends the effect.`,
@@ -96,28 +106,13 @@ export const verdamancy: MysticSphere = {
       narrative: `
         Plants grow from nowhere to trap your foe.
       `,
-      rank: 1,
-      scaling: "accuracy",
-      tags: ["Manifestation"],
-    },
-
-    {
-      name: "Greater Entangle",
-
-      functionsLike: {
-        name: 'entangle',
-        exceptThat: 'the condition must be removed twice before the effect ends.',
-      },
-      narrative: `
-        A flood of plants grow from nowhere to trap your foe.
-      `,
       rank: 5,
-      scaling: "accuracy",
-      tags: ["Manifestation"],
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Vine Whip",
+      name: 'Vine Whip',
 
       attack: {
         hit: `The target takes 2d6 + \\glossterm{power} bludgeoning damage.`,
@@ -127,12 +122,12 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Greater Vine Whip",
+      name: 'Greater Vine Whip',
 
       attack: {
         hit: `The target takes 4d8 + \\glossterm{power} bludgeoning damage.`,
@@ -142,12 +137,12 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Vinestorm",
+      name: 'Vinestorm',
 
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
@@ -157,12 +152,12 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Greater Vinestorm",
+      name: 'Greater Vinestorm',
 
       attack: {
         hit: `Each target takes 4d8 + \\glossterm{power} bludgeoning damage.`,
@@ -172,12 +167,12 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Vine Tentacle",
+      name: 'Vine Tentacle',
 
       effect: `
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
@@ -189,12 +184,12 @@ export const verdamancy: MysticSphere = {
       narrative: `
         You grow a massive vine tentacle from your body.
       `,
-      tags: ["Manifestation"],
-      type: "Attune",
+      tags: ['Manifestation'],
+      type: 'Attune',
     },
 
     {
-      name: "Poison -- Nitharit",
+      name: 'Poison -- Nitharit',
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
@@ -209,12 +204,12 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "accuracy",
-      tags: ["Manifestation"],
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison -- Sassone Leaf",
+      name: 'Poison -- Sassone Leaf',
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
@@ -229,12 +224,12 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison -- Arsenic",
+      name: 'Poison -- Arsenic',
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
@@ -249,12 +244,12 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison -- Black Lotus",
+      name: 'Poison -- Black Lotus',
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
@@ -268,12 +263,12 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 6,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Herbal Antidote",
+      name: 'Herbal Antidote',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -289,7 +284,7 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: "Barkskin",
+      name: 'Barkskin',
 
       effect: `
         You gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
@@ -300,15 +295,15 @@ export const verdamancy: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Barkskin",
+      name: 'Mass Barkskin',
 
       functionsLike: {
         mass: true,
-        name: "Barkskin",
+        name: 'Barkskin',
       },
       // narrative: '',
       rank: 3,
@@ -316,11 +311,11 @@ export const verdamancy: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Embedded Growth",
+      name: 'Embedded Growth',
 
       // short range and -1d relative to ignition for more difficult removal
       attack: {
@@ -341,11 +336,11 @@ export const verdamancy: MysticSphere = {
         You throw a seed that embeds itself in a foe and grows painfully.
       `,
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Greater Embedded Growth",
+      name: 'Greater Embedded Growth',
 
       attack: {
         crit: `The damage from the condition is doubled.`,
@@ -361,11 +356,11 @@ export const verdamancy: MysticSphere = {
         You throw a seed that embeds itself in a foe and grows painfully.
       `,
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Fire Seeds",
+      name: 'Fire Seeds',
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
@@ -379,24 +374,25 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
-      type: "Sustain (free)",
+      scaling: 'damage',
+      type: 'Sustain (free)',
     },
 
     {
-      name: "Greater Fire Seeds",
+      name: 'Greater Fire Seeds',
 
       functionsLike: {
         name: 'fire seeds',
-        exceptThat: 'the damage increases to 4d6 + half \\glossterm{power}, and the range of each acorn increases to \\medrange.',
+        exceptThat:
+          'the damage increases to 4d6 + half \\glossterm{power}, and the range of each acorn increases to \\medrange.',
       },
       rank: 6,
-      scaling: "damage",
-      type: "Sustain (free)",
+      scaling: 'damage',
+      type: 'Sustain (free)',
     },
 
     {
-      name: "Wall of Thorns",
+      name: 'Wall of Thorns',
 
       // original targets: Each creature that moves through the area (see text)
       attack: {
@@ -416,26 +412,27 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 2,
-      scaling: "damage",
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      scaling: 'damage',
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Greater Wall of Thorns",
+      name: 'Greater Wall of Thorns',
 
       functionsLike: {
         name: 'wall of thorns',
-        exceptThat: 'the damage increases to 2d10 + half \\glossterm{power}, and the area increases to a \\medarealong \\glossterm{wall}.',
+        exceptThat:
+          'the damage increases to 2d10 + half \\glossterm{power}, and the area increases to a \\medarealong \\glossterm{wall}.',
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      scaling: 'damage',
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Plant Growth",
+      name: 'Plant Growth',
 
       effect: `
         Choose a \\smallarea radius \\glossterm{zone} within \\longrange.
@@ -449,15 +446,15 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: "You can choose to affect a \\medarea radius instead.",
-        6: "You can choose to affect a \\largearea radius instead.",
+        4: 'You can choose to affect a \\medarea radius instead.',
+        6: 'You can choose to affect a \\largearea radius instead.',
       },
-      tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Blight",
+      name: 'Blight',
 
       attack: {
         hit: `The target takes 2d6 + \\glossterm{power} acid damage.
@@ -467,11 +464,11 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Greater Blight",
+      name: 'Greater Blight',
 
       attack: {
         hit: `The target takes 4d8 + \\glossterm{power} acid damage.
@@ -481,11 +478,11 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Shillelagh",
+      name: 'Shillelagh',
 
       effect: `
         Choose one nonmagical, \\glossterm{unattended} stick of wood you touch.
@@ -499,11 +496,11 @@ export const verdamancy: MysticSphere = {
         5: `The power bonus increases to +8.`,
         7: `The power bonus increases to +16.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Survivalist",
+      name: 'Survivalist',
 
       effect: `
         If you are \\glossterm{trained} with the Survival skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -515,11 +512,11 @@ export const verdamancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Flourishing Grass",
+      name: 'Flourishing Grass',
 
       effect: `
         At the end of each round, you may choose to cause grass to extend out onto the ground in a \\smallarea radius around you.
@@ -532,19 +529,19 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "When you cast this spell, you can choose to affect a \\medarea radius instead.",
-        5: "When you cast this spell, you can choose to affect a \\largearea radius instead.",
-        7: "When you cast this spell, you can choose to affect a \\hugearea radius instead.",
+        3: 'When you cast this spell, you can choose to affect a \\medarea radius instead.',
+        5: 'When you cast this spell, you can choose to affect a \\largearea radius instead.',
+        7: 'When you cast this spell, you can choose to affect a \\hugearea radius instead.',
       },
       tags: ['Manifestation'],
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Greater Flourishing Grass",
+      name: 'Greater Flourishing Grass',
 
       functionsLike: {
-        name: "Flourishing Grass",
+        name: 'Flourishing Grass',
         exceptThat: `
           the area becomes \\glossterm{heavy undergrowth} instead of light undergrowth.
           Since the grass retreats whenever you move, it does not impede your movement, though it does impede the movement of any other creatures that move simultaneously.
@@ -555,15 +552,15 @@ export const verdamancy: MysticSphere = {
         You can extend the grass to surround you at a whim.
       `,
       rank: 5,
-      scaling: { 
-        7: "When you cast this spell, you can choose to affect a \\medarea radius instead.",
+      scaling: {
+        7: 'When you cast this spell, you can choose to affect a \\medarea radius instead.',
       },
       tags: ['Manifestation'],
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Thornblade",
+      name: 'Thornblade',
 
       effect: `
         All damage you deal with \\glossterm{strikes} becomes piercing damage in addition to the attack's normal damage types.
@@ -574,23 +571,23 @@ export const verdamancy: MysticSphere = {
         The \\glossterm{difficulty value} of the check is equal to 5 \\add your \\glossterm{power}.
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Thornblade",
+      name: 'Mass Thornblade',
 
       functionsLike: {
         mass: true,
-        name: "Thornblade",
+        name: 'Thornblade',
       },
       // narrative: '',
       rank: 5,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Verdant Armor",
+      name: 'Verdant Armor',
 
       effect: `
         When you cast this spell, you choose a type of body armor you are proficient with that is not normally made from metal.
@@ -604,15 +601,15 @@ export const verdamancy: MysticSphere = {
         5: `The damage resistance bonus increases to +8.`,
         7: `The damage resistance bonus increases to +16.`,
       },
-      tags: ["Manifestation"],
-      type: "Attune",
+      tags: ['Manifestation'],
+      type: 'Attune',
     },
   ],
   rituals: [
     {
-      name: "Fertility",
+      name: 'Fertility',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         This ritual creates an area of bountiful growth in a one mile radius \\glossterm{zone} from your location.
         Normal plants within the area become twice as productive as normal for the next year.
@@ -624,9 +621,9 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: "Infertility",
+      name: 'Infertility',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         This ritual creates an area of death and decay in a one mile radius \\glossterm{zone} from your location.
         Normal plants within the area become half as productive as normal for the next year.
@@ -637,9 +634,9 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: "Lifeweb Transit",
+      name: 'Lifeweb Transit',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         Choose up to five Medium or smaller ritual participants.
         In addition, choose a living plant that all ritual participants touch during the ritual.

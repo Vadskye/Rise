@@ -76,7 +76,7 @@ impl Debuff {
             Self::PartiallyUnaware => 1,
             Self::Prone => 2,
             Self::Shaken(_) => 1,
-            Self::Slowed => 1,
+            Self::Slowed => 2,
             Self::Squeezing => 2,
             Self::Stunned => 2,
             Self::Unaware => 3,

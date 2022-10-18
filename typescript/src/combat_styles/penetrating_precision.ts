@@ -179,18 +179,7 @@ export const penetratingPrecision: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
-      rank: 1,
-    },
-
-    {
-      name: "Groundspike+",
-
-      effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
-      `,
-      rank: 7,
+      rank: 5,
     },
 
     {
