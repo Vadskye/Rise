@@ -195,8 +195,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     % Bardic performance power guidelines:
                     % These generally start from the same rank 1 baseline effect as spells.
                     % Since there are no higher rank bardic performances, they need more aggressive rank scalings to ensure
-                    % that a rank 7 bardic performance is comparable to a rank 7 spell. That is provided by the greater/supreme
-                    % bardic performance class abilities, and doesn't need to be included in each individual performance.
+                    % that a rank 7 bardic performance is comparable to a rank 7 spell.
                     % In general, bardsongs are likely to trade damage or accuracy for increased area.
                     %
                     % Bardsong debuffs are interesting, since they can't be removed like conditions, but also can't be stacked.
@@ -384,17 +383,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{activeability}{Stutterstep Staccato}[\abilitytag{Auditory}]
                         \rankline
-                        Make an attack vs. Fortitude against all \glossterm{enemies} within a \areamed radius from you.
-                        \hit Each target is \glossterm{briefly} \slowed.
-                        \crit Each target is \slowed as a \glossterm{condition}.
+                        Make an attack vs. Fortitude against one creature within a \shortrange of you.
+                        \hit The target is \glossterm{briefly} \slowed.
+                        \crit The target is \slowed as a \glossterm{condition}.
 
                         \rankline
-                        \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
-                        \rank{3} The accuracy bonus increases to \plus2.
-                        \rank{4} The accuracy bonus increases to \plus3, and the area increases to a \hugearea radius.
-                        \rank{5} The accuracy bonus increases to \plus4.
-                        \rank{6} The accuracy bonus increases to \plus5, and the area increases to a \gargarea radius.
-                        \rank{7} The accuracy bonus increases to \plus6.
+                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
                     \end{activeability}
 
                     \begin{activeability}{Vigorous Verse}[\abilitytag{Auditory}]

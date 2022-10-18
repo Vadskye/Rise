@@ -277,7 +277,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Anchoring}[\abilitytag{Magical}]
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
-                        This prevents all \abilitytag{Manifestation} and \glossterm{teleportation} effects.
+                        This prevents all \glossterm{teleportation} effects.
 
                         \rankline
                         \rank{4} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
@@ -359,11 +359,11 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{activeability}{Wolfpack}
                         \rankline
-                        At the start of each \glossterm{phase}, if your quarry is adjacent to at least two members of your hunting party, it moves at half speed until the end of that phase.
+                        While your quarry is adjacent to at least three members of your hunting party, those adjacent members gain an additional \plus1 accuracy bonus against it.
 
                         \rankline
-                        \rank{4} This effect instead applies if your quarry is adjacent to any member of your hunting party.
-                        \rank{6} Your quarry is \slowed instead of moving at half speed.
+                        \rank{4} This effect instead applies if your quarry is adjacent to at least two members of your hunting party.
+                        \rank{6} This effect instead applies if your quarry is adjacent to any member of your hunting party.
                     \end{activeability}
                 }
             ",

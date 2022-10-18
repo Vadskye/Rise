@@ -1264,10 +1264,10 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus3.
-                Its stage 1 effect makes the target \\slowed and \\dazed while the poison lasts.
-                Its stage 3 effect makes the target \\stunned while the poison lasts instead of dazed.
+                Its stage 1 effect makes the target \\slowed while the poison lasts.
+                Its stage 3 effect makes the target \\immobilized while the poison lasts.
             """,
-            short_description="Slows and dazes, eventually stuns",
+            short_description="Slows, eventually immobilizes",
         ),
         # +1 rank for +1 accuracy
         MagicItem(

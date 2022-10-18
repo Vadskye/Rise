@@ -64,17 +64,13 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
 
-    // Reflex is a weird defense for this effect, but it's very close range and free hand,
-    // so it washes out
     {
-      name: "Banishing Grasp",
+      name: "Greater Dimensional Grasp",
 
       attack: {
+        // crit: '',
         hit: `
-          The target takes 2d8 + \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, it immediately disappears.
-          At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
-          After this effect ends, it becomes immune to this effect until it takes a \\glossterm{short rest}.
+          The target takes 4d6 + \\glossterm{power} energy damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -83,19 +79,20 @@ export const astromancy: MysticSphere = {
         `,
       },
       narrative: `
-        Your touch banishes the dire wolf that was about to eat you.
-        It should be gone long enough for you to escape to a more comfortable vantage point.
+        Your touch sends part of your foe's body to the Astral Plane.
+        Although most of its body remains where it was, something important - and painful - was lost.
       `,
-      rank: 4,
+      rank: 5,
       scaling: "damage",
     },
+
     {
       name: "Banishment",
 
       attack: {
         hit: `
           The target takes 1d10 + half \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{teleported} to a random safe place in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
         `,
@@ -125,30 +122,7 @@ export const astromancy: MysticSphere = {
       rank: 6,
       scaling: "damage",
     },
-    // treat this as r3 -1 level; it's brutal to melee-only types
-    {
-      name: "Jittering Curse",
-
-      attack: {
-        crit: "The effect lasts until the curse is removed.",
-        hit: `
-          The target jitters randomly until it takes a \\glossterm{short rest}.
-          At the end of each \\glossterm{movement phase}, if it has no remaining \\glossterm{damage resistance}, it teleports horizontally 10 feet in a random direction.
-          This teleportation only works if it moves the target into an unoccupied location on a stable surface that can support its weight.
-          If the destination is invalid, the teleportation fails with no effect.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      narrative: `
-        The furious troll rushes up to you again, ready to strike, only to be teleported away from you just before its claws reach you.
-        Will it ever learn?
-      `,
-      rank: 6,
-      tags: ["Curse"],
-    },
-    // treat this as r3 -1 level; it's similar to immobilized, but harder to cheese with Long weapons
+    // treat this as r3 level; it's similar to immobilized, but harder to cheese with Long weapons
     {
       name: "Dimensional Anchor",
 
@@ -159,7 +133,7 @@ export const astromancy: MysticSphere = {
           At the end of each round, the target teleports back to the location it was in when this spell was cast.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\closerange.
         `,
       },
       narrative: `
@@ -232,7 +206,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 bludgeoning damage.
+          The target takes 2d10 bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
@@ -242,7 +216,7 @@ export const astromancy: MysticSphere = {
       narrative: `
         Your foe disappears for a second into the Plane of Earth, where it is crushed by the weight of stone.
       `,
-      rank: 4,
+      rank: 6,
       scaling: "accuracy",
     },
     {

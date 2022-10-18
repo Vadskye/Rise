@@ -595,15 +595,14 @@ export const polymorph: MysticSphere = {
     {
       name: 'Cripple',
 
-      // TODO: confirm range, it is a little odd
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
-          While the target has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of slowed.
+          While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\longrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
       rank: 7,

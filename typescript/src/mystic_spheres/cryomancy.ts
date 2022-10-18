@@ -61,7 +61,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} cold damage.
+          The target takes 2d10 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -70,18 +70,7 @@ export const cryomancy: MysticSphere = {
           Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
-      rank: 3,
-      scaling: "damage",
-    },
-
-    {
-      name: "Supreme Freezing Grasp",
-
-      functionsLike: {
-        name: 'greater freezing grasp',
-        exceptThat: 'the damage increases to 4d6 + \\glossterm{power} damage, and the condition must be removed twice before the effect ends.',
-      },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
     },
 
@@ -277,28 +266,33 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 cold damage.
+          The target takes 1d10 + half \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
-          This condition must be removed twice before the effect ends.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
         `,
       },
 
-      rank: 1,
-      scaling: "accuracy",
+      rank: 3,
+      scaling: "damage",
     },
 
     {
       name: "Greater Frostbite",
 
-      functionsLike: {
-        name: 'frostbite',
-        exceptThat: 'the damage increases to 1d10, and the attack gains a +3 \\glossterm{accuracy} bonus.',
+      attack: {
+        hit: `
+          The target takes 4d6 + half \\glossterm{power} cold damage.
+          If it takes damage, it is \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\medrange.
+        `,
       },
-      rank: 4,
-      scaling: "accuracy",
+
+      rank: 7,
+      scaling: "damage",
     },
 
     {
@@ -473,30 +467,14 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} cold damage.
+          The target takes 2d8 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
-      rank: 2,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Bonechill",
-
-      attack: {
-        hit: `
-          The target takes 4d6 + \\glossterm{power} cold damage.
-          In addition, it is \\slowed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
-        `,
-      },
-      rank: 6,
+      rank: 4,
       scaling: "damage",
     },
   ],

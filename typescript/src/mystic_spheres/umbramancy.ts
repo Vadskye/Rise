@@ -371,7 +371,6 @@ export const umbramancy: MysticSphere = {
         hit: `
           The target takes 1d8 cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
-          This condition must be removed twice before the effect ends.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\longrange that is standing on the ground.
