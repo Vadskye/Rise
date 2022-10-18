@@ -28,7 +28,7 @@ export const universal: MysticSphere = {
         Aquamancy       & Creatures and objects & Armor     & Bludgeoning \\\\
         Astromancy      & Creatures and objects & Mental    & Energy      \\\\
         Bless           & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
-        Channel Divinity  & Creatures           & Mental    & Energy      \\\\
+        Channel Divinity & Creatures            & Mental    & Energy      \\\\
         Chronomancy     & Creatures and objects & Fortitude & Energy      \\\\
         Cryomancy       & Creatures and objects & Fortitude & Cold        \\\\
         Electromancy    & Creatures and objects & Fortitude & Electricity \\\\
@@ -39,7 +39,7 @@ export const universal: MysticSphere = {
         Pyromancy       & Creatures and objects & Armor     & Fire        \\\\
         Revelation      & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
         Summoning       & Creatures and objects & Armor     & Physical    \\\\
-        Telekinesis     & Creatures and objects & Armor     & Physical    \\\\
+        Telekinesis     & Creatures and objects & Fortitude & Bludgeoning \\\\
         Terramancy      & Creatures and objects & Armor     & Bludgeoning \\\\
         Thaumaturgy     & Creatures and objects & Fortitude & Energy      \\\\
         Toxicology      & Creatures and objects & Fortitude & Acid        \\\\
@@ -56,8 +56,8 @@ export const universal: MysticSphere = {
       attack: {
         hit: `The target takes 1d8 + \\glossterm{power} damage.`,
         targeting: `
-          Make an attack against anything within \\medrange.
-          The defense depends on the mystic sphere you learn this spell with, as listed in \\tref{Universal Mystic Spheres}.
+          Make an attack against something within \\shortrange.
+          The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 1,
@@ -67,96 +67,34 @@ export const universal: MysticSphere = {
       name: "Greater Mystic Bolt",
 
       attack: {
-        hit: `The target takes 2d8 + \\glossterm{power} damage.`,
+        hit: `The target takes 2d10 + \\glossterm{power} damage.`,
         targeting: `
           Make an attack against anything within \\medrange.
           The defense depends on the mystic sphere you learn this spell with, as listed in \\tref{Universal Mystic Spheres}.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-    },
-    {
-      name: "Supreme Mystic Bolt",
-
-      attack: {
-        hit: `The target takes 4d10 + \\glossterm{power} damage.`,
-        targeting: `
-          Make an attack against anything within \\longrange.
-          The defense depends on the mystic sphere you learn this spell with, as listed in \\tref{Universal Mystic Spheres}.
-        `,
-      },
-      rank: 6,
-      scaling: "damage",
-    },
-    {
-      name: "Mystic Blast",
-
-      attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea cone from you.
-        `,
-      },
-      rank: 2,
-      scaling: "damage",
-    },
-    {
-      name: "Greater Mystic Blast",
-
-      attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea cone from you.
         `,
       },
       rank: 4,
       scaling: "damage",
     },
     {
-      name: "Supreme Mystic Blast",
-
-      attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\hugearea cone from you.
-        `,
-      },
-      rank: 6,
-      scaling: "damage",
-    },
-
-    {
       name: "Mystic Discharge",
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius from you.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "damage",
     },
     {
       name: "Greater Mystic Discharge",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius from you.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-    },
-    {
-      name: "Supreme Mystic Discharge",
-
-      attack: {
-        hit: `Each target takes 2d10 + \\glossterm{power} damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius from you.
+          Make an attack vs. Reflex against everything in a \\medarea radius from you.
         `,
       },
       rank: 5,
