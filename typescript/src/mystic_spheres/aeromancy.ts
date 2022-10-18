@@ -434,7 +434,7 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 2,
-      tags: ['Sustain (minor)'],
+      tags: ['Sustain (attuneable, minor)'],
       scaling: {
         4: "You can choose to create a \\largearea radius instead.",
         6: "You can choose to create a \\hugearea radius instead.",

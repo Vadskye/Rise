@@ -1305,9 +1305,9 @@ function handleDebuffs() {
         "dazed",
         "dazzled",
         "shaken",
-        "slowed",
         // rank 2 debuffs
         "frightened",
+        "slowed",
         "stunned",
         // rank 3 debuffs
         "confused",
@@ -1406,7 +1406,8 @@ function handleDebuffs() {
         minus1("shaken", "mental");
       }
       if (v.slowed && !v.immobilized) {
-        minus1("slowed", "reflex");
+        minus2("slowed", "armor_defense");
+        minus2("slowed", "reflex");
       }
 
       // rank 2 debuffs
@@ -1423,6 +1424,7 @@ function handleDebuffs() {
 
       // rank 3 debuffs
       if (v.immobilized) {
+        minus4("immobilized", "armor_defense");
         minus4("immobilized", "reflex");
       }
       if (v.panicked) {

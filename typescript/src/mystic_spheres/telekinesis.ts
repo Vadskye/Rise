@@ -154,21 +154,6 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Kinetic Impedance",
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The target is \\slowed as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Mental against one Large or smaller target within \\medrange.
-        `,
-      },
-
-      rank: 1,
-      scaling: "accuracy",
-    },
-
-    {
       name: "Rapid Reload",
 
       effect: `
@@ -180,28 +165,54 @@ export const telekinesis: MysticSphere = {
     },
 
     {
+      name: "Kinetic Impedance",
+
+      attack: {
+        crit: `
+          The effect is a condition regardless of the target's size category.
+        `,
+        hit: `
+          If the target is Large or smaller, it is \\slowed as a \\glossterm{condition}.
+          Otherwise, it is \\glossterm{briefly} slowed.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange.
+        `,
+      },
+
+      rank: 3,
+      scaling: "accuracy",
+    },
+
+    {
       name: "Mass Kinetic Impedance",
 
       attack: {
-        crit: "The condition must be removed twice before the effect ends.",
-        hit: `Each target is \\slowed as a \\glossterm{condition}.`,
+        crit: `
+          The effect is a condition regardless of the target's size category.
+        `,
+        hit: `
+          For each target, if it is Large or smaller, it is \\slowed as a \\glossterm{condition}.
+          Otherwise, it is \\glossterm{briefly} slowed.
+        `,
         targeting: `
-          Make an attack vs. Mental against all Large or smaller creatures in a \\areasmall radius within \\medrange.
+          Make an attack vs. Mental against all creatures in a \\areasmall radius within \\medrange.
         `,
       },
-      rank: 3,
+      rank: 5,
       scaling: "accuracy",
-      tags: ["Compulsion"],
     },
 
     {
       name: "Blastwave",
 
       attack: {
-        hit: `You \\glossterm{knockback} each target up to 30 feet in a straight line away from you.
-        Moving a target upwards costs twice the normal movement cost.
-        If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 1d10 + half \\glossterm{power} instead of the normal knockback damage.
-        Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.`,
+        hit: `
+          You \\glossterm{knockback} each target up to 30 feet in a straight line away from you.
+          Moving a target upwards costs twice the normal movement cost.
+          If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 1d10 + half \\glossterm{power} instead of the normal knockback damage.
+          Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
+        `,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\areasmall radius from you.
         `,

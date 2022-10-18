@@ -116,8 +116,8 @@ export const toxicology: MysticSphere = {
         hit: `
           The target takes 1d6 acid damage.
           If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
-          The stage 1 effect makes the target \\slowed and \\dazed while the poison lasts.
-          The stage 3 effect makes the target \\stunned while the poison lasts instead of dazed.
+          The stage 1 effect makes the target \\slowed while the poison lasts.
+          The stage 3 effect makes the target \\immobilized while the poison lasts.
         `,
         targeting: `
           Make an attack vs. Fortitude with a +1 accuracy bonus against one living creature within \\medrange.
