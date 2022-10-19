@@ -27,7 +27,6 @@ export const universal: MysticSphere = {
         Aeromancy       & Creatures and objects & Armor     & Bludgeoning \\\\
         Aquamancy       & Creatures and objects & Armor     & Bludgeoning \\\\
         Astromancy      & Creatures and objects & Mental    & Physical    \\\\
-        Bless           & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
         Channel Divinity & Creatures            & Mental    & Energy      \\\\
         Chronomancy     & Creatures and objects & Fortitude & Energy      \\\\
         Cryomancy       & Creatures and objects & Fortitude & Cold        \\\\
@@ -36,6 +35,7 @@ export const universal: MysticSphere = {
         Fabrication     & Creatures and objects & Armor     & Physical    \\\\
         Photomancy      & Creatures and objects & Fortitude & Energy      \\\\
         Polymorph       & Creatures and objects & Fortitude & Physical    \\\\
+        Prayer          & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
         Pyromancy       & Creatures and objects & Armor     & Fire        \\\\
         Revelation      & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
         Summoning       & Creatures and objects & Armor     & Physical    \\\\

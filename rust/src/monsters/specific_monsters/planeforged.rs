@@ -181,7 +181,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             }));
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: format!("
-                    The $name can perform any ritual of rank {} or lower from the \\sphere{{bless}} or \\sphere{{channel divinity}} mystic spheres.
+                    The $name can perform any ritual of rank {} or lower from the \\sphere{{channel divinity}} or \\sphere{{prayer}} mystic spheres.
                     It does not need to expend material components or increase its \\glossterm{{fatigue level}} to perform those ritauls.
                 ", rank),
                 is_magical: true,
